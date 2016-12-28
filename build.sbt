@@ -2,9 +2,48 @@ name := """avatax-rest-v2-api-java"""
 
 organization := "net.avalara.avatax"
 
-version := "2.16.12.3"
+version := "2.16.12.3-SNAPSHOT"
 
 scalaVersion := "2.11.6"
+
+useGpg := true
+
+usePgpKeyHex("7C14D882A238CB42")
+
+publishMavenStyle := true
+
+publishTo := {
+  val nexus = "https://oss.sonatype.org/"
+  if (isSnapshot.value)
+    Some("snapshots" at nexus + "content/repositories/snapshots")
+  else
+    Some("releases"  at nexus + "service/local/staging/deploy/maven2")
+}
+
+publishArtifact in Test := false
+
+pomIncludeRepository := { _ => false }
+
+pomExtra := (
+  <url>https://github.com/avadev/AvaTax-REST-V2-JRE-SDK</url>
+  <licenses>
+    <license>
+      <name>Apache License, Version 2.0</name>
+      <url>https://www.apache.org/licenses/LICENSE-2.0</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
+  <scm>
+    <url>git@github.com:avadev/AvaTax-REST-V2-JRE-SDK.git</url>
+    <connection>scm:git:git@github.com:avadev/AvaTax-REST-V2-JRE-SDK.git</connection>
+  </scm>
+  <developers>
+    <developer>
+      <id>drheart</id>
+      <name>Dustin R. Heart</name>
+      <url>http://www.avalara.com</url>
+    </developer>
+  </developers>)
 
 libraryDependencies ++= Seq(
   // Uncomment to use Akka
