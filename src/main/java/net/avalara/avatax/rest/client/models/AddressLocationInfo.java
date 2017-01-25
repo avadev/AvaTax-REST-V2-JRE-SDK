@@ -12,7 +12,7 @@ import java.util.HashMap;
 /**
  * Represents an address to resolve.
  */
-public class AddressInfo {
+public class AddressLocationInfo {
     private String city;
 
     /**
@@ -44,6 +44,25 @@ public class AddressInfo {
      */
     public void setLatitude(BigDecimal latitude) {
         this.latitude = latitude;
+    }
+
+    
+    private String locationCode;
+
+    /**
+     * Getter for locationCode - If you wish to use the address of an existing location for this company, specify the address here.
+            Otherwise, leave this value empty.
+     */
+    public String getLocationCode() {
+        return this.locationCode;
+    }
+
+    /**
+     * Setter for locationCode - If you wish to use the address of an existing location for this company, specify the address here.
+            Otherwise, leave this value empty.
+     */
+    public void setLocationCode(String locationCode) {
+        this.locationCode = locationCode;
     }
 
     
@@ -169,7 +188,7 @@ public class AddressInfo {
 
 
     /**
-     * Returns a JSON string representation of AddressInfo.
+     * Returns a JSON string representation of AddressLocationInfo.
      */
     @Override
     public String toString() {

@@ -392,6 +392,21 @@ public enum ErrorCodeId {
     /**
      * No comment data provided
      */
+    ReportingEntityError,
+    
+    /**
+     * No comment data provided
+     */
+    InvalidReturnOperationError,
+    
+    /**
+     * No comment data provided
+     */
+    CannotDeleteCompany,
+    
+    /**
+     * No comment data provided
+     */
     BatchSalesAuditMustBeZippedError,
     
     /**
@@ -452,6 +467,26 @@ public enum ErrorCodeId {
     /**
      * No comment data provided
      */
+    DocumentFetchLimit,
+    
+    /**
+     * No comment data provided
+     */
+    AddressIncomplete,
+    
+    /**
+     * No comment data provided
+     */
+    AddressLocationNotFound,
+    
+    /**
+     * No comment data provided
+     */
+    MissingLine,
+    
+    /**
+     * No comment data provided
+     */
     BadDocumentFetch,
     
     /**
@@ -463,6 +498,16 @@ public enum ErrorCodeId {
      * No comment data provided
      */
     SubscriptionRequired,
+    
+    /**
+     * No comment data provided
+     */
+    AccountExists,
+    
+    /**
+     * No comment data provided
+     */
+    InvitationOnly,
     
 
 }

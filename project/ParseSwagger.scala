@@ -16,7 +16,7 @@ object ParseSwagger {
     (JsPath \ "required").readNullable[Boolean] and
     (JsPath \ "type").readNullable[String] and
     (JsPath \ "format").readNullable[String] and
-    (JsPath \ "EnumDataType").readNullable[String] and
+    (JsPath \ "x-enum-type").readNullable[String] and
     (JsPath \ "readOnly").readNullable[Boolean] and
     (JsPath \ "example").readNullable[JsValue] and
     (JsPath \ "schema").readNullable[JsValue] and

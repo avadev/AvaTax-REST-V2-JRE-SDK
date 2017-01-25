@@ -186,16 +186,16 @@ public class CreateTransactionModel {
     private String companyCode;
 
     /**
-     * Getter for companyCode - Company Code - If you are posting to /api/v2/transactions/create, you must specify the company code value here.
-                If you are posting to /api/v2/companies/(companyCode)/transactions/create, this value must be null.
+     * Getter for companyCode - Company Code - Specify the code of the company creating this transaction here.  If you leave this value null,
+                your account's default company will be used instead.
      */
     public String getCompanyCode() {
         return this.companyCode;
     }
 
     /**
-     * Setter for companyCode - Company Code - If you are posting to /api/v2/transactions/create, you must specify the company code value here.
-                If you are posting to /api/v2/companies/(companyCode)/transactions/create, this value must be null.
+     * Setter for companyCode - Company Code - Specify the code of the company creating this transaction here.  If you leave this value null,
+                your account's default company will be used instead.
      */
     public void setCompanyCode(String companyCode) {
         this.companyCode = companyCode;

@@ -10,20 +10,20 @@ import java.util.Date;
 import java.util.HashMap;
 
 /**
- * Represents a single security role.
+ * Tax Authority Type Model
  */
-public class SecurityRoleModel {
+public class TaxAuthorityTypeModel {
     private Integer id;
 
     /**
-     * Getter for id - The unique ID number of this security role.
+     * Getter for id - The unique ID number of this tax Authority customer type.
      */
     public Integer getId() {
         return this.id;
     }
 
     /**
-     * Setter for id - The unique ID number of this security role.
+     * Setter for id - The unique ID number of this tax Authority customer type.
      */
     public void setId(Integer id) {
         this.id = id;
@@ -33,24 +33,41 @@ public class SecurityRoleModel {
     private String description;
 
     /**
-     * Getter for description - A description of this security role
+     * Getter for description - The description name of this tax authority type.
      */
     public String getDescription() {
         return this.description;
     }
 
     /**
-     * Setter for description - A description of this security role
+     * Setter for description - The description name of this tax authority type.
      */
     public void setDescription(String description) {
         this.description = description;
     }
 
     
+    private String taxAuthorityGroup;
+
+    /**
+     * Getter for taxAuthorityGroup - Tax Authority Group
+     */
+    public String getTaxAuthorityGroup() {
+        return this.taxAuthorityGroup;
+    }
+
+    /**
+     * Setter for taxAuthorityGroup - Tax Authority Group
+     */
+    public void setTaxAuthorityGroup(String taxAuthorityGroup) {
+        this.taxAuthorityGroup = taxAuthorityGroup;
+    }
+
+    
 
 
     /**
-     * Returns a JSON string representation of SecurityRoleModel.
+     * Returns a JSON string representation of TaxAuthorityTypeModel.
      */
     @Override
     public String toString() {

@@ -10,20 +10,20 @@ import java.util.Date;
 import java.util.HashMap;
 
 /**
- * Represents a single security role.
+ * FilingFrequency Model
  */
-public class SecurityRoleModel {
+public class FilingFrequencyModel {
     private Integer id;
 
     /**
-     * Getter for id - The unique ID number of this security role.
+     * Getter for id - The unique ID number of this filing frequency.
      */
     public Integer getId() {
         return this.id;
     }
 
     /**
-     * Setter for id - The unique ID number of this security role.
+     * Setter for id - The unique ID number of this filing frequency.
      */
     public void setId(Integer id) {
         this.id = id;
@@ -33,14 +33,14 @@ public class SecurityRoleModel {
     private String description;
 
     /**
-     * Getter for description - A description of this security role
+     * Getter for description - The description name of this filing frequency
      */
     public String getDescription() {
         return this.description;
     }
 
     /**
-     * Setter for description - A description of this security role
+     * Setter for description - The description name of this filing frequency
      */
     public void setDescription(String description) {
         this.description = description;
@@ -50,7 +50,7 @@ public class SecurityRoleModel {
 
 
     /**
-     * Returns a JSON string representation of SecurityRoleModel.
+     * Returns a JSON string representation of FilingFrequencyModel.
      */
     @Override
     public String toString() {
