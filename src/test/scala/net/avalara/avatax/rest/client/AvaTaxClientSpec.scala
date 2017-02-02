@@ -11,10 +11,10 @@ class AvaTaxClientSpec extends fixture.FreeSpec {
   type FixtureParam = AccountInfo
 
   def withFixture(test: OneArgTest) = {
-    val user: String = test.configMap.getRequired[String]("username")
-    val password: String = test.configMap.getRequired[String]("password")
-    val accountId: Int = test.configMap.getRequired[String]("accountid").toInt
-    val accountName: String = test.configMap.getRequired[String]("accountname")
+    val user: String = sys.env("USERNAME")
+    val password: String = sys.env("PASSWORD")
+    val accountId: Int = sys.env("ACCOUNTID").toInt
+    val accountName: String = sys.env("ACCOUNTNAME")
 
     withFixture(test.toNoArgTest(AccountInfo(user, password, accountId, accountName)))
   }

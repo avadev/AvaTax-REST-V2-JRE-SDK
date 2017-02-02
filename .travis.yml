@@ -1,5 +1,5 @@
 language: scala
-script: sbt test -Dusername=$USERNAME -Dpassword=$PASSWORD -Daccountid=$ACCOUNTID -Daccountname=$ACCOUNTNAME
+script: sbt test
 scala:
   - 2.12.1
 jdk:
