@@ -11,10 +11,10 @@ class AvaTaxClientSpec extends fixture.FreeSpec {
   type FixtureParam = AccountInfo
 
   def withFixture(test: OneArgTest) = {
-    val user: String = test.configMap.getRequired[String]("username")
-    val password: String = test.configMap.getRequired[String]("password")
-    val accountId: Int = test.configMap.getRequired[String]("accountid").toInt
-    val accountName: String = test.configMap.getRequired[String]("accountname")
+    val user: String = sys.env("USERNAME")
+    val password: String = sys.env("PASSWORD")
+    val accountId: Int = sys.env("ACCOUNTID").toInt
+    val accountName: String = sys.env("ACCOUNTNAME")
 
     withFixture(test.toNoArgTest(AccountInfo(user, password, accountId, accountName)))
   }
@@ -32,13 +32,7 @@ class AvaTaxClientSpec extends fixture.FreeSpec {
       assert(account.getCreatedDate() != null)
     }
     "successfully validate an address" in { accountInfo =>
-      val info = new AddressInfo()
-      info.setLine1("100 ravine ln ne")
-      info.setCity("Bainbridge Island")
-      info.setRegion("WA")
-      info.setPostalCode("98110")
-      info.setCountry("US")
-      val address = client.withSecurity(accountInfo.username, accountInfo.password).resolveAddress(info)
+      val address = client.withSecurity(accountInfo.username, accountInfo.password).resolveAddress("100 ravine ln ne", "", "", "Bainbridge Island", "WA", "98110", "US", null, null)
       assert(address.getValidatedAddresses.get(0).getLine1 == "100 RAVINE LN NE")
       assert(address.getValidatedAddresses.get(0).getCity == "BAINBRIDGE ISLAND")
       assert(address.getValidatedAddresses.get(0).getRegion == "WA")
@@ -54,7 +48,7 @@ class AvaTaxClientSpec extends fixture.FreeSpec {
       assert(nexusModel.nonEmpty)
     }
     "return a tax code" in { accountInfo =>
-      val taxCodes = client.withSecurity(accountInfo.username, accountInfo.password).queryTaxCodes("", 1, 0, "taxCode DESC").getValue.asScala
+      val taxCodes = client.withSecurity(accountInfo.username, accountInfo.password).queryTaxCodes("", "", 1, 0, "taxCode DESC").getValue.asScala
       assert(taxCodes.head.getTaxCode.equals("TXINCL"))
     }
     "create a transaction" in { accountInfo =>
