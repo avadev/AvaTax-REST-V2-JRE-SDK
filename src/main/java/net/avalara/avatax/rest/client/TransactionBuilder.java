@@ -80,6 +80,26 @@ public class TransactionBuilder {
         return this;
     }
 
+    public TransactionBuilder withDate(Date date) {
+        model.setDate(date);
+        return this;
+    }
+
+    public TransactionBuilder withCustomerUsageType(String customerUsageType) {
+        model.setCustomerUsageType(customerUsageType);
+        return this;
+    }
+
+    public TransactionBuilder withExemptionNo(String exemptionNo) {
+        model.setExemptionNo(exemptionNo);
+        return this;
+    }
+
+    public TransactionBuilder withCode(String code) {
+        model.setCode(code);
+        return this;
+    }
+
     public TransactionBuilder withAddress(TransactionAddressType type, String line1, String line2, String line3, String city, String region, String postalCode, String country) {
         HashMap<TransactionAddressType, AddressInfo> addresses = this.model.getAddresses();
 
@@ -229,6 +249,10 @@ public class TransactionBuilder {
         }
 
         return this.model.getLines().get(this.model.getLines().size() - 1);
+    }
+
+    public CreateTransactionModel getIntermediaryTransactionModel() {
+        return this.model;
     }
 
     public Future<TransactionModel> CreateAsync() {

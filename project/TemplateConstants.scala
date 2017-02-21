@@ -41,6 +41,16 @@ object TemplateConstants {
       |        this.restCallFactory = new RestCallFactory(appName, appVersion, machineName, environmentUrl);
       |    }
       |
+      |    public AvaTaxClient(String appName, String appVersion, String machineName, AvaTaxEnvironment environment, String proxyHost, int proxyPort, String proxySchema) {
+      |        this(appName, appVersion, machineName, environment == AvaTaxEnvironment.Production ? AvaTaxConstants.Production_Url : AvaTaxConstants.Sandbox_Url, proxyHost, proxyPort, proxySchema);
+      |    }
+      |    
+      |    public AvaTaxClient(String appName, String appVersion, String machineName, String environmentUrl, String proxyHost, int proxyPort, String proxySchema) {
+      |        this();
+      |        this.restCallFactory = new RestCallFactory(appName, appVersion, machineName, environmentUrl, proxyHost, proxyPort, proxySchema);
+      |    }
+      |
+      |
       |    public AvaTaxClient withSecurity(String securityHeader) {
       |        this.restCallFactory.addSecurityHeader(securityHeader);
       |

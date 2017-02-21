@@ -3,11 +3,13 @@ package net.avalara.avatax.rest.client;
 import com.google.gson.reflect.TypeToken;
 import net.avalara.avatax.rest.client.serializer.JsonSerializer;
 import org.apache.http.HttpEntity;
+import org.apache.http.HttpHost;
 import org.apache.http.client.methods.*;
 import org.apache.http.entity.ContentType;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
+import org.apache.http.impl.conn.DefaultProxyRoutePlanner;
 import org.apache.http.util.EntityUtils;
 
 import java.util.concurrent.Callable;
@@ -20,8 +22,8 @@ public class RestCall<T> implements Callable<T> {
     private String machineName;
     private TypeToken<T> typeToken;
 
-    public RestCall(String appName, String appVersion, String machineName, String environmentUrl, String method, AvaTaxPath path, Object model, TypeToken<T> typeToken) {
-        this.client = HttpClients.createDefault();
+    private RestCall(String appName, String appVersion, String machineName, String environmentUrl, String method, AvaTaxPath path, Object model, TypeToken<T> typeToken, CloseableHttpClient client) {
+        this.client = client;
         this.appName = appName;
         this.appVersion = appVersion;
         this.machineName = machineName;
@@ -42,11 +44,28 @@ public class RestCall<T> implements Callable<T> {
         buildRequest(this.request);
     }
 
+    public RestCall(String appName, String appVersion, String machineName, String environmentUrl, String method, AvaTaxPath path, Object model, TypeToken<T> typeToken) {
+        this(appName, appVersion, machineName, environmentUrl, method, path, model, typeToken, HttpClients.createDefault());
+    }
+
     public RestCall(String appName, String appVersion, String machineName, String environmentUrl, String header, String method, AvaTaxPath path, Object model, TypeToken<T> typeToken) {
         this(appName, appVersion, machineName, environmentUrl, method, path, model, typeToken);
 
         this.request.setHeader("Authorization", "Basic " + header);
     }
+
+    public RestCall(String appName, String appVersion, String machineName, String environmentUrl, String method, AvaTaxPath path, Object model, TypeToken<T> typeToken, String proxyHost, int proxyPort, String proxySchema) {
+        this(appName, appVersion, machineName, environmentUrl, method, path, model, typeToken, HttpClients.custom()
+                .setRoutePlanner(new DefaultProxyRoutePlanner(new HttpHost(proxyHost, proxyPort, proxySchema)))
+                .build());
+    }
+
+    public RestCall(String appName, String appVersion, String machineName, String environmentUrl, String header, String method, AvaTaxPath path, Object model, TypeToken<T> typeToken, String proxyHost, int proxyPort, String proxySchema) {
+        this(appName, appVersion, machineName, environmentUrl, method, path, model, typeToken, proxyHost, proxyPort, proxySchema);
+
+        this.request.setHeader("Authorization", "Basic " + header);
+    }
+
 
     @Override
     public T call() throws Exception {
