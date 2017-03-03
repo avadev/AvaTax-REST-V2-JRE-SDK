@@ -16,14 +16,14 @@ public class FundingStatusModel {
     private String recipient;
 
     /**
-     * Getter for recipient - Recipient
+     * Getter for recipient - Status of an Avalara Managed Returns funding configuration for a company
      */
     public String getRecipient() {
         return this.recipient;
     }
 
     /**
-     * Setter for recipient - Recipient
+     * Setter for recipient - Status of an Avalara Managed Returns funding configuration for a company
      */
     public void setRecipient(String recipient) {
         this.recipient = recipient;
@@ -33,14 +33,14 @@ public class FundingStatusModel {
     private String documentKey;
 
     /**
-     * Getter for documentKey - DocumentKey
+     * Getter for documentKey - Status of an Avalara Managed Returns funding configuration for a company
      */
     public String getDocumentKey() {
         return this.documentKey;
     }
 
     /**
-     * Setter for documentKey - DocumentKey
+     * Setter for documentKey - Status of an Avalara Managed Returns funding configuration for a company
      */
     public void setDocumentKey(String documentKey) {
         this.documentKey = documentKey;
@@ -50,14 +50,14 @@ public class FundingStatusModel {
     private String errorMessage;
 
     /**
-     * Getter for errorMessage - ErrorMessage
+     * Getter for errorMessage - Status of an Avalara Managed Returns funding configuration for a company
      */
     public String getErrorMessage() {
         return this.errorMessage;
     }
 
     /**
-     * Setter for errorMessage - ErrorMessage
+     * Setter for errorMessage - Status of an Avalara Managed Returns funding configuration for a company
      */
     public void setErrorMessage(String errorMessage) {
         this.errorMessage = errorMessage;
@@ -67,14 +67,14 @@ public class FundingStatusModel {
     private Date lastActivated;
 
     /**
-     * Getter for lastActivated - LastActivated
+     * Getter for lastActivated - Status of an Avalara Managed Returns funding configuration for a company
      */
     public Date getLastActivated() {
         return this.lastActivated;
     }
 
     /**
-     * Setter for lastActivated - LastActivated
+     * Setter for lastActivated - Status of an Avalara Managed Returns funding configuration for a company
      */
     public void setLastActivated(Date lastActivated) {
         this.lastActivated = lastActivated;
@@ -84,14 +84,14 @@ public class FundingStatusModel {
     private String domain;
 
     /**
-     * Getter for domain - Domain
+     * Getter for domain - Status of an Avalara Managed Returns funding configuration for a company
      */
     public String getDomain() {
         return this.domain;
     }
 
     /**
-     * Setter for domain - Domain
+     * Setter for domain - Status of an Avalara Managed Returns funding configuration for a company
      */
     public void setDomain(String domain) {
         this.domain = domain;
@@ -101,14 +101,14 @@ public class FundingStatusModel {
     private String documentName;
 
     /**
-     * Getter for documentName - DocumentName
+     * Getter for documentName - Status of an Avalara Managed Returns funding configuration for a company
      */
     public String getDocumentName() {
         return this.documentName;
     }
 
     /**
-     * Setter for documentName - DocumentName
+     * Setter for documentName - Status of an Avalara Managed Returns funding configuration for a company
      */
     public void setDocumentName(String documentName) {
         this.documentName = documentName;
@@ -118,14 +118,14 @@ public class FundingStatusModel {
     private Date lastSigned;
 
     /**
-     * Getter for lastSigned - LastSigned
+     * Getter for lastSigned - Status of an Avalara Managed Returns funding configuration for a company
      */
     public Date getLastSigned() {
         return this.lastSigned;
     }
 
     /**
-     * Setter for lastSigned - LastSigned
+     * Setter for lastSigned - Status of an Avalara Managed Returns funding configuration for a company
      */
     public void setLastSigned(Date lastSigned) {
         this.lastSigned = lastSigned;
@@ -135,14 +135,14 @@ public class FundingStatusModel {
     private FundingESignMethodReturn methodReturn;
 
     /**
-     * Getter for methodReturn - MethodReturn
+     * Getter for methodReturn - Status of an Avalara Managed Returns funding configuration for a company
      */
     public FundingESignMethodReturn getMethodReturn() {
         return this.methodReturn;
     }
 
     /**
-     * Setter for methodReturn - MethodReturn
+     * Setter for methodReturn - Status of an Avalara Managed Returns funding configuration for a company
      */
     public void setMethodReturn(FundingESignMethodReturn methodReturn) {
         this.methodReturn = methodReturn;
@@ -152,14 +152,14 @@ public class FundingStatusModel {
     private String status;
 
     /**
-     * Getter for status - Status
+     * Getter for status - Status of an Avalara Managed Returns funding configuration for a company
      */
     public String getStatus() {
         return this.status;
     }
 
     /**
-     * Setter for status - Status
+     * Setter for status - Status of an Avalara Managed Returns funding configuration for a company
      */
     public void setStatus(String status) {
         this.status = status;
@@ -169,14 +169,14 @@ public class FundingStatusModel {
     private String documentType;
 
     /**
-     * Getter for documentType - DocumentType
+     * Getter for documentType - Status of an Avalara Managed Returns funding configuration for a company
      */
     public String getDocumentType() {
         return this.documentType;
     }
 
     /**
-     * Setter for documentType - DocumentType
+     * Setter for documentType - Status of an Avalara Managed Returns funding configuration for a company
      */
     public void setDocumentType(String documentType) {
         this.documentType = documentType;
@@ -186,14 +186,14 @@ public class FundingStatusModel {
     private Integer subledgerProfileID;
 
     /**
-     * Getter for subledgerProfileID - SubledgerProfileID
+     * Getter for subledgerProfileID - Status of an Avalara Managed Returns funding configuration for a company
      */
     public Integer getSubledgerProfileID() {
         return this.subledgerProfileID;
     }
 
     /**
-     * Setter for subledgerProfileID - SubledgerProfileID
+     * Setter for subledgerProfileID - Status of an Avalara Managed Returns funding configuration for a company
      */
     public void setSubledgerProfileID(Integer subledgerProfileID) {
         this.subledgerProfileID = subledgerProfileID;
@@ -203,14 +203,14 @@ public class FundingStatusModel {
     private String sender;
 
     /**
-     * Getter for sender - Sender
+     * Getter for sender - Status of an Avalara Managed Returns funding configuration for a company
      */
     public String getSender() {
         return this.sender;
     }
 
     /**
-     * Setter for sender - Sender
+     * Setter for sender - Status of an Avalara Managed Returns funding configuration for a company
      */
     public void setSender(String sender) {
         this.sender = sender;
@@ -220,14 +220,14 @@ public class FundingStatusModel {
     private Long requestId;
 
     /**
-     * Getter for requestId - The unique ID number of this funding request
+     * Getter for requestId - Status of an Avalara Managed Returns funding configuration for a company
      */
     public Long getRequestId() {
         return this.requestId;
     }
 
     /**
-     * Setter for requestId - The unique ID number of this funding request
+     * Setter for requestId - Status of an Avalara Managed Returns funding configuration for a company
      */
     public void setRequestId(Long requestId) {
         this.requestId = requestId;
@@ -237,14 +237,14 @@ public class FundingStatusModel {
     private Long templateRequestId;
 
     /**
-     * Getter for templateRequestId - TemplateRequestId
+     * Getter for templateRequestId - Status of an Avalara Managed Returns funding configuration for a company
      */
     public Long getTemplateRequestId() {
         return this.templateRequestId;
     }
 
     /**
-     * Setter for templateRequestId - TemplateRequestId
+     * Setter for templateRequestId - Status of an Avalara Managed Returns funding configuration for a company
      */
     public void setTemplateRequestId(Long templateRequestId) {
         this.templateRequestId = templateRequestId;
@@ -254,14 +254,14 @@ public class FundingStatusModel {
     private Date lastPolled;
 
     /**
-     * Getter for lastPolled - LastPolled
+     * Getter for lastPolled - Status of an Avalara Managed Returns funding configuration for a company
      */
     public Date getLastPolled() {
         return this.lastPolled;
     }
 
     /**
-     * Setter for lastPolled - LastPolled
+     * Setter for lastPolled - Status of an Avalara Managed Returns funding configuration for a company
      */
     public void setLastPolled(Date lastPolled) {
         this.lastPolled = lastPolled;
@@ -271,14 +271,14 @@ public class FundingStatusModel {
     private String companyID;
 
     /**
-     * Getter for companyID - CompanyID
+     * Getter for companyID - Status of an Avalara Managed Returns funding configuration for a company
      */
     public String getCompanyID() {
         return this.companyID;
     }
 
     /**
-     * Setter for companyID - CompanyID
+     * Setter for companyID - Status of an Avalara Managed Returns funding configuration for a company
      */
     public void setCompanyID(String companyID) {
         this.companyID = companyID;

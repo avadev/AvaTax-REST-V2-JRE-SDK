@@ -16,14 +16,14 @@ public class TaxAuthorityTypeModel {
     private Integer id;
 
     /**
-     * Getter for id - The unique ID number of this tax Authority customer type.
+     * Getter for id - Tax Authority Type Model
      */
     public Integer getId() {
         return this.id;
     }
 
     /**
-     * Setter for id - The unique ID number of this tax Authority customer type.
+     * Setter for id - Tax Authority Type Model
      */
     public void setId(Integer id) {
         this.id = id;
@@ -33,14 +33,14 @@ public class TaxAuthorityTypeModel {
     private String description;
 
     /**
-     * Getter for description - The description name of this tax authority type.
+     * Getter for description - Tax Authority Type Model
      */
     public String getDescription() {
         return this.description;
     }
 
     /**
-     * Setter for description - The description name of this tax authority type.
+     * Setter for description - Tax Authority Type Model
      */
     public void setDescription(String description) {
         this.description = description;
@@ -50,14 +50,14 @@ public class TaxAuthorityTypeModel {
     private String taxAuthorityGroup;
 
     /**
-     * Getter for taxAuthorityGroup - Tax Authority Group
+     * Getter for taxAuthorityGroup - Tax Authority Type Model
      */
     public String getTaxAuthorityGroup() {
         return this.taxAuthorityGroup;
     }
 
     /**
-     * Setter for taxAuthorityGroup - Tax Authority Group
+     * Setter for taxAuthorityGroup - Tax Authority Type Model
      */
     public void setTaxAuthorityGroup(String taxAuthorityGroup) {
         this.taxAuthorityGroup = taxAuthorityGroup;

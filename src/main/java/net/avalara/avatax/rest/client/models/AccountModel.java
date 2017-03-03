@@ -16,14 +16,14 @@ public class AccountModel {
     private String name;
 
     /**
-     * Getter for name - The name of this account.
+     * Getter for name - An AvaTax account.
      */
     public String getName() {
         return this.name;
     }
 
     /**
-     * Setter for name - The name of this account.
+     * Setter for name - An AvaTax account.
      */
     public void setName(String name) {
         this.name = name;
@@ -33,14 +33,14 @@ public class AccountModel {
     private Date endDate;
 
     /**
-     * Getter for endDate - If this account has been closed, this is the last date the account was open.
+     * Getter for endDate - An AvaTax account.
      */
     public Date getEndDate() {
         return this.endDate;
     }
 
     /**
-     * Setter for endDate - If this account has been closed, this is the last date the account was open.
+     * Setter for endDate - An AvaTax account.
      */
     public void setEndDate(Date endDate) {
         this.endDate = endDate;
@@ -50,14 +50,14 @@ public class AccountModel {
     private ArrayList<UserModel> users;
 
     /**
-     * Getter for users - Optional: A list of all the users belonging to this account.  To fetch this list, add the query string "?$include=Users" to your URL.
+     * Getter for users - An AvaTax account.
      */
     public ArrayList<UserModel> getUsers() {
         return this.users;
     }
 
     /**
-     * Setter for users - Optional: A list of all the users belonging to this account.  To fetch this list, add the query string "?$include=Users" to your URL.
+     * Setter for users - An AvaTax account.
      */
     public void setUsers(ArrayList<UserModel> users) {
         this.users = users;
@@ -67,14 +67,14 @@ public class AccountModel {
     private Date modifiedDate;
 
     /**
-     * Getter for modifiedDate - The date/time when this record was last modified.
+     * Getter for modifiedDate - An AvaTax account.
      */
     public Date getModifiedDate() {
         return this.modifiedDate;
     }
 
     /**
-     * Setter for modifiedDate - The date/time when this record was last modified.
+     * Setter for modifiedDate - An AvaTax account.
      */
     public void setModifiedDate(Date modifiedDate) {
         this.modifiedDate = modifiedDate;
@@ -84,14 +84,14 @@ public class AccountModel {
     private AccountStatusId accountStatusId;
 
     /**
-     * Getter for accountStatusId - The current status of this account.
+     * Getter for accountStatusId - An AvaTax account.
      */
     public AccountStatusId getAccountStatusId() {
         return this.accountStatusId;
     }
 
     /**
-     * Setter for accountStatusId - The current status of this account.
+     * Setter for accountStatusId - An AvaTax account.
      */
     public void setAccountStatusId(AccountStatusId accountStatusId) {
         this.accountStatusId = accountStatusId;
@@ -101,14 +101,14 @@ public class AccountModel {
     private Integer id;
 
     /**
-     * Getter for id - The unique ID number assigned to this account.
+     * Getter for id - An AvaTax account.
      */
     public Integer getId() {
         return this.id;
     }
 
     /**
-     * Setter for id - The unique ID number assigned to this account.
+     * Setter for id - An AvaTax account.
      */
     public void setId(Integer id) {
         this.id = id;
@@ -118,14 +118,14 @@ public class AccountModel {
     private Integer modifiedUserId;
 
     /**
-     * Getter for modifiedUserId - The user ID of the user who last modified this record.
+     * Getter for modifiedUserId - An AvaTax account.
      */
     public Integer getModifiedUserId() {
         return this.modifiedUserId;
     }
 
     /**
-     * Setter for modifiedUserId - The user ID of the user who last modified this record.
+     * Setter for modifiedUserId - An AvaTax account.
      */
     public void setModifiedUserId(Integer modifiedUserId) {
         this.modifiedUserId = modifiedUserId;
@@ -135,14 +135,14 @@ public class AccountModel {
     private Date effectiveDate;
 
     /**
-     * Getter for effectiveDate - The earliest date on which this account may be used.
+     * Getter for effectiveDate - An AvaTax account.
      */
     public Date getEffectiveDate() {
         return this.effectiveDate;
     }
 
     /**
-     * Setter for effectiveDate - The earliest date on which this account may be used.
+     * Setter for effectiveDate - An AvaTax account.
      */
     public void setEffectiveDate(Date effectiveDate) {
         this.effectiveDate = effectiveDate;
@@ -152,14 +152,14 @@ public class AccountModel {
     private Integer createdUserId;
 
     /**
-     * Getter for createdUserId - The User ID of the user who created this record.
+     * Getter for createdUserId - An AvaTax account.
      */
     public Integer getCreatedUserId() {
         return this.createdUserId;
     }
 
     /**
-     * Setter for createdUserId - The User ID of the user who created this record.
+     * Setter for createdUserId - An AvaTax account.
      */
     public void setCreatedUserId(Integer createdUserId) {
         this.createdUserId = createdUserId;
@@ -169,14 +169,14 @@ public class AccountModel {
     private ArrayList<SubscriptionModel> subscriptions;
 
     /**
-     * Getter for subscriptions - Optional: A list of subscriptions granted to this account.  To fetch this list, add the query string "?$include=Subscriptions" to your URL.
+     * Getter for subscriptions - An AvaTax account.
      */
     public ArrayList<SubscriptionModel> getSubscriptions() {
         return this.subscriptions;
     }
 
     /**
-     * Setter for subscriptions - Optional: A list of subscriptions granted to this account.  To fetch this list, add the query string "?$include=Subscriptions" to your URL.
+     * Setter for subscriptions - An AvaTax account.
      */
     public void setSubscriptions(ArrayList<SubscriptionModel> subscriptions) {
         this.subscriptions = subscriptions;
@@ -186,14 +186,14 @@ public class AccountModel {
     private Date createdDate;
 
     /**
-     * Getter for createdDate - The date when this record was created.
+     * Getter for createdDate - An AvaTax account.
      */
     public Date getCreatedDate() {
         return this.createdDate;
     }
 
     /**
-     * Setter for createdDate - The date when this record was created.
+     * Setter for createdDate - An AvaTax account.
      */
     public void setCreatedDate(Date createdDate) {
         this.createdDate = createdDate;

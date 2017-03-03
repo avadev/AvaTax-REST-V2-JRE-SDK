@@ -16,14 +16,14 @@ public class AddressResolutionModel {
     private CoordinateInfo coordinates;
 
     /**
-     * Getter for coordinates - The geospatial coordinates of this address
+     * Getter for coordinates - Address Resolution Model
      */
     public CoordinateInfo getCoordinates() {
         return this.coordinates;
     }
 
     /**
-     * Setter for coordinates - The geospatial coordinates of this address
+     * Setter for coordinates - Address Resolution Model
      */
     public void setCoordinates(CoordinateInfo coordinates) {
         this.coordinates = coordinates;
@@ -33,33 +33,33 @@ public class AddressResolutionModel {
     private ArrayList<AvaTaxMessage> messages;
 
     /**
-     * Getter for messages - List of informational and warning messages regarding this address
+     * Getter for messages - Address Resolution Model
      */
     public ArrayList<AvaTaxMessage> getMessages() {
         return this.messages;
     }
 
     /**
-     * Setter for messages - List of informational and warning messages regarding this address
+     * Setter for messages - Address Resolution Model
      */
     public void setMessages(ArrayList<AvaTaxMessage> messages) {
         this.messages = messages;
     }
 
     
-    private ArrayList<AddressInfo> validatedAddresses;
+    private ArrayList<ValidatedAddressInfo> validatedAddresses;
 
     /**
-     * Getter for validatedAddresses - The validated address or addresses
+     * Getter for validatedAddresses - Address Resolution Model
      */
-    public ArrayList<AddressInfo> getValidatedAddresses() {
+    public ArrayList<ValidatedAddressInfo> getValidatedAddresses() {
         return this.validatedAddresses;
     }
 
     /**
-     * Setter for validatedAddresses - The validated address or addresses
+     * Setter for validatedAddresses - Address Resolution Model
      */
-    public void setValidatedAddresses(ArrayList<AddressInfo> validatedAddresses) {
+    public void setValidatedAddresses(ArrayList<ValidatedAddressInfo> validatedAddresses) {
         this.validatedAddresses = validatedAddresses;
     }
 
@@ -67,14 +67,14 @@ public class AddressResolutionModel {
     private ArrayList<TaxAuthorityInfo> taxAuthorities;
 
     /**
-     * Getter for taxAuthorities - List of informational and warning messages regarding this address
+     * Getter for taxAuthorities - Address Resolution Model
      */
     public ArrayList<TaxAuthorityInfo> getTaxAuthorities() {
         return this.taxAuthorities;
     }
 
     /**
-     * Setter for taxAuthorities - List of informational and warning messages regarding this address
+     * Setter for taxAuthorities - Address Resolution Model
      */
     public void setTaxAuthorities(ArrayList<TaxAuthorityInfo> taxAuthorities) {
         this.taxAuthorities = taxAuthorities;
@@ -84,14 +84,14 @@ public class AddressResolutionModel {
     private ResolutionQuality resolutionQuality;
 
     /**
-     * Getter for resolutionQuality - The resolution quality of the geospatial coordinates
+     * Getter for resolutionQuality - Address Resolution Model
      */
     public ResolutionQuality getResolutionQuality() {
         return this.resolutionQuality;
     }
 
     /**
-     * Setter for resolutionQuality - The resolution quality of the geospatial coordinates
+     * Setter for resolutionQuality - Address Resolution Model
      */
     public void setResolutionQuality(ResolutionQuality resolutionQuality) {
         this.resolutionQuality = resolutionQuality;
@@ -101,14 +101,14 @@ public class AddressResolutionModel {
     private AddressInfo address;
 
     /**
-     * Getter for address - The original address
+     * Getter for address - Address Resolution Model
      */
     public AddressInfo getAddress() {
         return this.address;
     }
 
     /**
-     * Setter for address - The original address
+     * Setter for address - Address Resolution Model
      */
     public void setAddress(AddressInfo address) {
         this.address = address;

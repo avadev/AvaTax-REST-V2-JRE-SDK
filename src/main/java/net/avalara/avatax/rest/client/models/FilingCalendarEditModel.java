@@ -16,14 +16,14 @@ public class FilingCalendarEditModel {
     private String fieldName;
 
     /**
-     * Getter for fieldName - The name of the field to be modified.
+     * Getter for fieldName - An edit to be made on a filing calendar.
      */
     public String getFieldName() {
         return this.fieldName;
     }
 
     /**
-     * Setter for fieldName - The name of the field to be modified.
+     * Setter for fieldName - An edit to be made on a filing calendar.
      */
     public void setFieldName(String fieldName) {
         this.fieldName = fieldName;
@@ -33,14 +33,14 @@ public class FilingCalendarEditModel {
     private Integer questionId;
 
     /**
-     * Getter for questionId - The unique ID of the filing calendar question. "Filing calendar question" is the wording displayed to users for a given field.
+     * Getter for questionId - An edit to be made on a filing calendar.
      */
     public Integer getQuestionId() {
         return this.questionId;
     }
 
     /**
-     * Setter for questionId - The unique ID of the filing calendar question. "Filing calendar question" is the wording displayed to users for a given field.
+     * Setter for questionId - An edit to be made on a filing calendar.
      */
     public void setQuestionId(Integer questionId) {
         this.questionId = questionId;
@@ -50,14 +50,14 @@ public class FilingCalendarEditModel {
     private HashMap<String, String> oldValue;
 
     /**
-     * Getter for oldValue - The current value of the field.
+     * Getter for oldValue - An edit to be made on a filing calendar.
      */
     public HashMap<String, String> getOldValue() {
         return this.oldValue;
     }
 
     /**
-     * Setter for oldValue - The current value of the field.
+     * Setter for oldValue - An edit to be made on a filing calendar.
      */
     public void setOldValue(HashMap<String, String> oldValue) {
         this.oldValue = oldValue;
@@ -67,14 +67,14 @@ public class FilingCalendarEditModel {
     private HashMap<String, String> newValue;
 
     /**
-     * Getter for newValue - The new/proposed value of the field.
+     * Getter for newValue - An edit to be made on a filing calendar.
      */
     public HashMap<String, String> getNewValue() {
         return this.newValue;
     }
 
     /**
-     * Setter for newValue - The new/proposed value of the field.
+     * Setter for newValue - An edit to be made on a filing calendar.
      */
     public void setNewValue(HashMap<String, String> newValue) {
         this.newValue = newValue;

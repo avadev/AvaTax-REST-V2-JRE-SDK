@@ -16,14 +16,14 @@ public class NoticeCommentModel {
     private String taxNoticeFileName;
 
     /**
-     * Getter for taxNoticeFileName - TaxNoticeFileName
+     * Getter for taxNoticeFileName - Represents communication between Avalara and the company regarding the processing of a tax notice.
      */
     public String getTaxNoticeFileName() {
         return this.taxNoticeFileName;
     }
 
     /**
-     * Setter for taxNoticeFileName - TaxNoticeFileName
+     * Setter for taxNoticeFileName - Represents communication between Avalara and the company regarding the processing of a tax notice.
      */
     public void setTaxNoticeFileName(String taxNoticeFileName) {
         this.taxNoticeFileName = taxNoticeFileName;
@@ -33,14 +33,14 @@ public class NoticeCommentModel {
     private String commentLink;
 
     /**
-     * Getter for commentLink - TaxNoticeCommentLink
+     * Getter for commentLink - Represents communication between Avalara and the company regarding the processing of a tax notice.
      */
     public String getCommentLink() {
         return this.commentLink;
     }
 
     /**
-     * Setter for commentLink - TaxNoticeCommentLink
+     * Setter for commentLink - Represents communication between Avalara and the company regarding the processing of a tax notice.
      */
     public void setCommentLink(String commentLink) {
         this.commentLink = commentLink;
@@ -50,14 +50,14 @@ public class NoticeCommentModel {
     private Date modifiedDate;
 
     /**
-     * Getter for modifiedDate - The date/time when this record was last modified.
+     * Getter for modifiedDate - Represents communication between Avalara and the company regarding the processing of a tax notice.
      */
     public Date getModifiedDate() {
         return this.modifiedDate;
     }
 
     /**
-     * Setter for modifiedDate - The date/time when this record was last modified.
+     * Setter for modifiedDate - Represents communication between Avalara and the company regarding the processing of a tax notice.
      */
     public void setModifiedDate(Date modifiedDate) {
         this.modifiedDate = modifiedDate;
@@ -67,14 +67,14 @@ public class NoticeCommentModel {
     private Integer commentUserId;
 
     /**
-     * Getter for commentUserId - TaxNoticeCommentUserId
+     * Getter for commentUserId - Represents communication between Avalara and the company regarding the processing of a tax notice.
      */
     public Integer getCommentUserId() {
         return this.commentUserId;
     }
 
     /**
-     * Setter for commentUserId - TaxNoticeCommentUserId
+     * Setter for commentUserId - Represents communication between Avalara and the company regarding the processing of a tax notice.
      */
     public void setCommentUserId(Integer commentUserId) {
         this.commentUserId = commentUserId;
@@ -84,14 +84,14 @@ public class NoticeCommentModel {
     private Integer commentTypeId;
 
     /**
-     * Getter for commentTypeId - taxNoticeCommentTypeId
+     * Getter for commentTypeId - Represents communication between Avalara and the company regarding the processing of a tax notice.
      */
     public Integer getCommentTypeId() {
         return this.commentTypeId;
     }
 
     /**
-     * Setter for commentTypeId - taxNoticeCommentTypeId
+     * Setter for commentTypeId - Represents communication between Avalara and the company regarding the processing of a tax notice.
      */
     public void setCommentTypeId(Integer commentTypeId) {
         this.commentTypeId = commentTypeId;
@@ -101,14 +101,14 @@ public class NoticeCommentModel {
     private String commentUserName;
 
     /**
-     * Getter for commentUserName - TaxNoticeCommentUserName
+     * Getter for commentUserName - Represents communication between Avalara and the company regarding the processing of a tax notice.
      */
     public String getCommentUserName() {
         return this.commentUserName;
     }
 
     /**
-     * Setter for commentUserName - TaxNoticeCommentUserName
+     * Setter for commentUserName - Represents communication between Avalara and the company regarding the processing of a tax notice.
      */
     public void setCommentUserName(String commentUserName) {
         this.commentUserName = commentUserName;
@@ -118,14 +118,14 @@ public class NoticeCommentModel {
     private Integer noticeId;
 
     /**
-     * Getter for noticeId - 
+     * Getter for noticeId - Represents communication between Avalara and the company regarding the processing of a tax notice.
      */
     public Integer getNoticeId() {
         return this.noticeId;
     }
 
     /**
-     * Setter for noticeId - 
+     * Setter for noticeId - Represents communication between Avalara and the company regarding the processing of a tax notice.
      */
     public void setNoticeId(Integer noticeId) {
         this.noticeId = noticeId;
@@ -135,14 +135,14 @@ public class NoticeCommentModel {
     private Integer id;
 
     /**
-     * Getter for id - The unique ID number of this notice.
+     * Getter for id - Represents communication between Avalara and the company regarding the processing of a tax notice.
      */
     public Integer getId() {
         return this.id;
     }
 
     /**
-     * Setter for id - The unique ID number of this notice.
+     * Setter for id - Represents communication between Avalara and the company regarding the processing of a tax notice.
      */
     public void setId(Integer id) {
         this.id = id;
@@ -152,14 +152,14 @@ public class NoticeCommentModel {
     private Date date;
 
     /**
-     * Getter for date - 
+     * Getter for date - Represents communication between Avalara and the company regarding the processing of a tax notice.
      */
     public Date getDate() {
         return this.date;
     }
 
     /**
-     * Setter for date - 
+     * Setter for date - Represents communication between Avalara and the company regarding the processing of a tax notice.
      */
     public void setDate(Date date) {
         this.date = date;
@@ -169,14 +169,14 @@ public class NoticeCommentModel {
     private String comment;
 
     /**
-     * Getter for comment - TaxNoticeComment
+     * Getter for comment - Represents communication between Avalara and the company regarding the processing of a tax notice.
      */
     public String getComment() {
         return this.comment;
     }
 
     /**
-     * Setter for comment - TaxNoticeComment
+     * Setter for comment - Represents communication between Avalara and the company regarding the processing of a tax notice.
      */
     public void setComment(String comment) {
         this.comment = comment;
@@ -186,14 +186,14 @@ public class NoticeCommentModel {
     private Integer modifiedUserId;
 
     /**
-     * Getter for modifiedUserId - The user ID of the user who last modified this record.
+     * Getter for modifiedUserId - Represents communication between Avalara and the company regarding the processing of a tax notice.
      */
     public Integer getModifiedUserId() {
         return this.modifiedUserId;
     }
 
     /**
-     * Setter for modifiedUserId - The user ID of the user who last modified this record.
+     * Setter for modifiedUserId - Represents communication between Avalara and the company regarding the processing of a tax notice.
      */
     public void setModifiedUserId(Integer modifiedUserId) {
         this.modifiedUserId = modifiedUserId;
@@ -203,14 +203,14 @@ public class NoticeCommentModel {
     private String commentType;
 
     /**
-     * Getter for commentType - taxNoticeCommentType
+     * Getter for commentType - Represents communication between Avalara and the company regarding the processing of a tax notice.
      */
     public String getCommentType() {
         return this.commentType;
     }
 
     /**
-     * Setter for commentType - taxNoticeCommentType
+     * Setter for commentType - Represents communication between Avalara and the company regarding the processing of a tax notice.
      */
     public void setCommentType(String commentType) {
         this.commentType = commentType;
@@ -220,14 +220,14 @@ public class NoticeCommentModel {
     private Integer resourceFileId;
 
     /**
-     * Getter for resourceFileId - resourceFileId
+     * Getter for resourceFileId - Represents communication between Avalara and the company regarding the processing of a tax notice.
      */
     public Integer getResourceFileId() {
         return this.resourceFileId;
     }
 
     /**
-     * Setter for resourceFileId - resourceFileId
+     * Setter for resourceFileId - Represents communication between Avalara and the company regarding the processing of a tax notice.
      */
     public void setResourceFileId(Integer resourceFileId) {
         this.resourceFileId = resourceFileId;

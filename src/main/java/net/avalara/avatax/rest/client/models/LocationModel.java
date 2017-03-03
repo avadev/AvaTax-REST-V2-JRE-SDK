@@ -11,20 +11,22 @@ import java.util.HashMap;
 
 /**
  * A location where this company does business.
-            Some jurisdictions may require you to list all locations where your company does business.
+Some jurisdictions may require you to list all locations where your company does business.
  */
 public class LocationModel {
     private String city;
 
     /**
-     * Getter for city - The city of the physical address of this location.
+     * Getter for city - A location where this company does business.
+Some jurisdictions may require you to list all locations where your company does business.
      */
     public String getCity() {
         return this.city;
     }
 
     /**
-     * Setter for city - The city of the physical address of this location.
+     * Setter for city - A location where this company does business.
+Some jurisdictions may require you to list all locations where your company does business.
      */
     public void setCity(String city) {
         this.city = city;
@@ -34,14 +36,16 @@ public class LocationModel {
     private Date endDate;
 
     /**
-     * Getter for endDate - If this place of business has closed, the date when this location closed business.
+     * Getter for endDate - A location where this company does business.
+Some jurisdictions may require you to list all locations where your company does business.
      */
     public Date getEndDate() {
         return this.endDate;
     }
 
     /**
-     * Setter for endDate - If this place of business has closed, the date when this location closed business.
+     * Setter for endDate - A location where this company does business.
+Some jurisdictions may require you to list all locations where your company does business.
      */
     public void setEndDate(Date endDate) {
         this.endDate = endDate;
@@ -51,14 +55,16 @@ public class LocationModel {
     private String dbaName;
 
     /**
-     * Getter for dbaName - If this location has a different business name from its legal entity name, specify the "Doing Business As" name for this location.
+     * Getter for dbaName - A location where this company does business.
+Some jurisdictions may require you to list all locations where your company does business.
      */
     public String getDbaName() {
         return this.dbaName;
     }
 
     /**
-     * Setter for dbaName - If this location has a different business name from its legal entity name, specify the "Doing Business As" name for this location.
+     * Setter for dbaName - A location where this company does business.
+Some jurisdictions may require you to list all locations where your company does business.
      */
     public void setDbaName(String dbaName) {
         this.dbaName = dbaName;
@@ -68,14 +74,16 @@ public class LocationModel {
     private String description;
 
     /**
-     * Getter for description - A friendly name for this location.
+     * Getter for description - A location where this company does business.
+Some jurisdictions may require you to list all locations where your company does business.
      */
     public String getDescription() {
         return this.description;
     }
 
     /**
-     * Setter for description - A friendly name for this location.
+     * Setter for description - A location where this company does business.
+Some jurisdictions may require you to list all locations where your company does business.
      */
     public void setDescription(String description) {
         this.description = description;
@@ -85,14 +93,16 @@ public class LocationModel {
     private Date modifiedDate;
 
     /**
-     * Getter for modifiedDate - The date/time when this record was last modified.
+     * Getter for modifiedDate - A location where this company does business.
+Some jurisdictions may require you to list all locations where your company does business.
      */
     public Date getModifiedDate() {
         return this.modifiedDate;
     }
 
     /**
-     * Setter for modifiedDate - The date/time when this record was last modified.
+     * Setter for modifiedDate - A location where this company does business.
+Some jurisdictions may require you to list all locations where your company does business.
      */
     public void setModifiedDate(Date modifiedDate) {
         this.modifiedDate = modifiedDate;
@@ -102,14 +112,16 @@ public class LocationModel {
     private String locationCode;
 
     /**
-     * Getter for locationCode - A code that identifies this location.  Must be unique within your company.
+     * Getter for locationCode - A location where this company does business.
+Some jurisdictions may require you to list all locations where your company does business.
      */
     public String getLocationCode() {
         return this.locationCode;
     }
 
     /**
-     * Setter for locationCode - A code that identifies this location.  Must be unique within your company.
+     * Setter for locationCode - A location where this company does business.
+Some jurisdictions may require you to list all locations where your company does business.
      */
     public void setLocationCode(String locationCode) {
         this.locationCode = locationCode;
@@ -119,14 +131,16 @@ public class LocationModel {
     private String country;
 
     /**
-     * Getter for country - The two character ISO-3166 country code of the physical address of this location.
+     * Getter for country - A location where this company does business.
+Some jurisdictions may require you to list all locations where your company does business.
      */
     public String getCountry() {
         return this.country;
     }
 
     /**
-     * Setter for country - The two character ISO-3166 country code of the physical address of this location.
+     * Setter for country - A location where this company does business.
+Some jurisdictions may require you to list all locations where your company does business.
      */
     public void setCountry(String country) {
         this.country = country;
@@ -136,14 +150,16 @@ public class LocationModel {
     private AddressTypeId addressTypeId;
 
     /**
-     * Getter for addressTypeId - Indicates whether this location is a physical place of business or a temporary salesperson location.
+     * Getter for addressTypeId - A location where this company does business.
+Some jurisdictions may require you to list all locations where your company does business.
      */
     public AddressTypeId getAddressTypeId() {
         return this.addressTypeId;
     }
 
     /**
-     * Setter for addressTypeId - Indicates whether this location is a physical place of business or a temporary salesperson location.
+     * Setter for addressTypeId - A location where this company does business.
+Some jurisdictions may require you to list all locations where your company does business.
      */
     public void setAddressTypeId(AddressTypeId addressTypeId) {
         this.addressTypeId = addressTypeId;
@@ -153,14 +169,16 @@ public class LocationModel {
     private String line1;
 
     /**
-     * Getter for line1 - The first line of the physical address of this location.
+     * Getter for line1 - A location where this company does business.
+Some jurisdictions may require you to list all locations where your company does business.
      */
     public String getLine1() {
         return this.line1;
     }
 
     /**
-     * Setter for line1 - The first line of the physical address of this location.
+     * Setter for line1 - A location where this company does business.
+Some jurisdictions may require you to list all locations where your company does business.
      */
     public void setLine1(String line1) {
         this.line1 = line1;
@@ -170,14 +188,16 @@ public class LocationModel {
     private String outletName;
 
     /**
-     * Getter for outletName - A friendly name for this location.
+     * Getter for outletName - A location where this company does business.
+Some jurisdictions may require you to list all locations where your company does business.
      */
     public String getOutletName() {
         return this.outletName;
     }
 
     /**
-     * Setter for outletName - A friendly name for this location.
+     * Setter for outletName - A location where this company does business.
+Some jurisdictions may require you to list all locations where your company does business.
      */
     public void setOutletName(String outletName) {
         this.outletName = outletName;
@@ -187,14 +207,16 @@ public class LocationModel {
     private String postalCode;
 
     /**
-     * Getter for postalCode - The postal code or zip code of the physical address of this location.
+     * Getter for postalCode - A location where this company does business.
+Some jurisdictions may require you to list all locations where your company does business.
      */
     public String getPostalCode() {
         return this.postalCode;
     }
 
     /**
-     * Setter for postalCode - The postal code or zip code of the physical address of this location.
+     * Setter for postalCode - A location where this company does business.
+Some jurisdictions may require you to list all locations where your company does business.
      */
     public void setPostalCode(String postalCode) {
         this.postalCode = postalCode;
@@ -204,14 +226,16 @@ public class LocationModel {
     private String county;
 
     /**
-     * Getter for county - The county name of the physical address of this location.  Not required.
+     * Getter for county - A location where this company does business.
+Some jurisdictions may require you to list all locations where your company does business.
      */
     public String getCounty() {
         return this.county;
     }
 
     /**
-     * Setter for county - The county name of the physical address of this location.  Not required.
+     * Setter for county - A location where this company does business.
+Some jurisdictions may require you to list all locations where your company does business.
      */
     public void setCounty(String county) {
         this.county = county;
@@ -221,14 +245,16 @@ public class LocationModel {
     private AddressCategoryId addressCategoryId;
 
     /**
-     * Getter for addressCategoryId - Indicates the type of place of business represented by this location.
+     * Getter for addressCategoryId - A location where this company does business.
+Some jurisdictions may require you to list all locations where your company does business.
      */
     public AddressCategoryId getAddressCategoryId() {
         return this.addressCategoryId;
     }
 
     /**
-     * Setter for addressCategoryId - Indicates the type of place of business represented by this location.
+     * Setter for addressCategoryId - A location where this company does business.
+Some jurisdictions may require you to list all locations where your company does business.
      */
     public void setAddressCategoryId(AddressCategoryId addressCategoryId) {
         this.addressCategoryId = addressCategoryId;
@@ -238,14 +264,16 @@ public class LocationModel {
     private Integer id;
 
     /**
-     * Getter for id - The unique ID number of this location.
+     * Getter for id - A location where this company does business.
+Some jurisdictions may require you to list all locations where your company does business.
      */
     public Integer getId() {
         return this.id;
     }
 
     /**
-     * Setter for id - The unique ID number of this location.
+     * Setter for id - A location where this company does business.
+Some jurisdictions may require you to list all locations where your company does business.
      */
     public void setId(Integer id) {
         this.id = id;
@@ -255,14 +283,16 @@ public class LocationModel {
     private Integer modifiedUserId;
 
     /**
-     * Getter for modifiedUserId - The user ID of the user who last modified this record.
+     * Getter for modifiedUserId - A location where this company does business.
+Some jurisdictions may require you to list all locations where your company does business.
      */
     public Integer getModifiedUserId() {
         return this.modifiedUserId;
     }
 
     /**
-     * Setter for modifiedUserId - The user ID of the user who last modified this record.
+     * Setter for modifiedUserId - A location where this company does business.
+Some jurisdictions may require you to list all locations where your company does business.
      */
     public void setModifiedUserId(Integer modifiedUserId) {
         this.modifiedUserId = modifiedUserId;
@@ -272,14 +302,16 @@ public class LocationModel {
     private Date effectiveDate;
 
     /**
-     * Getter for effectiveDate - The date when this location was opened for business, or null if not known.
+     * Getter for effectiveDate - A location where this company does business.
+Some jurisdictions may require you to list all locations where your company does business.
      */
     public Date getEffectiveDate() {
         return this.effectiveDate;
     }
 
     /**
-     * Setter for effectiveDate - The date when this location was opened for business, or null if not known.
+     * Setter for effectiveDate - A location where this company does business.
+Some jurisdictions may require you to list all locations where your company does business.
      */
     public void setEffectiveDate(Date effectiveDate) {
         this.effectiveDate = effectiveDate;
@@ -289,14 +321,16 @@ public class LocationModel {
     private Integer createdUserId;
 
     /**
-     * Getter for createdUserId - The User ID of the user who created this record.
+     * Getter for createdUserId - A location where this company does business.
+Some jurisdictions may require you to list all locations where your company does business.
      */
     public Integer getCreatedUserId() {
         return this.createdUserId;
     }
 
     /**
-     * Setter for createdUserId - The User ID of the user who created this record.
+     * Setter for createdUserId - A location where this company does business.
+Some jurisdictions may require you to list all locations where your company does business.
      */
     public void setCreatedUserId(Integer createdUserId) {
         this.createdUserId = createdUserId;
@@ -306,14 +340,16 @@ public class LocationModel {
     private String region;
 
     /**
-     * Getter for region - The state, region, or province of the physical address of this location.
+     * Getter for region - A location where this company does business.
+Some jurisdictions may require you to list all locations where your company does business.
      */
     public String getRegion() {
         return this.region;
     }
 
     /**
-     * Setter for region - The state, region, or province of the physical address of this location.
+     * Setter for region - A location where this company does business.
+Some jurisdictions may require you to list all locations where your company does business.
      */
     public void setRegion(String region) {
         this.region = region;
@@ -323,14 +359,16 @@ public class LocationModel {
     private String line2;
 
     /**
-     * Getter for line2 - The second line of the physical address of this location.
+     * Getter for line2 - A location where this company does business.
+Some jurisdictions may require you to list all locations where your company does business.
      */
     public String getLine2() {
         return this.line2;
     }
 
     /**
-     * Setter for line2 - The second line of the physical address of this location.
+     * Setter for line2 - A location where this company does business.
+Some jurisdictions may require you to list all locations where your company does business.
      */
     public void setLine2(String line2) {
         this.line2 = line2;
@@ -340,14 +378,16 @@ public class LocationModel {
     private Boolean isRegistered;
 
     /**
-     * Getter for isRegistered - Set this flag to true to indicate that this location has been registered with a tax authority.
+     * Getter for isRegistered - A location where this company does business.
+Some jurisdictions may require you to list all locations where your company does business.
      */
     public Boolean getIsRegistered() {
         return this.isRegistered;
     }
 
     /**
-     * Setter for isRegistered - Set this flag to true to indicate that this location has been registered with a tax authority.
+     * Setter for isRegistered - A location where this company does business.
+Some jurisdictions may require you to list all locations where your company does business.
      */
     public void setIsRegistered(Boolean isRegistered) {
         this.isRegistered = isRegistered;
@@ -357,14 +397,16 @@ public class LocationModel {
     private Date registeredDate;
 
     /**
-     * Getter for registeredDate - The date when this location was registered with a tax authority.  Not required.
+     * Getter for registeredDate - A location where this company does business.
+Some jurisdictions may require you to list all locations where your company does business.
      */
     public Date getRegisteredDate() {
         return this.registeredDate;
     }
 
     /**
-     * Setter for registeredDate - The date when this location was registered with a tax authority.  Not required.
+     * Setter for registeredDate - A location where this company does business.
+Some jurisdictions may require you to list all locations where your company does business.
      */
     public void setRegisteredDate(Date registeredDate) {
         this.registeredDate = registeredDate;
@@ -374,14 +416,16 @@ public class LocationModel {
     private Date lastTransactionDate;
 
     /**
-     * Getter for lastTransactionDate - The most recent date when a transaction was processed for this location.  Set by AvaTax.
+     * Getter for lastTransactionDate - A location where this company does business.
+Some jurisdictions may require you to list all locations where your company does business.
      */
     public Date getLastTransactionDate() {
         return this.lastTransactionDate;
     }
 
     /**
-     * Setter for lastTransactionDate - The most recent date when a transaction was processed for this location.  Set by AvaTax.
+     * Setter for lastTransactionDate - A location where this company does business.
+Some jurisdictions may require you to list all locations where your company does business.
      */
     public void setLastTransactionDate(Date lastTransactionDate) {
         this.lastTransactionDate = lastTransactionDate;
@@ -391,18 +435,16 @@ public class LocationModel {
     private ArrayList<LocationSettingModel> settings;
 
     /**
-     * Getter for settings - Extra information required by certain jurisdictions for filing.
-            For a list of settings recognized by Avalara, query the endpoint "/api/v2/definitions/locationquestions". 
-            To determine the list of settings required for this location, query the endpoint "/api/v2/companies/(id)/locations/(id)/validate".
+     * Getter for settings - A location where this company does business.
+Some jurisdictions may require you to list all locations where your company does business.
      */
     public ArrayList<LocationSettingModel> getSettings() {
         return this.settings;
     }
 
     /**
-     * Setter for settings - Extra information required by certain jurisdictions for filing.
-            For a list of settings recognized by Avalara, query the endpoint "/api/v2/definitions/locationquestions". 
-            To determine the list of settings required for this location, query the endpoint "/api/v2/companies/(id)/locations/(id)/validate".
+     * Setter for settings - A location where this company does business.
+Some jurisdictions may require you to list all locations where your company does business.
      */
     public void setSettings(ArrayList<LocationSettingModel> settings) {
         this.settings = settings;
@@ -412,14 +454,16 @@ public class LocationModel {
     private Boolean isDefault;
 
     /**
-     * Getter for isDefault - Set this flag to true to indicate that this is the default location for this company.
+     * Getter for isDefault - A location where this company does business.
+Some jurisdictions may require you to list all locations where your company does business.
      */
     public Boolean getIsDefault() {
         return this.isDefault;
     }
 
     /**
-     * Setter for isDefault - Set this flag to true to indicate that this is the default location for this company.
+     * Setter for isDefault - A location where this company does business.
+Some jurisdictions may require you to list all locations where your company does business.
      */
     public void setIsDefault(Boolean isDefault) {
         this.isDefault = isDefault;
@@ -429,14 +473,16 @@ public class LocationModel {
     private Integer companyId;
 
     /**
-     * Getter for companyId - The unique ID number of the company that operates at this location.
+     * Getter for companyId - A location where this company does business.
+Some jurisdictions may require you to list all locations where your company does business.
      */
     public Integer getCompanyId() {
         return this.companyId;
     }
 
     /**
-     * Setter for companyId - The unique ID number of the company that operates at this location.
+     * Setter for companyId - A location where this company does business.
+Some jurisdictions may require you to list all locations where your company does business.
      */
     public void setCompanyId(Integer companyId) {
         this.companyId = companyId;
@@ -446,14 +492,16 @@ public class LocationModel {
     private Date createdDate;
 
     /**
-     * Getter for createdDate - The date when this record was created.
+     * Getter for createdDate - A location where this company does business.
+Some jurisdictions may require you to list all locations where your company does business.
      */
     public Date getCreatedDate() {
         return this.createdDate;
     }
 
     /**
-     * Setter for createdDate - The date when this record was created.
+     * Setter for createdDate - A location where this company does business.
+Some jurisdictions may require you to list all locations where your company does business.
      */
     public void setCreatedDate(Date createdDate) {
         this.createdDate = createdDate;
@@ -463,14 +511,16 @@ public class LocationModel {
     private String line3;
 
     /**
-     * Getter for line3 - The third line of the physical address of this location.
+     * Getter for line3 - A location where this company does business.
+Some jurisdictions may require you to list all locations where your company does business.
      */
     public String getLine3() {
         return this.line3;
     }
 
     /**
-     * Setter for line3 - The third line of the physical address of this location.
+     * Setter for line3 - A location where this company does business.
+Some jurisdictions may require you to list all locations where your company does business.
      */
     public void setLine3(String line3) {
         this.line3 = line3;

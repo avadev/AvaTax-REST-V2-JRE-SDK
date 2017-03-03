@@ -16,14 +16,14 @@ public class IsoRegionModel {
     private String countryCode;
 
     /**
-     * Getter for countryCode - The two-character ISO 3166 country code this region belongs to
+     * Getter for countryCode - Represents a region, province, or state within a country
      */
     public String getCountryCode() {
         return this.countryCode;
     }
 
     /**
-     * Setter for countryCode - The two-character ISO 3166 country code this region belongs to
+     * Setter for countryCode - Represents a region, province, or state within a country
      */
     public void setCountryCode(String countryCode) {
         this.countryCode = countryCode;
@@ -33,14 +33,14 @@ public class IsoRegionModel {
     private String code;
 
     /**
-     * Getter for code - The three character ISO 3166 region code
+     * Getter for code - Represents a region, province, or state within a country
      */
     public String getCode() {
         return this.code;
     }
 
     /**
-     * Setter for code - The three character ISO 3166 region code
+     * Setter for code - Represents a region, province, or state within a country
      */
     public void setCode(String code) {
         this.code = code;
@@ -50,14 +50,14 @@ public class IsoRegionModel {
     private String name;
 
     /**
-     * Getter for name - The full name, using localized characters, for this region
+     * Getter for name - Represents a region, province, or state within a country
      */
     public String getName() {
         return this.name;
     }
 
     /**
-     * Setter for name - The full name, using localized characters, for this region
+     * Setter for name - Represents a region, province, or state within a country
      */
     public void setName(String name) {
         this.name = name;
@@ -67,14 +67,14 @@ public class IsoRegionModel {
     private String classification;
 
     /**
-     * Getter for classification - The word in the local language that classifies what type of a region this represents
+     * Getter for classification - Represents a region, province, or state within a country
      */
     public String getClassification() {
         return this.classification;
     }
 
     /**
-     * Setter for classification - The word in the local language that classifies what type of a region this represents
+     * Setter for classification - Represents a region, province, or state within a country
      */
     public void setClassification(String classification) {
         this.classification = classification;

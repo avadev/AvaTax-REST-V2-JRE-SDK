@@ -16,14 +16,14 @@ public class TaxRateModel {
     private BigDecimal totalRate;
 
     /**
-     * Getter for totalRate - Total Rate
+     * Getter for totalRate - Tax Rate Model
      */
     public BigDecimal getTotalRate() {
         return this.totalRate;
     }
 
     /**
-     * Setter for totalRate - Total Rate
+     * Setter for totalRate - Tax Rate Model
      */
     public void setTotalRate(BigDecimal totalRate) {
         this.totalRate = totalRate;
@@ -33,14 +33,14 @@ public class TaxRateModel {
     private ArrayList<RateModel> rates;
 
     /**
-     * Getter for rates - Rates
+     * Getter for rates - Tax Rate Model
      */
     public ArrayList<RateModel> getRates() {
         return this.rates;
     }
 
     /**
-     * Setter for rates - Rates
+     * Setter for rates - Tax Rate Model
      */
     public void setRates(ArrayList<RateModel> rates) {
         this.rates = rates;

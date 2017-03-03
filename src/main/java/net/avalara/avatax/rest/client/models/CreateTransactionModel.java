@@ -16,14 +16,14 @@ public class CreateTransactionModel {
     private ServiceMode serviceMode;
 
     /**
-     * Getter for serviceMode - Specifies whether the tax calculation is handled Local, Remote, or Automatic (default)
+     * Getter for serviceMode - Create a transaction
      */
     public ServiceMode getServiceMode() {
         return this.serviceMode;
     }
 
     /**
-     * Setter for serviceMode - Specifies whether the tax calculation is handled Local, Remote, or Automatic (default)
+     * Setter for serviceMode - Create a transaction
      */
     public void setServiceMode(ServiceMode serviceMode) {
         this.serviceMode = serviceMode;
@@ -33,14 +33,14 @@ public class CreateTransactionModel {
     private String batchCode;
 
     /**
-     * Getter for batchCode - BatchCode for batch operations.
+     * Getter for batchCode - Create a transaction
      */
     public String getBatchCode() {
         return this.batchCode;
     }
 
     /**
-     * Setter for batchCode - BatchCode for batch operations.
+     * Setter for batchCode - Create a transaction
      */
     public void setBatchCode(String batchCode) {
         this.batchCode = batchCode;
@@ -50,14 +50,14 @@ public class CreateTransactionModel {
     private String customerUsageType;
 
     /**
-     * Getter for customerUsageType - Customer Usage Type - The client application customer or usage type.
+     * Getter for customerUsageType - Create a transaction
      */
     public String getCustomerUsageType() {
         return this.customerUsageType;
     }
 
     /**
-     * Setter for customerUsageType - Customer Usage Type - The client application customer or usage type.
+     * Setter for customerUsageType - Create a transaction
      */
     public void setCustomerUsageType(String customerUsageType) {
         this.customerUsageType = customerUsageType;
@@ -67,14 +67,14 @@ public class CreateTransactionModel {
     private Boolean commit;
 
     /**
-     * Getter for commit - Causes the document to be committed if true.
+     * Getter for commit - Create a transaction
      */
     public Boolean getCommit() {
         return this.commit;
     }
 
     /**
-     * Setter for commit - Causes the document to be committed if true.
+     * Setter for commit - Create a transaction
      */
     public void setCommit(Boolean commit) {
         this.commit = commit;
@@ -84,14 +84,14 @@ public class CreateTransactionModel {
     private String reportingLocationCode;
 
     /**
-     * Getter for reportingLocationCode - Sets the sale location code (Outlet ID) for reporting this document to the tax authority.
+     * Getter for reportingLocationCode - Create a transaction
      */
     public String getReportingLocationCode() {
         return this.reportingLocationCode;
     }
 
     /**
-     * Setter for reportingLocationCode - Sets the sale location code (Outlet ID) for reporting this document to the tax authority.
+     * Setter for reportingLocationCode - Create a transaction
      */
     public void setReportingLocationCode(String reportingLocationCode) {
         this.reportingLocationCode = reportingLocationCode;
@@ -101,14 +101,14 @@ public class CreateTransactionModel {
     private String email;
 
     /**
-     * Getter for email - Email
+     * Getter for email - Create a transaction
      */
     public String getEmail() {
         return this.email;
     }
 
     /**
-     * Setter for email - Email
+     * Setter for email - Create a transaction
      */
     public void setEmail(String email) {
         this.email = email;
@@ -118,14 +118,14 @@ public class CreateTransactionModel {
     private TaxOverrideModel taxOverride;
 
     /**
-     * Getter for taxOverride - Specifies a tax override for the entire document
+     * Getter for taxOverride - Create a transaction
      */
     public TaxOverrideModel getTaxOverride() {
         return this.taxOverride;
     }
 
     /**
-     * Setter for taxOverride - Specifies a tax override for the entire document
+     * Setter for taxOverride - Create a transaction
      */
     public void setTaxOverride(TaxOverrideModel taxOverride) {
         this.taxOverride = taxOverride;
@@ -135,14 +135,14 @@ public class CreateTransactionModel {
     private String description;
 
     /**
-     * Getter for description - Description
+     * Getter for description - Create a transaction
      */
     public String getDescription() {
         return this.description;
     }
 
     /**
-     * Setter for description - Description
+     * Setter for description - Create a transaction
      */
     public void setDescription(String description) {
         this.description = description;
@@ -152,14 +152,14 @@ public class CreateTransactionModel {
     private String posLaneCode;
 
     /**
-     * Getter for posLaneCode - Sets the POS Lane Code sent by the User for this document.
+     * Getter for posLaneCode - Create a transaction
      */
     public String getPosLaneCode() {
         return this.posLaneCode;
     }
 
     /**
-     * Setter for posLaneCode - Sets the POS Lane Code sent by the User for this document.
+     * Setter for posLaneCode - Create a transaction
      */
     public void setPosLaneCode(String posLaneCode) {
         this.posLaneCode = posLaneCode;
@@ -169,14 +169,14 @@ public class CreateTransactionModel {
     private TaxDebugLevel debugLevel;
 
     /**
-     * Getter for debugLevel - If the user wishes to request additional debug information from this transaction, specify a level higher than 'normal'
+     * Getter for debugLevel - Create a transaction
      */
     public TaxDebugLevel getDebugLevel() {
         return this.debugLevel;
     }
 
     /**
-     * Setter for debugLevel - If the user wishes to request additional debug information from this transaction, specify a level higher than 'normal'
+     * Setter for debugLevel - Create a transaction
      */
     public void setDebugLevel(TaxDebugLevel debugLevel) {
         this.debugLevel = debugLevel;
@@ -186,16 +186,14 @@ public class CreateTransactionModel {
     private String companyCode;
 
     /**
-     * Getter for companyCode - Company Code - Specify the code of the company creating this transaction here.  If you leave this value null,
-                your account's default company will be used instead.
+     * Getter for companyCode - Create a transaction
      */
     public String getCompanyCode() {
         return this.companyCode;
     }
 
     /**
-     * Setter for companyCode - Company Code - Specify the code of the company creating this transaction here.  If you leave this value null,
-                your account's default company will be used instead.
+     * Setter for companyCode - Create a transaction
      */
     public void setCompanyCode(String companyCode) {
         this.companyCode = companyCode;
@@ -205,14 +203,14 @@ public class CreateTransactionModel {
     private String businessIdentificationNo;
 
     /**
-     * Getter for businessIdentificationNo - BusinessIdentificationNo
+     * Getter for businessIdentificationNo - Create a transaction
      */
     public String getBusinessIdentificationNo() {
         return this.businessIdentificationNo;
     }
 
     /**
-     * Setter for businessIdentificationNo - BusinessIdentificationNo
+     * Setter for businessIdentificationNo - Create a transaction
      */
     public void setBusinessIdentificationNo(String businessIdentificationNo) {
         this.businessIdentificationNo = businessIdentificationNo;
@@ -222,14 +220,14 @@ public class CreateTransactionModel {
     private String purchaseOrderNo;
 
     /**
-     * Getter for purchaseOrderNo - Purchase Order Number for this document
+     * Getter for purchaseOrderNo - Create a transaction
      */
     public String getPurchaseOrderNo() {
         return this.purchaseOrderNo;
     }
 
     /**
-     * Setter for purchaseOrderNo - Purchase Order Number for this document
+     * Setter for purchaseOrderNo - Create a transaction
      */
     public void setPurchaseOrderNo(String purchaseOrderNo) {
         this.purchaseOrderNo = purchaseOrderNo;
@@ -239,14 +237,14 @@ public class CreateTransactionModel {
     private BigDecimal exchangeRate;
 
     /**
-     * Getter for exchangeRate - Currency exchange rate from this transaction to the company base currency.
+     * Getter for exchangeRate - Create a transaction
      */
     public BigDecimal getExchangeRate() {
         return this.exchangeRate;
     }
 
     /**
-     * Setter for exchangeRate - Currency exchange rate from this transaction to the company base currency.
+     * Setter for exchangeRate - Create a transaction
      */
     public void setExchangeRate(BigDecimal exchangeRate) {
         this.exchangeRate = exchangeRate;
@@ -256,14 +254,14 @@ public class CreateTransactionModel {
     private String customerCode;
 
     /**
-     * Getter for customerCode - Customer Code - The client application customer reference code.
+     * Getter for customerCode - Create a transaction
      */
     public String getCustomerCode() {
         return this.customerCode;
     }
 
     /**
-     * Setter for customerCode - Customer Code - The client application customer reference code.
+     * Setter for customerCode - Create a transaction
      */
     public void setCustomerCode(String customerCode) {
         this.customerCode = customerCode;
@@ -273,16 +271,14 @@ public class CreateTransactionModel {
     private String code;
 
     /**
-     * Getter for code - Transaction Code - the internal reference code used by the client application.  This is used for operations such as
-                Get, Adjust, Settle, and Void.  If you leave the transaction code blank, a GUID will be assigned to each transaction.
+     * Getter for code - Create a transaction
      */
     public String getCode() {
         return this.code;
     }
 
     /**
-     * Setter for code - Transaction Code - the internal reference code used by the client application.  This is used for operations such as
-                Get, Adjust, Settle, and Void.  If you leave the transaction code blank, a GUID will be assigned to each transaction.
+     * Setter for code - Create a transaction
      */
     public void setCode(String code) {
         this.code = code;
@@ -292,14 +288,14 @@ public class CreateTransactionModel {
     private String exemptionNo;
 
     /**
-     * Getter for exemptionNo - Exemption Number for this document
+     * Getter for exemptionNo - Create a transaction
      */
     public String getExemptionNo() {
         return this.exemptionNo;
     }
 
     /**
-     * Setter for exemptionNo - Exemption Number for this document
+     * Setter for exemptionNo - Create a transaction
      */
     public void setExemptionNo(String exemptionNo) {
         this.exemptionNo = exemptionNo;
@@ -309,14 +305,14 @@ public class CreateTransactionModel {
     private String referenceCode;
 
     /**
-     * Getter for referenceCode - Reference Code used to reference the original document for a return invoice
+     * Getter for referenceCode - Create a transaction
      */
     public String getReferenceCode() {
         return this.referenceCode;
     }
 
     /**
-     * Setter for referenceCode - Reference Code used to reference the original document for a return invoice
+     * Setter for referenceCode - Create a transaction
      */
     public void setReferenceCode(String referenceCode) {
         this.referenceCode = referenceCode;
@@ -326,14 +322,14 @@ public class CreateTransactionModel {
     private Date exchangeRateEffectiveDate;
 
     /**
-     * Getter for exchangeRateEffectiveDate - Effective date of the exchange rate.
+     * Getter for exchangeRateEffectiveDate - Create a transaction
      */
     public Date getExchangeRateEffectiveDate() {
         return this.exchangeRateEffectiveDate;
     }
 
     /**
-     * Setter for exchangeRateEffectiveDate - Effective date of the exchange rate.
+     * Setter for exchangeRateEffectiveDate - Create a transaction
      */
     public void setExchangeRateEffectiveDate(Date exchangeRateEffectiveDate) {
         this.exchangeRateEffectiveDate = exchangeRateEffectiveDate;
@@ -343,14 +339,14 @@ public class CreateTransactionModel {
     private Date date;
 
     /**
-     * Getter for date - Transaction Date - The date on the invoice, purchase order, etc.
+     * Getter for date - Create a transaction
      */
     public Date getDate() {
         return this.date;
     }
 
     /**
-     * Setter for date - Transaction Date - The date on the invoice, purchase order, etc.
+     * Setter for date - Create a transaction
      */
     public void setDate(Date date) {
         this.date = date;
@@ -360,14 +356,14 @@ public class CreateTransactionModel {
     private Boolean isSellerImporterOfRecord;
 
     /**
-     * Getter for isSellerImporterOfRecord - Specifies if the Transaction has the seller as IsSellerImporterOfRecord
+     * Getter for isSellerImporterOfRecord - Create a transaction
      */
     public Boolean getIsSellerImporterOfRecord() {
         return this.isSellerImporterOfRecord;
     }
 
     /**
-     * Setter for isSellerImporterOfRecord - Specifies if the Transaction has the seller as IsSellerImporterOfRecord
+     * Setter for isSellerImporterOfRecord - Create a transaction
      */
     public void setIsSellerImporterOfRecord(Boolean isSellerImporterOfRecord) {
         this.isSellerImporterOfRecord = isSellerImporterOfRecord;
@@ -377,14 +373,14 @@ public class CreateTransactionModel {
     private String currencyCode;
 
     /**
-     * Getter for currencyCode - 3 character ISO 4217 currency code.
+     * Getter for currencyCode - Create a transaction
      */
     public String getCurrencyCode() {
         return this.currencyCode;
     }
 
     /**
-     * Setter for currencyCode - 3 character ISO 4217 currency code.
+     * Setter for currencyCode - Create a transaction
      */
     public void setCurrencyCode(String currencyCode) {
         this.currencyCode = currencyCode;
@@ -394,14 +390,14 @@ public class CreateTransactionModel {
     private String salespersonCode;
 
     /**
-     * Getter for salespersonCode - Salesperson Code - The client application salesperson reference code.
+     * Getter for salespersonCode - Create a transaction
      */
     public String getSalespersonCode() {
         return this.salespersonCode;
     }
 
     /**
-     * Setter for salespersonCode - Salesperson Code - The client application salesperson reference code.
+     * Setter for salespersonCode - Create a transaction
      */
     public void setSalespersonCode(String salespersonCode) {
         this.salespersonCode = salespersonCode;
@@ -411,14 +407,14 @@ public class CreateTransactionModel {
     private DocumentType type;
 
     /**
-     * Getter for type - Document Type
+     * Getter for type - Create a transaction
      */
     public DocumentType getType() {
         return this.type;
     }
 
     /**
-     * Setter for type - Document Type
+     * Setter for type - Create a transaction
      */
     public void setType(DocumentType type) {
         this.type = type;
@@ -428,14 +424,14 @@ public class CreateTransactionModel {
     private BigDecimal discount;
 
     /**
-     * Getter for discount - Discount - The discount amount to apply to the document.
+     * Getter for discount - Create a transaction
      */
     public BigDecimal getDiscount() {
         return this.discount;
     }
 
     /**
-     * Setter for discount - Discount - The discount amount to apply to the document.
+     * Setter for discount - Create a transaction
      */
     public void setDiscount(BigDecimal discount) {
         this.discount = discount;
@@ -445,14 +441,14 @@ public class CreateTransactionModel {
     private ArrayList<LineItemModel> lines;
 
     /**
-     * Getter for lines - Document line items list
+     * Getter for lines - Create a transaction
      */
     public ArrayList<LineItemModel> getLines() {
         return this.lines;
     }
 
     /**
-     * Setter for lines - Document line items list
+     * Setter for lines - Create a transaction
      */
     public void setLines(ArrayList<LineItemModel> lines) {
         this.lines = lines;
@@ -462,52 +458,33 @@ public class CreateTransactionModel {
     private HashMap<String, String> parameters;
 
     /**
-     * Getter for parameters - Special parameters for this transaction.
-                To get a full list of available parameters, please use the /api/v2/definitions/parameters endpoint.
+     * Getter for parameters - Create a transaction
      */
     public HashMap<String, String> getParameters() {
         return this.parameters;
     }
 
     /**
-     * Setter for parameters - Special parameters for this transaction.
-                To get a full list of available parameters, please use the /api/v2/definitions/parameters endpoint.
+     * Setter for parameters - Create a transaction
      */
     public void setParameters(HashMap<String, String> parameters) {
         this.parameters = parameters;
     }
 
     
-    private Date taxDate;
+    private AddressesModel addresses;
 
     /**
-     * Getter for taxDate - Indicates the tax effectivity override date for the entire document.
+     * Getter for addresses - Create a transaction
      */
-    public Date getTaxDate() {
-        return this.taxDate;
-    }
-
-    /**
-     * Setter for taxDate - Indicates the tax effectivity override date for the entire document.
-     */
-    public void setTaxDate(Date taxDate) {
-        this.taxDate = taxDate;
-    }
-
-    
-    private HashMap<TransactionAddressType, AddressInfo> addresses;
-
-    /**
-     * Getter for addresses - Default addresses for all lines in this document
-     */
-    public HashMap<TransactionAddressType, AddressInfo> getAddresses() {
+    public AddressesModel getAddresses() {
         return this.addresses;
     }
 
     /**
-     * Setter for addresses - Default addresses for all lines in this document
+     * Setter for addresses - Create a transaction
      */
-    public void setAddresses(HashMap<TransactionAddressType, AddressInfo> addresses) {
+    public void setAddresses(AddressesModel addresses) {
         this.addresses = addresses;
     }
 

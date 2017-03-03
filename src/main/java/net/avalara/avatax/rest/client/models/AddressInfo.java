@@ -16,14 +16,14 @@ public class AddressInfo {
     private String city;
 
     /**
-     * Getter for city - City
+     * Getter for city - Represents an address to resolve.
      */
     public String getCity() {
         return this.city;
     }
 
     /**
-     * Setter for city - City
+     * Setter for city - Represents an address to resolve.
      */
     public void setCity(String city) {
         this.city = city;
@@ -33,14 +33,14 @@ public class AddressInfo {
     private BigDecimal latitude;
 
     /**
-     * Getter for latitude - Geospatial latitude measurement
+     * Getter for latitude - Represents an address to resolve.
      */
     public BigDecimal getLatitude() {
         return this.latitude;
     }
 
     /**
-     * Setter for latitude - Geospatial latitude measurement
+     * Setter for latitude - Represents an address to resolve.
      */
     public void setLatitude(BigDecimal latitude) {
         this.latitude = latitude;
@@ -50,14 +50,14 @@ public class AddressInfo {
     private String country;
 
     /**
-     * Getter for country - Two character ISO 3166 Country Code
+     * Getter for country - Represents an address to resolve.
      */
     public String getCountry() {
         return this.country;
     }
 
     /**
-     * Setter for country - Two character ISO 3166 Country Code
+     * Setter for country - Represents an address to resolve.
      */
     public void setCountry(String country) {
         this.country = country;
@@ -67,14 +67,14 @@ public class AddressInfo {
     private BigDecimal longitude;
 
     /**
-     * Getter for longitude - Geospatial longitude measurement
+     * Getter for longitude - Represents an address to resolve.
      */
     public BigDecimal getLongitude() {
         return this.longitude;
     }
 
     /**
-     * Setter for longitude - Geospatial longitude measurement
+     * Setter for longitude - Represents an address to resolve.
      */
     public void setLongitude(BigDecimal longitude) {
         this.longitude = longitude;
@@ -84,14 +84,14 @@ public class AddressInfo {
     private String line1;
 
     /**
-     * Getter for line1 - Line1
+     * Getter for line1 - Represents an address to resolve.
      */
     public String getLine1() {
         return this.line1;
     }
 
     /**
-     * Setter for line1 - Line1
+     * Setter for line1 - Represents an address to resolve.
      */
     public void setLine1(String line1) {
         this.line1 = line1;
@@ -101,14 +101,14 @@ public class AddressInfo {
     private String postalCode;
 
     /**
-     * Getter for postalCode - Postal Code / Zip Code
+     * Getter for postalCode - Represents an address to resolve.
      */
     public String getPostalCode() {
         return this.postalCode;
     }
 
     /**
-     * Setter for postalCode - Postal Code / Zip Code
+     * Setter for postalCode - Represents an address to resolve.
      */
     public void setPostalCode(String postalCode) {
         this.postalCode = postalCode;
@@ -118,14 +118,14 @@ public class AddressInfo {
     private String region;
 
     /**
-     * Getter for region - State / Province / Region
+     * Getter for region - Represents an address to resolve.
      */
     public String getRegion() {
         return this.region;
     }
 
     /**
-     * Setter for region - State / Province / Region
+     * Setter for region - Represents an address to resolve.
      */
     public void setRegion(String region) {
         this.region = region;
@@ -135,14 +135,14 @@ public class AddressInfo {
     private String line2;
 
     /**
-     * Getter for line2 - Line2
+     * Getter for line2 - Represents an address to resolve.
      */
     public String getLine2() {
         return this.line2;
     }
 
     /**
-     * Setter for line2 - Line2
+     * Setter for line2 - Represents an address to resolve.
      */
     public void setLine2(String line2) {
         this.line2 = line2;
@@ -152,14 +152,14 @@ public class AddressInfo {
     private String line3;
 
     /**
-     * Getter for line3 - Line3
+     * Getter for line3 - Represents an address to resolve.
      */
     public String getLine3() {
         return this.line3;
     }
 
     /**
-     * Setter for line3 - Line3
+     * Setter for line3 - Represents an address to resolve.
      */
     public void setLine3(String line3) {
         this.line3 = line3;

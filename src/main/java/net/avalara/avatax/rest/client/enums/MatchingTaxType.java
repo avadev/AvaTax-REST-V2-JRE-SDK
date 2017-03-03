@@ -22,7 +22,12 @@ public enum MatchingTaxType {
     /**
      * No comment data provided
      */
-    MedicalExcise,
+    ConsumersUseAndSellersUseTax,
+    
+    /**
+     * No comment data provided
+     */
+    ConsumerUseAndSalesTax,
     
     /**
      * No comment data provided

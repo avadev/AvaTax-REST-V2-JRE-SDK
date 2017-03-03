@@ -16,14 +16,14 @@ public class NoticeCustomerTypeModel {
     private Integer id;
 
     /**
-     * Getter for id - The unique ID number of this tax notice customer type.
+     * Getter for id - Tax Authority Model
      */
     public Integer getId() {
         return this.id;
     }
 
     /**
-     * Setter for id - The unique ID number of this tax notice customer type.
+     * Setter for id - Tax Authority Model
      */
     public void setId(Integer id) {
         this.id = id;
@@ -33,14 +33,14 @@ public class NoticeCustomerTypeModel {
     private String description;
 
     /**
-     * Getter for description - The description name of this tax authority type.
+     * Getter for description - Tax Authority Model
      */
     public String getDescription() {
         return this.description;
     }
 
     /**
-     * Setter for description - The description name of this tax authority type.
+     * Setter for description - Tax Authority Model
      */
     public void setDescription(String description) {
         this.description = description;
@@ -50,14 +50,14 @@ public class NoticeCustomerTypeModel {
     private Boolean activeFlag;
 
     /**
-     * Getter for activeFlag - A flag if the type is active
+     * Getter for activeFlag - Tax Authority Model
      */
     public Boolean getActiveFlag() {
         return this.activeFlag;
     }
 
     /**
-     * Setter for activeFlag - A flag if the type is active
+     * Setter for activeFlag - Tax Authority Model
      */
     public void setActiveFlag(Boolean activeFlag) {
         this.activeFlag = activeFlag;
@@ -67,14 +67,14 @@ public class NoticeCustomerTypeModel {
     private Integer sortOrder;
 
     /**
-     * Getter for sortOrder - sort order of the types
+     * Getter for sortOrder - Tax Authority Model
      */
     public Integer getSortOrder() {
         return this.sortOrder;
     }
 
     /**
-     * Setter for sortOrder - sort order of the types
+     * Setter for sortOrder - Tax Authority Model
      */
     public void setSortOrder(Integer sortOrder) {
         this.sortOrder = sortOrder;

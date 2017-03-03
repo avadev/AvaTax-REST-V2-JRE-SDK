@@ -16,14 +16,14 @@ public class NoticePriorityModel {
     private Integer id;
 
     /**
-     * Getter for id - The unique ID number of this tax notice customer Priority.
+     * Getter for id - Tax Notice Priority Model
      */
     public Integer getId() {
         return this.id;
     }
 
     /**
-     * Setter for id - The unique ID number of this tax notice customer Priority.
+     * Setter for id - Tax Notice Priority Model
      */
     public void setId(Integer id) {
         this.id = id;
@@ -33,14 +33,14 @@ public class NoticePriorityModel {
     private String description;
 
     /**
-     * Getter for description - The description name of this tax authority Priority.
+     * Getter for description - Tax Notice Priority Model
      */
     public String getDescription() {
         return this.description;
     }
 
     /**
-     * Setter for description - The description name of this tax authority Priority.
+     * Setter for description - Tax Notice Priority Model
      */
     public void setDescription(String description) {
         this.description = description;
@@ -50,14 +50,14 @@ public class NoticePriorityModel {
     private Boolean activeFlag;
 
     /**
-     * Getter for activeFlag - A flag if the Priority is active
+     * Getter for activeFlag - Tax Notice Priority Model
      */
     public Boolean getActiveFlag() {
         return this.activeFlag;
     }
 
     /**
-     * Setter for activeFlag - A flag if the Priority is active
+     * Setter for activeFlag - Tax Notice Priority Model
      */
     public void setActiveFlag(Boolean activeFlag) {
         this.activeFlag = activeFlag;
@@ -67,14 +67,14 @@ public class NoticePriorityModel {
     private Integer sortOrder;
 
     /**
-     * Getter for sortOrder - sort order of the Prioritys
+     * Getter for sortOrder - Tax Notice Priority Model
      */
     public Integer getSortOrder() {
         return this.sortOrder;
     }
 
     /**
-     * Setter for sortOrder - sort order of the Prioritys
+     * Setter for sortOrder - Tax Notice Priority Model
      */
     public void setSortOrder(Integer sortOrder) {
         this.sortOrder = sortOrder;

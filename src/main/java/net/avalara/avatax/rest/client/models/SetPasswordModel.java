@@ -16,14 +16,14 @@ public class SetPasswordModel {
     private String newPassword;
 
     /**
-     * Getter for newPassword - New Password
+     * Getter for newPassword - Set Password Model
      */
     public String getNewPassword() {
         return this.newPassword;
     }
 
     /**
-     * Setter for newPassword - New Password
+     * Setter for newPassword - Set Password Model
      */
     public void setNewPassword(String newPassword) {
         this.newPassword = newPassword;

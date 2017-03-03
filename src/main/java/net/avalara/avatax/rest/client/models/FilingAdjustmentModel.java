@@ -16,14 +16,14 @@ public class FilingAdjustmentModel {
     private Boolean isCalculated;
 
     /**
-     * Getter for isCalculated - Whether or not the adjustment has been calculated.
+     * Getter for isCalculated - A model for return adjustments.
      */
     public Boolean getIsCalculated() {
         return this.isCalculated;
     }
 
     /**
-     * Setter for isCalculated - Whether or not the adjustment has been calculated.
+     * Setter for isCalculated - A model for return adjustments.
      */
     public void setIsCalculated(Boolean isCalculated) {
         this.isCalculated = isCalculated;
@@ -33,14 +33,14 @@ public class FilingAdjustmentModel {
     private String reason;
 
     /**
-     * Getter for reason - A descriptive reason for creating this adjustment.
+     * Getter for reason - A model for return adjustments.
      */
     public String getReason() {
         return this.reason;
     }
 
     /**
-     * Setter for reason - A descriptive reason for creating this adjustment.
+     * Setter for reason - A model for return adjustments.
      */
     public void setReason(String reason) {
         this.reason = reason;
@@ -50,14 +50,14 @@ public class FilingAdjustmentModel {
     private BigDecimal amount;
 
     /**
-     * Getter for amount - The adjustment amount.
+     * Getter for amount - A model for return adjustments.
      */
     public BigDecimal getAmount() {
         return this.amount;
     }
 
     /**
-     * Setter for amount - The adjustment amount.
+     * Setter for amount - A model for return adjustments.
      */
     public void setAmount(BigDecimal amount) {
         this.amount = amount;
@@ -67,14 +67,14 @@ public class FilingAdjustmentModel {
     private Long id;
 
     /**
-     * Getter for id - The unique ID number for the adjustment.
+     * Getter for id - A model for return adjustments.
      */
     public Long getId() {
         return this.id;
     }
 
     /**
-     * Setter for id - The unique ID number for the adjustment.
+     * Setter for id - A model for return adjustments.
      */
     public void setId(Long id) {
         this.id = id;
@@ -84,14 +84,14 @@ public class FilingAdjustmentModel {
     private PaymentAccountTypeId accountType;
 
     /**
-     * Getter for accountType - The account type of the adjustment.
+     * Getter for accountType - A model for return adjustments.
      */
     public PaymentAccountTypeId getAccountType() {
         return this.accountType;
     }
 
     /**
-     * Setter for accountType - The account type of the adjustment.
+     * Setter for accountType - A model for return adjustments.
      */
     public void setAccountType(PaymentAccountTypeId accountType) {
         this.accountType = accountType;
@@ -101,14 +101,14 @@ public class FilingAdjustmentModel {
     private AdjustmentTypeId type;
 
     /**
-     * Getter for type - The type of the adjustment.
+     * Getter for type - A model for return adjustments.
      */
     public AdjustmentTypeId getType() {
         return this.type;
     }
 
     /**
-     * Setter for type - The type of the adjustment.
+     * Setter for type - A model for return adjustments.
      */
     public void setType(AdjustmentTypeId type) {
         this.type = type;
@@ -118,14 +118,14 @@ public class FilingAdjustmentModel {
     private AdjustmentPeriodTypeId period;
 
     /**
-     * Getter for period - The filing period the adjustment is applied to.
+     * Getter for period - A model for return adjustments.
      */
     public AdjustmentPeriodTypeId getPeriod() {
         return this.period;
     }
 
     /**
-     * Setter for period - The filing period the adjustment is applied to.
+     * Setter for period - A model for return adjustments.
      */
     public void setPeriod(AdjustmentPeriodTypeId period) {
         this.period = period;

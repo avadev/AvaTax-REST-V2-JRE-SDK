@@ -16,16 +16,14 @@ public class CommitTransactionModel {
     private Boolean commit;
 
     /**
-     * Getter for commit - Set this value to be true to commit this transaction.
-            Committing a transaction allows it to be reported on a tax return.  Uncommitted transactions will not be reported.
+     * Getter for commit - Commit this transaction as permanent
      */
     public Boolean getCommit() {
         return this.commit;
     }
 
     /**
-     * Setter for commit - Set this value to be true to commit this transaction.
-            Committing a transaction allows it to be reported on a tax return.  Uncommitted transactions will not be reported.
+     * Setter for commit - Commit this transaction as permanent
      */
     public void setCommit(Boolean commit) {
         this.commit = commit;

@@ -16,14 +16,14 @@ public class ResetLicenseKeyModel {
     private Integer accountId;
 
     /**
-     * Getter for accountId - The primary key of the account ID to reset
+     * Getter for accountId - Represents a license key reset request.
      */
     public Integer getAccountId() {
         return this.accountId;
     }
 
     /**
-     * Setter for accountId - The primary key of the account ID to reset
+     * Setter for accountId - Represents a license key reset request.
      */
     public void setAccountId(Integer accountId) {
         this.accountId = accountId;
@@ -33,16 +33,14 @@ public class ResetLicenseKeyModel {
     private Boolean confirmResetLicenseKey;
 
     /**
-     * Getter for confirmResetLicenseKey - Set this value to true to reset the license key for this account.
-            This license key reset function will only work when called using the credentials of the account administrator of this account.
+     * Getter for confirmResetLicenseKey - Represents a license key reset request.
      */
     public Boolean getConfirmResetLicenseKey() {
         return this.confirmResetLicenseKey;
     }
 
     /**
-     * Setter for confirmResetLicenseKey - Set this value to true to reset the license key for this account.
-            This license key reset function will only work when called using the credentials of the account administrator of this account.
+     * Setter for confirmResetLicenseKey - Represents a license key reset request.
      */
     public void setConfirmResetLicenseKey(Boolean confirmResetLicenseKey) {
         this.confirmResetLicenseKey = confirmResetLicenseKey;

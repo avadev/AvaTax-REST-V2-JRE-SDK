@@ -16,14 +16,14 @@ public class ContactModel {
     private String city;
 
     /**
-     * Getter for city - The city of the postal mailing address of this contact.
+     * Getter for city - A contact person for a company.
      */
     public String getCity() {
         return this.city;
     }
 
     /**
-     * Setter for city - The city of the postal mailing address of this contact.
+     * Setter for city - A contact person for a company.
      */
     public void setCity(String city) {
         this.city = city;
@@ -33,14 +33,14 @@ public class ContactModel {
     private String middleName;
 
     /**
-     * Getter for middleName - The middle name of this contact.
+     * Getter for middleName - A contact person for a company.
      */
     public String getMiddleName() {
         return this.middleName;
     }
 
     /**
-     * Setter for middleName - The middle name of this contact.
+     * Setter for middleName - A contact person for a company.
      */
     public void setMiddleName(String middleName) {
         this.middleName = middleName;
@@ -50,14 +50,14 @@ public class ContactModel {
     private String email;
 
     /**
-     * Getter for email - The email address of this contact.
+     * Getter for email - A contact person for a company.
      */
     public String getEmail() {
         return this.email;
     }
 
     /**
-     * Setter for email - The email address of this contact.
+     * Setter for email - A contact person for a company.
      */
     public void setEmail(String email) {
         this.email = email;
@@ -67,14 +67,14 @@ public class ContactModel {
     private String contactCode;
 
     /**
-     * Getter for contactCode - A unique code for this contact.
+     * Getter for contactCode - A contact person for a company.
      */
     public String getContactCode() {
         return this.contactCode;
     }
 
     /**
-     * Setter for contactCode - A unique code for this contact.
+     * Setter for contactCode - A contact person for a company.
      */
     public void setContactCode(String contactCode) {
         this.contactCode = contactCode;
@@ -84,14 +84,14 @@ public class ContactModel {
     private Date modifiedDate;
 
     /**
-     * Getter for modifiedDate - The date/time when this record was last modified.
+     * Getter for modifiedDate - A contact person for a company.
      */
     public Date getModifiedDate() {
         return this.modifiedDate;
     }
 
     /**
-     * Setter for modifiedDate - The date/time when this record was last modified.
+     * Setter for modifiedDate - A contact person for a company.
      */
     public void setModifiedDate(Date modifiedDate) {
         this.modifiedDate = modifiedDate;
@@ -101,14 +101,14 @@ public class ContactModel {
     private String country;
 
     /**
-     * Getter for country - The ISO 3166 two-character country code of the postal mailing address of this contact.
+     * Getter for country - A contact person for a company.
      */
     public String getCountry() {
         return this.country;
     }
 
     /**
-     * Setter for country - The ISO 3166 two-character country code of the postal mailing address of this contact.
+     * Setter for country - A contact person for a company.
      */
     public void setCountry(String country) {
         this.country = country;
@@ -118,14 +118,14 @@ public class ContactModel {
     private String line1;
 
     /**
-     * Getter for line1 - The first line of the postal mailing address of this contact.
+     * Getter for line1 - A contact person for a company.
      */
     public String getLine1() {
         return this.line1;
     }
 
     /**
-     * Setter for line1 - The first line of the postal mailing address of this contact.
+     * Setter for line1 - A contact person for a company.
      */
     public void setLine1(String line1) {
         this.line1 = line1;
@@ -135,14 +135,14 @@ public class ContactModel {
     private String postalCode;
 
     /**
-     * Getter for postalCode - The postal code or zip code of the postal mailing address of this contact.
+     * Getter for postalCode - A contact person for a company.
      */
     public String getPostalCode() {
         return this.postalCode;
     }
 
     /**
-     * Setter for postalCode - The postal code or zip code of the postal mailing address of this contact.
+     * Setter for postalCode - A contact person for a company.
      */
     public void setPostalCode(String postalCode) {
         this.postalCode = postalCode;
@@ -152,14 +152,14 @@ public class ContactModel {
     private String lastName;
 
     /**
-     * Getter for lastName - The last or family name of this contact.
+     * Getter for lastName - A contact person for a company.
      */
     public String getLastName() {
         return this.lastName;
     }
 
     /**
-     * Setter for lastName - The last or family name of this contact.
+     * Setter for lastName - A contact person for a company.
      */
     public void setLastName(String lastName) {
         this.lastName = lastName;
@@ -169,14 +169,14 @@ public class ContactModel {
     private String firstName;
 
     /**
-     * Getter for firstName - The first or given name of this contact.
+     * Getter for firstName - A contact person for a company.
      */
     public String getFirstName() {
         return this.firstName;
     }
 
     /**
-     * Setter for firstName - The first or given name of this contact.
+     * Setter for firstName - A contact person for a company.
      */
     public void setFirstName(String firstName) {
         this.firstName = firstName;
@@ -186,14 +186,14 @@ public class ContactModel {
     private Integer id;
 
     /**
-     * Getter for id - The unique ID number of this contact.
+     * Getter for id - A contact person for a company.
      */
     public Integer getId() {
         return this.id;
     }
 
     /**
-     * Setter for id - The unique ID number of this contact.
+     * Setter for id - A contact person for a company.
      */
     public void setId(Integer id) {
         this.id = id;
@@ -203,14 +203,14 @@ public class ContactModel {
     private String fax;
 
     /**
-     * Getter for fax - The facsimile phone number for this contact.
+     * Getter for fax - A contact person for a company.
      */
     public String getFax() {
         return this.fax;
     }
 
     /**
-     * Setter for fax - The facsimile phone number for this contact.
+     * Setter for fax - A contact person for a company.
      */
     public void setFax(String fax) {
         this.fax = fax;
@@ -220,14 +220,14 @@ public class ContactModel {
     private Integer modifiedUserId;
 
     /**
-     * Getter for modifiedUserId - The user ID of the user who last modified this record.
+     * Getter for modifiedUserId - A contact person for a company.
      */
     public Integer getModifiedUserId() {
         return this.modifiedUserId;
     }
 
     /**
-     * Setter for modifiedUserId - The user ID of the user who last modified this record.
+     * Setter for modifiedUserId - A contact person for a company.
      */
     public void setModifiedUserId(Integer modifiedUserId) {
         this.modifiedUserId = modifiedUserId;
@@ -237,14 +237,14 @@ public class ContactModel {
     private Integer createdUserId;
 
     /**
-     * Getter for createdUserId - The User ID of the user who created this record.
+     * Getter for createdUserId - A contact person for a company.
      */
     public Integer getCreatedUserId() {
         return this.createdUserId;
     }
 
     /**
-     * Setter for createdUserId - The User ID of the user who created this record.
+     * Setter for createdUserId - A contact person for a company.
      */
     public void setCreatedUserId(Integer createdUserId) {
         this.createdUserId = createdUserId;
@@ -254,14 +254,14 @@ public class ContactModel {
     private String region;
 
     /**
-     * Getter for region - The state, region, or province of the postal mailing address of this contact.
+     * Getter for region - A contact person for a company.
      */
     public String getRegion() {
         return this.region;
     }
 
     /**
-     * Setter for region - The state, region, or province of the postal mailing address of this contact.
+     * Setter for region - A contact person for a company.
      */
     public void setRegion(String region) {
         this.region = region;
@@ -271,14 +271,14 @@ public class ContactModel {
     private String line2;
 
     /**
-     * Getter for line2 - The second line of the postal mailing address of this contact.
+     * Getter for line2 - A contact person for a company.
      */
     public String getLine2() {
         return this.line2;
     }
 
     /**
-     * Setter for line2 - The second line of the postal mailing address of this contact.
+     * Setter for line2 - A contact person for a company.
      */
     public void setLine2(String line2) {
         this.line2 = line2;
@@ -288,14 +288,14 @@ public class ContactModel {
     private String title;
 
     /**
-     * Getter for title - Professional title of this contact.
+     * Getter for title - A contact person for a company.
      */
     public String getTitle() {
         return this.title;
     }
 
     /**
-     * Setter for title - Professional title of this contact.
+     * Setter for title - A contact person for a company.
      */
     public void setTitle(String title) {
         this.title = title;
@@ -305,14 +305,14 @@ public class ContactModel {
     private String mobile;
 
     /**
-     * Getter for mobile - The mobile phone number for this contact.
+     * Getter for mobile - A contact person for a company.
      */
     public String getMobile() {
         return this.mobile;
     }
 
     /**
-     * Setter for mobile - The mobile phone number for this contact.
+     * Setter for mobile - A contact person for a company.
      */
     public void setMobile(String mobile) {
         this.mobile = mobile;
@@ -322,14 +322,14 @@ public class ContactModel {
     private Integer companyId;
 
     /**
-     * Getter for companyId - The unique ID number of the company to which this contact belongs.
+     * Getter for companyId - A contact person for a company.
      */
     public Integer getCompanyId() {
         return this.companyId;
     }
 
     /**
-     * Setter for companyId - The unique ID number of the company to which this contact belongs.
+     * Setter for companyId - A contact person for a company.
      */
     public void setCompanyId(Integer companyId) {
         this.companyId = companyId;
@@ -339,14 +339,14 @@ public class ContactModel {
     private String phone;
 
     /**
-     * Getter for phone - The main phone number for this contact.
+     * Getter for phone - A contact person for a company.
      */
     public String getPhone() {
         return this.phone;
     }
 
     /**
-     * Setter for phone - The main phone number for this contact.
+     * Setter for phone - A contact person for a company.
      */
     public void setPhone(String phone) {
         this.phone = phone;
@@ -356,14 +356,14 @@ public class ContactModel {
     private Date createdDate;
 
     /**
-     * Getter for createdDate - The date when this record was created.
+     * Getter for createdDate - A contact person for a company.
      */
     public Date getCreatedDate() {
         return this.createdDate;
     }
 
     /**
-     * Setter for createdDate - The date when this record was created.
+     * Setter for createdDate - A contact person for a company.
      */
     public void setCreatedDate(Date createdDate) {
         this.createdDate = createdDate;
@@ -373,14 +373,14 @@ public class ContactModel {
     private String line3;
 
     /**
-     * Getter for line3 - The third line of the postal mailing address of this contact.
+     * Getter for line3 - A contact person for a company.
      */
     public String getLine3() {
         return this.line3;
     }
 
     /**
-     * Setter for line3 - The third line of the postal mailing address of this contact.
+     * Setter for line3 - A contact person for a company.
      */
     public void setLine3(String line3) {
         this.line3 = line3;

@@ -16,14 +16,14 @@ public class FilingsCheckupAuthorityModel {
     private String taxTypeId;
 
     /**
-     * Getter for taxTypeId - Tax Type collected in the tax authority
+     * Getter for taxTypeId - Cycle Safe Expiration results.
      */
     public String getTaxTypeId() {
         return this.taxTypeId;
     }
 
     /**
-     * Setter for taxTypeId - Tax Type collected in the tax authority
+     * Setter for taxTypeId - Cycle Safe Expiration results.
      */
     public void setTaxTypeId(String taxTypeId) {
         this.taxTypeId = taxTypeId;
@@ -33,14 +33,14 @@ public class FilingsCheckupAuthorityModel {
     private String taxAuthorityName;
 
     /**
-     * Getter for taxAuthorityName - Name of the tax authority
+     * Getter for taxAuthorityName - Cycle Safe Expiration results.
      */
     public String getTaxAuthorityName() {
         return this.taxAuthorityName;
     }
 
     /**
-     * Setter for taxAuthorityName - Name of the tax authority
+     * Setter for taxAuthorityName - Cycle Safe Expiration results.
      */
     public void setTaxAuthorityName(String taxAuthorityName) {
         this.taxAuthorityName = taxAuthorityName;
@@ -50,14 +50,14 @@ public class FilingsCheckupAuthorityModel {
     private ArrayList<FilingsCheckupSuggestedFormModel> suggestedForms;
 
     /**
-     * Getter for suggestedForms - Suggested forms to file due to tax collected
+     * Getter for suggestedForms - Cycle Safe Expiration results.
      */
     public ArrayList<FilingsCheckupSuggestedFormModel> getSuggestedForms() {
         return this.suggestedForms;
     }
 
     /**
-     * Setter for suggestedForms - Suggested forms to file due to tax collected
+     * Setter for suggestedForms - Cycle Safe Expiration results.
      */
     public void setSuggestedForms(ArrayList<FilingsCheckupSuggestedFormModel> suggestedForms) {
         this.suggestedForms = suggestedForms;
@@ -67,14 +67,14 @@ public class FilingsCheckupAuthorityModel {
     private BigDecimal tax;
 
     /**
-     * Getter for tax - Amount of tax collected in this tax authority
+     * Getter for tax - Cycle Safe Expiration results.
      */
     public BigDecimal getTax() {
         return this.tax;
     }
 
     /**
-     * Setter for tax - Amount of tax collected in this tax authority
+     * Setter for tax - Cycle Safe Expiration results.
      */
     public void setTax(BigDecimal tax) {
         this.tax = tax;
@@ -84,14 +84,14 @@ public class FilingsCheckupAuthorityModel {
     private Integer jurisdictionId;
 
     /**
-     * Getter for jurisdictionId - Jurisdiction Id of the tax authority
+     * Getter for jurisdictionId - Cycle Safe Expiration results.
      */
     public Integer getJurisdictionId() {
         return this.jurisdictionId;
     }
 
     /**
-     * Setter for jurisdictionId - Jurisdiction Id of the tax authority
+     * Setter for jurisdictionId - Cycle Safe Expiration results.
      */
     public void setJurisdictionId(Integer jurisdictionId) {
         this.jurisdictionId = jurisdictionId;
@@ -101,14 +101,14 @@ public class FilingsCheckupAuthorityModel {
     private String locationCode;
 
     /**
-     * Getter for locationCode - Location Code of the tax authority
+     * Getter for locationCode - Cycle Safe Expiration results.
      */
     public String getLocationCode() {
         return this.locationCode;
     }
 
     /**
-     * Setter for locationCode - Location Code of the tax authority
+     * Setter for locationCode - Cycle Safe Expiration results.
      */
     public void setLocationCode(String locationCode) {
         this.locationCode = locationCode;
@@ -118,14 +118,14 @@ public class FilingsCheckupAuthorityModel {
     private Integer taxAuthorityTypeId;
 
     /**
-     * Getter for taxAuthorityTypeId - Type Id of the tax authority
+     * Getter for taxAuthorityTypeId - Cycle Safe Expiration results.
      */
     public Integer getTaxAuthorityTypeId() {
         return this.taxAuthorityTypeId;
     }
 
     /**
-     * Setter for taxAuthorityTypeId - Type Id of the tax authority
+     * Setter for taxAuthorityTypeId - Cycle Safe Expiration results.
      */
     public void setTaxAuthorityTypeId(Integer taxAuthorityTypeId) {
         this.taxAuthorityTypeId = taxAuthorityTypeId;
@@ -135,14 +135,14 @@ public class FilingsCheckupAuthorityModel {
     private Integer taxAuthorityId;
 
     /**
-     * Getter for taxAuthorityId - Unique ID of the tax authority
+     * Getter for taxAuthorityId - Cycle Safe Expiration results.
      */
     public Integer getTaxAuthorityId() {
         return this.taxAuthorityId;
     }
 
     /**
-     * Setter for taxAuthorityId - Unique ID of the tax authority
+     * Setter for taxAuthorityId - Cycle Safe Expiration results.
      */
     public void setTaxAuthorityId(Integer taxAuthorityId) {
         this.taxAuthorityId = taxAuthorityId;

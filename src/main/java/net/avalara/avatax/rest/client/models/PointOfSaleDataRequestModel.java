@@ -16,14 +16,14 @@ public class PointOfSaleDataRequestModel {
     private ArrayList<String> locationCodes;
 
     /**
-     * Getter for locationCodes - A list of location codes to include in this point-of-sale file. If no location codes are specified, response will include all locations within your company.
+     * Getter for locationCodes - Point-of-Sale Data Request Model
      */
     public ArrayList<String> getLocationCodes() {
         return this.locationCodes;
     }
 
     /**
-     * Setter for locationCodes - A list of location codes to include in this point-of-sale file. If no location codes are specified, response will include all locations within your company.
+     * Setter for locationCodes - Point-of-Sale Data Request Model
      */
     public void setLocationCodes(ArrayList<String> locationCodes) {
         this.locationCodes = locationCodes;
@@ -33,14 +33,14 @@ public class PointOfSaleDataRequestModel {
     private ArrayList<String> taxCodes;
 
     /**
-     * Getter for taxCodes - A list of tax codes to include in this point-of-sale file. If no tax codes are specified, response will include all distinct tax codes associated with the Items within your company.
+     * Getter for taxCodes - Point-of-Sale Data Request Model
      */
     public ArrayList<String> getTaxCodes() {
         return this.taxCodes;
     }
 
     /**
-     * Setter for taxCodes - A list of tax codes to include in this point-of-sale file. If no tax codes are specified, response will include all distinct tax codes associated with the Items within your company.
+     * Setter for taxCodes - Point-of-Sale Data Request Model
      */
     public void setTaxCodes(ArrayList<String> taxCodes) {
         this.taxCodes = taxCodes;
@@ -50,14 +50,14 @@ public class PointOfSaleDataRequestModel {
     private String companyCode;
 
     /**
-     * Getter for companyCode - A unique code that references a company within your account.
+     * Getter for companyCode - Point-of-Sale Data Request Model
      */
     public String getCompanyCode() {
         return this.companyCode;
     }
 
     /**
-     * Setter for companyCode - A unique code that references a company within your account.
+     * Setter for companyCode - Point-of-Sale Data Request Model
      */
     public void setCompanyCode(String companyCode) {
         this.companyCode = companyCode;
@@ -67,14 +67,14 @@ public class PointOfSaleDataRequestModel {
     private Integer partnerId;
 
     /**
-     * Getter for partnerId - A unique code assoicated with the Partner you may be working with. If you are not working with a Partner or your Partner has not provided you an ID, leave null.
+     * Getter for partnerId - Point-of-Sale Data Request Model
      */
     public Integer getPartnerId() {
         return this.partnerId;
     }
 
     /**
-     * Setter for partnerId - A unique code assoicated with the Partner you may be working with. If you are not working with a Partner or your Partner has not provided you an ID, leave null.
+     * Setter for partnerId - Point-of-Sale Data Request Model
      */
     public void setPartnerId(Integer partnerId) {
         this.partnerId = partnerId;
@@ -84,14 +84,14 @@ public class PointOfSaleDataRequestModel {
     private PointOfSaleFileType responseType;
 
     /**
-     * Getter for responseType - The format of your response. Formats include JSON, CSV, and XML.
+     * Getter for responseType - Point-of-Sale Data Request Model
      */
     public PointOfSaleFileType getResponseType() {
         return this.responseType;
     }
 
     /**
-     * Setter for responseType - The format of your response. Formats include JSON, CSV, and XML.
+     * Setter for responseType - Point-of-Sale Data Request Model
      */
     public void setResponseType(PointOfSaleFileType responseType) {
         this.responseType = responseType;
@@ -101,14 +101,14 @@ public class PointOfSaleDataRequestModel {
     private Date documentDate;
 
     /**
-     * Getter for documentDate - The date associated with the response content. Default is current date. This field can be used to backdate or postdate the response content.
+     * Getter for documentDate - Point-of-Sale Data Request Model
      */
     public Date getDocumentDate() {
         return this.documentDate;
     }
 
     /**
-     * Setter for documentDate - The date associated with the response content. Default is current date. This field can be used to backdate or postdate the response content.
+     * Setter for documentDate - Point-of-Sale Data Request Model
      */
     public void setDocumentDate(Date documentDate) {
         this.documentDate = documentDate;
@@ -118,14 +118,14 @@ public class PointOfSaleDataRequestModel {
     private Boolean includeJurisCodes;
 
     /**
-     * Getter for includeJurisCodes - Set this value to true to include Juris Code in the response.
+     * Getter for includeJurisCodes - Point-of-Sale Data Request Model
      */
     public Boolean getIncludeJurisCodes() {
         return this.includeJurisCodes;
     }
 
     /**
-     * Setter for includeJurisCodes - Set this value to true to include Juris Code in the response.
+     * Setter for includeJurisCodes - Point-of-Sale Data Request Model
      */
     public void setIncludeJurisCodes(Boolean includeJurisCodes) {
         this.includeJurisCodes = includeJurisCodes;

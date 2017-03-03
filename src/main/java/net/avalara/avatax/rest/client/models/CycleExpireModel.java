@@ -16,16 +16,14 @@ public class CycleExpireModel {
     private Boolean success;
 
     /**
-     * Getter for success - Whether or not the filing calendar can be expired.
-            e.g. if user makes end date of a calendar earlier than latest filing, this would be set to false.
+     * Getter for success - Cycle Safe Expiration results.
      */
     public Boolean getSuccess() {
         return this.success;
     }
 
     /**
-     * Setter for success - Whether or not the filing calendar can be expired.
-            e.g. if user makes end date of a calendar earlier than latest filing, this would be set to false.
+     * Setter for success - Cycle Safe Expiration results.
      */
     public void setSuccess(Boolean success) {
         this.success = success;
@@ -35,14 +33,14 @@ public class CycleExpireModel {
     private String message;
 
     /**
-     * Getter for message - The message to present to the user if expiration is successful or unsuccessful.
+     * Getter for message - Cycle Safe Expiration results.
      */
     public String getMessage() {
         return this.message;
     }
 
     /**
-     * Setter for message - The message to present to the user if expiration is successful or unsuccessful.
+     * Setter for message - Cycle Safe Expiration results.
      */
     public void setMessage(String message) {
         this.message = message;
@@ -52,14 +50,14 @@ public class CycleExpireModel {
     private ArrayList<CycleExpireOptionModel> cycleExpirationOptions;
 
     /**
-     * Getter for cycleExpirationOptions - A list of options for expiring the filing calendar.
+     * Getter for cycleExpirationOptions - Cycle Safe Expiration results.
      */
     public ArrayList<CycleExpireOptionModel> getCycleExpirationOptions() {
         return this.cycleExpirationOptions;
     }
 
     /**
-     * Setter for cycleExpirationOptions - A list of options for expiring the filing calendar.
+     * Setter for cycleExpirationOptions - Cycle Safe Expiration results.
      */
     public void setCycleExpirationOptions(ArrayList<CycleExpireOptionModel> cycleExpirationOptions) {
         this.cycleExpirationOptions = cycleExpirationOptions;

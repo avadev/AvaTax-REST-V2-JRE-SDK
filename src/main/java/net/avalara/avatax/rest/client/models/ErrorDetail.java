@@ -16,14 +16,14 @@ public class ErrorDetail {
     private Integer number;
 
     /**
-     * Getter for number - Error message identifier
+     * Getter for number - Message object
      */
     public Integer getNumber() {
         return this.number;
     }
 
     /**
-     * Setter for number - Error message identifier
+     * Setter for number - Message object
      */
     public void setNumber(Integer number) {
         this.number = number;
@@ -33,14 +33,14 @@ public class ErrorDetail {
     private String refersTo;
 
     /**
-     * Getter for refersTo - Item the message refers to, if applicable.  This is used to indicate a missing or incorrect value.
+     * Getter for refersTo - Message object
      */
     public String getRefersTo() {
         return this.refersTo;
     }
 
     /**
-     * Setter for refersTo - Item the message refers to, if applicable.  This is used to indicate a missing or incorrect value.
+     * Setter for refersTo - Message object
      */
     public void setRefersTo(String refersTo) {
         this.refersTo = refersTo;
@@ -50,14 +50,14 @@ public class ErrorDetail {
     private String description;
 
     /**
-     * Getter for description - A more detailed description of the problem referenced by this error message, suitable for display in the contents area of an alert box.
+     * Getter for description - Message object
      */
     public String getDescription() {
         return this.description;
     }
 
     /**
-     * Setter for description - A more detailed description of the problem referenced by this error message, suitable for display in the contents area of an alert box.
+     * Setter for description - Message object
      */
     public void setDescription(String description) {
         this.description = description;
@@ -67,14 +67,14 @@ public class ErrorDetail {
     private ErrorCodeId code;
 
     /**
-     * Getter for code - Name of the error.
+     * Getter for code - Message object
      */
     public ErrorCodeId getCode() {
         return this.code;
     }
 
     /**
-     * Setter for code - Name of the error.
+     * Setter for code - Message object
      */
     public void setCode(ErrorCodeId code) {
         this.code = code;
@@ -84,14 +84,14 @@ public class ErrorDetail {
     private String helpLink;
 
     /**
-     * Getter for helpLink - URL to help for this message
+     * Getter for helpLink - Message object
      */
     public String getHelpLink() {
         return this.helpLink;
     }
 
     /**
-     * Setter for helpLink - URL to help for this message
+     * Setter for helpLink - Message object
      */
     public void setHelpLink(String helpLink) {
         this.helpLink = helpLink;
@@ -101,14 +101,14 @@ public class ErrorDetail {
     private String faultCode;
 
     /**
-     * Getter for faultCode - Indicates the SoapFault code
+     * Getter for faultCode - Message object
      */
     public String getFaultCode() {
         return this.faultCode;
     }
 
     /**
-     * Setter for faultCode - Indicates the SoapFault code
+     * Setter for faultCode - Message object
      */
     public void setFaultCode(String faultCode) {
         this.faultCode = faultCode;
@@ -118,14 +118,14 @@ public class ErrorDetail {
     private String message;
 
     /**
-     * Getter for message - Concise summary of the message, suitable for display in the caption of an alert box.
+     * Getter for message - Message object
      */
     public String getMessage() {
         return this.message;
     }
 
     /**
-     * Setter for message - Concise summary of the message, suitable for display in the caption of an alert box.
+     * Setter for message - Message object
      */
     public void setMessage(String message) {
         this.message = message;
@@ -135,14 +135,14 @@ public class ErrorDetail {
     private SeverityLevel severity;
 
     /**
-     * Getter for severity - Severity of the message
+     * Getter for severity - Message object
      */
     public SeverityLevel getSeverity() {
         return this.severity;
     }
 
     /**
-     * Setter for severity - Severity of the message
+     * Setter for severity - Message object
      */
     public void setSeverity(SeverityLevel severity) {
         this.severity = severity;

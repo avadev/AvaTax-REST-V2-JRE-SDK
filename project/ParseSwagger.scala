@@ -4,11 +4,11 @@ import play.api.libs.json._
 import play.api.libs.functional.syntax._
 
 object ParseSwagger {
-  case class SwaggerDoc(swagger: String, info: Map[String, JsValue], basePath: String, paths: Map[String, Map[String, SwaggerMethod]], definitions: Map[String, SwaggerDefinition], securityDefinitions: Map[String, JsValue])
-  case class SwaggerMethod(tags: Seq[String], summary: String, operationId: String, consumes: Seq[String], produces: Seq[String], parameters: Option[Seq[SwaggerProperty]], responses: Map[String, Option[SwaggerResult]], deprecated: Boolean, security: Seq[Map[String, JsValue]])
+  case class SwaggerDoc(swagger: String, info: Map[String, JsValue], basePath: String, paths: Map[String, Map[String, SwaggerMethod]], definitions: Map[String, SwaggerDefinition], securityDefinitions: Map[String, JsValue], apiVersion: Option[String])
+  case class SwaggerMethod(tags: Seq[String], summary: Option[String], description: Option[String], operationId: Option[String], consumes: Seq[String], produces: Seq[String], parameters: Option[Seq[SwaggerProperty]], responses: Map[String, Option[SwaggerResult]], deprecated: Option[Boolean], security: Seq[Map[String, JsValue]])
   case class SwaggerDefinition(description: Option[String], required: Option[Seq[String]], `type`: String, properties: Map[String, SwaggerProperty], example: Option[JsValue])
   case class SwaggerProperty(name: Option[String], description: Option[String], required: Option[Boolean], `type`: Option[String], format: Option[String], EnumDataType: Option[String], readOnly: Option[Boolean], example: Option[JsValue], schema: Option[JsValue], items: Option[JsValue], `$ref`: Option[String], in: Option[String], default: Option[String], enum: Option[Seq[String]])
-  case class SwaggerResult(description: String, schema: Option[SwaggerProperty])
+  case class SwaggerResult(description: Option[String], schema: Option[SwaggerProperty])
 
   implicit lazy val swaggerPropertyReads: Reads[SwaggerProperty] = (
     (JsPath \ "name").readNullable[String] and
@@ -29,7 +29,7 @@ object ParseSwagger {
 
 
   implicit lazy val swaggerResultReads: Reads[SwaggerResult] = (
-    (JsPath \ "description").read[String] and
+    (JsPath \ "description").readNullable[String] and
     (JsPath \ "schema").readNullable[SwaggerProperty]
   )(SwaggerResult.apply _)
 
@@ -37,13 +37,14 @@ object ParseSwagger {
 
   implicit lazy val swaggerMethodReads: Reads[SwaggerMethod] = (
     (JsPath \ "tags").read[Seq[String]] and
-      (JsPath \ "summary").read[String] and
-      (JsPath \ "operationId").read[String] and
+      (JsPath \ "summary").readNullable[String] and
+      (JsPath \ "description").readNullable[String] and
+      (JsPath \ "operationId").readNullable[String] and
       (JsPath \ "consumes").read[Seq[String]] and
       (JsPath \ "produces").read[Seq[String]] and
       (JsPath \ "parameters").readNullable[Seq[SwaggerProperty]] and
       (JsPath \ "responses").read[Map[String, Option[SwaggerResult]]] and
-      (JsPath \ "deprecated").read[Boolean] and
+      (JsPath \ "deprecated").readNullable[Boolean] and
       (JsPath \ "security").read[Seq[Map[String, JsValue]]]
     )(SwaggerMethod.apply _)
 
@@ -61,7 +62,8 @@ object ParseSwagger {
     (JsPath \ "basePath").read[String] and
     (JsPath \ "paths").read[Map[String, Map[String, SwaggerMethod]]] and
     (JsPath \ "definitions").read[Map[String, SwaggerDefinition]] and
-    (JsPath \ "securityDefinitions").read[Map[String, JsValue]]
+    (JsPath \ "securityDefinitions").read[Map[String, JsValue]] and
+    (JsPath \ "x-api-version").readNullable[String]
   )(SwaggerDoc.apply _)
 
   case class ApiModel(methods: Seq[ApiInfo], enums: Seq[EnumInfo], models: Seq[ModelInfo])
@@ -137,13 +139,13 @@ object ParseSwagger {
         builder.append(TemplateConstants.ModelPropertyTemplate
           .replace("@@PROPERTYNAME@@", prop.javaParamName)
           .replace("@@UPPERPROPERTYNAME@@", prop.javaParamName(0).toUpper + prop.javaParamName.substring(1))
-          .replace("@@COMMENT@@", prop.comment)
+          .replace("@@COMMENT@@", if (comment == null) "" else comment)
           .replace("@@PROPERTYTYPE@@", prop.typeName) + "\n")
       }
 
       TemplateConstants.ModelClassTemplate
         .replace("@@PROPERTYLIST@@", builder.toString)
-        .replace("@@COMMENT@@", comment)
+        .replace("@@COMMENT@@", if (comment == null) "" else comment)
         .replace("@@MODELCLASS@@", schemaName)
     }
   }
@@ -155,6 +157,8 @@ object ParseSwagger {
     prop.`type` match {
       case Some("integer") => {
         prop.format match {
+          case Some("byte") => builder.append("Byte")
+          case Some("int16") => builder.append("Short")
           case Some("int64") => builder.append("Long")
           case _ => builder.append("Integer")
         }
@@ -227,11 +231,11 @@ object ParseSwagger {
       (swagDoc.paths flatMap { (path: (String, Map[String, SwaggerMethod])) =>
         path._2 map { (verb: (String, SwaggerMethod)) =>
           ApiInfo(path._1,
-            verb._2.summary,
+            verb._2.summary.getOrElse(""),
             verb._2.tags.headOption.getOrElse(""),
             (verb._2.responses.find(r => r._1.equals("200")) orElse verb._2.responses.find(r => r._1.equals("201"))).flatMap(r => r._2.flatMap(_.schema.map(resolveType))).getOrElse("String"),
             verb._1,
-            verb._2.operationId.replace("ApiV2", ""),
+            verb._2.operationId.getOrElse("").replace("ApiV2", ""),
             if (verb._2.parameters.isDefined) verb._2.parameters.get.find(_.in.equals(Some("body"))).map(mapParameterInfo(_, Some("model"))) else null,
             if (verb._2.parameters.isDefined) verb._2.parameters.get.filter(_.in.equals(Some("path"))).map(mapParameterInfo(_)) else null,
             if (verb._2.parameters.isDefined) verb._2.parameters.get.filter(_.in.equals(Some("query"))).map(mapParameterInfo(_)) else null

@@ -13,71 +13,88 @@ import java.util.HashMap;
  * Worksheet Checkup Report Suggested Form Model
  */
 public class FilingsCheckupSuggestedFormModel {
-    private Integer taxAuthorityId;
-
-    /**
-     * Getter for taxAuthorityId - Tax Authority ID of the suggested form returned
-     */
-    public Integer getTaxAuthorityId() {
-        return this.taxAuthorityId;
-    }
-
-    /**
-     * Setter for taxAuthorityId - Tax Authority ID of the suggested form returned
-     */
-    public void setTaxAuthorityId(Integer taxAuthorityId) {
-        this.taxAuthorityId = taxAuthorityId;
-    }
-
-    
-    private String country;
-
-    /**
-     * Getter for country - Country of the suggested form returned
-     */
-    public String getCountry() {
-        return this.country;
-    }
-
-    /**
-     * Setter for country - Country of the suggested form returned
-     */
-    public void setCountry(String country) {
-        this.country = country;
-    }
-
-    
-    private String region;
-
-    /**
-     * Getter for region - Region of the suggested form returned
-     */
-    public String getRegion() {
-        return this.region;
-    }
-
-    /**
-     * Setter for region - Region of the suggested form returned
-     */
-    public void setRegion(String region) {
-        this.region = region;
-    }
-
-    
     private String returnName;
 
     /**
-     * Getter for returnName - Name of the suggested form returned
+     * Getter for returnName - Worksheet Checkup Report Suggested Form Model
      */
     public String getReturnName() {
         return this.returnName;
     }
 
     /**
-     * Setter for returnName - Name of the suggested form returned
+     * Setter for returnName - Worksheet Checkup Report Suggested Form Model
      */
     public void setReturnName(String returnName) {
         this.returnName = returnName;
+    }
+
+    
+    private String country;
+
+    /**
+     * Getter for country - Worksheet Checkup Report Suggested Form Model
+     */
+    public String getCountry() {
+        return this.country;
+    }
+
+    /**
+     * Setter for country - Worksheet Checkup Report Suggested Form Model
+     */
+    public void setCountry(String country) {
+        this.country = country;
+    }
+
+    
+    private String taxFormCode;
+
+    /**
+     * Getter for taxFormCode - Worksheet Checkup Report Suggested Form Model
+     */
+    public String getTaxFormCode() {
+        return this.taxFormCode;
+    }
+
+    /**
+     * Setter for taxFormCode - Worksheet Checkup Report Suggested Form Model
+     */
+    public void setTaxFormCode(String taxFormCode) {
+        this.taxFormCode = taxFormCode;
+    }
+
+    
+    private Integer taxAuthorityId;
+
+    /**
+     * Getter for taxAuthorityId - Worksheet Checkup Report Suggested Form Model
+     */
+    public Integer getTaxAuthorityId() {
+        return this.taxAuthorityId;
+    }
+
+    /**
+     * Setter for taxAuthorityId - Worksheet Checkup Report Suggested Form Model
+     */
+    public void setTaxAuthorityId(Integer taxAuthorityId) {
+        this.taxAuthorityId = taxAuthorityId;
+    }
+
+    
+    private String region;
+
+    /**
+     * Getter for region - Worksheet Checkup Report Suggested Form Model
+     */
+    public String getRegion() {
+        return this.region;
+    }
+
+    /**
+     * Setter for region - Worksheet Checkup Report Suggested Form Model
+     */
+    public void setRegion(String region) {
+        this.region = region;
     }
 
     

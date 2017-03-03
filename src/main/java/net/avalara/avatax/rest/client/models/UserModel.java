@@ -16,14 +16,14 @@ public class UserModel {
     private PasswordStatusId passwordStatus;
 
     /**
-     * Getter for passwordStatus - The status of the user's password.
+     * Getter for passwordStatus - An account user who is permitted to use AvaTax.
      */
     public PasswordStatusId getPasswordStatus() {
         return this.passwordStatus;
     }
 
     /**
-     * Setter for passwordStatus - The status of the user's password.
+     * Setter for passwordStatus - An account user who is permitted to use AvaTax.
      */
     public void setPasswordStatus(PasswordStatusId passwordStatus) {
         this.passwordStatus = passwordStatus;
@@ -33,14 +33,14 @@ public class UserModel {
     private SecurityRoleId securityRoleId;
 
     /**
-     * Getter for securityRoleId - The security level for this user.
+     * Getter for securityRoleId - An account user who is permitted to use AvaTax.
      */
     public SecurityRoleId getSecurityRoleId() {
         return this.securityRoleId;
     }
 
     /**
-     * Setter for securityRoleId - The security level for this user.
+     * Setter for securityRoleId - An account user who is permitted to use AvaTax.
      */
     public void setSecurityRoleId(SecurityRoleId securityRoleId) {
         this.securityRoleId = securityRoleId;
@@ -50,14 +50,14 @@ public class UserModel {
     private String email;
 
     /**
-     * Getter for email - The email address to be used to contact this user.  If the user has forgotten a password, an email can be sent to this email address with information on how to reset this password.
+     * Getter for email - An account user who is permitted to use AvaTax.
      */
     public String getEmail() {
         return this.email;
     }
 
     /**
-     * Setter for email - The email address to be used to contact this user.  If the user has forgotten a password, an email can be sent to this email address with information on how to reset this password.
+     * Setter for email - An account user who is permitted to use AvaTax.
      */
     public void setEmail(String email) {
         this.email = email;
@@ -67,14 +67,14 @@ public class UserModel {
     private Date modifiedDate;
 
     /**
-     * Getter for modifiedDate - The date/time when this record was last modified.
+     * Getter for modifiedDate - An account user who is permitted to use AvaTax.
      */
     public Date getModifiedDate() {
         return this.modifiedDate;
     }
 
     /**
-     * Setter for modifiedDate - The date/time when this record was last modified.
+     * Setter for modifiedDate - An account user who is permitted to use AvaTax.
      */
     public void setModifiedDate(Date modifiedDate) {
         this.modifiedDate = modifiedDate;
@@ -84,14 +84,14 @@ public class UserModel {
     private Integer accountId;
 
     /**
-     * Getter for accountId - The unique ID number of the account to which this user belongs.
+     * Getter for accountId - An account user who is permitted to use AvaTax.
      */
     public Integer getAccountId() {
         return this.accountId;
     }
 
     /**
-     * Setter for accountId - The unique ID number of the account to which this user belongs.
+     * Setter for accountId - An account user who is permitted to use AvaTax.
      */
     public void setAccountId(Integer accountId) {
         this.accountId = accountId;
@@ -101,14 +101,14 @@ public class UserModel {
     private String postalCode;
 
     /**
-     * Getter for postalCode - The postal code in which this user resides.
+     * Getter for postalCode - An account user who is permitted to use AvaTax.
      */
     public String getPostalCode() {
         return this.postalCode;
     }
 
     /**
-     * Setter for postalCode - The postal code in which this user resides.
+     * Setter for postalCode - An account user who is permitted to use AvaTax.
      */
     public void setPostalCode(String postalCode) {
         this.postalCode = postalCode;
@@ -118,14 +118,14 @@ public class UserModel {
     private String lastName;
 
     /**
-     * Getter for lastName - The last or family name of the user.
+     * Getter for lastName - An account user who is permitted to use AvaTax.
      */
     public String getLastName() {
         return this.lastName;
     }
 
     /**
-     * Setter for lastName - The last or family name of the user.
+     * Setter for lastName - An account user who is permitted to use AvaTax.
      */
     public void setLastName(String lastName) {
         this.lastName = lastName;
@@ -135,14 +135,14 @@ public class UserModel {
     private String firstName;
 
     /**
-     * Getter for firstName - The first or given name of the user.
+     * Getter for firstName - An account user who is permitted to use AvaTax.
      */
     public String getFirstName() {
         return this.firstName;
     }
 
     /**
-     * Setter for firstName - The first or given name of the user.
+     * Setter for firstName - An account user who is permitted to use AvaTax.
      */
     public void setFirstName(String firstName) {
         this.firstName = firstName;
@@ -152,14 +152,14 @@ public class UserModel {
     private Integer id;
 
     /**
-     * Getter for id - The unique ID number of this user.
+     * Getter for id - An account user who is permitted to use AvaTax.
      */
     public Integer getId() {
         return this.id;
     }
 
     /**
-     * Setter for id - The unique ID number of this user.
+     * Setter for id - An account user who is permitted to use AvaTax.
      */
     public void setId(Integer id) {
         this.id = id;
@@ -169,14 +169,14 @@ public class UserModel {
     private Boolean isActive;
 
     /**
-     * Getter for isActive - True if this user is currently active.
+     * Getter for isActive - An account user who is permitted to use AvaTax.
      */
     public Boolean getIsActive() {
         return this.isActive;
     }
 
     /**
-     * Setter for isActive - True if this user is currently active.
+     * Setter for isActive - An account user who is permitted to use AvaTax.
      */
     public void setIsActive(Boolean isActive) {
         this.isActive = isActive;
@@ -186,14 +186,14 @@ public class UserModel {
     private Integer modifiedUserId;
 
     /**
-     * Getter for modifiedUserId - The user ID of the user who last modified this record.
+     * Getter for modifiedUserId - An account user who is permitted to use AvaTax.
      */
     public Integer getModifiedUserId() {
         return this.modifiedUserId;
     }
 
     /**
-     * Setter for modifiedUserId - The user ID of the user who last modified this record.
+     * Setter for modifiedUserId - An account user who is permitted to use AvaTax.
      */
     public void setModifiedUserId(Integer modifiedUserId) {
         this.modifiedUserId = modifiedUserId;
@@ -203,14 +203,14 @@ public class UserModel {
     private Integer createdUserId;
 
     /**
-     * Getter for createdUserId - The User ID of the user who created this record.
+     * Getter for createdUserId - An account user who is permitted to use AvaTax.
      */
     public Integer getCreatedUserId() {
         return this.createdUserId;
     }
 
     /**
-     * Setter for createdUserId - The User ID of the user who created this record.
+     * Setter for createdUserId - An account user who is permitted to use AvaTax.
      */
     public void setCreatedUserId(Integer createdUserId) {
         this.createdUserId = createdUserId;
@@ -220,14 +220,14 @@ public class UserModel {
     private Integer companyId;
 
     /**
-     * Getter for companyId - If this user is locked to one company (and its children), this is the unique ID number of the company to which this user belongs.
+     * Getter for companyId - An account user who is permitted to use AvaTax.
      */
     public Integer getCompanyId() {
         return this.companyId;
     }
 
     /**
-     * Setter for companyId - If this user is locked to one company (and its children), this is the unique ID number of the company to which this user belongs.
+     * Setter for companyId - An account user who is permitted to use AvaTax.
      */
     public void setCompanyId(Integer companyId) {
         this.companyId = companyId;
@@ -237,14 +237,14 @@ public class UserModel {
     private String userName;
 
     /**
-     * Getter for userName - The username which is used to log on to the AvaTax website, or to authenticate against API calls.
+     * Getter for userName - An account user who is permitted to use AvaTax.
      */
     public String getUserName() {
         return this.userName;
     }
 
     /**
-     * Setter for userName - The username which is used to log on to the AvaTax website, or to authenticate against API calls.
+     * Setter for userName - An account user who is permitted to use AvaTax.
      */
     public void setUserName(String userName) {
         this.userName = userName;
@@ -254,14 +254,14 @@ public class UserModel {
     private Date createdDate;
 
     /**
-     * Getter for createdDate - The date when this record was created.
+     * Getter for createdDate - An account user who is permitted to use AvaTax.
      */
     public Date getCreatedDate() {
         return this.createdDate;
     }
 
     /**
-     * Setter for createdDate - The date when this record was created.
+     * Setter for createdDate - An account user who is permitted to use AvaTax.
      */
     public void setCreatedDate(Date createdDate) {
         this.createdDate = createdDate;

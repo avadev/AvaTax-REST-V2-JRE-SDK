@@ -16,14 +16,14 @@ public class IsoCountryModel {
     private String code;
 
     /**
-     * Getter for code - The two character ISO 3166 country code
+     * Getter for code - Represents an ISO 3166 recognized country
      */
     public String getCode() {
         return this.code;
     }
 
     /**
-     * Setter for code - The two character ISO 3166 country code
+     * Setter for code - Represents an ISO 3166 recognized country
      */
     public void setCode(String code) {
         this.code = code;
@@ -33,14 +33,14 @@ public class IsoCountryModel {
     private String name;
 
     /**
-     * Getter for name - The full name of this country as it is known in US English
+     * Getter for name - Represents an ISO 3166 recognized country
      */
     public String getName() {
         return this.name;
     }
 
     /**
-     * Setter for name - The full name of this country as it is known in US English
+     * Setter for name - Represents an ISO 3166 recognized country
      */
     public void setName(String name) {
         this.name = name;
@@ -50,14 +50,14 @@ public class IsoCountryModel {
     private Boolean isEuropeanUnion;
 
     /**
-     * Getter for isEuropeanUnion - True if this country is a member of the European Union
+     * Getter for isEuropeanUnion - Represents an ISO 3166 recognized country
      */
     public Boolean getIsEuropeanUnion() {
         return this.isEuropeanUnion;
     }
 
     /**
-     * Setter for isEuropeanUnion - True if this country is a member of the European Union
+     * Setter for isEuropeanUnion - Represents an ISO 3166 recognized country
      */
     public void setIsEuropeanUnion(Boolean isEuropeanUnion) {
         this.isEuropeanUnion = isEuropeanUnion;

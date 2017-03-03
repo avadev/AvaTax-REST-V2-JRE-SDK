@@ -16,37 +16,33 @@ public class FilingModel {
     private ArrayList<FilingRegionModel> filingRegions;
 
     /**
-     * Getter for filingRegions - A listing of regional tax filings within this time period.
+     * Getter for filingRegions - Represents a listing of all tax calculation data for filings and for accruing to future filings.
      */
     public ArrayList<FilingRegionModel> getFilingRegions() {
         return this.filingRegions;
     }
 
     /**
-     * Setter for filingRegions - A listing of regional tax filings within this time period.
+     * Setter for filingRegions - Represents a listing of all tax calculation data for filings and for accruing to future filings.
      */
     public void setFilingRegions(ArrayList<FilingRegionModel> filingRegions) {
         this.filingRegions = filingRegions;
     }
 
     
-    private Integer year;
+    private Short year;
 
     /**
-     * Getter for year - The year of the filing period for this tax filing.
-            The filing period represents the year and month of the last day of taxes being reported on this filing.  
-            For example, an annual tax filing for Jan-Dec 2015 would have a filing period of Dec 2015.
+     * Getter for year - Represents a listing of all tax calculation data for filings and for accruing to future filings.
      */
-    public Integer getYear() {
+    public Short getYear() {
         return this.year;
     }
 
     /**
-     * Setter for year - The year of the filing period for this tax filing.
-            The filing period represents the year and month of the last day of taxes being reported on this filing.  
-            For example, an annual tax filing for Jan-Dec 2015 would have a filing period of Dec 2015.
+     * Setter for year - Represents a listing of all tax calculation data for filings and for accruing to future filings.
      */
-    public void setYear(Integer year) {
+    public void setYear(Short year) {
         this.year = year;
     }
 
@@ -54,14 +50,14 @@ public class FilingModel {
     private Long id;
 
     /**
-     * Getter for id - The unique ID number of this filing.
+     * Getter for id - Represents a listing of all tax calculation data for filings and for accruing to future filings.
      */
     public Long getId() {
         return this.id;
     }
 
     /**
-     * Setter for id - The unique ID number of this filing.
+     * Setter for id - Represents a listing of all tax calculation data for filings and for accruing to future filings.
      */
     public void setId(Long id) {
         this.id = id;
@@ -71,14 +67,14 @@ public class FilingModel {
     private WorksheetTypeId type;
 
     /**
-     * Getter for type - Indicates whether this is an original or an amended filing.
+     * Getter for type - Represents a listing of all tax calculation data for filings and for accruing to future filings.
      */
     public WorksheetTypeId getType() {
         return this.type;
     }
 
     /**
-     * Setter for type - Indicates whether this is an original or an amended filing.
+     * Setter for type - Represents a listing of all tax calculation data for filings and for accruing to future filings.
      */
     public void setType(WorksheetTypeId type) {
         this.type = type;
@@ -88,37 +84,33 @@ public class FilingModel {
     private Integer companyId;
 
     /**
-     * Getter for companyId - The unique ID number of the company for this filing.
+     * Getter for companyId - Represents a listing of all tax calculation data for filings and for accruing to future filings.
      */
     public Integer getCompanyId() {
         return this.companyId;
     }
 
     /**
-     * Setter for companyId - The unique ID number of the company for this filing.
+     * Setter for companyId - Represents a listing of all tax calculation data for filings and for accruing to future filings.
      */
     public void setCompanyId(Integer companyId) {
         this.companyId = companyId;
     }
 
     
-    private Integer month;
+    private Byte month;
 
     /**
-     * Getter for month - The month of the filing period for this tax filing.  
-            The filing period represents the year and month of the last day of taxes being reported on this filing.  
-            For example, an annual tax filing for Jan-Dec 2015 would have a filing period of Dec 2015.
+     * Getter for month - Represents a listing of all tax calculation data for filings and for accruing to future filings.
      */
-    public Integer getMonth() {
+    public Byte getMonth() {
         return this.month;
     }
 
     /**
-     * Setter for month - The month of the filing period for this tax filing.  
-            The filing period represents the year and month of the last day of taxes being reported on this filing.  
-            For example, an annual tax filing for Jan-Dec 2015 would have a filing period of Dec 2015.
+     * Setter for month - Represents a listing of all tax calculation data for filings and for accruing to future filings.
      */
-    public void setMonth(Integer month) {
+    public void setMonth(Byte month) {
         this.month = month;
     }
 

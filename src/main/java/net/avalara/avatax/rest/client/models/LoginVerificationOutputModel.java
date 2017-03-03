@@ -16,14 +16,14 @@ public class LoginVerificationOutputModel {
     private Integer jobId;
 
     /**
-     * Getter for jobId - The job Id returned from skyscraper
+     * Getter for jobId - This is the output model coming from skyscraper services
      */
     public Integer getJobId() {
         return this.jobId;
     }
 
     /**
-     * Setter for jobId - The job Id returned from skyscraper
+     * Setter for jobId - This is the output model coming from skyscraper services
      */
     public void setJobId(Integer jobId) {
         this.jobId = jobId;
@@ -33,14 +33,14 @@ public class LoginVerificationOutputModel {
     private String operationStatus;
 
     /**
-     * Getter for operationStatus - The operation status of the job
+     * Getter for operationStatus - This is the output model coming from skyscraper services
      */
     public String getOperationStatus() {
         return this.operationStatus;
     }
 
     /**
-     * Setter for operationStatus - The operation status of the job
+     * Setter for operationStatus - This is the output model coming from skyscraper services
      */
     public void setOperationStatus(String operationStatus) {
         this.operationStatus = operationStatus;
@@ -50,14 +50,14 @@ public class LoginVerificationOutputModel {
     private String message;
 
     /**
-     * Getter for message - The message returned from the job
+     * Getter for message - This is the output model coming from skyscraper services
      */
     public String getMessage() {
         return this.message;
     }
 
     /**
-     * Setter for message - The message returned from the job
+     * Setter for message - This is the output model coming from skyscraper services
      */
     public void setMessage(String message) {
         this.message = message;
@@ -67,14 +67,14 @@ public class LoginVerificationOutputModel {
     private Boolean loginSuccess;
 
     /**
-     * Getter for loginSuccess - Indicates if the login was successful
+     * Getter for loginSuccess - This is the output model coming from skyscraper services
      */
     public Boolean getLoginSuccess() {
         return this.loginSuccess;
     }
 
     /**
-     * Setter for loginSuccess - Indicates if the login was successful
+     * Setter for loginSuccess - This is the output model coming from skyscraper services
      */
     public void setLoginSuccess(Boolean loginSuccess) {
         this.loginSuccess = loginSuccess;

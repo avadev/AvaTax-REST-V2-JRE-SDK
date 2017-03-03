@@ -16,14 +16,14 @@ public class FilingFrequencyModel {
     private Integer id;
 
     /**
-     * Getter for id - The unique ID number of this filing frequency.
+     * Getter for id - FilingFrequency Model
      */
     public Integer getId() {
         return this.id;
     }
 
     /**
-     * Setter for id - The unique ID number of this filing frequency.
+     * Setter for id - FilingFrequency Model
      */
     public void setId(Integer id) {
         this.id = id;
@@ -33,14 +33,14 @@ public class FilingFrequencyModel {
     private String description;
 
     /**
-     * Getter for description - The description name of this filing frequency
+     * Getter for description - FilingFrequency Model
      */
     public String getDescription() {
         return this.description;
     }
 
     /**
-     * Setter for description - The description name of this filing frequency
+     * Setter for description - FilingFrequency Model
      */
     public void setDescription(String description) {
         this.description = description;

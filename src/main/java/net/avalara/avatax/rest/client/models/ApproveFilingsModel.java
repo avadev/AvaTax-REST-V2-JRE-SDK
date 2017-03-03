@@ -16,14 +16,14 @@ public class ApproveFilingsModel {
     private Boolean approve;
 
     /**
-     * Getter for approve - Set this value to true in order to approve the filings.
+     * Getter for approve - Approve a set of filings.
      */
     public Boolean getApprove() {
         return this.approve;
     }
 
     /**
-     * Setter for approve - Set this value to true in order to approve the filings.
+     * Setter for approve - Approve a set of filings.
      */
     public void setApprove(Boolean approve) {
         this.approve = approve;

@@ -16,14 +16,14 @@ public class AdjustTransactionModel {
     private AdjustmentReason adjustmentReason;
 
     /**
-     * Getter for adjustmentReason - A reason code indicating why this adjustment was made
+     * Getter for adjustmentReason - A request to adjust tax for a previously existing transaction
      */
     public AdjustmentReason getAdjustmentReason() {
         return this.adjustmentReason;
     }
 
     /**
-     * Setter for adjustmentReason - A reason code indicating why this adjustment was made
+     * Setter for adjustmentReason - A request to adjust tax for a previously existing transaction
      */
     public void setAdjustmentReason(AdjustmentReason adjustmentReason) {
         this.adjustmentReason = adjustmentReason;
@@ -33,14 +33,14 @@ public class AdjustTransactionModel {
     private String adjustmentDescription;
 
     /**
-     * Getter for adjustmentDescription - If the AdjustmentReason is "Other", specify the reason here
+     * Getter for adjustmentDescription - A request to adjust tax for a previously existing transaction
      */
     public String getAdjustmentDescription() {
         return this.adjustmentDescription;
     }
 
     /**
-     * Setter for adjustmentDescription - If the AdjustmentReason is "Other", specify the reason here
+     * Setter for adjustmentDescription - A request to adjust tax for a previously existing transaction
      */
     public void setAdjustmentDescription(String adjustmentDescription) {
         this.adjustmentDescription = adjustmentDescription;
@@ -50,14 +50,14 @@ public class AdjustTransactionModel {
     private CreateTransactionModel newTransaction;
 
     /**
-     * Getter for newTransaction - Replace the current transaction with tax data calculated for this new transaction
+     * Getter for newTransaction - A request to adjust tax for a previously existing transaction
      */
     public CreateTransactionModel getNewTransaction() {
         return this.newTransaction;
     }
 
     /**
-     * Setter for newTransaction - Replace the current transaction with tax data calculated for this new transaction
+     * Setter for newTransaction - A request to adjust tax for a previously existing transaction
      */
     public void setNewTransaction(CreateTransactionModel newTransaction) {
         this.newTransaction = newTransaction;

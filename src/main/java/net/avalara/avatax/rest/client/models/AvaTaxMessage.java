@@ -16,14 +16,14 @@ public class AvaTaxMessage {
     private String refersTo;
 
     /**
-     * Getter for refersTo - Information about what object in your request this message refers to
+     * Getter for refersTo - Informational or warning messages returned by AvaTax with a transaction
      */
     public String getRefersTo() {
         return this.refersTo;
     }
 
     /**
-     * Setter for refersTo - Information about what object in your request this message refers to
+     * Setter for refersTo - Informational or warning messages returned by AvaTax with a transaction
      */
     public void setRefersTo(String refersTo) {
         this.refersTo = refersTo;
@@ -33,14 +33,14 @@ public class AvaTaxMessage {
     private String source;
 
     /**
-     * Getter for source - The name of the code or service that generated this message
+     * Getter for source - Informational or warning messages returned by AvaTax with a transaction
      */
     public String getSource() {
         return this.source;
     }
 
     /**
-     * Setter for source - The name of the code or service that generated this message
+     * Setter for source - Informational or warning messages returned by AvaTax with a transaction
      */
     public void setSource(String source) {
         this.source = source;
@@ -50,14 +50,14 @@ public class AvaTaxMessage {
     private String details;
 
     /**
-     * Getter for details - Detailed information that explains what the summary provided
+     * Getter for details - Informational or warning messages returned by AvaTax with a transaction
      */
     public String getDetails() {
         return this.details;
     }
 
     /**
-     * Setter for details - Detailed information that explains what the summary provided
+     * Setter for details - Informational or warning messages returned by AvaTax with a transaction
      */
     public void setDetails(String details) {
         this.details = details;
@@ -67,14 +67,14 @@ public class AvaTaxMessage {
     private String severity;
 
     /**
-     * Getter for severity - A category that indicates how severely this message affects the results
+     * Getter for severity - Informational or warning messages returned by AvaTax with a transaction
      */
     public String getSeverity() {
         return this.severity;
     }
 
     /**
-     * Setter for severity - A category that indicates how severely this message affects the results
+     * Setter for severity - Informational or warning messages returned by AvaTax with a transaction
      */
     public void setSeverity(String severity) {
         this.severity = severity;
@@ -84,14 +84,14 @@ public class AvaTaxMessage {
     private String summary;
 
     /**
-     * Getter for summary - A brief summary of what this message tells us
+     * Getter for summary - Informational or warning messages returned by AvaTax with a transaction
      */
     public String getSummary() {
         return this.summary;
     }
 
     /**
-     * Setter for summary - A brief summary of what this message tells us
+     * Setter for summary - Informational or warning messages returned by AvaTax with a transaction
      */
     public void setSummary(String summary) {
         this.summary = summary;

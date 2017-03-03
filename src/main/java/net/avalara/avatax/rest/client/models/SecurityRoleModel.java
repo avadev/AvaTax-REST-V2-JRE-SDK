@@ -13,19 +13,19 @@ import java.util.HashMap;
  * Represents a single security role.
  */
 public class SecurityRoleModel {
-    private Integer id;
+    private Byte id;
 
     /**
-     * Getter for id - The unique ID number of this security role.
+     * Getter for id - Represents a single security role.
      */
-    public Integer getId() {
+    public Byte getId() {
         return this.id;
     }
 
     /**
-     * Setter for id - The unique ID number of this security role.
+     * Setter for id - Represents a single security role.
      */
-    public void setId(Integer id) {
+    public void setId(Byte id) {
         this.id = id;
     }
 
@@ -33,14 +33,14 @@ public class SecurityRoleModel {
     private String description;
 
     /**
-     * Getter for description - A description of this security role
+     * Getter for description - Represents a single security role.
      */
     public String getDescription() {
         return this.description;
     }
 
     /**
-     * Setter for description - A description of this security role
+     * Setter for description - Represents a single security role.
      */
     public void setDescription(String description) {
         this.description = description;

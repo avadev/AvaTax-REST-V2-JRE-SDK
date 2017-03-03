@@ -11,20 +11,22 @@ import java.util.HashMap;
 
 /**
  * Represents a commitment to file a tax return on a recurring basis.
-            Only used if you subscribe to Avalara Returns.
+Only used if you subscribe to Avalara Returns.
  */
 public class FilingRequestModel {
     private FilingRequestDataModel data;
 
     /**
-     * Getter for data - 
+     * Getter for data - Represents a commitment to file a tax return on a recurring basis.
+Only used if you subscribe to Avalara Returns.
      */
     public FilingRequestDataModel getData() {
         return this.data;
     }
 
     /**
-     * Setter for data - 
+     * Setter for data - Represents a commitment to file a tax return on a recurring basis.
+Only used if you subscribe to Avalara Returns.
      */
     public void setData(FilingRequestDataModel data) {
         this.data = data;
@@ -34,14 +36,16 @@ public class FilingRequestModel {
     private Date modifiedDate;
 
     /**
-     * Getter for modifiedDate - The date/time when this record was last modified.
+     * Getter for modifiedDate - Represents a commitment to file a tax return on a recurring basis.
+Only used if you subscribe to Avalara Returns.
      */
     public Date getModifiedDate() {
         return this.modifiedDate;
     }
 
     /**
-     * Setter for modifiedDate - The date/time when this record was last modified.
+     * Setter for modifiedDate - Represents a commitment to file a tax return on a recurring basis.
+Only used if you subscribe to Avalara Returns.
      */
     public void setModifiedDate(Date modifiedDate) {
         this.modifiedDate = modifiedDate;
@@ -51,14 +55,16 @@ public class FilingRequestModel {
     private Long id;
 
     /**
-     * Getter for id - The unique ID number of this filing request.
+     * Getter for id - Represents a commitment to file a tax return on a recurring basis.
+Only used if you subscribe to Avalara Returns.
      */
     public Long getId() {
         return this.id;
     }
 
     /**
-     * Setter for id - The unique ID number of this filing request.
+     * Setter for id - Represents a commitment to file a tax return on a recurring basis.
+Only used if you subscribe to Avalara Returns.
      */
     public void setId(Long id) {
         this.id = id;
@@ -68,14 +74,16 @@ public class FilingRequestModel {
     private FilingRequestStatus filingRequestStatusId;
 
     /**
-     * Getter for filingRequestStatusId - 
+     * Getter for filingRequestStatusId - Represents a commitment to file a tax return on a recurring basis.
+Only used if you subscribe to Avalara Returns.
      */
     public FilingRequestStatus getFilingRequestStatusId() {
         return this.filingRequestStatusId;
     }
 
     /**
-     * Setter for filingRequestStatusId - 
+     * Setter for filingRequestStatusId - Represents a commitment to file a tax return on a recurring basis.
+Only used if you subscribe to Avalara Returns.
      */
     public void setFilingRequestStatusId(FilingRequestStatus filingRequestStatusId) {
         this.filingRequestStatusId = filingRequestStatusId;
@@ -85,14 +93,16 @@ public class FilingRequestModel {
     private Integer modifiedUserId;
 
     /**
-     * Getter for modifiedUserId - The user ID of the user who last modified this record.
+     * Getter for modifiedUserId - Represents a commitment to file a tax return on a recurring basis.
+Only used if you subscribe to Avalara Returns.
      */
     public Integer getModifiedUserId() {
         return this.modifiedUserId;
     }
 
     /**
-     * Setter for modifiedUserId - The user ID of the user who last modified this record.
+     * Setter for modifiedUserId - Represents a commitment to file a tax return on a recurring basis.
+Only used if you subscribe to Avalara Returns.
      */
     public void setModifiedUserId(Integer modifiedUserId) {
         this.modifiedUserId = modifiedUserId;
@@ -102,14 +112,16 @@ public class FilingRequestModel {
     private Integer createdUserId;
 
     /**
-     * Getter for createdUserId - The User ID of the user who created this record.
+     * Getter for createdUserId - Represents a commitment to file a tax return on a recurring basis.
+Only used if you subscribe to Avalara Returns.
      */
     public Integer getCreatedUserId() {
         return this.createdUserId;
     }
 
     /**
-     * Setter for createdUserId - The User ID of the user who created this record.
+     * Setter for createdUserId - Represents a commitment to file a tax return on a recurring basis.
+Only used if you subscribe to Avalara Returns.
      */
     public void setCreatedUserId(Integer createdUserId) {
         this.createdUserId = createdUserId;
@@ -119,14 +131,16 @@ public class FilingRequestModel {
     private Integer companyId;
 
     /**
-     * Getter for companyId - The unique ID number of the company to which this filing request belongs.
+     * Getter for companyId - Represents a commitment to file a tax return on a recurring basis.
+Only used if you subscribe to Avalara Returns.
      */
     public Integer getCompanyId() {
         return this.companyId;
     }
 
     /**
-     * Setter for companyId - The unique ID number of the company to which this filing request belongs.
+     * Setter for companyId - Represents a commitment to file a tax return on a recurring basis.
+Only used if you subscribe to Avalara Returns.
      */
     public void setCompanyId(Integer companyId) {
         this.companyId = companyId;
@@ -136,14 +150,16 @@ public class FilingRequestModel {
     private Date createdDate;
 
     /**
-     * Getter for createdDate - The date when this record was created.
+     * Getter for createdDate - Represents a commitment to file a tax return on a recurring basis.
+Only used if you subscribe to Avalara Returns.
      */
     public Date getCreatedDate() {
         return this.createdDate;
     }
 
     /**
-     * Setter for createdDate - The date when this record was created.
+     * Setter for createdDate - Represents a commitment to file a tax return on a recurring basis.
+Only used if you subscribe to Avalara Returns.
      */
     public void setCreatedDate(Date createdDate) {
         this.createdDate = createdDate;

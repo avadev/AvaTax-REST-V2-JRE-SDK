@@ -11,20 +11,22 @@ import java.util.HashMap;
 
 /**
  * Represents a commitment to file a tax return on a recurring basis.
-            Only used if you subscribe to Avalara Returns.
+Only used if you subscribe to Avalara Returns.
  */
 public class FilingCalendarModel {
     private String other1Name;
 
     /**
-     * Getter for other1Name - Custom filing information field.  Leave blank.
+     * Getter for other1Name - Represents a commitment to file a tax return on a recurring basis.
+Only used if you subscribe to Avalara Returns.
      */
     public String getOther1Name() {
         return this.other1Name;
     }
 
     /**
-     * Setter for other1Name - Custom filing information field.  Leave blank.
+     * Setter for other1Name - Represents a commitment to file a tax return on a recurring basis.
+Only used if you subscribe to Avalara Returns.
      */
     public void setOther1Name(String other1Name) {
         this.other1Name = other1Name;
@@ -34,14 +36,16 @@ public class FilingCalendarModel {
     private String paymentCurrency;
 
     /**
-     * Getter for paymentCurrency - Specify the ISO 4217 currency code for the currency to remit for this tax return.  For all tax returns in the United States, specify "USD".
+     * Getter for paymentCurrency - Represents a commitment to file a tax return on a recurring basis.
+Only used if you subscribe to Avalara Returns.
      */
     public String getPaymentCurrency() {
         return this.paymentCurrency;
     }
 
     /**
-     * Setter for paymentCurrency - Specify the ISO 4217 currency code for the currency to remit for this tax return.  For all tax returns in the United States, specify "USD".
+     * Setter for paymentCurrency - Represents a commitment to file a tax return on a recurring basis.
+Only used if you subscribe to Avalara Returns.
      */
     public void setPaymentCurrency(String paymentCurrency) {
         this.paymentCurrency = paymentCurrency;
@@ -51,14 +55,16 @@ public class FilingCalendarModel {
     private String city;
 
     /**
-     * Getter for city - The city name of the physical address to be used when filing this tax return.
+     * Getter for city - Represents a commitment to file a tax return on a recurring basis.
+Only used if you subscribe to Avalara Returns.
      */
     public String getCity() {
         return this.city;
     }
 
     /**
-     * Setter for city - The city name of the physical address to be used when filing this tax return.
+     * Setter for city - Represents a commitment to file a tax return on a recurring basis.
+Only used if you subscribe to Avalara Returns.
      */
     public void setCity(String city) {
         this.city = city;
@@ -68,14 +74,16 @@ public class FilingCalendarModel {
     private String eFileUsername;
 
     /**
-     * Getter for eFileUsername - If you file electronically, this is the username you use to log in to the tax authority's website.
+     * Getter for eFileUsername - Represents a commitment to file a tax return on a recurring basis.
+Only used if you subscribe to Avalara Returns.
      */
     public String getEFileUsername() {
         return this.eFileUsername;
     }
 
     /**
-     * Setter for eFileUsername - If you file electronically, this is the username you use to log in to the tax authority's website.
+     * Setter for eFileUsername - Represents a commitment to file a tax return on a recurring basis.
+Only used if you subscribe to Avalara Returns.
      */
     public void setEFileUsername(String eFileUsername) {
         this.eFileUsername = eFileUsername;
@@ -85,35 +93,37 @@ public class FilingCalendarModel {
     private String other2Name;
 
     /**
-     * Getter for other2Name - Custom filing information field.  Leave blank.
+     * Getter for other2Name - Represents a commitment to file a tax return on a recurring basis.
+Only used if you subscribe to Avalara Returns.
      */
     public String getOther2Name() {
         return this.other2Name;
     }
 
     /**
-     * Setter for other2Name - Custom filing information field.  Leave blank.
+     * Setter for other2Name - Represents a commitment to file a tax return on a recurring basis.
+Only used if you subscribe to Avalara Returns.
      */
     public void setOther2Name(String other2Name) {
         this.other2Name = other2Name;
     }
 
     
-    private Integer prepayPercentage;
+    private Byte prepayPercentage;
 
     /**
-     * Getter for prepayPercentage - If you are required to prepay a percentage of taxes for future periods, please specify the percentage in whole numbers; 
-            for example, the value 90 would indicate 90%.
+     * Getter for prepayPercentage - Represents a commitment to file a tax return on a recurring basis.
+Only used if you subscribe to Avalara Returns.
      */
-    public Integer getPrepayPercentage() {
+    public Byte getPrepayPercentage() {
         return this.prepayPercentage;
     }
 
     /**
-     * Setter for prepayPercentage - If you are required to prepay a percentage of taxes for future periods, please specify the percentage in whole numbers; 
-            for example, the value 90 would indicate 90%.
+     * Setter for prepayPercentage - Represents a commitment to file a tax return on a recurring basis.
+Only used if you subscribe to Avalara Returns.
      */
-    public void setPrepayPercentage(Integer prepayPercentage) {
+    public void setPrepayPercentage(Byte prepayPercentage) {
         this.prepayPercentage = prepayPercentage;
     }
 
@@ -121,14 +131,16 @@ public class FilingCalendarModel {
     private String other1Value;
 
     /**
-     * Getter for other1Value - Custom filing information field.  Leave blank.
+     * Getter for other1Value - Represents a commitment to file a tax return on a recurring basis.
+Only used if you subscribe to Avalara Returns.
      */
     public String getOther1Value() {
         return this.other1Value;
     }
 
     /**
-     * Setter for other1Value - Custom filing information field.  Leave blank.
+     * Setter for other1Value - Represents a commitment to file a tax return on a recurring basis.
+Only used if you subscribe to Avalara Returns.
      */
     public void setOther1Value(String other1Value) {
         this.other1Value = other1Value;
@@ -138,14 +150,16 @@ public class FilingCalendarModel {
     private String alSignOn;
 
     /**
-     * Getter for alSignOn - Custom filing information field for Alabama.
+     * Getter for alSignOn - Represents a commitment to file a tax return on a recurring basis.
+Only used if you subscribe to Avalara Returns.
      */
     public String getAlSignOn() {
         return this.alSignOn;
     }
 
     /**
-     * Setter for alSignOn - Custom filing information field for Alabama.
+     * Setter for alSignOn - Represents a commitment to file a tax return on a recurring basis.
+Only used if you subscribe to Avalara Returns.
      */
     public void setAlSignOn(String alSignOn) {
         this.alSignOn = alSignOn;
@@ -155,14 +169,16 @@ public class FilingCalendarModel {
     private String employerIdentificationNumber;
 
     /**
-     * Getter for employerIdentificationNumber - The Employer Identification Number or Taxpayer Identification Number that is to be used when filing this return.
+     * Getter for employerIdentificationNumber - Represents a commitment to file a tax return on a recurring basis.
+Only used if you subscribe to Avalara Returns.
      */
     public String getEmployerIdentificationNumber() {
         return this.employerIdentificationNumber;
     }
 
     /**
-     * Setter for employerIdentificationNumber - The Employer Identification Number or Taxpayer Identification Number that is to be used when filing this return.
+     * Setter for employerIdentificationNumber - Represents a commitment to file a tax return on a recurring basis.
+Only used if you subscribe to Avalara Returns.
      */
     public void setEmployerIdentificationNumber(String employerIdentificationNumber) {
         this.employerIdentificationNumber = employerIdentificationNumber;
@@ -172,14 +188,16 @@ public class FilingCalendarModel {
     private String legalEntityName;
 
     /**
-     * Getter for legalEntityName - The legal entity name to be used when filing this return.
+     * Getter for legalEntityName - Represents a commitment to file a tax return on a recurring basis.
+Only used if you subscribe to Avalara Returns.
      */
     public String getLegalEntityName() {
         return this.legalEntityName;
     }
 
     /**
-     * Setter for legalEntityName - The legal entity name to be used when filing this return.
+     * Setter for legalEntityName - Represents a commitment to file a tax return on a recurring basis.
+Only used if you subscribe to Avalara Returns.
      */
     public void setLegalEntityName(String legalEntityName) {
         this.legalEntityName = legalEntityName;
@@ -189,14 +207,16 @@ public class FilingCalendarModel {
     private MatchingTaxType taxTypeId;
 
     /**
-     * Getter for taxTypeId - The type of tax to report on this return.
+     * Getter for taxTypeId - Represents a commitment to file a tax return on a recurring basis.
+Only used if you subscribe to Avalara Returns.
      */
     public MatchingTaxType getTaxTypeId() {
         return this.taxTypeId;
     }
 
     /**
-     * Setter for taxTypeId - The type of tax to report on this return.
+     * Setter for taxTypeId - Represents a commitment to file a tax return on a recurring basis.
+Only used if you subscribe to Avalara Returns.
      */
     public void setTaxTypeId(MatchingTaxType taxTypeId) {
         this.taxTypeId = taxTypeId;
@@ -206,18 +226,16 @@ public class FilingCalendarModel {
     private Date endDate;
 
     /**
-     * Getter for endDate - The last date for the tax period when this return should be filed.
-            This date specifies the last date for tax transactions that should be reported on this filing calendar.
-            Please note that tax is usually filed one month in arrears: for example, tax for January transactions is typically filed during the month of February.
+     * Getter for endDate - Represents a commitment to file a tax return on a recurring basis.
+Only used if you subscribe to Avalara Returns.
      */
     public Date getEndDate() {
         return this.endDate;
     }
 
     /**
-     * Setter for endDate - The last date for the tax period when this return should be filed.
-            This date specifies the last date for tax transactions that should be reported on this filing calendar.
-            Please note that tax is usually filed one month in arrears: for example, tax for January transactions is typically filed during the month of February.
+     * Setter for endDate - Represents a commitment to file a tax return on a recurring basis.
+Only used if you subscribe to Avalara Returns.
      */
     public void setEndDate(Date endDate) {
         this.endDate = endDate;
@@ -227,14 +245,16 @@ public class FilingCalendarModel {
     private String taxAuthorityName;
 
     /**
-     * Getter for taxAuthorityName - The name of the tax authority of this return.
+     * Getter for taxAuthorityName - Represents a commitment to file a tax return on a recurring basis.
+Only used if you subscribe to Avalara Returns.
      */
     public String getTaxAuthorityName() {
         return this.taxAuthorityName;
     }
 
     /**
-     * Setter for taxAuthorityName - The name of the tax authority of this return.
+     * Setter for taxAuthorityName - Represents a commitment to file a tax return on a recurring basis.
+Only used if you subscribe to Avalara Returns.
      */
     public void setTaxAuthorityName(String taxAuthorityName) {
         this.taxAuthorityName = taxAuthorityName;
@@ -244,14 +264,16 @@ public class FilingCalendarModel {
     private String returnName;
 
     /**
-     * Getter for returnName - The name of the tax form to file.
+     * Getter for returnName - Represents a commitment to file a tax return on a recurring basis.
+Only used if you subscribe to Avalara Returns.
      */
     public String getReturnName() {
         return this.returnName;
     }
 
     /**
-     * Setter for returnName - The name of the tax form to file.
+     * Setter for returnName - Represents a commitment to file a tax return on a recurring basis.
+Only used if you subscribe to Avalara Returns.
      */
     public void setReturnName(String returnName) {
         this.returnName = returnName;
@@ -261,14 +283,16 @@ public class FilingCalendarModel {
     private OutletTypeId outletTypeId;
 
     /**
-     * Getter for outletTypeId - If this calendar is for a location-specific tax return, specify the location-specific behavior here.
+     * Getter for outletTypeId - Represents a commitment to file a tax return on a recurring basis.
+Only used if you subscribe to Avalara Returns.
      */
     public OutletTypeId getOutletTypeId() {
         return this.outletTypeId;
     }
 
     /**
-     * Setter for outletTypeId - If this calendar is for a location-specific tax return, specify the location-specific behavior here.
+     * Setter for outletTypeId - Represents a commitment to file a tax return on a recurring basis.
+Only used if you subscribe to Avalara Returns.
      */
     public void setOutletTypeId(OutletTypeId outletTypeId) {
         this.outletTypeId = outletTypeId;
@@ -278,14 +302,16 @@ public class FilingCalendarModel {
     private String other3Value;
 
     /**
-     * Getter for other3Value - Custom filing information field.  Leave blank.
+     * Getter for other3Value - Represents a commitment to file a tax return on a recurring basis.
+Only used if you subscribe to Avalara Returns.
      */
     public String getOther3Value() {
         return this.other3Value;
     }
 
     /**
-     * Setter for other3Value - Custom filing information field.  Leave blank.
+     * Setter for other3Value - Represents a commitment to file a tax return on a recurring basis.
+Only used if you subscribe to Avalara Returns.
      */
     public void setOther3Value(String other3Value) {
         this.other3Value = other3Value;
@@ -295,14 +321,16 @@ public class FilingCalendarModel {
     private String taxAuthorityType;
 
     /**
-     * Getter for taxAuthorityType - The type description of the tax authority of this return.
+     * Getter for taxAuthorityType - Represents a commitment to file a tax return on a recurring basis.
+Only used if you subscribe to Avalara Returns.
      */
     public String getTaxAuthorityType() {
         return this.taxAuthorityType;
     }
 
     /**
-     * Setter for taxAuthorityType - The type description of the tax authority of this return.
+     * Setter for taxAuthorityType - Represents a commitment to file a tax return on a recurring basis.
+Only used if you subscribe to Avalara Returns.
      */
     public void setTaxAuthorityType(String taxAuthorityType) {
         this.taxAuthorityType = taxAuthorityType;
@@ -312,14 +340,16 @@ public class FilingCalendarModel {
     private String alAccessCode;
 
     /**
-     * Getter for alAccessCode - Custom filing information field for Alabama.
+     * Getter for alAccessCode - Represents a commitment to file a tax return on a recurring basis.
+Only used if you subscribe to Avalara Returns.
      */
     public String getAlAccessCode() {
         return this.alAccessCode;
     }
 
     /**
-     * Setter for alAccessCode - Custom filing information field for Alabama.
+     * Setter for alAccessCode - Represents a commitment to file a tax return on a recurring basis.
+Only used if you subscribe to Avalara Returns.
      */
     public void setAlAccessCode(String alAccessCode) {
         this.alAccessCode = alAccessCode;
@@ -329,14 +359,16 @@ public class FilingCalendarModel {
     private Date modifiedDate;
 
     /**
-     * Getter for modifiedDate - The date/time when this record was last modified.
+     * Getter for modifiedDate - Represents a commitment to file a tax return on a recurring basis.
+Only used if you subscribe to Avalara Returns.
      */
     public Date getModifiedDate() {
         return this.modifiedDate;
     }
 
     /**
-     * Setter for modifiedDate - The date/time when this record was last modified.
+     * Setter for modifiedDate - Represents a commitment to file a tax return on a recurring basis.
+Only used if you subscribe to Avalara Returns.
      */
     public void setModifiedDate(Date modifiedDate) {
         this.modifiedDate = modifiedDate;
@@ -346,14 +378,16 @@ public class FilingCalendarModel {
     private String ctReg;
 
     /**
-     * Getter for ctReg - Custom filing information field for Connecticut.
+     * Getter for ctReg - Represents a commitment to file a tax return on a recurring basis.
+Only used if you subscribe to Avalara Returns.
      */
     public String getCtReg() {
         return this.ctReg;
     }
 
     /**
-     * Setter for ctReg - Custom filing information field for Connecticut.
+     * Setter for ctReg - Represents a commitment to file a tax return on a recurring basis.
+Only used if you subscribe to Avalara Returns.
      */
     public void setCtReg(String ctReg) {
         this.ctReg = ctReg;
@@ -363,14 +397,16 @@ public class FilingCalendarModel {
     private String locationCode;
 
     /**
-     * Getter for locationCode - If this calendar is for a location-specific tax return, specify the location code here.  To file for all locations, leave this value NULL.
+     * Getter for locationCode - Represents a commitment to file a tax return on a recurring basis.
+Only used if you subscribe to Avalara Returns.
      */
     public String getLocationCode() {
         return this.locationCode;
     }
 
     /**
-     * Setter for locationCode - If this calendar is for a location-specific tax return, specify the location code here.  To file for all locations, leave this value NULL.
+     * Setter for locationCode - Represents a commitment to file a tax return on a recurring basis.
+Only used if you subscribe to Avalara Returns.
      */
     public void setLocationCode(String locationCode) {
         this.locationCode = locationCode;
@@ -380,14 +416,16 @@ public class FilingCalendarModel {
     private String iaBen;
 
     /**
-     * Getter for iaBen - Custom filing information field for Iowa.
+     * Getter for iaBen - Represents a commitment to file a tax return on a recurring basis.
+Only used if you subscribe to Avalara Returns.
      */
     public String getIaBen() {
         return this.iaBen;
     }
 
     /**
-     * Setter for iaBen - Custom filing information field for Iowa.
+     * Setter for iaBen - Represents a commitment to file a tax return on a recurring basis.
+Only used if you subscribe to Avalara Returns.
      */
     public void setIaBen(String iaBen) {
         this.iaBen = iaBen;
@@ -397,14 +435,16 @@ public class FilingCalendarModel {
     private FilingTypeId filingTypeId;
 
     /**
-     * Getter for filingTypeId - The method to be used when filing this return.
+     * Getter for filingTypeId - Represents a commitment to file a tax return on a recurring basis.
+Only used if you subscribe to Avalara Returns.
      */
     public FilingTypeId getFilingTypeId() {
         return this.filingTypeId;
     }
 
     /**
-     * Setter for filingTypeId - The method to be used when filing this return.
+     * Setter for filingTypeId - Represents a commitment to file a tax return on a recurring basis.
+Only used if you subscribe to Avalara Returns.
      */
     public void setFilingTypeId(FilingTypeId filingTypeId) {
         this.filingTypeId = filingTypeId;
@@ -414,14 +454,16 @@ public class FilingCalendarModel {
     private String country;
 
     /**
-     * Getter for country - The two character ISO-3166 country code of the physical address to be used when filing this return.
+     * Getter for country - Represents a commitment to file a tax return on a recurring basis.
+Only used if you subscribe to Avalara Returns.
      */
     public String getCountry() {
         return this.country;
     }
 
     /**
-     * Setter for country - The two character ISO-3166 country code of the physical address to be used when filing this return.
+     * Setter for country - Represents a commitment to file a tax return on a recurring basis.
+Only used if you subscribe to Avalara Returns.
      */
     public void setCountry(String country) {
         this.country = country;
@@ -431,14 +473,16 @@ public class FilingCalendarModel {
     private String other3Name;
 
     /**
-     * Getter for other3Name - Custom filing information field.  Leave blank.
+     * Getter for other3Name - Represents a commitment to file a tax return on a recurring basis.
+Only used if you subscribe to Avalara Returns.
      */
     public String getOther3Name() {
         return this.other3Name;
     }
 
     /**
-     * Setter for other3Name - Custom filing information field.  Leave blank.
+     * Setter for other3Name - Represents a commitment to file a tax return on a recurring basis.
+Only used if you subscribe to Avalara Returns.
      */
     public void setOther3Name(String other3Name) {
         this.other3Name = other3Name;
@@ -448,14 +492,16 @@ public class FilingCalendarModel {
     private String internalNotes;
 
     /**
-     * Getter for internalNotes - Internal filing notes.
+     * Getter for internalNotes - Represents a commitment to file a tax return on a recurring basis.
+Only used if you subscribe to Avalara Returns.
      */
     public String getInternalNotes() {
         return this.internalNotes;
     }
 
     /**
-     * Setter for internalNotes - Internal filing notes.
+     * Setter for internalNotes - Represents a commitment to file a tax return on a recurring basis.
+Only used if you subscribe to Avalara Returns.
      */
     public void setInternalNotes(String internalNotes) {
         this.internalNotes = internalNotes;
@@ -465,14 +511,16 @@ public class FilingCalendarModel {
     private String line1;
 
     /**
-     * Getter for line1 - The first line of the physical address to be used when filing this tax return.
+     * Getter for line1 - Represents a commitment to file a tax return on a recurring basis.
+Only used if you subscribe to Avalara Returns.
      */
     public String getLine1() {
         return this.line1;
     }
 
     /**
-     * Setter for line1 - The first line of the physical address to be used when filing this tax return.
+     * Setter for line1 - Represents a commitment to file a tax return on a recurring basis.
+Only used if you subscribe to Avalara Returns.
      */
     public void setLine1(String line1) {
         this.line1 = line1;
@@ -482,14 +530,16 @@ public class FilingCalendarModel {
     private String eFilePassword;
 
     /**
-     * Getter for eFilePassword - If you file electronically, this is the password or pass code you use to log in to the tax authority's website.
+     * Getter for eFilePassword - Represents a commitment to file a tax return on a recurring basis.
+Only used if you subscribe to Avalara Returns.
      */
     public String getEFilePassword() {
         return this.eFilePassword;
     }
 
     /**
-     * Setter for eFilePassword - If you file electronically, this is the password or pass code you use to log in to the tax authority's website.
+     * Setter for eFilePassword - Represents a commitment to file a tax return on a recurring basis.
+Only used if you subscribe to Avalara Returns.
      */
     public void setEFilePassword(String eFilePassword) {
         this.eFilePassword = eFilePassword;
@@ -499,14 +549,16 @@ public class FilingCalendarModel {
     private String postalCode;
 
     /**
-     * Getter for postalCode - The postal code or zip code of the physical address to be used when filing this tax return.
+     * Getter for postalCode - Represents a commitment to file a tax return on a recurring basis.
+Only used if you subscribe to Avalara Returns.
      */
     public String getPostalCode() {
         return this.postalCode;
     }
 
     /**
-     * Setter for postalCode - The postal code or zip code of the physical address to be used when filing this tax return.
+     * Setter for postalCode - Represents a commitment to file a tax return on a recurring basis.
+Only used if you subscribe to Avalara Returns.
      */
     public void setPostalCode(String postalCode) {
         this.postalCode = postalCode;
@@ -516,14 +568,16 @@ public class FilingCalendarModel {
     private Long id;
 
     /**
-     * Getter for id - The unique ID number of this filing calendar.
+     * Getter for id - Represents a commitment to file a tax return on a recurring basis.
+Only used if you subscribe to Avalara Returns.
      */
     public Long getId() {
         return this.id;
     }
 
     /**
-     * Setter for id - The unique ID number of this filing calendar.
+     * Setter for id - Represents a commitment to file a tax return on a recurring basis.
+Only used if you subscribe to Avalara Returns.
      */
     public void setId(Long id) {
         this.id = id;
@@ -533,14 +587,16 @@ public class FilingCalendarModel {
     private String meBusinessCode;
 
     /**
-     * Getter for meBusinessCode - Custom filing information field for Maine.
+     * Getter for meBusinessCode - Represents a commitment to file a tax return on a recurring basis.
+Only used if you subscribe to Avalara Returns.
      */
     public String getMeBusinessCode() {
         return this.meBusinessCode;
     }
 
     /**
-     * Setter for meBusinessCode - Custom filing information field for Maine.
+     * Setter for meBusinessCode - Represents a commitment to file a tax return on a recurring basis.
+Only used if you subscribe to Avalara Returns.
      */
     public void setMeBusinessCode(String meBusinessCode) {
         this.meBusinessCode = meBusinessCode;
@@ -550,14 +606,16 @@ public class FilingCalendarModel {
     private Integer taxAuthorityId;
 
     /**
-     * Getter for taxAuthorityId - The unique ID of the tax authority of this return.
+     * Getter for taxAuthorityId - Represents a commitment to file a tax return on a recurring basis.
+Only used if you subscribe to Avalara Returns.
      */
     public Integer getTaxAuthorityId() {
         return this.taxAuthorityId;
     }
 
     /**
-     * Setter for taxAuthorityId - The unique ID of the tax authority of this return.
+     * Setter for taxAuthorityId - Represents a commitment to file a tax return on a recurring basis.
+Only used if you subscribe to Avalara Returns.
      */
     public void setTaxAuthorityId(Integer taxAuthorityId) {
         this.taxAuthorityId = taxAuthorityId;
@@ -567,14 +625,16 @@ public class FilingCalendarModel {
     private String localRegistrationId;
 
     /**
-     * Getter for localRegistrationId - Tax Registration ID for the local jurisdiction, if any.
+     * Getter for localRegistrationId - Represents a commitment to file a tax return on a recurring basis.
+Only used if you subscribe to Avalara Returns.
      */
     public String getLocalRegistrationId() {
         return this.localRegistrationId;
     }
 
     /**
-     * Setter for localRegistrationId - Tax Registration ID for the local jurisdiction, if any.
+     * Setter for localRegistrationId - Represents a commitment to file a tax return on a recurring basis.
+Only used if you subscribe to Avalara Returns.
      */
     public void setLocalRegistrationId(String localRegistrationId) {
         this.localRegistrationId = localRegistrationId;
@@ -584,14 +644,16 @@ public class FilingCalendarModel {
     private Integer modifiedUserId;
 
     /**
-     * Getter for modifiedUserId - The user ID of the user who last modified this record.
+     * Getter for modifiedUserId - Represents a commitment to file a tax return on a recurring basis.
+Only used if you subscribe to Avalara Returns.
      */
     public Integer getModifiedUserId() {
         return this.modifiedUserId;
     }
 
     /**
-     * Setter for modifiedUserId - The user ID of the user who last modified this record.
+     * Setter for modifiedUserId - Represents a commitment to file a tax return on a recurring basis.
+Only used if you subscribe to Avalara Returns.
      */
     public void setModifiedUserId(Integer modifiedUserId) {
         this.modifiedUserId = modifiedUserId;
@@ -601,18 +663,16 @@ public class FilingCalendarModel {
     private Date effectiveDate;
 
     /**
-     * Getter for effectiveDate - The earliest date for the tax period when this return should be filed.
-            This date specifies the earliest date for tax transactions that should be reported on this filing calendar.
-            Please note that tax is usually filed one month in arrears: for example, tax for January transactions is typically filed during the month of February.
+     * Getter for effectiveDate - Represents a commitment to file a tax return on a recurring basis.
+Only used if you subscribe to Avalara Returns.
      */
     public Date getEffectiveDate() {
         return this.effectiveDate;
     }
 
     /**
-     * Setter for effectiveDate - The earliest date for the tax period when this return should be filed.
-            This date specifies the earliest date for tax transactions that should be reported on this filing calendar.
-            Please note that tax is usually filed one month in arrears: for example, tax for January transactions is typically filed during the month of February.
+     * Setter for effectiveDate - Represents a commitment to file a tax return on a recurring basis.
+Only used if you subscribe to Avalara Returns.
      */
     public void setEffectiveDate(Date effectiveDate) {
         this.effectiveDate = effectiveDate;
@@ -622,14 +682,16 @@ public class FilingCalendarModel {
     private Integer createdUserId;
 
     /**
-     * Getter for createdUserId - The User ID of the user who created this record.
+     * Getter for createdUserId - Represents a commitment to file a tax return on a recurring basis.
+Only used if you subscribe to Avalara Returns.
      */
     public Integer getCreatedUserId() {
         return this.createdUserId;
     }
 
     /**
-     * Setter for createdUserId - The User ID of the user who created this record.
+     * Setter for createdUserId - Represents a commitment to file a tax return on a recurring basis.
+Only used if you subscribe to Avalara Returns.
      */
     public void setCreatedUserId(Integer createdUserId) {
         this.createdUserId = createdUserId;
@@ -639,14 +701,16 @@ public class FilingCalendarModel {
     private String region;
 
     /**
-     * Getter for region - The state, region, or province of the physical address to be used when filing this tax return.
+     * Getter for region - Represents a commitment to file a tax return on a recurring basis.
+Only used if you subscribe to Avalara Returns.
      */
     public String getRegion() {
         return this.region;
     }
 
     /**
-     * Setter for region - The state, region, or province of the physical address to be used when filing this tax return.
+     * Setter for region - Represents a commitment to file a tax return on a recurring basis.
+Only used if you subscribe to Avalara Returns.
      */
     public void setRegion(String region) {
         this.region = region;
@@ -656,14 +720,16 @@ public class FilingCalendarModel {
     private FilingFrequencyId filingFrequencyId;
 
     /**
-     * Getter for filingFrequencyId - The frequency on which this tax form is filed.
+     * Getter for filingFrequencyId - Represents a commitment to file a tax return on a recurring basis.
+Only used if you subscribe to Avalara Returns.
      */
     public FilingFrequencyId getFilingFrequencyId() {
         return this.filingFrequencyId;
     }
 
     /**
-     * Setter for filingFrequencyId - The frequency on which this tax form is filed.
+     * Setter for filingFrequencyId - Represents a commitment to file a tax return on a recurring basis.
+Only used if you subscribe to Avalara Returns.
      */
     public void setFilingFrequencyId(FilingFrequencyId filingFrequencyId) {
         this.filingFrequencyId = filingFrequencyId;
@@ -673,16 +739,16 @@ public class FilingCalendarModel {
     private String line2;
 
     /**
-     * Getter for line2 - The second line of the physical address to be used when filing this tax return.
-            Please note that some tax forms do not support multiple address lines.
+     * Getter for line2 - Represents a commitment to file a tax return on a recurring basis.
+Only used if you subscribe to Avalara Returns.
      */
     public String getLine2() {
         return this.line2;
     }
 
     /**
-     * Setter for line2 - The second line of the physical address to be used when filing this tax return.
-            Please note that some tax forms do not support multiple address lines.
+     * Setter for line2 - Represents a commitment to file a tax return on a recurring basis.
+Only used if you subscribe to Avalara Returns.
      */
     public void setLine2(String line2) {
         this.line2 = line2;
@@ -692,14 +758,16 @@ public class FilingCalendarModel {
     private String stateRegistrationId;
 
     /**
-     * Getter for stateRegistrationId - Tax Registration ID for this Region - in the U.S., this is for your state.
+     * Getter for stateRegistrationId - Represents a commitment to file a tax return on a recurring basis.
+Only used if you subscribe to Avalara Returns.
      */
     public String getStateRegistrationId() {
         return this.stateRegistrationId;
     }
 
     /**
-     * Setter for stateRegistrationId - Tax Registration ID for this Region - in the U.S., this is for your state.
+     * Setter for stateRegistrationId - Represents a commitment to file a tax return on a recurring basis.
+Only used if you subscribe to Avalara Returns.
      */
     public void setStateRegistrationId(String stateRegistrationId) {
         this.stateRegistrationId = stateRegistrationId;
@@ -709,14 +777,16 @@ public class FilingCalendarModel {
     private String other2Value;
 
     /**
-     * Getter for other2Value - Custom filing information field.  Leave blank.
+     * Getter for other2Value - Represents a commitment to file a tax return on a recurring basis.
+Only used if you subscribe to Avalara Returns.
      */
     public String getOther2Value() {
         return this.other2Value;
     }
 
     /**
-     * Setter for other2Value - Custom filing information field.  Leave blank.
+     * Setter for other2Value - Represents a commitment to file a tax return on a recurring basis.
+Only used if you subscribe to Avalara Returns.
      */
     public void setOther2Value(String other2Value) {
         this.other2Value = other2Value;
@@ -726,35 +796,37 @@ public class FilingCalendarModel {
     private String customerFilingInstructions;
 
     /**
-     * Getter for customerFilingInstructions - Special filing instructions to be used when filing this return.
-            Please note that requesting special filing instructions may incur additional costs.
+     * Getter for customerFilingInstructions - Represents a commitment to file a tax return on a recurring basis.
+Only used if you subscribe to Avalara Returns.
      */
     public String getCustomerFilingInstructions() {
         return this.customerFilingInstructions;
     }
 
     /**
-     * Setter for customerFilingInstructions - Special filing instructions to be used when filing this return.
-            Please note that requesting special filing instructions may incur additional costs.
+     * Setter for customerFilingInstructions - Represents a commitment to file a tax return on a recurring basis.
+Only used if you subscribe to Avalara Returns.
      */
     public void setCustomerFilingInstructions(String customerFilingInstructions) {
         this.customerFilingInstructions = customerFilingInstructions;
     }
 
     
-    private Integer months;
+    private Short months;
 
     /**
-     * Getter for months - A 16-bit bitmap containing a 1 for each month when the return should be filed.
+     * Getter for months - Represents a commitment to file a tax return on a recurring basis.
+Only used if you subscribe to Avalara Returns.
      */
-    public Integer getMonths() {
+    public Short getMonths() {
         return this.months;
     }
 
     /**
-     * Setter for months - A 16-bit bitmap containing a 1 for each month when the return should be filed.
+     * Setter for months - Represents a commitment to file a tax return on a recurring basis.
+Only used if you subscribe to Avalara Returns.
      */
-    public void setMonths(Integer months) {
+    public void setMonths(Short months) {
         this.months = months;
     }
 
@@ -762,14 +834,16 @@ public class FilingCalendarModel {
     private Integer companyId;
 
     /**
-     * Getter for companyId - The unique ID number of the company to which this filing calendar belongs.
+     * Getter for companyId - Represents a commitment to file a tax return on a recurring basis.
+Only used if you subscribe to Avalara Returns.
      */
     public Integer getCompanyId() {
         return this.companyId;
     }
 
     /**
-     * Setter for companyId - The unique ID number of the company to which this filing calendar belongs.
+     * Setter for companyId - Represents a commitment to file a tax return on a recurring basis.
+Only used if you subscribe to Avalara Returns.
      */
     public void setCompanyId(Integer companyId) {
         this.companyId = companyId;
@@ -779,14 +853,16 @@ public class FilingCalendarModel {
     private String phone;
 
     /**
-     * Getter for phone - The phone number to be used when filing this return.
+     * Getter for phone - Represents a commitment to file a tax return on a recurring basis.
+Only used if you subscribe to Avalara Returns.
      */
     public String getPhone() {
         return this.phone;
     }
 
     /**
-     * Setter for phone - The phone number to be used when filing this return.
+     * Setter for phone - Represents a commitment to file a tax return on a recurring basis.
+Only used if you subscribe to Avalara Returns.
      */
     public void setPhone(String phone) {
         this.phone = phone;
@@ -796,14 +872,16 @@ public class FilingCalendarModel {
     private Date createdDate;
 
     /**
-     * Getter for createdDate - The date when this record was created.
+     * Getter for createdDate - Represents a commitment to file a tax return on a recurring basis.
+Only used if you subscribe to Avalara Returns.
      */
     public Date getCreatedDate() {
         return this.createdDate;
     }
 
     /**
-     * Setter for createdDate - The date when this record was created.
+     * Setter for createdDate - Represents a commitment to file a tax return on a recurring basis.
+Only used if you subscribe to Avalara Returns.
      */
     public void setCreatedDate(Date createdDate) {
         this.createdDate = createdDate;

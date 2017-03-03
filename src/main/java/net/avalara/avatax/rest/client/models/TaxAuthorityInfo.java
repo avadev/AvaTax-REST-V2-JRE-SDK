@@ -16,14 +16,14 @@ public class TaxAuthorityInfo {
     private String avalaraId;
 
     /**
-     * Getter for avalaraId - Avalara Id
+     * Getter for avalaraId - Tax Authority Info
      */
     public String getAvalaraId() {
         return this.avalaraId;
     }
 
     /**
-     * Setter for avalaraId - Avalara Id
+     * Setter for avalaraId - Tax Authority Info
      */
     public void setAvalaraId(String avalaraId) {
         this.avalaraId = avalaraId;
@@ -33,14 +33,14 @@ public class TaxAuthorityInfo {
     private String jurisdictionName;
 
     /**
-     * Getter for jurisdictionName - Jurisdiction Name
+     * Getter for jurisdictionName - Tax Authority Info
      */
     public String getJurisdictionName() {
         return this.jurisdictionName;
     }
 
     /**
-     * Setter for jurisdictionName - Jurisdiction Name
+     * Setter for jurisdictionName - Tax Authority Info
      */
     public void setJurisdictionName(String jurisdictionName) {
         this.jurisdictionName = jurisdictionName;
@@ -50,14 +50,14 @@ public class TaxAuthorityInfo {
     private JurisdictionType jurisdictionType;
 
     /**
-     * Getter for jurisdictionType - Jurisdiction Type
+     * Getter for jurisdictionType - Tax Authority Info
      */
     public JurisdictionType getJurisdictionType() {
         return this.jurisdictionType;
     }
 
     /**
-     * Setter for jurisdictionType - Jurisdiction Type
+     * Setter for jurisdictionType - Tax Authority Info
      */
     public void setJurisdictionType(JurisdictionType jurisdictionType) {
         this.jurisdictionType = jurisdictionType;
@@ -67,14 +67,14 @@ public class TaxAuthorityInfo {
     private String signatureCode;
 
     /**
-     * Getter for signatureCode - Signature Code
+     * Getter for signatureCode - Tax Authority Info
      */
     public String getSignatureCode() {
         return this.signatureCode;
     }
 
     /**
-     * Setter for signatureCode - Signature Code
+     * Setter for signatureCode - Tax Authority Info
      */
     public void setSignatureCode(String signatureCode) {
         this.signatureCode = signatureCode;

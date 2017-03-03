@@ -16,14 +16,14 @@ public class RateModel {
     private BigDecimal rate;
 
     /**
-     * Getter for rate - Rate
+     * Getter for rate - Rate Model
      */
     public BigDecimal getRate() {
         return this.rate;
     }
 
     /**
-     * Setter for rate - Rate
+     * Setter for rate - Rate Model
      */
     public void setRate(BigDecimal rate) {
         this.rate = rate;
@@ -33,14 +33,14 @@ public class RateModel {
     private String name;
 
     /**
-     * Getter for name - Name
+     * Getter for name - Rate Model
      */
     public String getName() {
         return this.name;
     }
 
     /**
-     * Setter for name - Name
+     * Setter for name - Rate Model
      */
     public void setName(String name) {
         this.name = name;
@@ -50,14 +50,14 @@ public class RateModel {
     private JurisdictionType type;
 
     /**
-     * Getter for type - Type
+     * Getter for type - Rate Model
      */
     public JurisdictionType getType() {
         return this.type;
     }
 
     /**
-     * Setter for type - Type
+     * Setter for type - Rate Model
      */
     public void setType(JurisdictionType type) {
         this.type = type;

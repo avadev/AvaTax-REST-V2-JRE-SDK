@@ -16,14 +16,14 @@ public class NoticeFinanceModel {
     private BigDecimal customerPenalty;
 
     /**
-     * Getter for customerPenalty - 
+     * Getter for customerPenalty - Represents estimated financial results from responding to a tax notice.
      */
     public BigDecimal getCustomerPenalty() {
         return this.customerPenalty;
     }
 
     /**
-     * Setter for customerPenalty - 
+     * Setter for customerPenalty - Represents estimated financial results from responding to a tax notice.
      */
     public void setCustomerPenalty(BigDecimal customerPenalty) {
         this.customerPenalty = customerPenalty;
@@ -33,14 +33,14 @@ public class NoticeFinanceModel {
     private BigDecimal taxDue;
 
     /**
-     * Getter for taxDue - 
+     * Getter for taxDue - Represents estimated financial results from responding to a tax notice.
      */
     public BigDecimal getTaxDue() {
         return this.taxDue;
     }
 
     /**
-     * Setter for taxDue - 
+     * Setter for taxDue - Represents estimated financial results from responding to a tax notice.
      */
     public void setTaxDue(BigDecimal taxDue) {
         this.taxDue = taxDue;
@@ -50,14 +50,14 @@ public class NoticeFinanceModel {
     private Date noticeDate;
 
     /**
-     * Getter for noticeDate - 
+     * Getter for noticeDate - Represents estimated financial results from responding to a tax notice.
      */
     public Date getNoticeDate() {
         return this.noticeDate;
     }
 
     /**
-     * Setter for noticeDate - 
+     * Setter for noticeDate - Represents estimated financial results from responding to a tax notice.
      */
     public void setNoticeDate(Date noticeDate) {
         this.noticeDate = noticeDate;
@@ -67,14 +67,14 @@ public class NoticeFinanceModel {
     private Date modifiedDate;
 
     /**
-     * Getter for modifiedDate - The date/time when this record was last modified.
+     * Getter for modifiedDate - Represents estimated financial results from responding to a tax notice.
      */
     public Date getModifiedDate() {
         return this.modifiedDate;
     }
 
     /**
-     * Setter for modifiedDate - The date/time when this record was last modified.
+     * Setter for modifiedDate - Represents estimated financial results from responding to a tax notice.
      */
     public void setModifiedDate(Date modifiedDate) {
         this.modifiedDate = modifiedDate;
@@ -84,14 +84,14 @@ public class NoticeFinanceModel {
     private BigDecimal credits;
 
     /**
-     * Getter for credits - 
+     * Getter for credits - Represents estimated financial results from responding to a tax notice.
      */
     public BigDecimal getCredits() {
         return this.credits;
     }
 
     /**
-     * Setter for credits - 
+     * Setter for credits - Represents estimated financial results from responding to a tax notice.
      */
     public void setCredits(BigDecimal credits) {
         this.credits = credits;
@@ -101,14 +101,14 @@ public class NoticeFinanceModel {
     private String fileName;
 
     /**
-     * Getter for fileName - resourceFileId
+     * Getter for fileName - Represents estimated financial results from responding to a tax notice.
      */
     public String getFileName() {
         return this.fileName;
     }
 
     /**
-     * Setter for fileName - resourceFileId
+     * Setter for fileName - Represents estimated financial results from responding to a tax notice.
      */
     public void setFileName(String fileName) {
         this.fileName = fileName;
@@ -118,14 +118,14 @@ public class NoticeFinanceModel {
     private Integer noticeId;
 
     /**
-     * Getter for noticeId - 
+     * Getter for noticeId - Represents estimated financial results from responding to a tax notice.
      */
     public Integer getNoticeId() {
         return this.noticeId;
     }
 
     /**
-     * Setter for noticeId - 
+     * Setter for noticeId - Represents estimated financial results from responding to a tax notice.
      */
     public void setNoticeId(Integer noticeId) {
         this.noticeId = noticeId;
@@ -135,14 +135,14 @@ public class NoticeFinanceModel {
     private Integer id;
 
     /**
-     * Getter for id - 
+     * Getter for id - Represents estimated financial results from responding to a tax notice.
      */
     public Integer getId() {
         return this.id;
     }
 
     /**
-     * Setter for id - 
+     * Setter for id - Represents estimated financial results from responding to a tax notice.
      */
     public void setId(Integer id) {
         this.id = id;
@@ -152,14 +152,14 @@ public class NoticeFinanceModel {
     private BigDecimal cspFeeRefund;
 
     /**
-     * Getter for cspFeeRefund - 
+     * Getter for cspFeeRefund - Represents estimated financial results from responding to a tax notice.
      */
     public BigDecimal getCspFeeRefund() {
         return this.cspFeeRefund;
     }
 
     /**
-     * Setter for cspFeeRefund - 
+     * Setter for cspFeeRefund - Represents estimated financial results from responding to a tax notice.
      */
     public void setCspFeeRefund(BigDecimal cspFeeRefund) {
         this.cspFeeRefund = cspFeeRefund;
@@ -169,14 +169,14 @@ public class NoticeFinanceModel {
     private BigDecimal interest;
 
     /**
-     * Getter for interest - 
+     * Getter for interest - Represents estimated financial results from responding to a tax notice.
      */
     public BigDecimal getInterest() {
         return this.interest;
     }
 
     /**
-     * Setter for interest - 
+     * Setter for interest - Represents estimated financial results from responding to a tax notice.
      */
     public void setInterest(BigDecimal interest) {
         this.interest = interest;
@@ -186,14 +186,14 @@ public class NoticeFinanceModel {
     private BigDecimal taxAbated;
 
     /**
-     * Getter for taxAbated - 
+     * Getter for taxAbated - Represents estimated financial results from responding to a tax notice.
      */
     public BigDecimal getTaxAbated() {
         return this.taxAbated;
     }
 
     /**
-     * Setter for taxAbated - 
+     * Setter for taxAbated - Represents estimated financial results from responding to a tax notice.
      */
     public void setTaxAbated(BigDecimal taxAbated) {
         this.taxAbated = taxAbated;
@@ -203,14 +203,14 @@ public class NoticeFinanceModel {
     private Integer modifiedUserId;
 
     /**
-     * Getter for modifiedUserId - The user ID of the user who last modified this record.
+     * Getter for modifiedUserId - Represents estimated financial results from responding to a tax notice.
      */
     public Integer getModifiedUserId() {
         return this.modifiedUserId;
     }
 
     /**
-     * Setter for modifiedUserId - The user ID of the user who last modified this record.
+     * Setter for modifiedUserId - Represents estimated financial results from responding to a tax notice.
      */
     public void setModifiedUserId(Integer modifiedUserId) {
         this.modifiedUserId = modifiedUserId;
@@ -220,14 +220,14 @@ public class NoticeFinanceModel {
     private Date dueDate;
 
     /**
-     * Getter for dueDate - 
+     * Getter for dueDate - Represents estimated financial results from responding to a tax notice.
      */
     public Date getDueDate() {
         return this.dueDate;
     }
 
     /**
-     * Setter for dueDate - 
+     * Setter for dueDate - Represents estimated financial results from responding to a tax notice.
      */
     public void setDueDate(Date dueDate) {
         this.dueDate = dueDate;
@@ -237,14 +237,14 @@ public class NoticeFinanceModel {
     private Integer createdUserId;
 
     /**
-     * Getter for createdUserId - The User ID of the user who created this record.
+     * Getter for createdUserId - Represents estimated financial results from responding to a tax notice.
      */
     public Integer getCreatedUserId() {
         return this.createdUserId;
     }
 
     /**
-     * Setter for createdUserId - The User ID of the user who created this record.
+     * Setter for createdUserId - Represents estimated financial results from responding to a tax notice.
      */
     public void setCreatedUserId(Integer createdUserId) {
         this.createdUserId = createdUserId;
@@ -254,14 +254,14 @@ public class NoticeFinanceModel {
     private Integer resourceFileId;
 
     /**
-     * Getter for resourceFileId - resourceFileId
+     * Getter for resourceFileId - Represents estimated financial results from responding to a tax notice.
      */
     public Integer getResourceFileId() {
         return this.resourceFileId;
     }
 
     /**
-     * Setter for resourceFileId - resourceFileId
+     * Setter for resourceFileId - Represents estimated financial results from responding to a tax notice.
      */
     public void setResourceFileId(Integer resourceFileId) {
         this.resourceFileId = resourceFileId;
@@ -271,14 +271,14 @@ public class NoticeFinanceModel {
     private BigDecimal penalty;
 
     /**
-     * Getter for penalty - 
+     * Getter for penalty - Represents estimated financial results from responding to a tax notice.
      */
     public BigDecimal getPenalty() {
         return this.penalty;
     }
 
     /**
-     * Setter for penalty - 
+     * Setter for penalty - Represents estimated financial results from responding to a tax notice.
      */
     public void setPenalty(BigDecimal penalty) {
         this.penalty = penalty;
@@ -288,14 +288,14 @@ public class NoticeFinanceModel {
     private BigDecimal customerInterest;
 
     /**
-     * Getter for customerInterest - 
+     * Getter for customerInterest - Represents estimated financial results from responding to a tax notice.
      */
     public BigDecimal getCustomerInterest() {
         return this.customerInterest;
     }
 
     /**
-     * Setter for customerInterest - 
+     * Setter for customerInterest - Represents estimated financial results from responding to a tax notice.
      */
     public void setCustomerInterest(BigDecimal customerInterest) {
         this.customerInterest = customerInterest;
@@ -305,14 +305,14 @@ public class NoticeFinanceModel {
     private String noticeNumber;
 
     /**
-     * Getter for noticeNumber - 
+     * Getter for noticeNumber - Represents estimated financial results from responding to a tax notice.
      */
     public String getNoticeNumber() {
         return this.noticeNumber;
     }
 
     /**
-     * Setter for noticeNumber - 
+     * Setter for noticeNumber - Represents estimated financial results from responding to a tax notice.
      */
     public void setNoticeNumber(String noticeNumber) {
         this.noticeNumber = noticeNumber;
@@ -322,14 +322,14 @@ public class NoticeFinanceModel {
     private Date createdDate;
 
     /**
-     * Getter for createdDate - The date when this record was created.
+     * Getter for createdDate - Represents estimated financial results from responding to a tax notice.
      */
     public Date getCreatedDate() {
         return this.createdDate;
     }
 
     /**
-     * Setter for createdDate - The date when this record was created.
+     * Setter for createdDate - Represents estimated financial results from responding to a tax notice.
      */
     public void setCreatedDate(Date createdDate) {
         this.createdDate = createdDate;

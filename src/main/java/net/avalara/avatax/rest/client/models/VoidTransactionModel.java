@@ -16,14 +16,14 @@ public class VoidTransactionModel {
     private VoidReasonCode code;
 
     /**
-     * Getter for code - Please specify the reason for voiding or cancelling this transaction
+     * Getter for code - A request to void a previously created transaction
      */
     public VoidReasonCode getCode() {
         return this.code;
     }
 
     /**
-     * Setter for code - Please specify the reason for voiding or cancelling this transaction
+     * Setter for code - A request to void a previously created transaction
      */
     public void setCode(VoidReasonCode code) {
         this.code = code;

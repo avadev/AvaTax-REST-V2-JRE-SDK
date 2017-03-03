@@ -16,14 +16,14 @@ public class TaxAuthorityFormModel {
     private Integer taxAuthorityId;
 
     /**
-     * Getter for taxAuthorityId - The unique ID number of the tax authority.
+     * Getter for taxAuthorityId - Represents a form that can be filed with a tax authority.
      */
     public Integer getTaxAuthorityId() {
         return this.taxAuthorityId;
     }
 
     /**
-     * Setter for taxAuthorityId - The unique ID number of the tax authority.
+     * Setter for taxAuthorityId - Represents a form that can be filed with a tax authority.
      */
     public void setTaxAuthorityId(Integer taxAuthorityId) {
         this.taxAuthorityId = taxAuthorityId;
@@ -33,14 +33,14 @@ public class TaxAuthorityFormModel {
     private String formName;
 
     /**
-     * Getter for formName - The form name of the form for this tax authority.
+     * Getter for formName - Represents a form that can be filed with a tax authority.
      */
     public String getFormName() {
         return this.formName;
     }
 
     /**
-     * Setter for formName - The form name of the form for this tax authority.
+     * Setter for formName - Represents a form that can be filed with a tax authority.
      */
     public void setFormName(String formName) {
         this.formName = formName;

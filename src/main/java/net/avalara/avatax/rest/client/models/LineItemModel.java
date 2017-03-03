@@ -16,14 +16,14 @@ public class LineItemModel {
     private String number;
 
     /**
-     * Getter for number - Line number within this document
+     * Getter for number - Represents one line item in a transaction
      */
     public String getNumber() {
         return this.number;
     }
 
     /**
-     * Setter for number - Line number within this document
+     * Setter for number - Represents one line item in a transaction
      */
     public void setNumber(String number) {
         this.number = number;
@@ -33,14 +33,14 @@ public class LineItemModel {
     private String taxCode;
 
     /**
-     * Getter for taxCode - Tax Code - System or Custom Tax Code.
+     * Getter for taxCode - Represents one line item in a transaction
      */
     public String getTaxCode() {
         return this.taxCode;
     }
 
     /**
-     * Setter for taxCode - Tax Code - System or Custom Tax Code.
+     * Setter for taxCode - Represents one line item in a transaction
      */
     public void setTaxCode(String taxCode) {
         this.taxCode = taxCode;
@@ -50,14 +50,14 @@ public class LineItemModel {
     private BigDecimal quantity;
 
     /**
-     * Getter for quantity - Quantity of items in this line
+     * Getter for quantity - Represents one line item in a transaction
      */
     public BigDecimal getQuantity() {
         return this.quantity;
     }
 
     /**
-     * Setter for quantity - Quantity of items in this line
+     * Setter for quantity - Represents one line item in a transaction
      */
     public void setQuantity(BigDecimal quantity) {
         this.quantity = quantity;
@@ -67,14 +67,14 @@ public class LineItemModel {
     private String customerUsageType;
 
     /**
-     * Getter for customerUsageType - Customer Usage Type - The client application customer or usage type.
+     * Getter for customerUsageType - Represents one line item in a transaction
      */
     public String getCustomerUsageType() {
         return this.customerUsageType;
     }
 
     /**
-     * Setter for customerUsageType - Customer Usage Type - The client application customer or usage type.
+     * Setter for customerUsageType - Represents one line item in a transaction
      */
     public void setCustomerUsageType(String customerUsageType) {
         this.customerUsageType = customerUsageType;
@@ -84,14 +84,14 @@ public class LineItemModel {
     private TaxOverrideModel taxOverride;
 
     /**
-     * Getter for taxOverride - Specifies a tax override for this line
+     * Getter for taxOverride - Represents one line item in a transaction
      */
     public TaxOverrideModel getTaxOverride() {
         return this.taxOverride;
     }
 
     /**
-     * Setter for taxOverride - Specifies a tax override for this line
+     * Setter for taxOverride - Represents one line item in a transaction
      */
     public void setTaxOverride(TaxOverrideModel taxOverride) {
         this.taxOverride = taxOverride;
@@ -101,14 +101,14 @@ public class LineItemModel {
     private String description;
 
     /**
-     * Getter for description - Item description.  This is required for SST transactions if an unmapped ItemCode is used.
+     * Getter for description - Represents one line item in a transaction
      */
     public String getDescription() {
         return this.description;
     }
 
     /**
-     * Setter for description - Item description.  This is required for SST transactions if an unmapped ItemCode is used.
+     * Setter for description - Represents one line item in a transaction
      */
     public void setDescription(String description) {
         this.description = description;
@@ -118,14 +118,14 @@ public class LineItemModel {
     private String businessIdentificationNo;
 
     /**
-     * Getter for businessIdentificationNo - BusinessIdentificationNo
+     * Getter for businessIdentificationNo - Represents one line item in a transaction
      */
     public String getBusinessIdentificationNo() {
         return this.businessIdentificationNo;
     }
 
     /**
-     * Setter for businessIdentificationNo - BusinessIdentificationNo
+     * Setter for businessIdentificationNo - Represents one line item in a transaction
      */
     public void setBusinessIdentificationNo(String businessIdentificationNo) {
         this.businessIdentificationNo = businessIdentificationNo;
@@ -135,14 +135,14 @@ public class LineItemModel {
     private String ref1;
 
     /**
-     * Getter for ref1 - Reference 1 - Client specific reference field
+     * Getter for ref1 - Represents one line item in a transaction
      */
     public String getRef1() {
         return this.ref1;
     }
 
     /**
-     * Setter for ref1 - Reference 1 - Client specific reference field
+     * Setter for ref1 - Represents one line item in a transaction
      */
     public void setRef1(String ref1) {
         this.ref1 = ref1;
@@ -152,14 +152,14 @@ public class LineItemModel {
     private String revenueAccount;
 
     /**
-     * Getter for revenueAccount - Revenue Account
+     * Getter for revenueAccount - Represents one line item in a transaction
      */
     public String getRevenueAccount() {
         return this.revenueAccount;
     }
 
     /**
-     * Setter for revenueAccount - Revenue Account
+     * Setter for revenueAccount - Represents one line item in a transaction
      */
     public void setRevenueAccount(String revenueAccount) {
         this.revenueAccount = revenueAccount;
@@ -169,14 +169,14 @@ public class LineItemModel {
     private BigDecimal amount;
 
     /**
-     * Getter for amount - Total amount for this line
+     * Getter for amount - Represents one line item in a transaction
      */
     public BigDecimal getAmount() {
         return this.amount;
     }
 
     /**
-     * Setter for amount - Total amount for this line
+     * Setter for amount - Represents one line item in a transaction
      */
     public void setAmount(BigDecimal amount) {
         this.amount = amount;
@@ -186,14 +186,14 @@ public class LineItemModel {
     private String ref2;
 
     /**
-     * Getter for ref2 - Reference 2 - Client specific reference field
+     * Getter for ref2 - Represents one line item in a transaction
      */
     public String getRef2() {
         return this.ref2;
     }
 
     /**
-     * Setter for ref2 - Reference 2 - Client specific reference field
+     * Setter for ref2 - Represents one line item in a transaction
      */
     public void setRef2(String ref2) {
         this.ref2 = ref2;
@@ -203,14 +203,14 @@ public class LineItemModel {
     private String itemCode;
 
     /**
-     * Getter for itemCode - Item Code (SKU)
+     * Getter for itemCode - Represents one line item in a transaction
      */
     public String getItemCode() {
         return this.itemCode;
     }
 
     /**
-     * Setter for itemCode - Item Code (SKU)
+     * Setter for itemCode - Represents one line item in a transaction
      */
     public void setItemCode(String itemCode) {
         this.itemCode = itemCode;
@@ -220,14 +220,14 @@ public class LineItemModel {
     private String exemptionCode;
 
     /**
-     * Getter for exemptionCode - Exemption number for this line
+     * Getter for exemptionCode - Represents one line item in a transaction
      */
     public String getExemptionCode() {
         return this.exemptionCode;
     }
 
     /**
-     * Setter for exemptionCode - Exemption number for this line
+     * Setter for exemptionCode - Represents one line item in a transaction
      */
     public void setExemptionCode(String exemptionCode) {
         this.exemptionCode = exemptionCode;
@@ -237,14 +237,14 @@ public class LineItemModel {
     private Boolean taxIncluded;
 
     /**
-     * Getter for taxIncluded - Indicates if line has Tax Included; defaults to false
+     * Getter for taxIncluded - Represents one line item in a transaction
      */
     public Boolean getTaxIncluded() {
         return this.taxIncluded;
     }
 
     /**
-     * Setter for taxIncluded - Indicates if line has Tax Included; defaults to false
+     * Setter for taxIncluded - Represents one line item in a transaction
      */
     public void setTaxIncluded(Boolean taxIncluded) {
         this.taxIncluded = taxIncluded;
@@ -254,16 +254,14 @@ public class LineItemModel {
     private HashMap<String, String> parameters;
 
     /**
-     * Getter for parameters - Special parameters that apply to this line within this transaction.
-                To get a full list of available parameters, please use the /api/v2/definitions/parameters endpoint.
+     * Getter for parameters - Represents one line item in a transaction
      */
     public HashMap<String, String> getParameters() {
         return this.parameters;
     }
 
     /**
-     * Setter for parameters - Special parameters that apply to this line within this transaction.
-                To get a full list of available parameters, please use the /api/v2/definitions/parameters endpoint.
+     * Setter for parameters - Represents one line item in a transaction
      */
     public void setParameters(HashMap<String, String> parameters) {
         this.parameters = parameters;
@@ -273,33 +271,33 @@ public class LineItemModel {
     private Boolean discounted;
 
     /**
-     * Getter for discounted - True if the document discount should be applied to this line
+     * Getter for discounted - Represents one line item in a transaction
      */
     public Boolean getDiscounted() {
         return this.discounted;
     }
 
     /**
-     * Setter for discounted - True if the document discount should be applied to this line
+     * Setter for discounted - Represents one line item in a transaction
      */
     public void setDiscounted(Boolean discounted) {
         this.discounted = discounted;
     }
 
     
-    private HashMap<TransactionAddressType, AddressInfo> addresses;
+    private AddressesModel addresses;
 
     /**
-     * Getter for addresses - Specify any differences for addresses between this line and the rest of the document
+     * Getter for addresses - Represents one line item in a transaction
      */
-    public HashMap<TransactionAddressType, AddressInfo> getAddresses() {
+    public AddressesModel getAddresses() {
         return this.addresses;
     }
 
     /**
-     * Setter for addresses - Specify any differences for addresses between this line and the rest of the document
+     * Setter for addresses - Represents one line item in a transaction
      */
-    public void setAddresses(HashMap<TransactionAddressType, AddressInfo> addresses) {
+    public void setAddresses(AddressesModel addresses) {
         this.addresses = addresses;
     }
 

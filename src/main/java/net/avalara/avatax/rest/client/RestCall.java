@@ -1,6 +1,7 @@
 package net.avalara.avatax.rest.client;
 
 import com.google.gson.reflect.TypeToken;
+import net.avalara.avatax.rest.client.models.ErrorResult;
 import net.avalara.avatax.rest.client.serializer.JsonSerializer;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpHost;
@@ -74,6 +75,11 @@ public class RestCall<T> implements Callable<T> {
 
         try {
             HttpEntity entity = response.getEntity();
+
+            if (response.getStatusLine().getStatusCode() != 200 && response.getStatusLine().getStatusCode() != 201) {
+                throw new AvaTaxClientException((ErrorResult)JsonSerializer.DeserializeObject(EntityUtils.toString(entity), ErrorResult.class));
+            }
+
             if (entity != null) {
                 obj = (T)JsonSerializer.DeserializeObject(EntityUtils.toString(entity), typeToken.getType());
             }

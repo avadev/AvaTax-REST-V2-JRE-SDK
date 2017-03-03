@@ -16,14 +16,14 @@ public class FundingInitiateModel {
     private Boolean requestEmail;
 
     /**
-     * Getter for requestEmail - Set this value to true to request an email to the recipient
+     * Getter for requestEmail - 
      */
     public Boolean getRequestEmail() {
         return this.requestEmail;
     }
 
     /**
-     * Setter for requestEmail - Set this value to true to request an email to the recipient
+     * Setter for requestEmail - 
      */
     public void setRequestEmail(Boolean requestEmail) {
         this.requestEmail = requestEmail;
@@ -33,18 +33,14 @@ public class FundingInitiateModel {
     private String fundingEmailRecipient;
 
     /**
-     * Getter for fundingEmailRecipient - If you have requested an email for funding setup, this is the recipient who will receive an 
-            email inviting them to setup funding configuration for Avalara Managed Returns.  The recipient can
-            then click on a link in the email and setup funding configuration for this company.
+     * Getter for fundingEmailRecipient - 
      */
     public String getFundingEmailRecipient() {
         return this.fundingEmailRecipient;
     }
 
     /**
-     * Setter for fundingEmailRecipient - If you have requested an email for funding setup, this is the recipient who will receive an 
-            email inviting them to setup funding configuration for Avalara Managed Returns.  The recipient can
-            then click on a link in the email and setup funding configuration for this company.
+     * Setter for fundingEmailRecipient - 
      */
     public void setFundingEmailRecipient(String fundingEmailRecipient) {
         this.fundingEmailRecipient = fundingEmailRecipient;
@@ -54,18 +50,14 @@ public class FundingInitiateModel {
     private Boolean requestWidget;
 
     /**
-     * Getter for requestWidget - Set this value to true to request an HTML-based funding widget that can be embedded within an 
-            existing user interface.  A user can then interact with the HTML-based funding widget to set up
-            funding information for the company.
+     * Getter for requestWidget - 
      */
     public Boolean getRequestWidget() {
         return this.requestWidget;
     }
 
     /**
-     * Setter for requestWidget - Set this value to true to request an HTML-based funding widget that can be embedded within an 
-            existing user interface.  A user can then interact with the HTML-based funding widget to set up
-            funding information for the company.
+     * Setter for requestWidget - 
      */
     public void setRequestWidget(Boolean requestWidget) {
         this.requestWidget = requestWidget;

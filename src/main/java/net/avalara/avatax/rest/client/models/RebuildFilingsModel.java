@@ -16,14 +16,14 @@ public class RebuildFilingsModel {
     private Boolean rebuild;
 
     /**
-     * Getter for rebuild - Set this value to true in order to rebuild the filings.
+     * Getter for rebuild - Rebuild a set of filings.
      */
     public Boolean getRebuild() {
         return this.rebuild;
     }
 
     /**
-     * Setter for rebuild - Set this value to true in order to rebuild the filings.
+     * Setter for rebuild - Rebuild a set of filings.
      */
     public void setRebuild(Boolean rebuild) {
         this.rebuild = rebuild;

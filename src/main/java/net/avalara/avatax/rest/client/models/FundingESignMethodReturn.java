@@ -16,14 +16,14 @@ public class FundingESignMethodReturn {
     private String method;
 
     /**
-     * Getter for method - Method
+     * Getter for method - Represents the current status of a funding ESign method
      */
     public String getMethod() {
         return this.method;
     }
 
     /**
-     * Setter for method - Method
+     * Setter for method - Represents the current status of a funding ESign method
      */
     public void setMethod(String method) {
         this.method = method;
@@ -33,14 +33,14 @@ public class FundingESignMethodReturn {
     private Boolean javaScriptReady;
 
     /**
-     * Getter for javaScriptReady - JavaScriptReady
+     * Getter for javaScriptReady - Represents the current status of a funding ESign method
      */
     public Boolean getJavaScriptReady() {
         return this.javaScriptReady;
     }
 
     /**
-     * Setter for javaScriptReady - JavaScriptReady
+     * Setter for javaScriptReady - Represents the current status of a funding ESign method
      */
     public void setJavaScriptReady(Boolean javaScriptReady) {
         this.javaScriptReady = javaScriptReady;
@@ -50,14 +50,14 @@ public class FundingESignMethodReturn {
     private String javaScript;
 
     /**
-     * Getter for javaScript - The actual javascript to use to render this object
+     * Getter for javaScript - Represents the current status of a funding ESign method
      */
     public String getJavaScript() {
         return this.javaScript;
     }
 
     /**
-     * Setter for javaScript - The actual javascript to use to render this object
+     * Setter for javaScript - Represents the current status of a funding ESign method
      */
     public void setJavaScript(String javaScript) {
         this.javaScript = javaScript;

@@ -16,14 +16,14 @@ public class LoginVerificationInputModel {
     private Integer priority;
 
     /**
-     * Getter for priority - Priority of the verification request
+     * Getter for priority - Represents a verification request using Skyscraper for a company
      */
     public Integer getPriority() {
         return this.priority;
     }
 
     /**
-     * Setter for priority - Priority of the verification request
+     * Setter for priority - Represents a verification request using Skyscraper for a company
      */
     public void setPriority(Integer priority) {
         this.priority = priority;
@@ -33,14 +33,14 @@ public class LoginVerificationInputModel {
     private Integer bulkRequestId;
 
     /**
-     * Getter for bulkRequestId - Bulk Request Id of the verification
+     * Getter for bulkRequestId - Represents a verification request using Skyscraper for a company
      */
     public Integer getBulkRequestId() {
         return this.bulkRequestId;
     }
 
     /**
-     * Setter for bulkRequestId - Bulk Request Id of the verification
+     * Setter for bulkRequestId - Represents a verification request using Skyscraper for a company
      */
     public void setBulkRequestId(Integer bulkRequestId) {
         this.bulkRequestId = bulkRequestId;
@@ -50,14 +50,14 @@ public class LoginVerificationInputModel {
     private String username;
 
     /**
-     * Getter for username - Username that we are using for verification
+     * Getter for username - Represents a verification request using Skyscraper for a company
      */
     public String getUsername() {
         return this.username;
     }
 
     /**
-     * Setter for username - Username that we are using for verification
+     * Setter for username - Represents a verification request using Skyscraper for a company
      */
     public void setUsername(String username) {
         this.username = username;
@@ -67,14 +67,14 @@ public class LoginVerificationInputModel {
     private Integer accountId;
 
     /**
-     * Getter for accountId - AccountId of the login verification
+     * Getter for accountId - Represents a verification request using Skyscraper for a company
      */
     public Integer getAccountId() {
         return this.accountId;
     }
 
     /**
-     * Setter for accountId - AccountId of the login verification
+     * Setter for accountId - Represents a verification request using Skyscraper for a company
      */
     public void setAccountId(Integer accountId) {
         this.accountId = accountId;
@@ -84,14 +84,14 @@ public class LoginVerificationInputModel {
     private String additionalOptions;
 
     /**
-     * Getter for additionalOptions - Additional options of the verification
+     * Getter for additionalOptions - Represents a verification request using Skyscraper for a company
      */
     public String getAdditionalOptions() {
         return this.additionalOptions;
     }
 
     /**
-     * Setter for additionalOptions - Additional options of the verification
+     * Setter for additionalOptions - Represents a verification request using Skyscraper for a company
      */
     public void setAdditionalOptions(String additionalOptions) {
         this.additionalOptions = additionalOptions;
@@ -101,14 +101,14 @@ public class LoginVerificationInputModel {
     private String region;
 
     /**
-     * Getter for region - Region of the verification request
+     * Getter for region - Represents a verification request using Skyscraper for a company
      */
     public String getRegion() {
         return this.region;
     }
 
     /**
-     * Setter for region - Region of the verification request
+     * Setter for region - Represents a verification request using Skyscraper for a company
      */
     public void setRegion(String region) {
         this.region = region;
@@ -118,14 +118,14 @@ public class LoginVerificationInputModel {
     private Integer companyId;
 
     /**
-     * Getter for companyId - CompanyId that we are verifying the login information for
+     * Getter for companyId - Represents a verification request using Skyscraper for a company
      */
     public Integer getCompanyId() {
         return this.companyId;
     }
 
     /**
-     * Setter for companyId - CompanyId that we are verifying the login information for
+     * Setter for companyId - Represents a verification request using Skyscraper for a company
      */
     public void setCompanyId(Integer companyId) {
         this.companyId = companyId;
@@ -135,14 +135,14 @@ public class LoginVerificationInputModel {
     private String password;
 
     /**
-     * Getter for password - Password we are using for verification
+     * Getter for password - Represents a verification request using Skyscraper for a company
      */
     public String getPassword() {
         return this.password;
     }
 
     /**
-     * Setter for password - Password we are using for verification
+     * Setter for password - Represents a verification request using Skyscraper for a company
      */
     public void setPassword(String password) {
         this.password = password;

@@ -11,22 +11,28 @@ import java.util.HashMap;
 
 /**
  * This object is used to keep track of custom information about a company.
-            A setting can refer to any type of data you need to remember about this company object.
-            When creating this object, you may define your own "set", "name", and "value" parameters.
-            To define your own values, please choose a "set" name that begins with "X-" to indicate an extension.
+A setting can refer to any type of data you need to remember about this company object.
+When creating this object, you may define your own "set", "name", and "value" parameters.
+To define your own values, please choose a "set" name that begins with "X-" to indicate an extension.
  */
 public class SettingModel {
     private String name;
 
     /**
-     * Getter for name - A user-defined "name" for this name-value pair.
+     * Getter for name - This object is used to keep track of custom information about a company.
+A setting can refer to any type of data you need to remember about this company object.
+When creating this object, you may define your own "set", "name", and "value" parameters.
+To define your own values, please choose a "set" name that begins with "X-" to indicate an extension.
      */
     public String getName() {
         return this.name;
     }
 
     /**
-     * Setter for name - A user-defined "name" for this name-value pair.
+     * Setter for name - This object is used to keep track of custom information about a company.
+A setting can refer to any type of data you need to remember about this company object.
+When creating this object, you may define your own "set", "name", and "value" parameters.
+To define your own values, please choose a "set" name that begins with "X-" to indicate an extension.
      */
     public void setName(String name) {
         this.name = name;
@@ -36,14 +42,20 @@ public class SettingModel {
     private String set;
 
     /**
-     * Getter for set - A user-defined "set" containing this name-value pair.
+     * Getter for set - This object is used to keep track of custom information about a company.
+A setting can refer to any type of data you need to remember about this company object.
+When creating this object, you may define your own "set", "name", and "value" parameters.
+To define your own values, please choose a "set" name that begins with "X-" to indicate an extension.
      */
     public String getSet() {
         return this.set;
     }
 
     /**
-     * Setter for set - A user-defined "set" containing this name-value pair.
+     * Setter for set - This object is used to keep track of custom information about a company.
+A setting can refer to any type of data you need to remember about this company object.
+When creating this object, you may define your own "set", "name", and "value" parameters.
+To define your own values, please choose a "set" name that begins with "X-" to indicate an extension.
      */
     public void setSet(String set) {
         this.set = set;
@@ -53,14 +65,20 @@ public class SettingModel {
     private Integer id;
 
     /**
-     * Getter for id - The unique ID number of this setting.
+     * Getter for id - This object is used to keep track of custom information about a company.
+A setting can refer to any type of data you need to remember about this company object.
+When creating this object, you may define your own "set", "name", and "value" parameters.
+To define your own values, please choose a "set" name that begins with "X-" to indicate an extension.
      */
     public Integer getId() {
         return this.id;
     }
 
     /**
-     * Setter for id - The unique ID number of this setting.
+     * Setter for id - This object is used to keep track of custom information about a company.
+A setting can refer to any type of data you need to remember about this company object.
+When creating this object, you may define your own "set", "name", and "value" parameters.
+To define your own values, please choose a "set" name that begins with "X-" to indicate an extension.
      */
     public void setId(Integer id) {
         this.id = id;
@@ -70,14 +88,20 @@ public class SettingModel {
     private String value;
 
     /**
-     * Getter for value - The value of this name-value pair.
+     * Getter for value - This object is used to keep track of custom information about a company.
+A setting can refer to any type of data you need to remember about this company object.
+When creating this object, you may define your own "set", "name", and "value" parameters.
+To define your own values, please choose a "set" name that begins with "X-" to indicate an extension.
      */
     public String getValue() {
         return this.value;
     }
 
     /**
-     * Setter for value - The value of this name-value pair.
+     * Setter for value - This object is used to keep track of custom information about a company.
+A setting can refer to any type of data you need to remember about this company object.
+When creating this object, you may define your own "set", "name", and "value" parameters.
+To define your own values, please choose a "set" name that begins with "X-" to indicate an extension.
      */
     public void setValue(String value) {
         this.value = value;
@@ -87,14 +111,20 @@ public class SettingModel {
     private Integer companyId;
 
     /**
-     * Getter for companyId - The unique ID number of the company this setting refers to.
+     * Getter for companyId - This object is used to keep track of custom information about a company.
+A setting can refer to any type of data you need to remember about this company object.
+When creating this object, you may define your own "set", "name", and "value" parameters.
+To define your own values, please choose a "set" name that begins with "X-" to indicate an extension.
      */
     public Integer getCompanyId() {
         return this.companyId;
     }
 
     /**
-     * Setter for companyId - The unique ID number of the company this setting refers to.
+     * Setter for companyId - This object is used to keep track of custom information about a company.
+A setting can refer to any type of data you need to remember about this company object.
+When creating this object, you may define your own "set", "name", and "value" parameters.
+To define your own values, please choose a "set" name that begins with "X-" to indicate an extension.
      */
     public void setCompanyId(Integer companyId) {
         this.companyId = companyId;

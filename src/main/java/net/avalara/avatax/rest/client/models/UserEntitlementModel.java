@@ -16,14 +16,14 @@ public class UserEntitlementModel {
     private ArrayList<String> permissions;
 
     /**
-     * Getter for permissions - List of API names and categories that this user is permitted to access
+     * Getter for permissions - User Entitlement Model
      */
     public ArrayList<String> getPermissions() {
         return this.permissions;
     }
 
     /**
-     * Setter for permissions - List of API names and categories that this user is permitted to access
+     * Setter for permissions - User Entitlement Model
      */
     public void setPermissions(ArrayList<String> permissions) {
         this.permissions = permissions;
@@ -33,14 +33,14 @@ public class UserEntitlementModel {
     private CompanyAccessLevel accessLevel;
 
     /**
-     * Getter for accessLevel - What access privileges does the current user have to see companies?
+     * Getter for accessLevel - User Entitlement Model
      */
     public CompanyAccessLevel getAccessLevel() {
         return this.accessLevel;
     }
 
     /**
-     * Setter for accessLevel - What access privileges does the current user have to see companies?
+     * Setter for accessLevel - User Entitlement Model
      */
     public void setAccessLevel(CompanyAccessLevel accessLevel) {
         this.accessLevel = accessLevel;
@@ -50,14 +50,14 @@ public class UserEntitlementModel {
     private ArrayList<Integer> companies;
 
     /**
-     * Getter for companies - The identities of all companies this user is permitted to access
+     * Getter for companies - User Entitlement Model
      */
     public ArrayList<Integer> getCompanies() {
         return this.companies;
     }
 
     /**
-     * Setter for companies - The identities of all companies this user is permitted to access
+     * Setter for companies - User Entitlement Model
      */
     public void setCompanies(ArrayList<Integer> companies) {
         this.companies = companies;

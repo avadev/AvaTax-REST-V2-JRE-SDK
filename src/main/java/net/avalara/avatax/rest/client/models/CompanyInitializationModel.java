@@ -16,14 +16,14 @@ public class CompanyInitializationModel {
     private String city;
 
     /**
-     * Getter for city - City
+     * Getter for city - Company Initialization Model
      */
     public String getCity() {
         return this.city;
     }
 
     /**
-     * Setter for city - City
+     * Setter for city - Company Initialization Model
      */
     public void setCity(String city) {
         this.city = city;
@@ -33,14 +33,14 @@ public class CompanyInitializationModel {
     private String name;
 
     /**
-     * Getter for name - Company Name
+     * Getter for name - Company Initialization Model
      */
     public String getName() {
         return this.name;
     }
 
     /**
-     * Setter for name - Company Name
+     * Setter for name - Company Initialization Model
      */
     public void setName(String name) {
         this.name = name;
@@ -50,14 +50,14 @@ public class CompanyInitializationModel {
     private String phoneNumber;
 
     /**
-     * Getter for phoneNumber - Phone Number
+     * Getter for phoneNumber - Company Initialization Model
      */
     public String getPhoneNumber() {
         return this.phoneNumber;
     }
 
     /**
-     * Setter for phoneNumber - Phone Number
+     * Setter for phoneNumber - Company Initialization Model
      */
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
@@ -67,14 +67,14 @@ public class CompanyInitializationModel {
     private String email;
 
     /**
-     * Getter for email - Email
+     * Getter for email - Company Initialization Model
      */
     public String getEmail() {
         return this.email;
     }
 
     /**
-     * Setter for email - Email
+     * Setter for email - Company Initialization Model
      */
     public void setEmail(String email) {
         this.email = email;
@@ -84,14 +84,14 @@ public class CompanyInitializationModel {
     private String vatRegistrationId;
 
     /**
-     * Getter for vatRegistrationId - Vat Registration Id - leave blank if not known.
+     * Getter for vatRegistrationId - Company Initialization Model
      */
     public String getVatRegistrationId() {
         return this.vatRegistrationId;
     }
 
     /**
-     * Setter for vatRegistrationId - Vat Registration Id - leave blank if not known.
+     * Setter for vatRegistrationId - Company Initialization Model
      */
     public void setVatRegistrationId(String vatRegistrationId) {
         this.vatRegistrationId = vatRegistrationId;
@@ -101,14 +101,14 @@ public class CompanyInitializationModel {
     private String companyCode;
 
     /**
-     * Getter for companyCode - Company Code - used to distinguish between companies within your accounting system
+     * Getter for companyCode - Company Initialization Model
      */
     public String getCompanyCode() {
         return this.companyCode;
     }
 
     /**
-     * Setter for companyCode - Company Code - used to distinguish between companies within your accounting system
+     * Setter for companyCode - Company Initialization Model
      */
     public void setCompanyCode(String companyCode) {
         this.companyCode = companyCode;
@@ -118,14 +118,14 @@ public class CompanyInitializationModel {
     private String country;
 
     /**
-     * Getter for country - Two character ISO 3166 Country code for this company's primary business location.
+     * Getter for country - Company Initialization Model
      */
     public String getCountry() {
         return this.country;
     }
 
     /**
-     * Setter for country - Two character ISO 3166 Country code for this company's primary business location.
+     * Setter for country - Company Initialization Model
      */
     public void setCountry(String country) {
         this.country = country;
@@ -135,20 +135,14 @@ public class CompanyInitializationModel {
     private String taxpayerIdNumber;
 
     /**
-     * Getter for taxpayerIdNumber - United States Taxpayer ID number, usually your Employer Identification Number if you are a business or your 
-            Social Security Number if you are an individual.
-            This value is required if you subscribe to Avalara Managed Returns or the SST Certified Service Provider services, 
-            but it is optional if you do not subscribe to either of those services.
+     * Getter for taxpayerIdNumber - Company Initialization Model
      */
     public String getTaxpayerIdNumber() {
         return this.taxpayerIdNumber;
     }
 
     /**
-     * Setter for taxpayerIdNumber - United States Taxpayer ID number, usually your Employer Identification Number if you are a business or your 
-            Social Security Number if you are an individual.
-            This value is required if you subscribe to Avalara Managed Returns or the SST Certified Service Provider services, 
-            but it is optional if you do not subscribe to either of those services.
+     * Setter for taxpayerIdNumber - Company Initialization Model
      */
     public void setTaxpayerIdNumber(String taxpayerIdNumber) {
         this.taxpayerIdNumber = taxpayerIdNumber;
@@ -158,14 +152,14 @@ public class CompanyInitializationModel {
     private String line1;
 
     /**
-     * Getter for line1 - Address Line1
+     * Getter for line1 - Company Initialization Model
      */
     public String getLine1() {
         return this.line1;
     }
 
     /**
-     * Setter for line1 - Address Line1
+     * Setter for line1 - Company Initialization Model
      */
     public void setLine1(String line1) {
         this.line1 = line1;
@@ -175,14 +169,14 @@ public class CompanyInitializationModel {
     private String mobileNumber;
 
     /**
-     * Getter for mobileNumber - Mobile Number
+     * Getter for mobileNumber - Company Initialization Model
      */
     public String getMobileNumber() {
         return this.mobileNumber;
     }
 
     /**
-     * Setter for mobileNumber - Mobile Number
+     * Setter for mobileNumber - Company Initialization Model
      */
     public void setMobileNumber(String mobileNumber) {
         this.mobileNumber = mobileNumber;
@@ -192,14 +186,14 @@ public class CompanyInitializationModel {
     private String postalCode;
 
     /**
-     * Getter for postalCode - Postal Code
+     * Getter for postalCode - Company Initialization Model
      */
     public String getPostalCode() {
         return this.postalCode;
     }
 
     /**
-     * Setter for postalCode - Postal Code
+     * Setter for postalCode - Company Initialization Model
      */
     public void setPostalCode(String postalCode) {
         this.postalCode = postalCode;
@@ -209,14 +203,14 @@ public class CompanyInitializationModel {
     private String lastName;
 
     /**
-     * Getter for lastName - Last Name
+     * Getter for lastName - Company Initialization Model
      */
     public String getLastName() {
         return this.lastName;
     }
 
     /**
-     * Setter for lastName - Last Name
+     * Setter for lastName - Company Initialization Model
      */
     public void setLastName(String lastName) {
         this.lastName = lastName;
@@ -226,14 +220,14 @@ public class CompanyInitializationModel {
     private String firstName;
 
     /**
-     * Getter for firstName - First Name
+     * Getter for firstName - Company Initialization Model
      */
     public String getFirstName() {
         return this.firstName;
     }
 
     /**
-     * Setter for firstName - First Name
+     * Setter for firstName - Company Initialization Model
      */
     public void setFirstName(String firstName) {
         this.firstName = firstName;
@@ -243,14 +237,14 @@ public class CompanyInitializationModel {
     private String region;
 
     /**
-     * Getter for region - Two character ISO 3166 Region code for this company's primary business location.
+     * Getter for region - Company Initialization Model
      */
     public String getRegion() {
         return this.region;
     }
 
     /**
-     * Setter for region - Two character ISO 3166 Region code for this company's primary business location.
+     * Setter for region - Company Initialization Model
      */
     public void setRegion(String region) {
         this.region = region;
@@ -260,14 +254,14 @@ public class CompanyInitializationModel {
     private String line2;
 
     /**
-     * Getter for line2 - Line2
+     * Getter for line2 - Company Initialization Model
      */
     public String getLine2() {
         return this.line2;
     }
 
     /**
-     * Setter for line2 - Line2
+     * Setter for line2 - Company Initialization Model
      */
     public void setLine2(String line2) {
         this.line2 = line2;
@@ -277,14 +271,14 @@ public class CompanyInitializationModel {
     private String title;
 
     /**
-     * Getter for title - Title
+     * Getter for title - Company Initialization Model
      */
     public String getTitle() {
         return this.title;
     }
 
     /**
-     * Setter for title - Title
+     * Setter for title - Company Initialization Model
      */
     public void setTitle(String title) {
         this.title = title;
@@ -294,14 +288,14 @@ public class CompanyInitializationModel {
     private String faxNumber;
 
     /**
-     * Getter for faxNumber - Fax Number
+     * Getter for faxNumber - Company Initialization Model
      */
     public String getFaxNumber() {
         return this.faxNumber;
     }
 
     /**
-     * Setter for faxNumber - Fax Number
+     * Setter for faxNumber - Company Initialization Model
      */
     public void setFaxNumber(String faxNumber) {
         this.faxNumber = faxNumber;
@@ -311,14 +305,14 @@ public class CompanyInitializationModel {
     private String line3;
 
     /**
-     * Getter for line3 - Line3
+     * Getter for line3 - Company Initialization Model
      */
     public String getLine3() {
         return this.line3;
     }
 
     /**
-     * Setter for line3 - Line3
+     * Setter for line3 - Company Initialization Model
      */
     public void setLine3(String line3) {
         this.line3 = line3;

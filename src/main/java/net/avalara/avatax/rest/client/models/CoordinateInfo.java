@@ -16,14 +16,14 @@ public class CoordinateInfo {
     private BigDecimal latitude;
 
     /**
-     * Getter for latitude - Latitude
+     * Getter for latitude - Coordinate Info
      */
     public BigDecimal getLatitude() {
         return this.latitude;
     }
 
     /**
-     * Setter for latitude - Latitude
+     * Setter for latitude - Coordinate Info
      */
     public void setLatitude(BigDecimal latitude) {
         this.latitude = latitude;
@@ -33,14 +33,14 @@ public class CoordinateInfo {
     private BigDecimal longitude;
 
     /**
-     * Getter for longitude - Longitude
+     * Getter for longitude - Coordinate Info
      */
     public BigDecimal getLongitude() {
         return this.longitude;
     }
 
     /**
-     * Setter for longitude - Longitude
+     * Setter for longitude - Coordinate Info
      */
     public void setLongitude(BigDecimal longitude) {
         this.longitude = longitude;

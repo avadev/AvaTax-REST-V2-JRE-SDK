@@ -16,14 +16,14 @@ public class PingResultModel {
     private String version;
 
     /**
-     * Getter for version - Version number
+     * Getter for version - Ping Result Model
      */
     public String getVersion() {
         return this.version;
     }
 
     /**
-     * Setter for version - Version number
+     * Setter for version - Ping Result Model
      */
     public void setVersion(String version) {
         this.version = version;
@@ -33,14 +33,14 @@ public class PingResultModel {
     private Boolean authenticated;
 
     /**
-     * Getter for authenticated - Returns true if you provided authentication for this API call; false if you did not.
+     * Getter for authenticated - Ping Result Model
      */
     public Boolean getAuthenticated() {
         return this.authenticated;
     }
 
     /**
-     * Setter for authenticated - Returns true if you provided authentication for this API call; false if you did not.
+     * Setter for authenticated - Ping Result Model
      */
     public void setAuthenticated(Boolean authenticated) {
         this.authenticated = authenticated;
@@ -50,14 +50,14 @@ public class PingResultModel {
     private AuthenticationTypeId authenticationType;
 
     /**
-     * Getter for authenticationType - Returns the type of authentication you provided, if authenticated
+     * Getter for authenticationType - Ping Result Model
      */
     public AuthenticationTypeId getAuthenticationType() {
         return this.authenticationType;
     }
 
     /**
-     * Setter for authenticationType - Returns the type of authentication you provided, if authenticated
+     * Setter for authenticationType - Ping Result Model
      */
     public void setAuthenticationType(AuthenticationTypeId authenticationType) {
         this.authenticationType = authenticationType;
@@ -67,14 +67,14 @@ public class PingResultModel {
     private String authenticatedUserName;
 
     /**
-     * Getter for authenticatedUserName - The username of the currently authenticated user, if any.
+     * Getter for authenticatedUserName - Ping Result Model
      */
     public String getAuthenticatedUserName() {
         return this.authenticatedUserName;
     }
 
     /**
-     * Setter for authenticatedUserName - The username of the currently authenticated user, if any.
+     * Setter for authenticatedUserName - Ping Result Model
      */
     public void setAuthenticatedUserName(String authenticatedUserName) {
         this.authenticatedUserName = authenticatedUserName;

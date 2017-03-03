@@ -16,14 +16,14 @@ public class NoticeCustomerFundingOptionModel {
     private Integer id;
 
     /**
-     * Getter for id - The unique ID number of this tax notice customer FundingOption.
+     * Getter for id - Tax Authority Model
      */
     public Integer getId() {
         return this.id;
     }
 
     /**
-     * Setter for id - The unique ID number of this tax notice customer FundingOption.
+     * Setter for id - Tax Authority Model
      */
     public void setId(Integer id) {
         this.id = id;
@@ -33,14 +33,14 @@ public class NoticeCustomerFundingOptionModel {
     private String description;
 
     /**
-     * Getter for description - The description name of this tax authority FundingOption.
+     * Getter for description - Tax Authority Model
      */
     public String getDescription() {
         return this.description;
     }
 
     /**
-     * Setter for description - The description name of this tax authority FundingOption.
+     * Setter for description - Tax Authority Model
      */
     public void setDescription(String description) {
         this.description = description;
@@ -50,14 +50,14 @@ public class NoticeCustomerFundingOptionModel {
     private Boolean activeFlag;
 
     /**
-     * Getter for activeFlag - A flag if the FundingOption is active
+     * Getter for activeFlag - Tax Authority Model
      */
     public Boolean getActiveFlag() {
         return this.activeFlag;
     }
 
     /**
-     * Setter for activeFlag - A flag if the FundingOption is active
+     * Setter for activeFlag - Tax Authority Model
      */
     public void setActiveFlag(Boolean activeFlag) {
         this.activeFlag = activeFlag;
@@ -67,14 +67,14 @@ public class NoticeCustomerFundingOptionModel {
     private Integer sortOrder;
 
     /**
-     * Getter for sortOrder - sort order of the FundingOptions
+     * Getter for sortOrder - Tax Authority Model
      */
     public Integer getSortOrder() {
         return this.sortOrder;
     }
 
     /**
-     * Setter for sortOrder - sort order of the FundingOptions
+     * Setter for sortOrder - Tax Authority Model
      */
     public void setSortOrder(Integer sortOrder) {
         this.sortOrder = sortOrder;

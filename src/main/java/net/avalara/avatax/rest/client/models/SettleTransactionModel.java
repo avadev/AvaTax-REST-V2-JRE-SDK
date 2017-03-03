@@ -11,21 +11,25 @@ import java.util.HashMap;
 
 /**
  * Settle this transaction with your ledger by executing one or many actions against that transaction.  
-            You may use this endpoint to verify the transaction, change the transaction's code, and commit the transaction for reporting purposes.
-            This endpoint may be used to execute any or all of these actions at once.
+You may use this endpoint to verify the transaction, change the transaction's code, and commit the transaction for reporting purposes.
+This endpoint may be used to execute any or all of these actions at once.
  */
 public class SettleTransactionModel {
     private VerifyTransactionModel verify;
 
     /**
-     * Getter for verify - To use the "Settle" endpoint to verify a transaction, fill out this value.
+     * Getter for verify - Settle this transaction with your ledger by executing one or many actions against that transaction.  
+You may use this endpoint to verify the transaction, change the transaction's code, and commit the transaction for reporting purposes.
+This endpoint may be used to execute any or all of these actions at once.
      */
     public VerifyTransactionModel getVerify() {
         return this.verify;
     }
 
     /**
-     * Setter for verify - To use the "Settle" endpoint to verify a transaction, fill out this value.
+     * Setter for verify - Settle this transaction with your ledger by executing one or many actions against that transaction.  
+You may use this endpoint to verify the transaction, change the transaction's code, and commit the transaction for reporting purposes.
+This endpoint may be used to execute any or all of these actions at once.
      */
     public void setVerify(VerifyTransactionModel verify) {
         this.verify = verify;
@@ -35,14 +39,18 @@ public class SettleTransactionModel {
     private ChangeTransactionCodeModel changeCode;
 
     /**
-     * Getter for changeCode - To use the "Settle" endpoint to change a transaction's code, fill out this value.
+     * Getter for changeCode - Settle this transaction with your ledger by executing one or many actions against that transaction.  
+You may use this endpoint to verify the transaction, change the transaction's code, and commit the transaction for reporting purposes.
+This endpoint may be used to execute any or all of these actions at once.
      */
     public ChangeTransactionCodeModel getChangeCode() {
         return this.changeCode;
     }
 
     /**
-     * Setter for changeCode - To use the "Settle" endpoint to change a transaction's code, fill out this value.
+     * Setter for changeCode - Settle this transaction with your ledger by executing one or many actions against that transaction.  
+You may use this endpoint to verify the transaction, change the transaction's code, and commit the transaction for reporting purposes.
+This endpoint may be used to execute any or all of these actions at once.
      */
     public void setChangeCode(ChangeTransactionCodeModel changeCode) {
         this.changeCode = changeCode;
@@ -52,16 +60,18 @@ public class SettleTransactionModel {
     private CommitTransactionModel commit;
 
     /**
-     * Getter for commit - To use the "Settle" endpoint to commit a transaction for reporting purposes, fill out this value.
-                If you use Avalara Returns, committing a transaction will cause that transaction to be filed.
+     * Getter for commit - Settle this transaction with your ledger by executing one or many actions against that transaction.  
+You may use this endpoint to verify the transaction, change the transaction's code, and commit the transaction for reporting purposes.
+This endpoint may be used to execute any or all of these actions at once.
      */
     public CommitTransactionModel getCommit() {
         return this.commit;
     }
 
     /**
-     * Setter for commit - To use the "Settle" endpoint to commit a transaction for reporting purposes, fill out this value.
-                If you use Avalara Returns, committing a transaction will cause that transaction to be filed.
+     * Setter for commit - Settle this transaction with your ledger by executing one or many actions against that transaction.  
+You may use this endpoint to verify the transaction, change the transaction's code, and commit the transaction for reporting purposes.
+This endpoint may be used to execute any or all of these actions at once.
      */
     public void setCommit(CommitTransactionModel commit) {
         this.commit = commit;

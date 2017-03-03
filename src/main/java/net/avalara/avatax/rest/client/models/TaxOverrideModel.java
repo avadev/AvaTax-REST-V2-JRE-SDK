@@ -16,14 +16,14 @@ public class TaxOverrideModel {
     private TaxOverrideType type;
 
     /**
-     * Getter for type - Identifies the type of tax override
+     * Getter for type - Represents a tax override for a transaction
      */
     public TaxOverrideType getType() {
         return this.type;
     }
 
     /**
-     * Setter for type - Identifies the type of tax override
+     * Setter for type - Represents a tax override for a transaction
      */
     public void setType(TaxOverrideType type) {
         this.type = type;
@@ -33,16 +33,14 @@ public class TaxOverrideModel {
     private BigDecimal taxAmount;
 
     /**
-     * Getter for taxAmount - Indicates a total override of the calculated tax on the document.  AvaTax will distribute
-                the override across all the lines.
+     * Getter for taxAmount - Represents a tax override for a transaction
      */
     public BigDecimal getTaxAmount() {
         return this.taxAmount;
     }
 
     /**
-     * Setter for taxAmount - Indicates a total override of the calculated tax on the document.  AvaTax will distribute
-                the override across all the lines.
+     * Setter for taxAmount - Represents a tax override for a transaction
      */
     public void setTaxAmount(BigDecimal taxAmount) {
         this.taxAmount = taxAmount;
@@ -52,14 +50,14 @@ public class TaxOverrideModel {
     private Date taxDate;
 
     /**
-     * Getter for taxDate - The override tax date to use
+     * Getter for taxDate - Represents a tax override for a transaction
      */
     public Date getTaxDate() {
         return this.taxDate;
     }
 
     /**
-     * Setter for taxDate - The override tax date to use
+     * Setter for taxDate - Represents a tax override for a transaction
      */
     public void setTaxDate(Date taxDate) {
         this.taxDate = taxDate;
@@ -69,14 +67,14 @@ public class TaxOverrideModel {
     private String reason;
 
     /**
-     * Getter for reason - This provides the reason for a tax override for audit purposes.  It is required for types 2-4.
+     * Getter for reason - Represents a tax override for a transaction
      */
     public String getReason() {
         return this.reason;
     }
 
     /**
-     * Setter for reason - This provides the reason for a tax override for audit purposes.  It is required for types 2-4.
+     * Setter for reason - Represents a tax override for a transaction
      */
     public void setReason(String reason) {
         this.reason = reason;

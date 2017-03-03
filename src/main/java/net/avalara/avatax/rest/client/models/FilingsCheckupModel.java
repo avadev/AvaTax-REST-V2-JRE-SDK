@@ -16,14 +16,14 @@ public class FilingsCheckupModel {
     private ArrayList<FilingsCheckupAuthorityModel> authorities;
 
     /**
-     * Getter for authorities - A collection of authorities in the report
+     * Getter for authorities - Results of the Worksheet Checkup report
      */
     public ArrayList<FilingsCheckupAuthorityModel> getAuthorities() {
         return this.authorities;
     }
 
     /**
-     * Setter for authorities - A collection of authorities in the report
+     * Setter for authorities - Results of the Worksheet Checkup report
      */
     public void setAuthorities(ArrayList<FilingsCheckupAuthorityModel> authorities) {
         this.authorities = authorities;

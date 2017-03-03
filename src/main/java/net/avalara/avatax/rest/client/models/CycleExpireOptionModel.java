@@ -16,14 +16,14 @@ public class CycleExpireOptionModel {
     private Date transactionalPeriodStart;
 
     /**
-     * Getter for transactionalPeriodStart - The period start date for the customer's first transaction in the jurisdiction being expired.
+     * Getter for transactionalPeriodStart - Options for expiring a filing calendar.
      */
     public Date getTransactionalPeriodStart() {
         return this.transactionalPeriodStart;
     }
 
     /**
-     * Setter for transactionalPeriodStart - The period start date for the customer's first transaction in the jurisdiction being expired.
+     * Setter for transactionalPeriodStart - Options for expiring a filing calendar.
      */
     public void setTransactionalPeriodStart(Date transactionalPeriodStart) {
         this.transactionalPeriodStart = transactionalPeriodStart;
@@ -33,14 +33,14 @@ public class CycleExpireOptionModel {
     private Date transactionalPeriodEnd;
 
     /**
-     * Getter for transactionalPeriodEnd - The period end date for the customer's last transaction in the jurisdiction being expired.
+     * Getter for transactionalPeriodEnd - Options for expiring a filing calendar.
      */
     public Date getTransactionalPeriodEnd() {
         return this.transactionalPeriodEnd;
     }
 
     /**
-     * Setter for transactionalPeriodEnd - The period end date for the customer's last transaction in the jurisdiction being expired.
+     * Setter for transactionalPeriodEnd - Options for expiring a filing calendar.
      */
     public void setTransactionalPeriodEnd(Date transactionalPeriodEnd) {
         this.transactionalPeriodEnd = transactionalPeriodEnd;
@@ -50,14 +50,14 @@ public class CycleExpireOptionModel {
     private Date filingDueDate;
 
     /**
-     * Getter for filingDueDate - The jurisdiction-assigned due date for the form.
+     * Getter for filingDueDate - Options for expiring a filing calendar.
      */
     public Date getFilingDueDate() {
         return this.filingDueDate;
     }
 
     /**
-     * Setter for filingDueDate - The jurisdiction-assigned due date for the form.
+     * Setter for filingDueDate - Options for expiring a filing calendar.
      */
     public void setFilingDueDate(Date filingDueDate) {
         this.filingDueDate = filingDueDate;
@@ -67,14 +67,14 @@ public class CycleExpireOptionModel {
     private String cycleName;
 
     /**
-     * Getter for cycleName - A descriptive name of the cycle and due date of the form.
+     * Getter for cycleName - Options for expiring a filing calendar.
      */
     public String getCycleName() {
         return this.cycleName;
     }
 
     /**
-     * Setter for cycleName - A descriptive name of the cycle and due date of the form.
+     * Setter for cycleName - Options for expiring a filing calendar.
      */
     public void setCycleName(String cycleName) {
         this.cycleName = cycleName;

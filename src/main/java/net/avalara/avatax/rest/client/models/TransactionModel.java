@@ -16,14 +16,14 @@ public class TransactionModel {
     private ArrayList<AvaTaxMessage> messages;
 
     /**
-     * Getter for messages - List of informational and warning messages regarding this API call.  These messages are only relevant to the current API call.
+     * Getter for messages - A single transaction - for example, a sales invoice or purchase order.
      */
     public ArrayList<AvaTaxMessage> getMessages() {
         return this.messages;
     }
 
     /**
-     * Setter for messages - List of informational and warning messages regarding this API call.  These messages are only relevant to the current API call.
+     * Setter for messages - A single transaction - for example, a sales invoice or purchase order.
      */
     public void setMessages(ArrayList<AvaTaxMessage> messages) {
         this.messages = messages;
@@ -33,14 +33,14 @@ public class TransactionModel {
     private String batchCode;
 
     /**
-     * Getter for batchCode - If this transaction was created as part of a batch, this code indicates which batch.
+     * Getter for batchCode - A single transaction - for example, a sales invoice or purchase order.
      */
     public String getBatchCode() {
         return this.batchCode;
     }
 
     /**
-     * Setter for batchCode - If this transaction was created as part of a batch, this code indicates which batch.
+     * Setter for batchCode - A single transaction - for example, a sales invoice or purchase order.
      */
     public void setBatchCode(String batchCode) {
         this.batchCode = batchCode;
@@ -50,14 +50,14 @@ public class TransactionModel {
     private String customerUsageType;
 
     /**
-     * Getter for customerUsageType - The customer usage type for this transaction.  Customer usage types often affect exemption or taxability rules.
+     * Getter for customerUsageType - A single transaction - for example, a sales invoice or purchase order.
      */
     public String getCustomerUsageType() {
         return this.customerUsageType;
     }
 
     /**
-     * Setter for customerUsageType - The customer usage type for this transaction.  Customer usage types often affect exemption or taxability rules.
+     * Setter for customerUsageType - A single transaction - for example, a sales invoice or purchase order.
      */
     public void setCustomerUsageType(String customerUsageType) {
         this.customerUsageType = customerUsageType;
@@ -67,14 +67,14 @@ public class TransactionModel {
     private ArrayList<TransactionModel> history;
 
     /**
-     * Getter for history - If this transaction has been adjusted, this list contains all the previous versions of the document.
+     * Getter for history - A single transaction - for example, a sales invoice or purchase order.
      */
     public ArrayList<TransactionModel> getHistory() {
         return this.history;
     }
 
     /**
-     * Setter for history - If this transaction has been adjusted, this list contains all the previous versions of the document.
+     * Setter for history - A single transaction - for example, a sales invoice or purchase order.
      */
     public void setHistory(ArrayList<TransactionModel> history) {
         this.history = history;
@@ -84,14 +84,14 @@ public class TransactionModel {
     private String email;
 
     /**
-     * Getter for email - Email address associated with this transaction.
+     * Getter for email - A single transaction - for example, a sales invoice or purchase order.
      */
     public String getEmail() {
         return this.email;
     }
 
     /**
-     * Setter for email - Email address associated with this transaction.
+     * Setter for email - A single transaction - for example, a sales invoice or purchase order.
      */
     public void setEmail(String email) {
         this.email = email;
@@ -101,14 +101,14 @@ public class TransactionModel {
     private TaxOverrideTypeId taxOverrideType;
 
     /**
-     * Getter for taxOverrideType - If a tax override was applied to this transaction, indicates what type of tax override was applied.
+     * Getter for taxOverrideType - A single transaction - for example, a sales invoice or purchase order.
      */
     public TaxOverrideTypeId getTaxOverrideType() {
         return this.taxOverrideType;
     }
 
     /**
-     * Setter for taxOverrideType - If a tax override was applied to this transaction, indicates what type of tax override was applied.
+     * Setter for taxOverrideType - A single transaction - for example, a sales invoice or purchase order.
      */
     public void setTaxOverrideType(TaxOverrideTypeId taxOverrideType) {
         this.taxOverrideType = taxOverrideType;
@@ -118,14 +118,14 @@ public class TransactionModel {
     private Long originAddressId;
 
     /**
-     * Getter for originAddressId - The unique ID number of the origin address for this transaction.
+     * Getter for originAddressId - A single transaction - for example, a sales invoice or purchase order.
      */
     public Long getOriginAddressId() {
         return this.originAddressId;
     }
 
     /**
-     * Setter for originAddressId - The unique ID number of the origin address for this transaction.
+     * Setter for originAddressId - A single transaction - for example, a sales invoice or purchase order.
      */
     public void setOriginAddressId(Long originAddressId) {
         this.originAddressId = originAddressId;
@@ -135,14 +135,14 @@ public class TransactionModel {
     private String description;
 
     /**
-     * Getter for description - Description of this transaction.
+     * Getter for description - A single transaction - for example, a sales invoice or purchase order.
      */
     public String getDescription() {
         return this.description;
     }
 
     /**
-     * Setter for description - Description of this transaction.
+     * Setter for description - A single transaction - for example, a sales invoice or purchase order.
      */
     public void setDescription(String description) {
         this.description = description;
@@ -152,14 +152,14 @@ public class TransactionModel {
     private String softwareVersion;
 
     /**
-     * Getter for softwareVersion - The software version used to calculate this transaction.
+     * Getter for softwareVersion - A single transaction - for example, a sales invoice or purchase order.
      */
     public String getSoftwareVersion() {
         return this.softwareVersion;
     }
 
     /**
-     * Setter for softwareVersion - The software version used to calculate this transaction.
+     * Setter for softwareVersion - A single transaction - for example, a sales invoice or purchase order.
      */
     public void setSoftwareVersion(String softwareVersion) {
         this.softwareVersion = softwareVersion;
@@ -169,14 +169,14 @@ public class TransactionModel {
     private String exemptNo;
 
     /**
-     * Getter for exemptNo - If this transaction was exempt, this field will contain the word "Exempt".
+     * Getter for exemptNo - A single transaction - for example, a sales invoice or purchase order.
      */
     public String getExemptNo() {
         return this.exemptNo;
     }
 
     /**
-     * Setter for exemptNo - If this transaction was exempt, this field will contain the word "Exempt".
+     * Setter for exemptNo - A single transaction - for example, a sales invoice or purchase order.
      */
     public void setExemptNo(String exemptNo) {
         this.exemptNo = exemptNo;
@@ -186,14 +186,14 @@ public class TransactionModel {
     private Date modifiedDate;
 
     /**
-     * Getter for modifiedDate - The date/time when this record was last modified.
+     * Getter for modifiedDate - A single transaction - for example, a sales invoice or purchase order.
      */
     public Date getModifiedDate() {
         return this.modifiedDate;
     }
 
     /**
-     * Setter for modifiedDate - The date/time when this record was last modified.
+     * Setter for modifiedDate - A single transaction - for example, a sales invoice or purchase order.
      */
     public void setModifiedDate(Date modifiedDate) {
         this.modifiedDate = modifiedDate;
@@ -203,16 +203,14 @@ public class TransactionModel {
     private String locationCode;
 
     /**
-     * Getter for locationCode - If this transaction was made from a specific reporting location, this is the code string of the location.
-            For customers using Returns, this indicates how tax will be reported according to different locations on the tax forms.
+     * Getter for locationCode - A single transaction - for example, a sales invoice or purchase order.
      */
     public String getLocationCode() {
         return this.locationCode;
     }
 
     /**
-     * Setter for locationCode - If this transaction was made from a specific reporting location, this is the code string of the location.
-            For customers using Returns, this indicates how tax will be reported according to different locations on the tax forms.
+     * Setter for locationCode - A single transaction - for example, a sales invoice or purchase order.
      */
     public void setLocationCode(String locationCode) {
         this.locationCode = locationCode;
@@ -222,14 +220,14 @@ public class TransactionModel {
     private String purchaseOrderNo;
 
     /**
-     * Getter for purchaseOrderNo - The customer-supplied purchase order number of this transaction.
+     * Getter for purchaseOrderNo - A single transaction - for example, a sales invoice or purchase order.
      */
     public String getPurchaseOrderNo() {
         return this.purchaseOrderNo;
     }
 
     /**
-     * Setter for purchaseOrderNo - The customer-supplied purchase order number of this transaction.
+     * Setter for purchaseOrderNo - A single transaction - for example, a sales invoice or purchase order.
      */
     public void setPurchaseOrderNo(String purchaseOrderNo) {
         this.purchaseOrderNo = purchaseOrderNo;
@@ -239,14 +237,14 @@ public class TransactionModel {
     private Boolean locked;
 
     /**
-     * Getter for locked - If this transaction has been reported to a tax authority, this transaction is considered locked and may not be adjusted after reporting.
+     * Getter for locked - A single transaction - for example, a sales invoice or purchase order.
      */
     public Boolean getLocked() {
         return this.locked;
     }
 
     /**
-     * Setter for locked - If this transaction has been reported to a tax authority, this transaction is considered locked and may not be adjusted after reporting.
+     * Setter for locked - A single transaction - for example, a sales invoice or purchase order.
      */
     public void setLocked(Boolean locked) {
         this.locked = locked;
@@ -256,14 +254,14 @@ public class TransactionModel {
     private String country;
 
     /**
-     * Getter for country - The two-character ISO 3166 code of the country for this transaction.
+     * Getter for country - A single transaction - for example, a sales invoice or purchase order.
      */
     public String getCountry() {
         return this.country;
     }
 
     /**
-     * Setter for country - The two-character ISO 3166 code of the country for this transaction.
+     * Setter for country - A single transaction - for example, a sales invoice or purchase order.
      */
     public void setCountry(String country) {
         this.country = country;
@@ -273,14 +271,14 @@ public class TransactionModel {
     private BigDecimal totalTaxable;
 
     /**
-     * Getter for totalTaxable - The portion of the total amount of this transaction that was taxable.
+     * Getter for totalTaxable - A single transaction - for example, a sales invoice or purchase order.
      */
     public BigDecimal getTotalTaxable() {
         return this.totalTaxable;
     }
 
     /**
-     * Setter for totalTaxable - The portion of the total amount of this transaction that was taxable.
+     * Setter for totalTaxable - A single transaction - for example, a sales invoice or purchase order.
      */
     public void setTotalTaxable(BigDecimal totalTaxable) {
         this.totalTaxable = totalTaxable;
@@ -290,14 +288,14 @@ public class TransactionModel {
     private BigDecimal exchangeRate;
 
     /**
-     * Getter for exchangeRate - If this transaction included foreign currency exchange, this is the exchange rate that was used.
+     * Getter for exchangeRate - A single transaction - for example, a sales invoice or purchase order.
      */
     public BigDecimal getExchangeRate() {
         return this.exchangeRate;
     }
 
     /**
-     * Setter for exchangeRate - If this transaction included foreign currency exchange, this is the exchange rate that was used.
+     * Setter for exchangeRate - A single transaction - for example, a sales invoice or purchase order.
      */
     public void setExchangeRate(BigDecimal exchangeRate) {
         this.exchangeRate = exchangeRate;
@@ -307,14 +305,14 @@ public class TransactionModel {
     private String code;
 
     /**
-     * Getter for code - A unique customer-provided code identifying this transaction.
+     * Getter for code - A single transaction - for example, a sales invoice or purchase order.
      */
     public String getCode() {
         return this.code;
     }
 
     /**
-     * Setter for code - A unique customer-provided code identifying this transaction.
+     * Setter for code - A single transaction - for example, a sales invoice or purchase order.
      */
     public void setCode(String code) {
         this.code = code;
@@ -324,14 +322,14 @@ public class TransactionModel {
     private String referenceCode;
 
     /**
-     * Getter for referenceCode - A user-defined reference code for this transaction.
+     * Getter for referenceCode - A single transaction - for example, a sales invoice or purchase order.
      */
     public String getReferenceCode() {
         return this.referenceCode;
     }
 
     /**
-     * Setter for referenceCode - A user-defined reference code for this transaction.
+     * Setter for referenceCode - A single transaction - for example, a sales invoice or purchase order.
      */
     public void setReferenceCode(String referenceCode) {
         this.referenceCode = referenceCode;
@@ -341,14 +339,14 @@ public class TransactionModel {
     private BigDecimal totalAmount;
 
     /**
-     * Getter for totalAmount - The total amount of this transaction.
+     * Getter for totalAmount - A single transaction - for example, a sales invoice or purchase order.
      */
     public BigDecimal getTotalAmount() {
         return this.totalAmount;
     }
 
     /**
-     * Setter for totalAmount - The total amount of this transaction.
+     * Setter for totalAmount - A single transaction - for example, a sales invoice or purchase order.
      */
     public void setTotalAmount(BigDecimal totalAmount) {
         this.totalAmount = totalAmount;
@@ -358,16 +356,14 @@ public class TransactionModel {
     private Integer version;
 
     /**
-     * Getter for version - If this transaction was adjusted, this indicates the version number of this transaction.  Incremented each time the transaction
-            is adjusted.
+     * Getter for version - A single transaction - for example, a sales invoice or purchase order.
      */
     public Integer getVersion() {
         return this.version;
     }
 
     /**
-     * Setter for version - If this transaction was adjusted, this indicates the version number of this transaction.  Incremented each time the transaction
-            is adjusted.
+     * Setter for version - A single transaction - for example, a sales invoice or purchase order.
      */
     public void setVersion(Integer version) {
         this.version = version;
@@ -377,14 +373,14 @@ public class TransactionModel {
     private Long id;
 
     /**
-     * Getter for id - The unique ID number of this transaction.
+     * Getter for id - A single transaction - for example, a sales invoice or purchase order.
      */
     public Long getId() {
         return this.id;
     }
 
     /**
-     * Setter for id - The unique ID number of this transaction.
+     * Setter for id - A single transaction - for example, a sales invoice or purchase order.
      */
     public void setId(Long id) {
         this.id = id;
@@ -394,14 +390,14 @@ public class TransactionModel {
     private Date exchangeRateEffectiveDate;
 
     /**
-     * Getter for exchangeRateEffectiveDate - If this transaction included foreign currency exchange, this is the date as of which the exchange rate was calculated.
+     * Getter for exchangeRateEffectiveDate - A single transaction - for example, a sales invoice or purchase order.
      */
     public Date getExchangeRateEffectiveDate() {
         return this.exchangeRateEffectiveDate;
     }
 
     /**
-     * Setter for exchangeRateEffectiveDate - If this transaction included foreign currency exchange, this is the date as of which the exchange rate was calculated.
+     * Setter for exchangeRateEffectiveDate - A single transaction - for example, a sales invoice or purchase order.
      */
     public void setExchangeRateEffectiveDate(Date exchangeRateEffectiveDate) {
         this.exchangeRateEffectiveDate = exchangeRateEffectiveDate;
@@ -411,14 +407,14 @@ public class TransactionModel {
     private Date date;
 
     /**
-     * Getter for date - The date on which this transaction occurred.
+     * Getter for date - A single transaction - for example, a sales invoice or purchase order.
      */
     public Date getDate() {
         return this.date;
     }
 
     /**
-     * Setter for date - The date on which this transaction occurred.
+     * Setter for date - A single transaction - for example, a sales invoice or purchase order.
      */
     public void setDate(Date date) {
         this.date = date;
@@ -428,14 +424,14 @@ public class TransactionModel {
     private Long destinationAddressId;
 
     /**
-     * Getter for destinationAddressId - The unique ID number of the destination address for this transaction.
+     * Getter for destinationAddressId - A single transaction - for example, a sales invoice or purchase order.
      */
     public Long getDestinationAddressId() {
         return this.destinationAddressId;
     }
 
     /**
-     * Setter for destinationAddressId - The unique ID number of the destination address for this transaction.
+     * Setter for destinationAddressId - A single transaction - for example, a sales invoice or purchase order.
      */
     public void setDestinationAddressId(Long destinationAddressId) {
         this.destinationAddressId = destinationAddressId;
@@ -445,14 +441,14 @@ public class TransactionModel {
     private DocumentStatus status;
 
     /**
-     * Getter for status - The status of the transaction.
+     * Getter for status - A single transaction - for example, a sales invoice or purchase order.
      */
     public DocumentStatus getStatus() {
         return this.status;
     }
 
     /**
-     * Setter for status - The status of the transaction.
+     * Setter for status - A single transaction - for example, a sales invoice or purchase order.
      */
     public void setStatus(DocumentStatus status) {
         this.status = status;
@@ -462,14 +458,14 @@ public class TransactionModel {
     private String taxOverrideReason;
 
     /**
-     * Getter for taxOverrideReason - If a tax override was applied to this transaction, indicates the reason for the tax override.
+     * Getter for taxOverrideReason - A single transaction - for example, a sales invoice or purchase order.
      */
     public String getTaxOverrideReason() {
         return this.taxOverrideReason;
     }
 
     /**
-     * Setter for taxOverrideReason - If a tax override was applied to this transaction, indicates the reason for the tax override.
+     * Setter for taxOverrideReason - A single transaction - for example, a sales invoice or purchase order.
      */
     public void setTaxOverrideReason(String taxOverrideReason) {
         this.taxOverrideReason = taxOverrideReason;
@@ -479,14 +475,14 @@ public class TransactionModel {
     private Boolean isSellerImporterOfRecord;
 
     /**
-     * Getter for isSellerImporterOfRecord - If true, this seller was considered the importer of record of a product shipped internationally.
+     * Getter for isSellerImporterOfRecord - A single transaction - for example, a sales invoice or purchase order.
      */
     public Boolean getIsSellerImporterOfRecord() {
         return this.isSellerImporterOfRecord;
     }
 
     /**
-     * Setter for isSellerImporterOfRecord - If true, this seller was considered the importer of record of a product shipped internationally.
+     * Setter for isSellerImporterOfRecord - A single transaction - for example, a sales invoice or purchase order.
      */
     public void setIsSellerImporterOfRecord(Boolean isSellerImporterOfRecord) {
         this.isSellerImporterOfRecord = isSellerImporterOfRecord;
@@ -496,14 +492,14 @@ public class TransactionModel {
     private Integer modifiedUserId;
 
     /**
-     * Getter for modifiedUserId - The user ID of the user who last modified this record.
+     * Getter for modifiedUserId - A single transaction - for example, a sales invoice or purchase order.
      */
     public Integer getModifiedUserId() {
         return this.modifiedUserId;
     }
 
     /**
-     * Setter for modifiedUserId - The user ID of the user who last modified this record.
+     * Setter for modifiedUserId - A single transaction - for example, a sales invoice or purchase order.
      */
     public void setModifiedUserId(Integer modifiedUserId) {
         this.modifiedUserId = modifiedUserId;
@@ -513,14 +509,14 @@ public class TransactionModel {
     private String currencyCode;
 
     /**
-     * Getter for currencyCode - The three-character ISO 4217 currency code that was used for payment for this transaction.
+     * Getter for currencyCode - A single transaction - for example, a sales invoice or purchase order.
      */
     public String getCurrencyCode() {
         return this.currencyCode;
     }
 
     /**
-     * Setter for currencyCode - The three-character ISO 4217 currency code that was used for payment for this transaction.
+     * Setter for currencyCode - A single transaction - for example, a sales invoice or purchase order.
      */
     public void setCurrencyCode(String currencyCode) {
         this.currencyCode = currencyCode;
@@ -530,14 +526,14 @@ public class TransactionModel {
     private String region;
 
     /**
-     * Getter for region - The two-or-three character ISO region code of the region for this transaction.
+     * Getter for region - A single transaction - for example, a sales invoice or purchase order.
      */
     public String getRegion() {
         return this.region;
     }
 
     /**
-     * Setter for region - The two-or-three character ISO region code of the region for this transaction.
+     * Setter for region - A single transaction - for example, a sales invoice or purchase order.
      */
     public void setRegion(String region) {
         this.region = region;
@@ -547,14 +543,14 @@ public class TransactionModel {
     private BigDecimal taxOverrideAmount;
 
     /**
-     * Getter for taxOverrideAmount - If a tax override was applied to this transaction, indicates the amount of tax that was requested by the customer.
+     * Getter for taxOverrideAmount - A single transaction - for example, a sales invoice or purchase order.
      */
     public BigDecimal getTaxOverrideAmount() {
         return this.taxOverrideAmount;
     }
 
     /**
-     * Setter for taxOverrideAmount - If a tax override was applied to this transaction, indicates the amount of tax that was requested by the customer.
+     * Setter for taxOverrideAmount - A single transaction - for example, a sales invoice or purchase order.
      */
     public void setTaxOverrideAmount(BigDecimal taxOverrideAmount) {
         this.taxOverrideAmount = taxOverrideAmount;
@@ -564,14 +560,14 @@ public class TransactionModel {
     private BigDecimal totalTax;
 
     /**
-     * Getter for totalTax - The total tax calculated for all lines in this transaction.
+     * Getter for totalTax - A single transaction - for example, a sales invoice or purchase order.
      */
     public BigDecimal getTotalTax() {
         return this.totalTax;
     }
 
     /**
-     * Setter for totalTax - The total tax calculated for all lines in this transaction.
+     * Setter for totalTax - A single transaction - for example, a sales invoice or purchase order.
      */
     public void setTotalTax(BigDecimal totalTax) {
         this.totalTax = totalTax;
@@ -581,14 +577,14 @@ public class TransactionModel {
     private Date paymentDate;
 
     /**
-     * Getter for paymentDate - The date when payment was made on this transaction.  By default, this should be the same as the date of the transaction.
+     * Getter for paymentDate - A single transaction - for example, a sales invoice or purchase order.
      */
     public Date getPaymentDate() {
         return this.paymentDate;
     }
 
     /**
-     * Setter for paymentDate - The date when payment was made on this transaction.  By default, this should be the same as the date of the transaction.
+     * Setter for paymentDate - A single transaction - for example, a sales invoice or purchase order.
      */
     public void setPaymentDate(Date paymentDate) {
         this.paymentDate = paymentDate;
@@ -598,14 +594,14 @@ public class TransactionModel {
     private BigDecimal totalTaxCalculated;
 
     /**
-     * Getter for totalTaxCalculated - If a tax override was applied to this transaction, indicates the amount of tax Avalara calculated for the transaction.
+     * Getter for totalTaxCalculated - A single transaction - for example, a sales invoice or purchase order.
      */
     public BigDecimal getTotalTaxCalculated() {
         return this.totalTaxCalculated;
     }
 
     /**
-     * Setter for totalTaxCalculated - If a tax override was applied to this transaction, indicates the amount of tax Avalara calculated for the transaction.
+     * Setter for totalTaxCalculated - A single transaction - for example, a sales invoice or purchase order.
      */
     public void setTotalTaxCalculated(BigDecimal totalTaxCalculated) {
         this.totalTaxCalculated = totalTaxCalculated;
@@ -615,14 +611,14 @@ public class TransactionModel {
     private String customerVendorCode;
 
     /**
-     * Getter for customerVendorCode - CustomerVendorCode
+     * Getter for customerVendorCode - A single transaction - for example, a sales invoice or purchase order.
      */
     public String getCustomerVendorCode() {
         return this.customerVendorCode;
     }
 
     /**
-     * Setter for customerVendorCode - CustomerVendorCode
+     * Setter for customerVendorCode - A single transaction - for example, a sales invoice or purchase order.
      */
     public void setCustomerVendorCode(String customerVendorCode) {
         this.customerVendorCode = customerVendorCode;
@@ -632,14 +628,14 @@ public class TransactionModel {
     private String salespersonCode;
 
     /**
-     * Getter for salespersonCode - The salesperson who provided this transaction.  Not required.
+     * Getter for salespersonCode - A single transaction - for example, a sales invoice or purchase order.
      */
     public String getSalespersonCode() {
         return this.salespersonCode;
     }
 
     /**
-     * Setter for salespersonCode - The salesperson who provided this transaction.  Not required.
+     * Setter for salespersonCode - A single transaction - for example, a sales invoice or purchase order.
      */
     public void setSalespersonCode(String salespersonCode) {
         this.salespersonCode = salespersonCode;
@@ -649,20 +645,14 @@ public class TransactionModel {
     private DocumentType type;
 
     /**
-     * Getter for type - The type of the transaction.  For Returns customers, a transaction type of "Invoice" will be reported to the tax authorities.
-            A sales transaction represents a sale from the company to a customer.  A purchase transaction represents a purchase made by the company.
-            A return transaction represents a customer who decided to request a refund after purchasing a product from the company.  An inventory 
-            transfer transaction represents goods that were moved from one location of the company to another location without changing ownership.
+     * Getter for type - A single transaction - for example, a sales invoice or purchase order.
      */
     public DocumentType getType() {
         return this.type;
     }
 
     /**
-     * Setter for type - The type of the transaction.  For Returns customers, a transaction type of "Invoice" will be reported to the tax authorities.
-            A sales transaction represents a sale from the company to a customer.  A purchase transaction represents a purchase made by the company.
-            A return transaction represents a customer who decided to request a refund after purchasing a product from the company.  An inventory 
-            transfer transaction represents goods that were moved from one location of the company to another location without changing ownership.
+     * Setter for type - A single transaction - for example, a sales invoice or purchase order.
      */
     public void setType(DocumentType type) {
         this.type = type;
@@ -672,14 +662,14 @@ public class TransactionModel {
     private BigDecimal totalExempt;
 
     /**
-     * Getter for totalExempt - The amount of this transaction that was exempt.
+     * Getter for totalExempt - A single transaction - for example, a sales invoice or purchase order.
      */
     public BigDecimal getTotalExempt() {
         return this.totalExempt;
     }
 
     /**
-     * Setter for totalExempt - The amount of this transaction that was exempt.
+     * Setter for totalExempt - A single transaction - for example, a sales invoice or purchase order.
      */
     public void setTotalExempt(BigDecimal totalExempt) {
         this.totalExempt = totalExempt;
@@ -689,14 +679,14 @@ public class TransactionModel {
     private ArrayList<TransactionLineModel> lines;
 
     /**
-     * Getter for lines - Optional: A list of line items in this transaction.  To fetch this list, add the query string "?$include=Lines" or "?$include=Details" to your URL.
+     * Getter for lines - A single transaction - for example, a sales invoice or purchase order.
      */
     public ArrayList<TransactionLineModel> getLines() {
         return this.lines;
     }
 
     /**
-     * Setter for lines - Optional: A list of line items in this transaction.  To fetch this list, add the query string "?$include=Lines" or "?$include=Details" to your URL.
+     * Setter for lines - A single transaction - for example, a sales invoice or purchase order.
      */
     public void setLines(ArrayList<TransactionLineModel> lines) {
         this.lines = lines;
@@ -706,54 +696,31 @@ public class TransactionModel {
     private HashMap<String, String> parameters;
 
     /**
-     * Getter for parameters - Contains a list of extra parameters that were set when the transaction was created.
+     * Getter for parameters - A single transaction - for example, a sales invoice or purchase order.
      */
     public HashMap<String, String> getParameters() {
         return this.parameters;
     }
 
     /**
-     * Setter for parameters - Contains a list of extra parameters that were set when the transaction was created.
+     * Setter for parameters - A single transaction - for example, a sales invoice or purchase order.
      */
     public void setParameters(HashMap<String, String> parameters) {
         this.parameters = parameters;
     }
 
     
-    private Date taxDate;
-
-    /**
-     * Getter for taxDate - The date that was used when calculating tax for this transaction.
-            By default, this should be the same as the transaction date; however, when a consumer returns a product purchased in a previous month,
-            it may be necessary to specify the date of the original transaction in order to correctly return the exact amount of sales tax that was
-            charged of the consumer on the original date they purchased the product.
-     */
-    public Date getTaxDate() {
-        return this.taxDate;
-    }
-
-    /**
-     * Setter for taxDate - The date that was used when calculating tax for this transaction.
-            By default, this should be the same as the transaction date; however, when a consumer returns a product purchased in a previous month,
-            it may be necessary to specify the date of the original transaction in order to correctly return the exact amount of sales tax that was
-            charged of the consumer on the original date they purchased the product.
-     */
-    public void setTaxDate(Date taxDate) {
-        this.taxDate = taxDate;
-    }
-
-    
     private String adjustmentDescription;
 
     /**
-     * Getter for adjustmentDescription - If this transaction was adjusted, indicates a description of the reason why the transaction was adjusted.
+     * Getter for adjustmentDescription - A single transaction - for example, a sales invoice or purchase order.
      */
     public String getAdjustmentDescription() {
         return this.adjustmentDescription;
     }
 
     /**
-     * Setter for adjustmentDescription - If this transaction was adjusted, indicates a description of the reason why the transaction was adjusted.
+     * Setter for adjustmentDescription - A single transaction - for example, a sales invoice or purchase order.
      */
     public void setAdjustmentDescription(String adjustmentDescription) {
         this.adjustmentDescription = adjustmentDescription;
@@ -763,14 +730,14 @@ public class TransactionModel {
     private ArrayList<TransactionSummary> summary;
 
     /**
-     * Getter for summary - Contains a summary of tax on this transaction.
+     * Getter for summary - A single transaction - for example, a sales invoice or purchase order.
      */
     public ArrayList<TransactionSummary> getSummary() {
         return this.summary;
     }
 
     /**
-     * Setter for summary - Contains a summary of tax on this transaction.
+     * Setter for summary - A single transaction - for example, a sales invoice or purchase order.
      */
     public void setSummary(ArrayList<TransactionSummary> summary) {
         this.summary = summary;
@@ -780,14 +747,14 @@ public class TransactionModel {
     private AdjustmentReason adjustmentReason;
 
     /**
-     * Getter for adjustmentReason - If this transaction was adjusted, indicates the unique ID number of the reason why the transaction was adjusted.
+     * Getter for adjustmentReason - A single transaction - for example, a sales invoice or purchase order.
      */
     public AdjustmentReason getAdjustmentReason() {
         return this.adjustmentReason;
     }
 
     /**
-     * Setter for adjustmentReason - If this transaction was adjusted, indicates the unique ID number of the reason why the transaction was adjusted.
+     * Setter for adjustmentReason - A single transaction - for example, a sales invoice or purchase order.
      */
     public void setAdjustmentReason(AdjustmentReason adjustmentReason) {
         this.adjustmentReason = adjustmentReason;
@@ -797,14 +764,14 @@ public class TransactionModel {
     private Integer companyId;
 
     /**
-     * Getter for companyId - The unique ID number of the company that recorded this transaction.
+     * Getter for companyId - A single transaction - for example, a sales invoice or purchase order.
      */
     public Integer getCompanyId() {
         return this.companyId;
     }
 
     /**
-     * Setter for companyId - The unique ID number of the company that recorded this transaction.
+     * Setter for companyId - A single transaction - for example, a sales invoice or purchase order.
      */
     public void setCompanyId(Integer companyId) {
         this.companyId = companyId;
@@ -814,14 +781,14 @@ public class TransactionModel {
     private Boolean reconciled;
 
     /**
-     * Getter for reconciled - If this transaction has been reconciled against the company's ledger, this value is set to true.
+     * Getter for reconciled - A single transaction - for example, a sales invoice or purchase order.
      */
     public Boolean getReconciled() {
         return this.reconciled;
     }
 
     /**
-     * Setter for reconciled - If this transaction has been reconciled against the company's ledger, this value is set to true.
+     * Setter for reconciled - A single transaction - for example, a sales invoice or purchase order.
      */
     public void setReconciled(Boolean reconciled) {
         this.reconciled = reconciled;
@@ -831,14 +798,14 @@ public class TransactionModel {
     private ArrayList<TransactionAddressModel> addresses;
 
     /**
-     * Getter for addresses - Optional: A list of line items in this transaction.  To fetch this list, add the query string "?$include=Addresses" to your URL.
+     * Getter for addresses - A single transaction - for example, a sales invoice or purchase order.
      */
     public ArrayList<TransactionAddressModel> getAddresses() {
         return this.addresses;
     }
 
     /**
-     * Setter for addresses - Optional: A list of line items in this transaction.  To fetch this list, add the query string "?$include=Addresses" to your URL.
+     * Setter for addresses - A single transaction - for example, a sales invoice or purchase order.
      */
     public void setAddresses(ArrayList<TransactionAddressModel> addresses) {
         this.addresses = addresses;

@@ -16,14 +16,14 @@ public class BatchFileModel {
     private String name;
 
     /**
-     * Getter for name - Logical Name of file (e.g. "Input" or "Error").
+     * Getter for name - Represents one file in a batch upload.
      */
     public String getName() {
         return this.name;
     }
 
     /**
-     * Setter for name - Logical Name of file (e.g. "Input" or "Error").
+     * Setter for name - Represents one file in a batch upload.
      */
     public void setName(String name) {
         this.name = name;
@@ -33,14 +33,14 @@ public class BatchFileModel {
     private String fileExtension;
 
     /**
-     * Getter for fileExtension - File extension (e.g. CSV).
+     * Getter for fileExtension - Represents one file in a batch upload.
      */
     public String getFileExtension() {
         return this.fileExtension;
     }
 
     /**
-     * Setter for fileExtension - File extension (e.g. CSV).
+     * Setter for fileExtension - Represents one file in a batch upload.
      */
     public void setFileExtension(String fileExtension) {
         this.fileExtension = fileExtension;
@@ -50,14 +50,14 @@ public class BatchFileModel {
     private Integer errorCount;
 
     /**
-     * Getter for errorCount - Number of errors that occurred when processing this file.
+     * Getter for errorCount - Represents one file in a batch upload.
      */
     public Integer getErrorCount() {
         return this.errorCount;
     }
 
     /**
-     * Setter for errorCount - Number of errors that occurred when processing this file.
+     * Setter for errorCount - Represents one file in a batch upload.
      */
     public void setErrorCount(Integer errorCount) {
         this.errorCount = errorCount;
@@ -67,14 +67,14 @@ public class BatchFileModel {
     private Integer contentLength;
 
     /**
-     * Getter for contentLength - Size of content, in bytes.
+     * Getter for contentLength - Represents one file in a batch upload.
      */
     public Integer getContentLength() {
         return this.contentLength;
     }
 
     /**
-     * Setter for contentLength - Size of content, in bytes.
+     * Setter for contentLength - Represents one file in a batch upload.
      */
     public void setContentLength(Integer contentLength) {
         this.contentLength = contentLength;
@@ -84,14 +84,14 @@ public class BatchFileModel {
     private Integer id;
 
     /**
-     * Getter for id - The unique ID number assigned to this batch file.
+     * Getter for id - Represents one file in a batch upload.
      */
     public Integer getId() {
         return this.id;
     }
 
     /**
-     * Setter for id - The unique ID number assigned to this batch file.
+     * Setter for id - Represents one file in a batch upload.
      */
     public void setId(Integer id) {
         this.id = id;
@@ -101,14 +101,14 @@ public class BatchFileModel {
     private String contentType;
 
     /**
-     * Getter for contentType - Content mime type (e.g. text/csv).  This is used for HTTP downloading.
+     * Getter for contentType - Represents one file in a batch upload.
      */
     public String getContentType() {
         return this.contentType;
     }
 
     /**
-     * Setter for contentType - Content mime type (e.g. text/csv).  This is used for HTTP downloading.
+     * Setter for contentType - Represents one file in a batch upload.
      */
     public void setContentType(String contentType) {
         this.contentType = contentType;
@@ -118,14 +118,14 @@ public class BatchFileModel {
     private String content;
 
     /**
-     * Getter for content - Content of the batch file.
+     * Getter for content - Represents one file in a batch upload.
      */
     public String getContent() {
         return this.content;
     }
 
     /**
-     * Setter for content - Content of the batch file.
+     * Setter for content - Represents one file in a batch upload.
      */
     public void setContent(String content) {
         this.content = content;
@@ -135,14 +135,14 @@ public class BatchFileModel {
     private Integer batchId;
 
     /**
-     * Getter for batchId - The unique ID number of the batch that this file belongs to.
+     * Getter for batchId - Represents one file in a batch upload.
      */
     public Integer getBatchId() {
         return this.batchId;
     }
 
     /**
-     * Setter for batchId - The unique ID number of the batch that this file belongs to.
+     * Setter for batchId - Represents one file in a batch upload.
      */
     public void setBatchId(Integer batchId) {
         this.batchId = batchId;

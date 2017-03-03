@@ -16,14 +16,14 @@ public class CycleAddOptionModel {
     private ArrayList<String> availableLocationCodes;
 
     /**
-     * Getter for availableLocationCodes - A list of outlet codes that can be assigned to this form for the current cycle
+     * Getter for availableLocationCodes - Model with options for adding a new filing calendar
      */
     public ArrayList<String> getAvailableLocationCodes() {
         return this.availableLocationCodes;
     }
 
     /**
-     * Setter for availableLocationCodes - A list of outlet codes that can be assigned to this form for the current cycle
+     * Setter for availableLocationCodes - Model with options for adding a new filing calendar
      */
     public void setAvailableLocationCodes(ArrayList<String> availableLocationCodes) {
         this.availableLocationCodes = availableLocationCodes;
@@ -33,14 +33,14 @@ public class CycleAddOptionModel {
     private String frequencyName;
 
     /**
-     * Getter for frequencyName - The filing frequency of the form
+     * Getter for frequencyName - Model with options for adding a new filing calendar
      */
     public String getFrequencyName() {
         return this.frequencyName;
     }
 
     /**
-     * Setter for frequencyName - The filing frequency of the form
+     * Setter for frequencyName - Model with options for adding a new filing calendar
      */
     public void setFrequencyName(String frequencyName) {
         this.frequencyName = frequencyName;
@@ -50,14 +50,14 @@ public class CycleAddOptionModel {
     private Date transactionalPeriodEnd;
 
     /**
-     * Getter for transactionalPeriodEnd - The period end date for the customer's last transaction in the jurisdiction being added
+     * Getter for transactionalPeriodEnd - Model with options for adding a new filing calendar
      */
     public Date getTransactionalPeriodEnd() {
         return this.transactionalPeriodEnd;
     }
 
     /**
-     * Setter for transactionalPeriodEnd - The period end date for the customer's last transaction in the jurisdiction being added
+     * Setter for transactionalPeriodEnd - Model with options for adding a new filing calendar
      */
     public void setTransactionalPeriodEnd(Date transactionalPeriodEnd) {
         this.transactionalPeriodEnd = transactionalPeriodEnd;
@@ -67,14 +67,14 @@ public class CycleAddOptionModel {
     private Date transactionalPeriodStart;
 
     /**
-     * Getter for transactionalPeriodStart - The period start date for the customer's first transaction in the jurisdiction being added
+     * Getter for transactionalPeriodStart - Model with options for adding a new filing calendar
      */
     public Date getTransactionalPeriodStart() {
         return this.transactionalPeriodStart;
     }
 
     /**
-     * Setter for transactionalPeriodStart - The period start date for the customer's first transaction in the jurisdiction being added
+     * Setter for transactionalPeriodStart - Model with options for adding a new filing calendar
      */
     public void setTransactionalPeriodStart(Date transactionalPeriodStart) {
         this.transactionalPeriodStart = transactionalPeriodStart;
@@ -84,14 +84,14 @@ public class CycleAddOptionModel {
     private String filingFrequencyCode;
 
     /**
-     * Getter for filingFrequencyCode - A code assigned to the filing frequency
+     * Getter for filingFrequencyCode - Model with options for adding a new filing calendar
      */
     public String getFilingFrequencyCode() {
         return this.filingFrequencyCode;
     }
 
     /**
-     * Setter for filingFrequencyCode - A code assigned to the filing frequency
+     * Setter for filingFrequencyCode - Model with options for adding a new filing calendar
      */
     public void setFilingFrequencyCode(String filingFrequencyCode) {
         this.filingFrequencyCode = filingFrequencyCode;
@@ -101,14 +101,14 @@ public class CycleAddOptionModel {
     private String cycleName;
 
     /**
-     * Getter for cycleName - A descriptive name of the cycle and due date of form.
+     * Getter for cycleName - Model with options for adding a new filing calendar
      */
     public String getCycleName() {
         return this.cycleName;
     }
 
     /**
-     * Setter for cycleName - A descriptive name of the cycle and due date of form.
+     * Setter for cycleName - Model with options for adding a new filing calendar
      */
     public void setCycleName(String cycleName) {
         this.cycleName = cycleName;
@@ -118,14 +118,14 @@ public class CycleAddOptionModel {
     private Boolean available;
 
     /**
-     * Getter for available - True if this form can be added and filed for the current cycle. "Current cycle" is considered one month before the month of today's date.
+     * Getter for available - Model with options for adding a new filing calendar
      */
     public Boolean getAvailable() {
         return this.available;
     }
 
     /**
-     * Setter for available - True if this form can be added and filed for the current cycle. "Current cycle" is considered one month before the month of today's date.
+     * Setter for available - Model with options for adding a new filing calendar
      */
     public void setAvailable(Boolean available) {
         this.available = available;
@@ -135,14 +135,14 @@ public class CycleAddOptionModel {
     private Date filingDueDate;
 
     /**
-     * Getter for filingDueDate - The jurisdiction-assigned due date for the form
+     * Getter for filingDueDate - Model with options for adding a new filing calendar
      */
     public Date getFilingDueDate() {
         return this.filingDueDate;
     }
 
     /**
-     * Setter for filingDueDate - The jurisdiction-assigned due date for the form
+     * Setter for filingDueDate - Model with options for adding a new filing calendar
      */
     public void setFilingDueDate(Date filingDueDate) {
         this.filingDueDate = filingDueDate;
@@ -152,14 +152,14 @@ public class CycleAddOptionModel {
     private String cycleUnavailableReason;
 
     /**
-     * Getter for cycleUnavailableReason - An explanation for why this form cannot be added for the current cycle
+     * Getter for cycleUnavailableReason - Model with options for adding a new filing calendar
      */
     public String getCycleUnavailableReason() {
         return this.cycleUnavailableReason;
     }
 
     /**
-     * Setter for cycleUnavailableReason - An explanation for why this form cannot be added for the current cycle
+     * Setter for cycleUnavailableReason - Model with options for adding a new filing calendar
      */
     public void setCycleUnavailableReason(String cycleUnavailableReason) {
         this.cycleUnavailableReason = cycleUnavailableReason;

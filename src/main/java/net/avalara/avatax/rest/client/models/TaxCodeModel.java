@@ -11,20 +11,22 @@ import java.util.HashMap;
 
 /**
  * Represents a tax code that can be applied to items on a transaction.
-            A tax code can have specific rules for specific jurisdictions that change the tax calculation behavior.
+A tax code can have specific rules for specific jurisdictions that change the tax calculation behavior.
  */
 public class TaxCodeModel {
     private String taxCode;
 
     /**
-     * Getter for taxCode - A code string that identifies this tax code.
+     * Getter for taxCode - Represents a tax code that can be applied to items on a transaction.
+A tax code can have specific rules for specific jurisdictions that change the tax calculation behavior.
      */
     public String getTaxCode() {
         return this.taxCode;
     }
 
     /**
-     * Setter for taxCode - A code string that identifies this tax code.
+     * Setter for taxCode - Represents a tax code that can be applied to items on a transaction.
+A tax code can have specific rules for specific jurisdictions that change the tax calculation behavior.
      */
     public void setTaxCode(String taxCode) {
         this.taxCode = taxCode;
@@ -34,14 +36,16 @@ public class TaxCodeModel {
     private String description;
 
     /**
-     * Getter for description - A friendly description of this tax code.
+     * Getter for description - Represents a tax code that can be applied to items on a transaction.
+A tax code can have specific rules for specific jurisdictions that change the tax calculation behavior.
      */
     public String getDescription() {
         return this.description;
     }
 
     /**
-     * Setter for description - A friendly description of this tax code.
+     * Setter for description - Represents a tax code that can be applied to items on a transaction.
+A tax code can have specific rules for specific jurisdictions that change the tax calculation behavior.
      */
     public void setDescription(String description) {
         this.description = description;
@@ -51,14 +55,16 @@ public class TaxCodeModel {
     private Date modifiedDate;
 
     /**
-     * Getter for modifiedDate - The date/time when this record was last modified.
+     * Getter for modifiedDate - Represents a tax code that can be applied to items on a transaction.
+A tax code can have specific rules for specific jurisdictions that change the tax calculation behavior.
      */
     public Date getModifiedDate() {
         return this.modifiedDate;
     }
 
     /**
-     * Setter for modifiedDate - The date/time when this record was last modified.
+     * Setter for modifiedDate - Represents a tax code that can be applied to items on a transaction.
+A tax code can have specific rules for specific jurisdictions that change the tax calculation behavior.
      */
     public void setModifiedDate(Date modifiedDate) {
         this.modifiedDate = modifiedDate;
@@ -68,14 +74,16 @@ public class TaxCodeModel {
     private String entityUseCode;
 
     /**
-     * Getter for entityUseCode - The Avalara Entity Use Code represented by this tax code.
+     * Getter for entityUseCode - Represents a tax code that can be applied to items on a transaction.
+A tax code can have specific rules for specific jurisdictions that change the tax calculation behavior.
      */
     public String getEntityUseCode() {
         return this.entityUseCode;
     }
 
     /**
-     * Setter for entityUseCode - The Avalara Entity Use Code represented by this tax code.
+     * Setter for entityUseCode - Represents a tax code that can be applied to items on a transaction.
+A tax code can have specific rules for specific jurisdictions that change the tax calculation behavior.
      */
     public void setEntityUseCode(String entityUseCode) {
         this.entityUseCode = entityUseCode;
@@ -85,14 +93,16 @@ public class TaxCodeModel {
     private Long goodsServiceCode;
 
     /**
-     * Getter for goodsServiceCode - The Avalara Goods and Service Code represented by this tax code.
+     * Getter for goodsServiceCode - Represents a tax code that can be applied to items on a transaction.
+A tax code can have specific rules for specific jurisdictions that change the tax calculation behavior.
      */
     public Long getGoodsServiceCode() {
         return this.goodsServiceCode;
     }
 
     /**
-     * Setter for goodsServiceCode - The Avalara Goods and Service Code represented by this tax code.
+     * Setter for goodsServiceCode - Represents a tax code that can be applied to items on a transaction.
+A tax code can have specific rules for specific jurisdictions that change the tax calculation behavior.
      */
     public void setGoodsServiceCode(Long goodsServiceCode) {
         this.goodsServiceCode = goodsServiceCode;
@@ -102,14 +112,16 @@ public class TaxCodeModel {
     private Boolean isPhysical;
 
     /**
-     * Getter for isPhysical - True if this tax code refers to a physical object.
+     * Getter for isPhysical - Represents a tax code that can be applied to items on a transaction.
+A tax code can have specific rules for specific jurisdictions that change the tax calculation behavior.
      */
     public Boolean getIsPhysical() {
         return this.isPhysical;
     }
 
     /**
-     * Setter for isPhysical - True if this tax code refers to a physical object.
+     * Setter for isPhysical - Represents a tax code that can be applied to items on a transaction.
+A tax code can have specific rules for specific jurisdictions that change the tax calculation behavior.
      */
     public void setIsPhysical(Boolean isPhysical) {
         this.isPhysical = isPhysical;
@@ -119,14 +131,16 @@ public class TaxCodeModel {
     private Integer id;
 
     /**
-     * Getter for id - The unique ID number of this tax code.
+     * Getter for id - Represents a tax code that can be applied to items on a transaction.
+A tax code can have specific rules for specific jurisdictions that change the tax calculation behavior.
      */
     public Integer getId() {
         return this.id;
     }
 
     /**
-     * Setter for id - The unique ID number of this tax code.
+     * Setter for id - Represents a tax code that can be applied to items on a transaction.
+A tax code can have specific rules for specific jurisdictions that change the tax calculation behavior.
      */
     public void setId(Integer id) {
         this.id = id;
@@ -136,16 +150,16 @@ public class TaxCodeModel {
     private Boolean isSSTCertified;
 
     /**
-     * Getter for isSSTCertified - True if this tax code has been certified by the Streamlined Sales Tax governing board.
-            By default, you should leave this value empty.
+     * Getter for isSSTCertified - Represents a tax code that can be applied to items on a transaction.
+A tax code can have specific rules for specific jurisdictions that change the tax calculation behavior.
      */
     public Boolean getIsSSTCertified() {
         return this.isSSTCertified;
     }
 
     /**
-     * Setter for isSSTCertified - True if this tax code has been certified by the Streamlined Sales Tax governing board.
-            By default, you should leave this value empty.
+     * Setter for isSSTCertified - Represents a tax code that can be applied to items on a transaction.
+A tax code can have specific rules for specific jurisdictions that change the tax calculation behavior.
      */
     public void setIsSSTCertified(Boolean isSSTCertified) {
         this.isSSTCertified = isSSTCertified;
@@ -155,14 +169,16 @@ public class TaxCodeModel {
     private Boolean isActive;
 
     /**
-     * Getter for isActive - True if this tax code is active and can be used in transactions.
+     * Getter for isActive - Represents a tax code that can be applied to items on a transaction.
+A tax code can have specific rules for specific jurisdictions that change the tax calculation behavior.
      */
     public Boolean getIsActive() {
         return this.isActive;
     }
 
     /**
-     * Setter for isActive - True if this tax code is active and can be used in transactions.
+     * Setter for isActive - Represents a tax code that can be applied to items on a transaction.
+A tax code can have specific rules for specific jurisdictions that change the tax calculation behavior.
      */
     public void setIsActive(Boolean isActive) {
         this.isActive = isActive;
@@ -172,14 +188,16 @@ public class TaxCodeModel {
     private Integer modifiedUserId;
 
     /**
-     * Getter for modifiedUserId - The user ID of the user who last modified this record.
+     * Getter for modifiedUserId - Represents a tax code that can be applied to items on a transaction.
+A tax code can have specific rules for specific jurisdictions that change the tax calculation behavior.
      */
     public Integer getModifiedUserId() {
         return this.modifiedUserId;
     }
 
     /**
-     * Setter for modifiedUserId - The user ID of the user who last modified this record.
+     * Setter for modifiedUserId - Represents a tax code that can be applied to items on a transaction.
+A tax code can have specific rules for specific jurisdictions that change the tax calculation behavior.
      */
     public void setModifiedUserId(Integer modifiedUserId) {
         this.modifiedUserId = modifiedUserId;
@@ -189,14 +207,16 @@ public class TaxCodeModel {
     private Integer createdUserId;
 
     /**
-     * Getter for createdUserId - The User ID of the user who created this record.
+     * Getter for createdUserId - Represents a tax code that can be applied to items on a transaction.
+A tax code can have specific rules for specific jurisdictions that change the tax calculation behavior.
      */
     public Integer getCreatedUserId() {
         return this.createdUserId;
     }
 
     /**
-     * Setter for createdUserId - The User ID of the user who created this record.
+     * Setter for createdUserId - Represents a tax code that can be applied to items on a transaction.
+A tax code can have specific rules for specific jurisdictions that change the tax calculation behavior.
      */
     public void setCreatedUserId(Integer createdUserId) {
         this.createdUserId = createdUserId;
@@ -206,14 +226,16 @@ public class TaxCodeModel {
     private String taxCodeTypeId;
 
     /**
-     * Getter for taxCodeTypeId - The type of this tax code.
+     * Getter for taxCodeTypeId - Represents a tax code that can be applied to items on a transaction.
+A tax code can have specific rules for specific jurisdictions that change the tax calculation behavior.
      */
     public String getTaxCodeTypeId() {
         return this.taxCodeTypeId;
     }
 
     /**
-     * Setter for taxCodeTypeId - The type of this tax code.
+     * Setter for taxCodeTypeId - Represents a tax code that can be applied to items on a transaction.
+A tax code can have specific rules for specific jurisdictions that change the tax calculation behavior.
      */
     public void setTaxCodeTypeId(String taxCodeTypeId) {
         this.taxCodeTypeId = taxCodeTypeId;
@@ -223,14 +245,16 @@ public class TaxCodeModel {
     private String parentTaxCode;
 
     /**
-     * Getter for parentTaxCode - If this tax code is a subset of a different tax code, this identifies the parent code.
+     * Getter for parentTaxCode - Represents a tax code that can be applied to items on a transaction.
+A tax code can have specific rules for specific jurisdictions that change the tax calculation behavior.
      */
     public String getParentTaxCode() {
         return this.parentTaxCode;
     }
 
     /**
-     * Setter for parentTaxCode - If this tax code is a subset of a different tax code, this identifies the parent code.
+     * Setter for parentTaxCode - Represents a tax code that can be applied to items on a transaction.
+A tax code can have specific rules for specific jurisdictions that change the tax calculation behavior.
      */
     public void setParentTaxCode(String parentTaxCode) {
         this.parentTaxCode = parentTaxCode;
@@ -240,14 +264,16 @@ public class TaxCodeModel {
     private Integer companyId;
 
     /**
-     * Getter for companyId - The unique ID number of the company that owns this tax code.
+     * Getter for companyId - Represents a tax code that can be applied to items on a transaction.
+A tax code can have specific rules for specific jurisdictions that change the tax calculation behavior.
      */
     public Integer getCompanyId() {
         return this.companyId;
     }
 
     /**
-     * Setter for companyId - The unique ID number of the company that owns this tax code.
+     * Setter for companyId - Represents a tax code that can be applied to items on a transaction.
+A tax code can have specific rules for specific jurisdictions that change the tax calculation behavior.
      */
     public void setCompanyId(Integer companyId) {
         this.companyId = companyId;
@@ -257,14 +283,16 @@ public class TaxCodeModel {
     private Date createdDate;
 
     /**
-     * Getter for createdDate - The date when this record was created.
+     * Getter for createdDate - Represents a tax code that can be applied to items on a transaction.
+A tax code can have specific rules for specific jurisdictions that change the tax calculation behavior.
      */
     public Date getCreatedDate() {
         return this.createdDate;
     }
 
     /**
-     * Setter for createdDate - The date when this record was created.
+     * Setter for createdDate - Represents a tax code that can be applied to items on a transaction.
+A tax code can have specific rules for specific jurisdictions that change the tax calculation behavior.
      */
     public void setCreatedDate(Date createdDate) {
         this.createdDate = createdDate;

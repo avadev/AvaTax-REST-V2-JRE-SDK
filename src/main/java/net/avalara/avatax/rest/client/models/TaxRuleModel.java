@@ -16,16 +16,14 @@ public class TaxRuleModel {
     private String taxCode;
 
     /**
-     * Getter for taxCode - The code string of the tax code for this rule.
-            When creating or updating a tax rule, you may specify either the taxCodeId value or the taxCode value.
+     * Getter for taxCode - Represents a tax rule that changes the behavior of Avalara's tax engine for certain products in certain jurisdictions.
      */
     public String getTaxCode() {
         return this.taxCode;
     }
 
     /**
-     * Setter for taxCode - The code string of the tax code for this rule.
-            When creating or updating a tax rule, you may specify either the taxCodeId value or the taxCode value.
+     * Setter for taxCode - Represents a tax rule that changes the behavior of Avalara's tax engine for certain products in certain jurisdictions.
      */
     public void setTaxCode(String taxCode) {
         this.taxCode = taxCode;
@@ -35,14 +33,14 @@ public class TaxRuleModel {
     private String customerUsageType;
 
     /**
-     * Getter for customerUsageType - The type of customer usage to which this rule applies.
+     * Getter for customerUsageType - Represents a tax rule that changes the behavior of Avalara's tax engine for certain products in certain jurisdictions.
      */
     public String getCustomerUsageType() {
         return this.customerUsageType;
     }
 
     /**
-     * Setter for customerUsageType - The type of customer usage to which this rule applies.
+     * Setter for customerUsageType - Represents a tax rule that changes the behavior of Avalara's tax engine for certain products in certain jurisdictions.
      */
     public void setCustomerUsageType(String customerUsageType) {
         this.customerUsageType = customerUsageType;
@@ -52,14 +50,14 @@ public class TaxRuleModel {
     private MatchingTaxType taxTypeId;
 
     /**
-     * Getter for taxTypeId - Indicates which tax types to which this rule applies.
+     * Getter for taxTypeId - Represents a tax rule that changes the behavior of Avalara's tax engine for certain products in certain jurisdictions.
      */
     public MatchingTaxType getTaxTypeId() {
         return this.taxTypeId;
     }
 
     /**
-     * Setter for taxTypeId - Indicates which tax types to which this rule applies.
+     * Setter for taxTypeId - Represents a tax rule that changes the behavior of Avalara's tax engine for certain products in certain jurisdictions.
      */
     public void setTaxTypeId(MatchingTaxType taxTypeId) {
         this.taxTypeId = taxTypeId;
@@ -69,14 +67,14 @@ public class TaxRuleModel {
     private Date endDate;
 
     /**
-     * Getter for endDate - The last date for which this rule applies.  If null, this rule will apply to all dates after the effective date.
+     * Getter for endDate - Represents a tax rule that changes the behavior of Avalara's tax engine for certain products in certain jurisdictions.
      */
     public Date getEndDate() {
         return this.endDate;
     }
 
     /**
-     * Setter for endDate - The last date for which this rule applies.  If null, this rule will apply to all dates after the effective date.
+     * Setter for endDate - Represents a tax rule that changes the behavior of Avalara's tax engine for certain products in certain jurisdictions.
      */
     public void setEndDate(Date endDate) {
         this.endDate = endDate;
@@ -86,14 +84,14 @@ public class TaxRuleModel {
     private String jurisCode;
 
     /**
-     * Getter for jurisCode - The code of the jurisdiction to which this tax rule applies.
+     * Getter for jurisCode - Represents a tax rule that changes the behavior of Avalara's tax engine for certain products in certain jurisdictions.
      */
     public String getJurisCode() {
         return this.jurisCode;
     }
 
     /**
-     * Setter for jurisCode - The code of the jurisdiction to which this tax rule applies.
+     * Setter for jurisCode - Represents a tax rule that changes the behavior of Avalara's tax engine for certain products in certain jurisdictions.
      */
     public void setJurisCode(String jurisCode) {
         this.jurisCode = jurisCode;
@@ -103,14 +101,14 @@ public class TaxRuleModel {
     private String description;
 
     /**
-     * Getter for description - A friendly name for this tax rule.
+     * Getter for description - Represents a tax rule that changes the behavior of Avalara's tax engine for certain products in certain jurisdictions.
      */
     public String getDescription() {
         return this.description;
     }
 
     /**
-     * Setter for description - A friendly name for this tax rule.
+     * Setter for description - Represents a tax rule that changes the behavior of Avalara's tax engine for certain products in certain jurisdictions.
      */
     public void setDescription(String description) {
         this.description = description;
@@ -120,14 +118,14 @@ public class TaxRuleModel {
     private Date modifiedDate;
 
     /**
-     * Getter for modifiedDate - The date/time when this record was last modified.
+     * Getter for modifiedDate - Represents a tax rule that changes the behavior of Avalara's tax engine for certain products in certain jurisdictions.
      */
     public Date getModifiedDate() {
         return this.modifiedDate;
     }
 
     /**
-     * Setter for modifiedDate - The date/time when this record was last modified.
+     * Setter for modifiedDate - Represents a tax rule that changes the behavior of Avalara's tax engine for certain products in certain jurisdictions.
      */
     public void setModifiedDate(Date modifiedDate) {
         this.modifiedDate = modifiedDate;
@@ -137,14 +135,14 @@ public class TaxRuleModel {
     private Sourcing sourcing;
 
     /**
-     * Getter for sourcing - The sourcing types to which this rule applies.
+     * Getter for sourcing - Represents a tax rule that changes the behavior of Avalara's tax engine for certain products in certain jurisdictions.
      */
     public Sourcing getSourcing() {
         return this.sourcing;
     }
 
     /**
-     * Setter for sourcing - The sourcing types to which this rule applies.
+     * Setter for sourcing - Represents a tax rule that changes the behavior of Avalara's tax engine for certain products in certain jurisdictions.
      */
     public void setSourcing(Sourcing sourcing) {
         this.sourcing = sourcing;
@@ -154,14 +152,14 @@ public class TaxRuleModel {
     private String country;
 
     /**
-     * Getter for country - The two character ISO 3166 country code for the locations where this rule applies.
+     * Getter for country - Represents a tax rule that changes the behavior of Avalara's tax engine for certain products in certain jurisdictions.
      */
     public String getCountry() {
         return this.country;
     }
 
     /**
-     * Setter for country - The two character ISO 3166 country code for the locations where this rule applies.
+     * Setter for country - Represents a tax rule that changes the behavior of Avalara's tax engine for certain products in certain jurisdictions.
      */
     public void setCountry(String country) {
         this.country = country;
@@ -171,16 +169,14 @@ public class TaxRuleModel {
     private Integer taxCodeId;
 
     /**
-     * Getter for taxCodeId - The unique ID number of the tax code for this rule.
-            When creating or updating a tax rule, you may specify either the taxCodeId value or the taxCode value.
+     * Getter for taxCodeId - Represents a tax rule that changes the behavior of Avalara's tax engine for certain products in certain jurisdictions.
      */
     public Integer getTaxCodeId() {
         return this.taxCodeId;
     }
 
     /**
-     * Setter for taxCodeId - The unique ID number of the tax code for this rule.
-            When creating or updating a tax rule, you may specify either the taxCodeId value or the taxCode value.
+     * Setter for taxCodeId - Represents a tax rule that changes the behavior of Avalara's tax engine for certain products in certain jurisdictions.
      */
     public void setTaxCodeId(Integer taxCodeId) {
         this.taxCodeId = taxCodeId;
@@ -190,14 +186,14 @@ public class TaxRuleModel {
     private String options;
 
     /**
-     * Getter for options - Custom option flags for this rule.
+     * Getter for options - Represents a tax rule that changes the behavior of Avalara's tax engine for certain products in certain jurisdictions.
      */
     public String getOptions() {
         return this.options;
     }
 
     /**
-     * Setter for options - Custom option flags for this rule.
+     * Setter for options - Represents a tax rule that changes the behavior of Avalara's tax engine for certain products in certain jurisdictions.
      */
     public void setOptions(String options) {
         this.options = options;
@@ -207,14 +203,14 @@ public class TaxRuleModel {
     private Boolean isAllJuris;
 
     /**
-     * Getter for isAllJuris - Set this value to true if this tax rule applies in all jurisdictions.
+     * Getter for isAllJuris - Represents a tax rule that changes the behavior of Avalara's tax engine for certain products in certain jurisdictions.
      */
     public Boolean getIsAllJuris() {
         return this.isAllJuris;
     }
 
     /**
-     * Setter for isAllJuris - Set this value to true if this tax rule applies in all jurisdictions.
+     * Setter for isAllJuris - Represents a tax rule that changes the behavior of Avalara's tax engine for certain products in certain jurisdictions.
      */
     public void setIsAllJuris(Boolean isAllJuris) {
         this.isAllJuris = isAllJuris;
@@ -224,14 +220,14 @@ public class TaxRuleModel {
     private Integer id;
 
     /**
-     * Getter for id - The unique ID number of this tax rule.
+     * Getter for id - Represents a tax rule that changes the behavior of Avalara's tax engine for certain products in certain jurisdictions.
      */
     public Integer getId() {
         return this.id;
     }
 
     /**
-     * Setter for id - The unique ID number of this tax rule.
+     * Setter for id - Represents a tax rule that changes the behavior of Avalara's tax engine for certain products in certain jurisdictions.
      */
     public void setId(Integer id) {
         this.id = id;
@@ -241,14 +237,14 @@ public class TaxRuleModel {
     private String stateFIPS;
 
     /**
-     * Getter for stateFIPS - For U.S. tax rules, this is the state's Federal Information Processing Standard (FIPS) code.
+     * Getter for stateFIPS - Represents a tax rule that changes the behavior of Avalara's tax engine for certain products in certain jurisdictions.
      */
     public String getStateFIPS() {
         return this.stateFIPS;
     }
 
     /**
-     * Setter for stateFIPS - For U.S. tax rules, this is the state's Federal Information Processing Standard (FIPS) code.
+     * Setter for stateFIPS - Represents a tax rule that changes the behavior of Avalara's tax engine for certain products in certain jurisdictions.
      */
     public void setStateFIPS(String stateFIPS) {
         this.stateFIPS = stateFIPS;
@@ -258,14 +254,14 @@ public class TaxRuleModel {
     private BigDecimal threshold;
 
     /**
-     * Getter for threshold - The per-unit threshold that must be met before this rule applies.
+     * Getter for threshold - Represents a tax rule that changes the behavior of Avalara's tax engine for certain products in certain jurisdictions.
      */
     public BigDecimal getThreshold() {
         return this.threshold;
     }
 
     /**
-     * Setter for threshold - The per-unit threshold that must be met before this rule applies.
+     * Setter for threshold - Represents a tax rule that changes the behavior of Avalara's tax engine for certain products in certain jurisdictions.
      */
     public void setThreshold(BigDecimal threshold) {
         this.threshold = threshold;
@@ -275,14 +271,14 @@ public class TaxRuleModel {
     private Boolean isSTPro;
 
     /**
-     * Getter for isSTPro - If true, indicates this rule is for Sales Tax Pro.
+     * Getter for isSTPro - Represents a tax rule that changes the behavior of Avalara's tax engine for certain products in certain jurisdictions.
      */
     public Boolean getIsSTPro() {
         return this.isSTPro;
     }
 
     /**
-     * Setter for isSTPro - If true, indicates this rule is for Sales Tax Pro.
+     * Setter for isSTPro - Represents a tax rule that changes the behavior of Avalara's tax engine for certain products in certain jurisdictions.
      */
     public void setIsSTPro(Boolean isSTPro) {
         this.isSTPro = isSTPro;
@@ -292,14 +288,14 @@ public class TaxRuleModel {
     private Integer modifiedUserId;
 
     /**
-     * Getter for modifiedUserId - The user ID of the user who last modified this record.
+     * Getter for modifiedUserId - Represents a tax rule that changes the behavior of Avalara's tax engine for certain products in certain jurisdictions.
      */
     public Integer getModifiedUserId() {
         return this.modifiedUserId;
     }
 
     /**
-     * Setter for modifiedUserId - The user ID of the user who last modified this record.
+     * Setter for modifiedUserId - Represents a tax rule that changes the behavior of Avalara's tax engine for certain products in certain jurisdictions.
      */
     public void setModifiedUserId(Integer modifiedUserId) {
         this.modifiedUserId = modifiedUserId;
@@ -309,14 +305,14 @@ public class TaxRuleModel {
     private Date effectiveDate;
 
     /**
-     * Getter for effectiveDate - The first date at which this rule applies.  If null, this rule will apply to all dates prior to the end date.
+     * Getter for effectiveDate - Represents a tax rule that changes the behavior of Avalara's tax engine for certain products in certain jurisdictions.
      */
     public Date getEffectiveDate() {
         return this.effectiveDate;
     }
 
     /**
-     * Setter for effectiveDate - The first date at which this rule applies.  If null, this rule will apply to all dates prior to the end date.
+     * Setter for effectiveDate - Represents a tax rule that changes the behavior of Avalara's tax engine for certain products in certain jurisdictions.
      */
     public void setEffectiveDate(Date effectiveDate) {
         this.effectiveDate = effectiveDate;
@@ -326,14 +322,14 @@ public class TaxRuleModel {
     private Integer createdUserId;
 
     /**
-     * Getter for createdUserId - The User ID of the user who created this record.
+     * Getter for createdUserId - Represents a tax rule that changes the behavior of Avalara's tax engine for certain products in certain jurisdictions.
      */
     public Integer getCreatedUserId() {
         return this.createdUserId;
     }
 
     /**
-     * Setter for createdUserId - The User ID of the user who created this record.
+     * Setter for createdUserId - Represents a tax rule that changes the behavior of Avalara's tax engine for certain products in certain jurisdictions.
      */
     public void setCreatedUserId(Integer createdUserId) {
         this.createdUserId = createdUserId;
@@ -343,14 +339,14 @@ public class TaxRuleModel {
     private String region;
 
     /**
-     * Getter for region - The state, region, or province name for the locations where this rule applies.
+     * Getter for region - Represents a tax rule that changes the behavior of Avalara's tax engine for certain products in certain jurisdictions.
      */
     public String getRegion() {
         return this.region;
     }
 
     /**
-     * Setter for region - The state, region, or province name for the locations where this rule applies.
+     * Setter for region - Represents a tax rule that changes the behavior of Avalara's tax engine for certain products in certain jurisdictions.
      */
     public void setRegion(String region) {
         this.region = region;
@@ -360,14 +356,14 @@ public class TaxRuleModel {
     private String countyFIPS;
 
     /**
-     * Getter for countyFIPS - For U.S. tax rules, this is the county's Federal Information Processing Standard (FIPS) code.
+     * Getter for countyFIPS - Represents a tax rule that changes the behavior of Avalara's tax engine for certain products in certain jurisdictions.
      */
     public String getCountyFIPS() {
         return this.countyFIPS;
     }
 
     /**
-     * Setter for countyFIPS - For U.S. tax rules, this is the county's Federal Information Processing Standard (FIPS) code.
+     * Setter for countyFIPS - Represents a tax rule that changes the behavior of Avalara's tax engine for certain products in certain jurisdictions.
      */
     public void setCountyFIPS(String countyFIPS) {
         this.countyFIPS = countyFIPS;
@@ -377,20 +373,14 @@ public class TaxRuleModel {
     private TaxRuleTypeId taxRuleTypeId;
 
     /**
-     * Getter for taxRuleTypeId - This type value determines the behavior of the tax rule.
-            You can specify that this rule controls the product's taxability or exempt / nontaxable status, the product's rate 
-            (for example, if you have been granted an official ruling for your product's rate that differs from the official rate), 
-            or other types of behavior.
+     * Getter for taxRuleTypeId - Represents a tax rule that changes the behavior of Avalara's tax engine for certain products in certain jurisdictions.
      */
     public TaxRuleTypeId getTaxRuleTypeId() {
         return this.taxRuleTypeId;
     }
 
     /**
-     * Setter for taxRuleTypeId - This type value determines the behavior of the tax rule.
-            You can specify that this rule controls the product's taxability or exempt / nontaxable status, the product's rate 
-            (for example, if you have been granted an official ruling for your product's rate that differs from the official rate), 
-            or other types of behavior.
+     * Setter for taxRuleTypeId - Represents a tax rule that changes the behavior of Avalara's tax engine for certain products in certain jurisdictions.
      */
     public void setTaxRuleTypeId(TaxRuleTypeId taxRuleTypeId) {
         this.taxRuleTypeId = taxRuleTypeId;
@@ -400,14 +390,14 @@ public class TaxRuleModel {
     private RateType rateTypeId;
 
     /**
-     * Getter for rateTypeId - Indicates the rate type to which this rule applies.
+     * Getter for rateTypeId - Represents a tax rule that changes the behavior of Avalara's tax engine for certain products in certain jurisdictions.
      */
     public RateType getRateTypeId() {
         return this.rateTypeId;
     }
 
     /**
-     * Setter for rateTypeId - Indicates the rate type to which this rule applies.
+     * Setter for rateTypeId - Represents a tax rule that changes the behavior of Avalara's tax engine for certain products in certain jurisdictions.
      */
     public void setRateTypeId(RateType rateTypeId) {
         this.rateTypeId = rateTypeId;
@@ -417,14 +407,14 @@ public class TaxRuleModel {
     private String jurisName;
 
     /**
-     * Getter for jurisName - The name of the jurisdiction to which this tax rule applies.
+     * Getter for jurisName - Represents a tax rule that changes the behavior of Avalara's tax engine for certain products in certain jurisdictions.
      */
     public String getJurisName() {
         return this.jurisName;
     }
 
     /**
-     * Setter for jurisName - The name of the jurisdiction to which this tax rule applies.
+     * Setter for jurisName - Represents a tax rule that changes the behavior of Avalara's tax engine for certain products in certain jurisdictions.
      */
     public void setJurisName(String jurisName) {
         this.jurisName = jurisName;
@@ -434,14 +424,14 @@ public class TaxRuleModel {
     private BigDecimal cap;
 
     /**
-     * Getter for cap - The maximum cap for the price of this item according to this rule.
+     * Getter for cap - Represents a tax rule that changes the behavior of Avalara's tax engine for certain products in certain jurisdictions.
      */
     public BigDecimal getCap() {
         return this.cap;
     }
 
     /**
-     * Setter for cap - The maximum cap for the price of this item according to this rule.
+     * Setter for cap - Represents a tax rule that changes the behavior of Avalara's tax engine for certain products in certain jurisdictions.
      */
     public void setCap(BigDecimal cap) {
         this.cap = cap;
@@ -451,14 +441,14 @@ public class TaxRuleModel {
     private JurisTypeId jurisTypeId;
 
     /**
-     * Getter for jurisTypeId - The type of the jurisdiction to which this tax rule applies.
+     * Getter for jurisTypeId - Represents a tax rule that changes the behavior of Avalara's tax engine for certain products in certain jurisdictions.
      */
     public JurisTypeId getJurisTypeId() {
         return this.jurisTypeId;
     }
 
     /**
-     * Setter for jurisTypeId - The type of the jurisdiction to which this tax rule applies.
+     * Setter for jurisTypeId - Represents a tax rule that changes the behavior of Avalara's tax engine for certain products in certain jurisdictions.
      */
     public void setJurisTypeId(JurisTypeId jurisTypeId) {
         this.jurisTypeId = jurisTypeId;
@@ -468,14 +458,14 @@ public class TaxRuleModel {
     private BigDecimal value;
 
     /**
-     * Getter for value - The corrected rate for this tax rule.
+     * Getter for value - Represents a tax rule that changes the behavior of Avalara's tax engine for certain products in certain jurisdictions.
      */
     public BigDecimal getValue() {
         return this.value;
     }
 
     /**
-     * Setter for value - The corrected rate for this tax rule.
+     * Setter for value - Represents a tax rule that changes the behavior of Avalara's tax engine for certain products in certain jurisdictions.
      */
     public void setValue(BigDecimal value) {
         this.value = value;
@@ -485,14 +475,14 @@ public class TaxRuleModel {
     private Integer companyId;
 
     /**
-     * Getter for companyId - The unique ID number of the company that owns this tax rule.
+     * Getter for companyId - Represents a tax rule that changes the behavior of Avalara's tax engine for certain products in certain jurisdictions.
      */
     public Integer getCompanyId() {
         return this.companyId;
     }
 
     /**
-     * Setter for companyId - The unique ID number of the company that owns this tax rule.
+     * Setter for companyId - Represents a tax rule that changes the behavior of Avalara's tax engine for certain products in certain jurisdictions.
      */
     public void setCompanyId(Integer companyId) {
         this.companyId = companyId;
@@ -502,14 +492,14 @@ public class TaxRuleModel {
     private Date createdDate;
 
     /**
-     * Getter for createdDate - The date when this record was created.
+     * Getter for createdDate - Represents a tax rule that changes the behavior of Avalara's tax engine for certain products in certain jurisdictions.
      */
     public Date getCreatedDate() {
         return this.createdDate;
     }
 
     /**
-     * Setter for createdDate - The date when this record was created.
+     * Setter for createdDate - Represents a tax rule that changes the behavior of Avalara's tax engine for certain products in certain jurisdictions.
      */
     public void setCreatedDate(Date createdDate) {
         this.createdDate = createdDate;

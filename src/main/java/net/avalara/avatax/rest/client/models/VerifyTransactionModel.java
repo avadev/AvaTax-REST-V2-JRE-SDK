@@ -16,14 +16,14 @@ public class VerifyTransactionModel {
     private Date verifyTransactionDate;
 
     /**
-     * Getter for verifyTransactionDate - Transaction Date - The date on the invoice, purchase order, etc.
+     * Getter for verifyTransactionDate - Verify this transaction by matching it to values in your accounting system.
      */
     public Date getVerifyTransactionDate() {
         return this.verifyTransactionDate;
     }
 
     /**
-     * Setter for verifyTransactionDate - Transaction Date - The date on the invoice, purchase order, etc.
+     * Setter for verifyTransactionDate - Verify this transaction by matching it to values in your accounting system.
      */
     public void setVerifyTransactionDate(Date verifyTransactionDate) {
         this.verifyTransactionDate = verifyTransactionDate;
@@ -33,14 +33,14 @@ public class VerifyTransactionModel {
     private BigDecimal verifyTotalAmount;
 
     /**
-     * Getter for verifyTotalAmount - Total Amount - The total amount (not including tax) for the document.
+     * Getter for verifyTotalAmount - Verify this transaction by matching it to values in your accounting system.
      */
     public BigDecimal getVerifyTotalAmount() {
         return this.verifyTotalAmount;
     }
 
     /**
-     * Setter for verifyTotalAmount - Total Amount - The total amount (not including tax) for the document.
+     * Setter for verifyTotalAmount - Verify this transaction by matching it to values in your accounting system.
      */
     public void setVerifyTotalAmount(BigDecimal verifyTotalAmount) {
         this.verifyTotalAmount = verifyTotalAmount;
@@ -50,14 +50,14 @@ public class VerifyTransactionModel {
     private BigDecimal verifyTotalTax;
 
     /**
-     * Getter for verifyTotalTax - Total Tax - The total tax for the document.
+     * Getter for verifyTotalTax - Verify this transaction by matching it to values in your accounting system.
      */
     public BigDecimal getVerifyTotalTax() {
         return this.verifyTotalTax;
     }
 
     /**
-     * Setter for verifyTotalTax - Total Tax - The total tax for the document.
+     * Setter for verifyTotalTax - Verify this transaction by matching it to values in your accounting system.
      */
     public void setVerifyTotalTax(BigDecimal verifyTotalTax) {
         this.verifyTotalTax = verifyTotalTax;

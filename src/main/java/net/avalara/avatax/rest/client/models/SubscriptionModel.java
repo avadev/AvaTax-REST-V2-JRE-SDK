@@ -16,14 +16,14 @@ public class SubscriptionModel {
     private Date endDate;
 
     /**
-     * Getter for endDate - If the subscription has ended or will end, this date indicates when the subscription ends.
+     * Getter for endDate - Represents a service that this account has subscribed to.
      */
     public Date getEndDate() {
         return this.endDate;
     }
 
     /**
-     * Setter for endDate - If the subscription has ended or will end, this date indicates when the subscription ends.
+     * Setter for endDate - Represents a service that this account has subscribed to.
      */
     public void setEndDate(Date endDate) {
         this.endDate = endDate;
@@ -33,14 +33,14 @@ public class SubscriptionModel {
     private Date modifiedDate;
 
     /**
-     * Getter for modifiedDate - The date/time when this record was last modified.
+     * Getter for modifiedDate - Represents a service that this account has subscribed to.
      */
     public Date getModifiedDate() {
         return this.modifiedDate;
     }
 
     /**
-     * Setter for modifiedDate - The date/time when this record was last modified.
+     * Setter for modifiedDate - Represents a service that this account has subscribed to.
      */
     public void setModifiedDate(Date modifiedDate) {
         this.modifiedDate = modifiedDate;
@@ -50,14 +50,14 @@ public class SubscriptionModel {
     private Integer subscriptionTypeId;
 
     /**
-     * Getter for subscriptionTypeId - The unique ID number of the service that the account is subscribed to.
+     * Getter for subscriptionTypeId - Represents a service that this account has subscribed to.
      */
     public Integer getSubscriptionTypeId() {
         return this.subscriptionTypeId;
     }
 
     /**
-     * Setter for subscriptionTypeId - The unique ID number of the service that the account is subscribed to.
+     * Setter for subscriptionTypeId - Represents a service that this account has subscribed to.
      */
     public void setSubscriptionTypeId(Integer subscriptionTypeId) {
         this.subscriptionTypeId = subscriptionTypeId;
@@ -67,14 +67,14 @@ public class SubscriptionModel {
     private Integer accountId;
 
     /**
-     * Getter for accountId - The unique ID number of the account this subscription belongs to.
+     * Getter for accountId - Represents a service that this account has subscribed to.
      */
     public Integer getAccountId() {
         return this.accountId;
     }
 
     /**
-     * Setter for accountId - The unique ID number of the account this subscription belongs to.
+     * Setter for accountId - Represents a service that this account has subscribed to.
      */
     public void setAccountId(Integer accountId) {
         this.accountId = accountId;
@@ -84,14 +84,14 @@ public class SubscriptionModel {
     private Integer id;
 
     /**
-     * Getter for id - The unique ID number of this subscription.
+     * Getter for id - Represents a service that this account has subscribed to.
      */
     public Integer getId() {
         return this.id;
     }
 
     /**
-     * Setter for id - The unique ID number of this subscription.
+     * Setter for id - Represents a service that this account has subscribed to.
      */
     public void setId(Integer id) {
         this.id = id;
@@ -101,14 +101,14 @@ public class SubscriptionModel {
     private String subscriptionDescription;
 
     /**
-     * Getter for subscriptionDescription - A friendly description of the service that the account is subscribed to.
+     * Getter for subscriptionDescription - Represents a service that this account has subscribed to.
      */
     public String getSubscriptionDescription() {
         return this.subscriptionDescription;
     }
 
     /**
-     * Setter for subscriptionDescription - A friendly description of the service that the account is subscribed to.
+     * Setter for subscriptionDescription - Represents a service that this account has subscribed to.
      */
     public void setSubscriptionDescription(String subscriptionDescription) {
         this.subscriptionDescription = subscriptionDescription;
@@ -118,14 +118,14 @@ public class SubscriptionModel {
     private Integer modifiedUserId;
 
     /**
-     * Getter for modifiedUserId - The user ID of the user who last modified this record.
+     * Getter for modifiedUserId - Represents a service that this account has subscribed to.
      */
     public Integer getModifiedUserId() {
         return this.modifiedUserId;
     }
 
     /**
-     * Setter for modifiedUserId - The user ID of the user who last modified this record.
+     * Setter for modifiedUserId - Represents a service that this account has subscribed to.
      */
     public void setModifiedUserId(Integer modifiedUserId) {
         this.modifiedUserId = modifiedUserId;
@@ -135,14 +135,14 @@ public class SubscriptionModel {
     private Date effectiveDate;
 
     /**
-     * Getter for effectiveDate - The date when the subscription began.
+     * Getter for effectiveDate - Represents a service that this account has subscribed to.
      */
     public Date getEffectiveDate() {
         return this.effectiveDate;
     }
 
     /**
-     * Setter for effectiveDate - The date when the subscription began.
+     * Setter for effectiveDate - Represents a service that this account has subscribed to.
      */
     public void setEffectiveDate(Date effectiveDate) {
         this.effectiveDate = effectiveDate;
@@ -152,14 +152,14 @@ public class SubscriptionModel {
     private Integer createdUserId;
 
     /**
-     * Getter for createdUserId - The User ID of the user who created this record.
+     * Getter for createdUserId - Represents a service that this account has subscribed to.
      */
     public Integer getCreatedUserId() {
         return this.createdUserId;
     }
 
     /**
-     * Setter for createdUserId - The User ID of the user who created this record.
+     * Setter for createdUserId - Represents a service that this account has subscribed to.
      */
     public void setCreatedUserId(Integer createdUserId) {
         this.createdUserId = createdUserId;
@@ -169,14 +169,14 @@ public class SubscriptionModel {
     private Date createdDate;
 
     /**
-     * Getter for createdDate - The date when this record was created.
+     * Getter for createdDate - Represents a service that this account has subscribed to.
      */
     public Date getCreatedDate() {
         return this.createdDate;
     }
 
     /**
-     * Setter for createdDate - The date when this record was created.
+     * Setter for createdDate - Represents a service that this account has subscribed to.
      */
     public void setCreatedDate(Date createdDate) {
         this.createdDate = createdDate;

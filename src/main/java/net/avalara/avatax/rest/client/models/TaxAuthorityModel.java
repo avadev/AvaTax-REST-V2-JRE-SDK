@@ -16,14 +16,14 @@ public class TaxAuthorityModel {
     private Integer id;
 
     /**
-     * Getter for id - The unique ID number of this tax authority.
+     * Getter for id - Tax Authority Model
      */
     public Integer getId() {
         return this.id;
     }
 
     /**
-     * Setter for id - The unique ID number of this tax authority.
+     * Setter for id - Tax Authority Model
      */
     public void setId(Integer id) {
         this.id = id;
@@ -33,14 +33,14 @@ public class TaxAuthorityModel {
     private String name;
 
     /**
-     * Getter for name - The friendly name of this tax authority.
+     * Getter for name - Tax Authority Model
      */
     public String getName() {
         return this.name;
     }
 
     /**
-     * Setter for name - The friendly name of this tax authority.
+     * Setter for name - Tax Authority Model
      */
     public void setName(String name) {
         this.name = name;
@@ -50,14 +50,14 @@ public class TaxAuthorityModel {
     private Integer taxAuthorityTypeId;
 
     /**
-     * Getter for taxAuthorityTypeId - The type of this tax authority.
+     * Getter for taxAuthorityTypeId - Tax Authority Model
      */
     public Integer getTaxAuthorityTypeId() {
         return this.taxAuthorityTypeId;
     }
 
     /**
-     * Setter for taxAuthorityTypeId - The type of this tax authority.
+     * Setter for taxAuthorityTypeId - Tax Authority Model
      */
     public void setTaxAuthorityTypeId(Integer taxAuthorityTypeId) {
         this.taxAuthorityTypeId = taxAuthorityTypeId;
@@ -67,14 +67,14 @@ public class TaxAuthorityModel {
     private Integer jurisdictionId;
 
     /**
-     * Getter for jurisdictionId - The unique ID number of the jurisdiction for this tax authority.
+     * Getter for jurisdictionId - Tax Authority Model
      */
     public Integer getJurisdictionId() {
         return this.jurisdictionId;
     }
 
     /**
-     * Setter for jurisdictionId - The unique ID number of the jurisdiction for this tax authority.
+     * Setter for jurisdictionId - Tax Authority Model
      */
     public void setJurisdictionId(Integer jurisdictionId) {
         this.jurisdictionId = jurisdictionId;

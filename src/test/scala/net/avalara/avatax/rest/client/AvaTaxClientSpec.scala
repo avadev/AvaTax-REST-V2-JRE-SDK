@@ -1,6 +1,6 @@
 package net.avalara.avatax.rest.client
 
-import net.avalara.avatax.rest.client.enums.{AccountStatusId, AvaTaxEnvironment, DocumentType, TransactionAddressType}
+import net.avalara.avatax.rest.client.enums._
 import net.avalara.avatax.rest.client.models.{AddressInfo, CreateTransactionModel}
 import org.scalatest.fixture
 
@@ -32,7 +32,7 @@ class AvaTaxClientSpec extends fixture.FreeSpec {
       assert(account.getCreatedDate() != null)
     }
     "successfully validate an address" in { accountInfo =>
-      val address = client.withSecurity(accountInfo.username, accountInfo.password).resolveAddress("100 ravine ln ne", "", "", "Bainbridge Island", "WA", "98110", "US", null, null)
+      val address = client.withSecurity(accountInfo.username, accountInfo.password).resolveAddress("100 ravine ln ne", "", "", "Bainbridge Island", "WA", "98110", "US", TextCase.Upper, null, null)
       assert(address.getValidatedAddresses.get(0).getLine1 == "100 RAVINE LN NE")
       assert(address.getValidatedAddresses.get(0).getCity == "BAINBRIDGE ISLAND")
       assert(address.getValidatedAddresses.get(0).getRegion == "WA")
@@ -59,6 +59,32 @@ class AvaTaxClientSpec extends fixture.FreeSpec {
         .Create()
 
       assert(transaction.getTotalTax.equals(java.math.BigDecimal.valueOf(0f)))
+    }
+    "create a transaction with an overridden tax date" in { accountInfo =>
+      val dateFormat = new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss")
+      val transaction = new TransactionBuilder(client.withSecurity(accountInfo.username, accountInfo.password), "DEFAULT", DocumentType.SalesOrder, "1")
+        .withAddress(TransactionAddressType.ShipTo, "100 RAVINE LN", "", "", "BAINBRIDGE ISLAND", "WA", "98110", "US")
+        .withAddress(TransactionAddressType.ShipFrom, "100 RAVINE LN", "", "", "BAINBRIDGE ISLAND", "WA", "98110", "US")
+        .withAddress(TransactionAddressType.PointOfOrderAcceptance, "100 RAVINE LN", "", "", "BAINBRIDGE ISLAND", "WA", "98110", "US")
+        .withCode("DOCCODE")
+        .withDate(dateFormat.parse("2017-03-02T10:40:18"))
+        .withTaxOverride(TaxOverrideType.TaxDate, "TaxDate", java.math.BigDecimal.valueOf(0), dateFormat.parse("2017-02-16T00:00:00"))
+        .withLine(java.math.BigDecimal.valueOf(10), java.math.BigDecimal.valueOf(1), "P0000000")
+        .Create()
+
+      assert(transaction.getTotalTax().equals(java.math.BigDecimal.valueOf(0f)))
+    }
+    "throws an AvaTaxClientException with an ErrorResult containing the errors" in { accountInfo =>
+      val dateFormat = new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss")
+      assertThrows[AvaTaxClientException](new TransactionBuilder(client.withSecurity(accountInfo.username, accountInfo.password), "DEFAULT", DocumentType.SalesOrder, "1")
+        .withAddress(TransactionAddressType.ShipTo, "!@#$ADFADSF100 ravine ln ne", "", "", "Bainb!@#$ADFADS", "WA", "ee981101", "US")
+        .withAddress(TransactionAddressType.ShipFrom, "100 RAVINE LN", "", "", "BAINBRIDGE ISLAND", "WA", "98110", "US")
+        .withAddress(TransactionAddressType.PointOfOrderAcceptance, "!@#$ADFADSF100 RAVINE LN", "", "", "B!@#$ADFADSFs", "WA", "e1122307", "US")
+        .withCode("DOCCODE")
+        .withDate(dateFormat.parse("2017-03-02T10:40:18"))
+        .withTaxOverride(TaxOverrideType.TaxDate, "TaxDate", java.math.BigDecimal.valueOf(0), dateFormat.parse("2017-02-16T00:00:00"))
+        .withLine(java.math.BigDecimal.valueOf(10), java.math.BigDecimal.valueOf(1), "P0000000")
+        .Create)
     }
     "succesfully ping" in { accountInfo =>
       val pong = client.withSecurity(accountInfo.username, accountInfo.password).ping()

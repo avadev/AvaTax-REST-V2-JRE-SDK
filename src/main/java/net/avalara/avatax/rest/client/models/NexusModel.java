@@ -16,14 +16,14 @@ public class NexusModel {
     private Date endDate;
 
     /**
-     * Getter for endDate - If this nexus will end or has ended on a specific date, set this to the date when this nexus ends.
+     * Getter for endDate - Represents a declaration of nexus within a particular taxing jurisdiction.
      */
     public Date getEndDate() {
         return this.endDate;
     }
 
     /**
-     * Setter for endDate - If this nexus will end or has ended on a specific date, set this to the date when this nexus ends.
+     * Setter for endDate - Represents a declaration of nexus within a particular taxing jurisdiction.
      */
     public void setEndDate(Date endDate) {
         this.endDate = endDate;
@@ -33,14 +33,14 @@ public class NexusModel {
     private String jurisCode;
 
     /**
-     * Getter for jurisCode - The code identifying the jurisdiction in which this company declared nexus.
+     * Getter for jurisCode - Represents a declaration of nexus within a particular taxing jurisdiction.
      */
     public String getJurisCode() {
         return this.jurisCode;
     }
 
     /**
-     * Setter for jurisCode - The code identifying the jurisdiction in which this company declared nexus.
+     * Setter for jurisCode - Represents a declaration of nexus within a particular taxing jurisdiction.
      */
     public void setJurisCode(String jurisCode) {
         this.jurisCode = jurisCode;
@@ -50,14 +50,14 @@ public class NexusModel {
     private NexusTypeId nexusTypeId;
 
     /**
-     * Getter for nexusTypeId - The type of nexus that this company is declaring.
+     * Getter for nexusTypeId - Represents a declaration of nexus within a particular taxing jurisdiction.
      */
     public NexusTypeId getNexusTypeId() {
         return this.nexusTypeId;
     }
 
     /**
-     * Setter for nexusTypeId - The type of nexus that this company is declaring.
+     * Setter for nexusTypeId - Represents a declaration of nexus within a particular taxing jurisdiction.
      */
     public void setNexusTypeId(NexusTypeId nexusTypeId) {
         this.nexusTypeId = nexusTypeId;
@@ -67,14 +67,14 @@ public class NexusModel {
     private Date modifiedDate;
 
     /**
-     * Getter for modifiedDate - The date/time when this record was last modified.
+     * Getter for modifiedDate - Represents a declaration of nexus within a particular taxing jurisdiction.
      */
     public Date getModifiedDate() {
         return this.modifiedDate;
     }
 
     /**
-     * Setter for modifiedDate - The date/time when this record was last modified.
+     * Setter for modifiedDate - Represents a declaration of nexus within a particular taxing jurisdiction.
      */
     public void setModifiedDate(Date modifiedDate) {
         this.modifiedDate = modifiedDate;
@@ -84,14 +84,14 @@ public class NexusModel {
     private Sourcing sourcing;
 
     /**
-     * Getter for sourcing - Indicates whether this nexus is defined as origin or destination nexus.
+     * Getter for sourcing - Represents a declaration of nexus within a particular taxing jurisdiction.
      */
     public Sourcing getSourcing() {
         return this.sourcing;
     }
 
     /**
-     * Setter for sourcing - Indicates whether this nexus is defined as origin or destination nexus.
+     * Setter for sourcing - Represents a declaration of nexus within a particular taxing jurisdiction.
      */
     public void setSourcing(Sourcing sourcing) {
         this.sourcing = sourcing;
@@ -101,16 +101,14 @@ public class NexusModel {
     private LocalNexusTypeId localNexusTypeId;
 
     /**
-     * Getter for localNexusTypeId - If you are declaring local nexus within this jurisdiction, this indicates whether you are declaring only 
-            a specified list of local jurisdictions, all state-administered local jurisdictions, or all local jurisdictions.
+     * Getter for localNexusTypeId - Represents a declaration of nexus within a particular taxing jurisdiction.
      */
     public LocalNexusTypeId getLocalNexusTypeId() {
         return this.localNexusTypeId;
     }
 
     /**
-     * Setter for localNexusTypeId - If you are declaring local nexus within this jurisdiction, this indicates whether you are declaring only 
-            a specified list of local jurisdictions, all state-administered local jurisdictions, or all local jurisdictions.
+     * Setter for localNexusTypeId - Represents a declaration of nexus within a particular taxing jurisdiction.
      */
     public void setLocalNexusTypeId(LocalNexusTypeId localNexusTypeId) {
         this.localNexusTypeId = localNexusTypeId;
@@ -120,14 +118,14 @@ public class NexusModel {
     private String country;
 
     /**
-     * Getter for country - The two character ISO-3166 country code of the country in which this company declared nexus.
+     * Getter for country - Represents a declaration of nexus within a particular taxing jurisdiction.
      */
     public String getCountry() {
         return this.country;
     }
 
     /**
-     * Setter for country - The two character ISO-3166 country code of the country in which this company declared nexus.
+     * Setter for country - Represents a declaration of nexus within a particular taxing jurisdiction.
      */
     public void setCountry(String country) {
         this.country = country;
@@ -137,16 +135,14 @@ public class NexusModel {
     private Boolean hasLocalNexus;
 
     /**
-     * Getter for hasLocalNexus - True if you are also declaring local nexus within this jurisdiction.
-            Many U.S. states have options for declaring nexus in local jurisdictions as well as within the state.
+     * Getter for hasLocalNexus - Represents a declaration of nexus within a particular taxing jurisdiction.
      */
     public Boolean getHasLocalNexus() {
         return this.hasLocalNexus;
     }
 
     /**
-     * Setter for hasLocalNexus - True if you are also declaring local nexus within this jurisdiction.
-            Many U.S. states have options for declaring nexus in local jurisdictions as well as within the state.
+     * Setter for hasLocalNexus - Represents a declaration of nexus within a particular taxing jurisdiction.
      */
     public void setHasLocalNexus(Boolean hasLocalNexus) {
         this.hasLocalNexus = hasLocalNexus;
@@ -156,14 +152,14 @@ public class NexusModel {
     private Integer id;
 
     /**
-     * Getter for id - The unique ID number of this declaration of nexus.
+     * Getter for id - Represents a declaration of nexus within a particular taxing jurisdiction.
      */
     public Integer getId() {
         return this.id;
     }
 
     /**
-     * Setter for id - The unique ID number of this declaration of nexus.
+     * Setter for id - Represents a declaration of nexus within a particular taxing jurisdiction.
      */
     public void setId(Integer id) {
         this.id = id;
@@ -173,14 +169,14 @@ public class NexusModel {
     private Boolean hasPermanentEstablishment;
 
     /**
-     * Getter for hasPermanentEstablishment - Set this value to true if your company has a permanent establishment within this jurisdiction.
+     * Getter for hasPermanentEstablishment - Represents a declaration of nexus within a particular taxing jurisdiction.
      */
     public Boolean getHasPermanentEstablishment() {
         return this.hasPermanentEstablishment;
     }
 
     /**
-     * Setter for hasPermanentEstablishment - Set this value to true if your company has a permanent establishment within this jurisdiction.
+     * Setter for hasPermanentEstablishment - Represents a declaration of nexus within a particular taxing jurisdiction.
      */
     public void setHasPermanentEstablishment(Boolean hasPermanentEstablishment) {
         this.hasPermanentEstablishment = hasPermanentEstablishment;
@@ -190,14 +186,14 @@ public class NexusModel {
     private Integer modifiedUserId;
 
     /**
-     * Getter for modifiedUserId - The user ID of the user who last modified this record.
+     * Getter for modifiedUserId - Represents a declaration of nexus within a particular taxing jurisdiction.
      */
     public Integer getModifiedUserId() {
         return this.modifiedUserId;
     }
 
     /**
-     * Setter for modifiedUserId - The user ID of the user who last modified this record.
+     * Setter for modifiedUserId - Represents a declaration of nexus within a particular taxing jurisdiction.
      */
     public void setModifiedUserId(Integer modifiedUserId) {
         this.modifiedUserId = modifiedUserId;
@@ -207,14 +203,14 @@ public class NexusModel {
     private Date effectiveDate;
 
     /**
-     * Getter for effectiveDate - The date when this nexus began.  If not known, set to null.
+     * Getter for effectiveDate - Represents a declaration of nexus within a particular taxing jurisdiction.
      */
     public Date getEffectiveDate() {
         return this.effectiveDate;
     }
 
     /**
-     * Setter for effectiveDate - The date when this nexus began.  If not known, set to null.
+     * Setter for effectiveDate - Represents a declaration of nexus within a particular taxing jurisdiction.
      */
     public void setEffectiveDate(Date effectiveDate) {
         this.effectiveDate = effectiveDate;
@@ -224,14 +220,14 @@ public class NexusModel {
     private Integer createdUserId;
 
     /**
-     * Getter for createdUserId - The User ID of the user who created this record.
+     * Getter for createdUserId - Represents a declaration of nexus within a particular taxing jurisdiction.
      */
     public Integer getCreatedUserId() {
         return this.createdUserId;
     }
 
     /**
-     * Setter for createdUserId - The User ID of the user who created this record.
+     * Setter for createdUserId - Represents a declaration of nexus within a particular taxing jurisdiction.
      */
     public void setCreatedUserId(Integer createdUserId) {
         this.createdUserId = createdUserId;
@@ -241,14 +237,14 @@ public class NexusModel {
     private String region;
 
     /**
-     * Getter for region - The two or three character ISO region code of the region, state, or province in which this company declared nexus.
+     * Getter for region - Represents a declaration of nexus within a particular taxing jurisdiction.
      */
     public String getRegion() {
         return this.region;
     }
 
     /**
-     * Setter for region - The two or three character ISO region code of the region, state, or province in which this company declared nexus.
+     * Setter for region - Represents a declaration of nexus within a particular taxing jurisdiction.
      */
     public void setRegion(String region) {
         this.region = region;
@@ -258,14 +254,14 @@ public class NexusModel {
     private String stateAssignedNo;
 
     /**
-     * Getter for stateAssignedNo - The state assigned number of this jurisdiction.
+     * Getter for stateAssignedNo - Represents a declaration of nexus within a particular taxing jurisdiction.
      */
     public String getStateAssignedNo() {
         return this.stateAssignedNo;
     }
 
     /**
-     * Setter for stateAssignedNo - The state assigned number of this jurisdiction.
+     * Setter for stateAssignedNo - Represents a declaration of nexus within a particular taxing jurisdiction.
      */
     public void setStateAssignedNo(String stateAssignedNo) {
         this.stateAssignedNo = stateAssignedNo;
@@ -275,14 +271,14 @@ public class NexusModel {
     private String shortName;
 
     /**
-     * Getter for shortName - The short name of the jurisdiction.
+     * Getter for shortName - Represents a declaration of nexus within a particular taxing jurisdiction.
      */
     public String getShortName() {
         return this.shortName;
     }
 
     /**
-     * Setter for shortName - The short name of the jurisdiction.
+     * Setter for shortName - Represents a declaration of nexus within a particular taxing jurisdiction.
      */
     public void setShortName(String shortName) {
         this.shortName = shortName;
@@ -292,14 +288,14 @@ public class NexusModel {
     private String jurisName;
 
     /**
-     * Getter for jurisName - The common name of the jurisdiction in which this company declared nexus.
+     * Getter for jurisName - Represents a declaration of nexus within a particular taxing jurisdiction.
      */
     public String getJurisName() {
         return this.jurisName;
     }
 
     /**
-     * Setter for jurisName - The common name of the jurisdiction in which this company declared nexus.
+     * Setter for jurisName - Represents a declaration of nexus within a particular taxing jurisdiction.
      */
     public void setJurisName(String jurisName) {
         this.jurisName = jurisName;
@@ -309,14 +305,14 @@ public class NexusModel {
     private JurisTypeId jurisTypeId;
 
     /**
-     * Getter for jurisTypeId - The jurisdiction type of the jurisdiction in which this company declared nexus.
+     * Getter for jurisTypeId - Represents a declaration of nexus within a particular taxing jurisdiction.
      */
     public JurisTypeId getJurisTypeId() {
         return this.jurisTypeId;
     }
 
     /**
-     * Setter for jurisTypeId - The jurisdiction type of the jurisdiction in which this company declared nexus.
+     * Setter for jurisTypeId - Represents a declaration of nexus within a particular taxing jurisdiction.
      */
     public void setJurisTypeId(JurisTypeId jurisTypeId) {
         this.jurisTypeId = jurisTypeId;
@@ -326,14 +322,14 @@ public class NexusModel {
     private String signatureCode;
 
     /**
-     * Getter for signatureCode - The signature code of the boundary region as defined by Avalara.
+     * Getter for signatureCode - Represents a declaration of nexus within a particular taxing jurisdiction.
      */
     public String getSignatureCode() {
         return this.signatureCode;
     }
 
     /**
-     * Setter for signatureCode - The signature code of the boundary region as defined by Avalara.
+     * Setter for signatureCode - Represents a declaration of nexus within a particular taxing jurisdiction.
      */
     public void setSignatureCode(String signatureCode) {
         this.signatureCode = signatureCode;
@@ -343,14 +339,14 @@ public class NexusModel {
     private Integer companyId;
 
     /**
-     * Getter for companyId - The unique ID number of the company that declared nexus.
+     * Getter for companyId - Represents a declaration of nexus within a particular taxing jurisdiction.
      */
     public Integer getCompanyId() {
         return this.companyId;
     }
 
     /**
-     * Setter for companyId - The unique ID number of the company that declared nexus.
+     * Setter for companyId - Represents a declaration of nexus within a particular taxing jurisdiction.
      */
     public void setCompanyId(Integer companyId) {
         this.companyId = companyId;
@@ -360,14 +356,14 @@ public class NexusModel {
     private Date createdDate;
 
     /**
-     * Getter for createdDate - The date when this record was created.
+     * Getter for createdDate - Represents a declaration of nexus within a particular taxing jurisdiction.
      */
     public Date getCreatedDate() {
         return this.createdDate;
     }
 
     /**
-     * Setter for createdDate - The date when this record was created.
+     * Setter for createdDate - Represents a declaration of nexus within a particular taxing jurisdiction.
      */
     public void setCreatedDate(Date createdDate) {
         this.createdDate = createdDate;
@@ -377,14 +373,14 @@ public class NexusModel {
     private String taxId;
 
     /**
-     * Getter for taxId - Optional - the tax identification number under which you declared nexus.
+     * Getter for taxId - Represents a declaration of nexus within a particular taxing jurisdiction.
      */
     public String getTaxId() {
         return this.taxId;
     }
 
     /**
-     * Setter for taxId - Optional - the tax identification number under which you declared nexus.
+     * Setter for taxId - Represents a declaration of nexus within a particular taxing jurisdiction.
      */
     public void setTaxId(String taxId) {
         this.taxId = taxId;

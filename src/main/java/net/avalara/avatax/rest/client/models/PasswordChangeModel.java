@@ -16,14 +16,14 @@ public class PasswordChangeModel {
     private String oldPassword;
 
     /**
-     * Getter for oldPassword - Old Password
+     * Getter for oldPassword - Password Change Model
      */
     public String getOldPassword() {
         return this.oldPassword;
     }
 
     /**
-     * Setter for oldPassword - Old Password
+     * Setter for oldPassword - Password Change Model
      */
     public void setOldPassword(String oldPassword) {
         this.oldPassword = oldPassword;
@@ -33,14 +33,14 @@ public class PasswordChangeModel {
     private String newPassword;
 
     /**
-     * Getter for newPassword - New Password
+     * Getter for newPassword - Password Change Model
      */
     public String getNewPassword() {
         return this.newPassword;
     }
 
     /**
-     * Setter for newPassword - New Password
+     * Setter for newPassword - Password Change Model
      */
     public void setNewPassword(String newPassword) {
         this.newPassword = newPassword;

@@ -16,14 +16,14 @@ public class NoticeStatusModel {
     private Integer id;
 
     /**
-     * Getter for id - The unique ID number of this tax authority type.
+     * Getter for id - Tax Notice Status Model
      */
     public Integer getId() {
         return this.id;
     }
 
     /**
-     * Setter for id - The unique ID number of this tax authority type.
+     * Setter for id - Tax Notice Status Model
      */
     public void setId(Integer id) {
         this.id = id;
@@ -33,14 +33,14 @@ public class NoticeStatusModel {
     private String description;
 
     /**
-     * Getter for description - The description name of this tax authority type.
+     * Getter for description - Tax Notice Status Model
      */
     public String getDescription() {
         return this.description;
     }
 
     /**
-     * Setter for description - The description name of this tax authority type.
+     * Setter for description - Tax Notice Status Model
      */
     public void setDescription(String description) {
         this.description = description;
@@ -50,14 +50,14 @@ public class NoticeStatusModel {
     private Boolean isOpen;
 
     /**
-     * Getter for isOpen - True if a tax notice in this status is considered 'open' and has more work expected to be done before it is closed.
+     * Getter for isOpen - Tax Notice Status Model
      */
     public Boolean getIsOpen() {
         return this.isOpen;
     }
 
     /**
-     * Setter for isOpen - True if a tax notice in this status is considered 'open' and has more work expected to be done before it is closed.
+     * Setter for isOpen - Tax Notice Status Model
      */
     public void setIsOpen(Boolean isOpen) {
         this.isOpen = isOpen;
@@ -67,14 +67,14 @@ public class NoticeStatusModel {
     private Integer sortOrder;
 
     /**
-     * Getter for sortOrder - If a list of status values is to be displayed in a dropdown, they should be displayed in this numeric order.
+     * Getter for sortOrder - Tax Notice Status Model
      */
     public Integer getSortOrder() {
         return this.sortOrder;
     }
 
     /**
-     * Setter for sortOrder - If a list of status values is to be displayed in a dropdown, they should be displayed in this numeric order.
+     * Setter for sortOrder - Tax Notice Status Model
      */
     public void setSortOrder(Integer sortOrder) {
         this.sortOrder = sortOrder;

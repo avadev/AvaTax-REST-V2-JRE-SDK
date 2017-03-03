@@ -16,14 +16,14 @@ public class CompanyModel {
     private ArrayList<LocationModel> locations;
 
     /**
-     * Getter for locations - Optional: A list of locations defined for this company.  To fetch this list, add the query string "?$include=Locations" to your URL.
+     * Getter for locations - A company or business entity.
      */
     public ArrayList<LocationModel> getLocations() {
         return this.locations;
     }
 
     /**
-     * Setter for locations - Optional: A list of locations defined for this company.  To fetch this list, add the query string "?$include=Locations" to your URL.
+     * Setter for locations - A company or business entity.
      */
     public void setLocations(ArrayList<LocationModel> locations) {
         this.locations = locations;
@@ -33,14 +33,14 @@ public class CompanyModel {
     private String name;
 
     /**
-     * Getter for name - The name of this company, as shown to customers.
+     * Getter for name - A company or business entity.
      */
     public String getName() {
         return this.name;
     }
 
     /**
-     * Setter for name - The name of this company, as shown to customers.
+     * Setter for name - A company or business entity.
      */
     public void setName(String name) {
         this.name = name;
@@ -50,14 +50,14 @@ public class CompanyModel {
     private ArrayList<TaxCodeModel> taxCodes;
 
     /**
-     * Getter for taxCodes - Optional: A list of tax codes defined for this company.  To fetch this list, add the query string "?$include=TaxCodes" to your URL.
+     * Getter for taxCodes - A company or business entity.
      */
     public ArrayList<TaxCodeModel> getTaxCodes() {
         return this.taxCodes;
     }
 
     /**
-     * Setter for taxCodes - Optional: A list of tax codes defined for this company.  To fetch this list, add the query string "?$include=TaxCodes" to your URL.
+     * Setter for taxCodes - A company or business entity.
      */
     public void setTaxCodes(ArrayList<TaxCodeModel> taxCodes) {
         this.taxCodes = taxCodes;
@@ -67,14 +67,14 @@ public class CompanyModel {
     private ArrayList<NexusModel> nexus;
 
     /**
-     * Getter for nexus - Optional: A list of nexus defined for this company.  To fetch this list, add the query string "?$include=Nexus" to your URL.
+     * Getter for nexus - A company or business entity.
      */
     public ArrayList<NexusModel> getNexus() {
         return this.nexus;
     }
 
     /**
-     * Setter for nexus - Optional: A list of nexus defined for this company.  To fetch this list, add the query string "?$include=Nexus" to your URL.
+     * Setter for nexus - A company or business entity.
      */
     public void setNexus(ArrayList<NexusModel> nexus) {
         this.nexus = nexus;
@@ -84,14 +84,14 @@ public class CompanyModel {
     private String companyCode;
 
     /**
-     * Getter for companyCode - A unique code that references this company within your account.
+     * Getter for companyCode - A company or business entity.
      */
     public String getCompanyCode() {
         return this.companyCode;
     }
 
     /**
-     * Setter for companyCode - A unique code that references this company within your account.
+     * Setter for companyCode - A company or business entity.
      */
     public void setCompanyCode(String companyCode) {
         this.companyCode = companyCode;
@@ -101,14 +101,14 @@ public class CompanyModel {
     private Date modifiedDate;
 
     /**
-     * Getter for modifiedDate - The date/time when this record was last modified.
+     * Getter for modifiedDate - A company or business entity.
      */
     public Date getModifiedDate() {
         return this.modifiedDate;
     }
 
     /**
-     * Setter for modifiedDate - The date/time when this record was last modified.
+     * Setter for modifiedDate - A company or business entity.
      */
     public void setModifiedDate(Date modifiedDate) {
         this.modifiedDate = modifiedDate;
@@ -118,14 +118,14 @@ public class CompanyModel {
     private ArrayList<ItemModel> items;
 
     /**
-     * Getter for items - Optional: A list of items defined for this company.  To fetch this list, add the query string "?$include=Items" to your URL.
+     * Getter for items - A company or business entity.
      */
     public ArrayList<ItemModel> getItems() {
         return this.items;
     }
 
     /**
-     * Setter for items - Optional: A list of items defined for this company.  To fetch this list, add the query string "?$include=Items" to your URL.
+     * Setter for items - A company or business entity.
      */
     public void setItems(ArrayList<ItemModel> items) {
         this.items = items;
@@ -135,14 +135,14 @@ public class CompanyModel {
     private String businessIdentificationNo;
 
     /**
-     * Getter for businessIdentificationNo - Business Identification No
+     * Getter for businessIdentificationNo - A company or business entity.
      */
     public String getBusinessIdentificationNo() {
         return this.businessIdentificationNo;
     }
 
     /**
-     * Setter for businessIdentificationNo - Business Identification No
+     * Setter for businessIdentificationNo - A company or business entity.
      */
     public void setBusinessIdentificationNo(String businessIdentificationNo) {
         this.businessIdentificationNo = businessIdentificationNo;
@@ -152,16 +152,14 @@ public class CompanyModel {
     private Boolean isReportingEntity;
 
     /**
-     * Getter for isReportingEntity - Set this flag to true if this company must file its own tax returns.
-            For users who have Returns enabled, this flag turns on monthly Worksheet generation for the company.
+     * Getter for isReportingEntity - A company or business entity.
      */
     public Boolean getIsReportingEntity() {
         return this.isReportingEntity;
     }
 
     /**
-     * Setter for isReportingEntity - Set this flag to true if this company must file its own tax returns.
-            For users who have Returns enabled, this flag turns on monthly Worksheet generation for the company.
+     * Setter for isReportingEntity - A company or business entity.
      */
     public void setIsReportingEntity(Boolean isReportingEntity) {
         this.isReportingEntity = isReportingEntity;
@@ -171,14 +169,14 @@ public class CompanyModel {
     private ArrayList<UPCModel> upcs;
 
     /**
-     * Getter for upcs - Optional: A list of UPCs defined for this company.  To fetch this list, add the query string "?$include=UPCs" to your URL.
+     * Getter for upcs - A company or business entity.
      */
     public ArrayList<UPCModel> getUpcs() {
         return this.upcs;
     }
 
     /**
-     * Setter for upcs - Optional: A list of UPCs defined for this company.  To fetch this list, add the query string "?$include=UPCs" to your URL.
+     * Setter for upcs - A company or business entity.
      */
     public void setUpcs(ArrayList<UPCModel> upcs) {
         this.upcs = upcs;
@@ -188,22 +186,14 @@ public class CompanyModel {
     private String taxpayerIdNumber;
 
     /**
-     * Getter for taxpayerIdNumber - For United States companies, this field contains your Taxpayer Identification Number.  
-            This is a nine digit number that is usually called an EIN for an Employer Identification Number if this company is a corporation, 
-            or SSN for a Social Security Number if this company is a person.
-            This value is required if you subscribe to Avalara Managed Returns or the SST Certified Service Provider services, 
-            but it is optional if you do not subscribe to either of those services.
+     * Getter for taxpayerIdNumber - A company or business entity.
      */
     public String getTaxpayerIdNumber() {
         return this.taxpayerIdNumber;
     }
 
     /**
-     * Setter for taxpayerIdNumber - For United States companies, this field contains your Taxpayer Identification Number.  
-            This is a nine digit number that is usually called an EIN for an Employer Identification Number if this company is a corporation, 
-            or SSN for a Social Security Number if this company is a person.
-            This value is required if you subscribe to Avalara Managed Returns or the SST Certified Service Provider services, 
-            but it is optional if you do not subscribe to either of those services.
+     * Setter for taxpayerIdNumber - A company or business entity.
      */
     public void setTaxpayerIdNumber(String taxpayerIdNumber) {
         this.taxpayerIdNumber = taxpayerIdNumber;
@@ -213,14 +203,14 @@ public class CompanyModel {
     private Integer accountId;
 
     /**
-     * Getter for accountId - The unique ID number of the account this company belongs to.
+     * Getter for accountId - A company or business entity.
      */
     public Integer getAccountId() {
         return this.accountId;
     }
 
     /**
-     * Setter for accountId - The unique ID number of the account this company belongs to.
+     * Setter for accountId - A company or business entity.
      */
     public void setAccountId(Integer accountId) {
         this.accountId = accountId;
@@ -230,14 +220,14 @@ public class CompanyModel {
     private String sstPid;
 
     /**
-     * Getter for sstPid - If this company files Streamlined Sales Tax, this is the PID of this company as defined by the Streamlined Sales Tax governing board.
+     * Getter for sstPid - A company or business entity.
      */
     public String getSstPid() {
         return this.sstPid;
     }
 
     /**
-     * Setter for sstPid - If this company files Streamlined Sales Tax, this is the PID of this company as defined by the Streamlined Sales Tax governing board.
+     * Setter for sstPid - A company or business entity.
      */
     public void setSstPid(String sstPid) {
         this.sstPid = sstPid;
@@ -247,14 +237,14 @@ public class CompanyModel {
     private ArrayList<ContactModel> contacts;
 
     /**
-     * Getter for contacts - Optional: A list of contacts defined for this company.  To fetch this list, add the query string "?$include=Contacts" to your URL.
+     * Getter for contacts - A company or business entity.
      */
     public ArrayList<ContactModel> getContacts() {
         return this.contacts;
     }
 
     /**
-     * Setter for contacts - Optional: A list of contacts defined for this company.  To fetch this list, add the query string "?$include=Contacts" to your URL.
+     * Setter for contacts - A company or business entity.
      */
     public void setContacts(ArrayList<ContactModel> contacts) {
         this.contacts = contacts;
@@ -264,14 +254,14 @@ public class CompanyModel {
     private Date sstEffectiveDate;
 
     /**
-     * Getter for sstEffectiveDate - If this company participates in Streamlined Sales Tax, this is the date when the company joined the SST program.
+     * Getter for sstEffectiveDate - A company or business entity.
      */
     public Date getSstEffectiveDate() {
         return this.sstEffectiveDate;
     }
 
     /**
-     * Setter for sstEffectiveDate - If this company participates in Streamlined Sales Tax, this is the date when the company joined the SST program.
+     * Setter for sstEffectiveDate - A company or business entity.
      */
     public void setSstEffectiveDate(Date sstEffectiveDate) {
         this.sstEffectiveDate = sstEffectiveDate;
@@ -281,14 +271,14 @@ public class CompanyModel {
     private ArrayList<TaxRuleModel> taxRules;
 
     /**
-     * Getter for taxRules - Optional: A list of tax rules defined for this company.  To fetch this list, add the query string "?$include=TaxRules" to your URL.
+     * Getter for taxRules - A company or business entity.
      */
     public ArrayList<TaxRuleModel> getTaxRules() {
         return this.taxRules;
     }
 
     /**
-     * Setter for taxRules - Optional: A list of tax rules defined for this company.  To fetch this list, add the query string "?$include=TaxRules" to your URL.
+     * Setter for taxRules - A company or business entity.
      */
     public void setTaxRules(ArrayList<TaxRuleModel> taxRules) {
         this.taxRules = taxRules;
@@ -298,14 +288,14 @@ public class CompanyModel {
     private RoundingLevelId roundingLevelId;
 
     /**
-     * Getter for roundingLevelId - Indicates whether this company prefers to round amounts at the document level or line level.
+     * Getter for roundingLevelId - A company or business entity.
      */
     public RoundingLevelId getRoundingLevelId() {
         return this.roundingLevelId;
     }
 
     /**
-     * Setter for roundingLevelId - Indicates whether this company prefers to round amounts at the document level or line level.
+     * Setter for roundingLevelId - A company or business entity.
      */
     public void setRoundingLevelId(RoundingLevelId roundingLevelId) {
         this.roundingLevelId = roundingLevelId;
@@ -315,14 +305,14 @@ public class CompanyModel {
     private TaxDependencyLevelId taxDependencyLevelId;
 
     /**
-     * Getter for taxDependencyLevelId - Used to apply tax detail dependency at a jurisdiction level.
+     * Getter for taxDependencyLevelId - A company or business entity.
      */
     public TaxDependencyLevelId getTaxDependencyLevelId() {
         return this.taxDependencyLevelId;
     }
 
     /**
-     * Setter for taxDependencyLevelId - Used to apply tax detail dependency at a jurisdiction level.
+     * Setter for taxDependencyLevelId - A company or business entity.
      */
     public void setTaxDependencyLevelId(TaxDependencyLevelId taxDependencyLevelId) {
         this.taxDependencyLevelId = taxDependencyLevelId;
@@ -332,14 +322,14 @@ public class CompanyModel {
     private Integer id;
 
     /**
-     * Getter for id - The unique ID number of this company.
+     * Getter for id - A company or business entity.
      */
     public Integer getId() {
         return this.id;
     }
 
     /**
-     * Setter for id - The unique ID number of this company.
+     * Setter for id - A company or business entity.
      */
     public void setId(Integer id) {
         this.id = id;
@@ -349,16 +339,14 @@ public class CompanyModel {
     private Boolean isTest;
 
     /**
-     * Getter for isTest - Set this flag to true to indicate that this company is a test company.
-            If you have Returns enabled, Test companies will not file tax returns and can be used for validation purposes.
+     * Getter for isTest - A company or business entity.
      */
     public Boolean getIsTest() {
         return this.isTest;
     }
 
     /**
-     * Setter for isTest - Set this flag to true to indicate that this company is a test company.
-            If you have Returns enabled, Test companies will not file tax returns and can be used for validation purposes.
+     * Setter for isTest - A company or business entity.
      */
     public void setIsTest(Boolean isTest) {
         this.isTest = isTest;
@@ -368,14 +356,14 @@ public class CompanyModel {
     private Boolean warningsEnabled;
 
     /**
-     * Getter for warningsEnabled - Set this value to true to receive warnings in API calls via SOAP.
+     * Getter for warningsEnabled - A company or business entity.
      */
     public Boolean getWarningsEnabled() {
         return this.warningsEnabled;
     }
 
     /**
-     * Setter for warningsEnabled - Set this value to true to receive warnings in API calls via SOAP.
+     * Setter for warningsEnabled - A company or business entity.
      */
     public void setWarningsEnabled(Boolean warningsEnabled) {
         this.warningsEnabled = warningsEnabled;
@@ -385,14 +373,14 @@ public class CompanyModel {
     private String defaultCountry;
 
     /**
-     * Getter for defaultCountry - The two character ISO-3166 country code of the default country for this company.
+     * Getter for defaultCountry - A company or business entity.
      */
     public String getDefaultCountry() {
         return this.defaultCountry;
     }
 
     /**
-     * Setter for defaultCountry - The two character ISO-3166 country code of the default country for this company.
+     * Setter for defaultCountry - A company or business entity.
      */
     public void setDefaultCountry(String defaultCountry) {
         this.defaultCountry = defaultCountry;
@@ -402,14 +390,14 @@ public class CompanyModel {
     private Boolean isActive;
 
     /**
-     * Getter for isActive - This flag indicates whether tax activity can occur for this company.  Set this flag to true to permit the company to process transactions.
+     * Getter for isActive - A company or business entity.
      */
     public Boolean getIsActive() {
         return this.isActive;
     }
 
     /**
-     * Setter for isActive - This flag indicates whether tax activity can occur for this company.  Set this flag to true to permit the company to process transactions.
+     * Setter for isActive - A company or business entity.
      */
     public void setIsActive(Boolean isActive) {
         this.isActive = isActive;
@@ -419,14 +407,14 @@ public class CompanyModel {
     private Integer modifiedUserId;
 
     /**
-     * Getter for modifiedUserId - The user ID of the user who last modified this record.
+     * Getter for modifiedUserId - A company or business entity.
      */
     public Integer getModifiedUserId() {
         return this.modifiedUserId;
     }
 
     /**
-     * Setter for modifiedUserId - The user ID of the user who last modified this record.
+     * Setter for modifiedUserId - A company or business entity.
      */
     public void setModifiedUserId(Integer modifiedUserId) {
         this.modifiedUserId = modifiedUserId;
@@ -436,14 +424,14 @@ public class CompanyModel {
     private Integer createdUserId;
 
     /**
-     * Getter for createdUserId - The User ID of the user who created this record.
+     * Getter for createdUserId - A company or business entity.
      */
     public Integer getCreatedUserId() {
         return this.createdUserId;
     }
 
     /**
-     * Setter for createdUserId - The User ID of the user who created this record.
+     * Setter for createdUserId - A company or business entity.
      */
     public void setCreatedUserId(Integer createdUserId) {
         this.createdUserId = createdUserId;
@@ -453,14 +441,14 @@ public class CompanyModel {
     private Integer defaultLocationId;
 
     /**
-     * Getter for defaultLocationId - If set, this is the unique ID number of the default location for this company.
+     * Getter for defaultLocationId - A company or business entity.
      */
     public Integer getDefaultLocationId() {
         return this.defaultLocationId;
     }
 
     /**
-     * Setter for defaultLocationId - If set, this is the unique ID number of the default location for this company.
+     * Setter for defaultLocationId - A company or business entity.
      */
     public void setDefaultLocationId(Integer defaultLocationId) {
         this.defaultLocationId = defaultLocationId;
@@ -470,16 +458,14 @@ public class CompanyModel {
     private Boolean inProgress;
 
     /**
-     * Getter for inProgress - Set this value to true to indicate that you are still working to finish configuring this company.
-            While this value is true, no tax reporting will occur and the company will not be usable for transactions.
+     * Getter for inProgress - A company or business entity.
      */
     public Boolean getInProgress() {
         return this.inProgress;
     }
 
     /**
-     * Setter for inProgress - Set this value to true to indicate that you are still working to finish configuring this company.
-            While this value is true, no tax reporting will occur and the company will not be usable for transactions.
+     * Setter for inProgress - A company or business entity.
      */
     public void setInProgress(Boolean inProgress) {
         this.inProgress = inProgress;
@@ -489,14 +475,14 @@ public class CompanyModel {
     private Integer parentCompanyId;
 
     /**
-     * Getter for parentCompanyId - If this company is fully owned by another company, this is the unique identity of the parent company.
+     * Getter for parentCompanyId - A company or business entity.
      */
     public Integer getParentCompanyId() {
         return this.parentCompanyId;
     }
 
     /**
-     * Setter for parentCompanyId - If this company is fully owned by another company, this is the unique identity of the parent company.
+     * Setter for parentCompanyId - A company or business entity.
      */
     public void setParentCompanyId(Integer parentCompanyId) {
         this.parentCompanyId = parentCompanyId;
@@ -506,18 +492,14 @@ public class CompanyModel {
     private Boolean hasProfile;
 
     /**
-     * Getter for hasProfile - Set this flag to true to give this company its own unique tax profile.
-            If this flag is true, this company will have its own Nexus, TaxRule, TaxCode, and Item definitions.
-            If this flag is false, this company will inherit all profile values from its parent.
+     * Getter for hasProfile - A company or business entity.
      */
     public Boolean getHasProfile() {
         return this.hasProfile;
     }
 
     /**
-     * Setter for hasProfile - Set this flag to true to give this company its own unique tax profile.
-            If this flag is true, this company will have its own Nexus, TaxRule, TaxCode, and Item definitions.
-            If this flag is false, this company will inherit all profile values from its parent.
+     * Setter for hasProfile - A company or business entity.
      */
     public void setHasProfile(Boolean hasProfile) {
         this.hasProfile = hasProfile;
@@ -527,14 +509,14 @@ public class CompanyModel {
     private String baseCurrencyCode;
 
     /**
-     * Getter for baseCurrencyCode - This is the three character ISO-4217 currency code of the default currency used by this company.
+     * Getter for baseCurrencyCode - A company or business entity.
      */
     public String getBaseCurrencyCode() {
         return this.baseCurrencyCode;
     }
 
     /**
-     * Setter for baseCurrencyCode - This is the three character ISO-4217 currency code of the default currency used by this company.
+     * Setter for baseCurrencyCode - A company or business entity.
      */
     public void setBaseCurrencyCode(String baseCurrencyCode) {
         this.baseCurrencyCode = baseCurrencyCode;
@@ -544,14 +526,14 @@ public class CompanyModel {
     private ArrayList<SettingModel> settings;
 
     /**
-     * Getter for settings - Optional: A list of settings defined for this company.  To fetch this list, add the query string "?$include=Settings" to your URL.
+     * Getter for settings - A company or business entity.
      */
     public ArrayList<SettingModel> getSettings() {
         return this.settings;
     }
 
     /**
-     * Setter for settings - Optional: A list of settings defined for this company.  To fetch this list, add the query string "?$include=Settings" to your URL.
+     * Setter for settings - A company or business entity.
      */
     public void setSettings(ArrayList<SettingModel> settings) {
         this.settings = settings;
@@ -561,14 +543,14 @@ public class CompanyModel {
     private Boolean isDefault;
 
     /**
-     * Getter for isDefault - This flag is true if this company is the default company for this account.  Only one company may be set as the default.
+     * Getter for isDefault - A company or business entity.
      */
     public Boolean getIsDefault() {
         return this.isDefault;
     }
 
     /**
-     * Setter for isDefault - This flag is true if this company is the default company for this account.  Only one company may be set as the default.
+     * Setter for isDefault - A company or business entity.
      */
     public void setIsDefault(Boolean isDefault) {
         this.isDefault = isDefault;
@@ -578,14 +560,14 @@ public class CompanyModel {
     private Date createdDate;
 
     /**
-     * Getter for createdDate - The date when this record was created.
+     * Getter for createdDate - A company or business entity.
      */
     public Date getCreatedDate() {
         return this.createdDate;
     }
 
     /**
-     * Setter for createdDate - The date when this record was created.
+     * Setter for createdDate - A company or business entity.
      */
     public void setCreatedDate(Date createdDate) {
         this.createdDate = createdDate;

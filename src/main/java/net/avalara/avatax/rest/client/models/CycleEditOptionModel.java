@@ -16,14 +16,14 @@ public class CycleEditOptionModel {
     private Boolean success;
 
     /**
-     * Getter for success - Whether or not changes can be made to the filing calendar.
+     * Getter for success - Model with options for actual filing calendar output based on user edits to filing calendar.
      */
     public Boolean getSuccess() {
         return this.success;
     }
 
     /**
-     * Setter for success - Whether or not changes can be made to the filing calendar.
+     * Setter for success - Model with options for actual filing calendar output based on user edits to filing calendar.
      */
     public void setSuccess(Boolean success) {
         this.success = success;
@@ -33,14 +33,14 @@ public class CycleEditOptionModel {
     private Date clonedCalendarEffDate;
 
     /**
-     * Getter for clonedCalendarEffDate - The effective date of the filing calendar (only applies if cloning).
+     * Getter for clonedCalendarEffDate - Model with options for actual filing calendar output based on user edits to filing calendar.
      */
     public Date getClonedCalendarEffDate() {
         return this.clonedCalendarEffDate;
     }
 
     /**
-     * Setter for clonedCalendarEffDate - The effective date of the filing calendar (only applies if cloning).
+     * Setter for clonedCalendarEffDate - Model with options for actual filing calendar output based on user edits to filing calendar.
      */
     public void setClonedCalendarEffDate(Date clonedCalendarEffDate) {
         this.clonedCalendarEffDate = clonedCalendarEffDate;
@@ -50,16 +50,14 @@ public class CycleEditOptionModel {
     private Boolean customerMustApprove;
 
     /**
-     * Getter for customerMustApprove - Whether or not the user should be warned of a change, because some changes are risky and may be being done not in accordance with jurisdiction rules.
-            For example, user would be warned if user changes filing frequency to new frequency with a start date during an accrual month of the existing frequency.
+     * Getter for customerMustApprove - Model with options for actual filing calendar output based on user edits to filing calendar.
      */
     public Boolean getCustomerMustApprove() {
         return this.customerMustApprove;
     }
 
     /**
-     * Setter for customerMustApprove - Whether or not the user should be warned of a change, because some changes are risky and may be being done not in accordance with jurisdiction rules.
-            For example, user would be warned if user changes filing frequency to new frequency with a start date during an accrual month of the existing frequency.
+     * Setter for customerMustApprove - Model with options for actual filing calendar output based on user edits to filing calendar.
      */
     public void setCustomerMustApprove(Boolean customerMustApprove) {
         this.customerMustApprove = customerMustApprove;
@@ -69,14 +67,14 @@ public class CycleEditOptionModel {
     private Boolean mustCloneFilingCalendar;
 
     /**
-     * Getter for mustCloneFilingCalendar - True if the filing calendar must be cloned to allow this change; false if the existing filing calendar can be changed itself.
+     * Getter for mustCloneFilingCalendar - Model with options for actual filing calendar output based on user edits to filing calendar.
      */
     public Boolean getMustCloneFilingCalendar() {
         return this.mustCloneFilingCalendar;
     }
 
     /**
-     * Setter for mustCloneFilingCalendar - True if the filing calendar must be cloned to allow this change; false if the existing filing calendar can be changed itself.
+     * Setter for mustCloneFilingCalendar - Model with options for actual filing calendar output based on user edits to filing calendar.
      */
     public void setMustCloneFilingCalendar(Boolean mustCloneFilingCalendar) {
         this.mustCloneFilingCalendar = mustCloneFilingCalendar;
@@ -86,14 +84,14 @@ public class CycleEditOptionModel {
     private String message;
 
     /**
-     * Getter for message - The message to present to the user when calendar is successfully or unsuccessfully changed.
+     * Getter for message - Model with options for actual filing calendar output based on user edits to filing calendar.
      */
     public String getMessage() {
         return this.message;
     }
 
     /**
-     * Setter for message - The message to present to the user when calendar is successfully or unsuccessfully changed.
+     * Setter for message - Model with options for actual filing calendar output based on user edits to filing calendar.
      */
     public void setMessage(String message) {
         this.message = message;
@@ -103,14 +101,14 @@ public class CycleEditOptionModel {
     private Date expiredCalendarEndDate;
 
     /**
-     * Getter for expiredCalendarEndDate - The expired end date of the old filing calendar (only applies if cloning).
+     * Getter for expiredCalendarEndDate - Model with options for actual filing calendar output based on user edits to filing calendar.
      */
     public Date getExpiredCalendarEndDate() {
         return this.expiredCalendarEndDate;
     }
 
     /**
-     * Setter for expiredCalendarEndDate - The expired end date of the old filing calendar (only applies if cloning).
+     * Setter for expiredCalendarEndDate - Model with options for actual filing calendar output based on user edits to filing calendar.
      */
     public void setExpiredCalendarEndDate(Date expiredCalendarEndDate) {
         this.expiredCalendarEndDate = expiredCalendarEndDate;

@@ -407,6 +407,16 @@ public enum ErrorCodeId {
     /**
      * No comment data provided
      */
+    CountryOverridesNotAvailable,
+    
+    /**
+     * No comment data provided
+     */
+    JurisdictionOverrideMismatch,
+    
+    /**
+     * No comment data provided
+     */
     BatchSalesAuditMustBeZippedError,
     
     /**
@@ -487,6 +497,16 @@ public enum ErrorCodeId {
     /**
      * No comment data provided
      */
+    InvalidAddressTextCase,
+    
+    /**
+     * No comment data provided
+     */
+    DocumentNotCommitted,
+    
+    /**
+     * No comment data provided
+     */
     BadDocumentFetch,
     
     /**
@@ -508,6 +528,16 @@ public enum ErrorCodeId {
      * No comment data provided
      */
     InvitationOnly,
+    
+    /**
+     * No comment data provided
+     */
+    ZTBListConnectorFail,
+    
+    /**
+     * No comment data provided
+     */
+    ZTBCreateSubscriptionsFail,
     
 
 }

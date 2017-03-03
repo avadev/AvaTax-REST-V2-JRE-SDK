@@ -16,14 +16,14 @@ public class ParameterModel {
     private String name;
 
     /**
-     * Getter for name - The name of the property.  To use this property, add a field on the "properties" object of a /api/v2/companies/(code)/transactions/create call.
+     * Getter for name - An extra property that can change the behavior of tax transactions.
      */
     public String getName() {
         return this.name;
     }
 
     /**
-     * Setter for name - The name of the property.  To use this property, add a field on the "properties" object of a /api/v2/companies/(code)/transactions/create call.
+     * Setter for name - An extra property that can change the behavior of tax transactions.
      */
     public void setName(String name) {
         this.name = name;
@@ -33,14 +33,14 @@ public class ParameterModel {
     private String description;
 
     /**
-     * Getter for description - A full description of this property.
+     * Getter for description - An extra property that can change the behavior of tax transactions.
      */
     public String getDescription() {
         return this.description;
     }
 
     /**
-     * Setter for description - A full description of this property.
+     * Setter for description - An extra property that can change the behavior of tax transactions.
      */
     public void setDescription(String description) {
         this.description = description;
@@ -50,14 +50,14 @@ public class ParameterModel {
     private Long id;
 
     /**
-     * Getter for id - The unique ID number of this property.
+     * Getter for id - An extra property that can change the behavior of tax transactions.
      */
     public Long getId() {
         return this.id;
     }
 
     /**
-     * Setter for id - The unique ID number of this property.
+     * Setter for id - An extra property that can change the behavior of tax transactions.
      */
     public void setId(Long id) {
         this.id = id;
@@ -67,14 +67,14 @@ public class ParameterModel {
     private String category;
 
     /**
-     * Getter for category - The service category of this property.  Some properties may require that you subscribe to certain features of avatax before they can be used.
+     * Getter for category - An extra property that can change the behavior of tax transactions.
      */
     public String getCategory() {
         return this.category;
     }
 
     /**
-     * Setter for category - The service category of this property.  Some properties may require that you subscribe to certain features of avatax before they can be used.
+     * Setter for category - An extra property that can change the behavior of tax transactions.
      */
     public void setCategory(String category) {
         this.category = category;
@@ -84,14 +84,14 @@ public class ParameterModel {
     private ParameterBagDataType dataType;
 
     /**
-     * Getter for dataType - The data type of the property.
+     * Getter for dataType - An extra property that can change the behavior of tax transactions.
      */
     public ParameterBagDataType getDataType() {
         return this.dataType;
     }
 
     /**
-     * Setter for dataType - The data type of the property.
+     * Setter for dataType - An extra property that can change the behavior of tax transactions.
      */
     public void setDataType(ParameterBagDataType dataType) {
         this.dataType = dataType;

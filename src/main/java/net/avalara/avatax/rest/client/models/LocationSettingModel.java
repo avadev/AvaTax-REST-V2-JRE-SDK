@@ -16,14 +16,14 @@ public class LocationSettingModel {
     private Integer questionId;
 
     /**
-     * Getter for questionId - The unique ID number of the location question answered.
+     * Getter for questionId - Represents the answer to one local jurisdiction question for a location.
      */
     public Integer getQuestionId() {
         return this.questionId;
     }
 
     /**
-     * Setter for questionId - The unique ID number of the location question answered.
+     * Setter for questionId - Represents the answer to one local jurisdiction question for a location.
      */
     public void setQuestionId(Integer questionId) {
         this.questionId = questionId;
@@ -33,14 +33,14 @@ public class LocationSettingModel {
     private String value;
 
     /**
-     * Getter for value - The answer the user provided.
+     * Getter for value - Represents the answer to one local jurisdiction question for a location.
      */
     public String getValue() {
         return this.value;
     }
 
     /**
-     * Setter for value - The answer the user provided.
+     * Setter for value - Represents the answer to one local jurisdiction question for a location.
      */
     public void setValue(String value) {
         this.value = value;

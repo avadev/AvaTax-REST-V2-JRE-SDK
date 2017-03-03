@@ -11,21 +11,25 @@ import java.util.HashMap;
 
 /**
  * Represents a letter received from a tax authority regarding tax filing.
-            These letters often have the warning "Notice" printed at the top, which is why
-            they are called "Notices".
+These letters often have the warning "Notice" printed at the top, which is why
+they are called "Notices".
  */
 public class NoticeModel {
     private Integer complianceContactId;
 
     /**
-     * Getter for complianceContactId - complianceContactId
+     * Getter for complianceContactId - Represents a letter received from a tax authority regarding tax filing.
+These letters often have the warning "Notice" printed at the top, which is why
+they are called "Notices".
      */
     public Integer getComplianceContactId() {
         return this.complianceContactId;
     }
 
     /**
-     * Setter for complianceContactId - complianceContactId
+     * Setter for complianceContactId - Represents a letter received from a tax authority regarding tax filing.
+These letters often have the warning "Notice" printed at the top, which is why
+they are called "Notices".
      */
     public void setComplianceContactId(Integer complianceContactId) {
         this.complianceContactId = complianceContactId;
@@ -35,33 +39,41 @@ public class NoticeModel {
     private Integer avaFileFormId;
 
     /**
-     * Getter for avaFileFormId - avaFileFormId
+     * Getter for avaFileFormId - Represents a letter received from a tax authority regarding tax filing.
+These letters often have the warning "Notice" printed at the top, which is why
+they are called "Notices".
      */
     public Integer getAvaFileFormId() {
         return this.avaFileFormId;
     }
 
     /**
-     * Setter for avaFileFormId - avaFileFormId
+     * Setter for avaFileFormId - Represents a letter received from a tax authority regarding tax filing.
+These letters often have the warning "Notice" printed at the top, which is why
+they are called "Notices".
      */
     public void setAvaFileFormId(Integer avaFileFormId) {
         this.avaFileFormId = avaFileFormId;
     }
 
     
-    private Integer customerTypeId;
+    private NoticeCustomerType customerTypeId;
 
     /**
-     * Getter for customerTypeId - TaxNoticeCustomerTypeId
+     * Getter for customerTypeId - Represents a letter received from a tax authority regarding tax filing.
+These letters often have the warning "Notice" printed at the top, which is why
+they are called "Notices".
      */
-    public Integer getCustomerTypeId() {
+    public NoticeCustomerType getCustomerTypeId() {
         return this.customerTypeId;
     }
 
     /**
-     * Setter for customerTypeId - TaxNoticeCustomerTypeId
+     * Setter for customerTypeId - Represents a letter received from a tax authority regarding tax filing.
+These letters often have the warning "Notice" printed at the top, which is why
+they are called "Notices".
      */
-    public void setCustomerTypeId(Integer customerTypeId) {
+    public void setCustomerTypeId(NoticeCustomerType customerTypeId) {
         this.customerTypeId = customerTypeId;
     }
 
@@ -69,48 +81,39 @@ public class NoticeModel {
     private String customerComment;
 
     /**
-     * Getter for customerComment - CustomerComment
+     * Getter for customerComment - Represents a letter received from a tax authority regarding tax filing.
+These letters often have the warning "Notice" printed at the top, which is why
+they are called "Notices".
      */
     public String getCustomerComment() {
         return this.customerComment;
     }
 
     /**
-     * Setter for customerComment - CustomerComment
+     * Setter for customerComment - Represents a letter received from a tax authority regarding tax filing.
+These letters often have the warning "Notice" printed at the top, which is why
+they are called "Notices".
      */
     public void setCustomerComment(String customerComment) {
         this.customerComment = customerComment;
     }
 
     
-    private String priority;
-
-    /**
-     * Getter for priority - taxNoticePriorityId
-     */
-    public String getPriority() {
-        return this.priority;
-    }
-
-    /**
-     * Setter for priority - taxNoticePriorityId
-     */
-    public void setPriority(String priority) {
-        this.priority = priority;
-    }
-
-    
     private FilingFrequencyId filingFrequency;
 
     /**
-     * Getter for filingFrequency - taxNoticeFilingFrequencyId
+     * Getter for filingFrequency - Represents a letter received from a tax authority regarding tax filing.
+These letters often have the warning "Notice" printed at the top, which is why
+they are called "Notices".
      */
     public FilingFrequencyId getFilingFrequency() {
         return this.filingFrequency;
     }
 
     /**
-     * Setter for filingFrequency - taxNoticeFilingFrequencyId
+     * Setter for filingFrequency - Represents a letter received from a tax authority regarding tax filing.
+These letters often have the warning "Notice" printed at the top, which is why
+they are called "Notices".
      */
     public void setFilingFrequency(FilingFrequencyId filingFrequency) {
         this.filingFrequency = filingFrequency;
@@ -120,14 +123,18 @@ public class NoticeModel {
     private Integer closedByUserId;
 
     /**
-     * Getter for closedByUserId - The unique ID number of the user that closed the notice
+     * Getter for closedByUserId - Represents a letter received from a tax authority regarding tax filing.
+These letters often have the warning "Notice" printed at the top, which is why
+they are called "Notices".
      */
     public Integer getClosedByUserId() {
         return this.closedByUserId;
     }
 
     /**
-     * Setter for closedByUserId - The unique ID number of the user that closed the notice
+     * Setter for closedByUserId - Represents a letter received from a tax authority regarding tax filing.
+These letters often have the warning "Notice" printed at the top, which is why
+they are called "Notices".
      */
     public void setClosedByUserId(Integer closedByUserId) {
         this.closedByUserId = closedByUserId;
@@ -137,14 +144,18 @@ public class NoticeModel {
     private String createdByUserName;
 
     /**
-     * Getter for createdByUserName - createdByUser
+     * Getter for createdByUserName - Represents a letter received from a tax authority regarding tax filing.
+These letters often have the warning "Notice" printed at the top, which is why
+they are called "Notices".
      */
     public String getCreatedByUserName() {
         return this.createdByUserName;
     }
 
     /**
-     * Setter for createdByUserName - createdByUser
+     * Setter for createdByUserName - Represents a letter received from a tax authority regarding tax filing.
+These letters often have the warning "Notice" printed at the top, which is why
+they are called "Notices".
      */
     public void setCreatedByUserName(String createdByUserName) {
         this.createdByUserName = createdByUserName;
@@ -154,14 +165,18 @@ public class NoticeModel {
     private ArrayList<NoticeFinanceModel> finances;
 
     /**
-     * Getter for finances - taxNoticeFinanceDetails
+     * Getter for finances - Represents a letter received from a tax authority regarding tax filing.
+These letters often have the warning "Notice" printed at the top, which is why
+they are called "Notices".
      */
     public ArrayList<NoticeFinanceModel> getFinances() {
         return this.finances;
     }
 
     /**
-     * Setter for finances - taxNoticeFinanceDetails
+     * Setter for finances - Represents a letter received from a tax authority regarding tax filing.
+These letters often have the warning "Notice" printed at the top, which is why
+they are called "Notices".
      */
     public void setFinances(ArrayList<NoticeFinanceModel> finances) {
         this.finances = finances;
@@ -171,14 +186,18 @@ public class NoticeModel {
     private String description;
 
     /**
-     * Getter for description - description
+     * Getter for description - Represents a letter received from a tax authority regarding tax filing.
+These letters often have the warning "Notice" printed at the top, which is why
+they are called "Notices".
      */
     public String getDescription() {
         return this.description;
     }
 
     /**
-     * Setter for description - description
+     * Setter for description - Represents a letter received from a tax authority regarding tax filing.
+These letters often have the warning "Notice" printed at the top, which is why
+they are called "Notices".
      */
     public void setDescription(String description) {
         this.description = description;
@@ -188,50 +207,62 @@ public class NoticeModel {
     private Date modifiedDate;
 
     /**
-     * Getter for modifiedDate - The date/time when this record was last modified.
+     * Getter for modifiedDate - Represents a letter received from a tax authority regarding tax filing.
+These letters often have the warning "Notice" printed at the top, which is why
+they are called "Notices".
      */
     public Date getModifiedDate() {
         return this.modifiedDate;
     }
 
     /**
-     * Setter for modifiedDate - The date/time when this record was last modified.
+     * Setter for modifiedDate - Represents a letter received from a tax authority regarding tax filing.
+These letters often have the warning "Notice" printed at the top, which is why
+they are called "Notices".
      */
     public void setModifiedDate(Date modifiedDate) {
         this.modifiedDate = modifiedDate;
     }
 
     
-    private String filingType;
+    private ArrayList<NoticeResponsibilityDetailModel> responsibility;
 
     /**
-     * Getter for filingType - taxNoticeFilingTypeId
+     * Getter for responsibility - Represents a letter received from a tax authority regarding tax filing.
+These letters often have the warning "Notice" printed at the top, which is why
+they are called "Notices".
      */
-    public String getFilingType() {
-        return this.filingType;
+    public ArrayList<NoticeResponsibilityDetailModel> getResponsibility() {
+        return this.responsibility;
     }
 
     /**
-     * Setter for filingType - taxNoticeFilingTypeId
+     * Setter for responsibility - Represents a letter received from a tax authority regarding tax filing.
+These letters often have the warning "Notice" printed at the top, which is why
+they are called "Notices".
      */
-    public void setFilingType(String filingType) {
-        this.filingType = filingType;
+    public void setResponsibility(ArrayList<NoticeResponsibilityDetailModel> responsibility) {
+        this.responsibility = responsibility;
     }
 
     
-    private Integer customerFundingOptionId;
+    private FundingOption customerFundingOptionId;
 
     /**
-     * Getter for customerFundingOptionId - taxNoticeCustomerFundingOptionId
+     * Getter for customerFundingOptionId - Represents a letter received from a tax authority regarding tax filing.
+These letters often have the warning "Notice" printed at the top, which is why
+they are called "Notices".
      */
-    public Integer getCustomerFundingOptionId() {
+    public FundingOption getCustomerFundingOptionId() {
         return this.customerFundingOptionId;
     }
 
     /**
-     * Setter for customerFundingOptionId - taxNoticeCustomerFundingOptionId
+     * Setter for customerFundingOptionId - Represents a letter received from a tax authority regarding tax filing.
+These letters often have the warning "Notice" printed at the top, which is why
+they are called "Notices".
      */
-    public void setCustomerFundingOptionId(Integer customerFundingOptionId) {
+    public void setCustomerFundingOptionId(FundingOption customerFundingOptionId) {
         this.customerFundingOptionId = customerFundingOptionId;
     }
 
@@ -239,50 +270,41 @@ public class NoticeModel {
     private String ticketReferenceNo;
 
     /**
-     * Getter for ticketReferenceNo - ticketReferenceNo
+     * Getter for ticketReferenceNo - Represents a letter received from a tax authority regarding tax filing.
+These letters often have the warning "Notice" printed at the top, which is why
+they are called "Notices".
      */
     public String getTicketReferenceNo() {
         return this.ticketReferenceNo;
     }
 
     /**
-     * Setter for ticketReferenceNo - ticketReferenceNo
+     * Setter for ticketReferenceNo - Represents a letter received from a tax authority regarding tax filing.
+These letters often have the warning "Notice" printed at the top, which is why
+they are called "Notices".
      */
     public void setTicketReferenceNo(String ticketReferenceNo) {
         this.ticketReferenceNo = ticketReferenceNo;
     }
 
     
-    private Integer taxNoticeMailCheckToId;
+    private FilingTypeId filingTypeId;
 
     /**
-     * Getter for taxNoticeMailCheckToId - taxNoticeMailCheckToId
+     * Getter for filingTypeId - Represents a letter received from a tax authority regarding tax filing.
+These letters often have the warning "Notice" printed at the top, which is why
+they are called "Notices".
      */
-    public Integer getTaxNoticeMailCheckToId() {
-        return this.taxNoticeMailCheckToId;
-    }
-
-    /**
-     * Setter for taxNoticeMailCheckToId - taxNoticeMailCheckToId
-     */
-    public void setTaxNoticeMailCheckToId(Integer taxNoticeMailCheckToId) {
-        this.taxNoticeMailCheckToId = taxNoticeMailCheckToId;
-    }
-
-    
-    private Integer filingTypeId;
-
-    /**
-     * Getter for filingTypeId - taxNoticeFilingTypeId
-     */
-    public Integer getFilingTypeId() {
+    public FilingTypeId getFilingTypeId() {
         return this.filingTypeId;
     }
 
     /**
-     * Setter for filingTypeId - taxNoticeFilingTypeId
+     * Setter for filingTypeId - Represents a letter received from a tax authority regarding tax filing.
+These letters often have the warning "Notice" printed at the top, which is why
+they are called "Notices".
      */
-    public void setFilingTypeId(Integer filingTypeId) {
+    public void setFilingTypeId(FilingTypeId filingTypeId) {
         this.filingTypeId = filingTypeId;
     }
 
@@ -290,14 +312,18 @@ public class NoticeModel {
     private String salesForceCase;
 
     /**
-     * Getter for salesForceCase - salesForceCaseNo
+     * Getter for salesForceCase - Represents a letter received from a tax authority regarding tax filing.
+These letters often have the warning "Notice" printed at the top, which is why
+they are called "Notices".
      */
     public String getSalesForceCase() {
         return this.salesForceCase;
     }
 
     /**
-     * Setter for salesForceCase - salesForceCaseNo
+     * Setter for salesForceCase - Represents a letter received from a tax authority regarding tax filing.
+These letters often have the warning "Notice" printed at the top, which is why
+they are called "Notices".
      */
     public void setSalesForceCase(String salesForceCase) {
         this.salesForceCase = salesForceCase;
@@ -307,48 +333,39 @@ public class NoticeModel {
     private Integer revenueContactId;
 
     /**
-     * Getter for revenueContactId - revenueContactId
+     * Getter for revenueContactId - Represents a letter received from a tax authority regarding tax filing.
+These letters often have the warning "Notice" printed at the top, which is why
+they are called "Notices".
      */
     public Integer getRevenueContactId() {
         return this.revenueContactId;
     }
 
     /**
-     * Setter for revenueContactId - revenueContactId
+     * Setter for revenueContactId - Represents a letter received from a tax authority regarding tax filing.
+These letters often have the warning "Notice" printed at the top, which is why
+they are called "Notices".
      */
     public void setRevenueContactId(Integer revenueContactId) {
         this.revenueContactId = revenueContactId;
     }
 
     
-    private String customerType;
-
-    /**
-     * Getter for customerType - TaxNoticeCustomerTypeId
-     */
-    public String getCustomerType() {
-        return this.customerType;
-    }
-
-    /**
-     * Setter for customerType - TaxNoticeCustomerTypeId
-     */
-    public void setCustomerType(String customerType) {
-        this.customerType = customerType;
-    }
-
-    
     private String country;
 
     /**
-     * Getter for country - taxNoticeCountry
+     * Getter for country - Represents a letter received from a tax authority regarding tax filing.
+These letters often have the warning "Notice" printed at the top, which is why
+they are called "Notices".
      */
     public String getCountry() {
         return this.country;
     }
 
     /**
-     * Setter for country - taxNoticeCountry
+     * Setter for country - Represents a letter received from a tax authority regarding tax filing.
+These letters often have the warning "Notice" printed at the top, which is why
+they are called "Notices".
      */
     public void setCountry(String country) {
         this.country = country;
@@ -358,14 +375,18 @@ public class NoticeModel {
     private Integer typeId;
 
     /**
-     * Getter for typeId - taxNoticeTypeId
+     * Getter for typeId - Represents a letter received from a tax authority regarding tax filing.
+These letters often have the warning "Notice" printed at the top, which is why
+they are called "Notices".
      */
     public Integer getTypeId() {
         return this.typeId;
     }
 
     /**
-     * Setter for typeId - taxNoticeTypeId
+     * Setter for typeId - Represents a letter received from a tax authority regarding tax filing.
+These letters often have the warning "Notice" printed at the top, which is why
+they are called "Notices".
      */
     public void setTypeId(Integer typeId) {
         this.typeId = typeId;
@@ -375,14 +396,18 @@ public class NoticeModel {
     private String reason;
 
     /**
-     * Getter for reason - taxNoticeReason
+     * Getter for reason - Represents a letter received from a tax authority regarding tax filing.
+These letters often have the warning "Notice" printed at the top, which is why
+they are called "Notices".
      */
     public String getReason() {
         return this.reason;
     }
 
     /**
-     * Setter for reason - taxNoticeReason
+     * Setter for reason - Represents a letter received from a tax authority regarding tax filing.
+These letters often have the warning "Notice" printed at the top, which is why
+they are called "Notices".
      */
     public void setReason(String reason) {
         this.reason = reason;
@@ -392,14 +417,18 @@ public class NoticeModel {
     private String salesForceCaseUrl;
 
     /**
-     * Getter for salesForceCaseUrl - SalesForceCaseUrl
+     * Getter for salesForceCaseUrl - Represents a letter received from a tax authority regarding tax filing.
+These letters often have the warning "Notice" printed at the top, which is why
+they are called "Notices".
      */
     public String getSalesForceCaseUrl() {
         return this.salesForceCaseUrl;
     }
 
     /**
-     * Setter for salesForceCaseUrl - SalesForceCaseUrl
+     * Setter for salesForceCaseUrl - Represents a letter received from a tax authority regarding tax filing.
+These letters often have the warning "Notice" printed at the top, which is why
+they are called "Notices".
      */
     public void setSalesForceCaseUrl(String salesForceCaseUrl) {
         this.salesForceCaseUrl = salesForceCaseUrl;
@@ -409,14 +438,18 @@ public class NoticeModel {
     private Date expectedResolutionDate;
 
     /**
-     * Getter for expectedResolutionDate - expectedResolutionDate
+     * Getter for expectedResolutionDate - Represents a letter received from a tax authority regarding tax filing.
+These letters often have the warning "Notice" printed at the top, which is why
+they are called "Notices".
      */
     public Date getExpectedResolutionDate() {
         return this.expectedResolutionDate;
     }
 
     /**
-     * Setter for expectedResolutionDate - expectedResolutionDate
+     * Setter for expectedResolutionDate - Represents a letter received from a tax authority regarding tax filing.
+These letters often have the warning "Notice" printed at the top, which is why
+they are called "Notices".
      */
     public void setExpectedResolutionDate(Date expectedResolutionDate) {
         this.expectedResolutionDate = expectedResolutionDate;
@@ -426,14 +459,18 @@ public class NoticeModel {
     private Integer id;
 
     /**
-     * Getter for id - The unique ID number of this notice.
+     * Getter for id - Represents a letter received from a tax authority regarding tax filing.
+These letters often have the warning "Notice" printed at the top, which is why
+they are called "Notices".
      */
     public Integer getId() {
         return this.id;
     }
 
     /**
-     * Setter for id - The unique ID number of this notice.
+     * Setter for id - Represents a letter received from a tax authority regarding tax filing.
+These letters often have the warning "Notice" printed at the top, which is why
+they are called "Notices".
      */
     public void setId(Integer id) {
         this.id = id;
@@ -443,65 +480,39 @@ public class NoticeModel {
     private String ticketReferenceUrl;
 
     /**
-     * Getter for ticketReferenceUrl - ticketReferenceUrl
+     * Getter for ticketReferenceUrl - Represents a letter received from a tax authority regarding tax filing.
+These letters often have the warning "Notice" printed at the top, which is why
+they are called "Notices".
      */
     public String getTicketReferenceUrl() {
         return this.ticketReferenceUrl;
     }
 
     /**
-     * Setter for ticketReferenceUrl - ticketReferenceUrl
+     * Setter for ticketReferenceUrl - Represents a letter received from a tax authority regarding tax filing.
+These letters often have the warning "Notice" printed at the top, which is why
+they are called "Notices".
      */
     public void setTicketReferenceUrl(String ticketReferenceUrl) {
         this.ticketReferenceUrl = ticketReferenceUrl;
     }
 
     
-    private String downloadAttachmentsUrl;
-
-    /**
-     * Getter for downloadAttachmentsUrl - salesForceCaseNo
-     */
-    public String getDownloadAttachmentsUrl() {
-        return this.downloadAttachmentsUrl;
-    }
-
-    /**
-     * Setter for downloadAttachmentsUrl - salesForceCaseNo
-     */
-    public void setDownloadAttachmentsUrl(String downloadAttachmentsUrl) {
-        this.downloadAttachmentsUrl = downloadAttachmentsUrl;
-    }
-
-    
-    private String customerFundingOption;
-
-    /**
-     * Getter for customerFundingOption - taxNoticeCustomerFundingOptionId
-     */
-    public String getCustomerFundingOption() {
-        return this.customerFundingOption;
-    }
-
-    /**
-     * Setter for customerFundingOption - taxNoticeCustomerFundingOptionId
-     */
-    public void setCustomerFundingOption(String customerFundingOption) {
-        this.customerFundingOption = customerFundingOption;
-    }
-
-    
     private String documentReference;
 
     /**
-     * Getter for documentReference - documentReference
+     * Getter for documentReference - Represents a letter received from a tax authority regarding tax filing.
+These letters often have the warning "Notice" printed at the top, which is why
+they are called "Notices".
      */
     public String getDocumentReference() {
         return this.documentReference;
     }
 
     /**
-     * Setter for documentReference - documentReference
+     * Setter for documentReference - Represents a letter received from a tax authority regarding tax filing.
+These letters often have the warning "Notice" printed at the top, which is why
+they are called "Notices".
      */
     public void setDocumentReference(String documentReference) {
         this.documentReference = documentReference;
@@ -511,14 +522,18 @@ public class NoticeModel {
     private Date closedDate;
 
     /**
-     * Getter for closedDate - closedDate
+     * Getter for closedDate - Represents a letter received from a tax authority regarding tax filing.
+These letters often have the warning "Notice" printed at the top, which is why
+they are called "Notices".
      */
     public Date getClosedDate() {
         return this.closedDate;
     }
 
     /**
-     * Setter for closedDate - closedDate
+     * Setter for closedDate - Represents a letter received from a tax authority regarding tax filing.
+These letters often have the warning "Notice" printed at the top, which is why
+they are called "Notices".
      */
     public void setClosedDate(Date closedDate) {
         this.closedDate = closedDate;
@@ -528,14 +543,18 @@ public class NoticeModel {
     private Boolean showResolutionDateToCustomer;
 
     /**
-     * Getter for showResolutionDateToCustomer - showResolutionDateToCustomer
+     * Getter for showResolutionDateToCustomer - Represents a letter received from a tax authority regarding tax filing.
+These letters often have the warning "Notice" printed at the top, which is why
+they are called "Notices".
      */
     public Boolean getShowResolutionDateToCustomer() {
         return this.showResolutionDateToCustomer;
     }
 
     /**
-     * Setter for showResolutionDateToCustomer - showResolutionDateToCustomer
+     * Setter for showResolutionDateToCustomer - Represents a letter received from a tax authority regarding tax filing.
+These letters often have the warning "Notice" printed at the top, which is why
+they are called "Notices".
      */
     public void setShowResolutionDateToCustomer(Boolean showResolutionDateToCustomer) {
         this.showResolutionDateToCustomer = showResolutionDateToCustomer;
@@ -545,14 +564,18 @@ public class NoticeModel {
     private Integer statusId;
 
     /**
-     * Getter for statusId - taxNoticeStatusId
+     * Getter for statusId - Represents a letter received from a tax authority regarding tax filing.
+These letters often have the warning "Notice" printed at the top, which is why
+they are called "Notices".
      */
     public Integer getStatusId() {
         return this.statusId;
     }
 
     /**
-     * Setter for statusId - taxNoticeStatusId
+     * Setter for statusId - Represents a letter received from a tax authority regarding tax filing.
+These letters often have the warning "Notice" printed at the top, which is why
+they are called "Notices".
      */
     public void setStatusId(Integer statusId) {
         this.statusId = statusId;
@@ -562,14 +585,18 @@ public class NoticeModel {
     private Integer taxAuthorityId;
 
     /**
-     * Getter for taxAuthorityId - taxNoticeTaxAuthorityId
+     * Getter for taxAuthorityId - Represents a letter received from a tax authority regarding tax filing.
+These letters often have the warning "Notice" printed at the top, which is why
+they are called "Notices".
      */
     public Integer getTaxAuthorityId() {
         return this.taxAuthorityId;
     }
 
     /**
-     * Setter for taxAuthorityId - taxNoticeTaxAuthorityId
+     * Setter for taxAuthorityId - Represents a letter received from a tax authority regarding tax filing.
+These letters often have the warning "Notice" printed at the top, which is why
+they are called "Notices".
      */
     public void setTaxAuthorityId(Integer taxAuthorityId) {
         this.taxAuthorityId = taxAuthorityId;
@@ -579,14 +606,18 @@ public class NoticeModel {
     private String status;
 
     /**
-     * Getter for status - taxNoticeStatus
+     * Getter for status - Represents a letter received from a tax authority regarding tax filing.
+These letters often have the warning "Notice" printed at the top, which is why
+they are called "Notices".
      */
     public String getStatus() {
         return this.status;
     }
 
     /**
-     * Setter for status - taxNoticeStatus
+     * Setter for status - Represents a letter received from a tax authority regarding tax filing.
+These letters often have the warning "Notice" printed at the top, which is why
+they are called "Notices".
      */
     public void setStatus(String status) {
         this.status = status;
@@ -596,14 +627,18 @@ public class NoticeModel {
     private Integer reasonId;
 
     /**
-     * Getter for reasonId - taxNoticeReasonId
+     * Getter for reasonId - Represents a letter received from a tax authority regarding tax filing.
+These letters often have the warning "Notice" printed at the top, which is why
+they are called "Notices".
      */
     public Integer getReasonId() {
         return this.reasonId;
     }
 
     /**
-     * Setter for reasonId - taxNoticeReasonId
+     * Setter for reasonId - Represents a letter received from a tax authority regarding tax filing.
+These letters often have the warning "Notice" printed at the top, which is why
+they are called "Notices".
      */
     public void setReasonId(Integer reasonId) {
         this.reasonId = reasonId;
@@ -613,14 +648,18 @@ public class NoticeModel {
     private Integer ownedByUserId;
 
     /**
-     * Getter for ownedByUserId - The unique ID number of the user that owns the notice
+     * Getter for ownedByUserId - Represents a letter received from a tax authority regarding tax filing.
+These letters often have the warning "Notice" printed at the top, which is why
+they are called "Notices".
      */
     public Integer getOwnedByUserId() {
         return this.ownedByUserId;
     }
 
     /**
-     * Setter for ownedByUserId - The unique ID number of the user that owns the notice
+     * Setter for ownedByUserId - Represents a letter received from a tax authority regarding tax filing.
+These letters often have the warning "Notice" printed at the top, which is why
+they are called "Notices".
      */
     public void setOwnedByUserId(Integer ownedByUserId) {
         this.ownedByUserId = ownedByUserId;
@@ -630,14 +669,18 @@ public class NoticeModel {
     private Integer modifiedUserId;
 
     /**
-     * Getter for modifiedUserId - The user ID of the user who last modified this record.
+     * Getter for modifiedUserId - Represents a letter received from a tax authority regarding tax filing.
+These letters often have the warning "Notice" printed at the top, which is why
+they are called "Notices".
      */
     public Integer getModifiedUserId() {
         return this.modifiedUserId;
     }
 
     /**
-     * Setter for modifiedUserId - The user ID of the user who last modified this record.
+     * Setter for modifiedUserId - Represents a letter received from a tax authority regarding tax filing.
+These letters often have the warning "Notice" printed at the top, which is why
+they are called "Notices".
      */
     public void setModifiedUserId(Integer modifiedUserId) {
         this.modifiedUserId = modifiedUserId;
@@ -647,14 +690,18 @@ public class NoticeModel {
     private Integer createdUserId;
 
     /**
-     * Getter for createdUserId - The User ID of the user who created this record.
+     * Getter for createdUserId - Represents a letter received from a tax authority regarding tax filing.
+These letters often have the warning "Notice" printed at the top, which is why
+they are called "Notices".
      */
     public Integer getCreatedUserId() {
         return this.createdUserId;
     }
 
     /**
-     * Setter for createdUserId - The User ID of the user who created this record.
+     * Setter for createdUserId - Represents a letter received from a tax authority regarding tax filing.
+These letters often have the warning "Notice" printed at the top, which is why
+they are called "Notices".
      */
     public void setCreatedUserId(Integer createdUserId) {
         this.createdUserId = createdUserId;
@@ -664,14 +711,18 @@ public class NoticeModel {
     private String region;
 
     /**
-     * Getter for region - taxNoticeState
+     * Getter for region - Represents a letter received from a tax authority regarding tax filing.
+These letters often have the warning "Notice" printed at the top, which is why
+they are called "Notices".
      */
     public String getRegion() {
         return this.region;
     }
 
     /**
-     * Setter for region - taxNoticeState
+     * Setter for region - Represents a letter received from a tax authority regarding tax filing.
+These letters often have the warning "Notice" printed at the top, which is why
+they are called "Notices".
      */
     public void setRegion(String region) {
         this.region = region;
@@ -681,14 +732,18 @@ public class NoticeModel {
     private String jurisdictionType;
 
     /**
-     * Getter for jurisdictionType - jurisdictionType
+     * Getter for jurisdictionType - Represents a letter received from a tax authority regarding tax filing.
+These letters often have the warning "Notice" printed at the top, which is why
+they are called "Notices".
      */
     public String getJurisdictionType() {
         return this.jurisdictionType;
     }
 
     /**
-     * Setter for jurisdictionType - jurisdictionType
+     * Setter for jurisdictionType - Represents a letter received from a tax authority regarding tax filing.
+These letters often have the warning "Notice" printed at the top, which is why
+they are called "Notices".
      */
     public void setJurisdictionType(String jurisdictionType) {
         this.jurisdictionType = jurisdictionType;
@@ -698,14 +753,18 @@ public class NoticeModel {
     private String type;
 
     /**
-     * Getter for type - taxNoticeTypeId
+     * Getter for type - Represents a letter received from a tax authority regarding tax filing.
+These letters often have the warning "Notice" printed at the top, which is why
+they are called "Notices".
      */
     public String getType() {
         return this.type;
     }
 
     /**
-     * Setter for type - taxNoticeTypeId
+     * Setter for type - Represents a letter received from a tax authority regarding tax filing.
+These letters often have the warning "Notice" printed at the top, which is why
+they are called "Notices".
      */
     public void setType(String type) {
         this.type = type;
@@ -715,14 +774,18 @@ public class NoticeModel {
     private String taxPeriod;
 
     /**
-     * Getter for taxPeriod - TaxPeriod
+     * Getter for taxPeriod - Represents a letter received from a tax authority regarding tax filing.
+These letters often have the warning "Notice" printed at the top, which is why
+they are called "Notices".
      */
     public String getTaxPeriod() {
         return this.taxPeriod;
     }
 
     /**
-     * Setter for taxPeriod - TaxPeriod
+     * Setter for taxPeriod - Represents a letter received from a tax authority regarding tax filing.
+These letters often have the warning "Notice" printed at the top, which is why
+they are called "Notices".
      */
     public void setTaxPeriod(String taxPeriod) {
         this.taxPeriod = taxPeriod;
@@ -732,31 +795,60 @@ public class NoticeModel {
     private String jurisdictionName;
 
     /**
-     * Getter for jurisdictionName - jurisdictionName
+     * Getter for jurisdictionName - Represents a letter received from a tax authority regarding tax filing.
+These letters often have the warning "Notice" printed at the top, which is why
+they are called "Notices".
      */
     public String getJurisdictionName() {
         return this.jurisdictionName;
     }
 
     /**
-     * Setter for jurisdictionName - jurisdictionName
+     * Setter for jurisdictionName - Represents a letter received from a tax authority regarding tax filing.
+These letters often have the warning "Notice" printed at the top, which is why
+they are called "Notices".
      */
     public void setJurisdictionName(String jurisdictionName) {
         this.jurisdictionName = jurisdictionName;
     }
 
     
+    private ArrayList<NoticeRootCauseDetailModel> rootCause;
+
+    /**
+     * Getter for rootCause - Represents a letter received from a tax authority regarding tax filing.
+These letters often have the warning "Notice" printed at the top, which is why
+they are called "Notices".
+     */
+    public ArrayList<NoticeRootCauseDetailModel> getRootCause() {
+        return this.rootCause;
+    }
+
+    /**
+     * Setter for rootCause - Represents a letter received from a tax authority regarding tax filing.
+These letters often have the warning "Notice" printed at the top, which is why
+they are called "Notices".
+     */
+    public void setRootCause(ArrayList<NoticeRootCauseDetailModel> rootCause) {
+        this.rootCause = rootCause;
+    }
+
+    
     private Boolean hideFromCustomer;
 
     /**
-     * Getter for hideFromCustomer - hideFromCustomer
+     * Getter for hideFromCustomer - Represents a letter received from a tax authority regarding tax filing.
+These letters often have the warning "Notice" printed at the top, which is why
+they are called "Notices".
      */
     public Boolean getHideFromCustomer() {
         return this.hideFromCustomer;
     }
 
     /**
-     * Setter for hideFromCustomer - hideFromCustomer
+     * Setter for hideFromCustomer - Represents a letter received from a tax authority regarding tax filing.
+These letters often have the warning "Notice" printed at the top, which is why
+they are called "Notices".
      */
     public void setHideFromCustomer(Boolean hideFromCustomer) {
         this.hideFromCustomer = hideFromCustomer;
@@ -766,14 +858,18 @@ public class NoticeModel {
     private Integer companyId;
 
     /**
-     * Getter for companyId - The unique ID number of the company to which this notice belongs.
+     * Getter for companyId - Represents a letter received from a tax authority regarding tax filing.
+These letters often have the warning "Notice" printed at the top, which is why
+they are called "Notices".
      */
     public Integer getCompanyId() {
         return this.companyId;
     }
 
     /**
-     * Setter for companyId - The unique ID number of the company to which this notice belongs.
+     * Setter for companyId - Represents a letter received from a tax authority regarding tax filing.
+These letters often have the warning "Notice" printed at the top, which is why
+they are called "Notices".
      */
     public void setCompanyId(Integer companyId) {
         this.companyId = companyId;
@@ -783,14 +879,18 @@ public class NoticeModel {
     private Date receivedDate;
 
     /**
-     * Getter for receivedDate - receivedDate
+     * Getter for receivedDate - Represents a letter received from a tax authority regarding tax filing.
+These letters often have the warning "Notice" printed at the top, which is why
+they are called "Notices".
      */
     public Date getReceivedDate() {
         return this.receivedDate;
     }
 
     /**
-     * Setter for receivedDate - receivedDate
+     * Setter for receivedDate - Represents a letter received from a tax authority regarding tax filing.
+These letters often have the warning "Notice" printed at the top, which is why
+they are called "Notices".
      */
     public void setReceivedDate(Date receivedDate) {
         this.receivedDate = receivedDate;
@@ -800,14 +900,18 @@ public class NoticeModel {
     private ArrayList<NoticeCommentModel> comments;
 
     /**
-     * Getter for comments - taxNoticeComments
+     * Getter for comments - Represents a letter received from a tax authority regarding tax filing.
+These letters often have the warning "Notice" printed at the top, which is why
+they are called "Notices".
      */
     public ArrayList<NoticeCommentModel> getComments() {
         return this.comments;
     }
 
     /**
-     * Setter for comments - taxNoticeComments
+     * Setter for comments - Represents a letter received from a tax authority regarding tax filing.
+These letters often have the warning "Notice" printed at the top, which is why
+they are called "Notices".
      */
     public void setComments(ArrayList<NoticeCommentModel> comments) {
         this.comments = comments;
@@ -817,33 +921,41 @@ public class NoticeModel {
     private Date createdDate;
 
     /**
-     * Getter for createdDate - The date when this record was created.
+     * Getter for createdDate - Represents a letter received from a tax authority regarding tax filing.
+These letters often have the warning "Notice" printed at the top, which is why
+they are called "Notices".
      */
     public Date getCreatedDate() {
         return this.createdDate;
     }
 
     /**
-     * Setter for createdDate - The date when this record was created.
+     * Setter for createdDate - Represents a letter received from a tax authority regarding tax filing.
+These letters often have the warning "Notice" printed at the top, which is why
+they are called "Notices".
      */
     public void setCreatedDate(Date createdDate) {
         this.createdDate = createdDate;
     }
 
     
-    private Integer priorityId;
+    private NoticePriorityId priorityId;
 
     /**
-     * Getter for priorityId - taxNoticePriorityId
+     * Getter for priorityId - Represents a letter received from a tax authority regarding tax filing.
+These letters often have the warning "Notice" printed at the top, which is why
+they are called "Notices".
      */
-    public Integer getPriorityId() {
+    public NoticePriorityId getPriorityId() {
         return this.priorityId;
     }
 
     /**
-     * Setter for priorityId - taxNoticePriorityId
+     * Setter for priorityId - Represents a letter received from a tax authority regarding tax filing.
+These letters often have the warning "Notice" printed at the top, which is why
+they are called "Notices".
      */
-    public void setPriorityId(Integer priorityId) {
+    public void setPriorityId(NoticePriorityId priorityId) {
         this.priorityId = priorityId;
     }
 

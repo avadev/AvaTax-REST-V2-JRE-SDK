@@ -11,20 +11,22 @@ import java.util.HashMap;
 
 /**
  * Information about Avalara-defined tax code types.
-            This list is used when creating tax codes and tax rules.
+This list is used when creating tax codes and tax rules.
  */
 public class TaxCodeTypesModel {
     private HashMap<String, String> types;
 
     /**
-     * Getter for types - The list of Avalara-defined tax code types.
+     * Getter for types - Information about Avalara-defined tax code types.
+This list is used when creating tax codes and tax rules.
      */
     public HashMap<String, String> getTypes() {
         return this.types;
     }
 
     /**
-     * Setter for types - The list of Avalara-defined tax code types.
+     * Setter for types - Information about Avalara-defined tax code types.
+This list is used when creating tax codes and tax rules.
      */
     public void setTypes(HashMap<String, String> types) {
         this.types = types;

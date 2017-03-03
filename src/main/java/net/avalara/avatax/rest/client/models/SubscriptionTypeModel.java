@@ -16,14 +16,14 @@ public class SubscriptionTypeModel {
     private Integer id;
 
     /**
-     * Getter for id - The unique ID number of this subscription type.
+     * Getter for id - Represents a service or a subscription type.
      */
     public Integer getId() {
         return this.id;
     }
 
     /**
-     * Setter for id - The unique ID number of this subscription type.
+     * Setter for id - Represents a service or a subscription type.
      */
     public void setId(Integer id) {
         this.id = id;
@@ -33,14 +33,14 @@ public class SubscriptionTypeModel {
     private String description;
 
     /**
-     * Getter for description - The friendly name of the service this subscription type represents.
+     * Getter for description - Represents a service or a subscription type.
      */
     public String getDescription() {
         return this.description;
     }
 
     /**
-     * Setter for description - The friendly name of the service this subscription type represents.
+     * Setter for description - Represents a service or a subscription type.
      */
     public void setDescription(String description) {
         this.description = description;

@@ -101,14 +101,14 @@ public class TransactionBuilder {
     }
 
     public TransactionBuilder withAddress(TransactionAddressType type, String line1, String line2, String line3, String city, String region, String postalCode, String country) {
-        HashMap<TransactionAddressType, AddressInfo> addresses = this.model.getAddresses();
+        AddressesModel addresses = this.model.getAddresses();
 
         if (addresses == null) {
-            addresses = new HashMap<>();
+            addresses = new AddressesModel();
             this.model.setAddresses(addresses);
         }
 
-        AddressInfo info = new AddressInfo();
+        AddressLocationInfo info = new AddressLocationInfo();
         info.setLine1(line1);
         info.setLine2(line2);
         info.setLine3(line3);
@@ -117,36 +117,58 @@ public class TransactionBuilder {
         info.setPostalCode(postalCode);
         info.setCountry(country);
 
-        addresses.put(type, info);
+        if (type == TransactionAddressType.ShipTo) {
+            addresses.setShipTo(info);
+        } else if (type == TransactionAddressType.ShipFrom) {
+            addresses.setShipFrom(info);
+        } else if (type == TransactionAddressType.PointOfOrderAcceptance) {
+            addresses.setPointOfOrderAcceptance(info);
+        } else if (type == TransactionAddressType.PointOfOrderOrigin) {
+            addresses.setPointOfOrderOrigin(info);
+        } else if (type == TransactionAddressType.SingleLocation) {
+            addresses.setSingleLocation(info);
+        }
+        
         return this;
     }
 
     public TransactionBuilder withLatLong(TransactionAddressType type, BigDecimal latitude, BigDecimal longitude) {
-        HashMap<TransactionAddressType, AddressInfo> addresses = this.model.getAddresses();
+        AddressesModel addresses = this.model.getAddresses();
 
         if (addresses == null) {
-            addresses = new HashMap<>();
+            addresses = new AddressesModel();
             this.model.setAddresses(addresses);
         }
 
-        AddressInfo info = new AddressInfo();
+        AddressLocationInfo info = new AddressLocationInfo();
         info.setLatitude(latitude);
         info.setLongitude(longitude);
 
-        addresses.put(type, info);
+        if (type == TransactionAddressType.ShipTo) {
+            addresses.setShipTo(info);
+        } else if (type == TransactionAddressType.ShipFrom) {
+            addresses.setShipFrom(info);
+        } else if (type == TransactionAddressType.PointOfOrderAcceptance) {
+            addresses.setPointOfOrderAcceptance(info);
+        } else if (type == TransactionAddressType.PointOfOrderOrigin) {
+            addresses.setPointOfOrderOrigin(info);
+        } else if (type == TransactionAddressType.SingleLocation) {
+            addresses.setSingleLocation(info);
+        }
+
         return this;
     }
 
     public TransactionBuilder withLineAddress(TransactionAddressType type, String line1, String line2, String line3, String city, String region, String postalCode, String country) {
         LineItemModel line = getMostRecentLine("WithLineAddress");
-        HashMap<TransactionAddressType, AddressInfo> addresses = line.getAddresses();
+        AddressesModel addresses = line.getAddresses();
 
         if (addresses == null) {
-            addresses = new HashMap<>();
+            addresses = new AddressesModel();
             line.setAddresses(addresses);
         }
 
-        AddressInfo info = new AddressInfo();
+        AddressLocationInfo info = new AddressLocationInfo();
         info.setLine1(line1);
         info.setLine2(line2);
         info.setLine3(line3);
@@ -155,7 +177,18 @@ public class TransactionBuilder {
         info.setPostalCode(postalCode);
         info.setCountry(country);
 
-        addresses.put(type, info);
+        if (type == TransactionAddressType.ShipTo) {
+            addresses.setShipTo(info);
+        } else if (type == TransactionAddressType.ShipFrom) {
+            addresses.setShipFrom(info);
+        } else if (type == TransactionAddressType.PointOfOrderAcceptance) {
+            addresses.setPointOfOrderAcceptance(info);
+        } else if (type == TransactionAddressType.PointOfOrderOrigin) {
+            addresses.setPointOfOrderOrigin(info);
+        } else if (type == TransactionAddressType.SingleLocation) {
+            addresses.setSingleLocation(info);
+        }
+
         return this;
     }
 
@@ -213,8 +246,8 @@ public class TransactionBuilder {
         line.setQuantity(BigDecimal.ONE);
         line.setNumber(((Integer)this.lineNumber).toString());
 
-        HashMap<TransactionAddressType, AddressInfo> addresses = new HashMap<>();
-        AddressInfo info = new AddressInfo();
+        AddressesModel addresses = new AddressesModel();
+        AddressLocationInfo info = new AddressLocationInfo();
         info.setLine1(line1);
         info.setLine2(line2);
         info.setLine3(line3);
@@ -223,7 +256,18 @@ public class TransactionBuilder {
         info.setPostalCode(postalCode);
         info.setCountry(country);
 
-        addresses.put(type, info);
+        if (type == TransactionAddressType.ShipTo) {
+            addresses.setShipTo(info);
+        } else if (type == TransactionAddressType.ShipFrom) {
+            addresses.setShipFrom(info);
+        } else if (type == TransactionAddressType.PointOfOrderAcceptance) {
+            addresses.setPointOfOrderAcceptance(info);
+        } else if (type == TransactionAddressType.PointOfOrderOrigin) {
+            addresses.setPointOfOrderOrigin(info);
+        } else if (type == TransactionAddressType.SingleLocation) {
+            addresses.setSingleLocation(info);
+        }
+
         line.setAddresses(addresses);
 
         this.model.getLines().add(line);

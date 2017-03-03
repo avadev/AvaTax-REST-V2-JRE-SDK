@@ -16,14 +16,14 @@ public class FilingAugmentationModel {
     private Long id;
 
     /**
-     * Getter for id - The unique ID number for the augmentation.
+     * Getter for id - A model for return augmentations.
      */
     public Long getId() {
         return this.id;
     }
 
     /**
-     * Setter for id - The unique ID number for the augmentation.
+     * Setter for id - A model for return augmentations.
      */
     public void setId(Long id) {
         this.id = id;
@@ -33,14 +33,14 @@ public class FilingAugmentationModel {
     private BigDecimal fieldAmount;
 
     /**
-     * Getter for fieldAmount - The field amount.
+     * Getter for fieldAmount - A model for return augmentations.
      */
     public BigDecimal getFieldAmount() {
         return this.fieldAmount;
     }
 
     /**
-     * Setter for fieldAmount - The field amount.
+     * Setter for fieldAmount - A model for return augmentations.
      */
     public void setFieldAmount(BigDecimal fieldAmount) {
         this.fieldAmount = fieldAmount;
@@ -50,14 +50,14 @@ public class FilingAugmentationModel {
     private String fieldName;
 
     /**
-     * Getter for fieldName - The field name.
+     * Getter for fieldName - A model for return augmentations.
      */
     public String getFieldName() {
         return this.fieldName;
     }
 
     /**
-     * Setter for fieldName - The field name.
+     * Setter for fieldName - A model for return augmentations.
      */
     public void setFieldName(String fieldName) {
         this.fieldName = fieldName;
