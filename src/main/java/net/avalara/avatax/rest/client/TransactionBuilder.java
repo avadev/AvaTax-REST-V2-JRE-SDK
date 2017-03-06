@@ -225,6 +225,18 @@ public class TransactionBuilder {
     }
 
     public TransactionBuilder withLine(BigDecimal amount, BigDecimal quantity, String taxCode) {
+        return withLine(amount, quantity, taxCode, null, null, null, null);
+    }
+
+    public TransactionBuilder withLine(BigDecimal amount, BigDecimal quantity, String taxCode, String itemCode) {
+        return withLine(amount, quantity, taxCode, itemCode, null, null, null);
+    }
+
+    public TransactionBuilder withLine(BigDecimal amount, BigDecimal quantity, String taxCode, String itemCode, String description) {
+        return withLine(amount, quantity, taxCode, itemCode, description, null, null);
+    }
+
+    public TransactionBuilder withLine(BigDecimal amount, BigDecimal quantity, String taxCode, String itemCode, String description, String ref1, String ref2) {
         if (quantity == null) {
             quantity = BigDecimal.ONE;
         }
@@ -233,7 +245,28 @@ public class TransactionBuilder {
         line.setAmount(amount);
         line.setQuantity(quantity);
         line.setNumber(((Integer)this.lineNumber).toString());
-        line.setTaxCode(taxCode);
+
+        if (taxCode != null && !taxCode.isEmpty()) {
+            line.setTaxCode(taxCode);
+        } else {
+            line.setTaxCode("P0000000");
+        }
+
+        if (itemCode != null && !itemCode.isEmpty()) {
+            line.setItemCode(itemCode);
+        }
+
+        if (description != null && !description.isEmpty()) {
+            line.setDescription(description);
+        }
+
+        if (ref1 != null && !ref1.isEmpty()) {
+            line.setRef1(ref1);
+        }
+
+        if (ref2 != null && !ref2.isEmpty()) {
+            line.setRef2(ref2);
+        }
 
         this.model.getLines().add(line);
         this.lineNumber++;
