@@ -6,10 +6,10 @@ object TemplateConstants {
       |import net.avalara.avatax.rest.client.models.*;
       |import net.avalara.avatax.rest.client.enums.*;
       |
+      |import org.apache.commons.codec.binary.Base64;
+      |
       |import java.math.BigDecimal;
-      |import java.util.Base64;
       |import java.util.Date;
-      |import java.util.HashMap;
       |import java.util.concurrent.ExecutorService;
       |import java.util.concurrent.Executors;
       |import java.util.concurrent.Future;
@@ -61,7 +61,7 @@ object TemplateConstants {
       |        String header = null;
       |
       |        try {
-      |            header = Base64.getEncoder().encodeToString((username + ":" + password).getBytes("utf-8"));
+      |            header = Base64.encodeBase64String((username + ":" + password).getBytes("utf-8"));
       |        } catch (java.io.UnsupportedEncodingException ex) {
       |            System.out.println("Could not find encoding for UTF-8.");
       |            ex.printStackTrace();
