@@ -80,6 +80,11 @@ public class TransactionBuilder {
         return this;
     }
 
+    public TransactionBuilder withReferenceCode(String referenceCode) {
+        this.model.setReferenceCode(referenceCode);
+        return this;
+    }
+
     public TransactionBuilder withDate(Date date) {
         model.setDate(date);
         return this;
