@@ -99,7 +99,7 @@ class AvaTaxClientSpec extends fixture.FreeSpec {
         new AvaTaxClientException("This never gets called")
       } catch {
         case ex: AvaTaxClientException ⇒ ex
-      }).getDocumentCode.equals("DOCCODE"))
+      }).getErroneousRequest.isInstanceOf[CreateTransactionModel])
     }
     "succesfully ping" in { accountInfo =>
       val pong = client.withSecurity(accountInfo.username, accountInfo.password).ping()
