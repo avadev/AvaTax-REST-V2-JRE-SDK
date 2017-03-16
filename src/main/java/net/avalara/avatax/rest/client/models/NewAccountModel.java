@@ -13,23 +13,6 @@ import java.util.HashMap;
  * Represents information about a newly created account
  */
 public class NewAccountModel {
-    private Integer accountId;
-
-    /**
-     * Getter for accountId - Represents information about a newly created account
-     */
-    public Integer getAccountId() {
-        return this.accountId;
-    }
-
-    /**
-     * Setter for accountId - Represents information about a newly created account
-     */
-    public void setAccountId(Integer accountId) {
-        this.accountId = accountId;
-    }
-
-    
     private String accountDetailsEmailedTo;
 
     /**
@@ -47,23 +30,6 @@ public class NewAccountModel {
     }
 
     
-    private Date createdDate;
-
-    /**
-     * Getter for createdDate - Represents information about a newly created account
-     */
-    public Date getCreatedDate() {
-        return this.createdDate;
-    }
-
-    /**
-     * Setter for createdDate - Represents information about a newly created account
-     */
-    public void setCreatedDate(Date createdDate) {
-        this.createdDate = createdDate;
-    }
-
-    
     private Date emailedDate;
 
     /**
@@ -78,6 +44,57 @@ public class NewAccountModel {
      */
     public void setEmailedDate(Date emailedDate) {
         this.emailedDate = emailedDate;
+    }
+
+    
+    private Integer accountId;
+
+    /**
+     * Getter for accountId - Represents information about a newly created account
+     */
+    public Integer getAccountId() {
+        return this.accountId;
+    }
+
+    /**
+     * Setter for accountId - Represents information about a newly created account
+     */
+    public void setAccountId(Integer accountId) {
+        this.accountId = accountId;
+    }
+
+    
+    private String limitations;
+
+    /**
+     * Getter for limitations - Represents information about a newly created account
+     */
+    public String getLimitations() {
+        return this.limitations;
+    }
+
+    /**
+     * Setter for limitations - Represents information about a newly created account
+     */
+    public void setLimitations(String limitations) {
+        this.limitations = limitations;
+    }
+
+    
+    private Date createdDate;
+
+    /**
+     * Getter for createdDate - Represents information about a newly created account
+     */
+    public Date getCreatedDate() {
+        return this.createdDate;
+    }
+
+    /**
+     * Setter for createdDate - Represents information about a newly created account
+     */
+    public void setCreatedDate(Date createdDate) {
+        this.createdDate = createdDate;
     }
 
     

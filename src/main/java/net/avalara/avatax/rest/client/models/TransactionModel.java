@@ -455,6 +455,23 @@ public class TransactionModel {
     }
 
     
+    private ArrayList<TransactionLocationTypeModel> locationTypes;
+
+    /**
+     * Getter for locationTypes - A single transaction - for example, a sales invoice or purchase order.
+     */
+    public ArrayList<TransactionLocationTypeModel> getLocationTypes() {
+        return this.locationTypes;
+    }
+
+    /**
+     * Setter for locationTypes - A single transaction - for example, a sales invoice or purchase order.
+     */
+    public void setLocationTypes(ArrayList<TransactionLocationTypeModel> locationTypes) {
+        this.locationTypes = locationTypes;
+    }
+
+    
     private String taxOverrideReason;
 
     /**
@@ -707,6 +724,23 @@ public class TransactionModel {
      */
     public void setParameters(HashMap<String, String> parameters) {
         this.parameters = parameters;
+    }
+
+    
+    private Date taxDate;
+
+    /**
+     * Getter for taxDate - A single transaction - for example, a sales invoice or purchase order.
+     */
+    public Date getTaxDate() {
+        return this.taxDate;
+    }
+
+    /**
+     * Setter for taxDate - A single transaction - for example, a sales invoice or purchase order.
+     */
+    public void setTaxDate(Date taxDate) {
+        this.taxDate = taxDate;
     }
 
     

@@ -47,6 +47,23 @@ public class NexusModel {
     }
 
     
+    private Boolean streamlinedSalesTax;
+
+    /**
+     * Getter for streamlinedSalesTax - Represents a declaration of nexus within a particular taxing jurisdiction.
+     */
+    public Boolean getStreamlinedSalesTax() {
+        return this.streamlinedSalesTax;
+    }
+
+    /**
+     * Setter for streamlinedSalesTax - Represents a declaration of nexus within a particular taxing jurisdiction.
+     */
+    public void setStreamlinedSalesTax(Boolean streamlinedSalesTax) {
+        this.streamlinedSalesTax = streamlinedSalesTax;
+    }
+
+    
     private NexusTypeId nexusTypeId;
 
     /**

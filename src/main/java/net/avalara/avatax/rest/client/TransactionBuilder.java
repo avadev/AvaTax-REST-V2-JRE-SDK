@@ -230,18 +230,22 @@ public class TransactionBuilder {
     }
 
     public TransactionBuilder withLine(BigDecimal amount, BigDecimal quantity, String taxCode) {
-        return withLine(amount, quantity, taxCode, null, null, null, null);
+        return withLine(amount, quantity, taxCode, null, null, null, null, null);
     }
 
     public TransactionBuilder withLine(BigDecimal amount, BigDecimal quantity, String taxCode, String itemCode) {
-        return withLine(amount, quantity, taxCode, itemCode, null, null, null);
+        return withLine(amount, quantity, taxCode, itemCode, null, null, null, null);
     }
 
     public TransactionBuilder withLine(BigDecimal amount, BigDecimal quantity, String taxCode, String itemCode, String description) {
-        return withLine(amount, quantity, taxCode, itemCode, description, null, null);
+        return withLine(amount, quantity, taxCode, itemCode, description, null, null, null);
     }
 
     public TransactionBuilder withLine(BigDecimal amount, BigDecimal quantity, String taxCode, String itemCode, String description, String ref1, String ref2) {
+        return withLine(amount, quantity, taxCode, itemCode, description, ref1, ref2, null);
+    }
+
+    public TransactionBuilder withLine(BigDecimal amount, BigDecimal quantity, String taxCode, String itemCode, String description, String ref1, String ref2, String customerUsageType) {
         if (quantity == null) {
             quantity = BigDecimal.ONE;
         }
@@ -271,6 +275,10 @@ public class TransactionBuilder {
 
         if (ref2 != null && !ref2.isEmpty()) {
             line.setRef2(ref2);
+        }
+
+        if (customerUsageType != null && !customerUsageType.isEmpty()) {
+            line.setCustomerUsageType(customerUsageType);
         }
 
         this.model.getLines().add(line);

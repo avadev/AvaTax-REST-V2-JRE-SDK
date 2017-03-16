@@ -417,6 +417,31 @@ public enum ErrorCodeId {
     /**
      * No comment data provided
      */
+    DuplicateSystemTaxCode,
+    
+    /**
+     * No comment data provided
+     */
+    SSTOverridesNotAvailable,
+    
+    /**
+     * No comment data provided
+     */
+    NexusDateMismatch,
+    
+    /**
+     * No comment data provided
+     */
+    TechSupportAuditRequired,
+    
+    /**
+     * No comment data provided
+     */
+    NexusParentDateMismatch,
+    
+    /**
+     * No comment data provided
+     */
     BatchSalesAuditMustBeZippedError,
     
     /**
@@ -507,6 +532,16 @@ public enum ErrorCodeId {
     /**
      * No comment data provided
      */
+    MultiDocumentTypesError,
+    
+    /**
+     * No comment data provided
+     */
+    InvalidDocumentTypesToFetch,
+    
+    /**
+     * No comment data provided
+     */
     BadDocumentFetch,
     
     /**
@@ -538,6 +573,61 @@ public enum ErrorCodeId {
      * No comment data provided
      */
     ZTBCreateSubscriptionsFail,
+    
+    /**
+     * No comment data provided
+     */
+    FreeTrialNotAvailable,
+    
+    /**
+     * No comment data provided
+     */
+    InvalidDocumentStatusForRefund,
+    
+    /**
+     * No comment data provided
+     */
+    RefundTypeAndPercentageMismatch,
+    
+    /**
+     * No comment data provided
+     */
+    InvalidDocumentTypeForRefund,
+    
+    /**
+     * No comment data provided
+     */
+    RefundTypeAndLineMismatch,
+    
+    /**
+     * No comment data provided
+     */
+    NullRefundPercentageAndLines,
+    
+    /**
+     * No comment data provided
+     */
+    InvalidRefundType,
+    
+    /**
+     * No comment data provided
+     */
+    RefundPercentageForTaxOnly,
+    
+    /**
+     * No comment data provided
+     */
+    LineNoOutOfRange,
+    
+    /**
+     * No comment data provided
+     */
+    RefundPercentageOutOfRange,
+    
+    /**
+     * No comment data provided
+     */
+    TaxRateNotAvailableForFreeInThisCountry,
     
 
 }

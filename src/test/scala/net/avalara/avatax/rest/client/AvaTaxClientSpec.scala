@@ -85,6 +85,21 @@ class AvaTaxClientSpec extends fixture.FreeSpec {
         .withTaxOverride(TaxOverrideType.TaxDate, "TaxDate", java.math.BigDecimal.valueOf(0), dateFormat.parse("2017-02-16T00:00:00"))
         .withLine(java.math.BigDecimal.valueOf(10), java.math.BigDecimal.valueOf(1), "P0000000")
         .Create)
+      assert((try {
+        new TransactionBuilder(client.withSecurity(accountInfo.username, accountInfo.password), "DEFAULT", DocumentType.SalesOrder, "1")
+          .withAddress(TransactionAddressType.ShipTo, "!@#$ADFADSF100 ravine ln ne", "", "", "Bainb!@#$ADFADS", "WA", "ee981101", "US")
+          .withAddress(TransactionAddressType.ShipFrom, "100 RAVINE LN", "", "", "BAINBRIDGE ISLAND", "WA", "98110", "US")
+          .withAddress(TransactionAddressType.PointOfOrderAcceptance, "!@#$ADFADSF100 RAVINE LN", "", "", "B!@#$ADFADSFs", "WA", "e1122307", "US")
+          .withCode("DOCCODE")
+          .withDate(dateFormat.parse("2017-03-02T10:40:18"))
+          .withTaxOverride(TaxOverrideType.TaxDate, "TaxDate", java.math.BigDecimal.valueOf(0), dateFormat.parse("2017-02-16T00:00:00"))
+          .withLine(java.math.BigDecimal.valueOf(10), java.math.BigDecimal.valueOf(1), "P0000000")
+          .Create
+
+        new AvaTaxClientException("This never gets called")
+      } catch {
+        case ex: AvaTaxClientException ⇒ ex
+      }).getDocumentCode.equals("DOCCODE"))
     }
     "succesfully ping" in { accountInfo =>
       val pong = client.withSecurity(accountInfo.username, accountInfo.password).ping()

@@ -13,20 +13,37 @@ import java.util.HashMap;
  * Represents a region, province, or state within a country
  */
 public class IsoRegionModel {
-    private String countryCode;
+    private String name;
 
     /**
-     * Getter for countryCode - Represents a region, province, or state within a country
+     * Getter for name - Represents a region, province, or state within a country
      */
-    public String getCountryCode() {
-        return this.countryCode;
+    public String getName() {
+        return this.name;
     }
 
     /**
-     * Setter for countryCode - Represents a region, province, or state within a country
+     * Setter for name - Represents a region, province, or state within a country
      */
-    public void setCountryCode(String countryCode) {
-        this.countryCode = countryCode;
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    
+    private Boolean streamlinedSalesTax;
+
+    /**
+     * Getter for streamlinedSalesTax - Represents a region, province, or state within a country
+     */
+    public Boolean getStreamlinedSalesTax() {
+        return this.streamlinedSalesTax;
+    }
+
+    /**
+     * Setter for streamlinedSalesTax - Represents a region, province, or state within a country
+     */
+    public void setStreamlinedSalesTax(Boolean streamlinedSalesTax) {
+        this.streamlinedSalesTax = streamlinedSalesTax;
     }
 
     
@@ -47,20 +64,20 @@ public class IsoRegionModel {
     }
 
     
-    private String name;
+    private String countryCode;
 
     /**
-     * Getter for name - Represents a region, province, or state within a country
+     * Getter for countryCode - Represents a region, province, or state within a country
      */
-    public String getName() {
-        return this.name;
+    public String getCountryCode() {
+        return this.countryCode;
     }
 
     /**
-     * Setter for name - Represents a region, province, or state within a country
+     * Setter for countryCode - Represents a region, province, or state within a country
      */
-    public void setName(String name) {
-        this.name = name;
+    public void setCountryCode(String countryCode) {
+        this.countryCode = countryCode;
     }
 
     

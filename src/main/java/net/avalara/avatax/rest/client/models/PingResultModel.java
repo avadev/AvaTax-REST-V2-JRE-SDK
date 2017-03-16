@@ -13,6 +13,40 @@ import java.util.HashMap;
  * Ping Result Model
  */
 public class PingResultModel {
+    private AuthenticationTypeId authenticationType;
+
+    /**
+     * Getter for authenticationType - Ping Result Model
+     */
+    public AuthenticationTypeId getAuthenticationType() {
+        return this.authenticationType;
+    }
+
+    /**
+     * Setter for authenticationType - Ping Result Model
+     */
+    public void setAuthenticationType(AuthenticationTypeId authenticationType) {
+        this.authenticationType = authenticationType;
+    }
+
+    
+    private Integer authenticatedAccountId;
+
+    /**
+     * Getter for authenticatedAccountId - Ping Result Model
+     */
+    public Integer getAuthenticatedAccountId() {
+        return this.authenticatedAccountId;
+    }
+
+    /**
+     * Setter for authenticatedAccountId - Ping Result Model
+     */
+    public void setAuthenticatedAccountId(Integer authenticatedAccountId) {
+        this.authenticatedAccountId = authenticatedAccountId;
+    }
+
+    
     private String version;
 
     /**
@@ -27,6 +61,23 @@ public class PingResultModel {
      */
     public void setVersion(String version) {
         this.version = version;
+    }
+
+    
+    private String authenticatedUserName;
+
+    /**
+     * Getter for authenticatedUserName - Ping Result Model
+     */
+    public String getAuthenticatedUserName() {
+        return this.authenticatedUserName;
+    }
+
+    /**
+     * Setter for authenticatedUserName - Ping Result Model
+     */
+    public void setAuthenticatedUserName(String authenticatedUserName) {
+        this.authenticatedUserName = authenticatedUserName;
     }
 
     
@@ -47,37 +98,20 @@ public class PingResultModel {
     }
 
     
-    private AuthenticationTypeId authenticationType;
+    private Integer authenticatedUserId;
 
     /**
-     * Getter for authenticationType - Ping Result Model
+     * Getter for authenticatedUserId - Ping Result Model
      */
-    public AuthenticationTypeId getAuthenticationType() {
-        return this.authenticationType;
+    public Integer getAuthenticatedUserId() {
+        return this.authenticatedUserId;
     }
 
     /**
-     * Setter for authenticationType - Ping Result Model
+     * Setter for authenticatedUserId - Ping Result Model
      */
-    public void setAuthenticationType(AuthenticationTypeId authenticationType) {
-        this.authenticationType = authenticationType;
-    }
-
-    
-    private String authenticatedUserName;
-
-    /**
-     * Getter for authenticatedUserName - Ping Result Model
-     */
-    public String getAuthenticatedUserName() {
-        return this.authenticatedUserName;
-    }
-
-    /**
-     * Setter for authenticatedUserName - Ping Result Model
-     */
-    public void setAuthenticatedUserName(String authenticatedUserName) {
-        this.authenticatedUserName = authenticatedUserName;
+    public void setAuthenticatedUserId(Integer authenticatedUserId) {
+        this.authenticatedUserId = authenticatedUserId;
     }
 
     

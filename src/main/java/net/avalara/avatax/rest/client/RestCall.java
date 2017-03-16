@@ -1,6 +1,7 @@
 package net.avalara.avatax.rest.client;
 
 import com.google.gson.reflect.TypeToken;
+import net.avalara.avatax.rest.client.models.CreateTransactionModel;
 import net.avalara.avatax.rest.client.models.ErrorResult;
 import net.avalara.avatax.rest.client.serializer.JsonSerializer;
 import org.apache.http.HttpEntity;
@@ -21,6 +22,7 @@ public class RestCall<T> implements Callable<T> {
     private String appName;
     private String appVersion;
     private String machineName;
+    private Object model;
     private TypeToken<T> typeToken;
 
     private RestCall(String appName, String appVersion, String machineName, String environmentUrl, String method, AvaTaxPath path, Object model, TypeToken<T> typeToken, CloseableHttpClient client) {
@@ -29,6 +31,7 @@ public class RestCall<T> implements Callable<T> {
         this.appVersion = appVersion;
         this.machineName = machineName;
         this.typeToken = typeToken;
+        this.model = model;
 
         if (method == "post") {
             this.request = new HttpPost(environmentUrl + path.toString());
@@ -77,7 +80,7 @@ public class RestCall<T> implements Callable<T> {
             HttpEntity entity = response.getEntity();
 
             if (response.getStatusLine().getStatusCode() != 200 && response.getStatusLine().getStatusCode() != 201) {
-                throw new AvaTaxClientException((ErrorResult)JsonSerializer.DeserializeObject(EntityUtils.toString(entity), ErrorResult.class));
+                throw new AvaTaxClientException((ErrorResult) JsonSerializer.DeserializeObject(EntityUtils.toString(entity), ErrorResult.class), model);
             }
 
             if (entity != null) {

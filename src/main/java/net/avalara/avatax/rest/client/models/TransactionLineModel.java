@@ -251,6 +251,23 @@ public class TransactionLineModel {
     }
 
     
+    private ArrayList<TransactionLineLocationTypeModel> lineLocationTypes;
+
+    /**
+     * Getter for lineLocationTypes - One line item on this transaction.
+     */
+    public ArrayList<TransactionLineLocationTypeModel> getLineLocationTypes() {
+        return this.lineLocationTypes;
+    }
+
+    /**
+     * Setter for lineLocationTypes - One line item on this transaction.
+     */
+    public void setLineLocationTypes(ArrayList<TransactionLineLocationTypeModel> lineLocationTypes) {
+        this.lineLocationTypes = lineLocationTypes;
+    }
+
+    
     private Date reportingDate;
 
     /**

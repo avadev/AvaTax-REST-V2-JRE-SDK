@@ -64,19 +64,19 @@ public class PointOfSaleDataRequestModel {
     }
 
     
-    private Integer partnerId;
+    private PointOfSalePartnerId partnerId;
 
     /**
      * Getter for partnerId - Point-of-Sale Data Request Model
      */
-    public Integer getPartnerId() {
+    public PointOfSalePartnerId getPartnerId() {
         return this.partnerId;
     }
 
     /**
      * Setter for partnerId - Point-of-Sale Data Request Model
      */
-    public void setPartnerId(Integer partnerId) {
+    public void setPartnerId(PointOfSalePartnerId partnerId) {
         this.partnerId = partnerId;
     }
 

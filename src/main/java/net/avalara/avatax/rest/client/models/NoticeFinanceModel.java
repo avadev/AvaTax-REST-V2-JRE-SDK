@@ -183,6 +183,23 @@ public class NoticeFinanceModel {
     }
 
     
+    private ResourceFileUploadRequestModel attachmentUploadRequest;
+
+    /**
+     * Getter for attachmentUploadRequest - Represents estimated financial results from responding to a tax notice.
+     */
+    public ResourceFileUploadRequestModel getAttachmentUploadRequest() {
+        return this.attachmentUploadRequest;
+    }
+
+    /**
+     * Setter for attachmentUploadRequest - Represents estimated financial results from responding to a tax notice.
+     */
+    public void setAttachmentUploadRequest(ResourceFileUploadRequestModel attachmentUploadRequest) {
+        this.attachmentUploadRequest = attachmentUploadRequest;
+    }
+
+    
     private BigDecimal taxAbated;
 
     /**
@@ -251,19 +268,19 @@ public class NoticeFinanceModel {
     }
 
     
-    private Integer resourceFileId;
+    private Long resourceFileId;
 
     /**
      * Getter for resourceFileId - Represents estimated financial results from responding to a tax notice.
      */
-    public Integer getResourceFileId() {
+    public Long getResourceFileId() {
         return this.resourceFileId;
     }
 
     /**
      * Setter for resourceFileId - Represents estimated financial results from responding to a tax notice.
      */
-    public void setResourceFileId(Integer resourceFileId) {
+    public void setResourceFileId(Long resourceFileId) {
         this.resourceFileId = resourceFileId;
     }
 

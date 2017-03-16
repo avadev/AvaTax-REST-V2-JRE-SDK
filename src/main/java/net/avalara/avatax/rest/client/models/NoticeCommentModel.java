@@ -183,6 +183,23 @@ public class NoticeCommentModel {
     }
 
     
+    private ResourceFileUploadRequestModel attachmentUploadRequest;
+
+    /**
+     * Getter for attachmentUploadRequest - Represents communication between Avalara and the company regarding the processing of a tax notice.
+     */
+    public ResourceFileUploadRequestModel getAttachmentUploadRequest() {
+        return this.attachmentUploadRequest;
+    }
+
+    /**
+     * Setter for attachmentUploadRequest - Represents communication between Avalara and the company regarding the processing of a tax notice.
+     */
+    public void setAttachmentUploadRequest(ResourceFileUploadRequestModel attachmentUploadRequest) {
+        this.attachmentUploadRequest = attachmentUploadRequest;
+    }
+
+    
     private Integer modifiedUserId;
 
     /**
@@ -217,19 +234,19 @@ public class NoticeCommentModel {
     }
 
     
-    private Integer resourceFileId;
+    private Long resourceFileId;
 
     /**
      * Getter for resourceFileId - Represents communication between Avalara and the company regarding the processing of a tax notice.
      */
-    public Integer getResourceFileId() {
+    public Long getResourceFileId() {
         return this.resourceFileId;
     }
 
     /**
      * Setter for resourceFileId - Represents communication between Avalara and the company regarding the processing of a tax notice.
      */
-    public void setResourceFileId(Integer resourceFileId) {
+    public void setResourceFileId(Long resourceFileId) {
         this.resourceFileId = resourceFileId;
     }
 
