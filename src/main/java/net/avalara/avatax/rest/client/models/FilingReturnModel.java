@@ -404,6 +404,40 @@ public class FilingReturnModel {
     }
 
     
+    private BigDecimal totalAdjustments;
+
+    /**
+     * Getter for totalAdjustments - Returns
+     */
+    public BigDecimal getTotalAdjustments() {
+        return this.totalAdjustments;
+    }
+
+    /**
+     * Setter for totalAdjustments - Returns
+     */
+    public void setTotalAdjustments(BigDecimal totalAdjustments) {
+        this.totalAdjustments = totalAdjustments;
+    }
+
+    
+    private BigDecimal totalAugmentations;
+
+    /**
+     * Getter for totalAugmentations - Returns
+     */
+    public BigDecimal getTotalAugmentations() {
+        return this.totalAugmentations;
+    }
+
+    /**
+     * Setter for totalAugmentations - Returns
+     */
+    public void setTotalAugmentations(BigDecimal totalAugmentations) {
+        this.totalAugmentations = totalAugmentations;
+    }
+
+    
 
 
     /**

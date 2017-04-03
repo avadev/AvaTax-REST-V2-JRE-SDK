@@ -30,6 +30,23 @@ public class FilingRegionModel {
     }
 
     
+    private BigDecimal taxDueAmount;
+
+    /**
+     * Getter for taxDueAmount - Regions
+     */
+    public BigDecimal getTaxDueAmount() {
+        return this.taxDueAmount;
+    }
+
+    /**
+     * Setter for taxDueAmount - Regions
+     */
+    public void setTaxDueAmount(BigDecimal taxDueAmount) {
+        this.taxDueAmount = taxDueAmount;
+    }
+
+    
     private String country;
 
     /**
@@ -78,6 +95,23 @@ public class FilingRegionModel {
      */
     public void setId(Long id) {
         this.id = id;
+    }
+
+    
+    private BigDecimal totalRemittanceAmount;
+
+    /**
+     * Getter for totalRemittanceAmount - Regions
+     */
+    public BigDecimal getTotalRemittanceAmount() {
+        return this.totalRemittanceAmount;
+    }
+
+    /**
+     * Setter for totalRemittanceAmount - Regions
+     */
+    public void setTotalRemittanceAmount(BigDecimal totalRemittanceAmount) {
+        this.totalRemittanceAmount = totalRemittanceAmount;
     }
 
     
@@ -299,23 +333,6 @@ public class FilingRegionModel {
      */
     public void setSuggestReturns(ArrayList<FilingsCheckupSuggestedFormModel> suggestReturns) {
         this.suggestReturns = suggestReturns;
-    }
-
-    
-    private BigDecimal taxAmountDue;
-
-    /**
-     * Getter for taxAmountDue - Regions
-     */
-    public BigDecimal getTaxAmountDue() {
-        return this.taxAmountDue;
-    }
-
-    /**
-     * Setter for taxAmountDue - Regions
-     */
-    public void setTaxAmountDue(BigDecimal taxAmountDue) {
-        this.taxAmountDue = taxAmountDue;
     }
 
     

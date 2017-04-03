@@ -62,7 +62,7 @@ this override object will be assigned to the list of jurisdictions designated in
     }
 
     
-    private BoundaryLevelForJO boundaryLevel;
+    private BoundaryLevel boundaryLevel;
 
     /**
      * Getter for boundaryLevel - Represents an override of tax jurisdictions for a specific address.
@@ -70,7 +70,7 @@ this override object will be assigned to the list of jurisdictions designated in
 During the time period represented by EffDate through EndDate, all tax decisions for addresses matching
 this override object will be assigned to the list of jurisdictions designated in this object.
      */
-    public BoundaryLevelForJO getBoundaryLevel() {
+    public BoundaryLevel getBoundaryLevel() {
         return this.boundaryLevel;
     }
 
@@ -80,7 +80,7 @@ this override object will be assigned to the list of jurisdictions designated in
 During the time period represented by EffDate through EndDate, all tax decisions for addresses matching
 this override object will be assigned to the list of jurisdictions designated in this object.
      */
-    public void setBoundaryLevel(BoundaryLevelForJO boundaryLevel) {
+    public void setBoundaryLevel(BoundaryLevel boundaryLevel) {
         this.boundaryLevel = boundaryLevel;
     }
 

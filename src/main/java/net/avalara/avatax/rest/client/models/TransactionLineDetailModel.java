@@ -302,6 +302,23 @@ public class TransactionLineDetailModel {
     }
 
     
+    private String rateTypeCode;
+
+    /**
+     * Getter for rateTypeCode - An individual tax detail element.  Represents the amount of tax calculated for a particular jurisdiction, for a particular line in an invoice.
+     */
+    public String getRateTypeCode() {
+        return this.rateTypeCode;
+    }
+
+    /**
+     * Setter for rateTypeCode - An individual tax detail element.  Represents the amount of tax calculated for a particular jurisdiction, for a particular line in an invoice.
+     */
+    public void setRateTypeCode(String rateTypeCode) {
+        this.rateTypeCode = rateTypeCode;
+    }
+
+    
     private Long id;
 
     /**

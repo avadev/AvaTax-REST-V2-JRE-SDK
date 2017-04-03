@@ -346,11 +346,11 @@ public class TransactionBuilder {
     }
 
     public Future<TransactionModel> CreateAsync() {
-        return this.client.createTransactionAsync(this.model);
+        return this.client.createTransactionAsync(null, this.model);
     }
 
     public TransactionModel Create() throws Exception {
-        return this.client.createTransaction(this.model);
+        return this.client.createTransaction(null, this.model);
     }
 
     public AdjustTransactionModel CreateAdjustmentRequest(String description, AdjustmentReason reason) {
