@@ -115,6 +115,23 @@ public class CycleAddOptionModel {
     }
 
     
+    private FilingFrequencyId filingFrequencyId;
+
+    /**
+     * Getter for filingFrequencyId - Model with options for adding a new filing calendar
+     */
+    public FilingFrequencyId getFilingFrequencyId() {
+        return this.filingFrequencyId;
+    }
+
+    /**
+     * Setter for filingFrequencyId - Model with options for adding a new filing calendar
+     */
+    public void setFilingFrequencyId(FilingFrequencyId filingFrequencyId) {
+        this.filingFrequencyId = filingFrequencyId;
+    }
+
+    
     private Boolean available;
 
     /**

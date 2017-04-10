@@ -217,6 +217,23 @@ public class TaxRuleModel {
     }
 
     
+    private String rateTypeCode;
+
+    /**
+     * Getter for rateTypeCode - Represents a tax rule that changes the behavior of Avalara's tax engine for certain products in certain jurisdictions.
+     */
+    public String getRateTypeCode() {
+        return this.rateTypeCode;
+    }
+
+    /**
+     * Setter for rateTypeCode - Represents a tax rule that changes the behavior of Avalara's tax engine for certain products in certain jurisdictions.
+     */
+    public void setRateTypeCode(String rateTypeCode) {
+        this.rateTypeCode = rateTypeCode;
+    }
+
+    
     private Integer id;
 
     /**

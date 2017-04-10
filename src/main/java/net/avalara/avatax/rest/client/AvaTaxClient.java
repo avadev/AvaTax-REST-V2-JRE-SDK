@@ -876,6 +876,21 @@ public class AvaTaxClient {
     }
     
     /**
+     * Retrieve the full list of rate types for each country
+     */
+    public Future<FetchResult<RateTypeModel>> listRateTypesByCountryAsync(String country) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/countries/{country}/ratetypes");
+        path.applyField("country", country);
+        return this.threadPool.submit((RestCall<FetchResult<RateTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<RateTypeModel>>(){}));
+    }
+
+    public FetchResult<RateTypeModel> listRateTypesByCountry(String country) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/countries/{country}/ratetypes");
+        path.applyField("country", country);
+        return ((RestCall<FetchResult<RateTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<RateTypeModel>>(){})).call();
+    }
+    
+    /**
      * List all ISO 3166 regions
      */
     public Future<FetchResult<IsoRegionModel>> listRegionsAsync() {
@@ -1500,17 +1515,17 @@ public class AvaTaxClient {
     /**
      * Retrieve a single attachment for a filing
      */
-    public Future<HashMap<String, String>> getFilingAttachmentAsync(Integer companyId, Long worksheetId) {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{worksheetId}/attachment");
+    public Future<HashMap<String, String>> getFilingAttachmentAsync(Integer companyId, Long filingId) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{filingId}/attachment");
         path.applyField("companyId", companyId);
-        path.applyField("worksheetId", worksheetId);
+        path.applyField("filingId", filingId);
         return this.threadPool.submit((RestCall<HashMap<String, String>>)restCallFactory.createRestCall("get", path, null, new TypeToken<HashMap<String, String>>(){}));
     }
 
-    public HashMap<String, String> getFilingAttachment(Integer companyId, Long worksheetId) throws Exception {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{worksheetId}/attachment");
+    public HashMap<String, String> getFilingAttachment(Integer companyId, Long filingId) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{filingId}/attachment");
         path.applyField("companyId", companyId);
-        path.applyField("worksheetId", worksheetId);
+        path.applyField("filingId", filingId);
         return ((RestCall<HashMap<String, String>>)restCallFactory.createRestCall("get", path, null, new TypeToken<HashMap<String, String>>(){})).call();
     }
     
@@ -1723,18 +1738,18 @@ public class AvaTaxClient {
     /**
      * Edit an augmentation for a given filing.
      */
-    public Future<FilingAugmentationModel> updateReturnAugmentationAsync(Integer companyId, Long id, FilingAugmentationModel model) {
+    public Future<FilingModel> updateReturnAugmentationAsync(Integer companyId, Long id, FilingAugmentationModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/augment/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<FilingAugmentationModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<FilingAugmentationModel>(){}));
+        return this.threadPool.submit((RestCall<FilingModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<FilingModel>(){}));
     }
 
-    public FilingAugmentationModel updateReturnAugmentation(Integer companyId, Long id, FilingAugmentationModel model) throws Exception {
+    public FilingModel updateReturnAugmentation(Integer companyId, Long id, FilingAugmentationModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/augment/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return ((RestCall<FilingAugmentationModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<FilingAugmentationModel>(){})).call();
+        return ((RestCall<FilingModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<FilingModel>(){})).call();
     }
     
 //endregion
@@ -2070,7 +2085,7 @@ public class AvaTaxClient {
     /**
      * Point of sale data file generation
      */
-    public Future<String> buildPointOfSaleDataForLocationAsync(Integer companyId, Integer id, Date date, PointOfSaleFileType format, PointOfSalePartnerId partnerId, Boolean includeJurisCodes) {
+    public Future<HashMap<String, String>> buildPointOfSaleDataForLocationAsync(Integer companyId, Integer id, Date date, PointOfSaleFileType format, PointOfSalePartnerId partnerId, Boolean includeJurisCodes) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/locations/{id}/pointofsaledata");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
@@ -2078,10 +2093,10 @@ public class AvaTaxClient {
         path.addQuery("format", format);
         path.addQuery("partnerId", partnerId);
         path.addQuery("includeJurisCodes", includeJurisCodes);
-        return this.threadPool.submit((RestCall<String>)restCallFactory.createRestCall("get", path, null, new TypeToken<String>(){}));
+        return this.threadPool.submit((RestCall<HashMap<String, String>>)restCallFactory.createRestCall("get", path, null, new TypeToken<HashMap<String, String>>(){}));
     }
 
-    public String buildPointOfSaleDataForLocation(Integer companyId, Integer id, Date date, PointOfSaleFileType format, PointOfSalePartnerId partnerId, Boolean includeJurisCodes) throws Exception {
+    public HashMap<String, String> buildPointOfSaleDataForLocation(Integer companyId, Integer id, Date date, PointOfSaleFileType format, PointOfSalePartnerId partnerId, Boolean includeJurisCodes) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/locations/{id}/pointofsaledata");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
@@ -2089,7 +2104,7 @@ public class AvaTaxClient {
         path.addQuery("format", format);
         path.addQuery("partnerId", partnerId);
         path.addQuery("includeJurisCodes", includeJurisCodes);
-        return ((RestCall<String>)restCallFactory.createRestCall("get", path, null, new TypeToken<String>(){})).call();
+        return ((RestCall<HashMap<String, String>>)restCallFactory.createRestCall("get", path, null, new TypeToken<HashMap<String, String>>(){})).call();
     }
     
     /**
@@ -2664,14 +2679,14 @@ public class AvaTaxClient {
     /**
      * Point of sale data file generation
      */
-    public Future<String> buildPointOfSaleDataFileAsync(PointOfSaleDataRequestModel model) {
+    public Future<HashMap<String, String>> buildPointOfSaleDataFileAsync(PointOfSaleDataRequestModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/pointofsaledata/build");
-        return this.threadPool.submit((RestCall<String>)restCallFactory.createRestCall("post", path, model, new TypeToken<String>(){}));
+        return this.threadPool.submit((RestCall<HashMap<String, String>>)restCallFactory.createRestCall("post", path, model, new TypeToken<HashMap<String, String>>(){}));
     }
 
-    public String buildPointOfSaleDataFile(PointOfSaleDataRequestModel model) throws Exception {
+    public HashMap<String, String> buildPointOfSaleDataFile(PointOfSaleDataRequestModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/pointofsaledata/build");
-        return ((RestCall<String>)restCallFactory.createRestCall("post", path, model, new TypeToken<String>(){})).call();
+        return ((RestCall<HashMap<String, String>>)restCallFactory.createRestCall("post", path, model, new TypeToken<HashMap<String, String>>(){})).call();
     }
     
 //endregion
@@ -3373,13 +3388,15 @@ public class AvaTaxClient {
     /**
      * Create a new transaction
      */
-    public Future<TransactionModel> createTransactionAsync(CreateTransactionModel model) {
+    public Future<TransactionModel> createTransactionAsync(String $include, CreateTransactionModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/transactions/create");
+        path.addQuery("$include", $include);
         return this.threadPool.submit((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<TransactionModel>(){}));
     }
 
-    public TransactionModel createTransaction(CreateTransactionModel model) throws Exception {
+    public TransactionModel createTransaction(String $include, CreateTransactionModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/transactions/create");
+        path.addQuery("$include", $include);
         return ((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<TransactionModel>(){})).call();
     }
     
@@ -3485,17 +3502,19 @@ public class AvaTaxClient {
     /**
      * Create a refund for a transaction
      */
-    public Future<TransactionModel> refundTransactionAsync(String companyCode, String transactionCode, RefundTransactionModel model) {
+    public Future<TransactionModel> refundTransactionAsync(String companyCode, String transactionCode, String $include, RefundTransactionModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyCode}/transactions/{transactionCode}/refund");
         path.applyField("companyCode", companyCode);
         path.applyField("transactionCode", transactionCode);
+        path.addQuery("$include", $include);
         return this.threadPool.submit((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<TransactionModel>(){}));
     }
 
-    public TransactionModel refundTransaction(String companyCode, String transactionCode, RefundTransactionModel model) throws Exception {
+    public TransactionModel refundTransaction(String companyCode, String transactionCode, String $include, RefundTransactionModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyCode}/transactions/{transactionCode}/refund");
         path.applyField("companyCode", companyCode);
         path.applyField("transactionCode", transactionCode);
+        path.addQuery("$include", $include);
         return ((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<TransactionModel>(){})).call();
     }
     
@@ -3792,14 +3811,14 @@ public class AvaTaxClient {
     /**
      * List all services to which the current user is subscribed
      */
-    public Future<SubscriptionModel> listMySubscriptionsAsync() {
+    public Future<FetchResult<SubscriptionModel>> listMySubscriptionsAsync() {
         AvaTaxPath path = new AvaTaxPath("/api/v2/utilities/subscriptions");
-        return this.threadPool.submit((RestCall<SubscriptionModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<SubscriptionModel>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<SubscriptionModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<SubscriptionModel>>(){}));
     }
 
-    public SubscriptionModel listMySubscriptions() throws Exception {
+    public FetchResult<SubscriptionModel> listMySubscriptions() throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/utilities/subscriptions");
-        return ((RestCall<SubscriptionModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<SubscriptionModel>(){})).call();
+        return ((RestCall<FetchResult<SubscriptionModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<SubscriptionModel>>(){})).call();
     }
     
     /**

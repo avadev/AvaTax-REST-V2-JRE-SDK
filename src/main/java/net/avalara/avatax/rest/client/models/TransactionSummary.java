@@ -166,6 +166,23 @@ public class TransactionSummary {
     }
 
     
+    private String rateTypeCode;
+
+    /**
+     * Getter for rateTypeCode - Summary information about an overall transaction.
+     */
+    public String getRateTypeCode() {
+        return this.rateTypeCode;
+    }
+
+    /**
+     * Setter for rateTypeCode - Summary information about an overall transaction.
+     */
+    public void setRateTypeCode(String rateTypeCode) {
+        this.rateTypeCode = rateTypeCode;
+    }
+
+    
     private BigDecimal taxCalculated;
 
     /**

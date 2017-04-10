@@ -122,6 +122,16 @@ public enum ErrorCodeId {
     /**
      * No comment data provided
      */
+    DateFormatError,
+    
+    /**
+     * No comment data provided
+     */
+    NoDefaultCompany,
+    
+    /**
+     * No comment data provided
+     */
     AuthenticationException,
     
     /**
@@ -317,6 +327,11 @@ public enum ErrorCodeId {
     /**
      * No comment data provided
      */
+    InvalidRateTypeCode,
+    
+    /**
+     * No comment data provided
+     */
     RateTypeNotSupported,
     
     /**
@@ -438,6 +453,16 @@ public enum ErrorCodeId {
      * No comment data provided
      */
     NexusParentDateMismatch,
+    
+    /**
+     * No comment data provided
+     */
+    BearerTokenParseUserIdError,
+    
+    /**
+     * No comment data provided
+     */
+    RetrieveUserError,
     
     /**
      * No comment data provided

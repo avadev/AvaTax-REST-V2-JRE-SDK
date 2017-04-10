@@ -89,6 +89,11 @@ public enum ServiceTypeId {
      */
     AvaLodging,
     
+    /**
+     * No comment data provided
+     */
+    AvaBottle,
+    
 
 }
     
