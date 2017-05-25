@@ -30,6 +30,23 @@ public class FilingModel {
     }
 
     
+    private Date modifiedDate;
+
+    /**
+     * Getter for modifiedDate - Represents a listing of all tax calculation data for filings and for accruing to future filings.
+     */
+    public Date getModifiedDate() {
+        return this.modifiedDate;
+    }
+
+    /**
+     * Setter for modifiedDate - Represents a listing of all tax calculation data for filings and for accruing to future filings.
+     */
+    public void setModifiedDate(Date modifiedDate) {
+        this.modifiedDate = modifiedDate;
+    }
+
+    
     private Short year;
 
     /**
@@ -61,6 +78,40 @@ public class FilingModel {
      */
     public void setId(Long id) {
         this.id = id;
+    }
+
+    
+    private Integer modifiedUserId;
+
+    /**
+     * Getter for modifiedUserId - Represents a listing of all tax calculation data for filings and for accruing to future filings.
+     */
+    public Integer getModifiedUserId() {
+        return this.modifiedUserId;
+    }
+
+    /**
+     * Setter for modifiedUserId - Represents a listing of all tax calculation data for filings and for accruing to future filings.
+     */
+    public void setModifiedUserId(Integer modifiedUserId) {
+        this.modifiedUserId = modifiedUserId;
+    }
+
+    
+    private Integer createdUserId;
+
+    /**
+     * Getter for createdUserId - Represents a listing of all tax calculation data for filings and for accruing to future filings.
+     */
+    public Integer getCreatedUserId() {
+        return this.createdUserId;
+    }
+
+    /**
+     * Setter for createdUserId - Represents a listing of all tax calculation data for filings and for accruing to future filings.
+     */
+    public void setCreatedUserId(Integer createdUserId) {
+        this.createdUserId = createdUserId;
     }
 
     
@@ -112,6 +163,23 @@ public class FilingModel {
      */
     public void setMonth(Byte month) {
         this.month = month;
+    }
+
+    
+    private Date createdDate;
+
+    /**
+     * Getter for createdDate - Represents a listing of all tax calculation data for filings and for accruing to future filings.
+     */
+    public Date getCreatedDate() {
+        return this.createdDate;
+    }
+
+    /**
+     * Setter for createdDate - Represents a listing of all tax calculation data for filings and for accruing to future filings.
+     */
+    public void setCreatedDate(Date createdDate) {
+        this.createdDate = createdDate;
     }
 
     

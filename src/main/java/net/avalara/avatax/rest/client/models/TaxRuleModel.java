@@ -166,6 +166,23 @@ public class TaxRuleModel {
     }
 
     
+    private String taxTypeGroup;
+
+    /**
+     * Getter for taxTypeGroup - Represents a tax rule that changes the behavior of Avalara's tax engine for certain products in certain jurisdictions.
+     */
+    public String getTaxTypeGroup() {
+        return this.taxTypeGroup;
+    }
+
+    /**
+     * Setter for taxTypeGroup - Represents a tax rule that changes the behavior of Avalara's tax engine for certain products in certain jurisdictions.
+     */
+    public void setTaxTypeGroup(String taxTypeGroup) {
+        this.taxTypeGroup = taxTypeGroup;
+    }
+
+    
     private Integer taxCodeId;
 
     /**
@@ -265,6 +282,23 @@ public class TaxRuleModel {
      */
     public void setStateFIPS(String stateFIPS) {
         this.stateFIPS = stateFIPS;
+    }
+
+    
+    private Integer rateTypeTaxTypeMappingId;
+
+    /**
+     * Getter for rateTypeTaxTypeMappingId - Represents a tax rule that changes the behavior of Avalara's tax engine for certain products in certain jurisdictions.
+     */
+    public Integer getRateTypeTaxTypeMappingId() {
+        return this.rateTypeTaxTypeMappingId;
+    }
+
+    /**
+     * Setter for rateTypeTaxTypeMappingId - Represents a tax rule that changes the behavior of Avalara's tax engine for certain products in certain jurisdictions.
+     */
+    public void setRateTypeTaxTypeMappingId(Integer rateTypeTaxTypeMappingId) {
+        this.rateTypeTaxTypeMappingId = rateTypeTaxTypeMappingId;
     }
 
     
@@ -489,6 +523,23 @@ public class TaxRuleModel {
     }
 
     
+    private Integer taxTypeMappingId;
+
+    /**
+     * Getter for taxTypeMappingId - Represents a tax rule that changes the behavior of Avalara's tax engine for certain products in certain jurisdictions.
+     */
+    public Integer getTaxTypeMappingId() {
+        return this.taxTypeMappingId;
+    }
+
+    /**
+     * Setter for taxTypeMappingId - Represents a tax rule that changes the behavior of Avalara's tax engine for certain products in certain jurisdictions.
+     */
+    public void setTaxTypeMappingId(Integer taxTypeMappingId) {
+        this.taxTypeMappingId = taxTypeMappingId;
+    }
+
+    
     private Integer companyId;
 
     /**
@@ -520,6 +571,23 @@ public class TaxRuleModel {
      */
     public void setCreatedDate(Date createdDate) {
         this.createdDate = createdDate;
+    }
+
+    
+    private String taxSubType;
+
+    /**
+     * Getter for taxSubType - Represents a tax rule that changes the behavior of Avalara's tax engine for certain products in certain jurisdictions.
+     */
+    public String getTaxSubType() {
+        return this.taxSubType;
+    }
+
+    /**
+     * Setter for taxSubType - Represents a tax rule that changes the behavior of Avalara's tax engine for certain products in certain jurisdictions.
+     */
+    public void setTaxSubType(String taxSubType) {
+        this.taxSubType = taxSubType;
     }
 
     

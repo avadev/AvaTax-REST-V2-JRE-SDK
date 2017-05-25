@@ -467,6 +467,46 @@ public enum ErrorCodeId {
     /**
      * No comment data provided
      */
+    InvalidConfigurationSetting,
+    
+    /**
+     * No comment data provided
+     */
+    InvalidConfigurationValue,
+    
+    /**
+     * No comment data provided
+     */
+    InvalidEnumValue,
+    
+    /**
+     * No comment data provided
+     */
+    TaxCodeAssociatedTaxRule,
+    
+    /**
+     * No comment data provided
+     */
+    CannotSwitchAccountId,
+    
+    /**
+     * No comment data provided
+     */
+    RequestIncomplete,
+    
+    /**
+     * No comment data provided
+     */
+    AccountNotNew,
+    
+    /**
+     * No comment data provided
+     */
+    PasswordLengthInvalid,
+    
+    /**
+     * No comment data provided
+     */
     BatchSalesAuditMustBeZippedError,
     
     /**
@@ -653,6 +693,51 @@ public enum ErrorCodeId {
      * No comment data provided
      */
     TaxRateNotAvailableForFreeInThisCountry,
+    
+    /**
+     * No comment data provided
+     */
+    FilingCalendarCannotBeDeleted,
+    
+    /**
+     * No comment data provided
+     */
+    InvalidEffectiveDate,
+    
+    /**
+     * No comment data provided
+     */
+    NonOutletForm,
+    
+    /**
+     * No comment data provided
+     */
+    QuestionNotNeededForThisAddress,
+    
+    /**
+     * No comment data provided
+     */
+    QuestionNotValidForThisAddress,
+    
+    /**
+     * No comment data provided
+     */
+    CannotModifyLockedTransaction,
+    
+    /**
+     * No comment data provided
+     */
+    LineAlreadyExists,
+    
+    /**
+     * No comment data provided
+     */
+    LineDoesNotExist,
+    
+    /**
+     * No comment data provided
+     */
+    LinesNotSpecified,
     
 
 }

@@ -19,6 +19,11 @@ public enum OutletTypeId {
      */
     Duplicate,
     
+    /**
+     * No comment data provided
+     */
+    Consolidated,
+    
 
 }
     

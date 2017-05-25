@@ -30,6 +30,23 @@ public class NexusModel {
     }
 
     
+    private String nexusTaxTypeGroup;
+
+    /**
+     * Getter for nexusTaxTypeGroup - Represents a declaration of nexus within a particular taxing jurisdiction.
+     */
+    public String getNexusTaxTypeGroup() {
+        return this.nexusTaxTypeGroup;
+    }
+
+    /**
+     * Setter for nexusTaxTypeGroup - Represents a declaration of nexus within a particular taxing jurisdiction.
+     */
+    public void setNexusTaxTypeGroup(String nexusTaxTypeGroup) {
+        this.nexusTaxTypeGroup = nexusTaxTypeGroup;
+    }
+
+    
     private String jurisCode;
 
     /**

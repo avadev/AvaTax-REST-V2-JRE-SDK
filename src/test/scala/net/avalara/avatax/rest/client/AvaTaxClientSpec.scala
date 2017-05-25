@@ -1,7 +1,7 @@
 package net.avalara.avatax.rest.client
 
 import net.avalara.avatax.rest.client.enums._
-import net.avalara.avatax.rest.client.models.{AddressInfo, CreateTransactionModel}
+import net.avalara.avatax.rest.client.models.CreateTransactionModel
 import org.scalatest.fixture
 
 import scala.collection.JavaConverters._
@@ -41,7 +41,7 @@ class AvaTaxClientSpec extends fixture.FreeSpec {
     }
     "return the complete list of countries" in { accountInfo =>
       val countries = client.withSecurity(accountInfo.username, accountInfo.password).listCountries().getValue.asScala
-      assert(countries.length == 253)
+      assert(countries.length == 254)
     }
     "return a nexus by its address" in { accountInfo =>
       val nexusModel = client.withSecurity(accountInfo.username, accountInfo.password).listNexusByAddress("100 ravine ln ne", "", "", "Bainbridge Island", "WA", "98110", "US").getValue.asScala
@@ -55,10 +55,17 @@ class AvaTaxClientSpec extends fixture.FreeSpec {
       val transaction = new TransactionBuilder(client.withSecurity(accountInfo.username, accountInfo.password), "DEFAULT", DocumentType.SalesOrder, "1")
         .withAddress(TransactionAddressType.ShipFrom, "100 ravine ln ne", "", "", "Bainbridge Island", "WA", "98110", "US")
         .withAddress(TransactionAddressType.ShipTo, "100 ravine ln ne", "", "", "Bainbridge Island", "WA", "98110", "US")
-        .withLine(java.math.BigDecimal.valueOf(1000), java.math.BigDecimal.ONE, "P0000000")
+        .withLine(java.math.BigDecimal.valueOf(1000), java.math.BigDecimal.ONE, "P0000000", null, null, "ref1", "ref2")
         .Create()
 
+      val lines = transaction.getLines()
+      val line1 = lines.get(0)
+      val ref1 = line1.getRef1
+      val ref2 = line1.getRef2
+
       assert(transaction.getTotalTax.equals(java.math.BigDecimal.valueOf(0f)))
+      assert(ref1.equals("ref1"))
+      assert(ref2.equals("ref2"))
     }
     "create a transaction with an overridden tax date" in { accountInfo =>
       val dateFormat = new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss")

@@ -7,6 +7,21 @@ public enum MatchingTaxType {
     /**
      * No comment data provided
      */
+    Excise,
+    
+    /**
+     * No comment data provided
+     */
+    Lodging,
+    
+    /**
+     * No comment data provided
+     */
+    Bottle,
+    
+    /**
+     * No comment data provided
+     */
     All,
     
     /**

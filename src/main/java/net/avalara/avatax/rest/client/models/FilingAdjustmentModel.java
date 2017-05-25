@@ -13,6 +13,40 @@ import java.util.HashMap;
  * A model for return adjustments.
  */
 public class FilingAdjustmentModel {
+    private Long filingId;
+
+    /**
+     * Getter for filingId - A model for return adjustments.
+     */
+    public Long getFilingId() {
+        return this.filingId;
+    }
+
+    /**
+     * Setter for filingId - A model for return adjustments.
+     */
+    public void setFilingId(Long filingId) {
+        this.filingId = filingId;
+    }
+
+    
+    private Date modifiedDate;
+
+    /**
+     * Getter for modifiedDate - A model for return adjustments.
+     */
+    public Date getModifiedDate() {
+        return this.modifiedDate;
+    }
+
+    /**
+     * Setter for modifiedDate - A model for return adjustments.
+     */
+    public void setModifiedDate(Date modifiedDate) {
+        this.modifiedDate = modifiedDate;
+    }
+
+    
     private Boolean isCalculated;
 
     /**
@@ -98,6 +132,40 @@ public class FilingAdjustmentModel {
     }
 
     
+    private Integer modifiedUserId;
+
+    /**
+     * Getter for modifiedUserId - A model for return adjustments.
+     */
+    public Integer getModifiedUserId() {
+        return this.modifiedUserId;
+    }
+
+    /**
+     * Setter for modifiedUserId - A model for return adjustments.
+     */
+    public void setModifiedUserId(Integer modifiedUserId) {
+        this.modifiedUserId = modifiedUserId;
+    }
+
+    
+    private Integer createdUserId;
+
+    /**
+     * Getter for createdUserId - A model for return adjustments.
+     */
+    public Integer getCreatedUserId() {
+        return this.createdUserId;
+    }
+
+    /**
+     * Setter for createdUserId - A model for return adjustments.
+     */
+    public void setCreatedUserId(Integer createdUserId) {
+        this.createdUserId = createdUserId;
+    }
+
+    
     private AdjustmentTypeId type;
 
     /**
@@ -129,6 +197,23 @@ public class FilingAdjustmentModel {
      */
     public void setPeriod(AdjustmentPeriodTypeId period) {
         this.period = period;
+    }
+
+    
+    private Date createdDate;
+
+    /**
+     * Getter for createdDate - A model for return adjustments.
+     */
+    public Date getCreatedDate() {
+        return this.createdDate;
+    }
+
+    /**
+     * Setter for createdDate - A model for return adjustments.
+     */
+    public void setCreatedDate(Date createdDate) {
+        this.createdDate = createdDate;
     }
 
     

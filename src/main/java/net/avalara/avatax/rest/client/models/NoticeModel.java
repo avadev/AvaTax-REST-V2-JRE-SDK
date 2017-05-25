@@ -750,6 +750,27 @@ they are called "Notices".
     }
 
     
+    private BigDecimal totalRemit;
+
+    /**
+     * Getter for totalRemit - Represents a letter received from a tax authority regarding tax filing.
+These letters often have the warning "Notice" printed at the top, which is why
+they are called "Notices".
+     */
+    public BigDecimal getTotalRemit() {
+        return this.totalRemit;
+    }
+
+    /**
+     * Setter for totalRemit - Represents a letter received from a tax authority regarding tax filing.
+These letters often have the warning "Notice" printed at the top, which is why
+they are called "Notices".
+     */
+    public void setTotalRemit(BigDecimal totalRemit) {
+        this.totalRemit = totalRemit;
+    }
+
+    
     private String type;
 
     /**

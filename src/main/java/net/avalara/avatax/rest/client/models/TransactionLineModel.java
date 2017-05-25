@@ -234,6 +234,23 @@ public class TransactionLineModel {
     }
 
     
+    private String businessIdentificationNo;
+
+    /**
+     * Getter for businessIdentificationNo - One line item on this transaction.
+     */
+    public String getBusinessIdentificationNo() {
+        return this.businessIdentificationNo;
+    }
+
+    /**
+     * Setter for businessIdentificationNo - One line item on this transaction.
+     */
+    public void setBusinessIdentificationNo(String businessIdentificationNo) {
+        this.businessIdentificationNo = businessIdentificationNo;
+    }
+
+    
     private String ref1;
 
     /**

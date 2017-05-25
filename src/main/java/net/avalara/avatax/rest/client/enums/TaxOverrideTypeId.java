@@ -29,6 +29,11 @@ public enum TaxOverrideTypeId {
      */
     AccruedTaxAmount,
     
+    /**
+     * No comment data provided
+     */
+    DeriveTaxable,
+    
 
 }
     

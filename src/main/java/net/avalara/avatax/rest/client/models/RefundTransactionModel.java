@@ -30,6 +30,23 @@ public class RefundTransactionModel {
     }
 
     
+    private String referenceCode;
+
+    /**
+     * Getter for referenceCode - Refund a committed transaction
+     */
+    public String getReferenceCode() {
+        return this.referenceCode;
+    }
+
+    /**
+     * Setter for referenceCode - Refund a committed transaction
+     */
+    public void setReferenceCode(String referenceCode) {
+        this.referenceCode = referenceCode;
+    }
+
+    
     private ArrayList<String> refundLines;
 
     /**

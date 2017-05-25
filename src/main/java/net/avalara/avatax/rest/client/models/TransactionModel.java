@@ -217,6 +217,23 @@ public class TransactionModel {
     }
 
     
+    private String businessIdentificationNo;
+
+    /**
+     * Getter for businessIdentificationNo - A single transaction - for example, a sales invoice or purchase order.
+     */
+    public String getBusinessIdentificationNo() {
+        return this.businessIdentificationNo;
+    }
+
+    /**
+     * Setter for businessIdentificationNo - A single transaction - for example, a sales invoice or purchase order.
+     */
+    public void setBusinessIdentificationNo(String businessIdentificationNo) {
+        this.businessIdentificationNo = businessIdentificationNo;
+    }
+
+    
     private String purchaseOrderNo;
 
     /**

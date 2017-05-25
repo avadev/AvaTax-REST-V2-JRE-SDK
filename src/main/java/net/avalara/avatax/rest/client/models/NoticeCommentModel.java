@@ -217,19 +217,19 @@ public class NoticeCommentModel {
     }
 
     
-    private String commentType;
+    private CommentType commentType;
 
     /**
      * Getter for commentType - Represents communication between Avalara and the company regarding the processing of a tax notice.
      */
-    public String getCommentType() {
+    public CommentType getCommentType() {
         return this.commentType;
     }
 
     /**
      * Setter for commentType - Represents communication between Avalara and the company regarding the processing of a tax notice.
      */
-    public void setCommentType(String commentType) {
+    public void setCommentType(CommentType commentType) {
         this.commentType = commentType;
     }
 

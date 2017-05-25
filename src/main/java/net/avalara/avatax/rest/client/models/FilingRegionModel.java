@@ -13,6 +13,40 @@ import java.util.HashMap;
  * Regions
  */
 public class FilingRegionModel {
+    private Long filingId;
+
+    /**
+     * Getter for filingId - Regions
+     */
+    public Long getFilingId() {
+        return this.filingId;
+    }
+
+    /**
+     * Setter for filingId - Regions
+     */
+    public void setFilingId(Long filingId) {
+        this.filingId = filingId;
+    }
+
+    
+    private BigDecimal collectAmount;
+
+    /**
+     * Getter for collectAmount - Regions
+     */
+    public BigDecimal getCollectAmount() {
+        return this.collectAmount;
+    }
+
+    /**
+     * Setter for collectAmount - Regions
+     */
+    public void setCollectAmount(BigDecimal collectAmount) {
+        this.collectAmount = collectAmount;
+    }
+
+    
     private Date endDate;
 
     /**
@@ -27,6 +61,23 @@ public class FilingRegionModel {
      */
     public void setEndDate(Date endDate) {
         this.endDate = endDate;
+    }
+
+    
+    private Date modifiedDate;
+
+    /**
+     * Getter for modifiedDate - Regions
+     */
+    public Date getModifiedDate() {
+        return this.modifiedDate;
+    }
+
+    /**
+     * Setter for modifiedDate - Regions
+     */
+    public void setModifiedDate(Date modifiedDate) {
+        this.modifiedDate = modifiedDate;
     }
 
     
@@ -163,6 +214,40 @@ public class FilingRegionModel {
      */
     public void setStatus(FilingStatusId status) {
         this.status = status;
+    }
+
+    
+    private Integer modifiedUserId;
+
+    /**
+     * Getter for modifiedUserId - Regions
+     */
+    public Integer getModifiedUserId() {
+        return this.modifiedUserId;
+    }
+
+    /**
+     * Setter for modifiedUserId - Regions
+     */
+    public void setModifiedUserId(Integer modifiedUserId) {
+        this.modifiedUserId = modifiedUserId;
+    }
+
+    
+    private Integer createdUserId;
+
+    /**
+     * Getter for createdUserId - Regions
+     */
+    public Integer getCreatedUserId() {
+        return this.createdUserId;
+    }
+
+    /**
+     * Setter for createdUserId - Regions
+     */
+    public void setCreatedUserId(Integer createdUserId) {
+        this.createdUserId = createdUserId;
     }
 
     
@@ -333,6 +418,23 @@ public class FilingRegionModel {
      */
     public void setSuggestReturns(ArrayList<FilingsCheckupSuggestedFormModel> suggestReturns) {
         this.suggestReturns = suggestReturns;
+    }
+
+    
+    private Date createdDate;
+
+    /**
+     * Getter for createdDate - Regions
+     */
+    public Date getCreatedDate() {
+        return this.createdDate;
+    }
+
+    /**
+     * Setter for createdDate - Regions
+     */
+    public void setCreatedDate(Date createdDate) {
+        this.createdDate = createdDate;
     }
 
     

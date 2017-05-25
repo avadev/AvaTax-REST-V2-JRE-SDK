@@ -13,20 +13,20 @@ import java.util.HashMap;
  * A model for return augmentations.
  */
 public class FilingAugmentationModel {
-    private Long id;
+    private Long filingId;
 
     /**
-     * Getter for id - A model for return augmentations.
+     * Getter for filingId - A model for return augmentations.
      */
-    public Long getId() {
-        return this.id;
+    public Long getFilingId() {
+        return this.filingId;
     }
 
     /**
-     * Setter for id - A model for return augmentations.
+     * Setter for filingId - A model for return augmentations.
      */
-    public void setId(Long id) {
-        this.id = id;
+    public void setFilingId(Long filingId) {
+        this.filingId = filingId;
     }
 
     
@@ -47,6 +47,40 @@ public class FilingAugmentationModel {
     }
 
     
+    private Date modifiedDate;
+
+    /**
+     * Getter for modifiedDate - A model for return augmentations.
+     */
+    public Date getModifiedDate() {
+        return this.modifiedDate;
+    }
+
+    /**
+     * Setter for modifiedDate - A model for return augmentations.
+     */
+    public void setModifiedDate(Date modifiedDate) {
+        this.modifiedDate = modifiedDate;
+    }
+
+    
+    private Long id;
+
+    /**
+     * Getter for id - A model for return augmentations.
+     */
+    public Long getId() {
+        return this.id;
+    }
+
+    /**
+     * Setter for id - A model for return augmentations.
+     */
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    
     private String fieldName;
 
     /**
@@ -61,6 +95,57 @@ public class FilingAugmentationModel {
      */
     public void setFieldName(String fieldName) {
         this.fieldName = fieldName;
+    }
+
+    
+    private Integer modifiedUserId;
+
+    /**
+     * Getter for modifiedUserId - A model for return augmentations.
+     */
+    public Integer getModifiedUserId() {
+        return this.modifiedUserId;
+    }
+
+    /**
+     * Setter for modifiedUserId - A model for return augmentations.
+     */
+    public void setModifiedUserId(Integer modifiedUserId) {
+        this.modifiedUserId = modifiedUserId;
+    }
+
+    
+    private Integer createdUserId;
+
+    /**
+     * Getter for createdUserId - A model for return augmentations.
+     */
+    public Integer getCreatedUserId() {
+        return this.createdUserId;
+    }
+
+    /**
+     * Setter for createdUserId - A model for return augmentations.
+     */
+    public void setCreatedUserId(Integer createdUserId) {
+        this.createdUserId = createdUserId;
+    }
+
+    
+    private Date createdDate;
+
+    /**
+     * Getter for createdDate - A model for return augmentations.
+     */
+    public Date getCreatedDate() {
+        return this.createdDate;
+    }
+
+    /**
+     * Setter for createdDate - A model for return augmentations.
+     */
+    public void setCreatedDate(Date createdDate) {
+        this.createdDate = createdDate;
     }
 
     

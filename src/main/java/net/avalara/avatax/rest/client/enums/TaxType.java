@@ -7,6 +7,16 @@ public enum TaxType {
     /**
      * No comment data provided
      */
+    Lodging,
+    
+    /**
+     * No comment data provided
+     */
+    Bottle,
+    
+    /**
+     * No comment data provided
+     */
     ConsumerUse,
     
     /**
