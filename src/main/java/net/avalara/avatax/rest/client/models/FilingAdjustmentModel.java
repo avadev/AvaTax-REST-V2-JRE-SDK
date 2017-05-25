@@ -30,231 +30,255 @@ import java.util.HashMap;
 public class FilingAdjustmentModel {
 
 
-    private Int64? id;
+    private Long id;
 
     /**
-     * Getter for id;
+     * Getter for id
+     *
      * The unique ID number for the adjustment.
      */
-    public Int64? getid() {;
-        return this.id;;
+    public Long getId() {
+        return this.id;
     }
 
     /**
-     * Setter for id;
+     * Setter for id
+     *
      * The unique ID number for the adjustment.
      */
-    public void setid(Int64? value) {;
-        this.id = value;;
+    public void setId(Long value) {
+        this.id = value;
     }
 
 
-    private Int64? filingId;
+    private Long filingId;
 
     /**
-     * Getter for filingId;
+     * Getter for filingId
+     *
      * The filing return id that this applies too
      */
-    public Int64? getfilingId() {;
-        return this.filingId;;
+    public Long getFilingId() {
+        return this.filingId;
     }
 
     /**
-     * Setter for filingId;
+     * Setter for filingId
+     *
      * The filing return id that this applies too
      */
-    public void setfilingId(Int64? value) {;
-        this.filingId = value;;
+    public void setFilingId(Long value) {
+        this.filingId = value;
     }
 
 
     private Decimal amount;
 
     /**
-     * Getter for amount;
+     * Getter for amount
+     *
      * The adjustment amount.
      */
-    public Decimal getamount() {;
-        return this.amount;;
+    public Decimal getAmount() {
+        return this.amount;
     }
 
     /**
-     * Setter for amount;
+     * Setter for amount
+     *
      * The adjustment amount.
      */
-    public void setamount(Decimal value) {;
-        this.amount = value;;
+    public void setAmount(Decimal value) {
+        this.amount = value;
     }
 
 
     private AdjustmentPeriodTypeId period;
 
     /**
-     * Getter for period;
+     * Getter for period
+     *
      * The filing period the adjustment is applied to.
      */
-    public AdjustmentPeriodTypeId getperiod() {;
-        return this.period;;
+    public AdjustmentPeriodTypeId getPeriod() {
+        return this.period;
     }
 
     /**
-     * Setter for period;
+     * Setter for period
+     *
      * The filing period the adjustment is applied to.
      */
-    public void setperiod(AdjustmentPeriodTypeId value) {;
-        this.period = value;;
+    public void setPeriod(AdjustmentPeriodTypeId value) {
+        this.period = value;
     }
 
 
     private AdjustmentTypeId type;
 
     /**
-     * Getter for type;
+     * Getter for type
+     *
      * The type of the adjustment.
      */
-    public AdjustmentTypeId gettype() {;
-        return this.type;;
+    public AdjustmentTypeId getType() {
+        return this.type;
     }
 
     /**
-     * Setter for type;
+     * Setter for type
+     *
      * The type of the adjustment.
      */
-    public void settype(AdjustmentTypeId value) {;
-        this.type = value;;
+    public void setType(AdjustmentTypeId value) {
+        this.type = value;
     }
 
 
-    private Boolean? isCalculated;
+    private object isCalculated;
 
     /**
-     * Getter for isCalculated;
+     * Getter for isCalculated
+     *
      * Whether or not the adjustment has been calculated.
      */
-    public Boolean? getisCalculated() {;
-        return this.isCalculated;;
+    public object getIsCalculated() {
+        return this.isCalculated;
     }
 
     /**
-     * Setter for isCalculated;
+     * Setter for isCalculated
+     *
      * Whether or not the adjustment has been calculated.
      */
-    public void setisCalculated(Boolean? value) {;
-        this.isCalculated = value;;
+    public void setIsCalculated(object value) {
+        this.isCalculated = value;
     }
 
 
     private PaymentAccountTypeId accountType;
 
     /**
-     * Getter for accountType;
+     * Getter for accountType
+     *
      * The account type of the adjustment.
      */
-    public PaymentAccountTypeId getaccountType() {;
-        return this.accountType;;
+    public PaymentAccountTypeId getAccountType() {
+        return this.accountType;
     }
 
     /**
-     * Setter for accountType;
+     * Setter for accountType
+     *
      * The account type of the adjustment.
      */
-    public void setaccountType(PaymentAccountTypeId value) {;
-        this.accountType = value;;
+    public void setAccountType(PaymentAccountTypeId value) {
+        this.accountType = value;
     }
 
 
-    private String reason;
+    private string reason;
 
     /**
-     * Getter for reason;
+     * Getter for reason
+     *
      * A descriptive reason for creating this adjustment.
      */
-    public String getreason() {;
-        return this.reason;;
+    public string getReason() {
+        return this.reason;
     }
 
     /**
-     * Setter for reason;
+     * Setter for reason
+     *
      * A descriptive reason for creating this adjustment.
      */
-    public void setreason(String value) {;
-        this.reason = value;;
+    public void setReason(string value) {
+        this.reason = value;
     }
 
 
-    private DateTime? createdDate;
+    private Instant createdDate;
 
     /**
-     * Getter for createdDate;
+     * Getter for createdDate
+     *
      * The date when this record was created.
      */
-    public DateTime? getcreatedDate() {;
-        return this.createdDate;;
+    public Instant getCreatedDate() {
+        return this.createdDate;
     }
 
     /**
-     * Setter for createdDate;
+     * Setter for createdDate
+     *
      * The date when this record was created.
      */
-    public void setcreatedDate(DateTime? value) {;
-        this.createdDate = value;;
+    public void setCreatedDate(Instant value) {
+        this.createdDate = value;
     }
 
 
-    private Int32? createdUserId;
+    private Integer createdUserId;
 
     /**
-     * Getter for createdUserId;
+     * Getter for createdUserId
+     *
      * The User ID of the user who created this record.
      */
-    public Int32? getcreatedUserId() {;
-        return this.createdUserId;;
+    public Integer getCreatedUserId() {
+        return this.createdUserId;
     }
 
     /**
-     * Setter for createdUserId;
+     * Setter for createdUserId
+     *
      * The User ID of the user who created this record.
      */
-    public void setcreatedUserId(Int32? value) {;
-        this.createdUserId = value;;
+    public void setCreatedUserId(Integer value) {
+        this.createdUserId = value;
     }
 
 
-    private DateTime? modifiedDate;
+    private Instant modifiedDate;
 
     /**
-     * Getter for modifiedDate;
+     * Getter for modifiedDate
+     *
      * The date/time when this record was last modified.
      */
-    public DateTime? getmodifiedDate() {;
-        return this.modifiedDate;;
+    public Instant getModifiedDate() {
+        return this.modifiedDate;
     }
 
     /**
-     * Setter for modifiedDate;
+     * Setter for modifiedDate
+     *
      * The date/time when this record was last modified.
      */
-    public void setmodifiedDate(DateTime? value) {;
-        this.modifiedDate = value;;
+    public void setModifiedDate(Instant value) {
+        this.modifiedDate = value;
     }
 
 
-    private Int32? modifiedUserId;
+    private Integer modifiedUserId;
 
     /**
-     * Getter for modifiedUserId;
+     * Getter for modifiedUserId
+     *
      * The user ID of the user who last modified this record.
      */
-    public Int32? getmodifiedUserId() {;
-        return this.modifiedUserId;;
+    public Integer getModifiedUserId() {
+        return this.modifiedUserId;
     }
 
     /**
-     * Setter for modifiedUserId;
+     * Setter for modifiedUserId
+     *
      * The user ID of the user who last modified this record.
      */
-    public void setmodifiedUserId(Int32? value) {;
-        this.modifiedUserId = value;;
+    public void setModifiedUserId(Integer value) {
+        this.modifiedUserId = value;
     }
 
 

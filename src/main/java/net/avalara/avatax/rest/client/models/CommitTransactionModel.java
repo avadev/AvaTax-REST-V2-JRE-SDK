@@ -30,24 +30,26 @@ import java.util.HashMap;
 public class CommitTransactionModel {
 
 
-    private Boolean commit;
+    private boolean commit;
 
     /**
-     * Getter for commit;
+     * Getter for commit
+     *
      * Set this value to be true to commit this transaction.
     * Committing a transaction allows it to be reported on a tax return. Uncommitted transactions will not be reported.
      */
-    public Boolean getcommit() {;
-        return this.commit;;
+    public boolean getCommit() {
+        return this.commit;
     }
 
     /**
-     * Setter for commit;
+     * Setter for commit
+     *
      * Set this value to be true to commit this transaction.
     * Committing a transaction allows it to be reported on a tax return. Uncommitted transactions will not be reported.
      */
-    public void setcommit(Boolean value) {;
-        this.commit = value;;
+    public void setCommit(boolean value) {
+        this.commit = value;
     }
 
 

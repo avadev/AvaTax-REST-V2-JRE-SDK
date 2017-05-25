@@ -31,100 +31,110 @@ import java.util.HashMap;
 public class FreeTrialRequestModel {
 
 
-    private String firstName;
+    private string firstName;
 
     /**
-     * Getter for firstName;
+     * Getter for firstName
+     *
      * The first or given name of the user requesting a free trial.
      */
-    public String getfirstName() {;
-        return this.firstName;;
+    public string getFirstName() {
+        return this.firstName;
     }
 
     /**
-     * Setter for firstName;
+     * Setter for firstName
+     *
      * The first or given name of the user requesting a free trial.
      */
-    public void setfirstName(String value) {;
-        this.firstName = value;;
+    public void setFirstName(string value) {
+        this.firstName = value;
     }
 
 
-    private String lastName;
+    private string lastName;
 
     /**
-     * Getter for lastName;
+     * Getter for lastName
+     *
      * The last or family name of the user requesting a free trial.
      */
-    public String getlastName() {;
-        return this.lastName;;
+    public string getLastName() {
+        return this.lastName;
     }
 
     /**
-     * Setter for lastName;
+     * Setter for lastName
+     *
      * The last or family name of the user requesting a free trial.
      */
-    public void setlastName(String value) {;
-        this.lastName = value;;
+    public void setLastName(string value) {
+        this.lastName = value;
     }
 
 
-    private String email;
+    private string email;
 
     /**
-     * Getter for email;
+     * Getter for email
+     *
      * The email address of the user requesting a free trial.
      */
-    public String getemail() {;
-        return this.email;;
+    public string getEmail() {
+        return this.email;
     }
 
     /**
-     * Setter for email;
+     * Setter for email
+     *
      * The email address of the user requesting a free trial.
      */
-    public void setemail(String value) {;
-        this.email = value;;
+    public void setEmail(string value) {
+        this.email = value;
     }
 
 
-    private String company;
+    private string company;
 
     /**
-     * Getter for company;
+     * Getter for company
+     *
      * The company or organizational name for this free trial. If this account is for personal use, it is acceptable 
     * to use your full name here.
      */
-    public String getcompany() {;
-        return this.company;;
+    public string getCompany() {
+        return this.company;
     }
 
     /**
-     * Setter for company;
+     * Setter for company
+     *
      * The company or organizational name for this free trial. If this account is for personal use, it is acceptable 
     * to use your full name here.
      */
-    public void setcompany(String value) {;
-        this.company = value;;
+    public void setCompany(string value) {
+        this.company = value;
     }
 
 
-    private String phone;
+    private string phone;
 
     /**
-     * Getter for phone;
+     * Getter for phone
+     *
      * The phone number of the person requesting the free trial.
      */
-    public String getphone() {;
-        return this.phone;;
+    public string getPhone() {
+        return this.phone;
     }
 
     /**
-     * Setter for phone;
+     * Setter for phone
+     *
      * The phone number of the person requesting the free trial.
      */
-    public void setphone(String value) {;
-        this.phone = value;;
+    public void setPhone(string value) {
+        this.phone = value;
     }
 
 

@@ -31,277 +31,305 @@ import java.util.HashMap;
 public class NewAccountRequestModel {
 
 
-    private List<String> products;
+    private string[] products;
 
     /**
-     * Getter for products;
+     * Getter for products
+     *
      * The list of products to which this account would like to subscribe.
      */
-    public List<String> getproducts() {;
-        return this.products;;
+    public string[] getProducts() {
+        return this.products;
     }
 
     /**
-     * Setter for products;
+     * Setter for products
+     *
      * The list of products to which this account would like to subscribe.
      */
-    public void setproducts(List<String> value) {;
-        this.products = value;;
+    public void setProducts(string[] value) {
+        this.products = value;
     }
 
 
-    private String connectorName;
+    private string connectorName;
 
     /**
-     * Getter for connectorName;
+     * Getter for connectorName
+     *
      * The name of the connector that will be the primary method of access used to call the account created.
     * For a list of available connectors, please contact your Avalara representative.
      */
-    public String getconnectorName() {;
-        return this.connectorName;;
+    public string getConnectorName() {
+        return this.connectorName;
     }
 
     /**
-     * Setter for connectorName;
+     * Setter for connectorName
+     *
      * The name of the connector that will be the primary method of access used to call the account created.
     * For a list of available connectors, please contact your Avalara representative.
      */
-    public void setconnectorName(String value) {;
-        this.connectorName = value;;
+    public void setConnectorName(string value) {
+        this.connectorName = value;
     }
 
 
-    private String parentAccountNumber;
+    private string parentAccountNumber;
 
     /**
-     * Getter for parentAccountNumber;
+     * Getter for parentAccountNumber
+     *
      * An approved partner account can be referenced when provisioning an account, allowing a link between 
     * the partner and the provisioned account.
      */
-    public String getparentAccountNumber() {;
-        return this.parentAccountNumber;;
+    public string getParentAccountNumber() {
+        return this.parentAccountNumber;
     }
 
     /**
-     * Setter for parentAccountNumber;
+     * Setter for parentAccountNumber
+     *
      * An approved partner account can be referenced when provisioning an account, allowing a link between 
     * the partner and the provisioned account.
      */
-    public void setparentAccountNumber(String value) {;
-        this.parentAccountNumber = value;;
+    public void setParentAccountNumber(string value) {
+        this.parentAccountNumber = value;
     }
 
 
-    private String referrerId;
+    private string referrerId;
 
     /**
-     * Getter for referrerId;
+     * Getter for referrerId
+     *
      * Identifies a referring partner for the assessment of referral-based commissions.
      */
-    public String getreferrerId() {;
-        return this.referrerId;;
+    public string getReferrerId() {
+        return this.referrerId;
     }
 
     /**
-     * Setter for referrerId;
+     * Setter for referrerId
+     *
      * Identifies a referring partner for the assessment of referral-based commissions.
      */
-    public void setreferrerId(String value) {;
-        this.referrerId = value;;
+    public void setReferrerId(string value) {
+        this.referrerId = value;
     }
 
 
-    private String paymentMethodId;
+    private string paymentMethodId;
 
     /**
-     * Getter for paymentMethodId;
+     * Getter for paymentMethodId
+     *
      * Zuora-generated Payment ID to which the new account should be associated. For free trial accounts, an empty string is acceptable.
      */
-    public String getpaymentMethodId() {;
-        return this.paymentMethodId;;
+    public string getPaymentMethodId() {
+        return this.paymentMethodId;
     }
 
     /**
-     * Setter for paymentMethodId;
+     * Setter for paymentMethodId
+     *
      * Zuora-generated Payment ID to which the new account should be associated. For free trial accounts, an empty string is acceptable.
      */
-    public void setpaymentMethodId(String value) {;
-        this.paymentMethodId = value;;
+    public void setPaymentMethodId(string value) {
+        this.paymentMethodId = value;
     }
 
 
-    private DateTime? effectiveDate;
+    private Instant effectiveDate;
 
     /**
-     * Getter for effectiveDate;
+     * Getter for effectiveDate
+     *
      * The date on which the account should take effect. If null, defaults to today.
      */
-    public DateTime? geteffectiveDate() {;
-        return this.effectiveDate;;
+    public Instant getEffectiveDate() {
+        return this.effectiveDate;
     }
 
     /**
-     * Setter for effectiveDate;
+     * Setter for effectiveDate
+     *
      * The date on which the account should take effect. If null, defaults to today.
      */
-    public void seteffectiveDate(DateTime? value) {;
-        this.effectiveDate = value;;
+    public void setEffectiveDate(Instant value) {
+        this.effectiveDate = value;
     }
 
 
-    private DateTime? endDate;
+    private Instant endDate;
 
     /**
-     * Getter for endDate;
+     * Getter for endDate
+     *
      * The date on which the account should expire. If null, defaults to a 90-day trial account.
      */
-    public DateTime? getendDate() {;
-        return this.endDate;;
+    public Instant getEndDate() {
+        return this.endDate;
     }
 
     /**
-     * Setter for endDate;
+     * Setter for endDate
+     *
      * The date on which the account should expire. If null, defaults to a 90-day trial account.
      */
-    public void setendDate(DateTime? value) {;
-        this.endDate = value;;
+    public void setEndDate(Instant value) {
+        this.endDate = value;
     }
 
 
-    private String accountName;
+    private string accountName;
 
     /**
-     * Getter for accountName;
+     * Getter for accountName
+     *
      * Account Name
      */
-    public String getaccountName() {;
-        return this.accountName;;
+    public string getAccountName() {
+        return this.accountName;
     }
 
     /**
-     * Setter for accountName;
+     * Setter for accountName
+     *
      * Account Name
      */
-    public void setaccountName(String value) {;
-        this.accountName = value;;
+    public void setAccountName(string value) {
+        this.accountName = value;
     }
 
 
-    private String firstName;
+    private string firstName;
 
     /**
-     * Getter for firstName;
+     * Getter for firstName
+     *
      * First Name of the primary contact person for this account
      */
-    public String getfirstName() {;
-        return this.firstName;;
+    public string getFirstName() {
+        return this.firstName;
     }
 
     /**
-     * Setter for firstName;
+     * Setter for firstName
+     *
      * First Name of the primary contact person for this account
      */
-    public void setfirstName(String value) {;
-        this.firstName = value;;
+    public void setFirstName(string value) {
+        this.firstName = value;
     }
 
 
-    private String lastName;
+    private string lastName;
 
     /**
-     * Getter for lastName;
+     * Getter for lastName
+     *
      * Last Name of the primary contact person for this account
      */
-    public String getlastName() {;
-        return this.lastName;;
+    public string getLastName() {
+        return this.lastName;
     }
 
     /**
-     * Setter for lastName;
+     * Setter for lastName
+     *
      * Last Name of the primary contact person for this account
      */
-    public void setlastName(String value) {;
-        this.lastName = value;;
+    public void setLastName(string value) {
+        this.lastName = value;
     }
 
 
-    private String title;
+    private string title;
 
     /**
-     * Getter for title;
+     * Getter for title
+     *
      * Title of the primary contact person for this account
      */
-    public String gettitle() {;
-        return this.title;;
+    public string getTitle() {
+        return this.title;
     }
 
     /**
-     * Setter for title;
+     * Setter for title
+     *
      * Title of the primary contact person for this account
      */
-    public void settitle(String value) {;
-        this.title = value;;
+    public void setTitle(string value) {
+        this.title = value;
     }
 
 
-    private String phoneNumber;
+    private string phoneNumber;
 
     /**
-     * Getter for phoneNumber;
+     * Getter for phoneNumber
+     *
      * Phone number of the primary contact person for this account
      */
-    public String getphoneNumber() {;
-        return this.phoneNumber;;
+    public string getPhoneNumber() {
+        return this.phoneNumber;
     }
 
     /**
-     * Setter for phoneNumber;
+     * Setter for phoneNumber
+     *
      * Phone number of the primary contact person for this account
      */
-    public void setphoneNumber(String value) {;
-        this.phoneNumber = value;;
+    public void setPhoneNumber(string value) {
+        this.phoneNumber = value;
     }
 
 
-    private String email;
+    private string email;
 
     /**
-     * Getter for email;
+     * Getter for email
+     *
      * Email of the primary contact person for this account
      */
-    public String getemail() {;
-        return this.email;;
+    public string getEmail() {
+        return this.email;
     }
 
     /**
-     * Setter for email;
+     * Setter for email
+     *
      * Email of the primary contact person for this account
      */
-    public void setemail(String value) {;
-        this.email = value;;
+    public void setEmail(string value) {
+        this.email = value;
     }
 
 
-    private String userPassword;
+    private string userPassword;
 
     /**
-     * Getter for userPassword;
+     * Getter for userPassword
+     *
      * If no password is supplied, an a tempoarary password is generated by the system and emailed to the user. The user will 
     * be challenged to change this password upon logging in to the Admin Console. If supplied, will be the set password for 
     * the default created user, and the user will not be challenged to change their password upon login to the Admin Console.
      */
-    public String getuserPassword() {;
-        return this.userPassword;;
+    public string getUserPassword() {
+        return this.userPassword;
     }
 
     /**
-     * Setter for userPassword;
+     * Setter for userPassword
+     *
      * If no password is supplied, an a tempoarary password is generated by the system and emailed to the user. The user will 
     * be challenged to change this password upon logging in to the Admin Console. If supplied, will be the set password for 
     * the default created user, and the user will not be challenged to change their password upon login to the Admin Console.
      */
-    public void setuserPassword(String value) {;
-        this.userPassword = value;;
+    public void setUserPassword(string value) {
+        this.userPassword = value;
     }
 
 

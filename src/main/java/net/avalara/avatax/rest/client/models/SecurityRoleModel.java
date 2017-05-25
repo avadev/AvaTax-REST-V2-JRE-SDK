@@ -30,41 +30,45 @@ import java.util.HashMap;
 public class SecurityRoleModel {
 
 
-    private Byte? id;
+    private Byte id;
 
     /**
-     * Getter for id;
+     * Getter for id
+     *
      * The unique ID number of this security role.
      */
-    public Byte? getid() {;
-        return this.id;;
+    public Byte getId() {
+        return this.id;
     }
 
     /**
-     * Setter for id;
+     * Setter for id
+     *
      * The unique ID number of this security role.
      */
-    public void setid(Byte? value) {;
-        this.id = value;;
+    public void setId(Byte value) {
+        this.id = value;
     }
 
 
-    private String description;
+    private string description;
 
     /**
-     * Getter for description;
+     * Getter for description
+     *
      * A description of this security role
      */
-    public String getdescription() {;
-        return this.description;;
+    public string getDescription() {
+        return this.description;
     }
 
     /**
-     * Setter for description;
+     * Setter for description
+     *
      * A description of this security role
      */
-    public void setdescription(String value) {;
-        this.description = value;;
+    public void setDescription(string value) {
+        this.description = value;
     }
 
 

@@ -30,250 +30,276 @@ import java.util.HashMap;
 public class UPCModel {
 
 
-    private Int32 id;
+    private int id;
 
     /**
-     * Getter for id;
+     * Getter for id
+     *
      * The unique ID number for this UPC.
      */
-    public Int32 getid() {;
-        return this.id;;
+    public int getId() {
+        return this.id;
     }
 
     /**
-     * Setter for id;
+     * Setter for id
+     *
      * The unique ID number for this UPC.
      */
-    public void setid(Int32 value) {;
-        this.id = value;;
+    public void setId(int value) {
+        this.id = value;
     }
 
 
-    private Int32 companyId;
+    private int companyId;
 
     /**
-     * Getter for companyId;
+     * Getter for companyId
+     *
      * The unique ID number of the company to which this UPC belongs.
      */
-    public Int32 getcompanyId() {;
-        return this.companyId;;
+    public int getCompanyId() {
+        return this.companyId;
     }
 
     /**
-     * Setter for companyId;
+     * Setter for companyId
+     *
      * The unique ID number of the company to which this UPC belongs.
      */
-    public void setcompanyId(Int32 value) {;
-        this.companyId = value;;
+    public void setCompanyId(int value) {
+        this.companyId = value;
     }
 
 
-    private String upc;
+    private string upc;
 
     /**
-     * Getter for upc;
+     * Getter for upc
+     *
      * The 12-14 character Universal Product Code, European Article Number, or Global Trade Identification Number.
      */
-    public String getupc() {;
-        return this.upc;;
+    public string getUpc() {
+        return this.upc;
     }
 
     /**
-     * Setter for upc;
+     * Setter for upc
+     *
      * The 12-14 character Universal Product Code, European Article Number, or Global Trade Identification Number.
      */
-    public void setupc(String value) {;
-        this.upc = value;;
+    public void setUpc(string value) {
+        this.upc = value;
     }
 
 
-    private String legacyTaxCode;
+    private string legacyTaxCode;
 
     /**
-     * Getter for legacyTaxCode;
+     * Getter for legacyTaxCode
+     *
      * Legacy Tax Code applied to any product sold with this UPC.
      */
-    public String getlegacyTaxCode() {;
-        return this.legacyTaxCode;;
+    public string getLegacyTaxCode() {
+        return this.legacyTaxCode;
     }
 
     /**
-     * Setter for legacyTaxCode;
+     * Setter for legacyTaxCode
+     *
      * Legacy Tax Code applied to any product sold with this UPC.
      */
-    public void setlegacyTaxCode(String value) {;
-        this.legacyTaxCode = value;;
+    public void setLegacyTaxCode(string value) {
+        this.legacyTaxCode = value;
     }
 
 
-    private String description;
+    private string description;
 
     /**
-     * Getter for description;
+     * Getter for description
+     *
      * Description of the product to which this UPC applies.
      */
-    public String getdescription() {;
-        return this.description;;
+    public string getDescription() {
+        return this.description;
     }
 
     /**
-     * Setter for description;
+     * Setter for description
+     *
      * Description of the product to which this UPC applies.
      */
-    public void setdescription(String value) {;
-        this.description = value;;
+    public void setDescription(string value) {
+        this.description = value;
     }
 
 
-    private DateTime? effectiveDate;
+    private Instant effectiveDate;
 
     /**
-     * Getter for effectiveDate;
+     * Getter for effectiveDate
+     *
      * If this UPC became effective on a certain date, this contains the first date on which the UPC was effective.
      */
-    public DateTime? geteffectiveDate() {;
-        return this.effectiveDate;;
+    public Instant getEffectiveDate() {
+        return this.effectiveDate;
     }
 
     /**
-     * Setter for effectiveDate;
+     * Setter for effectiveDate
+     *
      * If this UPC became effective on a certain date, this contains the first date on which the UPC was effective.
      */
-    public void seteffectiveDate(DateTime? value) {;
-        this.effectiveDate = value;;
+    public void setEffectiveDate(Instant value) {
+        this.effectiveDate = value;
     }
 
 
-    private DateTime? endDate;
+    private Instant endDate;
 
     /**
-     * Getter for endDate;
+     * Getter for endDate
+     *
      * If this UPC expired or will expire on a certain date, this contains the last date on which the UPC was effective.
      */
-    public DateTime? getendDate() {;
-        return this.endDate;;
+    public Instant getEndDate() {
+        return this.endDate;
     }
 
     /**
-     * Setter for endDate;
+     * Setter for endDate
+     *
      * If this UPC expired or will expire on a certain date, this contains the last date on which the UPC was effective.
      */
-    public void setendDate(DateTime? value) {;
-        this.endDate = value;;
+    public void setEndDate(Instant value) {
+        this.endDate = value;
     }
 
 
-    private Int32? usage;
+    private Integer usage;
 
     /**
-     * Getter for usage;
+     * Getter for usage
+     *
      * A usage identifier for this UPC code.
      */
-    public Int32? getusage() {;
-        return this.usage;;
+    public Integer getUsage() {
+        return this.usage;
     }
 
     /**
-     * Setter for usage;
+     * Setter for usage
+     *
      * A usage identifier for this UPC code.
      */
-    public void setusage(Int32? value) {;
-        this.usage = value;;
+    public void setUsage(Integer value) {
+        this.usage = value;
     }
 
 
-    private Int32? isSystem;
+    private Integer isSystem;
 
     /**
-     * Getter for isSystem;
+     * Getter for isSystem
+     *
      * A flag indicating whether this UPC code is attached to the AvaTax system or to a company.
      */
-    public Int32? getisSystem() {;
-        return this.isSystem;;
+    public Integer getIsSystem() {
+        return this.isSystem;
     }
 
     /**
-     * Setter for isSystem;
+     * Setter for isSystem
+     *
      * A flag indicating whether this UPC code is attached to the AvaTax system or to a company.
      */
-    public void setisSystem(Int32? value) {;
-        this.isSystem = value;;
+    public void setIsSystem(Integer value) {
+        this.isSystem = value;
     }
 
 
-    private DateTime? createdDate;
+    private Instant createdDate;
 
     /**
-     * Getter for createdDate;
+     * Getter for createdDate
+     *
      * The date when this record was created.
      */
-    public DateTime? getcreatedDate() {;
-        return this.createdDate;;
+    public Instant getCreatedDate() {
+        return this.createdDate;
     }
 
     /**
-     * Setter for createdDate;
+     * Setter for createdDate
+     *
      * The date when this record was created.
      */
-    public void setcreatedDate(DateTime? value) {;
-        this.createdDate = value;;
+    public void setCreatedDate(Instant value) {
+        this.createdDate = value;
     }
 
 
-    private Int32? createdUserId;
+    private Integer createdUserId;
 
     /**
-     * Getter for createdUserId;
+     * Getter for createdUserId
+     *
      * The User ID of the user who created this record.
      */
-    public Int32? getcreatedUserId() {;
-        return this.createdUserId;;
+    public Integer getCreatedUserId() {
+        return this.createdUserId;
     }
 
     /**
-     * Setter for createdUserId;
+     * Setter for createdUserId
+     *
      * The User ID of the user who created this record.
      */
-    public void setcreatedUserId(Int32? value) {;
-        this.createdUserId = value;;
+    public void setCreatedUserId(Integer value) {
+        this.createdUserId = value;
     }
 
 
-    private DateTime? modifiedDate;
+    private Instant modifiedDate;
 
     /**
-     * Getter for modifiedDate;
+     * Getter for modifiedDate
+     *
      * The date/time when this record was last modified.
      */
-    public DateTime? getmodifiedDate() {;
-        return this.modifiedDate;;
+    public Instant getModifiedDate() {
+        return this.modifiedDate;
     }
 
     /**
-     * Setter for modifiedDate;
+     * Setter for modifiedDate
+     *
      * The date/time when this record was last modified.
      */
-    public void setmodifiedDate(DateTime? value) {;
-        this.modifiedDate = value;;
+    public void setModifiedDate(Instant value) {
+        this.modifiedDate = value;
     }
 
 
-    private Int32? modifiedUserId;
+    private Integer modifiedUserId;
 
     /**
-     * Getter for modifiedUserId;
+     * Getter for modifiedUserId
+     *
      * The user ID of the user who last modified this record.
      */
-    public Int32? getmodifiedUserId() {;
-        return this.modifiedUserId;;
+    public Integer getModifiedUserId() {
+        return this.modifiedUserId;
     }
 
     /**
-     * Setter for modifiedUserId;
+     * Setter for modifiedUserId
+     *
      * The user ID of the user who last modified this record.
      */
-    public void setmodifiedUserId(Int32? value) {;
-        this.modifiedUserId = value;;
+    public void setModifiedUserId(Integer value) {
+        this.modifiedUserId = value;
     }
 
 

@@ -30,307 +30,339 @@ import java.util.HashMap;
 public class FundingStatusModel {
 
 
-    private Int64? requestId;
+    private Long requestId;
 
     /**
-     * Getter for requestId;
+     * Getter for requestId
+     *
      * The unique ID number of this funding request
      */
-    public Int64? getrequestId() {;
-        return this.requestId;;
+    public Long getRequestId() {
+        return this.requestId;
     }
 
     /**
-     * Setter for requestId;
+     * Setter for requestId
+     *
      * The unique ID number of this funding request
      */
-    public void setrequestId(Int64? value) {;
-        this.requestId = value;;
+    public void setRequestId(Long value) {
+        this.requestId = value;
     }
 
 
-    private Int32? subledgerProfileID;
+    private Integer subledgerProfileID;
 
     /**
-     * Getter for subledgerProfileID;
+     * Getter for subledgerProfileID
+     *
      * SubledgerProfileID
      */
-    public Int32? getsubledgerProfileID() {;
-        return this.subledgerProfileID;;
+    public Integer getSubledgerProfileID() {
+        return this.subledgerProfileID;
     }
 
     /**
-     * Setter for subledgerProfileID;
+     * Setter for subledgerProfileID
+     *
      * SubledgerProfileID
      */
-    public void setsubledgerProfileID(Int32? value) {;
-        this.subledgerProfileID = value;;
+    public void setSubledgerProfileID(Integer value) {
+        this.subledgerProfileID = value;
     }
 
 
-    private String companyID;
+    private string companyID;
 
     /**
-     * Getter for companyID;
+     * Getter for companyID
+     *
      * CompanyID
      */
-    public String getcompanyID() {;
-        return this.companyID;;
+    public string getCompanyID() {
+        return this.companyID;
     }
 
     /**
-     * Setter for companyID;
+     * Setter for companyID
+     *
      * CompanyID
      */
-    public void setcompanyID(String value) {;
-        this.companyID = value;;
+    public void setCompanyID(string value) {
+        this.companyID = value;
     }
 
 
-    private String domain;
+    private string domain;
 
     /**
-     * Getter for domain;
+     * Getter for domain
+     *
      * Domain
      */
-    public String getdomain() {;
-        return this.domain;;
+    public string getDomain() {
+        return this.domain;
     }
 
     /**
-     * Setter for domain;
+     * Setter for domain
+     *
      * Domain
      */
-    public void setdomain(String value) {;
-        this.domain = value;;
+    public void setDomain(string value) {
+        this.domain = value;
     }
 
 
-    private String recipient;
+    private string recipient;
 
     /**
-     * Getter for recipient;
+     * Getter for recipient
+     *
      * Recipient
      */
-    public String getrecipient() {;
-        return this.recipient;;
+    public string getRecipient() {
+        return this.recipient;
     }
 
     /**
-     * Setter for recipient;
+     * Setter for recipient
+     *
      * Recipient
      */
-    public void setrecipient(String value) {;
-        this.recipient = value;;
+    public void setRecipient(string value) {
+        this.recipient = value;
     }
 
 
-    private String sender;
+    private string sender;
 
     /**
-     * Getter for sender;
+     * Getter for sender
+     *
      * Sender
      */
-    public String getsender() {;
-        return this.sender;;
+    public string getSender() {
+        return this.sender;
     }
 
     /**
-     * Setter for sender;
+     * Setter for sender
+     *
      * Sender
      */
-    public void setsender(String value) {;
-        this.sender = value;;
+    public void setSender(string value) {
+        this.sender = value;
     }
 
 
-    private String documentKey;
+    private string documentKey;
 
     /**
-     * Getter for documentKey;
+     * Getter for documentKey
+     *
      * DocumentKey
      */
-    public String getdocumentKey() {;
-        return this.documentKey;;
+    public string getDocumentKey() {
+        return this.documentKey;
     }
 
     /**
-     * Setter for documentKey;
+     * Setter for documentKey
+     *
      * DocumentKey
      */
-    public void setdocumentKey(String value) {;
-        this.documentKey = value;;
+    public void setDocumentKey(string value) {
+        this.documentKey = value;
     }
 
 
-    private String documentType;
+    private string documentType;
 
     /**
-     * Getter for documentType;
+     * Getter for documentType
+     *
      * DocumentType
      */
-    public String getdocumentType() {;
-        return this.documentType;;
+    public string getDocumentType() {
+        return this.documentType;
     }
 
     /**
-     * Setter for documentType;
+     * Setter for documentType
+     *
      * DocumentType
      */
-    public void setdocumentType(String value) {;
-        this.documentType = value;;
+    public void setDocumentType(string value) {
+        this.documentType = value;
     }
 
 
-    private String documentName;
+    private string documentName;
 
     /**
-     * Getter for documentName;
+     * Getter for documentName
+     *
      * DocumentName
      */
-    public String getdocumentName() {;
-        return this.documentName;;
+    public string getDocumentName() {
+        return this.documentName;
     }
 
     /**
-     * Setter for documentName;
+     * Setter for documentName
+     *
      * DocumentName
      */
-    public void setdocumentName(String value) {;
-        this.documentName = value;;
+    public void setDocumentName(string value) {
+        this.documentName = value;
     }
 
 
     private FundingESignMethodReturn methodReturn;
 
     /**
-     * Getter for methodReturn;
+     * Getter for methodReturn
+     *
      * MethodReturn
      */
-    public FundingESignMethodReturn getmethodReturn() {;
-        return this.methodReturn;;
+    public FundingESignMethodReturn getMethodReturn() {
+        return this.methodReturn;
     }
 
     /**
-     * Setter for methodReturn;
+     * Setter for methodReturn
+     *
      * MethodReturn
      */
-    public void setmethodReturn(FundingESignMethodReturn value) {;
-        this.methodReturn = value;;
+    public void setMethodReturn(FundingESignMethodReturn value) {
+        this.methodReturn = value;
     }
 
 
-    private String status;
+    private string status;
 
     /**
-     * Getter for status;
+     * Getter for status
+     *
      * Status
      */
-    public String getstatus() {;
-        return this.status;;
+    public string getStatus() {
+        return this.status;
     }
 
     /**
-     * Setter for status;
+     * Setter for status
+     *
      * Status
      */
-    public void setstatus(String value) {;
-        this.status = value;;
+    public void setStatus(string value) {
+        this.status = value;
     }
 
 
-    private String errorMessage;
+    private string errorMessage;
 
     /**
-     * Getter for errorMessage;
+     * Getter for errorMessage
+     *
      * ErrorMessage
      */
-    public String geterrorMessage() {;
-        return this.errorMessage;;
+    public string getErrorMessage() {
+        return this.errorMessage;
     }
 
     /**
-     * Setter for errorMessage;
+     * Setter for errorMessage
+     *
      * ErrorMessage
      */
-    public void seterrorMessage(String value) {;
-        this.errorMessage = value;;
+    public void setErrorMessage(string value) {
+        this.errorMessage = value;
     }
 
 
-    private DateTime? lastPolled;
+    private Instant lastPolled;
 
     /**
-     * Getter for lastPolled;
+     * Getter for lastPolled
+     *
      * LastPolled
      */
-    public DateTime? getlastPolled() {;
-        return this.lastPolled;;
+    public Instant getLastPolled() {
+        return this.lastPolled;
     }
 
     /**
-     * Setter for lastPolled;
+     * Setter for lastPolled
+     *
      * LastPolled
      */
-    public void setlastPolled(DateTime? value) {;
-        this.lastPolled = value;;
+    public void setLastPolled(Instant value) {
+        this.lastPolled = value;
     }
 
 
-    private DateTime? lastSigned;
+    private Instant lastSigned;
 
     /**
-     * Getter for lastSigned;
+     * Getter for lastSigned
+     *
      * LastSigned
      */
-    public DateTime? getlastSigned() {;
-        return this.lastSigned;;
+    public Instant getLastSigned() {
+        return this.lastSigned;
     }
 
     /**
-     * Setter for lastSigned;
+     * Setter for lastSigned
+     *
      * LastSigned
      */
-    public void setlastSigned(DateTime? value) {;
-        this.lastSigned = value;;
+    public void setLastSigned(Instant value) {
+        this.lastSigned = value;
     }
 
 
-    private DateTime? lastActivated;
+    private Instant lastActivated;
 
     /**
-     * Getter for lastActivated;
+     * Getter for lastActivated
+     *
      * LastActivated
      */
-    public DateTime? getlastActivated() {;
-        return this.lastActivated;;
+    public Instant getLastActivated() {
+        return this.lastActivated;
     }
 
     /**
-     * Setter for lastActivated;
+     * Setter for lastActivated
+     *
      * LastActivated
      */
-    public void setlastActivated(DateTime? value) {;
-        this.lastActivated = value;;
+    public void setLastActivated(Instant value) {
+        this.lastActivated = value;
     }
 
 
-    private Int64? templateRequestId;
+    private Long templateRequestId;
 
     /**
-     * Getter for templateRequestId;
+     * Getter for templateRequestId
+     *
      * TemplateRequestId
      */
-    public Int64? gettemplateRequestId() {;
-        return this.templateRequestId;;
+    public Long getTemplateRequestId() {
+        return this.templateRequestId;
     }
 
     /**
-     * Setter for templateRequestId;
+     * Setter for templateRequestId
+     *
      * TemplateRequestId
      */
-    public void settemplateRequestId(Int64? value) {;
-        this.templateRequestId = value;;
+    public void setTemplateRequestId(Long value) {
+        this.templateRequestId = value;
     }
 
 

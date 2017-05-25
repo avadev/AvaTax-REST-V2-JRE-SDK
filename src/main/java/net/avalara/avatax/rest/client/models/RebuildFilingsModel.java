@@ -30,22 +30,24 @@ import java.util.HashMap;
 public class RebuildFilingsModel {
 
 
-    private Boolean rebuild;
+    private boolean rebuild;
 
     /**
-     * Getter for rebuild;
+     * Getter for rebuild
+     *
      * Set this value to true in order to rebuild the filings.
      */
-    public Boolean getrebuild() {;
-        return this.rebuild;;
+    public boolean getRebuild() {
+        return this.rebuild;
     }
 
     /**
-     * Setter for rebuild;
+     * Setter for rebuild
+     *
      * Set this value to true in order to rebuild the filings.
      */
-    public void setrebuild(Boolean value) {;
-        this.rebuild = value;;
+    public void setRebuild(boolean value) {
+        this.rebuild = value;
     }
 
 

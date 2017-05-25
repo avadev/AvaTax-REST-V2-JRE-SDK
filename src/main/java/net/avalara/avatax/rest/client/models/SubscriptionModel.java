@@ -30,193 +30,213 @@ import java.util.HashMap;
 public class SubscriptionModel {
 
 
-    private Int32 id;
+    private int id;
 
     /**
-     * Getter for id;
+     * Getter for id
+     *
      * The unique ID number of this subscription.
      */
-    public Int32 getid() {;
-        return this.id;;
+    public int getId() {
+        return this.id;
     }
 
     /**
-     * Setter for id;
+     * Setter for id
+     *
      * The unique ID number of this subscription.
      */
-    public void setid(Int32 value) {;
-        this.id = value;;
+    public void setId(int value) {
+        this.id = value;
     }
 
 
-    private Int32 accountId;
+    private int accountId;
 
     /**
-     * Getter for accountId;
+     * Getter for accountId
+     *
      * The unique ID number of the account this subscription belongs to.
      */
-    public Int32 getaccountId() {;
-        return this.accountId;;
+    public int getAccountId() {
+        return this.accountId;
     }
 
     /**
-     * Setter for accountId;
+     * Setter for accountId
+     *
      * The unique ID number of the account this subscription belongs to.
      */
-    public void setaccountId(Int32 value) {;
-        this.accountId = value;;
+    public void setAccountId(int value) {
+        this.accountId = value;
     }
 
 
-    private Int32? subscriptionTypeId;
+    private Integer subscriptionTypeId;
 
     /**
-     * Getter for subscriptionTypeId;
+     * Getter for subscriptionTypeId
+     *
      * The unique ID number of the service that the account is subscribed to.
      */
-    public Int32? getsubscriptionTypeId() {;
-        return this.subscriptionTypeId;;
+    public Integer getSubscriptionTypeId() {
+        return this.subscriptionTypeId;
     }
 
     /**
-     * Setter for subscriptionTypeId;
+     * Setter for subscriptionTypeId
+     *
      * The unique ID number of the service that the account is subscribed to.
      */
-    public void setsubscriptionTypeId(Int32? value) {;
-        this.subscriptionTypeId = value;;
+    public void setSubscriptionTypeId(Integer value) {
+        this.subscriptionTypeId = value;
     }
 
 
-    private String subscriptionDescription;
+    private string subscriptionDescription;
 
     /**
-     * Getter for subscriptionDescription;
+     * Getter for subscriptionDescription
+     *
      * A friendly description of the service that the account is subscribed to.
      */
-    public String getsubscriptionDescription() {;
-        return this.subscriptionDescription;;
+    public string getSubscriptionDescription() {
+        return this.subscriptionDescription;
     }
 
     /**
-     * Setter for subscriptionDescription;
+     * Setter for subscriptionDescription
+     *
      * A friendly description of the service that the account is subscribed to.
      */
-    public void setsubscriptionDescription(String value) {;
-        this.subscriptionDescription = value;;
+    public void setSubscriptionDescription(string value) {
+        this.subscriptionDescription = value;
     }
 
 
-    private DateTime? effectiveDate;
+    private Instant effectiveDate;
 
     /**
-     * Getter for effectiveDate;
+     * Getter for effectiveDate
+     *
      * The date when the subscription began.
      */
-    public DateTime? geteffectiveDate() {;
-        return this.effectiveDate;;
+    public Instant getEffectiveDate() {
+        return this.effectiveDate;
     }
 
     /**
-     * Setter for effectiveDate;
+     * Setter for effectiveDate
+     *
      * The date when the subscription began.
      */
-    public void seteffectiveDate(DateTime? value) {;
-        this.effectiveDate = value;;
+    public void setEffectiveDate(Instant value) {
+        this.effectiveDate = value;
     }
 
 
-    private DateTime? endDate;
+    private Instant endDate;
 
     /**
-     * Getter for endDate;
+     * Getter for endDate
+     *
      * If the subscription has ended or will end, this date indicates when the subscription ends.
      */
-    public DateTime? getendDate() {;
-        return this.endDate;;
+    public Instant getEndDate() {
+        return this.endDate;
     }
 
     /**
-     * Setter for endDate;
+     * Setter for endDate
+     *
      * If the subscription has ended or will end, this date indicates when the subscription ends.
      */
-    public void setendDate(DateTime? value) {;
-        this.endDate = value;;
+    public void setEndDate(Instant value) {
+        this.endDate = value;
     }
 
 
-    private DateTime? createdDate;
+    private Instant createdDate;
 
     /**
-     * Getter for createdDate;
+     * Getter for createdDate
+     *
      * The date when this record was created.
      */
-    public DateTime? getcreatedDate() {;
-        return this.createdDate;;
+    public Instant getCreatedDate() {
+        return this.createdDate;
     }
 
     /**
-     * Setter for createdDate;
+     * Setter for createdDate
+     *
      * The date when this record was created.
      */
-    public void setcreatedDate(DateTime? value) {;
-        this.createdDate = value;;
+    public void setCreatedDate(Instant value) {
+        this.createdDate = value;
     }
 
 
-    private Int32? createdUserId;
+    private Integer createdUserId;
 
     /**
-     * Getter for createdUserId;
+     * Getter for createdUserId
+     *
      * The User ID of the user who created this record.
      */
-    public Int32? getcreatedUserId() {;
-        return this.createdUserId;;
+    public Integer getCreatedUserId() {
+        return this.createdUserId;
     }
 
     /**
-     * Setter for createdUserId;
+     * Setter for createdUserId
+     *
      * The User ID of the user who created this record.
      */
-    public void setcreatedUserId(Int32? value) {;
-        this.createdUserId = value;;
+    public void setCreatedUserId(Integer value) {
+        this.createdUserId = value;
     }
 
 
-    private DateTime? modifiedDate;
+    private Instant modifiedDate;
 
     /**
-     * Getter for modifiedDate;
+     * Getter for modifiedDate
+     *
      * The date/time when this record was last modified.
      */
-    public DateTime? getmodifiedDate() {;
-        return this.modifiedDate;;
+    public Instant getModifiedDate() {
+        return this.modifiedDate;
     }
 
     /**
-     * Setter for modifiedDate;
+     * Setter for modifiedDate
+     *
      * The date/time when this record was last modified.
      */
-    public void setmodifiedDate(DateTime? value) {;
-        this.modifiedDate = value;;
+    public void setModifiedDate(Instant value) {
+        this.modifiedDate = value;
     }
 
 
-    private Int32? modifiedUserId;
+    private Integer modifiedUserId;
 
     /**
-     * Getter for modifiedUserId;
+     * Getter for modifiedUserId
+     *
      * The user ID of the user who last modified this record.
      */
-    public Int32? getmodifiedUserId() {;
-        return this.modifiedUserId;;
+    public Integer getModifiedUserId() {
+        return this.modifiedUserId;
     }
 
     /**
-     * Setter for modifiedUserId;
+     * Setter for modifiedUserId
+     *
      * The user ID of the user who last modified this record.
      */
-    public void setmodifiedUserId(Int32? value) {;
-        this.modifiedUserId = value;;
+    public void setModifiedUserId(Integer value) {
+        this.modifiedUserId = value;
     }
 
 

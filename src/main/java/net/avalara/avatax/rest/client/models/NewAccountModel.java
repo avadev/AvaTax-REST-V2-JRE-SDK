@@ -30,98 +30,108 @@ import java.util.HashMap;
 public class NewAccountModel {
 
 
-    private Int32? accountId;
+    private Integer accountId;
 
     /**
-     * Getter for accountId;
+     * Getter for accountId
+     *
      * This is the ID number of the account that was created
      */
-    public Int32? getaccountId() {;
-        return this.accountId;;
+    public Integer getAccountId() {
+        return this.accountId;
     }
 
     /**
-     * Setter for accountId;
+     * Setter for accountId
+     *
      * This is the ID number of the account that was created
      */
-    public void setaccountId(Int32? value) {;
-        this.accountId = value;;
+    public void setAccountId(Integer value) {
+        this.accountId = value;
     }
 
 
-    private String accountDetailsEmailedTo;
+    private string accountDetailsEmailedTo;
 
     /**
-     * Getter for accountDetailsEmailedTo;
+     * Getter for accountDetailsEmailedTo
+     *
      * This is the email address to which credentials were mailed
      */
-    public String getaccountDetailsEmailedTo() {;
-        return this.accountDetailsEmailedTo;;
+    public string getAccountDetailsEmailedTo() {
+        return this.accountDetailsEmailedTo;
     }
 
     /**
-     * Setter for accountDetailsEmailedTo;
+     * Setter for accountDetailsEmailedTo
+     *
      * This is the email address to which credentials were mailed
      */
-    public void setaccountDetailsEmailedTo(String value) {;
-        this.accountDetailsEmailedTo = value;;
+    public void setAccountDetailsEmailedTo(string value) {
+        this.accountDetailsEmailedTo = value;
     }
 
 
-    private DateTime? createdDate;
+    private Instant createdDate;
 
     /**
-     * Getter for createdDate;
+     * Getter for createdDate
+     *
      * The date and time when this account was created
      */
-    public DateTime? getcreatedDate() {;
-        return this.createdDate;;
+    public Instant getCreatedDate() {
+        return this.createdDate;
     }
 
     /**
-     * Setter for createdDate;
+     * Setter for createdDate
+     *
      * The date and time when this account was created
      */
-    public void setcreatedDate(DateTime? value) {;
-        this.createdDate = value;;
+    public void setCreatedDate(Instant value) {
+        this.createdDate = value;
     }
 
 
-    private DateTime? emailedDate;
+    private Instant emailedDate;
 
     /**
-     * Getter for emailedDate;
+     * Getter for emailedDate
+     *
      * The date and time when account information was emailed to the user
      */
-    public DateTime? getemailedDate() {;
-        return this.emailedDate;;
+    public Instant getEmailedDate() {
+        return this.emailedDate;
     }
 
     /**
-     * Setter for emailedDate;
+     * Setter for emailedDate
+     *
      * The date and time when account information was emailed to the user
      */
-    public void setemailedDate(DateTime? value) {;
-        this.emailedDate = value;;
+    public void setEmailedDate(Instant value) {
+        this.emailedDate = value;
     }
 
 
-    private String limitations;
+    private string limitations;
 
     /**
-     * Getter for limitations;
+     * Getter for limitations
+     *
      * If this account includes any limitations, specify them here
      */
-    public String getlimitations() {;
-        return this.limitations;;
+    public string getLimitations() {
+        return this.limitations;
     }
 
     /**
-     * Setter for limitations;
+     * Setter for limitations
+     *
      * If this account includes any limitations, specify them here
      */
-    public void setlimitations(String value) {;
-        this.limitations = value;;
+    public void setLimitations(string value) {
+        this.limitations = value;
     }
 
 

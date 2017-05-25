@@ -31,22 +31,24 @@ import java.util.HashMap;
 public class TaxCodeTypesModel {
 
 
-    private Dictionary<string, string> types;
+    private object types;
 
     /**
-     * Getter for types;
+     * Getter for types
+     *
      * The list of Avalara-defined tax code types.
      */
-    public Dictionary<string, string> gettypes() {;
-        return this.types;;
+    public object getTypes() {
+        return this.types;
     }
 
     /**
-     * Setter for types;
+     * Setter for types
+     *
      * The list of Avalara-defined tax code types.
      */
-    public void settypes(Dictionary<string, string> value) {;
-        this.types = value;;
+    public void setTypes(object value) {
+        this.types = value;
     }
 
 

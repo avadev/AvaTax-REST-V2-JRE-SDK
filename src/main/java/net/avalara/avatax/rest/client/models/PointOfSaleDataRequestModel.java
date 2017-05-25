@@ -30,136 +30,150 @@ import java.util.HashMap;
 public class PointOfSaleDataRequestModel {
 
 
-    private String companyCode;
+    private string companyCode;
 
     /**
-     * Getter for companyCode;
+     * Getter for companyCode
+     *
      * A unique code that references a company within your account.
      */
-    public String getcompanyCode() {;
-        return this.companyCode;;
+    public string getCompanyCode() {
+        return this.companyCode;
     }
 
     /**
-     * Setter for companyCode;
+     * Setter for companyCode
+     *
      * A unique code that references a company within your account.
      */
-    public void setcompanyCode(String value) {;
-        this.companyCode = value;;
+    public void setCompanyCode(string value) {
+        this.companyCode = value;
     }
 
 
-    private DateTime? documentDate;
+    private Instant documentDate;
 
     /**
-     * Getter for documentDate;
+     * Getter for documentDate
+     *
      * The date associated with the response content. Default is current date. This field can be used to backdate or postdate the response content.
      */
-    public DateTime? getdocumentDate() {;
-        return this.documentDate;;
+    public Instant getDocumentDate() {
+        return this.documentDate;
     }
 
     /**
-     * Setter for documentDate;
+     * Setter for documentDate
+     *
      * The date associated with the response content. Default is current date. This field can be used to backdate or postdate the response content.
      */
-    public void setdocumentDate(DateTime? value) {;
-        this.documentDate = value;;
+    public void setDocumentDate(Instant value) {
+        this.documentDate = value;
     }
 
 
-    private PointOfSaleFileType? responseType;
+    private PointOfSaleFileType responseType;
 
     /**
-     * Getter for responseType;
+     * Getter for responseType
+     *
      * The format of your response. Formats include JSON, CSV, and XML.
      */
-    public PointOfSaleFileType? getresponseType() {;
-        return this.responseType;;
+    public PointOfSaleFileType getResponseType() {
+        return this.responseType;
     }
 
     /**
-     * Setter for responseType;
+     * Setter for responseType
+     *
      * The format of your response. Formats include JSON, CSV, and XML.
      */
-    public void setresponseType(PointOfSaleFileType? value) {;
-        this.responseType = value;;
+    public void setResponseType(PointOfSaleFileType value) {
+        this.responseType = value;
     }
 
 
-    private List<String> taxCodes;
+    private string[] taxCodes;
 
     /**
-     * Getter for taxCodes;
+     * Getter for taxCodes
+     *
      * A list of tax codes to include in this point-of-sale file. If no tax codes are specified, response will include all distinct tax codes associated with the Items within your company.
      */
-    public List<String> gettaxCodes() {;
-        return this.taxCodes;;
+    public string[] getTaxCodes() {
+        return this.taxCodes;
     }
 
     /**
-     * Setter for taxCodes;
+     * Setter for taxCodes
+     *
      * A list of tax codes to include in this point-of-sale file. If no tax codes are specified, response will include all distinct tax codes associated with the Items within your company.
      */
-    public void settaxCodes(List<String> value) {;
-        this.taxCodes = value;;
+    public void setTaxCodes(string[] value) {
+        this.taxCodes = value;
     }
 
 
-    private List<String> locationCodes;
+    private string[] locationCodes;
 
     /**
-     * Getter for locationCodes;
+     * Getter for locationCodes
+     *
      * A list of location codes to include in this point-of-sale file. If no location codes are specified, response will include all locations within your company.
      */
-    public List<String> getlocationCodes() {;
-        return this.locationCodes;;
+    public string[] getLocationCodes() {
+        return this.locationCodes;
     }
 
     /**
-     * Setter for locationCodes;
+     * Setter for locationCodes
+     *
      * A list of location codes to include in this point-of-sale file. If no location codes are specified, response will include all locations within your company.
      */
-    public void setlocationCodes(List<String> value) {;
-        this.locationCodes = value;;
+    public void setLocationCodes(string[] value) {
+        this.locationCodes = value;
     }
 
 
-    private Boolean? includeJurisCodes;
+    private object includeJurisCodes;
 
     /**
-     * Getter for includeJurisCodes;
+     * Getter for includeJurisCodes
+     *
      * Set this value to true to include Juris Code in the response.
      */
-    public Boolean? getincludeJurisCodes() {;
-        return this.includeJurisCodes;;
+    public object getIncludeJurisCodes() {
+        return this.includeJurisCodes;
     }
 
     /**
-     * Setter for includeJurisCodes;
+     * Setter for includeJurisCodes
+     *
      * Set this value to true to include Juris Code in the response.
      */
-    public void setincludeJurisCodes(Boolean? value) {;
-        this.includeJurisCodes = value;;
+    public void setIncludeJurisCodes(object value) {
+        this.includeJurisCodes = value;
     }
 
 
-    private PointOfSalePartnerId? partnerId;
+    private PointOfSalePartnerId partnerId;
 
     /**
-     * Getter for partnerId;
+     * Getter for partnerId
+     *
      * A unique code assoicated with the Partner you may be working with. If you are not working with a Partner or your Partner has not provided you an ID, leave null.
      */
-    public PointOfSalePartnerId? getpartnerId() {;
-        return this.partnerId;;
+    public PointOfSalePartnerId getPartnerId() {
+        return this.partnerId;
     }
 
     /**
-     * Setter for partnerId;
+     * Setter for partnerId
+     *
      * A unique code assoicated with the Partner you may be working with. If you are not working with a Partner or your Partner has not provided you an ID, leave null.
      */
-    public void setpartnerId(PointOfSalePartnerId? value) {;
-        this.partnerId = value;;
+    public void setPartnerId(PointOfSalePartnerId value) {
+        this.partnerId = value;
     }
 
 

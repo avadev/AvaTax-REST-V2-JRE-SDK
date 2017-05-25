@@ -30,41 +30,45 @@ import java.util.HashMap;
 public class CoordinateInfo {
 
 
-    private Decimal? latitude;
+    private Decimal latitude;
 
     /**
-     * Getter for latitude;
+     * Getter for latitude
+     *
      * Latitude
      */
-    public Decimal? getlatitude() {;
-        return this.latitude;;
+    public Decimal getLatitude() {
+        return this.latitude;
     }
 
     /**
-     * Setter for latitude;
+     * Setter for latitude
+     *
      * Latitude
      */
-    public void setlatitude(Decimal? value) {;
-        this.latitude = value;;
+    public void setLatitude(Decimal value) {
+        this.latitude = value;
     }
 
 
-    private Decimal? longitude;
+    private Decimal longitude;
 
     /**
-     * Getter for longitude;
+     * Getter for longitude
+     *
      * Longitude
      */
-    public Decimal? getlongitude() {;
-        return this.longitude;;
+    public Decimal getLongitude() {
+        return this.longitude;
     }
 
     /**
-     * Setter for longitude;
+     * Setter for longitude
+     *
      * Longitude
      */
-    public void setlongitude(Decimal? value) {;
-        this.longitude = value;;
+    public void setLongitude(Decimal value) {
+        this.longitude = value;
     }
 
 

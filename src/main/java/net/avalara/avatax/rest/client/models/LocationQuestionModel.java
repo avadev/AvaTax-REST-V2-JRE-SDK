@@ -30,176 +30,194 @@ import java.util.HashMap;
 public class LocationQuestionModel {
 
 
-    private Int32 id;
+    private int id;
 
     /**
-     * Getter for id;
+     * Getter for id
+     *
      * The unique ID number of this location setting type
      */
-    public Int32 getid() {;
-        return this.id;;
+    public int getId() {
+        return this.id;
     }
 
     /**
-     * Setter for id;
+     * Setter for id
+     *
      * The unique ID number of this location setting type
      */
-    public void setid(Int32 value) {;
-        this.id = value;;
+    public void setId(int value) {
+        this.id = value;
     }
 
 
-    private String question;
+    private string question;
 
     /**
-     * Getter for question;
+     * Getter for question
+     *
      * This is the prompt for this question
      */
-    public String getquestion() {;
-        return this.question;;
+    public string getQuestion() {
+        return this.question;
     }
 
     /**
-     * Setter for question;
+     * Setter for question
+     *
      * This is the prompt for this question
      */
-    public void setquestion(String value) {;
-        this.question = value;;
+    public void setQuestion(string value) {
+        this.question = value;
     }
 
 
-    private String description;
+    private string description;
 
     /**
-     * Getter for description;
+     * Getter for description
+     *
      * If additional information is available about the location setting, this contains descriptive text to help
     * you identify the correct value to provide in this setting.
      */
-    public String getdescription() {;
-        return this.description;;
+    public string getDescription() {
+        return this.description;
     }
 
     /**
-     * Setter for description;
+     * Setter for description
+     *
      * If additional information is available about the location setting, this contains descriptive text to help
     * you identify the correct value to provide in this setting.
      */
-    public void setdescription(String value) {;
-        this.description = value;;
+    public void setDescription(string value) {
+        this.description = value;
     }
 
 
-    private String regularExpression;
+    private string regularExpression;
 
     /**
-     * Getter for regularExpression;
+     * Getter for regularExpression
+     *
      * If available, this regular expression will verify that the input from the user is in the expected format.
      */
-    public String getregularExpression() {;
-        return this.regularExpression;;
+    public string getRegularExpression() {
+        return this.regularExpression;
     }
 
     /**
-     * Setter for regularExpression;
+     * Setter for regularExpression
+     *
      * If available, this regular expression will verify that the input from the user is in the expected format.
      */
-    public void setregularExpression(String value) {;
-        this.regularExpression = value;;
+    public void setRegularExpression(string value) {
+        this.regularExpression = value;
     }
 
 
-    private String exampleValue;
+    private string exampleValue;
 
     /**
-     * Getter for exampleValue;
+     * Getter for exampleValue
+     *
      * If available, this is an example value that you can demonstrate to the user to show what is expected.
      */
-    public String getexampleValue() {;
-        return this.exampleValue;;
+    public string getExampleValue() {
+        return this.exampleValue;
     }
 
     /**
-     * Setter for exampleValue;
+     * Setter for exampleValue
+     *
      * If available, this is an example value that you can demonstrate to the user to show what is expected.
      */
-    public void setexampleValue(String value) {;
-        this.exampleValue = value;;
+    public void setExampleValue(string value) {
+        this.exampleValue = value;
     }
 
 
-    private String jurisdictionName;
+    private string jurisdictionName;
 
     /**
-     * Getter for jurisdictionName;
+     * Getter for jurisdictionName
+     *
      * Indicates which jurisdiction requires this question
      */
-    public String getjurisdictionName() {;
-        return this.jurisdictionName;;
+    public string getJurisdictionName() {
+        return this.jurisdictionName;
     }
 
     /**
-     * Setter for jurisdictionName;
+     * Setter for jurisdictionName
+     *
      * Indicates which jurisdiction requires this question
      */
-    public void setjurisdictionName(String value) {;
-        this.jurisdictionName = value;;
+    public void setJurisdictionName(string value) {
+        this.jurisdictionName = value;
     }
 
 
-    private JurisdictionType? jurisdictionType;
+    private JurisdictionType jurisdictionType;
 
     /**
-     * Getter for jurisdictionType;
+     * Getter for jurisdictionType
+     *
      * Indicates which type of jurisdiction requires this question
      */
-    public JurisdictionType? getjurisdictionType() {;
-        return this.jurisdictionType;;
+    public JurisdictionType getJurisdictionType() {
+        return this.jurisdictionType;
     }
 
     /**
-     * Setter for jurisdictionType;
+     * Setter for jurisdictionType
+     *
      * Indicates which type of jurisdiction requires this question
      */
-    public void setjurisdictionType(JurisdictionType? value) {;
-        this.jurisdictionType = value;;
+    public void setJurisdictionType(JurisdictionType value) {
+        this.jurisdictionType = value;
     }
 
 
-    private String jurisdictionCountry;
+    private string jurisdictionCountry;
 
     /**
-     * Getter for jurisdictionCountry;
+     * Getter for jurisdictionCountry
+     *
      * Indicates the country that this jurisdiction belongs to
      */
-    public String getjurisdictionCountry() {;
-        return this.jurisdictionCountry;;
+    public string getJurisdictionCountry() {
+        return this.jurisdictionCountry;
     }
 
     /**
-     * Setter for jurisdictionCountry;
+     * Setter for jurisdictionCountry
+     *
      * Indicates the country that this jurisdiction belongs to
      */
-    public void setjurisdictionCountry(String value) {;
-        this.jurisdictionCountry = value;;
+    public void setJurisdictionCountry(string value) {
+        this.jurisdictionCountry = value;
     }
 
 
-    private String jurisdictionRegion;
+    private string jurisdictionRegion;
 
     /**
-     * Getter for jurisdictionRegion;
+     * Getter for jurisdictionRegion
+     *
      * Indicates the state, region, or province that this jurisdiction belongs to
      */
-    public String getjurisdictionRegion() {;
-        return this.jurisdictionRegion;;
+    public string getJurisdictionRegion() {
+        return this.jurisdictionRegion;
     }
 
     /**
-     * Setter for jurisdictionRegion;
+     * Setter for jurisdictionRegion
+     *
      * Indicates the state, region, or province that this jurisdiction belongs to
      */
-    public void setjurisdictionRegion(String value) {;
-        this.jurisdictionRegion = value;;
+    public void setJurisdictionRegion(string value) {
+        this.jurisdictionRegion = value;
     }
 
 

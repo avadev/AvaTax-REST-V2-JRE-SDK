@@ -30,201 +30,221 @@ import java.util.HashMap;
 public class FilingModel {
 
 
-    private Int64? id;
+    private Long id;
 
     /**
-     * Getter for id;
+     * Getter for id
+     *
      * The unique ID number of this filing.
      */
-    public Int64? getid() {;
-        return this.id;;
+    public Long getId() {
+        return this.id;
     }
 
     /**
-     * Setter for id;
+     * Setter for id
+     *
      * The unique ID number of this filing.
      */
-    public void setid(Int64? value) {;
-        this.id = value;;
+    public void setId(Long value) {
+        this.id = value;
     }
 
 
-    private Int32? companyId;
+    private Integer companyId;
 
     /**
-     * Getter for companyId;
+     * Getter for companyId
+     *
      * The unique ID number of the company for this filing.
      */
-    public Int32? getcompanyId() {;
-        return this.companyId;;
+    public Integer getCompanyId() {
+        return this.companyId;
     }
 
     /**
-     * Setter for companyId;
+     * Setter for companyId
+     *
      * The unique ID number of the company for this filing.
      */
-    public void setcompanyId(Int32? value) {;
-        this.companyId = value;;
+    public void setCompanyId(Integer value) {
+        this.companyId = value;
     }
 
 
-    private Byte? month;
+    private Byte month;
 
     /**
-     * Getter for month;
+     * Getter for month
+     *
      * The month of the filing period for this tax filing. 
     * The filing period represents the year and month of the last day of taxes being reported on this filing. 
     * For example, an annual tax filing for Jan-Dec 2015 would have a filing period of Dec 2015.
      */
-    public Byte? getmonth() {;
-        return this.month;;
+    public Byte getMonth() {
+        return this.month;
     }
 
     /**
-     * Setter for month;
+     * Setter for month
+     *
      * The month of the filing period for this tax filing. 
     * The filing period represents the year and month of the last day of taxes being reported on this filing. 
     * For example, an annual tax filing for Jan-Dec 2015 would have a filing period of Dec 2015.
      */
-    public void setmonth(Byte? value) {;
-        this.month = value;;
+    public void setMonth(Byte value) {
+        this.month = value;
     }
 
 
-    private Int16? year;
+    private Short year;
 
     /**
-     * Getter for year;
+     * Getter for year
+     *
      * The year of the filing period for this tax filing.
     * The filing period represents the year and month of the last day of taxes being reported on this filing. 
     * For example, an annual tax filing for Jan-Dec 2015 would have a filing period of Dec 2015.
      */
-    public Int16? getyear() {;
-        return this.year;;
+    public Short getYear() {
+        return this.year;
     }
 
     /**
-     * Setter for year;
+     * Setter for year
+     *
      * The year of the filing period for this tax filing.
     * The filing period represents the year and month of the last day of taxes being reported on this filing. 
     * For example, an annual tax filing for Jan-Dec 2015 would have a filing period of Dec 2015.
      */
-    public void setyear(Int16? value) {;
-        this.year = value;;
+    public void setYear(Short value) {
+        this.year = value;
     }
 
 
-    private WorksheetTypeId? type;
+    private WorksheetTypeId type;
 
     /**
-     * Getter for type;
+     * Getter for type
+     *
      * Indicates whether this is an original or an amended filing.
      */
-    public WorksheetTypeId? gettype() {;
-        return this.type;;
+    public WorksheetTypeId getType() {
+        return this.type;
     }
 
     /**
-     * Setter for type;
+     * Setter for type
+     *
      * Indicates whether this is an original or an amended filing.
      */
-    public void settype(WorksheetTypeId? value) {;
-        this.type = value;;
+    public void setType(WorksheetTypeId value) {
+        this.type = value;
     }
 
 
-    private DateTime? createdDate;
+    private Instant createdDate;
 
     /**
-     * Getter for createdDate;
+     * Getter for createdDate
+     *
      * The date when this record was created.
      */
-    public DateTime? getcreatedDate() {;
-        return this.createdDate;;
+    public Instant getCreatedDate() {
+        return this.createdDate;
     }
 
     /**
-     * Setter for createdDate;
+     * Setter for createdDate
+     *
      * The date when this record was created.
      */
-    public void setcreatedDate(DateTime? value) {;
-        this.createdDate = value;;
+    public void setCreatedDate(Instant value) {
+        this.createdDate = value;
     }
 
 
-    private Int32? createdUserId;
+    private Integer createdUserId;
 
     /**
-     * Getter for createdUserId;
+     * Getter for createdUserId
+     *
      * The User ID of the user who created this record.
      */
-    public Int32? getcreatedUserId() {;
-        return this.createdUserId;;
+    public Integer getCreatedUserId() {
+        return this.createdUserId;
     }
 
     /**
-     * Setter for createdUserId;
+     * Setter for createdUserId
+     *
      * The User ID of the user who created this record.
      */
-    public void setcreatedUserId(Int32? value) {;
-        this.createdUserId = value;;
+    public void setCreatedUserId(Integer value) {
+        this.createdUserId = value;
     }
 
 
-    private DateTime? modifiedDate;
+    private Instant modifiedDate;
 
     /**
-     * Getter for modifiedDate;
+     * Getter for modifiedDate
+     *
      * The date/time when this record was last modified.
      */
-    public DateTime? getmodifiedDate() {;
-        return this.modifiedDate;;
+    public Instant getModifiedDate() {
+        return this.modifiedDate;
     }
 
     /**
-     * Setter for modifiedDate;
+     * Setter for modifiedDate
+     *
      * The date/time when this record was last modified.
      */
-    public void setmodifiedDate(DateTime? value) {;
-        this.modifiedDate = value;;
+    public void setModifiedDate(Instant value) {
+        this.modifiedDate = value;
     }
 
 
-    private Int32? modifiedUserId;
+    private Integer modifiedUserId;
 
     /**
-     * Getter for modifiedUserId;
+     * Getter for modifiedUserId
+     *
      * The user ID of the user who last modified this record.
      */
-    public Int32? getmodifiedUserId() {;
-        return this.modifiedUserId;;
+    public Integer getModifiedUserId() {
+        return this.modifiedUserId;
     }
 
     /**
-     * Setter for modifiedUserId;
+     * Setter for modifiedUserId
+     *
      * The user ID of the user who last modified this record.
      */
-    public void setmodifiedUserId(Int32? value) {;
-        this.modifiedUserId = value;;
+    public void setModifiedUserId(Integer value) {
+        this.modifiedUserId = value;
     }
 
 
-    private List<FilingRegionModel> filingRegions;
+    private FilingRegionModel[] filingRegions;
 
     /**
-     * Getter for filingRegions;
+     * Getter for filingRegions
+     *
      * A listing of regional tax filings within this time period.
      */
-    public List<FilingRegionModel> getfilingRegions() {;
-        return this.filingRegions;;
+    public FilingRegionModel[] getFilingRegions() {
+        return this.filingRegions;
     }
 
     /**
-     * Setter for filingRegions;
+     * Setter for filingRegions
+     *
      * A listing of regional tax filings within this time period.
      */
-    public void setfilingRegions(List<FilingRegionModel> value) {;
-        this.filingRegions = value;;
+    public void setFilingRegions(FilingRegionModel[] value) {
+        this.filingRegions = value;
     }
 
 

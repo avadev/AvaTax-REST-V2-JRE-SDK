@@ -30,79 +30,87 @@ import java.util.HashMap;
 public class LoginVerificationOutputModel {
 
 
-    private Int32 jobId;
+    private int jobId;
 
     /**
-     * Getter for jobId;
+     * Getter for jobId
+     *
      * The job Id returned from skyscraper
      */
-    public Int32 getjobId() {;
-        return this.jobId;;
+    public int getJobId() {
+        return this.jobId;
     }
 
     /**
-     * Setter for jobId;
+     * Setter for jobId
+     *
      * The job Id returned from skyscraper
      */
-    public void setjobId(Int32 value) {;
-        this.jobId = value;;
+    public void setJobId(int value) {
+        this.jobId = value;
     }
 
 
-    private String operationStatus;
+    private string operationStatus;
 
     /**
-     * Getter for operationStatus;
+     * Getter for operationStatus
+     *
      * The operation status of the job
      */
-    public String getoperationStatus() {;
-        return this.operationStatus;;
+    public string getOperationStatus() {
+        return this.operationStatus;
     }
 
     /**
-     * Setter for operationStatus;
+     * Setter for operationStatus
+     *
      * The operation status of the job
      */
-    public void setoperationStatus(String value) {;
-        this.operationStatus = value;;
+    public void setOperationStatus(string value) {
+        this.operationStatus = value;
     }
 
 
-    private String message;
+    private string message;
 
     /**
-     * Getter for message;
+     * Getter for message
+     *
      * The message returned from the job
      */
-    public String getmessage() {;
-        return this.message;;
+    public string getMessage() {
+        return this.message;
     }
 
     /**
-     * Setter for message;
+     * Setter for message
+     *
      * The message returned from the job
      */
-    public void setmessage(String value) {;
-        this.message = value;;
+    public void setMessage(string value) {
+        this.message = value;
     }
 
 
-    private Boolean? loginSuccess;
+    private object loginSuccess;
 
     /**
-     * Getter for loginSuccess;
+     * Getter for loginSuccess
+     *
      * Indicates if the login was successful
      */
-    public Boolean? getloginSuccess() {;
-        return this.loginSuccess;;
+    public object getLoginSuccess() {
+        return this.loginSuccess;
     }
 
     /**
-     * Setter for loginSuccess;
+     * Setter for loginSuccess
+     *
      * Indicates if the login was successful
      */
-    public void setloginSuccess(Boolean? value) {;
-        this.loginSuccess = value;;
+    public void setLoginSuccess(object value) {
+        this.loginSuccess = value;
     }
 
 

@@ -37,19 +37,21 @@ public class ReconstructedApiRequestResponseModel {
     private CreateTransactionModel request;
 
     /**
-     * Getter for request;
+     * Getter for request
+     *
      * API request
      */
-    public CreateTransactionModel getrequest() {;
-        return this.request;;
+    public CreateTransactionModel getRequest() {
+        return this.request;
     }
 
     /**
-     * Setter for request;
+     * Setter for request
+     *
      * API request
      */
-    public void setrequest(CreateTransactionModel value) {;
-        this.request = value;;
+    public void setRequest(CreateTransactionModel value) {
+        this.request = value;
     }
 
 

@@ -31,520 +31,574 @@ import java.util.HashMap;
 public class LocationModel {
 
 
-    private Int32 id;
+    private int id;
 
     /**
-     * Getter for id;
+     * Getter for id
+     *
      * The unique ID number of this location.
      */
-    public Int32 getid() {;
-        return this.id;;
+    public int getId() {
+        return this.id;
     }
 
     /**
-     * Setter for id;
+     * Setter for id
+     *
      * The unique ID number of this location.
      */
-    public void setid(Int32 value) {;
-        this.id = value;;
+    public void setId(int value) {
+        this.id = value;
     }
 
 
-    private Int32 companyId;
+    private int companyId;
 
     /**
-     * Getter for companyId;
+     * Getter for companyId
+     *
      * The unique ID number of the company that operates at this location.
      */
-    public Int32 getcompanyId() {;
-        return this.companyId;;
+    public int getCompanyId() {
+        return this.companyId;
     }
 
     /**
-     * Setter for companyId;
+     * Setter for companyId
+     *
      * The unique ID number of the company that operates at this location.
      */
-    public void setcompanyId(Int32 value) {;
-        this.companyId = value;;
+    public void setCompanyId(int value) {
+        this.companyId = value;
     }
 
 
-    private String locationCode;
+    private string locationCode;
 
     /**
-     * Getter for locationCode;
+     * Getter for locationCode
+     *
      * A code that identifies this location. Must be unique within your company.
      */
-    public String getlocationCode() {;
-        return this.locationCode;;
+    public string getLocationCode() {
+        return this.locationCode;
     }
 
     /**
-     * Setter for locationCode;
+     * Setter for locationCode
+     *
      * A code that identifies this location. Must be unique within your company.
      */
-    public void setlocationCode(String value) {;
-        this.locationCode = value;;
+    public void setLocationCode(string value) {
+        this.locationCode = value;
     }
 
 
-    private String description;
+    private string description;
 
     /**
-     * Getter for description;
+     * Getter for description
+     *
      * A friendly name for this location.
      */
-    public String getdescription() {;
-        return this.description;;
+    public string getDescription() {
+        return this.description;
     }
 
     /**
-     * Setter for description;
+     * Setter for description
+     *
      * A friendly name for this location.
      */
-    public void setdescription(String value) {;
-        this.description = value;;
+    public void setDescription(string value) {
+        this.description = value;
     }
 
 
     private AddressTypeId addressTypeId;
 
     /**
-     * Getter for addressTypeId;
+     * Getter for addressTypeId
+     *
      * Indicates whether this location is a physical place of business or a temporary salesperson location.
      */
-    public AddressTypeId getaddressTypeId() {;
-        return this.addressTypeId;;
+    public AddressTypeId getAddressTypeId() {
+        return this.addressTypeId;
     }
 
     /**
-     * Setter for addressTypeId;
+     * Setter for addressTypeId
+     *
      * Indicates whether this location is a physical place of business or a temporary salesperson location.
      */
-    public void setaddressTypeId(AddressTypeId value) {;
-        this.addressTypeId = value;;
+    public void setAddressTypeId(AddressTypeId value) {
+        this.addressTypeId = value;
     }
 
 
     private AddressCategoryId addressCategoryId;
 
     /**
-     * Getter for addressCategoryId;
+     * Getter for addressCategoryId
+     *
      * Indicates the type of place of business represented by this location.
      */
-    public AddressCategoryId getaddressCategoryId() {;
-        return this.addressCategoryId;;
+    public AddressCategoryId getAddressCategoryId() {
+        return this.addressCategoryId;
     }
 
     /**
-     * Setter for addressCategoryId;
+     * Setter for addressCategoryId
+     *
      * Indicates the type of place of business represented by this location.
      */
-    public void setaddressCategoryId(AddressCategoryId value) {;
-        this.addressCategoryId = value;;
+    public void setAddressCategoryId(AddressCategoryId value) {
+        this.addressCategoryId = value;
     }
 
 
-    private String line1;
+    private string line1;
 
     /**
-     * Getter for line1;
+     * Getter for line1
+     *
      * The first line of the physical address of this location.
      */
-    public String getline1() {;
-        return this.line1;;
+    public string getLine1() {
+        return this.line1;
     }
 
     /**
-     * Setter for line1;
+     * Setter for line1
+     *
      * The first line of the physical address of this location.
      */
-    public void setline1(String value) {;
-        this.line1 = value;;
+    public void setLine1(string value) {
+        this.line1 = value;
     }
 
 
-    private String line2;
+    private string line2;
 
     /**
-     * Getter for line2;
+     * Getter for line2
+     *
      * The second line of the physical address of this location.
      */
-    public String getline2() {;
-        return this.line2;;
+    public string getLine2() {
+        return this.line2;
     }
 
     /**
-     * Setter for line2;
+     * Setter for line2
+     *
      * The second line of the physical address of this location.
      */
-    public void setline2(String value) {;
-        this.line2 = value;;
+    public void setLine2(string value) {
+        this.line2 = value;
     }
 
 
-    private String line3;
+    private string line3;
 
     /**
-     * Getter for line3;
+     * Getter for line3
+     *
      * The third line of the physical address of this location.
      */
-    public String getline3() {;
-        return this.line3;;
+    public string getLine3() {
+        return this.line3;
     }
 
     /**
-     * Setter for line3;
+     * Setter for line3
+     *
      * The third line of the physical address of this location.
      */
-    public void setline3(String value) {;
-        this.line3 = value;;
+    public void setLine3(string value) {
+        this.line3 = value;
     }
 
 
-    private String city;
+    private string city;
 
     /**
-     * Getter for city;
+     * Getter for city
+     *
      * The city of the physical address of this location.
      */
-    public String getcity() {;
-        return this.city;;
+    public string getCity() {
+        return this.city;
     }
 
     /**
-     * Setter for city;
+     * Setter for city
+     *
      * The city of the physical address of this location.
      */
-    public void setcity(String value) {;
-        this.city = value;;
+    public void setCity(string value) {
+        this.city = value;
     }
 
 
-    private String county;
+    private string county;
 
     /**
-     * Getter for county;
+     * Getter for county
+     *
      * The county name of the physical address of this location. Not required.
      */
-    public String getcounty() {;
-        return this.county;;
+    public string getCounty() {
+        return this.county;
     }
 
     /**
-     * Setter for county;
+     * Setter for county
+     *
      * The county name of the physical address of this location. Not required.
      */
-    public void setcounty(String value) {;
-        this.county = value;;
+    public void setCounty(string value) {
+        this.county = value;
     }
 
 
-    private String region;
+    private string region;
 
     /**
-     * Getter for region;
+     * Getter for region
+     *
      * The state, region, or province of the physical address of this location.
      */
-    public String getregion() {;
-        return this.region;;
+    public string getRegion() {
+        return this.region;
     }
 
     /**
-     * Setter for region;
+     * Setter for region
+     *
      * The state, region, or province of the physical address of this location.
      */
-    public void setregion(String value) {;
-        this.region = value;;
+    public void setRegion(string value) {
+        this.region = value;
     }
 
 
-    private String postalCode;
+    private string postalCode;
 
     /**
-     * Getter for postalCode;
+     * Getter for postalCode
+     *
      * The postal code or zip code of the physical address of this location.
      */
-    public String getpostalCode() {;
-        return this.postalCode;;
+    public string getPostalCode() {
+        return this.postalCode;
     }
 
     /**
-     * Setter for postalCode;
+     * Setter for postalCode
+     *
      * The postal code or zip code of the physical address of this location.
      */
-    public void setpostalCode(String value) {;
-        this.postalCode = value;;
+    public void setPostalCode(string value) {
+        this.postalCode = value;
     }
 
 
-    private String country;
+    private string country;
 
     /**
-     * Getter for country;
+     * Getter for country
+     *
      * The two character ISO-3166 country code of the physical address of this location.
      */
-    public String getcountry() {;
-        return this.country;;
+    public string getCountry() {
+        return this.country;
     }
 
     /**
-     * Setter for country;
+     * Setter for country
+     *
      * The two character ISO-3166 country code of the physical address of this location.
      */
-    public void setcountry(String value) {;
-        this.country = value;;
+    public void setCountry(string value) {
+        this.country = value;
     }
 
 
-    private Boolean? isDefault;
+    private object isDefault;
 
     /**
-     * Getter for isDefault;
+     * Getter for isDefault
+     *
      * Set this flag to true to indicate that this is the default location for this company.
      */
-    public Boolean? getisDefault() {;
-        return this.isDefault;;
+    public object getIsDefault() {
+        return this.isDefault;
     }
 
     /**
-     * Setter for isDefault;
+     * Setter for isDefault
+     *
      * Set this flag to true to indicate that this is the default location for this company.
      */
-    public void setisDefault(Boolean? value) {;
-        this.isDefault = value;;
+    public void setIsDefault(object value) {
+        this.isDefault = value;
     }
 
 
-    private Boolean? isRegistered;
+    private object isRegistered;
 
     /**
-     * Getter for isRegistered;
+     * Getter for isRegistered
+     *
      * Set this flag to true to indicate that this location has been registered with a tax authority.
      */
-    public Boolean? getisRegistered() {;
-        return this.isRegistered;;
+    public object getIsRegistered() {
+        return this.isRegistered;
     }
 
     /**
-     * Setter for isRegistered;
+     * Setter for isRegistered
+     *
      * Set this flag to true to indicate that this location has been registered with a tax authority.
      */
-    public void setisRegistered(Boolean? value) {;
-        this.isRegistered = value;;
+    public void setIsRegistered(object value) {
+        this.isRegistered = value;
     }
 
 
-    private String dbaName;
+    private string dbaName;
 
     /**
-     * Getter for dbaName;
+     * Getter for dbaName
+     *
      * If this location has a different business name from its legal entity name, specify the "Doing Business As" name for this location.
      */
-    public String getdbaName() {;
-        return this.dbaName;;
+    public string getDbaName() {
+        return this.dbaName;
     }
 
     /**
-     * Setter for dbaName;
+     * Setter for dbaName
+     *
      * If this location has a different business name from its legal entity name, specify the "Doing Business As" name for this location.
      */
-    public void setdbaName(String value) {;
-        this.dbaName = value;;
+    public void setDbaName(string value) {
+        this.dbaName = value;
     }
 
 
-    private String outletName;
+    private string outletName;
 
     /**
-     * Getter for outletName;
+     * Getter for outletName
+     *
      * A friendly name for this location.
      */
-    public String getoutletName() {;
-        return this.outletName;;
+    public string getOutletName() {
+        return this.outletName;
     }
 
     /**
-     * Setter for outletName;
+     * Setter for outletName
+     *
      * A friendly name for this location.
      */
-    public void setoutletName(String value) {;
-        this.outletName = value;;
+    public void setOutletName(string value) {
+        this.outletName = value;
     }
 
 
-    private DateTime? effectiveDate;
+    private Instant effectiveDate;
 
     /**
-     * Getter for effectiveDate;
+     * Getter for effectiveDate
+     *
      * The date when this location was opened for business, or null if not known.
      */
-    public DateTime? geteffectiveDate() {;
-        return this.effectiveDate;;
+    public Instant getEffectiveDate() {
+        return this.effectiveDate;
     }
 
     /**
-     * Setter for effectiveDate;
+     * Setter for effectiveDate
+     *
      * The date when this location was opened for business, or null if not known.
      */
-    public void seteffectiveDate(DateTime? value) {;
-        this.effectiveDate = value;;
+    public void setEffectiveDate(Instant value) {
+        this.effectiveDate = value;
     }
 
 
-    private DateTime? endDate;
+    private Instant endDate;
 
     /**
-     * Getter for endDate;
+     * Getter for endDate
+     *
      * If this place of business has closed, the date when this location closed business.
      */
-    public DateTime? getendDate() {;
-        return this.endDate;;
+    public Instant getEndDate() {
+        return this.endDate;
     }
 
     /**
-     * Setter for endDate;
+     * Setter for endDate
+     *
      * If this place of business has closed, the date when this location closed business.
      */
-    public void setendDate(DateTime? value) {;
-        this.endDate = value;;
+    public void setEndDate(Instant value) {
+        this.endDate = value;
     }
 
 
-    private DateTime? lastTransactionDate;
+    private Instant lastTransactionDate;
 
     /**
-     * Getter for lastTransactionDate;
+     * Getter for lastTransactionDate
+     *
      * The most recent date when a transaction was processed for this location. Set by AvaTax.
      */
-    public DateTime? getlastTransactionDate() {;
-        return this.lastTransactionDate;;
+    public Instant getLastTransactionDate() {
+        return this.lastTransactionDate;
     }
 
     /**
-     * Setter for lastTransactionDate;
+     * Setter for lastTransactionDate
+     *
      * The most recent date when a transaction was processed for this location. Set by AvaTax.
      */
-    public void setlastTransactionDate(DateTime? value) {;
-        this.lastTransactionDate = value;;
+    public void setLastTransactionDate(Instant value) {
+        this.lastTransactionDate = value;
     }
 
 
-    private DateTime? registeredDate;
+    private Instant registeredDate;
 
     /**
-     * Getter for registeredDate;
+     * Getter for registeredDate
+     *
      * The date when this location was registered with a tax authority. Not required.
      */
-    public DateTime? getregisteredDate() {;
-        return this.registeredDate;;
+    public Instant getRegisteredDate() {
+        return this.registeredDate;
     }
 
     /**
-     * Setter for registeredDate;
+     * Setter for registeredDate
+     *
      * The date when this location was registered with a tax authority. Not required.
      */
-    public void setregisteredDate(DateTime? value) {;
-        this.registeredDate = value;;
+    public void setRegisteredDate(Instant value) {
+        this.registeredDate = value;
     }
 
 
-    private DateTime? createdDate;
+    private Instant createdDate;
 
     /**
-     * Getter for createdDate;
+     * Getter for createdDate
+     *
      * The date when this record was created.
      */
-    public DateTime? getcreatedDate() {;
-        return this.createdDate;;
+    public Instant getCreatedDate() {
+        return this.createdDate;
     }
 
     /**
-     * Setter for createdDate;
+     * Setter for createdDate
+     *
      * The date when this record was created.
      */
-    public void setcreatedDate(DateTime? value) {;
-        this.createdDate = value;;
+    public void setCreatedDate(Instant value) {
+        this.createdDate = value;
     }
 
 
-    private Int32? createdUserId;
+    private Integer createdUserId;
 
     /**
-     * Getter for createdUserId;
+     * Getter for createdUserId
+     *
      * The User ID of the user who created this record.
      */
-    public Int32? getcreatedUserId() {;
-        return this.createdUserId;;
+    public Integer getCreatedUserId() {
+        return this.createdUserId;
     }
 
     /**
-     * Setter for createdUserId;
+     * Setter for createdUserId
+     *
      * The User ID of the user who created this record.
      */
-    public void setcreatedUserId(Int32? value) {;
-        this.createdUserId = value;;
+    public void setCreatedUserId(Integer value) {
+        this.createdUserId = value;
     }
 
 
-    private DateTime? modifiedDate;
+    private Instant modifiedDate;
 
     /**
-     * Getter for modifiedDate;
+     * Getter for modifiedDate
+     *
      * The date/time when this record was last modified.
      */
-    public DateTime? getmodifiedDate() {;
-        return this.modifiedDate;;
+    public Instant getModifiedDate() {
+        return this.modifiedDate;
     }
 
     /**
-     * Setter for modifiedDate;
+     * Setter for modifiedDate
+     *
      * The date/time when this record was last modified.
      */
-    public void setmodifiedDate(DateTime? value) {;
-        this.modifiedDate = value;;
+    public void setModifiedDate(Instant value) {
+        this.modifiedDate = value;
     }
 
 
-    private Int32? modifiedUserId;
+    private Integer modifiedUserId;
 
     /**
-     * Getter for modifiedUserId;
+     * Getter for modifiedUserId
+     *
      * The user ID of the user who last modified this record.
      */
-    public Int32? getmodifiedUserId() {;
-        return this.modifiedUserId;;
+    public Integer getModifiedUserId() {
+        return this.modifiedUserId;
     }
 
     /**
-     * Setter for modifiedUserId;
+     * Setter for modifiedUserId
+     *
      * The user ID of the user who last modified this record.
      */
-    public void setmodifiedUserId(Int32? value) {;
-        this.modifiedUserId = value;;
+    public void setModifiedUserId(Integer value) {
+        this.modifiedUserId = value;
     }
 
 
-    private List<LocationSettingModel> settings;
+    private LocationSettingModel[] settings;
 
     /**
-     * Getter for settings;
+     * Getter for settings
+     *
      * Extra information required by certain jurisdictions for filing.
     * For a list of settings recognized by Avalara, query the endpoint "/api/v2/definitions/locationquestions". 
     * To determine the list of settings required for this location, query the endpoint "/api/v2/companies/(id)/locations/(id)/validate".
      */
-    public List<LocationSettingModel> getsettings() {;
-        return this.settings;;
+    public LocationSettingModel[] getSettings() {
+        return this.settings;
     }
 
     /**
-     * Setter for settings;
+     * Setter for settings
+     *
      * Extra information required by certain jurisdictions for filing.
     * For a list of settings recognized by Avalara, query the endpoint "/api/v2/definitions/locationquestions". 
     * To determine the list of settings required for this location, query the endpoint "/api/v2/companies/(id)/locations/(id)/validate".
      */
-    public void setsettings(List<LocationSettingModel> value) {;
-        this.settings = value;;
+    public void setSettings(LocationSettingModel[] value) {
+        this.settings = value;
     }
 
 

@@ -30,326 +30,360 @@ import java.util.HashMap;
 public class AvaFileFormModel {
 
 
-    private Int32? id;
+    private Integer id;
 
     /**
-     * Getter for id;
+     * Getter for id
+     *
      * Unique Id of the form
      */
-    public Int32? getid() {;
-        return this.id;;
+    public Integer getId() {
+        return this.id;
     }
 
     /**
-     * Setter for id;
+     * Setter for id
+     *
      * Unique Id of the form
      */
-    public void setid(Int32? value) {;
-        this.id = value;;
+    public void setId(Integer value) {
+        this.id = value;
     }
 
 
-    private String returnName;
+    private string returnName;
 
     /**
-     * Getter for returnName;
+     * Getter for returnName
+     *
      * Name of the file being returned
      */
-    public String getreturnName() {;
-        return this.returnName;;
+    public string getReturnName() {
+        return this.returnName;
     }
 
     /**
-     * Setter for returnName;
+     * Setter for returnName
+     *
      * Name of the file being returned
      */
-    public void setreturnName(String value) {;
-        this.returnName = value;;
+    public void setReturnName(string value) {
+        this.returnName = value;
     }
 
 
-    private String formName;
+    private string formName;
 
     /**
-     * Getter for formName;
+     * Getter for formName
+     *
      * Name of the submitted form
      */
-    public String getformName() {;
-        return this.formName;;
+    public string getFormName() {
+        return this.formName;
     }
 
     /**
-     * Setter for formName;
+     * Setter for formName
+     *
      * Name of the submitted form
      */
-    public void setformName(String value) {;
-        this.formName = value;;
+    public void setFormName(string value) {
+        this.formName = value;
     }
 
 
-    private String description;
+    private string description;
 
     /**
-     * Getter for description;
+     * Getter for description
+     *
      * A description of the submitted form
      */
-    public String getdescription() {;
-        return this.description;;
+    public string getDescription() {
+        return this.description;
     }
 
     /**
-     * Setter for description;
+     * Setter for description
+     *
      * A description of the submitted form
      */
-    public void setdescription(String value) {;
-        this.description = value;;
+    public void setDescription(string value) {
+        this.description = value;
     }
 
 
-    private DateTime? effDate;
+    private Instant effDate;
 
     /**
-     * Getter for effDate;
+     * Getter for effDate
+     *
      * The date this form starts to take effect
      */
-    public DateTime? geteffDate() {;
-        return this.effDate;;
+    public Instant getEffDate() {
+        return this.effDate;
     }
 
     /**
-     * Setter for effDate;
+     * Setter for effDate
+     *
      * The date this form starts to take effect
      */
-    public void seteffDate(DateTime? value) {;
-        this.effDate = value;;
+    public void setEffDate(Instant value) {
+        this.effDate = value;
     }
 
 
-    private DateTime? endDate;
+    private Instant endDate;
 
     /**
-     * Getter for endDate;
+     * Getter for endDate
+     *
      * The date the form finishes to take effect
      */
-    public DateTime? getendDate() {;
-        return this.endDate;;
+    public Instant getEndDate() {
+        return this.endDate;
     }
 
     /**
-     * Setter for endDate;
+     * Setter for endDate
+     *
      * The date the form finishes to take effect
      */
-    public void setendDate(DateTime? value) {;
-        this.endDate = value;;
+    public void setEndDate(Instant value) {
+        this.endDate = value;
     }
 
 
-    private String region;
+    private string region;
 
     /**
-     * Getter for region;
+     * Getter for region
+     *
      * State/Province/Region where the form is submitted for
      */
-    public String getregion() {;
-        return this.region;;
+    public string getRegion() {
+        return this.region;
     }
 
     /**
-     * Setter for region;
+     * Setter for region
+     *
      * State/Province/Region where the form is submitted for
      */
-    public void setregion(String value) {;
-        this.region = value;;
+    public void setRegion(string value) {
+        this.region = value;
     }
 
 
-    private String country;
+    private string country;
 
     /**
-     * Getter for country;
+     * Getter for country
+     *
      * The country this form is submitted for
      */
-    public String getcountry() {;
-        return this.country;;
+    public string getCountry() {
+        return this.country;
     }
 
     /**
-     * Setter for country;
+     * Setter for country
+     *
      * The country this form is submitted for
      */
-    public void setcountry(String value) {;
-        this.country = value;;
+    public void setCountry(string value) {
+        this.country = value;
     }
 
 
-    private Byte? formTypeId;
+    private Byte formTypeId;
 
     /**
-     * Getter for formTypeId;
+     * Getter for formTypeId
+     *
      * The type of the form being submitted
      */
-    public Byte? getformTypeId() {;
-        return this.formTypeId;;
+    public Byte getFormTypeId() {
+        return this.formTypeId;
     }
 
     /**
-     * Setter for formTypeId;
+     * Setter for formTypeId
+     *
      * The type of the form being submitted
      */
-    public void setformTypeId(Byte? value) {;
-        this.formTypeId = value;;
+    public void setFormTypeId(Byte value) {
+        this.formTypeId = value;
     }
 
 
-    private Byte? filingOptionTypeId;
+    private Byte filingOptionTypeId;
 
     /**
-     * Getter for filingOptionTypeId;
+     * Getter for filingOptionTypeId
+     *
      * 
      */
-    public Byte? getfilingOptionTypeId() {;
-        return this.filingOptionTypeId;;
+    public Byte getFilingOptionTypeId() {
+        return this.filingOptionTypeId;
     }
 
     /**
-     * Setter for filingOptionTypeId;
+     * Setter for filingOptionTypeId
+     *
      * 
      */
-    public void setfilingOptionTypeId(Byte? value) {;
-        this.filingOptionTypeId = value;;
+    public void setFilingOptionTypeId(Byte value) {
+        this.filingOptionTypeId = value;
     }
 
 
-    private Byte? dueDateTypeId;
+    private Byte dueDateTypeId;
 
     /**
-     * Getter for dueDateTypeId;
+     * Getter for dueDateTypeId
+     *
      * The type of the due date
      */
-    public Byte? getdueDateTypeId() {;
-        return this.dueDateTypeId;;
+    public Byte getDueDateTypeId() {
+        return this.dueDateTypeId;
     }
 
     /**
-     * Setter for dueDateTypeId;
+     * Setter for dueDateTypeId
+     *
      * The type of the due date
      */
-    public void setdueDateTypeId(Byte? value) {;
-        this.dueDateTypeId = value;;
+    public void setDueDateTypeId(Byte value) {
+        this.dueDateTypeId = value;
     }
 
 
-    private Byte? dueDay;
+    private Byte dueDay;
 
     /**
-     * Getter for dueDay;
+     * Getter for dueDay
+     *
      * Due date
      */
-    public Byte? getdueDay() {;
-        return this.dueDay;;
+    public Byte getDueDay() {
+        return this.dueDay;
     }
 
     /**
-     * Setter for dueDay;
+     * Setter for dueDay
+     *
      * Due date
      */
-    public void setdueDay(Byte? value) {;
-        this.dueDay = value;;
+    public void setDueDay(Byte value) {
+        this.dueDay = value;
     }
 
 
-    private Byte? efileDueDateTypeId;
+    private Byte efileDueDateTypeId;
 
     /**
-     * Getter for efileDueDateTypeId;
+     * Getter for efileDueDateTypeId
+     *
      * 
      */
-    public Byte? getefileDueDateTypeId() {;
-        return this.efileDueDateTypeId;;
+    public Byte getEfileDueDateTypeId() {
+        return this.efileDueDateTypeId;
     }
 
     /**
-     * Setter for efileDueDateTypeId;
+     * Setter for efileDueDateTypeId
+     *
      * 
      */
-    public void setefileDueDateTypeId(Byte? value) {;
-        this.efileDueDateTypeId = value;;
+    public void setEfileDueDateTypeId(Byte value) {
+        this.efileDueDateTypeId = value;
     }
 
 
-    private Byte? efileDueDay;
+    private Byte efileDueDay;
 
     /**
-     * Getter for efileDueDay;
+     * Getter for efileDueDay
+     *
      * The date by when the E-filing should be submitted
      */
-    public Byte? getefileDueDay() {;
-        return this.efileDueDay;;
+    public Byte getEfileDueDay() {
+        return this.efileDueDay;
     }
 
     /**
-     * Setter for efileDueDay;
+     * Setter for efileDueDay
+     *
      * The date by when the E-filing should be submitted
      */
-    public void setefileDueDay(Byte? value) {;
-        this.efileDueDay = value;;
+    public void setEfileDueDay(Byte value) {
+        this.efileDueDay = value;
     }
 
 
-    private DateTime? efileDueTime;
+    private Instant efileDueTime;
 
     /**
-     * Getter for efileDueTime;
+     * Getter for efileDueTime
+     *
      * The time of day by when the E-filing should be submitted
      */
-    public DateTime? getefileDueTime() {;
-        return this.efileDueTime;;
+    public Instant getEfileDueTime() {
+        return this.efileDueTime;
     }
 
     /**
-     * Setter for efileDueTime;
+     * Setter for efileDueTime
+     *
      * The time of day by when the E-filing should be submitted
      */
-    public void setefileDueTime(DateTime? value) {;
-        this.efileDueTime = value;;
+    public void setEfileDueTime(Instant value) {
+        this.efileDueTime = value;
     }
 
 
-    private Boolean? hasVendorDiscount;
+    private object hasVendorDiscount;
 
     /**
-     * Getter for hasVendorDiscount;
+     * Getter for hasVendorDiscount
+     *
      * Whether the customer has discount
      */
-    public Boolean? gethasVendorDiscount() {;
-        return this.hasVendorDiscount;;
+    public object getHasVendorDiscount() {
+        return this.hasVendorDiscount;
     }
 
     /**
-     * Setter for hasVendorDiscount;
+     * Setter for hasVendorDiscount
+     *
      * Whether the customer has discount
      */
-    public void sethasVendorDiscount(Boolean? value) {;
-        this.hasVendorDiscount = value;;
+    public void setHasVendorDiscount(object value) {
+        this.hasVendorDiscount = value;
     }
 
 
-    private Byte? roundingTypeId;
+    private Byte roundingTypeId;
 
     /**
-     * Getter for roundingTypeId;
+     * Getter for roundingTypeId
+     *
      * The way system does the rounding
      */
-    public Byte? getroundingTypeId() {;
-        return this.roundingTypeId;;
+    public Byte getRoundingTypeId() {
+        return this.roundingTypeId;
     }
 
     /**
-     * Setter for roundingTypeId;
+     * Setter for roundingTypeId
+     *
      * The way system does the rounding
      */
-    public void setroundingTypeId(Byte? value) {;
-        this.roundingTypeId = value;;
+    public void setRoundingTypeId(Byte value) {
+        this.roundingTypeId = value;
     }
 
 

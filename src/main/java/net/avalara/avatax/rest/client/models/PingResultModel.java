@@ -30,117 +30,129 @@ import java.util.HashMap;
 public class PingResultModel {
 
 
-    private String version;
+    private string version;
 
     /**
-     * Getter for version;
+     * Getter for version
+     *
      * Version number
      */
-    public String getversion() {;
-        return this.version;;
+    public string getVersion() {
+        return this.version;
     }
 
     /**
-     * Setter for version;
+     * Setter for version
+     *
      * Version number
      */
-    public void setversion(String value) {;
-        this.version = value;;
+    public void setVersion(string value) {
+        this.version = value;
     }
 
 
-    private Boolean? authenticated;
+    private object authenticated;
 
     /**
-     * Getter for authenticated;
+     * Getter for authenticated
+     *
      * Returns true if you provided authentication for this API call; false if you did not.
      */
-    public Boolean? getauthenticated() {;
-        return this.authenticated;;
+    public object getAuthenticated() {
+        return this.authenticated;
     }
 
     /**
-     * Setter for authenticated;
+     * Setter for authenticated
+     *
      * Returns true if you provided authentication for this API call; false if you did not.
      */
-    public void setauthenticated(Boolean? value) {;
-        this.authenticated = value;;
+    public void setAuthenticated(object value) {
+        this.authenticated = value;
     }
 
 
-    private AuthenticationTypeId? authenticationType;
+    private AuthenticationTypeId authenticationType;
 
     /**
-     * Getter for authenticationType;
+     * Getter for authenticationType
+     *
      * Returns the type of authentication you provided, if authenticated
      */
-    public AuthenticationTypeId? getauthenticationType() {;
-        return this.authenticationType;;
+    public AuthenticationTypeId getAuthenticationType() {
+        return this.authenticationType;
     }
 
     /**
-     * Setter for authenticationType;
+     * Setter for authenticationType
+     *
      * Returns the type of authentication you provided, if authenticated
      */
-    public void setauthenticationType(AuthenticationTypeId? value) {;
-        this.authenticationType = value;;
+    public void setAuthenticationType(AuthenticationTypeId value) {
+        this.authenticationType = value;
     }
 
 
-    private String authenticatedUserName;
+    private string authenticatedUserName;
 
     /**
-     * Getter for authenticatedUserName;
+     * Getter for authenticatedUserName
+     *
      * The username of the currently authenticated user, if any.
      */
-    public String getauthenticatedUserName() {;
-        return this.authenticatedUserName;;
+    public string getAuthenticatedUserName() {
+        return this.authenticatedUserName;
     }
 
     /**
-     * Setter for authenticatedUserName;
+     * Setter for authenticatedUserName
+     *
      * The username of the currently authenticated user, if any.
      */
-    public void setauthenticatedUserName(String value) {;
-        this.authenticatedUserName = value;;
+    public void setAuthenticatedUserName(string value) {
+        this.authenticatedUserName = value;
     }
 
 
-    private Int32? authenticatedUserId;
+    private Integer authenticatedUserId;
 
     /**
-     * Getter for authenticatedUserId;
+     * Getter for authenticatedUserId
+     *
      * The ID number of the currently authenticated user, if any.
      */
-    public Int32? getauthenticatedUserId() {;
-        return this.authenticatedUserId;;
+    public Integer getAuthenticatedUserId() {
+        return this.authenticatedUserId;
     }
 
     /**
-     * Setter for authenticatedUserId;
+     * Setter for authenticatedUserId
+     *
      * The ID number of the currently authenticated user, if any.
      */
-    public void setauthenticatedUserId(Int32? value) {;
-        this.authenticatedUserId = value;;
+    public void setAuthenticatedUserId(Integer value) {
+        this.authenticatedUserId = value;
     }
 
 
-    private Int32? authenticatedAccountId;
+    private Integer authenticatedAccountId;
 
     /**
-     * Getter for authenticatedAccountId;
+     * Getter for authenticatedAccountId
+     *
      * The ID number of the currently authenticated user's account, if any.
      */
-    public Int32? getauthenticatedAccountId() {;
-        return this.authenticatedAccountId;;
+    public Integer getAuthenticatedAccountId() {
+        return this.authenticatedAccountId;
     }
 
     /**
-     * Setter for authenticatedAccountId;
+     * Setter for authenticatedAccountId
+     *
      * The ID number of the currently authenticated user's account, if any.
      */
-    public void setauthenticatedAccountId(Int32? value) {;
-        this.authenticatedAccountId = value;;
+    public void setAuthenticatedAccountId(Integer value) {
+        this.authenticatedAccountId = value;
     }
 
 

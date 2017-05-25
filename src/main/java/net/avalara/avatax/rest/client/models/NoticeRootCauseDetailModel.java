@@ -30,79 +30,87 @@ import java.util.HashMap;
 public class NoticeRootCauseDetailModel {
 
 
-    private Int32 id;
+    private int id;
 
     /**
-     * Getter for id;
+     * Getter for id
+     *
      * The unique ID number of this filing frequency.
      */
-    public Int32 getid() {;
-        return this.id;;
+    public int getId() {
+        return this.id;
     }
 
     /**
-     * Setter for id;
+     * Setter for id
+     *
      * The unique ID number of this filing frequency.
      */
-    public void setid(Int32 value) {;
-        this.id = value;;
+    public void setId(int value) {
+        this.id = value;
     }
 
 
-    private Int32? noticeId;
+    private Integer noticeId;
 
     /**
-     * Getter for noticeId;
+     * Getter for noticeId
+     *
      * TaxNoticeId
      */
-    public Int32? getnoticeId() {;
-        return this.noticeId;;
+    public Integer getNoticeId() {
+        return this.noticeId;
     }
 
     /**
-     * Setter for noticeId;
+     * Setter for noticeId
+     *
      * TaxNoticeId
      */
-    public void setnoticeId(Int32? value) {;
-        this.noticeId = value;;
+    public void setNoticeId(Integer value) {
+        this.noticeId = value;
     }
 
 
-    private Int32? taxNoticeRootCauseId;
+    private Integer taxNoticeRootCauseId;
 
     /**
-     * Getter for taxNoticeRootCauseId;
+     * Getter for taxNoticeRootCauseId
+     *
      * TaxNoticeRootCauseId
      */
-    public Int32? gettaxNoticeRootCauseId() {;
-        return this.taxNoticeRootCauseId;;
+    public Integer getTaxNoticeRootCauseId() {
+        return this.taxNoticeRootCauseId;
     }
 
     /**
-     * Setter for taxNoticeRootCauseId;
+     * Setter for taxNoticeRootCauseId
+     *
      * TaxNoticeRootCauseId
      */
-    public void settaxNoticeRootCauseId(Int32? value) {;
-        this.taxNoticeRootCauseId = value;;
+    public void setTaxNoticeRootCauseId(Integer value) {
+        this.taxNoticeRootCauseId = value;
     }
 
 
-    private String description;
+    private string description;
 
     /**
-     * Getter for description;
+     * Getter for description
+     *
      * The description name of this root cause
      */
-    public String getdescription() {;
-        return this.description;;
+    public string getDescription() {
+        return this.description;
     }
 
     /**
-     * Setter for description;
+     * Setter for description
+     *
      * The description name of this root cause
      */
-    public void setdescription(String value) {;
-        this.description = value;;
+    public void setDescription(string value) {
+        this.description = value;
     }
 
 

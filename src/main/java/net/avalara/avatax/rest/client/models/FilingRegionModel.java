@@ -30,478 +30,528 @@ import java.util.HashMap;
 public class FilingRegionModel {
 
 
-    private Int64? id;
+    private Long id;
 
     /**
-     * Getter for id;
+     * Getter for id
+     *
      * The unique ID number of this filing region.
      */
-    public Int64? getid() {;
-        return this.id;;
+    public Long getId() {
+        return this.id;
     }
 
     /**
-     * Setter for id;
+     * Setter for id
+     *
      * The unique ID number of this filing region.
      */
-    public void setid(Int64? value) {;
-        this.id = value;;
+    public void setId(Long value) {
+        this.id = value;
     }
 
 
-    private Int64? filingId;
+    private Long filingId;
 
     /**
-     * Getter for filingId;
+     * Getter for filingId
+     *
      * The filing id that this region belongs too
      */
-    public Int64? getfilingId() {;
-        return this.filingId;;
+    public Long getFilingId() {
+        return this.filingId;
     }
 
     /**
-     * Setter for filingId;
+     * Setter for filingId
+     *
      * The filing id that this region belongs too
      */
-    public void setfilingId(Int64? value) {;
-        this.filingId = value;;
+    public void setFilingId(Long value) {
+        this.filingId = value;
     }
 
 
-    private String country;
+    private string country;
 
     /**
-     * Getter for country;
+     * Getter for country
+     *
      * The two-character ISO-3166 code for the country.
      */
-    public String getcountry() {;
-        return this.country;;
+    public string getCountry() {
+        return this.country;
     }
 
     /**
-     * Setter for country;
+     * Setter for country
+     *
      * The two-character ISO-3166 code for the country.
      */
-    public void setcountry(String value) {;
-        this.country = value;;
+    public void setCountry(string value) {
+        this.country = value;
     }
 
 
-    private String region;
+    private string region;
 
     /**
-     * Getter for region;
+     * Getter for region
+     *
      * The two or three character region code for the region.
      */
-    public String getregion() {;
-        return this.region;;
+    public string getRegion() {
+        return this.region;
     }
 
     /**
-     * Setter for region;
+     * Setter for region
+     *
      * The two or three character region code for the region.
      */
-    public void setregion(String value) {;
-        this.region = value;;
+    public void setRegion(string value) {
+        this.region = value;
     }
 
 
-    private Decimal? salesAmount;
+    private Decimal salesAmount;
 
     /**
-     * Getter for salesAmount;
+     * Getter for salesAmount
+     *
      * The sales amount.
      */
-    public Decimal? getsalesAmount() {;
-        return this.salesAmount;;
+    public Decimal getSalesAmount() {
+        return this.salesAmount;
     }
 
     /**
-     * Setter for salesAmount;
+     * Setter for salesAmount
+     *
      * The sales amount.
      */
-    public void setsalesAmount(Decimal? value) {;
-        this.salesAmount = value;;
+    public void setSalesAmount(Decimal value) {
+        this.salesAmount = value;
     }
 
 
-    private Decimal? taxableAmount;
+    private Decimal taxableAmount;
 
     /**
-     * Getter for taxableAmount;
+     * Getter for taxableAmount
+     *
      * The taxable amount.
      */
-    public Decimal? gettaxableAmount() {;
-        return this.taxableAmount;;
+    public Decimal getTaxableAmount() {
+        return this.taxableAmount;
     }
 
     /**
-     * Setter for taxableAmount;
+     * Setter for taxableAmount
+     *
      * The taxable amount.
      */
-    public void settaxableAmount(Decimal? value) {;
-        this.taxableAmount = value;;
+    public void setTaxableAmount(Decimal value) {
+        this.taxableAmount = value;
     }
 
 
-    private Decimal? taxAmount;
+    private Decimal taxAmount;
 
     /**
-     * Getter for taxAmount;
+     * Getter for taxAmount
+     *
      * The tax amount.
      */
-    public Decimal? gettaxAmount() {;
-        return this.taxAmount;;
+    public Decimal getTaxAmount() {
+        return this.taxAmount;
     }
 
     /**
-     * Setter for taxAmount;
+     * Setter for taxAmount
+     *
      * The tax amount.
      */
-    public void settaxAmount(Decimal? value) {;
-        this.taxAmount = value;;
+    public void setTaxAmount(Decimal value) {
+        this.taxAmount = value;
     }
 
 
-    private Decimal? taxDueAmount;
+    private Decimal taxDueAmount;
 
     /**
-     * Getter for taxDueAmount;
+     * Getter for taxDueAmount
+     *
      * The tax amount due.
      */
-    public Decimal? gettaxDueAmount() {;
-        return this.taxDueAmount;;
+    public Decimal getTaxDueAmount() {
+        return this.taxDueAmount;
     }
 
     /**
-     * Setter for taxDueAmount;
+     * Setter for taxDueAmount
+     *
      * The tax amount due.
      */
-    public void settaxDueAmount(Decimal? value) {;
-        this.taxDueAmount = value;;
+    public void setTaxDueAmount(Decimal value) {
+        this.taxDueAmount = value;
     }
 
 
-    private Decimal? collectAmount;
+    private Decimal collectAmount;
 
     /**
-     * Getter for collectAmount;
+     * Getter for collectAmount
+     *
      * The amount collected by Avalara for this region
      */
-    public Decimal? getcollectAmount() {;
-        return this.collectAmount;;
+    public Decimal getCollectAmount() {
+        return this.collectAmount;
     }
 
     /**
-     * Setter for collectAmount;
+     * Setter for collectAmount
+     *
      * The amount collected by Avalara for this region
      */
-    public void setcollectAmount(Decimal? value) {;
-        this.collectAmount = value;;
+    public void setCollectAmount(Decimal value) {
+        this.collectAmount = value;
     }
 
 
-    private Decimal? totalRemittanceAmount;
+    private Decimal totalRemittanceAmount;
 
     /**
-     * Getter for totalRemittanceAmount;
+     * Getter for totalRemittanceAmount
+     *
      * Total remittance amount of all returns in region
      */
-    public Decimal? gettotalRemittanceAmount() {;
-        return this.totalRemittanceAmount;;
+    public Decimal getTotalRemittanceAmount() {
+        return this.totalRemittanceAmount;
     }
 
     /**
-     * Setter for totalRemittanceAmount;
+     * Setter for totalRemittanceAmount
+     *
      * Total remittance amount of all returns in region
      */
-    public void settotalRemittanceAmount(Decimal? value) {;
-        this.totalRemittanceAmount = value;;
+    public void setTotalRemittanceAmount(Decimal value) {
+        this.totalRemittanceAmount = value;
     }
 
 
-    private Decimal? nonTaxableAmount;
+    private Decimal nonTaxableAmount;
 
     /**
-     * Getter for nonTaxableAmount;
+     * Getter for nonTaxableAmount
+     *
      * The non-taxable amount.
      */
-    public Decimal? getnonTaxableAmount() {;
-        return this.nonTaxableAmount;;
+    public Decimal getNonTaxableAmount() {
+        return this.nonTaxableAmount;
     }
 
     /**
-     * Setter for nonTaxableAmount;
+     * Setter for nonTaxableAmount
+     *
      * The non-taxable amount.
      */
-    public void setnonTaxableAmount(Decimal? value) {;
-        this.nonTaxableAmount = value;;
+    public void setNonTaxableAmount(Decimal value) {
+        this.nonTaxableAmount = value;
     }
 
 
-    private Decimal? consumerUseTaxAmount;
+    private Decimal consumerUseTaxAmount;
 
     /**
-     * Getter for consumerUseTaxAmount;
+     * Getter for consumerUseTaxAmount
+     *
      * Consumer use tax liability.
      */
-    public Decimal? getconsumerUseTaxAmount() {;
-        return this.consumerUseTaxAmount;;
+    public Decimal getConsumerUseTaxAmount() {
+        return this.consumerUseTaxAmount;
     }
 
     /**
-     * Setter for consumerUseTaxAmount;
+     * Setter for consumerUseTaxAmount
+     *
      * Consumer use tax liability.
      */
-    public void setconsumerUseTaxAmount(Decimal? value) {;
-        this.consumerUseTaxAmount = value;;
+    public void setConsumerUseTaxAmount(Decimal value) {
+        this.consumerUseTaxAmount = value;
     }
 
 
-    private Decimal? consumerUseNonTaxableAmount;
+    private Decimal consumerUseNonTaxableAmount;
 
     /**
-     * Getter for consumerUseNonTaxableAmount;
+     * Getter for consumerUseNonTaxableAmount
+     *
      * Consumer use non-taxable amount.
      */
-    public Decimal? getconsumerUseNonTaxableAmount() {;
-        return this.consumerUseNonTaxableAmount;;
+    public Decimal getConsumerUseNonTaxableAmount() {
+        return this.consumerUseNonTaxableAmount;
     }
 
     /**
-     * Setter for consumerUseNonTaxableAmount;
+     * Setter for consumerUseNonTaxableAmount
+     *
      * Consumer use non-taxable amount.
      */
-    public void setconsumerUseNonTaxableAmount(Decimal? value) {;
-        this.consumerUseNonTaxableAmount = value;;
+    public void setConsumerUseNonTaxableAmount(Decimal value) {
+        this.consumerUseNonTaxableAmount = value;
     }
 
 
-    private Decimal? consumerUseTaxableAmount;
+    private Decimal consumerUseTaxableAmount;
 
     /**
-     * Getter for consumerUseTaxableAmount;
+     * Getter for consumerUseTaxableAmount
+     *
      * Consumer use taxable amount.
      */
-    public Decimal? getconsumerUseTaxableAmount() {;
-        return this.consumerUseTaxableAmount;;
+    public Decimal getConsumerUseTaxableAmount() {
+        return this.consumerUseTaxableAmount;
     }
 
     /**
-     * Setter for consumerUseTaxableAmount;
+     * Setter for consumerUseTaxableAmount
+     *
      * Consumer use taxable amount.
      */
-    public void setconsumerUseTaxableAmount(Decimal? value) {;
-        this.consumerUseTaxableAmount = value;;
+    public void setConsumerUseTaxableAmount(Decimal value) {
+        this.consumerUseTaxableAmount = value;
     }
 
 
-    private DateTime? approveDate;
+    private Instant approveDate;
 
     /**
-     * Getter for approveDate;
+     * Getter for approveDate
+     *
      * The date the filing region was approved.
      */
-    public DateTime? getapproveDate() {;
-        return this.approveDate;;
+    public Instant getApproveDate() {
+        return this.approveDate;
     }
 
     /**
-     * Setter for approveDate;
+     * Setter for approveDate
+     *
      * The date the filing region was approved.
      */
-    public void setapproveDate(DateTime? value) {;
-        this.approveDate = value;;
+    public void setApproveDate(Instant value) {
+        this.approveDate = value;
     }
 
 
-    private DateTime? startDate;
+    private Instant startDate;
 
     /**
-     * Getter for startDate;
+     * Getter for startDate
+     *
      * The start date for the filing cycle.
      */
-    public DateTime? getstartDate() {;
-        return this.startDate;;
+    public Instant getStartDate() {
+        return this.startDate;
     }
 
     /**
-     * Setter for startDate;
+     * Setter for startDate
+     *
      * The start date for the filing cycle.
      */
-    public void setstartDate(DateTime? value) {;
-        this.startDate = value;;
+    public void setStartDate(Instant value) {
+        this.startDate = value;
     }
 
 
-    private DateTime? endDate;
+    private Instant endDate;
 
     /**
-     * Getter for endDate;
+     * Getter for endDate
+     *
      * The end date for the filing cycle.
      */
-    public DateTime? getendDate() {;
-        return this.endDate;;
+    public Instant getEndDate() {
+        return this.endDate;
     }
 
     /**
-     * Setter for endDate;
+     * Setter for endDate
+     *
      * The end date for the filing cycle.
      */
-    public void setendDate(DateTime? value) {;
-        this.endDate = value;;
+    public void setEndDate(Instant value) {
+        this.endDate = value;
     }
 
 
-    private Boolean? hasNexus;
+    private object hasNexus;
 
     /**
-     * Getter for hasNexus;
+     * Getter for hasNexus
+     *
      * Whether or not you have nexus in this region.
      */
-    public Boolean? gethasNexus() {;
-        return this.hasNexus;;
+    public object getHasNexus() {
+        return this.hasNexus;
     }
 
     /**
-     * Setter for hasNexus;
+     * Setter for hasNexus
+     *
      * Whether or not you have nexus in this region.
      */
-    public void sethasNexus(Boolean? value) {;
-        this.hasNexus = value;;
+    public void setHasNexus(object value) {
+        this.hasNexus = value;
     }
 
 
-    private FilingStatusId? status;
+    private FilingStatusId status;
 
     /**
-     * Getter for status;
+     * Getter for status
+     *
      * The current status of the filing region.
      */
-    public FilingStatusId? getstatus() {;
-        return this.status;;
+    public FilingStatusId getStatus() {
+        return this.status;
     }
 
     /**
-     * Setter for status;
+     * Setter for status
+     *
      * The current status of the filing region.
      */
-    public void setstatus(FilingStatusId? value) {;
-        this.status = value;;
+    public void setStatus(FilingStatusId value) {
+        this.status = value;
     }
 
 
-    private List<FilingReturnModel> returns;
+    private FilingReturnModel[] returns;
 
     /**
-     * Getter for returns;
+     * Getter for returns
+     *
      * A list of tax returns in this region.
      */
-    public List<FilingReturnModel> getreturns() {;
-        return this.returns;;
+    public FilingReturnModel[] getReturns() {
+        return this.returns;
     }
 
     /**
-     * Setter for returns;
+     * Setter for returns
+     *
      * A list of tax returns in this region.
      */
-    public void setreturns(List<FilingReturnModel> value) {;
-        this.returns = value;;
+    public void setReturns(FilingReturnModel[] value) {
+        this.returns = value;
     }
 
 
-    private List<FilingsCheckupSuggestedFormModel> suggestReturns;
+    private FilingsCheckupSuggestedFormModel[] suggestReturns;
 
     /**
-     * Getter for suggestReturns;
+     * Getter for suggestReturns
+     *
      * A list of tax returns in this region.
      */
-    public List<FilingsCheckupSuggestedFormModel> getsuggestReturns() {;
-        return this.suggestReturns;;
+    public FilingsCheckupSuggestedFormModel[] getSuggestReturns() {
+        return this.suggestReturns;
     }
 
     /**
-     * Setter for suggestReturns;
+     * Setter for suggestReturns
+     *
      * A list of tax returns in this region.
      */
-    public void setsuggestReturns(List<FilingsCheckupSuggestedFormModel> value) {;
-        this.suggestReturns = value;;
+    public void setSuggestReturns(FilingsCheckupSuggestedFormModel[] value) {
+        this.suggestReturns = value;
     }
 
 
-    private DateTime? createdDate;
+    private Instant createdDate;
 
     /**
-     * Getter for createdDate;
+     * Getter for createdDate
+     *
      * The date when this record was created.
      */
-    public DateTime? getcreatedDate() {;
-        return this.createdDate;;
+    public Instant getCreatedDate() {
+        return this.createdDate;
     }
 
     /**
-     * Setter for createdDate;
+     * Setter for createdDate
+     *
      * The date when this record was created.
      */
-    public void setcreatedDate(DateTime? value) {;
-        this.createdDate = value;;
+    public void setCreatedDate(Instant value) {
+        this.createdDate = value;
     }
 
 
-    private Int32? createdUserId;
+    private Integer createdUserId;
 
     /**
-     * Getter for createdUserId;
+     * Getter for createdUserId
+     *
      * The User ID of the user who created this record.
      */
-    public Int32? getcreatedUserId() {;
-        return this.createdUserId;;
+    public Integer getCreatedUserId() {
+        return this.createdUserId;
     }
 
     /**
-     * Setter for createdUserId;
+     * Setter for createdUserId
+     *
      * The User ID of the user who created this record.
      */
-    public void setcreatedUserId(Int32? value) {;
-        this.createdUserId = value;;
+    public void setCreatedUserId(Integer value) {
+        this.createdUserId = value;
     }
 
 
-    private DateTime? modifiedDate;
+    private Instant modifiedDate;
 
     /**
-     * Getter for modifiedDate;
+     * Getter for modifiedDate
+     *
      * The date/time when this record was last modified.
      */
-    public DateTime? getmodifiedDate() {;
-        return this.modifiedDate;;
+    public Instant getModifiedDate() {
+        return this.modifiedDate;
     }
 
     /**
-     * Setter for modifiedDate;
+     * Setter for modifiedDate
+     *
      * The date/time when this record was last modified.
      */
-    public void setmodifiedDate(DateTime? value) {;
-        this.modifiedDate = value;;
+    public void setModifiedDate(Instant value) {
+        this.modifiedDate = value;
     }
 
 
-    private Int32? modifiedUserId;
+    private Integer modifiedUserId;
 
     /**
-     * Getter for modifiedUserId;
+     * Getter for modifiedUserId
+     *
      * The user ID of the user who last modified this record.
      */
-    public Int32? getmodifiedUserId() {;
-        return this.modifiedUserId;;
+    public Integer getModifiedUserId() {
+        return this.modifiedUserId;
     }
 
     /**
-     * Setter for modifiedUserId;
+     * Setter for modifiedUserId
+     *
      * The user ID of the user who last modified this record.
      */
-    public void setmodifiedUserId(Int32? value) {;
-        this.modifiedUserId = value;;
+    public void setModifiedUserId(Integer value) {
+        this.modifiedUserId = value;
     }
 
 

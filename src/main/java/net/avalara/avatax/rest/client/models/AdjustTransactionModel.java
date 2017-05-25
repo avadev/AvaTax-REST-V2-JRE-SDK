@@ -33,57 +33,63 @@ public class AdjustTransactionModel {
     private AdjustmentReason adjustmentReason;
 
     /**
-     * Getter for adjustmentReason;
+     * Getter for adjustmentReason
+     *
      * A reason code indicating why this adjustment was made
      */
-    public AdjustmentReason getadjustmentReason() {;
-        return this.adjustmentReason;;
+    public AdjustmentReason getAdjustmentReason() {
+        return this.adjustmentReason;
     }
 
     /**
-     * Setter for adjustmentReason;
+     * Setter for adjustmentReason
+     *
      * A reason code indicating why this adjustment was made
      */
-    public void setadjustmentReason(AdjustmentReason value) {;
-        this.adjustmentReason = value;;
+    public void setAdjustmentReason(AdjustmentReason value) {
+        this.adjustmentReason = value;
     }
 
 
-    private String adjustmentDescription;
+    private string adjustmentDescription;
 
     /**
-     * Getter for adjustmentDescription;
+     * Getter for adjustmentDescription
+     *
      * If the AdjustmentReason is "Other", specify the reason here
      */
-    public String getadjustmentDescription() {;
-        return this.adjustmentDescription;;
+    public string getAdjustmentDescription() {
+        return this.adjustmentDescription;
     }
 
     /**
-     * Setter for adjustmentDescription;
+     * Setter for adjustmentDescription
+     *
      * If the AdjustmentReason is "Other", specify the reason here
      */
-    public void setadjustmentDescription(String value) {;
-        this.adjustmentDescription = value;;
+    public void setAdjustmentDescription(string value) {
+        this.adjustmentDescription = value;
     }
 
 
     private CreateTransactionModel newTransaction;
 
     /**
-     * Getter for newTransaction;
+     * Getter for newTransaction
+     *
      * Replace the current transaction with tax data calculated for this new transaction
      */
-    public CreateTransactionModel getnewTransaction() {;
-        return this.newTransaction;;
+    public CreateTransactionModel getNewTransaction() {
+        return this.newTransaction;
     }
 
     /**
-     * Setter for newTransaction;
+     * Setter for newTransaction
+     *
      * Replace the current transaction with tax data calculated for this new transaction
      */
-    public void setnewTransaction(CreateTransactionModel value) {;
-        this.newTransaction = value;;
+    public void setNewTransaction(CreateTransactionModel value) {
+        this.newTransaction = value;
     }
 
 

@@ -30,269 +30,297 @@ import java.util.HashMap;
 public class NoticeCommentModel {
 
 
-    private Int32? id;
+    private Integer id;
 
     /**
-     * Getter for id;
+     * Getter for id
+     *
      * The unique ID number of this notice.
      */
-    public Int32? getid() {;
-        return this.id;;
+    public Integer getId() {
+        return this.id;
     }
 
     /**
-     * Setter for id;
+     * Setter for id
+     *
      * The unique ID number of this notice.
      */
-    public void setid(Int32? value) {;
-        this.id = value;;
+    public void setId(Integer value) {
+        this.id = value;
     }
 
 
-    private Int32 noticeId;
+    private int noticeId;
 
     /**
-     * Getter for noticeId;
+     * Getter for noticeId
+     *
      * The ID of the notice this comment is attached too
      */
-    public Int32 getnoticeId() {;
-        return this.noticeId;;
+    public int getNoticeId() {
+        return this.noticeId;
     }
 
     /**
-     * Setter for noticeId;
+     * Setter for noticeId
+     *
      * The ID of the notice this comment is attached too
      */
-    public void setnoticeId(Int32 value) {;
-        this.noticeId = value;;
+    public void setNoticeId(int value) {
+        this.noticeId = value;
     }
 
 
-    private DateTime? date;
+    private Instant date;
 
     /**
-     * Getter for date;
+     * Getter for date
+     *
      * The date this comment was entered
      */
-    public DateTime? getdate() {;
-        return this.date;;
+    public Instant getDate() {
+        return this.date;
     }
 
     /**
-     * Setter for date;
+     * Setter for date
+     *
      * The date this comment was entered
      */
-    public void setdate(DateTime? value) {;
-        this.date = value;;
+    public void setDate(Instant value) {
+        this.date = value;
     }
 
 
-    private String comment;
+    private string comment;
 
     /**
-     * Getter for comment;
+     * Getter for comment
+     *
      * TaxNoticeComment
      */
-    public String getcomment() {;
-        return this.comment;;
+    public string getComment() {
+        return this.comment;
     }
 
     /**
-     * Setter for comment;
+     * Setter for comment
+     *
      * TaxNoticeComment
      */
-    public void setcomment(String value) {;
-        this.comment = value;;
+    public void setComment(string value) {
+        this.comment = value;
     }
 
 
-    private Int32? commentUserId;
+    private Integer commentUserId;
 
     /**
-     * Getter for commentUserId;
+     * Getter for commentUserId
+     *
      * TaxNoticeCommentUserId
      */
-    public Int32? getcommentUserId() {;
-        return this.commentUserId;;
+    public Integer getCommentUserId() {
+        return this.commentUserId;
     }
 
     /**
-     * Setter for commentUserId;
+     * Setter for commentUserId
+     *
      * TaxNoticeCommentUserId
      */
-    public void setcommentUserId(Int32? value) {;
-        this.commentUserId = value;;
+    public void setCommentUserId(Integer value) {
+        this.commentUserId = value;
     }
 
 
-    private String commentUserName;
+    private string commentUserName;
 
     /**
-     * Getter for commentUserName;
+     * Getter for commentUserName
+     *
      * TaxNoticeCommentUserName
      */
-    public String getcommentUserName() {;
-        return this.commentUserName;;
+    public string getCommentUserName() {
+        return this.commentUserName;
     }
 
     /**
-     * Setter for commentUserName;
+     * Setter for commentUserName
+     *
      * TaxNoticeCommentUserName
      */
-    public void setcommentUserName(String value) {;
-        this.commentUserName = value;;
+    public void setCommentUserName(string value) {
+        this.commentUserName = value;
     }
 
 
-    private Int32? commentTypeId;
+    private Integer commentTypeId;
 
     /**
-     * Getter for commentTypeId;
+     * Getter for commentTypeId
+     *
      * taxNoticeCommentTypeId
      */
-    public Int32? getcommentTypeId() {;
-        return this.commentTypeId;;
+    public Integer getCommentTypeId() {
+        return this.commentTypeId;
     }
 
     /**
-     * Setter for commentTypeId;
+     * Setter for commentTypeId
+     *
      * taxNoticeCommentTypeId
      */
-    public void setcommentTypeId(Int32? value) {;
-        this.commentTypeId = value;;
+    public void setCommentTypeId(Integer value) {
+        this.commentTypeId = value;
     }
 
 
     private CommentType commentType;
 
     /**
-     * Getter for commentType;
+     * Getter for commentType
+     *
      * taxNoticeCommentType
      */
-    public CommentType getcommentType() {;
-        return this.commentType;;
+    public CommentType getCommentType() {
+        return this.commentType;
     }
 
     /**
-     * Setter for commentType;
+     * Setter for commentType
+     *
      * taxNoticeCommentType
      */
-    public void setcommentType(CommentType value) {;
-        this.commentType = value;;
+    public void setCommentType(CommentType value) {
+        this.commentType = value;
     }
 
 
-    private String commentLink;
+    private string commentLink;
 
     /**
-     * Getter for commentLink;
+     * Getter for commentLink
+     *
      * TaxNoticeCommentLink
      */
-    public String getcommentLink() {;
-        return this.commentLink;;
+    public string getCommentLink() {
+        return this.commentLink;
     }
 
     /**
-     * Setter for commentLink;
+     * Setter for commentLink
+     *
      * TaxNoticeCommentLink
      */
-    public void setcommentLink(String value) {;
-        this.commentLink = value;;
+    public void setCommentLink(string value) {
+        this.commentLink = value;
     }
 
 
-    private String taxNoticeFileName;
+    private string taxNoticeFileName;
 
     /**
-     * Getter for taxNoticeFileName;
+     * Getter for taxNoticeFileName
+     *
      * TaxNoticeFileName
      */
-    public String gettaxNoticeFileName() {;
-        return this.taxNoticeFileName;;
+    public string getTaxNoticeFileName() {
+        return this.taxNoticeFileName;
     }
 
     /**
-     * Setter for taxNoticeFileName;
+     * Setter for taxNoticeFileName
+     *
      * TaxNoticeFileName
      */
-    public void settaxNoticeFileName(String value) {;
-        this.taxNoticeFileName = value;;
+    public void setTaxNoticeFileName(string value) {
+        this.taxNoticeFileName = value;
     }
 
 
-    private Int64? resourceFileId;
+    private Long resourceFileId;
 
     /**
-     * Getter for resourceFileId;
+     * Getter for resourceFileId
+     *
      * resourceFileId
      */
-    public Int64? getresourceFileId() {;
-        return this.resourceFileId;;
+    public Long getResourceFileId() {
+        return this.resourceFileId;
     }
 
     /**
-     * Setter for resourceFileId;
+     * Setter for resourceFileId
+     *
      * resourceFileId
      */
-    public void setresourceFileId(Int64? value) {;
-        this.resourceFileId = value;;
+    public void setResourceFileId(Long value) {
+        this.resourceFileId = value;
     }
 
 
-    private DateTime? modifiedDate;
+    private Instant modifiedDate;
 
     /**
-     * Getter for modifiedDate;
+     * Getter for modifiedDate
+     *
      * The date/time when this record was last modified.
      */
-    public DateTime? getmodifiedDate() {;
-        return this.modifiedDate;;
+    public Instant getModifiedDate() {
+        return this.modifiedDate;
     }
 
     /**
-     * Setter for modifiedDate;
+     * Setter for modifiedDate
+     *
      * The date/time when this record was last modified.
      */
-    public void setmodifiedDate(DateTime? value) {;
-        this.modifiedDate = value;;
+    public void setModifiedDate(Instant value) {
+        this.modifiedDate = value;
     }
 
 
-    private Int32? modifiedUserId;
+    private Integer modifiedUserId;
 
     /**
-     * Getter for modifiedUserId;
+     * Getter for modifiedUserId
+     *
      * The user ID of the user who last modified this record.
      */
-    public Int32? getmodifiedUserId() {;
-        return this.modifiedUserId;;
+    public Integer getModifiedUserId() {
+        return this.modifiedUserId;
     }
 
     /**
-     * Setter for modifiedUserId;
+     * Setter for modifiedUserId
+     *
      * The user ID of the user who last modified this record.
      */
-    public void setmodifiedUserId(Int32? value) {;
-        this.modifiedUserId = value;;
+    public void setModifiedUserId(Integer value) {
+        this.modifiedUserId = value;
     }
 
 
     private ResourceFileUploadRequestModel attachmentUploadRequest;
 
     /**
-     * Getter for attachmentUploadRequest;
+     * Getter for attachmentUploadRequest
+     *
      * An attachment to the detail
      */
-    public ResourceFileUploadRequestModel getattachmentUploadRequest() {;
-        return this.attachmentUploadRequest;;
+    public ResourceFileUploadRequestModel getAttachmentUploadRequest() {
+        return this.attachmentUploadRequest;
     }
 
     /**
-     * Setter for attachmentUploadRequest;
+     * Setter for attachmentUploadRequest
+     *
      * An attachment to the detail
      */
-    public void setattachmentUploadRequest(ResourceFileUploadRequestModel value) {;
-        this.attachmentUploadRequest = value;;
+    public void setAttachmentUploadRequest(ResourceFileUploadRequestModel value) {
+        this.attachmentUploadRequest = value;
     }
 
 

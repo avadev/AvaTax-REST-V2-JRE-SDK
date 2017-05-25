@@ -30,81 +30,89 @@ import java.util.HashMap;
 public class TaxOverrideModel {
 
 
-    private TaxOverrideType? type;
+    private TaxOverrideType type;
 
     /**
-     * Getter for type;
+     * Getter for type
+     *
      * Identifies the type of tax override
      */
-    public TaxOverrideType? gettype() {;
-        return this.type;;
+    public TaxOverrideType getType() {
+        return this.type;
     }
 
     /**
-     * Setter for type;
+     * Setter for type
+     *
      * Identifies the type of tax override
      */
-    public void settype(TaxOverrideType? value) {;
-        this.type = value;;
+    public void setType(TaxOverrideType value) {
+        this.type = value;
     }
 
 
-    private Decimal? taxAmount;
+    private Decimal taxAmount;
 
     /**
-     * Getter for taxAmount;
+     * Getter for taxAmount
+     *
      * Indicates a total override of the calculated tax on the document. AvaTax will distribute
     * the override across all the lines.
      */
-    public Decimal? gettaxAmount() {;
-        return this.taxAmount;;
+    public Decimal getTaxAmount() {
+        return this.taxAmount;
     }
 
     /**
-     * Setter for taxAmount;
+     * Setter for taxAmount
+     *
      * Indicates a total override of the calculated tax on the document. AvaTax will distribute
     * the override across all the lines.
      */
-    public void settaxAmount(Decimal? value) {;
-        this.taxAmount = value;;
+    public void setTaxAmount(Decimal value) {
+        this.taxAmount = value;
     }
 
 
-    private DateTime? taxDate;
+    private Instant taxDate;
 
     /**
-     * Getter for taxDate;
+     * Getter for taxDate
+     *
      * The override tax date to use
      */
-    public DateTime? gettaxDate() {;
-        return this.taxDate;;
+    public Instant getTaxDate() {
+        return this.taxDate;
     }
 
     /**
-     * Setter for taxDate;
+     * Setter for taxDate
+     *
      * The override tax date to use
      */
-    public void settaxDate(DateTime? value) {;
-        this.taxDate = value;;
+    public void setTaxDate(Instant value) {
+        this.taxDate = value;
     }
 
 
-    private String reason;
+    private string reason;
 
     /**
-     * Getter for reason;
+     * Getter for reason
+     *
      * This provides the reason for a tax override for audit purposes. It is required for types 2-4.
      */
-    public String getreason() {;
-        return this.reason;;
+    public string getReason() {
+        return this.reason;
     }
 
     /**
-     * Setter for reason;
+     * Setter for reason
+     *
      * This provides the reason for a tax override for audit purposes. It is required for types 2-4.
      */
-    public void setreason(String value) {;
-        this.reason = value;;
+    public void setReason(string value) {
+        this.reason = value;
     }
 
 

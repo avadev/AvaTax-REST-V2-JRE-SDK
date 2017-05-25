@@ -30,117 +30,129 @@ import java.util.HashMap;
 public class RefundTransactionModel {
 
 
-    private String refundTransactionCode;
+    private string refundTransactionCode;
 
     /**
-     * Getter for refundTransactionCode;
+     * Getter for refundTransactionCode
+     *
      * the transaction code for this refund
      */
-    public String getrefundTransactionCode() {;
-        return this.refundTransactionCode;;
+    public string getRefundTransactionCode() {
+        return this.refundTransactionCode;
     }
 
     /**
-     * Setter for refundTransactionCode;
+     * Setter for refundTransactionCode
+     *
      * the transaction code for this refund
      */
-    public void setrefundTransactionCode(String value) {;
-        this.refundTransactionCode = value;;
+    public void setRefundTransactionCode(string value) {
+        this.refundTransactionCode = value;
     }
 
 
-    private DateTime? refundDate;
+    private Instant refundDate;
 
     /**
-     * Getter for refundDate;
+     * Getter for refundDate
+     *
      * The date of the refund. If null, today's date will be used
      */
-    public DateTime? getrefundDate() {;
-        return this.refundDate;;
+    public Instant getRefundDate() {
+        return this.refundDate;
     }
 
     /**
-     * Setter for refundDate;
+     * Setter for refundDate
+     *
      * The date of the refund. If null, today's date will be used
      */
-    public void setrefundDate(DateTime? value) {;
-        this.refundDate = value;;
+    public void setRefundDate(Instant value) {
+        this.refundDate = value;
     }
 
 
-    private RefundType? refundType;
+    private RefundType refundType;
 
     /**
-     * Getter for refundType;
+     * Getter for refundType
+     *
      * Type of this refund
      */
-    public RefundType? getrefundType() {;
-        return this.refundType;;
+    public RefundType getRefundType() {
+        return this.refundType;
     }
 
     /**
-     * Setter for refundType;
+     * Setter for refundType
+     *
      * Type of this refund
      */
-    public void setrefundType(RefundType? value) {;
-        this.refundType = value;;
+    public void setRefundType(RefundType value) {
+        this.refundType = value;
     }
 
 
-    private Decimal? refundPercentage;
+    private Decimal refundPercentage;
 
     /**
-     * Getter for refundPercentage;
+     * Getter for refundPercentage
+     *
      * Percentage for refund
      */
-    public Decimal? getrefundPercentage() {;
-        return this.refundPercentage;;
+    public Decimal getRefundPercentage() {
+        return this.refundPercentage;
     }
 
     /**
-     * Setter for refundPercentage;
+     * Setter for refundPercentage
+     *
      * Percentage for refund
      */
-    public void setrefundPercentage(Decimal? value) {;
-        this.refundPercentage = value;;
+    public void setRefundPercentage(Decimal value) {
+        this.refundPercentage = value;
     }
 
 
-    private List<String> refundLines;
+    private string[] refundLines;
 
     /**
-     * Getter for refundLines;
+     * Getter for refundLines
+     *
      * Process refund for these lines
      */
-    public List<String> getrefundLines() {;
-        return this.refundLines;;
+    public string[] getRefundLines() {
+        return this.refundLines;
     }
 
     /**
-     * Setter for refundLines;
+     * Setter for refundLines
+     *
      * Process refund for these lines
      */
-    public void setrefundLines(List<String> value) {;
-        this.refundLines = value;;
+    public void setRefundLines(string[] value) {
+        this.refundLines = value;
     }
 
 
-    private String referenceCode;
+    private string referenceCode;
 
     /**
-     * Getter for referenceCode;
+     * Getter for referenceCode
+     *
      * Reference code for this refund
      */
-    public String getreferenceCode() {;
-        return this.referenceCode;;
+    public string getReferenceCode() {
+        return this.referenceCode;
     }
 
     /**
-     * Setter for referenceCode;
+     * Setter for referenceCode
+     *
      * Reference code for this refund
      */
-    public void setreferenceCode(String value) {;
-        this.referenceCode = value;;
+    public void setReferenceCode(string value) {
+        this.referenceCode = value;
     }
 
 

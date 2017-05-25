@@ -33,97 +33,107 @@ public class AddressesModel {
     private AddressLocationInfo singleLocation;
 
     /**
-     * Getter for singleLocation;
+     * Getter for singleLocation
+     *
      * If this transaction occurred at a retail point-of-sale location, use this
      */
-    public AddressLocationInfo getsingleLocation() {;
-        return this.singleLocation;;
+    public AddressLocationInfo getSingleLocation() {
+        return this.singleLocation;
     }
 
     /**
-     * Setter for singleLocation;
+     * Setter for singleLocation
+     *
      * If this transaction occurred at a retail point-of-sale location, use this
      */
-    public void setsingleLocation(AddressLocationInfo value) {;
-        this.singleLocation = value;;
+    public void setSingleLocation(AddressLocationInfo value) {
+        this.singleLocation = value;
     }
 
 
     private AddressLocationInfo shipFrom;
 
     /**
-     * Getter for shipFrom;
+     * Getter for shipFrom
+     *
      * If this transaction was shipped from a warehouse location to a customer location, specify both "ShipFrom" and "ShipTo".
      */
-    public AddressLocationInfo getshipFrom() {;
-        return this.shipFrom;;
+    public AddressLocationInfo getShipFrom() {
+        return this.shipFrom;
     }
 
     /**
-     * Setter for shipFrom;
+     * Setter for shipFrom
+     *
      * If this transaction was shipped from a warehouse location to a customer location, specify both "ShipFrom" and "ShipTo".
      */
-    public void setshipFrom(AddressLocationInfo value) {;
-        this.shipFrom = value;;
+    public void setShipFrom(AddressLocationInfo value) {
+        this.shipFrom = value;
     }
 
 
     private AddressLocationInfo shipTo;
 
     /**
-     * Getter for shipTo;
+     * Getter for shipTo
+     *
      * If this transaction was shipped from a warehouse location to a customer location, specify both "ShipFrom" and "ShipTo".
      */
-    public AddressLocationInfo getshipTo() {;
-        return this.shipTo;;
+    public AddressLocationInfo getShipTo() {
+        return this.shipTo;
     }
 
     /**
-     * Setter for shipTo;
+     * Setter for shipTo
+     *
      * If this transaction was shipped from a warehouse location to a customer location, specify both "ShipFrom" and "ShipTo".
      */
-    public void setshipTo(AddressLocationInfo value) {;
-        this.shipTo = value;;
+    public void setShipTo(AddressLocationInfo value) {
+        this.shipTo = value;
     }
 
 
     private AddressLocationInfo pointOfOrderOrigin;
 
     /**
-     * Getter for pointOfOrderOrigin;
+     * Getter for pointOfOrderOrigin
+     *
      * The place of business where you receive the customer's order.
      */
-    public AddressLocationInfo getpointOfOrderOrigin() {;
-        return this.pointOfOrderOrigin;;
+    public AddressLocationInfo getPointOfOrderOrigin() {
+        return this.pointOfOrderOrigin;
     }
 
     /**
-     * Setter for pointOfOrderOrigin;
+     * Setter for pointOfOrderOrigin
+     *
      * The place of business where you receive the customer's order.
      */
-    public void setpointOfOrderOrigin(AddressLocationInfo value) {;
-        this.pointOfOrderOrigin = value;;
+    public void setPointOfOrderOrigin(AddressLocationInfo value) {
+        this.pointOfOrderOrigin = value;
     }
 
 
     private AddressLocationInfo pointOfOrderAcceptance;
 
     /**
-     * Getter for pointOfOrderAcceptance;
+     * Getter for pointOfOrderAcceptance
+     *
      * The place of business where you accept/approve the customer’s order,
     * thereby becoming contractually obligated to make the sale.
      */
-    public AddressLocationInfo getpointOfOrderAcceptance() {;
-        return this.pointOfOrderAcceptance;;
+    public AddressLocationInfo getPointOfOrderAcceptance() {
+        return this.pointOfOrderAcceptance;
     }
 
     /**
-     * Setter for pointOfOrderAcceptance;
+     * Setter for pointOfOrderAcceptance
+     *
      * The place of business where you accept/approve the customer’s order,
     * thereby becoming contractually obligated to make the sale.
      */
-    public void setpointOfOrderAcceptance(AddressLocationInfo value) {;
-        this.pointOfOrderAcceptance = value;;
+    public void setPointOfOrderAcceptance(AddressLocationInfo value) {
+        this.pointOfOrderAcceptance = value;
     }
 
 

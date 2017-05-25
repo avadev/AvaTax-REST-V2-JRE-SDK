@@ -30,465 +30,512 @@ import java.util.HashMap;
 public class CreateTransactionModel {
 
 
-    private DocumentType? type;
+    private DocumentType type;
 
     /**
-     * Getter for type;
+     * Getter for type
+     *
      * Document Type: if not specified, a document with type of SalesOrder will be created by default
      */
-    public DocumentType? gettype() {;
-        return this.type;;
+    public DocumentType getType() {
+        return this.type;
     }
 
     /**
-     * Setter for type;
+     * Setter for type
+     *
      * Document Type: if not specified, a document with type of SalesOrder will be created by default
      */
-    public void settype(DocumentType? value) {;
-        this.type = value;;
+    public void setType(DocumentType value) {
+        this.type = value;
     }
 
 
-    private String code;
+    private string code;
 
     /**
-     * Getter for code;
+     * Getter for code
+     *
      * Transaction Code - the internal reference code used by the client application. This is used for operations such as
     * Get, Adjust, Settle, and Void. If you leave the transaction code blank, a GUID will be assigned to each transaction.
      */
-    public String getcode() {;
-        return this.code;;
+    public string getCode() {
+        return this.code;
     }
 
     /**
-     * Setter for code;
+     * Setter for code
+     *
      * Transaction Code - the internal reference code used by the client application. This is used for operations such as
     * Get, Adjust, Settle, and Void. If you leave the transaction code blank, a GUID will be assigned to each transaction.
      */
-    public void setcode(String value) {;
-        this.code = value;;
+    public void setCode(string value) {
+        this.code = value;
     }
 
 
-    private String companyCode;
+    private string companyCode;
 
     /**
-     * Getter for companyCode;
+     * Getter for companyCode
+     *
      * Company Code - Specify the code of the company creating this transaction here. If you leave this value null,
     * your account's default company will be used instead.
      */
-    public String getcompanyCode() {;
-        return this.companyCode;;
+    public string getCompanyCode() {
+        return this.companyCode;
     }
 
     /**
-     * Setter for companyCode;
+     * Setter for companyCode
+     *
      * Company Code - Specify the code of the company creating this transaction here. If you leave this value null,
     * your account's default company will be used instead.
      */
-    public void setcompanyCode(String value) {;
-        this.companyCode = value;;
+    public void setCompanyCode(string value) {
+        this.companyCode = value;
     }
 
 
-    private DateTime date;
+    private Instant date;
 
     /**
-     * Getter for date;
+     * Getter for date
+     *
      * Transaction Date - The date on the invoice, purchase order, etc.
      */
-    public DateTime getdate() {;
-        return this.date;;
+    public Instant getDate() {
+        return this.date;
     }
 
     /**
-     * Setter for date;
+     * Setter for date
+     *
      * Transaction Date - The date on the invoice, purchase order, etc.
      */
-    public void setdate(DateTime value) {;
-        this.date = value;;
+    public void setDate(Instant value) {
+        this.date = value;
     }
 
 
-    private String salespersonCode;
+    private string salespersonCode;
 
     /**
-     * Getter for salespersonCode;
+     * Getter for salespersonCode
+     *
      * Salesperson Code - The client application salesperson reference code.
      */
-    public String getsalespersonCode() {;
-        return this.salespersonCode;;
+    public string getSalespersonCode() {
+        return this.salespersonCode;
     }
 
     /**
-     * Setter for salespersonCode;
+     * Setter for salespersonCode
+     *
      * Salesperson Code - The client application salesperson reference code.
      */
-    public void setsalespersonCode(String value) {;
-        this.salespersonCode = value;;
+    public void setSalespersonCode(string value) {
+        this.salespersonCode = value;
     }
 
 
-    private String customerCode;
+    private string customerCode;
 
     /**
-     * Getter for customerCode;
+     * Getter for customerCode
+     *
      * Customer Code - The client application customer reference code.
      */
-    public String getcustomerCode() {;
-        return this.customerCode;;
+    public string getCustomerCode() {
+        return this.customerCode;
     }
 
     /**
-     * Setter for customerCode;
+     * Setter for customerCode
+     *
      * Customer Code - The client application customer reference code.
      */
-    public void setcustomerCode(String value) {;
-        this.customerCode = value;;
+    public void setCustomerCode(string value) {
+        this.customerCode = value;
     }
 
 
-    private String customerUsageType;
+    private string customerUsageType;
 
     /**
-     * Getter for customerUsageType;
+     * Getter for customerUsageType
+     *
      * Customer Usage Type - The client application customer or usage type. For a list of 
     * available usage types, see `/api/v2/definitions/entityusecodes`.
      */
-    public String getcustomerUsageType() {;
-        return this.customerUsageType;;
+    public string getCustomerUsageType() {
+        return this.customerUsageType;
     }
 
     /**
-     * Setter for customerUsageType;
+     * Setter for customerUsageType
+     *
      * Customer Usage Type - The client application customer or usage type. For a list of 
     * available usage types, see `/api/v2/definitions/entityusecodes`.
      */
-    public void setcustomerUsageType(String value) {;
-        this.customerUsageType = value;;
+    public void setCustomerUsageType(string value) {
+        this.customerUsageType = value;
     }
 
 
-    private Decimal? discount;
+    private Decimal discount;
 
     /**
-     * Getter for discount;
+     * Getter for discount
+     *
      * Discount - The discount amount to apply to the document. This value will be applied only to lines
     * that have the `discounted` flag set to true. If no lines have `discounted` set to true, this discount
     * cannot be applied.
      */
-    public Decimal? getdiscount() {;
-        return this.discount;;
+    public Decimal getDiscount() {
+        return this.discount;
     }
 
     /**
-     * Setter for discount;
+     * Setter for discount
+     *
      * Discount - The discount amount to apply to the document. This value will be applied only to lines
     * that have the `discounted` flag set to true. If no lines have `discounted` set to true, this discount
     * cannot be applied.
      */
-    public void setdiscount(Decimal? value) {;
-        this.discount = value;;
+    public void setDiscount(Decimal value) {
+        this.discount = value;
     }
 
 
-    private String purchaseOrderNo;
+    private string purchaseOrderNo;
 
     /**
-     * Getter for purchaseOrderNo;
+     * Getter for purchaseOrderNo
+     *
      * Purchase Order Number for this document
     * This is required for single use exemption certificates to match the order and invoice with the certificate.
      */
-    public String getpurchaseOrderNo() {;
-        return this.purchaseOrderNo;;
+    public string getPurchaseOrderNo() {
+        return this.purchaseOrderNo;
     }
 
     /**
-     * Setter for purchaseOrderNo;
+     * Setter for purchaseOrderNo
+     *
      * Purchase Order Number for this document
     * This is required for single use exemption certificates to match the order and invoice with the certificate.
      */
-    public void setpurchaseOrderNo(String value) {;
-        this.purchaseOrderNo = value;;
+    public void setPurchaseOrderNo(string value) {
+        this.purchaseOrderNo = value;
     }
 
 
-    private String exemptionNo;
+    private string exemptionNo;
 
     /**
-     * Getter for exemptionNo;
+     * Getter for exemptionNo
+     *
      * Exemption Number for this document
      */
-    public String getexemptionNo() {;
-        return this.exemptionNo;;
+    public string getExemptionNo() {
+        return this.exemptionNo;
     }
 
     /**
-     * Setter for exemptionNo;
+     * Setter for exemptionNo
+     *
      * Exemption Number for this document
      */
-    public void setexemptionNo(String value) {;
-        this.exemptionNo = value;;
+    public void setExemptionNo(string value) {
+        this.exemptionNo = value;
     }
 
 
     private AddressesModel addresses;
 
     /**
-     * Getter for addresses;
+     * Getter for addresses
+     *
      * Default addresses for all lines in this document
      */
-    public AddressesModel getaddresses() {;
-        return this.addresses;;
+    public AddressesModel getAddresses() {
+        return this.addresses;
     }
 
     /**
-     * Setter for addresses;
+     * Setter for addresses
+     *
      * Default addresses for all lines in this document
      */
-    public void setaddresses(AddressesModel value) {;
-        this.addresses = value;;
+    public void setAddresses(AddressesModel value) {
+        this.addresses = value;
     }
 
 
-    private List<LineItemModel> lines;
+    private LineItemModel[] lines;
 
     /**
-     * Getter for lines;
+     * Getter for lines
+     *
      * Document line items list
      */
-    public List<LineItemModel> getlines() {;
-        return this.lines;;
+    public LineItemModel[] getLines() {
+        return this.lines;
     }
 
     /**
-     * Setter for lines;
+     * Setter for lines
+     *
      * Document line items list
      */
-    public void setlines(List<LineItemModel> value) {;
-        this.lines = value;;
+    public void setLines(LineItemModel[] value) {
+        this.lines = value;
     }
 
 
-    private Dictionary<string, string> parameters;
+    private object parameters;
 
     /**
-     * Getter for parameters;
+     * Getter for parameters
+     *
      * Special parameters for this transaction.
     * To get a full list of available parameters, please use the /api/v2/definitions/parameters endpoint.
      */
-    public Dictionary<string, string> getparameters() {;
-        return this.parameters;;
+    public object getParameters() {
+        return this.parameters;
     }
 
     /**
-     * Setter for parameters;
+     * Setter for parameters
+     *
      * Special parameters for this transaction.
     * To get a full list of available parameters, please use the /api/v2/definitions/parameters endpoint.
      */
-    public void setparameters(Dictionary<string, string> value) {;
-        this.parameters = value;;
+    public void setParameters(object value) {
+        this.parameters = value;
     }
 
 
-    private String referenceCode;
+    private string referenceCode;
 
     /**
-     * Getter for referenceCode;
+     * Getter for referenceCode
+     *
      * Reference Code used to reference the original document for a return invoice
      */
-    public String getreferenceCode() {;
-        return this.referenceCode;;
+    public string getReferenceCode() {
+        return this.referenceCode;
     }
 
     /**
-     * Setter for referenceCode;
+     * Setter for referenceCode
+     *
      * Reference Code used to reference the original document for a return invoice
      */
-    public void setreferenceCode(String value) {;
-        this.referenceCode = value;;
+    public void setReferenceCode(string value) {
+        this.referenceCode = value;
     }
 
 
-    private String reportingLocationCode;
+    private string reportingLocationCode;
 
     /**
-     * Getter for reportingLocationCode;
+     * Getter for reportingLocationCode
+     *
      * Sets the sale location code (Outlet ID) for reporting this document to the tax authority.
      */
-    public String getreportingLocationCode() {;
-        return this.reportingLocationCode;;
+    public string getReportingLocationCode() {
+        return this.reportingLocationCode;
     }
 
     /**
-     * Setter for reportingLocationCode;
+     * Setter for reportingLocationCode
+     *
      * Sets the sale location code (Outlet ID) for reporting this document to the tax authority.
      */
-    public void setreportingLocationCode(String value) {;
-        this.reportingLocationCode = value;;
+    public void setReportingLocationCode(string value) {
+        this.reportingLocationCode = value;
     }
 
 
-    private Boolean? commit;
+    private object commit;
 
     /**
-     * Getter for commit;
+     * Getter for commit
+     *
      * Causes the document to be committed if true. This option is only applicable for invoice document 
     * types, not orders.
      */
-    public Boolean? getcommit() {;
-        return this.commit;;
+    public object getCommit() {
+        return this.commit;
     }
 
     /**
-     * Setter for commit;
+     * Setter for commit
+     *
      * Causes the document to be committed if true. This option is only applicable for invoice document 
     * types, not orders.
      */
-    public void setcommit(Boolean? value) {;
-        this.commit = value;;
+    public void setCommit(object value) {
+        this.commit = value;
     }
 
 
-    private String batchCode;
+    private string batchCode;
 
     /**
-     * Getter for batchCode;
+     * Getter for batchCode
+     *
      * BatchCode for batch operations.
      */
-    public String getbatchCode() {;
-        return this.batchCode;;
+    public string getBatchCode() {
+        return this.batchCode;
     }
 
     /**
-     * Setter for batchCode;
+     * Setter for batchCode
+     *
      * BatchCode for batch operations.
      */
-    public void setbatchCode(String value) {;
-        this.batchCode = value;;
+    public void setBatchCode(string value) {
+        this.batchCode = value;
     }
 
 
     private TaxOverrideModel taxOverride;
 
     /**
-     * Getter for taxOverride;
+     * Getter for taxOverride
+     *
      * Specifies a tax override for the entire document
      */
-    public TaxOverrideModel gettaxOverride() {;
-        return this.taxOverride;;
+    public TaxOverrideModel getTaxOverride() {
+        return this.taxOverride;
     }
 
     /**
-     * Setter for taxOverride;
+     * Setter for taxOverride
+     *
      * Specifies a tax override for the entire document
      */
-    public void settaxOverride(TaxOverrideModel value) {;
-        this.taxOverride = value;;
+    public void setTaxOverride(TaxOverrideModel value) {
+        this.taxOverride = value;
     }
 
 
-    private String currencyCode;
+    private string currencyCode;
 
     /**
-     * Getter for currencyCode;
+     * Getter for currencyCode
+     *
      * 3 character ISO 4217 currency code.
      */
-    public String getcurrencyCode() {;
-        return this.currencyCode;;
+    public string getCurrencyCode() {
+        return this.currencyCode;
     }
 
     /**
-     * Setter for currencyCode;
+     * Setter for currencyCode
+     *
      * 3 character ISO 4217 currency code.
      */
-    public void setcurrencyCode(String value) {;
-        this.currencyCode = value;;
+    public void setCurrencyCode(string value) {
+        this.currencyCode = value;
     }
 
 
-    private ServiceMode? serviceMode;
+    private ServiceMode serviceMode;
 
     /**
-     * Getter for serviceMode;
+     * Getter for serviceMode
+     *
      * Specifies whether the tax calculation is handled Local, Remote, or Automatic (default). This only 
     * applies when using an AvaLocal server.
      */
-    public ServiceMode? getserviceMode() {;
-        return this.serviceMode;;
+    public ServiceMode getServiceMode() {
+        return this.serviceMode;
     }
 
     /**
-     * Setter for serviceMode;
+     * Setter for serviceMode
+     *
      * Specifies whether the tax calculation is handled Local, Remote, or Automatic (default). This only 
     * applies when using an AvaLocal server.
      */
-    public void setserviceMode(ServiceMode? value) {;
-        this.serviceMode = value;;
+    public void setServiceMode(ServiceMode value) {
+        this.serviceMode = value;
     }
 
 
-    private Decimal? exchangeRate;
+    private Decimal exchangeRate;
 
     /**
-     * Getter for exchangeRate;
+     * Getter for exchangeRate
+     *
      * Currency exchange rate from this transaction to the company base currency.
      */
-    public Decimal? getexchangeRate() {;
-        return this.exchangeRate;;
+    public Decimal getExchangeRate() {
+        return this.exchangeRate;
     }
 
     /**
-     * Setter for exchangeRate;
+     * Setter for exchangeRate
+     *
      * Currency exchange rate from this transaction to the company base currency.
      */
-    public void setexchangeRate(Decimal? value) {;
-        this.exchangeRate = value;;
+    public void setExchangeRate(Decimal value) {
+        this.exchangeRate = value;
     }
 
 
-    private DateTime? exchangeRateEffectiveDate;
+    private Instant exchangeRateEffectiveDate;
 
     /**
-     * Getter for exchangeRateEffectiveDate;
+     * Getter for exchangeRateEffectiveDate
+     *
      * Effective date of the exchange rate.
      */
-    public DateTime? getexchangeRateEffectiveDate() {;
-        return this.exchangeRateEffectiveDate;;
+    public Instant getExchangeRateEffectiveDate() {
+        return this.exchangeRateEffectiveDate;
     }
 
     /**
-     * Setter for exchangeRateEffectiveDate;
+     * Setter for exchangeRateEffectiveDate
+     *
      * Effective date of the exchange rate.
      */
-    public void setexchangeRateEffectiveDate(DateTime? value) {;
-        this.exchangeRateEffectiveDate = value;;
+    public void setExchangeRateEffectiveDate(Instant value) {
+        this.exchangeRateEffectiveDate = value;
     }
 
 
-    private String posLaneCode;
+    private string posLaneCode;
 
     /**
-     * Getter for posLaneCode;
+     * Getter for posLaneCode
+     *
      * Sets the POS Lane Code sent by the User for this document.
      */
-    public String getposLaneCode() {;
-        return this.posLaneCode;;
+    public string getPosLaneCode() {
+        return this.posLaneCode;
     }
 
     /**
-     * Setter for posLaneCode;
+     * Setter for posLaneCode
+     *
      * Sets the POS Lane Code sent by the User for this document.
      */
-    public void setposLaneCode(String value) {;
-        this.posLaneCode = value;;
+    public void setPosLaneCode(string value) {
+        this.posLaneCode = value;
     }
 
 
-    private String businessIdentificationNo;
+    private string businessIdentificationNo;
 
     /**
-     * Getter for businessIdentificationNo;
+     * Getter for businessIdentificationNo
+     *
      * VAT business identification number for the customer for this transaction. This number will be used for all lines 
     * in the transaction, except for those lines where you have defined a different business identification number.
     * 
@@ -496,12 +543,13 @@ public class CreateTransactionModel {
     * a business identification number for your company during company setup, this transaction will be treated as a 
     * business-to-business transaction for VAT purposes and it will be calculated according to VAT tax rules.
      */
-    public String getbusinessIdentificationNo() {;
-        return this.businessIdentificationNo;;
+    public string getBusinessIdentificationNo() {
+        return this.businessIdentificationNo;
     }
 
     /**
-     * Setter for businessIdentificationNo;
+     * Setter for businessIdentificationNo
+     *
      * VAT business identification number for the customer for this transaction. This number will be used for all lines 
     * in the transaction, except for those lines where you have defined a different business identification number.
     * 
@@ -509,84 +557,92 @@ public class CreateTransactionModel {
     * a business identification number for your company during company setup, this transaction will be treated as a 
     * business-to-business transaction for VAT purposes and it will be calculated according to VAT tax rules.
      */
-    public void setbusinessIdentificationNo(String value) {;
-        this.businessIdentificationNo = value;;
+    public void setBusinessIdentificationNo(string value) {
+        this.businessIdentificationNo = value;
     }
 
 
-    private Boolean? isSellerImporterOfRecord;
+    private object isSellerImporterOfRecord;
 
     /**
-     * Getter for isSellerImporterOfRecord;
+     * Getter for isSellerImporterOfRecord
+     *
      * Specifies if the Transaction has the seller as IsSellerImporterOfRecord
      */
-    public Boolean? getisSellerImporterOfRecord() {;
-        return this.isSellerImporterOfRecord;;
+    public object getIsSellerImporterOfRecord() {
+        return this.isSellerImporterOfRecord;
     }
 
     /**
-     * Setter for isSellerImporterOfRecord;
+     * Setter for isSellerImporterOfRecord
+     *
      * Specifies if the Transaction has the seller as IsSellerImporterOfRecord
      */
-    public void setisSellerImporterOfRecord(Boolean? value) {;
-        this.isSellerImporterOfRecord = value;;
+    public void setIsSellerImporterOfRecord(object value) {
+        this.isSellerImporterOfRecord = value;
     }
 
 
-    private String description;
+    private string description;
 
     /**
-     * Getter for description;
+     * Getter for description
+     *
      * Description
      */
-    public String getdescription() {;
-        return this.description;;
+    public string getDescription() {
+        return this.description;
     }
 
     /**
-     * Setter for description;
+     * Setter for description
+     *
      * Description
      */
-    public void setdescription(String value) {;
-        this.description = value;;
+    public void setDescription(string value) {
+        this.description = value;
     }
 
 
-    private String email;
+    private string email;
 
     /**
-     * Getter for email;
+     * Getter for email
+     *
      * Email
      */
-    public String getemail() {;
-        return this.email;;
+    public string getEmail() {
+        return this.email;
     }
 
     /**
-     * Setter for email;
+     * Setter for email
+     *
      * Email
      */
-    public void setemail(String value) {;
-        this.email = value;;
+    public void setEmail(string value) {
+        this.email = value;
     }
 
 
-    private TaxDebugLevel? debugLevel;
+    private TaxDebugLevel debugLevel;
 
     /**
-     * Getter for debugLevel;
+     * Getter for debugLevel
+     *
      * If the user wishes to request additional debug information from this transaction, specify a level higher than 'normal'
      */
-    public TaxDebugLevel? getdebugLevel() {;
-        return this.debugLevel;;
+    public TaxDebugLevel getDebugLevel() {
+        return this.debugLevel;
     }
 
     /**
-     * Setter for debugLevel;
+     * Setter for debugLevel
+     *
      * If the user wishes to request additional debug information from this transaction, specify a level higher than 'normal'
      */
-    public void setdebugLevel(TaxDebugLevel? value) {;
-        this.debugLevel = value;;
+    public void setDebugLevel(TaxDebugLevel value) {
+        this.debugLevel = value;
     }
 
 

@@ -33,98 +33,108 @@ import java.util.HashMap;
 public class SettingModel {
 
 
-    private Int32 id;
+    private int id;
 
     /**
-     * Getter for id;
+     * Getter for id
+     *
      * The unique ID number of this setting.
      */
-    public Int32 getid() {;
-        return this.id;;
+    public int getId() {
+        return this.id;
     }
 
     /**
-     * Setter for id;
+     * Setter for id
+     *
      * The unique ID number of this setting.
      */
-    public void setid(Int32 value) {;
-        this.id = value;;
+    public void setId(int value) {
+        this.id = value;
     }
 
 
-    private Int32 companyId;
+    private int companyId;
 
     /**
-     * Getter for companyId;
+     * Getter for companyId
+     *
      * The unique ID number of the company this setting refers to.
      */
-    public Int32 getcompanyId() {;
-        return this.companyId;;
+    public int getCompanyId() {
+        return this.companyId;
     }
 
     /**
-     * Setter for companyId;
+     * Setter for companyId
+     *
      * The unique ID number of the company this setting refers to.
      */
-    public void setcompanyId(Int32 value) {;
-        this.companyId = value;;
+    public void setCompanyId(int value) {
+        this.companyId = value;
     }
 
 
-    private String set;
+    private string set;
 
     /**
-     * Getter for set;
+     * Getter for set
+     *
      * A user-defined "set" containing this name-value pair.
      */
-    public String getset() {;
-        return this.set;;
+    public string getSet() {
+        return this.set;
     }
 
     /**
-     * Setter for set;
+     * Setter for set
+     *
      * A user-defined "set" containing this name-value pair.
      */
-    public void setset(String value) {;
-        this.set = value;;
+    public void setSet(string value) {
+        this.set = value;
     }
 
 
-    private String name;
+    private string name;
 
     /**
-     * Getter for name;
+     * Getter for name
+     *
      * A user-defined "name" for this name-value pair.
      */
-    public String getname() {;
-        return this.name;;
+    public string getName() {
+        return this.name;
     }
 
     /**
-     * Setter for name;
+     * Setter for name
+     *
      * A user-defined "name" for this name-value pair.
      */
-    public void setname(String value) {;
-        this.name = value;;
+    public void setName(string value) {
+        this.name = value;
     }
 
 
-    private String value;
+    private string value;
 
     /**
-     * Getter for value;
+     * Getter for value
+     *
      * The value of this name-value pair.
      */
-    public String getvalue() {;
-        return this.value;;
+    public string getValue() {
+        return this.value;
     }
 
     /**
-     * Setter for value;
+     * Setter for value
+     *
      * The value of this name-value pair.
      */
-    public void setvalue(String value) {;
-        this.value = value;;
+    public void setValue(string value) {
+        this.value = value;
     }
 
 

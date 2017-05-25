@@ -30,155 +30,171 @@ import java.util.HashMap;
 public class FilingAugmentationModel {
 
 
-    private Int64? id;
+    private Long id;
 
     /**
-     * Getter for id;
+     * Getter for id
+     *
      * The unique ID number for the augmentation.
      */
-    public Int64? getid() {;
-        return this.id;;
+    public Long getId() {
+        return this.id;
     }
 
     /**
-     * Setter for id;
+     * Setter for id
+     *
      * The unique ID number for the augmentation.
      */
-    public void setid(Int64? value) {;
-        this.id = value;;
+    public void setId(Long value) {
+        this.id = value;
     }
 
 
-    private Int64? filingId;
+    private Long filingId;
 
     /**
-     * Getter for filingId;
+     * Getter for filingId
+     *
      * The filing return id that this applies too
      */
-    public Int64? getfilingId() {;
-        return this.filingId;;
+    public Long getFilingId() {
+        return this.filingId;
     }
 
     /**
-     * Setter for filingId;
+     * Setter for filingId
+     *
      * The filing return id that this applies too
      */
-    public void setfilingId(Int64? value) {;
-        this.filingId = value;;
+    public void setFilingId(Long value) {
+        this.filingId = value;
     }
 
 
     private Decimal fieldAmount;
 
     /**
-     * Getter for fieldAmount;
+     * Getter for fieldAmount
+     *
      * The field amount.
      */
-    public Decimal getfieldAmount() {;
-        return this.fieldAmount;;
+    public Decimal getFieldAmount() {
+        return this.fieldAmount;
     }
 
     /**
-     * Setter for fieldAmount;
+     * Setter for fieldAmount
+     *
      * The field amount.
      */
-    public void setfieldAmount(Decimal value) {;
-        this.fieldAmount = value;;
+    public void setFieldAmount(Decimal value) {
+        this.fieldAmount = value;
     }
 
 
-    private String fieldName;
+    private string fieldName;
 
     /**
-     * Getter for fieldName;
+     * Getter for fieldName
+     *
      * The field name.
      */
-    public String getfieldName() {;
-        return this.fieldName;;
+    public string getFieldName() {
+        return this.fieldName;
     }
 
     /**
-     * Setter for fieldName;
+     * Setter for fieldName
+     *
      * The field name.
      */
-    public void setfieldName(String value) {;
-        this.fieldName = value;;
+    public void setFieldName(string value) {
+        this.fieldName = value;
     }
 
 
-    private DateTime? createdDate;
+    private Instant createdDate;
 
     /**
-     * Getter for createdDate;
+     * Getter for createdDate
+     *
      * The date when this record was created.
      */
-    public DateTime? getcreatedDate() {;
-        return this.createdDate;;
+    public Instant getCreatedDate() {
+        return this.createdDate;
     }
 
     /**
-     * Setter for createdDate;
+     * Setter for createdDate
+     *
      * The date when this record was created.
      */
-    public void setcreatedDate(DateTime? value) {;
-        this.createdDate = value;;
+    public void setCreatedDate(Instant value) {
+        this.createdDate = value;
     }
 
 
-    private Int32? createdUserId;
+    private Integer createdUserId;
 
     /**
-     * Getter for createdUserId;
+     * Getter for createdUserId
+     *
      * The User ID of the user who created this record.
      */
-    public Int32? getcreatedUserId() {;
-        return this.createdUserId;;
+    public Integer getCreatedUserId() {
+        return this.createdUserId;
     }
 
     /**
-     * Setter for createdUserId;
+     * Setter for createdUserId
+     *
      * The User ID of the user who created this record.
      */
-    public void setcreatedUserId(Int32? value) {;
-        this.createdUserId = value;;
+    public void setCreatedUserId(Integer value) {
+        this.createdUserId = value;
     }
 
 
-    private DateTime? modifiedDate;
+    private Instant modifiedDate;
 
     /**
-     * Getter for modifiedDate;
+     * Getter for modifiedDate
+     *
      * The date/time when this record was last modified.
      */
-    public DateTime? getmodifiedDate() {;
-        return this.modifiedDate;;
+    public Instant getModifiedDate() {
+        return this.modifiedDate;
     }
 
     /**
-     * Setter for modifiedDate;
+     * Setter for modifiedDate
+     *
      * The date/time when this record was last modified.
      */
-    public void setmodifiedDate(DateTime? value) {;
-        this.modifiedDate = value;;
+    public void setModifiedDate(Instant value) {
+        this.modifiedDate = value;
     }
 
 
-    private Int32? modifiedUserId;
+    private Integer modifiedUserId;
 
     /**
-     * Getter for modifiedUserId;
+     * Getter for modifiedUserId
+     *
      * The user ID of the user who last modified this record.
      */
-    public Int32? getmodifiedUserId() {;
-        return this.modifiedUserId;;
+    public Integer getModifiedUserId() {
+        return this.modifiedUserId;
     }
 
     /**
-     * Setter for modifiedUserId;
+     * Setter for modifiedUserId
+     *
      * The user ID of the user who last modified this record.
      */
-    public void setmodifiedUserId(Int32? value) {;
-        this.modifiedUserId = value;;
+    public void setModifiedUserId(Integer value) {
+        this.modifiedUserId = value;
     }
 
 

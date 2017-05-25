@@ -30,136 +30,150 @@ import java.util.HashMap;
 public class ResourceFileUploadRequestModel {
 
 
-    private Byte[] content;
+    private string content;
 
     /**
-     * Getter for content;
+     * Getter for content
+     *
      * This stream contains the bytes of the file being uploaded.
      */
-    public Byte[] getcontent() {;
-        return this.content;;
+    public string getContent() {
+        return this.content;
     }
 
     /**
-     * Setter for content;
+     * Setter for content
+     *
      * This stream contains the bytes of the file being uploaded.
      */
-    public void setcontent(Byte[] value) {;
-        this.content = value;;
+    public void setContent(string value) {
+        this.content = value;
     }
 
 
-    private String username;
+    private string username;
 
     /**
-     * Getter for username;
+     * Getter for username
+     *
      * The username adding the file
      */
-    public String getusername() {;
-        return this.username;;
+    public string getUsername() {
+        return this.username;
     }
 
     /**
-     * Setter for username;
+     * Setter for username
+     *
      * The username adding the file
      */
-    public void setusername(String value) {;
-        this.username = value;;
+    public void setUsername(string value) {
+        this.username = value;
     }
 
 
-    private Int32? accountId;
+    private Integer accountId;
 
     /**
-     * Getter for accountId;
+     * Getter for accountId
+     *
      * The account ID to which this file will be attached.
      */
-    public Int32? getaccountId() {;
-        return this.accountId;;
+    public Integer getAccountId() {
+        return this.accountId;
     }
 
     /**
-     * Setter for accountId;
+     * Setter for accountId
+     *
      * The account ID to which this file will be attached.
      */
-    public void setaccountId(Int32? value) {;
-        this.accountId = value;;
+    public void setAccountId(Integer value) {
+        this.accountId = value;
     }
 
 
-    private Int32? companyId;
+    private Integer companyId;
 
     /**
-     * Getter for companyId;
+     * Getter for companyId
+     *
      * The company ID to which this file will be attached.
      */
-    public Int32? getcompanyId() {;
-        return this.companyId;;
+    public Integer getCompanyId() {
+        return this.companyId;
     }
 
     /**
-     * Setter for companyId;
+     * Setter for companyId
+     *
      * The company ID to which this file will be attached.
      */
-    public void setcompanyId(Int32? value) {;
-        this.companyId = value;;
+    public void setCompanyId(Integer value) {
+        this.companyId = value;
     }
 
 
-    private String name;
+    private string name;
 
     /**
-     * Getter for name;
+     * Getter for name
+     *
      * The original name of this file.
      */
-    public String getname() {;
-        return this.name;;
+    public string getName() {
+        return this.name;
     }
 
     /**
-     * Setter for name;
+     * Setter for name
+     *
      * The original name of this file.
      */
-    public void setname(String value) {;
-        this.name = value;;
+    public void setName(string value) {
+        this.name = value;
     }
 
 
-    private Int32? resourceFileTypeId;
+    private Integer resourceFileTypeId;
 
     /**
-     * Getter for resourceFileTypeId;
+     * Getter for resourceFileTypeId
+     *
      * The resource type ID of this file.
      */
-    public Int32? getresourceFileTypeId() {;
-        return this.resourceFileTypeId;;
+    public Integer getResourceFileTypeId() {
+        return this.resourceFileTypeId;
     }
 
     /**
-     * Setter for resourceFileTypeId;
+     * Setter for resourceFileTypeId
+     *
      * The resource type ID of this file.
      */
-    public void setresourceFileTypeId(Int32? value) {;
-        this.resourceFileTypeId = value;;
+    public void setResourceFileTypeId(Integer value) {
+        this.resourceFileTypeId = value;
     }
 
 
-    private Int64? length;
+    private Long length;
 
     /**
-     * Getter for length;
+     * Getter for length
+     *
      * Length of the file in bytes.
      */
-    public Int64? getlength() {;
-        return this.length;;
+    public Long getLength() {
+        return this.length;
     }
 
     /**
-     * Setter for length;
+     * Setter for length
+     *
      * Length of the file in bytes.
      */
-    public void setlength(Int64? value) {;
-        this.length = value;;
+    public void setLength(Long value) {
+        this.length = value;
     }
 
 

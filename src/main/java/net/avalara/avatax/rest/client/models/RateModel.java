@@ -30,60 +30,66 @@ import java.util.HashMap;
 public class RateModel {
 
 
-    private Decimal? rate;
+    private Decimal rate;
 
     /**
-     * Getter for rate;
+     * Getter for rate
+     *
      * Rate
      */
-    public Decimal? getrate() {;
-        return this.rate;;
+    public Decimal getRate() {
+        return this.rate;
     }
 
     /**
-     * Setter for rate;
+     * Setter for rate
+     *
      * Rate
      */
-    public void setrate(Decimal? value) {;
-        this.rate = value;;
+    public void setRate(Decimal value) {
+        this.rate = value;
     }
 
 
-    private String name;
+    private string name;
 
     /**
-     * Getter for name;
+     * Getter for name
+     *
      * Name
      */
-    public String getname() {;
-        return this.name;;
+    public string getName() {
+        return this.name;
     }
 
     /**
-     * Setter for name;
+     * Setter for name
+     *
      * Name
      */
-    public void setname(String value) {;
-        this.name = value;;
+    public void setName(string value) {
+        this.name = value;
     }
 
 
-    private JurisdictionType? type;
+    private JurisdictionType type;
 
     /**
-     * Getter for type;
+     * Getter for type
+     *
      * Type
      */
-    public JurisdictionType? gettype() {;
-        return this.type;;
+    public JurisdictionType getType() {
+        return this.type;
     }
 
     /**
-     * Setter for type;
+     * Setter for type
+     *
      * Type
      */
-    public void settype(JurisdictionType? value) {;
-        this.type = value;;
+    public void setType(JurisdictionType value) {
+        this.type = value;
     }
 
 

@@ -30,469 +30,517 @@ import java.util.HashMap;
 public class NexusModel {
 
 
-    private Int32 id;
+    private int id;
 
     /**
-     * Getter for id;
+     * Getter for id
+     *
      * The unique ID number of this declaration of nexus.
      */
-    public Int32 getid() {;
-        return this.id;;
+    public int getId() {
+        return this.id;
     }
 
     /**
-     * Setter for id;
+     * Setter for id
+     *
      * The unique ID number of this declaration of nexus.
      */
-    public void setid(Int32 value) {;
-        this.id = value;;
+    public void setId(int value) {
+        this.id = value;
     }
 
 
-    private Int32 companyId;
+    private int companyId;
 
     /**
-     * Getter for companyId;
+     * Getter for companyId
+     *
      * The unique ID number of the company that declared nexus.
      */
-    public Int32 getcompanyId() {;
-        return this.companyId;;
+    public int getCompanyId() {
+        return this.companyId;
     }
 
     /**
-     * Setter for companyId;
+     * Setter for companyId
+     *
      * The unique ID number of the company that declared nexus.
      */
-    public void setcompanyId(Int32 value) {;
-        this.companyId = value;;
+    public void setCompanyId(int value) {
+        this.companyId = value;
     }
 
 
-    private String country;
+    private string country;
 
     /**
-     * Getter for country;
+     * Getter for country
+     *
      * The two character ISO-3166 country code of the country in which this company declared nexus.
      */
-    public String getcountry() {;
-        return this.country;;
+    public string getCountry() {
+        return this.country;
     }
 
     /**
-     * Setter for country;
+     * Setter for country
+     *
      * The two character ISO-3166 country code of the country in which this company declared nexus.
      */
-    public void setcountry(String value) {;
-        this.country = value;;
+    public void setCountry(string value) {
+        this.country = value;
     }
 
 
-    private String region;
+    private string region;
 
     /**
-     * Getter for region;
+     * Getter for region
+     *
      * The two or three character ISO region code of the region, state, or province in which this company declared nexus.
      */
-    public String getregion() {;
-        return this.region;;
+    public string getRegion() {
+        return this.region;
     }
 
     /**
-     * Setter for region;
+     * Setter for region
+     *
      * The two or three character ISO region code of the region, state, or province in which this company declared nexus.
      */
-    public void setregion(String value) {;
-        this.region = value;;
+    public void setRegion(string value) {
+        this.region = value;
     }
 
 
-    private JurisTypeId? jurisTypeId;
+    private JurisTypeId jurisTypeId;
 
     /**
-     * Getter for jurisTypeId;
+     * Getter for jurisTypeId
+     *
      * The jurisdiction type of the jurisdiction in which this company declared nexus.
      */
-    public JurisTypeId? getjurisTypeId() {;
-        return this.jurisTypeId;;
+    public JurisTypeId getJurisTypeId() {
+        return this.jurisTypeId;
     }
 
     /**
-     * Setter for jurisTypeId;
+     * Setter for jurisTypeId
+     *
      * The jurisdiction type of the jurisdiction in which this company declared nexus.
      */
-    public void setjurisTypeId(JurisTypeId? value) {;
-        this.jurisTypeId = value;;
+    public void setJurisTypeId(JurisTypeId value) {
+        this.jurisTypeId = value;
     }
 
 
-    private String jurisCode;
+    private string jurisCode;
 
     /**
-     * Getter for jurisCode;
+     * Getter for jurisCode
+     *
      * The code identifying the jurisdiction in which this company declared nexus.
      */
-    public String getjurisCode() {;
-        return this.jurisCode;;
+    public string getJurisCode() {
+        return this.jurisCode;
     }
 
     /**
-     * Setter for jurisCode;
+     * Setter for jurisCode
+     *
      * The code identifying the jurisdiction in which this company declared nexus.
      */
-    public void setjurisCode(String value) {;
-        this.jurisCode = value;;
+    public void setJurisCode(string value) {
+        this.jurisCode = value;
     }
 
 
-    private String jurisName;
+    private string jurisName;
 
     /**
-     * Getter for jurisName;
+     * Getter for jurisName
+     *
      * The common name of the jurisdiction in which this company declared nexus.
      */
-    public String getjurisName() {;
-        return this.jurisName;;
+    public string getJurisName() {
+        return this.jurisName;
     }
 
     /**
-     * Setter for jurisName;
+     * Setter for jurisName
+     *
      * The common name of the jurisdiction in which this company declared nexus.
      */
-    public void setjurisName(String value) {;
-        this.jurisName = value;;
+    public void setJurisName(string value) {
+        this.jurisName = value;
     }
 
 
-    private DateTime? effectiveDate;
+    private Instant effectiveDate;
 
     /**
-     * Getter for effectiveDate;
+     * Getter for effectiveDate
+     *
      * The date when this nexus began. If not known, set to null.
      */
-    public DateTime? geteffectiveDate() {;
-        return this.effectiveDate;;
+    public Instant getEffectiveDate() {
+        return this.effectiveDate;
     }
 
     /**
-     * Setter for effectiveDate;
+     * Setter for effectiveDate
+     *
      * The date when this nexus began. If not known, set to null.
      */
-    public void seteffectiveDate(DateTime? value) {;
-        this.effectiveDate = value;;
+    public void setEffectiveDate(Instant value) {
+        this.effectiveDate = value;
     }
 
 
-    private DateTime? endDate;
+    private Instant endDate;
 
     /**
-     * Getter for endDate;
+     * Getter for endDate
+     *
      * If this nexus will end or has ended on a specific date, set this to the date when this nexus ends.
      */
-    public DateTime? getendDate() {;
-        return this.endDate;;
+    public Instant getEndDate() {
+        return this.endDate;
     }
 
     /**
-     * Setter for endDate;
+     * Setter for endDate
+     *
      * If this nexus will end or has ended on a specific date, set this to the date when this nexus ends.
      */
-    public void setendDate(DateTime? value) {;
-        this.endDate = value;;
+    public void setEndDate(Instant value) {
+        this.endDate = value;
     }
 
 
-    private String shortName;
+    private string shortName;
 
     /**
-     * Getter for shortName;
+     * Getter for shortName
+     *
      * The short name of the jurisdiction.
      */
-    public String getshortName() {;
-        return this.shortName;;
+    public string getShortName() {
+        return this.shortName;
     }
 
     /**
-     * Setter for shortName;
+     * Setter for shortName
+     *
      * The short name of the jurisdiction.
      */
-    public void setshortName(String value) {;
-        this.shortName = value;;
+    public void setShortName(string value) {
+        this.shortName = value;
     }
 
 
-    private String signatureCode;
+    private string signatureCode;
 
     /**
-     * Getter for signatureCode;
+     * Getter for signatureCode
+     *
      * The signature code of the boundary region as defined by Avalara.
      */
-    public String getsignatureCode() {;
-        return this.signatureCode;;
+    public string getSignatureCode() {
+        return this.signatureCode;
     }
 
     /**
-     * Setter for signatureCode;
+     * Setter for signatureCode
+     *
      * The signature code of the boundary region as defined by Avalara.
      */
-    public void setsignatureCode(String value) {;
-        this.signatureCode = value;;
+    public void setSignatureCode(string value) {
+        this.signatureCode = value;
     }
 
 
-    private String stateAssignedNo;
+    private string stateAssignedNo;
 
     /**
-     * Getter for stateAssignedNo;
+     * Getter for stateAssignedNo
+     *
      * The state assigned number of this jurisdiction.
      */
-    public String getstateAssignedNo() {;
-        return this.stateAssignedNo;;
+    public string getStateAssignedNo() {
+        return this.stateAssignedNo;
     }
 
     /**
-     * Setter for stateAssignedNo;
+     * Setter for stateAssignedNo
+     *
      * The state assigned number of this jurisdiction.
      */
-    public void setstateAssignedNo(String value) {;
-        this.stateAssignedNo = value;;
+    public void setStateAssignedNo(string value) {
+        this.stateAssignedNo = value;
     }
 
 
-    private NexusTypeId? nexusTypeId;
+    private NexusTypeId nexusTypeId;
 
     /**
-     * Getter for nexusTypeId;
+     * Getter for nexusTypeId
+     *
      * (DEPRECATED) The type of nexus that this company is declaring.
     * Please use NexusTaxTypeGroupId instead.
      */
-    public NexusTypeId? getnexusTypeId() {;
-        return this.nexusTypeId;;
+    public NexusTypeId getNexusTypeId() {
+        return this.nexusTypeId;
     }
 
     /**
-     * Setter for nexusTypeId;
+     * Setter for nexusTypeId
+     *
      * (DEPRECATED) The type of nexus that this company is declaring.
     * Please use NexusTaxTypeGroupId instead.
      */
-    public void setnexusTypeId(NexusTypeId? value) {;
-        this.nexusTypeId = value;;
+    public void setNexusTypeId(NexusTypeId value) {
+        this.nexusTypeId = value;
     }
 
 
-    private Sourcing? sourcing;
+    private Sourcing sourcing;
 
     /**
-     * Getter for sourcing;
+     * Getter for sourcing
+     *
      * Indicates whether this nexus is defined as origin or destination nexus.
      */
-    public Sourcing? getsourcing() {;
-        return this.sourcing;;
+    public Sourcing getSourcing() {
+        return this.sourcing;
     }
 
     /**
-     * Setter for sourcing;
+     * Setter for sourcing
+     *
      * Indicates whether this nexus is defined as origin or destination nexus.
      */
-    public void setsourcing(Sourcing? value) {;
-        this.sourcing = value;;
+    public void setSourcing(Sourcing value) {
+        this.sourcing = value;
     }
 
 
-    private Boolean? hasLocalNexus;
+    private object hasLocalNexus;
 
     /**
-     * Getter for hasLocalNexus;
+     * Getter for hasLocalNexus
+     *
      * True if you are also declaring local nexus within this jurisdiction.
     * Many U.S. states have options for declaring nexus in local jurisdictions as well as within the state.
      */
-    public Boolean? gethasLocalNexus() {;
-        return this.hasLocalNexus;;
+    public object getHasLocalNexus() {
+        return this.hasLocalNexus;
     }
 
     /**
-     * Setter for hasLocalNexus;
+     * Setter for hasLocalNexus
+     *
      * True if you are also declaring local nexus within this jurisdiction.
     * Many U.S. states have options for declaring nexus in local jurisdictions as well as within the state.
      */
-    public void sethasLocalNexus(Boolean? value) {;
-        this.hasLocalNexus = value;;
+    public void setHasLocalNexus(object value) {
+        this.hasLocalNexus = value;
     }
 
 
-    private LocalNexusTypeId? localNexusTypeId;
+    private LocalNexusTypeId localNexusTypeId;
 
     /**
-     * Getter for localNexusTypeId;
+     * Getter for localNexusTypeId
+     *
      * If you are declaring local nexus within this jurisdiction, this indicates whether you are declaring only 
     * a specified list of local jurisdictions, all state-administered local jurisdictions, or all local jurisdictions.
      */
-    public LocalNexusTypeId? getlocalNexusTypeId() {;
-        return this.localNexusTypeId;;
+    public LocalNexusTypeId getLocalNexusTypeId() {
+        return this.localNexusTypeId;
     }
 
     /**
-     * Setter for localNexusTypeId;
+     * Setter for localNexusTypeId
+     *
      * If you are declaring local nexus within this jurisdiction, this indicates whether you are declaring only 
     * a specified list of local jurisdictions, all state-administered local jurisdictions, or all local jurisdictions.
      */
-    public void setlocalNexusTypeId(LocalNexusTypeId? value) {;
-        this.localNexusTypeId = value;;
+    public void setLocalNexusTypeId(LocalNexusTypeId value) {
+        this.localNexusTypeId = value;
     }
 
 
-    private Boolean? hasPermanentEstablishment;
+    private object hasPermanentEstablishment;
 
     /**
-     * Getter for hasPermanentEstablishment;
+     * Getter for hasPermanentEstablishment
+     *
      * Set this value to true if your company has a permanent establishment within this jurisdiction.
      */
-    public Boolean? gethasPermanentEstablishment() {;
-        return this.hasPermanentEstablishment;;
+    public object getHasPermanentEstablishment() {
+        return this.hasPermanentEstablishment;
     }
 
     /**
-     * Setter for hasPermanentEstablishment;
+     * Setter for hasPermanentEstablishment
+     *
      * Set this value to true if your company has a permanent establishment within this jurisdiction.
      */
-    public void sethasPermanentEstablishment(Boolean? value) {;
-        this.hasPermanentEstablishment = value;;
+    public void setHasPermanentEstablishment(object value) {
+        this.hasPermanentEstablishment = value;
     }
 
 
-    private String taxId;
+    private string taxId;
 
     /**
-     * Getter for taxId;
+     * Getter for taxId
+     *
      * Optional - the tax identification number under which you declared nexus.
      */
-    public String gettaxId() {;
-        return this.taxId;;
+    public string getTaxId() {
+        return this.taxId;
     }
 
     /**
-     * Setter for taxId;
+     * Setter for taxId
+     *
      * Optional - the tax identification number under which you declared nexus.
      */
-    public void settaxId(String value) {;
-        this.taxId = value;;
+    public void setTaxId(string value) {
+        this.taxId = value;
     }
 
 
-    private Boolean? streamlinedSalesTax;
+    private object streamlinedSalesTax;
 
     /**
-     * Getter for streamlinedSalesTax;
+     * Getter for streamlinedSalesTax
+     *
      * For the United States, this flag indicates whether this particular nexus falls within a U.S. State that participates 
     * in the Streamlined Sales Tax program. For countries other than the US, this flag is null.
      */
-    public Boolean? getstreamlinedSalesTax() {;
-        return this.streamlinedSalesTax;;
+    public object getStreamlinedSalesTax() {
+        return this.streamlinedSalesTax;
     }
 
     /**
-     * Setter for streamlinedSalesTax;
+     * Setter for streamlinedSalesTax
+     *
      * For the United States, this flag indicates whether this particular nexus falls within a U.S. State that participates 
     * in the Streamlined Sales Tax program. For countries other than the US, this flag is null.
      */
-    public void setstreamlinedSalesTax(Boolean? value) {;
-        this.streamlinedSalesTax = value;;
+    public void setStreamlinedSalesTax(object value) {
+        this.streamlinedSalesTax = value;
     }
 
 
-    private DateTime? createdDate;
+    private Instant createdDate;
 
     /**
-     * Getter for createdDate;
+     * Getter for createdDate
+     *
      * The date when this record was created.
      */
-    public DateTime? getcreatedDate() {;
-        return this.createdDate;;
+    public Instant getCreatedDate() {
+        return this.createdDate;
     }
 
     /**
-     * Setter for createdDate;
+     * Setter for createdDate
+     *
      * The date when this record was created.
      */
-    public void setcreatedDate(DateTime? value) {;
-        this.createdDate = value;;
+    public void setCreatedDate(Instant value) {
+        this.createdDate = value;
     }
 
 
-    private Int32? createdUserId;
+    private Integer createdUserId;
 
     /**
-     * Getter for createdUserId;
+     * Getter for createdUserId
+     *
      * The User ID of the user who created this record.
      */
-    public Int32? getcreatedUserId() {;
-        return this.createdUserId;;
+    public Integer getCreatedUserId() {
+        return this.createdUserId;
     }
 
     /**
-     * Setter for createdUserId;
+     * Setter for createdUserId
+     *
      * The User ID of the user who created this record.
      */
-    public void setcreatedUserId(Int32? value) {;
-        this.createdUserId = value;;
+    public void setCreatedUserId(Integer value) {
+        this.createdUserId = value;
     }
 
 
-    private DateTime? modifiedDate;
+    private Instant modifiedDate;
 
     /**
-     * Getter for modifiedDate;
+     * Getter for modifiedDate
+     *
      * The date/time when this record was last modified.
      */
-    public DateTime? getmodifiedDate() {;
-        return this.modifiedDate;;
+    public Instant getModifiedDate() {
+        return this.modifiedDate;
     }
 
     /**
-     * Setter for modifiedDate;
+     * Setter for modifiedDate
+     *
      * The date/time when this record was last modified.
      */
-    public void setmodifiedDate(DateTime? value) {;
-        this.modifiedDate = value;;
+    public void setModifiedDate(Instant value) {
+        this.modifiedDate = value;
     }
 
 
-    private Int32? modifiedUserId;
+    private Integer modifiedUserId;
 
     /**
-     * Getter for modifiedUserId;
+     * Getter for modifiedUserId
+     *
      * The user ID of the user who last modified this record.
      */
-    public Int32? getmodifiedUserId() {;
-        return this.modifiedUserId;;
+    public Integer getModifiedUserId() {
+        return this.modifiedUserId;
     }
 
     /**
-     * Setter for modifiedUserId;
+     * Setter for modifiedUserId
+     *
      * The user ID of the user who last modified this record.
      */
-    public void setmodifiedUserId(Int32? value) {;
-        this.modifiedUserId = value;;
+    public void setModifiedUserId(Integer value) {
+        this.modifiedUserId = value;
     }
 
 
-    private String nexusTaxTypeGroup;
+    private string nexusTaxTypeGroup;
 
     /**
-     * Getter for nexusTaxTypeGroup;
+     * Getter for nexusTaxTypeGroup
+     *
      * The type of nexus that this company is declaring.Replaces NexusTypeId.
     * Use /api/v2/definitions/nexustaxtypegroup for a list of tax type groups.
      */
-    public String getnexusTaxTypeGroup() {;
-        return this.nexusTaxTypeGroup;;
+    public string getNexusTaxTypeGroup() {
+        return this.nexusTaxTypeGroup;
     }
 
     /**
-     * Setter for nexusTaxTypeGroup;
+     * Setter for nexusTaxTypeGroup
+     *
      * The type of nexus that this company is declaring.Replaces NexusTypeId.
     * Use /api/v2/definitions/nexustaxtypegroup for a list of tax type groups.
      */
-    public void setnexusTaxTypeGroup(String value) {;
-        this.nexusTaxTypeGroup = value;;
+    public void setNexusTaxTypeGroup(string value) {
+        this.nexusTaxTypeGroup = value;
     }
 
 

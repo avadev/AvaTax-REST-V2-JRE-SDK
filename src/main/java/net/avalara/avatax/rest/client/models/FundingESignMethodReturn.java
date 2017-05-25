@@ -30,60 +30,66 @@ import java.util.HashMap;
 public class FundingESignMethodReturn {
 
 
-    private String method;
+    private string method;
 
     /**
-     * Getter for method;
+     * Getter for method
+     *
      * Method
      */
-    public String getmethod() {;
-        return this.method;;
+    public string getMethod() {
+        return this.method;
     }
 
     /**
-     * Setter for method;
+     * Setter for method
+     *
      * Method
      */
-    public void setmethod(String value) {;
-        this.method = value;;
+    public void setMethod(string value) {
+        this.method = value;
     }
 
 
-    private Boolean? javaScriptReady;
+    private object javaScriptReady;
 
     /**
-     * Getter for javaScriptReady;
+     * Getter for javaScriptReady
+     *
      * JavaScriptReady
      */
-    public Boolean? getjavaScriptReady() {;
-        return this.javaScriptReady;;
+    public object getJavaScriptReady() {
+        return this.javaScriptReady;
     }
 
     /**
-     * Setter for javaScriptReady;
+     * Setter for javaScriptReady
+     *
      * JavaScriptReady
      */
-    public void setjavaScriptReady(Boolean? value) {;
-        this.javaScriptReady = value;;
+    public void setJavaScriptReady(object value) {
+        this.javaScriptReady = value;
     }
 
 
-    private String javaScript;
+    private string javaScript;
 
     /**
-     * Getter for javaScript;
+     * Getter for javaScript
+     *
      * The actual javascript to use to render this object
      */
-    public String getjavaScript() {;
-        return this.javaScript;;
+    public string getJavaScript() {
+        return this.javaScript;
     }
 
     /**
-     * Setter for javaScript;
+     * Setter for javaScript
+     *
      * The actual javascript to use to render this object
      */
-    public void setjavaScript(String value) {;
-        this.javaScript = value;;
+    public void setJavaScript(string value) {
+        this.javaScript = value;
     }
 
 

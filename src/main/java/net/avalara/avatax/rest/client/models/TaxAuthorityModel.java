@@ -30,79 +30,87 @@ import java.util.HashMap;
 public class TaxAuthorityModel {
 
 
-    private Int32 id;
+    private int id;
 
     /**
-     * Getter for id;
+     * Getter for id
+     *
      * The unique ID number of this tax authority.
      */
-    public Int32 getid() {;
-        return this.id;;
+    public int getId() {
+        return this.id;
     }
 
     /**
-     * Setter for id;
+     * Setter for id
+     *
      * The unique ID number of this tax authority.
      */
-    public void setid(Int32 value) {;
-        this.id = value;;
+    public void setId(int value) {
+        this.id = value;
     }
 
 
-    private String name;
+    private string name;
 
     /**
-     * Getter for name;
+     * Getter for name
+     *
      * The friendly name of this tax authority.
      */
-    public String getname() {;
-        return this.name;;
+    public string getName() {
+        return this.name;
     }
 
     /**
-     * Setter for name;
+     * Setter for name
+     *
      * The friendly name of this tax authority.
      */
-    public void setname(String value) {;
-        this.name = value;;
+    public void setName(string value) {
+        this.name = value;
     }
 
 
-    private Int32? taxAuthorityTypeId;
+    private Integer taxAuthorityTypeId;
 
     /**
-     * Getter for taxAuthorityTypeId;
+     * Getter for taxAuthorityTypeId
+     *
      * The type of this tax authority.
      */
-    public Int32? gettaxAuthorityTypeId() {;
-        return this.taxAuthorityTypeId;;
+    public Integer getTaxAuthorityTypeId() {
+        return this.taxAuthorityTypeId;
     }
 
     /**
-     * Setter for taxAuthorityTypeId;
+     * Setter for taxAuthorityTypeId
+     *
      * The type of this tax authority.
      */
-    public void settaxAuthorityTypeId(Int32? value) {;
-        this.taxAuthorityTypeId = value;;
+    public void setTaxAuthorityTypeId(Integer value) {
+        this.taxAuthorityTypeId = value;
     }
 
 
-    private Int32? jurisdictionId;
+    private Integer jurisdictionId;
 
     /**
-     * Getter for jurisdictionId;
+     * Getter for jurisdictionId
+     *
      * The unique ID number of the jurisdiction for this tax authority.
      */
-    public Int32? getjurisdictionId() {;
-        return this.jurisdictionId;;
+    public Integer getJurisdictionId() {
+        return this.jurisdictionId;
     }
 
     /**
-     * Setter for jurisdictionId;
+     * Setter for jurisdictionId
+     *
      * The unique ID number of the jurisdiction for this tax authority.
      */
-    public void setjurisdictionId(Int32? value) {;
-        this.jurisdictionId = value;;
+    public void setJurisdictionId(Integer value) {
+        this.jurisdictionId = value;
     }
 
 

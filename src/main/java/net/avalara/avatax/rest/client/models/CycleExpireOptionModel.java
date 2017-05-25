@@ -30,79 +30,87 @@ import java.util.HashMap;
 public class CycleExpireOptionModel {
 
 
-    private DateTime? transactionalPeriodStart;
+    private Instant transactionalPeriodStart;
 
     /**
-     * Getter for transactionalPeriodStart;
+     * Getter for transactionalPeriodStart
+     *
      * The period start date for the customer's first transaction in the jurisdiction being expired.
      */
-    public DateTime? gettransactionalPeriodStart() {;
-        return this.transactionalPeriodStart;;
+    public Instant getTransactionalPeriodStart() {
+        return this.transactionalPeriodStart;
     }
 
     /**
-     * Setter for transactionalPeriodStart;
+     * Setter for transactionalPeriodStart
+     *
      * The period start date for the customer's first transaction in the jurisdiction being expired.
      */
-    public void settransactionalPeriodStart(DateTime? value) {;
-        this.transactionalPeriodStart = value;;
+    public void setTransactionalPeriodStart(Instant value) {
+        this.transactionalPeriodStart = value;
     }
 
 
-    private DateTime? transactionalPeriodEnd;
+    private Instant transactionalPeriodEnd;
 
     /**
-     * Getter for transactionalPeriodEnd;
+     * Getter for transactionalPeriodEnd
+     *
      * The period end date for the customer's last transaction in the jurisdiction being expired.
      */
-    public DateTime? gettransactionalPeriodEnd() {;
-        return this.transactionalPeriodEnd;;
+    public Instant getTransactionalPeriodEnd() {
+        return this.transactionalPeriodEnd;
     }
 
     /**
-     * Setter for transactionalPeriodEnd;
+     * Setter for transactionalPeriodEnd
+     *
      * The period end date for the customer's last transaction in the jurisdiction being expired.
      */
-    public void settransactionalPeriodEnd(DateTime? value) {;
-        this.transactionalPeriodEnd = value;;
+    public void setTransactionalPeriodEnd(Instant value) {
+        this.transactionalPeriodEnd = value;
     }
 
 
-    private DateTime? filingDueDate;
+    private Instant filingDueDate;
 
     /**
-     * Getter for filingDueDate;
+     * Getter for filingDueDate
+     *
      * The jurisdiction-assigned due date for the form.
      */
-    public DateTime? getfilingDueDate() {;
-        return this.filingDueDate;;
+    public Instant getFilingDueDate() {
+        return this.filingDueDate;
     }
 
     /**
-     * Setter for filingDueDate;
+     * Setter for filingDueDate
+     *
      * The jurisdiction-assigned due date for the form.
      */
-    public void setfilingDueDate(DateTime? value) {;
-        this.filingDueDate = value;;
+    public void setFilingDueDate(Instant value) {
+        this.filingDueDate = value;
     }
 
 
-    private String cycleName;
+    private string cycleName;
 
     /**
-     * Getter for cycleName;
+     * Getter for cycleName
+     *
      * A descriptive name of the cycle and due date of the form.
      */
-    public String getcycleName() {;
-        return this.cycleName;;
+    public string getCycleName() {
+        return this.cycleName;
     }
 
     /**
-     * Setter for cycleName;
+     * Setter for cycleName
+     *
      * A descriptive name of the cycle and due date of the form.
      */
-    public void setcycleName(String value) {;
-        this.cycleName = value;;
+    public void setCycleName(string value) {
+        this.cycleName = value;
     }
 
 

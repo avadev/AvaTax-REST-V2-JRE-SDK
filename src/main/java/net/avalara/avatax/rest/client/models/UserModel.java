@@ -30,288 +30,318 @@ import java.util.HashMap;
 public class UserModel {
 
 
-    private Int32 id;
+    private int id;
 
     /**
-     * Getter for id;
+     * Getter for id
+     *
      * The unique ID number of this user.
      */
-    public Int32 getid() {;
-        return this.id;;
+    public int getId() {
+        return this.id;
     }
 
     /**
-     * Setter for id;
+     * Setter for id
+     *
      * The unique ID number of this user.
      */
-    public void setid(Int32 value) {;
-        this.id = value;;
+    public void setId(int value) {
+        this.id = value;
     }
 
 
-    private Int32 accountId;
+    private int accountId;
 
     /**
-     * Getter for accountId;
+     * Getter for accountId
+     *
      * The unique ID number of the account to which this user belongs.
      */
-    public Int32 getaccountId() {;
-        return this.accountId;;
+    public int getAccountId() {
+        return this.accountId;
     }
 
     /**
-     * Setter for accountId;
+     * Setter for accountId
+     *
      * The unique ID number of the account to which this user belongs.
      */
-    public void setaccountId(Int32 value) {;
-        this.accountId = value;;
+    public void setAccountId(int value) {
+        this.accountId = value;
     }
 
 
-    private Int32? companyId;
+    private Integer companyId;
 
     /**
-     * Getter for companyId;
+     * Getter for companyId
+     *
      * If this user is locked to one company (and its children), this is the unique ID number of the company to which this user belongs.
      */
-    public Int32? getcompanyId() {;
-        return this.companyId;;
+    public Integer getCompanyId() {
+        return this.companyId;
     }
 
     /**
-     * Setter for companyId;
+     * Setter for companyId
+     *
      * If this user is locked to one company (and its children), this is the unique ID number of the company to which this user belongs.
      */
-    public void setcompanyId(Int32? value) {;
-        this.companyId = value;;
+    public void setCompanyId(Integer value) {
+        this.companyId = value;
     }
 
 
-    private String userName;
+    private string userName;
 
     /**
-     * Getter for userName;
+     * Getter for userName
+     *
      * The username which is used to log on to the AvaTax website, or to authenticate against API calls.
      */
-    public String getuserName() {;
-        return this.userName;;
+    public string getUserName() {
+        return this.userName;
     }
 
     /**
-     * Setter for userName;
+     * Setter for userName
+     *
      * The username which is used to log on to the AvaTax website, or to authenticate against API calls.
      */
-    public void setuserName(String value) {;
-        this.userName = value;;
+    public void setUserName(string value) {
+        this.userName = value;
     }
 
 
-    private String firstName;
+    private string firstName;
 
     /**
-     * Getter for firstName;
+     * Getter for firstName
+     *
      * The first or given name of the user.
      */
-    public String getfirstName() {;
-        return this.firstName;;
+    public string getFirstName() {
+        return this.firstName;
     }
 
     /**
-     * Setter for firstName;
+     * Setter for firstName
+     *
      * The first or given name of the user.
      */
-    public void setfirstName(String value) {;
-        this.firstName = value;;
+    public void setFirstName(string value) {
+        this.firstName = value;
     }
 
 
-    private String lastName;
+    private string lastName;
 
     /**
-     * Getter for lastName;
+     * Getter for lastName
+     *
      * The last or family name of the user.
      */
-    public String getlastName() {;
-        return this.lastName;;
+    public string getLastName() {
+        return this.lastName;
     }
 
     /**
-     * Setter for lastName;
+     * Setter for lastName
+     *
      * The last or family name of the user.
      */
-    public void setlastName(String value) {;
-        this.lastName = value;;
+    public void setLastName(string value) {
+        this.lastName = value;
     }
 
 
-    private String email;
+    private string email;
 
     /**
-     * Getter for email;
+     * Getter for email
+     *
      * The email address to be used to contact this user. If the user has forgotten a password, an email can be sent to this email address with information on how to reset this password.
      */
-    public String getemail() {;
-        return this.email;;
+    public string getEmail() {
+        return this.email;
     }
 
     /**
-     * Setter for email;
+     * Setter for email
+     *
      * The email address to be used to contact this user. If the user has forgotten a password, an email can be sent to this email address with information on how to reset this password.
      */
-    public void setemail(String value) {;
-        this.email = value;;
+    public void setEmail(string value) {
+        this.email = value;
     }
 
 
-    private String postalCode;
+    private string postalCode;
 
     /**
-     * Getter for postalCode;
+     * Getter for postalCode
+     *
      * The postal code in which this user resides.
      */
-    public String getpostalCode() {;
-        return this.postalCode;;
+    public string getPostalCode() {
+        return this.postalCode;
     }
 
     /**
-     * Setter for postalCode;
+     * Setter for postalCode
+     *
      * The postal code in which this user resides.
      */
-    public void setpostalCode(String value) {;
-        this.postalCode = value;;
+    public void setPostalCode(string value) {
+        this.postalCode = value;
     }
 
 
     private SecurityRoleId securityRoleId;
 
     /**
-     * Getter for securityRoleId;
+     * Getter for securityRoleId
+     *
      * The security level for this user.
      */
-    public SecurityRoleId getsecurityRoleId() {;
-        return this.securityRoleId;;
+    public SecurityRoleId getSecurityRoleId() {
+        return this.securityRoleId;
     }
 
     /**
-     * Setter for securityRoleId;
+     * Setter for securityRoleId
+     *
      * The security level for this user.
      */
-    public void setsecurityRoleId(SecurityRoleId value) {;
-        this.securityRoleId = value;;
+    public void setSecurityRoleId(SecurityRoleId value) {
+        this.securityRoleId = value;
     }
 
 
-    private PasswordStatusId? passwordStatus;
+    private PasswordStatusId passwordStatus;
 
     /**
-     * Getter for passwordStatus;
+     * Getter for passwordStatus
+     *
      * The status of the user's password.
      */
-    public PasswordStatusId? getpasswordStatus() {;
-        return this.passwordStatus;;
+    public PasswordStatusId getPasswordStatus() {
+        return this.passwordStatus;
     }
 
     /**
-     * Setter for passwordStatus;
+     * Setter for passwordStatus
+     *
      * The status of the user's password.
      */
-    public void setpasswordStatus(PasswordStatusId? value) {;
-        this.passwordStatus = value;;
+    public void setPasswordStatus(PasswordStatusId value) {
+        this.passwordStatus = value;
     }
 
 
-    private Boolean? isActive;
+    private object isActive;
 
     /**
-     * Getter for isActive;
+     * Getter for isActive
+     *
      * True if this user is currently active.
      */
-    public Boolean? getisActive() {;
-        return this.isActive;;
+    public object getIsActive() {
+        return this.isActive;
     }
 
     /**
-     * Setter for isActive;
+     * Setter for isActive
+     *
      * True if this user is currently active.
      */
-    public void setisActive(Boolean? value) {;
-        this.isActive = value;;
+    public void setIsActive(object value) {
+        this.isActive = value;
     }
 
 
-    private DateTime? createdDate;
+    private Instant createdDate;
 
     /**
-     * Getter for createdDate;
+     * Getter for createdDate
+     *
      * The date when this record was created.
      */
-    public DateTime? getcreatedDate() {;
-        return this.createdDate;;
+    public Instant getCreatedDate() {
+        return this.createdDate;
     }
 
     /**
-     * Setter for createdDate;
+     * Setter for createdDate
+     *
      * The date when this record was created.
      */
-    public void setcreatedDate(DateTime? value) {;
-        this.createdDate = value;;
+    public void setCreatedDate(Instant value) {
+        this.createdDate = value;
     }
 
 
-    private Int32? createdUserId;
+    private Integer createdUserId;
 
     /**
-     * Getter for createdUserId;
+     * Getter for createdUserId
+     *
      * The User ID of the user who created this record.
      */
-    public Int32? getcreatedUserId() {;
-        return this.createdUserId;;
+    public Integer getCreatedUserId() {
+        return this.createdUserId;
     }
 
     /**
-     * Setter for createdUserId;
+     * Setter for createdUserId
+     *
      * The User ID of the user who created this record.
      */
-    public void setcreatedUserId(Int32? value) {;
-        this.createdUserId = value;;
+    public void setCreatedUserId(Integer value) {
+        this.createdUserId = value;
     }
 
 
-    private DateTime? modifiedDate;
+    private Instant modifiedDate;
 
     /**
-     * Getter for modifiedDate;
+     * Getter for modifiedDate
+     *
      * The date/time when this record was last modified.
      */
-    public DateTime? getmodifiedDate() {;
-        return this.modifiedDate;;
+    public Instant getModifiedDate() {
+        return this.modifiedDate;
     }
 
     /**
-     * Setter for modifiedDate;
+     * Setter for modifiedDate
+     *
      * The date/time when this record was last modified.
      */
-    public void setmodifiedDate(DateTime? value) {;
-        this.modifiedDate = value;;
+    public void setModifiedDate(Instant value) {
+        this.modifiedDate = value;
     }
 
 
-    private Int32? modifiedUserId;
+    private Integer modifiedUserId;
 
     /**
-     * Getter for modifiedUserId;
+     * Getter for modifiedUserId
+     *
      * The user ID of the user who last modified this record.
      */
-    public Int32? getmodifiedUserId() {;
-        return this.modifiedUserId;;
+    public Integer getModifiedUserId() {
+        return this.modifiedUserId;
     }
 
     /**
-     * Setter for modifiedUserId;
+     * Setter for modifiedUserId
+     *
      * The user ID of the user who last modified this record.
      */
-    public void setmodifiedUserId(Int32? value) {;
-        this.modifiedUserId = value;;
+    public void setModifiedUserId(Integer value) {
+        this.modifiedUserId = value;
     }
 
 

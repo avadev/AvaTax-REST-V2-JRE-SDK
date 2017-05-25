@@ -30,45 +30,49 @@ import java.util.HashMap;
 public class LocationValidationModel {
 
 
-    private Boolean? settingsValidated;
+    private object settingsValidated;
 
     /**
-     * Getter for settingsValidated;
+     * Getter for settingsValidated
+     *
      * True if the location has a value for each jurisdiction-required setting.
     * The user is required to ensure that the values are correct according to the jurisdiction; this flag
     * does not indicate whether the taxing jurisdiction has accepted the data you have provided.
      */
-    public Boolean? getsettingsValidated() {;
-        return this.settingsValidated;;
+    public object getSettingsValidated() {
+        return this.settingsValidated;
     }
 
     /**
-     * Setter for settingsValidated;
+     * Setter for settingsValidated
+     *
      * True if the location has a value for each jurisdiction-required setting.
     * The user is required to ensure that the values are correct according to the jurisdiction; this flag
     * does not indicate whether the taxing jurisdiction has accepted the data you have provided.
      */
-    public void setsettingsValidated(Boolean? value) {;
-        this.settingsValidated = value;;
+    public void setSettingsValidated(object value) {
+        this.settingsValidated = value;
     }
 
 
-    private List<LocationQuestionModel> requiredSettings;
+    private LocationQuestionModel[] requiredSettings;
 
     /**
-     * Getter for requiredSettings;
+     * Getter for requiredSettings
+     *
      * A list of settings that must be defined for this location
      */
-    public List<LocationQuestionModel> getrequiredSettings() {;
-        return this.requiredSettings;;
+    public LocationQuestionModel[] getRequiredSettings() {
+        return this.requiredSettings;
     }
 
     /**
-     * Setter for requiredSettings;
+     * Setter for requiredSettings
+     *
      * A list of settings that must be defined for this location
      */
-    public void setrequiredSettings(List<LocationQuestionModel> value) {;
-        this.requiredSettings = value;;
+    public void setRequiredSettings(LocationQuestionModel[] value) {
+        this.requiredSettings = value;
     }
 
 

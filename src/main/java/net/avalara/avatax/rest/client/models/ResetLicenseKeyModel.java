@@ -30,43 +30,47 @@ import java.util.HashMap;
 public class ResetLicenseKeyModel {
 
 
-    private Int32 accountId;
+    private int accountId;
 
     /**
-     * Getter for accountId;
+     * Getter for accountId
+     *
      * The primary key of the account ID to reset
      */
-    public Int32 getaccountId() {;
-        return this.accountId;;
+    public int getAccountId() {
+        return this.accountId;
     }
 
     /**
-     * Setter for accountId;
+     * Setter for accountId
+     *
      * The primary key of the account ID to reset
      */
-    public void setaccountId(Int32 value) {;
-        this.accountId = value;;
+    public void setAccountId(int value) {
+        this.accountId = value;
     }
 
 
-    private Boolean confirmResetLicenseKey;
+    private boolean confirmResetLicenseKey;
 
     /**
-     * Getter for confirmResetLicenseKey;
+     * Getter for confirmResetLicenseKey
+     *
      * Set this value to true to reset the license key for this account.
     * This license key reset function will only work when called using the credentials of the account administrator of this account.
      */
-    public Boolean getconfirmResetLicenseKey() {;
-        return this.confirmResetLicenseKey;;
+    public boolean getConfirmResetLicenseKey() {
+        return this.confirmResetLicenseKey;
     }
 
     /**
-     * Setter for confirmResetLicenseKey;
+     * Setter for confirmResetLicenseKey
+     *
      * Set this value to true to reset the license key for this account.
     * This license key reset function will only work when called using the credentials of the account administrator of this account.
      */
-    public void setconfirmResetLicenseKey(Boolean value) {;
-        this.confirmResetLicenseKey = value;;
+    public void setConfirmResetLicenseKey(boolean value) {
+        this.confirmResetLicenseKey = value;
     }
 
 

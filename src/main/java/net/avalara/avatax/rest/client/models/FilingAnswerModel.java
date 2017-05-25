@@ -30,41 +30,45 @@ import java.util.HashMap;
 public class FilingAnswerModel {
 
 
-    private Int64 filingQuestionId;
+    private long filingQuestionId;
 
     /**
-     * Getter for filingQuestionId;
+     * Getter for filingQuestionId
+     *
      * The ID number for a filing question
      */
-    public Int64 getfilingQuestionId() {;
-        return this.filingQuestionId;;
+    public long getFilingQuestionId() {
+        return this.filingQuestionId;
     }
 
     /**
-     * Setter for filingQuestionId;
+     * Setter for filingQuestionId
+     *
      * The ID number for a filing question
      */
-    public void setfilingQuestionId(Int64 value) {;
-        this.filingQuestionId = value;;
+    public void setFilingQuestionId(long value) {
+        this.filingQuestionId = value;
     }
 
 
-    private Dictionary<string, string> answer;
+    private object answer;
 
     /**
-     * Getter for answer;
+     * Getter for answer
+     *
      * The value of the answer for the filing question identified by filingQuestionId
      */
-    public Dictionary<string, string> getanswer() {;
-        return this.answer;;
+    public object getAnswer() {
+        return this.answer;
     }
 
     /**
-     * Setter for answer;
+     * Setter for answer
+     *
      * The value of the answer for the filing question identified by filingQuestionId
      */
-    public void setanswer(Dictionary<string, string> value) {;
-        this.answer = value;;
+    public void setAnswer(object value) {
+        this.answer = value;
     }
 
 

@@ -30,60 +30,66 @@ import java.util.HashMap;
 public class TaxTypeGroupModel {
 
 
-    private Int32 id;
+    private int id;
 
     /**
-     * Getter for id;
+     * Getter for id
+     *
      * The unique ID number of this tax type group.
      */
-    public Int32 getid() {;
-        return this.id;;
+    public int getId() {
+        return this.id;
     }
 
     /**
-     * Setter for id;
+     * Setter for id
+     *
      * The unique ID number of this tax type group.
      */
-    public void setid(Int32 value) {;
-        this.id = value;;
+    public void setId(int value) {
+        this.id = value;
     }
 
 
-    private String taxTypeGroup;
+    private string taxTypeGroup;
 
     /**
-     * Getter for taxTypeGroup;
+     * Getter for taxTypeGroup
+     *
      * The unique human readable Id of this tax type group.
      */
-    public String gettaxTypeGroup() {;
-        return this.taxTypeGroup;;
+    public string getTaxTypeGroup() {
+        return this.taxTypeGroup;
     }
 
     /**
-     * Setter for taxTypeGroup;
+     * Setter for taxTypeGroup
+     *
      * The unique human readable Id of this tax type group.
      */
-    public void settaxTypeGroup(String value) {;
-        this.taxTypeGroup = value;;
+    public void setTaxTypeGroup(string value) {
+        this.taxTypeGroup = value;
     }
 
 
-    private String description;
+    private string description;
 
     /**
-     * Getter for description;
+     * Getter for description
+     *
      * The description of this tax type group.
      */
-    public String getdescription() {;
-        return this.description;;
+    public string getDescription() {
+        return this.description;
     }
 
     /**
-     * Setter for description;
+     * Setter for description
+     *
      * The description of this tax type group.
      */
-    public void setdescription(String value) {;
-        this.description = value;;
+    public void setDescription(string value) {
+        this.description = value;
     }
 
 

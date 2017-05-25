@@ -32,877 +32,969 @@ import java.util.HashMap;
 public class NoticeModel {
 
 
-    private Int32 id;
+    private int id;
 
     /**
-     * Getter for id;
+     * Getter for id
+     *
      * The unique ID number of this notice.
      */
-    public Int32 getid() {;
-        return this.id;;
+    public int getId() {
+        return this.id;
     }
 
     /**
-     * Setter for id;
+     * Setter for id
+     *
      * The unique ID number of this notice.
      */
-    public void setid(Int32 value) {;
-        this.id = value;;
+    public void setId(int value) {
+        this.id = value;
     }
 
 
-    private Int32 companyId;
+    private int companyId;
 
     /**
-     * Getter for companyId;
+     * Getter for companyId
+     *
      * The unique ID number of the company to which this notice belongs.
      */
-    public Int32 getcompanyId() {;
-        return this.companyId;;
+    public int getCompanyId() {
+        return this.companyId;
     }
 
     /**
-     * Setter for companyId;
+     * Setter for companyId
+     *
      * The unique ID number of the company to which this notice belongs.
      */
-    public void setcompanyId(Int32 value) {;
-        this.companyId = value;;
+    public void setCompanyId(int value) {
+        this.companyId = value;
     }
 
 
-    private Int32 statusId;
+    private int statusId;
 
     /**
-     * Getter for statusId;
+     * Getter for statusId
+     *
      * The status id of the notice
      */
-    public Int32 getstatusId() {;
-        return this.statusId;;
+    public int getStatusId() {
+        return this.statusId;
     }
 
     /**
-     * Setter for statusId;
+     * Setter for statusId
+     *
      * The status id of the notice
      */
-    public void setstatusId(Int32 value) {;
-        this.statusId = value;;
+    public void setStatusId(int value) {
+        this.statusId = value;
     }
 
 
-    private String status;
+    private string status;
 
     /**
-     * Getter for status;
+     * Getter for status
+     *
      * The status of the notice
      */
-    public String getstatus() {;
-        return this.status;;
+    public string getStatus() {
+        return this.status;
     }
 
     /**
-     * Setter for status;
+     * Setter for status
+     *
      * The status of the notice
      */
-    public void setstatus(String value) {;
-        this.status = value;;
+    public void setStatus(string value) {
+        this.status = value;
     }
 
 
-    private DateTime receivedDate;
+    private Instant receivedDate;
 
     /**
-     * Getter for receivedDate;
+     * Getter for receivedDate
+     *
      * The received date of the notice
      */
-    public DateTime getreceivedDate() {;
-        return this.receivedDate;;
+    public Instant getReceivedDate() {
+        return this.receivedDate;
     }
 
     /**
-     * Setter for receivedDate;
+     * Setter for receivedDate
+     *
      * The received date of the notice
      */
-    public void setreceivedDate(DateTime value) {;
-        this.receivedDate = value;;
+    public void setReceivedDate(Instant value) {
+        this.receivedDate = value;
     }
 
 
-    private DateTime? closedDate;
+    private Instant closedDate;
 
     /**
-     * Getter for closedDate;
+     * Getter for closedDate
+     *
      * The closed date of the notice
      */
-    public DateTime? getclosedDate() {;
-        return this.closedDate;;
+    public Instant getClosedDate() {
+        return this.closedDate;
     }
 
     /**
-     * Setter for closedDate;
+     * Setter for closedDate
+     *
      * The closed date of the notice
      */
-    public void setclosedDate(DateTime? value) {;
-        this.closedDate = value;;
+    public void setClosedDate(Instant value) {
+        this.closedDate = value;
     }
 
 
-    private Decimal? totalRemit;
+    private Decimal totalRemit;
 
     /**
-     * Getter for totalRemit;
+     * Getter for totalRemit
+     *
      * The total remmitance amount for the notice
      */
-    public Decimal? gettotalRemit() {;
-        return this.totalRemit;;
+    public Decimal getTotalRemit() {
+        return this.totalRemit;
     }
 
     /**
-     * Setter for totalRemit;
+     * Setter for totalRemit
+     *
      * The total remmitance amount for the notice
      */
-    public void settotalRemit(Decimal? value) {;
-        this.totalRemit = value;;
+    public void setTotalRemit(Decimal value) {
+        this.totalRemit = value;
     }
 
 
     private NoticeCustomerType customerTypeId;
 
     /**
-     * Getter for customerTypeId;
+     * Getter for customerTypeId
+     *
      * NoticeCustomerTypeID can be retrieved from the definitions API
      */
-    public NoticeCustomerType getcustomerTypeId() {;
-        return this.customerTypeId;;
+    public NoticeCustomerType getCustomerTypeId() {
+        return this.customerTypeId;
     }
 
     /**
-     * Setter for customerTypeId;
+     * Setter for customerTypeId
+     *
      * NoticeCustomerTypeID can be retrieved from the definitions API
      */
-    public void setcustomerTypeId(NoticeCustomerType value) {;
-        this.customerTypeId = value;;
+    public void setCustomerTypeId(NoticeCustomerType value) {
+        this.customerTypeId = value;
     }
 
 
-    private String country;
+    private string country;
 
     /**
-     * Getter for country;
+     * Getter for country
+     *
      * The country the notice is in
      */
-    public String getcountry() {;
-        return this.country;;
+    public string getCountry() {
+        return this.country;
     }
 
     /**
-     * Setter for country;
+     * Setter for country
+     *
      * The country the notice is in
      */
-    public void setcountry(String value) {;
-        this.country = value;;
+    public void setCountry(string value) {
+        this.country = value;
     }
 
 
-    private String region;
+    private string region;
 
     /**
-     * Getter for region;
+     * Getter for region
+     *
      * The region the notice is for
      */
-    public String getregion() {;
-        return this.region;;
+    public string getRegion() {
+        return this.region;
     }
 
     /**
-     * Setter for region;
+     * Setter for region
+     *
      * The region the notice is for
      */
-    public void setregion(String value) {;
-        this.region = value;;
+    public void setRegion(string value) {
+        this.region = value;
     }
 
 
-    private Int32? taxAuthorityId;
+    private Integer taxAuthorityId;
 
     /**
-     * Getter for taxAuthorityId;
+     * Getter for taxAuthorityId
+     *
      * The tax authority id of the notice
      */
-    public Int32? gettaxAuthorityId() {;
-        return this.taxAuthorityId;;
+    public Integer getTaxAuthorityId() {
+        return this.taxAuthorityId;
     }
 
     /**
-     * Setter for taxAuthorityId;
+     * Setter for taxAuthorityId
+     *
      * The tax authority id of the notice
      */
-    public void settaxAuthorityId(Int32? value) {;
-        this.taxAuthorityId = value;;
+    public void setTaxAuthorityId(Integer value) {
+        this.taxAuthorityId = value;
     }
 
 
-    private FilingFrequencyId? filingFrequency;
+    private FilingFrequencyId filingFrequency;
 
     /**
-     * Getter for filingFrequency;
+     * Getter for filingFrequency
+     *
      * The filing frequency of the notice
      */
-    public FilingFrequencyId? getfilingFrequency() {;
-        return this.filingFrequency;;
+    public FilingFrequencyId getFilingFrequency() {
+        return this.filingFrequency;
     }
 
     /**
-     * Setter for filingFrequency;
+     * Setter for filingFrequency
+     *
      * The filing frequency of the notice
      */
-    public void setfilingFrequency(FilingFrequencyId? value) {;
-        this.filingFrequency = value;;
+    public void setFilingFrequency(FilingFrequencyId value) {
+        this.filingFrequency = value;
     }
 
 
-    private FilingTypeId? filingTypeId;
+    private FilingTypeId filingTypeId;
 
     /**
-     * Getter for filingTypeId;
+     * Getter for filingTypeId
+     *
      * The filing type of the notice
      */
-    public FilingTypeId? getfilingTypeId() {;
-        return this.filingTypeId;;
+    public FilingTypeId getFilingTypeId() {
+        return this.filingTypeId;
     }
 
     /**
-     * Setter for filingTypeId;
+     * Setter for filingTypeId
+     *
      * The filing type of the notice
      */
-    public void setfilingTypeId(FilingTypeId? value) {;
-        this.filingTypeId = value;;
+    public void setFilingTypeId(FilingTypeId value) {
+        this.filingTypeId = value;
     }
 
 
-    private String ticketReferenceNo;
+    private string ticketReferenceNo;
 
     /**
-     * Getter for ticketReferenceNo;
+     * Getter for ticketReferenceNo
+     *
      * The ticket reference number of the notice
      */
-    public String getticketReferenceNo() {;
-        return this.ticketReferenceNo;;
+    public string getTicketReferenceNo() {
+        return this.ticketReferenceNo;
     }
 
     /**
-     * Setter for ticketReferenceNo;
+     * Setter for ticketReferenceNo
+     *
      * The ticket reference number of the notice
      */
-    public void setticketReferenceNo(String value) {;
-        this.ticketReferenceNo = value;;
+    public void setTicketReferenceNo(string value) {
+        this.ticketReferenceNo = value;
     }
 
 
-    private String ticketReferenceUrl;
+    private string ticketReferenceUrl;
 
     /**
-     * Getter for ticketReferenceUrl;
+     * Getter for ticketReferenceUrl
+     *
      * The ticket reference url of the notice
      */
-    public String getticketReferenceUrl() {;
-        return this.ticketReferenceUrl;;
+    public string getTicketReferenceUrl() {
+        return this.ticketReferenceUrl;
     }
 
     /**
-     * Setter for ticketReferenceUrl;
+     * Setter for ticketReferenceUrl
+     *
      * The ticket reference url of the notice
      */
-    public void setticketReferenceUrl(String value) {;
-        this.ticketReferenceUrl = value;;
+    public void setTicketReferenceUrl(string value) {
+        this.ticketReferenceUrl = value;
     }
 
 
-    private String salesForceCase;
+    private string salesForceCase;
 
     /**
-     * Getter for salesForceCase;
+     * Getter for salesForceCase
+     *
      * The sales force case of the notice
      */
-    public String getsalesForceCase() {;
-        return this.salesForceCase;;
+    public string getSalesForceCase() {
+        return this.salesForceCase;
     }
 
     /**
-     * Setter for salesForceCase;
+     * Setter for salesForceCase
+     *
      * The sales force case of the notice
      */
-    public void setsalesForceCase(String value) {;
-        this.salesForceCase = value;;
+    public void setSalesForceCase(string value) {
+        this.salesForceCase = value;
     }
 
 
-    private String salesForceCaseUrl;
+    private string salesForceCaseUrl;
 
     /**
-     * Getter for salesForceCaseUrl;
+     * Getter for salesForceCaseUrl
+     *
      * The URL to the sales force case
      */
-    public String getsalesForceCaseUrl() {;
-        return this.salesForceCaseUrl;;
+    public string getSalesForceCaseUrl() {
+        return this.salesForceCaseUrl;
     }
 
     /**
-     * Setter for salesForceCaseUrl;
+     * Setter for salesForceCaseUrl
+     *
      * The URL to the sales force case
      */
-    public void setsalesForceCaseUrl(String value) {;
-        this.salesForceCaseUrl = value;;
+    public void setSalesForceCaseUrl(string value) {
+        this.salesForceCaseUrl = value;
     }
 
 
-    private String taxPeriod;
+    private string taxPeriod;
 
     /**
-     * Getter for taxPeriod;
+     * Getter for taxPeriod
+     *
      * The tax period of the notice
      */
-    public String gettaxPeriod() {;
-        return this.taxPeriod;;
+    public string getTaxPeriod() {
+        return this.taxPeriod;
     }
 
     /**
-     * Setter for taxPeriod;
+     * Setter for taxPeriod
+     *
      * The tax period of the notice
      */
-    public void settaxPeriod(String value) {;
-        this.taxPeriod = value;;
+    public void setTaxPeriod(string value) {
+        this.taxPeriod = value;
     }
 
 
-    private Int32 reasonId;
+    private int reasonId;
 
     /**
-     * Getter for reasonId;
+     * Getter for reasonId
+     *
      * The notice reason id
      */
-    public Int32 getreasonId() {;
-        return this.reasonId;;
+    public int getReasonId() {
+        return this.reasonId;
     }
 
     /**
-     * Setter for reasonId;
+     * Setter for reasonId
+     *
      * The notice reason id
      */
-    public void setreasonId(Int32 value) {;
-        this.reasonId = value;;
+    public void setReasonId(int value) {
+        this.reasonId = value;
     }
 
 
-    private String reason;
+    private string reason;
 
     /**
-     * Getter for reason;
+     * Getter for reason
+     *
      * The notice reason
      */
-    public String getreason() {;
-        return this.reason;;
+    public string getReason() {
+        return this.reason;
     }
 
     /**
-     * Setter for reason;
+     * Setter for reason
+     *
      * The notice reason
      */
-    public void setreason(String value) {;
-        this.reason = value;;
+    public void setReason(string value) {
+        this.reason = value;
     }
 
 
-    private Int32? typeId;
+    private Integer typeId;
 
     /**
-     * Getter for typeId;
+     * Getter for typeId
+     *
      * The tax notice type id
      */
-    public Int32? gettypeId() {;
-        return this.typeId;;
+    public Integer getTypeId() {
+        return this.typeId;
     }
 
     /**
-     * Setter for typeId;
+     * Setter for typeId
+     *
      * The tax notice type id
      */
-    public void settypeId(Int32? value) {;
-        this.typeId = value;;
+    public void setTypeId(Integer value) {
+        this.typeId = value;
     }
 
 
-    private String type;
+    private string type;
 
     /**
-     * Getter for type;
+     * Getter for type
+     *
      * The tax notice type description
      */
-    public String gettype() {;
-        return this.type;;
+    public string getType() {
+        return this.type;
     }
 
     /**
-     * Setter for type;
+     * Setter for type
+     *
      * The tax notice type description
      */
-    public void settype(String value) {;
-        this.type = value;;
+    public void setType(string value) {
+        this.type = value;
     }
 
 
-    private FundingOption? customerFundingOptionId;
+    private FundingOption customerFundingOptionId;
 
     /**
-     * Getter for customerFundingOptionId;
+     * Getter for customerFundingOptionId
+     *
      * The notice customer funding options
      */
-    public FundingOption? getcustomerFundingOptionId() {;
-        return this.customerFundingOptionId;;
+    public FundingOption getCustomerFundingOptionId() {
+        return this.customerFundingOptionId;
     }
 
     /**
-     * Setter for customerFundingOptionId;
+     * Setter for customerFundingOptionId
+     *
      * The notice customer funding options
      */
-    public void setcustomerFundingOptionId(FundingOption? value) {;
-        this.customerFundingOptionId = value;;
+    public void setCustomerFundingOptionId(FundingOption value) {
+        this.customerFundingOptionId = value;
     }
 
 
     private NoticePriorityId priorityId;
 
     /**
-     * Getter for priorityId;
+     * Getter for priorityId
+     *
      * The priority of the notice
      */
-    public NoticePriorityId getpriorityId() {;
-        return this.priorityId;;
+    public NoticePriorityId getPriorityId() {
+        return this.priorityId;
     }
 
     /**
-     * Setter for priorityId;
+     * Setter for priorityId
+     *
      * The priority of the notice
      */
-    public void setpriorityId(NoticePriorityId value) {;
-        this.priorityId = value;;
+    public void setPriorityId(NoticePriorityId value) {
+        this.priorityId = value;
     }
 
 
-    private String customerComment;
+    private string customerComment;
 
     /**
-     * Getter for customerComment;
+     * Getter for customerComment
+     *
      * Comments from the customer on this notice
      */
-    public String getcustomerComment() {;
-        return this.customerComment;;
+    public string getCustomerComment() {
+        return this.customerComment;
     }
 
     /**
-     * Setter for customerComment;
+     * Setter for customerComment
+     *
      * Comments from the customer on this notice
      */
-    public void setcustomerComment(String value) {;
-        this.customerComment = value;;
+    public void setCustomerComment(string value) {
+        this.customerComment = value;
     }
 
 
-    private Boolean hideFromCustomer;
+    private boolean hideFromCustomer;
 
     /**
-     * Getter for hideFromCustomer;
+     * Getter for hideFromCustomer
+     *
      * Indicator to hide from customer
      */
-    public Boolean gethideFromCustomer() {;
-        return this.hideFromCustomer;;
+    public boolean getHideFromCustomer() {
+        return this.hideFromCustomer;
     }
 
     /**
-     * Setter for hideFromCustomer;
+     * Setter for hideFromCustomer
+     *
      * Indicator to hide from customer
      */
-    public void sethideFromCustomer(Boolean value) {;
-        this.hideFromCustomer = value;;
+    public void setHideFromCustomer(boolean value) {
+        this.hideFromCustomer = value;
     }
 
 
-    private DateTime? expectedResolutionDate;
+    private Instant expectedResolutionDate;
 
     /**
-     * Getter for expectedResolutionDate;
+     * Getter for expectedResolutionDate
+     *
      * Expected resolution date of the notice
      */
-    public DateTime? getexpectedResolutionDate() {;
-        return this.expectedResolutionDate;;
+    public Instant getExpectedResolutionDate() {
+        return this.expectedResolutionDate;
     }
 
     /**
-     * Setter for expectedResolutionDate;
+     * Setter for expectedResolutionDate
+     *
      * Expected resolution date of the notice
      */
-    public void setexpectedResolutionDate(DateTime? value) {;
-        this.expectedResolutionDate = value;;
+    public void setExpectedResolutionDate(Instant value) {
+        this.expectedResolutionDate = value;
     }
 
 
-    private Boolean showResolutionDateToCustomer;
+    private boolean showResolutionDateToCustomer;
 
     /**
-     * Getter for showResolutionDateToCustomer;
+     * Getter for showResolutionDateToCustomer
+     *
      * Indicator to show customer this resolution date
      */
-    public Boolean getshowResolutionDateToCustomer() {;
-        return this.showResolutionDateToCustomer;;
+    public boolean getShowResolutionDateToCustomer() {
+        return this.showResolutionDateToCustomer;
     }
 
     /**
-     * Setter for showResolutionDateToCustomer;
+     * Setter for showResolutionDateToCustomer
+     *
      * Indicator to show customer this resolution date
      */
-    public void setshowResolutionDateToCustomer(Boolean value) {;
-        this.showResolutionDateToCustomer = value;;
+    public void setShowResolutionDateToCustomer(boolean value) {
+        this.showResolutionDateToCustomer = value;
     }
 
 
-    private Int32? closedByUserId;
+    private Integer closedByUserId;
 
     /**
-     * Getter for closedByUserId;
+     * Getter for closedByUserId
+     *
      * The unique ID number of the user that closed the notice
      */
-    public Int32? getclosedByUserId() {;
-        return this.closedByUserId;;
+    public Integer getClosedByUserId() {
+        return this.closedByUserId;
     }
 
     /**
-     * Setter for closedByUserId;
+     * Setter for closedByUserId
+     *
      * The unique ID number of the user that closed the notice
      */
-    public void setclosedByUserId(Int32? value) {;
-        this.closedByUserId = value;;
+    public void setClosedByUserId(Integer value) {
+        this.closedByUserId = value;
     }
 
 
-    private String createdByUserName;
+    private string createdByUserName;
 
     /**
-     * Getter for createdByUserName;
+     * Getter for createdByUserName
+     *
      * The user who created the notice
      */
-    public String getcreatedByUserName() {;
-        return this.createdByUserName;;
+    public string getCreatedByUserName() {
+        return this.createdByUserName;
     }
 
     /**
-     * Setter for createdByUserName;
+     * Setter for createdByUserName
+     *
      * The user who created the notice
      */
-    public void setcreatedByUserName(String value) {;
-        this.createdByUserName = value;;
+    public void setCreatedByUserName(string value) {
+        this.createdByUserName = value;
     }
 
 
-    private Int32? ownedByUserId;
+    private Integer ownedByUserId;
 
     /**
-     * Getter for ownedByUserId;
+     * Getter for ownedByUserId
+     *
      * The unique ID number of the user that owns the notice
      */
-    public Int32? getownedByUserId() {;
-        return this.ownedByUserId;;
+    public Integer getOwnedByUserId() {
+        return this.ownedByUserId;
     }
 
     /**
-     * Setter for ownedByUserId;
+     * Setter for ownedByUserId
+     *
      * The unique ID number of the user that owns the notice
      */
-    public void setownedByUserId(Int32? value) {;
-        this.ownedByUserId = value;;
+    public void setOwnedByUserId(Integer value) {
+        this.ownedByUserId = value;
     }
 
 
-    private String description;
+    private string description;
 
     /**
-     * Getter for description;
+     * Getter for description
+     *
      * The description of the notice
      */
-    public String getdescription() {;
-        return this.description;;
+    public string getDescription() {
+        return this.description;
     }
 
     /**
-     * Setter for description;
+     * Setter for description
+     *
      * The description of the notice
      */
-    public void setdescription(String value) {;
-        this.description = value;;
+    public void setDescription(string value) {
+        this.description = value;
     }
 
 
-    private Int32? avaFileFormId;
+    private Integer avaFileFormId;
 
     /**
-     * Getter for avaFileFormId;
+     * Getter for avaFileFormId
+     *
      * The ava file form id of the notice
      */
-    public Int32? getavaFileFormId() {;
-        return this.avaFileFormId;;
+    public Integer getAvaFileFormId() {
+        return this.avaFileFormId;
     }
 
     /**
-     * Setter for avaFileFormId;
+     * Setter for avaFileFormId
+     *
      * The ava file form id of the notice
      */
-    public void setavaFileFormId(Int32? value) {;
-        this.avaFileFormId = value;;
+    public void setAvaFileFormId(Integer value) {
+        this.avaFileFormId = value;
     }
 
 
-    private Int32? revenueContactId;
+    private Integer revenueContactId;
 
     /**
-     * Getter for revenueContactId;
+     * Getter for revenueContactId
+     *
      * The id of the revenue contact
      */
-    public Int32? getrevenueContactId() {;
-        return this.revenueContactId;;
+    public Integer getRevenueContactId() {
+        return this.revenueContactId;
     }
 
     /**
-     * Setter for revenueContactId;
+     * Setter for revenueContactId
+     *
      * The id of the revenue contact
      */
-    public void setrevenueContactId(Int32? value) {;
-        this.revenueContactId = value;;
+    public void setRevenueContactId(Integer value) {
+        this.revenueContactId = value;
     }
 
 
-    private Int32? complianceContactId;
+    private Integer complianceContactId;
 
     /**
-     * Getter for complianceContactId;
+     * Getter for complianceContactId
+     *
      * The id of the compliance contact
      */
-    public Int32? getcomplianceContactId() {;
-        return this.complianceContactId;;
+    public Integer getComplianceContactId() {
+        return this.complianceContactId;
     }
 
     /**
-     * Setter for complianceContactId;
+     * Setter for complianceContactId
+     *
      * The id of the compliance contact
      */
-    public void setcomplianceContactId(Int32? value) {;
-        this.complianceContactId = value;;
+    public void setComplianceContactId(Integer value) {
+        this.complianceContactId = value;
     }
 
 
-    private String documentReference;
+    private string documentReference;
 
     /**
-     * Getter for documentReference;
+     * Getter for documentReference
+     *
      * The document reference of the notice
      */
-    public String getdocumentReference() {;
-        return this.documentReference;;
+    public string getDocumentReference() {
+        return this.documentReference;
     }
 
     /**
-     * Setter for documentReference;
+     * Setter for documentReference
+     *
      * The document reference of the notice
      */
-    public void setdocumentReference(String value) {;
-        this.documentReference = value;;
+    public void setDocumentReference(string value) {
+        this.documentReference = value;
     }
 
 
-    private String jurisdictionName;
+    private string jurisdictionName;
 
     /**
-     * Getter for jurisdictionName;
+     * Getter for jurisdictionName
+     *
      * The jurisdiction name of the notice
      */
-    public String getjurisdictionName() {;
-        return this.jurisdictionName;;
+    public string getJurisdictionName() {
+        return this.jurisdictionName;
     }
 
     /**
-     * Setter for jurisdictionName;
+     * Setter for jurisdictionName
+     *
      * The jurisdiction name of the notice
      */
-    public void setjurisdictionName(String value) {;
-        this.jurisdictionName = value;;
+    public void setJurisdictionName(string value) {
+        this.jurisdictionName = value;
     }
 
 
-    private String jurisdictionType;
+    private string jurisdictionType;
 
     /**
-     * Getter for jurisdictionType;
+     * Getter for jurisdictionType
+     *
      * The jurisdiction type of the notice
      */
-    public String getjurisdictionType() {;
-        return this.jurisdictionType;;
+    public string getJurisdictionType() {
+        return this.jurisdictionType;
     }
 
     /**
-     * Setter for jurisdictionType;
+     * Setter for jurisdictionType
+     *
      * The jurisdiction type of the notice
      */
-    public void setjurisdictionType(String value) {;
-        this.jurisdictionType = value;;
+    public void setJurisdictionType(string value) {
+        this.jurisdictionType = value;
     }
 
 
-    private List<NoticeCommentModel> comments;
+    private NoticeCommentModel[] comments;
 
     /**
-     * Getter for comments;
+     * Getter for comments
+     *
      * Additional comments on the notice
      */
-    public List<NoticeCommentModel> getcomments() {;
-        return this.comments;;
+    public NoticeCommentModel[] getComments() {
+        return this.comments;
     }
 
     /**
-     * Setter for comments;
+     * Setter for comments
+     *
      * Additional comments on the notice
      */
-    public void setcomments(List<NoticeCommentModel> value) {;
-        this.comments = value;;
+    public void setComments(NoticeCommentModel[] value) {
+        this.comments = value;
     }
 
 
-    private List<NoticeFinanceModel> finances;
+    private NoticeFinanceModel[] finances;
 
     /**
-     * Getter for finances;
+     * Getter for finances
+     *
      * Finance details of the notice
      */
-    public List<NoticeFinanceModel> getfinances() {;
-        return this.finances;;
+    public NoticeFinanceModel[] getFinances() {
+        return this.finances;
     }
 
     /**
-     * Setter for finances;
+     * Setter for finances
+     *
      * Finance details of the notice
      */
-    public void setfinances(List<NoticeFinanceModel> value) {;
-        this.finances = value;;
+    public void setFinances(NoticeFinanceModel[] value) {
+        this.finances = value;
     }
 
 
-    private List<NoticeResponsibilityDetailModel> responsibility;
+    private NoticeResponsibilityDetailModel[] responsibility;
 
     /**
-     * Getter for responsibility;
+     * Getter for responsibility
+     *
      * Notice Responsibility Details
      */
-    public List<NoticeResponsibilityDetailModel> getresponsibility() {;
-        return this.responsibility;;
+    public NoticeResponsibilityDetailModel[] getResponsibility() {
+        return this.responsibility;
     }
 
     /**
-     * Setter for responsibility;
+     * Setter for responsibility
+     *
      * Notice Responsibility Details
      */
-    public void setresponsibility(List<NoticeResponsibilityDetailModel> value) {;
-        this.responsibility = value;;
+    public void setResponsibility(NoticeResponsibilityDetailModel[] value) {
+        this.responsibility = value;
     }
 
 
-    private List<NoticeRootCauseDetailModel> rootCause;
+    private NoticeRootCauseDetailModel[] rootCause;
 
     /**
-     * Getter for rootCause;
+     * Getter for rootCause
+     *
      * Notice Root Cause Details
      */
-    public List<NoticeRootCauseDetailModel> getrootCause() {;
-        return this.rootCause;;
+    public NoticeRootCauseDetailModel[] getRootCause() {
+        return this.rootCause;
     }
 
     /**
-     * Setter for rootCause;
+     * Setter for rootCause
+     *
      * Notice Root Cause Details
      */
-    public void setrootCause(List<NoticeRootCauseDetailModel> value) {;
-        this.rootCause = value;;
+    public void setRootCause(NoticeRootCauseDetailModel[] value) {
+        this.rootCause = value;
     }
 
 
-    private DateTime? createdDate;
+    private Instant createdDate;
 
     /**
-     * Getter for createdDate;
+     * Getter for createdDate
+     *
      * The date when this record was created.
      */
-    public DateTime? getcreatedDate() {;
-        return this.createdDate;;
+    public Instant getCreatedDate() {
+        return this.createdDate;
     }
 
     /**
-     * Setter for createdDate;
+     * Setter for createdDate
+     *
      * The date when this record was created.
      */
-    public void setcreatedDate(DateTime? value) {;
-        this.createdDate = value;;
+    public void setCreatedDate(Instant value) {
+        this.createdDate = value;
     }
 
 
-    private Int32? createdUserId;
+    private Integer createdUserId;
 
     /**
-     * Getter for createdUserId;
+     * Getter for createdUserId
+     *
      * The User ID of the user who created this record.
      */
-    public Int32? getcreatedUserId() {;
-        return this.createdUserId;;
+    public Integer getCreatedUserId() {
+        return this.createdUserId;
     }
 
     /**
-     * Setter for createdUserId;
+     * Setter for createdUserId
+     *
      * The User ID of the user who created this record.
      */
-    public void setcreatedUserId(Int32? value) {;
-        this.createdUserId = value;;
+    public void setCreatedUserId(Integer value) {
+        this.createdUserId = value;
     }
 
 
-    private DateTime? modifiedDate;
+    private Instant modifiedDate;
 
     /**
-     * Getter for modifiedDate;
+     * Getter for modifiedDate
+     *
      * The date/time when this record was last modified.
      */
-    public DateTime? getmodifiedDate() {;
-        return this.modifiedDate;;
+    public Instant getModifiedDate() {
+        return this.modifiedDate;
     }
 
     /**
-     * Setter for modifiedDate;
+     * Setter for modifiedDate
+     *
      * The date/time when this record was last modified.
      */
-    public void setmodifiedDate(DateTime? value) {;
-        this.modifiedDate = value;;
+    public void setModifiedDate(Instant value) {
+        this.modifiedDate = value;
     }
 
 
-    private Int32? modifiedUserId;
+    private Integer modifiedUserId;
 
     /**
-     * Getter for modifiedUserId;
+     * Getter for modifiedUserId
+     *
      * The user ID of the user who last modified this record.
      */
-    public Int32? getmodifiedUserId() {;
-        return this.modifiedUserId;;
+    public Integer getModifiedUserId() {
+        return this.modifiedUserId;
     }
 
     /**
-     * Setter for modifiedUserId;
+     * Setter for modifiedUserId
+     *
      * The user ID of the user who last modified this record.
      */
-    public void setmodifiedUserId(Int32? value) {;
-        this.modifiedUserId = value;;
+    public void setModifiedUserId(Integer value) {
+        this.modifiedUserId = value;
     }
 
 

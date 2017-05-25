@@ -30,60 +30,66 @@ import java.util.HashMap;
 public class TaxAuthorityTypeModel {
 
 
-    private Int32 id;
+    private int id;
 
     /**
-     * Getter for id;
+     * Getter for id
+     *
      * The unique ID number of this tax Authority customer type.
      */
-    public Int32 getid() {;
-        return this.id;;
+    public int getId() {
+        return this.id;
     }
 
     /**
-     * Setter for id;
+     * Setter for id
+     *
      * The unique ID number of this tax Authority customer type.
      */
-    public void setid(Int32 value) {;
-        this.id = value;;
+    public void setId(int value) {
+        this.id = value;
     }
 
 
-    private String description;
+    private string description;
 
     /**
-     * Getter for description;
+     * Getter for description
+     *
      * The description name of this tax authority type.
      */
-    public String getdescription() {;
-        return this.description;;
+    public string getDescription() {
+        return this.description;
     }
 
     /**
-     * Setter for description;
+     * Setter for description
+     *
      * The description name of this tax authority type.
      */
-    public void setdescription(String value) {;
-        this.description = value;;
+    public void setDescription(string value) {
+        this.description = value;
     }
 
 
-    private String taxAuthorityGroup;
+    private string taxAuthorityGroup;
 
     /**
-     * Getter for taxAuthorityGroup;
+     * Getter for taxAuthorityGroup
+     *
      * Tax Authority Group
      */
-    public String gettaxAuthorityGroup() {;
-        return this.taxAuthorityGroup;;
+    public string getTaxAuthorityGroup() {
+        return this.taxAuthorityGroup;
     }
 
     /**
-     * Setter for taxAuthorityGroup;
+     * Setter for taxAuthorityGroup
+     *
      * Tax Authority Group
      */
-    public void settaxAuthorityGroup(String value) {;
-        this.taxAuthorityGroup = value;;
+    public void setTaxAuthorityGroup(string value) {
+        this.taxAuthorityGroup = value;
     }
 
 

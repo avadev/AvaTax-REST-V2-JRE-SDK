@@ -30,383 +30,423 @@ import java.util.HashMap;
 public class NoticeFinanceModel {
 
 
-    private Int32? id;
+    private Integer id;
 
     /**
-     * Getter for id;
+     * Getter for id
+     *
      * 
      */
-    public Int32? getid() {;
-        return this.id;;
+    public Integer getId() {
+        return this.id;
     }
 
     /**
-     * Setter for id;
+     * Setter for id
+     *
      * 
      */
-    public void setid(Int32? value) {;
-        this.id = value;;
+    public void setId(Integer value) {
+        this.id = value;
     }
 
 
-    private Int32? noticeId;
+    private Integer noticeId;
 
     /**
-     * Getter for noticeId;
+     * Getter for noticeId
+     *
      * 
      */
-    public Int32? getnoticeId() {;
-        return this.noticeId;;
+    public Integer getNoticeId() {
+        return this.noticeId;
     }
 
     /**
-     * Setter for noticeId;
+     * Setter for noticeId
+     *
      * 
      */
-    public void setnoticeId(Int32? value) {;
-        this.noticeId = value;;
+    public void setNoticeId(Integer value) {
+        this.noticeId = value;
     }
 
 
-    private DateTime? noticeDate;
+    private Instant noticeDate;
 
     /**
-     * Getter for noticeDate;
+     * Getter for noticeDate
+     *
      * 
      */
-    public DateTime? getnoticeDate() {;
-        return this.noticeDate;;
+    public Instant getNoticeDate() {
+        return this.noticeDate;
     }
 
     /**
-     * Setter for noticeDate;
+     * Setter for noticeDate
+     *
      * 
      */
-    public void setnoticeDate(DateTime? value) {;
-        this.noticeDate = value;;
+    public void setNoticeDate(Instant value) {
+        this.noticeDate = value;
     }
 
 
-    private DateTime? dueDate;
+    private Instant dueDate;
 
     /**
-     * Getter for dueDate;
+     * Getter for dueDate
+     *
      * 
      */
-    public DateTime? getdueDate() {;
-        return this.dueDate;;
+    public Instant getDueDate() {
+        return this.dueDate;
     }
 
     /**
-     * Setter for dueDate;
+     * Setter for dueDate
+     *
      * 
      */
-    public void setdueDate(DateTime? value) {;
-        this.dueDate = value;;
+    public void setDueDate(Instant value) {
+        this.dueDate = value;
     }
 
 
-    private String noticeNumber;
+    private string noticeNumber;
 
     /**
-     * Getter for noticeNumber;
+     * Getter for noticeNumber
+     *
      * 
      */
-    public String getnoticeNumber() {;
-        return this.noticeNumber;;
+    public string getNoticeNumber() {
+        return this.noticeNumber;
     }
 
     /**
-     * Setter for noticeNumber;
+     * Setter for noticeNumber
+     *
      * 
      */
-    public void setnoticeNumber(String value) {;
-        this.noticeNumber = value;;
+    public void setNoticeNumber(string value) {
+        this.noticeNumber = value;
     }
 
 
-    private Decimal? taxDue;
+    private Decimal taxDue;
 
     /**
-     * Getter for taxDue;
+     * Getter for taxDue
+     *
      * 
      */
-    public Decimal? gettaxDue() {;
-        return this.taxDue;;
+    public Decimal getTaxDue() {
+        return this.taxDue;
     }
 
     /**
-     * Setter for taxDue;
+     * Setter for taxDue
+     *
      * 
      */
-    public void settaxDue(Decimal? value) {;
-        this.taxDue = value;;
+    public void setTaxDue(Decimal value) {
+        this.taxDue = value;
     }
 
 
-    private Decimal? penalty;
+    private Decimal penalty;
 
     /**
-     * Getter for penalty;
+     * Getter for penalty
+     *
      * 
      */
-    public Decimal? getpenalty() {;
-        return this.penalty;;
+    public Decimal getPenalty() {
+        return this.penalty;
     }
 
     /**
-     * Setter for penalty;
+     * Setter for penalty
+     *
      * 
      */
-    public void setpenalty(Decimal? value) {;
-        this.penalty = value;;
+    public void setPenalty(Decimal value) {
+        this.penalty = value;
     }
 
 
-    private Decimal? interest;
+    private Decimal interest;
 
     /**
-     * Getter for interest;
+     * Getter for interest
+     *
      * 
      */
-    public Decimal? getinterest() {;
-        return this.interest;;
+    public Decimal getInterest() {
+        return this.interest;
     }
 
     /**
-     * Setter for interest;
+     * Setter for interest
+     *
      * 
      */
-    public void setinterest(Decimal? value) {;
-        this.interest = value;;
+    public void setInterest(Decimal value) {
+        this.interest = value;
     }
 
 
-    private Decimal? credits;
+    private Decimal credits;
 
     /**
-     * Getter for credits;
+     * Getter for credits
+     *
      * 
      */
-    public Decimal? getcredits() {;
-        return this.credits;;
+    public Decimal getCredits() {
+        return this.credits;
     }
 
     /**
-     * Setter for credits;
+     * Setter for credits
+     *
      * 
      */
-    public void setcredits(Decimal? value) {;
-        this.credits = value;;
+    public void setCredits(Decimal value) {
+        this.credits = value;
     }
 
 
-    private Decimal? taxAbated;
+    private Decimal taxAbated;
 
     /**
-     * Getter for taxAbated;
+     * Getter for taxAbated
+     *
      * 
      */
-    public Decimal? gettaxAbated() {;
-        return this.taxAbated;;
+    public Decimal getTaxAbated() {
+        return this.taxAbated;
     }
 
     /**
-     * Setter for taxAbated;
+     * Setter for taxAbated
+     *
      * 
      */
-    public void settaxAbated(Decimal? value) {;
-        this.taxAbated = value;;
+    public void setTaxAbated(Decimal value) {
+        this.taxAbated = value;
     }
 
 
-    private Decimal? customerPenalty;
+    private Decimal customerPenalty;
 
     /**
-     * Getter for customerPenalty;
+     * Getter for customerPenalty
+     *
      * 
      */
-    public Decimal? getcustomerPenalty() {;
-        return this.customerPenalty;;
+    public Decimal getCustomerPenalty() {
+        return this.customerPenalty;
     }
 
     /**
-     * Setter for customerPenalty;
+     * Setter for customerPenalty
+     *
      * 
      */
-    public void setcustomerPenalty(Decimal? value) {;
-        this.customerPenalty = value;;
+    public void setCustomerPenalty(Decimal value) {
+        this.customerPenalty = value;
     }
 
 
-    private Decimal? customerInterest;
+    private Decimal customerInterest;
 
     /**
-     * Getter for customerInterest;
+     * Getter for customerInterest
+     *
      * 
      */
-    public Decimal? getcustomerInterest() {;
-        return this.customerInterest;;
+    public Decimal getCustomerInterest() {
+        return this.customerInterest;
     }
 
     /**
-     * Setter for customerInterest;
+     * Setter for customerInterest
+     *
      * 
      */
-    public void setcustomerInterest(Decimal? value) {;
-        this.customerInterest = value;;
+    public void setCustomerInterest(Decimal value) {
+        this.customerInterest = value;
     }
 
 
-    private Decimal? cspFeeRefund;
+    private Decimal cspFeeRefund;
 
     /**
-     * Getter for cspFeeRefund;
+     * Getter for cspFeeRefund
+     *
      * 
      */
-    public Decimal? getcspFeeRefund() {;
-        return this.cspFeeRefund;;
+    public Decimal getCspFeeRefund() {
+        return this.cspFeeRefund;
     }
 
     /**
-     * Setter for cspFeeRefund;
+     * Setter for cspFeeRefund
+     *
      * 
      */
-    public void setcspFeeRefund(Decimal? value) {;
-        this.cspFeeRefund = value;;
+    public void setCspFeeRefund(Decimal value) {
+        this.cspFeeRefund = value;
     }
 
 
-    private String fileName;
+    private string fileName;
 
     /**
-     * Getter for fileName;
+     * Getter for fileName
+     *
      * resourceFileId
      */
-    public String getfileName() {;
-        return this.fileName;;
+    public string getFileName() {
+        return this.fileName;
     }
 
     /**
-     * Setter for fileName;
+     * Setter for fileName
+     *
      * resourceFileId
      */
-    public void setfileName(String value) {;
-        this.fileName = value;;
+    public void setFileName(string value) {
+        this.fileName = value;
     }
 
 
-    private Int64? resourceFileId;
+    private Long resourceFileId;
 
     /**
-     * Getter for resourceFileId;
+     * Getter for resourceFileId
+     *
      * resourceFileId
      */
-    public Int64? getresourceFileId() {;
-        return this.resourceFileId;;
+    public Long getResourceFileId() {
+        return this.resourceFileId;
     }
 
     /**
-     * Setter for resourceFileId;
+     * Setter for resourceFileId
+     *
      * resourceFileId
      */
-    public void setresourceFileId(Int64? value) {;
-        this.resourceFileId = value;;
+    public void setResourceFileId(Long value) {
+        this.resourceFileId = value;
     }
 
 
-    private DateTime? createdDate;
+    private Instant createdDate;
 
     /**
-     * Getter for createdDate;
+     * Getter for createdDate
+     *
      * The date when this record was created.
      */
-    public DateTime? getcreatedDate() {;
-        return this.createdDate;;
+    public Instant getCreatedDate() {
+        return this.createdDate;
     }
 
     /**
-     * Setter for createdDate;
+     * Setter for createdDate
+     *
      * The date when this record was created.
      */
-    public void setcreatedDate(DateTime? value) {;
-        this.createdDate = value;;
+    public void setCreatedDate(Instant value) {
+        this.createdDate = value;
     }
 
 
-    private Int32? createdUserId;
+    private Integer createdUserId;
 
     /**
-     * Getter for createdUserId;
+     * Getter for createdUserId
+     *
      * The User ID of the user who created this record.
      */
-    public Int32? getcreatedUserId() {;
-        return this.createdUserId;;
+    public Integer getCreatedUserId() {
+        return this.createdUserId;
     }
 
     /**
-     * Setter for createdUserId;
+     * Setter for createdUserId
+     *
      * The User ID of the user who created this record.
      */
-    public void setcreatedUserId(Int32? value) {;
-        this.createdUserId = value;;
+    public void setCreatedUserId(Integer value) {
+        this.createdUserId = value;
     }
 
 
-    private DateTime? modifiedDate;
+    private Instant modifiedDate;
 
     /**
-     * Getter for modifiedDate;
+     * Getter for modifiedDate
+     *
      * The date/time when this record was last modified.
      */
-    public DateTime? getmodifiedDate() {;
-        return this.modifiedDate;;
+    public Instant getModifiedDate() {
+        return this.modifiedDate;
     }
 
     /**
-     * Setter for modifiedDate;
+     * Setter for modifiedDate
+     *
      * The date/time when this record was last modified.
      */
-    public void setmodifiedDate(DateTime? value) {;
-        this.modifiedDate = value;;
+    public void setModifiedDate(Instant value) {
+        this.modifiedDate = value;
     }
 
 
-    private Int32? modifiedUserId;
+    private Integer modifiedUserId;
 
     /**
-     * Getter for modifiedUserId;
+     * Getter for modifiedUserId
+     *
      * The user ID of the user who last modified this record.
      */
-    public Int32? getmodifiedUserId() {;
-        return this.modifiedUserId;;
+    public Integer getModifiedUserId() {
+        return this.modifiedUserId;
     }
 
     /**
-     * Setter for modifiedUserId;
+     * Setter for modifiedUserId
+     *
      * The user ID of the user who last modified this record.
      */
-    public void setmodifiedUserId(Int32? value) {;
-        this.modifiedUserId = value;;
+    public void setModifiedUserId(Integer value) {
+        this.modifiedUserId = value;
     }
 
 
     private ResourceFileUploadRequestModel attachmentUploadRequest;
 
     /**
-     * Getter for attachmentUploadRequest;
+     * Getter for attachmentUploadRequest
+     *
      * An attachment to the finance detail
      */
-    public ResourceFileUploadRequestModel getattachmentUploadRequest() {;
-        return this.attachmentUploadRequest;;
+    public ResourceFileUploadRequestModel getAttachmentUploadRequest() {
+        return this.attachmentUploadRequest;
     }
 
     /**
-     * Setter for attachmentUploadRequest;
+     * Setter for attachmentUploadRequest
+     *
      * An attachment to the finance detail
      */
-    public void setattachmentUploadRequest(ResourceFileUploadRequestModel value) {;
-        this.attachmentUploadRequest = value;;
+    public void setAttachmentUploadRequest(ResourceFileUploadRequestModel value) {
+        this.attachmentUploadRequest = value;
     }
 
 

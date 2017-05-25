@@ -30,155 +30,171 @@ import java.util.HashMap;
 public class ErrorDetail {
 
 
-    private ErrorCodeId? code;
+    private ErrorCodeId code;
 
     /**
-     * Getter for code;
+     * Getter for code
+     *
      * Name of the error or message.
      */
-    public ErrorCodeId? getcode() {;
-        return this.code;;
+    public ErrorCodeId getCode() {
+        return this.code;
     }
 
     /**
-     * Setter for code;
+     * Setter for code
+     *
      * Name of the error or message.
      */
-    public void setcode(ErrorCodeId? value) {;
-        this.code = value;;
+    public void setCode(ErrorCodeId value) {
+        this.code = value;
     }
 
 
-    private Int32? number;
+    private Integer number;
 
     /**
-     * Getter for number;
+     * Getter for number
+     *
      * Unique ID number referring to this error or message.
      */
-    public Int32? getnumber() {;
-        return this.number;;
+    public Integer getNumber() {
+        return this.number;
     }
 
     /**
-     * Setter for number;
+     * Setter for number
+     *
      * Unique ID number referring to this error or message.
      */
-    public void setnumber(Int32? value) {;
-        this.number = value;;
+    public void setNumber(Integer value) {
+        this.number = value;
     }
 
 
-    private String message;
+    private string message;
 
     /**
-     * Getter for message;
+     * Getter for message
+     *
      * Concise summary of the message, suitable for display in the caption of an alert box.
      */
-    public String getmessage() {;
-        return this.message;;
+    public string getMessage() {
+        return this.message;
     }
 
     /**
-     * Setter for message;
+     * Setter for message
+     *
      * Concise summary of the message, suitable for display in the caption of an alert box.
      */
-    public void setmessage(String value) {;
-        this.message = value;;
+    public void setMessage(string value) {
+        this.message = value;
     }
 
 
-    private String description;
+    private string description;
 
     /**
-     * Getter for description;
+     * Getter for description
+     *
      * A more detailed description of the problem referenced by this error message, suitable for display in the contents area of an alert box.
      */
-    public String getdescription() {;
-        return this.description;;
+    public string getDescription() {
+        return this.description;
     }
 
     /**
-     * Setter for description;
+     * Setter for description
+     *
      * A more detailed description of the problem referenced by this error message, suitable for display in the contents area of an alert box.
      */
-    public void setdescription(String value) {;
-        this.description = value;;
+    public void setDescription(string value) {
+        this.description = value;
     }
 
 
-    private String faultCode;
+    private string faultCode;
 
     /**
-     * Getter for faultCode;
+     * Getter for faultCode
+     *
      * Indicates the SOAP Fault code, if this was related to an error that corresponded to AvaTax SOAP v1 behavior.
      */
-    public String getfaultCode() {;
-        return this.faultCode;;
+    public string getFaultCode() {
+        return this.faultCode;
     }
 
     /**
-     * Setter for faultCode;
+     * Setter for faultCode
+     *
      * Indicates the SOAP Fault code, if this was related to an error that corresponded to AvaTax SOAP v1 behavior.
      */
-    public void setfaultCode(String value) {;
-        this.faultCode = value;;
+    public void setFaultCode(string value) {
+        this.faultCode = value;
     }
 
 
-    private String helpLink;
+    private string helpLink;
 
     /**
-     * Getter for helpLink;
+     * Getter for helpLink
+     *
      * URL to help for this message
      */
-    public String gethelpLink() {;
-        return this.helpLink;;
+    public string getHelpLink() {
+        return this.helpLink;
     }
 
     /**
-     * Setter for helpLink;
+     * Setter for helpLink
+     *
      * URL to help for this message
      */
-    public void sethelpLink(String value) {;
-        this.helpLink = value;;
+    public void setHelpLink(string value) {
+        this.helpLink = value;
     }
 
 
-    private String refersTo;
+    private string refersTo;
 
     /**
-     * Getter for refersTo;
+     * Getter for refersTo
+     *
      * Item the message refers to, if applicable. This is used to indicate a missing or incorrect value.
      */
-    public String getrefersTo() {;
-        return this.refersTo;;
+    public string getRefersTo() {
+        return this.refersTo;
     }
 
     /**
-     * Setter for refersTo;
+     * Setter for refersTo
+     *
      * Item the message refers to, if applicable. This is used to indicate a missing or incorrect value.
      */
-    public void setrefersTo(String value) {;
-        this.refersTo = value;;
+    public void setRefersTo(string value) {
+        this.refersTo = value;
     }
 
 
-    private SeverityLevel? severity;
+    private SeverityLevel severity;
 
     /**
-     * Getter for severity;
+     * Getter for severity
+     *
      * Severity of the message
      */
-    public SeverityLevel? getseverity() {;
-        return this.severity;;
+    public SeverityLevel getSeverity() {
+        return this.severity;
     }
 
     /**
-     * Setter for severity;
+     * Setter for severity
+     *
      * Severity of the message
      */
-    public void setseverity(SeverityLevel? value) {;
-        this.severity = value;;
+    public void setSeverity(SeverityLevel value) {
+        this.severity = value;
     }
 
 

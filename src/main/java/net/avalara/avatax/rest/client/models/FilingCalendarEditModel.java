@@ -30,79 +30,87 @@ import java.util.HashMap;
 public class FilingCalendarEditModel {
 
 
-    private String fieldName;
+    private string fieldName;
 
     /**
-     * Getter for fieldName;
+     * Getter for fieldName
+     *
      * The name of the field to be modified.
      */
-    public String getfieldName() {;
-        return this.fieldName;;
+    public string getFieldName() {
+        return this.fieldName;
     }
 
     /**
-     * Setter for fieldName;
+     * Setter for fieldName
+     *
      * The name of the field to be modified.
      */
-    public void setfieldName(String value) {;
-        this.fieldName = value;;
+    public void setFieldName(string value) {
+        this.fieldName = value;
     }
 
 
-    private Int32 questionId;
+    private int questionId;
 
     /**
-     * Getter for questionId;
+     * Getter for questionId
+     *
      * The unique ID of the filing calendar question. "Filing calendar question" is the wording displayed to users for a given field.
      */
-    public Int32 getquestionId() {;
-        return this.questionId;;
+    public int getQuestionId() {
+        return this.questionId;
     }
 
     /**
-     * Setter for questionId;
+     * Setter for questionId
+     *
      * The unique ID of the filing calendar question. "Filing calendar question" is the wording displayed to users for a given field.
      */
-    public void setquestionId(Int32 value) {;
-        this.questionId = value;;
+    public void setQuestionId(int value) {
+        this.questionId = value;
     }
 
 
-    private Dictionary<string, string> oldValue;
+    private object oldValue;
 
     /**
-     * Getter for oldValue;
+     * Getter for oldValue
+     *
      * The current value of the field.
      */
-    public Dictionary<string, string> getoldValue() {;
-        return this.oldValue;;
+    public object getOldValue() {
+        return this.oldValue;
     }
 
     /**
-     * Setter for oldValue;
+     * Setter for oldValue
+     *
      * The current value of the field.
      */
-    public void setoldValue(Dictionary<string, string> value) {;
-        this.oldValue = value;;
+    public void setOldValue(object value) {
+        this.oldValue = value;
     }
 
 
-    private Dictionary<string, string> newValue;
+    private object newValue;
 
     /**
-     * Getter for newValue;
+     * Getter for newValue
+     *
      * The new/proposed value of the field.
      */
-    public Dictionary<string, string> getnewValue() {;
-        return this.newValue;;
+    public object getNewValue() {
+        return this.newValue;
     }
 
     /**
-     * Setter for newValue;
+     * Setter for newValue
+     *
      * The new/proposed value of the field.
      */
-    public void setnewValue(Dictionary<string, string> value) {;
-        this.newValue = value;;
+    public void setNewValue(object value) {
+        this.newValue = value;
     }
 
 

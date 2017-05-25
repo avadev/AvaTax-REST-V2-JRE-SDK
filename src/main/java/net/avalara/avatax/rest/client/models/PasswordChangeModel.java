@@ -30,41 +30,45 @@ import java.util.HashMap;
 public class PasswordChangeModel {
 
 
-    private String oldPassword;
+    private string oldPassword;
 
     /**
-     * Getter for oldPassword;
+     * Getter for oldPassword
+     *
      * Old Password
      */
-    public String getoldPassword() {;
-        return this.oldPassword;;
+    public string getOldPassword() {
+        return this.oldPassword;
     }
 
     /**
-     * Setter for oldPassword;
+     * Setter for oldPassword
+     *
      * Old Password
      */
-    public void setoldPassword(String value) {;
-        this.oldPassword = value;;
+    public void setOldPassword(string value) {
+        this.oldPassword = value;
     }
 
 
-    private String newPassword;
+    private string newPassword;
 
     /**
-     * Getter for newPassword;
+     * Getter for newPassword
+     *
      * New Password
      */
-    public String getnewPassword() {;
-        return this.newPassword;;
+    public string getNewPassword() {
+        return this.newPassword;
     }
 
     /**
-     * Setter for newPassword;
+     * Setter for newPassword
+     *
      * New Password
      */
-    public void setnewPassword(String value) {;
-        this.newPassword = value;;
+    public void setNewPassword(string value) {
+        this.newPassword = value;
     }
 
 

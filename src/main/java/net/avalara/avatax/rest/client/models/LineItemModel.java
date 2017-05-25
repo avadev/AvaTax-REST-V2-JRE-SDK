@@ -30,276 +30,305 @@ import java.util.HashMap;
 public class LineItemModel {
 
 
-    private String number;
+    private string number;
 
     /**
-     * Getter for number;
+     * Getter for number
+     *
      * Line number within this document
      */
-    public String getnumber() {;
-        return this.number;;
+    public string getNumber() {
+        return this.number;
     }
 
     /**
-     * Setter for number;
+     * Setter for number
+     *
      * Line number within this document
      */
-    public void setnumber(String value) {;
-        this.number = value;;
+    public void setNumber(string value) {
+        this.number = value;
     }
 
 
     private Decimal quantity;
 
     /**
-     * Getter for quantity;
+     * Getter for quantity
+     *
      * Quantity of items in this line
      */
-    public Decimal getquantity() {;
-        return this.quantity;;
+    public Decimal getQuantity() {
+        return this.quantity;
     }
 
     /**
-     * Setter for quantity;
+     * Setter for quantity
+     *
      * Quantity of items in this line
      */
-    public void setquantity(Decimal value) {;
-        this.quantity = value;;
+    public void setQuantity(Decimal value) {
+        this.quantity = value;
     }
 
 
     private Decimal amount;
 
     /**
-     * Getter for amount;
+     * Getter for amount
+     *
      * Total amount for this line
      */
-    public Decimal getamount() {;
-        return this.amount;;
+    public Decimal getAmount() {
+        return this.amount;
     }
 
     /**
-     * Setter for amount;
+     * Setter for amount
+     *
      * Total amount for this line
      */
-    public void setamount(Decimal value) {;
-        this.amount = value;;
+    public void setAmount(Decimal value) {
+        this.amount = value;
     }
 
 
     private AddressesModel addresses;
 
     /**
-     * Getter for addresses;
+     * Getter for addresses
+     *
      * Specify any differences for addresses between this line and the rest of the document
      */
-    public AddressesModel getaddresses() {;
-        return this.addresses;;
+    public AddressesModel getAddresses() {
+        return this.addresses;
     }
 
     /**
-     * Setter for addresses;
+     * Setter for addresses
+     *
      * Specify any differences for addresses between this line and the rest of the document
      */
-    public void setaddresses(AddressesModel value) {;
-        this.addresses = value;;
+    public void setAddresses(AddressesModel value) {
+        this.addresses = value;
     }
 
 
-    private String taxCode;
+    private string taxCode;
 
     /**
-     * Getter for taxCode;
+     * Getter for taxCode
+     *
      * Tax Code - System or Custom Tax Code.
      */
-    public String gettaxCode() {;
-        return this.taxCode;;
+    public string getTaxCode() {
+        return this.taxCode;
     }
 
     /**
-     * Setter for taxCode;
+     * Setter for taxCode
+     *
      * Tax Code - System or Custom Tax Code.
      */
-    public void settaxCode(String value) {;
-        this.taxCode = value;;
+    public void setTaxCode(string value) {
+        this.taxCode = value;
     }
 
 
-    private String customerUsageType;
+    private string customerUsageType;
 
     /**
-     * Getter for customerUsageType;
+     * Getter for customerUsageType
+     *
      * Customer Usage Type - The client application customer or usage type.
      */
-    public String getcustomerUsageType() {;
-        return this.customerUsageType;;
+    public string getCustomerUsageType() {
+        return this.customerUsageType;
     }
 
     /**
-     * Setter for customerUsageType;
+     * Setter for customerUsageType
+     *
      * Customer Usage Type - The client application customer or usage type.
      */
-    public void setcustomerUsageType(String value) {;
-        this.customerUsageType = value;;
+    public void setCustomerUsageType(string value) {
+        this.customerUsageType = value;
     }
 
 
-    private String itemCode;
+    private string itemCode;
 
     /**
-     * Getter for itemCode;
+     * Getter for itemCode
+     *
      * Item Code (SKU)
      */
-    public String getitemCode() {;
-        return this.itemCode;;
+    public string getItemCode() {
+        return this.itemCode;
     }
 
     /**
-     * Setter for itemCode;
+     * Setter for itemCode
+     *
      * Item Code (SKU)
      */
-    public void setitemCode(String value) {;
-        this.itemCode = value;;
+    public void setItemCode(string value) {
+        this.itemCode = value;
     }
 
 
-    private String exemptionCode;
+    private string exemptionCode;
 
     /**
-     * Getter for exemptionCode;
+     * Getter for exemptionCode
+     *
      * Exemption number for this line
      */
-    public String getexemptionCode() {;
-        return this.exemptionCode;;
+    public string getExemptionCode() {
+        return this.exemptionCode;
     }
 
     /**
-     * Setter for exemptionCode;
+     * Setter for exemptionCode
+     *
      * Exemption number for this line
      */
-    public void setexemptionCode(String value) {;
-        this.exemptionCode = value;;
+    public void setExemptionCode(string value) {
+        this.exemptionCode = value;
     }
 
 
-    private Boolean? discounted;
+    private object discounted;
 
     /**
-     * Getter for discounted;
+     * Getter for discounted
+     *
      * True if the document discount should be applied to this line
      */
-    public Boolean? getdiscounted() {;
-        return this.discounted;;
+    public object getDiscounted() {
+        return this.discounted;
     }
 
     /**
-     * Setter for discounted;
+     * Setter for discounted
+     *
      * True if the document discount should be applied to this line
      */
-    public void setdiscounted(Boolean? value) {;
-        this.discounted = value;;
+    public void setDiscounted(object value) {
+        this.discounted = value;
     }
 
 
-    private Boolean? taxIncluded;
+    private object taxIncluded;
 
     /**
-     * Getter for taxIncluded;
+     * Getter for taxIncluded
+     *
      * Indicates if line has Tax Included; defaults to false
      */
-    public Boolean? gettaxIncluded() {;
-        return this.taxIncluded;;
+    public object getTaxIncluded() {
+        return this.taxIncluded;
     }
 
     /**
-     * Setter for taxIncluded;
+     * Setter for taxIncluded
+     *
      * Indicates if line has Tax Included; defaults to false
      */
-    public void settaxIncluded(Boolean? value) {;
-        this.taxIncluded = value;;
+    public void setTaxIncluded(object value) {
+        this.taxIncluded = value;
     }
 
 
-    private String revenueAccount;
+    private string revenueAccount;
 
     /**
-     * Getter for revenueAccount;
+     * Getter for revenueAccount
+     *
      * Revenue Account
      */
-    public String getrevenueAccount() {;
-        return this.revenueAccount;;
+    public string getRevenueAccount() {
+        return this.revenueAccount;
     }
 
     /**
-     * Setter for revenueAccount;
+     * Setter for revenueAccount
+     *
      * Revenue Account
      */
-    public void setrevenueAccount(String value) {;
-        this.revenueAccount = value;;
+    public void setRevenueAccount(string value) {
+        this.revenueAccount = value;
     }
 
 
-    private String ref1;
+    private string ref1;
 
     /**
-     * Getter for ref1;
+     * Getter for ref1
+     *
      * Reference 1 - Client specific reference field
      */
-    public String getref1() {;
-        return this.ref1;;
+    public string getRef1() {
+        return this.ref1;
     }
 
     /**
-     * Setter for ref1;
+     * Setter for ref1
+     *
      * Reference 1 - Client specific reference field
      */
-    public void setref1(String value) {;
-        this.ref1 = value;;
+    public void setRef1(string value) {
+        this.ref1 = value;
     }
 
 
-    private String ref2;
+    private string ref2;
 
     /**
-     * Getter for ref2;
+     * Getter for ref2
+     *
      * Reference 2 - Client specific reference field
      */
-    public String getref2() {;
-        return this.ref2;;
+    public string getRef2() {
+        return this.ref2;
     }
 
     /**
-     * Setter for ref2;
+     * Setter for ref2
+     *
      * Reference 2 - Client specific reference field
      */
-    public void setref2(String value) {;
-        this.ref2 = value;;
+    public void setRef2(string value) {
+        this.ref2 = value;
     }
 
 
-    private String description;
+    private string description;
 
     /**
-     * Getter for description;
+     * Getter for description
+     *
      * Item description. This is required for SST transactions if an unmapped ItemCode is used.
      */
-    public String getdescription() {;
-        return this.description;;
+    public string getDescription() {
+        return this.description;
     }
 
     /**
-     * Setter for description;
+     * Setter for description
+     *
      * Item description. This is required for SST transactions if an unmapped ItemCode is used.
      */
-    public void setdescription(String value) {;
-        this.description = value;;
+    public void setDescription(string value) {
+        this.description = value;
     }
 
 
-    private String businessIdentificationNo;
+    private string businessIdentificationNo;
 
     /**
-     * Getter for businessIdentificationNo;
+     * Getter for businessIdentificationNo
+     *
      * VAT business identification number for the customer for this line item. If you leave this field empty,
     * this line item will use whatever business identification number you provided at the transaction level.
     * 
@@ -307,12 +336,13 @@ public class LineItemModel {
     * a business identification number for your company during company setup, this transaction will be treated as a 
     * business-to-business transaction for VAT purposes and it will be calculated according to VAT tax rules.
      */
-    public String getbusinessIdentificationNo() {;
-        return this.businessIdentificationNo;;
+    public string getBusinessIdentificationNo() {
+        return this.businessIdentificationNo;
     }
 
     /**
-     * Setter for businessIdentificationNo;
+     * Setter for businessIdentificationNo
+     *
      * VAT business identification number for the customer for this line item. If you leave this field empty,
     * this line item will use whatever business identification number you provided at the transaction level.
     * 
@@ -320,48 +350,52 @@ public class LineItemModel {
     * a business identification number for your company during company setup, this transaction will be treated as a 
     * business-to-business transaction for VAT purposes and it will be calculated according to VAT tax rules.
      */
-    public void setbusinessIdentificationNo(String value) {;
-        this.businessIdentificationNo = value;;
+    public void setBusinessIdentificationNo(string value) {
+        this.businessIdentificationNo = value;
     }
 
 
     private TaxOverrideModel taxOverride;
 
     /**
-     * Getter for taxOverride;
+     * Getter for taxOverride
+     *
      * Specifies a tax override for this line
      */
-    public TaxOverrideModel gettaxOverride() {;
-        return this.taxOverride;;
+    public TaxOverrideModel getTaxOverride() {
+        return this.taxOverride;
     }
 
     /**
-     * Setter for taxOverride;
+     * Setter for taxOverride
+     *
      * Specifies a tax override for this line
      */
-    public void settaxOverride(TaxOverrideModel value) {;
-        this.taxOverride = value;;
+    public void setTaxOverride(TaxOverrideModel value) {
+        this.taxOverride = value;
     }
 
 
-    private Dictionary<string, string> parameters;
+    private object parameters;
 
     /**
-     * Getter for parameters;
+     * Getter for parameters
+     *
      * Special parameters that apply to this line within this transaction.
     * To get a full list of available parameters, please use the /api/v2/definitions/parameters endpoint.
      */
-    public Dictionary<string, string> getparameters() {;
-        return this.parameters;;
+    public object getParameters() {
+        return this.parameters;
     }
 
     /**
-     * Setter for parameters;
+     * Setter for parameters
+     *
      * Special parameters that apply to this line within this transaction.
     * To get a full list of available parameters, please use the /api/v2/definitions/parameters endpoint.
      */
-    public void setparameters(Dictionary<string, string> value) {;
-        this.parameters = value;;
+    public void setParameters(object value) {
+        this.parameters = value;
     }
 
 

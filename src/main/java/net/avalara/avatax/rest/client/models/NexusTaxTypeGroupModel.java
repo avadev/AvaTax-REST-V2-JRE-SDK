@@ -30,60 +30,66 @@ import java.util.HashMap;
 public class NexusTaxTypeGroupModel {
 
 
-    private Int32 id;
+    private int id;
 
     /**
-     * Getter for id;
+     * Getter for id
+     *
      * The unique ID number of this nexus tax type group.
      */
-    public Int32 getid() {;
-        return this.id;;
+    public int getId() {
+        return this.id;
     }
 
     /**
-     * Setter for id;
+     * Setter for id
+     *
      * The unique ID number of this nexus tax type group.
      */
-    public void setid(Int32 value) {;
-        this.id = value;;
+    public void setId(int value) {
+        this.id = value;
     }
 
 
-    private String nexusTaxTypeGroupId;
+    private string nexusTaxTypeGroupId;
 
     /**
-     * Getter for nexusTaxTypeGroupId;
+     * Getter for nexusTaxTypeGroupId
+     *
      * The unique human readable Id of this nexus tax type group.
      */
-    public String getnexusTaxTypeGroupId() {;
-        return this.nexusTaxTypeGroupId;;
+    public string getNexusTaxTypeGroupId() {
+        return this.nexusTaxTypeGroupId;
     }
 
     /**
-     * Setter for nexusTaxTypeGroupId;
+     * Setter for nexusTaxTypeGroupId
+     *
      * The unique human readable Id of this nexus tax type group.
      */
-    public void setnexusTaxTypeGroupId(String value) {;
-        this.nexusTaxTypeGroupId = value;;
+    public void setNexusTaxTypeGroupId(string value) {
+        this.nexusTaxTypeGroupId = value;
     }
 
 
-    private String description;
+    private string description;
 
     /**
-     * Getter for description;
+     * Getter for description
+     *
      * The description of this nexus tax type group.
      */
-    public String getdescription() {;
-        return this.description;;
+    public string getDescription() {
+        return this.description;
     }
 
     /**
-     * Setter for description;
+     * Setter for description
+     *
      * The description of this nexus tax type group.
      */
-    public void setdescription(String value) {;
-        this.description = value;;
+    public void setDescription(string value) {
+        this.description = value;
     }
 
 

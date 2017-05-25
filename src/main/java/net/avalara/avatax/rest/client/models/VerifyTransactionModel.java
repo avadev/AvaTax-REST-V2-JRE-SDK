@@ -30,60 +30,66 @@ import java.util.HashMap;
 public class VerifyTransactionModel {
 
 
-    private DateTime? verifyTransactionDate;
+    private Instant verifyTransactionDate;
 
     /**
-     * Getter for verifyTransactionDate;
+     * Getter for verifyTransactionDate
+     *
      * Transaction Date - The date on the invoice, purchase order, etc.
      */
-    public DateTime? getverifyTransactionDate() {;
-        return this.verifyTransactionDate;;
+    public Instant getVerifyTransactionDate() {
+        return this.verifyTransactionDate;
     }
 
     /**
-     * Setter for verifyTransactionDate;
+     * Setter for verifyTransactionDate
+     *
      * Transaction Date - The date on the invoice, purchase order, etc.
      */
-    public void setverifyTransactionDate(DateTime? value) {;
-        this.verifyTransactionDate = value;;
+    public void setVerifyTransactionDate(Instant value) {
+        this.verifyTransactionDate = value;
     }
 
 
-    private Decimal? verifyTotalAmount;
+    private Decimal verifyTotalAmount;
 
     /**
-     * Getter for verifyTotalAmount;
+     * Getter for verifyTotalAmount
+     *
      * Total Amount - The total amount (not including tax) for the document.
      */
-    public Decimal? getverifyTotalAmount() {;
-        return this.verifyTotalAmount;;
+    public Decimal getVerifyTotalAmount() {
+        return this.verifyTotalAmount;
     }
 
     /**
-     * Setter for verifyTotalAmount;
+     * Setter for verifyTotalAmount
+     *
      * Total Amount - The total amount (not including tax) for the document.
      */
-    public void setverifyTotalAmount(Decimal? value) {;
-        this.verifyTotalAmount = value;;
+    public void setVerifyTotalAmount(Decimal value) {
+        this.verifyTotalAmount = value;
     }
 
 
-    private Decimal? verifyTotalTax;
+    private Decimal verifyTotalTax;
 
     /**
-     * Getter for verifyTotalTax;
+     * Getter for verifyTotalTax
+     *
      * Total Tax - The total tax for the document.
      */
-    public Decimal? getverifyTotalTax() {;
-        return this.verifyTotalTax;;
+    public Decimal getVerifyTotalTax() {
+        return this.verifyTotalTax;
     }
 
     /**
-     * Setter for verifyTotalTax;
+     * Setter for verifyTotalTax
+     *
      * Total Tax - The total tax for the document.
      */
-    public void setverifyTotalTax(Decimal? value) {;
-        this.verifyTotalTax = value;;
+    public void setVerifyTotalTax(Decimal value) {
+        this.verifyTotalTax = value;
     }
 
 

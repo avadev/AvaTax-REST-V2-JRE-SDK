@@ -30,119 +30,131 @@ import java.util.HashMap;
 public class CycleEditOptionModel {
 
 
-    private Boolean? success;
+    private object success;
 
     /**
-     * Getter for success;
+     * Getter for success
+     *
      * Whether or not changes can be made to the filing calendar.
      */
-    public Boolean? getsuccess() {;
-        return this.success;;
+    public object getSuccess() {
+        return this.success;
     }
 
     /**
-     * Setter for success;
+     * Setter for success
+     *
      * Whether or not changes can be made to the filing calendar.
      */
-    public void setsuccess(Boolean? value) {;
-        this.success = value;;
+    public void setSuccess(object value) {
+        this.success = value;
     }
 
 
-    private String message;
+    private string message;
 
     /**
-     * Getter for message;
+     * Getter for message
+     *
      * The message to present to the user when calendar is successfully or unsuccessfully changed.
      */
-    public String getmessage() {;
-        return this.message;;
+    public string getMessage() {
+        return this.message;
     }
 
     /**
-     * Setter for message;
+     * Setter for message
+     *
      * The message to present to the user when calendar is successfully or unsuccessfully changed.
      */
-    public void setmessage(String value) {;
-        this.message = value;;
+    public void setMessage(string value) {
+        this.message = value;
     }
 
 
-    private Boolean? customerMustApprove;
+    private object customerMustApprove;
 
     /**
-     * Getter for customerMustApprove;
+     * Getter for customerMustApprove
+     *
      * Whether or not the user should be warned of a change, because some changes are risky and may be being done not in accordance with jurisdiction rules.
     * For example, user would be warned if user changes filing frequency to new frequency with a start date during an accrual month of the existing frequency.
      */
-    public Boolean? getcustomerMustApprove() {;
-        return this.customerMustApprove;;
+    public object getCustomerMustApprove() {
+        return this.customerMustApprove;
     }
 
     /**
-     * Setter for customerMustApprove;
+     * Setter for customerMustApprove
+     *
      * Whether or not the user should be warned of a change, because some changes are risky and may be being done not in accordance with jurisdiction rules.
     * For example, user would be warned if user changes filing frequency to new frequency with a start date during an accrual month of the existing frequency.
      */
-    public void setcustomerMustApprove(Boolean? value) {;
-        this.customerMustApprove = value;;
+    public void setCustomerMustApprove(object value) {
+        this.customerMustApprove = value;
     }
 
 
-    private Boolean? mustCloneFilingCalendar;
+    private object mustCloneFilingCalendar;
 
     /**
-     * Getter for mustCloneFilingCalendar;
+     * Getter for mustCloneFilingCalendar
+     *
      * True if the filing calendar must be cloned to allow this change; false if the existing filing calendar can be changed itself.
      */
-    public Boolean? getmustCloneFilingCalendar() {;
-        return this.mustCloneFilingCalendar;;
+    public object getMustCloneFilingCalendar() {
+        return this.mustCloneFilingCalendar;
     }
 
     /**
-     * Setter for mustCloneFilingCalendar;
+     * Setter for mustCloneFilingCalendar
+     *
      * True if the filing calendar must be cloned to allow this change; false if the existing filing calendar can be changed itself.
      */
-    public void setmustCloneFilingCalendar(Boolean? value) {;
-        this.mustCloneFilingCalendar = value;;
+    public void setMustCloneFilingCalendar(object value) {
+        this.mustCloneFilingCalendar = value;
     }
 
 
-    private DateTime? clonedCalendarEffDate;
+    private Instant clonedCalendarEffDate;
 
     /**
-     * Getter for clonedCalendarEffDate;
+     * Getter for clonedCalendarEffDate
+     *
      * The effective date of the filing calendar (only applies if cloning).
      */
-    public DateTime? getclonedCalendarEffDate() {;
-        return this.clonedCalendarEffDate;;
+    public Instant getClonedCalendarEffDate() {
+        return this.clonedCalendarEffDate;
     }
 
     /**
-     * Setter for clonedCalendarEffDate;
+     * Setter for clonedCalendarEffDate
+     *
      * The effective date of the filing calendar (only applies if cloning).
      */
-    public void setclonedCalendarEffDate(DateTime? value) {;
-        this.clonedCalendarEffDate = value;;
+    public void setClonedCalendarEffDate(Instant value) {
+        this.clonedCalendarEffDate = value;
     }
 
 
-    private DateTime? expiredCalendarEndDate;
+    private Instant expiredCalendarEndDate;
 
     /**
-     * Getter for expiredCalendarEndDate;
+     * Getter for expiredCalendarEndDate
+     *
      * The expired end date of the old filing calendar (only applies if cloning).
      */
-    public DateTime? getexpiredCalendarEndDate() {;
-        return this.expiredCalendarEndDate;;
+    public Instant getExpiredCalendarEndDate() {
+        return this.expiredCalendarEndDate;
     }
 
     /**
-     * Setter for expiredCalendarEndDate;
+     * Setter for expiredCalendarEndDate
+     *
      * The expired end date of the old filing calendar (only applies if cloning).
      */
-    public void setexpiredCalendarEndDate(DateTime? value) {;
-        this.expiredCalendarEndDate = value;;
+    public void setExpiredCalendarEndDate(Instant value) {
+        this.expiredCalendarEndDate = value;
     }
 
 

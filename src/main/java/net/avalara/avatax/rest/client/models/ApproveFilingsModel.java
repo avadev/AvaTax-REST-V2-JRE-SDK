@@ -30,22 +30,24 @@ import java.util.HashMap;
 public class ApproveFilingsModel {
 
 
-    private Boolean approve;
+    private boolean approve;
 
     /**
-     * Getter for approve;
+     * Getter for approve
+     *
      * Set this value to true in order to approve the filings.
      */
-    public Boolean getapprove() {;
-        return this.approve;;
+    public boolean getApprove() {
+        return this.approve;
     }
 
     /**
-     * Setter for approve;
+     * Setter for approve
+     *
      * Set this value to true in order to approve the filings.
      */
-    public void setapprove(Boolean value) {;
-        this.approve = value;;
+    public void setApprove(boolean value) {
+        this.approve = value;
     }
 
 

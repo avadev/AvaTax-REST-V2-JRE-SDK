@@ -30,79 +30,87 @@ import java.util.HashMap;
 public class EntityUseCodeModel {
 
 
-    private String code;
+    private string code;
 
     /**
-     * Getter for code;
+     * Getter for code
+     *
      * The Avalara-recognized entity use code for this definition
      */
-    public String getcode() {;
-        return this.code;;
+    public string getCode() {
+        return this.code;
     }
 
     /**
-     * Setter for code;
+     * Setter for code
+     *
      * The Avalara-recognized entity use code for this definition
      */
-    public void setcode(String value) {;
-        this.code = value;;
+    public void setCode(string value) {
+        this.code = value;
     }
 
 
-    private String name;
+    private string name;
 
     /**
-     * Getter for name;
+     * Getter for name
+     *
      * The name of this entity use code
      */
-    public String getname() {;
-        return this.name;;
+    public string getName() {
+        return this.name;
     }
 
     /**
-     * Setter for name;
+     * Setter for name
+     *
      * The name of this entity use code
      */
-    public void setname(String value) {;
-        this.name = value;;
+    public void setName(string value) {
+        this.name = value;
     }
 
 
-    private String description;
+    private string description;
 
     /**
-     * Getter for description;
+     * Getter for description
+     *
      * Text describing the meaning of this use code
      */
-    public String getdescription() {;
-        return this.description;;
+    public string getDescription() {
+        return this.description;
     }
 
     /**
-     * Setter for description;
+     * Setter for description
+     *
      * Text describing the meaning of this use code
      */
-    public void setdescription(String value) {;
-        this.description = value;;
+    public void setDescription(string value) {
+        this.description = value;
     }
 
 
-    private List<String> validCountries;
+    private string[] validCountries;
 
     /**
-     * Getter for validCountries;
+     * Getter for validCountries
+     *
      * A list of countries where this use code is valid
      */
-    public List<String> getvalidCountries() {;
-        return this.validCountries;;
+    public string[] getValidCountries() {
+        return this.validCountries;
     }
 
     /**
-     * Setter for validCountries;
+     * Setter for validCountries
+     *
      * A list of countries where this use code is valid
      */
-    public void setvalidCountries(List<String> value) {;
-        this.validCountries = value;;
+    public void setValidCountries(string[] value) {
+        this.validCountries = value;
     }
 
 

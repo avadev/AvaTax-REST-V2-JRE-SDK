@@ -30,193 +30,213 @@ import java.util.HashMap;
 public class CycleAddOptionModel {
 
 
-    private Boolean? available;
+    private object available;
 
     /**
-     * Getter for available;
+     * Getter for available
+     *
      * True if this form can be added and filed for the current cycle. "Current cycle" is considered one month before the month of today's date.
      */
-    public Boolean? getavailable() {;
-        return this.available;;
+    public object getAvailable() {
+        return this.available;
     }
 
     /**
-     * Setter for available;
+     * Setter for available
+     *
      * True if this form can be added and filed for the current cycle. "Current cycle" is considered one month before the month of today's date.
      */
-    public void setavailable(Boolean? value) {;
-        this.available = value;;
+    public void setAvailable(object value) {
+        this.available = value;
     }
 
 
-    private DateTime? transactionalPeriodStart;
+    private Instant transactionalPeriodStart;
 
     /**
-     * Getter for transactionalPeriodStart;
+     * Getter for transactionalPeriodStart
+     *
      * The period start date for the customer's first transaction in the jurisdiction being added
      */
-    public DateTime? gettransactionalPeriodStart() {;
-        return this.transactionalPeriodStart;;
+    public Instant getTransactionalPeriodStart() {
+        return this.transactionalPeriodStart;
     }
 
     /**
-     * Setter for transactionalPeriodStart;
+     * Setter for transactionalPeriodStart
+     *
      * The period start date for the customer's first transaction in the jurisdiction being added
      */
-    public void settransactionalPeriodStart(DateTime? value) {;
-        this.transactionalPeriodStart = value;;
+    public void setTransactionalPeriodStart(Instant value) {
+        this.transactionalPeriodStart = value;
     }
 
 
-    private DateTime? transactionalPeriodEnd;
+    private Instant transactionalPeriodEnd;
 
     /**
-     * Getter for transactionalPeriodEnd;
+     * Getter for transactionalPeriodEnd
+     *
      * The period end date for the customer's last transaction in the jurisdiction being added
      */
-    public DateTime? gettransactionalPeriodEnd() {;
-        return this.transactionalPeriodEnd;;
+    public Instant getTransactionalPeriodEnd() {
+        return this.transactionalPeriodEnd;
     }
 
     /**
-     * Setter for transactionalPeriodEnd;
+     * Setter for transactionalPeriodEnd
+     *
      * The period end date for the customer's last transaction in the jurisdiction being added
      */
-    public void settransactionalPeriodEnd(DateTime? value) {;
-        this.transactionalPeriodEnd = value;;
+    public void setTransactionalPeriodEnd(Instant value) {
+        this.transactionalPeriodEnd = value;
     }
 
 
-    private DateTime? filingDueDate;
+    private Instant filingDueDate;
 
     /**
-     * Getter for filingDueDate;
+     * Getter for filingDueDate
+     *
      * The jurisdiction-assigned due date for the form
      */
-    public DateTime? getfilingDueDate() {;
-        return this.filingDueDate;;
+    public Instant getFilingDueDate() {
+        return this.filingDueDate;
     }
 
     /**
-     * Setter for filingDueDate;
+     * Setter for filingDueDate
+     *
      * The jurisdiction-assigned due date for the form
      */
-    public void setfilingDueDate(DateTime? value) {;
-        this.filingDueDate = value;;
+    public void setFilingDueDate(Instant value) {
+        this.filingDueDate = value;
     }
 
 
-    private String cycleName;
+    private string cycleName;
 
     /**
-     * Getter for cycleName;
+     * Getter for cycleName
+     *
      * A descriptive name of the cycle and due date of form.
      */
-    public String getcycleName() {;
-        return this.cycleName;;
+    public string getCycleName() {
+        return this.cycleName;
     }
 
     /**
-     * Setter for cycleName;
+     * Setter for cycleName
+     *
      * A descriptive name of the cycle and due date of form.
      */
-    public void setcycleName(String value) {;
-        this.cycleName = value;;
+    public void setCycleName(string value) {
+        this.cycleName = value;
     }
 
 
-    private String frequencyName;
+    private string frequencyName;
 
     /**
-     * Getter for frequencyName;
+     * Getter for frequencyName
+     *
      * The filing frequency of the form
      */
-    public String getfrequencyName() {;
-        return this.frequencyName;;
+    public string getFrequencyName() {
+        return this.frequencyName;
     }
 
     /**
-     * Setter for frequencyName;
+     * Setter for frequencyName
+     *
      * The filing frequency of the form
      */
-    public void setfrequencyName(String value) {;
-        this.frequencyName = value;;
+    public void setFrequencyName(string value) {
+        this.frequencyName = value;
     }
 
 
-    private String filingFrequencyCode;
+    private string filingFrequencyCode;
 
     /**
-     * Getter for filingFrequencyCode;
+     * Getter for filingFrequencyCode
+     *
      * A code assigned to the filing frequency
      */
-    public String getfilingFrequencyCode() {;
-        return this.filingFrequencyCode;;
+    public string getFilingFrequencyCode() {
+        return this.filingFrequencyCode;
     }
 
     /**
-     * Setter for filingFrequencyCode;
+     * Setter for filingFrequencyCode
+     *
      * A code assigned to the filing frequency
      */
-    public void setfilingFrequencyCode(String value) {;
-        this.filingFrequencyCode = value;;
+    public void setFilingFrequencyCode(string value) {
+        this.filingFrequencyCode = value;
     }
 
 
-    private FilingFrequencyId? filingFrequencyId;
+    private FilingFrequencyId filingFrequencyId;
 
     /**
-     * Getter for filingFrequencyId;
+     * Getter for filingFrequencyId
+     *
      * The filing frequency of the request
      */
-    public FilingFrequencyId? getfilingFrequencyId() {;
-        return this.filingFrequencyId;;
+    public FilingFrequencyId getFilingFrequencyId() {
+        return this.filingFrequencyId;
     }
 
     /**
-     * Setter for filingFrequencyId;
+     * Setter for filingFrequencyId
+     *
      * The filing frequency of the request
      */
-    public void setfilingFrequencyId(FilingFrequencyId? value) {;
-        this.filingFrequencyId = value;;
+    public void setFilingFrequencyId(FilingFrequencyId value) {
+        this.filingFrequencyId = value;
     }
 
 
-    private String cycleUnavailableReason;
+    private string cycleUnavailableReason;
 
     /**
-     * Getter for cycleUnavailableReason;
+     * Getter for cycleUnavailableReason
+     *
      * An explanation for why this form cannot be added for the current cycle
      */
-    public String getcycleUnavailableReason() {;
-        return this.cycleUnavailableReason;;
+    public string getCycleUnavailableReason() {
+        return this.cycleUnavailableReason;
     }
 
     /**
-     * Setter for cycleUnavailableReason;
+     * Setter for cycleUnavailableReason
+     *
      * An explanation for why this form cannot be added for the current cycle
      */
-    public void setcycleUnavailableReason(String value) {;
-        this.cycleUnavailableReason = value;;
+    public void setCycleUnavailableReason(string value) {
+        this.cycleUnavailableReason = value;
     }
 
 
-    private List<String> availableLocationCodes;
+    private string[] availableLocationCodes;
 
     /**
-     * Getter for availableLocationCodes;
+     * Getter for availableLocationCodes
+     *
      * A list of outlet codes that can be assigned to this form for the current cycle
      */
-    public List<String> getavailableLocationCodes() {;
-        return this.availableLocationCodes;;
+    public string[] getAvailableLocationCodes() {
+        return this.availableLocationCodes;
     }
 
     /**
-     * Setter for availableLocationCodes;
+     * Setter for availableLocationCodes
+     *
      * A list of outlet codes that can be assigned to this form for the current cycle
      */
-    public void setavailableLocationCodes(List<String> value) {;
-        this.availableLocationCodes = value;;
+    public void setAvailableLocationCodes(string[] value) {
+        this.availableLocationCodes = value;
     }
 
 

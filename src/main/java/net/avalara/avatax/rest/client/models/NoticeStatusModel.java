@@ -30,79 +30,87 @@ import java.util.HashMap;
 public class NoticeStatusModel {
 
 
-    private Int32 id;
+    private int id;
 
     /**
-     * Getter for id;
+     * Getter for id
+     *
      * The unique ID number of this tax authority type.
      */
-    public Int32 getid() {;
-        return this.id;;
+    public int getId() {
+        return this.id;
     }
 
     /**
-     * Setter for id;
+     * Setter for id
+     *
      * The unique ID number of this tax authority type.
      */
-    public void setid(Int32 value) {;
-        this.id = value;;
+    public void setId(int value) {
+        this.id = value;
     }
 
 
-    private String description;
+    private string description;
 
     /**
-     * Getter for description;
+     * Getter for description
+     *
      * The description name of this tax authority type.
      */
-    public String getdescription() {;
-        return this.description;;
+    public string getDescription() {
+        return this.description;
     }
 
     /**
-     * Setter for description;
+     * Setter for description
+     *
      * The description name of this tax authority type.
      */
-    public void setdescription(String value) {;
-        this.description = value;;
+    public void setDescription(string value) {
+        this.description = value;
     }
 
 
-    private Boolean? isOpen;
+    private object isOpen;
 
     /**
-     * Getter for isOpen;
+     * Getter for isOpen
+     *
      * True if a tax notice in this status is considered 'open' and has more work expected to be done before it is closed.
      */
-    public Boolean? getisOpen() {;
-        return this.isOpen;;
+    public object getIsOpen() {
+        return this.isOpen;
     }
 
     /**
-     * Setter for isOpen;
+     * Setter for isOpen
+     *
      * True if a tax notice in this status is considered 'open' and has more work expected to be done before it is closed.
      */
-    public void setisOpen(Boolean? value) {;
-        this.isOpen = value;;
+    public void setIsOpen(object value) {
+        this.isOpen = value;
     }
 
 
-    private Int32? sortOrder;
+    private Integer sortOrder;
 
     /**
-     * Getter for sortOrder;
+     * Getter for sortOrder
+     *
      * If a list of status values is to be displayed in a dropdown, they should be displayed in this numeric order.
      */
-    public Int32? getsortOrder() {;
-        return this.sortOrder;;
+    public Integer getSortOrder() {
+        return this.sortOrder;
     }
 
     /**
-     * Setter for sortOrder;
+     * Setter for sortOrder
+     *
      * If a list of status values is to be displayed in a dropdown, they should be displayed in this numeric order.
      */
-    public void setsortOrder(Int32? value) {;
-        this.sortOrder = value;;
+    public void setSortOrder(Integer value) {
+        this.sortOrder = value;
     }
 
 

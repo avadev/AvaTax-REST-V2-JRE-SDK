@@ -30,155 +30,171 @@ import java.util.HashMap;
 public class LoginVerificationInputModel {
 
 
-    private Int32? companyId;
+    private Integer companyId;
 
     /**
-     * Getter for companyId;
+     * Getter for companyId
+     *
      * CompanyId that we are verifying the login information for
      */
-    public Int32? getcompanyId() {;
-        return this.companyId;;
+    public Integer getCompanyId() {
+        return this.companyId;
     }
 
     /**
-     * Setter for companyId;
+     * Setter for companyId
+     *
      * CompanyId that we are verifying the login information for
      */
-    public void setcompanyId(Int32? value) {;
-        this.companyId = value;;
+    public void setCompanyId(Integer value) {
+        this.companyId = value;
     }
 
 
-    private Int32 accountId;
+    private int accountId;
 
     /**
-     * Getter for accountId;
+     * Getter for accountId
+     *
      * AccountId of the login verification
      */
-    public Int32 getaccountId() {;
-        return this.accountId;;
+    public int getAccountId() {
+        return this.accountId;
     }
 
     /**
-     * Setter for accountId;
+     * Setter for accountId
+     *
      * AccountId of the login verification
      */
-    public void setaccountId(Int32 value) {;
-        this.accountId = value;;
+    public void setAccountId(int value) {
+        this.accountId = value;
     }
 
 
-    private String region;
+    private string region;
 
     /**
-     * Getter for region;
+     * Getter for region
+     *
      * Region of the verification request
      */
-    public String getregion() {;
-        return this.region;;
+    public string getRegion() {
+        return this.region;
     }
 
     /**
-     * Setter for region;
+     * Setter for region
+     *
      * Region of the verification request
      */
-    public void setregion(String value) {;
-        this.region = value;;
+    public void setRegion(string value) {
+        this.region = value;
     }
 
 
-    private String username;
+    private string username;
 
     /**
-     * Getter for username;
+     * Getter for username
+     *
      * Username that we are using for verification
      */
-    public String getusername() {;
-        return this.username;;
+    public string getUsername() {
+        return this.username;
     }
 
     /**
-     * Setter for username;
+     * Setter for username
+     *
      * Username that we are using for verification
      */
-    public void setusername(String value) {;
-        this.username = value;;
+    public void setUsername(string value) {
+        this.username = value;
     }
 
 
-    private String password;
+    private string password;
 
     /**
-     * Getter for password;
+     * Getter for password
+     *
      * Password we are using for verification
      */
-    public String getpassword() {;
-        return this.password;;
+    public string getPassword() {
+        return this.password;
     }
 
     /**
-     * Setter for password;
+     * Setter for password
+     *
      * Password we are using for verification
      */
-    public void setpassword(String value) {;
-        this.password = value;;
+    public void setPassword(string value) {
+        this.password = value;
     }
 
 
-    private String additionalOptions;
+    private string additionalOptions;
 
     /**
-     * Getter for additionalOptions;
+     * Getter for additionalOptions
+     *
      * Additional options of the verification
      */
-    public String getadditionalOptions() {;
-        return this.additionalOptions;;
+    public string getAdditionalOptions() {
+        return this.additionalOptions;
     }
 
     /**
-     * Setter for additionalOptions;
+     * Setter for additionalOptions
+     *
      * Additional options of the verification
      */
-    public void setadditionalOptions(String value) {;
-        this.additionalOptions = value;;
+    public void setAdditionalOptions(string value) {
+        this.additionalOptions = value;
     }
 
 
-    private Int32? bulkRequestId;
+    private Integer bulkRequestId;
 
     /**
-     * Getter for bulkRequestId;
+     * Getter for bulkRequestId
+     *
      * Bulk Request Id of the verification
      */
-    public Int32? getbulkRequestId() {;
-        return this.bulkRequestId;;
+    public Integer getBulkRequestId() {
+        return this.bulkRequestId;
     }
 
     /**
-     * Setter for bulkRequestId;
+     * Setter for bulkRequestId
+     *
      * Bulk Request Id of the verification
      */
-    public void setbulkRequestId(Int32? value) {;
-        this.bulkRequestId = value;;
+    public void setBulkRequestId(Integer value) {
+        this.bulkRequestId = value;
     }
 
 
-    private Int32? priority;
+    private Integer priority;
 
     /**
-     * Getter for priority;
+     * Getter for priority
+     *
      * Priority of the verification request
      */
-    public Int32? getpriority() {;
-        return this.priority;;
+    public Integer getPriority() {
+        return this.priority;
     }
 
     /**
-     * Setter for priority;
+     * Setter for priority
+     *
      * Priority of the verification request
      */
-    public void setpriority(Int32? value) {;
-        this.priority = value;;
+    public void setPriority(Integer value) {
+        this.priority = value;
     }
 
 

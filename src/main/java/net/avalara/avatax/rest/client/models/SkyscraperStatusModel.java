@@ -30,155 +30,171 @@ import java.util.HashMap;
 public class SkyscraperStatusModel {
 
 
-    private String name;
+    private string name;
 
     /**
-     * Getter for name;
+     * Getter for name
+     *
      * The specific name of the returns available in skyscraper
      */
-    public String getname() {;
-        return this.name;;
+    public string getName() {
+        return this.name;
     }
 
     /**
-     * Setter for name;
+     * Setter for name
+     *
      * The specific name of the returns available in skyscraper
      */
-    public void setname(String value) {;
-        this.name = value;;
+    public void setName(string value) {
+        this.name = value;
     }
 
 
-    private List<String> taxFormCodes;
+    private string[] taxFormCodes;
 
     /**
-     * Getter for taxFormCodes;
+     * Getter for taxFormCodes
+     *
      * The tax form codes available to file through skyscrper
      */
-    public List<String> gettaxFormCodes() {;
-        return this.taxFormCodes;;
+    public string[] getTaxFormCodes() {
+        return this.taxFormCodes;
     }
 
     /**
-     * Setter for taxFormCodes;
+     * Setter for taxFormCodes
+     *
      * The tax form codes available to file through skyscrper
      */
-    public void settaxFormCodes(List<String> value) {;
-        this.taxFormCodes = value;;
+    public void setTaxFormCodes(string[] value) {
+        this.taxFormCodes = value;
     }
 
 
-    private String country;
+    private string country;
 
     /**
-     * Getter for country;
+     * Getter for country
+     *
      * The country of the returns
      */
-    public String getcountry() {;
-        return this.country;;
+    public string getCountry() {
+        return this.country;
     }
 
     /**
-     * Setter for country;
+     * Setter for country
+     *
      * The country of the returns
      */
-    public void setcountry(String value) {;
-        this.country = value;;
+    public void setCountry(string value) {
+        this.country = value;
     }
 
 
-    private ScraperType? scraperType;
+    private ScraperType scraperType;
 
     /**
-     * Getter for scraperType;
+     * Getter for scraperType
+     *
      * They Scraper type
      */
-    public ScraperType? getscraperType() {;
-        return this.scraperType;;
+    public ScraperType getScraperType() {
+        return this.scraperType;
     }
 
     /**
-     * Setter for scraperType;
+     * Setter for scraperType
+     *
      * They Scraper type
      */
-    public void setscraperType(ScraperType? value) {;
-        this.scraperType = value;;
+    public void setScraperType(ScraperType value) {
+        this.scraperType = value;
     }
 
 
-    private Boolean? isAvailable;
+    private object isAvailable;
 
     /**
-     * Getter for isAvailable;
+     * Getter for isAvailable
+     *
      * Indicates if the return is currently available
      */
-    public Boolean? getisAvailable() {;
-        return this.isAvailable;;
+    public object getIsAvailable() {
+        return this.isAvailable;
     }
 
     /**
-     * Setter for isAvailable;
+     * Setter for isAvailable
+     *
      * Indicates if the return is currently available
      */
-    public void setisAvailable(Boolean? value) {;
-        this.isAvailable = value;;
+    public void setIsAvailable(object value) {
+        this.isAvailable = value;
     }
 
 
-    private String expectedResponseTime;
+    private string expectedResponseTime;
 
     /**
-     * Getter for expectedResponseTime;
+     * Getter for expectedResponseTime
+     *
      * The expected response time of the call
      */
-    public String getexpectedResponseTime() {;
-        return this.expectedResponseTime;;
+    public string getExpectedResponseTime() {
+        return this.expectedResponseTime;
     }
 
     /**
-     * Setter for expectedResponseTime;
+     * Setter for expectedResponseTime
+     *
      * The expected response time of the call
      */
-    public void setexpectedResponseTime(String value) {;
-        this.expectedResponseTime = value;;
+    public void setExpectedResponseTime(string value) {
+        this.expectedResponseTime = value;
     }
 
 
-    private String message;
+    private string message;
 
     /**
-     * Getter for message;
+     * Getter for message
+     *
      * Message on the returns
      */
-    public String getmessage() {;
-        return this.message;;
+    public string getMessage() {
+        return this.message;
     }
 
     /**
-     * Setter for message;
+     * Setter for message
+     *
      * Message on the returns
      */
-    public void setmessage(String value) {;
-        this.message = value;;
+    public void setMessage(string value) {
+        this.message = value;
     }
 
 
-    private List<requiredFilingCalendarDataFieldModel> requiredFilingCalendarDataFields;
+    private requiredFilingCalendarDataFieldModel[] requiredFilingCalendarDataFields;
 
     /**
-     * Getter for requiredFilingCalendarDataFields;
+     * Getter for requiredFilingCalendarDataFields
+     *
      * A list of required fields to file
      */
-    public List<requiredFilingCalendarDataFieldModel> getrequiredFilingCalendarDataFields() {;
-        return this.requiredFilingCalendarDataFields;;
+    public requiredFilingCalendarDataFieldModel[] getRequiredFilingCalendarDataFields() {
+        return this.requiredFilingCalendarDataFields;
     }
 
     /**
-     * Setter for requiredFilingCalendarDataFields;
+     * Setter for requiredFilingCalendarDataFields
+     *
      * A list of required fields to file
      */
-    public void setrequiredFilingCalendarDataFields(List<requiredFilingCalendarDataFieldModel> value) {;
-        this.requiredFilingCalendarDataFields = value;;
+    public void setRequiredFilingCalendarDataFields(requiredFilingCalendarDataFieldModel[] value) {
+        this.requiredFilingCalendarDataFields = value;
     }
 
 

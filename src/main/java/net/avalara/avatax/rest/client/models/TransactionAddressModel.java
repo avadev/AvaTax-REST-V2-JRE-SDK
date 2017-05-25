@@ -30,250 +30,276 @@ import java.util.HashMap;
 public class TransactionAddressModel {
 
 
-    private Int64? id;
+    private Long id;
 
     /**
-     * Getter for id;
+     * Getter for id
+     *
      * The unique ID number of this address.
      */
-    public Int64? getid() {;
-        return this.id;;
+    public Long getId() {
+        return this.id;
     }
 
     /**
-     * Setter for id;
+     * Setter for id
+     *
      * The unique ID number of this address.
      */
-    public void setid(Int64? value) {;
-        this.id = value;;
+    public void setId(Long value) {
+        this.id = value;
     }
 
 
-    private Int64? transactionId;
+    private Long transactionId;
 
     /**
-     * Getter for transactionId;
+     * Getter for transactionId
+     *
      * The unique ID number of the document to which this address belongs.
      */
-    public Int64? gettransactionId() {;
-        return this.transactionId;;
+    public Long getTransactionId() {
+        return this.transactionId;
     }
 
     /**
-     * Setter for transactionId;
+     * Setter for transactionId
+     *
      * The unique ID number of the document to which this address belongs.
      */
-    public void settransactionId(Int64? value) {;
-        this.transactionId = value;;
+    public void setTransactionId(Long value) {
+        this.transactionId = value;
     }
 
 
-    private BoundaryLevel? boundaryLevel;
+    private BoundaryLevel boundaryLevel;
 
     /**
-     * Getter for boundaryLevel;
+     * Getter for boundaryLevel
+     *
      * The boundary level at which this address was validated.
      */
-    public BoundaryLevel? getboundaryLevel() {;
-        return this.boundaryLevel;;
+    public BoundaryLevel getBoundaryLevel() {
+        return this.boundaryLevel;
     }
 
     /**
-     * Setter for boundaryLevel;
+     * Setter for boundaryLevel
+     *
      * The boundary level at which this address was validated.
      */
-    public void setboundaryLevel(BoundaryLevel? value) {;
-        this.boundaryLevel = value;;
+    public void setBoundaryLevel(BoundaryLevel value) {
+        this.boundaryLevel = value;
     }
 
 
-    private String line1;
+    private string line1;
 
     /**
-     * Getter for line1;
+     * Getter for line1
+     *
      * The first line of the address.
      */
-    public String getline1() {;
-        return this.line1;;
+    public string getLine1() {
+        return this.line1;
     }
 
     /**
-     * Setter for line1;
+     * Setter for line1
+     *
      * The first line of the address.
      */
-    public void setline1(String value) {;
-        this.line1 = value;;
+    public void setLine1(string value) {
+        this.line1 = value;
     }
 
 
-    private String line2;
+    private string line2;
 
     /**
-     * Getter for line2;
+     * Getter for line2
+     *
      * The second line of the address.
      */
-    public String getline2() {;
-        return this.line2;;
+    public string getLine2() {
+        return this.line2;
     }
 
     /**
-     * Setter for line2;
+     * Setter for line2
+     *
      * The second line of the address.
      */
-    public void setline2(String value) {;
-        this.line2 = value;;
+    public void setLine2(string value) {
+        this.line2 = value;
     }
 
 
-    private String line3;
+    private string line3;
 
     /**
-     * Getter for line3;
+     * Getter for line3
+     *
      * The third line of the address.
      */
-    public String getline3() {;
-        return this.line3;;
+    public string getLine3() {
+        return this.line3;
     }
 
     /**
-     * Setter for line3;
+     * Setter for line3
+     *
      * The third line of the address.
      */
-    public void setline3(String value) {;
-        this.line3 = value;;
+    public void setLine3(string value) {
+        this.line3 = value;
     }
 
 
-    private String city;
+    private string city;
 
     /**
-     * Getter for city;
+     * Getter for city
+     *
      * The city for the address.
      */
-    public String getcity() {;
-        return this.city;;
+    public string getCity() {
+        return this.city;
     }
 
     /**
-     * Setter for city;
+     * Setter for city
+     *
      * The city for the address.
      */
-    public void setcity(String value) {;
-        this.city = value;;
+    public void setCity(string value) {
+        this.city = value;
     }
 
 
-    private String region;
+    private string region;
 
     /**
-     * Getter for region;
+     * Getter for region
+     *
      * The region, state, or province for the address.
      */
-    public String getregion() {;
-        return this.region;;
+    public string getRegion() {
+        return this.region;
     }
 
     /**
-     * Setter for region;
+     * Setter for region
+     *
      * The region, state, or province for the address.
      */
-    public void setregion(String value) {;
-        this.region = value;;
+    public void setRegion(string value) {
+        this.region = value;
     }
 
 
-    private String postalCode;
+    private string postalCode;
 
     /**
-     * Getter for postalCode;
+     * Getter for postalCode
+     *
      * The postal code or zip code for the address.
      */
-    public String getpostalCode() {;
-        return this.postalCode;;
+    public string getPostalCode() {
+        return this.postalCode;
     }
 
     /**
-     * Setter for postalCode;
+     * Setter for postalCode
+     *
      * The postal code or zip code for the address.
      */
-    public void setpostalCode(String value) {;
-        this.postalCode = value;;
+    public void setPostalCode(string value) {
+        this.postalCode = value;
     }
 
 
-    private String country;
+    private string country;
 
     /**
-     * Getter for country;
+     * Getter for country
+     *
      * The country for the address.
      */
-    public String getcountry() {;
-        return this.country;;
+    public string getCountry() {
+        return this.country;
     }
 
     /**
-     * Setter for country;
+     * Setter for country
+     *
      * The country for the address.
      */
-    public void setcountry(String value) {;
-        this.country = value;;
+    public void setCountry(string value) {
+        this.country = value;
     }
 
 
-    private Int32? taxRegionId;
+    private Integer taxRegionId;
 
     /**
-     * Getter for taxRegionId;
+     * Getter for taxRegionId
+     *
      * The unique ID number of the tax region for this address.
      */
-    public Int32? gettaxRegionId() {;
-        return this.taxRegionId;;
+    public Integer getTaxRegionId() {
+        return this.taxRegionId;
     }
 
     /**
-     * Setter for taxRegionId;
+     * Setter for taxRegionId
+     *
      * The unique ID number of the tax region for this address.
      */
-    public void settaxRegionId(Int32? value) {;
-        this.taxRegionId = value;;
+    public void setTaxRegionId(Integer value) {
+        this.taxRegionId = value;
     }
 
 
-    private String latitude;
+    private string latitude;
 
     /**
-     * Getter for latitude;
+     * Getter for latitude
+     *
      * Latitude for this address (CALC - 13394)
      */
-    public String getlatitude() {;
-        return this.latitude;;
+    public string getLatitude() {
+        return this.latitude;
     }
 
     /**
-     * Setter for latitude;
+     * Setter for latitude
+     *
      * Latitude for this address (CALC - 13394)
      */
-    public void setlatitude(String value) {;
-        this.latitude = value;;
+    public void setLatitude(string value) {
+        this.latitude = value;
     }
 
 
-    private String longitude;
+    private string longitude;
 
     /**
-     * Getter for longitude;
+     * Getter for longitude
+     *
      * Longitude for this address (CALC - 13394)
      */
-    public String getlongitude() {;
-        return this.longitude;;
+    public string getLongitude() {
+        return this.longitude;
     }
 
     /**
-     * Setter for longitude;
+     * Setter for longitude
+     *
      * Longitude for this address (CALC - 13394)
      */
-    public void setlongitude(String value) {;
-        this.longitude = value;;
+    public void setLongitude(string value) {
+        this.longitude = value;
     }
 
 

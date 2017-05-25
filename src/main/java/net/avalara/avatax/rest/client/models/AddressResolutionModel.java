@@ -33,114 +33,126 @@ public class AddressResolutionModel {
     private AddressInfo address;
 
     /**
-     * Getter for address;
+     * Getter for address
+     *
      * The original address
      */
-    public AddressInfo getaddress() {;
-        return this.address;;
+    public AddressInfo getAddress() {
+        return this.address;
     }
 
     /**
-     * Setter for address;
+     * Setter for address
+     *
      * The original address
      */
-    public void setaddress(AddressInfo value) {;
-        this.address = value;;
+    public void setAddress(AddressInfo value) {
+        this.address = value;
     }
 
 
-    private List<ValidatedAddressInfo> validatedAddresses;
+    private ValidatedAddressInfo[] validatedAddresses;
 
     /**
-     * Getter for validatedAddresses;
+     * Getter for validatedAddresses
+     *
      * The validated address or addresses
      */
-    public List<ValidatedAddressInfo> getvalidatedAddresses() {;
-        return this.validatedAddresses;;
+    public ValidatedAddressInfo[] getValidatedAddresses() {
+        return this.validatedAddresses;
     }
 
     /**
-     * Setter for validatedAddresses;
+     * Setter for validatedAddresses
+     *
      * The validated address or addresses
      */
-    public void setvalidatedAddresses(List<ValidatedAddressInfo> value) {;
-        this.validatedAddresses = value;;
+    public void setValidatedAddresses(ValidatedAddressInfo[] value) {
+        this.validatedAddresses = value;
     }
 
 
     private CoordinateInfo coordinates;
 
     /**
-     * Getter for coordinates;
+     * Getter for coordinates
+     *
      * The geospatial coordinates of this address
      */
-    public CoordinateInfo getcoordinates() {;
-        return this.coordinates;;
+    public CoordinateInfo getCoordinates() {
+        return this.coordinates;
     }
 
     /**
-     * Setter for coordinates;
+     * Setter for coordinates
+     *
      * The geospatial coordinates of this address
      */
-    public void setcoordinates(CoordinateInfo value) {;
-        this.coordinates = value;;
+    public void setCoordinates(CoordinateInfo value) {
+        this.coordinates = value;
     }
 
 
-    private ResolutionQuality? resolutionQuality;
+    private ResolutionQuality resolutionQuality;
 
     /**
-     * Getter for resolutionQuality;
+     * Getter for resolutionQuality
+     *
      * The resolution quality of the geospatial coordinates
      */
-    public ResolutionQuality? getresolutionQuality() {;
-        return this.resolutionQuality;;
+    public ResolutionQuality getResolutionQuality() {
+        return this.resolutionQuality;
     }
 
     /**
-     * Setter for resolutionQuality;
+     * Setter for resolutionQuality
+     *
      * The resolution quality of the geospatial coordinates
      */
-    public void setresolutionQuality(ResolutionQuality? value) {;
-        this.resolutionQuality = value;;
+    public void setResolutionQuality(ResolutionQuality value) {
+        this.resolutionQuality = value;
     }
 
 
-    private List<TaxAuthorityInfo> taxAuthorities;
+    private TaxAuthorityInfo[] taxAuthorities;
 
     /**
-     * Getter for taxAuthorities;
+     * Getter for taxAuthorities
+     *
      * List of informational and warning messages regarding this address
      */
-    public List<TaxAuthorityInfo> gettaxAuthorities() {;
-        return this.taxAuthorities;;
+    public TaxAuthorityInfo[] getTaxAuthorities() {
+        return this.taxAuthorities;
     }
 
     /**
-     * Setter for taxAuthorities;
+     * Setter for taxAuthorities
+     *
      * List of informational and warning messages regarding this address
      */
-    public void settaxAuthorities(List<TaxAuthorityInfo> value) {;
-        this.taxAuthorities = value;;
+    public void setTaxAuthorities(TaxAuthorityInfo[] value) {
+        this.taxAuthorities = value;
     }
 
 
-    private List<AvaTaxMessage> messages;
+    private AvaTaxMessage[] messages;
 
     /**
-     * Getter for messages;
+     * Getter for messages
+     *
      * List of informational and warning messages regarding this address
      */
-    public List<AvaTaxMessage> getmessages() {;
-        return this.messages;;
+    public AvaTaxMessage[] getMessages() {
+        return this.messages;
     }
 
     /**
-     * Setter for messages;
+     * Setter for messages
+     *
      * List of informational and warning messages regarding this address
      */
-    public void setmessages(List<AvaTaxMessage> value) {;
-        this.messages = value;;
+    public void setMessages(AvaTaxMessage[] value) {
+        this.messages = value;
     }
 
 

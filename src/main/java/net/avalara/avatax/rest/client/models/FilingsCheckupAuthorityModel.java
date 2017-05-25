@@ -30,155 +30,171 @@ import java.util.HashMap;
 public class FilingsCheckupAuthorityModel {
 
 
-    private Int32? taxAuthorityId;
+    private Integer taxAuthorityId;
 
     /**
-     * Getter for taxAuthorityId;
+     * Getter for taxAuthorityId
+     *
      * Unique ID of the tax authority
      */
-    public Int32? gettaxAuthorityId() {;
-        return this.taxAuthorityId;;
+    public Integer getTaxAuthorityId() {
+        return this.taxAuthorityId;
     }
 
     /**
-     * Setter for taxAuthorityId;
+     * Setter for taxAuthorityId
+     *
      * Unique ID of the tax authority
      */
-    public void settaxAuthorityId(Int32? value) {;
-        this.taxAuthorityId = value;;
+    public void setTaxAuthorityId(Integer value) {
+        this.taxAuthorityId = value;
     }
 
 
-    private String locationCode;
+    private string locationCode;
 
     /**
-     * Getter for locationCode;
+     * Getter for locationCode
+     *
      * Location Code of the tax authority
      */
-    public String getlocationCode() {;
-        return this.locationCode;;
+    public string getLocationCode() {
+        return this.locationCode;
     }
 
     /**
-     * Setter for locationCode;
+     * Setter for locationCode
+     *
      * Location Code of the tax authority
      */
-    public void setlocationCode(String value) {;
-        this.locationCode = value;;
+    public void setLocationCode(string value) {
+        this.locationCode = value;
     }
 
 
-    private String taxAuthorityName;
+    private string taxAuthorityName;
 
     /**
-     * Getter for taxAuthorityName;
+     * Getter for taxAuthorityName
+     *
      * Name of the tax authority
      */
-    public String gettaxAuthorityName() {;
-        return this.taxAuthorityName;;
+    public string getTaxAuthorityName() {
+        return this.taxAuthorityName;
     }
 
     /**
-     * Setter for taxAuthorityName;
+     * Setter for taxAuthorityName
+     *
      * Name of the tax authority
      */
-    public void settaxAuthorityName(String value) {;
-        this.taxAuthorityName = value;;
+    public void setTaxAuthorityName(string value) {
+        this.taxAuthorityName = value;
     }
 
 
-    private Int32? taxAuthorityTypeId;
+    private Integer taxAuthorityTypeId;
 
     /**
-     * Getter for taxAuthorityTypeId;
+     * Getter for taxAuthorityTypeId
+     *
      * Type Id of the tax authority
      */
-    public Int32? gettaxAuthorityTypeId() {;
-        return this.taxAuthorityTypeId;;
+    public Integer getTaxAuthorityTypeId() {
+        return this.taxAuthorityTypeId;
     }
 
     /**
-     * Setter for taxAuthorityTypeId;
+     * Setter for taxAuthorityTypeId
+     *
      * Type Id of the tax authority
      */
-    public void settaxAuthorityTypeId(Int32? value) {;
-        this.taxAuthorityTypeId = value;;
+    public void setTaxAuthorityTypeId(Integer value) {
+        this.taxAuthorityTypeId = value;
     }
 
 
-    private Int32? jurisdictionId;
+    private Integer jurisdictionId;
 
     /**
-     * Getter for jurisdictionId;
+     * Getter for jurisdictionId
+     *
      * Jurisdiction Id of the tax authority
      */
-    public Int32? getjurisdictionId() {;
-        return this.jurisdictionId;;
+    public Integer getJurisdictionId() {
+        return this.jurisdictionId;
     }
 
     /**
-     * Setter for jurisdictionId;
+     * Setter for jurisdictionId
+     *
      * Jurisdiction Id of the tax authority
      */
-    public void setjurisdictionId(Int32? value) {;
-        this.jurisdictionId = value;;
+    public void setJurisdictionId(Integer value) {
+        this.jurisdictionId = value;
     }
 
 
-    private Decimal? tax;
+    private Decimal tax;
 
     /**
-     * Getter for tax;
+     * Getter for tax
+     *
      * Amount of tax collected in this tax authority
      */
-    public Decimal? gettax() {;
-        return this.tax;;
+    public Decimal getTax() {
+        return this.tax;
     }
 
     /**
-     * Setter for tax;
+     * Setter for tax
+     *
      * Amount of tax collected in this tax authority
      */
-    public void settax(Decimal? value) {;
-        this.tax = value;;
+    public void setTax(Decimal value) {
+        this.tax = value;
     }
 
 
-    private String taxTypeId;
+    private string taxTypeId;
 
     /**
-     * Getter for taxTypeId;
+     * Getter for taxTypeId
+     *
      * Tax Type collected in the tax authority
      */
-    public String gettaxTypeId() {;
-        return this.taxTypeId;;
+    public string getTaxTypeId() {
+        return this.taxTypeId;
     }
 
     /**
-     * Setter for taxTypeId;
+     * Setter for taxTypeId
+     *
      * Tax Type collected in the tax authority
      */
-    public void settaxTypeId(String value) {;
-        this.taxTypeId = value;;
+    public void setTaxTypeId(string value) {
+        this.taxTypeId = value;
     }
 
 
-    private List<FilingsCheckupSuggestedFormModel> suggestedForms;
+    private FilingsCheckupSuggestedFormModel[] suggestedForms;
 
     /**
-     * Getter for suggestedForms;
+     * Getter for suggestedForms
+     *
      * Suggested forms to file due to tax collected
      */
-    public List<FilingsCheckupSuggestedFormModel> getsuggestedForms() {;
-        return this.suggestedForms;;
+    public FilingsCheckupSuggestedFormModel[] getSuggestedForms() {
+        return this.suggestedForms;
     }
 
     /**
-     * Setter for suggestedForms;
+     * Setter for suggestedForms
+     *
      * Suggested forms to file due to tax collected
      */
-    public void setsuggestedForms(List<FilingsCheckupSuggestedFormModel> value) {;
-        this.suggestedForms = value;;
+    public void setSuggestedForms(FilingsCheckupSuggestedFormModel[] value) {
+        this.suggestedForms = value;
     }
 
 

@@ -30,345 +30,381 @@ import java.util.HashMap;
 public class TransactionSummary {
 
 
-    private String country;
+    private string country;
 
     /**
-     * Getter for country;
+     * Getter for country
+     *
      * Two character ISO-3166 country code.
      */
-    public String getcountry() {;
-        return this.country;;
+    public string getCountry() {
+        return this.country;
     }
 
     /**
-     * Setter for country;
+     * Setter for country
+     *
      * Two character ISO-3166 country code.
      */
-    public void setcountry(String value) {;
-        this.country = value;;
+    public void setCountry(string value) {
+        this.country = value;
     }
 
 
-    private String region;
+    private string region;
 
     /**
-     * Getter for region;
+     * Getter for region
+     *
      * Two or three character ISO region, state or province code, if applicable.
      */
-    public String getregion() {;
-        return this.region;;
+    public string getRegion() {
+        return this.region;
     }
 
     /**
-     * Setter for region;
+     * Setter for region
+     *
      * Two or three character ISO region, state or province code, if applicable.
      */
-    public void setregion(String value) {;
-        this.region = value;;
+    public void setRegion(string value) {
+        this.region = value;
     }
 
 
-    private JurisdictionType? jurisType;
+    private JurisdictionType jurisType;
 
     /**
-     * Getter for jurisType;
+     * Getter for jurisType
+     *
      * The type of jurisdiction that collects this tax.
      */
-    public JurisdictionType? getjurisType() {;
-        return this.jurisType;;
+    public JurisdictionType getJurisType() {
+        return this.jurisType;
     }
 
     /**
-     * Setter for jurisType;
+     * Setter for jurisType
+     *
      * The type of jurisdiction that collects this tax.
      */
-    public void setjurisType(JurisdictionType? value) {;
-        this.jurisType = value;;
+    public void setJurisType(JurisdictionType value) {
+        this.jurisType = value;
     }
 
 
-    private String jurisCode;
+    private string jurisCode;
 
     /**
-     * Getter for jurisCode;
+     * Getter for jurisCode
+     *
      * Jurisdiction Code for the taxing jurisdiction
      */
-    public String getjurisCode() {;
-        return this.jurisCode;;
+    public string getJurisCode() {
+        return this.jurisCode;
     }
 
     /**
-     * Setter for jurisCode;
+     * Setter for jurisCode
+     *
      * Jurisdiction Code for the taxing jurisdiction
      */
-    public void setjurisCode(String value) {;
-        this.jurisCode = value;;
+    public void setJurisCode(string value) {
+        this.jurisCode = value;
     }
 
 
-    private String jurisName;
+    private string jurisName;
 
     /**
-     * Getter for jurisName;
+     * Getter for jurisName
+     *
      * The name of the jurisdiction that collects this tax.
      */
-    public String getjurisName() {;
-        return this.jurisName;;
+    public string getJurisName() {
+        return this.jurisName;
     }
 
     /**
-     * Setter for jurisName;
+     * Setter for jurisName
+     *
      * The name of the jurisdiction that collects this tax.
      */
-    public void setjurisName(String value) {;
-        this.jurisName = value;;
+    public void setJurisName(string value) {
+        this.jurisName = value;
     }
 
 
-    private Int32? taxAuthorityType;
+    private Integer taxAuthorityType;
 
     /**
-     * Getter for taxAuthorityType;
+     * Getter for taxAuthorityType
+     *
      * The unique ID of the Tax Authority Type that collects this tax.
      */
-    public Int32? gettaxAuthorityType() {;
-        return this.taxAuthorityType;;
+    public Integer getTaxAuthorityType() {
+        return this.taxAuthorityType;
     }
 
     /**
-     * Setter for taxAuthorityType;
+     * Setter for taxAuthorityType
+     *
      * The unique ID of the Tax Authority Type that collects this tax.
      */
-    public void settaxAuthorityType(Int32? value) {;
-        this.taxAuthorityType = value;;
+    public void setTaxAuthorityType(Integer value) {
+        this.taxAuthorityType = value;
     }
 
 
-    private String stateAssignedNo;
+    private string stateAssignedNo;
 
     /**
-     * Getter for stateAssignedNo;
+     * Getter for stateAssignedNo
+     *
      * The state assigned number of the jurisdiction that collects this tax.
      */
-    public String getstateAssignedNo() {;
-        return this.stateAssignedNo;;
+    public string getStateAssignedNo() {
+        return this.stateAssignedNo;
     }
 
     /**
-     * Setter for stateAssignedNo;
+     * Setter for stateAssignedNo
+     *
      * The state assigned number of the jurisdiction that collects this tax.
      */
-    public void setstateAssignedNo(String value) {;
-        this.stateAssignedNo = value;;
+    public void setStateAssignedNo(string value) {
+        this.stateAssignedNo = value;
     }
 
 
-    private TaxType? taxType;
+    private TaxType taxType;
 
     /**
-     * Getter for taxType;
+     * Getter for taxType
+     *
      * The tax type of this tax.
      */
-    public TaxType? gettaxType() {;
-        return this.taxType;;
+    public TaxType getTaxType() {
+        return this.taxType;
     }
 
     /**
-     * Setter for taxType;
+     * Setter for taxType
+     *
      * The tax type of this tax.
      */
-    public void settaxType(TaxType? value) {;
-        this.taxType = value;;
+    public void setTaxType(TaxType value) {
+        this.taxType = value;
     }
 
 
-    private String taxName;
+    private string taxName;
 
     /**
-     * Getter for taxName;
+     * Getter for taxName
+     *
      * The name of the tax.
      */
-    public String gettaxName() {;
-        return this.taxName;;
+    public string getTaxName() {
+        return this.taxName;
     }
 
     /**
-     * Setter for taxName;
+     * Setter for taxName
+     *
      * The name of the tax.
      */
-    public void settaxName(String value) {;
-        this.taxName = value;;
+    public void setTaxName(string value) {
+        this.taxName = value;
     }
 
 
-    private String taxGroup;
+    private string taxGroup;
 
     /**
-     * Getter for taxGroup;
+     * Getter for taxGroup
+     *
      * Group code when special grouping is enabled.
      */
-    public String gettaxGroup() {;
-        return this.taxGroup;;
+    public string getTaxGroup() {
+        return this.taxGroup;
     }
 
     /**
-     * Setter for taxGroup;
+     * Setter for taxGroup
+     *
      * Group code when special grouping is enabled.
      */
-    public void settaxGroup(String value) {;
-        this.taxGroup = value;;
+    public void setTaxGroup(string value) {
+        this.taxGroup = value;
     }
 
 
-    private RateType? rateType;
+    private RateType rateType;
 
     /**
-     * Getter for rateType;
+     * Getter for rateType
+     *
      * (DEPRECATED) Indicates the tax rate type. Please use rateTypeCode instead.
      */
-    public RateType? getrateType() {;
-        return this.rateType;;
+    public RateType getRateType() {
+        return this.rateType;
     }
 
     /**
-     * Setter for rateType;
+     * Setter for rateType
+     *
      * (DEPRECATED) Indicates the tax rate type. Please use rateTypeCode instead.
      */
-    public void setrateType(RateType? value) {;
-        this.rateType = value;;
+    public void setRateType(RateType value) {
+        this.rateType = value;
     }
 
 
-    private String rateTypeCode;
+    private string rateTypeCode;
 
     /**
-     * Getter for rateTypeCode;
+     * Getter for rateTypeCode
+     *
      * Indicates the code of the rate type. Use `/api/v2/definitions/ratetypes` for a full list of rate type codes.
      */
-    public String getrateTypeCode() {;
-        return this.rateTypeCode;;
+    public string getRateTypeCode() {
+        return this.rateTypeCode;
     }
 
     /**
-     * Setter for rateTypeCode;
+     * Setter for rateTypeCode
+     *
      * Indicates the code of the rate type. Use `/api/v2/definitions/ratetypes` for a full list of rate type codes.
      */
-    public void setrateTypeCode(String value) {;
-        this.rateTypeCode = value;;
+    public void setRateTypeCode(string value) {
+        this.rateTypeCode = value;
     }
 
 
-    private Decimal? taxable;
+    private Decimal taxable;
 
     /**
-     * Getter for taxable;
+     * Getter for taxable
+     *
      * Tax Base - The adjusted taxable amount.
      */
-    public Decimal? gettaxable() {;
-        return this.taxable;;
+    public Decimal getTaxable() {
+        return this.taxable;
     }
 
     /**
-     * Setter for taxable;
+     * Setter for taxable
+     *
      * Tax Base - The adjusted taxable amount.
      */
-    public void settaxable(Decimal? value) {;
-        this.taxable = value;;
+    public void setTaxable(Decimal value) {
+        this.taxable = value;
     }
 
 
-    private Decimal? rate;
+    private Decimal rate;
 
     /**
-     * Getter for rate;
+     * Getter for rate
+     *
      * Tax Rate - The rate of taxation, as a fraction of the amount.
      */
-    public Decimal? getrate() {;
-        return this.rate;;
+    public Decimal getRate() {
+        return this.rate;
     }
 
     /**
-     * Setter for rate;
+     * Setter for rate
+     *
      * Tax Rate - The rate of taxation, as a fraction of the amount.
      */
-    public void setrate(Decimal? value) {;
-        this.rate = value;;
+    public void setRate(Decimal value) {
+        this.rate = value;
     }
 
 
-    private Decimal? tax;
+    private Decimal tax;
 
     /**
-     * Getter for tax;
+     * Getter for tax
+     *
      * Tax amount - The calculated tax (Base * Rate).
      */
-    public Decimal? gettax() {;
-        return this.tax;;
+    public Decimal getTax() {
+        return this.tax;
     }
 
     /**
-     * Setter for tax;
+     * Setter for tax
+     *
      * Tax amount - The calculated tax (Base * Rate).
      */
-    public void settax(Decimal? value) {;
-        this.tax = value;;
+    public void setTax(Decimal value) {
+        this.tax = value;
     }
 
 
-    private Decimal? taxCalculated;
+    private Decimal taxCalculated;
 
     /**
-     * Getter for taxCalculated;
+     * Getter for taxCalculated
+     *
      * Tax Calculated by Avalara AvaTax. This may be overriden by a TaxOverride.TaxAmount.
      */
-    public Decimal? gettaxCalculated() {;
-        return this.taxCalculated;;
+    public Decimal getTaxCalculated() {
+        return this.taxCalculated;
     }
 
     /**
-     * Setter for taxCalculated;
+     * Setter for taxCalculated
+     *
      * Tax Calculated by Avalara AvaTax. This may be overriden by a TaxOverride.TaxAmount.
      */
-    public void settaxCalculated(Decimal? value) {;
-        this.taxCalculated = value;;
+    public void setTaxCalculated(Decimal value) {
+        this.taxCalculated = value;
     }
 
 
-    private Decimal? nonTaxable;
+    private Decimal nonTaxable;
 
     /**
-     * Getter for nonTaxable;
+     * Getter for nonTaxable
+     *
      * The amount of the transaction that was non-taxable.
      */
-    public Decimal? getnonTaxable() {;
-        return this.nonTaxable;;
+    public Decimal getNonTaxable() {
+        return this.nonTaxable;
     }
 
     /**
-     * Setter for nonTaxable;
+     * Setter for nonTaxable
+     *
      * The amount of the transaction that was non-taxable.
      */
-    public void setnonTaxable(Decimal? value) {;
-        this.nonTaxable = value;;
+    public void setNonTaxable(Decimal value) {
+        this.nonTaxable = value;
     }
 
 
-    private Decimal? exemption;
+    private Decimal exemption;
 
     /**
-     * Getter for exemption;
+     * Getter for exemption
+     *
      * The amount of the transaction that was exempt.
      */
-    public Decimal? getexemption() {;
-        return this.exemption;;
+    public Decimal getExemption() {
+        return this.exemption;
     }
 
     /**
-     * Setter for exemption;
+     * Setter for exemption
+     *
      * The amount of the transaction that was exempt.
      */
-    public void setexemption(Decimal? value) {;
-        this.exemption = value;;
+    public void setExemption(Decimal value) {
+        this.exemption = value;
     }
 
 

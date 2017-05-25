@@ -30,79 +30,87 @@ import java.util.HashMap;
 public class NoticeTypeModel {
 
 
-    private Int32 id;
+    private int id;
 
     /**
-     * Getter for id;
+     * Getter for id
+     *
      * The unique ID number of this tax notice customer type.
      */
-    public Int32 getid() {;
-        return this.id;;
+    public int getId() {
+        return this.id;
     }
 
     /**
-     * Setter for id;
+     * Setter for id
+     *
      * The unique ID number of this tax notice customer type.
      */
-    public void setid(Int32 value) {;
-        this.id = value;;
+    public void setId(int value) {
+        this.id = value;
     }
 
 
-    private String description;
+    private string description;
 
     /**
-     * Getter for description;
+     * Getter for description
+     *
      * The description name of this tax authority type.
      */
-    public String getdescription() {;
-        return this.description;;
+    public string getDescription() {
+        return this.description;
     }
 
     /**
-     * Setter for description;
+     * Setter for description
+     *
      * The description name of this tax authority type.
      */
-    public void setdescription(String value) {;
-        this.description = value;;
+    public void setDescription(string value) {
+        this.description = value;
     }
 
 
-    private Boolean? activeFlag;
+    private object activeFlag;
 
     /**
-     * Getter for activeFlag;
+     * Getter for activeFlag
+     *
      * A flag if the type is active
      */
-    public Boolean? getactiveFlag() {;
-        return this.activeFlag;;
+    public object getActiveFlag() {
+        return this.activeFlag;
     }
 
     /**
-     * Setter for activeFlag;
+     * Setter for activeFlag
+     *
      * A flag if the type is active
      */
-    public void setactiveFlag(Boolean? value) {;
-        this.activeFlag = value;;
+    public void setActiveFlag(object value) {
+        this.activeFlag = value;
     }
 
 
-    private Int32? sortOrder;
+    private Integer sortOrder;
 
     /**
-     * Getter for sortOrder;
+     * Getter for sortOrder
+     *
      * sort order of the types
      */
-    public Int32? getsortOrder() {;
-        return this.sortOrder;;
+    public Integer getSortOrder() {
+        return this.sortOrder;
     }
 
     /**
-     * Setter for sortOrder;
+     * Setter for sortOrder
+     *
      * sort order of the types
      */
-    public void setsortOrder(Int32? value) {;
-        this.sortOrder = value;;
+    public void setSortOrder(Integer value) {
+        this.sortOrder = value;
     }
 
 

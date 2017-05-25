@@ -30,66 +30,72 @@ import java.util.HashMap;
 public class LicenseKeyModel {
 
 
-    private Int32? accountId;
+    private Integer accountId;
 
     /**
-     * Getter for accountId;
+     * Getter for accountId
+     *
      * The primary key of the account
      */
-    public Int32? getaccountId() {;
-        return this.accountId;;
+    public Integer getAccountId() {
+        return this.accountId;
     }
 
     /**
-     * Setter for accountId;
+     * Setter for accountId
+     *
      * The primary key of the account
      */
-    public void setaccountId(Int32? value) {;
-        this.accountId = value;;
+    public void setAccountId(Integer value) {
+        this.accountId = value;
     }
 
 
-    private String privateLicenseKey;
+    private string privateLicenseKey;
 
     /**
-     * Getter for privateLicenseKey;
+     * Getter for privateLicenseKey
+     *
      * This is your private license key. You must record this license key for safekeeping.
     * If you lose this key, you must contact the ResetLicenseKey API in order to request a new one.
     * Each account can only have one license key at a time.
      */
-    public String getprivateLicenseKey() {;
-        return this.privateLicenseKey;;
+    public string getPrivateLicenseKey() {
+        return this.privateLicenseKey;
     }
 
     /**
-     * Setter for privateLicenseKey;
+     * Setter for privateLicenseKey
+     *
      * This is your private license key. You must record this license key for safekeeping.
     * If you lose this key, you must contact the ResetLicenseKey API in order to request a new one.
     * Each account can only have one license key at a time.
      */
-    public void setprivateLicenseKey(String value) {;
-        this.privateLicenseKey = value;;
+    public void setPrivateLicenseKey(string value) {
+        this.privateLicenseKey = value;
     }
 
 
-    private String httpRequestHeader;
+    private string httpRequestHeader;
 
     /**
-     * Getter for httpRequestHeader;
+     * Getter for httpRequestHeader
+     *
      * If your software allows you to specify the HTTP Authorization header directly, this is the header string you 
     * should use when contacting Avalara to make API calls with this license key.
      */
-    public String gethttpRequestHeader() {;
-        return this.httpRequestHeader;;
+    public string getHttpRequestHeader() {
+        return this.httpRequestHeader;
     }
 
     /**
-     * Setter for httpRequestHeader;
+     * Setter for httpRequestHeader
+     *
      * If your software allows you to specify the HTTP Authorization header directly, this is the header string you 
     * should use when contacting Avalara to make API calls with this license key.
      */
-    public void sethttpRequestHeader(String value) {;
-        this.httpRequestHeader = value;;
+    public void setHttpRequestHeader(string value) {
+        this.httpRequestHeader = value;
     }
 
 

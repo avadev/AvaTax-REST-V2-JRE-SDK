@@ -30,41 +30,45 @@ import java.util.HashMap;
 public class ResourceFileTypeModel {
 
 
-    private Int32? resourceFileTypeId;
+    private Integer resourceFileTypeId;
 
     /**
-     * Getter for resourceFileTypeId;
+     * Getter for resourceFileTypeId
+     *
      * The resource file type id
      */
-    public Int32? getresourceFileTypeId() {;
-        return this.resourceFileTypeId;;
+    public Integer getResourceFileTypeId() {
+        return this.resourceFileTypeId;
     }
 
     /**
-     * Setter for resourceFileTypeId;
+     * Setter for resourceFileTypeId
+     *
      * The resource file type id
      */
-    public void setresourceFileTypeId(Int32? value) {;
-        this.resourceFileTypeId = value;;
+    public void setResourceFileTypeId(Integer value) {
+        this.resourceFileTypeId = value;
     }
 
 
-    private String name;
+    private string name;
 
     /**
-     * Getter for name;
+     * Getter for name
+     *
      * The name of the file type
      */
-    public String getname() {;
-        return this.name;;
+    public string getName() {
+        return this.name;
     }
 
     /**
-     * Setter for name;
+     * Setter for name
+     *
      * The name of the file type
      */
-    public void setname(String value) {;
-        this.name = value;;
+    public void setName(string value) {
+        this.name = value;
     }
 
 

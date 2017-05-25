@@ -33,19 +33,21 @@ public class VoidTransactionModel {
     private VoidReasonCode code;
 
     /**
-     * Getter for code;
+     * Getter for code
+     *
      * Please specify the reason for voiding or cancelling this transaction
      */
-    public VoidReasonCode getcode() {;
-        return this.code;;
+    public VoidReasonCode getCode() {
+        return this.code;
     }
 
     /**
-     * Setter for code;
+     * Setter for code
+     *
      * Please specify the reason for voiding or cancelling this transaction
      */
-    public void setcode(VoidReasonCode value) {;
-        this.code = value;;
+    public void setCode(VoidReasonCode value) {
+        this.code = value;
     }
 
 

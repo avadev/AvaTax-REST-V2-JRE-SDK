@@ -30,41 +30,45 @@ import java.util.HashMap;
 public class TaxRateModel {
 
 
-    private Decimal? totalRate;
+    private Decimal totalRate;
 
     /**
-     * Getter for totalRate;
+     * Getter for totalRate
+     *
      * Total Rate
      */
-    public Decimal? gettotalRate() {;
-        return this.totalRate;;
+    public Decimal getTotalRate() {
+        return this.totalRate;
     }
 
     /**
-     * Setter for totalRate;
+     * Setter for totalRate
+     *
      * Total Rate
      */
-    public void settotalRate(Decimal? value) {;
-        this.totalRate = value;;
+    public void setTotalRate(Decimal value) {
+        this.totalRate = value;
     }
 
 
-    private List<RateModel> rates;
+    private RateModel[] rates;
 
     /**
-     * Getter for rates;
+     * Getter for rates
+     *
      * Rates
      */
-    public List<RateModel> getrates() {;
-        return this.rates;;
+    public RateModel[] getRates() {
+        return this.rates;
     }
 
     /**
-     * Setter for rates;
+     * Setter for rates
+     *
      * Rates
      */
-    public void setrates(List<RateModel> value) {;
-        this.rates = value;;
+    public void setRates(RateModel[] value) {
+        this.rates = value;
     }
 
 

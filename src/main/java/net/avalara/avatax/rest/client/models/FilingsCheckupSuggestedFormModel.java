@@ -30,98 +30,108 @@ import java.util.HashMap;
 public class FilingsCheckupSuggestedFormModel {
 
 
-    private Int32? taxAuthorityId;
+    private Integer taxAuthorityId;
 
     /**
-     * Getter for taxAuthorityId;
+     * Getter for taxAuthorityId
+     *
      * Tax Authority ID of the suggested form returned
      */
-    public Int32? gettaxAuthorityId() {;
-        return this.taxAuthorityId;;
+    public Integer getTaxAuthorityId() {
+        return this.taxAuthorityId;
     }
 
     /**
-     * Setter for taxAuthorityId;
+     * Setter for taxAuthorityId
+     *
      * Tax Authority ID of the suggested form returned
      */
-    public void settaxAuthorityId(Int32? value) {;
-        this.taxAuthorityId = value;;
+    public void setTaxAuthorityId(Integer value) {
+        this.taxAuthorityId = value;
     }
 
 
-    private String country;
+    private string country;
 
     /**
-     * Getter for country;
+     * Getter for country
+     *
      * Country of the suggested form returned
      */
-    public String getcountry() {;
-        return this.country;;
+    public string getCountry() {
+        return this.country;
     }
 
     /**
-     * Setter for country;
+     * Setter for country
+     *
      * Country of the suggested form returned
      */
-    public void setcountry(String value) {;
-        this.country = value;;
+    public void setCountry(string value) {
+        this.country = value;
     }
 
 
-    private String region;
+    private string region;
 
     /**
-     * Getter for region;
+     * Getter for region
+     *
      * Region of the suggested form returned
      */
-    public String getregion() {;
-        return this.region;;
+    public string getRegion() {
+        return this.region;
     }
 
     /**
-     * Setter for region;
+     * Setter for region
+     *
      * Region of the suggested form returned
      */
-    public void setregion(String value) {;
-        this.region = value;;
+    public void setRegion(string value) {
+        this.region = value;
     }
 
 
-    private String returnName;
+    private string returnName;
 
     /**
-     * Getter for returnName;
+     * Getter for returnName
+     *
      * 
      */
-    public String getreturnName() {;
-        return this.returnName;;
+    public string getReturnName() {
+        return this.returnName;
     }
 
     /**
-     * Setter for returnName;
+     * Setter for returnName
+     *
      * 
      */
-    public void setreturnName(String value) {;
-        this.returnName = value;;
+    public void setReturnName(string value) {
+        this.returnName = value;
     }
 
 
-    private String taxFormCode;
+    private string taxFormCode;
 
     /**
-     * Getter for taxFormCode;
+     * Getter for taxFormCode
+     *
      * Name of the suggested form returned
      */
-    public String gettaxFormCode() {;
-        return this.taxFormCode;;
+    public string getTaxFormCode() {
+        return this.taxFormCode;
     }
 
     /**
-     * Setter for taxFormCode;
+     * Setter for taxFormCode
+     *
      * Name of the suggested form returned
      */
-    public void settaxFormCode(String value) {;
-        this.taxFormCode = value;;
+    public void setTaxFormCode(string value) {
+        this.taxFormCode = value;
     }
 
 

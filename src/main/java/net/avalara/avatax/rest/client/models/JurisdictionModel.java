@@ -30,155 +30,171 @@ import java.util.HashMap;
 public class JurisdictionModel {
 
 
-    private String code;
+    private string code;
 
     /**
-     * Getter for code;
+     * Getter for code
+     *
      * The code that is used to identify this jurisdiction
      */
-    public String getcode() {;
-        return this.code;;
+    public string getCode() {
+        return this.code;
     }
 
     /**
-     * Setter for code;
+     * Setter for code
+     *
      * The code that is used to identify this jurisdiction
      */
-    public void setcode(String value) {;
-        this.code = value;;
+    public void setCode(string value) {
+        this.code = value;
     }
 
 
-    private String name;
+    private string name;
 
     /**
-     * Getter for name;
+     * Getter for name
+     *
      * The name of this jurisdiction
      */
-    public String getname() {;
-        return this.name;;
+    public string getName() {
+        return this.name;
     }
 
     /**
-     * Setter for name;
+     * Setter for name
+     *
      * The name of this jurisdiction
      */
-    public void setname(String value) {;
-        this.name = value;;
+    public void setName(string value) {
+        this.name = value;
     }
 
 
     private JurisdictionType type;
 
     /**
-     * Getter for type;
+     * Getter for type
+     *
      * The type of the jurisdiction, indicating whether it is a country, state/region, city, for example.
      */
-    public JurisdictionType gettype() {;
-        return this.type;;
+    public JurisdictionType getType() {
+        return this.type;
     }
 
     /**
-     * Setter for type;
+     * Setter for type
+     *
      * The type of the jurisdiction, indicating whether it is a country, state/region, city, for example.
      */
-    public void settype(JurisdictionType value) {;
-        this.type = value;;
+    public void setType(JurisdictionType value) {
+        this.type = value;
     }
 
 
-    private Decimal? rate;
+    private Decimal rate;
 
     /**
-     * Getter for rate;
+     * Getter for rate
+     *
      * The base rate of tax specific to this jurisdiction.
      */
-    public Decimal? getrate() {;
-        return this.rate;;
+    public Decimal getRate() {
+        return this.rate;
     }
 
     /**
-     * Setter for rate;
+     * Setter for rate
+     *
      * The base rate of tax specific to this jurisdiction.
      */
-    public void setrate(Decimal? value) {;
-        this.rate = value;;
+    public void setRate(Decimal value) {
+        this.rate = value;
     }
 
 
-    private Decimal? salesRate;
+    private Decimal salesRate;
 
     /**
-     * Getter for salesRate;
+     * Getter for salesRate
+     *
      * The "Sales" tax rate specific to this jurisdiction.
      */
-    public Decimal? getsalesRate() {;
-        return this.salesRate;;
+    public Decimal getSalesRate() {
+        return this.salesRate;
     }
 
     /**
-     * Setter for salesRate;
+     * Setter for salesRate
+     *
      * The "Sales" tax rate specific to this jurisdiction.
      */
-    public void setsalesRate(Decimal? value) {;
-        this.salesRate = value;;
+    public void setSalesRate(Decimal value) {
+        this.salesRate = value;
     }
 
 
-    private String signatureCode;
+    private string signatureCode;
 
     /**
-     * Getter for signatureCode;
+     * Getter for signatureCode
+     *
      * The Avalara-supplied signature code for this jurisdiction.
      */
-    public String getsignatureCode() {;
-        return this.signatureCode;;
+    public string getSignatureCode() {
+        return this.signatureCode;
     }
 
     /**
-     * Setter for signatureCode;
+     * Setter for signatureCode
+     *
      * The Avalara-supplied signature code for this jurisdiction.
      */
-    public void setsignatureCode(String value) {;
-        this.signatureCode = value;;
+    public void setSignatureCode(string value) {
+        this.signatureCode = value;
     }
 
 
-    private String region;
+    private string region;
 
     /**
-     * Getter for region;
+     * Getter for region
+     *
      * The state assigned code for this jurisdiction, if any.
      */
-    public String getregion() {;
-        return this.region;;
+    public string getRegion() {
+        return this.region;
     }
 
     /**
-     * Setter for region;
+     * Setter for region
+     *
      * The state assigned code for this jurisdiction, if any.
      */
-    public void setregion(String value) {;
-        this.region = value;;
+    public void setRegion(string value) {
+        this.region = value;
     }
 
 
-    private Decimal? useRate;
+    private Decimal useRate;
 
     /**
-     * Getter for useRate;
+     * Getter for useRate
+     *
      * The "Seller's Use" tax rate specific to this jurisdiction.
      */
-    public Decimal? getuseRate() {;
-        return this.useRate;;
+    public Decimal getUseRate() {
+        return this.useRate;
     }
 
     /**
-     * Setter for useRate;
+     * Setter for useRate
+     *
      * The "Seller's Use" tax rate specific to this jurisdiction.
      */
-    public void setuseRate(Decimal? value) {;
-        this.useRate = value;;
+    public void setUseRate(Decimal value) {
+        this.useRate = value;
     }
 
 

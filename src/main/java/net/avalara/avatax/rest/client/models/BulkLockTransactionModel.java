@@ -30,41 +30,45 @@ import java.util.HashMap;
 public class BulkLockTransactionModel {
 
 
-    private List<Int64> documentIds;
+    private long[] documentIds;
 
     /**
-     * Getter for documentIds;
+     * Getter for documentIds
+     *
      * List of documents to lock
      */
-    public List<Int64> getdocumentIds() {;
-        return this.documentIds;;
+    public long[] getDocumentIds() {
+        return this.documentIds;
     }
 
     /**
-     * Setter for documentIds;
+     * Setter for documentIds
+     *
      * List of documents to lock
      */
-    public void setdocumentIds(List<Int64> value) {;
-        this.documentIds = value;;
+    public void setDocumentIds(long[] value) {
+        this.documentIds = value;
     }
 
 
-    private Boolean isLocked;
+    private boolean isLocked;
 
     /**
-     * Getter for isLocked;
+     * Getter for isLocked
+     *
      * The lock status to set for the documents designated in this API
      */
-    public Boolean getisLocked() {;
-        return this.isLocked;;
+    public boolean getIsLocked() {
+        return this.isLocked;
     }
 
     /**
-     * Setter for isLocked;
+     * Setter for isLocked
+     *
      * The lock status to set for the documents designated in this API
      */
-    public void setisLocked(Boolean value) {;
-        this.isLocked = value;;
+    public void setIsLocked(boolean value) {
+        this.isLocked = value;
     }
 
 

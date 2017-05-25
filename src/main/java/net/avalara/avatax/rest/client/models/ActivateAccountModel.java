@@ -30,41 +30,45 @@ import java.util.HashMap;
 public class ActivateAccountModel {
 
 
-    private Boolean? acceptAvalaraTermsAndConditions;
+    private object acceptAvalaraTermsAndConditions;
 
     /**
-     * Getter for acceptAvalaraTermsAndConditions;
+     * Getter for acceptAvalaraTermsAndConditions
+     *
      * Set this to true if and only if you accept Avalara's terms and conditions for your account.
      */
-    public Boolean? getacceptAvalaraTermsAndConditions() {;
-        return this.acceptAvalaraTermsAndConditions;;
+    public object getAcceptAvalaraTermsAndConditions() {
+        return this.acceptAvalaraTermsAndConditions;
     }
 
     /**
-     * Setter for acceptAvalaraTermsAndConditions;
+     * Setter for acceptAvalaraTermsAndConditions
+     *
      * Set this to true if and only if you accept Avalara's terms and conditions for your account.
      */
-    public void setacceptAvalaraTermsAndConditions(Boolean? value) {;
-        this.acceptAvalaraTermsAndConditions = value;;
+    public void setAcceptAvalaraTermsAndConditions(object value) {
+        this.acceptAvalaraTermsAndConditions = value;
     }
 
 
-    private Boolean? haveReadAvalaraTermsAndConditions;
+    private object haveReadAvalaraTermsAndConditions;
 
     /**
-     * Getter for haveReadAvalaraTermsAndConditions;
+     * Getter for haveReadAvalaraTermsAndConditions
+     *
      * Set this to true if and only if you have fully read Avalara's terms and conditions for your account.
      */
-    public Boolean? gethaveReadAvalaraTermsAndConditions() {;
-        return this.haveReadAvalaraTermsAndConditions;;
+    public object getHaveReadAvalaraTermsAndConditions() {
+        return this.haveReadAvalaraTermsAndConditions;
     }
 
     /**
-     * Setter for haveReadAvalaraTermsAndConditions;
+     * Setter for haveReadAvalaraTermsAndConditions
+     *
      * Set this to true if and only if you have fully read Avalara's terms and conditions for your account.
      */
-    public void sethaveReadAvalaraTermsAndConditions(Boolean? value) {;
-        this.haveReadAvalaraTermsAndConditions = value;;
+    public void setHaveReadAvalaraTermsAndConditions(object value) {
+        this.haveReadAvalaraTermsAndConditions = value;
     }
 
 

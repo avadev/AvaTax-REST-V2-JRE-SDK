@@ -30,117 +30,129 @@ import java.util.HashMap;
 public class AuditTransactionModel {
 
 
-    private Int32? companyId;
+    private Integer companyId;
 
     /**
-     * Getter for companyId;
+     * Getter for companyId
+     *
      * Unique ID number of the company that created this transaction
      */
-    public Int32? getcompanyId() {;
-        return this.companyId;;
+    public Integer getCompanyId() {
+        return this.companyId;
     }
 
     /**
-     * Setter for companyId;
+     * Setter for companyId
+     *
      * Unique ID number of the company that created this transaction
      */
-    public void setcompanyId(Int32? value) {;
-        this.companyId = value;;
+    public void setCompanyId(Integer value) {
+        this.companyId = value;
     }
 
 
-    private DateTime? serverTimestamp;
+    private Instant serverTimestamp;
 
     /**
-     * Getter for serverTimestamp;
+     * Getter for serverTimestamp
+     *
      * Server timestamp, in UTC, of the date/time when the original transaction was created
      */
-    public DateTime? getserverTimestamp() {;
-        return this.serverTimestamp;;
+    public Instant getServerTimestamp() {
+        return this.serverTimestamp;
     }
 
     /**
-     * Setter for serverTimestamp;
+     * Setter for serverTimestamp
+     *
      * Server timestamp, in UTC, of the date/time when the original transaction was created
      */
-    public void setserverTimestamp(DateTime? value) {;
-        this.serverTimestamp = value;;
+    public void setServerTimestamp(Instant value) {
+        this.serverTimestamp = value;
     }
 
 
-    private DateTime? serverDuration;
+    private Instant serverDuration;
 
     /**
-     * Getter for serverDuration;
+     * Getter for serverDuration
+     *
      * Length of time the original API call took
      */
-    public DateTime? getserverDuration() {;
-        return this.serverDuration;;
+    public Instant getServerDuration() {
+        return this.serverDuration;
     }
 
     /**
-     * Setter for serverDuration;
+     * Setter for serverDuration
+     *
      * Length of time the original API call took
      */
-    public void setserverDuration(DateTime? value) {;
-        this.serverDuration = value;;
+    public void setServerDuration(Instant value) {
+        this.serverDuration = value;
     }
 
 
-    private ApiCallStatus? apiCallStatus;
+    private ApiCallStatus apiCallStatus;
 
     /**
-     * Getter for apiCallStatus;
+     * Getter for apiCallStatus
+     *
      * api call status
      */
-    public ApiCallStatus? getapiCallStatus() {;
-        return this.apiCallStatus;;
+    public ApiCallStatus getApiCallStatus() {
+        return this.apiCallStatus;
     }
 
     /**
-     * Setter for apiCallStatus;
+     * Setter for apiCallStatus
+     *
      * api call status
      */
-    public void setapiCallStatus(ApiCallStatus? value) {;
-        this.apiCallStatus = value;;
+    public void setApiCallStatus(ApiCallStatus value) {
+        this.apiCallStatus = value;
     }
 
 
     private OriginalApiRequestResponseModel original;
 
     /**
-     * Getter for original;
+     * Getter for original
+     *
      * Original API request/response
      */
-    public OriginalApiRequestResponseModel getoriginal() {;
-        return this.original;;
+    public OriginalApiRequestResponseModel getOriginal() {
+        return this.original;
     }
 
     /**
-     * Setter for original;
+     * Setter for original
+     *
      * Original API request/response
      */
-    public void setoriginal(OriginalApiRequestResponseModel value) {;
-        this.original = value;;
+    public void setOriginal(OriginalApiRequestResponseModel value) {
+        this.original = value;
     }
 
 
     private ReconstructedApiRequestResponseModel reconstructed;
 
     /**
-     * Getter for reconstructed;
+     * Getter for reconstructed
+     *
      * Reconstructed API request/response
      */
-    public ReconstructedApiRequestResponseModel getreconstructed() {;
-        return this.reconstructed;;
+    public ReconstructedApiRequestResponseModel getReconstructed() {
+        return this.reconstructed;
     }
 
     /**
-     * Setter for reconstructed;
+     * Setter for reconstructed
+     *
      * Reconstructed API request/response
      */
-    public void setreconstructed(ReconstructedApiRequestResponseModel value) {;
-        this.reconstructed = value;;
+    public void setReconstructed(ReconstructedApiRequestResponseModel value) {
+        this.reconstructed = value;
     }
 
 

@@ -30,79 +30,87 @@ import java.util.HashMap;
 public class NexusByTaxFormModel {
 
 
-    private String formCode;
+    private string formCode;
 
     /**
-     * Getter for formCode;
+     * Getter for formCode
+     *
      * The code of the tax form that was requested
      */
-    public String getformCode() {;
-        return this.formCode;;
+    public string getFormCode() {
+        return this.formCode;
     }
 
     /**
-     * Setter for formCode;
+     * Setter for formCode
+     *
      * The code of the tax form that was requested
      */
-    public void setformCode(String value) {;
-        this.formCode = value;;
+    public void setFormCode(string value) {
+        this.formCode = value;
     }
 
 
-    private Int32? companyId;
+    private Integer companyId;
 
     /**
-     * Getter for companyId;
+     * Getter for companyId
+     *
      * The company ID of the company that was used to load the companyNexus array. If this value is null, no company data was loaded.
      */
-    public Int32? getcompanyId() {;
-        return this.companyId;;
+    public Integer getCompanyId() {
+        return this.companyId;
     }
 
     /**
-     * Setter for companyId;
+     * Setter for companyId
+     *
      * The company ID of the company that was used to load the companyNexus array. If this value is null, no company data was loaded.
      */
-    public void setcompanyId(Int32? value) {;
-        this.companyId = value;;
+    public void setCompanyId(Integer value) {
+        this.companyId = value;
     }
 
 
-    private List<NexusModel> nexusDefinitions;
+    private NexusModel[] nexusDefinitions;
 
     /**
-     * Getter for nexusDefinitions;
+     * Getter for nexusDefinitions
+     *
      * A list of all Avalara-defined nexus that are relevant to this tax form
      */
-    public List<NexusModel> getnexusDefinitions() {;
-        return this.nexusDefinitions;;
+    public NexusModel[] getNexusDefinitions() {
+        return this.nexusDefinitions;
     }
 
     /**
-     * Setter for nexusDefinitions;
+     * Setter for nexusDefinitions
+     *
      * A list of all Avalara-defined nexus that are relevant to this tax form
      */
-    public void setnexusDefinitions(List<NexusModel> value) {;
-        this.nexusDefinitions = value;;
+    public void setNexusDefinitions(NexusModel[] value) {
+        this.nexusDefinitions = value;
     }
 
 
-    private List<NexusModel> companyNexus;
+    private NexusModel[] companyNexus;
 
     /**
-     * Getter for companyNexus;
+     * Getter for companyNexus
+     *
      * A list of all currently-defined company nexus that are related to this tax form
      */
-    public List<NexusModel> getcompanyNexus() {;
-        return this.companyNexus;;
+    public NexusModel[] getCompanyNexus() {
+        return this.companyNexus;
     }
 
     /**
-     * Setter for companyNexus;
+     * Setter for companyNexus
+     *
      * A list of all currently-defined company nexus that are related to this tax form
      */
-    public void setcompanyNexus(List<NexusModel> value) {;
-        this.companyNexus = value;;
+    public void setCompanyNexus(NexusModel[] value) {
+        this.companyNexus = value;
     }
 
 

@@ -30,22 +30,24 @@ import java.util.HashMap;
 public class BulkLockTransactionResult {
 
 
-    private Int32? numberOfRecords;
+    private Integer numberOfRecords;
 
     /**
-     * Getter for numberOfRecords;
+     * Getter for numberOfRecords
+     *
      * Number of records that have been modified
      */
-    public Int32? getnumberOfRecords() {;
-        return this.numberOfRecords;;
+    public Integer getNumberOfRecords() {
+        return this.numberOfRecords;
     }
 
     /**
-     * Setter for numberOfRecords;
+     * Setter for numberOfRecords
+     *
      * Number of records that have been modified
      */
-    public void setnumberOfRecords(Int32? value) {;
-        this.numberOfRecords = value;;
+    public void setNumberOfRecords(Integer value) {
+        this.numberOfRecords = value;
     }
 
 

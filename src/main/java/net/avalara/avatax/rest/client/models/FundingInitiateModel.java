@@ -30,68 +30,74 @@ import java.util.HashMap;
 public class FundingInitiateModel {
 
 
-    private Boolean? requestEmail;
+    private object requestEmail;
 
     /**
-     * Getter for requestEmail;
+     * Getter for requestEmail
+     *
      * Set this value to true to request an email to the recipient
      */
-    public Boolean? getrequestEmail() {;
-        return this.requestEmail;;
+    public object getRequestEmail() {
+        return this.requestEmail;
     }
 
     /**
-     * Setter for requestEmail;
+     * Setter for requestEmail
+     *
      * Set this value to true to request an email to the recipient
      */
-    public void setrequestEmail(Boolean? value) {;
-        this.requestEmail = value;;
+    public void setRequestEmail(object value) {
+        this.requestEmail = value;
     }
 
 
-    private String fundingEmailRecipient;
+    private string fundingEmailRecipient;
 
     /**
-     * Getter for fundingEmailRecipient;
+     * Getter for fundingEmailRecipient
+     *
      * If you have requested an email for funding setup, this is the recipient who will receive an 
     * email inviting them to setup funding configuration for Avalara Managed Returns. The recipient can
     * then click on a link in the email and setup funding configuration for this company.
      */
-    public String getfundingEmailRecipient() {;
-        return this.fundingEmailRecipient;;
+    public string getFundingEmailRecipient() {
+        return this.fundingEmailRecipient;
     }
 
     /**
-     * Setter for fundingEmailRecipient;
+     * Setter for fundingEmailRecipient
+     *
      * If you have requested an email for funding setup, this is the recipient who will receive an 
     * email inviting them to setup funding configuration for Avalara Managed Returns. The recipient can
     * then click on a link in the email and setup funding configuration for this company.
      */
-    public void setfundingEmailRecipient(String value) {;
-        this.fundingEmailRecipient = value;;
+    public void setFundingEmailRecipient(string value) {
+        this.fundingEmailRecipient = value;
     }
 
 
-    private Boolean? requestWidget;
+    private object requestWidget;
 
     /**
-     * Getter for requestWidget;
+     * Getter for requestWidget
+     *
      * Set this value to true to request an HTML-based funding widget that can be embedded within an 
     * existing user interface. A user can then interact with the HTML-based funding widget to set up
     * funding information for the company.
      */
-    public Boolean? getrequestWidget() {;
-        return this.requestWidget;;
+    public object getRequestWidget() {
+        return this.requestWidget;
     }
 
     /**
-     * Setter for requestWidget;
+     * Setter for requestWidget
+     *
      * Set this value to true to request an HTML-based funding widget that can be embedded within an 
     * existing user interface. A user can then interact with the HTML-based funding widget to set up
     * funding information for the company.
      */
-    public void setrequestWidget(Boolean? value) {;
-        this.requestWidget = value;;
+    public void setRequestWidget(object value) {
+        this.requestWidget = value;
     }
 
 

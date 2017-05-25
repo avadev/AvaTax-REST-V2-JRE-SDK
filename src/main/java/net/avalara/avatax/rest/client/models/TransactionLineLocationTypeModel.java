@@ -30,79 +30,87 @@ import java.util.HashMap;
 public class TransactionLineLocationTypeModel {
 
 
-    private Int64? documentLineLocationTypeId;
+    private Long documentLineLocationTypeId;
 
     /**
-     * Getter for documentLineLocationTypeId;
+     * Getter for documentLineLocationTypeId
+     *
      * The unique ID number of this line location address model
      */
-    public Int64? getdocumentLineLocationTypeId() {;
-        return this.documentLineLocationTypeId;;
+    public Long getDocumentLineLocationTypeId() {
+        return this.documentLineLocationTypeId;
     }
 
     /**
-     * Setter for documentLineLocationTypeId;
+     * Setter for documentLineLocationTypeId
+     *
      * The unique ID number of this line location address model
      */
-    public void setdocumentLineLocationTypeId(Int64? value) {;
-        this.documentLineLocationTypeId = value;;
+    public void setDocumentLineLocationTypeId(Long value) {
+        this.documentLineLocationTypeId = value;
     }
 
 
-    private Int64? documentLineId;
+    private Long documentLineId;
 
     /**
-     * Getter for documentLineId;
+     * Getter for documentLineId
+     *
      * The unique ID number of the document line associated with this line location address model
      */
-    public Int64? getdocumentLineId() {;
-        return this.documentLineId;;
+    public Long getDocumentLineId() {
+        return this.documentLineId;
     }
 
     /**
-     * Setter for documentLineId;
+     * Setter for documentLineId
+     *
      * The unique ID number of the document line associated with this line location address model
      */
-    public void setdocumentLineId(Int64? value) {;
-        this.documentLineId = value;;
+    public void setDocumentLineId(Long value) {
+        this.documentLineId = value;
     }
 
 
-    private Int64? documentAddressId;
+    private Long documentAddressId;
 
     /**
-     * Getter for documentAddressId;
+     * Getter for documentAddressId
+     *
      * The address ID corresponding to this model
      */
-    public Int64? getdocumentAddressId() {;
-        return this.documentAddressId;;
+    public Long getDocumentAddressId() {
+        return this.documentAddressId;
     }
 
     /**
-     * Setter for documentAddressId;
+     * Setter for documentAddressId
+     *
      * The address ID corresponding to this model
      */
-    public void setdocumentAddressId(Int64? value) {;
-        this.documentAddressId = value;;
+    public void setDocumentAddressId(Long value) {
+        this.documentAddressId = value;
     }
 
 
-    private String locationTypeCode;
+    private string locationTypeCode;
 
     /**
-     * Getter for locationTypeCode;
+     * Getter for locationTypeCode
+     *
      * The location type code corresponding to this model
      */
-    public String getlocationTypeCode() {;
-        return this.locationTypeCode;;
+    public string getLocationTypeCode() {
+        return this.locationTypeCode;
     }
 
     /**
-     * Setter for locationTypeCode;
+     * Setter for locationTypeCode
+     *
      * The location type code corresponding to this model
      */
-    public void setlocationTypeCode(String value) {;
-        this.locationTypeCode = value;;
+    public void setLocationTypeCode(string value) {
+        this.locationTypeCode = value;
     }
 
 

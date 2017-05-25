@@ -30,79 +30,87 @@ import java.util.HashMap;
 public class TaxSubTypeModel {
 
 
-    private Int32 id;
+    private int id;
 
     /**
-     * Getter for id;
+     * Getter for id
+     *
      * The unique ID number of this tax sub-type.
      */
-    public Int32 getid() {;
-        return this.id;;
+    public int getId() {
+        return this.id;
     }
 
     /**
-     * Setter for id;
+     * Setter for id
+     *
      * The unique ID number of this tax sub-type.
      */
-    public void setid(Int32 value) {;
-        this.id = value;;
+    public void setId(int value) {
+        this.id = value;
     }
 
 
-    private String taxSubType;
+    private string taxSubType;
 
     /**
-     * Getter for taxSubType;
+     * Getter for taxSubType
+     *
      * The unique human readable Id of this tax sub-type.
      */
-    public String gettaxSubType() {;
-        return this.taxSubType;;
+    public string getTaxSubType() {
+        return this.taxSubType;
     }
 
     /**
-     * Setter for taxSubType;
+     * Setter for taxSubType
+     *
      * The unique human readable Id of this tax sub-type.
      */
-    public void settaxSubType(String value) {;
-        this.taxSubType = value;;
+    public void setTaxSubType(string value) {
+        this.taxSubType = value;
     }
 
 
-    private String description;
+    private string description;
 
     /**
-     * Getter for description;
+     * Getter for description
+     *
      * The description of this tax sub-type.
      */
-    public String getdescription() {;
-        return this.description;;
+    public string getDescription() {
+        return this.description;
     }
 
     /**
-     * Setter for description;
+     * Setter for description
+     *
      * The description of this tax sub-type.
      */
-    public void setdescription(String value) {;
-        this.description = value;;
+    public void setDescription(string value) {
+        this.description = value;
     }
 
 
-    private String taxTypeGroup;
+    private string taxTypeGroup;
 
     /**
-     * Getter for taxTypeGroup;
+     * Getter for taxTypeGroup
+     *
      * The upper level group of tax types.
      */
-    public String gettaxTypeGroup() {;
-        return this.taxTypeGroup;;
+    public string getTaxTypeGroup() {
+        return this.taxTypeGroup;
     }
 
     /**
-     * Setter for taxTypeGroup;
+     * Setter for taxTypeGroup
+     *
      * The upper level group of tax types.
      */
-    public void settaxTypeGroup(String value) {;
-        this.taxTypeGroup = value;;
+    public void setTaxTypeGroup(string value) {
+        this.taxTypeGroup = value;
     }
 
 

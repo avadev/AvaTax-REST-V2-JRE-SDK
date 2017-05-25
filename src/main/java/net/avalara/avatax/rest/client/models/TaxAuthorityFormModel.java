@@ -30,41 +30,45 @@ import java.util.HashMap;
 public class TaxAuthorityFormModel {
 
 
-    private Int32 taxAuthorityId;
+    private int taxAuthorityId;
 
     /**
-     * Getter for taxAuthorityId;
+     * Getter for taxAuthorityId
+     *
      * The unique ID number of the tax authority.
      */
-    public Int32 gettaxAuthorityId() {;
-        return this.taxAuthorityId;;
+    public int getTaxAuthorityId() {
+        return this.taxAuthorityId;
     }
 
     /**
-     * Setter for taxAuthorityId;
+     * Setter for taxAuthorityId
+     *
      * The unique ID number of the tax authority.
      */
-    public void settaxAuthorityId(Int32 value) {;
-        this.taxAuthorityId = value;;
+    public void setTaxAuthorityId(int value) {
+        this.taxAuthorityId = value;
     }
 
 
-    private String formName;
+    private string formName;
 
     /**
-     * Getter for formName;
+     * Getter for formName
+     *
      * The form name of the form for this tax authority.
      */
-    public String getformName() {;
-        return this.formName;;
+    public string getFormName() {
+        return this.formName;
     }
 
     /**
-     * Setter for formName;
+     * Setter for formName
+     *
      * The form name of the form for this tax authority.
      */
-    public void setformName(String value) {;
-        this.formName = value;;
+    public void setFormName(string value) {
+        this.formName = value;
     }
 
 

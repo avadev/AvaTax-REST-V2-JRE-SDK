@@ -30,421 +30,465 @@ import java.util.HashMap;
 public class ContactModel {
 
 
-    private Int32 id;
+    private int id;
 
     /**
-     * Getter for id;
+     * Getter for id
+     *
      * The unique ID number of this contact.
      */
-    public Int32 getid() {;
-        return this.id;;
+    public int getId() {
+        return this.id;
     }
 
     /**
-     * Setter for id;
+     * Setter for id
+     *
      * The unique ID number of this contact.
      */
-    public void setid(Int32 value) {;
-        this.id = value;;
+    public void setId(int value) {
+        this.id = value;
     }
 
 
-    private Int32 companyId;
+    private int companyId;
 
     /**
-     * Getter for companyId;
+     * Getter for companyId
+     *
      * The unique ID number of the company to which this contact belongs.
      */
-    public Int32 getcompanyId() {;
-        return this.companyId;;
+    public int getCompanyId() {
+        return this.companyId;
     }
 
     /**
-     * Setter for companyId;
+     * Setter for companyId
+     *
      * The unique ID number of the company to which this contact belongs.
      */
-    public void setcompanyId(Int32 value) {;
-        this.companyId = value;;
+    public void setCompanyId(int value) {
+        this.companyId = value;
     }
 
 
-    private String contactCode;
+    private string contactCode;
 
     /**
-     * Getter for contactCode;
+     * Getter for contactCode
+     *
      * A unique code for this contact.
      */
-    public String getcontactCode() {;
-        return this.contactCode;;
+    public string getContactCode() {
+        return this.contactCode;
     }
 
     /**
-     * Setter for contactCode;
+     * Setter for contactCode
+     *
      * A unique code for this contact.
      */
-    public void setcontactCode(String value) {;
-        this.contactCode = value;;
+    public void setContactCode(string value) {
+        this.contactCode = value;
     }
 
 
-    private String firstName;
+    private string firstName;
 
     /**
-     * Getter for firstName;
+     * Getter for firstName
+     *
      * The first or given name of this contact.
      */
-    public String getfirstName() {;
-        return this.firstName;;
+    public string getFirstName() {
+        return this.firstName;
     }
 
     /**
-     * Setter for firstName;
+     * Setter for firstName
+     *
      * The first or given name of this contact.
      */
-    public void setfirstName(String value) {;
-        this.firstName = value;;
+    public void setFirstName(string value) {
+        this.firstName = value;
     }
 
 
-    private String middleName;
+    private string middleName;
 
     /**
-     * Getter for middleName;
+     * Getter for middleName
+     *
      * The middle name of this contact.
      */
-    public String getmiddleName() {;
-        return this.middleName;;
+    public string getMiddleName() {
+        return this.middleName;
     }
 
     /**
-     * Setter for middleName;
+     * Setter for middleName
+     *
      * The middle name of this contact.
      */
-    public void setmiddleName(String value) {;
-        this.middleName = value;;
+    public void setMiddleName(string value) {
+        this.middleName = value;
     }
 
 
-    private String lastName;
+    private string lastName;
 
     /**
-     * Getter for lastName;
+     * Getter for lastName
+     *
      * The last or family name of this contact.
      */
-    public String getlastName() {;
-        return this.lastName;;
+    public string getLastName() {
+        return this.lastName;
     }
 
     /**
-     * Setter for lastName;
+     * Setter for lastName
+     *
      * The last or family name of this contact.
      */
-    public void setlastName(String value) {;
-        this.lastName = value;;
+    public void setLastName(string value) {
+        this.lastName = value;
     }
 
 
-    private String title;
+    private string title;
 
     /**
-     * Getter for title;
+     * Getter for title
+     *
      * Professional title of this contact.
      */
-    public String gettitle() {;
-        return this.title;;
+    public string getTitle() {
+        return this.title;
     }
 
     /**
-     * Setter for title;
+     * Setter for title
+     *
      * Professional title of this contact.
      */
-    public void settitle(String value) {;
-        this.title = value;;
+    public void setTitle(string value) {
+        this.title = value;
     }
 
 
-    private String line1;
+    private string line1;
 
     /**
-     * Getter for line1;
+     * Getter for line1
+     *
      * The first line of the postal mailing address of this contact.
      */
-    public String getline1() {;
-        return this.line1;;
+    public string getLine1() {
+        return this.line1;
     }
 
     /**
-     * Setter for line1;
+     * Setter for line1
+     *
      * The first line of the postal mailing address of this contact.
      */
-    public void setline1(String value) {;
-        this.line1 = value;;
+    public void setLine1(string value) {
+        this.line1 = value;
     }
 
 
-    private String line2;
+    private string line2;
 
     /**
-     * Getter for line2;
+     * Getter for line2
+     *
      * The second line of the postal mailing address of this contact.
      */
-    public String getline2() {;
-        return this.line2;;
+    public string getLine2() {
+        return this.line2;
     }
 
     /**
-     * Setter for line2;
+     * Setter for line2
+     *
      * The second line of the postal mailing address of this contact.
      */
-    public void setline2(String value) {;
-        this.line2 = value;;
+    public void setLine2(string value) {
+        this.line2 = value;
     }
 
 
-    private String line3;
+    private string line3;
 
     /**
-     * Getter for line3;
+     * Getter for line3
+     *
      * The third line of the postal mailing address of this contact.
      */
-    public String getline3() {;
-        return this.line3;;
+    public string getLine3() {
+        return this.line3;
     }
 
     /**
-     * Setter for line3;
+     * Setter for line3
+     *
      * The third line of the postal mailing address of this contact.
      */
-    public void setline3(String value) {;
-        this.line3 = value;;
+    public void setLine3(string value) {
+        this.line3 = value;
     }
 
 
-    private String city;
+    private string city;
 
     /**
-     * Getter for city;
+     * Getter for city
+     *
      * The city of the postal mailing address of this contact.
      */
-    public String getcity() {;
-        return this.city;;
+    public string getCity() {
+        return this.city;
     }
 
     /**
-     * Setter for city;
+     * Setter for city
+     *
      * The city of the postal mailing address of this contact.
      */
-    public void setcity(String value) {;
-        this.city = value;;
+    public void setCity(string value) {
+        this.city = value;
     }
 
 
-    private String region;
+    private string region;
 
     /**
-     * Getter for region;
+     * Getter for region
+     *
      * The state, region, or province of the postal mailing address of this contact.
      */
-    public String getregion() {;
-        return this.region;;
+    public string getRegion() {
+        return this.region;
     }
 
     /**
-     * Setter for region;
+     * Setter for region
+     *
      * The state, region, or province of the postal mailing address of this contact.
      */
-    public void setregion(String value) {;
-        this.region = value;;
+    public void setRegion(string value) {
+        this.region = value;
     }
 
 
-    private String postalCode;
+    private string postalCode;
 
     /**
-     * Getter for postalCode;
+     * Getter for postalCode
+     *
      * The postal code or zip code of the postal mailing address of this contact.
      */
-    public String getpostalCode() {;
-        return this.postalCode;;
+    public string getPostalCode() {
+        return this.postalCode;
     }
 
     /**
-     * Setter for postalCode;
+     * Setter for postalCode
+     *
      * The postal code or zip code of the postal mailing address of this contact.
      */
-    public void setpostalCode(String value) {;
-        this.postalCode = value;;
+    public void setPostalCode(string value) {
+        this.postalCode = value;
     }
 
 
-    private String country;
+    private string country;
 
     /**
-     * Getter for country;
+     * Getter for country
+     *
      * The ISO 3166 two-character country code of the postal mailing address of this contact.
      */
-    public String getcountry() {;
-        return this.country;;
+    public string getCountry() {
+        return this.country;
     }
 
     /**
-     * Setter for country;
+     * Setter for country
+     *
      * The ISO 3166 two-character country code of the postal mailing address of this contact.
      */
-    public void setcountry(String value) {;
-        this.country = value;;
+    public void setCountry(string value) {
+        this.country = value;
     }
 
 
-    private String email;
+    private string email;
 
     /**
-     * Getter for email;
+     * Getter for email
+     *
      * The email address of this contact.
      */
-    public String getemail() {;
-        return this.email;;
+    public string getEmail() {
+        return this.email;
     }
 
     /**
-     * Setter for email;
+     * Setter for email
+     *
      * The email address of this contact.
      */
-    public void setemail(String value) {;
-        this.email = value;;
+    public void setEmail(string value) {
+        this.email = value;
     }
 
 
-    private String phone;
+    private string phone;
 
     /**
-     * Getter for phone;
+     * Getter for phone
+     *
      * The main phone number for this contact.
      */
-    public String getphone() {;
-        return this.phone;;
+    public string getPhone() {
+        return this.phone;
     }
 
     /**
-     * Setter for phone;
+     * Setter for phone
+     *
      * The main phone number for this contact.
      */
-    public void setphone(String value) {;
-        this.phone = value;;
+    public void setPhone(string value) {
+        this.phone = value;
     }
 
 
-    private String mobile;
+    private string mobile;
 
     /**
-     * Getter for mobile;
+     * Getter for mobile
+     *
      * The mobile phone number for this contact.
      */
-    public String getmobile() {;
-        return this.mobile;;
+    public string getMobile() {
+        return this.mobile;
     }
 
     /**
-     * Setter for mobile;
+     * Setter for mobile
+     *
      * The mobile phone number for this contact.
      */
-    public void setmobile(String value) {;
-        this.mobile = value;;
+    public void setMobile(string value) {
+        this.mobile = value;
     }
 
 
-    private String fax;
+    private string fax;
 
     /**
-     * Getter for fax;
+     * Getter for fax
+     *
      * The facsimile phone number for this contact.
      */
-    public String getfax() {;
-        return this.fax;;
+    public string getFax() {
+        return this.fax;
     }
 
     /**
-     * Setter for fax;
+     * Setter for fax
+     *
      * The facsimile phone number for this contact.
      */
-    public void setfax(String value) {;
-        this.fax = value;;
+    public void setFax(string value) {
+        this.fax = value;
     }
 
 
-    private DateTime? createdDate;
+    private Instant createdDate;
 
     /**
-     * Getter for createdDate;
+     * Getter for createdDate
+     *
      * The date when this record was created.
      */
-    public DateTime? getcreatedDate() {;
-        return this.createdDate;;
+    public Instant getCreatedDate() {
+        return this.createdDate;
     }
 
     /**
-     * Setter for createdDate;
+     * Setter for createdDate
+     *
      * The date when this record was created.
      */
-    public void setcreatedDate(DateTime? value) {;
-        this.createdDate = value;;
+    public void setCreatedDate(Instant value) {
+        this.createdDate = value;
     }
 
 
-    private Int32? createdUserId;
+    private Integer createdUserId;
 
     /**
-     * Getter for createdUserId;
+     * Getter for createdUserId
+     *
      * The User ID of the user who created this record.
      */
-    public Int32? getcreatedUserId() {;
-        return this.createdUserId;;
+    public Integer getCreatedUserId() {
+        return this.createdUserId;
     }
 
     /**
-     * Setter for createdUserId;
+     * Setter for createdUserId
+     *
      * The User ID of the user who created this record.
      */
-    public void setcreatedUserId(Int32? value) {;
-        this.createdUserId = value;;
+    public void setCreatedUserId(Integer value) {
+        this.createdUserId = value;
     }
 
 
-    private DateTime? modifiedDate;
+    private Instant modifiedDate;
 
     /**
-     * Getter for modifiedDate;
+     * Getter for modifiedDate
+     *
      * The date/time when this record was last modified.
      */
-    public DateTime? getmodifiedDate() {;
-        return this.modifiedDate;;
+    public Instant getModifiedDate() {
+        return this.modifiedDate;
     }
 
     /**
-     * Setter for modifiedDate;
+     * Setter for modifiedDate
+     *
      * The date/time when this record was last modified.
      */
-    public void setmodifiedDate(DateTime? value) {;
-        this.modifiedDate = value;;
+    public void setModifiedDate(Instant value) {
+        this.modifiedDate = value;
     }
 
 
-    private Int32? modifiedUserId;
+    private Integer modifiedUserId;
 
     /**
-     * Getter for modifiedUserId;
+     * Getter for modifiedUserId
+     *
      * The user ID of the user who last modified this record.
      */
-    public Int32? getmodifiedUserId() {;
-        return this.modifiedUserId;;
+    public Integer getModifiedUserId() {
+        return this.modifiedUserId;
     }
 
     /**
-     * Setter for modifiedUserId;
+     * Setter for modifiedUserId
+     *
      * The user ID of the user who last modified this record.
      */
-    public void setmodifiedUserId(Int32? value) {;
-        this.modifiedUserId = value;;
+    public void setModifiedUserId(Integer value) {
+        this.modifiedUserId = value;
     }
 
 

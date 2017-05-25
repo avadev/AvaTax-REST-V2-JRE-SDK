@@ -30,155 +30,171 @@ import java.util.HashMap;
 public class BatchFileModel {
 
 
-    private Int32? id;
+    private Integer id;
 
     /**
-     * Getter for id;
+     * Getter for id
+     *
      * The unique ID number assigned to this batch file.
      */
-    public Int32? getid() {;
-        return this.id;;
+    public Integer getId() {
+        return this.id;
     }
 
     /**
-     * Setter for id;
+     * Setter for id
+     *
      * The unique ID number assigned to this batch file.
      */
-    public void setid(Int32? value) {;
-        this.id = value;;
+    public void setId(Integer value) {
+        this.id = value;
     }
 
 
-    private Int32? batchId;
+    private Integer batchId;
 
     /**
-     * Getter for batchId;
+     * Getter for batchId
+     *
      * The unique ID number of the batch that this file belongs to.
      */
-    public Int32? getbatchId() {;
-        return this.batchId;;
+    public Integer getBatchId() {
+        return this.batchId;
     }
 
     /**
-     * Setter for batchId;
+     * Setter for batchId
+     *
      * The unique ID number of the batch that this file belongs to.
      */
-    public void setbatchId(Int32? value) {;
-        this.batchId = value;;
+    public void setBatchId(Integer value) {
+        this.batchId = value;
     }
 
 
-    private String name;
+    private string name;
 
     /**
-     * Getter for name;
+     * Getter for name
+     *
      * Logical Name of file (e.g. "Input" or "Error").
      */
-    public String getname() {;
-        return this.name;;
+    public string getName() {
+        return this.name;
     }
 
     /**
-     * Setter for name;
+     * Setter for name
+     *
      * Logical Name of file (e.g. "Input" or "Error").
      */
-    public void setname(String value) {;
-        this.name = value;;
+    public void setName(string value) {
+        this.name = value;
     }
 
 
-    private Byte[] content;
+    private string content;
 
     /**
-     * Getter for content;
+     * Getter for content
+     *
      * Content of the batch file.
      */
-    public Byte[] getcontent() {;
-        return this.content;;
+    public string getContent() {
+        return this.content;
     }
 
     /**
-     * Setter for content;
+     * Setter for content
+     *
      * Content of the batch file.
      */
-    public void setcontent(Byte[] value) {;
-        this.content = value;;
+    public void setContent(string value) {
+        this.content = value;
     }
 
 
-    private Int32? contentLength;
+    private Integer contentLength;
 
     /**
-     * Getter for contentLength;
+     * Getter for contentLength
+     *
      * Size of content, in bytes.
      */
-    public Int32? getcontentLength() {;
-        return this.contentLength;;
+    public Integer getContentLength() {
+        return this.contentLength;
     }
 
     /**
-     * Setter for contentLength;
+     * Setter for contentLength
+     *
      * Size of content, in bytes.
      */
-    public void setcontentLength(Int32? value) {;
-        this.contentLength = value;;
+    public void setContentLength(Integer value) {
+        this.contentLength = value;
     }
 
 
-    private String contentType;
+    private string contentType;
 
     /**
-     * Getter for contentType;
+     * Getter for contentType
+     *
      * Content mime type (e.g. text/csv). This is used for HTTP downloading.
      */
-    public String getcontentType() {;
-        return this.contentType;;
+    public string getContentType() {
+        return this.contentType;
     }
 
     /**
-     * Setter for contentType;
+     * Setter for contentType
+     *
      * Content mime type (e.g. text/csv). This is used for HTTP downloading.
      */
-    public void setcontentType(String value) {;
-        this.contentType = value;;
+    public void setContentType(string value) {
+        this.contentType = value;
     }
 
 
-    private String fileExtension;
+    private string fileExtension;
 
     /**
-     * Getter for fileExtension;
+     * Getter for fileExtension
+     *
      * File extension (e.g. CSV).
      */
-    public String getfileExtension() {;
-        return this.fileExtension;;
+    public string getFileExtension() {
+        return this.fileExtension;
     }
 
     /**
-     * Setter for fileExtension;
+     * Setter for fileExtension
+     *
      * File extension (e.g. CSV).
      */
-    public void setfileExtension(String value) {;
-        this.fileExtension = value;;
+    public void setFileExtension(string value) {
+        this.fileExtension = value;
     }
 
 
-    private Int32? errorCount;
+    private Integer errorCount;
 
     /**
-     * Getter for errorCount;
+     * Getter for errorCount
+     *
      * Number of errors that occurred when processing this file.
      */
-    public Int32? geterrorCount() {;
-        return this.errorCount;;
+    public Integer getErrorCount() {
+        return this.errorCount;
     }
 
     /**
-     * Setter for errorCount;
+     * Setter for errorCount
+     *
      * Number of errors that occurred when processing this file.
      */
-    public void seterrorCount(Int32? value) {;
-        this.errorCount = value;;
+    public void setErrorCount(Integer value) {
+        this.errorCount = value;
     }
 
 

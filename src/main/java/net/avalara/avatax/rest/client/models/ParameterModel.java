@@ -30,98 +30,108 @@ import java.util.HashMap;
 public class ParameterModel {
 
 
-    private Int64? id;
+    private Long id;
 
     /**
-     * Getter for id;
+     * Getter for id
+     *
      * The unique ID number of this property.
      */
-    public Int64? getid() {;
-        return this.id;;
+    public Long getId() {
+        return this.id;
     }
 
     /**
-     * Setter for id;
+     * Setter for id
+     *
      * The unique ID number of this property.
      */
-    public void setid(Int64? value) {;
-        this.id = value;;
+    public void setId(Long value) {
+        this.id = value;
     }
 
 
-    private String category;
+    private string category;
 
     /**
-     * Getter for category;
+     * Getter for category
+     *
      * The service category of this property. Some properties may require that you subscribe to certain features of avatax before they can be used.
      */
-    public String getcategory() {;
-        return this.category;;
+    public string getCategory() {
+        return this.category;
     }
 
     /**
-     * Setter for category;
+     * Setter for category
+     *
      * The service category of this property. Some properties may require that you subscribe to certain features of avatax before they can be used.
      */
-    public void setcategory(String value) {;
-        this.category = value;;
+    public void setCategory(string value) {
+        this.category = value;
     }
 
 
-    private String name;
+    private string name;
 
     /**
-     * Getter for name;
+     * Getter for name
+     *
      * The name of the property. To use this property, add a field on the "properties" object of a /api/v2/companies/(code)/transactions/create call.
      */
-    public String getname() {;
-        return this.name;;
+    public string getName() {
+        return this.name;
     }
 
     /**
-     * Setter for name;
+     * Setter for name
+     *
      * The name of the property. To use this property, add a field on the "properties" object of a /api/v2/companies/(code)/transactions/create call.
      */
-    public void setname(String value) {;
-        this.name = value;;
+    public void setName(string value) {
+        this.name = value;
     }
 
 
-    private ParameterBagDataType? dataType;
+    private ParameterBagDataType dataType;
 
     /**
-     * Getter for dataType;
+     * Getter for dataType
+     *
      * The data type of the property.
      */
-    public ParameterBagDataType? getdataType() {;
-        return this.dataType;;
+    public ParameterBagDataType getDataType() {
+        return this.dataType;
     }
 
     /**
-     * Setter for dataType;
+     * Setter for dataType
+     *
      * The data type of the property.
      */
-    public void setdataType(ParameterBagDataType? value) {;
-        this.dataType = value;;
+    public void setDataType(ParameterBagDataType value) {
+        this.dataType = value;
     }
 
 
-    private String description;
+    private string description;
 
     /**
-     * Getter for description;
+     * Getter for description
+     *
      * A full description of this property.
      */
-    public String getdescription() {;
-        return this.description;;
+    public string getDescription() {
+        return this.description;
     }
 
     /**
-     * Setter for description;
+     * Setter for description
+     *
      * A full description of this property.
      */
-    public void setdescription(String value) {;
-        this.description = value;;
+    public void setDescription(string value) {
+        this.description = value;
     }
 
 

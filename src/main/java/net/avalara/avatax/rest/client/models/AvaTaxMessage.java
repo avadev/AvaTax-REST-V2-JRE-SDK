@@ -30,98 +30,108 @@ import java.util.HashMap;
 public class AvaTaxMessage {
 
 
-    private String summary;
+    private string summary;
 
     /**
-     * Getter for summary;
+     * Getter for summary
+     *
      * A brief summary of what this message tells us
      */
-    public String getsummary() {;
-        return this.summary;;
+    public string getSummary() {
+        return this.summary;
     }
 
     /**
-     * Setter for summary;
+     * Setter for summary
+     *
      * A brief summary of what this message tells us
      */
-    public void setsummary(String value) {;
-        this.summary = value;;
+    public void setSummary(string value) {
+        this.summary = value;
     }
 
 
-    private String details;
+    private string details;
 
     /**
-     * Getter for details;
+     * Getter for details
+     *
      * Detailed information that explains what the summary provided
      */
-    public String getdetails() {;
-        return this.details;;
+    public string getDetails() {
+        return this.details;
     }
 
     /**
-     * Setter for details;
+     * Setter for details
+     *
      * Detailed information that explains what the summary provided
      */
-    public void setdetails(String value) {;
-        this.details = value;;
+    public void setDetails(string value) {
+        this.details = value;
     }
 
 
-    private String refersTo;
+    private string refersTo;
 
     /**
-     * Getter for refersTo;
+     * Getter for refersTo
+     *
      * Information about what object in your request this message refers to
      */
-    public String getrefersTo() {;
-        return this.refersTo;;
+    public string getRefersTo() {
+        return this.refersTo;
     }
 
     /**
-     * Setter for refersTo;
+     * Setter for refersTo
+     *
      * Information about what object in your request this message refers to
      */
-    public void setrefersTo(String value) {;
-        this.refersTo = value;;
+    public void setRefersTo(string value) {
+        this.refersTo = value;
     }
 
 
-    private String severity;
+    private string severity;
 
     /**
-     * Getter for severity;
+     * Getter for severity
+     *
      * A category that indicates how severely this message affects the results
      */
-    public String getseverity() {;
-        return this.severity;;
+    public string getSeverity() {
+        return this.severity;
     }
 
     /**
-     * Setter for severity;
+     * Setter for severity
+     *
      * A category that indicates how severely this message affects the results
      */
-    public void setseverity(String value) {;
-        this.severity = value;;
+    public void setSeverity(string value) {
+        this.severity = value;
     }
 
 
-    private String source;
+    private string source;
 
     /**
-     * Getter for source;
+     * Getter for source
+     *
      * The name of the code or service that generated this message
      */
-    public String getsource() {;
-        return this.source;;
+    public string getSource() {
+        return this.source;
     }
 
     /**
-     * Setter for source;
+     * Setter for source
+     *
      * The name of the code or service that generated this message
      */
-    public void setsource(String value) {;
-        this.source = value;;
+    public void setSource(string value) {
+        this.source = value;
     }
 
 

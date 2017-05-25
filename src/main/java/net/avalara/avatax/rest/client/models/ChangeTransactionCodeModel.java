@@ -32,22 +32,24 @@ import java.util.HashMap;
 public class ChangeTransactionCodeModel {
 
 
-    private String newCode;
+    private string newCode;
 
     /**
-     * Getter for newCode;
+     * Getter for newCode
+     *
      * To change the transaction code for this transaction, specify the new transaction code here.
      */
-    public String getnewCode() {;
-        return this.newCode;;
+    public string getNewCode() {
+        return this.newCode;
     }
 
     /**
-     * Setter for newCode;
+     * Setter for newCode
+     *
      * To change the transaction code for this transaction, specify the new transaction code here.
      */
-    public void setnewCode(String value) {;
-        this.newCode = value;;
+    public void setNewCode(string value) {
+        this.newCode = value;
     }
 
 

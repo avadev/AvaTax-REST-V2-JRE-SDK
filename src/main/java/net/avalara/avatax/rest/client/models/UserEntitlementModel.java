@@ -30,60 +30,66 @@ import java.util.HashMap;
 public class UserEntitlementModel {
 
 
-    private List<String> permissions;
+    private string[] permissions;
 
     /**
-     * Getter for permissions;
+     * Getter for permissions
+     *
      * List of API names and categories that this user is permitted to access
      */
-    public List<String> getpermissions() {;
-        return this.permissions;;
+    public string[] getPermissions() {
+        return this.permissions;
     }
 
     /**
-     * Setter for permissions;
+     * Setter for permissions
+     *
      * List of API names and categories that this user is permitted to access
      */
-    public void setpermissions(List<String> value) {;
-        this.permissions = value;;
+    public void setPermissions(string[] value) {
+        this.permissions = value;
     }
 
 
-    private CompanyAccessLevel? accessLevel;
+    private CompanyAccessLevel accessLevel;
 
     /**
-     * Getter for accessLevel;
+     * Getter for accessLevel
+     *
      * What access privileges does the current user have to see companies?
      */
-    public CompanyAccessLevel? getaccessLevel() {;
-        return this.accessLevel;;
+    public CompanyAccessLevel getAccessLevel() {
+        return this.accessLevel;
     }
 
     /**
-     * Setter for accessLevel;
+     * Setter for accessLevel
+     *
      * What access privileges does the current user have to see companies?
      */
-    public void setaccessLevel(CompanyAccessLevel? value) {;
-        this.accessLevel = value;;
+    public void setAccessLevel(CompanyAccessLevel value) {
+        this.accessLevel = value;
     }
 
 
-    private List<Int32> companies;
+    private int[] companies;
 
     /**
-     * Getter for companies;
+     * Getter for companies
+     *
      * The identities of all companies this user is permitted to access
      */
-    public List<Int32> getcompanies() {;
-        return this.companies;;
+    public int[] getCompanies() {
+        return this.companies;
     }
 
     /**
-     * Setter for companies;
+     * Setter for companies
+     *
      * The identities of all companies this user is permitted to access
      */
-    public void setcompanies(List<Int32> value) {;
-        this.companies = value;;
+    public void setCompanies(int[] value) {
+        this.companies = value;
     }
 
 

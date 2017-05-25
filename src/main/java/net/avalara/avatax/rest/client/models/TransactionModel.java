@@ -30,963 +30,1063 @@ import java.util.HashMap;
 public class TransactionModel {
 
 
-    private Int64? id;
+    private Long id;
 
     /**
-     * Getter for id;
+     * Getter for id
+     *
      * The unique ID number of this transaction.
      */
-    public Int64? getid() {;
-        return this.id;;
+    public Long getId() {
+        return this.id;
     }
 
     /**
-     * Setter for id;
+     * Setter for id
+     *
      * The unique ID number of this transaction.
      */
-    public void setid(Int64? value) {;
-        this.id = value;;
+    public void setId(Long value) {
+        this.id = value;
     }
 
 
-    private String code;
+    private string code;
 
     /**
-     * Getter for code;
+     * Getter for code
+     *
      * A unique customer-provided code identifying this transaction.
      */
-    public String getcode() {;
-        return this.code;;
+    public string getCode() {
+        return this.code;
     }
 
     /**
-     * Setter for code;
+     * Setter for code
+     *
      * A unique customer-provided code identifying this transaction.
      */
-    public void setcode(String value) {;
-        this.code = value;;
+    public void setCode(string value) {
+        this.code = value;
     }
 
 
-    private Int32? companyId;
+    private Integer companyId;
 
     /**
-     * Getter for companyId;
+     * Getter for companyId
+     *
      * The unique ID number of the company that recorded this transaction.
      */
-    public Int32? getcompanyId() {;
-        return this.companyId;;
+    public Integer getCompanyId() {
+        return this.companyId;
     }
 
     /**
-     * Setter for companyId;
+     * Setter for companyId
+     *
      * The unique ID number of the company that recorded this transaction.
      */
-    public void setcompanyId(Int32? value) {;
-        this.companyId = value;;
+    public void setCompanyId(Integer value) {
+        this.companyId = value;
     }
 
 
-    private DateTime? date;
+    private Instant date;
 
     /**
-     * Getter for date;
+     * Getter for date
+     *
      * The date on which this transaction occurred.
      */
-    public DateTime? getdate() {;
-        return this.date;;
+    public Instant getDate() {
+        return this.date;
     }
 
     /**
-     * Setter for date;
+     * Setter for date
+     *
      * The date on which this transaction occurred.
      */
-    public void setdate(DateTime? value) {;
-        this.date = value;;
+    public void setDate(Instant value) {
+        this.date = value;
     }
 
 
-    private DateTime? paymentDate;
+    private Instant paymentDate;
 
     /**
-     * Getter for paymentDate;
+     * Getter for paymentDate
+     *
      * The date when payment was made on this transaction. By default, this should be the same as the date of the transaction.
      */
-    public DateTime? getpaymentDate() {;
-        return this.paymentDate;;
+    public Instant getPaymentDate() {
+        return this.paymentDate;
     }
 
     /**
-     * Setter for paymentDate;
+     * Setter for paymentDate
+     *
      * The date when payment was made on this transaction. By default, this should be the same as the date of the transaction.
      */
-    public void setpaymentDate(DateTime? value) {;
-        this.paymentDate = value;;
+    public void setPaymentDate(Instant value) {
+        this.paymentDate = value;
     }
 
 
-    private DocumentStatus? status;
+    private DocumentStatus status;
 
     /**
-     * Getter for status;
+     * Getter for status
+     *
      * The status of the transaction.
      */
-    public DocumentStatus? getstatus() {;
-        return this.status;;
+    public DocumentStatus getStatus() {
+        return this.status;
     }
 
     /**
-     * Setter for status;
+     * Setter for status
+     *
      * The status of the transaction.
      */
-    public void setstatus(DocumentStatus? value) {;
-        this.status = value;;
+    public void setStatus(DocumentStatus value) {
+        this.status = value;
     }
 
 
-    private DocumentType? type;
+    private DocumentType type;
 
     /**
-     * Getter for type;
+     * Getter for type
+     *
      * The type of the transaction. For Returns customers, a transaction type of "Invoice" will be reported to the tax authorities.
     * A sales transaction represents a sale from the company to a customer. A purchase transaction represents a purchase made by the company.
     * A return transaction represents a customer who decided to request a refund after purchasing a product from the company. An inventory 
     * transfer transaction represents goods that were moved from one location of the company to another location without changing ownership.
      */
-    public DocumentType? gettype() {;
-        return this.type;;
+    public DocumentType getType() {
+        return this.type;
     }
 
     /**
-     * Setter for type;
+     * Setter for type
+     *
      * The type of the transaction. For Returns customers, a transaction type of "Invoice" will be reported to the tax authorities.
     * A sales transaction represents a sale from the company to a customer. A purchase transaction represents a purchase made by the company.
     * A return transaction represents a customer who decided to request a refund after purchasing a product from the company. An inventory 
     * transfer transaction represents goods that were moved from one location of the company to another location without changing ownership.
      */
-    public void settype(DocumentType? value) {;
-        this.type = value;;
+    public void setType(DocumentType value) {
+        this.type = value;
     }
 
 
-    private String batchCode;
+    private string batchCode;
 
     /**
-     * Getter for batchCode;
+     * Getter for batchCode
+     *
      * If this transaction was created as part of a batch, this code indicates which batch.
      */
-    public String getbatchCode() {;
-        return this.batchCode;;
+    public string getBatchCode() {
+        return this.batchCode;
     }
 
     /**
-     * Setter for batchCode;
+     * Setter for batchCode
+     *
      * If this transaction was created as part of a batch, this code indicates which batch.
      */
-    public void setbatchCode(String value) {;
-        this.batchCode = value;;
+    public void setBatchCode(string value) {
+        this.batchCode = value;
     }
 
 
-    private String currencyCode;
+    private string currencyCode;
 
     /**
-     * Getter for currencyCode;
+     * Getter for currencyCode
+     *
      * The three-character ISO 4217 currency code that was used for payment for this transaction.
      */
-    public String getcurrencyCode() {;
-        return this.currencyCode;;
+    public string getCurrencyCode() {
+        return this.currencyCode;
     }
 
     /**
-     * Setter for currencyCode;
+     * Setter for currencyCode
+     *
      * The three-character ISO 4217 currency code that was used for payment for this transaction.
      */
-    public void setcurrencyCode(String value) {;
-        this.currencyCode = value;;
+    public void setCurrencyCode(string value) {
+        this.currencyCode = value;
     }
 
 
-    private String customerUsageType;
+    private string customerUsageType;
 
     /**
-     * Getter for customerUsageType;
+     * Getter for customerUsageType
+     *
      * The customer usage type for this transaction. Customer usage types often affect exemption or taxability rules.
      */
-    public String getcustomerUsageType() {;
-        return this.customerUsageType;;
+    public string getCustomerUsageType() {
+        return this.customerUsageType;
     }
 
     /**
-     * Setter for customerUsageType;
+     * Setter for customerUsageType
+     *
      * The customer usage type for this transaction. Customer usage types often affect exemption or taxability rules.
      */
-    public void setcustomerUsageType(String value) {;
-        this.customerUsageType = value;;
+    public void setCustomerUsageType(string value) {
+        this.customerUsageType = value;
     }
 
 
-    private String customerVendorCode;
+    private string customerVendorCode;
 
     /**
-     * Getter for customerVendorCode;
+     * Getter for customerVendorCode
+     *
      * CustomerVendorCode
      */
-    public String getcustomerVendorCode() {;
-        return this.customerVendorCode;;
+    public string getCustomerVendorCode() {
+        return this.customerVendorCode;
     }
 
     /**
-     * Setter for customerVendorCode;
+     * Setter for customerVendorCode
+     *
      * CustomerVendorCode
      */
-    public void setcustomerVendorCode(String value) {;
-        this.customerVendorCode = value;;
+    public void setCustomerVendorCode(string value) {
+        this.customerVendorCode = value;
     }
 
 
-    private String exemptNo;
+    private string exemptNo;
 
     /**
-     * Getter for exemptNo;
+     * Getter for exemptNo
+     *
      * If this transaction was exempt, this field will contain the word "Exempt".
      */
-    public String getexemptNo() {;
-        return this.exemptNo;;
+    public string getExemptNo() {
+        return this.exemptNo;
     }
 
     /**
-     * Setter for exemptNo;
+     * Setter for exemptNo
+     *
      * If this transaction was exempt, this field will contain the word "Exempt".
      */
-    public void setexemptNo(String value) {;
-        this.exemptNo = value;;
+    public void setExemptNo(string value) {
+        this.exemptNo = value;
     }
 
 
-    private Boolean? reconciled;
+    private object reconciled;
 
     /**
-     * Getter for reconciled;
+     * Getter for reconciled
+     *
      * If this transaction has been reconciled against the company's ledger, this value is set to true.
      */
-    public Boolean? getreconciled() {;
-        return this.reconciled;;
+    public object getReconciled() {
+        return this.reconciled;
     }
 
     /**
-     * Setter for reconciled;
+     * Setter for reconciled
+     *
      * If this transaction has been reconciled against the company's ledger, this value is set to true.
      */
-    public void setreconciled(Boolean? value) {;
-        this.reconciled = value;;
+    public void setReconciled(object value) {
+        this.reconciled = value;
     }
 
 
-    private String locationCode;
+    private string locationCode;
 
     /**
-     * Getter for locationCode;
+     * Getter for locationCode
+     *
      * If this transaction was made from a specific reporting location, this is the code string of the location.
     * For customers using Returns, this indicates how tax will be reported according to different locations on the tax forms.
      */
-    public String getlocationCode() {;
-        return this.locationCode;;
+    public string getLocationCode() {
+        return this.locationCode;
     }
 
     /**
-     * Setter for locationCode;
+     * Setter for locationCode
+     *
      * If this transaction was made from a specific reporting location, this is the code string of the location.
     * For customers using Returns, this indicates how tax will be reported according to different locations on the tax forms.
      */
-    public void setlocationCode(String value) {;
-        this.locationCode = value;;
+    public void setLocationCode(string value) {
+        this.locationCode = value;
     }
 
 
-    private String purchaseOrderNo;
+    private string purchaseOrderNo;
 
     /**
-     * Getter for purchaseOrderNo;
+     * Getter for purchaseOrderNo
+     *
      * The customer-supplied purchase order number of this transaction.
      */
-    public String getpurchaseOrderNo() {;
-        return this.purchaseOrderNo;;
+    public string getPurchaseOrderNo() {
+        return this.purchaseOrderNo;
     }
 
     /**
-     * Setter for purchaseOrderNo;
+     * Setter for purchaseOrderNo
+     *
      * The customer-supplied purchase order number of this transaction.
      */
-    public void setpurchaseOrderNo(String value) {;
-        this.purchaseOrderNo = value;;
+    public void setPurchaseOrderNo(string value) {
+        this.purchaseOrderNo = value;
     }
 
 
-    private String referenceCode;
+    private string referenceCode;
 
     /**
-     * Getter for referenceCode;
+     * Getter for referenceCode
+     *
      * A user-defined reference code for this transaction.
      */
-    public String getreferenceCode() {;
-        return this.referenceCode;;
+    public string getReferenceCode() {
+        return this.referenceCode;
     }
 
     /**
-     * Setter for referenceCode;
+     * Setter for referenceCode
+     *
      * A user-defined reference code for this transaction.
      */
-    public void setreferenceCode(String value) {;
-        this.referenceCode = value;;
+    public void setReferenceCode(string value) {
+        this.referenceCode = value;
     }
 
 
-    private String salespersonCode;
+    private string salespersonCode;
 
     /**
-     * Getter for salespersonCode;
+     * Getter for salespersonCode
+     *
      * The salesperson who provided this transaction. Not required.
      */
-    public String getsalespersonCode() {;
-        return this.salespersonCode;;
+    public string getSalespersonCode() {
+        return this.salespersonCode;
     }
 
     /**
-     * Setter for salespersonCode;
+     * Setter for salespersonCode
+     *
      * The salesperson who provided this transaction. Not required.
      */
-    public void setsalespersonCode(String value) {;
-        this.salespersonCode = value;;
+    public void setSalespersonCode(string value) {
+        this.salespersonCode = value;
     }
 
 
-    private TaxOverrideTypeId? taxOverrideType;
+    private TaxOverrideTypeId taxOverrideType;
 
     /**
-     * Getter for taxOverrideType;
+     * Getter for taxOverrideType
+     *
      * If a tax override was applied to this transaction, indicates what type of tax override was applied.
      */
-    public TaxOverrideTypeId? gettaxOverrideType() {;
-        return this.taxOverrideType;;
+    public TaxOverrideTypeId getTaxOverrideType() {
+        return this.taxOverrideType;
     }
 
     /**
-     * Setter for taxOverrideType;
+     * Setter for taxOverrideType
+     *
      * If a tax override was applied to this transaction, indicates what type of tax override was applied.
      */
-    public void settaxOverrideType(TaxOverrideTypeId? value) {;
-        this.taxOverrideType = value;;
+    public void setTaxOverrideType(TaxOverrideTypeId value) {
+        this.taxOverrideType = value;
     }
 
 
-    private Decimal? taxOverrideAmount;
+    private Decimal taxOverrideAmount;
 
     /**
-     * Getter for taxOverrideAmount;
+     * Getter for taxOverrideAmount
+     *
      * If a tax override was applied to this transaction, indicates the amount of tax that was requested by the customer.
      */
-    public Decimal? gettaxOverrideAmount() {;
-        return this.taxOverrideAmount;;
+    public Decimal getTaxOverrideAmount() {
+        return this.taxOverrideAmount;
     }
 
     /**
-     * Setter for taxOverrideAmount;
+     * Setter for taxOverrideAmount
+     *
      * If a tax override was applied to this transaction, indicates the amount of tax that was requested by the customer.
      */
-    public void settaxOverrideAmount(Decimal? value) {;
-        this.taxOverrideAmount = value;;
+    public void setTaxOverrideAmount(Decimal value) {
+        this.taxOverrideAmount = value;
     }
 
 
-    private String taxOverrideReason;
+    private string taxOverrideReason;
 
     /**
-     * Getter for taxOverrideReason;
+     * Getter for taxOverrideReason
+     *
      * If a tax override was applied to this transaction, indicates the reason for the tax override.
      */
-    public String gettaxOverrideReason() {;
-        return this.taxOverrideReason;;
+    public string getTaxOverrideReason() {
+        return this.taxOverrideReason;
     }
 
     /**
-     * Setter for taxOverrideReason;
+     * Setter for taxOverrideReason
+     *
      * If a tax override was applied to this transaction, indicates the reason for the tax override.
      */
-    public void settaxOverrideReason(String value) {;
-        this.taxOverrideReason = value;;
+    public void setTaxOverrideReason(string value) {
+        this.taxOverrideReason = value;
     }
 
 
-    private Decimal? totalAmount;
+    private Decimal totalAmount;
 
     /**
-     * Getter for totalAmount;
+     * Getter for totalAmount
+     *
      * The total amount of this transaction.
      */
-    public Decimal? gettotalAmount() {;
-        return this.totalAmount;;
+    public Decimal getTotalAmount() {
+        return this.totalAmount;
     }
 
     /**
-     * Setter for totalAmount;
+     * Setter for totalAmount
+     *
      * The total amount of this transaction.
      */
-    public void settotalAmount(Decimal? value) {;
-        this.totalAmount = value;;
+    public void setTotalAmount(Decimal value) {
+        this.totalAmount = value;
     }
 
 
-    private Decimal? totalExempt;
+    private Decimal totalExempt;
 
     /**
-     * Getter for totalExempt;
+     * Getter for totalExempt
+     *
      * The amount of this transaction that was exempt.
      */
-    public Decimal? gettotalExempt() {;
-        return this.totalExempt;;
+    public Decimal getTotalExempt() {
+        return this.totalExempt;
     }
 
     /**
-     * Setter for totalExempt;
+     * Setter for totalExempt
+     *
      * The amount of this transaction that was exempt.
      */
-    public void settotalExempt(Decimal? value) {;
-        this.totalExempt = value;;
+    public void setTotalExempt(Decimal value) {
+        this.totalExempt = value;
     }
 
 
-    private Decimal? totalTax;
+    private Decimal totalTax;
 
     /**
-     * Getter for totalTax;
+     * Getter for totalTax
+     *
      * The total tax calculated for all lines in this transaction.
      */
-    public Decimal? gettotalTax() {;
-        return this.totalTax;;
+    public Decimal getTotalTax() {
+        return this.totalTax;
     }
 
     /**
-     * Setter for totalTax;
+     * Setter for totalTax
+     *
      * The total tax calculated for all lines in this transaction.
      */
-    public void settotalTax(Decimal? value) {;
-        this.totalTax = value;;
+    public void setTotalTax(Decimal value) {
+        this.totalTax = value;
     }
 
 
-    private Decimal? totalTaxable;
+    private Decimal totalTaxable;
 
     /**
-     * Getter for totalTaxable;
+     * Getter for totalTaxable
+     *
      * The portion of the total amount of this transaction that was taxable.
      */
-    public Decimal? gettotalTaxable() {;
-        return this.totalTaxable;;
+    public Decimal getTotalTaxable() {
+        return this.totalTaxable;
     }
 
     /**
-     * Setter for totalTaxable;
+     * Setter for totalTaxable
+     *
      * The portion of the total amount of this transaction that was taxable.
      */
-    public void settotalTaxable(Decimal? value) {;
-        this.totalTaxable = value;;
+    public void setTotalTaxable(Decimal value) {
+        this.totalTaxable = value;
     }
 
 
-    private Decimal? totalTaxCalculated;
+    private Decimal totalTaxCalculated;
 
     /**
-     * Getter for totalTaxCalculated;
+     * Getter for totalTaxCalculated
+     *
      * If a tax override was applied to this transaction, indicates the amount of tax Avalara calculated for the transaction.
      */
-    public Decimal? gettotalTaxCalculated() {;
-        return this.totalTaxCalculated;;
+    public Decimal getTotalTaxCalculated() {
+        return this.totalTaxCalculated;
     }
 
     /**
-     * Setter for totalTaxCalculated;
+     * Setter for totalTaxCalculated
+     *
      * If a tax override was applied to this transaction, indicates the amount of tax Avalara calculated for the transaction.
      */
-    public void settotalTaxCalculated(Decimal? value) {;
-        this.totalTaxCalculated = value;;
+    public void setTotalTaxCalculated(Decimal value) {
+        this.totalTaxCalculated = value;
     }
 
 
-    private AdjustmentReason? adjustmentReason;
+    private AdjustmentReason adjustmentReason;
 
     /**
-     * Getter for adjustmentReason;
+     * Getter for adjustmentReason
+     *
      * If this transaction was adjusted, indicates the unique ID number of the reason why the transaction was adjusted.
      */
-    public AdjustmentReason? getadjustmentReason() {;
-        return this.adjustmentReason;;
+    public AdjustmentReason getAdjustmentReason() {
+        return this.adjustmentReason;
     }
 
     /**
-     * Setter for adjustmentReason;
+     * Setter for adjustmentReason
+     *
      * If this transaction was adjusted, indicates the unique ID number of the reason why the transaction was adjusted.
      */
-    public void setadjustmentReason(AdjustmentReason? value) {;
-        this.adjustmentReason = value;;
+    public void setAdjustmentReason(AdjustmentReason value) {
+        this.adjustmentReason = value;
     }
 
 
-    private String adjustmentDescription;
+    private string adjustmentDescription;
 
     /**
-     * Getter for adjustmentDescription;
+     * Getter for adjustmentDescription
+     *
      * If this transaction was adjusted, indicates a description of the reason why the transaction was adjusted.
      */
-    public String getadjustmentDescription() {;
-        return this.adjustmentDescription;;
+    public string getAdjustmentDescription() {
+        return this.adjustmentDescription;
     }
 
     /**
-     * Setter for adjustmentDescription;
+     * Setter for adjustmentDescription
+     *
      * If this transaction was adjusted, indicates a description of the reason why the transaction was adjusted.
      */
-    public void setadjustmentDescription(String value) {;
-        this.adjustmentDescription = value;;
+    public void setAdjustmentDescription(string value) {
+        this.adjustmentDescription = value;
     }
 
 
-    private Boolean? locked;
+    private object locked;
 
     /**
-     * Getter for locked;
+     * Getter for locked
+     *
      * If this transaction has been reported to a tax authority, this transaction is considered locked and may not be adjusted after reporting.
      */
-    public Boolean? getlocked() {;
-        return this.locked;;
+    public object getLocked() {
+        return this.locked;
     }
 
     /**
-     * Setter for locked;
+     * Setter for locked
+     *
      * If this transaction has been reported to a tax authority, this transaction is considered locked and may not be adjusted after reporting.
      */
-    public void setlocked(Boolean? value) {;
-        this.locked = value;;
+    public void setLocked(object value) {
+        this.locked = value;
     }
 
 
-    private String region;
+    private string region;
 
     /**
-     * Getter for region;
+     * Getter for region
+     *
      * The two-or-three character ISO region code of the region for this transaction.
      */
-    public String getregion() {;
-        return this.region;;
+    public string getRegion() {
+        return this.region;
     }
 
     /**
-     * Setter for region;
+     * Setter for region
+     *
      * The two-or-three character ISO region code of the region for this transaction.
      */
-    public void setregion(String value) {;
-        this.region = value;;
+    public void setRegion(string value) {
+        this.region = value;
     }
 
 
-    private String country;
+    private string country;
 
     /**
-     * Getter for country;
+     * Getter for country
+     *
      * The two-character ISO 3166 code of the country for this transaction.
      */
-    public String getcountry() {;
-        return this.country;;
+    public string getCountry() {
+        return this.country;
     }
 
     /**
-     * Setter for country;
+     * Setter for country
+     *
      * The two-character ISO 3166 code of the country for this transaction.
      */
-    public void setcountry(String value) {;
-        this.country = value;;
+    public void setCountry(string value) {
+        this.country = value;
     }
 
 
-    private Int32? version;
+    private Integer version;
 
     /**
-     * Getter for version;
+     * Getter for version
+     *
      * If this transaction was adjusted, this indicates the version number of this transaction. Incremented each time the transaction
     * is adjusted.
      */
-    public Int32? getversion() {;
-        return this.version;;
+    public Integer getVersion() {
+        return this.version;
     }
 
     /**
-     * Setter for version;
+     * Setter for version
+     *
      * If this transaction was adjusted, this indicates the version number of this transaction. Incremented each time the transaction
     * is adjusted.
      */
-    public void setversion(Int32? value) {;
-        this.version = value;;
+    public void setVersion(Integer value) {
+        this.version = value;
     }
 
 
-    private String softwareVersion;
+    private string softwareVersion;
 
     /**
-     * Getter for softwareVersion;
+     * Getter for softwareVersion
+     *
      * The software version used to calculate this transaction.
      */
-    public String getsoftwareVersion() {;
-        return this.softwareVersion;;
+    public string getSoftwareVersion() {
+        return this.softwareVersion;
     }
 
     /**
-     * Setter for softwareVersion;
+     * Setter for softwareVersion
+     *
      * The software version used to calculate this transaction.
      */
-    public void setsoftwareVersion(String value) {;
-        this.softwareVersion = value;;
+    public void setSoftwareVersion(string value) {
+        this.softwareVersion = value;
     }
 
 
-    private Int64? originAddressId;
+    private Long originAddressId;
 
     /**
-     * Getter for originAddressId;
+     * Getter for originAddressId
+     *
      * The unique ID number of the origin address for this transaction.
      */
-    public Int64? getoriginAddressId() {;
-        return this.originAddressId;;
+    public Long getOriginAddressId() {
+        return this.originAddressId;
     }
 
     /**
-     * Setter for originAddressId;
+     * Setter for originAddressId
+     *
      * The unique ID number of the origin address for this transaction.
      */
-    public void setoriginAddressId(Int64? value) {;
-        this.originAddressId = value;;
+    public void setOriginAddressId(Long value) {
+        this.originAddressId = value;
     }
 
 
-    private Int64? destinationAddressId;
+    private Long destinationAddressId;
 
     /**
-     * Getter for destinationAddressId;
+     * Getter for destinationAddressId
+     *
      * The unique ID number of the destination address for this transaction.
      */
-    public Int64? getdestinationAddressId() {;
-        return this.destinationAddressId;;
+    public Long getDestinationAddressId() {
+        return this.destinationAddressId;
     }
 
     /**
-     * Setter for destinationAddressId;
+     * Setter for destinationAddressId
+     *
      * The unique ID number of the destination address for this transaction.
      */
-    public void setdestinationAddressId(Int64? value) {;
-        this.destinationAddressId = value;;
+    public void setDestinationAddressId(Long value) {
+        this.destinationAddressId = value;
     }
 
 
-    private DateTime? exchangeRateEffectiveDate;
+    private Instant exchangeRateEffectiveDate;
 
     /**
-     * Getter for exchangeRateEffectiveDate;
+     * Getter for exchangeRateEffectiveDate
+     *
      * If this transaction included foreign currency exchange, this is the date as of which the exchange rate was calculated.
      */
-    public DateTime? getexchangeRateEffectiveDate() {;
-        return this.exchangeRateEffectiveDate;;
+    public Instant getExchangeRateEffectiveDate() {
+        return this.exchangeRateEffectiveDate;
     }
 
     /**
-     * Setter for exchangeRateEffectiveDate;
+     * Setter for exchangeRateEffectiveDate
+     *
      * If this transaction included foreign currency exchange, this is the date as of which the exchange rate was calculated.
      */
-    public void setexchangeRateEffectiveDate(DateTime? value) {;
-        this.exchangeRateEffectiveDate = value;;
+    public void setExchangeRateEffectiveDate(Instant value) {
+        this.exchangeRateEffectiveDate = value;
     }
 
 
-    private Decimal? exchangeRate;
+    private Decimal exchangeRate;
 
     /**
-     * Getter for exchangeRate;
+     * Getter for exchangeRate
+     *
      * If this transaction included foreign currency exchange, this is the exchange rate that was used.
      */
-    public Decimal? getexchangeRate() {;
-        return this.exchangeRate;;
+    public Decimal getExchangeRate() {
+        return this.exchangeRate;
     }
 
     /**
-     * Setter for exchangeRate;
+     * Setter for exchangeRate
+     *
      * If this transaction included foreign currency exchange, this is the exchange rate that was used.
      */
-    public void setexchangeRate(Decimal? value) {;
-        this.exchangeRate = value;;
+    public void setExchangeRate(Decimal value) {
+        this.exchangeRate = value;
     }
 
 
-    private Boolean? isSellerImporterOfRecord;
+    private object isSellerImporterOfRecord;
 
     /**
-     * Getter for isSellerImporterOfRecord;
+     * Getter for isSellerImporterOfRecord
+     *
      * If true, this seller was considered the importer of record of a product shipped internationally.
      */
-    public Boolean? getisSellerImporterOfRecord() {;
-        return this.isSellerImporterOfRecord;;
+    public object getIsSellerImporterOfRecord() {
+        return this.isSellerImporterOfRecord;
     }
 
     /**
-     * Setter for isSellerImporterOfRecord;
+     * Setter for isSellerImporterOfRecord
+     *
      * If true, this seller was considered the importer of record of a product shipped internationally.
      */
-    public void setisSellerImporterOfRecord(Boolean? value) {;
-        this.isSellerImporterOfRecord = value;;
+    public void setIsSellerImporterOfRecord(object value) {
+        this.isSellerImporterOfRecord = value;
     }
 
 
-    private String description;
+    private string description;
 
     /**
-     * Getter for description;
+     * Getter for description
+     *
      * Description of this transaction.
      */
-    public String getdescription() {;
-        return this.description;;
+    public string getDescription() {
+        return this.description;
     }
 
     /**
-     * Setter for description;
+     * Setter for description
+     *
      * Description of this transaction.
      */
-    public void setdescription(String value) {;
-        this.description = value;;
+    public void setDescription(string value) {
+        this.description = value;
     }
 
 
-    private String email;
+    private string email;
 
     /**
-     * Getter for email;
+     * Getter for email
+     *
      * Email address associated with this transaction.
      */
-    public String getemail() {;
-        return this.email;;
+    public string getEmail() {
+        return this.email;
     }
 
     /**
-     * Setter for email;
+     * Setter for email
+     *
      * Email address associated with this transaction.
      */
-    public void setemail(String value) {;
-        this.email = value;;
+    public void setEmail(string value) {
+        this.email = value;
     }
 
 
-    private String businessIdentificationNo;
+    private string businessIdentificationNo;
 
     /**
-     * Getter for businessIdentificationNo;
+     * Getter for businessIdentificationNo
+     *
      * VAT business identification number used for this transaction.
      */
-    public String getbusinessIdentificationNo() {;
-        return this.businessIdentificationNo;;
+    public string getBusinessIdentificationNo() {
+        return this.businessIdentificationNo;
     }
 
     /**
-     * Setter for businessIdentificationNo;
+     * Setter for businessIdentificationNo
+     *
      * VAT business identification number used for this transaction.
      */
-    public void setbusinessIdentificationNo(String value) {;
-        this.businessIdentificationNo = value;;
+    public void setBusinessIdentificationNo(string value) {
+        this.businessIdentificationNo = value;
     }
 
 
-    private DateTime? modifiedDate;
+    private Instant modifiedDate;
 
     /**
-     * Getter for modifiedDate;
+     * Getter for modifiedDate
+     *
      * The date/time when this record was last modified.
      */
-    public DateTime? getmodifiedDate() {;
-        return this.modifiedDate;;
+    public Instant getModifiedDate() {
+        return this.modifiedDate;
     }
 
     /**
-     * Setter for modifiedDate;
+     * Setter for modifiedDate
+     *
      * The date/time when this record was last modified.
      */
-    public void setmodifiedDate(DateTime? value) {;
-        this.modifiedDate = value;;
+    public void setModifiedDate(Instant value) {
+        this.modifiedDate = value;
     }
 
 
-    private Int32? modifiedUserId;
+    private Integer modifiedUserId;
 
     /**
-     * Getter for modifiedUserId;
+     * Getter for modifiedUserId
+     *
      * The user ID of the user who last modified this record.
      */
-    public Int32? getmodifiedUserId() {;
-        return this.modifiedUserId;;
+    public Integer getModifiedUserId() {
+        return this.modifiedUserId;
     }
 
     /**
-     * Setter for modifiedUserId;
+     * Setter for modifiedUserId
+     *
      * The user ID of the user who last modified this record.
      */
-    public void setmodifiedUserId(Int32? value) {;
-        this.modifiedUserId = value;;
+    public void setModifiedUserId(Integer value) {
+        this.modifiedUserId = value;
     }
 
 
-    private DateTime? taxDate;
+    private Instant taxDate;
 
     /**
-     * Getter for taxDate;
+     * Getter for taxDate
+     *
      * Tax date for this transaction
      */
-    public DateTime? gettaxDate() {;
-        return this.taxDate;;
+    public Instant getTaxDate() {
+        return this.taxDate;
     }
 
     /**
-     * Setter for taxDate;
+     * Setter for taxDate
+     *
      * Tax date for this transaction
      */
-    public void settaxDate(DateTime? value) {;
-        this.taxDate = value;;
+    public void setTaxDate(Instant value) {
+        this.taxDate = value;
     }
 
 
-    private List<TransactionLineModel> lines;
+    private TransactionLineModel[] lines;
 
     /**
-     * Getter for lines;
+     * Getter for lines
+     *
      * Optional: A list of line items in this transaction. To fetch this list, add the query string "?$include=Lines" or "?$include=Details" to your URL.
      */
-    public List<TransactionLineModel> getlines() {;
-        return this.lines;;
+    public TransactionLineModel[] getLines() {
+        return this.lines;
     }
 
     /**
-     * Setter for lines;
+     * Setter for lines
+     *
      * Optional: A list of line items in this transaction. To fetch this list, add the query string "?$include=Lines" or "?$include=Details" to your URL.
      */
-    public void setlines(List<TransactionLineModel> value) {;
-        this.lines = value;;
+    public void setLines(TransactionLineModel[] value) {
+        this.lines = value;
     }
 
 
-    private List<TransactionAddressModel> addresses;
+    private TransactionAddressModel[] addresses;
 
     /**
-     * Getter for addresses;
+     * Getter for addresses
+     *
      * Optional: A list of line items in this transaction. To fetch this list, add the query string "?$include=Addresses" to your URL.
      */
-    public List<TransactionAddressModel> getaddresses() {;
-        return this.addresses;;
+    public TransactionAddressModel[] getAddresses() {
+        return this.addresses;
     }
 
     /**
-     * Setter for addresses;
+     * Setter for addresses
+     *
      * Optional: A list of line items in this transaction. To fetch this list, add the query string "?$include=Addresses" to your URL.
      */
-    public void setaddresses(List<TransactionAddressModel> value) {;
-        this.addresses = value;;
+    public void setAddresses(TransactionAddressModel[] value) {
+        this.addresses = value;
     }
 
 
-    private List<TransactionLocationTypeModel> locationTypes;
+    private TransactionLocationTypeModel[] locationTypes;
 
     /**
-     * Getter for locationTypes;
+     * Getter for locationTypes
+     *
      * Optional: A list of location types in this transaction. To fetch this list, add the query string "?$include=Addresses" to your URL.
      */
-    public List<TransactionLocationTypeModel> getlocationTypes() {;
-        return this.locationTypes;;
+    public TransactionLocationTypeModel[] getLocationTypes() {
+        return this.locationTypes;
     }
 
     /**
-     * Setter for locationTypes;
+     * Setter for locationTypes
+     *
      * Optional: A list of location types in this transaction. To fetch this list, add the query string "?$include=Addresses" to your URL.
      */
-    public void setlocationTypes(List<TransactionLocationTypeModel> value) {;
-        this.locationTypes = value;;
+    public void setLocationTypes(TransactionLocationTypeModel[] value) {
+        this.locationTypes = value;
     }
 
 
-    private List<TransactionModel> history;
+    private TransactionModel[] history;
 
     /**
-     * Getter for history;
+     * Getter for history
+     *
      * If this transaction has been adjusted, this list contains all the previous versions of the document.
      */
-    public List<TransactionModel> gethistory() {;
-        return this.history;;
+    public TransactionModel[] getHistory() {
+        return this.history;
     }
 
     /**
-     * Setter for history;
+     * Setter for history
+     *
      * If this transaction has been adjusted, this list contains all the previous versions of the document.
      */
-    public void sethistory(List<TransactionModel> value) {;
-        this.history = value;;
+    public void setHistory(TransactionModel[] value) {
+        this.history = value;
     }
 
 
-    private List<TransactionSummary> summary;
+    private TransactionSummary[] summary;
 
     /**
-     * Getter for summary;
+     * Getter for summary
+     *
      * Contains a summary of tax on this transaction.
      */
-    public List<TransactionSummary> getsummary() {;
-        return this.summary;;
+    public TransactionSummary[] getSummary() {
+        return this.summary;
     }
 
     /**
-     * Setter for summary;
+     * Setter for summary
+     *
      * Contains a summary of tax on this transaction.
      */
-    public void setsummary(List<TransactionSummary> value) {;
-        this.summary = value;;
+    public void setSummary(TransactionSummary[] value) {
+        this.summary = value;
     }
 
 
-    private Dictionary<string, string> parameters;
+    private object parameters;
 
     /**
-     * Getter for parameters;
+     * Getter for parameters
+     *
      * Contains a list of extra parameters that were set when the transaction was created.
      */
-    public Dictionary<string, string> getparameters() {;
-        return this.parameters;;
+    public object getParameters() {
+        return this.parameters;
     }
 
     /**
-     * Setter for parameters;
+     * Setter for parameters
+     *
      * Contains a list of extra parameters that were set when the transaction was created.
      */
-    public void setparameters(Dictionary<string, string> value) {;
-        this.parameters = value;;
+    public void setParameters(object value) {
+        this.parameters = value;
     }
 
 
-    private List<AvaTaxMessage> messages;
+    private AvaTaxMessage[] messages;
 
     /**
-     * Getter for messages;
+     * Getter for messages
+     *
      * List of informational and warning messages regarding this API call. These messages are only relevant to the current API call.
      */
-    public List<AvaTaxMessage> getmessages() {;
-        return this.messages;;
+    public AvaTaxMessage[] getMessages() {
+        return this.messages;
     }
 
     /**
-     * Setter for messages;
+     * Setter for messages
+     *
      * List of informational and warning messages regarding this API call. These messages are only relevant to the current API call.
      */
-    public void setmessages(List<AvaTaxMessage> value) {;
-        this.messages = value;;
+    public void setMessages(AvaTaxMessage[] value) {
+        this.messages = value;
     }
 
 

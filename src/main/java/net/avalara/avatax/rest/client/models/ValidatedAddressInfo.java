@@ -30,10 +30,11 @@ import java.util.HashMap;
 public class ValidatedAddressInfo {
 
 
-    private String addressType;
+    private string addressType;
 
     /**
-     * Getter for addressType;
+     * Getter for addressType
+     *
      * Address type code. One of: 
     * * F - Firm or company address
     * * G - General Delivery address
@@ -42,12 +43,13 @@ public class ValidatedAddressInfo {
     * * R - Rural route address
     * * S - Street or residential address
      */
-    public String getaddressType() {;
-        return this.addressType;;
+    public string getAddressType() {
+        return this.addressType;
     }
 
     /**
-     * Setter for addressType;
+     * Setter for addressType
+     *
      * Address type code. One of: 
     * * F - Firm or company address
     * * G - General Delivery address
@@ -56,179 +58,197 @@ public class ValidatedAddressInfo {
     * * R - Rural route address
     * * S - Street or residential address
      */
-    public void setaddressType(String value) {;
-        this.addressType = value;;
+    public void setAddressType(string value) {
+        this.addressType = value;
     }
 
 
-    private String line1;
+    private string line1;
 
     /**
-     * Getter for line1;
+     * Getter for line1
+     *
      * Line1
      */
-    public String getline1() {;
-        return this.line1;;
+    public string getLine1() {
+        return this.line1;
     }
 
     /**
-     * Setter for line1;
+     * Setter for line1
+     *
      * Line1
      */
-    public void setline1(String value) {;
-        this.line1 = value;;
+    public void setLine1(string value) {
+        this.line1 = value;
     }
 
 
-    private String line2;
+    private string line2;
 
     /**
-     * Getter for line2;
+     * Getter for line2
+     *
      * Line2
      */
-    public String getline2() {;
-        return this.line2;;
+    public string getLine2() {
+        return this.line2;
     }
 
     /**
-     * Setter for line2;
+     * Setter for line2
+     *
      * Line2
      */
-    public void setline2(String value) {;
-        this.line2 = value;;
+    public void setLine2(string value) {
+        this.line2 = value;
     }
 
 
-    private String line3;
+    private string line3;
 
     /**
-     * Getter for line3;
+     * Getter for line3
+     *
      * Line3
      */
-    public String getline3() {;
-        return this.line3;;
+    public string getLine3() {
+        return this.line3;
     }
 
     /**
-     * Setter for line3;
+     * Setter for line3
+     *
      * Line3
      */
-    public void setline3(String value) {;
-        this.line3 = value;;
+    public void setLine3(string value) {
+        this.line3 = value;
     }
 
 
-    private String city;
+    private string city;
 
     /**
-     * Getter for city;
+     * Getter for city
+     *
      * City
      */
-    public String getcity() {;
-        return this.city;;
+    public string getCity() {
+        return this.city;
     }
 
     /**
-     * Setter for city;
+     * Setter for city
+     *
      * City
      */
-    public void setcity(String value) {;
-        this.city = value;;
+    public void setCity(string value) {
+        this.city = value;
     }
 
 
-    private String region;
+    private string region;
 
     /**
-     * Getter for region;
+     * Getter for region
+     *
      * State / Province / Region
      */
-    public String getregion() {;
-        return this.region;;
+    public string getRegion() {
+        return this.region;
     }
 
     /**
-     * Setter for region;
+     * Setter for region
+     *
      * State / Province / Region
      */
-    public void setregion(String value) {;
-        this.region = value;;
+    public void setRegion(string value) {
+        this.region = value;
     }
 
 
-    private String country;
+    private string country;
 
     /**
-     * Getter for country;
+     * Getter for country
+     *
      * Two character ISO 3166 Country Code
      */
-    public String getcountry() {;
-        return this.country;;
+    public string getCountry() {
+        return this.country;
     }
 
     /**
-     * Setter for country;
+     * Setter for country
+     *
      * Two character ISO 3166 Country Code
      */
-    public void setcountry(String value) {;
-        this.country = value;;
+    public void setCountry(string value) {
+        this.country = value;
     }
 
 
-    private String postalCode;
+    private string postalCode;
 
     /**
-     * Getter for postalCode;
+     * Getter for postalCode
+     *
      * Postal Code / Zip Code
      */
-    public String getpostalCode() {;
-        return this.postalCode;;
+    public string getPostalCode() {
+        return this.postalCode;
     }
 
     /**
-     * Setter for postalCode;
+     * Setter for postalCode
+     *
      * Postal Code / Zip Code
      */
-    public void setpostalCode(String value) {;
-        this.postalCode = value;;
+    public void setPostalCode(string value) {
+        this.postalCode = value;
     }
 
 
-    private Decimal? latitude;
+    private Decimal latitude;
 
     /**
-     * Getter for latitude;
+     * Getter for latitude
+     *
      * Geospatial latitude measurement
      */
-    public Decimal? getlatitude() {;
-        return this.latitude;;
+    public Decimal getLatitude() {
+        return this.latitude;
     }
 
     /**
-     * Setter for latitude;
+     * Setter for latitude
+     *
      * Geospatial latitude measurement
      */
-    public void setlatitude(Decimal? value) {;
-        this.latitude = value;;
+    public void setLatitude(Decimal value) {
+        this.latitude = value;
     }
 
 
-    private Decimal? longitude;
+    private Decimal longitude;
 
     /**
-     * Getter for longitude;
+     * Getter for longitude
+     *
      * Geospatial longitude measurement
      */
-    public Decimal? getlongitude() {;
-        return this.longitude;;
+    public Decimal getLongitude() {
+        return this.longitude;
     }
 
     /**
-     * Setter for longitude;
+     * Setter for longitude
+     *
      * Geospatial longitude measurement
      */
-    public void setlongitude(Decimal? value) {;
-        this.longitude = value;;
+    public void setLongitude(Decimal value) {
+        this.longitude = value;
     }
 
 

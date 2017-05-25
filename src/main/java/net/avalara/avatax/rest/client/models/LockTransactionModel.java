@@ -30,24 +30,26 @@ import java.util.HashMap;
 public class LockTransactionModel {
 
 
-    private Boolean isLocked;
+    private boolean isLocked;
 
     /**
-     * Getter for isLocked;
+     * Getter for isLocked
+     *
      * Set this value to be true to commit this transaction.
     * Committing a transaction allows it to be reported on a tax return. Uncommitted transactions will not be reported.
      */
-    public Boolean getisLocked() {;
-        return this.isLocked;;
+    public boolean getIsLocked() {
+        return this.isLocked;
     }
 
     /**
-     * Setter for isLocked;
+     * Setter for isLocked
+     *
      * Set this value to be true to commit this transaction.
     * Committing a transaction allows it to be reported on a tax return. Uncommitted transactions will not be reported.
      */
-    public void setisLocked(Boolean value) {;
-        this.isLocked = value;;
+    public void setIsLocked(boolean value) {
+        this.isLocked = value;
     }
 
 

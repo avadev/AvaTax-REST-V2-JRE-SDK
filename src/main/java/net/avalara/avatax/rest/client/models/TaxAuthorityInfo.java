@@ -30,79 +30,87 @@ import java.util.HashMap;
 public class TaxAuthorityInfo {
 
 
-    private String avalaraId;
+    private string avalaraId;
 
     /**
-     * Getter for avalaraId;
+     * Getter for avalaraId
+     *
      * Avalara Id
      */
-    public String getavalaraId() {;
-        return this.avalaraId;;
+    public string getAvalaraId() {
+        return this.avalaraId;
     }
 
     /**
-     * Setter for avalaraId;
+     * Setter for avalaraId
+     *
      * Avalara Id
      */
-    public void setavalaraId(String value) {;
-        this.avalaraId = value;;
+    public void setAvalaraId(string value) {
+        this.avalaraId = value;
     }
 
 
-    private String jurisdictionName;
+    private string jurisdictionName;
 
     /**
-     * Getter for jurisdictionName;
+     * Getter for jurisdictionName
+     *
      * Jurisdiction Name
      */
-    public String getjurisdictionName() {;
-        return this.jurisdictionName;;
+    public string getJurisdictionName() {
+        return this.jurisdictionName;
     }
 
     /**
-     * Setter for jurisdictionName;
+     * Setter for jurisdictionName
+     *
      * Jurisdiction Name
      */
-    public void setjurisdictionName(String value) {;
-        this.jurisdictionName = value;;
+    public void setJurisdictionName(string value) {
+        this.jurisdictionName = value;
     }
 
 
-    private JurisdictionType? jurisdictionType;
+    private JurisdictionType jurisdictionType;
 
     /**
-     * Getter for jurisdictionType;
+     * Getter for jurisdictionType
+     *
      * Jurisdiction Type
      */
-    public JurisdictionType? getjurisdictionType() {;
-        return this.jurisdictionType;;
+    public JurisdictionType getJurisdictionType() {
+        return this.jurisdictionType;
     }
 
     /**
-     * Setter for jurisdictionType;
+     * Setter for jurisdictionType
+     *
      * Jurisdiction Type
      */
-    public void setjurisdictionType(JurisdictionType? value) {;
-        this.jurisdictionType = value;;
+    public void setJurisdictionType(JurisdictionType value) {
+        this.jurisdictionType = value;
     }
 
 
-    private String signatureCode;
+    private string signatureCode;
 
     /**
-     * Getter for signatureCode;
+     * Getter for signatureCode
+     *
      * Signature Code
      */
-    public String getsignatureCode() {;
-        return this.signatureCode;;
+    public string getSignatureCode() {
+        return this.signatureCode;
     }
 
     /**
-     * Setter for signatureCode;
+     * Setter for signatureCode
+     *
      * Signature Code
      */
-    public void setsignatureCode(String value) {;
-        this.signatureCode = value;;
+    public void setSignatureCode(string value) {
+        this.signatureCode = value;
     }
 
 

@@ -31,891 +31,983 @@ import java.util.HashMap;
 public class FilingCalendarModel {
 
 
-    private Int64 id;
+    private long id;
 
     /**
-     * Getter for id;
+     * Getter for id
+     *
      * The unique ID number of this filing calendar.
      */
-    public Int64 getid() {;
-        return this.id;;
+    public long getId() {
+        return this.id;
     }
 
     /**
-     * Setter for id;
+     * Setter for id
+     *
      * The unique ID number of this filing calendar.
      */
-    public void setid(Int64 value) {;
-        this.id = value;;
+    public void setId(long value) {
+        this.id = value;
     }
 
 
-    private Int32 companyId;
+    private int companyId;
 
     /**
-     * Getter for companyId;
+     * Getter for companyId
+     *
      * The unique ID number of the company to which this filing calendar belongs.
      */
-    public Int32 getcompanyId() {;
-        return this.companyId;;
+    public int getCompanyId() {
+        return this.companyId;
     }
 
     /**
-     * Setter for companyId;
+     * Setter for companyId
+     *
      * The unique ID number of the company to which this filing calendar belongs.
      */
-    public void setcompanyId(Int32 value) {;
-        this.companyId = value;;
+    public void setCompanyId(int value) {
+        this.companyId = value;
     }
 
 
-    private String returnName;
+    private string returnName;
 
     /**
-     * Getter for returnName;
+     * Getter for returnName
+     *
      * The name of the tax form to file.
      */
-    public String getreturnName() {;
-        return this.returnName;;
+    public string getReturnName() {
+        return this.returnName;
     }
 
     /**
-     * Setter for returnName;
+     * Setter for returnName
+     *
      * The name of the tax form to file.
      */
-    public void setreturnName(String value) {;
-        this.returnName = value;;
+    public void setReturnName(string value) {
+        this.returnName = value;
     }
 
 
-    private String locationCode;
+    private string locationCode;
 
     /**
-     * Getter for locationCode;
+     * Getter for locationCode
+     *
      * If this calendar is for a location-specific tax return, specify the location code here. To file for all locations, leave this value NULL.
      */
-    public String getlocationCode() {;
-        return this.locationCode;;
+    public string getLocationCode() {
+        return this.locationCode;
     }
 
     /**
-     * Setter for locationCode;
+     * Setter for locationCode
+     *
      * If this calendar is for a location-specific tax return, specify the location code here. To file for all locations, leave this value NULL.
      */
-    public void setlocationCode(String value) {;
-        this.locationCode = value;;
+    public void setLocationCode(string value) {
+        this.locationCode = value;
     }
 
 
-    private OutletTypeId? outletTypeId;
+    private OutletTypeId outletTypeId;
 
     /**
-     * Getter for outletTypeId;
+     * Getter for outletTypeId
+     *
      * If this calendar is for a location-specific tax return, specify the location-specific behavior here.
      */
-    public OutletTypeId? getoutletTypeId() {;
-        return this.outletTypeId;;
+    public OutletTypeId getOutletTypeId() {
+        return this.outletTypeId;
     }
 
     /**
-     * Setter for outletTypeId;
+     * Setter for outletTypeId
+     *
      * If this calendar is for a location-specific tax return, specify the location-specific behavior here.
      */
-    public void setoutletTypeId(OutletTypeId? value) {;
-        this.outletTypeId = value;;
+    public void setOutletTypeId(OutletTypeId value) {
+        this.outletTypeId = value;
     }
 
 
-    private String paymentCurrency;
+    private string paymentCurrency;
 
     /**
-     * Getter for paymentCurrency;
+     * Getter for paymentCurrency
+     *
      * Specify the ISO 4217 currency code for the currency to remit for this tax return. For all tax returns in the United States, specify "USD".
      */
-    public String getpaymentCurrency() {;
-        return this.paymentCurrency;;
+    public string getPaymentCurrency() {
+        return this.paymentCurrency;
     }
 
     /**
-     * Setter for paymentCurrency;
+     * Setter for paymentCurrency
+     *
      * Specify the ISO 4217 currency code for the currency to remit for this tax return. For all tax returns in the United States, specify "USD".
      */
-    public void setpaymentCurrency(String value) {;
-        this.paymentCurrency = value;;
+    public void setPaymentCurrency(string value) {
+        this.paymentCurrency = value;
     }
 
 
-    private FilingFrequencyId? filingFrequencyId;
+    private FilingFrequencyId filingFrequencyId;
 
     /**
-     * Getter for filingFrequencyId;
+     * Getter for filingFrequencyId
+     *
      * The frequency on which this tax form is filed.
      */
-    public FilingFrequencyId? getfilingFrequencyId() {;
-        return this.filingFrequencyId;;
+    public FilingFrequencyId getFilingFrequencyId() {
+        return this.filingFrequencyId;
     }
 
     /**
-     * Setter for filingFrequencyId;
+     * Setter for filingFrequencyId
+     *
      * The frequency on which this tax form is filed.
      */
-    public void setfilingFrequencyId(FilingFrequencyId? value) {;
-        this.filingFrequencyId = value;;
+    public void setFilingFrequencyId(FilingFrequencyId value) {
+        this.filingFrequencyId = value;
     }
 
 
-    private Int16? months;
+    private Short months;
 
     /**
-     * Getter for months;
+     * Getter for months
+     *
      * A 16-bit bitmap containing a 1 for each month when the return should be filed.
      */
-    public Int16? getmonths() {;
-        return this.months;;
+    public Short getMonths() {
+        return this.months;
     }
 
     /**
-     * Setter for months;
+     * Setter for months
+     *
      * A 16-bit bitmap containing a 1 for each month when the return should be filed.
      */
-    public void setmonths(Int16? value) {;
-        this.months = value;;
+    public void setMonths(Short value) {
+        this.months = value;
     }
 
 
-    private String stateRegistrationId;
+    private string stateRegistrationId;
 
     /**
-     * Getter for stateRegistrationId;
+     * Getter for stateRegistrationId
+     *
      * Tax Registration ID for this Region - in the U.S., this is for your state.
      */
-    public String getstateRegistrationId() {;
-        return this.stateRegistrationId;;
+    public string getStateRegistrationId() {
+        return this.stateRegistrationId;
     }
 
     /**
-     * Setter for stateRegistrationId;
+     * Setter for stateRegistrationId
+     *
      * Tax Registration ID for this Region - in the U.S., this is for your state.
      */
-    public void setstateRegistrationId(String value) {;
-        this.stateRegistrationId = value;;
+    public void setStateRegistrationId(string value) {
+        this.stateRegistrationId = value;
     }
 
 
-    private String localRegistrationId;
+    private string localRegistrationId;
 
     /**
-     * Getter for localRegistrationId;
+     * Getter for localRegistrationId
+     *
      * Tax Registration ID for the local jurisdiction, if any.
      */
-    public String getlocalRegistrationId() {;
-        return this.localRegistrationId;;
+    public string getLocalRegistrationId() {
+        return this.localRegistrationId;
     }
 
     /**
-     * Setter for localRegistrationId;
+     * Setter for localRegistrationId
+     *
      * Tax Registration ID for the local jurisdiction, if any.
      */
-    public void setlocalRegistrationId(String value) {;
-        this.localRegistrationId = value;;
+    public void setLocalRegistrationId(string value) {
+        this.localRegistrationId = value;
     }
 
 
-    private String employerIdentificationNumber;
+    private string employerIdentificationNumber;
 
     /**
-     * Getter for employerIdentificationNumber;
+     * Getter for employerIdentificationNumber
+     *
      * The Employer Identification Number or Taxpayer Identification Number that is to be used when filing this return.
      */
-    public String getemployerIdentificationNumber() {;
-        return this.employerIdentificationNumber;;
+    public string getEmployerIdentificationNumber() {
+        return this.employerIdentificationNumber;
     }
 
     /**
-     * Setter for employerIdentificationNumber;
+     * Setter for employerIdentificationNumber
+     *
      * The Employer Identification Number or Taxpayer Identification Number that is to be used when filing this return.
      */
-    public void setemployerIdentificationNumber(String value) {;
-        this.employerIdentificationNumber = value;;
+    public void setEmployerIdentificationNumber(string value) {
+        this.employerIdentificationNumber = value;
     }
 
 
-    private String line1;
+    private string line1;
 
     /**
-     * Getter for line1;
+     * Getter for line1
+     *
      * The first line of the physical address to be used when filing this tax return.
      */
-    public String getline1() {;
-        return this.line1;;
+    public string getLine1() {
+        return this.line1;
     }
 
     /**
-     * Setter for line1;
+     * Setter for line1
+     *
      * The first line of the physical address to be used when filing this tax return.
      */
-    public void setline1(String value) {;
-        this.line1 = value;;
+    public void setLine1(string value) {
+        this.line1 = value;
     }
 
 
-    private String line2;
+    private string line2;
 
     /**
-     * Getter for line2;
+     * Getter for line2
+     *
      * The second line of the physical address to be used when filing this tax return.
     * Please note that some tax forms do not support multiple address lines.
      */
-    public String getline2() {;
-        return this.line2;;
+    public string getLine2() {
+        return this.line2;
     }
 
     /**
-     * Setter for line2;
+     * Setter for line2
+     *
      * The second line of the physical address to be used when filing this tax return.
     * Please note that some tax forms do not support multiple address lines.
      */
-    public void setline2(String value) {;
-        this.line2 = value;;
+    public void setLine2(string value) {
+        this.line2 = value;
     }
 
 
-    private String city;
+    private string city;
 
     /**
-     * Getter for city;
+     * Getter for city
+     *
      * The city name of the physical address to be used when filing this tax return.
      */
-    public String getcity() {;
-        return this.city;;
+    public string getCity() {
+        return this.city;
     }
 
     /**
-     * Setter for city;
+     * Setter for city
+     *
      * The city name of the physical address to be used when filing this tax return.
      */
-    public void setcity(String value) {;
-        this.city = value;;
+    public void setCity(string value) {
+        this.city = value;
     }
 
 
-    private String region;
+    private string region;
 
     /**
-     * Getter for region;
+     * Getter for region
+     *
      * The state, region, or province of the physical address to be used when filing this tax return.
      */
-    public String getregion() {;
-        return this.region;;
+    public string getRegion() {
+        return this.region;
     }
 
     /**
-     * Setter for region;
+     * Setter for region
+     *
      * The state, region, or province of the physical address to be used when filing this tax return.
      */
-    public void setregion(String value) {;
-        this.region = value;;
+    public void setRegion(string value) {
+        this.region = value;
     }
 
 
-    private String postalCode;
+    private string postalCode;
 
     /**
-     * Getter for postalCode;
+     * Getter for postalCode
+     *
      * The postal code or zip code of the physical address to be used when filing this tax return.
      */
-    public String getpostalCode() {;
-        return this.postalCode;;
+    public string getPostalCode() {
+        return this.postalCode;
     }
 
     /**
-     * Setter for postalCode;
+     * Setter for postalCode
+     *
      * The postal code or zip code of the physical address to be used when filing this tax return.
      */
-    public void setpostalCode(String value) {;
-        this.postalCode = value;;
+    public void setPostalCode(string value) {
+        this.postalCode = value;
     }
 
 
-    private String country;
+    private string country;
 
     /**
-     * Getter for country;
+     * Getter for country
+     *
      * The two character ISO-3166 country code of the physical address to be used when filing this return.
      */
-    public String getcountry() {;
-        return this.country;;
+    public string getCountry() {
+        return this.country;
     }
 
     /**
-     * Setter for country;
+     * Setter for country
+     *
      * The two character ISO-3166 country code of the physical address to be used when filing this return.
      */
-    public void setcountry(String value) {;
-        this.country = value;;
+    public void setCountry(string value) {
+        this.country = value;
     }
 
 
-    private String phone;
+    private string phone;
 
     /**
-     * Getter for phone;
+     * Getter for phone
+     *
      * The phone number to be used when filing this return.
      */
-    public String getphone() {;
-        return this.phone;;
+    public string getPhone() {
+        return this.phone;
     }
 
     /**
-     * Setter for phone;
+     * Setter for phone
+     *
      * The phone number to be used when filing this return.
      */
-    public void setphone(String value) {;
-        this.phone = value;;
+    public void setPhone(string value) {
+        this.phone = value;
     }
 
 
-    private String customerFilingInstructions;
+    private string customerFilingInstructions;
 
     /**
-     * Getter for customerFilingInstructions;
+     * Getter for customerFilingInstructions
+     *
      * Special filing instructions to be used when filing this return.
     * Please note that requesting special filing instructions may incur additional costs.
      */
-    public String getcustomerFilingInstructions() {;
-        return this.customerFilingInstructions;;
+    public string getCustomerFilingInstructions() {
+        return this.customerFilingInstructions;
     }
 
     /**
-     * Setter for customerFilingInstructions;
+     * Setter for customerFilingInstructions
+     *
      * Special filing instructions to be used when filing this return.
     * Please note that requesting special filing instructions may incur additional costs.
      */
-    public void setcustomerFilingInstructions(String value) {;
-        this.customerFilingInstructions = value;;
+    public void setCustomerFilingInstructions(string value) {
+        this.customerFilingInstructions = value;
     }
 
 
-    private String legalEntityName;
+    private string legalEntityName;
 
     /**
-     * Getter for legalEntityName;
+     * Getter for legalEntityName
+     *
      * The legal entity name to be used when filing this return.
      */
-    public String getlegalEntityName() {;
-        return this.legalEntityName;;
+    public string getLegalEntityName() {
+        return this.legalEntityName;
     }
 
     /**
-     * Setter for legalEntityName;
+     * Setter for legalEntityName
+     *
      * The legal entity name to be used when filing this return.
      */
-    public void setlegalEntityName(String value) {;
-        this.legalEntityName = value;;
+    public void setLegalEntityName(string value) {
+        this.legalEntityName = value;
     }
 
 
-    private DateTime? effectiveDate;
+    private Instant effectiveDate;
 
     /**
-     * Getter for effectiveDate;
+     * Getter for effectiveDate
+     *
      * The earliest date for the tax period when this return should be filed.
     * This date specifies the earliest date for tax transactions that should be reported on this filing calendar.
     * Please note that tax is usually filed one month in arrears: for example, tax for January transactions is typically filed during the month of February.
      */
-    public DateTime? geteffectiveDate() {;
-        return this.effectiveDate;;
+    public Instant getEffectiveDate() {
+        return this.effectiveDate;
     }
 
     /**
-     * Setter for effectiveDate;
+     * Setter for effectiveDate
+     *
      * The earliest date for the tax period when this return should be filed.
     * This date specifies the earliest date for tax transactions that should be reported on this filing calendar.
     * Please note that tax is usually filed one month in arrears: for example, tax for January transactions is typically filed during the month of February.
      */
-    public void seteffectiveDate(DateTime? value) {;
-        this.effectiveDate = value;;
+    public void setEffectiveDate(Instant value) {
+        this.effectiveDate = value;
     }
 
 
-    private DateTime? endDate;
+    private Instant endDate;
 
     /**
-     * Getter for endDate;
+     * Getter for endDate
+     *
      * The last date for the tax period when this return should be filed.
     * This date specifies the last date for tax transactions that should be reported on this filing calendar.
     * Please note that tax is usually filed one month in arrears: for example, tax for January transactions is typically filed during the month of February.
      */
-    public DateTime? getendDate() {;
-        return this.endDate;;
+    public Instant getEndDate() {
+        return this.endDate;
     }
 
     /**
-     * Setter for endDate;
+     * Setter for endDate
+     *
      * The last date for the tax period when this return should be filed.
     * This date specifies the last date for tax transactions that should be reported on this filing calendar.
     * Please note that tax is usually filed one month in arrears: for example, tax for January transactions is typically filed during the month of February.
      */
-    public void setendDate(DateTime? value) {;
-        this.endDate = value;;
+    public void setEndDate(Instant value) {
+        this.endDate = value;
     }
 
 
-    private FilingTypeId? filingTypeId;
+    private FilingTypeId filingTypeId;
 
     /**
-     * Getter for filingTypeId;
+     * Getter for filingTypeId
+     *
      * The method to be used when filing this return.
      */
-    public FilingTypeId? getfilingTypeId() {;
-        return this.filingTypeId;;
+    public FilingTypeId getFilingTypeId() {
+        return this.filingTypeId;
     }
 
     /**
-     * Setter for filingTypeId;
+     * Setter for filingTypeId
+     *
      * The method to be used when filing this return.
      */
-    public void setfilingTypeId(FilingTypeId? value) {;
-        this.filingTypeId = value;;
+    public void setFilingTypeId(FilingTypeId value) {
+        this.filingTypeId = value;
     }
 
 
-    private String eFileUsername;
+    private string eFileUsername;
 
     /**
-     * Getter for eFileUsername;
+     * Getter for eFileUsername
+     *
      * If you file electronically, this is the username you use to log in to the tax authority's website.
      */
-    public String geteFileUsername() {;
-        return this.eFileUsername;;
+    public string getEFileUsername() {
+        return this.eFileUsername;
     }
 
     /**
-     * Setter for eFileUsername;
+     * Setter for eFileUsername
+     *
      * If you file electronically, this is the username you use to log in to the tax authority's website.
      */
-    public void seteFileUsername(String value) {;
-        this.eFileUsername = value;;
+    public void setEFileUsername(string value) {
+        this.eFileUsername = value;
     }
 
 
-    private String eFilePassword;
+    private string eFilePassword;
 
     /**
-     * Getter for eFilePassword;
+     * Getter for eFilePassword
+     *
      * If you file electronically, this is the password or pass code you use to log in to the tax authority's website.
      */
-    public String geteFilePassword() {;
-        return this.eFilePassword;;
+    public string getEFilePassword() {
+        return this.eFilePassword;
     }
 
     /**
-     * Setter for eFilePassword;
+     * Setter for eFilePassword
+     *
      * If you file electronically, this is the password or pass code you use to log in to the tax authority's website.
      */
-    public void seteFilePassword(String value) {;
-        this.eFilePassword = value;;
+    public void setEFilePassword(string value) {
+        this.eFilePassword = value;
     }
 
 
-    private Byte? prepayPercentage;
+    private Byte prepayPercentage;
 
     /**
-     * Getter for prepayPercentage;
+     * Getter for prepayPercentage
+     *
      * If you are required to prepay a percentage of taxes for future periods, please specify the percentage in whole numbers; 
     * for example, the value 90 would indicate 90%.
      */
-    public Byte? getprepayPercentage() {;
-        return this.prepayPercentage;;
+    public Byte getPrepayPercentage() {
+        return this.prepayPercentage;
     }
 
     /**
-     * Setter for prepayPercentage;
+     * Setter for prepayPercentage
+     *
      * If you are required to prepay a percentage of taxes for future periods, please specify the percentage in whole numbers; 
     * for example, the value 90 would indicate 90%.
      */
-    public void setprepayPercentage(Byte? value) {;
-        this.prepayPercentage = value;;
+    public void setPrepayPercentage(Byte value) {
+        this.prepayPercentage = value;
     }
 
 
     private MatchingTaxType taxTypeId;
 
     /**
-     * Getter for taxTypeId;
+     * Getter for taxTypeId
+     *
      * The type of tax to report on this return.
      */
-    public MatchingTaxType gettaxTypeId() {;
-        return this.taxTypeId;;
+    public MatchingTaxType getTaxTypeId() {
+        return this.taxTypeId;
     }
 
     /**
-     * Setter for taxTypeId;
+     * Setter for taxTypeId
+     *
      * The type of tax to report on this return.
      */
-    public void settaxTypeId(MatchingTaxType value) {;
-        this.taxTypeId = value;;
+    public void setTaxTypeId(MatchingTaxType value) {
+        this.taxTypeId = value;
     }
 
 
-    private String internalNotes;
+    private string internalNotes;
 
     /**
-     * Getter for internalNotes;
+     * Getter for internalNotes
+     *
      * Internal filing notes.
      */
-    public String getinternalNotes() {;
-        return this.internalNotes;;
+    public string getInternalNotes() {
+        return this.internalNotes;
     }
 
     /**
-     * Setter for internalNotes;
+     * Setter for internalNotes
+     *
      * Internal filing notes.
      */
-    public void setinternalNotes(String value) {;
-        this.internalNotes = value;;
+    public void setInternalNotes(string value) {
+        this.internalNotes = value;
     }
 
 
-    private String alSignOn;
+    private string alSignOn;
 
     /**
-     * Getter for alSignOn;
+     * Getter for alSignOn
+     *
      * Custom filing information field for Alabama.
      */
-    public String getalSignOn() {;
-        return this.alSignOn;;
+    public string getAlSignOn() {
+        return this.alSignOn;
     }
 
     /**
-     * Setter for alSignOn;
+     * Setter for alSignOn
+     *
      * Custom filing information field for Alabama.
      */
-    public void setalSignOn(String value) {;
-        this.alSignOn = value;;
+    public void setAlSignOn(string value) {
+        this.alSignOn = value;
     }
 
 
-    private String alAccessCode;
+    private string alAccessCode;
 
     /**
-     * Getter for alAccessCode;
+     * Getter for alAccessCode
+     *
      * Custom filing information field for Alabama.
      */
-    public String getalAccessCode() {;
-        return this.alAccessCode;;
+    public string getAlAccessCode() {
+        return this.alAccessCode;
     }
 
     /**
-     * Setter for alAccessCode;
+     * Setter for alAccessCode
+     *
      * Custom filing information field for Alabama.
      */
-    public void setalAccessCode(String value) {;
-        this.alAccessCode = value;;
+    public void setAlAccessCode(string value) {
+        this.alAccessCode = value;
     }
 
 
-    private String meBusinessCode;
+    private string meBusinessCode;
 
     /**
-     * Getter for meBusinessCode;
+     * Getter for meBusinessCode
+     *
      * Custom filing information field for Maine.
      */
-    public String getmeBusinessCode() {;
-        return this.meBusinessCode;;
+    public string getMeBusinessCode() {
+        return this.meBusinessCode;
     }
 
     /**
-     * Setter for meBusinessCode;
+     * Setter for meBusinessCode
+     *
      * Custom filing information field for Maine.
      */
-    public void setmeBusinessCode(String value) {;
-        this.meBusinessCode = value;;
+    public void setMeBusinessCode(string value) {
+        this.meBusinessCode = value;
     }
 
 
-    private String iaBen;
+    private string iaBen;
 
     /**
-     * Getter for iaBen;
+     * Getter for iaBen
+     *
      * Custom filing information field for Iowa.
      */
-    public String getiaBen() {;
-        return this.iaBen;;
+    public string getIaBen() {
+        return this.iaBen;
     }
 
     /**
-     * Setter for iaBen;
+     * Setter for iaBen
+     *
      * Custom filing information field for Iowa.
      */
-    public void setiaBen(String value) {;
-        this.iaBen = value;;
+    public void setIaBen(string value) {
+        this.iaBen = value;
     }
 
 
-    private String ctReg;
+    private string ctReg;
 
     /**
-     * Getter for ctReg;
+     * Getter for ctReg
+     *
      * Custom filing information field for Connecticut.
      */
-    public String getctReg() {;
-        return this.ctReg;;
+    public string getCtReg() {
+        return this.ctReg;
     }
 
     /**
-     * Setter for ctReg;
+     * Setter for ctReg
+     *
      * Custom filing information field for Connecticut.
      */
-    public void setctReg(String value) {;
-        this.ctReg = value;;
+    public void setCtReg(string value) {
+        this.ctReg = value;
     }
 
 
-    private String other1Name;
+    private string other1Name;
 
     /**
-     * Getter for other1Name;
+     * Getter for other1Name
+     *
      * Custom filing information field. Leave blank.
      */
-    public String getother1Name() {;
-        return this.other1Name;;
+    public string getOther1Name() {
+        return this.other1Name;
     }
 
     /**
-     * Setter for other1Name;
+     * Setter for other1Name
+     *
      * Custom filing information field. Leave blank.
      */
-    public void setother1Name(String value) {;
-        this.other1Name = value;;
+    public void setOther1Name(string value) {
+        this.other1Name = value;
     }
 
 
-    private String other1Value;
+    private string other1Value;
 
     /**
-     * Getter for other1Value;
+     * Getter for other1Value
+     *
      * Custom filing information field. Leave blank.
      */
-    public String getother1Value() {;
-        return this.other1Value;;
+    public string getOther1Value() {
+        return this.other1Value;
     }
 
     /**
-     * Setter for other1Value;
+     * Setter for other1Value
+     *
      * Custom filing information field. Leave blank.
      */
-    public void setother1Value(String value) {;
-        this.other1Value = value;;
+    public void setOther1Value(string value) {
+        this.other1Value = value;
     }
 
 
-    private String other2Name;
+    private string other2Name;
 
     /**
-     * Getter for other2Name;
+     * Getter for other2Name
+     *
      * Custom filing information field. Leave blank.
      */
-    public String getother2Name() {;
-        return this.other2Name;;
+    public string getOther2Name() {
+        return this.other2Name;
     }
 
     /**
-     * Setter for other2Name;
+     * Setter for other2Name
+     *
      * Custom filing information field. Leave blank.
      */
-    public void setother2Name(String value) {;
-        this.other2Name = value;;
+    public void setOther2Name(string value) {
+        this.other2Name = value;
     }
 
 
-    private String other2Value;
+    private string other2Value;
 
     /**
-     * Getter for other2Value;
+     * Getter for other2Value
+     *
      * Custom filing information field. Leave blank.
      */
-    public String getother2Value() {;
-        return this.other2Value;;
+    public string getOther2Value() {
+        return this.other2Value;
     }
 
     /**
-     * Setter for other2Value;
+     * Setter for other2Value
+     *
      * Custom filing information field. Leave blank.
      */
-    public void setother2Value(String value) {;
-        this.other2Value = value;;
+    public void setOther2Value(string value) {
+        this.other2Value = value;
     }
 
 
-    private String other3Name;
+    private string other3Name;
 
     /**
-     * Getter for other3Name;
+     * Getter for other3Name
+     *
      * Custom filing information field. Leave blank.
      */
-    public String getother3Name() {;
-        return this.other3Name;;
+    public string getOther3Name() {
+        return this.other3Name;
     }
 
     /**
-     * Setter for other3Name;
+     * Setter for other3Name
+     *
      * Custom filing information field. Leave blank.
      */
-    public void setother3Name(String value) {;
-        this.other3Name = value;;
+    public void setOther3Name(string value) {
+        this.other3Name = value;
     }
 
 
-    private String other3Value;
+    private string other3Value;
 
     /**
-     * Getter for other3Value;
+     * Getter for other3Value
+     *
      * Custom filing information field. Leave blank.
      */
-    public String getother3Value() {;
-        return this.other3Value;;
+    public string getOther3Value() {
+        return this.other3Value;
     }
 
     /**
-     * Setter for other3Value;
+     * Setter for other3Value
+     *
      * Custom filing information field. Leave blank.
      */
-    public void setother3Value(String value) {;
-        this.other3Value = value;;
+    public void setOther3Value(string value) {
+        this.other3Value = value;
     }
 
 
-    private Int32? taxAuthorityId;
+    private Integer taxAuthorityId;
 
     /**
-     * Getter for taxAuthorityId;
+     * Getter for taxAuthorityId
+     *
      * The unique ID of the tax authority of this return.
      */
-    public Int32? gettaxAuthorityId() {;
-        return this.taxAuthorityId;;
+    public Integer getTaxAuthorityId() {
+        return this.taxAuthorityId;
     }
 
     /**
-     * Setter for taxAuthorityId;
+     * Setter for taxAuthorityId
+     *
      * The unique ID of the tax authority of this return.
      */
-    public void settaxAuthorityId(Int32? value) {;
-        this.taxAuthorityId = value;;
+    public void setTaxAuthorityId(Integer value) {
+        this.taxAuthorityId = value;
     }
 
 
-    private String taxAuthorityName;
+    private string taxAuthorityName;
 
     /**
-     * Getter for taxAuthorityName;
+     * Getter for taxAuthorityName
+     *
      * The name of the tax authority of this return.
      */
-    public String gettaxAuthorityName() {;
-        return this.taxAuthorityName;;
+    public string getTaxAuthorityName() {
+        return this.taxAuthorityName;
     }
 
     /**
-     * Setter for taxAuthorityName;
+     * Setter for taxAuthorityName
+     *
      * The name of the tax authority of this return.
      */
-    public void settaxAuthorityName(String value) {;
-        this.taxAuthorityName = value;;
+    public void setTaxAuthorityName(string value) {
+        this.taxAuthorityName = value;
     }
 
 
-    private String taxAuthorityType;
+    private string taxAuthorityType;
 
     /**
-     * Getter for taxAuthorityType;
+     * Getter for taxAuthorityType
+     *
      * The type description of the tax authority of this return.
      */
-    public String gettaxAuthorityType() {;
-        return this.taxAuthorityType;;
+    public string getTaxAuthorityType() {
+        return this.taxAuthorityType;
     }
 
     /**
-     * Setter for taxAuthorityType;
+     * Setter for taxAuthorityType
+     *
      * The type description of the tax authority of this return.
      */
-    public void settaxAuthorityType(String value) {;
-        this.taxAuthorityType = value;;
+    public void setTaxAuthorityType(string value) {
+        this.taxAuthorityType = value;
     }
 
 
-    private DateTime? createdDate;
+    private Instant createdDate;
 
     /**
-     * Getter for createdDate;
+     * Getter for createdDate
+     *
      * The date when this record was created.
      */
-    public DateTime? getcreatedDate() {;
-        return this.createdDate;;
+    public Instant getCreatedDate() {
+        return this.createdDate;
     }
 
     /**
-     * Setter for createdDate;
+     * Setter for createdDate
+     *
      * The date when this record was created.
      */
-    public void setcreatedDate(DateTime? value) {;
-        this.createdDate = value;;
+    public void setCreatedDate(Instant value) {
+        this.createdDate = value;
     }
 
 
-    private Int32? createdUserId;
+    private Integer createdUserId;
 
     /**
-     * Getter for createdUserId;
+     * Getter for createdUserId
+     *
      * The User ID of the user who created this record.
      */
-    public Int32? getcreatedUserId() {;
-        return this.createdUserId;;
+    public Integer getCreatedUserId() {
+        return this.createdUserId;
     }
 
     /**
-     * Setter for createdUserId;
+     * Setter for createdUserId
+     *
      * The User ID of the user who created this record.
      */
-    public void setcreatedUserId(Int32? value) {;
-        this.createdUserId = value;;
+    public void setCreatedUserId(Integer value) {
+        this.createdUserId = value;
     }
 
 
-    private DateTime? modifiedDate;
+    private Instant modifiedDate;
 
     /**
-     * Getter for modifiedDate;
+     * Getter for modifiedDate
+     *
      * The date/time when this record was last modified.
      */
-    public DateTime? getmodifiedDate() {;
-        return this.modifiedDate;;
+    public Instant getModifiedDate() {
+        return this.modifiedDate;
     }
 
     /**
-     * Setter for modifiedDate;
+     * Setter for modifiedDate
+     *
      * The date/time when this record was last modified.
      */
-    public void setmodifiedDate(DateTime? value) {;
-        this.modifiedDate = value;;
+    public void setModifiedDate(Instant value) {
+        this.modifiedDate = value;
     }
 
 
-    private Int32? modifiedUserId;
+    private Integer modifiedUserId;
 
     /**
-     * Getter for modifiedUserId;
+     * Getter for modifiedUserId
+     *
      * The user ID of the user who last modified this record.
      */
-    public Int32? getmodifiedUserId() {;
-        return this.modifiedUserId;;
+    public Integer getModifiedUserId() {
+        return this.modifiedUserId;
     }
 
     /**
-     * Setter for modifiedUserId;
+     * Setter for modifiedUserId
+     *
      * The user ID of the user who last modified this record.
      */
-    public void setmodifiedUserId(Int32? value) {;
-        this.modifiedUserId = value;;
+    public void setModifiedUserId(Integer value) {
+        this.modifiedUserId = value;
     }
 
 

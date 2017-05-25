@@ -30,326 +30,360 @@ import java.util.HashMap;
 public class BatchModel {
 
 
-    private Int32? id;
+    private Integer id;
 
     /**
-     * Getter for id;
+     * Getter for id
+     *
      * The unique ID number of this batch.
      */
-    public Int32? getid() {;
-        return this.id;;
+    public Integer getId() {
+        return this.id;
     }
 
     /**
-     * Setter for id;
+     * Setter for id
+     *
      * The unique ID number of this batch.
      */
-    public void setid(Int32? value) {;
-        this.id = value;;
+    public void setId(Integer value) {
+        this.id = value;
     }
 
 
-    private String name;
+    private string name;
 
     /**
-     * Getter for name;
+     * Getter for name
+     *
      * The user-friendly readable name for this batch.
      */
-    public String getname() {;
-        return this.name;;
+    public string getName() {
+        return this.name;
     }
 
     /**
-     * Setter for name;
+     * Setter for name
+     *
      * The user-friendly readable name for this batch.
      */
-    public void setname(String value) {;
-        this.name = value;;
+    public void setName(string value) {
+        this.name = value;
     }
 
 
-    private Int32? accountId;
+    private Integer accountId;
 
     /**
-     * Getter for accountId;
+     * Getter for accountId
+     *
      * The Account ID number of the account that owns this batch.
      */
-    public Int32? getaccountId() {;
-        return this.accountId;;
+    public Integer getAccountId() {
+        return this.accountId;
     }
 
     /**
-     * Setter for accountId;
+     * Setter for accountId
+     *
      * The Account ID number of the account that owns this batch.
      */
-    public void setaccountId(Int32? value) {;
-        this.accountId = value;;
+    public void setAccountId(Integer value) {
+        this.accountId = value;
     }
 
 
-    private Int32? companyId;
+    private Integer companyId;
 
     /**
-     * Getter for companyId;
+     * Getter for companyId
+     *
      * The Company ID number of the company that owns this batch.
      */
-    public Int32? getcompanyId() {;
-        return this.companyId;;
+    public Integer getCompanyId() {
+        return this.companyId;
     }
 
     /**
-     * Setter for companyId;
+     * Setter for companyId
+     *
      * The Company ID number of the company that owns this batch.
      */
-    public void setcompanyId(Int32? value) {;
-        this.companyId = value;;
+    public void setCompanyId(Integer value) {
+        this.companyId = value;
     }
 
 
     private BatchType type;
 
     /**
-     * Getter for type;
+     * Getter for type
+     *
      * The type of this batch.
      */
-    public BatchType gettype() {;
-        return this.type;;
+    public BatchType getType() {
+        return this.type;
     }
 
     /**
-     * Setter for type;
+     * Setter for type
+     *
      * The type of this batch.
      */
-    public void settype(BatchType value) {;
-        this.type = value;;
+    public void setType(BatchType value) {
+        this.type = value;
     }
 
 
-    private BatchStatus? status;
+    private BatchStatus status;
 
     /**
-     * Getter for status;
+     * Getter for status
+     *
      * This batch's current processing status
      */
-    public BatchStatus? getstatus() {;
-        return this.status;;
+    public BatchStatus getStatus() {
+        return this.status;
     }
 
     /**
-     * Setter for status;
+     * Setter for status
+     *
      * This batch's current processing status
      */
-    public void setstatus(BatchStatus? value) {;
-        this.status = value;;
+    public void setStatus(BatchStatus value) {
+        this.status = value;
     }
 
 
-    private String options;
+    private string options;
 
     /**
-     * Getter for options;
+     * Getter for options
+     *
      * Any optional flags provided for this batch
      */
-    public String getoptions() {;
-        return this.options;;
+    public string getOptions() {
+        return this.options;
     }
 
     /**
-     * Setter for options;
+     * Setter for options
+     *
      * Any optional flags provided for this batch
      */
-    public void setoptions(String value) {;
-        this.options = value;;
+    public void setOptions(string value) {
+        this.options = value;
     }
 
 
-    private String batchAgent;
+    private string batchAgent;
 
     /**
-     * Getter for batchAgent;
+     * Getter for batchAgent
+     *
      * The agent used to create this batch
      */
-    public String getbatchAgent() {;
-        return this.batchAgent;;
+    public string getBatchAgent() {
+        return this.batchAgent;
     }
 
     /**
-     * Setter for batchAgent;
+     * Setter for batchAgent
+     *
      * The agent used to create this batch
      */
-    public void setbatchAgent(String value) {;
-        this.batchAgent = value;;
+    public void setBatchAgent(string value) {
+        this.batchAgent = value;
     }
 
 
-    private DateTime? startedDate;
+    private Instant startedDate;
 
     /**
-     * Getter for startedDate;
+     * Getter for startedDate
+     *
      * The date/time when this batch started processing
      */
-    public DateTime? getstartedDate() {;
-        return this.startedDate;;
+    public Instant getStartedDate() {
+        return this.startedDate;
     }
 
     /**
-     * Setter for startedDate;
+     * Setter for startedDate
+     *
      * The date/time when this batch started processing
      */
-    public void setstartedDate(DateTime? value) {;
-        this.startedDate = value;;
+    public void setStartedDate(Instant value) {
+        this.startedDate = value;
     }
 
 
-    private Int32? recordCount;
+    private Integer recordCount;
 
     /**
-     * Getter for recordCount;
+     * Getter for recordCount
+     *
      * The number of records in this batch; determined by the server
      */
-    public Int32? getrecordCount() {;
-        return this.recordCount;;
+    public Integer getRecordCount() {
+        return this.recordCount;
     }
 
     /**
-     * Setter for recordCount;
+     * Setter for recordCount
+     *
      * The number of records in this batch; determined by the server
      */
-    public void setrecordCount(Int32? value) {;
-        this.recordCount = value;;
+    public void setRecordCount(Integer value) {
+        this.recordCount = value;
     }
 
 
-    private Int32? currentRecord;
+    private Integer currentRecord;
 
     /**
-     * Getter for currentRecord;
+     * Getter for currentRecord
+     *
      * The current record being processed
      */
-    public Int32? getcurrentRecord() {;
-        return this.currentRecord;;
+    public Integer getCurrentRecord() {
+        return this.currentRecord;
     }
 
     /**
-     * Setter for currentRecord;
+     * Setter for currentRecord
+     *
      * The current record being processed
      */
-    public void setcurrentRecord(Int32? value) {;
-        this.currentRecord = value;;
+    public void setCurrentRecord(Integer value) {
+        this.currentRecord = value;
     }
 
 
-    private DateTime? completedDate;
+    private Instant completedDate;
 
     /**
-     * Getter for completedDate;
+     * Getter for completedDate
+     *
      * The date/time when this batch was completely processed
      */
-    public DateTime? getcompletedDate() {;
-        return this.completedDate;;
+    public Instant getCompletedDate() {
+        return this.completedDate;
     }
 
     /**
-     * Setter for completedDate;
+     * Setter for completedDate
+     *
      * The date/time when this batch was completely processed
      */
-    public void setcompletedDate(DateTime? value) {;
-        this.completedDate = value;;
+    public void setCompletedDate(Instant value) {
+        this.completedDate = value;
     }
 
 
-    private DateTime? createdDate;
+    private Instant createdDate;
 
     /**
-     * Getter for createdDate;
+     * Getter for createdDate
+     *
      * The date when this record was created.
      */
-    public DateTime? getcreatedDate() {;
-        return this.createdDate;;
+    public Instant getCreatedDate() {
+        return this.createdDate;
     }
 
     /**
-     * Setter for createdDate;
+     * Setter for createdDate
+     *
      * The date when this record was created.
      */
-    public void setcreatedDate(DateTime? value) {;
-        this.createdDate = value;;
+    public void setCreatedDate(Instant value) {
+        this.createdDate = value;
     }
 
 
-    private Int32? createdUserId;
+    private Integer createdUserId;
 
     /**
-     * Getter for createdUserId;
+     * Getter for createdUserId
+     *
      * The User ID of the user who created this record.
      */
-    public Int32? getcreatedUserId() {;
-        return this.createdUserId;;
+    public Integer getCreatedUserId() {
+        return this.createdUserId;
     }
 
     /**
-     * Setter for createdUserId;
+     * Setter for createdUserId
+     *
      * The User ID of the user who created this record.
      */
-    public void setcreatedUserId(Int32? value) {;
-        this.createdUserId = value;;
+    public void setCreatedUserId(Integer value) {
+        this.createdUserId = value;
     }
 
 
-    private DateTime? modifiedDate;
+    private Instant modifiedDate;
 
     /**
-     * Getter for modifiedDate;
+     * Getter for modifiedDate
+     *
      * The date/time when this record was last modified.
      */
-    public DateTime? getmodifiedDate() {;
-        return this.modifiedDate;;
+    public Instant getModifiedDate() {
+        return this.modifiedDate;
     }
 
     /**
-     * Setter for modifiedDate;
+     * Setter for modifiedDate
+     *
      * The date/time when this record was last modified.
      */
-    public void setmodifiedDate(DateTime? value) {;
-        this.modifiedDate = value;;
+    public void setModifiedDate(Instant value) {
+        this.modifiedDate = value;
     }
 
 
-    private Int32? modifiedUserId;
+    private Integer modifiedUserId;
 
     /**
-     * Getter for modifiedUserId;
+     * Getter for modifiedUserId
+     *
      * The user ID of the user who last modified this record.
      */
-    public Int32? getmodifiedUserId() {;
-        return this.modifiedUserId;;
+    public Integer getModifiedUserId() {
+        return this.modifiedUserId;
     }
 
     /**
-     * Setter for modifiedUserId;
+     * Setter for modifiedUserId
+     *
      * The user ID of the user who last modified this record.
      */
-    public void setmodifiedUserId(Int32? value) {;
-        this.modifiedUserId = value;;
+    public void setModifiedUserId(Integer value) {
+        this.modifiedUserId = value;
     }
 
 
-    private List<BatchFileModel> files;
+    private BatchFileModel[] files;
 
     /**
-     * Getter for files;
+     * Getter for files
+     *
      * The list of files contained in this batch.
      */
-    public List<BatchFileModel> getfiles() {;
-        return this.files;;
+    public BatchFileModel[] getFiles() {
+        return this.files;
     }
 
     /**
-     * Setter for files;
+     * Setter for files
+     *
      * The list of files contained in this batch.
      */
-    public void setfiles(List<BatchFileModel> value) {;
-        this.files = value;;
+    public void setFiles(BatchFileModel[] value) {
+        this.files = value;
     }
 
 

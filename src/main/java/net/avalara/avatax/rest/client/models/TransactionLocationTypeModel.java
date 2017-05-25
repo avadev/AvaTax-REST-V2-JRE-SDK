@@ -30,79 +30,87 @@ import java.util.HashMap;
 public class TransactionLocationTypeModel {
 
 
-    private Int64? documentLocationTypeId;
+    private Long documentLocationTypeId;
 
     /**
-     * Getter for documentLocationTypeId;
+     * Getter for documentLocationTypeId
+     *
      * Location type ID for this location type in transaction
      */
-    public Int64? getdocumentLocationTypeId() {;
-        return this.documentLocationTypeId;;
+    public Long getDocumentLocationTypeId() {
+        return this.documentLocationTypeId;
     }
 
     /**
-     * Setter for documentLocationTypeId;
+     * Setter for documentLocationTypeId
+     *
      * Location type ID for this location type in transaction
      */
-    public void setdocumentLocationTypeId(Int64? value) {;
-        this.documentLocationTypeId = value;;
+    public void setDocumentLocationTypeId(Long value) {
+        this.documentLocationTypeId = value;
     }
 
 
-    private Int64? documentId;
+    private Long documentId;
 
     /**
-     * Getter for documentId;
+     * Getter for documentId
+     *
      * Transaction ID
      */
-    public Int64? getdocumentId() {;
-        return this.documentId;;
+    public Long getDocumentId() {
+        return this.documentId;
     }
 
     /**
-     * Setter for documentId;
+     * Setter for documentId
+     *
      * Transaction ID
      */
-    public void setdocumentId(Int64? value) {;
-        this.documentId = value;;
+    public void setDocumentId(Long value) {
+        this.documentId = value;
     }
 
 
-    private Int64? documentAddressId;
+    private Long documentAddressId;
 
     /**
-     * Getter for documentAddressId;
+     * Getter for documentAddressId
+     *
      * Address ID for the transaction
      */
-    public Int64? getdocumentAddressId() {;
-        return this.documentAddressId;;
+    public Long getDocumentAddressId() {
+        return this.documentAddressId;
     }
 
     /**
-     * Setter for documentAddressId;
+     * Setter for documentAddressId
+     *
      * Address ID for the transaction
      */
-    public void setdocumentAddressId(Int64? value) {;
-        this.documentAddressId = value;;
+    public void setDocumentAddressId(Long value) {
+        this.documentAddressId = value;
     }
 
 
-    private String locationTypeCode;
+    private string locationTypeCode;
 
     /**
-     * Getter for locationTypeCode;
+     * Getter for locationTypeCode
+     *
      * Location type code
      */
-    public String getlocationTypeCode() {;
-        return this.locationTypeCode;;
+    public string getLocationTypeCode() {
+        return this.locationTypeCode;
     }
 
     /**
-     * Setter for locationTypeCode;
+     * Setter for locationTypeCode
+     *
      * Location type code
      */
-    public void setlocationTypeCode(String value) {;
-        this.locationTypeCode = value;;
+    public void setLocationTypeCode(string value) {
+        this.locationTypeCode = value;
     }
 
 

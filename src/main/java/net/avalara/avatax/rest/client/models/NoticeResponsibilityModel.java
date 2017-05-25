@@ -30,79 +30,87 @@ import java.util.HashMap;
 public class NoticeResponsibilityModel {
 
 
-    private Int32? id;
+    private Integer id;
 
     /**
-     * Getter for id;
+     * Getter for id
+     *
      * The unique ID number of this notice responsibility.
      */
-    public Int32? getid() {;
-        return this.id;;
+    public Integer getId() {
+        return this.id;
     }
 
     /**
-     * Setter for id;
+     * Setter for id
+     *
      * The unique ID number of this notice responsibility.
      */
-    public void setid(Int32? value) {;
-        this.id = value;;
+    public void setId(Integer value) {
+        this.id = value;
     }
 
 
-    private String description;
+    private string description;
 
     /**
-     * Getter for description;
+     * Getter for description
+     *
      * The description name of this notice responsibility
      */
-    public String getdescription() {;
-        return this.description;;
+    public string getDescription() {
+        return this.description;
     }
 
     /**
-     * Setter for description;
+     * Setter for description
+     *
      * The description name of this notice responsibility
      */
-    public void setdescription(String value) {;
-        this.description = value;;
+    public void setDescription(string value) {
+        this.description = value;
     }
 
 
-    private Boolean? isActive;
+    private object isActive;
 
     /**
-     * Getter for isActive;
+     * Getter for isActive
+     *
      * Defines if the responsibility is active
      */
-    public Boolean? getisActive() {;
-        return this.isActive;;
+    public object getIsActive() {
+        return this.isActive;
     }
 
     /**
-     * Setter for isActive;
+     * Setter for isActive
+     *
      * Defines if the responsibility is active
      */
-    public void setisActive(Boolean? value) {;
-        this.isActive = value;;
+    public void setIsActive(object value) {
+        this.isActive = value;
     }
 
 
-    private Int32? sortOrder;
+    private Integer sortOrder;
 
     /**
-     * Getter for sortOrder;
+     * Getter for sortOrder
+     *
      * The sort order of this responsibility
      */
-    public Int32? getsortOrder() {;
-        return this.sortOrder;;
+    public Integer getSortOrder() {
+        return this.sortOrder;
     }
 
     /**
-     * Setter for sortOrder;
+     * Setter for sortOrder
+     *
      * The sort order of this responsibility
      */
-    public void setsortOrder(Int32? value) {;
-        this.sortOrder = value;;
+    public void setSortOrder(Integer value) {
+        this.sortOrder = value;
     }
 
 

@@ -30,98 +30,108 @@ import java.util.HashMap;
 public class RemoveTransactionLineModel {
 
 
-    private String companyCode;
+    private string companyCode;
 
     /**
-     * Getter for companyCode;
+     * Getter for companyCode
+     *
      * company code
      */
-    public String getcompanyCode() {;
-        return this.companyCode;;
+    public string getCompanyCode() {
+        return this.companyCode;
     }
 
     /**
-     * Setter for companyCode;
+     * Setter for companyCode
+     *
      * company code
      */
-    public void setcompanyCode(String value) {;
-        this.companyCode = value;;
+    public void setCompanyCode(string value) {
+        this.companyCode = value;
     }
 
 
-    private String transactionCode;
+    private string transactionCode;
 
     /**
-     * Getter for transactionCode;
+     * Getter for transactionCode
+     *
      * document code for the transaction to add lines
      */
-    public String gettransactionCode() {;
-        return this.transactionCode;;
+    public string getTransactionCode() {
+        return this.transactionCode;
     }
 
     /**
-     * Setter for transactionCode;
+     * Setter for transactionCode
+     *
      * document code for the transaction to add lines
      */
-    public void settransactionCode(String value) {;
-        this.transactionCode = value;;
+    public void setTransactionCode(string value) {
+        this.transactionCode = value;
     }
 
 
-    private DocumentType? documentType;
+    private DocumentType documentType;
 
     /**
-     * Getter for documentType;
+     * Getter for documentType
+     *
      * document type
      */
-    public DocumentType? getdocumentType() {;
-        return this.documentType;;
+    public DocumentType getDocumentType() {
+        return this.documentType;
     }
 
     /**
-     * Setter for documentType;
+     * Setter for documentType
+     *
      * document type
      */
-    public void setdocumentType(DocumentType? value) {;
-        this.documentType = value;;
+    public void setDocumentType(DocumentType value) {
+        this.documentType = value;
     }
 
 
-    private List<String> lines;
+    private string[] lines;
 
     /**
-     * Getter for lines;
+     * Getter for lines
+     *
      * List of lines to be added
      */
-    public List<String> getlines() {;
-        return this.lines;;
+    public string[] getLines() {
+        return this.lines;
     }
 
     /**
-     * Setter for lines;
+     * Setter for lines
+     *
      * List of lines to be added
      */
-    public void setlines(List<String> value) {;
-        this.lines = value;;
+    public void setLines(string[] value) {
+        this.lines = value;
     }
 
 
-    private Boolean? renumber;
+    private object renumber;
 
     /**
-     * Getter for renumber;
+     * Getter for renumber
+     *
      * ption to renumber lines after removal. After renumber, the line number becomes: "1", "2", "3", ...
      */
-    public Boolean? getrenumber() {;
-        return this.renumber;;
+    public object getRenumber() {
+        return this.renumber;
     }
 
     /**
-     * Setter for renumber;
+     * Setter for renumber
+     *
      * ption to renumber lines after removal. After renumber, the line number becomes: "1", "2", "3", ...
      */
-    public void setrenumber(Boolean? value) {;
-        this.renumber = value;;
+    public void setRenumber(object value) {
+        this.renumber = value;
     }
 
 

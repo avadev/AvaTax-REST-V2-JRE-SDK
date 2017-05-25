@@ -30,659 +30,727 @@ import java.util.HashMap;
 public class TaxRuleModel {
 
 
-    private Int32 id;
+    private int id;
 
     /**
-     * Getter for id;
+     * Getter for id
+     *
      * The unique ID number of this tax rule.
      */
-    public Int32 getid() {;
-        return this.id;;
+    public int getId() {
+        return this.id;
     }
 
     /**
-     * Setter for id;
+     * Setter for id
+     *
      * The unique ID number of this tax rule.
      */
-    public void setid(Int32 value) {;
-        this.id = value;;
+    public void setId(int value) {
+        this.id = value;
     }
 
 
-    private Int32 companyId;
+    private int companyId;
 
     /**
-     * Getter for companyId;
+     * Getter for companyId
+     *
      * The unique ID number of the company that owns this tax rule.
      */
-    public Int32 getcompanyId() {;
-        return this.companyId;;
+    public int getCompanyId() {
+        return this.companyId;
     }
 
     /**
-     * Setter for companyId;
+     * Setter for companyId
+     *
      * The unique ID number of the company that owns this tax rule.
      */
-    public void setcompanyId(Int32 value) {;
-        this.companyId = value;;
+    public void setCompanyId(int value) {
+        this.companyId = value;
     }
 
 
-    private Int32? taxCodeId;
+    private Integer taxCodeId;
 
     /**
-     * Getter for taxCodeId;
+     * Getter for taxCodeId
+     *
      * The unique ID number of the tax code for this rule.
     * When creating or updating a tax rule, you may specify either the taxCodeId value or the taxCode value.
      */
-    public Int32? gettaxCodeId() {;
-        return this.taxCodeId;;
+    public Integer getTaxCodeId() {
+        return this.taxCodeId;
     }
 
     /**
-     * Setter for taxCodeId;
+     * Setter for taxCodeId
+     *
      * The unique ID number of the tax code for this rule.
     * When creating or updating a tax rule, you may specify either the taxCodeId value or the taxCode value.
      */
-    public void settaxCodeId(Int32? value) {;
-        this.taxCodeId = value;;
+    public void setTaxCodeId(Integer value) {
+        this.taxCodeId = value;
     }
 
 
-    private String taxCode;
+    private string taxCode;
 
     /**
-     * Getter for taxCode;
+     * Getter for taxCode
+     *
      * The code string of the tax code for this rule.
     * When creating or updating a tax rule, you may specify either the taxCodeId value or the taxCode value.
      */
-    public String gettaxCode() {;
-        return this.taxCode;;
+    public string getTaxCode() {
+        return this.taxCode;
     }
 
     /**
-     * Setter for taxCode;
+     * Setter for taxCode
+     *
      * The code string of the tax code for this rule.
     * When creating or updating a tax rule, you may specify either the taxCodeId value or the taxCode value.
      */
-    public void settaxCode(String value) {;
-        this.taxCode = value;;
+    public void setTaxCode(string value) {
+        this.taxCode = value;
     }
 
 
-    private String stateFIPS;
+    private string stateFIPS;
 
     /**
-     * Getter for stateFIPS;
+     * Getter for stateFIPS
+     *
      * For U.S. tax rules, this is the state's Federal Information Processing Standard (FIPS) code.
      */
-    public String getstateFIPS() {;
-        return this.stateFIPS;;
+    public string getStateFIPS() {
+        return this.stateFIPS;
     }
 
     /**
-     * Setter for stateFIPS;
+     * Setter for stateFIPS
+     *
      * For U.S. tax rules, this is the state's Federal Information Processing Standard (FIPS) code.
      */
-    public void setstateFIPS(String value) {;
-        this.stateFIPS = value;;
+    public void setStateFIPS(string value) {
+        this.stateFIPS = value;
     }
 
 
-    private String jurisName;
+    private string jurisName;
 
     /**
-     * Getter for jurisName;
+     * Getter for jurisName
+     *
      * The name of the jurisdiction to which this tax rule applies.
      */
-    public String getjurisName() {;
-        return this.jurisName;;
+    public string getJurisName() {
+        return this.jurisName;
     }
 
     /**
-     * Setter for jurisName;
+     * Setter for jurisName
+     *
      * The name of the jurisdiction to which this tax rule applies.
      */
-    public void setjurisName(String value) {;
-        this.jurisName = value;;
+    public void setJurisName(string value) {
+        this.jurisName = value;
     }
 
 
-    private String jurisCode;
+    private string jurisCode;
 
     /**
-     * Getter for jurisCode;
+     * Getter for jurisCode
+     *
      * The code of the jurisdiction to which this tax rule applies.
      */
-    public String getjurisCode() {;
-        return this.jurisCode;;
+    public string getJurisCode() {
+        return this.jurisCode;
     }
 
     /**
-     * Setter for jurisCode;
+     * Setter for jurisCode
+     *
      * The code of the jurisdiction to which this tax rule applies.
      */
-    public void setjurisCode(String value) {;
-        this.jurisCode = value;;
+    public void setJurisCode(string value) {
+        this.jurisCode = value;
     }
 
 
-    private JurisTypeId? jurisTypeId;
+    private JurisTypeId jurisTypeId;
 
     /**
-     * Getter for jurisTypeId;
+     * Getter for jurisTypeId
+     *
      * The type of the jurisdiction to which this tax rule applies.
      */
-    public JurisTypeId? getjurisTypeId() {;
-        return this.jurisTypeId;;
+    public JurisTypeId getJurisTypeId() {
+        return this.jurisTypeId;
     }
 
     /**
-     * Setter for jurisTypeId;
+     * Setter for jurisTypeId
+     *
      * The type of the jurisdiction to which this tax rule applies.
      */
-    public void setjurisTypeId(JurisTypeId? value) {;
-        this.jurisTypeId = value;;
+    public void setJurisTypeId(JurisTypeId value) {
+        this.jurisTypeId = value;
     }
 
 
-    private String customerUsageType;
+    private string customerUsageType;
 
     /**
-     * Getter for customerUsageType;
+     * Getter for customerUsageType
+     *
      * The type of customer usage to which this rule applies.
      */
-    public String getcustomerUsageType() {;
-        return this.customerUsageType;;
+    public string getCustomerUsageType() {
+        return this.customerUsageType;
     }
 
     /**
-     * Setter for customerUsageType;
+     * Setter for customerUsageType
+     *
      * The type of customer usage to which this rule applies.
      */
-    public void setcustomerUsageType(String value) {;
-        this.customerUsageType = value;;
+    public void setCustomerUsageType(string value) {
+        this.customerUsageType = value;
     }
 
 
-    private MatchingTaxType? taxTypeId;
+    private MatchingTaxType taxTypeId;
 
     /**
-     * Getter for taxTypeId;
+     * Getter for taxTypeId
+     *
      * Indicates which tax types to which this rule applies.
      */
-    public MatchingTaxType? gettaxTypeId() {;
-        return this.taxTypeId;;
+    public MatchingTaxType getTaxTypeId() {
+        return this.taxTypeId;
     }
 
     /**
-     * Setter for taxTypeId;
+     * Setter for taxTypeId
+     *
      * Indicates which tax types to which this rule applies.
      */
-    public void settaxTypeId(MatchingTaxType? value) {;
-        this.taxTypeId = value;;
+    public void setTaxTypeId(MatchingTaxType value) {
+        this.taxTypeId = value;
     }
 
 
-    private RateType? rateTypeId;
+    private RateType rateTypeId;
 
     /**
-     * Getter for rateTypeId;
+     * Getter for rateTypeId
+     *
      * (DEPRECATED) Enumerated rate type to which this rule applies. Please use rateTypeCode instead.
      */
-    public RateType? getrateTypeId() {;
-        return this.rateTypeId;;
+    public RateType getRateTypeId() {
+        return this.rateTypeId;
     }
 
     /**
-     * Setter for rateTypeId;
+     * Setter for rateTypeId
+     *
      * (DEPRECATED) Enumerated rate type to which this rule applies. Please use rateTypeCode instead.
      */
-    public void setrateTypeId(RateType? value) {;
-        this.rateTypeId = value;;
+    public void setRateTypeId(RateType value) {
+        this.rateTypeId = value;
     }
 
 
-    private String rateTypeCode;
+    private string rateTypeCode;
 
     /**
-     * Getter for rateTypeCode;
+     * Getter for rateTypeCode
+     *
      * Indicates the code of the rate type that applies to this rule. Use `/api/v2/definitions/ratetypes` for a full list of rate type codes.
      */
-    public String getrateTypeCode() {;
-        return this.rateTypeCode;;
+    public string getRateTypeCode() {
+        return this.rateTypeCode;
     }
 
     /**
-     * Setter for rateTypeCode;
+     * Setter for rateTypeCode
+     *
      * Indicates the code of the rate type that applies to this rule. Use `/api/v2/definitions/ratetypes` for a full list of rate type codes.
      */
-    public void setrateTypeCode(String value) {;
-        this.rateTypeCode = value;;
+    public void setRateTypeCode(string value) {
+        this.rateTypeCode = value;
     }
 
 
-    private TaxRuleTypeId? taxRuleTypeId;
+    private TaxRuleTypeId taxRuleTypeId;
 
     /**
-     * Getter for taxRuleTypeId;
+     * Getter for taxRuleTypeId
+     *
      * This type value determines the behavior of the tax rule.
     * You can specify that this rule controls the product's taxability or exempt / nontaxable status, the product's rate 
     * (for example, if you have been granted an official ruling for your product's rate that differs from the official rate), 
     * or other types of behavior.
      */
-    public TaxRuleTypeId? gettaxRuleTypeId() {;
-        return this.taxRuleTypeId;;
+    public TaxRuleTypeId getTaxRuleTypeId() {
+        return this.taxRuleTypeId;
     }
 
     /**
-     * Setter for taxRuleTypeId;
+     * Setter for taxRuleTypeId
+     *
      * This type value determines the behavior of the tax rule.
     * You can specify that this rule controls the product's taxability or exempt / nontaxable status, the product's rate 
     * (for example, if you have been granted an official ruling for your product's rate that differs from the official rate), 
     * or other types of behavior.
      */
-    public void settaxRuleTypeId(TaxRuleTypeId? value) {;
-        this.taxRuleTypeId = value;;
+    public void setTaxRuleTypeId(TaxRuleTypeId value) {
+        this.taxRuleTypeId = value;
     }
 
 
-    private Boolean? isAllJuris;
+    private object isAllJuris;
 
     /**
-     * Getter for isAllJuris;
+     * Getter for isAllJuris
+     *
      * Set this value to true if this tax rule applies in all jurisdictions.
      */
-    public Boolean? getisAllJuris() {;
-        return this.isAllJuris;;
+    public object getIsAllJuris() {
+        return this.isAllJuris;
     }
 
     /**
-     * Setter for isAllJuris;
+     * Setter for isAllJuris
+     *
      * Set this value to true if this tax rule applies in all jurisdictions.
      */
-    public void setisAllJuris(Boolean? value) {;
-        this.isAllJuris = value;;
+    public void setIsAllJuris(object value) {
+        this.isAllJuris = value;
     }
 
 
-    private Decimal? value;
+    private Decimal value;
 
     /**
-     * Getter for value;
+     * Getter for value
+     *
      * The corrected rate for this tax rule.
      */
-    public Decimal? getvalue() {;
-        return this.value;;
+    public Decimal getValue() {
+        return this.value;
     }
 
     /**
-     * Setter for value;
+     * Setter for value
+     *
      * The corrected rate for this tax rule.
      */
-    public void setvalue(Decimal? value) {;
-        this.value = value;;
+    public void setValue(Decimal value) {
+        this.value = value;
     }
 
 
-    private Decimal? cap;
+    private Decimal cap;
 
     /**
-     * Getter for cap;
+     * Getter for cap
+     *
      * The maximum cap for the price of this item according to this rule.
      */
-    public Decimal? getcap() {;
-        return this.cap;;
+    public Decimal getCap() {
+        return this.cap;
     }
 
     /**
-     * Setter for cap;
+     * Setter for cap
+     *
      * The maximum cap for the price of this item according to this rule.
      */
-    public void setcap(Decimal? value) {;
-        this.cap = value;;
+    public void setCap(Decimal value) {
+        this.cap = value;
     }
 
 
-    private Decimal? threshold;
+    private Decimal threshold;
 
     /**
-     * Getter for threshold;
+     * Getter for threshold
+     *
      * The per-unit threshold that must be met before this rule applies.
      */
-    public Decimal? getthreshold() {;
-        return this.threshold;;
+    public Decimal getThreshold() {
+        return this.threshold;
     }
 
     /**
-     * Setter for threshold;
+     * Setter for threshold
+     *
      * The per-unit threshold that must be met before this rule applies.
      */
-    public void setthreshold(Decimal? value) {;
-        this.threshold = value;;
+    public void setThreshold(Decimal value) {
+        this.threshold = value;
     }
 
 
-    private String options;
+    private string options;
 
     /**
-     * Getter for options;
+     * Getter for options
+     *
      * Custom option flags for this rule.
      */
-    public String getoptions() {;
-        return this.options;;
+    public string getOptions() {
+        return this.options;
     }
 
     /**
-     * Setter for options;
+     * Setter for options
+     *
      * Custom option flags for this rule.
      */
-    public void setoptions(String value) {;
-        this.options = value;;
+    public void setOptions(string value) {
+        this.options = value;
     }
 
 
-    private DateTime? effectiveDate;
+    private Instant effectiveDate;
 
     /**
-     * Getter for effectiveDate;
+     * Getter for effectiveDate
+     *
      * The first date at which this rule applies. If null, this rule will apply to all dates prior to the end date.
      */
-    public DateTime? geteffectiveDate() {;
-        return this.effectiveDate;;
+    public Instant getEffectiveDate() {
+        return this.effectiveDate;
     }
 
     /**
-     * Setter for effectiveDate;
+     * Setter for effectiveDate
+     *
      * The first date at which this rule applies. If null, this rule will apply to all dates prior to the end date.
      */
-    public void seteffectiveDate(DateTime? value) {;
-        this.effectiveDate = value;;
+    public void setEffectiveDate(Instant value) {
+        this.effectiveDate = value;
     }
 
 
-    private DateTime? endDate;
+    private Instant endDate;
 
     /**
-     * Getter for endDate;
+     * Getter for endDate
+     *
      * The last date for which this rule applies. If null, this rule will apply to all dates after the effective date.
      */
-    public DateTime? getendDate() {;
-        return this.endDate;;
+    public Instant getEndDate() {
+        return this.endDate;
     }
 
     /**
-     * Setter for endDate;
+     * Setter for endDate
+     *
      * The last date for which this rule applies. If null, this rule will apply to all dates after the effective date.
      */
-    public void setendDate(DateTime? value) {;
-        this.endDate = value;;
+    public void setEndDate(Instant value) {
+        this.endDate = value;
     }
 
 
-    private String description;
+    private string description;
 
     /**
-     * Getter for description;
+     * Getter for description
+     *
      * A friendly name for this tax rule.
      */
-    public String getdescription() {;
-        return this.description;;
+    public string getDescription() {
+        return this.description;
     }
 
     /**
-     * Setter for description;
+     * Setter for description
+     *
      * A friendly name for this tax rule.
      */
-    public void setdescription(String value) {;
-        this.description = value;;
+    public void setDescription(string value) {
+        this.description = value;
     }
 
 
-    private String countyFIPS;
+    private string countyFIPS;
 
     /**
-     * Getter for countyFIPS;
+     * Getter for countyFIPS
+     *
      * For U.S. tax rules, this is the county's Federal Information Processing Standard (FIPS) code.
      */
-    public String getcountyFIPS() {;
-        return this.countyFIPS;;
+    public string getCountyFIPS() {
+        return this.countyFIPS;
     }
 
     /**
-     * Setter for countyFIPS;
+     * Setter for countyFIPS
+     *
      * For U.S. tax rules, this is the county's Federal Information Processing Standard (FIPS) code.
      */
-    public void setcountyFIPS(String value) {;
-        this.countyFIPS = value;;
+    public void setCountyFIPS(string value) {
+        this.countyFIPS = value;
     }
 
 
-    private Boolean? isSTPro;
+    private object isSTPro;
 
     /**
-     * Getter for isSTPro;
+     * Getter for isSTPro
+     *
      * If true, indicates this rule is for Sales Tax Pro.
      */
-    public Boolean? getisSTPro() {;
-        return this.isSTPro;;
+    public object getIsSTPro() {
+        return this.isSTPro;
     }
 
     /**
-     * Setter for isSTPro;
+     * Setter for isSTPro
+     *
      * If true, indicates this rule is for Sales Tax Pro.
      */
-    public void setisSTPro(Boolean? value) {;
-        this.isSTPro = value;;
+    public void setIsSTPro(object value) {
+        this.isSTPro = value;
     }
 
 
-    private String country;
+    private string country;
 
     /**
-     * Getter for country;
+     * Getter for country
+     *
      * The two character ISO 3166 country code for the locations where this rule applies.
      */
-    public String getcountry() {;
-        return this.country;;
+    public string getCountry() {
+        return this.country;
     }
 
     /**
-     * Setter for country;
+     * Setter for country
+     *
      * The two character ISO 3166 country code for the locations where this rule applies.
      */
-    public void setcountry(String value) {;
-        this.country = value;;
+    public void setCountry(string value) {
+        this.country = value;
     }
 
 
-    private String region;
+    private string region;
 
     /**
-     * Getter for region;
+     * Getter for region
+     *
      * The state, region, or province name for the locations where this rule applies.
      */
-    public String getregion() {;
-        return this.region;;
+    public string getRegion() {
+        return this.region;
     }
 
     /**
-     * Setter for region;
+     * Setter for region
+     *
      * The state, region, or province name for the locations where this rule applies.
      */
-    public void setregion(String value) {;
-        this.region = value;;
+    public void setRegion(string value) {
+        this.region = value;
     }
 
 
-    private Sourcing? sourcing;
+    private Sourcing sourcing;
 
     /**
-     * Getter for sourcing;
+     * Getter for sourcing
+     *
      * The sourcing types to which this rule applies.
      */
-    public Sourcing? getsourcing() {;
-        return this.sourcing;;
+    public Sourcing getSourcing() {
+        return this.sourcing;
     }
 
     /**
-     * Setter for sourcing;
+     * Setter for sourcing
+     *
      * The sourcing types to which this rule applies.
      */
-    public void setsourcing(Sourcing? value) {;
-        this.sourcing = value;;
+    public void setSourcing(Sourcing value) {
+        this.sourcing = value;
     }
 
 
-    private DateTime? createdDate;
+    private Instant createdDate;
 
     /**
-     * Getter for createdDate;
+     * Getter for createdDate
+     *
      * The date when this record was created.
      */
-    public DateTime? getcreatedDate() {;
-        return this.createdDate;;
+    public Instant getCreatedDate() {
+        return this.createdDate;
     }
 
     /**
-     * Setter for createdDate;
+     * Setter for createdDate
+     *
      * The date when this record was created.
      */
-    public void setcreatedDate(DateTime? value) {;
-        this.createdDate = value;;
+    public void setCreatedDate(Instant value) {
+        this.createdDate = value;
     }
 
 
-    private Int32? createdUserId;
+    private Integer createdUserId;
 
     /**
-     * Getter for createdUserId;
+     * Getter for createdUserId
+     *
      * The User ID of the user who created this record.
      */
-    public Int32? getcreatedUserId() {;
-        return this.createdUserId;;
+    public Integer getCreatedUserId() {
+        return this.createdUserId;
     }
 
     /**
-     * Setter for createdUserId;
+     * Setter for createdUserId
+     *
      * The User ID of the user who created this record.
      */
-    public void setcreatedUserId(Int32? value) {;
-        this.createdUserId = value;;
+    public void setCreatedUserId(Integer value) {
+        this.createdUserId = value;
     }
 
 
-    private DateTime? modifiedDate;
+    private Instant modifiedDate;
 
     /**
-     * Getter for modifiedDate;
+     * Getter for modifiedDate
+     *
      * The date/time when this record was last modified.
      */
-    public DateTime? getmodifiedDate() {;
-        return this.modifiedDate;;
+    public Instant getModifiedDate() {
+        return this.modifiedDate;
     }
 
     /**
-     * Setter for modifiedDate;
+     * Setter for modifiedDate
+     *
      * The date/time when this record was last modified.
      */
-    public void setmodifiedDate(DateTime? value) {;
-        this.modifiedDate = value;;
+    public void setModifiedDate(Instant value) {
+        this.modifiedDate = value;
     }
 
 
-    private Int32? modifiedUserId;
+    private Integer modifiedUserId;
 
     /**
-     * Getter for modifiedUserId;
+     * Getter for modifiedUserId
+     *
      * The user ID of the user who last modified this record.
      */
-    public Int32? getmodifiedUserId() {;
-        return this.modifiedUserId;;
+    public Integer getModifiedUserId() {
+        return this.modifiedUserId;
     }
 
     /**
-     * Setter for modifiedUserId;
+     * Setter for modifiedUserId
+     *
      * The user ID of the user who last modified this record.
      */
-    public void setmodifiedUserId(Int32? value) {;
-        this.modifiedUserId = value;;
+    public void setModifiedUserId(Integer value) {
+        this.modifiedUserId = value;
     }
 
 
-    private String taxTypeGroup;
+    private string taxTypeGroup;
 
     /**
-     * Getter for taxTypeGroup;
+     * Getter for taxTypeGroup
+     *
      * The group Id of tax types supported by Avalara. Refer to /api/v2/definitions/taxtypegroups for types we support.
      */
-    public String gettaxTypeGroup() {;
-        return this.taxTypeGroup;;
+    public string getTaxTypeGroup() {
+        return this.taxTypeGroup;
     }
 
     /**
-     * Setter for taxTypeGroup;
+     * Setter for taxTypeGroup
+     *
      * The group Id of tax types supported by Avalara. Refer to /api/v2/definitions/taxtypegroups for types we support.
      */
-    public void settaxTypeGroup(String value) {;
-        this.taxTypeGroup = value;;
+    public void setTaxTypeGroup(string value) {
+        this.taxTypeGroup = value;
     }
 
 
-    private String taxSubType;
+    private string taxSubType;
 
     /**
-     * Getter for taxSubType;
+     * Getter for taxSubType
+     *
      * The Id of sub tax types supported by Avalara. Refer to /api/v2/definitions/taxsubtypes for types we support.
      */
-    public String gettaxSubType() {;
-        return this.taxSubType;;
+    public string getTaxSubType() {
+        return this.taxSubType;
     }
 
     /**
-     * Setter for taxSubType;
+     * Setter for taxSubType
+     *
      * The Id of sub tax types supported by Avalara. Refer to /api/v2/definitions/taxsubtypes for types we support.
      */
-    public void settaxSubType(String value) {;
-        this.taxSubType = value;;
+    public void setTaxSubType(string value) {
+        this.taxSubType = value;
     }
 
 
-    private Int32? taxTypeMappingId;
+    private Integer taxTypeMappingId;
 
     /**
-     * Getter for taxTypeMappingId;
+     * Getter for taxTypeMappingId
+     *
      * Id for TaxTypeMapping object
      */
-    public Int32? gettaxTypeMappingId() {;
-        return this.taxTypeMappingId;;
+    public Integer getTaxTypeMappingId() {
+        return this.taxTypeMappingId;
     }
 
     /**
-     * Setter for taxTypeMappingId;
+     * Setter for taxTypeMappingId
+     *
      * Id for TaxTypeMapping object
      */
-    public void settaxTypeMappingId(Int32? value) {;
-        this.taxTypeMappingId = value;;
+    public void setTaxTypeMappingId(Integer value) {
+        this.taxTypeMappingId = value;
     }
 
 
-    private Int32? rateTypeTaxTypeMappingId;
+    private Integer rateTypeTaxTypeMappingId;
 
     /**
-     * Getter for rateTypeTaxTypeMappingId;
+     * Getter for rateTypeTaxTypeMappingId
+     *
      * Id for RateTypeTaxTypeMapping object
      */
-    public Int32? getrateTypeTaxTypeMappingId() {;
-        return this.rateTypeTaxTypeMappingId;;
+    public Integer getRateTypeTaxTypeMappingId() {
+        return this.rateTypeTaxTypeMappingId;
     }
 
     /**
-     * Setter for rateTypeTaxTypeMappingId;
+     * Setter for rateTypeTaxTypeMappingId
+     *
      * Id for RateTypeTaxTypeMapping object
      */
-    public void setrateTypeTaxTypeMappingId(Int32? value) {;
-        this.rateTypeTaxTypeMappingId = value;;
+    public void setRateTypeTaxTypeMappingId(Integer value) {
+        this.rateTypeTaxTypeMappingId = value;
     }
 
 

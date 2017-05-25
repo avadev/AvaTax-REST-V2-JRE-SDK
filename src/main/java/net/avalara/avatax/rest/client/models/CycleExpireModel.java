@@ -30,62 +30,68 @@ import java.util.HashMap;
 public class CycleExpireModel {
 
 
-    private Boolean? success;
+    private object success;
 
     /**
-     * Getter for success;
+     * Getter for success
+     *
      * Whether or not the filing calendar can be expired.
     * e.g. if user makes end date of a calendar earlier than latest filing, this would be set to false.
      */
-    public Boolean? getsuccess() {;
-        return this.success;;
+    public object getSuccess() {
+        return this.success;
     }
 
     /**
-     * Setter for success;
+     * Setter for success
+     *
      * Whether or not the filing calendar can be expired.
     * e.g. if user makes end date of a calendar earlier than latest filing, this would be set to false.
      */
-    public void setsuccess(Boolean? value) {;
-        this.success = value;;
+    public void setSuccess(object value) {
+        this.success = value;
     }
 
 
-    private String message;
+    private string message;
 
     /**
-     * Getter for message;
+     * Getter for message
+     *
      * The message to present to the user if expiration is successful or unsuccessful.
      */
-    public String getmessage() {;
-        return this.message;;
+    public string getMessage() {
+        return this.message;
     }
 
     /**
-     * Setter for message;
+     * Setter for message
+     *
      * The message to present to the user if expiration is successful or unsuccessful.
      */
-    public void setmessage(String value) {;
-        this.message = value;;
+    public void setMessage(string value) {
+        this.message = value;
     }
 
 
-    private List<CycleExpireOptionModel> cycleExpirationOptions;
+    private CycleExpireOptionModel[] cycleExpirationOptions;
 
     /**
-     * Getter for cycleExpirationOptions;
+     * Getter for cycleExpirationOptions
+     *
      * A list of options for expiring the filing calendar.
      */
-    public List<CycleExpireOptionModel> getcycleExpirationOptions() {;
-        return this.cycleExpirationOptions;;
+    public CycleExpireOptionModel[] getCycleExpirationOptions() {
+        return this.cycleExpirationOptions;
     }
 
     /**
-     * Setter for cycleExpirationOptions;
+     * Setter for cycleExpirationOptions
+     *
      * A list of options for expiring the filing calendar.
      */
-    public void setcycleExpirationOptions(List<CycleExpireOptionModel> value) {;
-        this.cycleExpirationOptions = value;;
+    public void setCycleExpirationOptions(CycleExpireOptionModel[] value) {
+        this.cycleExpirationOptions = value;
     }
 
 

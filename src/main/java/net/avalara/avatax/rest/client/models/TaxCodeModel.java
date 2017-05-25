@@ -31,290 +31,320 @@ import java.util.HashMap;
 public class TaxCodeModel {
 
 
-    private Int32 id;
+    private int id;
 
     /**
-     * Getter for id;
+     * Getter for id
+     *
      * The unique ID number of this tax code.
      */
-    public Int32 getid() {;
-        return this.id;;
+    public int getId() {
+        return this.id;
     }
 
     /**
-     * Setter for id;
+     * Setter for id
+     *
      * The unique ID number of this tax code.
      */
-    public void setid(Int32 value) {;
-        this.id = value;;
+    public void setId(int value) {
+        this.id = value;
     }
 
 
-    private Int32 companyId;
+    private int companyId;
 
     /**
-     * Getter for companyId;
+     * Getter for companyId
+     *
      * The unique ID number of the company that owns this tax code.
      */
-    public Int32 getcompanyId() {;
-        return this.companyId;;
+    public int getCompanyId() {
+        return this.companyId;
     }
 
     /**
-     * Setter for companyId;
+     * Setter for companyId
+     *
      * The unique ID number of the company that owns this tax code.
      */
-    public void setcompanyId(Int32 value) {;
-        this.companyId = value;;
+    public void setCompanyId(int value) {
+        this.companyId = value;
     }
 
 
-    private String taxCode;
+    private string taxCode;
 
     /**
-     * Getter for taxCode;
+     * Getter for taxCode
+     *
      * A code string that identifies this tax code.
      */
-    public String gettaxCode() {;
-        return this.taxCode;;
+    public string getTaxCode() {
+        return this.taxCode;
     }
 
     /**
-     * Setter for taxCode;
+     * Setter for taxCode
+     *
      * A code string that identifies this tax code.
      */
-    public void settaxCode(String value) {;
-        this.taxCode = value;;
+    public void setTaxCode(string value) {
+        this.taxCode = value;
     }
 
 
-    private String taxCodeTypeId;
+    private string taxCodeTypeId;
 
     /**
-     * Getter for taxCodeTypeId;
+     * Getter for taxCodeTypeId
+     *
      * The type of this tax code.
      */
-    public String gettaxCodeTypeId() {;
-        return this.taxCodeTypeId;;
+    public string getTaxCodeTypeId() {
+        return this.taxCodeTypeId;
     }
 
     /**
-     * Setter for taxCodeTypeId;
+     * Setter for taxCodeTypeId
+     *
      * The type of this tax code.
      */
-    public void settaxCodeTypeId(String value) {;
-        this.taxCodeTypeId = value;;
+    public void setTaxCodeTypeId(string value) {
+        this.taxCodeTypeId = value;
     }
 
 
-    private String description;
+    private string description;
 
     /**
-     * Getter for description;
+     * Getter for description
+     *
      * A friendly description of this tax code.
      */
-    public String getdescription() {;
-        return this.description;;
+    public string getDescription() {
+        return this.description;
     }
 
     /**
-     * Setter for description;
+     * Setter for description
+     *
      * A friendly description of this tax code.
      */
-    public void setdescription(String value) {;
-        this.description = value;;
+    public void setDescription(string value) {
+        this.description = value;
     }
 
 
-    private String parentTaxCode;
+    private string parentTaxCode;
 
     /**
-     * Getter for parentTaxCode;
+     * Getter for parentTaxCode
+     *
      * If this tax code is a subset of a different tax code, this identifies the parent code.
      */
-    public String getparentTaxCode() {;
-        return this.parentTaxCode;;
+    public string getParentTaxCode() {
+        return this.parentTaxCode;
     }
 
     /**
-     * Setter for parentTaxCode;
+     * Setter for parentTaxCode
+     *
      * If this tax code is a subset of a different tax code, this identifies the parent code.
      */
-    public void setparentTaxCode(String value) {;
-        this.parentTaxCode = value;;
+    public void setParentTaxCode(string value) {
+        this.parentTaxCode = value;
     }
 
 
-    private Boolean? isPhysical;
+    private object isPhysical;
 
     /**
-     * Getter for isPhysical;
+     * Getter for isPhysical
+     *
      * True if this tax code type refers to a physical object. Read only field.
      */
-    public Boolean? getisPhysical() {;
-        return this.isPhysical;;
+    public object getIsPhysical() {
+        return this.isPhysical;
     }
 
     /**
-     * Setter for isPhysical;
+     * Setter for isPhysical
+     *
      * True if this tax code type refers to a physical object. Read only field.
      */
-    public void setisPhysical(Boolean? value) {;
-        this.isPhysical = value;;
+    public void setIsPhysical(object value) {
+        this.isPhysical = value;
     }
 
 
-    private Int64? goodsServiceCode;
+    private Long goodsServiceCode;
 
     /**
-     * Getter for goodsServiceCode;
+     * Getter for goodsServiceCode
+     *
      * The Avalara Goods and Service Code represented by this tax code.
      */
-    public Int64? getgoodsServiceCode() {;
-        return this.goodsServiceCode;;
+    public Long getGoodsServiceCode() {
+        return this.goodsServiceCode;
     }
 
     /**
-     * Setter for goodsServiceCode;
+     * Setter for goodsServiceCode
+     *
      * The Avalara Goods and Service Code represented by this tax code.
      */
-    public void setgoodsServiceCode(Int64? value) {;
-        this.goodsServiceCode = value;;
+    public void setGoodsServiceCode(Long value) {
+        this.goodsServiceCode = value;
     }
 
 
-    private String entityUseCode;
+    private string entityUseCode;
 
     /**
-     * Getter for entityUseCode;
+     * Getter for entityUseCode
+     *
      * The Avalara Entity Use Code represented by this tax code.
      */
-    public String getentityUseCode() {;
-        return this.entityUseCode;;
+    public string getEntityUseCode() {
+        return this.entityUseCode;
     }
 
     /**
-     * Setter for entityUseCode;
+     * Setter for entityUseCode
+     *
      * The Avalara Entity Use Code represented by this tax code.
      */
-    public void setentityUseCode(String value) {;
-        this.entityUseCode = value;;
+    public void setEntityUseCode(string value) {
+        this.entityUseCode = value;
     }
 
 
-    private Boolean? isActive;
+    private object isActive;
 
     /**
-     * Getter for isActive;
+     * Getter for isActive
+     *
      * True if this tax code is active and can be used in transactions.
      */
-    public Boolean? getisActive() {;
-        return this.isActive;;
+    public object getIsActive() {
+        return this.isActive;
     }
 
     /**
-     * Setter for isActive;
+     * Setter for isActive
+     *
      * True if this tax code is active and can be used in transactions.
      */
-    public void setisActive(Boolean? value) {;
-        this.isActive = value;;
+    public void setIsActive(object value) {
+        this.isActive = value;
     }
 
 
-    private Boolean? isSSTCertified;
+    private object isSSTCertified;
 
     /**
-     * Getter for isSSTCertified;
+     * Getter for isSSTCertified
+     *
      * True if this tax code has been certified by the Streamlined Sales Tax governing board.
     * By default, you should leave this value empty.
      */
-    public Boolean? getisSSTCertified() {;
-        return this.isSSTCertified;;
+    public object getIsSSTCertified() {
+        return this.isSSTCertified;
     }
 
     /**
-     * Setter for isSSTCertified;
+     * Setter for isSSTCertified
+     *
      * True if this tax code has been certified by the Streamlined Sales Tax governing board.
     * By default, you should leave this value empty.
      */
-    public void setisSSTCertified(Boolean? value) {;
-        this.isSSTCertified = value;;
+    public void setIsSSTCertified(object value) {
+        this.isSSTCertified = value;
     }
 
 
-    private DateTime? createdDate;
+    private Instant createdDate;
 
     /**
-     * Getter for createdDate;
+     * Getter for createdDate
+     *
      * The date when this record was created.
      */
-    public DateTime? getcreatedDate() {;
-        return this.createdDate;;
+    public Instant getCreatedDate() {
+        return this.createdDate;
     }
 
     /**
-     * Setter for createdDate;
+     * Setter for createdDate
+     *
      * The date when this record was created.
      */
-    public void setcreatedDate(DateTime? value) {;
-        this.createdDate = value;;
+    public void setCreatedDate(Instant value) {
+        this.createdDate = value;
     }
 
 
-    private Int32? createdUserId;
+    private Integer createdUserId;
 
     /**
-     * Getter for createdUserId;
+     * Getter for createdUserId
+     *
      * The User ID of the user who created this record.
      */
-    public Int32? getcreatedUserId() {;
-        return this.createdUserId;;
+    public Integer getCreatedUserId() {
+        return this.createdUserId;
     }
 
     /**
-     * Setter for createdUserId;
+     * Setter for createdUserId
+     *
      * The User ID of the user who created this record.
      */
-    public void setcreatedUserId(Int32? value) {;
-        this.createdUserId = value;;
+    public void setCreatedUserId(Integer value) {
+        this.createdUserId = value;
     }
 
 
-    private DateTime? modifiedDate;
+    private Instant modifiedDate;
 
     /**
-     * Getter for modifiedDate;
+     * Getter for modifiedDate
+     *
      * The date/time when this record was last modified.
      */
-    public DateTime? getmodifiedDate() {;
-        return this.modifiedDate;;
+    public Instant getModifiedDate() {
+        return this.modifiedDate;
     }
 
     /**
-     * Setter for modifiedDate;
+     * Setter for modifiedDate
+     *
      * The date/time when this record was last modified.
      */
-    public void setmodifiedDate(DateTime? value) {;
-        this.modifiedDate = value;;
+    public void setModifiedDate(Instant value) {
+        this.modifiedDate = value;
     }
 
 
-    private Int32? modifiedUserId;
+    private Integer modifiedUserId;
 
     /**
-     * Getter for modifiedUserId;
+     * Getter for modifiedUserId
+     *
      * The user ID of the user who last modified this record.
      */
-    public Int32? getmodifiedUserId() {;
-        return this.modifiedUserId;;
+    public Integer getModifiedUserId() {
+        return this.modifiedUserId;
     }
 
     /**
-     * Setter for modifiedUserId;
+     * Setter for modifiedUserId
+     *
      * The user ID of the user who last modified this record.
      */
-    public void setmodifiedUserId(Int32? value) {;
-        this.modifiedUserId = value;;
+    public void setModifiedUserId(Integer value) {
+        this.modifiedUserId = value;
     }
 
 

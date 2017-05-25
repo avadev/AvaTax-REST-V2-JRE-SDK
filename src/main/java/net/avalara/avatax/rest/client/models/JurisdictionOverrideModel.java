@@ -33,347 +33,383 @@ import java.util.HashMap;
 public class JurisdictionOverrideModel {
 
 
-    private Int32? id;
+    private Integer id;
 
     /**
-     * Getter for id;
+     * Getter for id
+     *
      * The unique ID number of this override.
      */
-    public Int32? getid() {;
-        return this.id;;
+    public Integer getId() {
+        return this.id;
     }
 
     /**
-     * Setter for id;
+     * Setter for id
+     *
      * The unique ID number of this override.
      */
-    public void setid(Int32? value) {;
-        this.id = value;;
+    public void setId(Integer value) {
+        this.id = value;
     }
 
 
-    private Int32? accountId;
+    private Integer accountId;
 
     /**
-     * Getter for accountId;
+     * Getter for accountId
+     *
      * The unique ID number assigned to this account.
      */
-    public Int32? getaccountId() {;
-        return this.accountId;;
+    public Integer getAccountId() {
+        return this.accountId;
     }
 
     /**
-     * Setter for accountId;
+     * Setter for accountId
+     *
      * The unique ID number assigned to this account.
      */
-    public void setaccountId(Int32? value) {;
-        this.accountId = value;;
+    public void setAccountId(Integer value) {
+        this.accountId = value;
     }
 
 
-    private String description;
+    private string description;
 
     /**
-     * Getter for description;
+     * Getter for description
+     *
      * A description of why this jurisdiction override was created.
      */
-    public String getdescription() {;
-        return this.description;;
+    public string getDescription() {
+        return this.description;
     }
 
     /**
-     * Setter for description;
+     * Setter for description
+     *
      * A description of why this jurisdiction override was created.
      */
-    public void setdescription(String value) {;
-        this.description = value;;
+    public void setDescription(string value) {
+        this.description = value;
     }
 
 
-    private String line1;
+    private string line1;
 
     /**
-     * Getter for line1;
+     * Getter for line1
+     *
      * The street address of the physical location affected by this override.
      */
-    public String getline1() {;
-        return this.line1;;
+    public string getLine1() {
+        return this.line1;
     }
 
     /**
-     * Setter for line1;
+     * Setter for line1
+     *
      * The street address of the physical location affected by this override.
      */
-    public void setline1(String value) {;
-        this.line1 = value;;
+    public void setLine1(string value) {
+        this.line1 = value;
     }
 
 
-    private String city;
+    private string city;
 
     /**
-     * Getter for city;
+     * Getter for city
+     *
      * The city address of the physical location affected by this override.
      */
-    public String getcity() {;
-        return this.city;;
+    public string getCity() {
+        return this.city;
     }
 
     /**
-     * Setter for city;
+     * Setter for city
+     *
      * The city address of the physical location affected by this override.
      */
-    public void setcity(String value) {;
-        this.city = value;;
+    public void setCity(string value) {
+        this.city = value;
     }
 
 
-    private String region;
+    private string region;
 
     /**
-     * Getter for region;
+     * Getter for region
+     *
      * The two or three character ISO region code of the region, state, or province affected by this override.
      */
-    public String getregion() {;
-        return this.region;;
+    public string getRegion() {
+        return this.region;
     }
 
     /**
-     * Setter for region;
+     * Setter for region
+     *
      * The two or three character ISO region code of the region, state, or province affected by this override.
      */
-    public void setregion(String value) {;
-        this.region = value;;
+    public void setRegion(string value) {
+        this.region = value;
     }
 
 
-    private String country;
+    private string country;
 
     /**
-     * Getter for country;
+     * Getter for country
+     *
      * The two character ISO-3166 country code of the country affected by this override.
     * Note that only United States addresses are affected by the jurisdiction override system.
      */
-    public String getcountry() {;
-        return this.country;;
+    public string getCountry() {
+        return this.country;
     }
 
     /**
-     * Setter for country;
+     * Setter for country
+     *
      * The two character ISO-3166 country code of the country affected by this override.
     * Note that only United States addresses are affected by the jurisdiction override system.
      */
-    public void setcountry(String value) {;
-        this.country = value;;
+    public void setCountry(string value) {
+        this.country = value;
     }
 
 
-    private String postalCode;
+    private string postalCode;
 
     /**
-     * Getter for postalCode;
+     * Getter for postalCode
+     *
      * The postal code of the physical location affected by this override.
      */
-    public String getpostalCode() {;
-        return this.postalCode;;
+    public string getPostalCode() {
+        return this.postalCode;
     }
 
     /**
-     * Setter for postalCode;
+     * Setter for postalCode
+     *
      * The postal code of the physical location affected by this override.
      */
-    public void setpostalCode(String value) {;
-        this.postalCode = value;;
+    public void setPostalCode(string value) {
+        this.postalCode = value;
     }
 
 
-    private DateTime? effectiveDate;
+    private Instant effectiveDate;
 
     /**
-     * Getter for effectiveDate;
+     * Getter for effectiveDate
+     *
      * The date when this override first takes effect. Set this value to null to affect all dates up to the end date.
      */
-    public DateTime? geteffectiveDate() {;
-        return this.effectiveDate;;
+    public Instant getEffectiveDate() {
+        return this.effectiveDate;
     }
 
     /**
-     * Setter for effectiveDate;
+     * Setter for effectiveDate
+     *
      * The date when this override first takes effect. Set this value to null to affect all dates up to the end date.
      */
-    public void seteffectiveDate(DateTime? value) {;
-        this.effectiveDate = value;;
+    public void setEffectiveDate(Instant value) {
+        this.effectiveDate = value;
     }
 
 
-    private DateTime? endDate;
+    private Instant endDate;
 
     /**
-     * Getter for endDate;
+     * Getter for endDate
+     *
      * The date when this override will cease to take effect. Set this value to null to never expire.
      */
-    public DateTime? getendDate() {;
-        return this.endDate;;
+    public Instant getEndDate() {
+        return this.endDate;
     }
 
     /**
-     * Setter for endDate;
+     * Setter for endDate
+     *
      * The date when this override will cease to take effect. Set this value to null to never expire.
      */
-    public void setendDate(DateTime? value) {;
-        this.endDate = value;;
+    public void setEndDate(Instant value) {
+        this.endDate = value;
     }
 
 
-    private DateTime? createdDate;
+    private Instant createdDate;
 
     /**
-     * Getter for createdDate;
+     * Getter for createdDate
+     *
      * The date when this record was created.
      */
-    public DateTime? getcreatedDate() {;
-        return this.createdDate;;
+    public Instant getCreatedDate() {
+        return this.createdDate;
     }
 
     /**
-     * Setter for createdDate;
+     * Setter for createdDate
+     *
      * The date when this record was created.
      */
-    public void setcreatedDate(DateTime? value) {;
-        this.createdDate = value;;
+    public void setCreatedDate(Instant value) {
+        this.createdDate = value;
     }
 
 
-    private Int32? createdUserId;
+    private Integer createdUserId;
 
     /**
-     * Getter for createdUserId;
+     * Getter for createdUserId
+     *
      * The User ID of the user who created this record.
      */
-    public Int32? getcreatedUserId() {;
-        return this.createdUserId;;
+    public Integer getCreatedUserId() {
+        return this.createdUserId;
     }
 
     /**
-     * Setter for createdUserId;
+     * Setter for createdUserId
+     *
      * The User ID of the user who created this record.
      */
-    public void setcreatedUserId(Int32? value) {;
-        this.createdUserId = value;;
+    public void setCreatedUserId(Integer value) {
+        this.createdUserId = value;
     }
 
 
-    private DateTime? modifiedDate;
+    private Instant modifiedDate;
 
     /**
-     * Getter for modifiedDate;
+     * Getter for modifiedDate
+     *
      * The date/time when this record was last modified.
      */
-    public DateTime? getmodifiedDate() {;
-        return this.modifiedDate;;
+    public Instant getModifiedDate() {
+        return this.modifiedDate;
     }
 
     /**
-     * Setter for modifiedDate;
+     * Setter for modifiedDate
+     *
      * The date/time when this record was last modified.
      */
-    public void setmodifiedDate(DateTime? value) {;
-        this.modifiedDate = value;;
+    public void setModifiedDate(Instant value) {
+        this.modifiedDate = value;
     }
 
 
-    private Int32? modifiedUserId;
+    private Integer modifiedUserId;
 
     /**
-     * Getter for modifiedUserId;
+     * Getter for modifiedUserId
+     *
      * The user ID of the user who last modified this record.
      */
-    public Int32? getmodifiedUserId() {;
-        return this.modifiedUserId;;
+    public Integer getModifiedUserId() {
+        return this.modifiedUserId;
     }
 
     /**
-     * Setter for modifiedUserId;
+     * Setter for modifiedUserId
+     *
      * The user ID of the user who last modified this record.
      */
-    public void setmodifiedUserId(Int32? value) {;
-        this.modifiedUserId = value;;
+    public void setModifiedUserId(Integer value) {
+        this.modifiedUserId = value;
     }
 
 
-    private List<JurisdictionModel> jurisdictions;
+    private JurisdictionModel[] jurisdictions;
 
     /**
-     * Getter for jurisdictions;
+     * Getter for jurisdictions
+     *
      * A list of the tax jurisdictions that will be assigned to this overridden address.
      */
-    public List<JurisdictionModel> getjurisdictions() {;
-        return this.jurisdictions;;
+    public JurisdictionModel[] getJurisdictions() {
+        return this.jurisdictions;
     }
 
     /**
-     * Setter for jurisdictions;
+     * Setter for jurisdictions
+     *
      * A list of the tax jurisdictions that will be assigned to this overridden address.
      */
-    public void setjurisdictions(List<JurisdictionModel> value) {;
-        this.jurisdictions = value;;
+    public void setJurisdictions(JurisdictionModel[] value) {
+        this.jurisdictions = value;
     }
 
 
-    private Int32 taxRegionId;
+    private int taxRegionId;
 
     /**
-     * Getter for taxRegionId;
+     * Getter for taxRegionId
+     *
      * The TaxRegionId of the new location affected by this jurisdiction override.
      */
-    public Int32 gettaxRegionId() {;
-        return this.taxRegionId;;
+    public int getTaxRegionId() {
+        return this.taxRegionId;
     }
 
     /**
-     * Setter for taxRegionId;
+     * Setter for taxRegionId
+     *
      * The TaxRegionId of the new location affected by this jurisdiction override.
      */
-    public void settaxRegionId(Int32 value) {;
-        this.taxRegionId = value;;
+    public void setTaxRegionId(int value) {
+        this.taxRegionId = value;
     }
 
 
-    private BoundaryLevel? boundaryLevel;
+    private BoundaryLevel boundaryLevel;
 
     /**
-     * Getter for boundaryLevel;
+     * Getter for boundaryLevel
+     *
      * The boundary level of this override
      */
-    public BoundaryLevel? getboundaryLevel() {;
-        return this.boundaryLevel;;
+    public BoundaryLevel getBoundaryLevel() {
+        return this.boundaryLevel;
     }
 
     /**
-     * Setter for boundaryLevel;
+     * Setter for boundaryLevel
+     *
      * The boundary level of this override
      */
-    public void setboundaryLevel(BoundaryLevel? value) {;
-        this.boundaryLevel = value;;
+    public void setBoundaryLevel(BoundaryLevel value) {
+        this.boundaryLevel = value;
     }
 
 
-    private Boolean? isDefault;
+    private object isDefault;
 
     /**
-     * Getter for isDefault;
+     * Getter for isDefault
+     *
      * True if this is a default boundary
      */
-    public Boolean? getisDefault() {;
-        return this.isDefault;;
+    public object getIsDefault() {
+        return this.isDefault;
     }
 
     /**
-     * Setter for isDefault;
+     * Setter for isDefault
+     *
      * True if this is a default boundary
      */
-    public void setisDefault(Boolean? value) {;
-        this.isDefault = value;;
+    public void setIsDefault(object value) {
+        this.isDefault = value;
     }
 
 

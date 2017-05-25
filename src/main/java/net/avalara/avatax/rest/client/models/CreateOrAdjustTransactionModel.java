@@ -33,19 +33,21 @@ public class CreateOrAdjustTransactionModel {
     private CreateTransactionModel createTransactionModel;
 
     /**
-     * Getter for createTransactionModel;
+     * Getter for createTransactionModel
+     *
      * The create transaction model to be created or updated.
      */
-    public CreateTransactionModel getcreateTransactionModel() {;
-        return this.createTransactionModel;;
+    public CreateTransactionModel getCreateTransactionModel() {
+        return this.createTransactionModel;
     }
 
     /**
-     * Setter for createTransactionModel;
+     * Setter for createTransactionModel
+     *
      * The create transaction model to be created or updated.
      */
-    public void setcreateTransactionModel(CreateTransactionModel value) {;
-        this.createTransactionModel = value;;
+    public void setCreateTransactionModel(CreateTransactionModel value) {
+        this.createTransactionModel = value;
     }
 
 

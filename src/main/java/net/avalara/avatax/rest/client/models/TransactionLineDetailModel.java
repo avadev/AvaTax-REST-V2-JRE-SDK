@@ -30,748 +30,826 @@ import java.util.HashMap;
 public class TransactionLineDetailModel {
 
 
-    private Int64? id;
+    private Long id;
 
     /**
-     * Getter for id;
+     * Getter for id
+     *
      * The unique ID number of this tax detail.
      */
-    public Int64? getid() {;
-        return this.id;;
+    public Long getId() {
+        return this.id;
     }
 
     /**
-     * Setter for id;
+     * Setter for id
+     *
      * The unique ID number of this tax detail.
      */
-    public void setid(Int64? value) {;
-        this.id = value;;
+    public void setId(Long value) {
+        this.id = value;
     }
 
 
-    private Int64? transactionLineId;
+    private Long transactionLineId;
 
     /**
-     * Getter for transactionLineId;
+     * Getter for transactionLineId
+     *
      * The unique ID number of the line within this transaction.
      */
-    public Int64? gettransactionLineId() {;
-        return this.transactionLineId;;
+    public Long getTransactionLineId() {
+        return this.transactionLineId;
     }
 
     /**
-     * Setter for transactionLineId;
+     * Setter for transactionLineId
+     *
      * The unique ID number of the line within this transaction.
      */
-    public void settransactionLineId(Int64? value) {;
-        this.transactionLineId = value;;
+    public void setTransactionLineId(Long value) {
+        this.transactionLineId = value;
     }
 
 
-    private Int64? transactionId;
+    private Long transactionId;
 
     /**
-     * Getter for transactionId;
+     * Getter for transactionId
+     *
      * The unique ID number of this transaction.
      */
-    public Int64? gettransactionId() {;
-        return this.transactionId;;
+    public Long getTransactionId() {
+        return this.transactionId;
     }
 
     /**
-     * Setter for transactionId;
+     * Setter for transactionId
+     *
      * The unique ID number of this transaction.
      */
-    public void settransactionId(Int64? value) {;
-        this.transactionId = value;;
+    public void setTransactionId(Long value) {
+        this.transactionId = value;
     }
 
 
-    private Int64? addressId;
+    private Long addressId;
 
     /**
-     * Getter for addressId;
+     * Getter for addressId
+     *
      * The unique ID number of the address used for this tax detail.
      */
-    public Int64? getaddressId() {;
-        return this.addressId;;
+    public Long getAddressId() {
+        return this.addressId;
     }
 
     /**
-     * Setter for addressId;
+     * Setter for addressId
+     *
      * The unique ID number of the address used for this tax detail.
      */
-    public void setaddressId(Int64? value) {;
-        this.addressId = value;;
+    public void setAddressId(Long value) {
+        this.addressId = value;
     }
 
 
-    private String country;
+    private string country;
 
     /**
-     * Getter for country;
+     * Getter for country
+     *
      * The two character ISO 3166 country code of the country where this tax detail is assigned.
      */
-    public String getcountry() {;
-        return this.country;;
+    public string getCountry() {
+        return this.country;
     }
 
     /**
-     * Setter for country;
+     * Setter for country
+     *
      * The two character ISO 3166 country code of the country where this tax detail is assigned.
      */
-    public void setcountry(String value) {;
-        this.country = value;;
+    public void setCountry(string value) {
+        this.country = value;
     }
 
 
-    private String region;
+    private string region;
 
     /**
-     * Getter for region;
+     * Getter for region
+     *
      * The two-or-three character ISO region code for the region where this tax detail is assigned.
      */
-    public String getregion() {;
-        return this.region;;
+    public string getRegion() {
+        return this.region;
     }
 
     /**
-     * Setter for region;
+     * Setter for region
+     *
      * The two-or-three character ISO region code for the region where this tax detail is assigned.
      */
-    public void setregion(String value) {;
-        this.region = value;;
+    public void setRegion(string value) {
+        this.region = value;
     }
 
 
-    private String countyFIPS;
+    private string countyFIPS;
 
     /**
-     * Getter for countyFIPS;
+     * Getter for countyFIPS
+     *
      * For U.S. transactions, the Federal Information Processing Standard (FIPS) code for the county where this tax detail is assigned.
      */
-    public String getcountyFIPS() {;
-        return this.countyFIPS;;
+    public string getCountyFIPS() {
+        return this.countyFIPS;
     }
 
     /**
-     * Setter for countyFIPS;
+     * Setter for countyFIPS
+     *
      * For U.S. transactions, the Federal Information Processing Standard (FIPS) code for the county where this tax detail is assigned.
      */
-    public void setcountyFIPS(String value) {;
-        this.countyFIPS = value;;
+    public void setCountyFIPS(string value) {
+        this.countyFIPS = value;
     }
 
 
-    private String stateFIPS;
+    private string stateFIPS;
 
     /**
-     * Getter for stateFIPS;
+     * Getter for stateFIPS
+     *
      * For U.S. transactions, the Federal Information Processing Standard (FIPS) code for the state where this tax detail is assigned.
      */
-    public String getstateFIPS() {;
-        return this.stateFIPS;;
+    public string getStateFIPS() {
+        return this.stateFIPS;
     }
 
     /**
-     * Setter for stateFIPS;
+     * Setter for stateFIPS
+     *
      * For U.S. transactions, the Federal Information Processing Standard (FIPS) code for the state where this tax detail is assigned.
      */
-    public void setstateFIPS(String value) {;
-        this.stateFIPS = value;;
+    public void setStateFIPS(string value) {
+        this.stateFIPS = value;
     }
 
 
-    private Decimal? exemptAmount;
+    private Decimal exemptAmount;
 
     /**
-     * Getter for exemptAmount;
+     * Getter for exemptAmount
+     *
      * The amount of this line that was considered exempt in this tax detail.
      */
-    public Decimal? getexemptAmount() {;
-        return this.exemptAmount;;
+    public Decimal getExemptAmount() {
+        return this.exemptAmount;
     }
 
     /**
-     * Setter for exemptAmount;
+     * Setter for exemptAmount
+     *
      * The amount of this line that was considered exempt in this tax detail.
      */
-    public void setexemptAmount(Decimal? value) {;
-        this.exemptAmount = value;;
+    public void setExemptAmount(Decimal value) {
+        this.exemptAmount = value;
     }
 
 
-    private Int32? exemptReasonId;
+    private Integer exemptReasonId;
 
     /**
-     * Getter for exemptReasonId;
+     * Getter for exemptReasonId
+     *
      * The unique ID number of the exemption reason for this tax detail.
      */
-    public Int32? getexemptReasonId() {;
-        return this.exemptReasonId;;
+    public Integer getExemptReasonId() {
+        return this.exemptReasonId;
     }
 
     /**
-     * Setter for exemptReasonId;
+     * Setter for exemptReasonId
+     *
      * The unique ID number of the exemption reason for this tax detail.
      */
-    public void setexemptReasonId(Int32? value) {;
-        this.exemptReasonId = value;;
+    public void setExemptReasonId(Integer value) {
+        this.exemptReasonId = value;
     }
 
 
-    private Boolean? inState;
+    private object inState;
 
     /**
-     * Getter for inState;
+     * Getter for inState
+     *
      * True if this detail element represented an in-state transaction.
      */
-    public Boolean? getinState() {;
-        return this.inState;;
+    public object getInState() {
+        return this.inState;
     }
 
     /**
-     * Setter for inState;
+     * Setter for inState
+     *
      * True if this detail element represented an in-state transaction.
      */
-    public void setinState(Boolean? value) {;
-        this.inState = value;;
+    public void setInState(object value) {
+        this.inState = value;
     }
 
 
-    private String jurisCode;
+    private string jurisCode;
 
     /**
-     * Getter for jurisCode;
+     * Getter for jurisCode
+     *
      * The code of the jurisdiction to which this tax detail applies.
      */
-    public String getjurisCode() {;
-        return this.jurisCode;;
+    public string getJurisCode() {
+        return this.jurisCode;
     }
 
     /**
-     * Setter for jurisCode;
+     * Setter for jurisCode
+     *
      * The code of the jurisdiction to which this tax detail applies.
      */
-    public void setjurisCode(String value) {;
-        this.jurisCode = value;;
+    public void setJurisCode(string value) {
+        this.jurisCode = value;
     }
 
 
-    private String jurisName;
+    private string jurisName;
 
     /**
-     * Getter for jurisName;
+     * Getter for jurisName
+     *
      * The name of the jurisdiction to which this tax detail applies.
      */
-    public String getjurisName() {;
-        return this.jurisName;;
+    public string getJurisName() {
+        return this.jurisName;
     }
 
     /**
-     * Setter for jurisName;
+     * Setter for jurisName
+     *
      * The name of the jurisdiction to which this tax detail applies.
      */
-    public void setjurisName(String value) {;
-        this.jurisName = value;;
+    public void setJurisName(string value) {
+        this.jurisName = value;
     }
 
 
-    private Int32? jurisdictionId;
+    private Integer jurisdictionId;
 
     /**
-     * Getter for jurisdictionId;
+     * Getter for jurisdictionId
+     *
      * The unique ID number of the jurisdiction to which this tax detail applies.
      */
-    public Int32? getjurisdictionId() {;
-        return this.jurisdictionId;;
+    public Integer getJurisdictionId() {
+        return this.jurisdictionId;
     }
 
     /**
-     * Setter for jurisdictionId;
+     * Setter for jurisdictionId
+     *
      * The unique ID number of the jurisdiction to which this tax detail applies.
      */
-    public void setjurisdictionId(Int32? value) {;
-        this.jurisdictionId = value;;
+    public void setJurisdictionId(Integer value) {
+        this.jurisdictionId = value;
     }
 
 
-    private String signatureCode;
+    private string signatureCode;
 
     /**
-     * Getter for signatureCode;
+     * Getter for signatureCode
+     *
      * The Avalara-specified signature code of the jurisdiction to which this tax detail applies.
      */
-    public String getsignatureCode() {;
-        return this.signatureCode;;
+    public string getSignatureCode() {
+        return this.signatureCode;
     }
 
     /**
-     * Setter for signatureCode;
+     * Setter for signatureCode
+     *
      * The Avalara-specified signature code of the jurisdiction to which this tax detail applies.
      */
-    public void setsignatureCode(String value) {;
-        this.signatureCode = value;;
+    public void setSignatureCode(string value) {
+        this.signatureCode = value;
     }
 
 
-    private String stateAssignedNo;
+    private string stateAssignedNo;
 
     /**
-     * Getter for stateAssignedNo;
+     * Getter for stateAssignedNo
+     *
      * The state assigned number of the jurisdiction to which this tax detail applies.
      */
-    public String getstateAssignedNo() {;
-        return this.stateAssignedNo;;
+    public string getStateAssignedNo() {
+        return this.stateAssignedNo;
     }
 
     /**
-     * Setter for stateAssignedNo;
+     * Setter for stateAssignedNo
+     *
      * The state assigned number of the jurisdiction to which this tax detail applies.
      */
-    public void setstateAssignedNo(String value) {;
-        this.stateAssignedNo = value;;
+    public void setStateAssignedNo(string value) {
+        this.stateAssignedNo = value;
     }
 
 
-    private JurisTypeId? jurisType;
+    private JurisTypeId jurisType;
 
     /**
-     * Getter for jurisType;
+     * Getter for jurisType
+     *
      * The type of the jurisdiction to which this tax detail applies.
      */
-    public JurisTypeId? getjurisType() {;
-        return this.jurisType;;
+    public JurisTypeId getJurisType() {
+        return this.jurisType;
     }
 
     /**
-     * Setter for jurisType;
+     * Setter for jurisType
+     *
      * The type of the jurisdiction to which this tax detail applies.
      */
-    public void setjurisType(JurisTypeId? value) {;
-        this.jurisType = value;;
+    public void setJurisType(JurisTypeId value) {
+        this.jurisType = value;
     }
 
 
-    private Decimal? nonTaxableAmount;
+    private Decimal nonTaxableAmount;
 
     /**
-     * Getter for nonTaxableAmount;
+     * Getter for nonTaxableAmount
+     *
      * The amount of this line item that was considered nontaxable in this tax detail.
      */
-    public Decimal? getnonTaxableAmount() {;
-        return this.nonTaxableAmount;;
+    public Decimal getNonTaxableAmount() {
+        return this.nonTaxableAmount;
     }
 
     /**
-     * Setter for nonTaxableAmount;
+     * Setter for nonTaxableAmount
+     *
      * The amount of this line item that was considered nontaxable in this tax detail.
      */
-    public void setnonTaxableAmount(Decimal? value) {;
-        this.nonTaxableAmount = value;;
+    public void setNonTaxableAmount(Decimal value) {
+        this.nonTaxableAmount = value;
     }
 
 
-    private Int32? nonTaxableRuleId;
+    private Integer nonTaxableRuleId;
 
     /**
-     * Getter for nonTaxableRuleId;
+     * Getter for nonTaxableRuleId
+     *
      * The rule according to which portion of this detail was considered nontaxable.
      */
-    public Int32? getnonTaxableRuleId() {;
-        return this.nonTaxableRuleId;;
+    public Integer getNonTaxableRuleId() {
+        return this.nonTaxableRuleId;
     }
 
     /**
-     * Setter for nonTaxableRuleId;
+     * Setter for nonTaxableRuleId
+     *
      * The rule according to which portion of this detail was considered nontaxable.
      */
-    public void setnonTaxableRuleId(Int32? value) {;
-        this.nonTaxableRuleId = value;;
+    public void setNonTaxableRuleId(Integer value) {
+        this.nonTaxableRuleId = value;
     }
 
 
-    private TaxRuleTypeId? nonTaxableType;
+    private TaxRuleTypeId nonTaxableType;
 
     /**
-     * Getter for nonTaxableType;
+     * Getter for nonTaxableType
+     *
      * The type of nontaxability that was applied to this tax detail.
      */
-    public TaxRuleTypeId? getnonTaxableType() {;
-        return this.nonTaxableType;;
+    public TaxRuleTypeId getNonTaxableType() {
+        return this.nonTaxableType;
     }
 
     /**
-     * Setter for nonTaxableType;
+     * Setter for nonTaxableType
+     *
      * The type of nontaxability that was applied to this tax detail.
      */
-    public void setnonTaxableType(TaxRuleTypeId? value) {;
-        this.nonTaxableType = value;;
+    public void setNonTaxableType(TaxRuleTypeId value) {
+        this.nonTaxableType = value;
     }
 
 
-    private Decimal? rate;
+    private Decimal rate;
 
     /**
-     * Getter for rate;
+     * Getter for rate
+     *
      * The rate at which this tax detail was calculated.
      */
-    public Decimal? getrate() {;
-        return this.rate;;
+    public Decimal getRate() {
+        return this.rate;
     }
 
     /**
-     * Setter for rate;
+     * Setter for rate
+     *
      * The rate at which this tax detail was calculated.
      */
-    public void setrate(Decimal? value) {;
-        this.rate = value;;
+    public void setRate(Decimal value) {
+        this.rate = value;
     }
 
 
-    private Int32? rateRuleId;
+    private Integer rateRuleId;
 
     /**
-     * Getter for rateRuleId;
+     * Getter for rateRuleId
+     *
      * The unique ID number of the rule according to which this tax detail was calculated.
      */
-    public Int32? getrateRuleId() {;
-        return this.rateRuleId;;
+    public Integer getRateRuleId() {
+        return this.rateRuleId;
     }
 
     /**
-     * Setter for rateRuleId;
+     * Setter for rateRuleId
+     *
      * The unique ID number of the rule according to which this tax detail was calculated.
      */
-    public void setrateRuleId(Int32? value) {;
-        this.rateRuleId = value;;
+    public void setRateRuleId(Integer value) {
+        this.rateRuleId = value;
     }
 
 
-    private Int32? rateSourceId;
+    private Integer rateSourceId;
 
     /**
-     * Getter for rateSourceId;
+     * Getter for rateSourceId
+     *
      * The unique ID number of the source of the rate according to which this tax detail was calculated.
      */
-    public Int32? getrateSourceId() {;
-        return this.rateSourceId;;
+    public Integer getRateSourceId() {
+        return this.rateSourceId;
     }
 
     /**
-     * Setter for rateSourceId;
+     * Setter for rateSourceId
+     *
      * The unique ID number of the source of the rate according to which this tax detail was calculated.
      */
-    public void setrateSourceId(Int32? value) {;
-        this.rateSourceId = value;;
+    public void setRateSourceId(Integer value) {
+        this.rateSourceId = value;
     }
 
 
-    private String serCode;
+    private string serCode;
 
     /**
-     * Getter for serCode;
+     * Getter for serCode
+     *
      * For Streamlined Sales Tax customers, the SST Electronic Return code under which this tax detail should be applied.
      */
-    public String getserCode() {;
-        return this.serCode;;
+    public string getSerCode() {
+        return this.serCode;
     }
 
     /**
-     * Setter for serCode;
+     * Setter for serCode
+     *
      * For Streamlined Sales Tax customers, the SST Electronic Return code under which this tax detail should be applied.
      */
-    public void setserCode(String value) {;
-        this.serCode = value;;
+    public void setSerCode(string value) {
+        this.serCode = value;
     }
 
 
-    private Sourcing? sourcing;
+    private Sourcing sourcing;
 
     /**
-     * Getter for sourcing;
+     * Getter for sourcing
+     *
      * Indicates whether this tax detail applies to the origin or destination of the transaction.
      */
-    public Sourcing? getsourcing() {;
-        return this.sourcing;;
+    public Sourcing getSourcing() {
+        return this.sourcing;
     }
 
     /**
-     * Setter for sourcing;
+     * Setter for sourcing
+     *
      * Indicates whether this tax detail applies to the origin or destination of the transaction.
      */
-    public void setsourcing(Sourcing? value) {;
-        this.sourcing = value;;
+    public void setSourcing(Sourcing value) {
+        this.sourcing = value;
     }
 
 
-    private Decimal? tax;
+    private Decimal tax;
 
     /**
-     * Getter for tax;
+     * Getter for tax
+     *
      * The amount of tax for this tax detail.
      */
-    public Decimal? gettax() {;
-        return this.tax;;
+    public Decimal getTax() {
+        return this.tax;
     }
 
     /**
-     * Setter for tax;
+     * Setter for tax
+     *
      * The amount of tax for this tax detail.
      */
-    public void settax(Decimal? value) {;
-        this.tax = value;;
+    public void setTax(Decimal value) {
+        this.tax = value;
     }
 
 
-    private Decimal? taxableAmount;
+    private Decimal taxableAmount;
 
     /**
-     * Getter for taxableAmount;
+     * Getter for taxableAmount
+     *
      * The taxable amount of this tax detail.
      */
-    public Decimal? gettaxableAmount() {;
-        return this.taxableAmount;;
+    public Decimal getTaxableAmount() {
+        return this.taxableAmount;
     }
 
     /**
-     * Setter for taxableAmount;
+     * Setter for taxableAmount
+     *
      * The taxable amount of this tax detail.
      */
-    public void settaxableAmount(Decimal? value) {;
-        this.taxableAmount = value;;
+    public void setTaxableAmount(Decimal value) {
+        this.taxableAmount = value;
     }
 
 
-    private TaxType? taxType;
+    private TaxType taxType;
 
     /**
-     * Getter for taxType;
+     * Getter for taxType
+     *
      * The type of tax that was calculated. Depends on the company's nexus settings as well as the jurisdiction's tax laws.
      */
-    public TaxType? gettaxType() {;
-        return this.taxType;;
+    public TaxType getTaxType() {
+        return this.taxType;
     }
 
     /**
-     * Setter for taxType;
+     * Setter for taxType
+     *
      * The type of tax that was calculated. Depends on the company's nexus settings as well as the jurisdiction's tax laws.
      */
-    public void settaxType(TaxType? value) {;
-        this.taxType = value;;
+    public void setTaxType(TaxType value) {
+        this.taxType = value;
     }
 
 
-    private String taxName;
+    private string taxName;
 
     /**
-     * Getter for taxName;
+     * Getter for taxName
+     *
      * The name of the tax against which this tax amount was calculated.
      */
-    public String gettaxName() {;
-        return this.taxName;;
+    public string getTaxName() {
+        return this.taxName;
     }
 
     /**
-     * Setter for taxName;
+     * Setter for taxName
+     *
      * The name of the tax against which this tax amount was calculated.
      */
-    public void settaxName(String value) {;
-        this.taxName = value;;
+    public void setTaxName(string value) {
+        this.taxName = value;
     }
 
 
-    private Int32? taxAuthorityTypeId;
+    private Integer taxAuthorityTypeId;
 
     /**
-     * Getter for taxAuthorityTypeId;
+     * Getter for taxAuthorityTypeId
+     *
      * The type of the tax authority to which this tax will be remitted.
      */
-    public Int32? gettaxAuthorityTypeId() {;
-        return this.taxAuthorityTypeId;;
+    public Integer getTaxAuthorityTypeId() {
+        return this.taxAuthorityTypeId;
     }
 
     /**
-     * Setter for taxAuthorityTypeId;
+     * Setter for taxAuthorityTypeId
+     *
      * The type of the tax authority to which this tax will be remitted.
      */
-    public void settaxAuthorityTypeId(Int32? value) {;
-        this.taxAuthorityTypeId = value;;
+    public void setTaxAuthorityTypeId(Integer value) {
+        this.taxAuthorityTypeId = value;
     }
 
 
-    private Int32? taxRegionId;
+    private Integer taxRegionId;
 
     /**
-     * Getter for taxRegionId;
+     * Getter for taxRegionId
+     *
      * The unique ID number of the tax region.
      */
-    public Int32? gettaxRegionId() {;
-        return this.taxRegionId;;
+    public Integer getTaxRegionId() {
+        return this.taxRegionId;
     }
 
     /**
-     * Setter for taxRegionId;
+     * Setter for taxRegionId
+     *
      * The unique ID number of the tax region.
      */
-    public void settaxRegionId(Int32? value) {;
-        this.taxRegionId = value;;
+    public void setTaxRegionId(Integer value) {
+        this.taxRegionId = value;
     }
 
 
-    private Decimal? taxCalculated;
+    private Decimal taxCalculated;
 
     /**
-     * Getter for taxCalculated;
+     * Getter for taxCalculated
+     *
      * The amount of tax that was calculated. This amount may be different if a tax override was used.
     * If the customer specified a tax override, this calculated tax value represents the amount of tax that would
     * have been charged if Avalara had calculated the tax for the rule.
      */
-    public Decimal? gettaxCalculated() {;
-        return this.taxCalculated;;
+    public Decimal getTaxCalculated() {
+        return this.taxCalculated;
     }
 
     /**
-     * Setter for taxCalculated;
+     * Setter for taxCalculated
+     *
      * The amount of tax that was calculated. This amount may be different if a tax override was used.
     * If the customer specified a tax override, this calculated tax value represents the amount of tax that would
     * have been charged if Avalara had calculated the tax for the rule.
      */
-    public void settaxCalculated(Decimal? value) {;
-        this.taxCalculated = value;;
+    public void setTaxCalculated(Decimal value) {
+        this.taxCalculated = value;
     }
 
 
-    private Decimal? taxOverride;
+    private Decimal taxOverride;
 
     /**
-     * Getter for taxOverride;
+     * Getter for taxOverride
+     *
      * The amount of tax override that was specified for this tax line.
      */
-    public Decimal? gettaxOverride() {;
-        return this.taxOverride;;
+    public Decimal getTaxOverride() {
+        return this.taxOverride;
     }
 
     /**
-     * Setter for taxOverride;
+     * Setter for taxOverride
+     *
      * The amount of tax override that was specified for this tax line.
      */
-    public void settaxOverride(Decimal? value) {;
-        this.taxOverride = value;;
+    public void setTaxOverride(Decimal value) {
+        this.taxOverride = value;
     }
 
 
-    private RateType? rateType;
+    private RateType rateType;
 
     /**
-     * Getter for rateType;
+     * Getter for rateType
+     *
      * (DEPRECATED) The rate type for this tax detail. Please use rateTypeCode instead.
      */
-    public RateType? getrateType() {;
-        return this.rateType;;
+    public RateType getRateType() {
+        return this.rateType;
     }
 
     /**
-     * Setter for rateType;
+     * Setter for rateType
+     *
      * (DEPRECATED) The rate type for this tax detail. Please use rateTypeCode instead.
      */
-    public void setrateType(RateType? value) {;
-        this.rateType = value;;
+    public void setRateType(RateType value) {
+        this.rateType = value;
     }
 
 
-    private String rateTypeCode;
+    private string rateTypeCode;
 
     /**
-     * Getter for rateTypeCode;
+     * Getter for rateTypeCode
+     *
      * Indicates the code of the rate type that was used to calculate this tax detail. Use `/api/v2/definitions/ratetypes` for a full list of rate type codes.
      */
-    public String getrateTypeCode() {;
-        return this.rateTypeCode;;
+    public string getRateTypeCode() {
+        return this.rateTypeCode;
     }
 
     /**
-     * Setter for rateTypeCode;
+     * Setter for rateTypeCode
+     *
      * Indicates the code of the rate type that was used to calculate this tax detail. Use `/api/v2/definitions/ratetypes` for a full list of rate type codes.
      */
-    public void setrateTypeCode(String value) {;
-        this.rateTypeCode = value;;
+    public void setRateTypeCode(string value) {
+        this.rateTypeCode = value;
     }
 
 
-    private Decimal? taxableUnits;
+    private Decimal taxableUnits;
 
     /**
-     * Getter for taxableUnits;
+     * Getter for taxableUnits
+     *
      * Number of units in this line item that were calculated to be taxable according to this rate detail.
      */
-    public Decimal? gettaxableUnits() {;
-        return this.taxableUnits;;
+    public Decimal getTaxableUnits() {
+        return this.taxableUnits;
     }
 
     /**
-     * Setter for taxableUnits;
+     * Setter for taxableUnits
+     *
      * Number of units in this line item that were calculated to be taxable according to this rate detail.
      */
-    public void settaxableUnits(Decimal? value) {;
-        this.taxableUnits = value;;
+    public void setTaxableUnits(Decimal value) {
+        this.taxableUnits = value;
     }
 
 
-    private Decimal? nonTaxableUnits;
+    private Decimal nonTaxableUnits;
 
     /**
-     * Getter for nonTaxableUnits;
+     * Getter for nonTaxableUnits
+     *
      * Number of units in this line item that were calculated to be nontaxable according to this rate detail.
      */
-    public Decimal? getnonTaxableUnits() {;
-        return this.nonTaxableUnits;;
+    public Decimal getNonTaxableUnits() {
+        return this.nonTaxableUnits;
     }
 
     /**
-     * Setter for nonTaxableUnits;
+     * Setter for nonTaxableUnits
+     *
      * Number of units in this line item that were calculated to be nontaxable according to this rate detail.
      */
-    public void setnonTaxableUnits(Decimal? value) {;
-        this.nonTaxableUnits = value;;
+    public void setNonTaxableUnits(Decimal value) {
+        this.nonTaxableUnits = value;
     }
 
 
-    private Decimal? exemptUnits;
+    private Decimal exemptUnits;
 
     /**
-     * Getter for exemptUnits;
+     * Getter for exemptUnits
+     *
      * Number of units in this line item that were calculated to be exempt according to this rate detail.
      */
-    public Decimal? getexemptUnits() {;
-        return this.exemptUnits;;
+    public Decimal getExemptUnits() {
+        return this.exemptUnits;
     }
 
     /**
-     * Setter for exemptUnits;
+     * Setter for exemptUnits
+     *
      * Number of units in this line item that were calculated to be exempt according to this rate detail.
      */
-    public void setexemptUnits(Decimal? value) {;
-        this.exemptUnits = value;;
+    public void setExemptUnits(Decimal value) {
+        this.exemptUnits = value;
     }
 
 
-    private String unitOfBasis;
+    private string unitOfBasis;
 
     /**
-     * Getter for unitOfBasis;
+     * Getter for unitOfBasis
+     *
      * When calculating units, what basis of measurement did we use for calculating the units?
      */
-    public String getunitOfBasis() {;
-        return this.unitOfBasis;;
+    public string getUnitOfBasis() {
+        return this.unitOfBasis;
     }
 
     /**
-     * Setter for unitOfBasis;
+     * Setter for unitOfBasis
+     *
      * When calculating units, what basis of measurement did we use for calculating the units?
      */
-    public void setunitOfBasis(String value) {;
-        this.unitOfBasis = value;;
+    public void setUnitOfBasis(string value) {
+        this.unitOfBasis = value;
     }
 
 

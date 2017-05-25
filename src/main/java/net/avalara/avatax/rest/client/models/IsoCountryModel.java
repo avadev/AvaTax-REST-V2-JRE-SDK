@@ -30,60 +30,66 @@ import java.util.HashMap;
 public class IsoCountryModel {
 
 
-    private String code;
+    private string code;
 
     /**
-     * Getter for code;
+     * Getter for code
+     *
      * The two character ISO 3166 country code
      */
-    public String getcode() {;
-        return this.code;;
+    public string getCode() {
+        return this.code;
     }
 
     /**
-     * Setter for code;
+     * Setter for code
+     *
      * The two character ISO 3166 country code
      */
-    public void setcode(String value) {;
-        this.code = value;;
+    public void setCode(string value) {
+        this.code = value;
     }
 
 
-    private String name;
+    private string name;
 
     /**
-     * Getter for name;
+     * Getter for name
+     *
      * The full name of this country as it is known in US English
      */
-    public String getname() {;
-        return this.name;;
+    public string getName() {
+        return this.name;
     }
 
     /**
-     * Setter for name;
+     * Setter for name
+     *
      * The full name of this country as it is known in US English
      */
-    public void setname(String value) {;
-        this.name = value;;
+    public void setName(string value) {
+        this.name = value;
     }
 
 
-    private Boolean? isEuropeanUnion;
+    private object isEuropeanUnion;
 
     /**
-     * Getter for isEuropeanUnion;
+     * Getter for isEuropeanUnion
+     *
      * True if this country is a member of the European Union
      */
-    public Boolean? getisEuropeanUnion() {;
-        return this.isEuropeanUnion;;
+    public object getIsEuropeanUnion() {
+        return this.isEuropeanUnion;
     }
 
     /**
-     * Setter for isEuropeanUnion;
+     * Setter for isEuropeanUnion
+     *
      * True if this country is a member of the European Union
      */
-    public void setisEuropeanUnion(Boolean? value) {;
-        this.isEuropeanUnion = value;;
+    public void setIsEuropeanUnion(object value) {
+        this.isEuropeanUnion = value;
     }
 
 

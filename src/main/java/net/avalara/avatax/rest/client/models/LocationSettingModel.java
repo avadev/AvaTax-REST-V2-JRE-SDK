@@ -30,41 +30,45 @@ import java.util.HashMap;
 public class LocationSettingModel {
 
 
-    private Int32? questionId;
+    private Integer questionId;
 
     /**
-     * Getter for questionId;
+     * Getter for questionId
+     *
      * The unique ID number of the location question answered.
      */
-    public Int32? getquestionId() {;
-        return this.questionId;;
+    public Integer getQuestionId() {
+        return this.questionId;
     }
 
     /**
-     * Setter for questionId;
+     * Setter for questionId
+     *
      * The unique ID number of the location question answered.
      */
-    public void setquestionId(Int32? value) {;
-        this.questionId = value;;
+    public void setQuestionId(Integer value) {
+        this.questionId = value;
     }
 
 
-    private String value;
+    private string value;
 
     /**
-     * Getter for value;
+     * Getter for value
+     *
      * The answer the user provided.
      */
-    public String getvalue() {;
-        return this.value;;
+    public string getValue() {
+        return this.value;
     }
 
     /**
-     * Setter for value;
+     * Setter for value
+     *
      * The answer the user provided.
      */
-    public void setvalue(String value) {;
-        this.value = value;;
+    public void setValue(string value) {
+        this.value = value;
     }
 
 

@@ -35,59 +35,65 @@ public class SettleTransactionModel {
     private VerifyTransactionModel verify;
 
     /**
-     * Getter for verify;
+     * Getter for verify
+     *
      * To use the "Settle" endpoint to verify a transaction, fill out this value.
      */
-    public VerifyTransactionModel getverify() {;
-        return this.verify;;
+    public VerifyTransactionModel getVerify() {
+        return this.verify;
     }
 
     /**
-     * Setter for verify;
+     * Setter for verify
+     *
      * To use the "Settle" endpoint to verify a transaction, fill out this value.
      */
-    public void setverify(VerifyTransactionModel value) {;
-        this.verify = value;;
+    public void setVerify(VerifyTransactionModel value) {
+        this.verify = value;
     }
 
 
     private ChangeTransactionCodeModel changeCode;
 
     /**
-     * Getter for changeCode;
+     * Getter for changeCode
+     *
      * To use the "Settle" endpoint to change a transaction's code, fill out this value.
      */
-    public ChangeTransactionCodeModel getchangeCode() {;
-        return this.changeCode;;
+    public ChangeTransactionCodeModel getChangeCode() {
+        return this.changeCode;
     }
 
     /**
-     * Setter for changeCode;
+     * Setter for changeCode
+     *
      * To use the "Settle" endpoint to change a transaction's code, fill out this value.
      */
-    public void setchangeCode(ChangeTransactionCodeModel value) {;
-        this.changeCode = value;;
+    public void setChangeCode(ChangeTransactionCodeModel value) {
+        this.changeCode = value;
     }
 
 
     private CommitTransactionModel commit;
 
     /**
-     * Getter for commit;
+     * Getter for commit
+     *
      * To use the "Settle" endpoint to commit a transaction for reporting purposes, fill out this value.
     * If you use Avalara Returns, committing a transaction will cause that transaction to be filed.
      */
-    public CommitTransactionModel getcommit() {;
-        return this.commit;;
+    public CommitTransactionModel getCommit() {
+        return this.commit;
     }
 
     /**
-     * Setter for commit;
+     * Setter for commit
+     *
      * To use the "Settle" endpoint to commit a transaction for reporting purposes, fill out this value.
     * If you use Avalara Returns, committing a transaction will cause that transaction to be filed.
      */
-    public void setcommit(CommitTransactionModel value) {;
-        this.commit = value;;
+    public void setCommit(CommitTransactionModel value) {
+        this.commit = value;
     }
 
 
