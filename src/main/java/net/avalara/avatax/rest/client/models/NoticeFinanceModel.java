@@ -9,358 +9,412 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 
+/*
+ * AvaTax Software Development Kit for Java JRE based environments
+ *
+ * (c) 2004-2017 Avalara, Inc.
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ *
+ * @author     Dustin Welden <dustin.welden@avalara.com>
+ * @copyright  2004-2017 Avalara, Inc.
+ * @license    https://www.apache.org/licenses/LICENSE-2.0
+ * @version    17.5.2-77
+ * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ */
+
 /**
  * Represents estimated financial results from responding to a tax notice.
  */
 public class NoticeFinanceModel {
-    private BigDecimal customerPenalty;
+
+
+    private Int32? id;
 
     /**
-     * Getter for customerPenalty - Represents estimated financial results from responding to a tax notice.
+     * Getter for id;
+     * 
      */
-    public BigDecimal getCustomerPenalty() {
-        return this.customerPenalty;
+    public Int32? getid() {;
+        return this.id;;
     }
 
     /**
-     * Setter for customerPenalty - Represents estimated financial results from responding to a tax notice.
+     * Setter for id;
+     * 
      */
-    public void setCustomerPenalty(BigDecimal customerPenalty) {
-        this.customerPenalty = customerPenalty;
+    public void setid(Int32? value) {;
+        this.id = value;;
     }
 
-    
-    private BigDecimal taxDue;
+
+    private Int32? noticeId;
 
     /**
-     * Getter for taxDue - Represents estimated financial results from responding to a tax notice.
+     * Getter for noticeId;
+     * 
      */
-    public BigDecimal getTaxDue() {
-        return this.taxDue;
-    }
-
-    /**
-     * Setter for taxDue - Represents estimated financial results from responding to a tax notice.
-     */
-    public void setTaxDue(BigDecimal taxDue) {
-        this.taxDue = taxDue;
-    }
-
-    
-    private Date noticeDate;
-
-    /**
-     * Getter for noticeDate - Represents estimated financial results from responding to a tax notice.
-     */
-    public Date getNoticeDate() {
-        return this.noticeDate;
+    public Int32? getnoticeId() {;
+        return this.noticeId;;
     }
 
     /**
-     * Setter for noticeDate - Represents estimated financial results from responding to a tax notice.
+     * Setter for noticeId;
+     * 
      */
-    public void setNoticeDate(Date noticeDate) {
-        this.noticeDate = noticeDate;
+    public void setnoticeId(Int32? value) {;
+        this.noticeId = value;;
     }
 
-    
-    private Date modifiedDate;
+
+    private DateTime? noticeDate;
 
     /**
-     * Getter for modifiedDate - Represents estimated financial results from responding to a tax notice.
+     * Getter for noticeDate;
+     * 
      */
-    public Date getModifiedDate() {
-        return this.modifiedDate;
-    }
-
-    /**
-     * Setter for modifiedDate - Represents estimated financial results from responding to a tax notice.
-     */
-    public void setModifiedDate(Date modifiedDate) {
-        this.modifiedDate = modifiedDate;
-    }
-
-    
-    private BigDecimal credits;
-
-    /**
-     * Getter for credits - Represents estimated financial results from responding to a tax notice.
-     */
-    public BigDecimal getCredits() {
-        return this.credits;
+    public DateTime? getnoticeDate() {;
+        return this.noticeDate;;
     }
 
     /**
-     * Setter for credits - Represents estimated financial results from responding to a tax notice.
+     * Setter for noticeDate;
+     * 
      */
-    public void setCredits(BigDecimal credits) {
-        this.credits = credits;
+    public void setnoticeDate(DateTime? value) {;
+        this.noticeDate = value;;
     }
 
-    
-    private String fileName;
+
+    private DateTime? dueDate;
 
     /**
-     * Getter for fileName - Represents estimated financial results from responding to a tax notice.
+     * Getter for dueDate;
+     * 
      */
-    public String getFileName() {
-        return this.fileName;
-    }
-
-    /**
-     * Setter for fileName - Represents estimated financial results from responding to a tax notice.
-     */
-    public void setFileName(String fileName) {
-        this.fileName = fileName;
-    }
-
-    
-    private Integer noticeId;
-
-    /**
-     * Getter for noticeId - Represents estimated financial results from responding to a tax notice.
-     */
-    public Integer getNoticeId() {
-        return this.noticeId;
+    public DateTime? getdueDate() {;
+        return this.dueDate;;
     }
 
     /**
-     * Setter for noticeId - Represents estimated financial results from responding to a tax notice.
+     * Setter for dueDate;
+     * 
      */
-    public void setNoticeId(Integer noticeId) {
-        this.noticeId = noticeId;
+    public void setdueDate(DateTime? value) {;
+        this.dueDate = value;;
     }
 
-    
-    private Integer id;
 
-    /**
-     * Getter for id - Represents estimated financial results from responding to a tax notice.
-     */
-    public Integer getId() {
-        return this.id;
-    }
-
-    /**
-     * Setter for id - Represents estimated financial results from responding to a tax notice.
-     */
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    
-    private BigDecimal cspFeeRefund;
-
-    /**
-     * Getter for cspFeeRefund - Represents estimated financial results from responding to a tax notice.
-     */
-    public BigDecimal getCspFeeRefund() {
-        return this.cspFeeRefund;
-    }
-
-    /**
-     * Setter for cspFeeRefund - Represents estimated financial results from responding to a tax notice.
-     */
-    public void setCspFeeRefund(BigDecimal cspFeeRefund) {
-        this.cspFeeRefund = cspFeeRefund;
-    }
-
-    
-    private BigDecimal interest;
-
-    /**
-     * Getter for interest - Represents estimated financial results from responding to a tax notice.
-     */
-    public BigDecimal getInterest() {
-        return this.interest;
-    }
-
-    /**
-     * Setter for interest - Represents estimated financial results from responding to a tax notice.
-     */
-    public void setInterest(BigDecimal interest) {
-        this.interest = interest;
-    }
-
-    
-    private ResourceFileUploadRequestModel attachmentUploadRequest;
-
-    /**
-     * Getter for attachmentUploadRequest - Represents estimated financial results from responding to a tax notice.
-     */
-    public ResourceFileUploadRequestModel getAttachmentUploadRequest() {
-        return this.attachmentUploadRequest;
-    }
-
-    /**
-     * Setter for attachmentUploadRequest - Represents estimated financial results from responding to a tax notice.
-     */
-    public void setAttachmentUploadRequest(ResourceFileUploadRequestModel attachmentUploadRequest) {
-        this.attachmentUploadRequest = attachmentUploadRequest;
-    }
-
-    
-    private BigDecimal taxAbated;
-
-    /**
-     * Getter for taxAbated - Represents estimated financial results from responding to a tax notice.
-     */
-    public BigDecimal getTaxAbated() {
-        return this.taxAbated;
-    }
-
-    /**
-     * Setter for taxAbated - Represents estimated financial results from responding to a tax notice.
-     */
-    public void setTaxAbated(BigDecimal taxAbated) {
-        this.taxAbated = taxAbated;
-    }
-
-    
-    private Integer modifiedUserId;
-
-    /**
-     * Getter for modifiedUserId - Represents estimated financial results from responding to a tax notice.
-     */
-    public Integer getModifiedUserId() {
-        return this.modifiedUserId;
-    }
-
-    /**
-     * Setter for modifiedUserId - Represents estimated financial results from responding to a tax notice.
-     */
-    public void setModifiedUserId(Integer modifiedUserId) {
-        this.modifiedUserId = modifiedUserId;
-    }
-
-    
-    private Date dueDate;
-
-    /**
-     * Getter for dueDate - Represents estimated financial results from responding to a tax notice.
-     */
-    public Date getDueDate() {
-        return this.dueDate;
-    }
-
-    /**
-     * Setter for dueDate - Represents estimated financial results from responding to a tax notice.
-     */
-    public void setDueDate(Date dueDate) {
-        this.dueDate = dueDate;
-    }
-
-    
-    private Integer createdUserId;
-
-    /**
-     * Getter for createdUserId - Represents estimated financial results from responding to a tax notice.
-     */
-    public Integer getCreatedUserId() {
-        return this.createdUserId;
-    }
-
-    /**
-     * Setter for createdUserId - Represents estimated financial results from responding to a tax notice.
-     */
-    public void setCreatedUserId(Integer createdUserId) {
-        this.createdUserId = createdUserId;
-    }
-
-    
-    private Long resourceFileId;
-
-    /**
-     * Getter for resourceFileId - Represents estimated financial results from responding to a tax notice.
-     */
-    public Long getResourceFileId() {
-        return this.resourceFileId;
-    }
-
-    /**
-     * Setter for resourceFileId - Represents estimated financial results from responding to a tax notice.
-     */
-    public void setResourceFileId(Long resourceFileId) {
-        this.resourceFileId = resourceFileId;
-    }
-
-    
-    private BigDecimal penalty;
-
-    /**
-     * Getter for penalty - Represents estimated financial results from responding to a tax notice.
-     */
-    public BigDecimal getPenalty() {
-        return this.penalty;
-    }
-
-    /**
-     * Setter for penalty - Represents estimated financial results from responding to a tax notice.
-     */
-    public void setPenalty(BigDecimal penalty) {
-        this.penalty = penalty;
-    }
-
-    
-    private BigDecimal customerInterest;
-
-    /**
-     * Getter for customerInterest - Represents estimated financial results from responding to a tax notice.
-     */
-    public BigDecimal getCustomerInterest() {
-        return this.customerInterest;
-    }
-
-    /**
-     * Setter for customerInterest - Represents estimated financial results from responding to a tax notice.
-     */
-    public void setCustomerInterest(BigDecimal customerInterest) {
-        this.customerInterest = customerInterest;
-    }
-
-    
     private String noticeNumber;
 
     /**
-     * Getter for noticeNumber - Represents estimated financial results from responding to a tax notice.
+     * Getter for noticeNumber;
+     * 
      */
-    public String getNoticeNumber() {
-        return this.noticeNumber;
+    public String getnoticeNumber() {;
+        return this.noticeNumber;;
     }
 
     /**
-     * Setter for noticeNumber - Represents estimated financial results from responding to a tax notice.
+     * Setter for noticeNumber;
+     * 
      */
-    public void setNoticeNumber(String noticeNumber) {
-        this.noticeNumber = noticeNumber;
+    public void setnoticeNumber(String value) {;
+        this.noticeNumber = value;;
     }
 
-    
-    private Date createdDate;
+
+    private Decimal? taxDue;
 
     /**
-     * Getter for createdDate - Represents estimated financial results from responding to a tax notice.
+     * Getter for taxDue;
+     * 
      */
-    public Date getCreatedDate() {
-        return this.createdDate;
+    public Decimal? gettaxDue() {;
+        return this.taxDue;;
     }
 
     /**
-     * Setter for createdDate - Represents estimated financial results from responding to a tax notice.
+     * Setter for taxDue;
+     * 
      */
-    public void setCreatedDate(Date createdDate) {
-        this.createdDate = createdDate;
+    public void settaxDue(Decimal? value) {;
+        this.taxDue = value;;
     }
 
-    
+
+    private Decimal? penalty;
+
+    /**
+     * Getter for penalty;
+     * 
+     */
+    public Decimal? getpenalty() {;
+        return this.penalty;;
+    }
+
+    /**
+     * Setter for penalty;
+     * 
+     */
+    public void setpenalty(Decimal? value) {;
+        this.penalty = value;;
+    }
+
+
+    private Decimal? interest;
+
+    /**
+     * Getter for interest;
+     * 
+     */
+    public Decimal? getinterest() {;
+        return this.interest;;
+    }
+
+    /**
+     * Setter for interest;
+     * 
+     */
+    public void setinterest(Decimal? value) {;
+        this.interest = value;;
+    }
+
+
+    private Decimal? credits;
+
+    /**
+     * Getter for credits;
+     * 
+     */
+    public Decimal? getcredits() {;
+        return this.credits;;
+    }
+
+    /**
+     * Setter for credits;
+     * 
+     */
+    public void setcredits(Decimal? value) {;
+        this.credits = value;;
+    }
+
+
+    private Decimal? taxAbated;
+
+    /**
+     * Getter for taxAbated;
+     * 
+     */
+    public Decimal? gettaxAbated() {;
+        return this.taxAbated;;
+    }
+
+    /**
+     * Setter for taxAbated;
+     * 
+     */
+    public void settaxAbated(Decimal? value) {;
+        this.taxAbated = value;;
+    }
+
+
+    private Decimal? customerPenalty;
+
+    /**
+     * Getter for customerPenalty;
+     * 
+     */
+    public Decimal? getcustomerPenalty() {;
+        return this.customerPenalty;;
+    }
+
+    /**
+     * Setter for customerPenalty;
+     * 
+     */
+    public void setcustomerPenalty(Decimal? value) {;
+        this.customerPenalty = value;;
+    }
+
+
+    private Decimal? customerInterest;
+
+    /**
+     * Getter for customerInterest;
+     * 
+     */
+    public Decimal? getcustomerInterest() {;
+        return this.customerInterest;;
+    }
+
+    /**
+     * Setter for customerInterest;
+     * 
+     */
+    public void setcustomerInterest(Decimal? value) {;
+        this.customerInterest = value;;
+    }
+
+
+    private Decimal? cspFeeRefund;
+
+    /**
+     * Getter for cspFeeRefund;
+     * 
+     */
+    public Decimal? getcspFeeRefund() {;
+        return this.cspFeeRefund;;
+    }
+
+    /**
+     * Setter for cspFeeRefund;
+     * 
+     */
+    public void setcspFeeRefund(Decimal? value) {;
+        this.cspFeeRefund = value;;
+    }
+
+
+    private String fileName;
+
+    /**
+     * Getter for fileName;
+     * resourceFileId
+     */
+    public String getfileName() {;
+        return this.fileName;;
+    }
+
+    /**
+     * Setter for fileName;
+     * resourceFileId
+     */
+    public void setfileName(String value) {;
+        this.fileName = value;;
+    }
+
+
+    private Int64? resourceFileId;
+
+    /**
+     * Getter for resourceFileId;
+     * resourceFileId
+     */
+    public Int64? getresourceFileId() {;
+        return this.resourceFileId;;
+    }
+
+    /**
+     * Setter for resourceFileId;
+     * resourceFileId
+     */
+    public void setresourceFileId(Int64? value) {;
+        this.resourceFileId = value;;
+    }
+
+
+    private DateTime? createdDate;
+
+    /**
+     * Getter for createdDate;
+     * The date when this record was created.
+     */
+    public DateTime? getcreatedDate() {;
+        return this.createdDate;;
+    }
+
+    /**
+     * Setter for createdDate;
+     * The date when this record was created.
+     */
+    public void setcreatedDate(DateTime? value) {;
+        this.createdDate = value;;
+    }
+
+
+    private Int32? createdUserId;
+
+    /**
+     * Getter for createdUserId;
+     * The User ID of the user who created this record.
+     */
+    public Int32? getcreatedUserId() {;
+        return this.createdUserId;;
+    }
+
+    /**
+     * Setter for createdUserId;
+     * The User ID of the user who created this record.
+     */
+    public void setcreatedUserId(Int32? value) {;
+        this.createdUserId = value;;
+    }
+
+
+    private DateTime? modifiedDate;
+
+    /**
+     * Getter for modifiedDate;
+     * The date/time when this record was last modified.
+     */
+    public DateTime? getmodifiedDate() {;
+        return this.modifiedDate;;
+    }
+
+    /**
+     * Setter for modifiedDate;
+     * The date/time when this record was last modified.
+     */
+    public void setmodifiedDate(DateTime? value) {;
+        this.modifiedDate = value;;
+    }
+
+
+    private Int32? modifiedUserId;
+
+    /**
+     * Getter for modifiedUserId;
+     * The user ID of the user who last modified this record.
+     */
+    public Int32? getmodifiedUserId() {;
+        return this.modifiedUserId;;
+    }
+
+    /**
+     * Setter for modifiedUserId;
+     * The user ID of the user who last modified this record.
+     */
+    public void setmodifiedUserId(Int32? value) {;
+        this.modifiedUserId = value;;
+    }
+
+
+    private ResourceFileUploadRequestModel attachmentUploadRequest;
+
+    /**
+     * Getter for attachmentUploadRequest;
+     * An attachment to the finance detail
+     */
+    public ResourceFileUploadRequestModel getattachmentUploadRequest() {;
+        return this.attachmentUploadRequest;;
+    }
+
+    /**
+     * Setter for attachmentUploadRequest;
+     * An attachment to the finance detail
+     */
+    public void setattachmentUploadRequest(ResourceFileUploadRequestModel value) {;
+        this.attachmentUploadRequest = value;;
+    }
 
 
     /**
-     * Returns a JSON string representation of NoticeFinanceModel.
+     * Returns a JSON string representation of NoticeFinanceModel
      */
     @Override
     public String toString() {
         return JsonSerializer.SerializeObject(this);
     }
 }
-    

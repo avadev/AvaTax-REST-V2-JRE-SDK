@@ -9,239 +9,279 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 
+/*
+ * AvaTax Software Development Kit for Java JRE based environments
+ *
+ * (c) 2004-2017 Avalara, Inc.
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ *
+ * @author     Dustin Welden <dustin.welden@avalara.com>
+ * @copyright  2004-2017 Avalara, Inc.
+ * @license    https://www.apache.org/licenses/LICENSE-2.0
+ * @version    17.5.2-77
+ * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ */
+
 /**
  * One Universal Product Code object as defined for your company.
  */
 public class UPCModel {
-    private Integer isSystem;
+
+
+    private Int32 id;
 
     /**
-     * Getter for isSystem - One Universal Product Code object as defined for your company.
+     * Getter for id;
+     * The unique ID number for this UPC.
      */
-    public Integer getIsSystem() {
-        return this.isSystem;
+    public Int32 getid() {;
+        return this.id;;
     }
 
     /**
-     * Setter for isSystem - One Universal Product Code object as defined for your company.
+     * Setter for id;
+     * The unique ID number for this UPC.
      */
-    public void setIsSystem(Integer isSystem) {
-        this.isSystem = isSystem;
+    public void setid(Int32 value) {;
+        this.id = value;;
     }
 
-    
-    private Date endDate;
+
+    private Int32 companyId;
 
     /**
-     * Getter for endDate - One Universal Product Code object as defined for your company.
+     * Getter for companyId;
+     * The unique ID number of the company to which this UPC belongs.
      */
-    public Date getEndDate() {
-        return this.endDate;
-    }
-
-    /**
-     * Setter for endDate - One Universal Product Code object as defined for your company.
-     */
-    public void setEndDate(Date endDate) {
-        this.endDate = endDate;
-    }
-
-    
-    private String description;
-
-    /**
-     * Getter for description - One Universal Product Code object as defined for your company.
-     */
-    public String getDescription() {
-        return this.description;
+    public Int32 getcompanyId() {;
+        return this.companyId;;
     }
 
     /**
-     * Setter for description - One Universal Product Code object as defined for your company.
+     * Setter for companyId;
+     * The unique ID number of the company to which this UPC belongs.
      */
-    public void setDescription(String description) {
-        this.description = description;
+    public void setcompanyId(Int32 value) {;
+        this.companyId = value;;
     }
 
-    
-    private Integer usage;
 
-    /**
-     * Getter for usage - One Universal Product Code object as defined for your company.
-     */
-    public Integer getUsage() {
-        return this.usage;
-    }
-
-    /**
-     * Setter for usage - One Universal Product Code object as defined for your company.
-     */
-    public void setUsage(Integer usage) {
-        this.usage = usage;
-    }
-
-    
-    private Date modifiedDate;
-
-    /**
-     * Getter for modifiedDate - One Universal Product Code object as defined for your company.
-     */
-    public Date getModifiedDate() {
-        return this.modifiedDate;
-    }
-
-    /**
-     * Setter for modifiedDate - One Universal Product Code object as defined for your company.
-     */
-    public void setModifiedDate(Date modifiedDate) {
-        this.modifiedDate = modifiedDate;
-    }
-
-    
-    private String legacyTaxCode;
-
-    /**
-     * Getter for legacyTaxCode - One Universal Product Code object as defined for your company.
-     */
-    public String getLegacyTaxCode() {
-        return this.legacyTaxCode;
-    }
-
-    /**
-     * Setter for legacyTaxCode - One Universal Product Code object as defined for your company.
-     */
-    public void setLegacyTaxCode(String legacyTaxCode) {
-        this.legacyTaxCode = legacyTaxCode;
-    }
-
-    
     private String upc;
 
     /**
-     * Getter for upc - One Universal Product Code object as defined for your company.
+     * Getter for upc;
+     * The 12-14 character Universal Product Code, European Article Number, or Global Trade Identification Number.
      */
-    public String getUpc() {
-        return this.upc;
+    public String getupc() {;
+        return this.upc;;
     }
 
     /**
-     * Setter for upc - One Universal Product Code object as defined for your company.
+     * Setter for upc;
+     * The 12-14 character Universal Product Code, European Article Number, or Global Trade Identification Number.
      */
-    public void setUpc(String upc) {
-        this.upc = upc;
+    public void setupc(String value) {;
+        this.upc = value;;
     }
 
-    
-    private Integer id;
+
+    private String legacyTaxCode;
 
     /**
-     * Getter for id - One Universal Product Code object as defined for your company.
+     * Getter for legacyTaxCode;
+     * Legacy Tax Code applied to any product sold with this UPC.
      */
-    public Integer getId() {
-        return this.id;
-    }
-
-    /**
-     * Setter for id - One Universal Product Code object as defined for your company.
-     */
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    
-    private Integer modifiedUserId;
-
-    /**
-     * Getter for modifiedUserId - One Universal Product Code object as defined for your company.
-     */
-    public Integer getModifiedUserId() {
-        return this.modifiedUserId;
+    public String getlegacyTaxCode() {;
+        return this.legacyTaxCode;;
     }
 
     /**
-     * Setter for modifiedUserId - One Universal Product Code object as defined for your company.
+     * Setter for legacyTaxCode;
+     * Legacy Tax Code applied to any product sold with this UPC.
      */
-    public void setModifiedUserId(Integer modifiedUserId) {
-        this.modifiedUserId = modifiedUserId;
+    public void setlegacyTaxCode(String value) {;
+        this.legacyTaxCode = value;;
     }
 
-    
-    private Date effectiveDate;
+
+    private String description;
 
     /**
-     * Getter for effectiveDate - One Universal Product Code object as defined for your company.
+     * Getter for description;
+     * Description of the product to which this UPC applies.
      */
-    public Date getEffectiveDate() {
-        return this.effectiveDate;
-    }
-
-    /**
-     * Setter for effectiveDate - One Universal Product Code object as defined for your company.
-     */
-    public void setEffectiveDate(Date effectiveDate) {
-        this.effectiveDate = effectiveDate;
-    }
-
-    
-    private Integer createdUserId;
-
-    /**
-     * Getter for createdUserId - One Universal Product Code object as defined for your company.
-     */
-    public Integer getCreatedUserId() {
-        return this.createdUserId;
+    public String getdescription() {;
+        return this.description;;
     }
 
     /**
-     * Setter for createdUserId - One Universal Product Code object as defined for your company.
+     * Setter for description;
+     * Description of the product to which this UPC applies.
      */
-    public void setCreatedUserId(Integer createdUserId) {
-        this.createdUserId = createdUserId;
+    public void setdescription(String value) {;
+        this.description = value;;
     }
 
-    
-    private Integer companyId;
+
+    private DateTime? effectiveDate;
 
     /**
-     * Getter for companyId - One Universal Product Code object as defined for your company.
+     * Getter for effectiveDate;
+     * If this UPC became effective on a certain date, this contains the first date on which the UPC was effective.
      */
-    public Integer getCompanyId() {
-        return this.companyId;
-    }
-
-    /**
-     * Setter for companyId - One Universal Product Code object as defined for your company.
-     */
-    public void setCompanyId(Integer companyId) {
-        this.companyId = companyId;
-    }
-
-    
-    private Date createdDate;
-
-    /**
-     * Getter for createdDate - One Universal Product Code object as defined for your company.
-     */
-    public Date getCreatedDate() {
-        return this.createdDate;
+    public DateTime? geteffectiveDate() {;
+        return this.effectiveDate;;
     }
 
     /**
-     * Setter for createdDate - One Universal Product Code object as defined for your company.
+     * Setter for effectiveDate;
+     * If this UPC became effective on a certain date, this contains the first date on which the UPC was effective.
      */
-    public void setCreatedDate(Date createdDate) {
-        this.createdDate = createdDate;
+    public void seteffectiveDate(DateTime? value) {;
+        this.effectiveDate = value;;
     }
 
-    
+
+    private DateTime? endDate;
+
+    /**
+     * Getter for endDate;
+     * If this UPC expired or will expire on a certain date, this contains the last date on which the UPC was effective.
+     */
+    public DateTime? getendDate() {;
+        return this.endDate;;
+    }
+
+    /**
+     * Setter for endDate;
+     * If this UPC expired or will expire on a certain date, this contains the last date on which the UPC was effective.
+     */
+    public void setendDate(DateTime? value) {;
+        this.endDate = value;;
+    }
+
+
+    private Int32? usage;
+
+    /**
+     * Getter for usage;
+     * A usage identifier for this UPC code.
+     */
+    public Int32? getusage() {;
+        return this.usage;;
+    }
+
+    /**
+     * Setter for usage;
+     * A usage identifier for this UPC code.
+     */
+    public void setusage(Int32? value) {;
+        this.usage = value;;
+    }
+
+
+    private Int32? isSystem;
+
+    /**
+     * Getter for isSystem;
+     * A flag indicating whether this UPC code is attached to the AvaTax system or to a company.
+     */
+    public Int32? getisSystem() {;
+        return this.isSystem;;
+    }
+
+    /**
+     * Setter for isSystem;
+     * A flag indicating whether this UPC code is attached to the AvaTax system or to a company.
+     */
+    public void setisSystem(Int32? value) {;
+        this.isSystem = value;;
+    }
+
+
+    private DateTime? createdDate;
+
+    /**
+     * Getter for createdDate;
+     * The date when this record was created.
+     */
+    public DateTime? getcreatedDate() {;
+        return this.createdDate;;
+    }
+
+    /**
+     * Setter for createdDate;
+     * The date when this record was created.
+     */
+    public void setcreatedDate(DateTime? value) {;
+        this.createdDate = value;;
+    }
+
+
+    private Int32? createdUserId;
+
+    /**
+     * Getter for createdUserId;
+     * The User ID of the user who created this record.
+     */
+    public Int32? getcreatedUserId() {;
+        return this.createdUserId;;
+    }
+
+    /**
+     * Setter for createdUserId;
+     * The User ID of the user who created this record.
+     */
+    public void setcreatedUserId(Int32? value) {;
+        this.createdUserId = value;;
+    }
+
+
+    private DateTime? modifiedDate;
+
+    /**
+     * Getter for modifiedDate;
+     * The date/time when this record was last modified.
+     */
+    public DateTime? getmodifiedDate() {;
+        return this.modifiedDate;;
+    }
+
+    /**
+     * Setter for modifiedDate;
+     * The date/time when this record was last modified.
+     */
+    public void setmodifiedDate(DateTime? value) {;
+        this.modifiedDate = value;;
+    }
+
+
+    private Int32? modifiedUserId;
+
+    /**
+     * Getter for modifiedUserId;
+     * The user ID of the user who last modified this record.
+     */
+    public Int32? getmodifiedUserId() {;
+        return this.modifiedUserId;;
+    }
+
+    /**
+     * Setter for modifiedUserId;
+     * The user ID of the user who last modified this record.
+     */
+    public void setmodifiedUserId(Int32? value) {;
+        this.modifiedUserId = value;;
+    }
 
 
     /**
-     * Returns a JSON string representation of UPCModel.
+     * Returns a JSON string representation of UPCModel
      */
     @Override
     public String toString() {
         return JsonSerializer.SerializeObject(this);
     }
 }
-    

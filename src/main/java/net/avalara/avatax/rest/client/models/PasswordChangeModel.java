@@ -9,52 +9,70 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 
+/*
+ * AvaTax Software Development Kit for Java JRE based environments
+ *
+ * (c) 2004-2017 Avalara, Inc.
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ *
+ * @author     Dustin Welden <dustin.welden@avalara.com>
+ * @copyright  2004-2017 Avalara, Inc.
+ * @license    https://www.apache.org/licenses/LICENSE-2.0
+ * @version    17.5.2-77
+ * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ */
+
 /**
  * Password Change Model
  */
 public class PasswordChangeModel {
+
+
     private String oldPassword;
 
     /**
-     * Getter for oldPassword - Password Change Model
+     * Getter for oldPassword;
+     * Old Password
      */
-    public String getOldPassword() {
-        return this.oldPassword;
+    public String getoldPassword() {;
+        return this.oldPassword;;
     }
 
     /**
-     * Setter for oldPassword - Password Change Model
+     * Setter for oldPassword;
+     * Old Password
      */
-    public void setOldPassword(String oldPassword) {
-        this.oldPassword = oldPassword;
+    public void setoldPassword(String value) {;
+        this.oldPassword = value;;
     }
 
-    
+
     private String newPassword;
 
     /**
-     * Getter for newPassword - Password Change Model
+     * Getter for newPassword;
+     * New Password
      */
-    public String getNewPassword() {
-        return this.newPassword;
+    public String getnewPassword() {;
+        return this.newPassword;;
     }
 
     /**
-     * Setter for newPassword - Password Change Model
+     * Setter for newPassword;
+     * New Password
      */
-    public void setNewPassword(String newPassword) {
-        this.newPassword = newPassword;
+    public void setnewPassword(String value) {;
+        this.newPassword = value;;
     }
-
-    
 
 
     /**
-     * Returns a JSON string representation of PasswordChangeModel.
+     * Returns a JSON string representation of PasswordChangeModel
      */
     @Override
     public String toString() {
         return JsonSerializer.SerializeObject(this);
     }
 }
-    

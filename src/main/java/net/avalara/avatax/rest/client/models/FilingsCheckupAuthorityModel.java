@@ -9,154 +9,184 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 
+/*
+ * AvaTax Software Development Kit for Java JRE based environments
+ *
+ * (c) 2004-2017 Avalara, Inc.
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ *
+ * @author     Dustin Welden <dustin.welden@avalara.com>
+ * @copyright  2004-2017 Avalara, Inc.
+ * @license    https://www.apache.org/licenses/LICENSE-2.0
+ * @version    17.5.2-77
+ * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ */
+
 /**
  * Cycle Safe Expiration results.
  */
 public class FilingsCheckupAuthorityModel {
-    private String taxTypeId;
+
+
+    private Int32? taxAuthorityId;
 
     /**
-     * Getter for taxTypeId - Cycle Safe Expiration results.
+     * Getter for taxAuthorityId;
+     * Unique ID of the tax authority
      */
-    public String getTaxTypeId() {
-        return this.taxTypeId;
+    public Int32? gettaxAuthorityId() {;
+        return this.taxAuthorityId;;
     }
 
     /**
-     * Setter for taxTypeId - Cycle Safe Expiration results.
+     * Setter for taxAuthorityId;
+     * Unique ID of the tax authority
      */
-    public void setTaxTypeId(String taxTypeId) {
-        this.taxTypeId = taxTypeId;
+    public void settaxAuthorityId(Int32? value) {;
+        this.taxAuthorityId = value;;
     }
 
-    
-    private String taxAuthorityName;
 
-    /**
-     * Getter for taxAuthorityName - Cycle Safe Expiration results.
-     */
-    public String getTaxAuthorityName() {
-        return this.taxAuthorityName;
-    }
-
-    /**
-     * Setter for taxAuthorityName - Cycle Safe Expiration results.
-     */
-    public void setTaxAuthorityName(String taxAuthorityName) {
-        this.taxAuthorityName = taxAuthorityName;
-    }
-
-    
-    private ArrayList<FilingsCheckupSuggestedFormModel> suggestedForms;
-
-    /**
-     * Getter for suggestedForms - Cycle Safe Expiration results.
-     */
-    public ArrayList<FilingsCheckupSuggestedFormModel> getSuggestedForms() {
-        return this.suggestedForms;
-    }
-
-    /**
-     * Setter for suggestedForms - Cycle Safe Expiration results.
-     */
-    public void setSuggestedForms(ArrayList<FilingsCheckupSuggestedFormModel> suggestedForms) {
-        this.suggestedForms = suggestedForms;
-    }
-
-    
-    private BigDecimal tax;
-
-    /**
-     * Getter for tax - Cycle Safe Expiration results.
-     */
-    public BigDecimal getTax() {
-        return this.tax;
-    }
-
-    /**
-     * Setter for tax - Cycle Safe Expiration results.
-     */
-    public void setTax(BigDecimal tax) {
-        this.tax = tax;
-    }
-
-    
-    private Integer jurisdictionId;
-
-    /**
-     * Getter for jurisdictionId - Cycle Safe Expiration results.
-     */
-    public Integer getJurisdictionId() {
-        return this.jurisdictionId;
-    }
-
-    /**
-     * Setter for jurisdictionId - Cycle Safe Expiration results.
-     */
-    public void setJurisdictionId(Integer jurisdictionId) {
-        this.jurisdictionId = jurisdictionId;
-    }
-
-    
     private String locationCode;
 
     /**
-     * Getter for locationCode - Cycle Safe Expiration results.
+     * Getter for locationCode;
+     * Location Code of the tax authority
      */
-    public String getLocationCode() {
-        return this.locationCode;
+    public String getlocationCode() {;
+        return this.locationCode;;
     }
 
     /**
-     * Setter for locationCode - Cycle Safe Expiration results.
+     * Setter for locationCode;
+     * Location Code of the tax authority
      */
-    public void setLocationCode(String locationCode) {
-        this.locationCode = locationCode;
+    public void setlocationCode(String value) {;
+        this.locationCode = value;;
     }
 
-    
-    private Integer taxAuthorityTypeId;
+
+    private String taxAuthorityName;
 
     /**
-     * Getter for taxAuthorityTypeId - Cycle Safe Expiration results.
+     * Getter for taxAuthorityName;
+     * Name of the tax authority
      */
-    public Integer getTaxAuthorityTypeId() {
-        return this.taxAuthorityTypeId;
-    }
-
-    /**
-     * Setter for taxAuthorityTypeId - Cycle Safe Expiration results.
-     */
-    public void setTaxAuthorityTypeId(Integer taxAuthorityTypeId) {
-        this.taxAuthorityTypeId = taxAuthorityTypeId;
-    }
-
-    
-    private Integer taxAuthorityId;
-
-    /**
-     * Getter for taxAuthorityId - Cycle Safe Expiration results.
-     */
-    public Integer getTaxAuthorityId() {
-        return this.taxAuthorityId;
+    public String gettaxAuthorityName() {;
+        return this.taxAuthorityName;;
     }
 
     /**
-     * Setter for taxAuthorityId - Cycle Safe Expiration results.
+     * Setter for taxAuthorityName;
+     * Name of the tax authority
      */
-    public void setTaxAuthorityId(Integer taxAuthorityId) {
-        this.taxAuthorityId = taxAuthorityId;
+    public void settaxAuthorityName(String value) {;
+        this.taxAuthorityName = value;;
     }
 
-    
+
+    private Int32? taxAuthorityTypeId;
+
+    /**
+     * Getter for taxAuthorityTypeId;
+     * Type Id of the tax authority
+     */
+    public Int32? gettaxAuthorityTypeId() {;
+        return this.taxAuthorityTypeId;;
+    }
+
+    /**
+     * Setter for taxAuthorityTypeId;
+     * Type Id of the tax authority
+     */
+    public void settaxAuthorityTypeId(Int32? value) {;
+        this.taxAuthorityTypeId = value;;
+    }
+
+
+    private Int32? jurisdictionId;
+
+    /**
+     * Getter for jurisdictionId;
+     * Jurisdiction Id of the tax authority
+     */
+    public Int32? getjurisdictionId() {;
+        return this.jurisdictionId;;
+    }
+
+    /**
+     * Setter for jurisdictionId;
+     * Jurisdiction Id of the tax authority
+     */
+    public void setjurisdictionId(Int32? value) {;
+        this.jurisdictionId = value;;
+    }
+
+
+    private Decimal? tax;
+
+    /**
+     * Getter for tax;
+     * Amount of tax collected in this tax authority
+     */
+    public Decimal? gettax() {;
+        return this.tax;;
+    }
+
+    /**
+     * Setter for tax;
+     * Amount of tax collected in this tax authority
+     */
+    public void settax(Decimal? value) {;
+        this.tax = value;;
+    }
+
+
+    private String taxTypeId;
+
+    /**
+     * Getter for taxTypeId;
+     * Tax Type collected in the tax authority
+     */
+    public String gettaxTypeId() {;
+        return this.taxTypeId;;
+    }
+
+    /**
+     * Setter for taxTypeId;
+     * Tax Type collected in the tax authority
+     */
+    public void settaxTypeId(String value) {;
+        this.taxTypeId = value;;
+    }
+
+
+    private List<FilingsCheckupSuggestedFormModel> suggestedForms;
+
+    /**
+     * Getter for suggestedForms;
+     * Suggested forms to file due to tax collected
+     */
+    public List<FilingsCheckupSuggestedFormModel> getsuggestedForms() {;
+        return this.suggestedForms;;
+    }
+
+    /**
+     * Setter for suggestedForms;
+     * Suggested forms to file due to tax collected
+     */
+    public void setsuggestedForms(List<FilingsCheckupSuggestedFormModel> value) {;
+        this.suggestedForms = value;;
+    }
 
 
     /**
-     * Returns a JSON string representation of FilingsCheckupAuthorityModel.
+     * Returns a JSON string representation of FilingsCheckupAuthorityModel
      */
     @Override
     public String toString() {
         return JsonSerializer.SerializeObject(this);
     }
 }
-    

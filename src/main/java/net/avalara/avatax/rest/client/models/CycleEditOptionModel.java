@@ -9,120 +9,148 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 
+/*
+ * AvaTax Software Development Kit for Java JRE based environments
+ *
+ * (c) 2004-2017 Avalara, Inc.
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ *
+ * @author     Dustin Welden <dustin.welden@avalara.com>
+ * @copyright  2004-2017 Avalara, Inc.
+ * @license    https://www.apache.org/licenses/LICENSE-2.0
+ * @version    17.5.2-77
+ * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ */
+
 /**
  * Model with options for actual filing calendar output based on user edits to filing calendar.
  */
 public class CycleEditOptionModel {
-    private Boolean success;
+
+
+    private Boolean? success;
 
     /**
-     * Getter for success - Model with options for actual filing calendar output based on user edits to filing calendar.
+     * Getter for success;
+     * Whether or not changes can be made to the filing calendar.
      */
-    public Boolean getSuccess() {
-        return this.success;
+    public Boolean? getsuccess() {;
+        return this.success;;
     }
 
     /**
-     * Setter for success - Model with options for actual filing calendar output based on user edits to filing calendar.
+     * Setter for success;
+     * Whether or not changes can be made to the filing calendar.
      */
-    public void setSuccess(Boolean success) {
-        this.success = success;
+    public void setsuccess(Boolean? value) {;
+        this.success = value;;
     }
 
-    
-    private Date clonedCalendarEffDate;
 
-    /**
-     * Getter for clonedCalendarEffDate - Model with options for actual filing calendar output based on user edits to filing calendar.
-     */
-    public Date getClonedCalendarEffDate() {
-        return this.clonedCalendarEffDate;
-    }
-
-    /**
-     * Setter for clonedCalendarEffDate - Model with options for actual filing calendar output based on user edits to filing calendar.
-     */
-    public void setClonedCalendarEffDate(Date clonedCalendarEffDate) {
-        this.clonedCalendarEffDate = clonedCalendarEffDate;
-    }
-
-    
-    private Boolean customerMustApprove;
-
-    /**
-     * Getter for customerMustApprove - Model with options for actual filing calendar output based on user edits to filing calendar.
-     */
-    public Boolean getCustomerMustApprove() {
-        return this.customerMustApprove;
-    }
-
-    /**
-     * Setter for customerMustApprove - Model with options for actual filing calendar output based on user edits to filing calendar.
-     */
-    public void setCustomerMustApprove(Boolean customerMustApprove) {
-        this.customerMustApprove = customerMustApprove;
-    }
-
-    
-    private Boolean mustCloneFilingCalendar;
-
-    /**
-     * Getter for mustCloneFilingCalendar - Model with options for actual filing calendar output based on user edits to filing calendar.
-     */
-    public Boolean getMustCloneFilingCalendar() {
-        return this.mustCloneFilingCalendar;
-    }
-
-    /**
-     * Setter for mustCloneFilingCalendar - Model with options for actual filing calendar output based on user edits to filing calendar.
-     */
-    public void setMustCloneFilingCalendar(Boolean mustCloneFilingCalendar) {
-        this.mustCloneFilingCalendar = mustCloneFilingCalendar;
-    }
-
-    
     private String message;
 
     /**
-     * Getter for message - Model with options for actual filing calendar output based on user edits to filing calendar.
+     * Getter for message;
+     * The message to present to the user when calendar is successfully or unsuccessfully changed.
      */
-    public String getMessage() {
-        return this.message;
+    public String getmessage() {;
+        return this.message;;
     }
 
     /**
-     * Setter for message - Model with options for actual filing calendar output based on user edits to filing calendar.
+     * Setter for message;
+     * The message to present to the user when calendar is successfully or unsuccessfully changed.
      */
-    public void setMessage(String message) {
-        this.message = message;
+    public void setmessage(String value) {;
+        this.message = value;;
     }
 
-    
-    private Date expiredCalendarEndDate;
+
+    private Boolean? customerMustApprove;
 
     /**
-     * Getter for expiredCalendarEndDate - Model with options for actual filing calendar output based on user edits to filing calendar.
+     * Getter for customerMustApprove;
+     * Whether or not the user should be warned of a change, because some changes are risky and may be being done not in accordance with jurisdiction rules.
+    * For example, user would be warned if user changes filing frequency to new frequency with a start date during an accrual month of the existing frequency.
      */
-    public Date getExpiredCalendarEndDate() {
-        return this.expiredCalendarEndDate;
+    public Boolean? getcustomerMustApprove() {;
+        return this.customerMustApprove;;
     }
 
     /**
-     * Setter for expiredCalendarEndDate - Model with options for actual filing calendar output based on user edits to filing calendar.
+     * Setter for customerMustApprove;
+     * Whether or not the user should be warned of a change, because some changes are risky and may be being done not in accordance with jurisdiction rules.
+    * For example, user would be warned if user changes filing frequency to new frequency with a start date during an accrual month of the existing frequency.
      */
-    public void setExpiredCalendarEndDate(Date expiredCalendarEndDate) {
-        this.expiredCalendarEndDate = expiredCalendarEndDate;
+    public void setcustomerMustApprove(Boolean? value) {;
+        this.customerMustApprove = value;;
     }
 
-    
+
+    private Boolean? mustCloneFilingCalendar;
+
+    /**
+     * Getter for mustCloneFilingCalendar;
+     * True if the filing calendar must be cloned to allow this change; false if the existing filing calendar can be changed itself.
+     */
+    public Boolean? getmustCloneFilingCalendar() {;
+        return this.mustCloneFilingCalendar;;
+    }
+
+    /**
+     * Setter for mustCloneFilingCalendar;
+     * True if the filing calendar must be cloned to allow this change; false if the existing filing calendar can be changed itself.
+     */
+    public void setmustCloneFilingCalendar(Boolean? value) {;
+        this.mustCloneFilingCalendar = value;;
+    }
+
+
+    private DateTime? clonedCalendarEffDate;
+
+    /**
+     * Getter for clonedCalendarEffDate;
+     * The effective date of the filing calendar (only applies if cloning).
+     */
+    public DateTime? getclonedCalendarEffDate() {;
+        return this.clonedCalendarEffDate;;
+    }
+
+    /**
+     * Setter for clonedCalendarEffDate;
+     * The effective date of the filing calendar (only applies if cloning).
+     */
+    public void setclonedCalendarEffDate(DateTime? value) {;
+        this.clonedCalendarEffDate = value;;
+    }
+
+
+    private DateTime? expiredCalendarEndDate;
+
+    /**
+     * Getter for expiredCalendarEndDate;
+     * The expired end date of the old filing calendar (only applies if cloning).
+     */
+    public DateTime? getexpiredCalendarEndDate() {;
+        return this.expiredCalendarEndDate;;
+    }
+
+    /**
+     * Setter for expiredCalendarEndDate;
+     * The expired end date of the old filing calendar (only applies if cloning).
+     */
+    public void setexpiredCalendarEndDate(DateTime? value) {;
+        this.expiredCalendarEndDate = value;;
+    }
 
 
     /**
-     * Returns a JSON string representation of CycleEditOptionModel.
+     * Returns a JSON string representation of CycleEditOptionModel
      */
     @Override
     public String toString() {
         return JsonSerializer.SerializeObject(this);
     }
 }
-    

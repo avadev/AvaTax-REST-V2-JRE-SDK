@@ -9,86 +9,108 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 
+/*
+ * AvaTax Software Development Kit for Java JRE based environments
+ *
+ * (c) 2004-2017 Avalara, Inc.
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ *
+ * @author     Dustin Welden <dustin.welden@avalara.com>
+ * @copyright  2004-2017 Avalara, Inc.
+ * @license    https://www.apache.org/licenses/LICENSE-2.0
+ * @version    17.5.2-77
+ * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ */
+
 /**
  * An edit to be made on a filing calendar.
  */
 public class FilingCalendarEditModel {
+
+
     private String fieldName;
 
     /**
-     * Getter for fieldName - An edit to be made on a filing calendar.
+     * Getter for fieldName;
+     * The name of the field to be modified.
      */
-    public String getFieldName() {
-        return this.fieldName;
+    public String getfieldName() {;
+        return this.fieldName;;
     }
 
     /**
-     * Setter for fieldName - An edit to be made on a filing calendar.
+     * Setter for fieldName;
+     * The name of the field to be modified.
      */
-    public void setFieldName(String fieldName) {
-        this.fieldName = fieldName;
+    public void setfieldName(String value) {;
+        this.fieldName = value;;
     }
 
-    
-    private Integer questionId;
+
+    private Int32 questionId;
 
     /**
-     * Getter for questionId - An edit to be made on a filing calendar.
+     * Getter for questionId;
+     * The unique ID of the filing calendar question. "Filing calendar question" is the wording displayed to users for a given field.
      */
-    public Integer getQuestionId() {
-        return this.questionId;
-    }
-
-    /**
-     * Setter for questionId - An edit to be made on a filing calendar.
-     */
-    public void setQuestionId(Integer questionId) {
-        this.questionId = questionId;
-    }
-
-    
-    private HashMap<String, String> oldValue;
-
-    /**
-     * Getter for oldValue - An edit to be made on a filing calendar.
-     */
-    public HashMap<String, String> getOldValue() {
-        return this.oldValue;
+    public Int32 getquestionId() {;
+        return this.questionId;;
     }
 
     /**
-     * Setter for oldValue - An edit to be made on a filing calendar.
+     * Setter for questionId;
+     * The unique ID of the filing calendar question. "Filing calendar question" is the wording displayed to users for a given field.
      */
-    public void setOldValue(HashMap<String, String> oldValue) {
-        this.oldValue = oldValue;
+    public void setquestionId(Int32 value) {;
+        this.questionId = value;;
     }
 
-    
-    private HashMap<String, String> newValue;
+
+    private Dictionary<string, string> oldValue;
 
     /**
-     * Getter for newValue - An edit to be made on a filing calendar.
+     * Getter for oldValue;
+     * The current value of the field.
      */
-    public HashMap<String, String> getNewValue() {
-        return this.newValue;
+    public Dictionary<string, string> getoldValue() {;
+        return this.oldValue;;
     }
 
     /**
-     * Setter for newValue - An edit to be made on a filing calendar.
+     * Setter for oldValue;
+     * The current value of the field.
      */
-    public void setNewValue(HashMap<String, String> newValue) {
-        this.newValue = newValue;
+    public void setoldValue(Dictionary<string, string> value) {;
+        this.oldValue = value;;
     }
 
-    
+
+    private Dictionary<string, string> newValue;
+
+    /**
+     * Getter for newValue;
+     * The new/proposed value of the field.
+     */
+    public Dictionary<string, string> getnewValue() {;
+        return this.newValue;;
+    }
+
+    /**
+     * Setter for newValue;
+     * The new/proposed value of the field.
+     */
+    public void setnewValue(Dictionary<string, string> value) {;
+        this.newValue = value;;
+    }
 
 
     /**
-     * Returns a JSON string representation of FilingCalendarEditModel.
+     * Returns a JSON string representation of FilingCalendarEditModel
      */
     @Override
     public String toString() {
         return JsonSerializer.SerializeObject(this);
     }
 }
-    

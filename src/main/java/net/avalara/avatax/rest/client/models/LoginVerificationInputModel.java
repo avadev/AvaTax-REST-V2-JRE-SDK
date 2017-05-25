@@ -9,154 +9,184 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 
+/*
+ * AvaTax Software Development Kit for Java JRE based environments
+ *
+ * (c) 2004-2017 Avalara, Inc.
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ *
+ * @author     Dustin Welden <dustin.welden@avalara.com>
+ * @copyright  2004-2017 Avalara, Inc.
+ * @license    https://www.apache.org/licenses/LICENSE-2.0
+ * @version    17.5.2-77
+ * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ */
+
 /**
  * Represents a verification request using Skyscraper for a company
  */
 public class LoginVerificationInputModel {
-    private Integer priority;
+
+
+    private Int32? companyId;
 
     /**
-     * Getter for priority - Represents a verification request using Skyscraper for a company
+     * Getter for companyId;
+     * CompanyId that we are verifying the login information for
      */
-    public Integer getPriority() {
-        return this.priority;
+    public Int32? getcompanyId() {;
+        return this.companyId;;
     }
 
     /**
-     * Setter for priority - Represents a verification request using Skyscraper for a company
+     * Setter for companyId;
+     * CompanyId that we are verifying the login information for
      */
-    public void setPriority(Integer priority) {
-        this.priority = priority;
+    public void setcompanyId(Int32? value) {;
+        this.companyId = value;;
     }
 
-    
-    private Integer bulkRequestId;
+
+    private Int32 accountId;
 
     /**
-     * Getter for bulkRequestId - Represents a verification request using Skyscraper for a company
+     * Getter for accountId;
+     * AccountId of the login verification
      */
-    public Integer getBulkRequestId() {
-        return this.bulkRequestId;
-    }
-
-    /**
-     * Setter for bulkRequestId - Represents a verification request using Skyscraper for a company
-     */
-    public void setBulkRequestId(Integer bulkRequestId) {
-        this.bulkRequestId = bulkRequestId;
-    }
-
-    
-    private String username;
-
-    /**
-     * Getter for username - Represents a verification request using Skyscraper for a company
-     */
-    public String getUsername() {
-        return this.username;
+    public Int32 getaccountId() {;
+        return this.accountId;;
     }
 
     /**
-     * Setter for username - Represents a verification request using Skyscraper for a company
+     * Setter for accountId;
+     * AccountId of the login verification
      */
-    public void setUsername(String username) {
-        this.username = username;
+    public void setaccountId(Int32 value) {;
+        this.accountId = value;;
     }
 
-    
-    private Integer accountId;
 
-    /**
-     * Getter for accountId - Represents a verification request using Skyscraper for a company
-     */
-    public Integer getAccountId() {
-        return this.accountId;
-    }
-
-    /**
-     * Setter for accountId - Represents a verification request using Skyscraper for a company
-     */
-    public void setAccountId(Integer accountId) {
-        this.accountId = accountId;
-    }
-
-    
-    private String additionalOptions;
-
-    /**
-     * Getter for additionalOptions - Represents a verification request using Skyscraper for a company
-     */
-    public String getAdditionalOptions() {
-        return this.additionalOptions;
-    }
-
-    /**
-     * Setter for additionalOptions - Represents a verification request using Skyscraper for a company
-     */
-    public void setAdditionalOptions(String additionalOptions) {
-        this.additionalOptions = additionalOptions;
-    }
-
-    
     private String region;
 
     /**
-     * Getter for region - Represents a verification request using Skyscraper for a company
+     * Getter for region;
+     * Region of the verification request
      */
-    public String getRegion() {
-        return this.region;
+    public String getregion() {;
+        return this.region;;
     }
 
     /**
-     * Setter for region - Represents a verification request using Skyscraper for a company
+     * Setter for region;
+     * Region of the verification request
      */
-    public void setRegion(String region) {
-        this.region = region;
+    public void setregion(String value) {;
+        this.region = value;;
     }
 
-    
-    private Integer companyId;
+
+    private String username;
 
     /**
-     * Getter for companyId - Represents a verification request using Skyscraper for a company
+     * Getter for username;
+     * Username that we are using for verification
      */
-    public Integer getCompanyId() {
-        return this.companyId;
+    public String getusername() {;
+        return this.username;;
     }
 
     /**
-     * Setter for companyId - Represents a verification request using Skyscraper for a company
+     * Setter for username;
+     * Username that we are using for verification
      */
-    public void setCompanyId(Integer companyId) {
-        this.companyId = companyId;
+    public void setusername(String value) {;
+        this.username = value;;
     }
 
-    
+
     private String password;
 
     /**
-     * Getter for password - Represents a verification request using Skyscraper for a company
+     * Getter for password;
+     * Password we are using for verification
      */
-    public String getPassword() {
-        return this.password;
+    public String getpassword() {;
+        return this.password;;
     }
 
     /**
-     * Setter for password - Represents a verification request using Skyscraper for a company
+     * Setter for password;
+     * Password we are using for verification
      */
-    public void setPassword(String password) {
-        this.password = password;
+    public void setpassword(String value) {;
+        this.password = value;;
     }
 
-    
+
+    private String additionalOptions;
+
+    /**
+     * Getter for additionalOptions;
+     * Additional options of the verification
+     */
+    public String getadditionalOptions() {;
+        return this.additionalOptions;;
+    }
+
+    /**
+     * Setter for additionalOptions;
+     * Additional options of the verification
+     */
+    public void setadditionalOptions(String value) {;
+        this.additionalOptions = value;;
+    }
+
+
+    private Int32? bulkRequestId;
+
+    /**
+     * Getter for bulkRequestId;
+     * Bulk Request Id of the verification
+     */
+    public Int32? getbulkRequestId() {;
+        return this.bulkRequestId;;
+    }
+
+    /**
+     * Setter for bulkRequestId;
+     * Bulk Request Id of the verification
+     */
+    public void setbulkRequestId(Int32? value) {;
+        this.bulkRequestId = value;;
+    }
+
+
+    private Int32? priority;
+
+    /**
+     * Getter for priority;
+     * Priority of the verification request
+     */
+    public Int32? getpriority() {;
+        return this.priority;;
+    }
+
+    /**
+     * Setter for priority;
+     * Priority of the verification request
+     */
+    public void setpriority(Int32? value) {;
+        this.priority = value;;
+    }
 
 
     /**
-     * Returns a JSON string representation of LoginVerificationInputModel.
+     * Returns a JSON string representation of LoginVerificationInputModel
      */
     @Override
     public String toString() {
         return JsonSerializer.SerializeObject(this);
     }
 }
-    

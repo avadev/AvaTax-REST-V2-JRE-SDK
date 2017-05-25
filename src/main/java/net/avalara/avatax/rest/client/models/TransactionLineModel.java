@@ -9,664 +9,772 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 
+/*
+ * AvaTax Software Development Kit for Java JRE based environments
+ *
+ * (c) 2004-2017 Avalara, Inc.
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ *
+ * @author     Dustin Welden <dustin.welden@avalara.com>
+ * @copyright  2004-2017 Avalara, Inc.
+ * @license    https://www.apache.org/licenses/LICENSE-2.0
+ * @version    17.5.2-77
+ * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ */
+
 /**
  * One line item on this transaction.
  */
 public class TransactionLineModel {
-    private BigDecimal exemptAmount;
+
+
+    private Int64? id;
 
     /**
-     * Getter for exemptAmount - One line item on this transaction.
+     * Getter for id;
+     * The unique ID number of this transaction line item.
      */
-    public BigDecimal getExemptAmount() {
-        return this.exemptAmount;
+    public Int64? getid() {;
+        return this.id;;
     }
 
     /**
-     * Setter for exemptAmount - One line item on this transaction.
+     * Setter for id;
+     * The unique ID number of this transaction line item.
      */
-    public void setExemptAmount(BigDecimal exemptAmount) {
-        this.exemptAmount = exemptAmount;
+    public void setid(Int64? value) {;
+        this.id = value;;
     }
 
-    
-    private String taxCode;
+
+    private Int64? transactionId;
 
     /**
-     * Getter for taxCode - One line item on this transaction.
+     * Getter for transactionId;
+     * The unique ID number of the transaction to which this line item belongs.
      */
-    public String getTaxCode() {
-        return this.taxCode;
-    }
-
-    /**
-     * Setter for taxCode - One line item on this transaction.
-     */
-    public void setTaxCode(String taxCode) {
-        this.taxCode = taxCode;
-    }
-
-    
-    private BigDecimal quantity;
-
-    /**
-     * Getter for quantity - One line item on this transaction.
-     */
-    public BigDecimal getQuantity() {
-        return this.quantity;
+    public Int64? gettransactionId() {;
+        return this.transactionId;;
     }
 
     /**
-     * Setter for quantity - One line item on this transaction.
+     * Setter for transactionId;
+     * The unique ID number of the transaction to which this line item belongs.
      */
-    public void setQuantity(BigDecimal quantity) {
-        this.quantity = quantity;
+    public void settransactionId(Int64? value) {;
+        this.transactionId = value;;
     }
 
-    
-    private String taxEngine;
 
-    /**
-     * Getter for taxEngine - One line item on this transaction.
-     */
-    public String getTaxEngine() {
-        return this.taxEngine;
-    }
-
-    /**
-     * Setter for taxEngine - One line item on this transaction.
-     */
-    public void setTaxEngine(String taxEngine) {
-        this.taxEngine = taxEngine;
-    }
-
-    
-    private String customerUsageType;
-
-    /**
-     * Getter for customerUsageType - One line item on this transaction.
-     */
-    public String getCustomerUsageType() {
-        return this.customerUsageType;
-    }
-
-    /**
-     * Setter for customerUsageType - One line item on this transaction.
-     */
-    public void setCustomerUsageType(String customerUsageType) {
-        this.customerUsageType = customerUsageType;
-    }
-
-    
-    private Boolean isItemTaxable;
-
-    /**
-     * Getter for isItemTaxable - One line item on this transaction.
-     */
-    public Boolean getIsItemTaxable() {
-        return this.isItemTaxable;
-    }
-
-    /**
-     * Setter for isItemTaxable - One line item on this transaction.
-     */
-    public void setIsItemTaxable(Boolean isItemTaxable) {
-        this.isItemTaxable = isItemTaxable;
-    }
-
-    
-    private TaxOverrideTypeId taxOverrideType;
-
-    /**
-     * Getter for taxOverrideType - One line item on this transaction.
-     */
-    public TaxOverrideTypeId getTaxOverrideType() {
-        return this.taxOverrideType;
-    }
-
-    /**
-     * Setter for taxOverrideType - One line item on this transaction.
-     */
-    public void setTaxOverrideType(TaxOverrideTypeId taxOverrideType) {
-        this.taxOverrideType = taxOverrideType;
-    }
-
-    
-    private BigDecimal tax;
-
-    /**
-     * Getter for tax - One line item on this transaction.
-     */
-    public BigDecimal getTax() {
-        return this.tax;
-    }
-
-    /**
-     * Setter for tax - One line item on this transaction.
-     */
-    public void setTax(BigDecimal tax) {
-        this.tax = tax;
-    }
-
-    
-    private Long originAddressId;
-
-    /**
-     * Getter for originAddressId - One line item on this transaction.
-     */
-    public Long getOriginAddressId() {
-        return this.originAddressId;
-    }
-
-    /**
-     * Setter for originAddressId - One line item on this transaction.
-     */
-    public void setOriginAddressId(Long originAddressId) {
-        this.originAddressId = originAddressId;
-    }
-
-    
-    private String description;
-
-    /**
-     * Getter for description - One line item on this transaction.
-     */
-    public String getDescription() {
-        return this.description;
-    }
-
-    /**
-     * Setter for description - One line item on this transaction.
-     */
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    
-    private Integer discountTypeId;
-
-    /**
-     * Getter for discountTypeId - One line item on this transaction.
-     */
-    public Integer getDiscountTypeId() {
-        return this.discountTypeId;
-    }
-
-    /**
-     * Setter for discountTypeId - One line item on this transaction.
-     */
-    public void setDiscountTypeId(Integer discountTypeId) {
-        this.discountTypeId = discountTypeId;
-    }
-
-    
-    private String exemptNo;
-
-    /**
-     * Getter for exemptNo - One line item on this transaction.
-     */
-    public String getExemptNo() {
-        return this.exemptNo;
-    }
-
-    /**
-     * Setter for exemptNo - One line item on this transaction.
-     */
-    public void setExemptNo(String exemptNo) {
-        this.exemptNo = exemptNo;
-    }
-
-    
-    private Integer boundaryOverrideId;
-
-    /**
-     * Getter for boundaryOverrideId - One line item on this transaction.
-     */
-    public Integer getBoundaryOverrideId() {
-        return this.boundaryOverrideId;
-    }
-
-    /**
-     * Setter for boundaryOverrideId - One line item on this transaction.
-     */
-    public void setBoundaryOverrideId(Integer boundaryOverrideId) {
-        this.boundaryOverrideId = boundaryOverrideId;
-    }
-
-    
-    private String businessIdentificationNo;
-
-    /**
-     * Getter for businessIdentificationNo - One line item on this transaction.
-     */
-    public String getBusinessIdentificationNo() {
-        return this.businessIdentificationNo;
-    }
-
-    /**
-     * Setter for businessIdentificationNo - One line item on this transaction.
-     */
-    public void setBusinessIdentificationNo(String businessIdentificationNo) {
-        this.businessIdentificationNo = businessIdentificationNo;
-    }
-
-    
-    private String ref1;
-
-    /**
-     * Getter for ref1 - One line item on this transaction.
-     */
-    public String getRef1() {
-        return this.ref1;
-    }
-
-    /**
-     * Setter for ref1 - One line item on this transaction.
-     */
-    public void setRef1(String ref1) {
-        this.ref1 = ref1;
-    }
-
-    
-    private ArrayList<TransactionLineLocationTypeModel> lineLocationTypes;
-
-    /**
-     * Getter for lineLocationTypes - One line item on this transaction.
-     */
-    public ArrayList<TransactionLineLocationTypeModel> getLineLocationTypes() {
-        return this.lineLocationTypes;
-    }
-
-    /**
-     * Setter for lineLocationTypes - One line item on this transaction.
-     */
-    public void setLineLocationTypes(ArrayList<TransactionLineLocationTypeModel> lineLocationTypes) {
-        this.lineLocationTypes = lineLocationTypes;
-    }
-
-    
-    private Date reportingDate;
-
-    /**
-     * Getter for reportingDate - One line item on this transaction.
-     */
-    public Date getReportingDate() {
-        return this.reportingDate;
-    }
-
-    /**
-     * Setter for reportingDate - One line item on this transaction.
-     */
-    public void setReportingDate(Date reportingDate) {
-        this.reportingDate = reportingDate;
-    }
-
-    
-    private Sourcing sourcing;
-
-    /**
-     * Getter for sourcing - One line item on this transaction.
-     */
-    public Sourcing getSourcing() {
-        return this.sourcing;
-    }
-
-    /**
-     * Setter for sourcing - One line item on this transaction.
-     */
-    public void setSourcing(Sourcing sourcing) {
-        this.sourcing = sourcing;
-    }
-
-    
-    private Integer exemptCertId;
-
-    /**
-     * Getter for exemptCertId - One line item on this transaction.
-     */
-    public Integer getExemptCertId() {
-        return this.exemptCertId;
-    }
-
-    /**
-     * Setter for exemptCertId - One line item on this transaction.
-     */
-    public void setExemptCertId(Integer exemptCertId) {
-        this.exemptCertId = exemptCertId;
-    }
-
-    
-    private Integer taxCodeId;
-
-    /**
-     * Getter for taxCodeId - One line item on this transaction.
-     */
-    public Integer getTaxCodeId() {
-        return this.taxCodeId;
-    }
-
-    /**
-     * Setter for taxCodeId - One line item on this transaction.
-     */
-    public void setTaxCodeId(Integer taxCodeId) {
-        this.taxCodeId = taxCodeId;
-    }
-
-    
-    private String ref2;
-
-    /**
-     * Getter for ref2 - One line item on this transaction.
-     */
-    public String getRef2() {
-        return this.ref2;
-    }
-
-    /**
-     * Setter for ref2 - One line item on this transaction.
-     */
-    public void setRef2(String ref2) {
-        this.ref2 = ref2;
-    }
-
-    
     private String lineNumber;
 
     /**
-     * Getter for lineNumber - One line item on this transaction.
+     * Getter for lineNumber;
+     * The line number or code indicating the line on this invoice or receipt or document.
      */
-    public String getLineNumber() {
-        return this.lineNumber;
+    public String getlineNumber() {;
+        return this.lineNumber;;
     }
 
     /**
-     * Setter for lineNumber - One line item on this transaction.
+     * Setter for lineNumber;
+     * The line number or code indicating the line on this invoice or receipt or document.
      */
-    public void setLineNumber(String lineNumber) {
-        this.lineNumber = lineNumber;
+    public void setlineNumber(String value) {;
+        this.lineNumber = value;;
     }
 
-    
-    private String revAccount;
+
+    private Int32? boundaryOverrideId;
 
     /**
-     * Getter for revAccount - One line item on this transaction.
+     * Getter for boundaryOverrideId;
+     * The unique ID number of the boundary override applied to this line item.
      */
-    public String getRevAccount() {
-        return this.revAccount;
-    }
-
-    /**
-     * Setter for revAccount - One line item on this transaction.
-     */
-    public void setRevAccount(String revAccount) {
-        this.revAccount = revAccount;
-    }
-
-    
-    private Long id;
-
-    /**
-     * Getter for id - One line item on this transaction.
-     */
-    public Long getId() {
-        return this.id;
+    public Int32? getboundaryOverrideId() {;
+        return this.boundaryOverrideId;;
     }
 
     /**
-     * Setter for id - One line item on this transaction.
+     * Setter for boundaryOverrideId;
+     * The unique ID number of the boundary override applied to this line item.
      */
-    public void setId(Long id) {
-        this.id = id;
+    public void setboundaryOverrideId(Int32? value) {;
+        this.boundaryOverrideId = value;;
     }
 
-    
-    private BigDecimal taxCalculated;
+
+    private String customerUsageType;
 
     /**
-     * Getter for taxCalculated - One line item on this transaction.
+     * Getter for customerUsageType;
+     * The customer usage type for this line item. Usage type often affects taxability rules.
      */
-    public BigDecimal getTaxCalculated() {
-        return this.taxCalculated;
-    }
-
-    /**
-     * Setter for taxCalculated - One line item on this transaction.
-     */
-    public void setTaxCalculated(BigDecimal taxCalculated) {
-        this.taxCalculated = taxCalculated;
-    }
-
-    
-    private BigDecimal lineAmount;
-
-    /**
-     * Getter for lineAmount - One line item on this transaction.
-     */
-    public BigDecimal getLineAmount() {
-        return this.lineAmount;
+    public String getcustomerUsageType() {;
+        return this.customerUsageType;;
     }
 
     /**
-     * Setter for lineAmount - One line item on this transaction.
+     * Setter for customerUsageType;
+     * The customer usage type for this line item. Usage type often affects taxability rules.
      */
-    public void setLineAmount(BigDecimal lineAmount) {
-        this.lineAmount = lineAmount;
+    public void setcustomerUsageType(String value) {;
+        this.customerUsageType = value;;
     }
 
-    
-    private Long destinationAddressId;
+
+    private String description;
 
     /**
-     * Getter for destinationAddressId - One line item on this transaction.
+     * Getter for description;
+     * A description of the item or service represented by this line.
      */
-    public Long getDestinationAddressId() {
-        return this.destinationAddressId;
-    }
-
-    /**
-     * Setter for destinationAddressId - One line item on this transaction.
-     */
-    public void setDestinationAddressId(Long destinationAddressId) {
-        this.destinationAddressId = destinationAddressId;
-    }
-
-    
-    private Boolean isSSTP;
-
-    /**
-     * Getter for isSSTP - One line item on this transaction.
-     */
-    public Boolean getIsSSTP() {
-        return this.isSSTP;
+    public String getdescription() {;
+        return this.description;;
     }
 
     /**
-     * Setter for isSSTP - One line item on this transaction.
+     * Setter for description;
+     * A description of the item or service represented by this line.
      */
-    public void setIsSSTP(Boolean isSSTP) {
-        this.isSSTP = isSSTP;
+    public void setdescription(String value) {;
+        this.description = value;;
     }
 
-    
-    private String taxOverrideReason;
+
+    private Int64? destinationAddressId;
 
     /**
-     * Getter for taxOverrideReason - One line item on this transaction.
+     * Getter for destinationAddressId;
+     * The unique ID number of the destination address where this line was delivered or sold.
+    * In the case of a point-of-sale transaction, the destination address and origin address will be the same.
+    * In the case of a shipped transaction, they will be different.
      */
-    public String getTaxOverrideReason() {
-        return this.taxOverrideReason;
+    public Int64? getdestinationAddressId() {;
+        return this.destinationAddressId;;
     }
 
     /**
-     * Setter for taxOverrideReason - One line item on this transaction.
+     * Setter for destinationAddressId;
+     * The unique ID number of the destination address where this line was delivered or sold.
+    * In the case of a point-of-sale transaction, the destination address and origin address will be the same.
+    * In the case of a shipped transaction, they will be different.
      */
-    public void setTaxOverrideReason(String taxOverrideReason) {
-        this.taxOverrideReason = taxOverrideReason;
+    public void setdestinationAddressId(Int64? value) {;
+        this.destinationAddressId = value;;
     }
 
-    
+
+    private Int64? originAddressId;
+
+    /**
+     * Getter for originAddressId;
+     * The unique ID number of the origin address where this line was delivered or sold.
+    * In the case of a point-of-sale transaction, the origin address and destination address will be the same.
+    * In the case of a shipped transaction, they will be different.
+     */
+    public Int64? getoriginAddressId() {;
+        return this.originAddressId;;
+    }
+
+    /**
+     * Setter for originAddressId;
+     * The unique ID number of the origin address where this line was delivered or sold.
+    * In the case of a point-of-sale transaction, the origin address and destination address will be the same.
+    * In the case of a shipped transaction, they will be different.
+     */
+    public void setoriginAddressId(Int64? value) {;
+        this.originAddressId = value;;
+    }
+
+
+    private Decimal? discountAmount;
+
+    /**
+     * Getter for discountAmount;
+     * The amount of discount that was applied to this line item. This represents the difference between list price and sale price of the item.
+    * In general, a discount represents money that did not change hands; tax is calculated on only the amount of money that changed hands.
+     */
+    public Decimal? getdiscountAmount() {;
+        return this.discountAmount;;
+    }
+
+    /**
+     * Setter for discountAmount;
+     * The amount of discount that was applied to this line item. This represents the difference between list price and sale price of the item.
+    * In general, a discount represents money that did not change hands; tax is calculated on only the amount of money that changed hands.
+     */
+    public void setdiscountAmount(Decimal? value) {;
+        this.discountAmount = value;;
+    }
+
+
+    private Int32? discountTypeId;
+
+    /**
+     * Getter for discountTypeId;
+     * The type of discount, if any, that was applied to this line item.
+     */
+    public Int32? getdiscountTypeId() {;
+        return this.discountTypeId;;
+    }
+
+    /**
+     * Setter for discountTypeId;
+     * The type of discount, if any, that was applied to this line item.
+     */
+    public void setdiscountTypeId(Int32? value) {;
+        this.discountTypeId = value;;
+    }
+
+
+    private Decimal? exemptAmount;
+
+    /**
+     * Getter for exemptAmount;
+     * The amount of this line item that was exempt.
+     */
+    public Decimal? getexemptAmount() {;
+        return this.exemptAmount;;
+    }
+
+    /**
+     * Setter for exemptAmount;
+     * The amount of this line item that was exempt.
+     */
+    public void setexemptAmount(Decimal? value) {;
+        this.exemptAmount = value;;
+    }
+
+
+    private Int32? exemptCertId;
+
+    /**
+     * Getter for exemptCertId;
+     * The unique ID number of the exemption certificate that applied to this line item.
+     */
+    public Int32? getexemptCertId() {;
+        return this.exemptCertId;;
+    }
+
+    /**
+     * Setter for exemptCertId;
+     * The unique ID number of the exemption certificate that applied to this line item.
+     */
+    public void setexemptCertId(Int32? value) {;
+        this.exemptCertId = value;;
+    }
+
+
+    private String exemptNo;
+
+    /**
+     * Getter for exemptNo;
+     * If this line item was exempt, this string contains the word 'Exempt'.
+     */
+    public String getexemptNo() {;
+        return this.exemptNo;;
+    }
+
+    /**
+     * Setter for exemptNo;
+     * If this line item was exempt, this string contains the word 'Exempt'.
+     */
+    public void setexemptNo(String value) {;
+        this.exemptNo = value;;
+    }
+
+
+    private Boolean? isItemTaxable;
+
+    /**
+     * Getter for isItemTaxable;
+     * True if this item is taxable.
+     */
+    public Boolean? getisItemTaxable() {;
+        return this.isItemTaxable;;
+    }
+
+    /**
+     * Setter for isItemTaxable;
+     * True if this item is taxable.
+     */
+    public void setisItemTaxable(Boolean? value) {;
+        this.isItemTaxable = value;;
+    }
+
+
+    private Boolean? isSSTP;
+
+    /**
+     * Getter for isSSTP;
+     * True if this item is a Streamlined Sales Tax line item.
+     */
+    public Boolean? getisSSTP() {;
+        return this.isSSTP;;
+    }
+
+    /**
+     * Setter for isSSTP;
+     * True if this item is a Streamlined Sales Tax line item.
+     */
+    public void setisSSTP(Boolean? value) {;
+        this.isSSTP = value;;
+    }
+
+
     private String itemCode;
 
     /**
-     * Getter for itemCode - One line item on this transaction.
+     * Getter for itemCode;
+     * The code string of the item represented by this line item.
      */
-    public String getItemCode() {
-        return this.itemCode;
+    public String getitemCode() {;
+        return this.itemCode;;
     }
 
     /**
-     * Setter for itemCode - One line item on this transaction.
+     * Setter for itemCode;
+     * The code string of the item represented by this line item.
      */
-    public void setItemCode(String itemCode) {
-        this.itemCode = itemCode;
+    public void setitemCode(String value) {;
+        this.itemCode = value;;
     }
 
-    
-    private ArrayList<TransactionLineDetailModel> details;
+
+    private Decimal? lineAmount;
 
     /**
-     * Getter for details - One line item on this transaction.
+     * Getter for lineAmount;
+     * The total amount of the transaction, including both taxable and exempt. This is the total price for all items.
+    * To determine the individual item price, divide this by quantity.
      */
-    public ArrayList<TransactionLineDetailModel> getDetails() {
-        return this.details;
-    }
-
-    /**
-     * Setter for details - One line item on this transaction.
-     */
-    public void setDetails(ArrayList<TransactionLineDetailModel> details) {
-        this.details = details;
-    }
-
-    
-    private BigDecimal taxOverrideAmount;
-
-    /**
-     * Getter for taxOverrideAmount - One line item on this transaction.
-     */
-    public BigDecimal getTaxOverrideAmount() {
-        return this.taxOverrideAmount;
+    public Decimal? getlineAmount() {;
+        return this.lineAmount;;
     }
 
     /**
-     * Setter for taxOverrideAmount - One line item on this transaction.
+     * Setter for lineAmount;
+     * The total amount of the transaction, including both taxable and exempt. This is the total price for all items.
+    * To determine the individual item price, divide this by quantity.
      */
-    public void setTaxOverrideAmount(BigDecimal taxOverrideAmount) {
-        this.taxOverrideAmount = taxOverrideAmount;
+    public void setlineAmount(Decimal? value) {;
+        this.lineAmount = value;;
     }
 
-    
-    private BigDecimal taxableAmount;
+
+    private Decimal? quantity;
 
     /**
-     * Getter for taxableAmount - One line item on this transaction.
+     * Getter for quantity;
+     * The quantity of products sold on this line item.
      */
-    public BigDecimal getTaxableAmount() {
-        return this.taxableAmount;
-    }
-
-    /**
-     * Setter for taxableAmount - One line item on this transaction.
-     */
-    public void setTaxableAmount(BigDecimal taxableAmount) {
-        this.taxableAmount = taxableAmount;
-    }
-
-    
-    private Boolean taxIncluded;
-
-    /**
-     * Getter for taxIncluded - One line item on this transaction.
-     */
-    public Boolean getTaxIncluded() {
-        return this.taxIncluded;
+    public Decimal? getquantity() {;
+        return this.quantity;;
     }
 
     /**
-     * Setter for taxIncluded - One line item on this transaction.
+     * Setter for quantity;
+     * The quantity of products sold on this line item.
      */
-    public void setTaxIncluded(Boolean taxIncluded) {
-        this.taxIncluded = taxIncluded;
+    public void setquantity(Decimal? value) {;
+        this.quantity = value;;
     }
 
-    
-    private HashMap<String, String> parameters;
+
+    private String ref1;
 
     /**
-     * Getter for parameters - One line item on this transaction.
+     * Getter for ref1;
+     * A user-defined reference identifier for this transaction line item.
      */
-    public HashMap<String, String> getParameters() {
-        return this.parameters;
-    }
-
-    /**
-     * Setter for parameters - One line item on this transaction.
-     */
-    public void setParameters(HashMap<String, String> parameters) {
-        this.parameters = parameters;
-    }
-
-    
-    private Date taxDate;
-
-    /**
-     * Getter for taxDate - One line item on this transaction.
-     */
-    public Date getTaxDate() {
-        return this.taxDate;
+    public String getref1() {;
+        return this.ref1;;
     }
 
     /**
-     * Setter for taxDate - One line item on this transaction.
+     * Setter for ref1;
+     * A user-defined reference identifier for this transaction line item.
      */
-    public void setTaxDate(Date taxDate) {
-        this.taxDate = taxDate;
+    public void setref1(String value) {;
+        this.ref1 = value;;
     }
 
-    
-    private Long transactionId;
+
+    private String ref2;
 
     /**
-     * Getter for transactionId - One line item on this transaction.
+     * Getter for ref2;
+     * A user-defined reference identifier for this transaction line item.
      */
-    public Long getTransactionId() {
-        return this.transactionId;
-    }
-
-    /**
-     * Setter for transactionId - One line item on this transaction.
-     */
-    public void setTransactionId(Long transactionId) {
-        this.transactionId = transactionId;
-    }
-
-    
-    private BigDecimal discountAmount;
-
-    /**
-     * Getter for discountAmount - One line item on this transaction.
-     */
-    public BigDecimal getDiscountAmount() {
-        return this.discountAmount;
+    public String getref2() {;
+        return this.ref2;;
     }
 
     /**
-     * Setter for discountAmount - One line item on this transaction.
+     * Setter for ref2;
+     * A user-defined reference identifier for this transaction line item.
      */
-    public void setDiscountAmount(BigDecimal discountAmount) {
-        this.discountAmount = discountAmount;
+    public void setref2(String value) {;
+        this.ref2 = value;;
     }
 
-    
+
+    private DateTime? reportingDate;
+
+    /**
+     * Getter for reportingDate;
+     * The date when this transaction should be reported. By default, all transactions are reported on the date when the actual transaction took place.
+    * In some cases, line items may be reported later due to delayed shipments or other business reasons.
+     */
+    public DateTime? getreportingDate() {;
+        return this.reportingDate;;
+    }
+
+    /**
+     * Setter for reportingDate;
+     * The date when this transaction should be reported. By default, all transactions are reported on the date when the actual transaction took place.
+    * In some cases, line items may be reported later due to delayed shipments or other business reasons.
+     */
+    public void setreportingDate(DateTime? value) {;
+        this.reportingDate = value;;
+    }
+
+
+    private String revAccount;
+
+    /**
+     * Getter for revAccount;
+     * The revenue account number for this line item.
+     */
+    public String getrevAccount() {;
+        return this.revAccount;;
+    }
+
+    /**
+     * Setter for revAccount;
+     * The revenue account number for this line item.
+     */
+    public void setrevAccount(String value) {;
+        this.revAccount = value;;
+    }
+
+
+    private Sourcing? sourcing;
+
+    /**
+     * Getter for sourcing;
+     * Indicates whether this line item was taxed according to the origin or destination.
+     */
+    public Sourcing? getsourcing() {;
+        return this.sourcing;;
+    }
+
+    /**
+     * Setter for sourcing;
+     * Indicates whether this line item was taxed according to the origin or destination.
+     */
+    public void setsourcing(Sourcing? value) {;
+        this.sourcing = value;;
+    }
+
+
+    private Decimal? tax;
+
+    /**
+     * Getter for tax;
+     * The amount of tax generated for this line item.
+     */
+    public Decimal? gettax() {;
+        return this.tax;;
+    }
+
+    /**
+     * Setter for tax;
+     * The amount of tax generated for this line item.
+     */
+    public void settax(Decimal? value) {;
+        this.tax = value;;
+    }
+
+
+    private Decimal? taxableAmount;
+
+    /**
+     * Getter for taxableAmount;
+     * The taxable amount of this line item.
+     */
+    public Decimal? gettaxableAmount() {;
+        return this.taxableAmount;;
+    }
+
+    /**
+     * Setter for taxableAmount;
+     * The taxable amount of this line item.
+     */
+    public void settaxableAmount(Decimal? value) {;
+        this.taxableAmount = value;;
+    }
+
+
+    private Decimal? taxCalculated;
+
+    /**
+     * Getter for taxCalculated;
+     * The tax calculated for this line by Avalara. If the transaction was calculated with a tax override, this amount will be different from the "tax" value.
+     */
+    public Decimal? gettaxCalculated() {;
+        return this.taxCalculated;;
+    }
+
+    /**
+     * Setter for taxCalculated;
+     * The tax calculated for this line by Avalara. If the transaction was calculated with a tax override, this amount will be different from the "tax" value.
+     */
+    public void settaxCalculated(Decimal? value) {;
+        this.taxCalculated = value;;
+    }
+
+
+    private String taxCode;
+
+    /**
+     * Getter for taxCode;
+     * The code string for the tax code that was used to calculate this line item.
+     */
+    public String gettaxCode() {;
+        return this.taxCode;;
+    }
+
+    /**
+     * Setter for taxCode;
+     * The code string for the tax code that was used to calculate this line item.
+     */
+    public void settaxCode(String value) {;
+        this.taxCode = value;;
+    }
+
+
+    private Int32? taxCodeId;
+
+    /**
+     * Getter for taxCodeId;
+     * The unique ID number for the tax code that was used to calculate this line item.
+     */
+    public Int32? gettaxCodeId() {;
+        return this.taxCodeId;;
+    }
+
+    /**
+     * Setter for taxCodeId;
+     * The unique ID number for the tax code that was used to calculate this line item.
+     */
+    public void settaxCodeId(Int32? value) {;
+        this.taxCodeId = value;;
+    }
+
+
+    private DateTime? taxDate;
+
+    /**
+     * Getter for taxDate;
+     * The date that was used for calculating tax amounts for this line item. By default, this date should be the same as the document date.
+    * In some cases, for example when a consumer returns a product purchased previously, line items may be calculated using a tax date in the past
+    * so that the consumer can receive a refund for the correct tax amount that was charged when the item was originally purchased.
+     */
+    public DateTime? gettaxDate() {;
+        return this.taxDate;;
+    }
+
+    /**
+     * Setter for taxDate;
+     * The date that was used for calculating tax amounts for this line item. By default, this date should be the same as the document date.
+    * In some cases, for example when a consumer returns a product purchased previously, line items may be calculated using a tax date in the past
+    * so that the consumer can receive a refund for the correct tax amount that was charged when the item was originally purchased.
+     */
+    public void settaxDate(DateTime? value) {;
+        this.taxDate = value;;
+    }
+
+
+    private String taxEngine;
+
+    /**
+     * Getter for taxEngine;
+     * The tax engine identifier that was used to calculate this line item.
+     */
+    public String gettaxEngine() {;
+        return this.taxEngine;;
+    }
+
+    /**
+     * Setter for taxEngine;
+     * The tax engine identifier that was used to calculate this line item.
+     */
+    public void settaxEngine(String value) {;
+        this.taxEngine = value;;
+    }
+
+
+    private TaxOverrideTypeId? taxOverrideType;
+
+    /**
+     * Getter for taxOverrideType;
+     * If a tax override was specified, this indicates the type of tax override.
+     */
+    public TaxOverrideTypeId? gettaxOverrideType() {;
+        return this.taxOverrideType;;
+    }
+
+    /**
+     * Setter for taxOverrideType;
+     * If a tax override was specified, this indicates the type of tax override.
+     */
+    public void settaxOverrideType(TaxOverrideTypeId? value) {;
+        this.taxOverrideType = value;;
+    }
+
+
+    private String businessIdentificationNo;
+
+    /**
+     * Getter for businessIdentificationNo;
+     * VAT business identification number used for this transaction.
+     */
+    public String getbusinessIdentificationNo() {;
+        return this.businessIdentificationNo;;
+    }
+
+    /**
+     * Setter for businessIdentificationNo;
+     * VAT business identification number used for this transaction.
+     */
+    public void setbusinessIdentificationNo(String value) {;
+        this.businessIdentificationNo = value;;
+    }
+
+
+    private Decimal? taxOverrideAmount;
+
+    /**
+     * Getter for taxOverrideAmount;
+     * If a tax override was specified, this indicates the amount of tax that was requested.
+     */
+    public Decimal? gettaxOverrideAmount() {;
+        return this.taxOverrideAmount;;
+    }
+
+    /**
+     * Setter for taxOverrideAmount;
+     * If a tax override was specified, this indicates the amount of tax that was requested.
+     */
+    public void settaxOverrideAmount(Decimal? value) {;
+        this.taxOverrideAmount = value;;
+    }
+
+
+    private String taxOverrideReason;
+
+    /**
+     * Getter for taxOverrideReason;
+     * If a tax override was specified, represents the reason for the tax override.
+     */
+    public String gettaxOverrideReason() {;
+        return this.taxOverrideReason;;
+    }
+
+    /**
+     * Setter for taxOverrideReason;
+     * If a tax override was specified, represents the reason for the tax override.
+     */
+    public void settaxOverrideReason(String value) {;
+        this.taxOverrideReason = value;;
+    }
+
+
+    private Boolean? taxIncluded;
+
+    /**
+     * Getter for taxIncluded;
+     * True if tax was included in the purchase price of the item.
+     */
+    public Boolean? gettaxIncluded() {;
+        return this.taxIncluded;;
+    }
+
+    /**
+     * Setter for taxIncluded;
+     * True if tax was included in the purchase price of the item.
+     */
+    public void settaxIncluded(Boolean? value) {;
+        this.taxIncluded = value;;
+    }
+
+
+    private List<TransactionLineDetailModel> details;
+
+    /**
+     * Getter for details;
+     * Optional: A list of tax details for this line item. To fetch this list, add the query string "?$include=Details" to your URL.
+     */
+    public List<TransactionLineDetailModel> getdetails() {;
+        return this.details;;
+    }
+
+    /**
+     * Setter for details;
+     * Optional: A list of tax details for this line item. To fetch this list, add the query string "?$include=Details" to your URL.
+     */
+    public void setdetails(List<TransactionLineDetailModel> value) {;
+        this.details = value;;
+    }
+
+
+    private List<TransactionLineLocationTypeModel> lineLocationTypes;
+
+    /**
+     * Getter for lineLocationTypes;
+     * Optional: A list of location types for this line item. To fetch this list, add the query string "?$include=LineLocationTypes" to your URL.
+     */
+    public List<TransactionLineLocationTypeModel> getlineLocationTypes() {;
+        return this.lineLocationTypes;;
+    }
+
+    /**
+     * Setter for lineLocationTypes;
+     * Optional: A list of location types for this line item. To fetch this list, add the query string "?$include=LineLocationTypes" to your URL.
+     */
+    public void setlineLocationTypes(List<TransactionLineLocationTypeModel> value) {;
+        this.lineLocationTypes = value;;
+    }
+
+
+    private Dictionary<string, string> parameters;
+
+    /**
+     * Getter for parameters;
+     * Contains a list of extra parameters that were set when the transaction was created.
+     */
+    public Dictionary<string, string> getparameters() {;
+        return this.parameters;;
+    }
+
+    /**
+     * Setter for parameters;
+     * Contains a list of extra parameters that were set when the transaction was created.
+     */
+    public void setparameters(Dictionary<string, string> value) {;
+        this.parameters = value;;
+    }
 
 
     /**
-     * Returns a JSON string representation of TransactionLineModel.
+     * Returns a JSON string representation of TransactionLineModel
      */
     @Override
     public String toString() {
         return JsonSerializer.SerializeObject(this);
     }
 }
-    

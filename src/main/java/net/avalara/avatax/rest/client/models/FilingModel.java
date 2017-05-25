@@ -9,188 +9,230 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 
+/*
+ * AvaTax Software Development Kit for Java JRE based environments
+ *
+ * (c) 2004-2017 Avalara, Inc.
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ *
+ * @author     Dustin Welden <dustin.welden@avalara.com>
+ * @copyright  2004-2017 Avalara, Inc.
+ * @license    https://www.apache.org/licenses/LICENSE-2.0
+ * @version    17.5.2-77
+ * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ */
+
 /**
  * Represents a listing of all tax calculation data for filings and for accruing to future filings.
  */
 public class FilingModel {
-    private ArrayList<FilingRegionModel> filingRegions;
+
+
+    private Int64? id;
 
     /**
-     * Getter for filingRegions - Represents a listing of all tax calculation data for filings and for accruing to future filings.
+     * Getter for id;
+     * The unique ID number of this filing.
      */
-    public ArrayList<FilingRegionModel> getFilingRegions() {
-        return this.filingRegions;
+    public Int64? getid() {;
+        return this.id;;
     }
 
     /**
-     * Setter for filingRegions - Represents a listing of all tax calculation data for filings and for accruing to future filings.
+     * Setter for id;
+     * The unique ID number of this filing.
      */
-    public void setFilingRegions(ArrayList<FilingRegionModel> filingRegions) {
-        this.filingRegions = filingRegions;
+    public void setid(Int64? value) {;
+        this.id = value;;
     }
 
-    
-    private Date modifiedDate;
+
+    private Int32? companyId;
 
     /**
-     * Getter for modifiedDate - Represents a listing of all tax calculation data for filings and for accruing to future filings.
+     * Getter for companyId;
+     * The unique ID number of the company for this filing.
      */
-    public Date getModifiedDate() {
-        return this.modifiedDate;
-    }
-
-    /**
-     * Setter for modifiedDate - Represents a listing of all tax calculation data for filings and for accruing to future filings.
-     */
-    public void setModifiedDate(Date modifiedDate) {
-        this.modifiedDate = modifiedDate;
-    }
-
-    
-    private Short year;
-
-    /**
-     * Getter for year - Represents a listing of all tax calculation data for filings and for accruing to future filings.
-     */
-    public Short getYear() {
-        return this.year;
+    public Int32? getcompanyId() {;
+        return this.companyId;;
     }
 
     /**
-     * Setter for year - Represents a listing of all tax calculation data for filings and for accruing to future filings.
+     * Setter for companyId;
+     * The unique ID number of the company for this filing.
      */
-    public void setYear(Short year) {
-        this.year = year;
+    public void setcompanyId(Int32? value) {;
+        this.companyId = value;;
     }
 
-    
-    private Long id;
+
+    private Byte? month;
 
     /**
-     * Getter for id - Represents a listing of all tax calculation data for filings and for accruing to future filings.
+     * Getter for month;
+     * The month of the filing period for this tax filing. 
+    * The filing period represents the year and month of the last day of taxes being reported on this filing. 
+    * For example, an annual tax filing for Jan-Dec 2015 would have a filing period of Dec 2015.
      */
-    public Long getId() {
-        return this.id;
-    }
-
-    /**
-     * Setter for id - Represents a listing of all tax calculation data for filings and for accruing to future filings.
-     */
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    
-    private Integer modifiedUserId;
-
-    /**
-     * Getter for modifiedUserId - Represents a listing of all tax calculation data for filings and for accruing to future filings.
-     */
-    public Integer getModifiedUserId() {
-        return this.modifiedUserId;
+    public Byte? getmonth() {;
+        return this.month;;
     }
 
     /**
-     * Setter for modifiedUserId - Represents a listing of all tax calculation data for filings and for accruing to future filings.
+     * Setter for month;
+     * The month of the filing period for this tax filing. 
+    * The filing period represents the year and month of the last day of taxes being reported on this filing. 
+    * For example, an annual tax filing for Jan-Dec 2015 would have a filing period of Dec 2015.
      */
-    public void setModifiedUserId(Integer modifiedUserId) {
-        this.modifiedUserId = modifiedUserId;
+    public void setmonth(Byte? value) {;
+        this.month = value;;
     }
 
-    
-    private Integer createdUserId;
+
+    private Int16? year;
 
     /**
-     * Getter for createdUserId - Represents a listing of all tax calculation data for filings and for accruing to future filings.
+     * Getter for year;
+     * The year of the filing period for this tax filing.
+    * The filing period represents the year and month of the last day of taxes being reported on this filing. 
+    * For example, an annual tax filing for Jan-Dec 2015 would have a filing period of Dec 2015.
      */
-    public Integer getCreatedUserId() {
-        return this.createdUserId;
-    }
-
-    /**
-     * Setter for createdUserId - Represents a listing of all tax calculation data for filings and for accruing to future filings.
-     */
-    public void setCreatedUserId(Integer createdUserId) {
-        this.createdUserId = createdUserId;
-    }
-
-    
-    private WorksheetTypeId type;
-
-    /**
-     * Getter for type - Represents a listing of all tax calculation data for filings and for accruing to future filings.
-     */
-    public WorksheetTypeId getType() {
-        return this.type;
+    public Int16? getyear() {;
+        return this.year;;
     }
 
     /**
-     * Setter for type - Represents a listing of all tax calculation data for filings and for accruing to future filings.
+     * Setter for year;
+     * The year of the filing period for this tax filing.
+    * The filing period represents the year and month of the last day of taxes being reported on this filing. 
+    * For example, an annual tax filing for Jan-Dec 2015 would have a filing period of Dec 2015.
      */
-    public void setType(WorksheetTypeId type) {
-        this.type = type;
+    public void setyear(Int16? value) {;
+        this.year = value;;
     }
 
-    
-    private Integer companyId;
+
+    private WorksheetTypeId? type;
 
     /**
-     * Getter for companyId - Represents a listing of all tax calculation data for filings and for accruing to future filings.
+     * Getter for type;
+     * Indicates whether this is an original or an amended filing.
      */
-    public Integer getCompanyId() {
-        return this.companyId;
-    }
-
-    /**
-     * Setter for companyId - Represents a listing of all tax calculation data for filings and for accruing to future filings.
-     */
-    public void setCompanyId(Integer companyId) {
-        this.companyId = companyId;
-    }
-
-    
-    private Byte month;
-
-    /**
-     * Getter for month - Represents a listing of all tax calculation data for filings and for accruing to future filings.
-     */
-    public Byte getMonth() {
-        return this.month;
+    public WorksheetTypeId? gettype() {;
+        return this.type;;
     }
 
     /**
-     * Setter for month - Represents a listing of all tax calculation data for filings and for accruing to future filings.
+     * Setter for type;
+     * Indicates whether this is an original or an amended filing.
      */
-    public void setMonth(Byte month) {
-        this.month = month;
+    public void settype(WorksheetTypeId? value) {;
+        this.type = value;;
     }
 
-    
-    private Date createdDate;
+
+    private DateTime? createdDate;
 
     /**
-     * Getter for createdDate - Represents a listing of all tax calculation data for filings and for accruing to future filings.
+     * Getter for createdDate;
+     * The date when this record was created.
      */
-    public Date getCreatedDate() {
-        return this.createdDate;
+    public DateTime? getcreatedDate() {;
+        return this.createdDate;;
     }
 
     /**
-     * Setter for createdDate - Represents a listing of all tax calculation data for filings and for accruing to future filings.
+     * Setter for createdDate;
+     * The date when this record was created.
      */
-    public void setCreatedDate(Date createdDate) {
-        this.createdDate = createdDate;
+    public void setcreatedDate(DateTime? value) {;
+        this.createdDate = value;;
     }
 
-    
+
+    private Int32? createdUserId;
+
+    /**
+     * Getter for createdUserId;
+     * The User ID of the user who created this record.
+     */
+    public Int32? getcreatedUserId() {;
+        return this.createdUserId;;
+    }
+
+    /**
+     * Setter for createdUserId;
+     * The User ID of the user who created this record.
+     */
+    public void setcreatedUserId(Int32? value) {;
+        this.createdUserId = value;;
+    }
+
+
+    private DateTime? modifiedDate;
+
+    /**
+     * Getter for modifiedDate;
+     * The date/time when this record was last modified.
+     */
+    public DateTime? getmodifiedDate() {;
+        return this.modifiedDate;;
+    }
+
+    /**
+     * Setter for modifiedDate;
+     * The date/time when this record was last modified.
+     */
+    public void setmodifiedDate(DateTime? value) {;
+        this.modifiedDate = value;;
+    }
+
+
+    private Int32? modifiedUserId;
+
+    /**
+     * Getter for modifiedUserId;
+     * The user ID of the user who last modified this record.
+     */
+    public Int32? getmodifiedUserId() {;
+        return this.modifiedUserId;;
+    }
+
+    /**
+     * Setter for modifiedUserId;
+     * The user ID of the user who last modified this record.
+     */
+    public void setmodifiedUserId(Int32? value) {;
+        this.modifiedUserId = value;;
+    }
+
+
+    private List<FilingRegionModel> filingRegions;
+
+    /**
+     * Getter for filingRegions;
+     * A listing of regional tax filings within this time period.
+     */
+    public List<FilingRegionModel> getfilingRegions() {;
+        return this.filingRegions;;
+    }
+
+    /**
+     * Setter for filingRegions;
+     * A listing of regional tax filings within this time period.
+     */
+    public void setfilingRegions(List<FilingRegionModel> value) {;
+        this.filingRegions = value;;
+    }
 
 
     /**
-     * Returns a JSON string representation of FilingModel.
+     * Returns a JSON string representation of FilingModel
      */
     @Override
     public String toString() {
         return JsonSerializer.SerializeObject(this);
     }
 }
-    

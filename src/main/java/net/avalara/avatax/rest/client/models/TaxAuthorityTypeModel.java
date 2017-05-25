@@ -9,69 +9,89 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 
+/*
+ * AvaTax Software Development Kit for Java JRE based environments
+ *
+ * (c) 2004-2017 Avalara, Inc.
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ *
+ * @author     Dustin Welden <dustin.welden@avalara.com>
+ * @copyright  2004-2017 Avalara, Inc.
+ * @license    https://www.apache.org/licenses/LICENSE-2.0
+ * @version    17.5.2-77
+ * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ */
+
 /**
  * Tax Authority Type Model
  */
 public class TaxAuthorityTypeModel {
-    private Integer id;
+
+
+    private Int32 id;
 
     /**
-     * Getter for id - Tax Authority Type Model
+     * Getter for id;
+     * The unique ID number of this tax Authority customer type.
      */
-    public Integer getId() {
-        return this.id;
+    public Int32 getid() {;
+        return this.id;;
     }
 
     /**
-     * Setter for id - Tax Authority Type Model
+     * Setter for id;
+     * The unique ID number of this tax Authority customer type.
      */
-    public void setId(Integer id) {
-        this.id = id;
+    public void setid(Int32 value) {;
+        this.id = value;;
     }
 
-    
+
     private String description;
 
     /**
-     * Getter for description - Tax Authority Type Model
+     * Getter for description;
+     * The description name of this tax authority type.
      */
-    public String getDescription() {
-        return this.description;
+    public String getdescription() {;
+        return this.description;;
     }
 
     /**
-     * Setter for description - Tax Authority Type Model
+     * Setter for description;
+     * The description name of this tax authority type.
      */
-    public void setDescription(String description) {
-        this.description = description;
+    public void setdescription(String value) {;
+        this.description = value;;
     }
 
-    
+
     private String taxAuthorityGroup;
 
     /**
-     * Getter for taxAuthorityGroup - Tax Authority Type Model
+     * Getter for taxAuthorityGroup;
+     * Tax Authority Group
      */
-    public String getTaxAuthorityGroup() {
-        return this.taxAuthorityGroup;
+    public String gettaxAuthorityGroup() {;
+        return this.taxAuthorityGroup;;
     }
 
     /**
-     * Setter for taxAuthorityGroup - Tax Authority Type Model
+     * Setter for taxAuthorityGroup;
+     * Tax Authority Group
      */
-    public void setTaxAuthorityGroup(String taxAuthorityGroup) {
-        this.taxAuthorityGroup = taxAuthorityGroup;
+    public void settaxAuthorityGroup(String value) {;
+        this.taxAuthorityGroup = value;;
     }
-
-    
 
 
     /**
-     * Returns a JSON string representation of TaxAuthorityTypeModel.
+     * Returns a JSON string representation of TaxAuthorityTypeModel
      */
     @Override
     public String toString() {
         return JsonSerializer.SerializeObject(this);
     }
 }
-    

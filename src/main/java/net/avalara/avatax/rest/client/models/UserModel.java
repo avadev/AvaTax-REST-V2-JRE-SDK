@@ -9,273 +9,317 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 
+/*
+ * AvaTax Software Development Kit for Java JRE based environments
+ *
+ * (c) 2004-2017 Avalara, Inc.
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ *
+ * @author     Dustin Welden <dustin.welden@avalara.com>
+ * @copyright  2004-2017 Avalara, Inc.
+ * @license    https://www.apache.org/licenses/LICENSE-2.0
+ * @version    17.5.2-77
+ * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ */
+
 /**
  * An account user who is permitted to use AvaTax.
  */
 public class UserModel {
-    private PasswordStatusId passwordStatus;
+
+
+    private Int32 id;
 
     /**
-     * Getter for passwordStatus - An account user who is permitted to use AvaTax.
+     * Getter for id;
+     * The unique ID number of this user.
      */
-    public PasswordStatusId getPasswordStatus() {
-        return this.passwordStatus;
+    public Int32 getid() {;
+        return this.id;;
     }
 
     /**
-     * Setter for passwordStatus - An account user who is permitted to use AvaTax.
+     * Setter for id;
+     * The unique ID number of this user.
      */
-    public void setPasswordStatus(PasswordStatusId passwordStatus) {
-        this.passwordStatus = passwordStatus;
+    public void setid(Int32 value) {;
+        this.id = value;;
     }
 
-    
-    private SecurityRoleId securityRoleId;
+
+    private Int32 accountId;
 
     /**
-     * Getter for securityRoleId - An account user who is permitted to use AvaTax.
+     * Getter for accountId;
+     * The unique ID number of the account to which this user belongs.
      */
-    public SecurityRoleId getSecurityRoleId() {
-        return this.securityRoleId;
-    }
-
-    /**
-     * Setter for securityRoleId - An account user who is permitted to use AvaTax.
-     */
-    public void setSecurityRoleId(SecurityRoleId securityRoleId) {
-        this.securityRoleId = securityRoleId;
-    }
-
-    
-    private String email;
-
-    /**
-     * Getter for email - An account user who is permitted to use AvaTax.
-     */
-    public String getEmail() {
-        return this.email;
+    public Int32 getaccountId() {;
+        return this.accountId;;
     }
 
     /**
-     * Setter for email - An account user who is permitted to use AvaTax.
+     * Setter for accountId;
+     * The unique ID number of the account to which this user belongs.
      */
-    public void setEmail(String email) {
-        this.email = email;
+    public void setaccountId(Int32 value) {;
+        this.accountId = value;;
     }
 
-    
-    private Date modifiedDate;
+
+    private Int32? companyId;
 
     /**
-     * Getter for modifiedDate - An account user who is permitted to use AvaTax.
+     * Getter for companyId;
+     * If this user is locked to one company (and its children), this is the unique ID number of the company to which this user belongs.
      */
-    public Date getModifiedDate() {
-        return this.modifiedDate;
-    }
-
-    /**
-     * Setter for modifiedDate - An account user who is permitted to use AvaTax.
-     */
-    public void setModifiedDate(Date modifiedDate) {
-        this.modifiedDate = modifiedDate;
-    }
-
-    
-    private Integer accountId;
-
-    /**
-     * Getter for accountId - An account user who is permitted to use AvaTax.
-     */
-    public Integer getAccountId() {
-        return this.accountId;
+    public Int32? getcompanyId() {;
+        return this.companyId;;
     }
 
     /**
-     * Setter for accountId - An account user who is permitted to use AvaTax.
+     * Setter for companyId;
+     * If this user is locked to one company (and its children), this is the unique ID number of the company to which this user belongs.
      */
-    public void setAccountId(Integer accountId) {
-        this.accountId = accountId;
+    public void setcompanyId(Int32? value) {;
+        this.companyId = value;;
     }
 
-    
-    private String postalCode;
 
-    /**
-     * Getter for postalCode - An account user who is permitted to use AvaTax.
-     */
-    public String getPostalCode() {
-        return this.postalCode;
-    }
-
-    /**
-     * Setter for postalCode - An account user who is permitted to use AvaTax.
-     */
-    public void setPostalCode(String postalCode) {
-        this.postalCode = postalCode;
-    }
-
-    
-    private String lastName;
-
-    /**
-     * Getter for lastName - An account user who is permitted to use AvaTax.
-     */
-    public String getLastName() {
-        return this.lastName;
-    }
-
-    /**
-     * Setter for lastName - An account user who is permitted to use AvaTax.
-     */
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
-    
-    private String firstName;
-
-    /**
-     * Getter for firstName - An account user who is permitted to use AvaTax.
-     */
-    public String getFirstName() {
-        return this.firstName;
-    }
-
-    /**
-     * Setter for firstName - An account user who is permitted to use AvaTax.
-     */
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    
-    private Integer id;
-
-    /**
-     * Getter for id - An account user who is permitted to use AvaTax.
-     */
-    public Integer getId() {
-        return this.id;
-    }
-
-    /**
-     * Setter for id - An account user who is permitted to use AvaTax.
-     */
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    
-    private Boolean isActive;
-
-    /**
-     * Getter for isActive - An account user who is permitted to use AvaTax.
-     */
-    public Boolean getIsActive() {
-        return this.isActive;
-    }
-
-    /**
-     * Setter for isActive - An account user who is permitted to use AvaTax.
-     */
-    public void setIsActive(Boolean isActive) {
-        this.isActive = isActive;
-    }
-
-    
-    private Integer modifiedUserId;
-
-    /**
-     * Getter for modifiedUserId - An account user who is permitted to use AvaTax.
-     */
-    public Integer getModifiedUserId() {
-        return this.modifiedUserId;
-    }
-
-    /**
-     * Setter for modifiedUserId - An account user who is permitted to use AvaTax.
-     */
-    public void setModifiedUserId(Integer modifiedUserId) {
-        this.modifiedUserId = modifiedUserId;
-    }
-
-    
-    private Integer createdUserId;
-
-    /**
-     * Getter for createdUserId - An account user who is permitted to use AvaTax.
-     */
-    public Integer getCreatedUserId() {
-        return this.createdUserId;
-    }
-
-    /**
-     * Setter for createdUserId - An account user who is permitted to use AvaTax.
-     */
-    public void setCreatedUserId(Integer createdUserId) {
-        this.createdUserId = createdUserId;
-    }
-
-    
-    private Integer companyId;
-
-    /**
-     * Getter for companyId - An account user who is permitted to use AvaTax.
-     */
-    public Integer getCompanyId() {
-        return this.companyId;
-    }
-
-    /**
-     * Setter for companyId - An account user who is permitted to use AvaTax.
-     */
-    public void setCompanyId(Integer companyId) {
-        this.companyId = companyId;
-    }
-
-    
     private String userName;
 
     /**
-     * Getter for userName - An account user who is permitted to use AvaTax.
+     * Getter for userName;
+     * The username which is used to log on to the AvaTax website, or to authenticate against API calls.
      */
-    public String getUserName() {
-        return this.userName;
+    public String getuserName() {;
+        return this.userName;;
     }
 
     /**
-     * Setter for userName - An account user who is permitted to use AvaTax.
+     * Setter for userName;
+     * The username which is used to log on to the AvaTax website, or to authenticate against API calls.
      */
-    public void setUserName(String userName) {
-        this.userName = userName;
+    public void setuserName(String value) {;
+        this.userName = value;;
     }
 
-    
-    private Date createdDate;
+
+    private String firstName;
 
     /**
-     * Getter for createdDate - An account user who is permitted to use AvaTax.
+     * Getter for firstName;
+     * The first or given name of the user.
      */
-    public Date getCreatedDate() {
-        return this.createdDate;
+    public String getfirstName() {;
+        return this.firstName;;
     }
 
     /**
-     * Setter for createdDate - An account user who is permitted to use AvaTax.
+     * Setter for firstName;
+     * The first or given name of the user.
      */
-    public void setCreatedDate(Date createdDate) {
-        this.createdDate = createdDate;
+    public void setfirstName(String value) {;
+        this.firstName = value;;
     }
 
-    
+
+    private String lastName;
+
+    /**
+     * Getter for lastName;
+     * The last or family name of the user.
+     */
+    public String getlastName() {;
+        return this.lastName;;
+    }
+
+    /**
+     * Setter for lastName;
+     * The last or family name of the user.
+     */
+    public void setlastName(String value) {;
+        this.lastName = value;;
+    }
+
+
+    private String email;
+
+    /**
+     * Getter for email;
+     * The email address to be used to contact this user. If the user has forgotten a password, an email can be sent to this email address with information on how to reset this password.
+     */
+    public String getemail() {;
+        return this.email;;
+    }
+
+    /**
+     * Setter for email;
+     * The email address to be used to contact this user. If the user has forgotten a password, an email can be sent to this email address with information on how to reset this password.
+     */
+    public void setemail(String value) {;
+        this.email = value;;
+    }
+
+
+    private String postalCode;
+
+    /**
+     * Getter for postalCode;
+     * The postal code in which this user resides.
+     */
+    public String getpostalCode() {;
+        return this.postalCode;;
+    }
+
+    /**
+     * Setter for postalCode;
+     * The postal code in which this user resides.
+     */
+    public void setpostalCode(String value) {;
+        this.postalCode = value;;
+    }
+
+
+    private SecurityRoleId securityRoleId;
+
+    /**
+     * Getter for securityRoleId;
+     * The security level for this user.
+     */
+    public SecurityRoleId getsecurityRoleId() {;
+        return this.securityRoleId;;
+    }
+
+    /**
+     * Setter for securityRoleId;
+     * The security level for this user.
+     */
+    public void setsecurityRoleId(SecurityRoleId value) {;
+        this.securityRoleId = value;;
+    }
+
+
+    private PasswordStatusId? passwordStatus;
+
+    /**
+     * Getter for passwordStatus;
+     * The status of the user's password.
+     */
+    public PasswordStatusId? getpasswordStatus() {;
+        return this.passwordStatus;;
+    }
+
+    /**
+     * Setter for passwordStatus;
+     * The status of the user's password.
+     */
+    public void setpasswordStatus(PasswordStatusId? value) {;
+        this.passwordStatus = value;;
+    }
+
+
+    private Boolean? isActive;
+
+    /**
+     * Getter for isActive;
+     * True if this user is currently active.
+     */
+    public Boolean? getisActive() {;
+        return this.isActive;;
+    }
+
+    /**
+     * Setter for isActive;
+     * True if this user is currently active.
+     */
+    public void setisActive(Boolean? value) {;
+        this.isActive = value;;
+    }
+
+
+    private DateTime? createdDate;
+
+    /**
+     * Getter for createdDate;
+     * The date when this record was created.
+     */
+    public DateTime? getcreatedDate() {;
+        return this.createdDate;;
+    }
+
+    /**
+     * Setter for createdDate;
+     * The date when this record was created.
+     */
+    public void setcreatedDate(DateTime? value) {;
+        this.createdDate = value;;
+    }
+
+
+    private Int32? createdUserId;
+
+    /**
+     * Getter for createdUserId;
+     * The User ID of the user who created this record.
+     */
+    public Int32? getcreatedUserId() {;
+        return this.createdUserId;;
+    }
+
+    /**
+     * Setter for createdUserId;
+     * The User ID of the user who created this record.
+     */
+    public void setcreatedUserId(Int32? value) {;
+        this.createdUserId = value;;
+    }
+
+
+    private DateTime? modifiedDate;
+
+    /**
+     * Getter for modifiedDate;
+     * The date/time when this record was last modified.
+     */
+    public DateTime? getmodifiedDate() {;
+        return this.modifiedDate;;
+    }
+
+    /**
+     * Setter for modifiedDate;
+     * The date/time when this record was last modified.
+     */
+    public void setmodifiedDate(DateTime? value) {;
+        this.modifiedDate = value;;
+    }
+
+
+    private Int32? modifiedUserId;
+
+    /**
+     * Getter for modifiedUserId;
+     * The user ID of the user who last modified this record.
+     */
+    public Int32? getmodifiedUserId() {;
+        return this.modifiedUserId;;
+    }
+
+    /**
+     * Setter for modifiedUserId;
+     * The user ID of the user who last modified this record.
+     */
+    public void setmodifiedUserId(Int32? value) {;
+        this.modifiedUserId = value;;
+    }
 
 
     /**
-     * Returns a JSON string representation of UserModel.
+     * Returns a JSON string representation of UserModel
      */
     @Override
     public String toString() {
         return JsonSerializer.SerializeObject(this);
     }
 }
-    

@@ -9,205 +9,241 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 
+/*
+ * AvaTax Software Development Kit for Java JRE based environments
+ *
+ * (c) 2004-2017 Avalara, Inc.
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ *
+ * @author     Dustin Welden <dustin.welden@avalara.com>
+ * @copyright  2004-2017 Avalara, Inc.
+ * @license    https://www.apache.org/licenses/LICENSE-2.0
+ * @version    17.5.2-77
+ * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ */
+
 /**
  * An AvaTax account.
  */
 public class AccountModel {
+
+
+    private Int32 id;
+
+    /**
+     * Getter for id;
+     * The unique ID number assigned to this account.
+     */
+    public Int32 getid() {;
+        return this.id;;
+    }
+
+    /**
+     * Setter for id;
+     * The unique ID number assigned to this account.
+     */
+    public void setid(Int32 value) {;
+        this.id = value;;
+    }
+
+
     private String name;
 
     /**
-     * Getter for name - An AvaTax account.
+     * Getter for name;
+     * The name of this account.
      */
-    public String getName() {
-        return this.name;
+    public String getname() {;
+        return this.name;;
     }
 
     /**
-     * Setter for name - An AvaTax account.
+     * Setter for name;
+     * The name of this account.
      */
-    public void setName(String name) {
-        this.name = name;
+    public void setname(String value) {;
+        this.name = value;;
     }
 
-    
-    private Date endDate;
+
+    private DateTime? effectiveDate;
 
     /**
-     * Getter for endDate - An AvaTax account.
+     * Getter for effectiveDate;
+     * The earliest date on which this account may be used.
      */
-    public Date getEndDate() {
-        return this.endDate;
-    }
-
-    /**
-     * Setter for endDate - An AvaTax account.
-     */
-    public void setEndDate(Date endDate) {
-        this.endDate = endDate;
-    }
-
-    
-    private ArrayList<UserModel> users;
-
-    /**
-     * Getter for users - An AvaTax account.
-     */
-    public ArrayList<UserModel> getUsers() {
-        return this.users;
+    public DateTime? geteffectiveDate() {;
+        return this.effectiveDate;;
     }
 
     /**
-     * Setter for users - An AvaTax account.
+     * Setter for effectiveDate;
+     * The earliest date on which this account may be used.
      */
-    public void setUsers(ArrayList<UserModel> users) {
-        this.users = users;
+    public void seteffectiveDate(DateTime? value) {;
+        this.effectiveDate = value;;
     }
 
-    
-    private Date modifiedDate;
+
+    private DateTime? endDate;
 
     /**
-     * Getter for modifiedDate - An AvaTax account.
+     * Getter for endDate;
+     * If this account has been closed, this is the last date the account was open.
      */
-    public Date getModifiedDate() {
-        return this.modifiedDate;
-    }
-
-    /**
-     * Setter for modifiedDate - An AvaTax account.
-     */
-    public void setModifiedDate(Date modifiedDate) {
-        this.modifiedDate = modifiedDate;
-    }
-
-    
-    private AccountStatusId accountStatusId;
-
-    /**
-     * Getter for accountStatusId - An AvaTax account.
-     */
-    public AccountStatusId getAccountStatusId() {
-        return this.accountStatusId;
+    public DateTime? getendDate() {;
+        return this.endDate;;
     }
 
     /**
-     * Setter for accountStatusId - An AvaTax account.
+     * Setter for endDate;
+     * If this account has been closed, this is the last date the account was open.
      */
-    public void setAccountStatusId(AccountStatusId accountStatusId) {
-        this.accountStatusId = accountStatusId;
+    public void setendDate(DateTime? value) {;
+        this.endDate = value;;
     }
 
-    
-    private Integer id;
+
+    private AccountStatusId? accountStatusId;
 
     /**
-     * Getter for id - An AvaTax account.
+     * Getter for accountStatusId;
+     * The current status of this account.
      */
-    public Integer getId() {
-        return this.id;
-    }
-
-    /**
-     * Setter for id - An AvaTax account.
-     */
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    
-    private Integer modifiedUserId;
-
-    /**
-     * Getter for modifiedUserId - An AvaTax account.
-     */
-    public Integer getModifiedUserId() {
-        return this.modifiedUserId;
+    public AccountStatusId? getaccountStatusId() {;
+        return this.accountStatusId;;
     }
 
     /**
-     * Setter for modifiedUserId - An AvaTax account.
+     * Setter for accountStatusId;
+     * The current status of this account.
      */
-    public void setModifiedUserId(Integer modifiedUserId) {
-        this.modifiedUserId = modifiedUserId;
+    public void setaccountStatusId(AccountStatusId? value) {;
+        this.accountStatusId = value;;
     }
 
-    
-    private Date effectiveDate;
+
+    private DateTime? createdDate;
 
     /**
-     * Getter for effectiveDate - An AvaTax account.
+     * Getter for createdDate;
+     * The date when this record was created.
      */
-    public Date getEffectiveDate() {
-        return this.effectiveDate;
-    }
-
-    /**
-     * Setter for effectiveDate - An AvaTax account.
-     */
-    public void setEffectiveDate(Date effectiveDate) {
-        this.effectiveDate = effectiveDate;
-    }
-
-    
-    private Integer createdUserId;
-
-    /**
-     * Getter for createdUserId - An AvaTax account.
-     */
-    public Integer getCreatedUserId() {
-        return this.createdUserId;
+    public DateTime? getcreatedDate() {;
+        return this.createdDate;;
     }
 
     /**
-     * Setter for createdUserId - An AvaTax account.
+     * Setter for createdDate;
+     * The date when this record was created.
      */
-    public void setCreatedUserId(Integer createdUserId) {
-        this.createdUserId = createdUserId;
+    public void setcreatedDate(DateTime? value) {;
+        this.createdDate = value;;
     }
 
-    
-    private ArrayList<SubscriptionModel> subscriptions;
+
+    private Int32? createdUserId;
 
     /**
-     * Getter for subscriptions - An AvaTax account.
+     * Getter for createdUserId;
+     * The User ID of the user who created this record.
      */
-    public ArrayList<SubscriptionModel> getSubscriptions() {
-        return this.subscriptions;
-    }
-
-    /**
-     * Setter for subscriptions - An AvaTax account.
-     */
-    public void setSubscriptions(ArrayList<SubscriptionModel> subscriptions) {
-        this.subscriptions = subscriptions;
-    }
-
-    
-    private Date createdDate;
-
-    /**
-     * Getter for createdDate - An AvaTax account.
-     */
-    public Date getCreatedDate() {
-        return this.createdDate;
+    public Int32? getcreatedUserId() {;
+        return this.createdUserId;;
     }
 
     /**
-     * Setter for createdDate - An AvaTax account.
+     * Setter for createdUserId;
+     * The User ID of the user who created this record.
      */
-    public void setCreatedDate(Date createdDate) {
-        this.createdDate = createdDate;
+    public void setcreatedUserId(Int32? value) {;
+        this.createdUserId = value;;
     }
 
-    
+
+    private DateTime? modifiedDate;
+
+    /**
+     * Getter for modifiedDate;
+     * The date/time when this record was last modified.
+     */
+    public DateTime? getmodifiedDate() {;
+        return this.modifiedDate;;
+    }
+
+    /**
+     * Setter for modifiedDate;
+     * The date/time when this record was last modified.
+     */
+    public void setmodifiedDate(DateTime? value) {;
+        this.modifiedDate = value;;
+    }
+
+
+    private Int32? modifiedUserId;
+
+    /**
+     * Getter for modifiedUserId;
+     * The user ID of the user who last modified this record.
+     */
+    public Int32? getmodifiedUserId() {;
+        return this.modifiedUserId;;
+    }
+
+    /**
+     * Setter for modifiedUserId;
+     * The user ID of the user who last modified this record.
+     */
+    public void setmodifiedUserId(Int32? value) {;
+        this.modifiedUserId = value;;
+    }
+
+
+    private List<SubscriptionModel> subscriptions;
+
+    /**
+     * Getter for subscriptions;
+     * Optional: A list of subscriptions granted to this account. To fetch this list, add the query string "?$include=Subscriptions" to your URL.
+     */
+    public List<SubscriptionModel> getsubscriptions() {;
+        return this.subscriptions;;
+    }
+
+    /**
+     * Setter for subscriptions;
+     * Optional: A list of subscriptions granted to this account. To fetch this list, add the query string "?$include=Subscriptions" to your URL.
+     */
+    public void setsubscriptions(List<SubscriptionModel> value) {;
+        this.subscriptions = value;;
+    }
+
+
+    private List<UserModel> users;
+
+    /**
+     * Getter for users;
+     * Optional: A list of all the users belonging to this account. To fetch this list, add the query string "?$include=Users" to your URL.
+     */
+    public List<UserModel> getusers() {;
+        return this.users;;
+    }
+
+    /**
+     * Setter for users;
+     * Optional: A list of all the users belonging to this account. To fetch this list, add the query string "?$include=Users" to your URL.
+     */
+    public void setusers(List<UserModel> value) {;
+        this.users = value;;
+    }
 
 
     /**
-     * Returns a JSON string representation of AccountModel.
+     * Returns a JSON string representation of AccountModel
      */
     @Override
     public String toString() {
         return JsonSerializer.SerializeObject(this);
     }
 }
-    

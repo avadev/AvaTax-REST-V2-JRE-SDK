@@ -9,222 +9,260 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 
+/*
+ * AvaTax Software Development Kit for Java JRE based environments
+ *
+ * (c) 2004-2017 Avalara, Inc.
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ *
+ * @author     Dustin Welden <dustin.welden@avalara.com>
+ * @copyright  2004-2017 Avalara, Inc.
+ * @license    https://www.apache.org/licenses/LICENSE-2.0
+ * @version    17.5.2-77
+ * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ */
+
 /**
  * A model for return adjustments.
  */
 public class FilingAdjustmentModel {
-    private Long filingId;
+
+
+    private Int64? id;
 
     /**
-     * Getter for filingId - A model for return adjustments.
+     * Getter for id;
+     * The unique ID number for the adjustment.
      */
-    public Long getFilingId() {
-        return this.filingId;
+    public Int64? getid() {;
+        return this.id;;
     }
 
     /**
-     * Setter for filingId - A model for return adjustments.
+     * Setter for id;
+     * The unique ID number for the adjustment.
      */
-    public void setFilingId(Long filingId) {
-        this.filingId = filingId;
+    public void setid(Int64? value) {;
+        this.id = value;;
     }
 
-    
-    private Date modifiedDate;
+
+    private Int64? filingId;
 
     /**
-     * Getter for modifiedDate - A model for return adjustments.
+     * Getter for filingId;
+     * The filing return id that this applies too
      */
-    public Date getModifiedDate() {
-        return this.modifiedDate;
-    }
-
-    /**
-     * Setter for modifiedDate - A model for return adjustments.
-     */
-    public void setModifiedDate(Date modifiedDate) {
-        this.modifiedDate = modifiedDate;
-    }
-
-    
-    private Boolean isCalculated;
-
-    /**
-     * Getter for isCalculated - A model for return adjustments.
-     */
-    public Boolean getIsCalculated() {
-        return this.isCalculated;
+    public Int64? getfilingId() {;
+        return this.filingId;;
     }
 
     /**
-     * Setter for isCalculated - A model for return adjustments.
+     * Setter for filingId;
+     * The filing return id that this applies too
      */
-    public void setIsCalculated(Boolean isCalculated) {
-        this.isCalculated = isCalculated;
+    public void setfilingId(Int64? value) {;
+        this.filingId = value;;
     }
 
-    
-    private String reason;
+
+    private Decimal amount;
 
     /**
-     * Getter for reason - A model for return adjustments.
+     * Getter for amount;
+     * The adjustment amount.
      */
-    public String getReason() {
-        return this.reason;
-    }
-
-    /**
-     * Setter for reason - A model for return adjustments.
-     */
-    public void setReason(String reason) {
-        this.reason = reason;
-    }
-
-    
-    private BigDecimal amount;
-
-    /**
-     * Getter for amount - A model for return adjustments.
-     */
-    public BigDecimal getAmount() {
-        return this.amount;
+    public Decimal getamount() {;
+        return this.amount;;
     }
 
     /**
-     * Setter for amount - A model for return adjustments.
+     * Setter for amount;
+     * The adjustment amount.
      */
-    public void setAmount(BigDecimal amount) {
-        this.amount = amount;
+    public void setamount(Decimal value) {;
+        this.amount = value;;
     }
 
-    
-    private Long id;
 
-    /**
-     * Getter for id - A model for return adjustments.
-     */
-    public Long getId() {
-        return this.id;
-    }
-
-    /**
-     * Setter for id - A model for return adjustments.
-     */
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    
-    private PaymentAccountTypeId accountType;
-
-    /**
-     * Getter for accountType - A model for return adjustments.
-     */
-    public PaymentAccountTypeId getAccountType() {
-        return this.accountType;
-    }
-
-    /**
-     * Setter for accountType - A model for return adjustments.
-     */
-    public void setAccountType(PaymentAccountTypeId accountType) {
-        this.accountType = accountType;
-    }
-
-    
-    private Integer modifiedUserId;
-
-    /**
-     * Getter for modifiedUserId - A model for return adjustments.
-     */
-    public Integer getModifiedUserId() {
-        return this.modifiedUserId;
-    }
-
-    /**
-     * Setter for modifiedUserId - A model for return adjustments.
-     */
-    public void setModifiedUserId(Integer modifiedUserId) {
-        this.modifiedUserId = modifiedUserId;
-    }
-
-    
-    private Integer createdUserId;
-
-    /**
-     * Getter for createdUserId - A model for return adjustments.
-     */
-    public Integer getCreatedUserId() {
-        return this.createdUserId;
-    }
-
-    /**
-     * Setter for createdUserId - A model for return adjustments.
-     */
-    public void setCreatedUserId(Integer createdUserId) {
-        this.createdUserId = createdUserId;
-    }
-
-    
-    private AdjustmentTypeId type;
-
-    /**
-     * Getter for type - A model for return adjustments.
-     */
-    public AdjustmentTypeId getType() {
-        return this.type;
-    }
-
-    /**
-     * Setter for type - A model for return adjustments.
-     */
-    public void setType(AdjustmentTypeId type) {
-        this.type = type;
-    }
-
-    
     private AdjustmentPeriodTypeId period;
 
     /**
-     * Getter for period - A model for return adjustments.
+     * Getter for period;
+     * The filing period the adjustment is applied to.
      */
-    public AdjustmentPeriodTypeId getPeriod() {
-        return this.period;
+    public AdjustmentPeriodTypeId getperiod() {;
+        return this.period;;
     }
 
     /**
-     * Setter for period - A model for return adjustments.
+     * Setter for period;
+     * The filing period the adjustment is applied to.
      */
-    public void setPeriod(AdjustmentPeriodTypeId period) {
-        this.period = period;
+    public void setperiod(AdjustmentPeriodTypeId value) {;
+        this.period = value;;
     }
 
-    
-    private Date createdDate;
+
+    private AdjustmentTypeId type;
 
     /**
-     * Getter for createdDate - A model for return adjustments.
+     * Getter for type;
+     * The type of the adjustment.
      */
-    public Date getCreatedDate() {
-        return this.createdDate;
+    public AdjustmentTypeId gettype() {;
+        return this.type;;
     }
 
     /**
-     * Setter for createdDate - A model for return adjustments.
+     * Setter for type;
+     * The type of the adjustment.
      */
-    public void setCreatedDate(Date createdDate) {
-        this.createdDate = createdDate;
+    public void settype(AdjustmentTypeId value) {;
+        this.type = value;;
     }
 
-    
+
+    private Boolean? isCalculated;
+
+    /**
+     * Getter for isCalculated;
+     * Whether or not the adjustment has been calculated.
+     */
+    public Boolean? getisCalculated() {;
+        return this.isCalculated;;
+    }
+
+    /**
+     * Setter for isCalculated;
+     * Whether or not the adjustment has been calculated.
+     */
+    public void setisCalculated(Boolean? value) {;
+        this.isCalculated = value;;
+    }
+
+
+    private PaymentAccountTypeId accountType;
+
+    /**
+     * Getter for accountType;
+     * The account type of the adjustment.
+     */
+    public PaymentAccountTypeId getaccountType() {;
+        return this.accountType;;
+    }
+
+    /**
+     * Setter for accountType;
+     * The account type of the adjustment.
+     */
+    public void setaccountType(PaymentAccountTypeId value) {;
+        this.accountType = value;;
+    }
+
+
+    private String reason;
+
+    /**
+     * Getter for reason;
+     * A descriptive reason for creating this adjustment.
+     */
+    public String getreason() {;
+        return this.reason;;
+    }
+
+    /**
+     * Setter for reason;
+     * A descriptive reason for creating this adjustment.
+     */
+    public void setreason(String value) {;
+        this.reason = value;;
+    }
+
+
+    private DateTime? createdDate;
+
+    /**
+     * Getter for createdDate;
+     * The date when this record was created.
+     */
+    public DateTime? getcreatedDate() {;
+        return this.createdDate;;
+    }
+
+    /**
+     * Setter for createdDate;
+     * The date when this record was created.
+     */
+    public void setcreatedDate(DateTime? value) {;
+        this.createdDate = value;;
+    }
+
+
+    private Int32? createdUserId;
+
+    /**
+     * Getter for createdUserId;
+     * The User ID of the user who created this record.
+     */
+    public Int32? getcreatedUserId() {;
+        return this.createdUserId;;
+    }
+
+    /**
+     * Setter for createdUserId;
+     * The User ID of the user who created this record.
+     */
+    public void setcreatedUserId(Int32? value) {;
+        this.createdUserId = value;;
+    }
+
+
+    private DateTime? modifiedDate;
+
+    /**
+     * Getter for modifiedDate;
+     * The date/time when this record was last modified.
+     */
+    public DateTime? getmodifiedDate() {;
+        return this.modifiedDate;;
+    }
+
+    /**
+     * Setter for modifiedDate;
+     * The date/time when this record was last modified.
+     */
+    public void setmodifiedDate(DateTime? value) {;
+        this.modifiedDate = value;;
+    }
+
+
+    private Int32? modifiedUserId;
+
+    /**
+     * Getter for modifiedUserId;
+     * The user ID of the user who last modified this record.
+     */
+    public Int32? getmodifiedUserId() {;
+        return this.modifiedUserId;;
+    }
+
+    /**
+     * Setter for modifiedUserId;
+     * The user ID of the user who last modified this record.
+     */
+    public void setmodifiedUserId(Int32? value) {;
+        this.modifiedUserId = value;;
+    }
 
 
     /**
-     * Returns a JSON string representation of FilingAdjustmentModel.
+     * Returns a JSON string representation of FilingAdjustmentModel
      */
     @Override
     public String toString() {
         return JsonSerializer.SerializeObject(this);
     }
 }
-    

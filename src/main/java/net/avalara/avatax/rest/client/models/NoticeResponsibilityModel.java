@@ -9,86 +9,108 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 
+/*
+ * AvaTax Software Development Kit for Java JRE based environments
+ *
+ * (c) 2004-2017 Avalara, Inc.
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ *
+ * @author     Dustin Welden <dustin.welden@avalara.com>
+ * @copyright  2004-2017 Avalara, Inc.
+ * @license    https://www.apache.org/licenses/LICENSE-2.0
+ * @version    17.5.2-77
+ * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ */
+
 /**
  * NoticeResponsibility Model
  */
 public class NoticeResponsibilityModel {
-    private Integer id;
+
+
+    private Int32? id;
 
     /**
-     * Getter for id - NoticeResponsibility Model
+     * Getter for id;
+     * The unique ID number of this notice responsibility.
      */
-    public Integer getId() {
-        return this.id;
+    public Int32? getid() {;
+        return this.id;;
     }
 
     /**
-     * Setter for id - NoticeResponsibility Model
+     * Setter for id;
+     * The unique ID number of this notice responsibility.
      */
-    public void setId(Integer id) {
-        this.id = id;
+    public void setid(Int32? value) {;
+        this.id = value;;
     }
 
-    
+
     private String description;
 
     /**
-     * Getter for description - NoticeResponsibility Model
+     * Getter for description;
+     * The description name of this notice responsibility
      */
-    public String getDescription() {
-        return this.description;
+    public String getdescription() {;
+        return this.description;;
     }
 
     /**
-     * Setter for description - NoticeResponsibility Model
+     * Setter for description;
+     * The description name of this notice responsibility
      */
-    public void setDescription(String description) {
-        this.description = description;
+    public void setdescription(String value) {;
+        this.description = value;;
     }
 
-    
-    private Boolean isActive;
+
+    private Boolean? isActive;
 
     /**
-     * Getter for isActive - NoticeResponsibility Model
+     * Getter for isActive;
+     * Defines if the responsibility is active
      */
-    public Boolean getIsActive() {
-        return this.isActive;
-    }
-
-    /**
-     * Setter for isActive - NoticeResponsibility Model
-     */
-    public void setIsActive(Boolean isActive) {
-        this.isActive = isActive;
-    }
-
-    
-    private Integer sortOrder;
-
-    /**
-     * Getter for sortOrder - NoticeResponsibility Model
-     */
-    public Integer getSortOrder() {
-        return this.sortOrder;
+    public Boolean? getisActive() {;
+        return this.isActive;;
     }
 
     /**
-     * Setter for sortOrder - NoticeResponsibility Model
+     * Setter for isActive;
+     * Defines if the responsibility is active
      */
-    public void setSortOrder(Integer sortOrder) {
-        this.sortOrder = sortOrder;
+    public void setisActive(Boolean? value) {;
+        this.isActive = value;;
     }
 
-    
+
+    private Int32? sortOrder;
+
+    /**
+     * Getter for sortOrder;
+     * The sort order of this responsibility
+     */
+    public Int32? getsortOrder() {;
+        return this.sortOrder;;
+    }
+
+    /**
+     * Setter for sortOrder;
+     * The sort order of this responsibility
+     */
+    public void setsortOrder(Int32? value) {;
+        this.sortOrder = value;;
+    }
 
 
     /**
-     * Returns a JSON string representation of NoticeResponsibilityModel.
+     * Returns a JSON string representation of NoticeResponsibilityModel
      */
     @Override
     public String toString() {
         return JsonSerializer.SerializeObject(this);
     }
 }
-    

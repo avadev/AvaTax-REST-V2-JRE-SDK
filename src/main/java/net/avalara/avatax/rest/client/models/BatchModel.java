@@ -9,307 +9,355 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 
+/*
+ * AvaTax Software Development Kit for Java JRE based environments
+ *
+ * (c) 2004-2017 Avalara, Inc.
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ *
+ * @author     Dustin Welden <dustin.welden@avalara.com>
+ * @copyright  2004-2017 Avalara, Inc.
+ * @license    https://www.apache.org/licenses/LICENSE-2.0
+ * @version    17.5.2-77
+ * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ */
+
 /**
  * Represents a batch of uploaded documents.
  */
 public class BatchModel {
+
+
+    private Int32? id;
+
+    /**
+     * Getter for id;
+     * The unique ID number of this batch.
+     */
+    public Int32? getid() {;
+        return this.id;;
+    }
+
+    /**
+     * Setter for id;
+     * The unique ID number of this batch.
+     */
+    public void setid(Int32? value) {;
+        this.id = value;;
+    }
+
+
     private String name;
 
     /**
-     * Getter for name - Represents a batch of uploaded documents.
+     * Getter for name;
+     * The user-friendly readable name for this batch.
      */
-    public String getName() {
-        return this.name;
+    public String getname() {;
+        return this.name;;
     }
 
     /**
-     * Setter for name - Represents a batch of uploaded documents.
+     * Setter for name;
+     * The user-friendly readable name for this batch.
      */
-    public void setName(String name) {
-        this.name = name;
+    public void setname(String value) {;
+        this.name = value;;
     }
 
-    
-    private Integer currentRecord;
+
+    private Int32? accountId;
 
     /**
-     * Getter for currentRecord - Represents a batch of uploaded documents.
+     * Getter for accountId;
+     * The Account ID number of the account that owns this batch.
      */
-    public Integer getCurrentRecord() {
-        return this.currentRecord;
-    }
-
-    /**
-     * Setter for currentRecord - Represents a batch of uploaded documents.
-     */
-    public void setCurrentRecord(Integer currentRecord) {
-        this.currentRecord = currentRecord;
-    }
-
-    
-    private Date modifiedDate;
-
-    /**
-     * Getter for modifiedDate - Represents a batch of uploaded documents.
-     */
-    public Date getModifiedDate() {
-        return this.modifiedDate;
+    public Int32? getaccountId() {;
+        return this.accountId;;
     }
 
     /**
-     * Setter for modifiedDate - Represents a batch of uploaded documents.
+     * Setter for accountId;
+     * The Account ID number of the account that owns this batch.
      */
-    public void setModifiedDate(Date modifiedDate) {
-        this.modifiedDate = modifiedDate;
+    public void setaccountId(Int32? value) {;
+        this.accountId = value;;
     }
 
-    
-    private Integer accountId;
+
+    private Int32? companyId;
 
     /**
-     * Getter for accountId - Represents a batch of uploaded documents.
+     * Getter for companyId;
+     * The Company ID number of the company that owns this batch.
      */
-    public Integer getAccountId() {
-        return this.accountId;
-    }
-
-    /**
-     * Setter for accountId - Represents a batch of uploaded documents.
-     */
-    public void setAccountId(Integer accountId) {
-        this.accountId = accountId;
-    }
-
-    
-    private Date startedDate;
-
-    /**
-     * Getter for startedDate - Represents a batch of uploaded documents.
-     */
-    public Date getStartedDate() {
-        return this.startedDate;
+    public Int32? getcompanyId() {;
+        return this.companyId;;
     }
 
     /**
-     * Setter for startedDate - Represents a batch of uploaded documents.
+     * Setter for companyId;
+     * The Company ID number of the company that owns this batch.
      */
-    public void setStartedDate(Date startedDate) {
-        this.startedDate = startedDate;
+    public void setcompanyId(Int32? value) {;
+        this.companyId = value;;
     }
 
-    
-    private ArrayList<BatchFileModel> files;
 
-    /**
-     * Getter for files - Represents a batch of uploaded documents.
-     */
-    public ArrayList<BatchFileModel> getFiles() {
-        return this.files;
-    }
-
-    /**
-     * Setter for files - Represents a batch of uploaded documents.
-     */
-    public void setFiles(ArrayList<BatchFileModel> files) {
-        this.files = files;
-    }
-
-    
-    private String options;
-
-    /**
-     * Getter for options - Represents a batch of uploaded documents.
-     */
-    public String getOptions() {
-        return this.options;
-    }
-
-    /**
-     * Setter for options - Represents a batch of uploaded documents.
-     */
-    public void setOptions(String options) {
-        this.options = options;
-    }
-
-    
-    private Integer id;
-
-    /**
-     * Getter for id - Represents a batch of uploaded documents.
-     */
-    public Integer getId() {
-        return this.id;
-    }
-
-    /**
-     * Setter for id - Represents a batch of uploaded documents.
-     */
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    
-    private String batchAgent;
-
-    /**
-     * Getter for batchAgent - Represents a batch of uploaded documents.
-     */
-    public String getBatchAgent() {
-        return this.batchAgent;
-    }
-
-    /**
-     * Setter for batchAgent - Represents a batch of uploaded documents.
-     */
-    public void setBatchAgent(String batchAgent) {
-        this.batchAgent = batchAgent;
-    }
-
-    
-    private BatchStatus status;
-
-    /**
-     * Getter for status - Represents a batch of uploaded documents.
-     */
-    public BatchStatus getStatus() {
-        return this.status;
-    }
-
-    /**
-     * Setter for status - Represents a batch of uploaded documents.
-     */
-    public void setStatus(BatchStatus status) {
-        this.status = status;
-    }
-
-    
-    private Integer modifiedUserId;
-
-    /**
-     * Getter for modifiedUserId - Represents a batch of uploaded documents.
-     */
-    public Integer getModifiedUserId() {
-        return this.modifiedUserId;
-    }
-
-    /**
-     * Setter for modifiedUserId - Represents a batch of uploaded documents.
-     */
-    public void setModifiedUserId(Integer modifiedUserId) {
-        this.modifiedUserId = modifiedUserId;
-    }
-
-    
-    private Integer createdUserId;
-
-    /**
-     * Getter for createdUserId - Represents a batch of uploaded documents.
-     */
-    public Integer getCreatedUserId() {
-        return this.createdUserId;
-    }
-
-    /**
-     * Setter for createdUserId - Represents a batch of uploaded documents.
-     */
-    public void setCreatedUserId(Integer createdUserId) {
-        this.createdUserId = createdUserId;
-    }
-
-    
-    private Integer recordCount;
-
-    /**
-     * Getter for recordCount - Represents a batch of uploaded documents.
-     */
-    public Integer getRecordCount() {
-        return this.recordCount;
-    }
-
-    /**
-     * Setter for recordCount - Represents a batch of uploaded documents.
-     */
-    public void setRecordCount(Integer recordCount) {
-        this.recordCount = recordCount;
-    }
-
-    
     private BatchType type;
 
     /**
-     * Getter for type - Represents a batch of uploaded documents.
+     * Getter for type;
+     * The type of this batch.
      */
-    public BatchType getType() {
-        return this.type;
+    public BatchType gettype() {;
+        return this.type;;
     }
 
     /**
-     * Setter for type - Represents a batch of uploaded documents.
+     * Setter for type;
+     * The type of this batch.
      */
-    public void setType(BatchType type) {
-        this.type = type;
+    public void settype(BatchType value) {;
+        this.type = value;;
     }
 
-    
-    private Integer companyId;
+
+    private BatchStatus? status;
 
     /**
-     * Getter for companyId - Represents a batch of uploaded documents.
+     * Getter for status;
+     * This batch's current processing status
      */
-    public Integer getCompanyId() {
-        return this.companyId;
-    }
-
-    /**
-     * Setter for companyId - Represents a batch of uploaded documents.
-     */
-    public void setCompanyId(Integer companyId) {
-        this.companyId = companyId;
-    }
-
-    
-    private Date createdDate;
-
-    /**
-     * Getter for createdDate - Represents a batch of uploaded documents.
-     */
-    public Date getCreatedDate() {
-        return this.createdDate;
+    public BatchStatus? getstatus() {;
+        return this.status;;
     }
 
     /**
-     * Setter for createdDate - Represents a batch of uploaded documents.
+     * Setter for status;
+     * This batch's current processing status
      */
-    public void setCreatedDate(Date createdDate) {
-        this.createdDate = createdDate;
+    public void setstatus(BatchStatus? value) {;
+        this.status = value;;
     }
 
-    
-    private Date completedDate;
+
+    private String options;
 
     /**
-     * Getter for completedDate - Represents a batch of uploaded documents.
+     * Getter for options;
+     * Any optional flags provided for this batch
      */
-    public Date getCompletedDate() {
-        return this.completedDate;
+    public String getoptions() {;
+        return this.options;;
     }
 
     /**
-     * Setter for completedDate - Represents a batch of uploaded documents.
+     * Setter for options;
+     * Any optional flags provided for this batch
      */
-    public void setCompletedDate(Date completedDate) {
-        this.completedDate = completedDate;
+    public void setoptions(String value) {;
+        this.options = value;;
     }
 
-    
+
+    private String batchAgent;
+
+    /**
+     * Getter for batchAgent;
+     * The agent used to create this batch
+     */
+    public String getbatchAgent() {;
+        return this.batchAgent;;
+    }
+
+    /**
+     * Setter for batchAgent;
+     * The agent used to create this batch
+     */
+    public void setbatchAgent(String value) {;
+        this.batchAgent = value;;
+    }
+
+
+    private DateTime? startedDate;
+
+    /**
+     * Getter for startedDate;
+     * The date/time when this batch started processing
+     */
+    public DateTime? getstartedDate() {;
+        return this.startedDate;;
+    }
+
+    /**
+     * Setter for startedDate;
+     * The date/time when this batch started processing
+     */
+    public void setstartedDate(DateTime? value) {;
+        this.startedDate = value;;
+    }
+
+
+    private Int32? recordCount;
+
+    /**
+     * Getter for recordCount;
+     * The number of records in this batch; determined by the server
+     */
+    public Int32? getrecordCount() {;
+        return this.recordCount;;
+    }
+
+    /**
+     * Setter for recordCount;
+     * The number of records in this batch; determined by the server
+     */
+    public void setrecordCount(Int32? value) {;
+        this.recordCount = value;;
+    }
+
+
+    private Int32? currentRecord;
+
+    /**
+     * Getter for currentRecord;
+     * The current record being processed
+     */
+    public Int32? getcurrentRecord() {;
+        return this.currentRecord;;
+    }
+
+    /**
+     * Setter for currentRecord;
+     * The current record being processed
+     */
+    public void setcurrentRecord(Int32? value) {;
+        this.currentRecord = value;;
+    }
+
+
+    private DateTime? completedDate;
+
+    /**
+     * Getter for completedDate;
+     * The date/time when this batch was completely processed
+     */
+    public DateTime? getcompletedDate() {;
+        return this.completedDate;;
+    }
+
+    /**
+     * Setter for completedDate;
+     * The date/time when this batch was completely processed
+     */
+    public void setcompletedDate(DateTime? value) {;
+        this.completedDate = value;;
+    }
+
+
+    private DateTime? createdDate;
+
+    /**
+     * Getter for createdDate;
+     * The date when this record was created.
+     */
+    public DateTime? getcreatedDate() {;
+        return this.createdDate;;
+    }
+
+    /**
+     * Setter for createdDate;
+     * The date when this record was created.
+     */
+    public void setcreatedDate(DateTime? value) {;
+        this.createdDate = value;;
+    }
+
+
+    private Int32? createdUserId;
+
+    /**
+     * Getter for createdUserId;
+     * The User ID of the user who created this record.
+     */
+    public Int32? getcreatedUserId() {;
+        return this.createdUserId;;
+    }
+
+    /**
+     * Setter for createdUserId;
+     * The User ID of the user who created this record.
+     */
+    public void setcreatedUserId(Int32? value) {;
+        this.createdUserId = value;;
+    }
+
+
+    private DateTime? modifiedDate;
+
+    /**
+     * Getter for modifiedDate;
+     * The date/time when this record was last modified.
+     */
+    public DateTime? getmodifiedDate() {;
+        return this.modifiedDate;;
+    }
+
+    /**
+     * Setter for modifiedDate;
+     * The date/time when this record was last modified.
+     */
+    public void setmodifiedDate(DateTime? value) {;
+        this.modifiedDate = value;;
+    }
+
+
+    private Int32? modifiedUserId;
+
+    /**
+     * Getter for modifiedUserId;
+     * The user ID of the user who last modified this record.
+     */
+    public Int32? getmodifiedUserId() {;
+        return this.modifiedUserId;;
+    }
+
+    /**
+     * Setter for modifiedUserId;
+     * The user ID of the user who last modified this record.
+     */
+    public void setmodifiedUserId(Int32? value) {;
+        this.modifiedUserId = value;;
+    }
+
+
+    private List<BatchFileModel> files;
+
+    /**
+     * Getter for files;
+     * The list of files contained in this batch.
+     */
+    public List<BatchFileModel> getfiles() {;
+        return this.files;;
+    }
+
+    /**
+     * Setter for files;
+     * The list of files contained in this batch.
+     */
+    public void setfiles(List<BatchFileModel> value) {;
+        this.files = value;;
+    }
 
 
     /**
-     * Returns a JSON string representation of BatchModel.
+     * Returns a JSON string representation of BatchModel
      */
     @Override
     public String toString() {
         return JsonSerializer.SerializeObject(this);
     }
 }
-    

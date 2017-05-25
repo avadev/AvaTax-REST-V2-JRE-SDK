@@ -9,171 +9,185 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 
+/*
+ * AvaTax Software Development Kit for Java JRE based environments
+ *
+ * (c) 2004-2017 Avalara, Inc.
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ *
+ * @author     Dustin Welden <dustin.welden@avalara.com>
+ * @copyright  2004-2017 Avalara, Inc.
+ * @license    https://www.apache.org/licenses/LICENSE-2.0
+ * @version    17.5.2-77
+ * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ */
+
 /**
  * Represents a commitment to file a tax return on a recurring basis.
-Only used if you subscribe to Avalara Returns.
+* Only used if you subscribe to Avalara Returns.
  */
 public class FilingRequestModel {
+
+
+    private Int64? id;
+
+    /**
+     * Getter for id;
+     * The unique ID number of this filing request.
+     */
+    public Int64? getid() {;
+        return this.id;;
+    }
+
+    /**
+     * Setter for id;
+     * The unique ID number of this filing request.
+     */
+    public void setid(Int64? value) {;
+        this.id = value;;
+    }
+
+
+    private Int32 companyId;
+
+    /**
+     * Getter for companyId;
+     * The unique ID number of the company to which this filing request belongs.
+     */
+    public Int32 getcompanyId() {;
+        return this.companyId;;
+    }
+
+    /**
+     * Setter for companyId;
+     * The unique ID number of the company to which this filing request belongs.
+     */
+    public void setcompanyId(Int32 value) {;
+        this.companyId = value;;
+    }
+
+
+    private FilingRequestStatus? filingRequestStatusId;
+
+    /**
+     * Getter for filingRequestStatusId;
+     * The current status of this request
+     */
+    public FilingRequestStatus? getfilingRequestStatusId() {;
+        return this.filingRequestStatusId;;
+    }
+
+    /**
+     * Setter for filingRequestStatusId;
+     * The current status of this request
+     */
+    public void setfilingRequestStatusId(FilingRequestStatus? value) {;
+        this.filingRequestStatusId = value;;
+    }
+
+
     private FilingRequestDataModel data;
 
     /**
-     * Getter for data - Represents a commitment to file a tax return on a recurring basis.
-Only used if you subscribe to Avalara Returns.
+     * Getter for data;
+     * The data model object of the request
      */
-    public FilingRequestDataModel getData() {
-        return this.data;
+    public FilingRequestDataModel getdata() {;
+        return this.data;;
     }
 
     /**
-     * Setter for data - Represents a commitment to file a tax return on a recurring basis.
-Only used if you subscribe to Avalara Returns.
+     * Setter for data;
+     * The data model object of the request
      */
-    public void setData(FilingRequestDataModel data) {
-        this.data = data;
+    public void setdata(FilingRequestDataModel value) {;
+        this.data = value;;
     }
 
-    
-    private Date modifiedDate;
+
+    private DateTime? createdDate;
 
     /**
-     * Getter for modifiedDate - Represents a commitment to file a tax return on a recurring basis.
-Only used if you subscribe to Avalara Returns.
+     * Getter for createdDate;
+     * The date when this record was created.
      */
-    public Date getModifiedDate() {
-        return this.modifiedDate;
-    }
-
-    /**
-     * Setter for modifiedDate - Represents a commitment to file a tax return on a recurring basis.
-Only used if you subscribe to Avalara Returns.
-     */
-    public void setModifiedDate(Date modifiedDate) {
-        this.modifiedDate = modifiedDate;
-    }
-
-    
-    private Long id;
-
-    /**
-     * Getter for id - Represents a commitment to file a tax return on a recurring basis.
-Only used if you subscribe to Avalara Returns.
-     */
-    public Long getId() {
-        return this.id;
+    public DateTime? getcreatedDate() {;
+        return this.createdDate;;
     }
 
     /**
-     * Setter for id - Represents a commitment to file a tax return on a recurring basis.
-Only used if you subscribe to Avalara Returns.
+     * Setter for createdDate;
+     * The date when this record was created.
      */
-    public void setId(Long id) {
-        this.id = id;
+    public void setcreatedDate(DateTime? value) {;
+        this.createdDate = value;;
     }
 
-    
-    private FilingRequestStatus filingRequestStatusId;
+
+    private Int32? createdUserId;
 
     /**
-     * Getter for filingRequestStatusId - Represents a commitment to file a tax return on a recurring basis.
-Only used if you subscribe to Avalara Returns.
+     * Getter for createdUserId;
+     * The User ID of the user who created this record.
      */
-    public FilingRequestStatus getFilingRequestStatusId() {
-        return this.filingRequestStatusId;
-    }
-
-    /**
-     * Setter for filingRequestStatusId - Represents a commitment to file a tax return on a recurring basis.
-Only used if you subscribe to Avalara Returns.
-     */
-    public void setFilingRequestStatusId(FilingRequestStatus filingRequestStatusId) {
-        this.filingRequestStatusId = filingRequestStatusId;
-    }
-
-    
-    private Integer modifiedUserId;
-
-    /**
-     * Getter for modifiedUserId - Represents a commitment to file a tax return on a recurring basis.
-Only used if you subscribe to Avalara Returns.
-     */
-    public Integer getModifiedUserId() {
-        return this.modifiedUserId;
+    public Int32? getcreatedUserId() {;
+        return this.createdUserId;;
     }
 
     /**
-     * Setter for modifiedUserId - Represents a commitment to file a tax return on a recurring basis.
-Only used if you subscribe to Avalara Returns.
+     * Setter for createdUserId;
+     * The User ID of the user who created this record.
      */
-    public void setModifiedUserId(Integer modifiedUserId) {
-        this.modifiedUserId = modifiedUserId;
+    public void setcreatedUserId(Int32? value) {;
+        this.createdUserId = value;;
     }
 
-    
-    private Integer createdUserId;
+
+    private DateTime? modifiedDate;
 
     /**
-     * Getter for createdUserId - Represents a commitment to file a tax return on a recurring basis.
-Only used if you subscribe to Avalara Returns.
+     * Getter for modifiedDate;
+     * The date/time when this record was last modified.
      */
-    public Integer getCreatedUserId() {
-        return this.createdUserId;
-    }
-
-    /**
-     * Setter for createdUserId - Represents a commitment to file a tax return on a recurring basis.
-Only used if you subscribe to Avalara Returns.
-     */
-    public void setCreatedUserId(Integer createdUserId) {
-        this.createdUserId = createdUserId;
-    }
-
-    
-    private Integer companyId;
-
-    /**
-     * Getter for companyId - Represents a commitment to file a tax return on a recurring basis.
-Only used if you subscribe to Avalara Returns.
-     */
-    public Integer getCompanyId() {
-        return this.companyId;
+    public DateTime? getmodifiedDate() {;
+        return this.modifiedDate;;
     }
 
     /**
-     * Setter for companyId - Represents a commitment to file a tax return on a recurring basis.
-Only used if you subscribe to Avalara Returns.
+     * Setter for modifiedDate;
+     * The date/time when this record was last modified.
      */
-    public void setCompanyId(Integer companyId) {
-        this.companyId = companyId;
+    public void setmodifiedDate(DateTime? value) {;
+        this.modifiedDate = value;;
     }
 
-    
-    private Date createdDate;
+
+    private Int32? modifiedUserId;
 
     /**
-     * Getter for createdDate - Represents a commitment to file a tax return on a recurring basis.
-Only used if you subscribe to Avalara Returns.
+     * Getter for modifiedUserId;
+     * The user ID of the user who last modified this record.
      */
-    public Date getCreatedDate() {
-        return this.createdDate;
+    public Int32? getmodifiedUserId() {;
+        return this.modifiedUserId;;
     }
 
     /**
-     * Setter for createdDate - Represents a commitment to file a tax return on a recurring basis.
-Only used if you subscribe to Avalara Returns.
+     * Setter for modifiedUserId;
+     * The user ID of the user who last modified this record.
      */
-    public void setCreatedDate(Date createdDate) {
-        this.createdDate = createdDate;
+    public void setmodifiedUserId(Int32? value) {;
+        this.modifiedUserId = value;;
     }
-
-    
 
 
     /**
-     * Returns a JSON string representation of FilingRequestModel.
+     * Returns a JSON string representation of FilingRequestModel
      */
     @Override
     public String toString() {
         return JsonSerializer.SerializeObject(this);
     }
 }
-    

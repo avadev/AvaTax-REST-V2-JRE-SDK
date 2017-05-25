@@ -9,69 +9,89 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 
+/*
+ * AvaTax Software Development Kit for Java JRE based environments
+ *
+ * (c) 2004-2017 Avalara, Inc.
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ *
+ * @author     Dustin Welden <dustin.welden@avalara.com>
+ * @copyright  2004-2017 Avalara, Inc.
+ * @license    https://www.apache.org/licenses/LICENSE-2.0
+ * @version    17.5.2-77
+ * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ */
+
 /**
  * A request to adjust tax for a previously existing transaction
  */
 public class AdjustTransactionModel {
+
+
     private AdjustmentReason adjustmentReason;
 
     /**
-     * Getter for adjustmentReason - A request to adjust tax for a previously existing transaction
+     * Getter for adjustmentReason;
+     * A reason code indicating why this adjustment was made
      */
-    public AdjustmentReason getAdjustmentReason() {
-        return this.adjustmentReason;
+    public AdjustmentReason getadjustmentReason() {;
+        return this.adjustmentReason;;
     }
 
     /**
-     * Setter for adjustmentReason - A request to adjust tax for a previously existing transaction
+     * Setter for adjustmentReason;
+     * A reason code indicating why this adjustment was made
      */
-    public void setAdjustmentReason(AdjustmentReason adjustmentReason) {
-        this.adjustmentReason = adjustmentReason;
+    public void setadjustmentReason(AdjustmentReason value) {;
+        this.adjustmentReason = value;;
     }
 
-    
+
     private String adjustmentDescription;
 
     /**
-     * Getter for adjustmentDescription - A request to adjust tax for a previously existing transaction
+     * Getter for adjustmentDescription;
+     * If the AdjustmentReason is "Other", specify the reason here
      */
-    public String getAdjustmentDescription() {
-        return this.adjustmentDescription;
+    public String getadjustmentDescription() {;
+        return this.adjustmentDescription;;
     }
 
     /**
-     * Setter for adjustmentDescription - A request to adjust tax for a previously existing transaction
+     * Setter for adjustmentDescription;
+     * If the AdjustmentReason is "Other", specify the reason here
      */
-    public void setAdjustmentDescription(String adjustmentDescription) {
-        this.adjustmentDescription = adjustmentDescription;
+    public void setadjustmentDescription(String value) {;
+        this.adjustmentDescription = value;;
     }
 
-    
+
     private CreateTransactionModel newTransaction;
 
     /**
-     * Getter for newTransaction - A request to adjust tax for a previously existing transaction
+     * Getter for newTransaction;
+     * Replace the current transaction with tax data calculated for this new transaction
      */
-    public CreateTransactionModel getNewTransaction() {
-        return this.newTransaction;
+    public CreateTransactionModel getnewTransaction() {;
+        return this.newTransaction;;
     }
 
     /**
-     * Setter for newTransaction - A request to adjust tax for a previously existing transaction
+     * Setter for newTransaction;
+     * Replace the current transaction with tax data calculated for this new transaction
      */
-    public void setNewTransaction(CreateTransactionModel newTransaction) {
-        this.newTransaction = newTransaction;
+    public void setnewTransaction(CreateTransactionModel value) {;
+        this.newTransaction = value;;
     }
-
-    
 
 
     /**
-     * Returns a JSON string representation of AdjustTransactionModel.
+     * Returns a JSON string representation of AdjustTransactionModel
      */
     @Override
     public String toString() {
         return JsonSerializer.SerializeObject(this);
     }
 }
-    

@@ -9,52 +9,70 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 
+/*
+ * AvaTax Software Development Kit for Java JRE based environments
+ *
+ * (c) 2004-2017 Avalara, Inc.
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ *
+ * @author     Dustin Welden <dustin.welden@avalara.com>
+ * @copyright  2004-2017 Avalara, Inc.
+ * @license    https://www.apache.org/licenses/LICENSE-2.0
+ * @version    17.5.2-77
+ * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ */
+
 /**
  * Bulk lock documents model
  */
 public class BulkLockTransactionModel {
-    private ArrayList<Long> documentIds;
+
+
+    private List<Int64> documentIds;
 
     /**
-     * Getter for documentIds - Bulk lock documents model
+     * Getter for documentIds;
+     * List of documents to lock
      */
-    public ArrayList<Long> getDocumentIds() {
-        return this.documentIds;
+    public List<Int64> getdocumentIds() {;
+        return this.documentIds;;
     }
 
     /**
-     * Setter for documentIds - Bulk lock documents model
+     * Setter for documentIds;
+     * List of documents to lock
      */
-    public void setDocumentIds(ArrayList<Long> documentIds) {
-        this.documentIds = documentIds;
+    public void setdocumentIds(List<Int64> value) {;
+        this.documentIds = value;;
     }
 
-    
+
     private Boolean isLocked;
 
     /**
-     * Getter for isLocked - Bulk lock documents model
+     * Getter for isLocked;
+     * The lock status to set for the documents designated in this API
      */
-    public Boolean getIsLocked() {
-        return this.isLocked;
+    public Boolean getisLocked() {;
+        return this.isLocked;;
     }
 
     /**
-     * Setter for isLocked - Bulk lock documents model
+     * Setter for isLocked;
+     * The lock status to set for the documents designated in this API
      */
-    public void setIsLocked(Boolean isLocked) {
-        this.isLocked = isLocked;
+    public void setisLocked(Boolean value) {;
+        this.isLocked = value;;
     }
-
-    
 
 
     /**
-     * Returns a JSON string representation of BulkLockTransactionModel.
+     * Returns a JSON string representation of BulkLockTransactionModel
      */
     @Override
     public String toString() {
         return JsonSerializer.SerializeObject(this);
     }
 }
-    

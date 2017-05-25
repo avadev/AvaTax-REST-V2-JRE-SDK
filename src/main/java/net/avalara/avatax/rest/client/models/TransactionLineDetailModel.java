@@ -9,681 +9,777 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 
+/*
+ * AvaTax Software Development Kit for Java JRE based environments
+ *
+ * (c) 2004-2017 Avalara, Inc.
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ *
+ * @author     Dustin Welden <dustin.welden@avalara.com>
+ * @copyright  2004-2017 Avalara, Inc.
+ * @license    https://www.apache.org/licenses/LICENSE-2.0
+ * @version    17.5.2-77
+ * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ */
+
 /**
- * An individual tax detail element.  Represents the amount of tax calculated for a particular jurisdiction, for a particular line in an invoice.
+ * An individual tax detail element. Represents the amount of tax calculated for a particular jurisdiction, for a particular line in an invoice.
  */
 public class TransactionLineDetailModel {
-    private BigDecimal rate;
+
+
+    private Int64? id;
 
     /**
-     * Getter for rate - An individual tax detail element.  Represents the amount of tax calculated for a particular jurisdiction, for a particular line in an invoice.
+     * Getter for id;
+     * The unique ID number of this tax detail.
      */
-    public BigDecimal getRate() {
-        return this.rate;
+    public Int64? getid() {;
+        return this.id;;
     }
 
     /**
-     * Setter for rate - An individual tax detail element.  Represents the amount of tax calculated for a particular jurisdiction, for a particular line in an invoice.
+     * Setter for id;
+     * The unique ID number of this tax detail.
      */
-    public void setRate(BigDecimal rate) {
-        this.rate = rate;
+    public void setid(Int64? value) {;
+        this.id = value;;
     }
 
-    
-    private BigDecimal exemptAmount;
+
+    private Int64? transactionLineId;
 
     /**
-     * Getter for exemptAmount - An individual tax detail element.  Represents the amount of tax calculated for a particular jurisdiction, for a particular line in an invoice.
+     * Getter for transactionLineId;
+     * The unique ID number of the line within this transaction.
      */
-    public BigDecimal getExemptAmount() {
-        return this.exemptAmount;
-    }
-
-    /**
-     * Setter for exemptAmount - An individual tax detail element.  Represents the amount of tax calculated for a particular jurisdiction, for a particular line in an invoice.
-     */
-    public void setExemptAmount(BigDecimal exemptAmount) {
-        this.exemptAmount = exemptAmount;
-    }
-
-    
-    private Integer rateSourceId;
-
-    /**
-     * Getter for rateSourceId - An individual tax detail element.  Represents the amount of tax calculated for a particular jurisdiction, for a particular line in an invoice.
-     */
-    public Integer getRateSourceId() {
-        return this.rateSourceId;
+    public Int64? gettransactionLineId() {;
+        return this.transactionLineId;;
     }
 
     /**
-     * Setter for rateSourceId - An individual tax detail element.  Represents the amount of tax calculated for a particular jurisdiction, for a particular line in an invoice.
+     * Setter for transactionLineId;
+     * The unique ID number of the line within this transaction.
      */
-    public void setRateSourceId(Integer rateSourceId) {
-        this.rateSourceId = rateSourceId;
+    public void settransactionLineId(Int64? value) {;
+        this.transactionLineId = value;;
     }
 
-    
-    private String serCode;
+
+    private Int64? transactionId;
 
     /**
-     * Getter for serCode - An individual tax detail element.  Represents the amount of tax calculated for a particular jurisdiction, for a particular line in an invoice.
+     * Getter for transactionId;
+     * The unique ID number of this transaction.
      */
-    public String getSerCode() {
-        return this.serCode;
-    }
-
-    /**
-     * Setter for serCode - An individual tax detail element.  Represents the amount of tax calculated for a particular jurisdiction, for a particular line in an invoice.
-     */
-    public void setSerCode(String serCode) {
-        this.serCode = serCode;
-    }
-
-    
-    private JurisTypeId jurisType;
-
-    /**
-     * Getter for jurisType - An individual tax detail element.  Represents the amount of tax calculated for a particular jurisdiction, for a particular line in an invoice.
-     */
-    public JurisTypeId getJurisType() {
-        return this.jurisType;
+    public Int64? gettransactionId() {;
+        return this.transactionId;;
     }
 
     /**
-     * Setter for jurisType - An individual tax detail element.  Represents the amount of tax calculated for a particular jurisdiction, for a particular line in an invoice.
+     * Setter for transactionId;
+     * The unique ID number of this transaction.
      */
-    public void setJurisType(JurisTypeId jurisType) {
-        this.jurisType = jurisType;
+    public void settransactionId(Int64? value) {;
+        this.transactionId = value;;
     }
 
-    
-    private String jurisCode;
+
+    private Int64? addressId;
 
     /**
-     * Getter for jurisCode - An individual tax detail element.  Represents the amount of tax calculated for a particular jurisdiction, for a particular line in an invoice.
+     * Getter for addressId;
+     * The unique ID number of the address used for this tax detail.
      */
-    public String getJurisCode() {
-        return this.jurisCode;
-    }
-
-    /**
-     * Setter for jurisCode - An individual tax detail element.  Represents the amount of tax calculated for a particular jurisdiction, for a particular line in an invoice.
-     */
-    public void setJurisCode(String jurisCode) {
-        this.jurisCode = jurisCode;
-    }
-
-    
-    private BigDecimal tax;
-
-    /**
-     * Getter for tax - An individual tax detail element.  Represents the amount of tax calculated for a particular jurisdiction, for a particular line in an invoice.
-     */
-    public BigDecimal getTax() {
-        return this.tax;
+    public Int64? getaddressId() {;
+        return this.addressId;;
     }
 
     /**
-     * Setter for tax - An individual tax detail element.  Represents the amount of tax calculated for a particular jurisdiction, for a particular line in an invoice.
+     * Setter for addressId;
+     * The unique ID number of the address used for this tax detail.
      */
-    public void setTax(BigDecimal tax) {
-        this.tax = tax;
+    public void setaddressId(Int64? value) {;
+        this.addressId = value;;
     }
 
-    
-    private Integer jurisdictionId;
 
-    /**
-     * Getter for jurisdictionId - An individual tax detail element.  Represents the amount of tax calculated for a particular jurisdiction, for a particular line in an invoice.
-     */
-    public Integer getJurisdictionId() {
-        return this.jurisdictionId;
-    }
-
-    /**
-     * Setter for jurisdictionId - An individual tax detail element.  Represents the amount of tax calculated for a particular jurisdiction, for a particular line in an invoice.
-     */
-    public void setJurisdictionId(Integer jurisdictionId) {
-        this.jurisdictionId = jurisdictionId;
-    }
-
-    
-    private BigDecimal taxOverride;
-
-    /**
-     * Getter for taxOverride - An individual tax detail element.  Represents the amount of tax calculated for a particular jurisdiction, for a particular line in an invoice.
-     */
-    public BigDecimal getTaxOverride() {
-        return this.taxOverride;
-    }
-
-    /**
-     * Setter for taxOverride - An individual tax detail element.  Represents the amount of tax calculated for a particular jurisdiction, for a particular line in an invoice.
-     */
-    public void setTaxOverride(BigDecimal taxOverride) {
-        this.taxOverride = taxOverride;
-    }
-
-    
-    private String taxName;
-
-    /**
-     * Getter for taxName - An individual tax detail element.  Represents the amount of tax calculated for a particular jurisdiction, for a particular line in an invoice.
-     */
-    public String getTaxName() {
-        return this.taxName;
-    }
-
-    /**
-     * Setter for taxName - An individual tax detail element.  Represents the amount of tax calculated for a particular jurisdiction, for a particular line in an invoice.
-     */
-    public void setTaxName(String taxName) {
-        this.taxName = taxName;
-    }
-
-    
-    private Integer nonTaxableRuleId;
-
-    /**
-     * Getter for nonTaxableRuleId - An individual tax detail element.  Represents the amount of tax calculated for a particular jurisdiction, for a particular line in an invoice.
-     */
-    public Integer getNonTaxableRuleId() {
-        return this.nonTaxableRuleId;
-    }
-
-    /**
-     * Setter for nonTaxableRuleId - An individual tax detail element.  Represents the amount of tax calculated for a particular jurisdiction, for a particular line in an invoice.
-     */
-    public void setNonTaxableRuleId(Integer nonTaxableRuleId) {
-        this.nonTaxableRuleId = nonTaxableRuleId;
-    }
-
-    
-    private Integer exemptReasonId;
-
-    /**
-     * Getter for exemptReasonId - An individual tax detail element.  Represents the amount of tax calculated for a particular jurisdiction, for a particular line in an invoice.
-     */
-    public Integer getExemptReasonId() {
-        return this.exemptReasonId;
-    }
-
-    /**
-     * Setter for exemptReasonId - An individual tax detail element.  Represents the amount of tax calculated for a particular jurisdiction, for a particular line in an invoice.
-     */
-    public void setExemptReasonId(Integer exemptReasonId) {
-        this.exemptReasonId = exemptReasonId;
-    }
-
-    
-    private TaxType taxType;
-
-    /**
-     * Getter for taxType - An individual tax detail element.  Represents the amount of tax calculated for a particular jurisdiction, for a particular line in an invoice.
-     */
-    public TaxType getTaxType() {
-        return this.taxType;
-    }
-
-    /**
-     * Setter for taxType - An individual tax detail element.  Represents the amount of tax calculated for a particular jurisdiction, for a particular line in an invoice.
-     */
-    public void setTaxType(TaxType taxType) {
-        this.taxType = taxType;
-    }
-
-    
-    private Sourcing sourcing;
-
-    /**
-     * Getter for sourcing - An individual tax detail element.  Represents the amount of tax calculated for a particular jurisdiction, for a particular line in an invoice.
-     */
-    public Sourcing getSourcing() {
-        return this.sourcing;
-    }
-
-    /**
-     * Setter for sourcing - An individual tax detail element.  Represents the amount of tax calculated for a particular jurisdiction, for a particular line in an invoice.
-     */
-    public void setSourcing(Sourcing sourcing) {
-        this.sourcing = sourcing;
-    }
-
-    
     private String country;
 
     /**
-     * Getter for country - An individual tax detail element.  Represents the amount of tax calculated for a particular jurisdiction, for a particular line in an invoice.
+     * Getter for country;
+     * The two character ISO 3166 country code of the country where this tax detail is assigned.
      */
-    public String getCountry() {
-        return this.country;
+    public String getcountry() {;
+        return this.country;;
     }
 
     /**
-     * Setter for country - An individual tax detail element.  Represents the amount of tax calculated for a particular jurisdiction, for a particular line in an invoice.
+     * Setter for country;
+     * The two character ISO 3166 country code of the country where this tax detail is assigned.
      */
-    public void setCountry(String country) {
-        this.country = country;
+    public void setcountry(String value) {;
+        this.country = value;;
     }
 
-    
-    private Integer rateRuleId;
 
-    /**
-     * Getter for rateRuleId - An individual tax detail element.  Represents the amount of tax calculated for a particular jurisdiction, for a particular line in an invoice.
-     */
-    public Integer getRateRuleId() {
-        return this.rateRuleId;
-    }
-
-    /**
-     * Setter for rateRuleId - An individual tax detail element.  Represents the amount of tax calculated for a particular jurisdiction, for a particular line in an invoice.
-     */
-    public void setRateRuleId(Integer rateRuleId) {
-        this.rateRuleId = rateRuleId;
-    }
-
-    
-    private Integer taxRegionId;
-
-    /**
-     * Getter for taxRegionId - An individual tax detail element.  Represents the amount of tax calculated for a particular jurisdiction, for a particular line in an invoice.
-     */
-    public Integer getTaxRegionId() {
-        return this.taxRegionId;
-    }
-
-    /**
-     * Setter for taxRegionId - An individual tax detail element.  Represents the amount of tax calculated for a particular jurisdiction, for a particular line in an invoice.
-     */
-    public void setTaxRegionId(Integer taxRegionId) {
-        this.taxRegionId = taxRegionId;
-    }
-
-    
-    private String rateTypeCode;
-
-    /**
-     * Getter for rateTypeCode - An individual tax detail element.  Represents the amount of tax calculated for a particular jurisdiction, for a particular line in an invoice.
-     */
-    public String getRateTypeCode() {
-        return this.rateTypeCode;
-    }
-
-    /**
-     * Setter for rateTypeCode - An individual tax detail element.  Represents the amount of tax calculated for a particular jurisdiction, for a particular line in an invoice.
-     */
-    public void setRateTypeCode(String rateTypeCode) {
-        this.rateTypeCode = rateTypeCode;
-    }
-
-    
-    private Long id;
-
-    /**
-     * Getter for id - An individual tax detail element.  Represents the amount of tax calculated for a particular jurisdiction, for a particular line in an invoice.
-     */
-    public Long getId() {
-        return this.id;
-    }
-
-    /**
-     * Setter for id - An individual tax detail element.  Represents the amount of tax calculated for a particular jurisdiction, for a particular line in an invoice.
-     */
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    
-    private BigDecimal taxCalculated;
-
-    /**
-     * Getter for taxCalculated - An individual tax detail element.  Represents the amount of tax calculated for a particular jurisdiction, for a particular line in an invoice.
-     */
-    public BigDecimal getTaxCalculated() {
-        return this.taxCalculated;
-    }
-
-    /**
-     * Setter for taxCalculated - An individual tax detail element.  Represents the amount of tax calculated for a particular jurisdiction, for a particular line in an invoice.
-     */
-    public void setTaxCalculated(BigDecimal taxCalculated) {
-        this.taxCalculated = taxCalculated;
-    }
-
-    
-    private TaxRuleTypeId nonTaxableType;
-
-    /**
-     * Getter for nonTaxableType - An individual tax detail element.  Represents the amount of tax calculated for a particular jurisdiction, for a particular line in an invoice.
-     */
-    public TaxRuleTypeId getNonTaxableType() {
-        return this.nonTaxableType;
-    }
-
-    /**
-     * Setter for nonTaxableType - An individual tax detail element.  Represents the amount of tax calculated for a particular jurisdiction, for a particular line in an invoice.
-     */
-    public void setNonTaxableType(TaxRuleTypeId nonTaxableType) {
-        this.nonTaxableType = nonTaxableType;
-    }
-
-    
-    private String stateFIPS;
-
-    /**
-     * Getter for stateFIPS - An individual tax detail element.  Represents the amount of tax calculated for a particular jurisdiction, for a particular line in an invoice.
-     */
-    public String getStateFIPS() {
-        return this.stateFIPS;
-    }
-
-    /**
-     * Setter for stateFIPS - An individual tax detail element.  Represents the amount of tax calculated for a particular jurisdiction, for a particular line in an invoice.
-     */
-    public void setStateFIPS(String stateFIPS) {
-        this.stateFIPS = stateFIPS;
-    }
-
-    
-    private RateType rateType;
-
-    /**
-     * Getter for rateType - An individual tax detail element.  Represents the amount of tax calculated for a particular jurisdiction, for a particular line in an invoice.
-     */
-    public RateType getRateType() {
-        return this.rateType;
-    }
-
-    /**
-     * Setter for rateType - An individual tax detail element.  Represents the amount of tax calculated for a particular jurisdiction, for a particular line in an invoice.
-     */
-    public void setRateType(RateType rateType) {
-        this.rateType = rateType;
-    }
-
-    
-    private Integer taxAuthorityTypeId;
-
-    /**
-     * Getter for taxAuthorityTypeId - An individual tax detail element.  Represents the amount of tax calculated for a particular jurisdiction, for a particular line in an invoice.
-     */
-    public Integer getTaxAuthorityTypeId() {
-        return this.taxAuthorityTypeId;
-    }
-
-    /**
-     * Setter for taxAuthorityTypeId - An individual tax detail element.  Represents the amount of tax calculated for a particular jurisdiction, for a particular line in an invoice.
-     */
-    public void setTaxAuthorityTypeId(Integer taxAuthorityTypeId) {
-        this.taxAuthorityTypeId = taxAuthorityTypeId;
-    }
-
-    
     private String region;
 
     /**
-     * Getter for region - An individual tax detail element.  Represents the amount of tax calculated for a particular jurisdiction, for a particular line in an invoice.
+     * Getter for region;
+     * The two-or-three character ISO region code for the region where this tax detail is assigned.
      */
-    public String getRegion() {
-        return this.region;
+    public String getregion() {;
+        return this.region;;
     }
 
     /**
-     * Setter for region - An individual tax detail element.  Represents the amount of tax calculated for a particular jurisdiction, for a particular line in an invoice.
+     * Setter for region;
+     * The two-or-three character ISO region code for the region where this tax detail is assigned.
      */
-    public void setRegion(String region) {
-        this.region = region;
+    public void setregion(String value) {;
+        this.region = value;;
     }
 
-    
+
     private String countyFIPS;
 
     /**
-     * Getter for countyFIPS - An individual tax detail element.  Represents the amount of tax calculated for a particular jurisdiction, for a particular line in an invoice.
+     * Getter for countyFIPS;
+     * For U.S. transactions, the Federal Information Processing Standard (FIPS) code for the county where this tax detail is assigned.
      */
-    public String getCountyFIPS() {
-        return this.countyFIPS;
+    public String getcountyFIPS() {;
+        return this.countyFIPS;;
     }
 
     /**
-     * Setter for countyFIPS - An individual tax detail element.  Represents the amount of tax calculated for a particular jurisdiction, for a particular line in an invoice.
+     * Setter for countyFIPS;
+     * For U.S. transactions, the Federal Information Processing Standard (FIPS) code for the county where this tax detail is assigned.
      */
-    public void setCountyFIPS(String countyFIPS) {
-        this.countyFIPS = countyFIPS;
+    public void setcountyFIPS(String value) {;
+        this.countyFIPS = value;;
     }
 
-    
-    private String stateAssignedNo;
+
+    private String stateFIPS;
 
     /**
-     * Getter for stateAssignedNo - An individual tax detail element.  Represents the amount of tax calculated for a particular jurisdiction, for a particular line in an invoice.
+     * Getter for stateFIPS;
+     * For U.S. transactions, the Federal Information Processing Standard (FIPS) code for the state where this tax detail is assigned.
      */
-    public String getStateAssignedNo() {
-        return this.stateAssignedNo;
-    }
-
-    /**
-     * Setter for stateAssignedNo - An individual tax detail element.  Represents the amount of tax calculated for a particular jurisdiction, for a particular line in an invoice.
-     */
-    public void setStateAssignedNo(String stateAssignedNo) {
-        this.stateAssignedNo = stateAssignedNo;
-    }
-
-    
-    private Boolean inState;
-
-    /**
-     * Getter for inState - An individual tax detail element.  Represents the amount of tax calculated for a particular jurisdiction, for a particular line in an invoice.
-     */
-    public Boolean getInState() {
-        return this.inState;
+    public String getstateFIPS() {;
+        return this.stateFIPS;;
     }
 
     /**
-     * Setter for inState - An individual tax detail element.  Represents the amount of tax calculated for a particular jurisdiction, for a particular line in an invoice.
+     * Setter for stateFIPS;
+     * For U.S. transactions, the Federal Information Processing Standard (FIPS) code for the state where this tax detail is assigned.
      */
-    public void setInState(Boolean inState) {
-        this.inState = inState;
+    public void setstateFIPS(String value) {;
+        this.stateFIPS = value;;
     }
 
-    
-    private BigDecimal exemptUnits;
+
+    private Decimal? exemptAmount;
 
     /**
-     * Getter for exemptUnits - An individual tax detail element.  Represents the amount of tax calculated for a particular jurisdiction, for a particular line in an invoice.
+     * Getter for exemptAmount;
+     * The amount of this line that was considered exempt in this tax detail.
      */
-    public BigDecimal getExemptUnits() {
-        return this.exemptUnits;
-    }
-
-    /**
-     * Setter for exemptUnits - An individual tax detail element.  Represents the amount of tax calculated for a particular jurisdiction, for a particular line in an invoice.
-     */
-    public void setExemptUnits(BigDecimal exemptUnits) {
-        this.exemptUnits = exemptUnits;
-    }
-
-    
-    private BigDecimal taxableAmount;
-
-    /**
-     * Getter for taxableAmount - An individual tax detail element.  Represents the amount of tax calculated for a particular jurisdiction, for a particular line in an invoice.
-     */
-    public BigDecimal getTaxableAmount() {
-        return this.taxableAmount;
+    public Decimal? getexemptAmount() {;
+        return this.exemptAmount;;
     }
 
     /**
-     * Setter for taxableAmount - An individual tax detail element.  Represents the amount of tax calculated for a particular jurisdiction, for a particular line in an invoice.
+     * Setter for exemptAmount;
+     * The amount of this line that was considered exempt in this tax detail.
      */
-    public void setTaxableAmount(BigDecimal taxableAmount) {
-        this.taxableAmount = taxableAmount;
+    public void setexemptAmount(Decimal? value) {;
+        this.exemptAmount = value;;
     }
 
-    
-    private BigDecimal nonTaxableUnits;
+
+    private Int32? exemptReasonId;
 
     /**
-     * Getter for nonTaxableUnits - An individual tax detail element.  Represents the amount of tax calculated for a particular jurisdiction, for a particular line in an invoice.
+     * Getter for exemptReasonId;
+     * The unique ID number of the exemption reason for this tax detail.
      */
-    public BigDecimal getNonTaxableUnits() {
-        return this.nonTaxableUnits;
-    }
-
-    /**
-     * Setter for nonTaxableUnits - An individual tax detail element.  Represents the amount of tax calculated for a particular jurisdiction, for a particular line in an invoice.
-     */
-    public void setNonTaxableUnits(BigDecimal nonTaxableUnits) {
-        this.nonTaxableUnits = nonTaxableUnits;
-    }
-
-    
-    private Long transactionLineId;
-
-    /**
-     * Getter for transactionLineId - An individual tax detail element.  Represents the amount of tax calculated for a particular jurisdiction, for a particular line in an invoice.
-     */
-    public Long getTransactionLineId() {
-        return this.transactionLineId;
+    public Int32? getexemptReasonId() {;
+        return this.exemptReasonId;;
     }
 
     /**
-     * Setter for transactionLineId - An individual tax detail element.  Represents the amount of tax calculated for a particular jurisdiction, for a particular line in an invoice.
+     * Setter for exemptReasonId;
+     * The unique ID number of the exemption reason for this tax detail.
      */
-    public void setTransactionLineId(Long transactionLineId) {
-        this.transactionLineId = transactionLineId;
+    public void setexemptReasonId(Int32? value) {;
+        this.exemptReasonId = value;;
     }
 
-    
-    private BigDecimal nonTaxableAmount;
+
+    private Boolean? inState;
 
     /**
-     * Getter for nonTaxableAmount - An individual tax detail element.  Represents the amount of tax calculated for a particular jurisdiction, for a particular line in an invoice.
+     * Getter for inState;
+     * True if this detail element represented an in-state transaction.
      */
-    public BigDecimal getNonTaxableAmount() {
-        return this.nonTaxableAmount;
-    }
-
-    /**
-     * Setter for nonTaxableAmount - An individual tax detail element.  Represents the amount of tax calculated for a particular jurisdiction, for a particular line in an invoice.
-     */
-    public void setNonTaxableAmount(BigDecimal nonTaxableAmount) {
-        this.nonTaxableAmount = nonTaxableAmount;
-    }
-
-    
-    private String unitOfBasis;
-
-    /**
-     * Getter for unitOfBasis - An individual tax detail element.  Represents the amount of tax calculated for a particular jurisdiction, for a particular line in an invoice.
-     */
-    public String getUnitOfBasis() {
-        return this.unitOfBasis;
+    public Boolean? getinState() {;
+        return this.inState;;
     }
 
     /**
-     * Setter for unitOfBasis - An individual tax detail element.  Represents the amount of tax calculated for a particular jurisdiction, for a particular line in an invoice.
+     * Setter for inState;
+     * True if this detail element represented an in-state transaction.
      */
-    public void setUnitOfBasis(String unitOfBasis) {
-        this.unitOfBasis = unitOfBasis;
+    public void setinState(Boolean? value) {;
+        this.inState = value;;
     }
 
-    
+
+    private String jurisCode;
+
+    /**
+     * Getter for jurisCode;
+     * The code of the jurisdiction to which this tax detail applies.
+     */
+    public String getjurisCode() {;
+        return this.jurisCode;;
+    }
+
+    /**
+     * Setter for jurisCode;
+     * The code of the jurisdiction to which this tax detail applies.
+     */
+    public void setjurisCode(String value) {;
+        this.jurisCode = value;;
+    }
+
+
     private String jurisName;
 
     /**
-     * Getter for jurisName - An individual tax detail element.  Represents the amount of tax calculated for a particular jurisdiction, for a particular line in an invoice.
+     * Getter for jurisName;
+     * The name of the jurisdiction to which this tax detail applies.
      */
-    public String getJurisName() {
-        return this.jurisName;
+    public String getjurisName() {;
+        return this.jurisName;;
     }
 
     /**
-     * Setter for jurisName - An individual tax detail element.  Represents the amount of tax calculated for a particular jurisdiction, for a particular line in an invoice.
+     * Setter for jurisName;
+     * The name of the jurisdiction to which this tax detail applies.
      */
-    public void setJurisName(String jurisName) {
-        this.jurisName = jurisName;
+    public void setjurisName(String value) {;
+        this.jurisName = value;;
     }
 
-    
+
+    private Int32? jurisdictionId;
+
+    /**
+     * Getter for jurisdictionId;
+     * The unique ID number of the jurisdiction to which this tax detail applies.
+     */
+    public Int32? getjurisdictionId() {;
+        return this.jurisdictionId;;
+    }
+
+    /**
+     * Setter for jurisdictionId;
+     * The unique ID number of the jurisdiction to which this tax detail applies.
+     */
+    public void setjurisdictionId(Int32? value) {;
+        this.jurisdictionId = value;;
+    }
+
+
     private String signatureCode;
 
     /**
-     * Getter for signatureCode - An individual tax detail element.  Represents the amount of tax calculated for a particular jurisdiction, for a particular line in an invoice.
+     * Getter for signatureCode;
+     * The Avalara-specified signature code of the jurisdiction to which this tax detail applies.
      */
-    public String getSignatureCode() {
-        return this.signatureCode;
+    public String getsignatureCode() {;
+        return this.signatureCode;;
     }
 
     /**
-     * Setter for signatureCode - An individual tax detail element.  Represents the amount of tax calculated for a particular jurisdiction, for a particular line in an invoice.
+     * Setter for signatureCode;
+     * The Avalara-specified signature code of the jurisdiction to which this tax detail applies.
      */
-    public void setSignatureCode(String signatureCode) {
-        this.signatureCode = signatureCode;
+    public void setsignatureCode(String value) {;
+        this.signatureCode = value;;
     }
 
-    
-    private Long transactionId;
+
+    private String stateAssignedNo;
 
     /**
-     * Getter for transactionId - An individual tax detail element.  Represents the amount of tax calculated for a particular jurisdiction, for a particular line in an invoice.
+     * Getter for stateAssignedNo;
+     * The state assigned number of the jurisdiction to which this tax detail applies.
      */
-    public Long getTransactionId() {
-        return this.transactionId;
-    }
-
-    /**
-     * Setter for transactionId - An individual tax detail element.  Represents the amount of tax calculated for a particular jurisdiction, for a particular line in an invoice.
-     */
-    public void setTransactionId(Long transactionId) {
-        this.transactionId = transactionId;
-    }
-
-    
-    private Long addressId;
-
-    /**
-     * Getter for addressId - An individual tax detail element.  Represents the amount of tax calculated for a particular jurisdiction, for a particular line in an invoice.
-     */
-    public Long getAddressId() {
-        return this.addressId;
+    public String getstateAssignedNo() {;
+        return this.stateAssignedNo;;
     }
 
     /**
-     * Setter for addressId - An individual tax detail element.  Represents the amount of tax calculated for a particular jurisdiction, for a particular line in an invoice.
+     * Setter for stateAssignedNo;
+     * The state assigned number of the jurisdiction to which this tax detail applies.
      */
-    public void setAddressId(Long addressId) {
-        this.addressId = addressId;
+    public void setstateAssignedNo(String value) {;
+        this.stateAssignedNo = value;;
     }
 
-    
-    private BigDecimal taxableUnits;
+
+    private JurisTypeId? jurisType;
 
     /**
-     * Getter for taxableUnits - An individual tax detail element.  Represents the amount of tax calculated for a particular jurisdiction, for a particular line in an invoice.
+     * Getter for jurisType;
+     * The type of the jurisdiction to which this tax detail applies.
      */
-    public BigDecimal getTaxableUnits() {
-        return this.taxableUnits;
+    public JurisTypeId? getjurisType() {;
+        return this.jurisType;;
     }
 
     /**
-     * Setter for taxableUnits - An individual tax detail element.  Represents the amount of tax calculated for a particular jurisdiction, for a particular line in an invoice.
+     * Setter for jurisType;
+     * The type of the jurisdiction to which this tax detail applies.
      */
-    public void setTaxableUnits(BigDecimal taxableUnits) {
-        this.taxableUnits = taxableUnits;
+    public void setjurisType(JurisTypeId? value) {;
+        this.jurisType = value;;
     }
 
-    
+
+    private Decimal? nonTaxableAmount;
+
+    /**
+     * Getter for nonTaxableAmount;
+     * The amount of this line item that was considered nontaxable in this tax detail.
+     */
+    public Decimal? getnonTaxableAmount() {;
+        return this.nonTaxableAmount;;
+    }
+
+    /**
+     * Setter for nonTaxableAmount;
+     * The amount of this line item that was considered nontaxable in this tax detail.
+     */
+    public void setnonTaxableAmount(Decimal? value) {;
+        this.nonTaxableAmount = value;;
+    }
+
+
+    private Int32? nonTaxableRuleId;
+
+    /**
+     * Getter for nonTaxableRuleId;
+     * The rule according to which portion of this detail was considered nontaxable.
+     */
+    public Int32? getnonTaxableRuleId() {;
+        return this.nonTaxableRuleId;;
+    }
+
+    /**
+     * Setter for nonTaxableRuleId;
+     * The rule according to which portion of this detail was considered nontaxable.
+     */
+    public void setnonTaxableRuleId(Int32? value) {;
+        this.nonTaxableRuleId = value;;
+    }
+
+
+    private TaxRuleTypeId? nonTaxableType;
+
+    /**
+     * Getter for nonTaxableType;
+     * The type of nontaxability that was applied to this tax detail.
+     */
+    public TaxRuleTypeId? getnonTaxableType() {;
+        return this.nonTaxableType;;
+    }
+
+    /**
+     * Setter for nonTaxableType;
+     * The type of nontaxability that was applied to this tax detail.
+     */
+    public void setnonTaxableType(TaxRuleTypeId? value) {;
+        this.nonTaxableType = value;;
+    }
+
+
+    private Decimal? rate;
+
+    /**
+     * Getter for rate;
+     * The rate at which this tax detail was calculated.
+     */
+    public Decimal? getrate() {;
+        return this.rate;;
+    }
+
+    /**
+     * Setter for rate;
+     * The rate at which this tax detail was calculated.
+     */
+    public void setrate(Decimal? value) {;
+        this.rate = value;;
+    }
+
+
+    private Int32? rateRuleId;
+
+    /**
+     * Getter for rateRuleId;
+     * The unique ID number of the rule according to which this tax detail was calculated.
+     */
+    public Int32? getrateRuleId() {;
+        return this.rateRuleId;;
+    }
+
+    /**
+     * Setter for rateRuleId;
+     * The unique ID number of the rule according to which this tax detail was calculated.
+     */
+    public void setrateRuleId(Int32? value) {;
+        this.rateRuleId = value;;
+    }
+
+
+    private Int32? rateSourceId;
+
+    /**
+     * Getter for rateSourceId;
+     * The unique ID number of the source of the rate according to which this tax detail was calculated.
+     */
+    public Int32? getrateSourceId() {;
+        return this.rateSourceId;;
+    }
+
+    /**
+     * Setter for rateSourceId;
+     * The unique ID number of the source of the rate according to which this tax detail was calculated.
+     */
+    public void setrateSourceId(Int32? value) {;
+        this.rateSourceId = value;;
+    }
+
+
+    private String serCode;
+
+    /**
+     * Getter for serCode;
+     * For Streamlined Sales Tax customers, the SST Electronic Return code under which this tax detail should be applied.
+     */
+    public String getserCode() {;
+        return this.serCode;;
+    }
+
+    /**
+     * Setter for serCode;
+     * For Streamlined Sales Tax customers, the SST Electronic Return code under which this tax detail should be applied.
+     */
+    public void setserCode(String value) {;
+        this.serCode = value;;
+    }
+
+
+    private Sourcing? sourcing;
+
+    /**
+     * Getter for sourcing;
+     * Indicates whether this tax detail applies to the origin or destination of the transaction.
+     */
+    public Sourcing? getsourcing() {;
+        return this.sourcing;;
+    }
+
+    /**
+     * Setter for sourcing;
+     * Indicates whether this tax detail applies to the origin or destination of the transaction.
+     */
+    public void setsourcing(Sourcing? value) {;
+        this.sourcing = value;;
+    }
+
+
+    private Decimal? tax;
+
+    /**
+     * Getter for tax;
+     * The amount of tax for this tax detail.
+     */
+    public Decimal? gettax() {;
+        return this.tax;;
+    }
+
+    /**
+     * Setter for tax;
+     * The amount of tax for this tax detail.
+     */
+    public void settax(Decimal? value) {;
+        this.tax = value;;
+    }
+
+
+    private Decimal? taxableAmount;
+
+    /**
+     * Getter for taxableAmount;
+     * The taxable amount of this tax detail.
+     */
+    public Decimal? gettaxableAmount() {;
+        return this.taxableAmount;;
+    }
+
+    /**
+     * Setter for taxableAmount;
+     * The taxable amount of this tax detail.
+     */
+    public void settaxableAmount(Decimal? value) {;
+        this.taxableAmount = value;;
+    }
+
+
+    private TaxType? taxType;
+
+    /**
+     * Getter for taxType;
+     * The type of tax that was calculated. Depends on the company's nexus settings as well as the jurisdiction's tax laws.
+     */
+    public TaxType? gettaxType() {;
+        return this.taxType;;
+    }
+
+    /**
+     * Setter for taxType;
+     * The type of tax that was calculated. Depends on the company's nexus settings as well as the jurisdiction's tax laws.
+     */
+    public void settaxType(TaxType? value) {;
+        this.taxType = value;;
+    }
+
+
+    private String taxName;
+
+    /**
+     * Getter for taxName;
+     * The name of the tax against which this tax amount was calculated.
+     */
+    public String gettaxName() {;
+        return this.taxName;;
+    }
+
+    /**
+     * Setter for taxName;
+     * The name of the tax against which this tax amount was calculated.
+     */
+    public void settaxName(String value) {;
+        this.taxName = value;;
+    }
+
+
+    private Int32? taxAuthorityTypeId;
+
+    /**
+     * Getter for taxAuthorityTypeId;
+     * The type of the tax authority to which this tax will be remitted.
+     */
+    public Int32? gettaxAuthorityTypeId() {;
+        return this.taxAuthorityTypeId;;
+    }
+
+    /**
+     * Setter for taxAuthorityTypeId;
+     * The type of the tax authority to which this tax will be remitted.
+     */
+    public void settaxAuthorityTypeId(Int32? value) {;
+        this.taxAuthorityTypeId = value;;
+    }
+
+
+    private Int32? taxRegionId;
+
+    /**
+     * Getter for taxRegionId;
+     * The unique ID number of the tax region.
+     */
+    public Int32? gettaxRegionId() {;
+        return this.taxRegionId;;
+    }
+
+    /**
+     * Setter for taxRegionId;
+     * The unique ID number of the tax region.
+     */
+    public void settaxRegionId(Int32? value) {;
+        this.taxRegionId = value;;
+    }
+
+
+    private Decimal? taxCalculated;
+
+    /**
+     * Getter for taxCalculated;
+     * The amount of tax that was calculated. This amount may be different if a tax override was used.
+    * If the customer specified a tax override, this calculated tax value represents the amount of tax that would
+    * have been charged if Avalara had calculated the tax for the rule.
+     */
+    public Decimal? gettaxCalculated() {;
+        return this.taxCalculated;;
+    }
+
+    /**
+     * Setter for taxCalculated;
+     * The amount of tax that was calculated. This amount may be different if a tax override was used.
+    * If the customer specified a tax override, this calculated tax value represents the amount of tax that would
+    * have been charged if Avalara had calculated the tax for the rule.
+     */
+    public void settaxCalculated(Decimal? value) {;
+        this.taxCalculated = value;;
+    }
+
+
+    private Decimal? taxOverride;
+
+    /**
+     * Getter for taxOverride;
+     * The amount of tax override that was specified for this tax line.
+     */
+    public Decimal? gettaxOverride() {;
+        return this.taxOverride;;
+    }
+
+    /**
+     * Setter for taxOverride;
+     * The amount of tax override that was specified for this tax line.
+     */
+    public void settaxOverride(Decimal? value) {;
+        this.taxOverride = value;;
+    }
+
+
+    private RateType? rateType;
+
+    /**
+     * Getter for rateType;
+     * (DEPRECATED) The rate type for this tax detail. Please use rateTypeCode instead.
+     */
+    public RateType? getrateType() {;
+        return this.rateType;;
+    }
+
+    /**
+     * Setter for rateType;
+     * (DEPRECATED) The rate type for this tax detail. Please use rateTypeCode instead.
+     */
+    public void setrateType(RateType? value) {;
+        this.rateType = value;;
+    }
+
+
+    private String rateTypeCode;
+
+    /**
+     * Getter for rateTypeCode;
+     * Indicates the code of the rate type that was used to calculate this tax detail. Use `/api/v2/definitions/ratetypes` for a full list of rate type codes.
+     */
+    public String getrateTypeCode() {;
+        return this.rateTypeCode;;
+    }
+
+    /**
+     * Setter for rateTypeCode;
+     * Indicates the code of the rate type that was used to calculate this tax detail. Use `/api/v2/definitions/ratetypes` for a full list of rate type codes.
+     */
+    public void setrateTypeCode(String value) {;
+        this.rateTypeCode = value;;
+    }
+
+
+    private Decimal? taxableUnits;
+
+    /**
+     * Getter for taxableUnits;
+     * Number of units in this line item that were calculated to be taxable according to this rate detail.
+     */
+    public Decimal? gettaxableUnits() {;
+        return this.taxableUnits;;
+    }
+
+    /**
+     * Setter for taxableUnits;
+     * Number of units in this line item that were calculated to be taxable according to this rate detail.
+     */
+    public void settaxableUnits(Decimal? value) {;
+        this.taxableUnits = value;;
+    }
+
+
+    private Decimal? nonTaxableUnits;
+
+    /**
+     * Getter for nonTaxableUnits;
+     * Number of units in this line item that were calculated to be nontaxable according to this rate detail.
+     */
+    public Decimal? getnonTaxableUnits() {;
+        return this.nonTaxableUnits;;
+    }
+
+    /**
+     * Setter for nonTaxableUnits;
+     * Number of units in this line item that were calculated to be nontaxable according to this rate detail.
+     */
+    public void setnonTaxableUnits(Decimal? value) {;
+        this.nonTaxableUnits = value;;
+    }
+
+
+    private Decimal? exemptUnits;
+
+    /**
+     * Getter for exemptUnits;
+     * Number of units in this line item that were calculated to be exempt according to this rate detail.
+     */
+    public Decimal? getexemptUnits() {;
+        return this.exemptUnits;;
+    }
+
+    /**
+     * Setter for exemptUnits;
+     * Number of units in this line item that were calculated to be exempt according to this rate detail.
+     */
+    public void setexemptUnits(Decimal? value) {;
+        this.exemptUnits = value;;
+    }
+
+
+    private String unitOfBasis;
+
+    /**
+     * Getter for unitOfBasis;
+     * When calculating units, what basis of measurement did we use for calculating the units?
+     */
+    public String getunitOfBasis() {;
+        return this.unitOfBasis;;
+    }
+
+    /**
+     * Setter for unitOfBasis;
+     * When calculating units, what basis of measurement did we use for calculating the units?
+     */
+    public void setunitOfBasis(String value) {;
+        this.unitOfBasis = value;;
+    }
 
 
     /**
-     * Returns a JSON string representation of TransactionLineDetailModel.
+     * Returns a JSON string representation of TransactionLineDetailModel
      */
     @Override
     public String toString() {
         return JsonSerializer.SerializeObject(this);
     }
 }
-    

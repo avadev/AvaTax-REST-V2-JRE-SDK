@@ -9,103 +9,127 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 
+/*
+ * AvaTax Software Development Kit for Java JRE based environments
+ *
+ * (c) 2004-2017 Avalara, Inc.
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ *
+ * @author     Dustin Welden <dustin.welden@avalara.com>
+ * @copyright  2004-2017 Avalara, Inc.
+ * @license    https://www.apache.org/licenses/LICENSE-2.0
+ * @version    17.5.2-77
+ * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ */
+
 /**
  * Model to specify lines to be removed
  */
 public class RemoveTransactionLineModel {
-    private String transactionCode;
 
-    /**
-     * Getter for transactionCode - Model to specify lines to be removed
-     */
-    public String getTransactionCode() {
-        return this.transactionCode;
-    }
 
-    /**
-     * Setter for transactionCode - Model to specify lines to be removed
-     */
-    public void setTransactionCode(String transactionCode) {
-        this.transactionCode = transactionCode;
-    }
-
-    
     private String companyCode;
 
     /**
-     * Getter for companyCode - Model to specify lines to be removed
+     * Getter for companyCode;
+     * company code
      */
-    public String getCompanyCode() {
-        return this.companyCode;
+    public String getcompanyCode() {;
+        return this.companyCode;;
     }
 
     /**
-     * Setter for companyCode - Model to specify lines to be removed
+     * Setter for companyCode;
+     * company code
      */
-    public void setCompanyCode(String companyCode) {
-        this.companyCode = companyCode;
+    public void setcompanyCode(String value) {;
+        this.companyCode = value;;
     }
 
-    
-    private DocumentType documentType;
+
+    private String transactionCode;
 
     /**
-     * Getter for documentType - Model to specify lines to be removed
+     * Getter for transactionCode;
+     * document code for the transaction to add lines
      */
-    public DocumentType getDocumentType() {
-        return this.documentType;
-    }
-
-    /**
-     * Setter for documentType - Model to specify lines to be removed
-     */
-    public void setDocumentType(DocumentType documentType) {
-        this.documentType = documentType;
-    }
-
-    
-    private ArrayList<String> lines;
-
-    /**
-     * Getter for lines - Model to specify lines to be removed
-     */
-    public ArrayList<String> getLines() {
-        return this.lines;
+    public String gettransactionCode() {;
+        return this.transactionCode;;
     }
 
     /**
-     * Setter for lines - Model to specify lines to be removed
+     * Setter for transactionCode;
+     * document code for the transaction to add lines
      */
-    public void setLines(ArrayList<String> lines) {
-        this.lines = lines;
+    public void settransactionCode(String value) {;
+        this.transactionCode = value;;
     }
 
-    
-    private Boolean renumber;
+
+    private DocumentType? documentType;
 
     /**
-     * Getter for renumber - Model to specify lines to be removed
+     * Getter for documentType;
+     * document type
      */
-    public Boolean getRenumber() {
-        return this.renumber;
+    public DocumentType? getdocumentType() {;
+        return this.documentType;;
     }
 
     /**
-     * Setter for renumber - Model to specify lines to be removed
+     * Setter for documentType;
+     * document type
      */
-    public void setRenumber(Boolean renumber) {
-        this.renumber = renumber;
+    public void setdocumentType(DocumentType? value) {;
+        this.documentType = value;;
     }
 
-    
+
+    private List<String> lines;
+
+    /**
+     * Getter for lines;
+     * List of lines to be added
+     */
+    public List<String> getlines() {;
+        return this.lines;;
+    }
+
+    /**
+     * Setter for lines;
+     * List of lines to be added
+     */
+    public void setlines(List<String> value) {;
+        this.lines = value;;
+    }
+
+
+    private Boolean? renumber;
+
+    /**
+     * Getter for renumber;
+     * ption to renumber lines after removal. After renumber, the line number becomes: "1", "2", "3", ...
+     */
+    public Boolean? getrenumber() {;
+        return this.renumber;;
+    }
+
+    /**
+     * Setter for renumber;
+     * ption to renumber lines after removal. After renumber, the line number becomes: "1", "2", "3", ...
+     */
+    public void setrenumber(Boolean? value) {;
+        this.renumber = value;;
+    }
 
 
     /**
-     * Returns a JSON string representation of RemoveTransactionLineModel.
+     * Returns a JSON string representation of RemoveTransactionLineModel
      */
     @Override
     public String toString() {
         return JsonSerializer.SerializeObject(this);
     }
 }
-    

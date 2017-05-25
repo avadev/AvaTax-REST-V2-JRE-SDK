@@ -9,52 +9,72 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 
+/*
+ * AvaTax Software Development Kit for Java JRE based environments
+ *
+ * (c) 2004-2017 Avalara, Inc.
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ *
+ * @author     Dustin Welden <dustin.welden@avalara.com>
+ * @copyright  2004-2017 Avalara, Inc.
+ * @license    https://www.apache.org/licenses/LICENSE-2.0
+ * @version    17.5.2-77
+ * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ */
+
 /**
  * Represents a license key reset request.
  */
 public class ResetLicenseKeyModel {
-    private Integer accountId;
+
+
+    private Int32 accountId;
 
     /**
-     * Getter for accountId - Represents a license key reset request.
+     * Getter for accountId;
+     * The primary key of the account ID to reset
      */
-    public Integer getAccountId() {
-        return this.accountId;
+    public Int32 getaccountId() {;
+        return this.accountId;;
     }
 
     /**
-     * Setter for accountId - Represents a license key reset request.
+     * Setter for accountId;
+     * The primary key of the account ID to reset
      */
-    public void setAccountId(Integer accountId) {
-        this.accountId = accountId;
+    public void setaccountId(Int32 value) {;
+        this.accountId = value;;
     }
 
-    
+
     private Boolean confirmResetLicenseKey;
 
     /**
-     * Getter for confirmResetLicenseKey - Represents a license key reset request.
+     * Getter for confirmResetLicenseKey;
+     * Set this value to true to reset the license key for this account.
+    * This license key reset function will only work when called using the credentials of the account administrator of this account.
      */
-    public Boolean getConfirmResetLicenseKey() {
-        return this.confirmResetLicenseKey;
+    public Boolean getconfirmResetLicenseKey() {;
+        return this.confirmResetLicenseKey;;
     }
 
     /**
-     * Setter for confirmResetLicenseKey - Represents a license key reset request.
+     * Setter for confirmResetLicenseKey;
+     * Set this value to true to reset the license key for this account.
+    * This license key reset function will only work when called using the credentials of the account administrator of this account.
      */
-    public void setConfirmResetLicenseKey(Boolean confirmResetLicenseKey) {
-        this.confirmResetLicenseKey = confirmResetLicenseKey;
+    public void setconfirmResetLicenseKey(Boolean value) {;
+        this.confirmResetLicenseKey = value;;
     }
-
-    
 
 
     /**
-     * Returns a JSON string representation of ResetLicenseKeyModel.
+     * Returns a JSON string representation of ResetLicenseKeyModel
      */
     @Override
     public String toString() {
         return JsonSerializer.SerializeObject(this);
     }
 }
-    

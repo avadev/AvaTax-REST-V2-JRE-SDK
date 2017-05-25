@@ -9,613 +9,705 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 
+/*
+ * AvaTax Software Development Kit for Java JRE based environments
+ *
+ * (c) 2004-2017 Avalara, Inc.
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ *
+ * @author     Dustin Welden <dustin.welden@avalara.com>
+ * @copyright  2004-2017 Avalara, Inc.
+ * @license    https://www.apache.org/licenses/LICENSE-2.0
+ * @version    17.5.2-77
+ * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ */
+
 /**
  * Filing Returns Model
  */
 public class FilingReturnModel {
+
+
+    private Int64? id;
+
+    /**
+     * Getter for id;
+     * The unique ID number of this filing return.
+     */
+    public Int64? getid() {;
+        return this.id;;
+    }
+
+    /**
+     * Setter for id;
+     * The unique ID number of this filing return.
+     */
+    public void setid(Int64? value) {;
+        this.id = value;;
+    }
+
+
+    private Int64? filingRegionId;
+
+    /**
+     * Getter for filingRegionId;
+     * The region id that this return belongs too
+     */
+    public Int64? getfilingRegionId() {;
+        return this.filingRegionId;;
+    }
+
+    /**
+     * Setter for filingRegionId;
+     * The region id that this return belongs too
+     */
+    public void setfilingRegionId(Int64? value) {;
+        this.filingRegionId = value;;
+    }
+
+
+    private Int64? filingCalendarId;
+
+    /**
+     * Getter for filingCalendarId;
+     * The unique ID number of the filing calendar associated with this return.
+     */
+    public Int64? getfilingCalendarId() {;
+        return this.filingCalendarId;;
+    }
+
+    /**
+     * Setter for filingCalendarId;
+     * The unique ID number of the filing calendar associated with this return.
+     */
+    public void setfilingCalendarId(Int64? value) {;
+        this.filingCalendarId = value;;
+    }
+
+
+    private Int64? resourceFileId;
+
+    /**
+     * Getter for resourceFileId;
+     * The resourceFileId of the return. Will be null if not available.
+     */
+    public Int64? getresourceFileId() {;
+        return this.resourceFileId;;
+    }
+
+    /**
+     * Setter for resourceFileId;
+     * The resourceFileId of the return. Will be null if not available.
+     */
+    public void setresourceFileId(Int64? value) {;
+        this.resourceFileId = value;;
+    }
+
+
+    private Int32? taxAuthorityId;
+
+    /**
+     * Getter for taxAuthorityId;
+     * Tax Authority ID of this return
+     */
+    public Int32? gettaxAuthorityId() {;
+        return this.taxAuthorityId;;
+    }
+
+    /**
+     * Setter for taxAuthorityId;
+     * Tax Authority ID of this return
+     */
+    public void settaxAuthorityId(Int32? value) {;
+        this.taxAuthorityId = value;;
+    }
+
+
+    private FilingStatusId? status;
+
+    /**
+     * Getter for status;
+     * The current status of the filing return.
+     */
+    public FilingStatusId? getstatus() {;
+        return this.status;;
+    }
+
+    /**
+     * Setter for status;
+     * The current status of the filing return.
+     */
+    public void setstatus(FilingStatusId? value) {;
+        this.status = value;;
+    }
+
+
+    private FilingFrequencyId? filingFrequency;
+
+    /**
+     * Getter for filingFrequency;
+     * The filing frequency of the return.
+     */
+    public FilingFrequencyId? getfilingFrequency() {;
+        return this.filingFrequency;;
+    }
+
+    /**
+     * Setter for filingFrequency;
+     * The filing frequency of the return.
+     */
+    public void setfilingFrequency(FilingFrequencyId? value) {;
+        this.filingFrequency = value;;
+    }
+
+
+    private DateTime? filedDate;
+
+    /**
+     * Getter for filedDate;
+     * The date the return was filed by Avalara.
+     */
+    public DateTime? getfiledDate() {;
+        return this.filedDate;;
+    }
+
+    /**
+     * Setter for filedDate;
+     * The date the return was filed by Avalara.
+     */
+    public void setfiledDate(DateTime? value) {;
+        this.filedDate = value;;
+    }
+
+
+    private DateTime? startPeriod;
+
+    /**
+     * Getter for startPeriod;
+     * The start date of this return
+     */
+    public DateTime? getstartPeriod() {;
+        return this.startPeriod;;
+    }
+
+    /**
+     * Setter for startPeriod;
+     * The start date of this return
+     */
+    public void setstartPeriod(DateTime? value) {;
+        this.startPeriod = value;;
+    }
+
+
+    private DateTime? endPeriod;
+
+    /**
+     * Getter for endPeriod;
+     * The end date of this return
+     */
+    public DateTime? getendPeriod() {;
+        return this.endPeriod;;
+    }
+
+    /**
+     * Setter for endPeriod;
+     * The end date of this return
+     */
+    public void setendPeriod(DateTime? value) {;
+        this.endPeriod = value;;
+    }
+
+
+    private Decimal? salesAmount;
+
+    /**
+     * Getter for salesAmount;
+     * The sales amount.
+     */
+    public Decimal? getsalesAmount() {;
+        return this.salesAmount;;
+    }
+
+    /**
+     * Setter for salesAmount;
+     * The sales amount.
+     */
+    public void setsalesAmount(Decimal? value) {;
+        this.salesAmount = value;;
+    }
+
+
+    private FilingTypeId? filingType;
+
+    /**
+     * Getter for filingType;
+     * The filing type of the return.
+     */
+    public FilingTypeId? getfilingType() {;
+        return this.filingType;;
+    }
+
+    /**
+     * Setter for filingType;
+     * The filing type of the return.
+     */
+    public void setfilingType(FilingTypeId? value) {;
+        this.filingType = value;;
+    }
+
+
     private String formName;
 
     /**
-     * Getter for formName - Filing Returns Model
+     * Getter for formName;
+     * The name of the form.
      */
-    public String getFormName() {
-        return this.formName;
+    public String getformName() {;
+        return this.formName;;
     }
 
     /**
-     * Setter for formName - Filing Returns Model
+     * Setter for formName;
+     * The name of the form.
      */
-    public void setFormName(String formName) {
-        this.formName = formName;
+    public void setformName(String value) {;
+        this.formName = value;;
     }
 
-    
-    private Date endPeriod;
+
+    private Decimal? remitAmount;
 
     /**
-     * Getter for endPeriod - Filing Returns Model
+     * Getter for remitAmount;
+     * The remittance amount of the return.
      */
-    public Date getEndPeriod() {
-        return this.endPeriod;
-    }
-
-    /**
-     * Setter for endPeriod - Filing Returns Model
-     */
-    public void setEndPeriod(Date endPeriod) {
-        this.endPeriod = endPeriod;
-    }
-
-    
-    private BigDecimal collectAmount;
-
-    /**
-     * Getter for collectAmount - Filing Returns Model
-     */
-    public BigDecimal getCollectAmount() {
-        return this.collectAmount;
+    public Decimal? getremitAmount() {;
+        return this.remitAmount;;
     }
 
     /**
-     * Setter for collectAmount - Filing Returns Model
+     * Setter for remitAmount;
+     * The remittance amount of the return.
      */
-    public void setCollectAmount(BigDecimal collectAmount) {
-        this.collectAmount = collectAmount;
+    public void setremitAmount(Decimal? value) {;
+        this.remitAmount = value;;
     }
 
-    
-    private FilingFrequencyId filingFrequency;
 
-    /**
-     * Getter for filingFrequency - Filing Returns Model
-     */
-    public FilingFrequencyId getFilingFrequency() {
-        return this.filingFrequency;
-    }
-
-    /**
-     * Setter for filingFrequency - Filing Returns Model
-     */
-    public void setFilingFrequency(FilingFrequencyId filingFrequency) {
-        this.filingFrequency = filingFrequency;
-    }
-
-    
-    private Long filingCalendarId;
-
-    /**
-     * Getter for filingCalendarId - Filing Returns Model
-     */
-    public Long getFilingCalendarId() {
-        return this.filingCalendarId;
-    }
-
-    /**
-     * Setter for filingCalendarId - Filing Returns Model
-     */
-    public void setFilingCalendarId(Long filingCalendarId) {
-        this.filingCalendarId = filingCalendarId;
-    }
-
-    
-    private String description;
-
-    /**
-     * Getter for description - Filing Returns Model
-     */
-    public String getDescription() {
-        return this.description;
-    }
-
-    /**
-     * Setter for description - Filing Returns Model
-     */
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    
-    private Date modifiedDate;
-
-    /**
-     * Getter for modifiedDate - Filing Returns Model
-     */
-    public Date getModifiedDate() {
-        return this.modifiedDate;
-    }
-
-    /**
-     * Setter for modifiedDate - Filing Returns Model
-     */
-    public void setModifiedDate(Date modifiedDate) {
-        this.modifiedDate = modifiedDate;
-    }
-
-    
-    private FilingTypeId filingType;
-
-    /**
-     * Getter for filingType - Filing Returns Model
-     */
-    public FilingTypeId getFilingType() {
-        return this.filingType;
-    }
-
-    /**
-     * Setter for filingType - Filing Returns Model
-     */
-    public void setFilingType(FilingTypeId filingType) {
-        this.filingType = filingType;
-    }
-
-    
-    private AccrualType accrualType;
-
-    /**
-     * Getter for accrualType - Filing Returns Model
-     */
-    public AccrualType getAccrualType() {
-        return this.accrualType;
-    }
-
-    /**
-     * Setter for accrualType - Filing Returns Model
-     */
-    public void setAccrualType(AccrualType accrualType) {
-        this.accrualType = accrualType;
-    }
-
-    
-    private Integer year;
-
-    /**
-     * Getter for year - Filing Returns Model
-     */
-    public Integer getYear() {
-        return this.year;
-    }
-
-    /**
-     * Setter for year - Filing Returns Model
-     */
-    public void setYear(Integer year) {
-        this.year = year;
-    }
-
-    
-    private BigDecimal taxDueAmount;
-
-    /**
-     * Getter for taxDueAmount - Filing Returns Model
-     */
-    public BigDecimal getTaxDueAmount() {
-        return this.taxDueAmount;
-    }
-
-    /**
-     * Setter for taxDueAmount - Filing Returns Model
-     */
-    public void setTaxDueAmount(BigDecimal taxDueAmount) {
-        this.taxDueAmount = taxDueAmount;
-    }
-
-    
-    private Date filedDate;
-
-    /**
-     * Getter for filedDate - Filing Returns Model
-     */
-    public Date getFiledDate() {
-        return this.filedDate;
-    }
-
-    /**
-     * Setter for filedDate - Filing Returns Model
-     */
-    public void setFiledDate(Date filedDate) {
-        this.filedDate = filedDate;
-    }
-
-    
-    private BigDecimal taxAmount;
-
-    /**
-     * Getter for taxAmount - Filing Returns Model
-     */
-    public BigDecimal getTaxAmount() {
-        return this.taxAmount;
-    }
-
-    /**
-     * Setter for taxAmount - Filing Returns Model
-     */
-    public void setTaxAmount(BigDecimal taxAmount) {
-        this.taxAmount = taxAmount;
-    }
-
-    
-    private Long id;
-
-    /**
-     * Getter for id - Filing Returns Model
-     */
-    public Long getId() {
-        return this.id;
-    }
-
-    /**
-     * Setter for id - Filing Returns Model
-     */
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    
     private String formCode;
 
     /**
-     * Getter for formCode - Filing Returns Model
+     * Getter for formCode;
+     * The unique code of the form.
      */
-    public String getFormCode() {
-        return this.formCode;
+    public String getformCode() {;
+        return this.formCode;;
     }
 
     /**
-     * Setter for formCode - Filing Returns Model
+     * Setter for formCode;
+     * The unique code of the form.
      */
-    public void setFormCode(String formCode) {
-        this.formCode = formCode;
+    public void setformCode(String value) {;
+        this.formCode = value;;
     }
 
-    
-    private BigDecimal remitAmount;
+
+    private String description;
 
     /**
-     * Getter for remitAmount - Filing Returns Model
+     * Getter for description;
+     * A description for the return.
      */
-    public BigDecimal getRemitAmount() {
-        return this.remitAmount;
-    }
-
-    /**
-     * Setter for remitAmount - Filing Returns Model
-     */
-    public void setRemitAmount(BigDecimal remitAmount) {
-        this.remitAmount = remitAmount;
-    }
-
-    
-    private ArrayList<FilingAugmentationModel> augmentations;
-
-    /**
-     * Getter for augmentations - Filing Returns Model
-     */
-    public ArrayList<FilingAugmentationModel> getAugmentations() {
-        return this.augmentations;
+    public String getdescription() {;
+        return this.description;;
     }
 
     /**
-     * Setter for augmentations - Filing Returns Model
+     * Setter for description;
+     * A description for the return.
      */
-    public void setAugmentations(ArrayList<FilingAugmentationModel> augmentations) {
-        this.augmentations = augmentations;
+    public void setdescription(String value) {;
+        this.description = value;;
     }
 
-    
-    private Integer taxAuthorityId;
+
+    private Decimal? taxableAmount;
 
     /**
-     * Getter for taxAuthorityId - Filing Returns Model
+     * Getter for taxableAmount;
+     * The taxable amount.
      */
-    public Integer getTaxAuthorityId() {
-        return this.taxAuthorityId;
-    }
-
-    /**
-     * Setter for taxAuthorityId - Filing Returns Model
-     */
-    public void setTaxAuthorityId(Integer taxAuthorityId) {
-        this.taxAuthorityId = taxAuthorityId;
-    }
-
-    
-    private FilingStatusId status;
-
-    /**
-     * Getter for status - Filing Returns Model
-     */
-    public FilingStatusId getStatus() {
-        return this.status;
+    public Decimal? gettaxableAmount() {;
+        return this.taxableAmount;;
     }
 
     /**
-     * Setter for status - Filing Returns Model
+     * Setter for taxableAmount;
+     * The taxable amount.
      */
-    public void setStatus(FilingStatusId status) {
-        this.status = status;
+    public void settaxableAmount(Decimal? value) {;
+        this.taxableAmount = value;;
     }
 
-    
-    private Long filingRegionId;
+
+    private Decimal? taxAmount;
 
     /**
-     * Getter for filingRegionId - Filing Returns Model
+     * Getter for taxAmount;
+     * The tax amount.
      */
-    public Long getFilingRegionId() {
-        return this.filingRegionId;
-    }
-
-    /**
-     * Setter for filingRegionId - Filing Returns Model
-     */
-    public void setFilingRegionId(Long filingRegionId) {
-        this.filingRegionId = filingRegionId;
-    }
-
-    
-    private BigDecimal nonTaxableDueAmount;
-
-    /**
-     * Getter for nonTaxableDueAmount - Filing Returns Model
-     */
-    public BigDecimal getNonTaxableDueAmount() {
-        return this.nonTaxableDueAmount;
+    public Decimal? gettaxAmount() {;
+        return this.taxAmount;;
     }
 
     /**
-     * Setter for nonTaxableDueAmount - Filing Returns Model
+     * Setter for taxAmount;
+     * The tax amount.
      */
-    public void setNonTaxableDueAmount(BigDecimal nonTaxableDueAmount) {
-        this.nonTaxableDueAmount = nonTaxableDueAmount;
+    public void settaxAmount(Decimal? value) {;
+        this.taxAmount = value;;
     }
 
-    
-    private Integer createdUserId;
+
+    private Decimal? collectAmount;
 
     /**
-     * Getter for createdUserId - Filing Returns Model
+     * Getter for collectAmount;
+     * The amount collected by avalara for this return
      */
-    public Integer getCreatedUserId() {
-        return this.createdUserId;
-    }
-
-    /**
-     * Setter for createdUserId - Filing Returns Model
-     */
-    public void setCreatedUserId(Integer createdUserId) {
-        this.createdUserId = createdUserId;
-    }
-
-    
-    private Date startPeriod;
-
-    /**
-     * Getter for startPeriod - Filing Returns Model
-     */
-    public Date getStartPeriod() {
-        return this.startPeriod;
+    public Decimal? getcollectAmount() {;
+        return this.collectAmount;;
     }
 
     /**
-     * Setter for startPeriod - Filing Returns Model
+     * Setter for collectAmount;
+     * The amount collected by avalara for this return
      */
-    public void setStartPeriod(Date startPeriod) {
-        this.startPeriod = startPeriod;
+    public void setcollectAmount(Decimal? value) {;
+        this.collectAmount = value;;
     }
 
-    
-    private BigDecimal consumerUseNonTaxableAmount;
+
+    private Decimal? taxDueAmount;
 
     /**
-     * Getter for consumerUseNonTaxableAmount - Filing Returns Model
+     * Getter for taxDueAmount;
+     * The tax due amount.
      */
-    public BigDecimal getConsumerUseNonTaxableAmount() {
-        return this.consumerUseNonTaxableAmount;
-    }
-
-    /**
-     * Setter for consumerUseNonTaxableAmount - Filing Returns Model
-     */
-    public void setConsumerUseNonTaxableAmount(BigDecimal consumerUseNonTaxableAmount) {
-        this.consumerUseNonTaxableAmount = consumerUseNonTaxableAmount;
-    }
-
-    
-    private Long resourceFileId;
-
-    /**
-     * Getter for resourceFileId - Filing Returns Model
-     */
-    public Long getResourceFileId() {
-        return this.resourceFileId;
+    public Decimal? gettaxDueAmount() {;
+        return this.taxDueAmount;;
     }
 
     /**
-     * Setter for resourceFileId - Filing Returns Model
+     * Setter for taxDueAmount;
+     * The tax due amount.
      */
-    public void setResourceFileId(Long resourceFileId) {
-        this.resourceFileId = resourceFileId;
+    public void settaxDueAmount(Decimal? value) {;
+        this.taxDueAmount = value;;
     }
 
-    
-    private ArrayList<FilingAdjustmentModel> adjustments;
+
+    private Decimal? nonTaxableAmount;
 
     /**
-     * Getter for adjustments - Filing Returns Model
+     * Getter for nonTaxableAmount;
+     * The non-taxable amount.
      */
-    public ArrayList<FilingAdjustmentModel> getAdjustments() {
-        return this.adjustments;
-    }
-
-    /**
-     * Setter for adjustments - Filing Returns Model
-     */
-    public void setAdjustments(ArrayList<FilingAdjustmentModel> adjustments) {
-        this.adjustments = adjustments;
-    }
-
-    
-    private BigDecimal taxableAmount;
-
-    /**
-     * Getter for taxableAmount - Filing Returns Model
-     */
-    public BigDecimal getTaxableAmount() {
-        return this.taxableAmount;
+    public Decimal? getnonTaxableAmount() {;
+        return this.nonTaxableAmount;;
     }
 
     /**
-     * Setter for taxableAmount - Filing Returns Model
+     * Setter for nonTaxableAmount;
+     * The non-taxable amount.
      */
-    public void setTaxableAmount(BigDecimal taxableAmount) {
-        this.taxableAmount = taxableAmount;
+    public void setnonTaxableAmount(Decimal? value) {;
+        this.nonTaxableAmount = value;;
     }
 
-    
-    private BigDecimal consumerUseTaxableAmount;
+
+    private Decimal? nonTaxableDueAmount;
 
     /**
-     * Getter for consumerUseTaxableAmount - Filing Returns Model
+     * Getter for nonTaxableDueAmount;
+     * The non-taxable due amount.
      */
-    public BigDecimal getConsumerUseTaxableAmount() {
-        return this.consumerUseTaxableAmount;
-    }
-
-    /**
-     * Setter for consumerUseTaxableAmount - Filing Returns Model
-     */
-    public void setConsumerUseTaxableAmount(BigDecimal consumerUseTaxableAmount) {
-        this.consumerUseTaxableAmount = consumerUseTaxableAmount;
-    }
-
-    
-    private BigDecimal salesAmount;
-
-    /**
-     * Getter for salesAmount - Filing Returns Model
-     */
-    public BigDecimal getSalesAmount() {
-        return this.salesAmount;
+    public Decimal? getnonTaxableDueAmount() {;
+        return this.nonTaxableDueAmount;;
     }
 
     /**
-     * Setter for salesAmount - Filing Returns Model
+     * Setter for nonTaxableDueAmount;
+     * The non-taxable due amount.
      */
-    public void setSalesAmount(BigDecimal salesAmount) {
-        this.salesAmount = salesAmount;
+    public void setnonTaxableDueAmount(Decimal? value) {;
+        this.nonTaxableDueAmount = value;;
     }
 
-    
-    private BigDecimal nonTaxableAmount;
+
+    private Decimal? consumerUseTaxAmount;
 
     /**
-     * Getter for nonTaxableAmount - Filing Returns Model
+     * Getter for consumerUseTaxAmount;
+     * Consumer use tax liability.
      */
-    public BigDecimal getNonTaxableAmount() {
-        return this.nonTaxableAmount;
-    }
-
-    /**
-     * Setter for nonTaxableAmount - Filing Returns Model
-     */
-    public void setNonTaxableAmount(BigDecimal nonTaxableAmount) {
-        this.nonTaxableAmount = nonTaxableAmount;
-    }
-
-    
-    private BigDecimal consumerUseTaxAmount;
-
-    /**
-     * Getter for consumerUseTaxAmount - Filing Returns Model
-     */
-    public BigDecimal getConsumerUseTaxAmount() {
-        return this.consumerUseTaxAmount;
+    public Decimal? getconsumerUseTaxAmount() {;
+        return this.consumerUseTaxAmount;;
     }
 
     /**
-     * Setter for consumerUseTaxAmount - Filing Returns Model
+     * Setter for consumerUseTaxAmount;
+     * Consumer use tax liability.
      */
-    public void setConsumerUseTaxAmount(BigDecimal consumerUseTaxAmount) {
-        this.consumerUseTaxAmount = consumerUseTaxAmount;
+    public void setconsumerUseTaxAmount(Decimal? value) {;
+        this.consumerUseTaxAmount = value;;
     }
 
-    
-    private BigDecimal totalAdjustments;
+
+    private Decimal? consumerUseNonTaxableAmount;
 
     /**
-     * Getter for totalAdjustments - Filing Returns Model
+     * Getter for consumerUseNonTaxableAmount;
+     * Consumer use non-taxable amount.
      */
-    public BigDecimal getTotalAdjustments() {
-        return this.totalAdjustments;
-    }
-
-    /**
-     * Setter for totalAdjustments - Filing Returns Model
-     */
-    public void setTotalAdjustments(BigDecimal totalAdjustments) {
-        this.totalAdjustments = totalAdjustments;
-    }
-
-    
-    private BigDecimal totalAugmentations;
-
-    /**
-     * Getter for totalAugmentations - Filing Returns Model
-     */
-    public BigDecimal getTotalAugmentations() {
-        return this.totalAugmentations;
+    public Decimal? getconsumerUseNonTaxableAmount() {;
+        return this.consumerUseNonTaxableAmount;;
     }
 
     /**
-     * Setter for totalAugmentations - Filing Returns Model
+     * Setter for consumerUseNonTaxableAmount;
+     * Consumer use non-taxable amount.
      */
-    public void setTotalAugmentations(BigDecimal totalAugmentations) {
-        this.totalAugmentations = totalAugmentations;
+    public void setconsumerUseNonTaxableAmount(Decimal? value) {;
+        this.consumerUseNonTaxableAmount = value;;
     }
 
-    
-    private Byte month;
+
+    private Decimal? consumerUseTaxableAmount;
 
     /**
-     * Getter for month - Filing Returns Model
+     * Getter for consumerUseTaxableAmount;
+     * Consumer use taxable amount.
      */
-    public Byte getMonth() {
-        return this.month;
-    }
-
-    /**
-     * Setter for month - Filing Returns Model
-     */
-    public void setMonth(Byte month) {
-        this.month = month;
-    }
-
-    
-    private Date createdDate;
-
-    /**
-     * Getter for createdDate - Filing Returns Model
-     */
-    public Date getCreatedDate() {
-        return this.createdDate;
+    public Decimal? getconsumerUseTaxableAmount() {;
+        return this.consumerUseTaxableAmount;;
     }
 
     /**
-     * Setter for createdDate - Filing Returns Model
+     * Setter for consumerUseTaxableAmount;
+     * Consumer use taxable amount.
      */
-    public void setCreatedDate(Date createdDate) {
-        this.createdDate = createdDate;
+    public void setconsumerUseTaxableAmount(Decimal? value) {;
+        this.consumerUseTaxableAmount = value;;
     }
 
-    
+
+    private Decimal? totalAdjustments;
+
+    /**
+     * Getter for totalAdjustments;
+     * Total amount of adjustments on this return
+     */
+    public Decimal? gettotalAdjustments() {;
+        return this.totalAdjustments;;
+    }
+
+    /**
+     * Setter for totalAdjustments;
+     * Total amount of adjustments on this return
+     */
+    public void settotalAdjustments(Decimal? value) {;
+        this.totalAdjustments = value;;
+    }
+
+
+    private List<FilingAdjustmentModel> adjustments;
+
+    /**
+     * Getter for adjustments;
+     * The Adjustments for this return.
+     */
+    public List<FilingAdjustmentModel> getadjustments() {;
+        return this.adjustments;;
+    }
+
+    /**
+     * Setter for adjustments;
+     * The Adjustments for this return.
+     */
+    public void setadjustments(List<FilingAdjustmentModel> value) {;
+        this.adjustments = value;;
+    }
+
+
+    private Decimal? totalAugmentations;
+
+    /**
+     * Getter for totalAugmentations;
+     * Total amount of augmentations on this return
+     */
+    public Decimal? gettotalAugmentations() {;
+        return this.totalAugmentations;;
+    }
+
+    /**
+     * Setter for totalAugmentations;
+     * Total amount of augmentations on this return
+     */
+    public void settotalAugmentations(Decimal? value) {;
+        this.totalAugmentations = value;;
+    }
+
+
+    private List<FilingAugmentationModel> augmentations;
+
+    /**
+     * Getter for augmentations;
+     * The Augmentations for this return.
+     */
+    public List<FilingAugmentationModel> getaugmentations() {;
+        return this.augmentations;;
+    }
+
+    /**
+     * Setter for augmentations;
+     * The Augmentations for this return.
+     */
+    public void setaugmentations(List<FilingAugmentationModel> value) {;
+        this.augmentations = value;;
+    }
+
+
+    private AccrualType? accrualType;
+
+    /**
+     * Getter for accrualType;
+     * Accrual type of the return
+     */
+    public AccrualType? getaccrualType() {;
+        return this.accrualType;;
+    }
+
+    /**
+     * Setter for accrualType;
+     * Accrual type of the return
+     */
+    public void setaccrualType(AccrualType? value) {;
+        this.accrualType = value;;
+    }
+
+
+    private Byte? month;
+
+    /**
+     * Getter for month;
+     * The month of the filing period for this tax filing. 
+    * The filing period represents the year and month of the last day of taxes being reported on this filing. 
+    * For example, an annual tax filing for Jan-Dec 2015 would have a filing period of Dec 2015.
+     */
+    public Byte? getmonth() {;
+        return this.month;;
+    }
+
+    /**
+     * Setter for month;
+     * The month of the filing period for this tax filing. 
+    * The filing period represents the year and month of the last day of taxes being reported on this filing. 
+    * For example, an annual tax filing for Jan-Dec 2015 would have a filing period of Dec 2015.
+     */
+    public void setmonth(Byte? value) {;
+        this.month = value;;
+    }
+
+
+    private Int32? year;
+
+    /**
+     * Getter for year;
+     * The year of the filing period for this tax filing.
+    * The filing period represents the year and month of the last day of taxes being reported on this filing. 
+    * For example, an annual tax filing for Jan-Dec 2015 would have a filing period of Dec 2015.
+     */
+    public Int32? getyear() {;
+        return this.year;;
+    }
+
+    /**
+     * Setter for year;
+     * The year of the filing period for this tax filing.
+    * The filing period represents the year and month of the last day of taxes being reported on this filing. 
+    * For example, an annual tax filing for Jan-Dec 2015 would have a filing period of Dec 2015.
+     */
+    public void setyear(Int32? value) {;
+        this.year = value;;
+    }
+
+
+    private DateTime? createdDate;
+
+    /**
+     * Getter for createdDate;
+     * The date when this record was created.
+     */
+    public DateTime? getcreatedDate() {;
+        return this.createdDate;;
+    }
+
+    /**
+     * Setter for createdDate;
+     * The date when this record was created.
+     */
+    public void setcreatedDate(DateTime? value) {;
+        this.createdDate = value;;
+    }
+
+
+    private Int32? createdUserId;
+
+    /**
+     * Getter for createdUserId;
+     * The User ID of the user who created this record.
+     */
+    public Int32? getcreatedUserId() {;
+        return this.createdUserId;;
+    }
+
+    /**
+     * Setter for createdUserId;
+     * The User ID of the user who created this record.
+     */
+    public void setcreatedUserId(Int32? value) {;
+        this.createdUserId = value;;
+    }
+
+
+    private DateTime? modifiedDate;
+
+    /**
+     * Getter for modifiedDate;
+     * The date/time when this record was last modified.
+     */
+    public DateTime? getmodifiedDate() {;
+        return this.modifiedDate;;
+    }
+
+    /**
+     * Setter for modifiedDate;
+     * The date/time when this record was last modified.
+     */
+    public void setmodifiedDate(DateTime? value) {;
+        this.modifiedDate = value;;
+    }
 
 
     /**
-     * Returns a JSON string representation of FilingReturnModel.
+     * Returns a JSON string representation of FilingReturnModel
      */
     @Override
     public String toString() {
         return JsonSerializer.SerializeObject(this);
     }
 }
-    

@@ -9,86 +9,108 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 
+/*
+ * AvaTax Software Development Kit for Java JRE based environments
+ *
+ * (c) 2004-2017 Avalara, Inc.
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ *
+ * @author     Dustin Welden <dustin.welden@avalara.com>
+ * @copyright  2004-2017 Avalara, Inc.
+ * @license    https://www.apache.org/licenses/LICENSE-2.0
+ * @version    17.5.2-77
+ * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ */
+
 /**
  * Information about a location type
  */
 public class TransactionLocationTypeModel {
-    private Long documentLocationTypeId;
+
+
+    private Int64? documentLocationTypeId;
 
     /**
-     * Getter for documentLocationTypeId - Information about a location type
+     * Getter for documentLocationTypeId;
+     * Location type ID for this location type in transaction
      */
-    public Long getDocumentLocationTypeId() {
-        return this.documentLocationTypeId;
+    public Int64? getdocumentLocationTypeId() {;
+        return this.documentLocationTypeId;;
     }
 
     /**
-     * Setter for documentLocationTypeId - Information about a location type
+     * Setter for documentLocationTypeId;
+     * Location type ID for this location type in transaction
      */
-    public void setDocumentLocationTypeId(Long documentLocationTypeId) {
-        this.documentLocationTypeId = documentLocationTypeId;
+    public void setdocumentLocationTypeId(Int64? value) {;
+        this.documentLocationTypeId = value;;
     }
 
-    
-    private Long documentId;
+
+    private Int64? documentId;
 
     /**
-     * Getter for documentId - Information about a location type
+     * Getter for documentId;
+     * Transaction ID
      */
-    public Long getDocumentId() {
-        return this.documentId;
-    }
-
-    /**
-     * Setter for documentId - Information about a location type
-     */
-    public void setDocumentId(Long documentId) {
-        this.documentId = documentId;
-    }
-
-    
-    private Long documentAddressId;
-
-    /**
-     * Getter for documentAddressId - Information about a location type
-     */
-    public Long getDocumentAddressId() {
-        return this.documentAddressId;
+    public Int64? getdocumentId() {;
+        return this.documentId;;
     }
 
     /**
-     * Setter for documentAddressId - Information about a location type
+     * Setter for documentId;
+     * Transaction ID
      */
-    public void setDocumentAddressId(Long documentAddressId) {
-        this.documentAddressId = documentAddressId;
+    public void setdocumentId(Int64? value) {;
+        this.documentId = value;;
     }
 
-    
+
+    private Int64? documentAddressId;
+
+    /**
+     * Getter for documentAddressId;
+     * Address ID for the transaction
+     */
+    public Int64? getdocumentAddressId() {;
+        return this.documentAddressId;;
+    }
+
+    /**
+     * Setter for documentAddressId;
+     * Address ID for the transaction
+     */
+    public void setdocumentAddressId(Int64? value) {;
+        this.documentAddressId = value;;
+    }
+
+
     private String locationTypeCode;
 
     /**
-     * Getter for locationTypeCode - Information about a location type
+     * Getter for locationTypeCode;
+     * Location type code
      */
-    public String getLocationTypeCode() {
-        return this.locationTypeCode;
+    public String getlocationTypeCode() {;
+        return this.locationTypeCode;;
     }
 
     /**
-     * Setter for locationTypeCode - Information about a location type
+     * Setter for locationTypeCode;
+     * Location type code
      */
-    public void setLocationTypeCode(String locationTypeCode) {
-        this.locationTypeCode = locationTypeCode;
+    public void setlocationTypeCode(String value) {;
+        this.locationTypeCode = value;;
     }
-
-    
 
 
     /**
-     * Returns a JSON string representation of TransactionLocationTypeModel.
+     * Returns a JSON string representation of TransactionLocationTypeModel
      */
     @Override
     public String toString() {
         return JsonSerializer.SerializeObject(this);
     }
 }
-    

@@ -9,154 +9,184 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 
+/*
+ * AvaTax Software Development Kit for Java JRE based environments
+ *
+ * (c) 2004-2017 Avalara, Inc.
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ *
+ * @author     Dustin Welden <dustin.welden@avalara.com>
+ * @copyright  2004-2017 Avalara, Inc.
+ * @license    https://www.apache.org/licenses/LICENSE-2.0
+ * @version    17.5.2-77
+ * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ */
+
 /**
  * Represents information about a single legal taxing jurisdiction
  */
 public class JurisdictionModel {
-    private BigDecimal rate;
 
-    /**
-     * Getter for rate - Represents information about a single legal taxing jurisdiction
-     */
-    public BigDecimal getRate() {
-        return this.rate;
-    }
 
-    /**
-     * Setter for rate - Represents information about a single legal taxing jurisdiction
-     */
-    public void setRate(BigDecimal rate) {
-        this.rate = rate;
-    }
-
-    
-    private String name;
-
-    /**
-     * Getter for name - Represents information about a single legal taxing jurisdiction
-     */
-    public String getName() {
-        return this.name;
-    }
-
-    /**
-     * Setter for name - Represents information about a single legal taxing jurisdiction
-     */
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    
     private String code;
 
     /**
-     * Getter for code - Represents information about a single legal taxing jurisdiction
+     * Getter for code;
+     * The code that is used to identify this jurisdiction
      */
-    public String getCode() {
-        return this.code;
+    public String getcode() {;
+        return this.code;;
     }
 
     /**
-     * Setter for code - Represents information about a single legal taxing jurisdiction
+     * Setter for code;
+     * The code that is used to identify this jurisdiction
      */
-    public void setCode(String code) {
-        this.code = code;
+    public void setcode(String value) {;
+        this.code = value;;
     }
 
-    
-    private BigDecimal salesRate;
+
+    private String name;
 
     /**
-     * Getter for salesRate - Represents information about a single legal taxing jurisdiction
+     * Getter for name;
+     * The name of this jurisdiction
      */
-    public BigDecimal getSalesRate() {
-        return this.salesRate;
-    }
-
-    /**
-     * Setter for salesRate - Represents information about a single legal taxing jurisdiction
-     */
-    public void setSalesRate(BigDecimal salesRate) {
-        this.salesRate = salesRate;
-    }
-
-    
-    private BigDecimal useRate;
-
-    /**
-     * Getter for useRate - Represents information about a single legal taxing jurisdiction
-     */
-    public BigDecimal getUseRate() {
-        return this.useRate;
+    public String getname() {;
+        return this.name;;
     }
 
     /**
-     * Setter for useRate - Represents information about a single legal taxing jurisdiction
+     * Setter for name;
+     * The name of this jurisdiction
      */
-    public void setUseRate(BigDecimal useRate) {
-        this.useRate = useRate;
+    public void setname(String value) {;
+        this.name = value;;
     }
 
-    
-    private String region;
 
-    /**
-     * Getter for region - Represents information about a single legal taxing jurisdiction
-     */
-    public String getRegion() {
-        return this.region;
-    }
-
-    /**
-     * Setter for region - Represents information about a single legal taxing jurisdiction
-     */
-    public void setRegion(String region) {
-        this.region = region;
-    }
-
-    
     private JurisdictionType type;
 
     /**
-     * Getter for type - Represents information about a single legal taxing jurisdiction
+     * Getter for type;
+     * The type of the jurisdiction, indicating whether it is a country, state/region, city, for example.
      */
-    public JurisdictionType getType() {
-        return this.type;
+    public JurisdictionType gettype() {;
+        return this.type;;
     }
 
     /**
-     * Setter for type - Represents information about a single legal taxing jurisdiction
+     * Setter for type;
+     * The type of the jurisdiction, indicating whether it is a country, state/region, city, for example.
      */
-    public void setType(JurisdictionType type) {
-        this.type = type;
+    public void settype(JurisdictionType value) {;
+        this.type = value;;
     }
 
-    
+
+    private Decimal? rate;
+
+    /**
+     * Getter for rate;
+     * The base rate of tax specific to this jurisdiction.
+     */
+    public Decimal? getrate() {;
+        return this.rate;;
+    }
+
+    /**
+     * Setter for rate;
+     * The base rate of tax specific to this jurisdiction.
+     */
+    public void setrate(Decimal? value) {;
+        this.rate = value;;
+    }
+
+
+    private Decimal? salesRate;
+
+    /**
+     * Getter for salesRate;
+     * The "Sales" tax rate specific to this jurisdiction.
+     */
+    public Decimal? getsalesRate() {;
+        return this.salesRate;;
+    }
+
+    /**
+     * Setter for salesRate;
+     * The "Sales" tax rate specific to this jurisdiction.
+     */
+    public void setsalesRate(Decimal? value) {;
+        this.salesRate = value;;
+    }
+
+
     private String signatureCode;
 
     /**
-     * Getter for signatureCode - Represents information about a single legal taxing jurisdiction
+     * Getter for signatureCode;
+     * The Avalara-supplied signature code for this jurisdiction.
      */
-    public String getSignatureCode() {
-        return this.signatureCode;
+    public String getsignatureCode() {;
+        return this.signatureCode;;
     }
 
     /**
-     * Setter for signatureCode - Represents information about a single legal taxing jurisdiction
+     * Setter for signatureCode;
+     * The Avalara-supplied signature code for this jurisdiction.
      */
-    public void setSignatureCode(String signatureCode) {
-        this.signatureCode = signatureCode;
+    public void setsignatureCode(String value) {;
+        this.signatureCode = value;;
     }
 
-    
+
+    private String region;
+
+    /**
+     * Getter for region;
+     * The state assigned code for this jurisdiction, if any.
+     */
+    public String getregion() {;
+        return this.region;;
+    }
+
+    /**
+     * Setter for region;
+     * The state assigned code for this jurisdiction, if any.
+     */
+    public void setregion(String value) {;
+        this.region = value;;
+    }
+
+
+    private Decimal? useRate;
+
+    /**
+     * Getter for useRate;
+     * The "Seller's Use" tax rate specific to this jurisdiction.
+     */
+    public Decimal? getuseRate() {;
+        return this.useRate;;
+    }
+
+    /**
+     * Setter for useRate;
+     * The "Seller's Use" tax rate specific to this jurisdiction.
+     */
+    public void setuseRate(Decimal? value) {;
+        this.useRate = value;;
+    }
 
 
     /**
-     * Returns a JSON string representation of JurisdictionModel.
+     * Returns a JSON string representation of JurisdictionModel
      */
     @Override
     public String toString() {
         return JsonSerializer.SerializeObject(this);
     }
 }
-    

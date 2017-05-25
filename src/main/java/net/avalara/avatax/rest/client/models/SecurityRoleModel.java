@@ -9,52 +9,70 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 
+/*
+ * AvaTax Software Development Kit for Java JRE based environments
+ *
+ * (c) 2004-2017 Avalara, Inc.
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ *
+ * @author     Dustin Welden <dustin.welden@avalara.com>
+ * @copyright  2004-2017 Avalara, Inc.
+ * @license    https://www.apache.org/licenses/LICENSE-2.0
+ * @version    17.5.2-77
+ * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ */
+
 /**
  * Represents a single security role.
  */
 public class SecurityRoleModel {
-    private Byte id;
+
+
+    private Byte? id;
 
     /**
-     * Getter for id - Represents a single security role.
+     * Getter for id;
+     * The unique ID number of this security role.
      */
-    public Byte getId() {
-        return this.id;
+    public Byte? getid() {;
+        return this.id;;
     }
 
     /**
-     * Setter for id - Represents a single security role.
+     * Setter for id;
+     * The unique ID number of this security role.
      */
-    public void setId(Byte id) {
-        this.id = id;
+    public void setid(Byte? value) {;
+        this.id = value;;
     }
 
-    
+
     private String description;
 
     /**
-     * Getter for description - Represents a single security role.
+     * Getter for description;
+     * A description of this security role
      */
-    public String getDescription() {
-        return this.description;
+    public String getdescription() {;
+        return this.description;;
     }
 
     /**
-     * Setter for description - Represents a single security role.
+     * Setter for description;
+     * A description of this security role
      */
-    public void setDescription(String description) {
-        this.description = description;
+    public void setdescription(String value) {;
+        this.description = value;;
     }
-
-    
 
 
     /**
-     * Returns a JSON string representation of SecurityRoleModel.
+     * Returns a JSON string representation of SecurityRoleModel
      */
     @Override
     public String toString() {
         return JsonSerializer.SerializeObject(this);
     }
 }
-    

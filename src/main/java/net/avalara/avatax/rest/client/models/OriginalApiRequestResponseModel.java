@@ -9,52 +9,70 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 
+/*
+ * AvaTax Software Development Kit for Java JRE based environments
+ *
+ * (c) 2004-2017 Avalara, Inc.
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ *
+ * @author     Dustin Welden <dustin.welden@avalara.com>
+ * @copyright  2004-2017 Avalara, Inc.
+ * @license    https://www.apache.org/licenses/LICENSE-2.0
+ * @version    17.5.2-77
+ * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ */
+
 /**
  * Represents the exact API request and response from the original transaction API call, if available
  */
 public class OriginalApiRequestResponseModel {
+
+
     private String request;
 
     /**
-     * Getter for request - Represents the exact API request and response from the original transaction API call, if available
+     * Getter for request;
+     * API request
      */
-    public String getRequest() {
-        return this.request;
+    public String getrequest() {;
+        return this.request;;
     }
 
     /**
-     * Setter for request - Represents the exact API request and response from the original transaction API call, if available
+     * Setter for request;
+     * API request
      */
-    public void setRequest(String request) {
-        this.request = request;
+    public void setrequest(String value) {;
+        this.request = value;;
     }
 
-    
+
     private String response;
 
     /**
-     * Getter for response - Represents the exact API request and response from the original transaction API call, if available
+     * Getter for response;
+     * API response
      */
-    public String getResponse() {
-        return this.response;
+    public String getresponse() {;
+        return this.response;;
     }
 
     /**
-     * Setter for response - Represents the exact API request and response from the original transaction API call, if available
+     * Setter for response;
+     * API response
      */
-    public void setResponse(String response) {
-        this.response = response;
+    public void setresponse(String value) {;
+        this.response = value;;
     }
-
-    
 
 
     /**
-     * Returns a JSON string representation of OriginalApiRequestResponseModel.
+     * Returns a JSON string representation of OriginalApiRequestResponseModel
      */
     @Override
     public String toString() {
         return JsonSerializer.SerializeObject(this);
     }
 }
-    

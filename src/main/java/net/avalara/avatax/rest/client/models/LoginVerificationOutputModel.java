@@ -9,86 +9,108 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 
+/*
+ * AvaTax Software Development Kit for Java JRE based environments
+ *
+ * (c) 2004-2017 Avalara, Inc.
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ *
+ * @author     Dustin Welden <dustin.welden@avalara.com>
+ * @copyright  2004-2017 Avalara, Inc.
+ * @license    https://www.apache.org/licenses/LICENSE-2.0
+ * @version    17.5.2-77
+ * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ */
+
 /**
  * This is the output model coming from skyscraper services
  */
 public class LoginVerificationOutputModel {
-    private Integer jobId;
+
+
+    private Int32 jobId;
 
     /**
-     * Getter for jobId - This is the output model coming from skyscraper services
+     * Getter for jobId;
+     * The job Id returned from skyscraper
      */
-    public Integer getJobId() {
-        return this.jobId;
+    public Int32 getjobId() {;
+        return this.jobId;;
     }
 
     /**
-     * Setter for jobId - This is the output model coming from skyscraper services
+     * Setter for jobId;
+     * The job Id returned from skyscraper
      */
-    public void setJobId(Integer jobId) {
-        this.jobId = jobId;
+    public void setjobId(Int32 value) {;
+        this.jobId = value;;
     }
 
-    
+
     private String operationStatus;
 
     /**
-     * Getter for operationStatus - This is the output model coming from skyscraper services
+     * Getter for operationStatus;
+     * The operation status of the job
      */
-    public String getOperationStatus() {
-        return this.operationStatus;
+    public String getoperationStatus() {;
+        return this.operationStatus;;
     }
 
     /**
-     * Setter for operationStatus - This is the output model coming from skyscraper services
+     * Setter for operationStatus;
+     * The operation status of the job
      */
-    public void setOperationStatus(String operationStatus) {
-        this.operationStatus = operationStatus;
+    public void setoperationStatus(String value) {;
+        this.operationStatus = value;;
     }
 
-    
+
     private String message;
 
     /**
-     * Getter for message - This is the output model coming from skyscraper services
+     * Getter for message;
+     * The message returned from the job
      */
-    public String getMessage() {
-        return this.message;
+    public String getmessage() {;
+        return this.message;;
     }
 
     /**
-     * Setter for message - This is the output model coming from skyscraper services
+     * Setter for message;
+     * The message returned from the job
      */
-    public void setMessage(String message) {
-        this.message = message;
+    public void setmessage(String value) {;
+        this.message = value;;
     }
 
-    
-    private Boolean loginSuccess;
+
+    private Boolean? loginSuccess;
 
     /**
-     * Getter for loginSuccess - This is the output model coming from skyscraper services
+     * Getter for loginSuccess;
+     * Indicates if the login was successful
      */
-    public Boolean getLoginSuccess() {
-        return this.loginSuccess;
+    public Boolean? getloginSuccess() {;
+        return this.loginSuccess;;
     }
 
     /**
-     * Setter for loginSuccess - This is the output model coming from skyscraper services
+     * Setter for loginSuccess;
+     * Indicates if the login was successful
      */
-    public void setLoginSuccess(Boolean loginSuccess) {
-        this.loginSuccess = loginSuccess;
+    public void setloginSuccess(Boolean? value) {;
+        this.loginSuccess = value;;
     }
-
-    
 
 
     /**
-     * Returns a JSON string representation of LoginVerificationOutputModel.
+     * Returns a JSON string representation of LoginVerificationOutputModel
      */
     @Override
     public String toString() {
         return JsonSerializer.SerializeObject(this);
     }
 }
-    

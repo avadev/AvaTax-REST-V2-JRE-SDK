@@ -9,86 +9,108 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 
+/*
+ * AvaTax Software Development Kit for Java JRE based environments
+ *
+ * (c) 2004-2017 Avalara, Inc.
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ *
+ * @author     Dustin Welden <dustin.welden@avalara.com>
+ * @copyright  2004-2017 Avalara, Inc.
+ * @license    https://www.apache.org/licenses/LICENSE-2.0
+ * @version    17.5.2-77
+ * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ */
+
 /**
  * NoticeRootCause Model
  */
 public class NoticeRootCauseDetailModel {
-    private Integer id;
+
+
+    private Int32 id;
 
     /**
-     * Getter for id - NoticeRootCause Model
+     * Getter for id;
+     * The unique ID number of this filing frequency.
      */
-    public Integer getId() {
-        return this.id;
+    public Int32 getid() {;
+        return this.id;;
     }
 
     /**
-     * Setter for id - NoticeRootCause Model
+     * Setter for id;
+     * The unique ID number of this filing frequency.
      */
-    public void setId(Integer id) {
-        this.id = id;
+    public void setid(Int32 value) {;
+        this.id = value;;
     }
 
-    
-    private Integer noticeId;
+
+    private Int32? noticeId;
 
     /**
-     * Getter for noticeId - NoticeRootCause Model
+     * Getter for noticeId;
+     * TaxNoticeId
      */
-    public Integer getNoticeId() {
-        return this.noticeId;
-    }
-
-    /**
-     * Setter for noticeId - NoticeRootCause Model
-     */
-    public void setNoticeId(Integer noticeId) {
-        this.noticeId = noticeId;
-    }
-
-    
-    private Integer taxNoticeRootCauseId;
-
-    /**
-     * Getter for taxNoticeRootCauseId - NoticeRootCause Model
-     */
-    public Integer getTaxNoticeRootCauseId() {
-        return this.taxNoticeRootCauseId;
+    public Int32? getnoticeId() {;
+        return this.noticeId;;
     }
 
     /**
-     * Setter for taxNoticeRootCauseId - NoticeRootCause Model
+     * Setter for noticeId;
+     * TaxNoticeId
      */
-    public void setTaxNoticeRootCauseId(Integer taxNoticeRootCauseId) {
-        this.taxNoticeRootCauseId = taxNoticeRootCauseId;
+    public void setnoticeId(Int32? value) {;
+        this.noticeId = value;;
     }
 
-    
+
+    private Int32? taxNoticeRootCauseId;
+
+    /**
+     * Getter for taxNoticeRootCauseId;
+     * TaxNoticeRootCauseId
+     */
+    public Int32? gettaxNoticeRootCauseId() {;
+        return this.taxNoticeRootCauseId;;
+    }
+
+    /**
+     * Setter for taxNoticeRootCauseId;
+     * TaxNoticeRootCauseId
+     */
+    public void settaxNoticeRootCauseId(Int32? value) {;
+        this.taxNoticeRootCauseId = value;;
+    }
+
+
     private String description;
 
     /**
-     * Getter for description - NoticeRootCause Model
+     * Getter for description;
+     * The description name of this root cause
      */
-    public String getDescription() {
-        return this.description;
+    public String getdescription() {;
+        return this.description;;
     }
 
     /**
-     * Setter for description - NoticeRootCause Model
+     * Setter for description;
+     * The description name of this root cause
      */
-    public void setDescription(String description) {
-        this.description = description;
+    public void setdescription(String value) {;
+        this.description = value;;
     }
-
-    
 
 
     /**
-     * Returns a JSON string representation of NoticeRootCauseDetailModel.
+     * Returns a JSON string representation of NoticeRootCauseDetailModel
      */
     @Override
     public String toString() {
         return JsonSerializer.SerializeObject(this);
     }
 }
-    
