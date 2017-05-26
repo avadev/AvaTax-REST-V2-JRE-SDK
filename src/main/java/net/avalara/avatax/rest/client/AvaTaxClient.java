@@ -92,8 +92,8 @@ public class AvaTaxClient {
      * Resets the existing license key for this account to a new key.
      * To reset your account, you must specify the ID of the account you wish to reset and confirm the action.
      * 
-     * @param int id The ID of the account you wish to update.
-     * @param ResetLicenseKeyModel model A request confirming that you wish to reset the license key of this account.
+     * @param id The ID of the account you wish to update.
+     * @param model A request confirming that you wish to reset the license key of this account.
      * @return LicenseKeyModel
      */
     public LicenseKeyModel accountResetLicenseKey(int id, ResetLicenseKeyModel model) throws Exception {
@@ -108,8 +108,8 @@ public class AvaTaxClient {
      * Resets the existing license key for this account to a new key.
      * To reset your account, you must specify the ID of the account you wish to reset and confirm the action.
      * 
-     * @param int id The ID of the account you wish to update.
-     * @param ResetLicenseKeyModel model A request confirming that you wish to reset the license key of this account.
+     * @param id The ID of the account you wish to update.
+     * @param model A request confirming that you wish to reset the license key of this account.
      * @return LicenseKeyModel
      */
     public Future<LicenseKeyModel> accountResetLicenseKeyAsync(int id, ResetLicenseKeyModel model) {
@@ -128,8 +128,8 @@ public class AvaTaxClient {
      * 
      * If you have not read or accepted the terms and conditions, this API call will return the
      * 
-     * @param int id The ID of the account to activate
-     * @param ActivateAccountModel model The activation request
+     * @param id The ID of the account to activate
+     * @param model The activation request
      * @return AccountModel
      */
     public AccountModel activateAccount(int id, ActivateAccountModel model) throws Exception {
@@ -148,8 +148,8 @@ public class AvaTaxClient {
      * 
      * If you have not read or accepted the terms and conditions, this API call will return the
      * 
-     * @param int id The ID of the account to activate
-     * @param ActivateAccountModel model The activation request
+     * @param id The ID of the account to activate
+     * @param model The activation request
      * @return AccountModel
      */
     public Future<AccountModel> activateAccountAsync(int id, ActivateAccountModel model) {
@@ -166,8 +166,8 @@ public class AvaTaxClient {
      * 
      * * Subscriptions
      * 
-     * @param int id The ID of the account to retrieve
-     * @param String include A comma separated list of child objects to return underneath the primary object.
+     * @param id The ID of the account to retrieve
+     * @param include A comma separated list of child objects to return underneath the primary object.
      * @return AccountModel
      */
     public AccountModel getAccount(int id, String include) throws Exception {
@@ -185,8 +185,8 @@ public class AvaTaxClient {
      * 
      * * Subscriptions
      * 
-     * @param int id The ID of the account to retrieve
-     * @param String include A comma separated list of child objects to return underneath the primary object.
+     * @param id The ID of the account to retrieve
+     * @param include A comma separated list of child objects to return underneath the primary object.
      * @return AccountModel
      */
     public Future<AccountModel> getAccountAsync(int id, String include) {
@@ -211,7 +211,7 @@ public class AvaTaxClient {
      * 
      * Avalara-based account settings for `TaxServiceConfig` and `AddressServiceConfig` affect your account's
      * 
-     * @param int id 
+     * @param id 
      * @return ArrayList<AccountConfigurationModel>
      */
     public ArrayList<AccountConfigurationModel> getAccountConfiguration(int id) throws Exception {
@@ -235,7 +235,7 @@ public class AvaTaxClient {
      * 
      * Avalara-based account settings for `TaxServiceConfig` and `AddressServiceConfig` affect your account's
      * 
-     * @param int id 
+     * @param id 
      * @return ArrayList<AccountConfigurationModel>
      */
     public Future<ArrayList<AccountConfigurationModel>> getAccountConfigurationAsync(int id) {
@@ -259,8 +259,8 @@ public class AvaTaxClient {
      * 
      * Avalara-based account settings for `TaxServiceConfig` and `AddressServiceConfig` affect your account's
      * 
-     * @param int id 
-     * @param ArrayList<AccountConfigurationModel> model 
+     * @param id 
+     * @param model 
      * @return ArrayList<AccountConfigurationModel>
      */
     public ArrayList<AccountConfigurationModel> setAccountConfiguration(int id, ArrayList<AccountConfigurationModel> model) throws Exception {
@@ -284,8 +284,8 @@ public class AvaTaxClient {
      * 
      * Avalara-based account settings for `TaxServiceConfig` and `AddressServiceConfig` affect your account's
      * 
-     * @param int id 
-     * @param ArrayList<AccountConfigurationModel> model 
+     * @param id 
+     * @param model 
      * @return ArrayList<AccountConfigurationModel>
      */
     public Future<ArrayList<AccountConfigurationModel>> setAccountConfigurationAsync(int id, ArrayList<AccountConfigurationModel> model) {
@@ -303,16 +303,16 @@ public class AvaTaxClient {
      * 'messages' structure to learn more about problems with this address.
      * This is the same API as the POST /api/v2/addresses/resolve endpoint.
      * 
-     * @param String line1 Line 1
-     * @param String line2 Line 2
-     * @param String line3 Line 3
-     * @param String city City
-     * @param String region State / Province / Region
-     * @param String postalCode Postal Code / Zip Code
-     * @param String country Two character ISO 3166 Country Code (see /api/v2/definitions/countries for a full list)
-     * @param TextCase textCase selectable text case for address validation (See TextCase::* for a list of allowable values)
-     * @param BigDecimal latitude Geospatial latitude measurement
-     * @param BigDecimal longitude Geospatial longitude measurement
+     * @param line1 Line 1
+     * @param line2 Line 2
+     * @param line3 Line 3
+     * @param city City
+     * @param region State / Province / Region
+     * @param postalCode Postal Code / Zip Code
+     * @param country Two character ISO 3166 Country Code (see /api/v2/definitions/countries for a full list)
+     * @param textCase selectable text case for address validation (See TextCase::* for a list of allowable values)
+     * @param latitude Geospatial latitude measurement
+     * @param longitude Geospatial longitude measurement
      * @return AddressResolutionModel
      */
     public AddressResolutionModel resolveAddress(String line1, String line2, String line3, String city, String region, String postalCode, String country, TextCase textCase, BigDecimal latitude, BigDecimal longitude) throws Exception {
@@ -339,16 +339,16 @@ public class AvaTaxClient {
      * 'messages' structure to learn more about problems with this address.
      * This is the same API as the POST /api/v2/addresses/resolve endpoint.
      * 
-     * @param String line1 Line 1
-     * @param String line2 Line 2
-     * @param String line3 Line 3
-     * @param String city City
-     * @param String region State / Province / Region
-     * @param String postalCode Postal Code / Zip Code
-     * @param String country Two character ISO 3166 Country Code (see /api/v2/definitions/countries for a full list)
-     * @param TextCase textCase selectable text case for address validation (See TextCase::* for a list of allowable values)
-     * @param BigDecimal latitude Geospatial latitude measurement
-     * @param BigDecimal longitude Geospatial longitude measurement
+     * @param line1 Line 1
+     * @param line2 Line 2
+     * @param line3 Line 3
+     * @param city City
+     * @param region State / Province / Region
+     * @param postalCode Postal Code / Zip Code
+     * @param country Two character ISO 3166 Country Code (see /api/v2/definitions/countries for a full list)
+     * @param textCase selectable text case for address validation (See TextCase::* for a list of allowable values)
+     * @param latitude Geospatial latitude measurement
+     * @param longitude Geospatial longitude measurement
      * @return AddressResolutionModel
      */
     public Future<AddressResolutionModel> resolveAddressAsync(String line1, String line2, String line3, String city, String region, String postalCode, String country, TextCase textCase, BigDecimal latitude, BigDecimal longitude) {
@@ -375,7 +375,7 @@ public class AvaTaxClient {
      * 'messages' structure to learn more about problems with this address.
      * This is the same API as the GET /api/v2/addresses/resolve endpoint.
      * 
-     * @param AddressValidationInfo model The address to resolve
+     * @param model The address to resolve
      * @return AddressResolutionModel
      */
     public AddressResolutionModel resolveAddressPost(AddressValidationInfo model) throws Exception {
@@ -392,7 +392,7 @@ public class AvaTaxClient {
      * 'messages' structure to learn more about problems with this address.
      * This is the same API as the GET /api/v2/addresses/resolve endpoint.
      * 
-     * @param AddressValidationInfo model The address to resolve
+     * @param model The address to resolve
      * @return AddressResolutionModel
      */
     public Future<AddressResolutionModel> resolveAddressPostAsync(AddressValidationInfo model) {
@@ -408,8 +408,8 @@ public class AvaTaxClient {
      * When you create a batch, it is added to the AvaTax Batch Queue and will be processed in the order it was received.
      * You may fetch a batch to check on its status and retrieve the results of the batch operation.
      * 
-     * @param int companyId The ID of the company that owns this batch.
-     * @param ArrayList<BatchModel> model The batch you wish to create.
+     * @param companyId The ID of the company that owns this batch.
+     * @param model The batch you wish to create.
      * @return ArrayList<BatchModel>
      */
     public ArrayList<BatchModel> createBatches(int companyId, ArrayList<BatchModel> model) throws Exception {
@@ -426,8 +426,8 @@ public class AvaTaxClient {
      * When you create a batch, it is added to the AvaTax Batch Queue and will be processed in the order it was received.
      * You may fetch a batch to check on its status and retrieve the results of the batch operation.
      * 
-     * @param int companyId The ID of the company that owns this batch.
-     * @param ArrayList<BatchModel> model The batch you wish to create.
+     * @param companyId The ID of the company that owns this batch.
+     * @param model The batch you wish to create.
      * @return ArrayList<BatchModel>
      */
     public Future<ArrayList<BatchModel>> createBatchesAsync(int companyId, ArrayList<BatchModel> model) {
@@ -439,8 +439,8 @@ public class AvaTaxClient {
     /**
      * Delete a single batch
      * 
-     * @param int companyId The ID of the company that owns this batch.
-     * @param int id The ID of the batch you wish to delete.
+     * @param companyId The ID of the company that owns this batch.
+     * @param id The ID of the batch you wish to delete.
      * @return ArrayList<ErrorDetail>
      */
     public ArrayList<ErrorDetail> deleteBatch(int companyId, int id) throws Exception {
@@ -453,8 +453,8 @@ public class AvaTaxClient {
     /**
      * Delete a single batch
      * 
-     * @param int companyId The ID of the company that owns this batch.
-     * @param int id The ID of the batch you wish to delete.
+     * @param companyId The ID of the company that owns this batch.
+     * @param id The ID of the batch you wish to delete.
      * @return ArrayList<ErrorDetail>
      */
     public Future<ArrayList<ErrorDetail>> deleteBatchAsync(int companyId, int id) {
@@ -467,9 +467,9 @@ public class AvaTaxClient {
     /**
      * Download a single batch file
      * 
-     * @param int companyId The ID of the company that owns this batch
-     * @param int batchId The ID of the batch object
-     * @param int id The primary key of this batch file object
+     * @param companyId The ID of the company that owns this batch
+     * @param batchId The ID of the batch object
+     * @param id The primary key of this batch file object
      * @return HashMap<String, String>
      */
     public HashMap<String, String> downloadBatch(int companyId, int batchId, int id) throws Exception {
@@ -483,9 +483,9 @@ public class AvaTaxClient {
     /**
      * Download a single batch file
      * 
-     * @param int companyId The ID of the company that owns this batch
-     * @param int batchId The ID of the batch object
-     * @param int id The primary key of this batch file object
+     * @param companyId The ID of the company that owns this batch
+     * @param batchId The ID of the batch object
+     * @param id The primary key of this batch file object
      * @return HashMap<String, String>
      */
     public Future<HashMap<String, String>> downloadBatchAsync(int companyId, int batchId, int id) {
@@ -503,8 +503,8 @@ public class AvaTaxClient {
      * A batch object is a large collection of API calls stored in a compact file.
      * When you create a batch, it is added to the AvaTax Batch Queue and will be processed in the order it was received.
      * 
-     * @param int companyId The ID of the company that owns this batch
-     * @param int id The primary key of this batch
+     * @param companyId The ID of the company that owns this batch
+     * @param id The primary key of this batch
      * @return BatchModel
      */
     public BatchModel getBatch(int companyId, int id) throws Exception {
@@ -521,8 +521,8 @@ public class AvaTaxClient {
      * A batch object is a large collection of API calls stored in a compact file.
      * When you create a batch, it is added to the AvaTax Batch Queue and will be processed in the order it was received.
      * 
-     * @param int companyId The ID of the company that owns this batch
-     * @param int id The primary key of this batch
+     * @param companyId The ID of the company that owns this batch
+     * @param id The primary key of this batch
      * @return BatchModel
      */
     public Future<BatchModel> getBatchAsync(int companyId, int id) {
@@ -541,12 +541,12 @@ public class AvaTaxClient {
      * You may fetch a batch to check on its status and retrieve the results of the batch operation.
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * 
-     * @param int companyId The ID of the company that owns these batches
-     * @param String filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param String include A comma separated list of child objects to return underneath the primary object.
-     * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
-     * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @param companyId The ID of the company that owns these batches
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param include A comma separated list of child objects to return underneath the primary object.
+     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
+     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<HashMap<String, String>>
      */
     public FetchResult<HashMap<String, String>> listBatchesByCompany(int companyId, String filter, String include, Integer top, Integer skip, String orderBy) throws Exception {
@@ -569,12 +569,12 @@ public class AvaTaxClient {
      * You may fetch a batch to check on its status and retrieve the results of the batch operation.
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * 
-     * @param int companyId The ID of the company that owns these batches
-     * @param String filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param String include A comma separated list of child objects to return underneath the primary object.
-     * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
-     * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @param companyId The ID of the company that owns these batches
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param include A comma separated list of child objects to return underneath the primary object.
+     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
+     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<HashMap<String, String>>
      */
     public Future<FetchResult<HashMap<String, String>>> listBatchesByCompanyAsync(int companyId, String filter, String include, Integer top, Integer skip, String orderBy) {
@@ -598,11 +598,11 @@ public class AvaTaxClient {
      * 
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * 
-     * @param String filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param String include A comma separated list of child objects to return underneath the primary object.
-     * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
-     * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param include A comma separated list of child objects to return underneath the primary object.
+     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
+     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<HashMap<String, String>>
      */
     public FetchResult<HashMap<String, String>> queryBatches(String filter, String include, Integer top, Integer skip, String orderBy) throws Exception {
@@ -625,11 +625,11 @@ public class AvaTaxClient {
      * 
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * 
-     * @param String filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param String include A comma separated list of child objects to return underneath the primary object.
-     * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
-     * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param include A comma separated list of child objects to return underneath the primary object.
+     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
+     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<HashMap<String, String>>
      */
     public Future<FetchResult<HashMap<String, String>>> queryBatchesAsync(String filter, String include, Integer top, Integer skip, String orderBy) {
@@ -656,7 +656,7 @@ public class AvaTaxClient {
      *             
      * This API only provides a limited subset of functionality compared to the 'Create Company' API call.  
      * 
-     * @param CompanyInitializationModel model Information about the company you wish to create.
+     * @param model Information about the company you wish to create.
      * @return CompanyModel
      */
     public CompanyModel companyInitialize(CompanyInitializationModel model) throws Exception {
@@ -678,7 +678,7 @@ public class AvaTaxClient {
      *             
      * This API only provides a limited subset of functionality compared to the 'Create Company' API call.  
      * 
-     * @param CompanyInitializationModel model Information about the company you wish to create.
+     * @param model Information about the company you wish to create.
      * @return CompanyModel
      */
     public Future<CompanyModel> companyInitializeAsync(CompanyInitializationModel model) {
@@ -692,7 +692,7 @@ public class AvaTaxClient {
      * Create one or more new company objects.
      * A 'company' represents a single corporation or individual that is registered to handle transactional taxes.
      * 
-     * @param ArrayList<CompanyModel> model Either a single company object or an array of companies to create
+     * @param model Either a single company object or an array of companies to create
      * @return ArrayList<CompanyModel>
      */
     public ArrayList<CompanyModel> createCompanies(ArrayList<CompanyModel> model) throws Exception {
@@ -706,7 +706,7 @@ public class AvaTaxClient {
      * Create one or more new company objects.
      * A 'company' represents a single corporation or individual that is registered to handle transactional taxes.
      * 
-     * @param ArrayList<CompanyModel> model Either a single company object or an array of companies to create
+     * @param model Either a single company object or an array of companies to create
      * @return ArrayList<CompanyModel>
      */
     public Future<ArrayList<CompanyModel>> createCompaniesAsync(ArrayList<CompanyModel> model) {
@@ -727,8 +727,8 @@ public class AvaTaxClient {
      * before approval.
      * This API records that an ambedded HTML funding setup widget was activated.
      * 
-     * @param int id The unique identifier of the company
-     * @param FundingInitiateModel model The funding initialization request
+     * @param id The unique identifier of the company
+     * @param model The funding initialization request
      * @return FundingStatusModel
      */
     public FundingStatusModel createFundingRequest(int id, FundingInitiateModel model) throws Exception {
@@ -750,8 +750,8 @@ public class AvaTaxClient {
      * before approval.
      * This API records that an ambedded HTML funding setup widget was activated.
      * 
-     * @param int id The unique identifier of the company
-     * @param FundingInitiateModel model The funding initialization request
+     * @param id The unique identifier of the company
+     * @param model The funding initialization request
      * @return FundingStatusModel
      */
     public Future<FundingStatusModel> createFundingRequestAsync(int id, FundingInitiateModel model) {
@@ -763,7 +763,7 @@ public class AvaTaxClient {
     /**
      * Delete a single company
      * 
-     * @param int id The ID of the company you wish to delete.
+     * @param id The ID of the company you wish to delete.
      * @return ArrayList<ErrorDetail>
      */
     public ArrayList<ErrorDetail> deleteCompany(int id) throws Exception {
@@ -775,7 +775,7 @@ public class AvaTaxClient {
     /**
      * Delete a single company
      * 
-     * @param int id The ID of the company you wish to delete.
+     * @param id The ID of the company you wish to delete.
      * @return ArrayList<ErrorDetail>
      */
     public Future<ArrayList<ErrorDetail>> deleteCompanyAsync(int id) {
@@ -799,8 +799,8 @@ public class AvaTaxClient {
      *  * TaxCodes
      *  * TaxRules
      * 
-     * @param int id The ID of the company to retrieve.
-     * @param String include A comma separated list of child objects to return underneath the primary object.
+     * @param id The ID of the company to retrieve.
+     * @param include A comma separated list of child objects to return underneath the primary object.
      * @return CompanyModel
      */
     public CompanyModel getCompany(int id, String include) throws Exception {
@@ -825,8 +825,8 @@ public class AvaTaxClient {
      *  * TaxCodes
      *  * TaxRules
      * 
-     * @param int id The ID of the company to retrieve.
-     * @param String include A comma separated list of child objects to return underneath the primary object.
+     * @param id The ID of the company to retrieve.
+     * @param include A comma separated list of child objects to return underneath the primary object.
      * @return CompanyModel
      */
     public Future<CompanyModel> getCompanyAsync(int id, String include) {
@@ -851,7 +851,7 @@ public class AvaTaxClient {
      * 
      * Avalara-based account settings for `AvaCertServiceConfig` affect your account's exemption certificate
      * 
-     * @param int id 
+     * @param id 
      * @return ArrayList<CompanyConfigurationModel>
      */
     public ArrayList<CompanyConfigurationModel> getCompanyConfiguration(int id) throws Exception {
@@ -875,7 +875,7 @@ public class AvaTaxClient {
      * 
      * Avalara-based account settings for `AvaCertServiceConfig` affect your account's exemption certificate
      * 
-     * @param int id 
+     * @param id 
      * @return ArrayList<CompanyConfigurationModel>
      */
     public Future<ArrayList<CompanyConfigurationModel>> getCompanyConfigurationAsync(int id) {
@@ -891,7 +891,7 @@ public class AvaTaxClient {
      * Requires a subscription to Avalara Managed Returns or SST Certified Service Provider.
      * Returns a list of funding setup requests and their current status.
      * 
-     * @param int id The unique identifier of the company
+     * @param id The unique identifier of the company
      * @return ArrayList<FundingStatusModel>
      */
     public ArrayList<FundingStatusModel> listFundingRequestsByCompany(int id) throws Exception {
@@ -907,7 +907,7 @@ public class AvaTaxClient {
      * Requires a subscription to Avalara Managed Returns or SST Certified Service Provider.
      * Returns a list of funding setup requests and their current status.
      * 
-     * @param int id The unique identifier of the company
+     * @param id The unique identifier of the company
      * @return ArrayList<FundingStatusModel>
      */
     public Future<ArrayList<FundingStatusModel>> listFundingRequestsByCompanyAsync(int id) {
@@ -933,11 +933,11 @@ public class AvaTaxClient {
      * * TaxCodes
      * * TaxRules
      * 
-     * @param String include A comma separated list of child objects to return underneath the primary object.
-     * @param String filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
-     * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @param include A comma separated list of child objects to return underneath the primary object.
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
+     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<HashMap<String, String>>
      */
     public FetchResult<HashMap<String, String>> queryCompanies(String include, String filter, Integer top, Integer skip, String orderBy) throws Exception {
@@ -967,11 +967,11 @@ public class AvaTaxClient {
      * * TaxCodes
      * * TaxRules
      * 
-     * @param String include A comma separated list of child objects to return underneath the primary object.
-     * @param String filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
-     * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @param include A comma separated list of child objects to return underneath the primary object.
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
+     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<HashMap<String, String>>
      */
     public Future<FetchResult<HashMap<String, String>>> queryCompaniesAsync(String include, String filter, Integer top, Integer skip, String orderBy) {
@@ -999,8 +999,8 @@ public class AvaTaxClient {
      * 
      * Avalara-based account settings for `AvaCertServiceConfig` affect your account's exemption certificate
      * 
-     * @param int id 
-     * @param ArrayList<CompanyConfigurationModel> model 
+     * @param id 
+     * @param model 
      * @return ArrayList<CompanyConfigurationModel>
      */
     public ArrayList<CompanyConfigurationModel> setCompanyConfiguration(int id, ArrayList<CompanyConfigurationModel> model) throws Exception {
@@ -1024,8 +1024,8 @@ public class AvaTaxClient {
      * 
      * Avalara-based account settings for `AvaCertServiceConfig` affect your account's exemption certificate
      * 
-     * @param int id 
-     * @param ArrayList<CompanyConfigurationModel> model 
+     * @param id 
+     * @param model 
      * @return ArrayList<CompanyConfigurationModel>
      */
     public Future<ArrayList<CompanyConfigurationModel>> setCompanyConfigurationAsync(int id, ArrayList<CompanyConfigurationModel> model) {
@@ -1041,8 +1041,8 @@ public class AvaTaxClient {
      * A 'company' represents a single corporation or individual that is registered to handle transactional taxes.
      * All data from the existing object will be replaced with data in the object you PUT.  
      * 
-     * @param int id The ID of the company you wish to update.
-     * @param CompanyModel model The company object you wish to update.
+     * @param id The ID of the company you wish to update.
+     * @param model The company object you wish to update.
      * @return CompanyModel
      */
     public CompanyModel updateCompany(int id, CompanyModel model) throws Exception {
@@ -1058,8 +1058,8 @@ public class AvaTaxClient {
      * A 'company' represents a single corporation or individual that is registered to handle transactional taxes.
      * All data from the existing object will be replaced with data in the object you PUT.  
      * 
-     * @param int id The ID of the company you wish to update.
-     * @param CompanyModel model The company object you wish to update.
+     * @param id The ID of the company you wish to update.
+     * @param model The company object you wish to update.
      * @return CompanyModel
      */
     public Future<CompanyModel> updateCompanyAsync(int id, CompanyModel model) {
@@ -1074,8 +1074,8 @@ public class AvaTaxClient {
      * Create one or more new contact objects.
      * A 'contact' is a person associated with a company who is designated to handle certain responsibilities of
      * 
-     * @param int companyId The ID of the company that owns this contact.
-     * @param ArrayList<ContactModel> model The contacts you wish to create.
+     * @param companyId The ID of the company that owns this contact.
+     * @param model The contacts you wish to create.
      * @return ArrayList<ContactModel>
      */
     public ArrayList<ContactModel> createContacts(int companyId, ArrayList<ContactModel> model) throws Exception {
@@ -1090,8 +1090,8 @@ public class AvaTaxClient {
      * Create one or more new contact objects.
      * A 'contact' is a person associated with a company who is designated to handle certain responsibilities of
      * 
-     * @param int companyId The ID of the company that owns this contact.
-     * @param ArrayList<ContactModel> model The contacts you wish to create.
+     * @param companyId The ID of the company that owns this contact.
+     * @param model The contacts you wish to create.
      * @return ArrayList<ContactModel>
      */
     public Future<ArrayList<ContactModel>> createContactsAsync(int companyId, ArrayList<ContactModel> model) {
@@ -1103,8 +1103,8 @@ public class AvaTaxClient {
     /**
      * Delete a single contact
      * 
-     * @param int companyId The ID of the company that owns this contact.
-     * @param int id The ID of the contact you wish to delete.
+     * @param companyId The ID of the company that owns this contact.
+     * @param id The ID of the contact you wish to delete.
      * @return ArrayList<ErrorDetail>
      */
     public ArrayList<ErrorDetail> deleteContact(int companyId, int id) throws Exception {
@@ -1117,8 +1117,8 @@ public class AvaTaxClient {
     /**
      * Delete a single contact
      * 
-     * @param int companyId The ID of the company that owns this contact.
-     * @param int id The ID of the contact you wish to delete.
+     * @param companyId The ID of the company that owns this contact.
+     * @param id The ID of the contact you wish to delete.
      * @return ArrayList<ErrorDetail>
      */
     public Future<ArrayList<ErrorDetail>> deleteContactAsync(int companyId, int id) {
@@ -1134,8 +1134,8 @@ public class AvaTaxClient {
      * Get the contact object identified by this URL.
      * A 'contact' is a person associated with a company who is designated to handle certain responsibilities of
      * 
-     * @param int companyId The ID of the company for this contact
-     * @param int id The primary key of this contact
+     * @param companyId The ID of the company for this contact
+     * @param id The primary key of this contact
      * @return ContactModel
      */
     public ContactModel getContact(int companyId, int id) throws Exception {
@@ -1151,8 +1151,8 @@ public class AvaTaxClient {
      * Get the contact object identified by this URL.
      * A 'contact' is a person associated with a company who is designated to handle certain responsibilities of
      * 
-     * @param int companyId The ID of the company for this contact
-     * @param int id The primary key of this contact
+     * @param companyId The ID of the company for this contact
+     * @param id The primary key of this contact
      * @return ContactModel
      */
     public Future<ContactModel> getContactAsync(int companyId, int id) {
@@ -1169,12 +1169,12 @@ public class AvaTaxClient {
      * 
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * 
-     * @param int companyId The ID of the company that owns these contacts
-     * @param String filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param String include A comma separated list of child objects to return underneath the primary object.
-     * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
-     * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @param companyId The ID of the company that owns these contacts
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param include A comma separated list of child objects to return underneath the primary object.
+     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
+     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<HashMap<String, String>>
      */
     public FetchResult<HashMap<String, String>> listContactsByCompany(int companyId, String filter, String include, Integer top, Integer skip, String orderBy) throws Exception {
@@ -1195,12 +1195,12 @@ public class AvaTaxClient {
      * 
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * 
-     * @param int companyId The ID of the company that owns these contacts
-     * @param String filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param String include A comma separated list of child objects to return underneath the primary object.
-     * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
-     * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @param companyId The ID of the company that owns these contacts
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param include A comma separated list of child objects to return underneath the primary object.
+     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
+     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<HashMap<String, String>>
      */
     public Future<FetchResult<HashMap<String, String>>> listContactsByCompanyAsync(int companyId, String filter, String include, Integer top, Integer skip, String orderBy) {
@@ -1223,11 +1223,11 @@ public class AvaTaxClient {
      * 
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * 
-     * @param String filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param String include A comma separated list of child objects to return underneath the primary object.
-     * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
-     * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param include A comma separated list of child objects to return underneath the primary object.
+     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
+     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<HashMap<String, String>>
      */
     public FetchResult<HashMap<String, String>> queryContacts(String filter, String include, Integer top, Integer skip, String orderBy) throws Exception {
@@ -1249,11 +1249,11 @@ public class AvaTaxClient {
      * 
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * 
-     * @param String filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param String include A comma separated list of child objects to return underneath the primary object.
-     * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
-     * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param include A comma separated list of child objects to return underneath the primary object.
+     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
+     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<HashMap<String, String>>
      */
     public Future<FetchResult<HashMap<String, String>>> queryContactsAsync(String filter, String include, Integer top, Integer skip, String orderBy) {
@@ -1274,9 +1274,9 @@ public class AvaTaxClient {
      * a tax collecting and filing entity.
      * All data from the existing object will be replaced with data in the object you PUT.  
      * 
-     * @param int companyId The ID of the company that this contact belongs to.
-     * @param int id The ID of the contact you wish to update
-     * @param ContactModel model The contact you wish to update.
+     * @param companyId The ID of the company that this contact belongs to.
+     * @param id The ID of the contact you wish to update
+     * @param model The contact you wish to update.
      * @return ContactModel
      */
     public ContactModel updateContact(int companyId, int id, ContactModel model) throws Exception {
@@ -1294,9 +1294,9 @@ public class AvaTaxClient {
      * a tax collecting and filing entity.
      * All data from the existing object will be replaced with data in the object you PUT.  
      * 
-     * @param int companyId The ID of the company that this contact belongs to.
-     * @param int id The ID of the contact you wish to update
-     * @param ContactModel model The contact you wish to update.
+     * @param companyId The ID of the company that this contact belongs to.
+     * @param id The ID of the contact you wish to update
+     * @param model The contact you wish to update.
      * @return ContactModel
      */
     public Future<ContactModel> updateContactAsync(int companyId, int id, ContactModel model) {
@@ -1311,8 +1311,8 @@ public class AvaTaxClient {
      * 
      * Returns all Avalara-supported nexus for the specified country and region.
      * 
-     * @param String country The two-character ISO-3166 code for the country.
-     * @param String region The two or three character region code for the region.
+     * @param country The two-character ISO-3166 code for the country.
+     * @param region The two or three character region code for the region.
      * @return FetchResult<HashMap<String, String>>
      */
     public FetchResult<HashMap<String, String>> apiV2DefinitionsNexusByCountryByRegionGet(String country, String region) throws Exception {
@@ -1327,8 +1327,8 @@ public class AvaTaxClient {
      * 
      * Returns all Avalara-supported nexus for the specified country and region.
      * 
-     * @param String country The two-character ISO-3166 code for the country.
-     * @param String region The two or three character region code for the region.
+     * @param country The two-character ISO-3166 code for the country.
+     * @param region The two or three character region code for the region.
      * @return FetchResult<HashMap<String, String>>
      */
     public Future<FetchResult<HashMap<String, String>>> apiV2DefinitionsNexusByCountryByRegionGetAsync(String country, String region) {
@@ -1343,7 +1343,7 @@ public class AvaTaxClient {
      * 
      * Returns all Avalara-supported nexus for the specified country.
      * 
-     * @param String country 
+     * @param country 
      * @return FetchResult<HashMap<String, String>>
      */
     public FetchResult<HashMap<String, String>> apiV2DefinitionsNexusByCountryGet(String country) throws Exception {
@@ -1357,7 +1357,7 @@ public class AvaTaxClient {
      * 
      * Returns all Avalara-supported nexus for the specified country.
      * 
-     * @param String country 
+     * @param country 
      * @return FetchResult<HashMap<String, String>>
      */
     public Future<FetchResult<HashMap<String, String>>> apiV2DefinitionsNexusByCountryGetAsync(String country) {
@@ -1395,7 +1395,7 @@ public class AvaTaxClient {
      * 
      * This API is intended to be useful to identify whether the user should be allowed
      * 
-     * @param String form The name of the form you would like to verify. This can be the tax form code or the legacy return name
+     * @param form The name of the form you would like to verify. This can be the tax form code or the legacy return name
      * @return FetchResult<HashMap<String, String>>
      */
     public FetchResult<HashMap<String, String>> getLoginVerifierByForm(String form) throws Exception {
@@ -1409,7 +1409,7 @@ public class AvaTaxClient {
      * 
      * This API is intended to be useful to identify whether the user should be allowed
      * 
-     * @param String form The name of the form you would like to verify. This can be the tax form code or the legacy return name
+     * @param form The name of the form you would like to verify. This can be the tax form code or the legacy return name
      * @return FetchResult<HashMap<String, String>>
      */
     public Future<FetchResult<HashMap<String, String>>> getLoginVerifierByFormAsync(String form) {
@@ -1532,13 +1532,13 @@ public class AvaTaxClient {
      * jurisdiction in AvaTax.
      *             
      * 
-     * @param String line1 The first address line portion of this address.
-     * @param String line2 The second address line portion of this address.
-     * @param String line3 The third address line portion of this address.
-     * @param String city The city portion of this address.
-     * @param String region The region, state, or province code portion of this address.
-     * @param String postalCode The postal code or zip code portion of this address.
-     * @param String country The two-character ISO-3166 code of the country portion of this address.
+     * @param line1 The first address line portion of this address.
+     * @param line2 The second address line portion of this address.
+     * @param line3 The third address line portion of this address.
+     * @param city The city portion of this address.
+     * @param region The region, state, or province code portion of this address.
+     * @param postalCode The postal code or zip code portion of this address.
+     * @param country The two-character ISO-3166 code of the country portion of this address.
      * @return FetchResult<HashMap<String, String>>
      */
     public FetchResult<HashMap<String, String>> listJurisdictionsByAddress(String line1, String line2, String line3, String city, String region, String postalCode, String country) throws Exception {
@@ -1563,13 +1563,13 @@ public class AvaTaxClient {
      * jurisdiction in AvaTax.
      *             
      * 
-     * @param String line1 The first address line portion of this address.
-     * @param String line2 The second address line portion of this address.
-     * @param String line3 The third address line portion of this address.
-     * @param String city The city portion of this address.
-     * @param String region The region, state, or province code portion of this address.
-     * @param String postalCode The postal code or zip code portion of this address.
-     * @param String country The two-character ISO-3166 code of the country portion of this address.
+     * @param line1 The first address line portion of this address.
+     * @param line2 The second address line portion of this address.
+     * @param line3 The third address line portion of this address.
+     * @param city The city portion of this address.
+     * @param region The region, state, or province code portion of this address.
+     * @param postalCode The postal code or zip code portion of this address.
+     * @param country The two-character ISO-3166 code of the country portion of this address.
      * @return FetchResult<HashMap<String, String>>
      */
     public Future<FetchResult<HashMap<String, String>>> listJurisdictionsByAddressAsync(String line1, String line2, String line3, String city, String region, String postalCode, String country) {
@@ -1593,15 +1593,15 @@ public class AvaTaxClient {
      * This information is not usually required in order to calculate tax correctly, but is almost always required to file your tax correctly.
      * You can call this API call for any address and obtain information about what questions must be answered in order to properly
      * 
-     * @param String line1 The first line of this location's address.
-     * @param String line2 The second line of this location's address.
-     * @param String line3 The third line of this location's address.
-     * @param String city The city part of this location's address.
-     * @param String region The region, state, or province part of this location's address.
-     * @param String postalCode The postal code of this location's address.
-     * @param String country The country part of this location's address.
-     * @param BigDecimal latitude Optionally identify the location via latitude/longitude instead of via address.
-     * @param BigDecimal longitude Optionally identify the location via latitude/longitude instead of via address.
+     * @param line1 The first line of this location's address.
+     * @param line2 The second line of this location's address.
+     * @param line3 The third line of this location's address.
+     * @param city The city part of this location's address.
+     * @param region The region, state, or province part of this location's address.
+     * @param postalCode The postal code of this location's address.
+     * @param country The country part of this location's address.
+     * @param latitude Optionally identify the location via latitude/longitude instead of via address.
+     * @param longitude Optionally identify the location via latitude/longitude instead of via address.
      * @return FetchResult<HashMap<String, String>>
      */
     public FetchResult<HashMap<String, String>> listLocationQuestionsByAddress(String line1, String line2, String line3, String city, String region, String postalCode, String country, BigDecimal latitude, BigDecimal longitude) throws Exception {
@@ -1627,15 +1627,15 @@ public class AvaTaxClient {
      * This information is not usually required in order to calculate tax correctly, but is almost always required to file your tax correctly.
      * You can call this API call for any address and obtain information about what questions must be answered in order to properly
      * 
-     * @param String line1 The first line of this location's address.
-     * @param String line2 The second line of this location's address.
-     * @param String line3 The third line of this location's address.
-     * @param String city The city part of this location's address.
-     * @param String region The region, state, or province part of this location's address.
-     * @param String postalCode The postal code of this location's address.
-     * @param String country The country part of this location's address.
-     * @param BigDecimal latitude Optionally identify the location via latitude/longitude instead of via address.
-     * @param BigDecimal longitude Optionally identify the location via latitude/longitude instead of via address.
+     * @param line1 The first line of this location's address.
+     * @param line2 The second line of this location's address.
+     * @param line3 The third line of this location's address.
+     * @param city The city part of this location's address.
+     * @param region The region, state, or province part of this location's address.
+     * @param postalCode The postal code of this location's address.
+     * @param country The country part of this location's address.
+     * @param latitude Optionally identify the location via latitude/longitude instead of via address.
+     * @param longitude Optionally identify the location via latitude/longitude instead of via address.
      * @return FetchResult<HashMap<String, String>>
      */
     public Future<FetchResult<HashMap<String, String>>> listLocationQuestionsByAddressAsync(String line1, String line2, String line3, String city, String region, String postalCode, String country, BigDecimal latitude, BigDecimal longitude) {
@@ -1686,13 +1686,13 @@ public class AvaTaxClient {
      * In general, it is usually expected that a company will declare nexus in all the jurisdictions that apply to each physical address
      * where the company does business.
      * 
-     * @param String line1 The first address line portion of this address.
-     * @param String line2 The first address line portion of this address.
-     * @param String line3 The first address line portion of this address.
-     * @param String city The city portion of this address.
-     * @param String region The region, state, or province code portion of this address.
-     * @param String postalCode The postal code or zip code portion of this address.
-     * @param String country The two-character ISO-3166 code of the country portion of this address.
+     * @param line1 The first address line portion of this address.
+     * @param line2 The first address line portion of this address.
+     * @param line3 The first address line portion of this address.
+     * @param city The city portion of this address.
+     * @param region The region, state, or province code portion of this address.
+     * @param postalCode The postal code or zip code portion of this address.
+     * @param country The two-character ISO-3166 code of the country portion of this address.
      * @return FetchResult<HashMap<String, String>>
      */
     public FetchResult<HashMap<String, String>> listNexusByAddress(String line1, String line2, String line3, String city, String region, String postalCode, String country) throws Exception {
@@ -1715,13 +1715,13 @@ public class AvaTaxClient {
      * In general, it is usually expected that a company will declare nexus in all the jurisdictions that apply to each physical address
      * where the company does business.
      * 
-     * @param String line1 The first address line portion of this address.
-     * @param String line2 The first address line portion of this address.
-     * @param String line3 The first address line portion of this address.
-     * @param String city The city portion of this address.
-     * @param String region The region, state, or province code portion of this address.
-     * @param String postalCode The postal code or zip code portion of this address.
-     * @param String country The two-character ISO-3166 code of the country portion of this address.
+     * @param line1 The first address line portion of this address.
+     * @param line2 The first address line portion of this address.
+     * @param line3 The first address line portion of this address.
+     * @param city The city portion of this address.
+     * @param region The region, state, or province code portion of this address.
+     * @param postalCode The postal code or zip code portion of this address.
+     * @param country The two-character ISO-3166 code of the country portion of this address.
      * @return FetchResult<HashMap<String, String>>
      */
     public Future<FetchResult<HashMap<String, String>>> listNexusByAddressAsync(String line1, String line2, String line3, String city, String region, String postalCode, String country) {
@@ -1750,7 +1750,7 @@ public class AvaTaxClient {
      * This API is intended to provide useful information when examining a tax form.  If you are about to begin filing
      * a tax form, you may want to know whether you have declared nexus in all the jurisdictions related to that tax 
      * 
-     * @param String formCode The form code that we are looking up the nexus for
+     * @param formCode The form code that we are looking up the nexus for
      * @return NexusByTaxFormModel
      */
     public NexusByTaxFormModel listNexusByFormCode(String formCode) throws Exception {
@@ -1773,7 +1773,7 @@ public class AvaTaxClient {
      * This API is intended to provide useful information when examining a tax form.  If you are about to begin filing
      * a tax form, you may want to know whether you have declared nexus in all the jurisdictions related to that tax 
      * 
-     * @param String formCode The form code that we are looking up the nexus for
+     * @param formCode The form code that we are looking up the nexus for
      * @return NexusByTaxFormModel
      */
     public Future<NexusByTaxFormModel> listNexusByFormCodeAsync(String formCode) {
@@ -2077,7 +2077,7 @@ public class AvaTaxClient {
      * 
      * Returns the full list of Avalara-supported rate type file types
      * 
-     * @param String country 
+     * @param country 
      * @return FetchResult<HashMap<String, String>>
      */
     public FetchResult<HashMap<String, String>> listRateTypesByCountry(String country) throws Exception {
@@ -2091,7 +2091,7 @@ public class AvaTaxClient {
      * 
      * Returns the full list of Avalara-supported rate type file types
      * 
-     * @param String country 
+     * @param country 
      * @return FetchResult<HashMap<String, String>>
      */
     public Future<FetchResult<HashMap<String, String>>> listRateTypesByCountryAsync(String country) {
@@ -2132,7 +2132,7 @@ public class AvaTaxClient {
      * Returns a list of all ISO 3166 region codes for a specific country code, and their US English friendly names.
      * This API is intended to be useful when presenting a dropdown box in your website to allow customers to select a region 
      * 
-     * @param String country 
+     * @param country 
      * @return FetchResult<HashMap<String, String>>
      */
     public FetchResult<HashMap<String, String>> listRegionsByCountry(String country) throws Exception {
@@ -2147,7 +2147,7 @@ public class AvaTaxClient {
      * Returns a list of all ISO 3166 region codes for a specific country code, and their US English friendly names.
      * This API is intended to be useful when presenting a dropdown box in your website to allow customers to select a region 
      * 
-     * @param String country 
+     * @param country 
      * @return FetchResult<HashMap<String, String>>
      */
     public Future<FetchResult<HashMap<String, String>>> listRegionsByCountryAsync(String country) {
@@ -2417,8 +2417,8 @@ public class AvaTaxClient {
     /**
      * Retrieve a single filing calendar
      * 
-     * @param int companyId The ID of the company that owns this filing calendar
-     * @param int id The primary key of this filing calendar
+     * @param companyId The ID of the company that owns this filing calendar
+     * @param id The primary key of this filing calendar
      * @return FilingCalendarModel
      */
     public FilingCalendarModel apiV2CompaniesByCompanyIdFilingcalendarsByIdGet(int companyId, int id) throws Exception {
@@ -2431,8 +2431,8 @@ public class AvaTaxClient {
     /**
      * Retrieve a single filing calendar
      * 
-     * @param int companyId The ID of the company that owns this filing calendar
-     * @param int id The primary key of this filing calendar
+     * @param companyId The ID of the company that owns this filing calendar
+     * @param id The primary key of this filing calendar
      * @return FilingCalendarModel
      */
     public Future<FilingCalendarModel> apiV2CompaniesByCompanyIdFilingcalendarsByIdGetAsync(int companyId, int id) {
@@ -2445,11 +2445,11 @@ public class AvaTaxClient {
     /**
      * Retrieve all filing calendars for this company
      * 
-     * @param int companyId The ID of the company that owns these batches
-     * @param String filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
-     * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @param companyId The ID of the company that owns these batches
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
+     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<HashMap<String, String>>
      */
     public FetchResult<HashMap<String, String>> apiV2CompaniesByCompanyIdFilingcalendarsGet(int companyId, String filter, Integer top, Integer skip, String orderBy) throws Exception {
@@ -2465,11 +2465,11 @@ public class AvaTaxClient {
     /**
      * Retrieve all filing calendars for this company
      * 
-     * @param int companyId The ID of the company that owns these batches
-     * @param String filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
-     * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @param companyId The ID of the company that owns these batches
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
+     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<HashMap<String, String>>
      */
     public Future<FetchResult<HashMap<String, String>>> apiV2CompaniesByCompanyIdFilingcalendarsGetAsync(int companyId, String filter, Integer top, Integer skip, String orderBy) {
@@ -2488,11 +2488,11 @@ public class AvaTaxClient {
      * This API is available by invitation only.
      * A "filing request" represents a request to change an existing filing calendar.  Filing requests
      * 
-     * @param int companyId The ID of the company that owns these batches
-     * @param String filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
-     * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @param companyId The ID of the company that owns these batches
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
+     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<HashMap<String, String>>
      */
     public FetchResult<HashMap<String, String>> apiV2CompaniesByCompanyIdFilingrequestsGet(int companyId, String filter, Integer top, Integer skip, String orderBy) throws Exception {
@@ -2511,11 +2511,11 @@ public class AvaTaxClient {
      * This API is available by invitation only.
      * A "filing request" represents a request to change an existing filing calendar.  Filing requests
      * 
-     * @param int companyId The ID of the company that owns these batches
-     * @param String filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
-     * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @param companyId The ID of the company that owns these batches
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
+     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<HashMap<String, String>>
      */
     public Future<FetchResult<HashMap<String, String>>> apiV2CompaniesByCompanyIdFilingrequestsGetAsync(int companyId, String filter, Integer top, Integer skip, String orderBy) {
@@ -2531,8 +2531,8 @@ public class AvaTaxClient {
     /**
      * Returns a list of options for adding the specified form.
      * 
-     * @param int companyId The unique ID of the company that owns the filing calendar object
-     * @param String formCode The unique code of the form
+     * @param companyId The unique ID of the company that owns the filing calendar object
+     * @param formCode The unique code of the form
      * @return ArrayList<CycleAddOptionModel>
      */
     public ArrayList<CycleAddOptionModel> cycleSafeAdd(int companyId, String formCode) throws Exception {
@@ -2545,8 +2545,8 @@ public class AvaTaxClient {
     /**
      * Returns a list of options for adding the specified form.
      * 
-     * @param int companyId The unique ID of the company that owns the filing calendar object
-     * @param String formCode The unique code of the form
+     * @param companyId The unique ID of the company that owns the filing calendar object
+     * @param formCode The unique code of the form
      * @return ArrayList<CycleAddOptionModel>
      */
     public Future<ArrayList<CycleAddOptionModel>> cycleSafeAddAsync(int companyId, String formCode) {
@@ -2559,9 +2559,9 @@ public class AvaTaxClient {
     /**
      * Indicates when changes are allowed to be made to a filing calendar.
      * 
-     * @param int companyId The unique ID of the company that owns the filing calendar object
-     * @param int id The unique ID of the filing calendar object
-     * @param ArrayList<FilingCalendarEditModel> model A list of filing calendar edits to be made
+     * @param companyId The unique ID of the company that owns the filing calendar object
+     * @param id The unique ID of the filing calendar object
+     * @param model A list of filing calendar edits to be made
      * @return CycleEditOptionModel
      */
     public CycleEditOptionModel cycleSafeEdit(int companyId, int id, ArrayList<FilingCalendarEditModel> model) throws Exception {
@@ -2574,9 +2574,9 @@ public class AvaTaxClient {
     /**
      * Indicates when changes are allowed to be made to a filing calendar.
      * 
-     * @param int companyId The unique ID of the company that owns the filing calendar object
-     * @param int id The unique ID of the filing calendar object
-     * @param ArrayList<FilingCalendarEditModel> model A list of filing calendar edits to be made
+     * @param companyId The unique ID of the company that owns the filing calendar object
+     * @param id The unique ID of the filing calendar object
+     * @param model A list of filing calendar edits to be made
      * @return CycleEditOptionModel
      */
     public Future<CycleEditOptionModel> cycleSafeEditAsync(int companyId, int id, ArrayList<FilingCalendarEditModel> model) {
@@ -2589,8 +2589,8 @@ public class AvaTaxClient {
     /**
      * Returns a list of options for expiring a filing calendar
      * 
-     * @param int companyId The unique ID of the company that owns the filing calendar object
-     * @param int id The unique ID of the filing calendar object
+     * @param companyId The unique ID of the company that owns the filing calendar object
+     * @param id The unique ID of the filing calendar object
      * @return CycleExpireModel
      */
     public CycleExpireModel cycleSafeExpiration(int companyId, int id) throws Exception {
@@ -2603,8 +2603,8 @@ public class AvaTaxClient {
     /**
      * Returns a list of options for expiring a filing calendar
      * 
-     * @param int companyId The unique ID of the company that owns the filing calendar object
-     * @param int id The unique ID of the filing calendar object
+     * @param companyId The unique ID of the company that owns the filing calendar object
+     * @param id The unique ID of the filing calendar object
      * @return CycleExpireModel
      */
     public Future<CycleExpireModel> cycleSafeExpirationAsync(int companyId, int id) {
@@ -2621,8 +2621,8 @@ public class AvaTaxClient {
      * Mark the existing notice object at this URL as deleted.
      * A 'notice' represents a letter sent to a business by a tax authority regarding tax filing issues.  Avalara
      * 
-     * @param int companyId The ID of the company that owns this filing calendar.
-     * @param int id The ID of the filing calendar you wish to delete.
+     * @param companyId The ID of the company that owns this filing calendar.
+     * @param id The ID of the filing calendar you wish to delete.
      * @return ArrayList<ErrorDetail>
      */
     public ArrayList<ErrorDetail> deleteFilingCalendar(int companyId, int id) throws Exception {
@@ -2639,8 +2639,8 @@ public class AvaTaxClient {
      * Mark the existing notice object at this URL as deleted.
      * A 'notice' represents a letter sent to a business by a tax authority regarding tax filing issues.  Avalara
      * 
-     * @param int companyId The ID of the company that owns this filing calendar.
-     * @param int id The ID of the filing calendar you wish to delete.
+     * @param companyId The ID of the company that owns this filing calendar.
+     * @param id The ID of the filing calendar you wish to delete.
      * @return ArrayList<ErrorDetail>
      */
     public Future<ArrayList<ErrorDetail>> deleteFilingCalendarAsync(int companyId, int id) {
@@ -2656,9 +2656,9 @@ public class AvaTaxClient {
      * This API is available by invitation only.
      * This API only allows updating of internal notes and company filing instructions.
      * 
-     * @param int companyId The unique ID of the company that owns the filing request object
-     * @param int id The unique ID of the filing calendar object
-     * @param FilingCalendarModel model The filing calendar model you are wishing to update with.
+     * @param companyId The unique ID of the company that owns the filing request object
+     * @param id The unique ID of the filing calendar object
+     * @param model The filing calendar model you are wishing to update with.
      * @return FilingCalendarModel
      */
     public FilingCalendarModel filingCalendarUpdate(int companyId, int id, FilingCalendarModel model) throws Exception {
@@ -2674,9 +2674,9 @@ public class AvaTaxClient {
      * This API is available by invitation only.
      * This API only allows updating of internal notes and company filing instructions.
      * 
-     * @param int companyId The unique ID of the company that owns the filing request object
-     * @param int id The unique ID of the filing calendar object
-     * @param FilingCalendarModel model The filing calendar model you are wishing to update with.
+     * @param companyId The unique ID of the company that owns the filing request object
+     * @param id The unique ID of the filing calendar object
+     * @param model The filing calendar model you are wishing to update with.
      * @return FilingCalendarModel
      */
     public Future<FilingCalendarModel> filingCalendarUpdateAsync(int companyId, int id, FilingCalendarModel model) {
@@ -2692,8 +2692,8 @@ public class AvaTaxClient {
      * This API is available by invitation only.
      * A "filing request" represents a request to change an existing filing calendar.  Filing requests
      * 
-     * @param int companyId The ID of the company that owns this filing calendar
-     * @param int id The primary key of this filing calendar
+     * @param companyId The ID of the company that owns this filing calendar
+     * @param id The primary key of this filing calendar
      * @return FilingRequestModel
      */
     public FilingRequestModel filingRequests(int companyId, int id) throws Exception {
@@ -2709,8 +2709,8 @@ public class AvaTaxClient {
      * This API is available by invitation only.
      * A "filing request" represents a request to change an existing filing calendar.  Filing requests
      * 
-     * @param int companyId The ID of the company that owns this filing calendar
-     * @param int id The primary key of this filing calendar
+     * @param companyId The ID of the company that owns this filing calendar
+     * @param id The primary key of this filing calendar
      * @return FilingRequestModel
      */
     public Future<FilingRequestModel> filingRequestsAsync(int companyId, int id) {
@@ -2726,8 +2726,8 @@ public class AvaTaxClient {
      * This API is available by invitation only.
      * A "filing request" represents a request to change an existing filing calendar.  Filing requests
      * 
-     * @param int companyId The unique ID of the company that will add the new filing calendar
-     * @param ArrayList<FilingRequestModel> model Information about the proposed new filing calendar
+     * @param companyId The unique ID of the company that will add the new filing calendar
+     * @param model Information about the proposed new filing calendar
      * @return FilingRequestModel
      */
     public FilingRequestModel filingRequestsAdd(int companyId, ArrayList<FilingRequestModel> model) throws Exception {
@@ -2742,8 +2742,8 @@ public class AvaTaxClient {
      * This API is available by invitation only.
      * A "filing request" represents a request to change an existing filing calendar.  Filing requests
      * 
-     * @param int companyId The unique ID of the company that will add the new filing calendar
-     * @param ArrayList<FilingRequestModel> model Information about the proposed new filing calendar
+     * @param companyId The unique ID of the company that will add the new filing calendar
+     * @param model Information about the proposed new filing calendar
      * @return FilingRequestModel
      */
     public Future<FilingRequestModel> filingRequestsAddAsync(int companyId, ArrayList<FilingRequestModel> model) {
@@ -2759,8 +2759,8 @@ public class AvaTaxClient {
      * A "filing request" represents a request to change an existing filing calendar.  Filing requests
      * are reviewed and validated by Avalara Compliance before being implemented.
      * 
-     * @param int companyId The unique ID of the company that owns the filing request object
-     * @param int id The unique ID of the filing request object
+     * @param companyId The unique ID of the company that owns the filing request object
+     * @param id The unique ID of the filing request object
      * @return FilingRequestModel
      */
     public FilingRequestModel filingRequestsApprove(int companyId, int id) throws Exception {
@@ -2777,8 +2777,8 @@ public class AvaTaxClient {
      * A "filing request" represents a request to change an existing filing calendar.  Filing requests
      * are reviewed and validated by Avalara Compliance before being implemented.
      * 
-     * @param int companyId The unique ID of the company that owns the filing request object
-     * @param int id The unique ID of the filing request object
+     * @param companyId The unique ID of the company that owns the filing request object
+     * @param id The unique ID of the filing request object
      * @return FilingRequestModel
      */
     public Future<FilingRequestModel> filingRequestsApproveAsync(int companyId, int id) {
@@ -2794,8 +2794,8 @@ public class AvaTaxClient {
      * This API is available by invitation only.
      * A "filing request" represents a request to change an existing filing calendar.  Filing requests
      * 
-     * @param int companyId The unique ID of the company that owns the filing request object
-     * @param int id The unique ID of the filing request object
+     * @param companyId The unique ID of the company that owns the filing request object
+     * @param id The unique ID of the filing request object
      * @return FilingRequestModel
      */
     public FilingRequestModel filingRequestsCancel(int companyId, int id) throws Exception {
@@ -2811,8 +2811,8 @@ public class AvaTaxClient {
      * This API is available by invitation only.
      * A "filing request" represents a request to change an existing filing calendar.  Filing requests
      * 
-     * @param int companyId The unique ID of the company that owns the filing request object
-     * @param int id The unique ID of the filing request object
+     * @param companyId The unique ID of the company that owns the filing request object
+     * @param id The unique ID of the filing request object
      * @return FilingRequestModel
      */
     public Future<FilingRequestModel> filingRequestsCancelAsync(int companyId, int id) {
@@ -2828,9 +2828,9 @@ public class AvaTaxClient {
      * This API is available by invitation only.
      * A "filing request" represents a request to change an existing filing calendar.  Filing requests
      * 
-     * @param int companyId The unique ID of the company that owns the filing calendar object
-     * @param int id The unique ID number of the filing calendar to cancel
-     * @param ArrayList<FilingRequestModel> model The cancellation request for this filing calendar
+     * @param companyId The unique ID of the company that owns the filing calendar object
+     * @param id The unique ID number of the filing calendar to cancel
+     * @param model The cancellation request for this filing calendar
      * @return FilingRequestModel
      */
     public FilingRequestModel filingRequestsNewCancel(int companyId, int id, ArrayList<FilingRequestModel> model) throws Exception {
@@ -2846,9 +2846,9 @@ public class AvaTaxClient {
      * This API is available by invitation only.
      * A "filing request" represents a request to change an existing filing calendar.  Filing requests
      * 
-     * @param int companyId The unique ID of the company that owns the filing calendar object
-     * @param int id The unique ID number of the filing calendar to cancel
-     * @param ArrayList<FilingRequestModel> model The cancellation request for this filing calendar
+     * @param companyId The unique ID of the company that owns the filing calendar object
+     * @param id The unique ID number of the filing calendar to cancel
+     * @param model The cancellation request for this filing calendar
      * @return FilingRequestModel
      */
     public Future<FilingRequestModel> filingRequestsNewCancelAsync(int companyId, int id, ArrayList<FilingRequestModel> model) {
@@ -2864,9 +2864,9 @@ public class AvaTaxClient {
      * This API is available by invitation only.
      * A "filing request" represents a request to change an existing filing calendar.  Filing requests
      * 
-     * @param int companyId The unique ID of the company that owns the filing calendar object
-     * @param int id The unique ID number of the filing calendar to edit
-     * @param ArrayList<FilingRequestModel> model A list of filing calendar edits to be made
+     * @param companyId The unique ID of the company that owns the filing calendar object
+     * @param id The unique ID number of the filing calendar to edit
+     * @param model A list of filing calendar edits to be made
      * @return FilingRequestModel
      */
     public FilingRequestModel filingRequestsNewEdit(int companyId, int id, ArrayList<FilingRequestModel> model) throws Exception {
@@ -2882,9 +2882,9 @@ public class AvaTaxClient {
      * This API is available by invitation only.
      * A "filing request" represents a request to change an existing filing calendar.  Filing requests
      * 
-     * @param int companyId The unique ID of the company that owns the filing calendar object
-     * @param int id The unique ID number of the filing calendar to edit
-     * @param ArrayList<FilingRequestModel> model A list of filing calendar edits to be made
+     * @param companyId The unique ID of the company that owns the filing calendar object
+     * @param id The unique ID number of the filing calendar to edit
+     * @param model A list of filing calendar edits to be made
      * @return FilingRequestModel
      */
     public Future<FilingRequestModel> filingRequestsNewEditAsync(int companyId, int id, ArrayList<FilingRequestModel> model) {
@@ -2900,9 +2900,9 @@ public class AvaTaxClient {
      * This API is available by invitation only.
      * A "filing request" represents a request to change an existing filing calendar.  Filing requests
      * 
-     * @param int companyId The unique ID of the company that owns the filing request object
-     * @param int id The unique ID of the filing request object
-     * @param FilingRequestModel model A list of filing calendar edits to be made
+     * @param companyId The unique ID of the company that owns the filing request object
+     * @param id The unique ID of the filing request object
+     * @param model A list of filing calendar edits to be made
      * @return FilingRequestModel
      */
     public FilingRequestModel filingRequestsUpdate(int companyId, int id, FilingRequestModel model) throws Exception {
@@ -2918,9 +2918,9 @@ public class AvaTaxClient {
      * This API is available by invitation only.
      * A "filing request" represents a request to change an existing filing calendar.  Filing requests
      * 
-     * @param int companyId The unique ID of the company that owns the filing request object
-     * @param int id The unique ID of the filing request object
-     * @param FilingRequestModel model A list of filing calendar edits to be made
+     * @param companyId The unique ID of the company that owns the filing request object
+     * @param id The unique ID of the filing request object
+     * @param model A list of filing calendar edits to be made
      * @return FilingRequestModel
      */
     public Future<FilingRequestModel> filingRequestsUpdateAsync(int companyId, int id, FilingRequestModel model) {
@@ -2933,7 +2933,7 @@ public class AvaTaxClient {
     /**
      * Gets the request status and Login Result
      * 
-     * @param int jobId The unique ID number of this login request
+     * @param jobId The unique ID number of this login request
      * @return LoginVerificationOutputModel
      */
     public LoginVerificationOutputModel loginVerificationGet(int jobId) throws Exception {
@@ -2945,7 +2945,7 @@ public class AvaTaxClient {
     /**
      * Gets the request status and Login Result
      * 
-     * @param int jobId The unique ID number of this login request
+     * @param jobId The unique ID number of this login request
      * @return LoginVerificationOutputModel
      */
     public Future<LoginVerificationOutputModel> loginVerificationGetAsync(int jobId) {
@@ -2957,7 +2957,7 @@ public class AvaTaxClient {
     /**
      * New request for getting for validating customer's login credentials
      * 
-     * @param LoginVerificationInputModel model The model of the login information we are verifying
+     * @param model The model of the login information we are verifying
      * @return LoginVerificationOutputModel
      */
     public LoginVerificationOutputModel loginVerificationPost(LoginVerificationInputModel model) throws Exception {
@@ -2968,7 +2968,7 @@ public class AvaTaxClient {
     /**
      * New request for getting for validating customer's login credentials
      * 
-     * @param LoginVerificationInputModel model The model of the login information we are verifying
+     * @param model The model of the login information we are verifying
      * @return LoginVerificationOutputModel
      */
     public Future<LoginVerificationOutputModel> loginVerificationPostAsync(LoginVerificationInputModel model) {
@@ -2979,10 +2979,10 @@ public class AvaTaxClient {
     /**
      * Retrieve all filing calendars
      * 
-     * @param String filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
-     * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
+     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<HashMap<String, String>>
      */
     public FetchResult<HashMap<String, String>> queryFilingCalendars(String filter, Integer top, Integer skip, String orderBy) throws Exception {
@@ -2997,10 +2997,10 @@ public class AvaTaxClient {
     /**
      * Retrieve all filing calendars
      * 
-     * @param String filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
-     * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
+     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<HashMap<String, String>>
      */
     public Future<FetchResult<HashMap<String, String>>> queryFilingCalendarsAsync(String filter, Integer top, Integer skip, String orderBy) {
@@ -3021,10 +3021,10 @@ public class AvaTaxClient {
      * 
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * 
-     * @param String filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
-     * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
+     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<HashMap<String, String>>
      */
     public FetchResult<HashMap<String, String>> queryFilingRequests(String filter, Integer top, Integer skip, String orderBy) throws Exception {
@@ -3045,10 +3045,10 @@ public class AvaTaxClient {
      * 
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * 
-     * @param String filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
-     * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
+     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<HashMap<String, String>>
      */
     public Future<FetchResult<HashMap<String, String>>> queryFilingRequestsAsync(String filter, Integer top, Integer skip, String orderBy) {
@@ -3070,10 +3070,10 @@ public class AvaTaxClient {
      * Sometimes Compliance has to manually unapprove and reapprove to modify liability or filing for the customer.
      * A "filing period" is the year and month of the date of the latest customer transaction allowed to be reported on a filing, 
      * 
-     * @param int companyId The ID of the company that owns the filings.
-     * @param short year The year of the filing period to approve.
-     * @param byte month The month of the filing period to approve.
-     * @param ApproveFilingsModel model The approve request you wish to execute.
+     * @param companyId The ID of the company that owns the filings.
+     * @param year The year of the filing period to approve.
+     * @param month The month of the filing period to approve.
+     * @param model The approve request you wish to execute.
      * @return ArrayList<FilingModel>
      */
     public ArrayList<FilingModel> approveFilings(int companyId, short year, byte month, ApproveFilingsModel model) throws Exception {
@@ -3094,10 +3094,10 @@ public class AvaTaxClient {
      * Sometimes Compliance has to manually unapprove and reapprove to modify liability or filing for the customer.
      * A "filing period" is the year and month of the date of the latest customer transaction allowed to be reported on a filing, 
      * 
-     * @param int companyId The ID of the company that owns the filings.
-     * @param short year The year of the filing period to approve.
-     * @param byte month The month of the filing period to approve.
-     * @param ApproveFilingsModel model The approve request you wish to execute.
+     * @param companyId The ID of the company that owns the filings.
+     * @param year The year of the filing period to approve.
+     * @param month The month of the filing period to approve.
+     * @param model The approve request you wish to execute.
      * @return ArrayList<FilingModel>
      */
     public Future<ArrayList<FilingModel>> approveFilingsAsync(int companyId, short year, byte month, ApproveFilingsModel model) {
@@ -3118,11 +3118,11 @@ public class AvaTaxClient {
      * Sometimes Compliance has to manually unapprove and reapprove to modify liability or filing for the customer.
      * A "filing period" is the year and month of the date of the latest customer transaction allowed to be reported on a filing, 
      * 
-     * @param int companyId The ID of the company that owns the filings.
-     * @param short year The year of the filing period to approve.
-     * @param byte month The month of the filing period to approve.
-     * @param String country The two-character ISO-3166 code for the country.
-     * @param ApproveFilingsModel model The approve request you wish to execute.
+     * @param companyId The ID of the company that owns the filings.
+     * @param year The year of the filing period to approve.
+     * @param month The month of the filing period to approve.
+     * @param country The two-character ISO-3166 code for the country.
+     * @param model The approve request you wish to execute.
      * @return ArrayList<FilingModel>
      */
     public ArrayList<FilingModel> approveFilingsCountry(int companyId, short year, byte month, String country, ApproveFilingsModel model) throws Exception {
@@ -3144,11 +3144,11 @@ public class AvaTaxClient {
      * Sometimes Compliance has to manually unapprove and reapprove to modify liability or filing for the customer.
      * A "filing period" is the year and month of the date of the latest customer transaction allowed to be reported on a filing, 
      * 
-     * @param int companyId The ID of the company that owns the filings.
-     * @param short year The year of the filing period to approve.
-     * @param byte month The month of the filing period to approve.
-     * @param String country The two-character ISO-3166 code for the country.
-     * @param ApproveFilingsModel model The approve request you wish to execute.
+     * @param companyId The ID of the company that owns the filings.
+     * @param year The year of the filing period to approve.
+     * @param month The month of the filing period to approve.
+     * @param country The two-character ISO-3166 code for the country.
+     * @param model The approve request you wish to execute.
      * @return ArrayList<FilingModel>
      */
     public Future<ArrayList<FilingModel>> approveFilingsCountryAsync(int companyId, short year, byte month, String country, ApproveFilingsModel model) {
@@ -3170,12 +3170,12 @@ public class AvaTaxClient {
      * Sometimes Compliance has to manually unapprove and reapprove to modify liability or filing for the customer.
      * A "filing period" is the year and month of the date of the latest customer transaction allowed to be reported on a filing, 
      * 
-     * @param int companyId The ID of the company that owns the filings.
-     * @param short year The year of the filing period to approve.
-     * @param byte month The month of the filing period to approve.
-     * @param String country The two-character ISO-3166 code for the country.
-     * @param String region The two or three character region code for the region.
-     * @param ApproveFilingsModel model The approve request you wish to execute.
+     * @param companyId The ID of the company that owns the filings.
+     * @param year The year of the filing period to approve.
+     * @param month The month of the filing period to approve.
+     * @param country The two-character ISO-3166 code for the country.
+     * @param region The two or three character region code for the region.
+     * @param model The approve request you wish to execute.
      * @return ArrayList<FilingModel>
      */
     public ArrayList<FilingModel> approveFilingsCountryRegion(int companyId, short year, byte month, String country, String region, ApproveFilingsModel model) throws Exception {
@@ -3198,12 +3198,12 @@ public class AvaTaxClient {
      * Sometimes Compliance has to manually unapprove and reapprove to modify liability or filing for the customer.
      * A "filing period" is the year and month of the date of the latest customer transaction allowed to be reported on a filing, 
      * 
-     * @param int companyId The ID of the company that owns the filings.
-     * @param short year The year of the filing period to approve.
-     * @param byte month The month of the filing period to approve.
-     * @param String country The two-character ISO-3166 code for the country.
-     * @param String region The two or three character region code for the region.
-     * @param ApproveFilingsModel model The approve request you wish to execute.
+     * @param companyId The ID of the company that owns the filings.
+     * @param year The year of the filing period to approve.
+     * @param month The month of the filing period to approve.
+     * @param country The two-character ISO-3166 code for the country.
+     * @param region The two or three character region code for the region.
+     * @param model The approve request you wish to execute.
      * @return ArrayList<FilingModel>
      */
     public Future<ArrayList<FilingModel>> approveFilingsCountryRegionAsync(int companyId, short year, byte month, String country, String region, ApproveFilingsModel model) {
@@ -3225,13 +3225,13 @@ public class AvaTaxClient {
      * Sometimes may be a manual change in tax liability similar to an augmentation.
      * This API creates a new adjustment for an existing tax filing.
      * 
-     * @param int companyId The ID of the company that owns the filing being adjusted.
-     * @param short year The year of the filing's filing period being adjusted.
-     * @param byte month The month of the filing's filing period being adjusted.
-     * @param String country The two-character ISO-3166 code for the country of the filing being adjusted.
-     * @param String region The two or three character region code for the region.
-     * @param String formCode The unique code of the form being adjusted.
-     * @param ArrayList<FilingAdjustmentModel> model A list of Adjustments to be created for the specified filing.
+     * @param companyId The ID of the company that owns the filing being adjusted.
+     * @param year The year of the filing's filing period being adjusted.
+     * @param month The month of the filing's filing period being adjusted.
+     * @param country The two-character ISO-3166 code for the country of the filing being adjusted.
+     * @param region The two or three character region code for the region.
+     * @param formCode The unique code of the form being adjusted.
+     * @param model A list of Adjustments to be created for the specified filing.
      * @return ArrayList<FilingAdjustmentModel>
      */
     public ArrayList<FilingAdjustmentModel> createReturnAdjustment(int companyId, short year, byte month, String country, String region, String formCode, ArrayList<FilingAdjustmentModel> model) throws Exception {
@@ -3254,13 +3254,13 @@ public class AvaTaxClient {
      * Sometimes may be a manual change in tax liability similar to an augmentation.
      * This API creates a new adjustment for an existing tax filing.
      * 
-     * @param int companyId The ID of the company that owns the filing being adjusted.
-     * @param short year The year of the filing's filing period being adjusted.
-     * @param byte month The month of the filing's filing period being adjusted.
-     * @param String country The two-character ISO-3166 code for the country of the filing being adjusted.
-     * @param String region The two or three character region code for the region.
-     * @param String formCode The unique code of the form being adjusted.
-     * @param ArrayList<FilingAdjustmentModel> model A list of Adjustments to be created for the specified filing.
+     * @param companyId The ID of the company that owns the filing being adjusted.
+     * @param year The year of the filing's filing period being adjusted.
+     * @param month The month of the filing's filing period being adjusted.
+     * @param country The two-character ISO-3166 code for the country of the filing being adjusted.
+     * @param region The two or three character region code for the region.
+     * @param formCode The unique code of the form being adjusted.
+     * @param model A list of Adjustments to be created for the specified filing.
      * @return ArrayList<FilingAdjustmentModel>
      */
     public Future<ArrayList<FilingAdjustmentModel>> createReturnAdjustmentAsync(int companyId, short year, byte month, String country, String region, String formCode, ArrayList<FilingAdjustmentModel> model) {
@@ -3282,13 +3282,13 @@ public class AvaTaxClient {
      * usually due to customer wanting to report tax Avatax does not support, e.g. bad debts, rental tax.
      * This API creates a new augmentation for an existing tax filing.
      * 
-     * @param int companyId The ID of the company that owns the filing being changed.
-     * @param short year The month of the filing's filing period being changed.
-     * @param byte month The month of the filing's filing period being changed.
-     * @param String country The two-character ISO-3166 code for the country of the filing being changed.
-     * @param String region The two or three character region code for the region of the filing being changed.
-     * @param String formCode The unique code of the form being changed.
-     * @param ArrayList<FilingAugmentationModel> model A list of augmentations to be created for the specified filing.
+     * @param companyId The ID of the company that owns the filing being changed.
+     * @param year The month of the filing's filing period being changed.
+     * @param month The month of the filing's filing period being changed.
+     * @param country The two-character ISO-3166 code for the country of the filing being changed.
+     * @param region The two or three character region code for the region of the filing being changed.
+     * @param formCode The unique code of the form being changed.
+     * @param model A list of augmentations to be created for the specified filing.
      * @return ArrayList<FilingAugmentationModel>
      */
     public ArrayList<FilingAugmentationModel> createReturnAugmentation(int companyId, short year, byte month, String country, String region, String formCode, ArrayList<FilingAugmentationModel> model) throws Exception {
@@ -3310,13 +3310,13 @@ public class AvaTaxClient {
      * usually due to customer wanting to report tax Avatax does not support, e.g. bad debts, rental tax.
      * This API creates a new augmentation for an existing tax filing.
      * 
-     * @param int companyId The ID of the company that owns the filing being changed.
-     * @param short year The month of the filing's filing period being changed.
-     * @param byte month The month of the filing's filing period being changed.
-     * @param String country The two-character ISO-3166 code for the country of the filing being changed.
-     * @param String region The two or three character region code for the region of the filing being changed.
-     * @param String formCode The unique code of the form being changed.
-     * @param ArrayList<FilingAugmentationModel> model A list of augmentations to be created for the specified filing.
+     * @param companyId The ID of the company that owns the filing being changed.
+     * @param year The month of the filing's filing period being changed.
+     * @param month The month of the filing's filing period being changed.
+     * @param country The two-character ISO-3166 code for the country of the filing being changed.
+     * @param region The two or three character region code for the region of the filing being changed.
+     * @param formCode The unique code of the form being changed.
+     * @param model A list of augmentations to be created for the specified filing.
      * @return ArrayList<FilingAugmentationModel>
      */
     public Future<ArrayList<FilingAugmentationModel>> createReturnAugmentationAsync(int companyId, short year, byte month, String country, String region, String formCode, ArrayList<FilingAugmentationModel> model) {
@@ -3339,8 +3339,8 @@ public class AvaTaxClient {
      * Sometimes may be a manual change in tax liability similar to an augmentation.
      * This API deletes an adjustment for an existing tax filing.
      * 
-     * @param int companyId The ID of the company that owns the filing being adjusted.
-     * @param long id The ID of the adjustment being deleted.
+     * @param companyId The ID of the company that owns the filing being adjusted.
+     * @param id The ID of the adjustment being deleted.
      * @return ArrayList<ErrorDetail>
      */
     public ArrayList<ErrorDetail> deleteReturnAdjustment(int companyId, long id) throws Exception {
@@ -3359,8 +3359,8 @@ public class AvaTaxClient {
      * Sometimes may be a manual change in tax liability similar to an augmentation.
      * This API deletes an adjustment for an existing tax filing.
      * 
-     * @param int companyId The ID of the company that owns the filing being adjusted.
-     * @param long id The ID of the adjustment being deleted.
+     * @param companyId The ID of the company that owns the filing being adjusted.
+     * @param id The ID of the adjustment being deleted.
      * @return ArrayList<ErrorDetail>
      */
     public Future<ArrayList<ErrorDetail>> deleteReturnAdjustmentAsync(int companyId, long id) {
@@ -3378,8 +3378,8 @@ public class AvaTaxClient {
      * usually due to customer wanting to report tax Avatax does not support, e.g. bad debts, rental tax.
      * This API deletes an augmentation for an existing tax filing.
      * 
-     * @param int companyId The ID of the company that owns the filing being changed.
-     * @param long id The ID of the augmentation being added.
+     * @param companyId The ID of the company that owns the filing being changed.
+     * @param id The ID of the augmentation being added.
      * @return ArrayList<ErrorDetail>
      */
     public ArrayList<ErrorDetail> deleteReturnAugmentation(int companyId, long id) throws Exception {
@@ -3397,8 +3397,8 @@ public class AvaTaxClient {
      * usually due to customer wanting to report tax Avatax does not support, e.g. bad debts, rental tax.
      * This API deletes an augmentation for an existing tax filing.
      * 
-     * @param int companyId The ID of the company that owns the filing being changed.
-     * @param long id The ID of the augmentation being added.
+     * @param companyId The ID of the company that owns the filing being changed.
+     * @param id The ID of the augmentation being added.
      * @return ArrayList<ErrorDetail>
      */
     public Future<ArrayList<ErrorDetail>> deleteReturnAugmentationAsync(int companyId, long id) {
@@ -3411,8 +3411,8 @@ public class AvaTaxClient {
     /**
      * Retrieve worksheet checkup report for company and filing period.
      * 
-     * @param int worksheetId The unique id of the worksheet.
-     * @param int companyId The unique ID of the company that owns the worksheet.
+     * @param worksheetId The unique id of the worksheet.
+     * @param companyId The unique ID of the company that owns the worksheet.
      * @return FilingsCheckupModel
      */
     public FilingsCheckupModel filingsCheckupReport(int worksheetId, int companyId) throws Exception {
@@ -3425,8 +3425,8 @@ public class AvaTaxClient {
     /**
      * Retrieve worksheet checkup report for company and filing period.
      * 
-     * @param int worksheetId The unique id of the worksheet.
-     * @param int companyId The unique ID of the company that owns the worksheet.
+     * @param worksheetId The unique id of the worksheet.
+     * @param companyId The unique ID of the company that owns the worksheet.
      * @return FilingsCheckupModel
      */
     public Future<FilingsCheckupModel> filingsCheckupReportAsync(int worksheetId, int companyId) {
@@ -3439,9 +3439,9 @@ public class AvaTaxClient {
     /**
      * Retrieve worksheet checkup report for company and filing period.
      * 
-     * @param int companyId The unique ID of the company that owns the worksheets object.
-     * @param int year The year of the filing period.
-     * @param int month The month of the filing period.
+     * @param companyId The unique ID of the company that owns the worksheets object.
+     * @param year The year of the filing period.
+     * @param month The month of the filing period.
      * @return FilingsCheckupModel
      */
     public FilingsCheckupModel filingsCheckupReports(int companyId, int year, int month) throws Exception {
@@ -3455,9 +3455,9 @@ public class AvaTaxClient {
     /**
      * Retrieve worksheet checkup report for company and filing period.
      * 
-     * @param int companyId The unique ID of the company that owns the worksheets object.
-     * @param int year The year of the filing period.
-     * @param int month The month of the filing period.
+     * @param companyId The unique ID of the company that owns the worksheets object.
+     * @param year The year of the filing period.
+     * @param month The month of the filing period.
      * @return FilingsCheckupModel
      */
     public Future<FilingsCheckupModel> filingsCheckupReportsAsync(int companyId, int year, int month) {
@@ -3471,9 +3471,9 @@ public class AvaTaxClient {
     /**
      * Retrieve a single attachment for a filing
      * 
-     * @param int companyId The ID of the company that owns the filings.
-     * @param long filingId The unique id of the worksheet return.
-     * @param Long fileId The unique id of the document you are downloading
+     * @param companyId The ID of the company that owns the filings.
+     * @param filingId The unique id of the worksheet return.
+     * @param fileId The unique id of the document you are downloading
      * @return HashMap<String, String>
      */
     public HashMap<String, String> getFilingAttachment(int companyId, long filingId, Long fileId) throws Exception {
@@ -3487,9 +3487,9 @@ public class AvaTaxClient {
     /**
      * Retrieve a single attachment for a filing
      * 
-     * @param int companyId The ID of the company that owns the filings.
-     * @param long filingId The unique id of the worksheet return.
-     * @param Long fileId The unique id of the document you are downloading
+     * @param companyId The ID of the company that owns the filings.
+     * @param filingId The unique id of the worksheet return.
+     * @param fileId The unique id of the document you are downloading
      * @return HashMap<String, String>
      */
     public Future<HashMap<String, String>> getFilingAttachmentAsync(int companyId, long filingId, Long fileId) {
@@ -3506,9 +3506,9 @@ public class AvaTaxClient {
      * This API is available by invitation only.
      * A "filing period" is the year and month of the date of the latest customer transaction allowed to be reported on a filing, 
      * 
-     * @param int companyId The ID of the company that owns the filings.
-     * @param short year The year of the filing period.
-     * @param byte month The two digit month of the filing period.
+     * @param companyId The ID of the company that owns the filings.
+     * @param year The year of the filing period.
+     * @param month The two digit month of the filing period.
      * @return HashMap<String, String>
      */
     public HashMap<String, String> getFilingAttachments(int companyId, short year, byte month) throws Exception {
@@ -3525,9 +3525,9 @@ public class AvaTaxClient {
      * This API is available by invitation only.
      * A "filing period" is the year and month of the date of the latest customer transaction allowed to be reported on a filing, 
      * 
-     * @param int companyId The ID of the company that owns the filings.
-     * @param short year The year of the filing period.
-     * @param byte month The two digit month of the filing period.
+     * @param companyId The ID of the company that owns the filings.
+     * @param year The year of the filing period.
+     * @param month The two digit month of the filing period.
      * @return HashMap<String, String>
      */
     public Future<HashMap<String, String>> getFilingAttachmentsAsync(int companyId, short year, byte month) {
@@ -3544,9 +3544,9 @@ public class AvaTaxClient {
      * This API is available by invitation only.
      * A "filing period" is the year and month of the date of the latest customer transaction allowed to be reported on a filing, 
      * 
-     * @param int companyId The ID of the company that owns the filings.
-     * @param short year The year of the filing period.
-     * @param byte month The two digit month of the filing period.
+     * @param companyId The ID of the company that owns the filings.
+     * @param year The year of the filing period.
+     * @param month The two digit month of the filing period.
      * @return HashMap<String, String>
      */
     public HashMap<String, String> getFilingAttachmentsTraceFile(int companyId, short year, byte month) throws Exception {
@@ -3563,9 +3563,9 @@ public class AvaTaxClient {
      * This API is available by invitation only.
      * A "filing period" is the year and month of the date of the latest customer transaction allowed to be reported on a filing, 
      * 
-     * @param int companyId The ID of the company that owns the filings.
-     * @param short year The year of the filing period.
-     * @param byte month The two digit month of the filing period.
+     * @param companyId The ID of the company that owns the filings.
+     * @param year The year of the filing period.
+     * @param month The two digit month of the filing period.
      * @return HashMap<String, String>
      */
     public Future<HashMap<String, String>> getFilingAttachmentsTraceFileAsync(int companyId, short year, byte month) {
@@ -3582,9 +3582,9 @@ public class AvaTaxClient {
      * This API is available by invitation only.
      * A "filing period" is the year and month of the date of the latest customer transaction allowed to be reported on a filing, 
      * 
-     * @param int companyId The ID of the company that owns the filings.
-     * @param short year The year of the filing period.
-     * @param byte month The two digit month of the filing period.
+     * @param companyId The ID of the company that owns the filings.
+     * @param year The year of the filing period.
+     * @param month The two digit month of the filing period.
      * @return FetchResult<HashMap<String, String>>
      */
     public FetchResult<HashMap<String, String>> getFilings(int companyId, short year, byte month) throws Exception {
@@ -3601,9 +3601,9 @@ public class AvaTaxClient {
      * This API is available by invitation only.
      * A "filing period" is the year and month of the date of the latest customer transaction allowed to be reported on a filing, 
      * 
-     * @param int companyId The ID of the company that owns the filings.
-     * @param short year The year of the filing period.
-     * @param byte month The two digit month of the filing period.
+     * @param companyId The ID of the company that owns the filings.
+     * @param year The year of the filing period.
+     * @param month The two digit month of the filing period.
      * @return FetchResult<HashMap<String, String>>
      */
     public Future<FetchResult<HashMap<String, String>>> getFilingsAsync(int companyId, short year, byte month) {
@@ -3620,10 +3620,10 @@ public class AvaTaxClient {
      * This API is available by invitation only.
      * A "filing period" is the year and month of the date of the latest customer transaction allowed to be reported on a filing, 
      * 
-     * @param int companyId The ID of the company that owns the filings.
-     * @param short year The year of the filing period.
-     * @param byte month The two digit month of the filing period.
-     * @param String country The two-character ISO-3166 code for the country.
+     * @param companyId The ID of the company that owns the filings.
+     * @param year The year of the filing period.
+     * @param month The two digit month of the filing period.
+     * @param country The two-character ISO-3166 code for the country.
      * @return FetchResult<HashMap<String, String>>
      */
     public FetchResult<HashMap<String, String>> getFilingsByCountry(int companyId, short year, byte month, String country) throws Exception {
@@ -3641,10 +3641,10 @@ public class AvaTaxClient {
      * This API is available by invitation only.
      * A "filing period" is the year and month of the date of the latest customer transaction allowed to be reported on a filing, 
      * 
-     * @param int companyId The ID of the company that owns the filings.
-     * @param short year The year of the filing period.
-     * @param byte month The two digit month of the filing period.
-     * @param String country The two-character ISO-3166 code for the country.
+     * @param companyId The ID of the company that owns the filings.
+     * @param year The year of the filing period.
+     * @param month The two digit month of the filing period.
+     * @param country The two-character ISO-3166 code for the country.
      * @return FetchResult<HashMap<String, String>>
      */
     public Future<FetchResult<HashMap<String, String>>> getFilingsByCountryAsync(int companyId, short year, byte month, String country) {
@@ -3662,11 +3662,11 @@ public class AvaTaxClient {
      * This API is available by invitation only.
      * A "filing period" is the year and month of the date of the latest customer transaction allowed to be reported on a filing, 
      * 
-     * @param int companyId The ID of the company that owns the filings.
-     * @param short year The year of the filing period.
-     * @param byte month The two digit month of the filing period.
-     * @param String country The two-character ISO-3166 code for the country.
-     * @param String region The two or three character region code for the region.
+     * @param companyId The ID of the company that owns the filings.
+     * @param year The year of the filing period.
+     * @param month The two digit month of the filing period.
+     * @param country The two-character ISO-3166 code for the country.
+     * @param region The two or three character region code for the region.
      * @return FetchResult<HashMap<String, String>>
      */
     public FetchResult<HashMap<String, String>> getFilingsByCountryRegion(int companyId, short year, byte month, String country, String region) throws Exception {
@@ -3685,11 +3685,11 @@ public class AvaTaxClient {
      * This API is available by invitation only.
      * A "filing period" is the year and month of the date of the latest customer transaction allowed to be reported on a filing, 
      * 
-     * @param int companyId The ID of the company that owns the filings.
-     * @param short year The year of the filing period.
-     * @param byte month The two digit month of the filing period.
-     * @param String country The two-character ISO-3166 code for the country.
-     * @param String region The two or three character region code for the region.
+     * @param companyId The ID of the company that owns the filings.
+     * @param year The year of the filing period.
+     * @param month The two digit month of the filing period.
+     * @param country The two-character ISO-3166 code for the country.
+     * @param region The two or three character region code for the region.
      * @return FetchResult<HashMap<String, String>>
      */
     public Future<FetchResult<HashMap<String, String>>> getFilingsByCountryRegionAsync(int companyId, short year, byte month, String country, String region) {
@@ -3708,12 +3708,12 @@ public class AvaTaxClient {
      * This API is available by invitation only.
      * A "filing period" is the year and month of the date of the latest customer transaction allowed to be reported on a filing, 
      * 
-     * @param int companyId The ID of the company that owns the filings.
-     * @param short year The year of the filing period.
-     * @param byte month The two digit month of the filing period.
-     * @param String country The two-character ISO-3166 code for the country.
-     * @param String region The two or three character region code for the region.
-     * @param String formCode The unique code of the form.
+     * @param companyId The ID of the company that owns the filings.
+     * @param year The year of the filing period.
+     * @param month The two digit month of the filing period.
+     * @param country The two-character ISO-3166 code for the country.
+     * @param region The two or three character region code for the region.
+     * @param formCode The unique code of the form.
      * @return FetchResult<HashMap<String, String>>
      */
     public FetchResult<HashMap<String, String>> getFilingsByReturnName(int companyId, short year, byte month, String country, String region, String formCode) throws Exception {
@@ -3733,12 +3733,12 @@ public class AvaTaxClient {
      * This API is available by invitation only.
      * A "filing period" is the year and month of the date of the latest customer transaction allowed to be reported on a filing, 
      * 
-     * @param int companyId The ID of the company that owns the filings.
-     * @param short year The year of the filing period.
-     * @param byte month The two digit month of the filing period.
-     * @param String country The two-character ISO-3166 code for the country.
-     * @param String region The two or three character region code for the region.
-     * @param String formCode The unique code of the form.
+     * @param companyId The ID of the company that owns the filings.
+     * @param year The year of the filing period.
+     * @param month The two digit month of the filing period.
+     * @param country The two-character ISO-3166 code for the country.
+     * @param region The two or three character region code for the region.
+     * @param formCode The unique code of the form.
      * @return FetchResult<HashMap<String, String>>
      */
     public Future<FetchResult<HashMap<String, String>>> getFilingsByReturnNameAsync(int companyId, short year, byte month, String country, String region, String formCode) {
@@ -3761,10 +3761,10 @@ public class AvaTaxClient {
      * A "filing period" is the year and month of the date of the latest customer transaction allowed to be reported on a filing, 
      * based on filing frequency of filing.
      * 
-     * @param int companyId The ID of the company that owns the filings.
-     * @param short year The year of the filing period to be rebuilt.
-     * @param byte month The month of the filing period to be rebuilt.
-     * @param RebuildFilingsModel model The rebuild request you wish to execute.
+     * @param companyId The ID of the company that owns the filings.
+     * @param year The year of the filing period to be rebuilt.
+     * @param month The month of the filing period to be rebuilt.
+     * @param model The rebuild request you wish to execute.
      * @return FetchResult<HashMap<String, String>>
      */
     public FetchResult<HashMap<String, String>> rebuildFilings(int companyId, short year, byte month, RebuildFilingsModel model) throws Exception {
@@ -3784,10 +3784,10 @@ public class AvaTaxClient {
      * A "filing period" is the year and month of the date of the latest customer transaction allowed to be reported on a filing, 
      * based on filing frequency of filing.
      * 
-     * @param int companyId The ID of the company that owns the filings.
-     * @param short year The year of the filing period to be rebuilt.
-     * @param byte month The month of the filing period to be rebuilt.
-     * @param RebuildFilingsModel model The rebuild request you wish to execute.
+     * @param companyId The ID of the company that owns the filings.
+     * @param year The year of the filing period to be rebuilt.
+     * @param month The month of the filing period to be rebuilt.
+     * @param model The rebuild request you wish to execute.
      * @return FetchResult<HashMap<String, String>>
      */
     public Future<FetchResult<HashMap<String, String>>> rebuildFilingsAsync(int companyId, short year, byte month, RebuildFilingsModel model) {
@@ -3807,11 +3807,11 @@ public class AvaTaxClient {
      * A "filing period" is the year and month of the date of the latest customer transaction allowed to be reported on a filing, 
      * based on filing frequency of filing.
      * 
-     * @param int companyId The ID of the company that owns the filings.
-     * @param short year The year of the filing period to be rebuilt.
-     * @param byte month The month of the filing period to be rebuilt.
-     * @param String country The two-character ISO-3166 code for the country.
-     * @param RebuildFilingsModel model The rebuild request you wish to execute.
+     * @param companyId The ID of the company that owns the filings.
+     * @param year The year of the filing period to be rebuilt.
+     * @param month The month of the filing period to be rebuilt.
+     * @param country The two-character ISO-3166 code for the country.
+     * @param model The rebuild request you wish to execute.
      * @return FetchResult<HashMap<String, String>>
      */
     public FetchResult<HashMap<String, String>> rebuildFilingsByCountry(int companyId, short year, byte month, String country, RebuildFilingsModel model) throws Exception {
@@ -3832,11 +3832,11 @@ public class AvaTaxClient {
      * A "filing period" is the year and month of the date of the latest customer transaction allowed to be reported on a filing, 
      * based on filing frequency of filing.
      * 
-     * @param int companyId The ID of the company that owns the filings.
-     * @param short year The year of the filing period to be rebuilt.
-     * @param byte month The month of the filing period to be rebuilt.
-     * @param String country The two-character ISO-3166 code for the country.
-     * @param RebuildFilingsModel model The rebuild request you wish to execute.
+     * @param companyId The ID of the company that owns the filings.
+     * @param year The year of the filing period to be rebuilt.
+     * @param month The month of the filing period to be rebuilt.
+     * @param country The two-character ISO-3166 code for the country.
+     * @param model The rebuild request you wish to execute.
      * @return FetchResult<HashMap<String, String>>
      */
     public Future<FetchResult<HashMap<String, String>>> rebuildFilingsByCountryAsync(int companyId, short year, byte month, String country, RebuildFilingsModel model) {
@@ -3857,12 +3857,12 @@ public class AvaTaxClient {
      * A "filing period" is the year and month of the date of the latest customer transaction allowed to be reported on a filing, 
      * based on filing frequency of filing.
      * 
-     * @param int companyId The ID of the company that owns the filings.
-     * @param short year The year of the filing period to be rebuilt.
-     * @param byte month The month of the filing period to be rebuilt.
-     * @param String country The two-character ISO-3166 code for the country.
-     * @param String region The two or three character region code for the region.
-     * @param RebuildFilingsModel model The rebuild request you wish to execute.
+     * @param companyId The ID of the company that owns the filings.
+     * @param year The year of the filing period to be rebuilt.
+     * @param month The month of the filing period to be rebuilt.
+     * @param country The two-character ISO-3166 code for the country.
+     * @param region The two or three character region code for the region.
+     * @param model The rebuild request you wish to execute.
      * @return FetchResult<HashMap<String, String>>
      */
     public FetchResult<HashMap<String, String>> rebuildFilingsByCountryRegion(int companyId, short year, byte month, String country, String region, RebuildFilingsModel model) throws Exception {
@@ -3884,12 +3884,12 @@ public class AvaTaxClient {
      * A "filing period" is the year and month of the date of the latest customer transaction allowed to be reported on a filing, 
      * based on filing frequency of filing.
      * 
-     * @param int companyId The ID of the company that owns the filings.
-     * @param short year The year of the filing period to be rebuilt.
-     * @param byte month The month of the filing period to be rebuilt.
-     * @param String country The two-character ISO-3166 code for the country.
-     * @param String region The two or three character region code for the region.
-     * @param RebuildFilingsModel model The rebuild request you wish to execute.
+     * @param companyId The ID of the company that owns the filings.
+     * @param year The year of the filing period to be rebuilt.
+     * @param month The month of the filing period to be rebuilt.
+     * @param country The two-character ISO-3166 code for the country.
+     * @param region The two or three character region code for the region.
+     * @param model The rebuild request you wish to execute.
      * @return FetchResult<HashMap<String, String>>
      */
     public Future<FetchResult<HashMap<String, String>>> rebuildFilingsByCountryRegionAsync(int companyId, short year, byte month, String country, String region, RebuildFilingsModel model) {
@@ -3911,9 +3911,9 @@ public class AvaTaxClient {
      * Sometimes may be a manual change in tax liability similar to an augmentation.
      * This API modifies an adjustment for an existing tax filing.
      * 
-     * @param int companyId The ID of the company that owns the filing being adjusted.
-     * @param long id The ID of the adjustment being edited.
-     * @param FilingAdjustmentModel model The updated Adjustment.
+     * @param companyId The ID of the company that owns the filing being adjusted.
+     * @param id The ID of the adjustment being edited.
+     * @param model The updated Adjustment.
      * @return FilingAdjustmentModel
      */
     public FilingAdjustmentModel updateReturnAdjustment(int companyId, long id, FilingAdjustmentModel model) throws Exception {
@@ -3932,9 +3932,9 @@ public class AvaTaxClient {
      * Sometimes may be a manual change in tax liability similar to an augmentation.
      * This API modifies an adjustment for an existing tax filing.
      * 
-     * @param int companyId The ID of the company that owns the filing being adjusted.
-     * @param long id The ID of the adjustment being edited.
-     * @param FilingAdjustmentModel model The updated Adjustment.
+     * @param companyId The ID of the company that owns the filing being adjusted.
+     * @param id The ID of the adjustment being edited.
+     * @param model The updated Adjustment.
      * @return FilingAdjustmentModel
      */
     public Future<FilingAdjustmentModel> updateReturnAdjustmentAsync(int companyId, long id, FilingAdjustmentModel model) {
@@ -3952,9 +3952,9 @@ public class AvaTaxClient {
      * usually due to customer wanting to report tax Avatax does not support, e.g. bad debts, rental tax.
      * This API modifies an augmentation for an existing tax filing.
      * 
-     * @param int companyId The ID of the company that owns the filing being changed.
-     * @param long id The ID of the augmentation being edited.
-     * @param FilingAugmentationModel model The updated Augmentation.
+     * @param companyId The ID of the company that owns the filing being changed.
+     * @param id The ID of the augmentation being edited.
+     * @param model The updated Augmentation.
      * @return FilingModel
      */
     public FilingModel updateReturnAugmentation(int companyId, long id, FilingAugmentationModel model) throws Exception {
@@ -3972,9 +3972,9 @@ public class AvaTaxClient {
      * usually due to customer wanting to report tax Avatax does not support, e.g. bad debts, rental tax.
      * This API modifies an augmentation for an existing tax filing.
      * 
-     * @param int companyId The ID of the company that owns the filing being changed.
-     * @param long id The ID of the augmentation being edited.
-     * @param FilingAugmentationModel model The updated Augmentation.
+     * @param companyId The ID of the company that owns the filing being changed.
+     * @param id The ID of the augmentation being edited.
+     * @param model The updated Augmentation.
      * @return FilingModel
      */
     public Future<FilingModel> updateReturnAugmentationAsync(int companyId, long id, FilingAugmentationModel model) {
@@ -3999,7 +3999,7 @@ public class AvaTaxClient {
      * * The free trial account does not expire.
      * * Includes a limited time free trial of AvaTaxPro; after that date, the free TaxRates API will continue to work.
      * 
-     * @param FreeTrialRequestModel model Required information to provision a free trial account.
+     * @param model Required information to provision a free trial account.
      * @return NewAccountModel
      */
     public NewAccountModel requestFreeTrial(FreeTrialRequestModel model) throws Exception {
@@ -4022,7 +4022,7 @@ public class AvaTaxClient {
      * * The free trial account does not expire.
      * * Includes a limited time free trial of AvaTaxPro; after that date, the free TaxRates API will continue to work.
      * 
-     * @param FreeTrialRequestModel model Required information to provision a free trial account.
+     * @param model Required information to provision a free trial account.
      * @return NewAccountModel
      */
     public Future<NewAccountModel> requestFreeTrialAsync(FreeTrialRequestModel model) {
@@ -4054,13 +4054,13 @@ public class AvaTaxClient {
      * 
      * Please see [Estimating Tax with REST v2](http://developer.avalara.com/blog/2016/11/04/estimating-tax-with-rest-v2/)
      * 
-     * @param String line1 The street address of the location.
-     * @param String line2 The street address of the location.
-     * @param String line3 The street address of the location.
-     * @param String city The city name of the location.
-     * @param String region The state or region of the location
-     * @param String postalCode The postal code of the location.
-     * @param String country The two letter ISO-3166 country code.
+     * @param line1 The street address of the location.
+     * @param line2 The street address of the location.
+     * @param line3 The street address of the location.
+     * @param city The city name of the location.
+     * @param region The state or region of the location
+     * @param postalCode The postal code of the location.
+     * @param country The two letter ISO-3166 country code.
      * @return TaxRateModel
      */
     public TaxRateModel taxRatesByAddress(String line1, String line2, String line3, String city, String region, String postalCode, String country) throws Exception {
@@ -4099,13 +4099,13 @@ public class AvaTaxClient {
      * 
      * Please see [Estimating Tax with REST v2](http://developer.avalara.com/blog/2016/11/04/estimating-tax-with-rest-v2/)
      * 
-     * @param String line1 The street address of the location.
-     * @param String line2 The street address of the location.
-     * @param String line3 The street address of the location.
-     * @param String city The city name of the location.
-     * @param String region The state or region of the location
-     * @param String postalCode The postal code of the location.
-     * @param String country The two letter ISO-3166 country code.
+     * @param line1 The street address of the location.
+     * @param line2 The street address of the location.
+     * @param line3 The street address of the location.
+     * @param city The city name of the location.
+     * @param region The state or region of the location
+     * @param postalCode The postal code of the location.
+     * @param country The two letter ISO-3166 country code.
      * @return TaxRateModel
      */
     public Future<TaxRateModel> taxRatesByAddressAsync(String line1, String line2, String line3, String city, String region, String postalCode, String country) {
@@ -4144,8 +4144,8 @@ public class AvaTaxClient {
      * 
      * Please see [Estimating Tax with REST v2](http://developer.avalara.com/blog/2016/11/04/estimating-tax-with-rest-v2/)
      * 
-     * @param String country The two letter ISO-3166 country code.
-     * @param String postalCode The postal code of the location.
+     * @param country The two letter ISO-3166 country code.
+     * @param postalCode The postal code of the location.
      * @return TaxRateModel
      */
     public TaxRateModel taxRatesByPostalCode(String country, String postalCode) throws Exception {
@@ -4179,8 +4179,8 @@ public class AvaTaxClient {
      * 
      * Please see [Estimating Tax with REST v2](http://developer.avalara.com/blog/2016/11/04/estimating-tax-with-rest-v2/)
      * 
-     * @param String country The two letter ISO-3166 country code.
-     * @param String postalCode The postal code of the location.
+     * @param country The two letter ISO-3166 country code.
+     * @param postalCode The postal code of the location.
      * @return TaxRateModel
      */
     public Future<TaxRateModel> taxRatesByPostalCodeAsync(String country, String postalCode) {
@@ -4205,7 +4205,7 @@ public class AvaTaxClient {
      * JavaScript funding setup widget inline.
      * Use the 'methodReturn.javaScript' return value to insert this widget into your HTML page.
      * 
-     * @param long id The unique ID number of this funding request
+     * @param id The unique ID number of this funding request
      * @return FundingStatusModel
      */
     public FundingStatusModel activateFundingRequest(long id) throws Exception {
@@ -4229,7 +4229,7 @@ public class AvaTaxClient {
      * JavaScript funding setup widget inline.
      * Use the 'methodReturn.javaScript' return value to insert this widget into your HTML page.
      * 
-     * @param long id The unique ID number of this funding request
+     * @param id The unique ID number of this funding request
      * @return FundingStatusModel
      */
     public Future<FundingStatusModel> activateFundingRequestAsync(long id) {
@@ -4251,7 +4251,7 @@ public class AvaTaxClient {
      * before approval.
      * This API checks the status on an existing funding request.
      * 
-     * @param int id The unique ID number of this funding request
+     * @param id The unique ID number of this funding request
      * @return FundingStatusModel
      */
     public FundingStatusModel fundingRequestStatus(int id) throws Exception {
@@ -4273,7 +4273,7 @@ public class AvaTaxClient {
      * before approval.
      * This API checks the status on an existing funding request.
      * 
-     * @param int id The unique ID number of this funding request
+     * @param id The unique ID number of this funding request
      * @return FundingStatusModel
      */
     public Future<FundingStatusModel> fundingRequestStatusAsync(int id) {
@@ -4285,8 +4285,8 @@ public class AvaTaxClient {
     /**
      * Create a new item
      * 
-     * @param int companyId The ID of the company that owns this item.
-     * @param ArrayList<ItemModel> model The item you wish to create.
+     * @param companyId The ID of the company that owns this item.
+     * @param model The item you wish to create.
      * @return ArrayList<ItemModel>
      */
     public ArrayList<ItemModel> createItems(int companyId, ArrayList<ItemModel> model) throws Exception {
@@ -4298,8 +4298,8 @@ public class AvaTaxClient {
     /**
      * Create a new item
      * 
-     * @param int companyId The ID of the company that owns this item.
-     * @param ArrayList<ItemModel> model The item you wish to create.
+     * @param companyId The ID of the company that owns this item.
+     * @param model The item you wish to create.
      * @return ArrayList<ItemModel>
      */
     public Future<ArrayList<ItemModel>> createItemsAsync(int companyId, ArrayList<ItemModel> model) {
@@ -4311,8 +4311,8 @@ public class AvaTaxClient {
     /**
      * Delete a single item
      * 
-     * @param int companyId The ID of the company that owns this item.
-     * @param long id The ID of the item you wish to delete.
+     * @param companyId The ID of the company that owns this item.
+     * @param id The ID of the item you wish to delete.
      * @return ArrayList<ErrorDetail>
      */
     public ArrayList<ErrorDetail> deleteItem(int companyId, long id) throws Exception {
@@ -4325,8 +4325,8 @@ public class AvaTaxClient {
     /**
      * Delete a single item
      * 
-     * @param int companyId The ID of the company that owns this item.
-     * @param long id The ID of the item you wish to delete.
+     * @param companyId The ID of the company that owns this item.
+     * @param id The ID of the item you wish to delete.
      * @return ArrayList<ErrorDetail>
      */
     public Future<ArrayList<ErrorDetail>> deleteItemAsync(int companyId, long id) {
@@ -4341,8 +4341,8 @@ public class AvaTaxClient {
      * 
      * Get the item object identified by this URL.
      * 
-     * @param int companyId The ID of the company that owns this item object
-     * @param long id The primary key of this item
+     * @param companyId The ID of the company that owns this item object
+     * @param id The primary key of this item
      * @return ItemModel
      */
     public ItemModel getItem(int companyId, long id) throws Exception {
@@ -4357,8 +4357,8 @@ public class AvaTaxClient {
      * 
      * Get the item object identified by this URL.
      * 
-     * @param int companyId The ID of the company that owns this item object
-     * @param long id The primary key of this item
+     * @param companyId The ID of the company that owns this item object
+     * @param id The primary key of this item
      * @return ItemModel
      */
     public Future<ItemModel> getItemAsync(int companyId, long id) {
@@ -4377,12 +4377,12 @@ public class AvaTaxClient {
      * 
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * 
-     * @param int companyId The ID of the company that defined these items
-     * @param String filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param String include A comma separated list of child objects to return underneath the primary object.
-     * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
-     * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @param companyId The ID of the company that defined these items
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param include A comma separated list of child objects to return underneath the primary object.
+     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
+     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<HashMap<String, String>>
      */
     public FetchResult<HashMap<String, String>> listItemsByCompany(int companyId, String filter, String include, Integer top, Integer skip, String orderBy) throws Exception {
@@ -4405,12 +4405,12 @@ public class AvaTaxClient {
      * 
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * 
-     * @param int companyId The ID of the company that defined these items
-     * @param String filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param String include A comma separated list of child objects to return underneath the primary object.
-     * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
-     * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @param companyId The ID of the company that defined these items
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param include A comma separated list of child objects to return underneath the primary object.
+     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
+     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<HashMap<String, String>>
      */
     public Future<FetchResult<HashMap<String, String>>> listItemsByCompanyAsync(int companyId, String filter, String include, Integer top, Integer skip, String orderBy) {
@@ -4432,11 +4432,11 @@ public class AvaTaxClient {
      * 
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * 
-     * @param String filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param String include A comma separated list of child objects to return underneath the primary object.
-     * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
-     * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param include A comma separated list of child objects to return underneath the primary object.
+     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
+     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<HashMap<String, String>>
      */
     public FetchResult<HashMap<String, String>> queryItems(String filter, String include, Integer top, Integer skip, String orderBy) throws Exception {
@@ -4457,11 +4457,11 @@ public class AvaTaxClient {
      * 
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * 
-     * @param String filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param String include A comma separated list of child objects to return underneath the primary object.
-     * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
-     * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param include A comma separated list of child objects to return underneath the primary object.
+     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
+     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<HashMap<String, String>>
      */
     public Future<FetchResult<HashMap<String, String>>> queryItemsAsync(String filter, String include, Integer top, Integer skip, String orderBy) {
@@ -4480,9 +4480,9 @@ public class AvaTaxClient {
      * Replace the existing item object at this URL with an updated object.
      * All data from the existing object will be replaced with data in the object you PUT.  
      * 
-     * @param int companyId The ID of the company that this item belongs to.
-     * @param long id The ID of the item you wish to update
-     * @param ItemModel model The item object you wish to update.
+     * @param companyId The ID of the company that this item belongs to.
+     * @param id The ID of the item you wish to update
+     * @param model The item object you wish to update.
      * @return ItemModel
      */
     public ItemModel updateItem(int companyId, long id, ItemModel model) throws Exception {
@@ -4498,9 +4498,9 @@ public class AvaTaxClient {
      * Replace the existing item object at this URL with an updated object.
      * All data from the existing object will be replaced with data in the object you PUT.  
      * 
-     * @param int companyId The ID of the company that this item belongs to.
-     * @param long id The ID of the item you wish to update
-     * @param ItemModel model The item object you wish to update.
+     * @param companyId The ID of the company that this item belongs to.
+     * @param id The ID of the item you wish to update
+     * @param model The item object you wish to update.
      * @return ItemModel
      */
     public Future<ItemModel> updateItemAsync(int companyId, long id, ItemModel model) {
@@ -4519,8 +4519,8 @@ public class AvaTaxClient {
      * jurisdiction for a specific address.  If you encounter an address that is on the boundary
      * between two different jurisdictions, you can choose to set up a jurisdiction override
      * 
-     * @param int accountId The ID of the account that owns this override
-     * @param ArrayList<JurisdictionOverrideModel> model The jurisdiction override objects to create
+     * @param accountId The ID of the account that owns this override
+     * @param model The jurisdiction override objects to create
      * @return ArrayList<JurisdictionOverrideModel>
      */
     public ArrayList<JurisdictionOverrideModel> createJurisdictionOverrides(int accountId, ArrayList<JurisdictionOverrideModel> model) throws Exception {
@@ -4538,8 +4538,8 @@ public class AvaTaxClient {
      * jurisdiction for a specific address.  If you encounter an address that is on the boundary
      * between two different jurisdictions, you can choose to set up a jurisdiction override
      * 
-     * @param int accountId The ID of the account that owns this override
-     * @param ArrayList<JurisdictionOverrideModel> model The jurisdiction override objects to create
+     * @param accountId The ID of the account that owns this override
+     * @param model The jurisdiction override objects to create
      * @return ArrayList<JurisdictionOverrideModel>
      */
     public Future<ArrayList<JurisdictionOverrideModel>> createJurisdictionOverridesAsync(int accountId, ArrayList<JurisdictionOverrideModel> model) {
@@ -4551,8 +4551,8 @@ public class AvaTaxClient {
     /**
      * Delete a single override
      * 
-     * @param int accountId The ID of the account that owns this override
-     * @param int id The ID of the override you wish to delete
+     * @param accountId The ID of the account that owns this override
+     * @param id The ID of the override you wish to delete
      * @return ArrayList<ErrorDetail>
      */
     public ArrayList<ErrorDetail> deleteJurisdictionOverride(int accountId, int id) throws Exception {
@@ -4565,8 +4565,8 @@ public class AvaTaxClient {
     /**
      * Delete a single override
      * 
-     * @param int accountId The ID of the account that owns this override
-     * @param int id The ID of the override you wish to delete
+     * @param accountId The ID of the account that owns this override
+     * @param id The ID of the override you wish to delete
      * @return ArrayList<ErrorDetail>
      */
     public Future<ArrayList<ErrorDetail>> deleteJurisdictionOverrideAsync(int accountId, int id) {
@@ -4585,8 +4585,8 @@ public class AvaTaxClient {
      * jurisdiction for a specific address.  If you encounter an address that is on the boundary
      * between two different jurisdictions, you can choose to set up a jurisdiction override
      * 
-     * @param int accountId The ID of the account that owns this override
-     * @param int id The primary key of this override
+     * @param accountId The ID of the account that owns this override
+     * @param id The primary key of this override
      * @return JurisdictionOverrideModel
      */
     public JurisdictionOverrideModel getJurisdictionOverride(int accountId, int id) throws Exception {
@@ -4605,8 +4605,8 @@ public class AvaTaxClient {
      * jurisdiction for a specific address.  If you encounter an address that is on the boundary
      * between two different jurisdictions, you can choose to set up a jurisdiction override
      * 
-     * @param int accountId The ID of the account that owns this override
-     * @param int id The primary key of this override
+     * @param accountId The ID of the account that owns this override
+     * @param id The primary key of this override
      * @return JurisdictionOverrideModel
      */
     public Future<JurisdictionOverrideModel> getJurisdictionOverrideAsync(int accountId, int id) {
@@ -4628,12 +4628,12 @@ public class AvaTaxClient {
      * 
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * 
-     * @param int accountId The ID of the account that owns this override
-     * @param String filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param String include A comma separated list of child objects to return underneath the primary object.
-     * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
-     * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @param accountId The ID of the account that owns this override
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param include A comma separated list of child objects to return underneath the primary object.
+     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
+     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<HashMap<String, String>>
      */
     public FetchResult<HashMap<String, String>> listJurisdictionOverridesByAccount(int accountId, String filter, String include, Integer top, Integer skip, String orderBy) throws Exception {
@@ -4659,12 +4659,12 @@ public class AvaTaxClient {
      * 
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * 
-     * @param int accountId The ID of the account that owns this override
-     * @param String filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param String include A comma separated list of child objects to return underneath the primary object.
-     * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
-     * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @param accountId The ID of the account that owns this override
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param include A comma separated list of child objects to return underneath the primary object.
+     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
+     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<HashMap<String, String>>
      */
     public Future<FetchResult<HashMap<String, String>>> listJurisdictionOverridesByAccountAsync(int accountId, String filter, String include, Integer top, Integer skip, String orderBy) {
@@ -4690,11 +4690,11 @@ public class AvaTaxClient {
      * 
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * 
-     * @param String filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param String include A comma separated list of child objects to return underneath the primary object.
-     * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
-     * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param include A comma separated list of child objects to return underneath the primary object.
+     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
+     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<HashMap<String, String>>
      */
     public FetchResult<HashMap<String, String>> queryJurisdictionOverrides(String filter, String include, Integer top, Integer skip, String orderBy) throws Exception {
@@ -4719,11 +4719,11 @@ public class AvaTaxClient {
      * 
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * 
-     * @param String filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param String include A comma separated list of child objects to return underneath the primary object.
-     * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
-     * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param include A comma separated list of child objects to return underneath the primary object.
+     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
+     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<HashMap<String, String>>
      */
     public Future<FetchResult<HashMap<String, String>>> queryJurisdictionOverridesAsync(String filter, String include, Integer top, Integer skip, String orderBy) {
@@ -4739,9 +4739,9 @@ public class AvaTaxClient {
     /**
      * Update a single jurisdictionoverride
      * 
-     * @param int accountId The ID of the account that this jurisdictionoverride belongs to.
-     * @param int id The ID of the jurisdictionoverride you wish to update
-     * @param JurisdictionOverrideModel model The jurisdictionoverride object you wish to update.
+     * @param accountId The ID of the account that this jurisdictionoverride belongs to.
+     * @param id The ID of the jurisdictionoverride you wish to update
+     * @param model The jurisdictionoverride object you wish to update.
      * @return JurisdictionOverrideModel
      */
     public JurisdictionOverrideModel updateJurisdictionOverride(int accountId, int id, JurisdictionOverrideModel model) throws Exception {
@@ -4754,9 +4754,9 @@ public class AvaTaxClient {
     /**
      * Update a single jurisdictionoverride
      * 
-     * @param int accountId The ID of the account that this jurisdictionoverride belongs to.
-     * @param int id The ID of the jurisdictionoverride you wish to update
-     * @param JurisdictionOverrideModel model The jurisdictionoverride object you wish to update.
+     * @param accountId The ID of the account that this jurisdictionoverride belongs to.
+     * @param id The ID of the jurisdictionoverride you wish to update
+     * @param model The jurisdictionoverride object you wish to update.
      * @return JurisdictionOverrideModel
      */
     public Future<JurisdictionOverrideModel> updateJurisdictionOverrideAsync(int accountId, int id, JurisdictionOverrideModel model) {
@@ -4775,12 +4775,12 @@ public class AvaTaxClient {
      * This data file can be customized for specific partner devices and usage conditions.
      * The result of this API is the file you requested in the format you requested using the 'responseType' field.
      * 
-     * @param int companyId The ID number of the company that owns this location.
-     * @param int id The ID number of the location to retrieve point-of-sale data.
-     * @param Date date The date for which point-of-sale data would be calculated (today by default)
-     * @param PointOfSaleFileType format The format of the file (JSON by default) (See PointOfSaleFileType::* for a list of allowable values)
-     * @param PointOfSalePartnerId partnerId If specified, requests a custom partner-formatted version of the file. (See PointOfSalePartnerId::* for a list of allowable values)
-     * @param Boolean includeJurisCodes When true, the file will include jurisdiction codes in the result.
+     * @param companyId The ID number of the company that owns this location.
+     * @param id The ID number of the location to retrieve point-of-sale data.
+     * @param date The date for which point-of-sale data would be calculated (today by default)
+     * @param format The format of the file (JSON by default) (See PointOfSaleFileType::* for a list of allowable values)
+     * @param partnerId If specified, requests a custom partner-formatted version of the file. (See PointOfSalePartnerId::* for a list of allowable values)
+     * @param includeJurisCodes When true, the file will include jurisdiction codes in the result.
      * @return HashMap<String, String>
      */
     public HashMap<String, String> buildPointOfSaleDataForLocation(int companyId, int id, Date date, PointOfSaleFileType format, PointOfSalePartnerId partnerId, Boolean includeJurisCodes) throws Exception {
@@ -4803,12 +4803,12 @@ public class AvaTaxClient {
      * This data file can be customized for specific partner devices and usage conditions.
      * The result of this API is the file you requested in the format you requested using the 'responseType' field.
      * 
-     * @param int companyId The ID number of the company that owns this location.
-     * @param int id The ID number of the location to retrieve point-of-sale data.
-     * @param Date date The date for which point-of-sale data would be calculated (today by default)
-     * @param PointOfSaleFileType format The format of the file (JSON by default) (See PointOfSaleFileType::* for a list of allowable values)
-     * @param PointOfSalePartnerId partnerId If specified, requests a custom partner-formatted version of the file. (See PointOfSalePartnerId::* for a list of allowable values)
-     * @param Boolean includeJurisCodes When true, the file will include jurisdiction codes in the result.
+     * @param companyId The ID number of the company that owns this location.
+     * @param id The ID number of the location to retrieve point-of-sale data.
+     * @param date The date for which point-of-sale data would be calculated (today by default)
+     * @param format The format of the file (JSON by default) (See PointOfSaleFileType::* for a list of allowable values)
+     * @param partnerId If specified, requests a custom partner-formatted version of the file. (See PointOfSalePartnerId::* for a list of allowable values)
+     * @param includeJurisCodes When true, the file will include jurisdiction codes in the result.
      * @return HashMap<String, String>
      */
     public Future<HashMap<String, String>> buildPointOfSaleDataForLocationAsync(int companyId, int id, Date date, PointOfSaleFileType format, PointOfSalePartnerId partnerId, Boolean includeJurisCodes) {
@@ -4825,8 +4825,8 @@ public class AvaTaxClient {
     /**
      * Create a new location
      * 
-     * @param int companyId The ID of the company that owns this location.
-     * @param ArrayList<LocationModel> model The location you wish to create.
+     * @param companyId The ID of the company that owns this location.
+     * @param model The location you wish to create.
      * @return ArrayList<LocationModel>
      */
     public ArrayList<LocationModel> createLocations(int companyId, ArrayList<LocationModel> model) throws Exception {
@@ -4838,8 +4838,8 @@ public class AvaTaxClient {
     /**
      * Create a new location
      * 
-     * @param int companyId The ID of the company that owns this location.
-     * @param ArrayList<LocationModel> model The location you wish to create.
+     * @param companyId The ID of the company that owns this location.
+     * @param model The location you wish to create.
      * @return ArrayList<LocationModel>
      */
     public Future<ArrayList<LocationModel>> createLocationsAsync(int companyId, ArrayList<LocationModel> model) {
@@ -4851,8 +4851,8 @@ public class AvaTaxClient {
     /**
      * Delete a single location
      * 
-     * @param int companyId The ID of the company that owns this location.
-     * @param int id The ID of the location you wish to delete.
+     * @param companyId The ID of the company that owns this location.
+     * @param id The ID of the location you wish to delete.
      * @return ArrayList<ErrorDetail>
      */
     public ArrayList<ErrorDetail> deleteLocation(int companyId, int id) throws Exception {
@@ -4865,8 +4865,8 @@ public class AvaTaxClient {
     /**
      * Delete a single location
      * 
-     * @param int companyId The ID of the company that owns this location.
-     * @param int id The ID of the location you wish to delete.
+     * @param companyId The ID of the company that owns this location.
+     * @param id The ID of the location you wish to delete.
      * @return ArrayList<ErrorDetail>
      */
     public Future<ArrayList<ErrorDetail>> deleteLocationAsync(int companyId, int id) {
@@ -4884,8 +4884,8 @@ public class AvaTaxClient {
      * Many taxing authorities require that you define a list of all locations where your company does business.
      * These locations may require additional custom configuration or tax registration with these authorities.
      * 
-     * @param int companyId The ID of the company that owns this location
-     * @param int id The primary key of this location
+     * @param companyId The ID of the company that owns this location
+     * @param id The primary key of this location
      * @return LocationModel
      */
     public LocationModel getLocation(int companyId, int id) throws Exception {
@@ -4903,8 +4903,8 @@ public class AvaTaxClient {
      * Many taxing authorities require that you define a list of all locations where your company does business.
      * These locations may require additional custom configuration or tax registration with these authorities.
      * 
-     * @param int companyId The ID of the company that owns this location
-     * @param int id The primary key of this location
+     * @param companyId The ID of the company that owns this location
+     * @param id The primary key of this location
      * @return LocationModel
      */
     public Future<LocationModel> getLocationAsync(int companyId, int id) {
@@ -4925,12 +4925,12 @@ public class AvaTaxClient {
      * 
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * 
-     * @param int companyId The ID of the company that owns these locations
-     * @param String filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param String include A comma separated list of child objects to return underneath the primary object.
-     * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
-     * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @param companyId The ID of the company that owns these locations
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param include A comma separated list of child objects to return underneath the primary object.
+     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
+     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<HashMap<String, String>>
      */
     public FetchResult<HashMap<String, String>> listLocationsByCompany(int companyId, String filter, String include, Integer top, Integer skip, String orderBy) throws Exception {
@@ -4955,12 +4955,12 @@ public class AvaTaxClient {
      * 
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * 
-     * @param int companyId The ID of the company that owns these locations
-     * @param String filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param String include A comma separated list of child objects to return underneath the primary object.
-     * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
-     * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @param companyId The ID of the company that owns these locations
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param include A comma separated list of child objects to return underneath the primary object.
+     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
+     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<HashMap<String, String>>
      */
     public Future<FetchResult<HashMap<String, String>>> listLocationsByCompanyAsync(int companyId, String filter, String include, Integer top, Integer skip, String orderBy) {
@@ -4985,11 +4985,11 @@ public class AvaTaxClient {
      * 
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * 
-     * @param String filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param String include A comma separated list of child objects to return underneath the primary object.
-     * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
-     * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param include A comma separated list of child objects to return underneath the primary object.
+     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
+     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<HashMap<String, String>>
      */
     public FetchResult<HashMap<String, String>> queryLocations(String filter, String include, Integer top, Integer skip, String orderBy) throws Exception {
@@ -5013,11 +5013,11 @@ public class AvaTaxClient {
      * 
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * 
-     * @param String filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param String include A comma separated list of child objects to return underneath the primary object.
-     * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
-     * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param include A comma separated list of child objects to return underneath the primary object.
+     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
+     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<HashMap<String, String>>
      */
     public Future<FetchResult<HashMap<String, String>>> queryLocationsAsync(String filter, String include, Integer top, Integer skip, String orderBy) {
@@ -5036,9 +5036,9 @@ public class AvaTaxClient {
      * Replace the existing location object at this URL with an updated object.
      * All data from the existing object will be replaced with data in the object you PUT.  
      * 
-     * @param int companyId The ID of the company that this location belongs to.
-     * @param int id The ID of the location you wish to update
-     * @param LocationModel model The location you wish to update.
+     * @param companyId The ID of the company that this location belongs to.
+     * @param id The ID of the location you wish to update
+     * @param model The location you wish to update.
      * @return LocationModel
      */
     public LocationModel updateLocation(int companyId, int id, LocationModel model) throws Exception {
@@ -5054,9 +5054,9 @@ public class AvaTaxClient {
      * Replace the existing location object at this URL with an updated object.
      * All data from the existing object will be replaced with data in the object you PUT.  
      * 
-     * @param int companyId The ID of the company that this location belongs to.
-     * @param int id The ID of the location you wish to update
-     * @param LocationModel model The location you wish to update.
+     * @param companyId The ID of the company that this location belongs to.
+     * @param id The ID of the location you wish to update
+     * @param model The location you wish to update.
      * @return LocationModel
      */
     public Future<LocationModel> updateLocationAsync(int companyId, int id, LocationModel model) {
@@ -5072,8 +5072,8 @@ public class AvaTaxClient {
      * Returns validation information for this location.
      * This API call is intended to compare this location against the currently known taxing authority rules and regulations,
      * 
-     * @param int companyId The ID of the company that owns this location
-     * @param int id The primary key of this location
+     * @param companyId The ID of the company that owns this location
+     * @param id The primary key of this location
      * @return LocationValidationModel
      */
     public LocationValidationModel validateLocation(int companyId, int id) throws Exception {
@@ -5089,8 +5089,8 @@ public class AvaTaxClient {
      * Returns validation information for this location.
      * This API call is intended to compare this location against the currently known taxing authority rules and regulations,
      * 
-     * @param int companyId The ID of the company that owns this location
-     * @param int id The primary key of this location
+     * @param companyId The ID of the company that owns this location
+     * @param id The primary key of this location
      * @return LocationValidationModel
      */
     public Future<LocationValidationModel> validateLocationAsync(int companyId, int id) {
@@ -5111,8 +5111,8 @@ public class AvaTaxClient {
      * Note that not all fields within a nexus can be updated; Avalara publishes a list of all defined nexus at the
      * '/api/v2/definitions/nexus' endpoint.
      * 
-     * @param int companyId The ID of the company that owns this nexus.
-     * @param ArrayList<NexusModel> model The nexus you wish to create.
+     * @param companyId The ID of the company that owns this nexus.
+     * @param model The nexus you wish to create.
      * @return ArrayList<NexusModel>
      */
     public ArrayList<NexusModel> createNexus(int companyId, ArrayList<NexusModel> model) throws Exception {
@@ -5132,8 +5132,8 @@ public class AvaTaxClient {
      * Note that not all fields within a nexus can be updated; Avalara publishes a list of all defined nexus at the
      * '/api/v2/definitions/nexus' endpoint.
      * 
-     * @param int companyId The ID of the company that owns this nexus.
-     * @param ArrayList<NexusModel> model The nexus you wish to create.
+     * @param companyId The ID of the company that owns this nexus.
+     * @param model The nexus you wish to create.
      * @return ArrayList<NexusModel>
      */
     public Future<ArrayList<NexusModel>> createNexusAsync(int companyId, ArrayList<NexusModel> model) {
@@ -5145,8 +5145,8 @@ public class AvaTaxClient {
     /**
      * Delete a single nexus
      * 
-     * @param int companyId The ID of the company that owns this nexus.
-     * @param int id The ID of the nexus you wish to delete.
+     * @param companyId The ID of the company that owns this nexus.
+     * @param id The ID of the nexus you wish to delete.
      * @return ArrayList<ErrorDetail>
      */
     public ArrayList<ErrorDetail> deleteNexus(int companyId, int id) throws Exception {
@@ -5159,8 +5159,8 @@ public class AvaTaxClient {
     /**
      * Delete a single nexus
      * 
-     * @param int companyId The ID of the company that owns this nexus.
-     * @param int id The ID of the nexus you wish to delete.
+     * @param companyId The ID of the company that owns this nexus.
+     * @param id The ID of the nexus you wish to delete.
      * @return ArrayList<ErrorDetail>
      */
     public Future<ArrayList<ErrorDetail>> deleteNexusAsync(int companyId, int id) {
@@ -5178,8 +5178,8 @@ public class AvaTaxClient {
      * to collect and remit transaction-based taxes.
      * When defining companies in AvaTax, you must declare nexus for your company in order to correctly calculate tax
      * 
-     * @param int companyId The ID of the company that owns this nexus object
-     * @param int id The primary key of this nexus
+     * @param companyId The ID of the company that owns this nexus object
+     * @param id The primary key of this nexus
      * @return NexusModel
      */
     public NexusModel getNexus(int companyId, int id) throws Exception {
@@ -5197,8 +5197,8 @@ public class AvaTaxClient {
      * to collect and remit transaction-based taxes.
      * When defining companies in AvaTax, you must declare nexus for your company in order to correctly calculate tax
      * 
-     * @param int companyId The ID of the company that owns this nexus object
-     * @param int id The primary key of this nexus
+     * @param companyId The ID of the company that owns this nexus object
+     * @param id The primary key of this nexus
      * @return NexusModel
      */
     public Future<NexusModel> getNexusAsync(int companyId, int id) {
@@ -5222,8 +5222,8 @@ public class AvaTaxClient {
      * This API is intended to provide useful information when examining a tax form.  If you are about to begin filing
      * a tax form, you may want to know whether you have declared nexus in all the jurisdictions related to that tax 
      * 
-     * @param int companyId The ID of the company that owns this nexus object
-     * @param String formCode The form code that we are looking up the nexus for
+     * @param companyId The ID of the company that owns this nexus object
+     * @param formCode The form code that we are looking up the nexus for
      * @return NexusByTaxFormModel
      */
     public NexusByTaxFormModel getNexusByFormCode(int companyId, String formCode) throws Exception {
@@ -5247,8 +5247,8 @@ public class AvaTaxClient {
      * This API is intended to provide useful information when examining a tax form.  If you are about to begin filing
      * a tax form, you may want to know whether you have declared nexus in all the jurisdictions related to that tax 
      * 
-     * @param int companyId The ID of the company that owns this nexus object
-     * @param String formCode The form code that we are looking up the nexus for
+     * @param companyId The ID of the company that owns this nexus object
+     * @param formCode The form code that we are looking up the nexus for
      * @return NexusByTaxFormModel
      */
     public Future<NexusByTaxFormModel> getNexusByFormCodeAsync(int companyId, String formCode) {
@@ -5269,12 +5269,12 @@ public class AvaTaxClient {
      * 
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * 
-     * @param int companyId The ID of the company that owns these nexus objects
-     * @param String filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param String include A comma separated list of child objects to return underneath the primary object.
-     * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
-     * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @param companyId The ID of the company that owns these nexus objects
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param include A comma separated list of child objects to return underneath the primary object.
+     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
+     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<HashMap<String, String>>
      */
     public FetchResult<HashMap<String, String>> listNexusByCompany(int companyId, String filter, String include, Integer top, Integer skip, String orderBy) throws Exception {
@@ -5299,12 +5299,12 @@ public class AvaTaxClient {
      * 
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * 
-     * @param int companyId The ID of the company that owns these nexus objects
-     * @param String filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param String include A comma separated list of child objects to return underneath the primary object.
-     * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
-     * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @param companyId The ID of the company that owns these nexus objects
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param include A comma separated list of child objects to return underneath the primary object.
+     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
+     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<HashMap<String, String>>
      */
     public Future<FetchResult<HashMap<String, String>>> listNexusByCompanyAsync(int companyId, String filter, String include, Integer top, Integer skip, String orderBy) {
@@ -5329,11 +5329,11 @@ public class AvaTaxClient {
      * 
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * 
-     * @param String filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param String include A comma separated list of child objects to return underneath the primary object.
-     * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
-     * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param include A comma separated list of child objects to return underneath the primary object.
+     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
+     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<HashMap<String, String>>
      */
     public FetchResult<HashMap<String, String>> queryNexus(String filter, String include, Integer top, Integer skip, String orderBy) throws Exception {
@@ -5357,11 +5357,11 @@ public class AvaTaxClient {
      * 
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * 
-     * @param String filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param String include A comma separated list of child objects to return underneath the primary object.
-     * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
-     * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param include A comma separated list of child objects to return underneath the primary object.
+     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
+     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<HashMap<String, String>>
      */
     public Future<FetchResult<HashMap<String, String>>> queryNexusAsync(String filter, String include, Integer top, Integer skip, String orderBy) {
@@ -5387,9 +5387,9 @@ public class AvaTaxClient {
      * You may only define nexus matching the official list of declared nexus.
      * All data from the existing object will be replaced with data in the object you PUT.  
      * 
-     * @param int companyId The ID of the company that this nexus belongs to.
-     * @param int id The ID of the nexus you wish to update
-     * @param NexusModel model The nexus object you wish to update.
+     * @param companyId The ID of the company that this nexus belongs to.
+     * @param id The ID of the nexus you wish to update
+     * @param model The nexus object you wish to update.
      * @return NexusModel
      */
     public NexusModel updateNexus(int companyId, int id, NexusModel model) throws Exception {
@@ -5412,9 +5412,9 @@ public class AvaTaxClient {
      * You may only define nexus matching the official list of declared nexus.
      * All data from the existing object will be replaced with data in the object you PUT.  
      * 
-     * @param int companyId The ID of the company that this nexus belongs to.
-     * @param int id The ID of the nexus you wish to update
-     * @param NexusModel model The nexus object you wish to update.
+     * @param companyId The ID of the company that this nexus belongs to.
+     * @param id The ID of the nexus you wish to update
+     * @param model The nexus object you wish to update.
      * @return NexusModel
      */
     public Future<NexusModel> updateNexusAsync(int companyId, int id, NexusModel model) {
@@ -5431,9 +5431,9 @@ public class AvaTaxClient {
      * 'Notice comments' are updates by the notice team on the work to be done and that has been done so far on a notice.
      * A 'notice' represents a letter sent to a business by a tax authority regarding tax filing issues.  Avalara
      * 
-     * @param int companyId The ID of the company that owns this notice.
-     * @param int id The ID of the tax notice we are adding the comment for.
-     * @param ArrayList<NoticeCommentModel> model The notice comments you wish to create.
+     * @param companyId The ID of the company that owns this notice.
+     * @param id The ID of the tax notice we are adding the comment for.
+     * @param model The notice comments you wish to create.
      * @return ArrayList<NoticeCommentModel>
      */
     public ArrayList<NoticeCommentModel> createNoticeComment(int companyId, int id, ArrayList<NoticeCommentModel> model) throws Exception {
@@ -5450,9 +5450,9 @@ public class AvaTaxClient {
      * 'Notice comments' are updates by the notice team on the work to be done and that has been done so far on a notice.
      * A 'notice' represents a letter sent to a business by a tax authority regarding tax filing issues.  Avalara
      * 
-     * @param int companyId The ID of the company that owns this notice.
-     * @param int id The ID of the tax notice we are adding the comment for.
-     * @param ArrayList<NoticeCommentModel> model The notice comments you wish to create.
+     * @param companyId The ID of the company that owns this notice.
+     * @param id The ID of the tax notice we are adding the comment for.
+     * @param model The notice comments you wish to create.
      * @return ArrayList<NoticeCommentModel>
      */
     public Future<ArrayList<NoticeCommentModel>> createNoticeCommentAsync(int companyId, int id, ArrayList<NoticeCommentModel> model) {
@@ -5470,9 +5470,9 @@ public class AvaTaxClient {
      * as broken down in our "notice log" found in Workflow. Main examples of the categories are 'Tax Due', 'Interest', 'Penalty', 'Total Abated'.
      * A 'notice' represents a letter sent to a business by a tax authority regarding tax filing issues.  Avalara
      * 
-     * @param int companyId The ID of the company that owns this notice.
-     * @param int id The ID of the notice added to the finance details.
-     * @param ArrayList<NoticeFinanceModel> model The notice finance details you wish to create.
+     * @param companyId The ID of the company that owns this notice.
+     * @param id The ID of the notice added to the finance details.
+     * @param model The notice finance details you wish to create.
      * @return ArrayList<NoticeFinanceModel>
      */
     public ArrayList<NoticeFinanceModel> createNoticeFinanceDetails(int companyId, int id, ArrayList<NoticeFinanceModel> model) throws Exception {
@@ -5490,9 +5490,9 @@ public class AvaTaxClient {
      * as broken down in our "notice log" found in Workflow. Main examples of the categories are 'Tax Due', 'Interest', 'Penalty', 'Total Abated'.
      * A 'notice' represents a letter sent to a business by a tax authority regarding tax filing issues.  Avalara
      * 
-     * @param int companyId The ID of the company that owns this notice.
-     * @param int id The ID of the notice added to the finance details.
-     * @param ArrayList<NoticeFinanceModel> model The notice finance details you wish to create.
+     * @param companyId The ID of the company that owns this notice.
+     * @param id The ID of the notice added to the finance details.
+     * @param model The notice finance details you wish to create.
      * @return ArrayList<NoticeFinanceModel>
      */
     public Future<ArrayList<NoticeFinanceModel>> createNoticeFinanceDetailsAsync(int companyId, int id, ArrayList<NoticeFinanceModel> model) {
@@ -5509,9 +5509,9 @@ public class AvaTaxClient {
      * 'Notice comments' are updates by the notice team on the work to be done and that has been done so far on a notice.
      * A 'notice' represents a letter sent to a business by a tax authority regarding tax filing issues.  Avalara
      * 
-     * @param int companyId The ID of the company that owns this notice.
-     * @param int id The ID of the tax notice we are adding the responsibility for.
-     * @param ArrayList<NoticeResponsibilityDetailModel> model The notice responsibilities you wish to create.
+     * @param companyId The ID of the company that owns this notice.
+     * @param id The ID of the tax notice we are adding the responsibility for.
+     * @param model The notice responsibilities you wish to create.
      * @return ArrayList<NoticeResponsibilityDetailModel>
      */
     public ArrayList<NoticeResponsibilityDetailModel> createNoticeResponsibilities(int companyId, int id, ArrayList<NoticeResponsibilityDetailModel> model) throws Exception {
@@ -5528,9 +5528,9 @@ public class AvaTaxClient {
      * 'Notice comments' are updates by the notice team on the work to be done and that has been done so far on a notice.
      * A 'notice' represents a letter sent to a business by a tax authority regarding tax filing issues.  Avalara
      * 
-     * @param int companyId The ID of the company that owns this notice.
-     * @param int id The ID of the tax notice we are adding the responsibility for.
-     * @param ArrayList<NoticeResponsibilityDetailModel> model The notice responsibilities you wish to create.
+     * @param companyId The ID of the company that owns this notice.
+     * @param id The ID of the tax notice we are adding the responsibility for.
+     * @param model The notice responsibilities you wish to create.
      * @return ArrayList<NoticeResponsibilityDetailModel>
      */
     public Future<ArrayList<NoticeResponsibilityDetailModel>> createNoticeResponsibilitiesAsync(int companyId, int id, ArrayList<NoticeResponsibilityDetailModel> model) {
@@ -5547,9 +5547,9 @@ public class AvaTaxClient {
      * 'Notice root causes' are are those who are responsible for the notice.
      * A 'notice' represents a letter sent to a business by a tax authority regarding tax filing issues.  Avalara
      * 
-     * @param int companyId The ID of the company that owns this notice.
-     * @param int id The ID of the tax notice we are adding the responsibility for.
-     * @param ArrayList<NoticeRootCauseDetailModel> model The notice root causes you wish to create.
+     * @param companyId The ID of the company that owns this notice.
+     * @param id The ID of the tax notice we are adding the responsibility for.
+     * @param model The notice root causes you wish to create.
      * @return ArrayList<NoticeRootCauseDetailModel>
      */
     public ArrayList<NoticeRootCauseDetailModel> createNoticeRootCauses(int companyId, int id, ArrayList<NoticeRootCauseDetailModel> model) throws Exception {
@@ -5566,9 +5566,9 @@ public class AvaTaxClient {
      * 'Notice root causes' are are those who are responsible for the notice.
      * A 'notice' represents a letter sent to a business by a tax authority regarding tax filing issues.  Avalara
      * 
-     * @param int companyId The ID of the company that owns this notice.
-     * @param int id The ID of the tax notice we are adding the responsibility for.
-     * @param ArrayList<NoticeRootCauseDetailModel> model The notice root causes you wish to create.
+     * @param companyId The ID of the company that owns this notice.
+     * @param id The ID of the tax notice we are adding the responsibility for.
+     * @param model The notice root causes you wish to create.
      * @return ArrayList<NoticeRootCauseDetailModel>
      */
     public Future<ArrayList<NoticeRootCauseDetailModel>> createNoticeRootCausesAsync(int companyId, int id, ArrayList<NoticeRootCauseDetailModel> model) {
@@ -5585,8 +5585,8 @@ public class AvaTaxClient {
      * Create one or more new notice objects.
      * A 'notice' represents a letter sent to a business by a tax authority regarding tax filing issues.  Avalara
      * 
-     * @param int companyId The ID of the company that owns this notice.
-     * @param ArrayList<NoticeModel> model The notice object you wish to create.
+     * @param companyId The ID of the company that owns this notice.
+     * @param model The notice object you wish to create.
      * @return ArrayList<NoticeModel>
      */
     public ArrayList<NoticeModel> createNotices(int companyId, ArrayList<NoticeModel> model) throws Exception {
@@ -5602,8 +5602,8 @@ public class AvaTaxClient {
      * Create one or more new notice objects.
      * A 'notice' represents a letter sent to a business by a tax authority regarding tax filing issues.  Avalara
      * 
-     * @param int companyId The ID of the company that owns this notice.
-     * @param ArrayList<NoticeModel> model The notice object you wish to create.
+     * @param companyId The ID of the company that owns this notice.
+     * @param model The notice object you wish to create.
      * @return ArrayList<NoticeModel>
      */
     public Future<ArrayList<NoticeModel>> createNoticesAsync(int companyId, ArrayList<NoticeModel> model) {
@@ -5619,8 +5619,8 @@ public class AvaTaxClient {
      * Mark the existing notice object at this URL as deleted.
      * A 'notice' represents a letter sent to a business by a tax authority regarding tax filing issues.  Avalara
      * 
-     * @param int companyId The ID of the company that owns this notice.
-     * @param int id The ID of the notice you wish to delete.
+     * @param companyId The ID of the company that owns this notice.
+     * @param id The ID of the notice you wish to delete.
      * @return ArrayList<ErrorDetail>
      */
     public ArrayList<ErrorDetail> deleteNotice(int companyId, int id) throws Exception {
@@ -5637,8 +5637,8 @@ public class AvaTaxClient {
      * Mark the existing notice object at this URL as deleted.
      * A 'notice' represents a letter sent to a business by a tax authority regarding tax filing issues.  Avalara
      * 
-     * @param int companyId The ID of the company that owns this notice.
-     * @param int id The ID of the notice you wish to delete.
+     * @param companyId The ID of the company that owns this notice.
+     * @param id The ID of the notice you wish to delete.
      * @return ArrayList<ErrorDetail>
      */
     public Future<ArrayList<ErrorDetail>> deleteNoticeAsync(int companyId, int id) {
@@ -5653,8 +5653,8 @@ public class AvaTaxClient {
      * 
      * This API is available by invitation only.
      * 
-     * @param int companyId The ID of the company for this attachment.
-     * @param long id The ResourceFileId of the attachment to download.
+     * @param companyId The ID of the company for this attachment.
+     * @param id The ResourceFileId of the attachment to download.
      * @return HashMap<String, String>
      */
     public HashMap<String, String> downloadNoticeAttachment(int companyId, long id) throws Exception {
@@ -5669,8 +5669,8 @@ public class AvaTaxClient {
      * 
      * This API is available by invitation only.
      * 
-     * @param int companyId The ID of the company for this attachment.
-     * @param long id The ResourceFileId of the attachment to download.
+     * @param companyId The ID of the company for this attachment.
+     * @param id The ResourceFileId of the attachment to download.
      * @return HashMap<String, String>
      */
     public Future<HashMap<String, String>> downloadNoticeAttachmentAsync(int companyId, long id) {
@@ -5687,8 +5687,8 @@ public class AvaTaxClient {
      * Get the tax notice object identified by this URL.
      * A 'notice' represents a letter sent to a business by a tax authority regarding tax filing issues.  Avalara
      * 
-     * @param int companyId The ID of the company for this notice.
-     * @param int id The ID of this notice.
+     * @param companyId The ID of the company for this notice.
+     * @param id The ID of this notice.
      * @return NoticeModel
      */
     public NoticeModel getNotice(int companyId, int id) throws Exception {
@@ -5705,8 +5705,8 @@ public class AvaTaxClient {
      * Get the tax notice object identified by this URL.
      * A 'notice' represents a letter sent to a business by a tax authority regarding tax filing issues.  Avalara
      * 
-     * @param int companyId The ID of the company for this notice.
-     * @param int id The ID of this notice.
+     * @param companyId The ID of the company for this notice.
+     * @param id The ID of this notice.
      * @return NoticeModel
      */
     public Future<NoticeModel> getNoticeAsync(int companyId, int id) {
@@ -5723,8 +5723,8 @@ public class AvaTaxClient {
      * 'Notice comments' are updates by the notice team on the work to be done and that has been done so far on a notice.
      * A 'notice' represents a letter sent to a business by a tax authority regarding tax filing issues.  Avalara
      * 
-     * @param int id The ID of the notice.
-     * @param int companyId The ID of the company that owns these notices.
+     * @param id The ID of the notice.
+     * @param companyId The ID of the company that owns these notices.
      * @return FetchResult<HashMap<String, String>>
      */
     public FetchResult<HashMap<String, String>> getNoticeComments(int id, int companyId) throws Exception {
@@ -5741,8 +5741,8 @@ public class AvaTaxClient {
      * 'Notice comments' are updates by the notice team on the work to be done and that has been done so far on a notice.
      * A 'notice' represents a letter sent to a business by a tax authority regarding tax filing issues.  Avalara
      * 
-     * @param int id The ID of the notice.
-     * @param int companyId The ID of the company that owns these notices.
+     * @param id The ID of the notice.
+     * @param companyId The ID of the company that owns these notices.
      * @return FetchResult<HashMap<String, String>>
      */
     public Future<FetchResult<HashMap<String, String>>> getNoticeCommentsAsync(int id, int companyId) {
@@ -5760,8 +5760,8 @@ public class AvaTaxClient {
      * as broken down in our "notice log" found in Workflow. Main examples of the categories are 'Tax Due', 'Interest', 'Penalty', 'Total Abated'.
      * A 'notice' represents a letter sent to a business by a tax authority regarding tax filing issues.  Avalara
      * 
-     * @param int id The ID of the company that owns these notices.
-     * @param int companyId The ID of the company that owns these notices.
+     * @param id The ID of the company that owns these notices.
+     * @param companyId The ID of the company that owns these notices.
      * @return FetchResult<HashMap<String, String>>
      */
     public FetchResult<HashMap<String, String>> getNoticeFinanceDetails(int id, int companyId) throws Exception {
@@ -5779,8 +5779,8 @@ public class AvaTaxClient {
      * as broken down in our "notice log" found in Workflow. Main examples of the categories are 'Tax Due', 'Interest', 'Penalty', 'Total Abated'.
      * A 'notice' represents a letter sent to a business by a tax authority regarding tax filing issues.  Avalara
      * 
-     * @param int id The ID of the company that owns these notices.
-     * @param int companyId The ID of the company that owns these notices.
+     * @param id The ID of the company that owns these notices.
+     * @param companyId The ID of the company that owns these notices.
      * @return FetchResult<HashMap<String, String>>
      */
     public Future<FetchResult<HashMap<String, String>>> getNoticeFinanceDetailsAsync(int id, int companyId) {
@@ -5797,8 +5797,8 @@ public class AvaTaxClient {
      * 'Notice responsibilities' are are those who are responsible for the notice.
      * A 'notice' represents a letter sent to a business by a tax authority regarding tax filing issues.  Avalara
      * 
-     * @param int id The ID of the notice.
-     * @param int companyId The ID of the company that owns these notices.
+     * @param id The ID of the notice.
+     * @param companyId The ID of the company that owns these notices.
      * @return FetchResult<HashMap<String, String>>
      */
     public FetchResult<HashMap<String, String>> getNoticeResponsibilities(int id, int companyId) throws Exception {
@@ -5815,8 +5815,8 @@ public class AvaTaxClient {
      * 'Notice responsibilities' are are those who are responsible for the notice.
      * A 'notice' represents a letter sent to a business by a tax authority regarding tax filing issues.  Avalara
      * 
-     * @param int id The ID of the notice.
-     * @param int companyId The ID of the company that owns these notices.
+     * @param id The ID of the notice.
+     * @param companyId The ID of the company that owns these notices.
      * @return FetchResult<HashMap<String, String>>
      */
     public Future<FetchResult<HashMap<String, String>>> getNoticeResponsibilitiesAsync(int id, int companyId) {
@@ -5833,8 +5833,8 @@ public class AvaTaxClient {
      * 'Notice root causes' are are those who are responsible for the notice.
      * A 'notice' represents a letter sent to a business by a tax authority regarding tax filing issues.  Avalara
      * 
-     * @param int id The ID of the notice.
-     * @param int companyId The ID of the company that owns these notices.
+     * @param id The ID of the notice.
+     * @param companyId The ID of the company that owns these notices.
      * @return FetchResult<HashMap<String, String>>
      */
     public FetchResult<HashMap<String, String>> getNoticeRootCauses(int id, int companyId) throws Exception {
@@ -5851,8 +5851,8 @@ public class AvaTaxClient {
      * 'Notice root causes' are are those who are responsible for the notice.
      * A 'notice' represents a letter sent to a business by a tax authority regarding tax filing issues.  Avalara
      * 
-     * @param int id The ID of the notice.
-     * @param int companyId The ID of the company that owns these notices.
+     * @param id The ID of the notice.
+     * @param companyId The ID of the company that owns these notices.
      * @return FetchResult<HashMap<String, String>>
      */
     public Future<FetchResult<HashMap<String, String>>> getNoticeRootCausesAsync(int id, int companyId) {
@@ -5872,12 +5872,12 @@ public class AvaTaxClient {
      * 
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * 
-     * @param int companyId The ID of the company that owns these notices.
-     * @param String filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param String include A comma separated list of child objects to return underneath the primary object.
-     * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
-     * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @param companyId The ID of the company that owns these notices.
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param include A comma separated list of child objects to return underneath the primary object.
+     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
+     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<HashMap<String, String>>
      */
     public FetchResult<HashMap<String, String>> listNoticesByCompany(int companyId, String filter, String include, Integer top, Integer skip, String orderBy) throws Exception {
@@ -5901,12 +5901,12 @@ public class AvaTaxClient {
      * 
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * 
-     * @param int companyId The ID of the company that owns these notices.
-     * @param String filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param String include A comma separated list of child objects to return underneath the primary object.
-     * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
-     * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @param companyId The ID of the company that owns these notices.
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param include A comma separated list of child objects to return underneath the primary object.
+     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
+     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<HashMap<String, String>>
      */
     public Future<FetchResult<HashMap<String, String>>> listNoticesByCompanyAsync(int companyId, String filter, String include, Integer top, Integer skip, String orderBy) {
@@ -5930,11 +5930,11 @@ public class AvaTaxClient {
      * 
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * 
-     * @param String filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param String include A comma separated list of child objects to return underneath the primary object.
-     * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
-     * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param include A comma separated list of child objects to return underneath the primary object.
+     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
+     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<HashMap<String, String>>
      */
     public FetchResult<HashMap<String, String>> queryNotices(String filter, String include, Integer top, Integer skip, String orderBy) throws Exception {
@@ -5957,11 +5957,11 @@ public class AvaTaxClient {
      * 
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * 
-     * @param String filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param String include A comma separated list of child objects to return underneath the primary object.
-     * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
-     * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param include A comma separated list of child objects to return underneath the primary object.
+     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
+     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<HashMap<String, String>>
      */
     public Future<FetchResult<HashMap<String, String>>> queryNoticesAsync(String filter, String include, Integer top, Integer skip, String orderBy) {
@@ -5983,9 +5983,9 @@ public class AvaTaxClient {
      * Returns customers often receive support and assistance from the Compliance Notices team in handling notices received by taxing authorities.
      * All data from the existing object will be replaced with data in the object you PUT.  
      * 
-     * @param int companyId The ID of the company that this notice belongs to.
-     * @param int id The ID of the notice you wish to update.
-     * @param NoticeModel model The notice object you wish to update.
+     * @param companyId The ID of the company that this notice belongs to.
+     * @param id The ID of the notice you wish to update.
+     * @param model The notice object you wish to update.
      * @return NoticeModel
      */
     public NoticeModel updateNotice(int companyId, int id, NoticeModel model) throws Exception {
@@ -6004,9 +6004,9 @@ public class AvaTaxClient {
      * Returns customers often receive support and assistance from the Compliance Notices team in handling notices received by taxing authorities.
      * All data from the existing object will be replaced with data in the object you PUT.  
      * 
-     * @param int companyId The ID of the company that this notice belongs to.
-     * @param int id The ID of the notice you wish to update.
-     * @param NoticeModel model The notice object you wish to update.
+     * @param companyId The ID of the company that this notice belongs to.
+     * @param id The ID of the notice you wish to update.
+     * @param model The notice object you wish to update.
      * @return NoticeModel
      */
     public Future<NoticeModel> updateNoticeAsync(int companyId, int id, NoticeModel model) {
@@ -6021,8 +6021,8 @@ public class AvaTaxClient {
      * 
      * This API is available by invitation only.
      * 
-     * @param int companyId The ID of the company for this attachment.
-     * @param ResourceFileUploadRequestModel model The ResourceFileId of the attachment to download.
+     * @param companyId The ID of the company for this attachment.
+     * @param model The ResourceFileId of the attachment to download.
      * @return HashMap<String, String>
      */
     public HashMap<String, String> uploadAttachment(int companyId, ResourceFileUploadRequestModel model) throws Exception {
@@ -6036,8 +6036,8 @@ public class AvaTaxClient {
      * 
      * This API is available by invitation only.
      * 
-     * @param int companyId The ID of the company for this attachment.
-     * @param ResourceFileUploadRequestModel model The ResourceFileId of the attachment to download.
+     * @param companyId The ID of the company for this attachment.
+     * @param model The ResourceFileId of the attachment to download.
      * @return HashMap<String, String>
      */
     public Future<HashMap<String, String>> uploadAttachmentAsync(int companyId, ResourceFileUploadRequestModel model) {
@@ -6053,7 +6053,7 @@ public class AvaTaxClient {
      * Calling this API creates an account with the specified product subscriptions, but does not configure billing.
      * The customer will receive information from Avalara about how to configure billing for their account.
      * 
-     * @param NewAccountRequestModel model Information about the account you wish to create and the selected product offerings.
+     * @param model Information about the account you wish to create and the selected product offerings.
      * @return NewAccountModel
      */
     public NewAccountModel requestNewAccount(NewAccountRequestModel model) throws Exception {
@@ -6068,7 +6068,7 @@ public class AvaTaxClient {
      * Calling this API creates an account with the specified product subscriptions, but does not configure billing.
      * The customer will receive information from Avalara about how to configure billing for their account.
      * 
-     * @param NewAccountRequestModel model Information about the account you wish to create and the selected product offerings.
+     * @param model Information about the account you wish to create and the selected product offerings.
      * @return NewAccountModel
      */
     public Future<NewAccountModel> requestNewAccountAsync(NewAccountRequestModel model) {
@@ -6084,7 +6084,7 @@ public class AvaTaxClient {
      * This data file can be customized for specific partner devices and usage conditions.
      * The result of this API is the file you requested in the format you requested using the 'responseType' field.
      * 
-     * @param PointOfSaleDataRequestModel model Parameters about the desired file format and report format, specifying which company, locations and TaxCodes to include.
+     * @param model Parameters about the desired file format and report format, specifying which company, locations and TaxCodes to include.
      * @return HashMap<String, String>
      */
     public HashMap<String, String> buildPointOfSaleDataFile(PointOfSaleDataRequestModel model) throws Exception {
@@ -6100,7 +6100,7 @@ public class AvaTaxClient {
      * This data file can be customized for specific partner devices and usage conditions.
      * The result of this API is the file you requested in the format you requested using the 'responseType' field.
      * 
-     * @param PointOfSaleDataRequestModel model Parameters about the desired file format and report format, specifying which company, locations and TaxCodes to include.
+     * @param model Parameters about the desired file format and report format, specifying which company, locations and TaxCodes to include.
      * @return HashMap<String, String>
      */
     public Future<HashMap<String, String>> buildPointOfSaleDataFileAsync(PointOfSaleDataRequestModel model) {
@@ -6117,7 +6117,7 @@ public class AvaTaxClient {
      * Allows a user to change their password via the API.
      * This API only allows the currently authenticated user to change their password; it cannot be used to apply to a
      * 
-     * @param PasswordChangeModel model An object containing your current password and the new password.
+     * @param model An object containing your current password and the new password.
      * @return String
      */
     public String changePassword(PasswordChangeModel model) throws Exception {
@@ -6134,7 +6134,7 @@ public class AvaTaxClient {
      * Allows a user to change their password via the API.
      * This API only allows the currently authenticated user to change their password; it cannot be used to apply to a
      * 
-     * @param PasswordChangeModel model An object containing your current password and the new password.
+     * @param model An object containing your current password and the new password.
      * @return String
      */
     public Future<String> changePasswordAsync(PasswordChangeModel model) {
@@ -6150,7 +6150,7 @@ public class AvaTaxClient {
      * 
      * Create a single new account object.  
      * 
-     * @param AccountModel model The account you wish to create.
+     * @param model The account you wish to create.
      * @return AccountModel
      */
     public AccountModel createAccount(AccountModel model) throws Exception {
@@ -6166,7 +6166,7 @@ public class AvaTaxClient {
      * 
      * Create a single new account object.  
      * 
-     * @param AccountModel model The account you wish to create.
+     * @param model The account you wish to create.
      * @return AccountModel
      */
     public Future<AccountModel> createAccountAsync(AccountModel model) {
@@ -6183,8 +6183,8 @@ public class AvaTaxClient {
      * Create one or more new subscription objects attached to this account.
      * A 'subscription' indicates a licensed subscription to a named Avalara service.
      * 
-     * @param int accountId The ID of the account that owns this subscription.
-     * @param ArrayList<SubscriptionModel> model The subscription you wish to create.
+     * @param accountId The ID of the account that owns this subscription.
+     * @param model The subscription you wish to create.
      * @return ArrayList<SubscriptionModel>
      */
     public ArrayList<SubscriptionModel> createSubscriptions(int accountId, ArrayList<SubscriptionModel> model) throws Exception {
@@ -6202,8 +6202,8 @@ public class AvaTaxClient {
      * Create one or more new subscription objects attached to this account.
      * A 'subscription' indicates a licensed subscription to a named Avalara service.
      * 
-     * @param int accountId The ID of the account that owns this subscription.
-     * @param ArrayList<SubscriptionModel> model The subscription you wish to create.
+     * @param accountId The ID of the account that owns this subscription.
+     * @param model The subscription you wish to create.
      * @return ArrayList<SubscriptionModel>
      */
     public Future<ArrayList<SubscriptionModel>> createSubscriptionsAsync(int accountId, ArrayList<SubscriptionModel> model) {
@@ -6220,8 +6220,8 @@ public class AvaTaxClient {
      * 
      * Create one or more new user objects attached to this account.
      * 
-     * @param int accountId The unique ID number of the account where these users will be created.
-     * @param ArrayList<UserModel> model The user or array of users you wish to create.
+     * @param accountId The unique ID number of the account where these users will be created.
+     * @param model The user or array of users you wish to create.
      * @return ArrayList<UserModel>
      */
     public ArrayList<UserModel> createUsers(int accountId, ArrayList<UserModel> model) throws Exception {
@@ -6238,8 +6238,8 @@ public class AvaTaxClient {
      * 
      * Create one or more new user objects attached to this account.
      * 
-     * @param int accountId The unique ID number of the account where these users will be created.
-     * @param ArrayList<UserModel> model The user or array of users you wish to create.
+     * @param accountId The unique ID number of the account where these users will be created.
+     * @param model The user or array of users you wish to create.
      * @return ArrayList<UserModel>
      */
     public Future<ArrayList<UserModel>> createUsersAsync(int accountId, ArrayList<UserModel> model) {
@@ -6256,7 +6256,7 @@ public class AvaTaxClient {
      * 
      * Delete an account.
      * 
-     * @param int id The ID of the account you wish to delete.
+     * @param id The ID of the account you wish to delete.
      * @return ArrayList<ErrorDetail>
      */
     public ArrayList<ErrorDetail> deleteAccount(int id) throws Exception {
@@ -6273,7 +6273,7 @@ public class AvaTaxClient {
      * 
      * Delete an account.
      * 
-     * @param int id The ID of the account you wish to delete.
+     * @param id The ID of the account you wish to delete.
      * @return ArrayList<ErrorDetail>
      */
     public Future<ArrayList<ErrorDetail>> deleteAccountAsync(int id) {
@@ -6289,8 +6289,8 @@ public class AvaTaxClient {
      * This API is for use by Avalara Registrar administrative users only.
      * 
      * 
-     * @param int accountId The ID of the account that owns this subscription.
-     * @param int id The ID of the subscription you wish to delete.
+     * @param accountId The ID of the account that owns this subscription.
+     * @param id The ID of the subscription you wish to delete.
      * @return ArrayList<ErrorDetail>
      */
     public ArrayList<ErrorDetail> deleteSubscription(int accountId, int id) throws Exception {
@@ -6307,8 +6307,8 @@ public class AvaTaxClient {
      * This API is for use by Avalara Registrar administrative users only.
      * 
      * 
-     * @param int accountId The ID of the account that owns this subscription.
-     * @param int id The ID of the subscription you wish to delete.
+     * @param accountId The ID of the account that owns this subscription.
+     * @param id The ID of the subscription you wish to delete.
      * @return ArrayList<ErrorDetail>
      */
     public Future<ArrayList<ErrorDetail>> deleteSubscriptionAsync(int accountId, int id) {
@@ -6325,8 +6325,8 @@ public class AvaTaxClient {
      * This API is for use by Avalara Registrar administrative users only.
      * 
      * 
-     * @param int id The ID of the user you wish to delete.
-     * @param int accountId The accountID of the user you wish to delete.
+     * @param id The ID of the user you wish to delete.
+     * @param accountId The accountID of the user you wish to delete.
      * @return ArrayList<ErrorDetail>
      */
     public ArrayList<ErrorDetail> deleteUser(int id, int accountId) throws Exception {
@@ -6343,8 +6343,8 @@ public class AvaTaxClient {
      * This API is for use by Avalara Registrar administrative users only.
      * 
      * 
-     * @param int id The ID of the user you wish to delete.
-     * @param int accountId The accountID of the user you wish to delete.
+     * @param id The ID of the user you wish to delete.
+     * @param accountId The accountID of the user you wish to delete.
      * @return ArrayList<ErrorDetail>
      */
     public Future<ArrayList<ErrorDetail>> deleteUserAsync(int id, int accountId) {
@@ -6369,11 +6369,11 @@ public class AvaTaxClient {
      * * Users
      *             
      * 
-     * @param String include A comma separated list of child objects to return underneath the primary object.
-     * @param String filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
-     * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @param include A comma separated list of child objects to return underneath the primary object.
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
+     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<HashMap<String, String>>
      */
     public FetchResult<HashMap<String, String>> queryAccounts(String include, String filter, Integer top, Integer skip, String orderBy) throws Exception {
@@ -6401,11 +6401,11 @@ public class AvaTaxClient {
      * * Users
      *             
      * 
-     * @param String include A comma separated list of child objects to return underneath the primary object.
-     * @param String filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
-     * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @param include A comma separated list of child objects to return underneath the primary object.
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
+     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<HashMap<String, String>>
      */
     public Future<FetchResult<HashMap<String, String>>> queryAccountsAsync(String include, String filter, Integer top, Integer skip, String orderBy) {
@@ -6427,8 +6427,8 @@ public class AvaTaxClient {
      * Allows a system admin to reset the password for a specific user via the API.
      * This API is only available for Avalara Registrar Admins, and can be used to reset the password of any
      * 
-     * @param int userId The unique ID of the user whose password will be changed
-     * @param SetPasswordModel model The new password for this user
+     * @param userId The unique ID of the user whose password will be changed
+     * @param model The new password for this user
      * @return String
      */
     public String resetPassword(int userId, SetPasswordModel model) throws Exception {
@@ -6446,8 +6446,8 @@ public class AvaTaxClient {
      * Allows a system admin to reset the password for a specific user via the API.
      * This API is only available for Avalara Registrar Admins, and can be used to reset the password of any
      * 
-     * @param int userId The unique ID of the user whose password will be changed
-     * @param SetPasswordModel model The new password for this user
+     * @param userId The unique ID of the user whose password will be changed
+     * @param model The new password for this user
      * @return String
      */
     public Future<String> resetPasswordAsync(int userId, SetPasswordModel model) {
@@ -6463,8 +6463,8 @@ public class AvaTaxClient {
      * This API is for use by Avalara Registrar administrative users only.
      * 
      * 
-     * @param int id The ID of the account you wish to update.
-     * @param AccountModel model The account object you wish to update.
+     * @param id The ID of the account you wish to update.
+     * @param model The account object you wish to update.
      * @return AccountModel
      */
     public AccountModel updateAccount(int id, AccountModel model) throws Exception {
@@ -6480,8 +6480,8 @@ public class AvaTaxClient {
      * This API is for use by Avalara Registrar administrative users only.
      * 
      * 
-     * @param int id The ID of the account you wish to update.
-     * @param AccountModel model The account object you wish to update.
+     * @param id The ID of the account you wish to update.
+     * @param model The account object you wish to update.
      * @return AccountModel
      */
     public Future<AccountModel> updateAccountAsync(int id, AccountModel model) {
@@ -6501,9 +6501,9 @@ public class AvaTaxClient {
      * To request or remove subscriptions, please contact Avalara sales or your customer account manager.
      * All data from the existing object will be replaced with data in the object you PUT.  
      * 
-     * @param int accountId The ID of the account that this subscription belongs to.
-     * @param int id The ID of the subscription you wish to update
-     * @param SubscriptionModel model The subscription you wish to update.
+     * @param accountId The ID of the account that this subscription belongs to.
+     * @param id The ID of the subscription you wish to update
+     * @param model The subscription you wish to update.
      * @return SubscriptionModel
      */
     public SubscriptionModel updateSubscription(int accountId, int id, SubscriptionModel model) throws Exception {
@@ -6524,9 +6524,9 @@ public class AvaTaxClient {
      * To request or remove subscriptions, please contact Avalara sales or your customer account manager.
      * All data from the existing object will be replaced with data in the object you PUT.  
      * 
-     * @param int accountId The ID of the account that this subscription belongs to.
-     * @param int id The ID of the subscription you wish to update
-     * @param SubscriptionModel model The subscription you wish to update.
+     * @param accountId The ID of the account that this subscription belongs to.
+     * @param id The ID of the subscription you wish to update
+     * @param model The subscription you wish to update.
      * @return SubscriptionModel
      */
     public Future<SubscriptionModel> updateSubscriptionAsync(int accountId, int id, SubscriptionModel model) {
@@ -6546,8 +6546,8 @@ public class AvaTaxClient {
      * 'value' data fields.
      * To ensure correct operation of other programs or connectors, please create a new GUID for your application and use that value for
      * 
-     * @param int companyId The ID of the company that owns this setting.
-     * @param ArrayList<SettingModel> model The setting you wish to create.
+     * @param companyId The ID of the company that owns this setting.
+     * @param model The setting you wish to create.
      * @return ArrayList<SettingModel>
      */
     public ArrayList<SettingModel> createSettings(int companyId, ArrayList<SettingModel> model) throws Exception {
@@ -6566,8 +6566,8 @@ public class AvaTaxClient {
      * 'value' data fields.
      * To ensure correct operation of other programs or connectors, please create a new GUID for your application and use that value for
      * 
-     * @param int companyId The ID of the company that owns this setting.
-     * @param ArrayList<SettingModel> model The setting you wish to create.
+     * @param companyId The ID of the company that owns this setting.
+     * @param model The setting you wish to create.
      * @return ArrayList<SettingModel>
      */
     public Future<ArrayList<SettingModel>> createSettingsAsync(int companyId, ArrayList<SettingModel> model) {
@@ -6579,8 +6579,8 @@ public class AvaTaxClient {
     /**
      * Delete a single setting
      * 
-     * @param int companyId The ID of the company that owns this setting.
-     * @param int id The ID of the setting you wish to delete.
+     * @param companyId The ID of the company that owns this setting.
+     * @param id The ID of the setting you wish to delete.
      * @return ArrayList<ErrorDetail>
      */
     public ArrayList<ErrorDetail> deleteSetting(int companyId, int id) throws Exception {
@@ -6593,8 +6593,8 @@ public class AvaTaxClient {
     /**
      * Delete a single setting
      * 
-     * @param int companyId The ID of the company that owns this setting.
-     * @param int id The ID of the setting you wish to delete.
+     * @param companyId The ID of the company that owns this setting.
+     * @param id The ID of the setting you wish to delete.
      * @return ArrayList<ErrorDetail>
      */
     public Future<ArrayList<ErrorDetail>> deleteSettingAsync(int companyId, int id) {
@@ -6614,8 +6614,8 @@ public class AvaTaxClient {
      * 'value' data fields.
      * To ensure correct operation of other programs or connectors, please create a new GUID for your application and use that value for
      * 
-     * @param int companyId The ID of the company that owns this setting
-     * @param int id The primary key of this setting
+     * @param companyId The ID of the company that owns this setting
+     * @param id The primary key of this setting
      * @return SettingModel
      */
     public SettingModel getSetting(int companyId, int id) throws Exception {
@@ -6635,8 +6635,8 @@ public class AvaTaxClient {
      * 'value' data fields.
      * To ensure correct operation of other programs or connectors, please create a new GUID for your application and use that value for
      * 
-     * @param int companyId The ID of the company that owns this setting
-     * @param int id The primary key of this setting
+     * @param companyId The ID of the company that owns this setting
+     * @param id The primary key of this setting
      * @return SettingModel
      */
     public Future<SettingModel> getSettingAsync(int companyId, int id) {
@@ -6659,12 +6659,12 @@ public class AvaTaxClient {
      * 
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * 
-     * @param int companyId The ID of the company that owns these settings
-     * @param String filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param String include A comma separated list of child objects to return underneath the primary object.
-     * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
-     * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @param companyId The ID of the company that owns these settings
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param include A comma separated list of child objects to return underneath the primary object.
+     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
+     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<HashMap<String, String>>
      */
     public FetchResult<HashMap<String, String>> listSettingsByCompany(int companyId, String filter, String include, Integer top, Integer skip, String orderBy) throws Exception {
@@ -6691,12 +6691,12 @@ public class AvaTaxClient {
      * 
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * 
-     * @param int companyId The ID of the company that owns these settings
-     * @param String filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param String include A comma separated list of child objects to return underneath the primary object.
-     * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
-     * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @param companyId The ID of the company that owns these settings
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param include A comma separated list of child objects to return underneath the primary object.
+     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
+     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<HashMap<String, String>>
      */
     public Future<FetchResult<HashMap<String, String>>> listSettingsByCompanyAsync(int companyId, String filter, String include, Integer top, Integer skip, String orderBy) {
@@ -6723,11 +6723,11 @@ public class AvaTaxClient {
      * 
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * 
-     * @param String filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param String include A comma separated list of child objects to return underneath the primary object.
-     * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
-     * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param include A comma separated list of child objects to return underneath the primary object.
+     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
+     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<HashMap<String, String>>
      */
     public FetchResult<HashMap<String, String>> querySettings(String filter, String include, Integer top, Integer skip, String orderBy) throws Exception {
@@ -6753,11 +6753,11 @@ public class AvaTaxClient {
      * 
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * 
-     * @param String filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param String include A comma separated list of child objects to return underneath the primary object.
-     * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
-     * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param include A comma separated list of child objects to return underneath the primary object.
+     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
+     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<HashMap<String, String>>
      */
     public Future<FetchResult<HashMap<String, String>>> querySettingsAsync(String filter, String include, Integer top, Integer skip, String orderBy) {
@@ -6782,9 +6782,9 @@ public class AvaTaxClient {
      * the 'set' data field.
      * All data from the existing object will be replaced with data in the object you PUT.  
      * 
-     * @param int companyId The ID of the company that this setting belongs to.
-     * @param int id The ID of the setting you wish to update
-     * @param SettingModel model The setting you wish to update.
+     * @param companyId The ID of the company that this setting belongs to.
+     * @param id The ID of the setting you wish to update
+     * @param model The setting you wish to update.
      * @return SettingModel
      */
     public SettingModel updateSetting(int companyId, int id, SettingModel model) throws Exception {
@@ -6806,9 +6806,9 @@ public class AvaTaxClient {
      * the 'set' data field.
      * All data from the existing object will be replaced with data in the object you PUT.  
      * 
-     * @param int companyId The ID of the company that this setting belongs to.
-     * @param int id The ID of the setting you wish to update
-     * @param SettingModel model The setting you wish to update.
+     * @param companyId The ID of the company that this setting belongs to.
+     * @param id The ID of the setting you wish to update
+     * @param model The setting you wish to update.
      * @return SettingModel
      */
     public Future<SettingModel> updateSettingAsync(int companyId, int id, SettingModel model) {
@@ -6824,8 +6824,8 @@ public class AvaTaxClient {
      * Get the subscription object identified by this URL.
      * A 'subscription' indicates a licensed subscription to a named Avalara service.
      * 
-     * @param int accountId The ID of the account that owns this subscription
-     * @param int id The primary key of this subscription
+     * @param accountId The ID of the account that owns this subscription
+     * @param id The primary key of this subscription
      * @return SubscriptionModel
      */
     public SubscriptionModel getSubscription(int accountId, int id) throws Exception {
@@ -6841,8 +6841,8 @@ public class AvaTaxClient {
      * Get the subscription object identified by this URL.
      * A 'subscription' indicates a licensed subscription to a named Avalara service.
      * 
-     * @param int accountId The ID of the account that owns this subscription
-     * @param int id The primary key of this subscription
+     * @param accountId The ID of the account that owns this subscription
+     * @param id The primary key of this subscription
      * @return SubscriptionModel
      */
     public Future<SubscriptionModel> getSubscriptionAsync(int accountId, int id) {
@@ -6861,11 +6861,11 @@ public class AvaTaxClient {
      * 
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * 
-     * @param int accountId The ID of the account that owns these subscriptions
-     * @param String filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
-     * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @param accountId The ID of the account that owns these subscriptions
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
+     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<HashMap<String, String>>
      */
     public FetchResult<HashMap<String, String>> listSubscriptionsByAccount(int accountId, String filter, Integer top, Integer skip, String orderBy) throws Exception {
@@ -6887,11 +6887,11 @@ public class AvaTaxClient {
      * 
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * 
-     * @param int accountId The ID of the account that owns these subscriptions
-     * @param String filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
-     * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @param accountId The ID of the account that owns these subscriptions
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
+     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<HashMap<String, String>>
      */
     public Future<FetchResult<HashMap<String, String>>> listSubscriptionsByAccountAsync(int accountId, String filter, Integer top, Integer skip, String orderBy) {
@@ -6913,10 +6913,10 @@ public class AvaTaxClient {
      * 
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * 
-     * @param String filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
-     * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
+     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<HashMap<String, String>>
      */
     public FetchResult<HashMap<String, String>> querySubscriptions(String filter, Integer top, Integer skip, String orderBy) throws Exception {
@@ -6937,10 +6937,10 @@ public class AvaTaxClient {
      * 
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * 
-     * @param String filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
-     * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
+     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<HashMap<String, String>>
      */
     public Future<FetchResult<HashMap<String, String>>> querySubscriptionsAsync(String filter, Integer top, Integer skip, String orderBy) {
@@ -6960,8 +6960,8 @@ public class AvaTaxClient {
      * Avalara supports correct tax rates and taxability rules for all TaxCodes in all supported jurisdictions.
      * If you identify your products by tax code in your 'Create Transacion' API calls, Avalara will correctly calculate tax rates and
      * 
-     * @param int companyId The ID of the company that owns this tax code.
-     * @param ArrayList<TaxCodeModel> model The tax code you wish to create.
+     * @param companyId The ID of the company that owns this tax code.
+     * @param model The tax code you wish to create.
      * @return ArrayList<TaxCodeModel>
      */
     public ArrayList<TaxCodeModel> createTaxCodes(int companyId, ArrayList<TaxCodeModel> model) throws Exception {
@@ -6978,8 +6978,8 @@ public class AvaTaxClient {
      * Avalara supports correct tax rates and taxability rules for all TaxCodes in all supported jurisdictions.
      * If you identify your products by tax code in your 'Create Transacion' API calls, Avalara will correctly calculate tax rates and
      * 
-     * @param int companyId The ID of the company that owns this tax code.
-     * @param ArrayList<TaxCodeModel> model The tax code you wish to create.
+     * @param companyId The ID of the company that owns this tax code.
+     * @param model The tax code you wish to create.
      * @return ArrayList<TaxCodeModel>
      */
     public Future<ArrayList<TaxCodeModel>> createTaxCodesAsync(int companyId, ArrayList<TaxCodeModel> model) {
@@ -6991,8 +6991,8 @@ public class AvaTaxClient {
     /**
      * Delete a single tax code
      * 
-     * @param int companyId The ID of the company that owns this tax code.
-     * @param int id The ID of the tax code you wish to delete.
+     * @param companyId The ID of the company that owns this tax code.
+     * @param id The ID of the tax code you wish to delete.
      * @return ArrayList<ErrorDetail>
      */
     public ArrayList<ErrorDetail> deleteTaxCode(int companyId, int id) throws Exception {
@@ -7005,8 +7005,8 @@ public class AvaTaxClient {
     /**
      * Delete a single tax code
      * 
-     * @param int companyId The ID of the company that owns this tax code.
-     * @param int id The ID of the tax code you wish to delete.
+     * @param companyId The ID of the company that owns this tax code.
+     * @param id The ID of the tax code you wish to delete.
      * @return ArrayList<ErrorDetail>
      */
     public Future<ArrayList<ErrorDetail>> deleteTaxCodeAsync(int companyId, int id) {
@@ -7024,8 +7024,8 @@ public class AvaTaxClient {
      * Avalara supports correct tax rates and taxability rules for all TaxCodes in all supported jurisdictions.
      * If you identify your products by tax code in your 'Create Transacion' API calls, Avalara will correctly calculate tax rates and
      * 
-     * @param int companyId The ID of the company that owns this tax code
-     * @param int id The primary key of this tax code
+     * @param companyId The ID of the company that owns this tax code
+     * @param id The primary key of this tax code
      * @return TaxCodeModel
      */
     public TaxCodeModel getTaxCode(int companyId, int id) throws Exception {
@@ -7043,8 +7043,8 @@ public class AvaTaxClient {
      * Avalara supports correct tax rates and taxability rules for all TaxCodes in all supported jurisdictions.
      * If you identify your products by tax code in your 'Create Transacion' API calls, Avalara will correctly calculate tax rates and
      * 
-     * @param int companyId The ID of the company that owns this tax code
-     * @param int id The primary key of this tax code
+     * @param companyId The ID of the company that owns this tax code
+     * @param id The primary key of this tax code
      * @return TaxCodeModel
      */
     public Future<TaxCodeModel> getTaxCodeAsync(int companyId, int id) {
@@ -7065,12 +7065,12 @@ public class AvaTaxClient {
      * 
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * 
-     * @param int companyId The ID of the company that owns these tax codes
-     * @param String filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param String include A comma separated list of child objects to return underneath the primary object.
-     * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
-     * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @param companyId The ID of the company that owns these tax codes
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param include A comma separated list of child objects to return underneath the primary object.
+     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
+     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<HashMap<String, String>>
      */
     public FetchResult<HashMap<String, String>> listTaxCodesByCompany(int companyId, String filter, String include, Integer top, Integer skip, String orderBy) throws Exception {
@@ -7095,12 +7095,12 @@ public class AvaTaxClient {
      * 
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * 
-     * @param int companyId The ID of the company that owns these tax codes
-     * @param String filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param String include A comma separated list of child objects to return underneath the primary object.
-     * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
-     * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @param companyId The ID of the company that owns these tax codes
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param include A comma separated list of child objects to return underneath the primary object.
+     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
+     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<HashMap<String, String>>
      */
     public Future<FetchResult<HashMap<String, String>>> listTaxCodesByCompanyAsync(int companyId, String filter, String include, Integer top, Integer skip, String orderBy) {
@@ -7125,11 +7125,11 @@ public class AvaTaxClient {
      * 
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * 
-     * @param String filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param String include A comma separated list of child objects to return underneath the primary object.
-     * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
-     * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param include A comma separated list of child objects to return underneath the primary object.
+     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
+     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<HashMap<String, String>>
      */
     public FetchResult<HashMap<String, String>> queryTaxCodes(String filter, String include, Integer top, Integer skip, String orderBy) throws Exception {
@@ -7153,11 +7153,11 @@ public class AvaTaxClient {
      * 
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * 
-     * @param String filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param String include A comma separated list of child objects to return underneath the primary object.
-     * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
-     * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param include A comma separated list of child objects to return underneath the primary object.
+     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
+     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<HashMap<String, String>>
      */
     public Future<FetchResult<HashMap<String, String>>> queryTaxCodesAsync(String filter, String include, Integer top, Integer skip, String orderBy) {
@@ -7180,9 +7180,9 @@ public class AvaTaxClient {
      * taxability rules for this product in all supported jurisdictions.
      * All data from the existing object will be replaced with data in the object you PUT.  
      * 
-     * @param int companyId The ID of the company that this tax code belongs to.
-     * @param int id The ID of the tax code you wish to update
-     * @param TaxCodeModel model The tax code you wish to update.
+     * @param companyId The ID of the company that this tax code belongs to.
+     * @param id The ID of the tax code you wish to update
+     * @param model The tax code you wish to update.
      * @return TaxCodeModel
      */
     public TaxCodeModel updateTaxCode(int companyId, int id, TaxCodeModel model) throws Exception {
@@ -7202,9 +7202,9 @@ public class AvaTaxClient {
      * taxability rules for this product in all supported jurisdictions.
      * All data from the existing object will be replaced with data in the object you PUT.  
      * 
-     * @param int companyId The ID of the company that this tax code belongs to.
-     * @param int id The ID of the tax code you wish to update
-     * @param TaxCodeModel model The tax code you wish to update.
+     * @param companyId The ID of the company that this tax code belongs to.
+     * @param id The ID of the tax code you wish to update
+     * @param model The tax code you wish to update.
      * @return TaxCodeModel
      */
     public Future<TaxCodeModel> updateTaxCodeAsync(int companyId, int id, TaxCodeModel model) {
@@ -7222,8 +7222,8 @@ public class AvaTaxClient {
      * If you have obtained a custom tax ruling from an auditor that changes the behavior of certain goods or services
      * within certain taxing jurisdictions, or you have obtained special tax concessions for certain dates or locations,
      * 
-     * @param int companyId The ID of the company that owns this tax rule.
-     * @param ArrayList<TaxRuleModel> model The tax rule you wish to create.
+     * @param companyId The ID of the company that owns this tax rule.
+     * @param model The tax rule you wish to create.
      * @return ArrayList<TaxRuleModel>
      */
     public ArrayList<TaxRuleModel> createTaxRules(int companyId, ArrayList<TaxRuleModel> model) throws Exception {
@@ -7240,8 +7240,8 @@ public class AvaTaxClient {
      * If you have obtained a custom tax ruling from an auditor that changes the behavior of certain goods or services
      * within certain taxing jurisdictions, or you have obtained special tax concessions for certain dates or locations,
      * 
-     * @param int companyId The ID of the company that owns this tax rule.
-     * @param ArrayList<TaxRuleModel> model The tax rule you wish to create.
+     * @param companyId The ID of the company that owns this tax rule.
+     * @param model The tax rule you wish to create.
      * @return ArrayList<TaxRuleModel>
      */
     public Future<ArrayList<TaxRuleModel>> createTaxRulesAsync(int companyId, ArrayList<TaxRuleModel> model) {
@@ -7253,8 +7253,8 @@ public class AvaTaxClient {
     /**
      * Delete a single tax rule
      * 
-     * @param int companyId The ID of the company that owns this tax rule.
-     * @param int id The ID of the tax rule you wish to delete.
+     * @param companyId The ID of the company that owns this tax rule.
+     * @param id The ID of the tax rule you wish to delete.
      * @return ArrayList<ErrorDetail>
      */
     public ArrayList<ErrorDetail> deleteTaxRule(int companyId, int id) throws Exception {
@@ -7267,8 +7267,8 @@ public class AvaTaxClient {
     /**
      * Delete a single tax rule
      * 
-     * @param int companyId The ID of the company that owns this tax rule.
-     * @param int id The ID of the tax rule you wish to delete.
+     * @param companyId The ID of the company that owns this tax rule.
+     * @param id The ID of the tax rule you wish to delete.
      * @return ArrayList<ErrorDetail>
      */
     public Future<ArrayList<ErrorDetail>> deleteTaxRuleAsync(int companyId, int id) {
@@ -7286,8 +7286,8 @@ public class AvaTaxClient {
      * If you have obtained a custom tax ruling from an auditor that changes the behavior of certain goods or services
      * within certain taxing jurisdictions, or you have obtained special tax concessions for certain dates or locations,
      * 
-     * @param int companyId The ID of the company that owns this tax rule
-     * @param int id The primary key of this tax rule
+     * @param companyId The ID of the company that owns this tax rule
+     * @param id The primary key of this tax rule
      * @return TaxRuleModel
      */
     public TaxRuleModel getTaxRule(int companyId, int id) throws Exception {
@@ -7305,8 +7305,8 @@ public class AvaTaxClient {
      * If you have obtained a custom tax ruling from an auditor that changes the behavior of certain goods or services
      * within certain taxing jurisdictions, or you have obtained special tax concessions for certain dates or locations,
      * 
-     * @param int companyId The ID of the company that owns this tax rule
-     * @param int id The primary key of this tax rule
+     * @param companyId The ID of the company that owns this tax rule
+     * @param id The primary key of this tax rule
      * @return TaxRuleModel
      */
     public Future<TaxRuleModel> getTaxRuleAsync(int companyId, int id) {
@@ -7327,12 +7327,12 @@ public class AvaTaxClient {
      * 
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * 
-     * @param int companyId The ID of the company that owns these tax rules
-     * @param String filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param String include A comma separated list of child objects to return underneath the primary object.
-     * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
-     * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @param companyId The ID of the company that owns these tax rules
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param include A comma separated list of child objects to return underneath the primary object.
+     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
+     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<HashMap<String, String>>
      */
     public FetchResult<HashMap<String, String>> listTaxRules(int companyId, String filter, String include, Integer top, Integer skip, String orderBy) throws Exception {
@@ -7357,12 +7357,12 @@ public class AvaTaxClient {
      * 
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * 
-     * @param int companyId The ID of the company that owns these tax rules
-     * @param String filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param String include A comma separated list of child objects to return underneath the primary object.
-     * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
-     * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @param companyId The ID of the company that owns these tax rules
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param include A comma separated list of child objects to return underneath the primary object.
+     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
+     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<HashMap<String, String>>
      */
     public Future<FetchResult<HashMap<String, String>>> listTaxRulesAsync(int companyId, String filter, String include, Integer top, Integer skip, String orderBy) {
@@ -7387,11 +7387,11 @@ public class AvaTaxClient {
      * 
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * 
-     * @param String filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param String include A comma separated list of child objects to return underneath the primary object.
-     * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
-     * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param include A comma separated list of child objects to return underneath the primary object.
+     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
+     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<HashMap<String, String>>
      */
     public FetchResult<HashMap<String, String>> queryTaxRules(String filter, String include, Integer top, Integer skip, String orderBy) throws Exception {
@@ -7415,11 +7415,11 @@ public class AvaTaxClient {
      * 
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * 
-     * @param String filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param String include A comma separated list of child objects to return underneath the primary object.
-     * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
-     * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param include A comma separated list of child objects to return underneath the primary object.
+     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
+     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<HashMap<String, String>>
      */
     public Future<FetchResult<HashMap<String, String>>> queryTaxRulesAsync(String filter, String include, Integer top, Integer skip, String orderBy) {
@@ -7442,9 +7442,9 @@ public class AvaTaxClient {
      * you may wish to create a TaxRule object to override the AvaTax engine's default behavior in those circumstances.
      * All data from the existing object will be replaced with data in the object you PUT.  
      * 
-     * @param int companyId The ID of the company that this tax rule belongs to.
-     * @param int id The ID of the tax rule you wish to update
-     * @param TaxRuleModel model The tax rule you wish to update.
+     * @param companyId The ID of the company that this tax rule belongs to.
+     * @param id The ID of the tax rule you wish to update
+     * @param model The tax rule you wish to update.
      * @return TaxRuleModel
      */
     public TaxRuleModel updateTaxRule(int companyId, int id, TaxRuleModel model) throws Exception {
@@ -7464,9 +7464,9 @@ public class AvaTaxClient {
      * you may wish to create a TaxRule object to override the AvaTax engine's default behavior in those circumstances.
      * All data from the existing object will be replaced with data in the object you PUT.  
      * 
-     * @param int companyId The ID of the company that this tax rule belongs to.
-     * @param int id The ID of the tax rule you wish to update
-     * @param TaxRuleModel model The tax rule you wish to update.
+     * @param companyId The ID of the company that this tax rule belongs to.
+     * @param id The ID of the tax rule you wish to update
+     * @param model The tax rule you wish to update.
      * @return TaxRuleModel
      */
     public Future<TaxRuleModel> updateTaxRuleAsync(int companyId, int id, TaxRuleModel model) {
@@ -7497,8 +7497,8 @@ public class AvaTaxClient {
      * * Addresses
      *             
      * 
-     * @param String include A comma separated list of child objects to return underneath the primary object.
-     * @param AddTransactionLineModel model information about the transaction and lines to be added
+     * @param include A comma separated list of child objects to return underneath the primary object.
+     * @param model information about the transaction and lines to be added
      * @return TransactionModel
      */
     public TransactionModel addLines(String include, AddTransactionLineModel model) throws Exception {
@@ -7528,8 +7528,8 @@ public class AvaTaxClient {
      * * Addresses
      *             
      * 
-     * @param String include A comma separated list of child objects to return underneath the primary object.
-     * @param AddTransactionLineModel model information about the transaction and lines to be added
+     * @param include A comma separated list of child objects to return underneath the primary object.
+     * @param model information about the transaction and lines to be added
      * @return TransactionModel
      */
     public Future<TransactionModel> addLinesAsync(String include, AddTransactionLineModel model) {
@@ -7552,9 +7552,9 @@ public class AvaTaxClient {
      * 
      * Transactions that have been previously reported to a tax authority by Avalara Managed Returns are considered `locked` and are 
      * 
-     * @param String companyCode The company code of the company that recorded this transaction
-     * @param String transactionCode The transaction code to adjust
-     * @param AdjustTransactionModel model The adjustment you wish to make
+     * @param companyCode The company code of the company that recorded this transaction
+     * @param transactionCode The transaction code to adjust
+     * @param model The adjustment you wish to make
      * @return TransactionModel
      */
     public TransactionModel adjustTransaction(String companyCode, String transactionCode, AdjustTransactionModel model) throws Exception {
@@ -7578,9 +7578,9 @@ public class AvaTaxClient {
      * 
      * Transactions that have been previously reported to a tax authority by Avalara Managed Returns are considered `locked` and are 
      * 
-     * @param String companyCode The company code of the company that recorded this transaction
-     * @param String transactionCode The transaction code to adjust
-     * @param AdjustTransactionModel model The adjustment you wish to make
+     * @param companyCode The company code of the company that recorded this transaction
+     * @param transactionCode The transaction code to adjust
+     * @param model The adjustment you wish to make
      * @return TransactionModel
      */
     public Future<TransactionModel> adjustTransactionAsync(String companyCode, String transactionCode, AdjustTransactionModel model) {
@@ -7608,8 +7608,8 @@ public class AvaTaxClient {
      * 
      * A transaction represents a unique potentially taxable action that your company has recorded, and transactions include actions like
      * 
-     * @param String companyCode The code identifying the company that owns this transaction
-     * @param String transactionCode The code identifying the transaction
+     * @param companyCode The code identifying the company that owns this transaction
+     * @param transactionCode The code identifying the transaction
      * @return AuditTransactionModel
      */
     public AuditTransactionModel auditTransaction(String companyCode, String transactionCode) throws Exception {
@@ -7637,8 +7637,8 @@ public class AvaTaxClient {
      * 
      * A transaction represents a unique potentially taxable action that your company has recorded, and transactions include actions like
      * 
-     * @param String companyCode The code identifying the company that owns this transaction
-     * @param String transactionCode The code identifying the transaction
+     * @param companyCode The code identifying the company that owns this transaction
+     * @param transactionCode The code identifying the transaction
      * @return AuditTransactionModel
      */
     public Future<AuditTransactionModel> auditTransactionAsync(String companyCode, String transactionCode) {
@@ -7666,9 +7666,9 @@ public class AvaTaxClient {
      * 
      * A transaction represents a unique potentially taxable action that your company has recorded, and transactions include actions like
      * 
-     * @param String companyCode The code identifying the company that owns this transaction
-     * @param String transactionCode The code identifying the transaction
-     * @param DocumentType documentType The document type of the original transaction (See DocumentType::* for a list of allowable values)
+     * @param companyCode The code identifying the company that owns this transaction
+     * @param transactionCode The code identifying the transaction
+     * @param documentType The document type of the original transaction (See DocumentType::* for a list of allowable values)
      * @return AuditTransactionModel
      */
     public AuditTransactionModel auditTransactionWithType(String companyCode, String transactionCode, DocumentType documentType) throws Exception {
@@ -7697,9 +7697,9 @@ public class AvaTaxClient {
      * 
      * A transaction represents a unique potentially taxable action that your company has recorded, and transactions include actions like
      * 
-     * @param String companyCode The code identifying the company that owns this transaction
-     * @param String transactionCode The code identifying the transaction
-     * @param DocumentType documentType The document type of the original transaction (See DocumentType::* for a list of allowable values)
+     * @param companyCode The code identifying the company that owns this transaction
+     * @param transactionCode The code identifying the transaction
+     * @param documentType The document type of the original transaction (See DocumentType::* for a list of allowable values)
      * @return AuditTransactionModel
      */
     public Future<AuditTransactionModel> auditTransactionWithTypeAsync(String companyCode, String transactionCode, DocumentType documentType) {
@@ -7720,7 +7720,7 @@ public class AvaTaxClient {
      * 
      * A transaction represents a unique potentially taxable action that your company has recorded, and transactions include actions like
      * 
-     * @param BulkLockTransactionModel model bulk lock request
+     * @param model bulk lock request
      * @return BulkLockTransactionResult
      */
     public BulkLockTransactionResult bulkLockTransaction(BulkLockTransactionModel model) throws Exception {
@@ -7738,7 +7738,7 @@ public class AvaTaxClient {
      * 
      * A transaction represents a unique potentially taxable action that your company has recorded, and transactions include actions like
      * 
-     * @param BulkLockTransactionModel model bulk lock request
+     * @param model bulk lock request
      * @return BulkLockTransactionResult
      */
     public Future<BulkLockTransactionResult> bulkLockTransactionAsync(BulkLockTransactionModel model) {
@@ -7753,9 +7753,9 @@ public class AvaTaxClient {
      * After this API call succeeds, the transaction will have a new URL matching its new code.
      * A transaction represents a unique potentially taxable action that your company has recorded, and transactions include actions like
      * 
-     * @param String companyCode The company code of the company that recorded this transaction
-     * @param String transactionCode The transaction code to change
-     * @param ChangeTransactionCodeModel model The code change request you wish to execute
+     * @param companyCode The company code of the company that recorded this transaction
+     * @param transactionCode The transaction code to change
+     * @param model The code change request you wish to execute
      * @return TransactionModel
      */
     public TransactionModel changeTransactionCode(String companyCode, String transactionCode, ChangeTransactionCodeModel model) throws Exception {
@@ -7772,9 +7772,9 @@ public class AvaTaxClient {
      * After this API call succeeds, the transaction will have a new URL matching its new code.
      * A transaction represents a unique potentially taxable action that your company has recorded, and transactions include actions like
      * 
-     * @param String companyCode The company code of the company that recorded this transaction
-     * @param String transactionCode The transaction code to change
-     * @param ChangeTransactionCodeModel model The code change request you wish to execute
+     * @param companyCode The company code of the company that recorded this transaction
+     * @param transactionCode The transaction code to change
+     * @param model The code change request you wish to execute
      * @return TransactionModel
      */
     public Future<TransactionModel> changeTransactionCodeAsync(String companyCode, String transactionCode, ChangeTransactionCodeModel model) {
@@ -7792,9 +7792,9 @@ public class AvaTaxClient {
      * A transaction represents a unique potentially taxable action that your company has recorded, and transactions include actions like
      * sales, purchases, inventory transfer, and returns (also called refunds).
      * 
-     * @param String companyCode The company code of the company that recorded this transaction
-     * @param String transactionCode The transaction code to commit
-     * @param CommitTransactionModel model The commit request you wish to execute
+     * @param companyCode The company code of the company that recorded this transaction
+     * @param transactionCode The transaction code to commit
+     * @param model The commit request you wish to execute
      * @return TransactionModel
      */
     public TransactionModel commitTransaction(String companyCode, String transactionCode, CommitTransactionModel model) throws Exception {
@@ -7812,9 +7812,9 @@ public class AvaTaxClient {
      * A transaction represents a unique potentially taxable action that your company has recorded, and transactions include actions like
      * sales, purchases, inventory transfer, and returns (also called refunds).
      * 
-     * @param String companyCode The company code of the company that recorded this transaction
-     * @param String transactionCode The transaction code to commit
-     * @param CommitTransactionModel model The commit request you wish to execute
+     * @param companyCode The company code of the company that recorded this transaction
+     * @param transactionCode The transaction code to commit
+     * @param model The commit request you wish to execute
      * @return TransactionModel
      */
     public Future<TransactionModel> commitTransactionAsync(String companyCode, String transactionCode, CommitTransactionModel model) {
@@ -7845,8 +7845,8 @@ public class AvaTaxClient {
      * * Addresses
      *             
      * 
-     * @param String include A comma separated list of child objects to return underneath the primary object.
-     * @param CreateOrAdjustTransactionModel model The transaction you wish to create
+     * @param include A comma separated list of child objects to return underneath the primary object.
+     * @param model The transaction you wish to create
      * @return TransactionModel
      */
     public TransactionModel createOrAdjustTransaction(String include, CreateOrAdjustTransactionModel model) throws Exception {
@@ -7876,8 +7876,8 @@ public class AvaTaxClient {
      * * Addresses
      *             
      * 
-     * @param String include A comma separated list of child objects to return underneath the primary object.
-     * @param CreateOrAdjustTransactionModel model The transaction you wish to create
+     * @param include A comma separated list of child objects to return underneath the primary object.
+     * @param model The transaction you wish to create
      * @return TransactionModel
      */
     public Future<TransactionModel> createOrAdjustTransactionAsync(String include, CreateOrAdjustTransactionModel model) {
@@ -7907,8 +7907,8 @@ public class AvaTaxClient {
      * * Addresses
      *             
      * 
-     * @param String include A comma separated list of child objects to return underneath the primary object.
-     * @param CreateTransactionModel model The transaction you wish to create
+     * @param include A comma separated list of child objects to return underneath the primary object.
+     * @param model The transaction you wish to create
      * @return TransactionModel
      */
     public TransactionModel createTransaction(String include, CreateTransactionModel model) throws Exception {
@@ -7938,8 +7938,8 @@ public class AvaTaxClient {
      * * Addresses
      *             
      * 
-     * @param String include A comma separated list of child objects to return underneath the primary object.
-     * @param CreateTransactionModel model The transaction you wish to create
+     * @param include A comma separated list of child objects to return underneath the primary object.
+     * @param model The transaction you wish to create
      * @return TransactionModel
      */
     public Future<TransactionModel> createTransactionAsync(String include, CreateTransactionModel model) {
@@ -7966,8 +7966,8 @@ public class AvaTaxClient {
      * * Addresses
      *             
      * 
-     * @param String include A comma separated list of child objects to return underneath the primary object.
-     * @param RemoveTransactionLineModel model information about the transaction and lines to be removed
+     * @param include A comma separated list of child objects to return underneath the primary object.
+     * @param model information about the transaction and lines to be removed
      * @return TransactionModel
      */
     public TransactionModel deleteLines(String include, RemoveTransactionLineModel model) throws Exception {
@@ -7994,8 +7994,8 @@ public class AvaTaxClient {
      * * Addresses
      *             
      * 
-     * @param String include A comma separated list of child objects to return underneath the primary object.
-     * @param RemoveTransactionLineModel model information about the transaction and lines to be removed
+     * @param include A comma separated list of child objects to return underneath the primary object.
+     * @param model information about the transaction and lines to be removed
      * @return TransactionModel
      */
     public Future<TransactionModel> deleteLinesAsync(String include, RemoveTransactionLineModel model) {
@@ -8016,9 +8016,9 @@ public class AvaTaxClient {
      * * Details (implies lines)
      * * Summary (implies details)
      * 
-     * @param String companyCode The company code of the company that recorded this transaction
-     * @param String transactionCode The transaction code to retrieve
-     * @param String include A comma separated list of child objects to return underneath the primary object.
+     * @param companyCode The company code of the company that recorded this transaction
+     * @param transactionCode The transaction code to retrieve
+     * @param include A comma separated list of child objects to return underneath the primary object.
      * @return TransactionModel
      */
     public TransactionModel getTransactionByCode(String companyCode, String transactionCode, String include) throws Exception {
@@ -8041,9 +8041,9 @@ public class AvaTaxClient {
      * * Details (implies lines)
      * * Summary (implies details)
      * 
-     * @param String companyCode The company code of the company that recorded this transaction
-     * @param String transactionCode The transaction code to retrieve
-     * @param String include A comma separated list of child objects to return underneath the primary object.
+     * @param companyCode The company code of the company that recorded this transaction
+     * @param transactionCode The transaction code to retrieve
+     * @param include A comma separated list of child objects to return underneath the primary object.
      * @return TransactionModel
      */
     public Future<TransactionModel> getTransactionByCodeAsync(String companyCode, String transactionCode, String include) {
@@ -8066,10 +8066,10 @@ public class AvaTaxClient {
      * * Details (implies lines)
      * * Summary (implies details)
      * 
-     * @param String companyCode The company code of the company that recorded this transaction
-     * @param String transactionCode The transaction code to retrieve
-     * @param DocumentType documentType The transaction type to retrieve (See DocumentType::* for a list of allowable values)
-     * @param String include A comma separated list of child objects to return underneath the primary object.
+     * @param companyCode The company code of the company that recorded this transaction
+     * @param transactionCode The transaction code to retrieve
+     * @param documentType The transaction type to retrieve (See DocumentType::* for a list of allowable values)
+     * @param include A comma separated list of child objects to return underneath the primary object.
      * @return TransactionModel
      */
     public TransactionModel getTransactionByCodeAndType(String companyCode, String transactionCode, DocumentType documentType, String include) throws Exception {
@@ -8093,10 +8093,10 @@ public class AvaTaxClient {
      * * Details (implies lines)
      * * Summary (implies details)
      * 
-     * @param String companyCode The company code of the company that recorded this transaction
-     * @param String transactionCode The transaction code to retrieve
-     * @param DocumentType documentType The transaction type to retrieve (See DocumentType::* for a list of allowable values)
-     * @param String include A comma separated list of child objects to return underneath the primary object.
+     * @param companyCode The company code of the company that recorded this transaction
+     * @param transactionCode The transaction code to retrieve
+     * @param documentType The transaction type to retrieve (See DocumentType::* for a list of allowable values)
+     * @param include A comma separated list of child objects to return underneath the primary object.
      * @return TransactionModel
      */
     public Future<TransactionModel> getTransactionByCodeAndTypeAsync(String companyCode, String transactionCode, DocumentType documentType, String include) {
@@ -8122,8 +8122,8 @@ public class AvaTaxClient {
      * * Details (implies lines)
      * * Summary (implies details)
      * 
-     * @param long id The unique ID number of the transaction to retrieve
-     * @param String include A comma separated list of child objects to return underneath the primary object.
+     * @param id The unique ID number of the transaction to retrieve
+     * @param include A comma separated list of child objects to return underneath the primary object.
      * @return TransactionModel
      */
     public TransactionModel getTransactionById(long id, String include) throws Exception {
@@ -8147,8 +8147,8 @@ public class AvaTaxClient {
      * * Details (implies lines)
      * * Summary (implies details)
      * 
-     * @param long id The unique ID number of the transaction to retrieve
-     * @param String include A comma separated list of child objects to return underneath the primary object.
+     * @param id The unique ID number of the transaction to retrieve
+     * @param include A comma separated list of child objects to return underneath the primary object.
      * @return TransactionModel
      */
     public Future<TransactionModel> getTransactionByIdAsync(long id, String include) {
@@ -8174,12 +8174,12 @@ public class AvaTaxClient {
      * * Details (implies lines)
      * * Summary (implies details)
      * 
-     * @param String companyCode The company code of the company that recorded this transaction
-     * @param String include A comma separated list of child objects to return underneath the primary object.
-     * @param String filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
-     * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @param companyCode The company code of the company that recorded this transaction
+     * @param include A comma separated list of child objects to return underneath the primary object.
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
+     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<HashMap<String, String>>
      */
     public FetchResult<HashMap<String, String>> listTransactionsByCompany(String companyCode, String include, String filter, Integer top, Integer skip, String orderBy) throws Exception {
@@ -8209,12 +8209,12 @@ public class AvaTaxClient {
      * * Details (implies lines)
      * * Summary (implies details)
      * 
-     * @param String companyCode The company code of the company that recorded this transaction
-     * @param String include A comma separated list of child objects to return underneath the primary object.
-     * @param String filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
-     * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @param companyCode The company code of the company that recorded this transaction
+     * @param include A comma separated list of child objects to return underneath the primary object.
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
+     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<HashMap<String, String>>
      */
     public Future<FetchResult<HashMap<String, String>>> listTransactionsByCompanyAsync(String companyCode, String include, String filter, Integer top, Integer skip, String orderBy) {
@@ -8240,9 +8240,9 @@ public class AvaTaxClient {
      * 
      * A transaction represents a unique potentially taxable action that your company has recorded, and transactions include actions like
      * 
-     * @param String companyCode The company code of the company that recorded this transaction
-     * @param String transactionCode The transaction code to lock
-     * @param LockTransactionModel model The lock request you wish to execute
+     * @param companyCode The company code of the company that recorded this transaction
+     * @param transactionCode The transaction code to lock
+     * @param model The lock request you wish to execute
      * @return TransactionModel
      */
     public TransactionModel lockTransaction(String companyCode, String transactionCode, LockTransactionModel model) throws Exception {
@@ -8264,9 +8264,9 @@ public class AvaTaxClient {
      * 
      * A transaction represents a unique potentially taxable action that your company has recorded, and transactions include actions like
      * 
-     * @param String companyCode The company code of the company that recorded this transaction
-     * @param String transactionCode The transaction code to lock
-     * @param LockTransactionModel model The lock request you wish to execute
+     * @param companyCode The company code of the company that recorded this transaction
+     * @param transactionCode The transaction code to lock
+     * @param model The lock request you wish to execute
      * @return TransactionModel
      */
     public Future<TransactionModel> lockTransactionAsync(String companyCode, String transactionCode, LockTransactionModel model) {
@@ -8295,10 +8295,10 @@ public class AvaTaxClient {
      * * Addresses
      *             
      * 
-     * @param String companyCode The code of the company that made the original sale
-     * @param String transactionCode The transaction code of the original sale
-     * @param String include A comma separated list of child objects to return underneath the primary object.
-     * @param RefundTransactionModel model Information about the refund to create
+     * @param companyCode The code of the company that made the original sale
+     * @param transactionCode The transaction code of the original sale
+     * @param include A comma separated list of child objects to return underneath the primary object.
+     * @param model Information about the refund to create
      * @return TransactionModel
      */
     public TransactionModel refundTransaction(String companyCode, String transactionCode, String include, RefundTransactionModel model) throws Exception {
@@ -8328,10 +8328,10 @@ public class AvaTaxClient {
      * * Addresses
      *             
      * 
-     * @param String companyCode The code of the company that made the original sale
-     * @param String transactionCode The transaction code of the original sale
-     * @param String include A comma separated list of child objects to return underneath the primary object.
-     * @param RefundTransactionModel model Information about the refund to create
+     * @param companyCode The code of the company that made the original sale
+     * @param transactionCode The transaction code of the original sale
+     * @param include A comma separated list of child objects to return underneath the primary object.
+     * @param model Information about the refund to create
      * @return TransactionModel
      */
     public Future<TransactionModel> refundTransactionAsync(String companyCode, String transactionCode, String include, RefundTransactionModel model) {
@@ -8345,9 +8345,9 @@ public class AvaTaxClient {
     /**
      * Perform multiple actions on a transaction
      * 
-     * @param String companyCode The company code of the company that recorded this transaction
-     * @param String transactionCode The transaction code to settle
-     * @param SettleTransactionModel model The settle request containing the actions you wish to execute
+     * @param companyCode The company code of the company that recorded this transaction
+     * @param transactionCode The transaction code to settle
+     * @param model The settle request containing the actions you wish to execute
      * @return TransactionModel
      */
     public TransactionModel settleTransaction(String companyCode, String transactionCode, SettleTransactionModel model) throws Exception {
@@ -8360,9 +8360,9 @@ public class AvaTaxClient {
     /**
      * Perform multiple actions on a transaction
      * 
-     * @param String companyCode The company code of the company that recorded this transaction
-     * @param String transactionCode The transaction code to settle
-     * @param SettleTransactionModel model The settle request containing the actions you wish to execute
+     * @param companyCode The company code of the company that recorded this transaction
+     * @param transactionCode The transaction code to settle
+     * @param model The settle request containing the actions you wish to execute
      * @return TransactionModel
      */
     public Future<TransactionModel> settleTransactionAsync(String companyCode, String transactionCode, SettleTransactionModel model) {
@@ -8379,9 +8379,9 @@ public class AvaTaxClient {
      * If the transaction does not match these expected values, this API will return an error code indicating which value did not match.
      * A transaction represents a unique potentially taxable action that your company has recorded, and transactions include actions like
      * 
-     * @param String companyCode The company code of the company that recorded this transaction
-     * @param String transactionCode The transaction code to settle
-     * @param VerifyTransactionModel model The settle request you wish to execute
+     * @param companyCode The company code of the company that recorded this transaction
+     * @param transactionCode The transaction code to settle
+     * @param model The settle request you wish to execute
      * @return TransactionModel
      */
     public TransactionModel verifyTransaction(String companyCode, String transactionCode, VerifyTransactionModel model) throws Exception {
@@ -8398,9 +8398,9 @@ public class AvaTaxClient {
      * If the transaction does not match these expected values, this API will return an error code indicating which value did not match.
      * A transaction represents a unique potentially taxable action that your company has recorded, and transactions include actions like
      * 
-     * @param String companyCode The company code of the company that recorded this transaction
-     * @param String transactionCode The transaction code to settle
-     * @param VerifyTransactionModel model The settle request you wish to execute
+     * @param companyCode The company code of the company that recorded this transaction
+     * @param transactionCode The transaction code to settle
+     * @param model The settle request you wish to execute
      * @return TransactionModel
      */
     public Future<TransactionModel> verifyTransactionAsync(String companyCode, String transactionCode, VerifyTransactionModel model) {
@@ -8418,9 +8418,9 @@ public class AvaTaxClient {
      * sales, purchases, inventory transfer, and returns (also called refunds).
      * When you void a transaction, that transaction's status is recorded as 'DocVoided'.
      * 
-     * @param String companyCode The company code of the company that recorded this transaction
-     * @param String transactionCode The transaction code to void
-     * @param VoidTransactionModel model The void request you wish to execute
+     * @param companyCode The company code of the company that recorded this transaction
+     * @param transactionCode The transaction code to void
+     * @param model The void request you wish to execute
      * @return TransactionModel
      */
     public TransactionModel voidTransaction(String companyCode, String transactionCode, VoidTransactionModel model) throws Exception {
@@ -8438,9 +8438,9 @@ public class AvaTaxClient {
      * sales, purchases, inventory transfer, and returns (also called refunds).
      * When you void a transaction, that transaction's status is recorded as 'DocVoided'.
      * 
-     * @param String companyCode The company code of the company that recorded this transaction
-     * @param String transactionCode The transaction code to void
-     * @param VoidTransactionModel model The void request you wish to execute
+     * @param companyCode The company code of the company that recorded this transaction
+     * @param transactionCode The transaction code to void
+     * @param model The void request you wish to execute
      * @return TransactionModel
      */
     public Future<TransactionModel> voidTransactionAsync(String companyCode, String transactionCode, VoidTransactionModel model) {
@@ -8455,8 +8455,8 @@ public class AvaTaxClient {
      * 
      * Create one or more new UPC objects attached to this company.
      * 
-     * @param int companyId The ID of the company that owns this UPC.
-     * @param ArrayList<UPCModel> model The UPC you wish to create.
+     * @param companyId The ID of the company that owns this UPC.
+     * @param model The UPC you wish to create.
      * @return ArrayList<UPCModel>
      */
     public ArrayList<UPCModel> createUPCs(int companyId, ArrayList<UPCModel> model) throws Exception {
@@ -8470,8 +8470,8 @@ public class AvaTaxClient {
      * 
      * Create one or more new UPC objects attached to this company.
      * 
-     * @param int companyId The ID of the company that owns this UPC.
-     * @param ArrayList<UPCModel> model The UPC you wish to create.
+     * @param companyId The ID of the company that owns this UPC.
+     * @param model The UPC you wish to create.
      * @return ArrayList<UPCModel>
      */
     public Future<ArrayList<UPCModel>> createUPCsAsync(int companyId, ArrayList<UPCModel> model) {
@@ -8483,8 +8483,8 @@ public class AvaTaxClient {
     /**
      * Delete a single UPC
      * 
-     * @param int companyId The ID of the company that owns this UPC.
-     * @param int id The ID of the UPC you wish to delete.
+     * @param companyId The ID of the company that owns this UPC.
+     * @param id The ID of the UPC you wish to delete.
      * @return ArrayList<ErrorDetail>
      */
     public ArrayList<ErrorDetail> deleteUPC(int companyId, int id) throws Exception {
@@ -8497,8 +8497,8 @@ public class AvaTaxClient {
     /**
      * Delete a single UPC
      * 
-     * @param int companyId The ID of the company that owns this UPC.
-     * @param int id The ID of the UPC you wish to delete.
+     * @param companyId The ID of the company that owns this UPC.
+     * @param id The ID of the UPC you wish to delete.
      * @return ArrayList<ErrorDetail>
      */
     public Future<ArrayList<ErrorDetail>> deleteUPCAsync(int companyId, int id) {
@@ -8513,8 +8513,8 @@ public class AvaTaxClient {
      * 
      * Get the UPC object identified by this URL.
      * 
-     * @param int companyId The ID of the company that owns this UPC
-     * @param int id The primary key of this UPC
+     * @param companyId The ID of the company that owns this UPC
+     * @param id The primary key of this UPC
      * @return UPCModel
      */
     public UPCModel getUPC(int companyId, int id) throws Exception {
@@ -8529,8 +8529,8 @@ public class AvaTaxClient {
      * 
      * Get the UPC object identified by this URL.
      * 
-     * @param int companyId The ID of the company that owns this UPC
-     * @param int id The primary key of this UPC
+     * @param companyId The ID of the company that owns this UPC
+     * @param id The primary key of this UPC
      * @return UPCModel
      */
     public Future<UPCModel> getUPCAsync(int companyId, int id) {
@@ -8548,12 +8548,12 @@ public class AvaTaxClient {
      * 
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * 
-     * @param int companyId The ID of the company that owns these UPCs
-     * @param String filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param String include A comma separated list of child objects to return underneath the primary object.
-     * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
-     * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @param companyId The ID of the company that owns these UPCs
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param include A comma separated list of child objects to return underneath the primary object.
+     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
+     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<HashMap<String, String>>
      */
     public FetchResult<HashMap<String, String>> listUPCsByCompany(int companyId, String filter, String include, Integer top, Integer skip, String orderBy) throws Exception {
@@ -8575,12 +8575,12 @@ public class AvaTaxClient {
      * 
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * 
-     * @param int companyId The ID of the company that owns these UPCs
-     * @param String filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param String include A comma separated list of child objects to return underneath the primary object.
-     * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
-     * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @param companyId The ID of the company that owns these UPCs
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param include A comma separated list of child objects to return underneath the primary object.
+     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
+     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<HashMap<String, String>>
      */
     public Future<FetchResult<HashMap<String, String>>> listUPCsByCompanyAsync(int companyId, String filter, String include, Integer top, Integer skip, String orderBy) {
@@ -8602,11 +8602,11 @@ public class AvaTaxClient {
      * 
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * 
-     * @param String filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param String include A comma separated list of child objects to return underneath the primary object.
-     * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
-     * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param include A comma separated list of child objects to return underneath the primary object.
+     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
+     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<HashMap<String, String>>
      */
     public FetchResult<HashMap<String, String>> queryUPCs(String filter, String include, Integer top, Integer skip, String orderBy) throws Exception {
@@ -8627,11 +8627,11 @@ public class AvaTaxClient {
      * 
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * 
-     * @param String filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param String include A comma separated list of child objects to return underneath the primary object.
-     * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
-     * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param include A comma separated list of child objects to return underneath the primary object.
+     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
+     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<HashMap<String, String>>
      */
     public Future<FetchResult<HashMap<String, String>>> queryUPCsAsync(String filter, String include, Integer top, Integer skip, String orderBy) {
@@ -8651,9 +8651,9 @@ public class AvaTaxClient {
      * A UPC represents a single UPC code in your catalog and matches this product to the tax code identified by this UPC.
      * All data from the existing object will be replaced with data in the object you PUT.  
      * 
-     * @param int companyId The ID of the company that this UPC belongs to.
-     * @param int id The ID of the UPC you wish to update
-     * @param UPCModel model The UPC you wish to update.
+     * @param companyId The ID of the company that this UPC belongs to.
+     * @param id The ID of the UPC you wish to update
+     * @param model The UPC you wish to update.
      * @return UPCModel
      */
     public UPCModel updateUPC(int companyId, int id, UPCModel model) throws Exception {
@@ -8670,9 +8670,9 @@ public class AvaTaxClient {
      * A UPC represents a single UPC code in your catalog and matches this product to the tax code identified by this UPC.
      * All data from the existing object will be replaced with data in the object you PUT.  
      * 
-     * @param int companyId The ID of the company that this UPC belongs to.
-     * @param int id The ID of the UPC you wish to update
-     * @param UPCModel model The UPC you wish to update.
+     * @param companyId The ID of the company that this UPC belongs to.
+     * @param id The ID of the UPC you wish to update
+     * @param model The UPC you wish to update.
      * @return UPCModel
      */
     public Future<UPCModel> updateUPCAsync(int companyId, int id, UPCModel model) {
@@ -8687,9 +8687,9 @@ public class AvaTaxClient {
      * 
      * Get the user object identified by this URL.
      * 
-     * @param int id The ID of the user to retrieve.
-     * @param int accountId The accountID of the user you wish to get.
-     * @param String include A comma separated list of child objects to return underneath the primary object.
+     * @param id The ID of the user to retrieve.
+     * @param accountId The accountID of the user you wish to get.
+     * @param include A comma separated list of child objects to return underneath the primary object.
      * @return UserModel
      */
     public UserModel getUser(int id, int accountId, String include) throws Exception {
@@ -8705,9 +8705,9 @@ public class AvaTaxClient {
      * 
      * Get the user object identified by this URL.
      * 
-     * @param int id The ID of the user to retrieve.
-     * @param int accountId The accountID of the user you wish to get.
-     * @param String include A comma separated list of child objects to return underneath the primary object.
+     * @param id The ID of the user to retrieve.
+     * @param accountId The accountID of the user you wish to get.
+     * @param include A comma separated list of child objects to return underneath the primary object.
      * @return UserModel
      */
     public Future<UserModel> getUserAsync(int id, int accountId, String include) {
@@ -8736,8 +8736,8 @@ public class AvaTaxClient {
      * * If the 'permissions' array within entitlements does not contain 'AccountSvc.CompanySave', the call will fail.
      *             
      * 
-     * @param int id The ID of the user to retrieve.
-     * @param int accountId The accountID of the user you wish to get.
+     * @param id The ID of the user to retrieve.
+     * @param accountId The accountID of the user you wish to get.
      * @return UserEntitlementModel
      */
     public UserEntitlementModel getUserEntitlements(int id, int accountId) throws Exception {
@@ -8765,8 +8765,8 @@ public class AvaTaxClient {
      * * If the 'permissions' array within entitlements does not contain 'AccountSvc.CompanySave', the call will fail.
      *             
      * 
-     * @param int id The ID of the user to retrieve.
-     * @param int accountId The accountID of the user you wish to get.
+     * @param id The ID of the user to retrieve.
+     * @param accountId The accountID of the user you wish to get.
      * @return UserEntitlementModel
      */
     public Future<UserEntitlementModel> getUserEntitlementsAsync(int id, int accountId) {
@@ -8784,12 +8784,12 @@ public class AvaTaxClient {
      * 
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * 
-     * @param int accountId The accountID of the user you wish to list.
-     * @param String include A comma separated list of child objects to return underneath the primary object.
-     * @param String filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
-     * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @param accountId The accountID of the user you wish to list.
+     * @param include A comma separated list of child objects to return underneath the primary object.
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
+     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<HashMap<String, String>>
      */
     public FetchResult<HashMap<String, String>> listUsersByAccount(int accountId, String include, String filter, Integer top, Integer skip, String orderBy) throws Exception {
@@ -8811,12 +8811,12 @@ public class AvaTaxClient {
      * 
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * 
-     * @param int accountId The accountID of the user you wish to list.
-     * @param String include A comma separated list of child objects to return underneath the primary object.
-     * @param String filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
-     * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @param accountId The accountID of the user you wish to list.
+     * @param include A comma separated list of child objects to return underneath the primary object.
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
+     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<HashMap<String, String>>
      */
     public Future<FetchResult<HashMap<String, String>>> listUsersByAccountAsync(int accountId, String include, String filter, Integer top, Integer skip, String orderBy) {
@@ -8838,11 +8838,11 @@ public class AvaTaxClient {
      * 
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * 
-     * @param String include A comma separated list of child objects to return underneath the primary object.
-     * @param String filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
-     * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @param include A comma separated list of child objects to return underneath the primary object.
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
+     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<HashMap<String, String>>
      */
     public FetchResult<HashMap<String, String>> queryUsers(String include, String filter, Integer top, Integer skip, String orderBy) throws Exception {
@@ -8863,11 +8863,11 @@ public class AvaTaxClient {
      * 
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * 
-     * @param String include A comma separated list of child objects to return underneath the primary object.
-     * @param String filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
-     * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @param include A comma separated list of child objects to return underneath the primary object.
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
+     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<HashMap<String, String>>
      */
     public Future<FetchResult<HashMap<String, String>>> queryUsersAsync(String include, String filter, Integer top, Integer skip, String orderBy) {
@@ -8887,9 +8887,9 @@ public class AvaTaxClient {
      * A user represents one person with access privileges to make API calls and work with a specific account.
      * All data from the existing object will be replaced with data in the object you PUT.  
      * 
-     * @param int id The ID of the user you wish to update.
-     * @param int accountId The accountID of the user you wish to update.
-     * @param UserModel model The user object you wish to update.
+     * @param id The ID of the user you wish to update.
+     * @param accountId The accountID of the user you wish to update.
+     * @param model The user object you wish to update.
      * @return UserModel
      */
     public UserModel updateUser(int id, int accountId, UserModel model) throws Exception {
@@ -8906,9 +8906,9 @@ public class AvaTaxClient {
      * A user represents one person with access privileges to make API calls and work with a specific account.
      * All data from the existing object will be replaced with data in the object you PUT.  
      * 
-     * @param int id The ID of the user you wish to update.
-     * @param int accountId The accountID of the user you wish to update.
-     * @param UserModel model The user object you wish to update.
+     * @param id The ID of the user you wish to update.
+     * @param accountId The accountID of the user you wish to update.
+     * @param model The user object you wish to update.
      * @return UserModel
      */
     public Future<UserModel> updateUserAsync(int id, int accountId, UserModel model) {
@@ -8924,7 +8924,7 @@ public class AvaTaxClient {
      * Returns a subscription object for the current account, or 404 Not Found if this subscription is not enabled for this account.
      * This API call is intended to allow you to identify whether you have the necessary account configuration to access certain
      * 
-     * @param ServiceTypeId serviceTypeId The service to check (See ServiceTypeId::* for a list of allowable values)
+     * @param serviceTypeId The service to check (See ServiceTypeId::* for a list of allowable values)
      * @return SubscriptionModel
      */
     public SubscriptionModel getMySubscription(ServiceTypeId serviceTypeId) throws Exception {
@@ -8939,7 +8939,7 @@ public class AvaTaxClient {
      * Returns a subscription object for the current account, or 404 Not Found if this subscription is not enabled for this account.
      * This API call is intended to allow you to identify whether you have the necessary account configuration to access certain
      * 
-     * @param ServiceTypeId serviceTypeId The service to check (See ServiceTypeId::* for a list of allowable values)
+     * @param serviceTypeId The service to check (See ServiceTypeId::* for a list of allowable values)
      * @return SubscriptionModel
      */
     public Future<SubscriptionModel> getMySubscriptionAsync(ServiceTypeId serviceTypeId) {
