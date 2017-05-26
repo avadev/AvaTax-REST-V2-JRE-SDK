@@ -51,14 +51,14 @@ public class NoticeResponsibilityDetailModel {
     }
 
 
-    private int noticeId;
+    private Integer noticeId;
 
     /**
      * Getter for noticeId
      *
      * TaxNoticeId
      */
-    public int getNoticeId() {
+    public Integer getNoticeId() {
         return this.noticeId;
     }
 
@@ -67,19 +67,19 @@ public class NoticeResponsibilityDetailModel {
      *
      * TaxNoticeId
      */
-    public void setNoticeId(int value) {
+    public void setNoticeId(Integer value) {
         this.noticeId = value;
     }
 
 
-    private int taxNoticeResponsibilityId;
+    private Integer taxNoticeResponsibilityId;
 
     /**
      * Getter for taxNoticeResponsibilityId
      *
      * TaxNoticeResponsibilityId
      */
-    public int getTaxNoticeResponsibilityId() {
+    public Integer getTaxNoticeResponsibilityId() {
         return this.taxNoticeResponsibilityId;
     }
 
@@ -88,7 +88,7 @@ public class NoticeResponsibilityDetailModel {
      *
      * TaxNoticeResponsibilityId
      */
-    public void setTaxNoticeResponsibilityId(int value) {
+    public void setTaxNoticeResponsibilityId(Integer value) {
         this.taxNoticeResponsibilityId = value;
     }
 

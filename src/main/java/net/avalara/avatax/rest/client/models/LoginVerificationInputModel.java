@@ -51,14 +51,14 @@ public class LoginVerificationInputModel {
     }
 
 
-    private int accountId;
+    private Integer accountId;
 
     /**
      * Getter for accountId
      *
      * AccountId of the login verification
      */
-    public int getAccountId() {
+    public Integer getAccountId() {
         return this.accountId;
     }
 
@@ -67,7 +67,7 @@ public class LoginVerificationInputModel {
      *
      * AccountId of the login verification
      */
-    public void setAccountId(int value) {
+    public void setAccountId(Integer value) {
         this.accountId = value;
     }
 

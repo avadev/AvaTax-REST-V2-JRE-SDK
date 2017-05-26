@@ -30,14 +30,14 @@ import java.util.HashMap;
 public class LocationQuestionModel {
 
 
-    private int id;
+    private Integer id;
 
     /**
      * Getter for id
      *
      * The unique ID number of this location setting type
      */
-    public int getId() {
+    public Integer getId() {
         return this.id;
     }
 
@@ -46,7 +46,7 @@ public class LocationQuestionModel {
      *
      * The unique ID number of this location setting type
      */
-    public void setId(int value) {
+    public void setId(Integer value) {
         this.id = value;
     }
 

@@ -32,14 +32,14 @@ import java.util.HashMap;
 public class NoticeModel {
 
 
-    private int id;
+    private Integer id;
 
     /**
      * Getter for id
      *
      * The unique ID number of this notice.
      */
-    public int getId() {
+    public Integer getId() {
         return this.id;
     }
 
@@ -48,19 +48,19 @@ public class NoticeModel {
      *
      * The unique ID number of this notice.
      */
-    public void setId(int value) {
+    public void setId(Integer value) {
         this.id = value;
     }
 
 
-    private int companyId;
+    private Integer companyId;
 
     /**
      * Getter for companyId
      *
      * The unique ID number of the company to which this notice belongs.
      */
-    public int getCompanyId() {
+    public Integer getCompanyId() {
         return this.companyId;
     }
 
@@ -69,19 +69,19 @@ public class NoticeModel {
      *
      * The unique ID number of the company to which this notice belongs.
      */
-    public void setCompanyId(int value) {
+    public void setCompanyId(Integer value) {
         this.companyId = value;
     }
 
 
-    private int statusId;
+    private Integer statusId;
 
     /**
      * Getter for statusId
      *
      * The status id of the notice
      */
-    public int getStatusId() {
+    public Integer getStatusId() {
         return this.statusId;
     }
 
@@ -90,7 +90,7 @@ public class NoticeModel {
      *
      * The status id of the notice
      */
-    public void setStatusId(int value) {
+    public void setStatusId(Integer value) {
         this.statusId = value;
     }
 
@@ -410,14 +410,14 @@ public class NoticeModel {
     }
 
 
-    private int reasonId;
+    private Integer reasonId;
 
     /**
      * Getter for reasonId
      *
      * The notice reason id
      */
-    public int getReasonId() {
+    public Integer getReasonId() {
         return this.reasonId;
     }
 
@@ -426,7 +426,7 @@ public class NoticeModel {
      *
      * The notice reason id
      */
-    public void setReasonId(int value) {
+    public void setReasonId(Integer value) {
         this.reasonId = value;
     }
 
@@ -557,14 +557,14 @@ public class NoticeModel {
     }
 
 
-    private boolean hideFromCustomer;
+    private Boolean hideFromCustomer;
 
     /**
      * Getter for hideFromCustomer
      *
      * Indicator to hide from customer
      */
-    public boolean getHideFromCustomer() {
+    public Boolean getHideFromCustomer() {
         return this.hideFromCustomer;
     }
 
@@ -573,7 +573,7 @@ public class NoticeModel {
      *
      * Indicator to hide from customer
      */
-    public void setHideFromCustomer(boolean value) {
+    public void setHideFromCustomer(Boolean value) {
         this.hideFromCustomer = value;
     }
 
@@ -599,14 +599,14 @@ public class NoticeModel {
     }
 
 
-    private boolean showResolutionDateToCustomer;
+    private Boolean showResolutionDateToCustomer;
 
     /**
      * Getter for showResolutionDateToCustomer
      *
      * Indicator to show customer this resolution date
      */
-    public boolean getShowResolutionDateToCustomer() {
+    public Boolean getShowResolutionDateToCustomer() {
         return this.showResolutionDateToCustomer;
     }
 
@@ -615,7 +615,7 @@ public class NoticeModel {
      *
      * Indicator to show customer this resolution date
      */
-    public void setShowResolutionDateToCustomer(boolean value) {
+    public void setShowResolutionDateToCustomer(Boolean value) {
         this.showResolutionDateToCustomer = value;
     }
 

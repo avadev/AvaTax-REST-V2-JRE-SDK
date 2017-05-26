@@ -30,14 +30,14 @@ import java.util.HashMap;
 public class ResetLicenseKeyModel {
 
 
-    private int accountId;
+    private Integer accountId;
 
     /**
      * Getter for accountId
      *
      * The primary key of the account ID to reset
      */
-    public int getAccountId() {
+    public Integer getAccountId() {
         return this.accountId;
     }
 
@@ -46,12 +46,12 @@ public class ResetLicenseKeyModel {
      *
      * The primary key of the account ID to reset
      */
-    public void setAccountId(int value) {
+    public void setAccountId(Integer value) {
         this.accountId = value;
     }
 
 
-    private boolean confirmResetLicenseKey;
+    private Boolean confirmResetLicenseKey;
 
     /**
      * Getter for confirmResetLicenseKey
@@ -59,7 +59,7 @@ public class ResetLicenseKeyModel {
      * Set this value to true to reset the license key for this account.
     * This license key reset function will only work when called using the credentials of the account administrator of this account.
      */
-    public boolean getConfirmResetLicenseKey() {
+    public Boolean getConfirmResetLicenseKey() {
         return this.confirmResetLicenseKey;
     }
 
@@ -69,7 +69,7 @@ public class ResetLicenseKeyModel {
      * Set this value to true to reset the license key for this account.
     * This license key reset function will only work when called using the credentials of the account administrator of this account.
      */
-    public void setConfirmResetLicenseKey(boolean value) {
+    public void setConfirmResetLicenseKey(Boolean value) {
         this.confirmResetLicenseKey = value;
     }
 

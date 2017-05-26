@@ -30,14 +30,14 @@ import java.util.HashMap;
 public class SubscriptionModel {
 
 
-    private int id;
+    private Integer id;
 
     /**
      * Getter for id
      *
      * The unique ID number of this subscription.
      */
-    public int getId() {
+    public Integer getId() {
         return this.id;
     }
 
@@ -46,19 +46,19 @@ public class SubscriptionModel {
      *
      * The unique ID number of this subscription.
      */
-    public void setId(int value) {
+    public void setId(Integer value) {
         this.id = value;
     }
 
 
-    private int accountId;
+    private Integer accountId;
 
     /**
      * Getter for accountId
      *
      * The unique ID number of the account this subscription belongs to.
      */
-    public int getAccountId() {
+    public Integer getAccountId() {
         return this.accountId;
     }
 
@@ -67,7 +67,7 @@ public class SubscriptionModel {
      *
      * The unique ID number of the account this subscription belongs to.
      */
-    public void setAccountId(int value) {
+    public void setAccountId(Integer value) {
         this.accountId = value;
     }
 

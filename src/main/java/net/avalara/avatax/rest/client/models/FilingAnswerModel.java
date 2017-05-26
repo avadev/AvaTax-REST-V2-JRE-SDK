@@ -30,14 +30,14 @@ import java.util.HashMap;
 public class FilingAnswerModel {
 
 
-    private long filingQuestionId;
+    private Long filingQuestionId;
 
     /**
      * Getter for filingQuestionId
      *
      * The ID number for a filing question
      */
-    public long getFilingQuestionId() {
+    public Long getFilingQuestionId() {
         return this.filingQuestionId;
     }
 
@@ -46,7 +46,7 @@ public class FilingAnswerModel {
      *
      * The ID number for a filing question
      */
-    public void setFilingQuestionId(long value) {
+    public void setFilingQuestionId(Long value) {
         this.filingQuestionId = value;
     }
 

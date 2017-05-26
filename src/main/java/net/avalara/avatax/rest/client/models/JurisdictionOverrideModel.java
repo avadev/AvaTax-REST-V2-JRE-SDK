@@ -350,14 +350,14 @@ public class JurisdictionOverrideModel {
     }
 
 
-    private int taxRegionId;
+    private Integer taxRegionId;
 
     /**
      * Getter for taxRegionId
      *
      * The TaxRegionId of the new location affected by this jurisdiction override.
      */
-    public int getTaxRegionId() {
+    public Integer getTaxRegionId() {
         return this.taxRegionId;
     }
 
@@ -366,7 +366,7 @@ public class JurisdictionOverrideModel {
      *
      * The TaxRegionId of the new location affected by this jurisdiction override.
      */
-    public void setTaxRegionId(int value) {
+    public void setTaxRegionId(Integer value) {
         this.taxRegionId = value;
     }
 

@@ -30,14 +30,14 @@ import java.util.HashMap;
 public class NexusModel {
 
 
-    private int id;
+    private Integer id;
 
     /**
      * Getter for id
      *
      * The unique ID number of this declaration of nexus.
      */
-    public int getId() {
+    public Integer getId() {
         return this.id;
     }
 
@@ -46,19 +46,19 @@ public class NexusModel {
      *
      * The unique ID number of this declaration of nexus.
      */
-    public void setId(int value) {
+    public void setId(Integer value) {
         this.id = value;
     }
 
 
-    private int companyId;
+    private Integer companyId;
 
     /**
      * Getter for companyId
      *
      * The unique ID number of the company that declared nexus.
      */
-    public int getCompanyId() {
+    public Integer getCompanyId() {
         return this.companyId;
     }
 
@@ -67,7 +67,7 @@ public class NexusModel {
      *
      * The unique ID number of the company that declared nexus.
      */
-    public void setCompanyId(int value) {
+    public void setCompanyId(Integer value) {
         this.companyId = value;
     }
 

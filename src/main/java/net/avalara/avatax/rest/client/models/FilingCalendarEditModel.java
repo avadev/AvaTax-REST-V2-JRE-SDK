@@ -51,14 +51,14 @@ public class FilingCalendarEditModel {
     }
 
 
-    private int questionId;
+    private Integer questionId;
 
     /**
      * Getter for questionId
      *
      * The unique ID of the filing calendar question. "Filing calendar question" is the wording displayed to users for a given field.
      */
-    public int getQuestionId() {
+    public Integer getQuestionId() {
         return this.questionId;
     }
 
@@ -67,7 +67,7 @@ public class FilingCalendarEditModel {
      *
      * The unique ID of the filing calendar question. "Filing calendar question" is the wording displayed to users for a given field.
      */
-    public void setQuestionId(int value) {
+    public void setQuestionId(Integer value) {
         this.questionId = value;
     }
 

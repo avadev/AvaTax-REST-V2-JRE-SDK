@@ -31,14 +31,14 @@ import java.util.HashMap;
 public class FilingCalendarModel {
 
 
-    private long id;
+    private Long id;
 
     /**
      * Getter for id
      *
      * The unique ID number of this filing calendar.
      */
-    public long getId() {
+    public Long getId() {
         return this.id;
     }
 
@@ -47,19 +47,19 @@ public class FilingCalendarModel {
      *
      * The unique ID number of this filing calendar.
      */
-    public void setId(long value) {
+    public void setId(Long value) {
         this.id = value;
     }
 
 
-    private int companyId;
+    private Integer companyId;
 
     /**
      * Getter for companyId
      *
      * The unique ID number of the company to which this filing calendar belongs.
      */
-    public int getCompanyId() {
+    public Integer getCompanyId() {
         return this.companyId;
     }
 
@@ -68,7 +68,7 @@ public class FilingCalendarModel {
      *
      * The unique ID number of the company to which this filing calendar belongs.
      */
-    public void setCompanyId(int value) {
+    public void setCompanyId(Integer value) {
         this.companyId = value;
     }
 

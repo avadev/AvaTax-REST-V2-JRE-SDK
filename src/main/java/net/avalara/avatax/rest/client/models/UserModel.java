@@ -30,14 +30,14 @@ import java.util.HashMap;
 public class UserModel {
 
 
-    private int id;
+    private Integer id;
 
     /**
      * Getter for id
      *
      * The unique ID number of this user.
      */
-    public int getId() {
+    public Integer getId() {
         return this.id;
     }
 
@@ -46,19 +46,19 @@ public class UserModel {
      *
      * The unique ID number of this user.
      */
-    public void setId(int value) {
+    public void setId(Integer value) {
         this.id = value;
     }
 
 
-    private int accountId;
+    private Integer accountId;
 
     /**
      * Getter for accountId
      *
      * The unique ID number of the account to which this user belongs.
      */
-    public int getAccountId() {
+    public Integer getAccountId() {
         return this.accountId;
     }
 
@@ -67,7 +67,7 @@ public class UserModel {
      *
      * The unique ID number of the account to which this user belongs.
      */
-    public void setAccountId(int value) {
+    public void setAccountId(Integer value) {
         this.accountId = value;
     }
 

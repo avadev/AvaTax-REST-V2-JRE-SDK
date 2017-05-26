@@ -30,14 +30,14 @@ import java.util.HashMap;
 public class ItemModel {
 
 
-    private long id;
+    private Long id;
 
     /**
      * Getter for id
      *
      * The unique ID number of this item.
      */
-    public long getId() {
+    public Long getId() {
         return this.id;
     }
 
@@ -46,19 +46,19 @@ public class ItemModel {
      *
      * The unique ID number of this item.
      */
-    public void setId(long value) {
+    public void setId(Long value) {
         this.id = value;
     }
 
 
-    private int companyId;
+    private Integer companyId;
 
     /**
      * Getter for companyId
      *
      * The unique ID number of the company that owns this item.
      */
-    public int getCompanyId() {
+    public Integer getCompanyId() {
         return this.companyId;
     }
 
@@ -67,7 +67,7 @@ public class ItemModel {
      *
      * The unique ID number of the company that owns this item.
      */
-    public void setCompanyId(int value) {
+    public void setCompanyId(Integer value) {
         this.companyId = value;
     }
 

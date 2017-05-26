@@ -52,14 +52,14 @@ public class FilingRequestModel {
     }
 
 
-    private int companyId;
+    private Integer companyId;
 
     /**
      * Getter for companyId
      *
      * The unique ID number of the company to which this filing request belongs.
      */
-    public int getCompanyId() {
+    public Integer getCompanyId() {
         return this.companyId;
     }
 
@@ -68,7 +68,7 @@ public class FilingRequestModel {
      *
      * The unique ID number of the company to which this filing request belongs.
      */
-    public void setCompanyId(int value) {
+    public void setCompanyId(Integer value) {
         this.companyId = value;
     }
 

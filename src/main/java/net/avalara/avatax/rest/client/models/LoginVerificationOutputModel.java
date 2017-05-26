@@ -30,14 +30,14 @@ import java.util.HashMap;
 public class LoginVerificationOutputModel {
 
 
-    private int jobId;
+    private Integer jobId;
 
     /**
      * Getter for jobId
      *
      * The job Id returned from skyscraper
      */
-    public int getJobId() {
+    public Integer getJobId() {
         return this.jobId;
     }
 
@@ -46,7 +46,7 @@ public class LoginVerificationOutputModel {
      *
      * The job Id returned from skyscraper
      */
-    public void setJobId(int value) {
+    public void setJobId(Integer value) {
         this.jobId = value;
     }
 

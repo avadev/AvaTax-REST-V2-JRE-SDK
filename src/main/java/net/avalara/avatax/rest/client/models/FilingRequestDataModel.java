@@ -115,14 +115,14 @@ public class FilingRequestDataModel {
     }
 
 
-    private short months;
+    private Short months;
 
     /**
      * Getter for months
      *
      * The months of the request
      */
-    public short getMonths() {
+    public Short getMonths() {
         return this.months;
     }
 
@@ -131,7 +131,7 @@ public class FilingRequestDataModel {
      *
      * The months of the request
      */
-    public void setMonths(short value) {
+    public void setMonths(Short value) {
         this.months = value;
     }
 

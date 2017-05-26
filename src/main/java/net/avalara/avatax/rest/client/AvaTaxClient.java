@@ -96,7 +96,7 @@ public class AvaTaxClient {
      * @param model A request confirming that you wish to reset the license key of this account.
      * @return LicenseKeyModel
      */
-    public LicenseKeyModel accountResetLicenseKey(int id, ResetLicenseKeyModel model) throws Exception {
+    public LicenseKeyModel accountResetLicenseKey(Integer id, ResetLicenseKeyModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{id}/resetlicensekey");
         path.applyField("id", id);
         return ((RestCall<LicenseKeyModel>)restCallFactory.createRestCall("Post", path, model, new TypeToken<LicenseKeyModel>(){})).call();
@@ -112,7 +112,7 @@ public class AvaTaxClient {
      * @param model A request confirming that you wish to reset the license key of this account.
      * @return LicenseKeyModel
      */
-    public Future<LicenseKeyModel> accountResetLicenseKeyAsync(int id, ResetLicenseKeyModel model) {
+    public Future<LicenseKeyModel> accountResetLicenseKeyAsync(Integer id, ResetLicenseKeyModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{id}/resetlicensekey");
         path.applyField("id", id);
         return this.threadPool.submit((RestCall<LicenseKeyModel>)restCallFactory.createRestCall("Post", path, model, new TypeToken<LicenseKeyModel>(){}));
@@ -132,7 +132,7 @@ public class AvaTaxClient {
      * @param model The activation request
      * @return AccountModel
      */
-    public AccountModel activateAccount(int id, ActivateAccountModel model) throws Exception {
+    public AccountModel activateAccount(Integer id, ActivateAccountModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{id}/activate");
         path.applyField("id", id);
         return ((RestCall<AccountModel>)restCallFactory.createRestCall("Post", path, model, new TypeToken<AccountModel>(){})).call();
@@ -152,7 +152,7 @@ public class AvaTaxClient {
      * @param model The activation request
      * @return AccountModel
      */
-    public Future<AccountModel> activateAccountAsync(int id, ActivateAccountModel model) {
+    public Future<AccountModel> activateAccountAsync(Integer id, ActivateAccountModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{id}/activate");
         path.applyField("id", id);
         return this.threadPool.submit((RestCall<AccountModel>)restCallFactory.createRestCall("Post", path, model, new TypeToken<AccountModel>(){}));
@@ -170,7 +170,7 @@ public class AvaTaxClient {
      * @param include A comma separated list of child objects to return underneath the primary object.
      * @return AccountModel
      */
-    public AccountModel getAccount(int id, String include) throws Exception {
+    public AccountModel getAccount(Integer id, String include) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{id}");
         path.applyField("id", id);
         path.addQuery("$include", include);
@@ -189,7 +189,7 @@ public class AvaTaxClient {
      * @param include A comma separated list of child objects to return underneath the primary object.
      * @return AccountModel
      */
-    public Future<AccountModel> getAccountAsync(int id, String include) {
+    public Future<AccountModel> getAccountAsync(Integer id, String include) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{id}");
         path.applyField("id", id);
         path.addQuery("$include", include);
@@ -214,7 +214,7 @@ public class AvaTaxClient {
      * @param id 
      * @return ArrayList<AccountConfigurationModel>
      */
-    public ArrayList<AccountConfigurationModel> getAccountConfiguration(int id) throws Exception {
+    public ArrayList<AccountConfigurationModel> getAccountConfiguration(Integer id) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{id}/configuration");
         path.applyField("id", id);
         return ((RestCall<ArrayList<AccountConfigurationModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<ArrayList<AccountConfigurationModel>>(){})).call();
@@ -238,7 +238,7 @@ public class AvaTaxClient {
      * @param id 
      * @return ArrayList<AccountConfigurationModel>
      */
-    public Future<ArrayList<AccountConfigurationModel>> getAccountConfigurationAsync(int id) {
+    public Future<ArrayList<AccountConfigurationModel>> getAccountConfigurationAsync(Integer id) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{id}/configuration");
         path.applyField("id", id);
         return this.threadPool.submit((RestCall<ArrayList<AccountConfigurationModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<ArrayList<AccountConfigurationModel>>(){}));
@@ -263,7 +263,7 @@ public class AvaTaxClient {
      * @param model 
      * @return ArrayList<AccountConfigurationModel>
      */
-    public ArrayList<AccountConfigurationModel> setAccountConfiguration(int id, ArrayList<AccountConfigurationModel> model) throws Exception {
+    public ArrayList<AccountConfigurationModel> setAccountConfiguration(Integer id, ArrayList<AccountConfigurationModel> model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{id}/configuration");
         path.applyField("id", id);
         return ((RestCall<ArrayList<AccountConfigurationModel>>)restCallFactory.createRestCall("Post", path, model, new TypeToken<ArrayList<AccountConfigurationModel>>(){})).call();
@@ -288,7 +288,7 @@ public class AvaTaxClient {
      * @param model 
      * @return ArrayList<AccountConfigurationModel>
      */
-    public Future<ArrayList<AccountConfigurationModel>> setAccountConfigurationAsync(int id, ArrayList<AccountConfigurationModel> model) {
+    public Future<ArrayList<AccountConfigurationModel>> setAccountConfigurationAsync(Integer id, ArrayList<AccountConfigurationModel> model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{id}/configuration");
         path.applyField("id", id);
         return this.threadPool.submit((RestCall<ArrayList<AccountConfigurationModel>>)restCallFactory.createRestCall("Post", path, model, new TypeToken<ArrayList<AccountConfigurationModel>>(){}));
@@ -412,7 +412,7 @@ public class AvaTaxClient {
      * @param model The batch you wish to create.
      * @return ArrayList<BatchModel>
      */
-    public ArrayList<BatchModel> createBatches(int companyId, ArrayList<BatchModel> model) throws Exception {
+    public ArrayList<BatchModel> createBatches(Integer companyId, ArrayList<BatchModel> model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/batches");
         path.applyField("companyId", companyId);
         return ((RestCall<ArrayList<BatchModel>>)restCallFactory.createRestCall("Post", path, model, new TypeToken<ArrayList<BatchModel>>(){})).call();
@@ -430,7 +430,7 @@ public class AvaTaxClient {
      * @param model The batch you wish to create.
      * @return ArrayList<BatchModel>
      */
-    public Future<ArrayList<BatchModel>> createBatchesAsync(int companyId, ArrayList<BatchModel> model) {
+    public Future<ArrayList<BatchModel>> createBatchesAsync(Integer companyId, ArrayList<BatchModel> model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/batches");
         path.applyField("companyId", companyId);
         return this.threadPool.submit((RestCall<ArrayList<BatchModel>>)restCallFactory.createRestCall("Post", path, model, new TypeToken<ArrayList<BatchModel>>(){}));
@@ -443,7 +443,7 @@ public class AvaTaxClient {
      * @param id The ID of the batch you wish to delete.
      * @return ArrayList<ErrorDetail>
      */
-    public ArrayList<ErrorDetail> deleteBatch(int companyId, int id) throws Exception {
+    public ArrayList<ErrorDetail> deleteBatch(Integer companyId, Integer id) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/batches/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
@@ -457,7 +457,7 @@ public class AvaTaxClient {
      * @param id The ID of the batch you wish to delete.
      * @return ArrayList<ErrorDetail>
      */
-    public Future<ArrayList<ErrorDetail>> deleteBatchAsync(int companyId, int id) {
+    public Future<ArrayList<ErrorDetail>> deleteBatchAsync(Integer companyId, Integer id) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/batches/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
@@ -472,7 +472,7 @@ public class AvaTaxClient {
      * @param id The primary key of this batch file object
      * @return HashMap<String, String>
      */
-    public HashMap<String, String> downloadBatch(int companyId, int batchId, int id) throws Exception {
+    public HashMap<String, String> downloadBatch(Integer companyId, Integer batchId, Integer id) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/batches/{batchId}/files/{id}/attachment");
         path.applyField("companyId", companyId);
         path.applyField("batchId", batchId);
@@ -488,7 +488,7 @@ public class AvaTaxClient {
      * @param id The primary key of this batch file object
      * @return HashMap<String, String>
      */
-    public Future<HashMap<String, String>> downloadBatchAsync(int companyId, int batchId, int id) {
+    public Future<HashMap<String, String>> downloadBatchAsync(Integer companyId, Integer batchId, Integer id) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/batches/{batchId}/files/{id}/attachment");
         path.applyField("companyId", companyId);
         path.applyField("batchId", batchId);
@@ -507,7 +507,7 @@ public class AvaTaxClient {
      * @param id The primary key of this batch
      * @return BatchModel
      */
-    public BatchModel getBatch(int companyId, int id) throws Exception {
+    public BatchModel getBatch(Integer companyId, Integer id) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/batches/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
@@ -525,7 +525,7 @@ public class AvaTaxClient {
      * @param id The primary key of this batch
      * @return BatchModel
      */
-    public Future<BatchModel> getBatchAsync(int companyId, int id) {
+    public Future<BatchModel> getBatchAsync(Integer companyId, Integer id) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/batches/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
@@ -549,7 +549,7 @@ public class AvaTaxClient {
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<HashMap<String, String>>
      */
-    public FetchResult<HashMap<String, String>> listBatchesByCompany(int companyId, String filter, String include, Integer top, Integer skip, String orderBy) throws Exception {
+    public FetchResult<HashMap<String, String>> listBatchesByCompany(Integer companyId, String filter, String include, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/batches");
         path.applyField("companyId", companyId);
         path.addQuery("$filter", filter);
@@ -577,7 +577,7 @@ public class AvaTaxClient {
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<HashMap<String, String>>
      */
-    public Future<FetchResult<HashMap<String, String>>> listBatchesByCompanyAsync(int companyId, String filter, String include, Integer top, Integer skip, String orderBy) {
+    public Future<FetchResult<HashMap<String, String>>> listBatchesByCompanyAsync(Integer companyId, String filter, String include, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/batches");
         path.applyField("companyId", companyId);
         path.addQuery("$filter", filter);
@@ -731,7 +731,7 @@ public class AvaTaxClient {
      * @param model The funding initialization request
      * @return FundingStatusModel
      */
-    public FundingStatusModel createFundingRequest(int id, FundingInitiateModel model) throws Exception {
+    public FundingStatusModel createFundingRequest(Integer id, FundingInitiateModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{id}/funding/setup");
         path.applyField("id", id);
         return ((RestCall<FundingStatusModel>)restCallFactory.createRestCall("Post", path, model, new TypeToken<FundingStatusModel>(){})).call();
@@ -754,7 +754,7 @@ public class AvaTaxClient {
      * @param model The funding initialization request
      * @return FundingStatusModel
      */
-    public Future<FundingStatusModel> createFundingRequestAsync(int id, FundingInitiateModel model) {
+    public Future<FundingStatusModel> createFundingRequestAsync(Integer id, FundingInitiateModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{id}/funding/setup");
         path.applyField("id", id);
         return this.threadPool.submit((RestCall<FundingStatusModel>)restCallFactory.createRestCall("Post", path, model, new TypeToken<FundingStatusModel>(){}));
@@ -766,7 +766,7 @@ public class AvaTaxClient {
      * @param id The ID of the company you wish to delete.
      * @return ArrayList<ErrorDetail>
      */
-    public ArrayList<ErrorDetail> deleteCompany(int id) throws Exception {
+    public ArrayList<ErrorDetail> deleteCompany(Integer id) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{id}");
         path.applyField("id", id);
         return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("Delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){})).call();
@@ -778,7 +778,7 @@ public class AvaTaxClient {
      * @param id The ID of the company you wish to delete.
      * @return ArrayList<ErrorDetail>
      */
-    public Future<ArrayList<ErrorDetail>> deleteCompanyAsync(int id) {
+    public Future<ArrayList<ErrorDetail>> deleteCompanyAsync(Integer id) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{id}");
         path.applyField("id", id);
         return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("Delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){}));
@@ -803,7 +803,7 @@ public class AvaTaxClient {
      * @param include A comma separated list of child objects to return underneath the primary object.
      * @return CompanyModel
      */
-    public CompanyModel getCompany(int id, String include) throws Exception {
+    public CompanyModel getCompany(Integer id, String include) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{id}");
         path.applyField("id", id);
         path.addQuery("$include", include);
@@ -829,7 +829,7 @@ public class AvaTaxClient {
      * @param include A comma separated list of child objects to return underneath the primary object.
      * @return CompanyModel
      */
-    public Future<CompanyModel> getCompanyAsync(int id, String include) {
+    public Future<CompanyModel> getCompanyAsync(Integer id, String include) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{id}");
         path.applyField("id", id);
         path.addQuery("$include", include);
@@ -854,7 +854,7 @@ public class AvaTaxClient {
      * @param id 
      * @return ArrayList<CompanyConfigurationModel>
      */
-    public ArrayList<CompanyConfigurationModel> getCompanyConfiguration(int id) throws Exception {
+    public ArrayList<CompanyConfigurationModel> getCompanyConfiguration(Integer id) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{id}/configuration");
         path.applyField("id", id);
         return ((RestCall<ArrayList<CompanyConfigurationModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<ArrayList<CompanyConfigurationModel>>(){})).call();
@@ -878,7 +878,7 @@ public class AvaTaxClient {
      * @param id 
      * @return ArrayList<CompanyConfigurationModel>
      */
-    public Future<ArrayList<CompanyConfigurationModel>> getCompanyConfigurationAsync(int id) {
+    public Future<ArrayList<CompanyConfigurationModel>> getCompanyConfigurationAsync(Integer id) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{id}/configuration");
         path.applyField("id", id);
         return this.threadPool.submit((RestCall<ArrayList<CompanyConfigurationModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<ArrayList<CompanyConfigurationModel>>(){}));
@@ -894,7 +894,7 @@ public class AvaTaxClient {
      * @param id The unique identifier of the company
      * @return ArrayList<FundingStatusModel>
      */
-    public ArrayList<FundingStatusModel> listFundingRequestsByCompany(int id) throws Exception {
+    public ArrayList<FundingStatusModel> listFundingRequestsByCompany(Integer id) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{id}/funding");
         path.applyField("id", id);
         return ((RestCall<ArrayList<FundingStatusModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<ArrayList<FundingStatusModel>>(){})).call();
@@ -910,7 +910,7 @@ public class AvaTaxClient {
      * @param id The unique identifier of the company
      * @return ArrayList<FundingStatusModel>
      */
-    public Future<ArrayList<FundingStatusModel>> listFundingRequestsByCompanyAsync(int id) {
+    public Future<ArrayList<FundingStatusModel>> listFundingRequestsByCompanyAsync(Integer id) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{id}/funding");
         path.applyField("id", id);
         return this.threadPool.submit((RestCall<ArrayList<FundingStatusModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<ArrayList<FundingStatusModel>>(){}));
@@ -1003,7 +1003,7 @@ public class AvaTaxClient {
      * @param model 
      * @return ArrayList<CompanyConfigurationModel>
      */
-    public ArrayList<CompanyConfigurationModel> setCompanyConfiguration(int id, ArrayList<CompanyConfigurationModel> model) throws Exception {
+    public ArrayList<CompanyConfigurationModel> setCompanyConfiguration(Integer id, ArrayList<CompanyConfigurationModel> model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{id}/configuration");
         path.applyField("id", id);
         return ((RestCall<ArrayList<CompanyConfigurationModel>>)restCallFactory.createRestCall("Post", path, model, new TypeToken<ArrayList<CompanyConfigurationModel>>(){})).call();
@@ -1028,7 +1028,7 @@ public class AvaTaxClient {
      * @param model 
      * @return ArrayList<CompanyConfigurationModel>
      */
-    public Future<ArrayList<CompanyConfigurationModel>> setCompanyConfigurationAsync(int id, ArrayList<CompanyConfigurationModel> model) {
+    public Future<ArrayList<CompanyConfigurationModel>> setCompanyConfigurationAsync(Integer id, ArrayList<CompanyConfigurationModel> model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{id}/configuration");
         path.applyField("id", id);
         return this.threadPool.submit((RestCall<ArrayList<CompanyConfigurationModel>>)restCallFactory.createRestCall("Post", path, model, new TypeToken<ArrayList<CompanyConfigurationModel>>(){}));
@@ -1045,7 +1045,7 @@ public class AvaTaxClient {
      * @param model The company object you wish to update.
      * @return CompanyModel
      */
-    public CompanyModel updateCompany(int id, CompanyModel model) throws Exception {
+    public CompanyModel updateCompany(Integer id, CompanyModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{id}");
         path.applyField("id", id);
         return ((RestCall<CompanyModel>)restCallFactory.createRestCall("Put", path, model, new TypeToken<CompanyModel>(){})).call();
@@ -1062,7 +1062,7 @@ public class AvaTaxClient {
      * @param model The company object you wish to update.
      * @return CompanyModel
      */
-    public Future<CompanyModel> updateCompanyAsync(int id, CompanyModel model) {
+    public Future<CompanyModel> updateCompanyAsync(Integer id, CompanyModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{id}");
         path.applyField("id", id);
         return this.threadPool.submit((RestCall<CompanyModel>)restCallFactory.createRestCall("Put", path, model, new TypeToken<CompanyModel>(){}));
@@ -1078,7 +1078,7 @@ public class AvaTaxClient {
      * @param model The contacts you wish to create.
      * @return ArrayList<ContactModel>
      */
-    public ArrayList<ContactModel> createContacts(int companyId, ArrayList<ContactModel> model) throws Exception {
+    public ArrayList<ContactModel> createContacts(Integer companyId, ArrayList<ContactModel> model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/contacts");
         path.applyField("companyId", companyId);
         return ((RestCall<ArrayList<ContactModel>>)restCallFactory.createRestCall("Post", path, model, new TypeToken<ArrayList<ContactModel>>(){})).call();
@@ -1094,7 +1094,7 @@ public class AvaTaxClient {
      * @param model The contacts you wish to create.
      * @return ArrayList<ContactModel>
      */
-    public Future<ArrayList<ContactModel>> createContactsAsync(int companyId, ArrayList<ContactModel> model) {
+    public Future<ArrayList<ContactModel>> createContactsAsync(Integer companyId, ArrayList<ContactModel> model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/contacts");
         path.applyField("companyId", companyId);
         return this.threadPool.submit((RestCall<ArrayList<ContactModel>>)restCallFactory.createRestCall("Post", path, model, new TypeToken<ArrayList<ContactModel>>(){}));
@@ -1107,7 +1107,7 @@ public class AvaTaxClient {
      * @param id The ID of the contact you wish to delete.
      * @return ArrayList<ErrorDetail>
      */
-    public ArrayList<ErrorDetail> deleteContact(int companyId, int id) throws Exception {
+    public ArrayList<ErrorDetail> deleteContact(Integer companyId, Integer id) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/contacts/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
@@ -1121,7 +1121,7 @@ public class AvaTaxClient {
      * @param id The ID of the contact you wish to delete.
      * @return ArrayList<ErrorDetail>
      */
-    public Future<ArrayList<ErrorDetail>> deleteContactAsync(int companyId, int id) {
+    public Future<ArrayList<ErrorDetail>> deleteContactAsync(Integer companyId, Integer id) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/contacts/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
@@ -1138,7 +1138,7 @@ public class AvaTaxClient {
      * @param id The primary key of this contact
      * @return ContactModel
      */
-    public ContactModel getContact(int companyId, int id) throws Exception {
+    public ContactModel getContact(Integer companyId, Integer id) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/contacts/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
@@ -1155,7 +1155,7 @@ public class AvaTaxClient {
      * @param id The primary key of this contact
      * @return ContactModel
      */
-    public Future<ContactModel> getContactAsync(int companyId, int id) {
+    public Future<ContactModel> getContactAsync(Integer companyId, Integer id) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/contacts/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
@@ -1177,7 +1177,7 @@ public class AvaTaxClient {
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<HashMap<String, String>>
      */
-    public FetchResult<HashMap<String, String>> listContactsByCompany(int companyId, String filter, String include, Integer top, Integer skip, String orderBy) throws Exception {
+    public FetchResult<HashMap<String, String>> listContactsByCompany(Integer companyId, String filter, String include, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/contacts");
         path.applyField("companyId", companyId);
         path.addQuery("$filter", filter);
@@ -1203,7 +1203,7 @@ public class AvaTaxClient {
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<HashMap<String, String>>
      */
-    public Future<FetchResult<HashMap<String, String>>> listContactsByCompanyAsync(int companyId, String filter, String include, Integer top, Integer skip, String orderBy) {
+    public Future<FetchResult<HashMap<String, String>>> listContactsByCompanyAsync(Integer companyId, String filter, String include, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/contacts");
         path.applyField("companyId", companyId);
         path.addQuery("$filter", filter);
@@ -1279,7 +1279,7 @@ public class AvaTaxClient {
      * @param model The contact you wish to update.
      * @return ContactModel
      */
-    public ContactModel updateContact(int companyId, int id, ContactModel model) throws Exception {
+    public ContactModel updateContact(Integer companyId, Integer id, ContactModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/contacts/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
@@ -1299,7 +1299,7 @@ public class AvaTaxClient {
      * @param model The contact you wish to update.
      * @return ContactModel
      */
-    public Future<ContactModel> updateContactAsync(int companyId, int id, ContactModel model) {
+    public Future<ContactModel> updateContactAsync(Integer companyId, Integer id, ContactModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/contacts/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
@@ -2421,7 +2421,7 @@ public class AvaTaxClient {
      * @param id The primary key of this filing calendar
      * @return FilingCalendarModel
      */
-    public FilingCalendarModel apiV2CompaniesByCompanyIdFilingcalendarsByIdGet(int companyId, int id) throws Exception {
+    public FilingCalendarModel apiV2CompaniesByCompanyIdFilingcalendarsByIdGet(Integer companyId, Integer id) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingcalendars/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
@@ -2435,7 +2435,7 @@ public class AvaTaxClient {
      * @param id The primary key of this filing calendar
      * @return FilingCalendarModel
      */
-    public Future<FilingCalendarModel> apiV2CompaniesByCompanyIdFilingcalendarsByIdGetAsync(int companyId, int id) {
+    public Future<FilingCalendarModel> apiV2CompaniesByCompanyIdFilingcalendarsByIdGetAsync(Integer companyId, Integer id) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingcalendars/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
@@ -2452,7 +2452,7 @@ public class AvaTaxClient {
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<HashMap<String, String>>
      */
-    public FetchResult<HashMap<String, String>> apiV2CompaniesByCompanyIdFilingcalendarsGet(int companyId, String filter, Integer top, Integer skip, String orderBy) throws Exception {
+    public FetchResult<HashMap<String, String>> apiV2CompaniesByCompanyIdFilingcalendarsGet(Integer companyId, String filter, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingcalendars");
         path.applyField("companyId", companyId);
         path.addQuery("$filter", filter);
@@ -2472,7 +2472,7 @@ public class AvaTaxClient {
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<HashMap<String, String>>
      */
-    public Future<FetchResult<HashMap<String, String>>> apiV2CompaniesByCompanyIdFilingcalendarsGetAsync(int companyId, String filter, Integer top, Integer skip, String orderBy) {
+    public Future<FetchResult<HashMap<String, String>>> apiV2CompaniesByCompanyIdFilingcalendarsGetAsync(Integer companyId, String filter, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingcalendars");
         path.applyField("companyId", companyId);
         path.addQuery("$filter", filter);
@@ -2495,7 +2495,7 @@ public class AvaTaxClient {
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<HashMap<String, String>>
      */
-    public FetchResult<HashMap<String, String>> apiV2CompaniesByCompanyIdFilingrequestsGet(int companyId, String filter, Integer top, Integer skip, String orderBy) throws Exception {
+    public FetchResult<HashMap<String, String>> apiV2CompaniesByCompanyIdFilingrequestsGet(Integer companyId, String filter, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingrequests");
         path.applyField("companyId", companyId);
         path.addQuery("$filter", filter);
@@ -2518,7 +2518,7 @@ public class AvaTaxClient {
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<HashMap<String, String>>
      */
-    public Future<FetchResult<HashMap<String, String>>> apiV2CompaniesByCompanyIdFilingrequestsGetAsync(int companyId, String filter, Integer top, Integer skip, String orderBy) {
+    public Future<FetchResult<HashMap<String, String>>> apiV2CompaniesByCompanyIdFilingrequestsGetAsync(Integer companyId, String filter, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingrequests");
         path.applyField("companyId", companyId);
         path.addQuery("$filter", filter);
@@ -2535,7 +2535,7 @@ public class AvaTaxClient {
      * @param formCode The unique code of the form
      * @return ArrayList<CycleAddOptionModel>
      */
-    public ArrayList<CycleAddOptionModel> cycleSafeAdd(int companyId, String formCode) throws Exception {
+    public ArrayList<CycleAddOptionModel> cycleSafeAdd(Integer companyId, String formCode) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingcalendars/add/options");
         path.applyField("companyId", companyId);
         path.addQuery("formCode", formCode);
@@ -2549,7 +2549,7 @@ public class AvaTaxClient {
      * @param formCode The unique code of the form
      * @return ArrayList<CycleAddOptionModel>
      */
-    public Future<ArrayList<CycleAddOptionModel>> cycleSafeAddAsync(int companyId, String formCode) {
+    public Future<ArrayList<CycleAddOptionModel>> cycleSafeAddAsync(Integer companyId, String formCode) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingcalendars/add/options");
         path.applyField("companyId", companyId);
         path.addQuery("formCode", formCode);
@@ -2564,7 +2564,7 @@ public class AvaTaxClient {
      * @param model A list of filing calendar edits to be made
      * @return CycleEditOptionModel
      */
-    public CycleEditOptionModel cycleSafeEdit(int companyId, int id, ArrayList<FilingCalendarEditModel> model) throws Exception {
+    public CycleEditOptionModel cycleSafeEdit(Integer companyId, Integer id, ArrayList<FilingCalendarEditModel> model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingcalendars/{id}/edit/options");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
@@ -2579,7 +2579,7 @@ public class AvaTaxClient {
      * @param model A list of filing calendar edits to be made
      * @return CycleEditOptionModel
      */
-    public Future<CycleEditOptionModel> cycleSafeEditAsync(int companyId, int id, ArrayList<FilingCalendarEditModel> model) {
+    public Future<CycleEditOptionModel> cycleSafeEditAsync(Integer companyId, Integer id, ArrayList<FilingCalendarEditModel> model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingcalendars/{id}/edit/options");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
@@ -2593,7 +2593,7 @@ public class AvaTaxClient {
      * @param id The unique ID of the filing calendar object
      * @return CycleExpireModel
      */
-    public CycleExpireModel cycleSafeExpiration(int companyId, int id) throws Exception {
+    public CycleExpireModel cycleSafeExpiration(Integer companyId, Integer id) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingcalendars/{id}/cancel/options");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
@@ -2607,7 +2607,7 @@ public class AvaTaxClient {
      * @param id The unique ID of the filing calendar object
      * @return CycleExpireModel
      */
-    public Future<CycleExpireModel> cycleSafeExpirationAsync(int companyId, int id) {
+    public Future<CycleExpireModel> cycleSafeExpirationAsync(Integer companyId, Integer id) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingcalendars/{id}/cancel/options");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
@@ -2625,7 +2625,7 @@ public class AvaTaxClient {
      * @param id The ID of the filing calendar you wish to delete.
      * @return ArrayList<ErrorDetail>
      */
-    public ArrayList<ErrorDetail> deleteFilingCalendar(int companyId, int id) throws Exception {
+    public ArrayList<ErrorDetail> deleteFilingCalendar(Integer companyId, Integer id) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingcalendars/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
@@ -2643,7 +2643,7 @@ public class AvaTaxClient {
      * @param id The ID of the filing calendar you wish to delete.
      * @return ArrayList<ErrorDetail>
      */
-    public Future<ArrayList<ErrorDetail>> deleteFilingCalendarAsync(int companyId, int id) {
+    public Future<ArrayList<ErrorDetail>> deleteFilingCalendarAsync(Integer companyId, Integer id) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingcalendars/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
@@ -2661,7 +2661,7 @@ public class AvaTaxClient {
      * @param model The filing calendar model you are wishing to update with.
      * @return FilingCalendarModel
      */
-    public FilingCalendarModel filingCalendarUpdate(int companyId, int id, FilingCalendarModel model) throws Exception {
+    public FilingCalendarModel filingCalendarUpdate(Integer companyId, Integer id, FilingCalendarModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingcalendars/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
@@ -2679,7 +2679,7 @@ public class AvaTaxClient {
      * @param model The filing calendar model you are wishing to update with.
      * @return FilingCalendarModel
      */
-    public Future<FilingCalendarModel> filingCalendarUpdateAsync(int companyId, int id, FilingCalendarModel model) {
+    public Future<FilingCalendarModel> filingCalendarUpdateAsync(Integer companyId, Integer id, FilingCalendarModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingcalendars/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
@@ -2696,7 +2696,7 @@ public class AvaTaxClient {
      * @param id The primary key of this filing calendar
      * @return FilingRequestModel
      */
-    public FilingRequestModel filingRequests(int companyId, int id) throws Exception {
+    public FilingRequestModel filingRequests(Integer companyId, Integer id) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingrequests/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
@@ -2713,7 +2713,7 @@ public class AvaTaxClient {
      * @param id The primary key of this filing calendar
      * @return FilingRequestModel
      */
-    public Future<FilingRequestModel> filingRequestsAsync(int companyId, int id) {
+    public Future<FilingRequestModel> filingRequestsAsync(Integer companyId, Integer id) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingrequests/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
@@ -2730,7 +2730,7 @@ public class AvaTaxClient {
      * @param model Information about the proposed new filing calendar
      * @return FilingRequestModel
      */
-    public FilingRequestModel filingRequestsAdd(int companyId, ArrayList<FilingRequestModel> model) throws Exception {
+    public FilingRequestModel filingRequestsAdd(Integer companyId, ArrayList<FilingRequestModel> model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingcalendars/add/request");
         path.applyField("companyId", companyId);
         return ((RestCall<FilingRequestModel>)restCallFactory.createRestCall("Post", path, model, new TypeToken<FilingRequestModel>(){})).call();
@@ -2746,7 +2746,7 @@ public class AvaTaxClient {
      * @param model Information about the proposed new filing calendar
      * @return FilingRequestModel
      */
-    public Future<FilingRequestModel> filingRequestsAddAsync(int companyId, ArrayList<FilingRequestModel> model) {
+    public Future<FilingRequestModel> filingRequestsAddAsync(Integer companyId, ArrayList<FilingRequestModel> model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingcalendars/add/request");
         path.applyField("companyId", companyId);
         return this.threadPool.submit((RestCall<FilingRequestModel>)restCallFactory.createRestCall("Post", path, model, new TypeToken<FilingRequestModel>(){}));
@@ -2763,7 +2763,7 @@ public class AvaTaxClient {
      * @param id The unique ID of the filing request object
      * @return FilingRequestModel
      */
-    public FilingRequestModel filingRequestsApprove(int companyId, int id) throws Exception {
+    public FilingRequestModel filingRequestsApprove(Integer companyId, Integer id) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingrequests/{id}/approve");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
@@ -2781,7 +2781,7 @@ public class AvaTaxClient {
      * @param id The unique ID of the filing request object
      * @return FilingRequestModel
      */
-    public Future<FilingRequestModel> filingRequestsApproveAsync(int companyId, int id) {
+    public Future<FilingRequestModel> filingRequestsApproveAsync(Integer companyId, Integer id) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingrequests/{id}/approve");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
@@ -2798,7 +2798,7 @@ public class AvaTaxClient {
      * @param id The unique ID of the filing request object
      * @return FilingRequestModel
      */
-    public FilingRequestModel filingRequestsCancel(int companyId, int id) throws Exception {
+    public FilingRequestModel filingRequestsCancel(Integer companyId, Integer id) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingrequests/{id}/cancel");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
@@ -2815,7 +2815,7 @@ public class AvaTaxClient {
      * @param id The unique ID of the filing request object
      * @return FilingRequestModel
      */
-    public Future<FilingRequestModel> filingRequestsCancelAsync(int companyId, int id) {
+    public Future<FilingRequestModel> filingRequestsCancelAsync(Integer companyId, Integer id) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingrequests/{id}/cancel");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
@@ -2833,7 +2833,7 @@ public class AvaTaxClient {
      * @param model The cancellation request for this filing calendar
      * @return FilingRequestModel
      */
-    public FilingRequestModel filingRequestsNewCancel(int companyId, int id, ArrayList<FilingRequestModel> model) throws Exception {
+    public FilingRequestModel filingRequestsNewCancel(Integer companyId, Integer id, ArrayList<FilingRequestModel> model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingcalendars/{id}/cancel/request");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
@@ -2851,7 +2851,7 @@ public class AvaTaxClient {
      * @param model The cancellation request for this filing calendar
      * @return FilingRequestModel
      */
-    public Future<FilingRequestModel> filingRequestsNewCancelAsync(int companyId, int id, ArrayList<FilingRequestModel> model) {
+    public Future<FilingRequestModel> filingRequestsNewCancelAsync(Integer companyId, Integer id, ArrayList<FilingRequestModel> model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingcalendars/{id}/cancel/request");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
@@ -2869,7 +2869,7 @@ public class AvaTaxClient {
      * @param model A list of filing calendar edits to be made
      * @return FilingRequestModel
      */
-    public FilingRequestModel filingRequestsNewEdit(int companyId, int id, ArrayList<FilingRequestModel> model) throws Exception {
+    public FilingRequestModel filingRequestsNewEdit(Integer companyId, Integer id, ArrayList<FilingRequestModel> model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingcalendars/{id}/edit/request");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
@@ -2887,7 +2887,7 @@ public class AvaTaxClient {
      * @param model A list of filing calendar edits to be made
      * @return FilingRequestModel
      */
-    public Future<FilingRequestModel> filingRequestsNewEditAsync(int companyId, int id, ArrayList<FilingRequestModel> model) {
+    public Future<FilingRequestModel> filingRequestsNewEditAsync(Integer companyId, Integer id, ArrayList<FilingRequestModel> model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingcalendars/{id}/edit/request");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
@@ -2905,7 +2905,7 @@ public class AvaTaxClient {
      * @param model A list of filing calendar edits to be made
      * @return FilingRequestModel
      */
-    public FilingRequestModel filingRequestsUpdate(int companyId, int id, FilingRequestModel model) throws Exception {
+    public FilingRequestModel filingRequestsUpdate(Integer companyId, Integer id, FilingRequestModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingrequests/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
@@ -2923,7 +2923,7 @@ public class AvaTaxClient {
      * @param model A list of filing calendar edits to be made
      * @return FilingRequestModel
      */
-    public Future<FilingRequestModel> filingRequestsUpdateAsync(int companyId, int id, FilingRequestModel model) {
+    public Future<FilingRequestModel> filingRequestsUpdateAsync(Integer companyId, Integer id, FilingRequestModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingrequests/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
@@ -2936,7 +2936,7 @@ public class AvaTaxClient {
      * @param jobId The unique ID number of this login request
      * @return LoginVerificationOutputModel
      */
-    public LoginVerificationOutputModel loginVerificationGet(int jobId) throws Exception {
+    public LoginVerificationOutputModel loginVerificationGet(Integer jobId) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/filingcalendars/credentials/{jobId}");
         path.applyField("jobId", jobId);
         return ((RestCall<LoginVerificationOutputModel>)restCallFactory.createRestCall("Get", path, null, new TypeToken<LoginVerificationOutputModel>(){})).call();
@@ -2948,7 +2948,7 @@ public class AvaTaxClient {
      * @param jobId The unique ID number of this login request
      * @return LoginVerificationOutputModel
      */
-    public Future<LoginVerificationOutputModel> loginVerificationGetAsync(int jobId) {
+    public Future<LoginVerificationOutputModel> loginVerificationGetAsync(Integer jobId) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/filingcalendars/credentials/{jobId}");
         path.applyField("jobId", jobId);
         return this.threadPool.submit((RestCall<LoginVerificationOutputModel>)restCallFactory.createRestCall("Get", path, null, new TypeToken<LoginVerificationOutputModel>(){}));
@@ -3076,7 +3076,7 @@ public class AvaTaxClient {
      * @param model The approve request you wish to execute.
      * @return ArrayList<FilingModel>
      */
-    public ArrayList<FilingModel> approveFilings(int companyId, short year, byte month, ApproveFilingsModel model) throws Exception {
+    public ArrayList<FilingModel> approveFilings(Integer companyId, Short year, Byte month, ApproveFilingsModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/approve");
         path.applyField("companyId", companyId);
         path.applyField("year", year);
@@ -3100,7 +3100,7 @@ public class AvaTaxClient {
      * @param model The approve request you wish to execute.
      * @return ArrayList<FilingModel>
      */
-    public Future<ArrayList<FilingModel>> approveFilingsAsync(int companyId, short year, byte month, ApproveFilingsModel model) {
+    public Future<ArrayList<FilingModel>> approveFilingsAsync(Integer companyId, Short year, Byte month, ApproveFilingsModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/approve");
         path.applyField("companyId", companyId);
         path.applyField("year", year);
@@ -3125,7 +3125,7 @@ public class AvaTaxClient {
      * @param model The approve request you wish to execute.
      * @return ArrayList<FilingModel>
      */
-    public ArrayList<FilingModel> approveFilingsCountry(int companyId, short year, byte month, String country, ApproveFilingsModel model) throws Exception {
+    public ArrayList<FilingModel> approveFilingsCountry(Integer companyId, Short year, Byte month, String country, ApproveFilingsModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/{country}/approve");
         path.applyField("companyId", companyId);
         path.applyField("year", year);
@@ -3151,7 +3151,7 @@ public class AvaTaxClient {
      * @param model The approve request you wish to execute.
      * @return ArrayList<FilingModel>
      */
-    public Future<ArrayList<FilingModel>> approveFilingsCountryAsync(int companyId, short year, byte month, String country, ApproveFilingsModel model) {
+    public Future<ArrayList<FilingModel>> approveFilingsCountryAsync(Integer companyId, Short year, Byte month, String country, ApproveFilingsModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/{country}/approve");
         path.applyField("companyId", companyId);
         path.applyField("year", year);
@@ -3178,7 +3178,7 @@ public class AvaTaxClient {
      * @param model The approve request you wish to execute.
      * @return ArrayList<FilingModel>
      */
-    public ArrayList<FilingModel> approveFilingsCountryRegion(int companyId, short year, byte month, String country, String region, ApproveFilingsModel model) throws Exception {
+    public ArrayList<FilingModel> approveFilingsCountryRegion(Integer companyId, Short year, Byte month, String country, String region, ApproveFilingsModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/{country}/{region}/approve");
         path.applyField("companyId", companyId);
         path.applyField("year", year);
@@ -3206,7 +3206,7 @@ public class AvaTaxClient {
      * @param model The approve request you wish to execute.
      * @return ArrayList<FilingModel>
      */
-    public Future<ArrayList<FilingModel>> approveFilingsCountryRegionAsync(int companyId, short year, byte month, String country, String region, ApproveFilingsModel model) {
+    public Future<ArrayList<FilingModel>> approveFilingsCountryRegionAsync(Integer companyId, Short year, Byte month, String country, String region, ApproveFilingsModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/{country}/{region}/approve");
         path.applyField("companyId", companyId);
         path.applyField("year", year);
@@ -3234,7 +3234,7 @@ public class AvaTaxClient {
      * @param model A list of Adjustments to be created for the specified filing.
      * @return ArrayList<FilingAdjustmentModel>
      */
-    public ArrayList<FilingAdjustmentModel> createReturnAdjustment(int companyId, short year, byte month, String country, String region, String formCode, ArrayList<FilingAdjustmentModel> model) throws Exception {
+    public ArrayList<FilingAdjustmentModel> createReturnAdjustment(Integer companyId, Short year, Byte month, String country, String region, String formCode, ArrayList<FilingAdjustmentModel> model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/{country}/{region}/{formCode}/adjust");
         path.applyField("companyId", companyId);
         path.applyField("year", year);
@@ -3263,7 +3263,7 @@ public class AvaTaxClient {
      * @param model A list of Adjustments to be created for the specified filing.
      * @return ArrayList<FilingAdjustmentModel>
      */
-    public Future<ArrayList<FilingAdjustmentModel>> createReturnAdjustmentAsync(int companyId, short year, byte month, String country, String region, String formCode, ArrayList<FilingAdjustmentModel> model) {
+    public Future<ArrayList<FilingAdjustmentModel>> createReturnAdjustmentAsync(Integer companyId, Short year, Byte month, String country, String region, String formCode, ArrayList<FilingAdjustmentModel> model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/{country}/{region}/{formCode}/adjust");
         path.applyField("companyId", companyId);
         path.applyField("year", year);
@@ -3291,7 +3291,7 @@ public class AvaTaxClient {
      * @param model A list of augmentations to be created for the specified filing.
      * @return ArrayList<FilingAugmentationModel>
      */
-    public ArrayList<FilingAugmentationModel> createReturnAugmentation(int companyId, short year, byte month, String country, String region, String formCode, ArrayList<FilingAugmentationModel> model) throws Exception {
+    public ArrayList<FilingAugmentationModel> createReturnAugmentation(Integer companyId, Short year, Byte month, String country, String region, String formCode, ArrayList<FilingAugmentationModel> model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/{country}/{region}/{formCode}/augment");
         path.applyField("companyId", companyId);
         path.applyField("year", year);
@@ -3319,7 +3319,7 @@ public class AvaTaxClient {
      * @param model A list of augmentations to be created for the specified filing.
      * @return ArrayList<FilingAugmentationModel>
      */
-    public Future<ArrayList<FilingAugmentationModel>> createReturnAugmentationAsync(int companyId, short year, byte month, String country, String region, String formCode, ArrayList<FilingAugmentationModel> model) {
+    public Future<ArrayList<FilingAugmentationModel>> createReturnAugmentationAsync(Integer companyId, Short year, Byte month, String country, String region, String formCode, ArrayList<FilingAugmentationModel> model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/{country}/{region}/{formCode}/augment");
         path.applyField("companyId", companyId);
         path.applyField("year", year);
@@ -3343,7 +3343,7 @@ public class AvaTaxClient {
      * @param id The ID of the adjustment being deleted.
      * @return ArrayList<ErrorDetail>
      */
-    public ArrayList<ErrorDetail> deleteReturnAdjustment(int companyId, long id) throws Exception {
+    public ArrayList<ErrorDetail> deleteReturnAdjustment(Integer companyId, Long id) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/adjust/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
@@ -3363,7 +3363,7 @@ public class AvaTaxClient {
      * @param id The ID of the adjustment being deleted.
      * @return ArrayList<ErrorDetail>
      */
-    public Future<ArrayList<ErrorDetail>> deleteReturnAdjustmentAsync(int companyId, long id) {
+    public Future<ArrayList<ErrorDetail>> deleteReturnAdjustmentAsync(Integer companyId, Long id) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/adjust/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
@@ -3382,7 +3382,7 @@ public class AvaTaxClient {
      * @param id The ID of the augmentation being added.
      * @return ArrayList<ErrorDetail>
      */
-    public ArrayList<ErrorDetail> deleteReturnAugmentation(int companyId, long id) throws Exception {
+    public ArrayList<ErrorDetail> deleteReturnAugmentation(Integer companyId, Long id) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/augment/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
@@ -3401,7 +3401,7 @@ public class AvaTaxClient {
      * @param id The ID of the augmentation being added.
      * @return ArrayList<ErrorDetail>
      */
-    public Future<ArrayList<ErrorDetail>> deleteReturnAugmentationAsync(int companyId, long id) {
+    public Future<ArrayList<ErrorDetail>> deleteReturnAugmentationAsync(Integer companyId, Long id) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/augment/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
@@ -3415,7 +3415,7 @@ public class AvaTaxClient {
      * @param companyId The unique ID of the company that owns the worksheet.
      * @return FilingsCheckupModel
      */
-    public FilingsCheckupModel filingsCheckupReport(int worksheetId, int companyId) throws Exception {
+    public FilingsCheckupModel filingsCheckupReport(Integer worksheetId, Integer companyId) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{worksheetId}/checkup");
         path.applyField("worksheetId", worksheetId);
         path.applyField("companyId", companyId);
@@ -3429,7 +3429,7 @@ public class AvaTaxClient {
      * @param companyId The unique ID of the company that owns the worksheet.
      * @return FilingsCheckupModel
      */
-    public Future<FilingsCheckupModel> filingsCheckupReportAsync(int worksheetId, int companyId) {
+    public Future<FilingsCheckupModel> filingsCheckupReportAsync(Integer worksheetId, Integer companyId) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{worksheetId}/checkup");
         path.applyField("worksheetId", worksheetId);
         path.applyField("companyId", companyId);
@@ -3444,7 +3444,7 @@ public class AvaTaxClient {
      * @param month The month of the filing period.
      * @return FilingsCheckupModel
      */
-    public FilingsCheckupModel filingsCheckupReports(int companyId, int year, int month) throws Exception {
+    public FilingsCheckupModel filingsCheckupReports(Integer companyId, Integer year, Integer month) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/checkup");
         path.applyField("companyId", companyId);
         path.applyField("year", year);
@@ -3460,7 +3460,7 @@ public class AvaTaxClient {
      * @param month The month of the filing period.
      * @return FilingsCheckupModel
      */
-    public Future<FilingsCheckupModel> filingsCheckupReportsAsync(int companyId, int year, int month) {
+    public Future<FilingsCheckupModel> filingsCheckupReportsAsync(Integer companyId, Integer year, Integer month) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/checkup");
         path.applyField("companyId", companyId);
         path.applyField("year", year);
@@ -3476,7 +3476,7 @@ public class AvaTaxClient {
      * @param fileId The unique id of the document you are downloading
      * @return HashMap<String, String>
      */
-    public HashMap<String, String> getFilingAttachment(int companyId, long filingId, Long fileId) throws Exception {
+    public HashMap<String, String> getFilingAttachment(Integer companyId, Long filingId, Long fileId) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{filingId}/attachment");
         path.applyField("companyId", companyId);
         path.applyField("filingId", filingId);
@@ -3492,7 +3492,7 @@ public class AvaTaxClient {
      * @param fileId The unique id of the document you are downloading
      * @return HashMap<String, String>
      */
-    public Future<HashMap<String, String>> getFilingAttachmentAsync(int companyId, long filingId, Long fileId) {
+    public Future<HashMap<String, String>> getFilingAttachmentAsync(Integer companyId, Long filingId, Long fileId) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{filingId}/attachment");
         path.applyField("companyId", companyId);
         path.applyField("filingId", filingId);
@@ -3511,7 +3511,7 @@ public class AvaTaxClient {
      * @param month The two digit month of the filing period.
      * @return HashMap<String, String>
      */
-    public HashMap<String, String> getFilingAttachments(int companyId, short year, byte month) throws Exception {
+    public HashMap<String, String> getFilingAttachments(Integer companyId, Short year, Byte month) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/attachments");
         path.applyField("companyId", companyId);
         path.applyField("year", year);
@@ -3530,7 +3530,7 @@ public class AvaTaxClient {
      * @param month The two digit month of the filing period.
      * @return HashMap<String, String>
      */
-    public Future<HashMap<String, String>> getFilingAttachmentsAsync(int companyId, short year, byte month) {
+    public Future<HashMap<String, String>> getFilingAttachmentsAsync(Integer companyId, Short year, Byte month) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/attachments");
         path.applyField("companyId", companyId);
         path.applyField("year", year);
@@ -3549,7 +3549,7 @@ public class AvaTaxClient {
      * @param month The two digit month of the filing period.
      * @return HashMap<String, String>
      */
-    public HashMap<String, String> getFilingAttachmentsTraceFile(int companyId, short year, byte month) throws Exception {
+    public HashMap<String, String> getFilingAttachmentsTraceFile(Integer companyId, Short year, Byte month) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/attachments/tracefile");
         path.applyField("companyId", companyId);
         path.applyField("year", year);
@@ -3568,7 +3568,7 @@ public class AvaTaxClient {
      * @param month The two digit month of the filing period.
      * @return HashMap<String, String>
      */
-    public Future<HashMap<String, String>> getFilingAttachmentsTraceFileAsync(int companyId, short year, byte month) {
+    public Future<HashMap<String, String>> getFilingAttachmentsTraceFileAsync(Integer companyId, Short year, Byte month) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/attachments/tracefile");
         path.applyField("companyId", companyId);
         path.applyField("year", year);
@@ -3587,7 +3587,7 @@ public class AvaTaxClient {
      * @param month The two digit month of the filing period.
      * @return FetchResult<HashMap<String, String>>
      */
-    public FetchResult<HashMap<String, String>> getFilings(int companyId, short year, byte month) throws Exception {
+    public FetchResult<HashMap<String, String>> getFilings(Integer companyId, Short year, Byte month) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}");
         path.applyField("companyId", companyId);
         path.applyField("year", year);
@@ -3606,7 +3606,7 @@ public class AvaTaxClient {
      * @param month The two digit month of the filing period.
      * @return FetchResult<HashMap<String, String>>
      */
-    public Future<FetchResult<HashMap<String, String>>> getFilingsAsync(int companyId, short year, byte month) {
+    public Future<FetchResult<HashMap<String, String>>> getFilingsAsync(Integer companyId, Short year, Byte month) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}");
         path.applyField("companyId", companyId);
         path.applyField("year", year);
@@ -3626,7 +3626,7 @@ public class AvaTaxClient {
      * @param country The two-character ISO-3166 code for the country.
      * @return FetchResult<HashMap<String, String>>
      */
-    public FetchResult<HashMap<String, String>> getFilingsByCountry(int companyId, short year, byte month, String country) throws Exception {
+    public FetchResult<HashMap<String, String>> getFilingsByCountry(Integer companyId, Short year, Byte month, String country) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/{country}");
         path.applyField("companyId", companyId);
         path.applyField("year", year);
@@ -3647,7 +3647,7 @@ public class AvaTaxClient {
      * @param country The two-character ISO-3166 code for the country.
      * @return FetchResult<HashMap<String, String>>
      */
-    public Future<FetchResult<HashMap<String, String>>> getFilingsByCountryAsync(int companyId, short year, byte month, String country) {
+    public Future<FetchResult<HashMap<String, String>>> getFilingsByCountryAsync(Integer companyId, Short year, Byte month, String country) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/{country}");
         path.applyField("companyId", companyId);
         path.applyField("year", year);
@@ -3669,7 +3669,7 @@ public class AvaTaxClient {
      * @param region The two or three character region code for the region.
      * @return FetchResult<HashMap<String, String>>
      */
-    public FetchResult<HashMap<String, String>> getFilingsByCountryRegion(int companyId, short year, byte month, String country, String region) throws Exception {
+    public FetchResult<HashMap<String, String>> getFilingsByCountryRegion(Integer companyId, Short year, Byte month, String country, String region) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/{country}/{region}");
         path.applyField("companyId", companyId);
         path.applyField("year", year);
@@ -3692,7 +3692,7 @@ public class AvaTaxClient {
      * @param region The two or three character region code for the region.
      * @return FetchResult<HashMap<String, String>>
      */
-    public Future<FetchResult<HashMap<String, String>>> getFilingsByCountryRegionAsync(int companyId, short year, byte month, String country, String region) {
+    public Future<FetchResult<HashMap<String, String>>> getFilingsByCountryRegionAsync(Integer companyId, Short year, Byte month, String country, String region) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/{country}/{region}");
         path.applyField("companyId", companyId);
         path.applyField("year", year);
@@ -3716,7 +3716,7 @@ public class AvaTaxClient {
      * @param formCode The unique code of the form.
      * @return FetchResult<HashMap<String, String>>
      */
-    public FetchResult<HashMap<String, String>> getFilingsByReturnName(int companyId, short year, byte month, String country, String region, String formCode) throws Exception {
+    public FetchResult<HashMap<String, String>> getFilingsByReturnName(Integer companyId, Short year, Byte month, String country, String region, String formCode) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/{country}/{region}/{formCode}");
         path.applyField("companyId", companyId);
         path.applyField("year", year);
@@ -3741,7 +3741,7 @@ public class AvaTaxClient {
      * @param formCode The unique code of the form.
      * @return FetchResult<HashMap<String, String>>
      */
-    public Future<FetchResult<HashMap<String, String>>> getFilingsByReturnNameAsync(int companyId, short year, byte month, String country, String region, String formCode) {
+    public Future<FetchResult<HashMap<String, String>>> getFilingsByReturnNameAsync(Integer companyId, Short year, Byte month, String country, String region, String formCode) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/{country}/{region}/{formCode}");
         path.applyField("companyId", companyId);
         path.applyField("year", year);
@@ -3767,7 +3767,7 @@ public class AvaTaxClient {
      * @param model The rebuild request you wish to execute.
      * @return FetchResult<HashMap<String, String>>
      */
-    public FetchResult<HashMap<String, String>> rebuildFilings(int companyId, short year, byte month, RebuildFilingsModel model) throws Exception {
+    public FetchResult<HashMap<String, String>> rebuildFilings(Integer companyId, Short year, Byte month, RebuildFilingsModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/rebuild");
         path.applyField("companyId", companyId);
         path.applyField("year", year);
@@ -3790,7 +3790,7 @@ public class AvaTaxClient {
      * @param model The rebuild request you wish to execute.
      * @return FetchResult<HashMap<String, String>>
      */
-    public Future<FetchResult<HashMap<String, String>>> rebuildFilingsAsync(int companyId, short year, byte month, RebuildFilingsModel model) {
+    public Future<FetchResult<HashMap<String, String>>> rebuildFilingsAsync(Integer companyId, Short year, Byte month, RebuildFilingsModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/rebuild");
         path.applyField("companyId", companyId);
         path.applyField("year", year);
@@ -3814,7 +3814,7 @@ public class AvaTaxClient {
      * @param model The rebuild request you wish to execute.
      * @return FetchResult<HashMap<String, String>>
      */
-    public FetchResult<HashMap<String, String>> rebuildFilingsByCountry(int companyId, short year, byte month, String country, RebuildFilingsModel model) throws Exception {
+    public FetchResult<HashMap<String, String>> rebuildFilingsByCountry(Integer companyId, Short year, Byte month, String country, RebuildFilingsModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/{country}/rebuild");
         path.applyField("companyId", companyId);
         path.applyField("year", year);
@@ -3839,7 +3839,7 @@ public class AvaTaxClient {
      * @param model The rebuild request you wish to execute.
      * @return FetchResult<HashMap<String, String>>
      */
-    public Future<FetchResult<HashMap<String, String>>> rebuildFilingsByCountryAsync(int companyId, short year, byte month, String country, RebuildFilingsModel model) {
+    public Future<FetchResult<HashMap<String, String>>> rebuildFilingsByCountryAsync(Integer companyId, Short year, Byte month, String country, RebuildFilingsModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/{country}/rebuild");
         path.applyField("companyId", companyId);
         path.applyField("year", year);
@@ -3865,7 +3865,7 @@ public class AvaTaxClient {
      * @param model The rebuild request you wish to execute.
      * @return FetchResult<HashMap<String, String>>
      */
-    public FetchResult<HashMap<String, String>> rebuildFilingsByCountryRegion(int companyId, short year, byte month, String country, String region, RebuildFilingsModel model) throws Exception {
+    public FetchResult<HashMap<String, String>> rebuildFilingsByCountryRegion(Integer companyId, Short year, Byte month, String country, String region, RebuildFilingsModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/{country}/{region}/rebuild");
         path.applyField("companyId", companyId);
         path.applyField("year", year);
@@ -3892,7 +3892,7 @@ public class AvaTaxClient {
      * @param model The rebuild request you wish to execute.
      * @return FetchResult<HashMap<String, String>>
      */
-    public Future<FetchResult<HashMap<String, String>>> rebuildFilingsByCountryRegionAsync(int companyId, short year, byte month, String country, String region, RebuildFilingsModel model) {
+    public Future<FetchResult<HashMap<String, String>>> rebuildFilingsByCountryRegionAsync(Integer companyId, Short year, Byte month, String country, String region, RebuildFilingsModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/{country}/{region}/rebuild");
         path.applyField("companyId", companyId);
         path.applyField("year", year);
@@ -3916,7 +3916,7 @@ public class AvaTaxClient {
      * @param model The updated Adjustment.
      * @return FilingAdjustmentModel
      */
-    public FilingAdjustmentModel updateReturnAdjustment(int companyId, long id, FilingAdjustmentModel model) throws Exception {
+    public FilingAdjustmentModel updateReturnAdjustment(Integer companyId, Long id, FilingAdjustmentModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/adjust/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
@@ -3937,7 +3937,7 @@ public class AvaTaxClient {
      * @param model The updated Adjustment.
      * @return FilingAdjustmentModel
      */
-    public Future<FilingAdjustmentModel> updateReturnAdjustmentAsync(int companyId, long id, FilingAdjustmentModel model) {
+    public Future<FilingAdjustmentModel> updateReturnAdjustmentAsync(Integer companyId, Long id, FilingAdjustmentModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/adjust/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
@@ -3957,7 +3957,7 @@ public class AvaTaxClient {
      * @param model The updated Augmentation.
      * @return FilingModel
      */
-    public FilingModel updateReturnAugmentation(int companyId, long id, FilingAugmentationModel model) throws Exception {
+    public FilingModel updateReturnAugmentation(Integer companyId, Long id, FilingAugmentationModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/augment/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
@@ -3977,7 +3977,7 @@ public class AvaTaxClient {
      * @param model The updated Augmentation.
      * @return FilingModel
      */
-    public Future<FilingModel> updateReturnAugmentationAsync(int companyId, long id, FilingAugmentationModel model) {
+    public Future<FilingModel> updateReturnAugmentationAsync(Integer companyId, Long id, FilingAugmentationModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/augment/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
@@ -4208,7 +4208,7 @@ public class AvaTaxClient {
      * @param id The unique ID number of this funding request
      * @return FundingStatusModel
      */
-    public FundingStatusModel activateFundingRequest(long id) throws Exception {
+    public FundingStatusModel activateFundingRequest(Long id) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/fundingrequests/{id}/widget");
         path.applyField("id", id);
         return ((RestCall<FundingStatusModel>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FundingStatusModel>(){})).call();
@@ -4232,7 +4232,7 @@ public class AvaTaxClient {
      * @param id The unique ID number of this funding request
      * @return FundingStatusModel
      */
-    public Future<FundingStatusModel> activateFundingRequestAsync(long id) {
+    public Future<FundingStatusModel> activateFundingRequestAsync(Long id) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/fundingrequests/{id}/widget");
         path.applyField("id", id);
         return this.threadPool.submit((RestCall<FundingStatusModel>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FundingStatusModel>(){}));
@@ -4254,7 +4254,7 @@ public class AvaTaxClient {
      * @param id The unique ID number of this funding request
      * @return FundingStatusModel
      */
-    public FundingStatusModel fundingRequestStatus(int id) throws Exception {
+    public FundingStatusModel fundingRequestStatus(Integer id) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/fundingrequests/{id}");
         path.applyField("id", id);
         return ((RestCall<FundingStatusModel>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FundingStatusModel>(){})).call();
@@ -4276,7 +4276,7 @@ public class AvaTaxClient {
      * @param id The unique ID number of this funding request
      * @return FundingStatusModel
      */
-    public Future<FundingStatusModel> fundingRequestStatusAsync(int id) {
+    public Future<FundingStatusModel> fundingRequestStatusAsync(Integer id) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/fundingrequests/{id}");
         path.applyField("id", id);
         return this.threadPool.submit((RestCall<FundingStatusModel>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FundingStatusModel>(){}));
@@ -4289,7 +4289,7 @@ public class AvaTaxClient {
      * @param model The item you wish to create.
      * @return ArrayList<ItemModel>
      */
-    public ArrayList<ItemModel> createItems(int companyId, ArrayList<ItemModel> model) throws Exception {
+    public ArrayList<ItemModel> createItems(Integer companyId, ArrayList<ItemModel> model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/items");
         path.applyField("companyId", companyId);
         return ((RestCall<ArrayList<ItemModel>>)restCallFactory.createRestCall("Post", path, model, new TypeToken<ArrayList<ItemModel>>(){})).call();
@@ -4302,7 +4302,7 @@ public class AvaTaxClient {
      * @param model The item you wish to create.
      * @return ArrayList<ItemModel>
      */
-    public Future<ArrayList<ItemModel>> createItemsAsync(int companyId, ArrayList<ItemModel> model) {
+    public Future<ArrayList<ItemModel>> createItemsAsync(Integer companyId, ArrayList<ItemModel> model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/items");
         path.applyField("companyId", companyId);
         return this.threadPool.submit((RestCall<ArrayList<ItemModel>>)restCallFactory.createRestCall("Post", path, model, new TypeToken<ArrayList<ItemModel>>(){}));
@@ -4315,7 +4315,7 @@ public class AvaTaxClient {
      * @param id The ID of the item you wish to delete.
      * @return ArrayList<ErrorDetail>
      */
-    public ArrayList<ErrorDetail> deleteItem(int companyId, long id) throws Exception {
+    public ArrayList<ErrorDetail> deleteItem(Integer companyId, Long id) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/items/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
@@ -4329,7 +4329,7 @@ public class AvaTaxClient {
      * @param id The ID of the item you wish to delete.
      * @return ArrayList<ErrorDetail>
      */
-    public Future<ArrayList<ErrorDetail>> deleteItemAsync(int companyId, long id) {
+    public Future<ArrayList<ErrorDetail>> deleteItemAsync(Integer companyId, Long id) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/items/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
@@ -4345,7 +4345,7 @@ public class AvaTaxClient {
      * @param id The primary key of this item
      * @return ItemModel
      */
-    public ItemModel getItem(int companyId, long id) throws Exception {
+    public ItemModel getItem(Integer companyId, Long id) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/items/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
@@ -4361,7 +4361,7 @@ public class AvaTaxClient {
      * @param id The primary key of this item
      * @return ItemModel
      */
-    public Future<ItemModel> getItemAsync(int companyId, long id) {
+    public Future<ItemModel> getItemAsync(Integer companyId, Long id) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/items/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
@@ -4385,7 +4385,7 @@ public class AvaTaxClient {
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<HashMap<String, String>>
      */
-    public FetchResult<HashMap<String, String>> listItemsByCompany(int companyId, String filter, String include, Integer top, Integer skip, String orderBy) throws Exception {
+    public FetchResult<HashMap<String, String>> listItemsByCompany(Integer companyId, String filter, String include, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/items");
         path.applyField("companyId", companyId);
         path.addQuery("$filter", filter);
@@ -4413,7 +4413,7 @@ public class AvaTaxClient {
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<HashMap<String, String>>
      */
-    public Future<FetchResult<HashMap<String, String>>> listItemsByCompanyAsync(int companyId, String filter, String include, Integer top, Integer skip, String orderBy) {
+    public Future<FetchResult<HashMap<String, String>>> listItemsByCompanyAsync(Integer companyId, String filter, String include, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/items");
         path.applyField("companyId", companyId);
         path.addQuery("$filter", filter);
@@ -4485,7 +4485,7 @@ public class AvaTaxClient {
      * @param model The item object you wish to update.
      * @return ItemModel
      */
-    public ItemModel updateItem(int companyId, long id, ItemModel model) throws Exception {
+    public ItemModel updateItem(Integer companyId, Long id, ItemModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/items/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
@@ -4503,7 +4503,7 @@ public class AvaTaxClient {
      * @param model The item object you wish to update.
      * @return ItemModel
      */
-    public Future<ItemModel> updateItemAsync(int companyId, long id, ItemModel model) {
+    public Future<ItemModel> updateItemAsync(Integer companyId, Long id, ItemModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/items/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
@@ -4523,7 +4523,7 @@ public class AvaTaxClient {
      * @param model The jurisdiction override objects to create
      * @return ArrayList<JurisdictionOverrideModel>
      */
-    public ArrayList<JurisdictionOverrideModel> createJurisdictionOverrides(int accountId, ArrayList<JurisdictionOverrideModel> model) throws Exception {
+    public ArrayList<JurisdictionOverrideModel> createJurisdictionOverrides(Integer accountId, ArrayList<JurisdictionOverrideModel> model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/jurisdictionoverrides");
         path.applyField("accountId", accountId);
         return ((RestCall<ArrayList<JurisdictionOverrideModel>>)restCallFactory.createRestCall("Post", path, model, new TypeToken<ArrayList<JurisdictionOverrideModel>>(){})).call();
@@ -4542,7 +4542,7 @@ public class AvaTaxClient {
      * @param model The jurisdiction override objects to create
      * @return ArrayList<JurisdictionOverrideModel>
      */
-    public Future<ArrayList<JurisdictionOverrideModel>> createJurisdictionOverridesAsync(int accountId, ArrayList<JurisdictionOverrideModel> model) {
+    public Future<ArrayList<JurisdictionOverrideModel>> createJurisdictionOverridesAsync(Integer accountId, ArrayList<JurisdictionOverrideModel> model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/jurisdictionoverrides");
         path.applyField("accountId", accountId);
         return this.threadPool.submit((RestCall<ArrayList<JurisdictionOverrideModel>>)restCallFactory.createRestCall("Post", path, model, new TypeToken<ArrayList<JurisdictionOverrideModel>>(){}));
@@ -4555,7 +4555,7 @@ public class AvaTaxClient {
      * @param id The ID of the override you wish to delete
      * @return ArrayList<ErrorDetail>
      */
-    public ArrayList<ErrorDetail> deleteJurisdictionOverride(int accountId, int id) throws Exception {
+    public ArrayList<ErrorDetail> deleteJurisdictionOverride(Integer accountId, Integer id) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/jurisdictionoverrides/{id}");
         path.applyField("accountId", accountId);
         path.applyField("id", id);
@@ -4569,7 +4569,7 @@ public class AvaTaxClient {
      * @param id The ID of the override you wish to delete
      * @return ArrayList<ErrorDetail>
      */
-    public Future<ArrayList<ErrorDetail>> deleteJurisdictionOverrideAsync(int accountId, int id) {
+    public Future<ArrayList<ErrorDetail>> deleteJurisdictionOverrideAsync(Integer accountId, Integer id) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/jurisdictionoverrides/{id}");
         path.applyField("accountId", accountId);
         path.applyField("id", id);
@@ -4589,7 +4589,7 @@ public class AvaTaxClient {
      * @param id The primary key of this override
      * @return JurisdictionOverrideModel
      */
-    public JurisdictionOverrideModel getJurisdictionOverride(int accountId, int id) throws Exception {
+    public JurisdictionOverrideModel getJurisdictionOverride(Integer accountId, Integer id) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/jurisdictionoverrides/{id}");
         path.applyField("accountId", accountId);
         path.applyField("id", id);
@@ -4609,7 +4609,7 @@ public class AvaTaxClient {
      * @param id The primary key of this override
      * @return JurisdictionOverrideModel
      */
-    public Future<JurisdictionOverrideModel> getJurisdictionOverrideAsync(int accountId, int id) {
+    public Future<JurisdictionOverrideModel> getJurisdictionOverrideAsync(Integer accountId, Integer id) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/jurisdictionoverrides/{id}");
         path.applyField("accountId", accountId);
         path.applyField("id", id);
@@ -4636,7 +4636,7 @@ public class AvaTaxClient {
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<HashMap<String, String>>
      */
-    public FetchResult<HashMap<String, String>> listJurisdictionOverridesByAccount(int accountId, String filter, String include, Integer top, Integer skip, String orderBy) throws Exception {
+    public FetchResult<HashMap<String, String>> listJurisdictionOverridesByAccount(Integer accountId, String filter, String include, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/jurisdictionoverrides");
         path.applyField("accountId", accountId);
         path.addQuery("$filter", filter);
@@ -4667,7 +4667,7 @@ public class AvaTaxClient {
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<HashMap<String, String>>
      */
-    public Future<FetchResult<HashMap<String, String>>> listJurisdictionOverridesByAccountAsync(int accountId, String filter, String include, Integer top, Integer skip, String orderBy) {
+    public Future<FetchResult<HashMap<String, String>>> listJurisdictionOverridesByAccountAsync(Integer accountId, String filter, String include, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/jurisdictionoverrides");
         path.applyField("accountId", accountId);
         path.addQuery("$filter", filter);
@@ -4744,7 +4744,7 @@ public class AvaTaxClient {
      * @param model The jurisdictionoverride object you wish to update.
      * @return JurisdictionOverrideModel
      */
-    public JurisdictionOverrideModel updateJurisdictionOverride(int accountId, int id, JurisdictionOverrideModel model) throws Exception {
+    public JurisdictionOverrideModel updateJurisdictionOverride(Integer accountId, Integer id, JurisdictionOverrideModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/jurisdictionoverrides/{id}");
         path.applyField("accountId", accountId);
         path.applyField("id", id);
@@ -4759,7 +4759,7 @@ public class AvaTaxClient {
      * @param model The jurisdictionoverride object you wish to update.
      * @return JurisdictionOverrideModel
      */
-    public Future<JurisdictionOverrideModel> updateJurisdictionOverrideAsync(int accountId, int id, JurisdictionOverrideModel model) {
+    public Future<JurisdictionOverrideModel> updateJurisdictionOverrideAsync(Integer accountId, Integer id, JurisdictionOverrideModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/jurisdictionoverrides/{id}");
         path.applyField("accountId", accountId);
         path.applyField("id", id);
@@ -4783,7 +4783,7 @@ public class AvaTaxClient {
      * @param includeJurisCodes When true, the file will include jurisdiction codes in the result.
      * @return HashMap<String, String>
      */
-    public HashMap<String, String> buildPointOfSaleDataForLocation(int companyId, int id, Date date, PointOfSaleFileType format, PointOfSalePartnerId partnerId, Boolean includeJurisCodes) throws Exception {
+    public HashMap<String, String> buildPointOfSaleDataForLocation(Integer companyId, Integer id, Date date, PointOfSaleFileType format, PointOfSalePartnerId partnerId, Boolean includeJurisCodes) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/locations/{id}/pointofsaledata");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
@@ -4811,7 +4811,7 @@ public class AvaTaxClient {
      * @param includeJurisCodes When true, the file will include jurisdiction codes in the result.
      * @return HashMap<String, String>
      */
-    public Future<HashMap<String, String>> buildPointOfSaleDataForLocationAsync(int companyId, int id, Date date, PointOfSaleFileType format, PointOfSalePartnerId partnerId, Boolean includeJurisCodes) {
+    public Future<HashMap<String, String>> buildPointOfSaleDataForLocationAsync(Integer companyId, Integer id, Date date, PointOfSaleFileType format, PointOfSalePartnerId partnerId, Boolean includeJurisCodes) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/locations/{id}/pointofsaledata");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
@@ -4829,7 +4829,7 @@ public class AvaTaxClient {
      * @param model The location you wish to create.
      * @return ArrayList<LocationModel>
      */
-    public ArrayList<LocationModel> createLocations(int companyId, ArrayList<LocationModel> model) throws Exception {
+    public ArrayList<LocationModel> createLocations(Integer companyId, ArrayList<LocationModel> model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/locations");
         path.applyField("companyId", companyId);
         return ((RestCall<ArrayList<LocationModel>>)restCallFactory.createRestCall("Post", path, model, new TypeToken<ArrayList<LocationModel>>(){})).call();
@@ -4842,7 +4842,7 @@ public class AvaTaxClient {
      * @param model The location you wish to create.
      * @return ArrayList<LocationModel>
      */
-    public Future<ArrayList<LocationModel>> createLocationsAsync(int companyId, ArrayList<LocationModel> model) {
+    public Future<ArrayList<LocationModel>> createLocationsAsync(Integer companyId, ArrayList<LocationModel> model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/locations");
         path.applyField("companyId", companyId);
         return this.threadPool.submit((RestCall<ArrayList<LocationModel>>)restCallFactory.createRestCall("Post", path, model, new TypeToken<ArrayList<LocationModel>>(){}));
@@ -4855,7 +4855,7 @@ public class AvaTaxClient {
      * @param id The ID of the location you wish to delete.
      * @return ArrayList<ErrorDetail>
      */
-    public ArrayList<ErrorDetail> deleteLocation(int companyId, int id) throws Exception {
+    public ArrayList<ErrorDetail> deleteLocation(Integer companyId, Integer id) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/locations/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
@@ -4869,7 +4869,7 @@ public class AvaTaxClient {
      * @param id The ID of the location you wish to delete.
      * @return ArrayList<ErrorDetail>
      */
-    public Future<ArrayList<ErrorDetail>> deleteLocationAsync(int companyId, int id) {
+    public Future<ArrayList<ErrorDetail>> deleteLocationAsync(Integer companyId, Integer id) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/locations/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
@@ -4888,7 +4888,7 @@ public class AvaTaxClient {
      * @param id The primary key of this location
      * @return LocationModel
      */
-    public LocationModel getLocation(int companyId, int id) throws Exception {
+    public LocationModel getLocation(Integer companyId, Integer id) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/locations/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
@@ -4907,7 +4907,7 @@ public class AvaTaxClient {
      * @param id The primary key of this location
      * @return LocationModel
      */
-    public Future<LocationModel> getLocationAsync(int companyId, int id) {
+    public Future<LocationModel> getLocationAsync(Integer companyId, Integer id) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/locations/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
@@ -4933,7 +4933,7 @@ public class AvaTaxClient {
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<HashMap<String, String>>
      */
-    public FetchResult<HashMap<String, String>> listLocationsByCompany(int companyId, String filter, String include, Integer top, Integer skip, String orderBy) throws Exception {
+    public FetchResult<HashMap<String, String>> listLocationsByCompany(Integer companyId, String filter, String include, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/locations");
         path.applyField("companyId", companyId);
         path.addQuery("$filter", filter);
@@ -4963,7 +4963,7 @@ public class AvaTaxClient {
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<HashMap<String, String>>
      */
-    public Future<FetchResult<HashMap<String, String>>> listLocationsByCompanyAsync(int companyId, String filter, String include, Integer top, Integer skip, String orderBy) {
+    public Future<FetchResult<HashMap<String, String>>> listLocationsByCompanyAsync(Integer companyId, String filter, String include, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/locations");
         path.applyField("companyId", companyId);
         path.addQuery("$filter", filter);
@@ -5041,7 +5041,7 @@ public class AvaTaxClient {
      * @param model The location you wish to update.
      * @return LocationModel
      */
-    public LocationModel updateLocation(int companyId, int id, LocationModel model) throws Exception {
+    public LocationModel updateLocation(Integer companyId, Integer id, LocationModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/locations/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
@@ -5059,7 +5059,7 @@ public class AvaTaxClient {
      * @param model The location you wish to update.
      * @return LocationModel
      */
-    public Future<LocationModel> updateLocationAsync(int companyId, int id, LocationModel model) {
+    public Future<LocationModel> updateLocationAsync(Integer companyId, Integer id, LocationModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/locations/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
@@ -5076,7 +5076,7 @@ public class AvaTaxClient {
      * @param id The primary key of this location
      * @return LocationValidationModel
      */
-    public LocationValidationModel validateLocation(int companyId, int id) throws Exception {
+    public LocationValidationModel validateLocation(Integer companyId, Integer id) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/locations/{id}/validate");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
@@ -5093,7 +5093,7 @@ public class AvaTaxClient {
      * @param id The primary key of this location
      * @return LocationValidationModel
      */
-    public Future<LocationValidationModel> validateLocationAsync(int companyId, int id) {
+    public Future<LocationValidationModel> validateLocationAsync(Integer companyId, Integer id) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/locations/{id}/validate");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
@@ -5115,7 +5115,7 @@ public class AvaTaxClient {
      * @param model The nexus you wish to create.
      * @return ArrayList<NexusModel>
      */
-    public ArrayList<NexusModel> createNexus(int companyId, ArrayList<NexusModel> model) throws Exception {
+    public ArrayList<NexusModel> createNexus(Integer companyId, ArrayList<NexusModel> model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/nexus");
         path.applyField("companyId", companyId);
         return ((RestCall<ArrayList<NexusModel>>)restCallFactory.createRestCall("Post", path, model, new TypeToken<ArrayList<NexusModel>>(){})).call();
@@ -5136,7 +5136,7 @@ public class AvaTaxClient {
      * @param model The nexus you wish to create.
      * @return ArrayList<NexusModel>
      */
-    public Future<ArrayList<NexusModel>> createNexusAsync(int companyId, ArrayList<NexusModel> model) {
+    public Future<ArrayList<NexusModel>> createNexusAsync(Integer companyId, ArrayList<NexusModel> model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/nexus");
         path.applyField("companyId", companyId);
         return this.threadPool.submit((RestCall<ArrayList<NexusModel>>)restCallFactory.createRestCall("Post", path, model, new TypeToken<ArrayList<NexusModel>>(){}));
@@ -5149,7 +5149,7 @@ public class AvaTaxClient {
      * @param id The ID of the nexus you wish to delete.
      * @return ArrayList<ErrorDetail>
      */
-    public ArrayList<ErrorDetail> deleteNexus(int companyId, int id) throws Exception {
+    public ArrayList<ErrorDetail> deleteNexus(Integer companyId, Integer id) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/nexus/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
@@ -5163,7 +5163,7 @@ public class AvaTaxClient {
      * @param id The ID of the nexus you wish to delete.
      * @return ArrayList<ErrorDetail>
      */
-    public Future<ArrayList<ErrorDetail>> deleteNexusAsync(int companyId, int id) {
+    public Future<ArrayList<ErrorDetail>> deleteNexusAsync(Integer companyId, Integer id) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/nexus/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
@@ -5182,7 +5182,7 @@ public class AvaTaxClient {
      * @param id The primary key of this nexus
      * @return NexusModel
      */
-    public NexusModel getNexus(int companyId, int id) throws Exception {
+    public NexusModel getNexus(Integer companyId, Integer id) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/nexus/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
@@ -5201,7 +5201,7 @@ public class AvaTaxClient {
      * @param id The primary key of this nexus
      * @return NexusModel
      */
-    public Future<NexusModel> getNexusAsync(int companyId, int id) {
+    public Future<NexusModel> getNexusAsync(Integer companyId, Integer id) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/nexus/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
@@ -5226,7 +5226,7 @@ public class AvaTaxClient {
      * @param formCode The form code that we are looking up the nexus for
      * @return NexusByTaxFormModel
      */
-    public NexusByTaxFormModel getNexusByFormCode(int companyId, String formCode) throws Exception {
+    public NexusByTaxFormModel getNexusByFormCode(Integer companyId, String formCode) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/nexus/byform/{formCode}");
         path.applyField("companyId", companyId);
         path.applyField("formCode", formCode);
@@ -5251,7 +5251,7 @@ public class AvaTaxClient {
      * @param formCode The form code that we are looking up the nexus for
      * @return NexusByTaxFormModel
      */
-    public Future<NexusByTaxFormModel> getNexusByFormCodeAsync(int companyId, String formCode) {
+    public Future<NexusByTaxFormModel> getNexusByFormCodeAsync(Integer companyId, String formCode) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/nexus/byform/{formCode}");
         path.applyField("companyId", companyId);
         path.applyField("formCode", formCode);
@@ -5277,7 +5277,7 @@ public class AvaTaxClient {
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<HashMap<String, String>>
      */
-    public FetchResult<HashMap<String, String>> listNexusByCompany(int companyId, String filter, String include, Integer top, Integer skip, String orderBy) throws Exception {
+    public FetchResult<HashMap<String, String>> listNexusByCompany(Integer companyId, String filter, String include, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/nexus");
         path.applyField("companyId", companyId);
         path.addQuery("$filter", filter);
@@ -5307,7 +5307,7 @@ public class AvaTaxClient {
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<HashMap<String, String>>
      */
-    public Future<FetchResult<HashMap<String, String>>> listNexusByCompanyAsync(int companyId, String filter, String include, Integer top, Integer skip, String orderBy) {
+    public Future<FetchResult<HashMap<String, String>>> listNexusByCompanyAsync(Integer companyId, String filter, String include, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/nexus");
         path.applyField("companyId", companyId);
         path.addQuery("$filter", filter);
@@ -5392,7 +5392,7 @@ public class AvaTaxClient {
      * @param model The nexus object you wish to update.
      * @return NexusModel
      */
-    public NexusModel updateNexus(int companyId, int id, NexusModel model) throws Exception {
+    public NexusModel updateNexus(Integer companyId, Integer id, NexusModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/nexus/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
@@ -5417,7 +5417,7 @@ public class AvaTaxClient {
      * @param model The nexus object you wish to update.
      * @return NexusModel
      */
-    public Future<NexusModel> updateNexusAsync(int companyId, int id, NexusModel model) {
+    public Future<NexusModel> updateNexusAsync(Integer companyId, Integer id, NexusModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/nexus/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
@@ -5436,7 +5436,7 @@ public class AvaTaxClient {
      * @param model The notice comments you wish to create.
      * @return ArrayList<NoticeCommentModel>
      */
-    public ArrayList<NoticeCommentModel> createNoticeComment(int companyId, int id, ArrayList<NoticeCommentModel> model) throws Exception {
+    public ArrayList<NoticeCommentModel> createNoticeComment(Integer companyId, Integer id, ArrayList<NoticeCommentModel> model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/{id}/comments");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
@@ -5455,7 +5455,7 @@ public class AvaTaxClient {
      * @param model The notice comments you wish to create.
      * @return ArrayList<NoticeCommentModel>
      */
-    public Future<ArrayList<NoticeCommentModel>> createNoticeCommentAsync(int companyId, int id, ArrayList<NoticeCommentModel> model) {
+    public Future<ArrayList<NoticeCommentModel>> createNoticeCommentAsync(Integer companyId, Integer id, ArrayList<NoticeCommentModel> model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/{id}/comments");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
@@ -5475,7 +5475,7 @@ public class AvaTaxClient {
      * @param model The notice finance details you wish to create.
      * @return ArrayList<NoticeFinanceModel>
      */
-    public ArrayList<NoticeFinanceModel> createNoticeFinanceDetails(int companyId, int id, ArrayList<NoticeFinanceModel> model) throws Exception {
+    public ArrayList<NoticeFinanceModel> createNoticeFinanceDetails(Integer companyId, Integer id, ArrayList<NoticeFinanceModel> model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/{id}/financedetails");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
@@ -5495,7 +5495,7 @@ public class AvaTaxClient {
      * @param model The notice finance details you wish to create.
      * @return ArrayList<NoticeFinanceModel>
      */
-    public Future<ArrayList<NoticeFinanceModel>> createNoticeFinanceDetailsAsync(int companyId, int id, ArrayList<NoticeFinanceModel> model) {
+    public Future<ArrayList<NoticeFinanceModel>> createNoticeFinanceDetailsAsync(Integer companyId, Integer id, ArrayList<NoticeFinanceModel> model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/{id}/financedetails");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
@@ -5514,7 +5514,7 @@ public class AvaTaxClient {
      * @param model The notice responsibilities you wish to create.
      * @return ArrayList<NoticeResponsibilityDetailModel>
      */
-    public ArrayList<NoticeResponsibilityDetailModel> createNoticeResponsibilities(int companyId, int id, ArrayList<NoticeResponsibilityDetailModel> model) throws Exception {
+    public ArrayList<NoticeResponsibilityDetailModel> createNoticeResponsibilities(Integer companyId, Integer id, ArrayList<NoticeResponsibilityDetailModel> model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/{id}/responsibilities");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
@@ -5533,7 +5533,7 @@ public class AvaTaxClient {
      * @param model The notice responsibilities you wish to create.
      * @return ArrayList<NoticeResponsibilityDetailModel>
      */
-    public Future<ArrayList<NoticeResponsibilityDetailModel>> createNoticeResponsibilitiesAsync(int companyId, int id, ArrayList<NoticeResponsibilityDetailModel> model) {
+    public Future<ArrayList<NoticeResponsibilityDetailModel>> createNoticeResponsibilitiesAsync(Integer companyId, Integer id, ArrayList<NoticeResponsibilityDetailModel> model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/{id}/responsibilities");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
@@ -5552,7 +5552,7 @@ public class AvaTaxClient {
      * @param model The notice root causes you wish to create.
      * @return ArrayList<NoticeRootCauseDetailModel>
      */
-    public ArrayList<NoticeRootCauseDetailModel> createNoticeRootCauses(int companyId, int id, ArrayList<NoticeRootCauseDetailModel> model) throws Exception {
+    public ArrayList<NoticeRootCauseDetailModel> createNoticeRootCauses(Integer companyId, Integer id, ArrayList<NoticeRootCauseDetailModel> model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/{id}/rootcauses");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
@@ -5571,7 +5571,7 @@ public class AvaTaxClient {
      * @param model The notice root causes you wish to create.
      * @return ArrayList<NoticeRootCauseDetailModel>
      */
-    public Future<ArrayList<NoticeRootCauseDetailModel>> createNoticeRootCausesAsync(int companyId, int id, ArrayList<NoticeRootCauseDetailModel> model) {
+    public Future<ArrayList<NoticeRootCauseDetailModel>> createNoticeRootCausesAsync(Integer companyId, Integer id, ArrayList<NoticeRootCauseDetailModel> model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/{id}/rootcauses");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
@@ -5589,7 +5589,7 @@ public class AvaTaxClient {
      * @param model The notice object you wish to create.
      * @return ArrayList<NoticeModel>
      */
-    public ArrayList<NoticeModel> createNotices(int companyId, ArrayList<NoticeModel> model) throws Exception {
+    public ArrayList<NoticeModel> createNotices(Integer companyId, ArrayList<NoticeModel> model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices");
         path.applyField("companyId", companyId);
         return ((RestCall<ArrayList<NoticeModel>>)restCallFactory.createRestCall("Post", path, model, new TypeToken<ArrayList<NoticeModel>>(){})).call();
@@ -5606,7 +5606,7 @@ public class AvaTaxClient {
      * @param model The notice object you wish to create.
      * @return ArrayList<NoticeModel>
      */
-    public Future<ArrayList<NoticeModel>> createNoticesAsync(int companyId, ArrayList<NoticeModel> model) {
+    public Future<ArrayList<NoticeModel>> createNoticesAsync(Integer companyId, ArrayList<NoticeModel> model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices");
         path.applyField("companyId", companyId);
         return this.threadPool.submit((RestCall<ArrayList<NoticeModel>>)restCallFactory.createRestCall("Post", path, model, new TypeToken<ArrayList<NoticeModel>>(){}));
@@ -5623,7 +5623,7 @@ public class AvaTaxClient {
      * @param id The ID of the notice you wish to delete.
      * @return ArrayList<ErrorDetail>
      */
-    public ArrayList<ErrorDetail> deleteNotice(int companyId, int id) throws Exception {
+    public ArrayList<ErrorDetail> deleteNotice(Integer companyId, Integer id) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
@@ -5641,7 +5641,7 @@ public class AvaTaxClient {
      * @param id The ID of the notice you wish to delete.
      * @return ArrayList<ErrorDetail>
      */
-    public Future<ArrayList<ErrorDetail>> deleteNoticeAsync(int companyId, int id) {
+    public Future<ArrayList<ErrorDetail>> deleteNoticeAsync(Integer companyId, Integer id) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
@@ -5657,7 +5657,7 @@ public class AvaTaxClient {
      * @param id The ResourceFileId of the attachment to download.
      * @return HashMap<String, String>
      */
-    public HashMap<String, String> downloadNoticeAttachment(int companyId, long id) throws Exception {
+    public HashMap<String, String> downloadNoticeAttachment(Integer companyId, Long id) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/files/{id}/attachment");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
@@ -5673,7 +5673,7 @@ public class AvaTaxClient {
      * @param id The ResourceFileId of the attachment to download.
      * @return HashMap<String, String>
      */
-    public Future<HashMap<String, String>> downloadNoticeAttachmentAsync(int companyId, long id) {
+    public Future<HashMap<String, String>> downloadNoticeAttachmentAsync(Integer companyId, Long id) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/files/{id}/attachment");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
@@ -5691,7 +5691,7 @@ public class AvaTaxClient {
      * @param id The ID of this notice.
      * @return NoticeModel
      */
-    public NoticeModel getNotice(int companyId, int id) throws Exception {
+    public NoticeModel getNotice(Integer companyId, Integer id) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
@@ -5709,7 +5709,7 @@ public class AvaTaxClient {
      * @param id The ID of this notice.
      * @return NoticeModel
      */
-    public Future<NoticeModel> getNoticeAsync(int companyId, int id) {
+    public Future<NoticeModel> getNoticeAsync(Integer companyId, Integer id) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
@@ -5727,7 +5727,7 @@ public class AvaTaxClient {
      * @param companyId The ID of the company that owns these notices.
      * @return FetchResult<HashMap<String, String>>
      */
-    public FetchResult<HashMap<String, String>> getNoticeComments(int id, int companyId) throws Exception {
+    public FetchResult<HashMap<String, String>> getNoticeComments(Integer id, Integer companyId) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/{id}/comments");
         path.applyField("id", id);
         path.applyField("companyId", companyId);
@@ -5745,7 +5745,7 @@ public class AvaTaxClient {
      * @param companyId The ID of the company that owns these notices.
      * @return FetchResult<HashMap<String, String>>
      */
-    public Future<FetchResult<HashMap<String, String>>> getNoticeCommentsAsync(int id, int companyId) {
+    public Future<FetchResult<HashMap<String, String>>> getNoticeCommentsAsync(Integer id, Integer companyId) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/{id}/comments");
         path.applyField("id", id);
         path.applyField("companyId", companyId);
@@ -5764,7 +5764,7 @@ public class AvaTaxClient {
      * @param companyId The ID of the company that owns these notices.
      * @return FetchResult<HashMap<String, String>>
      */
-    public FetchResult<HashMap<String, String>> getNoticeFinanceDetails(int id, int companyId) throws Exception {
+    public FetchResult<HashMap<String, String>> getNoticeFinanceDetails(Integer id, Integer companyId) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/{id}/financedetails");
         path.applyField("id", id);
         path.applyField("companyId", companyId);
@@ -5783,7 +5783,7 @@ public class AvaTaxClient {
      * @param companyId The ID of the company that owns these notices.
      * @return FetchResult<HashMap<String, String>>
      */
-    public Future<FetchResult<HashMap<String, String>>> getNoticeFinanceDetailsAsync(int id, int companyId) {
+    public Future<FetchResult<HashMap<String, String>>> getNoticeFinanceDetailsAsync(Integer id, Integer companyId) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/{id}/financedetails");
         path.applyField("id", id);
         path.applyField("companyId", companyId);
@@ -5801,7 +5801,7 @@ public class AvaTaxClient {
      * @param companyId The ID of the company that owns these notices.
      * @return FetchResult<HashMap<String, String>>
      */
-    public FetchResult<HashMap<String, String>> getNoticeResponsibilities(int id, int companyId) throws Exception {
+    public FetchResult<HashMap<String, String>> getNoticeResponsibilities(Integer id, Integer companyId) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/{id}/responsibilities");
         path.applyField("id", id);
         path.applyField("companyId", companyId);
@@ -5819,7 +5819,7 @@ public class AvaTaxClient {
      * @param companyId The ID of the company that owns these notices.
      * @return FetchResult<HashMap<String, String>>
      */
-    public Future<FetchResult<HashMap<String, String>>> getNoticeResponsibilitiesAsync(int id, int companyId) {
+    public Future<FetchResult<HashMap<String, String>>> getNoticeResponsibilitiesAsync(Integer id, Integer companyId) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/{id}/responsibilities");
         path.applyField("id", id);
         path.applyField("companyId", companyId);
@@ -5837,7 +5837,7 @@ public class AvaTaxClient {
      * @param companyId The ID of the company that owns these notices.
      * @return FetchResult<HashMap<String, String>>
      */
-    public FetchResult<HashMap<String, String>> getNoticeRootCauses(int id, int companyId) throws Exception {
+    public FetchResult<HashMap<String, String>> getNoticeRootCauses(Integer id, Integer companyId) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/{id}/rootcauses");
         path.applyField("id", id);
         path.applyField("companyId", companyId);
@@ -5855,7 +5855,7 @@ public class AvaTaxClient {
      * @param companyId The ID of the company that owns these notices.
      * @return FetchResult<HashMap<String, String>>
      */
-    public Future<FetchResult<HashMap<String, String>>> getNoticeRootCausesAsync(int id, int companyId) {
+    public Future<FetchResult<HashMap<String, String>>> getNoticeRootCausesAsync(Integer id, Integer companyId) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/{id}/rootcauses");
         path.applyField("id", id);
         path.applyField("companyId", companyId);
@@ -5880,7 +5880,7 @@ public class AvaTaxClient {
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<HashMap<String, String>>
      */
-    public FetchResult<HashMap<String, String>> listNoticesByCompany(int companyId, String filter, String include, Integer top, Integer skip, String orderBy) throws Exception {
+    public FetchResult<HashMap<String, String>> listNoticesByCompany(Integer companyId, String filter, String include, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices");
         path.applyField("companyId", companyId);
         path.addQuery("$filter", filter);
@@ -5909,7 +5909,7 @@ public class AvaTaxClient {
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<HashMap<String, String>>
      */
-    public Future<FetchResult<HashMap<String, String>>> listNoticesByCompanyAsync(int companyId, String filter, String include, Integer top, Integer skip, String orderBy) {
+    public Future<FetchResult<HashMap<String, String>>> listNoticesByCompanyAsync(Integer companyId, String filter, String include, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices");
         path.applyField("companyId", companyId);
         path.addQuery("$filter", filter);
@@ -5988,7 +5988,7 @@ public class AvaTaxClient {
      * @param model The notice object you wish to update.
      * @return NoticeModel
      */
-    public NoticeModel updateNotice(int companyId, int id, NoticeModel model) throws Exception {
+    public NoticeModel updateNotice(Integer companyId, Integer id, NoticeModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
@@ -6009,7 +6009,7 @@ public class AvaTaxClient {
      * @param model The notice object you wish to update.
      * @return NoticeModel
      */
-    public Future<NoticeModel> updateNoticeAsync(int companyId, int id, NoticeModel model) {
+    public Future<NoticeModel> updateNoticeAsync(Integer companyId, Integer id, NoticeModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
@@ -6025,7 +6025,7 @@ public class AvaTaxClient {
      * @param model The ResourceFileId of the attachment to download.
      * @return HashMap<String, String>
      */
-    public HashMap<String, String> uploadAttachment(int companyId, ResourceFileUploadRequestModel model) throws Exception {
+    public HashMap<String, String> uploadAttachment(Integer companyId, ResourceFileUploadRequestModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/files/attachment");
         path.applyField("companyId", companyId);
         return ((RestCall<HashMap<String, String>>)restCallFactory.createRestCall("Post", path, model, new TypeToken<HashMap<String, String>>(){})).call();
@@ -6040,7 +6040,7 @@ public class AvaTaxClient {
      * @param model The ResourceFileId of the attachment to download.
      * @return HashMap<String, String>
      */
-    public Future<HashMap<String, String>> uploadAttachmentAsync(int companyId, ResourceFileUploadRequestModel model) {
+    public Future<HashMap<String, String>> uploadAttachmentAsync(Integer companyId, ResourceFileUploadRequestModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/files/attachment");
         path.applyField("companyId", companyId);
         return this.threadPool.submit((RestCall<HashMap<String, String>>)restCallFactory.createRestCall("Post", path, model, new TypeToken<HashMap<String, String>>(){}));
@@ -6187,7 +6187,7 @@ public class AvaTaxClient {
      * @param model The subscription you wish to create.
      * @return ArrayList<SubscriptionModel>
      */
-    public ArrayList<SubscriptionModel> createSubscriptions(int accountId, ArrayList<SubscriptionModel> model) throws Exception {
+    public ArrayList<SubscriptionModel> createSubscriptions(Integer accountId, ArrayList<SubscriptionModel> model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/subscriptions");
         path.applyField("accountId", accountId);
         return ((RestCall<ArrayList<SubscriptionModel>>)restCallFactory.createRestCall("Post", path, model, new TypeToken<ArrayList<SubscriptionModel>>(){})).call();
@@ -6206,7 +6206,7 @@ public class AvaTaxClient {
      * @param model The subscription you wish to create.
      * @return ArrayList<SubscriptionModel>
      */
-    public Future<ArrayList<SubscriptionModel>> createSubscriptionsAsync(int accountId, ArrayList<SubscriptionModel> model) {
+    public Future<ArrayList<SubscriptionModel>> createSubscriptionsAsync(Integer accountId, ArrayList<SubscriptionModel> model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/subscriptions");
         path.applyField("accountId", accountId);
         return this.threadPool.submit((RestCall<ArrayList<SubscriptionModel>>)restCallFactory.createRestCall("Post", path, model, new TypeToken<ArrayList<SubscriptionModel>>(){}));
@@ -6224,7 +6224,7 @@ public class AvaTaxClient {
      * @param model The user or array of users you wish to create.
      * @return ArrayList<UserModel>
      */
-    public ArrayList<UserModel> createUsers(int accountId, ArrayList<UserModel> model) throws Exception {
+    public ArrayList<UserModel> createUsers(Integer accountId, ArrayList<UserModel> model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/users");
         path.applyField("accountId", accountId);
         return ((RestCall<ArrayList<UserModel>>)restCallFactory.createRestCall("Post", path, model, new TypeToken<ArrayList<UserModel>>(){})).call();
@@ -6242,7 +6242,7 @@ public class AvaTaxClient {
      * @param model The user or array of users you wish to create.
      * @return ArrayList<UserModel>
      */
-    public Future<ArrayList<UserModel>> createUsersAsync(int accountId, ArrayList<UserModel> model) {
+    public Future<ArrayList<UserModel>> createUsersAsync(Integer accountId, ArrayList<UserModel> model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/users");
         path.applyField("accountId", accountId);
         return this.threadPool.submit((RestCall<ArrayList<UserModel>>)restCallFactory.createRestCall("Post", path, model, new TypeToken<ArrayList<UserModel>>(){}));
@@ -6259,7 +6259,7 @@ public class AvaTaxClient {
      * @param id The ID of the account you wish to delete.
      * @return ArrayList<ErrorDetail>
      */
-    public ArrayList<ErrorDetail> deleteAccount(int id) throws Exception {
+    public ArrayList<ErrorDetail> deleteAccount(Integer id) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{id}");
         path.applyField("id", id);
         return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("Delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){})).call();
@@ -6276,7 +6276,7 @@ public class AvaTaxClient {
      * @param id The ID of the account you wish to delete.
      * @return ArrayList<ErrorDetail>
      */
-    public Future<ArrayList<ErrorDetail>> deleteAccountAsync(int id) {
+    public Future<ArrayList<ErrorDetail>> deleteAccountAsync(Integer id) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{id}");
         path.applyField("id", id);
         return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("Delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){}));
@@ -6293,7 +6293,7 @@ public class AvaTaxClient {
      * @param id The ID of the subscription you wish to delete.
      * @return ArrayList<ErrorDetail>
      */
-    public ArrayList<ErrorDetail> deleteSubscription(int accountId, int id) throws Exception {
+    public ArrayList<ErrorDetail> deleteSubscription(Integer accountId, Integer id) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/subscriptions/{id}");
         path.applyField("accountId", accountId);
         path.applyField("id", id);
@@ -6311,7 +6311,7 @@ public class AvaTaxClient {
      * @param id The ID of the subscription you wish to delete.
      * @return ArrayList<ErrorDetail>
      */
-    public Future<ArrayList<ErrorDetail>> deleteSubscriptionAsync(int accountId, int id) {
+    public Future<ArrayList<ErrorDetail>> deleteSubscriptionAsync(Integer accountId, Integer id) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/subscriptions/{id}");
         path.applyField("accountId", accountId);
         path.applyField("id", id);
@@ -6329,7 +6329,7 @@ public class AvaTaxClient {
      * @param accountId The accountID of the user you wish to delete.
      * @return ArrayList<ErrorDetail>
      */
-    public ArrayList<ErrorDetail> deleteUser(int id, int accountId) throws Exception {
+    public ArrayList<ErrorDetail> deleteUser(Integer id, Integer accountId) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/users/{id}");
         path.applyField("id", id);
         path.applyField("accountId", accountId);
@@ -6347,7 +6347,7 @@ public class AvaTaxClient {
      * @param accountId The accountID of the user you wish to delete.
      * @return ArrayList<ErrorDetail>
      */
-    public Future<ArrayList<ErrorDetail>> deleteUserAsync(int id, int accountId) {
+    public Future<ArrayList<ErrorDetail>> deleteUserAsync(Integer id, Integer accountId) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/users/{id}");
         path.applyField("id", id);
         path.applyField("accountId", accountId);
@@ -6431,7 +6431,7 @@ public class AvaTaxClient {
      * @param model The new password for this user
      * @return String
      */
-    public String resetPassword(int userId, SetPasswordModel model) throws Exception {
+    public String resetPassword(Integer userId, SetPasswordModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/passwords/{userId}/reset");
         path.applyField("userId", userId);
         return ((RestCall<String>)restCallFactory.createRestCall("Post", path, model, new TypeToken<String>(){})).call();
@@ -6450,7 +6450,7 @@ public class AvaTaxClient {
      * @param model The new password for this user
      * @return String
      */
-    public Future<String> resetPasswordAsync(int userId, SetPasswordModel model) {
+    public Future<String> resetPasswordAsync(Integer userId, SetPasswordModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/passwords/{userId}/reset");
         path.applyField("userId", userId);
         return this.threadPool.submit((RestCall<String>)restCallFactory.createRestCall("Post", path, model, new TypeToken<String>(){}));
@@ -6467,7 +6467,7 @@ public class AvaTaxClient {
      * @param model The account object you wish to update.
      * @return AccountModel
      */
-    public AccountModel updateAccount(int id, AccountModel model) throws Exception {
+    public AccountModel updateAccount(Integer id, AccountModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{id}");
         path.applyField("id", id);
         return ((RestCall<AccountModel>)restCallFactory.createRestCall("Put", path, model, new TypeToken<AccountModel>(){})).call();
@@ -6484,7 +6484,7 @@ public class AvaTaxClient {
      * @param model The account object you wish to update.
      * @return AccountModel
      */
-    public Future<AccountModel> updateAccountAsync(int id, AccountModel model) {
+    public Future<AccountModel> updateAccountAsync(Integer id, AccountModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{id}");
         path.applyField("id", id);
         return this.threadPool.submit((RestCall<AccountModel>)restCallFactory.createRestCall("Put", path, model, new TypeToken<AccountModel>(){}));
@@ -6506,7 +6506,7 @@ public class AvaTaxClient {
      * @param model The subscription you wish to update.
      * @return SubscriptionModel
      */
-    public SubscriptionModel updateSubscription(int accountId, int id, SubscriptionModel model) throws Exception {
+    public SubscriptionModel updateSubscription(Integer accountId, Integer id, SubscriptionModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/subscriptions/{id}");
         path.applyField("accountId", accountId);
         path.applyField("id", id);
@@ -6529,7 +6529,7 @@ public class AvaTaxClient {
      * @param model The subscription you wish to update.
      * @return SubscriptionModel
      */
-    public Future<SubscriptionModel> updateSubscriptionAsync(int accountId, int id, SubscriptionModel model) {
+    public Future<SubscriptionModel> updateSubscriptionAsync(Integer accountId, Integer id, SubscriptionModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/subscriptions/{id}");
         path.applyField("accountId", accountId);
         path.applyField("id", id);
@@ -6550,7 +6550,7 @@ public class AvaTaxClient {
      * @param model The setting you wish to create.
      * @return ArrayList<SettingModel>
      */
-    public ArrayList<SettingModel> createSettings(int companyId, ArrayList<SettingModel> model) throws Exception {
+    public ArrayList<SettingModel> createSettings(Integer companyId, ArrayList<SettingModel> model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/settings");
         path.applyField("companyId", companyId);
         return ((RestCall<ArrayList<SettingModel>>)restCallFactory.createRestCall("Post", path, model, new TypeToken<ArrayList<SettingModel>>(){})).call();
@@ -6570,7 +6570,7 @@ public class AvaTaxClient {
      * @param model The setting you wish to create.
      * @return ArrayList<SettingModel>
      */
-    public Future<ArrayList<SettingModel>> createSettingsAsync(int companyId, ArrayList<SettingModel> model) {
+    public Future<ArrayList<SettingModel>> createSettingsAsync(Integer companyId, ArrayList<SettingModel> model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/settings");
         path.applyField("companyId", companyId);
         return this.threadPool.submit((RestCall<ArrayList<SettingModel>>)restCallFactory.createRestCall("Post", path, model, new TypeToken<ArrayList<SettingModel>>(){}));
@@ -6583,7 +6583,7 @@ public class AvaTaxClient {
      * @param id The ID of the setting you wish to delete.
      * @return ArrayList<ErrorDetail>
      */
-    public ArrayList<ErrorDetail> deleteSetting(int companyId, int id) throws Exception {
+    public ArrayList<ErrorDetail> deleteSetting(Integer companyId, Integer id) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/settings/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
@@ -6597,7 +6597,7 @@ public class AvaTaxClient {
      * @param id The ID of the setting you wish to delete.
      * @return ArrayList<ErrorDetail>
      */
-    public Future<ArrayList<ErrorDetail>> deleteSettingAsync(int companyId, int id) {
+    public Future<ArrayList<ErrorDetail>> deleteSettingAsync(Integer companyId, Integer id) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/settings/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
@@ -6618,7 +6618,7 @@ public class AvaTaxClient {
      * @param id The primary key of this setting
      * @return SettingModel
      */
-    public SettingModel getSetting(int companyId, int id) throws Exception {
+    public SettingModel getSetting(Integer companyId, Integer id) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/settings/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
@@ -6639,7 +6639,7 @@ public class AvaTaxClient {
      * @param id The primary key of this setting
      * @return SettingModel
      */
-    public Future<SettingModel> getSettingAsync(int companyId, int id) {
+    public Future<SettingModel> getSettingAsync(Integer companyId, Integer id) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/settings/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
@@ -6667,7 +6667,7 @@ public class AvaTaxClient {
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<HashMap<String, String>>
      */
-    public FetchResult<HashMap<String, String>> listSettingsByCompany(int companyId, String filter, String include, Integer top, Integer skip, String orderBy) throws Exception {
+    public FetchResult<HashMap<String, String>> listSettingsByCompany(Integer companyId, String filter, String include, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/settings");
         path.applyField("companyId", companyId);
         path.addQuery("$filter", filter);
@@ -6699,7 +6699,7 @@ public class AvaTaxClient {
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<HashMap<String, String>>
      */
-    public Future<FetchResult<HashMap<String, String>>> listSettingsByCompanyAsync(int companyId, String filter, String include, Integer top, Integer skip, String orderBy) {
+    public Future<FetchResult<HashMap<String, String>>> listSettingsByCompanyAsync(Integer companyId, String filter, String include, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/settings");
         path.applyField("companyId", companyId);
         path.addQuery("$filter", filter);
@@ -6787,7 +6787,7 @@ public class AvaTaxClient {
      * @param model The setting you wish to update.
      * @return SettingModel
      */
-    public SettingModel updateSetting(int companyId, int id, SettingModel model) throws Exception {
+    public SettingModel updateSetting(Integer companyId, Integer id, SettingModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/settings/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
@@ -6811,7 +6811,7 @@ public class AvaTaxClient {
      * @param model The setting you wish to update.
      * @return SettingModel
      */
-    public Future<SettingModel> updateSettingAsync(int companyId, int id, SettingModel model) {
+    public Future<SettingModel> updateSettingAsync(Integer companyId, Integer id, SettingModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/settings/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
@@ -6828,7 +6828,7 @@ public class AvaTaxClient {
      * @param id The primary key of this subscription
      * @return SubscriptionModel
      */
-    public SubscriptionModel getSubscription(int accountId, int id) throws Exception {
+    public SubscriptionModel getSubscription(Integer accountId, Integer id) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/subscriptions/{id}");
         path.applyField("accountId", accountId);
         path.applyField("id", id);
@@ -6845,7 +6845,7 @@ public class AvaTaxClient {
      * @param id The primary key of this subscription
      * @return SubscriptionModel
      */
-    public Future<SubscriptionModel> getSubscriptionAsync(int accountId, int id) {
+    public Future<SubscriptionModel> getSubscriptionAsync(Integer accountId, Integer id) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/subscriptions/{id}");
         path.applyField("accountId", accountId);
         path.applyField("id", id);
@@ -6868,7 +6868,7 @@ public class AvaTaxClient {
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<HashMap<String, String>>
      */
-    public FetchResult<HashMap<String, String>> listSubscriptionsByAccount(int accountId, String filter, Integer top, Integer skip, String orderBy) throws Exception {
+    public FetchResult<HashMap<String, String>> listSubscriptionsByAccount(Integer accountId, String filter, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/subscriptions");
         path.applyField("accountId", accountId);
         path.addQuery("$filter", filter);
@@ -6894,7 +6894,7 @@ public class AvaTaxClient {
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<HashMap<String, String>>
      */
-    public Future<FetchResult<HashMap<String, String>>> listSubscriptionsByAccountAsync(int accountId, String filter, Integer top, Integer skip, String orderBy) {
+    public Future<FetchResult<HashMap<String, String>>> listSubscriptionsByAccountAsync(Integer accountId, String filter, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/subscriptions");
         path.applyField("accountId", accountId);
         path.addQuery("$filter", filter);
@@ -6964,7 +6964,7 @@ public class AvaTaxClient {
      * @param model The tax code you wish to create.
      * @return ArrayList<TaxCodeModel>
      */
-    public ArrayList<TaxCodeModel> createTaxCodes(int companyId, ArrayList<TaxCodeModel> model) throws Exception {
+    public ArrayList<TaxCodeModel> createTaxCodes(Integer companyId, ArrayList<TaxCodeModel> model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/taxcodes");
         path.applyField("companyId", companyId);
         return ((RestCall<ArrayList<TaxCodeModel>>)restCallFactory.createRestCall("Post", path, model, new TypeToken<ArrayList<TaxCodeModel>>(){})).call();
@@ -6982,7 +6982,7 @@ public class AvaTaxClient {
      * @param model The tax code you wish to create.
      * @return ArrayList<TaxCodeModel>
      */
-    public Future<ArrayList<TaxCodeModel>> createTaxCodesAsync(int companyId, ArrayList<TaxCodeModel> model) {
+    public Future<ArrayList<TaxCodeModel>> createTaxCodesAsync(Integer companyId, ArrayList<TaxCodeModel> model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/taxcodes");
         path.applyField("companyId", companyId);
         return this.threadPool.submit((RestCall<ArrayList<TaxCodeModel>>)restCallFactory.createRestCall("Post", path, model, new TypeToken<ArrayList<TaxCodeModel>>(){}));
@@ -6995,7 +6995,7 @@ public class AvaTaxClient {
      * @param id The ID of the tax code you wish to delete.
      * @return ArrayList<ErrorDetail>
      */
-    public ArrayList<ErrorDetail> deleteTaxCode(int companyId, int id) throws Exception {
+    public ArrayList<ErrorDetail> deleteTaxCode(Integer companyId, Integer id) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/taxcodes/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
@@ -7009,7 +7009,7 @@ public class AvaTaxClient {
      * @param id The ID of the tax code you wish to delete.
      * @return ArrayList<ErrorDetail>
      */
-    public Future<ArrayList<ErrorDetail>> deleteTaxCodeAsync(int companyId, int id) {
+    public Future<ArrayList<ErrorDetail>> deleteTaxCodeAsync(Integer companyId, Integer id) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/taxcodes/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
@@ -7028,7 +7028,7 @@ public class AvaTaxClient {
      * @param id The primary key of this tax code
      * @return TaxCodeModel
      */
-    public TaxCodeModel getTaxCode(int companyId, int id) throws Exception {
+    public TaxCodeModel getTaxCode(Integer companyId, Integer id) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/taxcodes/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
@@ -7047,7 +7047,7 @@ public class AvaTaxClient {
      * @param id The primary key of this tax code
      * @return TaxCodeModel
      */
-    public Future<TaxCodeModel> getTaxCodeAsync(int companyId, int id) {
+    public Future<TaxCodeModel> getTaxCodeAsync(Integer companyId, Integer id) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/taxcodes/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
@@ -7073,7 +7073,7 @@ public class AvaTaxClient {
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<HashMap<String, String>>
      */
-    public FetchResult<HashMap<String, String>> listTaxCodesByCompany(int companyId, String filter, String include, Integer top, Integer skip, String orderBy) throws Exception {
+    public FetchResult<HashMap<String, String>> listTaxCodesByCompany(Integer companyId, String filter, String include, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/taxcodes");
         path.applyField("companyId", companyId);
         path.addQuery("$filter", filter);
@@ -7103,7 +7103,7 @@ public class AvaTaxClient {
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<HashMap<String, String>>
      */
-    public Future<FetchResult<HashMap<String, String>>> listTaxCodesByCompanyAsync(int companyId, String filter, String include, Integer top, Integer skip, String orderBy) {
+    public Future<FetchResult<HashMap<String, String>>> listTaxCodesByCompanyAsync(Integer companyId, String filter, String include, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/taxcodes");
         path.applyField("companyId", companyId);
         path.addQuery("$filter", filter);
@@ -7185,7 +7185,7 @@ public class AvaTaxClient {
      * @param model The tax code you wish to update.
      * @return TaxCodeModel
      */
-    public TaxCodeModel updateTaxCode(int companyId, int id, TaxCodeModel model) throws Exception {
+    public TaxCodeModel updateTaxCode(Integer companyId, Integer id, TaxCodeModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/taxcodes/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
@@ -7207,7 +7207,7 @@ public class AvaTaxClient {
      * @param model The tax code you wish to update.
      * @return TaxCodeModel
      */
-    public Future<TaxCodeModel> updateTaxCodeAsync(int companyId, int id, TaxCodeModel model) {
+    public Future<TaxCodeModel> updateTaxCodeAsync(Integer companyId, Integer id, TaxCodeModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/taxcodes/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
@@ -7226,7 +7226,7 @@ public class AvaTaxClient {
      * @param model The tax rule you wish to create.
      * @return ArrayList<TaxRuleModel>
      */
-    public ArrayList<TaxRuleModel> createTaxRules(int companyId, ArrayList<TaxRuleModel> model) throws Exception {
+    public ArrayList<TaxRuleModel> createTaxRules(Integer companyId, ArrayList<TaxRuleModel> model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/taxrules");
         path.applyField("companyId", companyId);
         return ((RestCall<ArrayList<TaxRuleModel>>)restCallFactory.createRestCall("Post", path, model, new TypeToken<ArrayList<TaxRuleModel>>(){})).call();
@@ -7244,7 +7244,7 @@ public class AvaTaxClient {
      * @param model The tax rule you wish to create.
      * @return ArrayList<TaxRuleModel>
      */
-    public Future<ArrayList<TaxRuleModel>> createTaxRulesAsync(int companyId, ArrayList<TaxRuleModel> model) {
+    public Future<ArrayList<TaxRuleModel>> createTaxRulesAsync(Integer companyId, ArrayList<TaxRuleModel> model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/taxrules");
         path.applyField("companyId", companyId);
         return this.threadPool.submit((RestCall<ArrayList<TaxRuleModel>>)restCallFactory.createRestCall("Post", path, model, new TypeToken<ArrayList<TaxRuleModel>>(){}));
@@ -7257,7 +7257,7 @@ public class AvaTaxClient {
      * @param id The ID of the tax rule you wish to delete.
      * @return ArrayList<ErrorDetail>
      */
-    public ArrayList<ErrorDetail> deleteTaxRule(int companyId, int id) throws Exception {
+    public ArrayList<ErrorDetail> deleteTaxRule(Integer companyId, Integer id) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/taxrules/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
@@ -7271,7 +7271,7 @@ public class AvaTaxClient {
      * @param id The ID of the tax rule you wish to delete.
      * @return ArrayList<ErrorDetail>
      */
-    public Future<ArrayList<ErrorDetail>> deleteTaxRuleAsync(int companyId, int id) {
+    public Future<ArrayList<ErrorDetail>> deleteTaxRuleAsync(Integer companyId, Integer id) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/taxrules/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
@@ -7290,7 +7290,7 @@ public class AvaTaxClient {
      * @param id The primary key of this tax rule
      * @return TaxRuleModel
      */
-    public TaxRuleModel getTaxRule(int companyId, int id) throws Exception {
+    public TaxRuleModel getTaxRule(Integer companyId, Integer id) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/taxrules/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
@@ -7309,7 +7309,7 @@ public class AvaTaxClient {
      * @param id The primary key of this tax rule
      * @return TaxRuleModel
      */
-    public Future<TaxRuleModel> getTaxRuleAsync(int companyId, int id) {
+    public Future<TaxRuleModel> getTaxRuleAsync(Integer companyId, Integer id) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/taxrules/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
@@ -7335,7 +7335,7 @@ public class AvaTaxClient {
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<HashMap<String, String>>
      */
-    public FetchResult<HashMap<String, String>> listTaxRules(int companyId, String filter, String include, Integer top, Integer skip, String orderBy) throws Exception {
+    public FetchResult<HashMap<String, String>> listTaxRules(Integer companyId, String filter, String include, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/taxrules");
         path.applyField("companyId", companyId);
         path.addQuery("$filter", filter);
@@ -7365,7 +7365,7 @@ public class AvaTaxClient {
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<HashMap<String, String>>
      */
-    public Future<FetchResult<HashMap<String, String>>> listTaxRulesAsync(int companyId, String filter, String include, Integer top, Integer skip, String orderBy) {
+    public Future<FetchResult<HashMap<String, String>>> listTaxRulesAsync(Integer companyId, String filter, String include, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/taxrules");
         path.applyField("companyId", companyId);
         path.addQuery("$filter", filter);
@@ -7447,7 +7447,7 @@ public class AvaTaxClient {
      * @param model The tax rule you wish to update.
      * @return TaxRuleModel
      */
-    public TaxRuleModel updateTaxRule(int companyId, int id, TaxRuleModel model) throws Exception {
+    public TaxRuleModel updateTaxRule(Integer companyId, Integer id, TaxRuleModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/taxrules/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
@@ -7469,7 +7469,7 @@ public class AvaTaxClient {
      * @param model The tax rule you wish to update.
      * @return TaxRuleModel
      */
-    public Future<TaxRuleModel> updateTaxRuleAsync(int companyId, int id, TaxRuleModel model) {
+    public Future<TaxRuleModel> updateTaxRuleAsync(Integer companyId, Integer id, TaxRuleModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/taxrules/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
@@ -8126,7 +8126,7 @@ public class AvaTaxClient {
      * @param include A comma separated list of child objects to return underneath the primary object.
      * @return TransactionModel
      */
-    public TransactionModel getTransactionById(long id, String include) throws Exception {
+    public TransactionModel getTransactionById(Long id, String include) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/transactions/{id}");
         path.applyField("id", id);
         path.addQuery("$include", include);
@@ -8151,7 +8151,7 @@ public class AvaTaxClient {
      * @param include A comma separated list of child objects to return underneath the primary object.
      * @return TransactionModel
      */
-    public Future<TransactionModel> getTransactionByIdAsync(long id, String include) {
+    public Future<TransactionModel> getTransactionByIdAsync(Long id, String include) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/transactions/{id}");
         path.applyField("id", id);
         path.addQuery("$include", include);
@@ -8459,7 +8459,7 @@ public class AvaTaxClient {
      * @param model The UPC you wish to create.
      * @return ArrayList<UPCModel>
      */
-    public ArrayList<UPCModel> createUPCs(int companyId, ArrayList<UPCModel> model) throws Exception {
+    public ArrayList<UPCModel> createUPCs(Integer companyId, ArrayList<UPCModel> model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/upcs");
         path.applyField("companyId", companyId);
         return ((RestCall<ArrayList<UPCModel>>)restCallFactory.createRestCall("Post", path, model, new TypeToken<ArrayList<UPCModel>>(){})).call();
@@ -8474,7 +8474,7 @@ public class AvaTaxClient {
      * @param model The UPC you wish to create.
      * @return ArrayList<UPCModel>
      */
-    public Future<ArrayList<UPCModel>> createUPCsAsync(int companyId, ArrayList<UPCModel> model) {
+    public Future<ArrayList<UPCModel>> createUPCsAsync(Integer companyId, ArrayList<UPCModel> model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/upcs");
         path.applyField("companyId", companyId);
         return this.threadPool.submit((RestCall<ArrayList<UPCModel>>)restCallFactory.createRestCall("Post", path, model, new TypeToken<ArrayList<UPCModel>>(){}));
@@ -8487,7 +8487,7 @@ public class AvaTaxClient {
      * @param id The ID of the UPC you wish to delete.
      * @return ArrayList<ErrorDetail>
      */
-    public ArrayList<ErrorDetail> deleteUPC(int companyId, int id) throws Exception {
+    public ArrayList<ErrorDetail> deleteUPC(Integer companyId, Integer id) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/upcs/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
@@ -8501,7 +8501,7 @@ public class AvaTaxClient {
      * @param id The ID of the UPC you wish to delete.
      * @return ArrayList<ErrorDetail>
      */
-    public Future<ArrayList<ErrorDetail>> deleteUPCAsync(int companyId, int id) {
+    public Future<ArrayList<ErrorDetail>> deleteUPCAsync(Integer companyId, Integer id) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/upcs/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
@@ -8517,7 +8517,7 @@ public class AvaTaxClient {
      * @param id The primary key of this UPC
      * @return UPCModel
      */
-    public UPCModel getUPC(int companyId, int id) throws Exception {
+    public UPCModel getUPC(Integer companyId, Integer id) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/upcs/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
@@ -8533,7 +8533,7 @@ public class AvaTaxClient {
      * @param id The primary key of this UPC
      * @return UPCModel
      */
-    public Future<UPCModel> getUPCAsync(int companyId, int id) {
+    public Future<UPCModel> getUPCAsync(Integer companyId, Integer id) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/upcs/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
@@ -8556,7 +8556,7 @@ public class AvaTaxClient {
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<HashMap<String, String>>
      */
-    public FetchResult<HashMap<String, String>> listUPCsByCompany(int companyId, String filter, String include, Integer top, Integer skip, String orderBy) throws Exception {
+    public FetchResult<HashMap<String, String>> listUPCsByCompany(Integer companyId, String filter, String include, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/upcs");
         path.applyField("companyId", companyId);
         path.addQuery("$filter", filter);
@@ -8583,7 +8583,7 @@ public class AvaTaxClient {
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<HashMap<String, String>>
      */
-    public Future<FetchResult<HashMap<String, String>>> listUPCsByCompanyAsync(int companyId, String filter, String include, Integer top, Integer skip, String orderBy) {
+    public Future<FetchResult<HashMap<String, String>>> listUPCsByCompanyAsync(Integer companyId, String filter, String include, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/upcs");
         path.applyField("companyId", companyId);
         path.addQuery("$filter", filter);
@@ -8656,7 +8656,7 @@ public class AvaTaxClient {
      * @param model The UPC you wish to update.
      * @return UPCModel
      */
-    public UPCModel updateUPC(int companyId, int id, UPCModel model) throws Exception {
+    public UPCModel updateUPC(Integer companyId, Integer id, UPCModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/upcs/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
@@ -8675,7 +8675,7 @@ public class AvaTaxClient {
      * @param model The UPC you wish to update.
      * @return UPCModel
      */
-    public Future<UPCModel> updateUPCAsync(int companyId, int id, UPCModel model) {
+    public Future<UPCModel> updateUPCAsync(Integer companyId, Integer id, UPCModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/upcs/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
@@ -8692,7 +8692,7 @@ public class AvaTaxClient {
      * @param include A comma separated list of child objects to return underneath the primary object.
      * @return UserModel
      */
-    public UserModel getUser(int id, int accountId, String include) throws Exception {
+    public UserModel getUser(Integer id, Integer accountId, String include) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/users/{id}");
         path.applyField("id", id);
         path.applyField("accountId", accountId);
@@ -8710,7 +8710,7 @@ public class AvaTaxClient {
      * @param include A comma separated list of child objects to return underneath the primary object.
      * @return UserModel
      */
-    public Future<UserModel> getUserAsync(int id, int accountId, String include) {
+    public Future<UserModel> getUserAsync(Integer id, Integer accountId, String include) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/users/{id}");
         path.applyField("id", id);
         path.applyField("accountId", accountId);
@@ -8740,7 +8740,7 @@ public class AvaTaxClient {
      * @param accountId The accountID of the user you wish to get.
      * @return UserEntitlementModel
      */
-    public UserEntitlementModel getUserEntitlements(int id, int accountId) throws Exception {
+    public UserEntitlementModel getUserEntitlements(Integer id, Integer accountId) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/users/{id}/entitlements");
         path.applyField("id", id);
         path.applyField("accountId", accountId);
@@ -8769,7 +8769,7 @@ public class AvaTaxClient {
      * @param accountId The accountID of the user you wish to get.
      * @return UserEntitlementModel
      */
-    public Future<UserEntitlementModel> getUserEntitlementsAsync(int id, int accountId) {
+    public Future<UserEntitlementModel> getUserEntitlementsAsync(Integer id, Integer accountId) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/users/{id}/entitlements");
         path.applyField("id", id);
         path.applyField("accountId", accountId);
@@ -8792,7 +8792,7 @@ public class AvaTaxClient {
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<HashMap<String, String>>
      */
-    public FetchResult<HashMap<String, String>> listUsersByAccount(int accountId, String include, String filter, Integer top, Integer skip, String orderBy) throws Exception {
+    public FetchResult<HashMap<String, String>> listUsersByAccount(Integer accountId, String include, String filter, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/users");
         path.applyField("accountId", accountId);
         path.addQuery("$include", include);
@@ -8819,7 +8819,7 @@ public class AvaTaxClient {
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<HashMap<String, String>>
      */
-    public Future<FetchResult<HashMap<String, String>>> listUsersByAccountAsync(int accountId, String include, String filter, Integer top, Integer skip, String orderBy) {
+    public Future<FetchResult<HashMap<String, String>>> listUsersByAccountAsync(Integer accountId, String include, String filter, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/users");
         path.applyField("accountId", accountId);
         path.addQuery("$include", include);
@@ -8892,7 +8892,7 @@ public class AvaTaxClient {
      * @param model The user object you wish to update.
      * @return UserModel
      */
-    public UserModel updateUser(int id, int accountId, UserModel model) throws Exception {
+    public UserModel updateUser(Integer id, Integer accountId, UserModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/users/{id}");
         path.applyField("id", id);
         path.applyField("accountId", accountId);
@@ -8911,7 +8911,7 @@ public class AvaTaxClient {
      * @param model The user object you wish to update.
      * @return UserModel
      */
-    public Future<UserModel> updateUserAsync(int id, int accountId, UserModel model) {
+    public Future<UserModel> updateUserAsync(Integer id, Integer accountId, UserModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/users/{id}");
         path.applyField("id", id);
         path.applyField("accountId", accountId);

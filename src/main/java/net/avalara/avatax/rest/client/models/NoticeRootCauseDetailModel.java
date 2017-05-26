@@ -30,14 +30,14 @@ import java.util.HashMap;
 public class NoticeRootCauseDetailModel {
 
 
-    private int id;
+    private Integer id;
 
     /**
      * Getter for id
      *
      * The unique ID number of this filing frequency.
      */
-    public int getId() {
+    public Integer getId() {
         return this.id;
     }
 
@@ -46,7 +46,7 @@ public class NoticeRootCauseDetailModel {
      *
      * The unique ID number of this filing frequency.
      */
-    public void setId(int value) {
+    public void setId(Integer value) {
         this.id = value;
     }
 

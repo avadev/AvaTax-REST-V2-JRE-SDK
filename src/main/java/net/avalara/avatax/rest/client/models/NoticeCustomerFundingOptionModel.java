@@ -30,14 +30,14 @@ import java.util.HashMap;
 public class NoticeCustomerFundingOptionModel {
 
 
-    private int id;
+    private Integer id;
 
     /**
      * Getter for id
      *
      * The unique ID number of this tax notice customer FundingOption.
      */
-    public int getId() {
+    public Integer getId() {
         return this.id;
     }
 
@@ -46,7 +46,7 @@ public class NoticeCustomerFundingOptionModel {
      *
      * The unique ID number of this tax notice customer FundingOption.
      */
-    public void setId(int value) {
+    public void setId(Integer value) {
         this.id = value;
     }
 

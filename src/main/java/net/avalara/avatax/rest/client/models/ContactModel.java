@@ -30,14 +30,14 @@ import java.util.HashMap;
 public class ContactModel {
 
 
-    private int id;
+    private Integer id;
 
     /**
      * Getter for id
      *
      * The unique ID number of this contact.
      */
-    public int getId() {
+    public Integer getId() {
         return this.id;
     }
 
@@ -46,19 +46,19 @@ public class ContactModel {
      *
      * The unique ID number of this contact.
      */
-    public void setId(int value) {
+    public void setId(Integer value) {
         this.id = value;
     }
 
 
-    private int companyId;
+    private Integer companyId;
 
     /**
      * Getter for companyId
      *
      * The unique ID number of the company to which this contact belongs.
      */
-    public int getCompanyId() {
+    public Integer getCompanyId() {
         return this.companyId;
     }
 
@@ -67,7 +67,7 @@ public class ContactModel {
      *
      * The unique ID number of the company to which this contact belongs.
      */
-    public void setCompanyId(int value) {
+    public void setCompanyId(Integer value) {
         this.companyId = value;
     }
 

@@ -72,14 +72,14 @@ public class UserEntitlementModel {
     }
 
 
-    private ArrayList<int> companies;
+    private ArrayList<Integer> companies;
 
     /**
      * Getter for companies
      *
      * The identities of all companies this user is permitted to access
      */
-    public ArrayList<int> getCompanies() {
+    public ArrayList<Integer> getCompanies() {
         return this.companies;
     }
 
@@ -88,7 +88,7 @@ public class UserEntitlementModel {
      *
      * The identities of all companies this user is permitted to access
      */
-    public void setCompanies(ArrayList<int> value) {
+    public void setCompanies(ArrayList<Integer> value) {
         this.companies = value;
     }
 

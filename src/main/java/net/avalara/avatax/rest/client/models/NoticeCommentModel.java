@@ -51,14 +51,14 @@ public class NoticeCommentModel {
     }
 
 
-    private int noticeId;
+    private Integer noticeId;
 
     /**
      * Getter for noticeId
      *
      * The ID of the notice this comment is attached too
      */
-    public int getNoticeId() {
+    public Integer getNoticeId() {
         return this.noticeId;
     }
 
@@ -67,7 +67,7 @@ public class NoticeCommentModel {
      *
      * The ID of the notice this comment is attached too
      */
-    public void setNoticeId(int value) {
+    public void setNoticeId(Integer value) {
         this.noticeId = value;
     }
 

@@ -33,14 +33,14 @@ import java.util.HashMap;
 public class SettingModel {
 
 
-    private int id;
+    private Integer id;
 
     /**
      * Getter for id
      *
      * The unique ID number of this setting.
      */
-    public int getId() {
+    public Integer getId() {
         return this.id;
     }
 
@@ -49,19 +49,19 @@ public class SettingModel {
      *
      * The unique ID number of this setting.
      */
-    public void setId(int value) {
+    public void setId(Integer value) {
         this.id = value;
     }
 
 
-    private int companyId;
+    private Integer companyId;
 
     /**
      * Getter for companyId
      *
      * The unique ID number of the company this setting refers to.
      */
-    public int getCompanyId() {
+    public Integer getCompanyId() {
         return this.companyId;
     }
 
@@ -70,7 +70,7 @@ public class SettingModel {
      *
      * The unique ID number of the company this setting refers to.
      */
-    public void setCompanyId(int value) {
+    public void setCompanyId(Integer value) {
         this.companyId = value;
     }
 

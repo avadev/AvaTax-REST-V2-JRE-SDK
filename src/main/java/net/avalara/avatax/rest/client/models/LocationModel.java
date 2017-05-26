@@ -31,14 +31,14 @@ import java.util.HashMap;
 public class LocationModel {
 
 
-    private int id;
+    private Integer id;
 
     /**
      * Getter for id
      *
      * The unique ID number of this location.
      */
-    public int getId() {
+    public Integer getId() {
         return this.id;
     }
 
@@ -47,19 +47,19 @@ public class LocationModel {
      *
      * The unique ID number of this location.
      */
-    public void setId(int value) {
+    public void setId(Integer value) {
         this.id = value;
     }
 
 
-    private int companyId;
+    private Integer companyId;
 
     /**
      * Getter for companyId
      *
      * The unique ID number of the company that operates at this location.
      */
-    public int getCompanyId() {
+    public Integer getCompanyId() {
         return this.companyId;
     }
 
@@ -68,7 +68,7 @@ public class LocationModel {
      *
      * The unique ID number of the company that operates at this location.
      */
-    public void setCompanyId(int value) {
+    public void setCompanyId(Integer value) {
         this.companyId = value;
     }
 

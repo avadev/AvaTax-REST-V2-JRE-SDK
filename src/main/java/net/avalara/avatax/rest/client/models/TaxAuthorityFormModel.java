@@ -30,14 +30,14 @@ import java.util.HashMap;
 public class TaxAuthorityFormModel {
 
 
-    private int taxAuthorityId;
+    private Integer taxAuthorityId;
 
     /**
      * Getter for taxAuthorityId
      *
      * The unique ID number of the tax authority.
      */
-    public int getTaxAuthorityId() {
+    public Integer getTaxAuthorityId() {
         return this.taxAuthorityId;
     }
 
@@ -46,7 +46,7 @@ public class TaxAuthorityFormModel {
      *
      * The unique ID number of the tax authority.
      */
-    public void setTaxAuthorityId(int value) {
+    public void setTaxAuthorityId(Integer value) {
         this.taxAuthorityId = value;
     }
 
