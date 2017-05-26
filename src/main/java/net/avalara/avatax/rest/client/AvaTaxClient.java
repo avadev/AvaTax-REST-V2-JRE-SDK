@@ -547,9 +547,9 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<HashMap<String, String>>
+     * @return FetchResult<BatchModel>
      */
-    public FetchResult<HashMap<String, String>> listBatchesByCompany(Integer companyId, String filter, String include, Integer top, Integer skip, String orderBy) throws Exception {
+    public FetchResult<BatchModel> listBatchesByCompany(Integer companyId, String filter, String include, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/batches");
         path.applyField("companyId", companyId);
         path.addQuery("$filter", filter);
@@ -557,7 +557,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<HashMap<String, String>>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<HashMap<String, String>>>(){})).call();
+        return ((RestCall<FetchResult<BatchModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<BatchModel>>(){})).call();
     }
 
     /**
@@ -575,9 +575,9 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<HashMap<String, String>>
+     * @return FetchResult<BatchModel>
      */
-    public Future<FetchResult<HashMap<String, String>>> listBatchesByCompanyAsync(Integer companyId, String filter, String include, Integer top, Integer skip, String orderBy) {
+    public Future<FetchResult<BatchModel>> listBatchesByCompanyAsync(Integer companyId, String filter, String include, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/batches");
         path.applyField("companyId", companyId);
         path.addQuery("$filter", filter);
@@ -585,7 +585,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<HashMap<String, String>>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<HashMap<String, String>>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<BatchModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<BatchModel>>(){}));
     }
 
     /**
@@ -603,16 +603,16 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<HashMap<String, String>>
+     * @return FetchResult<BatchModel>
      */
-    public FetchResult<HashMap<String, String>> queryBatches(String filter, String include, Integer top, Integer skip, String orderBy) throws Exception {
+    public FetchResult<BatchModel> queryBatches(String filter, String include, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/batches");
         path.addQuery("$filter", filter);
         path.addQuery("$include", include);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<HashMap<String, String>>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<HashMap<String, String>>>(){})).call();
+        return ((RestCall<FetchResult<BatchModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<BatchModel>>(){})).call();
     }
 
     /**
@@ -630,16 +630,16 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<HashMap<String, String>>
+     * @return FetchResult<BatchModel>
      */
-    public Future<FetchResult<HashMap<String, String>>> queryBatchesAsync(String filter, String include, Integer top, Integer skip, String orderBy) {
+    public Future<FetchResult<BatchModel>> queryBatchesAsync(String filter, String include, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/batches");
         path.addQuery("$filter", filter);
         path.addQuery("$include", include);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<HashMap<String, String>>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<HashMap<String, String>>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<BatchModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<BatchModel>>(){}));
     }
 
     /**
@@ -938,16 +938,16 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<HashMap<String, String>>
+     * @return FetchResult<CompanyModel>
      */
-    public FetchResult<HashMap<String, String>> queryCompanies(String include, String filter, Integer top, Integer skip, String orderBy) throws Exception {
+    public FetchResult<CompanyModel> queryCompanies(String include, String filter, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies");
         path.addQuery("$include", include);
         path.addQuery("$filter", filter);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<HashMap<String, String>>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<HashMap<String, String>>>(){})).call();
+        return ((RestCall<FetchResult<CompanyModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<CompanyModel>>(){})).call();
     }
 
     /**
@@ -972,16 +972,16 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<HashMap<String, String>>
+     * @return FetchResult<CompanyModel>
      */
-    public Future<FetchResult<HashMap<String, String>>> queryCompaniesAsync(String include, String filter, Integer top, Integer skip, String orderBy) {
+    public Future<FetchResult<CompanyModel>> queryCompaniesAsync(String include, String filter, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies");
         path.addQuery("$include", include);
         path.addQuery("$filter", filter);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<HashMap<String, String>>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<HashMap<String, String>>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<CompanyModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<CompanyModel>>(){}));
     }
 
     /**
@@ -1175,9 +1175,9 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<HashMap<String, String>>
+     * @return FetchResult<ContactModel>
      */
-    public FetchResult<HashMap<String, String>> listContactsByCompany(Integer companyId, String filter, String include, Integer top, Integer skip, String orderBy) throws Exception {
+    public FetchResult<ContactModel> listContactsByCompany(Integer companyId, String filter, String include, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/contacts");
         path.applyField("companyId", companyId);
         path.addQuery("$filter", filter);
@@ -1185,7 +1185,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<HashMap<String, String>>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<HashMap<String, String>>>(){})).call();
+        return ((RestCall<FetchResult<ContactModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<ContactModel>>(){})).call();
     }
 
     /**
@@ -1201,9 +1201,9 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<HashMap<String, String>>
+     * @return FetchResult<ContactModel>
      */
-    public Future<FetchResult<HashMap<String, String>>> listContactsByCompanyAsync(Integer companyId, String filter, String include, Integer top, Integer skip, String orderBy) {
+    public Future<FetchResult<ContactModel>> listContactsByCompanyAsync(Integer companyId, String filter, String include, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/contacts");
         path.applyField("companyId", companyId);
         path.addQuery("$filter", filter);
@@ -1211,7 +1211,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<HashMap<String, String>>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<HashMap<String, String>>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<ContactModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<ContactModel>>(){}));
     }
 
     /**
@@ -1228,16 +1228,16 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<HashMap<String, String>>
+     * @return FetchResult<ContactModel>
      */
-    public FetchResult<HashMap<String, String>> queryContacts(String filter, String include, Integer top, Integer skip, String orderBy) throws Exception {
+    public FetchResult<ContactModel> queryContacts(String filter, String include, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/contacts");
         path.addQuery("$filter", filter);
         path.addQuery("$include", include);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<HashMap<String, String>>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<HashMap<String, String>>>(){})).call();
+        return ((RestCall<FetchResult<ContactModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<ContactModel>>(){})).call();
     }
 
     /**
@@ -1254,16 +1254,16 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<HashMap<String, String>>
+     * @return FetchResult<ContactModel>
      */
-    public Future<FetchResult<HashMap<String, String>>> queryContactsAsync(String filter, String include, Integer top, Integer skip, String orderBy) {
+    public Future<FetchResult<ContactModel>> queryContactsAsync(String filter, String include, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/contacts");
         path.addQuery("$filter", filter);
         path.addQuery("$include", include);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<HashMap<String, String>>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<HashMap<String, String>>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<ContactModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<ContactModel>>(){}));
     }
 
     /**
@@ -1313,13 +1313,13 @@ public class AvaTaxClient {
      * 
      * @param country The two-character ISO-3166 code for the country.
      * @param region The two or three character region code for the region.
-     * @return FetchResult<HashMap<String, String>>
+     * @return FetchResult<NexusModel>
      */
-    public FetchResult<HashMap<String, String>> apiV2DefinitionsNexusByCountryByRegionGet(String country, String region) throws Exception {
+    public FetchResult<NexusModel> apiV2DefinitionsNexusByCountryByRegionGet(String country, String region) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/nexus/{country}/{region}");
         path.applyField("country", country);
         path.applyField("region", region);
-        return ((RestCall<FetchResult<HashMap<String, String>>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<HashMap<String, String>>>(){})).call();
+        return ((RestCall<FetchResult<NexusModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<NexusModel>>(){})).call();
     }
 
     /**
@@ -1329,13 +1329,13 @@ public class AvaTaxClient {
      * 
      * @param country The two-character ISO-3166 code for the country.
      * @param region The two or three character region code for the region.
-     * @return FetchResult<HashMap<String, String>>
+     * @return FetchResult<NexusModel>
      */
-    public Future<FetchResult<HashMap<String, String>>> apiV2DefinitionsNexusByCountryByRegionGetAsync(String country, String region) {
+    public Future<FetchResult<NexusModel>> apiV2DefinitionsNexusByCountryByRegionGetAsync(String country, String region) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/nexus/{country}/{region}");
         path.applyField("country", country);
         path.applyField("region", region);
-        return this.threadPool.submit((RestCall<FetchResult<HashMap<String, String>>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<HashMap<String, String>>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<NexusModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<NexusModel>>(){}));
     }
 
     /**
@@ -1344,12 +1344,12 @@ public class AvaTaxClient {
      * Returns all Avalara-supported nexus for the specified country.
      * 
      * @param country 
-     * @return FetchResult<HashMap<String, String>>
+     * @return FetchResult<NexusModel>
      */
-    public FetchResult<HashMap<String, String>> apiV2DefinitionsNexusByCountryGet(String country) throws Exception {
+    public FetchResult<NexusModel> apiV2DefinitionsNexusByCountryGet(String country) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/nexus/{country}");
         path.applyField("country", country);
-        return ((RestCall<FetchResult<HashMap<String, String>>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<HashMap<String, String>>>(){})).call();
+        return ((RestCall<FetchResult<NexusModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<NexusModel>>(){})).call();
     }
 
     /**
@@ -1358,12 +1358,12 @@ public class AvaTaxClient {
      * Returns all Avalara-supported nexus for the specified country.
      * 
      * @param country 
-     * @return FetchResult<HashMap<String, String>>
+     * @return FetchResult<NexusModel>
      */
-    public Future<FetchResult<HashMap<String, String>>> apiV2DefinitionsNexusByCountryGetAsync(String country) {
+    public Future<FetchResult<NexusModel>> apiV2DefinitionsNexusByCountryGetAsync(String country) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/nexus/{country}");
         path.applyField("country", country);
-        return this.threadPool.submit((RestCall<FetchResult<HashMap<String, String>>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<HashMap<String, String>>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<NexusModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<NexusModel>>(){}));
     }
 
     /**
@@ -1371,11 +1371,11 @@ public class AvaTaxClient {
      * 
      * Returns the full list of all Avalara-supported nexus for all countries and regions.  
      * 
-     * @return FetchResult<HashMap<String, String>>
+     * @return FetchResult<NexusModel>
      */
-    public FetchResult<HashMap<String, String>> apiV2DefinitionsNexusGet() throws Exception {
+    public FetchResult<NexusModel> apiV2DefinitionsNexusGet() throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/nexus");
-        return ((RestCall<FetchResult<HashMap<String, String>>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<HashMap<String, String>>>(){})).call();
+        return ((RestCall<FetchResult<NexusModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<NexusModel>>(){})).call();
     }
 
     /**
@@ -1383,11 +1383,11 @@ public class AvaTaxClient {
      * 
      * Returns the full list of all Avalara-supported nexus for all countries and regions.  
      * 
-     * @return FetchResult<HashMap<String, String>>
+     * @return FetchResult<NexusModel>
      */
-    public Future<FetchResult<HashMap<String, String>>> apiV2DefinitionsNexusGetAsync() {
+    public Future<FetchResult<NexusModel>> apiV2DefinitionsNexusGetAsync() {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/nexus");
-        return this.threadPool.submit((RestCall<FetchResult<HashMap<String, String>>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<HashMap<String, String>>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<NexusModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<NexusModel>>(){}));
     }
 
     /**
@@ -1396,12 +1396,12 @@ public class AvaTaxClient {
      * This API is intended to be useful to identify whether the user should be allowed
      * 
      * @param form The name of the form you would like to verify. This can be the tax form code or the legacy return name
-     * @return FetchResult<HashMap<String, String>>
+     * @return FetchResult<SkyscraperStatusModel>
      */
-    public FetchResult<HashMap<String, String>> getLoginVerifierByForm(String form) throws Exception {
+    public FetchResult<SkyscraperStatusModel> getLoginVerifierByForm(String form) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/filingcalendars/loginverifiers/{form}");
         path.applyField("form", form);
-        return ((RestCall<FetchResult<HashMap<String, String>>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<HashMap<String, String>>>(){})).call();
+        return ((RestCall<FetchResult<SkyscraperStatusModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<SkyscraperStatusModel>>(){})).call();
     }
 
     /**
@@ -1410,12 +1410,12 @@ public class AvaTaxClient {
      * This API is intended to be useful to identify whether the user should be allowed
      * 
      * @param form The name of the form you would like to verify. This can be the tax form code or the legacy return name
-     * @return FetchResult<HashMap<String, String>>
+     * @return FetchResult<SkyscraperStatusModel>
      */
-    public Future<FetchResult<HashMap<String, String>>> getLoginVerifierByFormAsync(String form) {
+    public Future<FetchResult<SkyscraperStatusModel>> getLoginVerifierByFormAsync(String form) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/filingcalendars/loginverifiers/{form}");
         path.applyField("form", form);
-        return this.threadPool.submit((RestCall<FetchResult<HashMap<String, String>>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<HashMap<String, String>>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<SkyscraperStatusModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<SkyscraperStatusModel>>(){}));
     }
 
     /**
@@ -1423,11 +1423,11 @@ public class AvaTaxClient {
      * 
      * Returns the full list of Avalara-supported AvaFile Forms
      * 
-     * @return FetchResult<HashMap<String, String>>
+     * @return FetchResult<AvaFileFormModel>
      */
-    public FetchResult<HashMap<String, String>> listAvaFileForms() throws Exception {
+    public FetchResult<AvaFileFormModel> listAvaFileForms() throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/avafileforms");
-        return ((RestCall<FetchResult<HashMap<String, String>>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<HashMap<String, String>>>(){})).call();
+        return ((RestCall<FetchResult<AvaFileFormModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<AvaFileFormModel>>(){})).call();
     }
 
     /**
@@ -1435,11 +1435,11 @@ public class AvaTaxClient {
      * 
      * Returns the full list of Avalara-supported AvaFile Forms
      * 
-     * @return FetchResult<HashMap<String, String>>
+     * @return FetchResult<AvaFileFormModel>
      */
-    public Future<FetchResult<HashMap<String, String>>> listAvaFileFormsAsync() {
+    public Future<FetchResult<AvaFileFormModel>> listAvaFileFormsAsync() {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/avafileforms");
-        return this.threadPool.submit((RestCall<FetchResult<HashMap<String, String>>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<HashMap<String, String>>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<AvaFileFormModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<AvaFileFormModel>>(){}));
     }
 
     /**
@@ -1448,11 +1448,11 @@ public class AvaTaxClient {
      * Returns a list of all ISO 3166 country codes, and their US English friendly names.
      * This API is intended to be useful when presenting a dropdown box in your website to allow customers to select a country for 
      * 
-     * @return FetchResult<HashMap<String, String>>
+     * @return FetchResult<IsoCountryModel>
      */
-    public FetchResult<HashMap<String, String>> listCountries() throws Exception {
+    public FetchResult<IsoCountryModel> listCountries() throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/countries");
-        return ((RestCall<FetchResult<HashMap<String, String>>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<HashMap<String, String>>>(){})).call();
+        return ((RestCall<FetchResult<IsoCountryModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<IsoCountryModel>>(){})).call();
     }
 
     /**
@@ -1461,11 +1461,11 @@ public class AvaTaxClient {
      * Returns a list of all ISO 3166 country codes, and their US English friendly names.
      * This API is intended to be useful when presenting a dropdown box in your website to allow customers to select a country for 
      * 
-     * @return FetchResult<HashMap<String, String>>
+     * @return FetchResult<IsoCountryModel>
      */
-    public Future<FetchResult<HashMap<String, String>>> listCountriesAsync() {
+    public Future<FetchResult<IsoCountryModel>> listCountriesAsync() {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/countries");
-        return this.threadPool.submit((RestCall<FetchResult<HashMap<String, String>>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<HashMap<String, String>>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<IsoCountryModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<IsoCountryModel>>(){}));
     }
 
     /**
@@ -1476,11 +1476,11 @@ public class AvaTaxClient {
      * is occurring.  This information is generally used to determine taxability of the product.
      * In order to facilitate correct reporting of your taxes, you are encouraged to select the proper entity use codes for
      * 
-     * @return FetchResult<HashMap<String, String>>
+     * @return FetchResult<EntityUseCodeModel>
      */
-    public FetchResult<HashMap<String, String>> listEntityUseCodes() throws Exception {
+    public FetchResult<EntityUseCodeModel> listEntityUseCodes() throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/entityusecodes");
-        return ((RestCall<FetchResult<HashMap<String, String>>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<HashMap<String, String>>>(){})).call();
+        return ((RestCall<FetchResult<EntityUseCodeModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<EntityUseCodeModel>>(){})).call();
     }
 
     /**
@@ -1491,11 +1491,11 @@ public class AvaTaxClient {
      * is occurring.  This information is generally used to determine taxability of the product.
      * In order to facilitate correct reporting of your taxes, you are encouraged to select the proper entity use codes for
      * 
-     * @return FetchResult<HashMap<String, String>>
+     * @return FetchResult<EntityUseCodeModel>
      */
-    public Future<FetchResult<HashMap<String, String>>> listEntityUseCodesAsync() {
+    public Future<FetchResult<EntityUseCodeModel>> listEntityUseCodesAsync() {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/entityusecodes");
-        return this.threadPool.submit((RestCall<FetchResult<HashMap<String, String>>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<HashMap<String, String>>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<EntityUseCodeModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<EntityUseCodeModel>>(){}));
     }
 
     /**
@@ -1503,11 +1503,11 @@ public class AvaTaxClient {
      * 
      * Returns the full list of Avalara-supported filing frequencies.
      * 
-     * @return FetchResult<HashMap<String, String>>
+     * @return FetchResult<FilingFrequencyModel>
      */
-    public FetchResult<HashMap<String, String>> listFilingFrequencies() throws Exception {
+    public FetchResult<FilingFrequencyModel> listFilingFrequencies() throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/filingfrequencies");
-        return ((RestCall<FetchResult<HashMap<String, String>>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<HashMap<String, String>>>(){})).call();
+        return ((RestCall<FetchResult<FilingFrequencyModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<FilingFrequencyModel>>(){})).call();
     }
 
     /**
@@ -1515,11 +1515,11 @@ public class AvaTaxClient {
      * 
      * Returns the full list of Avalara-supported filing frequencies.
      * 
-     * @return FetchResult<HashMap<String, String>>
+     * @return FetchResult<FilingFrequencyModel>
      */
-    public Future<FetchResult<HashMap<String, String>>> listFilingFrequenciesAsync() {
+    public Future<FetchResult<FilingFrequencyModel>> listFilingFrequenciesAsync() {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/filingfrequencies");
-        return this.threadPool.submit((RestCall<FetchResult<HashMap<String, String>>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<HashMap<String, String>>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<FilingFrequencyModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<FilingFrequencyModel>>(){}));
     }
 
     /**
@@ -1539,9 +1539,9 @@ public class AvaTaxClient {
      * @param region The region, state, or province code portion of this address.
      * @param postalCode The postal code or zip code portion of this address.
      * @param country The two-character ISO-3166 code of the country portion of this address.
-     * @return FetchResult<HashMap<String, String>>
+     * @return FetchResult<JurisdictionOverrideModel>
      */
-    public FetchResult<HashMap<String, String>> listJurisdictionsByAddress(String line1, String line2, String line3, String city, String region, String postalCode, String country) throws Exception {
+    public FetchResult<JurisdictionOverrideModel> listJurisdictionsByAddress(String line1, String line2, String line3, String city, String region, String postalCode, String country) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/jurisdictionsnearaddress");
         path.addQuery("line1", line1);
         path.addQuery("line2", line2);
@@ -1550,7 +1550,7 @@ public class AvaTaxClient {
         path.addQuery("region", region);
         path.addQuery("postalCode", postalCode);
         path.addQuery("country", country);
-        return ((RestCall<FetchResult<HashMap<String, String>>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<HashMap<String, String>>>(){})).call();
+        return ((RestCall<FetchResult<JurisdictionOverrideModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<JurisdictionOverrideModel>>(){})).call();
     }
 
     /**
@@ -1570,9 +1570,9 @@ public class AvaTaxClient {
      * @param region The region, state, or province code portion of this address.
      * @param postalCode The postal code or zip code portion of this address.
      * @param country The two-character ISO-3166 code of the country portion of this address.
-     * @return FetchResult<HashMap<String, String>>
+     * @return FetchResult<JurisdictionOverrideModel>
      */
-    public Future<FetchResult<HashMap<String, String>>> listJurisdictionsByAddressAsync(String line1, String line2, String line3, String city, String region, String postalCode, String country) {
+    public Future<FetchResult<JurisdictionOverrideModel>> listJurisdictionsByAddressAsync(String line1, String line2, String line3, String city, String region, String postalCode, String country) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/jurisdictionsnearaddress");
         path.addQuery("line1", line1);
         path.addQuery("line2", line2);
@@ -1581,7 +1581,7 @@ public class AvaTaxClient {
         path.addQuery("region", region);
         path.addQuery("postalCode", postalCode);
         path.addQuery("country", country);
-        return this.threadPool.submit((RestCall<FetchResult<HashMap<String, String>>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<HashMap<String, String>>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<JurisdictionOverrideModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<JurisdictionOverrideModel>>(){}));
     }
 
     /**
@@ -1602,9 +1602,9 @@ public class AvaTaxClient {
      * @param country The country part of this location's address.
      * @param latitude Optionally identify the location via latitude/longitude instead of via address.
      * @param longitude Optionally identify the location via latitude/longitude instead of via address.
-     * @return FetchResult<HashMap<String, String>>
+     * @return FetchResult<LocationQuestionModel>
      */
-    public FetchResult<HashMap<String, String>> listLocationQuestionsByAddress(String line1, String line2, String line3, String city, String region, String postalCode, String country, BigDecimal latitude, BigDecimal longitude) throws Exception {
+    public FetchResult<LocationQuestionModel> listLocationQuestionsByAddress(String line1, String line2, String line3, String city, String region, String postalCode, String country, BigDecimal latitude, BigDecimal longitude) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/locationquestions");
         path.addQuery("line1", line1);
         path.addQuery("line2", line2);
@@ -1615,7 +1615,7 @@ public class AvaTaxClient {
         path.addQuery("country", country);
         path.addQuery("latitude", latitude);
         path.addQuery("longitude", longitude);
-        return ((RestCall<FetchResult<HashMap<String, String>>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<HashMap<String, String>>>(){})).call();
+        return ((RestCall<FetchResult<LocationQuestionModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<LocationQuestionModel>>(){})).call();
     }
 
     /**
@@ -1636,9 +1636,9 @@ public class AvaTaxClient {
      * @param country The country part of this location's address.
      * @param latitude Optionally identify the location via latitude/longitude instead of via address.
      * @param longitude Optionally identify the location via latitude/longitude instead of via address.
-     * @return FetchResult<HashMap<String, String>>
+     * @return FetchResult<LocationQuestionModel>
      */
-    public Future<FetchResult<HashMap<String, String>>> listLocationQuestionsByAddressAsync(String line1, String line2, String line3, String city, String region, String postalCode, String country, BigDecimal latitude, BigDecimal longitude) {
+    public Future<FetchResult<LocationQuestionModel>> listLocationQuestionsByAddressAsync(String line1, String line2, String line3, String city, String region, String postalCode, String country, BigDecimal latitude, BigDecimal longitude) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/locationquestions");
         path.addQuery("line1", line1);
         path.addQuery("line2", line2);
@@ -1649,7 +1649,7 @@ public class AvaTaxClient {
         path.addQuery("country", country);
         path.addQuery("latitude", latitude);
         path.addQuery("longitude", longitude);
-        return this.threadPool.submit((RestCall<FetchResult<HashMap<String, String>>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<HashMap<String, String>>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<LocationQuestionModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<LocationQuestionModel>>(){}));
     }
 
     /**
@@ -1658,11 +1658,11 @@ public class AvaTaxClient {
      * List all forms where logins can be verified automatically.
      * This API is intended to be useful to identify whether the user should be allowed
      * 
-     * @return FetchResult<HashMap<String, String>>
+     * @return FetchResult<SkyscraperStatusModel>
      */
-    public FetchResult<HashMap<String, String>> listLoginVerifiers() throws Exception {
+    public FetchResult<SkyscraperStatusModel> listLoginVerifiers() throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/filingcalendars/loginverifiers");
-        return ((RestCall<FetchResult<HashMap<String, String>>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<HashMap<String, String>>>(){})).call();
+        return ((RestCall<FetchResult<SkyscraperStatusModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<SkyscraperStatusModel>>(){})).call();
     }
 
     /**
@@ -1671,11 +1671,11 @@ public class AvaTaxClient {
      * List all forms where logins can be verified automatically.
      * This API is intended to be useful to identify whether the user should be allowed
      * 
-     * @return FetchResult<HashMap<String, String>>
+     * @return FetchResult<SkyscraperStatusModel>
      */
-    public Future<FetchResult<HashMap<String, String>>> listLoginVerifiersAsync() {
+    public Future<FetchResult<SkyscraperStatusModel>> listLoginVerifiersAsync() {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/filingcalendars/loginverifiers");
-        return this.threadPool.submit((RestCall<FetchResult<HashMap<String, String>>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<HashMap<String, String>>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<SkyscraperStatusModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<SkyscraperStatusModel>>(){}));
     }
 
     /**
@@ -1693,9 +1693,9 @@ public class AvaTaxClient {
      * @param region The region, state, or province code portion of this address.
      * @param postalCode The postal code or zip code portion of this address.
      * @param country The two-character ISO-3166 code of the country portion of this address.
-     * @return FetchResult<HashMap<String, String>>
+     * @return FetchResult<NexusModel>
      */
-    public FetchResult<HashMap<String, String>> listNexusByAddress(String line1, String line2, String line3, String city, String region, String postalCode, String country) throws Exception {
+    public FetchResult<NexusModel> listNexusByAddress(String line1, String line2, String line3, String city, String region, String postalCode, String country) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/nexus/byaddress");
         path.addQuery("line1", line1);
         path.addQuery("line2", line2);
@@ -1704,7 +1704,7 @@ public class AvaTaxClient {
         path.addQuery("region", region);
         path.addQuery("postalCode", postalCode);
         path.addQuery("country", country);
-        return ((RestCall<FetchResult<HashMap<String, String>>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<HashMap<String, String>>>(){})).call();
+        return ((RestCall<FetchResult<NexusModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<NexusModel>>(){})).call();
     }
 
     /**
@@ -1722,9 +1722,9 @@ public class AvaTaxClient {
      * @param region The region, state, or province code portion of this address.
      * @param postalCode The postal code or zip code portion of this address.
      * @param country The two-character ISO-3166 code of the country portion of this address.
-     * @return FetchResult<HashMap<String, String>>
+     * @return FetchResult<NexusModel>
      */
-    public Future<FetchResult<HashMap<String, String>>> listNexusByAddressAsync(String line1, String line2, String line3, String city, String region, String postalCode, String country) {
+    public Future<FetchResult<NexusModel>> listNexusByAddressAsync(String line1, String line2, String line3, String city, String region, String postalCode, String country) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/nexus/byaddress");
         path.addQuery("line1", line1);
         path.addQuery("line2", line2);
@@ -1733,7 +1733,7 @@ public class AvaTaxClient {
         path.addQuery("region", region);
         path.addQuery("postalCode", postalCode);
         path.addQuery("country", country);
-        return this.threadPool.submit((RestCall<FetchResult<HashMap<String, String>>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<HashMap<String, String>>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<NexusModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<NexusModel>>(){}));
     }
 
     /**
@@ -1787,11 +1787,11 @@ public class AvaTaxClient {
      * 
      * Returns the full list of Avalara-supported nexus tax type groups
      * 
-     * @return FetchResult<HashMap<String, String>>
+     * @return FetchResult<NexusTaxTypeGroupModel>
      */
-    public FetchResult<HashMap<String, String>> listNexusTaxTypeGroups() throws Exception {
+    public FetchResult<NexusTaxTypeGroupModel> listNexusTaxTypeGroups() throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/nexustaxtypegroups");
-        return ((RestCall<FetchResult<HashMap<String, String>>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<HashMap<String, String>>>(){})).call();
+        return ((RestCall<FetchResult<NexusTaxTypeGroupModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<NexusTaxTypeGroupModel>>(){})).call();
     }
 
     /**
@@ -1799,11 +1799,11 @@ public class AvaTaxClient {
      * 
      * Returns the full list of Avalara-supported nexus tax type groups
      * 
-     * @return FetchResult<HashMap<String, String>>
+     * @return FetchResult<NexusTaxTypeGroupModel>
      */
-    public Future<FetchResult<HashMap<String, String>>> listNexusTaxTypeGroupsAsync() {
+    public Future<FetchResult<NexusTaxTypeGroupModel>> listNexusTaxTypeGroupsAsync() {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/nexustaxtypegroups");
-        return this.threadPool.submit((RestCall<FetchResult<HashMap<String, String>>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<HashMap<String, String>>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<NexusTaxTypeGroupModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<NexusTaxTypeGroupModel>>(){}));
     }
 
     /**
@@ -1811,11 +1811,11 @@ public class AvaTaxClient {
      * 
      * Returns the full list of Avalara-supported tax notice customer funding options.
      * 
-     * @return FetchResult<HashMap<String, String>>
+     * @return FetchResult<NoticeCustomerFundingOptionModel>
      */
-    public FetchResult<HashMap<String, String>> listNoticeCustomerFundingOptions() throws Exception {
+    public FetchResult<NoticeCustomerFundingOptionModel> listNoticeCustomerFundingOptions() throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/noticecustomerfundingoptions");
-        return ((RestCall<FetchResult<HashMap<String, String>>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<HashMap<String, String>>>(){})).call();
+        return ((RestCall<FetchResult<NoticeCustomerFundingOptionModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<NoticeCustomerFundingOptionModel>>(){})).call();
     }
 
     /**
@@ -1823,11 +1823,11 @@ public class AvaTaxClient {
      * 
      * Returns the full list of Avalara-supported tax notice customer funding options.
      * 
-     * @return FetchResult<HashMap<String, String>>
+     * @return FetchResult<NoticeCustomerFundingOptionModel>
      */
-    public Future<FetchResult<HashMap<String, String>>> listNoticeCustomerFundingOptionsAsync() {
+    public Future<FetchResult<NoticeCustomerFundingOptionModel>> listNoticeCustomerFundingOptionsAsync() {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/noticecustomerfundingoptions");
-        return this.threadPool.submit((RestCall<FetchResult<HashMap<String, String>>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<HashMap<String, String>>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<NoticeCustomerFundingOptionModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<NoticeCustomerFundingOptionModel>>(){}));
     }
 
     /**
@@ -1835,11 +1835,11 @@ public class AvaTaxClient {
      * 
      * Returns the full list of Avalara-supported tax notice customer types.
      * 
-     * @return FetchResult<HashMap<String, String>>
+     * @return FetchResult<NoticeCustomerTypeModel>
      */
-    public FetchResult<HashMap<String, String>> listNoticeCustomerTypes() throws Exception {
+    public FetchResult<NoticeCustomerTypeModel> listNoticeCustomerTypes() throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/noticecustomertypes");
-        return ((RestCall<FetchResult<HashMap<String, String>>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<HashMap<String, String>>>(){})).call();
+        return ((RestCall<FetchResult<NoticeCustomerTypeModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<NoticeCustomerTypeModel>>(){})).call();
     }
 
     /**
@@ -1847,11 +1847,11 @@ public class AvaTaxClient {
      * 
      * Returns the full list of Avalara-supported tax notice customer types.
      * 
-     * @return FetchResult<HashMap<String, String>>
+     * @return FetchResult<NoticeCustomerTypeModel>
      */
-    public Future<FetchResult<HashMap<String, String>>> listNoticeCustomerTypesAsync() {
+    public Future<FetchResult<NoticeCustomerTypeModel>> listNoticeCustomerTypesAsync() {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/noticecustomertypes");
-        return this.threadPool.submit((RestCall<FetchResult<HashMap<String, String>>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<HashMap<String, String>>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<NoticeCustomerTypeModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<NoticeCustomerTypeModel>>(){}));
     }
 
     /**
@@ -1859,11 +1859,11 @@ public class AvaTaxClient {
      * 
      * Returns the full list of Avalara-supported tax notice filing types.
      * 
-     * @return FetchResult<HashMap<String, String>>
+     * @return FetchResult<NoticeFilingTypeModel>
      */
-    public FetchResult<HashMap<String, String>> listNoticeFilingtypes() throws Exception {
+    public FetchResult<NoticeFilingTypeModel> listNoticeFilingtypes() throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/noticefilingtypes");
-        return ((RestCall<FetchResult<HashMap<String, String>>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<HashMap<String, String>>>(){})).call();
+        return ((RestCall<FetchResult<NoticeFilingTypeModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<NoticeFilingTypeModel>>(){})).call();
     }
 
     /**
@@ -1871,11 +1871,11 @@ public class AvaTaxClient {
      * 
      * Returns the full list of Avalara-supported tax notice filing types.
      * 
-     * @return FetchResult<HashMap<String, String>>
+     * @return FetchResult<NoticeFilingTypeModel>
      */
-    public Future<FetchResult<HashMap<String, String>>> listNoticeFilingtypesAsync() {
+    public Future<FetchResult<NoticeFilingTypeModel>> listNoticeFilingtypesAsync() {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/noticefilingtypes");
-        return this.threadPool.submit((RestCall<FetchResult<HashMap<String, String>>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<HashMap<String, String>>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<NoticeFilingTypeModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<NoticeFilingTypeModel>>(){}));
     }
 
     /**
@@ -1883,11 +1883,11 @@ public class AvaTaxClient {
      * 
      * Returns the full list of Avalara-supported tax notice priorities.
      * 
-     * @return FetchResult<HashMap<String, String>>
+     * @return FetchResult<NoticePriorityModel>
      */
-    public FetchResult<HashMap<String, String>> listNoticePriorities() throws Exception {
+    public FetchResult<NoticePriorityModel> listNoticePriorities() throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/noticepriorities");
-        return ((RestCall<FetchResult<HashMap<String, String>>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<HashMap<String, String>>>(){})).call();
+        return ((RestCall<FetchResult<NoticePriorityModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<NoticePriorityModel>>(){})).call();
     }
 
     /**
@@ -1895,11 +1895,11 @@ public class AvaTaxClient {
      * 
      * Returns the full list of Avalara-supported tax notice priorities.
      * 
-     * @return FetchResult<HashMap<String, String>>
+     * @return FetchResult<NoticePriorityModel>
      */
-    public Future<FetchResult<HashMap<String, String>>> listNoticePrioritiesAsync() {
+    public Future<FetchResult<NoticePriorityModel>> listNoticePrioritiesAsync() {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/noticepriorities");
-        return this.threadPool.submit((RestCall<FetchResult<HashMap<String, String>>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<HashMap<String, String>>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<NoticePriorityModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<NoticePriorityModel>>(){}));
     }
 
     /**
@@ -1907,11 +1907,11 @@ public class AvaTaxClient {
      * 
      * Returns the full list of Avalara-supported tax notice reasons.
      * 
-     * @return FetchResult<HashMap<String, String>>
+     * @return FetchResult<NoticeReasonModel>
      */
-    public FetchResult<HashMap<String, String>> listNoticeReasons() throws Exception {
+    public FetchResult<NoticeReasonModel> listNoticeReasons() throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/noticereasons");
-        return ((RestCall<FetchResult<HashMap<String, String>>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<HashMap<String, String>>>(){})).call();
+        return ((RestCall<FetchResult<NoticeReasonModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<NoticeReasonModel>>(){})).call();
     }
 
     /**
@@ -1919,11 +1919,11 @@ public class AvaTaxClient {
      * 
      * Returns the full list of Avalara-supported tax notice reasons.
      * 
-     * @return FetchResult<HashMap<String, String>>
+     * @return FetchResult<NoticeReasonModel>
      */
-    public Future<FetchResult<HashMap<String, String>>> listNoticeReasonsAsync() {
+    public Future<FetchResult<NoticeReasonModel>> listNoticeReasonsAsync() {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/noticereasons");
-        return this.threadPool.submit((RestCall<FetchResult<HashMap<String, String>>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<HashMap<String, String>>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<NoticeReasonModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<NoticeReasonModel>>(){}));
     }
 
     /**
@@ -1931,11 +1931,11 @@ public class AvaTaxClient {
      * 
      * Returns the full list of Avalara-supported tax notice responsibility ids
      * 
-     * @return FetchResult<HashMap<String, String>>
+     * @return FetchResult<NoticeResponsibilityModel>
      */
-    public FetchResult<HashMap<String, String>> listNoticeResponsibilities() throws Exception {
+    public FetchResult<NoticeResponsibilityModel> listNoticeResponsibilities() throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/noticeresponsibilities");
-        return ((RestCall<FetchResult<HashMap<String, String>>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<HashMap<String, String>>>(){})).call();
+        return ((RestCall<FetchResult<NoticeResponsibilityModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<NoticeResponsibilityModel>>(){})).call();
     }
 
     /**
@@ -1943,11 +1943,11 @@ public class AvaTaxClient {
      * 
      * Returns the full list of Avalara-supported tax notice responsibility ids
      * 
-     * @return FetchResult<HashMap<String, String>>
+     * @return FetchResult<NoticeResponsibilityModel>
      */
-    public Future<FetchResult<HashMap<String, String>>> listNoticeResponsibilitiesAsync() {
+    public Future<FetchResult<NoticeResponsibilityModel>> listNoticeResponsibilitiesAsync() {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/noticeresponsibilities");
-        return this.threadPool.submit((RestCall<FetchResult<HashMap<String, String>>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<HashMap<String, String>>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<NoticeResponsibilityModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<NoticeResponsibilityModel>>(){}));
     }
 
     /**
@@ -1955,11 +1955,11 @@ public class AvaTaxClient {
      * 
      * Returns the full list of Avalara-supported tax notice root causes
      * 
-     * @return FetchResult<HashMap<String, String>>
+     * @return FetchResult<NoticeRootCauseModel>
      */
-    public FetchResult<HashMap<String, String>> listNoticeRootCauses() throws Exception {
+    public FetchResult<NoticeRootCauseModel> listNoticeRootCauses() throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/noticerootcauses");
-        return ((RestCall<FetchResult<HashMap<String, String>>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<HashMap<String, String>>>(){})).call();
+        return ((RestCall<FetchResult<NoticeRootCauseModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<NoticeRootCauseModel>>(){})).call();
     }
 
     /**
@@ -1967,11 +1967,11 @@ public class AvaTaxClient {
      * 
      * Returns the full list of Avalara-supported tax notice root causes
      * 
-     * @return FetchResult<HashMap<String, String>>
+     * @return FetchResult<NoticeRootCauseModel>
      */
-    public Future<FetchResult<HashMap<String, String>>> listNoticeRootCausesAsync() {
+    public Future<FetchResult<NoticeRootCauseModel>> listNoticeRootCausesAsync() {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/noticerootcauses");
-        return this.threadPool.submit((RestCall<FetchResult<HashMap<String, String>>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<HashMap<String, String>>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<NoticeRootCauseModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<NoticeRootCauseModel>>(){}));
     }
 
     /**
@@ -1979,11 +1979,11 @@ public class AvaTaxClient {
      * 
      * Returns the full list of Avalara-supported tax notice statuses.
      * 
-     * @return FetchResult<HashMap<String, String>>
+     * @return FetchResult<NoticeStatusModel>
      */
-    public FetchResult<HashMap<String, String>> listNoticeStatuses() throws Exception {
+    public FetchResult<NoticeStatusModel> listNoticeStatuses() throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/noticestatuses");
-        return ((RestCall<FetchResult<HashMap<String, String>>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<HashMap<String, String>>>(){})).call();
+        return ((RestCall<FetchResult<NoticeStatusModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<NoticeStatusModel>>(){})).call();
     }
 
     /**
@@ -1991,11 +1991,11 @@ public class AvaTaxClient {
      * 
      * Returns the full list of Avalara-supported tax notice statuses.
      * 
-     * @return FetchResult<HashMap<String, String>>
+     * @return FetchResult<NoticeStatusModel>
      */
-    public Future<FetchResult<HashMap<String, String>>> listNoticeStatusesAsync() {
+    public Future<FetchResult<NoticeStatusModel>> listNoticeStatusesAsync() {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/noticestatuses");
-        return this.threadPool.submit((RestCall<FetchResult<HashMap<String, String>>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<HashMap<String, String>>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<NoticeStatusModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<NoticeStatusModel>>(){}));
     }
 
     /**
@@ -2003,11 +2003,11 @@ public class AvaTaxClient {
      * 
      * Returns the full list of Avalara-supported tax notice types.
      * 
-     * @return FetchResult<HashMap<String, String>>
+     * @return FetchResult<NoticeTypeModel>
      */
-    public FetchResult<HashMap<String, String>> listNoticeTypes() throws Exception {
+    public FetchResult<NoticeTypeModel> listNoticeTypes() throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/noticetypes");
-        return ((RestCall<FetchResult<HashMap<String, String>>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<HashMap<String, String>>>(){})).call();
+        return ((RestCall<FetchResult<NoticeTypeModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<NoticeTypeModel>>(){})).call();
     }
 
     /**
@@ -2015,11 +2015,11 @@ public class AvaTaxClient {
      * 
      * Returns the full list of Avalara-supported tax notice types.
      * 
-     * @return FetchResult<HashMap<String, String>>
+     * @return FetchResult<NoticeTypeModel>
      */
-    public Future<FetchResult<HashMap<String, String>>> listNoticeTypesAsync() {
+    public Future<FetchResult<NoticeTypeModel>> listNoticeTypesAsync() {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/noticetypes");
-        return this.threadPool.submit((RestCall<FetchResult<HashMap<String, String>>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<HashMap<String, String>>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<NoticeTypeModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<NoticeTypeModel>>(){}));
     }
 
     /**
@@ -2028,11 +2028,11 @@ public class AvaTaxClient {
      * Returns the full list of Avalara-supported extra parameters for the 'Create Transaction' API call.
      * This list of parameters is available for use when configuring your transaction.
      * 
-     * @return FetchResult<HashMap<String, String>>
+     * @return FetchResult<ParameterModel>
      */
-    public FetchResult<HashMap<String, String>> listParameters() throws Exception {
+    public FetchResult<ParameterModel> listParameters() throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/parameters");
-        return ((RestCall<FetchResult<HashMap<String, String>>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<HashMap<String, String>>>(){})).call();
+        return ((RestCall<FetchResult<ParameterModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<ParameterModel>>(){})).call();
     }
 
     /**
@@ -2041,11 +2041,11 @@ public class AvaTaxClient {
      * Returns the full list of Avalara-supported extra parameters for the 'Create Transaction' API call.
      * This list of parameters is available for use when configuring your transaction.
      * 
-     * @return FetchResult<HashMap<String, String>>
+     * @return FetchResult<ParameterModel>
      */
-    public Future<FetchResult<HashMap<String, String>>> listParametersAsync() {
+    public Future<FetchResult<ParameterModel>> listParametersAsync() {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/parameters");
-        return this.threadPool.submit((RestCall<FetchResult<HashMap<String, String>>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<HashMap<String, String>>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<ParameterModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<ParameterModel>>(){}));
     }
 
     /**
@@ -2053,11 +2053,11 @@ public class AvaTaxClient {
      * 
      * Returns the full list of Avalara-supported permission types.
      * 
-     * @return FetchResult<HashMap<String, String>>
+     * @return FetchResult<String>
      */
-    public FetchResult<HashMap<String, String>> listPermissions() throws Exception {
+    public FetchResult<String> listPermissions() throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/permissions");
-        return ((RestCall<FetchResult<HashMap<String, String>>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<HashMap<String, String>>>(){})).call();
+        return ((RestCall<FetchResult<String>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<String>>(){})).call();
     }
 
     /**
@@ -2065,11 +2065,11 @@ public class AvaTaxClient {
      * 
      * Returns the full list of Avalara-supported permission types.
      * 
-     * @return FetchResult<HashMap<String, String>>
+     * @return FetchResult<String>
      */
-    public Future<FetchResult<HashMap<String, String>>> listPermissionsAsync() {
+    public Future<FetchResult<String>> listPermissionsAsync() {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/permissions");
-        return this.threadPool.submit((RestCall<FetchResult<HashMap<String, String>>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<HashMap<String, String>>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<String>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<String>>(){}));
     }
 
     /**
@@ -2078,12 +2078,12 @@ public class AvaTaxClient {
      * Returns the full list of Avalara-supported rate type file types
      * 
      * @param country 
-     * @return FetchResult<HashMap<String, String>>
+     * @return FetchResult<RateTypeModel>
      */
-    public FetchResult<HashMap<String, String>> listRateTypesByCountry(String country) throws Exception {
+    public FetchResult<RateTypeModel> listRateTypesByCountry(String country) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/countries/{country}/ratetypes");
         path.applyField("country", country);
-        return ((RestCall<FetchResult<HashMap<String, String>>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<HashMap<String, String>>>(){})).call();
+        return ((RestCall<FetchResult<RateTypeModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<RateTypeModel>>(){})).call();
     }
 
     /**
@@ -2092,12 +2092,12 @@ public class AvaTaxClient {
      * Returns the full list of Avalara-supported rate type file types
      * 
      * @param country 
-     * @return FetchResult<HashMap<String, String>>
+     * @return FetchResult<RateTypeModel>
      */
-    public Future<FetchResult<HashMap<String, String>>> listRateTypesByCountryAsync(String country) {
+    public Future<FetchResult<RateTypeModel>> listRateTypesByCountryAsync(String country) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/countries/{country}/ratetypes");
         path.applyField("country", country);
-        return this.threadPool.submit((RestCall<FetchResult<HashMap<String, String>>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<HashMap<String, String>>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<RateTypeModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<RateTypeModel>>(){}));
     }
 
     /**
@@ -2106,11 +2106,11 @@ public class AvaTaxClient {
      * Returns a list of all ISO 3166 region codes and their US English friendly names.
      * This API is intended to be useful when presenting a dropdown box in your website to allow customers to select a region 
      * 
-     * @return FetchResult<HashMap<String, String>>
+     * @return FetchResult<IsoRegionModel>
      */
-    public FetchResult<HashMap<String, String>> listRegions() throws Exception {
+    public FetchResult<IsoRegionModel> listRegions() throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/regions");
-        return ((RestCall<FetchResult<HashMap<String, String>>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<HashMap<String, String>>>(){})).call();
+        return ((RestCall<FetchResult<IsoRegionModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<IsoRegionModel>>(){})).call();
     }
 
     /**
@@ -2119,11 +2119,11 @@ public class AvaTaxClient {
      * Returns a list of all ISO 3166 region codes and their US English friendly names.
      * This API is intended to be useful when presenting a dropdown box in your website to allow customers to select a region 
      * 
-     * @return FetchResult<HashMap<String, String>>
+     * @return FetchResult<IsoRegionModel>
      */
-    public Future<FetchResult<HashMap<String, String>>> listRegionsAsync() {
+    public Future<FetchResult<IsoRegionModel>> listRegionsAsync() {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/regions");
-        return this.threadPool.submit((RestCall<FetchResult<HashMap<String, String>>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<HashMap<String, String>>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<IsoRegionModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<IsoRegionModel>>(){}));
     }
 
     /**
@@ -2133,12 +2133,12 @@ public class AvaTaxClient {
      * This API is intended to be useful when presenting a dropdown box in your website to allow customers to select a region 
      * 
      * @param country 
-     * @return FetchResult<HashMap<String, String>>
+     * @return FetchResult<IsoRegionModel>
      */
-    public FetchResult<HashMap<String, String>> listRegionsByCountry(String country) throws Exception {
+    public FetchResult<IsoRegionModel> listRegionsByCountry(String country) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/countries/{country}/regions");
         path.applyField("country", country);
-        return ((RestCall<FetchResult<HashMap<String, String>>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<HashMap<String, String>>>(){})).call();
+        return ((RestCall<FetchResult<IsoRegionModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<IsoRegionModel>>(){})).call();
     }
 
     /**
@@ -2148,12 +2148,12 @@ public class AvaTaxClient {
      * This API is intended to be useful when presenting a dropdown box in your website to allow customers to select a region 
      * 
      * @param country 
-     * @return FetchResult<HashMap<String, String>>
+     * @return FetchResult<IsoRegionModel>
      */
-    public Future<FetchResult<HashMap<String, String>>> listRegionsByCountryAsync(String country) {
+    public Future<FetchResult<IsoRegionModel>> listRegionsByCountryAsync(String country) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/countries/{country}/regions");
         path.applyField("country", country);
-        return this.threadPool.submit((RestCall<FetchResult<HashMap<String, String>>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<HashMap<String, String>>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<IsoRegionModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<IsoRegionModel>>(){}));
     }
 
     /**
@@ -2161,11 +2161,11 @@ public class AvaTaxClient {
      * 
      * Returns the full list of Avalara-supported resource file types
      * 
-     * @return FetchResult<HashMap<String, String>>
+     * @return FetchResult<ResourceFileTypeModel>
      */
-    public FetchResult<HashMap<String, String>> listResourceFileTypes() throws Exception {
+    public FetchResult<ResourceFileTypeModel> listResourceFileTypes() throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/resourcefiletypes");
-        return ((RestCall<FetchResult<HashMap<String, String>>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<HashMap<String, String>>>(){})).call();
+        return ((RestCall<FetchResult<ResourceFileTypeModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<ResourceFileTypeModel>>(){})).call();
     }
 
     /**
@@ -2173,11 +2173,11 @@ public class AvaTaxClient {
      * 
      * Returns the full list of Avalara-supported resource file types
      * 
-     * @return FetchResult<HashMap<String, String>>
+     * @return FetchResult<ResourceFileTypeModel>
      */
-    public Future<FetchResult<HashMap<String, String>>> listResourceFileTypesAsync() {
+    public Future<FetchResult<ResourceFileTypeModel>> listResourceFileTypesAsync() {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/resourcefiletypes");
-        return this.threadPool.submit((RestCall<FetchResult<HashMap<String, String>>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<HashMap<String, String>>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<ResourceFileTypeModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<ResourceFileTypeModel>>(){}));
     }
 
     /**
@@ -2186,11 +2186,11 @@ public class AvaTaxClient {
      * Returns the full list of Avalara-supported permission types.
      * This API is intended to be useful when designing a user interface for selecting the security role of a user account.
      * 
-     * @return FetchResult<HashMap<String, String>>
+     * @return FetchResult<SecurityRoleModel>
      */
-    public FetchResult<HashMap<String, String>> listSecurityRoles() throws Exception {
+    public FetchResult<SecurityRoleModel> listSecurityRoles() throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/securityroles");
-        return ((RestCall<FetchResult<HashMap<String, String>>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<HashMap<String, String>>>(){})).call();
+        return ((RestCall<FetchResult<SecurityRoleModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<SecurityRoleModel>>(){})).call();
     }
 
     /**
@@ -2199,11 +2199,11 @@ public class AvaTaxClient {
      * Returns the full list of Avalara-supported permission types.
      * This API is intended to be useful when designing a user interface for selecting the security role of a user account.
      * 
-     * @return FetchResult<HashMap<String, String>>
+     * @return FetchResult<SecurityRoleModel>
      */
-    public Future<FetchResult<HashMap<String, String>>> listSecurityRolesAsync() {
+    public Future<FetchResult<SecurityRoleModel>> listSecurityRolesAsync() {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/securityroles");
-        return this.threadPool.submit((RestCall<FetchResult<HashMap<String, String>>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<HashMap<String, String>>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<SecurityRoleModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<SecurityRoleModel>>(){}));
     }
 
     /**
@@ -2213,11 +2213,11 @@ public class AvaTaxClient {
      * This API is intended to be useful for identifying which features you have added to your account.
      * You may always contact Avalara's sales department for information on available products or services.
      * 
-     * @return FetchResult<HashMap<String, String>>
+     * @return FetchResult<SubscriptionTypeModel>
      */
-    public FetchResult<HashMap<String, String>> listSubscriptionTypes() throws Exception {
+    public FetchResult<SubscriptionTypeModel> listSubscriptionTypes() throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/subscriptiontypes");
-        return ((RestCall<FetchResult<HashMap<String, String>>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<HashMap<String, String>>>(){})).call();
+        return ((RestCall<FetchResult<SubscriptionTypeModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<SubscriptionTypeModel>>(){})).call();
     }
 
     /**
@@ -2227,11 +2227,11 @@ public class AvaTaxClient {
      * This API is intended to be useful for identifying which features you have added to your account.
      * You may always contact Avalara's sales department for information on available products or services.
      * 
-     * @return FetchResult<HashMap<String, String>>
+     * @return FetchResult<SubscriptionTypeModel>
      */
-    public Future<FetchResult<HashMap<String, String>>> listSubscriptionTypesAsync() {
+    public Future<FetchResult<SubscriptionTypeModel>> listSubscriptionTypesAsync() {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/subscriptiontypes");
-        return this.threadPool.submit((RestCall<FetchResult<HashMap<String, String>>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<HashMap<String, String>>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<SubscriptionTypeModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<SubscriptionTypeModel>>(){}));
     }
 
     /**
@@ -2239,11 +2239,11 @@ public class AvaTaxClient {
      * 
      * Returns the full list of Avalara-supported tax authorities.
      * 
-     * @return FetchResult<HashMap<String, String>>
+     * @return FetchResult<TaxAuthorityModel>
      */
-    public FetchResult<HashMap<String, String>> listTaxAuthorities() throws Exception {
+    public FetchResult<TaxAuthorityModel> listTaxAuthorities() throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/taxauthorities");
-        return ((RestCall<FetchResult<HashMap<String, String>>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<HashMap<String, String>>>(){})).call();
+        return ((RestCall<FetchResult<TaxAuthorityModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<TaxAuthorityModel>>(){})).call();
     }
 
     /**
@@ -2251,11 +2251,11 @@ public class AvaTaxClient {
      * 
      * Returns the full list of Avalara-supported tax authorities.
      * 
-     * @return FetchResult<HashMap<String, String>>
+     * @return FetchResult<TaxAuthorityModel>
      */
-    public Future<FetchResult<HashMap<String, String>>> listTaxAuthoritiesAsync() {
+    public Future<FetchResult<TaxAuthorityModel>> listTaxAuthoritiesAsync() {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/taxauthorities");
-        return this.threadPool.submit((RestCall<FetchResult<HashMap<String, String>>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<HashMap<String, String>>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<TaxAuthorityModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<TaxAuthorityModel>>(){}));
     }
 
     /**
@@ -2265,11 +2265,11 @@ public class AvaTaxClient {
      * This list represents tax forms that Avalara recognizes.
      * Customers who subscribe to Avalara Managed Returns Service can request these forms to be filed automatically 
      * 
-     * @return FetchResult<HashMap<String, String>>
+     * @return FetchResult<TaxAuthorityFormModel>
      */
-    public FetchResult<HashMap<String, String>> listTaxAuthorityForms() throws Exception {
+    public FetchResult<TaxAuthorityFormModel> listTaxAuthorityForms() throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/taxauthorityforms");
-        return ((RestCall<FetchResult<HashMap<String, String>>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<HashMap<String, String>>>(){})).call();
+        return ((RestCall<FetchResult<TaxAuthorityFormModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<TaxAuthorityFormModel>>(){})).call();
     }
 
     /**
@@ -2279,11 +2279,11 @@ public class AvaTaxClient {
      * This list represents tax forms that Avalara recognizes.
      * Customers who subscribe to Avalara Managed Returns Service can request these forms to be filed automatically 
      * 
-     * @return FetchResult<HashMap<String, String>>
+     * @return FetchResult<TaxAuthorityFormModel>
      */
-    public Future<FetchResult<HashMap<String, String>>> listTaxAuthorityFormsAsync() {
+    public Future<FetchResult<TaxAuthorityFormModel>> listTaxAuthorityFormsAsync() {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/taxauthorityforms");
-        return this.threadPool.submit((RestCall<FetchResult<HashMap<String, String>>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<HashMap<String, String>>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<TaxAuthorityFormModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<TaxAuthorityFormModel>>(){}));
     }
 
     /**
@@ -2291,11 +2291,11 @@ public class AvaTaxClient {
      * 
      * Returns the full list of Avalara-supported tax authority types.
      * 
-     * @return FetchResult<HashMap<String, String>>
+     * @return FetchResult<TaxAuthorityTypeModel>
      */
-    public FetchResult<HashMap<String, String>> listTaxAuthorityTypes() throws Exception {
+    public FetchResult<TaxAuthorityTypeModel> listTaxAuthorityTypes() throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/taxauthoritytypes");
-        return ((RestCall<FetchResult<HashMap<String, String>>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<HashMap<String, String>>>(){})).call();
+        return ((RestCall<FetchResult<TaxAuthorityTypeModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<TaxAuthorityTypeModel>>(){})).call();
     }
 
     /**
@@ -2303,11 +2303,11 @@ public class AvaTaxClient {
      * 
      * Returns the full list of Avalara-supported tax authority types.
      * 
-     * @return FetchResult<HashMap<String, String>>
+     * @return FetchResult<TaxAuthorityTypeModel>
      */
-    public Future<FetchResult<HashMap<String, String>>> listTaxAuthorityTypesAsync() {
+    public Future<FetchResult<TaxAuthorityTypeModel>> listTaxAuthorityTypesAsync() {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/taxauthoritytypes");
-        return this.threadPool.submit((RestCall<FetchResult<HashMap<String, String>>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<HashMap<String, String>>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<TaxAuthorityTypeModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<TaxAuthorityTypeModel>>(){}));
     }
 
     /**
@@ -2318,11 +2318,11 @@ public class AvaTaxClient {
      * Avalara supports correct tax rates and taxability rules for all TaxCodes in all supported jurisdictions.
      * If you identify your products by tax code in your 'Create Transacion' API calls, Avalara will correctly calculate tax rates and
      * 
-     * @return FetchResult<HashMap<String, String>>
+     * @return FetchResult<TaxCodeModel>
      */
-    public FetchResult<HashMap<String, String>> listTaxCodes() throws Exception {
+    public FetchResult<TaxCodeModel> listTaxCodes() throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/taxcodes");
-        return ((RestCall<FetchResult<HashMap<String, String>>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<HashMap<String, String>>>(){})).call();
+        return ((RestCall<FetchResult<TaxCodeModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<TaxCodeModel>>(){})).call();
     }
 
     /**
@@ -2333,11 +2333,11 @@ public class AvaTaxClient {
      * Avalara supports correct tax rates and taxability rules for all TaxCodes in all supported jurisdictions.
      * If you identify your products by tax code in your 'Create Transacion' API calls, Avalara will correctly calculate tax rates and
      * 
-     * @return FetchResult<HashMap<String, String>>
+     * @return FetchResult<TaxCodeModel>
      */
-    public Future<FetchResult<HashMap<String, String>>> listTaxCodesAsync() {
+    public Future<FetchResult<TaxCodeModel>> listTaxCodesAsync() {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/taxcodes");
-        return this.threadPool.submit((RestCall<FetchResult<HashMap<String, String>>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<HashMap<String, String>>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<TaxCodeModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<TaxCodeModel>>(){}));
     }
 
     /**
@@ -2371,11 +2371,11 @@ public class AvaTaxClient {
      * 
      * Returns the full list of Avalara-supported tax sub-types
      * 
-     * @return FetchResult<HashMap<String, String>>
+     * @return FetchResult<TaxSubTypeModel>
      */
-    public FetchResult<HashMap<String, String>> listTaxSubTypes() throws Exception {
+    public FetchResult<TaxSubTypeModel> listTaxSubTypes() throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/taxsubtypes");
-        return ((RestCall<FetchResult<HashMap<String, String>>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<HashMap<String, String>>>(){})).call();
+        return ((RestCall<FetchResult<TaxSubTypeModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<TaxSubTypeModel>>(){})).call();
     }
 
     /**
@@ -2383,11 +2383,11 @@ public class AvaTaxClient {
      * 
      * Returns the full list of Avalara-supported tax sub-types
      * 
-     * @return FetchResult<HashMap<String, String>>
+     * @return FetchResult<TaxSubTypeModel>
      */
-    public Future<FetchResult<HashMap<String, String>>> listTaxSubTypesAsync() {
+    public Future<FetchResult<TaxSubTypeModel>> listTaxSubTypesAsync() {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/taxsubtypes");
-        return this.threadPool.submit((RestCall<FetchResult<HashMap<String, String>>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<HashMap<String, String>>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<TaxSubTypeModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<TaxSubTypeModel>>(){}));
     }
 
     /**
@@ -2395,11 +2395,11 @@ public class AvaTaxClient {
      * 
      * Returns the full list of Avalara-supported tax type groups
      * 
-     * @return FetchResult<HashMap<String, String>>
+     * @return FetchResult<TaxTypeGroupModel>
      */
-    public FetchResult<HashMap<String, String>> listTaxTypeGroups() throws Exception {
+    public FetchResult<TaxTypeGroupModel> listTaxTypeGroups() throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/taxtypegroups");
-        return ((RestCall<FetchResult<HashMap<String, String>>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<HashMap<String, String>>>(){})).call();
+        return ((RestCall<FetchResult<TaxTypeGroupModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<TaxTypeGroupModel>>(){})).call();
     }
 
     /**
@@ -2407,11 +2407,11 @@ public class AvaTaxClient {
      * 
      * Returns the full list of Avalara-supported tax type groups
      * 
-     * @return FetchResult<HashMap<String, String>>
+     * @return FetchResult<TaxTypeGroupModel>
      */
-    public Future<FetchResult<HashMap<String, String>>> listTaxTypeGroupsAsync() {
+    public Future<FetchResult<TaxTypeGroupModel>> listTaxTypeGroupsAsync() {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/taxtypegroups");
-        return this.threadPool.submit((RestCall<FetchResult<HashMap<String, String>>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<HashMap<String, String>>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<TaxTypeGroupModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<TaxTypeGroupModel>>(){}));
     }
 
     /**
@@ -2450,16 +2450,16 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<HashMap<String, String>>
+     * @return FetchResult<FilingCalendarModel>
      */
-    public FetchResult<HashMap<String, String>> apiV2CompaniesByCompanyIdFilingcalendarsGet(Integer companyId, String filter, Integer top, Integer skip, String orderBy) throws Exception {
+    public FetchResult<FilingCalendarModel> apiV2CompaniesByCompanyIdFilingcalendarsGet(Integer companyId, String filter, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingcalendars");
         path.applyField("companyId", companyId);
         path.addQuery("$filter", filter);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<HashMap<String, String>>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<HashMap<String, String>>>(){})).call();
+        return ((RestCall<FetchResult<FilingCalendarModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<FilingCalendarModel>>(){})).call();
     }
 
     /**
@@ -2470,16 +2470,16 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<HashMap<String, String>>
+     * @return FetchResult<FilingCalendarModel>
      */
-    public Future<FetchResult<HashMap<String, String>>> apiV2CompaniesByCompanyIdFilingcalendarsGetAsync(Integer companyId, String filter, Integer top, Integer skip, String orderBy) {
+    public Future<FetchResult<FilingCalendarModel>> apiV2CompaniesByCompanyIdFilingcalendarsGetAsync(Integer companyId, String filter, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingcalendars");
         path.applyField("companyId", companyId);
         path.addQuery("$filter", filter);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<HashMap<String, String>>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<HashMap<String, String>>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<FilingCalendarModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<FilingCalendarModel>>(){}));
     }
 
     /**
@@ -2493,16 +2493,16 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<HashMap<String, String>>
+     * @return FetchResult<FilingRequestModel>
      */
-    public FetchResult<HashMap<String, String>> apiV2CompaniesByCompanyIdFilingrequestsGet(Integer companyId, String filter, Integer top, Integer skip, String orderBy) throws Exception {
+    public FetchResult<FilingRequestModel> apiV2CompaniesByCompanyIdFilingrequestsGet(Integer companyId, String filter, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingrequests");
         path.applyField("companyId", companyId);
         path.addQuery("$filter", filter);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<HashMap<String, String>>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<HashMap<String, String>>>(){})).call();
+        return ((RestCall<FetchResult<FilingRequestModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<FilingRequestModel>>(){})).call();
     }
 
     /**
@@ -2516,16 +2516,16 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<HashMap<String, String>>
+     * @return FetchResult<FilingRequestModel>
      */
-    public Future<FetchResult<HashMap<String, String>>> apiV2CompaniesByCompanyIdFilingrequestsGetAsync(Integer companyId, String filter, Integer top, Integer skip, String orderBy) {
+    public Future<FetchResult<FilingRequestModel>> apiV2CompaniesByCompanyIdFilingrequestsGetAsync(Integer companyId, String filter, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingrequests");
         path.applyField("companyId", companyId);
         path.addQuery("$filter", filter);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<HashMap<String, String>>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<HashMap<String, String>>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<FilingRequestModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<FilingRequestModel>>(){}));
     }
 
     /**
@@ -2983,15 +2983,15 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<HashMap<String, String>>
+     * @return FetchResult<FilingCalendarModel>
      */
-    public FetchResult<HashMap<String, String>> queryFilingCalendars(String filter, Integer top, Integer skip, String orderBy) throws Exception {
+    public FetchResult<FilingCalendarModel> queryFilingCalendars(String filter, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/filingcalendars");
         path.addQuery("$filter", filter);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<HashMap<String, String>>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<HashMap<String, String>>>(){})).call();
+        return ((RestCall<FetchResult<FilingCalendarModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<FilingCalendarModel>>(){})).call();
     }
 
     /**
@@ -3001,15 +3001,15 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<HashMap<String, String>>
+     * @return FetchResult<FilingCalendarModel>
      */
-    public Future<FetchResult<HashMap<String, String>>> queryFilingCalendarsAsync(String filter, Integer top, Integer skip, String orderBy) {
+    public Future<FetchResult<FilingCalendarModel>> queryFilingCalendarsAsync(String filter, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/filingcalendars");
         path.addQuery("$filter", filter);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<HashMap<String, String>>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<HashMap<String, String>>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<FilingCalendarModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<FilingCalendarModel>>(){}));
     }
 
     /**
@@ -3025,15 +3025,15 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<HashMap<String, String>>
+     * @return FetchResult<FilingRequestModel>
      */
-    public FetchResult<HashMap<String, String>> queryFilingRequests(String filter, Integer top, Integer skip, String orderBy) throws Exception {
+    public FetchResult<FilingRequestModel> queryFilingRequests(String filter, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/filingrequests");
         path.addQuery("$filter", filter);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<HashMap<String, String>>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<HashMap<String, String>>>(){})).call();
+        return ((RestCall<FetchResult<FilingRequestModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<FilingRequestModel>>(){})).call();
     }
 
     /**
@@ -3049,15 +3049,15 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<HashMap<String, String>>
+     * @return FetchResult<FilingRequestModel>
      */
-    public Future<FetchResult<HashMap<String, String>>> queryFilingRequestsAsync(String filter, Integer top, Integer skip, String orderBy) {
+    public Future<FetchResult<FilingRequestModel>> queryFilingRequestsAsync(String filter, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/filingrequests");
         path.addQuery("$filter", filter);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<HashMap<String, String>>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<HashMap<String, String>>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<FilingRequestModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<FilingRequestModel>>(){}));
     }
 
     /**
@@ -3585,14 +3585,14 @@ public class AvaTaxClient {
      * @param companyId The ID of the company that owns the filings.
      * @param year The year of the filing period.
      * @param month The two digit month of the filing period.
-     * @return FetchResult<HashMap<String, String>>
+     * @return FetchResult<FilingModel>
      */
-    public FetchResult<HashMap<String, String>> getFilings(Integer companyId, Short year, Byte month) throws Exception {
+    public FetchResult<FilingModel> getFilings(Integer companyId, Short year, Byte month) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}");
         path.applyField("companyId", companyId);
         path.applyField("year", year);
         path.applyField("month", month);
-        return ((RestCall<FetchResult<HashMap<String, String>>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<HashMap<String, String>>>(){})).call();
+        return ((RestCall<FetchResult<FilingModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<FilingModel>>(){})).call();
     }
 
     /**
@@ -3604,14 +3604,14 @@ public class AvaTaxClient {
      * @param companyId The ID of the company that owns the filings.
      * @param year The year of the filing period.
      * @param month The two digit month of the filing period.
-     * @return FetchResult<HashMap<String, String>>
+     * @return FetchResult<FilingModel>
      */
-    public Future<FetchResult<HashMap<String, String>>> getFilingsAsync(Integer companyId, Short year, Byte month) {
+    public Future<FetchResult<FilingModel>> getFilingsAsync(Integer companyId, Short year, Byte month) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}");
         path.applyField("companyId", companyId);
         path.applyField("year", year);
         path.applyField("month", month);
-        return this.threadPool.submit((RestCall<FetchResult<HashMap<String, String>>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<HashMap<String, String>>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<FilingModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<FilingModel>>(){}));
     }
 
     /**
@@ -3624,15 +3624,15 @@ public class AvaTaxClient {
      * @param year The year of the filing period.
      * @param month The two digit month of the filing period.
      * @param country The two-character ISO-3166 code for the country.
-     * @return FetchResult<HashMap<String, String>>
+     * @return FetchResult<FilingModel>
      */
-    public FetchResult<HashMap<String, String>> getFilingsByCountry(Integer companyId, Short year, Byte month, String country) throws Exception {
+    public FetchResult<FilingModel> getFilingsByCountry(Integer companyId, Short year, Byte month, String country) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/{country}");
         path.applyField("companyId", companyId);
         path.applyField("year", year);
         path.applyField("month", month);
         path.applyField("country", country);
-        return ((RestCall<FetchResult<HashMap<String, String>>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<HashMap<String, String>>>(){})).call();
+        return ((RestCall<FetchResult<FilingModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<FilingModel>>(){})).call();
     }
 
     /**
@@ -3645,15 +3645,15 @@ public class AvaTaxClient {
      * @param year The year of the filing period.
      * @param month The two digit month of the filing period.
      * @param country The two-character ISO-3166 code for the country.
-     * @return FetchResult<HashMap<String, String>>
+     * @return FetchResult<FilingModel>
      */
-    public Future<FetchResult<HashMap<String, String>>> getFilingsByCountryAsync(Integer companyId, Short year, Byte month, String country) {
+    public Future<FetchResult<FilingModel>> getFilingsByCountryAsync(Integer companyId, Short year, Byte month, String country) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/{country}");
         path.applyField("companyId", companyId);
         path.applyField("year", year);
         path.applyField("month", month);
         path.applyField("country", country);
-        return this.threadPool.submit((RestCall<FetchResult<HashMap<String, String>>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<HashMap<String, String>>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<FilingModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<FilingModel>>(){}));
     }
 
     /**
@@ -3667,16 +3667,16 @@ public class AvaTaxClient {
      * @param month The two digit month of the filing period.
      * @param country The two-character ISO-3166 code for the country.
      * @param region The two or three character region code for the region.
-     * @return FetchResult<HashMap<String, String>>
+     * @return FetchResult<FilingModel>
      */
-    public FetchResult<HashMap<String, String>> getFilingsByCountryRegion(Integer companyId, Short year, Byte month, String country, String region) throws Exception {
+    public FetchResult<FilingModel> getFilingsByCountryRegion(Integer companyId, Short year, Byte month, String country, String region) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/{country}/{region}");
         path.applyField("companyId", companyId);
         path.applyField("year", year);
         path.applyField("month", month);
         path.applyField("country", country);
         path.applyField("region", region);
-        return ((RestCall<FetchResult<HashMap<String, String>>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<HashMap<String, String>>>(){})).call();
+        return ((RestCall<FetchResult<FilingModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<FilingModel>>(){})).call();
     }
 
     /**
@@ -3690,16 +3690,16 @@ public class AvaTaxClient {
      * @param month The two digit month of the filing period.
      * @param country The two-character ISO-3166 code for the country.
      * @param region The two or three character region code for the region.
-     * @return FetchResult<HashMap<String, String>>
+     * @return FetchResult<FilingModel>
      */
-    public Future<FetchResult<HashMap<String, String>>> getFilingsByCountryRegionAsync(Integer companyId, Short year, Byte month, String country, String region) {
+    public Future<FetchResult<FilingModel>> getFilingsByCountryRegionAsync(Integer companyId, Short year, Byte month, String country, String region) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/{country}/{region}");
         path.applyField("companyId", companyId);
         path.applyField("year", year);
         path.applyField("month", month);
         path.applyField("country", country);
         path.applyField("region", region);
-        return this.threadPool.submit((RestCall<FetchResult<HashMap<String, String>>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<HashMap<String, String>>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<FilingModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<FilingModel>>(){}));
     }
 
     /**
@@ -3714,9 +3714,9 @@ public class AvaTaxClient {
      * @param country The two-character ISO-3166 code for the country.
      * @param region The two or three character region code for the region.
      * @param formCode The unique code of the form.
-     * @return FetchResult<HashMap<String, String>>
+     * @return FetchResult<FilingModel>
      */
-    public FetchResult<HashMap<String, String>> getFilingsByReturnName(Integer companyId, Short year, Byte month, String country, String region, String formCode) throws Exception {
+    public FetchResult<FilingModel> getFilingsByReturnName(Integer companyId, Short year, Byte month, String country, String region, String formCode) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/{country}/{region}/{formCode}");
         path.applyField("companyId", companyId);
         path.applyField("year", year);
@@ -3724,7 +3724,7 @@ public class AvaTaxClient {
         path.applyField("country", country);
         path.applyField("region", region);
         path.applyField("formCode", formCode);
-        return ((RestCall<FetchResult<HashMap<String, String>>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<HashMap<String, String>>>(){})).call();
+        return ((RestCall<FetchResult<FilingModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<FilingModel>>(){})).call();
     }
 
     /**
@@ -3739,9 +3739,9 @@ public class AvaTaxClient {
      * @param country The two-character ISO-3166 code for the country.
      * @param region The two or three character region code for the region.
      * @param formCode The unique code of the form.
-     * @return FetchResult<HashMap<String, String>>
+     * @return FetchResult<FilingModel>
      */
-    public Future<FetchResult<HashMap<String, String>>> getFilingsByReturnNameAsync(Integer companyId, Short year, Byte month, String country, String region, String formCode) {
+    public Future<FetchResult<FilingModel>> getFilingsByReturnNameAsync(Integer companyId, Short year, Byte month, String country, String region, String formCode) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/{country}/{region}/{formCode}");
         path.applyField("companyId", companyId);
         path.applyField("year", year);
@@ -3749,7 +3749,7 @@ public class AvaTaxClient {
         path.applyField("country", country);
         path.applyField("region", region);
         path.applyField("formCode", formCode);
-        return this.threadPool.submit((RestCall<FetchResult<HashMap<String, String>>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<HashMap<String, String>>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<FilingModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<FilingModel>>(){}));
     }
 
     /**
@@ -3765,14 +3765,14 @@ public class AvaTaxClient {
      * @param year The year of the filing period to be rebuilt.
      * @param month The month of the filing period to be rebuilt.
      * @param model The rebuild request you wish to execute.
-     * @return FetchResult<HashMap<String, String>>
+     * @return FetchResult<FilingModel>
      */
-    public FetchResult<HashMap<String, String>> rebuildFilings(Integer companyId, Short year, Byte month, RebuildFilingsModel model) throws Exception {
+    public FetchResult<FilingModel> rebuildFilings(Integer companyId, Short year, Byte month, RebuildFilingsModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/rebuild");
         path.applyField("companyId", companyId);
         path.applyField("year", year);
         path.applyField("month", month);
-        return ((RestCall<FetchResult<HashMap<String, String>>>)restCallFactory.createRestCall("Post", path, model, new TypeToken<FetchResult<HashMap<String, String>>>(){})).call();
+        return ((RestCall<FetchResult<FilingModel>>)restCallFactory.createRestCall("Post", path, model, new TypeToken<FetchResult<FilingModel>>(){})).call();
     }
 
     /**
@@ -3788,14 +3788,14 @@ public class AvaTaxClient {
      * @param year The year of the filing period to be rebuilt.
      * @param month The month of the filing period to be rebuilt.
      * @param model The rebuild request you wish to execute.
-     * @return FetchResult<HashMap<String, String>>
+     * @return FetchResult<FilingModel>
      */
-    public Future<FetchResult<HashMap<String, String>>> rebuildFilingsAsync(Integer companyId, Short year, Byte month, RebuildFilingsModel model) {
+    public Future<FetchResult<FilingModel>> rebuildFilingsAsync(Integer companyId, Short year, Byte month, RebuildFilingsModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/rebuild");
         path.applyField("companyId", companyId);
         path.applyField("year", year);
         path.applyField("month", month);
-        return this.threadPool.submit((RestCall<FetchResult<HashMap<String, String>>>)restCallFactory.createRestCall("Post", path, model, new TypeToken<FetchResult<HashMap<String, String>>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<FilingModel>>)restCallFactory.createRestCall("Post", path, model, new TypeToken<FetchResult<FilingModel>>(){}));
     }
 
     /**
@@ -3812,15 +3812,15 @@ public class AvaTaxClient {
      * @param month The month of the filing period to be rebuilt.
      * @param country The two-character ISO-3166 code for the country.
      * @param model The rebuild request you wish to execute.
-     * @return FetchResult<HashMap<String, String>>
+     * @return FetchResult<FilingModel>
      */
-    public FetchResult<HashMap<String, String>> rebuildFilingsByCountry(Integer companyId, Short year, Byte month, String country, RebuildFilingsModel model) throws Exception {
+    public FetchResult<FilingModel> rebuildFilingsByCountry(Integer companyId, Short year, Byte month, String country, RebuildFilingsModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/{country}/rebuild");
         path.applyField("companyId", companyId);
         path.applyField("year", year);
         path.applyField("month", month);
         path.applyField("country", country);
-        return ((RestCall<FetchResult<HashMap<String, String>>>)restCallFactory.createRestCall("Post", path, model, new TypeToken<FetchResult<HashMap<String, String>>>(){})).call();
+        return ((RestCall<FetchResult<FilingModel>>)restCallFactory.createRestCall("Post", path, model, new TypeToken<FetchResult<FilingModel>>(){})).call();
     }
 
     /**
@@ -3837,15 +3837,15 @@ public class AvaTaxClient {
      * @param month The month of the filing period to be rebuilt.
      * @param country The two-character ISO-3166 code for the country.
      * @param model The rebuild request you wish to execute.
-     * @return FetchResult<HashMap<String, String>>
+     * @return FetchResult<FilingModel>
      */
-    public Future<FetchResult<HashMap<String, String>>> rebuildFilingsByCountryAsync(Integer companyId, Short year, Byte month, String country, RebuildFilingsModel model) {
+    public Future<FetchResult<FilingModel>> rebuildFilingsByCountryAsync(Integer companyId, Short year, Byte month, String country, RebuildFilingsModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/{country}/rebuild");
         path.applyField("companyId", companyId);
         path.applyField("year", year);
         path.applyField("month", month);
         path.applyField("country", country);
-        return this.threadPool.submit((RestCall<FetchResult<HashMap<String, String>>>)restCallFactory.createRestCall("Post", path, model, new TypeToken<FetchResult<HashMap<String, String>>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<FilingModel>>)restCallFactory.createRestCall("Post", path, model, new TypeToken<FetchResult<FilingModel>>(){}));
     }
 
     /**
@@ -3863,16 +3863,16 @@ public class AvaTaxClient {
      * @param country The two-character ISO-3166 code for the country.
      * @param region The two or three character region code for the region.
      * @param model The rebuild request you wish to execute.
-     * @return FetchResult<HashMap<String, String>>
+     * @return FetchResult<FilingModel>
      */
-    public FetchResult<HashMap<String, String>> rebuildFilingsByCountryRegion(Integer companyId, Short year, Byte month, String country, String region, RebuildFilingsModel model) throws Exception {
+    public FetchResult<FilingModel> rebuildFilingsByCountryRegion(Integer companyId, Short year, Byte month, String country, String region, RebuildFilingsModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/{country}/{region}/rebuild");
         path.applyField("companyId", companyId);
         path.applyField("year", year);
         path.applyField("month", month);
         path.applyField("country", country);
         path.applyField("region", region);
-        return ((RestCall<FetchResult<HashMap<String, String>>>)restCallFactory.createRestCall("Post", path, model, new TypeToken<FetchResult<HashMap<String, String>>>(){})).call();
+        return ((RestCall<FetchResult<FilingModel>>)restCallFactory.createRestCall("Post", path, model, new TypeToken<FetchResult<FilingModel>>(){})).call();
     }
 
     /**
@@ -3890,16 +3890,16 @@ public class AvaTaxClient {
      * @param country The two-character ISO-3166 code for the country.
      * @param region The two or three character region code for the region.
      * @param model The rebuild request you wish to execute.
-     * @return FetchResult<HashMap<String, String>>
+     * @return FetchResult<FilingModel>
      */
-    public Future<FetchResult<HashMap<String, String>>> rebuildFilingsByCountryRegionAsync(Integer companyId, Short year, Byte month, String country, String region, RebuildFilingsModel model) {
+    public Future<FetchResult<FilingModel>> rebuildFilingsByCountryRegionAsync(Integer companyId, Short year, Byte month, String country, String region, RebuildFilingsModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/{country}/{region}/rebuild");
         path.applyField("companyId", companyId);
         path.applyField("year", year);
         path.applyField("month", month);
         path.applyField("country", country);
         path.applyField("region", region);
-        return this.threadPool.submit((RestCall<FetchResult<HashMap<String, String>>>)restCallFactory.createRestCall("Post", path, model, new TypeToken<FetchResult<HashMap<String, String>>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<FilingModel>>)restCallFactory.createRestCall("Post", path, model, new TypeToken<FetchResult<FilingModel>>(){}));
     }
 
     /**
@@ -4383,9 +4383,9 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<HashMap<String, String>>
+     * @return FetchResult<ItemModel>
      */
-    public FetchResult<HashMap<String, String>> listItemsByCompany(Integer companyId, String filter, String include, Integer top, Integer skip, String orderBy) throws Exception {
+    public FetchResult<ItemModel> listItemsByCompany(Integer companyId, String filter, String include, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/items");
         path.applyField("companyId", companyId);
         path.addQuery("$filter", filter);
@@ -4393,7 +4393,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<HashMap<String, String>>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<HashMap<String, String>>>(){})).call();
+        return ((RestCall<FetchResult<ItemModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<ItemModel>>(){})).call();
     }
 
     /**
@@ -4411,9 +4411,9 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<HashMap<String, String>>
+     * @return FetchResult<ItemModel>
      */
-    public Future<FetchResult<HashMap<String, String>>> listItemsByCompanyAsync(Integer companyId, String filter, String include, Integer top, Integer skip, String orderBy) {
+    public Future<FetchResult<ItemModel>> listItemsByCompanyAsync(Integer companyId, String filter, String include, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/items");
         path.applyField("companyId", companyId);
         path.addQuery("$filter", filter);
@@ -4421,7 +4421,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<HashMap<String, String>>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<HashMap<String, String>>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<ItemModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<ItemModel>>(){}));
     }
 
     /**
@@ -4437,16 +4437,16 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<HashMap<String, String>>
+     * @return FetchResult<ItemModel>
      */
-    public FetchResult<HashMap<String, String>> queryItems(String filter, String include, Integer top, Integer skip, String orderBy) throws Exception {
+    public FetchResult<ItemModel> queryItems(String filter, String include, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/items");
         path.addQuery("$filter", filter);
         path.addQuery("$include", include);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<HashMap<String, String>>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<HashMap<String, String>>>(){})).call();
+        return ((RestCall<FetchResult<ItemModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<ItemModel>>(){})).call();
     }
 
     /**
@@ -4462,16 +4462,16 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<HashMap<String, String>>
+     * @return FetchResult<ItemModel>
      */
-    public Future<FetchResult<HashMap<String, String>>> queryItemsAsync(String filter, String include, Integer top, Integer skip, String orderBy) {
+    public Future<FetchResult<ItemModel>> queryItemsAsync(String filter, String include, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/items");
         path.addQuery("$filter", filter);
         path.addQuery("$include", include);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<HashMap<String, String>>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<HashMap<String, String>>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<ItemModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<ItemModel>>(){}));
     }
 
     /**
@@ -4634,9 +4634,9 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<HashMap<String, String>>
+     * @return FetchResult<JurisdictionOverrideModel>
      */
-    public FetchResult<HashMap<String, String>> listJurisdictionOverridesByAccount(Integer accountId, String filter, String include, Integer top, Integer skip, String orderBy) throws Exception {
+    public FetchResult<JurisdictionOverrideModel> listJurisdictionOverridesByAccount(Integer accountId, String filter, String include, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/jurisdictionoverrides");
         path.applyField("accountId", accountId);
         path.addQuery("$filter", filter);
@@ -4644,7 +4644,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<HashMap<String, String>>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<HashMap<String, String>>>(){})).call();
+        return ((RestCall<FetchResult<JurisdictionOverrideModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<JurisdictionOverrideModel>>(){})).call();
     }
 
     /**
@@ -4665,9 +4665,9 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<HashMap<String, String>>
+     * @return FetchResult<JurisdictionOverrideModel>
      */
-    public Future<FetchResult<HashMap<String, String>>> listJurisdictionOverridesByAccountAsync(Integer accountId, String filter, String include, Integer top, Integer skip, String orderBy) {
+    public Future<FetchResult<JurisdictionOverrideModel>> listJurisdictionOverridesByAccountAsync(Integer accountId, String filter, String include, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/jurisdictionoverrides");
         path.applyField("accountId", accountId);
         path.addQuery("$filter", filter);
@@ -4675,7 +4675,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<HashMap<String, String>>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<HashMap<String, String>>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<JurisdictionOverrideModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<JurisdictionOverrideModel>>(){}));
     }
 
     /**
@@ -4695,16 +4695,16 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<HashMap<String, String>>
+     * @return FetchResult<JurisdictionOverrideModel>
      */
-    public FetchResult<HashMap<String, String>> queryJurisdictionOverrides(String filter, String include, Integer top, Integer skip, String orderBy) throws Exception {
+    public FetchResult<JurisdictionOverrideModel> queryJurisdictionOverrides(String filter, String include, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/jurisdictionoverrides");
         path.addQuery("$filter", filter);
         path.addQuery("$include", include);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<HashMap<String, String>>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<HashMap<String, String>>>(){})).call();
+        return ((RestCall<FetchResult<JurisdictionOverrideModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<JurisdictionOverrideModel>>(){})).call();
     }
 
     /**
@@ -4724,16 +4724,16 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<HashMap<String, String>>
+     * @return FetchResult<JurisdictionOverrideModel>
      */
-    public Future<FetchResult<HashMap<String, String>>> queryJurisdictionOverridesAsync(String filter, String include, Integer top, Integer skip, String orderBy) {
+    public Future<FetchResult<JurisdictionOverrideModel>> queryJurisdictionOverridesAsync(String filter, String include, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/jurisdictionoverrides");
         path.addQuery("$filter", filter);
         path.addQuery("$include", include);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<HashMap<String, String>>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<HashMap<String, String>>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<JurisdictionOverrideModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<JurisdictionOverrideModel>>(){}));
     }
 
     /**
@@ -4931,9 +4931,9 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<HashMap<String, String>>
+     * @return FetchResult<LocationModel>
      */
-    public FetchResult<HashMap<String, String>> listLocationsByCompany(Integer companyId, String filter, String include, Integer top, Integer skip, String orderBy) throws Exception {
+    public FetchResult<LocationModel> listLocationsByCompany(Integer companyId, String filter, String include, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/locations");
         path.applyField("companyId", companyId);
         path.addQuery("$filter", filter);
@@ -4941,7 +4941,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<HashMap<String, String>>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<HashMap<String, String>>>(){})).call();
+        return ((RestCall<FetchResult<LocationModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<LocationModel>>(){})).call();
     }
 
     /**
@@ -4961,9 +4961,9 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<HashMap<String, String>>
+     * @return FetchResult<LocationModel>
      */
-    public Future<FetchResult<HashMap<String, String>>> listLocationsByCompanyAsync(Integer companyId, String filter, String include, Integer top, Integer skip, String orderBy) {
+    public Future<FetchResult<LocationModel>> listLocationsByCompanyAsync(Integer companyId, String filter, String include, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/locations");
         path.applyField("companyId", companyId);
         path.addQuery("$filter", filter);
@@ -4971,7 +4971,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<HashMap<String, String>>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<HashMap<String, String>>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<LocationModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<LocationModel>>(){}));
     }
 
     /**
@@ -4990,16 +4990,16 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<HashMap<String, String>>
+     * @return FetchResult<LocationModel>
      */
-    public FetchResult<HashMap<String, String>> queryLocations(String filter, String include, Integer top, Integer skip, String orderBy) throws Exception {
+    public FetchResult<LocationModel> queryLocations(String filter, String include, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/locations");
         path.addQuery("$filter", filter);
         path.addQuery("$include", include);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<HashMap<String, String>>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<HashMap<String, String>>>(){})).call();
+        return ((RestCall<FetchResult<LocationModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<LocationModel>>(){})).call();
     }
 
     /**
@@ -5018,16 +5018,16 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<HashMap<String, String>>
+     * @return FetchResult<LocationModel>
      */
-    public Future<FetchResult<HashMap<String, String>>> queryLocationsAsync(String filter, String include, Integer top, Integer skip, String orderBy) {
+    public Future<FetchResult<LocationModel>> queryLocationsAsync(String filter, String include, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/locations");
         path.addQuery("$filter", filter);
         path.addQuery("$include", include);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<HashMap<String, String>>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<HashMap<String, String>>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<LocationModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<LocationModel>>(){}));
     }
 
     /**
@@ -5275,9 +5275,9 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<HashMap<String, String>>
+     * @return FetchResult<NexusModel>
      */
-    public FetchResult<HashMap<String, String>> listNexusByCompany(Integer companyId, String filter, String include, Integer top, Integer skip, String orderBy) throws Exception {
+    public FetchResult<NexusModel> listNexusByCompany(Integer companyId, String filter, String include, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/nexus");
         path.applyField("companyId", companyId);
         path.addQuery("$filter", filter);
@@ -5285,7 +5285,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<HashMap<String, String>>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<HashMap<String, String>>>(){})).call();
+        return ((RestCall<FetchResult<NexusModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<NexusModel>>(){})).call();
     }
 
     /**
@@ -5305,9 +5305,9 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<HashMap<String, String>>
+     * @return FetchResult<NexusModel>
      */
-    public Future<FetchResult<HashMap<String, String>>> listNexusByCompanyAsync(Integer companyId, String filter, String include, Integer top, Integer skip, String orderBy) {
+    public Future<FetchResult<NexusModel>> listNexusByCompanyAsync(Integer companyId, String filter, String include, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/nexus");
         path.applyField("companyId", companyId);
         path.addQuery("$filter", filter);
@@ -5315,7 +5315,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<HashMap<String, String>>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<HashMap<String, String>>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<NexusModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<NexusModel>>(){}));
     }
 
     /**
@@ -5334,16 +5334,16 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<HashMap<String, String>>
+     * @return FetchResult<NexusModel>
      */
-    public FetchResult<HashMap<String, String>> queryNexus(String filter, String include, Integer top, Integer skip, String orderBy) throws Exception {
+    public FetchResult<NexusModel> queryNexus(String filter, String include, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/nexus");
         path.addQuery("$filter", filter);
         path.addQuery("$include", include);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<HashMap<String, String>>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<HashMap<String, String>>>(){})).call();
+        return ((RestCall<FetchResult<NexusModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<NexusModel>>(){})).call();
     }
 
     /**
@@ -5362,16 +5362,16 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<HashMap<String, String>>
+     * @return FetchResult<NexusModel>
      */
-    public Future<FetchResult<HashMap<String, String>>> queryNexusAsync(String filter, String include, Integer top, Integer skip, String orderBy) {
+    public Future<FetchResult<NexusModel>> queryNexusAsync(String filter, String include, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/nexus");
         path.addQuery("$filter", filter);
         path.addQuery("$include", include);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<HashMap<String, String>>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<HashMap<String, String>>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<NexusModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<NexusModel>>(){}));
     }
 
     /**
@@ -5725,13 +5725,13 @@ public class AvaTaxClient {
      * 
      * @param id The ID of the notice.
      * @param companyId The ID of the company that owns these notices.
-     * @return FetchResult<HashMap<String, String>>
+     * @return FetchResult<NoticeCommentModel>
      */
-    public FetchResult<HashMap<String, String>> getNoticeComments(Integer id, Integer companyId) throws Exception {
+    public FetchResult<NoticeCommentModel> getNoticeComments(Integer id, Integer companyId) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/{id}/comments");
         path.applyField("id", id);
         path.applyField("companyId", companyId);
-        return ((RestCall<FetchResult<HashMap<String, String>>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<HashMap<String, String>>>(){})).call();
+        return ((RestCall<FetchResult<NoticeCommentModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<NoticeCommentModel>>(){})).call();
     }
 
     /**
@@ -5743,13 +5743,13 @@ public class AvaTaxClient {
      * 
      * @param id The ID of the notice.
      * @param companyId The ID of the company that owns these notices.
-     * @return FetchResult<HashMap<String, String>>
+     * @return FetchResult<NoticeCommentModel>
      */
-    public Future<FetchResult<HashMap<String, String>>> getNoticeCommentsAsync(Integer id, Integer companyId) {
+    public Future<FetchResult<NoticeCommentModel>> getNoticeCommentsAsync(Integer id, Integer companyId) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/{id}/comments");
         path.applyField("id", id);
         path.applyField("companyId", companyId);
-        return this.threadPool.submit((RestCall<FetchResult<HashMap<String, String>>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<HashMap<String, String>>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<NoticeCommentModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<NoticeCommentModel>>(){}));
     }
 
     /**
@@ -5762,13 +5762,13 @@ public class AvaTaxClient {
      * 
      * @param id The ID of the company that owns these notices.
      * @param companyId The ID of the company that owns these notices.
-     * @return FetchResult<HashMap<String, String>>
+     * @return FetchResult<NoticeFinanceModel>
      */
-    public FetchResult<HashMap<String, String>> getNoticeFinanceDetails(Integer id, Integer companyId) throws Exception {
+    public FetchResult<NoticeFinanceModel> getNoticeFinanceDetails(Integer id, Integer companyId) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/{id}/financedetails");
         path.applyField("id", id);
         path.applyField("companyId", companyId);
-        return ((RestCall<FetchResult<HashMap<String, String>>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<HashMap<String, String>>>(){})).call();
+        return ((RestCall<FetchResult<NoticeFinanceModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<NoticeFinanceModel>>(){})).call();
     }
 
     /**
@@ -5781,13 +5781,13 @@ public class AvaTaxClient {
      * 
      * @param id The ID of the company that owns these notices.
      * @param companyId The ID of the company that owns these notices.
-     * @return FetchResult<HashMap<String, String>>
+     * @return FetchResult<NoticeFinanceModel>
      */
-    public Future<FetchResult<HashMap<String, String>>> getNoticeFinanceDetailsAsync(Integer id, Integer companyId) {
+    public Future<FetchResult<NoticeFinanceModel>> getNoticeFinanceDetailsAsync(Integer id, Integer companyId) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/{id}/financedetails");
         path.applyField("id", id);
         path.applyField("companyId", companyId);
-        return this.threadPool.submit((RestCall<FetchResult<HashMap<String, String>>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<HashMap<String, String>>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<NoticeFinanceModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<NoticeFinanceModel>>(){}));
     }
 
     /**
@@ -5799,13 +5799,13 @@ public class AvaTaxClient {
      * 
      * @param id The ID of the notice.
      * @param companyId The ID of the company that owns these notices.
-     * @return FetchResult<HashMap<String, String>>
+     * @return FetchResult<NoticeResponsibilityDetailModel>
      */
-    public FetchResult<HashMap<String, String>> getNoticeResponsibilities(Integer id, Integer companyId) throws Exception {
+    public FetchResult<NoticeResponsibilityDetailModel> getNoticeResponsibilities(Integer id, Integer companyId) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/{id}/responsibilities");
         path.applyField("id", id);
         path.applyField("companyId", companyId);
-        return ((RestCall<FetchResult<HashMap<String, String>>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<HashMap<String, String>>>(){})).call();
+        return ((RestCall<FetchResult<NoticeResponsibilityDetailModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<NoticeResponsibilityDetailModel>>(){})).call();
     }
 
     /**
@@ -5817,13 +5817,13 @@ public class AvaTaxClient {
      * 
      * @param id The ID of the notice.
      * @param companyId The ID of the company that owns these notices.
-     * @return FetchResult<HashMap<String, String>>
+     * @return FetchResult<NoticeResponsibilityDetailModel>
      */
-    public Future<FetchResult<HashMap<String, String>>> getNoticeResponsibilitiesAsync(Integer id, Integer companyId) {
+    public Future<FetchResult<NoticeResponsibilityDetailModel>> getNoticeResponsibilitiesAsync(Integer id, Integer companyId) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/{id}/responsibilities");
         path.applyField("id", id);
         path.applyField("companyId", companyId);
-        return this.threadPool.submit((RestCall<FetchResult<HashMap<String, String>>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<HashMap<String, String>>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<NoticeResponsibilityDetailModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<NoticeResponsibilityDetailModel>>(){}));
     }
 
     /**
@@ -5835,13 +5835,13 @@ public class AvaTaxClient {
      * 
      * @param id The ID of the notice.
      * @param companyId The ID of the company that owns these notices.
-     * @return FetchResult<HashMap<String, String>>
+     * @return FetchResult<NoticeRootCauseDetailModel>
      */
-    public FetchResult<HashMap<String, String>> getNoticeRootCauses(Integer id, Integer companyId) throws Exception {
+    public FetchResult<NoticeRootCauseDetailModel> getNoticeRootCauses(Integer id, Integer companyId) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/{id}/rootcauses");
         path.applyField("id", id);
         path.applyField("companyId", companyId);
-        return ((RestCall<FetchResult<HashMap<String, String>>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<HashMap<String, String>>>(){})).call();
+        return ((RestCall<FetchResult<NoticeRootCauseDetailModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<NoticeRootCauseDetailModel>>(){})).call();
     }
 
     /**
@@ -5853,13 +5853,13 @@ public class AvaTaxClient {
      * 
      * @param id The ID of the notice.
      * @param companyId The ID of the company that owns these notices.
-     * @return FetchResult<HashMap<String, String>>
+     * @return FetchResult<NoticeRootCauseDetailModel>
      */
-    public Future<FetchResult<HashMap<String, String>>> getNoticeRootCausesAsync(Integer id, Integer companyId) {
+    public Future<FetchResult<NoticeRootCauseDetailModel>> getNoticeRootCausesAsync(Integer id, Integer companyId) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/{id}/rootcauses");
         path.applyField("id", id);
         path.applyField("companyId", companyId);
-        return this.threadPool.submit((RestCall<FetchResult<HashMap<String, String>>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<HashMap<String, String>>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<NoticeRootCauseDetailModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<NoticeRootCauseDetailModel>>(){}));
     }
 
     /**
@@ -5878,9 +5878,9 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<HashMap<String, String>>
+     * @return FetchResult<NoticeModel>
      */
-    public FetchResult<HashMap<String, String>> listNoticesByCompany(Integer companyId, String filter, String include, Integer top, Integer skip, String orderBy) throws Exception {
+    public FetchResult<NoticeModel> listNoticesByCompany(Integer companyId, String filter, String include, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices");
         path.applyField("companyId", companyId);
         path.addQuery("$filter", filter);
@@ -5888,7 +5888,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<HashMap<String, String>>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<HashMap<String, String>>>(){})).call();
+        return ((RestCall<FetchResult<NoticeModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<NoticeModel>>(){})).call();
     }
 
     /**
@@ -5907,9 +5907,9 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<HashMap<String, String>>
+     * @return FetchResult<NoticeModel>
      */
-    public Future<FetchResult<HashMap<String, String>>> listNoticesByCompanyAsync(Integer companyId, String filter, String include, Integer top, Integer skip, String orderBy) {
+    public Future<FetchResult<NoticeModel>> listNoticesByCompanyAsync(Integer companyId, String filter, String include, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices");
         path.applyField("companyId", companyId);
         path.addQuery("$filter", filter);
@@ -5917,7 +5917,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<HashMap<String, String>>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<HashMap<String, String>>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<NoticeModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<NoticeModel>>(){}));
     }
 
     /**
@@ -5935,16 +5935,16 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<HashMap<String, String>>
+     * @return FetchResult<NoticeModel>
      */
-    public FetchResult<HashMap<String, String>> queryNotices(String filter, String include, Integer top, Integer skip, String orderBy) throws Exception {
+    public FetchResult<NoticeModel> queryNotices(String filter, String include, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/notices");
         path.addQuery("$filter", filter);
         path.addQuery("$include", include);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<HashMap<String, String>>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<HashMap<String, String>>>(){})).call();
+        return ((RestCall<FetchResult<NoticeModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<NoticeModel>>(){})).call();
     }
 
     /**
@@ -5962,16 +5962,16 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<HashMap<String, String>>
+     * @return FetchResult<NoticeModel>
      */
-    public Future<FetchResult<HashMap<String, String>>> queryNoticesAsync(String filter, String include, Integer top, Integer skip, String orderBy) {
+    public Future<FetchResult<NoticeModel>> queryNoticesAsync(String filter, String include, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/notices");
         path.addQuery("$filter", filter);
         path.addQuery("$include", include);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<HashMap<String, String>>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<HashMap<String, String>>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<NoticeModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<NoticeModel>>(){}));
     }
 
     /**
@@ -6374,16 +6374,16 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<HashMap<String, String>>
+     * @return FetchResult<AccountModel>
      */
-    public FetchResult<HashMap<String, String>> queryAccounts(String include, String filter, Integer top, Integer skip, String orderBy) throws Exception {
+    public FetchResult<AccountModel> queryAccounts(String include, String filter, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts");
         path.addQuery("$include", include);
         path.addQuery("$filter", filter);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<HashMap<String, String>>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<HashMap<String, String>>>(){})).call();
+        return ((RestCall<FetchResult<AccountModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<AccountModel>>(){})).call();
     }
 
     /**
@@ -6406,16 +6406,16 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<HashMap<String, String>>
+     * @return FetchResult<AccountModel>
      */
-    public Future<FetchResult<HashMap<String, String>>> queryAccountsAsync(String include, String filter, Integer top, Integer skip, String orderBy) {
+    public Future<FetchResult<AccountModel>> queryAccountsAsync(String include, String filter, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts");
         path.addQuery("$include", include);
         path.addQuery("$filter", filter);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<HashMap<String, String>>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<HashMap<String, String>>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<AccountModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<AccountModel>>(){}));
     }
 
     /**
@@ -6665,9 +6665,9 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<HashMap<String, String>>
+     * @return FetchResult<SettingModel>
      */
-    public FetchResult<HashMap<String, String>> listSettingsByCompany(Integer companyId, String filter, String include, Integer top, Integer skip, String orderBy) throws Exception {
+    public FetchResult<SettingModel> listSettingsByCompany(Integer companyId, String filter, String include, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/settings");
         path.applyField("companyId", companyId);
         path.addQuery("$filter", filter);
@@ -6675,7 +6675,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<HashMap<String, String>>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<HashMap<String, String>>>(){})).call();
+        return ((RestCall<FetchResult<SettingModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<SettingModel>>(){})).call();
     }
 
     /**
@@ -6697,9 +6697,9 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<HashMap<String, String>>
+     * @return FetchResult<SettingModel>
      */
-    public Future<FetchResult<HashMap<String, String>>> listSettingsByCompanyAsync(Integer companyId, String filter, String include, Integer top, Integer skip, String orderBy) {
+    public Future<FetchResult<SettingModel>> listSettingsByCompanyAsync(Integer companyId, String filter, String include, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/settings");
         path.applyField("companyId", companyId);
         path.addQuery("$filter", filter);
@@ -6707,7 +6707,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<HashMap<String, String>>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<HashMap<String, String>>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<SettingModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<SettingModel>>(){}));
     }
 
     /**
@@ -6728,16 +6728,16 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<HashMap<String, String>>
+     * @return FetchResult<SettingModel>
      */
-    public FetchResult<HashMap<String, String>> querySettings(String filter, String include, Integer top, Integer skip, String orderBy) throws Exception {
+    public FetchResult<SettingModel> querySettings(String filter, String include, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/settings");
         path.addQuery("$filter", filter);
         path.addQuery("$include", include);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<HashMap<String, String>>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<HashMap<String, String>>>(){})).call();
+        return ((RestCall<FetchResult<SettingModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<SettingModel>>(){})).call();
     }
 
     /**
@@ -6758,16 +6758,16 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<HashMap<String, String>>
+     * @return FetchResult<SettingModel>
      */
-    public Future<FetchResult<HashMap<String, String>>> querySettingsAsync(String filter, String include, Integer top, Integer skip, String orderBy) {
+    public Future<FetchResult<SettingModel>> querySettingsAsync(String filter, String include, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/settings");
         path.addQuery("$filter", filter);
         path.addQuery("$include", include);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<HashMap<String, String>>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<HashMap<String, String>>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<SettingModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<SettingModel>>(){}));
     }
 
     /**
@@ -6866,16 +6866,16 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<HashMap<String, String>>
+     * @return FetchResult<SubscriptionModel>
      */
-    public FetchResult<HashMap<String, String>> listSubscriptionsByAccount(Integer accountId, String filter, Integer top, Integer skip, String orderBy) throws Exception {
+    public FetchResult<SubscriptionModel> listSubscriptionsByAccount(Integer accountId, String filter, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/subscriptions");
         path.applyField("accountId", accountId);
         path.addQuery("$filter", filter);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<HashMap<String, String>>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<HashMap<String, String>>>(){})).call();
+        return ((RestCall<FetchResult<SubscriptionModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<SubscriptionModel>>(){})).call();
     }
 
     /**
@@ -6892,16 +6892,16 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<HashMap<String, String>>
+     * @return FetchResult<SubscriptionModel>
      */
-    public Future<FetchResult<HashMap<String, String>>> listSubscriptionsByAccountAsync(Integer accountId, String filter, Integer top, Integer skip, String orderBy) {
+    public Future<FetchResult<SubscriptionModel>> listSubscriptionsByAccountAsync(Integer accountId, String filter, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/subscriptions");
         path.applyField("accountId", accountId);
         path.addQuery("$filter", filter);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<HashMap<String, String>>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<HashMap<String, String>>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<SubscriptionModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<SubscriptionModel>>(){}));
     }
 
     /**
@@ -6917,15 +6917,15 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<HashMap<String, String>>
+     * @return FetchResult<SubscriptionModel>
      */
-    public FetchResult<HashMap<String, String>> querySubscriptions(String filter, Integer top, Integer skip, String orderBy) throws Exception {
+    public FetchResult<SubscriptionModel> querySubscriptions(String filter, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/subscriptions");
         path.addQuery("$filter", filter);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<HashMap<String, String>>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<HashMap<String, String>>>(){})).call();
+        return ((RestCall<FetchResult<SubscriptionModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<SubscriptionModel>>(){})).call();
     }
 
     /**
@@ -6941,15 +6941,15 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<HashMap<String, String>>
+     * @return FetchResult<SubscriptionModel>
      */
-    public Future<FetchResult<HashMap<String, String>>> querySubscriptionsAsync(String filter, Integer top, Integer skip, String orderBy) {
+    public Future<FetchResult<SubscriptionModel>> querySubscriptionsAsync(String filter, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/subscriptions");
         path.addQuery("$filter", filter);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<HashMap<String, String>>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<HashMap<String, String>>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<SubscriptionModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<SubscriptionModel>>(){}));
     }
 
     /**
@@ -7071,9 +7071,9 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<HashMap<String, String>>
+     * @return FetchResult<TaxCodeModel>
      */
-    public FetchResult<HashMap<String, String>> listTaxCodesByCompany(Integer companyId, String filter, String include, Integer top, Integer skip, String orderBy) throws Exception {
+    public FetchResult<TaxCodeModel> listTaxCodesByCompany(Integer companyId, String filter, String include, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/taxcodes");
         path.applyField("companyId", companyId);
         path.addQuery("$filter", filter);
@@ -7081,7 +7081,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<HashMap<String, String>>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<HashMap<String, String>>>(){})).call();
+        return ((RestCall<FetchResult<TaxCodeModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<TaxCodeModel>>(){})).call();
     }
 
     /**
@@ -7101,9 +7101,9 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<HashMap<String, String>>
+     * @return FetchResult<TaxCodeModel>
      */
-    public Future<FetchResult<HashMap<String, String>>> listTaxCodesByCompanyAsync(Integer companyId, String filter, String include, Integer top, Integer skip, String orderBy) {
+    public Future<FetchResult<TaxCodeModel>> listTaxCodesByCompanyAsync(Integer companyId, String filter, String include, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/taxcodes");
         path.applyField("companyId", companyId);
         path.addQuery("$filter", filter);
@@ -7111,7 +7111,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<HashMap<String, String>>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<HashMap<String, String>>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<TaxCodeModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<TaxCodeModel>>(){}));
     }
 
     /**
@@ -7130,16 +7130,16 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<HashMap<String, String>>
+     * @return FetchResult<TaxCodeModel>
      */
-    public FetchResult<HashMap<String, String>> queryTaxCodes(String filter, String include, Integer top, Integer skip, String orderBy) throws Exception {
+    public FetchResult<TaxCodeModel> queryTaxCodes(String filter, String include, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/taxcodes");
         path.addQuery("$filter", filter);
         path.addQuery("$include", include);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<HashMap<String, String>>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<HashMap<String, String>>>(){})).call();
+        return ((RestCall<FetchResult<TaxCodeModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<TaxCodeModel>>(){})).call();
     }
 
     /**
@@ -7158,16 +7158,16 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<HashMap<String, String>>
+     * @return FetchResult<TaxCodeModel>
      */
-    public Future<FetchResult<HashMap<String, String>>> queryTaxCodesAsync(String filter, String include, Integer top, Integer skip, String orderBy) {
+    public Future<FetchResult<TaxCodeModel>> queryTaxCodesAsync(String filter, String include, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/taxcodes");
         path.addQuery("$filter", filter);
         path.addQuery("$include", include);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<HashMap<String, String>>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<HashMap<String, String>>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<TaxCodeModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<TaxCodeModel>>(){}));
     }
 
     /**
@@ -7333,9 +7333,9 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<HashMap<String, String>>
+     * @return FetchResult<TaxRuleModel>
      */
-    public FetchResult<HashMap<String, String>> listTaxRules(Integer companyId, String filter, String include, Integer top, Integer skip, String orderBy) throws Exception {
+    public FetchResult<TaxRuleModel> listTaxRules(Integer companyId, String filter, String include, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/taxrules");
         path.applyField("companyId", companyId);
         path.addQuery("$filter", filter);
@@ -7343,7 +7343,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<HashMap<String, String>>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<HashMap<String, String>>>(){})).call();
+        return ((RestCall<FetchResult<TaxRuleModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<TaxRuleModel>>(){})).call();
     }
 
     /**
@@ -7363,9 +7363,9 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<HashMap<String, String>>
+     * @return FetchResult<TaxRuleModel>
      */
-    public Future<FetchResult<HashMap<String, String>>> listTaxRulesAsync(Integer companyId, String filter, String include, Integer top, Integer skip, String orderBy) {
+    public Future<FetchResult<TaxRuleModel>> listTaxRulesAsync(Integer companyId, String filter, String include, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/taxrules");
         path.applyField("companyId", companyId);
         path.addQuery("$filter", filter);
@@ -7373,7 +7373,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<HashMap<String, String>>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<HashMap<String, String>>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<TaxRuleModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<TaxRuleModel>>(){}));
     }
 
     /**
@@ -7392,16 +7392,16 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<HashMap<String, String>>
+     * @return FetchResult<TaxRuleModel>
      */
-    public FetchResult<HashMap<String, String>> queryTaxRules(String filter, String include, Integer top, Integer skip, String orderBy) throws Exception {
+    public FetchResult<TaxRuleModel> queryTaxRules(String filter, String include, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/taxrules");
         path.addQuery("$filter", filter);
         path.addQuery("$include", include);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<HashMap<String, String>>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<HashMap<String, String>>>(){})).call();
+        return ((RestCall<FetchResult<TaxRuleModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<TaxRuleModel>>(){})).call();
     }
 
     /**
@@ -7420,16 +7420,16 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<HashMap<String, String>>
+     * @return FetchResult<TaxRuleModel>
      */
-    public Future<FetchResult<HashMap<String, String>>> queryTaxRulesAsync(String filter, String include, Integer top, Integer skip, String orderBy) {
+    public Future<FetchResult<TaxRuleModel>> queryTaxRulesAsync(String filter, String include, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/taxrules");
         path.addQuery("$filter", filter);
         path.addQuery("$include", include);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<HashMap<String, String>>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<HashMap<String, String>>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<TaxRuleModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<TaxRuleModel>>(){}));
     }
 
     /**
@@ -8180,9 +8180,9 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<HashMap<String, String>>
+     * @return FetchResult<TransactionModel>
      */
-    public FetchResult<HashMap<String, String>> listTransactionsByCompany(String companyCode, String include, String filter, Integer top, Integer skip, String orderBy) throws Exception {
+    public FetchResult<TransactionModel> listTransactionsByCompany(String companyCode, String include, String filter, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyCode}/transactions");
         path.applyField("companyCode", companyCode);
         path.addQuery("$include", include);
@@ -8190,7 +8190,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<HashMap<String, String>>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<HashMap<String, String>>>(){})).call();
+        return ((RestCall<FetchResult<TransactionModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<TransactionModel>>(){})).call();
     }
 
     /**
@@ -8215,9 +8215,9 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<HashMap<String, String>>
+     * @return FetchResult<TransactionModel>
      */
-    public Future<FetchResult<HashMap<String, String>>> listTransactionsByCompanyAsync(String companyCode, String include, String filter, Integer top, Integer skip, String orderBy) {
+    public Future<FetchResult<TransactionModel>> listTransactionsByCompanyAsync(String companyCode, String include, String filter, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyCode}/transactions");
         path.applyField("companyCode", companyCode);
         path.addQuery("$include", include);
@@ -8225,7 +8225,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<HashMap<String, String>>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<HashMap<String, String>>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<TransactionModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<TransactionModel>>(){}));
     }
 
     /**
@@ -8554,9 +8554,9 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<HashMap<String, String>>
+     * @return FetchResult<UPCModel>
      */
-    public FetchResult<HashMap<String, String>> listUPCsByCompany(Integer companyId, String filter, String include, Integer top, Integer skip, String orderBy) throws Exception {
+    public FetchResult<UPCModel> listUPCsByCompany(Integer companyId, String filter, String include, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/upcs");
         path.applyField("companyId", companyId);
         path.addQuery("$filter", filter);
@@ -8564,7 +8564,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<HashMap<String, String>>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<HashMap<String, String>>>(){})).call();
+        return ((RestCall<FetchResult<UPCModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<UPCModel>>(){})).call();
     }
 
     /**
@@ -8581,9 +8581,9 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<HashMap<String, String>>
+     * @return FetchResult<UPCModel>
      */
-    public Future<FetchResult<HashMap<String, String>>> listUPCsByCompanyAsync(Integer companyId, String filter, String include, Integer top, Integer skip, String orderBy) {
+    public Future<FetchResult<UPCModel>> listUPCsByCompanyAsync(Integer companyId, String filter, String include, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/upcs");
         path.applyField("companyId", companyId);
         path.addQuery("$filter", filter);
@@ -8591,7 +8591,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<HashMap<String, String>>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<HashMap<String, String>>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<UPCModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<UPCModel>>(){}));
     }
 
     /**
@@ -8607,16 +8607,16 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<HashMap<String, String>>
+     * @return FetchResult<UPCModel>
      */
-    public FetchResult<HashMap<String, String>> queryUPCs(String filter, String include, Integer top, Integer skip, String orderBy) throws Exception {
+    public FetchResult<UPCModel> queryUPCs(String filter, String include, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/upcs");
         path.addQuery("$filter", filter);
         path.addQuery("$include", include);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<HashMap<String, String>>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<HashMap<String, String>>>(){})).call();
+        return ((RestCall<FetchResult<UPCModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<UPCModel>>(){})).call();
     }
 
     /**
@@ -8632,16 +8632,16 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<HashMap<String, String>>
+     * @return FetchResult<UPCModel>
      */
-    public Future<FetchResult<HashMap<String, String>>> queryUPCsAsync(String filter, String include, Integer top, Integer skip, String orderBy) {
+    public Future<FetchResult<UPCModel>> queryUPCsAsync(String filter, String include, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/upcs");
         path.addQuery("$filter", filter);
         path.addQuery("$include", include);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<HashMap<String, String>>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<HashMap<String, String>>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<UPCModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<UPCModel>>(){}));
     }
 
     /**
@@ -8790,9 +8790,9 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<HashMap<String, String>>
+     * @return FetchResult<UserModel>
      */
-    public FetchResult<HashMap<String, String>> listUsersByAccount(Integer accountId, String include, String filter, Integer top, Integer skip, String orderBy) throws Exception {
+    public FetchResult<UserModel> listUsersByAccount(Integer accountId, String include, String filter, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/users");
         path.applyField("accountId", accountId);
         path.addQuery("$include", include);
@@ -8800,7 +8800,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<HashMap<String, String>>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<HashMap<String, String>>>(){})).call();
+        return ((RestCall<FetchResult<UserModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<UserModel>>(){})).call();
     }
 
     /**
@@ -8817,9 +8817,9 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<HashMap<String, String>>
+     * @return FetchResult<UserModel>
      */
-    public Future<FetchResult<HashMap<String, String>>> listUsersByAccountAsync(Integer accountId, String include, String filter, Integer top, Integer skip, String orderBy) {
+    public Future<FetchResult<UserModel>> listUsersByAccountAsync(Integer accountId, String include, String filter, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/users");
         path.applyField("accountId", accountId);
         path.addQuery("$include", include);
@@ -8827,7 +8827,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<HashMap<String, String>>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<HashMap<String, String>>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<UserModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<UserModel>>(){}));
     }
 
     /**
@@ -8843,16 +8843,16 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<HashMap<String, String>>
+     * @return FetchResult<UserModel>
      */
-    public FetchResult<HashMap<String, String>> queryUsers(String include, String filter, Integer top, Integer skip, String orderBy) throws Exception {
+    public FetchResult<UserModel> queryUsers(String include, String filter, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/users");
         path.addQuery("$include", include);
         path.addQuery("$filter", filter);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<HashMap<String, String>>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<HashMap<String, String>>>(){})).call();
+        return ((RestCall<FetchResult<UserModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<UserModel>>(){})).call();
     }
 
     /**
@@ -8868,16 +8868,16 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<HashMap<String, String>>
+     * @return FetchResult<UserModel>
      */
-    public Future<FetchResult<HashMap<String, String>>> queryUsersAsync(String include, String filter, Integer top, Integer skip, String orderBy) {
+    public Future<FetchResult<UserModel>> queryUsersAsync(String include, String filter, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/users");
         path.addQuery("$include", include);
         path.addQuery("$filter", filter);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<HashMap<String, String>>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<HashMap<String, String>>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<UserModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<UserModel>>(){}));
     }
 
     /**
@@ -8954,11 +8954,11 @@ public class AvaTaxClient {
      * Returns the list of all subscriptions enabled for the current account.
      * This API is intended to help you determine whether you have the necessary subscription to use certain API calls
      * 
-     * @return FetchResult<HashMap<String, String>>
+     * @return FetchResult<SubscriptionModel>
      */
-    public FetchResult<HashMap<String, String>> listMySubscriptions() throws Exception {
+    public FetchResult<SubscriptionModel> listMySubscriptions() throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/utilities/subscriptions");
-        return ((RestCall<FetchResult<HashMap<String, String>>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<HashMap<String, String>>>(){})).call();
+        return ((RestCall<FetchResult<SubscriptionModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<SubscriptionModel>>(){})).call();
     }
 
     /**
@@ -8967,11 +8967,11 @@ public class AvaTaxClient {
      * Returns the list of all subscriptions enabled for the current account.
      * This API is intended to help you determine whether you have the necessary subscription to use certain API calls
      * 
-     * @return FetchResult<HashMap<String, String>>
+     * @return FetchResult<SubscriptionModel>
      */
-    public Future<FetchResult<HashMap<String, String>>> listMySubscriptionsAsync() {
+    public Future<FetchResult<SubscriptionModel>> listMySubscriptionsAsync() {
         AvaTaxPath path = new AvaTaxPath("/api/v2/utilities/subscriptions");
-        return this.threadPool.submit((RestCall<FetchResult<HashMap<String, String>>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<HashMap<String, String>>>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<SubscriptionModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<SubscriptionModel>>(){}));
     }
 
     /**
