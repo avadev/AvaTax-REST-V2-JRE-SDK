@@ -30,14 +30,14 @@ import java.util.HashMap;
 public class TransactionSummary {
 
 
-    private string country;
+    private String country;
 
     /**
      * Getter for country
      *
      * Two character ISO-3166 country code.
      */
-    public string getCountry() {
+    public String getCountry() {
         return this.country;
     }
 
@@ -46,19 +46,19 @@ public class TransactionSummary {
      *
      * Two character ISO-3166 country code.
      */
-    public void setCountry(string value) {
+    public void setCountry(String value) {
         this.country = value;
     }
 
 
-    private string region;
+    private String region;
 
     /**
      * Getter for region
      *
      * Two or three character ISO region, state or province code, if applicable.
      */
-    public string getRegion() {
+    public String getRegion() {
         return this.region;
     }
 
@@ -67,7 +67,7 @@ public class TransactionSummary {
      *
      * Two or three character ISO region, state or province code, if applicable.
      */
-    public void setRegion(string value) {
+    public void setRegion(String value) {
         this.region = value;
     }
 
@@ -93,14 +93,14 @@ public class TransactionSummary {
     }
 
 
-    private string jurisCode;
+    private String jurisCode;
 
     /**
      * Getter for jurisCode
      *
      * Jurisdiction Code for the taxing jurisdiction
      */
-    public string getJurisCode() {
+    public String getJurisCode() {
         return this.jurisCode;
     }
 
@@ -109,19 +109,19 @@ public class TransactionSummary {
      *
      * Jurisdiction Code for the taxing jurisdiction
      */
-    public void setJurisCode(string value) {
+    public void setJurisCode(String value) {
         this.jurisCode = value;
     }
 
 
-    private string jurisName;
+    private String jurisName;
 
     /**
      * Getter for jurisName
      *
      * The name of the jurisdiction that collects this tax.
      */
-    public string getJurisName() {
+    public String getJurisName() {
         return this.jurisName;
     }
 
@@ -130,7 +130,7 @@ public class TransactionSummary {
      *
      * The name of the jurisdiction that collects this tax.
      */
-    public void setJurisName(string value) {
+    public void setJurisName(String value) {
         this.jurisName = value;
     }
 
@@ -156,14 +156,14 @@ public class TransactionSummary {
     }
 
 
-    private string stateAssignedNo;
+    private String stateAssignedNo;
 
     /**
      * Getter for stateAssignedNo
      *
      * The state assigned number of the jurisdiction that collects this tax.
      */
-    public string getStateAssignedNo() {
+    public String getStateAssignedNo() {
         return this.stateAssignedNo;
     }
 
@@ -172,7 +172,7 @@ public class TransactionSummary {
      *
      * The state assigned number of the jurisdiction that collects this tax.
      */
-    public void setStateAssignedNo(string value) {
+    public void setStateAssignedNo(String value) {
         this.stateAssignedNo = value;
     }
 
@@ -198,14 +198,14 @@ public class TransactionSummary {
     }
 
 
-    private string taxName;
+    private String taxName;
 
     /**
      * Getter for taxName
      *
      * The name of the tax.
      */
-    public string getTaxName() {
+    public String getTaxName() {
         return this.taxName;
     }
 
@@ -214,19 +214,19 @@ public class TransactionSummary {
      *
      * The name of the tax.
      */
-    public void setTaxName(string value) {
+    public void setTaxName(String value) {
         this.taxName = value;
     }
 
 
-    private string taxGroup;
+    private String taxGroup;
 
     /**
      * Getter for taxGroup
      *
      * Group code when special grouping is enabled.
      */
-    public string getTaxGroup() {
+    public String getTaxGroup() {
         return this.taxGroup;
     }
 
@@ -235,7 +235,7 @@ public class TransactionSummary {
      *
      * Group code when special grouping is enabled.
      */
-    public void setTaxGroup(string value) {
+    public void setTaxGroup(String value) {
         this.taxGroup = value;
     }
 
@@ -261,14 +261,14 @@ public class TransactionSummary {
     }
 
 
-    private string rateTypeCode;
+    private String rateTypeCode;
 
     /**
      * Getter for rateTypeCode
      *
      * Indicates the code of the rate type. Use `/api/v2/definitions/ratetypes` for a full list of rate type codes.
      */
-    public string getRateTypeCode() {
+    public String getRateTypeCode() {
         return this.rateTypeCode;
     }
 
@@ -277,7 +277,7 @@ public class TransactionSummary {
      *
      * Indicates the code of the rate type. Use `/api/v2/definitions/ratetypes` for a full list of rate type codes.
      */
-    public void setRateTypeCode(string value) {
+    public void setRateTypeCode(String value) {
         this.rateTypeCode = value;
     }
 

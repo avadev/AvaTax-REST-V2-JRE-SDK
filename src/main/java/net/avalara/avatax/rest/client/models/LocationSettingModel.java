@@ -51,14 +51,14 @@ public class LocationSettingModel {
     }
 
 
-    private string value;
+    private String value;
 
     /**
      * Getter for value
      *
      * The answer the user provided.
      */
-    public string getValue() {
+    public String getValue() {
         return this.value;
     }
 
@@ -67,7 +67,7 @@ public class LocationSettingModel {
      *
      * The answer the user provided.
      */
-    public void setValue(string value) {
+    public void setValue(String value) {
         this.value = value;
     }
 

@@ -72,14 +72,14 @@ public class FundingStatusModel {
     }
 
 
-    private string companyID;
+    private String companyID;
 
     /**
      * Getter for companyID
      *
      * CompanyID
      */
-    public string getCompanyID() {
+    public String getCompanyID() {
         return this.companyID;
     }
 
@@ -88,19 +88,19 @@ public class FundingStatusModel {
      *
      * CompanyID
      */
-    public void setCompanyID(string value) {
+    public void setCompanyID(String value) {
         this.companyID = value;
     }
 
 
-    private string domain;
+    private String domain;
 
     /**
      * Getter for domain
      *
      * Domain
      */
-    public string getDomain() {
+    public String getDomain() {
         return this.domain;
     }
 
@@ -109,19 +109,19 @@ public class FundingStatusModel {
      *
      * Domain
      */
-    public void setDomain(string value) {
+    public void setDomain(String value) {
         this.domain = value;
     }
 
 
-    private string recipient;
+    private String recipient;
 
     /**
      * Getter for recipient
      *
      * Recipient
      */
-    public string getRecipient() {
+    public String getRecipient() {
         return this.recipient;
     }
 
@@ -130,19 +130,19 @@ public class FundingStatusModel {
      *
      * Recipient
      */
-    public void setRecipient(string value) {
+    public void setRecipient(String value) {
         this.recipient = value;
     }
 
 
-    private string sender;
+    private String sender;
 
     /**
      * Getter for sender
      *
      * Sender
      */
-    public string getSender() {
+    public String getSender() {
         return this.sender;
     }
 
@@ -151,19 +151,19 @@ public class FundingStatusModel {
      *
      * Sender
      */
-    public void setSender(string value) {
+    public void setSender(String value) {
         this.sender = value;
     }
 
 
-    private string documentKey;
+    private String documentKey;
 
     /**
      * Getter for documentKey
      *
      * DocumentKey
      */
-    public string getDocumentKey() {
+    public String getDocumentKey() {
         return this.documentKey;
     }
 
@@ -172,19 +172,19 @@ public class FundingStatusModel {
      *
      * DocumentKey
      */
-    public void setDocumentKey(string value) {
+    public void setDocumentKey(String value) {
         this.documentKey = value;
     }
 
 
-    private string documentType;
+    private String documentType;
 
     /**
      * Getter for documentType
      *
      * DocumentType
      */
-    public string getDocumentType() {
+    public String getDocumentType() {
         return this.documentType;
     }
 
@@ -193,19 +193,19 @@ public class FundingStatusModel {
      *
      * DocumentType
      */
-    public void setDocumentType(string value) {
+    public void setDocumentType(String value) {
         this.documentType = value;
     }
 
 
-    private string documentName;
+    private String documentName;
 
     /**
      * Getter for documentName
      *
      * DocumentName
      */
-    public string getDocumentName() {
+    public String getDocumentName() {
         return this.documentName;
     }
 
@@ -214,7 +214,7 @@ public class FundingStatusModel {
      *
      * DocumentName
      */
-    public void setDocumentName(string value) {
+    public void setDocumentName(String value) {
         this.documentName = value;
     }
 
@@ -240,14 +240,14 @@ public class FundingStatusModel {
     }
 
 
-    private string status;
+    private String status;
 
     /**
      * Getter for status
      *
      * Status
      */
-    public string getStatus() {
+    public String getStatus() {
         return this.status;
     }
 
@@ -256,19 +256,19 @@ public class FundingStatusModel {
      *
      * Status
      */
-    public void setStatus(string value) {
+    public void setStatus(String value) {
         this.status = value;
     }
 
 
-    private string errorMessage;
+    private String errorMessage;
 
     /**
      * Getter for errorMessage
      *
      * ErrorMessage
      */
-    public string getErrorMessage() {
+    public String getErrorMessage() {
         return this.errorMessage;
     }
 
@@ -277,7 +277,7 @@ public class FundingStatusModel {
      *
      * ErrorMessage
      */
-    public void setErrorMessage(string value) {
+    public void setErrorMessage(String value) {
         this.errorMessage = value;
     }
 

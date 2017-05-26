@@ -51,14 +51,14 @@ public class ResourceFileUploadRequestModel {
     }
 
 
-    private string username;
+    private String username;
 
     /**
      * Getter for username
      *
      * The username adding the file
      */
-    public string getUsername() {
+    public String getUsername() {
         return this.username;
     }
 
@@ -67,7 +67,7 @@ public class ResourceFileUploadRequestModel {
      *
      * The username adding the file
      */
-    public void setUsername(string value) {
+    public void setUsername(String value) {
         this.username = value;
     }
 
@@ -114,14 +114,14 @@ public class ResourceFileUploadRequestModel {
     }
 
 
-    private string name;
+    private String name;
 
     /**
      * Getter for name
      *
      * The original name of this file.
      */
-    public string getName() {
+    public String getName() {
         return this.name;
     }
 
@@ -130,7 +130,7 @@ public class ResourceFileUploadRequestModel {
      *
      * The original name of this file.
      */
-    public void setName(string value) {
+    public void setName(String value) {
         this.name = value;
     }
 

@@ -72,14 +72,14 @@ public class BatchFileModel {
     }
 
 
-    private string name;
+    private String name;
 
     /**
      * Getter for name
      *
      * Logical Name of file (e.g. "Input" or "Error").
      */
-    public string getName() {
+    public String getName() {
         return this.name;
     }
 
@@ -88,7 +88,7 @@ public class BatchFileModel {
      *
      * Logical Name of file (e.g. "Input" or "Error").
      */
-    public void setName(string value) {
+    public void setName(String value) {
         this.name = value;
     }
 
@@ -135,14 +135,14 @@ public class BatchFileModel {
     }
 
 
-    private string contentType;
+    private String contentType;
 
     /**
      * Getter for contentType
      *
      * Content mime type (e.g. text/csv). This is used for HTTP downloading.
      */
-    public string getContentType() {
+    public String getContentType() {
         return this.contentType;
     }
 
@@ -151,19 +151,19 @@ public class BatchFileModel {
      *
      * Content mime type (e.g. text/csv). This is used for HTTP downloading.
      */
-    public void setContentType(string value) {
+    public void setContentType(String value) {
         this.contentType = value;
     }
 
 
-    private string fileExtension;
+    private String fileExtension;
 
     /**
      * Getter for fileExtension
      *
      * File extension (e.g. CSV).
      */
-    public string getFileExtension() {
+    public String getFileExtension() {
         return this.fileExtension;
     }
 
@@ -172,7 +172,7 @@ public class BatchFileModel {
      *
      * File extension (e.g. CSV).
      */
-    public void setFileExtension(string value) {
+    public void setFileExtension(String value) {
         this.fileExtension = value;
     }
 

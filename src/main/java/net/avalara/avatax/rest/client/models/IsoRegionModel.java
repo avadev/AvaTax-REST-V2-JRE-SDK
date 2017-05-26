@@ -30,14 +30,14 @@ import java.util.HashMap;
 public class IsoRegionModel {
 
 
-    private string countryCode;
+    private String countryCode;
 
     /**
      * Getter for countryCode
      *
      * The two-character ISO 3166 country code this region belongs to
      */
-    public string getCountryCode() {
+    public String getCountryCode() {
         return this.countryCode;
     }
 
@@ -46,19 +46,19 @@ public class IsoRegionModel {
      *
      * The two-character ISO 3166 country code this region belongs to
      */
-    public void setCountryCode(string value) {
+    public void setCountryCode(String value) {
         this.countryCode = value;
     }
 
 
-    private string code;
+    private String code;
 
     /**
      * Getter for code
      *
      * The three character ISO 3166 region code
      */
-    public string getCode() {
+    public String getCode() {
         return this.code;
     }
 
@@ -67,19 +67,19 @@ public class IsoRegionModel {
      *
      * The three character ISO 3166 region code
      */
-    public void setCode(string value) {
+    public void setCode(String value) {
         this.code = value;
     }
 
 
-    private string name;
+    private String name;
 
     /**
      * Getter for name
      *
      * The full name, using localized characters, for this region
      */
-    public string getName() {
+    public String getName() {
         return this.name;
     }
 
@@ -88,19 +88,19 @@ public class IsoRegionModel {
      *
      * The full name, using localized characters, for this region
      */
-    public void setName(string value) {
+    public void setName(String value) {
         this.name = value;
     }
 
 
-    private string classification;
+    private String classification;
 
     /**
      * Getter for classification
      *
      * The word in the local language that classifies what type of a region this represents
      */
-    public string getClassification() {
+    public String getClassification() {
         return this.classification;
     }
 
@@ -109,7 +109,7 @@ public class IsoRegionModel {
      *
      * The word in the local language that classifies what type of a region this represents
      */
-    public void setClassification(string value) {
+    public void setClassification(String value) {
         this.classification = value;
     }
 

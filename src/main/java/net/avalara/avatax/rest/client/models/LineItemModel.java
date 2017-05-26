@@ -30,14 +30,14 @@ import java.util.HashMap;
 public class LineItemModel {
 
 
-    private string number;
+    private String number;
 
     /**
      * Getter for number
      *
      * Line number within this document
      */
-    public string getNumber() {
+    public String getNumber() {
         return this.number;
     }
 
@@ -46,7 +46,7 @@ public class LineItemModel {
      *
      * Line number within this document
      */
-    public void setNumber(string value) {
+    public void setNumber(String value) {
         this.number = value;
     }
 
@@ -114,14 +114,14 @@ public class LineItemModel {
     }
 
 
-    private string taxCode;
+    private String taxCode;
 
     /**
      * Getter for taxCode
      *
      * Tax Code - System or Custom Tax Code.
      */
-    public string getTaxCode() {
+    public String getTaxCode() {
         return this.taxCode;
     }
 
@@ -130,19 +130,19 @@ public class LineItemModel {
      *
      * Tax Code - System or Custom Tax Code.
      */
-    public void setTaxCode(string value) {
+    public void setTaxCode(String value) {
         this.taxCode = value;
     }
 
 
-    private string customerUsageType;
+    private String customerUsageType;
 
     /**
      * Getter for customerUsageType
      *
      * Customer Usage Type - The client application customer or usage type.
      */
-    public string getCustomerUsageType() {
+    public String getCustomerUsageType() {
         return this.customerUsageType;
     }
 
@@ -151,19 +151,19 @@ public class LineItemModel {
      *
      * Customer Usage Type - The client application customer or usage type.
      */
-    public void setCustomerUsageType(string value) {
+    public void setCustomerUsageType(String value) {
         this.customerUsageType = value;
     }
 
 
-    private string itemCode;
+    private String itemCode;
 
     /**
      * Getter for itemCode
      *
      * Item Code (SKU)
      */
-    public string getItemCode() {
+    public String getItemCode() {
         return this.itemCode;
     }
 
@@ -172,19 +172,19 @@ public class LineItemModel {
      *
      * Item Code (SKU)
      */
-    public void setItemCode(string value) {
+    public void setItemCode(String value) {
         this.itemCode = value;
     }
 
 
-    private string exemptionCode;
+    private String exemptionCode;
 
     /**
      * Getter for exemptionCode
      *
      * Exemption number for this line
      */
-    public string getExemptionCode() {
+    public String getExemptionCode() {
         return this.exemptionCode;
     }
 
@@ -193,7 +193,7 @@ public class LineItemModel {
      *
      * Exemption number for this line
      */
-    public void setExemptionCode(string value) {
+    public void setExemptionCode(String value) {
         this.exemptionCode = value;
     }
 
@@ -240,14 +240,14 @@ public class LineItemModel {
     }
 
 
-    private string revenueAccount;
+    private String revenueAccount;
 
     /**
      * Getter for revenueAccount
      *
      * Revenue Account
      */
-    public string getRevenueAccount() {
+    public String getRevenueAccount() {
         return this.revenueAccount;
     }
 
@@ -256,19 +256,19 @@ public class LineItemModel {
      *
      * Revenue Account
      */
-    public void setRevenueAccount(string value) {
+    public void setRevenueAccount(String value) {
         this.revenueAccount = value;
     }
 
 
-    private string ref1;
+    private String ref1;
 
     /**
      * Getter for ref1
      *
      * Reference 1 - Client specific reference field
      */
-    public string getRef1() {
+    public String getRef1() {
         return this.ref1;
     }
 
@@ -277,19 +277,19 @@ public class LineItemModel {
      *
      * Reference 1 - Client specific reference field
      */
-    public void setRef1(string value) {
+    public void setRef1(String value) {
         this.ref1 = value;
     }
 
 
-    private string ref2;
+    private String ref2;
 
     /**
      * Getter for ref2
      *
      * Reference 2 - Client specific reference field
      */
-    public string getRef2() {
+    public String getRef2() {
         return this.ref2;
     }
 
@@ -298,19 +298,19 @@ public class LineItemModel {
      *
      * Reference 2 - Client specific reference field
      */
-    public void setRef2(string value) {
+    public void setRef2(String value) {
         this.ref2 = value;
     }
 
 
-    private string description;
+    private String description;
 
     /**
      * Getter for description
      *
      * Item description. This is required for SST transactions if an unmapped ItemCode is used.
      */
-    public string getDescription() {
+    public String getDescription() {
         return this.description;
     }
 
@@ -319,12 +319,12 @@ public class LineItemModel {
      *
      * Item description. This is required for SST transactions if an unmapped ItemCode is used.
      */
-    public void setDescription(string value) {
+    public void setDescription(String value) {
         this.description = value;
     }
 
 
-    private string businessIdentificationNo;
+    private String businessIdentificationNo;
 
     /**
      * Getter for businessIdentificationNo
@@ -336,7 +336,7 @@ public class LineItemModel {
     * a business identification number for your company during company setup, this transaction will be treated as a 
     * business-to-business transaction for VAT purposes and it will be calculated according to VAT tax rules.
      */
-    public string getBusinessIdentificationNo() {
+    public String getBusinessIdentificationNo() {
         return this.businessIdentificationNo;
     }
 
@@ -350,7 +350,7 @@ public class LineItemModel {
     * a business identification number for your company during company setup, this transaction will be treated as a 
     * business-to-business transaction for VAT purposes and it will be calculated according to VAT tax rules.
      */
-    public void setBusinessIdentificationNo(string value) {
+    public void setBusinessIdentificationNo(String value) {
         this.businessIdentificationNo = value;
     }
 

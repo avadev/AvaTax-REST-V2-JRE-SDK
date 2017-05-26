@@ -30,14 +30,14 @@ import java.util.HashMap;
 public class SetPasswordModel {
 
 
-    private string newPassword;
+    private String newPassword;
 
     /**
      * Getter for newPassword
      *
      * New Password
      */
-    public string getNewPassword() {
+    public String getNewPassword() {
         return this.newPassword;
     }
 
@@ -46,7 +46,7 @@ public class SetPasswordModel {
      *
      * New Password
      */
-    public void setNewPassword(string value) {
+    public void setNewPassword(String value) {
         this.newPassword = value;
     }
 

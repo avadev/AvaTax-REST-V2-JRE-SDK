@@ -51,14 +51,14 @@ public class AvaFileFormModel {
     }
 
 
-    private string returnName;
+    private String returnName;
 
     /**
      * Getter for returnName
      *
      * Name of the file being returned
      */
-    public string getReturnName() {
+    public String getReturnName() {
         return this.returnName;
     }
 
@@ -67,19 +67,19 @@ public class AvaFileFormModel {
      *
      * Name of the file being returned
      */
-    public void setReturnName(string value) {
+    public void setReturnName(String value) {
         this.returnName = value;
     }
 
 
-    private string formName;
+    private String formName;
 
     /**
      * Getter for formName
      *
      * Name of the submitted form
      */
-    public string getFormName() {
+    public String getFormName() {
         return this.formName;
     }
 
@@ -88,19 +88,19 @@ public class AvaFileFormModel {
      *
      * Name of the submitted form
      */
-    public void setFormName(string value) {
+    public void setFormName(String value) {
         this.formName = value;
     }
 
 
-    private string description;
+    private String description;
 
     /**
      * Getter for description
      *
      * A description of the submitted form
      */
-    public string getDescription() {
+    public String getDescription() {
         return this.description;
     }
 
@@ -109,7 +109,7 @@ public class AvaFileFormModel {
      *
      * A description of the submitted form
      */
-    public void setDescription(string value) {
+    public void setDescription(String value) {
         this.description = value;
     }
 
@@ -156,14 +156,14 @@ public class AvaFileFormModel {
     }
 
 
-    private string region;
+    private String region;
 
     /**
      * Getter for region
      *
      * State/Province/Region where the form is submitted for
      */
-    public string getRegion() {
+    public String getRegion() {
         return this.region;
     }
 
@@ -172,19 +172,19 @@ public class AvaFileFormModel {
      *
      * State/Province/Region where the form is submitted for
      */
-    public void setRegion(string value) {
+    public void setRegion(String value) {
         this.region = value;
     }
 
 
-    private string country;
+    private String country;
 
     /**
      * Getter for country
      *
      * The country this form is submitted for
      */
-    public string getCountry() {
+    public String getCountry() {
         return this.country;
     }
 
@@ -193,7 +193,7 @@ public class AvaFileFormModel {
      *
      * The country this form is submitted for
      */
-    public void setCountry(string value) {
+    public void setCountry(String value) {
         this.country = value;
     }
 

@@ -51,7 +51,7 @@ public class LicenseKeyModel {
     }
 
 
-    private string privateLicenseKey;
+    private String privateLicenseKey;
 
     /**
      * Getter for privateLicenseKey
@@ -60,7 +60,7 @@ public class LicenseKeyModel {
     * If you lose this key, you must contact the ResetLicenseKey API in order to request a new one.
     * Each account can only have one license key at a time.
      */
-    public string getPrivateLicenseKey() {
+    public String getPrivateLicenseKey() {
         return this.privateLicenseKey;
     }
 
@@ -71,12 +71,12 @@ public class LicenseKeyModel {
     * If you lose this key, you must contact the ResetLicenseKey API in order to request a new one.
     * Each account can only have one license key at a time.
      */
-    public void setPrivateLicenseKey(string value) {
+    public void setPrivateLicenseKey(String value) {
         this.privateLicenseKey = value;
     }
 
 
-    private string httpRequestHeader;
+    private String httpRequestHeader;
 
     /**
      * Getter for httpRequestHeader
@@ -84,7 +84,7 @@ public class LicenseKeyModel {
      * If your software allows you to specify the HTTP Authorization header directly, this is the header string you 
     * should use when contacting Avalara to make API calls with this license key.
      */
-    public string getHttpRequestHeader() {
+    public String getHttpRequestHeader() {
         return this.httpRequestHeader;
     }
 
@@ -94,7 +94,7 @@ public class LicenseKeyModel {
      * If your software allows you to specify the HTTP Authorization header directly, this is the header string you 
     * should use when contacting Avalara to make API calls with this license key.
      */
-    public void setHttpRequestHeader(string value) {
+    public void setHttpRequestHeader(String value) {
         this.httpRequestHeader = value;
     }
 

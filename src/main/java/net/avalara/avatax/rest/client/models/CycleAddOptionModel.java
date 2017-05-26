@@ -114,14 +114,14 @@ public class CycleAddOptionModel {
     }
 
 
-    private string cycleName;
+    private String cycleName;
 
     /**
      * Getter for cycleName
      *
      * A descriptive name of the cycle and due date of form.
      */
-    public string getCycleName() {
+    public String getCycleName() {
         return this.cycleName;
     }
 
@@ -130,19 +130,19 @@ public class CycleAddOptionModel {
      *
      * A descriptive name of the cycle and due date of form.
      */
-    public void setCycleName(string value) {
+    public void setCycleName(String value) {
         this.cycleName = value;
     }
 
 
-    private string frequencyName;
+    private String frequencyName;
 
     /**
      * Getter for frequencyName
      *
      * The filing frequency of the form
      */
-    public string getFrequencyName() {
+    public String getFrequencyName() {
         return this.frequencyName;
     }
 
@@ -151,19 +151,19 @@ public class CycleAddOptionModel {
      *
      * The filing frequency of the form
      */
-    public void setFrequencyName(string value) {
+    public void setFrequencyName(String value) {
         this.frequencyName = value;
     }
 
 
-    private string filingFrequencyCode;
+    private String filingFrequencyCode;
 
     /**
      * Getter for filingFrequencyCode
      *
      * A code assigned to the filing frequency
      */
-    public string getFilingFrequencyCode() {
+    public String getFilingFrequencyCode() {
         return this.filingFrequencyCode;
     }
 
@@ -172,7 +172,7 @@ public class CycleAddOptionModel {
      *
      * A code assigned to the filing frequency
      */
-    public void setFilingFrequencyCode(string value) {
+    public void setFilingFrequencyCode(String value) {
         this.filingFrequencyCode = value;
     }
 
@@ -198,14 +198,14 @@ public class CycleAddOptionModel {
     }
 
 
-    private string cycleUnavailableReason;
+    private String cycleUnavailableReason;
 
     /**
      * Getter for cycleUnavailableReason
      *
      * An explanation for why this form cannot be added for the current cycle
      */
-    public string getCycleUnavailableReason() {
+    public String getCycleUnavailableReason() {
         return this.cycleUnavailableReason;
     }
 
@@ -214,19 +214,19 @@ public class CycleAddOptionModel {
      *
      * An explanation for why this form cannot be added for the current cycle
      */
-    public void setCycleUnavailableReason(string value) {
+    public void setCycleUnavailableReason(String value) {
         this.cycleUnavailableReason = value;
     }
 
 
-    private string[] availableLocationCodes;
+    private String[] availableLocationCodes;
 
     /**
      * Getter for availableLocationCodes
      *
      * A list of outlet codes that can be assigned to this form for the current cycle
      */
-    public string[] getAvailableLocationCodes() {
+    public String[] getAvailableLocationCodes() {
         return this.availableLocationCodes;
     }
 
@@ -235,7 +235,7 @@ public class CycleAddOptionModel {
      *
      * A list of outlet codes that can be assigned to this form for the current cycle
      */
-    public void setAvailableLocationCodes(string[] value) {
+    public void setAvailableLocationCodes(String[] value) {
         this.availableLocationCodes = value;
     }
 

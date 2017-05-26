@@ -30,14 +30,14 @@ import java.util.HashMap;
 public class SkyscraperStatusModel {
 
 
-    private string name;
+    private String name;
 
     /**
      * Getter for name
      *
      * The specific name of the returns available in skyscraper
      */
-    public string getName() {
+    public String getName() {
         return this.name;
     }
 
@@ -46,19 +46,19 @@ public class SkyscraperStatusModel {
      *
      * The specific name of the returns available in skyscraper
      */
-    public void setName(string value) {
+    public void setName(String value) {
         this.name = value;
     }
 
 
-    private string[] taxFormCodes;
+    private String[] taxFormCodes;
 
     /**
      * Getter for taxFormCodes
      *
      * The tax form codes available to file through skyscrper
      */
-    public string[] getTaxFormCodes() {
+    public String[] getTaxFormCodes() {
         return this.taxFormCodes;
     }
 
@@ -67,19 +67,19 @@ public class SkyscraperStatusModel {
      *
      * The tax form codes available to file through skyscrper
      */
-    public void setTaxFormCodes(string[] value) {
+    public void setTaxFormCodes(String[] value) {
         this.taxFormCodes = value;
     }
 
 
-    private string country;
+    private String country;
 
     /**
      * Getter for country
      *
      * The country of the returns
      */
-    public string getCountry() {
+    public String getCountry() {
         return this.country;
     }
 
@@ -88,7 +88,7 @@ public class SkyscraperStatusModel {
      *
      * The country of the returns
      */
-    public void setCountry(string value) {
+    public void setCountry(String value) {
         this.country = value;
     }
 
@@ -135,14 +135,14 @@ public class SkyscraperStatusModel {
     }
 
 
-    private string expectedResponseTime;
+    private String expectedResponseTime;
 
     /**
      * Getter for expectedResponseTime
      *
      * The expected response time of the call
      */
-    public string getExpectedResponseTime() {
+    public String getExpectedResponseTime() {
         return this.expectedResponseTime;
     }
 
@@ -151,19 +151,19 @@ public class SkyscraperStatusModel {
      *
      * The expected response time of the call
      */
-    public void setExpectedResponseTime(string value) {
+    public void setExpectedResponseTime(String value) {
         this.expectedResponseTime = value;
     }
 
 
-    private string message;
+    private String message;
 
     /**
      * Getter for message
      *
      * Message on the returns
      */
-    public string getMessage() {
+    public String getMessage() {
         return this.message;
     }
 
@@ -172,7 +172,7 @@ public class SkyscraperStatusModel {
      *
      * Message on the returns
      */
-    public void setMessage(string value) {
+    public void setMessage(String value) {
         this.message = value;
     }
 

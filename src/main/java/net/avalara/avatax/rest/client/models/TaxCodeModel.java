@@ -73,14 +73,14 @@ public class TaxCodeModel {
     }
 
 
-    private string taxCode;
+    private String taxCode;
 
     /**
      * Getter for taxCode
      *
      * A code string that identifies this tax code.
      */
-    public string getTaxCode() {
+    public String getTaxCode() {
         return this.taxCode;
     }
 
@@ -89,19 +89,19 @@ public class TaxCodeModel {
      *
      * A code string that identifies this tax code.
      */
-    public void setTaxCode(string value) {
+    public void setTaxCode(String value) {
         this.taxCode = value;
     }
 
 
-    private string taxCodeTypeId;
+    private String taxCodeTypeId;
 
     /**
      * Getter for taxCodeTypeId
      *
      * The type of this tax code.
      */
-    public string getTaxCodeTypeId() {
+    public String getTaxCodeTypeId() {
         return this.taxCodeTypeId;
     }
 
@@ -110,19 +110,19 @@ public class TaxCodeModel {
      *
      * The type of this tax code.
      */
-    public void setTaxCodeTypeId(string value) {
+    public void setTaxCodeTypeId(String value) {
         this.taxCodeTypeId = value;
     }
 
 
-    private string description;
+    private String description;
 
     /**
      * Getter for description
      *
      * A friendly description of this tax code.
      */
-    public string getDescription() {
+    public String getDescription() {
         return this.description;
     }
 
@@ -131,19 +131,19 @@ public class TaxCodeModel {
      *
      * A friendly description of this tax code.
      */
-    public void setDescription(string value) {
+    public void setDescription(String value) {
         this.description = value;
     }
 
 
-    private string parentTaxCode;
+    private String parentTaxCode;
 
     /**
      * Getter for parentTaxCode
      *
      * If this tax code is a subset of a different tax code, this identifies the parent code.
      */
-    public string getParentTaxCode() {
+    public String getParentTaxCode() {
         return this.parentTaxCode;
     }
 
@@ -152,7 +152,7 @@ public class TaxCodeModel {
      *
      * If this tax code is a subset of a different tax code, this identifies the parent code.
      */
-    public void setParentTaxCode(string value) {
+    public void setParentTaxCode(String value) {
         this.parentTaxCode = value;
     }
 
@@ -199,14 +199,14 @@ public class TaxCodeModel {
     }
 
 
-    private string entityUseCode;
+    private String entityUseCode;
 
     /**
      * Getter for entityUseCode
      *
      * The Avalara Entity Use Code represented by this tax code.
      */
-    public string getEntityUseCode() {
+    public String getEntityUseCode() {
         return this.entityUseCode;
     }
 
@@ -215,7 +215,7 @@ public class TaxCodeModel {
      *
      * The Avalara Entity Use Code represented by this tax code.
      */
-    public void setEntityUseCode(string value) {
+    public void setEntityUseCode(String value) {
         this.entityUseCode = value;
     }
 

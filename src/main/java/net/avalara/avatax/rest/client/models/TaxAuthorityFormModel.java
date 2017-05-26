@@ -51,14 +51,14 @@ public class TaxAuthorityFormModel {
     }
 
 
-    private string formName;
+    private String formName;
 
     /**
      * Getter for formName
      *
      * The form name of the form for this tax authority.
      */
-    public string getFormName() {
+    public String getFormName() {
         return this.formName;
     }
 
@@ -67,7 +67,7 @@ public class TaxAuthorityFormModel {
      *
      * The form name of the form for this tax authority.
      */
-    public void setFormName(string value) {
+    public void setFormName(String value) {
         this.formName = value;
     }
 

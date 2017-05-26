@@ -53,14 +53,14 @@ public class CycleExpireModel {
     }
 
 
-    private string message;
+    private String message;
 
     /**
      * Getter for message
      *
      * The message to present to the user if expiration is successful or unsuccessful.
      */
-    public string getMessage() {
+    public String getMessage() {
         return this.message;
     }
 
@@ -69,7 +69,7 @@ public class CycleExpireModel {
      *
      * The message to present to the user if expiration is successful or unsuccessful.
      */
-    public void setMessage(string value) {
+    public void setMessage(String value) {
         this.message = value;
     }
 

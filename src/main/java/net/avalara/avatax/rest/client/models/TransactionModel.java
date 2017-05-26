@@ -51,14 +51,14 @@ public class TransactionModel {
     }
 
 
-    private string code;
+    private String code;
 
     /**
      * Getter for code
      *
      * A unique customer-provided code identifying this transaction.
      */
-    public string getCode() {
+    public String getCode() {
         return this.code;
     }
 
@@ -67,7 +67,7 @@ public class TransactionModel {
      *
      * A unique customer-provided code identifying this transaction.
      */
-    public void setCode(string value) {
+    public void setCode(String value) {
         this.code = value;
     }
 
@@ -183,14 +183,14 @@ public class TransactionModel {
     }
 
 
-    private string batchCode;
+    private String batchCode;
 
     /**
      * Getter for batchCode
      *
      * If this transaction was created as part of a batch, this code indicates which batch.
      */
-    public string getBatchCode() {
+    public String getBatchCode() {
         return this.batchCode;
     }
 
@@ -199,19 +199,19 @@ public class TransactionModel {
      *
      * If this transaction was created as part of a batch, this code indicates which batch.
      */
-    public void setBatchCode(string value) {
+    public void setBatchCode(String value) {
         this.batchCode = value;
     }
 
 
-    private string currencyCode;
+    private String currencyCode;
 
     /**
      * Getter for currencyCode
      *
      * The three-character ISO 4217 currency code that was used for payment for this transaction.
      */
-    public string getCurrencyCode() {
+    public String getCurrencyCode() {
         return this.currencyCode;
     }
 
@@ -220,19 +220,19 @@ public class TransactionModel {
      *
      * The three-character ISO 4217 currency code that was used for payment for this transaction.
      */
-    public void setCurrencyCode(string value) {
+    public void setCurrencyCode(String value) {
         this.currencyCode = value;
     }
 
 
-    private string customerUsageType;
+    private String customerUsageType;
 
     /**
      * Getter for customerUsageType
      *
      * The customer usage type for this transaction. Customer usage types often affect exemption or taxability rules.
      */
-    public string getCustomerUsageType() {
+    public String getCustomerUsageType() {
         return this.customerUsageType;
     }
 
@@ -241,19 +241,19 @@ public class TransactionModel {
      *
      * The customer usage type for this transaction. Customer usage types often affect exemption or taxability rules.
      */
-    public void setCustomerUsageType(string value) {
+    public void setCustomerUsageType(String value) {
         this.customerUsageType = value;
     }
 
 
-    private string customerVendorCode;
+    private String customerVendorCode;
 
     /**
      * Getter for customerVendorCode
      *
      * CustomerVendorCode
      */
-    public string getCustomerVendorCode() {
+    public String getCustomerVendorCode() {
         return this.customerVendorCode;
     }
 
@@ -262,19 +262,19 @@ public class TransactionModel {
      *
      * CustomerVendorCode
      */
-    public void setCustomerVendorCode(string value) {
+    public void setCustomerVendorCode(String value) {
         this.customerVendorCode = value;
     }
 
 
-    private string exemptNo;
+    private String exemptNo;
 
     /**
      * Getter for exemptNo
      *
      * If this transaction was exempt, this field will contain the word "Exempt".
      */
-    public string getExemptNo() {
+    public String getExemptNo() {
         return this.exemptNo;
     }
 
@@ -283,7 +283,7 @@ public class TransactionModel {
      *
      * If this transaction was exempt, this field will contain the word "Exempt".
      */
-    public void setExemptNo(string value) {
+    public void setExemptNo(String value) {
         this.exemptNo = value;
     }
 
@@ -309,7 +309,7 @@ public class TransactionModel {
     }
 
 
-    private string locationCode;
+    private String locationCode;
 
     /**
      * Getter for locationCode
@@ -317,7 +317,7 @@ public class TransactionModel {
      * If this transaction was made from a specific reporting location, this is the code string of the location.
     * For customers using Returns, this indicates how tax will be reported according to different locations on the tax forms.
      */
-    public string getLocationCode() {
+    public String getLocationCode() {
         return this.locationCode;
     }
 
@@ -327,19 +327,19 @@ public class TransactionModel {
      * If this transaction was made from a specific reporting location, this is the code string of the location.
     * For customers using Returns, this indicates how tax will be reported according to different locations on the tax forms.
      */
-    public void setLocationCode(string value) {
+    public void setLocationCode(String value) {
         this.locationCode = value;
     }
 
 
-    private string purchaseOrderNo;
+    private String purchaseOrderNo;
 
     /**
      * Getter for purchaseOrderNo
      *
      * The customer-supplied purchase order number of this transaction.
      */
-    public string getPurchaseOrderNo() {
+    public String getPurchaseOrderNo() {
         return this.purchaseOrderNo;
     }
 
@@ -348,19 +348,19 @@ public class TransactionModel {
      *
      * The customer-supplied purchase order number of this transaction.
      */
-    public void setPurchaseOrderNo(string value) {
+    public void setPurchaseOrderNo(String value) {
         this.purchaseOrderNo = value;
     }
 
 
-    private string referenceCode;
+    private String referenceCode;
 
     /**
      * Getter for referenceCode
      *
      * A user-defined reference code for this transaction.
      */
-    public string getReferenceCode() {
+    public String getReferenceCode() {
         return this.referenceCode;
     }
 
@@ -369,19 +369,19 @@ public class TransactionModel {
      *
      * A user-defined reference code for this transaction.
      */
-    public void setReferenceCode(string value) {
+    public void setReferenceCode(String value) {
         this.referenceCode = value;
     }
 
 
-    private string salespersonCode;
+    private String salespersonCode;
 
     /**
      * Getter for salespersonCode
      *
      * The salesperson who provided this transaction. Not required.
      */
-    public string getSalespersonCode() {
+    public String getSalespersonCode() {
         return this.salespersonCode;
     }
 
@@ -390,7 +390,7 @@ public class TransactionModel {
      *
      * The salesperson who provided this transaction. Not required.
      */
-    public void setSalespersonCode(string value) {
+    public void setSalespersonCode(String value) {
         this.salespersonCode = value;
     }
 
@@ -437,14 +437,14 @@ public class TransactionModel {
     }
 
 
-    private string taxOverrideReason;
+    private String taxOverrideReason;
 
     /**
      * Getter for taxOverrideReason
      *
      * If a tax override was applied to this transaction, indicates the reason for the tax override.
      */
-    public string getTaxOverrideReason() {
+    public String getTaxOverrideReason() {
         return this.taxOverrideReason;
     }
 
@@ -453,7 +453,7 @@ public class TransactionModel {
      *
      * If a tax override was applied to this transaction, indicates the reason for the tax override.
      */
-    public void setTaxOverrideReason(string value) {
+    public void setTaxOverrideReason(String value) {
         this.taxOverrideReason = value;
     }
 
@@ -584,14 +584,14 @@ public class TransactionModel {
     }
 
 
-    private string adjustmentDescription;
+    private String adjustmentDescription;
 
     /**
      * Getter for adjustmentDescription
      *
      * If this transaction was adjusted, indicates a description of the reason why the transaction was adjusted.
      */
-    public string getAdjustmentDescription() {
+    public String getAdjustmentDescription() {
         return this.adjustmentDescription;
     }
 
@@ -600,7 +600,7 @@ public class TransactionModel {
      *
      * If this transaction was adjusted, indicates a description of the reason why the transaction was adjusted.
      */
-    public void setAdjustmentDescription(string value) {
+    public void setAdjustmentDescription(String value) {
         this.adjustmentDescription = value;
     }
 
@@ -626,14 +626,14 @@ public class TransactionModel {
     }
 
 
-    private string region;
+    private String region;
 
     /**
      * Getter for region
      *
      * The two-or-three character ISO region code of the region for this transaction.
      */
-    public string getRegion() {
+    public String getRegion() {
         return this.region;
     }
 
@@ -642,19 +642,19 @@ public class TransactionModel {
      *
      * The two-or-three character ISO region code of the region for this transaction.
      */
-    public void setRegion(string value) {
+    public void setRegion(String value) {
         this.region = value;
     }
 
 
-    private string country;
+    private String country;
 
     /**
      * Getter for country
      *
      * The two-character ISO 3166 code of the country for this transaction.
      */
-    public string getCountry() {
+    public String getCountry() {
         return this.country;
     }
 
@@ -663,7 +663,7 @@ public class TransactionModel {
      *
      * The two-character ISO 3166 code of the country for this transaction.
      */
-    public void setCountry(string value) {
+    public void setCountry(String value) {
         this.country = value;
     }
 
@@ -691,14 +691,14 @@ public class TransactionModel {
     }
 
 
-    private string softwareVersion;
+    private String softwareVersion;
 
     /**
      * Getter for softwareVersion
      *
      * The software version used to calculate this transaction.
      */
-    public string getSoftwareVersion() {
+    public String getSoftwareVersion() {
         return this.softwareVersion;
     }
 
@@ -707,7 +707,7 @@ public class TransactionModel {
      *
      * The software version used to calculate this transaction.
      */
-    public void setSoftwareVersion(string value) {
+    public void setSoftwareVersion(String value) {
         this.softwareVersion = value;
     }
 
@@ -817,14 +817,14 @@ public class TransactionModel {
     }
 
 
-    private string description;
+    private String description;
 
     /**
      * Getter for description
      *
      * Description of this transaction.
      */
-    public string getDescription() {
+    public String getDescription() {
         return this.description;
     }
 
@@ -833,19 +833,19 @@ public class TransactionModel {
      *
      * Description of this transaction.
      */
-    public void setDescription(string value) {
+    public void setDescription(String value) {
         this.description = value;
     }
 
 
-    private string email;
+    private String email;
 
     /**
      * Getter for email
      *
      * Email address associated with this transaction.
      */
-    public string getEmail() {
+    public String getEmail() {
         return this.email;
     }
 
@@ -854,19 +854,19 @@ public class TransactionModel {
      *
      * Email address associated with this transaction.
      */
-    public void setEmail(string value) {
+    public void setEmail(String value) {
         this.email = value;
     }
 
 
-    private string businessIdentificationNo;
+    private String businessIdentificationNo;
 
     /**
      * Getter for businessIdentificationNo
      *
      * VAT business identification number used for this transaction.
      */
-    public string getBusinessIdentificationNo() {
+    public String getBusinessIdentificationNo() {
         return this.businessIdentificationNo;
     }
 
@@ -875,7 +875,7 @@ public class TransactionModel {
      *
      * VAT business identification number used for this transaction.
      */
-    public void setBusinessIdentificationNo(string value) {
+    public void setBusinessIdentificationNo(String value) {
         this.businessIdentificationNo = value;
     }
 

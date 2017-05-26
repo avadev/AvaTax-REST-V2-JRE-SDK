@@ -30,14 +30,14 @@ import java.util.HashMap;
 public class OriginalApiRequestResponseModel {
 
 
-    private string request;
+    private String request;
 
     /**
      * Getter for request
      *
      * API request
      */
-    public string getRequest() {
+    public String getRequest() {
         return this.request;
     }
 
@@ -46,19 +46,19 @@ public class OriginalApiRequestResponseModel {
      *
      * API request
      */
-    public void setRequest(string value) {
+    public void setRequest(String value) {
         this.request = value;
     }
 
 
-    private string response;
+    private String response;
 
     /**
      * Getter for response
      *
      * API response
      */
-    public string getResponse() {
+    public String getResponse() {
         return this.response;
     }
 
@@ -67,7 +67,7 @@ public class OriginalApiRequestResponseModel {
      *
      * API response
      */
-    public void setResponse(string value) {
+    public void setResponse(String value) {
         this.response = value;
     }
 

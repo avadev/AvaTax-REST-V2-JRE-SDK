@@ -30,14 +30,14 @@ import java.util.HashMap;
 public class PingResultModel {
 
 
-    private string version;
+    private String version;
 
     /**
      * Getter for version
      *
      * Version number
      */
-    public string getVersion() {
+    public String getVersion() {
         return this.version;
     }
 
@@ -46,7 +46,7 @@ public class PingResultModel {
      *
      * Version number
      */
-    public void setVersion(string value) {
+    public void setVersion(String value) {
         this.version = value;
     }
 
@@ -93,14 +93,14 @@ public class PingResultModel {
     }
 
 
-    private string authenticatedUserName;
+    private String authenticatedUserName;
 
     /**
      * Getter for authenticatedUserName
      *
      * The username of the currently authenticated user, if any.
      */
-    public string getAuthenticatedUserName() {
+    public String getAuthenticatedUserName() {
         return this.authenticatedUserName;
     }
 
@@ -109,7 +109,7 @@ public class PingResultModel {
      *
      * The username of the currently authenticated user, if any.
      */
-    public void setAuthenticatedUserName(string value) {
+    public void setAuthenticatedUserName(String value) {
         this.authenticatedUserName = value;
     }
 

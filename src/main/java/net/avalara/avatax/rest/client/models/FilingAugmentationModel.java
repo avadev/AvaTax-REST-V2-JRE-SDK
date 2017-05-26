@@ -93,14 +93,14 @@ public class FilingAugmentationModel {
     }
 
 
-    private string fieldName;
+    private String fieldName;
 
     /**
      * Getter for fieldName
      *
      * The field name.
      */
-    public string getFieldName() {
+    public String getFieldName() {
         return this.fieldName;
     }
 
@@ -109,7 +109,7 @@ public class FilingAugmentationModel {
      *
      * The field name.
      */
-    public void setFieldName(string value) {
+    public void setFieldName(String value) {
         this.fieldName = value;
     }
 

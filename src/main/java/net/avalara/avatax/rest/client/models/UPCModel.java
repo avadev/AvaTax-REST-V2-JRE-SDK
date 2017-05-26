@@ -72,14 +72,14 @@ public class UPCModel {
     }
 
 
-    private string upc;
+    private String upc;
 
     /**
      * Getter for upc
      *
      * The 12-14 character Universal Product Code, European Article Number, or Global Trade Identification Number.
      */
-    public string getUpc() {
+    public String getUpc() {
         return this.upc;
     }
 
@@ -88,19 +88,19 @@ public class UPCModel {
      *
      * The 12-14 character Universal Product Code, European Article Number, or Global Trade Identification Number.
      */
-    public void setUpc(string value) {
+    public void setUpc(String value) {
         this.upc = value;
     }
 
 
-    private string legacyTaxCode;
+    private String legacyTaxCode;
 
     /**
      * Getter for legacyTaxCode
      *
      * Legacy Tax Code applied to any product sold with this UPC.
      */
-    public string getLegacyTaxCode() {
+    public String getLegacyTaxCode() {
         return this.legacyTaxCode;
     }
 
@@ -109,19 +109,19 @@ public class UPCModel {
      *
      * Legacy Tax Code applied to any product sold with this UPC.
      */
-    public void setLegacyTaxCode(string value) {
+    public void setLegacyTaxCode(String value) {
         this.legacyTaxCode = value;
     }
 
 
-    private string description;
+    private String description;
 
     /**
      * Getter for description
      *
      * Description of the product to which this UPC applies.
      */
-    public string getDescription() {
+    public String getDescription() {
         return this.description;
     }
 
@@ -130,7 +130,7 @@ public class UPCModel {
      *
      * Description of the product to which this UPC applies.
      */
-    public void setDescription(string value) {
+    public void setDescription(String value) {
         this.description = value;
     }
 

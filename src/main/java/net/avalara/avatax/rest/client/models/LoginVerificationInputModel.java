@@ -72,14 +72,14 @@ public class LoginVerificationInputModel {
     }
 
 
-    private string region;
+    private String region;
 
     /**
      * Getter for region
      *
      * Region of the verification request
      */
-    public string getRegion() {
+    public String getRegion() {
         return this.region;
     }
 
@@ -88,19 +88,19 @@ public class LoginVerificationInputModel {
      *
      * Region of the verification request
      */
-    public void setRegion(string value) {
+    public void setRegion(String value) {
         this.region = value;
     }
 
 
-    private string username;
+    private String username;
 
     /**
      * Getter for username
      *
      * Username that we are using for verification
      */
-    public string getUsername() {
+    public String getUsername() {
         return this.username;
     }
 
@@ -109,19 +109,19 @@ public class LoginVerificationInputModel {
      *
      * Username that we are using for verification
      */
-    public void setUsername(string value) {
+    public void setUsername(String value) {
         this.username = value;
     }
 
 
-    private string password;
+    private String password;
 
     /**
      * Getter for password
      *
      * Password we are using for verification
      */
-    public string getPassword() {
+    public String getPassword() {
         return this.password;
     }
 
@@ -130,19 +130,19 @@ public class LoginVerificationInputModel {
      *
      * Password we are using for verification
      */
-    public void setPassword(string value) {
+    public void setPassword(String value) {
         this.password = value;
     }
 
 
-    private string additionalOptions;
+    private String additionalOptions;
 
     /**
      * Getter for additionalOptions
      *
      * Additional options of the verification
      */
-    public string getAdditionalOptions() {
+    public String getAdditionalOptions() {
         return this.additionalOptions;
     }
 
@@ -151,7 +151,7 @@ public class LoginVerificationInputModel {
      *
      * Additional options of the verification
      */
-    public void setAdditionalOptions(string value) {
+    public void setAdditionalOptions(String value) {
         this.additionalOptions = value;
     }
 

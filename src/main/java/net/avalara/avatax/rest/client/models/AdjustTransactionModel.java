@@ -51,14 +51,14 @@ public class AdjustTransactionModel {
     }
 
 
-    private string adjustmentDescription;
+    private String adjustmentDescription;
 
     /**
      * Getter for adjustmentDescription
      *
      * If the AdjustmentReason is "Other", specify the reason here
      */
-    public string getAdjustmentDescription() {
+    public String getAdjustmentDescription() {
         return this.adjustmentDescription;
     }
 
@@ -67,7 +67,7 @@ public class AdjustTransactionModel {
      *
      * If the AdjustmentReason is "Other", specify the reason here
      */
-    public void setAdjustmentDescription(string value) {
+    public void setAdjustmentDescription(String value) {
         this.adjustmentDescription = value;
     }
 

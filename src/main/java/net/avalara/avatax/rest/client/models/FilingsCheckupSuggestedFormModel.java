@@ -51,14 +51,14 @@ public class FilingsCheckupSuggestedFormModel {
     }
 
 
-    private string country;
+    private String country;
 
     /**
      * Getter for country
      *
      * Country of the suggested form returned
      */
-    public string getCountry() {
+    public String getCountry() {
         return this.country;
     }
 
@@ -67,19 +67,19 @@ public class FilingsCheckupSuggestedFormModel {
      *
      * Country of the suggested form returned
      */
-    public void setCountry(string value) {
+    public void setCountry(String value) {
         this.country = value;
     }
 
 
-    private string region;
+    private String region;
 
     /**
      * Getter for region
      *
      * Region of the suggested form returned
      */
-    public string getRegion() {
+    public String getRegion() {
         return this.region;
     }
 
@@ -88,19 +88,19 @@ public class FilingsCheckupSuggestedFormModel {
      *
      * Region of the suggested form returned
      */
-    public void setRegion(string value) {
+    public void setRegion(String value) {
         this.region = value;
     }
 
 
-    private string returnName;
+    private String returnName;
 
     /**
      * Getter for returnName
      *
      * 
      */
-    public string getReturnName() {
+    public String getReturnName() {
         return this.returnName;
     }
 
@@ -109,19 +109,19 @@ public class FilingsCheckupSuggestedFormModel {
      *
      * 
      */
-    public void setReturnName(string value) {
+    public void setReturnName(String value) {
         this.returnName = value;
     }
 
 
-    private string taxFormCode;
+    private String taxFormCode;
 
     /**
      * Getter for taxFormCode
      *
      * Name of the suggested form returned
      */
-    public string getTaxFormCode() {
+    public String getTaxFormCode() {
         return this.taxFormCode;
     }
 
@@ -130,7 +130,7 @@ public class FilingsCheckupSuggestedFormModel {
      *
      * Name of the suggested form returned
      */
-    public void setTaxFormCode(string value) {
+    public void setTaxFormCode(String value) {
         this.taxFormCode = value;
     }
 

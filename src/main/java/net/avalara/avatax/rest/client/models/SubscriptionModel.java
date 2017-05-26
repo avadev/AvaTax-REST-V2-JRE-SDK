@@ -93,14 +93,14 @@ public class SubscriptionModel {
     }
 
 
-    private string subscriptionDescription;
+    private String subscriptionDescription;
 
     /**
      * Getter for subscriptionDescription
      *
      * A friendly description of the service that the account is subscribed to.
      */
-    public string getSubscriptionDescription() {
+    public String getSubscriptionDescription() {
         return this.subscriptionDescription;
     }
 
@@ -109,7 +109,7 @@ public class SubscriptionModel {
      *
      * A friendly description of the service that the account is subscribed to.
      */
-    public void setSubscriptionDescription(string value) {
+    public void setSubscriptionDescription(String value) {
         this.subscriptionDescription = value;
     }
 

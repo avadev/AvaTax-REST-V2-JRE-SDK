@@ -51,14 +51,14 @@ public class ParameterModel {
     }
 
 
-    private string category;
+    private String category;
 
     /**
      * Getter for category
      *
      * The service category of this property. Some properties may require that you subscribe to certain features of avatax before they can be used.
      */
-    public string getCategory() {
+    public String getCategory() {
         return this.category;
     }
 
@@ -67,19 +67,19 @@ public class ParameterModel {
      *
      * The service category of this property. Some properties may require that you subscribe to certain features of avatax before they can be used.
      */
-    public void setCategory(string value) {
+    public void setCategory(String value) {
         this.category = value;
     }
 
 
-    private string name;
+    private String name;
 
     /**
      * Getter for name
      *
      * The name of the property. To use this property, add a field on the "properties" object of a /api/v2/companies/(code)/transactions/create call.
      */
-    public string getName() {
+    public String getName() {
         return this.name;
     }
 
@@ -88,7 +88,7 @@ public class ParameterModel {
      *
      * The name of the property. To use this property, add a field on the "properties" object of a /api/v2/companies/(code)/transactions/create call.
      */
-    public void setName(string value) {
+    public void setName(String value) {
         this.name = value;
     }
 
@@ -114,14 +114,14 @@ public class ParameterModel {
     }
 
 
-    private string description;
+    private String description;
 
     /**
      * Getter for description
      *
      * A full description of this property.
      */
-    public string getDescription() {
+    public String getDescription() {
         return this.description;
     }
 
@@ -130,7 +130,7 @@ public class ParameterModel {
      *
      * A full description of this property.
      */
-    public void setDescription(string value) {
+    public void setDescription(String value) {
         this.description = value;
     }
 

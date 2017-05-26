@@ -51,7 +51,7 @@ public class FundingInitiateModel {
     }
 
 
-    private string fundingEmailRecipient;
+    private String fundingEmailRecipient;
 
     /**
      * Getter for fundingEmailRecipient
@@ -60,7 +60,7 @@ public class FundingInitiateModel {
     * email inviting them to setup funding configuration for Avalara Managed Returns. The recipient can
     * then click on a link in the email and setup funding configuration for this company.
      */
-    public string getFundingEmailRecipient() {
+    public String getFundingEmailRecipient() {
         return this.fundingEmailRecipient;
     }
 
@@ -71,7 +71,7 @@ public class FundingInitiateModel {
     * email inviting them to setup funding configuration for Avalara Managed Returns. The recipient can
     * then click on a link in the email and setup funding configuration for this company.
      */
-    public void setFundingEmailRecipient(string value) {
+    public void setFundingEmailRecipient(String value) {
         this.fundingEmailRecipient = value;
     }
 

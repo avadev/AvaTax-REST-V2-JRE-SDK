@@ -30,14 +30,14 @@ import java.util.HashMap;
 public class EntityUseCodeModel {
 
 
-    private string code;
+    private String code;
 
     /**
      * Getter for code
      *
      * The Avalara-recognized entity use code for this definition
      */
-    public string getCode() {
+    public String getCode() {
         return this.code;
     }
 
@@ -46,19 +46,19 @@ public class EntityUseCodeModel {
      *
      * The Avalara-recognized entity use code for this definition
      */
-    public void setCode(string value) {
+    public void setCode(String value) {
         this.code = value;
     }
 
 
-    private string name;
+    private String name;
 
     /**
      * Getter for name
      *
      * The name of this entity use code
      */
-    public string getName() {
+    public String getName() {
         return this.name;
     }
 
@@ -67,19 +67,19 @@ public class EntityUseCodeModel {
      *
      * The name of this entity use code
      */
-    public void setName(string value) {
+    public void setName(String value) {
         this.name = value;
     }
 
 
-    private string description;
+    private String description;
 
     /**
      * Getter for description
      *
      * Text describing the meaning of this use code
      */
-    public string getDescription() {
+    public String getDescription() {
         return this.description;
     }
 
@@ -88,19 +88,19 @@ public class EntityUseCodeModel {
      *
      * Text describing the meaning of this use code
      */
-    public void setDescription(string value) {
+    public void setDescription(String value) {
         this.description = value;
     }
 
 
-    private string[] validCountries;
+    private String[] validCountries;
 
     /**
      * Getter for validCountries
      *
      * A list of countries where this use code is valid
      */
-    public string[] getValidCountries() {
+    public String[] getValidCountries() {
         return this.validCountries;
     }
 
@@ -109,7 +109,7 @@ public class EntityUseCodeModel {
      *
      * A list of countries where this use code is valid
      */
-    public void setValidCountries(string[] value) {
+    public void setValidCountries(String[] value) {
         this.validCountries = value;
     }
 

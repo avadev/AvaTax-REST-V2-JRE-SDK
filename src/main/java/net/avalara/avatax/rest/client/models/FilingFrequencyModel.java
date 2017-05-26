@@ -51,14 +51,14 @@ public class FilingFrequencyModel {
     }
 
 
-    private string description;
+    private String description;
 
     /**
      * Getter for description
      *
      * The description name of this filing frequency
      */
-    public string getDescription() {
+    public String getDescription() {
         return this.description;
     }
 
@@ -67,7 +67,7 @@ public class FilingFrequencyModel {
      *
      * The description name of this filing frequency
      */
-    public void setDescription(string value) {
+    public void setDescription(String value) {
         this.description = value;
     }
 

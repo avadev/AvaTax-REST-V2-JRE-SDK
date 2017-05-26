@@ -51,14 +51,14 @@ public class TaxAuthorityTypeModel {
     }
 
 
-    private string description;
+    private String description;
 
     /**
      * Getter for description
      *
      * The description name of this tax authority type.
      */
-    public string getDescription() {
+    public String getDescription() {
         return this.description;
     }
 
@@ -67,19 +67,19 @@ public class TaxAuthorityTypeModel {
      *
      * The description name of this tax authority type.
      */
-    public void setDescription(string value) {
+    public void setDescription(String value) {
         this.description = value;
     }
 
 
-    private string taxAuthorityGroup;
+    private String taxAuthorityGroup;
 
     /**
      * Getter for taxAuthorityGroup
      *
      * Tax Authority Group
      */
-    public string getTaxAuthorityGroup() {
+    public String getTaxAuthorityGroup() {
         return this.taxAuthorityGroup;
     }
 
@@ -88,7 +88,7 @@ public class TaxAuthorityTypeModel {
      *
      * Tax Authority Group
      */
-    public void setTaxAuthorityGroup(string value) {
+    public void setTaxAuthorityGroup(String value) {
         this.taxAuthorityGroup = value;
     }
 

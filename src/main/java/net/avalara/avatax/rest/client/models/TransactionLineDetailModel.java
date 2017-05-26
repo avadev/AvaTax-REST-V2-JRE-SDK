@@ -114,14 +114,14 @@ public class TransactionLineDetailModel {
     }
 
 
-    private string country;
+    private String country;
 
     /**
      * Getter for country
      *
      * The two character ISO 3166 country code of the country where this tax detail is assigned.
      */
-    public string getCountry() {
+    public String getCountry() {
         return this.country;
     }
 
@@ -130,19 +130,19 @@ public class TransactionLineDetailModel {
      *
      * The two character ISO 3166 country code of the country where this tax detail is assigned.
      */
-    public void setCountry(string value) {
+    public void setCountry(String value) {
         this.country = value;
     }
 
 
-    private string region;
+    private String region;
 
     /**
      * Getter for region
      *
      * The two-or-three character ISO region code for the region where this tax detail is assigned.
      */
-    public string getRegion() {
+    public String getRegion() {
         return this.region;
     }
 
@@ -151,19 +151,19 @@ public class TransactionLineDetailModel {
      *
      * The two-or-three character ISO region code for the region where this tax detail is assigned.
      */
-    public void setRegion(string value) {
+    public void setRegion(String value) {
         this.region = value;
     }
 
 
-    private string countyFIPS;
+    private String countyFIPS;
 
     /**
      * Getter for countyFIPS
      *
      * For U.S. transactions, the Federal Information Processing Standard (FIPS) code for the county where this tax detail is assigned.
      */
-    public string getCountyFIPS() {
+    public String getCountyFIPS() {
         return this.countyFIPS;
     }
 
@@ -172,19 +172,19 @@ public class TransactionLineDetailModel {
      *
      * For U.S. transactions, the Federal Information Processing Standard (FIPS) code for the county where this tax detail is assigned.
      */
-    public void setCountyFIPS(string value) {
+    public void setCountyFIPS(String value) {
         this.countyFIPS = value;
     }
 
 
-    private string stateFIPS;
+    private String stateFIPS;
 
     /**
      * Getter for stateFIPS
      *
      * For U.S. transactions, the Federal Information Processing Standard (FIPS) code for the state where this tax detail is assigned.
      */
-    public string getStateFIPS() {
+    public String getStateFIPS() {
         return this.stateFIPS;
     }
 
@@ -193,7 +193,7 @@ public class TransactionLineDetailModel {
      *
      * For U.S. transactions, the Federal Information Processing Standard (FIPS) code for the state where this tax detail is assigned.
      */
-    public void setStateFIPS(string value) {
+    public void setStateFIPS(String value) {
         this.stateFIPS = value;
     }
 
@@ -261,14 +261,14 @@ public class TransactionLineDetailModel {
     }
 
 
-    private string jurisCode;
+    private String jurisCode;
 
     /**
      * Getter for jurisCode
      *
      * The code of the jurisdiction to which this tax detail applies.
      */
-    public string getJurisCode() {
+    public String getJurisCode() {
         return this.jurisCode;
     }
 
@@ -277,19 +277,19 @@ public class TransactionLineDetailModel {
      *
      * The code of the jurisdiction to which this tax detail applies.
      */
-    public void setJurisCode(string value) {
+    public void setJurisCode(String value) {
         this.jurisCode = value;
     }
 
 
-    private string jurisName;
+    private String jurisName;
 
     /**
      * Getter for jurisName
      *
      * The name of the jurisdiction to which this tax detail applies.
      */
-    public string getJurisName() {
+    public String getJurisName() {
         return this.jurisName;
     }
 
@@ -298,7 +298,7 @@ public class TransactionLineDetailModel {
      *
      * The name of the jurisdiction to which this tax detail applies.
      */
-    public void setJurisName(string value) {
+    public void setJurisName(String value) {
         this.jurisName = value;
     }
 
@@ -324,14 +324,14 @@ public class TransactionLineDetailModel {
     }
 
 
-    private string signatureCode;
+    private String signatureCode;
 
     /**
      * Getter for signatureCode
      *
      * The Avalara-specified signature code of the jurisdiction to which this tax detail applies.
      */
-    public string getSignatureCode() {
+    public String getSignatureCode() {
         return this.signatureCode;
     }
 
@@ -340,19 +340,19 @@ public class TransactionLineDetailModel {
      *
      * The Avalara-specified signature code of the jurisdiction to which this tax detail applies.
      */
-    public void setSignatureCode(string value) {
+    public void setSignatureCode(String value) {
         this.signatureCode = value;
     }
 
 
-    private string stateAssignedNo;
+    private String stateAssignedNo;
 
     /**
      * Getter for stateAssignedNo
      *
      * The state assigned number of the jurisdiction to which this tax detail applies.
      */
-    public string getStateAssignedNo() {
+    public String getStateAssignedNo() {
         return this.stateAssignedNo;
     }
 
@@ -361,7 +361,7 @@ public class TransactionLineDetailModel {
      *
      * The state assigned number of the jurisdiction to which this tax detail applies.
      */
-    public void setStateAssignedNo(string value) {
+    public void setStateAssignedNo(String value) {
         this.stateAssignedNo = value;
     }
 
@@ -513,14 +513,14 @@ public class TransactionLineDetailModel {
     }
 
 
-    private string serCode;
+    private String serCode;
 
     /**
      * Getter for serCode
      *
      * For Streamlined Sales Tax customers, the SST Electronic Return code under which this tax detail should be applied.
      */
-    public string getSerCode() {
+    public String getSerCode() {
         return this.serCode;
     }
 
@@ -529,7 +529,7 @@ public class TransactionLineDetailModel {
      *
      * For Streamlined Sales Tax customers, the SST Electronic Return code under which this tax detail should be applied.
      */
-    public void setSerCode(string value) {
+    public void setSerCode(String value) {
         this.serCode = value;
     }
 
@@ -618,14 +618,14 @@ public class TransactionLineDetailModel {
     }
 
 
-    private string taxName;
+    private String taxName;
 
     /**
      * Getter for taxName
      *
      * The name of the tax against which this tax amount was calculated.
      */
-    public string getTaxName() {
+    public String getTaxName() {
         return this.taxName;
     }
 
@@ -634,7 +634,7 @@ public class TransactionLineDetailModel {
      *
      * The name of the tax against which this tax amount was calculated.
      */
-    public void setTaxName(string value) {
+    public void setTaxName(String value) {
         this.taxName = value;
     }
 
@@ -748,14 +748,14 @@ public class TransactionLineDetailModel {
     }
 
 
-    private string rateTypeCode;
+    private String rateTypeCode;
 
     /**
      * Getter for rateTypeCode
      *
      * Indicates the code of the rate type that was used to calculate this tax detail. Use `/api/v2/definitions/ratetypes` for a full list of rate type codes.
      */
-    public string getRateTypeCode() {
+    public String getRateTypeCode() {
         return this.rateTypeCode;
     }
 
@@ -764,7 +764,7 @@ public class TransactionLineDetailModel {
      *
      * Indicates the code of the rate type that was used to calculate this tax detail. Use `/api/v2/definitions/ratetypes` for a full list of rate type codes.
      */
-    public void setRateTypeCode(string value) {
+    public void setRateTypeCode(String value) {
         this.rateTypeCode = value;
     }
 
@@ -832,14 +832,14 @@ public class TransactionLineDetailModel {
     }
 
 
-    private string unitOfBasis;
+    private String unitOfBasis;
 
     /**
      * Getter for unitOfBasis
      *
      * When calculating units, what basis of measurement did we use for calculating the units?
      */
-    public string getUnitOfBasis() {
+    public String getUnitOfBasis() {
         return this.unitOfBasis;
     }
 
@@ -848,7 +848,7 @@ public class TransactionLineDetailModel {
      *
      * When calculating units, what basis of measurement did we use for calculating the units?
      */
-    public void setUnitOfBasis(string value) {
+    public void setUnitOfBasis(String value) {
         this.unitOfBasis = value;
     }
 

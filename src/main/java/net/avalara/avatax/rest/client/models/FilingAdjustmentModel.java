@@ -177,14 +177,14 @@ public class FilingAdjustmentModel {
     }
 
 
-    private string reason;
+    private String reason;
 
     /**
      * Getter for reason
      *
      * A descriptive reason for creating this adjustment.
      */
-    public string getReason() {
+    public String getReason() {
         return this.reason;
     }
 
@@ -193,7 +193,7 @@ public class FilingAdjustmentModel {
      *
      * A descriptive reason for creating this adjustment.
      */
-    public void setReason(string value) {
+    public void setReason(String value) {
         this.reason = value;
     }
 

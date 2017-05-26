@@ -30,14 +30,14 @@ import java.util.HashMap;
 public class JurisdictionModel {
 
 
-    private string code;
+    private String code;
 
     /**
      * Getter for code
      *
      * The code that is used to identify this jurisdiction
      */
-    public string getCode() {
+    public String getCode() {
         return this.code;
     }
 
@@ -46,19 +46,19 @@ public class JurisdictionModel {
      *
      * The code that is used to identify this jurisdiction
      */
-    public void setCode(string value) {
+    public void setCode(String value) {
         this.code = value;
     }
 
 
-    private string name;
+    private String name;
 
     /**
      * Getter for name
      *
      * The name of this jurisdiction
      */
-    public string getName() {
+    public String getName() {
         return this.name;
     }
 
@@ -67,7 +67,7 @@ public class JurisdictionModel {
      *
      * The name of this jurisdiction
      */
-    public void setName(string value) {
+    public void setName(String value) {
         this.name = value;
     }
 
@@ -135,14 +135,14 @@ public class JurisdictionModel {
     }
 
 
-    private string signatureCode;
+    private String signatureCode;
 
     /**
      * Getter for signatureCode
      *
      * The Avalara-supplied signature code for this jurisdiction.
      */
-    public string getSignatureCode() {
+    public String getSignatureCode() {
         return this.signatureCode;
     }
 
@@ -151,19 +151,19 @@ public class JurisdictionModel {
      *
      * The Avalara-supplied signature code for this jurisdiction.
      */
-    public void setSignatureCode(string value) {
+    public void setSignatureCode(String value) {
         this.signatureCode = value;
     }
 
 
-    private string region;
+    private String region;
 
     /**
      * Getter for region
      *
      * The state assigned code for this jurisdiction, if any.
      */
-    public string getRegion() {
+    public String getRegion() {
         return this.region;
     }
 
@@ -172,7 +172,7 @@ public class JurisdictionModel {
      *
      * The state assigned code for this jurisdiction, if any.
      */
-    public void setRegion(string value) {
+    public void setRegion(String value) {
         this.region = value;
     }
 

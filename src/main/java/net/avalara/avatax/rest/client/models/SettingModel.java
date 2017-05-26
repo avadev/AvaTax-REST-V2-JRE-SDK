@@ -75,14 +75,14 @@ public class SettingModel {
     }
 
 
-    private string set;
+    private String set;
 
     /**
      * Getter for set
      *
      * A user-defined "set" containing this name-value pair.
      */
-    public string getSet() {
+    public String getSet() {
         return this.set;
     }
 
@@ -91,19 +91,19 @@ public class SettingModel {
      *
      * A user-defined "set" containing this name-value pair.
      */
-    public void setSet(string value) {
+    public void setSet(String value) {
         this.set = value;
     }
 
 
-    private string name;
+    private String name;
 
     /**
      * Getter for name
      *
      * A user-defined "name" for this name-value pair.
      */
-    public string getName() {
+    public String getName() {
         return this.name;
     }
 
@@ -112,19 +112,19 @@ public class SettingModel {
      *
      * A user-defined "name" for this name-value pair.
      */
-    public void setName(string value) {
+    public void setName(String value) {
         this.name = value;
     }
 
 
-    private string value;
+    private String value;
 
     /**
      * Getter for value
      *
      * The value of this name-value pair.
      */
-    public string getValue() {
+    public String getValue() {
         return this.value;
     }
 
@@ -133,7 +133,7 @@ public class SettingModel {
      *
      * The value of this name-value pair.
      */
-    public void setValue(string value) {
+    public void setValue(String value) {
         this.value = value;
     }
 

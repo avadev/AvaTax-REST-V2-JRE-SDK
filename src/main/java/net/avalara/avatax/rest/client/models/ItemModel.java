@@ -72,14 +72,14 @@ public class ItemModel {
     }
 
 
-    private string itemCode;
+    private String itemCode;
 
     /**
      * Getter for itemCode
      *
      * A unique code representing this item.
      */
-    public string getItemCode() {
+    public String getItemCode() {
         return this.itemCode;
     }
 
@@ -88,7 +88,7 @@ public class ItemModel {
      *
      * A unique code representing this item.
      */
-    public void setItemCode(string value) {
+    public void setItemCode(String value) {
         this.itemCode = value;
     }
 
@@ -116,7 +116,7 @@ public class ItemModel {
     }
 
 
-    private string taxCode;
+    private String taxCode;
 
     /**
      * Getter for taxCode
@@ -124,7 +124,7 @@ public class ItemModel {
      * The unique code string of the Tax Code that is applied when selling this item.
     * When creating or updating an item, you can either specify the Tax Code ID number or the Tax Code string; you do not need to specify both values.
      */
-    public string getTaxCode() {
+    public String getTaxCode() {
         return this.taxCode;
     }
 
@@ -134,19 +134,19 @@ public class ItemModel {
      * The unique code string of the Tax Code that is applied when selling this item.
     * When creating or updating an item, you can either specify the Tax Code ID number or the Tax Code string; you do not need to specify both values.
      */
-    public void setTaxCode(string value) {
+    public void setTaxCode(String value) {
         this.taxCode = value;
     }
 
 
-    private string description;
+    private String description;
 
     /**
      * Getter for description
      *
      * A friendly description of this item in your product catalog.
      */
-    public string getDescription() {
+    public String getDescription() {
         return this.description;
     }
 
@@ -155,7 +155,7 @@ public class ItemModel {
      *
      * A friendly description of this item in your product catalog.
      */
-    public void setDescription(string value) {
+    public void setDescription(String value) {
         this.description = value;
     }
 

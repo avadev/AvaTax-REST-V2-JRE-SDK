@@ -51,14 +51,14 @@ public class RateModel {
     }
 
 
-    private string name;
+    private String name;
 
     /**
      * Getter for name
      *
      * Name
      */
-    public string getName() {
+    public String getName() {
         return this.name;
     }
 
@@ -67,7 +67,7 @@ public class RateModel {
      *
      * Name
      */
-    public void setName(string value) {
+    public void setName(String value) {
         this.name = value;
     }
 

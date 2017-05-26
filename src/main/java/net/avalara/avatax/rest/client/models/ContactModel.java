@@ -72,14 +72,14 @@ public class ContactModel {
     }
 
 
-    private string contactCode;
+    private String contactCode;
 
     /**
      * Getter for contactCode
      *
      * A unique code for this contact.
      */
-    public string getContactCode() {
+    public String getContactCode() {
         return this.contactCode;
     }
 
@@ -88,19 +88,19 @@ public class ContactModel {
      *
      * A unique code for this contact.
      */
-    public void setContactCode(string value) {
+    public void setContactCode(String value) {
         this.contactCode = value;
     }
 
 
-    private string firstName;
+    private String firstName;
 
     /**
      * Getter for firstName
      *
      * The first or given name of this contact.
      */
-    public string getFirstName() {
+    public String getFirstName() {
         return this.firstName;
     }
 
@@ -109,19 +109,19 @@ public class ContactModel {
      *
      * The first or given name of this contact.
      */
-    public void setFirstName(string value) {
+    public void setFirstName(String value) {
         this.firstName = value;
     }
 
 
-    private string middleName;
+    private String middleName;
 
     /**
      * Getter for middleName
      *
      * The middle name of this contact.
      */
-    public string getMiddleName() {
+    public String getMiddleName() {
         return this.middleName;
     }
 
@@ -130,19 +130,19 @@ public class ContactModel {
      *
      * The middle name of this contact.
      */
-    public void setMiddleName(string value) {
+    public void setMiddleName(String value) {
         this.middleName = value;
     }
 
 
-    private string lastName;
+    private String lastName;
 
     /**
      * Getter for lastName
      *
      * The last or family name of this contact.
      */
-    public string getLastName() {
+    public String getLastName() {
         return this.lastName;
     }
 
@@ -151,19 +151,19 @@ public class ContactModel {
      *
      * The last or family name of this contact.
      */
-    public void setLastName(string value) {
+    public void setLastName(String value) {
         this.lastName = value;
     }
 
 
-    private string title;
+    private String title;
 
     /**
      * Getter for title
      *
      * Professional title of this contact.
      */
-    public string getTitle() {
+    public String getTitle() {
         return this.title;
     }
 
@@ -172,19 +172,19 @@ public class ContactModel {
      *
      * Professional title of this contact.
      */
-    public void setTitle(string value) {
+    public void setTitle(String value) {
         this.title = value;
     }
 
 
-    private string line1;
+    private String line1;
 
     /**
      * Getter for line1
      *
      * The first line of the postal mailing address of this contact.
      */
-    public string getLine1() {
+    public String getLine1() {
         return this.line1;
     }
 
@@ -193,19 +193,19 @@ public class ContactModel {
      *
      * The first line of the postal mailing address of this contact.
      */
-    public void setLine1(string value) {
+    public void setLine1(String value) {
         this.line1 = value;
     }
 
 
-    private string line2;
+    private String line2;
 
     /**
      * Getter for line2
      *
      * The second line of the postal mailing address of this contact.
      */
-    public string getLine2() {
+    public String getLine2() {
         return this.line2;
     }
 
@@ -214,19 +214,19 @@ public class ContactModel {
      *
      * The second line of the postal mailing address of this contact.
      */
-    public void setLine2(string value) {
+    public void setLine2(String value) {
         this.line2 = value;
     }
 
 
-    private string line3;
+    private String line3;
 
     /**
      * Getter for line3
      *
      * The third line of the postal mailing address of this contact.
      */
-    public string getLine3() {
+    public String getLine3() {
         return this.line3;
     }
 
@@ -235,19 +235,19 @@ public class ContactModel {
      *
      * The third line of the postal mailing address of this contact.
      */
-    public void setLine3(string value) {
+    public void setLine3(String value) {
         this.line3 = value;
     }
 
 
-    private string city;
+    private String city;
 
     /**
      * Getter for city
      *
      * The city of the postal mailing address of this contact.
      */
-    public string getCity() {
+    public String getCity() {
         return this.city;
     }
 
@@ -256,19 +256,19 @@ public class ContactModel {
      *
      * The city of the postal mailing address of this contact.
      */
-    public void setCity(string value) {
+    public void setCity(String value) {
         this.city = value;
     }
 
 
-    private string region;
+    private String region;
 
     /**
      * Getter for region
      *
      * The state, region, or province of the postal mailing address of this contact.
      */
-    public string getRegion() {
+    public String getRegion() {
         return this.region;
     }
 
@@ -277,19 +277,19 @@ public class ContactModel {
      *
      * The state, region, or province of the postal mailing address of this contact.
      */
-    public void setRegion(string value) {
+    public void setRegion(String value) {
         this.region = value;
     }
 
 
-    private string postalCode;
+    private String postalCode;
 
     /**
      * Getter for postalCode
      *
      * The postal code or zip code of the postal mailing address of this contact.
      */
-    public string getPostalCode() {
+    public String getPostalCode() {
         return this.postalCode;
     }
 
@@ -298,19 +298,19 @@ public class ContactModel {
      *
      * The postal code or zip code of the postal mailing address of this contact.
      */
-    public void setPostalCode(string value) {
+    public void setPostalCode(String value) {
         this.postalCode = value;
     }
 
 
-    private string country;
+    private String country;
 
     /**
      * Getter for country
      *
      * The ISO 3166 two-character country code of the postal mailing address of this contact.
      */
-    public string getCountry() {
+    public String getCountry() {
         return this.country;
     }
 
@@ -319,19 +319,19 @@ public class ContactModel {
      *
      * The ISO 3166 two-character country code of the postal mailing address of this contact.
      */
-    public void setCountry(string value) {
+    public void setCountry(String value) {
         this.country = value;
     }
 
 
-    private string email;
+    private String email;
 
     /**
      * Getter for email
      *
      * The email address of this contact.
      */
-    public string getEmail() {
+    public String getEmail() {
         return this.email;
     }
 
@@ -340,19 +340,19 @@ public class ContactModel {
      *
      * The email address of this contact.
      */
-    public void setEmail(string value) {
+    public void setEmail(String value) {
         this.email = value;
     }
 
 
-    private string phone;
+    private String phone;
 
     /**
      * Getter for phone
      *
      * The main phone number for this contact.
      */
-    public string getPhone() {
+    public String getPhone() {
         return this.phone;
     }
 
@@ -361,19 +361,19 @@ public class ContactModel {
      *
      * The main phone number for this contact.
      */
-    public void setPhone(string value) {
+    public void setPhone(String value) {
         this.phone = value;
     }
 
 
-    private string mobile;
+    private String mobile;
 
     /**
      * Getter for mobile
      *
      * The mobile phone number for this contact.
      */
-    public string getMobile() {
+    public String getMobile() {
         return this.mobile;
     }
 
@@ -382,19 +382,19 @@ public class ContactModel {
      *
      * The mobile phone number for this contact.
      */
-    public void setMobile(string value) {
+    public void setMobile(String value) {
         this.mobile = value;
     }
 
 
-    private string fax;
+    private String fax;
 
     /**
      * Getter for fax
      *
      * The facsimile phone number for this contact.
      */
-    public string getFax() {
+    public String getFax() {
         return this.fax;
     }
 
@@ -403,7 +403,7 @@ public class ContactModel {
      *
      * The facsimile phone number for this contact.
      */
-    public void setFax(string value) {
+    public void setFax(String value) {
         this.fax = value;
     }
 

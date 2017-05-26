@@ -51,14 +51,14 @@ public class TaxTypeGroupModel {
     }
 
 
-    private string taxTypeGroup;
+    private String taxTypeGroup;
 
     /**
      * Getter for taxTypeGroup
      *
      * The unique human readable Id of this tax type group.
      */
-    public string getTaxTypeGroup() {
+    public String getTaxTypeGroup() {
         return this.taxTypeGroup;
     }
 
@@ -67,19 +67,19 @@ public class TaxTypeGroupModel {
      *
      * The unique human readable Id of this tax type group.
      */
-    public void setTaxTypeGroup(string value) {
+    public void setTaxTypeGroup(String value) {
         this.taxTypeGroup = value;
     }
 
 
-    private string description;
+    private String description;
 
     /**
      * Getter for description
      *
      * The description of this tax type group.
      */
-    public string getDescription() {
+    public String getDescription() {
         return this.description;
     }
 
@@ -88,7 +88,7 @@ public class TaxTypeGroupModel {
      *
      * The description of this tax type group.
      */
-    public void setDescription(string value) {
+    public void setDescription(String value) {
         this.description = value;
     }
 

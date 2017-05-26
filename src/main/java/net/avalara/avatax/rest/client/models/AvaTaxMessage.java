@@ -30,14 +30,14 @@ import java.util.HashMap;
 public class AvaTaxMessage {
 
 
-    private string summary;
+    private String summary;
 
     /**
      * Getter for summary
      *
      * A brief summary of what this message tells us
      */
-    public string getSummary() {
+    public String getSummary() {
         return this.summary;
     }
 
@@ -46,19 +46,19 @@ public class AvaTaxMessage {
      *
      * A brief summary of what this message tells us
      */
-    public void setSummary(string value) {
+    public void setSummary(String value) {
         this.summary = value;
     }
 
 
-    private string details;
+    private String details;
 
     /**
      * Getter for details
      *
      * Detailed information that explains what the summary provided
      */
-    public string getDetails() {
+    public String getDetails() {
         return this.details;
     }
 
@@ -67,19 +67,19 @@ public class AvaTaxMessage {
      *
      * Detailed information that explains what the summary provided
      */
-    public void setDetails(string value) {
+    public void setDetails(String value) {
         this.details = value;
     }
 
 
-    private string refersTo;
+    private String refersTo;
 
     /**
      * Getter for refersTo
      *
      * Information about what object in your request this message refers to
      */
-    public string getRefersTo() {
+    public String getRefersTo() {
         return this.refersTo;
     }
 
@@ -88,19 +88,19 @@ public class AvaTaxMessage {
      *
      * Information about what object in your request this message refers to
      */
-    public void setRefersTo(string value) {
+    public void setRefersTo(String value) {
         this.refersTo = value;
     }
 
 
-    private string severity;
+    private String severity;
 
     /**
      * Getter for severity
      *
      * A category that indicates how severely this message affects the results
      */
-    public string getSeverity() {
+    public String getSeverity() {
         return this.severity;
     }
 
@@ -109,19 +109,19 @@ public class AvaTaxMessage {
      *
      * A category that indicates how severely this message affects the results
      */
-    public void setSeverity(string value) {
+    public void setSeverity(String value) {
         this.severity = value;
     }
 
 
-    private string source;
+    private String source;
 
     /**
      * Getter for source
      *
      * The name of the code or service that generated this message
      */
-    public string getSource() {
+    public String getSource() {
         return this.source;
     }
 
@@ -130,7 +130,7 @@ public class AvaTaxMessage {
      *
      * The name of the code or service that generated this message
      */
-    public void setSource(string value) {
+    public void setSource(String value) {
         this.source = value;
     }
 

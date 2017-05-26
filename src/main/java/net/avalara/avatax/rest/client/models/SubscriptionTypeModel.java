@@ -51,14 +51,14 @@ public class SubscriptionTypeModel {
     }
 
 
-    private string description;
+    private String description;
 
     /**
      * Getter for description
      *
      * The friendly name of the service this subscription type represents.
      */
-    public string getDescription() {
+    public String getDescription() {
         return this.description;
     }
 
@@ -67,7 +67,7 @@ public class SubscriptionTypeModel {
      *
      * The friendly name of the service this subscription type represents.
      */
-    public void setDescription(string value) {
+    public void setDescription(String value) {
         this.description = value;
     }
 

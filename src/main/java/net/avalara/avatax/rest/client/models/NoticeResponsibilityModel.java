@@ -51,14 +51,14 @@ public class NoticeResponsibilityModel {
     }
 
 
-    private string description;
+    private String description;
 
     /**
      * Getter for description
      *
      * The description name of this notice responsibility
      */
-    public string getDescription() {
+    public String getDescription() {
         return this.description;
     }
 
@@ -67,7 +67,7 @@ public class NoticeResponsibilityModel {
      *
      * The description name of this notice responsibility
      */
-    public void setDescription(string value) {
+    public void setDescription(String value) {
         this.description = value;
     }
 

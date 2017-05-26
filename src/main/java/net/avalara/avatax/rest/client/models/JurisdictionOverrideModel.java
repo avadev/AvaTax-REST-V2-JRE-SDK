@@ -75,14 +75,14 @@ public class JurisdictionOverrideModel {
     }
 
 
-    private string description;
+    private String description;
 
     /**
      * Getter for description
      *
      * A description of why this jurisdiction override was created.
      */
-    public string getDescription() {
+    public String getDescription() {
         return this.description;
     }
 
@@ -91,19 +91,19 @@ public class JurisdictionOverrideModel {
      *
      * A description of why this jurisdiction override was created.
      */
-    public void setDescription(string value) {
+    public void setDescription(String value) {
         this.description = value;
     }
 
 
-    private string line1;
+    private String line1;
 
     /**
      * Getter for line1
      *
      * The street address of the physical location affected by this override.
      */
-    public string getLine1() {
+    public String getLine1() {
         return this.line1;
     }
 
@@ -112,19 +112,19 @@ public class JurisdictionOverrideModel {
      *
      * The street address of the physical location affected by this override.
      */
-    public void setLine1(string value) {
+    public void setLine1(String value) {
         this.line1 = value;
     }
 
 
-    private string city;
+    private String city;
 
     /**
      * Getter for city
      *
      * The city address of the physical location affected by this override.
      */
-    public string getCity() {
+    public String getCity() {
         return this.city;
     }
 
@@ -133,19 +133,19 @@ public class JurisdictionOverrideModel {
      *
      * The city address of the physical location affected by this override.
      */
-    public void setCity(string value) {
+    public void setCity(String value) {
         this.city = value;
     }
 
 
-    private string region;
+    private String region;
 
     /**
      * Getter for region
      *
      * The two or three character ISO region code of the region, state, or province affected by this override.
      */
-    public string getRegion() {
+    public String getRegion() {
         return this.region;
     }
 
@@ -154,12 +154,12 @@ public class JurisdictionOverrideModel {
      *
      * The two or three character ISO region code of the region, state, or province affected by this override.
      */
-    public void setRegion(string value) {
+    public void setRegion(String value) {
         this.region = value;
     }
 
 
-    private string country;
+    private String country;
 
     /**
      * Getter for country
@@ -167,7 +167,7 @@ public class JurisdictionOverrideModel {
      * The two character ISO-3166 country code of the country affected by this override.
     * Note that only United States addresses are affected by the jurisdiction override system.
      */
-    public string getCountry() {
+    public String getCountry() {
         return this.country;
     }
 
@@ -177,19 +177,19 @@ public class JurisdictionOverrideModel {
      * The two character ISO-3166 country code of the country affected by this override.
     * Note that only United States addresses are affected by the jurisdiction override system.
      */
-    public void setCountry(string value) {
+    public void setCountry(String value) {
         this.country = value;
     }
 
 
-    private string postalCode;
+    private String postalCode;
 
     /**
      * Getter for postalCode
      *
      * The postal code of the physical location affected by this override.
      */
-    public string getPostalCode() {
+    public String getPostalCode() {
         return this.postalCode;
     }
 
@@ -198,7 +198,7 @@ public class JurisdictionOverrideModel {
      *
      * The postal code of the physical location affected by this override.
      */
-    public void setPostalCode(string value) {
+    public void setPostalCode(String value) {
         this.postalCode = value;
     }
 

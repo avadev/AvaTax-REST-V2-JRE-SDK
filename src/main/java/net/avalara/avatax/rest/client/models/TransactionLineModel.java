@@ -72,14 +72,14 @@ public class TransactionLineModel {
     }
 
 
-    private string lineNumber;
+    private String lineNumber;
 
     /**
      * Getter for lineNumber
      *
      * The line number or code indicating the line on this invoice or receipt or document.
      */
-    public string getLineNumber() {
+    public String getLineNumber() {
         return this.lineNumber;
     }
 
@@ -88,7 +88,7 @@ public class TransactionLineModel {
      *
      * The line number or code indicating the line on this invoice or receipt or document.
      */
-    public void setLineNumber(string value) {
+    public void setLineNumber(String value) {
         this.lineNumber = value;
     }
 
@@ -114,14 +114,14 @@ public class TransactionLineModel {
     }
 
 
-    private string customerUsageType;
+    private String customerUsageType;
 
     /**
      * Getter for customerUsageType
      *
      * The customer usage type for this line item. Usage type often affects taxability rules.
      */
-    public string getCustomerUsageType() {
+    public String getCustomerUsageType() {
         return this.customerUsageType;
     }
 
@@ -130,19 +130,19 @@ public class TransactionLineModel {
      *
      * The customer usage type for this line item. Usage type often affects taxability rules.
      */
-    public void setCustomerUsageType(string value) {
+    public void setCustomerUsageType(String value) {
         this.customerUsageType = value;
     }
 
 
-    private string description;
+    private String description;
 
     /**
      * Getter for description
      *
      * A description of the item or service represented by this line.
      */
-    public string getDescription() {
+    public String getDescription() {
         return this.description;
     }
 
@@ -151,7 +151,7 @@ public class TransactionLineModel {
      *
      * A description of the item or service represented by this line.
      */
-    public void setDescription(string value) {
+    public void setDescription(String value) {
         this.description = value;
     }
 
@@ -292,14 +292,14 @@ public class TransactionLineModel {
     }
 
 
-    private string exemptNo;
+    private String exemptNo;
 
     /**
      * Getter for exemptNo
      *
      * If this line item was exempt, this string contains the word 'Exempt'.
      */
-    public string getExemptNo() {
+    public String getExemptNo() {
         return this.exemptNo;
     }
 
@@ -308,7 +308,7 @@ public class TransactionLineModel {
      *
      * If this line item was exempt, this string contains the word 'Exempt'.
      */
-    public void setExemptNo(string value) {
+    public void setExemptNo(String value) {
         this.exemptNo = value;
     }
 
@@ -355,14 +355,14 @@ public class TransactionLineModel {
     }
 
 
-    private string itemCode;
+    private String itemCode;
 
     /**
      * Getter for itemCode
      *
      * The code string of the item represented by this line item.
      */
-    public string getItemCode() {
+    public String getItemCode() {
         return this.itemCode;
     }
 
@@ -371,7 +371,7 @@ public class TransactionLineModel {
      *
      * The code string of the item represented by this line item.
      */
-    public void setItemCode(string value) {
+    public void setItemCode(String value) {
         this.itemCode = value;
     }
 
@@ -420,14 +420,14 @@ public class TransactionLineModel {
     }
 
 
-    private string ref1;
+    private String ref1;
 
     /**
      * Getter for ref1
      *
      * A user-defined reference identifier for this transaction line item.
      */
-    public string getRef1() {
+    public String getRef1() {
         return this.ref1;
     }
 
@@ -436,19 +436,19 @@ public class TransactionLineModel {
      *
      * A user-defined reference identifier for this transaction line item.
      */
-    public void setRef1(string value) {
+    public void setRef1(String value) {
         this.ref1 = value;
     }
 
 
-    private string ref2;
+    private String ref2;
 
     /**
      * Getter for ref2
      *
      * A user-defined reference identifier for this transaction line item.
      */
-    public string getRef2() {
+    public String getRef2() {
         return this.ref2;
     }
 
@@ -457,7 +457,7 @@ public class TransactionLineModel {
      *
      * A user-defined reference identifier for this transaction line item.
      */
-    public void setRef2(string value) {
+    public void setRef2(String value) {
         this.ref2 = value;
     }
 
@@ -485,14 +485,14 @@ public class TransactionLineModel {
     }
 
 
-    private string revAccount;
+    private String revAccount;
 
     /**
      * Getter for revAccount
      *
      * The revenue account number for this line item.
      */
-    public string getRevAccount() {
+    public String getRevAccount() {
         return this.revAccount;
     }
 
@@ -501,7 +501,7 @@ public class TransactionLineModel {
      *
      * The revenue account number for this line item.
      */
-    public void setRevAccount(string value) {
+    public void setRevAccount(String value) {
         this.revAccount = value;
     }
 
@@ -590,14 +590,14 @@ public class TransactionLineModel {
     }
 
 
-    private string taxCode;
+    private String taxCode;
 
     /**
      * Getter for taxCode
      *
      * The code string for the tax code that was used to calculate this line item.
      */
-    public string getTaxCode() {
+    public String getTaxCode() {
         return this.taxCode;
     }
 
@@ -606,7 +606,7 @@ public class TransactionLineModel {
      *
      * The code string for the tax code that was used to calculate this line item.
      */
-    public void setTaxCode(string value) {
+    public void setTaxCode(String value) {
         this.taxCode = value;
     }
 
@@ -657,14 +657,14 @@ public class TransactionLineModel {
     }
 
 
-    private string taxEngine;
+    private String taxEngine;
 
     /**
      * Getter for taxEngine
      *
      * The tax engine identifier that was used to calculate this line item.
      */
-    public string getTaxEngine() {
+    public String getTaxEngine() {
         return this.taxEngine;
     }
 
@@ -673,7 +673,7 @@ public class TransactionLineModel {
      *
      * The tax engine identifier that was used to calculate this line item.
      */
-    public void setTaxEngine(string value) {
+    public void setTaxEngine(String value) {
         this.taxEngine = value;
     }
 
@@ -699,14 +699,14 @@ public class TransactionLineModel {
     }
 
 
-    private string businessIdentificationNo;
+    private String businessIdentificationNo;
 
     /**
      * Getter for businessIdentificationNo
      *
      * VAT business identification number used for this transaction.
      */
-    public string getBusinessIdentificationNo() {
+    public String getBusinessIdentificationNo() {
         return this.businessIdentificationNo;
     }
 
@@ -715,7 +715,7 @@ public class TransactionLineModel {
      *
      * VAT business identification number used for this transaction.
      */
-    public void setBusinessIdentificationNo(string value) {
+    public void setBusinessIdentificationNo(String value) {
         this.businessIdentificationNo = value;
     }
 
@@ -741,14 +741,14 @@ public class TransactionLineModel {
     }
 
 
-    private string taxOverrideReason;
+    private String taxOverrideReason;
 
     /**
      * Getter for taxOverrideReason
      *
      * If a tax override was specified, represents the reason for the tax override.
      */
-    public string getTaxOverrideReason() {
+    public String getTaxOverrideReason() {
         return this.taxOverrideReason;
     }
 
@@ -757,7 +757,7 @@ public class TransactionLineModel {
      *
      * If a tax override was specified, represents the reason for the tax override.
      */
-    public void setTaxOverrideReason(string value) {
+    public void setTaxOverrideReason(String value) {
         this.taxOverrideReason = value;
     }
 

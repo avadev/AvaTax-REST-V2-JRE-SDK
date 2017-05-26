@@ -30,14 +30,14 @@ import java.util.HashMap;
 public class CompanyInitializationModel {
 
 
-    private string name;
+    private String name;
 
     /**
      * Getter for name
      *
      * Company Name
      */
-    public string getName() {
+    public String getName() {
         return this.name;
     }
 
@@ -46,19 +46,19 @@ public class CompanyInitializationModel {
      *
      * Company Name
      */
-    public void setName(string value) {
+    public void setName(String value) {
         this.name = value;
     }
 
 
-    private string companyCode;
+    private String companyCode;
 
     /**
      * Getter for companyCode
      *
      * Company Code - used to distinguish between companies within your accounting system
      */
-    public string getCompanyCode() {
+    public String getCompanyCode() {
         return this.companyCode;
     }
 
@@ -67,19 +67,19 @@ public class CompanyInitializationModel {
      *
      * Company Code - used to distinguish between companies within your accounting system
      */
-    public void setCompanyCode(string value) {
+    public void setCompanyCode(String value) {
         this.companyCode = value;
     }
 
 
-    private string vatRegistrationId;
+    private String vatRegistrationId;
 
     /**
      * Getter for vatRegistrationId
      *
      * Vat Registration Id - leave blank if not known.
      */
-    public string getVatRegistrationId() {
+    public String getVatRegistrationId() {
         return this.vatRegistrationId;
     }
 
@@ -88,12 +88,12 @@ public class CompanyInitializationModel {
      *
      * Vat Registration Id - leave blank if not known.
      */
-    public void setVatRegistrationId(string value) {
+    public void setVatRegistrationId(String value) {
         this.vatRegistrationId = value;
     }
 
 
-    private string taxpayerIdNumber;
+    private String taxpayerIdNumber;
 
     /**
      * Getter for taxpayerIdNumber
@@ -103,7 +103,7 @@ public class CompanyInitializationModel {
     * This value is required if you subscribe to Avalara Managed Returns or the SST Certified Service Provider services, 
     * but it is optional if you do not subscribe to either of those services.
      */
-    public string getTaxpayerIdNumber() {
+    public String getTaxpayerIdNumber() {
         return this.taxpayerIdNumber;
     }
 
@@ -115,19 +115,19 @@ public class CompanyInitializationModel {
     * This value is required if you subscribe to Avalara Managed Returns or the SST Certified Service Provider services, 
     * but it is optional if you do not subscribe to either of those services.
      */
-    public void setTaxpayerIdNumber(string value) {
+    public void setTaxpayerIdNumber(String value) {
         this.taxpayerIdNumber = value;
     }
 
 
-    private string line1;
+    private String line1;
 
     /**
      * Getter for line1
      *
      * Address Line1
      */
-    public string getLine1() {
+    public String getLine1() {
         return this.line1;
     }
 
@@ -136,19 +136,19 @@ public class CompanyInitializationModel {
      *
      * Address Line1
      */
-    public void setLine1(string value) {
+    public void setLine1(String value) {
         this.line1 = value;
     }
 
 
-    private string line2;
+    private String line2;
 
     /**
      * Getter for line2
      *
      * Line2
      */
-    public string getLine2() {
+    public String getLine2() {
         return this.line2;
     }
 
@@ -157,19 +157,19 @@ public class CompanyInitializationModel {
      *
      * Line2
      */
-    public void setLine2(string value) {
+    public void setLine2(String value) {
         this.line2 = value;
     }
 
 
-    private string line3;
+    private String line3;
 
     /**
      * Getter for line3
      *
      * Line3
      */
-    public string getLine3() {
+    public String getLine3() {
         return this.line3;
     }
 
@@ -178,19 +178,19 @@ public class CompanyInitializationModel {
      *
      * Line3
      */
-    public void setLine3(string value) {
+    public void setLine3(String value) {
         this.line3 = value;
     }
 
 
-    private string city;
+    private String city;
 
     /**
      * Getter for city
      *
      * City
      */
-    public string getCity() {
+    public String getCity() {
         return this.city;
     }
 
@@ -199,19 +199,19 @@ public class CompanyInitializationModel {
      *
      * City
      */
-    public void setCity(string value) {
+    public void setCity(String value) {
         this.city = value;
     }
 
 
-    private string region;
+    private String region;
 
     /**
      * Getter for region
      *
      * Two character ISO 3166 Region code for this company's primary business location.
      */
-    public string getRegion() {
+    public String getRegion() {
         return this.region;
     }
 
@@ -220,19 +220,19 @@ public class CompanyInitializationModel {
      *
      * Two character ISO 3166 Region code for this company's primary business location.
      */
-    public void setRegion(string value) {
+    public void setRegion(String value) {
         this.region = value;
     }
 
 
-    private string postalCode;
+    private String postalCode;
 
     /**
      * Getter for postalCode
      *
      * Postal Code
      */
-    public string getPostalCode() {
+    public String getPostalCode() {
         return this.postalCode;
     }
 
@@ -241,19 +241,19 @@ public class CompanyInitializationModel {
      *
      * Postal Code
      */
-    public void setPostalCode(string value) {
+    public void setPostalCode(String value) {
         this.postalCode = value;
     }
 
 
-    private string country;
+    private String country;
 
     /**
      * Getter for country
      *
      * Two character ISO 3166 Country code for this company's primary business location.
      */
-    public string getCountry() {
+    public String getCountry() {
         return this.country;
     }
 
@@ -262,19 +262,19 @@ public class CompanyInitializationModel {
      *
      * Two character ISO 3166 Country code for this company's primary business location.
      */
-    public void setCountry(string value) {
+    public void setCountry(String value) {
         this.country = value;
     }
 
 
-    private string firstName;
+    private String firstName;
 
     /**
      * Getter for firstName
      *
      * First Name
      */
-    public string getFirstName() {
+    public String getFirstName() {
         return this.firstName;
     }
 
@@ -283,19 +283,19 @@ public class CompanyInitializationModel {
      *
      * First Name
      */
-    public void setFirstName(string value) {
+    public void setFirstName(String value) {
         this.firstName = value;
     }
 
 
-    private string lastName;
+    private String lastName;
 
     /**
      * Getter for lastName
      *
      * Last Name
      */
-    public string getLastName() {
+    public String getLastName() {
         return this.lastName;
     }
 
@@ -304,19 +304,19 @@ public class CompanyInitializationModel {
      *
      * Last Name
      */
-    public void setLastName(string value) {
+    public void setLastName(String value) {
         this.lastName = value;
     }
 
 
-    private string title;
+    private String title;
 
     /**
      * Getter for title
      *
      * Title
      */
-    public string getTitle() {
+    public String getTitle() {
         return this.title;
     }
 
@@ -325,19 +325,19 @@ public class CompanyInitializationModel {
      *
      * Title
      */
-    public void setTitle(string value) {
+    public void setTitle(String value) {
         this.title = value;
     }
 
 
-    private string email;
+    private String email;
 
     /**
      * Getter for email
      *
      * Email
      */
-    public string getEmail() {
+    public String getEmail() {
         return this.email;
     }
 
@@ -346,19 +346,19 @@ public class CompanyInitializationModel {
      *
      * Email
      */
-    public void setEmail(string value) {
+    public void setEmail(String value) {
         this.email = value;
     }
 
 
-    private string phoneNumber;
+    private String phoneNumber;
 
     /**
      * Getter for phoneNumber
      *
      * Phone Number
      */
-    public string getPhoneNumber() {
+    public String getPhoneNumber() {
         return this.phoneNumber;
     }
 
@@ -367,19 +367,19 @@ public class CompanyInitializationModel {
      *
      * Phone Number
      */
-    public void setPhoneNumber(string value) {
+    public void setPhoneNumber(String value) {
         this.phoneNumber = value;
     }
 
 
-    private string mobileNumber;
+    private String mobileNumber;
 
     /**
      * Getter for mobileNumber
      *
      * Mobile Number
      */
-    public string getMobileNumber() {
+    public String getMobileNumber() {
         return this.mobileNumber;
     }
 
@@ -388,19 +388,19 @@ public class CompanyInitializationModel {
      *
      * Mobile Number
      */
-    public void setMobileNumber(string value) {
+    public void setMobileNumber(String value) {
         this.mobileNumber = value;
     }
 
 
-    private string faxNumber;
+    private String faxNumber;
 
     /**
      * Getter for faxNumber
      *
      * Fax Number
      */
-    public string getFaxNumber() {
+    public String getFaxNumber() {
         return this.faxNumber;
     }
 
@@ -409,7 +409,7 @@ public class CompanyInitializationModel {
      *
      * Fax Number
      */
-    public void setFaxNumber(string value) {
+    public void setFaxNumber(String value) {
         this.faxNumber = value;
     }
 

@@ -51,14 +51,14 @@ public class AccountConfigurationModel {
     }
 
 
-    private string category;
+    private String category;
 
     /**
      * Getter for category
      *
      * The category of the configuration setting. Avalara-defined categories include `AddressServiceConfig` and `TaxServiceConfig`. Customer-defined categories begin with `X-`.
      */
-    public string getCategory() {
+    public String getCategory() {
         return this.category;
     }
 
@@ -67,19 +67,19 @@ public class AccountConfigurationModel {
      *
      * The category of the configuration setting. Avalara-defined categories include `AddressServiceConfig` and `TaxServiceConfig`. Customer-defined categories begin with `X-`.
      */
-    public void setCategory(string value) {
+    public void setCategory(String value) {
         this.category = value;
     }
 
 
-    private string name;
+    private String name;
 
     /**
      * Getter for name
      *
      * The name of the configuration setting
      */
-    public string getName() {
+    public String getName() {
         return this.name;
     }
 
@@ -88,19 +88,19 @@ public class AccountConfigurationModel {
      *
      * The name of the configuration setting
      */
-    public void setName(string value) {
+    public void setName(String value) {
         this.name = value;
     }
 
 
-    private string value;
+    private String value;
 
     /**
      * Getter for value
      *
      * The current value of the configuration setting
      */
-    public string getValue() {
+    public String getValue() {
         return this.value;
     }
 
@@ -109,7 +109,7 @@ public class AccountConfigurationModel {
      *
      * The current value of the configuration setting
      */
-    public void setValue(string value) {
+    public void setValue(String value) {
         this.value = value;
     }
 

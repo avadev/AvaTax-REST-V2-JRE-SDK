@@ -51,14 +51,14 @@ public class NewAccountModel {
     }
 
 
-    private string accountDetailsEmailedTo;
+    private String accountDetailsEmailedTo;
 
     /**
      * Getter for accountDetailsEmailedTo
      *
      * This is the email address to which credentials were mailed
      */
-    public string getAccountDetailsEmailedTo() {
+    public String getAccountDetailsEmailedTo() {
         return this.accountDetailsEmailedTo;
     }
 
@@ -67,7 +67,7 @@ public class NewAccountModel {
      *
      * This is the email address to which credentials were mailed
      */
-    public void setAccountDetailsEmailedTo(string value) {
+    public void setAccountDetailsEmailedTo(String value) {
         this.accountDetailsEmailedTo = value;
     }
 
@@ -114,14 +114,14 @@ public class NewAccountModel {
     }
 
 
-    private string limitations;
+    private String limitations;
 
     /**
      * Getter for limitations
      *
      * If this account includes any limitations, specify them here
      */
-    public string getLimitations() {
+    public String getLimitations() {
         return this.limitations;
     }
 
@@ -130,7 +130,7 @@ public class NewAccountModel {
      *
      * If this account includes any limitations, specify them here
      */
-    public void setLimitations(string value) {
+    public void setLimitations(String value) {
         this.limitations = value;
     }
 

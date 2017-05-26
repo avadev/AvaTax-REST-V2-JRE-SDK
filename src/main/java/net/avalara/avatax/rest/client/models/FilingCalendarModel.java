@@ -73,14 +73,14 @@ public class FilingCalendarModel {
     }
 
 
-    private string returnName;
+    private String returnName;
 
     /**
      * Getter for returnName
      *
      * The name of the tax form to file.
      */
-    public string getReturnName() {
+    public String getReturnName() {
         return this.returnName;
     }
 
@@ -89,19 +89,19 @@ public class FilingCalendarModel {
      *
      * The name of the tax form to file.
      */
-    public void setReturnName(string value) {
+    public void setReturnName(String value) {
         this.returnName = value;
     }
 
 
-    private string locationCode;
+    private String locationCode;
 
     /**
      * Getter for locationCode
      *
      * If this calendar is for a location-specific tax return, specify the location code here. To file for all locations, leave this value NULL.
      */
-    public string getLocationCode() {
+    public String getLocationCode() {
         return this.locationCode;
     }
 
@@ -110,7 +110,7 @@ public class FilingCalendarModel {
      *
      * If this calendar is for a location-specific tax return, specify the location code here. To file for all locations, leave this value NULL.
      */
-    public void setLocationCode(string value) {
+    public void setLocationCode(String value) {
         this.locationCode = value;
     }
 
@@ -136,14 +136,14 @@ public class FilingCalendarModel {
     }
 
 
-    private string paymentCurrency;
+    private String paymentCurrency;
 
     /**
      * Getter for paymentCurrency
      *
      * Specify the ISO 4217 currency code for the currency to remit for this tax return. For all tax returns in the United States, specify "USD".
      */
-    public string getPaymentCurrency() {
+    public String getPaymentCurrency() {
         return this.paymentCurrency;
     }
 
@@ -152,7 +152,7 @@ public class FilingCalendarModel {
      *
      * Specify the ISO 4217 currency code for the currency to remit for this tax return. For all tax returns in the United States, specify "USD".
      */
-    public void setPaymentCurrency(string value) {
+    public void setPaymentCurrency(String value) {
         this.paymentCurrency = value;
     }
 
@@ -199,14 +199,14 @@ public class FilingCalendarModel {
     }
 
 
-    private string stateRegistrationId;
+    private String stateRegistrationId;
 
     /**
      * Getter for stateRegistrationId
      *
      * Tax Registration ID for this Region - in the U.S., this is for your state.
      */
-    public string getStateRegistrationId() {
+    public String getStateRegistrationId() {
         return this.stateRegistrationId;
     }
 
@@ -215,19 +215,19 @@ public class FilingCalendarModel {
      *
      * Tax Registration ID for this Region - in the U.S., this is for your state.
      */
-    public void setStateRegistrationId(string value) {
+    public void setStateRegistrationId(String value) {
         this.stateRegistrationId = value;
     }
 
 
-    private string localRegistrationId;
+    private String localRegistrationId;
 
     /**
      * Getter for localRegistrationId
      *
      * Tax Registration ID for the local jurisdiction, if any.
      */
-    public string getLocalRegistrationId() {
+    public String getLocalRegistrationId() {
         return this.localRegistrationId;
     }
 
@@ -236,19 +236,19 @@ public class FilingCalendarModel {
      *
      * Tax Registration ID for the local jurisdiction, if any.
      */
-    public void setLocalRegistrationId(string value) {
+    public void setLocalRegistrationId(String value) {
         this.localRegistrationId = value;
     }
 
 
-    private string employerIdentificationNumber;
+    private String employerIdentificationNumber;
 
     /**
      * Getter for employerIdentificationNumber
      *
      * The Employer Identification Number or Taxpayer Identification Number that is to be used when filing this return.
      */
-    public string getEmployerIdentificationNumber() {
+    public String getEmployerIdentificationNumber() {
         return this.employerIdentificationNumber;
     }
 
@@ -257,19 +257,19 @@ public class FilingCalendarModel {
      *
      * The Employer Identification Number or Taxpayer Identification Number that is to be used when filing this return.
      */
-    public void setEmployerIdentificationNumber(string value) {
+    public void setEmployerIdentificationNumber(String value) {
         this.employerIdentificationNumber = value;
     }
 
 
-    private string line1;
+    private String line1;
 
     /**
      * Getter for line1
      *
      * The first line of the physical address to be used when filing this tax return.
      */
-    public string getLine1() {
+    public String getLine1() {
         return this.line1;
     }
 
@@ -278,12 +278,12 @@ public class FilingCalendarModel {
      *
      * The first line of the physical address to be used when filing this tax return.
      */
-    public void setLine1(string value) {
+    public void setLine1(String value) {
         this.line1 = value;
     }
 
 
-    private string line2;
+    private String line2;
 
     /**
      * Getter for line2
@@ -291,7 +291,7 @@ public class FilingCalendarModel {
      * The second line of the physical address to be used when filing this tax return.
     * Please note that some tax forms do not support multiple address lines.
      */
-    public string getLine2() {
+    public String getLine2() {
         return this.line2;
     }
 
@@ -301,19 +301,19 @@ public class FilingCalendarModel {
      * The second line of the physical address to be used when filing this tax return.
     * Please note that some tax forms do not support multiple address lines.
      */
-    public void setLine2(string value) {
+    public void setLine2(String value) {
         this.line2 = value;
     }
 
 
-    private string city;
+    private String city;
 
     /**
      * Getter for city
      *
      * The city name of the physical address to be used when filing this tax return.
      */
-    public string getCity() {
+    public String getCity() {
         return this.city;
     }
 
@@ -322,19 +322,19 @@ public class FilingCalendarModel {
      *
      * The city name of the physical address to be used when filing this tax return.
      */
-    public void setCity(string value) {
+    public void setCity(String value) {
         this.city = value;
     }
 
 
-    private string region;
+    private String region;
 
     /**
      * Getter for region
      *
      * The state, region, or province of the physical address to be used when filing this tax return.
      */
-    public string getRegion() {
+    public String getRegion() {
         return this.region;
     }
 
@@ -343,19 +343,19 @@ public class FilingCalendarModel {
      *
      * The state, region, or province of the physical address to be used when filing this tax return.
      */
-    public void setRegion(string value) {
+    public void setRegion(String value) {
         this.region = value;
     }
 
 
-    private string postalCode;
+    private String postalCode;
 
     /**
      * Getter for postalCode
      *
      * The postal code or zip code of the physical address to be used when filing this tax return.
      */
-    public string getPostalCode() {
+    public String getPostalCode() {
         return this.postalCode;
     }
 
@@ -364,19 +364,19 @@ public class FilingCalendarModel {
      *
      * The postal code or zip code of the physical address to be used when filing this tax return.
      */
-    public void setPostalCode(string value) {
+    public void setPostalCode(String value) {
         this.postalCode = value;
     }
 
 
-    private string country;
+    private String country;
 
     /**
      * Getter for country
      *
      * The two character ISO-3166 country code of the physical address to be used when filing this return.
      */
-    public string getCountry() {
+    public String getCountry() {
         return this.country;
     }
 
@@ -385,19 +385,19 @@ public class FilingCalendarModel {
      *
      * The two character ISO-3166 country code of the physical address to be used when filing this return.
      */
-    public void setCountry(string value) {
+    public void setCountry(String value) {
         this.country = value;
     }
 
 
-    private string phone;
+    private String phone;
 
     /**
      * Getter for phone
      *
      * The phone number to be used when filing this return.
      */
-    public string getPhone() {
+    public String getPhone() {
         return this.phone;
     }
 
@@ -406,12 +406,12 @@ public class FilingCalendarModel {
      *
      * The phone number to be used when filing this return.
      */
-    public void setPhone(string value) {
+    public void setPhone(String value) {
         this.phone = value;
     }
 
 
-    private string customerFilingInstructions;
+    private String customerFilingInstructions;
 
     /**
      * Getter for customerFilingInstructions
@@ -419,7 +419,7 @@ public class FilingCalendarModel {
      * Special filing instructions to be used when filing this return.
     * Please note that requesting special filing instructions may incur additional costs.
      */
-    public string getCustomerFilingInstructions() {
+    public String getCustomerFilingInstructions() {
         return this.customerFilingInstructions;
     }
 
@@ -429,19 +429,19 @@ public class FilingCalendarModel {
      * Special filing instructions to be used when filing this return.
     * Please note that requesting special filing instructions may incur additional costs.
      */
-    public void setCustomerFilingInstructions(string value) {
+    public void setCustomerFilingInstructions(String value) {
         this.customerFilingInstructions = value;
     }
 
 
-    private string legalEntityName;
+    private String legalEntityName;
 
     /**
      * Getter for legalEntityName
      *
      * The legal entity name to be used when filing this return.
      */
-    public string getLegalEntityName() {
+    public String getLegalEntityName() {
         return this.legalEntityName;
     }
 
@@ -450,7 +450,7 @@ public class FilingCalendarModel {
      *
      * The legal entity name to be used when filing this return.
      */
-    public void setLegalEntityName(string value) {
+    public void setLegalEntityName(String value) {
         this.legalEntityName = value;
     }
 
@@ -526,14 +526,14 @@ public class FilingCalendarModel {
     }
 
 
-    private string eFileUsername;
+    private String eFileUsername;
 
     /**
      * Getter for eFileUsername
      *
      * If you file electronically, this is the username you use to log in to the tax authority's website.
      */
-    public string getEFileUsername() {
+    public String getEFileUsername() {
         return this.eFileUsername;
     }
 
@@ -542,19 +542,19 @@ public class FilingCalendarModel {
      *
      * If you file electronically, this is the username you use to log in to the tax authority's website.
      */
-    public void setEFileUsername(string value) {
+    public void setEFileUsername(String value) {
         this.eFileUsername = value;
     }
 
 
-    private string eFilePassword;
+    private String eFilePassword;
 
     /**
      * Getter for eFilePassword
      *
      * If you file electronically, this is the password or pass code you use to log in to the tax authority's website.
      */
-    public string getEFilePassword() {
+    public String getEFilePassword() {
         return this.eFilePassword;
     }
 
@@ -563,7 +563,7 @@ public class FilingCalendarModel {
      *
      * If you file electronically, this is the password or pass code you use to log in to the tax authority's website.
      */
-    public void setEFilePassword(string value) {
+    public void setEFilePassword(String value) {
         this.eFilePassword = value;
     }
 
@@ -612,14 +612,14 @@ public class FilingCalendarModel {
     }
 
 
-    private string internalNotes;
+    private String internalNotes;
 
     /**
      * Getter for internalNotes
      *
      * Internal filing notes.
      */
-    public string getInternalNotes() {
+    public String getInternalNotes() {
         return this.internalNotes;
     }
 
@@ -628,19 +628,19 @@ public class FilingCalendarModel {
      *
      * Internal filing notes.
      */
-    public void setInternalNotes(string value) {
+    public void setInternalNotes(String value) {
         this.internalNotes = value;
     }
 
 
-    private string alSignOn;
+    private String alSignOn;
 
     /**
      * Getter for alSignOn
      *
      * Custom filing information field for Alabama.
      */
-    public string getAlSignOn() {
+    public String getAlSignOn() {
         return this.alSignOn;
     }
 
@@ -649,19 +649,19 @@ public class FilingCalendarModel {
      *
      * Custom filing information field for Alabama.
      */
-    public void setAlSignOn(string value) {
+    public void setAlSignOn(String value) {
         this.alSignOn = value;
     }
 
 
-    private string alAccessCode;
+    private String alAccessCode;
 
     /**
      * Getter for alAccessCode
      *
      * Custom filing information field for Alabama.
      */
-    public string getAlAccessCode() {
+    public String getAlAccessCode() {
         return this.alAccessCode;
     }
 
@@ -670,19 +670,19 @@ public class FilingCalendarModel {
      *
      * Custom filing information field for Alabama.
      */
-    public void setAlAccessCode(string value) {
+    public void setAlAccessCode(String value) {
         this.alAccessCode = value;
     }
 
 
-    private string meBusinessCode;
+    private String meBusinessCode;
 
     /**
      * Getter for meBusinessCode
      *
      * Custom filing information field for Maine.
      */
-    public string getMeBusinessCode() {
+    public String getMeBusinessCode() {
         return this.meBusinessCode;
     }
 
@@ -691,19 +691,19 @@ public class FilingCalendarModel {
      *
      * Custom filing information field for Maine.
      */
-    public void setMeBusinessCode(string value) {
+    public void setMeBusinessCode(String value) {
         this.meBusinessCode = value;
     }
 
 
-    private string iaBen;
+    private String iaBen;
 
     /**
      * Getter for iaBen
      *
      * Custom filing information field for Iowa.
      */
-    public string getIaBen() {
+    public String getIaBen() {
         return this.iaBen;
     }
 
@@ -712,19 +712,19 @@ public class FilingCalendarModel {
      *
      * Custom filing information field for Iowa.
      */
-    public void setIaBen(string value) {
+    public void setIaBen(String value) {
         this.iaBen = value;
     }
 
 
-    private string ctReg;
+    private String ctReg;
 
     /**
      * Getter for ctReg
      *
      * Custom filing information field for Connecticut.
      */
-    public string getCtReg() {
+    public String getCtReg() {
         return this.ctReg;
     }
 
@@ -733,19 +733,19 @@ public class FilingCalendarModel {
      *
      * Custom filing information field for Connecticut.
      */
-    public void setCtReg(string value) {
+    public void setCtReg(String value) {
         this.ctReg = value;
     }
 
 
-    private string other1Name;
+    private String other1Name;
 
     /**
      * Getter for other1Name
      *
      * Custom filing information field. Leave blank.
      */
-    public string getOther1Name() {
+    public String getOther1Name() {
         return this.other1Name;
     }
 
@@ -754,19 +754,19 @@ public class FilingCalendarModel {
      *
      * Custom filing information field. Leave blank.
      */
-    public void setOther1Name(string value) {
+    public void setOther1Name(String value) {
         this.other1Name = value;
     }
 
 
-    private string other1Value;
+    private String other1Value;
 
     /**
      * Getter for other1Value
      *
      * Custom filing information field. Leave blank.
      */
-    public string getOther1Value() {
+    public String getOther1Value() {
         return this.other1Value;
     }
 
@@ -775,19 +775,19 @@ public class FilingCalendarModel {
      *
      * Custom filing information field. Leave blank.
      */
-    public void setOther1Value(string value) {
+    public void setOther1Value(String value) {
         this.other1Value = value;
     }
 
 
-    private string other2Name;
+    private String other2Name;
 
     /**
      * Getter for other2Name
      *
      * Custom filing information field. Leave blank.
      */
-    public string getOther2Name() {
+    public String getOther2Name() {
         return this.other2Name;
     }
 
@@ -796,19 +796,19 @@ public class FilingCalendarModel {
      *
      * Custom filing information field. Leave blank.
      */
-    public void setOther2Name(string value) {
+    public void setOther2Name(String value) {
         this.other2Name = value;
     }
 
 
-    private string other2Value;
+    private String other2Value;
 
     /**
      * Getter for other2Value
      *
      * Custom filing information field. Leave blank.
      */
-    public string getOther2Value() {
+    public String getOther2Value() {
         return this.other2Value;
     }
 
@@ -817,19 +817,19 @@ public class FilingCalendarModel {
      *
      * Custom filing information field. Leave blank.
      */
-    public void setOther2Value(string value) {
+    public void setOther2Value(String value) {
         this.other2Value = value;
     }
 
 
-    private string other3Name;
+    private String other3Name;
 
     /**
      * Getter for other3Name
      *
      * Custom filing information field. Leave blank.
      */
-    public string getOther3Name() {
+    public String getOther3Name() {
         return this.other3Name;
     }
 
@@ -838,19 +838,19 @@ public class FilingCalendarModel {
      *
      * Custom filing information field. Leave blank.
      */
-    public void setOther3Name(string value) {
+    public void setOther3Name(String value) {
         this.other3Name = value;
     }
 
 
-    private string other3Value;
+    private String other3Value;
 
     /**
      * Getter for other3Value
      *
      * Custom filing information field. Leave blank.
      */
-    public string getOther3Value() {
+    public String getOther3Value() {
         return this.other3Value;
     }
 
@@ -859,7 +859,7 @@ public class FilingCalendarModel {
      *
      * Custom filing information field. Leave blank.
      */
-    public void setOther3Value(string value) {
+    public void setOther3Value(String value) {
         this.other3Value = value;
     }
 
@@ -885,14 +885,14 @@ public class FilingCalendarModel {
     }
 
 
-    private string taxAuthorityName;
+    private String taxAuthorityName;
 
     /**
      * Getter for taxAuthorityName
      *
      * The name of the tax authority of this return.
      */
-    public string getTaxAuthorityName() {
+    public String getTaxAuthorityName() {
         return this.taxAuthorityName;
     }
 
@@ -901,19 +901,19 @@ public class FilingCalendarModel {
      *
      * The name of the tax authority of this return.
      */
-    public void setTaxAuthorityName(string value) {
+    public void setTaxAuthorityName(String value) {
         this.taxAuthorityName = value;
     }
 
 
-    private string taxAuthorityType;
+    private String taxAuthorityType;
 
     /**
      * Getter for taxAuthorityType
      *
      * The type description of the tax authority of this return.
      */
-    public string getTaxAuthorityType() {
+    public String getTaxAuthorityType() {
         return this.taxAuthorityType;
     }
 
@@ -922,7 +922,7 @@ public class FilingCalendarModel {
      *
      * The type description of the tax authority of this return.
      */
-    public void setTaxAuthorityType(string value) {
+    public void setTaxAuthorityType(String value) {
         this.taxAuthorityType = value;
     }
 

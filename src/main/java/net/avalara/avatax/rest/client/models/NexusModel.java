@@ -72,14 +72,14 @@ public class NexusModel {
     }
 
 
-    private string country;
+    private String country;
 
     /**
      * Getter for country
      *
      * The two character ISO-3166 country code of the country in which this company declared nexus.
      */
-    public string getCountry() {
+    public String getCountry() {
         return this.country;
     }
 
@@ -88,19 +88,19 @@ public class NexusModel {
      *
      * The two character ISO-3166 country code of the country in which this company declared nexus.
      */
-    public void setCountry(string value) {
+    public void setCountry(String value) {
         this.country = value;
     }
 
 
-    private string region;
+    private String region;
 
     /**
      * Getter for region
      *
      * The two or three character ISO region code of the region, state, or province in which this company declared nexus.
      */
-    public string getRegion() {
+    public String getRegion() {
         return this.region;
     }
 
@@ -109,7 +109,7 @@ public class NexusModel {
      *
      * The two or three character ISO region code of the region, state, or province in which this company declared nexus.
      */
-    public void setRegion(string value) {
+    public void setRegion(String value) {
         this.region = value;
     }
 
@@ -135,14 +135,14 @@ public class NexusModel {
     }
 
 
-    private string jurisCode;
+    private String jurisCode;
 
     /**
      * Getter for jurisCode
      *
      * The code identifying the jurisdiction in which this company declared nexus.
      */
-    public string getJurisCode() {
+    public String getJurisCode() {
         return this.jurisCode;
     }
 
@@ -151,19 +151,19 @@ public class NexusModel {
      *
      * The code identifying the jurisdiction in which this company declared nexus.
      */
-    public void setJurisCode(string value) {
+    public void setJurisCode(String value) {
         this.jurisCode = value;
     }
 
 
-    private string jurisName;
+    private String jurisName;
 
     /**
      * Getter for jurisName
      *
      * The common name of the jurisdiction in which this company declared nexus.
      */
-    public string getJurisName() {
+    public String getJurisName() {
         return this.jurisName;
     }
 
@@ -172,7 +172,7 @@ public class NexusModel {
      *
      * The common name of the jurisdiction in which this company declared nexus.
      */
-    public void setJurisName(string value) {
+    public void setJurisName(String value) {
         this.jurisName = value;
     }
 
@@ -219,14 +219,14 @@ public class NexusModel {
     }
 
 
-    private string shortName;
+    private String shortName;
 
     /**
      * Getter for shortName
      *
      * The short name of the jurisdiction.
      */
-    public string getShortName() {
+    public String getShortName() {
         return this.shortName;
     }
 
@@ -235,19 +235,19 @@ public class NexusModel {
      *
      * The short name of the jurisdiction.
      */
-    public void setShortName(string value) {
+    public void setShortName(String value) {
         this.shortName = value;
     }
 
 
-    private string signatureCode;
+    private String signatureCode;
 
     /**
      * Getter for signatureCode
      *
      * The signature code of the boundary region as defined by Avalara.
      */
-    public string getSignatureCode() {
+    public String getSignatureCode() {
         return this.signatureCode;
     }
 
@@ -256,19 +256,19 @@ public class NexusModel {
      *
      * The signature code of the boundary region as defined by Avalara.
      */
-    public void setSignatureCode(string value) {
+    public void setSignatureCode(String value) {
         this.signatureCode = value;
     }
 
 
-    private string stateAssignedNo;
+    private String stateAssignedNo;
 
     /**
      * Getter for stateAssignedNo
      *
      * The state assigned number of this jurisdiction.
      */
-    public string getStateAssignedNo() {
+    public String getStateAssignedNo() {
         return this.stateAssignedNo;
     }
 
@@ -277,7 +277,7 @@ public class NexusModel {
      *
      * The state assigned number of this jurisdiction.
      */
-    public void setStateAssignedNo(string value) {
+    public void setStateAssignedNo(String value) {
         this.stateAssignedNo = value;
     }
 
@@ -393,14 +393,14 @@ public class NexusModel {
     }
 
 
-    private string taxId;
+    private String taxId;
 
     /**
      * Getter for taxId
      *
      * Optional - the tax identification number under which you declared nexus.
      */
-    public string getTaxId() {
+    public String getTaxId() {
         return this.taxId;
     }
 
@@ -409,7 +409,7 @@ public class NexusModel {
      *
      * Optional - the tax identification number under which you declared nexus.
      */
-    public void setTaxId(string value) {
+    public void setTaxId(String value) {
         this.taxId = value;
     }
 
@@ -521,7 +521,7 @@ public class NexusModel {
     }
 
 
-    private string nexusTaxTypeGroup;
+    private String nexusTaxTypeGroup;
 
     /**
      * Getter for nexusTaxTypeGroup
@@ -529,7 +529,7 @@ public class NexusModel {
      * The type of nexus that this company is declaring.Replaces NexusTypeId.
     * Use /api/v2/definitions/nexustaxtypegroup for a list of tax type groups.
      */
-    public string getNexusTaxTypeGroup() {
+    public String getNexusTaxTypeGroup() {
         return this.nexusTaxTypeGroup;
     }
 
@@ -539,7 +539,7 @@ public class NexusModel {
      * The type of nexus that this company is declaring.Replaces NexusTypeId.
     * Use /api/v2/definitions/nexustaxtypegroup for a list of tax type groups.
      */
-    public void setNexusTaxTypeGroup(string value) {
+    public void setNexusTaxTypeGroup(String value) {
         this.nexusTaxTypeGroup = value;
     }
 

@@ -93,14 +93,14 @@ public class CycleExpireOptionModel {
     }
 
 
-    private string cycleName;
+    private String cycleName;
 
     /**
      * Getter for cycleName
      *
      * A descriptive name of the cycle and due date of the form.
      */
-    public string getCycleName() {
+    public String getCycleName() {
         return this.cycleName;
     }
 
@@ -109,7 +109,7 @@ public class CycleExpireOptionModel {
      *
      * A descriptive name of the cycle and due date of the form.
      */
-    public void setCycleName(string value) {
+    public void setCycleName(String value) {
         this.cycleName = value;
     }
 

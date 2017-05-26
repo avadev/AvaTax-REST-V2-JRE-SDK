@@ -51,14 +51,14 @@ public class CycleEditOptionModel {
     }
 
 
-    private string message;
+    private String message;
 
     /**
      * Getter for message
      *
      * The message to present to the user when calendar is successfully or unsuccessfully changed.
      */
-    public string getMessage() {
+    public String getMessage() {
         return this.message;
     }
 
@@ -67,7 +67,7 @@ public class CycleEditOptionModel {
      *
      * The message to present to the user when calendar is successfully or unsuccessfully changed.
      */
-    public void setMessage(string value) {
+    public void setMessage(String value) {
         this.message = value;
     }
 

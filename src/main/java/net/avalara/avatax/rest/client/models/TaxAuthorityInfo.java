@@ -30,14 +30,14 @@ import java.util.HashMap;
 public class TaxAuthorityInfo {
 
 
-    private string avalaraId;
+    private String avalaraId;
 
     /**
      * Getter for avalaraId
      *
      * Avalara Id
      */
-    public string getAvalaraId() {
+    public String getAvalaraId() {
         return this.avalaraId;
     }
 
@@ -46,19 +46,19 @@ public class TaxAuthorityInfo {
      *
      * Avalara Id
      */
-    public void setAvalaraId(string value) {
+    public void setAvalaraId(String value) {
         this.avalaraId = value;
     }
 
 
-    private string jurisdictionName;
+    private String jurisdictionName;
 
     /**
      * Getter for jurisdictionName
      *
      * Jurisdiction Name
      */
-    public string getJurisdictionName() {
+    public String getJurisdictionName() {
         return this.jurisdictionName;
     }
 
@@ -67,7 +67,7 @@ public class TaxAuthorityInfo {
      *
      * Jurisdiction Name
      */
-    public void setJurisdictionName(string value) {
+    public void setJurisdictionName(String value) {
         this.jurisdictionName = value;
     }
 
@@ -93,14 +93,14 @@ public class TaxAuthorityInfo {
     }
 
 
-    private string signatureCode;
+    private String signatureCode;
 
     /**
      * Getter for signatureCode
      *
      * Signature Code
      */
-    public string getSignatureCode() {
+    public String getSignatureCode() {
         return this.signatureCode;
     }
 
@@ -109,7 +109,7 @@ public class TaxAuthorityInfo {
      *
      * Signature Code
      */
-    public void setSignatureCode(string value) {
+    public void setSignatureCode(String value) {
         this.signatureCode = value;
     }
 

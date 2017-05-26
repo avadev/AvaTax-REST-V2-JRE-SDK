@@ -171,7 +171,7 @@ public class AvaTaxClient {
      * * Subscriptions
      * 
      * @param int id The ID of the account to retrieve
-     * @param string include A comma separated list of child objects to return underneath the primary object.
+     * @param String include A comma separated list of child objects to return underneath the primary object.
      * @return AccountModel
      */
     public AccountModel getAccount(Int32 id, String include)
@@ -191,10 +191,10 @@ public class AvaTaxClient {
      * * Subscriptions
      * 
      * @param int id The ID of the account to retrieve
-     * @param string include A comma separated list of child objects to return underneath the primary object.
+     * @param String include A comma separated list of child objects to return underneath the primary object.
      * @return AccountModel
      */
-    public AccountModel getAccountAsync(int id, string include)
+    public AccountModel getAccountAsync(int id, String include)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{id}");
         path.ApplyField("id", id);
@@ -313,13 +313,13 @@ public class AvaTaxClient {
      * 'messages' structure to learn more about problems with this address.
      * This is the same API as the POST /api/v2/addresses/resolve endpoint.
      * 
-     * @param string line1 Line 1
-     * @param string line2 Line 2
-     * @param string line3 Line 3
-     * @param string city City
-     * @param string region State / Province / Region
-     * @param string postalCode Postal Code / Zip Code
-     * @param string country Two character ISO 3166 Country Code (see /api/v2/definitions/countries for a full list)
+     * @param String line1 Line 1
+     * @param String line2 Line 2
+     * @param String line3 Line 3
+     * @param String city City
+     * @param String region State / Province / Region
+     * @param String postalCode Postal Code / Zip Code
+     * @param String country Two character ISO 3166 Country Code (see /api/v2/definitions/countries for a full list)
      * @param TextCase textCase selectable text case for address validation (See TextCase::* for a list of allowable values)
      * @param BigDecimal latitude Geospatial latitude measurement
      * @param BigDecimal longitude Geospatial longitude measurement
@@ -350,19 +350,19 @@ public class AvaTaxClient {
      * 'messages' structure to learn more about problems with this address.
      * This is the same API as the POST /api/v2/addresses/resolve endpoint.
      * 
-     * @param string line1 Line 1
-     * @param string line2 Line 2
-     * @param string line3 Line 3
-     * @param string city City
-     * @param string region State / Province / Region
-     * @param string postalCode Postal Code / Zip Code
-     * @param string country Two character ISO 3166 Country Code (see /api/v2/definitions/countries for a full list)
+     * @param String line1 Line 1
+     * @param String line2 Line 2
+     * @param String line3 Line 3
+     * @param String city City
+     * @param String region State / Province / Region
+     * @param String postalCode Postal Code / Zip Code
+     * @param String country Two character ISO 3166 Country Code (see /api/v2/definitions/countries for a full list)
      * @param TextCase textCase selectable text case for address validation (See TextCase::* for a list of allowable values)
      * @param BigDecimal latitude Geospatial latitude measurement
      * @param BigDecimal longitude Geospatial longitude measurement
      * @return AddressResolutionModel
      */
-    public AddressResolutionModel resolveAddressAsync(string line1, string line2, string line3, string city, string region, string postalCode, string country, TextCase textCase, BigDecimal latitude, BigDecimal longitude)
+    public AddressResolutionModel resolveAddressAsync(String line1, String line2, String line3, String city, String region, String postalCode, String country, TextCase textCase, BigDecimal latitude, BigDecimal longitude)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/addresses/resolve");
         path.AddQuery("line1", line1);
@@ -564,11 +564,11 @@ public class AvaTaxClient {
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * 
      * @param int companyId The ID of the company that owns these batches
-     * @param string filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param string include A comma separated list of child objects to return underneath the primary object.
+     * @param String filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param String include A comma separated list of child objects to return underneath the primary object.
      * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
-     * @param string orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult
      */
     public FetchResult<BatchModel> listBatchesByCompany(Int32 companyId, String filter, String include, Int32? top, Int32? skip, String orderBy)
@@ -593,14 +593,14 @@ public class AvaTaxClient {
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * 
      * @param int companyId The ID of the company that owns these batches
-     * @param string filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param string include A comma separated list of child objects to return underneath the primary object.
+     * @param String filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param String include A comma separated list of child objects to return underneath the primary object.
      * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
-     * @param string orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult
      */
-    public FetchResult listBatchesByCompanyAsync(int companyId, string filter, string include, Integer top, Integer skip, string orderBy)
+    public FetchResult listBatchesByCompanyAsync(int companyId, String filter, String include, Integer top, Integer skip, String orderBy)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/batches");
         path.ApplyField("companyId", companyId);
@@ -622,11 +622,11 @@ public class AvaTaxClient {
      * 
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * 
-     * @param string filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param string include A comma separated list of child objects to return underneath the primary object.
+     * @param String filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param String include A comma separated list of child objects to return underneath the primary object.
      * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
-     * @param string orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult
      */
     public FetchResult<BatchModel> queryBatches(String filter, String include, Int32? top, Int32? skip, String orderBy)
@@ -650,14 +650,14 @@ public class AvaTaxClient {
      * 
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * 
-     * @param string filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param string include A comma separated list of child objects to return underneath the primary object.
+     * @param String filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param String include A comma separated list of child objects to return underneath the primary object.
      * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
-     * @param string orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult
      */
-    public FetchResult queryBatchesAsync(string filter, string include, Integer top, Integer skip, string orderBy)
+    public FetchResult queryBatchesAsync(String filter, String include, Integer top, Integer skip, String orderBy)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/batches");
         path.AddQuery("$filter", filter);
@@ -834,7 +834,7 @@ public class AvaTaxClient {
      *  * TaxRules
      * 
      * @param int id The ID of the company to retrieve.
-     * @param string include A comma separated list of child objects to return underneath the primary object.
+     * @param String include A comma separated list of child objects to return underneath the primary object.
      * @return CompanyModel
      */
     public CompanyModel getCompany(Int32 id, String include)
@@ -861,10 +861,10 @@ public class AvaTaxClient {
      *  * TaxRules
      * 
      * @param int id The ID of the company to retrieve.
-     * @param string include A comma separated list of child objects to return underneath the primary object.
+     * @param String include A comma separated list of child objects to return underneath the primary object.
      * @return CompanyModel
      */
-    public CompanyModel getCompanyAsync(int id, string include)
+    public CompanyModel getCompanyAsync(int id, String include)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{id}");
         path.ApplyField("id", id);
@@ -973,11 +973,11 @@ public class AvaTaxClient {
      * * TaxCodes
      * * TaxRules
      * 
-     * @param string include A comma separated list of child objects to return underneath the primary object.
-     * @param string filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param String include A comma separated list of child objects to return underneath the primary object.
+     * @param String filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
-     * @param string orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult
      */
     public FetchResult<CompanyModel> queryCompanies(String include, String filter, Int32? top, Int32? skip, String orderBy)
@@ -1008,14 +1008,14 @@ public class AvaTaxClient {
      * * TaxCodes
      * * TaxRules
      * 
-     * @param string include A comma separated list of child objects to return underneath the primary object.
-     * @param string filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param String include A comma separated list of child objects to return underneath the primary object.
+     * @param String filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
-     * @param string orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult
      */
-    public FetchResult queryCompaniesAsync(string include, string filter, Integer top, Integer skip, string orderBy)
+    public FetchResult queryCompaniesAsync(String include, String filter, Integer top, Integer skip, String orderBy)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies");
         path.AddQuery("$include", include);
@@ -1222,11 +1222,11 @@ public class AvaTaxClient {
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * 
      * @param int companyId The ID of the company that owns these contacts
-     * @param string filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param string include A comma separated list of child objects to return underneath the primary object.
+     * @param String filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param String include A comma separated list of child objects to return underneath the primary object.
      * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
-     * @param string orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult
      */
     public FetchResult<ContactModel> listContactsByCompany(Int32 companyId, String filter, String include, Int32? top, Int32? skip, String orderBy)
@@ -1249,14 +1249,14 @@ public class AvaTaxClient {
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * 
      * @param int companyId The ID of the company that owns these contacts
-     * @param string filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param string include A comma separated list of child objects to return underneath the primary object.
+     * @param String filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param String include A comma separated list of child objects to return underneath the primary object.
      * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
-     * @param string orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult
      */
-    public FetchResult listContactsByCompanyAsync(int companyId, string filter, string include, Integer top, Integer skip, string orderBy)
+    public FetchResult listContactsByCompanyAsync(int companyId, String filter, String include, Integer top, Integer skip, String orderBy)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/contacts");
         path.ApplyField("companyId", companyId);
@@ -1277,11 +1277,11 @@ public class AvaTaxClient {
      * 
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * 
-     * @param string filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param string include A comma separated list of child objects to return underneath the primary object.
+     * @param String filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param String include A comma separated list of child objects to return underneath the primary object.
      * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
-     * @param string orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult
      */
     public FetchResult<ContactModel> queryContacts(String filter, String include, Int32? top, Int32? skip, String orderBy)
@@ -1304,14 +1304,14 @@ public class AvaTaxClient {
      * 
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * 
-     * @param string filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param string include A comma separated list of child objects to return underneath the primary object.
+     * @param String filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param String include A comma separated list of child objects to return underneath the primary object.
      * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
-     * @param string orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult
      */
-    public FetchResult queryContactsAsync(string filter, string include, Integer top, Integer skip, string orderBy)
+    public FetchResult queryContactsAsync(String filter, String include, Integer top, Integer skip, String orderBy)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/contacts");
         path.AddQuery("$filter", filter);
@@ -1369,8 +1369,8 @@ public class AvaTaxClient {
      * 
      * Returns all Avalara-supported nexus for the specified country and region.
      * 
-     * @param string country The two-character ISO-3166 code for the country.
-     * @param string region The two or three character region code for the region.
+     * @param String country The two-character ISO-3166 code for the country.
+     * @param String region The two or three character region code for the region.
      * @return FetchResult
      */
     public FetchResult<NexusModel> apiV2DefinitionsNexusByCountryByRegionGet(String country, String region)
@@ -1386,11 +1386,11 @@ public class AvaTaxClient {
      * 
      * Returns all Avalara-supported nexus for the specified country and region.
      * 
-     * @param string country The two-character ISO-3166 code for the country.
-     * @param string region The two or three character region code for the region.
+     * @param String country The two-character ISO-3166 code for the country.
+     * @param String region The two or three character region code for the region.
      * @return FetchResult
      */
-    public FetchResult apiV2DefinitionsNexusByCountryByRegionGetAsync(string country, string region)
+    public FetchResult apiV2DefinitionsNexusByCountryByRegionGetAsync(String country, String region)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/nexus/{country}/{region}");
         path.ApplyField("country", country);
@@ -1403,7 +1403,7 @@ public class AvaTaxClient {
      * 
      * Returns all Avalara-supported nexus for the specified country.
      * 
-     * @param string country 
+     * @param String country 
      * @return FetchResult
      */
     public FetchResult<NexusModel> apiV2DefinitionsNexusByCountryGet(String country)
@@ -1418,10 +1418,10 @@ public class AvaTaxClient {
      * 
      * Returns all Avalara-supported nexus for the specified country.
      * 
-     * @param string country 
+     * @param String country 
      * @return FetchResult
      */
-    public FetchResult apiV2DefinitionsNexusByCountryGetAsync(string country)
+    public FetchResult apiV2DefinitionsNexusByCountryGetAsync(String country)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/nexus/{country}");
         path.ApplyField("country", country);
@@ -1459,7 +1459,7 @@ public class AvaTaxClient {
      * 
      * This API is intended to be useful to identify whether the user should be allowed
      * 
-     * @param string form The name of the form you would like to verify. This can be the tax form code or the legacy return name
+     * @param String form The name of the form you would like to verify. This can be the tax form code or the legacy return name
      * @return FetchResult
      */
     public FetchResult<SkyscraperStatusModel> getLoginVerifierByForm(String form)
@@ -1474,10 +1474,10 @@ public class AvaTaxClient {
      * 
      * This API is intended to be useful to identify whether the user should be allowed
      * 
-     * @param string form The name of the form you would like to verify. This can be the tax form code or the legacy return name
+     * @param String form The name of the form you would like to verify. This can be the tax form code or the legacy return name
      * @return FetchResult
      */
-    public FetchResult getLoginVerifierByFormAsync(string form)
+    public FetchResult getLoginVerifierByFormAsync(String form)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/filingcalendars/loginverifiers/{form}");
         path.ApplyField("form", form);
@@ -1606,13 +1606,13 @@ public class AvaTaxClient {
      * jurisdiction in AvaTax.
      *             
      * 
-     * @param string line1 The first address line portion of this address.
-     * @param string line2 The second address line portion of this address.
-     * @param string line3 The third address line portion of this address.
-     * @param string city The city portion of this address.
-     * @param string region The region, state, or province code portion of this address.
-     * @param string postalCode The postal code or zip code portion of this address.
-     * @param string country The two-character ISO-3166 code of the country portion of this address.
+     * @param String line1 The first address line portion of this address.
+     * @param String line2 The second address line portion of this address.
+     * @param String line3 The third address line portion of this address.
+     * @param String city The city portion of this address.
+     * @param String region The region, state, or province code portion of this address.
+     * @param String postalCode The postal code or zip code portion of this address.
+     * @param String country The two-character ISO-3166 code of the country portion of this address.
      * @return FetchResult
      */
     public FetchResult<JurisdictionOverrideModel> listJurisdictionsByAddress(String line1, String line2, String line3, String city, String region, String postalCode, String country)
@@ -1638,16 +1638,16 @@ public class AvaTaxClient {
      * jurisdiction in AvaTax.
      *             
      * 
-     * @param string line1 The first address line portion of this address.
-     * @param string line2 The second address line portion of this address.
-     * @param string line3 The third address line portion of this address.
-     * @param string city The city portion of this address.
-     * @param string region The region, state, or province code portion of this address.
-     * @param string postalCode The postal code or zip code portion of this address.
-     * @param string country The two-character ISO-3166 code of the country portion of this address.
+     * @param String line1 The first address line portion of this address.
+     * @param String line2 The second address line portion of this address.
+     * @param String line3 The third address line portion of this address.
+     * @param String city The city portion of this address.
+     * @param String region The region, state, or province code portion of this address.
+     * @param String postalCode The postal code or zip code portion of this address.
+     * @param String country The two-character ISO-3166 code of the country portion of this address.
      * @return FetchResult
      */
-    public FetchResult listJurisdictionsByAddressAsync(string line1, string line2, string line3, string city, string region, string postalCode, string country)
+    public FetchResult listJurisdictionsByAddressAsync(String line1, String line2, String line3, String city, String region, String postalCode, String country)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/jurisdictionsnearaddress");
         path.AddQuery("line1", line1);
@@ -1669,13 +1669,13 @@ public class AvaTaxClient {
      * This information is not usually required in order to calculate tax correctly, but is almost always required to file your tax correctly.
      * You can call this API call for any address and obtain information about what questions must be answered in order to properly
      * 
-     * @param string line1 The first line of this location's address.
-     * @param string line2 The second line of this location's address.
-     * @param string line3 The third line of this location's address.
-     * @param string city The city part of this location's address.
-     * @param string region The region, state, or province part of this location's address.
-     * @param string postalCode The postal code of this location's address.
-     * @param string country The country part of this location's address.
+     * @param String line1 The first line of this location's address.
+     * @param String line2 The second line of this location's address.
+     * @param String line3 The third line of this location's address.
+     * @param String city The city part of this location's address.
+     * @param String region The region, state, or province part of this location's address.
+     * @param String postalCode The postal code of this location's address.
+     * @param String country The country part of this location's address.
      * @param BigDecimal latitude Optionally identify the location via latitude/longitude instead of via address.
      * @param BigDecimal longitude Optionally identify the location via latitude/longitude instead of via address.
      * @return FetchResult
@@ -1704,18 +1704,18 @@ public class AvaTaxClient {
      * This information is not usually required in order to calculate tax correctly, but is almost always required to file your tax correctly.
      * You can call this API call for any address and obtain information about what questions must be answered in order to properly
      * 
-     * @param string line1 The first line of this location's address.
-     * @param string line2 The second line of this location's address.
-     * @param string line3 The third line of this location's address.
-     * @param string city The city part of this location's address.
-     * @param string region The region, state, or province part of this location's address.
-     * @param string postalCode The postal code of this location's address.
-     * @param string country The country part of this location's address.
+     * @param String line1 The first line of this location's address.
+     * @param String line2 The second line of this location's address.
+     * @param String line3 The third line of this location's address.
+     * @param String city The city part of this location's address.
+     * @param String region The region, state, or province part of this location's address.
+     * @param String postalCode The postal code of this location's address.
+     * @param String country The country part of this location's address.
      * @param BigDecimal latitude Optionally identify the location via latitude/longitude instead of via address.
      * @param BigDecimal longitude Optionally identify the location via latitude/longitude instead of via address.
      * @return FetchResult
      */
-    public FetchResult listLocationQuestionsByAddressAsync(string line1, string line2, string line3, string city, string region, string postalCode, string country, BigDecimal latitude, BigDecimal longitude)
+    public FetchResult listLocationQuestionsByAddressAsync(String line1, String line2, String line3, String city, String region, String postalCode, String country, BigDecimal latitude, BigDecimal longitude)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/locationquestions");
         path.AddQuery("line1", line1);
@@ -1766,13 +1766,13 @@ public class AvaTaxClient {
      * In general, it is usually expected that a company will declare nexus in all the jurisdictions that apply to each physical address
      * where the company does business.
      * 
-     * @param string line1 The first address line portion of this address.
-     * @param string line2 The first address line portion of this address.
-     * @param string line3 The first address line portion of this address.
-     * @param string city The city portion of this address.
-     * @param string region The region, state, or province code portion of this address.
-     * @param string postalCode The postal code or zip code portion of this address.
-     * @param string country The two-character ISO-3166 code of the country portion of this address.
+     * @param String line1 The first address line portion of this address.
+     * @param String line2 The first address line portion of this address.
+     * @param String line3 The first address line portion of this address.
+     * @param String city The city portion of this address.
+     * @param String region The region, state, or province code portion of this address.
+     * @param String postalCode The postal code or zip code portion of this address.
+     * @param String country The two-character ISO-3166 code of the country portion of this address.
      * @return FetchResult
      */
     public FetchResult<NexusModel> listNexusByAddress(String line1, String line2, String line3, String city, String region, String postalCode, String country)
@@ -1796,16 +1796,16 @@ public class AvaTaxClient {
      * In general, it is usually expected that a company will declare nexus in all the jurisdictions that apply to each physical address
      * where the company does business.
      * 
-     * @param string line1 The first address line portion of this address.
-     * @param string line2 The first address line portion of this address.
-     * @param string line3 The first address line portion of this address.
-     * @param string city The city portion of this address.
-     * @param string region The region, state, or province code portion of this address.
-     * @param string postalCode The postal code or zip code portion of this address.
-     * @param string country The two-character ISO-3166 code of the country portion of this address.
+     * @param String line1 The first address line portion of this address.
+     * @param String line2 The first address line portion of this address.
+     * @param String line3 The first address line portion of this address.
+     * @param String city The city portion of this address.
+     * @param String region The region, state, or province code portion of this address.
+     * @param String postalCode The postal code or zip code portion of this address.
+     * @param String country The two-character ISO-3166 code of the country portion of this address.
      * @return FetchResult
      */
-    public FetchResult listNexusByAddressAsync(string line1, string line2, string line3, string city, string region, string postalCode, string country)
+    public FetchResult listNexusByAddressAsync(String line1, String line2, String line3, String city, String region, String postalCode, String country)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/nexus/byaddress");
         path.AddQuery("line1", line1);
@@ -1832,7 +1832,7 @@ public class AvaTaxClient {
      * This API is intended to provide useful information when examining a tax form.  If you are about to begin filing
      * a tax form, you may want to know whether you have declared nexus in all the jurisdictions related to that tax 
      * 
-     * @param string formCode The form code that we are looking up the nexus for
+     * @param String formCode The form code that we are looking up the nexus for
      * @return NexusByTaxFormModel
      */
     public NexusByTaxFormModel listNexusByFormCode(String formCode)
@@ -1856,10 +1856,10 @@ public class AvaTaxClient {
      * This API is intended to provide useful information when examining a tax form.  If you are about to begin filing
      * a tax form, you may want to know whether you have declared nexus in all the jurisdictions related to that tax 
      * 
-     * @param string formCode The form code that we are looking up the nexus for
+     * @param String formCode The form code that we are looking up the nexus for
      * @return NexusByTaxFormModel
      */
-    public NexusByTaxFormModel listNexusByFormCodeAsync(string formCode)
+    public NexusByTaxFormModel listNexusByFormCodeAsync(String formCode)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/nexus/byform/{formCode}");
         path.ApplyField("formCode", formCode);
@@ -2185,7 +2185,7 @@ public class AvaTaxClient {
      * 
      * Returns the full list of Avalara-supported rate type file types
      * 
-     * @param string country 
+     * @param String country 
      * @return FetchResult
      */
     public FetchResult<RateTypeModel> listRateTypesByCountry(String country)
@@ -2200,10 +2200,10 @@ public class AvaTaxClient {
      * 
      * Returns the full list of Avalara-supported rate type file types
      * 
-     * @param string country 
+     * @param String country 
      * @return FetchResult
      */
-    public FetchResult listRateTypesByCountryAsync(string country)
+    public FetchResult listRateTypesByCountryAsync(String country)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/countries/{country}/ratetypes");
         path.ApplyField("country", country);
@@ -2244,7 +2244,7 @@ public class AvaTaxClient {
      * Returns a list of all ISO 3166 region codes for a specific country code, and their US English friendly names.
      * This API is intended to be useful when presenting a dropdown box in your website to allow customers to select a region 
      * 
-     * @param string country 
+     * @param String country 
      * @return FetchResult
      */
     public FetchResult<IsoRegionModel> listRegionsByCountry(String country)
@@ -2260,10 +2260,10 @@ public class AvaTaxClient {
      * Returns a list of all ISO 3166 region codes for a specific country code, and their US English friendly names.
      * This API is intended to be useful when presenting a dropdown box in your website to allow customers to select a region 
      * 
-     * @param string country 
+     * @param String country 
      * @return FetchResult
      */
-    public FetchResult listRegionsByCountryAsync(string country)
+    public FetchResult listRegionsByCountryAsync(String country)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/countries/{country}/regions");
         path.ApplyField("country", country);
@@ -2582,10 +2582,10 @@ public class AvaTaxClient {
      * Retrieve all filing calendars for this company
      * 
      * @param int companyId The ID of the company that owns these batches
-     * @param string filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param String filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
-     * @param string orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult
      */
     public FetchResult<FilingCalendarModel> apiV2CompaniesByCompanyIdFilingcalendarsGet(Int32 companyId, String filter, Int32? top, Int32? skip, String orderBy)
@@ -2603,13 +2603,13 @@ public class AvaTaxClient {
      * Retrieve all filing calendars for this company
      * 
      * @param int companyId The ID of the company that owns these batches
-     * @param string filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param String filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
-     * @param string orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult
      */
-    public FetchResult apiV2CompaniesByCompanyIdFilingcalendarsGetAsync(int companyId, string filter, Integer top, Integer skip, string orderBy)
+    public FetchResult apiV2CompaniesByCompanyIdFilingcalendarsGetAsync(int companyId, String filter, Integer top, Integer skip, String orderBy)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingcalendars");
         path.ApplyField("companyId", companyId);
@@ -2627,10 +2627,10 @@ public class AvaTaxClient {
      * A "filing request" represents a request to change an existing filing calendar.  Filing requests
      * 
      * @param int companyId The ID of the company that owns these batches
-     * @param string filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param String filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
-     * @param string orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult
      */
     public FetchResult<FilingRequestModel> apiV2CompaniesByCompanyIdFilingrequestsGet(Int32 companyId, String filter, Int32? top, Int32? skip, String orderBy)
@@ -2651,13 +2651,13 @@ public class AvaTaxClient {
      * A "filing request" represents a request to change an existing filing calendar.  Filing requests
      * 
      * @param int companyId The ID of the company that owns these batches
-     * @param string filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param String filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
-     * @param string orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult
      */
-    public FetchResult apiV2CompaniesByCompanyIdFilingrequestsGetAsync(int companyId, string filter, Integer top, Integer skip, string orderBy)
+    public FetchResult apiV2CompaniesByCompanyIdFilingrequestsGetAsync(int companyId, String filter, Integer top, Integer skip, String orderBy)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingrequests");
         path.ApplyField("companyId", companyId);
@@ -2672,7 +2672,7 @@ public class AvaTaxClient {
      * Returns a list of options for adding the specified form.
      * 
      * @param int companyId The unique ID of the company that owns the filing calendar object
-     * @param string formCode The unique code of the form
+     * @param String formCode The unique code of the form
      * @return CycleAddOptionModel[]
      */
     public List<CycleAddOptionModel> cycleSafeAdd(Int32 companyId, String formCode)
@@ -2687,10 +2687,10 @@ public class AvaTaxClient {
      * Returns a list of options for adding the specified form.
      * 
      * @param int companyId The unique ID of the company that owns the filing calendar object
-     * @param string formCode The unique code of the form
+     * @param String formCode The unique code of the form
      * @return CycleAddOptionModel[]
      */
-    public CycleAddOptionModel[] cycleSafeAddAsync(int companyId, string formCode)
+    public CycleAddOptionModel[] cycleSafeAddAsync(int companyId, String formCode)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingcalendars/add/options");
         path.ApplyField("companyId", companyId);
@@ -3147,10 +3147,10 @@ public class AvaTaxClient {
     /**
      * Retrieve all filing calendars
      * 
-     * @param string filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param String filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
-     * @param string orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult
      */
     public FetchResult<FilingCalendarModel> queryFilingCalendars(String filter, Int32? top, Int32? skip, String orderBy)
@@ -3166,13 +3166,13 @@ public class AvaTaxClient {
     /**
      * Retrieve all filing calendars
      * 
-     * @param string filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param String filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
-     * @param string orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult
      */
-    public FetchResult queryFilingCalendarsAsync(string filter, Integer top, Integer skip, string orderBy)
+    public FetchResult queryFilingCalendarsAsync(String filter, Integer top, Integer skip, String orderBy)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/filingcalendars");
         path.AddQuery("$filter", filter);
@@ -3191,10 +3191,10 @@ public class AvaTaxClient {
      * 
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * 
-     * @param string filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param String filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
-     * @param string orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult
      */
     public FetchResult<FilingRequestModel> queryFilingRequests(String filter, Int32? top, Int32? skip, String orderBy)
@@ -3216,13 +3216,13 @@ public class AvaTaxClient {
      * 
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * 
-     * @param string filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param String filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
-     * @param string orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult
      */
-    public FetchResult queryFilingRequestsAsync(string filter, Integer top, Integer skip, string orderBy)
+    public FetchResult queryFilingRequestsAsync(String filter, Integer top, Integer skip, String orderBy)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/filingrequests");
         path.AddQuery("$filter", filter);
@@ -3295,7 +3295,7 @@ public class AvaTaxClient {
      * @param int companyId The ID of the company that owns the filings.
      * @param short year The year of the filing period to approve.
      * @param byte month The month of the filing period to approve.
-     * @param string country The two-character ISO-3166 code for the country.
+     * @param String country The two-character ISO-3166 code for the country.
      * @param ApproveFilingsModel model The approve request you wish to execute.
      * @return FilingModel[]
      */
@@ -3322,11 +3322,11 @@ public class AvaTaxClient {
      * @param int companyId The ID of the company that owns the filings.
      * @param short year The year of the filing period to approve.
      * @param byte month The month of the filing period to approve.
-     * @param string country The two-character ISO-3166 code for the country.
+     * @param String country The two-character ISO-3166 code for the country.
      * @param ApproveFilingsModel model The approve request you wish to execute.
      * @return FilingModel[]
      */
-    public FilingModel[] approveFilingsCountryAsync(int companyId, short year, byte month, string country, ApproveFilingsModel model)
+    public FilingModel[] approveFilingsCountryAsync(int companyId, short year, byte month, String country, ApproveFilingsModel model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/{country}/approve");
         path.ApplyField("companyId", companyId);
@@ -3349,8 +3349,8 @@ public class AvaTaxClient {
      * @param int companyId The ID of the company that owns the filings.
      * @param short year The year of the filing period to approve.
      * @param byte month The month of the filing period to approve.
-     * @param string country The two-character ISO-3166 code for the country.
-     * @param string region The two or three character region code for the region.
+     * @param String country The two-character ISO-3166 code for the country.
+     * @param String region The two or three character region code for the region.
      * @param ApproveFilingsModel model The approve request you wish to execute.
      * @return FilingModel[]
      */
@@ -3378,12 +3378,12 @@ public class AvaTaxClient {
      * @param int companyId The ID of the company that owns the filings.
      * @param short year The year of the filing period to approve.
      * @param byte month The month of the filing period to approve.
-     * @param string country The two-character ISO-3166 code for the country.
-     * @param string region The two or three character region code for the region.
+     * @param String country The two-character ISO-3166 code for the country.
+     * @param String region The two or three character region code for the region.
      * @param ApproveFilingsModel model The approve request you wish to execute.
      * @return FilingModel[]
      */
-    public FilingModel[] approveFilingsCountryRegionAsync(int companyId, short year, byte month, string country, string region, ApproveFilingsModel model)
+    public FilingModel[] approveFilingsCountryRegionAsync(int companyId, short year, byte month, String country, String region, ApproveFilingsModel model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/{country}/{region}/approve");
         path.ApplyField("companyId", companyId);
@@ -3406,9 +3406,9 @@ public class AvaTaxClient {
      * @param int companyId The ID of the company that owns the filing being adjusted.
      * @param short year The year of the filing's filing period being adjusted.
      * @param byte month The month of the filing's filing period being adjusted.
-     * @param string country The two-character ISO-3166 code for the country of the filing being adjusted.
-     * @param string region The two or three character region code for the region.
-     * @param string formCode The unique code of the form being adjusted.
+     * @param String country The two-character ISO-3166 code for the country of the filing being adjusted.
+     * @param String region The two or three character region code for the region.
+     * @param String formCode The unique code of the form being adjusted.
      * @param FilingAdjustmentModel[] model A list of Adjustments to be created for the specified filing.
      * @return FilingAdjustmentModel[]
      */
@@ -3436,13 +3436,13 @@ public class AvaTaxClient {
      * @param int companyId The ID of the company that owns the filing being adjusted.
      * @param short year The year of the filing's filing period being adjusted.
      * @param byte month The month of the filing's filing period being adjusted.
-     * @param string country The two-character ISO-3166 code for the country of the filing being adjusted.
-     * @param string region The two or three character region code for the region.
-     * @param string formCode The unique code of the form being adjusted.
+     * @param String country The two-character ISO-3166 code for the country of the filing being adjusted.
+     * @param String region The two or three character region code for the region.
+     * @param String formCode The unique code of the form being adjusted.
      * @param FilingAdjustmentModel[] model A list of Adjustments to be created for the specified filing.
      * @return FilingAdjustmentModel[]
      */
-    public FilingAdjustmentModel[] createReturnAdjustmentAsync(int companyId, short year, byte month, string country, string region, string formCode, FilingAdjustmentModel[] model)
+    public FilingAdjustmentModel[] createReturnAdjustmentAsync(int companyId, short year, byte month, String country, String region, String formCode, FilingAdjustmentModel[] model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/{country}/{region}/{formCode}/adjust");
         path.ApplyField("companyId", companyId);
@@ -3465,9 +3465,9 @@ public class AvaTaxClient {
      * @param int companyId The ID of the company that owns the filing being changed.
      * @param short year The month of the filing's filing period being changed.
      * @param byte month The month of the filing's filing period being changed.
-     * @param string country The two-character ISO-3166 code for the country of the filing being changed.
-     * @param string region The two or three character region code for the region of the filing being changed.
-     * @param string formCode The unique code of the form being changed.
+     * @param String country The two-character ISO-3166 code for the country of the filing being changed.
+     * @param String region The two or three character region code for the region of the filing being changed.
+     * @param String formCode The unique code of the form being changed.
      * @param FilingAugmentationModel[] model A list of augmentations to be created for the specified filing.
      * @return FilingAugmentationModel[]
      */
@@ -3494,13 +3494,13 @@ public class AvaTaxClient {
      * @param int companyId The ID of the company that owns the filing being changed.
      * @param short year The month of the filing's filing period being changed.
      * @param byte month The month of the filing's filing period being changed.
-     * @param string country The two-character ISO-3166 code for the country of the filing being changed.
-     * @param string region The two or three character region code for the region of the filing being changed.
-     * @param string formCode The unique code of the form being changed.
+     * @param String country The two-character ISO-3166 code for the country of the filing being changed.
+     * @param String region The two or three character region code for the region of the filing being changed.
+     * @param String formCode The unique code of the form being changed.
      * @param FilingAugmentationModel[] model A list of augmentations to be created for the specified filing.
      * @return FilingAugmentationModel[]
      */
-    public FilingAugmentationModel[] createReturnAugmentationAsync(int companyId, short year, byte month, string country, string region, string formCode, FilingAugmentationModel[] model)
+    public FilingAugmentationModel[] createReturnAugmentationAsync(int companyId, short year, byte month, String country, String region, String formCode, FilingAugmentationModel[] model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/{country}/{region}/{formCode}/augment");
         path.ApplyField("companyId", companyId);
@@ -3821,7 +3821,7 @@ public class AvaTaxClient {
      * @param int companyId The ID of the company that owns the filings.
      * @param short year The year of the filing period.
      * @param byte month The two digit month of the filing period.
-     * @param string country The two-character ISO-3166 code for the country.
+     * @param String country The two-character ISO-3166 code for the country.
      * @return FetchResult
      */
     public FetchResult<FilingModel> getFilingsByCountry(Int32 companyId, Int16 year, Byte month, String country)
@@ -3843,10 +3843,10 @@ public class AvaTaxClient {
      * @param int companyId The ID of the company that owns the filings.
      * @param short year The year of the filing period.
      * @param byte month The two digit month of the filing period.
-     * @param string country The two-character ISO-3166 code for the country.
+     * @param String country The two-character ISO-3166 code for the country.
      * @return FetchResult
      */
-    public FetchResult getFilingsByCountryAsync(int companyId, short year, byte month, string country)
+    public FetchResult getFilingsByCountryAsync(int companyId, short year, byte month, String country)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/{country}");
         path.ApplyField("companyId", companyId);
@@ -3865,8 +3865,8 @@ public class AvaTaxClient {
      * @param int companyId The ID of the company that owns the filings.
      * @param short year The year of the filing period.
      * @param byte month The two digit month of the filing period.
-     * @param string country The two-character ISO-3166 code for the country.
-     * @param string region The two or three character region code for the region.
+     * @param String country The two-character ISO-3166 code for the country.
+     * @param String region The two or three character region code for the region.
      * @return FetchResult
      */
     public FetchResult<FilingModel> getFilingsByCountryRegion(Int32 companyId, Int16 year, Byte month, String country, String region)
@@ -3889,11 +3889,11 @@ public class AvaTaxClient {
      * @param int companyId The ID of the company that owns the filings.
      * @param short year The year of the filing period.
      * @param byte month The two digit month of the filing period.
-     * @param string country The two-character ISO-3166 code for the country.
-     * @param string region The two or three character region code for the region.
+     * @param String country The two-character ISO-3166 code for the country.
+     * @param String region The two or three character region code for the region.
      * @return FetchResult
      */
-    public FetchResult getFilingsByCountryRegionAsync(int companyId, short year, byte month, string country, string region)
+    public FetchResult getFilingsByCountryRegionAsync(int companyId, short year, byte month, String country, String region)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/{country}/{region}");
         path.ApplyField("companyId", companyId);
@@ -3913,9 +3913,9 @@ public class AvaTaxClient {
      * @param int companyId The ID of the company that owns the filings.
      * @param short year The year of the filing period.
      * @param byte month The two digit month of the filing period.
-     * @param string country The two-character ISO-3166 code for the country.
-     * @param string region The two or three character region code for the region.
-     * @param string formCode The unique code of the form.
+     * @param String country The two-character ISO-3166 code for the country.
+     * @param String region The two or three character region code for the region.
+     * @param String formCode The unique code of the form.
      * @return FetchResult
      */
     public FetchResult<FilingModel> getFilingsByReturnName(Int32 companyId, Int16 year, Byte month, String country, String region, String formCode)
@@ -3939,12 +3939,12 @@ public class AvaTaxClient {
      * @param int companyId The ID of the company that owns the filings.
      * @param short year The year of the filing period.
      * @param byte month The two digit month of the filing period.
-     * @param string country The two-character ISO-3166 code for the country.
-     * @param string region The two or three character region code for the region.
-     * @param string formCode The unique code of the form.
+     * @param String country The two-character ISO-3166 code for the country.
+     * @param String region The two or three character region code for the region.
+     * @param String formCode The unique code of the form.
      * @return FetchResult
      */
-    public FetchResult getFilingsByReturnNameAsync(int companyId, short year, byte month, string country, string region, string formCode)
+    public FetchResult getFilingsByReturnNameAsync(int companyId, short year, byte month, String country, String region, String formCode)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/{country}/{region}/{formCode}");
         path.ApplyField("companyId", companyId);
@@ -4016,7 +4016,7 @@ public class AvaTaxClient {
      * @param int companyId The ID of the company that owns the filings.
      * @param short year The year of the filing period to be rebuilt.
      * @param byte month The month of the filing period to be rebuilt.
-     * @param string country The two-character ISO-3166 code for the country.
+     * @param String country The two-character ISO-3166 code for the country.
      * @param RebuildFilingsModel model The rebuild request you wish to execute.
      * @return FetchResult
      */
@@ -4042,11 +4042,11 @@ public class AvaTaxClient {
      * @param int companyId The ID of the company that owns the filings.
      * @param short year The year of the filing period to be rebuilt.
      * @param byte month The month of the filing period to be rebuilt.
-     * @param string country The two-character ISO-3166 code for the country.
+     * @param String country The two-character ISO-3166 code for the country.
      * @param RebuildFilingsModel model The rebuild request you wish to execute.
      * @return FetchResult
      */
-    public FetchResult rebuildFilingsByCountryAsync(int companyId, short year, byte month, string country, RebuildFilingsModel model)
+    public FetchResult rebuildFilingsByCountryAsync(int companyId, short year, byte month, String country, RebuildFilingsModel model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/{country}/rebuild");
         path.ApplyField("companyId", companyId);
@@ -4068,8 +4068,8 @@ public class AvaTaxClient {
      * @param int companyId The ID of the company that owns the filings.
      * @param short year The year of the filing period to be rebuilt.
      * @param byte month The month of the filing period to be rebuilt.
-     * @param string country The two-character ISO-3166 code for the country.
-     * @param string region The two or three character region code for the region.
+     * @param String country The two-character ISO-3166 code for the country.
+     * @param String region The two or three character region code for the region.
      * @param RebuildFilingsModel model The rebuild request you wish to execute.
      * @return FetchResult
      */
@@ -4096,12 +4096,12 @@ public class AvaTaxClient {
      * @param int companyId The ID of the company that owns the filings.
      * @param short year The year of the filing period to be rebuilt.
      * @param byte month The month of the filing period to be rebuilt.
-     * @param string country The two-character ISO-3166 code for the country.
-     * @param string region The two or three character region code for the region.
+     * @param String country The two-character ISO-3166 code for the country.
+     * @param String region The two or three character region code for the region.
      * @param RebuildFilingsModel model The rebuild request you wish to execute.
      * @return FetchResult
      */
-    public FetchResult rebuildFilingsByCountryRegionAsync(int companyId, short year, byte month, string country, string region, RebuildFilingsModel model)
+    public FetchResult rebuildFilingsByCountryRegionAsync(int companyId, short year, byte month, String country, String region, RebuildFilingsModel model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/{country}/{region}/rebuild");
         path.ApplyField("companyId", companyId);
@@ -4270,13 +4270,13 @@ public class AvaTaxClient {
      * 
      * Please see [Estimating Tax with REST v2](http://developer.avalara.com/blog/2016/11/04/estimating-tax-with-rest-v2/)
      * 
-     * @param string line1 The street address of the location.
-     * @param string line2 The street address of the location.
-     * @param string line3 The street address of the location.
-     * @param string city The city name of the location.
-     * @param string region The state or region of the location
-     * @param string postalCode The postal code of the location.
-     * @param string country The two letter ISO-3166 country code.
+     * @param String line1 The street address of the location.
+     * @param String line2 The street address of the location.
+     * @param String line3 The street address of the location.
+     * @param String city The city name of the location.
+     * @param String region The state or region of the location
+     * @param String postalCode The postal code of the location.
+     * @param String country The two letter ISO-3166 country code.
      * @return TaxRateModel
      */
     public TaxRateModel taxRatesByAddress(String line1, String line2, String line3, String city, String region, String postalCode, String country)
@@ -4316,16 +4316,16 @@ public class AvaTaxClient {
      * 
      * Please see [Estimating Tax with REST v2](http://developer.avalara.com/blog/2016/11/04/estimating-tax-with-rest-v2/)
      * 
-     * @param string line1 The street address of the location.
-     * @param string line2 The street address of the location.
-     * @param string line3 The street address of the location.
-     * @param string city The city name of the location.
-     * @param string region The state or region of the location
-     * @param string postalCode The postal code of the location.
-     * @param string country The two letter ISO-3166 country code.
+     * @param String line1 The street address of the location.
+     * @param String line2 The street address of the location.
+     * @param String line3 The street address of the location.
+     * @param String city The city name of the location.
+     * @param String region The state or region of the location
+     * @param String postalCode The postal code of the location.
+     * @param String country The two letter ISO-3166 country code.
      * @return TaxRateModel
      */
-    public TaxRateModel taxRatesByAddressAsync(string line1, string line2, string line3, string city, string region, string postalCode, string country)
+    public TaxRateModel taxRatesByAddressAsync(String line1, String line2, String line3, String city, String region, String postalCode, String country)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/taxrates/byaddress");
         path.AddQuery("line1", line1);
@@ -4362,8 +4362,8 @@ public class AvaTaxClient {
      * 
      * Please see [Estimating Tax with REST v2](http://developer.avalara.com/blog/2016/11/04/estimating-tax-with-rest-v2/)
      * 
-     * @param string country The two letter ISO-3166 country code.
-     * @param string postalCode The postal code of the location.
+     * @param String country The two letter ISO-3166 country code.
+     * @param String postalCode The postal code of the location.
      * @return TaxRateModel
      */
     public TaxRateModel taxRatesByPostalCode(String country, String postalCode)
@@ -4398,11 +4398,11 @@ public class AvaTaxClient {
      * 
      * Please see [Estimating Tax with REST v2](http://developer.avalara.com/blog/2016/11/04/estimating-tax-with-rest-v2/)
      * 
-     * @param string country The two letter ISO-3166 country code.
-     * @param string postalCode The postal code of the location.
+     * @param String country The two letter ISO-3166 country code.
+     * @param String postalCode The postal code of the location.
      * @return TaxRateModel
      */
-    public TaxRateModel taxRatesByPostalCodeAsync(string country, string postalCode)
+    public TaxRateModel taxRatesByPostalCodeAsync(String country, String postalCode)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/taxrates/bypostalcode");
         path.AddQuery("country", country);
@@ -4608,11 +4608,11 @@ public class AvaTaxClient {
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * 
      * @param int companyId The ID of the company that defined these items
-     * @param string filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param string include A comma separated list of child objects to return underneath the primary object.
+     * @param String filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param String include A comma separated list of child objects to return underneath the primary object.
      * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
-     * @param string orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult
      */
     public FetchResult<ItemModel> listItemsByCompany(Int32 companyId, String filter, String include, Int32? top, Int32? skip, String orderBy)
@@ -4637,14 +4637,14 @@ public class AvaTaxClient {
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * 
      * @param int companyId The ID of the company that defined these items
-     * @param string filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param string include A comma separated list of child objects to return underneath the primary object.
+     * @param String filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param String include A comma separated list of child objects to return underneath the primary object.
      * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
-     * @param string orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult
      */
-    public FetchResult listItemsByCompanyAsync(int companyId, string filter, string include, Integer top, Integer skip, string orderBy)
+    public FetchResult listItemsByCompanyAsync(int companyId, String filter, String include, Integer top, Integer skip, String orderBy)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/items");
         path.ApplyField("companyId", companyId);
@@ -4664,11 +4664,11 @@ public class AvaTaxClient {
      * 
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * 
-     * @param string filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param string include A comma separated list of child objects to return underneath the primary object.
+     * @param String filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param String include A comma separated list of child objects to return underneath the primary object.
      * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
-     * @param string orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult
      */
     public FetchResult<ItemModel> queryItems(String filter, String include, Int32? top, Int32? skip, String orderBy)
@@ -4690,14 +4690,14 @@ public class AvaTaxClient {
      * 
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * 
-     * @param string filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param string include A comma separated list of child objects to return underneath the primary object.
+     * @param String filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param String include A comma separated list of child objects to return underneath the primary object.
      * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
-     * @param string orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult
      */
-    public FetchResult queryItemsAsync(string filter, string include, Integer top, Integer skip, string orderBy)
+    public FetchResult queryItemsAsync(String filter, String include, Integer top, Integer skip, String orderBy)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/items");
         path.AddQuery("$filter", filter);
@@ -4871,11 +4871,11 @@ public class AvaTaxClient {
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * 
      * @param int accountId The ID of the account that owns this override
-     * @param string filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param string include A comma separated list of child objects to return underneath the primary object.
+     * @param String filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param String include A comma separated list of child objects to return underneath the primary object.
      * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
-     * @param string orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult
      */
     public FetchResult<JurisdictionOverrideModel> listJurisdictionOverridesByAccount(Int32 accountId, String filter, String include, Int32? top, Int32? skip, String orderBy)
@@ -4903,14 +4903,14 @@ public class AvaTaxClient {
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * 
      * @param int accountId The ID of the account that owns this override
-     * @param string filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param string include A comma separated list of child objects to return underneath the primary object.
+     * @param String filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param String include A comma separated list of child objects to return underneath the primary object.
      * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
-     * @param string orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult
      */
-    public FetchResult listJurisdictionOverridesByAccountAsync(int accountId, string filter, string include, Integer top, Integer skip, string orderBy)
+    public FetchResult listJurisdictionOverridesByAccountAsync(int accountId, String filter, String include, Integer top, Integer skip, String orderBy)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/jurisdictionoverrides");
         path.ApplyField("accountId", accountId);
@@ -4934,11 +4934,11 @@ public class AvaTaxClient {
      * 
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * 
-     * @param string filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param string include A comma separated list of child objects to return underneath the primary object.
+     * @param String filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param String include A comma separated list of child objects to return underneath the primary object.
      * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
-     * @param string orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult
      */
     public FetchResult<JurisdictionOverrideModel> queryJurisdictionOverrides(String filter, String include, Int32? top, Int32? skip, String orderBy)
@@ -4964,14 +4964,14 @@ public class AvaTaxClient {
      * 
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * 
-     * @param string filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param string include A comma separated list of child objects to return underneath the primary object.
+     * @param String filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param String include A comma separated list of child objects to return underneath the primary object.
      * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
-     * @param string orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult
      */
-    public FetchResult queryJurisdictionOverridesAsync(string filter, string include, Integer top, Integer skip, string orderBy)
+    public FetchResult queryJurisdictionOverridesAsync(String filter, String include, Integer top, Integer skip, String orderBy)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/jurisdictionoverrides");
         path.AddQuery("$filter", filter);
@@ -5182,11 +5182,11 @@ public class AvaTaxClient {
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * 
      * @param int companyId The ID of the company that owns these locations
-     * @param string filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param string include A comma separated list of child objects to return underneath the primary object.
+     * @param String filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param String include A comma separated list of child objects to return underneath the primary object.
      * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
-     * @param string orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult
      */
     public FetchResult<LocationModel> listLocationsByCompany(Int32 companyId, String filter, String include, Int32? top, Int32? skip, String orderBy)
@@ -5213,14 +5213,14 @@ public class AvaTaxClient {
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * 
      * @param int companyId The ID of the company that owns these locations
-     * @param string filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param string include A comma separated list of child objects to return underneath the primary object.
+     * @param String filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param String include A comma separated list of child objects to return underneath the primary object.
      * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
-     * @param string orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult
      */
-    public FetchResult listLocationsByCompanyAsync(int companyId, string filter, string include, Integer top, Integer skip, string orderBy)
+    public FetchResult listLocationsByCompanyAsync(int companyId, String filter, String include, Integer top, Integer skip, String orderBy)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/locations");
         path.ApplyField("companyId", companyId);
@@ -5243,11 +5243,11 @@ public class AvaTaxClient {
      * 
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * 
-     * @param string filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param string include A comma separated list of child objects to return underneath the primary object.
+     * @param String filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param String include A comma separated list of child objects to return underneath the primary object.
      * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
-     * @param string orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult
      */
     public FetchResult<LocationModel> queryLocations(String filter, String include, Int32? top, Int32? skip, String orderBy)
@@ -5272,14 +5272,14 @@ public class AvaTaxClient {
      * 
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * 
-     * @param string filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param string include A comma separated list of child objects to return underneath the primary object.
+     * @param String filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param String include A comma separated list of child objects to return underneath the primary object.
      * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
-     * @param string orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult
      */
-    public FetchResult queryLocationsAsync(string filter, string include, Integer top, Integer skip, string orderBy)
+    public FetchResult queryLocationsAsync(String filter, String include, Integer top, Integer skip, String orderBy)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/locations");
         path.AddQuery("$filter", filter);
@@ -5493,7 +5493,7 @@ public class AvaTaxClient {
      * a tax form, you may want to know whether you have declared nexus in all the jurisdictions related to that tax 
      * 
      * @param int companyId The ID of the company that owns this nexus object
-     * @param string formCode The form code that we are looking up the nexus for
+     * @param String formCode The form code that we are looking up the nexus for
      * @return NexusByTaxFormModel
      */
     public NexusByTaxFormModel getNexusByFormCode(Int32 companyId, String formCode)
@@ -5519,10 +5519,10 @@ public class AvaTaxClient {
      * a tax form, you may want to know whether you have declared nexus in all the jurisdictions related to that tax 
      * 
      * @param int companyId The ID of the company that owns this nexus object
-     * @param string formCode The form code that we are looking up the nexus for
+     * @param String formCode The form code that we are looking up the nexus for
      * @return NexusByTaxFormModel
      */
-    public NexusByTaxFormModel getNexusByFormCodeAsync(int companyId, string formCode)
+    public NexusByTaxFormModel getNexusByFormCodeAsync(int companyId, String formCode)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/nexus/byform/{formCode}");
         path.ApplyField("companyId", companyId);
@@ -5542,11 +5542,11 @@ public class AvaTaxClient {
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * 
      * @param int companyId The ID of the company that owns these nexus objects
-     * @param string filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param string include A comma separated list of child objects to return underneath the primary object.
+     * @param String filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param String include A comma separated list of child objects to return underneath the primary object.
      * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
-     * @param string orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult
      */
     public FetchResult<NexusModel> listNexusByCompany(Int32 companyId, String filter, String include, Int32? top, Int32? skip, String orderBy)
@@ -5573,14 +5573,14 @@ public class AvaTaxClient {
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * 
      * @param int companyId The ID of the company that owns these nexus objects
-     * @param string filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param string include A comma separated list of child objects to return underneath the primary object.
+     * @param String filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param String include A comma separated list of child objects to return underneath the primary object.
      * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
-     * @param string orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult
      */
-    public FetchResult listNexusByCompanyAsync(int companyId, string filter, string include, Integer top, Integer skip, string orderBy)
+    public FetchResult listNexusByCompanyAsync(int companyId, String filter, String include, Integer top, Integer skip, String orderBy)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/nexus");
         path.ApplyField("companyId", companyId);
@@ -5603,11 +5603,11 @@ public class AvaTaxClient {
      * 
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * 
-     * @param string filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param string include A comma separated list of child objects to return underneath the primary object.
+     * @param String filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param String include A comma separated list of child objects to return underneath the primary object.
      * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
-     * @param string orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult
      */
     public FetchResult<NexusModel> queryNexus(String filter, String include, Int32? top, Int32? skip, String orderBy)
@@ -5632,14 +5632,14 @@ public class AvaTaxClient {
      * 
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * 
-     * @param string filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param string include A comma separated list of child objects to return underneath the primary object.
+     * @param String filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param String include A comma separated list of child objects to return underneath the primary object.
      * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
-     * @param string orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult
      */
-    public FetchResult queryNexusAsync(string filter, string include, Integer top, Integer skip, string orderBy)
+    public FetchResult queryNexusAsync(String filter, String include, Integer top, Integer skip, String orderBy)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/nexus");
         path.AddQuery("$filter", filter);
@@ -6175,11 +6175,11 @@ public class AvaTaxClient {
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * 
      * @param int companyId The ID of the company that owns these notices.
-     * @param string filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param string include A comma separated list of child objects to return underneath the primary object.
+     * @param String filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param String include A comma separated list of child objects to return underneath the primary object.
      * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
-     * @param string orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult
      */
     public FetchResult<NoticeModel> listNoticesByCompany(Int32 companyId, String filter, String include, Int32? top, Int32? skip, String orderBy)
@@ -6205,14 +6205,14 @@ public class AvaTaxClient {
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * 
      * @param int companyId The ID of the company that owns these notices.
-     * @param string filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param string include A comma separated list of child objects to return underneath the primary object.
+     * @param String filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param String include A comma separated list of child objects to return underneath the primary object.
      * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
-     * @param string orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult
      */
-    public FetchResult listNoticesByCompanyAsync(int companyId, string filter, string include, Integer top, Integer skip, string orderBy)
+    public FetchResult listNoticesByCompanyAsync(int companyId, String filter, String include, Integer top, Integer skip, String orderBy)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices");
         path.ApplyField("companyId", companyId);
@@ -6234,11 +6234,11 @@ public class AvaTaxClient {
      * 
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * 
-     * @param string filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param string include A comma separated list of child objects to return underneath the primary object.
+     * @param String filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param String include A comma separated list of child objects to return underneath the primary object.
      * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
-     * @param string orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult
      */
     public FetchResult<NoticeModel> queryNotices(String filter, String include, Int32? top, Int32? skip, String orderBy)
@@ -6262,14 +6262,14 @@ public class AvaTaxClient {
      * 
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * 
-     * @param string filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param string include A comma separated list of child objects to return underneath the primary object.
+     * @param String filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param String include A comma separated list of child objects to return underneath the primary object.
      * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
-     * @param string orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult
      */
-    public FetchResult queryNoticesAsync(string filter, string include, Integer top, Integer skip, string orderBy)
+    public FetchResult queryNoticesAsync(String filter, String include, Integer top, Integer skip, String orderBy)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/notices");
         path.AddQuery("$filter", filter);
@@ -6432,7 +6432,7 @@ public class AvaTaxClient {
      * This API only allows the currently authenticated user to change their password; it cannot be used to apply to a
      * 
      * @param PasswordChangeModel model An object containing your current password and the new password.
-     * @return string
+     * @return String
      */
     public String changePassword(PasswordChangeModel model)
     {
@@ -6450,9 +6450,9 @@ public class AvaTaxClient {
      * This API only allows the currently authenticated user to change their password; it cannot be used to apply to a
      * 
      * @param PasswordChangeModel model An object containing your current password and the new password.
-     * @return string
+     * @return String
      */
-    public string changePasswordAsync(PasswordChangeModel model)
+    public String changePasswordAsync(PasswordChangeModel model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/passwords");
         return ((RestCall<String>)restCallFactory.createRestCall("Put", path, model, new TypeToken<String>(){})).call();
@@ -6697,11 +6697,11 @@ public class AvaTaxClient {
      * * Users
      *             
      * 
-     * @param string include A comma separated list of child objects to return underneath the primary object.
-     * @param string filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param String include A comma separated list of child objects to return underneath the primary object.
+     * @param String filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
-     * @param string orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult
      */
     public FetchResult<AccountModel> queryAccounts(String include, String filter, Int32? top, Int32? skip, String orderBy)
@@ -6730,14 +6730,14 @@ public class AvaTaxClient {
      * * Users
      *             
      * 
-     * @param string include A comma separated list of child objects to return underneath the primary object.
-     * @param string filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param String include A comma separated list of child objects to return underneath the primary object.
+     * @param String filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
-     * @param string orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult
      */
-    public FetchResult queryAccountsAsync(string include, string filter, Integer top, Integer skip, string orderBy)
+    public FetchResult queryAccountsAsync(String include, String filter, Integer top, Integer skip, String orderBy)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts");
         path.AddQuery("$include", include);
@@ -6759,7 +6759,7 @@ public class AvaTaxClient {
      * 
      * @param int userId The unique ID of the user whose password will be changed
      * @param SetPasswordModel model The new password for this user
-     * @return string
+     * @return String
      */
     public String resetPassword(Int32 userId, SetPasswordModel model)
     {
@@ -6779,9 +6779,9 @@ public class AvaTaxClient {
      * 
      * @param int userId The unique ID of the user whose password will be changed
      * @param SetPasswordModel model The new password for this user
-     * @return string
+     * @return String
      */
-    public string resetPasswordAsync(int userId, SetPasswordModel model)
+    public String resetPasswordAsync(int userId, SetPasswordModel model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/passwords/{userId}/reset");
         path.ApplyField("userId", userId);
@@ -7002,11 +7002,11 @@ public class AvaTaxClient {
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * 
      * @param int companyId The ID of the company that owns these settings
-     * @param string filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param string include A comma separated list of child objects to return underneath the primary object.
+     * @param String filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param String include A comma separated list of child objects to return underneath the primary object.
      * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
-     * @param string orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult
      */
     public FetchResult<SettingModel> listSettingsByCompany(Int32 companyId, String filter, String include, Int32? top, Int32? skip, String orderBy)
@@ -7035,14 +7035,14 @@ public class AvaTaxClient {
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * 
      * @param int companyId The ID of the company that owns these settings
-     * @param string filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param string include A comma separated list of child objects to return underneath the primary object.
+     * @param String filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param String include A comma separated list of child objects to return underneath the primary object.
      * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
-     * @param string orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult
      */
-    public FetchResult listSettingsByCompanyAsync(int companyId, string filter, string include, Integer top, Integer skip, string orderBy)
+    public FetchResult listSettingsByCompanyAsync(int companyId, String filter, String include, Integer top, Integer skip, String orderBy)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/settings");
         path.ApplyField("companyId", companyId);
@@ -7067,11 +7067,11 @@ public class AvaTaxClient {
      * 
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * 
-     * @param string filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param string include A comma separated list of child objects to return underneath the primary object.
+     * @param String filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param String include A comma separated list of child objects to return underneath the primary object.
      * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
-     * @param string orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult
      */
     public FetchResult<SettingModel> querySettings(String filter, String include, Int32? top, Int32? skip, String orderBy)
@@ -7098,14 +7098,14 @@ public class AvaTaxClient {
      * 
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * 
-     * @param string filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param string include A comma separated list of child objects to return underneath the primary object.
+     * @param String filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param String include A comma separated list of child objects to return underneath the primary object.
      * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
-     * @param string orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult
      */
-    public FetchResult querySettingsAsync(string filter, string include, Integer top, Integer skip, string orderBy)
+    public FetchResult querySettingsAsync(String filter, String include, Integer top, Integer skip, String orderBy)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/settings");
         path.AddQuery("$filter", filter);
@@ -7212,10 +7212,10 @@ public class AvaTaxClient {
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * 
      * @param int accountId The ID of the account that owns these subscriptions
-     * @param string filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param String filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
-     * @param string orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult
      */
     public FetchResult<SubscriptionModel> listSubscriptionsByAccount(Int32 accountId, String filter, Int32? top, Int32? skip, String orderBy)
@@ -7239,13 +7239,13 @@ public class AvaTaxClient {
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * 
      * @param int accountId The ID of the account that owns these subscriptions
-     * @param string filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param String filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
-     * @param string orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult
      */
-    public FetchResult listSubscriptionsByAccountAsync(int accountId, string filter, Integer top, Integer skip, string orderBy)
+    public FetchResult listSubscriptionsByAccountAsync(int accountId, String filter, Integer top, Integer skip, String orderBy)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/subscriptions");
         path.ApplyField("accountId", accountId);
@@ -7265,10 +7265,10 @@ public class AvaTaxClient {
      * 
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * 
-     * @param string filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param String filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
-     * @param string orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult
      */
     public FetchResult<SubscriptionModel> querySubscriptions(String filter, Int32? top, Int32? skip, String orderBy)
@@ -7290,13 +7290,13 @@ public class AvaTaxClient {
      * 
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * 
-     * @param string filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param String filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
-     * @param string orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult
      */
-    public FetchResult querySubscriptionsAsync(string filter, Integer top, Integer skip, string orderBy)
+    public FetchResult querySubscriptionsAsync(String filter, Integer top, Integer skip, String orderBy)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/subscriptions");
         path.AddQuery("$filter", filter);
@@ -7426,11 +7426,11 @@ public class AvaTaxClient {
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * 
      * @param int companyId The ID of the company that owns these tax codes
-     * @param string filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param string include A comma separated list of child objects to return underneath the primary object.
+     * @param String filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param String include A comma separated list of child objects to return underneath the primary object.
      * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
-     * @param string orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult
      */
     public FetchResult<TaxCodeModel> listTaxCodesByCompany(Int32 companyId, String filter, String include, Int32? top, Int32? skip, String orderBy)
@@ -7457,14 +7457,14 @@ public class AvaTaxClient {
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * 
      * @param int companyId The ID of the company that owns these tax codes
-     * @param string filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param string include A comma separated list of child objects to return underneath the primary object.
+     * @param String filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param String include A comma separated list of child objects to return underneath the primary object.
      * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
-     * @param string orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult
      */
-    public FetchResult listTaxCodesByCompanyAsync(int companyId, string filter, string include, Integer top, Integer skip, string orderBy)
+    public FetchResult listTaxCodesByCompanyAsync(int companyId, String filter, String include, Integer top, Integer skip, String orderBy)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/taxcodes");
         path.ApplyField("companyId", companyId);
@@ -7487,11 +7487,11 @@ public class AvaTaxClient {
      * 
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * 
-     * @param string filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param string include A comma separated list of child objects to return underneath the primary object.
+     * @param String filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param String include A comma separated list of child objects to return underneath the primary object.
      * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
-     * @param string orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult
      */
     public FetchResult<TaxCodeModel> queryTaxCodes(String filter, String include, Int32? top, Int32? skip, String orderBy)
@@ -7516,14 +7516,14 @@ public class AvaTaxClient {
      * 
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * 
-     * @param string filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param string include A comma separated list of child objects to return underneath the primary object.
+     * @param String filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param String include A comma separated list of child objects to return underneath the primary object.
      * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
-     * @param string orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult
      */
-    public FetchResult queryTaxCodesAsync(string filter, string include, Integer top, Integer skip, string orderBy)
+    public FetchResult queryTaxCodesAsync(String filter, String include, Integer top, Integer skip, String orderBy)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/taxcodes");
         path.AddQuery("$filter", filter);
@@ -7700,11 +7700,11 @@ public class AvaTaxClient {
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * 
      * @param int companyId The ID of the company that owns these tax rules
-     * @param string filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param string include A comma separated list of child objects to return underneath the primary object.
+     * @param String filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param String include A comma separated list of child objects to return underneath the primary object.
      * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
-     * @param string orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult
      */
     public FetchResult<TaxRuleModel> listTaxRules(Int32 companyId, String filter, String include, Int32? top, Int32? skip, String orderBy)
@@ -7731,14 +7731,14 @@ public class AvaTaxClient {
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * 
      * @param int companyId The ID of the company that owns these tax rules
-     * @param string filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param string include A comma separated list of child objects to return underneath the primary object.
+     * @param String filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param String include A comma separated list of child objects to return underneath the primary object.
      * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
-     * @param string orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult
      */
-    public FetchResult listTaxRulesAsync(int companyId, string filter, string include, Integer top, Integer skip, string orderBy)
+    public FetchResult listTaxRulesAsync(int companyId, String filter, String include, Integer top, Integer skip, String orderBy)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/taxrules");
         path.ApplyField("companyId", companyId);
@@ -7761,11 +7761,11 @@ public class AvaTaxClient {
      * 
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * 
-     * @param string filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param string include A comma separated list of child objects to return underneath the primary object.
+     * @param String filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param String include A comma separated list of child objects to return underneath the primary object.
      * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
-     * @param string orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult
      */
     public FetchResult<TaxRuleModel> queryTaxRules(String filter, String include, Int32? top, Int32? skip, String orderBy)
@@ -7790,14 +7790,14 @@ public class AvaTaxClient {
      * 
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * 
-     * @param string filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param string include A comma separated list of child objects to return underneath the primary object.
+     * @param String filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param String include A comma separated list of child objects to return underneath the primary object.
      * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
-     * @param string orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult
      */
-    public FetchResult queryTaxRulesAsync(string filter, string include, Integer top, Integer skip, string orderBy)
+    public FetchResult queryTaxRulesAsync(String filter, String include, Integer top, Integer skip, String orderBy)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/taxrules");
         path.AddQuery("$filter", filter);
@@ -7875,7 +7875,7 @@ public class AvaTaxClient {
      * * Addresses
      *             
      * 
-     * @param string include A comma separated list of child objects to return underneath the primary object.
+     * @param String include A comma separated list of child objects to return underneath the primary object.
      * @param AddTransactionLineModel model information about the transaction and lines to be added
      * @return TransactionModel
      */
@@ -7907,11 +7907,11 @@ public class AvaTaxClient {
      * * Addresses
      *             
      * 
-     * @param string include A comma separated list of child objects to return underneath the primary object.
+     * @param String include A comma separated list of child objects to return underneath the primary object.
      * @param AddTransactionLineModel model information about the transaction and lines to be added
      * @return TransactionModel
      */
-    public TransactionModel addLinesAsync(string include, AddTransactionLineModel model)
+    public TransactionModel addLinesAsync(String include, AddTransactionLineModel model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/transactions/lines/add");
         path.AddQuery("$include", include);
@@ -7932,8 +7932,8 @@ public class AvaTaxClient {
      * 
      * Transactions that have been previously reported to a tax authority by Avalara Managed Returns are considered `locked` and are 
      * 
-     * @param string companyCode The company code of the company that recorded this transaction
-     * @param string transactionCode The transaction code to adjust
+     * @param String companyCode The company code of the company that recorded this transaction
+     * @param String transactionCode The transaction code to adjust
      * @param AdjustTransactionModel model The adjustment you wish to make
      * @return TransactionModel
      */
@@ -7959,12 +7959,12 @@ public class AvaTaxClient {
      * 
      * Transactions that have been previously reported to a tax authority by Avalara Managed Returns are considered `locked` and are 
      * 
-     * @param string companyCode The company code of the company that recorded this transaction
-     * @param string transactionCode The transaction code to adjust
+     * @param String companyCode The company code of the company that recorded this transaction
+     * @param String transactionCode The transaction code to adjust
      * @param AdjustTransactionModel model The adjustment you wish to make
      * @return TransactionModel
      */
-    public TransactionModel adjustTransactionAsync(string companyCode, string transactionCode, AdjustTransactionModel model)
+    public TransactionModel adjustTransactionAsync(String companyCode, String transactionCode, AdjustTransactionModel model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyCode}/transactions/{transactionCode}/adjust");
         path.ApplyField("companyCode", companyCode);
@@ -7990,8 +7990,8 @@ public class AvaTaxClient {
      * 
      * A transaction represents a unique potentially taxable action that your company has recorded, and transactions include actions like
      * 
-     * @param string companyCode The code identifying the company that owns this transaction
-     * @param string transactionCode The code identifying the transaction
+     * @param String companyCode The code identifying the company that owns this transaction
+     * @param String transactionCode The code identifying the transaction
      * @return AuditTransactionModel
      */
     public AuditTransactionModel auditTransaction(String companyCode, String transactionCode)
@@ -8020,11 +8020,11 @@ public class AvaTaxClient {
      * 
      * A transaction represents a unique potentially taxable action that your company has recorded, and transactions include actions like
      * 
-     * @param string companyCode The code identifying the company that owns this transaction
-     * @param string transactionCode The code identifying the transaction
+     * @param String companyCode The code identifying the company that owns this transaction
+     * @param String transactionCode The code identifying the transaction
      * @return AuditTransactionModel
      */
-    public AuditTransactionModel auditTransactionAsync(string companyCode, string transactionCode)
+    public AuditTransactionModel auditTransactionAsync(String companyCode, String transactionCode)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyCode}/transactions/{transactionCode}/audit");
         path.ApplyField("companyCode", companyCode);
@@ -8050,8 +8050,8 @@ public class AvaTaxClient {
      * 
      * A transaction represents a unique potentially taxable action that your company has recorded, and transactions include actions like
      * 
-     * @param string companyCode The code identifying the company that owns this transaction
-     * @param string transactionCode The code identifying the transaction
+     * @param String companyCode The code identifying the company that owns this transaction
+     * @param String transactionCode The code identifying the transaction
      * @param DocumentType documentType The document type of the original transaction (See DocumentType::* for a list of allowable values)
      * @return AuditTransactionModel
      */
@@ -8082,12 +8082,12 @@ public class AvaTaxClient {
      * 
      * A transaction represents a unique potentially taxable action that your company has recorded, and transactions include actions like
      * 
-     * @param string companyCode The code identifying the company that owns this transaction
-     * @param string transactionCode The code identifying the transaction
+     * @param String companyCode The code identifying the company that owns this transaction
+     * @param String transactionCode The code identifying the transaction
      * @param DocumentType documentType The document type of the original transaction (See DocumentType::* for a list of allowable values)
      * @return AuditTransactionModel
      */
-    public AuditTransactionModel auditTransactionWithTypeAsync(string companyCode, string transactionCode, DocumentType documentType)
+    public AuditTransactionModel auditTransactionWithTypeAsync(String companyCode, String transactionCode, DocumentType documentType)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyCode}/transactions/{transactionCode}/types/{documentType}/audit");
         path.ApplyField("companyCode", companyCode);
@@ -8141,8 +8141,8 @@ public class AvaTaxClient {
      * After this API call succeeds, the transaction will have a new URL matching its new code.
      * A transaction represents a unique potentially taxable action that your company has recorded, and transactions include actions like
      * 
-     * @param string companyCode The company code of the company that recorded this transaction
-     * @param string transactionCode The transaction code to change
+     * @param String companyCode The company code of the company that recorded this transaction
+     * @param String transactionCode The transaction code to change
      * @param ChangeTransactionCodeModel model The code change request you wish to execute
      * @return TransactionModel
      */
@@ -8161,12 +8161,12 @@ public class AvaTaxClient {
      * After this API call succeeds, the transaction will have a new URL matching its new code.
      * A transaction represents a unique potentially taxable action that your company has recorded, and transactions include actions like
      * 
-     * @param string companyCode The company code of the company that recorded this transaction
-     * @param string transactionCode The transaction code to change
+     * @param String companyCode The company code of the company that recorded this transaction
+     * @param String transactionCode The transaction code to change
      * @param ChangeTransactionCodeModel model The code change request you wish to execute
      * @return TransactionModel
      */
-    public TransactionModel changeTransactionCodeAsync(string companyCode, string transactionCode, ChangeTransactionCodeModel model)
+    public TransactionModel changeTransactionCodeAsync(String companyCode, String transactionCode, ChangeTransactionCodeModel model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyCode}/transactions/{transactionCode}/changecode");
         path.ApplyField("companyCode", companyCode);
@@ -8182,8 +8182,8 @@ public class AvaTaxClient {
      * A transaction represents a unique potentially taxable action that your company has recorded, and transactions include actions like
      * sales, purchases, inventory transfer, and returns (also called refunds).
      * 
-     * @param string companyCode The company code of the company that recorded this transaction
-     * @param string transactionCode The transaction code to commit
+     * @param String companyCode The company code of the company that recorded this transaction
+     * @param String transactionCode The transaction code to commit
      * @param CommitTransactionModel model The commit request you wish to execute
      * @return TransactionModel
      */
@@ -8203,12 +8203,12 @@ public class AvaTaxClient {
      * A transaction represents a unique potentially taxable action that your company has recorded, and transactions include actions like
      * sales, purchases, inventory transfer, and returns (also called refunds).
      * 
-     * @param string companyCode The company code of the company that recorded this transaction
-     * @param string transactionCode The transaction code to commit
+     * @param String companyCode The company code of the company that recorded this transaction
+     * @param String transactionCode The transaction code to commit
      * @param CommitTransactionModel model The commit request you wish to execute
      * @return TransactionModel
      */
-    public TransactionModel commitTransactionAsync(string companyCode, string transactionCode, CommitTransactionModel model)
+    public TransactionModel commitTransactionAsync(String companyCode, String transactionCode, CommitTransactionModel model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyCode}/transactions/{transactionCode}/commit");
         path.ApplyField("companyCode", companyCode);
@@ -8237,7 +8237,7 @@ public class AvaTaxClient {
      * * Addresses
      *             
      * 
-     * @param string include A comma separated list of child objects to return underneath the primary object.
+     * @param String include A comma separated list of child objects to return underneath the primary object.
      * @param CreateOrAdjustTransactionModel model The transaction you wish to create
      * @return TransactionModel
      */
@@ -8269,11 +8269,11 @@ public class AvaTaxClient {
      * * Addresses
      *             
      * 
-     * @param string include A comma separated list of child objects to return underneath the primary object.
+     * @param String include A comma separated list of child objects to return underneath the primary object.
      * @param CreateOrAdjustTransactionModel model The transaction you wish to create
      * @return TransactionModel
      */
-    public TransactionModel createOrAdjustTransactionAsync(string include, CreateOrAdjustTransactionModel model)
+    public TransactionModel createOrAdjustTransactionAsync(String include, CreateOrAdjustTransactionModel model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/transactions/createoradjust");
         path.AddQuery("$include", include);
@@ -8301,7 +8301,7 @@ public class AvaTaxClient {
      * * Addresses
      *             
      * 
-     * @param string include A comma separated list of child objects to return underneath the primary object.
+     * @param String include A comma separated list of child objects to return underneath the primary object.
      * @param CreateTransactionModel model The transaction you wish to create
      * @return TransactionModel
      */
@@ -8333,11 +8333,11 @@ public class AvaTaxClient {
      * * Addresses
      *             
      * 
-     * @param string include A comma separated list of child objects to return underneath the primary object.
+     * @param String include A comma separated list of child objects to return underneath the primary object.
      * @param CreateTransactionModel model The transaction you wish to create
      * @return TransactionModel
      */
-    public TransactionModel createTransactionAsync(string include, CreateTransactionModel model)
+    public TransactionModel createTransactionAsync(String include, CreateTransactionModel model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/transactions/create");
         path.AddQuery("$include", include);
@@ -8362,7 +8362,7 @@ public class AvaTaxClient {
      * * Addresses
      *             
      * 
-     * @param string include A comma separated list of child objects to return underneath the primary object.
+     * @param String include A comma separated list of child objects to return underneath the primary object.
      * @param RemoveTransactionLineModel model information about the transaction and lines to be removed
      * @return TransactionModel
      */
@@ -8391,11 +8391,11 @@ public class AvaTaxClient {
      * * Addresses
      *             
      * 
-     * @param string include A comma separated list of child objects to return underneath the primary object.
+     * @param String include A comma separated list of child objects to return underneath the primary object.
      * @param RemoveTransactionLineModel model information about the transaction and lines to be removed
      * @return TransactionModel
      */
-    public TransactionModel deleteLinesAsync(string include, RemoveTransactionLineModel model)
+    public TransactionModel deleteLinesAsync(String include, RemoveTransactionLineModel model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/transactions/lines/delete");
         path.AddQuery("$include", include);
@@ -8414,9 +8414,9 @@ public class AvaTaxClient {
      * * Details (implies lines)
      * * Summary (implies details)
      * 
-     * @param string companyCode The company code of the company that recorded this transaction
-     * @param string transactionCode The transaction code to retrieve
-     * @param string include A comma separated list of child objects to return underneath the primary object.
+     * @param String companyCode The company code of the company that recorded this transaction
+     * @param String transactionCode The transaction code to retrieve
+     * @param String include A comma separated list of child objects to return underneath the primary object.
      * @return TransactionModel
      */
     public TransactionModel getTransactionByCode(String companyCode, String transactionCode, String include)
@@ -8440,12 +8440,12 @@ public class AvaTaxClient {
      * * Details (implies lines)
      * * Summary (implies details)
      * 
-     * @param string companyCode The company code of the company that recorded this transaction
-     * @param string transactionCode The transaction code to retrieve
-     * @param string include A comma separated list of child objects to return underneath the primary object.
+     * @param String companyCode The company code of the company that recorded this transaction
+     * @param String transactionCode The transaction code to retrieve
+     * @param String include A comma separated list of child objects to return underneath the primary object.
      * @return TransactionModel
      */
-    public TransactionModel getTransactionByCodeAsync(string companyCode, string transactionCode, string include)
+    public TransactionModel getTransactionByCodeAsync(String companyCode, String transactionCode, String include)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyCode}/transactions/{transactionCode}");
         path.ApplyField("companyCode", companyCode);
@@ -8466,10 +8466,10 @@ public class AvaTaxClient {
      * * Details (implies lines)
      * * Summary (implies details)
      * 
-     * @param string companyCode The company code of the company that recorded this transaction
-     * @param string transactionCode The transaction code to retrieve
+     * @param String companyCode The company code of the company that recorded this transaction
+     * @param String transactionCode The transaction code to retrieve
      * @param DocumentType documentType The transaction type to retrieve (See DocumentType::* for a list of allowable values)
-     * @param string include A comma separated list of child objects to return underneath the primary object.
+     * @param String include A comma separated list of child objects to return underneath the primary object.
      * @return TransactionModel
      */
     public TransactionModel getTransactionByCodeAndType(String companyCode, String transactionCode, DocumentType documentType, String include)
@@ -8494,13 +8494,13 @@ public class AvaTaxClient {
      * * Details (implies lines)
      * * Summary (implies details)
      * 
-     * @param string companyCode The company code of the company that recorded this transaction
-     * @param string transactionCode The transaction code to retrieve
+     * @param String companyCode The company code of the company that recorded this transaction
+     * @param String transactionCode The transaction code to retrieve
      * @param DocumentType documentType The transaction type to retrieve (See DocumentType::* for a list of allowable values)
-     * @param string include A comma separated list of child objects to return underneath the primary object.
+     * @param String include A comma separated list of child objects to return underneath the primary object.
      * @return TransactionModel
      */
-    public TransactionModel getTransactionByCodeAndTypeAsync(string companyCode, string transactionCode, DocumentType documentType, string include)
+    public TransactionModel getTransactionByCodeAndTypeAsync(String companyCode, String transactionCode, DocumentType documentType, String include)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyCode}/transactions/{transactionCode}/types/{documentType}");
         path.ApplyField("companyCode", companyCode);
@@ -8525,7 +8525,7 @@ public class AvaTaxClient {
      * * Summary (implies details)
      * 
      * @param long id The unique ID number of the transaction to retrieve
-     * @param string include A comma separated list of child objects to return underneath the primary object.
+     * @param String include A comma separated list of child objects to return underneath the primary object.
      * @return TransactionModel
      */
     public TransactionModel getTransactionById(Int64 id, String include)
@@ -8551,10 +8551,10 @@ public class AvaTaxClient {
      * * Summary (implies details)
      * 
      * @param long id The unique ID number of the transaction to retrieve
-     * @param string include A comma separated list of child objects to return underneath the primary object.
+     * @param String include A comma separated list of child objects to return underneath the primary object.
      * @return TransactionModel
      */
-    public TransactionModel getTransactionByIdAsync(long id, string include)
+    public TransactionModel getTransactionByIdAsync(long id, String include)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/transactions/{id}");
         path.ApplyField("id", id);
@@ -8578,12 +8578,12 @@ public class AvaTaxClient {
      * * Details (implies lines)
      * * Summary (implies details)
      * 
-     * @param string companyCode The company code of the company that recorded this transaction
-     * @param string include A comma separated list of child objects to return underneath the primary object.
-     * @param string filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param String companyCode The company code of the company that recorded this transaction
+     * @param String include A comma separated list of child objects to return underneath the primary object.
+     * @param String filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
-     * @param string orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult
      */
     public FetchResult<TransactionModel> listTransactionsByCompany(String companyCode, String include, String filter, Int32? top, Int32? skip, String orderBy)
@@ -8614,15 +8614,15 @@ public class AvaTaxClient {
      * * Details (implies lines)
      * * Summary (implies details)
      * 
-     * @param string companyCode The company code of the company that recorded this transaction
-     * @param string include A comma separated list of child objects to return underneath the primary object.
-     * @param string filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param String companyCode The company code of the company that recorded this transaction
+     * @param String include A comma separated list of child objects to return underneath the primary object.
+     * @param String filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
-     * @param string orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult
      */
-    public FetchResult listTransactionsByCompanyAsync(string companyCode, string include, string filter, Integer top, Integer skip, string orderBy)
+    public FetchResult listTransactionsByCompanyAsync(String companyCode, String include, String filter, Integer top, Integer skip, String orderBy)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyCode}/transactions");
         path.ApplyField("companyCode", companyCode);
@@ -8646,8 +8646,8 @@ public class AvaTaxClient {
      * 
      * A transaction represents a unique potentially taxable action that your company has recorded, and transactions include actions like
      * 
-     * @param string companyCode The company code of the company that recorded this transaction
-     * @param string transactionCode The transaction code to lock
+     * @param String companyCode The company code of the company that recorded this transaction
+     * @param String transactionCode The transaction code to lock
      * @param LockTransactionModel model The lock request you wish to execute
      * @return TransactionModel
      */
@@ -8671,12 +8671,12 @@ public class AvaTaxClient {
      * 
      * A transaction represents a unique potentially taxable action that your company has recorded, and transactions include actions like
      * 
-     * @param string companyCode The company code of the company that recorded this transaction
-     * @param string transactionCode The transaction code to lock
+     * @param String companyCode The company code of the company that recorded this transaction
+     * @param String transactionCode The transaction code to lock
      * @param LockTransactionModel model The lock request you wish to execute
      * @return TransactionModel
      */
-    public TransactionModel lockTransactionAsync(string companyCode, string transactionCode, LockTransactionModel model)
+    public TransactionModel lockTransactionAsync(String companyCode, String transactionCode, LockTransactionModel model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyCode}/transactions/{transactionCode}/lock");
         path.ApplyField("companyCode", companyCode);
@@ -8703,9 +8703,9 @@ public class AvaTaxClient {
      * * Addresses
      *             
      * 
-     * @param string companyCode The code of the company that made the original sale
-     * @param string transactionCode The transaction code of the original sale
-     * @param string include A comma separated list of child objects to return underneath the primary object.
+     * @param String companyCode The code of the company that made the original sale
+     * @param String transactionCode The transaction code of the original sale
+     * @param String include A comma separated list of child objects to return underneath the primary object.
      * @param RefundTransactionModel model Information about the refund to create
      * @return TransactionModel
      */
@@ -8737,13 +8737,13 @@ public class AvaTaxClient {
      * * Addresses
      *             
      * 
-     * @param string companyCode The code of the company that made the original sale
-     * @param string transactionCode The transaction code of the original sale
-     * @param string include A comma separated list of child objects to return underneath the primary object.
+     * @param String companyCode The code of the company that made the original sale
+     * @param String transactionCode The transaction code of the original sale
+     * @param String include A comma separated list of child objects to return underneath the primary object.
      * @param RefundTransactionModel model Information about the refund to create
      * @return TransactionModel
      */
-    public TransactionModel refundTransactionAsync(string companyCode, string transactionCode, string include, RefundTransactionModel model)
+    public TransactionModel refundTransactionAsync(String companyCode, String transactionCode, String include, RefundTransactionModel model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyCode}/transactions/{transactionCode}/refund");
         path.ApplyField("companyCode", companyCode);
@@ -8755,8 +8755,8 @@ public class AvaTaxClient {
     /**
      * Perform multiple actions on a transaction
      * 
-     * @param string companyCode The company code of the company that recorded this transaction
-     * @param string transactionCode The transaction code to settle
+     * @param String companyCode The company code of the company that recorded this transaction
+     * @param String transactionCode The transaction code to settle
      * @param SettleTransactionModel model The settle request containing the actions you wish to execute
      * @return TransactionModel
      */
@@ -8771,12 +8771,12 @@ public class AvaTaxClient {
     /**
      * Perform multiple actions on a transaction
      * 
-     * @param string companyCode The company code of the company that recorded this transaction
-     * @param string transactionCode The transaction code to settle
+     * @param String companyCode The company code of the company that recorded this transaction
+     * @param String transactionCode The transaction code to settle
      * @param SettleTransactionModel model The settle request containing the actions you wish to execute
      * @return TransactionModel
      */
-    public TransactionModel settleTransactionAsync(string companyCode, string transactionCode, SettleTransactionModel model)
+    public TransactionModel settleTransactionAsync(String companyCode, String transactionCode, SettleTransactionModel model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyCode}/transactions/{transactionCode}/settle");
         path.ApplyField("companyCode", companyCode);
@@ -8791,8 +8791,8 @@ public class AvaTaxClient {
      * If the transaction does not match these expected values, this API will return an error code indicating which value did not match.
      * A transaction represents a unique potentially taxable action that your company has recorded, and transactions include actions like
      * 
-     * @param string companyCode The company code of the company that recorded this transaction
-     * @param string transactionCode The transaction code to settle
+     * @param String companyCode The company code of the company that recorded this transaction
+     * @param String transactionCode The transaction code to settle
      * @param VerifyTransactionModel model The settle request you wish to execute
      * @return TransactionModel
      */
@@ -8811,12 +8811,12 @@ public class AvaTaxClient {
      * If the transaction does not match these expected values, this API will return an error code indicating which value did not match.
      * A transaction represents a unique potentially taxable action that your company has recorded, and transactions include actions like
      * 
-     * @param string companyCode The company code of the company that recorded this transaction
-     * @param string transactionCode The transaction code to settle
+     * @param String companyCode The company code of the company that recorded this transaction
+     * @param String transactionCode The transaction code to settle
      * @param VerifyTransactionModel model The settle request you wish to execute
      * @return TransactionModel
      */
-    public TransactionModel verifyTransactionAsync(string companyCode, string transactionCode, VerifyTransactionModel model)
+    public TransactionModel verifyTransactionAsync(String companyCode, String transactionCode, VerifyTransactionModel model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyCode}/transactions/{transactionCode}/verify");
         path.ApplyField("companyCode", companyCode);
@@ -8832,8 +8832,8 @@ public class AvaTaxClient {
      * sales, purchases, inventory transfer, and returns (also called refunds).
      * When you void a transaction, that transaction's status is recorded as 'DocVoided'.
      * 
-     * @param string companyCode The company code of the company that recorded this transaction
-     * @param string transactionCode The transaction code to void
+     * @param String companyCode The company code of the company that recorded this transaction
+     * @param String transactionCode The transaction code to void
      * @param VoidTransactionModel model The void request you wish to execute
      * @return TransactionModel
      */
@@ -8853,12 +8853,12 @@ public class AvaTaxClient {
      * sales, purchases, inventory transfer, and returns (also called refunds).
      * When you void a transaction, that transaction's status is recorded as 'DocVoided'.
      * 
-     * @param string companyCode The company code of the company that recorded this transaction
-     * @param string transactionCode The transaction code to void
+     * @param String companyCode The company code of the company that recorded this transaction
+     * @param String transactionCode The transaction code to void
      * @param VoidTransactionModel model The void request you wish to execute
      * @return TransactionModel
      */
-    public TransactionModel voidTransactionAsync(string companyCode, string transactionCode, VoidTransactionModel model)
+    public TransactionModel voidTransactionAsync(String companyCode, String transactionCode, VoidTransactionModel model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyCode}/transactions/{transactionCode}/void");
         path.ApplyField("companyCode", companyCode);
@@ -8971,11 +8971,11 @@ public class AvaTaxClient {
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * 
      * @param int companyId The ID of the company that owns these UPCs
-     * @param string filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param string include A comma separated list of child objects to return underneath the primary object.
+     * @param String filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param String include A comma separated list of child objects to return underneath the primary object.
      * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
-     * @param string orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult
      */
     public FetchResult<UPCModel> listUPCsByCompany(Int32 companyId, String filter, String include, Int32? top, Int32? skip, String orderBy)
@@ -8999,14 +8999,14 @@ public class AvaTaxClient {
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * 
      * @param int companyId The ID of the company that owns these UPCs
-     * @param string filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param string include A comma separated list of child objects to return underneath the primary object.
+     * @param String filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param String include A comma separated list of child objects to return underneath the primary object.
      * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
-     * @param string orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult
      */
-    public FetchResult listUPCsByCompanyAsync(int companyId, string filter, string include, Integer top, Integer skip, string orderBy)
+    public FetchResult listUPCsByCompanyAsync(int companyId, String filter, String include, Integer top, Integer skip, String orderBy)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/upcs");
         path.ApplyField("companyId", companyId);
@@ -9026,11 +9026,11 @@ public class AvaTaxClient {
      * 
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * 
-     * @param string filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param string include A comma separated list of child objects to return underneath the primary object.
+     * @param String filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param String include A comma separated list of child objects to return underneath the primary object.
      * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
-     * @param string orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult
      */
     public FetchResult<UPCModel> queryUPCs(String filter, String include, Int32? top, Int32? skip, String orderBy)
@@ -9052,14 +9052,14 @@ public class AvaTaxClient {
      * 
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * 
-     * @param string filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param string include A comma separated list of child objects to return underneath the primary object.
+     * @param String filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param String include A comma separated list of child objects to return underneath the primary object.
      * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
-     * @param string orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult
      */
-    public FetchResult queryUPCsAsync(string filter, string include, Integer top, Integer skip, string orderBy)
+    public FetchResult queryUPCsAsync(String filter, String include, Integer top, Integer skip, String orderBy)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/upcs");
         path.AddQuery("$filter", filter);
@@ -9117,7 +9117,7 @@ public class AvaTaxClient {
      * 
      * @param int id The ID of the user to retrieve.
      * @param int accountId The accountID of the user you wish to get.
-     * @param string include A comma separated list of child objects to return underneath the primary object.
+     * @param String include A comma separated list of child objects to return underneath the primary object.
      * @return UserModel
      */
     public UserModel getUser(Int32 id, Int32 accountId, String include)
@@ -9136,10 +9136,10 @@ public class AvaTaxClient {
      * 
      * @param int id The ID of the user to retrieve.
      * @param int accountId The accountID of the user you wish to get.
-     * @param string include A comma separated list of child objects to return underneath the primary object.
+     * @param String include A comma separated list of child objects to return underneath the primary object.
      * @return UserModel
      */
-    public UserModel getUserAsync(int id, int accountId, string include)
+    public UserModel getUserAsync(int id, int accountId, String include)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/users/{id}");
         path.ApplyField("id", id);
@@ -9217,11 +9217,11 @@ public class AvaTaxClient {
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * 
      * @param int accountId The accountID of the user you wish to list.
-     * @param string include A comma separated list of child objects to return underneath the primary object.
-     * @param string filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param String include A comma separated list of child objects to return underneath the primary object.
+     * @param String filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
-     * @param string orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult
      */
     public FetchResult<UserModel> listUsersByAccount(Int32 accountId, String include, String filter, Int32? top, Int32? skip, String orderBy)
@@ -9245,14 +9245,14 @@ public class AvaTaxClient {
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * 
      * @param int accountId The accountID of the user you wish to list.
-     * @param string include A comma separated list of child objects to return underneath the primary object.
-     * @param string filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param String include A comma separated list of child objects to return underneath the primary object.
+     * @param String filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
-     * @param string orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult
      */
-    public FetchResult listUsersByAccountAsync(int accountId, string include, string filter, Integer top, Integer skip, string orderBy)
+    public FetchResult listUsersByAccountAsync(int accountId, String include, String filter, Integer top, Integer skip, String orderBy)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/users");
         path.ApplyField("accountId", accountId);
@@ -9272,11 +9272,11 @@ public class AvaTaxClient {
      * 
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * 
-     * @param string include A comma separated list of child objects to return underneath the primary object.
-     * @param string filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param String include A comma separated list of child objects to return underneath the primary object.
+     * @param String filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
-     * @param string orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult
      */
     public FetchResult<UserModel> queryUsers(String include, String filter, Int32? top, Int32? skip, String orderBy)
@@ -9298,14 +9298,14 @@ public class AvaTaxClient {
      * 
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * 
-     * @param string include A comma separated list of child objects to return underneath the primary object.
-     * @param string filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param String include A comma separated list of child objects to return underneath the primary object.
+     * @param String filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
-     * @param string orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult
      */
-    public FetchResult queryUsersAsync(string include, string filter, Integer top, Integer skip, string orderBy)
+    public FetchResult queryUsersAsync(String include, String filter, Integer top, Integer skip, String orderBy)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/users");
         path.AddQuery("$include", include);

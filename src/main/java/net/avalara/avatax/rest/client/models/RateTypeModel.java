@@ -30,14 +30,14 @@ import java.util.HashMap;
 public class RateTypeModel {
 
 
-    private string id;
+    private String id;
 
     /**
      * Getter for id
      *
      * The unique ID number of this tax authority.
      */
-    public string getId() {
+    public String getId() {
         return this.id;
     }
 
@@ -46,19 +46,19 @@ public class RateTypeModel {
      *
      * The unique ID number of this tax authority.
      */
-    public void setId(string value) {
+    public void setId(String value) {
         this.id = value;
     }
 
 
-    private string description;
+    private String description;
 
     /**
      * Getter for description
      *
      * Description of this rate type.
      */
-    public string getDescription() {
+    public String getDescription() {
         return this.description;
     }
 
@@ -67,19 +67,19 @@ public class RateTypeModel {
      *
      * Description of this rate type.
      */
-    public void setDescription(string value) {
+    public void setDescription(String value) {
         this.description = value;
     }
 
 
-    private string country;
+    private String country;
 
     /**
      * Getter for country
      *
      * Country code for this rate type
      */
-    public string getCountry() {
+    public String getCountry() {
         return this.country;
     }
 
@@ -88,7 +88,7 @@ public class RateTypeModel {
      *
      * Country code for this rate type
      */
-    public void setCountry(string value) {
+    public void setCountry(String value) {
         this.country = value;
     }
 

@@ -30,14 +30,14 @@ import java.util.HashMap;
 public class UserEntitlementModel {
 
 
-    private string[] permissions;
+    private String[] permissions;
 
     /**
      * Getter for permissions
      *
      * List of API names and categories that this user is permitted to access
      */
-    public string[] getPermissions() {
+    public String[] getPermissions() {
         return this.permissions;
     }
 
@@ -46,7 +46,7 @@ public class UserEntitlementModel {
      *
      * List of API names and categories that this user is permitted to access
      */
-    public void setPermissions(string[] value) {
+    public void setPermissions(String[] value) {
         this.permissions = value;
     }
 

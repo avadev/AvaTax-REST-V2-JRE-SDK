@@ -51,14 +51,14 @@ public class TaxSubTypeModel {
     }
 
 
-    private string taxSubType;
+    private String taxSubType;
 
     /**
      * Getter for taxSubType
      *
      * The unique human readable Id of this tax sub-type.
      */
-    public string getTaxSubType() {
+    public String getTaxSubType() {
         return this.taxSubType;
     }
 
@@ -67,19 +67,19 @@ public class TaxSubTypeModel {
      *
      * The unique human readable Id of this tax sub-type.
      */
-    public void setTaxSubType(string value) {
+    public void setTaxSubType(String value) {
         this.taxSubType = value;
     }
 
 
-    private string description;
+    private String description;
 
     /**
      * Getter for description
      *
      * The description of this tax sub-type.
      */
-    public string getDescription() {
+    public String getDescription() {
         return this.description;
     }
 
@@ -88,19 +88,19 @@ public class TaxSubTypeModel {
      *
      * The description of this tax sub-type.
      */
-    public void setDescription(string value) {
+    public void setDescription(String value) {
         this.description = value;
     }
 
 
-    private string taxTypeGroup;
+    private String taxTypeGroup;
 
     /**
      * Getter for taxTypeGroup
      *
      * The upper level group of tax types.
      */
-    public string getTaxTypeGroup() {
+    public String getTaxTypeGroup() {
         return this.taxTypeGroup;
     }
 
@@ -109,7 +109,7 @@ public class TaxSubTypeModel {
      *
      * The upper level group of tax types.
      */
-    public void setTaxTypeGroup(string value) {
+    public void setTaxTypeGroup(String value) {
         this.taxTypeGroup = value;
     }
 

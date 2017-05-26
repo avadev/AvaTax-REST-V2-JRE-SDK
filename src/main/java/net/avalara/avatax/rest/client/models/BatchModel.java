@@ -51,14 +51,14 @@ public class BatchModel {
     }
 
 
-    private string name;
+    private String name;
 
     /**
      * Getter for name
      *
      * The user-friendly readable name for this batch.
      */
-    public string getName() {
+    public String getName() {
         return this.name;
     }
 
@@ -67,7 +67,7 @@ public class BatchModel {
      *
      * The user-friendly readable name for this batch.
      */
-    public void setName(string value) {
+    public void setName(String value) {
         this.name = value;
     }
 
@@ -156,14 +156,14 @@ public class BatchModel {
     }
 
 
-    private string options;
+    private String options;
 
     /**
      * Getter for options
      *
      * Any optional flags provided for this batch
      */
-    public string getOptions() {
+    public String getOptions() {
         return this.options;
     }
 
@@ -172,19 +172,19 @@ public class BatchModel {
      *
      * Any optional flags provided for this batch
      */
-    public void setOptions(string value) {
+    public void setOptions(String value) {
         this.options = value;
     }
 
 
-    private string batchAgent;
+    private String batchAgent;
 
     /**
      * Getter for batchAgent
      *
      * The agent used to create this batch
      */
-    public string getBatchAgent() {
+    public String getBatchAgent() {
         return this.batchAgent;
     }
 
@@ -193,7 +193,7 @@ public class BatchModel {
      *
      * The agent used to create this batch
      */
-    public void setBatchAgent(string value) {
+    public void setBatchAgent(String value) {
         this.batchAgent = value;
     }
 

@@ -30,14 +30,14 @@ import java.util.HashMap;
 public class IsoCountryModel {
 
 
-    private string code;
+    private String code;
 
     /**
      * Getter for code
      *
      * The two character ISO 3166 country code
      */
-    public string getCode() {
+    public String getCode() {
         return this.code;
     }
 
@@ -46,19 +46,19 @@ public class IsoCountryModel {
      *
      * The two character ISO 3166 country code
      */
-    public void setCode(string value) {
+    public void setCode(String value) {
         this.code = value;
     }
 
 
-    private string name;
+    private String name;
 
     /**
      * Getter for name
      *
      * The full name of this country as it is known in US English
      */
-    public string getName() {
+    public String getName() {
         return this.name;
     }
 
@@ -67,7 +67,7 @@ public class IsoCountryModel {
      *
      * The full name of this country as it is known in US English
      */
-    public void setName(string value) {
+    public void setName(String value) {
         this.name = value;
     }
 

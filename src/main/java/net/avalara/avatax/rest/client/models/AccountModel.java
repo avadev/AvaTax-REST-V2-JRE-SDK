@@ -51,14 +51,14 @@ public class AccountModel {
     }
 
 
-    private string name;
+    private String name;
 
     /**
      * Getter for name
      *
      * The name of this account.
      */
-    public string getName() {
+    public String getName() {
         return this.name;
     }
 
@@ -67,7 +67,7 @@ public class AccountModel {
      *
      * The name of this account.
      */
-    public void setName(string value) {
+    public void setName(String value) {
         this.name = value;
     }
 

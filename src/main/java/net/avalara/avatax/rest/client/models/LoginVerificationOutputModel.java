@@ -51,14 +51,14 @@ public class LoginVerificationOutputModel {
     }
 
 
-    private string operationStatus;
+    private String operationStatus;
 
     /**
      * Getter for operationStatus
      *
      * The operation status of the job
      */
-    public string getOperationStatus() {
+    public String getOperationStatus() {
         return this.operationStatus;
     }
 
@@ -67,19 +67,19 @@ public class LoginVerificationOutputModel {
      *
      * The operation status of the job
      */
-    public void setOperationStatus(string value) {
+    public void setOperationStatus(String value) {
         this.operationStatus = value;
     }
 
 
-    private string message;
+    private String message;
 
     /**
      * Getter for message
      *
      * The message returned from the job
      */
-    public string getMessage() {
+    public String getMessage() {
         return this.message;
     }
 
@@ -88,7 +88,7 @@ public class LoginVerificationOutputModel {
      *
      * The message returned from the job
      */
-    public void setMessage(string value) {
+    public void setMessage(String value) {
         this.message = value;
     }
 

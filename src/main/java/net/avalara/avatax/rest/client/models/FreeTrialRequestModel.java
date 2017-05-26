@@ -31,14 +31,14 @@ import java.util.HashMap;
 public class FreeTrialRequestModel {
 
 
-    private string firstName;
+    private String firstName;
 
     /**
      * Getter for firstName
      *
      * The first or given name of the user requesting a free trial.
      */
-    public string getFirstName() {
+    public String getFirstName() {
         return this.firstName;
     }
 
@@ -47,19 +47,19 @@ public class FreeTrialRequestModel {
      *
      * The first or given name of the user requesting a free trial.
      */
-    public void setFirstName(string value) {
+    public void setFirstName(String value) {
         this.firstName = value;
     }
 
 
-    private string lastName;
+    private String lastName;
 
     /**
      * Getter for lastName
      *
      * The last or family name of the user requesting a free trial.
      */
-    public string getLastName() {
+    public String getLastName() {
         return this.lastName;
     }
 
@@ -68,19 +68,19 @@ public class FreeTrialRequestModel {
      *
      * The last or family name of the user requesting a free trial.
      */
-    public void setLastName(string value) {
+    public void setLastName(String value) {
         this.lastName = value;
     }
 
 
-    private string email;
+    private String email;
 
     /**
      * Getter for email
      *
      * The email address of the user requesting a free trial.
      */
-    public string getEmail() {
+    public String getEmail() {
         return this.email;
     }
 
@@ -89,12 +89,12 @@ public class FreeTrialRequestModel {
      *
      * The email address of the user requesting a free trial.
      */
-    public void setEmail(string value) {
+    public void setEmail(String value) {
         this.email = value;
     }
 
 
-    private string company;
+    private String company;
 
     /**
      * Getter for company
@@ -102,7 +102,7 @@ public class FreeTrialRequestModel {
      * The company or organizational name for this free trial. If this account is for personal use, it is acceptable 
     * to use your full name here.
      */
-    public string getCompany() {
+    public String getCompany() {
         return this.company;
     }
 
@@ -112,19 +112,19 @@ public class FreeTrialRequestModel {
      * The company or organizational name for this free trial. If this account is for personal use, it is acceptable 
     * to use your full name here.
      */
-    public void setCompany(string value) {
+    public void setCompany(String value) {
         this.company = value;
     }
 
 
-    private string phone;
+    private String phone;
 
     /**
      * Getter for phone
      *
      * The phone number of the person requesting the free trial.
      */
-    public string getPhone() {
+    public String getPhone() {
         return this.phone;
     }
 
@@ -133,7 +133,7 @@ public class FreeTrialRequestModel {
      *
      * The phone number of the person requesting the free trial.
      */
-    public void setPhone(string value) {
+    public void setPhone(String value) {
         this.phone = value;
     }
 

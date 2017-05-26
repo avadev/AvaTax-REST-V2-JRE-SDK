@@ -30,14 +30,14 @@ import java.util.HashMap;
 public class NexusByTaxFormModel {
 
 
-    private string formCode;
+    private String formCode;
 
     /**
      * Getter for formCode
      *
      * The code of the tax form that was requested
      */
-    public string getFormCode() {
+    public String getFormCode() {
         return this.formCode;
     }
 
@@ -46,7 +46,7 @@ public class NexusByTaxFormModel {
      *
      * The code of the tax form that was requested
      */
-    public void setFormCode(string value) {
+    public void setFormCode(String value) {
         this.formCode = value;
     }
 

@@ -30,14 +30,14 @@ import java.util.HashMap;
 public class requiredFilingCalendarDataFieldModel {
 
 
-    private string name;
+    private String name;
 
     /**
      * Getter for name
      *
      * Region of the verification request
      */
-    public string getName() {
+    public String getName() {
         return this.name;
     }
 
@@ -46,19 +46,19 @@ public class requiredFilingCalendarDataFieldModel {
      *
      * Region of the verification request
      */
-    public void setName(string value) {
+    public void setName(String value) {
         this.name = value;
     }
 
 
-    private string description;
+    private String description;
 
     /**
      * Getter for description
      *
      * Username that we are using for verification
      */
-    public string getDescription() {
+    public String getDescription() {
         return this.description;
     }
 
@@ -67,7 +67,7 @@ public class requiredFilingCalendarDataFieldModel {
      *
      * Username that we are using for verification
      */
-    public void setDescription(string value) {
+    public void setDescription(String value) {
         this.description = value;
     }
 

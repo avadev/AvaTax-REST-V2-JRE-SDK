@@ -93,14 +93,14 @@ public class NoticeResponsibilityDetailModel {
     }
 
 
-    private string description;
+    private String description;
 
     /**
      * Getter for description
      *
      * The description name of this filing frequency
      */
-    public string getDescription() {
+    public String getDescription() {
         return this.description;
     }
 
@@ -109,7 +109,7 @@ public class NoticeResponsibilityDetailModel {
      *
      * The description name of this filing frequency
      */
-    public void setDescription(string value) {
+    public void setDescription(String value) {
         this.description = value;
     }
 

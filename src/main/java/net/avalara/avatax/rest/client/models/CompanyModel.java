@@ -93,14 +93,14 @@ public class CompanyModel {
     }
 
 
-    private string sstPid;
+    private String sstPid;
 
     /**
      * Getter for sstPid
      *
      * If this company files Streamlined Sales Tax, this is the PID of this company as defined by the Streamlined Sales Tax governing board.
      */
-    public string getSstPid() {
+    public String getSstPid() {
         return this.sstPid;
     }
 
@@ -109,19 +109,19 @@ public class CompanyModel {
      *
      * If this company files Streamlined Sales Tax, this is the PID of this company as defined by the Streamlined Sales Tax governing board.
      */
-    public void setSstPid(string value) {
+    public void setSstPid(String value) {
         this.sstPid = value;
     }
 
 
-    private string companyCode;
+    private String companyCode;
 
     /**
      * Getter for companyCode
      *
      * A unique code that references this company within your account.
      */
-    public string getCompanyCode() {
+    public String getCompanyCode() {
         return this.companyCode;
     }
 
@@ -130,19 +130,19 @@ public class CompanyModel {
      *
      * A unique code that references this company within your account.
      */
-    public void setCompanyCode(string value) {
+    public void setCompanyCode(String value) {
         this.companyCode = value;
     }
 
 
-    private string name;
+    private String name;
 
     /**
      * Getter for name
      *
      * The name of this company, as shown to customers.
      */
-    public string getName() {
+    public String getName() {
         return this.name;
     }
 
@@ -151,7 +151,7 @@ public class CompanyModel {
      *
      * The name of this company, as shown to customers.
      */
-    public void setName(string value) {
+    public void setName(String value) {
         this.name = value;
     }
 
@@ -219,7 +219,7 @@ public class CompanyModel {
     }
 
 
-    private string taxpayerIdNumber;
+    private String taxpayerIdNumber;
 
     /**
      * Getter for taxpayerIdNumber
@@ -230,7 +230,7 @@ public class CompanyModel {
     * This value is required if you subscribe to Avalara Managed Returns or the SST Certified Service Provider services, 
     * but it is optional if you do not subscribe to either of those services.
      */
-    public string getTaxpayerIdNumber() {
+    public String getTaxpayerIdNumber() {
         return this.taxpayerIdNumber;
     }
 
@@ -243,7 +243,7 @@ public class CompanyModel {
     * This value is required if you subscribe to Avalara Managed Returns or the SST Certified Service Provider services, 
     * but it is optional if you do not subscribe to either of those services.
      */
-    public void setTaxpayerIdNumber(string value) {
+    public void setTaxpayerIdNumber(String value) {
         this.taxpayerIdNumber = value;
     }
 
@@ -317,14 +317,14 @@ public class CompanyModel {
     }
 
 
-    private string defaultCountry;
+    private String defaultCountry;
 
     /**
      * Getter for defaultCountry
      *
      * The two character ISO-3166 country code of the default country for this company.
      */
-    public string getDefaultCountry() {
+    public String getDefaultCountry() {
         return this.defaultCountry;
     }
 
@@ -333,19 +333,19 @@ public class CompanyModel {
      *
      * The two character ISO-3166 country code of the default country for this company.
      */
-    public void setDefaultCountry(string value) {
+    public void setDefaultCountry(String value) {
         this.defaultCountry = value;
     }
 
 
-    private string baseCurrencyCode;
+    private String baseCurrencyCode;
 
     /**
      * Getter for baseCurrencyCode
      *
      * This is the three character ISO-4217 currency code of the default currency used by this company.
      */
-    public string getBaseCurrencyCode() {
+    public String getBaseCurrencyCode() {
         return this.baseCurrencyCode;
     }
 
@@ -354,7 +354,7 @@ public class CompanyModel {
      *
      * This is the three character ISO-4217 currency code of the default currency used by this company.
      */
-    public void setBaseCurrencyCode(string value) {
+    public void setBaseCurrencyCode(String value) {
         this.baseCurrencyCode = value;
     }
 
@@ -468,14 +468,14 @@ public class CompanyModel {
     }
 
 
-    private string businessIdentificationNo;
+    private String businessIdentificationNo;
 
     /**
      * Getter for businessIdentificationNo
      *
      * Business Identification No
      */
-    public string getBusinessIdentificationNo() {
+    public String getBusinessIdentificationNo() {
         return this.businessIdentificationNo;
     }
 
@@ -484,7 +484,7 @@ public class CompanyModel {
      *
      * Business Identification No
      */
-    public void setBusinessIdentificationNo(string value) {
+    public void setBusinessIdentificationNo(String value) {
         this.businessIdentificationNo = value;
     }
 

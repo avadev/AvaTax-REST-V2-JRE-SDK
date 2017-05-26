@@ -282,14 +282,14 @@ public class FilingReturnModel {
     }
 
 
-    private string formName;
+    private String formName;
 
     /**
      * Getter for formName
      *
      * The name of the form.
      */
-    public string getFormName() {
+    public String getFormName() {
         return this.formName;
     }
 
@@ -298,7 +298,7 @@ public class FilingReturnModel {
      *
      * The name of the form.
      */
-    public void setFormName(string value) {
+    public void setFormName(String value) {
         this.formName = value;
     }
 
@@ -324,14 +324,14 @@ public class FilingReturnModel {
     }
 
 
-    private string formCode;
+    private String formCode;
 
     /**
      * Getter for formCode
      *
      * The unique code of the form.
      */
-    public string getFormCode() {
+    public String getFormCode() {
         return this.formCode;
     }
 
@@ -340,19 +340,19 @@ public class FilingReturnModel {
      *
      * The unique code of the form.
      */
-    public void setFormCode(string value) {
+    public void setFormCode(String value) {
         this.formCode = value;
     }
 
 
-    private string description;
+    private String description;
 
     /**
      * Getter for description
      *
      * A description for the return.
      */
-    public string getDescription() {
+    public String getDescription() {
         return this.description;
     }
 
@@ -361,7 +361,7 @@ public class FilingReturnModel {
      *
      * A description for the return.
      */
-    public void setDescription(string value) {
+    public void setDescription(String value) {
         this.description = value;
     }
 

@@ -30,14 +30,14 @@ import java.util.HashMap;
 public class PointOfSaleDataRequestModel {
 
 
-    private string companyCode;
+    private String companyCode;
 
     /**
      * Getter for companyCode
      *
      * A unique code that references a company within your account.
      */
-    public string getCompanyCode() {
+    public String getCompanyCode() {
         return this.companyCode;
     }
 
@@ -46,7 +46,7 @@ public class PointOfSaleDataRequestModel {
      *
      * A unique code that references a company within your account.
      */
-    public void setCompanyCode(string value) {
+    public void setCompanyCode(String value) {
         this.companyCode = value;
     }
 
@@ -93,14 +93,14 @@ public class PointOfSaleDataRequestModel {
     }
 
 
-    private string[] taxCodes;
+    private String[] taxCodes;
 
     /**
      * Getter for taxCodes
      *
      * A list of tax codes to include in this point-of-sale file. If no tax codes are specified, response will include all distinct tax codes associated with the Items within your company.
      */
-    public string[] getTaxCodes() {
+    public String[] getTaxCodes() {
         return this.taxCodes;
     }
 
@@ -109,19 +109,19 @@ public class PointOfSaleDataRequestModel {
      *
      * A list of tax codes to include in this point-of-sale file. If no tax codes are specified, response will include all distinct tax codes associated with the Items within your company.
      */
-    public void setTaxCodes(string[] value) {
+    public void setTaxCodes(String[] value) {
         this.taxCodes = value;
     }
 
 
-    private string[] locationCodes;
+    private String[] locationCodes;
 
     /**
      * Getter for locationCodes
      *
      * A list of location codes to include in this point-of-sale file. If no location codes are specified, response will include all locations within your company.
      */
-    public string[] getLocationCodes() {
+    public String[] getLocationCodes() {
         return this.locationCodes;
     }
 
@@ -130,7 +130,7 @@ public class PointOfSaleDataRequestModel {
      *
      * A list of location codes to include in this point-of-sale file. If no location codes are specified, response will include all locations within your company.
      */
-    public void setLocationCodes(string[] value) {
+    public void setLocationCodes(String[] value) {
         this.locationCodes = value;
     }
 

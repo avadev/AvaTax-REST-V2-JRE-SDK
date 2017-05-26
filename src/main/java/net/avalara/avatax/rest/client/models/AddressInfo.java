@@ -30,14 +30,14 @@ import java.util.HashMap;
 public class AddressInfo {
 
 
-    private string line1;
+    private String line1;
 
     /**
      * Getter for line1
      *
      * Line1
      */
-    public string getLine1() {
+    public String getLine1() {
         return this.line1;
     }
 
@@ -46,19 +46,19 @@ public class AddressInfo {
      *
      * Line1
      */
-    public void setLine1(string value) {
+    public void setLine1(String value) {
         this.line1 = value;
     }
 
 
-    private string line2;
+    private String line2;
 
     /**
      * Getter for line2
      *
      * Line2
      */
-    public string getLine2() {
+    public String getLine2() {
         return this.line2;
     }
 
@@ -67,19 +67,19 @@ public class AddressInfo {
      *
      * Line2
      */
-    public void setLine2(string value) {
+    public void setLine2(String value) {
         this.line2 = value;
     }
 
 
-    private string line3;
+    private String line3;
 
     /**
      * Getter for line3
      *
      * Line3
      */
-    public string getLine3() {
+    public String getLine3() {
         return this.line3;
     }
 
@@ -88,19 +88,19 @@ public class AddressInfo {
      *
      * Line3
      */
-    public void setLine3(string value) {
+    public void setLine3(String value) {
         this.line3 = value;
     }
 
 
-    private string city;
+    private String city;
 
     /**
      * Getter for city
      *
      * City
      */
-    public string getCity() {
+    public String getCity() {
         return this.city;
     }
 
@@ -109,19 +109,19 @@ public class AddressInfo {
      *
      * City
      */
-    public void setCity(string value) {
+    public void setCity(String value) {
         this.city = value;
     }
 
 
-    private string region;
+    private String region;
 
     /**
      * Getter for region
      *
      * State / Province / Region
      */
-    public string getRegion() {
+    public String getRegion() {
         return this.region;
     }
 
@@ -130,19 +130,19 @@ public class AddressInfo {
      *
      * State / Province / Region
      */
-    public void setRegion(string value) {
+    public void setRegion(String value) {
         this.region = value;
     }
 
 
-    private string country;
+    private String country;
 
     /**
      * Getter for country
      *
      * Two character ISO 3166 Country Code
      */
-    public string getCountry() {
+    public String getCountry() {
         return this.country;
     }
 
@@ -151,19 +151,19 @@ public class AddressInfo {
      *
      * Two character ISO 3166 Country Code
      */
-    public void setCountry(string value) {
+    public void setCountry(String value) {
         this.country = value;
     }
 
 
-    private string postalCode;
+    private String postalCode;
 
     /**
      * Getter for postalCode
      *
      * Postal Code / Zip Code
      */
-    public string getPostalCode() {
+    public String getPostalCode() {
         return this.postalCode;
     }
 
@@ -172,7 +172,7 @@ public class AddressInfo {
      *
      * Postal Code / Zip Code
      */
-    public void setPostalCode(string value) {
+    public void setPostalCode(String value) {
         this.postalCode = value;
     }
 

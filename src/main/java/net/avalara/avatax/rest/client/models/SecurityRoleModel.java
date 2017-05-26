@@ -51,14 +51,14 @@ public class SecurityRoleModel {
     }
 
 
-    private string description;
+    private String description;
 
     /**
      * Getter for description
      *
      * A description of this security role
      */
-    public string getDescription() {
+    public String getDescription() {
         return this.description;
     }
 
@@ -67,7 +67,7 @@ public class SecurityRoleModel {
      *
      * A description of this security role
      */
-    public void setDescription(string value) {
+    public void setDescription(String value) {
         this.description = value;
     }
 

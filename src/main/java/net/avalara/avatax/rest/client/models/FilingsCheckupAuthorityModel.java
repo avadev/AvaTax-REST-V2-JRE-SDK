@@ -51,14 +51,14 @@ public class FilingsCheckupAuthorityModel {
     }
 
 
-    private string locationCode;
+    private String locationCode;
 
     /**
      * Getter for locationCode
      *
      * Location Code of the tax authority
      */
-    public string getLocationCode() {
+    public String getLocationCode() {
         return this.locationCode;
     }
 
@@ -67,19 +67,19 @@ public class FilingsCheckupAuthorityModel {
      *
      * Location Code of the tax authority
      */
-    public void setLocationCode(string value) {
+    public void setLocationCode(String value) {
         this.locationCode = value;
     }
 
 
-    private string taxAuthorityName;
+    private String taxAuthorityName;
 
     /**
      * Getter for taxAuthorityName
      *
      * Name of the tax authority
      */
-    public string getTaxAuthorityName() {
+    public String getTaxAuthorityName() {
         return this.taxAuthorityName;
     }
 
@@ -88,7 +88,7 @@ public class FilingsCheckupAuthorityModel {
      *
      * Name of the tax authority
      */
-    public void setTaxAuthorityName(string value) {
+    public void setTaxAuthorityName(String value) {
         this.taxAuthorityName = value;
     }
 
@@ -156,14 +156,14 @@ public class FilingsCheckupAuthorityModel {
     }
 
 
-    private string taxTypeId;
+    private String taxTypeId;
 
     /**
      * Getter for taxTypeId
      *
      * Tax Type collected in the tax authority
      */
-    public string getTaxTypeId() {
+    public String getTaxTypeId() {
         return this.taxTypeId;
     }
 
@@ -172,7 +172,7 @@ public class FilingsCheckupAuthorityModel {
      *
      * Tax Type collected in the tax authority
      */
-    public void setTaxTypeId(string value) {
+    public void setTaxTypeId(String value) {
         this.taxTypeId = value;
     }
 

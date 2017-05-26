@@ -95,14 +95,14 @@ public class TaxOverrideModel {
     }
 
 
-    private string reason;
+    private String reason;
 
     /**
      * Getter for reason
      *
      * This provides the reason for a tax override for audit purposes. It is required for types 2-4.
      */
-    public string getReason() {
+    public String getReason() {
         return this.reason;
     }
 
@@ -111,7 +111,7 @@ public class TaxOverrideModel {
      *
      * This provides the reason for a tax override for audit purposes. It is required for types 2-4.
      */
-    public void setReason(string value) {
+    public void setReason(String value) {
         this.reason = value;
     }
 

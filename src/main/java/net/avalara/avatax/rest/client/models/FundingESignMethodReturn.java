@@ -30,14 +30,14 @@ import java.util.HashMap;
 public class FundingESignMethodReturn {
 
 
-    private string method;
+    private String method;
 
     /**
      * Getter for method
      *
      * Method
      */
-    public string getMethod() {
+    public String getMethod() {
         return this.method;
     }
 
@@ -46,7 +46,7 @@ public class FundingESignMethodReturn {
      *
      * Method
      */
-    public void setMethod(string value) {
+    public void setMethod(String value) {
         this.method = value;
     }
 
@@ -72,14 +72,14 @@ public class FundingESignMethodReturn {
     }
 
 
-    private string javaScript;
+    private String javaScript;
 
     /**
      * Getter for javaScript
      *
      * The actual javascript to use to render this object
      */
-    public string getJavaScript() {
+    public String getJavaScript() {
         return this.javaScript;
     }
 
@@ -88,7 +88,7 @@ public class FundingESignMethodReturn {
      *
      * The actual javascript to use to render this object
      */
-    public void setJavaScript(string value) {
+    public void setJavaScript(String value) {
         this.javaScript = value;
     }
 

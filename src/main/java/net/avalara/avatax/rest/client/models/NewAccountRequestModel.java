@@ -31,14 +31,14 @@ import java.util.HashMap;
 public class NewAccountRequestModel {
 
 
-    private string[] products;
+    private String[] products;
 
     /**
      * Getter for products
      *
      * The list of products to which this account would like to subscribe.
      */
-    public string[] getProducts() {
+    public String[] getProducts() {
         return this.products;
     }
 
@@ -47,12 +47,12 @@ public class NewAccountRequestModel {
      *
      * The list of products to which this account would like to subscribe.
      */
-    public void setProducts(string[] value) {
+    public void setProducts(String[] value) {
         this.products = value;
     }
 
 
-    private string connectorName;
+    private String connectorName;
 
     /**
      * Getter for connectorName
@@ -60,7 +60,7 @@ public class NewAccountRequestModel {
      * The name of the connector that will be the primary method of access used to call the account created.
     * For a list of available connectors, please contact your Avalara representative.
      */
-    public string getConnectorName() {
+    public String getConnectorName() {
         return this.connectorName;
     }
 
@@ -70,12 +70,12 @@ public class NewAccountRequestModel {
      * The name of the connector that will be the primary method of access used to call the account created.
     * For a list of available connectors, please contact your Avalara representative.
      */
-    public void setConnectorName(string value) {
+    public void setConnectorName(String value) {
         this.connectorName = value;
     }
 
 
-    private string parentAccountNumber;
+    private String parentAccountNumber;
 
     /**
      * Getter for parentAccountNumber
@@ -83,7 +83,7 @@ public class NewAccountRequestModel {
      * An approved partner account can be referenced when provisioning an account, allowing a link between 
     * the partner and the provisioned account.
      */
-    public string getParentAccountNumber() {
+    public String getParentAccountNumber() {
         return this.parentAccountNumber;
     }
 
@@ -93,19 +93,19 @@ public class NewAccountRequestModel {
      * An approved partner account can be referenced when provisioning an account, allowing a link between 
     * the partner and the provisioned account.
      */
-    public void setParentAccountNumber(string value) {
+    public void setParentAccountNumber(String value) {
         this.parentAccountNumber = value;
     }
 
 
-    private string referrerId;
+    private String referrerId;
 
     /**
      * Getter for referrerId
      *
      * Identifies a referring partner for the assessment of referral-based commissions.
      */
-    public string getReferrerId() {
+    public String getReferrerId() {
         return this.referrerId;
     }
 
@@ -114,19 +114,19 @@ public class NewAccountRequestModel {
      *
      * Identifies a referring partner for the assessment of referral-based commissions.
      */
-    public void setReferrerId(string value) {
+    public void setReferrerId(String value) {
         this.referrerId = value;
     }
 
 
-    private string paymentMethodId;
+    private String paymentMethodId;
 
     /**
      * Getter for paymentMethodId
      *
      * Zuora-generated Payment ID to which the new account should be associated. For free trial accounts, an empty string is acceptable.
      */
-    public string getPaymentMethodId() {
+    public String getPaymentMethodId() {
         return this.paymentMethodId;
     }
 
@@ -135,7 +135,7 @@ public class NewAccountRequestModel {
      *
      * Zuora-generated Payment ID to which the new account should be associated. For free trial accounts, an empty string is acceptable.
      */
-    public void setPaymentMethodId(string value) {
+    public void setPaymentMethodId(String value) {
         this.paymentMethodId = value;
     }
 
@@ -182,14 +182,14 @@ public class NewAccountRequestModel {
     }
 
 
-    private string accountName;
+    private String accountName;
 
     /**
      * Getter for accountName
      *
      * Account Name
      */
-    public string getAccountName() {
+    public String getAccountName() {
         return this.accountName;
     }
 
@@ -198,19 +198,19 @@ public class NewAccountRequestModel {
      *
      * Account Name
      */
-    public void setAccountName(string value) {
+    public void setAccountName(String value) {
         this.accountName = value;
     }
 
 
-    private string firstName;
+    private String firstName;
 
     /**
      * Getter for firstName
      *
      * First Name of the primary contact person for this account
      */
-    public string getFirstName() {
+    public String getFirstName() {
         return this.firstName;
     }
 
@@ -219,19 +219,19 @@ public class NewAccountRequestModel {
      *
      * First Name of the primary contact person for this account
      */
-    public void setFirstName(string value) {
+    public void setFirstName(String value) {
         this.firstName = value;
     }
 
 
-    private string lastName;
+    private String lastName;
 
     /**
      * Getter for lastName
      *
      * Last Name of the primary contact person for this account
      */
-    public string getLastName() {
+    public String getLastName() {
         return this.lastName;
     }
 
@@ -240,19 +240,19 @@ public class NewAccountRequestModel {
      *
      * Last Name of the primary contact person for this account
      */
-    public void setLastName(string value) {
+    public void setLastName(String value) {
         this.lastName = value;
     }
 
 
-    private string title;
+    private String title;
 
     /**
      * Getter for title
      *
      * Title of the primary contact person for this account
      */
-    public string getTitle() {
+    public String getTitle() {
         return this.title;
     }
 
@@ -261,19 +261,19 @@ public class NewAccountRequestModel {
      *
      * Title of the primary contact person for this account
      */
-    public void setTitle(string value) {
+    public void setTitle(String value) {
         this.title = value;
     }
 
 
-    private string phoneNumber;
+    private String phoneNumber;
 
     /**
      * Getter for phoneNumber
      *
      * Phone number of the primary contact person for this account
      */
-    public string getPhoneNumber() {
+    public String getPhoneNumber() {
         return this.phoneNumber;
     }
 
@@ -282,19 +282,19 @@ public class NewAccountRequestModel {
      *
      * Phone number of the primary contact person for this account
      */
-    public void setPhoneNumber(string value) {
+    public void setPhoneNumber(String value) {
         this.phoneNumber = value;
     }
 
 
-    private string email;
+    private String email;
 
     /**
      * Getter for email
      *
      * Email of the primary contact person for this account
      */
-    public string getEmail() {
+    public String getEmail() {
         return this.email;
     }
 
@@ -303,12 +303,12 @@ public class NewAccountRequestModel {
      *
      * Email of the primary contact person for this account
      */
-    public void setEmail(string value) {
+    public void setEmail(String value) {
         this.email = value;
     }
 
 
-    private string userPassword;
+    private String userPassword;
 
     /**
      * Getter for userPassword
@@ -317,7 +317,7 @@ public class NewAccountRequestModel {
     * be challenged to change this password upon logging in to the Admin Console. If supplied, will be the set password for 
     * the default created user, and the user will not be challenged to change their password upon login to the Admin Console.
      */
-    public string getUserPassword() {
+    public String getUserPassword() {
         return this.userPassword;
     }
 
@@ -328,7 +328,7 @@ public class NewAccountRequestModel {
     * be challenged to change this password upon logging in to the Admin Console. If supplied, will be the set password for 
     * the default created user, and the user will not be challenged to change their password upon login to the Admin Console.
      */
-    public void setUserPassword(string value) {
+    public void setUserPassword(String value) {
         this.userPassword = value;
     }
 

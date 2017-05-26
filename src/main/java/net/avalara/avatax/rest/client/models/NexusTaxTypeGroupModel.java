@@ -51,14 +51,14 @@ public class NexusTaxTypeGroupModel {
     }
 
 
-    private string nexusTaxTypeGroupId;
+    private String nexusTaxTypeGroupId;
 
     /**
      * Getter for nexusTaxTypeGroupId
      *
      * The unique human readable Id of this nexus tax type group.
      */
-    public string getNexusTaxTypeGroupId() {
+    public String getNexusTaxTypeGroupId() {
         return this.nexusTaxTypeGroupId;
     }
 
@@ -67,19 +67,19 @@ public class NexusTaxTypeGroupModel {
      *
      * The unique human readable Id of this nexus tax type group.
      */
-    public void setNexusTaxTypeGroupId(string value) {
+    public void setNexusTaxTypeGroupId(String value) {
         this.nexusTaxTypeGroupId = value;
     }
 
 
-    private string description;
+    private String description;
 
     /**
      * Getter for description
      *
      * The description of this nexus tax type group.
      */
-    public string getDescription() {
+    public String getDescription() {
         return this.description;
     }
 
@@ -88,7 +88,7 @@ public class NexusTaxTypeGroupModel {
      *
      * The description of this nexus tax type group.
      */
-    public void setDescription(string value) {
+    public void setDescription(String value) {
         this.description = value;
     }
 

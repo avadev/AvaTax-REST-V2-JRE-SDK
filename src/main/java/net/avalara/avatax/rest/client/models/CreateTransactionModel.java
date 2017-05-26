@@ -51,7 +51,7 @@ public class CreateTransactionModel {
     }
 
 
-    private string code;
+    private String code;
 
     /**
      * Getter for code
@@ -59,7 +59,7 @@ public class CreateTransactionModel {
      * Transaction Code - the internal reference code used by the client application. This is used for operations such as
     * Get, Adjust, Settle, and Void. If you leave the transaction code blank, a GUID will be assigned to each transaction.
      */
-    public string getCode() {
+    public String getCode() {
         return this.code;
     }
 
@@ -69,12 +69,12 @@ public class CreateTransactionModel {
      * Transaction Code - the internal reference code used by the client application. This is used for operations such as
     * Get, Adjust, Settle, and Void. If you leave the transaction code blank, a GUID will be assigned to each transaction.
      */
-    public void setCode(string value) {
+    public void setCode(String value) {
         this.code = value;
     }
 
 
-    private string companyCode;
+    private String companyCode;
 
     /**
      * Getter for companyCode
@@ -82,7 +82,7 @@ public class CreateTransactionModel {
      * Company Code - Specify the code of the company creating this transaction here. If you leave this value null,
     * your account's default company will be used instead.
      */
-    public string getCompanyCode() {
+    public String getCompanyCode() {
         return this.companyCode;
     }
 
@@ -92,7 +92,7 @@ public class CreateTransactionModel {
      * Company Code - Specify the code of the company creating this transaction here. If you leave this value null,
     * your account's default company will be used instead.
      */
-    public void setCompanyCode(string value) {
+    public void setCompanyCode(String value) {
         this.companyCode = value;
     }
 
@@ -118,14 +118,14 @@ public class CreateTransactionModel {
     }
 
 
-    private string salespersonCode;
+    private String salespersonCode;
 
     /**
      * Getter for salespersonCode
      *
      * Salesperson Code - The client application salesperson reference code.
      */
-    public string getSalespersonCode() {
+    public String getSalespersonCode() {
         return this.salespersonCode;
     }
 
@@ -134,19 +134,19 @@ public class CreateTransactionModel {
      *
      * Salesperson Code - The client application salesperson reference code.
      */
-    public void setSalespersonCode(string value) {
+    public void setSalespersonCode(String value) {
         this.salespersonCode = value;
     }
 
 
-    private string customerCode;
+    private String customerCode;
 
     /**
      * Getter for customerCode
      *
      * Customer Code - The client application customer reference code.
      */
-    public string getCustomerCode() {
+    public String getCustomerCode() {
         return this.customerCode;
     }
 
@@ -155,12 +155,12 @@ public class CreateTransactionModel {
      *
      * Customer Code - The client application customer reference code.
      */
-    public void setCustomerCode(string value) {
+    public void setCustomerCode(String value) {
         this.customerCode = value;
     }
 
 
-    private string customerUsageType;
+    private String customerUsageType;
 
     /**
      * Getter for customerUsageType
@@ -168,7 +168,7 @@ public class CreateTransactionModel {
      * Customer Usage Type - The client application customer or usage type. For a list of 
     * available usage types, see `/api/v2/definitions/entityusecodes`.
      */
-    public string getCustomerUsageType() {
+    public String getCustomerUsageType() {
         return this.customerUsageType;
     }
 
@@ -178,7 +178,7 @@ public class CreateTransactionModel {
      * Customer Usage Type - The client application customer or usage type. For a list of 
     * available usage types, see `/api/v2/definitions/entityusecodes`.
      */
-    public void setCustomerUsageType(string value) {
+    public void setCustomerUsageType(String value) {
         this.customerUsageType = value;
     }
 
@@ -208,7 +208,7 @@ public class CreateTransactionModel {
     }
 
 
-    private string purchaseOrderNo;
+    private String purchaseOrderNo;
 
     /**
      * Getter for purchaseOrderNo
@@ -216,7 +216,7 @@ public class CreateTransactionModel {
      * Purchase Order Number for this document
     * This is required for single use exemption certificates to match the order and invoice with the certificate.
      */
-    public string getPurchaseOrderNo() {
+    public String getPurchaseOrderNo() {
         return this.purchaseOrderNo;
     }
 
@@ -226,19 +226,19 @@ public class CreateTransactionModel {
      * Purchase Order Number for this document
     * This is required for single use exemption certificates to match the order and invoice with the certificate.
      */
-    public void setPurchaseOrderNo(string value) {
+    public void setPurchaseOrderNo(String value) {
         this.purchaseOrderNo = value;
     }
 
 
-    private string exemptionNo;
+    private String exemptionNo;
 
     /**
      * Getter for exemptionNo
      *
      * Exemption Number for this document
      */
-    public string getExemptionNo() {
+    public String getExemptionNo() {
         return this.exemptionNo;
     }
 
@@ -247,7 +247,7 @@ public class CreateTransactionModel {
      *
      * Exemption Number for this document
      */
-    public void setExemptionNo(string value) {
+    public void setExemptionNo(String value) {
         this.exemptionNo = value;
     }
 
@@ -317,14 +317,14 @@ public class CreateTransactionModel {
     }
 
 
-    private string referenceCode;
+    private String referenceCode;
 
     /**
      * Getter for referenceCode
      *
      * Reference Code used to reference the original document for a return invoice
      */
-    public string getReferenceCode() {
+    public String getReferenceCode() {
         return this.referenceCode;
     }
 
@@ -333,19 +333,19 @@ public class CreateTransactionModel {
      *
      * Reference Code used to reference the original document for a return invoice
      */
-    public void setReferenceCode(string value) {
+    public void setReferenceCode(String value) {
         this.referenceCode = value;
     }
 
 
-    private string reportingLocationCode;
+    private String reportingLocationCode;
 
     /**
      * Getter for reportingLocationCode
      *
      * Sets the sale location code (Outlet ID) for reporting this document to the tax authority.
      */
-    public string getReportingLocationCode() {
+    public String getReportingLocationCode() {
         return this.reportingLocationCode;
     }
 
@@ -354,7 +354,7 @@ public class CreateTransactionModel {
      *
      * Sets the sale location code (Outlet ID) for reporting this document to the tax authority.
      */
-    public void setReportingLocationCode(string value) {
+    public void setReportingLocationCode(String value) {
         this.reportingLocationCode = value;
     }
 
@@ -382,14 +382,14 @@ public class CreateTransactionModel {
     }
 
 
-    private string batchCode;
+    private String batchCode;
 
     /**
      * Getter for batchCode
      *
      * BatchCode for batch operations.
      */
-    public string getBatchCode() {
+    public String getBatchCode() {
         return this.batchCode;
     }
 
@@ -398,7 +398,7 @@ public class CreateTransactionModel {
      *
      * BatchCode for batch operations.
      */
-    public void setBatchCode(string value) {
+    public void setBatchCode(String value) {
         this.batchCode = value;
     }
 
@@ -424,14 +424,14 @@ public class CreateTransactionModel {
     }
 
 
-    private string currencyCode;
+    private String currencyCode;
 
     /**
      * Getter for currencyCode
      *
      * 3 character ISO 4217 currency code.
      */
-    public string getCurrencyCode() {
+    public String getCurrencyCode() {
         return this.currencyCode;
     }
 
@@ -440,7 +440,7 @@ public class CreateTransactionModel {
      *
      * 3 character ISO 4217 currency code.
      */
-    public void setCurrencyCode(string value) {
+    public void setCurrencyCode(String value) {
         this.currencyCode = value;
     }
 
@@ -510,14 +510,14 @@ public class CreateTransactionModel {
     }
 
 
-    private string posLaneCode;
+    private String posLaneCode;
 
     /**
      * Getter for posLaneCode
      *
      * Sets the POS Lane Code sent by the User for this document.
      */
-    public string getPosLaneCode() {
+    public String getPosLaneCode() {
         return this.posLaneCode;
     }
 
@@ -526,12 +526,12 @@ public class CreateTransactionModel {
      *
      * Sets the POS Lane Code sent by the User for this document.
      */
-    public void setPosLaneCode(string value) {
+    public void setPosLaneCode(String value) {
         this.posLaneCode = value;
     }
 
 
-    private string businessIdentificationNo;
+    private String businessIdentificationNo;
 
     /**
      * Getter for businessIdentificationNo
@@ -543,7 +543,7 @@ public class CreateTransactionModel {
     * a business identification number for your company during company setup, this transaction will be treated as a 
     * business-to-business transaction for VAT purposes and it will be calculated according to VAT tax rules.
      */
-    public string getBusinessIdentificationNo() {
+    public String getBusinessIdentificationNo() {
         return this.businessIdentificationNo;
     }
 
@@ -557,7 +557,7 @@ public class CreateTransactionModel {
     * a business identification number for your company during company setup, this transaction will be treated as a 
     * business-to-business transaction for VAT purposes and it will be calculated according to VAT tax rules.
      */
-    public void setBusinessIdentificationNo(string value) {
+    public void setBusinessIdentificationNo(String value) {
         this.businessIdentificationNo = value;
     }
 
@@ -583,14 +583,14 @@ public class CreateTransactionModel {
     }
 
 
-    private string description;
+    private String description;
 
     /**
      * Getter for description
      *
      * Description
      */
-    public string getDescription() {
+    public String getDescription() {
         return this.description;
     }
 
@@ -599,19 +599,19 @@ public class CreateTransactionModel {
      *
      * Description
      */
-    public void setDescription(string value) {
+    public void setDescription(String value) {
         this.description = value;
     }
 
 
-    private string email;
+    private String email;
 
     /**
      * Getter for email
      *
      * Email
      */
-    public string getEmail() {
+    public String getEmail() {
         return this.email;
     }
 
@@ -620,7 +620,7 @@ public class CreateTransactionModel {
      *
      * Email
      */
-    public void setEmail(string value) {
+    public void setEmail(String value) {
         this.email = value;
     }
 

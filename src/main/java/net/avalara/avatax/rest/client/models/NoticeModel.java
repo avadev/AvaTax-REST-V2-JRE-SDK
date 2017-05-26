@@ -95,14 +95,14 @@ public class NoticeModel {
     }
 
 
-    private string status;
+    private String status;
 
     /**
      * Getter for status
      *
      * The status of the notice
      */
-    public string getStatus() {
+    public String getStatus() {
         return this.status;
     }
 
@@ -111,7 +111,7 @@ public class NoticeModel {
      *
      * The status of the notice
      */
-    public void setStatus(string value) {
+    public void setStatus(String value) {
         this.status = value;
     }
 
@@ -200,14 +200,14 @@ public class NoticeModel {
     }
 
 
-    private string country;
+    private String country;
 
     /**
      * Getter for country
      *
      * The country the notice is in
      */
-    public string getCountry() {
+    public String getCountry() {
         return this.country;
     }
 
@@ -216,19 +216,19 @@ public class NoticeModel {
      *
      * The country the notice is in
      */
-    public void setCountry(string value) {
+    public void setCountry(String value) {
         this.country = value;
     }
 
 
-    private string region;
+    private String region;
 
     /**
      * Getter for region
      *
      * The region the notice is for
      */
-    public string getRegion() {
+    public String getRegion() {
         return this.region;
     }
 
@@ -237,7 +237,7 @@ public class NoticeModel {
      *
      * The region the notice is for
      */
-    public void setRegion(string value) {
+    public void setRegion(String value) {
         this.region = value;
     }
 
@@ -305,14 +305,14 @@ public class NoticeModel {
     }
 
 
-    private string ticketReferenceNo;
+    private String ticketReferenceNo;
 
     /**
      * Getter for ticketReferenceNo
      *
      * The ticket reference number of the notice
      */
-    public string getTicketReferenceNo() {
+    public String getTicketReferenceNo() {
         return this.ticketReferenceNo;
     }
 
@@ -321,19 +321,19 @@ public class NoticeModel {
      *
      * The ticket reference number of the notice
      */
-    public void setTicketReferenceNo(string value) {
+    public void setTicketReferenceNo(String value) {
         this.ticketReferenceNo = value;
     }
 
 
-    private string ticketReferenceUrl;
+    private String ticketReferenceUrl;
 
     /**
      * Getter for ticketReferenceUrl
      *
      * The ticket reference url of the notice
      */
-    public string getTicketReferenceUrl() {
+    public String getTicketReferenceUrl() {
         return this.ticketReferenceUrl;
     }
 
@@ -342,19 +342,19 @@ public class NoticeModel {
      *
      * The ticket reference url of the notice
      */
-    public void setTicketReferenceUrl(string value) {
+    public void setTicketReferenceUrl(String value) {
         this.ticketReferenceUrl = value;
     }
 
 
-    private string salesForceCase;
+    private String salesForceCase;
 
     /**
      * Getter for salesForceCase
      *
      * The sales force case of the notice
      */
-    public string getSalesForceCase() {
+    public String getSalesForceCase() {
         return this.salesForceCase;
     }
 
@@ -363,19 +363,19 @@ public class NoticeModel {
      *
      * The sales force case of the notice
      */
-    public void setSalesForceCase(string value) {
+    public void setSalesForceCase(String value) {
         this.salesForceCase = value;
     }
 
 
-    private string salesForceCaseUrl;
+    private String salesForceCaseUrl;
 
     /**
      * Getter for salesForceCaseUrl
      *
      * The URL to the sales force case
      */
-    public string getSalesForceCaseUrl() {
+    public String getSalesForceCaseUrl() {
         return this.salesForceCaseUrl;
     }
 
@@ -384,19 +384,19 @@ public class NoticeModel {
      *
      * The URL to the sales force case
      */
-    public void setSalesForceCaseUrl(string value) {
+    public void setSalesForceCaseUrl(String value) {
         this.salesForceCaseUrl = value;
     }
 
 
-    private string taxPeriod;
+    private String taxPeriod;
 
     /**
      * Getter for taxPeriod
      *
      * The tax period of the notice
      */
-    public string getTaxPeriod() {
+    public String getTaxPeriod() {
         return this.taxPeriod;
     }
 
@@ -405,7 +405,7 @@ public class NoticeModel {
      *
      * The tax period of the notice
      */
-    public void setTaxPeriod(string value) {
+    public void setTaxPeriod(String value) {
         this.taxPeriod = value;
     }
 
@@ -431,14 +431,14 @@ public class NoticeModel {
     }
 
 
-    private string reason;
+    private String reason;
 
     /**
      * Getter for reason
      *
      * The notice reason
      */
-    public string getReason() {
+    public String getReason() {
         return this.reason;
     }
 
@@ -447,7 +447,7 @@ public class NoticeModel {
      *
      * The notice reason
      */
-    public void setReason(string value) {
+    public void setReason(String value) {
         this.reason = value;
     }
 
@@ -473,14 +473,14 @@ public class NoticeModel {
     }
 
 
-    private string type;
+    private String type;
 
     /**
      * Getter for type
      *
      * The tax notice type description
      */
-    public string getType() {
+    public String getType() {
         return this.type;
     }
 
@@ -489,7 +489,7 @@ public class NoticeModel {
      *
      * The tax notice type description
      */
-    public void setType(string value) {
+    public void setType(String value) {
         this.type = value;
     }
 
@@ -536,14 +536,14 @@ public class NoticeModel {
     }
 
 
-    private string customerComment;
+    private String customerComment;
 
     /**
      * Getter for customerComment
      *
      * Comments from the customer on this notice
      */
-    public string getCustomerComment() {
+    public String getCustomerComment() {
         return this.customerComment;
     }
 
@@ -552,7 +552,7 @@ public class NoticeModel {
      *
      * Comments from the customer on this notice
      */
-    public void setCustomerComment(string value) {
+    public void setCustomerComment(String value) {
         this.customerComment = value;
     }
 
@@ -641,14 +641,14 @@ public class NoticeModel {
     }
 
 
-    private string createdByUserName;
+    private String createdByUserName;
 
     /**
      * Getter for createdByUserName
      *
      * The user who created the notice
      */
-    public string getCreatedByUserName() {
+    public String getCreatedByUserName() {
         return this.createdByUserName;
     }
 
@@ -657,7 +657,7 @@ public class NoticeModel {
      *
      * The user who created the notice
      */
-    public void setCreatedByUserName(string value) {
+    public void setCreatedByUserName(String value) {
         this.createdByUserName = value;
     }
 
@@ -683,14 +683,14 @@ public class NoticeModel {
     }
 
 
-    private string description;
+    private String description;
 
     /**
      * Getter for description
      *
      * The description of the notice
      */
-    public string getDescription() {
+    public String getDescription() {
         return this.description;
     }
 
@@ -699,7 +699,7 @@ public class NoticeModel {
      *
      * The description of the notice
      */
-    public void setDescription(string value) {
+    public void setDescription(String value) {
         this.description = value;
     }
 
@@ -767,14 +767,14 @@ public class NoticeModel {
     }
 
 
-    private string documentReference;
+    private String documentReference;
 
     /**
      * Getter for documentReference
      *
      * The document reference of the notice
      */
-    public string getDocumentReference() {
+    public String getDocumentReference() {
         return this.documentReference;
     }
 
@@ -783,19 +783,19 @@ public class NoticeModel {
      *
      * The document reference of the notice
      */
-    public void setDocumentReference(string value) {
+    public void setDocumentReference(String value) {
         this.documentReference = value;
     }
 
 
-    private string jurisdictionName;
+    private String jurisdictionName;
 
     /**
      * Getter for jurisdictionName
      *
      * The jurisdiction name of the notice
      */
-    public string getJurisdictionName() {
+    public String getJurisdictionName() {
         return this.jurisdictionName;
     }
 
@@ -804,19 +804,19 @@ public class NoticeModel {
      *
      * The jurisdiction name of the notice
      */
-    public void setJurisdictionName(string value) {
+    public void setJurisdictionName(String value) {
         this.jurisdictionName = value;
     }
 
 
-    private string jurisdictionType;
+    private String jurisdictionType;
 
     /**
      * Getter for jurisdictionType
      *
      * The jurisdiction type of the notice
      */
-    public string getJurisdictionType() {
+    public String getJurisdictionType() {
         return this.jurisdictionType;
     }
 
@@ -825,7 +825,7 @@ public class NoticeModel {
      *
      * The jurisdiction type of the notice
      */
-    public void setJurisdictionType(string value) {
+    public void setJurisdictionType(String value) {
         this.jurisdictionType = value;
     }
 

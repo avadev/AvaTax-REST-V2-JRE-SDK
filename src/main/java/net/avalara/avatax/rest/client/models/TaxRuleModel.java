@@ -95,7 +95,7 @@ public class TaxRuleModel {
     }
 
 
-    private string taxCode;
+    private String taxCode;
 
     /**
      * Getter for taxCode
@@ -103,7 +103,7 @@ public class TaxRuleModel {
      * The code string of the tax code for this rule.
     * When creating or updating a tax rule, you may specify either the taxCodeId value or the taxCode value.
      */
-    public string getTaxCode() {
+    public String getTaxCode() {
         return this.taxCode;
     }
 
@@ -113,19 +113,19 @@ public class TaxRuleModel {
      * The code string of the tax code for this rule.
     * When creating or updating a tax rule, you may specify either the taxCodeId value or the taxCode value.
      */
-    public void setTaxCode(string value) {
+    public void setTaxCode(String value) {
         this.taxCode = value;
     }
 
 
-    private string stateFIPS;
+    private String stateFIPS;
 
     /**
      * Getter for stateFIPS
      *
      * For U.S. tax rules, this is the state's Federal Information Processing Standard (FIPS) code.
      */
-    public string getStateFIPS() {
+    public String getStateFIPS() {
         return this.stateFIPS;
     }
 
@@ -134,19 +134,19 @@ public class TaxRuleModel {
      *
      * For U.S. tax rules, this is the state's Federal Information Processing Standard (FIPS) code.
      */
-    public void setStateFIPS(string value) {
+    public void setStateFIPS(String value) {
         this.stateFIPS = value;
     }
 
 
-    private string jurisName;
+    private String jurisName;
 
     /**
      * Getter for jurisName
      *
      * The name of the jurisdiction to which this tax rule applies.
      */
-    public string getJurisName() {
+    public String getJurisName() {
         return this.jurisName;
     }
 
@@ -155,19 +155,19 @@ public class TaxRuleModel {
      *
      * The name of the jurisdiction to which this tax rule applies.
      */
-    public void setJurisName(string value) {
+    public void setJurisName(String value) {
         this.jurisName = value;
     }
 
 
-    private string jurisCode;
+    private String jurisCode;
 
     /**
      * Getter for jurisCode
      *
      * The code of the jurisdiction to which this tax rule applies.
      */
-    public string getJurisCode() {
+    public String getJurisCode() {
         return this.jurisCode;
     }
 
@@ -176,7 +176,7 @@ public class TaxRuleModel {
      *
      * The code of the jurisdiction to which this tax rule applies.
      */
-    public void setJurisCode(string value) {
+    public void setJurisCode(String value) {
         this.jurisCode = value;
     }
 
@@ -202,14 +202,14 @@ public class TaxRuleModel {
     }
 
 
-    private string customerUsageType;
+    private String customerUsageType;
 
     /**
      * Getter for customerUsageType
      *
      * The type of customer usage to which this rule applies.
      */
-    public string getCustomerUsageType() {
+    public String getCustomerUsageType() {
         return this.customerUsageType;
     }
 
@@ -218,7 +218,7 @@ public class TaxRuleModel {
      *
      * The type of customer usage to which this rule applies.
      */
-    public void setCustomerUsageType(string value) {
+    public void setCustomerUsageType(String value) {
         this.customerUsageType = value;
     }
 
@@ -265,14 +265,14 @@ public class TaxRuleModel {
     }
 
 
-    private string rateTypeCode;
+    private String rateTypeCode;
 
     /**
      * Getter for rateTypeCode
      *
      * Indicates the code of the rate type that applies to this rule. Use `/api/v2/definitions/ratetypes` for a full list of rate type codes.
      */
-    public string getRateTypeCode() {
+    public String getRateTypeCode() {
         return this.rateTypeCode;
     }
 
@@ -281,7 +281,7 @@ public class TaxRuleModel {
      *
      * Indicates the code of the rate type that applies to this rule. Use `/api/v2/definitions/ratetypes` for a full list of rate type codes.
      */
-    public void setRateTypeCode(string value) {
+    public void setRateTypeCode(String value) {
         this.rateTypeCode = value;
     }
 
@@ -397,14 +397,14 @@ public class TaxRuleModel {
     }
 
 
-    private string options;
+    private String options;
 
     /**
      * Getter for options
      *
      * Custom option flags for this rule.
      */
-    public string getOptions() {
+    public String getOptions() {
         return this.options;
     }
 
@@ -413,7 +413,7 @@ public class TaxRuleModel {
      *
      * Custom option flags for this rule.
      */
-    public void setOptions(string value) {
+    public void setOptions(String value) {
         this.options = value;
     }
 
@@ -460,14 +460,14 @@ public class TaxRuleModel {
     }
 
 
-    private string description;
+    private String description;
 
     /**
      * Getter for description
      *
      * A friendly name for this tax rule.
      */
-    public string getDescription() {
+    public String getDescription() {
         return this.description;
     }
 
@@ -476,19 +476,19 @@ public class TaxRuleModel {
      *
      * A friendly name for this tax rule.
      */
-    public void setDescription(string value) {
+    public void setDescription(String value) {
         this.description = value;
     }
 
 
-    private string countyFIPS;
+    private String countyFIPS;
 
     /**
      * Getter for countyFIPS
      *
      * For U.S. tax rules, this is the county's Federal Information Processing Standard (FIPS) code.
      */
-    public string getCountyFIPS() {
+    public String getCountyFIPS() {
         return this.countyFIPS;
     }
 
@@ -497,7 +497,7 @@ public class TaxRuleModel {
      *
      * For U.S. tax rules, this is the county's Federal Information Processing Standard (FIPS) code.
      */
-    public void setCountyFIPS(string value) {
+    public void setCountyFIPS(String value) {
         this.countyFIPS = value;
     }
 
@@ -523,14 +523,14 @@ public class TaxRuleModel {
     }
 
 
-    private string country;
+    private String country;
 
     /**
      * Getter for country
      *
      * The two character ISO 3166 country code for the locations where this rule applies.
      */
-    public string getCountry() {
+    public String getCountry() {
         return this.country;
     }
 
@@ -539,19 +539,19 @@ public class TaxRuleModel {
      *
      * The two character ISO 3166 country code for the locations where this rule applies.
      */
-    public void setCountry(string value) {
+    public void setCountry(String value) {
         this.country = value;
     }
 
 
-    private string region;
+    private String region;
 
     /**
      * Getter for region
      *
      * The state, region, or province name for the locations where this rule applies.
      */
-    public string getRegion() {
+    public String getRegion() {
         return this.region;
     }
 
@@ -560,7 +560,7 @@ public class TaxRuleModel {
      *
      * The state, region, or province name for the locations where this rule applies.
      */
-    public void setRegion(string value) {
+    public void setRegion(String value) {
         this.region = value;
     }
 
@@ -670,14 +670,14 @@ public class TaxRuleModel {
     }
 
 
-    private string taxTypeGroup;
+    private String taxTypeGroup;
 
     /**
      * Getter for taxTypeGroup
      *
      * The group Id of tax types supported by Avalara. Refer to /api/v2/definitions/taxtypegroups for types we support.
      */
-    public string getTaxTypeGroup() {
+    public String getTaxTypeGroup() {
         return this.taxTypeGroup;
     }
 
@@ -686,19 +686,19 @@ public class TaxRuleModel {
      *
      * The group Id of tax types supported by Avalara. Refer to /api/v2/definitions/taxtypegroups for types we support.
      */
-    public void setTaxTypeGroup(string value) {
+    public void setTaxTypeGroup(String value) {
         this.taxTypeGroup = value;
     }
 
 
-    private string taxSubType;
+    private String taxSubType;
 
     /**
      * Getter for taxSubType
      *
      * The Id of sub tax types supported by Avalara. Refer to /api/v2/definitions/taxsubtypes for types we support.
      */
-    public string getTaxSubType() {
+    public String getTaxSubType() {
         return this.taxSubType;
     }
 
@@ -707,7 +707,7 @@ public class TaxRuleModel {
      *
      * The Id of sub tax types supported by Avalara. Refer to /api/v2/definitions/taxsubtypes for types we support.
      */
-    public void setTaxSubType(string value) {
+    public void setTaxSubType(String value) {
         this.taxSubType = value;
     }
 

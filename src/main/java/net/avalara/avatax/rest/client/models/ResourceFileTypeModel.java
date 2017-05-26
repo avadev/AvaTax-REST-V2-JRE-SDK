@@ -51,14 +51,14 @@ public class ResourceFileTypeModel {
     }
 
 
-    private string name;
+    private String name;
 
     /**
      * Getter for name
      *
      * The name of the file type
      */
-    public string getName() {
+    public String getName() {
         return this.name;
     }
 
@@ -67,7 +67,7 @@ public class ResourceFileTypeModel {
      *
      * The name of the file type
      */
-    public void setName(string value) {
+    public void setName(String value) {
         this.name = value;
     }
 

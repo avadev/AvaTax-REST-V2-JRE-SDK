@@ -32,14 +32,14 @@ import java.util.HashMap;
 public class ChangeTransactionCodeModel {
 
 
-    private string newCode;
+    private String newCode;
 
     /**
      * Getter for newCode
      *
      * To change the transaction code for this transaction, specify the new transaction code here.
      */
-    public string getNewCode() {
+    public String getNewCode() {
         return this.newCode;
     }
 
@@ -48,7 +48,7 @@ public class ChangeTransactionCodeModel {
      *
      * To change the transaction code for this transaction, specify the new transaction code here.
      */
-    public void setNewCode(string value) {
+    public void setNewCode(String value) {
         this.newCode = value;
     }
 

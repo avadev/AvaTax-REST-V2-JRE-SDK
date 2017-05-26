@@ -30,14 +30,14 @@ import java.util.HashMap;
 public class RemoveTransactionLineModel {
 
 
-    private string companyCode;
+    private String companyCode;
 
     /**
      * Getter for companyCode
      *
      * company code
      */
-    public string getCompanyCode() {
+    public String getCompanyCode() {
         return this.companyCode;
     }
 
@@ -46,19 +46,19 @@ public class RemoveTransactionLineModel {
      *
      * company code
      */
-    public void setCompanyCode(string value) {
+    public void setCompanyCode(String value) {
         this.companyCode = value;
     }
 
 
-    private string transactionCode;
+    private String transactionCode;
 
     /**
      * Getter for transactionCode
      *
      * document code for the transaction to add lines
      */
-    public string getTransactionCode() {
+    public String getTransactionCode() {
         return this.transactionCode;
     }
 
@@ -67,7 +67,7 @@ public class RemoveTransactionLineModel {
      *
      * document code for the transaction to add lines
      */
-    public void setTransactionCode(string value) {
+    public void setTransactionCode(String value) {
         this.transactionCode = value;
     }
 
@@ -93,14 +93,14 @@ public class RemoveTransactionLineModel {
     }
 
 
-    private string[] lines;
+    private String[] lines;
 
     /**
      * Getter for lines
      *
      * List of lines to be added
      */
-    public string[] getLines() {
+    public String[] getLines() {
         return this.lines;
     }
 
@@ -109,7 +109,7 @@ public class RemoveTransactionLineModel {
      *
      * List of lines to be added
      */
-    public void setLines(string[] value) {
+    public void setLines(String[] value) {
         this.lines = value;
     }
 

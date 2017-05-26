@@ -73,14 +73,14 @@ public class LocationModel {
     }
 
 
-    private string locationCode;
+    private String locationCode;
 
     /**
      * Getter for locationCode
      *
      * A code that identifies this location. Must be unique within your company.
      */
-    public string getLocationCode() {
+    public String getLocationCode() {
         return this.locationCode;
     }
 
@@ -89,19 +89,19 @@ public class LocationModel {
      *
      * A code that identifies this location. Must be unique within your company.
      */
-    public void setLocationCode(string value) {
+    public void setLocationCode(String value) {
         this.locationCode = value;
     }
 
 
-    private string description;
+    private String description;
 
     /**
      * Getter for description
      *
      * A friendly name for this location.
      */
-    public string getDescription() {
+    public String getDescription() {
         return this.description;
     }
 
@@ -110,7 +110,7 @@ public class LocationModel {
      *
      * A friendly name for this location.
      */
-    public void setDescription(string value) {
+    public void setDescription(String value) {
         this.description = value;
     }
 
@@ -157,14 +157,14 @@ public class LocationModel {
     }
 
 
-    private string line1;
+    private String line1;
 
     /**
      * Getter for line1
      *
      * The first line of the physical address of this location.
      */
-    public string getLine1() {
+    public String getLine1() {
         return this.line1;
     }
 
@@ -173,19 +173,19 @@ public class LocationModel {
      *
      * The first line of the physical address of this location.
      */
-    public void setLine1(string value) {
+    public void setLine1(String value) {
         this.line1 = value;
     }
 
 
-    private string line2;
+    private String line2;
 
     /**
      * Getter for line2
      *
      * The second line of the physical address of this location.
      */
-    public string getLine2() {
+    public String getLine2() {
         return this.line2;
     }
 
@@ -194,19 +194,19 @@ public class LocationModel {
      *
      * The second line of the physical address of this location.
      */
-    public void setLine2(string value) {
+    public void setLine2(String value) {
         this.line2 = value;
     }
 
 
-    private string line3;
+    private String line3;
 
     /**
      * Getter for line3
      *
      * The third line of the physical address of this location.
      */
-    public string getLine3() {
+    public String getLine3() {
         return this.line3;
     }
 
@@ -215,19 +215,19 @@ public class LocationModel {
      *
      * The third line of the physical address of this location.
      */
-    public void setLine3(string value) {
+    public void setLine3(String value) {
         this.line3 = value;
     }
 
 
-    private string city;
+    private String city;
 
     /**
      * Getter for city
      *
      * The city of the physical address of this location.
      */
-    public string getCity() {
+    public String getCity() {
         return this.city;
     }
 
@@ -236,19 +236,19 @@ public class LocationModel {
      *
      * The city of the physical address of this location.
      */
-    public void setCity(string value) {
+    public void setCity(String value) {
         this.city = value;
     }
 
 
-    private string county;
+    private String county;
 
     /**
      * Getter for county
      *
      * The county name of the physical address of this location. Not required.
      */
-    public string getCounty() {
+    public String getCounty() {
         return this.county;
     }
 
@@ -257,19 +257,19 @@ public class LocationModel {
      *
      * The county name of the physical address of this location. Not required.
      */
-    public void setCounty(string value) {
+    public void setCounty(String value) {
         this.county = value;
     }
 
 
-    private string region;
+    private String region;
 
     /**
      * Getter for region
      *
      * The state, region, or province of the physical address of this location.
      */
-    public string getRegion() {
+    public String getRegion() {
         return this.region;
     }
 
@@ -278,19 +278,19 @@ public class LocationModel {
      *
      * The state, region, or province of the physical address of this location.
      */
-    public void setRegion(string value) {
+    public void setRegion(String value) {
         this.region = value;
     }
 
 
-    private string postalCode;
+    private String postalCode;
 
     /**
      * Getter for postalCode
      *
      * The postal code or zip code of the physical address of this location.
      */
-    public string getPostalCode() {
+    public String getPostalCode() {
         return this.postalCode;
     }
 
@@ -299,19 +299,19 @@ public class LocationModel {
      *
      * The postal code or zip code of the physical address of this location.
      */
-    public void setPostalCode(string value) {
+    public void setPostalCode(String value) {
         this.postalCode = value;
     }
 
 
-    private string country;
+    private String country;
 
     /**
      * Getter for country
      *
      * The two character ISO-3166 country code of the physical address of this location.
      */
-    public string getCountry() {
+    public String getCountry() {
         return this.country;
     }
 
@@ -320,7 +320,7 @@ public class LocationModel {
      *
      * The two character ISO-3166 country code of the physical address of this location.
      */
-    public void setCountry(string value) {
+    public void setCountry(String value) {
         this.country = value;
     }
 
@@ -367,14 +367,14 @@ public class LocationModel {
     }
 
 
-    private string dbaName;
+    private String dbaName;
 
     /**
      * Getter for dbaName
      *
      * If this location has a different business name from its legal entity name, specify the "Doing Business As" name for this location.
      */
-    public string getDbaName() {
+    public String getDbaName() {
         return this.dbaName;
     }
 
@@ -383,19 +383,19 @@ public class LocationModel {
      *
      * If this location has a different business name from its legal entity name, specify the "Doing Business As" name for this location.
      */
-    public void setDbaName(string value) {
+    public void setDbaName(String value) {
         this.dbaName = value;
     }
 
 
-    private string outletName;
+    private String outletName;
 
     /**
      * Getter for outletName
      *
      * A friendly name for this location.
      */
-    public string getOutletName() {
+    public String getOutletName() {
         return this.outletName;
     }
 
@@ -404,7 +404,7 @@ public class LocationModel {
      *
      * A friendly name for this location.
      */
-    public void setOutletName(string value) {
+    public void setOutletName(String value) {
         this.outletName = value;
     }
 

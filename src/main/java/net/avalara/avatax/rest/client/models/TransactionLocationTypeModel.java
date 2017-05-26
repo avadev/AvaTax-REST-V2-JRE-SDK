@@ -93,14 +93,14 @@ public class TransactionLocationTypeModel {
     }
 
 
-    private string locationTypeCode;
+    private String locationTypeCode;
 
     /**
      * Getter for locationTypeCode
      *
      * Location type code
      */
-    public string getLocationTypeCode() {
+    public String getLocationTypeCode() {
         return this.locationTypeCode;
     }
 
@@ -109,7 +109,7 @@ public class TransactionLocationTypeModel {
      *
      * Location type code
      */
-    public void setLocationTypeCode(string value) {
+    public void setLocationTypeCode(String value) {
         this.locationTypeCode = value;
     }
 

@@ -30,14 +30,14 @@ import java.util.HashMap;
 public class RefundTransactionModel {
 
 
-    private string refundTransactionCode;
+    private String refundTransactionCode;
 
     /**
      * Getter for refundTransactionCode
      *
      * the transaction code for this refund
      */
-    public string getRefundTransactionCode() {
+    public String getRefundTransactionCode() {
         return this.refundTransactionCode;
     }
 
@@ -46,7 +46,7 @@ public class RefundTransactionModel {
      *
      * the transaction code for this refund
      */
-    public void setRefundTransactionCode(string value) {
+    public void setRefundTransactionCode(String value) {
         this.refundTransactionCode = value;
     }
 
@@ -114,14 +114,14 @@ public class RefundTransactionModel {
     }
 
 
-    private string[] refundLines;
+    private String[] refundLines;
 
     /**
      * Getter for refundLines
      *
      * Process refund for these lines
      */
-    public string[] getRefundLines() {
+    public String[] getRefundLines() {
         return this.refundLines;
     }
 
@@ -130,19 +130,19 @@ public class RefundTransactionModel {
      *
      * Process refund for these lines
      */
-    public void setRefundLines(string[] value) {
+    public void setRefundLines(String[] value) {
         this.refundLines = value;
     }
 
 
-    private string referenceCode;
+    private String referenceCode;
 
     /**
      * Getter for referenceCode
      *
      * Reference code for this refund
      */
-    public string getReferenceCode() {
+    public String getReferenceCode() {
         return this.referenceCode;
     }
 
@@ -151,7 +151,7 @@ public class RefundTransactionModel {
      *
      * Reference code for this refund
      */
-    public void setReferenceCode(string value) {
+    public void setReferenceCode(String value) {
         this.referenceCode = value;
     }
 

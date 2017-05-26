@@ -72,14 +72,14 @@ public class FilingRegionModel {
     }
 
 
-    private string country;
+    private String country;
 
     /**
      * Getter for country
      *
      * The two-character ISO-3166 code for the country.
      */
-    public string getCountry() {
+    public String getCountry() {
         return this.country;
     }
 
@@ -88,19 +88,19 @@ public class FilingRegionModel {
      *
      * The two-character ISO-3166 code for the country.
      */
-    public void setCountry(string value) {
+    public void setCountry(String value) {
         this.country = value;
     }
 
 
-    private string region;
+    private String region;
 
     /**
      * Getter for region
      *
      * The two or three character region code for the region.
      */
-    public string getRegion() {
+    public String getRegion() {
         return this.region;
     }
 
@@ -109,7 +109,7 @@ public class FilingRegionModel {
      *
      * The two or three character region code for the region.
      */
-    public void setRegion(string value) {
+    public void setRegion(String value) {
         this.region = value;
     }
 

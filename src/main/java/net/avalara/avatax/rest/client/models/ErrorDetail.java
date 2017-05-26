@@ -72,14 +72,14 @@ public class ErrorDetail {
     }
 
 
-    private string message;
+    private String message;
 
     /**
      * Getter for message
      *
      * Concise summary of the message, suitable for display in the caption of an alert box.
      */
-    public string getMessage() {
+    public String getMessage() {
         return this.message;
     }
 
@@ -88,19 +88,19 @@ public class ErrorDetail {
      *
      * Concise summary of the message, suitable for display in the caption of an alert box.
      */
-    public void setMessage(string value) {
+    public void setMessage(String value) {
         this.message = value;
     }
 
 
-    private string description;
+    private String description;
 
     /**
      * Getter for description
      *
      * A more detailed description of the problem referenced by this error message, suitable for display in the contents area of an alert box.
      */
-    public string getDescription() {
+    public String getDescription() {
         return this.description;
     }
 
@@ -109,19 +109,19 @@ public class ErrorDetail {
      *
      * A more detailed description of the problem referenced by this error message, suitable for display in the contents area of an alert box.
      */
-    public void setDescription(string value) {
+    public void setDescription(String value) {
         this.description = value;
     }
 
 
-    private string faultCode;
+    private String faultCode;
 
     /**
      * Getter for faultCode
      *
      * Indicates the SOAP Fault code, if this was related to an error that corresponded to AvaTax SOAP v1 behavior.
      */
-    public string getFaultCode() {
+    public String getFaultCode() {
         return this.faultCode;
     }
 
@@ -130,19 +130,19 @@ public class ErrorDetail {
      *
      * Indicates the SOAP Fault code, if this was related to an error that corresponded to AvaTax SOAP v1 behavior.
      */
-    public void setFaultCode(string value) {
+    public void setFaultCode(String value) {
         this.faultCode = value;
     }
 
 
-    private string helpLink;
+    private String helpLink;
 
     /**
      * Getter for helpLink
      *
      * URL to help for this message
      */
-    public string getHelpLink() {
+    public String getHelpLink() {
         return this.helpLink;
     }
 
@@ -151,19 +151,19 @@ public class ErrorDetail {
      *
      * URL to help for this message
      */
-    public void setHelpLink(string value) {
+    public void setHelpLink(String value) {
         this.helpLink = value;
     }
 
 
-    private string refersTo;
+    private String refersTo;
 
     /**
      * Getter for refersTo
      *
      * Item the message refers to, if applicable. This is used to indicate a missing or incorrect value.
      */
-    public string getRefersTo() {
+    public String getRefersTo() {
         return this.refersTo;
     }
 
@@ -172,7 +172,7 @@ public class ErrorDetail {
      *
      * Item the message refers to, if applicable. This is used to indicate a missing or incorrect value.
      */
-    public void setRefersTo(string value) {
+    public void setRefersTo(String value) {
         this.refersTo = value;
     }
 

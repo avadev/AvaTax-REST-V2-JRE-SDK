@@ -30,14 +30,14 @@ import java.util.HashMap;
 public class FilingCalendarEditModel {
 
 
-    private string fieldName;
+    private String fieldName;
 
     /**
      * Getter for fieldName
      *
      * The name of the field to be modified.
      */
-    public string getFieldName() {
+    public String getFieldName() {
         return this.fieldName;
     }
 
@@ -46,7 +46,7 @@ public class FilingCalendarEditModel {
      *
      * The name of the field to be modified.
      */
-    public void setFieldName(string value) {
+    public void setFieldName(String value) {
         this.fieldName = value;
     }
 

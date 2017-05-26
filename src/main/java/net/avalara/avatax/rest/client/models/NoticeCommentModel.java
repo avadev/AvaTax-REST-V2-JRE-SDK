@@ -93,14 +93,14 @@ public class NoticeCommentModel {
     }
 
 
-    private string comment;
+    private String comment;
 
     /**
      * Getter for comment
      *
      * TaxNoticeComment
      */
-    public string getComment() {
+    public String getComment() {
         return this.comment;
     }
 
@@ -109,7 +109,7 @@ public class NoticeCommentModel {
      *
      * TaxNoticeComment
      */
-    public void setComment(string value) {
+    public void setComment(String value) {
         this.comment = value;
     }
 
@@ -135,14 +135,14 @@ public class NoticeCommentModel {
     }
 
 
-    private string commentUserName;
+    private String commentUserName;
 
     /**
      * Getter for commentUserName
      *
      * TaxNoticeCommentUserName
      */
-    public string getCommentUserName() {
+    public String getCommentUserName() {
         return this.commentUserName;
     }
 
@@ -151,7 +151,7 @@ public class NoticeCommentModel {
      *
      * TaxNoticeCommentUserName
      */
-    public void setCommentUserName(string value) {
+    public void setCommentUserName(String value) {
         this.commentUserName = value;
     }
 
@@ -198,14 +198,14 @@ public class NoticeCommentModel {
     }
 
 
-    private string commentLink;
+    private String commentLink;
 
     /**
      * Getter for commentLink
      *
      * TaxNoticeCommentLink
      */
-    public string getCommentLink() {
+    public String getCommentLink() {
         return this.commentLink;
     }
 
@@ -214,19 +214,19 @@ public class NoticeCommentModel {
      *
      * TaxNoticeCommentLink
      */
-    public void setCommentLink(string value) {
+    public void setCommentLink(String value) {
         this.commentLink = value;
     }
 
 
-    private string taxNoticeFileName;
+    private String taxNoticeFileName;
 
     /**
      * Getter for taxNoticeFileName
      *
      * TaxNoticeFileName
      */
-    public string getTaxNoticeFileName() {
+    public String getTaxNoticeFileName() {
         return this.taxNoticeFileName;
     }
 
@@ -235,7 +235,7 @@ public class NoticeCommentModel {
      *
      * TaxNoticeFileName
      */
-    public void setTaxNoticeFileName(string value) {
+    public void setTaxNoticeFileName(String value) {
         this.taxNoticeFileName = value;
     }
 

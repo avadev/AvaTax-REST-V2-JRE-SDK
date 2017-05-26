@@ -51,14 +51,14 @@ public class TaxAuthorityModel {
     }
 
 
-    private string name;
+    private String name;
 
     /**
      * Getter for name
      *
      * The friendly name of this tax authority.
      */
-    public string getName() {
+    public String getName() {
         return this.name;
     }
 
@@ -67,7 +67,7 @@ public class TaxAuthorityModel {
      *
      * The friendly name of this tax authority.
      */
-    public void setName(string value) {
+    public void setName(String value) {
         this.name = value;
     }
 

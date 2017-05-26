@@ -52,14 +52,14 @@ public class FilingRequestDataModel {
     }
 
 
-    private string returnName;
+    private String returnName;
 
     /**
      * Getter for returnName
      *
      * The return name of the requested calendar
      */
-    public string getReturnName() {
+    public String getReturnName() {
         return this.returnName;
     }
 
@@ -68,7 +68,7 @@ public class FilingRequestDataModel {
      *
      * The return name of the requested calendar
      */
-    public void setReturnName(string value) {
+    public void setReturnName(String value) {
         this.returnName = value;
     }
 
@@ -94,14 +94,14 @@ public class FilingRequestDataModel {
     }
 
 
-    private string registrationId;
+    private String registrationId;
 
     /**
      * Getter for registrationId
      *
      * State registration ID of the company requesting the filing calendar.
      */
-    public string getRegistrationId() {
+    public String getRegistrationId() {
         return this.registrationId;
     }
 
@@ -110,7 +110,7 @@ public class FilingRequestDataModel {
      *
      * State registration ID of the company requesting the filing calendar.
      */
-    public void setRegistrationId(string value) {
+    public void setRegistrationId(String value) {
         this.registrationId = value;
     }
 
@@ -157,14 +157,14 @@ public class FilingRequestDataModel {
     }
 
 
-    private string locationCode;
+    private String locationCode;
 
     /**
      * Getter for locationCode
      *
      * Location code of the request
      */
-    public string getLocationCode() {
+    public String getLocationCode() {
         return this.locationCode;
     }
 
@@ -173,7 +173,7 @@ public class FilingRequestDataModel {
      *
      * Location code of the request
      */
-    public void setLocationCode(string value) {
+    public void setLocationCode(String value) {
         this.locationCode = value;
     }
 
@@ -241,14 +241,14 @@ public class FilingRequestDataModel {
     }
 
 
-    private string region;
+    private String region;
 
     /**
      * Getter for region
      *
      * The region this request is for
      */
-    public string getRegion() {
+    public String getRegion() {
         return this.region;
     }
 
@@ -257,7 +257,7 @@ public class FilingRequestDataModel {
      *
      * The region this request is for
      */
-    public void setRegion(string value) {
+    public void setRegion(String value) {
         this.region = value;
     }
 
@@ -283,14 +283,14 @@ public class FilingRequestDataModel {
     }
 
 
-    private string taxAuthorityName;
+    private String taxAuthorityName;
 
     /**
      * Getter for taxAuthorityName
      *
      * The tax authority name on the return
      */
-    public string getTaxAuthorityName() {
+    public String getTaxAuthorityName() {
         return this.taxAuthorityName;
     }
 
@@ -299,7 +299,7 @@ public class FilingRequestDataModel {
      *
      * The tax authority name on the return
      */
-    public void setTaxAuthorityName(string value) {
+    public void setTaxAuthorityName(String value) {
         this.taxAuthorityName = value;
     }
 

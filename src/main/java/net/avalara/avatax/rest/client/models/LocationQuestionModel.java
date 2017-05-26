@@ -51,14 +51,14 @@ public class LocationQuestionModel {
     }
 
 
-    private string question;
+    private String question;
 
     /**
      * Getter for question
      *
      * This is the prompt for this question
      */
-    public string getQuestion() {
+    public String getQuestion() {
         return this.question;
     }
 
@@ -67,12 +67,12 @@ public class LocationQuestionModel {
      *
      * This is the prompt for this question
      */
-    public void setQuestion(string value) {
+    public void setQuestion(String value) {
         this.question = value;
     }
 
 
-    private string description;
+    private String description;
 
     /**
      * Getter for description
@@ -80,7 +80,7 @@ public class LocationQuestionModel {
      * If additional information is available about the location setting, this contains descriptive text to help
     * you identify the correct value to provide in this setting.
      */
-    public string getDescription() {
+    public String getDescription() {
         return this.description;
     }
 
@@ -90,19 +90,19 @@ public class LocationQuestionModel {
      * If additional information is available about the location setting, this contains descriptive text to help
     * you identify the correct value to provide in this setting.
      */
-    public void setDescription(string value) {
+    public void setDescription(String value) {
         this.description = value;
     }
 
 
-    private string regularExpression;
+    private String regularExpression;
 
     /**
      * Getter for regularExpression
      *
      * If available, this regular expression will verify that the input from the user is in the expected format.
      */
-    public string getRegularExpression() {
+    public String getRegularExpression() {
         return this.regularExpression;
     }
 
@@ -111,19 +111,19 @@ public class LocationQuestionModel {
      *
      * If available, this regular expression will verify that the input from the user is in the expected format.
      */
-    public void setRegularExpression(string value) {
+    public void setRegularExpression(String value) {
         this.regularExpression = value;
     }
 
 
-    private string exampleValue;
+    private String exampleValue;
 
     /**
      * Getter for exampleValue
      *
      * If available, this is an example value that you can demonstrate to the user to show what is expected.
      */
-    public string getExampleValue() {
+    public String getExampleValue() {
         return this.exampleValue;
     }
 
@@ -132,19 +132,19 @@ public class LocationQuestionModel {
      *
      * If available, this is an example value that you can demonstrate to the user to show what is expected.
      */
-    public void setExampleValue(string value) {
+    public void setExampleValue(String value) {
         this.exampleValue = value;
     }
 
 
-    private string jurisdictionName;
+    private String jurisdictionName;
 
     /**
      * Getter for jurisdictionName
      *
      * Indicates which jurisdiction requires this question
      */
-    public string getJurisdictionName() {
+    public String getJurisdictionName() {
         return this.jurisdictionName;
     }
 
@@ -153,7 +153,7 @@ public class LocationQuestionModel {
      *
      * Indicates which jurisdiction requires this question
      */
-    public void setJurisdictionName(string value) {
+    public void setJurisdictionName(String value) {
         this.jurisdictionName = value;
     }
 
@@ -179,14 +179,14 @@ public class LocationQuestionModel {
     }
 
 
-    private string jurisdictionCountry;
+    private String jurisdictionCountry;
 
     /**
      * Getter for jurisdictionCountry
      *
      * Indicates the country that this jurisdiction belongs to
      */
-    public string getJurisdictionCountry() {
+    public String getJurisdictionCountry() {
         return this.jurisdictionCountry;
     }
 
@@ -195,19 +195,19 @@ public class LocationQuestionModel {
      *
      * Indicates the country that this jurisdiction belongs to
      */
-    public void setJurisdictionCountry(string value) {
+    public void setJurisdictionCountry(String value) {
         this.jurisdictionCountry = value;
     }
 
 
-    private string jurisdictionRegion;
+    private String jurisdictionRegion;
 
     /**
      * Getter for jurisdictionRegion
      *
      * Indicates the state, region, or province that this jurisdiction belongs to
      */
-    public string getJurisdictionRegion() {
+    public String getJurisdictionRegion() {
         return this.jurisdictionRegion;
     }
 
@@ -216,7 +216,7 @@ public class LocationQuestionModel {
      *
      * Indicates the state, region, or province that this jurisdiction belongs to
      */
-    public void setJurisdictionRegion(string value) {
+    public void setJurisdictionRegion(String value) {
         this.jurisdictionRegion = value;
     }
 

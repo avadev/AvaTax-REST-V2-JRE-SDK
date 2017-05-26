@@ -93,14 +93,14 @@ public class UserModel {
     }
 
 
-    private string userName;
+    private String userName;
 
     /**
      * Getter for userName
      *
      * The username which is used to log on to the AvaTax website, or to authenticate against API calls.
      */
-    public string getUserName() {
+    public String getUserName() {
         return this.userName;
     }
 
@@ -109,19 +109,19 @@ public class UserModel {
      *
      * The username which is used to log on to the AvaTax website, or to authenticate against API calls.
      */
-    public void setUserName(string value) {
+    public void setUserName(String value) {
         this.userName = value;
     }
 
 
-    private string firstName;
+    private String firstName;
 
     /**
      * Getter for firstName
      *
      * The first or given name of the user.
      */
-    public string getFirstName() {
+    public String getFirstName() {
         return this.firstName;
     }
 
@@ -130,19 +130,19 @@ public class UserModel {
      *
      * The first or given name of the user.
      */
-    public void setFirstName(string value) {
+    public void setFirstName(String value) {
         this.firstName = value;
     }
 
 
-    private string lastName;
+    private String lastName;
 
     /**
      * Getter for lastName
      *
      * The last or family name of the user.
      */
-    public string getLastName() {
+    public String getLastName() {
         return this.lastName;
     }
 
@@ -151,19 +151,19 @@ public class UserModel {
      *
      * The last or family name of the user.
      */
-    public void setLastName(string value) {
+    public void setLastName(String value) {
         this.lastName = value;
     }
 
 
-    private string email;
+    private String email;
 
     /**
      * Getter for email
      *
      * The email address to be used to contact this user. If the user has forgotten a password, an email can be sent to this email address with information on how to reset this password.
      */
-    public string getEmail() {
+    public String getEmail() {
         return this.email;
     }
 
@@ -172,19 +172,19 @@ public class UserModel {
      *
      * The email address to be used to contact this user. If the user has forgotten a password, an email can be sent to this email address with information on how to reset this password.
      */
-    public void setEmail(string value) {
+    public void setEmail(String value) {
         this.email = value;
     }
 
 
-    private string postalCode;
+    private String postalCode;
 
     /**
      * Getter for postalCode
      *
      * The postal code in which this user resides.
      */
-    public string getPostalCode() {
+    public String getPostalCode() {
         return this.postalCode;
     }
 
@@ -193,7 +193,7 @@ public class UserModel {
      *
      * The postal code in which this user resides.
      */
-    public void setPostalCode(string value) {
+    public void setPostalCode(String value) {
         this.postalCode = value;
     }
 

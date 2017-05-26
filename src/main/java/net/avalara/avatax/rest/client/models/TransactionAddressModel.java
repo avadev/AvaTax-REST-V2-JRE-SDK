@@ -93,14 +93,14 @@ public class TransactionAddressModel {
     }
 
 
-    private string line1;
+    private String line1;
 
     /**
      * Getter for line1
      *
      * The first line of the address.
      */
-    public string getLine1() {
+    public String getLine1() {
         return this.line1;
     }
 
@@ -109,19 +109,19 @@ public class TransactionAddressModel {
      *
      * The first line of the address.
      */
-    public void setLine1(string value) {
+    public void setLine1(String value) {
         this.line1 = value;
     }
 
 
-    private string line2;
+    private String line2;
 
     /**
      * Getter for line2
      *
      * The second line of the address.
      */
-    public string getLine2() {
+    public String getLine2() {
         return this.line2;
     }
 
@@ -130,19 +130,19 @@ public class TransactionAddressModel {
      *
      * The second line of the address.
      */
-    public void setLine2(string value) {
+    public void setLine2(String value) {
         this.line2 = value;
     }
 
 
-    private string line3;
+    private String line3;
 
     /**
      * Getter for line3
      *
      * The third line of the address.
      */
-    public string getLine3() {
+    public String getLine3() {
         return this.line3;
     }
 
@@ -151,19 +151,19 @@ public class TransactionAddressModel {
      *
      * The third line of the address.
      */
-    public void setLine3(string value) {
+    public void setLine3(String value) {
         this.line3 = value;
     }
 
 
-    private string city;
+    private String city;
 
     /**
      * Getter for city
      *
      * The city for the address.
      */
-    public string getCity() {
+    public String getCity() {
         return this.city;
     }
 
@@ -172,19 +172,19 @@ public class TransactionAddressModel {
      *
      * The city for the address.
      */
-    public void setCity(string value) {
+    public void setCity(String value) {
         this.city = value;
     }
 
 
-    private string region;
+    private String region;
 
     /**
      * Getter for region
      *
      * The region, state, or province for the address.
      */
-    public string getRegion() {
+    public String getRegion() {
         return this.region;
     }
 
@@ -193,19 +193,19 @@ public class TransactionAddressModel {
      *
      * The region, state, or province for the address.
      */
-    public void setRegion(string value) {
+    public void setRegion(String value) {
         this.region = value;
     }
 
 
-    private string postalCode;
+    private String postalCode;
 
     /**
      * Getter for postalCode
      *
      * The postal code or zip code for the address.
      */
-    public string getPostalCode() {
+    public String getPostalCode() {
         return this.postalCode;
     }
 
@@ -214,19 +214,19 @@ public class TransactionAddressModel {
      *
      * The postal code or zip code for the address.
      */
-    public void setPostalCode(string value) {
+    public void setPostalCode(String value) {
         this.postalCode = value;
     }
 
 
-    private string country;
+    private String country;
 
     /**
      * Getter for country
      *
      * The country for the address.
      */
-    public string getCountry() {
+    public String getCountry() {
         return this.country;
     }
 
@@ -235,7 +235,7 @@ public class TransactionAddressModel {
      *
      * The country for the address.
      */
-    public void setCountry(string value) {
+    public void setCountry(String value) {
         this.country = value;
     }
 
@@ -261,14 +261,14 @@ public class TransactionAddressModel {
     }
 
 
-    private string latitude;
+    private String latitude;
 
     /**
      * Getter for latitude
      *
      * Latitude for this address (CALC - 13394)
      */
-    public string getLatitude() {
+    public String getLatitude() {
         return this.latitude;
     }
 
@@ -277,19 +277,19 @@ public class TransactionAddressModel {
      *
      * Latitude for this address (CALC - 13394)
      */
-    public void setLatitude(string value) {
+    public void setLatitude(String value) {
         this.latitude = value;
     }
 
 
-    private string longitude;
+    private String longitude;
 
     /**
      * Getter for longitude
      *
      * Longitude for this address (CALC - 13394)
      */
-    public string getLongitude() {
+    public String getLongitude() {
         return this.longitude;
     }
 
@@ -298,7 +298,7 @@ public class TransactionAddressModel {
      *
      * Longitude for this address (CALC - 13394)
      */
-    public void setLongitude(string value) {
+    public void setLongitude(String value) {
         this.longitude = value;
     }
 

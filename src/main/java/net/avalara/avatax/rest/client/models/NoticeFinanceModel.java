@@ -114,14 +114,14 @@ public class NoticeFinanceModel {
     }
 
 
-    private string noticeNumber;
+    private String noticeNumber;
 
     /**
      * Getter for noticeNumber
      *
      * 
      */
-    public string getNoticeNumber() {
+    public String getNoticeNumber() {
         return this.noticeNumber;
     }
 
@@ -130,7 +130,7 @@ public class NoticeFinanceModel {
      *
      * 
      */
-    public void setNoticeNumber(string value) {
+    public void setNoticeNumber(String value) {
         this.noticeNumber = value;
     }
 
@@ -303,14 +303,14 @@ public class NoticeFinanceModel {
     }
 
 
-    private string fileName;
+    private String fileName;
 
     /**
      * Getter for fileName
      *
      * resourceFileId
      */
-    public string getFileName() {
+    public String getFileName() {
         return this.fileName;
     }
 
@@ -319,7 +319,7 @@ public class NoticeFinanceModel {
      *
      * resourceFileId
      */
-    public void setFileName(string value) {
+    public void setFileName(String value) {
         this.fileName = value;
     }
 
