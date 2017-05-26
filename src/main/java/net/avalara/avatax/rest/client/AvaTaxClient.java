@@ -99,7 +99,7 @@ public class AvaTaxClient {
     public LicenseKeyModel accountResetLicenseKey(int id, ResetLicenseKeyModel model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{id}/resetlicensekey");
-        path.ApplyField("id", id);
+        path.applyField("id", id);
         return ((RestCall<LicenseKeyModel>)restCallFactory.createRestCall("Post", path, model, new TypeToken<LicenseKeyModel>(){})).call();
     }
 
@@ -116,7 +116,7 @@ public class AvaTaxClient {
     public LicenseKeyModel accountResetLicenseKeyAsync(int id, ResetLicenseKeyModel model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{id}/resetlicensekey");
-        path.ApplyField("id", id);
+        path.applyField("id", id);
         return ((RestCall<LicenseKeyModel>)restCallFactory.createRestCall("Post", path, model, new TypeToken<LicenseKeyModel>(){})).call();
     }
 
@@ -137,7 +137,7 @@ public class AvaTaxClient {
     public AccountModel activateAccount(int id, ActivateAccountModel model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{id}/activate");
-        path.ApplyField("id", id);
+        path.applyField("id", id);
         return ((RestCall<AccountModel>)restCallFactory.createRestCall("Post", path, model, new TypeToken<AccountModel>(){})).call();
     }
 
@@ -158,7 +158,7 @@ public class AvaTaxClient {
     public AccountModel activateAccountAsync(int id, ActivateAccountModel model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{id}/activate");
-        path.ApplyField("id", id);
+        path.applyField("id", id);
         return ((RestCall<AccountModel>)restCallFactory.createRestCall("Post", path, model, new TypeToken<AccountModel>(){})).call();
     }
 
@@ -177,8 +177,8 @@ public class AvaTaxClient {
     public AccountModel getAccount(int id, String include)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{id}");
-        path.ApplyField("id", id);
-        path.AddQuery("$include", include);
+        path.applyField("id", id);
+        path.addQuery("$include", include);
         return ((RestCall<AccountModel>)restCallFactory.createRestCall("Get", path, null, new TypeToken<AccountModel>(){})).call();
     }
 
@@ -197,8 +197,8 @@ public class AvaTaxClient {
     public AccountModel getAccountAsync(int id, String include)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{id}");
-        path.ApplyField("id", id);
-        path.AddQuery("$include", include);
+        path.applyField("id", id);
+        path.addQuery("$include", include);
         return ((RestCall<AccountModel>)restCallFactory.createRestCall("Get", path, null, new TypeToken<AccountModel>(){})).call();
     }
 
@@ -223,7 +223,7 @@ public class AvaTaxClient {
     public List<AccountConfigurationModel> getAccountConfiguration(int id)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{id}/configuration");
-        path.ApplyField("id", id);
+        path.applyField("id", id);
         return ((RestCall<List<AccountConfigurationModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<List<AccountConfigurationModel>>(){})).call();
     }
 
@@ -248,7 +248,7 @@ public class AvaTaxClient {
     public ArrayList<AccountConfigurationModel> getAccountConfigurationAsync(int id)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{id}/configuration");
-        path.ApplyField("id", id);
+        path.applyField("id", id);
         return ((RestCall<List<AccountConfigurationModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<List<AccountConfigurationModel>>(){})).call();
     }
 
@@ -274,7 +274,7 @@ public class AvaTaxClient {
     public List<AccountConfigurationModel> setAccountConfiguration(int id, ArrayList<AccountConfigurationModel> model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{id}/configuration");
-        path.ApplyField("id", id);
+        path.applyField("id", id);
         return ((RestCall<List<AccountConfigurationModel>>)restCallFactory.createRestCall("Post", path, model, new TypeToken<List<AccountConfigurationModel>>(){})).call();
     }
 
@@ -300,7 +300,7 @@ public class AvaTaxClient {
     public ArrayList<AccountConfigurationModel> setAccountConfigurationAsync(int id, ArrayList<AccountConfigurationModel> model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{id}/configuration");
-        path.ApplyField("id", id);
+        path.applyField("id", id);
         return ((RestCall<List<AccountConfigurationModel>>)restCallFactory.createRestCall("Post", path, model, new TypeToken<List<AccountConfigurationModel>>(){})).call();
     }
 
@@ -328,16 +328,16 @@ public class AvaTaxClient {
     public AddressResolutionModel resolveAddress(String line1, String line2, String line3, String city, String region, String postalCode, String country, TextCase textCase, BigDecimal latitude, BigDecimal longitude)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/addresses/resolve");
-        path.AddQuery("line1", line1);
-        path.AddQuery("line2", line2);
-        path.AddQuery("line3", line3);
-        path.AddQuery("city", city);
-        path.AddQuery("region", region);
-        path.AddQuery("postalCode", postalCode);
-        path.AddQuery("country", country);
-        path.AddQuery("textCase", textCase);
-        path.AddQuery("latitude", latitude);
-        path.AddQuery("longitude", longitude);
+        path.addQuery("line1", line1);
+        path.addQuery("line2", line2);
+        path.addQuery("line3", line3);
+        path.addQuery("city", city);
+        path.addQuery("region", region);
+        path.addQuery("postalCode", postalCode);
+        path.addQuery("country", country);
+        path.addQuery("textCase", textCase);
+        path.addQuery("latitude", latitude);
+        path.addQuery("longitude", longitude);
         return ((RestCall<AddressResolutionModel>)restCallFactory.createRestCall("Get", path, null, new TypeToken<AddressResolutionModel>(){})).call();
     }
 
@@ -365,16 +365,16 @@ public class AvaTaxClient {
     public AddressResolutionModel resolveAddressAsync(String line1, String line2, String line3, String city, String region, String postalCode, String country, TextCase textCase, BigDecimal latitude, BigDecimal longitude)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/addresses/resolve");
-        path.AddQuery("line1", line1);
-        path.AddQuery("line2", line2);
-        path.AddQuery("line3", line3);
-        path.AddQuery("city", city);
-        path.AddQuery("region", region);
-        path.AddQuery("postalCode", postalCode);
-        path.AddQuery("country", country);
-        path.AddQuery("textCase", textCase);
-        path.AddQuery("latitude", latitude);
-        path.AddQuery("longitude", longitude);
+        path.addQuery("line1", line1);
+        path.addQuery("line2", line2);
+        path.addQuery("line3", line3);
+        path.addQuery("city", city);
+        path.addQuery("region", region);
+        path.addQuery("postalCode", postalCode);
+        path.addQuery("country", country);
+        path.addQuery("textCase", textCase);
+        path.addQuery("latitude", latitude);
+        path.addQuery("longitude", longitude);
         return ((RestCall<AddressResolutionModel>)restCallFactory.createRestCall("Get", path, null, new TypeToken<AddressResolutionModel>(){})).call();
     }
 
@@ -429,7 +429,7 @@ public class AvaTaxClient {
     public List<BatchModel> createBatches(int companyId, ArrayList<BatchModel> model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/batches");
-        path.ApplyField("companyId", companyId);
+        path.applyField("companyId", companyId);
         return ((RestCall<List<BatchModel>>)restCallFactory.createRestCall("Post", path, model, new TypeToken<List<BatchModel>>(){})).call();
     }
 
@@ -448,7 +448,7 @@ public class AvaTaxClient {
     public ArrayList<BatchModel> createBatchesAsync(int companyId, ArrayList<BatchModel> model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/batches");
-        path.ApplyField("companyId", companyId);
+        path.applyField("companyId", companyId);
         return ((RestCall<List<BatchModel>>)restCallFactory.createRestCall("Post", path, model, new TypeToken<List<BatchModel>>(){})).call();
     }
 
@@ -462,8 +462,8 @@ public class AvaTaxClient {
     public List<ErrorDetail> deleteBatch(int companyId, int id)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/batches/{id}");
-        path.ApplyField("companyId", companyId);
-        path.ApplyField("id", id);
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
         return ((RestCall<List<ErrorDetail>>)restCallFactory.createRestCall("Delete", path, null, new TypeToken<List<ErrorDetail>>(){})).call();
     }
 
@@ -477,8 +477,8 @@ public class AvaTaxClient {
     public ArrayList<ErrorDetail> deleteBatchAsync(int companyId, int id)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/batches/{id}");
-        path.ApplyField("companyId", companyId);
-        path.ApplyField("id", id);
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
         return ((RestCall<List<ErrorDetail>>)restCallFactory.createRestCall("Delete", path, null, new TypeToken<List<ErrorDetail>>(){})).call();
     }
 
@@ -493,9 +493,9 @@ public class AvaTaxClient {
     public FileResult downloadBatch(int companyId, int batchId, int id)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/batches/{batchId}/files/{id}/attachment");
-        path.ApplyField("companyId", companyId);
-        path.ApplyField("batchId", batchId);
-        path.ApplyField("id", id);
+        path.applyField("companyId", companyId);
+        path.applyField("batchId", batchId);
+        path.applyField("id", id);
         return ((RestCall<FileResult>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FileResult>(){})).call();
     }
 
@@ -510,9 +510,9 @@ public class AvaTaxClient {
     public HashMap<String, String> downloadBatchAsync(int companyId, int batchId, int id)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/batches/{batchId}/files/{id}/attachment");
-        path.ApplyField("companyId", companyId);
-        path.ApplyField("batchId", batchId);
-        path.ApplyField("id", id);
+        path.applyField("companyId", companyId);
+        path.applyField("batchId", batchId);
+        path.applyField("id", id);
         return ((RestCall<FileResult>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FileResult>(){})).call();
     }
 
@@ -530,8 +530,8 @@ public class AvaTaxClient {
     public BatchModel getBatch(int companyId, int id)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/batches/{id}");
-        path.ApplyField("companyId", companyId);
-        path.ApplyField("id", id);
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
         return ((RestCall<BatchModel>)restCallFactory.createRestCall("Get", path, null, new TypeToken<BatchModel>(){})).call();
     }
 
@@ -549,8 +549,8 @@ public class AvaTaxClient {
     public BatchModel getBatchAsync(int companyId, int id)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/batches/{id}");
-        path.ApplyField("companyId", companyId);
-        path.ApplyField("id", id);
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
         return ((RestCall<BatchModel>)restCallFactory.createRestCall("Get", path, null, new TypeToken<BatchModel>(){})).call();
     }
 
@@ -574,12 +574,12 @@ public class AvaTaxClient {
     public FetchResult<BatchModel> listBatchesByCompany(int companyId, String filter, String include, Integer top, Integer skip, String orderBy)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/batches");
-        path.ApplyField("companyId", companyId);
-        path.AddQuery("$filter", filter);
-        path.AddQuery("$include", include);
-        path.AddQuery("$top", top);
-        path.AddQuery("$skip", skip);
-        path.AddQuery("$orderBy", orderBy);
+        path.applyField("companyId", companyId);
+        path.addQuery("$filter", filter);
+        path.addQuery("$include", include);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
         return ((RestCall<FetchResult<BatchModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<BatchModel>>(){})).call();
     }
 
@@ -603,12 +603,12 @@ public class AvaTaxClient {
     public FetchResult<HashMap<String, String>> listBatchesByCompanyAsync(int companyId, String filter, String include, Integer top, Integer skip, String orderBy)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/batches");
-        path.ApplyField("companyId", companyId);
-        path.AddQuery("$filter", filter);
-        path.AddQuery("$include", include);
-        path.AddQuery("$top", top);
-        path.AddQuery("$skip", skip);
-        path.AddQuery("$orderBy", orderBy);
+        path.applyField("companyId", companyId);
+        path.addQuery("$filter", filter);
+        path.addQuery("$include", include);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
         return ((RestCall<FetchResult<BatchModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<BatchModel>>(){})).call();
     }
 
@@ -632,11 +632,11 @@ public class AvaTaxClient {
     public FetchResult<BatchModel> queryBatches(String filter, String include, Integer top, Integer skip, String orderBy)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/batches");
-        path.AddQuery("$filter", filter);
-        path.AddQuery("$include", include);
-        path.AddQuery("$top", top);
-        path.AddQuery("$skip", skip);
-        path.AddQuery("$orderBy", orderBy);
+        path.addQuery("$filter", filter);
+        path.addQuery("$include", include);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
         return ((RestCall<FetchResult<BatchModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<BatchModel>>(){})).call();
     }
 
@@ -660,11 +660,11 @@ public class AvaTaxClient {
     public FetchResult<HashMap<String, String>> queryBatchesAsync(String filter, String include, Integer top, Integer skip, String orderBy)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/batches");
-        path.AddQuery("$filter", filter);
-        path.AddQuery("$include", include);
-        path.AddQuery("$top", top);
-        path.AddQuery("$skip", skip);
-        path.AddQuery("$orderBy", orderBy);
+        path.addQuery("$filter", filter);
+        path.addQuery("$include", include);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
         return ((RestCall<FetchResult<BatchModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<BatchModel>>(){})).call();
     }
 
@@ -764,7 +764,7 @@ public class AvaTaxClient {
     public FundingStatusModel createFundingRequest(int id, FundingInitiateModel model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{id}/funding/setup");
-        path.ApplyField("id", id);
+        path.applyField("id", id);
         return ((RestCall<FundingStatusModel>)restCallFactory.createRestCall("Post", path, model, new TypeToken<FundingStatusModel>(){})).call();
     }
 
@@ -788,7 +788,7 @@ public class AvaTaxClient {
     public FundingStatusModel createFundingRequestAsync(int id, FundingInitiateModel model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{id}/funding/setup");
-        path.ApplyField("id", id);
+        path.applyField("id", id);
         return ((RestCall<FundingStatusModel>)restCallFactory.createRestCall("Post", path, model, new TypeToken<FundingStatusModel>(){})).call();
     }
 
@@ -801,7 +801,7 @@ public class AvaTaxClient {
     public List<ErrorDetail> deleteCompany(int id)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{id}");
-        path.ApplyField("id", id);
+        path.applyField("id", id);
         return ((RestCall<List<ErrorDetail>>)restCallFactory.createRestCall("Delete", path, null, new TypeToken<List<ErrorDetail>>(){})).call();
     }
 
@@ -814,7 +814,7 @@ public class AvaTaxClient {
     public ArrayList<ErrorDetail> deleteCompanyAsync(int id)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{id}");
-        path.ApplyField("id", id);
+        path.applyField("id", id);
         return ((RestCall<List<ErrorDetail>>)restCallFactory.createRestCall("Delete", path, null, new TypeToken<List<ErrorDetail>>(){})).call();
     }
 
@@ -840,8 +840,8 @@ public class AvaTaxClient {
     public CompanyModel getCompany(int id, String include)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{id}");
-        path.ApplyField("id", id);
-        path.AddQuery("$include", include);
+        path.applyField("id", id);
+        path.addQuery("$include", include);
         return ((RestCall<CompanyModel>)restCallFactory.createRestCall("Get", path, null, new TypeToken<CompanyModel>(){})).call();
     }
 
@@ -867,8 +867,8 @@ public class AvaTaxClient {
     public CompanyModel getCompanyAsync(int id, String include)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{id}");
-        path.ApplyField("id", id);
-        path.AddQuery("$include", include);
+        path.applyField("id", id);
+        path.addQuery("$include", include);
         return ((RestCall<CompanyModel>)restCallFactory.createRestCall("Get", path, null, new TypeToken<CompanyModel>(){})).call();
     }
 
@@ -893,7 +893,7 @@ public class AvaTaxClient {
     public List<CompanyConfigurationModel> getCompanyConfiguration(int id)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{id}/configuration");
-        path.ApplyField("id", id);
+        path.applyField("id", id);
         return ((RestCall<List<CompanyConfigurationModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<List<CompanyConfigurationModel>>(){})).call();
     }
 
@@ -918,7 +918,7 @@ public class AvaTaxClient {
     public ArrayList<CompanyConfigurationModel> getCompanyConfigurationAsync(int id)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{id}/configuration");
-        path.ApplyField("id", id);
+        path.applyField("id", id);
         return ((RestCall<List<CompanyConfigurationModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<List<CompanyConfigurationModel>>(){})).call();
     }
 
@@ -935,7 +935,7 @@ public class AvaTaxClient {
     public List<FundingStatusModel> listFundingRequestsByCompany(int id)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{id}/funding");
-        path.ApplyField("id", id);
+        path.applyField("id", id);
         return ((RestCall<List<FundingStatusModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<List<FundingStatusModel>>(){})).call();
     }
 
@@ -952,7 +952,7 @@ public class AvaTaxClient {
     public ArrayList<FundingStatusModel> listFundingRequestsByCompanyAsync(int id)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{id}/funding");
-        path.ApplyField("id", id);
+        path.applyField("id", id);
         return ((RestCall<List<FundingStatusModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<List<FundingStatusModel>>(){})).call();
     }
 
@@ -983,11 +983,11 @@ public class AvaTaxClient {
     public FetchResult<CompanyModel> queryCompanies(String include, String filter, Integer top, Integer skip, String orderBy)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies");
-        path.AddQuery("$include", include);
-        path.AddQuery("$filter", filter);
-        path.AddQuery("$top", top);
-        path.AddQuery("$skip", skip);
-        path.AddQuery("$orderBy", orderBy);
+        path.addQuery("$include", include);
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
         return ((RestCall<FetchResult<CompanyModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<CompanyModel>>(){})).call();
     }
 
@@ -1018,11 +1018,11 @@ public class AvaTaxClient {
     public FetchResult<HashMap<String, String>> queryCompaniesAsync(String include, String filter, Integer top, Integer skip, String orderBy)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies");
-        path.AddQuery("$include", include);
-        path.AddQuery("$filter", filter);
-        path.AddQuery("$top", top);
-        path.AddQuery("$skip", skip);
-        path.AddQuery("$orderBy", orderBy);
+        path.addQuery("$include", include);
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
         return ((RestCall<FetchResult<CompanyModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<CompanyModel>>(){})).call();
     }
 
@@ -1048,7 +1048,7 @@ public class AvaTaxClient {
     public List<CompanyConfigurationModel> setCompanyConfiguration(int id, ArrayList<CompanyConfigurationModel> model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{id}/configuration");
-        path.ApplyField("id", id);
+        path.applyField("id", id);
         return ((RestCall<List<CompanyConfigurationModel>>)restCallFactory.createRestCall("Post", path, model, new TypeToken<List<CompanyConfigurationModel>>(){})).call();
     }
 
@@ -1074,7 +1074,7 @@ public class AvaTaxClient {
     public ArrayList<CompanyConfigurationModel> setCompanyConfigurationAsync(int id, ArrayList<CompanyConfigurationModel> model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{id}/configuration");
-        path.ApplyField("id", id);
+        path.applyField("id", id);
         return ((RestCall<List<CompanyConfigurationModel>>)restCallFactory.createRestCall("Post", path, model, new TypeToken<List<CompanyConfigurationModel>>(){})).call();
     }
 
@@ -1092,7 +1092,7 @@ public class AvaTaxClient {
     public CompanyModel updateCompany(int id, CompanyModel model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{id}");
-        path.ApplyField("id", id);
+        path.applyField("id", id);
         return ((RestCall<CompanyModel>)restCallFactory.createRestCall("Put", path, model, new TypeToken<CompanyModel>(){})).call();
     }
 
@@ -1110,7 +1110,7 @@ public class AvaTaxClient {
     public CompanyModel updateCompanyAsync(int id, CompanyModel model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{id}");
-        path.ApplyField("id", id);
+        path.applyField("id", id);
         return ((RestCall<CompanyModel>)restCallFactory.createRestCall("Put", path, model, new TypeToken<CompanyModel>(){})).call();
     }
 
@@ -1127,7 +1127,7 @@ public class AvaTaxClient {
     public List<ContactModel> createContacts(int companyId, ArrayList<ContactModel> model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/contacts");
-        path.ApplyField("companyId", companyId);
+        path.applyField("companyId", companyId);
         return ((RestCall<List<ContactModel>>)restCallFactory.createRestCall("Post", path, model, new TypeToken<List<ContactModel>>(){})).call();
     }
 
@@ -1144,7 +1144,7 @@ public class AvaTaxClient {
     public ArrayList<ContactModel> createContactsAsync(int companyId, ArrayList<ContactModel> model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/contacts");
-        path.ApplyField("companyId", companyId);
+        path.applyField("companyId", companyId);
         return ((RestCall<List<ContactModel>>)restCallFactory.createRestCall("Post", path, model, new TypeToken<List<ContactModel>>(){})).call();
     }
 
@@ -1158,8 +1158,8 @@ public class AvaTaxClient {
     public List<ErrorDetail> deleteContact(int companyId, int id)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/contacts/{id}");
-        path.ApplyField("companyId", companyId);
-        path.ApplyField("id", id);
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
         return ((RestCall<List<ErrorDetail>>)restCallFactory.createRestCall("Delete", path, null, new TypeToken<List<ErrorDetail>>(){})).call();
     }
 
@@ -1173,8 +1173,8 @@ public class AvaTaxClient {
     public ArrayList<ErrorDetail> deleteContactAsync(int companyId, int id)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/contacts/{id}");
-        path.ApplyField("companyId", companyId);
-        path.ApplyField("id", id);
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
         return ((RestCall<List<ErrorDetail>>)restCallFactory.createRestCall("Delete", path, null, new TypeToken<List<ErrorDetail>>(){})).call();
     }
 
@@ -1191,8 +1191,8 @@ public class AvaTaxClient {
     public ContactModel getContact(int companyId, int id)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/contacts/{id}");
-        path.ApplyField("companyId", companyId);
-        path.ApplyField("id", id);
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
         return ((RestCall<ContactModel>)restCallFactory.createRestCall("Get", path, null, new TypeToken<ContactModel>(){})).call();
     }
 
@@ -1209,8 +1209,8 @@ public class AvaTaxClient {
     public ContactModel getContactAsync(int companyId, int id)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/contacts/{id}");
-        path.ApplyField("companyId", companyId);
-        path.ApplyField("id", id);
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
         return ((RestCall<ContactModel>)restCallFactory.createRestCall("Get", path, null, new TypeToken<ContactModel>(){})).call();
     }
 
@@ -1232,12 +1232,12 @@ public class AvaTaxClient {
     public FetchResult<ContactModel> listContactsByCompany(int companyId, String filter, String include, Integer top, Integer skip, String orderBy)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/contacts");
-        path.ApplyField("companyId", companyId);
-        path.AddQuery("$filter", filter);
-        path.AddQuery("$include", include);
-        path.AddQuery("$top", top);
-        path.AddQuery("$skip", skip);
-        path.AddQuery("$orderBy", orderBy);
+        path.applyField("companyId", companyId);
+        path.addQuery("$filter", filter);
+        path.addQuery("$include", include);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
         return ((RestCall<FetchResult<ContactModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<ContactModel>>(){})).call();
     }
 
@@ -1259,12 +1259,12 @@ public class AvaTaxClient {
     public FetchResult<HashMap<String, String>> listContactsByCompanyAsync(int companyId, String filter, String include, Integer top, Integer skip, String orderBy)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/contacts");
-        path.ApplyField("companyId", companyId);
-        path.AddQuery("$filter", filter);
-        path.AddQuery("$include", include);
-        path.AddQuery("$top", top);
-        path.AddQuery("$skip", skip);
-        path.AddQuery("$orderBy", orderBy);
+        path.applyField("companyId", companyId);
+        path.addQuery("$filter", filter);
+        path.addQuery("$include", include);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
         return ((RestCall<FetchResult<ContactModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<ContactModel>>(){})).call();
     }
 
@@ -1287,11 +1287,11 @@ public class AvaTaxClient {
     public FetchResult<ContactModel> queryContacts(String filter, String include, Integer top, Integer skip, String orderBy)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/contacts");
-        path.AddQuery("$filter", filter);
-        path.AddQuery("$include", include);
-        path.AddQuery("$top", top);
-        path.AddQuery("$skip", skip);
-        path.AddQuery("$orderBy", orderBy);
+        path.addQuery("$filter", filter);
+        path.addQuery("$include", include);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
         return ((RestCall<FetchResult<ContactModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<ContactModel>>(){})).call();
     }
 
@@ -1314,11 +1314,11 @@ public class AvaTaxClient {
     public FetchResult<HashMap<String, String>> queryContactsAsync(String filter, String include, Integer top, Integer skip, String orderBy)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/contacts");
-        path.AddQuery("$filter", filter);
-        path.AddQuery("$include", include);
-        path.AddQuery("$top", top);
-        path.AddQuery("$skip", skip);
-        path.AddQuery("$orderBy", orderBy);
+        path.addQuery("$filter", filter);
+        path.addQuery("$include", include);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
         return ((RestCall<FetchResult<ContactModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<ContactModel>>(){})).call();
     }
 
@@ -1338,8 +1338,8 @@ public class AvaTaxClient {
     public ContactModel updateContact(int companyId, int id, ContactModel model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/contacts/{id}");
-        path.ApplyField("companyId", companyId);
-        path.ApplyField("id", id);
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
         return ((RestCall<ContactModel>)restCallFactory.createRestCall("Put", path, model, new TypeToken<ContactModel>(){})).call();
     }
 
@@ -1359,8 +1359,8 @@ public class AvaTaxClient {
     public ContactModel updateContactAsync(int companyId, int id, ContactModel model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/contacts/{id}");
-        path.ApplyField("companyId", companyId);
-        path.ApplyField("id", id);
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
         return ((RestCall<ContactModel>)restCallFactory.createRestCall("Put", path, model, new TypeToken<ContactModel>(){})).call();
     }
 
@@ -1376,8 +1376,8 @@ public class AvaTaxClient {
     public FetchResult<NexusModel> apiV2DefinitionsNexusByCountryByRegionGet(String country, String region)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/nexus/{country}/{region}");
-        path.ApplyField("country", country);
-        path.ApplyField("region", region);
+        path.applyField("country", country);
+        path.applyField("region", region);
         return ((RestCall<FetchResult<NexusModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<NexusModel>>(){})).call();
     }
 
@@ -1393,8 +1393,8 @@ public class AvaTaxClient {
     public FetchResult<HashMap<String, String>> apiV2DefinitionsNexusByCountryByRegionGetAsync(String country, String region)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/nexus/{country}/{region}");
-        path.ApplyField("country", country);
-        path.ApplyField("region", region);
+        path.applyField("country", country);
+        path.applyField("region", region);
         return ((RestCall<FetchResult<NexusModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<NexusModel>>(){})).call();
     }
 
@@ -1409,7 +1409,7 @@ public class AvaTaxClient {
     public FetchResult<NexusModel> apiV2DefinitionsNexusByCountryGet(String country)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/nexus/{country}");
-        path.ApplyField("country", country);
+        path.applyField("country", country);
         return ((RestCall<FetchResult<NexusModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<NexusModel>>(){})).call();
     }
 
@@ -1424,7 +1424,7 @@ public class AvaTaxClient {
     public FetchResult<HashMap<String, String>> apiV2DefinitionsNexusByCountryGetAsync(String country)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/nexus/{country}");
-        path.ApplyField("country", country);
+        path.applyField("country", country);
         return ((RestCall<FetchResult<NexusModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<NexusModel>>(){})).call();
     }
 
@@ -1465,7 +1465,7 @@ public class AvaTaxClient {
     public FetchResult<SkyscraperStatusModel> getLoginVerifierByForm(String form)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/filingcalendars/loginverifiers/{form}");
-        path.ApplyField("form", form);
+        path.applyField("form", form);
         return ((RestCall<FetchResult<SkyscraperStatusModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<SkyscraperStatusModel>>(){})).call();
     }
 
@@ -1480,7 +1480,7 @@ public class AvaTaxClient {
     public FetchResult<HashMap<String, String>> getLoginVerifierByFormAsync(String form)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/filingcalendars/loginverifiers/{form}");
-        path.ApplyField("form", form);
+        path.applyField("form", form);
         return ((RestCall<FetchResult<SkyscraperStatusModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<SkyscraperStatusModel>>(){})).call();
     }
 
@@ -1618,13 +1618,13 @@ public class AvaTaxClient {
     public FetchResult<JurisdictionOverrideModel> listJurisdictionsByAddress(String line1, String line2, String line3, String city, String region, String postalCode, String country)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/jurisdictionsnearaddress");
-        path.AddQuery("line1", line1);
-        path.AddQuery("line2", line2);
-        path.AddQuery("line3", line3);
-        path.AddQuery("city", city);
-        path.AddQuery("region", region);
-        path.AddQuery("postalCode", postalCode);
-        path.AddQuery("country", country);
+        path.addQuery("line1", line1);
+        path.addQuery("line2", line2);
+        path.addQuery("line3", line3);
+        path.addQuery("city", city);
+        path.addQuery("region", region);
+        path.addQuery("postalCode", postalCode);
+        path.addQuery("country", country);
         return ((RestCall<FetchResult<JurisdictionOverrideModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<JurisdictionOverrideModel>>(){})).call();
     }
 
@@ -1650,13 +1650,13 @@ public class AvaTaxClient {
     public FetchResult<HashMap<String, String>> listJurisdictionsByAddressAsync(String line1, String line2, String line3, String city, String region, String postalCode, String country)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/jurisdictionsnearaddress");
-        path.AddQuery("line1", line1);
-        path.AddQuery("line2", line2);
-        path.AddQuery("line3", line3);
-        path.AddQuery("city", city);
-        path.AddQuery("region", region);
-        path.AddQuery("postalCode", postalCode);
-        path.AddQuery("country", country);
+        path.addQuery("line1", line1);
+        path.addQuery("line2", line2);
+        path.addQuery("line3", line3);
+        path.addQuery("city", city);
+        path.addQuery("region", region);
+        path.addQuery("postalCode", postalCode);
+        path.addQuery("country", country);
         return ((RestCall<FetchResult<JurisdictionOverrideModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<JurisdictionOverrideModel>>(){})).call();
     }
 
@@ -1683,15 +1683,15 @@ public class AvaTaxClient {
     public FetchResult<LocationQuestionModel> listLocationQuestionsByAddress(String line1, String line2, String line3, String city, String region, String postalCode, String country, BigDecimal latitude, BigDecimal longitude)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/locationquestions");
-        path.AddQuery("line1", line1);
-        path.AddQuery("line2", line2);
-        path.AddQuery("line3", line3);
-        path.AddQuery("city", city);
-        path.AddQuery("region", region);
-        path.AddQuery("postalCode", postalCode);
-        path.AddQuery("country", country);
-        path.AddQuery("latitude", latitude);
-        path.AddQuery("longitude", longitude);
+        path.addQuery("line1", line1);
+        path.addQuery("line2", line2);
+        path.addQuery("line3", line3);
+        path.addQuery("city", city);
+        path.addQuery("region", region);
+        path.addQuery("postalCode", postalCode);
+        path.addQuery("country", country);
+        path.addQuery("latitude", latitude);
+        path.addQuery("longitude", longitude);
         return ((RestCall<FetchResult<LocationQuestionModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<LocationQuestionModel>>(){})).call();
     }
 
@@ -1718,15 +1718,15 @@ public class AvaTaxClient {
     public FetchResult<HashMap<String, String>> listLocationQuestionsByAddressAsync(String line1, String line2, String line3, String city, String region, String postalCode, String country, BigDecimal latitude, BigDecimal longitude)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/locationquestions");
-        path.AddQuery("line1", line1);
-        path.AddQuery("line2", line2);
-        path.AddQuery("line3", line3);
-        path.AddQuery("city", city);
-        path.AddQuery("region", region);
-        path.AddQuery("postalCode", postalCode);
-        path.AddQuery("country", country);
-        path.AddQuery("latitude", latitude);
-        path.AddQuery("longitude", longitude);
+        path.addQuery("line1", line1);
+        path.addQuery("line2", line2);
+        path.addQuery("line3", line3);
+        path.addQuery("city", city);
+        path.addQuery("region", region);
+        path.addQuery("postalCode", postalCode);
+        path.addQuery("country", country);
+        path.addQuery("latitude", latitude);
+        path.addQuery("longitude", longitude);
         return ((RestCall<FetchResult<LocationQuestionModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<LocationQuestionModel>>(){})).call();
     }
 
@@ -1778,13 +1778,13 @@ public class AvaTaxClient {
     public FetchResult<NexusModel> listNexusByAddress(String line1, String line2, String line3, String city, String region, String postalCode, String country)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/nexus/byaddress");
-        path.AddQuery("line1", line1);
-        path.AddQuery("line2", line2);
-        path.AddQuery("line3", line3);
-        path.AddQuery("city", city);
-        path.AddQuery("region", region);
-        path.AddQuery("postalCode", postalCode);
-        path.AddQuery("country", country);
+        path.addQuery("line1", line1);
+        path.addQuery("line2", line2);
+        path.addQuery("line3", line3);
+        path.addQuery("city", city);
+        path.addQuery("region", region);
+        path.addQuery("postalCode", postalCode);
+        path.addQuery("country", country);
         return ((RestCall<FetchResult<NexusModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<NexusModel>>(){})).call();
     }
 
@@ -1808,13 +1808,13 @@ public class AvaTaxClient {
     public FetchResult<HashMap<String, String>> listNexusByAddressAsync(String line1, String line2, String line3, String city, String region, String postalCode, String country)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/nexus/byaddress");
-        path.AddQuery("line1", line1);
-        path.AddQuery("line2", line2);
-        path.AddQuery("line3", line3);
-        path.AddQuery("city", city);
-        path.AddQuery("region", region);
-        path.AddQuery("postalCode", postalCode);
-        path.AddQuery("country", country);
+        path.addQuery("line1", line1);
+        path.addQuery("line2", line2);
+        path.addQuery("line3", line3);
+        path.addQuery("city", city);
+        path.addQuery("region", region);
+        path.addQuery("postalCode", postalCode);
+        path.addQuery("country", country);
         return ((RestCall<FetchResult<NexusModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<NexusModel>>(){})).call();
     }
 
@@ -1838,7 +1838,7 @@ public class AvaTaxClient {
     public NexusByTaxFormModel listNexusByFormCode(String formCode)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/nexus/byform/{formCode}");
-        path.ApplyField("formCode", formCode);
+        path.applyField("formCode", formCode);
         return ((RestCall<NexusByTaxFormModel>)restCallFactory.createRestCall("Get", path, null, new TypeToken<NexusByTaxFormModel>(){})).call();
     }
 
@@ -1862,7 +1862,7 @@ public class AvaTaxClient {
     public NexusByTaxFormModel listNexusByFormCodeAsync(String formCode)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/nexus/byform/{formCode}");
-        path.ApplyField("formCode", formCode);
+        path.applyField("formCode", formCode);
         return ((RestCall<NexusByTaxFormModel>)restCallFactory.createRestCall("Get", path, null, new TypeToken<NexusByTaxFormModel>(){})).call();
     }
 
@@ -2191,7 +2191,7 @@ public class AvaTaxClient {
     public FetchResult<RateTypeModel> listRateTypesByCountry(String country)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/countries/{country}/ratetypes");
-        path.ApplyField("country", country);
+        path.applyField("country", country);
         return ((RestCall<FetchResult<RateTypeModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<RateTypeModel>>(){})).call();
     }
 
@@ -2206,7 +2206,7 @@ public class AvaTaxClient {
     public FetchResult<HashMap<String, String>> listRateTypesByCountryAsync(String country)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/countries/{country}/ratetypes");
-        path.ApplyField("country", country);
+        path.applyField("country", country);
         return ((RestCall<FetchResult<RateTypeModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<RateTypeModel>>(){})).call();
     }
 
@@ -2250,7 +2250,7 @@ public class AvaTaxClient {
     public FetchResult<IsoRegionModel> listRegionsByCountry(String country)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/countries/{country}/regions");
-        path.ApplyField("country", country);
+        path.applyField("country", country);
         return ((RestCall<FetchResult<IsoRegionModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<IsoRegionModel>>(){})).call();
     }
 
@@ -2266,7 +2266,7 @@ public class AvaTaxClient {
     public FetchResult<HashMap<String, String>> listRegionsByCountryAsync(String country)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/countries/{country}/regions");
-        path.ApplyField("country", country);
+        path.applyField("country", country);
         return ((RestCall<FetchResult<IsoRegionModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<IsoRegionModel>>(){})).call();
     }
 
@@ -2558,8 +2558,8 @@ public class AvaTaxClient {
     public FilingCalendarModel apiV2CompaniesByCompanyIdFilingcalendarsByIdGet(int companyId, int id)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingcalendars/{id}");
-        path.ApplyField("companyId", companyId);
-        path.ApplyField("id", id);
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
         return ((RestCall<FilingCalendarModel>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FilingCalendarModel>(){})).call();
     }
 
@@ -2573,8 +2573,8 @@ public class AvaTaxClient {
     public FilingCalendarModel apiV2CompaniesByCompanyIdFilingcalendarsByIdGetAsync(int companyId, int id)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingcalendars/{id}");
-        path.ApplyField("companyId", companyId);
-        path.ApplyField("id", id);
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
         return ((RestCall<FilingCalendarModel>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FilingCalendarModel>(){})).call();
     }
 
@@ -2591,11 +2591,11 @@ public class AvaTaxClient {
     public FetchResult<FilingCalendarModel> apiV2CompaniesByCompanyIdFilingcalendarsGet(int companyId, String filter, Integer top, Integer skip, String orderBy)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingcalendars");
-        path.ApplyField("companyId", companyId);
-        path.AddQuery("$filter", filter);
-        path.AddQuery("$top", top);
-        path.AddQuery("$skip", skip);
-        path.AddQuery("$orderBy", orderBy);
+        path.applyField("companyId", companyId);
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
         return ((RestCall<FetchResult<FilingCalendarModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<FilingCalendarModel>>(){})).call();
     }
 
@@ -2612,11 +2612,11 @@ public class AvaTaxClient {
     public FetchResult<HashMap<String, String>> apiV2CompaniesByCompanyIdFilingcalendarsGetAsync(int companyId, String filter, Integer top, Integer skip, String orderBy)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingcalendars");
-        path.ApplyField("companyId", companyId);
-        path.AddQuery("$filter", filter);
-        path.AddQuery("$top", top);
-        path.AddQuery("$skip", skip);
-        path.AddQuery("$orderBy", orderBy);
+        path.applyField("companyId", companyId);
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
         return ((RestCall<FetchResult<FilingCalendarModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<FilingCalendarModel>>(){})).call();
     }
 
@@ -2636,11 +2636,11 @@ public class AvaTaxClient {
     public FetchResult<FilingRequestModel> apiV2CompaniesByCompanyIdFilingrequestsGet(int companyId, String filter, Integer top, Integer skip, String orderBy)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingrequests");
-        path.ApplyField("companyId", companyId);
-        path.AddQuery("$filter", filter);
-        path.AddQuery("$top", top);
-        path.AddQuery("$skip", skip);
-        path.AddQuery("$orderBy", orderBy);
+        path.applyField("companyId", companyId);
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
         return ((RestCall<FetchResult<FilingRequestModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<FilingRequestModel>>(){})).call();
     }
 
@@ -2660,11 +2660,11 @@ public class AvaTaxClient {
     public FetchResult<HashMap<String, String>> apiV2CompaniesByCompanyIdFilingrequestsGetAsync(int companyId, String filter, Integer top, Integer skip, String orderBy)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingrequests");
-        path.ApplyField("companyId", companyId);
-        path.AddQuery("$filter", filter);
-        path.AddQuery("$top", top);
-        path.AddQuery("$skip", skip);
-        path.AddQuery("$orderBy", orderBy);
+        path.applyField("companyId", companyId);
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
         return ((RestCall<FetchResult<FilingRequestModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<FilingRequestModel>>(){})).call();
     }
 
@@ -2678,8 +2678,8 @@ public class AvaTaxClient {
     public List<CycleAddOptionModel> cycleSafeAdd(int companyId, String formCode)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingcalendars/add/options");
-        path.ApplyField("companyId", companyId);
-        path.AddQuery("formCode", formCode);
+        path.applyField("companyId", companyId);
+        path.addQuery("formCode", formCode);
         return ((RestCall<List<CycleAddOptionModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<List<CycleAddOptionModel>>(){})).call();
     }
 
@@ -2693,8 +2693,8 @@ public class AvaTaxClient {
     public ArrayList<CycleAddOptionModel> cycleSafeAddAsync(int companyId, String formCode)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingcalendars/add/options");
-        path.ApplyField("companyId", companyId);
-        path.AddQuery("formCode", formCode);
+        path.applyField("companyId", companyId);
+        path.addQuery("formCode", formCode);
         return ((RestCall<List<CycleAddOptionModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<List<CycleAddOptionModel>>(){})).call();
     }
 
@@ -2709,8 +2709,8 @@ public class AvaTaxClient {
     public CycleEditOptionModel cycleSafeEdit(int companyId, int id, ArrayList<FilingCalendarEditModel> model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingcalendars/{id}/edit/options");
-        path.ApplyField("companyId", companyId);
-        path.ApplyField("id", id);
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
         return ((RestCall<CycleEditOptionModel>)restCallFactory.createRestCall("Post", path, model, new TypeToken<CycleEditOptionModel>(){})).call();
     }
 
@@ -2725,8 +2725,8 @@ public class AvaTaxClient {
     public CycleEditOptionModel cycleSafeEditAsync(int companyId, int id, ArrayList<FilingCalendarEditModel> model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingcalendars/{id}/edit/options");
-        path.ApplyField("companyId", companyId);
-        path.ApplyField("id", id);
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
         return ((RestCall<CycleEditOptionModel>)restCallFactory.createRestCall("Post", path, model, new TypeToken<CycleEditOptionModel>(){})).call();
     }
 
@@ -2740,8 +2740,8 @@ public class AvaTaxClient {
     public CycleExpireModel cycleSafeExpiration(int companyId, int id)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingcalendars/{id}/cancel/options");
-        path.ApplyField("companyId", companyId);
-        path.ApplyField("id", id);
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
         return ((RestCall<CycleExpireModel>)restCallFactory.createRestCall("Get", path, null, new TypeToken<CycleExpireModel>(){})).call();
     }
 
@@ -2755,8 +2755,8 @@ public class AvaTaxClient {
     public CycleExpireModel cycleSafeExpirationAsync(int companyId, int id)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingcalendars/{id}/cancel/options");
-        path.ApplyField("companyId", companyId);
-        path.ApplyField("id", id);
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
         return ((RestCall<CycleExpireModel>)restCallFactory.createRestCall("Get", path, null, new TypeToken<CycleExpireModel>(){})).call();
     }
 
@@ -2774,8 +2774,8 @@ public class AvaTaxClient {
     public List<ErrorDetail> deleteFilingCalendar(int companyId, int id)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingcalendars/{id}");
-        path.ApplyField("companyId", companyId);
-        path.ApplyField("id", id);
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
         return ((RestCall<List<ErrorDetail>>)restCallFactory.createRestCall("Delete", path, null, new TypeToken<List<ErrorDetail>>(){})).call();
     }
 
@@ -2793,8 +2793,8 @@ public class AvaTaxClient {
     public ArrayList<ErrorDetail> deleteFilingCalendarAsync(int companyId, int id)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingcalendars/{id}");
-        path.ApplyField("companyId", companyId);
-        path.ApplyField("id", id);
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
         return ((RestCall<List<ErrorDetail>>)restCallFactory.createRestCall("Delete", path, null, new TypeToken<List<ErrorDetail>>(){})).call();
     }
 
@@ -2812,8 +2812,8 @@ public class AvaTaxClient {
     public FilingCalendarModel filingCalendarUpdate(int companyId, int id, FilingCalendarModel model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingcalendars/{id}");
-        path.ApplyField("companyId", companyId);
-        path.ApplyField("id", id);
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
         return ((RestCall<FilingCalendarModel>)restCallFactory.createRestCall("Put", path, model, new TypeToken<FilingCalendarModel>(){})).call();
     }
 
@@ -2831,8 +2831,8 @@ public class AvaTaxClient {
     public FilingCalendarModel filingCalendarUpdateAsync(int companyId, int id, FilingCalendarModel model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingcalendars/{id}");
-        path.ApplyField("companyId", companyId);
-        path.ApplyField("id", id);
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
         return ((RestCall<FilingCalendarModel>)restCallFactory.createRestCall("Put", path, model, new TypeToken<FilingCalendarModel>(){})).call();
     }
 
@@ -2849,8 +2849,8 @@ public class AvaTaxClient {
     public FilingRequestModel filingRequests(int companyId, int id)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingrequests/{id}");
-        path.ApplyField("companyId", companyId);
-        path.ApplyField("id", id);
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
         return ((RestCall<FilingRequestModel>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FilingRequestModel>(){})).call();
     }
 
@@ -2867,8 +2867,8 @@ public class AvaTaxClient {
     public FilingRequestModel filingRequestsAsync(int companyId, int id)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingrequests/{id}");
-        path.ApplyField("companyId", companyId);
-        path.ApplyField("id", id);
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
         return ((RestCall<FilingRequestModel>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FilingRequestModel>(){})).call();
     }
 
@@ -2885,7 +2885,7 @@ public class AvaTaxClient {
     public FilingRequestModel filingRequestsAdd(int companyId, ArrayList<FilingRequestModel> model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingcalendars/add/request");
-        path.ApplyField("companyId", companyId);
+        path.applyField("companyId", companyId);
         return ((RestCall<FilingRequestModel>)restCallFactory.createRestCall("Post", path, model, new TypeToken<FilingRequestModel>(){})).call();
     }
 
@@ -2902,7 +2902,7 @@ public class AvaTaxClient {
     public FilingRequestModel filingRequestsAddAsync(int companyId, ArrayList<FilingRequestModel> model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingcalendars/add/request");
-        path.ApplyField("companyId", companyId);
+        path.applyField("companyId", companyId);
         return ((RestCall<FilingRequestModel>)restCallFactory.createRestCall("Post", path, model, new TypeToken<FilingRequestModel>(){})).call();
     }
 
@@ -2920,8 +2920,8 @@ public class AvaTaxClient {
     public FilingRequestModel filingRequestsApprove(int companyId, int id)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingrequests/{id}/approve");
-        path.ApplyField("companyId", companyId);
-        path.ApplyField("id", id);
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
         return ((RestCall<FilingRequestModel>)restCallFactory.createRestCall("Post", path, null, new TypeToken<FilingRequestModel>(){})).call();
     }
 
@@ -2939,8 +2939,8 @@ public class AvaTaxClient {
     public FilingRequestModel filingRequestsApproveAsync(int companyId, int id)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingrequests/{id}/approve");
-        path.ApplyField("companyId", companyId);
-        path.ApplyField("id", id);
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
         return ((RestCall<FilingRequestModel>)restCallFactory.createRestCall("Post", path, null, new TypeToken<FilingRequestModel>(){})).call();
     }
 
@@ -2957,8 +2957,8 @@ public class AvaTaxClient {
     public FilingRequestModel filingRequestsCancel(int companyId, int id)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingrequests/{id}/cancel");
-        path.ApplyField("companyId", companyId);
-        path.ApplyField("id", id);
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
         return ((RestCall<FilingRequestModel>)restCallFactory.createRestCall("Post", path, null, new TypeToken<FilingRequestModel>(){})).call();
     }
 
@@ -2975,8 +2975,8 @@ public class AvaTaxClient {
     public FilingRequestModel filingRequestsCancelAsync(int companyId, int id)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingrequests/{id}/cancel");
-        path.ApplyField("companyId", companyId);
-        path.ApplyField("id", id);
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
         return ((RestCall<FilingRequestModel>)restCallFactory.createRestCall("Post", path, null, new TypeToken<FilingRequestModel>(){})).call();
     }
 
@@ -2994,8 +2994,8 @@ public class AvaTaxClient {
     public FilingRequestModel filingRequestsNewCancel(int companyId, int id, ArrayList<FilingRequestModel> model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingcalendars/{id}/cancel/request");
-        path.ApplyField("companyId", companyId);
-        path.ApplyField("id", id);
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
         return ((RestCall<FilingRequestModel>)restCallFactory.createRestCall("Post", path, model, new TypeToken<FilingRequestModel>(){})).call();
     }
 
@@ -3013,8 +3013,8 @@ public class AvaTaxClient {
     public FilingRequestModel filingRequestsNewCancelAsync(int companyId, int id, ArrayList<FilingRequestModel> model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingcalendars/{id}/cancel/request");
-        path.ApplyField("companyId", companyId);
-        path.ApplyField("id", id);
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
         return ((RestCall<FilingRequestModel>)restCallFactory.createRestCall("Post", path, model, new TypeToken<FilingRequestModel>(){})).call();
     }
 
@@ -3032,8 +3032,8 @@ public class AvaTaxClient {
     public FilingRequestModel filingRequestsNewEdit(int companyId, int id, ArrayList<FilingRequestModel> model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingcalendars/{id}/edit/request");
-        path.ApplyField("companyId", companyId);
-        path.ApplyField("id", id);
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
         return ((RestCall<FilingRequestModel>)restCallFactory.createRestCall("Post", path, model, new TypeToken<FilingRequestModel>(){})).call();
     }
 
@@ -3051,8 +3051,8 @@ public class AvaTaxClient {
     public FilingRequestModel filingRequestsNewEditAsync(int companyId, int id, ArrayList<FilingRequestModel> model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingcalendars/{id}/edit/request");
-        path.ApplyField("companyId", companyId);
-        path.ApplyField("id", id);
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
         return ((RestCall<FilingRequestModel>)restCallFactory.createRestCall("Post", path, model, new TypeToken<FilingRequestModel>(){})).call();
     }
 
@@ -3070,8 +3070,8 @@ public class AvaTaxClient {
     public FilingRequestModel filingRequestsUpdate(int companyId, int id, FilingRequestModel model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingrequests/{id}");
-        path.ApplyField("companyId", companyId);
-        path.ApplyField("id", id);
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
         return ((RestCall<FilingRequestModel>)restCallFactory.createRestCall("Put", path, model, new TypeToken<FilingRequestModel>(){})).call();
     }
 
@@ -3089,8 +3089,8 @@ public class AvaTaxClient {
     public FilingRequestModel filingRequestsUpdateAsync(int companyId, int id, FilingRequestModel model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingrequests/{id}");
-        path.ApplyField("companyId", companyId);
-        path.ApplyField("id", id);
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
         return ((RestCall<FilingRequestModel>)restCallFactory.createRestCall("Put", path, model, new TypeToken<FilingRequestModel>(){})).call();
     }
 
@@ -3103,7 +3103,7 @@ public class AvaTaxClient {
     public LoginVerificationOutputModel loginVerificationGet(int jobId)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/filingcalendars/credentials/{jobId}");
-        path.ApplyField("jobId", jobId);
+        path.applyField("jobId", jobId);
         return ((RestCall<LoginVerificationOutputModel>)restCallFactory.createRestCall("Get", path, null, new TypeToken<LoginVerificationOutputModel>(){})).call();
     }
 
@@ -3116,7 +3116,7 @@ public class AvaTaxClient {
     public LoginVerificationOutputModel loginVerificationGetAsync(int jobId)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/filingcalendars/credentials/{jobId}");
-        path.ApplyField("jobId", jobId);
+        path.applyField("jobId", jobId);
         return ((RestCall<LoginVerificationOutputModel>)restCallFactory.createRestCall("Get", path, null, new TypeToken<LoginVerificationOutputModel>(){})).call();
     }
 
@@ -3156,10 +3156,10 @@ public class AvaTaxClient {
     public FetchResult<FilingCalendarModel> queryFilingCalendars(String filter, Integer top, Integer skip, String orderBy)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/filingcalendars");
-        path.AddQuery("$filter", filter);
-        path.AddQuery("$top", top);
-        path.AddQuery("$skip", skip);
-        path.AddQuery("$orderBy", orderBy);
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
         return ((RestCall<FetchResult<FilingCalendarModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<FilingCalendarModel>>(){})).call();
     }
 
@@ -3175,10 +3175,10 @@ public class AvaTaxClient {
     public FetchResult<HashMap<String, String>> queryFilingCalendarsAsync(String filter, Integer top, Integer skip, String orderBy)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/filingcalendars");
-        path.AddQuery("$filter", filter);
-        path.AddQuery("$top", top);
-        path.AddQuery("$skip", skip);
-        path.AddQuery("$orderBy", orderBy);
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
         return ((RestCall<FetchResult<FilingCalendarModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<FilingCalendarModel>>(){})).call();
     }
 
@@ -3200,10 +3200,10 @@ public class AvaTaxClient {
     public FetchResult<FilingRequestModel> queryFilingRequests(String filter, Integer top, Integer skip, String orderBy)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/filingrequests");
-        path.AddQuery("$filter", filter);
-        path.AddQuery("$top", top);
-        path.AddQuery("$skip", skip);
-        path.AddQuery("$orderBy", orderBy);
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
         return ((RestCall<FetchResult<FilingRequestModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<FilingRequestModel>>(){})).call();
     }
 
@@ -3225,10 +3225,10 @@ public class AvaTaxClient {
     public FetchResult<HashMap<String, String>> queryFilingRequestsAsync(String filter, Integer top, Integer skip, String orderBy)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/filingrequests");
-        path.AddQuery("$filter", filter);
-        path.AddQuery("$top", top);
-        path.AddQuery("$skip", skip);
-        path.AddQuery("$orderBy", orderBy);
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
         return ((RestCall<FetchResult<FilingRequestModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<FilingRequestModel>>(){})).call();
     }
 
@@ -3251,9 +3251,9 @@ public class AvaTaxClient {
     public List<FilingModel> approveFilings(int companyId, short year, byte month, ApproveFilingsModel model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/approve");
-        path.ApplyField("companyId", companyId);
-        path.ApplyField("year", year);
-        path.ApplyField("month", month);
+        path.applyField("companyId", companyId);
+        path.applyField("year", year);
+        path.applyField("month", month);
         return ((RestCall<List<FilingModel>>)restCallFactory.createRestCall("Post", path, model, new TypeToken<List<FilingModel>>(){})).call();
     }
 
@@ -3276,9 +3276,9 @@ public class AvaTaxClient {
     public ArrayList<FilingModel> approveFilingsAsync(int companyId, short year, byte month, ApproveFilingsModel model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/approve");
-        path.ApplyField("companyId", companyId);
-        path.ApplyField("year", year);
-        path.ApplyField("month", month);
+        path.applyField("companyId", companyId);
+        path.applyField("year", year);
+        path.applyField("month", month);
         return ((RestCall<List<FilingModel>>)restCallFactory.createRestCall("Post", path, model, new TypeToken<List<FilingModel>>(){})).call();
     }
 
@@ -3302,10 +3302,10 @@ public class AvaTaxClient {
     public List<FilingModel> approveFilingsCountry(int companyId, short year, byte month, String country, ApproveFilingsModel model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/{country}/approve");
-        path.ApplyField("companyId", companyId);
-        path.ApplyField("year", year);
-        path.ApplyField("month", month);
-        path.ApplyField("country", country);
+        path.applyField("companyId", companyId);
+        path.applyField("year", year);
+        path.applyField("month", month);
+        path.applyField("country", country);
         return ((RestCall<List<FilingModel>>)restCallFactory.createRestCall("Post", path, model, new TypeToken<List<FilingModel>>(){})).call();
     }
 
@@ -3329,10 +3329,10 @@ public class AvaTaxClient {
     public ArrayList<FilingModel> approveFilingsCountryAsync(int companyId, short year, byte month, String country, ApproveFilingsModel model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/{country}/approve");
-        path.ApplyField("companyId", companyId);
-        path.ApplyField("year", year);
-        path.ApplyField("month", month);
-        path.ApplyField("country", country);
+        path.applyField("companyId", companyId);
+        path.applyField("year", year);
+        path.applyField("month", month);
+        path.applyField("country", country);
         return ((RestCall<List<FilingModel>>)restCallFactory.createRestCall("Post", path, model, new TypeToken<List<FilingModel>>(){})).call();
     }
 
@@ -3357,11 +3357,11 @@ public class AvaTaxClient {
     public List<FilingModel> approveFilingsCountryRegion(int companyId, short year, byte month, String country, String region, ApproveFilingsModel model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/{country}/{region}/approve");
-        path.ApplyField("companyId", companyId);
-        path.ApplyField("year", year);
-        path.ApplyField("month", month);
-        path.ApplyField("country", country);
-        path.ApplyField("region", region);
+        path.applyField("companyId", companyId);
+        path.applyField("year", year);
+        path.applyField("month", month);
+        path.applyField("country", country);
+        path.applyField("region", region);
         return ((RestCall<List<FilingModel>>)restCallFactory.createRestCall("Post", path, model, new TypeToken<List<FilingModel>>(){})).call();
     }
 
@@ -3386,11 +3386,11 @@ public class AvaTaxClient {
     public ArrayList<FilingModel> approveFilingsCountryRegionAsync(int companyId, short year, byte month, String country, String region, ApproveFilingsModel model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/{country}/{region}/approve");
-        path.ApplyField("companyId", companyId);
-        path.ApplyField("year", year);
-        path.ApplyField("month", month);
-        path.ApplyField("country", country);
-        path.ApplyField("region", region);
+        path.applyField("companyId", companyId);
+        path.applyField("year", year);
+        path.applyField("month", month);
+        path.applyField("country", country);
+        path.applyField("region", region);
         return ((RestCall<List<FilingModel>>)restCallFactory.createRestCall("Post", path, model, new TypeToken<List<FilingModel>>(){})).call();
     }
 
@@ -3415,12 +3415,12 @@ public class AvaTaxClient {
     public List<FilingAdjustmentModel> createReturnAdjustment(int companyId, short year, byte month, String country, String region, String formCode, ArrayList<FilingAdjustmentModel> model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/{country}/{region}/{formCode}/adjust");
-        path.ApplyField("companyId", companyId);
-        path.ApplyField("year", year);
-        path.ApplyField("month", month);
-        path.ApplyField("country", country);
-        path.ApplyField("region", region);
-        path.ApplyField("formCode", formCode);
+        path.applyField("companyId", companyId);
+        path.applyField("year", year);
+        path.applyField("month", month);
+        path.applyField("country", country);
+        path.applyField("region", region);
+        path.applyField("formCode", formCode);
         return ((RestCall<List<FilingAdjustmentModel>>)restCallFactory.createRestCall("Post", path, model, new TypeToken<List<FilingAdjustmentModel>>(){})).call();
     }
 
@@ -3445,12 +3445,12 @@ public class AvaTaxClient {
     public ArrayList<FilingAdjustmentModel> createReturnAdjustmentAsync(int companyId, short year, byte month, String country, String region, String formCode, ArrayList<FilingAdjustmentModel> model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/{country}/{region}/{formCode}/adjust");
-        path.ApplyField("companyId", companyId);
-        path.ApplyField("year", year);
-        path.ApplyField("month", month);
-        path.ApplyField("country", country);
-        path.ApplyField("region", region);
-        path.ApplyField("formCode", formCode);
+        path.applyField("companyId", companyId);
+        path.applyField("year", year);
+        path.applyField("month", month);
+        path.applyField("country", country);
+        path.applyField("region", region);
+        path.applyField("formCode", formCode);
         return ((RestCall<List<FilingAdjustmentModel>>)restCallFactory.createRestCall("Post", path, model, new TypeToken<List<FilingAdjustmentModel>>(){})).call();
     }
 
@@ -3474,12 +3474,12 @@ public class AvaTaxClient {
     public List<FilingAugmentationModel> createReturnAugmentation(int companyId, short year, byte month, String country, String region, String formCode, ArrayList<FilingAugmentationModel> model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/{country}/{region}/{formCode}/augment");
-        path.ApplyField("companyId", companyId);
-        path.ApplyField("year", year);
-        path.ApplyField("month", month);
-        path.ApplyField("country", country);
-        path.ApplyField("region", region);
-        path.ApplyField("formCode", formCode);
+        path.applyField("companyId", companyId);
+        path.applyField("year", year);
+        path.applyField("month", month);
+        path.applyField("country", country);
+        path.applyField("region", region);
+        path.applyField("formCode", formCode);
         return ((RestCall<List<FilingAugmentationModel>>)restCallFactory.createRestCall("Post", path, model, new TypeToken<List<FilingAugmentationModel>>(){})).call();
     }
 
@@ -3503,12 +3503,12 @@ public class AvaTaxClient {
     public ArrayList<FilingAugmentationModel> createReturnAugmentationAsync(int companyId, short year, byte month, String country, String region, String formCode, ArrayList<FilingAugmentationModel> model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/{country}/{region}/{formCode}/augment");
-        path.ApplyField("companyId", companyId);
-        path.ApplyField("year", year);
-        path.ApplyField("month", month);
-        path.ApplyField("country", country);
-        path.ApplyField("region", region);
-        path.ApplyField("formCode", formCode);
+        path.applyField("companyId", companyId);
+        path.applyField("year", year);
+        path.applyField("month", month);
+        path.applyField("country", country);
+        path.applyField("region", region);
+        path.applyField("formCode", formCode);
         return ((RestCall<List<FilingAugmentationModel>>)restCallFactory.createRestCall("Post", path, model, new TypeToken<List<FilingAugmentationModel>>(){})).call();
     }
 
@@ -3528,8 +3528,8 @@ public class AvaTaxClient {
     public List<ErrorDetail> deleteReturnAdjustment(int companyId, long id)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/adjust/{id}");
-        path.ApplyField("companyId", companyId);
-        path.ApplyField("id", id);
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
         return ((RestCall<List<ErrorDetail>>)restCallFactory.createRestCall("Delete", path, null, new TypeToken<List<ErrorDetail>>(){})).call();
     }
 
@@ -3549,8 +3549,8 @@ public class AvaTaxClient {
     public ArrayList<ErrorDetail> deleteReturnAdjustmentAsync(int companyId, long id)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/adjust/{id}");
-        path.ApplyField("companyId", companyId);
-        path.ApplyField("id", id);
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
         return ((RestCall<List<ErrorDetail>>)restCallFactory.createRestCall("Delete", path, null, new TypeToken<List<ErrorDetail>>(){})).call();
     }
 
@@ -3569,8 +3569,8 @@ public class AvaTaxClient {
     public List<ErrorDetail> deleteReturnAugmentation(int companyId, long id)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/augment/{id}");
-        path.ApplyField("companyId", companyId);
-        path.ApplyField("id", id);
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
         return ((RestCall<List<ErrorDetail>>)restCallFactory.createRestCall("Delete", path, null, new TypeToken<List<ErrorDetail>>(){})).call();
     }
 
@@ -3589,8 +3589,8 @@ public class AvaTaxClient {
     public ArrayList<ErrorDetail> deleteReturnAugmentationAsync(int companyId, long id)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/augment/{id}");
-        path.ApplyField("companyId", companyId);
-        path.ApplyField("id", id);
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
         return ((RestCall<List<ErrorDetail>>)restCallFactory.createRestCall("Delete", path, null, new TypeToken<List<ErrorDetail>>(){})).call();
     }
 
@@ -3604,8 +3604,8 @@ public class AvaTaxClient {
     public FilingsCheckupModel filingsCheckupReport(int worksheetId, int companyId)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{worksheetId}/checkup");
-        path.ApplyField("worksheetId", worksheetId);
-        path.ApplyField("companyId", companyId);
+        path.applyField("worksheetId", worksheetId);
+        path.applyField("companyId", companyId);
         return ((RestCall<FilingsCheckupModel>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FilingsCheckupModel>(){})).call();
     }
 
@@ -3619,8 +3619,8 @@ public class AvaTaxClient {
     public FilingsCheckupModel filingsCheckupReportAsync(int worksheetId, int companyId)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{worksheetId}/checkup");
-        path.ApplyField("worksheetId", worksheetId);
-        path.ApplyField("companyId", companyId);
+        path.applyField("worksheetId", worksheetId);
+        path.applyField("companyId", companyId);
         return ((RestCall<FilingsCheckupModel>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FilingsCheckupModel>(){})).call();
     }
 
@@ -3635,9 +3635,9 @@ public class AvaTaxClient {
     public FilingsCheckupModel filingsCheckupReports(int companyId, int year, int month)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/checkup");
-        path.ApplyField("companyId", companyId);
-        path.ApplyField("year", year);
-        path.ApplyField("month", month);
+        path.applyField("companyId", companyId);
+        path.applyField("year", year);
+        path.applyField("month", month);
         return ((RestCall<FilingsCheckupModel>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FilingsCheckupModel>(){})).call();
     }
 
@@ -3652,9 +3652,9 @@ public class AvaTaxClient {
     public FilingsCheckupModel filingsCheckupReportsAsync(int companyId, int year, int month)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/checkup");
-        path.ApplyField("companyId", companyId);
-        path.ApplyField("year", year);
-        path.ApplyField("month", month);
+        path.applyField("companyId", companyId);
+        path.applyField("year", year);
+        path.applyField("month", month);
         return ((RestCall<FilingsCheckupModel>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FilingsCheckupModel>(){})).call();
     }
 
@@ -3669,9 +3669,9 @@ public class AvaTaxClient {
     public FileResult getFilingAttachment(int companyId, long filingId, Long fileId)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{filingId}/attachment");
-        path.ApplyField("companyId", companyId);
-        path.ApplyField("filingId", filingId);
-        path.AddQuery("fileId", fileId);
+        path.applyField("companyId", companyId);
+        path.applyField("filingId", filingId);
+        path.addQuery("fileId", fileId);
         return ((RestCall<FileResult>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FileResult>(){})).call();
     }
 
@@ -3686,9 +3686,9 @@ public class AvaTaxClient {
     public HashMap<String, String> getFilingAttachmentAsync(int companyId, long filingId, Long fileId)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{filingId}/attachment");
-        path.ApplyField("companyId", companyId);
-        path.ApplyField("filingId", filingId);
-        path.AddQuery("fileId", fileId);
+        path.applyField("companyId", companyId);
+        path.applyField("filingId", filingId);
+        path.addQuery("fileId", fileId);
         return ((RestCall<FileResult>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FileResult>(){})).call();
     }
 
@@ -3706,9 +3706,9 @@ public class AvaTaxClient {
     public FileResult getFilingAttachments(int companyId, short year, byte month)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/attachments");
-        path.ApplyField("companyId", companyId);
-        path.ApplyField("year", year);
-        path.ApplyField("month", month);
+        path.applyField("companyId", companyId);
+        path.applyField("year", year);
+        path.applyField("month", month);
         return ((RestCall<FileResult>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FileResult>(){})).call();
     }
 
@@ -3726,9 +3726,9 @@ public class AvaTaxClient {
     public HashMap<String, String> getFilingAttachmentsAsync(int companyId, short year, byte month)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/attachments");
-        path.ApplyField("companyId", companyId);
-        path.ApplyField("year", year);
-        path.ApplyField("month", month);
+        path.applyField("companyId", companyId);
+        path.applyField("year", year);
+        path.applyField("month", month);
         return ((RestCall<FileResult>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FileResult>(){})).call();
     }
 
@@ -3746,9 +3746,9 @@ public class AvaTaxClient {
     public FileResult getFilingAttachmentsTraceFile(int companyId, short year, byte month)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/attachments/tracefile");
-        path.ApplyField("companyId", companyId);
-        path.ApplyField("year", year);
-        path.ApplyField("month", month);
+        path.applyField("companyId", companyId);
+        path.applyField("year", year);
+        path.applyField("month", month);
         return ((RestCall<FileResult>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FileResult>(){})).call();
     }
 
@@ -3766,9 +3766,9 @@ public class AvaTaxClient {
     public HashMap<String, String> getFilingAttachmentsTraceFileAsync(int companyId, short year, byte month)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/attachments/tracefile");
-        path.ApplyField("companyId", companyId);
-        path.ApplyField("year", year);
-        path.ApplyField("month", month);
+        path.applyField("companyId", companyId);
+        path.applyField("year", year);
+        path.applyField("month", month);
         return ((RestCall<FileResult>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FileResult>(){})).call();
     }
 
@@ -3786,9 +3786,9 @@ public class AvaTaxClient {
     public FetchResult<FilingModel> getFilings(int companyId, short year, byte month)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}");
-        path.ApplyField("companyId", companyId);
-        path.ApplyField("year", year);
-        path.ApplyField("month", month);
+        path.applyField("companyId", companyId);
+        path.applyField("year", year);
+        path.applyField("month", month);
         return ((RestCall<FetchResult<FilingModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<FilingModel>>(){})).call();
     }
 
@@ -3806,9 +3806,9 @@ public class AvaTaxClient {
     public FetchResult<HashMap<String, String>> getFilingsAsync(int companyId, short year, byte month)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}");
-        path.ApplyField("companyId", companyId);
-        path.ApplyField("year", year);
-        path.ApplyField("month", month);
+        path.applyField("companyId", companyId);
+        path.applyField("year", year);
+        path.applyField("month", month);
         return ((RestCall<FetchResult<FilingModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<FilingModel>>(){})).call();
     }
 
@@ -3827,10 +3827,10 @@ public class AvaTaxClient {
     public FetchResult<FilingModel> getFilingsByCountry(int companyId, short year, byte month, String country)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/{country}");
-        path.ApplyField("companyId", companyId);
-        path.ApplyField("year", year);
-        path.ApplyField("month", month);
-        path.ApplyField("country", country);
+        path.applyField("companyId", companyId);
+        path.applyField("year", year);
+        path.applyField("month", month);
+        path.applyField("country", country);
         return ((RestCall<FetchResult<FilingModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<FilingModel>>(){})).call();
     }
 
@@ -3849,10 +3849,10 @@ public class AvaTaxClient {
     public FetchResult<HashMap<String, String>> getFilingsByCountryAsync(int companyId, short year, byte month, String country)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/{country}");
-        path.ApplyField("companyId", companyId);
-        path.ApplyField("year", year);
-        path.ApplyField("month", month);
-        path.ApplyField("country", country);
+        path.applyField("companyId", companyId);
+        path.applyField("year", year);
+        path.applyField("month", month);
+        path.applyField("country", country);
         return ((RestCall<FetchResult<FilingModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<FilingModel>>(){})).call();
     }
 
@@ -3872,11 +3872,11 @@ public class AvaTaxClient {
     public FetchResult<FilingModel> getFilingsByCountryRegion(int companyId, short year, byte month, String country, String region)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/{country}/{region}");
-        path.ApplyField("companyId", companyId);
-        path.ApplyField("year", year);
-        path.ApplyField("month", month);
-        path.ApplyField("country", country);
-        path.ApplyField("region", region);
+        path.applyField("companyId", companyId);
+        path.applyField("year", year);
+        path.applyField("month", month);
+        path.applyField("country", country);
+        path.applyField("region", region);
         return ((RestCall<FetchResult<FilingModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<FilingModel>>(){})).call();
     }
 
@@ -3896,11 +3896,11 @@ public class AvaTaxClient {
     public FetchResult<HashMap<String, String>> getFilingsByCountryRegionAsync(int companyId, short year, byte month, String country, String region)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/{country}/{region}");
-        path.ApplyField("companyId", companyId);
-        path.ApplyField("year", year);
-        path.ApplyField("month", month);
-        path.ApplyField("country", country);
-        path.ApplyField("region", region);
+        path.applyField("companyId", companyId);
+        path.applyField("year", year);
+        path.applyField("month", month);
+        path.applyField("country", country);
+        path.applyField("region", region);
         return ((RestCall<FetchResult<FilingModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<FilingModel>>(){})).call();
     }
 
@@ -3921,12 +3921,12 @@ public class AvaTaxClient {
     public FetchResult<FilingModel> getFilingsByReturnName(int companyId, short year, byte month, String country, String region, String formCode)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/{country}/{region}/{formCode}");
-        path.ApplyField("companyId", companyId);
-        path.ApplyField("year", year);
-        path.ApplyField("month", month);
-        path.ApplyField("country", country);
-        path.ApplyField("region", region);
-        path.ApplyField("formCode", formCode);
+        path.applyField("companyId", companyId);
+        path.applyField("year", year);
+        path.applyField("month", month);
+        path.applyField("country", country);
+        path.applyField("region", region);
+        path.applyField("formCode", formCode);
         return ((RestCall<FetchResult<FilingModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<FilingModel>>(){})).call();
     }
 
@@ -3947,12 +3947,12 @@ public class AvaTaxClient {
     public FetchResult<HashMap<String, String>> getFilingsByReturnNameAsync(int companyId, short year, byte month, String country, String region, String formCode)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/{country}/{region}/{formCode}");
-        path.ApplyField("companyId", companyId);
-        path.ApplyField("year", year);
-        path.ApplyField("month", month);
-        path.ApplyField("country", country);
-        path.ApplyField("region", region);
-        path.ApplyField("formCode", formCode);
+        path.applyField("companyId", companyId);
+        path.applyField("year", year);
+        path.applyField("month", month);
+        path.applyField("country", country);
+        path.applyField("region", region);
+        path.applyField("formCode", formCode);
         return ((RestCall<FetchResult<FilingModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<FilingModel>>(){})).call();
     }
 
@@ -3974,9 +3974,9 @@ public class AvaTaxClient {
     public FetchResult<FilingModel> rebuildFilings(int companyId, short year, byte month, RebuildFilingsModel model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/rebuild");
-        path.ApplyField("companyId", companyId);
-        path.ApplyField("year", year);
-        path.ApplyField("month", month);
+        path.applyField("companyId", companyId);
+        path.applyField("year", year);
+        path.applyField("month", month);
         return ((RestCall<FetchResult<FilingModel>>)restCallFactory.createRestCall("Post", path, model, new TypeToken<FetchResult<FilingModel>>(){})).call();
     }
 
@@ -3998,9 +3998,9 @@ public class AvaTaxClient {
     public FetchResult<HashMap<String, String>> rebuildFilingsAsync(int companyId, short year, byte month, RebuildFilingsModel model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/rebuild");
-        path.ApplyField("companyId", companyId);
-        path.ApplyField("year", year);
-        path.ApplyField("month", month);
+        path.applyField("companyId", companyId);
+        path.applyField("year", year);
+        path.applyField("month", month);
         return ((RestCall<FetchResult<FilingModel>>)restCallFactory.createRestCall("Post", path, model, new TypeToken<FetchResult<FilingModel>>(){})).call();
     }
 
@@ -4023,10 +4023,10 @@ public class AvaTaxClient {
     public FetchResult<FilingModel> rebuildFilingsByCountry(int companyId, short year, byte month, String country, RebuildFilingsModel model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/{country}/rebuild");
-        path.ApplyField("companyId", companyId);
-        path.ApplyField("year", year);
-        path.ApplyField("month", month);
-        path.ApplyField("country", country);
+        path.applyField("companyId", companyId);
+        path.applyField("year", year);
+        path.applyField("month", month);
+        path.applyField("country", country);
         return ((RestCall<FetchResult<FilingModel>>)restCallFactory.createRestCall("Post", path, model, new TypeToken<FetchResult<FilingModel>>(){})).call();
     }
 
@@ -4049,10 +4049,10 @@ public class AvaTaxClient {
     public FetchResult<HashMap<String, String>> rebuildFilingsByCountryAsync(int companyId, short year, byte month, String country, RebuildFilingsModel model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/{country}/rebuild");
-        path.ApplyField("companyId", companyId);
-        path.ApplyField("year", year);
-        path.ApplyField("month", month);
-        path.ApplyField("country", country);
+        path.applyField("companyId", companyId);
+        path.applyField("year", year);
+        path.applyField("month", month);
+        path.applyField("country", country);
         return ((RestCall<FetchResult<FilingModel>>)restCallFactory.createRestCall("Post", path, model, new TypeToken<FetchResult<FilingModel>>(){})).call();
     }
 
@@ -4076,11 +4076,11 @@ public class AvaTaxClient {
     public FetchResult<FilingModel> rebuildFilingsByCountryRegion(int companyId, short year, byte month, String country, String region, RebuildFilingsModel model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/{country}/{region}/rebuild");
-        path.ApplyField("companyId", companyId);
-        path.ApplyField("year", year);
-        path.ApplyField("month", month);
-        path.ApplyField("country", country);
-        path.ApplyField("region", region);
+        path.applyField("companyId", companyId);
+        path.applyField("year", year);
+        path.applyField("month", month);
+        path.applyField("country", country);
+        path.applyField("region", region);
         return ((RestCall<FetchResult<FilingModel>>)restCallFactory.createRestCall("Post", path, model, new TypeToken<FetchResult<FilingModel>>(){})).call();
     }
 
@@ -4104,11 +4104,11 @@ public class AvaTaxClient {
     public FetchResult<HashMap<String, String>> rebuildFilingsByCountryRegionAsync(int companyId, short year, byte month, String country, String region, RebuildFilingsModel model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/{country}/{region}/rebuild");
-        path.ApplyField("companyId", companyId);
-        path.ApplyField("year", year);
-        path.ApplyField("month", month);
-        path.ApplyField("country", country);
-        path.ApplyField("region", region);
+        path.applyField("companyId", companyId);
+        path.applyField("year", year);
+        path.applyField("month", month);
+        path.applyField("country", country);
+        path.applyField("region", region);
         return ((RestCall<FetchResult<FilingModel>>)restCallFactory.createRestCall("Post", path, model, new TypeToken<FetchResult<FilingModel>>(){})).call();
     }
 
@@ -4129,8 +4129,8 @@ public class AvaTaxClient {
     public FilingAdjustmentModel updateReturnAdjustment(int companyId, long id, FilingAdjustmentModel model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/adjust/{id}");
-        path.ApplyField("companyId", companyId);
-        path.ApplyField("id", id);
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
         return ((RestCall<FilingAdjustmentModel>)restCallFactory.createRestCall("Put", path, model, new TypeToken<FilingAdjustmentModel>(){})).call();
     }
 
@@ -4151,8 +4151,8 @@ public class AvaTaxClient {
     public FilingAdjustmentModel updateReturnAdjustmentAsync(int companyId, long id, FilingAdjustmentModel model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/adjust/{id}");
-        path.ApplyField("companyId", companyId);
-        path.ApplyField("id", id);
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
         return ((RestCall<FilingAdjustmentModel>)restCallFactory.createRestCall("Put", path, model, new TypeToken<FilingAdjustmentModel>(){})).call();
     }
 
@@ -4172,8 +4172,8 @@ public class AvaTaxClient {
     public FilingModel updateReturnAugmentation(int companyId, long id, FilingAugmentationModel model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/augment/{id}");
-        path.ApplyField("companyId", companyId);
-        path.ApplyField("id", id);
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
         return ((RestCall<FilingModel>)restCallFactory.createRestCall("Put", path, model, new TypeToken<FilingModel>(){})).call();
     }
 
@@ -4193,8 +4193,8 @@ public class AvaTaxClient {
     public FilingModel updateReturnAugmentationAsync(int companyId, long id, FilingAugmentationModel model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/augment/{id}");
-        path.ApplyField("companyId", companyId);
-        path.ApplyField("id", id);
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
         return ((RestCall<FilingModel>)restCallFactory.createRestCall("Put", path, model, new TypeToken<FilingModel>(){})).call();
     }
 
@@ -4282,13 +4282,13 @@ public class AvaTaxClient {
     public TaxRateModel taxRatesByAddress(String line1, String line2, String line3, String city, String region, String postalCode, String country)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/taxrates/byaddress");
-        path.AddQuery("line1", line1);
-        path.AddQuery("line2", line2);
-        path.AddQuery("line3", line3);
-        path.AddQuery("city", city);
-        path.AddQuery("region", region);
-        path.AddQuery("postalCode", postalCode);
-        path.AddQuery("country", country);
+        path.addQuery("line1", line1);
+        path.addQuery("line2", line2);
+        path.addQuery("line3", line3);
+        path.addQuery("city", city);
+        path.addQuery("region", region);
+        path.addQuery("postalCode", postalCode);
+        path.addQuery("country", country);
         return ((RestCall<TaxRateModel>)restCallFactory.createRestCall("Get", path, null, new TypeToken<TaxRateModel>(){})).call();
     }
 
@@ -4328,13 +4328,13 @@ public class AvaTaxClient {
     public TaxRateModel taxRatesByAddressAsync(String line1, String line2, String line3, String city, String region, String postalCode, String country)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/taxrates/byaddress");
-        path.AddQuery("line1", line1);
-        path.AddQuery("line2", line2);
-        path.AddQuery("line3", line3);
-        path.AddQuery("city", city);
-        path.AddQuery("region", region);
-        path.AddQuery("postalCode", postalCode);
-        path.AddQuery("country", country);
+        path.addQuery("line1", line1);
+        path.addQuery("line2", line2);
+        path.addQuery("line3", line3);
+        path.addQuery("city", city);
+        path.addQuery("region", region);
+        path.addQuery("postalCode", postalCode);
+        path.addQuery("country", country);
         return ((RestCall<TaxRateModel>)restCallFactory.createRestCall("Get", path, null, new TypeToken<TaxRateModel>(){})).call();
     }
 
@@ -4369,8 +4369,8 @@ public class AvaTaxClient {
     public TaxRateModel taxRatesByPostalCode(String country, String postalCode)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/taxrates/bypostalcode");
-        path.AddQuery("country", country);
-        path.AddQuery("postalCode", postalCode);
+        path.addQuery("country", country);
+        path.addQuery("postalCode", postalCode);
         return ((RestCall<TaxRateModel>)restCallFactory.createRestCall("Get", path, null, new TypeToken<TaxRateModel>(){})).call();
     }
 
@@ -4405,8 +4405,8 @@ public class AvaTaxClient {
     public TaxRateModel taxRatesByPostalCodeAsync(String country, String postalCode)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/taxrates/bypostalcode");
-        path.AddQuery("country", country);
-        path.AddQuery("postalCode", postalCode);
+        path.addQuery("country", country);
+        path.addQuery("postalCode", postalCode);
         return ((RestCall<TaxRateModel>)restCallFactory.createRestCall("Get", path, null, new TypeToken<TaxRateModel>(){})).call();
     }
 
@@ -4431,7 +4431,7 @@ public class AvaTaxClient {
     public FundingStatusModel activateFundingRequest(long id)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/fundingrequests/{id}/widget");
-        path.ApplyField("id", id);
+        path.applyField("id", id);
         return ((RestCall<FundingStatusModel>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FundingStatusModel>(){})).call();
     }
 
@@ -4456,7 +4456,7 @@ public class AvaTaxClient {
     public FundingStatusModel activateFundingRequestAsync(long id)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/fundingrequests/{id}/widget");
-        path.ApplyField("id", id);
+        path.applyField("id", id);
         return ((RestCall<FundingStatusModel>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FundingStatusModel>(){})).call();
     }
 
@@ -4479,7 +4479,7 @@ public class AvaTaxClient {
     public FundingStatusModel fundingRequestStatus(int id)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/fundingrequests/{id}");
-        path.ApplyField("id", id);
+        path.applyField("id", id);
         return ((RestCall<FundingStatusModel>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FundingStatusModel>(){})).call();
     }
 
@@ -4502,7 +4502,7 @@ public class AvaTaxClient {
     public FundingStatusModel fundingRequestStatusAsync(int id)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/fundingrequests/{id}");
-        path.ApplyField("id", id);
+        path.applyField("id", id);
         return ((RestCall<FundingStatusModel>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FundingStatusModel>(){})).call();
     }
 
@@ -4516,7 +4516,7 @@ public class AvaTaxClient {
     public List<ItemModel> createItems(int companyId, ArrayList<ItemModel> model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/items");
-        path.ApplyField("companyId", companyId);
+        path.applyField("companyId", companyId);
         return ((RestCall<List<ItemModel>>)restCallFactory.createRestCall("Post", path, model, new TypeToken<List<ItemModel>>(){})).call();
     }
 
@@ -4530,7 +4530,7 @@ public class AvaTaxClient {
     public ArrayList<ItemModel> createItemsAsync(int companyId, ArrayList<ItemModel> model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/items");
-        path.ApplyField("companyId", companyId);
+        path.applyField("companyId", companyId);
         return ((RestCall<List<ItemModel>>)restCallFactory.createRestCall("Post", path, model, new TypeToken<List<ItemModel>>(){})).call();
     }
 
@@ -4544,8 +4544,8 @@ public class AvaTaxClient {
     public List<ErrorDetail> deleteItem(int companyId, long id)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/items/{id}");
-        path.ApplyField("companyId", companyId);
-        path.ApplyField("id", id);
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
         return ((RestCall<List<ErrorDetail>>)restCallFactory.createRestCall("Delete", path, null, new TypeToken<List<ErrorDetail>>(){})).call();
     }
 
@@ -4559,8 +4559,8 @@ public class AvaTaxClient {
     public ArrayList<ErrorDetail> deleteItemAsync(int companyId, long id)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/items/{id}");
-        path.ApplyField("companyId", companyId);
-        path.ApplyField("id", id);
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
         return ((RestCall<List<ErrorDetail>>)restCallFactory.createRestCall("Delete", path, null, new TypeToken<List<ErrorDetail>>(){})).call();
     }
 
@@ -4576,8 +4576,8 @@ public class AvaTaxClient {
     public ItemModel getItem(int companyId, long id)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/items/{id}");
-        path.ApplyField("companyId", companyId);
-        path.ApplyField("id", id);
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
         return ((RestCall<ItemModel>)restCallFactory.createRestCall("Get", path, null, new TypeToken<ItemModel>(){})).call();
     }
 
@@ -4593,8 +4593,8 @@ public class AvaTaxClient {
     public ItemModel getItemAsync(int companyId, long id)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/items/{id}");
-        path.ApplyField("companyId", companyId);
-        path.ApplyField("id", id);
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
         return ((RestCall<ItemModel>)restCallFactory.createRestCall("Get", path, null, new TypeToken<ItemModel>(){})).call();
     }
 
@@ -4618,12 +4618,12 @@ public class AvaTaxClient {
     public FetchResult<ItemModel> listItemsByCompany(int companyId, String filter, String include, Integer top, Integer skip, String orderBy)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/items");
-        path.ApplyField("companyId", companyId);
-        path.AddQuery("$filter", filter);
-        path.AddQuery("$include", include);
-        path.AddQuery("$top", top);
-        path.AddQuery("$skip", skip);
-        path.AddQuery("$orderBy", orderBy);
+        path.applyField("companyId", companyId);
+        path.addQuery("$filter", filter);
+        path.addQuery("$include", include);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
         return ((RestCall<FetchResult<ItemModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<ItemModel>>(){})).call();
     }
 
@@ -4647,12 +4647,12 @@ public class AvaTaxClient {
     public FetchResult<HashMap<String, String>> listItemsByCompanyAsync(int companyId, String filter, String include, Integer top, Integer skip, String orderBy)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/items");
-        path.ApplyField("companyId", companyId);
-        path.AddQuery("$filter", filter);
-        path.AddQuery("$include", include);
-        path.AddQuery("$top", top);
-        path.AddQuery("$skip", skip);
-        path.AddQuery("$orderBy", orderBy);
+        path.applyField("companyId", companyId);
+        path.addQuery("$filter", filter);
+        path.addQuery("$include", include);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
         return ((RestCall<FetchResult<ItemModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<ItemModel>>(){})).call();
     }
 
@@ -4674,11 +4674,11 @@ public class AvaTaxClient {
     public FetchResult<ItemModel> queryItems(String filter, String include, Integer top, Integer skip, String orderBy)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/items");
-        path.AddQuery("$filter", filter);
-        path.AddQuery("$include", include);
-        path.AddQuery("$top", top);
-        path.AddQuery("$skip", skip);
-        path.AddQuery("$orderBy", orderBy);
+        path.addQuery("$filter", filter);
+        path.addQuery("$include", include);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
         return ((RestCall<FetchResult<ItemModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<ItemModel>>(){})).call();
     }
 
@@ -4700,11 +4700,11 @@ public class AvaTaxClient {
     public FetchResult<HashMap<String, String>> queryItemsAsync(String filter, String include, Integer top, Integer skip, String orderBy)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/items");
-        path.AddQuery("$filter", filter);
-        path.AddQuery("$include", include);
-        path.AddQuery("$top", top);
-        path.AddQuery("$skip", skip);
-        path.AddQuery("$orderBy", orderBy);
+        path.addQuery("$filter", filter);
+        path.addQuery("$include", include);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
         return ((RestCall<FetchResult<ItemModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<ItemModel>>(){})).call();
     }
 
@@ -4722,8 +4722,8 @@ public class AvaTaxClient {
     public ItemModel updateItem(int companyId, long id, ItemModel model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/items/{id}");
-        path.ApplyField("companyId", companyId);
-        path.ApplyField("id", id);
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
         return ((RestCall<ItemModel>)restCallFactory.createRestCall("Put", path, model, new TypeToken<ItemModel>(){})).call();
     }
 
@@ -4741,8 +4741,8 @@ public class AvaTaxClient {
     public ItemModel updateItemAsync(int companyId, long id, ItemModel model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/items/{id}");
-        path.ApplyField("companyId", companyId);
-        path.ApplyField("id", id);
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
         return ((RestCall<ItemModel>)restCallFactory.createRestCall("Put", path, model, new TypeToken<ItemModel>(){})).call();
     }
 
@@ -4762,7 +4762,7 @@ public class AvaTaxClient {
     public List<JurisdictionOverrideModel> createJurisdictionOverrides(int accountId, ArrayList<JurisdictionOverrideModel> model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/jurisdictionoverrides");
-        path.ApplyField("accountId", accountId);
+        path.applyField("accountId", accountId);
         return ((RestCall<List<JurisdictionOverrideModel>>)restCallFactory.createRestCall("Post", path, model, new TypeToken<List<JurisdictionOverrideModel>>(){})).call();
     }
 
@@ -4782,7 +4782,7 @@ public class AvaTaxClient {
     public ArrayList<JurisdictionOverrideModel> createJurisdictionOverridesAsync(int accountId, ArrayList<JurisdictionOverrideModel> model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/jurisdictionoverrides");
-        path.ApplyField("accountId", accountId);
+        path.applyField("accountId", accountId);
         return ((RestCall<List<JurisdictionOverrideModel>>)restCallFactory.createRestCall("Post", path, model, new TypeToken<List<JurisdictionOverrideModel>>(){})).call();
     }
 
@@ -4796,8 +4796,8 @@ public class AvaTaxClient {
     public List<ErrorDetail> deleteJurisdictionOverride(int accountId, int id)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/jurisdictionoverrides/{id}");
-        path.ApplyField("accountId", accountId);
-        path.ApplyField("id", id);
+        path.applyField("accountId", accountId);
+        path.applyField("id", id);
         return ((RestCall<List<ErrorDetail>>)restCallFactory.createRestCall("Delete", path, null, new TypeToken<List<ErrorDetail>>(){})).call();
     }
 
@@ -4811,8 +4811,8 @@ public class AvaTaxClient {
     public ArrayList<ErrorDetail> deleteJurisdictionOverrideAsync(int accountId, int id)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/jurisdictionoverrides/{id}");
-        path.ApplyField("accountId", accountId);
-        path.ApplyField("id", id);
+        path.applyField("accountId", accountId);
+        path.applyField("id", id);
         return ((RestCall<List<ErrorDetail>>)restCallFactory.createRestCall("Delete", path, null, new TypeToken<List<ErrorDetail>>(){})).call();
     }
 
@@ -4832,8 +4832,8 @@ public class AvaTaxClient {
     public JurisdictionOverrideModel getJurisdictionOverride(int accountId, int id)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/jurisdictionoverrides/{id}");
-        path.ApplyField("accountId", accountId);
-        path.ApplyField("id", id);
+        path.applyField("accountId", accountId);
+        path.applyField("id", id);
         return ((RestCall<JurisdictionOverrideModel>)restCallFactory.createRestCall("Get", path, null, new TypeToken<JurisdictionOverrideModel>(){})).call();
     }
 
@@ -4853,8 +4853,8 @@ public class AvaTaxClient {
     public JurisdictionOverrideModel getJurisdictionOverrideAsync(int accountId, int id)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/jurisdictionoverrides/{id}");
-        path.ApplyField("accountId", accountId);
-        path.ApplyField("id", id);
+        path.applyField("accountId", accountId);
+        path.applyField("id", id);
         return ((RestCall<JurisdictionOverrideModel>)restCallFactory.createRestCall("Get", path, null, new TypeToken<JurisdictionOverrideModel>(){})).call();
     }
 
@@ -4881,12 +4881,12 @@ public class AvaTaxClient {
     public FetchResult<JurisdictionOverrideModel> listJurisdictionOverridesByAccount(int accountId, String filter, String include, Integer top, Integer skip, String orderBy)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/jurisdictionoverrides");
-        path.ApplyField("accountId", accountId);
-        path.AddQuery("$filter", filter);
-        path.AddQuery("$include", include);
-        path.AddQuery("$top", top);
-        path.AddQuery("$skip", skip);
-        path.AddQuery("$orderBy", orderBy);
+        path.applyField("accountId", accountId);
+        path.addQuery("$filter", filter);
+        path.addQuery("$include", include);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
         return ((RestCall<FetchResult<JurisdictionOverrideModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<JurisdictionOverrideModel>>(){})).call();
     }
 
@@ -4913,12 +4913,12 @@ public class AvaTaxClient {
     public FetchResult<HashMap<String, String>> listJurisdictionOverridesByAccountAsync(int accountId, String filter, String include, Integer top, Integer skip, String orderBy)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/jurisdictionoverrides");
-        path.ApplyField("accountId", accountId);
-        path.AddQuery("$filter", filter);
-        path.AddQuery("$include", include);
-        path.AddQuery("$top", top);
-        path.AddQuery("$skip", skip);
-        path.AddQuery("$orderBy", orderBy);
+        path.applyField("accountId", accountId);
+        path.addQuery("$filter", filter);
+        path.addQuery("$include", include);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
         return ((RestCall<FetchResult<JurisdictionOverrideModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<JurisdictionOverrideModel>>(){})).call();
     }
 
@@ -4944,11 +4944,11 @@ public class AvaTaxClient {
     public FetchResult<JurisdictionOverrideModel> queryJurisdictionOverrides(String filter, String include, Integer top, Integer skip, String orderBy)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/jurisdictionoverrides");
-        path.AddQuery("$filter", filter);
-        path.AddQuery("$include", include);
-        path.AddQuery("$top", top);
-        path.AddQuery("$skip", skip);
-        path.AddQuery("$orderBy", orderBy);
+        path.addQuery("$filter", filter);
+        path.addQuery("$include", include);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
         return ((RestCall<FetchResult<JurisdictionOverrideModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<JurisdictionOverrideModel>>(){})).call();
     }
 
@@ -4974,11 +4974,11 @@ public class AvaTaxClient {
     public FetchResult<HashMap<String, String>> queryJurisdictionOverridesAsync(String filter, String include, Integer top, Integer skip, String orderBy)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/jurisdictionoverrides");
-        path.AddQuery("$filter", filter);
-        path.AddQuery("$include", include);
-        path.AddQuery("$top", top);
-        path.AddQuery("$skip", skip);
-        path.AddQuery("$orderBy", orderBy);
+        path.addQuery("$filter", filter);
+        path.addQuery("$include", include);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
         return ((RestCall<FetchResult<JurisdictionOverrideModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<JurisdictionOverrideModel>>(){})).call();
     }
 
@@ -4993,8 +4993,8 @@ public class AvaTaxClient {
     public JurisdictionOverrideModel updateJurisdictionOverride(int accountId, int id, JurisdictionOverrideModel model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/jurisdictionoverrides/{id}");
-        path.ApplyField("accountId", accountId);
-        path.ApplyField("id", id);
+        path.applyField("accountId", accountId);
+        path.applyField("id", id);
         return ((RestCall<JurisdictionOverrideModel>)restCallFactory.createRestCall("Put", path, model, new TypeToken<JurisdictionOverrideModel>(){})).call();
     }
 
@@ -5009,8 +5009,8 @@ public class AvaTaxClient {
     public JurisdictionOverrideModel updateJurisdictionOverrideAsync(int accountId, int id, JurisdictionOverrideModel model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/jurisdictionoverrides/{id}");
-        path.ApplyField("accountId", accountId);
-        path.ApplyField("id", id);
+        path.applyField("accountId", accountId);
+        path.applyField("id", id);
         return ((RestCall<JurisdictionOverrideModel>)restCallFactory.createRestCall("Put", path, model, new TypeToken<JurisdictionOverrideModel>(){})).call();
     }
 
@@ -5034,12 +5034,12 @@ public class AvaTaxClient {
     public FileResult buildPointOfSaleDataForLocation(int companyId, int id, Date date, PointOfSaleFileType format, PointOfSalePartnerId partnerId, Boolean includeJurisCodes)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/locations/{id}/pointofsaledata");
-        path.ApplyField("companyId", companyId);
-        path.ApplyField("id", id);
-        path.AddQuery("date", date);
-        path.AddQuery("format", format);
-        path.AddQuery("partnerId", partnerId);
-        path.AddQuery("includeJurisCodes", includeJurisCodes);
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
+        path.addQuery("date", date);
+        path.addQuery("format", format);
+        path.addQuery("partnerId", partnerId);
+        path.addQuery("includeJurisCodes", includeJurisCodes);
         return ((RestCall<FileResult>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FileResult>(){})).call();
     }
 
@@ -5063,12 +5063,12 @@ public class AvaTaxClient {
     public HashMap<String, String> buildPointOfSaleDataForLocationAsync(int companyId, int id, Date date, PointOfSaleFileType format, PointOfSalePartnerId partnerId, Boolean includeJurisCodes)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/locations/{id}/pointofsaledata");
-        path.ApplyField("companyId", companyId);
-        path.ApplyField("id", id);
-        path.AddQuery("date", date);
-        path.AddQuery("format", format);
-        path.AddQuery("partnerId", partnerId);
-        path.AddQuery("includeJurisCodes", includeJurisCodes);
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
+        path.addQuery("date", date);
+        path.addQuery("format", format);
+        path.addQuery("partnerId", partnerId);
+        path.addQuery("includeJurisCodes", includeJurisCodes);
         return ((RestCall<FileResult>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FileResult>(){})).call();
     }
 
@@ -5082,7 +5082,7 @@ public class AvaTaxClient {
     public List<LocationModel> createLocations(int companyId, ArrayList<LocationModel> model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/locations");
-        path.ApplyField("companyId", companyId);
+        path.applyField("companyId", companyId);
         return ((RestCall<List<LocationModel>>)restCallFactory.createRestCall("Post", path, model, new TypeToken<List<LocationModel>>(){})).call();
     }
 
@@ -5096,7 +5096,7 @@ public class AvaTaxClient {
     public ArrayList<LocationModel> createLocationsAsync(int companyId, ArrayList<LocationModel> model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/locations");
-        path.ApplyField("companyId", companyId);
+        path.applyField("companyId", companyId);
         return ((RestCall<List<LocationModel>>)restCallFactory.createRestCall("Post", path, model, new TypeToken<List<LocationModel>>(){})).call();
     }
 
@@ -5110,8 +5110,8 @@ public class AvaTaxClient {
     public List<ErrorDetail> deleteLocation(int companyId, int id)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/locations/{id}");
-        path.ApplyField("companyId", companyId);
-        path.ApplyField("id", id);
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
         return ((RestCall<List<ErrorDetail>>)restCallFactory.createRestCall("Delete", path, null, new TypeToken<List<ErrorDetail>>(){})).call();
     }
 
@@ -5125,8 +5125,8 @@ public class AvaTaxClient {
     public ArrayList<ErrorDetail> deleteLocationAsync(int companyId, int id)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/locations/{id}");
-        path.ApplyField("companyId", companyId);
-        path.ApplyField("id", id);
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
         return ((RestCall<List<ErrorDetail>>)restCallFactory.createRestCall("Delete", path, null, new TypeToken<List<ErrorDetail>>(){})).call();
     }
 
@@ -5145,8 +5145,8 @@ public class AvaTaxClient {
     public LocationModel getLocation(int companyId, int id)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/locations/{id}");
-        path.ApplyField("companyId", companyId);
-        path.ApplyField("id", id);
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
         return ((RestCall<LocationModel>)restCallFactory.createRestCall("Get", path, null, new TypeToken<LocationModel>(){})).call();
     }
 
@@ -5165,8 +5165,8 @@ public class AvaTaxClient {
     public LocationModel getLocationAsync(int companyId, int id)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/locations/{id}");
-        path.ApplyField("companyId", companyId);
-        path.ApplyField("id", id);
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
         return ((RestCall<LocationModel>)restCallFactory.createRestCall("Get", path, null, new TypeToken<LocationModel>(){})).call();
     }
 
@@ -5192,12 +5192,12 @@ public class AvaTaxClient {
     public FetchResult<LocationModel> listLocationsByCompany(int companyId, String filter, String include, Integer top, Integer skip, String orderBy)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/locations");
-        path.ApplyField("companyId", companyId);
-        path.AddQuery("$filter", filter);
-        path.AddQuery("$include", include);
-        path.AddQuery("$top", top);
-        path.AddQuery("$skip", skip);
-        path.AddQuery("$orderBy", orderBy);
+        path.applyField("companyId", companyId);
+        path.addQuery("$filter", filter);
+        path.addQuery("$include", include);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
         return ((RestCall<FetchResult<LocationModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<LocationModel>>(){})).call();
     }
 
@@ -5223,12 +5223,12 @@ public class AvaTaxClient {
     public FetchResult<HashMap<String, String>> listLocationsByCompanyAsync(int companyId, String filter, String include, Integer top, Integer skip, String orderBy)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/locations");
-        path.ApplyField("companyId", companyId);
-        path.AddQuery("$filter", filter);
-        path.AddQuery("$include", include);
-        path.AddQuery("$top", top);
-        path.AddQuery("$skip", skip);
-        path.AddQuery("$orderBy", orderBy);
+        path.applyField("companyId", companyId);
+        path.addQuery("$filter", filter);
+        path.addQuery("$include", include);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
         return ((RestCall<FetchResult<LocationModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<LocationModel>>(){})).call();
     }
 
@@ -5253,11 +5253,11 @@ public class AvaTaxClient {
     public FetchResult<LocationModel> queryLocations(String filter, String include, Integer top, Integer skip, String orderBy)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/locations");
-        path.AddQuery("$filter", filter);
-        path.AddQuery("$include", include);
-        path.AddQuery("$top", top);
-        path.AddQuery("$skip", skip);
-        path.AddQuery("$orderBy", orderBy);
+        path.addQuery("$filter", filter);
+        path.addQuery("$include", include);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
         return ((RestCall<FetchResult<LocationModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<LocationModel>>(){})).call();
     }
 
@@ -5282,11 +5282,11 @@ public class AvaTaxClient {
     public FetchResult<HashMap<String, String>> queryLocationsAsync(String filter, String include, Integer top, Integer skip, String orderBy)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/locations");
-        path.AddQuery("$filter", filter);
-        path.AddQuery("$include", include);
-        path.AddQuery("$top", top);
-        path.AddQuery("$skip", skip);
-        path.AddQuery("$orderBy", orderBy);
+        path.addQuery("$filter", filter);
+        path.addQuery("$include", include);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
         return ((RestCall<FetchResult<LocationModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<LocationModel>>(){})).call();
     }
 
@@ -5304,8 +5304,8 @@ public class AvaTaxClient {
     public LocationModel updateLocation(int companyId, int id, LocationModel model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/locations/{id}");
-        path.ApplyField("companyId", companyId);
-        path.ApplyField("id", id);
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
         return ((RestCall<LocationModel>)restCallFactory.createRestCall("Put", path, model, new TypeToken<LocationModel>(){})).call();
     }
 
@@ -5323,8 +5323,8 @@ public class AvaTaxClient {
     public LocationModel updateLocationAsync(int companyId, int id, LocationModel model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/locations/{id}");
-        path.ApplyField("companyId", companyId);
-        path.ApplyField("id", id);
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
         return ((RestCall<LocationModel>)restCallFactory.createRestCall("Put", path, model, new TypeToken<LocationModel>(){})).call();
     }
 
@@ -5341,8 +5341,8 @@ public class AvaTaxClient {
     public LocationValidationModel validateLocation(int companyId, int id)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/locations/{id}/validate");
-        path.ApplyField("companyId", companyId);
-        path.ApplyField("id", id);
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
         return ((RestCall<LocationValidationModel>)restCallFactory.createRestCall("Get", path, null, new TypeToken<LocationValidationModel>(){})).call();
     }
 
@@ -5359,8 +5359,8 @@ public class AvaTaxClient {
     public LocationValidationModel validateLocationAsync(int companyId, int id)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/locations/{id}/validate");
-        path.ApplyField("companyId", companyId);
-        path.ApplyField("id", id);
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
         return ((RestCall<LocationValidationModel>)restCallFactory.createRestCall("Get", path, null, new TypeToken<LocationValidationModel>(){})).call();
     }
 
@@ -5382,7 +5382,7 @@ public class AvaTaxClient {
     public List<NexusModel> createNexus(int companyId, ArrayList<NexusModel> model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/nexus");
-        path.ApplyField("companyId", companyId);
+        path.applyField("companyId", companyId);
         return ((RestCall<List<NexusModel>>)restCallFactory.createRestCall("Post", path, model, new TypeToken<List<NexusModel>>(){})).call();
     }
 
@@ -5404,7 +5404,7 @@ public class AvaTaxClient {
     public ArrayList<NexusModel> createNexusAsync(int companyId, ArrayList<NexusModel> model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/nexus");
-        path.ApplyField("companyId", companyId);
+        path.applyField("companyId", companyId);
         return ((RestCall<List<NexusModel>>)restCallFactory.createRestCall("Post", path, model, new TypeToken<List<NexusModel>>(){})).call();
     }
 
@@ -5418,8 +5418,8 @@ public class AvaTaxClient {
     public List<ErrorDetail> deleteNexus(int companyId, int id)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/nexus/{id}");
-        path.ApplyField("companyId", companyId);
-        path.ApplyField("id", id);
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
         return ((RestCall<List<ErrorDetail>>)restCallFactory.createRestCall("Delete", path, null, new TypeToken<List<ErrorDetail>>(){})).call();
     }
 
@@ -5433,8 +5433,8 @@ public class AvaTaxClient {
     public ArrayList<ErrorDetail> deleteNexusAsync(int companyId, int id)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/nexus/{id}");
-        path.ApplyField("companyId", companyId);
-        path.ApplyField("id", id);
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
         return ((RestCall<List<ErrorDetail>>)restCallFactory.createRestCall("Delete", path, null, new TypeToken<List<ErrorDetail>>(){})).call();
     }
 
@@ -5453,8 +5453,8 @@ public class AvaTaxClient {
     public NexusModel getNexus(int companyId, int id)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/nexus/{id}");
-        path.ApplyField("companyId", companyId);
-        path.ApplyField("id", id);
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
         return ((RestCall<NexusModel>)restCallFactory.createRestCall("Get", path, null, new TypeToken<NexusModel>(){})).call();
     }
 
@@ -5473,8 +5473,8 @@ public class AvaTaxClient {
     public NexusModel getNexusAsync(int companyId, int id)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/nexus/{id}");
-        path.ApplyField("companyId", companyId);
-        path.ApplyField("id", id);
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
         return ((RestCall<NexusModel>)restCallFactory.createRestCall("Get", path, null, new TypeToken<NexusModel>(){})).call();
     }
 
@@ -5499,8 +5499,8 @@ public class AvaTaxClient {
     public NexusByTaxFormModel getNexusByFormCode(int companyId, String formCode)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/nexus/byform/{formCode}");
-        path.ApplyField("companyId", companyId);
-        path.ApplyField("formCode", formCode);
+        path.applyField("companyId", companyId);
+        path.applyField("formCode", formCode);
         return ((RestCall<NexusByTaxFormModel>)restCallFactory.createRestCall("Get", path, null, new TypeToken<NexusByTaxFormModel>(){})).call();
     }
 
@@ -5525,8 +5525,8 @@ public class AvaTaxClient {
     public NexusByTaxFormModel getNexusByFormCodeAsync(int companyId, String formCode)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/nexus/byform/{formCode}");
-        path.ApplyField("companyId", companyId);
-        path.ApplyField("formCode", formCode);
+        path.applyField("companyId", companyId);
+        path.applyField("formCode", formCode);
         return ((RestCall<NexusByTaxFormModel>)restCallFactory.createRestCall("Get", path, null, new TypeToken<NexusByTaxFormModel>(){})).call();
     }
 
@@ -5552,12 +5552,12 @@ public class AvaTaxClient {
     public FetchResult<NexusModel> listNexusByCompany(int companyId, String filter, String include, Integer top, Integer skip, String orderBy)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/nexus");
-        path.ApplyField("companyId", companyId);
-        path.AddQuery("$filter", filter);
-        path.AddQuery("$include", include);
-        path.AddQuery("$top", top);
-        path.AddQuery("$skip", skip);
-        path.AddQuery("$orderBy", orderBy);
+        path.applyField("companyId", companyId);
+        path.addQuery("$filter", filter);
+        path.addQuery("$include", include);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
         return ((RestCall<FetchResult<NexusModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<NexusModel>>(){})).call();
     }
 
@@ -5583,12 +5583,12 @@ public class AvaTaxClient {
     public FetchResult<HashMap<String, String>> listNexusByCompanyAsync(int companyId, String filter, String include, Integer top, Integer skip, String orderBy)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/nexus");
-        path.ApplyField("companyId", companyId);
-        path.AddQuery("$filter", filter);
-        path.AddQuery("$include", include);
-        path.AddQuery("$top", top);
-        path.AddQuery("$skip", skip);
-        path.AddQuery("$orderBy", orderBy);
+        path.applyField("companyId", companyId);
+        path.addQuery("$filter", filter);
+        path.addQuery("$include", include);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
         return ((RestCall<FetchResult<NexusModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<NexusModel>>(){})).call();
     }
 
@@ -5613,11 +5613,11 @@ public class AvaTaxClient {
     public FetchResult<NexusModel> queryNexus(String filter, String include, Integer top, Integer skip, String orderBy)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/nexus");
-        path.AddQuery("$filter", filter);
-        path.AddQuery("$include", include);
-        path.AddQuery("$top", top);
-        path.AddQuery("$skip", skip);
-        path.AddQuery("$orderBy", orderBy);
+        path.addQuery("$filter", filter);
+        path.addQuery("$include", include);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
         return ((RestCall<FetchResult<NexusModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<NexusModel>>(){})).call();
     }
 
@@ -5642,11 +5642,11 @@ public class AvaTaxClient {
     public FetchResult<HashMap<String, String>> queryNexusAsync(String filter, String include, Integer top, Integer skip, String orderBy)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/nexus");
-        path.AddQuery("$filter", filter);
-        path.AddQuery("$include", include);
-        path.AddQuery("$top", top);
-        path.AddQuery("$skip", skip);
-        path.AddQuery("$orderBy", orderBy);
+        path.addQuery("$filter", filter);
+        path.addQuery("$include", include);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
         return ((RestCall<FetchResult<NexusModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<NexusModel>>(){})).call();
     }
 
@@ -5671,8 +5671,8 @@ public class AvaTaxClient {
     public NexusModel updateNexus(int companyId, int id, NexusModel model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/nexus/{id}");
-        path.ApplyField("companyId", companyId);
-        path.ApplyField("id", id);
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
         return ((RestCall<NexusModel>)restCallFactory.createRestCall("Put", path, model, new TypeToken<NexusModel>(){})).call();
     }
 
@@ -5697,8 +5697,8 @@ public class AvaTaxClient {
     public NexusModel updateNexusAsync(int companyId, int id, NexusModel model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/nexus/{id}");
-        path.ApplyField("companyId", companyId);
-        path.ApplyField("id", id);
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
         return ((RestCall<NexusModel>)restCallFactory.createRestCall("Put", path, model, new TypeToken<NexusModel>(){})).call();
     }
 
@@ -5717,8 +5717,8 @@ public class AvaTaxClient {
     public List<NoticeCommentModel> createNoticeComment(int companyId, int id, ArrayList<NoticeCommentModel> model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/{id}/comments");
-        path.ApplyField("companyId", companyId);
-        path.ApplyField("id", id);
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
         return ((RestCall<List<NoticeCommentModel>>)restCallFactory.createRestCall("Post", path, model, new TypeToken<List<NoticeCommentModel>>(){})).call();
     }
 
@@ -5737,8 +5737,8 @@ public class AvaTaxClient {
     public ArrayList<NoticeCommentModel> createNoticeCommentAsync(int companyId, int id, ArrayList<NoticeCommentModel> model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/{id}/comments");
-        path.ApplyField("companyId", companyId);
-        path.ApplyField("id", id);
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
         return ((RestCall<List<NoticeCommentModel>>)restCallFactory.createRestCall("Post", path, model, new TypeToken<List<NoticeCommentModel>>(){})).call();
     }
 
@@ -5758,8 +5758,8 @@ public class AvaTaxClient {
     public List<NoticeFinanceModel> createNoticeFinanceDetails(int companyId, int id, ArrayList<NoticeFinanceModel> model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/{id}/financedetails");
-        path.ApplyField("companyId", companyId);
-        path.ApplyField("id", id);
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
         return ((RestCall<List<NoticeFinanceModel>>)restCallFactory.createRestCall("Post", path, model, new TypeToken<List<NoticeFinanceModel>>(){})).call();
     }
 
@@ -5779,8 +5779,8 @@ public class AvaTaxClient {
     public ArrayList<NoticeFinanceModel> createNoticeFinanceDetailsAsync(int companyId, int id, ArrayList<NoticeFinanceModel> model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/{id}/financedetails");
-        path.ApplyField("companyId", companyId);
-        path.ApplyField("id", id);
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
         return ((RestCall<List<NoticeFinanceModel>>)restCallFactory.createRestCall("Post", path, model, new TypeToken<List<NoticeFinanceModel>>(){})).call();
     }
 
@@ -5799,8 +5799,8 @@ public class AvaTaxClient {
     public List<NoticeResponsibilityDetailModel> createNoticeResponsibilities(int companyId, int id, ArrayList<NoticeResponsibilityDetailModel> model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/{id}/responsibilities");
-        path.ApplyField("companyId", companyId);
-        path.ApplyField("id", id);
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
         return ((RestCall<List<NoticeResponsibilityDetailModel>>)restCallFactory.createRestCall("Post", path, model, new TypeToken<List<NoticeResponsibilityDetailModel>>(){})).call();
     }
 
@@ -5819,8 +5819,8 @@ public class AvaTaxClient {
     public ArrayList<NoticeResponsibilityDetailModel> createNoticeResponsibilitiesAsync(int companyId, int id, ArrayList<NoticeResponsibilityDetailModel> model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/{id}/responsibilities");
-        path.ApplyField("companyId", companyId);
-        path.ApplyField("id", id);
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
         return ((RestCall<List<NoticeResponsibilityDetailModel>>)restCallFactory.createRestCall("Post", path, model, new TypeToken<List<NoticeResponsibilityDetailModel>>(){})).call();
     }
 
@@ -5839,8 +5839,8 @@ public class AvaTaxClient {
     public List<NoticeRootCauseDetailModel> createNoticeRootCauses(int companyId, int id, ArrayList<NoticeRootCauseDetailModel> model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/{id}/rootcauses");
-        path.ApplyField("companyId", companyId);
-        path.ApplyField("id", id);
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
         return ((RestCall<List<NoticeRootCauseDetailModel>>)restCallFactory.createRestCall("Post", path, model, new TypeToken<List<NoticeRootCauseDetailModel>>(){})).call();
     }
 
@@ -5859,8 +5859,8 @@ public class AvaTaxClient {
     public ArrayList<NoticeRootCauseDetailModel> createNoticeRootCausesAsync(int companyId, int id, ArrayList<NoticeRootCauseDetailModel> model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/{id}/rootcauses");
-        path.ApplyField("companyId", companyId);
-        path.ApplyField("id", id);
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
         return ((RestCall<List<NoticeRootCauseDetailModel>>)restCallFactory.createRestCall("Post", path, model, new TypeToken<List<NoticeRootCauseDetailModel>>(){})).call();
     }
 
@@ -5878,7 +5878,7 @@ public class AvaTaxClient {
     public List<NoticeModel> createNotices(int companyId, ArrayList<NoticeModel> model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices");
-        path.ApplyField("companyId", companyId);
+        path.applyField("companyId", companyId);
         return ((RestCall<List<NoticeModel>>)restCallFactory.createRestCall("Post", path, model, new TypeToken<List<NoticeModel>>(){})).call();
     }
 
@@ -5896,7 +5896,7 @@ public class AvaTaxClient {
     public ArrayList<NoticeModel> createNoticesAsync(int companyId, ArrayList<NoticeModel> model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices");
-        path.ApplyField("companyId", companyId);
+        path.applyField("companyId", companyId);
         return ((RestCall<List<NoticeModel>>)restCallFactory.createRestCall("Post", path, model, new TypeToken<List<NoticeModel>>(){})).call();
     }
 
@@ -5914,8 +5914,8 @@ public class AvaTaxClient {
     public List<ErrorDetail> deleteNotice(int companyId, int id)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/{id}");
-        path.ApplyField("companyId", companyId);
-        path.ApplyField("id", id);
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
         return ((RestCall<List<ErrorDetail>>)restCallFactory.createRestCall("Delete", path, null, new TypeToken<List<ErrorDetail>>(){})).call();
     }
 
@@ -5933,8 +5933,8 @@ public class AvaTaxClient {
     public ArrayList<ErrorDetail> deleteNoticeAsync(int companyId, int id)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/{id}");
-        path.ApplyField("companyId", companyId);
-        path.ApplyField("id", id);
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
         return ((RestCall<List<ErrorDetail>>)restCallFactory.createRestCall("Delete", path, null, new TypeToken<List<ErrorDetail>>(){})).call();
     }
 
@@ -5950,8 +5950,8 @@ public class AvaTaxClient {
     public FileResult downloadNoticeAttachment(int companyId, long id)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/files/{id}/attachment");
-        path.ApplyField("companyId", companyId);
-        path.ApplyField("id", id);
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
         return ((RestCall<FileResult>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FileResult>(){})).call();
     }
 
@@ -5967,8 +5967,8 @@ public class AvaTaxClient {
     public HashMap<String, String> downloadNoticeAttachmentAsync(int companyId, long id)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/files/{id}/attachment");
-        path.ApplyField("companyId", companyId);
-        path.ApplyField("id", id);
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
         return ((RestCall<FileResult>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FileResult>(){})).call();
     }
 
@@ -5986,8 +5986,8 @@ public class AvaTaxClient {
     public NoticeModel getNotice(int companyId, int id)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/{id}");
-        path.ApplyField("companyId", companyId);
-        path.ApplyField("id", id);
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
         return ((RestCall<NoticeModel>)restCallFactory.createRestCall("Get", path, null, new TypeToken<NoticeModel>(){})).call();
     }
 
@@ -6005,8 +6005,8 @@ public class AvaTaxClient {
     public NoticeModel getNoticeAsync(int companyId, int id)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/{id}");
-        path.ApplyField("companyId", companyId);
-        path.ApplyField("id", id);
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
         return ((RestCall<NoticeModel>)restCallFactory.createRestCall("Get", path, null, new TypeToken<NoticeModel>(){})).call();
     }
 
@@ -6024,8 +6024,8 @@ public class AvaTaxClient {
     public FetchResult<NoticeCommentModel> getNoticeComments(int id, int companyId)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/{id}/comments");
-        path.ApplyField("id", id);
-        path.ApplyField("companyId", companyId);
+        path.applyField("id", id);
+        path.applyField("companyId", companyId);
         return ((RestCall<FetchResult<NoticeCommentModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<NoticeCommentModel>>(){})).call();
     }
 
@@ -6043,8 +6043,8 @@ public class AvaTaxClient {
     public FetchResult<HashMap<String, String>> getNoticeCommentsAsync(int id, int companyId)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/{id}/comments");
-        path.ApplyField("id", id);
-        path.ApplyField("companyId", companyId);
+        path.applyField("id", id);
+        path.applyField("companyId", companyId);
         return ((RestCall<FetchResult<NoticeCommentModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<NoticeCommentModel>>(){})).call();
     }
 
@@ -6063,8 +6063,8 @@ public class AvaTaxClient {
     public FetchResult<NoticeFinanceModel> getNoticeFinanceDetails(int id, int companyId)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/{id}/financedetails");
-        path.ApplyField("id", id);
-        path.ApplyField("companyId", companyId);
+        path.applyField("id", id);
+        path.applyField("companyId", companyId);
         return ((RestCall<FetchResult<NoticeFinanceModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<NoticeFinanceModel>>(){})).call();
     }
 
@@ -6083,8 +6083,8 @@ public class AvaTaxClient {
     public FetchResult<HashMap<String, String>> getNoticeFinanceDetailsAsync(int id, int companyId)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/{id}/financedetails");
-        path.ApplyField("id", id);
-        path.ApplyField("companyId", companyId);
+        path.applyField("id", id);
+        path.applyField("companyId", companyId);
         return ((RestCall<FetchResult<NoticeFinanceModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<NoticeFinanceModel>>(){})).call();
     }
 
@@ -6102,8 +6102,8 @@ public class AvaTaxClient {
     public FetchResult<NoticeResponsibilityDetailModel> getNoticeResponsibilities(int id, int companyId)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/{id}/responsibilities");
-        path.ApplyField("id", id);
-        path.ApplyField("companyId", companyId);
+        path.applyField("id", id);
+        path.applyField("companyId", companyId);
         return ((RestCall<FetchResult<NoticeResponsibilityDetailModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<NoticeResponsibilityDetailModel>>(){})).call();
     }
 
@@ -6121,8 +6121,8 @@ public class AvaTaxClient {
     public FetchResult<HashMap<String, String>> getNoticeResponsibilitiesAsync(int id, int companyId)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/{id}/responsibilities");
-        path.ApplyField("id", id);
-        path.ApplyField("companyId", companyId);
+        path.applyField("id", id);
+        path.applyField("companyId", companyId);
         return ((RestCall<FetchResult<NoticeResponsibilityDetailModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<NoticeResponsibilityDetailModel>>(){})).call();
     }
 
@@ -6140,8 +6140,8 @@ public class AvaTaxClient {
     public FetchResult<NoticeRootCauseDetailModel> getNoticeRootCauses(int id, int companyId)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/{id}/rootcauses");
-        path.ApplyField("id", id);
-        path.ApplyField("companyId", companyId);
+        path.applyField("id", id);
+        path.applyField("companyId", companyId);
         return ((RestCall<FetchResult<NoticeRootCauseDetailModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<NoticeRootCauseDetailModel>>(){})).call();
     }
 
@@ -6159,8 +6159,8 @@ public class AvaTaxClient {
     public FetchResult<HashMap<String, String>> getNoticeRootCausesAsync(int id, int companyId)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/{id}/rootcauses");
-        path.ApplyField("id", id);
-        path.ApplyField("companyId", companyId);
+        path.applyField("id", id);
+        path.applyField("companyId", companyId);
         return ((RestCall<FetchResult<NoticeRootCauseDetailModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<NoticeRootCauseDetailModel>>(){})).call();
     }
 
@@ -6185,12 +6185,12 @@ public class AvaTaxClient {
     public FetchResult<NoticeModel> listNoticesByCompany(int companyId, String filter, String include, Integer top, Integer skip, String orderBy)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices");
-        path.ApplyField("companyId", companyId);
-        path.AddQuery("$filter", filter);
-        path.AddQuery("$include", include);
-        path.AddQuery("$top", top);
-        path.AddQuery("$skip", skip);
-        path.AddQuery("$orderBy", orderBy);
+        path.applyField("companyId", companyId);
+        path.addQuery("$filter", filter);
+        path.addQuery("$include", include);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
         return ((RestCall<FetchResult<NoticeModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<NoticeModel>>(){})).call();
     }
 
@@ -6215,12 +6215,12 @@ public class AvaTaxClient {
     public FetchResult<HashMap<String, String>> listNoticesByCompanyAsync(int companyId, String filter, String include, Integer top, Integer skip, String orderBy)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices");
-        path.ApplyField("companyId", companyId);
-        path.AddQuery("$filter", filter);
-        path.AddQuery("$include", include);
-        path.AddQuery("$top", top);
-        path.AddQuery("$skip", skip);
-        path.AddQuery("$orderBy", orderBy);
+        path.applyField("companyId", companyId);
+        path.addQuery("$filter", filter);
+        path.addQuery("$include", include);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
         return ((RestCall<FetchResult<NoticeModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<NoticeModel>>(){})).call();
     }
 
@@ -6244,11 +6244,11 @@ public class AvaTaxClient {
     public FetchResult<NoticeModel> queryNotices(String filter, String include, Integer top, Integer skip, String orderBy)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/notices");
-        path.AddQuery("$filter", filter);
-        path.AddQuery("$include", include);
-        path.AddQuery("$top", top);
-        path.AddQuery("$skip", skip);
-        path.AddQuery("$orderBy", orderBy);
+        path.addQuery("$filter", filter);
+        path.addQuery("$include", include);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
         return ((RestCall<FetchResult<NoticeModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<NoticeModel>>(){})).call();
     }
 
@@ -6272,11 +6272,11 @@ public class AvaTaxClient {
     public FetchResult<HashMap<String, String>> queryNoticesAsync(String filter, String include, Integer top, Integer skip, String orderBy)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/notices");
-        path.AddQuery("$filter", filter);
-        path.AddQuery("$include", include);
-        path.AddQuery("$top", top);
-        path.AddQuery("$skip", skip);
-        path.AddQuery("$orderBy", orderBy);
+        path.addQuery("$filter", filter);
+        path.addQuery("$include", include);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
         return ((RestCall<FetchResult<NoticeModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<NoticeModel>>(){})).call();
     }
 
@@ -6297,8 +6297,8 @@ public class AvaTaxClient {
     public NoticeModel updateNotice(int companyId, int id, NoticeModel model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/{id}");
-        path.ApplyField("companyId", companyId);
-        path.ApplyField("id", id);
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
         return ((RestCall<NoticeModel>)restCallFactory.createRestCall("Put", path, model, new TypeToken<NoticeModel>(){})).call();
     }
 
@@ -6319,8 +6319,8 @@ public class AvaTaxClient {
     public NoticeModel updateNoticeAsync(int companyId, int id, NoticeModel model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/{id}");
-        path.ApplyField("companyId", companyId);
-        path.ApplyField("id", id);
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
         return ((RestCall<NoticeModel>)restCallFactory.createRestCall("Put", path, model, new TypeToken<NoticeModel>(){})).call();
     }
 
@@ -6336,7 +6336,7 @@ public class AvaTaxClient {
     public FileResult uploadAttachment(int companyId, ResourceFileUploadRequestModel model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/files/attachment");
-        path.ApplyField("companyId", companyId);
+        path.applyField("companyId", companyId);
         return ((RestCall<FileResult>)restCallFactory.createRestCall("Post", path, model, new TypeToken<FileResult>(){})).call();
     }
 
@@ -6352,7 +6352,7 @@ public class AvaTaxClient {
     public HashMap<String, String> uploadAttachmentAsync(int companyId, ResourceFileUploadRequestModel model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/files/attachment");
-        path.ApplyField("companyId", companyId);
+        path.applyField("companyId", companyId);
         return ((RestCall<FileResult>)restCallFactory.createRestCall("Post", path, model, new TypeToken<FileResult>(){})).call();
     }
 
@@ -6508,7 +6508,7 @@ public class AvaTaxClient {
     public List<SubscriptionModel> createSubscriptions(int accountId, ArrayList<SubscriptionModel> model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/subscriptions");
-        path.ApplyField("accountId", accountId);
+        path.applyField("accountId", accountId);
         return ((RestCall<List<SubscriptionModel>>)restCallFactory.createRestCall("Post", path, model, new TypeToken<List<SubscriptionModel>>(){})).call();
     }
 
@@ -6528,7 +6528,7 @@ public class AvaTaxClient {
     public ArrayList<SubscriptionModel> createSubscriptionsAsync(int accountId, ArrayList<SubscriptionModel> model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/subscriptions");
-        path.ApplyField("accountId", accountId);
+        path.applyField("accountId", accountId);
         return ((RestCall<List<SubscriptionModel>>)restCallFactory.createRestCall("Post", path, model, new TypeToken<List<SubscriptionModel>>(){})).call();
     }
 
@@ -6547,7 +6547,7 @@ public class AvaTaxClient {
     public List<UserModel> createUsers(int accountId, ArrayList<UserModel> model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/users");
-        path.ApplyField("accountId", accountId);
+        path.applyField("accountId", accountId);
         return ((RestCall<List<UserModel>>)restCallFactory.createRestCall("Post", path, model, new TypeToken<List<UserModel>>(){})).call();
     }
 
@@ -6566,7 +6566,7 @@ public class AvaTaxClient {
     public ArrayList<UserModel> createUsersAsync(int accountId, ArrayList<UserModel> model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/users");
-        path.ApplyField("accountId", accountId);
+        path.applyField("accountId", accountId);
         return ((RestCall<List<UserModel>>)restCallFactory.createRestCall("Post", path, model, new TypeToken<List<UserModel>>(){})).call();
     }
 
@@ -6584,7 +6584,7 @@ public class AvaTaxClient {
     public List<ErrorDetail> deleteAccount(int id)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{id}");
-        path.ApplyField("id", id);
+        path.applyField("id", id);
         return ((RestCall<List<ErrorDetail>>)restCallFactory.createRestCall("Delete", path, null, new TypeToken<List<ErrorDetail>>(){})).call();
     }
 
@@ -6602,7 +6602,7 @@ public class AvaTaxClient {
     public ArrayList<ErrorDetail> deleteAccountAsync(int id)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{id}");
-        path.ApplyField("id", id);
+        path.applyField("id", id);
         return ((RestCall<List<ErrorDetail>>)restCallFactory.createRestCall("Delete", path, null, new TypeToken<List<ErrorDetail>>(){})).call();
     }
 
@@ -6620,8 +6620,8 @@ public class AvaTaxClient {
     public List<ErrorDetail> deleteSubscription(int accountId, int id)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/subscriptions/{id}");
-        path.ApplyField("accountId", accountId);
-        path.ApplyField("id", id);
+        path.applyField("accountId", accountId);
+        path.applyField("id", id);
         return ((RestCall<List<ErrorDetail>>)restCallFactory.createRestCall("Delete", path, null, new TypeToken<List<ErrorDetail>>(){})).call();
     }
 
@@ -6639,8 +6639,8 @@ public class AvaTaxClient {
     public ArrayList<ErrorDetail> deleteSubscriptionAsync(int accountId, int id)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/subscriptions/{id}");
-        path.ApplyField("accountId", accountId);
-        path.ApplyField("id", id);
+        path.applyField("accountId", accountId);
+        path.applyField("id", id);
         return ((RestCall<List<ErrorDetail>>)restCallFactory.createRestCall("Delete", path, null, new TypeToken<List<ErrorDetail>>(){})).call();
     }
 
@@ -6658,8 +6658,8 @@ public class AvaTaxClient {
     public List<ErrorDetail> deleteUser(int id, int accountId)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/users/{id}");
-        path.ApplyField("id", id);
-        path.ApplyField("accountId", accountId);
+        path.applyField("id", id);
+        path.applyField("accountId", accountId);
         return ((RestCall<List<ErrorDetail>>)restCallFactory.createRestCall("Delete", path, null, new TypeToken<List<ErrorDetail>>(){})).call();
     }
 
@@ -6677,8 +6677,8 @@ public class AvaTaxClient {
     public ArrayList<ErrorDetail> deleteUserAsync(int id, int accountId)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/users/{id}");
-        path.ApplyField("id", id);
-        path.ApplyField("accountId", accountId);
+        path.applyField("id", id);
+        path.applyField("accountId", accountId);
         return ((RestCall<List<ErrorDetail>>)restCallFactory.createRestCall("Delete", path, null, new TypeToken<List<ErrorDetail>>(){})).call();
     }
 
@@ -6707,11 +6707,11 @@ public class AvaTaxClient {
     public FetchResult<AccountModel> queryAccounts(String include, String filter, Integer top, Integer skip, String orderBy)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts");
-        path.AddQuery("$include", include);
-        path.AddQuery("$filter", filter);
-        path.AddQuery("$top", top);
-        path.AddQuery("$skip", skip);
-        path.AddQuery("$orderBy", orderBy);
+        path.addQuery("$include", include);
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
         return ((RestCall<FetchResult<AccountModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<AccountModel>>(){})).call();
     }
 
@@ -6740,11 +6740,11 @@ public class AvaTaxClient {
     public FetchResult<HashMap<String, String>> queryAccountsAsync(String include, String filter, Integer top, Integer skip, String orderBy)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts");
-        path.AddQuery("$include", include);
-        path.AddQuery("$filter", filter);
-        path.AddQuery("$top", top);
-        path.AddQuery("$skip", skip);
-        path.AddQuery("$orderBy", orderBy);
+        path.addQuery("$include", include);
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
         return ((RestCall<FetchResult<AccountModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<AccountModel>>(){})).call();
     }
 
@@ -6764,7 +6764,7 @@ public class AvaTaxClient {
     public String resetPassword(int userId, SetPasswordModel model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/passwords/{userId}/reset");
-        path.ApplyField("userId", userId);
+        path.applyField("userId", userId);
         return ((RestCall<String>)restCallFactory.createRestCall("Post", path, model, new TypeToken<String>(){})).call();
     }
 
@@ -6784,7 +6784,7 @@ public class AvaTaxClient {
     public String resetPasswordAsync(int userId, SetPasswordModel model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/passwords/{userId}/reset");
-        path.ApplyField("userId", userId);
+        path.applyField("userId", userId);
         return ((RestCall<String>)restCallFactory.createRestCall("Post", path, model, new TypeToken<String>(){})).call();
     }
 
@@ -6802,7 +6802,7 @@ public class AvaTaxClient {
     public AccountModel updateAccount(int id, AccountModel model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{id}");
-        path.ApplyField("id", id);
+        path.applyField("id", id);
         return ((RestCall<AccountModel>)restCallFactory.createRestCall("Put", path, model, new TypeToken<AccountModel>(){})).call();
     }
 
@@ -6820,7 +6820,7 @@ public class AvaTaxClient {
     public AccountModel updateAccountAsync(int id, AccountModel model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{id}");
-        path.ApplyField("id", id);
+        path.applyField("id", id);
         return ((RestCall<AccountModel>)restCallFactory.createRestCall("Put", path, model, new TypeToken<AccountModel>(){})).call();
     }
 
@@ -6843,8 +6843,8 @@ public class AvaTaxClient {
     public SubscriptionModel updateSubscription(int accountId, int id, SubscriptionModel model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/subscriptions/{id}");
-        path.ApplyField("accountId", accountId);
-        path.ApplyField("id", id);
+        path.applyField("accountId", accountId);
+        path.applyField("id", id);
         return ((RestCall<SubscriptionModel>)restCallFactory.createRestCall("Put", path, model, new TypeToken<SubscriptionModel>(){})).call();
     }
 
@@ -6867,8 +6867,8 @@ public class AvaTaxClient {
     public SubscriptionModel updateSubscriptionAsync(int accountId, int id, SubscriptionModel model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/subscriptions/{id}");
-        path.ApplyField("accountId", accountId);
-        path.ApplyField("id", id);
+        path.applyField("accountId", accountId);
+        path.applyField("id", id);
         return ((RestCall<SubscriptionModel>)restCallFactory.createRestCall("Put", path, model, new TypeToken<SubscriptionModel>(){})).call();
     }
 
@@ -6889,7 +6889,7 @@ public class AvaTaxClient {
     public List<SettingModel> createSettings(int companyId, ArrayList<SettingModel> model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/settings");
-        path.ApplyField("companyId", companyId);
+        path.applyField("companyId", companyId);
         return ((RestCall<List<SettingModel>>)restCallFactory.createRestCall("Post", path, model, new TypeToken<List<SettingModel>>(){})).call();
     }
 
@@ -6910,7 +6910,7 @@ public class AvaTaxClient {
     public ArrayList<SettingModel> createSettingsAsync(int companyId, ArrayList<SettingModel> model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/settings");
-        path.ApplyField("companyId", companyId);
+        path.applyField("companyId", companyId);
         return ((RestCall<List<SettingModel>>)restCallFactory.createRestCall("Post", path, model, new TypeToken<List<SettingModel>>(){})).call();
     }
 
@@ -6924,8 +6924,8 @@ public class AvaTaxClient {
     public List<ErrorDetail> deleteSetting(int companyId, int id)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/settings/{id}");
-        path.ApplyField("companyId", companyId);
-        path.ApplyField("id", id);
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
         return ((RestCall<List<ErrorDetail>>)restCallFactory.createRestCall("Delete", path, null, new TypeToken<List<ErrorDetail>>(){})).call();
     }
 
@@ -6939,8 +6939,8 @@ public class AvaTaxClient {
     public ArrayList<ErrorDetail> deleteSettingAsync(int companyId, int id)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/settings/{id}");
-        path.ApplyField("companyId", companyId);
-        path.ApplyField("id", id);
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
         return ((RestCall<List<ErrorDetail>>)restCallFactory.createRestCall("Delete", path, null, new TypeToken<List<ErrorDetail>>(){})).call();
     }
 
@@ -6961,8 +6961,8 @@ public class AvaTaxClient {
     public SettingModel getSetting(int companyId, int id)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/settings/{id}");
-        path.ApplyField("companyId", companyId);
-        path.ApplyField("id", id);
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
         return ((RestCall<SettingModel>)restCallFactory.createRestCall("Get", path, null, new TypeToken<SettingModel>(){})).call();
     }
 
@@ -6983,8 +6983,8 @@ public class AvaTaxClient {
     public SettingModel getSettingAsync(int companyId, int id)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/settings/{id}");
-        path.ApplyField("companyId", companyId);
-        path.ApplyField("id", id);
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
         return ((RestCall<SettingModel>)restCallFactory.createRestCall("Get", path, null, new TypeToken<SettingModel>(){})).call();
     }
 
@@ -7012,12 +7012,12 @@ public class AvaTaxClient {
     public FetchResult<SettingModel> listSettingsByCompany(int companyId, String filter, String include, Integer top, Integer skip, String orderBy)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/settings");
-        path.ApplyField("companyId", companyId);
-        path.AddQuery("$filter", filter);
-        path.AddQuery("$include", include);
-        path.AddQuery("$top", top);
-        path.AddQuery("$skip", skip);
-        path.AddQuery("$orderBy", orderBy);
+        path.applyField("companyId", companyId);
+        path.addQuery("$filter", filter);
+        path.addQuery("$include", include);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
         return ((RestCall<FetchResult<SettingModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<SettingModel>>(){})).call();
     }
 
@@ -7045,12 +7045,12 @@ public class AvaTaxClient {
     public FetchResult<HashMap<String, String>> listSettingsByCompanyAsync(int companyId, String filter, String include, Integer top, Integer skip, String orderBy)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/settings");
-        path.ApplyField("companyId", companyId);
-        path.AddQuery("$filter", filter);
-        path.AddQuery("$include", include);
-        path.AddQuery("$top", top);
-        path.AddQuery("$skip", skip);
-        path.AddQuery("$orderBy", orderBy);
+        path.applyField("companyId", companyId);
+        path.addQuery("$filter", filter);
+        path.addQuery("$include", include);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
         return ((RestCall<FetchResult<SettingModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<SettingModel>>(){})).call();
     }
 
@@ -7077,11 +7077,11 @@ public class AvaTaxClient {
     public FetchResult<SettingModel> querySettings(String filter, String include, Integer top, Integer skip, String orderBy)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/settings");
-        path.AddQuery("$filter", filter);
-        path.AddQuery("$include", include);
-        path.AddQuery("$top", top);
-        path.AddQuery("$skip", skip);
-        path.AddQuery("$orderBy", orderBy);
+        path.addQuery("$filter", filter);
+        path.addQuery("$include", include);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
         return ((RestCall<FetchResult<SettingModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<SettingModel>>(){})).call();
     }
 
@@ -7108,11 +7108,11 @@ public class AvaTaxClient {
     public FetchResult<HashMap<String, String>> querySettingsAsync(String filter, String include, Integer top, Integer skip, String orderBy)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/settings");
-        path.AddQuery("$filter", filter);
-        path.AddQuery("$include", include);
-        path.AddQuery("$top", top);
-        path.AddQuery("$skip", skip);
-        path.AddQuery("$orderBy", orderBy);
+        path.addQuery("$filter", filter);
+        path.addQuery("$include", include);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
         return ((RestCall<FetchResult<SettingModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<SettingModel>>(){})).call();
     }
 
@@ -7136,8 +7136,8 @@ public class AvaTaxClient {
     public SettingModel updateSetting(int companyId, int id, SettingModel model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/settings/{id}");
-        path.ApplyField("companyId", companyId);
-        path.ApplyField("id", id);
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
         return ((RestCall<SettingModel>)restCallFactory.createRestCall("Put", path, model, new TypeToken<SettingModel>(){})).call();
     }
 
@@ -7161,8 +7161,8 @@ public class AvaTaxClient {
     public SettingModel updateSettingAsync(int companyId, int id, SettingModel model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/settings/{id}");
-        path.ApplyField("companyId", companyId);
-        path.ApplyField("id", id);
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
         return ((RestCall<SettingModel>)restCallFactory.createRestCall("Put", path, model, new TypeToken<SettingModel>(){})).call();
     }
 
@@ -7179,8 +7179,8 @@ public class AvaTaxClient {
     public SubscriptionModel getSubscription(int accountId, int id)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/subscriptions/{id}");
-        path.ApplyField("accountId", accountId);
-        path.ApplyField("id", id);
+        path.applyField("accountId", accountId);
+        path.applyField("id", id);
         return ((RestCall<SubscriptionModel>)restCallFactory.createRestCall("Get", path, null, new TypeToken<SubscriptionModel>(){})).call();
     }
 
@@ -7197,8 +7197,8 @@ public class AvaTaxClient {
     public SubscriptionModel getSubscriptionAsync(int accountId, int id)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/subscriptions/{id}");
-        path.ApplyField("accountId", accountId);
-        path.ApplyField("id", id);
+        path.applyField("accountId", accountId);
+        path.applyField("id", id);
         return ((RestCall<SubscriptionModel>)restCallFactory.createRestCall("Get", path, null, new TypeToken<SubscriptionModel>(){})).call();
     }
 
@@ -7221,11 +7221,11 @@ public class AvaTaxClient {
     public FetchResult<SubscriptionModel> listSubscriptionsByAccount(int accountId, String filter, Integer top, Integer skip, String orderBy)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/subscriptions");
-        path.ApplyField("accountId", accountId);
-        path.AddQuery("$filter", filter);
-        path.AddQuery("$top", top);
-        path.AddQuery("$skip", skip);
-        path.AddQuery("$orderBy", orderBy);
+        path.applyField("accountId", accountId);
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
         return ((RestCall<FetchResult<SubscriptionModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<SubscriptionModel>>(){})).call();
     }
 
@@ -7248,11 +7248,11 @@ public class AvaTaxClient {
     public FetchResult<HashMap<String, String>> listSubscriptionsByAccountAsync(int accountId, String filter, Integer top, Integer skip, String orderBy)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/subscriptions");
-        path.ApplyField("accountId", accountId);
-        path.AddQuery("$filter", filter);
-        path.AddQuery("$top", top);
-        path.AddQuery("$skip", skip);
-        path.AddQuery("$orderBy", orderBy);
+        path.applyField("accountId", accountId);
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
         return ((RestCall<FetchResult<SubscriptionModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<SubscriptionModel>>(){})).call();
     }
 
@@ -7274,10 +7274,10 @@ public class AvaTaxClient {
     public FetchResult<SubscriptionModel> querySubscriptions(String filter, Integer top, Integer skip, String orderBy)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/subscriptions");
-        path.AddQuery("$filter", filter);
-        path.AddQuery("$top", top);
-        path.AddQuery("$skip", skip);
-        path.AddQuery("$orderBy", orderBy);
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
         return ((RestCall<FetchResult<SubscriptionModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<SubscriptionModel>>(){})).call();
     }
 
@@ -7299,10 +7299,10 @@ public class AvaTaxClient {
     public FetchResult<HashMap<String, String>> querySubscriptionsAsync(String filter, Integer top, Integer skip, String orderBy)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/subscriptions");
-        path.AddQuery("$filter", filter);
-        path.AddQuery("$top", top);
-        path.AddQuery("$skip", skip);
-        path.AddQuery("$orderBy", orderBy);
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
         return ((RestCall<FetchResult<SubscriptionModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<SubscriptionModel>>(){})).call();
     }
 
@@ -7321,7 +7321,7 @@ public class AvaTaxClient {
     public List<TaxCodeModel> createTaxCodes(int companyId, ArrayList<TaxCodeModel> model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/taxcodes");
-        path.ApplyField("companyId", companyId);
+        path.applyField("companyId", companyId);
         return ((RestCall<List<TaxCodeModel>>)restCallFactory.createRestCall("Post", path, model, new TypeToken<List<TaxCodeModel>>(){})).call();
     }
 
@@ -7340,7 +7340,7 @@ public class AvaTaxClient {
     public ArrayList<TaxCodeModel> createTaxCodesAsync(int companyId, ArrayList<TaxCodeModel> model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/taxcodes");
-        path.ApplyField("companyId", companyId);
+        path.applyField("companyId", companyId);
         return ((RestCall<List<TaxCodeModel>>)restCallFactory.createRestCall("Post", path, model, new TypeToken<List<TaxCodeModel>>(){})).call();
     }
 
@@ -7354,8 +7354,8 @@ public class AvaTaxClient {
     public List<ErrorDetail> deleteTaxCode(int companyId, int id)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/taxcodes/{id}");
-        path.ApplyField("companyId", companyId);
-        path.ApplyField("id", id);
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
         return ((RestCall<List<ErrorDetail>>)restCallFactory.createRestCall("Delete", path, null, new TypeToken<List<ErrorDetail>>(){})).call();
     }
 
@@ -7369,8 +7369,8 @@ public class AvaTaxClient {
     public ArrayList<ErrorDetail> deleteTaxCodeAsync(int companyId, int id)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/taxcodes/{id}");
-        path.ApplyField("companyId", companyId);
-        path.ApplyField("id", id);
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
         return ((RestCall<List<ErrorDetail>>)restCallFactory.createRestCall("Delete", path, null, new TypeToken<List<ErrorDetail>>(){})).call();
     }
 
@@ -7389,8 +7389,8 @@ public class AvaTaxClient {
     public TaxCodeModel getTaxCode(int companyId, int id)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/taxcodes/{id}");
-        path.ApplyField("companyId", companyId);
-        path.ApplyField("id", id);
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
         return ((RestCall<TaxCodeModel>)restCallFactory.createRestCall("Get", path, null, new TypeToken<TaxCodeModel>(){})).call();
     }
 
@@ -7409,8 +7409,8 @@ public class AvaTaxClient {
     public TaxCodeModel getTaxCodeAsync(int companyId, int id)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/taxcodes/{id}");
-        path.ApplyField("companyId", companyId);
-        path.ApplyField("id", id);
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
         return ((RestCall<TaxCodeModel>)restCallFactory.createRestCall("Get", path, null, new TypeToken<TaxCodeModel>(){})).call();
     }
 
@@ -7436,12 +7436,12 @@ public class AvaTaxClient {
     public FetchResult<TaxCodeModel> listTaxCodesByCompany(int companyId, String filter, String include, Integer top, Integer skip, String orderBy)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/taxcodes");
-        path.ApplyField("companyId", companyId);
-        path.AddQuery("$filter", filter);
-        path.AddQuery("$include", include);
-        path.AddQuery("$top", top);
-        path.AddQuery("$skip", skip);
-        path.AddQuery("$orderBy", orderBy);
+        path.applyField("companyId", companyId);
+        path.addQuery("$filter", filter);
+        path.addQuery("$include", include);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
         return ((RestCall<FetchResult<TaxCodeModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<TaxCodeModel>>(){})).call();
     }
 
@@ -7467,12 +7467,12 @@ public class AvaTaxClient {
     public FetchResult<HashMap<String, String>> listTaxCodesByCompanyAsync(int companyId, String filter, String include, Integer top, Integer skip, String orderBy)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/taxcodes");
-        path.ApplyField("companyId", companyId);
-        path.AddQuery("$filter", filter);
-        path.AddQuery("$include", include);
-        path.AddQuery("$top", top);
-        path.AddQuery("$skip", skip);
-        path.AddQuery("$orderBy", orderBy);
+        path.applyField("companyId", companyId);
+        path.addQuery("$filter", filter);
+        path.addQuery("$include", include);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
         return ((RestCall<FetchResult<TaxCodeModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<TaxCodeModel>>(){})).call();
     }
 
@@ -7497,11 +7497,11 @@ public class AvaTaxClient {
     public FetchResult<TaxCodeModel> queryTaxCodes(String filter, String include, Integer top, Integer skip, String orderBy)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/taxcodes");
-        path.AddQuery("$filter", filter);
-        path.AddQuery("$include", include);
-        path.AddQuery("$top", top);
-        path.AddQuery("$skip", skip);
-        path.AddQuery("$orderBy", orderBy);
+        path.addQuery("$filter", filter);
+        path.addQuery("$include", include);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
         return ((RestCall<FetchResult<TaxCodeModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<TaxCodeModel>>(){})).call();
     }
 
@@ -7526,11 +7526,11 @@ public class AvaTaxClient {
     public FetchResult<HashMap<String, String>> queryTaxCodesAsync(String filter, String include, Integer top, Integer skip, String orderBy)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/taxcodes");
-        path.AddQuery("$filter", filter);
-        path.AddQuery("$include", include);
-        path.AddQuery("$top", top);
-        path.AddQuery("$skip", skip);
-        path.AddQuery("$orderBy", orderBy);
+        path.addQuery("$filter", filter);
+        path.addQuery("$include", include);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
         return ((RestCall<FetchResult<TaxCodeModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<TaxCodeModel>>(){})).call();
     }
 
@@ -7552,8 +7552,8 @@ public class AvaTaxClient {
     public TaxCodeModel updateTaxCode(int companyId, int id, TaxCodeModel model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/taxcodes/{id}");
-        path.ApplyField("companyId", companyId);
-        path.ApplyField("id", id);
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
         return ((RestCall<TaxCodeModel>)restCallFactory.createRestCall("Put", path, model, new TypeToken<TaxCodeModel>(){})).call();
     }
 
@@ -7575,8 +7575,8 @@ public class AvaTaxClient {
     public TaxCodeModel updateTaxCodeAsync(int companyId, int id, TaxCodeModel model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/taxcodes/{id}");
-        path.ApplyField("companyId", companyId);
-        path.ApplyField("id", id);
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
         return ((RestCall<TaxCodeModel>)restCallFactory.createRestCall("Put", path, model, new TypeToken<TaxCodeModel>(){})).call();
     }
 
@@ -7595,7 +7595,7 @@ public class AvaTaxClient {
     public List<TaxRuleModel> createTaxRules(int companyId, ArrayList<TaxRuleModel> model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/taxrules");
-        path.ApplyField("companyId", companyId);
+        path.applyField("companyId", companyId);
         return ((RestCall<List<TaxRuleModel>>)restCallFactory.createRestCall("Post", path, model, new TypeToken<List<TaxRuleModel>>(){})).call();
     }
 
@@ -7614,7 +7614,7 @@ public class AvaTaxClient {
     public ArrayList<TaxRuleModel> createTaxRulesAsync(int companyId, ArrayList<TaxRuleModel> model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/taxrules");
-        path.ApplyField("companyId", companyId);
+        path.applyField("companyId", companyId);
         return ((RestCall<List<TaxRuleModel>>)restCallFactory.createRestCall("Post", path, model, new TypeToken<List<TaxRuleModel>>(){})).call();
     }
 
@@ -7628,8 +7628,8 @@ public class AvaTaxClient {
     public List<ErrorDetail> deleteTaxRule(int companyId, int id)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/taxrules/{id}");
-        path.ApplyField("companyId", companyId);
-        path.ApplyField("id", id);
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
         return ((RestCall<List<ErrorDetail>>)restCallFactory.createRestCall("Delete", path, null, new TypeToken<List<ErrorDetail>>(){})).call();
     }
 
@@ -7643,8 +7643,8 @@ public class AvaTaxClient {
     public ArrayList<ErrorDetail> deleteTaxRuleAsync(int companyId, int id)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/taxrules/{id}");
-        path.ApplyField("companyId", companyId);
-        path.ApplyField("id", id);
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
         return ((RestCall<List<ErrorDetail>>)restCallFactory.createRestCall("Delete", path, null, new TypeToken<List<ErrorDetail>>(){})).call();
     }
 
@@ -7663,8 +7663,8 @@ public class AvaTaxClient {
     public TaxRuleModel getTaxRule(int companyId, int id)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/taxrules/{id}");
-        path.ApplyField("companyId", companyId);
-        path.ApplyField("id", id);
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
         return ((RestCall<TaxRuleModel>)restCallFactory.createRestCall("Get", path, null, new TypeToken<TaxRuleModel>(){})).call();
     }
 
@@ -7683,8 +7683,8 @@ public class AvaTaxClient {
     public TaxRuleModel getTaxRuleAsync(int companyId, int id)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/taxrules/{id}");
-        path.ApplyField("companyId", companyId);
-        path.ApplyField("id", id);
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
         return ((RestCall<TaxRuleModel>)restCallFactory.createRestCall("Get", path, null, new TypeToken<TaxRuleModel>(){})).call();
     }
 
@@ -7710,12 +7710,12 @@ public class AvaTaxClient {
     public FetchResult<TaxRuleModel> listTaxRules(int companyId, String filter, String include, Integer top, Integer skip, String orderBy)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/taxrules");
-        path.ApplyField("companyId", companyId);
-        path.AddQuery("$filter", filter);
-        path.AddQuery("$include", include);
-        path.AddQuery("$top", top);
-        path.AddQuery("$skip", skip);
-        path.AddQuery("$orderBy", orderBy);
+        path.applyField("companyId", companyId);
+        path.addQuery("$filter", filter);
+        path.addQuery("$include", include);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
         return ((RestCall<FetchResult<TaxRuleModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<TaxRuleModel>>(){})).call();
     }
 
@@ -7741,12 +7741,12 @@ public class AvaTaxClient {
     public FetchResult<HashMap<String, String>> listTaxRulesAsync(int companyId, String filter, String include, Integer top, Integer skip, String orderBy)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/taxrules");
-        path.ApplyField("companyId", companyId);
-        path.AddQuery("$filter", filter);
-        path.AddQuery("$include", include);
-        path.AddQuery("$top", top);
-        path.AddQuery("$skip", skip);
-        path.AddQuery("$orderBy", orderBy);
+        path.applyField("companyId", companyId);
+        path.addQuery("$filter", filter);
+        path.addQuery("$include", include);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
         return ((RestCall<FetchResult<TaxRuleModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<TaxRuleModel>>(){})).call();
     }
 
@@ -7771,11 +7771,11 @@ public class AvaTaxClient {
     public FetchResult<TaxRuleModel> queryTaxRules(String filter, String include, Integer top, Integer skip, String orderBy)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/taxrules");
-        path.AddQuery("$filter", filter);
-        path.AddQuery("$include", include);
-        path.AddQuery("$top", top);
-        path.AddQuery("$skip", skip);
-        path.AddQuery("$orderBy", orderBy);
+        path.addQuery("$filter", filter);
+        path.addQuery("$include", include);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
         return ((RestCall<FetchResult<TaxRuleModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<TaxRuleModel>>(){})).call();
     }
 
@@ -7800,11 +7800,11 @@ public class AvaTaxClient {
     public FetchResult<HashMap<String, String>> queryTaxRulesAsync(String filter, String include, Integer top, Integer skip, String orderBy)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/taxrules");
-        path.AddQuery("$filter", filter);
-        path.AddQuery("$include", include);
-        path.AddQuery("$top", top);
-        path.AddQuery("$skip", skip);
-        path.AddQuery("$orderBy", orderBy);
+        path.addQuery("$filter", filter);
+        path.addQuery("$include", include);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
         return ((RestCall<FetchResult<TaxRuleModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<TaxRuleModel>>(){})).call();
     }
 
@@ -7826,8 +7826,8 @@ public class AvaTaxClient {
     public TaxRuleModel updateTaxRule(int companyId, int id, TaxRuleModel model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/taxrules/{id}");
-        path.ApplyField("companyId", companyId);
-        path.ApplyField("id", id);
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
         return ((RestCall<TaxRuleModel>)restCallFactory.createRestCall("Put", path, model, new TypeToken<TaxRuleModel>(){})).call();
     }
 
@@ -7849,8 +7849,8 @@ public class AvaTaxClient {
     public TaxRuleModel updateTaxRuleAsync(int companyId, int id, TaxRuleModel model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/taxrules/{id}");
-        path.ApplyField("companyId", companyId);
-        path.ApplyField("id", id);
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
         return ((RestCall<TaxRuleModel>)restCallFactory.createRestCall("Put", path, model, new TypeToken<TaxRuleModel>(){})).call();
     }
 
@@ -7882,7 +7882,7 @@ public class AvaTaxClient {
     public TransactionModel addLines(String include, AddTransactionLineModel model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/transactions/lines/add");
-        path.AddQuery("$include", include);
+        path.addQuery("$include", include);
         return ((RestCall<TransactionModel>)restCallFactory.createRestCall("Post", path, model, new TypeToken<TransactionModel>(){})).call();
     }
 
@@ -7914,7 +7914,7 @@ public class AvaTaxClient {
     public TransactionModel addLinesAsync(String include, AddTransactionLineModel model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/transactions/lines/add");
-        path.AddQuery("$include", include);
+        path.addQuery("$include", include);
         return ((RestCall<TransactionModel>)restCallFactory.createRestCall("Post", path, model, new TypeToken<TransactionModel>(){})).call();
     }
 
@@ -7940,8 +7940,8 @@ public class AvaTaxClient {
     public TransactionModel adjustTransaction(String companyCode, String transactionCode, AdjustTransactionModel model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyCode}/transactions/{transactionCode}/adjust");
-        path.ApplyField("companyCode", companyCode);
-        path.ApplyField("transactionCode", transactionCode);
+        path.applyField("companyCode", companyCode);
+        path.applyField("transactionCode", transactionCode);
         return ((RestCall<TransactionModel>)restCallFactory.createRestCall("Post", path, model, new TypeToken<TransactionModel>(){})).call();
     }
 
@@ -7967,8 +7967,8 @@ public class AvaTaxClient {
     public TransactionModel adjustTransactionAsync(String companyCode, String transactionCode, AdjustTransactionModel model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyCode}/transactions/{transactionCode}/adjust");
-        path.ApplyField("companyCode", companyCode);
-        path.ApplyField("transactionCode", transactionCode);
+        path.applyField("companyCode", companyCode);
+        path.applyField("transactionCode", transactionCode);
         return ((RestCall<TransactionModel>)restCallFactory.createRestCall("Post", path, model, new TypeToken<TransactionModel>(){})).call();
     }
 
@@ -7997,8 +7997,8 @@ public class AvaTaxClient {
     public AuditTransactionModel auditTransaction(String companyCode, String transactionCode)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyCode}/transactions/{transactionCode}/audit");
-        path.ApplyField("companyCode", companyCode);
-        path.ApplyField("transactionCode", transactionCode);
+        path.applyField("companyCode", companyCode);
+        path.applyField("transactionCode", transactionCode);
         return ((RestCall<AuditTransactionModel>)restCallFactory.createRestCall("Get", path, null, new TypeToken<AuditTransactionModel>(){})).call();
     }
 
@@ -8027,8 +8027,8 @@ public class AvaTaxClient {
     public AuditTransactionModel auditTransactionAsync(String companyCode, String transactionCode)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyCode}/transactions/{transactionCode}/audit");
-        path.ApplyField("companyCode", companyCode);
-        path.ApplyField("transactionCode", transactionCode);
+        path.applyField("companyCode", companyCode);
+        path.applyField("transactionCode", transactionCode);
         return ((RestCall<AuditTransactionModel>)restCallFactory.createRestCall("Get", path, null, new TypeToken<AuditTransactionModel>(){})).call();
     }
 
@@ -8058,9 +8058,9 @@ public class AvaTaxClient {
     public AuditTransactionModel auditTransactionWithType(String companyCode, String transactionCode, DocumentType documentType)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyCode}/transactions/{transactionCode}/types/{documentType}/audit");
-        path.ApplyField("companyCode", companyCode);
-        path.ApplyField("transactionCode", transactionCode);
-        path.ApplyField("documentType", documentType);
+        path.applyField("companyCode", companyCode);
+        path.applyField("transactionCode", transactionCode);
+        path.applyField("documentType", documentType);
         return ((RestCall<AuditTransactionModel>)restCallFactory.createRestCall("Get", path, null, new TypeToken<AuditTransactionModel>(){})).call();
     }
 
@@ -8090,9 +8090,9 @@ public class AvaTaxClient {
     public AuditTransactionModel auditTransactionWithTypeAsync(String companyCode, String transactionCode, DocumentType documentType)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyCode}/transactions/{transactionCode}/types/{documentType}/audit");
-        path.ApplyField("companyCode", companyCode);
-        path.ApplyField("transactionCode", transactionCode);
-        path.ApplyField("documentType", documentType);
+        path.applyField("companyCode", companyCode);
+        path.applyField("transactionCode", transactionCode);
+        path.applyField("documentType", documentType);
         return ((RestCall<AuditTransactionModel>)restCallFactory.createRestCall("Get", path, null, new TypeToken<AuditTransactionModel>(){})).call();
     }
 
@@ -8149,8 +8149,8 @@ public class AvaTaxClient {
     public TransactionModel changeTransactionCode(String companyCode, String transactionCode, ChangeTransactionCodeModel model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyCode}/transactions/{transactionCode}/changecode");
-        path.ApplyField("companyCode", companyCode);
-        path.ApplyField("transactionCode", transactionCode);
+        path.applyField("companyCode", companyCode);
+        path.applyField("transactionCode", transactionCode);
         return ((RestCall<TransactionModel>)restCallFactory.createRestCall("Post", path, model, new TypeToken<TransactionModel>(){})).call();
     }
 
@@ -8169,8 +8169,8 @@ public class AvaTaxClient {
     public TransactionModel changeTransactionCodeAsync(String companyCode, String transactionCode, ChangeTransactionCodeModel model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyCode}/transactions/{transactionCode}/changecode");
-        path.ApplyField("companyCode", companyCode);
-        path.ApplyField("transactionCode", transactionCode);
+        path.applyField("companyCode", companyCode);
+        path.applyField("transactionCode", transactionCode);
         return ((RestCall<TransactionModel>)restCallFactory.createRestCall("Post", path, model, new TypeToken<TransactionModel>(){})).call();
     }
 
@@ -8190,8 +8190,8 @@ public class AvaTaxClient {
     public TransactionModel commitTransaction(String companyCode, String transactionCode, CommitTransactionModel model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyCode}/transactions/{transactionCode}/commit");
-        path.ApplyField("companyCode", companyCode);
-        path.ApplyField("transactionCode", transactionCode);
+        path.applyField("companyCode", companyCode);
+        path.applyField("transactionCode", transactionCode);
         return ((RestCall<TransactionModel>)restCallFactory.createRestCall("Post", path, model, new TypeToken<TransactionModel>(){})).call();
     }
 
@@ -8211,8 +8211,8 @@ public class AvaTaxClient {
     public TransactionModel commitTransactionAsync(String companyCode, String transactionCode, CommitTransactionModel model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyCode}/transactions/{transactionCode}/commit");
-        path.ApplyField("companyCode", companyCode);
-        path.ApplyField("transactionCode", transactionCode);
+        path.applyField("companyCode", companyCode);
+        path.applyField("transactionCode", transactionCode);
         return ((RestCall<TransactionModel>)restCallFactory.createRestCall("Post", path, model, new TypeToken<TransactionModel>(){})).call();
     }
 
@@ -8244,7 +8244,7 @@ public class AvaTaxClient {
     public TransactionModel createOrAdjustTransaction(String include, CreateOrAdjustTransactionModel model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/transactions/createoradjust");
-        path.AddQuery("$include", include);
+        path.addQuery("$include", include);
         return ((RestCall<TransactionModel>)restCallFactory.createRestCall("Post", path, model, new TypeToken<TransactionModel>(){})).call();
     }
 
@@ -8276,7 +8276,7 @@ public class AvaTaxClient {
     public TransactionModel createOrAdjustTransactionAsync(String include, CreateOrAdjustTransactionModel model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/transactions/createoradjust");
-        path.AddQuery("$include", include);
+        path.addQuery("$include", include);
         return ((RestCall<TransactionModel>)restCallFactory.createRestCall("Post", path, model, new TypeToken<TransactionModel>(){})).call();
     }
 
@@ -8308,7 +8308,7 @@ public class AvaTaxClient {
     public TransactionModel createTransaction(String include, CreateTransactionModel model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/transactions/create");
-        path.AddQuery("$include", include);
+        path.addQuery("$include", include);
         return ((RestCall<TransactionModel>)restCallFactory.createRestCall("Post", path, model, new TypeToken<TransactionModel>(){})).call();
     }
 
@@ -8340,7 +8340,7 @@ public class AvaTaxClient {
     public TransactionModel createTransactionAsync(String include, CreateTransactionModel model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/transactions/create");
-        path.AddQuery("$include", include);
+        path.addQuery("$include", include);
         return ((RestCall<TransactionModel>)restCallFactory.createRestCall("Post", path, model, new TypeToken<TransactionModel>(){})).call();
     }
 
@@ -8369,7 +8369,7 @@ public class AvaTaxClient {
     public TransactionModel deleteLines(String include, RemoveTransactionLineModel model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/transactions/lines/delete");
-        path.AddQuery("$include", include);
+        path.addQuery("$include", include);
         return ((RestCall<TransactionModel>)restCallFactory.createRestCall("Post", path, model, new TypeToken<TransactionModel>(){})).call();
     }
 
@@ -8398,7 +8398,7 @@ public class AvaTaxClient {
     public TransactionModel deleteLinesAsync(String include, RemoveTransactionLineModel model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/transactions/lines/delete");
-        path.AddQuery("$include", include);
+        path.addQuery("$include", include);
         return ((RestCall<TransactionModel>)restCallFactory.createRestCall("Post", path, model, new TypeToken<TransactionModel>(){})).call();
     }
 
@@ -8422,9 +8422,9 @@ public class AvaTaxClient {
     public TransactionModel getTransactionByCode(String companyCode, String transactionCode, String include)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyCode}/transactions/{transactionCode}");
-        path.ApplyField("companyCode", companyCode);
-        path.ApplyField("transactionCode", transactionCode);
-        path.AddQuery("$include", include);
+        path.applyField("companyCode", companyCode);
+        path.applyField("transactionCode", transactionCode);
+        path.addQuery("$include", include);
         return ((RestCall<TransactionModel>)restCallFactory.createRestCall("Get", path, null, new TypeToken<TransactionModel>(){})).call();
     }
 
@@ -8448,9 +8448,9 @@ public class AvaTaxClient {
     public TransactionModel getTransactionByCodeAsync(String companyCode, String transactionCode, String include)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyCode}/transactions/{transactionCode}");
-        path.ApplyField("companyCode", companyCode);
-        path.ApplyField("transactionCode", transactionCode);
-        path.AddQuery("$include", include);
+        path.applyField("companyCode", companyCode);
+        path.applyField("transactionCode", transactionCode);
+        path.addQuery("$include", include);
         return ((RestCall<TransactionModel>)restCallFactory.createRestCall("Get", path, null, new TypeToken<TransactionModel>(){})).call();
     }
 
@@ -8475,10 +8475,10 @@ public class AvaTaxClient {
     public TransactionModel getTransactionByCodeAndType(String companyCode, String transactionCode, DocumentType documentType, String include)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyCode}/transactions/{transactionCode}/types/{documentType}");
-        path.ApplyField("companyCode", companyCode);
-        path.ApplyField("transactionCode", transactionCode);
-        path.ApplyField("documentType", documentType);
-        path.AddQuery("$include", include);
+        path.applyField("companyCode", companyCode);
+        path.applyField("transactionCode", transactionCode);
+        path.applyField("documentType", documentType);
+        path.addQuery("$include", include);
         return ((RestCall<TransactionModel>)restCallFactory.createRestCall("Get", path, null, new TypeToken<TransactionModel>(){})).call();
     }
 
@@ -8503,10 +8503,10 @@ public class AvaTaxClient {
     public TransactionModel getTransactionByCodeAndTypeAsync(String companyCode, String transactionCode, DocumentType documentType, String include)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyCode}/transactions/{transactionCode}/types/{documentType}");
-        path.ApplyField("companyCode", companyCode);
-        path.ApplyField("transactionCode", transactionCode);
-        path.ApplyField("documentType", documentType);
-        path.AddQuery("$include", include);
+        path.applyField("companyCode", companyCode);
+        path.applyField("transactionCode", transactionCode);
+        path.applyField("documentType", documentType);
+        path.addQuery("$include", include);
         return ((RestCall<TransactionModel>)restCallFactory.createRestCall("Get", path, null, new TypeToken<TransactionModel>(){})).call();
     }
 
@@ -8531,8 +8531,8 @@ public class AvaTaxClient {
     public TransactionModel getTransactionById(long id, String include)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/transactions/{id}");
-        path.ApplyField("id", id);
-        path.AddQuery("$include", include);
+        path.applyField("id", id);
+        path.addQuery("$include", include);
         return ((RestCall<TransactionModel>)restCallFactory.createRestCall("Get", path, null, new TypeToken<TransactionModel>(){})).call();
     }
 
@@ -8557,8 +8557,8 @@ public class AvaTaxClient {
     public TransactionModel getTransactionByIdAsync(long id, String include)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/transactions/{id}");
-        path.ApplyField("id", id);
-        path.AddQuery("$include", include);
+        path.applyField("id", id);
+        path.addQuery("$include", include);
         return ((RestCall<TransactionModel>)restCallFactory.createRestCall("Get", path, null, new TypeToken<TransactionModel>(){})).call();
     }
 
@@ -8589,12 +8589,12 @@ public class AvaTaxClient {
     public FetchResult<TransactionModel> listTransactionsByCompany(String companyCode, String include, String filter, Integer top, Integer skip, String orderBy)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyCode}/transactions");
-        path.ApplyField("companyCode", companyCode);
-        path.AddQuery("$include", include);
-        path.AddQuery("$filter", filter);
-        path.AddQuery("$top", top);
-        path.AddQuery("$skip", skip);
-        path.AddQuery("$orderBy", orderBy);
+        path.applyField("companyCode", companyCode);
+        path.addQuery("$include", include);
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
         return ((RestCall<FetchResult<TransactionModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<TransactionModel>>(){})).call();
     }
 
@@ -8625,12 +8625,12 @@ public class AvaTaxClient {
     public FetchResult<HashMap<String, String>> listTransactionsByCompanyAsync(String companyCode, String include, String filter, Integer top, Integer skip, String orderBy)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyCode}/transactions");
-        path.ApplyField("companyCode", companyCode);
-        path.AddQuery("$include", include);
-        path.AddQuery("$filter", filter);
-        path.AddQuery("$top", top);
-        path.AddQuery("$skip", skip);
-        path.AddQuery("$orderBy", orderBy);
+        path.applyField("companyCode", companyCode);
+        path.addQuery("$include", include);
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
         return ((RestCall<FetchResult<TransactionModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<TransactionModel>>(){})).call();
     }
 
@@ -8654,8 +8654,8 @@ public class AvaTaxClient {
     public TransactionModel lockTransaction(String companyCode, String transactionCode, LockTransactionModel model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyCode}/transactions/{transactionCode}/lock");
-        path.ApplyField("companyCode", companyCode);
-        path.ApplyField("transactionCode", transactionCode);
+        path.applyField("companyCode", companyCode);
+        path.applyField("transactionCode", transactionCode);
         return ((RestCall<TransactionModel>)restCallFactory.createRestCall("Post", path, model, new TypeToken<TransactionModel>(){})).call();
     }
 
@@ -8679,8 +8679,8 @@ public class AvaTaxClient {
     public TransactionModel lockTransactionAsync(String companyCode, String transactionCode, LockTransactionModel model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyCode}/transactions/{transactionCode}/lock");
-        path.ApplyField("companyCode", companyCode);
-        path.ApplyField("transactionCode", transactionCode);
+        path.applyField("companyCode", companyCode);
+        path.applyField("transactionCode", transactionCode);
         return ((RestCall<TransactionModel>)restCallFactory.createRestCall("Post", path, model, new TypeToken<TransactionModel>(){})).call();
     }
 
@@ -8712,9 +8712,9 @@ public class AvaTaxClient {
     public TransactionModel refundTransaction(String companyCode, String transactionCode, String include, RefundTransactionModel model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyCode}/transactions/{transactionCode}/refund");
-        path.ApplyField("companyCode", companyCode);
-        path.ApplyField("transactionCode", transactionCode);
-        path.AddQuery("$include", include);
+        path.applyField("companyCode", companyCode);
+        path.applyField("transactionCode", transactionCode);
+        path.addQuery("$include", include);
         return ((RestCall<TransactionModel>)restCallFactory.createRestCall("Post", path, model, new TypeToken<TransactionModel>(){})).call();
     }
 
@@ -8746,9 +8746,9 @@ public class AvaTaxClient {
     public TransactionModel refundTransactionAsync(String companyCode, String transactionCode, String include, RefundTransactionModel model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyCode}/transactions/{transactionCode}/refund");
-        path.ApplyField("companyCode", companyCode);
-        path.ApplyField("transactionCode", transactionCode);
-        path.AddQuery("$include", include);
+        path.applyField("companyCode", companyCode);
+        path.applyField("transactionCode", transactionCode);
+        path.addQuery("$include", include);
         return ((RestCall<TransactionModel>)restCallFactory.createRestCall("Post", path, model, new TypeToken<TransactionModel>(){})).call();
     }
 
@@ -8763,8 +8763,8 @@ public class AvaTaxClient {
     public TransactionModel settleTransaction(String companyCode, String transactionCode, SettleTransactionModel model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyCode}/transactions/{transactionCode}/settle");
-        path.ApplyField("companyCode", companyCode);
-        path.ApplyField("transactionCode", transactionCode);
+        path.applyField("companyCode", companyCode);
+        path.applyField("transactionCode", transactionCode);
         return ((RestCall<TransactionModel>)restCallFactory.createRestCall("Post", path, model, new TypeToken<TransactionModel>(){})).call();
     }
 
@@ -8779,8 +8779,8 @@ public class AvaTaxClient {
     public TransactionModel settleTransactionAsync(String companyCode, String transactionCode, SettleTransactionModel model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyCode}/transactions/{transactionCode}/settle");
-        path.ApplyField("companyCode", companyCode);
-        path.ApplyField("transactionCode", transactionCode);
+        path.applyField("companyCode", companyCode);
+        path.applyField("transactionCode", transactionCode);
         return ((RestCall<TransactionModel>)restCallFactory.createRestCall("Post", path, model, new TypeToken<TransactionModel>(){})).call();
     }
 
@@ -8799,8 +8799,8 @@ public class AvaTaxClient {
     public TransactionModel verifyTransaction(String companyCode, String transactionCode, VerifyTransactionModel model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyCode}/transactions/{transactionCode}/verify");
-        path.ApplyField("companyCode", companyCode);
-        path.ApplyField("transactionCode", transactionCode);
+        path.applyField("companyCode", companyCode);
+        path.applyField("transactionCode", transactionCode);
         return ((RestCall<TransactionModel>)restCallFactory.createRestCall("Post", path, model, new TypeToken<TransactionModel>(){})).call();
     }
 
@@ -8819,8 +8819,8 @@ public class AvaTaxClient {
     public TransactionModel verifyTransactionAsync(String companyCode, String transactionCode, VerifyTransactionModel model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyCode}/transactions/{transactionCode}/verify");
-        path.ApplyField("companyCode", companyCode);
-        path.ApplyField("transactionCode", transactionCode);
+        path.applyField("companyCode", companyCode);
+        path.applyField("transactionCode", transactionCode);
         return ((RestCall<TransactionModel>)restCallFactory.createRestCall("Post", path, model, new TypeToken<TransactionModel>(){})).call();
     }
 
@@ -8840,8 +8840,8 @@ public class AvaTaxClient {
     public TransactionModel voidTransaction(String companyCode, String transactionCode, VoidTransactionModel model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyCode}/transactions/{transactionCode}/void");
-        path.ApplyField("companyCode", companyCode);
-        path.ApplyField("transactionCode", transactionCode);
+        path.applyField("companyCode", companyCode);
+        path.applyField("transactionCode", transactionCode);
         return ((RestCall<TransactionModel>)restCallFactory.createRestCall("Post", path, model, new TypeToken<TransactionModel>(){})).call();
     }
 
@@ -8861,8 +8861,8 @@ public class AvaTaxClient {
     public TransactionModel voidTransactionAsync(String companyCode, String transactionCode, VoidTransactionModel model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyCode}/transactions/{transactionCode}/void");
-        path.ApplyField("companyCode", companyCode);
-        path.ApplyField("transactionCode", transactionCode);
+        path.applyField("companyCode", companyCode);
+        path.applyField("transactionCode", transactionCode);
         return ((RestCall<TransactionModel>)restCallFactory.createRestCall("Post", path, model, new TypeToken<TransactionModel>(){})).call();
     }
 
@@ -8878,7 +8878,7 @@ public class AvaTaxClient {
     public List<UPCModel> createUPCs(int companyId, ArrayList<UPCModel> model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/upcs");
-        path.ApplyField("companyId", companyId);
+        path.applyField("companyId", companyId);
         return ((RestCall<List<UPCModel>>)restCallFactory.createRestCall("Post", path, model, new TypeToken<List<UPCModel>>(){})).call();
     }
 
@@ -8894,7 +8894,7 @@ public class AvaTaxClient {
     public ArrayList<UPCModel> createUPCsAsync(int companyId, ArrayList<UPCModel> model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/upcs");
-        path.ApplyField("companyId", companyId);
+        path.applyField("companyId", companyId);
         return ((RestCall<List<UPCModel>>)restCallFactory.createRestCall("Post", path, model, new TypeToken<List<UPCModel>>(){})).call();
     }
 
@@ -8908,8 +8908,8 @@ public class AvaTaxClient {
     public List<ErrorDetail> deleteUPC(int companyId, int id)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/upcs/{id}");
-        path.ApplyField("companyId", companyId);
-        path.ApplyField("id", id);
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
         return ((RestCall<List<ErrorDetail>>)restCallFactory.createRestCall("Delete", path, null, new TypeToken<List<ErrorDetail>>(){})).call();
     }
 
@@ -8923,8 +8923,8 @@ public class AvaTaxClient {
     public ArrayList<ErrorDetail> deleteUPCAsync(int companyId, int id)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/upcs/{id}");
-        path.ApplyField("companyId", companyId);
-        path.ApplyField("id", id);
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
         return ((RestCall<List<ErrorDetail>>)restCallFactory.createRestCall("Delete", path, null, new TypeToken<List<ErrorDetail>>(){})).call();
     }
 
@@ -8940,8 +8940,8 @@ public class AvaTaxClient {
     public UPCModel getUPC(int companyId, int id)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/upcs/{id}");
-        path.ApplyField("companyId", companyId);
-        path.ApplyField("id", id);
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
         return ((RestCall<UPCModel>)restCallFactory.createRestCall("Get", path, null, new TypeToken<UPCModel>(){})).call();
     }
 
@@ -8957,8 +8957,8 @@ public class AvaTaxClient {
     public UPCModel getUPCAsync(int companyId, int id)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/upcs/{id}");
-        path.ApplyField("companyId", companyId);
-        path.ApplyField("id", id);
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
         return ((RestCall<UPCModel>)restCallFactory.createRestCall("Get", path, null, new TypeToken<UPCModel>(){})).call();
     }
 
@@ -8981,12 +8981,12 @@ public class AvaTaxClient {
     public FetchResult<UPCModel> listUPCsByCompany(int companyId, String filter, String include, Integer top, Integer skip, String orderBy)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/upcs");
-        path.ApplyField("companyId", companyId);
-        path.AddQuery("$filter", filter);
-        path.AddQuery("$include", include);
-        path.AddQuery("$top", top);
-        path.AddQuery("$skip", skip);
-        path.AddQuery("$orderBy", orderBy);
+        path.applyField("companyId", companyId);
+        path.addQuery("$filter", filter);
+        path.addQuery("$include", include);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
         return ((RestCall<FetchResult<UPCModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<UPCModel>>(){})).call();
     }
 
@@ -9009,12 +9009,12 @@ public class AvaTaxClient {
     public FetchResult<HashMap<String, String>> listUPCsByCompanyAsync(int companyId, String filter, String include, Integer top, Integer skip, String orderBy)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/upcs");
-        path.ApplyField("companyId", companyId);
-        path.AddQuery("$filter", filter);
-        path.AddQuery("$include", include);
-        path.AddQuery("$top", top);
-        path.AddQuery("$skip", skip);
-        path.AddQuery("$orderBy", orderBy);
+        path.applyField("companyId", companyId);
+        path.addQuery("$filter", filter);
+        path.addQuery("$include", include);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
         return ((RestCall<FetchResult<UPCModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<UPCModel>>(){})).call();
     }
 
@@ -9036,11 +9036,11 @@ public class AvaTaxClient {
     public FetchResult<UPCModel> queryUPCs(String filter, String include, Integer top, Integer skip, String orderBy)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/upcs");
-        path.AddQuery("$filter", filter);
-        path.AddQuery("$include", include);
-        path.AddQuery("$top", top);
-        path.AddQuery("$skip", skip);
-        path.AddQuery("$orderBy", orderBy);
+        path.addQuery("$filter", filter);
+        path.addQuery("$include", include);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
         return ((RestCall<FetchResult<UPCModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<UPCModel>>(){})).call();
     }
 
@@ -9062,11 +9062,11 @@ public class AvaTaxClient {
     public FetchResult<HashMap<String, String>> queryUPCsAsync(String filter, String include, Integer top, Integer skip, String orderBy)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/upcs");
-        path.AddQuery("$filter", filter);
-        path.AddQuery("$include", include);
-        path.AddQuery("$top", top);
-        path.AddQuery("$skip", skip);
-        path.AddQuery("$orderBy", orderBy);
+        path.addQuery("$filter", filter);
+        path.addQuery("$include", include);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
         return ((RestCall<FetchResult<UPCModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<UPCModel>>(){})).call();
     }
 
@@ -9085,8 +9085,8 @@ public class AvaTaxClient {
     public UPCModel updateUPC(int companyId, int id, UPCModel model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/upcs/{id}");
-        path.ApplyField("companyId", companyId);
-        path.ApplyField("id", id);
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
         return ((RestCall<UPCModel>)restCallFactory.createRestCall("Put", path, model, new TypeToken<UPCModel>(){})).call();
     }
 
@@ -9105,8 +9105,8 @@ public class AvaTaxClient {
     public UPCModel updateUPCAsync(int companyId, int id, UPCModel model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/upcs/{id}");
-        path.ApplyField("companyId", companyId);
-        path.ApplyField("id", id);
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
         return ((RestCall<UPCModel>)restCallFactory.createRestCall("Put", path, model, new TypeToken<UPCModel>(){})).call();
     }
 
@@ -9123,9 +9123,9 @@ public class AvaTaxClient {
     public UserModel getUser(int id, int accountId, String include)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/users/{id}");
-        path.ApplyField("id", id);
-        path.ApplyField("accountId", accountId);
-        path.AddQuery("$include", include);
+        path.applyField("id", id);
+        path.applyField("accountId", accountId);
+        path.addQuery("$include", include);
         return ((RestCall<UserModel>)restCallFactory.createRestCall("Get", path, null, new TypeToken<UserModel>(){})).call();
     }
 
@@ -9142,9 +9142,9 @@ public class AvaTaxClient {
     public UserModel getUserAsync(int id, int accountId, String include)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/users/{id}");
-        path.ApplyField("id", id);
-        path.ApplyField("accountId", accountId);
-        path.AddQuery("$include", include);
+        path.applyField("id", id);
+        path.applyField("accountId", accountId);
+        path.addQuery("$include", include);
         return ((RestCall<UserModel>)restCallFactory.createRestCall("Get", path, null, new TypeToken<UserModel>(){})).call();
     }
 
@@ -9173,8 +9173,8 @@ public class AvaTaxClient {
     public UserEntitlementModel getUserEntitlements(int id, int accountId)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/users/{id}/entitlements");
-        path.ApplyField("id", id);
-        path.ApplyField("accountId", accountId);
+        path.applyField("id", id);
+        path.applyField("accountId", accountId);
         return ((RestCall<UserEntitlementModel>)restCallFactory.createRestCall("Get", path, null, new TypeToken<UserEntitlementModel>(){})).call();
     }
 
@@ -9203,8 +9203,8 @@ public class AvaTaxClient {
     public UserEntitlementModel getUserEntitlementsAsync(int id, int accountId)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/users/{id}/entitlements");
-        path.ApplyField("id", id);
-        path.ApplyField("accountId", accountId);
+        path.applyField("id", id);
+        path.applyField("accountId", accountId);
         return ((RestCall<UserEntitlementModel>)restCallFactory.createRestCall("Get", path, null, new TypeToken<UserEntitlementModel>(){})).call();
     }
 
@@ -9227,12 +9227,12 @@ public class AvaTaxClient {
     public FetchResult<UserModel> listUsersByAccount(int accountId, String include, String filter, Integer top, Integer skip, String orderBy)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/users");
-        path.ApplyField("accountId", accountId);
-        path.AddQuery("$include", include);
-        path.AddQuery("$filter", filter);
-        path.AddQuery("$top", top);
-        path.AddQuery("$skip", skip);
-        path.AddQuery("$orderBy", orderBy);
+        path.applyField("accountId", accountId);
+        path.addQuery("$include", include);
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
         return ((RestCall<FetchResult<UserModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<UserModel>>(){})).call();
     }
 
@@ -9255,12 +9255,12 @@ public class AvaTaxClient {
     public FetchResult<HashMap<String, String>> listUsersByAccountAsync(int accountId, String include, String filter, Integer top, Integer skip, String orderBy)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/users");
-        path.ApplyField("accountId", accountId);
-        path.AddQuery("$include", include);
-        path.AddQuery("$filter", filter);
-        path.AddQuery("$top", top);
-        path.AddQuery("$skip", skip);
-        path.AddQuery("$orderBy", orderBy);
+        path.applyField("accountId", accountId);
+        path.addQuery("$include", include);
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
         return ((RestCall<FetchResult<UserModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<UserModel>>(){})).call();
     }
 
@@ -9282,11 +9282,11 @@ public class AvaTaxClient {
     public FetchResult<UserModel> queryUsers(String include, String filter, Integer top, Integer skip, String orderBy)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/users");
-        path.AddQuery("$include", include);
-        path.AddQuery("$filter", filter);
-        path.AddQuery("$top", top);
-        path.AddQuery("$skip", skip);
-        path.AddQuery("$orderBy", orderBy);
+        path.addQuery("$include", include);
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
         return ((RestCall<FetchResult<UserModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<UserModel>>(){})).call();
     }
 
@@ -9308,11 +9308,11 @@ public class AvaTaxClient {
     public FetchResult<HashMap<String, String>> queryUsersAsync(String include, String filter, Integer top, Integer skip, String orderBy)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/users");
-        path.AddQuery("$include", include);
-        path.AddQuery("$filter", filter);
-        path.AddQuery("$top", top);
-        path.AddQuery("$skip", skip);
-        path.AddQuery("$orderBy", orderBy);
+        path.addQuery("$include", include);
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
         return ((RestCall<FetchResult<UserModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<UserModel>>(){})).call();
     }
 
@@ -9331,8 +9331,8 @@ public class AvaTaxClient {
     public UserModel updateUser(int id, int accountId, UserModel model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/users/{id}");
-        path.ApplyField("id", id);
-        path.ApplyField("accountId", accountId);
+        path.applyField("id", id);
+        path.applyField("accountId", accountId);
         return ((RestCall<UserModel>)restCallFactory.createRestCall("Put", path, model, new TypeToken<UserModel>(){})).call();
     }
 
@@ -9351,8 +9351,8 @@ public class AvaTaxClient {
     public UserModel updateUserAsync(int id, int accountId, UserModel model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/users/{id}");
-        path.ApplyField("id", id);
-        path.ApplyField("accountId", accountId);
+        path.applyField("id", id);
+        path.applyField("accountId", accountId);
         return ((RestCall<UserModel>)restCallFactory.createRestCall("Put", path, model, new TypeToken<UserModel>(){})).call();
     }
 
@@ -9368,7 +9368,7 @@ public class AvaTaxClient {
     public SubscriptionModel getMySubscription(ServiceTypeId serviceTypeId)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/utilities/subscriptions/{serviceTypeId}");
-        path.ApplyField("serviceTypeId", serviceTypeId);
+        path.applyField("serviceTypeId", serviceTypeId);
         return ((RestCall<SubscriptionModel>)restCallFactory.createRestCall("Get", path, null, new TypeToken<SubscriptionModel>(){})).call();
     }
 
@@ -9384,7 +9384,7 @@ public class AvaTaxClient {
     public SubscriptionModel getMySubscriptionAsync(ServiceTypeId serviceTypeId)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/utilities/subscriptions/{serviceTypeId}");
-        path.ApplyField("serviceTypeId", serviceTypeId);
+        path.applyField("serviceTypeId", serviceTypeId);
         return ((RestCall<SubscriptionModel>)restCallFactory.createRestCall("Get", path, null, new TypeToken<SubscriptionModel>(){})).call();
     }
 
