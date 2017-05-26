@@ -470,14 +470,14 @@ public class AvaTaxClient {
      * @param companyId The ID of the company that owns this batch
      * @param batchId The ID of the batch object
      * @param id The primary key of this batch file object
-     * @return HashMap<String, String>
+     * @return String
      */
-    public HashMap<String, String> downloadBatch(Integer companyId, Integer batchId, Integer id) throws Exception {
+    public String downloadBatch(Integer companyId, Integer batchId, Integer id) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/batches/{batchId}/files/{id}/attachment");
         path.applyField("companyId", companyId);
         path.applyField("batchId", batchId);
         path.applyField("id", id);
-        return ((RestCall<HashMap<String, String>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<HashMap<String, String>>(){})).call();
+        return ((RestCall<String>)restCallFactory.createRestCall("Get", path, null, new TypeToken<String>(){})).call();
     }
 
     /**
@@ -486,14 +486,14 @@ public class AvaTaxClient {
      * @param companyId The ID of the company that owns this batch
      * @param batchId The ID of the batch object
      * @param id The primary key of this batch file object
-     * @return HashMap<String, String>
+     * @return String
      */
-    public Future<HashMap<String, String>> downloadBatchAsync(Integer companyId, Integer batchId, Integer id) {
+    public Future<String> downloadBatchAsync(Integer companyId, Integer batchId, Integer id) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/batches/{batchId}/files/{id}/attachment");
         path.applyField("companyId", companyId);
         path.applyField("batchId", batchId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<HashMap<String, String>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<HashMap<String, String>>(){}));
+        return this.threadPool.submit((RestCall<String>)restCallFactory.createRestCall("Get", path, null, new TypeToken<String>(){}));
     }
 
     /**
@@ -3474,14 +3474,14 @@ public class AvaTaxClient {
      * @param companyId The ID of the company that owns the filings.
      * @param filingId The unique id of the worksheet return.
      * @param fileId The unique id of the document you are downloading
-     * @return HashMap<String, String>
+     * @return String
      */
-    public HashMap<String, String> getFilingAttachment(Integer companyId, Long filingId, Long fileId) throws Exception {
+    public String getFilingAttachment(Integer companyId, Long filingId, Long fileId) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{filingId}/attachment");
         path.applyField("companyId", companyId);
         path.applyField("filingId", filingId);
         path.addQuery("fileId", fileId);
-        return ((RestCall<HashMap<String, String>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<HashMap<String, String>>(){})).call();
+        return ((RestCall<String>)restCallFactory.createRestCall("Get", path, null, new TypeToken<String>(){})).call();
     }
 
     /**
@@ -3490,14 +3490,14 @@ public class AvaTaxClient {
      * @param companyId The ID of the company that owns the filings.
      * @param filingId The unique id of the worksheet return.
      * @param fileId The unique id of the document you are downloading
-     * @return HashMap<String, String>
+     * @return String
      */
-    public Future<HashMap<String, String>> getFilingAttachmentAsync(Integer companyId, Long filingId, Long fileId) {
+    public Future<String> getFilingAttachmentAsync(Integer companyId, Long filingId, Long fileId) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{filingId}/attachment");
         path.applyField("companyId", companyId);
         path.applyField("filingId", filingId);
         path.addQuery("fileId", fileId);
-        return this.threadPool.submit((RestCall<HashMap<String, String>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<HashMap<String, String>>(){}));
+        return this.threadPool.submit((RestCall<String>)restCallFactory.createRestCall("Get", path, null, new TypeToken<String>(){}));
     }
 
     /**
@@ -3509,14 +3509,14 @@ public class AvaTaxClient {
      * @param companyId The ID of the company that owns the filings.
      * @param year The year of the filing period.
      * @param month The two digit month of the filing period.
-     * @return HashMap<String, String>
+     * @return String
      */
-    public HashMap<String, String> getFilingAttachments(Integer companyId, Short year, Byte month) throws Exception {
+    public String getFilingAttachments(Integer companyId, Short year, Byte month) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/attachments");
         path.applyField("companyId", companyId);
         path.applyField("year", year);
         path.applyField("month", month);
-        return ((RestCall<HashMap<String, String>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<HashMap<String, String>>(){})).call();
+        return ((RestCall<String>)restCallFactory.createRestCall("Get", path, null, new TypeToken<String>(){})).call();
     }
 
     /**
@@ -3528,14 +3528,14 @@ public class AvaTaxClient {
      * @param companyId The ID of the company that owns the filings.
      * @param year The year of the filing period.
      * @param month The two digit month of the filing period.
-     * @return HashMap<String, String>
+     * @return String
      */
-    public Future<HashMap<String, String>> getFilingAttachmentsAsync(Integer companyId, Short year, Byte month) {
+    public Future<String> getFilingAttachmentsAsync(Integer companyId, Short year, Byte month) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/attachments");
         path.applyField("companyId", companyId);
         path.applyField("year", year);
         path.applyField("month", month);
-        return this.threadPool.submit((RestCall<HashMap<String, String>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<HashMap<String, String>>(){}));
+        return this.threadPool.submit((RestCall<String>)restCallFactory.createRestCall("Get", path, null, new TypeToken<String>(){}));
     }
 
     /**
@@ -3547,14 +3547,14 @@ public class AvaTaxClient {
      * @param companyId The ID of the company that owns the filings.
      * @param year The year of the filing period.
      * @param month The two digit month of the filing period.
-     * @return HashMap<String, String>
+     * @return String
      */
-    public HashMap<String, String> getFilingAttachmentsTraceFile(Integer companyId, Short year, Byte month) throws Exception {
+    public String getFilingAttachmentsTraceFile(Integer companyId, Short year, Byte month) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/attachments/tracefile");
         path.applyField("companyId", companyId);
         path.applyField("year", year);
         path.applyField("month", month);
-        return ((RestCall<HashMap<String, String>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<HashMap<String, String>>(){})).call();
+        return ((RestCall<String>)restCallFactory.createRestCall("Get", path, null, new TypeToken<String>(){})).call();
     }
 
     /**
@@ -3566,14 +3566,14 @@ public class AvaTaxClient {
      * @param companyId The ID of the company that owns the filings.
      * @param year The year of the filing period.
      * @param month The two digit month of the filing period.
-     * @return HashMap<String, String>
+     * @return String
      */
-    public Future<HashMap<String, String>> getFilingAttachmentsTraceFileAsync(Integer companyId, Short year, Byte month) {
+    public Future<String> getFilingAttachmentsTraceFileAsync(Integer companyId, Short year, Byte month) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/attachments/tracefile");
         path.applyField("companyId", companyId);
         path.applyField("year", year);
         path.applyField("month", month);
-        return this.threadPool.submit((RestCall<HashMap<String, String>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<HashMap<String, String>>(){}));
+        return this.threadPool.submit((RestCall<String>)restCallFactory.createRestCall("Get", path, null, new TypeToken<String>(){}));
     }
 
     /**
@@ -4781,9 +4781,9 @@ public class AvaTaxClient {
      * @param format The format of the file (JSON by default) (See PointOfSaleFileType::* for a list of allowable values)
      * @param partnerId If specified, requests a custom partner-formatted version of the file. (See PointOfSalePartnerId::* for a list of allowable values)
      * @param includeJurisCodes When true, the file will include jurisdiction codes in the result.
-     * @return HashMap<String, String>
+     * @return String
      */
-    public HashMap<String, String> buildPointOfSaleDataForLocation(Integer companyId, Integer id, Date date, PointOfSaleFileType format, PointOfSalePartnerId partnerId, Boolean includeJurisCodes) throws Exception {
+    public String buildPointOfSaleDataForLocation(Integer companyId, Integer id, Date date, PointOfSaleFileType format, PointOfSalePartnerId partnerId, Boolean includeJurisCodes) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/locations/{id}/pointofsaledata");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
@@ -4791,7 +4791,7 @@ public class AvaTaxClient {
         path.addQuery("format", format);
         path.addQuery("partnerId", partnerId);
         path.addQuery("includeJurisCodes", includeJurisCodes);
-        return ((RestCall<HashMap<String, String>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<HashMap<String, String>>(){})).call();
+        return ((RestCall<String>)restCallFactory.createRestCall("Get", path, null, new TypeToken<String>(){})).call();
     }
 
     /**
@@ -4809,9 +4809,9 @@ public class AvaTaxClient {
      * @param format The format of the file (JSON by default) (See PointOfSaleFileType::* for a list of allowable values)
      * @param partnerId If specified, requests a custom partner-formatted version of the file. (See PointOfSalePartnerId::* for a list of allowable values)
      * @param includeJurisCodes When true, the file will include jurisdiction codes in the result.
-     * @return HashMap<String, String>
+     * @return String
      */
-    public Future<HashMap<String, String>> buildPointOfSaleDataForLocationAsync(Integer companyId, Integer id, Date date, PointOfSaleFileType format, PointOfSalePartnerId partnerId, Boolean includeJurisCodes) {
+    public Future<String> buildPointOfSaleDataForLocationAsync(Integer companyId, Integer id, Date date, PointOfSaleFileType format, PointOfSalePartnerId partnerId, Boolean includeJurisCodes) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/locations/{id}/pointofsaledata");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
@@ -4819,7 +4819,7 @@ public class AvaTaxClient {
         path.addQuery("format", format);
         path.addQuery("partnerId", partnerId);
         path.addQuery("includeJurisCodes", includeJurisCodes);
-        return this.threadPool.submit((RestCall<HashMap<String, String>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<HashMap<String, String>>(){}));
+        return this.threadPool.submit((RestCall<String>)restCallFactory.createRestCall("Get", path, null, new TypeToken<String>(){}));
     }
 
     /**
@@ -5655,13 +5655,13 @@ public class AvaTaxClient {
      * 
      * @param companyId The ID of the company for this attachment.
      * @param id The ResourceFileId of the attachment to download.
-     * @return HashMap<String, String>
+     * @return String
      */
-    public HashMap<String, String> downloadNoticeAttachment(Integer companyId, Long id) throws Exception {
+    public String downloadNoticeAttachment(Integer companyId, Long id) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/files/{id}/attachment");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return ((RestCall<HashMap<String, String>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<HashMap<String, String>>(){})).call();
+        return ((RestCall<String>)restCallFactory.createRestCall("Get", path, null, new TypeToken<String>(){})).call();
     }
 
     /**
@@ -5671,13 +5671,13 @@ public class AvaTaxClient {
      * 
      * @param companyId The ID of the company for this attachment.
      * @param id The ResourceFileId of the attachment to download.
-     * @return HashMap<String, String>
+     * @return String
      */
-    public Future<HashMap<String, String>> downloadNoticeAttachmentAsync(Integer companyId, Long id) {
+    public Future<String> downloadNoticeAttachmentAsync(Integer companyId, Long id) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/files/{id}/attachment");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<HashMap<String, String>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<HashMap<String, String>>(){}));
+        return this.threadPool.submit((RestCall<String>)restCallFactory.createRestCall("Get", path, null, new TypeToken<String>(){}));
     }
 
     /**
@@ -6023,12 +6023,12 @@ public class AvaTaxClient {
      * 
      * @param companyId The ID of the company for this attachment.
      * @param model The ResourceFileId of the attachment to download.
-     * @return HashMap<String, String>
+     * @return String
      */
-    public HashMap<String, String> uploadAttachment(Integer companyId, ResourceFileUploadRequestModel model) throws Exception {
+    public String uploadAttachment(Integer companyId, ResourceFileUploadRequestModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/files/attachment");
         path.applyField("companyId", companyId);
-        return ((RestCall<HashMap<String, String>>)restCallFactory.createRestCall("Post", path, model, new TypeToken<HashMap<String, String>>(){})).call();
+        return ((RestCall<String>)restCallFactory.createRestCall("Post", path, model, new TypeToken<String>(){})).call();
     }
 
     /**
@@ -6038,12 +6038,12 @@ public class AvaTaxClient {
      * 
      * @param companyId The ID of the company for this attachment.
      * @param model The ResourceFileId of the attachment to download.
-     * @return HashMap<String, String>
+     * @return String
      */
-    public Future<HashMap<String, String>> uploadAttachmentAsync(Integer companyId, ResourceFileUploadRequestModel model) {
+    public Future<String> uploadAttachmentAsync(Integer companyId, ResourceFileUploadRequestModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/files/attachment");
         path.applyField("companyId", companyId);
-        return this.threadPool.submit((RestCall<HashMap<String, String>>)restCallFactory.createRestCall("Post", path, model, new TypeToken<HashMap<String, String>>(){}));
+        return this.threadPool.submit((RestCall<String>)restCallFactory.createRestCall("Post", path, model, new TypeToken<String>(){}));
     }
 
     /**
@@ -6085,11 +6085,11 @@ public class AvaTaxClient {
      * The result of this API is the file you requested in the format you requested using the 'responseType' field.
      * 
      * @param model Parameters about the desired file format and report format, specifying which company, locations and TaxCodes to include.
-     * @return HashMap<String, String>
+     * @return String
      */
-    public HashMap<String, String> buildPointOfSaleDataFile(PointOfSaleDataRequestModel model) throws Exception {
+    public String buildPointOfSaleDataFile(PointOfSaleDataRequestModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/pointofsaledata/build");
-        return ((RestCall<HashMap<String, String>>)restCallFactory.createRestCall("Post", path, model, new TypeToken<HashMap<String, String>>(){})).call();
+        return ((RestCall<String>)restCallFactory.createRestCall("Post", path, model, new TypeToken<String>(){})).call();
     }
 
     /**
@@ -6101,11 +6101,11 @@ public class AvaTaxClient {
      * The result of this API is the file you requested in the format you requested using the 'responseType' field.
      * 
      * @param model Parameters about the desired file format and report format, specifying which company, locations and TaxCodes to include.
-     * @return HashMap<String, String>
+     * @return String
      */
-    public Future<HashMap<String, String>> buildPointOfSaleDataFileAsync(PointOfSaleDataRequestModel model) {
+    public Future<String> buildPointOfSaleDataFileAsync(PointOfSaleDataRequestModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/pointofsaledata/build");
-        return this.threadPool.submit((RestCall<HashMap<String, String>>)restCallFactory.createRestCall("Post", path, model, new TypeToken<HashMap<String, String>>(){}));
+        return this.threadPool.submit((RestCall<String>)restCallFactory.createRestCall("Post", path, model, new TypeToken<String>(){}));
     }
 
     /**
