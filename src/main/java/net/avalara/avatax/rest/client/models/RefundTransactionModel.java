@@ -51,14 +51,14 @@ public class RefundTransactionModel {
     }
 
 
-    private Instant refundDate;
+    private Date refundDate;
 
     /**
      * Getter for refundDate
      *
      * The date of the refund. If null, today's date will be used
      */
-    public Instant getRefundDate() {
+    public Date getRefundDate() {
         return this.refundDate;
     }
 
@@ -67,7 +67,7 @@ public class RefundTransactionModel {
      *
      * The date of the refund. If null, today's date will be used
      */
-    public void setRefundDate(Instant value) {
+    public void setRefundDate(Date value) {
         this.refundDate = value;
     }
 
@@ -93,14 +93,14 @@ public class RefundTransactionModel {
     }
 
 
-    private Decimal refundPercentage;
+    private BigDecimal refundPercentage;
 
     /**
      * Getter for refundPercentage
      *
      * Percentage for refund
      */
-    public Decimal getRefundPercentage() {
+    public BigDecimal getRefundPercentage() {
         return this.refundPercentage;
     }
 
@@ -109,7 +109,7 @@ public class RefundTransactionModel {
      *
      * Percentage for refund
      */
-    public void setRefundPercentage(Decimal value) {
+    public void setRefundPercentage(BigDecimal value) {
         this.refundPercentage = value;
     }
 

@@ -30,14 +30,14 @@ import java.util.HashMap;
 public class ActivateAccountModel {
 
 
-    private object acceptAvalaraTermsAndConditions;
+    private Boolean acceptAvalaraTermsAndConditions;
 
     /**
      * Getter for acceptAvalaraTermsAndConditions
      *
      * Set this to true if and only if you accept Avalara's terms and conditions for your account.
      */
-    public object getAcceptAvalaraTermsAndConditions() {
+    public Boolean getAcceptAvalaraTermsAndConditions() {
         return this.acceptAvalaraTermsAndConditions;
     }
 
@@ -46,19 +46,19 @@ public class ActivateAccountModel {
      *
      * Set this to true if and only if you accept Avalara's terms and conditions for your account.
      */
-    public void setAcceptAvalaraTermsAndConditions(object value) {
+    public void setAcceptAvalaraTermsAndConditions(Boolean value) {
         this.acceptAvalaraTermsAndConditions = value;
     }
 
 
-    private object haveReadAvalaraTermsAndConditions;
+    private Boolean haveReadAvalaraTermsAndConditions;
 
     /**
      * Getter for haveReadAvalaraTermsAndConditions
      *
      * Set this to true if and only if you have fully read Avalara's terms and conditions for your account.
      */
-    public object getHaveReadAvalaraTermsAndConditions() {
+    public Boolean getHaveReadAvalaraTermsAndConditions() {
         return this.haveReadAvalaraTermsAndConditions;
     }
 
@@ -67,7 +67,7 @@ public class ActivateAccountModel {
      *
      * Set this to true if and only if you have fully read Avalara's terms and conditions for your account.
      */
-    public void setHaveReadAvalaraTermsAndConditions(object value) {
+    public void setHaveReadAvalaraTermsAndConditions(Boolean value) {
         this.haveReadAvalaraTermsAndConditions = value;
     }
 

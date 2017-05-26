@@ -72,14 +72,14 @@ public class NoticeCommentModel {
     }
 
 
-    private Instant date;
+    private Date date;
 
     /**
      * Getter for date
      *
      * The date this comment was entered
      */
-    public Instant getDate() {
+    public Date getDate() {
         return this.date;
     }
 
@@ -88,7 +88,7 @@ public class NoticeCommentModel {
      *
      * The date this comment was entered
      */
-    public void setDate(Instant value) {
+    public void setDate(Date value) {
         this.date = value;
     }
 
@@ -261,14 +261,14 @@ public class NoticeCommentModel {
     }
 
 
-    private Instant modifiedDate;
+    private Date modifiedDate;
 
     /**
      * Getter for modifiedDate
      *
      * The date/time when this record was last modified.
      */
-    public Instant getModifiedDate() {
+    public Date getModifiedDate() {
         return this.modifiedDate;
     }
 
@@ -277,7 +277,7 @@ public class NoticeCommentModel {
      *
      * The date/time when this record was last modified.
      */
-    public void setModifiedDate(Instant value) {
+    public void setModifiedDate(Date value) {
         this.modifiedDate = value;
     }
 

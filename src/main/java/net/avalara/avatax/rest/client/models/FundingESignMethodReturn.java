@@ -51,14 +51,14 @@ public class FundingESignMethodReturn {
     }
 
 
-    private object javaScriptReady;
+    private Boolean javaScriptReady;
 
     /**
      * Getter for javaScriptReady
      *
      * JavaScriptReady
      */
-    public object getJavaScriptReady() {
+    public Boolean getJavaScriptReady() {
         return this.javaScriptReady;
     }
 
@@ -67,7 +67,7 @@ public class FundingESignMethodReturn {
      *
      * JavaScriptReady
      */
-    public void setJavaScriptReady(object value) {
+    public void setJavaScriptReady(Boolean value) {
         this.javaScriptReady = value;
     }
 

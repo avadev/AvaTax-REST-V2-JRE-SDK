@@ -114,14 +114,14 @@ public class FilingRegionModel {
     }
 
 
-    private Decimal salesAmount;
+    private BigDecimal salesAmount;
 
     /**
      * Getter for salesAmount
      *
      * The sales amount.
      */
-    public Decimal getSalesAmount() {
+    public BigDecimal getSalesAmount() {
         return this.salesAmount;
     }
 
@@ -130,19 +130,19 @@ public class FilingRegionModel {
      *
      * The sales amount.
      */
-    public void setSalesAmount(Decimal value) {
+    public void setSalesAmount(BigDecimal value) {
         this.salesAmount = value;
     }
 
 
-    private Decimal taxableAmount;
+    private BigDecimal taxableAmount;
 
     /**
      * Getter for taxableAmount
      *
      * The taxable amount.
      */
-    public Decimal getTaxableAmount() {
+    public BigDecimal getTaxableAmount() {
         return this.taxableAmount;
     }
 
@@ -151,19 +151,19 @@ public class FilingRegionModel {
      *
      * The taxable amount.
      */
-    public void setTaxableAmount(Decimal value) {
+    public void setTaxableAmount(BigDecimal value) {
         this.taxableAmount = value;
     }
 
 
-    private Decimal taxAmount;
+    private BigDecimal taxAmount;
 
     /**
      * Getter for taxAmount
      *
      * The tax amount.
      */
-    public Decimal getTaxAmount() {
+    public BigDecimal getTaxAmount() {
         return this.taxAmount;
     }
 
@@ -172,19 +172,19 @@ public class FilingRegionModel {
      *
      * The tax amount.
      */
-    public void setTaxAmount(Decimal value) {
+    public void setTaxAmount(BigDecimal value) {
         this.taxAmount = value;
     }
 
 
-    private Decimal taxDueAmount;
+    private BigDecimal taxDueAmount;
 
     /**
      * Getter for taxDueAmount
      *
      * The tax amount due.
      */
-    public Decimal getTaxDueAmount() {
+    public BigDecimal getTaxDueAmount() {
         return this.taxDueAmount;
     }
 
@@ -193,19 +193,19 @@ public class FilingRegionModel {
      *
      * The tax amount due.
      */
-    public void setTaxDueAmount(Decimal value) {
+    public void setTaxDueAmount(BigDecimal value) {
         this.taxDueAmount = value;
     }
 
 
-    private Decimal collectAmount;
+    private BigDecimal collectAmount;
 
     /**
      * Getter for collectAmount
      *
      * The amount collected by Avalara for this region
      */
-    public Decimal getCollectAmount() {
+    public BigDecimal getCollectAmount() {
         return this.collectAmount;
     }
 
@@ -214,19 +214,19 @@ public class FilingRegionModel {
      *
      * The amount collected by Avalara for this region
      */
-    public void setCollectAmount(Decimal value) {
+    public void setCollectAmount(BigDecimal value) {
         this.collectAmount = value;
     }
 
 
-    private Decimal totalRemittanceAmount;
+    private BigDecimal totalRemittanceAmount;
 
     /**
      * Getter for totalRemittanceAmount
      *
      * Total remittance amount of all returns in region
      */
-    public Decimal getTotalRemittanceAmount() {
+    public BigDecimal getTotalRemittanceAmount() {
         return this.totalRemittanceAmount;
     }
 
@@ -235,19 +235,19 @@ public class FilingRegionModel {
      *
      * Total remittance amount of all returns in region
      */
-    public void setTotalRemittanceAmount(Decimal value) {
+    public void setTotalRemittanceAmount(BigDecimal value) {
         this.totalRemittanceAmount = value;
     }
 
 
-    private Decimal nonTaxableAmount;
+    private BigDecimal nonTaxableAmount;
 
     /**
      * Getter for nonTaxableAmount
      *
      * The non-taxable amount.
      */
-    public Decimal getNonTaxableAmount() {
+    public BigDecimal getNonTaxableAmount() {
         return this.nonTaxableAmount;
     }
 
@@ -256,19 +256,19 @@ public class FilingRegionModel {
      *
      * The non-taxable amount.
      */
-    public void setNonTaxableAmount(Decimal value) {
+    public void setNonTaxableAmount(BigDecimal value) {
         this.nonTaxableAmount = value;
     }
 
 
-    private Decimal consumerUseTaxAmount;
+    private BigDecimal consumerUseTaxAmount;
 
     /**
      * Getter for consumerUseTaxAmount
      *
      * Consumer use tax liability.
      */
-    public Decimal getConsumerUseTaxAmount() {
+    public BigDecimal getConsumerUseTaxAmount() {
         return this.consumerUseTaxAmount;
     }
 
@@ -277,19 +277,19 @@ public class FilingRegionModel {
      *
      * Consumer use tax liability.
      */
-    public void setConsumerUseTaxAmount(Decimal value) {
+    public void setConsumerUseTaxAmount(BigDecimal value) {
         this.consumerUseTaxAmount = value;
     }
 
 
-    private Decimal consumerUseNonTaxableAmount;
+    private BigDecimal consumerUseNonTaxableAmount;
 
     /**
      * Getter for consumerUseNonTaxableAmount
      *
      * Consumer use non-taxable amount.
      */
-    public Decimal getConsumerUseNonTaxableAmount() {
+    public BigDecimal getConsumerUseNonTaxableAmount() {
         return this.consumerUseNonTaxableAmount;
     }
 
@@ -298,19 +298,19 @@ public class FilingRegionModel {
      *
      * Consumer use non-taxable amount.
      */
-    public void setConsumerUseNonTaxableAmount(Decimal value) {
+    public void setConsumerUseNonTaxableAmount(BigDecimal value) {
         this.consumerUseNonTaxableAmount = value;
     }
 
 
-    private Decimal consumerUseTaxableAmount;
+    private BigDecimal consumerUseTaxableAmount;
 
     /**
      * Getter for consumerUseTaxableAmount
      *
      * Consumer use taxable amount.
      */
-    public Decimal getConsumerUseTaxableAmount() {
+    public BigDecimal getConsumerUseTaxableAmount() {
         return this.consumerUseTaxableAmount;
     }
 
@@ -319,19 +319,19 @@ public class FilingRegionModel {
      *
      * Consumer use taxable amount.
      */
-    public void setConsumerUseTaxableAmount(Decimal value) {
+    public void setConsumerUseTaxableAmount(BigDecimal value) {
         this.consumerUseTaxableAmount = value;
     }
 
 
-    private Instant approveDate;
+    private Date approveDate;
 
     /**
      * Getter for approveDate
      *
      * The date the filing region was approved.
      */
-    public Instant getApproveDate() {
+    public Date getApproveDate() {
         return this.approveDate;
     }
 
@@ -340,19 +340,19 @@ public class FilingRegionModel {
      *
      * The date the filing region was approved.
      */
-    public void setApproveDate(Instant value) {
+    public void setApproveDate(Date value) {
         this.approveDate = value;
     }
 
 
-    private Instant startDate;
+    private Date startDate;
 
     /**
      * Getter for startDate
      *
      * The start date for the filing cycle.
      */
-    public Instant getStartDate() {
+    public Date getStartDate() {
         return this.startDate;
     }
 
@@ -361,19 +361,19 @@ public class FilingRegionModel {
      *
      * The start date for the filing cycle.
      */
-    public void setStartDate(Instant value) {
+    public void setStartDate(Date value) {
         this.startDate = value;
     }
 
 
-    private Instant endDate;
+    private Date endDate;
 
     /**
      * Getter for endDate
      *
      * The end date for the filing cycle.
      */
-    public Instant getEndDate() {
+    public Date getEndDate() {
         return this.endDate;
     }
 
@@ -382,19 +382,19 @@ public class FilingRegionModel {
      *
      * The end date for the filing cycle.
      */
-    public void setEndDate(Instant value) {
+    public void setEndDate(Date value) {
         this.endDate = value;
     }
 
 
-    private object hasNexus;
+    private Boolean hasNexus;
 
     /**
      * Getter for hasNexus
      *
      * Whether or not you have nexus in this region.
      */
-    public object getHasNexus() {
+    public Boolean getHasNexus() {
         return this.hasNexus;
     }
 
@@ -403,7 +403,7 @@ public class FilingRegionModel {
      *
      * Whether or not you have nexus in this region.
      */
-    public void setHasNexus(object value) {
+    public void setHasNexus(Boolean value) {
         this.hasNexus = value;
     }
 
@@ -471,14 +471,14 @@ public class FilingRegionModel {
     }
 
 
-    private Instant createdDate;
+    private Date createdDate;
 
     /**
      * Getter for createdDate
      *
      * The date when this record was created.
      */
-    public Instant getCreatedDate() {
+    public Date getCreatedDate() {
         return this.createdDate;
     }
 
@@ -487,7 +487,7 @@ public class FilingRegionModel {
      *
      * The date when this record was created.
      */
-    public void setCreatedDate(Instant value) {
+    public void setCreatedDate(Date value) {
         this.createdDate = value;
     }
 
@@ -513,14 +513,14 @@ public class FilingRegionModel {
     }
 
 
-    private Instant modifiedDate;
+    private Date modifiedDate;
 
     /**
      * Getter for modifiedDate
      *
      * The date/time when this record was last modified.
      */
-    public Instant getModifiedDate() {
+    public Date getModifiedDate() {
         return this.modifiedDate;
     }
 
@@ -529,7 +529,7 @@ public class FilingRegionModel {
      *
      * The date/time when this record was last modified.
      */
-    public void setModifiedDate(Instant value) {
+    public void setModifiedDate(Date value) {
         this.modifiedDate = value;
     }
 

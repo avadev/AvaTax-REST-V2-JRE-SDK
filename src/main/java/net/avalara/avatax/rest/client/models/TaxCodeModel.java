@@ -157,14 +157,14 @@ public class TaxCodeModel {
     }
 
 
-    private object isPhysical;
+    private Boolean isPhysical;
 
     /**
      * Getter for isPhysical
      *
      * True if this tax code type refers to a physical object. Read only field.
      */
-    public object getIsPhysical() {
+    public Boolean getIsPhysical() {
         return this.isPhysical;
     }
 
@@ -173,7 +173,7 @@ public class TaxCodeModel {
      *
      * True if this tax code type refers to a physical object. Read only field.
      */
-    public void setIsPhysical(object value) {
+    public void setIsPhysical(Boolean value) {
         this.isPhysical = value;
     }
 
@@ -220,14 +220,14 @@ public class TaxCodeModel {
     }
 
 
-    private object isActive;
+    private Boolean isActive;
 
     /**
      * Getter for isActive
      *
      * True if this tax code is active and can be used in transactions.
      */
-    public object getIsActive() {
+    public Boolean getIsActive() {
         return this.isActive;
     }
 
@@ -236,12 +236,12 @@ public class TaxCodeModel {
      *
      * True if this tax code is active and can be used in transactions.
      */
-    public void setIsActive(object value) {
+    public void setIsActive(Boolean value) {
         this.isActive = value;
     }
 
 
-    private object isSSTCertified;
+    private Boolean isSSTCertified;
 
     /**
      * Getter for isSSTCertified
@@ -249,7 +249,7 @@ public class TaxCodeModel {
      * True if this tax code has been certified by the Streamlined Sales Tax governing board.
     * By default, you should leave this value empty.
      */
-    public object getIsSSTCertified() {
+    public Boolean getIsSSTCertified() {
         return this.isSSTCertified;
     }
 
@@ -259,19 +259,19 @@ public class TaxCodeModel {
      * True if this tax code has been certified by the Streamlined Sales Tax governing board.
     * By default, you should leave this value empty.
      */
-    public void setIsSSTCertified(object value) {
+    public void setIsSSTCertified(Boolean value) {
         this.isSSTCertified = value;
     }
 
 
-    private Instant createdDate;
+    private Date createdDate;
 
     /**
      * Getter for createdDate
      *
      * The date when this record was created.
      */
-    public Instant getCreatedDate() {
+    public Date getCreatedDate() {
         return this.createdDate;
     }
 
@@ -280,7 +280,7 @@ public class TaxCodeModel {
      *
      * The date when this record was created.
      */
-    public void setCreatedDate(Instant value) {
+    public void setCreatedDate(Date value) {
         this.createdDate = value;
     }
 
@@ -306,14 +306,14 @@ public class TaxCodeModel {
     }
 
 
-    private Instant modifiedDate;
+    private Date modifiedDate;
 
     /**
      * Getter for modifiedDate
      *
      * The date/time when this record was last modified.
      */
-    public Instant getModifiedDate() {
+    public Date getModifiedDate() {
         return this.modifiedDate;
     }
 
@@ -322,7 +322,7 @@ public class TaxCodeModel {
      *
      * The date/time when this record was last modified.
      */
-    public void setModifiedDate(Instant value) {
+    public void setModifiedDate(Date value) {
         this.modifiedDate = value;
     }
 

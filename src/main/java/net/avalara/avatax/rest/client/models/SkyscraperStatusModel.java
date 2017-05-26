@@ -114,14 +114,14 @@ public class SkyscraperStatusModel {
     }
 
 
-    private object isAvailable;
+    private Boolean isAvailable;
 
     /**
      * Getter for isAvailable
      *
      * Indicates if the return is currently available
      */
-    public object getIsAvailable() {
+    public Boolean getIsAvailable() {
         return this.isAvailable;
     }
 
@@ -130,7 +130,7 @@ public class SkyscraperStatusModel {
      *
      * Indicates if the return is currently available
      */
-    public void setIsAvailable(object value) {
+    public void setIsAvailable(Boolean value) {
         this.isAvailable = value;
     }
 

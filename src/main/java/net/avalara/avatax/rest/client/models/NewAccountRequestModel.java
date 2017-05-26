@@ -140,14 +140,14 @@ public class NewAccountRequestModel {
     }
 
 
-    private Instant effectiveDate;
+    private Date effectiveDate;
 
     /**
      * Getter for effectiveDate
      *
      * The date on which the account should take effect. If null, defaults to today.
      */
-    public Instant getEffectiveDate() {
+    public Date getEffectiveDate() {
         return this.effectiveDate;
     }
 
@@ -156,19 +156,19 @@ public class NewAccountRequestModel {
      *
      * The date on which the account should take effect. If null, defaults to today.
      */
-    public void setEffectiveDate(Instant value) {
+    public void setEffectiveDate(Date value) {
         this.effectiveDate = value;
     }
 
 
-    private Instant endDate;
+    private Date endDate;
 
     /**
      * Getter for endDate
      *
      * The date on which the account should expire. If null, defaults to a 90-day trial account.
      */
-    public Instant getEndDate() {
+    public Date getEndDate() {
         return this.endDate;
     }
 
@@ -177,7 +177,7 @@ public class NewAccountRequestModel {
      *
      * The date on which the account should expire. If null, defaults to a 90-day trial account.
      */
-    public void setEndDate(Instant value) {
+    public void setEndDate(Date value) {
         this.endDate = value;
     }
 

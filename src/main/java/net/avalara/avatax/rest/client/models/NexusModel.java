@@ -177,14 +177,14 @@ public class NexusModel {
     }
 
 
-    private Instant effectiveDate;
+    private Date effectiveDate;
 
     /**
      * Getter for effectiveDate
      *
      * The date when this nexus began. If not known, set to null.
      */
-    public Instant getEffectiveDate() {
+    public Date getEffectiveDate() {
         return this.effectiveDate;
     }
 
@@ -193,19 +193,19 @@ public class NexusModel {
      *
      * The date when this nexus began. If not known, set to null.
      */
-    public void setEffectiveDate(Instant value) {
+    public void setEffectiveDate(Date value) {
         this.effectiveDate = value;
     }
 
 
-    private Instant endDate;
+    private Date endDate;
 
     /**
      * Getter for endDate
      *
      * If this nexus will end or has ended on a specific date, set this to the date when this nexus ends.
      */
-    public Instant getEndDate() {
+    public Date getEndDate() {
         return this.endDate;
     }
 
@@ -214,7 +214,7 @@ public class NexusModel {
      *
      * If this nexus will end or has ended on a specific date, set this to the date when this nexus ends.
      */
-    public void setEndDate(Instant value) {
+    public void setEndDate(Date value) {
         this.endDate = value;
     }
 
@@ -326,7 +326,7 @@ public class NexusModel {
     }
 
 
-    private object hasLocalNexus;
+    private Boolean hasLocalNexus;
 
     /**
      * Getter for hasLocalNexus
@@ -334,7 +334,7 @@ public class NexusModel {
      * True if you are also declaring local nexus within this jurisdiction.
     * Many U.S. states have options for declaring nexus in local jurisdictions as well as within the state.
      */
-    public object getHasLocalNexus() {
+    public Boolean getHasLocalNexus() {
         return this.hasLocalNexus;
     }
 
@@ -344,7 +344,7 @@ public class NexusModel {
      * True if you are also declaring local nexus within this jurisdiction.
     * Many U.S. states have options for declaring nexus in local jurisdictions as well as within the state.
      */
-    public void setHasLocalNexus(object value) {
+    public void setHasLocalNexus(Boolean value) {
         this.hasLocalNexus = value;
     }
 
@@ -372,14 +372,14 @@ public class NexusModel {
     }
 
 
-    private object hasPermanentEstablishment;
+    private Boolean hasPermanentEstablishment;
 
     /**
      * Getter for hasPermanentEstablishment
      *
      * Set this value to true if your company has a permanent establishment within this jurisdiction.
      */
-    public object getHasPermanentEstablishment() {
+    public Boolean getHasPermanentEstablishment() {
         return this.hasPermanentEstablishment;
     }
 
@@ -388,7 +388,7 @@ public class NexusModel {
      *
      * Set this value to true if your company has a permanent establishment within this jurisdiction.
      */
-    public void setHasPermanentEstablishment(object value) {
+    public void setHasPermanentEstablishment(Boolean value) {
         this.hasPermanentEstablishment = value;
     }
 
@@ -414,7 +414,7 @@ public class NexusModel {
     }
 
 
-    private object streamlinedSalesTax;
+    private Boolean streamlinedSalesTax;
 
     /**
      * Getter for streamlinedSalesTax
@@ -422,7 +422,7 @@ public class NexusModel {
      * For the United States, this flag indicates whether this particular nexus falls within a U.S. State that participates 
     * in the Streamlined Sales Tax program. For countries other than the US, this flag is null.
      */
-    public object getStreamlinedSalesTax() {
+    public Boolean getStreamlinedSalesTax() {
         return this.streamlinedSalesTax;
     }
 
@@ -432,19 +432,19 @@ public class NexusModel {
      * For the United States, this flag indicates whether this particular nexus falls within a U.S. State that participates 
     * in the Streamlined Sales Tax program. For countries other than the US, this flag is null.
      */
-    public void setStreamlinedSalesTax(object value) {
+    public void setStreamlinedSalesTax(Boolean value) {
         this.streamlinedSalesTax = value;
     }
 
 
-    private Instant createdDate;
+    private Date createdDate;
 
     /**
      * Getter for createdDate
      *
      * The date when this record was created.
      */
-    public Instant getCreatedDate() {
+    public Date getCreatedDate() {
         return this.createdDate;
     }
 
@@ -453,7 +453,7 @@ public class NexusModel {
      *
      * The date when this record was created.
      */
-    public void setCreatedDate(Instant value) {
+    public void setCreatedDate(Date value) {
         this.createdDate = value;
     }
 
@@ -479,14 +479,14 @@ public class NexusModel {
     }
 
 
-    private Instant modifiedDate;
+    private Date modifiedDate;
 
     /**
      * Getter for modifiedDate
      *
      * The date/time when this record was last modified.
      */
-    public Instant getModifiedDate() {
+    public Date getModifiedDate() {
         return this.modifiedDate;
     }
 
@@ -495,7 +495,7 @@ public class NexusModel {
      *
      * The date/time when this record was last modified.
      */
-    public void setModifiedDate(Instant value) {
+    public void setModifiedDate(Date value) {
         this.modifiedDate = value;
     }
 

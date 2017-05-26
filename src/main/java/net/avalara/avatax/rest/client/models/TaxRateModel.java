@@ -30,14 +30,14 @@ import java.util.HashMap;
 public class TaxRateModel {
 
 
-    private Decimal totalRate;
+    private BigDecimal totalRate;
 
     /**
      * Getter for totalRate
      *
      * Total Rate
      */
-    public Decimal getTotalRate() {
+    public BigDecimal getTotalRate() {
         return this.totalRate;
     }
 
@@ -46,7 +46,7 @@ public class TaxRateModel {
      *
      * Total Rate
      */
-    public void setTotalRate(Decimal value) {
+    public void setTotalRate(BigDecimal value) {
         this.totalRate = value;
     }
 

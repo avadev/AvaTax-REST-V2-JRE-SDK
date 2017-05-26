@@ -93,14 +93,14 @@ public class LoginVerificationOutputModel {
     }
 
 
-    private object loginSuccess;
+    private Boolean loginSuccess;
 
     /**
      * Getter for loginSuccess
      *
      * Indicates if the login was successful
      */
-    public object getLoginSuccess() {
+    public Boolean getLoginSuccess() {
         return this.loginSuccess;
     }
 
@@ -109,7 +109,7 @@ public class LoginVerificationOutputModel {
      *
      * Indicates if the login was successful
      */
-    public void setLoginSuccess(object value) {
+    public void setLoginSuccess(Boolean value) {
         this.loginSuccess = value;
     }
 

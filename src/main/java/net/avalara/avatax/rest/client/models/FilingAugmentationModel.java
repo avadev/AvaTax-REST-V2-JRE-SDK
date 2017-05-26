@@ -72,14 +72,14 @@ public class FilingAugmentationModel {
     }
 
 
-    private Decimal fieldAmount;
+    private BigDecimal fieldAmount;
 
     /**
      * Getter for fieldAmount
      *
      * The field amount.
      */
-    public Decimal getFieldAmount() {
+    public BigDecimal getFieldAmount() {
         return this.fieldAmount;
     }
 
@@ -88,7 +88,7 @@ public class FilingAugmentationModel {
      *
      * The field amount.
      */
-    public void setFieldAmount(Decimal value) {
+    public void setFieldAmount(BigDecimal value) {
         this.fieldAmount = value;
     }
 
@@ -114,14 +114,14 @@ public class FilingAugmentationModel {
     }
 
 
-    private Instant createdDate;
+    private Date createdDate;
 
     /**
      * Getter for createdDate
      *
      * The date when this record was created.
      */
-    public Instant getCreatedDate() {
+    public Date getCreatedDate() {
         return this.createdDate;
     }
 
@@ -130,7 +130,7 @@ public class FilingAugmentationModel {
      *
      * The date when this record was created.
      */
-    public void setCreatedDate(Instant value) {
+    public void setCreatedDate(Date value) {
         this.createdDate = value;
     }
 
@@ -156,14 +156,14 @@ public class FilingAugmentationModel {
     }
 
 
-    private Instant modifiedDate;
+    private Date modifiedDate;
 
     /**
      * Getter for modifiedDate
      *
      * The date/time when this record was last modified.
      */
-    public Instant getModifiedDate() {
+    public Date getModifiedDate() {
         return this.modifiedDate;
     }
 
@@ -172,7 +172,7 @@ public class FilingAugmentationModel {
      *
      * The date/time when this record was last modified.
      */
-    public void setModifiedDate(Instant value) {
+    public void setModifiedDate(Date value) {
         this.modifiedDate = value;
     }
 

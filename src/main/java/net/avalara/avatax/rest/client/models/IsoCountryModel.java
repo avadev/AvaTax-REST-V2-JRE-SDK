@@ -72,14 +72,14 @@ public class IsoCountryModel {
     }
 
 
-    private object isEuropeanUnion;
+    private Boolean isEuropeanUnion;
 
     /**
      * Getter for isEuropeanUnion
      *
      * True if this country is a member of the European Union
      */
-    public object getIsEuropeanUnion() {
+    public Boolean getIsEuropeanUnion() {
         return this.isEuropeanUnion;
     }
 
@@ -88,7 +88,7 @@ public class IsoCountryModel {
      *
      * True if this country is a member of the European Union
      */
-    public void setIsEuropeanUnion(object value) {
+    public void setIsEuropeanUnion(Boolean value) {
         this.isEuropeanUnion = value;
     }
 

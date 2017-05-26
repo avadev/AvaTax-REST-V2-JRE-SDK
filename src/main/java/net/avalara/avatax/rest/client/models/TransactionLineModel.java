@@ -206,7 +206,7 @@ public class TransactionLineModel {
     }
 
 
-    private Decimal discountAmount;
+    private BigDecimal discountAmount;
 
     /**
      * Getter for discountAmount
@@ -214,7 +214,7 @@ public class TransactionLineModel {
      * The amount of discount that was applied to this line item. This represents the difference between list price and sale price of the item.
     * In general, a discount represents money that did not change hands; tax is calculated on only the amount of money that changed hands.
      */
-    public Decimal getDiscountAmount() {
+    public BigDecimal getDiscountAmount() {
         return this.discountAmount;
     }
 
@@ -224,7 +224,7 @@ public class TransactionLineModel {
      * The amount of discount that was applied to this line item. This represents the difference between list price and sale price of the item.
     * In general, a discount represents money that did not change hands; tax is calculated on only the amount of money that changed hands.
      */
-    public void setDiscountAmount(Decimal value) {
+    public void setDiscountAmount(BigDecimal value) {
         this.discountAmount = value;
     }
 
@@ -250,14 +250,14 @@ public class TransactionLineModel {
     }
 
 
-    private Decimal exemptAmount;
+    private BigDecimal exemptAmount;
 
     /**
      * Getter for exemptAmount
      *
      * The amount of this line item that was exempt.
      */
-    public Decimal getExemptAmount() {
+    public BigDecimal getExemptAmount() {
         return this.exemptAmount;
     }
 
@@ -266,7 +266,7 @@ public class TransactionLineModel {
      *
      * The amount of this line item that was exempt.
      */
-    public void setExemptAmount(Decimal value) {
+    public void setExemptAmount(BigDecimal value) {
         this.exemptAmount = value;
     }
 
@@ -313,14 +313,14 @@ public class TransactionLineModel {
     }
 
 
-    private object isItemTaxable;
+    private Boolean isItemTaxable;
 
     /**
      * Getter for isItemTaxable
      *
      * True if this item is taxable.
      */
-    public object getIsItemTaxable() {
+    public Boolean getIsItemTaxable() {
         return this.isItemTaxable;
     }
 
@@ -329,19 +329,19 @@ public class TransactionLineModel {
      *
      * True if this item is taxable.
      */
-    public void setIsItemTaxable(object value) {
+    public void setIsItemTaxable(Boolean value) {
         this.isItemTaxable = value;
     }
 
 
-    private object isSSTP;
+    private Boolean isSSTP;
 
     /**
      * Getter for isSSTP
      *
      * True if this item is a Streamlined Sales Tax line item.
      */
-    public object getIsSSTP() {
+    public Boolean getIsSSTP() {
         return this.isSSTP;
     }
 
@@ -350,7 +350,7 @@ public class TransactionLineModel {
      *
      * True if this item is a Streamlined Sales Tax line item.
      */
-    public void setIsSSTP(object value) {
+    public void setIsSSTP(Boolean value) {
         this.isSSTP = value;
     }
 
@@ -376,7 +376,7 @@ public class TransactionLineModel {
     }
 
 
-    private Decimal lineAmount;
+    private BigDecimal lineAmount;
 
     /**
      * Getter for lineAmount
@@ -384,7 +384,7 @@ public class TransactionLineModel {
      * The total amount of the transaction, including both taxable and exempt. This is the total price for all items.
     * To determine the individual item price, divide this by quantity.
      */
-    public Decimal getLineAmount() {
+    public BigDecimal getLineAmount() {
         return this.lineAmount;
     }
 
@@ -394,19 +394,19 @@ public class TransactionLineModel {
      * The total amount of the transaction, including both taxable and exempt. This is the total price for all items.
     * To determine the individual item price, divide this by quantity.
      */
-    public void setLineAmount(Decimal value) {
+    public void setLineAmount(BigDecimal value) {
         this.lineAmount = value;
     }
 
 
-    private Decimal quantity;
+    private BigDecimal quantity;
 
     /**
      * Getter for quantity
      *
      * The quantity of products sold on this line item.
      */
-    public Decimal getQuantity() {
+    public BigDecimal getQuantity() {
         return this.quantity;
     }
 
@@ -415,7 +415,7 @@ public class TransactionLineModel {
      *
      * The quantity of products sold on this line item.
      */
-    public void setQuantity(Decimal value) {
+    public void setQuantity(BigDecimal value) {
         this.quantity = value;
     }
 
@@ -462,7 +462,7 @@ public class TransactionLineModel {
     }
 
 
-    private Instant reportingDate;
+    private Date reportingDate;
 
     /**
      * Getter for reportingDate
@@ -470,7 +470,7 @@ public class TransactionLineModel {
      * The date when this transaction should be reported. By default, all transactions are reported on the date when the actual transaction took place.
     * In some cases, line items may be reported later due to delayed shipments or other business reasons.
      */
-    public Instant getReportingDate() {
+    public Date getReportingDate() {
         return this.reportingDate;
     }
 
@@ -480,7 +480,7 @@ public class TransactionLineModel {
      * The date when this transaction should be reported. By default, all transactions are reported on the date when the actual transaction took place.
     * In some cases, line items may be reported later due to delayed shipments or other business reasons.
      */
-    public void setReportingDate(Instant value) {
+    public void setReportingDate(Date value) {
         this.reportingDate = value;
     }
 
@@ -527,14 +527,14 @@ public class TransactionLineModel {
     }
 
 
-    private Decimal tax;
+    private BigDecimal tax;
 
     /**
      * Getter for tax
      *
      * The amount of tax generated for this line item.
      */
-    public Decimal getTax() {
+    public BigDecimal getTax() {
         return this.tax;
     }
 
@@ -543,19 +543,19 @@ public class TransactionLineModel {
      *
      * The amount of tax generated for this line item.
      */
-    public void setTax(Decimal value) {
+    public void setTax(BigDecimal value) {
         this.tax = value;
     }
 
 
-    private Decimal taxableAmount;
+    private BigDecimal taxableAmount;
 
     /**
      * Getter for taxableAmount
      *
      * The taxable amount of this line item.
      */
-    public Decimal getTaxableAmount() {
+    public BigDecimal getTaxableAmount() {
         return this.taxableAmount;
     }
 
@@ -564,19 +564,19 @@ public class TransactionLineModel {
      *
      * The taxable amount of this line item.
      */
-    public void setTaxableAmount(Decimal value) {
+    public void setTaxableAmount(BigDecimal value) {
         this.taxableAmount = value;
     }
 
 
-    private Decimal taxCalculated;
+    private BigDecimal taxCalculated;
 
     /**
      * Getter for taxCalculated
      *
      * The tax calculated for this line by Avalara. If the transaction was calculated with a tax override, this amount will be different from the "tax" value.
      */
-    public Decimal getTaxCalculated() {
+    public BigDecimal getTaxCalculated() {
         return this.taxCalculated;
     }
 
@@ -585,7 +585,7 @@ public class TransactionLineModel {
      *
      * The tax calculated for this line by Avalara. If the transaction was calculated with a tax override, this amount will be different from the "tax" value.
      */
-    public void setTaxCalculated(Decimal value) {
+    public void setTaxCalculated(BigDecimal value) {
         this.taxCalculated = value;
     }
 
@@ -632,7 +632,7 @@ public class TransactionLineModel {
     }
 
 
-    private Instant taxDate;
+    private Date taxDate;
 
     /**
      * Getter for taxDate
@@ -641,7 +641,7 @@ public class TransactionLineModel {
     * In some cases, for example when a consumer returns a product purchased previously, line items may be calculated using a tax date in the past
     * so that the consumer can receive a refund for the correct tax amount that was charged when the item was originally purchased.
      */
-    public Instant getTaxDate() {
+    public Date getTaxDate() {
         return this.taxDate;
     }
 
@@ -652,7 +652,7 @@ public class TransactionLineModel {
     * In some cases, for example when a consumer returns a product purchased previously, line items may be calculated using a tax date in the past
     * so that the consumer can receive a refund for the correct tax amount that was charged when the item was originally purchased.
      */
-    public void setTaxDate(Instant value) {
+    public void setTaxDate(Date value) {
         this.taxDate = value;
     }
 
@@ -720,14 +720,14 @@ public class TransactionLineModel {
     }
 
 
-    private Decimal taxOverrideAmount;
+    private BigDecimal taxOverrideAmount;
 
     /**
      * Getter for taxOverrideAmount
      *
      * If a tax override was specified, this indicates the amount of tax that was requested.
      */
-    public Decimal getTaxOverrideAmount() {
+    public BigDecimal getTaxOverrideAmount() {
         return this.taxOverrideAmount;
     }
 
@@ -736,7 +736,7 @@ public class TransactionLineModel {
      *
      * If a tax override was specified, this indicates the amount of tax that was requested.
      */
-    public void setTaxOverrideAmount(Decimal value) {
+    public void setTaxOverrideAmount(BigDecimal value) {
         this.taxOverrideAmount = value;
     }
 
@@ -762,14 +762,14 @@ public class TransactionLineModel {
     }
 
 
-    private object taxIncluded;
+    private Boolean taxIncluded;
 
     /**
      * Getter for taxIncluded
      *
      * True if tax was included in the purchase price of the item.
      */
-    public object getTaxIncluded() {
+    public Boolean getTaxIncluded() {
         return this.taxIncluded;
     }
 
@@ -778,7 +778,7 @@ public class TransactionLineModel {
      *
      * True if tax was included in the purchase price of the item.
      */
-    public void setTaxIncluded(object value) {
+    public void setTaxIncluded(Boolean value) {
         this.taxIncluded = value;
     }
 

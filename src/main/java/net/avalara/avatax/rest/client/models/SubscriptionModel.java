@@ -114,14 +114,14 @@ public class SubscriptionModel {
     }
 
 
-    private Instant effectiveDate;
+    private Date effectiveDate;
 
     /**
      * Getter for effectiveDate
      *
      * The date when the subscription began.
      */
-    public Instant getEffectiveDate() {
+    public Date getEffectiveDate() {
         return this.effectiveDate;
     }
 
@@ -130,19 +130,19 @@ public class SubscriptionModel {
      *
      * The date when the subscription began.
      */
-    public void setEffectiveDate(Instant value) {
+    public void setEffectiveDate(Date value) {
         this.effectiveDate = value;
     }
 
 
-    private Instant endDate;
+    private Date endDate;
 
     /**
      * Getter for endDate
      *
      * If the subscription has ended or will end, this date indicates when the subscription ends.
      */
-    public Instant getEndDate() {
+    public Date getEndDate() {
         return this.endDate;
     }
 
@@ -151,19 +151,19 @@ public class SubscriptionModel {
      *
      * If the subscription has ended or will end, this date indicates when the subscription ends.
      */
-    public void setEndDate(Instant value) {
+    public void setEndDate(Date value) {
         this.endDate = value;
     }
 
 
-    private Instant createdDate;
+    private Date createdDate;
 
     /**
      * Getter for createdDate
      *
      * The date when this record was created.
      */
-    public Instant getCreatedDate() {
+    public Date getCreatedDate() {
         return this.createdDate;
     }
 
@@ -172,7 +172,7 @@ public class SubscriptionModel {
      *
      * The date when this record was created.
      */
-    public void setCreatedDate(Instant value) {
+    public void setCreatedDate(Date value) {
         this.createdDate = value;
     }
 
@@ -198,14 +198,14 @@ public class SubscriptionModel {
     }
 
 
-    private Instant modifiedDate;
+    private Date modifiedDate;
 
     /**
      * Getter for modifiedDate
      *
      * The date/time when this record was last modified.
      */
-    public Instant getModifiedDate() {
+    public Date getModifiedDate() {
         return this.modifiedDate;
     }
 
@@ -214,7 +214,7 @@ public class SubscriptionModel {
      *
      * The date/time when this record was last modified.
      */
-    public void setModifiedDate(Instant value) {
+    public void setModifiedDate(Date value) {
         this.modifiedDate = value;
     }
 

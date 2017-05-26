@@ -97,14 +97,14 @@ public class CreateTransactionModel {
     }
 
 
-    private Instant date;
+    private Date date;
 
     /**
      * Getter for date
      *
      * Transaction Date - The date on the invoice, purchase order, etc.
      */
-    public Instant getDate() {
+    public Date getDate() {
         return this.date;
     }
 
@@ -113,7 +113,7 @@ public class CreateTransactionModel {
      *
      * Transaction Date - The date on the invoice, purchase order, etc.
      */
-    public void setDate(Instant value) {
+    public void setDate(Date value) {
         this.date = value;
     }
 
@@ -183,7 +183,7 @@ public class CreateTransactionModel {
     }
 
 
-    private Decimal discount;
+    private BigDecimal discount;
 
     /**
      * Getter for discount
@@ -192,7 +192,7 @@ public class CreateTransactionModel {
     * that have the `discounted` flag set to true. If no lines have `discounted` set to true, this discount
     * cannot be applied.
      */
-    public Decimal getDiscount() {
+    public BigDecimal getDiscount() {
         return this.discount;
     }
 
@@ -203,7 +203,7 @@ public class CreateTransactionModel {
     * that have the `discounted` flag set to true. If no lines have `discounted` set to true, this discount
     * cannot be applied.
      */
-    public void setDiscount(Decimal value) {
+    public void setDiscount(BigDecimal value) {
         this.discount = value;
     }
 
@@ -359,7 +359,7 @@ public class CreateTransactionModel {
     }
 
 
-    private object commit;
+    private Boolean commit;
 
     /**
      * Getter for commit
@@ -367,7 +367,7 @@ public class CreateTransactionModel {
      * Causes the document to be committed if true. This option is only applicable for invoice document 
     * types, not orders.
      */
-    public object getCommit() {
+    public Boolean getCommit() {
         return this.commit;
     }
 
@@ -377,7 +377,7 @@ public class CreateTransactionModel {
      * Causes the document to be committed if true. This option is only applicable for invoice document 
     * types, not orders.
      */
-    public void setCommit(object value) {
+    public void setCommit(Boolean value) {
         this.commit = value;
     }
 
@@ -468,14 +468,14 @@ public class CreateTransactionModel {
     }
 
 
-    private Decimal exchangeRate;
+    private BigDecimal exchangeRate;
 
     /**
      * Getter for exchangeRate
      *
      * Currency exchange rate from this transaction to the company base currency.
      */
-    public Decimal getExchangeRate() {
+    public BigDecimal getExchangeRate() {
         return this.exchangeRate;
     }
 
@@ -484,19 +484,19 @@ public class CreateTransactionModel {
      *
      * Currency exchange rate from this transaction to the company base currency.
      */
-    public void setExchangeRate(Decimal value) {
+    public void setExchangeRate(BigDecimal value) {
         this.exchangeRate = value;
     }
 
 
-    private Instant exchangeRateEffectiveDate;
+    private Date exchangeRateEffectiveDate;
 
     /**
      * Getter for exchangeRateEffectiveDate
      *
      * Effective date of the exchange rate.
      */
-    public Instant getExchangeRateEffectiveDate() {
+    public Date getExchangeRateEffectiveDate() {
         return this.exchangeRateEffectiveDate;
     }
 
@@ -505,7 +505,7 @@ public class CreateTransactionModel {
      *
      * Effective date of the exchange rate.
      */
-    public void setExchangeRateEffectiveDate(Instant value) {
+    public void setExchangeRateEffectiveDate(Date value) {
         this.exchangeRateEffectiveDate = value;
     }
 
@@ -562,14 +562,14 @@ public class CreateTransactionModel {
     }
 
 
-    private object isSellerImporterOfRecord;
+    private Boolean isSellerImporterOfRecord;
 
     /**
      * Getter for isSellerImporterOfRecord
      *
      * Specifies if the Transaction has the seller as IsSellerImporterOfRecord
      */
-    public object getIsSellerImporterOfRecord() {
+    public Boolean getIsSellerImporterOfRecord() {
         return this.isSellerImporterOfRecord;
     }
 
@@ -578,7 +578,7 @@ public class CreateTransactionModel {
      *
      * Specifies if the Transaction has the seller as IsSellerImporterOfRecord
      */
-    public void setIsSellerImporterOfRecord(object value) {
+    public void setIsSellerImporterOfRecord(Boolean value) {
         this.isSellerImporterOfRecord = value;
     }
 

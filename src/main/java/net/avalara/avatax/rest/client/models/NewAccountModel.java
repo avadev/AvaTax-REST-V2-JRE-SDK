@@ -72,14 +72,14 @@ public class NewAccountModel {
     }
 
 
-    private Instant createdDate;
+    private Date createdDate;
 
     /**
      * Getter for createdDate
      *
      * The date and time when this account was created
      */
-    public Instant getCreatedDate() {
+    public Date getCreatedDate() {
         return this.createdDate;
     }
 
@@ -88,19 +88,19 @@ public class NewAccountModel {
      *
      * The date and time when this account was created
      */
-    public void setCreatedDate(Instant value) {
+    public void setCreatedDate(Date value) {
         this.createdDate = value;
     }
 
 
-    private Instant emailedDate;
+    private Date emailedDate;
 
     /**
      * Getter for emailedDate
      *
      * The date and time when account information was emailed to the user
      */
-    public Instant getEmailedDate() {
+    public Date getEmailedDate() {
         return this.emailedDate;
     }
 
@@ -109,7 +109,7 @@ public class NewAccountModel {
      *
      * The date and time when account information was emailed to the user
      */
-    public void setEmailedDate(Instant value) {
+    public void setEmailedDate(Date value) {
         this.emailedDate = value;
     }
 

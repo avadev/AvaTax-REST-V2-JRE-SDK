@@ -51,14 +51,14 @@ public class PingResultModel {
     }
 
 
-    private object authenticated;
+    private Boolean authenticated;
 
     /**
      * Getter for authenticated
      *
      * Returns true if you provided authentication for this API call; false if you did not.
      */
-    public object getAuthenticated() {
+    public Boolean getAuthenticated() {
         return this.authenticated;
     }
 
@@ -67,7 +67,7 @@ public class PingResultModel {
      *
      * Returns true if you provided authentication for this API call; false if you did not.
      */
-    public void setAuthenticated(object value) {
+    public void setAuthenticated(Boolean value) {
         this.authenticated = value;
     }
 

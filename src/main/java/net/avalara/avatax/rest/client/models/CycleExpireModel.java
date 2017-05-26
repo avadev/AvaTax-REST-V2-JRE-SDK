@@ -30,7 +30,7 @@ import java.util.HashMap;
 public class CycleExpireModel {
 
 
-    private object success;
+    private Boolean success;
 
     /**
      * Getter for success
@@ -38,7 +38,7 @@ public class CycleExpireModel {
      * Whether or not the filing calendar can be expired.
     * e.g. if user makes end date of a calendar earlier than latest filing, this would be set to false.
      */
-    public object getSuccess() {
+    public Boolean getSuccess() {
         return this.success;
     }
 
@@ -48,7 +48,7 @@ public class CycleExpireModel {
      * Whether or not the filing calendar can be expired.
     * e.g. if user makes end date of a calendar earlier than latest filing, this would be set to false.
      */
-    public void setSuccess(object value) {
+    public void setSuccess(Boolean value) {
         this.success = value;
     }
 

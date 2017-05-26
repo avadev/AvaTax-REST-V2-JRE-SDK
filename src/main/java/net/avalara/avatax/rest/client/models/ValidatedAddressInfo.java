@@ -210,14 +210,14 @@ public class ValidatedAddressInfo {
     }
 
 
-    private Decimal latitude;
+    private BigDecimal latitude;
 
     /**
      * Getter for latitude
      *
      * Geospatial latitude measurement
      */
-    public Decimal getLatitude() {
+    public BigDecimal getLatitude() {
         return this.latitude;
     }
 
@@ -226,19 +226,19 @@ public class ValidatedAddressInfo {
      *
      * Geospatial latitude measurement
      */
-    public void setLatitude(Decimal value) {
+    public void setLatitude(BigDecimal value) {
         this.latitude = value;
     }
 
 
-    private Decimal longitude;
+    private BigDecimal longitude;
 
     /**
      * Getter for longitude
      *
      * Geospatial longitude measurement
      */
-    public Decimal getLongitude() {
+    public BigDecimal getLongitude() {
         return this.longitude;
     }
 
@@ -247,7 +247,7 @@ public class ValidatedAddressInfo {
      *
      * Geospatial longitude measurement
      */
-    public void setLongitude(Decimal value) {
+    public void setLongitude(BigDecimal value) {
         this.longitude = value;
     }
 

@@ -30,14 +30,14 @@ import java.util.HashMap;
 public class CycleAddOptionModel {
 
 
-    private object available;
+    private Boolean available;
 
     /**
      * Getter for available
      *
      * True if this form can be added and filed for the current cycle. "Current cycle" is considered one month before the month of today's date.
      */
-    public object getAvailable() {
+    public Boolean getAvailable() {
         return this.available;
     }
 
@@ -46,19 +46,19 @@ public class CycleAddOptionModel {
      *
      * True if this form can be added and filed for the current cycle. "Current cycle" is considered one month before the month of today's date.
      */
-    public void setAvailable(object value) {
+    public void setAvailable(Boolean value) {
         this.available = value;
     }
 
 
-    private Instant transactionalPeriodStart;
+    private Date transactionalPeriodStart;
 
     /**
      * Getter for transactionalPeriodStart
      *
      * The period start date for the customer's first transaction in the jurisdiction being added
      */
-    public Instant getTransactionalPeriodStart() {
+    public Date getTransactionalPeriodStart() {
         return this.transactionalPeriodStart;
     }
 
@@ -67,19 +67,19 @@ public class CycleAddOptionModel {
      *
      * The period start date for the customer's first transaction in the jurisdiction being added
      */
-    public void setTransactionalPeriodStart(Instant value) {
+    public void setTransactionalPeriodStart(Date value) {
         this.transactionalPeriodStart = value;
     }
 
 
-    private Instant transactionalPeriodEnd;
+    private Date transactionalPeriodEnd;
 
     /**
      * Getter for transactionalPeriodEnd
      *
      * The period end date for the customer's last transaction in the jurisdiction being added
      */
-    public Instant getTransactionalPeriodEnd() {
+    public Date getTransactionalPeriodEnd() {
         return this.transactionalPeriodEnd;
     }
 
@@ -88,19 +88,19 @@ public class CycleAddOptionModel {
      *
      * The period end date for the customer's last transaction in the jurisdiction being added
      */
-    public void setTransactionalPeriodEnd(Instant value) {
+    public void setTransactionalPeriodEnd(Date value) {
         this.transactionalPeriodEnd = value;
     }
 
 
-    private Instant filingDueDate;
+    private Date filingDueDate;
 
     /**
      * Getter for filingDueDate
      *
      * The jurisdiction-assigned due date for the form
      */
-    public Instant getFilingDueDate() {
+    public Date getFilingDueDate() {
         return this.filingDueDate;
     }
 
@@ -109,7 +109,7 @@ public class CycleAddOptionModel {
      *
      * The jurisdiction-assigned due date for the form
      */
-    public void setFilingDueDate(Instant value) {
+    public void setFilingDueDate(Date value) {
         this.filingDueDate = value;
     }
 

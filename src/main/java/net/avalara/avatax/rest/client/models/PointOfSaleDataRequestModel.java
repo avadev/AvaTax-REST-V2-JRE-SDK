@@ -51,14 +51,14 @@ public class PointOfSaleDataRequestModel {
     }
 
 
-    private Instant documentDate;
+    private Date documentDate;
 
     /**
      * Getter for documentDate
      *
      * The date associated with the response content. Default is current date. This field can be used to backdate or postdate the response content.
      */
-    public Instant getDocumentDate() {
+    public Date getDocumentDate() {
         return this.documentDate;
     }
 
@@ -67,7 +67,7 @@ public class PointOfSaleDataRequestModel {
      *
      * The date associated with the response content. Default is current date. This field can be used to backdate or postdate the response content.
      */
-    public void setDocumentDate(Instant value) {
+    public void setDocumentDate(Date value) {
         this.documentDate = value;
     }
 
@@ -135,14 +135,14 @@ public class PointOfSaleDataRequestModel {
     }
 
 
-    private object includeJurisCodes;
+    private Boolean includeJurisCodes;
 
     /**
      * Getter for includeJurisCodes
      *
      * Set this value to true to include Juris Code in the response.
      */
-    public object getIncludeJurisCodes() {
+    public Boolean getIncludeJurisCodes() {
         return this.includeJurisCodes;
     }
 
@@ -151,7 +151,7 @@ public class PointOfSaleDataRequestModel {
      *
      * Set this value to true to include Juris Code in the response.
      */
-    public void setIncludeJurisCodes(object value) {
+    public void setIncludeJurisCodes(Boolean value) {
         this.includeJurisCodes = value;
     }
 

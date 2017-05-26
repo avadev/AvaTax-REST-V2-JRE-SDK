@@ -72,14 +72,14 @@ public class NoticeStatusModel {
     }
 
 
-    private object isOpen;
+    private Boolean isOpen;
 
     /**
      * Getter for isOpen
      *
      * True if a tax notice in this status is considered 'open' and has more work expected to be done before it is closed.
      */
-    public object getIsOpen() {
+    public Boolean getIsOpen() {
         return this.isOpen;
     }
 
@@ -88,7 +88,7 @@ public class NoticeStatusModel {
      *
      * True if a tax notice in this status is considered 'open' and has more work expected to be done before it is closed.
      */
-    public void setIsOpen(object value) {
+    public void setIsOpen(Boolean value) {
         this.isOpen = value;
     }
 

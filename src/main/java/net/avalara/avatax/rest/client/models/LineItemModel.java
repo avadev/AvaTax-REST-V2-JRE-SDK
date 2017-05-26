@@ -51,14 +51,14 @@ public class LineItemModel {
     }
 
 
-    private Decimal quantity;
+    private BigDecimal quantity;
 
     /**
      * Getter for quantity
      *
      * Quantity of items in this line
      */
-    public Decimal getQuantity() {
+    public BigDecimal getQuantity() {
         return this.quantity;
     }
 
@@ -67,19 +67,19 @@ public class LineItemModel {
      *
      * Quantity of items in this line
      */
-    public void setQuantity(Decimal value) {
+    public void setQuantity(BigDecimal value) {
         this.quantity = value;
     }
 
 
-    private Decimal amount;
+    private BigDecimal amount;
 
     /**
      * Getter for amount
      *
      * Total amount for this line
      */
-    public Decimal getAmount() {
+    public BigDecimal getAmount() {
         return this.amount;
     }
 
@@ -88,7 +88,7 @@ public class LineItemModel {
      *
      * Total amount for this line
      */
-    public void setAmount(Decimal value) {
+    public void setAmount(BigDecimal value) {
         this.amount = value;
     }
 
@@ -198,14 +198,14 @@ public class LineItemModel {
     }
 
 
-    private object discounted;
+    private Boolean discounted;
 
     /**
      * Getter for discounted
      *
      * True if the document discount should be applied to this line
      */
-    public object getDiscounted() {
+    public Boolean getDiscounted() {
         return this.discounted;
     }
 
@@ -214,19 +214,19 @@ public class LineItemModel {
      *
      * True if the document discount should be applied to this line
      */
-    public void setDiscounted(object value) {
+    public void setDiscounted(Boolean value) {
         this.discounted = value;
     }
 
 
-    private object taxIncluded;
+    private Boolean taxIncluded;
 
     /**
      * Getter for taxIncluded
      *
      * Indicates if line has Tax Included; defaults to false
      */
-    public object getTaxIncluded() {
+    public Boolean getTaxIncluded() {
         return this.taxIncluded;
     }
 
@@ -235,7 +235,7 @@ public class LineItemModel {
      *
      * Indicates if line has Tax Included; defaults to false
      */
-    public void setTaxIncluded(object value) {
+    public void setTaxIncluded(Boolean value) {
         this.taxIncluded = value;
     }
 

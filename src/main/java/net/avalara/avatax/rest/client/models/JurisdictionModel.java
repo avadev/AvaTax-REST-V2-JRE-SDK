@@ -93,14 +93,14 @@ public class JurisdictionModel {
     }
 
 
-    private Decimal rate;
+    private BigDecimal rate;
 
     /**
      * Getter for rate
      *
      * The base rate of tax specific to this jurisdiction.
      */
-    public Decimal getRate() {
+    public BigDecimal getRate() {
         return this.rate;
     }
 
@@ -109,19 +109,19 @@ public class JurisdictionModel {
      *
      * The base rate of tax specific to this jurisdiction.
      */
-    public void setRate(Decimal value) {
+    public void setRate(BigDecimal value) {
         this.rate = value;
     }
 
 
-    private Decimal salesRate;
+    private BigDecimal salesRate;
 
     /**
      * Getter for salesRate
      *
      * The "Sales" tax rate specific to this jurisdiction.
      */
-    public Decimal getSalesRate() {
+    public BigDecimal getSalesRate() {
         return this.salesRate;
     }
 
@@ -130,7 +130,7 @@ public class JurisdictionModel {
      *
      * The "Sales" tax rate specific to this jurisdiction.
      */
-    public void setSalesRate(Decimal value) {
+    public void setSalesRate(BigDecimal value) {
         this.salesRate = value;
     }
 
@@ -177,14 +177,14 @@ public class JurisdictionModel {
     }
 
 
-    private Decimal useRate;
+    private BigDecimal useRate;
 
     /**
      * Getter for useRate
      *
      * The "Seller's Use" tax rate specific to this jurisdiction.
      */
-    public Decimal getUseRate() {
+    public BigDecimal getUseRate() {
         return this.useRate;
     }
 
@@ -193,7 +193,7 @@ public class JurisdictionModel {
      *
      * The "Seller's Use" tax rate specific to this jurisdiction.
      */
-    public void setUseRate(Decimal value) {
+    public void setUseRate(BigDecimal value) {
         this.useRate = value;
     }
 

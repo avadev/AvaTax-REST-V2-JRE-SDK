@@ -114,14 +114,14 @@ public class RemoveTransactionLineModel {
     }
 
 
-    private object renumber;
+    private Boolean renumber;
 
     /**
      * Getter for renumber
      *
      * ption to renumber lines after removal. After renumber, the line number becomes: "1", "2", "3", ...
      */
-    public object getRenumber() {
+    public Boolean getRenumber() {
         return this.renumber;
     }
 
@@ -130,7 +130,7 @@ public class RemoveTransactionLineModel {
      *
      * ption to renumber lines after removal. After renumber, the line number becomes: "1", "2", "3", ...
      */
-    public void setRenumber(object value) {
+    public void setRenumber(Boolean value) {
         this.renumber = value;
     }
 

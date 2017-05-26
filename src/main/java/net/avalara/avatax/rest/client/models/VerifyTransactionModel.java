@@ -30,14 +30,14 @@ import java.util.HashMap;
 public class VerifyTransactionModel {
 
 
-    private Instant verifyTransactionDate;
+    private Date verifyTransactionDate;
 
     /**
      * Getter for verifyTransactionDate
      *
      * Transaction Date - The date on the invoice, purchase order, etc.
      */
-    public Instant getVerifyTransactionDate() {
+    public Date getVerifyTransactionDate() {
         return this.verifyTransactionDate;
     }
 
@@ -46,19 +46,19 @@ public class VerifyTransactionModel {
      *
      * Transaction Date - The date on the invoice, purchase order, etc.
      */
-    public void setVerifyTransactionDate(Instant value) {
+    public void setVerifyTransactionDate(Date value) {
         this.verifyTransactionDate = value;
     }
 
 
-    private Decimal verifyTotalAmount;
+    private BigDecimal verifyTotalAmount;
 
     /**
      * Getter for verifyTotalAmount
      *
      * Total Amount - The total amount (not including tax) for the document.
      */
-    public Decimal getVerifyTotalAmount() {
+    public BigDecimal getVerifyTotalAmount() {
         return this.verifyTotalAmount;
     }
 
@@ -67,19 +67,19 @@ public class VerifyTransactionModel {
      *
      * Total Amount - The total amount (not including tax) for the document.
      */
-    public void setVerifyTotalAmount(Decimal value) {
+    public void setVerifyTotalAmount(BigDecimal value) {
         this.verifyTotalAmount = value;
     }
 
 
-    private Decimal verifyTotalTax;
+    private BigDecimal verifyTotalTax;
 
     /**
      * Getter for verifyTotalTax
      *
      * Total Tax - The total tax for the document.
      */
-    public Decimal getVerifyTotalTax() {
+    public BigDecimal getVerifyTotalTax() {
         return this.verifyTotalTax;
     }
 
@@ -88,7 +88,7 @@ public class VerifyTransactionModel {
      *
      * Total Tax - The total tax for the document.
      */
-    public void setVerifyTotalTax(Decimal value) {
+    public void setVerifyTotalTax(BigDecimal value) {
         this.verifyTotalTax = value;
     }
 

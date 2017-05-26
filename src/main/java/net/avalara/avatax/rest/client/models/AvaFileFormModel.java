@@ -114,14 +114,14 @@ public class AvaFileFormModel {
     }
 
 
-    private Instant effDate;
+    private Date effDate;
 
     /**
      * Getter for effDate
      *
      * The date this form starts to take effect
      */
-    public Instant getEffDate() {
+    public Date getEffDate() {
         return this.effDate;
     }
 
@@ -130,19 +130,19 @@ public class AvaFileFormModel {
      *
      * The date this form starts to take effect
      */
-    public void setEffDate(Instant value) {
+    public void setEffDate(Date value) {
         this.effDate = value;
     }
 
 
-    private Instant endDate;
+    private Date endDate;
 
     /**
      * Getter for endDate
      *
      * The date the form finishes to take effect
      */
-    public Instant getEndDate() {
+    public Date getEndDate() {
         return this.endDate;
     }
 
@@ -151,7 +151,7 @@ public class AvaFileFormModel {
      *
      * The date the form finishes to take effect
      */
-    public void setEndDate(Instant value) {
+    public void setEndDate(Date value) {
         this.endDate = value;
     }
 
@@ -324,14 +324,14 @@ public class AvaFileFormModel {
     }
 
 
-    private Instant efileDueTime;
+    private Date efileDueTime;
 
     /**
      * Getter for efileDueTime
      *
      * The time of day by when the E-filing should be submitted
      */
-    public Instant getEfileDueTime() {
+    public Date getEfileDueTime() {
         return this.efileDueTime;
     }
 
@@ -340,19 +340,19 @@ public class AvaFileFormModel {
      *
      * The time of day by when the E-filing should be submitted
      */
-    public void setEfileDueTime(Instant value) {
+    public void setEfileDueTime(Date value) {
         this.efileDueTime = value;
     }
 
 
-    private object hasVendorDiscount;
+    private Boolean hasVendorDiscount;
 
     /**
      * Getter for hasVendorDiscount
      *
      * Whether the customer has discount
      */
-    public object getHasVendorDiscount() {
+    public Boolean getHasVendorDiscount() {
         return this.hasVendorDiscount;
     }
 
@@ -361,7 +361,7 @@ public class AvaFileFormModel {
      *
      * Whether the customer has discount
      */
-    public void setHasVendorDiscount(object value) {
+    public void setHasVendorDiscount(Boolean value) {
         this.hasVendorDiscount = value;
     }
 

@@ -51,14 +51,14 @@ public class AuditTransactionModel {
     }
 
 
-    private Instant serverTimestamp;
+    private Date serverTimestamp;
 
     /**
      * Getter for serverTimestamp
      *
      * Server timestamp, in UTC, of the date/time when the original transaction was created
      */
-    public Instant getServerTimestamp() {
+    public Date getServerTimestamp() {
         return this.serverTimestamp;
     }
 
@@ -67,19 +67,19 @@ public class AuditTransactionModel {
      *
      * Server timestamp, in UTC, of the date/time when the original transaction was created
      */
-    public void setServerTimestamp(Instant value) {
+    public void setServerTimestamp(Date value) {
         this.serverTimestamp = value;
     }
 
 
-    private Instant serverDuration;
+    private Date serverDuration;
 
     /**
      * Getter for serverDuration
      *
      * Length of time the original API call took
      */
-    public Instant getServerDuration() {
+    public Date getServerDuration() {
         return this.serverDuration;
     }
 
@@ -88,7 +88,7 @@ public class AuditTransactionModel {
      *
      * Length of time the original API call took
      */
-    public void setServerDuration(Instant value) {
+    public void setServerDuration(Date value) {
         this.serverDuration = value;
     }
 

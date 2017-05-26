@@ -321,8 +321,8 @@ public class AvaTaxClient {
      * @param string postalCode Postal Code / Zip Code
      * @param string country Two character ISO 3166 Country Code (see /api/v2/definitions/countries for a full list)
      * @param TextCase textCase selectable text case for address validation (See TextCase::* for a list of allowable values)
-     * @param Decimal latitude Geospatial latitude measurement
-     * @param Decimal longitude Geospatial longitude measurement
+     * @param BigDecimal latitude Geospatial latitude measurement
+     * @param BigDecimal longitude Geospatial longitude measurement
      * @return AddressResolutionModel
      */
     public AddressResolutionModel resolveAddress(String line1, String line2, String line3, String city, String region, String postalCode, String country, TextCase? textCase, Decimal? latitude, Decimal? longitude)
@@ -358,11 +358,11 @@ public class AvaTaxClient {
      * @param string postalCode Postal Code / Zip Code
      * @param string country Two character ISO 3166 Country Code (see /api/v2/definitions/countries for a full list)
      * @param TextCase textCase selectable text case for address validation (See TextCase::* for a list of allowable values)
-     * @param Decimal latitude Geospatial latitude measurement
-     * @param Decimal longitude Geospatial longitude measurement
+     * @param BigDecimal latitude Geospatial latitude measurement
+     * @param BigDecimal longitude Geospatial longitude measurement
      * @return AddressResolutionModel
      */
-    public AddressResolutionModel resolveAddressAsync(string line1, string line2, string line3, string city, string region, string postalCode, string country, TextCase textCase, Decimal latitude, Decimal longitude)
+    public AddressResolutionModel resolveAddressAsync(string line1, string line2, string line3, string city, string region, string postalCode, string country, TextCase textCase, BigDecimal latitude, BigDecimal longitude)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/addresses/resolve");
         path.AddQuery("line1", line1);
@@ -1676,8 +1676,8 @@ public class AvaTaxClient {
      * @param string region The region, state, or province part of this location's address.
      * @param string postalCode The postal code of this location's address.
      * @param string country The country part of this location's address.
-     * @param Decimal latitude Optionally identify the location via latitude/longitude instead of via address.
-     * @param Decimal longitude Optionally identify the location via latitude/longitude instead of via address.
+     * @param BigDecimal latitude Optionally identify the location via latitude/longitude instead of via address.
+     * @param BigDecimal longitude Optionally identify the location via latitude/longitude instead of via address.
      * @return FetchResult
      */
     public FetchResult<LocationQuestionModel> listLocationQuestionsByAddress(String line1, String line2, String line3, String city, String region, String postalCode, String country, Decimal? latitude, Decimal? longitude)
@@ -1711,11 +1711,11 @@ public class AvaTaxClient {
      * @param string region The region, state, or province part of this location's address.
      * @param string postalCode The postal code of this location's address.
      * @param string country The country part of this location's address.
-     * @param Decimal latitude Optionally identify the location via latitude/longitude instead of via address.
-     * @param Decimal longitude Optionally identify the location via latitude/longitude instead of via address.
+     * @param BigDecimal latitude Optionally identify the location via latitude/longitude instead of via address.
+     * @param BigDecimal longitude Optionally identify the location via latitude/longitude instead of via address.
      * @return FetchResult
      */
-    public FetchResult listLocationQuestionsByAddressAsync(string line1, string line2, string line3, string city, string region, string postalCode, string country, Decimal latitude, Decimal longitude)
+    public FetchResult listLocationQuestionsByAddressAsync(string line1, string line2, string line3, string city, string region, string postalCode, string country, BigDecimal latitude, BigDecimal longitude)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/locationquestions");
         path.AddQuery("line1", line1);
@@ -5025,10 +5025,10 @@ public class AvaTaxClient {
      * 
      * @param int companyId The ID number of the company that owns this location.
      * @param int id The ID number of the location to retrieve point-of-sale data.
-     * @param Instant date The date for which point-of-sale data would be calculated (today by default)
+     * @param Date date The date for which point-of-sale data would be calculated (today by default)
      * @param PointOfSaleFileType format The format of the file (JSON by default) (See PointOfSaleFileType::* for a list of allowable values)
      * @param PointOfSalePartnerId partnerId If specified, requests a custom partner-formatted version of the file. (See PointOfSalePartnerId::* for a list of allowable values)
-     * @param object includeJurisCodes When true, the file will include jurisdiction codes in the result.
+     * @param Boolean includeJurisCodes When true, the file will include jurisdiction codes in the result.
      * @return object
      */
     public FileResult buildPointOfSaleDataForLocation(Int32 companyId, Int32 id, DateTime? date, PointOfSaleFileType? format, PointOfSalePartnerId? partnerId, Boolean? includeJurisCodes)
@@ -5054,13 +5054,13 @@ public class AvaTaxClient {
      * 
      * @param int companyId The ID number of the company that owns this location.
      * @param int id The ID number of the location to retrieve point-of-sale data.
-     * @param Instant date The date for which point-of-sale data would be calculated (today by default)
+     * @param Date date The date for which point-of-sale data would be calculated (today by default)
      * @param PointOfSaleFileType format The format of the file (JSON by default) (See PointOfSaleFileType::* for a list of allowable values)
      * @param PointOfSalePartnerId partnerId If specified, requests a custom partner-formatted version of the file. (See PointOfSalePartnerId::* for a list of allowable values)
-     * @param object includeJurisCodes When true, the file will include jurisdiction codes in the result.
+     * @param Boolean includeJurisCodes When true, the file will include jurisdiction codes in the result.
      * @return object
      */
-    public object buildPointOfSaleDataForLocationAsync(int companyId, int id, Instant date, PointOfSaleFileType format, PointOfSalePartnerId partnerId, object includeJurisCodes)
+    public object buildPointOfSaleDataForLocationAsync(int companyId, int id, Date date, PointOfSaleFileType format, PointOfSalePartnerId partnerId, Boolean includeJurisCodes)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/locations/{id}/pointofsaledata");
         path.ApplyField("companyId", companyId);

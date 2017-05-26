@@ -114,7 +114,7 @@ public class IsoRegionModel {
     }
 
 
-    private object streamlinedSalesTax;
+    private Boolean streamlinedSalesTax;
 
     /**
      * Getter for streamlinedSalesTax
@@ -122,7 +122,7 @@ public class IsoRegionModel {
      * For the United States, this flag indicates whether a U.S. State participates in the Streamlined
     * Sales Tax program. For countries other than the US, this flag is null.
      */
-    public object getStreamlinedSalesTax() {
+    public Boolean getStreamlinedSalesTax() {
         return this.streamlinedSalesTax;
     }
 
@@ -132,7 +132,7 @@ public class IsoRegionModel {
      * For the United States, this flag indicates whether a U.S. State participates in the Streamlined
     * Sales Tax program. For countries other than the US, this flag is null.
      */
-    public void setStreamlinedSalesTax(object value) {
+    public void setStreamlinedSalesTax(Boolean value) {
         this.streamlinedSalesTax = value;
     }
 

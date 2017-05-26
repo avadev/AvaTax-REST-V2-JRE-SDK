@@ -116,14 +116,14 @@ public class NoticeModel {
     }
 
 
-    private Instant receivedDate;
+    private Date receivedDate;
 
     /**
      * Getter for receivedDate
      *
      * The received date of the notice
      */
-    public Instant getReceivedDate() {
+    public Date getReceivedDate() {
         return this.receivedDate;
     }
 
@@ -132,19 +132,19 @@ public class NoticeModel {
      *
      * The received date of the notice
      */
-    public void setReceivedDate(Instant value) {
+    public void setReceivedDate(Date value) {
         this.receivedDate = value;
     }
 
 
-    private Instant closedDate;
+    private Date closedDate;
 
     /**
      * Getter for closedDate
      *
      * The closed date of the notice
      */
-    public Instant getClosedDate() {
+    public Date getClosedDate() {
         return this.closedDate;
     }
 
@@ -153,19 +153,19 @@ public class NoticeModel {
      *
      * The closed date of the notice
      */
-    public void setClosedDate(Instant value) {
+    public void setClosedDate(Date value) {
         this.closedDate = value;
     }
 
 
-    private Decimal totalRemit;
+    private BigDecimal totalRemit;
 
     /**
      * Getter for totalRemit
      *
      * The total remmitance amount for the notice
      */
-    public Decimal getTotalRemit() {
+    public BigDecimal getTotalRemit() {
         return this.totalRemit;
     }
 
@@ -174,7 +174,7 @@ public class NoticeModel {
      *
      * The total remmitance amount for the notice
      */
-    public void setTotalRemit(Decimal value) {
+    public void setTotalRemit(BigDecimal value) {
         this.totalRemit = value;
     }
 
@@ -578,14 +578,14 @@ public class NoticeModel {
     }
 
 
-    private Instant expectedResolutionDate;
+    private Date expectedResolutionDate;
 
     /**
      * Getter for expectedResolutionDate
      *
      * Expected resolution date of the notice
      */
-    public Instant getExpectedResolutionDate() {
+    public Date getExpectedResolutionDate() {
         return this.expectedResolutionDate;
     }
 
@@ -594,7 +594,7 @@ public class NoticeModel {
      *
      * Expected resolution date of the notice
      */
-    public void setExpectedResolutionDate(Instant value) {
+    public void setExpectedResolutionDate(Date value) {
         this.expectedResolutionDate = value;
     }
 
@@ -914,14 +914,14 @@ public class NoticeModel {
     }
 
 
-    private Instant createdDate;
+    private Date createdDate;
 
     /**
      * Getter for createdDate
      *
      * The date when this record was created.
      */
-    public Instant getCreatedDate() {
+    public Date getCreatedDate() {
         return this.createdDate;
     }
 
@@ -930,7 +930,7 @@ public class NoticeModel {
      *
      * The date when this record was created.
      */
-    public void setCreatedDate(Instant value) {
+    public void setCreatedDate(Date value) {
         this.createdDate = value;
     }
 
@@ -956,14 +956,14 @@ public class NoticeModel {
     }
 
 
-    private Instant modifiedDate;
+    private Date modifiedDate;
 
     /**
      * Getter for modifiedDate
      *
      * The date/time when this record was last modified.
      */
-    public Instant getModifiedDate() {
+    public Date getModifiedDate() {
         return this.modifiedDate;
     }
 
@@ -972,7 +972,7 @@ public class NoticeModel {
      *
      * The date/time when this record was last modified.
      */
-    public void setModifiedDate(Instant value) {
+    public void setModifiedDate(Date value) {
         this.modifiedDate = value;
     }
 

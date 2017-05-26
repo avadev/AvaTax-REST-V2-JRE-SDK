@@ -93,14 +93,14 @@ public class TransactionModel {
     }
 
 
-    private Instant date;
+    private Date date;
 
     /**
      * Getter for date
      *
      * The date on which this transaction occurred.
      */
-    public Instant getDate() {
+    public Date getDate() {
         return this.date;
     }
 
@@ -109,19 +109,19 @@ public class TransactionModel {
      *
      * The date on which this transaction occurred.
      */
-    public void setDate(Instant value) {
+    public void setDate(Date value) {
         this.date = value;
     }
 
 
-    private Instant paymentDate;
+    private Date paymentDate;
 
     /**
      * Getter for paymentDate
      *
      * The date when payment was made on this transaction. By default, this should be the same as the date of the transaction.
      */
-    public Instant getPaymentDate() {
+    public Date getPaymentDate() {
         return this.paymentDate;
     }
 
@@ -130,7 +130,7 @@ public class TransactionModel {
      *
      * The date when payment was made on this transaction. By default, this should be the same as the date of the transaction.
      */
-    public void setPaymentDate(Instant value) {
+    public void setPaymentDate(Date value) {
         this.paymentDate = value;
     }
 
@@ -288,14 +288,14 @@ public class TransactionModel {
     }
 
 
-    private object reconciled;
+    private Boolean reconciled;
 
     /**
      * Getter for reconciled
      *
      * If this transaction has been reconciled against the company's ledger, this value is set to true.
      */
-    public object getReconciled() {
+    public Boolean getReconciled() {
         return this.reconciled;
     }
 
@@ -304,7 +304,7 @@ public class TransactionModel {
      *
      * If this transaction has been reconciled against the company's ledger, this value is set to true.
      */
-    public void setReconciled(object value) {
+    public void setReconciled(Boolean value) {
         this.reconciled = value;
     }
 
@@ -416,14 +416,14 @@ public class TransactionModel {
     }
 
 
-    private Decimal taxOverrideAmount;
+    private BigDecimal taxOverrideAmount;
 
     /**
      * Getter for taxOverrideAmount
      *
      * If a tax override was applied to this transaction, indicates the amount of tax that was requested by the customer.
      */
-    public Decimal getTaxOverrideAmount() {
+    public BigDecimal getTaxOverrideAmount() {
         return this.taxOverrideAmount;
     }
 
@@ -432,7 +432,7 @@ public class TransactionModel {
      *
      * If a tax override was applied to this transaction, indicates the amount of tax that was requested by the customer.
      */
-    public void setTaxOverrideAmount(Decimal value) {
+    public void setTaxOverrideAmount(BigDecimal value) {
         this.taxOverrideAmount = value;
     }
 
@@ -458,14 +458,14 @@ public class TransactionModel {
     }
 
 
-    private Decimal totalAmount;
+    private BigDecimal totalAmount;
 
     /**
      * Getter for totalAmount
      *
      * The total amount of this transaction.
      */
-    public Decimal getTotalAmount() {
+    public BigDecimal getTotalAmount() {
         return this.totalAmount;
     }
 
@@ -474,19 +474,19 @@ public class TransactionModel {
      *
      * The total amount of this transaction.
      */
-    public void setTotalAmount(Decimal value) {
+    public void setTotalAmount(BigDecimal value) {
         this.totalAmount = value;
     }
 
 
-    private Decimal totalExempt;
+    private BigDecimal totalExempt;
 
     /**
      * Getter for totalExempt
      *
      * The amount of this transaction that was exempt.
      */
-    public Decimal getTotalExempt() {
+    public BigDecimal getTotalExempt() {
         return this.totalExempt;
     }
 
@@ -495,19 +495,19 @@ public class TransactionModel {
      *
      * The amount of this transaction that was exempt.
      */
-    public void setTotalExempt(Decimal value) {
+    public void setTotalExempt(BigDecimal value) {
         this.totalExempt = value;
     }
 
 
-    private Decimal totalTax;
+    private BigDecimal totalTax;
 
     /**
      * Getter for totalTax
      *
      * The total tax calculated for all lines in this transaction.
      */
-    public Decimal getTotalTax() {
+    public BigDecimal getTotalTax() {
         return this.totalTax;
     }
 
@@ -516,19 +516,19 @@ public class TransactionModel {
      *
      * The total tax calculated for all lines in this transaction.
      */
-    public void setTotalTax(Decimal value) {
+    public void setTotalTax(BigDecimal value) {
         this.totalTax = value;
     }
 
 
-    private Decimal totalTaxable;
+    private BigDecimal totalTaxable;
 
     /**
      * Getter for totalTaxable
      *
      * The portion of the total amount of this transaction that was taxable.
      */
-    public Decimal getTotalTaxable() {
+    public BigDecimal getTotalTaxable() {
         return this.totalTaxable;
     }
 
@@ -537,19 +537,19 @@ public class TransactionModel {
      *
      * The portion of the total amount of this transaction that was taxable.
      */
-    public void setTotalTaxable(Decimal value) {
+    public void setTotalTaxable(BigDecimal value) {
         this.totalTaxable = value;
     }
 
 
-    private Decimal totalTaxCalculated;
+    private BigDecimal totalTaxCalculated;
 
     /**
      * Getter for totalTaxCalculated
      *
      * If a tax override was applied to this transaction, indicates the amount of tax Avalara calculated for the transaction.
      */
-    public Decimal getTotalTaxCalculated() {
+    public BigDecimal getTotalTaxCalculated() {
         return this.totalTaxCalculated;
     }
 
@@ -558,7 +558,7 @@ public class TransactionModel {
      *
      * If a tax override was applied to this transaction, indicates the amount of tax Avalara calculated for the transaction.
      */
-    public void setTotalTaxCalculated(Decimal value) {
+    public void setTotalTaxCalculated(BigDecimal value) {
         this.totalTaxCalculated = value;
     }
 
@@ -605,14 +605,14 @@ public class TransactionModel {
     }
 
 
-    private object locked;
+    private Boolean locked;
 
     /**
      * Getter for locked
      *
      * If this transaction has been reported to a tax authority, this transaction is considered locked and may not be adjusted after reporting.
      */
-    public object getLocked() {
+    public Boolean getLocked() {
         return this.locked;
     }
 
@@ -621,7 +621,7 @@ public class TransactionModel {
      *
      * If this transaction has been reported to a tax authority, this transaction is considered locked and may not be adjusted after reporting.
      */
-    public void setLocked(object value) {
+    public void setLocked(Boolean value) {
         this.locked = value;
     }
 
@@ -754,14 +754,14 @@ public class TransactionModel {
     }
 
 
-    private Instant exchangeRateEffectiveDate;
+    private Date exchangeRateEffectiveDate;
 
     /**
      * Getter for exchangeRateEffectiveDate
      *
      * If this transaction included foreign currency exchange, this is the date as of which the exchange rate was calculated.
      */
-    public Instant getExchangeRateEffectiveDate() {
+    public Date getExchangeRateEffectiveDate() {
         return this.exchangeRateEffectiveDate;
     }
 
@@ -770,19 +770,19 @@ public class TransactionModel {
      *
      * If this transaction included foreign currency exchange, this is the date as of which the exchange rate was calculated.
      */
-    public void setExchangeRateEffectiveDate(Instant value) {
+    public void setExchangeRateEffectiveDate(Date value) {
         this.exchangeRateEffectiveDate = value;
     }
 
 
-    private Decimal exchangeRate;
+    private BigDecimal exchangeRate;
 
     /**
      * Getter for exchangeRate
      *
      * If this transaction included foreign currency exchange, this is the exchange rate that was used.
      */
-    public Decimal getExchangeRate() {
+    public BigDecimal getExchangeRate() {
         return this.exchangeRate;
     }
 
@@ -791,19 +791,19 @@ public class TransactionModel {
      *
      * If this transaction included foreign currency exchange, this is the exchange rate that was used.
      */
-    public void setExchangeRate(Decimal value) {
+    public void setExchangeRate(BigDecimal value) {
         this.exchangeRate = value;
     }
 
 
-    private object isSellerImporterOfRecord;
+    private Boolean isSellerImporterOfRecord;
 
     /**
      * Getter for isSellerImporterOfRecord
      *
      * If true, this seller was considered the importer of record of a product shipped internationally.
      */
-    public object getIsSellerImporterOfRecord() {
+    public Boolean getIsSellerImporterOfRecord() {
         return this.isSellerImporterOfRecord;
     }
 
@@ -812,7 +812,7 @@ public class TransactionModel {
      *
      * If true, this seller was considered the importer of record of a product shipped internationally.
      */
-    public void setIsSellerImporterOfRecord(object value) {
+    public void setIsSellerImporterOfRecord(Boolean value) {
         this.isSellerImporterOfRecord = value;
     }
 
@@ -880,14 +880,14 @@ public class TransactionModel {
     }
 
 
-    private Instant modifiedDate;
+    private Date modifiedDate;
 
     /**
      * Getter for modifiedDate
      *
      * The date/time when this record was last modified.
      */
-    public Instant getModifiedDate() {
+    public Date getModifiedDate() {
         return this.modifiedDate;
     }
 
@@ -896,7 +896,7 @@ public class TransactionModel {
      *
      * The date/time when this record was last modified.
      */
-    public void setModifiedDate(Instant value) {
+    public void setModifiedDate(Date value) {
         this.modifiedDate = value;
     }
 
@@ -922,14 +922,14 @@ public class TransactionModel {
     }
 
 
-    private Instant taxDate;
+    private Date taxDate;
 
     /**
      * Getter for taxDate
      *
      * Tax date for this transaction
      */
-    public Instant getTaxDate() {
+    public Date getTaxDate() {
         return this.taxDate;
     }
 
@@ -938,7 +938,7 @@ public class TransactionModel {
      *
      * Tax date for this transaction
      */
-    public void setTaxDate(Instant value) {
+    public void setTaxDate(Date value) {
         this.taxDate = value;
     }
 

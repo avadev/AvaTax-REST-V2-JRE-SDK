@@ -455,7 +455,7 @@ public class FilingCalendarModel {
     }
 
 
-    private Instant effectiveDate;
+    private Date effectiveDate;
 
     /**
      * Getter for effectiveDate
@@ -464,7 +464,7 @@ public class FilingCalendarModel {
     * This date specifies the earliest date for tax transactions that should be reported on this filing calendar.
     * Please note that tax is usually filed one month in arrears: for example, tax for January transactions is typically filed during the month of February.
      */
-    public Instant getEffectiveDate() {
+    public Date getEffectiveDate() {
         return this.effectiveDate;
     }
 
@@ -475,12 +475,12 @@ public class FilingCalendarModel {
     * This date specifies the earliest date for tax transactions that should be reported on this filing calendar.
     * Please note that tax is usually filed one month in arrears: for example, tax for January transactions is typically filed during the month of February.
      */
-    public void setEffectiveDate(Instant value) {
+    public void setEffectiveDate(Date value) {
         this.effectiveDate = value;
     }
 
 
-    private Instant endDate;
+    private Date endDate;
 
     /**
      * Getter for endDate
@@ -489,7 +489,7 @@ public class FilingCalendarModel {
     * This date specifies the last date for tax transactions that should be reported on this filing calendar.
     * Please note that tax is usually filed one month in arrears: for example, tax for January transactions is typically filed during the month of February.
      */
-    public Instant getEndDate() {
+    public Date getEndDate() {
         return this.endDate;
     }
 
@@ -500,7 +500,7 @@ public class FilingCalendarModel {
     * This date specifies the last date for tax transactions that should be reported on this filing calendar.
     * Please note that tax is usually filed one month in arrears: for example, tax for January transactions is typically filed during the month of February.
      */
-    public void setEndDate(Instant value) {
+    public void setEndDate(Date value) {
         this.endDate = value;
     }
 
@@ -927,14 +927,14 @@ public class FilingCalendarModel {
     }
 
 
-    private Instant createdDate;
+    private Date createdDate;
 
     /**
      * Getter for createdDate
      *
      * The date when this record was created.
      */
-    public Instant getCreatedDate() {
+    public Date getCreatedDate() {
         return this.createdDate;
     }
 
@@ -943,7 +943,7 @@ public class FilingCalendarModel {
      *
      * The date when this record was created.
      */
-    public void setCreatedDate(Instant value) {
+    public void setCreatedDate(Date value) {
         this.createdDate = value;
     }
 
@@ -969,14 +969,14 @@ public class FilingCalendarModel {
     }
 
 
-    private Instant modifiedDate;
+    private Date modifiedDate;
 
     /**
      * Getter for modifiedDate
      *
      * The date/time when this record was last modified.
      */
-    public Instant getModifiedDate() {
+    public Date getModifiedDate() {
         return this.modifiedDate;
     }
 
@@ -985,7 +985,7 @@ public class FilingCalendarModel {
      *
      * The date/time when this record was last modified.
      */
-    public void setModifiedDate(Instant value) {
+    public void setModifiedDate(Date value) {
         this.modifiedDate = value;
     }
 

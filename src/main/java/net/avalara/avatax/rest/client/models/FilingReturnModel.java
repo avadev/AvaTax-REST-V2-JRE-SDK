@@ -177,14 +177,14 @@ public class FilingReturnModel {
     }
 
 
-    private Instant filedDate;
+    private Date filedDate;
 
     /**
      * Getter for filedDate
      *
      * The date the return was filed by Avalara.
      */
-    public Instant getFiledDate() {
+    public Date getFiledDate() {
         return this.filedDate;
     }
 
@@ -193,19 +193,19 @@ public class FilingReturnModel {
      *
      * The date the return was filed by Avalara.
      */
-    public void setFiledDate(Instant value) {
+    public void setFiledDate(Date value) {
         this.filedDate = value;
     }
 
 
-    private Instant startPeriod;
+    private Date startPeriod;
 
     /**
      * Getter for startPeriod
      *
      * The start date of this return
      */
-    public Instant getStartPeriod() {
+    public Date getStartPeriod() {
         return this.startPeriod;
     }
 
@@ -214,19 +214,19 @@ public class FilingReturnModel {
      *
      * The start date of this return
      */
-    public void setStartPeriod(Instant value) {
+    public void setStartPeriod(Date value) {
         this.startPeriod = value;
     }
 
 
-    private Instant endPeriod;
+    private Date endPeriod;
 
     /**
      * Getter for endPeriod
      *
      * The end date of this return
      */
-    public Instant getEndPeriod() {
+    public Date getEndPeriod() {
         return this.endPeriod;
     }
 
@@ -235,19 +235,19 @@ public class FilingReturnModel {
      *
      * The end date of this return
      */
-    public void setEndPeriod(Instant value) {
+    public void setEndPeriod(Date value) {
         this.endPeriod = value;
     }
 
 
-    private Decimal salesAmount;
+    private BigDecimal salesAmount;
 
     /**
      * Getter for salesAmount
      *
      * The sales amount.
      */
-    public Decimal getSalesAmount() {
+    public BigDecimal getSalesAmount() {
         return this.salesAmount;
     }
 
@@ -256,7 +256,7 @@ public class FilingReturnModel {
      *
      * The sales amount.
      */
-    public void setSalesAmount(Decimal value) {
+    public void setSalesAmount(BigDecimal value) {
         this.salesAmount = value;
     }
 
@@ -303,14 +303,14 @@ public class FilingReturnModel {
     }
 
 
-    private Decimal remitAmount;
+    private BigDecimal remitAmount;
 
     /**
      * Getter for remitAmount
      *
      * The remittance amount of the return.
      */
-    public Decimal getRemitAmount() {
+    public BigDecimal getRemitAmount() {
         return this.remitAmount;
     }
 
@@ -319,7 +319,7 @@ public class FilingReturnModel {
      *
      * The remittance amount of the return.
      */
-    public void setRemitAmount(Decimal value) {
+    public void setRemitAmount(BigDecimal value) {
         this.remitAmount = value;
     }
 
@@ -366,14 +366,14 @@ public class FilingReturnModel {
     }
 
 
-    private Decimal taxableAmount;
+    private BigDecimal taxableAmount;
 
     /**
      * Getter for taxableAmount
      *
      * The taxable amount.
      */
-    public Decimal getTaxableAmount() {
+    public BigDecimal getTaxableAmount() {
         return this.taxableAmount;
     }
 
@@ -382,19 +382,19 @@ public class FilingReturnModel {
      *
      * The taxable amount.
      */
-    public void setTaxableAmount(Decimal value) {
+    public void setTaxableAmount(BigDecimal value) {
         this.taxableAmount = value;
     }
 
 
-    private Decimal taxAmount;
+    private BigDecimal taxAmount;
 
     /**
      * Getter for taxAmount
      *
      * The tax amount.
      */
-    public Decimal getTaxAmount() {
+    public BigDecimal getTaxAmount() {
         return this.taxAmount;
     }
 
@@ -403,19 +403,19 @@ public class FilingReturnModel {
      *
      * The tax amount.
      */
-    public void setTaxAmount(Decimal value) {
+    public void setTaxAmount(BigDecimal value) {
         this.taxAmount = value;
     }
 
 
-    private Decimal collectAmount;
+    private BigDecimal collectAmount;
 
     /**
      * Getter for collectAmount
      *
      * The amount collected by avalara for this return
      */
-    public Decimal getCollectAmount() {
+    public BigDecimal getCollectAmount() {
         return this.collectAmount;
     }
 
@@ -424,19 +424,19 @@ public class FilingReturnModel {
      *
      * The amount collected by avalara for this return
      */
-    public void setCollectAmount(Decimal value) {
+    public void setCollectAmount(BigDecimal value) {
         this.collectAmount = value;
     }
 
 
-    private Decimal taxDueAmount;
+    private BigDecimal taxDueAmount;
 
     /**
      * Getter for taxDueAmount
      *
      * The tax due amount.
      */
-    public Decimal getTaxDueAmount() {
+    public BigDecimal getTaxDueAmount() {
         return this.taxDueAmount;
     }
 
@@ -445,19 +445,19 @@ public class FilingReturnModel {
      *
      * The tax due amount.
      */
-    public void setTaxDueAmount(Decimal value) {
+    public void setTaxDueAmount(BigDecimal value) {
         this.taxDueAmount = value;
     }
 
 
-    private Decimal nonTaxableAmount;
+    private BigDecimal nonTaxableAmount;
 
     /**
      * Getter for nonTaxableAmount
      *
      * The non-taxable amount.
      */
-    public Decimal getNonTaxableAmount() {
+    public BigDecimal getNonTaxableAmount() {
         return this.nonTaxableAmount;
     }
 
@@ -466,19 +466,19 @@ public class FilingReturnModel {
      *
      * The non-taxable amount.
      */
-    public void setNonTaxableAmount(Decimal value) {
+    public void setNonTaxableAmount(BigDecimal value) {
         this.nonTaxableAmount = value;
     }
 
 
-    private Decimal nonTaxableDueAmount;
+    private BigDecimal nonTaxableDueAmount;
 
     /**
      * Getter for nonTaxableDueAmount
      *
      * The non-taxable due amount.
      */
-    public Decimal getNonTaxableDueAmount() {
+    public BigDecimal getNonTaxableDueAmount() {
         return this.nonTaxableDueAmount;
     }
 
@@ -487,19 +487,19 @@ public class FilingReturnModel {
      *
      * The non-taxable due amount.
      */
-    public void setNonTaxableDueAmount(Decimal value) {
+    public void setNonTaxableDueAmount(BigDecimal value) {
         this.nonTaxableDueAmount = value;
     }
 
 
-    private Decimal consumerUseTaxAmount;
+    private BigDecimal consumerUseTaxAmount;
 
     /**
      * Getter for consumerUseTaxAmount
      *
      * Consumer use tax liability.
      */
-    public Decimal getConsumerUseTaxAmount() {
+    public BigDecimal getConsumerUseTaxAmount() {
         return this.consumerUseTaxAmount;
     }
 
@@ -508,19 +508,19 @@ public class FilingReturnModel {
      *
      * Consumer use tax liability.
      */
-    public void setConsumerUseTaxAmount(Decimal value) {
+    public void setConsumerUseTaxAmount(BigDecimal value) {
         this.consumerUseTaxAmount = value;
     }
 
 
-    private Decimal consumerUseNonTaxableAmount;
+    private BigDecimal consumerUseNonTaxableAmount;
 
     /**
      * Getter for consumerUseNonTaxableAmount
      *
      * Consumer use non-taxable amount.
      */
-    public Decimal getConsumerUseNonTaxableAmount() {
+    public BigDecimal getConsumerUseNonTaxableAmount() {
         return this.consumerUseNonTaxableAmount;
     }
 
@@ -529,19 +529,19 @@ public class FilingReturnModel {
      *
      * Consumer use non-taxable amount.
      */
-    public void setConsumerUseNonTaxableAmount(Decimal value) {
+    public void setConsumerUseNonTaxableAmount(BigDecimal value) {
         this.consumerUseNonTaxableAmount = value;
     }
 
 
-    private Decimal consumerUseTaxableAmount;
+    private BigDecimal consumerUseTaxableAmount;
 
     /**
      * Getter for consumerUseTaxableAmount
      *
      * Consumer use taxable amount.
      */
-    public Decimal getConsumerUseTaxableAmount() {
+    public BigDecimal getConsumerUseTaxableAmount() {
         return this.consumerUseTaxableAmount;
     }
 
@@ -550,19 +550,19 @@ public class FilingReturnModel {
      *
      * Consumer use taxable amount.
      */
-    public void setConsumerUseTaxableAmount(Decimal value) {
+    public void setConsumerUseTaxableAmount(BigDecimal value) {
         this.consumerUseTaxableAmount = value;
     }
 
 
-    private Decimal totalAdjustments;
+    private BigDecimal totalAdjustments;
 
     /**
      * Getter for totalAdjustments
      *
      * Total amount of adjustments on this return
      */
-    public Decimal getTotalAdjustments() {
+    public BigDecimal getTotalAdjustments() {
         return this.totalAdjustments;
     }
 
@@ -571,7 +571,7 @@ public class FilingReturnModel {
      *
      * Total amount of adjustments on this return
      */
-    public void setTotalAdjustments(Decimal value) {
+    public void setTotalAdjustments(BigDecimal value) {
         this.totalAdjustments = value;
     }
 
@@ -597,14 +597,14 @@ public class FilingReturnModel {
     }
 
 
-    private Decimal totalAugmentations;
+    private BigDecimal totalAugmentations;
 
     /**
      * Getter for totalAugmentations
      *
      * Total amount of augmentations on this return
      */
-    public Decimal getTotalAugmentations() {
+    public BigDecimal getTotalAugmentations() {
         return this.totalAugmentations;
     }
 
@@ -613,7 +613,7 @@ public class FilingReturnModel {
      *
      * Total amount of augmentations on this return
      */
-    public void setTotalAugmentations(Decimal value) {
+    public void setTotalAugmentations(BigDecimal value) {
         this.totalAugmentations = value;
     }
 
@@ -710,14 +710,14 @@ public class FilingReturnModel {
     }
 
 
-    private Instant createdDate;
+    private Date createdDate;
 
     /**
      * Getter for createdDate
      *
      * The date when this record was created.
      */
-    public Instant getCreatedDate() {
+    public Date getCreatedDate() {
         return this.createdDate;
     }
 
@@ -726,7 +726,7 @@ public class FilingReturnModel {
      *
      * The date when this record was created.
      */
-    public void setCreatedDate(Instant value) {
+    public void setCreatedDate(Date value) {
         this.createdDate = value;
     }
 
@@ -752,14 +752,14 @@ public class FilingReturnModel {
     }
 
 
-    private Instant modifiedDate;
+    private Date modifiedDate;
 
     /**
      * Getter for modifiedDate
      *
      * The date/time when this record was last modified.
      */
-    public Instant getModifiedDate() {
+    public Date getModifiedDate() {
         return this.modifiedDate;
     }
 
@@ -768,7 +768,7 @@ public class FilingReturnModel {
      *
      * The date/time when this record was last modified.
      */
-    public void setModifiedDate(Instant value) {
+    public void setModifiedDate(Date value) {
         this.modifiedDate = value;
     }
 

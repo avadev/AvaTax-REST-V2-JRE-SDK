@@ -30,14 +30,14 @@ import java.util.HashMap;
 public class FundingInitiateModel {
 
 
-    private object requestEmail;
+    private Boolean requestEmail;
 
     /**
      * Getter for requestEmail
      *
      * Set this value to true to request an email to the recipient
      */
-    public object getRequestEmail() {
+    public Boolean getRequestEmail() {
         return this.requestEmail;
     }
 
@@ -46,7 +46,7 @@ public class FundingInitiateModel {
      *
      * Set this value to true to request an email to the recipient
      */
-    public void setRequestEmail(object value) {
+    public void setRequestEmail(Boolean value) {
         this.requestEmail = value;
     }
 
@@ -76,7 +76,7 @@ public class FundingInitiateModel {
     }
 
 
-    private object requestWidget;
+    private Boolean requestWidget;
 
     /**
      * Getter for requestWidget
@@ -85,7 +85,7 @@ public class FundingInitiateModel {
     * existing user interface. A user can then interact with the HTML-based funding widget to set up
     * funding information for the company.
      */
-    public object getRequestWidget() {
+    public Boolean getRequestWidget() {
         return this.requestWidget;
     }
 
@@ -96,7 +96,7 @@ public class FundingInitiateModel {
     * existing user interface. A user can then interact with the HTML-based funding widget to set up
     * funding information for the company.
      */
-    public void setRequestWidget(object value) {
+    public void setRequestWidget(Boolean value) {
         this.requestWidget = value;
     }
 

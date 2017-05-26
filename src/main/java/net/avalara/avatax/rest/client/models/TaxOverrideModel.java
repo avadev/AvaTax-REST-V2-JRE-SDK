@@ -51,7 +51,7 @@ public class TaxOverrideModel {
     }
 
 
-    private Decimal taxAmount;
+    private BigDecimal taxAmount;
 
     /**
      * Getter for taxAmount
@@ -59,7 +59,7 @@ public class TaxOverrideModel {
      * Indicates a total override of the calculated tax on the document. AvaTax will distribute
     * the override across all the lines.
      */
-    public Decimal getTaxAmount() {
+    public BigDecimal getTaxAmount() {
         return this.taxAmount;
     }
 
@@ -69,19 +69,19 @@ public class TaxOverrideModel {
      * Indicates a total override of the calculated tax on the document. AvaTax will distribute
     * the override across all the lines.
      */
-    public void setTaxAmount(Decimal value) {
+    public void setTaxAmount(BigDecimal value) {
         this.taxAmount = value;
     }
 
 
-    private Instant taxDate;
+    private Date taxDate;
 
     /**
      * Getter for taxDate
      *
      * The override tax date to use
      */
-    public Instant getTaxDate() {
+    public Date getTaxDate() {
         return this.taxDate;
     }
 
@@ -90,7 +90,7 @@ public class TaxOverrideModel {
      *
      * The override tax date to use
      */
-    public void setTaxDate(Instant value) {
+    public void setTaxDate(Date value) {
         this.taxDate = value;
     }
 

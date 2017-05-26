@@ -282,14 +282,14 @@ public class TransactionSummary {
     }
 
 
-    private Decimal taxable;
+    private BigDecimal taxable;
 
     /**
      * Getter for taxable
      *
      * Tax Base - The adjusted taxable amount.
      */
-    public Decimal getTaxable() {
+    public BigDecimal getTaxable() {
         return this.taxable;
     }
 
@@ -298,19 +298,19 @@ public class TransactionSummary {
      *
      * Tax Base - The adjusted taxable amount.
      */
-    public void setTaxable(Decimal value) {
+    public void setTaxable(BigDecimal value) {
         this.taxable = value;
     }
 
 
-    private Decimal rate;
+    private BigDecimal rate;
 
     /**
      * Getter for rate
      *
      * Tax Rate - The rate of taxation, as a fraction of the amount.
      */
-    public Decimal getRate() {
+    public BigDecimal getRate() {
         return this.rate;
     }
 
@@ -319,19 +319,19 @@ public class TransactionSummary {
      *
      * Tax Rate - The rate of taxation, as a fraction of the amount.
      */
-    public void setRate(Decimal value) {
+    public void setRate(BigDecimal value) {
         this.rate = value;
     }
 
 
-    private Decimal tax;
+    private BigDecimal tax;
 
     /**
      * Getter for tax
      *
      * Tax amount - The calculated tax (Base * Rate).
      */
-    public Decimal getTax() {
+    public BigDecimal getTax() {
         return this.tax;
     }
 
@@ -340,19 +340,19 @@ public class TransactionSummary {
      *
      * Tax amount - The calculated tax (Base * Rate).
      */
-    public void setTax(Decimal value) {
+    public void setTax(BigDecimal value) {
         this.tax = value;
     }
 
 
-    private Decimal taxCalculated;
+    private BigDecimal taxCalculated;
 
     /**
      * Getter for taxCalculated
      *
      * Tax Calculated by Avalara AvaTax. This may be overriden by a TaxOverride.TaxAmount.
      */
-    public Decimal getTaxCalculated() {
+    public BigDecimal getTaxCalculated() {
         return this.taxCalculated;
     }
 
@@ -361,19 +361,19 @@ public class TransactionSummary {
      *
      * Tax Calculated by Avalara AvaTax. This may be overriden by a TaxOverride.TaxAmount.
      */
-    public void setTaxCalculated(Decimal value) {
+    public void setTaxCalculated(BigDecimal value) {
         this.taxCalculated = value;
     }
 
 
-    private Decimal nonTaxable;
+    private BigDecimal nonTaxable;
 
     /**
      * Getter for nonTaxable
      *
      * The amount of the transaction that was non-taxable.
      */
-    public Decimal getNonTaxable() {
+    public BigDecimal getNonTaxable() {
         return this.nonTaxable;
     }
 
@@ -382,19 +382,19 @@ public class TransactionSummary {
      *
      * The amount of the transaction that was non-taxable.
      */
-    public void setNonTaxable(Decimal value) {
+    public void setNonTaxable(BigDecimal value) {
         this.nonTaxable = value;
     }
 
 
-    private Decimal exemption;
+    private BigDecimal exemption;
 
     /**
      * Getter for exemption
      *
      * The amount of the transaction that was exempt.
      */
-    public Decimal getExemption() {
+    public BigDecimal getExemption() {
         return this.exemption;
     }
 
@@ -403,7 +403,7 @@ public class TransactionSummary {
      *
      * The amount of the transaction that was exempt.
      */
-    public void setExemption(Decimal value) {
+    public void setExemption(BigDecimal value) {
         this.exemption = value;
     }
 

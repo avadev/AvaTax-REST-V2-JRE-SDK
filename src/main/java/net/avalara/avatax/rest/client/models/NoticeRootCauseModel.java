@@ -72,14 +72,14 @@ public class NoticeRootCauseModel {
     }
 
 
-    private object isActive;
+    private Boolean isActive;
 
     /**
      * Getter for isActive
      *
      * Defines if the RootCause is active
      */
-    public object getIsActive() {
+    public Boolean getIsActive() {
         return this.isActive;
     }
 
@@ -88,7 +88,7 @@ public class NoticeRootCauseModel {
      *
      * Defines if the RootCause is active
      */
-    public void setIsActive(object value) {
+    public void setIsActive(Boolean value) {
         this.isActive = value;
     }
 

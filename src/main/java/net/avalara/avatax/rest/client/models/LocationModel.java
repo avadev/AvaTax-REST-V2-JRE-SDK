@@ -325,14 +325,14 @@ public class LocationModel {
     }
 
 
-    private object isDefault;
+    private Boolean isDefault;
 
     /**
      * Getter for isDefault
      *
      * Set this flag to true to indicate that this is the default location for this company.
      */
-    public object getIsDefault() {
+    public Boolean getIsDefault() {
         return this.isDefault;
     }
 
@@ -341,19 +341,19 @@ public class LocationModel {
      *
      * Set this flag to true to indicate that this is the default location for this company.
      */
-    public void setIsDefault(object value) {
+    public void setIsDefault(Boolean value) {
         this.isDefault = value;
     }
 
 
-    private object isRegistered;
+    private Boolean isRegistered;
 
     /**
      * Getter for isRegistered
      *
      * Set this flag to true to indicate that this location has been registered with a tax authority.
      */
-    public object getIsRegistered() {
+    public Boolean getIsRegistered() {
         return this.isRegistered;
     }
 
@@ -362,7 +362,7 @@ public class LocationModel {
      *
      * Set this flag to true to indicate that this location has been registered with a tax authority.
      */
-    public void setIsRegistered(object value) {
+    public void setIsRegistered(Boolean value) {
         this.isRegistered = value;
     }
 
@@ -409,14 +409,14 @@ public class LocationModel {
     }
 
 
-    private Instant effectiveDate;
+    private Date effectiveDate;
 
     /**
      * Getter for effectiveDate
      *
      * The date when this location was opened for business, or null if not known.
      */
-    public Instant getEffectiveDate() {
+    public Date getEffectiveDate() {
         return this.effectiveDate;
     }
 
@@ -425,19 +425,19 @@ public class LocationModel {
      *
      * The date when this location was opened for business, or null if not known.
      */
-    public void setEffectiveDate(Instant value) {
+    public void setEffectiveDate(Date value) {
         this.effectiveDate = value;
     }
 
 
-    private Instant endDate;
+    private Date endDate;
 
     /**
      * Getter for endDate
      *
      * If this place of business has closed, the date when this location closed business.
      */
-    public Instant getEndDate() {
+    public Date getEndDate() {
         return this.endDate;
     }
 
@@ -446,19 +446,19 @@ public class LocationModel {
      *
      * If this place of business has closed, the date when this location closed business.
      */
-    public void setEndDate(Instant value) {
+    public void setEndDate(Date value) {
         this.endDate = value;
     }
 
 
-    private Instant lastTransactionDate;
+    private Date lastTransactionDate;
 
     /**
      * Getter for lastTransactionDate
      *
      * The most recent date when a transaction was processed for this location. Set by AvaTax.
      */
-    public Instant getLastTransactionDate() {
+    public Date getLastTransactionDate() {
         return this.lastTransactionDate;
     }
 
@@ -467,19 +467,19 @@ public class LocationModel {
      *
      * The most recent date when a transaction was processed for this location. Set by AvaTax.
      */
-    public void setLastTransactionDate(Instant value) {
+    public void setLastTransactionDate(Date value) {
         this.lastTransactionDate = value;
     }
 
 
-    private Instant registeredDate;
+    private Date registeredDate;
 
     /**
      * Getter for registeredDate
      *
      * The date when this location was registered with a tax authority. Not required.
      */
-    public Instant getRegisteredDate() {
+    public Date getRegisteredDate() {
         return this.registeredDate;
     }
 
@@ -488,19 +488,19 @@ public class LocationModel {
      *
      * The date when this location was registered with a tax authority. Not required.
      */
-    public void setRegisteredDate(Instant value) {
+    public void setRegisteredDate(Date value) {
         this.registeredDate = value;
     }
 
 
-    private Instant createdDate;
+    private Date createdDate;
 
     /**
      * Getter for createdDate
      *
      * The date when this record was created.
      */
-    public Instant getCreatedDate() {
+    public Date getCreatedDate() {
         return this.createdDate;
     }
 
@@ -509,7 +509,7 @@ public class LocationModel {
      *
      * The date when this record was created.
      */
-    public void setCreatedDate(Instant value) {
+    public void setCreatedDate(Date value) {
         this.createdDate = value;
     }
 
@@ -535,14 +535,14 @@ public class LocationModel {
     }
 
 
-    private Instant modifiedDate;
+    private Date modifiedDate;
 
     /**
      * Getter for modifiedDate
      *
      * The date/time when this record was last modified.
      */
-    public Instant getModifiedDate() {
+    public Date getModifiedDate() {
         return this.modifiedDate;
     }
 
@@ -551,7 +551,7 @@ public class LocationModel {
      *
      * The date/time when this record was last modified.
      */
-    public void setModifiedDate(Instant value) {
+    public void setModifiedDate(Date value) {
         this.modifiedDate = value;
     }
 

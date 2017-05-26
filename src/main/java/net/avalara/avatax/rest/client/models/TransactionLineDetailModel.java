@@ -198,14 +198,14 @@ public class TransactionLineDetailModel {
     }
 
 
-    private Decimal exemptAmount;
+    private BigDecimal exemptAmount;
 
     /**
      * Getter for exemptAmount
      *
      * The amount of this line that was considered exempt in this tax detail.
      */
-    public Decimal getExemptAmount() {
+    public BigDecimal getExemptAmount() {
         return this.exemptAmount;
     }
 
@@ -214,7 +214,7 @@ public class TransactionLineDetailModel {
      *
      * The amount of this line that was considered exempt in this tax detail.
      */
-    public void setExemptAmount(Decimal value) {
+    public void setExemptAmount(BigDecimal value) {
         this.exemptAmount = value;
     }
 
@@ -240,14 +240,14 @@ public class TransactionLineDetailModel {
     }
 
 
-    private object inState;
+    private Boolean inState;
 
     /**
      * Getter for inState
      *
      * True if this detail element represented an in-state transaction.
      */
-    public object getInState() {
+    public Boolean getInState() {
         return this.inState;
     }
 
@@ -256,7 +256,7 @@ public class TransactionLineDetailModel {
      *
      * True if this detail element represented an in-state transaction.
      */
-    public void setInState(object value) {
+    public void setInState(Boolean value) {
         this.inState = value;
     }
 
@@ -387,14 +387,14 @@ public class TransactionLineDetailModel {
     }
 
 
-    private Decimal nonTaxableAmount;
+    private BigDecimal nonTaxableAmount;
 
     /**
      * Getter for nonTaxableAmount
      *
      * The amount of this line item that was considered nontaxable in this tax detail.
      */
-    public Decimal getNonTaxableAmount() {
+    public BigDecimal getNonTaxableAmount() {
         return this.nonTaxableAmount;
     }
 
@@ -403,7 +403,7 @@ public class TransactionLineDetailModel {
      *
      * The amount of this line item that was considered nontaxable in this tax detail.
      */
-    public void setNonTaxableAmount(Decimal value) {
+    public void setNonTaxableAmount(BigDecimal value) {
         this.nonTaxableAmount = value;
     }
 
@@ -450,14 +450,14 @@ public class TransactionLineDetailModel {
     }
 
 
-    private Decimal rate;
+    private BigDecimal rate;
 
     /**
      * Getter for rate
      *
      * The rate at which this tax detail was calculated.
      */
-    public Decimal getRate() {
+    public BigDecimal getRate() {
         return this.rate;
     }
 
@@ -466,7 +466,7 @@ public class TransactionLineDetailModel {
      *
      * The rate at which this tax detail was calculated.
      */
-    public void setRate(Decimal value) {
+    public void setRate(BigDecimal value) {
         this.rate = value;
     }
 
@@ -555,14 +555,14 @@ public class TransactionLineDetailModel {
     }
 
 
-    private Decimal tax;
+    private BigDecimal tax;
 
     /**
      * Getter for tax
      *
      * The amount of tax for this tax detail.
      */
-    public Decimal getTax() {
+    public BigDecimal getTax() {
         return this.tax;
     }
 
@@ -571,19 +571,19 @@ public class TransactionLineDetailModel {
      *
      * The amount of tax for this tax detail.
      */
-    public void setTax(Decimal value) {
+    public void setTax(BigDecimal value) {
         this.tax = value;
     }
 
 
-    private Decimal taxableAmount;
+    private BigDecimal taxableAmount;
 
     /**
      * Getter for taxableAmount
      *
      * The taxable amount of this tax detail.
      */
-    public Decimal getTaxableAmount() {
+    public BigDecimal getTaxableAmount() {
         return this.taxableAmount;
     }
 
@@ -592,7 +592,7 @@ public class TransactionLineDetailModel {
      *
      * The taxable amount of this tax detail.
      */
-    public void setTaxableAmount(Decimal value) {
+    public void setTaxableAmount(BigDecimal value) {
         this.taxableAmount = value;
     }
 
@@ -681,7 +681,7 @@ public class TransactionLineDetailModel {
     }
 
 
-    private Decimal taxCalculated;
+    private BigDecimal taxCalculated;
 
     /**
      * Getter for taxCalculated
@@ -690,7 +690,7 @@ public class TransactionLineDetailModel {
     * If the customer specified a tax override, this calculated tax value represents the amount of tax that would
     * have been charged if Avalara had calculated the tax for the rule.
      */
-    public Decimal getTaxCalculated() {
+    public BigDecimal getTaxCalculated() {
         return this.taxCalculated;
     }
 
@@ -701,19 +701,19 @@ public class TransactionLineDetailModel {
     * If the customer specified a tax override, this calculated tax value represents the amount of tax that would
     * have been charged if Avalara had calculated the tax for the rule.
      */
-    public void setTaxCalculated(Decimal value) {
+    public void setTaxCalculated(BigDecimal value) {
         this.taxCalculated = value;
     }
 
 
-    private Decimal taxOverride;
+    private BigDecimal taxOverride;
 
     /**
      * Getter for taxOverride
      *
      * The amount of tax override that was specified for this tax line.
      */
-    public Decimal getTaxOverride() {
+    public BigDecimal getTaxOverride() {
         return this.taxOverride;
     }
 
@@ -722,7 +722,7 @@ public class TransactionLineDetailModel {
      *
      * The amount of tax override that was specified for this tax line.
      */
-    public void setTaxOverride(Decimal value) {
+    public void setTaxOverride(BigDecimal value) {
         this.taxOverride = value;
     }
 
@@ -769,14 +769,14 @@ public class TransactionLineDetailModel {
     }
 
 
-    private Decimal taxableUnits;
+    private BigDecimal taxableUnits;
 
     /**
      * Getter for taxableUnits
      *
      * Number of units in this line item that were calculated to be taxable according to this rate detail.
      */
-    public Decimal getTaxableUnits() {
+    public BigDecimal getTaxableUnits() {
         return this.taxableUnits;
     }
 
@@ -785,19 +785,19 @@ public class TransactionLineDetailModel {
      *
      * Number of units in this line item that were calculated to be taxable according to this rate detail.
      */
-    public void setTaxableUnits(Decimal value) {
+    public void setTaxableUnits(BigDecimal value) {
         this.taxableUnits = value;
     }
 
 
-    private Decimal nonTaxableUnits;
+    private BigDecimal nonTaxableUnits;
 
     /**
      * Getter for nonTaxableUnits
      *
      * Number of units in this line item that were calculated to be nontaxable according to this rate detail.
      */
-    public Decimal getNonTaxableUnits() {
+    public BigDecimal getNonTaxableUnits() {
         return this.nonTaxableUnits;
     }
 
@@ -806,19 +806,19 @@ public class TransactionLineDetailModel {
      *
      * Number of units in this line item that were calculated to be nontaxable according to this rate detail.
      */
-    public void setNonTaxableUnits(Decimal value) {
+    public void setNonTaxableUnits(BigDecimal value) {
         this.nonTaxableUnits = value;
     }
 
 
-    private Decimal exemptUnits;
+    private BigDecimal exemptUnits;
 
     /**
      * Getter for exemptUnits
      *
      * Number of units in this line item that were calculated to be exempt according to this rate detail.
      */
-    public Decimal getExemptUnits() {
+    public BigDecimal getExemptUnits() {
         return this.exemptUnits;
     }
 
@@ -827,7 +827,7 @@ public class TransactionLineDetailModel {
      *
      * Number of units in this line item that were calculated to be exempt according to this rate detail.
      */
-    public void setExemptUnits(Decimal value) {
+    public void setExemptUnits(BigDecimal value) {
         this.exemptUnits = value;
     }
 

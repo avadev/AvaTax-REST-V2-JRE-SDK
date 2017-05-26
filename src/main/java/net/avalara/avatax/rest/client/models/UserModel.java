@@ -240,14 +240,14 @@ public class UserModel {
     }
 
 
-    private object isActive;
+    private Boolean isActive;
 
     /**
      * Getter for isActive
      *
      * True if this user is currently active.
      */
-    public object getIsActive() {
+    public Boolean getIsActive() {
         return this.isActive;
     }
 
@@ -256,19 +256,19 @@ public class UserModel {
      *
      * True if this user is currently active.
      */
-    public void setIsActive(object value) {
+    public void setIsActive(Boolean value) {
         this.isActive = value;
     }
 
 
-    private Instant createdDate;
+    private Date createdDate;
 
     /**
      * Getter for createdDate
      *
      * The date when this record was created.
      */
-    public Instant getCreatedDate() {
+    public Date getCreatedDate() {
         return this.createdDate;
     }
 
@@ -277,7 +277,7 @@ public class UserModel {
      *
      * The date when this record was created.
      */
-    public void setCreatedDate(Instant value) {
+    public void setCreatedDate(Date value) {
         this.createdDate = value;
     }
 
@@ -303,14 +303,14 @@ public class UserModel {
     }
 
 
-    private Instant modifiedDate;
+    private Date modifiedDate;
 
     /**
      * Getter for modifiedDate
      *
      * The date/time when this record was last modified.
      */
-    public Instant getModifiedDate() {
+    public Date getModifiedDate() {
         return this.modifiedDate;
     }
 
@@ -319,7 +319,7 @@ public class UserModel {
      *
      * The date/time when this record was last modified.
      */
-    public void setModifiedDate(Instant value) {
+    public void setModifiedDate(Date value) {
         this.modifiedDate = value;
     }
 

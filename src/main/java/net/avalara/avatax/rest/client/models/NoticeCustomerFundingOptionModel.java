@@ -72,14 +72,14 @@ public class NoticeCustomerFundingOptionModel {
     }
 
 
-    private object activeFlag;
+    private Boolean activeFlag;
 
     /**
      * Getter for activeFlag
      *
      * A flag if the FundingOption is active
      */
-    public object getActiveFlag() {
+    public Boolean getActiveFlag() {
         return this.activeFlag;
     }
 
@@ -88,7 +88,7 @@ public class NoticeCustomerFundingOptionModel {
      *
      * A flag if the FundingOption is active
      */
-    public void setActiveFlag(object value) {
+    public void setActiveFlag(Boolean value) {
         this.activeFlag = value;
     }
 

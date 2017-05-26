@@ -72,14 +72,14 @@ public class NoticeFinanceModel {
     }
 
 
-    private Instant noticeDate;
+    private Date noticeDate;
 
     /**
      * Getter for noticeDate
      *
      * 
      */
-    public Instant getNoticeDate() {
+    public Date getNoticeDate() {
         return this.noticeDate;
     }
 
@@ -88,19 +88,19 @@ public class NoticeFinanceModel {
      *
      * 
      */
-    public void setNoticeDate(Instant value) {
+    public void setNoticeDate(Date value) {
         this.noticeDate = value;
     }
 
 
-    private Instant dueDate;
+    private Date dueDate;
 
     /**
      * Getter for dueDate
      *
      * 
      */
-    public Instant getDueDate() {
+    public Date getDueDate() {
         return this.dueDate;
     }
 
@@ -109,7 +109,7 @@ public class NoticeFinanceModel {
      *
      * 
      */
-    public void setDueDate(Instant value) {
+    public void setDueDate(Date value) {
         this.dueDate = value;
     }
 
@@ -135,14 +135,14 @@ public class NoticeFinanceModel {
     }
 
 
-    private Decimal taxDue;
+    private BigDecimal taxDue;
 
     /**
      * Getter for taxDue
      *
      * 
      */
-    public Decimal getTaxDue() {
+    public BigDecimal getTaxDue() {
         return this.taxDue;
     }
 
@@ -151,19 +151,19 @@ public class NoticeFinanceModel {
      *
      * 
      */
-    public void setTaxDue(Decimal value) {
+    public void setTaxDue(BigDecimal value) {
         this.taxDue = value;
     }
 
 
-    private Decimal penalty;
+    private BigDecimal penalty;
 
     /**
      * Getter for penalty
      *
      * 
      */
-    public Decimal getPenalty() {
+    public BigDecimal getPenalty() {
         return this.penalty;
     }
 
@@ -172,19 +172,19 @@ public class NoticeFinanceModel {
      *
      * 
      */
-    public void setPenalty(Decimal value) {
+    public void setPenalty(BigDecimal value) {
         this.penalty = value;
     }
 
 
-    private Decimal interest;
+    private BigDecimal interest;
 
     /**
      * Getter for interest
      *
      * 
      */
-    public Decimal getInterest() {
+    public BigDecimal getInterest() {
         return this.interest;
     }
 
@@ -193,19 +193,19 @@ public class NoticeFinanceModel {
      *
      * 
      */
-    public void setInterest(Decimal value) {
+    public void setInterest(BigDecimal value) {
         this.interest = value;
     }
 
 
-    private Decimal credits;
+    private BigDecimal credits;
 
     /**
      * Getter for credits
      *
      * 
      */
-    public Decimal getCredits() {
+    public BigDecimal getCredits() {
         return this.credits;
     }
 
@@ -214,19 +214,19 @@ public class NoticeFinanceModel {
      *
      * 
      */
-    public void setCredits(Decimal value) {
+    public void setCredits(BigDecimal value) {
         this.credits = value;
     }
 
 
-    private Decimal taxAbated;
+    private BigDecimal taxAbated;
 
     /**
      * Getter for taxAbated
      *
      * 
      */
-    public Decimal getTaxAbated() {
+    public BigDecimal getTaxAbated() {
         return this.taxAbated;
     }
 
@@ -235,19 +235,19 @@ public class NoticeFinanceModel {
      *
      * 
      */
-    public void setTaxAbated(Decimal value) {
+    public void setTaxAbated(BigDecimal value) {
         this.taxAbated = value;
     }
 
 
-    private Decimal customerPenalty;
+    private BigDecimal customerPenalty;
 
     /**
      * Getter for customerPenalty
      *
      * 
      */
-    public Decimal getCustomerPenalty() {
+    public BigDecimal getCustomerPenalty() {
         return this.customerPenalty;
     }
 
@@ -256,19 +256,19 @@ public class NoticeFinanceModel {
      *
      * 
      */
-    public void setCustomerPenalty(Decimal value) {
+    public void setCustomerPenalty(BigDecimal value) {
         this.customerPenalty = value;
     }
 
 
-    private Decimal customerInterest;
+    private BigDecimal customerInterest;
 
     /**
      * Getter for customerInterest
      *
      * 
      */
-    public Decimal getCustomerInterest() {
+    public BigDecimal getCustomerInterest() {
         return this.customerInterest;
     }
 
@@ -277,19 +277,19 @@ public class NoticeFinanceModel {
      *
      * 
      */
-    public void setCustomerInterest(Decimal value) {
+    public void setCustomerInterest(BigDecimal value) {
         this.customerInterest = value;
     }
 
 
-    private Decimal cspFeeRefund;
+    private BigDecimal cspFeeRefund;
 
     /**
      * Getter for cspFeeRefund
      *
      * 
      */
-    public Decimal getCspFeeRefund() {
+    public BigDecimal getCspFeeRefund() {
         return this.cspFeeRefund;
     }
 
@@ -298,7 +298,7 @@ public class NoticeFinanceModel {
      *
      * 
      */
-    public void setCspFeeRefund(Decimal value) {
+    public void setCspFeeRefund(BigDecimal value) {
         this.cspFeeRefund = value;
     }
 
@@ -345,14 +345,14 @@ public class NoticeFinanceModel {
     }
 
 
-    private Instant createdDate;
+    private Date createdDate;
 
     /**
      * Getter for createdDate
      *
      * The date when this record was created.
      */
-    public Instant getCreatedDate() {
+    public Date getCreatedDate() {
         return this.createdDate;
     }
 
@@ -361,7 +361,7 @@ public class NoticeFinanceModel {
      *
      * The date when this record was created.
      */
-    public void setCreatedDate(Instant value) {
+    public void setCreatedDate(Date value) {
         this.createdDate = value;
     }
 
@@ -387,14 +387,14 @@ public class NoticeFinanceModel {
     }
 
 
-    private Instant modifiedDate;
+    private Date modifiedDate;
 
     /**
      * Getter for modifiedDate
      *
      * The date/time when this record was last modified.
      */
-    public Instant getModifiedDate() {
+    public Date getModifiedDate() {
         return this.modifiedDate;
     }
 
@@ -403,7 +403,7 @@ public class NoticeFinanceModel {
      *
      * The date/time when this record was last modified.
      */
-    public void setModifiedDate(Instant value) {
+    public void setModifiedDate(Date value) {
         this.modifiedDate = value;
     }
 

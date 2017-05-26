@@ -30,14 +30,14 @@ import java.util.HashMap;
 public class CycleExpireOptionModel {
 
 
-    private Instant transactionalPeriodStart;
+    private Date transactionalPeriodStart;
 
     /**
      * Getter for transactionalPeriodStart
      *
      * The period start date for the customer's first transaction in the jurisdiction being expired.
      */
-    public Instant getTransactionalPeriodStart() {
+    public Date getTransactionalPeriodStart() {
         return this.transactionalPeriodStart;
     }
 
@@ -46,19 +46,19 @@ public class CycleExpireOptionModel {
      *
      * The period start date for the customer's first transaction in the jurisdiction being expired.
      */
-    public void setTransactionalPeriodStart(Instant value) {
+    public void setTransactionalPeriodStart(Date value) {
         this.transactionalPeriodStart = value;
     }
 
 
-    private Instant transactionalPeriodEnd;
+    private Date transactionalPeriodEnd;
 
     /**
      * Getter for transactionalPeriodEnd
      *
      * The period end date for the customer's last transaction in the jurisdiction being expired.
      */
-    public Instant getTransactionalPeriodEnd() {
+    public Date getTransactionalPeriodEnd() {
         return this.transactionalPeriodEnd;
     }
 
@@ -67,19 +67,19 @@ public class CycleExpireOptionModel {
      *
      * The period end date for the customer's last transaction in the jurisdiction being expired.
      */
-    public void setTransactionalPeriodEnd(Instant value) {
+    public void setTransactionalPeriodEnd(Date value) {
         this.transactionalPeriodEnd = value;
     }
 
 
-    private Instant filingDueDate;
+    private Date filingDueDate;
 
     /**
      * Getter for filingDueDate
      *
      * The jurisdiction-assigned due date for the form.
      */
-    public Instant getFilingDueDate() {
+    public Date getFilingDueDate() {
         return this.filingDueDate;
     }
 
@@ -88,7 +88,7 @@ public class CycleExpireOptionModel {
      *
      * The jurisdiction-assigned due date for the form.
      */
-    public void setFilingDueDate(Instant value) {
+    public void setFilingDueDate(Date value) {
         this.filingDueDate = value;
     }
 

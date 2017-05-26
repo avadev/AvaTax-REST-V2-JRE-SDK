@@ -178,14 +178,14 @@ public class FilingRequestDataModel {
     }
 
 
-    private Instant effDate;
+    private Date effDate;
 
     /**
      * Getter for effDate
      *
      * Filing cycle effective date of the request
      */
-    public Instant getEffDate() {
+    public Date getEffDate() {
         return this.effDate;
     }
 
@@ -194,19 +194,19 @@ public class FilingRequestDataModel {
      *
      * Filing cycle effective date of the request
      */
-    public void setEffDate(Instant value) {
+    public void setEffDate(Date value) {
         this.effDate = value;
     }
 
 
-    private Instant endDate;
+    private Date endDate;
 
     /**
      * Getter for endDate
      *
      * Filing cycle end date of the request
      */
-    public Instant getEndDate() {
+    public Date getEndDate() {
         return this.endDate;
     }
 
@@ -215,19 +215,19 @@ public class FilingRequestDataModel {
      *
      * Filing cycle end date of the request
      */
-    public void setEndDate(Instant value) {
+    public void setEndDate(Date value) {
         this.endDate = value;
     }
 
 
-    private object isClone;
+    private Boolean isClone;
 
     /**
      * Getter for isClone
      *
      * Flag if the request is a clone of a current filing calendar
      */
-    public object getIsClone() {
+    public Boolean getIsClone() {
         return this.isClone;
     }
 
@@ -236,7 +236,7 @@ public class FilingRequestDataModel {
      *
      * Flag if the request is a clone of a current filing calendar
      */
-    public void setIsClone(object value) {
+    public void setIsClone(Boolean value) {
         this.isClone = value;
     }
 

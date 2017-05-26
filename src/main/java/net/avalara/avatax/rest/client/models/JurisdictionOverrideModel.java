@@ -203,14 +203,14 @@ public class JurisdictionOverrideModel {
     }
 
 
-    private Instant effectiveDate;
+    private Date effectiveDate;
 
     /**
      * Getter for effectiveDate
      *
      * The date when this override first takes effect. Set this value to null to affect all dates up to the end date.
      */
-    public Instant getEffectiveDate() {
+    public Date getEffectiveDate() {
         return this.effectiveDate;
     }
 
@@ -219,19 +219,19 @@ public class JurisdictionOverrideModel {
      *
      * The date when this override first takes effect. Set this value to null to affect all dates up to the end date.
      */
-    public void setEffectiveDate(Instant value) {
+    public void setEffectiveDate(Date value) {
         this.effectiveDate = value;
     }
 
 
-    private Instant endDate;
+    private Date endDate;
 
     /**
      * Getter for endDate
      *
      * The date when this override will cease to take effect. Set this value to null to never expire.
      */
-    public Instant getEndDate() {
+    public Date getEndDate() {
         return this.endDate;
     }
 
@@ -240,19 +240,19 @@ public class JurisdictionOverrideModel {
      *
      * The date when this override will cease to take effect. Set this value to null to never expire.
      */
-    public void setEndDate(Instant value) {
+    public void setEndDate(Date value) {
         this.endDate = value;
     }
 
 
-    private Instant createdDate;
+    private Date createdDate;
 
     /**
      * Getter for createdDate
      *
      * The date when this record was created.
      */
-    public Instant getCreatedDate() {
+    public Date getCreatedDate() {
         return this.createdDate;
     }
 
@@ -261,7 +261,7 @@ public class JurisdictionOverrideModel {
      *
      * The date when this record was created.
      */
-    public void setCreatedDate(Instant value) {
+    public void setCreatedDate(Date value) {
         this.createdDate = value;
     }
 
@@ -287,14 +287,14 @@ public class JurisdictionOverrideModel {
     }
 
 
-    private Instant modifiedDate;
+    private Date modifiedDate;
 
     /**
      * Getter for modifiedDate
      *
      * The date/time when this record was last modified.
      */
-    public Instant getModifiedDate() {
+    public Date getModifiedDate() {
         return this.modifiedDate;
     }
 
@@ -303,7 +303,7 @@ public class JurisdictionOverrideModel {
      *
      * The date/time when this record was last modified.
      */
-    public void setModifiedDate(Instant value) {
+    public void setModifiedDate(Date value) {
         this.modifiedDate = value;
     }
 
@@ -392,14 +392,14 @@ public class JurisdictionOverrideModel {
     }
 
 
-    private object isDefault;
+    private Boolean isDefault;
 
     /**
      * Getter for isDefault
      *
      * True if this is a default boundary
      */
-    public object getIsDefault() {
+    public Boolean getIsDefault() {
         return this.isDefault;
     }
 
@@ -408,7 +408,7 @@ public class JurisdictionOverrideModel {
      *
      * True if this is a default boundary
      */
-    public void setIsDefault(object value) {
+    public void setIsDefault(Boolean value) {
         this.isDefault = value;
     }
 

@@ -30,7 +30,7 @@ import java.util.HashMap;
 public class LocationValidationModel {
 
 
-    private object settingsValidated;
+    private Boolean settingsValidated;
 
     /**
      * Getter for settingsValidated
@@ -39,7 +39,7 @@ public class LocationValidationModel {
     * The user is required to ensure that the values are correct according to the jurisdiction; this flag
     * does not indicate whether the taxing jurisdiction has accepted the data you have provided.
      */
-    public object getSettingsValidated() {
+    public Boolean getSettingsValidated() {
         return this.settingsValidated;
     }
 
@@ -50,7 +50,7 @@ public class LocationValidationModel {
     * The user is required to ensure that the values are correct according to the jurisdiction; this flag
     * does not indicate whether the taxing jurisdiction has accepted the data you have provided.
      */
-    public void setSettingsValidated(object value) {
+    public void setSettingsValidated(Boolean value) {
         this.settingsValidated = value;
     }
 

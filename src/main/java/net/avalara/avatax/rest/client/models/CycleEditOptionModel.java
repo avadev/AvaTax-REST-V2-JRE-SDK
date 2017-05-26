@@ -30,14 +30,14 @@ import java.util.HashMap;
 public class CycleEditOptionModel {
 
 
-    private object success;
+    private Boolean success;
 
     /**
      * Getter for success
      *
      * Whether or not changes can be made to the filing calendar.
      */
-    public object getSuccess() {
+    public Boolean getSuccess() {
         return this.success;
     }
 
@@ -46,7 +46,7 @@ public class CycleEditOptionModel {
      *
      * Whether or not changes can be made to the filing calendar.
      */
-    public void setSuccess(object value) {
+    public void setSuccess(Boolean value) {
         this.success = value;
     }
 
@@ -72,7 +72,7 @@ public class CycleEditOptionModel {
     }
 
 
-    private object customerMustApprove;
+    private Boolean customerMustApprove;
 
     /**
      * Getter for customerMustApprove
@@ -80,7 +80,7 @@ public class CycleEditOptionModel {
      * Whether or not the user should be warned of a change, because some changes are risky and may be being done not in accordance with jurisdiction rules.
     * For example, user would be warned if user changes filing frequency to new frequency with a start date during an accrual month of the existing frequency.
      */
-    public object getCustomerMustApprove() {
+    public Boolean getCustomerMustApprove() {
         return this.customerMustApprove;
     }
 
@@ -90,19 +90,19 @@ public class CycleEditOptionModel {
      * Whether or not the user should be warned of a change, because some changes are risky and may be being done not in accordance with jurisdiction rules.
     * For example, user would be warned if user changes filing frequency to new frequency with a start date during an accrual month of the existing frequency.
      */
-    public void setCustomerMustApprove(object value) {
+    public void setCustomerMustApprove(Boolean value) {
         this.customerMustApprove = value;
     }
 
 
-    private object mustCloneFilingCalendar;
+    private Boolean mustCloneFilingCalendar;
 
     /**
      * Getter for mustCloneFilingCalendar
      *
      * True if the filing calendar must be cloned to allow this change; false if the existing filing calendar can be changed itself.
      */
-    public object getMustCloneFilingCalendar() {
+    public Boolean getMustCloneFilingCalendar() {
         return this.mustCloneFilingCalendar;
     }
 
@@ -111,19 +111,19 @@ public class CycleEditOptionModel {
      *
      * True if the filing calendar must be cloned to allow this change; false if the existing filing calendar can be changed itself.
      */
-    public void setMustCloneFilingCalendar(object value) {
+    public void setMustCloneFilingCalendar(Boolean value) {
         this.mustCloneFilingCalendar = value;
     }
 
 
-    private Instant clonedCalendarEffDate;
+    private Date clonedCalendarEffDate;
 
     /**
      * Getter for clonedCalendarEffDate
      *
      * The effective date of the filing calendar (only applies if cloning).
      */
-    public Instant getClonedCalendarEffDate() {
+    public Date getClonedCalendarEffDate() {
         return this.clonedCalendarEffDate;
     }
 
@@ -132,19 +132,19 @@ public class CycleEditOptionModel {
      *
      * The effective date of the filing calendar (only applies if cloning).
      */
-    public void setClonedCalendarEffDate(Instant value) {
+    public void setClonedCalendarEffDate(Date value) {
         this.clonedCalendarEffDate = value;
     }
 
 
-    private Instant expiredCalendarEndDate;
+    private Date expiredCalendarEndDate;
 
     /**
      * Getter for expiredCalendarEndDate
      *
      * The expired end date of the old filing calendar (only applies if cloning).
      */
-    public Instant getExpiredCalendarEndDate() {
+    public Date getExpiredCalendarEndDate() {
         return this.expiredCalendarEndDate;
     }
 
@@ -153,7 +153,7 @@ public class CycleEditOptionModel {
      *
      * The expired end date of the old filing calendar (only applies if cloning).
      */
-    public void setExpiredCalendarEndDate(Instant value) {
+    public void setExpiredCalendarEndDate(Date value) {
         this.expiredCalendarEndDate = value;
     }
 

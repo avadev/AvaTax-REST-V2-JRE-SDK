@@ -198,14 +198,14 @@ public class BatchModel {
     }
 
 
-    private Instant startedDate;
+    private Date startedDate;
 
     /**
      * Getter for startedDate
      *
      * The date/time when this batch started processing
      */
-    public Instant getStartedDate() {
+    public Date getStartedDate() {
         return this.startedDate;
     }
 
@@ -214,7 +214,7 @@ public class BatchModel {
      *
      * The date/time when this batch started processing
      */
-    public void setStartedDate(Instant value) {
+    public void setStartedDate(Date value) {
         this.startedDate = value;
     }
 
@@ -261,14 +261,14 @@ public class BatchModel {
     }
 
 
-    private Instant completedDate;
+    private Date completedDate;
 
     /**
      * Getter for completedDate
      *
      * The date/time when this batch was completely processed
      */
-    public Instant getCompletedDate() {
+    public Date getCompletedDate() {
         return this.completedDate;
     }
 
@@ -277,19 +277,19 @@ public class BatchModel {
      *
      * The date/time when this batch was completely processed
      */
-    public void setCompletedDate(Instant value) {
+    public void setCompletedDate(Date value) {
         this.completedDate = value;
     }
 
 
-    private Instant createdDate;
+    private Date createdDate;
 
     /**
      * Getter for createdDate
      *
      * The date when this record was created.
      */
-    public Instant getCreatedDate() {
+    public Date getCreatedDate() {
         return this.createdDate;
     }
 
@@ -298,7 +298,7 @@ public class BatchModel {
      *
      * The date when this record was created.
      */
-    public void setCreatedDate(Instant value) {
+    public void setCreatedDate(Date value) {
         this.createdDate = value;
     }
 
@@ -324,14 +324,14 @@ public class BatchModel {
     }
 
 
-    private Instant modifiedDate;
+    private Date modifiedDate;
 
     /**
      * Getter for modifiedDate
      *
      * The date/time when this record was last modified.
      */
-    public Instant getModifiedDate() {
+    public Date getModifiedDate() {
         return this.modifiedDate;
     }
 
@@ -340,7 +340,7 @@ public class BatchModel {
      *
      * The date/time when this record was last modified.
      */
-    public void setModifiedDate(Instant value) {
+    public void setModifiedDate(Date value) {
         this.modifiedDate = value;
     }
 

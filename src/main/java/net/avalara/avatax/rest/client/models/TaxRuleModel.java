@@ -313,14 +313,14 @@ public class TaxRuleModel {
     }
 
 
-    private object isAllJuris;
+    private Boolean isAllJuris;
 
     /**
      * Getter for isAllJuris
      *
      * Set this value to true if this tax rule applies in all jurisdictions.
      */
-    public object getIsAllJuris() {
+    public Boolean getIsAllJuris() {
         return this.isAllJuris;
     }
 
@@ -329,19 +329,19 @@ public class TaxRuleModel {
      *
      * Set this value to true if this tax rule applies in all jurisdictions.
      */
-    public void setIsAllJuris(object value) {
+    public void setIsAllJuris(Boolean value) {
         this.isAllJuris = value;
     }
 
 
-    private Decimal value;
+    private BigDecimal value;
 
     /**
      * Getter for value
      *
      * The corrected rate for this tax rule.
      */
-    public Decimal getValue() {
+    public BigDecimal getValue() {
         return this.value;
     }
 
@@ -350,19 +350,19 @@ public class TaxRuleModel {
      *
      * The corrected rate for this tax rule.
      */
-    public void setValue(Decimal value) {
+    public void setValue(BigDecimal value) {
         this.value = value;
     }
 
 
-    private Decimal cap;
+    private BigDecimal cap;
 
     /**
      * Getter for cap
      *
      * The maximum cap for the price of this item according to this rule.
      */
-    public Decimal getCap() {
+    public BigDecimal getCap() {
         return this.cap;
     }
 
@@ -371,19 +371,19 @@ public class TaxRuleModel {
      *
      * The maximum cap for the price of this item according to this rule.
      */
-    public void setCap(Decimal value) {
+    public void setCap(BigDecimal value) {
         this.cap = value;
     }
 
 
-    private Decimal threshold;
+    private BigDecimal threshold;
 
     /**
      * Getter for threshold
      *
      * The per-unit threshold that must be met before this rule applies.
      */
-    public Decimal getThreshold() {
+    public BigDecimal getThreshold() {
         return this.threshold;
     }
 
@@ -392,7 +392,7 @@ public class TaxRuleModel {
      *
      * The per-unit threshold that must be met before this rule applies.
      */
-    public void setThreshold(Decimal value) {
+    public void setThreshold(BigDecimal value) {
         this.threshold = value;
     }
 
@@ -418,14 +418,14 @@ public class TaxRuleModel {
     }
 
 
-    private Instant effectiveDate;
+    private Date effectiveDate;
 
     /**
      * Getter for effectiveDate
      *
      * The first date at which this rule applies. If null, this rule will apply to all dates prior to the end date.
      */
-    public Instant getEffectiveDate() {
+    public Date getEffectiveDate() {
         return this.effectiveDate;
     }
 
@@ -434,19 +434,19 @@ public class TaxRuleModel {
      *
      * The first date at which this rule applies. If null, this rule will apply to all dates prior to the end date.
      */
-    public void setEffectiveDate(Instant value) {
+    public void setEffectiveDate(Date value) {
         this.effectiveDate = value;
     }
 
 
-    private Instant endDate;
+    private Date endDate;
 
     /**
      * Getter for endDate
      *
      * The last date for which this rule applies. If null, this rule will apply to all dates after the effective date.
      */
-    public Instant getEndDate() {
+    public Date getEndDate() {
         return this.endDate;
     }
 
@@ -455,7 +455,7 @@ public class TaxRuleModel {
      *
      * The last date for which this rule applies. If null, this rule will apply to all dates after the effective date.
      */
-    public void setEndDate(Instant value) {
+    public void setEndDate(Date value) {
         this.endDate = value;
     }
 
@@ -502,14 +502,14 @@ public class TaxRuleModel {
     }
 
 
-    private object isSTPro;
+    private Boolean isSTPro;
 
     /**
      * Getter for isSTPro
      *
      * If true, indicates this rule is for Sales Tax Pro.
      */
-    public object getIsSTPro() {
+    public Boolean getIsSTPro() {
         return this.isSTPro;
     }
 
@@ -518,7 +518,7 @@ public class TaxRuleModel {
      *
      * If true, indicates this rule is for Sales Tax Pro.
      */
-    public void setIsSTPro(object value) {
+    public void setIsSTPro(Boolean value) {
         this.isSTPro = value;
     }
 
@@ -586,14 +586,14 @@ public class TaxRuleModel {
     }
 
 
-    private Instant createdDate;
+    private Date createdDate;
 
     /**
      * Getter for createdDate
      *
      * The date when this record was created.
      */
-    public Instant getCreatedDate() {
+    public Date getCreatedDate() {
         return this.createdDate;
     }
 
@@ -602,7 +602,7 @@ public class TaxRuleModel {
      *
      * The date when this record was created.
      */
-    public void setCreatedDate(Instant value) {
+    public void setCreatedDate(Date value) {
         this.createdDate = value;
     }
 
@@ -628,14 +628,14 @@ public class TaxRuleModel {
     }
 
 
-    private Instant modifiedDate;
+    private Date modifiedDate;
 
     /**
      * Getter for modifiedDate
      *
      * The date/time when this record was last modified.
      */
-    public Instant getModifiedDate() {
+    public Date getModifiedDate() {
         return this.modifiedDate;
     }
 
@@ -644,7 +644,7 @@ public class TaxRuleModel {
      *
      * The date/time when this record was last modified.
      */
-    public void setModifiedDate(Instant value) {
+    public void setModifiedDate(Date value) {
         this.modifiedDate = value;
     }
 

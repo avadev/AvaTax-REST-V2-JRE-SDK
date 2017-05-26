@@ -114,14 +114,14 @@ public class AddTransactionLineModel {
     }
 
 
-    private object renumber;
+    private Boolean renumber;
 
     /**
      * Getter for renumber
      *
      * Option to renumber lines after add. After renumber, the line number becomes: "1", "2", "3", ...
      */
-    public object getRenumber() {
+    public Boolean getRenumber() {
         return this.renumber;
     }
 
@@ -130,7 +130,7 @@ public class AddTransactionLineModel {
      *
      * Option to renumber lines after add. After renumber, the line number becomes: "1", "2", "3", ...
      */
-    public void setRenumber(object value) {
+    public void setRenumber(Boolean value) {
         this.renumber = value;
     }
 

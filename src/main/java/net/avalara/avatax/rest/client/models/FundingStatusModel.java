@@ -282,14 +282,14 @@ public class FundingStatusModel {
     }
 
 
-    private Instant lastPolled;
+    private Date lastPolled;
 
     /**
      * Getter for lastPolled
      *
      * LastPolled
      */
-    public Instant getLastPolled() {
+    public Date getLastPolled() {
         return this.lastPolled;
     }
 
@@ -298,19 +298,19 @@ public class FundingStatusModel {
      *
      * LastPolled
      */
-    public void setLastPolled(Instant value) {
+    public void setLastPolled(Date value) {
         this.lastPolled = value;
     }
 
 
-    private Instant lastSigned;
+    private Date lastSigned;
 
     /**
      * Getter for lastSigned
      *
      * LastSigned
      */
-    public Instant getLastSigned() {
+    public Date getLastSigned() {
         return this.lastSigned;
     }
 
@@ -319,19 +319,19 @@ public class FundingStatusModel {
      *
      * LastSigned
      */
-    public void setLastSigned(Instant value) {
+    public void setLastSigned(Date value) {
         this.lastSigned = value;
     }
 
 
-    private Instant lastActivated;
+    private Date lastActivated;
 
     /**
      * Getter for lastActivated
      *
      * LastActivated
      */
-    public Instant getLastActivated() {
+    public Date getLastActivated() {
         return this.lastActivated;
     }
 
@@ -340,7 +340,7 @@ public class FundingStatusModel {
      *
      * LastActivated
      */
-    public void setLastActivated(Instant value) {
+    public void setLastActivated(Date value) {
         this.lastActivated = value;
     }
 

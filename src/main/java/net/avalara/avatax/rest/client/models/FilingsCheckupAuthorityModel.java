@@ -135,14 +135,14 @@ public class FilingsCheckupAuthorityModel {
     }
 
 
-    private Decimal tax;
+    private BigDecimal tax;
 
     /**
      * Getter for tax
      *
      * Amount of tax collected in this tax authority
      */
-    public Decimal getTax() {
+    public BigDecimal getTax() {
         return this.tax;
     }
 
@@ -151,7 +151,7 @@ public class FilingsCheckupAuthorityModel {
      *
      * Amount of tax collected in this tax authority
      */
-    public void setTax(Decimal value) {
+    public void setTax(BigDecimal value) {
         this.tax = value;
     }
 

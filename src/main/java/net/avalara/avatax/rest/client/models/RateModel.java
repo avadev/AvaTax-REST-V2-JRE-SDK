@@ -30,14 +30,14 @@ import java.util.HashMap;
 public class RateModel {
 
 
-    private Decimal rate;
+    private BigDecimal rate;
 
     /**
      * Getter for rate
      *
      * Rate
      */
-    public Decimal getRate() {
+    public BigDecimal getRate() {
         return this.rate;
     }
 
@@ -46,7 +46,7 @@ public class RateModel {
      *
      * Rate
      */
-    public void setRate(Decimal value) {
+    public void setRate(BigDecimal value) {
         this.rate = value;
     }
 

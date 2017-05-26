@@ -156,14 +156,14 @@ public class CompanyModel {
     }
 
 
-    private object isDefault;
+    private Boolean isDefault;
 
     /**
      * Getter for isDefault
      *
      * This flag is true if this company is the default company for this account. Only one company may be set as the default.
      */
-    public object getIsDefault() {
+    public Boolean getIsDefault() {
         return this.isDefault;
     }
 
@@ -172,7 +172,7 @@ public class CompanyModel {
      *
      * This flag is true if this company is the default company for this account. Only one company may be set as the default.
      */
-    public void setIsDefault(object value) {
+    public void setIsDefault(Boolean value) {
         this.isDefault = value;
     }
 
@@ -198,14 +198,14 @@ public class CompanyModel {
     }
 
 
-    private object isActive;
+    private Boolean isActive;
 
     /**
      * Getter for isActive
      *
      * This flag indicates whether tax activity can occur for this company. Set this flag to true to permit the company to process transactions.
      */
-    public object getIsActive() {
+    public Boolean getIsActive() {
         return this.isActive;
     }
 
@@ -214,7 +214,7 @@ public class CompanyModel {
      *
      * This flag indicates whether tax activity can occur for this company. Set this flag to true to permit the company to process transactions.
      */
-    public void setIsActive(object value) {
+    public void setIsActive(Boolean value) {
         this.isActive = value;
     }
 
@@ -248,7 +248,7 @@ public class CompanyModel {
     }
 
 
-    private object hasProfile;
+    private Boolean hasProfile;
 
     /**
      * Getter for hasProfile
@@ -257,7 +257,7 @@ public class CompanyModel {
     * If this flag is true, this company will have its own Nexus, TaxRule, TaxCode, and Item definitions.
     * If this flag is false, this company will inherit all profile values from its parent.
      */
-    public object getHasProfile() {
+    public Boolean getHasProfile() {
         return this.hasProfile;
     }
 
@@ -268,12 +268,12 @@ public class CompanyModel {
     * If this flag is true, this company will have its own Nexus, TaxRule, TaxCode, and Item definitions.
     * If this flag is false, this company will inherit all profile values from its parent.
      */
-    public void setHasProfile(object value) {
+    public void setHasProfile(Boolean value) {
         this.hasProfile = value;
     }
 
 
-    private object isReportingEntity;
+    private Boolean isReportingEntity;
 
     /**
      * Getter for isReportingEntity
@@ -281,7 +281,7 @@ public class CompanyModel {
      * Set this flag to true if this company must file its own tax returns.
     * For users who have Returns enabled, this flag turns on monthly Worksheet generation for the company.
      */
-    public object getIsReportingEntity() {
+    public Boolean getIsReportingEntity() {
         return this.isReportingEntity;
     }
 
@@ -291,19 +291,19 @@ public class CompanyModel {
      * Set this flag to true if this company must file its own tax returns.
     * For users who have Returns enabled, this flag turns on monthly Worksheet generation for the company.
      */
-    public void setIsReportingEntity(object value) {
+    public void setIsReportingEntity(Boolean value) {
         this.isReportingEntity = value;
     }
 
 
-    private Instant sstEffectiveDate;
+    private Date sstEffectiveDate;
 
     /**
      * Getter for sstEffectiveDate
      *
      * If this company participates in Streamlined Sales Tax, this is the date when the company joined the SST program.
      */
-    public Instant getSstEffectiveDate() {
+    public Date getSstEffectiveDate() {
         return this.sstEffectiveDate;
     }
 
@@ -312,7 +312,7 @@ public class CompanyModel {
      *
      * If this company participates in Streamlined Sales Tax, this is the date when the company joined the SST program.
      */
-    public void setSstEffectiveDate(Instant value) {
+    public void setSstEffectiveDate(Date value) {
         this.sstEffectiveDate = value;
     }
 
@@ -380,14 +380,14 @@ public class CompanyModel {
     }
 
 
-    private object warningsEnabled;
+    private Boolean warningsEnabled;
 
     /**
      * Getter for warningsEnabled
      *
      * Set this value to true to receive warnings in API calls via SOAP.
      */
-    public object getWarningsEnabled() {
+    public Boolean getWarningsEnabled() {
         return this.warningsEnabled;
     }
 
@@ -396,12 +396,12 @@ public class CompanyModel {
      *
      * Set this value to true to receive warnings in API calls via SOAP.
      */
-    public void setWarningsEnabled(object value) {
+    public void setWarningsEnabled(Boolean value) {
         this.warningsEnabled = value;
     }
 
 
-    private object isTest;
+    private Boolean isTest;
 
     /**
      * Getter for isTest
@@ -409,7 +409,7 @@ public class CompanyModel {
      * Set this flag to true to indicate that this company is a test company.
     * If you have Returns enabled, Test companies will not file tax returns and can be used for validation purposes.
      */
-    public object getIsTest() {
+    public Boolean getIsTest() {
         return this.isTest;
     }
 
@@ -419,7 +419,7 @@ public class CompanyModel {
      * Set this flag to true to indicate that this company is a test company.
     * If you have Returns enabled, Test companies will not file tax returns and can be used for validation purposes.
      */
-    public void setIsTest(object value) {
+    public void setIsTest(Boolean value) {
         this.isTest = value;
     }
 
@@ -445,7 +445,7 @@ public class CompanyModel {
     }
 
 
-    private object inProgress;
+    private Boolean inProgress;
 
     /**
      * Getter for inProgress
@@ -453,7 +453,7 @@ public class CompanyModel {
      * Set this value to true to indicate that you are still working to finish configuring this company.
     * While this value is true, no tax reporting will occur and the company will not be usable for transactions.
      */
-    public object getInProgress() {
+    public Boolean getInProgress() {
         return this.inProgress;
     }
 
@@ -463,7 +463,7 @@ public class CompanyModel {
      * Set this value to true to indicate that you are still working to finish configuring this company.
     * While this value is true, no tax reporting will occur and the company will not be usable for transactions.
      */
-    public void setInProgress(object value) {
+    public void setInProgress(Boolean value) {
         this.inProgress = value;
     }
 
@@ -489,14 +489,14 @@ public class CompanyModel {
     }
 
 
-    private Instant createdDate;
+    private Date createdDate;
 
     /**
      * Getter for createdDate
      *
      * The date when this record was created.
      */
-    public Instant getCreatedDate() {
+    public Date getCreatedDate() {
         return this.createdDate;
     }
 
@@ -505,7 +505,7 @@ public class CompanyModel {
      *
      * The date when this record was created.
      */
-    public void setCreatedDate(Instant value) {
+    public void setCreatedDate(Date value) {
         this.createdDate = value;
     }
 
@@ -531,14 +531,14 @@ public class CompanyModel {
     }
 
 
-    private Instant modifiedDate;
+    private Date modifiedDate;
 
     /**
      * Getter for modifiedDate
      *
      * The date/time when this record was last modified.
      */
-    public Instant getModifiedDate() {
+    public Date getModifiedDate() {
         return this.modifiedDate;
     }
 
@@ -547,7 +547,7 @@ public class CompanyModel {
      *
      * The date/time when this record was last modified.
      */
-    public void setModifiedDate(Instant value) {
+    public void setModifiedDate(Date value) {
         this.modifiedDate = value;
     }
 

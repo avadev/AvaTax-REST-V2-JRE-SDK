@@ -72,14 +72,14 @@ public class FilingAdjustmentModel {
     }
 
 
-    private Decimal amount;
+    private BigDecimal amount;
 
     /**
      * Getter for amount
      *
      * The adjustment amount.
      */
-    public Decimal getAmount() {
+    public BigDecimal getAmount() {
         return this.amount;
     }
 
@@ -88,7 +88,7 @@ public class FilingAdjustmentModel {
      *
      * The adjustment amount.
      */
-    public void setAmount(Decimal value) {
+    public void setAmount(BigDecimal value) {
         this.amount = value;
     }
 
@@ -135,14 +135,14 @@ public class FilingAdjustmentModel {
     }
 
 
-    private object isCalculated;
+    private Boolean isCalculated;
 
     /**
      * Getter for isCalculated
      *
      * Whether or not the adjustment has been calculated.
      */
-    public object getIsCalculated() {
+    public Boolean getIsCalculated() {
         return this.isCalculated;
     }
 
@@ -151,7 +151,7 @@ public class FilingAdjustmentModel {
      *
      * Whether or not the adjustment has been calculated.
      */
-    public void setIsCalculated(object value) {
+    public void setIsCalculated(Boolean value) {
         this.isCalculated = value;
     }
 
@@ -198,14 +198,14 @@ public class FilingAdjustmentModel {
     }
 
 
-    private Instant createdDate;
+    private Date createdDate;
 
     /**
      * Getter for createdDate
      *
      * The date when this record was created.
      */
-    public Instant getCreatedDate() {
+    public Date getCreatedDate() {
         return this.createdDate;
     }
 
@@ -214,7 +214,7 @@ public class FilingAdjustmentModel {
      *
      * The date when this record was created.
      */
-    public void setCreatedDate(Instant value) {
+    public void setCreatedDate(Date value) {
         this.createdDate = value;
     }
 
@@ -240,14 +240,14 @@ public class FilingAdjustmentModel {
     }
 
 
-    private Instant modifiedDate;
+    private Date modifiedDate;
 
     /**
      * Getter for modifiedDate
      *
      * The date/time when this record was last modified.
      */
-    public Instant getModifiedDate() {
+    public Date getModifiedDate() {
         return this.modifiedDate;
     }
 
@@ -256,7 +256,7 @@ public class FilingAdjustmentModel {
      *
      * The date/time when this record was last modified.
      */
-    public void setModifiedDate(Instant value) {
+    public void setModifiedDate(Date value) {
         this.modifiedDate = value;
     }
 
