@@ -1,64 +1,78 @@
 package net.avalara.avatax.rest.client.enums;
 
-/**
- * 
+/*
+ * AvaTax Software Development Kit for Java JRE based environments
+ *
+ * (c) 2004-2017 Avalara, Inc.
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ *
+ * @author     Dustin Welden <dustin.welden@avalara.com>
+ * @copyright  2004-2017 Avalara, Inc.
+ * @license    https://www.apache.org/licenses/LICENSE-2.0
+ * @version    17.5.2-77
+ * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ */
+
+ /**
+ * Tax type
  */
 public enum TaxType {
-    /**
-     * No comment data provided
-     */
-    Lodging,
-    
-    /**
-     * No comment data provided
-     */
-    Bottle,
-    
-    /**
-     * No comment data provided
-     */
-    ConsumerUse,
-    
-    /**
-     * No comment data provided
-     */
-    Excise,
-    
-    /**
-     * No comment data provided
-     */
-    Fee,
-    
-    /**
-     * No comment data provided
-     */
-    Input,
-    
-    /**
-     * No comment data provided
-     */
-    Nonrecoverable,
-    
-    /**
-     * No comment data provided
-     */
-    Output,
-    
-    /**
-     * No comment data provided
-     */
-    Rental,
-    
-    /**
-     * No comment data provided
-     */
-    Sales,
-    
-    /**
-     * No comment data provided
-     */
-    Use,
-    
+        /** 
+         * Match Lodging tax type
+         */
+        Lodging,
+
+        /** 
+         * Match bottle tax type
+         */
+        Bottle,
+
+        /** 
+         * Consumer Use Tax
+         */
+        ConsumerUse,
+
+        /** 
+         * Medical Excise Tax
+         */
+        Excise,
+
+        /** 
+         * Fee - PIFs (Public Improvement Fees) and RSFs (Retail Sales Fees)
+         */
+        Fee,
+
+        /** 
+         * VAT/GST Input tax
+         */
+        Input,
+
+        /** 
+         * VAT/GST Nonrecoverable Input tax
+         */
+        Nonrecoverable,
+
+        /** 
+         * VAT/GST Output tax
+         */
+        Output,
+
+        /** 
+         * Rental Tax
+         */
+        Rental,
+
+        /** 
+         * Sales tax
+         */
+        Sales,
+
+        /** 
+         * Use tax
+         */
+        Use,
 
 }
     

@@ -1,124 +1,138 @@
 package net.avalara.avatax.rest.client.enums;
 
-/**
- * 
+/*
+ * AvaTax Software Development Kit for Java JRE based environments
+ *
+ * (c) 2004-2017 Avalara, Inc.
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ *
+ * @author     Dustin Welden <dustin.welden@avalara.com>
+ * @copyright  2004-2017 Avalara, Inc.
+ * @license    https://www.apache.org/licenses/LICENSE-2.0
+ * @version    17.5.2-77
+ * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ */
+
+ /**
+ * Permission level of a user
  */
 public enum SecurityRoleId {
-    /**
-     * No comment data provided
-     */
-    NoAccess,
-    
-    /**
-     * No comment data provided
-     */
-    SiteAdmin,
-    
-    /**
-     * No comment data provided
-     */
-    AccountOperator,
-    
-    /**
-     * No comment data provided
-     */
-    AccountAdmin,
-    
-    /**
-     * No comment data provided
-     */
-    AccountUser,
-    
-    /**
-     * No comment data provided
-     */
-    SystemAdmin,
-    
-    /**
-     * No comment data provided
-     */
-    Registrar,
-    
-    /**
-     * No comment data provided
-     */
-    CSPTester,
-    
-    /**
-     * No comment data provided
-     */
-    CSPAdmin,
-    
-    /**
-     * No comment data provided
-     */
-    SystemOperator,
-    
-    /**
-     * No comment data provided
-     */
-    TechnicalSupportUser,
-    
-    /**
-     * No comment data provided
-     */
-    TechnicalSupportAdmin,
-    
-    /**
-     * No comment data provided
-     */
-    TreasuryUser,
-    
-    /**
-     * No comment data provided
-     */
-    TreasuryAdmin,
-    
-    /**
-     * No comment data provided
-     */
-    ComplianceUser,
-    
-    /**
-     * No comment data provided
-     */
-    ComplianceAdmin,
-    
-    /**
-     * No comment data provided
-     */
-    ProStoresOperator,
-    
-    /**
-     * No comment data provided
-     */
-    CompanyUser,
-    
-    /**
-     * No comment data provided
-     */
-    CompanyAdmin,
-    
-    /**
-     * No comment data provided
-     */
-    ComplianceTempUser,
-    
-    /**
-     * No comment data provided
-     */
-    ComplianceRootUser,
-    
-    /**
-     * No comment data provided
-     */
-    ComplianceOperator,
-    
-    /**
-     * No comment data provided
-     */
-    SSTAdmin,
-    
+        /** 
+         * NoAccess
+         */
+        NoAccess,
+
+        /** 
+         * SiteAdmin
+         */
+        SiteAdmin,
+
+        /** 
+         * AccountOperator
+         */
+        AccountOperator,
+
+        /** 
+         * AccountAdmin
+         */
+        AccountAdmin,
+
+        /** 
+         * AccountUser
+         */
+        AccountUser,
+
+        /** 
+         * SystemAdmin
+         */
+        SystemAdmin,
+
+        /** 
+         * Registrar
+         */
+        Registrar,
+
+        /** 
+         * CSPTester
+         */
+        CSPTester,
+
+        /** 
+         * CSPAdmin
+         */
+        CSPAdmin,
+
+        /** 
+         * SystemOperator
+         */
+        SystemOperator,
+
+        /** 
+         * TechnicalSupportUser
+         */
+        TechnicalSupportUser,
+
+        /** 
+         * TechnicalSupportAdmin
+         */
+        TechnicalSupportAdmin,
+
+        /** 
+         * TreasuryUser
+         */
+        TreasuryUser,
+
+        /** 
+         * TreasuryAdmin
+         */
+        TreasuryAdmin,
+
+        /** 
+         * ComplianceUser
+         */
+        ComplianceUser,
+
+        /** 
+         * ComplianceAdmin
+         */
+        ComplianceAdmin,
+
+        /** 
+         * ProStoresOperator
+         */
+        ProStoresOperator,
+
+        /** 
+         * CompanyUser
+         */
+        CompanyUser,
+
+        /** 
+         * CompanyAdmin
+         */
+        CompanyAdmin,
+
+        /** 
+         * ComplianceTempUser
+         */
+        ComplianceTempUser,
+
+        /** 
+         * ComplianceRootUser
+         */
+        ComplianceRootUser,
+
+        /** 
+         * ComplianceOperator
+         */
+        ComplianceOperator,
+
+        /** 
+         * SSTAdmin
+         */
+        SSTAdmin,
 
 }
     

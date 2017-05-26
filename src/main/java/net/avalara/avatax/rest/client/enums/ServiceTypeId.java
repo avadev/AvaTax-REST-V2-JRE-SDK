@@ -1,99 +1,113 @@
 package net.avalara.avatax.rest.client.enums;
 
-/**
- * 
+/*
+ * AvaTax Software Development Kit for Java JRE based environments
+ *
+ * (c) 2004-2017 Avalara, Inc.
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ *
+ * @author     Dustin Welden <dustin.welden@avalara.com>
+ * @copyright  2004-2017 Avalara, Inc.
+ * @license    https://www.apache.org/licenses/LICENSE-2.0
+ * @version    17.5.2-77
+ * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ */
+
+ /**
+ * Represents the type of service or subscription given to a user
  */
 public enum ServiceTypeId {
-    /**
-     * No comment data provided
-     */
-    None,
-    
-    /**
-     * No comment data provided
-     */
-    AvaTaxST,
-    
-    /**
-     * No comment data provided
-     */
-    AvaTaxPro,
-    
-    /**
-     * No comment data provided
-     */
-    AvaTaxGlobal,
-    
-    /**
-     * No comment data provided
-     */
-    AutoAddress,
-    
-    /**
-     * No comment data provided
-     */
-    AutoReturns,
-    
-    /**
-     * No comment data provided
-     */
-    TaxSolver,
-    
-    /**
-     * No comment data provided
-     */
-    AvaTaxCsp,
-    
-    /**
-     * No comment data provided
-     */
-    Twe,
-    
-    /**
-     * No comment data provided
-     */
-    Mrs,
-    
-    /**
-     * No comment data provided
-     */
-    AvaCert,
-    
-    /**
-     * No comment data provided
-     */
-    AuthorizationPartner,
-    
-    /**
-     * No comment data provided
-     */
-    CertCapture,
-    
-    /**
-     * No comment data provided
-     */
-    AvaUpc,
-    
-    /**
-     * No comment data provided
-     */
-    AvaCUT,
-    
-    /**
-     * No comment data provided
-     */
-    AvaLandedCost,
-    
-    /**
-     * No comment data provided
-     */
-    AvaLodging,
-    
-    /**
-     * No comment data provided
-     */
-    AvaBottle,
-    
+        /** 
+         * None
+         */
+        None,
+
+        /** 
+         * AvaTaxST
+         */
+        AvaTaxST,
+
+        /** 
+         * AvaTaxPro
+         */
+        AvaTaxPro,
+
+        /** 
+         * AvaTaxGlobal
+         */
+        AvaTaxGlobal,
+
+        /** 
+         * AutoAddress
+         */
+        AutoAddress,
+
+        /** 
+         * AutoReturns
+         */
+        AutoReturns,
+
+        /** 
+         * TaxSolver
+         */
+        TaxSolver,
+
+        /** 
+         * AvaTaxCsp
+         */
+        AvaTaxCsp,
+
+        /** 
+         * Twe
+         */
+        Twe,
+
+        /** 
+         * Mrs
+         */
+        Mrs,
+
+        /** 
+         * AvaCert
+         */
+        AvaCert,
+
+        /** 
+         * AuthorizationPartner
+         */
+        AuthorizationPartner,
+
+        /** 
+         * CertCapture
+         */
+        CertCapture,
+
+        /** 
+         * AvaUpc
+         */
+        AvaUpc,
+
+        /** 
+         * AvaCUT
+         */
+        AvaCUT,
+
+        /** 
+         * AvaLandedCost
+         */
+        AvaLandedCost,
+
+        /** 
+         * AvaLodging
+         */
+        AvaLodging,
+
+        /** 
+         * AvaBottle
+         */
+        AvaBottle,
 
 }
     
