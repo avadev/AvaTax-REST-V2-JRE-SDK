@@ -15,19 +15,19 @@ package net.avalara.avatax.rest.client.enums;
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
  */
 
- /**
+/**
  * Type of verification task
  */
 public enum ScraperType {
-        /** 
-         * Indicates that is is a login type
-         */
-        Login,
+    /** 
+     * Indicates that is is a login type
+     */
+    Login,
 
-        /** 
-         * Indicates that it is a Customer DOR Data type
-         */
-        CustomerDorData,
+    /** 
+     * Indicates that it is a Customer DOR Data type
+     */
+    CustomerDorData,
 
 }
     

@@ -15,19 +15,19 @@ package net.avalara.avatax.rest.client.enums;
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
  */
 
- /**
+/**
  * 
  */
 public enum PointOfSalePartnerId {
-        /** 
-         * 
-         */
-        DMA,
+    /** 
+     * 
+     */
+    DMA,
 
-        /** 
-         * 
-         */
-        AX7,
+    /** 
+     * 
+     */
+    AX7,
 
 }
     

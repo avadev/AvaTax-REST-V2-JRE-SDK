@@ -15,25 +15,25 @@ package net.avalara.avatax.rest.client.enums;
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
  */
 
- /**
+/**
  * Jurisdiction boundary precision level found for address. This depends on the accuracy of the address
-    ///  as well as the precision level of the state provided jurisdiction boundaries.
+ *  as well as the precision level of the state provided jurisdiction boundaries.
  */
 public enum BoundaryLevel {
-        /** 
-         * Street address precision
-         */
-        Address,
+    /** 
+     * Street address precision
+     */
+    Address,
 
-        /** 
-         * 9-digit zip precision
-         */
-        Zip9,
+    /** 
+     * 9-digit zip precision
+     */
+    Zip9,
 
-        /** 
-         * 5-digit zip precision
-         */
-        Zip5,
+    /** 
+     * 5-digit zip precision
+     */
+    Zip5,
 
 }
     

@@ -15,29 +15,29 @@ package net.avalara.avatax.rest.client.enums;
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
  */
 
- /**
+/**
  * Refund types
  */
 public enum RefundType {
-        /** 
-         * Refund the whole transaction.
-         */
-        Full,
+    /** 
+     * Refund the whole transaction.
+     */
+    Full,
 
-        /** 
-         * Refund only specific lines from the original a transaction.
-         */
-        Partial,
+    /** 
+     * Refund only specific lines from the original a transaction.
+     */
+    Partial,
 
-        /** 
-         * Only refund the tax part of the transaction.
-         */
-        TaxOnly,
+    /** 
+     * Only refund the tax part of the transaction.
+     */
+    TaxOnly,
 
-        /** 
-         * Refund a percentage of the value of this transaction.
-         */
-        Percentage,
+    /** 
+     * Refund a percentage of the value of this transaction.
+     */
+    Percentage,
 
 }
     

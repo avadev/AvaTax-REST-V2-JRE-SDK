@@ -15,69 +15,69 @@ package net.avalara.avatax.rest.client.enums;
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
  */
 
- /**
+/**
  * 
  */
 public enum RateType {
-        /** 
-         * 
-         */
-        ReducedA,
+    /** 
+     * 
+     */
+    ReducedA,
 
-        /** 
-         * 
-         */
-        ReducedB,
+    /** 
+     * 
+     */
+    ReducedB,
 
-        /** 
-         * 
-         */
-        Food,
+    /** 
+     * 
+     */
+    Food,
 
-        /** 
-         * 
-         */
-        General,
+    /** 
+     * 
+     */
+    General,
 
-        /** 
-         * 
-         */
-        IncreasedStandard,
+    /** 
+     * 
+     */
+    IncreasedStandard,
 
-        /** 
-         * 
-         */
-        LinenRental,
+    /** 
+     * 
+     */
+    LinenRental,
 
-        /** 
-         * 
-         */
-        Medical,
+    /** 
+     * 
+     */
+    Medical,
 
-        /** 
-         * 
-         */
-        Parking,
+    /** 
+     * 
+     */
+    Parking,
 
-        /** 
-         * 
-         */
-        SuperReduced,
+    /** 
+     * 
+     */
+    SuperReduced,
 
-        /** 
-         * 
-         */
-        ReducedR,
+    /** 
+     * 
+     */
+    ReducedR,
 
-        /** 
-         * 
-         */
-        Standard,
+    /** 
+     * 
+     */
+    Standard,
 
-        /** 
-         * 
-         */
-        Zero,
+    /** 
+     * 
+     */
+    Zero,
 
 }
     

@@ -15,64 +15,64 @@ package net.avalara.avatax.rest.client.enums;
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
  */
 
- /**
+/**
  * Document Types
  */
 public enum DocumentType {
-        /** 
-         * Sales Order, estimate or quote (default). This is a temporary document type and is not saved in tax history.
-         */
-        SalesOrder,
+    /** 
+     * Sales Order, estimate or quote (default). This is a temporary document type and is not saved in tax history.
+     */
+    SalesOrder,
 
-        /** 
-         * Sales Invoice
-         */
-        SalesInvoice,
+    /** 
+     * Sales Invoice
+     */
+    SalesInvoice,
 
-        /** 
-         * Purchase order, estimate, or quote. This is a temporary document type and is not saved in tax history.
-         */
-        PurchaseOrder,
+    /** 
+     * Purchase order, estimate, or quote. This is a temporary document type and is not saved in tax history.
+     */
+    PurchaseOrder,
 
-        /** 
-         * Purchase Invoice
-         */
-        PurchaseInvoice,
+    /** 
+     * Purchase Invoice
+     */
+    PurchaseInvoice,
 
-        /** 
-         * Sales Return Order. This is a temporary document type and is not saved in tax history.
-         */
-        ReturnOrder,
+    /** 
+     * Sales Return Order. This is a temporary document type and is not saved in tax history.
+     */
+    ReturnOrder,
 
-        /** 
-         * Sales Return Invoice
-         */
-        ReturnInvoice,
+    /** 
+     * Sales Return Invoice
+     */
+    ReturnInvoice,
 
-        /** 
-         * InventoryTransferOrder
-         */
-        InventoryTransferOrder,
+    /** 
+     * InventoryTransferOrder
+     */
+    InventoryTransferOrder,
 
-        /** 
-         * InventoryTransferInvoice
-         */
-        InventoryTransferInvoice,
+    /** 
+     * InventoryTransferInvoice
+     */
+    InventoryTransferInvoice,
 
-        /** 
-         * ReverseChargeOrder
-         */
-        ReverseChargeOrder,
+    /** 
+     * ReverseChargeOrder
+     */
+    ReverseChargeOrder,
 
-        /** 
-         * ReverseChargeInvoice
-         */
-        ReverseChargeInvoice,
+    /** 
+     * ReverseChargeInvoice
+     */
+    ReverseChargeInvoice,
 
-        /** 
-         * No particular type
-         */
-        Any,
+    /** 
+     * No particular type
+     */
+    Any,
 
 }
     

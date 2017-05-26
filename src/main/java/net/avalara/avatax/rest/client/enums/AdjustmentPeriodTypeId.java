@@ -15,24 +15,24 @@ package net.avalara.avatax.rest.client.enums;
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
  */
 
- /**
+/**
  * 
  */
 public enum AdjustmentPeriodTypeId {
-        /** 
-         * 
-         */
-        None,
+    /** 
+     * 
+     */
+    None,
 
-        /** 
-         * 
-         */
-        CurrentPeriod,
+    /** 
+     * 
+     */
+    CurrentPeriod,
 
-        /** 
-         * 
-         */
-        NextPeriod,
+    /** 
+     * 
+     */
+    NextPeriod,
 
 }
     

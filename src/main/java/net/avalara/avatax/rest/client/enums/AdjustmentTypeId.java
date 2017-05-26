@@ -15,69 +15,69 @@ package net.avalara.avatax.rest.client.enums;
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
  */
 
- /**
+/**
  * 
  */
 public enum AdjustmentTypeId {
-        /** 
-         * 
-         */
-        Other,
+    /** 
+     * 
+     */
+    Other,
 
-        /** 
-         * 
-         */
-        CurrentPeriodRounding,
+    /** 
+     * 
+     */
+    CurrentPeriodRounding,
 
-        /** 
-         * 
-         */
-        PriorPeriodRounding,
+    /** 
+     * 
+     */
+    PriorPeriodRounding,
 
-        /** 
-         * 
-         */
-        CurrentPeriodDiscount,
+    /** 
+     * 
+     */
+    CurrentPeriodDiscount,
 
-        /** 
-         * 
-         */
-        PriorPeriodDiscount,
+    /** 
+     * 
+     */
+    PriorPeriodDiscount,
 
-        /** 
-         * 
-         */
-        CurrentPeriodCollection,
+    /** 
+     * 
+     */
+    CurrentPeriodCollection,
 
-        /** 
-         * 
-         */
-        PriorPeriodCollection,
+    /** 
+     * 
+     */
+    PriorPeriodCollection,
 
-        /** 
-         * 
-         */
-        Penalty,
+    /** 
+     * 
+     */
+    Penalty,
 
-        /** 
-         * 
-         */
-        Interest,
+    /** 
+     * 
+     */
+    Interest,
 
-        /** 
-         * 
-         */
-        Discount,
+    /** 
+     * 
+     */
+    Discount,
 
-        /** 
-         * 
-         */
-        Rounding,
+    /** 
+     * 
+     */
+    Rounding,
 
-        /** 
-         * 
-         */
-        CspFee,
+    /** 
+     * 
+     */
+    CspFee,
 
 }
     

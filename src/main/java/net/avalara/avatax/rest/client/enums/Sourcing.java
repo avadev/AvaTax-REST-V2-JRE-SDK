@@ -15,24 +15,24 @@ package net.avalara.avatax.rest.client.enums;
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
  */
 
- /**
+/**
  * Sourcing
  */
 public enum Sourcing {
-        /** 
-         * Mixed sourcing, for states that do both origin and destination calculation
-         */
-        Mixed,
+    /** 
+     * Mixed sourcing, for states that do both origin and destination calculation
+     */
+    Mixed,
 
-        /** 
-         * Destination
-         */
-        Destination,
+    /** 
+     * Destination
+     */
+    Destination,
 
-        /** 
-         * Origin
-         */
-        Origin,
+    /** 
+     * Origin
+     */
+    Origin,
 
 }
     

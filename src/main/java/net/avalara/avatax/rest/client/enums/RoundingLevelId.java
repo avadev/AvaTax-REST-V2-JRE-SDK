@@ -15,19 +15,19 @@ package net.avalara.avatax.rest.client.enums;
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
  */
 
- /**
+/**
  * Choice of rounding level for a transaction
  */
 public enum RoundingLevelId {
-        /** 
-         * Round tax on each line separately
-         */
-        Line,
+    /** 
+     * Round tax on each line separately
+     */
+    Line,
 
-        /** 
-         * Round tax at the document level
-         */
-        Document,
+    /** 
+     * Round tax at the document level
+     */
+    Document,
 
 }
     

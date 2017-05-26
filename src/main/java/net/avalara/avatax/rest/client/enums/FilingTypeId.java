@@ -15,44 +15,44 @@ package net.avalara.avatax.rest.client.enums;
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
  */
 
- /**
+/**
  * A list of possible AvaFile filing types.
  */
 public enum FilingTypeId {
-        /** 
-         * Denotes the tax return is being filed on paper.
-         */
-        PaperReturn,
+    /** 
+     * Denotes the tax return is being filed on paper.
+     */
+    PaperReturn,
 
-        /** 
-         * Denotes the tax return is being filed via electronic means; excludes SST electronic filing.
-         */
-        ElectronicReturn,
+    /** 
+     * Denotes the tax return is being filed via electronic means; excludes SST electronic filing.
+     */
+    ElectronicReturn,
 
-        /** 
-         * Denotes the tax return is an SST filing.
-         */
-        SER,
+    /** 
+     * Denotes the tax return is an SST filing.
+     */
+    SER,
 
-        /** 
-         * Denotes a return is paid via EFT and filed on paper without payment.
-         */
-        EFTPaper,
+    /** 
+     * Denotes a return is paid via EFT and filed on paper without payment.
+     */
+    EFTPaper,
 
-        /** 
-         * Denotes a return is paid via phone and filed on paper without payment.
-         */
-        PhonePaper,
+    /** 
+     * Denotes a return is paid via phone and filed on paper without payment.
+     */
+    PhonePaper,
 
-        /** 
-         * Denotes a return is prepared but delivered to the customer for filing and payment.
-         */
-        SignatureReady,
+    /** 
+     * Denotes a return is prepared but delivered to the customer for filing and payment.
+     */
+    SignatureReady,
 
-        /** 
-         * Denotes a return which is filed online but paid by check.
-         */
-        EfileCheck,
+    /** 
+     * Denotes a return which is filed online but paid by check.
+     */
+    EfileCheck,
 
 }
     

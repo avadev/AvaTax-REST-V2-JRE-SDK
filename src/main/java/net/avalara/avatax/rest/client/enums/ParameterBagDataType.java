@@ -15,24 +15,24 @@ package net.avalara.avatax.rest.client.enums;
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
  */
 
- /**
+/**
  * The data type that must be passed in a parameter bag
  */
 public enum ParameterBagDataType {
-        /** 
-         * This data type is a string.
-         */
-        String,
+    /** 
+     * This data type is a string.
+     */
+    String,
 
-        /** 
-         * This data type is either 'true' or 'false'.
-         */
-        Boolean,
+    /** 
+     * This data type is either 'true' or 'false'.
+     */
+    Boolean,
 
-        /** 
-         * This data type is a numeric value. It can include decimals.
-         */
-        Numeric,
+    /** 
+     * This data type is a numeric value. It can include decimals.
+     */
+    Numeric,
 
 }
     

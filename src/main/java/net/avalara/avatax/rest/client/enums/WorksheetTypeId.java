@@ -15,24 +15,24 @@ package net.avalara.avatax.rest.client.enums;
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
  */
 
- /**
+/**
  * Filing worksheet Type
  */
 public enum WorksheetTypeId {
-        /** 
-         * The original filing for a period
-         */
-        Original,
+    /** 
+     * The original filing for a period
+     */
+    Original,
 
-        /** 
-         * Represents an amended filing for a period
-         */
-        Amended,
+    /** 
+     * Represents an amended filing for a period
+     */
+    Amended,
 
-        /** 
-         * Represents a test filing
-         */
-        Test,
+    /** 
+     * Represents a test filing
+     */
+    Test,
 
 }
     

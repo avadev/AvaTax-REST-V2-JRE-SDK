@@ -15,24 +15,24 @@ package net.avalara.avatax.rest.client.enums;
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
  */
 
- /**
+/**
  * Indicates what level of auditing information is available for a transaction
  */
 public enum ApiCallStatus {
-        /** 
-         * If the original api call is availabe on S3
-         */
-        OriginalApiCallAvailable,
+    /** 
+     * If the original api call is availabe on S3
+     */
+    OriginalApiCallAvailable,
 
-        /** 
-         * if the original api call is not available, reconstructed api call should always be available
-         */
-        ReconstructedApiCallAvailable,
+    /** 
+     * if the original api call is not available, reconstructed api call should always be available
+     */
+    ReconstructedApiCallAvailable,
 
-        /** 
-         * Any other api call status
-         */
-        Any,
+    /** 
+     * Any other api call status
+     */
+    Any,
 
 }
     

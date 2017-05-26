@@ -15,44 +15,44 @@ package net.avalara.avatax.rest.client.enums;
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
  */
 
- /**
+/**
  * Filing Frequency types
  */
 public enum FilingFrequencyId {
-        /** 
-         * File once per month
-         */
-        Monthly,
+    /** 
+     * File once per month
+     */
+    Monthly,
 
-        /** 
-         * File once per three months
-         */
-        Quarterly,
+    /** 
+     * File once per three months
+     */
+    Quarterly,
 
-        /** 
-         * File twice per year
-         */
-        SemiAnnually,
+    /** 
+     * File twice per year
+     */
+    SemiAnnually,
 
-        /** 
-         * File once per year
-         */
-        Annually,
+    /** 
+     * File once per year
+     */
+    Annually,
 
-        /** 
-         * File every other month
-         */
-        Bimonthly,
+    /** 
+     * File every other month
+     */
+    Bimonthly,
 
-        /** 
-         * File only when there are documents to report
-         */
-        Occasional,
+    /** 
+     * File only when there are documents to report
+     */
+    Occasional,
 
-        /** 
-         * File for the first two months of each quarter, then do not file on the quarterly month.
-         */
-        InverseQuarterly,
+    /** 
+     * File for the first two months of each quarter, then do not file on the quarterly month.
+     */
+    InverseQuarterly,
 
 }
     

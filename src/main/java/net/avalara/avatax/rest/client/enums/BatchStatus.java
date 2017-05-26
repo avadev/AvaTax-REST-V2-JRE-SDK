@@ -15,54 +15,54 @@ package net.avalara.avatax.rest.client.enums;
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
  */
 
- /**
+/**
  * The status of a batch file
  */
 public enum BatchStatus {
-        /** 
-         * Batch file has been received and is in the queue to be processed.
-         */
-        Waiting,
+    /** 
+     * Batch file has been received and is in the queue to be processed.
+     */
+    Waiting,
 
-        /** 
-         * Batch file experienced system errors and cannot be processed.
-         */
-        SystemErrors,
+    /** 
+     * Batch file experienced system errors and cannot be processed.
+     */
+    SystemErrors,
 
-        /** 
-         * Batch file is cancelled
-         */
-        Cancelled,
+    /** 
+     * Batch file is cancelled
+     */
+    Cancelled,
 
-        /** 
-         * Batch file has been completely processed.
-         */
-        Completed,
+    /** 
+     * Batch file has been completely processed.
+     */
+    Completed,
 
-        /** 
-         * Batch file is currently being created.
-         */
-        Creating,
+    /** 
+     * Batch file is currently being created.
+     */
+    Creating,
 
-        /** 
-         * Batch file has been deleted.
-         */
-        Deleted,
+    /** 
+     * Batch file has been deleted.
+     */
+    Deleted,
 
-        /** 
-         * Batch file was processed with some errors.
-         */
-        Errors,
+    /** 
+     * Batch file was processed with some errors.
+     */
+    Errors,
 
-        /** 
-         * Batch processing was paused.
-         */
-        Paused,
+    /** 
+     * Batch processing was paused.
+     */
+    Paused,
 
-        /** 
-         * Batch is currently being processed.
-         */
-        Processing,
+    /** 
+     * Batch is currently being processed.
+     */
+    Processing,
 
 }
     

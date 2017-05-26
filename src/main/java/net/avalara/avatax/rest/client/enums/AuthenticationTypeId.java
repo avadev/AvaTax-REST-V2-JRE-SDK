@@ -15,29 +15,29 @@ package net.avalara.avatax.rest.client.enums;
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
  */
 
- /**
+/**
  * Represents the type of authentication provided to the API call
  */
 public enum AuthenticationTypeId {
-        /** 
-         * This API call was not authenticated.
-         */
-        None,
+    /** 
+     * This API call was not authenticated.
+     */
+    None,
 
-        /** 
-         * This API call was authenticated by your username/password.
-         */
-        UsernamePassword,
+    /** 
+     * This API call was authenticated by your username/password.
+     */
+    UsernamePassword,
 
-        /** 
-         * This API call was authenticated by your Avalara Account ID and private license key.
-         */
-        AccountIdLicenseKey,
+    /** 
+     * This API call was authenticated by your Avalara Account ID and private license key.
+     */
+    AccountIdLicenseKey,
 
-        /** 
-         * This API call was authenticated by OpenID Bearer Token.
-         */
-        OpenIdBearerToken,
+    /** 
+     * This API call was authenticated by OpenID Bearer Token.
+     */
+    OpenIdBearerToken,
 
 }
     

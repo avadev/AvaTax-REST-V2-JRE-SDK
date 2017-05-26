@@ -15,19 +15,19 @@ package net.avalara.avatax.rest.client.enums;
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
  */
 
- /**
+/**
  * Indicates whether this address refers to a person or an business
  */
 public enum AddressTypeId {
-        /** 
-         * A business location, for example a store, warehouse, or office.
-         */
-        Location,
+    /** 
+     * A business location, for example a store, warehouse, or office.
+     */
+    Location,
 
-        /** 
-         * A person's address who performs sales tasks for the company remotely from an office.
-         */
-        Salesperson,
+    /** 
+     * A person's address who performs sales tasks for the company remotely from an office.
+     */
+    Salesperson,
 
 }
     

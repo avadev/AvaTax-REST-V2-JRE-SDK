@@ -15,75 +15,75 @@ package net.avalara.avatax.rest.client.enums;
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
  */
 
- /**
+/**
  * The type of data contained in this batch
  */
 public enum BatchType {
-        /** 
-         * 
-         */
-        AvaCertUpdate,
+    /** 
+     * 
+     */
+    AvaCertUpdate,
 
-        /** 
-         * 
-         */
-        AvaCertUpdateAll,
+    /** 
+     * 
+     */
+    AvaCertUpdateAll,
 
-        /** 
-         * 
-         */
-        BatchMaintenance,
+    /** 
+     * 
+     */
+    BatchMaintenance,
 
-        /** 
-         * 
-         */
-        CompanyLocationImport,
+    /** 
+     * 
+     */
+    CompanyLocationImport,
 
-        /** 
-         * 
-         */
-        DocumentImport,
+    /** 
+     * 
+     */
+    DocumentImport,
 
-        /** 
-         * 
-         */
-        ExemptCertImport,
+    /** 
+     * 
+     */
+    ExemptCertImport,
 
-        /** 
-         * 
-         */
-        ItemImport,
+    /** 
+     * 
+     */
+    ItemImport,
 
-        /** 
-         * 
-         */
-        SalesAuditExport,
+    /** 
+     * 
+     */
+    SalesAuditExport,
 
-        /** 
-         * 
-         */
-        SstpTestDeckImport,
+    /** 
+     * 
+     */
+    SstpTestDeckImport,
 
-        /** 
-         * 
-         */
-        TaxRuleImport,
+    /** 
+     * 
+     */
+    TaxRuleImport,
 
-        /** 
-         * This batch type represents tax transaction data being uploaded to AvaTax. Each line in the batch represents a single transaction
-        ///  or a line in a multi-line transaction. For reference, see [Batched Transactions in REST v2](http://developer.avalara.com/blog/2016/10/24/batch-transaction-upload-in-rest-v2)
-         */
-        TransactionImport,
+    /** 
+     * This batch type represents tax transaction data being uploaded to AvaTax. Each line in the batch represents a single transaction
+     *  or a line in a multi-line transaction. For reference, see [Batched Transactions in REST v2](http://developer.avalara.com/blog/2016/10/24/batch-transaction-upload-in-rest-v2)
+     */
+    TransactionImport,
 
-        /** 
-         * 
-         */
-        UPCBulkImport,
+    /** 
+     * 
+     */
+    UPCBulkImport,
 
-        /** 
-         * 
-         */
-        UPCValidationImport,
+    /** 
+     * 
+     */
+    UPCValidationImport,
 
 }
     

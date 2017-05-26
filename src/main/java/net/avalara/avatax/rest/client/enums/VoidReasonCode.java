@@ -15,35 +15,35 @@ package net.avalara.avatax.rest.client.enums;
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
  */
 
- /**
+/**
  * Reason code for voiding or cancelling a transaction
  */
 public enum VoidReasonCode {
-        /** 
-         * Unspecified reason
-         */
-        Unspecified,
+    /** 
+     * Unspecified reason
+     */
+    Unspecified,
 
-        /** 
-         * Post operation failed - Document status will be changed to unposted
-         */
-        PostFailed,
+    /** 
+     * Post operation failed - Document status will be changed to unposted
+     */
+    PostFailed,
 
-        /** 
-         * Document deleted - If committed, document status will be changed to Cancelled. If not committed, document will be
-        ///  deleted.
-         */
-        DocDeleted,
+    /** 
+     * Document deleted - If committed, document status will be changed to Cancelled. If not committed, document will be
+     *  deleted.
+     */
+    DocDeleted,
 
-        /** 
-         * Document has been voided and DocStatus will be set to Cancelled
-         */
-        DocVoided,
+    /** 
+     * Document has been voided and DocStatus will be set to Cancelled
+     */
+    DocVoided,
 
-        /** 
-         * AdjustTax operation has been cancelled. Adjustment will be reversed.
-         */
-        AdjustmentCancelled,
+    /** 
+     * AdjustTax operation has been cancelled. Adjustment will be reversed.
+     */
+    AdjustmentCancelled,
 
 }
     

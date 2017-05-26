@@ -15,86 +15,86 @@ package net.avalara.avatax.rest.client.enums;
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
  */
 
- /**
+/**
  * This data type is only used when an object must "Match" tax types. By specifying options here,
-    ///  you can indicate which tax types will match for the purposes of this object.
-    ///  For example, if you specify BothSalesAndUseTax, this value matches with both sales and seller's use tax.
+ *  you can indicate which tax types will match for the purposes of this object.
+ *  For example, if you specify BothSalesAndUseTax, this value matches with both sales and seller's use tax.
  */
 public enum MatchingTaxType {
-        /** 
-         * Match medical excise type
-         */
-        Excise,
+    /** 
+     * Match medical excise type
+     */
+    Excise,
 
-        /** 
-         * Match Lodging tax type
-         */
-        Lodging,
+    /** 
+     * Match Lodging tax type
+     */
+    Lodging,
 
-        /** 
-         * Match bottle tax type
-         */
-        Bottle,
+    /** 
+     * Match bottle tax type
+     */
+    Bottle,
 
-        /** 
-         * Match all tax types
-         */
-        All,
+    /** 
+     * Match all tax types
+     */
+    All,
 
-        /** 
-         * Match both Sales and Use Tax only
-         */
-        BothSalesAndUseTax,
+    /** 
+     * Match both Sales and Use Tax only
+     */
+    BothSalesAndUseTax,
 
-        /** 
-         * Match Consumer Use Tax only
-         */
-        ConsumerUseTax,
+    /** 
+     * Match Consumer Use Tax only
+     */
+    ConsumerUseTax,
 
-        /** 
-         * Match both Consumer Use and Seller's Use Tax types
-         */
-        ConsumersUseAndSellersUseTax,
+    /** 
+     * Match both Consumer Use and Seller's Use Tax types
+     */
+    ConsumersUseAndSellersUseTax,
 
-        /** 
-         * Match both Consumer Use and Sales Tax types
-         */
-        ConsumerUseAndSalesTax,
+    /** 
+     * Match both Consumer Use and Sales Tax types
+     */
+    ConsumerUseAndSalesTax,
 
-        /** 
-         * Match Fee tax types only
-         */
-        Fee,
+    /** 
+     * Match Fee tax types only
+     */
+    Fee,
 
-        /** 
-         * Match VAT Input Tax only
-         */
-        VATInputTax,
+    /** 
+     * Match VAT Input Tax only
+     */
+    VATInputTax,
 
-        /** 
-         * Match VAT Nonrecoverable Input Tax only
-         */
-        VATNonrecoverableInputTax,
+    /** 
+     * Match VAT Nonrecoverable Input Tax only
+     */
+    VATNonrecoverableInputTax,
 
-        /** 
-         * Match VAT Output Tax only
-         */
-        VATOutputTax,
+    /** 
+     * Match VAT Output Tax only
+     */
+    VATOutputTax,
 
-        /** 
-         * Match Rental tax types only
-         */
-        Rental,
+    /** 
+     * Match Rental tax types only
+     */
+    Rental,
 
-        /** 
-         * Match Sales Tax only
-         */
-        SalesTax,
+    /** 
+     * Match Sales Tax only
+     */
+    SalesTax,
 
-        /** 
-         * Match Seller's Use Tax only
-         */
-        UseTax,
+    /** 
+     * Match Seller's Use Tax only
+     */
+    UseTax,
 
 }
     

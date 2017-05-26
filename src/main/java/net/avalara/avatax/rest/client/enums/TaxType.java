@@ -15,64 +15,64 @@ package net.avalara.avatax.rest.client.enums;
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
  */
 
- /**
+/**
  * Tax type
  */
 public enum TaxType {
-        /** 
-         * Match Lodging tax type
-         */
-        Lodging,
+    /** 
+     * Match Lodging tax type
+     */
+    Lodging,
 
-        /** 
-         * Match bottle tax type
-         */
-        Bottle,
+    /** 
+     * Match bottle tax type
+     */
+    Bottle,
 
-        /** 
-         * Consumer Use Tax
-         */
-        ConsumerUse,
+    /** 
+     * Consumer Use Tax
+     */
+    ConsumerUse,
 
-        /** 
-         * Medical Excise Tax
-         */
-        Excise,
+    /** 
+     * Medical Excise Tax
+     */
+    Excise,
 
-        /** 
-         * Fee - PIFs (Public Improvement Fees) and RSFs (Retail Sales Fees)
-         */
-        Fee,
+    /** 
+     * Fee - PIFs (Public Improvement Fees) and RSFs (Retail Sales Fees)
+     */
+    Fee,
 
-        /** 
-         * VAT/GST Input tax
-         */
-        Input,
+    /** 
+     * VAT/GST Input tax
+     */
+    Input,
 
-        /** 
-         * VAT/GST Nonrecoverable Input tax
-         */
-        Nonrecoverable,
+    /** 
+     * VAT/GST Nonrecoverable Input tax
+     */
+    Nonrecoverable,
 
-        /** 
-         * VAT/GST Output tax
-         */
-        Output,
+    /** 
+     * VAT/GST Output tax
+     */
+    Output,
 
-        /** 
-         * Rental Tax
-         */
-        Rental,
+    /** 
+     * Rental Tax
+     */
+    Rental,
 
-        /** 
-         * Sales tax
-         */
-        Sales,
+    /** 
+     * Sales tax
+     */
+    Sales,
 
-        /** 
-         * Use tax
-         */
-        Use,
+    /** 
+     * Use tax
+     */
+    Use,
 
 }
     

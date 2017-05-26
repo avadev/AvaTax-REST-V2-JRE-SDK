@@ -15,24 +15,24 @@ package net.avalara.avatax.rest.client.enums;
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
  */
 
- /**
+/**
  * Type of file request
  */
 public enum PointOfSaleFileType {
-        /** 
-         * File is in Javascript Object Notation format
-         */
-        Json,
+    /** 
+     * File is in Javascript Object Notation format
+     */
+    Json,
 
-        /** 
-         * File is in Comma Separated Values format
-         */
-        Csv,
+    /** 
+     * File is in Comma Separated Values format
+     */
+    Csv,
 
-        /** 
-         * File is in Extended Markup Language format
-         */
-        Xml,
+    /** 
+     * File is in Extended Markup Language format
+     */
+    Xml,
 
 }
     

@@ -15,19 +15,19 @@ package net.avalara.avatax.rest.client.enums;
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
  */
 
- /**
+/**
  * Casing to use for validation result
  */
 public enum TextCase {
-        /** 
-         * Upper case
-         */
-        Upper,
+    /** 
+     * Upper case
+     */
+    Upper,
 
-        /** 
-         * Mixed Case
-         */
-        Mixed,
+    /** 
+     * Mixed Case
+     */
+    Mixed,
 
 }
     

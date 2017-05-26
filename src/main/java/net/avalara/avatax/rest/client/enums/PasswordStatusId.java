@@ -15,24 +15,24 @@ package net.avalara.avatax.rest.client.enums;
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
  */
 
- /**
+/**
  * PasswordStatusId
  */
 public enum PasswordStatusId {
-        /** 
-         * UserCannotChange
-         */
-        UserCannotChange,
+    /** 
+     * UserCannotChange
+     */
+    UserCannotChange,
 
-        /** 
-         * UserCanChange
-         */
-        UserCanChange,
+    /** 
+     * UserCanChange
+     */
+    UserCanChange,
 
-        /** 
-         * UserMustChange
-         */
-        UserMustChange,
+    /** 
+     * UserMustChange
+     */
+    UserMustChange,
 
 }
     

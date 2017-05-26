@@ -15,39 +15,39 @@ package net.avalara.avatax.rest.client.enums;
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
  */
 
- /**
+/**
  * TaxOverride reasons
  */
 public enum TaxOverrideType {
-        /** 
-         * No override
-         */
-        None,
+    /** 
+     * No override
+     */
+    None,
 
-        /** 
-         * Tax was overriden by the client
-         */
-        TaxAmount,
+    /** 
+     * Tax was overriden by the client
+     */
+    TaxAmount,
 
-        /** 
-         * Entity exemption was ignored (e.g. item was consumed)
-         */
-        Exemption,
+    /** 
+     * Entity exemption was ignored (e.g. item was consumed)
+     */
+    Exemption,
 
-        /** 
-         * Only the tax date was overriden
-         */
-        TaxDate,
+    /** 
+     * Only the tax date was overriden
+     */
+    TaxDate,
 
-        /** 
-         * To support Consumer Use Tax
-         */
-        AccruedTaxAmount,
+    /** 
+     * To support Consumer Use Tax
+     */
+    AccruedTaxAmount,
 
-        /** 
-         * Derive the taxable amount from the tax amount
-         */
-        DeriveTaxable,
+    /** 
+     * Derive the taxable amount from the tax amount
+     */
+    DeriveTaxable,
 
 }
     

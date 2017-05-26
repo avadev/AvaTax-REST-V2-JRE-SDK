@@ -15,24 +15,24 @@ package net.avalara.avatax.rest.client.enums;
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
  */
 
- /**
+/**
  * Service modes for tax calculation when using an AvaLocal server.
  */
 public enum ServiceMode {
-        /** 
-         * Automatically use local or remote (default)
-         */
-        Automatic,
+    /** 
+     * Automatically use local or remote (default)
+     */
+    Automatic,
 
-        /** 
-         * Local server only
-         */
-        Local,
+    /** 
+     * Local server only
+     */
+    Local,
 
-        /** 
-         * Remote server only
-         */
-        Remote,
+    /** 
+     * Remote server only
+     */
+    Remote,
 
 }
     

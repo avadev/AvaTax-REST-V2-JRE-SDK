@@ -15,29 +15,29 @@ package net.avalara.avatax.rest.client.enums;
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
  */
 
- /**
+/**
  * Status of an Avalara account
  */
 public enum AccountStatusId {
-        /** 
-         * This account is not currently active.
-         */
-        Inactive,
+    /** 
+     * This account is not currently active.
+     */
+    Inactive,
 
-        /** 
-         * This account is active and in use.
-         */
-        Active,
+    /** 
+     * This account is active and in use.
+     */
+    Active,
 
-        /** 
-         * This account is flagged as a test account and may be temporary.
-         */
-        Test,
+    /** 
+     * This account is flagged as a test account and may be temporary.
+     */
+    Test,
 
-        /** 
-         * The account is new and is currently in the onboarding process.
-         */
-        New,
+    /** 
+     * The account is new and is currently in the onboarding process.
+     */
+    New,
 
 }
     

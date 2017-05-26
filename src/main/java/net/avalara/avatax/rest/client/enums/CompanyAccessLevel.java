@@ -15,29 +15,29 @@ package net.avalara.avatax.rest.client.enums;
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
  */
 
- /**
+/**
  * Indicates the level of companies that can be accessed
  */
 public enum CompanyAccessLevel {
-        /** 
-         * No permission to access companies.
-         */
-        None,
+    /** 
+     * No permission to access companies.
+     */
+    None,
 
-        /** 
-         * Permission to access a single company and its children.
-         */
-        SingleCompany,
+    /** 
+     * Permission to access a single company and its children.
+     */
+    SingleCompany,
 
-        /** 
-         * Permission to access all companies in a single account.
-         */
-        SingleAccount,
+    /** 
+     * Permission to access all companies in a single account.
+     */
+    SingleAccount,
 
-        /** 
-         * Permission to access all companies in all accounts. Reserved for system administration tasks.
-         */
-        AllCompanies,
+    /** 
+     * Permission to access all companies in all accounts. Reserved for system administration tasks.
+     */
+    AllCompanies,
 
 }
     

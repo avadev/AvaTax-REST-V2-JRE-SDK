@@ -15,124 +15,124 @@ package net.avalara.avatax.rest.client.enums;
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
  */
 
- /**
+/**
  * Permission level of a user
  */
 public enum SecurityRoleId {
-        /** 
-         * NoAccess
-         */
-        NoAccess,
+    /** 
+     * NoAccess
+     */
+    NoAccess,
 
-        /** 
-         * SiteAdmin
-         */
-        SiteAdmin,
+    /** 
+     * SiteAdmin
+     */
+    SiteAdmin,
 
-        /** 
-         * AccountOperator
-         */
-        AccountOperator,
+    /** 
+     * AccountOperator
+     */
+    AccountOperator,
 
-        /** 
-         * AccountAdmin
-         */
-        AccountAdmin,
+    /** 
+     * AccountAdmin
+     */
+    AccountAdmin,
 
-        /** 
-         * AccountUser
-         */
-        AccountUser,
+    /** 
+     * AccountUser
+     */
+    AccountUser,
 
-        /** 
-         * SystemAdmin
-         */
-        SystemAdmin,
+    /** 
+     * SystemAdmin
+     */
+    SystemAdmin,
 
-        /** 
-         * Registrar
-         */
-        Registrar,
+    /** 
+     * Registrar
+     */
+    Registrar,
 
-        /** 
-         * CSPTester
-         */
-        CSPTester,
+    /** 
+     * CSPTester
+     */
+    CSPTester,
 
-        /** 
-         * CSPAdmin
-         */
-        CSPAdmin,
+    /** 
+     * CSPAdmin
+     */
+    CSPAdmin,
 
-        /** 
-         * SystemOperator
-         */
-        SystemOperator,
+    /** 
+     * SystemOperator
+     */
+    SystemOperator,
 
-        /** 
-         * TechnicalSupportUser
-         */
-        TechnicalSupportUser,
+    /** 
+     * TechnicalSupportUser
+     */
+    TechnicalSupportUser,
 
-        /** 
-         * TechnicalSupportAdmin
-         */
-        TechnicalSupportAdmin,
+    /** 
+     * TechnicalSupportAdmin
+     */
+    TechnicalSupportAdmin,
 
-        /** 
-         * TreasuryUser
-         */
-        TreasuryUser,
+    /** 
+     * TreasuryUser
+     */
+    TreasuryUser,
 
-        /** 
-         * TreasuryAdmin
-         */
-        TreasuryAdmin,
+    /** 
+     * TreasuryAdmin
+     */
+    TreasuryAdmin,
 
-        /** 
-         * ComplianceUser
-         */
-        ComplianceUser,
+    /** 
+     * ComplianceUser
+     */
+    ComplianceUser,
 
-        /** 
-         * ComplianceAdmin
-         */
-        ComplianceAdmin,
+    /** 
+     * ComplianceAdmin
+     */
+    ComplianceAdmin,
 
-        /** 
-         * ProStoresOperator
-         */
-        ProStoresOperator,
+    /** 
+     * ProStoresOperator
+     */
+    ProStoresOperator,
 
-        /** 
-         * CompanyUser
-         */
-        CompanyUser,
+    /** 
+     * CompanyUser
+     */
+    CompanyUser,
 
-        /** 
-         * CompanyAdmin
-         */
-        CompanyAdmin,
+    /** 
+     * CompanyAdmin
+     */
+    CompanyAdmin,
 
-        /** 
-         * ComplianceTempUser
-         */
-        ComplianceTempUser,
+    /** 
+     * ComplianceTempUser
+     */
+    ComplianceTempUser,
 
-        /** 
-         * ComplianceRootUser
-         */
-        ComplianceRootUser,
+    /** 
+     * ComplianceRootUser
+     */
+    ComplianceRootUser,
 
-        /** 
-         * ComplianceOperator
-         */
-        ComplianceOperator,
+    /** 
+     * ComplianceOperator
+     */
+    ComplianceOperator,
 
-        /** 
-         * SSTAdmin
-         */
-        SSTAdmin,
+    /** 
+     * SSTAdmin
+     */
+    SSTAdmin,
 
 }
     

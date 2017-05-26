@@ -15,94 +15,94 @@ package net.avalara.avatax.rest.client.enums;
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
  */
 
- /**
+/**
  * Filing Status
  */
 public enum FilingStatusId {
-        /** 
-         * 
-         */
-        PendingApproval,
+    /** 
+     * 
+     */
+    PendingApproval,
 
-        /** 
-         * 
-         */
-        Dirty,
+    /** 
+     * 
+     */
+    Dirty,
 
-        /** 
-         * 
-         */
-        ApprovedToFile,
+    /** 
+     * 
+     */
+    ApprovedToFile,
 
-        /** 
-         * 
-         */
-        PendingFiling,
+    /** 
+     * 
+     */
+    PendingFiling,
 
-        /** 
-         * 
-         */
-        PendingFilingOnBehalf,
+    /** 
+     * 
+     */
+    PendingFilingOnBehalf,
 
-        /** 
-         * 
-         */
-        Filed,
+    /** 
+     * 
+     */
+    Filed,
 
-        /** 
-         * 
-         */
-        FiledOnBehalf,
+    /** 
+     * 
+     */
+    FiledOnBehalf,
 
-        /** 
-         * 
-         */
-        ReturnAccepted,
+    /** 
+     * 
+     */
+    ReturnAccepted,
 
-        /** 
-         * 
-         */
-        ReturnAcceptedOnBehalf,
+    /** 
+     * 
+     */
+    ReturnAcceptedOnBehalf,
 
-        /** 
-         * 
-         */
-        PaymentRemitted,
+    /** 
+     * 
+     */
+    PaymentRemitted,
 
-        /** 
-         * 
-         */
-        Voided,
+    /** 
+     * 
+     */
+    Voided,
 
-        /** 
-         * 
-         */
-        PendingReturn,
+    /** 
+     * 
+     */
+    PendingReturn,
 
-        /** 
-         * 
-         */
-        PendingReturnOnBehalf,
+    /** 
+     * 
+     */
+    PendingReturnOnBehalf,
 
-        /** 
-         * 
-         */
-        DoNotFile,
+    /** 
+     * 
+     */
+    DoNotFile,
 
-        /** 
-         * 
-         */
-        ReturnRejected,
+    /** 
+     * 
+     */
+    ReturnRejected,
 
-        /** 
-         * 
-         */
-        ReturnRejectedOnBehalf,
+    /** 
+     * 
+     */
+    ReturnRejectedOnBehalf,
 
-        /** 
-         * 
-         */
-        ApprovedToFileOnBehalf,
+    /** 
+     * 
+     */
+    ApprovedToFileOnBehalf,
 
 }
     

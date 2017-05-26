@@ -15,29 +15,29 @@ package net.avalara.avatax.rest.client.enums;
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
  */
 
- /**
+/**
  * TaxDependencyLevelId
  */
 public enum TaxDependencyLevelId {
-        /** 
-         * Document
-         */
-        Document,
+    /** 
+     * Document
+     */
+    Document,
 
-        /** 
-         * State
-         */
-        State,
+    /** 
+     * State
+     */
+    State,
 
-        /** 
-         * TaxRegion
-         */
-        TaxRegion,
+    /** 
+     * TaxRegion
+     */
+    TaxRegion,
 
-        /** 
-         * Address
-         */
-        Address,
+    /** 
+     * Address
+     */
+    Address,
 
 }
     

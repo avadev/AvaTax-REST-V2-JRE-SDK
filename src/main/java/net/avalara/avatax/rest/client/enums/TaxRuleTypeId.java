@@ -15,39 +15,39 @@ package net.avalara.avatax.rest.client.enums;
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
  */
 
- /**
+/**
  * TaxRuleTypeId
  */
 public enum TaxRuleTypeId {
-        /** 
-         * RateRule
-         */
-        RateRule,
+    /** 
+     * RateRule
+     */
+    RateRule,
 
-        /** 
-         * RateOverrideRule
-         */
-        RateOverrideRule,
+    /** 
+     * RateOverrideRule
+     */
+    RateOverrideRule,
 
-        /** 
-         * BaseRule
-         */
-        BaseRule,
+    /** 
+     * BaseRule
+     */
+    BaseRule,
 
-        /** 
-         * ExemptEntityRule
-         */
-        ExemptEntityRule,
+    /** 
+     * ExemptEntityRule
+     */
+    ExemptEntityRule,
 
-        /** 
-         * ProductTaxabilityRule
-         */
-        ProductTaxabilityRule,
+    /** 
+     * ProductTaxabilityRule
+     */
+    ProductTaxabilityRule,
 
-        /** 
-         * NexusRule
-         */
-        NexusRule,
+    /** 
+     * NexusRule
+     */
+    NexusRule,
 
 }
     

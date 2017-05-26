@@ -15,19 +15,19 @@ package net.avalara.avatax.rest.client.enums;
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
  */
 
- /**
+/**
  * Comment Types
  */
 public enum CommentType {
-        /** 
-         * Internal comments are those comments only intended to be for compliance users
-         */
-        Internal,
+    /** 
+     * Internal comments are those comments only intended to be for compliance users
+     */
+    Internal,
 
-        /** 
-         * Customer comments are those comments that both compliance and the customer can read
-         */
-        Customer,
+    /** 
+     * Customer comments are those comments that both compliance and the customer can read
+     */
+    Customer,
 
 }
     

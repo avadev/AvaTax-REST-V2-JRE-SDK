@@ -15,34 +15,34 @@ package net.avalara.avatax.rest.client.enums;
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
  */
 
- /**
+/**
  * Filing Frequency types
  */
 public enum NoticeCustomerType {
-        /** 
-         * AvaTax Returns
-         */
-        AvaTaxReturns,
+    /** 
+     * AvaTax Returns
+     */
+    AvaTaxReturns,
 
-        /** 
-         * Stand Alone
-         */
-        StandAlone,
+    /** 
+     * Stand Alone
+     */
+    StandAlone,
 
-        /** 
-         * Strategic
-         */
-        Strategic,
+    /** 
+     * Strategic
+     */
+    Strategic,
 
-        /** 
-         * SST
-         */
-        SST,
+    /** 
+     * SST
+     */
+    SST,
 
-        /** 
-         * TrustFile
-         */
-        TrustFile,
+    /** 
+     * TrustFile
+     */
+    TrustFile,
 
 }
     

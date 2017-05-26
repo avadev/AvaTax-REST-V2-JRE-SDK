@@ -15,31 +15,31 @@ package net.avalara.avatax.rest.client.enums;
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
  */
 
- /**
+/**
  * Indicates the behavior of a tax form for a company with multiple places of business.
-    ///  
-    ///  Some tax authorities require that a separate form must be filed for each place of business.
+ *  
+ *  Some tax authorities require that a separate form must be filed for each place of business.
  */
 public enum OutletTypeId {
-        /** 
-         * File a single return per cycle for your entire business.
-         */
-        None,
+    /** 
+     * File a single return per cycle for your entire business.
+     */
+    None,
 
-        /** 
-         * You may file separate forms for each outlet; contact the tax authority for more details about location based reporting requirements.
-         */
-        Schedule,
+    /** 
+     * You may file separate forms for each outlet; contact the tax authority for more details about location based reporting requirements.
+     */
+    Schedule,
 
-        /** 
-         * You may file separate forms for each outlet; contact the tax authority for more details about location based reporting requirements.
-         */
-        Duplicate,
+    /** 
+     * You may file separate forms for each outlet; contact the tax authority for more details about location based reporting requirements.
+     */
+    Duplicate,
 
-        /** 
-         * File a single return, but you must have a line item for each place of business.
-         */
-        Consolidated,
+    /** 
+     * File a single return, but you must have a line item for each place of business.
+     */
+    Consolidated,
 
 }
     

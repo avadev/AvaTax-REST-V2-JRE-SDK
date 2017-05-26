@@ -15,19 +15,19 @@ package net.avalara.avatax.rest.client.enums;
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
  */
 
- /**
+/**
  * Indicates the level of detail requested from a tax API call
  */
 public enum TaxDebugLevel {
-        /** 
-         * User requests the normal level of debug information when creating a tax transaction
-         */
-        Normal,
+    /** 
+     * User requests the normal level of debug information when creating a tax transaction
+     */
+    Normal,
 
-        /** 
-         * User requests additional diagnostic information when creating a tax transaction
-         */
-        Diagnostic,
+    /** 
+     * User requests additional diagnostic information when creating a tax transaction
+     */
+    Diagnostic,
 
 }
     

@@ -15,24 +15,24 @@ package net.avalara.avatax.rest.client.enums;
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
  */
 
- /**
+/**
  * Describes nexus type id
  */
 public enum LocalNexusTypeId {
-        /** 
-         * Selected
-         */
-        Selected,
+    /** 
+     * Selected
+     */
+    Selected,
 
-        /** 
-         * StateAdministered
-         */
-        StateAdministered,
+    /** 
+     * StateAdministered
+     */
+    StateAdministered,
 
-        /** 
-         * All
-         */
-        All,
+    /** 
+     * All
+     */
+    All,
 
 }
     

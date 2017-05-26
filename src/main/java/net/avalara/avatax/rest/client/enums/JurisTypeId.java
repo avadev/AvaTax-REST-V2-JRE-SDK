@@ -15,34 +15,34 @@ package net.avalara.avatax.rest.client.enums;
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
  */
 
- /**
+/**
  * Types of jurisdiction referenced in a transaction
  */
 public enum JurisTypeId {
-        /** 
-         * State
-         */
-        STA,
+    /** 
+     * State
+     */
+    STA,
 
-        /** 
-         * County
-         */
-        CTY,
+    /** 
+     * County
+     */
+    CTY,
 
-        /** 
-         * City
-         */
-        CIT,
+    /** 
+     * City
+     */
+    CIT,
 
-        /** 
-         * Special
-         */
-        STJ,
+    /** 
+     * Special
+     */
+    STJ,
 
-        /** 
-         * Country
-         */
-        CNT,
+    /** 
+     * Country
+     */
+    CNT,
 
 }
     

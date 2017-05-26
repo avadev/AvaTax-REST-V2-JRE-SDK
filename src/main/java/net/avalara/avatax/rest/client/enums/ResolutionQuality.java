@@ -15,69 +15,69 @@ package net.avalara.avatax.rest.client.enums;
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
  */
 
- /**
+/**
  * The address resolution quality of an address validation result
  */
 public enum ResolutionQuality {
-        /** 
-         * Location was not geocoded
-         */
-        NotCoded,
+    /** 
+     * Location was not geocoded
+     */
+    NotCoded,
 
-        /** 
-         * Location was already geocoded on the request
-         */
-        External,
+    /** 
+     * Location was already geocoded on the request
+     */
+    External,
 
-        /** 
-         * Avalara-defined country centroid
-         */
-        CountryCentroid,
+    /** 
+     * Avalara-defined country centroid
+     */
+    CountryCentroid,
 
-        /** 
-         * Avalara-defined state / province centroid
-         */
-        RegionCentroid,
+    /** 
+     * Avalara-defined state / province centroid
+     */
+    RegionCentroid,
 
-        /** 
-         * Geocoded at a level more coarse than a PostalCentroid1
-         */
-        PartialCentroid,
+    /** 
+     * Geocoded at a level more coarse than a PostalCentroid1
+     */
+    PartialCentroid,
 
-        /** 
-         * Largest postal code (zip5 in US, left three in CA, etc
-         */
-        PostalCentroidGood,
+    /** 
+     * Largest postal code (zip5 in US, left three in CA, etc
+     */
+    PostalCentroidGood,
 
-        /** 
-         * Better postal code (zip7 in US)
-         */
-        PostalCentroidBetter,
+    /** 
+     * Better postal code (zip7 in US)
+     */
+    PostalCentroidBetter,
 
-        /** 
-         * Best postal code (zip9 in US, complete postal code elsewhere)
-         */
-        PostalCentroidBest,
+    /** 
+     * Best postal code (zip9 in US, complete postal code elsewhere)
+     */
+    PostalCentroidBest,
 
-        /** 
-         * Nearest intersection
-         */
-        Intersection,
+    /** 
+     * Nearest intersection
+     */
+    Intersection,
 
-        /** 
-         * Interpolated to rooftop
-         */
-        Interpolated,
+    /** 
+     * Interpolated to rooftop
+     */
+    Interpolated,
 
-        /** 
-         * Assumed to be rooftop level, non-interpolated
-         */
-        Rooftop,
+    /** 
+     * Assumed to be rooftop level, non-interpolated
+     */
+    Rooftop,
 
-        /** 
-         * Pulled from a static list of geocodes for specific jurisdictions
-         */
-        Constant,
+    /** 
+     * Pulled from a static list of geocodes for specific jurisdictions
+     */
+    Constant,
 
 }
     

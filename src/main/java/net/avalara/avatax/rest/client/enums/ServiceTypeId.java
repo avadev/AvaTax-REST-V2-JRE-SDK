@@ -15,99 +15,99 @@ package net.avalara.avatax.rest.client.enums;
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
  */
 
- /**
+/**
  * Represents the type of service or subscription given to a user
  */
 public enum ServiceTypeId {
-        /** 
-         * None
-         */
-        None,
+    /** 
+     * None
+     */
+    None,
 
-        /** 
-         * AvaTaxST
-         */
-        AvaTaxST,
+    /** 
+     * AvaTaxST
+     */
+    AvaTaxST,
 
-        /** 
-         * AvaTaxPro
-         */
-        AvaTaxPro,
+    /** 
+     * AvaTaxPro
+     */
+    AvaTaxPro,
 
-        /** 
-         * AvaTaxGlobal
-         */
-        AvaTaxGlobal,
+    /** 
+     * AvaTaxGlobal
+     */
+    AvaTaxGlobal,
 
-        /** 
-         * AutoAddress
-         */
-        AutoAddress,
+    /** 
+     * AutoAddress
+     */
+    AutoAddress,
 
-        /** 
-         * AutoReturns
-         */
-        AutoReturns,
+    /** 
+     * AutoReturns
+     */
+    AutoReturns,
 
-        /** 
-         * TaxSolver
-         */
-        TaxSolver,
+    /** 
+     * TaxSolver
+     */
+    TaxSolver,
 
-        /** 
-         * AvaTaxCsp
-         */
-        AvaTaxCsp,
+    /** 
+     * AvaTaxCsp
+     */
+    AvaTaxCsp,
 
-        /** 
-         * Twe
-         */
-        Twe,
+    /** 
+     * Twe
+     */
+    Twe,
 
-        /** 
-         * Mrs
-         */
-        Mrs,
+    /** 
+     * Mrs
+     */
+    Mrs,
 
-        /** 
-         * AvaCert
-         */
-        AvaCert,
+    /** 
+     * AvaCert
+     */
+    AvaCert,
 
-        /** 
-         * AuthorizationPartner
-         */
-        AuthorizationPartner,
+    /** 
+     * AuthorizationPartner
+     */
+    AuthorizationPartner,
 
-        /** 
-         * CertCapture
-         */
-        CertCapture,
+    /** 
+     * CertCapture
+     */
+    CertCapture,
 
-        /** 
-         * AvaUpc
-         */
-        AvaUpc,
+    /** 
+     * AvaUpc
+     */
+    AvaUpc,
 
-        /** 
-         * AvaCUT
-         */
-        AvaCUT,
+    /** 
+     * AvaCUT
+     */
+    AvaCUT,
 
-        /** 
-         * AvaLandedCost
-         */
-        AvaLandedCost,
+    /** 
+     * AvaLandedCost
+     */
+    AvaLandedCost,
 
-        /** 
-         * AvaLodging
-         */
-        AvaLodging,
+    /** 
+     * AvaLodging
+     */
+    AvaLodging,
 
-        /** 
-         * AvaBottle
-         */
-        AvaBottle,
+    /** 
+     * AvaBottle
+     */
+    AvaBottle,
 
 }
     

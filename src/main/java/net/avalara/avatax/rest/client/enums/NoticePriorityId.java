@@ -15,29 +15,29 @@ package net.avalara.avatax.rest.client.enums;
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
  */
 
- /**
+/**
  * Filing Frequency types
  */
 public enum NoticePriorityId {
-        /** 
-         * Immediate Attention Required
-         */
-        ImmediateAttentionRequired,
+    /** 
+     * Immediate Attention Required
+     */
+    ImmediateAttentionRequired,
 
-        /** 
-         * High
-         */
-        High,
+    /** 
+     * High
+     */
+    High,
 
-        /** 
-         * Normal
-         */
-        Normal,
+    /** 
+     * Normal
+     */
+    Normal,
 
-        /** 
-         * Low
-         */
-        Low,
+    /** 
+     * Low
+     */
+    Low,
 
 }
     

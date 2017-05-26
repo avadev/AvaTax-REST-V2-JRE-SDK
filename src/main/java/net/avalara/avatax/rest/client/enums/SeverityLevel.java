@@ -15,29 +15,29 @@ package net.avalara.avatax.rest.client.enums;
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
  */
 
- /**
+/**
  * Severity of message
  */
 public enum SeverityLevel {
-        /** 
-         * Operation succeeded
-         */
-        Success,
+    /** 
+     * Operation succeeded
+     */
+    Success,
 
-        /** 
-         * Warnings occured, operation succeeded
-         */
-        Warning,
+    /** 
+     * Warnings occured, operation succeeded
+     */
+    Warning,
 
-        /** 
-         * Errors occured, operation failed
-         */
-        Error,
+    /** 
+     * Errors occured, operation failed
+     */
+    Error,
 
-        /** 
-         * Unexpected exceptions occurred, operation failed
-         */
-        Exception,
+    /** 
+     * Unexpected exceptions occurred, operation failed
+     */
+    Exception,
 
 }
     
