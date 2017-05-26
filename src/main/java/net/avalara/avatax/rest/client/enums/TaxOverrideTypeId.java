@@ -1,39 +1,53 @@
 package net.avalara.avatax.rest.client.enums;
 
+/*
+ * AvaTax Software Development Kit for Java JRE based environments
+ *
+ * (c) 2004-2017 Avalara, Inc.
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ *
+ * @author     Dustin Welden <dustin.welden@avalara.com>
+ * @copyright  2004-2017 Avalara, Inc.
+ * @license    https://www.apache.org/licenses/LICENSE-2.0
+ * @version    17.5.2-77
+ * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ */
+
 /**
- * 
+ * TaxOverrideTypeId
  */
 public enum TaxOverrideTypeId {
-    /**
-     * No comment data provided
+    /** 
+     * No override
      */
     None,
-    
-    /**
-     * No comment data provided
+
+    /** 
+     * Tax was overriden by the client
      */
     TaxAmount,
-    
-    /**
-     * No comment data provided
+
+    /** 
+     * Entity exemption was ignored (e.g. item was consumed)
      */
     Exemption,
-    
-    /**
-     * No comment data provided
+
+    /** 
+     * Only the tax date was overriden
      */
     TaxDate,
-    
-    /**
-     * No comment data provided
+
+    /** 
+     * To support Consumer Use Tax
      */
     AccruedTaxAmount,
-    
-    /**
-     * No comment data provided
+
+    /** 
+     * Derive the taxable amount from the tax amount
      */
     DeriveTaxable,
-    
 
 }
     

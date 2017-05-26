@@ -1,54 +1,68 @@
 package net.avalara.avatax.rest.client.enums;
 
+/*
+ * AvaTax Software Development Kit for Java JRE based environments
+ *
+ * (c) 2004-2017 Avalara, Inc.
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ *
+ * @author     Dustin Welden <dustin.welden@avalara.com>
+ * @copyright  2004-2017 Avalara, Inc.
+ * @license    https://www.apache.org/licenses/LICENSE-2.0
+ * @version    17.5.2-77
+ * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ */
+
 /**
- * 
+ * Filing Request Status types
  */
 public enum FilingRequestStatus {
-    /**
-     * No comment data provided
+    /** 
+     * Customer is building a request for a new filing calendar
      */
     New,
-    
-    /**
-     * No comment data provided
+
+    /** 
+     * Customer’s information validated before submitting to go live. All required information as per state and form selection is entered.
      */
     Validated,
-    
-    /**
-     * No comment data provided
+
+    /** 
+     * Customer submitted a request for a new filing calendar
      */
     Pending,
-    
-    /**
-     * No comment data provided
+
+    /** 
+     * Filing calender is active
      */
     Active,
-    
-    /**
-     * No comment data provided
+
+    /** 
+     * Customer requested to deactivate filing calendar
      */
     PendingStop,
-    
-    /**
-     * No comment data provided
+
+    /** 
+     * Filing calendar is inactive
      */
     Inactive,
-    
-    /**
-     * No comment data provided
+
+    /** 
+     * This indicates that there is a new change request.
      */
     ChangeRequest,
-    
-    /**
-     * No comment data provided
+
+    /** 
+     * This indicates that the change request was approved.
      */
     RequestApproved,
-    
-    /**
-     * No comment data provided
+
+    /** 
+     * This indicates that compliance rejected the request.
      */
     RequestDenied,
-    
 
 }
     

@@ -9,103 +9,139 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 
+/*
+ * AvaTax Software Development Kit for Java JRE based environments
+ *
+ * (c) 2004-2017 Avalara, Inc.
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ *
+ * @author     Dustin Welden <dustin.welden@avalara.com>
+ * @copyright  2004-2017 Avalara, Inc.
+ * @license    https://www.apache.org/licenses/LICENSE-2.0
+ * @version    17.5.2-77
+ * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ */
+
 /**
  * Represents a region, province, or state within a country
  */
 public class IsoRegionModel {
-    private String name;
 
-    /**
-     * Getter for name - Represents a region, province, or state within a country
-     */
-    public String getName() {
-        return this.name;
-    }
 
-    /**
-     * Setter for name - Represents a region, province, or state within a country
-     */
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    
-    private Boolean streamlinedSalesTax;
-
-    /**
-     * Getter for streamlinedSalesTax - Represents a region, province, or state within a country
-     */
-    public Boolean getStreamlinedSalesTax() {
-        return this.streamlinedSalesTax;
-    }
-
-    /**
-     * Setter for streamlinedSalesTax - Represents a region, province, or state within a country
-     */
-    public void setStreamlinedSalesTax(Boolean streamlinedSalesTax) {
-        this.streamlinedSalesTax = streamlinedSalesTax;
-    }
-
-    
-    private String code;
-
-    /**
-     * Getter for code - Represents a region, province, or state within a country
-     */
-    public String getCode() {
-        return this.code;
-    }
-
-    /**
-     * Setter for code - Represents a region, province, or state within a country
-     */
-    public void setCode(String code) {
-        this.code = code;
-    }
-
-    
     private String countryCode;
 
     /**
-     * Getter for countryCode - Represents a region, province, or state within a country
+     * Getter for countryCode
+     *
+     * The two-character ISO 3166 country code this region belongs to
      */
     public String getCountryCode() {
         return this.countryCode;
     }
 
     /**
-     * Setter for countryCode - Represents a region, province, or state within a country
+     * Setter for countryCode
+     *
+     * The two-character ISO 3166 country code this region belongs to
      */
-    public void setCountryCode(String countryCode) {
-        this.countryCode = countryCode;
+    public void setCountryCode(String value) {
+        this.countryCode = value;
     }
 
-    
+
+    private String code;
+
+    /**
+     * Getter for code
+     *
+     * The three character ISO 3166 region code
+     */
+    public String getCode() {
+        return this.code;
+    }
+
+    /**
+     * Setter for code
+     *
+     * The three character ISO 3166 region code
+     */
+    public void setCode(String value) {
+        this.code = value;
+    }
+
+
+    private String name;
+
+    /**
+     * Getter for name
+     *
+     * The full name, using localized characters, for this region
+     */
+    public String getName() {
+        return this.name;
+    }
+
+    /**
+     * Setter for name
+     *
+     * The full name, using localized characters, for this region
+     */
+    public void setName(String value) {
+        this.name = value;
+    }
+
+
     private String classification;
 
     /**
-     * Getter for classification - Represents a region, province, or state within a country
+     * Getter for classification
+     *
+     * The word in the local language that classifies what type of a region this represents
      */
     public String getClassification() {
         return this.classification;
     }
 
     /**
-     * Setter for classification - Represents a region, province, or state within a country
+     * Setter for classification
+     *
+     * The word in the local language that classifies what type of a region this represents
      */
-    public void setClassification(String classification) {
-        this.classification = classification;
+    public void setClassification(String value) {
+        this.classification = value;
     }
 
-    
+
+    private Boolean streamlinedSalesTax;
+
+    /**
+     * Getter for streamlinedSalesTax
+     *
+     * For the United States, this flag indicates whether a U.S. State participates in the Streamlined
+    * Sales Tax program. For countries other than the US, this flag is null.
+     */
+    public Boolean getStreamlinedSalesTax() {
+        return this.streamlinedSalesTax;
+    }
+
+    /**
+     * Setter for streamlinedSalesTax
+     *
+     * For the United States, this flag indicates whether a U.S. State participates in the Streamlined
+    * Sales Tax program. For countries other than the US, this flag is null.
+     */
+    public void setStreamlinedSalesTax(Boolean value) {
+        this.streamlinedSalesTax = value;
+    }
 
 
     /**
-     * Returns a JSON string representation of IsoRegionModel.
+     * Returns a JSON string representation of IsoRegionModel
      */
     @Override
     public String toString() {
         return JsonSerializer.SerializeObject(this);
     }
 }
-    

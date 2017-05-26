@@ -1,69 +1,83 @@
 package net.avalara.avatax.rest.client.enums;
 
+/*
+ * AvaTax Software Development Kit for Java JRE based environments
+ *
+ * (c) 2004-2017 Avalara, Inc.
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ *
+ * @author     Dustin Welden <dustin.welden@avalara.com>
+ * @copyright  2004-2017 Avalara, Inc.
+ * @license    https://www.apache.org/licenses/LICENSE-2.0
+ * @version    17.5.2-77
+ * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ */
+
 /**
- * 
+ * The address resolution quality of an address validation result
  */
 public enum ResolutionQuality {
-    /**
-     * No comment data provided
+    /** 
+     * Location was not geocoded
      */
     NotCoded,
-    
-    /**
-     * No comment data provided
+
+    /** 
+     * Location was already geocoded on the request
      */
     External,
-    
-    /**
-     * No comment data provided
+
+    /** 
+     * Avalara-defined country centroid
      */
     CountryCentroid,
-    
-    /**
-     * No comment data provided
+
+    /** 
+     * Avalara-defined state / province centroid
      */
     RegionCentroid,
-    
-    /**
-     * No comment data provided
+
+    /** 
+     * Geocoded at a level more coarse than a PostalCentroid1
      */
     PartialCentroid,
-    
-    /**
-     * No comment data provided
+
+    /** 
+     * Largest postal code (zip5 in US, left three in CA, etc
      */
     PostalCentroidGood,
-    
-    /**
-     * No comment data provided
+
+    /** 
+     * Better postal code (zip7 in US)
      */
     PostalCentroidBetter,
-    
-    /**
-     * No comment data provided
+
+    /** 
+     * Best postal code (zip9 in US, complete postal code elsewhere)
      */
     PostalCentroidBest,
-    
-    /**
-     * No comment data provided
+
+    /** 
+     * Nearest intersection
      */
     Intersection,
-    
-    /**
-     * No comment data provided
+
+    /** 
+     * Interpolated to rooftop
      */
     Interpolated,
-    
-    /**
-     * No comment data provided
+
+    /** 
+     * Assumed to be rooftop level, non-interpolated
      */
     Rooftop,
-    
-    /**
-     * No comment data provided
+
+    /** 
+     * Pulled from a static list of geocodes for specific jurisdictions
      */
     Constant,
-    
 
 }
     

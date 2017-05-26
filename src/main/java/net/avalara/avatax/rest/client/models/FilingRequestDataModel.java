@@ -9,285 +9,327 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 
+/*
+ * AvaTax Software Development Kit for Java JRE based environments
+ *
+ * (c) 2004-2017 Avalara, Inc.
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ *
+ * @author     Dustin Welden <dustin.welden@avalara.com>
+ * @copyright  2004-2017 Avalara, Inc.
+ * @license    https://www.apache.org/licenses/LICENSE-2.0
+ * @version    17.5.2-77
+ * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ */
+
 /**
  * Represents a commitment to file a tax return on a recurring basis.
-Only used if you subscribe to Avalara Returns.
+* Only used if you subscribe to Avalara Returns.
  */
 public class FilingRequestDataModel {
-    private MatchingTaxType taxTypeId;
 
-    /**
-     * Getter for taxTypeId - Represents a commitment to file a tax return on a recurring basis.
-Only used if you subscribe to Avalara Returns.
-     */
-    public MatchingTaxType getTaxTypeId() {
-        return this.taxTypeId;
-    }
 
-    /**
-     * Setter for taxTypeId - Represents a commitment to file a tax return on a recurring basis.
-Only used if you subscribe to Avalara Returns.
-     */
-    public void setTaxTypeId(MatchingTaxType taxTypeId) {
-        this.taxTypeId = taxTypeId;
-    }
-
-    
-    private Date endDate;
-
-    /**
-     * Getter for endDate - Represents a commitment to file a tax return on a recurring basis.
-Only used if you subscribe to Avalara Returns.
-     */
-    public Date getEndDate() {
-        return this.endDate;
-    }
-
-    /**
-     * Setter for endDate - Represents a commitment to file a tax return on a recurring basis.
-Only used if you subscribe to Avalara Returns.
-     */
-    public void setEndDate(Date endDate) {
-        this.endDate = endDate;
-    }
-
-    
-    private String taxAuthorityName;
-
-    /**
-     * Getter for taxAuthorityName - Represents a commitment to file a tax return on a recurring basis.
-Only used if you subscribe to Avalara Returns.
-     */
-    public String getTaxAuthorityName() {
-        return this.taxAuthorityName;
-    }
-
-    /**
-     * Setter for taxAuthorityName - Represents a commitment to file a tax return on a recurring basis.
-Only used if you subscribe to Avalara Returns.
-     */
-    public void setTaxAuthorityName(String taxAuthorityName) {
-        this.taxAuthorityName = taxAuthorityName;
-    }
-
-    
-    private String returnName;
-
-    /**
-     * Getter for returnName - Represents a commitment to file a tax return on a recurring basis.
-Only used if you subscribe to Avalara Returns.
-     */
-    public String getReturnName() {
-        return this.returnName;
-    }
-
-    /**
-     * Setter for returnName - Represents a commitment to file a tax return on a recurring basis.
-Only used if you subscribe to Avalara Returns.
-     */
-    public void setReturnName(String returnName) {
-        this.returnName = returnName;
-    }
-
-    
-    private String registrationId;
-
-    /**
-     * Getter for registrationId - Represents a commitment to file a tax return on a recurring basis.
-Only used if you subscribe to Avalara Returns.
-     */
-    public String getRegistrationId() {
-        return this.registrationId;
-    }
-
-    /**
-     * Setter for registrationId - Represents a commitment to file a tax return on a recurring basis.
-Only used if you subscribe to Avalara Returns.
-     */
-    public void setRegistrationId(String registrationId) {
-        this.registrationId = registrationId;
-    }
-
-    
-    private String locationCode;
-
-    /**
-     * Getter for locationCode - Represents a commitment to file a tax return on a recurring basis.
-Only used if you subscribe to Avalara Returns.
-     */
-    public String getLocationCode() {
-        return this.locationCode;
-    }
-
-    /**
-     * Setter for locationCode - Represents a commitment to file a tax return on a recurring basis.
-Only used if you subscribe to Avalara Returns.
-     */
-    public void setLocationCode(String locationCode) {
-        this.locationCode = locationCode;
-    }
-
-    
-    private Date effDate;
-
-    /**
-     * Getter for effDate - Represents a commitment to file a tax return on a recurring basis.
-Only used if you subscribe to Avalara Returns.
-     */
-    public Date getEffDate() {
-        return this.effDate;
-    }
-
-    /**
-     * Setter for effDate - Represents a commitment to file a tax return on a recurring basis.
-Only used if you subscribe to Avalara Returns.
-     */
-    public void setEffDate(Date effDate) {
-        this.effDate = effDate;
-    }
-
-    
-    private ArrayList<FilingAnswerModel> answers;
-
-    /**
-     * Getter for answers - Represents a commitment to file a tax return on a recurring basis.
-Only used if you subscribe to Avalara Returns.
-     */
-    public ArrayList<FilingAnswerModel> getAnswers() {
-        return this.answers;
-    }
-
-    /**
-     * Setter for answers - Represents a commitment to file a tax return on a recurring basis.
-Only used if you subscribe to Avalara Returns.
-     */
-    public void setAnswers(ArrayList<FilingAnswerModel> answers) {
-        this.answers = answers;
-    }
-
-    
-    private Boolean isClone;
-
-    /**
-     * Getter for isClone - Represents a commitment to file a tax return on a recurring basis.
-Only used if you subscribe to Avalara Returns.
-     */
-    public Boolean getIsClone() {
-        return this.isClone;
-    }
-
-    /**
-     * Setter for isClone - Represents a commitment to file a tax return on a recurring basis.
-Only used if you subscribe to Avalara Returns.
-     */
-    public void setIsClone(Boolean isClone) {
-        this.isClone = isClone;
-    }
-
-    
-    private Integer taxAuthorityId;
-
-    /**
-     * Getter for taxAuthorityId - Represents a commitment to file a tax return on a recurring basis.
-Only used if you subscribe to Avalara Returns.
-     */
-    public Integer getTaxAuthorityId() {
-        return this.taxAuthorityId;
-    }
-
-    /**
-     * Setter for taxAuthorityId - Represents a commitment to file a tax return on a recurring basis.
-Only used if you subscribe to Avalara Returns.
-     */
-    public void setTaxAuthorityId(Integer taxAuthorityId) {
-        this.taxAuthorityId = taxAuthorityId;
-    }
-
-    
-    private String region;
-
-    /**
-     * Getter for region - Represents a commitment to file a tax return on a recurring basis.
-Only used if you subscribe to Avalara Returns.
-     */
-    public String getRegion() {
-        return this.region;
-    }
-
-    /**
-     * Setter for region - Represents a commitment to file a tax return on a recurring basis.
-Only used if you subscribe to Avalara Returns.
-     */
-    public void setRegion(String region) {
-        this.region = region;
-    }
-
-    
-    private FilingFrequencyId filingFrequencyId;
-
-    /**
-     * Getter for filingFrequencyId - Represents a commitment to file a tax return on a recurring basis.
-Only used if you subscribe to Avalara Returns.
-     */
-    public FilingFrequencyId getFilingFrequencyId() {
-        return this.filingFrequencyId;
-    }
-
-    /**
-     * Setter for filingFrequencyId - Represents a commitment to file a tax return on a recurring basis.
-Only used if you subscribe to Avalara Returns.
-     */
-    public void setFilingFrequencyId(FilingFrequencyId filingFrequencyId) {
-        this.filingFrequencyId = filingFrequencyId;
-    }
-
-    
-    private Short months;
-
-    /**
-     * Getter for months - Represents a commitment to file a tax return on a recurring basis.
-Only used if you subscribe to Avalara Returns.
-     */
-    public Short getMonths() {
-        return this.months;
-    }
-
-    /**
-     * Setter for months - Represents a commitment to file a tax return on a recurring basis.
-Only used if you subscribe to Avalara Returns.
-     */
-    public void setMonths(Short months) {
-        this.months = months;
-    }
-
-    
     private Long companyReturnId;
 
     /**
-     * Getter for companyReturnId - Represents a commitment to file a tax return on a recurring basis.
-Only used if you subscribe to Avalara Returns.
+     * Getter for companyReturnId
+     *
+     * The company return ID if requesting an update.
      */
     public Long getCompanyReturnId() {
         return this.companyReturnId;
     }
 
     /**
-     * Setter for companyReturnId - Represents a commitment to file a tax return on a recurring basis.
-Only used if you subscribe to Avalara Returns.
+     * Setter for companyReturnId
+     *
+     * The company return ID if requesting an update.
      */
-    public void setCompanyReturnId(Long companyReturnId) {
-        this.companyReturnId = companyReturnId;
+    public void setCompanyReturnId(Long value) {
+        this.companyReturnId = value;
     }
 
-    
+
+    private String returnName;
+
+    /**
+     * Getter for returnName
+     *
+     * The return name of the requested calendar
+     */
+    public String getReturnName() {
+        return this.returnName;
+    }
+
+    /**
+     * Setter for returnName
+     *
+     * The return name of the requested calendar
+     */
+    public void setReturnName(String value) {
+        this.returnName = value;
+    }
+
+
+    private FilingFrequencyId filingFrequencyId;
+
+    /**
+     * Getter for filingFrequencyId
+     *
+     * The filing frequency of the request
+     */
+    public FilingFrequencyId getFilingFrequencyId() {
+        return this.filingFrequencyId;
+    }
+
+    /**
+     * Setter for filingFrequencyId
+     *
+     * The filing frequency of the request
+     */
+    public void setFilingFrequencyId(FilingFrequencyId value) {
+        this.filingFrequencyId = value;
+    }
+
+
+    private String registrationId;
+
+    /**
+     * Getter for registrationId
+     *
+     * State registration ID of the company requesting the filing calendar.
+     */
+    public String getRegistrationId() {
+        return this.registrationId;
+    }
+
+    /**
+     * Setter for registrationId
+     *
+     * State registration ID of the company requesting the filing calendar.
+     */
+    public void setRegistrationId(String value) {
+        this.registrationId = value;
+    }
+
+
+    private Short months;
+
+    /**
+     * Getter for months
+     *
+     * The months of the request
+     */
+    public Short getMonths() {
+        return this.months;
+    }
+
+    /**
+     * Setter for months
+     *
+     * The months of the request
+     */
+    public void setMonths(Short value) {
+        this.months = value;
+    }
+
+
+    private MatchingTaxType taxTypeId;
+
+    /**
+     * Getter for taxTypeId
+     *
+     * The type of tax to report on this return.
+     */
+    public MatchingTaxType getTaxTypeId() {
+        return this.taxTypeId;
+    }
+
+    /**
+     * Setter for taxTypeId
+     *
+     * The type of tax to report on this return.
+     */
+    public void setTaxTypeId(MatchingTaxType value) {
+        this.taxTypeId = value;
+    }
+
+
+    private String locationCode;
+
+    /**
+     * Getter for locationCode
+     *
+     * Location code of the request
+     */
+    public String getLocationCode() {
+        return this.locationCode;
+    }
+
+    /**
+     * Setter for locationCode
+     *
+     * Location code of the request
+     */
+    public void setLocationCode(String value) {
+        this.locationCode = value;
+    }
+
+
+    private Date effDate;
+
+    /**
+     * Getter for effDate
+     *
+     * Filing cycle effective date of the request
+     */
+    public Date getEffDate() {
+        return this.effDate;
+    }
+
+    /**
+     * Setter for effDate
+     *
+     * Filing cycle effective date of the request
+     */
+    public void setEffDate(Date value) {
+        this.effDate = value;
+    }
+
+
+    private Date endDate;
+
+    /**
+     * Getter for endDate
+     *
+     * Filing cycle end date of the request
+     */
+    public Date getEndDate() {
+        return this.endDate;
+    }
+
+    /**
+     * Setter for endDate
+     *
+     * Filing cycle end date of the request
+     */
+    public void setEndDate(Date value) {
+        this.endDate = value;
+    }
+
+
+    private Boolean isClone;
+
+    /**
+     * Getter for isClone
+     *
+     * Flag if the request is a clone of a current filing calendar
+     */
+    public Boolean getIsClone() {
+        return this.isClone;
+    }
+
+    /**
+     * Setter for isClone
+     *
+     * Flag if the request is a clone of a current filing calendar
+     */
+    public void setIsClone(Boolean value) {
+        this.isClone = value;
+    }
+
+
+    private String region;
+
+    /**
+     * Getter for region
+     *
+     * The region this request is for
+     */
+    public String getRegion() {
+        return this.region;
+    }
+
+    /**
+     * Setter for region
+     *
+     * The region this request is for
+     */
+    public void setRegion(String value) {
+        this.region = value;
+    }
+
+
+    private Integer taxAuthorityId;
+
+    /**
+     * Getter for taxAuthorityId
+     *
+     * The tax authority id of the return
+     */
+    public Integer getTaxAuthorityId() {
+        return this.taxAuthorityId;
+    }
+
+    /**
+     * Setter for taxAuthorityId
+     *
+     * The tax authority id of the return
+     */
+    public void setTaxAuthorityId(Integer value) {
+        this.taxAuthorityId = value;
+    }
+
+
+    private String taxAuthorityName;
+
+    /**
+     * Getter for taxAuthorityName
+     *
+     * The tax authority name on the return
+     */
+    public String getTaxAuthorityName() {
+        return this.taxAuthorityName;
+    }
+
+    /**
+     * Setter for taxAuthorityName
+     *
+     * The tax authority name on the return
+     */
+    public void setTaxAuthorityName(String value) {
+        this.taxAuthorityName = value;
+    }
+
+
+    private ArrayList<FilingAnswerModel> answers;
+
+    /**
+     * Getter for answers
+     *
+     * Filing question answers
+     */
+    public ArrayList<FilingAnswerModel> getAnswers() {
+        return this.answers;
+    }
+
+    /**
+     * Setter for answers
+     *
+     * Filing question answers
+     */
+    public void setAnswers(ArrayList<FilingAnswerModel> value) {
+        this.answers = value;
+    }
 
 
     /**
-     * Returns a JSON string representation of FilingRequestDataModel.
+     * Returns a JSON string representation of FilingRequestDataModel
      */
     @Override
     public String toString() {
         return JsonSerializer.SerializeObject(this);
     }
 }
-    

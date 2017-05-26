@@ -9,103 +9,137 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 
+/*
+ * AvaTax Software Development Kit for Java JRE based environments
+ *
+ * (c) 2004-2017 Avalara, Inc.
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ *
+ * @author     Dustin Welden <dustin.welden@avalara.com>
+ * @copyright  2004-2017 Avalara, Inc.
+ * @license    https://www.apache.org/licenses/LICENSE-2.0
+ * @version    17.5.2-77
+ * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ */
+
 /**
  * Model to add specific lines to exising transaction
  */
 public class AddTransactionLineModel {
-    private String transactionCode;
 
-    /**
-     * Getter for transactionCode - Model to add specific lines to exising transaction
-     */
-    public String getTransactionCode() {
-        return this.transactionCode;
-    }
 
-    /**
-     * Setter for transactionCode - Model to add specific lines to exising transaction
-     */
-    public void setTransactionCode(String transactionCode) {
-        this.transactionCode = transactionCode;
-    }
-
-    
     private String companyCode;
 
     /**
-     * Getter for companyCode - Model to add specific lines to exising transaction
+     * Getter for companyCode
+     *
+     * company code
      */
     public String getCompanyCode() {
         return this.companyCode;
     }
 
     /**
-     * Setter for companyCode - Model to add specific lines to exising transaction
+     * Setter for companyCode
+     *
+     * company code
      */
-    public void setCompanyCode(String companyCode) {
-        this.companyCode = companyCode;
+    public void setCompanyCode(String value) {
+        this.companyCode = value;
     }
 
-    
+
+    private String transactionCode;
+
+    /**
+     * Getter for transactionCode
+     *
+     * document code for the transaction to add lines
+     */
+    public String getTransactionCode() {
+        return this.transactionCode;
+    }
+
+    /**
+     * Setter for transactionCode
+     *
+     * document code for the transaction to add lines
+     */
+    public void setTransactionCode(String value) {
+        this.transactionCode = value;
+    }
+
+
     private DocumentType documentType;
 
     /**
-     * Getter for documentType - Model to add specific lines to exising transaction
+     * Getter for documentType
+     *
+     * document type
      */
     public DocumentType getDocumentType() {
         return this.documentType;
     }
 
     /**
-     * Setter for documentType - Model to add specific lines to exising transaction
+     * Setter for documentType
+     *
+     * document type
      */
-    public void setDocumentType(DocumentType documentType) {
-        this.documentType = documentType;
+    public void setDocumentType(DocumentType value) {
+        this.documentType = value;
     }
 
-    
+
     private ArrayList<LineItemModel> lines;
 
     /**
-     * Getter for lines - Model to add specific lines to exising transaction
+     * Getter for lines
+     *
+     * List of lines to be added
      */
     public ArrayList<LineItemModel> getLines() {
         return this.lines;
     }
 
     /**
-     * Setter for lines - Model to add specific lines to exising transaction
+     * Setter for lines
+     *
+     * List of lines to be added
      */
-    public void setLines(ArrayList<LineItemModel> lines) {
-        this.lines = lines;
+    public void setLines(ArrayList<LineItemModel> value) {
+        this.lines = value;
     }
 
-    
+
     private Boolean renumber;
 
     /**
-     * Getter for renumber - Model to add specific lines to exising transaction
+     * Getter for renumber
+     *
+     * Option to renumber lines after add. After renumber, the line number becomes: "1", "2", "3", ...
      */
     public Boolean getRenumber() {
         return this.renumber;
     }
 
     /**
-     * Setter for renumber - Model to add specific lines to exising transaction
+     * Setter for renumber
+     *
+     * Option to renumber lines after add. After renumber, the line number becomes: "1", "2", "3", ...
      */
-    public void setRenumber(Boolean renumber) {
-        this.renumber = renumber;
+    public void setRenumber(Boolean value) {
+        this.renumber = value;
     }
-
-    
 
 
     /**
-     * Returns a JSON string representation of AddTransactionLineModel.
+     * Returns a JSON string representation of AddTransactionLineModel
      */
     @Override
     public String toString() {
         return JsonSerializer.SerializeObject(this);
     }
 }
-    

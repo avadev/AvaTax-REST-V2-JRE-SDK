@@ -1,99 +1,113 @@
 package net.avalara.avatax.rest.client.enums;
 
+/*
+ * AvaTax Software Development Kit for Java JRE based environments
+ *
+ * (c) 2004-2017 Avalara, Inc.
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ *
+ * @author     Dustin Welden <dustin.welden@avalara.com>
+ * @copyright  2004-2017 Avalara, Inc.
+ * @license    https://www.apache.org/licenses/LICENSE-2.0
+ * @version    17.5.2-77
+ * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ */
+
 /**
- * 
+ * Represents the type of service or subscription given to a user
  */
 public enum ServiceTypeId {
-    /**
-     * No comment data provided
+    /** 
+     * None
      */
     None,
-    
-    /**
-     * No comment data provided
+
+    /** 
+     * AvaTaxST
      */
     AvaTaxST,
-    
-    /**
-     * No comment data provided
+
+    /** 
+     * AvaTaxPro
      */
     AvaTaxPro,
-    
-    /**
-     * No comment data provided
+
+    /** 
+     * AvaTaxGlobal
      */
     AvaTaxGlobal,
-    
-    /**
-     * No comment data provided
+
+    /** 
+     * AutoAddress
      */
     AutoAddress,
-    
-    /**
-     * No comment data provided
+
+    /** 
+     * AutoReturns
      */
     AutoReturns,
-    
-    /**
-     * No comment data provided
+
+    /** 
+     * TaxSolver
      */
     TaxSolver,
-    
-    /**
-     * No comment data provided
+
+    /** 
+     * AvaTaxCsp
      */
     AvaTaxCsp,
-    
-    /**
-     * No comment data provided
+
+    /** 
+     * Twe
      */
     Twe,
-    
-    /**
-     * No comment data provided
+
+    /** 
+     * Mrs
      */
     Mrs,
-    
-    /**
-     * No comment data provided
+
+    /** 
+     * AvaCert
      */
     AvaCert,
-    
-    /**
-     * No comment data provided
+
+    /** 
+     * AuthorizationPartner
      */
     AuthorizationPartner,
-    
-    /**
-     * No comment data provided
+
+    /** 
+     * CertCapture
      */
     CertCapture,
-    
-    /**
-     * No comment data provided
+
+    /** 
+     * AvaUpc
      */
     AvaUpc,
-    
-    /**
-     * No comment data provided
+
+    /** 
+     * AvaCUT
      */
     AvaCUT,
-    
-    /**
-     * No comment data provided
+
+    /** 
+     * AvaLandedCost
      */
     AvaLandedCost,
-    
-    /**
-     * No comment data provided
+
+    /** 
+     * AvaLodging
      */
     AvaLodging,
-    
-    /**
-     * No comment data provided
+
+    /** 
+     * AvaBottle
      */
     AvaBottle,
-    
 
 }
     

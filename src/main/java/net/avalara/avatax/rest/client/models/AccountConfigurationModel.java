@@ -9,154 +9,200 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 
+/*
+ * AvaTax Software Development Kit for Java JRE based environments
+ *
+ * (c) 2004-2017 Avalara, Inc.
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ *
+ * @author     Dustin Welden <dustin.welden@avalara.com>
+ * @copyright  2004-2017 Avalara, Inc.
+ * @license    https://www.apache.org/licenses/LICENSE-2.0
+ * @version    17.5.2-77
+ * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ */
+
 /**
  * Represents one configuration setting for this account
  */
 public class AccountConfigurationModel {
-    private String name;
 
-    /**
-     * Getter for name - Represents one configuration setting for this account
-     */
-    public String getName() {
-        return this.name;
-    }
 
-    /**
-     * Setter for name - Represents one configuration setting for this account
-     */
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    
-    private Date modifiedDate;
-
-    /**
-     * Getter for modifiedDate - Represents one configuration setting for this account
-     */
-    public Date getModifiedDate() {
-        return this.modifiedDate;
-    }
-
-    /**
-     * Setter for modifiedDate - Represents one configuration setting for this account
-     */
-    public void setModifiedDate(Date modifiedDate) {
-        this.modifiedDate = modifiedDate;
-    }
-
-    
     private Integer accountId;
 
     /**
-     * Getter for accountId - Represents one configuration setting for this account
+     * Getter for accountId
+     *
+     * The unique ID number of the account to which this setting applies
      */
     public Integer getAccountId() {
         return this.accountId;
     }
 
     /**
-     * Setter for accountId - Represents one configuration setting for this account
+     * Setter for accountId
+     *
+     * The unique ID number of the account to which this setting applies
      */
-    public void setAccountId(Integer accountId) {
-        this.accountId = accountId;
+    public void setAccountId(Integer value) {
+        this.accountId = value;
     }
 
-    
-    private Integer modifiedUserId;
 
-    /**
-     * Getter for modifiedUserId - Represents one configuration setting for this account
-     */
-    public Integer getModifiedUserId() {
-        return this.modifiedUserId;
-    }
-
-    /**
-     * Setter for modifiedUserId - Represents one configuration setting for this account
-     */
-    public void setModifiedUserId(Integer modifiedUserId) {
-        this.modifiedUserId = modifiedUserId;
-    }
-
-    
-    private Integer createdUserId;
-
-    /**
-     * Getter for createdUserId - Represents one configuration setting for this account
-     */
-    public Integer getCreatedUserId() {
-        return this.createdUserId;
-    }
-
-    /**
-     * Setter for createdUserId - Represents one configuration setting for this account
-     */
-    public void setCreatedUserId(Integer createdUserId) {
-        this.createdUserId = createdUserId;
-    }
-
-    
     private String category;
 
     /**
-     * Getter for category - Represents one configuration setting for this account
+     * Getter for category
+     *
+     * The category of the configuration setting. Avalara-defined categories include `AddressServiceConfig` and `TaxServiceConfig`. Customer-defined categories begin with `X-`.
      */
     public String getCategory() {
         return this.category;
     }
 
     /**
-     * Setter for category - Represents one configuration setting for this account
+     * Setter for category
+     *
+     * The category of the configuration setting. Avalara-defined categories include `AddressServiceConfig` and `TaxServiceConfig`. Customer-defined categories begin with `X-`.
      */
-    public void setCategory(String category) {
-        this.category = category;
+    public void setCategory(String value) {
+        this.category = value;
     }
 
-    
+
+    private String name;
+
+    /**
+     * Getter for name
+     *
+     * The name of the configuration setting
+     */
+    public String getName() {
+        return this.name;
+    }
+
+    /**
+     * Setter for name
+     *
+     * The name of the configuration setting
+     */
+    public void setName(String value) {
+        this.name = value;
+    }
+
+
     private String value;
 
     /**
-     * Getter for value - Represents one configuration setting for this account
+     * Getter for value
+     *
+     * The current value of the configuration setting
      */
     public String getValue() {
         return this.value;
     }
 
     /**
-     * Setter for value - Represents one configuration setting for this account
+     * Setter for value
+     *
+     * The current value of the configuration setting
      */
     public void setValue(String value) {
         this.value = value;
     }
 
-    
+
     private Date createdDate;
 
     /**
-     * Getter for createdDate - Represents one configuration setting for this account
+     * Getter for createdDate
+     *
+     * The date when this record was created.
      */
     public Date getCreatedDate() {
         return this.createdDate;
     }
 
     /**
-     * Setter for createdDate - Represents one configuration setting for this account
+     * Setter for createdDate
+     *
+     * The date when this record was created.
      */
-    public void setCreatedDate(Date createdDate) {
-        this.createdDate = createdDate;
+    public void setCreatedDate(Date value) {
+        this.createdDate = value;
     }
 
-    
+
+    private Integer createdUserId;
+
+    /**
+     * Getter for createdUserId
+     *
+     * The User ID of the user who created this record.
+     */
+    public Integer getCreatedUserId() {
+        return this.createdUserId;
+    }
+
+    /**
+     * Setter for createdUserId
+     *
+     * The User ID of the user who created this record.
+     */
+    public void setCreatedUserId(Integer value) {
+        this.createdUserId = value;
+    }
+
+
+    private Date modifiedDate;
+
+    /**
+     * Getter for modifiedDate
+     *
+     * The date/time when this record was last modified.
+     */
+    public Date getModifiedDate() {
+        return this.modifiedDate;
+    }
+
+    /**
+     * Setter for modifiedDate
+     *
+     * The date/time when this record was last modified.
+     */
+    public void setModifiedDate(Date value) {
+        this.modifiedDate = value;
+    }
+
+
+    private Integer modifiedUserId;
+
+    /**
+     * Getter for modifiedUserId
+     *
+     * The user ID of the user who last modified this record.
+     */
+    public Integer getModifiedUserId() {
+        return this.modifiedUserId;
+    }
+
+    /**
+     * Setter for modifiedUserId
+     *
+     * The user ID of the user who last modified this record.
+     */
+    public void setModifiedUserId(Integer value) {
+        this.modifiedUserId = value;
+    }
 
 
     /**
-     * Returns a JSON string representation of AccountConfigurationModel.
+     * Returns a JSON string representation of AccountConfigurationModel
      */
     @Override
     public String toString() {
         return JsonSerializer.SerializeObject(this);
     }
 }
-    

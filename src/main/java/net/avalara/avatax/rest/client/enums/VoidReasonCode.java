@@ -1,34 +1,49 @@
 package net.avalara.avatax.rest.client.enums;
 
+/*
+ * AvaTax Software Development Kit for Java JRE based environments
+ *
+ * (c) 2004-2017 Avalara, Inc.
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ *
+ * @author     Dustin Welden <dustin.welden@avalara.com>
+ * @copyright  2004-2017 Avalara, Inc.
+ * @license    https://www.apache.org/licenses/LICENSE-2.0
+ * @version    17.5.2-77
+ * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ */
+
 /**
- * 
+ * Reason code for voiding or cancelling a transaction
  */
 public enum VoidReasonCode {
-    /**
-     * No comment data provided
+    /** 
+     * Unspecified reason
      */
     Unspecified,
-    
-    /**
-     * No comment data provided
+
+    /** 
+     * Post operation failed - Document status will be changed to unposted
      */
     PostFailed,
-    
-    /**
-     * No comment data provided
+
+    /** 
+     * Document deleted - If committed, document status will be changed to Cancelled. If not committed, document will be
+     *  deleted.
      */
     DocDeleted,
-    
-    /**
-     * No comment data provided
+
+    /** 
+     * Document has been voided and DocStatus will be set to Cancelled
      */
     DocVoided,
-    
-    /**
-     * No comment data provided
+
+    /** 
+     * AdjustTax operation has been cancelled. Adjustment will be reversed.
      */
     AdjustmentCancelled,
-    
 
 }
     

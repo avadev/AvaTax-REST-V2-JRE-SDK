@@ -1,54 +1,68 @@
 package net.avalara.avatax.rest.client.enums;
 
+/*
+ * AvaTax Software Development Kit for Java JRE based environments
+ *
+ * (c) 2004-2017 Avalara, Inc.
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ *
+ * @author     Dustin Welden <dustin.welden@avalara.com>
+ * @copyright  2004-2017 Avalara, Inc.
+ * @license    https://www.apache.org/licenses/LICENSE-2.0
+ * @version    17.5.2-77
+ * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ */
+
 /**
- * 
+ * The status of a batch file
  */
 public enum BatchStatus {
-    /**
-     * No comment data provided
+    /** 
+     * Batch file has been received and is in the queue to be processed.
      */
     Waiting,
-    
-    /**
-     * No comment data provided
+
+    /** 
+     * Batch file experienced system errors and cannot be processed.
      */
     SystemErrors,
-    
-    /**
-     * No comment data provided
+
+    /** 
+     * Batch file is cancelled
      */
     Cancelled,
-    
-    /**
-     * No comment data provided
+
+    /** 
+     * Batch file has been completely processed.
      */
     Completed,
-    
-    /**
-     * No comment data provided
+
+    /** 
+     * Batch file is currently being created.
      */
     Creating,
-    
-    /**
-     * No comment data provided
+
+    /** 
+     * Batch file has been deleted.
      */
     Deleted,
-    
-    /**
-     * No comment data provided
+
+    /** 
+     * Batch file was processed with some errors.
      */
     Errors,
-    
-    /**
-     * No comment data provided
+
+    /** 
+     * Batch processing was paused.
      */
     Paused,
-    
-    /**
-     * No comment data provided
+
+    /** 
+     * Batch is currently being processed.
      */
     Processing,
-    
 
 }
     
