@@ -227,14 +227,14 @@ public class FilingModel {
     }
 
 
-    private FilingRegionModel[] filingRegions;
+    private ArrayList<FilingRegionModel> filingRegions;
 
     /**
      * Getter for filingRegions
      *
      * A listing of regional tax filings within this time period.
      */
-    public FilingRegionModel[] getFilingRegions() {
+    public ArrayList<FilingRegionModel> getFilingRegions() {
         return this.filingRegions;
     }
 
@@ -243,7 +243,7 @@ public class FilingModel {
      *
      * A listing of regional tax filings within this time period.
      */
-    public void setFilingRegions(FilingRegionModel[] value) {
+    public void setFilingRegions(ArrayList<FilingRegionModel> value) {
         this.filingRegions = value;
     }
 

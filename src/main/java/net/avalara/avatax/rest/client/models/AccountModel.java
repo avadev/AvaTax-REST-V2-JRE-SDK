@@ -219,14 +219,14 @@ public class AccountModel {
     }
 
 
-    private SubscriptionModel[] subscriptions;
+    private ArrayList<SubscriptionModel> subscriptions;
 
     /**
      * Getter for subscriptions
      *
      * Optional: A list of subscriptions granted to this account. To fetch this list, add the query string "?$include=Subscriptions" to your URL.
      */
-    public SubscriptionModel[] getSubscriptions() {
+    public ArrayList<SubscriptionModel> getSubscriptions() {
         return this.subscriptions;
     }
 
@@ -235,19 +235,19 @@ public class AccountModel {
      *
      * Optional: A list of subscriptions granted to this account. To fetch this list, add the query string "?$include=Subscriptions" to your URL.
      */
-    public void setSubscriptions(SubscriptionModel[] value) {
+    public void setSubscriptions(ArrayList<SubscriptionModel> value) {
         this.subscriptions = value;
     }
 
 
-    private UserModel[] users;
+    private ArrayList<UserModel> users;
 
     /**
      * Getter for users
      *
      * Optional: A list of all the users belonging to this account. To fetch this list, add the query string "?$include=Users" to your URL.
      */
-    public UserModel[] getUsers() {
+    public ArrayList<UserModel> getUsers() {
         return this.users;
     }
 
@@ -256,7 +256,7 @@ public class AccountModel {
      *
      * Optional: A list of all the users belonging to this account. To fetch this list, add the query string "?$include=Users" to your URL.
      */
-    public void setUsers(UserModel[] value) {
+    public void setUsers(ArrayList<UserModel> value) {
         this.users = value;
     }
 

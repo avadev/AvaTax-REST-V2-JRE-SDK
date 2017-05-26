@@ -177,14 +177,14 @@ public class FilingsCheckupAuthorityModel {
     }
 
 
-    private FilingsCheckupSuggestedFormModel[] suggestedForms;
+    private ArrayList<FilingsCheckupSuggestedFormModel> suggestedForms;
 
     /**
      * Getter for suggestedForms
      *
      * Suggested forms to file due to tax collected
      */
-    public FilingsCheckupSuggestedFormModel[] getSuggestedForms() {
+    public ArrayList<FilingsCheckupSuggestedFormModel> getSuggestedForms() {
         return this.suggestedForms;
     }
 
@@ -193,7 +193,7 @@ public class FilingsCheckupAuthorityModel {
      *
      * Suggested forms to file due to tax collected
      */
-    public void setSuggestedForms(FilingsCheckupSuggestedFormModel[] value) {
+    public void setSuggestedForms(ArrayList<FilingsCheckupSuggestedFormModel> value) {
         this.suggestedForms = value;
     }
 

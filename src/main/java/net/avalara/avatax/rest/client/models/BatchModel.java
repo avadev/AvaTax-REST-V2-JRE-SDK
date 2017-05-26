@@ -366,14 +366,14 @@ public class BatchModel {
     }
 
 
-    private BatchFileModel[] files;
+    private ArrayList<BatchFileModel> files;
 
     /**
      * Getter for files
      *
      * The list of files contained in this batch.
      */
-    public BatchFileModel[] getFiles() {
+    public ArrayList<BatchFileModel> getFiles() {
         return this.files;
     }
 
@@ -382,7 +382,7 @@ public class BatchModel {
      *
      * The list of files contained in this batch.
      */
-    public void setFiles(BatchFileModel[] value) {
+    public void setFiles(ArrayList<BatchFileModel> value) {
         this.files = value;
     }
 

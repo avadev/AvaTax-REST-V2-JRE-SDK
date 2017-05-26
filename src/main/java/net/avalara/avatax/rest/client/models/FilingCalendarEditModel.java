@@ -72,14 +72,14 @@ public class FilingCalendarEditModel {
     }
 
 
-    private object oldValue;
+    private HashMap<String, String> oldValue;
 
     /**
      * Getter for oldValue
      *
      * The current value of the field.
      */
-    public object getOldValue() {
+    public HashMap<String, String> getOldValue() {
         return this.oldValue;
     }
 
@@ -88,19 +88,19 @@ public class FilingCalendarEditModel {
      *
      * The current value of the field.
      */
-    public void setOldValue(object value) {
+    public void setOldValue(HashMap<String, String> value) {
         this.oldValue = value;
     }
 
 
-    private object newValue;
+    private HashMap<String, String> newValue;
 
     /**
      * Getter for newValue
      *
      * The new/proposed value of the field.
      */
-    public object getNewValue() {
+    public HashMap<String, String> getNewValue() {
         return this.newValue;
     }
 
@@ -109,7 +109,7 @@ public class FilingCalendarEditModel {
      *
      * The new/proposed value of the field.
      */
-    public void setNewValue(object value) {
+    public void setNewValue(HashMap<String, String> value) {
         this.newValue = value;
     }
 

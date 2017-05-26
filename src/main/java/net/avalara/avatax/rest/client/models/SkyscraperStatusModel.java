@@ -51,14 +51,14 @@ public class SkyscraperStatusModel {
     }
 
 
-    private String[] taxFormCodes;
+    private ArrayList<String> taxFormCodes;
 
     /**
      * Getter for taxFormCodes
      *
      * The tax form codes available to file through skyscrper
      */
-    public String[] getTaxFormCodes() {
+    public ArrayList<String> getTaxFormCodes() {
         return this.taxFormCodes;
     }
 
@@ -67,7 +67,7 @@ public class SkyscraperStatusModel {
      *
      * The tax form codes available to file through skyscrper
      */
-    public void setTaxFormCodes(String[] value) {
+    public void setTaxFormCodes(ArrayList<String> value) {
         this.taxFormCodes = value;
     }
 
@@ -177,14 +177,14 @@ public class SkyscraperStatusModel {
     }
 
 
-    private requiredFilingCalendarDataFieldModel[] requiredFilingCalendarDataFields;
+    private ArrayList<requiredFilingCalendarDataFieldModel> requiredFilingCalendarDataFields;
 
     /**
      * Getter for requiredFilingCalendarDataFields
      *
      * A list of required fields to file
      */
-    public requiredFilingCalendarDataFieldModel[] getRequiredFilingCalendarDataFields() {
+    public ArrayList<requiredFilingCalendarDataFieldModel> getRequiredFilingCalendarDataFields() {
         return this.requiredFilingCalendarDataFields;
     }
 
@@ -193,7 +193,7 @@ public class SkyscraperStatusModel {
      *
      * A list of required fields to file
      */
-    public void setRequiredFilingCalendarDataFields(requiredFilingCalendarDataFieldModel[] value) {
+    public void setRequiredFilingCalendarDataFields(ArrayList<requiredFilingCalendarDataFieldModel> value) {
         this.requiredFilingCalendarDataFields = value;
     }
 

@@ -273,14 +273,14 @@ public class CreateTransactionModel {
     }
 
 
-    private LineItemModel[] lines;
+    private ArrayList<LineItemModel> lines;
 
     /**
      * Getter for lines
      *
      * Document line items list
      */
-    public LineItemModel[] getLines() {
+    public ArrayList<LineItemModel> getLines() {
         return this.lines;
     }
 
@@ -289,12 +289,12 @@ public class CreateTransactionModel {
      *
      * Document line items list
      */
-    public void setLines(LineItemModel[] value) {
+    public void setLines(ArrayList<LineItemModel> value) {
         this.lines = value;
     }
 
 
-    private object parameters;
+    private HashMap<String, String> parameters;
 
     /**
      * Getter for parameters
@@ -302,7 +302,7 @@ public class CreateTransactionModel {
      * Special parameters for this transaction.
     * To get a full list of available parameters, please use the /api/v2/definitions/parameters endpoint.
      */
-    public object getParameters() {
+    public HashMap<String, String> getParameters() {
         return this.parameters;
     }
 
@@ -312,7 +312,7 @@ public class CreateTransactionModel {
      * Special parameters for this transaction.
     * To get a full list of available parameters, please use the /api/v2/definitions/parameters endpoint.
      */
-    public void setParameters(object value) {
+    public void setParameters(HashMap<String, String> value) {
         this.parameters = value;
     }
 

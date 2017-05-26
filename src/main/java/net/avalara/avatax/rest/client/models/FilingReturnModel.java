@@ -576,14 +576,14 @@ public class FilingReturnModel {
     }
 
 
-    private FilingAdjustmentModel[] adjustments;
+    private ArrayList<FilingAdjustmentModel> adjustments;
 
     /**
      * Getter for adjustments
      *
      * The Adjustments for this return.
      */
-    public FilingAdjustmentModel[] getAdjustments() {
+    public ArrayList<FilingAdjustmentModel> getAdjustments() {
         return this.adjustments;
     }
 
@@ -592,7 +592,7 @@ public class FilingReturnModel {
      *
      * The Adjustments for this return.
      */
-    public void setAdjustments(FilingAdjustmentModel[] value) {
+    public void setAdjustments(ArrayList<FilingAdjustmentModel> value) {
         this.adjustments = value;
     }
 
@@ -618,14 +618,14 @@ public class FilingReturnModel {
     }
 
 
-    private FilingAugmentationModel[] augmentations;
+    private ArrayList<FilingAugmentationModel> augmentations;
 
     /**
      * Getter for augmentations
      *
      * The Augmentations for this return.
      */
-    public FilingAugmentationModel[] getAugmentations() {
+    public ArrayList<FilingAugmentationModel> getAugmentations() {
         return this.augmentations;
     }
 
@@ -634,7 +634,7 @@ public class FilingReturnModel {
      *
      * The Augmentations for this return.
      */
-    public void setAugmentations(FilingAugmentationModel[] value) {
+    public void setAugmentations(ArrayList<FilingAugmentationModel> value) {
         this.augmentations = value;
     }
 

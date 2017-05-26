@@ -93,14 +93,14 @@ public class BatchFileModel {
     }
 
 
-    private string content;
+    private String content;
 
     /**
      * Getter for content
      *
      * Content of the batch file.
      */
-    public string getContent() {
+    public String getContent() {
         return this.content;
     }
 
@@ -109,7 +109,7 @@ public class BatchFileModel {
      *
      * Content of the batch file.
      */
-    public void setContent(string value) {
+    public void setContent(String value) {
         this.content = value;
     }
 

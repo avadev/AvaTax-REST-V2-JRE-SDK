@@ -74,14 +74,14 @@ public class CycleExpireModel {
     }
 
 
-    private CycleExpireOptionModel[] cycleExpirationOptions;
+    private ArrayList<CycleExpireOptionModel> cycleExpirationOptions;
 
     /**
      * Getter for cycleExpirationOptions
      *
      * A list of options for expiring the filing calendar.
      */
-    public CycleExpireOptionModel[] getCycleExpirationOptions() {
+    public ArrayList<CycleExpireOptionModel> getCycleExpirationOptions() {
         return this.cycleExpirationOptions;
     }
 
@@ -90,7 +90,7 @@ public class CycleExpireModel {
      *
      * A list of options for expiring the filing calendar.
      */
-    public void setCycleExpirationOptions(CycleExpireOptionModel[] value) {
+    public void setCycleExpirationOptions(ArrayList<CycleExpireOptionModel> value) {
         this.cycleExpirationOptions = value;
     }
 

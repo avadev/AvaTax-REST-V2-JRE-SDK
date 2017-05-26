@@ -96,7 +96,7 @@ public class AvaTaxClient {
      * @param ResetLicenseKeyModel model A request confirming that you wish to reset the license key of this account.
      * @return LicenseKeyModel
      */
-    public LicenseKeyModel accountResetLicenseKey(Int32 id, ResetLicenseKeyModel model)
+    public LicenseKeyModel accountResetLicenseKey(int id, ResetLicenseKeyModel model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{id}/resetlicensekey");
         path.ApplyField("id", id);
@@ -134,7 +134,7 @@ public class AvaTaxClient {
      * @param ActivateAccountModel model The activation request
      * @return AccountModel
      */
-    public AccountModel activateAccount(Int32 id, ActivateAccountModel model)
+    public AccountModel activateAccount(int id, ActivateAccountModel model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{id}/activate");
         path.ApplyField("id", id);
@@ -174,7 +174,7 @@ public class AvaTaxClient {
      * @param String include A comma separated list of child objects to return underneath the primary object.
      * @return AccountModel
      */
-    public AccountModel getAccount(Int32 id, String include)
+    public AccountModel getAccount(int id, String include)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{id}");
         path.ApplyField("id", id);
@@ -218,9 +218,9 @@ public class AvaTaxClient {
      * Avalara-based account settings for `TaxServiceConfig` and `AddressServiceConfig` affect your account's
      * 
      * @param int id 
-     * @return AccountConfigurationModel[]
+     * @return ArrayList<AccountConfigurationModel>
      */
-    public List<AccountConfigurationModel> getAccountConfiguration(Int32 id)
+    public List<AccountConfigurationModel> getAccountConfiguration(int id)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{id}/configuration");
         path.ApplyField("id", id);
@@ -243,9 +243,9 @@ public class AvaTaxClient {
      * Avalara-based account settings for `TaxServiceConfig` and `AddressServiceConfig` affect your account's
      * 
      * @param int id 
-     * @return AccountConfigurationModel[]
+     * @return ArrayList<AccountConfigurationModel>
      */
-    public AccountConfigurationModel[] getAccountConfigurationAsync(int id)
+    public ArrayList<AccountConfigurationModel> getAccountConfigurationAsync(int id)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{id}/configuration");
         path.ApplyField("id", id);
@@ -268,10 +268,10 @@ public class AvaTaxClient {
      * Avalara-based account settings for `TaxServiceConfig` and `AddressServiceConfig` affect your account's
      * 
      * @param int id 
-     * @param AccountConfigurationModel[] model 
-     * @return AccountConfigurationModel[]
+     * @param ArrayList<AccountConfigurationModel> model 
+     * @return ArrayList<AccountConfigurationModel>
      */
-    public List<AccountConfigurationModel> setAccountConfiguration(Int32 id, List<AccountConfigurationModel> model)
+    public List<AccountConfigurationModel> setAccountConfiguration(int id, ArrayList<AccountConfigurationModel> model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{id}/configuration");
         path.ApplyField("id", id);
@@ -294,10 +294,10 @@ public class AvaTaxClient {
      * Avalara-based account settings for `TaxServiceConfig` and `AddressServiceConfig` affect your account's
      * 
      * @param int id 
-     * @param AccountConfigurationModel[] model 
-     * @return AccountConfigurationModel[]
+     * @param ArrayList<AccountConfigurationModel> model 
+     * @return ArrayList<AccountConfigurationModel>
      */
-    public AccountConfigurationModel[] setAccountConfigurationAsync(int id, AccountConfigurationModel[] model)
+    public ArrayList<AccountConfigurationModel> setAccountConfigurationAsync(int id, ArrayList<AccountConfigurationModel> model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{id}/configuration");
         path.ApplyField("id", id);
@@ -325,7 +325,7 @@ public class AvaTaxClient {
      * @param BigDecimal longitude Geospatial longitude measurement
      * @return AddressResolutionModel
      */
-    public AddressResolutionModel resolveAddress(String line1, String line2, String line3, String city, String region, String postalCode, String country, TextCase? textCase, Decimal? latitude, Decimal? longitude)
+    public AddressResolutionModel resolveAddress(String line1, String line2, String line3, String city, String region, String postalCode, String country, TextCase textCase, BigDecimal latitude, BigDecimal longitude)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/addresses/resolve");
         path.AddQuery("line1", line1);
@@ -423,10 +423,10 @@ public class AvaTaxClient {
      * You may fetch a batch to check on its status and retrieve the results of the batch operation.
      * 
      * @param int companyId The ID of the company that owns this batch.
-     * @param BatchModel[] model The batch you wish to create.
-     * @return BatchModel[]
+     * @param ArrayList<BatchModel> model The batch you wish to create.
+     * @return ArrayList<BatchModel>
      */
-    public List<BatchModel> createBatches(Int32 companyId, List<BatchModel> model)
+    public List<BatchModel> createBatches(int companyId, ArrayList<BatchModel> model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/batches");
         path.ApplyField("companyId", companyId);
@@ -442,10 +442,10 @@ public class AvaTaxClient {
      * You may fetch a batch to check on its status and retrieve the results of the batch operation.
      * 
      * @param int companyId The ID of the company that owns this batch.
-     * @param BatchModel[] model The batch you wish to create.
-     * @return BatchModel[]
+     * @param ArrayList<BatchModel> model The batch you wish to create.
+     * @return ArrayList<BatchModel>
      */
-    public BatchModel[] createBatchesAsync(int companyId, BatchModel[] model)
+    public ArrayList<BatchModel> createBatchesAsync(int companyId, ArrayList<BatchModel> model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/batches");
         path.ApplyField("companyId", companyId);
@@ -457,9 +457,9 @@ public class AvaTaxClient {
      * 
      * @param int companyId The ID of the company that owns this batch.
      * @param int id The ID of the batch you wish to delete.
-     * @return ErrorDetail[]
+     * @return ArrayList<ErrorDetail>
      */
-    public List<ErrorDetail> deleteBatch(Int32 companyId, Int32 id)
+    public List<ErrorDetail> deleteBatch(int companyId, int id)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/batches/{id}");
         path.ApplyField("companyId", companyId);
@@ -472,9 +472,9 @@ public class AvaTaxClient {
      * 
      * @param int companyId The ID of the company that owns this batch.
      * @param int id The ID of the batch you wish to delete.
-     * @return ErrorDetail[]
+     * @return ArrayList<ErrorDetail>
      */
-    public ErrorDetail[] deleteBatchAsync(int companyId, int id)
+    public ArrayList<ErrorDetail> deleteBatchAsync(int companyId, int id)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/batches/{id}");
         path.ApplyField("companyId", companyId);
@@ -488,9 +488,9 @@ public class AvaTaxClient {
      * @param int companyId The ID of the company that owns this batch
      * @param int batchId The ID of the batch object
      * @param int id The primary key of this batch file object
-     * @return object
+     * @return HashMap<String, String>
      */
-    public FileResult downloadBatch(Int32 companyId, Int32 batchId, Int32 id)
+    public FileResult downloadBatch(int companyId, int batchId, int id)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/batches/{batchId}/files/{id}/attachment");
         path.ApplyField("companyId", companyId);
@@ -505,9 +505,9 @@ public class AvaTaxClient {
      * @param int companyId The ID of the company that owns this batch
      * @param int batchId The ID of the batch object
      * @param int id The primary key of this batch file object
-     * @return object
+     * @return HashMap<String, String>
      */
-    public object downloadBatchAsync(int companyId, int batchId, int id)
+    public HashMap<String, String> downloadBatchAsync(int companyId, int batchId, int id)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/batches/{batchId}/files/{id}/attachment");
         path.ApplyField("companyId", companyId);
@@ -527,7 +527,7 @@ public class AvaTaxClient {
      * @param int id The primary key of this batch
      * @return BatchModel
      */
-    public BatchModel getBatch(Int32 companyId, Int32 id)
+    public BatchModel getBatch(int companyId, int id)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/batches/{id}");
         path.ApplyField("companyId", companyId);
@@ -569,9 +569,9 @@ public class AvaTaxClient {
      * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult
+     * @return FetchResult<HashMap<String, String>>
      */
-    public FetchResult<BatchModel> listBatchesByCompany(Int32 companyId, String filter, String include, Int32? top, Int32? skip, String orderBy)
+    public FetchResult<BatchModel> listBatchesByCompany(int companyId, String filter, String include, Integer top, Integer skip, String orderBy)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/batches");
         path.ApplyField("companyId", companyId);
@@ -598,9 +598,9 @@ public class AvaTaxClient {
      * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult
+     * @return FetchResult<HashMap<String, String>>
      */
-    public FetchResult listBatchesByCompanyAsync(int companyId, String filter, String include, Integer top, Integer skip, String orderBy)
+    public FetchResult<HashMap<String, String>> listBatchesByCompanyAsync(int companyId, String filter, String include, Integer top, Integer skip, String orderBy)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/batches");
         path.ApplyField("companyId", companyId);
@@ -627,9 +627,9 @@ public class AvaTaxClient {
      * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult
+     * @return FetchResult<HashMap<String, String>>
      */
-    public FetchResult<BatchModel> queryBatches(String filter, String include, Int32? top, Int32? skip, String orderBy)
+    public FetchResult<BatchModel> queryBatches(String filter, String include, Integer top, Integer skip, String orderBy)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/batches");
         path.AddQuery("$filter", filter);
@@ -655,9 +655,9 @@ public class AvaTaxClient {
      * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult
+     * @return FetchResult<HashMap<String, String>>
      */
-    public FetchResult queryBatchesAsync(String filter, String include, Integer top, Integer skip, String orderBy)
+    public FetchResult<HashMap<String, String>> queryBatchesAsync(String filter, String include, Integer top, Integer skip, String orderBy)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/batches");
         path.AddQuery("$filter", filter);
@@ -720,10 +720,10 @@ public class AvaTaxClient {
      * Create one or more new company objects.
      * A 'company' represents a single corporation or individual that is registered to handle transactional taxes.
      * 
-     * @param CompanyModel[] model Either a single company object or an array of companies to create
-     * @return CompanyModel[]
+     * @param ArrayList<CompanyModel> model Either a single company object or an array of companies to create
+     * @return ArrayList<CompanyModel>
      */
-    public List<CompanyModel> createCompanies(List<CompanyModel> model)
+    public List<CompanyModel> createCompanies(ArrayList<CompanyModel> model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies");
         return ((RestCall<List<CompanyModel>>)restCallFactory.createRestCall("Post", path, model, new TypeToken<List<CompanyModel>>(){})).call();
@@ -735,10 +735,10 @@ public class AvaTaxClient {
      * Create one or more new company objects.
      * A 'company' represents a single corporation or individual that is registered to handle transactional taxes.
      * 
-     * @param CompanyModel[] model Either a single company object or an array of companies to create
-     * @return CompanyModel[]
+     * @param ArrayList<CompanyModel> model Either a single company object or an array of companies to create
+     * @return ArrayList<CompanyModel>
      */
-    public CompanyModel[] createCompaniesAsync(CompanyModel[] model)
+    public ArrayList<CompanyModel> createCompaniesAsync(ArrayList<CompanyModel> model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies");
         return ((RestCall<List<CompanyModel>>)restCallFactory.createRestCall("Post", path, model, new TypeToken<List<CompanyModel>>(){})).call();
@@ -761,7 +761,7 @@ public class AvaTaxClient {
      * @param FundingInitiateModel model The funding initialization request
      * @return FundingStatusModel
      */
-    public FundingStatusModel createFundingRequest(Int32 id, FundingInitiateModel model)
+    public FundingStatusModel createFundingRequest(int id, FundingInitiateModel model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{id}/funding/setup");
         path.ApplyField("id", id);
@@ -796,9 +796,9 @@ public class AvaTaxClient {
      * Delete a single company
      * 
      * @param int id The ID of the company you wish to delete.
-     * @return ErrorDetail[]
+     * @return ArrayList<ErrorDetail>
      */
-    public List<ErrorDetail> deleteCompany(Int32 id)
+    public List<ErrorDetail> deleteCompany(int id)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{id}");
         path.ApplyField("id", id);
@@ -809,9 +809,9 @@ public class AvaTaxClient {
      * Delete a single company
      * 
      * @param int id The ID of the company you wish to delete.
-     * @return ErrorDetail[]
+     * @return ArrayList<ErrorDetail>
      */
-    public ErrorDetail[] deleteCompanyAsync(int id)
+    public ArrayList<ErrorDetail> deleteCompanyAsync(int id)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{id}");
         path.ApplyField("id", id);
@@ -837,7 +837,7 @@ public class AvaTaxClient {
      * @param String include A comma separated list of child objects to return underneath the primary object.
      * @return CompanyModel
      */
-    public CompanyModel getCompany(Int32 id, String include)
+    public CompanyModel getCompany(int id, String include)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{id}");
         path.ApplyField("id", id);
@@ -888,9 +888,9 @@ public class AvaTaxClient {
      * Avalara-based account settings for `AvaCertServiceConfig` affect your account's exemption certificate
      * 
      * @param int id 
-     * @return CompanyConfigurationModel[]
+     * @return ArrayList<CompanyConfigurationModel>
      */
-    public List<CompanyConfigurationModel> getCompanyConfiguration(Int32 id)
+    public List<CompanyConfigurationModel> getCompanyConfiguration(int id)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{id}/configuration");
         path.ApplyField("id", id);
@@ -913,9 +913,9 @@ public class AvaTaxClient {
      * Avalara-based account settings for `AvaCertServiceConfig` affect your account's exemption certificate
      * 
      * @param int id 
-     * @return CompanyConfigurationModel[]
+     * @return ArrayList<CompanyConfigurationModel>
      */
-    public CompanyConfigurationModel[] getCompanyConfigurationAsync(int id)
+    public ArrayList<CompanyConfigurationModel> getCompanyConfigurationAsync(int id)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{id}/configuration");
         path.ApplyField("id", id);
@@ -930,9 +930,9 @@ public class AvaTaxClient {
      * Returns a list of funding setup requests and their current status.
      * 
      * @param int id The unique identifier of the company
-     * @return FundingStatusModel[]
+     * @return ArrayList<FundingStatusModel>
      */
-    public List<FundingStatusModel> listFundingRequestsByCompany(Int32 id)
+    public List<FundingStatusModel> listFundingRequestsByCompany(int id)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{id}/funding");
         path.ApplyField("id", id);
@@ -947,9 +947,9 @@ public class AvaTaxClient {
      * Returns a list of funding setup requests and their current status.
      * 
      * @param int id The unique identifier of the company
-     * @return FundingStatusModel[]
+     * @return ArrayList<FundingStatusModel>
      */
-    public FundingStatusModel[] listFundingRequestsByCompanyAsync(int id)
+    public ArrayList<FundingStatusModel> listFundingRequestsByCompanyAsync(int id)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{id}/funding");
         path.ApplyField("id", id);
@@ -978,9 +978,9 @@ public class AvaTaxClient {
      * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult
+     * @return FetchResult<HashMap<String, String>>
      */
-    public FetchResult<CompanyModel> queryCompanies(String include, String filter, Int32? top, Int32? skip, String orderBy)
+    public FetchResult<CompanyModel> queryCompanies(String include, String filter, Integer top, Integer skip, String orderBy)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies");
         path.AddQuery("$include", include);
@@ -1013,9 +1013,9 @@ public class AvaTaxClient {
      * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult
+     * @return FetchResult<HashMap<String, String>>
      */
-    public FetchResult queryCompaniesAsync(String include, String filter, Integer top, Integer skip, String orderBy)
+    public FetchResult<HashMap<String, String>> queryCompaniesAsync(String include, String filter, Integer top, Integer skip, String orderBy)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies");
         path.AddQuery("$include", include);
@@ -1042,10 +1042,10 @@ public class AvaTaxClient {
      * Avalara-based account settings for `AvaCertServiceConfig` affect your account's exemption certificate
      * 
      * @param int id 
-     * @param CompanyConfigurationModel[] model 
-     * @return CompanyConfigurationModel[]
+     * @param ArrayList<CompanyConfigurationModel> model 
+     * @return ArrayList<CompanyConfigurationModel>
      */
-    public List<CompanyConfigurationModel> setCompanyConfiguration(Int32 id, List<CompanyConfigurationModel> model)
+    public List<CompanyConfigurationModel> setCompanyConfiguration(int id, ArrayList<CompanyConfigurationModel> model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{id}/configuration");
         path.ApplyField("id", id);
@@ -1068,10 +1068,10 @@ public class AvaTaxClient {
      * Avalara-based account settings for `AvaCertServiceConfig` affect your account's exemption certificate
      * 
      * @param int id 
-     * @param CompanyConfigurationModel[] model 
-     * @return CompanyConfigurationModel[]
+     * @param ArrayList<CompanyConfigurationModel> model 
+     * @return ArrayList<CompanyConfigurationModel>
      */
-    public CompanyConfigurationModel[] setCompanyConfigurationAsync(int id, CompanyConfigurationModel[] model)
+    public ArrayList<CompanyConfigurationModel> setCompanyConfigurationAsync(int id, ArrayList<CompanyConfigurationModel> model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{id}/configuration");
         path.ApplyField("id", id);
@@ -1089,7 +1089,7 @@ public class AvaTaxClient {
      * @param CompanyModel model The company object you wish to update.
      * @return CompanyModel
      */
-    public CompanyModel updateCompany(Int32 id, CompanyModel model)
+    public CompanyModel updateCompany(int id, CompanyModel model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{id}");
         path.ApplyField("id", id);
@@ -1121,10 +1121,10 @@ public class AvaTaxClient {
      * A 'contact' is a person associated with a company who is designated to handle certain responsibilities of
      * 
      * @param int companyId The ID of the company that owns this contact.
-     * @param ContactModel[] model The contacts you wish to create.
-     * @return ContactModel[]
+     * @param ArrayList<ContactModel> model The contacts you wish to create.
+     * @return ArrayList<ContactModel>
      */
-    public List<ContactModel> createContacts(Int32 companyId, List<ContactModel> model)
+    public List<ContactModel> createContacts(int companyId, ArrayList<ContactModel> model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/contacts");
         path.ApplyField("companyId", companyId);
@@ -1138,10 +1138,10 @@ public class AvaTaxClient {
      * A 'contact' is a person associated with a company who is designated to handle certain responsibilities of
      * 
      * @param int companyId The ID of the company that owns this contact.
-     * @param ContactModel[] model The contacts you wish to create.
-     * @return ContactModel[]
+     * @param ArrayList<ContactModel> model The contacts you wish to create.
+     * @return ArrayList<ContactModel>
      */
-    public ContactModel[] createContactsAsync(int companyId, ContactModel[] model)
+    public ArrayList<ContactModel> createContactsAsync(int companyId, ArrayList<ContactModel> model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/contacts");
         path.ApplyField("companyId", companyId);
@@ -1153,9 +1153,9 @@ public class AvaTaxClient {
      * 
      * @param int companyId The ID of the company that owns this contact.
      * @param int id The ID of the contact you wish to delete.
-     * @return ErrorDetail[]
+     * @return ArrayList<ErrorDetail>
      */
-    public List<ErrorDetail> deleteContact(Int32 companyId, Int32 id)
+    public List<ErrorDetail> deleteContact(int companyId, int id)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/contacts/{id}");
         path.ApplyField("companyId", companyId);
@@ -1168,9 +1168,9 @@ public class AvaTaxClient {
      * 
      * @param int companyId The ID of the company that owns this contact.
      * @param int id The ID of the contact you wish to delete.
-     * @return ErrorDetail[]
+     * @return ArrayList<ErrorDetail>
      */
-    public ErrorDetail[] deleteContactAsync(int companyId, int id)
+    public ArrayList<ErrorDetail> deleteContactAsync(int companyId, int id)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/contacts/{id}");
         path.ApplyField("companyId", companyId);
@@ -1188,7 +1188,7 @@ public class AvaTaxClient {
      * @param int id The primary key of this contact
      * @return ContactModel
      */
-    public ContactModel getContact(Int32 companyId, Int32 id)
+    public ContactModel getContact(int companyId, int id)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/contacts/{id}");
         path.ApplyField("companyId", companyId);
@@ -1227,9 +1227,9 @@ public class AvaTaxClient {
      * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult
+     * @return FetchResult<HashMap<String, String>>
      */
-    public FetchResult<ContactModel> listContactsByCompany(Int32 companyId, String filter, String include, Int32? top, Int32? skip, String orderBy)
+    public FetchResult<ContactModel> listContactsByCompany(int companyId, String filter, String include, Integer top, Integer skip, String orderBy)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/contacts");
         path.ApplyField("companyId", companyId);
@@ -1254,9 +1254,9 @@ public class AvaTaxClient {
      * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult
+     * @return FetchResult<HashMap<String, String>>
      */
-    public FetchResult listContactsByCompanyAsync(int companyId, String filter, String include, Integer top, Integer skip, String orderBy)
+    public FetchResult<HashMap<String, String>> listContactsByCompanyAsync(int companyId, String filter, String include, Integer top, Integer skip, String orderBy)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/contacts");
         path.ApplyField("companyId", companyId);
@@ -1282,9 +1282,9 @@ public class AvaTaxClient {
      * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult
+     * @return FetchResult<HashMap<String, String>>
      */
-    public FetchResult<ContactModel> queryContacts(String filter, String include, Int32? top, Int32? skip, String orderBy)
+    public FetchResult<ContactModel> queryContacts(String filter, String include, Integer top, Integer skip, String orderBy)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/contacts");
         path.AddQuery("$filter", filter);
@@ -1309,9 +1309,9 @@ public class AvaTaxClient {
      * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult
+     * @return FetchResult<HashMap<String, String>>
      */
-    public FetchResult queryContactsAsync(String filter, String include, Integer top, Integer skip, String orderBy)
+    public FetchResult<HashMap<String, String>> queryContactsAsync(String filter, String include, Integer top, Integer skip, String orderBy)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/contacts");
         path.AddQuery("$filter", filter);
@@ -1335,7 +1335,7 @@ public class AvaTaxClient {
      * @param ContactModel model The contact you wish to update.
      * @return ContactModel
      */
-    public ContactModel updateContact(Int32 companyId, Int32 id, ContactModel model)
+    public ContactModel updateContact(int companyId, int id, ContactModel model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/contacts/{id}");
         path.ApplyField("companyId", companyId);
@@ -1371,7 +1371,7 @@ public class AvaTaxClient {
      * 
      * @param String country The two-character ISO-3166 code for the country.
      * @param String region The two or three character region code for the region.
-     * @return FetchResult
+     * @return FetchResult<HashMap<String, String>>
      */
     public FetchResult<NexusModel> apiV2DefinitionsNexusByCountryByRegionGet(String country, String region)
     {
@@ -1388,9 +1388,9 @@ public class AvaTaxClient {
      * 
      * @param String country The two-character ISO-3166 code for the country.
      * @param String region The two or three character region code for the region.
-     * @return FetchResult
+     * @return FetchResult<HashMap<String, String>>
      */
-    public FetchResult apiV2DefinitionsNexusByCountryByRegionGetAsync(String country, String region)
+    public FetchResult<HashMap<String, String>> apiV2DefinitionsNexusByCountryByRegionGetAsync(String country, String region)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/nexus/{country}/{region}");
         path.ApplyField("country", country);
@@ -1404,7 +1404,7 @@ public class AvaTaxClient {
      * Returns all Avalara-supported nexus for the specified country.
      * 
      * @param String country 
-     * @return FetchResult
+     * @return FetchResult<HashMap<String, String>>
      */
     public FetchResult<NexusModel> apiV2DefinitionsNexusByCountryGet(String country)
     {
@@ -1419,9 +1419,9 @@ public class AvaTaxClient {
      * Returns all Avalara-supported nexus for the specified country.
      * 
      * @param String country 
-     * @return FetchResult
+     * @return FetchResult<HashMap<String, String>>
      */
-    public FetchResult apiV2DefinitionsNexusByCountryGetAsync(String country)
+    public FetchResult<HashMap<String, String>> apiV2DefinitionsNexusByCountryGetAsync(String country)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/nexus/{country}");
         path.ApplyField("country", country);
@@ -1433,7 +1433,7 @@ public class AvaTaxClient {
      * 
      * Returns the full list of all Avalara-supported nexus for all countries and regions.  
      * 
-     * @return FetchResult
+     * @return FetchResult<HashMap<String, String>>
      */
     public FetchResult<NexusModel> apiV2DefinitionsNexusGet()
     {
@@ -1446,9 +1446,9 @@ public class AvaTaxClient {
      * 
      * Returns the full list of all Avalara-supported nexus for all countries and regions.  
      * 
-     * @return FetchResult
+     * @return FetchResult<HashMap<String, String>>
      */
-    public FetchResult apiV2DefinitionsNexusGetAsync()
+    public FetchResult<HashMap<String, String>> apiV2DefinitionsNexusGetAsync()
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/nexus");
         return ((RestCall<FetchResult<NexusModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<NexusModel>>(){})).call();
@@ -1460,7 +1460,7 @@ public class AvaTaxClient {
      * This API is intended to be useful to identify whether the user should be allowed
      * 
      * @param String form The name of the form you would like to verify. This can be the tax form code or the legacy return name
-     * @return FetchResult
+     * @return FetchResult<HashMap<String, String>>
      */
     public FetchResult<SkyscraperStatusModel> getLoginVerifierByForm(String form)
     {
@@ -1475,9 +1475,9 @@ public class AvaTaxClient {
      * This API is intended to be useful to identify whether the user should be allowed
      * 
      * @param String form The name of the form you would like to verify. This can be the tax form code or the legacy return name
-     * @return FetchResult
+     * @return FetchResult<HashMap<String, String>>
      */
-    public FetchResult getLoginVerifierByFormAsync(String form)
+    public FetchResult<HashMap<String, String>> getLoginVerifierByFormAsync(String form)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/filingcalendars/loginverifiers/{form}");
         path.ApplyField("form", form);
@@ -1489,7 +1489,7 @@ public class AvaTaxClient {
      * 
      * Returns the full list of Avalara-supported AvaFile Forms
      * 
-     * @return FetchResult
+     * @return FetchResult<HashMap<String, String>>
      */
     public FetchResult<AvaFileFormModel> listAvaFileForms()
     {
@@ -1502,9 +1502,9 @@ public class AvaTaxClient {
      * 
      * Returns the full list of Avalara-supported AvaFile Forms
      * 
-     * @return FetchResult
+     * @return FetchResult<HashMap<String, String>>
      */
-    public FetchResult listAvaFileFormsAsync()
+    public FetchResult<HashMap<String, String>> listAvaFileFormsAsync()
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/avafileforms");
         return ((RestCall<FetchResult<AvaFileFormModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<AvaFileFormModel>>(){})).call();
@@ -1516,7 +1516,7 @@ public class AvaTaxClient {
      * Returns a list of all ISO 3166 country codes, and their US English friendly names.
      * This API is intended to be useful when presenting a dropdown box in your website to allow customers to select a country for 
      * 
-     * @return FetchResult
+     * @return FetchResult<HashMap<String, String>>
      */
     public FetchResult<IsoCountryModel> listCountries()
     {
@@ -1530,9 +1530,9 @@ public class AvaTaxClient {
      * Returns a list of all ISO 3166 country codes, and their US English friendly names.
      * This API is intended to be useful when presenting a dropdown box in your website to allow customers to select a country for 
      * 
-     * @return FetchResult
+     * @return FetchResult<HashMap<String, String>>
      */
-    public FetchResult listCountriesAsync()
+    public FetchResult<HashMap<String, String>> listCountriesAsync()
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/countries");
         return ((RestCall<FetchResult<IsoCountryModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<IsoCountryModel>>(){})).call();
@@ -1546,7 +1546,7 @@ public class AvaTaxClient {
      * is occurring.  This information is generally used to determine taxability of the product.
      * In order to facilitate correct reporting of your taxes, you are encouraged to select the proper entity use codes for
      * 
-     * @return FetchResult
+     * @return FetchResult<HashMap<String, String>>
      */
     public FetchResult<EntityUseCodeModel> listEntityUseCodes()
     {
@@ -1562,9 +1562,9 @@ public class AvaTaxClient {
      * is occurring.  This information is generally used to determine taxability of the product.
      * In order to facilitate correct reporting of your taxes, you are encouraged to select the proper entity use codes for
      * 
-     * @return FetchResult
+     * @return FetchResult<HashMap<String, String>>
      */
-    public FetchResult listEntityUseCodesAsync()
+    public FetchResult<HashMap<String, String>> listEntityUseCodesAsync()
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/entityusecodes");
         return ((RestCall<FetchResult<EntityUseCodeModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<EntityUseCodeModel>>(){})).call();
@@ -1575,7 +1575,7 @@ public class AvaTaxClient {
      * 
      * Returns the full list of Avalara-supported filing frequencies.
      * 
-     * @return FetchResult
+     * @return FetchResult<HashMap<String, String>>
      */
     public FetchResult<FilingFrequencyModel> listFilingFrequencies()
     {
@@ -1588,9 +1588,9 @@ public class AvaTaxClient {
      * 
      * Returns the full list of Avalara-supported filing frequencies.
      * 
-     * @return FetchResult
+     * @return FetchResult<HashMap<String, String>>
      */
-    public FetchResult listFilingFrequenciesAsync()
+    public FetchResult<HashMap<String, String>> listFilingFrequenciesAsync()
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/filingfrequencies");
         return ((RestCall<FetchResult<FilingFrequencyModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<FilingFrequencyModel>>(){})).call();
@@ -1613,7 +1613,7 @@ public class AvaTaxClient {
      * @param String region The region, state, or province code portion of this address.
      * @param String postalCode The postal code or zip code portion of this address.
      * @param String country The two-character ISO-3166 code of the country portion of this address.
-     * @return FetchResult
+     * @return FetchResult<HashMap<String, String>>
      */
     public FetchResult<JurisdictionOverrideModel> listJurisdictionsByAddress(String line1, String line2, String line3, String city, String region, String postalCode, String country)
     {
@@ -1645,9 +1645,9 @@ public class AvaTaxClient {
      * @param String region The region, state, or province code portion of this address.
      * @param String postalCode The postal code or zip code portion of this address.
      * @param String country The two-character ISO-3166 code of the country portion of this address.
-     * @return FetchResult
+     * @return FetchResult<HashMap<String, String>>
      */
-    public FetchResult listJurisdictionsByAddressAsync(String line1, String line2, String line3, String city, String region, String postalCode, String country)
+    public FetchResult<HashMap<String, String>> listJurisdictionsByAddressAsync(String line1, String line2, String line3, String city, String region, String postalCode, String country)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/jurisdictionsnearaddress");
         path.AddQuery("line1", line1);
@@ -1678,9 +1678,9 @@ public class AvaTaxClient {
      * @param String country The country part of this location's address.
      * @param BigDecimal latitude Optionally identify the location via latitude/longitude instead of via address.
      * @param BigDecimal longitude Optionally identify the location via latitude/longitude instead of via address.
-     * @return FetchResult
+     * @return FetchResult<HashMap<String, String>>
      */
-    public FetchResult<LocationQuestionModel> listLocationQuestionsByAddress(String line1, String line2, String line3, String city, String region, String postalCode, String country, Decimal? latitude, Decimal? longitude)
+    public FetchResult<LocationQuestionModel> listLocationQuestionsByAddress(String line1, String line2, String line3, String city, String region, String postalCode, String country, BigDecimal latitude, BigDecimal longitude)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/locationquestions");
         path.AddQuery("line1", line1);
@@ -1713,9 +1713,9 @@ public class AvaTaxClient {
      * @param String country The country part of this location's address.
      * @param BigDecimal latitude Optionally identify the location via latitude/longitude instead of via address.
      * @param BigDecimal longitude Optionally identify the location via latitude/longitude instead of via address.
-     * @return FetchResult
+     * @return FetchResult<HashMap<String, String>>
      */
-    public FetchResult listLocationQuestionsByAddressAsync(String line1, String line2, String line3, String city, String region, String postalCode, String country, BigDecimal latitude, BigDecimal longitude)
+    public FetchResult<HashMap<String, String>> listLocationQuestionsByAddressAsync(String line1, String line2, String line3, String city, String region, String postalCode, String country, BigDecimal latitude, BigDecimal longitude)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/locationquestions");
         path.AddQuery("line1", line1);
@@ -1736,7 +1736,7 @@ public class AvaTaxClient {
      * List all forms where logins can be verified automatically.
      * This API is intended to be useful to identify whether the user should be allowed
      * 
-     * @return FetchResult
+     * @return FetchResult<HashMap<String, String>>
      */
     public FetchResult<SkyscraperStatusModel> listLoginVerifiers()
     {
@@ -1750,9 +1750,9 @@ public class AvaTaxClient {
      * List all forms where logins can be verified automatically.
      * This API is intended to be useful to identify whether the user should be allowed
      * 
-     * @return FetchResult
+     * @return FetchResult<HashMap<String, String>>
      */
-    public FetchResult listLoginVerifiersAsync()
+    public FetchResult<HashMap<String, String>> listLoginVerifiersAsync()
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/filingcalendars/loginverifiers");
         return ((RestCall<FetchResult<SkyscraperStatusModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<SkyscraperStatusModel>>(){})).call();
@@ -1773,7 +1773,7 @@ public class AvaTaxClient {
      * @param String region The region, state, or province code portion of this address.
      * @param String postalCode The postal code or zip code portion of this address.
      * @param String country The two-character ISO-3166 code of the country portion of this address.
-     * @return FetchResult
+     * @return FetchResult<HashMap<String, String>>
      */
     public FetchResult<NexusModel> listNexusByAddress(String line1, String line2, String line3, String city, String region, String postalCode, String country)
     {
@@ -1803,9 +1803,9 @@ public class AvaTaxClient {
      * @param String region The region, state, or province code portion of this address.
      * @param String postalCode The postal code or zip code portion of this address.
      * @param String country The two-character ISO-3166 code of the country portion of this address.
-     * @return FetchResult
+     * @return FetchResult<HashMap<String, String>>
      */
-    public FetchResult listNexusByAddressAsync(String line1, String line2, String line3, String city, String region, String postalCode, String country)
+    public FetchResult<HashMap<String, String>> listNexusByAddressAsync(String line1, String line2, String line3, String city, String region, String postalCode, String country)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/nexus/byaddress");
         path.AddQuery("line1", line1);
@@ -1871,7 +1871,7 @@ public class AvaTaxClient {
      * 
      * Returns the full list of Avalara-supported nexus tax type groups
      * 
-     * @return FetchResult
+     * @return FetchResult<HashMap<String, String>>
      */
     public FetchResult<NexusTaxTypeGroupModel> listNexusTaxTypeGroups()
     {
@@ -1884,9 +1884,9 @@ public class AvaTaxClient {
      * 
      * Returns the full list of Avalara-supported nexus tax type groups
      * 
-     * @return FetchResult
+     * @return FetchResult<HashMap<String, String>>
      */
-    public FetchResult listNexusTaxTypeGroupsAsync()
+    public FetchResult<HashMap<String, String>> listNexusTaxTypeGroupsAsync()
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/nexustaxtypegroups");
         return ((RestCall<FetchResult<NexusTaxTypeGroupModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<NexusTaxTypeGroupModel>>(){})).call();
@@ -1897,7 +1897,7 @@ public class AvaTaxClient {
      * 
      * Returns the full list of Avalara-supported tax notice customer funding options.
      * 
-     * @return FetchResult
+     * @return FetchResult<HashMap<String, String>>
      */
     public FetchResult<NoticeCustomerFundingOptionModel> listNoticeCustomerFundingOptions()
     {
@@ -1910,9 +1910,9 @@ public class AvaTaxClient {
      * 
      * Returns the full list of Avalara-supported tax notice customer funding options.
      * 
-     * @return FetchResult
+     * @return FetchResult<HashMap<String, String>>
      */
-    public FetchResult listNoticeCustomerFundingOptionsAsync()
+    public FetchResult<HashMap<String, String>> listNoticeCustomerFundingOptionsAsync()
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/noticecustomerfundingoptions");
         return ((RestCall<FetchResult<NoticeCustomerFundingOptionModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<NoticeCustomerFundingOptionModel>>(){})).call();
@@ -1923,7 +1923,7 @@ public class AvaTaxClient {
      * 
      * Returns the full list of Avalara-supported tax notice customer types.
      * 
-     * @return FetchResult
+     * @return FetchResult<HashMap<String, String>>
      */
     public FetchResult<NoticeCustomerTypeModel> listNoticeCustomerTypes()
     {
@@ -1936,9 +1936,9 @@ public class AvaTaxClient {
      * 
      * Returns the full list of Avalara-supported tax notice customer types.
      * 
-     * @return FetchResult
+     * @return FetchResult<HashMap<String, String>>
      */
-    public FetchResult listNoticeCustomerTypesAsync()
+    public FetchResult<HashMap<String, String>> listNoticeCustomerTypesAsync()
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/noticecustomertypes");
         return ((RestCall<FetchResult<NoticeCustomerTypeModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<NoticeCustomerTypeModel>>(){})).call();
@@ -1949,7 +1949,7 @@ public class AvaTaxClient {
      * 
      * Returns the full list of Avalara-supported tax notice filing types.
      * 
-     * @return FetchResult
+     * @return FetchResult<HashMap<String, String>>
      */
     public FetchResult<NoticeFilingTypeModel> listNoticeFilingtypes()
     {
@@ -1962,9 +1962,9 @@ public class AvaTaxClient {
      * 
      * Returns the full list of Avalara-supported tax notice filing types.
      * 
-     * @return FetchResult
+     * @return FetchResult<HashMap<String, String>>
      */
-    public FetchResult listNoticeFilingtypesAsync()
+    public FetchResult<HashMap<String, String>> listNoticeFilingtypesAsync()
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/noticefilingtypes");
         return ((RestCall<FetchResult<NoticeFilingTypeModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<NoticeFilingTypeModel>>(){})).call();
@@ -1975,7 +1975,7 @@ public class AvaTaxClient {
      * 
      * Returns the full list of Avalara-supported tax notice priorities.
      * 
-     * @return FetchResult
+     * @return FetchResult<HashMap<String, String>>
      */
     public FetchResult<NoticePriorityModel> listNoticePriorities()
     {
@@ -1988,9 +1988,9 @@ public class AvaTaxClient {
      * 
      * Returns the full list of Avalara-supported tax notice priorities.
      * 
-     * @return FetchResult
+     * @return FetchResult<HashMap<String, String>>
      */
-    public FetchResult listNoticePrioritiesAsync()
+    public FetchResult<HashMap<String, String>> listNoticePrioritiesAsync()
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/noticepriorities");
         return ((RestCall<FetchResult<NoticePriorityModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<NoticePriorityModel>>(){})).call();
@@ -2001,7 +2001,7 @@ public class AvaTaxClient {
      * 
      * Returns the full list of Avalara-supported tax notice reasons.
      * 
-     * @return FetchResult
+     * @return FetchResult<HashMap<String, String>>
      */
     public FetchResult<NoticeReasonModel> listNoticeReasons()
     {
@@ -2014,9 +2014,9 @@ public class AvaTaxClient {
      * 
      * Returns the full list of Avalara-supported tax notice reasons.
      * 
-     * @return FetchResult
+     * @return FetchResult<HashMap<String, String>>
      */
-    public FetchResult listNoticeReasonsAsync()
+    public FetchResult<HashMap<String, String>> listNoticeReasonsAsync()
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/noticereasons");
         return ((RestCall<FetchResult<NoticeReasonModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<NoticeReasonModel>>(){})).call();
@@ -2027,7 +2027,7 @@ public class AvaTaxClient {
      * 
      * Returns the full list of Avalara-supported tax notice responsibility ids
      * 
-     * @return FetchResult
+     * @return FetchResult<HashMap<String, String>>
      */
     public FetchResult<NoticeResponsibilityModel> listNoticeResponsibilities()
     {
@@ -2040,9 +2040,9 @@ public class AvaTaxClient {
      * 
      * Returns the full list of Avalara-supported tax notice responsibility ids
      * 
-     * @return FetchResult
+     * @return FetchResult<HashMap<String, String>>
      */
-    public FetchResult listNoticeResponsibilitiesAsync()
+    public FetchResult<HashMap<String, String>> listNoticeResponsibilitiesAsync()
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/noticeresponsibilities");
         return ((RestCall<FetchResult<NoticeResponsibilityModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<NoticeResponsibilityModel>>(){})).call();
@@ -2053,7 +2053,7 @@ public class AvaTaxClient {
      * 
      * Returns the full list of Avalara-supported tax notice root causes
      * 
-     * @return FetchResult
+     * @return FetchResult<HashMap<String, String>>
      */
     public FetchResult<NoticeRootCauseModel> listNoticeRootCauses()
     {
@@ -2066,9 +2066,9 @@ public class AvaTaxClient {
      * 
      * Returns the full list of Avalara-supported tax notice root causes
      * 
-     * @return FetchResult
+     * @return FetchResult<HashMap<String, String>>
      */
-    public FetchResult listNoticeRootCausesAsync()
+    public FetchResult<HashMap<String, String>> listNoticeRootCausesAsync()
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/noticerootcauses");
         return ((RestCall<FetchResult<NoticeRootCauseModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<NoticeRootCauseModel>>(){})).call();
@@ -2079,7 +2079,7 @@ public class AvaTaxClient {
      * 
      * Returns the full list of Avalara-supported tax notice statuses.
      * 
-     * @return FetchResult
+     * @return FetchResult<HashMap<String, String>>
      */
     public FetchResult<NoticeStatusModel> listNoticeStatuses()
     {
@@ -2092,9 +2092,9 @@ public class AvaTaxClient {
      * 
      * Returns the full list of Avalara-supported tax notice statuses.
      * 
-     * @return FetchResult
+     * @return FetchResult<HashMap<String, String>>
      */
-    public FetchResult listNoticeStatusesAsync()
+    public FetchResult<HashMap<String, String>> listNoticeStatusesAsync()
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/noticestatuses");
         return ((RestCall<FetchResult<NoticeStatusModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<NoticeStatusModel>>(){})).call();
@@ -2105,7 +2105,7 @@ public class AvaTaxClient {
      * 
      * Returns the full list of Avalara-supported tax notice types.
      * 
-     * @return FetchResult
+     * @return FetchResult<HashMap<String, String>>
      */
     public FetchResult<NoticeTypeModel> listNoticeTypes()
     {
@@ -2118,9 +2118,9 @@ public class AvaTaxClient {
      * 
      * Returns the full list of Avalara-supported tax notice types.
      * 
-     * @return FetchResult
+     * @return FetchResult<HashMap<String, String>>
      */
-    public FetchResult listNoticeTypesAsync()
+    public FetchResult<HashMap<String, String>> listNoticeTypesAsync()
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/noticetypes");
         return ((RestCall<FetchResult<NoticeTypeModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<NoticeTypeModel>>(){})).call();
@@ -2132,7 +2132,7 @@ public class AvaTaxClient {
      * Returns the full list of Avalara-supported extra parameters for the 'Create Transaction' API call.
      * This list of parameters is available for use when configuring your transaction.
      * 
-     * @return FetchResult
+     * @return FetchResult<HashMap<String, String>>
      */
     public FetchResult<ParameterModel> listParameters()
     {
@@ -2146,9 +2146,9 @@ public class AvaTaxClient {
      * Returns the full list of Avalara-supported extra parameters for the 'Create Transaction' API call.
      * This list of parameters is available for use when configuring your transaction.
      * 
-     * @return FetchResult
+     * @return FetchResult<HashMap<String, String>>
      */
-    public FetchResult listParametersAsync()
+    public FetchResult<HashMap<String, String>> listParametersAsync()
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/parameters");
         return ((RestCall<FetchResult<ParameterModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<ParameterModel>>(){})).call();
@@ -2159,7 +2159,7 @@ public class AvaTaxClient {
      * 
      * Returns the full list of Avalara-supported permission types.
      * 
-     * @return FetchResult
+     * @return FetchResult<HashMap<String, String>>
      */
     public FetchResult<String> listPermissions()
     {
@@ -2172,9 +2172,9 @@ public class AvaTaxClient {
      * 
      * Returns the full list of Avalara-supported permission types.
      * 
-     * @return FetchResult
+     * @return FetchResult<HashMap<String, String>>
      */
-    public FetchResult listPermissionsAsync()
+    public FetchResult<HashMap<String, String>> listPermissionsAsync()
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/permissions");
         return ((RestCall<FetchResult<String>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<String>>(){})).call();
@@ -2186,7 +2186,7 @@ public class AvaTaxClient {
      * Returns the full list of Avalara-supported rate type file types
      * 
      * @param String country 
-     * @return FetchResult
+     * @return FetchResult<HashMap<String, String>>
      */
     public FetchResult<RateTypeModel> listRateTypesByCountry(String country)
     {
@@ -2201,9 +2201,9 @@ public class AvaTaxClient {
      * Returns the full list of Avalara-supported rate type file types
      * 
      * @param String country 
-     * @return FetchResult
+     * @return FetchResult<HashMap<String, String>>
      */
-    public FetchResult listRateTypesByCountryAsync(String country)
+    public FetchResult<HashMap<String, String>> listRateTypesByCountryAsync(String country)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/countries/{country}/ratetypes");
         path.ApplyField("country", country);
@@ -2216,7 +2216,7 @@ public class AvaTaxClient {
      * Returns a list of all ISO 3166 region codes and their US English friendly names.
      * This API is intended to be useful when presenting a dropdown box in your website to allow customers to select a region 
      * 
-     * @return FetchResult
+     * @return FetchResult<HashMap<String, String>>
      */
     public FetchResult<IsoRegionModel> listRegions()
     {
@@ -2230,9 +2230,9 @@ public class AvaTaxClient {
      * Returns a list of all ISO 3166 region codes and their US English friendly names.
      * This API is intended to be useful when presenting a dropdown box in your website to allow customers to select a region 
      * 
-     * @return FetchResult
+     * @return FetchResult<HashMap<String, String>>
      */
-    public FetchResult listRegionsAsync()
+    public FetchResult<HashMap<String, String>> listRegionsAsync()
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/regions");
         return ((RestCall<FetchResult<IsoRegionModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<IsoRegionModel>>(){})).call();
@@ -2245,7 +2245,7 @@ public class AvaTaxClient {
      * This API is intended to be useful when presenting a dropdown box in your website to allow customers to select a region 
      * 
      * @param String country 
-     * @return FetchResult
+     * @return FetchResult<HashMap<String, String>>
      */
     public FetchResult<IsoRegionModel> listRegionsByCountry(String country)
     {
@@ -2261,9 +2261,9 @@ public class AvaTaxClient {
      * This API is intended to be useful when presenting a dropdown box in your website to allow customers to select a region 
      * 
      * @param String country 
-     * @return FetchResult
+     * @return FetchResult<HashMap<String, String>>
      */
-    public FetchResult listRegionsByCountryAsync(String country)
+    public FetchResult<HashMap<String, String>> listRegionsByCountryAsync(String country)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/countries/{country}/regions");
         path.ApplyField("country", country);
@@ -2275,7 +2275,7 @@ public class AvaTaxClient {
      * 
      * Returns the full list of Avalara-supported resource file types
      * 
-     * @return FetchResult
+     * @return FetchResult<HashMap<String, String>>
      */
     public FetchResult<ResourceFileTypeModel> listResourceFileTypes()
     {
@@ -2288,9 +2288,9 @@ public class AvaTaxClient {
      * 
      * Returns the full list of Avalara-supported resource file types
      * 
-     * @return FetchResult
+     * @return FetchResult<HashMap<String, String>>
      */
-    public FetchResult listResourceFileTypesAsync()
+    public FetchResult<HashMap<String, String>> listResourceFileTypesAsync()
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/resourcefiletypes");
         return ((RestCall<FetchResult<ResourceFileTypeModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<ResourceFileTypeModel>>(){})).call();
@@ -2302,7 +2302,7 @@ public class AvaTaxClient {
      * Returns the full list of Avalara-supported permission types.
      * This API is intended to be useful when designing a user interface for selecting the security role of a user account.
      * 
-     * @return FetchResult
+     * @return FetchResult<HashMap<String, String>>
      */
     public FetchResult<SecurityRoleModel> listSecurityRoles()
     {
@@ -2316,9 +2316,9 @@ public class AvaTaxClient {
      * Returns the full list of Avalara-supported permission types.
      * This API is intended to be useful when designing a user interface for selecting the security role of a user account.
      * 
-     * @return FetchResult
+     * @return FetchResult<HashMap<String, String>>
      */
-    public FetchResult listSecurityRolesAsync()
+    public FetchResult<HashMap<String, String>> listSecurityRolesAsync()
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/securityroles");
         return ((RestCall<FetchResult<SecurityRoleModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<SecurityRoleModel>>(){})).call();
@@ -2331,7 +2331,7 @@ public class AvaTaxClient {
      * This API is intended to be useful for identifying which features you have added to your account.
      * You may always contact Avalara's sales department for information on available products or services.
      * 
-     * @return FetchResult
+     * @return FetchResult<HashMap<String, String>>
      */
     public FetchResult<SubscriptionTypeModel> listSubscriptionTypes()
     {
@@ -2346,9 +2346,9 @@ public class AvaTaxClient {
      * This API is intended to be useful for identifying which features you have added to your account.
      * You may always contact Avalara's sales department for information on available products or services.
      * 
-     * @return FetchResult
+     * @return FetchResult<HashMap<String, String>>
      */
-    public FetchResult listSubscriptionTypesAsync()
+    public FetchResult<HashMap<String, String>> listSubscriptionTypesAsync()
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/subscriptiontypes");
         return ((RestCall<FetchResult<SubscriptionTypeModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<SubscriptionTypeModel>>(){})).call();
@@ -2359,7 +2359,7 @@ public class AvaTaxClient {
      * 
      * Returns the full list of Avalara-supported tax authorities.
      * 
-     * @return FetchResult
+     * @return FetchResult<HashMap<String, String>>
      */
     public FetchResult<TaxAuthorityModel> listTaxAuthorities()
     {
@@ -2372,9 +2372,9 @@ public class AvaTaxClient {
      * 
      * Returns the full list of Avalara-supported tax authorities.
      * 
-     * @return FetchResult
+     * @return FetchResult<HashMap<String, String>>
      */
-    public FetchResult listTaxAuthoritiesAsync()
+    public FetchResult<HashMap<String, String>> listTaxAuthoritiesAsync()
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/taxauthorities");
         return ((RestCall<FetchResult<TaxAuthorityModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<TaxAuthorityModel>>(){})).call();
@@ -2387,7 +2387,7 @@ public class AvaTaxClient {
      * This list represents tax forms that Avalara recognizes.
      * Customers who subscribe to Avalara Managed Returns Service can request these forms to be filed automatically 
      * 
-     * @return FetchResult
+     * @return FetchResult<HashMap<String, String>>
      */
     public FetchResult<TaxAuthorityFormModel> listTaxAuthorityForms()
     {
@@ -2402,9 +2402,9 @@ public class AvaTaxClient {
      * This list represents tax forms that Avalara recognizes.
      * Customers who subscribe to Avalara Managed Returns Service can request these forms to be filed automatically 
      * 
-     * @return FetchResult
+     * @return FetchResult<HashMap<String, String>>
      */
-    public FetchResult listTaxAuthorityFormsAsync()
+    public FetchResult<HashMap<String, String>> listTaxAuthorityFormsAsync()
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/taxauthorityforms");
         return ((RestCall<FetchResult<TaxAuthorityFormModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<TaxAuthorityFormModel>>(){})).call();
@@ -2415,7 +2415,7 @@ public class AvaTaxClient {
      * 
      * Returns the full list of Avalara-supported tax authority types.
      * 
-     * @return FetchResult
+     * @return FetchResult<HashMap<String, String>>
      */
     public FetchResult<TaxAuthorityTypeModel> listTaxAuthorityTypes()
     {
@@ -2428,9 +2428,9 @@ public class AvaTaxClient {
      * 
      * Returns the full list of Avalara-supported tax authority types.
      * 
-     * @return FetchResult
+     * @return FetchResult<HashMap<String, String>>
      */
-    public FetchResult listTaxAuthorityTypesAsync()
+    public FetchResult<HashMap<String, String>> listTaxAuthorityTypesAsync()
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/taxauthoritytypes");
         return ((RestCall<FetchResult<TaxAuthorityTypeModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<TaxAuthorityTypeModel>>(){})).call();
@@ -2444,7 +2444,7 @@ public class AvaTaxClient {
      * Avalara supports correct tax rates and taxability rules for all TaxCodes in all supported jurisdictions.
      * If you identify your products by tax code in your 'Create Transacion' API calls, Avalara will correctly calculate tax rates and
      * 
-     * @return FetchResult
+     * @return FetchResult<HashMap<String, String>>
      */
     public FetchResult<TaxCodeModel> listTaxCodes()
     {
@@ -2460,9 +2460,9 @@ public class AvaTaxClient {
      * Avalara supports correct tax rates and taxability rules for all TaxCodes in all supported jurisdictions.
      * If you identify your products by tax code in your 'Create Transacion' API calls, Avalara will correctly calculate tax rates and
      * 
-     * @return FetchResult
+     * @return FetchResult<HashMap<String, String>>
      */
-    public FetchResult listTaxCodesAsync()
+    public FetchResult<HashMap<String, String>> listTaxCodesAsync()
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/taxcodes");
         return ((RestCall<FetchResult<TaxCodeModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<TaxCodeModel>>(){})).call();
@@ -2501,7 +2501,7 @@ public class AvaTaxClient {
      * 
      * Returns the full list of Avalara-supported tax sub-types
      * 
-     * @return FetchResult
+     * @return FetchResult<HashMap<String, String>>
      */
     public FetchResult<TaxSubTypeModel> listTaxSubTypes()
     {
@@ -2514,9 +2514,9 @@ public class AvaTaxClient {
      * 
      * Returns the full list of Avalara-supported tax sub-types
      * 
-     * @return FetchResult
+     * @return FetchResult<HashMap<String, String>>
      */
-    public FetchResult listTaxSubTypesAsync()
+    public FetchResult<HashMap<String, String>> listTaxSubTypesAsync()
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/taxsubtypes");
         return ((RestCall<FetchResult<TaxSubTypeModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<TaxSubTypeModel>>(){})).call();
@@ -2527,7 +2527,7 @@ public class AvaTaxClient {
      * 
      * Returns the full list of Avalara-supported tax type groups
      * 
-     * @return FetchResult
+     * @return FetchResult<HashMap<String, String>>
      */
     public FetchResult<TaxTypeGroupModel> listTaxTypeGroups()
     {
@@ -2540,9 +2540,9 @@ public class AvaTaxClient {
      * 
      * Returns the full list of Avalara-supported tax type groups
      * 
-     * @return FetchResult
+     * @return FetchResult<HashMap<String, String>>
      */
-    public FetchResult listTaxTypeGroupsAsync()
+    public FetchResult<HashMap<String, String>> listTaxTypeGroupsAsync()
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/taxtypegroups");
         return ((RestCall<FetchResult<TaxTypeGroupModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<TaxTypeGroupModel>>(){})).call();
@@ -2555,7 +2555,7 @@ public class AvaTaxClient {
      * @param int id The primary key of this filing calendar
      * @return FilingCalendarModel
      */
-    public FilingCalendarModel apiV2CompaniesByCompanyIdFilingcalendarsByIdGet(Int32 companyId, Int32 id)
+    public FilingCalendarModel apiV2CompaniesByCompanyIdFilingcalendarsByIdGet(int companyId, int id)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingcalendars/{id}");
         path.ApplyField("companyId", companyId);
@@ -2586,9 +2586,9 @@ public class AvaTaxClient {
      * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult
+     * @return FetchResult<HashMap<String, String>>
      */
-    public FetchResult<FilingCalendarModel> apiV2CompaniesByCompanyIdFilingcalendarsGet(Int32 companyId, String filter, Int32? top, Int32? skip, String orderBy)
+    public FetchResult<FilingCalendarModel> apiV2CompaniesByCompanyIdFilingcalendarsGet(int companyId, String filter, Integer top, Integer skip, String orderBy)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingcalendars");
         path.ApplyField("companyId", companyId);
@@ -2607,9 +2607,9 @@ public class AvaTaxClient {
      * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult
+     * @return FetchResult<HashMap<String, String>>
      */
-    public FetchResult apiV2CompaniesByCompanyIdFilingcalendarsGetAsync(int companyId, String filter, Integer top, Integer skip, String orderBy)
+    public FetchResult<HashMap<String, String>> apiV2CompaniesByCompanyIdFilingcalendarsGetAsync(int companyId, String filter, Integer top, Integer skip, String orderBy)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingcalendars");
         path.ApplyField("companyId", companyId);
@@ -2631,9 +2631,9 @@ public class AvaTaxClient {
      * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult
+     * @return FetchResult<HashMap<String, String>>
      */
-    public FetchResult<FilingRequestModel> apiV2CompaniesByCompanyIdFilingrequestsGet(Int32 companyId, String filter, Int32? top, Int32? skip, String orderBy)
+    public FetchResult<FilingRequestModel> apiV2CompaniesByCompanyIdFilingrequestsGet(int companyId, String filter, Integer top, Integer skip, String orderBy)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingrequests");
         path.ApplyField("companyId", companyId);
@@ -2655,9 +2655,9 @@ public class AvaTaxClient {
      * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult
+     * @return FetchResult<HashMap<String, String>>
      */
-    public FetchResult apiV2CompaniesByCompanyIdFilingrequestsGetAsync(int companyId, String filter, Integer top, Integer skip, String orderBy)
+    public FetchResult<HashMap<String, String>> apiV2CompaniesByCompanyIdFilingrequestsGetAsync(int companyId, String filter, Integer top, Integer skip, String orderBy)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingrequests");
         path.ApplyField("companyId", companyId);
@@ -2673,9 +2673,9 @@ public class AvaTaxClient {
      * 
      * @param int companyId The unique ID of the company that owns the filing calendar object
      * @param String formCode The unique code of the form
-     * @return CycleAddOptionModel[]
+     * @return ArrayList<CycleAddOptionModel>
      */
-    public List<CycleAddOptionModel> cycleSafeAdd(Int32 companyId, String formCode)
+    public List<CycleAddOptionModel> cycleSafeAdd(int companyId, String formCode)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingcalendars/add/options");
         path.ApplyField("companyId", companyId);
@@ -2688,9 +2688,9 @@ public class AvaTaxClient {
      * 
      * @param int companyId The unique ID of the company that owns the filing calendar object
      * @param String formCode The unique code of the form
-     * @return CycleAddOptionModel[]
+     * @return ArrayList<CycleAddOptionModel>
      */
-    public CycleAddOptionModel[] cycleSafeAddAsync(int companyId, String formCode)
+    public ArrayList<CycleAddOptionModel> cycleSafeAddAsync(int companyId, String formCode)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingcalendars/add/options");
         path.ApplyField("companyId", companyId);
@@ -2703,10 +2703,10 @@ public class AvaTaxClient {
      * 
      * @param int companyId The unique ID of the company that owns the filing calendar object
      * @param int id The unique ID of the filing calendar object
-     * @param FilingCalendarEditModel[] model A list of filing calendar edits to be made
+     * @param ArrayList<FilingCalendarEditModel> model A list of filing calendar edits to be made
      * @return CycleEditOptionModel
      */
-    public CycleEditOptionModel cycleSafeEdit(Int32 companyId, Int32 id, List<FilingCalendarEditModel> model)
+    public CycleEditOptionModel cycleSafeEdit(int companyId, int id, ArrayList<FilingCalendarEditModel> model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingcalendars/{id}/edit/options");
         path.ApplyField("companyId", companyId);
@@ -2719,10 +2719,10 @@ public class AvaTaxClient {
      * 
      * @param int companyId The unique ID of the company that owns the filing calendar object
      * @param int id The unique ID of the filing calendar object
-     * @param FilingCalendarEditModel[] model A list of filing calendar edits to be made
+     * @param ArrayList<FilingCalendarEditModel> model A list of filing calendar edits to be made
      * @return CycleEditOptionModel
      */
-    public CycleEditOptionModel cycleSafeEditAsync(int companyId, int id, FilingCalendarEditModel[] model)
+    public CycleEditOptionModel cycleSafeEditAsync(int companyId, int id, ArrayList<FilingCalendarEditModel> model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingcalendars/{id}/edit/options");
         path.ApplyField("companyId", companyId);
@@ -2737,7 +2737,7 @@ public class AvaTaxClient {
      * @param int id The unique ID of the filing calendar object
      * @return CycleExpireModel
      */
-    public CycleExpireModel cycleSafeExpiration(Int32 companyId, Int32 id)
+    public CycleExpireModel cycleSafeExpiration(int companyId, int id)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingcalendars/{id}/cancel/options");
         path.ApplyField("companyId", companyId);
@@ -2769,9 +2769,9 @@ public class AvaTaxClient {
      * 
      * @param int companyId The ID of the company that owns this filing calendar.
      * @param int id The ID of the filing calendar you wish to delete.
-     * @return ErrorDetail[]
+     * @return ArrayList<ErrorDetail>
      */
-    public List<ErrorDetail> deleteFilingCalendar(Int32 companyId, Int32 id)
+    public List<ErrorDetail> deleteFilingCalendar(int companyId, int id)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingcalendars/{id}");
         path.ApplyField("companyId", companyId);
@@ -2788,9 +2788,9 @@ public class AvaTaxClient {
      * 
      * @param int companyId The ID of the company that owns this filing calendar.
      * @param int id The ID of the filing calendar you wish to delete.
-     * @return ErrorDetail[]
+     * @return ArrayList<ErrorDetail>
      */
-    public ErrorDetail[] deleteFilingCalendarAsync(int companyId, int id)
+    public ArrayList<ErrorDetail> deleteFilingCalendarAsync(int companyId, int id)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingcalendars/{id}");
         path.ApplyField("companyId", companyId);
@@ -2809,7 +2809,7 @@ public class AvaTaxClient {
      * @param FilingCalendarModel model The filing calendar model you are wishing to update with.
      * @return FilingCalendarModel
      */
-    public FilingCalendarModel filingCalendarUpdate(Int32 companyId, Int32 id, FilingCalendarModel model)
+    public FilingCalendarModel filingCalendarUpdate(int companyId, int id, FilingCalendarModel model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingcalendars/{id}");
         path.ApplyField("companyId", companyId);
@@ -2846,7 +2846,7 @@ public class AvaTaxClient {
      * @param int id The primary key of this filing calendar
      * @return FilingRequestModel
      */
-    public FilingRequestModel filingRequests(Int32 companyId, Int32 id)
+    public FilingRequestModel filingRequests(int companyId, int id)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingrequests/{id}");
         path.ApplyField("companyId", companyId);
@@ -2879,10 +2879,10 @@ public class AvaTaxClient {
      * A "filing request" represents a request to change an existing filing calendar.  Filing requests
      * 
      * @param int companyId The unique ID of the company that will add the new filing calendar
-     * @param FilingRequestModel[] model Information about the proposed new filing calendar
+     * @param ArrayList<FilingRequestModel> model Information about the proposed new filing calendar
      * @return FilingRequestModel
      */
-    public FilingRequestModel filingRequestsAdd(Int32 companyId, List<FilingRequestModel> model)
+    public FilingRequestModel filingRequestsAdd(int companyId, ArrayList<FilingRequestModel> model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingcalendars/add/request");
         path.ApplyField("companyId", companyId);
@@ -2896,10 +2896,10 @@ public class AvaTaxClient {
      * A "filing request" represents a request to change an existing filing calendar.  Filing requests
      * 
      * @param int companyId The unique ID of the company that will add the new filing calendar
-     * @param FilingRequestModel[] model Information about the proposed new filing calendar
+     * @param ArrayList<FilingRequestModel> model Information about the proposed new filing calendar
      * @return FilingRequestModel
      */
-    public FilingRequestModel filingRequestsAddAsync(int companyId, FilingRequestModel[] model)
+    public FilingRequestModel filingRequestsAddAsync(int companyId, ArrayList<FilingRequestModel> model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingcalendars/add/request");
         path.ApplyField("companyId", companyId);
@@ -2917,7 +2917,7 @@ public class AvaTaxClient {
      * @param int id The unique ID of the filing request object
      * @return FilingRequestModel
      */
-    public FilingRequestModel filingRequestsApprove(Int32 companyId, Int32 id)
+    public FilingRequestModel filingRequestsApprove(int companyId, int id)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingrequests/{id}/approve");
         path.ApplyField("companyId", companyId);
@@ -2954,7 +2954,7 @@ public class AvaTaxClient {
      * @param int id The unique ID of the filing request object
      * @return FilingRequestModel
      */
-    public FilingRequestModel filingRequestsCancel(Int32 companyId, Int32 id)
+    public FilingRequestModel filingRequestsCancel(int companyId, int id)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingrequests/{id}/cancel");
         path.ApplyField("companyId", companyId);
@@ -2988,10 +2988,10 @@ public class AvaTaxClient {
      * 
      * @param int companyId The unique ID of the company that owns the filing calendar object
      * @param int id The unique ID number of the filing calendar to cancel
-     * @param FilingRequestModel[] model The cancellation request for this filing calendar
+     * @param ArrayList<FilingRequestModel> model The cancellation request for this filing calendar
      * @return FilingRequestModel
      */
-    public FilingRequestModel filingRequestsNewCancel(Int32 companyId, Int32 id, List<FilingRequestModel> model)
+    public FilingRequestModel filingRequestsNewCancel(int companyId, int id, ArrayList<FilingRequestModel> model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingcalendars/{id}/cancel/request");
         path.ApplyField("companyId", companyId);
@@ -3007,10 +3007,10 @@ public class AvaTaxClient {
      * 
      * @param int companyId The unique ID of the company that owns the filing calendar object
      * @param int id The unique ID number of the filing calendar to cancel
-     * @param FilingRequestModel[] model The cancellation request for this filing calendar
+     * @param ArrayList<FilingRequestModel> model The cancellation request for this filing calendar
      * @return FilingRequestModel
      */
-    public FilingRequestModel filingRequestsNewCancelAsync(int companyId, int id, FilingRequestModel[] model)
+    public FilingRequestModel filingRequestsNewCancelAsync(int companyId, int id, ArrayList<FilingRequestModel> model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingcalendars/{id}/cancel/request");
         path.ApplyField("companyId", companyId);
@@ -3026,10 +3026,10 @@ public class AvaTaxClient {
      * 
      * @param int companyId The unique ID of the company that owns the filing calendar object
      * @param int id The unique ID number of the filing calendar to edit
-     * @param FilingRequestModel[] model A list of filing calendar edits to be made
+     * @param ArrayList<FilingRequestModel> model A list of filing calendar edits to be made
      * @return FilingRequestModel
      */
-    public FilingRequestModel filingRequestsNewEdit(Int32 companyId, Int32 id, List<FilingRequestModel> model)
+    public FilingRequestModel filingRequestsNewEdit(int companyId, int id, ArrayList<FilingRequestModel> model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingcalendars/{id}/edit/request");
         path.ApplyField("companyId", companyId);
@@ -3045,10 +3045,10 @@ public class AvaTaxClient {
      * 
      * @param int companyId The unique ID of the company that owns the filing calendar object
      * @param int id The unique ID number of the filing calendar to edit
-     * @param FilingRequestModel[] model A list of filing calendar edits to be made
+     * @param ArrayList<FilingRequestModel> model A list of filing calendar edits to be made
      * @return FilingRequestModel
      */
-    public FilingRequestModel filingRequestsNewEditAsync(int companyId, int id, FilingRequestModel[] model)
+    public FilingRequestModel filingRequestsNewEditAsync(int companyId, int id, ArrayList<FilingRequestModel> model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingcalendars/{id}/edit/request");
         path.ApplyField("companyId", companyId);
@@ -3067,7 +3067,7 @@ public class AvaTaxClient {
      * @param FilingRequestModel model A list of filing calendar edits to be made
      * @return FilingRequestModel
      */
-    public FilingRequestModel filingRequestsUpdate(Int32 companyId, Int32 id, FilingRequestModel model)
+    public FilingRequestModel filingRequestsUpdate(int companyId, int id, FilingRequestModel model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingrequests/{id}");
         path.ApplyField("companyId", companyId);
@@ -3100,7 +3100,7 @@ public class AvaTaxClient {
      * @param int jobId The unique ID number of this login request
      * @return LoginVerificationOutputModel
      */
-    public LoginVerificationOutputModel loginVerificationGet(Int32 jobId)
+    public LoginVerificationOutputModel loginVerificationGet(int jobId)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/filingcalendars/credentials/{jobId}");
         path.ApplyField("jobId", jobId);
@@ -3151,9 +3151,9 @@ public class AvaTaxClient {
      * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult
+     * @return FetchResult<HashMap<String, String>>
      */
-    public FetchResult<FilingCalendarModel> queryFilingCalendars(String filter, Int32? top, Int32? skip, String orderBy)
+    public FetchResult<FilingCalendarModel> queryFilingCalendars(String filter, Integer top, Integer skip, String orderBy)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/filingcalendars");
         path.AddQuery("$filter", filter);
@@ -3170,9 +3170,9 @@ public class AvaTaxClient {
      * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult
+     * @return FetchResult<HashMap<String, String>>
      */
-    public FetchResult queryFilingCalendarsAsync(String filter, Integer top, Integer skip, String orderBy)
+    public FetchResult<HashMap<String, String>> queryFilingCalendarsAsync(String filter, Integer top, Integer skip, String orderBy)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/filingcalendars");
         path.AddQuery("$filter", filter);
@@ -3195,9 +3195,9 @@ public class AvaTaxClient {
      * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult
+     * @return FetchResult<HashMap<String, String>>
      */
-    public FetchResult<FilingRequestModel> queryFilingRequests(String filter, Int32? top, Int32? skip, String orderBy)
+    public FetchResult<FilingRequestModel> queryFilingRequests(String filter, Integer top, Integer skip, String orderBy)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/filingrequests");
         path.AddQuery("$filter", filter);
@@ -3220,9 +3220,9 @@ public class AvaTaxClient {
      * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult
+     * @return FetchResult<HashMap<String, String>>
      */
-    public FetchResult queryFilingRequestsAsync(String filter, Integer top, Integer skip, String orderBy)
+    public FetchResult<HashMap<String, String>> queryFilingRequestsAsync(String filter, Integer top, Integer skip, String orderBy)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/filingrequests");
         path.AddQuery("$filter", filter);
@@ -3246,9 +3246,9 @@ public class AvaTaxClient {
      * @param short year The year of the filing period to approve.
      * @param byte month The month of the filing period to approve.
      * @param ApproveFilingsModel model The approve request you wish to execute.
-     * @return FilingModel[]
+     * @return ArrayList<FilingModel>
      */
-    public List<FilingModel> approveFilings(Int32 companyId, Int16 year, Byte month, ApproveFilingsModel model)
+    public List<FilingModel> approveFilings(int companyId, short year, byte month, ApproveFilingsModel model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/approve");
         path.ApplyField("companyId", companyId);
@@ -3271,9 +3271,9 @@ public class AvaTaxClient {
      * @param short year The year of the filing period to approve.
      * @param byte month The month of the filing period to approve.
      * @param ApproveFilingsModel model The approve request you wish to execute.
-     * @return FilingModel[]
+     * @return ArrayList<FilingModel>
      */
-    public FilingModel[] approveFilingsAsync(int companyId, short year, byte month, ApproveFilingsModel model)
+    public ArrayList<FilingModel> approveFilingsAsync(int companyId, short year, byte month, ApproveFilingsModel model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/approve");
         path.ApplyField("companyId", companyId);
@@ -3297,9 +3297,9 @@ public class AvaTaxClient {
      * @param byte month The month of the filing period to approve.
      * @param String country The two-character ISO-3166 code for the country.
      * @param ApproveFilingsModel model The approve request you wish to execute.
-     * @return FilingModel[]
+     * @return ArrayList<FilingModel>
      */
-    public List<FilingModel> approveFilingsCountry(Int32 companyId, Int16 year, Byte month, String country, ApproveFilingsModel model)
+    public List<FilingModel> approveFilingsCountry(int companyId, short year, byte month, String country, ApproveFilingsModel model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/{country}/approve");
         path.ApplyField("companyId", companyId);
@@ -3324,9 +3324,9 @@ public class AvaTaxClient {
      * @param byte month The month of the filing period to approve.
      * @param String country The two-character ISO-3166 code for the country.
      * @param ApproveFilingsModel model The approve request you wish to execute.
-     * @return FilingModel[]
+     * @return ArrayList<FilingModel>
      */
-    public FilingModel[] approveFilingsCountryAsync(int companyId, short year, byte month, String country, ApproveFilingsModel model)
+    public ArrayList<FilingModel> approveFilingsCountryAsync(int companyId, short year, byte month, String country, ApproveFilingsModel model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/{country}/approve");
         path.ApplyField("companyId", companyId);
@@ -3352,9 +3352,9 @@ public class AvaTaxClient {
      * @param String country The two-character ISO-3166 code for the country.
      * @param String region The two or three character region code for the region.
      * @param ApproveFilingsModel model The approve request you wish to execute.
-     * @return FilingModel[]
+     * @return ArrayList<FilingModel>
      */
-    public List<FilingModel> approveFilingsCountryRegion(Int32 companyId, Int16 year, Byte month, String country, String region, ApproveFilingsModel model)
+    public List<FilingModel> approveFilingsCountryRegion(int companyId, short year, byte month, String country, String region, ApproveFilingsModel model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/{country}/{region}/approve");
         path.ApplyField("companyId", companyId);
@@ -3381,9 +3381,9 @@ public class AvaTaxClient {
      * @param String country The two-character ISO-3166 code for the country.
      * @param String region The two or three character region code for the region.
      * @param ApproveFilingsModel model The approve request you wish to execute.
-     * @return FilingModel[]
+     * @return ArrayList<FilingModel>
      */
-    public FilingModel[] approveFilingsCountryRegionAsync(int companyId, short year, byte month, String country, String region, ApproveFilingsModel model)
+    public ArrayList<FilingModel> approveFilingsCountryRegionAsync(int companyId, short year, byte month, String country, String region, ApproveFilingsModel model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/{country}/{region}/approve");
         path.ApplyField("companyId", companyId);
@@ -3409,10 +3409,10 @@ public class AvaTaxClient {
      * @param String country The two-character ISO-3166 code for the country of the filing being adjusted.
      * @param String region The two or three character region code for the region.
      * @param String formCode The unique code of the form being adjusted.
-     * @param FilingAdjustmentModel[] model A list of Adjustments to be created for the specified filing.
-     * @return FilingAdjustmentModel[]
+     * @param ArrayList<FilingAdjustmentModel> model A list of Adjustments to be created for the specified filing.
+     * @return ArrayList<FilingAdjustmentModel>
      */
-    public List<FilingAdjustmentModel> createReturnAdjustment(Int32 companyId, Int16 year, Byte month, String country, String region, String formCode, List<FilingAdjustmentModel> model)
+    public List<FilingAdjustmentModel> createReturnAdjustment(int companyId, short year, byte month, String country, String region, String formCode, ArrayList<FilingAdjustmentModel> model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/{country}/{region}/{formCode}/adjust");
         path.ApplyField("companyId", companyId);
@@ -3439,10 +3439,10 @@ public class AvaTaxClient {
      * @param String country The two-character ISO-3166 code for the country of the filing being adjusted.
      * @param String region The two or three character region code for the region.
      * @param String formCode The unique code of the form being adjusted.
-     * @param FilingAdjustmentModel[] model A list of Adjustments to be created for the specified filing.
-     * @return FilingAdjustmentModel[]
+     * @param ArrayList<FilingAdjustmentModel> model A list of Adjustments to be created for the specified filing.
+     * @return ArrayList<FilingAdjustmentModel>
      */
-    public FilingAdjustmentModel[] createReturnAdjustmentAsync(int companyId, short year, byte month, String country, String region, String formCode, FilingAdjustmentModel[] model)
+    public ArrayList<FilingAdjustmentModel> createReturnAdjustmentAsync(int companyId, short year, byte month, String country, String region, String formCode, ArrayList<FilingAdjustmentModel> model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/{country}/{region}/{formCode}/adjust");
         path.ApplyField("companyId", companyId);
@@ -3468,10 +3468,10 @@ public class AvaTaxClient {
      * @param String country The two-character ISO-3166 code for the country of the filing being changed.
      * @param String region The two or three character region code for the region of the filing being changed.
      * @param String formCode The unique code of the form being changed.
-     * @param FilingAugmentationModel[] model A list of augmentations to be created for the specified filing.
-     * @return FilingAugmentationModel[]
+     * @param ArrayList<FilingAugmentationModel> model A list of augmentations to be created for the specified filing.
+     * @return ArrayList<FilingAugmentationModel>
      */
-    public List<FilingAugmentationModel> createReturnAugmentation(Int32 companyId, Int16 year, Byte month, String country, String region, String formCode, List<FilingAugmentationModel> model)
+    public List<FilingAugmentationModel> createReturnAugmentation(int companyId, short year, byte month, String country, String region, String formCode, ArrayList<FilingAugmentationModel> model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/{country}/{region}/{formCode}/augment");
         path.ApplyField("companyId", companyId);
@@ -3497,10 +3497,10 @@ public class AvaTaxClient {
      * @param String country The two-character ISO-3166 code for the country of the filing being changed.
      * @param String region The two or three character region code for the region of the filing being changed.
      * @param String formCode The unique code of the form being changed.
-     * @param FilingAugmentationModel[] model A list of augmentations to be created for the specified filing.
-     * @return FilingAugmentationModel[]
+     * @param ArrayList<FilingAugmentationModel> model A list of augmentations to be created for the specified filing.
+     * @return ArrayList<FilingAugmentationModel>
      */
-    public FilingAugmentationModel[] createReturnAugmentationAsync(int companyId, short year, byte month, String country, String region, String formCode, FilingAugmentationModel[] model)
+    public ArrayList<FilingAugmentationModel> createReturnAugmentationAsync(int companyId, short year, byte month, String country, String region, String formCode, ArrayList<FilingAugmentationModel> model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/{country}/{region}/{formCode}/augment");
         path.ApplyField("companyId", companyId);
@@ -3523,9 +3523,9 @@ public class AvaTaxClient {
      * 
      * @param int companyId The ID of the company that owns the filing being adjusted.
      * @param long id The ID of the adjustment being deleted.
-     * @return ErrorDetail[]
+     * @return ArrayList<ErrorDetail>
      */
-    public List<ErrorDetail> deleteReturnAdjustment(Int32 companyId, Int64 id)
+    public List<ErrorDetail> deleteReturnAdjustment(int companyId, long id)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/adjust/{id}");
         path.ApplyField("companyId", companyId);
@@ -3544,9 +3544,9 @@ public class AvaTaxClient {
      * 
      * @param int companyId The ID of the company that owns the filing being adjusted.
      * @param long id The ID of the adjustment being deleted.
-     * @return ErrorDetail[]
+     * @return ArrayList<ErrorDetail>
      */
-    public ErrorDetail[] deleteReturnAdjustmentAsync(int companyId, long id)
+    public ArrayList<ErrorDetail> deleteReturnAdjustmentAsync(int companyId, long id)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/adjust/{id}");
         path.ApplyField("companyId", companyId);
@@ -3564,9 +3564,9 @@ public class AvaTaxClient {
      * 
      * @param int companyId The ID of the company that owns the filing being changed.
      * @param long id The ID of the augmentation being added.
-     * @return ErrorDetail[]
+     * @return ArrayList<ErrorDetail>
      */
-    public List<ErrorDetail> deleteReturnAugmentation(Int32 companyId, Int64 id)
+    public List<ErrorDetail> deleteReturnAugmentation(int companyId, long id)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/augment/{id}");
         path.ApplyField("companyId", companyId);
@@ -3584,9 +3584,9 @@ public class AvaTaxClient {
      * 
      * @param int companyId The ID of the company that owns the filing being changed.
      * @param long id The ID of the augmentation being added.
-     * @return ErrorDetail[]
+     * @return ArrayList<ErrorDetail>
      */
-    public ErrorDetail[] deleteReturnAugmentationAsync(int companyId, long id)
+    public ArrayList<ErrorDetail> deleteReturnAugmentationAsync(int companyId, long id)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/augment/{id}");
         path.ApplyField("companyId", companyId);
@@ -3601,7 +3601,7 @@ public class AvaTaxClient {
      * @param int companyId The unique ID of the company that owns the worksheet.
      * @return FilingsCheckupModel
      */
-    public FilingsCheckupModel filingsCheckupReport(Int32 worksheetId, Int32 companyId)
+    public FilingsCheckupModel filingsCheckupReport(int worksheetId, int companyId)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{worksheetId}/checkup");
         path.ApplyField("worksheetId", worksheetId);
@@ -3632,7 +3632,7 @@ public class AvaTaxClient {
      * @param int month The month of the filing period.
      * @return FilingsCheckupModel
      */
-    public FilingsCheckupModel filingsCheckupReports(Int32 companyId, Int32 year, Int32 month)
+    public FilingsCheckupModel filingsCheckupReports(int companyId, int year, int month)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/checkup");
         path.ApplyField("companyId", companyId);
@@ -3664,9 +3664,9 @@ public class AvaTaxClient {
      * @param int companyId The ID of the company that owns the filings.
      * @param long filingId The unique id of the worksheet return.
      * @param Long fileId The unique id of the document you are downloading
-     * @return object
+     * @return HashMap<String, String>
      */
-    public FileResult getFilingAttachment(Int32 companyId, Int64 filingId, Int64? fileId)
+    public FileResult getFilingAttachment(int companyId, long filingId, Long fileId)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{filingId}/attachment");
         path.ApplyField("companyId", companyId);
@@ -3681,9 +3681,9 @@ public class AvaTaxClient {
      * @param int companyId The ID of the company that owns the filings.
      * @param long filingId The unique id of the worksheet return.
      * @param Long fileId The unique id of the document you are downloading
-     * @return object
+     * @return HashMap<String, String>
      */
-    public object getFilingAttachmentAsync(int companyId, long filingId, Long fileId)
+    public HashMap<String, String> getFilingAttachmentAsync(int companyId, long filingId, Long fileId)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{filingId}/attachment");
         path.ApplyField("companyId", companyId);
@@ -3701,9 +3701,9 @@ public class AvaTaxClient {
      * @param int companyId The ID of the company that owns the filings.
      * @param short year The year of the filing period.
      * @param byte month The two digit month of the filing period.
-     * @return object
+     * @return HashMap<String, String>
      */
-    public FileResult getFilingAttachments(Int32 companyId, Int16 year, Byte month)
+    public FileResult getFilingAttachments(int companyId, short year, byte month)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/attachments");
         path.ApplyField("companyId", companyId);
@@ -3721,9 +3721,9 @@ public class AvaTaxClient {
      * @param int companyId The ID of the company that owns the filings.
      * @param short year The year of the filing period.
      * @param byte month The two digit month of the filing period.
-     * @return object
+     * @return HashMap<String, String>
      */
-    public object getFilingAttachmentsAsync(int companyId, short year, byte month)
+    public HashMap<String, String> getFilingAttachmentsAsync(int companyId, short year, byte month)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/attachments");
         path.ApplyField("companyId", companyId);
@@ -3741,9 +3741,9 @@ public class AvaTaxClient {
      * @param int companyId The ID of the company that owns the filings.
      * @param short year The year of the filing period.
      * @param byte month The two digit month of the filing period.
-     * @return object
+     * @return HashMap<String, String>
      */
-    public FileResult getFilingAttachmentsTraceFile(Int32 companyId, Int16 year, Byte month)
+    public FileResult getFilingAttachmentsTraceFile(int companyId, short year, byte month)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/attachments/tracefile");
         path.ApplyField("companyId", companyId);
@@ -3761,9 +3761,9 @@ public class AvaTaxClient {
      * @param int companyId The ID of the company that owns the filings.
      * @param short year The year of the filing period.
      * @param byte month The two digit month of the filing period.
-     * @return object
+     * @return HashMap<String, String>
      */
-    public object getFilingAttachmentsTraceFileAsync(int companyId, short year, byte month)
+    public HashMap<String, String> getFilingAttachmentsTraceFileAsync(int companyId, short year, byte month)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/attachments/tracefile");
         path.ApplyField("companyId", companyId);
@@ -3781,9 +3781,9 @@ public class AvaTaxClient {
      * @param int companyId The ID of the company that owns the filings.
      * @param short year The year of the filing period.
      * @param byte month The two digit month of the filing period.
-     * @return FetchResult
+     * @return FetchResult<HashMap<String, String>>
      */
-    public FetchResult<FilingModel> getFilings(Int32 companyId, Int16 year, Byte month)
+    public FetchResult<FilingModel> getFilings(int companyId, short year, byte month)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}");
         path.ApplyField("companyId", companyId);
@@ -3801,9 +3801,9 @@ public class AvaTaxClient {
      * @param int companyId The ID of the company that owns the filings.
      * @param short year The year of the filing period.
      * @param byte month The two digit month of the filing period.
-     * @return FetchResult
+     * @return FetchResult<HashMap<String, String>>
      */
-    public FetchResult getFilingsAsync(int companyId, short year, byte month)
+    public FetchResult<HashMap<String, String>> getFilingsAsync(int companyId, short year, byte month)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}");
         path.ApplyField("companyId", companyId);
@@ -3822,9 +3822,9 @@ public class AvaTaxClient {
      * @param short year The year of the filing period.
      * @param byte month The two digit month of the filing period.
      * @param String country The two-character ISO-3166 code for the country.
-     * @return FetchResult
+     * @return FetchResult<HashMap<String, String>>
      */
-    public FetchResult<FilingModel> getFilingsByCountry(Int32 companyId, Int16 year, Byte month, String country)
+    public FetchResult<FilingModel> getFilingsByCountry(int companyId, short year, byte month, String country)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/{country}");
         path.ApplyField("companyId", companyId);
@@ -3844,9 +3844,9 @@ public class AvaTaxClient {
      * @param short year The year of the filing period.
      * @param byte month The two digit month of the filing period.
      * @param String country The two-character ISO-3166 code for the country.
-     * @return FetchResult
+     * @return FetchResult<HashMap<String, String>>
      */
-    public FetchResult getFilingsByCountryAsync(int companyId, short year, byte month, String country)
+    public FetchResult<HashMap<String, String>> getFilingsByCountryAsync(int companyId, short year, byte month, String country)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/{country}");
         path.ApplyField("companyId", companyId);
@@ -3867,9 +3867,9 @@ public class AvaTaxClient {
      * @param byte month The two digit month of the filing period.
      * @param String country The two-character ISO-3166 code for the country.
      * @param String region The two or three character region code for the region.
-     * @return FetchResult
+     * @return FetchResult<HashMap<String, String>>
      */
-    public FetchResult<FilingModel> getFilingsByCountryRegion(Int32 companyId, Int16 year, Byte month, String country, String region)
+    public FetchResult<FilingModel> getFilingsByCountryRegion(int companyId, short year, byte month, String country, String region)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/{country}/{region}");
         path.ApplyField("companyId", companyId);
@@ -3891,9 +3891,9 @@ public class AvaTaxClient {
      * @param byte month The two digit month of the filing period.
      * @param String country The two-character ISO-3166 code for the country.
      * @param String region The two or three character region code for the region.
-     * @return FetchResult
+     * @return FetchResult<HashMap<String, String>>
      */
-    public FetchResult getFilingsByCountryRegionAsync(int companyId, short year, byte month, String country, String region)
+    public FetchResult<HashMap<String, String>> getFilingsByCountryRegionAsync(int companyId, short year, byte month, String country, String region)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/{country}/{region}");
         path.ApplyField("companyId", companyId);
@@ -3916,9 +3916,9 @@ public class AvaTaxClient {
      * @param String country The two-character ISO-3166 code for the country.
      * @param String region The two or three character region code for the region.
      * @param String formCode The unique code of the form.
-     * @return FetchResult
+     * @return FetchResult<HashMap<String, String>>
      */
-    public FetchResult<FilingModel> getFilingsByReturnName(Int32 companyId, Int16 year, Byte month, String country, String region, String formCode)
+    public FetchResult<FilingModel> getFilingsByReturnName(int companyId, short year, byte month, String country, String region, String formCode)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/{country}/{region}/{formCode}");
         path.ApplyField("companyId", companyId);
@@ -3942,9 +3942,9 @@ public class AvaTaxClient {
      * @param String country The two-character ISO-3166 code for the country.
      * @param String region The two or three character region code for the region.
      * @param String formCode The unique code of the form.
-     * @return FetchResult
+     * @return FetchResult<HashMap<String, String>>
      */
-    public FetchResult getFilingsByReturnNameAsync(int companyId, short year, byte month, String country, String region, String formCode)
+    public FetchResult<HashMap<String, String>> getFilingsByReturnNameAsync(int companyId, short year, byte month, String country, String region, String formCode)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/{country}/{region}/{formCode}");
         path.ApplyField("companyId", companyId);
@@ -3969,9 +3969,9 @@ public class AvaTaxClient {
      * @param short year The year of the filing period to be rebuilt.
      * @param byte month The month of the filing period to be rebuilt.
      * @param RebuildFilingsModel model The rebuild request you wish to execute.
-     * @return FetchResult
+     * @return FetchResult<HashMap<String, String>>
      */
-    public FetchResult<FilingModel> rebuildFilings(Int32 companyId, Int16 year, Byte month, RebuildFilingsModel model)
+    public FetchResult<FilingModel> rebuildFilings(int companyId, short year, byte month, RebuildFilingsModel model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/rebuild");
         path.ApplyField("companyId", companyId);
@@ -3993,9 +3993,9 @@ public class AvaTaxClient {
      * @param short year The year of the filing period to be rebuilt.
      * @param byte month The month of the filing period to be rebuilt.
      * @param RebuildFilingsModel model The rebuild request you wish to execute.
-     * @return FetchResult
+     * @return FetchResult<HashMap<String, String>>
      */
-    public FetchResult rebuildFilingsAsync(int companyId, short year, byte month, RebuildFilingsModel model)
+    public FetchResult<HashMap<String, String>> rebuildFilingsAsync(int companyId, short year, byte month, RebuildFilingsModel model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/rebuild");
         path.ApplyField("companyId", companyId);
@@ -4018,9 +4018,9 @@ public class AvaTaxClient {
      * @param byte month The month of the filing period to be rebuilt.
      * @param String country The two-character ISO-3166 code for the country.
      * @param RebuildFilingsModel model The rebuild request you wish to execute.
-     * @return FetchResult
+     * @return FetchResult<HashMap<String, String>>
      */
-    public FetchResult<FilingModel> rebuildFilingsByCountry(Int32 companyId, Int16 year, Byte month, String country, RebuildFilingsModel model)
+    public FetchResult<FilingModel> rebuildFilingsByCountry(int companyId, short year, byte month, String country, RebuildFilingsModel model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/{country}/rebuild");
         path.ApplyField("companyId", companyId);
@@ -4044,9 +4044,9 @@ public class AvaTaxClient {
      * @param byte month The month of the filing period to be rebuilt.
      * @param String country The two-character ISO-3166 code for the country.
      * @param RebuildFilingsModel model The rebuild request you wish to execute.
-     * @return FetchResult
+     * @return FetchResult<HashMap<String, String>>
      */
-    public FetchResult rebuildFilingsByCountryAsync(int companyId, short year, byte month, String country, RebuildFilingsModel model)
+    public FetchResult<HashMap<String, String>> rebuildFilingsByCountryAsync(int companyId, short year, byte month, String country, RebuildFilingsModel model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/{country}/rebuild");
         path.ApplyField("companyId", companyId);
@@ -4071,9 +4071,9 @@ public class AvaTaxClient {
      * @param String country The two-character ISO-3166 code for the country.
      * @param String region The two or three character region code for the region.
      * @param RebuildFilingsModel model The rebuild request you wish to execute.
-     * @return FetchResult
+     * @return FetchResult<HashMap<String, String>>
      */
-    public FetchResult<FilingModel> rebuildFilingsByCountryRegion(Int32 companyId, Int16 year, Byte month, String country, String region, RebuildFilingsModel model)
+    public FetchResult<FilingModel> rebuildFilingsByCountryRegion(int companyId, short year, byte month, String country, String region, RebuildFilingsModel model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/{country}/{region}/rebuild");
         path.ApplyField("companyId", companyId);
@@ -4099,9 +4099,9 @@ public class AvaTaxClient {
      * @param String country The two-character ISO-3166 code for the country.
      * @param String region The two or three character region code for the region.
      * @param RebuildFilingsModel model The rebuild request you wish to execute.
-     * @return FetchResult
+     * @return FetchResult<HashMap<String, String>>
      */
-    public FetchResult rebuildFilingsByCountryRegionAsync(int companyId, short year, byte month, String country, String region, RebuildFilingsModel model)
+    public FetchResult<HashMap<String, String>> rebuildFilingsByCountryRegionAsync(int companyId, short year, byte month, String country, String region, RebuildFilingsModel model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/{country}/{region}/rebuild");
         path.ApplyField("companyId", companyId);
@@ -4126,7 +4126,7 @@ public class AvaTaxClient {
      * @param FilingAdjustmentModel model The updated Adjustment.
      * @return FilingAdjustmentModel
      */
-    public FilingAdjustmentModel updateReturnAdjustment(Int32 companyId, Int64 id, FilingAdjustmentModel model)
+    public FilingAdjustmentModel updateReturnAdjustment(int companyId, long id, FilingAdjustmentModel model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/adjust/{id}");
         path.ApplyField("companyId", companyId);
@@ -4169,7 +4169,7 @@ public class AvaTaxClient {
      * @param FilingAugmentationModel model The updated Augmentation.
      * @return FilingModel
      */
-    public FilingModel updateReturnAugmentation(Int32 companyId, Int64 id, FilingAugmentationModel model)
+    public FilingModel updateReturnAugmentation(int companyId, long id, FilingAugmentationModel model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/augment/{id}");
         path.ApplyField("companyId", companyId);
@@ -4428,7 +4428,7 @@ public class AvaTaxClient {
      * @param long id The unique ID number of this funding request
      * @return FundingStatusModel
      */
-    public FundingStatusModel activateFundingRequest(Int64 id)
+    public FundingStatusModel activateFundingRequest(long id)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/fundingrequests/{id}/widget");
         path.ApplyField("id", id);
@@ -4476,7 +4476,7 @@ public class AvaTaxClient {
      * @param int id The unique ID number of this funding request
      * @return FundingStatusModel
      */
-    public FundingStatusModel fundingRequestStatus(Int32 id)
+    public FundingStatusModel fundingRequestStatus(int id)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/fundingrequests/{id}");
         path.ApplyField("id", id);
@@ -4510,10 +4510,10 @@ public class AvaTaxClient {
      * Create a new item
      * 
      * @param int companyId The ID of the company that owns this item.
-     * @param ItemModel[] model The item you wish to create.
-     * @return ItemModel[]
+     * @param ArrayList<ItemModel> model The item you wish to create.
+     * @return ArrayList<ItemModel>
      */
-    public List<ItemModel> createItems(Int32 companyId, List<ItemModel> model)
+    public List<ItemModel> createItems(int companyId, ArrayList<ItemModel> model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/items");
         path.ApplyField("companyId", companyId);
@@ -4524,10 +4524,10 @@ public class AvaTaxClient {
      * Create a new item
      * 
      * @param int companyId The ID of the company that owns this item.
-     * @param ItemModel[] model The item you wish to create.
-     * @return ItemModel[]
+     * @param ArrayList<ItemModel> model The item you wish to create.
+     * @return ArrayList<ItemModel>
      */
-    public ItemModel[] createItemsAsync(int companyId, ItemModel[] model)
+    public ArrayList<ItemModel> createItemsAsync(int companyId, ArrayList<ItemModel> model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/items");
         path.ApplyField("companyId", companyId);
@@ -4539,9 +4539,9 @@ public class AvaTaxClient {
      * 
      * @param int companyId The ID of the company that owns this item.
      * @param long id The ID of the item you wish to delete.
-     * @return ErrorDetail[]
+     * @return ArrayList<ErrorDetail>
      */
-    public List<ErrorDetail> deleteItem(Int32 companyId, Int64 id)
+    public List<ErrorDetail> deleteItem(int companyId, long id)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/items/{id}");
         path.ApplyField("companyId", companyId);
@@ -4554,9 +4554,9 @@ public class AvaTaxClient {
      * 
      * @param int companyId The ID of the company that owns this item.
      * @param long id The ID of the item you wish to delete.
-     * @return ErrorDetail[]
+     * @return ArrayList<ErrorDetail>
      */
-    public ErrorDetail[] deleteItemAsync(int companyId, long id)
+    public ArrayList<ErrorDetail> deleteItemAsync(int companyId, long id)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/items/{id}");
         path.ApplyField("companyId", companyId);
@@ -4573,7 +4573,7 @@ public class AvaTaxClient {
      * @param long id The primary key of this item
      * @return ItemModel
      */
-    public ItemModel getItem(Int32 companyId, Int64 id)
+    public ItemModel getItem(int companyId, long id)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/items/{id}");
         path.ApplyField("companyId", companyId);
@@ -4613,9 +4613,9 @@ public class AvaTaxClient {
      * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult
+     * @return FetchResult<HashMap<String, String>>
      */
-    public FetchResult<ItemModel> listItemsByCompany(Int32 companyId, String filter, String include, Int32? top, Int32? skip, String orderBy)
+    public FetchResult<ItemModel> listItemsByCompany(int companyId, String filter, String include, Integer top, Integer skip, String orderBy)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/items");
         path.ApplyField("companyId", companyId);
@@ -4642,9 +4642,9 @@ public class AvaTaxClient {
      * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult
+     * @return FetchResult<HashMap<String, String>>
      */
-    public FetchResult listItemsByCompanyAsync(int companyId, String filter, String include, Integer top, Integer skip, String orderBy)
+    public FetchResult<HashMap<String, String>> listItemsByCompanyAsync(int companyId, String filter, String include, Integer top, Integer skip, String orderBy)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/items");
         path.ApplyField("companyId", companyId);
@@ -4669,9 +4669,9 @@ public class AvaTaxClient {
      * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult
+     * @return FetchResult<HashMap<String, String>>
      */
-    public FetchResult<ItemModel> queryItems(String filter, String include, Int32? top, Int32? skip, String orderBy)
+    public FetchResult<ItemModel> queryItems(String filter, String include, Integer top, Integer skip, String orderBy)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/items");
         path.AddQuery("$filter", filter);
@@ -4695,9 +4695,9 @@ public class AvaTaxClient {
      * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult
+     * @return FetchResult<HashMap<String, String>>
      */
-    public FetchResult queryItemsAsync(String filter, String include, Integer top, Integer skip, String orderBy)
+    public FetchResult<HashMap<String, String>> queryItemsAsync(String filter, String include, Integer top, Integer skip, String orderBy)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/items");
         path.AddQuery("$filter", filter);
@@ -4719,7 +4719,7 @@ public class AvaTaxClient {
      * @param ItemModel model The item object you wish to update.
      * @return ItemModel
      */
-    public ItemModel updateItem(Int32 companyId, Int64 id, ItemModel model)
+    public ItemModel updateItem(int companyId, long id, ItemModel model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/items/{id}");
         path.ApplyField("companyId", companyId);
@@ -4756,10 +4756,10 @@ public class AvaTaxClient {
      * between two different jurisdictions, you can choose to set up a jurisdiction override
      * 
      * @param int accountId The ID of the account that owns this override
-     * @param JurisdictionOverrideModel[] model The jurisdiction override objects to create
-     * @return JurisdictionOverrideModel[]
+     * @param ArrayList<JurisdictionOverrideModel> model The jurisdiction override objects to create
+     * @return ArrayList<JurisdictionOverrideModel>
      */
-    public List<JurisdictionOverrideModel> createJurisdictionOverrides(Int32 accountId, List<JurisdictionOverrideModel> model)
+    public List<JurisdictionOverrideModel> createJurisdictionOverrides(int accountId, ArrayList<JurisdictionOverrideModel> model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/jurisdictionoverrides");
         path.ApplyField("accountId", accountId);
@@ -4776,10 +4776,10 @@ public class AvaTaxClient {
      * between two different jurisdictions, you can choose to set up a jurisdiction override
      * 
      * @param int accountId The ID of the account that owns this override
-     * @param JurisdictionOverrideModel[] model The jurisdiction override objects to create
-     * @return JurisdictionOverrideModel[]
+     * @param ArrayList<JurisdictionOverrideModel> model The jurisdiction override objects to create
+     * @return ArrayList<JurisdictionOverrideModel>
      */
-    public JurisdictionOverrideModel[] createJurisdictionOverridesAsync(int accountId, JurisdictionOverrideModel[] model)
+    public ArrayList<JurisdictionOverrideModel> createJurisdictionOverridesAsync(int accountId, ArrayList<JurisdictionOverrideModel> model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/jurisdictionoverrides");
         path.ApplyField("accountId", accountId);
@@ -4791,9 +4791,9 @@ public class AvaTaxClient {
      * 
      * @param int accountId The ID of the account that owns this override
      * @param int id The ID of the override you wish to delete
-     * @return ErrorDetail[]
+     * @return ArrayList<ErrorDetail>
      */
-    public List<ErrorDetail> deleteJurisdictionOverride(Int32 accountId, Int32 id)
+    public List<ErrorDetail> deleteJurisdictionOverride(int accountId, int id)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/jurisdictionoverrides/{id}");
         path.ApplyField("accountId", accountId);
@@ -4806,9 +4806,9 @@ public class AvaTaxClient {
      * 
      * @param int accountId The ID of the account that owns this override
      * @param int id The ID of the override you wish to delete
-     * @return ErrorDetail[]
+     * @return ArrayList<ErrorDetail>
      */
-    public ErrorDetail[] deleteJurisdictionOverrideAsync(int accountId, int id)
+    public ArrayList<ErrorDetail> deleteJurisdictionOverrideAsync(int accountId, int id)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/jurisdictionoverrides/{id}");
         path.ApplyField("accountId", accountId);
@@ -4829,7 +4829,7 @@ public class AvaTaxClient {
      * @param int id The primary key of this override
      * @return JurisdictionOverrideModel
      */
-    public JurisdictionOverrideModel getJurisdictionOverride(Int32 accountId, Int32 id)
+    public JurisdictionOverrideModel getJurisdictionOverride(int accountId, int id)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/jurisdictionoverrides/{id}");
         path.ApplyField("accountId", accountId);
@@ -4876,9 +4876,9 @@ public class AvaTaxClient {
      * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult
+     * @return FetchResult<HashMap<String, String>>
      */
-    public FetchResult<JurisdictionOverrideModel> listJurisdictionOverridesByAccount(Int32 accountId, String filter, String include, Int32? top, Int32? skip, String orderBy)
+    public FetchResult<JurisdictionOverrideModel> listJurisdictionOverridesByAccount(int accountId, String filter, String include, Integer top, Integer skip, String orderBy)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/jurisdictionoverrides");
         path.ApplyField("accountId", accountId);
@@ -4908,9 +4908,9 @@ public class AvaTaxClient {
      * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult
+     * @return FetchResult<HashMap<String, String>>
      */
-    public FetchResult listJurisdictionOverridesByAccountAsync(int accountId, String filter, String include, Integer top, Integer skip, String orderBy)
+    public FetchResult<HashMap<String, String>> listJurisdictionOverridesByAccountAsync(int accountId, String filter, String include, Integer top, Integer skip, String orderBy)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/jurisdictionoverrides");
         path.ApplyField("accountId", accountId);
@@ -4939,9 +4939,9 @@ public class AvaTaxClient {
      * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult
+     * @return FetchResult<HashMap<String, String>>
      */
-    public FetchResult<JurisdictionOverrideModel> queryJurisdictionOverrides(String filter, String include, Int32? top, Int32? skip, String orderBy)
+    public FetchResult<JurisdictionOverrideModel> queryJurisdictionOverrides(String filter, String include, Integer top, Integer skip, String orderBy)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/jurisdictionoverrides");
         path.AddQuery("$filter", filter);
@@ -4969,9 +4969,9 @@ public class AvaTaxClient {
      * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult
+     * @return FetchResult<HashMap<String, String>>
      */
-    public FetchResult queryJurisdictionOverridesAsync(String filter, String include, Integer top, Integer skip, String orderBy)
+    public FetchResult<HashMap<String, String>> queryJurisdictionOverridesAsync(String filter, String include, Integer top, Integer skip, String orderBy)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/jurisdictionoverrides");
         path.AddQuery("$filter", filter);
@@ -4990,7 +4990,7 @@ public class AvaTaxClient {
      * @param JurisdictionOverrideModel model The jurisdictionoverride object you wish to update.
      * @return JurisdictionOverrideModel
      */
-    public JurisdictionOverrideModel updateJurisdictionOverride(Int32 accountId, Int32 id, JurisdictionOverrideModel model)
+    public JurisdictionOverrideModel updateJurisdictionOverride(int accountId, int id, JurisdictionOverrideModel model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/jurisdictionoverrides/{id}");
         path.ApplyField("accountId", accountId);
@@ -5029,9 +5029,9 @@ public class AvaTaxClient {
      * @param PointOfSaleFileType format The format of the file (JSON by default) (See PointOfSaleFileType::* for a list of allowable values)
      * @param PointOfSalePartnerId partnerId If specified, requests a custom partner-formatted version of the file. (See PointOfSalePartnerId::* for a list of allowable values)
      * @param Boolean includeJurisCodes When true, the file will include jurisdiction codes in the result.
-     * @return object
+     * @return HashMap<String, String>
      */
-    public FileResult buildPointOfSaleDataForLocation(Int32 companyId, Int32 id, DateTime? date, PointOfSaleFileType? format, PointOfSalePartnerId? partnerId, Boolean? includeJurisCodes)
+    public FileResult buildPointOfSaleDataForLocation(int companyId, int id, Date date, PointOfSaleFileType format, PointOfSalePartnerId partnerId, Boolean includeJurisCodes)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/locations/{id}/pointofsaledata");
         path.ApplyField("companyId", companyId);
@@ -5058,9 +5058,9 @@ public class AvaTaxClient {
      * @param PointOfSaleFileType format The format of the file (JSON by default) (See PointOfSaleFileType::* for a list of allowable values)
      * @param PointOfSalePartnerId partnerId If specified, requests a custom partner-formatted version of the file. (See PointOfSalePartnerId::* for a list of allowable values)
      * @param Boolean includeJurisCodes When true, the file will include jurisdiction codes in the result.
-     * @return object
+     * @return HashMap<String, String>
      */
-    public object buildPointOfSaleDataForLocationAsync(int companyId, int id, Date date, PointOfSaleFileType format, PointOfSalePartnerId partnerId, Boolean includeJurisCodes)
+    public HashMap<String, String> buildPointOfSaleDataForLocationAsync(int companyId, int id, Date date, PointOfSaleFileType format, PointOfSalePartnerId partnerId, Boolean includeJurisCodes)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/locations/{id}/pointofsaledata");
         path.ApplyField("companyId", companyId);
@@ -5076,10 +5076,10 @@ public class AvaTaxClient {
      * Create a new location
      * 
      * @param int companyId The ID of the company that owns this location.
-     * @param LocationModel[] model The location you wish to create.
-     * @return LocationModel[]
+     * @param ArrayList<LocationModel> model The location you wish to create.
+     * @return ArrayList<LocationModel>
      */
-    public List<LocationModel> createLocations(Int32 companyId, List<LocationModel> model)
+    public List<LocationModel> createLocations(int companyId, ArrayList<LocationModel> model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/locations");
         path.ApplyField("companyId", companyId);
@@ -5090,10 +5090,10 @@ public class AvaTaxClient {
      * Create a new location
      * 
      * @param int companyId The ID of the company that owns this location.
-     * @param LocationModel[] model The location you wish to create.
-     * @return LocationModel[]
+     * @param ArrayList<LocationModel> model The location you wish to create.
+     * @return ArrayList<LocationModel>
      */
-    public LocationModel[] createLocationsAsync(int companyId, LocationModel[] model)
+    public ArrayList<LocationModel> createLocationsAsync(int companyId, ArrayList<LocationModel> model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/locations");
         path.ApplyField("companyId", companyId);
@@ -5105,9 +5105,9 @@ public class AvaTaxClient {
      * 
      * @param int companyId The ID of the company that owns this location.
      * @param int id The ID of the location you wish to delete.
-     * @return ErrorDetail[]
+     * @return ArrayList<ErrorDetail>
      */
-    public List<ErrorDetail> deleteLocation(Int32 companyId, Int32 id)
+    public List<ErrorDetail> deleteLocation(int companyId, int id)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/locations/{id}");
         path.ApplyField("companyId", companyId);
@@ -5120,9 +5120,9 @@ public class AvaTaxClient {
      * 
      * @param int companyId The ID of the company that owns this location.
      * @param int id The ID of the location you wish to delete.
-     * @return ErrorDetail[]
+     * @return ArrayList<ErrorDetail>
      */
-    public ErrorDetail[] deleteLocationAsync(int companyId, int id)
+    public ArrayList<ErrorDetail> deleteLocationAsync(int companyId, int id)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/locations/{id}");
         path.ApplyField("companyId", companyId);
@@ -5142,7 +5142,7 @@ public class AvaTaxClient {
      * @param int id The primary key of this location
      * @return LocationModel
      */
-    public LocationModel getLocation(Int32 companyId, Int32 id)
+    public LocationModel getLocation(int companyId, int id)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/locations/{id}");
         path.ApplyField("companyId", companyId);
@@ -5187,9 +5187,9 @@ public class AvaTaxClient {
      * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult
+     * @return FetchResult<HashMap<String, String>>
      */
-    public FetchResult<LocationModel> listLocationsByCompany(Int32 companyId, String filter, String include, Int32? top, Int32? skip, String orderBy)
+    public FetchResult<LocationModel> listLocationsByCompany(int companyId, String filter, String include, Integer top, Integer skip, String orderBy)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/locations");
         path.ApplyField("companyId", companyId);
@@ -5218,9 +5218,9 @@ public class AvaTaxClient {
      * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult
+     * @return FetchResult<HashMap<String, String>>
      */
-    public FetchResult listLocationsByCompanyAsync(int companyId, String filter, String include, Integer top, Integer skip, String orderBy)
+    public FetchResult<HashMap<String, String>> listLocationsByCompanyAsync(int companyId, String filter, String include, Integer top, Integer skip, String orderBy)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/locations");
         path.ApplyField("companyId", companyId);
@@ -5248,9 +5248,9 @@ public class AvaTaxClient {
      * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult
+     * @return FetchResult<HashMap<String, String>>
      */
-    public FetchResult<LocationModel> queryLocations(String filter, String include, Int32? top, Int32? skip, String orderBy)
+    public FetchResult<LocationModel> queryLocations(String filter, String include, Integer top, Integer skip, String orderBy)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/locations");
         path.AddQuery("$filter", filter);
@@ -5277,9 +5277,9 @@ public class AvaTaxClient {
      * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult
+     * @return FetchResult<HashMap<String, String>>
      */
-    public FetchResult queryLocationsAsync(String filter, String include, Integer top, Integer skip, String orderBy)
+    public FetchResult<HashMap<String, String>> queryLocationsAsync(String filter, String include, Integer top, Integer skip, String orderBy)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/locations");
         path.AddQuery("$filter", filter);
@@ -5301,7 +5301,7 @@ public class AvaTaxClient {
      * @param LocationModel model The location you wish to update.
      * @return LocationModel
      */
-    public LocationModel updateLocation(Int32 companyId, Int32 id, LocationModel model)
+    public LocationModel updateLocation(int companyId, int id, LocationModel model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/locations/{id}");
         path.ApplyField("companyId", companyId);
@@ -5338,7 +5338,7 @@ public class AvaTaxClient {
      * @param int id The primary key of this location
      * @return LocationValidationModel
      */
-    public LocationValidationModel validateLocation(Int32 companyId, Int32 id)
+    public LocationValidationModel validateLocation(int companyId, int id)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/locations/{id}/validate");
         path.ApplyField("companyId", companyId);
@@ -5376,10 +5376,10 @@ public class AvaTaxClient {
      * '/api/v2/definitions/nexus' endpoint.
      * 
      * @param int companyId The ID of the company that owns this nexus.
-     * @param NexusModel[] model The nexus you wish to create.
-     * @return NexusModel[]
+     * @param ArrayList<NexusModel> model The nexus you wish to create.
+     * @return ArrayList<NexusModel>
      */
-    public List<NexusModel> createNexus(Int32 companyId, List<NexusModel> model)
+    public List<NexusModel> createNexus(int companyId, ArrayList<NexusModel> model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/nexus");
         path.ApplyField("companyId", companyId);
@@ -5398,10 +5398,10 @@ public class AvaTaxClient {
      * '/api/v2/definitions/nexus' endpoint.
      * 
      * @param int companyId The ID of the company that owns this nexus.
-     * @param NexusModel[] model The nexus you wish to create.
-     * @return NexusModel[]
+     * @param ArrayList<NexusModel> model The nexus you wish to create.
+     * @return ArrayList<NexusModel>
      */
-    public NexusModel[] createNexusAsync(int companyId, NexusModel[] model)
+    public ArrayList<NexusModel> createNexusAsync(int companyId, ArrayList<NexusModel> model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/nexus");
         path.ApplyField("companyId", companyId);
@@ -5413,9 +5413,9 @@ public class AvaTaxClient {
      * 
      * @param int companyId The ID of the company that owns this nexus.
      * @param int id The ID of the nexus you wish to delete.
-     * @return ErrorDetail[]
+     * @return ArrayList<ErrorDetail>
      */
-    public List<ErrorDetail> deleteNexus(Int32 companyId, Int32 id)
+    public List<ErrorDetail> deleteNexus(int companyId, int id)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/nexus/{id}");
         path.ApplyField("companyId", companyId);
@@ -5428,9 +5428,9 @@ public class AvaTaxClient {
      * 
      * @param int companyId The ID of the company that owns this nexus.
      * @param int id The ID of the nexus you wish to delete.
-     * @return ErrorDetail[]
+     * @return ArrayList<ErrorDetail>
      */
-    public ErrorDetail[] deleteNexusAsync(int companyId, int id)
+    public ArrayList<ErrorDetail> deleteNexusAsync(int companyId, int id)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/nexus/{id}");
         path.ApplyField("companyId", companyId);
@@ -5450,7 +5450,7 @@ public class AvaTaxClient {
      * @param int id The primary key of this nexus
      * @return NexusModel
      */
-    public NexusModel getNexus(Int32 companyId, Int32 id)
+    public NexusModel getNexus(int companyId, int id)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/nexus/{id}");
         path.ApplyField("companyId", companyId);
@@ -5496,7 +5496,7 @@ public class AvaTaxClient {
      * @param String formCode The form code that we are looking up the nexus for
      * @return NexusByTaxFormModel
      */
-    public NexusByTaxFormModel getNexusByFormCode(Int32 companyId, String formCode)
+    public NexusByTaxFormModel getNexusByFormCode(int companyId, String formCode)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/nexus/byform/{formCode}");
         path.ApplyField("companyId", companyId);
@@ -5547,9 +5547,9 @@ public class AvaTaxClient {
      * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult
+     * @return FetchResult<HashMap<String, String>>
      */
-    public FetchResult<NexusModel> listNexusByCompany(Int32 companyId, String filter, String include, Int32? top, Int32? skip, String orderBy)
+    public FetchResult<NexusModel> listNexusByCompany(int companyId, String filter, String include, Integer top, Integer skip, String orderBy)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/nexus");
         path.ApplyField("companyId", companyId);
@@ -5578,9 +5578,9 @@ public class AvaTaxClient {
      * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult
+     * @return FetchResult<HashMap<String, String>>
      */
-    public FetchResult listNexusByCompanyAsync(int companyId, String filter, String include, Integer top, Integer skip, String orderBy)
+    public FetchResult<HashMap<String, String>> listNexusByCompanyAsync(int companyId, String filter, String include, Integer top, Integer skip, String orderBy)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/nexus");
         path.ApplyField("companyId", companyId);
@@ -5608,9 +5608,9 @@ public class AvaTaxClient {
      * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult
+     * @return FetchResult<HashMap<String, String>>
      */
-    public FetchResult<NexusModel> queryNexus(String filter, String include, Int32? top, Int32? skip, String orderBy)
+    public FetchResult<NexusModel> queryNexus(String filter, String include, Integer top, Integer skip, String orderBy)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/nexus");
         path.AddQuery("$filter", filter);
@@ -5637,9 +5637,9 @@ public class AvaTaxClient {
      * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult
+     * @return FetchResult<HashMap<String, String>>
      */
-    public FetchResult queryNexusAsync(String filter, String include, Integer top, Integer skip, String orderBy)
+    public FetchResult<HashMap<String, String>> queryNexusAsync(String filter, String include, Integer top, Integer skip, String orderBy)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/nexus");
         path.AddQuery("$filter", filter);
@@ -5668,7 +5668,7 @@ public class AvaTaxClient {
      * @param NexusModel model The nexus object you wish to update.
      * @return NexusModel
      */
-    public NexusModel updateNexus(Int32 companyId, Int32 id, NexusModel model)
+    public NexusModel updateNexus(int companyId, int id, NexusModel model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/nexus/{id}");
         path.ApplyField("companyId", companyId);
@@ -5711,10 +5711,10 @@ public class AvaTaxClient {
      * 
      * @param int companyId The ID of the company that owns this notice.
      * @param int id The ID of the tax notice we are adding the comment for.
-     * @param NoticeCommentModel[] model The notice comments you wish to create.
-     * @return NoticeCommentModel[]
+     * @param ArrayList<NoticeCommentModel> model The notice comments you wish to create.
+     * @return ArrayList<NoticeCommentModel>
      */
-    public List<NoticeCommentModel> createNoticeComment(Int32 companyId, Int32 id, List<NoticeCommentModel> model)
+    public List<NoticeCommentModel> createNoticeComment(int companyId, int id, ArrayList<NoticeCommentModel> model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/{id}/comments");
         path.ApplyField("companyId", companyId);
@@ -5731,10 +5731,10 @@ public class AvaTaxClient {
      * 
      * @param int companyId The ID of the company that owns this notice.
      * @param int id The ID of the tax notice we are adding the comment for.
-     * @param NoticeCommentModel[] model The notice comments you wish to create.
-     * @return NoticeCommentModel[]
+     * @param ArrayList<NoticeCommentModel> model The notice comments you wish to create.
+     * @return ArrayList<NoticeCommentModel>
      */
-    public NoticeCommentModel[] createNoticeCommentAsync(int companyId, int id, NoticeCommentModel[] model)
+    public ArrayList<NoticeCommentModel> createNoticeCommentAsync(int companyId, int id, ArrayList<NoticeCommentModel> model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/{id}/comments");
         path.ApplyField("companyId", companyId);
@@ -5752,10 +5752,10 @@ public class AvaTaxClient {
      * 
      * @param int companyId The ID of the company that owns this notice.
      * @param int id The ID of the notice added to the finance details.
-     * @param NoticeFinanceModel[] model The notice finance details you wish to create.
-     * @return NoticeFinanceModel[]
+     * @param ArrayList<NoticeFinanceModel> model The notice finance details you wish to create.
+     * @return ArrayList<NoticeFinanceModel>
      */
-    public List<NoticeFinanceModel> createNoticeFinanceDetails(Int32 companyId, Int32 id, List<NoticeFinanceModel> model)
+    public List<NoticeFinanceModel> createNoticeFinanceDetails(int companyId, int id, ArrayList<NoticeFinanceModel> model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/{id}/financedetails");
         path.ApplyField("companyId", companyId);
@@ -5773,10 +5773,10 @@ public class AvaTaxClient {
      * 
      * @param int companyId The ID of the company that owns this notice.
      * @param int id The ID of the notice added to the finance details.
-     * @param NoticeFinanceModel[] model The notice finance details you wish to create.
-     * @return NoticeFinanceModel[]
+     * @param ArrayList<NoticeFinanceModel> model The notice finance details you wish to create.
+     * @return ArrayList<NoticeFinanceModel>
      */
-    public NoticeFinanceModel[] createNoticeFinanceDetailsAsync(int companyId, int id, NoticeFinanceModel[] model)
+    public ArrayList<NoticeFinanceModel> createNoticeFinanceDetailsAsync(int companyId, int id, ArrayList<NoticeFinanceModel> model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/{id}/financedetails");
         path.ApplyField("companyId", companyId);
@@ -5793,10 +5793,10 @@ public class AvaTaxClient {
      * 
      * @param int companyId The ID of the company that owns this notice.
      * @param int id The ID of the tax notice we are adding the responsibility for.
-     * @param NoticeResponsibilityDetailModel[] model The notice responsibilities you wish to create.
-     * @return NoticeResponsibilityDetailModel[]
+     * @param ArrayList<NoticeResponsibilityDetailModel> model The notice responsibilities you wish to create.
+     * @return ArrayList<NoticeResponsibilityDetailModel>
      */
-    public List<NoticeResponsibilityDetailModel> createNoticeResponsibilities(Int32 companyId, Int32 id, List<NoticeResponsibilityDetailModel> model)
+    public List<NoticeResponsibilityDetailModel> createNoticeResponsibilities(int companyId, int id, ArrayList<NoticeResponsibilityDetailModel> model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/{id}/responsibilities");
         path.ApplyField("companyId", companyId);
@@ -5813,10 +5813,10 @@ public class AvaTaxClient {
      * 
      * @param int companyId The ID of the company that owns this notice.
      * @param int id The ID of the tax notice we are adding the responsibility for.
-     * @param NoticeResponsibilityDetailModel[] model The notice responsibilities you wish to create.
-     * @return NoticeResponsibilityDetailModel[]
+     * @param ArrayList<NoticeResponsibilityDetailModel> model The notice responsibilities you wish to create.
+     * @return ArrayList<NoticeResponsibilityDetailModel>
      */
-    public NoticeResponsibilityDetailModel[] createNoticeResponsibilitiesAsync(int companyId, int id, NoticeResponsibilityDetailModel[] model)
+    public ArrayList<NoticeResponsibilityDetailModel> createNoticeResponsibilitiesAsync(int companyId, int id, ArrayList<NoticeResponsibilityDetailModel> model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/{id}/responsibilities");
         path.ApplyField("companyId", companyId);
@@ -5833,10 +5833,10 @@ public class AvaTaxClient {
      * 
      * @param int companyId The ID of the company that owns this notice.
      * @param int id The ID of the tax notice we are adding the responsibility for.
-     * @param NoticeRootCauseDetailModel[] model The notice root causes you wish to create.
-     * @return NoticeRootCauseDetailModel[]
+     * @param ArrayList<NoticeRootCauseDetailModel> model The notice root causes you wish to create.
+     * @return ArrayList<NoticeRootCauseDetailModel>
      */
-    public List<NoticeRootCauseDetailModel> createNoticeRootCauses(Int32 companyId, Int32 id, List<NoticeRootCauseDetailModel> model)
+    public List<NoticeRootCauseDetailModel> createNoticeRootCauses(int companyId, int id, ArrayList<NoticeRootCauseDetailModel> model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/{id}/rootcauses");
         path.ApplyField("companyId", companyId);
@@ -5853,10 +5853,10 @@ public class AvaTaxClient {
      * 
      * @param int companyId The ID of the company that owns this notice.
      * @param int id The ID of the tax notice we are adding the responsibility for.
-     * @param NoticeRootCauseDetailModel[] model The notice root causes you wish to create.
-     * @return NoticeRootCauseDetailModel[]
+     * @param ArrayList<NoticeRootCauseDetailModel> model The notice root causes you wish to create.
+     * @return ArrayList<NoticeRootCauseDetailModel>
      */
-    public NoticeRootCauseDetailModel[] createNoticeRootCausesAsync(int companyId, int id, NoticeRootCauseDetailModel[] model)
+    public ArrayList<NoticeRootCauseDetailModel> createNoticeRootCausesAsync(int companyId, int id, ArrayList<NoticeRootCauseDetailModel> model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/{id}/rootcauses");
         path.ApplyField("companyId", companyId);
@@ -5872,10 +5872,10 @@ public class AvaTaxClient {
      * A 'notice' represents a letter sent to a business by a tax authority regarding tax filing issues.  Avalara
      * 
      * @param int companyId The ID of the company that owns this notice.
-     * @param NoticeModel[] model The notice object you wish to create.
-     * @return NoticeModel[]
+     * @param ArrayList<NoticeModel> model The notice object you wish to create.
+     * @return ArrayList<NoticeModel>
      */
-    public List<NoticeModel> createNotices(Int32 companyId, List<NoticeModel> model)
+    public List<NoticeModel> createNotices(int companyId, ArrayList<NoticeModel> model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices");
         path.ApplyField("companyId", companyId);
@@ -5890,10 +5890,10 @@ public class AvaTaxClient {
      * A 'notice' represents a letter sent to a business by a tax authority regarding tax filing issues.  Avalara
      * 
      * @param int companyId The ID of the company that owns this notice.
-     * @param NoticeModel[] model The notice object you wish to create.
-     * @return NoticeModel[]
+     * @param ArrayList<NoticeModel> model The notice object you wish to create.
+     * @return ArrayList<NoticeModel>
      */
-    public NoticeModel[] createNoticesAsync(int companyId, NoticeModel[] model)
+    public ArrayList<NoticeModel> createNoticesAsync(int companyId, ArrayList<NoticeModel> model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices");
         path.ApplyField("companyId", companyId);
@@ -5909,9 +5909,9 @@ public class AvaTaxClient {
      * 
      * @param int companyId The ID of the company that owns this notice.
      * @param int id The ID of the notice you wish to delete.
-     * @return ErrorDetail[]
+     * @return ArrayList<ErrorDetail>
      */
-    public List<ErrorDetail> deleteNotice(Int32 companyId, Int32 id)
+    public List<ErrorDetail> deleteNotice(int companyId, int id)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/{id}");
         path.ApplyField("companyId", companyId);
@@ -5928,9 +5928,9 @@ public class AvaTaxClient {
      * 
      * @param int companyId The ID of the company that owns this notice.
      * @param int id The ID of the notice you wish to delete.
-     * @return ErrorDetail[]
+     * @return ArrayList<ErrorDetail>
      */
-    public ErrorDetail[] deleteNoticeAsync(int companyId, int id)
+    public ArrayList<ErrorDetail> deleteNoticeAsync(int companyId, int id)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/{id}");
         path.ApplyField("companyId", companyId);
@@ -5945,9 +5945,9 @@ public class AvaTaxClient {
      * 
      * @param int companyId The ID of the company for this attachment.
      * @param long id The ResourceFileId of the attachment to download.
-     * @return object
+     * @return HashMap<String, String>
      */
-    public FileResult downloadNoticeAttachment(Int32 companyId, Int64 id)
+    public FileResult downloadNoticeAttachment(int companyId, long id)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/files/{id}/attachment");
         path.ApplyField("companyId", companyId);
@@ -5962,9 +5962,9 @@ public class AvaTaxClient {
      * 
      * @param int companyId The ID of the company for this attachment.
      * @param long id The ResourceFileId of the attachment to download.
-     * @return object
+     * @return HashMap<String, String>
      */
-    public object downloadNoticeAttachmentAsync(int companyId, long id)
+    public HashMap<String, String> downloadNoticeAttachmentAsync(int companyId, long id)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/files/{id}/attachment");
         path.ApplyField("companyId", companyId);
@@ -5983,7 +5983,7 @@ public class AvaTaxClient {
      * @param int id The ID of this notice.
      * @return NoticeModel
      */
-    public NoticeModel getNotice(Int32 companyId, Int32 id)
+    public NoticeModel getNotice(int companyId, int id)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/{id}");
         path.ApplyField("companyId", companyId);
@@ -6019,9 +6019,9 @@ public class AvaTaxClient {
      * 
      * @param int id The ID of the notice.
      * @param int companyId The ID of the company that owns these notices.
-     * @return FetchResult
+     * @return FetchResult<HashMap<String, String>>
      */
-    public FetchResult<NoticeCommentModel> getNoticeComments(Int32 id, Int32 companyId)
+    public FetchResult<NoticeCommentModel> getNoticeComments(int id, int companyId)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/{id}/comments");
         path.ApplyField("id", id);
@@ -6038,9 +6038,9 @@ public class AvaTaxClient {
      * 
      * @param int id The ID of the notice.
      * @param int companyId The ID of the company that owns these notices.
-     * @return FetchResult
+     * @return FetchResult<HashMap<String, String>>
      */
-    public FetchResult getNoticeCommentsAsync(int id, int companyId)
+    public FetchResult<HashMap<String, String>> getNoticeCommentsAsync(int id, int companyId)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/{id}/comments");
         path.ApplyField("id", id);
@@ -6058,9 +6058,9 @@ public class AvaTaxClient {
      * 
      * @param int id The ID of the company that owns these notices.
      * @param int companyId The ID of the company that owns these notices.
-     * @return FetchResult
+     * @return FetchResult<HashMap<String, String>>
      */
-    public FetchResult<NoticeFinanceModel> getNoticeFinanceDetails(Int32 id, Int32 companyId)
+    public FetchResult<NoticeFinanceModel> getNoticeFinanceDetails(int id, int companyId)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/{id}/financedetails");
         path.ApplyField("id", id);
@@ -6078,9 +6078,9 @@ public class AvaTaxClient {
      * 
      * @param int id The ID of the company that owns these notices.
      * @param int companyId The ID of the company that owns these notices.
-     * @return FetchResult
+     * @return FetchResult<HashMap<String, String>>
      */
-    public FetchResult getNoticeFinanceDetailsAsync(int id, int companyId)
+    public FetchResult<HashMap<String, String>> getNoticeFinanceDetailsAsync(int id, int companyId)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/{id}/financedetails");
         path.ApplyField("id", id);
@@ -6097,9 +6097,9 @@ public class AvaTaxClient {
      * 
      * @param int id The ID of the notice.
      * @param int companyId The ID of the company that owns these notices.
-     * @return FetchResult
+     * @return FetchResult<HashMap<String, String>>
      */
-    public FetchResult<NoticeResponsibilityDetailModel> getNoticeResponsibilities(Int32 id, Int32 companyId)
+    public FetchResult<NoticeResponsibilityDetailModel> getNoticeResponsibilities(int id, int companyId)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/{id}/responsibilities");
         path.ApplyField("id", id);
@@ -6116,9 +6116,9 @@ public class AvaTaxClient {
      * 
      * @param int id The ID of the notice.
      * @param int companyId The ID of the company that owns these notices.
-     * @return FetchResult
+     * @return FetchResult<HashMap<String, String>>
      */
-    public FetchResult getNoticeResponsibilitiesAsync(int id, int companyId)
+    public FetchResult<HashMap<String, String>> getNoticeResponsibilitiesAsync(int id, int companyId)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/{id}/responsibilities");
         path.ApplyField("id", id);
@@ -6135,9 +6135,9 @@ public class AvaTaxClient {
      * 
      * @param int id The ID of the notice.
      * @param int companyId The ID of the company that owns these notices.
-     * @return FetchResult
+     * @return FetchResult<HashMap<String, String>>
      */
-    public FetchResult<NoticeRootCauseDetailModel> getNoticeRootCauses(Int32 id, Int32 companyId)
+    public FetchResult<NoticeRootCauseDetailModel> getNoticeRootCauses(int id, int companyId)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/{id}/rootcauses");
         path.ApplyField("id", id);
@@ -6154,9 +6154,9 @@ public class AvaTaxClient {
      * 
      * @param int id The ID of the notice.
      * @param int companyId The ID of the company that owns these notices.
-     * @return FetchResult
+     * @return FetchResult<HashMap<String, String>>
      */
-    public FetchResult getNoticeRootCausesAsync(int id, int companyId)
+    public FetchResult<HashMap<String, String>> getNoticeRootCausesAsync(int id, int companyId)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/{id}/rootcauses");
         path.ApplyField("id", id);
@@ -6180,9 +6180,9 @@ public class AvaTaxClient {
      * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult
+     * @return FetchResult<HashMap<String, String>>
      */
-    public FetchResult<NoticeModel> listNoticesByCompany(Int32 companyId, String filter, String include, Int32? top, Int32? skip, String orderBy)
+    public FetchResult<NoticeModel> listNoticesByCompany(int companyId, String filter, String include, Integer top, Integer skip, String orderBy)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices");
         path.ApplyField("companyId", companyId);
@@ -6210,9 +6210,9 @@ public class AvaTaxClient {
      * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult
+     * @return FetchResult<HashMap<String, String>>
      */
-    public FetchResult listNoticesByCompanyAsync(int companyId, String filter, String include, Integer top, Integer skip, String orderBy)
+    public FetchResult<HashMap<String, String>> listNoticesByCompanyAsync(int companyId, String filter, String include, Integer top, Integer skip, String orderBy)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices");
         path.ApplyField("companyId", companyId);
@@ -6239,9 +6239,9 @@ public class AvaTaxClient {
      * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult
+     * @return FetchResult<HashMap<String, String>>
      */
-    public FetchResult<NoticeModel> queryNotices(String filter, String include, Int32? top, Int32? skip, String orderBy)
+    public FetchResult<NoticeModel> queryNotices(String filter, String include, Integer top, Integer skip, String orderBy)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/notices");
         path.AddQuery("$filter", filter);
@@ -6267,9 +6267,9 @@ public class AvaTaxClient {
      * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult
+     * @return FetchResult<HashMap<String, String>>
      */
-    public FetchResult queryNoticesAsync(String filter, String include, Integer top, Integer skip, String orderBy)
+    public FetchResult<HashMap<String, String>> queryNoticesAsync(String filter, String include, Integer top, Integer skip, String orderBy)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/notices");
         path.AddQuery("$filter", filter);
@@ -6294,7 +6294,7 @@ public class AvaTaxClient {
      * @param NoticeModel model The notice object you wish to update.
      * @return NoticeModel
      */
-    public NoticeModel updateNotice(Int32 companyId, Int32 id, NoticeModel model)
+    public NoticeModel updateNotice(int companyId, int id, NoticeModel model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/{id}");
         path.ApplyField("companyId", companyId);
@@ -6331,9 +6331,9 @@ public class AvaTaxClient {
      * 
      * @param int companyId The ID of the company for this attachment.
      * @param ResourceFileUploadRequestModel model The ResourceFileId of the attachment to download.
-     * @return object
+     * @return HashMap<String, String>
      */
-    public FileResult uploadAttachment(Int32 companyId, ResourceFileUploadRequestModel model)
+    public FileResult uploadAttachment(int companyId, ResourceFileUploadRequestModel model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/files/attachment");
         path.ApplyField("companyId", companyId);
@@ -6347,9 +6347,9 @@ public class AvaTaxClient {
      * 
      * @param int companyId The ID of the company for this attachment.
      * @param ResourceFileUploadRequestModel model The ResourceFileId of the attachment to download.
-     * @return object
+     * @return HashMap<String, String>
      */
-    public object uploadAttachmentAsync(int companyId, ResourceFileUploadRequestModel model)
+    public HashMap<String, String> uploadAttachmentAsync(int companyId, ResourceFileUploadRequestModel model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/files/attachment");
         path.ApplyField("companyId", companyId);
@@ -6397,7 +6397,7 @@ public class AvaTaxClient {
      * The result of this API is the file you requested in the format you requested using the 'responseType' field.
      * 
      * @param PointOfSaleDataRequestModel model Parameters about the desired file format and report format, specifying which company, locations and TaxCodes to include.
-     * @return object
+     * @return HashMap<String, String>
      */
     public FileResult buildPointOfSaleDataFile(PointOfSaleDataRequestModel model)
     {
@@ -6414,9 +6414,9 @@ public class AvaTaxClient {
      * The result of this API is the file you requested in the format you requested using the 'responseType' field.
      * 
      * @param PointOfSaleDataRequestModel model Parameters about the desired file format and report format, specifying which company, locations and TaxCodes to include.
-     * @return object
+     * @return HashMap<String, String>
      */
-    public object buildPointOfSaleDataFileAsync(PointOfSaleDataRequestModel model)
+    public HashMap<String, String> buildPointOfSaleDataFileAsync(PointOfSaleDataRequestModel model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/pointofsaledata/build");
         return ((RestCall<FileResult>)restCallFactory.createRestCall("Post", path, model, new TypeToken<FileResult>(){})).call();
@@ -6502,10 +6502,10 @@ public class AvaTaxClient {
      * A 'subscription' indicates a licensed subscription to a named Avalara service.
      * 
      * @param int accountId The ID of the account that owns this subscription.
-     * @param SubscriptionModel[] model The subscription you wish to create.
-     * @return SubscriptionModel[]
+     * @param ArrayList<SubscriptionModel> model The subscription you wish to create.
+     * @return ArrayList<SubscriptionModel>
      */
-    public List<SubscriptionModel> createSubscriptions(Int32 accountId, List<SubscriptionModel> model)
+    public List<SubscriptionModel> createSubscriptions(int accountId, ArrayList<SubscriptionModel> model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/subscriptions");
         path.ApplyField("accountId", accountId);
@@ -6522,10 +6522,10 @@ public class AvaTaxClient {
      * A 'subscription' indicates a licensed subscription to a named Avalara service.
      * 
      * @param int accountId The ID of the account that owns this subscription.
-     * @param SubscriptionModel[] model The subscription you wish to create.
-     * @return SubscriptionModel[]
+     * @param ArrayList<SubscriptionModel> model The subscription you wish to create.
+     * @return ArrayList<SubscriptionModel>
      */
-    public SubscriptionModel[] createSubscriptionsAsync(int accountId, SubscriptionModel[] model)
+    public ArrayList<SubscriptionModel> createSubscriptionsAsync(int accountId, ArrayList<SubscriptionModel> model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/subscriptions");
         path.ApplyField("accountId", accountId);
@@ -6541,10 +6541,10 @@ public class AvaTaxClient {
      * Create one or more new user objects attached to this account.
      * 
      * @param int accountId The unique ID number of the account where these users will be created.
-     * @param UserModel[] model The user or array of users you wish to create.
-     * @return UserModel[]
+     * @param ArrayList<UserModel> model The user or array of users you wish to create.
+     * @return ArrayList<UserModel>
      */
-    public List<UserModel> createUsers(Int32 accountId, List<UserModel> model)
+    public List<UserModel> createUsers(int accountId, ArrayList<UserModel> model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/users");
         path.ApplyField("accountId", accountId);
@@ -6560,10 +6560,10 @@ public class AvaTaxClient {
      * Create one or more new user objects attached to this account.
      * 
      * @param int accountId The unique ID number of the account where these users will be created.
-     * @param UserModel[] model The user or array of users you wish to create.
-     * @return UserModel[]
+     * @param ArrayList<UserModel> model The user or array of users you wish to create.
+     * @return ArrayList<UserModel>
      */
-    public UserModel[] createUsersAsync(int accountId, UserModel[] model)
+    public ArrayList<UserModel> createUsersAsync(int accountId, ArrayList<UserModel> model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/users");
         path.ApplyField("accountId", accountId);
@@ -6579,9 +6579,9 @@ public class AvaTaxClient {
      * Delete an account.
      * 
      * @param int id The ID of the account you wish to delete.
-     * @return ErrorDetail[]
+     * @return ArrayList<ErrorDetail>
      */
-    public List<ErrorDetail> deleteAccount(Int32 id)
+    public List<ErrorDetail> deleteAccount(int id)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{id}");
         path.ApplyField("id", id);
@@ -6597,9 +6597,9 @@ public class AvaTaxClient {
      * Delete an account.
      * 
      * @param int id The ID of the account you wish to delete.
-     * @return ErrorDetail[]
+     * @return ArrayList<ErrorDetail>
      */
-    public ErrorDetail[] deleteAccountAsync(int id)
+    public ArrayList<ErrorDetail> deleteAccountAsync(int id)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{id}");
         path.ApplyField("id", id);
@@ -6615,9 +6615,9 @@ public class AvaTaxClient {
      * 
      * @param int accountId The ID of the account that owns this subscription.
      * @param int id The ID of the subscription you wish to delete.
-     * @return ErrorDetail[]
+     * @return ArrayList<ErrorDetail>
      */
-    public List<ErrorDetail> deleteSubscription(Int32 accountId, Int32 id)
+    public List<ErrorDetail> deleteSubscription(int accountId, int id)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/subscriptions/{id}");
         path.ApplyField("accountId", accountId);
@@ -6634,9 +6634,9 @@ public class AvaTaxClient {
      * 
      * @param int accountId The ID of the account that owns this subscription.
      * @param int id The ID of the subscription you wish to delete.
-     * @return ErrorDetail[]
+     * @return ArrayList<ErrorDetail>
      */
-    public ErrorDetail[] deleteSubscriptionAsync(int accountId, int id)
+    public ArrayList<ErrorDetail> deleteSubscriptionAsync(int accountId, int id)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/subscriptions/{id}");
         path.ApplyField("accountId", accountId);
@@ -6653,9 +6653,9 @@ public class AvaTaxClient {
      * 
      * @param int id The ID of the user you wish to delete.
      * @param int accountId The accountID of the user you wish to delete.
-     * @return ErrorDetail[]
+     * @return ArrayList<ErrorDetail>
      */
-    public List<ErrorDetail> deleteUser(Int32 id, Int32 accountId)
+    public List<ErrorDetail> deleteUser(int id, int accountId)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/users/{id}");
         path.ApplyField("id", id);
@@ -6672,9 +6672,9 @@ public class AvaTaxClient {
      * 
      * @param int id The ID of the user you wish to delete.
      * @param int accountId The accountID of the user you wish to delete.
-     * @return ErrorDetail[]
+     * @return ArrayList<ErrorDetail>
      */
-    public ErrorDetail[] deleteUserAsync(int id, int accountId)
+    public ArrayList<ErrorDetail> deleteUserAsync(int id, int accountId)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/users/{id}");
         path.ApplyField("id", id);
@@ -6702,9 +6702,9 @@ public class AvaTaxClient {
      * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult
+     * @return FetchResult<HashMap<String, String>>
      */
-    public FetchResult<AccountModel> queryAccounts(String include, String filter, Int32? top, Int32? skip, String orderBy)
+    public FetchResult<AccountModel> queryAccounts(String include, String filter, Integer top, Integer skip, String orderBy)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts");
         path.AddQuery("$include", include);
@@ -6735,9 +6735,9 @@ public class AvaTaxClient {
      * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult
+     * @return FetchResult<HashMap<String, String>>
      */
-    public FetchResult queryAccountsAsync(String include, String filter, Integer top, Integer skip, String orderBy)
+    public FetchResult<HashMap<String, String>> queryAccountsAsync(String include, String filter, Integer top, Integer skip, String orderBy)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts");
         path.AddQuery("$include", include);
@@ -6761,7 +6761,7 @@ public class AvaTaxClient {
      * @param SetPasswordModel model The new password for this user
      * @return String
      */
-    public String resetPassword(Int32 userId, SetPasswordModel model)
+    public String resetPassword(int userId, SetPasswordModel model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/passwords/{userId}/reset");
         path.ApplyField("userId", userId);
@@ -6799,7 +6799,7 @@ public class AvaTaxClient {
      * @param AccountModel model The account object you wish to update.
      * @return AccountModel
      */
-    public AccountModel updateAccount(Int32 id, AccountModel model)
+    public AccountModel updateAccount(int id, AccountModel model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{id}");
         path.ApplyField("id", id);
@@ -6840,7 +6840,7 @@ public class AvaTaxClient {
      * @param SubscriptionModel model The subscription you wish to update.
      * @return SubscriptionModel
      */
-    public SubscriptionModel updateSubscription(Int32 accountId, Int32 id, SubscriptionModel model)
+    public SubscriptionModel updateSubscription(int accountId, int id, SubscriptionModel model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/subscriptions/{id}");
         path.ApplyField("accountId", accountId);
@@ -6883,10 +6883,10 @@ public class AvaTaxClient {
      * To ensure correct operation of other programs or connectors, please create a new GUID for your application and use that value for
      * 
      * @param int companyId The ID of the company that owns this setting.
-     * @param SettingModel[] model The setting you wish to create.
-     * @return SettingModel[]
+     * @param ArrayList<SettingModel> model The setting you wish to create.
+     * @return ArrayList<SettingModel>
      */
-    public List<SettingModel> createSettings(Int32 companyId, List<SettingModel> model)
+    public List<SettingModel> createSettings(int companyId, ArrayList<SettingModel> model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/settings");
         path.ApplyField("companyId", companyId);
@@ -6904,10 +6904,10 @@ public class AvaTaxClient {
      * To ensure correct operation of other programs or connectors, please create a new GUID for your application and use that value for
      * 
      * @param int companyId The ID of the company that owns this setting.
-     * @param SettingModel[] model The setting you wish to create.
-     * @return SettingModel[]
+     * @param ArrayList<SettingModel> model The setting you wish to create.
+     * @return ArrayList<SettingModel>
      */
-    public SettingModel[] createSettingsAsync(int companyId, SettingModel[] model)
+    public ArrayList<SettingModel> createSettingsAsync(int companyId, ArrayList<SettingModel> model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/settings");
         path.ApplyField("companyId", companyId);
@@ -6919,9 +6919,9 @@ public class AvaTaxClient {
      * 
      * @param int companyId The ID of the company that owns this setting.
      * @param int id The ID of the setting you wish to delete.
-     * @return ErrorDetail[]
+     * @return ArrayList<ErrorDetail>
      */
-    public List<ErrorDetail> deleteSetting(Int32 companyId, Int32 id)
+    public List<ErrorDetail> deleteSetting(int companyId, int id)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/settings/{id}");
         path.ApplyField("companyId", companyId);
@@ -6934,9 +6934,9 @@ public class AvaTaxClient {
      * 
      * @param int companyId The ID of the company that owns this setting.
      * @param int id The ID of the setting you wish to delete.
-     * @return ErrorDetail[]
+     * @return ArrayList<ErrorDetail>
      */
-    public ErrorDetail[] deleteSettingAsync(int companyId, int id)
+    public ArrayList<ErrorDetail> deleteSettingAsync(int companyId, int id)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/settings/{id}");
         path.ApplyField("companyId", companyId);
@@ -6958,7 +6958,7 @@ public class AvaTaxClient {
      * @param int id The primary key of this setting
      * @return SettingModel
      */
-    public SettingModel getSetting(Int32 companyId, Int32 id)
+    public SettingModel getSetting(int companyId, int id)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/settings/{id}");
         path.ApplyField("companyId", companyId);
@@ -7007,9 +7007,9 @@ public class AvaTaxClient {
      * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult
+     * @return FetchResult<HashMap<String, String>>
      */
-    public FetchResult<SettingModel> listSettingsByCompany(Int32 companyId, String filter, String include, Int32? top, Int32? skip, String orderBy)
+    public FetchResult<SettingModel> listSettingsByCompany(int companyId, String filter, String include, Integer top, Integer skip, String orderBy)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/settings");
         path.ApplyField("companyId", companyId);
@@ -7040,9 +7040,9 @@ public class AvaTaxClient {
      * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult
+     * @return FetchResult<HashMap<String, String>>
      */
-    public FetchResult listSettingsByCompanyAsync(int companyId, String filter, String include, Integer top, Integer skip, String orderBy)
+    public FetchResult<HashMap<String, String>> listSettingsByCompanyAsync(int companyId, String filter, String include, Integer top, Integer skip, String orderBy)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/settings");
         path.ApplyField("companyId", companyId);
@@ -7072,9 +7072,9 @@ public class AvaTaxClient {
      * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult
+     * @return FetchResult<HashMap<String, String>>
      */
-    public FetchResult<SettingModel> querySettings(String filter, String include, Int32? top, Int32? skip, String orderBy)
+    public FetchResult<SettingModel> querySettings(String filter, String include, Integer top, Integer skip, String orderBy)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/settings");
         path.AddQuery("$filter", filter);
@@ -7103,9 +7103,9 @@ public class AvaTaxClient {
      * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult
+     * @return FetchResult<HashMap<String, String>>
      */
-    public FetchResult querySettingsAsync(String filter, String include, Integer top, Integer skip, String orderBy)
+    public FetchResult<HashMap<String, String>> querySettingsAsync(String filter, String include, Integer top, Integer skip, String orderBy)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/settings");
         path.AddQuery("$filter", filter);
@@ -7133,7 +7133,7 @@ public class AvaTaxClient {
      * @param SettingModel model The setting you wish to update.
      * @return SettingModel
      */
-    public SettingModel updateSetting(Int32 companyId, Int32 id, SettingModel model)
+    public SettingModel updateSetting(int companyId, int id, SettingModel model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/settings/{id}");
         path.ApplyField("companyId", companyId);
@@ -7176,7 +7176,7 @@ public class AvaTaxClient {
      * @param int id The primary key of this subscription
      * @return SubscriptionModel
      */
-    public SubscriptionModel getSubscription(Int32 accountId, Int32 id)
+    public SubscriptionModel getSubscription(int accountId, int id)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/subscriptions/{id}");
         path.ApplyField("accountId", accountId);
@@ -7216,9 +7216,9 @@ public class AvaTaxClient {
      * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult
+     * @return FetchResult<HashMap<String, String>>
      */
-    public FetchResult<SubscriptionModel> listSubscriptionsByAccount(Int32 accountId, String filter, Int32? top, Int32? skip, String orderBy)
+    public FetchResult<SubscriptionModel> listSubscriptionsByAccount(int accountId, String filter, Integer top, Integer skip, String orderBy)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/subscriptions");
         path.ApplyField("accountId", accountId);
@@ -7243,9 +7243,9 @@ public class AvaTaxClient {
      * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult
+     * @return FetchResult<HashMap<String, String>>
      */
-    public FetchResult listSubscriptionsByAccountAsync(int accountId, String filter, Integer top, Integer skip, String orderBy)
+    public FetchResult<HashMap<String, String>> listSubscriptionsByAccountAsync(int accountId, String filter, Integer top, Integer skip, String orderBy)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/subscriptions");
         path.ApplyField("accountId", accountId);
@@ -7269,9 +7269,9 @@ public class AvaTaxClient {
      * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult
+     * @return FetchResult<HashMap<String, String>>
      */
-    public FetchResult<SubscriptionModel> querySubscriptions(String filter, Int32? top, Int32? skip, String orderBy)
+    public FetchResult<SubscriptionModel> querySubscriptions(String filter, Integer top, Integer skip, String orderBy)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/subscriptions");
         path.AddQuery("$filter", filter);
@@ -7294,9 +7294,9 @@ public class AvaTaxClient {
      * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult
+     * @return FetchResult<HashMap<String, String>>
      */
-    public FetchResult querySubscriptionsAsync(String filter, Integer top, Integer skip, String orderBy)
+    public FetchResult<HashMap<String, String>> querySubscriptionsAsync(String filter, Integer top, Integer skip, String orderBy)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/subscriptions");
         path.AddQuery("$filter", filter);
@@ -7315,10 +7315,10 @@ public class AvaTaxClient {
      * If you identify your products by tax code in your 'Create Transacion' API calls, Avalara will correctly calculate tax rates and
      * 
      * @param int companyId The ID of the company that owns this tax code.
-     * @param TaxCodeModel[] model The tax code you wish to create.
-     * @return TaxCodeModel[]
+     * @param ArrayList<TaxCodeModel> model The tax code you wish to create.
+     * @return ArrayList<TaxCodeModel>
      */
-    public List<TaxCodeModel> createTaxCodes(Int32 companyId, List<TaxCodeModel> model)
+    public List<TaxCodeModel> createTaxCodes(int companyId, ArrayList<TaxCodeModel> model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/taxcodes");
         path.ApplyField("companyId", companyId);
@@ -7334,10 +7334,10 @@ public class AvaTaxClient {
      * If you identify your products by tax code in your 'Create Transacion' API calls, Avalara will correctly calculate tax rates and
      * 
      * @param int companyId The ID of the company that owns this tax code.
-     * @param TaxCodeModel[] model The tax code you wish to create.
-     * @return TaxCodeModel[]
+     * @param ArrayList<TaxCodeModel> model The tax code you wish to create.
+     * @return ArrayList<TaxCodeModel>
      */
-    public TaxCodeModel[] createTaxCodesAsync(int companyId, TaxCodeModel[] model)
+    public ArrayList<TaxCodeModel> createTaxCodesAsync(int companyId, ArrayList<TaxCodeModel> model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/taxcodes");
         path.ApplyField("companyId", companyId);
@@ -7349,9 +7349,9 @@ public class AvaTaxClient {
      * 
      * @param int companyId The ID of the company that owns this tax code.
      * @param int id The ID of the tax code you wish to delete.
-     * @return ErrorDetail[]
+     * @return ArrayList<ErrorDetail>
      */
-    public List<ErrorDetail> deleteTaxCode(Int32 companyId, Int32 id)
+    public List<ErrorDetail> deleteTaxCode(int companyId, int id)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/taxcodes/{id}");
         path.ApplyField("companyId", companyId);
@@ -7364,9 +7364,9 @@ public class AvaTaxClient {
      * 
      * @param int companyId The ID of the company that owns this tax code.
      * @param int id The ID of the tax code you wish to delete.
-     * @return ErrorDetail[]
+     * @return ArrayList<ErrorDetail>
      */
-    public ErrorDetail[] deleteTaxCodeAsync(int companyId, int id)
+    public ArrayList<ErrorDetail> deleteTaxCodeAsync(int companyId, int id)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/taxcodes/{id}");
         path.ApplyField("companyId", companyId);
@@ -7386,7 +7386,7 @@ public class AvaTaxClient {
      * @param int id The primary key of this tax code
      * @return TaxCodeModel
      */
-    public TaxCodeModel getTaxCode(Int32 companyId, Int32 id)
+    public TaxCodeModel getTaxCode(int companyId, int id)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/taxcodes/{id}");
         path.ApplyField("companyId", companyId);
@@ -7431,9 +7431,9 @@ public class AvaTaxClient {
      * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult
+     * @return FetchResult<HashMap<String, String>>
      */
-    public FetchResult<TaxCodeModel> listTaxCodesByCompany(Int32 companyId, String filter, String include, Int32? top, Int32? skip, String orderBy)
+    public FetchResult<TaxCodeModel> listTaxCodesByCompany(int companyId, String filter, String include, Integer top, Integer skip, String orderBy)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/taxcodes");
         path.ApplyField("companyId", companyId);
@@ -7462,9 +7462,9 @@ public class AvaTaxClient {
      * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult
+     * @return FetchResult<HashMap<String, String>>
      */
-    public FetchResult listTaxCodesByCompanyAsync(int companyId, String filter, String include, Integer top, Integer skip, String orderBy)
+    public FetchResult<HashMap<String, String>> listTaxCodesByCompanyAsync(int companyId, String filter, String include, Integer top, Integer skip, String orderBy)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/taxcodes");
         path.ApplyField("companyId", companyId);
@@ -7492,9 +7492,9 @@ public class AvaTaxClient {
      * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult
+     * @return FetchResult<HashMap<String, String>>
      */
-    public FetchResult<TaxCodeModel> queryTaxCodes(String filter, String include, Int32? top, Int32? skip, String orderBy)
+    public FetchResult<TaxCodeModel> queryTaxCodes(String filter, String include, Integer top, Integer skip, String orderBy)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/taxcodes");
         path.AddQuery("$filter", filter);
@@ -7521,9 +7521,9 @@ public class AvaTaxClient {
      * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult
+     * @return FetchResult<HashMap<String, String>>
      */
-    public FetchResult queryTaxCodesAsync(String filter, String include, Integer top, Integer skip, String orderBy)
+    public FetchResult<HashMap<String, String>> queryTaxCodesAsync(String filter, String include, Integer top, Integer skip, String orderBy)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/taxcodes");
         path.AddQuery("$filter", filter);
@@ -7549,7 +7549,7 @@ public class AvaTaxClient {
      * @param TaxCodeModel model The tax code you wish to update.
      * @return TaxCodeModel
      */
-    public TaxCodeModel updateTaxCode(Int32 companyId, Int32 id, TaxCodeModel model)
+    public TaxCodeModel updateTaxCode(int companyId, int id, TaxCodeModel model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/taxcodes/{id}");
         path.ApplyField("companyId", companyId);
@@ -7589,10 +7589,10 @@ public class AvaTaxClient {
      * within certain taxing jurisdictions, or you have obtained special tax concessions for certain dates or locations,
      * 
      * @param int companyId The ID of the company that owns this tax rule.
-     * @param TaxRuleModel[] model The tax rule you wish to create.
-     * @return TaxRuleModel[]
+     * @param ArrayList<TaxRuleModel> model The tax rule you wish to create.
+     * @return ArrayList<TaxRuleModel>
      */
-    public List<TaxRuleModel> createTaxRules(Int32 companyId, List<TaxRuleModel> model)
+    public List<TaxRuleModel> createTaxRules(int companyId, ArrayList<TaxRuleModel> model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/taxrules");
         path.ApplyField("companyId", companyId);
@@ -7608,10 +7608,10 @@ public class AvaTaxClient {
      * within certain taxing jurisdictions, or you have obtained special tax concessions for certain dates or locations,
      * 
      * @param int companyId The ID of the company that owns this tax rule.
-     * @param TaxRuleModel[] model The tax rule you wish to create.
-     * @return TaxRuleModel[]
+     * @param ArrayList<TaxRuleModel> model The tax rule you wish to create.
+     * @return ArrayList<TaxRuleModel>
      */
-    public TaxRuleModel[] createTaxRulesAsync(int companyId, TaxRuleModel[] model)
+    public ArrayList<TaxRuleModel> createTaxRulesAsync(int companyId, ArrayList<TaxRuleModel> model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/taxrules");
         path.ApplyField("companyId", companyId);
@@ -7623,9 +7623,9 @@ public class AvaTaxClient {
      * 
      * @param int companyId The ID of the company that owns this tax rule.
      * @param int id The ID of the tax rule you wish to delete.
-     * @return ErrorDetail[]
+     * @return ArrayList<ErrorDetail>
      */
-    public List<ErrorDetail> deleteTaxRule(Int32 companyId, Int32 id)
+    public List<ErrorDetail> deleteTaxRule(int companyId, int id)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/taxrules/{id}");
         path.ApplyField("companyId", companyId);
@@ -7638,9 +7638,9 @@ public class AvaTaxClient {
      * 
      * @param int companyId The ID of the company that owns this tax rule.
      * @param int id The ID of the tax rule you wish to delete.
-     * @return ErrorDetail[]
+     * @return ArrayList<ErrorDetail>
      */
-    public ErrorDetail[] deleteTaxRuleAsync(int companyId, int id)
+    public ArrayList<ErrorDetail> deleteTaxRuleAsync(int companyId, int id)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/taxrules/{id}");
         path.ApplyField("companyId", companyId);
@@ -7660,7 +7660,7 @@ public class AvaTaxClient {
      * @param int id The primary key of this tax rule
      * @return TaxRuleModel
      */
-    public TaxRuleModel getTaxRule(Int32 companyId, Int32 id)
+    public TaxRuleModel getTaxRule(int companyId, int id)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/taxrules/{id}");
         path.ApplyField("companyId", companyId);
@@ -7705,9 +7705,9 @@ public class AvaTaxClient {
      * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult
+     * @return FetchResult<HashMap<String, String>>
      */
-    public FetchResult<TaxRuleModel> listTaxRules(Int32 companyId, String filter, String include, Int32? top, Int32? skip, String orderBy)
+    public FetchResult<TaxRuleModel> listTaxRules(int companyId, String filter, String include, Integer top, Integer skip, String orderBy)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/taxrules");
         path.ApplyField("companyId", companyId);
@@ -7736,9 +7736,9 @@ public class AvaTaxClient {
      * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult
+     * @return FetchResult<HashMap<String, String>>
      */
-    public FetchResult listTaxRulesAsync(int companyId, String filter, String include, Integer top, Integer skip, String orderBy)
+    public FetchResult<HashMap<String, String>> listTaxRulesAsync(int companyId, String filter, String include, Integer top, Integer skip, String orderBy)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/taxrules");
         path.ApplyField("companyId", companyId);
@@ -7766,9 +7766,9 @@ public class AvaTaxClient {
      * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult
+     * @return FetchResult<HashMap<String, String>>
      */
-    public FetchResult<TaxRuleModel> queryTaxRules(String filter, String include, Int32? top, Int32? skip, String orderBy)
+    public FetchResult<TaxRuleModel> queryTaxRules(String filter, String include, Integer top, Integer skip, String orderBy)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/taxrules");
         path.AddQuery("$filter", filter);
@@ -7795,9 +7795,9 @@ public class AvaTaxClient {
      * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult
+     * @return FetchResult<HashMap<String, String>>
      */
-    public FetchResult queryTaxRulesAsync(String filter, String include, Integer top, Integer skip, String orderBy)
+    public FetchResult<HashMap<String, String>> queryTaxRulesAsync(String filter, String include, Integer top, Integer skip, String orderBy)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/taxrules");
         path.AddQuery("$filter", filter);
@@ -7823,7 +7823,7 @@ public class AvaTaxClient {
      * @param TaxRuleModel model The tax rule you wish to update.
      * @return TaxRuleModel
      */
-    public TaxRuleModel updateTaxRule(Int32 companyId, Int32 id, TaxRuleModel model)
+    public TaxRuleModel updateTaxRule(int companyId, int id, TaxRuleModel model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/taxrules/{id}");
         path.ApplyField("companyId", companyId);
@@ -8528,7 +8528,7 @@ public class AvaTaxClient {
      * @param String include A comma separated list of child objects to return underneath the primary object.
      * @return TransactionModel
      */
-    public TransactionModel getTransactionById(Int64 id, String include)
+    public TransactionModel getTransactionById(long id, String include)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/transactions/{id}");
         path.ApplyField("id", id);
@@ -8584,9 +8584,9 @@ public class AvaTaxClient {
      * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult
+     * @return FetchResult<HashMap<String, String>>
      */
-    public FetchResult<TransactionModel> listTransactionsByCompany(String companyCode, String include, String filter, Int32? top, Int32? skip, String orderBy)
+    public FetchResult<TransactionModel> listTransactionsByCompany(String companyCode, String include, String filter, Integer top, Integer skip, String orderBy)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyCode}/transactions");
         path.ApplyField("companyCode", companyCode);
@@ -8620,9 +8620,9 @@ public class AvaTaxClient {
      * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult
+     * @return FetchResult<HashMap<String, String>>
      */
-    public FetchResult listTransactionsByCompanyAsync(String companyCode, String include, String filter, Integer top, Integer skip, String orderBy)
+    public FetchResult<HashMap<String, String>> listTransactionsByCompanyAsync(String companyCode, String include, String filter, Integer top, Integer skip, String orderBy)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyCode}/transactions");
         path.ApplyField("companyCode", companyCode);
@@ -8872,10 +8872,10 @@ public class AvaTaxClient {
      * Create one or more new UPC objects attached to this company.
      * 
      * @param int companyId The ID of the company that owns this UPC.
-     * @param UPCModel[] model The UPC you wish to create.
-     * @return UPCModel[]
+     * @param ArrayList<UPCModel> model The UPC you wish to create.
+     * @return ArrayList<UPCModel>
      */
-    public List<UPCModel> createUPCs(Int32 companyId, List<UPCModel> model)
+    public List<UPCModel> createUPCs(int companyId, ArrayList<UPCModel> model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/upcs");
         path.ApplyField("companyId", companyId);
@@ -8888,10 +8888,10 @@ public class AvaTaxClient {
      * Create one or more new UPC objects attached to this company.
      * 
      * @param int companyId The ID of the company that owns this UPC.
-     * @param UPCModel[] model The UPC you wish to create.
-     * @return UPCModel[]
+     * @param ArrayList<UPCModel> model The UPC you wish to create.
+     * @return ArrayList<UPCModel>
      */
-    public UPCModel[] createUPCsAsync(int companyId, UPCModel[] model)
+    public ArrayList<UPCModel> createUPCsAsync(int companyId, ArrayList<UPCModel> model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/upcs");
         path.ApplyField("companyId", companyId);
@@ -8903,9 +8903,9 @@ public class AvaTaxClient {
      * 
      * @param int companyId The ID of the company that owns this UPC.
      * @param int id The ID of the UPC you wish to delete.
-     * @return ErrorDetail[]
+     * @return ArrayList<ErrorDetail>
      */
-    public List<ErrorDetail> deleteUPC(Int32 companyId, Int32 id)
+    public List<ErrorDetail> deleteUPC(int companyId, int id)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/upcs/{id}");
         path.ApplyField("companyId", companyId);
@@ -8918,9 +8918,9 @@ public class AvaTaxClient {
      * 
      * @param int companyId The ID of the company that owns this UPC.
      * @param int id The ID of the UPC you wish to delete.
-     * @return ErrorDetail[]
+     * @return ArrayList<ErrorDetail>
      */
-    public ErrorDetail[] deleteUPCAsync(int companyId, int id)
+    public ArrayList<ErrorDetail> deleteUPCAsync(int companyId, int id)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/upcs/{id}");
         path.ApplyField("companyId", companyId);
@@ -8937,7 +8937,7 @@ public class AvaTaxClient {
      * @param int id The primary key of this UPC
      * @return UPCModel
      */
-    public UPCModel getUPC(Int32 companyId, Int32 id)
+    public UPCModel getUPC(int companyId, int id)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/upcs/{id}");
         path.ApplyField("companyId", companyId);
@@ -8976,9 +8976,9 @@ public class AvaTaxClient {
      * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult
+     * @return FetchResult<HashMap<String, String>>
      */
-    public FetchResult<UPCModel> listUPCsByCompany(Int32 companyId, String filter, String include, Int32? top, Int32? skip, String orderBy)
+    public FetchResult<UPCModel> listUPCsByCompany(int companyId, String filter, String include, Integer top, Integer skip, String orderBy)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/upcs");
         path.ApplyField("companyId", companyId);
@@ -9004,9 +9004,9 @@ public class AvaTaxClient {
      * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult
+     * @return FetchResult<HashMap<String, String>>
      */
-    public FetchResult listUPCsByCompanyAsync(int companyId, String filter, String include, Integer top, Integer skip, String orderBy)
+    public FetchResult<HashMap<String, String>> listUPCsByCompanyAsync(int companyId, String filter, String include, Integer top, Integer skip, String orderBy)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/upcs");
         path.ApplyField("companyId", companyId);
@@ -9031,9 +9031,9 @@ public class AvaTaxClient {
      * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult
+     * @return FetchResult<HashMap<String, String>>
      */
-    public FetchResult<UPCModel> queryUPCs(String filter, String include, Int32? top, Int32? skip, String orderBy)
+    public FetchResult<UPCModel> queryUPCs(String filter, String include, Integer top, Integer skip, String orderBy)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/upcs");
         path.AddQuery("$filter", filter);
@@ -9057,9 +9057,9 @@ public class AvaTaxClient {
      * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult
+     * @return FetchResult<HashMap<String, String>>
      */
-    public FetchResult queryUPCsAsync(String filter, String include, Integer top, Integer skip, String orderBy)
+    public FetchResult<HashMap<String, String>> queryUPCsAsync(String filter, String include, Integer top, Integer skip, String orderBy)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/upcs");
         path.AddQuery("$filter", filter);
@@ -9082,7 +9082,7 @@ public class AvaTaxClient {
      * @param UPCModel model The UPC you wish to update.
      * @return UPCModel
      */
-    public UPCModel updateUPC(Int32 companyId, Int32 id, UPCModel model)
+    public UPCModel updateUPC(int companyId, int id, UPCModel model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/upcs/{id}");
         path.ApplyField("companyId", companyId);
@@ -9120,7 +9120,7 @@ public class AvaTaxClient {
      * @param String include A comma separated list of child objects to return underneath the primary object.
      * @return UserModel
      */
-    public UserModel getUser(Int32 id, Int32 accountId, String include)
+    public UserModel getUser(int id, int accountId, String include)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/users/{id}");
         path.ApplyField("id", id);
@@ -9170,7 +9170,7 @@ public class AvaTaxClient {
      * @param int accountId The accountID of the user you wish to get.
      * @return UserEntitlementModel
      */
-    public UserEntitlementModel getUserEntitlements(Int32 id, Int32 accountId)
+    public UserEntitlementModel getUserEntitlements(int id, int accountId)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/users/{id}/entitlements");
         path.ApplyField("id", id);
@@ -9222,9 +9222,9 @@ public class AvaTaxClient {
      * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult
+     * @return FetchResult<HashMap<String, String>>
      */
-    public FetchResult<UserModel> listUsersByAccount(Int32 accountId, String include, String filter, Int32? top, Int32? skip, String orderBy)
+    public FetchResult<UserModel> listUsersByAccount(int accountId, String include, String filter, Integer top, Integer skip, String orderBy)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/users");
         path.ApplyField("accountId", accountId);
@@ -9250,9 +9250,9 @@ public class AvaTaxClient {
      * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult
+     * @return FetchResult<HashMap<String, String>>
      */
-    public FetchResult listUsersByAccountAsync(int accountId, String include, String filter, Integer top, Integer skip, String orderBy)
+    public FetchResult<HashMap<String, String>> listUsersByAccountAsync(int accountId, String include, String filter, Integer top, Integer skip, String orderBy)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/users");
         path.ApplyField("accountId", accountId);
@@ -9277,9 +9277,9 @@ public class AvaTaxClient {
      * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult
+     * @return FetchResult<HashMap<String, String>>
      */
-    public FetchResult<UserModel> queryUsers(String include, String filter, Int32? top, Int32? skip, String orderBy)
+    public FetchResult<UserModel> queryUsers(String include, String filter, Integer top, Integer skip, String orderBy)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/users");
         path.AddQuery("$include", include);
@@ -9303,9 +9303,9 @@ public class AvaTaxClient {
      * @param Integer top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param Integer skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param String orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult
+     * @return FetchResult<HashMap<String, String>>
      */
-    public FetchResult queryUsersAsync(String include, String filter, Integer top, Integer skip, String orderBy)
+    public FetchResult<HashMap<String, String>> queryUsersAsync(String include, String filter, Integer top, Integer skip, String orderBy)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/users");
         path.AddQuery("$include", include);
@@ -9328,7 +9328,7 @@ public class AvaTaxClient {
      * @param UserModel model The user object you wish to update.
      * @return UserModel
      */
-    public UserModel updateUser(Int32 id, Int32 accountId, UserModel model)
+    public UserModel updateUser(int id, int accountId, UserModel model)
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/users/{id}");
         path.ApplyField("id", id);
@@ -9394,7 +9394,7 @@ public class AvaTaxClient {
      * Returns the list of all subscriptions enabled for the current account.
      * This API is intended to help you determine whether you have the necessary subscription to use certain API calls
      * 
-     * @return FetchResult
+     * @return FetchResult<HashMap<String, String>>
      */
     public FetchResult<SubscriptionModel> listMySubscriptions()
     {
@@ -9408,9 +9408,9 @@ public class AvaTaxClient {
      * Returns the list of all subscriptions enabled for the current account.
      * This API is intended to help you determine whether you have the necessary subscription to use certain API calls
      * 
-     * @return FetchResult
+     * @return FetchResult<HashMap<String, String>>
      */
-    public FetchResult listMySubscriptionsAsync()
+    public FetchResult<HashMap<String, String>> listMySubscriptionsAsync()
     {
         AvaTaxPath path = new AvaTaxPath("/api/v2/utilities/subscriptions");
         return ((RestCall<FetchResult<SubscriptionModel>>)restCallFactory.createRestCall("Get", path, null, new TypeToken<FetchResult<SubscriptionModel>>(){})).call();

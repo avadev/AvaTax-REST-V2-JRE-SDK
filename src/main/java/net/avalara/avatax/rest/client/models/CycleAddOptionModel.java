@@ -219,14 +219,14 @@ public class CycleAddOptionModel {
     }
 
 
-    private String[] availableLocationCodes;
+    private ArrayList<String> availableLocationCodes;
 
     /**
      * Getter for availableLocationCodes
      *
      * A list of outlet codes that can be assigned to this form for the current cycle
      */
-    public String[] getAvailableLocationCodes() {
+    public ArrayList<String> getAvailableLocationCodes() {
         return this.availableLocationCodes;
     }
 
@@ -235,7 +235,7 @@ public class CycleAddOptionModel {
      *
      * A list of outlet codes that can be assigned to this form for the current cycle
      */
-    public void setAvailableLocationCodes(String[] value) {
+    public void setAvailableLocationCodes(ArrayList<String> value) {
         this.availableLocationCodes = value;
     }
 

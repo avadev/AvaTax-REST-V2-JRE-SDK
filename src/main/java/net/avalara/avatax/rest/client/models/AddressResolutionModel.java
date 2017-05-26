@@ -51,14 +51,14 @@ public class AddressResolutionModel {
     }
 
 
-    private ValidatedAddressInfo[] validatedAddresses;
+    private ArrayList<ValidatedAddressInfo> validatedAddresses;
 
     /**
      * Getter for validatedAddresses
      *
      * The validated address or addresses
      */
-    public ValidatedAddressInfo[] getValidatedAddresses() {
+    public ArrayList<ValidatedAddressInfo> getValidatedAddresses() {
         return this.validatedAddresses;
     }
 
@@ -67,7 +67,7 @@ public class AddressResolutionModel {
      *
      * The validated address or addresses
      */
-    public void setValidatedAddresses(ValidatedAddressInfo[] value) {
+    public void setValidatedAddresses(ArrayList<ValidatedAddressInfo> value) {
         this.validatedAddresses = value;
     }
 
@@ -114,14 +114,14 @@ public class AddressResolutionModel {
     }
 
 
-    private TaxAuthorityInfo[] taxAuthorities;
+    private ArrayList<TaxAuthorityInfo> taxAuthorities;
 
     /**
      * Getter for taxAuthorities
      *
      * List of informational and warning messages regarding this address
      */
-    public TaxAuthorityInfo[] getTaxAuthorities() {
+    public ArrayList<TaxAuthorityInfo> getTaxAuthorities() {
         return this.taxAuthorities;
     }
 
@@ -130,19 +130,19 @@ public class AddressResolutionModel {
      *
      * List of informational and warning messages regarding this address
      */
-    public void setTaxAuthorities(TaxAuthorityInfo[] value) {
+    public void setTaxAuthorities(ArrayList<TaxAuthorityInfo> value) {
         this.taxAuthorities = value;
     }
 
 
-    private AvaTaxMessage[] messages;
+    private ArrayList<AvaTaxMessage> messages;
 
     /**
      * Getter for messages
      *
      * List of informational and warning messages regarding this address
      */
-    public AvaTaxMessage[] getMessages() {
+    public ArrayList<AvaTaxMessage> getMessages() {
         return this.messages;
     }
 
@@ -151,7 +151,7 @@ public class AddressResolutionModel {
      *
      * List of informational and warning messages regarding this address
      */
-    public void setMessages(AvaTaxMessage[] value) {
+    public void setMessages(ArrayList<AvaTaxMessage> value) {
         this.messages = value;
     }
 

@@ -329,14 +329,14 @@ public class JurisdictionOverrideModel {
     }
 
 
-    private JurisdictionModel[] jurisdictions;
+    private ArrayList<JurisdictionModel> jurisdictions;
 
     /**
      * Getter for jurisdictions
      *
      * A list of the tax jurisdictions that will be assigned to this overridden address.
      */
-    public JurisdictionModel[] getJurisdictions() {
+    public ArrayList<JurisdictionModel> getJurisdictions() {
         return this.jurisdictions;
     }
 
@@ -345,7 +345,7 @@ public class JurisdictionOverrideModel {
      *
      * A list of the tax jurisdictions that will be assigned to this overridden address.
      */
-    public void setJurisdictions(JurisdictionModel[] value) {
+    public void setJurisdictions(ArrayList<JurisdictionModel> value) {
         this.jurisdictions = value;
     }
 

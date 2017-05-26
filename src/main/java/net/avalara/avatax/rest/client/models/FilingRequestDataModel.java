@@ -304,14 +304,14 @@ public class FilingRequestDataModel {
     }
 
 
-    private FilingAnswerModel[] answers;
+    private ArrayList<FilingAnswerModel> answers;
 
     /**
      * Getter for answers
      *
      * Filing question answers
      */
-    public FilingAnswerModel[] getAnswers() {
+    public ArrayList<FilingAnswerModel> getAnswers() {
         return this.answers;
     }
 
@@ -320,7 +320,7 @@ public class FilingRequestDataModel {
      *
      * Filing question answers
      */
-    public void setAnswers(FilingAnswerModel[] value) {
+    public void setAnswers(ArrayList<FilingAnswerModel> value) {
         this.answers = value;
     }
 

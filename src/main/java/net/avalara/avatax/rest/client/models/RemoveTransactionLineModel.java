@@ -93,14 +93,14 @@ public class RemoveTransactionLineModel {
     }
 
 
-    private String[] lines;
+    private ArrayList<String> lines;
 
     /**
      * Getter for lines
      *
      * List of lines to be added
      */
-    public String[] getLines() {
+    public ArrayList<String> getLines() {
         return this.lines;
     }
 
@@ -109,7 +109,7 @@ public class RemoveTransactionLineModel {
      *
      * List of lines to be added
      */
-    public void setLines(String[] value) {
+    public void setLines(ArrayList<String> value) {
         this.lines = value;
     }
 

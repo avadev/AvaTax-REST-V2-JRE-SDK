@@ -30,14 +30,14 @@ import java.util.HashMap;
 public class UserEntitlementModel {
 
 
-    private String[] permissions;
+    private ArrayList<String> permissions;
 
     /**
      * Getter for permissions
      *
      * List of API names and categories that this user is permitted to access
      */
-    public String[] getPermissions() {
+    public ArrayList<String> getPermissions() {
         return this.permissions;
     }
 
@@ -46,7 +46,7 @@ public class UserEntitlementModel {
      *
      * List of API names and categories that this user is permitted to access
      */
-    public void setPermissions(String[] value) {
+    public void setPermissions(ArrayList<String> value) {
         this.permissions = value;
     }
 
@@ -72,14 +72,14 @@ public class UserEntitlementModel {
     }
 
 
-    private int[] companies;
+    private ArrayList<int> companies;
 
     /**
      * Getter for companies
      *
      * The identities of all companies this user is permitted to access
      */
-    public int[] getCompanies() {
+    public ArrayList<int> getCompanies() {
         return this.companies;
     }
 
@@ -88,7 +88,7 @@ public class UserEntitlementModel {
      *
      * The identities of all companies this user is permitted to access
      */
-    public void setCompanies(int[] value) {
+    public void setCompanies(ArrayList<int> value) {
         this.companies = value;
     }
 

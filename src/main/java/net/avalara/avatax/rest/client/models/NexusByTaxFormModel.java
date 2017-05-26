@@ -72,14 +72,14 @@ public class NexusByTaxFormModel {
     }
 
 
-    private NexusModel[] nexusDefinitions;
+    private ArrayList<NexusModel> nexusDefinitions;
 
     /**
      * Getter for nexusDefinitions
      *
      * A list of all Avalara-defined nexus that are relevant to this tax form
      */
-    public NexusModel[] getNexusDefinitions() {
+    public ArrayList<NexusModel> getNexusDefinitions() {
         return this.nexusDefinitions;
     }
 
@@ -88,19 +88,19 @@ public class NexusByTaxFormModel {
      *
      * A list of all Avalara-defined nexus that are relevant to this tax form
      */
-    public void setNexusDefinitions(NexusModel[] value) {
+    public void setNexusDefinitions(ArrayList<NexusModel> value) {
         this.nexusDefinitions = value;
     }
 
 
-    private NexusModel[] companyNexus;
+    private ArrayList<NexusModel> companyNexus;
 
     /**
      * Getter for companyNexus
      *
      * A list of all currently-defined company nexus that are related to this tax form
      */
-    public NexusModel[] getCompanyNexus() {
+    public ArrayList<NexusModel> getCompanyNexus() {
         return this.companyNexus;
     }
 
@@ -109,7 +109,7 @@ public class NexusByTaxFormModel {
      *
      * A list of all currently-defined company nexus that are related to this tax form
      */
-    public void setCompanyNexus(NexusModel[] value) {
+    public void setCompanyNexus(ArrayList<NexusModel> value) {
         this.companyNexus = value;
     }
 

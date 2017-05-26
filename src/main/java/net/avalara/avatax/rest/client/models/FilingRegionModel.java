@@ -429,14 +429,14 @@ public class FilingRegionModel {
     }
 
 
-    private FilingReturnModel[] returns;
+    private ArrayList<FilingReturnModel> returns;
 
     /**
      * Getter for returns
      *
      * A list of tax returns in this region.
      */
-    public FilingReturnModel[] getReturns() {
+    public ArrayList<FilingReturnModel> getReturns() {
         return this.returns;
     }
 
@@ -445,19 +445,19 @@ public class FilingRegionModel {
      *
      * A list of tax returns in this region.
      */
-    public void setReturns(FilingReturnModel[] value) {
+    public void setReturns(ArrayList<FilingReturnModel> value) {
         this.returns = value;
     }
 
 
-    private FilingsCheckupSuggestedFormModel[] suggestReturns;
+    private ArrayList<FilingsCheckupSuggestedFormModel> suggestReturns;
 
     /**
      * Getter for suggestReturns
      *
      * A list of tax returns in this region.
      */
-    public FilingsCheckupSuggestedFormModel[] getSuggestReturns() {
+    public ArrayList<FilingsCheckupSuggestedFormModel> getSuggestReturns() {
         return this.suggestReturns;
     }
 
@@ -466,7 +466,7 @@ public class FilingRegionModel {
      *
      * A list of tax returns in this region.
      */
-    public void setSuggestReturns(FilingsCheckupSuggestedFormModel[] value) {
+    public void setSuggestReturns(ArrayList<FilingsCheckupSuggestedFormModel> value) {
         this.suggestReturns = value;
     }
 

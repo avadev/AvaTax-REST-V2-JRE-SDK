@@ -30,14 +30,14 @@ import java.util.HashMap;
 public class FilingsCheckupModel {
 
 
-    private FilingsCheckupAuthorityModel[] authorities;
+    private ArrayList<FilingsCheckupAuthorityModel> authorities;
 
     /**
      * Getter for authorities
      *
      * A collection of authorities in the report
      */
-    public FilingsCheckupAuthorityModel[] getAuthorities() {
+    public ArrayList<FilingsCheckupAuthorityModel> getAuthorities() {
         return this.authorities;
     }
 
@@ -46,7 +46,7 @@ public class FilingsCheckupModel {
      *
      * A collection of authorities in the report
      */
-    public void setAuthorities(FilingsCheckupAuthorityModel[] value) {
+    public void setAuthorities(ArrayList<FilingsCheckupAuthorityModel> value) {
         this.authorities = value;
     }
 

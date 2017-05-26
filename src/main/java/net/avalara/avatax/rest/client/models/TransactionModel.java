@@ -943,14 +943,14 @@ public class TransactionModel {
     }
 
 
-    private TransactionLineModel[] lines;
+    private ArrayList<TransactionLineModel> lines;
 
     /**
      * Getter for lines
      *
      * Optional: A list of line items in this transaction. To fetch this list, add the query string "?$include=Lines" or "?$include=Details" to your URL.
      */
-    public TransactionLineModel[] getLines() {
+    public ArrayList<TransactionLineModel> getLines() {
         return this.lines;
     }
 
@@ -959,19 +959,19 @@ public class TransactionModel {
      *
      * Optional: A list of line items in this transaction. To fetch this list, add the query string "?$include=Lines" or "?$include=Details" to your URL.
      */
-    public void setLines(TransactionLineModel[] value) {
+    public void setLines(ArrayList<TransactionLineModel> value) {
         this.lines = value;
     }
 
 
-    private TransactionAddressModel[] addresses;
+    private ArrayList<TransactionAddressModel> addresses;
 
     /**
      * Getter for addresses
      *
      * Optional: A list of line items in this transaction. To fetch this list, add the query string "?$include=Addresses" to your URL.
      */
-    public TransactionAddressModel[] getAddresses() {
+    public ArrayList<TransactionAddressModel> getAddresses() {
         return this.addresses;
     }
 
@@ -980,19 +980,19 @@ public class TransactionModel {
      *
      * Optional: A list of line items in this transaction. To fetch this list, add the query string "?$include=Addresses" to your URL.
      */
-    public void setAddresses(TransactionAddressModel[] value) {
+    public void setAddresses(ArrayList<TransactionAddressModel> value) {
         this.addresses = value;
     }
 
 
-    private TransactionLocationTypeModel[] locationTypes;
+    private ArrayList<TransactionLocationTypeModel> locationTypes;
 
     /**
      * Getter for locationTypes
      *
      * Optional: A list of location types in this transaction. To fetch this list, add the query string "?$include=Addresses" to your URL.
      */
-    public TransactionLocationTypeModel[] getLocationTypes() {
+    public ArrayList<TransactionLocationTypeModel> getLocationTypes() {
         return this.locationTypes;
     }
 
@@ -1001,19 +1001,19 @@ public class TransactionModel {
      *
      * Optional: A list of location types in this transaction. To fetch this list, add the query string "?$include=Addresses" to your URL.
      */
-    public void setLocationTypes(TransactionLocationTypeModel[] value) {
+    public void setLocationTypes(ArrayList<TransactionLocationTypeModel> value) {
         this.locationTypes = value;
     }
 
 
-    private TransactionModel[] history;
+    private ArrayList<TransactionModel> history;
 
     /**
      * Getter for history
      *
      * If this transaction has been adjusted, this list contains all the previous versions of the document.
      */
-    public TransactionModel[] getHistory() {
+    public ArrayList<TransactionModel> getHistory() {
         return this.history;
     }
 
@@ -1022,19 +1022,19 @@ public class TransactionModel {
      *
      * If this transaction has been adjusted, this list contains all the previous versions of the document.
      */
-    public void setHistory(TransactionModel[] value) {
+    public void setHistory(ArrayList<TransactionModel> value) {
         this.history = value;
     }
 
 
-    private TransactionSummary[] summary;
+    private ArrayList<TransactionSummary> summary;
 
     /**
      * Getter for summary
      *
      * Contains a summary of tax on this transaction.
      */
-    public TransactionSummary[] getSummary() {
+    public ArrayList<TransactionSummary> getSummary() {
         return this.summary;
     }
 
@@ -1043,19 +1043,19 @@ public class TransactionModel {
      *
      * Contains a summary of tax on this transaction.
      */
-    public void setSummary(TransactionSummary[] value) {
+    public void setSummary(ArrayList<TransactionSummary> value) {
         this.summary = value;
     }
 
 
-    private object parameters;
+    private HashMap<String, String> parameters;
 
     /**
      * Getter for parameters
      *
      * Contains a list of extra parameters that were set when the transaction was created.
      */
-    public object getParameters() {
+    public HashMap<String, String> getParameters() {
         return this.parameters;
     }
 
@@ -1064,19 +1064,19 @@ public class TransactionModel {
      *
      * Contains a list of extra parameters that were set when the transaction was created.
      */
-    public void setParameters(object value) {
+    public void setParameters(HashMap<String, String> value) {
         this.parameters = value;
     }
 
 
-    private AvaTaxMessage[] messages;
+    private ArrayList<AvaTaxMessage> messages;
 
     /**
      * Getter for messages
      *
      * List of informational and warning messages regarding this API call. These messages are only relevant to the current API call.
      */
-    public AvaTaxMessage[] getMessages() {
+    public ArrayList<AvaTaxMessage> getMessages() {
         return this.messages;
     }
 
@@ -1085,7 +1085,7 @@ public class TransactionModel {
      *
      * List of informational and warning messages regarding this API call. These messages are only relevant to the current API call.
      */
-    public void setMessages(AvaTaxMessage[] value) {
+    public void setMessages(ArrayList<AvaTaxMessage> value) {
         this.messages = value;
     }
 

@@ -93,14 +93,14 @@ public class AddTransactionLineModel {
     }
 
 
-    private LineItemModel[] lines;
+    private ArrayList<LineItemModel> lines;
 
     /**
      * Getter for lines
      *
      * List of lines to be added
      */
-    public LineItemModel[] getLines() {
+    public ArrayList<LineItemModel> getLines() {
         return this.lines;
     }
 
@@ -109,7 +109,7 @@ public class AddTransactionLineModel {
      *
      * List of lines to be added
      */
-    public void setLines(LineItemModel[] value) {
+    public void setLines(ArrayList<LineItemModel> value) {
         this.lines = value;
     }
 

@@ -51,14 +51,14 @@ public class FilingAnswerModel {
     }
 
 
-    private object answer;
+    private HashMap<String, String> answer;
 
     /**
      * Getter for answer
      *
      * The value of the answer for the filing question identified by filingQuestionId
      */
-    public object getAnswer() {
+    public HashMap<String, String> getAnswer() {
         return this.answer;
     }
 
@@ -67,7 +67,7 @@ public class FilingAnswerModel {
      *
      * The value of the answer for the filing question identified by filingQuestionId
      */
-    public void setAnswer(object value) {
+    public void setAnswer(HashMap<String, String> value) {
         this.answer = value;
     }
 

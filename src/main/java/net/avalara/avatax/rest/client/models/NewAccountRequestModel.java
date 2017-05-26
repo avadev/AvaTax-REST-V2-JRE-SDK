@@ -31,14 +31,14 @@ import java.util.HashMap;
 public class NewAccountRequestModel {
 
 
-    private String[] products;
+    private ArrayList<String> products;
 
     /**
      * Getter for products
      *
      * The list of products to which this account would like to subscribe.
      */
-    public String[] getProducts() {
+    public ArrayList<String> getProducts() {
         return this.products;
     }
 
@@ -47,7 +47,7 @@ public class NewAccountRequestModel {
      *
      * The list of products to which this account would like to subscribe.
      */
-    public void setProducts(String[] value) {
+    public void setProducts(ArrayList<String> value) {
         this.products = value;
     }
 

@@ -93,14 +93,14 @@ public class PointOfSaleDataRequestModel {
     }
 
 
-    private String[] taxCodes;
+    private ArrayList<String> taxCodes;
 
     /**
      * Getter for taxCodes
      *
      * A list of tax codes to include in this point-of-sale file. If no tax codes are specified, response will include all distinct tax codes associated with the Items within your company.
      */
-    public String[] getTaxCodes() {
+    public ArrayList<String> getTaxCodes() {
         return this.taxCodes;
     }
 
@@ -109,19 +109,19 @@ public class PointOfSaleDataRequestModel {
      *
      * A list of tax codes to include in this point-of-sale file. If no tax codes are specified, response will include all distinct tax codes associated with the Items within your company.
      */
-    public void setTaxCodes(String[] value) {
+    public void setTaxCodes(ArrayList<String> value) {
         this.taxCodes = value;
     }
 
 
-    private String[] locationCodes;
+    private ArrayList<String> locationCodes;
 
     /**
      * Getter for locationCodes
      *
      * A list of location codes to include in this point-of-sale file. If no location codes are specified, response will include all locations within your company.
      */
-    public String[] getLocationCodes() {
+    public ArrayList<String> getLocationCodes() {
         return this.locationCodes;
     }
 
@@ -130,7 +130,7 @@ public class PointOfSaleDataRequestModel {
      *
      * A list of location codes to include in this point-of-sale file. If no location codes are specified, response will include all locations within your company.
      */
-    public void setLocationCodes(String[] value) {
+    public void setLocationCodes(ArrayList<String> value) {
         this.locationCodes = value;
     }
 

@@ -114,14 +114,14 @@ public class RefundTransactionModel {
     }
 
 
-    private String[] refundLines;
+    private ArrayList<String> refundLines;
 
     /**
      * Getter for refundLines
      *
      * Process refund for these lines
      */
-    public String[] getRefundLines() {
+    public ArrayList<String> getRefundLines() {
         return this.refundLines;
     }
 
@@ -130,7 +130,7 @@ public class RefundTransactionModel {
      *
      * Process refund for these lines
      */
-    public void setRefundLines(String[] value) {
+    public void setRefundLines(ArrayList<String> value) {
         this.refundLines = value;
     }
 

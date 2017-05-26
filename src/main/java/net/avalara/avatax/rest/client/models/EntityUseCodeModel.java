@@ -93,14 +93,14 @@ public class EntityUseCodeModel {
     }
 
 
-    private String[] validCountries;
+    private ArrayList<String> validCountries;
 
     /**
      * Getter for validCountries
      *
      * A list of countries where this use code is valid
      */
-    public String[] getValidCountries() {
+    public ArrayList<String> getValidCountries() {
         return this.validCountries;
     }
 
@@ -109,7 +109,7 @@ public class EntityUseCodeModel {
      *
      * A list of countries where this use code is valid
      */
-    public void setValidCountries(String[] value) {
+    public void setValidCountries(ArrayList<String> value) {
         this.validCountries = value;
     }
 

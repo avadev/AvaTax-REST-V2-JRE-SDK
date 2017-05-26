@@ -830,14 +830,14 @@ public class NoticeModel {
     }
 
 
-    private NoticeCommentModel[] comments;
+    private ArrayList<NoticeCommentModel> comments;
 
     /**
      * Getter for comments
      *
      * Additional comments on the notice
      */
-    public NoticeCommentModel[] getComments() {
+    public ArrayList<NoticeCommentModel> getComments() {
         return this.comments;
     }
 
@@ -846,19 +846,19 @@ public class NoticeModel {
      *
      * Additional comments on the notice
      */
-    public void setComments(NoticeCommentModel[] value) {
+    public void setComments(ArrayList<NoticeCommentModel> value) {
         this.comments = value;
     }
 
 
-    private NoticeFinanceModel[] finances;
+    private ArrayList<NoticeFinanceModel> finances;
 
     /**
      * Getter for finances
      *
      * Finance details of the notice
      */
-    public NoticeFinanceModel[] getFinances() {
+    public ArrayList<NoticeFinanceModel> getFinances() {
         return this.finances;
     }
 
@@ -867,19 +867,19 @@ public class NoticeModel {
      *
      * Finance details of the notice
      */
-    public void setFinances(NoticeFinanceModel[] value) {
+    public void setFinances(ArrayList<NoticeFinanceModel> value) {
         this.finances = value;
     }
 
 
-    private NoticeResponsibilityDetailModel[] responsibility;
+    private ArrayList<NoticeResponsibilityDetailModel> responsibility;
 
     /**
      * Getter for responsibility
      *
      * Notice Responsibility Details
      */
-    public NoticeResponsibilityDetailModel[] getResponsibility() {
+    public ArrayList<NoticeResponsibilityDetailModel> getResponsibility() {
         return this.responsibility;
     }
 
@@ -888,19 +888,19 @@ public class NoticeModel {
      *
      * Notice Responsibility Details
      */
-    public void setResponsibility(NoticeResponsibilityDetailModel[] value) {
+    public void setResponsibility(ArrayList<NoticeResponsibilityDetailModel> value) {
         this.responsibility = value;
     }
 
 
-    private NoticeRootCauseDetailModel[] rootCause;
+    private ArrayList<NoticeRootCauseDetailModel> rootCause;
 
     /**
      * Getter for rootCause
      *
      * Notice Root Cause Details
      */
-    public NoticeRootCauseDetailModel[] getRootCause() {
+    public ArrayList<NoticeRootCauseDetailModel> getRootCause() {
         return this.rootCause;
     }
 
@@ -909,7 +909,7 @@ public class NoticeModel {
      *
      * Notice Root Cause Details
      */
-    public void setRootCause(NoticeRootCauseDetailModel[] value) {
+    public void setRootCause(ArrayList<NoticeRootCauseDetailModel> value) {
         this.rootCause = value;
     }
 

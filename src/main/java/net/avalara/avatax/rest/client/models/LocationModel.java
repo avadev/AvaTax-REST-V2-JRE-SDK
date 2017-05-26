@@ -577,7 +577,7 @@ public class LocationModel {
     }
 
 
-    private LocationSettingModel[] settings;
+    private ArrayList<LocationSettingModel> settings;
 
     /**
      * Getter for settings
@@ -586,7 +586,7 @@ public class LocationModel {
     * For a list of settings recognized by Avalara, query the endpoint "/api/v2/definitions/locationquestions". 
     * To determine the list of settings required for this location, query the endpoint "/api/v2/companies/(id)/locations/(id)/validate".
      */
-    public LocationSettingModel[] getSettings() {
+    public ArrayList<LocationSettingModel> getSettings() {
         return this.settings;
     }
 
@@ -597,7 +597,7 @@ public class LocationModel {
     * For a list of settings recognized by Avalara, query the endpoint "/api/v2/definitions/locationquestions". 
     * To determine the list of settings required for this location, query the endpoint "/api/v2/companies/(id)/locations/(id)/validate".
      */
-    public void setSettings(LocationSettingModel[] value) {
+    public void setSettings(ArrayList<LocationSettingModel> value) {
         this.settings = value;
     }
 

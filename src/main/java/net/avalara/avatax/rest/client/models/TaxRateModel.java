@@ -51,14 +51,14 @@ public class TaxRateModel {
     }
 
 
-    private RateModel[] rates;
+    private ArrayList<RateModel> rates;
 
     /**
      * Getter for rates
      *
      * Rates
      */
-    public RateModel[] getRates() {
+    public ArrayList<RateModel> getRates() {
         return this.rates;
     }
 
@@ -67,7 +67,7 @@ public class TaxRateModel {
      *
      * Rates
      */
-    public void setRates(RateModel[] value) {
+    public void setRates(ArrayList<RateModel> value) {
         this.rates = value;
     }
 

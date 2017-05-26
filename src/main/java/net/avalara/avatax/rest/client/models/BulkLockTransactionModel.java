@@ -30,14 +30,14 @@ import java.util.HashMap;
 public class BulkLockTransactionModel {
 
 
-    private long[] documentIds;
+    private ArrayList<long> documentIds;
 
     /**
      * Getter for documentIds
      *
      * List of documents to lock
      */
-    public long[] getDocumentIds() {
+    public ArrayList<long> getDocumentIds() {
         return this.documentIds;
     }
 
@@ -46,7 +46,7 @@ public class BulkLockTransactionModel {
      *
      * List of documents to lock
      */
-    public void setDocumentIds(long[] value) {
+    public void setDocumentIds(ArrayList<long> value) {
         this.documentIds = value;
     }
 

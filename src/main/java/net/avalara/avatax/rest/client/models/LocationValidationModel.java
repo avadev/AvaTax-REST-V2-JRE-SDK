@@ -55,14 +55,14 @@ public class LocationValidationModel {
     }
 
 
-    private LocationQuestionModel[] requiredSettings;
+    private ArrayList<LocationQuestionModel> requiredSettings;
 
     /**
      * Getter for requiredSettings
      *
      * A list of settings that must be defined for this location
      */
-    public LocationQuestionModel[] getRequiredSettings() {
+    public ArrayList<LocationQuestionModel> getRequiredSettings() {
         return this.requiredSettings;
     }
 
@@ -71,7 +71,7 @@ public class LocationValidationModel {
      *
      * A list of settings that must be defined for this location
      */
-    public void setRequiredSettings(LocationQuestionModel[] value) {
+    public void setRequiredSettings(ArrayList<LocationQuestionModel> value) {
         this.requiredSettings = value;
     }
 

@@ -573,14 +573,14 @@ public class CompanyModel {
     }
 
 
-    private ContactModel[] contacts;
+    private ArrayList<ContactModel> contacts;
 
     /**
      * Getter for contacts
      *
      * Optional: A list of contacts defined for this company. To fetch this list, add the query string "?$include=Contacts" to your URL.
      */
-    public ContactModel[] getContacts() {
+    public ArrayList<ContactModel> getContacts() {
         return this.contacts;
     }
 
@@ -589,19 +589,19 @@ public class CompanyModel {
      *
      * Optional: A list of contacts defined for this company. To fetch this list, add the query string "?$include=Contacts" to your URL.
      */
-    public void setContacts(ContactModel[] value) {
+    public void setContacts(ArrayList<ContactModel> value) {
         this.contacts = value;
     }
 
 
-    private ItemModel[] items;
+    private ArrayList<ItemModel> items;
 
     /**
      * Getter for items
      *
      * Optional: A list of items defined for this company. To fetch this list, add the query string "?$include=Items" to your URL.
      */
-    public ItemModel[] getItems() {
+    public ArrayList<ItemModel> getItems() {
         return this.items;
     }
 
@@ -610,19 +610,19 @@ public class CompanyModel {
      *
      * Optional: A list of items defined for this company. To fetch this list, add the query string "?$include=Items" to your URL.
      */
-    public void setItems(ItemModel[] value) {
+    public void setItems(ArrayList<ItemModel> value) {
         this.items = value;
     }
 
 
-    private LocationModel[] locations;
+    private ArrayList<LocationModel> locations;
 
     /**
      * Getter for locations
      *
      * Optional: A list of locations defined for this company. To fetch this list, add the query string "?$include=Locations" to your URL.
      */
-    public LocationModel[] getLocations() {
+    public ArrayList<LocationModel> getLocations() {
         return this.locations;
     }
 
@@ -631,19 +631,19 @@ public class CompanyModel {
      *
      * Optional: A list of locations defined for this company. To fetch this list, add the query string "?$include=Locations" to your URL.
      */
-    public void setLocations(LocationModel[] value) {
+    public void setLocations(ArrayList<LocationModel> value) {
         this.locations = value;
     }
 
 
-    private NexusModel[] nexus;
+    private ArrayList<NexusModel> nexus;
 
     /**
      * Getter for nexus
      *
      * Optional: A list of nexus defined for this company. To fetch this list, add the query string "?$include=Nexus" to your URL.
      */
-    public NexusModel[] getNexus() {
+    public ArrayList<NexusModel> getNexus() {
         return this.nexus;
     }
 
@@ -652,19 +652,19 @@ public class CompanyModel {
      *
      * Optional: A list of nexus defined for this company. To fetch this list, add the query string "?$include=Nexus" to your URL.
      */
-    public void setNexus(NexusModel[] value) {
+    public void setNexus(ArrayList<NexusModel> value) {
         this.nexus = value;
     }
 
 
-    private SettingModel[] settings;
+    private ArrayList<SettingModel> settings;
 
     /**
      * Getter for settings
      *
      * Optional: A list of settings defined for this company. To fetch this list, add the query string "?$include=Settings" to your URL.
      */
-    public SettingModel[] getSettings() {
+    public ArrayList<SettingModel> getSettings() {
         return this.settings;
     }
 
@@ -673,19 +673,19 @@ public class CompanyModel {
      *
      * Optional: A list of settings defined for this company. To fetch this list, add the query string "?$include=Settings" to your URL.
      */
-    public void setSettings(SettingModel[] value) {
+    public void setSettings(ArrayList<SettingModel> value) {
         this.settings = value;
     }
 
 
-    private TaxCodeModel[] taxCodes;
+    private ArrayList<TaxCodeModel> taxCodes;
 
     /**
      * Getter for taxCodes
      *
      * Optional: A list of tax codes defined for this company. To fetch this list, add the query string "?$include=TaxCodes" to your URL.
      */
-    public TaxCodeModel[] getTaxCodes() {
+    public ArrayList<TaxCodeModel> getTaxCodes() {
         return this.taxCodes;
     }
 
@@ -694,19 +694,19 @@ public class CompanyModel {
      *
      * Optional: A list of tax codes defined for this company. To fetch this list, add the query string "?$include=TaxCodes" to your URL.
      */
-    public void setTaxCodes(TaxCodeModel[] value) {
+    public void setTaxCodes(ArrayList<TaxCodeModel> value) {
         this.taxCodes = value;
     }
 
 
-    private TaxRuleModel[] taxRules;
+    private ArrayList<TaxRuleModel> taxRules;
 
     /**
      * Getter for taxRules
      *
      * Optional: A list of tax rules defined for this company. To fetch this list, add the query string "?$include=TaxRules" to your URL.
      */
-    public TaxRuleModel[] getTaxRules() {
+    public ArrayList<TaxRuleModel> getTaxRules() {
         return this.taxRules;
     }
 
@@ -715,19 +715,19 @@ public class CompanyModel {
      *
      * Optional: A list of tax rules defined for this company. To fetch this list, add the query string "?$include=TaxRules" to your URL.
      */
-    public void setTaxRules(TaxRuleModel[] value) {
+    public void setTaxRules(ArrayList<TaxRuleModel> value) {
         this.taxRules = value;
     }
 
 
-    private UPCModel[] upcs;
+    private ArrayList<UPCModel> upcs;
 
     /**
      * Getter for upcs
      *
      * Optional: A list of UPCs defined for this company. To fetch this list, add the query string "?$include=UPCs" to your URL.
      */
-    public UPCModel[] getUpcs() {
+    public ArrayList<UPCModel> getUpcs() {
         return this.upcs;
     }
 
@@ -736,7 +736,7 @@ public class CompanyModel {
      *
      * Optional: A list of UPCs defined for this company. To fetch this list, add the query string "?$include=UPCs" to your URL.
      */
-    public void setUpcs(UPCModel[] value) {
+    public void setUpcs(ArrayList<UPCModel> value) {
         this.upcs = value;
     }
 

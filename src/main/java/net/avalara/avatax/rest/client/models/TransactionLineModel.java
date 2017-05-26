@@ -783,14 +783,14 @@ public class TransactionLineModel {
     }
 
 
-    private TransactionLineDetailModel[] details;
+    private ArrayList<TransactionLineDetailModel> details;
 
     /**
      * Getter for details
      *
      * Optional: A list of tax details for this line item. To fetch this list, add the query string "?$include=Details" to your URL.
      */
-    public TransactionLineDetailModel[] getDetails() {
+    public ArrayList<TransactionLineDetailModel> getDetails() {
         return this.details;
     }
 
@@ -799,19 +799,19 @@ public class TransactionLineModel {
      *
      * Optional: A list of tax details for this line item. To fetch this list, add the query string "?$include=Details" to your URL.
      */
-    public void setDetails(TransactionLineDetailModel[] value) {
+    public void setDetails(ArrayList<TransactionLineDetailModel> value) {
         this.details = value;
     }
 
 
-    private TransactionLineLocationTypeModel[] lineLocationTypes;
+    private ArrayList<TransactionLineLocationTypeModel> lineLocationTypes;
 
     /**
      * Getter for lineLocationTypes
      *
      * Optional: A list of location types for this line item. To fetch this list, add the query string "?$include=LineLocationTypes" to your URL.
      */
-    public TransactionLineLocationTypeModel[] getLineLocationTypes() {
+    public ArrayList<TransactionLineLocationTypeModel> getLineLocationTypes() {
         return this.lineLocationTypes;
     }
 
@@ -820,19 +820,19 @@ public class TransactionLineModel {
      *
      * Optional: A list of location types for this line item. To fetch this list, add the query string "?$include=LineLocationTypes" to your URL.
      */
-    public void setLineLocationTypes(TransactionLineLocationTypeModel[] value) {
+    public void setLineLocationTypes(ArrayList<TransactionLineLocationTypeModel> value) {
         this.lineLocationTypes = value;
     }
 
 
-    private object parameters;
+    private HashMap<String, String> parameters;
 
     /**
      * Getter for parameters
      *
      * Contains a list of extra parameters that were set when the transaction was created.
      */
-    public object getParameters() {
+    public HashMap<String, String> getParameters() {
         return this.parameters;
     }
 
@@ -841,7 +841,7 @@ public class TransactionLineModel {
      *
      * Contains a list of extra parameters that were set when the transaction was created.
      */
-    public void setParameters(object value) {
+    public void setParameters(HashMap<String, String> value) {
         this.parameters = value;
     }
 

@@ -31,14 +31,14 @@ import java.util.HashMap;
 public class TaxCodeTypesModel {
 
 
-    private object types;
+    private HashMap<String, String> types;
 
     /**
      * Getter for types
      *
      * The list of Avalara-defined tax code types.
      */
-    public object getTypes() {
+    public HashMap<String, String> getTypes() {
         return this.types;
     }
 
@@ -47,7 +47,7 @@ public class TaxCodeTypesModel {
      *
      * The list of Avalara-defined tax code types.
      */
-    public void setTypes(object value) {
+    public void setTypes(HashMap<String, String> value) {
         this.types = value;
     }
 
