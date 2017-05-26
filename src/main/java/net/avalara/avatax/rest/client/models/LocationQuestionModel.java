@@ -9,171 +9,223 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 
+/*
+ * AvaTax Software Development Kit for Java JRE based environments
+ *
+ * (c) 2004-2017 Avalara, Inc.
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ *
+ * @author     Dustin Welden <dustin.welden@avalara.com>
+ * @copyright  2004-2017 Avalara, Inc.
+ * @license    https://www.apache.org/licenses/LICENSE-2.0
+ * @version    17.5.2-77
+ * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ */
+
 /**
  * Information about questions that the local jurisdictions require for each location
  */
 public class LocationQuestionModel {
-    private String question;
 
-    /**
-     * Getter for question - Information about questions that the local jurisdictions require for each location
-     */
-    public String getQuestion() {
-        return this.question;
-    }
 
-    /**
-     * Setter for question - Information about questions that the local jurisdictions require for each location
-     */
-    public void setQuestion(String question) {
-        this.question = question;
-    }
-
-    
-    private String description;
-
-    /**
-     * Getter for description - Information about questions that the local jurisdictions require for each location
-     */
-    public String getDescription() {
-        return this.description;
-    }
-
-    /**
-     * Setter for description - Information about questions that the local jurisdictions require for each location
-     */
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    
-    private String regularExpression;
-
-    /**
-     * Getter for regularExpression - Information about questions that the local jurisdictions require for each location
-     */
-    public String getRegularExpression() {
-        return this.regularExpression;
-    }
-
-    /**
-     * Setter for regularExpression - Information about questions that the local jurisdictions require for each location
-     */
-    public void setRegularExpression(String regularExpression) {
-        this.regularExpression = regularExpression;
-    }
-
-    
-    private String jurisdictionCountry;
-
-    /**
-     * Getter for jurisdictionCountry - Information about questions that the local jurisdictions require for each location
-     */
-    public String getJurisdictionCountry() {
-        return this.jurisdictionCountry;
-    }
-
-    /**
-     * Setter for jurisdictionCountry - Information about questions that the local jurisdictions require for each location
-     */
-    public void setJurisdictionCountry(String jurisdictionCountry) {
-        this.jurisdictionCountry = jurisdictionCountry;
-    }
-
-    
-    private String jurisdictionRegion;
-
-    /**
-     * Getter for jurisdictionRegion - Information about questions that the local jurisdictions require for each location
-     */
-    public String getJurisdictionRegion() {
-        return this.jurisdictionRegion;
-    }
-
-    /**
-     * Setter for jurisdictionRegion - Information about questions that the local jurisdictions require for each location
-     */
-    public void setJurisdictionRegion(String jurisdictionRegion) {
-        this.jurisdictionRegion = jurisdictionRegion;
-    }
-
-    
-    private String exampleValue;
-
-    /**
-     * Getter for exampleValue - Information about questions that the local jurisdictions require for each location
-     */
-    public String getExampleValue() {
-        return this.exampleValue;
-    }
-
-    /**
-     * Setter for exampleValue - Information about questions that the local jurisdictions require for each location
-     */
-    public void setExampleValue(String exampleValue) {
-        this.exampleValue = exampleValue;
-    }
-
-    
     private Integer id;
 
     /**
-     * Getter for id - Information about questions that the local jurisdictions require for each location
+     * Getter for id
+     *
+     * The unique ID number of this location setting type
      */
     public Integer getId() {
         return this.id;
     }
 
     /**
-     * Setter for id - Information about questions that the local jurisdictions require for each location
+     * Setter for id
+     *
+     * The unique ID number of this location setting type
      */
-    public void setId(Integer id) {
-        this.id = id;
+    public void setId(Integer value) {
+        this.id = value;
     }
 
-    
-    private JurisdictionType jurisdictionType;
+
+    private String question;
 
     /**
-     * Getter for jurisdictionType - Information about questions that the local jurisdictions require for each location
+     * Getter for question
+     *
+     * This is the prompt for this question
      */
-    public JurisdictionType getJurisdictionType() {
-        return this.jurisdictionType;
+    public String getQuestion() {
+        return this.question;
     }
 
     /**
-     * Setter for jurisdictionType - Information about questions that the local jurisdictions require for each location
+     * Setter for question
+     *
+     * This is the prompt for this question
      */
-    public void setJurisdictionType(JurisdictionType jurisdictionType) {
-        this.jurisdictionType = jurisdictionType;
+    public void setQuestion(String value) {
+        this.question = value;
     }
 
-    
+
+    private String description;
+
+    /**
+     * Getter for description
+     *
+     * If additional information is available about the location setting, this contains descriptive text to help
+    * you identify the correct value to provide in this setting.
+     */
+    public String getDescription() {
+        return this.description;
+    }
+
+    /**
+     * Setter for description
+     *
+     * If additional information is available about the location setting, this contains descriptive text to help
+    * you identify the correct value to provide in this setting.
+     */
+    public void setDescription(String value) {
+        this.description = value;
+    }
+
+
+    private String regularExpression;
+
+    /**
+     * Getter for regularExpression
+     *
+     * If available, this regular expression will verify that the input from the user is in the expected format.
+     */
+    public String getRegularExpression() {
+        return this.regularExpression;
+    }
+
+    /**
+     * Setter for regularExpression
+     *
+     * If available, this regular expression will verify that the input from the user is in the expected format.
+     */
+    public void setRegularExpression(String value) {
+        this.regularExpression = value;
+    }
+
+
+    private String exampleValue;
+
+    /**
+     * Getter for exampleValue
+     *
+     * If available, this is an example value that you can demonstrate to the user to show what is expected.
+     */
+    public String getExampleValue() {
+        return this.exampleValue;
+    }
+
+    /**
+     * Setter for exampleValue
+     *
+     * If available, this is an example value that you can demonstrate to the user to show what is expected.
+     */
+    public void setExampleValue(String value) {
+        this.exampleValue = value;
+    }
+
+
     private String jurisdictionName;
 
     /**
-     * Getter for jurisdictionName - Information about questions that the local jurisdictions require for each location
+     * Getter for jurisdictionName
+     *
+     * Indicates which jurisdiction requires this question
      */
     public String getJurisdictionName() {
         return this.jurisdictionName;
     }
 
     /**
-     * Setter for jurisdictionName - Information about questions that the local jurisdictions require for each location
+     * Setter for jurisdictionName
+     *
+     * Indicates which jurisdiction requires this question
      */
-    public void setJurisdictionName(String jurisdictionName) {
-        this.jurisdictionName = jurisdictionName;
+    public void setJurisdictionName(String value) {
+        this.jurisdictionName = value;
     }
 
-    
+
+    private JurisdictionType jurisdictionType;
+
+    /**
+     * Getter for jurisdictionType
+     *
+     * Indicates which type of jurisdiction requires this question
+     */
+    public JurisdictionType getJurisdictionType() {
+        return this.jurisdictionType;
+    }
+
+    /**
+     * Setter for jurisdictionType
+     *
+     * Indicates which type of jurisdiction requires this question
+     */
+    public void setJurisdictionType(JurisdictionType value) {
+        this.jurisdictionType = value;
+    }
+
+
+    private String jurisdictionCountry;
+
+    /**
+     * Getter for jurisdictionCountry
+     *
+     * Indicates the country that this jurisdiction belongs to
+     */
+    public String getJurisdictionCountry() {
+        return this.jurisdictionCountry;
+    }
+
+    /**
+     * Setter for jurisdictionCountry
+     *
+     * Indicates the country that this jurisdiction belongs to
+     */
+    public void setJurisdictionCountry(String value) {
+        this.jurisdictionCountry = value;
+    }
+
+
+    private String jurisdictionRegion;
+
+    /**
+     * Getter for jurisdictionRegion
+     *
+     * Indicates the state, region, or province that this jurisdiction belongs to
+     */
+    public String getJurisdictionRegion() {
+        return this.jurisdictionRegion;
+    }
+
+    /**
+     * Setter for jurisdictionRegion
+     *
+     * Indicates the state, region, or province that this jurisdiction belongs to
+     */
+    public void setJurisdictionRegion(String value) {
+        this.jurisdictionRegion = value;
+    }
 
 
     /**
-     * Returns a JSON string representation of LocationQuestionModel.
+     * Returns a JSON string representation of LocationQuestionModel
      */
     @Override
     public String toString() {
         return JsonSerializer.SerializeObject(this);
     }
 }
-    

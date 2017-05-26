@@ -9,120 +9,158 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 
+/*
+ * AvaTax Software Development Kit for Java JRE based environments
+ *
+ * (c) 2004-2017 Avalara, Inc.
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ *
+ * @author     Dustin Welden <dustin.welden@avalara.com>
+ * @copyright  2004-2017 Avalara, Inc.
+ * @license    https://www.apache.org/licenses/LICENSE-2.0
+ * @version    17.5.2-77
+ * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ */
+
 /**
  * Information about a previously created transaction
  */
 public class AuditTransactionModel {
-    private ReconstructedApiRequestResponseModel reconstructed;
 
-    /**
-     * Getter for reconstructed - Information about a previously created transaction
-     */
-    public ReconstructedApiRequestResponseModel getReconstructed() {
-        return this.reconstructed;
-    }
 
-    /**
-     * Setter for reconstructed - Information about a previously created transaction
-     */
-    public void setReconstructed(ReconstructedApiRequestResponseModel reconstructed) {
-        this.reconstructed = reconstructed;
-    }
-
-    
-    private Date serverTimestamp;
-
-    /**
-     * Getter for serverTimestamp - Information about a previously created transaction
-     */
-    public Date getServerTimestamp() {
-        return this.serverTimestamp;
-    }
-
-    /**
-     * Setter for serverTimestamp - Information about a previously created transaction
-     */
-    public void setServerTimestamp(Date serverTimestamp) {
-        this.serverTimestamp = serverTimestamp;
-    }
-
-    
-    private ApiCallStatus apiCallStatus;
-
-    /**
-     * Getter for apiCallStatus - Information about a previously created transaction
-     */
-    public ApiCallStatus getApiCallStatus() {
-        return this.apiCallStatus;
-    }
-
-    /**
-     * Setter for apiCallStatus - Information about a previously created transaction
-     */
-    public void setApiCallStatus(ApiCallStatus apiCallStatus) {
-        this.apiCallStatus = apiCallStatus;
-    }
-
-    
-    private Date serverDuration;
-
-    /**
-     * Getter for serverDuration - Information about a previously created transaction
-     */
-    public Date getServerDuration() {
-        return this.serverDuration;
-    }
-
-    /**
-     * Setter for serverDuration - Information about a previously created transaction
-     */
-    public void setServerDuration(Date serverDuration) {
-        this.serverDuration = serverDuration;
-    }
-
-    
-    private OriginalApiRequestResponseModel original;
-
-    /**
-     * Getter for original - Information about a previously created transaction
-     */
-    public OriginalApiRequestResponseModel getOriginal() {
-        return this.original;
-    }
-
-    /**
-     * Setter for original - Information about a previously created transaction
-     */
-    public void setOriginal(OriginalApiRequestResponseModel original) {
-        this.original = original;
-    }
-
-    
     private Integer companyId;
 
     /**
-     * Getter for companyId - Information about a previously created transaction
+     * Getter for companyId
+     *
+     * Unique ID number of the company that created this transaction
      */
     public Integer getCompanyId() {
         return this.companyId;
     }
 
     /**
-     * Setter for companyId - Information about a previously created transaction
+     * Setter for companyId
+     *
+     * Unique ID number of the company that created this transaction
      */
-    public void setCompanyId(Integer companyId) {
-        this.companyId = companyId;
+    public void setCompanyId(Integer value) {
+        this.companyId = value;
     }
 
-    
+
+    private Date serverTimestamp;
+
+    /**
+     * Getter for serverTimestamp
+     *
+     * Server timestamp, in UTC, of the date/time when the original transaction was created
+     */
+    public Date getServerTimestamp() {
+        return this.serverTimestamp;
+    }
+
+    /**
+     * Setter for serverTimestamp
+     *
+     * Server timestamp, in UTC, of the date/time when the original transaction was created
+     */
+    public void setServerTimestamp(Date value) {
+        this.serverTimestamp = value;
+    }
+
+
+    private Date serverDuration;
+
+    /**
+     * Getter for serverDuration
+     *
+     * Length of time the original API call took
+     */
+    public Date getServerDuration() {
+        return this.serverDuration;
+    }
+
+    /**
+     * Setter for serverDuration
+     *
+     * Length of time the original API call took
+     */
+    public void setServerDuration(Date value) {
+        this.serverDuration = value;
+    }
+
+
+    private ApiCallStatus apiCallStatus;
+
+    /**
+     * Getter for apiCallStatus
+     *
+     * api call status
+     */
+    public ApiCallStatus getApiCallStatus() {
+        return this.apiCallStatus;
+    }
+
+    /**
+     * Setter for apiCallStatus
+     *
+     * api call status
+     */
+    public void setApiCallStatus(ApiCallStatus value) {
+        this.apiCallStatus = value;
+    }
+
+
+    private OriginalApiRequestResponseModel original;
+
+    /**
+     * Getter for original
+     *
+     * Original API request/response
+     */
+    public OriginalApiRequestResponseModel getOriginal() {
+        return this.original;
+    }
+
+    /**
+     * Setter for original
+     *
+     * Original API request/response
+     */
+    public void setOriginal(OriginalApiRequestResponseModel value) {
+        this.original = value;
+    }
+
+
+    private ReconstructedApiRequestResponseModel reconstructed;
+
+    /**
+     * Getter for reconstructed
+     *
+     * Reconstructed API request/response
+     */
+    public ReconstructedApiRequestResponseModel getReconstructed() {
+        return this.reconstructed;
+    }
+
+    /**
+     * Setter for reconstructed
+     *
+     * Reconstructed API request/response
+     */
+    public void setReconstructed(ReconstructedApiRequestResponseModel value) {
+        this.reconstructed = value;
+    }
 
 
     /**
-     * Returns a JSON string representation of AuditTransactionModel.
+     * Returns a JSON string representation of AuditTransactionModel
      */
     @Override
     public String toString() {
         return JsonSerializer.SerializeObject(this);
     }
 }
-    

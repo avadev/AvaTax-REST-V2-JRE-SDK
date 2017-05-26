@@ -1,54 +1,68 @@
 package net.avalara.avatax.rest.client.enums;
 
+/*
+ * AvaTax Software Development Kit for Java JRE based environments
+ *
+ * (c) 2004-2017 Avalara, Inc.
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ *
+ * @author     Dustin Welden <dustin.welden@avalara.com>
+ * @copyright  2004-2017 Avalara, Inc.
+ * @license    https://www.apache.org/licenses/LICENSE-2.0
+ * @version    17.5.2-77
+ * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ */
+
 /**
- * 
+ * Document Status
  */
 public enum DocumentStatus {
-    /**
-     * No comment data provided
+    /** 
+     * Temporary document not saved (SalesOrder, PurchaseOrder)
      */
     Temporary,
-    
-    /**
-     * No comment data provided
+
+    /** 
+     * Saved document (SalesInvoice or PurchaseInvoice) ready to be posted
      */
     Saved,
-    
-    /**
-     * No comment data provided
+
+    /** 
+     * A posted document (not committed)
      */
     Posted,
-    
-    /**
-     * No comment data provided
+
+    /** 
+     * A posted document that has been committed
      */
     Committed,
-    
-    /**
-     * No comment data provided
+
+    /** 
+     * A Committed document that has been cancelled
      */
     Cancelled,
-    
-    /**
-     * No comment data provided
+
+    /** 
+     * A document that has been adjusted
      */
     Adjusted,
-    
-    /**
-     * No comment data provided
+
+    /** 
+     * A document which is in Queue status and processed later
      */
     Queued,
-    
-    /**
-     * No comment data provided
+
+    /** 
+     * A document which is Pending for Approval
      */
     PendingApproval,
-    
-    /**
-     * No comment data provided
+
+    /** 
+     * Any status (for searching)
      */
     Any,
-    
 
 }
     

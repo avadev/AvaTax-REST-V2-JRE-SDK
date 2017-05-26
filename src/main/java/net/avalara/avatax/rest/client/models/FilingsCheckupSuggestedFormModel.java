@@ -9,103 +9,137 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 
+/*
+ * AvaTax Software Development Kit for Java JRE based environments
+ *
+ * (c) 2004-2017 Avalara, Inc.
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ *
+ * @author     Dustin Welden <dustin.welden@avalara.com>
+ * @copyright  2004-2017 Avalara, Inc.
+ * @license    https://www.apache.org/licenses/LICENSE-2.0
+ * @version    17.5.2-77
+ * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ */
+
 /**
  * Worksheet Checkup Report Suggested Form Model
  */
 public class FilingsCheckupSuggestedFormModel {
-    private String returnName;
 
-    /**
-     * Getter for returnName - Worksheet Checkup Report Suggested Form Model
-     */
-    public String getReturnName() {
-        return this.returnName;
-    }
 
-    /**
-     * Setter for returnName - Worksheet Checkup Report Suggested Form Model
-     */
-    public void setReturnName(String returnName) {
-        this.returnName = returnName;
-    }
-
-    
-    private String country;
-
-    /**
-     * Getter for country - Worksheet Checkup Report Suggested Form Model
-     */
-    public String getCountry() {
-        return this.country;
-    }
-
-    /**
-     * Setter for country - Worksheet Checkup Report Suggested Form Model
-     */
-    public void setCountry(String country) {
-        this.country = country;
-    }
-
-    
-    private String taxFormCode;
-
-    /**
-     * Getter for taxFormCode - Worksheet Checkup Report Suggested Form Model
-     */
-    public String getTaxFormCode() {
-        return this.taxFormCode;
-    }
-
-    /**
-     * Setter for taxFormCode - Worksheet Checkup Report Suggested Form Model
-     */
-    public void setTaxFormCode(String taxFormCode) {
-        this.taxFormCode = taxFormCode;
-    }
-
-    
     private Integer taxAuthorityId;
 
     /**
-     * Getter for taxAuthorityId - Worksheet Checkup Report Suggested Form Model
+     * Getter for taxAuthorityId
+     *
+     * Tax Authority ID of the suggested form returned
      */
     public Integer getTaxAuthorityId() {
         return this.taxAuthorityId;
     }
 
     /**
-     * Setter for taxAuthorityId - Worksheet Checkup Report Suggested Form Model
+     * Setter for taxAuthorityId
+     *
+     * Tax Authority ID of the suggested form returned
      */
-    public void setTaxAuthorityId(Integer taxAuthorityId) {
-        this.taxAuthorityId = taxAuthorityId;
+    public void setTaxAuthorityId(Integer value) {
+        this.taxAuthorityId = value;
     }
 
-    
+
+    private String country;
+
+    /**
+     * Getter for country
+     *
+     * Country of the suggested form returned
+     */
+    public String getCountry() {
+        return this.country;
+    }
+
+    /**
+     * Setter for country
+     *
+     * Country of the suggested form returned
+     */
+    public void setCountry(String value) {
+        this.country = value;
+    }
+
+
     private String region;
 
     /**
-     * Getter for region - Worksheet Checkup Report Suggested Form Model
+     * Getter for region
+     *
+     * Region of the suggested form returned
      */
     public String getRegion() {
         return this.region;
     }
 
     /**
-     * Setter for region - Worksheet Checkup Report Suggested Form Model
+     * Setter for region
+     *
+     * Region of the suggested form returned
      */
-    public void setRegion(String region) {
-        this.region = region;
+    public void setRegion(String value) {
+        this.region = value;
     }
 
-    
+
+    private String returnName;
+
+    /**
+     * Getter for returnName
+     *
+     * 
+     */
+    public String getReturnName() {
+        return this.returnName;
+    }
+
+    /**
+     * Setter for returnName
+     *
+     * 
+     */
+    public void setReturnName(String value) {
+        this.returnName = value;
+    }
+
+
+    private String taxFormCode;
+
+    /**
+     * Getter for taxFormCode
+     *
+     * Name of the suggested form returned
+     */
+    public String getTaxFormCode() {
+        return this.taxFormCode;
+    }
+
+    /**
+     * Setter for taxFormCode
+     *
+     * Name of the suggested form returned
+     */
+    public void setTaxFormCode(String value) {
+        this.taxFormCode = value;
+    }
 
 
     /**
-     * Returns a JSON string representation of FilingsCheckupSuggestedFormModel.
+     * Returns a JSON string representation of FilingsCheckupSuggestedFormModel
      */
     @Override
     public String toString() {
         return JsonSerializer.SerializeObject(this);
     }
 }
-    

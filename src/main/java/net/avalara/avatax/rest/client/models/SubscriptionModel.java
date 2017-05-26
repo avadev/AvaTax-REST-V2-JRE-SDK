@@ -9,188 +9,242 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 
+/*
+ * AvaTax Software Development Kit for Java JRE based environments
+ *
+ * (c) 2004-2017 Avalara, Inc.
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ *
+ * @author     Dustin Welden <dustin.welden@avalara.com>
+ * @copyright  2004-2017 Avalara, Inc.
+ * @license    https://www.apache.org/licenses/LICENSE-2.0
+ * @version    17.5.2-77
+ * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ */
+
 /**
  * Represents a service that this account has subscribed to.
  */
 public class SubscriptionModel {
-    private Date endDate;
 
-    /**
-     * Getter for endDate - Represents a service that this account has subscribed to.
-     */
-    public Date getEndDate() {
-        return this.endDate;
-    }
 
-    /**
-     * Setter for endDate - Represents a service that this account has subscribed to.
-     */
-    public void setEndDate(Date endDate) {
-        this.endDate = endDate;
-    }
-
-    
-    private Date modifiedDate;
-
-    /**
-     * Getter for modifiedDate - Represents a service that this account has subscribed to.
-     */
-    public Date getModifiedDate() {
-        return this.modifiedDate;
-    }
-
-    /**
-     * Setter for modifiedDate - Represents a service that this account has subscribed to.
-     */
-    public void setModifiedDate(Date modifiedDate) {
-        this.modifiedDate = modifiedDate;
-    }
-
-    
-    private Integer subscriptionTypeId;
-
-    /**
-     * Getter for subscriptionTypeId - Represents a service that this account has subscribed to.
-     */
-    public Integer getSubscriptionTypeId() {
-        return this.subscriptionTypeId;
-    }
-
-    /**
-     * Setter for subscriptionTypeId - Represents a service that this account has subscribed to.
-     */
-    public void setSubscriptionTypeId(Integer subscriptionTypeId) {
-        this.subscriptionTypeId = subscriptionTypeId;
-    }
-
-    
-    private Integer accountId;
-
-    /**
-     * Getter for accountId - Represents a service that this account has subscribed to.
-     */
-    public Integer getAccountId() {
-        return this.accountId;
-    }
-
-    /**
-     * Setter for accountId - Represents a service that this account has subscribed to.
-     */
-    public void setAccountId(Integer accountId) {
-        this.accountId = accountId;
-    }
-
-    
     private Integer id;
 
     /**
-     * Getter for id - Represents a service that this account has subscribed to.
+     * Getter for id
+     *
+     * The unique ID number of this subscription.
      */
     public Integer getId() {
         return this.id;
     }
 
     /**
-     * Setter for id - Represents a service that this account has subscribed to.
+     * Setter for id
+     *
+     * The unique ID number of this subscription.
      */
-    public void setId(Integer id) {
-        this.id = id;
+    public void setId(Integer value) {
+        this.id = value;
     }
 
-    
+
+    private Integer accountId;
+
+    /**
+     * Getter for accountId
+     *
+     * The unique ID number of the account this subscription belongs to.
+     */
+    public Integer getAccountId() {
+        return this.accountId;
+    }
+
+    /**
+     * Setter for accountId
+     *
+     * The unique ID number of the account this subscription belongs to.
+     */
+    public void setAccountId(Integer value) {
+        this.accountId = value;
+    }
+
+
+    private Integer subscriptionTypeId;
+
+    /**
+     * Getter for subscriptionTypeId
+     *
+     * The unique ID number of the service that the account is subscribed to.
+     */
+    public Integer getSubscriptionTypeId() {
+        return this.subscriptionTypeId;
+    }
+
+    /**
+     * Setter for subscriptionTypeId
+     *
+     * The unique ID number of the service that the account is subscribed to.
+     */
+    public void setSubscriptionTypeId(Integer value) {
+        this.subscriptionTypeId = value;
+    }
+
+
     private String subscriptionDescription;
 
     /**
-     * Getter for subscriptionDescription - Represents a service that this account has subscribed to.
+     * Getter for subscriptionDescription
+     *
+     * A friendly description of the service that the account is subscribed to.
      */
     public String getSubscriptionDescription() {
         return this.subscriptionDescription;
     }
 
     /**
-     * Setter for subscriptionDescription - Represents a service that this account has subscribed to.
+     * Setter for subscriptionDescription
+     *
+     * A friendly description of the service that the account is subscribed to.
      */
-    public void setSubscriptionDescription(String subscriptionDescription) {
-        this.subscriptionDescription = subscriptionDescription;
+    public void setSubscriptionDescription(String value) {
+        this.subscriptionDescription = value;
     }
 
-    
-    private Integer modifiedUserId;
 
-    /**
-     * Getter for modifiedUserId - Represents a service that this account has subscribed to.
-     */
-    public Integer getModifiedUserId() {
-        return this.modifiedUserId;
-    }
-
-    /**
-     * Setter for modifiedUserId - Represents a service that this account has subscribed to.
-     */
-    public void setModifiedUserId(Integer modifiedUserId) {
-        this.modifiedUserId = modifiedUserId;
-    }
-
-    
     private Date effectiveDate;
 
     /**
-     * Getter for effectiveDate - Represents a service that this account has subscribed to.
+     * Getter for effectiveDate
+     *
+     * The date when the subscription began.
      */
     public Date getEffectiveDate() {
         return this.effectiveDate;
     }
 
     /**
-     * Setter for effectiveDate - Represents a service that this account has subscribed to.
+     * Setter for effectiveDate
+     *
+     * The date when the subscription began.
      */
-    public void setEffectiveDate(Date effectiveDate) {
-        this.effectiveDate = effectiveDate;
+    public void setEffectiveDate(Date value) {
+        this.effectiveDate = value;
     }
 
-    
-    private Integer createdUserId;
+
+    private Date endDate;
 
     /**
-     * Getter for createdUserId - Represents a service that this account has subscribed to.
+     * Getter for endDate
+     *
+     * If the subscription has ended or will end, this date indicates when the subscription ends.
      */
-    public Integer getCreatedUserId() {
-        return this.createdUserId;
+    public Date getEndDate() {
+        return this.endDate;
     }
 
     /**
-     * Setter for createdUserId - Represents a service that this account has subscribed to.
+     * Setter for endDate
+     *
+     * If the subscription has ended or will end, this date indicates when the subscription ends.
      */
-    public void setCreatedUserId(Integer createdUserId) {
-        this.createdUserId = createdUserId;
+    public void setEndDate(Date value) {
+        this.endDate = value;
     }
 
-    
+
     private Date createdDate;
 
     /**
-     * Getter for createdDate - Represents a service that this account has subscribed to.
+     * Getter for createdDate
+     *
+     * The date when this record was created.
      */
     public Date getCreatedDate() {
         return this.createdDate;
     }
 
     /**
-     * Setter for createdDate - Represents a service that this account has subscribed to.
+     * Setter for createdDate
+     *
+     * The date when this record was created.
      */
-    public void setCreatedDate(Date createdDate) {
-        this.createdDate = createdDate;
+    public void setCreatedDate(Date value) {
+        this.createdDate = value;
     }
 
-    
+
+    private Integer createdUserId;
+
+    /**
+     * Getter for createdUserId
+     *
+     * The User ID of the user who created this record.
+     */
+    public Integer getCreatedUserId() {
+        return this.createdUserId;
+    }
+
+    /**
+     * Setter for createdUserId
+     *
+     * The User ID of the user who created this record.
+     */
+    public void setCreatedUserId(Integer value) {
+        this.createdUserId = value;
+    }
+
+
+    private Date modifiedDate;
+
+    /**
+     * Getter for modifiedDate
+     *
+     * The date/time when this record was last modified.
+     */
+    public Date getModifiedDate() {
+        return this.modifiedDate;
+    }
+
+    /**
+     * Setter for modifiedDate
+     *
+     * The date/time when this record was last modified.
+     */
+    public void setModifiedDate(Date value) {
+        this.modifiedDate = value;
+    }
+
+
+    private Integer modifiedUserId;
+
+    /**
+     * Getter for modifiedUserId
+     *
+     * The user ID of the user who last modified this record.
+     */
+    public Integer getModifiedUserId() {
+        return this.modifiedUserId;
+    }
+
+    /**
+     * Setter for modifiedUserId
+     *
+     * The user ID of the user who last modified this record.
+     */
+    public void setModifiedUserId(Integer value) {
+        this.modifiedUserId = value;
+    }
 
 
     /**
-     * Returns a JSON string representation of SubscriptionModel.
+     * Returns a JSON string representation of SubscriptionModel
      */
     @Override
     public String toString() {
         return JsonSerializer.SerializeObject(this);
     }
 }
-    

@@ -9,324 +9,410 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 
+/*
+ * AvaTax Software Development Kit for Java JRE based environments
+ *
+ * (c) 2004-2017 Avalara, Inc.
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ *
+ * @author     Dustin Welden <dustin.welden@avalara.com>
+ * @copyright  2004-2017 Avalara, Inc.
+ * @license    https://www.apache.org/licenses/LICENSE-2.0
+ * @version    17.5.2-77
+ * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ */
+
 /**
  * Summary information about an overall transaction.
  */
 public class TransactionSummary {
-    private BigDecimal rate;
 
-    /**
-     * Getter for rate - Summary information about an overall transaction.
-     */
-    public BigDecimal getRate() {
-        return this.rate;
-    }
 
-    /**
-     * Setter for rate - Summary information about an overall transaction.
-     */
-    public void setRate(BigDecimal rate) {
-        this.rate = rate;
-    }
-
-    
-    private BigDecimal exemption;
-
-    /**
-     * Getter for exemption - Summary information about an overall transaction.
-     */
-    public BigDecimal getExemption() {
-        return this.exemption;
-    }
-
-    /**
-     * Setter for exemption - Summary information about an overall transaction.
-     */
-    public void setExemption(BigDecimal exemption) {
-        this.exemption = exemption;
-    }
-
-    
-    private JurisdictionType jurisType;
-
-    /**
-     * Getter for jurisType - Summary information about an overall transaction.
-     */
-    public JurisdictionType getJurisType() {
-        return this.jurisType;
-    }
-
-    /**
-     * Setter for jurisType - Summary information about an overall transaction.
-     */
-    public void setJurisType(JurisdictionType jurisType) {
-        this.jurisType = jurisType;
-    }
-
-    
-    private String jurisCode;
-
-    /**
-     * Getter for jurisCode - Summary information about an overall transaction.
-     */
-    public String getJurisCode() {
-        return this.jurisCode;
-    }
-
-    /**
-     * Setter for jurisCode - Summary information about an overall transaction.
-     */
-    public void setJurisCode(String jurisCode) {
-        this.jurisCode = jurisCode;
-    }
-
-    
-    private BigDecimal tax;
-
-    /**
-     * Getter for tax - Summary information about an overall transaction.
-     */
-    public BigDecimal getTax() {
-        return this.tax;
-    }
-
-    /**
-     * Setter for tax - Summary information about an overall transaction.
-     */
-    public void setTax(BigDecimal tax) {
-        this.tax = tax;
-    }
-
-    
-    private String taxName;
-
-    /**
-     * Getter for taxName - Summary information about an overall transaction.
-     */
-    public String getTaxName() {
-        return this.taxName;
-    }
-
-    /**
-     * Setter for taxName - Summary information about an overall transaction.
-     */
-    public void setTaxName(String taxName) {
-        this.taxName = taxName;
-    }
-
-    
-    private Integer taxAuthorityType;
-
-    /**
-     * Getter for taxAuthorityType - Summary information about an overall transaction.
-     */
-    public Integer getTaxAuthorityType() {
-        return this.taxAuthorityType;
-    }
-
-    /**
-     * Setter for taxAuthorityType - Summary information about an overall transaction.
-     */
-    public void setTaxAuthorityType(Integer taxAuthorityType) {
-        this.taxAuthorityType = taxAuthorityType;
-    }
-
-    
-    private TaxType taxType;
-
-    /**
-     * Getter for taxType - Summary information about an overall transaction.
-     */
-    public TaxType getTaxType() {
-        return this.taxType;
-    }
-
-    /**
-     * Setter for taxType - Summary information about an overall transaction.
-     */
-    public void setTaxType(TaxType taxType) {
-        this.taxType = taxType;
-    }
-
-    
     private String country;
 
     /**
-     * Getter for country - Summary information about an overall transaction.
+     * Getter for country
+     *
+     * Two character ISO-3166 country code.
      */
     public String getCountry() {
         return this.country;
     }
 
     /**
-     * Setter for country - Summary information about an overall transaction.
+     * Setter for country
+     *
+     * Two character ISO-3166 country code.
      */
-    public void setCountry(String country) {
-        this.country = country;
+    public void setCountry(String value) {
+        this.country = value;
     }
 
-    
-    private String rateTypeCode;
 
-    /**
-     * Getter for rateTypeCode - Summary information about an overall transaction.
-     */
-    public String getRateTypeCode() {
-        return this.rateTypeCode;
-    }
-
-    /**
-     * Setter for rateTypeCode - Summary information about an overall transaction.
-     */
-    public void setRateTypeCode(String rateTypeCode) {
-        this.rateTypeCode = rateTypeCode;
-    }
-
-    
-    private BigDecimal taxCalculated;
-
-    /**
-     * Getter for taxCalculated - Summary information about an overall transaction.
-     */
-    public BigDecimal getTaxCalculated() {
-        return this.taxCalculated;
-    }
-
-    /**
-     * Setter for taxCalculated - Summary information about an overall transaction.
-     */
-    public void setTaxCalculated(BigDecimal taxCalculated) {
-        this.taxCalculated = taxCalculated;
-    }
-
-    
-    private BigDecimal taxable;
-
-    /**
-     * Getter for taxable - Summary information about an overall transaction.
-     */
-    public BigDecimal getTaxable() {
-        return this.taxable;
-    }
-
-    /**
-     * Setter for taxable - Summary information about an overall transaction.
-     */
-    public void setTaxable(BigDecimal taxable) {
-        this.taxable = taxable;
-    }
-
-    
-    private RateType rateType;
-
-    /**
-     * Getter for rateType - Summary information about an overall transaction.
-     */
-    public RateType getRateType() {
-        return this.rateType;
-    }
-
-    /**
-     * Setter for rateType - Summary information about an overall transaction.
-     */
-    public void setRateType(RateType rateType) {
-        this.rateType = rateType;
-    }
-
-    
-    private BigDecimal nonTaxable;
-
-    /**
-     * Getter for nonTaxable - Summary information about an overall transaction.
-     */
-    public BigDecimal getNonTaxable() {
-        return this.nonTaxable;
-    }
-
-    /**
-     * Setter for nonTaxable - Summary information about an overall transaction.
-     */
-    public void setNonTaxable(BigDecimal nonTaxable) {
-        this.nonTaxable = nonTaxable;
-    }
-
-    
-    private String taxGroup;
-
-    /**
-     * Getter for taxGroup - Summary information about an overall transaction.
-     */
-    public String getTaxGroup() {
-        return this.taxGroup;
-    }
-
-    /**
-     * Setter for taxGroup - Summary information about an overall transaction.
-     */
-    public void setTaxGroup(String taxGroup) {
-        this.taxGroup = taxGroup;
-    }
-
-    
     private String region;
 
     /**
-     * Getter for region - Summary information about an overall transaction.
+     * Getter for region
+     *
+     * Two or three character ISO region, state or province code, if applicable.
      */
     public String getRegion() {
         return this.region;
     }
 
     /**
-     * Setter for region - Summary information about an overall transaction.
+     * Setter for region
+     *
+     * Two or three character ISO region, state or province code, if applicable.
      */
-    public void setRegion(String region) {
-        this.region = region;
+    public void setRegion(String value) {
+        this.region = value;
     }
 
-    
-    private String stateAssignedNo;
+
+    private JurisdictionType jurisType;
 
     /**
-     * Getter for stateAssignedNo - Summary information about an overall transaction.
+     * Getter for jurisType
+     *
+     * The type of jurisdiction that collects this tax.
      */
-    public String getStateAssignedNo() {
-        return this.stateAssignedNo;
+    public JurisdictionType getJurisType() {
+        return this.jurisType;
     }
 
     /**
-     * Setter for stateAssignedNo - Summary information about an overall transaction.
+     * Setter for jurisType
+     *
+     * The type of jurisdiction that collects this tax.
      */
-    public void setStateAssignedNo(String stateAssignedNo) {
-        this.stateAssignedNo = stateAssignedNo;
+    public void setJurisType(JurisdictionType value) {
+        this.jurisType = value;
     }
 
-    
+
+    private String jurisCode;
+
+    /**
+     * Getter for jurisCode
+     *
+     * Jurisdiction Code for the taxing jurisdiction
+     */
+    public String getJurisCode() {
+        return this.jurisCode;
+    }
+
+    /**
+     * Setter for jurisCode
+     *
+     * Jurisdiction Code for the taxing jurisdiction
+     */
+    public void setJurisCode(String value) {
+        this.jurisCode = value;
+    }
+
+
     private String jurisName;
 
     /**
-     * Getter for jurisName - Summary information about an overall transaction.
+     * Getter for jurisName
+     *
+     * The name of the jurisdiction that collects this tax.
      */
     public String getJurisName() {
         return this.jurisName;
     }
 
     /**
-     * Setter for jurisName - Summary information about an overall transaction.
+     * Setter for jurisName
+     *
+     * The name of the jurisdiction that collects this tax.
      */
-    public void setJurisName(String jurisName) {
-        this.jurisName = jurisName;
+    public void setJurisName(String value) {
+        this.jurisName = value;
     }
 
-    
+
+    private Integer taxAuthorityType;
+
+    /**
+     * Getter for taxAuthorityType
+     *
+     * The unique ID of the Tax Authority Type that collects this tax.
+     */
+    public Integer getTaxAuthorityType() {
+        return this.taxAuthorityType;
+    }
+
+    /**
+     * Setter for taxAuthorityType
+     *
+     * The unique ID of the Tax Authority Type that collects this tax.
+     */
+    public void setTaxAuthorityType(Integer value) {
+        this.taxAuthorityType = value;
+    }
+
+
+    private String stateAssignedNo;
+
+    /**
+     * Getter for stateAssignedNo
+     *
+     * The state assigned number of the jurisdiction that collects this tax.
+     */
+    public String getStateAssignedNo() {
+        return this.stateAssignedNo;
+    }
+
+    /**
+     * Setter for stateAssignedNo
+     *
+     * The state assigned number of the jurisdiction that collects this tax.
+     */
+    public void setStateAssignedNo(String value) {
+        this.stateAssignedNo = value;
+    }
+
+
+    private TaxType taxType;
+
+    /**
+     * Getter for taxType
+     *
+     * The tax type of this tax.
+     */
+    public TaxType getTaxType() {
+        return this.taxType;
+    }
+
+    /**
+     * Setter for taxType
+     *
+     * The tax type of this tax.
+     */
+    public void setTaxType(TaxType value) {
+        this.taxType = value;
+    }
+
+
+    private String taxName;
+
+    /**
+     * Getter for taxName
+     *
+     * The name of the tax.
+     */
+    public String getTaxName() {
+        return this.taxName;
+    }
+
+    /**
+     * Setter for taxName
+     *
+     * The name of the tax.
+     */
+    public void setTaxName(String value) {
+        this.taxName = value;
+    }
+
+
+    private String taxGroup;
+
+    /**
+     * Getter for taxGroup
+     *
+     * Group code when special grouping is enabled.
+     */
+    public String getTaxGroup() {
+        return this.taxGroup;
+    }
+
+    /**
+     * Setter for taxGroup
+     *
+     * Group code when special grouping is enabled.
+     */
+    public void setTaxGroup(String value) {
+        this.taxGroup = value;
+    }
+
+
+    private RateType rateType;
+
+    /**
+     * Getter for rateType
+     *
+     * (DEPRECATED) Indicates the tax rate type. Please use rateTypeCode instead.
+     */
+    public RateType getRateType() {
+        return this.rateType;
+    }
+
+    /**
+     * Setter for rateType
+     *
+     * (DEPRECATED) Indicates the tax rate type. Please use rateTypeCode instead.
+     */
+    public void setRateType(RateType value) {
+        this.rateType = value;
+    }
+
+
+    private String rateTypeCode;
+
+    /**
+     * Getter for rateTypeCode
+     *
+     * Indicates the code of the rate type. Use `/api/v2/definitions/ratetypes` for a full list of rate type codes.
+     */
+    public String getRateTypeCode() {
+        return this.rateTypeCode;
+    }
+
+    /**
+     * Setter for rateTypeCode
+     *
+     * Indicates the code of the rate type. Use `/api/v2/definitions/ratetypes` for a full list of rate type codes.
+     */
+    public void setRateTypeCode(String value) {
+        this.rateTypeCode = value;
+    }
+
+
+    private BigDecimal taxable;
+
+    /**
+     * Getter for taxable
+     *
+     * Tax Base - The adjusted taxable amount.
+     */
+    public BigDecimal getTaxable() {
+        return this.taxable;
+    }
+
+    /**
+     * Setter for taxable
+     *
+     * Tax Base - The adjusted taxable amount.
+     */
+    public void setTaxable(BigDecimal value) {
+        this.taxable = value;
+    }
+
+
+    private BigDecimal rate;
+
+    /**
+     * Getter for rate
+     *
+     * Tax Rate - The rate of taxation, as a fraction of the amount.
+     */
+    public BigDecimal getRate() {
+        return this.rate;
+    }
+
+    /**
+     * Setter for rate
+     *
+     * Tax Rate - The rate of taxation, as a fraction of the amount.
+     */
+    public void setRate(BigDecimal value) {
+        this.rate = value;
+    }
+
+
+    private BigDecimal tax;
+
+    /**
+     * Getter for tax
+     *
+     * Tax amount - The calculated tax (Base * Rate).
+     */
+    public BigDecimal getTax() {
+        return this.tax;
+    }
+
+    /**
+     * Setter for tax
+     *
+     * Tax amount - The calculated tax (Base * Rate).
+     */
+    public void setTax(BigDecimal value) {
+        this.tax = value;
+    }
+
+
+    private BigDecimal taxCalculated;
+
+    /**
+     * Getter for taxCalculated
+     *
+     * Tax Calculated by Avalara AvaTax. This may be overriden by a TaxOverride.TaxAmount.
+     */
+    public BigDecimal getTaxCalculated() {
+        return this.taxCalculated;
+    }
+
+    /**
+     * Setter for taxCalculated
+     *
+     * Tax Calculated by Avalara AvaTax. This may be overriden by a TaxOverride.TaxAmount.
+     */
+    public void setTaxCalculated(BigDecimal value) {
+        this.taxCalculated = value;
+    }
+
+
+    private BigDecimal nonTaxable;
+
+    /**
+     * Getter for nonTaxable
+     *
+     * The amount of the transaction that was non-taxable.
+     */
+    public BigDecimal getNonTaxable() {
+        return this.nonTaxable;
+    }
+
+    /**
+     * Setter for nonTaxable
+     *
+     * The amount of the transaction that was non-taxable.
+     */
+    public void setNonTaxable(BigDecimal value) {
+        this.nonTaxable = value;
+    }
+
+
+    private BigDecimal exemption;
+
+    /**
+     * Getter for exemption
+     *
+     * The amount of the transaction that was exempt.
+     */
+    public BigDecimal getExemption() {
+        return this.exemption;
+    }
+
+    /**
+     * Setter for exemption
+     *
+     * The amount of the transaction that was exempt.
+     */
+    public void setExemption(BigDecimal value) {
+        this.exemption = value;
+    }
 
 
     /**
-     * Returns a JSON string representation of TransactionSummary.
+     * Returns a JSON string representation of TransactionSummary
      */
     @Override
     public String toString() {
         return JsonSerializer.SerializeObject(this);
     }
 }
-    

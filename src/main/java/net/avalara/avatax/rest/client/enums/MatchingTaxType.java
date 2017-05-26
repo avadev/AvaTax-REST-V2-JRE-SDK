@@ -1,84 +1,100 @@
 package net.avalara.avatax.rest.client.enums;
 
+/*
+ * AvaTax Software Development Kit for Java JRE based environments
+ *
+ * (c) 2004-2017 Avalara, Inc.
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ *
+ * @author     Dustin Welden <dustin.welden@avalara.com>
+ * @copyright  2004-2017 Avalara, Inc.
+ * @license    https://www.apache.org/licenses/LICENSE-2.0
+ * @version    17.5.2-77
+ * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ */
+
 /**
- * 
+ * This data type is only used when an object must "Match" tax types. By specifying options here,
+ *  you can indicate which tax types will match for the purposes of this object.
+ *  For example, if you specify BothSalesAndUseTax, this value matches with both sales and seller's use tax.
  */
 public enum MatchingTaxType {
-    /**
-     * No comment data provided
+    /** 
+     * Match medical excise type
      */
     Excise,
-    
-    /**
-     * No comment data provided
+
+    /** 
+     * Match Lodging tax type
      */
     Lodging,
-    
-    /**
-     * No comment data provided
+
+    /** 
+     * Match bottle tax type
      */
     Bottle,
-    
-    /**
-     * No comment data provided
+
+    /** 
+     * Match all tax types
      */
     All,
-    
-    /**
-     * No comment data provided
+
+    /** 
+     * Match both Sales and Use Tax only
      */
     BothSalesAndUseTax,
-    
-    /**
-     * No comment data provided
+
+    /** 
+     * Match Consumer Use Tax only
      */
     ConsumerUseTax,
-    
-    /**
-     * No comment data provided
+
+    /** 
+     * Match both Consumer Use and Seller's Use Tax types
      */
     ConsumersUseAndSellersUseTax,
-    
-    /**
-     * No comment data provided
+
+    /** 
+     * Match both Consumer Use and Sales Tax types
      */
     ConsumerUseAndSalesTax,
-    
-    /**
-     * No comment data provided
+
+    /** 
+     * Match Fee tax types only
      */
     Fee,
-    
-    /**
-     * No comment data provided
+
+    /** 
+     * Match VAT Input Tax only
      */
     VATInputTax,
-    
-    /**
-     * No comment data provided
+
+    /** 
+     * Match VAT Nonrecoverable Input Tax only
      */
     VATNonrecoverableInputTax,
-    
-    /**
-     * No comment data provided
+
+    /** 
+     * Match VAT Output Tax only
      */
     VATOutputTax,
-    
-    /**
-     * No comment data provided
+
+    /** 
+     * Match Rental tax types only
      */
     Rental,
-    
-    /**
-     * No comment data provided
+
+    /** 
+     * Match Sales Tax only
      */
     SalesTax,
-    
-    /**
-     * No comment data provided
+
+    /** 
+     * Match Seller's Use Tax only
      */
     UseTax,
-    
 
 }
     

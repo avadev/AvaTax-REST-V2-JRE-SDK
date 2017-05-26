@@ -9,86 +9,116 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 
+/*
+ * AvaTax Software Development Kit for Java JRE based environments
+ *
+ * (c) 2004-2017 Avalara, Inc.
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ *
+ * @author     Dustin Welden <dustin.welden@avalara.com>
+ * @copyright  2004-2017 Avalara, Inc.
+ * @license    https://www.apache.org/licenses/LICENSE-2.0
+ * @version    17.5.2-77
+ * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ */
+
 /**
  * Tax Authority Model
  */
 public class TaxAuthorityModel {
+
+
     private Integer id;
 
     /**
-     * Getter for id - Tax Authority Model
+     * Getter for id
+     *
+     * The unique ID number of this tax authority.
      */
     public Integer getId() {
         return this.id;
     }
 
     /**
-     * Setter for id - Tax Authority Model
+     * Setter for id
+     *
+     * The unique ID number of this tax authority.
      */
-    public void setId(Integer id) {
-        this.id = id;
+    public void setId(Integer value) {
+        this.id = value;
     }
 
-    
+
     private String name;
 
     /**
-     * Getter for name - Tax Authority Model
+     * Getter for name
+     *
+     * The friendly name of this tax authority.
      */
     public String getName() {
         return this.name;
     }
 
     /**
-     * Setter for name - Tax Authority Model
+     * Setter for name
+     *
+     * The friendly name of this tax authority.
      */
-    public void setName(String name) {
-        this.name = name;
+    public void setName(String value) {
+        this.name = value;
     }
 
-    
+
     private Integer taxAuthorityTypeId;
 
     /**
-     * Getter for taxAuthorityTypeId - Tax Authority Model
+     * Getter for taxAuthorityTypeId
+     *
+     * The type of this tax authority.
      */
     public Integer getTaxAuthorityTypeId() {
         return this.taxAuthorityTypeId;
     }
 
     /**
-     * Setter for taxAuthorityTypeId - Tax Authority Model
+     * Setter for taxAuthorityTypeId
+     *
+     * The type of this tax authority.
      */
-    public void setTaxAuthorityTypeId(Integer taxAuthorityTypeId) {
-        this.taxAuthorityTypeId = taxAuthorityTypeId;
+    public void setTaxAuthorityTypeId(Integer value) {
+        this.taxAuthorityTypeId = value;
     }
 
-    
+
     private Integer jurisdictionId;
 
     /**
-     * Getter for jurisdictionId - Tax Authority Model
+     * Getter for jurisdictionId
+     *
+     * The unique ID number of the jurisdiction for this tax authority.
      */
     public Integer getJurisdictionId() {
         return this.jurisdictionId;
     }
 
     /**
-     * Setter for jurisdictionId - Tax Authority Model
+     * Setter for jurisdictionId
+     *
+     * The unique ID number of the jurisdiction for this tax authority.
      */
-    public void setJurisdictionId(Integer jurisdictionId) {
-        this.jurisdictionId = jurisdictionId;
+    public void setJurisdictionId(Integer value) {
+        this.jurisdictionId = value;
     }
-
-    
 
 
     /**
-     * Returns a JSON string representation of TaxAuthorityModel.
+     * Returns a JSON string representation of TaxAuthorityModel
      */
     @Override
     public String toString() {
         return JsonSerializer.SerializeObject(this);
     }
 }
-    

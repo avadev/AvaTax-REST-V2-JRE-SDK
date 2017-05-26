@@ -9,188 +9,242 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 
+/*
+ * AvaTax Software Development Kit for Java JRE based environments
+ *
+ * (c) 2004-2017 Avalara, Inc.
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ *
+ * @author     Dustin Welden <dustin.welden@avalara.com>
+ * @copyright  2004-2017 Avalara, Inc.
+ * @license    https://www.apache.org/licenses/LICENSE-2.0
+ * @version    17.5.2-77
+ * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ */
+
 /**
  * Model with options for adding a new filing calendar
  */
 public class CycleAddOptionModel {
-    private ArrayList<String> availableLocationCodes;
 
-    /**
-     * Getter for availableLocationCodes - Model with options for adding a new filing calendar
-     */
-    public ArrayList<String> getAvailableLocationCodes() {
-        return this.availableLocationCodes;
-    }
 
-    /**
-     * Setter for availableLocationCodes - Model with options for adding a new filing calendar
-     */
-    public void setAvailableLocationCodes(ArrayList<String> availableLocationCodes) {
-        this.availableLocationCodes = availableLocationCodes;
-    }
-
-    
-    private String frequencyName;
-
-    /**
-     * Getter for frequencyName - Model with options for adding a new filing calendar
-     */
-    public String getFrequencyName() {
-        return this.frequencyName;
-    }
-
-    /**
-     * Setter for frequencyName - Model with options for adding a new filing calendar
-     */
-    public void setFrequencyName(String frequencyName) {
-        this.frequencyName = frequencyName;
-    }
-
-    
-    private Date transactionalPeriodEnd;
-
-    /**
-     * Getter for transactionalPeriodEnd - Model with options for adding a new filing calendar
-     */
-    public Date getTransactionalPeriodEnd() {
-        return this.transactionalPeriodEnd;
-    }
-
-    /**
-     * Setter for transactionalPeriodEnd - Model with options for adding a new filing calendar
-     */
-    public void setTransactionalPeriodEnd(Date transactionalPeriodEnd) {
-        this.transactionalPeriodEnd = transactionalPeriodEnd;
-    }
-
-    
-    private Date transactionalPeriodStart;
-
-    /**
-     * Getter for transactionalPeriodStart - Model with options for adding a new filing calendar
-     */
-    public Date getTransactionalPeriodStart() {
-        return this.transactionalPeriodStart;
-    }
-
-    /**
-     * Setter for transactionalPeriodStart - Model with options for adding a new filing calendar
-     */
-    public void setTransactionalPeriodStart(Date transactionalPeriodStart) {
-        this.transactionalPeriodStart = transactionalPeriodStart;
-    }
-
-    
-    private String filingFrequencyCode;
-
-    /**
-     * Getter for filingFrequencyCode - Model with options for adding a new filing calendar
-     */
-    public String getFilingFrequencyCode() {
-        return this.filingFrequencyCode;
-    }
-
-    /**
-     * Setter for filingFrequencyCode - Model with options for adding a new filing calendar
-     */
-    public void setFilingFrequencyCode(String filingFrequencyCode) {
-        this.filingFrequencyCode = filingFrequencyCode;
-    }
-
-    
-    private String cycleName;
-
-    /**
-     * Getter for cycleName - Model with options for adding a new filing calendar
-     */
-    public String getCycleName() {
-        return this.cycleName;
-    }
-
-    /**
-     * Setter for cycleName - Model with options for adding a new filing calendar
-     */
-    public void setCycleName(String cycleName) {
-        this.cycleName = cycleName;
-    }
-
-    
-    private FilingFrequencyId filingFrequencyId;
-
-    /**
-     * Getter for filingFrequencyId - Model with options for adding a new filing calendar
-     */
-    public FilingFrequencyId getFilingFrequencyId() {
-        return this.filingFrequencyId;
-    }
-
-    /**
-     * Setter for filingFrequencyId - Model with options for adding a new filing calendar
-     */
-    public void setFilingFrequencyId(FilingFrequencyId filingFrequencyId) {
-        this.filingFrequencyId = filingFrequencyId;
-    }
-
-    
     private Boolean available;
 
     /**
-     * Getter for available - Model with options for adding a new filing calendar
+     * Getter for available
+     *
+     * True if this form can be added and filed for the current cycle. "Current cycle" is considered one month before the month of today's date.
      */
     public Boolean getAvailable() {
         return this.available;
     }
 
     /**
-     * Setter for available - Model with options for adding a new filing calendar
+     * Setter for available
+     *
+     * True if this form can be added and filed for the current cycle. "Current cycle" is considered one month before the month of today's date.
      */
-    public void setAvailable(Boolean available) {
-        this.available = available;
+    public void setAvailable(Boolean value) {
+        this.available = value;
     }
 
-    
+
+    private Date transactionalPeriodStart;
+
+    /**
+     * Getter for transactionalPeriodStart
+     *
+     * The period start date for the customer's first transaction in the jurisdiction being added
+     */
+    public Date getTransactionalPeriodStart() {
+        return this.transactionalPeriodStart;
+    }
+
+    /**
+     * Setter for transactionalPeriodStart
+     *
+     * The period start date for the customer's first transaction in the jurisdiction being added
+     */
+    public void setTransactionalPeriodStart(Date value) {
+        this.transactionalPeriodStart = value;
+    }
+
+
+    private Date transactionalPeriodEnd;
+
+    /**
+     * Getter for transactionalPeriodEnd
+     *
+     * The period end date for the customer's last transaction in the jurisdiction being added
+     */
+    public Date getTransactionalPeriodEnd() {
+        return this.transactionalPeriodEnd;
+    }
+
+    /**
+     * Setter for transactionalPeriodEnd
+     *
+     * The period end date for the customer's last transaction in the jurisdiction being added
+     */
+    public void setTransactionalPeriodEnd(Date value) {
+        this.transactionalPeriodEnd = value;
+    }
+
+
     private Date filingDueDate;
 
     /**
-     * Getter for filingDueDate - Model with options for adding a new filing calendar
+     * Getter for filingDueDate
+     *
+     * The jurisdiction-assigned due date for the form
      */
     public Date getFilingDueDate() {
         return this.filingDueDate;
     }
 
     /**
-     * Setter for filingDueDate - Model with options for adding a new filing calendar
+     * Setter for filingDueDate
+     *
+     * The jurisdiction-assigned due date for the form
      */
-    public void setFilingDueDate(Date filingDueDate) {
-        this.filingDueDate = filingDueDate;
+    public void setFilingDueDate(Date value) {
+        this.filingDueDate = value;
     }
 
-    
+
+    private String cycleName;
+
+    /**
+     * Getter for cycleName
+     *
+     * A descriptive name of the cycle and due date of form.
+     */
+    public String getCycleName() {
+        return this.cycleName;
+    }
+
+    /**
+     * Setter for cycleName
+     *
+     * A descriptive name of the cycle and due date of form.
+     */
+    public void setCycleName(String value) {
+        this.cycleName = value;
+    }
+
+
+    private String frequencyName;
+
+    /**
+     * Getter for frequencyName
+     *
+     * The filing frequency of the form
+     */
+    public String getFrequencyName() {
+        return this.frequencyName;
+    }
+
+    /**
+     * Setter for frequencyName
+     *
+     * The filing frequency of the form
+     */
+    public void setFrequencyName(String value) {
+        this.frequencyName = value;
+    }
+
+
+    private String filingFrequencyCode;
+
+    /**
+     * Getter for filingFrequencyCode
+     *
+     * A code assigned to the filing frequency
+     */
+    public String getFilingFrequencyCode() {
+        return this.filingFrequencyCode;
+    }
+
+    /**
+     * Setter for filingFrequencyCode
+     *
+     * A code assigned to the filing frequency
+     */
+    public void setFilingFrequencyCode(String value) {
+        this.filingFrequencyCode = value;
+    }
+
+
+    private FilingFrequencyId filingFrequencyId;
+
+    /**
+     * Getter for filingFrequencyId
+     *
+     * The filing frequency of the request
+     */
+    public FilingFrequencyId getFilingFrequencyId() {
+        return this.filingFrequencyId;
+    }
+
+    /**
+     * Setter for filingFrequencyId
+     *
+     * The filing frequency of the request
+     */
+    public void setFilingFrequencyId(FilingFrequencyId value) {
+        this.filingFrequencyId = value;
+    }
+
+
     private String cycleUnavailableReason;
 
     /**
-     * Getter for cycleUnavailableReason - Model with options for adding a new filing calendar
+     * Getter for cycleUnavailableReason
+     *
+     * An explanation for why this form cannot be added for the current cycle
      */
     public String getCycleUnavailableReason() {
         return this.cycleUnavailableReason;
     }
 
     /**
-     * Setter for cycleUnavailableReason - Model with options for adding a new filing calendar
+     * Setter for cycleUnavailableReason
+     *
+     * An explanation for why this form cannot be added for the current cycle
      */
-    public void setCycleUnavailableReason(String cycleUnavailableReason) {
-        this.cycleUnavailableReason = cycleUnavailableReason;
+    public void setCycleUnavailableReason(String value) {
+        this.cycleUnavailableReason = value;
     }
 
-    
+
+    private ArrayList<String> availableLocationCodes;
+
+    /**
+     * Getter for availableLocationCodes
+     *
+     * A list of outlet codes that can be assigned to this form for the current cycle
+     */
+    public ArrayList<String> getAvailableLocationCodes() {
+        return this.availableLocationCodes;
+    }
+
+    /**
+     * Setter for availableLocationCodes
+     *
+     * A list of outlet codes that can be assigned to this form for the current cycle
+     */
+    public void setAvailableLocationCodes(ArrayList<String> value) {
+        this.availableLocationCodes = value;
+    }
 
 
     /**
-     * Returns a JSON string representation of CycleAddOptionModel.
+     * Returns a JSON string representation of CycleAddOptionModel
      */
     @Override
     public String toString() {
         return JsonSerializer.SerializeObject(this);
     }
 }
-    

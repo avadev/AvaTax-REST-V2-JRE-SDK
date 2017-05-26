@@ -1,94 +1,108 @@
 package net.avalara.avatax.rest.client.enums;
 
+/*
+ * AvaTax Software Development Kit for Java JRE based environments
+ *
+ * (c) 2004-2017 Avalara, Inc.
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ *
+ * @author     Dustin Welden <dustin.welden@avalara.com>
+ * @copyright  2004-2017 Avalara, Inc.
+ * @license    https://www.apache.org/licenses/LICENSE-2.0
+ * @version    17.5.2-77
+ * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ */
+
 /**
- * 
+ * Filing Status
  */
 public enum FilingStatusId {
-    /**
-     * No comment data provided
+    /** 
+     * 
      */
     PendingApproval,
-    
-    /**
-     * No comment data provided
+
+    /** 
+     * 
      */
     Dirty,
-    
-    /**
-     * No comment data provided
+
+    /** 
+     * 
      */
     ApprovedToFile,
-    
-    /**
-     * No comment data provided
+
+    /** 
+     * 
      */
     PendingFiling,
-    
-    /**
-     * No comment data provided
+
+    /** 
+     * 
      */
     PendingFilingOnBehalf,
-    
-    /**
-     * No comment data provided
+
+    /** 
+     * 
      */
     Filed,
-    
-    /**
-     * No comment data provided
+
+    /** 
+     * 
      */
     FiledOnBehalf,
-    
-    /**
-     * No comment data provided
+
+    /** 
+     * 
      */
     ReturnAccepted,
-    
-    /**
-     * No comment data provided
+
+    /** 
+     * 
      */
     ReturnAcceptedOnBehalf,
-    
-    /**
-     * No comment data provided
+
+    /** 
+     * 
      */
     PaymentRemitted,
-    
-    /**
-     * No comment data provided
+
+    /** 
+     * 
      */
     Voided,
-    
-    /**
-     * No comment data provided
+
+    /** 
+     * 
      */
     PendingReturn,
-    
-    /**
-     * No comment data provided
+
+    /** 
+     * 
      */
     PendingReturnOnBehalf,
-    
-    /**
-     * No comment data provided
+
+    /** 
+     * 
      */
     DoNotFile,
-    
-    /**
-     * No comment data provided
+
+    /** 
+     * 
      */
     ReturnRejected,
-    
-    /**
-     * No comment data provided
+
+    /** 
+     * 
      */
     ReturnRejectedOnBehalf,
-    
-    /**
-     * No comment data provided
+
+    /** 
+     * 
      */
     ApprovedToFileOnBehalf,
-    
 
 }
     

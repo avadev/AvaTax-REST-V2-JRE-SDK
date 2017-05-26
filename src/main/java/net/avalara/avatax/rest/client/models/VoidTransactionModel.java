@@ -9,35 +9,53 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 
+/*
+ * AvaTax Software Development Kit for Java JRE based environments
+ *
+ * (c) 2004-2017 Avalara, Inc.
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ *
+ * @author     Dustin Welden <dustin.welden@avalara.com>
+ * @copyright  2004-2017 Avalara, Inc.
+ * @license    https://www.apache.org/licenses/LICENSE-2.0
+ * @version    17.5.2-77
+ * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ */
+
 /**
  * A request to void a previously created transaction
  */
 public class VoidTransactionModel {
+
+
     private VoidReasonCode code;
 
     /**
-     * Getter for code - A request to void a previously created transaction
+     * Getter for code
+     *
+     * Please specify the reason for voiding or cancelling this transaction
      */
     public VoidReasonCode getCode() {
         return this.code;
     }
 
     /**
-     * Setter for code - A request to void a previously created transaction
+     * Setter for code
+     *
+     * Please specify the reason for voiding or cancelling this transaction
      */
-    public void setCode(VoidReasonCode code) {
-        this.code = code;
+    public void setCode(VoidReasonCode value) {
+        this.code = value;
     }
-
-    
 
 
     /**
-     * Returns a JSON string representation of VoidTransactionModel.
+     * Returns a JSON string representation of VoidTransactionModel
      */
     @Override
     public String toString() {
         return JsonSerializer.SerializeObject(this);
     }
 }
-    

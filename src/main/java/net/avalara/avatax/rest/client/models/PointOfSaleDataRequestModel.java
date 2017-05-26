@@ -9,137 +9,179 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 
+/*
+ * AvaTax Software Development Kit for Java JRE based environments
+ *
+ * (c) 2004-2017 Avalara, Inc.
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ *
+ * @author     Dustin Welden <dustin.welden@avalara.com>
+ * @copyright  2004-2017 Avalara, Inc.
+ * @license    https://www.apache.org/licenses/LICENSE-2.0
+ * @version    17.5.2-77
+ * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ */
+
 /**
  * Point-of-Sale Data Request Model
  */
 public class PointOfSaleDataRequestModel {
-    private ArrayList<String> locationCodes;
 
-    /**
-     * Getter for locationCodes - Point-of-Sale Data Request Model
-     */
-    public ArrayList<String> getLocationCodes() {
-        return this.locationCodes;
-    }
 
-    /**
-     * Setter for locationCodes - Point-of-Sale Data Request Model
-     */
-    public void setLocationCodes(ArrayList<String> locationCodes) {
-        this.locationCodes = locationCodes;
-    }
-
-    
-    private ArrayList<String> taxCodes;
-
-    /**
-     * Getter for taxCodes - Point-of-Sale Data Request Model
-     */
-    public ArrayList<String> getTaxCodes() {
-        return this.taxCodes;
-    }
-
-    /**
-     * Setter for taxCodes - Point-of-Sale Data Request Model
-     */
-    public void setTaxCodes(ArrayList<String> taxCodes) {
-        this.taxCodes = taxCodes;
-    }
-
-    
     private String companyCode;
 
     /**
-     * Getter for companyCode - Point-of-Sale Data Request Model
+     * Getter for companyCode
+     *
+     * A unique code that references a company within your account.
      */
     public String getCompanyCode() {
         return this.companyCode;
     }
 
     /**
-     * Setter for companyCode - Point-of-Sale Data Request Model
+     * Setter for companyCode
+     *
+     * A unique code that references a company within your account.
      */
-    public void setCompanyCode(String companyCode) {
-        this.companyCode = companyCode;
+    public void setCompanyCode(String value) {
+        this.companyCode = value;
     }
 
-    
-    private PointOfSalePartnerId partnerId;
 
-    /**
-     * Getter for partnerId - Point-of-Sale Data Request Model
-     */
-    public PointOfSalePartnerId getPartnerId() {
-        return this.partnerId;
-    }
-
-    /**
-     * Setter for partnerId - Point-of-Sale Data Request Model
-     */
-    public void setPartnerId(PointOfSalePartnerId partnerId) {
-        this.partnerId = partnerId;
-    }
-
-    
-    private PointOfSaleFileType responseType;
-
-    /**
-     * Getter for responseType - Point-of-Sale Data Request Model
-     */
-    public PointOfSaleFileType getResponseType() {
-        return this.responseType;
-    }
-
-    /**
-     * Setter for responseType - Point-of-Sale Data Request Model
-     */
-    public void setResponseType(PointOfSaleFileType responseType) {
-        this.responseType = responseType;
-    }
-
-    
     private Date documentDate;
 
     /**
-     * Getter for documentDate - Point-of-Sale Data Request Model
+     * Getter for documentDate
+     *
+     * The date associated with the response content. Default is current date. This field can be used to backdate or postdate the response content.
      */
     public Date getDocumentDate() {
         return this.documentDate;
     }
 
     /**
-     * Setter for documentDate - Point-of-Sale Data Request Model
+     * Setter for documentDate
+     *
+     * The date associated with the response content. Default is current date. This field can be used to backdate or postdate the response content.
      */
-    public void setDocumentDate(Date documentDate) {
-        this.documentDate = documentDate;
+    public void setDocumentDate(Date value) {
+        this.documentDate = value;
     }
 
-    
+
+    private PointOfSaleFileType responseType;
+
+    /**
+     * Getter for responseType
+     *
+     * The format of your response. Formats include JSON, CSV, and XML.
+     */
+    public PointOfSaleFileType getResponseType() {
+        return this.responseType;
+    }
+
+    /**
+     * Setter for responseType
+     *
+     * The format of your response. Formats include JSON, CSV, and XML.
+     */
+    public void setResponseType(PointOfSaleFileType value) {
+        this.responseType = value;
+    }
+
+
+    private ArrayList<String> taxCodes;
+
+    /**
+     * Getter for taxCodes
+     *
+     * A list of tax codes to include in this point-of-sale file. If no tax codes are specified, response will include all distinct tax codes associated with the Items within your company.
+     */
+    public ArrayList<String> getTaxCodes() {
+        return this.taxCodes;
+    }
+
+    /**
+     * Setter for taxCodes
+     *
+     * A list of tax codes to include in this point-of-sale file. If no tax codes are specified, response will include all distinct tax codes associated with the Items within your company.
+     */
+    public void setTaxCodes(ArrayList<String> value) {
+        this.taxCodes = value;
+    }
+
+
+    private ArrayList<String> locationCodes;
+
+    /**
+     * Getter for locationCodes
+     *
+     * A list of location codes to include in this point-of-sale file. If no location codes are specified, response will include all locations within your company.
+     */
+    public ArrayList<String> getLocationCodes() {
+        return this.locationCodes;
+    }
+
+    /**
+     * Setter for locationCodes
+     *
+     * A list of location codes to include in this point-of-sale file. If no location codes are specified, response will include all locations within your company.
+     */
+    public void setLocationCodes(ArrayList<String> value) {
+        this.locationCodes = value;
+    }
+
+
     private Boolean includeJurisCodes;
 
     /**
-     * Getter for includeJurisCodes - Point-of-Sale Data Request Model
+     * Getter for includeJurisCodes
+     *
+     * Set this value to true to include Juris Code in the response.
      */
     public Boolean getIncludeJurisCodes() {
         return this.includeJurisCodes;
     }
 
     /**
-     * Setter for includeJurisCodes - Point-of-Sale Data Request Model
+     * Setter for includeJurisCodes
+     *
+     * Set this value to true to include Juris Code in the response.
      */
-    public void setIncludeJurisCodes(Boolean includeJurisCodes) {
-        this.includeJurisCodes = includeJurisCodes;
+    public void setIncludeJurisCodes(Boolean value) {
+        this.includeJurisCodes = value;
     }
 
-    
+
+    private PointOfSalePartnerId partnerId;
+
+    /**
+     * Getter for partnerId
+     *
+     * A unique code assoicated with the Partner you may be working with. If you are not working with a Partner or your Partner has not provided you an ID, leave null.
+     */
+    public PointOfSalePartnerId getPartnerId() {
+        return this.partnerId;
+    }
+
+    /**
+     * Setter for partnerId
+     *
+     * A unique code assoicated with the Partner you may be working with. If you are not working with a Partner or your Partner has not provided you an ID, leave null.
+     */
+    public void setPartnerId(PointOfSalePartnerId value) {
+        this.partnerId = value;
+    }
 
 
     /**
-     * Returns a JSON string representation of PointOfSaleDataRequestModel.
+     * Returns a JSON string representation of PointOfSaleDataRequestModel
      */
     @Override
     public String toString() {
         return JsonSerializer.SerializeObject(this);
     }
 }
-    

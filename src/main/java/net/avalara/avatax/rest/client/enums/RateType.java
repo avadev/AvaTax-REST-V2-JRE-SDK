@@ -1,69 +1,83 @@
 package net.avalara.avatax.rest.client.enums;
 
+/*
+ * AvaTax Software Development Kit for Java JRE based environments
+ *
+ * (c) 2004-2017 Avalara, Inc.
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ *
+ * @author     Dustin Welden <dustin.welden@avalara.com>
+ * @copyright  2004-2017 Avalara, Inc.
+ * @license    https://www.apache.org/licenses/LICENSE-2.0
+ * @version    17.5.2-77
+ * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ */
+
 /**
  * 
  */
 public enum RateType {
-    /**
-     * No comment data provided
+    /** 
+     * 
      */
     ReducedA,
-    
-    /**
-     * No comment data provided
+
+    /** 
+     * 
      */
     ReducedB,
-    
-    /**
-     * No comment data provided
+
+    /** 
+     * 
      */
     Food,
-    
-    /**
-     * No comment data provided
+
+    /** 
+     * 
      */
     General,
-    
-    /**
-     * No comment data provided
+
+    /** 
+     * 
      */
     IncreasedStandard,
-    
-    /**
-     * No comment data provided
+
+    /** 
+     * 
      */
     LinenRental,
-    
-    /**
-     * No comment data provided
+
+    /** 
+     * 
      */
     Medical,
-    
-    /**
-     * No comment data provided
+
+    /** 
+     * 
      */
     Parking,
-    
-    /**
-     * No comment data provided
+
+    /** 
+     * 
      */
     SuperReduced,
-    
-    /**
-     * No comment data provided
+
+    /** 
+     * 
      */
     ReducedR,
-    
-    /**
-     * No comment data provided
+
+    /** 
+     * 
      */
     Standard,
-    
-    /**
-     * No comment data provided
+
+    /** 
+     * 
      */
     Zero,
-    
 
 }
     

@@ -9,120 +9,158 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 
+/*
+ * AvaTax Software Development Kit for Java JRE based environments
+ *
+ * (c) 2004-2017 Avalara, Inc.
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ *
+ * @author     Dustin Welden <dustin.welden@avalara.com>
+ * @copyright  2004-2017 Avalara, Inc.
+ * @license    https://www.apache.org/licenses/LICENSE-2.0
+ * @version    17.5.2-77
+ * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ */
+
 /**
  * Refund a committed transaction
  */
 public class RefundTransactionModel {
+
+
     private String refundTransactionCode;
 
     /**
-     * Getter for refundTransactionCode - Refund a committed transaction
+     * Getter for refundTransactionCode
+     *
+     * the transaction code for this refund
      */
     public String getRefundTransactionCode() {
         return this.refundTransactionCode;
     }
 
     /**
-     * Setter for refundTransactionCode - Refund a committed transaction
+     * Setter for refundTransactionCode
+     *
+     * the transaction code for this refund
      */
-    public void setRefundTransactionCode(String refundTransactionCode) {
-        this.refundTransactionCode = refundTransactionCode;
+    public void setRefundTransactionCode(String value) {
+        this.refundTransactionCode = value;
     }
 
-    
-    private String referenceCode;
 
-    /**
-     * Getter for referenceCode - Refund a committed transaction
-     */
-    public String getReferenceCode() {
-        return this.referenceCode;
-    }
-
-    /**
-     * Setter for referenceCode - Refund a committed transaction
-     */
-    public void setReferenceCode(String referenceCode) {
-        this.referenceCode = referenceCode;
-    }
-
-    
-    private ArrayList<String> refundLines;
-
-    /**
-     * Getter for refundLines - Refund a committed transaction
-     */
-    public ArrayList<String> getRefundLines() {
-        return this.refundLines;
-    }
-
-    /**
-     * Setter for refundLines - Refund a committed transaction
-     */
-    public void setRefundLines(ArrayList<String> refundLines) {
-        this.refundLines = refundLines;
-    }
-
-    
-    private BigDecimal refundPercentage;
-
-    /**
-     * Getter for refundPercentage - Refund a committed transaction
-     */
-    public BigDecimal getRefundPercentage() {
-        return this.refundPercentage;
-    }
-
-    /**
-     * Setter for refundPercentage - Refund a committed transaction
-     */
-    public void setRefundPercentage(BigDecimal refundPercentage) {
-        this.refundPercentage = refundPercentage;
-    }
-
-    
     private Date refundDate;
 
     /**
-     * Getter for refundDate - Refund a committed transaction
+     * Getter for refundDate
+     *
+     * The date of the refund. If null, today's date will be used
      */
     public Date getRefundDate() {
         return this.refundDate;
     }
 
     /**
-     * Setter for refundDate - Refund a committed transaction
+     * Setter for refundDate
+     *
+     * The date of the refund. If null, today's date will be used
      */
-    public void setRefundDate(Date refundDate) {
-        this.refundDate = refundDate;
+    public void setRefundDate(Date value) {
+        this.refundDate = value;
     }
 
-    
+
     private RefundType refundType;
 
     /**
-     * Getter for refundType - Refund a committed transaction
+     * Getter for refundType
+     *
+     * Type of this refund
      */
     public RefundType getRefundType() {
         return this.refundType;
     }
 
     /**
-     * Setter for refundType - Refund a committed transaction
+     * Setter for refundType
+     *
+     * Type of this refund
      */
-    public void setRefundType(RefundType refundType) {
-        this.refundType = refundType;
+    public void setRefundType(RefundType value) {
+        this.refundType = value;
     }
 
-    
+
+    private BigDecimal refundPercentage;
+
+    /**
+     * Getter for refundPercentage
+     *
+     * Percentage for refund
+     */
+    public BigDecimal getRefundPercentage() {
+        return this.refundPercentage;
+    }
+
+    /**
+     * Setter for refundPercentage
+     *
+     * Percentage for refund
+     */
+    public void setRefundPercentage(BigDecimal value) {
+        this.refundPercentage = value;
+    }
+
+
+    private ArrayList<String> refundLines;
+
+    /**
+     * Getter for refundLines
+     *
+     * Process refund for these lines
+     */
+    public ArrayList<String> getRefundLines() {
+        return this.refundLines;
+    }
+
+    /**
+     * Setter for refundLines
+     *
+     * Process refund for these lines
+     */
+    public void setRefundLines(ArrayList<String> value) {
+        this.refundLines = value;
+    }
+
+
+    private String referenceCode;
+
+    /**
+     * Getter for referenceCode
+     *
+     * Reference code for this refund
+     */
+    public String getReferenceCode() {
+        return this.referenceCode;
+    }
+
+    /**
+     * Setter for referenceCode
+     *
+     * Reference code for this refund
+     */
+    public void setReferenceCode(String value) {
+        this.referenceCode = value;
+    }
 
 
     /**
-     * Returns a JSON string representation of RefundTransactionModel.
+     * Returns a JSON string representation of RefundTransactionModel
      */
     @Override
     public String toString() {
         return JsonSerializer.SerializeObject(this);
     }
 }
-    

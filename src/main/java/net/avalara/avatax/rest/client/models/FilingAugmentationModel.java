@@ -9,154 +9,200 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 
+/*
+ * AvaTax Software Development Kit for Java JRE based environments
+ *
+ * (c) 2004-2017 Avalara, Inc.
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ *
+ * @author     Dustin Welden <dustin.welden@avalara.com>
+ * @copyright  2004-2017 Avalara, Inc.
+ * @license    https://www.apache.org/licenses/LICENSE-2.0
+ * @version    17.5.2-77
+ * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ */
+
 /**
  * A model for return augmentations.
  */
 public class FilingAugmentationModel {
-    private Long filingId;
 
-    /**
-     * Getter for filingId - A model for return augmentations.
-     */
-    public Long getFilingId() {
-        return this.filingId;
-    }
 
-    /**
-     * Setter for filingId - A model for return augmentations.
-     */
-    public void setFilingId(Long filingId) {
-        this.filingId = filingId;
-    }
-
-    
-    private BigDecimal fieldAmount;
-
-    /**
-     * Getter for fieldAmount - A model for return augmentations.
-     */
-    public BigDecimal getFieldAmount() {
-        return this.fieldAmount;
-    }
-
-    /**
-     * Setter for fieldAmount - A model for return augmentations.
-     */
-    public void setFieldAmount(BigDecimal fieldAmount) {
-        this.fieldAmount = fieldAmount;
-    }
-
-    
-    private Date modifiedDate;
-
-    /**
-     * Getter for modifiedDate - A model for return augmentations.
-     */
-    public Date getModifiedDate() {
-        return this.modifiedDate;
-    }
-
-    /**
-     * Setter for modifiedDate - A model for return augmentations.
-     */
-    public void setModifiedDate(Date modifiedDate) {
-        this.modifiedDate = modifiedDate;
-    }
-
-    
     private Long id;
 
     /**
-     * Getter for id - A model for return augmentations.
+     * Getter for id
+     *
+     * The unique ID number for the augmentation.
      */
     public Long getId() {
         return this.id;
     }
 
     /**
-     * Setter for id - A model for return augmentations.
+     * Setter for id
+     *
+     * The unique ID number for the augmentation.
      */
-    public void setId(Long id) {
-        this.id = id;
+    public void setId(Long value) {
+        this.id = value;
     }
 
-    
+
+    private Long filingId;
+
+    /**
+     * Getter for filingId
+     *
+     * The filing return id that this applies too
+     */
+    public Long getFilingId() {
+        return this.filingId;
+    }
+
+    /**
+     * Setter for filingId
+     *
+     * The filing return id that this applies too
+     */
+    public void setFilingId(Long value) {
+        this.filingId = value;
+    }
+
+
+    private BigDecimal fieldAmount;
+
+    /**
+     * Getter for fieldAmount
+     *
+     * The field amount.
+     */
+    public BigDecimal getFieldAmount() {
+        return this.fieldAmount;
+    }
+
+    /**
+     * Setter for fieldAmount
+     *
+     * The field amount.
+     */
+    public void setFieldAmount(BigDecimal value) {
+        this.fieldAmount = value;
+    }
+
+
     private String fieldName;
 
     /**
-     * Getter for fieldName - A model for return augmentations.
+     * Getter for fieldName
+     *
+     * The field name.
      */
     public String getFieldName() {
         return this.fieldName;
     }
 
     /**
-     * Setter for fieldName - A model for return augmentations.
+     * Setter for fieldName
+     *
+     * The field name.
      */
-    public void setFieldName(String fieldName) {
-        this.fieldName = fieldName;
+    public void setFieldName(String value) {
+        this.fieldName = value;
     }
 
-    
-    private Integer modifiedUserId;
 
-    /**
-     * Getter for modifiedUserId - A model for return augmentations.
-     */
-    public Integer getModifiedUserId() {
-        return this.modifiedUserId;
-    }
-
-    /**
-     * Setter for modifiedUserId - A model for return augmentations.
-     */
-    public void setModifiedUserId(Integer modifiedUserId) {
-        this.modifiedUserId = modifiedUserId;
-    }
-
-    
-    private Integer createdUserId;
-
-    /**
-     * Getter for createdUserId - A model for return augmentations.
-     */
-    public Integer getCreatedUserId() {
-        return this.createdUserId;
-    }
-
-    /**
-     * Setter for createdUserId - A model for return augmentations.
-     */
-    public void setCreatedUserId(Integer createdUserId) {
-        this.createdUserId = createdUserId;
-    }
-
-    
     private Date createdDate;
 
     /**
-     * Getter for createdDate - A model for return augmentations.
+     * Getter for createdDate
+     *
+     * The date when this record was created.
      */
     public Date getCreatedDate() {
         return this.createdDate;
     }
 
     /**
-     * Setter for createdDate - A model for return augmentations.
+     * Setter for createdDate
+     *
+     * The date when this record was created.
      */
-    public void setCreatedDate(Date createdDate) {
-        this.createdDate = createdDate;
+    public void setCreatedDate(Date value) {
+        this.createdDate = value;
     }
 
-    
+
+    private Integer createdUserId;
+
+    /**
+     * Getter for createdUserId
+     *
+     * The User ID of the user who created this record.
+     */
+    public Integer getCreatedUserId() {
+        return this.createdUserId;
+    }
+
+    /**
+     * Setter for createdUserId
+     *
+     * The User ID of the user who created this record.
+     */
+    public void setCreatedUserId(Integer value) {
+        this.createdUserId = value;
+    }
+
+
+    private Date modifiedDate;
+
+    /**
+     * Getter for modifiedDate
+     *
+     * The date/time when this record was last modified.
+     */
+    public Date getModifiedDate() {
+        return this.modifiedDate;
+    }
+
+    /**
+     * Setter for modifiedDate
+     *
+     * The date/time when this record was last modified.
+     */
+    public void setModifiedDate(Date value) {
+        this.modifiedDate = value;
+    }
+
+
+    private Integer modifiedUserId;
+
+    /**
+     * Getter for modifiedUserId
+     *
+     * The user ID of the user who last modified this record.
+     */
+    public Integer getModifiedUserId() {
+        return this.modifiedUserId;
+    }
+
+    /**
+     * Setter for modifiedUserId
+     *
+     * The user ID of the user who last modified this record.
+     */
+    public void setModifiedUserId(Integer value) {
+        this.modifiedUserId = value;
+    }
 
 
     /**
-     * Returns a JSON string representation of FilingAugmentationModel.
+     * Returns a JSON string representation of FilingAugmentationModel
      */
     @Override
     public String toString() {
         return JsonSerializer.SerializeObject(this);
     }
 }
-    

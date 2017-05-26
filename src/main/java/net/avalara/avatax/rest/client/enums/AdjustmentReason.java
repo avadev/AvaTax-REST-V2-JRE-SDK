@@ -1,59 +1,73 @@
 package net.avalara.avatax.rest.client.enums;
 
+/*
+ * AvaTax Software Development Kit for Java JRE based environments
+ *
+ * (c) 2004-2017 Avalara, Inc.
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ *
+ * @author     Dustin Welden <dustin.welden@avalara.com>
+ * @copyright  2004-2017 Avalara, Inc.
+ * @license    https://www.apache.org/licenses/LICENSE-2.0
+ * @version    17.5.2-77
+ * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ */
+
 /**
- * 
+ * Indicates the type of adjustment that was performed on a transaction
  */
 public enum AdjustmentReason {
-    /**
-     * No comment data provided
+    /** 
+     * The transaction has not been adjusted
      */
     NotAdjusted,
-    
-    /**
-     * No comment data provided
+
+    /** 
+     * A sourcing issue existed which caused the transaction to be adjusted
      */
     SourcingIssue,
-    
-    /**
-     * No comment data provided
+
+    /** 
+     * Transaction was adjusted to reconcile it with a general ledger
      */
     ReconciledWithGeneralLedger,
-    
-    /**
-     * No comment data provided
+
+    /** 
+     * Transaction was adjusted after an exemption certificate was applied
      */
     ExemptCertApplied,
-    
-    /**
-     * No comment data provided
+
+    /** 
+     * Transaction was adjusted when the price of an item changed
      */
     PriceAdjusted,
-    
-    /**
-     * No comment data provided
+
+    /** 
+     * Transaction was adjusted due to a product return
      */
     ProductReturned,
-    
-    /**
-     * No comment data provided
+
+    /** 
+     * Transaction was adjusted due to a product exchange
      */
     ProductExchanged,
-    
-    /**
-     * No comment data provided
+
+    /** 
+     * Transaction was adjusted due to bad or uncollectable debt
      */
     BadDebt,
-    
-    /**
-     * No comment data provided
+
+    /** 
+     * Transaction was adjusted for another reason not specified
      */
     Other,
-    
-    /**
-     * No comment data provided
+
+    /** 
+     * Offline
      */
     Offline,
-    
 
 }
     

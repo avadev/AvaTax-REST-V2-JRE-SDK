@@ -55,14 +55,14 @@ libraryDependencies ++= Seq(
   "org.apache.httpcomponents" % "httpclient" % "4.5.2"
 )
 
-lazy val downloadSwaggerAndGenerateClient = taskKey[Unit]("Generating client from latest swagger.json")
+//lazy val downloadSwaggerAndGenerateClient = taskKey[Unit]("Generating client from latest swagger.json")
 
-downloadSwaggerAndGenerateClient := {
-  val swaggerDoc = new File("./project/swagger.json")
-  IO.download(new URL("https://sandbox-rest.avatax.com/swagger/v2/swagger.json"), swaggerDoc)
-  val model = ParseSwagger.parseSwaggerDocument(IO.read(swaggerDoc))
+//downloadSwaggerAndGenerateClient := {
+//  val swaggerDoc = new File("./project/swagger.json")
+//  IO.download(new URL("https://sandbox-rest.avatax.com/swagger/v2/swagger.json"), swaggerDoc)
+//  val model = ParseSwagger.parseSwaggerDocument(IO.read(swaggerDoc))
+//
+//  ClientGenerator.renderClient(model)
+//}
 
-  ClientGenerator.renderClient(model)
-}
-
-compile in Compile <<= (compile in Compile).dependsOn(downloadSwaggerAndGenerateClient)
+compile in Compile <<= (compile in Compile) //.dependsOn(downloadSwaggerAndGenerateClient)

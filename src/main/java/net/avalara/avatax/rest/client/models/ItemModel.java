@@ -9,188 +9,246 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 
+/*
+ * AvaTax Software Development Kit for Java JRE based environments
+ *
+ * (c) 2004-2017 Avalara, Inc.
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ *
+ * @author     Dustin Welden <dustin.welden@avalara.com>
+ * @copyright  2004-2017 Avalara, Inc.
+ * @license    https://www.apache.org/licenses/LICENSE-2.0
+ * @version    17.5.2-77
+ * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ */
+
 /**
  * Represents an item in your company's product catalog.
  */
 public class ItemModel {
-    private String taxCode;
 
-    /**
-     * Getter for taxCode - Represents an item in your company's product catalog.
-     */
-    public String getTaxCode() {
-        return this.taxCode;
-    }
 
-    /**
-     * Setter for taxCode - Represents an item in your company's product catalog.
-     */
-    public void setTaxCode(String taxCode) {
-        this.taxCode = taxCode;
-    }
-
-    
-    private String description;
-
-    /**
-     * Getter for description - Represents an item in your company's product catalog.
-     */
-    public String getDescription() {
-        return this.description;
-    }
-
-    /**
-     * Setter for description - Represents an item in your company's product catalog.
-     */
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    
-    private Date modifiedDate;
-
-    /**
-     * Getter for modifiedDate - Represents an item in your company's product catalog.
-     */
-    public Date getModifiedDate() {
-        return this.modifiedDate;
-    }
-
-    /**
-     * Setter for modifiedDate - Represents an item in your company's product catalog.
-     */
-    public void setModifiedDate(Date modifiedDate) {
-        this.modifiedDate = modifiedDate;
-    }
-
-    
-    private Integer taxCodeId;
-
-    /**
-     * Getter for taxCodeId - Represents an item in your company's product catalog.
-     */
-    public Integer getTaxCodeId() {
-        return this.taxCodeId;
-    }
-
-    /**
-     * Setter for taxCodeId - Represents an item in your company's product catalog.
-     */
-    public void setTaxCodeId(Integer taxCodeId) {
-        this.taxCodeId = taxCodeId;
-    }
-
-    
     private Long id;
 
     /**
-     * Getter for id - Represents an item in your company's product catalog.
+     * Getter for id
+     *
+     * The unique ID number of this item.
      */
     public Long getId() {
         return this.id;
     }
 
     /**
-     * Setter for id - Represents an item in your company's product catalog.
+     * Setter for id
+     *
+     * The unique ID number of this item.
      */
-    public void setId(Long id) {
-        this.id = id;
+    public void setId(Long value) {
+        this.id = value;
     }
 
-    
-    private Integer modifiedUserId;
 
-    /**
-     * Getter for modifiedUserId - Represents an item in your company's product catalog.
-     */
-    public Integer getModifiedUserId() {
-        return this.modifiedUserId;
-    }
-
-    /**
-     * Setter for modifiedUserId - Represents an item in your company's product catalog.
-     */
-    public void setModifiedUserId(Integer modifiedUserId) {
-        this.modifiedUserId = modifiedUserId;
-    }
-
-    
-    private Integer createdUserId;
-
-    /**
-     * Getter for createdUserId - Represents an item in your company's product catalog.
-     */
-    public Integer getCreatedUserId() {
-        return this.createdUserId;
-    }
-
-    /**
-     * Setter for createdUserId - Represents an item in your company's product catalog.
-     */
-    public void setCreatedUserId(Integer createdUserId) {
-        this.createdUserId = createdUserId;
-    }
-
-    
-    private String itemCode;
-
-    /**
-     * Getter for itemCode - Represents an item in your company's product catalog.
-     */
-    public String getItemCode() {
-        return this.itemCode;
-    }
-
-    /**
-     * Setter for itemCode - Represents an item in your company's product catalog.
-     */
-    public void setItemCode(String itemCode) {
-        this.itemCode = itemCode;
-    }
-
-    
     private Integer companyId;
 
     /**
-     * Getter for companyId - Represents an item in your company's product catalog.
+     * Getter for companyId
+     *
+     * The unique ID number of the company that owns this item.
      */
     public Integer getCompanyId() {
         return this.companyId;
     }
 
     /**
-     * Setter for companyId - Represents an item in your company's product catalog.
+     * Setter for companyId
+     *
+     * The unique ID number of the company that owns this item.
      */
-    public void setCompanyId(Integer companyId) {
-        this.companyId = companyId;
+    public void setCompanyId(Integer value) {
+        this.companyId = value;
     }
 
-    
+
+    private String itemCode;
+
+    /**
+     * Getter for itemCode
+     *
+     * A unique code representing this item.
+     */
+    public String getItemCode() {
+        return this.itemCode;
+    }
+
+    /**
+     * Setter for itemCode
+     *
+     * A unique code representing this item.
+     */
+    public void setItemCode(String value) {
+        this.itemCode = value;
+    }
+
+
+    private Integer taxCodeId;
+
+    /**
+     * Getter for taxCodeId
+     *
+     * The unique ID number of the tax code that is applied when selling this item.
+    * When creating or updating an item, you can either specify the Tax Code ID number or the Tax Code string; you do not need to specify both values.
+     */
+    public Integer getTaxCodeId() {
+        return this.taxCodeId;
+    }
+
+    /**
+     * Setter for taxCodeId
+     *
+     * The unique ID number of the tax code that is applied when selling this item.
+    * When creating or updating an item, you can either specify the Tax Code ID number or the Tax Code string; you do not need to specify both values.
+     */
+    public void setTaxCodeId(Integer value) {
+        this.taxCodeId = value;
+    }
+
+
+    private String taxCode;
+
+    /**
+     * Getter for taxCode
+     *
+     * The unique code string of the Tax Code that is applied when selling this item.
+    * When creating or updating an item, you can either specify the Tax Code ID number or the Tax Code string; you do not need to specify both values.
+     */
+    public String getTaxCode() {
+        return this.taxCode;
+    }
+
+    /**
+     * Setter for taxCode
+     *
+     * The unique code string of the Tax Code that is applied when selling this item.
+    * When creating or updating an item, you can either specify the Tax Code ID number or the Tax Code string; you do not need to specify both values.
+     */
+    public void setTaxCode(String value) {
+        this.taxCode = value;
+    }
+
+
+    private String description;
+
+    /**
+     * Getter for description
+     *
+     * A friendly description of this item in your product catalog.
+     */
+    public String getDescription() {
+        return this.description;
+    }
+
+    /**
+     * Setter for description
+     *
+     * A friendly description of this item in your product catalog.
+     */
+    public void setDescription(String value) {
+        this.description = value;
+    }
+
+
     private Date createdDate;
 
     /**
-     * Getter for createdDate - Represents an item in your company's product catalog.
+     * Getter for createdDate
+     *
+     * The date when this record was created.
      */
     public Date getCreatedDate() {
         return this.createdDate;
     }
 
     /**
-     * Setter for createdDate - Represents an item in your company's product catalog.
+     * Setter for createdDate
+     *
+     * The date when this record was created.
      */
-    public void setCreatedDate(Date createdDate) {
-        this.createdDate = createdDate;
+    public void setCreatedDate(Date value) {
+        this.createdDate = value;
     }
 
-    
+
+    private Integer createdUserId;
+
+    /**
+     * Getter for createdUserId
+     *
+     * The User ID of the user who created this record.
+     */
+    public Integer getCreatedUserId() {
+        return this.createdUserId;
+    }
+
+    /**
+     * Setter for createdUserId
+     *
+     * The User ID of the user who created this record.
+     */
+    public void setCreatedUserId(Integer value) {
+        this.createdUserId = value;
+    }
+
+
+    private Date modifiedDate;
+
+    /**
+     * Getter for modifiedDate
+     *
+     * The date/time when this record was last modified.
+     */
+    public Date getModifiedDate() {
+        return this.modifiedDate;
+    }
+
+    /**
+     * Setter for modifiedDate
+     *
+     * The date/time when this record was last modified.
+     */
+    public void setModifiedDate(Date value) {
+        this.modifiedDate = value;
+    }
+
+
+    private Integer modifiedUserId;
+
+    /**
+     * Getter for modifiedUserId
+     *
+     * The user ID of the user who last modified this record.
+     */
+    public Integer getModifiedUserId() {
+        return this.modifiedUserId;
+    }
+
+    /**
+     * Setter for modifiedUserId
+     *
+     * The user ID of the user who last modified this record.
+     */
+    public void setModifiedUserId(Integer value) {
+        this.modifiedUserId = value;
+    }
 
 
     /**
-     * Returns a JSON string representation of ItemModel.
+     * Returns a JSON string representation of ItemModel
      */
     @Override
     public String toString() {
         return JsonSerializer.SerializeObject(this);
     }
 }
-    

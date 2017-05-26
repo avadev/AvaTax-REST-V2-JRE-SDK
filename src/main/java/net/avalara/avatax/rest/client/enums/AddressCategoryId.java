@@ -1,34 +1,48 @@
 package net.avalara.avatax.rest.client.enums;
 
+/*
+ * AvaTax Software Development Kit for Java JRE based environments
+ *
+ * (c) 2004-2017 Avalara, Inc.
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ *
+ * @author     Dustin Welden <dustin.welden@avalara.com>
+ * @copyright  2004-2017 Avalara, Inc.
+ * @license    https://www.apache.org/licenses/LICENSE-2.0
+ * @version    17.5.2-77
+ * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ */
+
 /**
- * 
+ * The type of address represented by this object
  */
 public enum AddressCategoryId {
-    /**
-     * No comment data provided
+    /** 
+     * Address refers to a storefront location
      */
     Storefront,
-    
-    /**
-     * No comment data provided
+
+    /** 
+     * Address refers to a main office of this company
      */
     MainOffice,
-    
-    /**
-     * No comment data provided
+
+    /** 
+     * Address refers to a warehouse or other non-public location
      */
     Warehouse,
-    
-    /**
-     * No comment data provided
+
+    /** 
+     * Address refers to a location for a single salesperson
      */
     Salesperson,
-    
-    /**
-     * No comment data provided
+
+    /** 
+     * Address is a type not reflected in the other lists
      */
     Other,
-    
 
 }
     

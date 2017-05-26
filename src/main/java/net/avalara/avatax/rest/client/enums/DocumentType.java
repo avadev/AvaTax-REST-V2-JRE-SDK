@@ -1,64 +1,78 @@
 package net.avalara.avatax.rest.client.enums;
 
+/*
+ * AvaTax Software Development Kit for Java JRE based environments
+ *
+ * (c) 2004-2017 Avalara, Inc.
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ *
+ * @author     Dustin Welden <dustin.welden@avalara.com>
+ * @copyright  2004-2017 Avalara, Inc.
+ * @license    https://www.apache.org/licenses/LICENSE-2.0
+ * @version    17.5.2-77
+ * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ */
+
 /**
- * 
+ * Document Types
  */
 public enum DocumentType {
-    /**
-     * No comment data provided
+    /** 
+     * Sales Order, estimate or quote (default). This is a temporary document type and is not saved in tax history.
      */
     SalesOrder,
-    
-    /**
-     * No comment data provided
+
+    /** 
+     * Sales Invoice
      */
     SalesInvoice,
-    
-    /**
-     * No comment data provided
+
+    /** 
+     * Purchase order, estimate, or quote. This is a temporary document type and is not saved in tax history.
      */
     PurchaseOrder,
-    
-    /**
-     * No comment data provided
+
+    /** 
+     * Purchase Invoice
      */
     PurchaseInvoice,
-    
-    /**
-     * No comment data provided
+
+    /** 
+     * Sales Return Order. This is a temporary document type and is not saved in tax history.
      */
     ReturnOrder,
-    
-    /**
-     * No comment data provided
+
+    /** 
+     * Sales Return Invoice
      */
     ReturnInvoice,
-    
-    /**
-     * No comment data provided
+
+    /** 
+     * InventoryTransferOrder
      */
     InventoryTransferOrder,
-    
-    /**
-     * No comment data provided
+
+    /** 
+     * InventoryTransferInvoice
      */
     InventoryTransferInvoice,
-    
-    /**
-     * No comment data provided
+
+    /** 
+     * ReverseChargeOrder
      */
     ReverseChargeOrder,
-    
-    /**
-     * No comment data provided
+
+    /** 
+     * ReverseChargeInvoice
      */
     ReverseChargeInvoice,
-    
-    /**
-     * No comment data provided
+
+    /** 
+     * No particular type
      */
     Any,
-    
 
 }
     
