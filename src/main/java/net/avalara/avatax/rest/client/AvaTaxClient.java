@@ -25,7 +25,7 @@ import java.util.ArrayList;
  * @author     Dustin Welden <dustin.welden@avalara.com>
  * @copyright  2004-2017 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
- * @version    17.5.2-77
+ * @version    17.6.0-85
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
  */
  
@@ -643,6 +643,58 @@ public class AvaTaxClient {
     }
 
     /**
+     * Change the filing status of this company
+     * 
+     * Changes the current filing status of this company.
+     * 
+     * For customers using Avalara's Managed Returns Service, each company within their account can request
+     * for Avalara to file tax returns on their behalf.  Avalara compliance team members will review all
+     * requested filing calendars prior to beginning filing tax returns on behalf of this company.
+     * 
+     * The following changes may be requested through this API:
+     * 
+     * * If a company is in `NotYetFiling` status, the customer may request this be changed to `FilingRequested`.
+     * * Avalara compliance team members may change a company from `FilingRequested` to `FirstFiling`.
+     * * Avalara compliance team members may change a company from `FirstFiling` to `Active`.
+     * 
+     * 
+     * @param id 
+     * @param model 
+     * @return String
+     */
+    public String changeFilingStatus(Integer id, FilingStatusChangeModel model) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{id}/filingstatus");
+        path.applyField("id", id);
+        return ((RestCall<String>)restCallFactory.createRestCall("post", path, model, new TypeToken<String>(){})).call();
+    }
+
+    /**
+     * Change the filing status of this company
+     * 
+     * Changes the current filing status of this company.
+     * 
+     * For customers using Avalara's Managed Returns Service, each company within their account can request
+     * for Avalara to file tax returns on their behalf.  Avalara compliance team members will review all
+     * requested filing calendars prior to beginning filing tax returns on behalf of this company.
+     * 
+     * The following changes may be requested through this API:
+     * 
+     * * If a company is in `NotYetFiling` status, the customer may request this be changed to `FilingRequested`.
+     * * Avalara compliance team members may change a company from `FilingRequested` to `FirstFiling`.
+     * * Avalara compliance team members may change a company from `FirstFiling` to `Active`.
+     * 
+     * 
+     * @param id 
+     * @param model 
+     * @return String
+     */
+    public Future<String> changeFilingStatusAsync(Integer id, FilingStatusChangeModel model) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{id}/filingstatus");
+        path.applyField("id", id);
+        return this.threadPool.submit((RestCall<String>)restCallFactory.createRestCall("post", path, model, new TypeToken<String>(){}));
+    }
+
+    /**
      * Quick setup for a company with a single physical address
      * 
      * Shortcut to quickly setup a single-physical-location company with critical information and activate it.
@@ -798,6 +850,7 @@ public class AvaTaxClient {
      *  * Settings
      *  * TaxCodes
      *  * TaxRules
+     *  * UPC
      * 
      * @param id The ID of the company to retrieve.
      * @param include A comma separated list of child objects to return underneath the primary object.
@@ -824,6 +877,7 @@ public class AvaTaxClient {
      *  * Settings
      *  * TaxCodes
      *  * TaxRules
+     *  * UPC
      * 
      * @param id The ID of the company to retrieve.
      * @param include A comma separated list of child objects to return underneath the primary object.
@@ -885,6 +939,56 @@ public class AvaTaxClient {
     }
 
     /**
+     * Get this company's filing status
+     * 
+     * Retrieve the current filing status of this company.
+     * 
+     * For customers using Avalara's Managed Returns Service, each company within their account can request
+     * for Avalara to file tax returns on their behalf.  Avalara compliance team members will review all
+     * requested filing calendars prior to beginning filing tax returns on behalf of this company.
+     * 
+     * A company's filing status can be one of the following values:
+     * 
+     * * `NoReporting` - This company is not configured to report tax returns; instead, it reports through a parent company.
+     * * `NotYetFiling` - This company has not yet begun filing tax returns through Avalara's Managed Returns Service.
+     * * `FilingRequested` - The company has requested to begin filing tax returns, but Avalara's compliance team has not yet begun filing.
+     * * `FirstFiling` - The company has recently filing tax returns and is in a new status.
+     * 
+     * @param id 
+     * @return String
+     */
+    public String getFilingStatus(Integer id) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{id}/filingstatus");
+        path.applyField("id", id);
+        return ((RestCall<String>)restCallFactory.createRestCall("get", path, null, new TypeToken<String>(){})).call();
+    }
+
+    /**
+     * Get this company's filing status
+     * 
+     * Retrieve the current filing status of this company.
+     * 
+     * For customers using Avalara's Managed Returns Service, each company within their account can request
+     * for Avalara to file tax returns on their behalf.  Avalara compliance team members will review all
+     * requested filing calendars prior to beginning filing tax returns on behalf of this company.
+     * 
+     * A company's filing status can be one of the following values:
+     * 
+     * * `NoReporting` - This company is not configured to report tax returns; instead, it reports through a parent company.
+     * * `NotYetFiling` - This company has not yet begun filing tax returns through Avalara's Managed Returns Service.
+     * * `FilingRequested` - The company has requested to begin filing tax returns, but Avalara's compliance team has not yet begun filing.
+     * * `FirstFiling` - The company has recently filing tax returns and is in a new status.
+     * 
+     * @param id 
+     * @return String
+     */
+    public Future<String> getFilingStatusAsync(Integer id) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{id}/filingstatus");
+        path.applyField("id", id);
+        return this.threadPool.submit((RestCall<String>)restCallFactory.createRestCall("get", path, null, new TypeToken<String>(){}));
+    }
+
+    /**
      * Check managed returns funding configuration for a company
      * 
      * This API is available by invitation only.
@@ -932,6 +1036,7 @@ public class AvaTaxClient {
      * * Settings
      * * TaxCodes
      * * TaxRules
+     * * UPC
      * 
      * @param include A comma separated list of child objects to return underneath the primary object.
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
@@ -966,6 +1071,7 @@ public class AvaTaxClient {
      * * Settings
      * * TaxCodes
      * * TaxRules
+     * * UPC
      * 
      * @param include A comma separated list of child objects to return underneath the primary object.
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
@@ -1307,90 +1413,6 @@ public class AvaTaxClient {
     }
 
     /**
-     * Retrieve the full list of Avalara-supported nexus for a country and region.
-     * 
-     * Returns all Avalara-supported nexus for the specified country and region.
-     * 
-     * @param country The two-character ISO-3166 code for the country.
-     * @param region The two or three character region code for the region.
-     * @return FetchResult<NexusModel>
-     */
-    public FetchResult<NexusModel> apiV2DefinitionsNexusByCountryByRegionGet(String country, String region) throws Exception {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/nexus/{country}/{region}");
-        path.applyField("country", country);
-        path.applyField("region", region);
-        return ((RestCall<FetchResult<NexusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NexusModel>>(){})).call();
-    }
-
-    /**
-     * Retrieve the full list of Avalara-supported nexus for a country and region.
-     * 
-     * Returns all Avalara-supported nexus for the specified country and region.
-     * 
-     * @param country The two-character ISO-3166 code for the country.
-     * @param region The two or three character region code for the region.
-     * @return FetchResult<NexusModel>
-     */
-    public Future<FetchResult<NexusModel>> apiV2DefinitionsNexusByCountryByRegionGetAsync(String country, String region) {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/nexus/{country}/{region}");
-        path.applyField("country", country);
-        path.applyField("region", region);
-        return this.threadPool.submit((RestCall<FetchResult<NexusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NexusModel>>(){}));
-    }
-
-    /**
-     * Retrieve the full list of Avalara-supported nexus for a country.
-     * 
-     * Returns all Avalara-supported nexus for the specified country.
-     * 
-     * @param country 
-     * @return FetchResult<NexusModel>
-     */
-    public FetchResult<NexusModel> apiV2DefinitionsNexusByCountryGet(String country) throws Exception {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/nexus/{country}");
-        path.applyField("country", country);
-        return ((RestCall<FetchResult<NexusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NexusModel>>(){})).call();
-    }
-
-    /**
-     * Retrieve the full list of Avalara-supported nexus for a country.
-     * 
-     * Returns all Avalara-supported nexus for the specified country.
-     * 
-     * @param country 
-     * @return FetchResult<NexusModel>
-     */
-    public Future<FetchResult<NexusModel>> apiV2DefinitionsNexusByCountryGetAsync(String country) {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/nexus/{country}");
-        path.applyField("country", country);
-        return this.threadPool.submit((RestCall<FetchResult<NexusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NexusModel>>(){}));
-    }
-
-    /**
-     * Retrieve the full list of Avalara-supported nexus for all countries and regions.
-     * 
-     * Returns the full list of all Avalara-supported nexus for all countries and regions.  
-     * 
-     * @return FetchResult<NexusModel>
-     */
-    public FetchResult<NexusModel> apiV2DefinitionsNexusGet() throws Exception {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/nexus");
-        return ((RestCall<FetchResult<NexusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NexusModel>>(){})).call();
-    }
-
-    /**
-     * Retrieve the full list of Avalara-supported nexus for all countries and regions.
-     * 
-     * Returns the full list of all Avalara-supported nexus for all countries and regions.  
-     * 
-     * @return FetchResult<NexusModel>
-     */
-    public Future<FetchResult<NexusModel>> apiV2DefinitionsNexusGetAsync() {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/nexus");
-        return this.threadPool.submit((RestCall<FetchResult<NexusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NexusModel>>(){}));
-    }
-
-    /**
      * Test whether a form supports online login verification
      * 
      * This API is intended to be useful to identify whether the user should be allowed
@@ -1440,6 +1462,82 @@ public class AvaTaxClient {
     public Future<FetchResult<AvaFileFormModel>> listAvaFileFormsAsync() {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/avafileforms");
         return this.threadPool.submit((RestCall<FetchResult<AvaFileFormModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<AvaFileFormModel>>(){}));
+    }
+
+    /**
+     * Retrieve the full list of communications transactiontypes
+     * 
+     * Returns full list of communications transaction types which
+     * 
+     * @param id 
+     * @return FetchResult<CommunicationsTSPairModel>
+     */
+    public FetchResult<CommunicationsTSPairModel> listCommunicationsServiceTypes(Integer id) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/communications/transactiontypes/{id}/servicetypes");
+        path.applyField("id", id);
+        return ((RestCall<FetchResult<CommunicationsTSPairModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CommunicationsTSPairModel>>(){})).call();
+    }
+
+    /**
+     * Retrieve the full list of communications transactiontypes
+     * 
+     * Returns full list of communications transaction types which
+     * 
+     * @param id 
+     * @return FetchResult<CommunicationsTSPairModel>
+     */
+    public Future<FetchResult<CommunicationsTSPairModel>> listCommunicationsServiceTypesAsync(Integer id) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/communications/transactiontypes/{id}/servicetypes");
+        path.applyField("id", id);
+        return this.threadPool.submit((RestCall<FetchResult<CommunicationsTSPairModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CommunicationsTSPairModel>>(){}));
+    }
+
+    /**
+     * Retrieve the full list of communications transactiontypes
+     * 
+     * Returns full list of communications transaction types which
+     * 
+     * @return FetchResult<CommunicationsTransactionTypeModel>
+     */
+    public FetchResult<CommunicationsTransactionTypeModel> listCommunicationsTransactionTypes() throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/communications/transactiontypes");
+        return ((RestCall<FetchResult<CommunicationsTransactionTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CommunicationsTransactionTypeModel>>(){})).call();
+    }
+
+    /**
+     * Retrieve the full list of communications transactiontypes
+     * 
+     * Returns full list of communications transaction types which
+     * 
+     * @return FetchResult<CommunicationsTransactionTypeModel>
+     */
+    public Future<FetchResult<CommunicationsTransactionTypeModel>> listCommunicationsTransactionTypesAsync() {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/communications/transactiontypes");
+        return this.threadPool.submit((RestCall<FetchResult<CommunicationsTransactionTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CommunicationsTransactionTypeModel>>(){}));
+    }
+
+    /**
+     * Retrieve the full list of communications transaction/service type pairs
+     * 
+     * Returns full list of communications transaction/service type pairs which
+     * 
+     * @return FetchResult<CommunicationsTSPairModel>
+     */
+    public FetchResult<CommunicationsTSPairModel> listCommunicationsTSPairs() throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/communications/tspairs");
+        return ((RestCall<FetchResult<CommunicationsTSPairModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CommunicationsTSPairModel>>(){})).call();
+    }
+
+    /**
+     * Retrieve the full list of communications transaction/service type pairs
+     * 
+     * Returns full list of communications transaction/service type pairs which
+     * 
+     * @return FetchResult<CommunicationsTSPairModel>
+     */
+    public Future<FetchResult<CommunicationsTSPairModel>> listCommunicationsTSPairsAsync() {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/communications/tspairs");
+        return this.threadPool.submit((RestCall<FetchResult<CommunicationsTSPairModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CommunicationsTSPairModel>>(){}));
     }
 
     /**
@@ -1679,6 +1777,30 @@ public class AvaTaxClient {
     }
 
     /**
+     * Retrieve the full list of Avalara-supported nexus for all countries and regions.
+     * 
+     * Returns the full list of all Avalara-supported nexus for all countries and regions.  
+     * 
+     * @return FetchResult<NexusModel>
+     */
+    public FetchResult<NexusModel> listNexus() throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/nexus");
+        return ((RestCall<FetchResult<NexusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NexusModel>>(){})).call();
+    }
+
+    /**
+     * Retrieve the full list of Avalara-supported nexus for all countries and regions.
+     * 
+     * Returns the full list of all Avalara-supported nexus for all countries and regions.  
+     * 
+     * @return FetchResult<NexusModel>
+     */
+    public Future<FetchResult<NexusModel>> listNexusAsync() {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/nexus");
+        return this.threadPool.submit((RestCall<FetchResult<NexusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NexusModel>>(){}));
+    }
+
+    /**
      * List all nexus that apply to a specific address.
      * 
      * Returns a list of all Avalara-supported taxing jurisdictions that apply to this address.
@@ -1733,6 +1855,66 @@ public class AvaTaxClient {
         path.addQuery("region", region);
         path.addQuery("postalCode", postalCode);
         path.addQuery("country", country);
+        return this.threadPool.submit((RestCall<FetchResult<NexusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NexusModel>>(){}));
+    }
+
+    /**
+     * Retrieve the full list of Avalara-supported nexus for a country.
+     * 
+     * Returns all Avalara-supported nexus for the specified country.
+     * 
+     * @param country 
+     * @return FetchResult<NexusModel>
+     */
+    public FetchResult<NexusModel> listNexusByCountry(String country) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/nexus/{country}");
+        path.applyField("country", country);
+        return ((RestCall<FetchResult<NexusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NexusModel>>(){})).call();
+    }
+
+    /**
+     * Retrieve the full list of Avalara-supported nexus for a country.
+     * 
+     * Returns all Avalara-supported nexus for the specified country.
+     * 
+     * @param country 
+     * @return FetchResult<NexusModel>
+     */
+    public Future<FetchResult<NexusModel>> listNexusByCountryAsync(String country) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/nexus/{country}");
+        path.applyField("country", country);
+        return this.threadPool.submit((RestCall<FetchResult<NexusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NexusModel>>(){}));
+    }
+
+    /**
+     * Retrieve the full list of Avalara-supported nexus for a country and region.
+     * 
+     * Returns all Avalara-supported nexus for the specified country and region.
+     * 
+     * @param country The two-character ISO-3166 code for the country.
+     * @param region The two or three character region code for the region.
+     * @return FetchResult<NexusModel>
+     */
+    public FetchResult<NexusModel> listNexusByCountryAndRegion(String country, String region) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/nexus/{country}/{region}");
+        path.applyField("country", country);
+        path.applyField("region", region);
+        return ((RestCall<FetchResult<NexusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NexusModel>>(){})).call();
+    }
+
+    /**
+     * Retrieve the full list of Avalara-supported nexus for a country and region.
+     * 
+     * Returns all Avalara-supported nexus for the specified country and region.
+     * 
+     * @param country The two-character ISO-3166 code for the country.
+     * @param region The two or three character region code for the region.
+     * @return FetchResult<NexusModel>
+     */
+    public Future<FetchResult<NexusModel>> listNexusByCountryAndRegionAsync(String country, String region) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/nexus/{country}/{region}");
+        path.applyField("country", country);
+        path.applyField("region", region);
         return this.threadPool.submit((RestCall<FetchResult<NexusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NexusModel>>(){}));
     }
 
@@ -2415,117 +2597,143 @@ public class AvaTaxClient {
     }
 
     /**
-     * Retrieve a single filing calendar
+     * Approve existing Filing Request
      * 
-     * @param companyId The ID of the company that owns this filing calendar
-     * @param id The primary key of this filing calendar
-     * @return FilingCalendarModel
+     * This API is available by invitation only.
+     * A "filing request" represents a request to change an existing filing calendar.  Filing requests
+     * are reviewed and validated by Avalara Compliance before being implemented.
+     * 
+     * @param companyId The unique ID of the company that owns the filing request object
+     * @param id The unique ID of the filing request object
+     * @return FilingRequestModel
      */
-    public FilingCalendarModel apiV2CompaniesByCompanyIdFilingcalendarsByIdGet(Integer companyId, Integer id) throws Exception {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingcalendars/{id}");
+    public FilingRequestModel approveFilingRequest(Integer companyId, Integer id) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingrequests/{id}/approve");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return ((RestCall<FilingCalendarModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<FilingCalendarModel>(){})).call();
+        return ((RestCall<FilingRequestModel>)restCallFactory.createRestCall("post", path, null, new TypeToken<FilingRequestModel>(){})).call();
     }
 
     /**
-     * Retrieve a single filing calendar
+     * Approve existing Filing Request
      * 
-     * @param companyId The ID of the company that owns this filing calendar
-     * @param id The primary key of this filing calendar
-     * @return FilingCalendarModel
+     * This API is available by invitation only.
+     * A "filing request" represents a request to change an existing filing calendar.  Filing requests
+     * are reviewed and validated by Avalara Compliance before being implemented.
+     * 
+     * @param companyId The unique ID of the company that owns the filing request object
+     * @param id The unique ID of the filing request object
+     * @return FilingRequestModel
      */
-    public Future<FilingCalendarModel> apiV2CompaniesByCompanyIdFilingcalendarsByIdGetAsync(Integer companyId, Integer id) {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingcalendars/{id}");
+    public Future<FilingRequestModel> approveFilingRequestAsync(Integer companyId, Integer id) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingrequests/{id}/approve");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<FilingCalendarModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<FilingCalendarModel>(){}));
+        return this.threadPool.submit((RestCall<FilingRequestModel>)restCallFactory.createRestCall("post", path, null, new TypeToken<FilingRequestModel>(){}));
     }
 
     /**
-     * Retrieve all filing calendars for this company
-     * 
-     * @param companyId The ID of the company that owns these batches
-     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
-     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<FilingCalendarModel>
-     */
-    public FetchResult<FilingCalendarModel> apiV2CompaniesByCompanyIdFilingcalendarsGet(Integer companyId, String filter, Integer top, Integer skip, String orderBy) throws Exception {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingcalendars");
-        path.applyField("companyId", companyId);
-        path.addQuery("$filter", filter);
-        path.addQuery("$top", top);
-        path.addQuery("$skip", skip);
-        path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<FilingCalendarModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<FilingCalendarModel>>(){})).call();
-    }
-
-    /**
-     * Retrieve all filing calendars for this company
-     * 
-     * @param companyId The ID of the company that owns these batches
-     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
-     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<FilingCalendarModel>
-     */
-    public Future<FetchResult<FilingCalendarModel>> apiV2CompaniesByCompanyIdFilingcalendarsGetAsync(Integer companyId, String filter, Integer top, Integer skip, String orderBy) {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingcalendars");
-        path.applyField("companyId", companyId);
-        path.addQuery("$filter", filter);
-        path.addQuery("$top", top);
-        path.addQuery("$skip", skip);
-        path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<FilingCalendarModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<FilingCalendarModel>>(){}));
-    }
-
-    /**
-     * Retrieve all filing requests for this company
+     * Cancel existing Filing Request
      * 
      * This API is available by invitation only.
      * A "filing request" represents a request to change an existing filing calendar.  Filing requests
      * 
-     * @param companyId The ID of the company that owns these batches
-     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
-     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<FilingRequestModel>
+     * @param companyId The unique ID of the company that owns the filing request object
+     * @param id The unique ID of the filing request object
+     * @return FilingRequestModel
      */
-    public FetchResult<FilingRequestModel> apiV2CompaniesByCompanyIdFilingrequestsGet(Integer companyId, String filter, Integer top, Integer skip, String orderBy) throws Exception {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingrequests");
+    public FilingRequestModel cancelFilingRequest(Integer companyId, Integer id) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingrequests/{id}/cancel");
         path.applyField("companyId", companyId);
-        path.addQuery("$filter", filter);
-        path.addQuery("$top", top);
-        path.addQuery("$skip", skip);
-        path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<FilingRequestModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<FilingRequestModel>>(){})).call();
+        path.applyField("id", id);
+        return ((RestCall<FilingRequestModel>)restCallFactory.createRestCall("post", path, null, new TypeToken<FilingRequestModel>(){})).call();
     }
 
     /**
-     * Retrieve all filing requests for this company
+     * Cancel existing Filing Request
      * 
      * This API is available by invitation only.
      * A "filing request" represents a request to change an existing filing calendar.  Filing requests
      * 
-     * @param companyId The ID of the company that owns these batches
-     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
-     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<FilingRequestModel>
+     * @param companyId The unique ID of the company that owns the filing request object
+     * @param id The unique ID of the filing request object
+     * @return FilingRequestModel
      */
-    public Future<FetchResult<FilingRequestModel>> apiV2CompaniesByCompanyIdFilingrequestsGetAsync(Integer companyId, String filter, Integer top, Integer skip, String orderBy) {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingrequests");
+    public Future<FilingRequestModel> cancelFilingRequestAsync(Integer companyId, Integer id) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingrequests/{id}/cancel");
         path.applyField("companyId", companyId);
-        path.addQuery("$filter", filter);
-        path.addQuery("$top", top);
-        path.addQuery("$skip", skip);
-        path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<FilingRequestModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<FilingRequestModel>>(){}));
+        path.applyField("id", id);
+        return this.threadPool.submit((RestCall<FilingRequestModel>)restCallFactory.createRestCall("post", path, null, new TypeToken<FilingRequestModel>(){}));
+    }
+
+    /**
+     * Create a new filing request to cancel a filing calendar
+     * 
+     * This API is available by invitation only.
+     * 
+     * A "filing request" represents a request to change an existing filing calendar.  Filing requests
+     * 
+     * @param companyId The unique ID of the company that owns the filing calendar object
+     * @param id The unique ID number of the filing calendar to cancel
+     * @param model The cancellation request for this filing calendar
+     * @return FilingRequestModel
+     */
+    public FilingRequestModel cancelFilingRequests(Integer companyId, Integer id, ArrayList<FilingRequestModel> model) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingcalendars/{id}/cancel/request");
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
+        return ((RestCall<FilingRequestModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<FilingRequestModel>(){})).call();
+    }
+
+    /**
+     * Create a new filing request to cancel a filing calendar
+     * 
+     * This API is available by invitation only.
+     * 
+     * A "filing request" represents a request to change an existing filing calendar.  Filing requests
+     * 
+     * @param companyId The unique ID of the company that owns the filing calendar object
+     * @param id The unique ID number of the filing calendar to cancel
+     * @param model The cancellation request for this filing calendar
+     * @return FilingRequestModel
+     */
+    public Future<FilingRequestModel> cancelFilingRequestsAsync(Integer companyId, Integer id, ArrayList<FilingRequestModel> model) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingcalendars/{id}/cancel/request");
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
+        return this.threadPool.submit((RestCall<FilingRequestModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<FilingRequestModel>(){}));
+    }
+
+    /**
+     * Create a new filing request to create a filing calendar
+     * 
+     * This API is available by invitation only.
+     * A "filing request" represents a request to change an existing filing calendar.  Filing requests
+     * 
+     * @param companyId The unique ID of the company that will add the new filing calendar
+     * @param model Information about the proposed new filing calendar
+     * @return FilingRequestModel
+     */
+    public FilingRequestModel createFilingRequests(Integer companyId, ArrayList<FilingRequestModel> model) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingcalendars/add/request");
+        path.applyField("companyId", companyId);
+        return ((RestCall<FilingRequestModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<FilingRequestModel>(){})).call();
+    }
+
+    /**
+     * Create a new filing request to create a filing calendar
+     * 
+     * This API is available by invitation only.
+     * A "filing request" represents a request to change an existing filing calendar.  Filing requests
+     * 
+     * @param companyId The unique ID of the company that will add the new filing calendar
+     * @param model Information about the proposed new filing calendar
+     * @return FilingRequestModel
+     */
+    public Future<FilingRequestModel> createFilingRequestsAsync(Integer companyId, ArrayList<FilingRequestModel> model) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingcalendars/add/request");
+        path.applyField("companyId", companyId);
+        return this.threadPool.submit((RestCall<FilingRequestModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<FilingRequestModel>(){}));
     }
 
     /**
@@ -2651,39 +2859,31 @@ public class AvaTaxClient {
     }
 
     /**
-     * Edit existing Filing Calendar's Notes
+     * Retrieve a single filing calendar
      * 
-     * This API is available by invitation only.
-     * This API only allows updating of internal notes and company filing instructions.
-     * 
-     * @param companyId The unique ID of the company that owns the filing request object
-     * @param id The unique ID of the filing calendar object
-     * @param model The filing calendar model you are wishing to update with.
+     * @param companyId The ID of the company that owns this filing calendar
+     * @param id The primary key of this filing calendar
      * @return FilingCalendarModel
      */
-    public FilingCalendarModel filingCalendarUpdate(Integer companyId, Integer id, FilingCalendarModel model) throws Exception {
+    public FilingCalendarModel getFilingCalendar(Integer companyId, Integer id) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingcalendars/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return ((RestCall<FilingCalendarModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<FilingCalendarModel>(){})).call();
+        return ((RestCall<FilingCalendarModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<FilingCalendarModel>(){})).call();
     }
 
     /**
-     * Edit existing Filing Calendar's Notes
+     * Retrieve a single filing calendar
      * 
-     * This API is available by invitation only.
-     * This API only allows updating of internal notes and company filing instructions.
-     * 
-     * @param companyId The unique ID of the company that owns the filing request object
-     * @param id The unique ID of the filing calendar object
-     * @param model The filing calendar model you are wishing to update with.
+     * @param companyId The ID of the company that owns this filing calendar
+     * @param id The primary key of this filing calendar
      * @return FilingCalendarModel
      */
-    public Future<FilingCalendarModel> filingCalendarUpdateAsync(Integer companyId, Integer id, FilingCalendarModel model) {
+    public Future<FilingCalendarModel> getFilingCalendarAsync(Integer companyId, Integer id) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingcalendars/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<FilingCalendarModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<FilingCalendarModel>(){}));
+        return this.threadPool.submit((RestCall<FilingCalendarModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<FilingCalendarModel>(){}));
     }
 
     /**
@@ -2696,7 +2896,7 @@ public class AvaTaxClient {
      * @param id The primary key of this filing calendar
      * @return FilingRequestModel
      */
-    public FilingRequestModel filingRequests(Integer companyId, Integer id) throws Exception {
+    public FilingRequestModel getFilingRequest(Integer companyId, Integer id) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingrequests/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
@@ -2713,7 +2913,7 @@ public class AvaTaxClient {
      * @param id The primary key of this filing calendar
      * @return FilingRequestModel
      */
-    public Future<FilingRequestModel> filingRequestsAsync(Integer companyId, Integer id) {
+    public Future<FilingRequestModel> getFilingRequestAsync(Integer companyId, Integer id) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingrequests/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
@@ -2721,222 +2921,130 @@ public class AvaTaxClient {
     }
 
     /**
-     * Create a new filing request to create a filing calendar
+     * Retrieve all filing calendars for this company
      * 
-     * This API is available by invitation only.
-     * A "filing request" represents a request to change an existing filing calendar.  Filing requests
-     * 
-     * @param companyId The unique ID of the company that will add the new filing calendar
-     * @param model Information about the proposed new filing calendar
-     * @return FilingRequestModel
+     * @param companyId The ID of the company that owns these batches
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
+     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @return FetchResult<FilingCalendarModel>
      */
-    public FilingRequestModel filingRequestsAdd(Integer companyId, ArrayList<FilingRequestModel> model) throws Exception {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingcalendars/add/request");
+    public FetchResult<FilingCalendarModel> listFilingCalendars(Integer companyId, String filter, Integer top, Integer skip, String orderBy) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingcalendars");
         path.applyField("companyId", companyId);
-        return ((RestCall<FilingRequestModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<FilingRequestModel>(){})).call();
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
+        return ((RestCall<FetchResult<FilingCalendarModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<FilingCalendarModel>>(){})).call();
     }
 
     /**
-     * Create a new filing request to create a filing calendar
+     * Retrieve all filing calendars for this company
      * 
-     * This API is available by invitation only.
-     * A "filing request" represents a request to change an existing filing calendar.  Filing requests
-     * 
-     * @param companyId The unique ID of the company that will add the new filing calendar
-     * @param model Information about the proposed new filing calendar
-     * @return FilingRequestModel
+     * @param companyId The ID of the company that owns these batches
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
+     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @return FetchResult<FilingCalendarModel>
      */
-    public Future<FilingRequestModel> filingRequestsAddAsync(Integer companyId, ArrayList<FilingRequestModel> model) {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingcalendars/add/request");
+    public Future<FetchResult<FilingCalendarModel>> listFilingCalendarsAsync(Integer companyId, String filter, Integer top, Integer skip, String orderBy) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingcalendars");
         path.applyField("companyId", companyId);
-        return this.threadPool.submit((RestCall<FilingRequestModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<FilingRequestModel>(){}));
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
+        return this.threadPool.submit((RestCall<FetchResult<FilingCalendarModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<FilingCalendarModel>>(){}));
     }
 
     /**
-     * Approve existing Filing Request
+     * Retrieve all filing requests for this company
      * 
      * This API is available by invitation only.
      * A "filing request" represents a request to change an existing filing calendar.  Filing requests
-     * are reviewed and validated by Avalara Compliance before being implemented.
      * 
-     * @param companyId The unique ID of the company that owns the filing request object
-     * @param id The unique ID of the filing request object
-     * @return FilingRequestModel
+     * @param companyId The ID of the company that owns these batches
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
+     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @return FetchResult<FilingRequestModel>
      */
-    public FilingRequestModel filingRequestsApprove(Integer companyId, Integer id) throws Exception {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingrequests/{id}/approve");
+    public FetchResult<FilingRequestModel> listFilingRequests(Integer companyId, String filter, Integer top, Integer skip, String orderBy) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingrequests");
         path.applyField("companyId", companyId);
-        path.applyField("id", id);
-        return ((RestCall<FilingRequestModel>)restCallFactory.createRestCall("post", path, null, new TypeToken<FilingRequestModel>(){})).call();
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
+        return ((RestCall<FetchResult<FilingRequestModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<FilingRequestModel>>(){})).call();
     }
 
     /**
-     * Approve existing Filing Request
+     * Retrieve all filing requests for this company
      * 
      * This API is available by invitation only.
      * A "filing request" represents a request to change an existing filing calendar.  Filing requests
-     * are reviewed and validated by Avalara Compliance before being implemented.
      * 
-     * @param companyId The unique ID of the company that owns the filing request object
-     * @param id The unique ID of the filing request object
-     * @return FilingRequestModel
+     * @param companyId The ID of the company that owns these batches
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
+     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @return FetchResult<FilingRequestModel>
      */
-    public Future<FilingRequestModel> filingRequestsApproveAsync(Integer companyId, Integer id) {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingrequests/{id}/approve");
+    public Future<FetchResult<FilingRequestModel>> listFilingRequestsAsync(Integer companyId, String filter, Integer top, Integer skip, String orderBy) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingrequests");
         path.applyField("companyId", companyId);
-        path.applyField("id", id);
-        return this.threadPool.submit((RestCall<FilingRequestModel>)restCallFactory.createRestCall("post", path, null, new TypeToken<FilingRequestModel>(){}));
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
+        return this.threadPool.submit((RestCall<FetchResult<FilingRequestModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<FilingRequestModel>>(){}));
     }
 
     /**
-     * Cancel existing Filing Request
+     * New request for getting for validating customer's login credentials
      * 
      * This API is available by invitation only.
-     * A "filing request" represents a request to change an existing filing calendar.  Filing requests
      * 
-     * @param companyId The unique ID of the company that owns the filing request object
-     * @param id The unique ID of the filing request object
-     * @return FilingRequestModel
+     * 
+     * @param model The model of the login information we are verifying
+     * @return LoginVerificationOutputModel
      */
-    public FilingRequestModel filingRequestsCancel(Integer companyId, Integer id) throws Exception {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingrequests/{id}/cancel");
-        path.applyField("companyId", companyId);
-        path.applyField("id", id);
-        return ((RestCall<FilingRequestModel>)restCallFactory.createRestCall("post", path, null, new TypeToken<FilingRequestModel>(){})).call();
+    public LoginVerificationOutputModel loginVerificationRequest(LoginVerificationInputModel model) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/filingcalendars/credentials/verify");
+        return ((RestCall<LoginVerificationOutputModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<LoginVerificationOutputModel>(){})).call();
     }
 
     /**
-     * Cancel existing Filing Request
+     * New request for getting for validating customer's login credentials
      * 
      * This API is available by invitation only.
-     * A "filing request" represents a request to change an existing filing calendar.  Filing requests
      * 
-     * @param companyId The unique ID of the company that owns the filing request object
-     * @param id The unique ID of the filing request object
-     * @return FilingRequestModel
+     * 
+     * @param model The model of the login information we are verifying
+     * @return LoginVerificationOutputModel
      */
-    public Future<FilingRequestModel> filingRequestsCancelAsync(Integer companyId, Integer id) {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingrequests/{id}/cancel");
-        path.applyField("companyId", companyId);
-        path.applyField("id", id);
-        return this.threadPool.submit((RestCall<FilingRequestModel>)restCallFactory.createRestCall("post", path, null, new TypeToken<FilingRequestModel>(){}));
-    }
-
-    /**
-     * Create a new filing request to cancel a filing calendar
-     * 
-     * This API is available by invitation only.
-     * A "filing request" represents a request to change an existing filing calendar.  Filing requests
-     * 
-     * @param companyId The unique ID of the company that owns the filing calendar object
-     * @param id The unique ID number of the filing calendar to cancel
-     * @param model The cancellation request for this filing calendar
-     * @return FilingRequestModel
-     */
-    public FilingRequestModel filingRequestsNewCancel(Integer companyId, Integer id, ArrayList<FilingRequestModel> model) throws Exception {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingcalendars/{id}/cancel/request");
-        path.applyField("companyId", companyId);
-        path.applyField("id", id);
-        return ((RestCall<FilingRequestModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<FilingRequestModel>(){})).call();
-    }
-
-    /**
-     * Create a new filing request to cancel a filing calendar
-     * 
-     * This API is available by invitation only.
-     * A "filing request" represents a request to change an existing filing calendar.  Filing requests
-     * 
-     * @param companyId The unique ID of the company that owns the filing calendar object
-     * @param id The unique ID number of the filing calendar to cancel
-     * @param model The cancellation request for this filing calendar
-     * @return FilingRequestModel
-     */
-    public Future<FilingRequestModel> filingRequestsNewCancelAsync(Integer companyId, Integer id, ArrayList<FilingRequestModel> model) {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingcalendars/{id}/cancel/request");
-        path.applyField("companyId", companyId);
-        path.applyField("id", id);
-        return this.threadPool.submit((RestCall<FilingRequestModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<FilingRequestModel>(){}));
-    }
-
-    /**
-     * Create a new filing request to edit a filing calendar
-     * 
-     * This API is available by invitation only.
-     * A "filing request" represents a request to change an existing filing calendar.  Filing requests
-     * 
-     * @param companyId The unique ID of the company that owns the filing calendar object
-     * @param id The unique ID number of the filing calendar to edit
-     * @param model A list of filing calendar edits to be made
-     * @return FilingRequestModel
-     */
-    public FilingRequestModel filingRequestsNewEdit(Integer companyId, Integer id, ArrayList<FilingRequestModel> model) throws Exception {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingcalendars/{id}/edit/request");
-        path.applyField("companyId", companyId);
-        path.applyField("id", id);
-        return ((RestCall<FilingRequestModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<FilingRequestModel>(){})).call();
-    }
-
-    /**
-     * Create a new filing request to edit a filing calendar
-     * 
-     * This API is available by invitation only.
-     * A "filing request" represents a request to change an existing filing calendar.  Filing requests
-     * 
-     * @param companyId The unique ID of the company that owns the filing calendar object
-     * @param id The unique ID number of the filing calendar to edit
-     * @param model A list of filing calendar edits to be made
-     * @return FilingRequestModel
-     */
-    public Future<FilingRequestModel> filingRequestsNewEditAsync(Integer companyId, Integer id, ArrayList<FilingRequestModel> model) {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingcalendars/{id}/edit/request");
-        path.applyField("companyId", companyId);
-        path.applyField("id", id);
-        return this.threadPool.submit((RestCall<FilingRequestModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<FilingRequestModel>(){}));
-    }
-
-    /**
-     * Edit existing Filing Request
-     * 
-     * This API is available by invitation only.
-     * A "filing request" represents a request to change an existing filing calendar.  Filing requests
-     * 
-     * @param companyId The unique ID of the company that owns the filing request object
-     * @param id The unique ID of the filing request object
-     * @param model A list of filing calendar edits to be made
-     * @return FilingRequestModel
-     */
-    public FilingRequestModel filingRequestsUpdate(Integer companyId, Integer id, FilingRequestModel model) throws Exception {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingrequests/{id}");
-        path.applyField("companyId", companyId);
-        path.applyField("id", id);
-        return ((RestCall<FilingRequestModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<FilingRequestModel>(){})).call();
-    }
-
-    /**
-     * Edit existing Filing Request
-     * 
-     * This API is available by invitation only.
-     * A "filing request" represents a request to change an existing filing calendar.  Filing requests
-     * 
-     * @param companyId The unique ID of the company that owns the filing request object
-     * @param id The unique ID of the filing request object
-     * @param model A list of filing calendar edits to be made
-     * @return FilingRequestModel
-     */
-    public Future<FilingRequestModel> filingRequestsUpdateAsync(Integer companyId, Integer id, FilingRequestModel model) {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingrequests/{id}");
-        path.applyField("companyId", companyId);
-        path.applyField("id", id);
-        return this.threadPool.submit((RestCall<FilingRequestModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<FilingRequestModel>(){}));
+    public Future<LoginVerificationOutputModel> loginVerificationRequestAsync(LoginVerificationInputModel model) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/filingcalendars/credentials/verify");
+        return this.threadPool.submit((RestCall<LoginVerificationOutputModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<LoginVerificationOutputModel>(){}));
     }
 
     /**
      * Gets the request status and Login Result
      * 
+     * This API is available by invitation only.
+     * 
+     * This API checks the status of a login verification request.  It may only be called by authorized users from the account 
+     * 
      * @param jobId The unique ID number of this login request
      * @return LoginVerificationOutputModel
      */
-    public LoginVerificationOutputModel loginVerificationGet(Integer jobId) throws Exception {
+    public LoginVerificationOutputModel loginVerificationStatus(Integer jobId) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/filingcalendars/credentials/{jobId}");
         path.applyField("jobId", jobId);
         return ((RestCall<LoginVerificationOutputModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<LoginVerificationOutputModel>(){})).call();
@@ -2945,35 +3053,17 @@ public class AvaTaxClient {
     /**
      * Gets the request status and Login Result
      * 
+     * This API is available by invitation only.
+     * 
+     * This API checks the status of a login verification request.  It may only be called by authorized users from the account 
+     * 
      * @param jobId The unique ID number of this login request
      * @return LoginVerificationOutputModel
      */
-    public Future<LoginVerificationOutputModel> loginVerificationGetAsync(Integer jobId) {
+    public Future<LoginVerificationOutputModel> loginVerificationStatusAsync(Integer jobId) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/filingcalendars/credentials/{jobId}");
         path.applyField("jobId", jobId);
         return this.threadPool.submit((RestCall<LoginVerificationOutputModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<LoginVerificationOutputModel>(){}));
-    }
-
-    /**
-     * New request for getting for validating customer's login credentials
-     * 
-     * @param model The model of the login information we are verifying
-     * @return LoginVerificationOutputModel
-     */
-    public LoginVerificationOutputModel loginVerificationPost(LoginVerificationInputModel model) throws Exception {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/filingcalendars/credentials/verify");
-        return ((RestCall<LoginVerificationOutputModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<LoginVerificationOutputModel>(){})).call();
-    }
-
-    /**
-     * New request for getting for validating customer's login credentials
-     * 
-     * @param model The model of the login information we are verifying
-     * @return LoginVerificationOutputModel
-     */
-    public Future<LoginVerificationOutputModel> loginVerificationPostAsync(LoginVerificationInputModel model) {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/filingcalendars/credentials/verify");
-        return this.threadPool.submit((RestCall<LoginVerificationOutputModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<LoginVerificationOutputModel>(){}));
     }
 
     /**
@@ -3058,6 +3148,122 @@ public class AvaTaxClient {
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
         return this.threadPool.submit((RestCall<FetchResult<FilingRequestModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<FilingRequestModel>>(){}));
+    }
+
+    /**
+     * Create a new filing request to edit a filing calendar
+     * 
+     * This API is available by invitation only.
+     * 
+     * A "filing request" represents a request to change an existing filing calendar.  Filing requests
+     * are reviewed and validated by Avalara Compliance before being implemented.
+     * 
+     * Certain users may not update filing calendars directly.  Instead, they may submit an edit request
+     * 
+     * @param companyId The unique ID of the company that owns the filing calendar object
+     * @param id The unique ID number of the filing calendar to edit
+     * @param model A list of filing calendar edits to be made
+     * @return FilingRequestModel
+     */
+    public FilingRequestModel requestFilingCalendarUpdate(Integer companyId, Integer id, ArrayList<FilingRequestModel> model) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingcalendars/{id}/edit/request");
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
+        return ((RestCall<FilingRequestModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<FilingRequestModel>(){})).call();
+    }
+
+    /**
+     * Create a new filing request to edit a filing calendar
+     * 
+     * This API is available by invitation only.
+     * 
+     * A "filing request" represents a request to change an existing filing calendar.  Filing requests
+     * are reviewed and validated by Avalara Compliance before being implemented.
+     * 
+     * Certain users may not update filing calendars directly.  Instead, they may submit an edit request
+     * 
+     * @param companyId The unique ID of the company that owns the filing calendar object
+     * @param id The unique ID number of the filing calendar to edit
+     * @param model A list of filing calendar edits to be made
+     * @return FilingRequestModel
+     */
+    public Future<FilingRequestModel> requestFilingCalendarUpdateAsync(Integer companyId, Integer id, ArrayList<FilingRequestModel> model) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingcalendars/{id}/edit/request");
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
+        return this.threadPool.submit((RestCall<FilingRequestModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<FilingRequestModel>(){}));
+    }
+
+    /**
+     * Edit existing Filing Calendar's Notes
+     * 
+     * This API is available by invitation only.
+     * This API only allows updating of internal notes and company filing instructions.
+     * 
+     * @param companyId The unique ID of the company that owns the filing request object
+     * @param id The unique ID of the filing calendar object
+     * @param model The filing calendar model you are wishing to update with.
+     * @return FilingCalendarModel
+     */
+    public FilingCalendarModel updateFilingCalendar(Integer companyId, Integer id, FilingCalendarModel model) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingcalendars/{id}");
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
+        return ((RestCall<FilingCalendarModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<FilingCalendarModel>(){})).call();
+    }
+
+    /**
+     * Edit existing Filing Calendar's Notes
+     * 
+     * This API is available by invitation only.
+     * This API only allows updating of internal notes and company filing instructions.
+     * 
+     * @param companyId The unique ID of the company that owns the filing request object
+     * @param id The unique ID of the filing calendar object
+     * @param model The filing calendar model you are wishing to update with.
+     * @return FilingCalendarModel
+     */
+    public Future<FilingCalendarModel> updateFilingCalendarAsync(Integer companyId, Integer id, FilingCalendarModel model) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingcalendars/{id}");
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
+        return this.threadPool.submit((RestCall<FilingCalendarModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<FilingCalendarModel>(){}));
+    }
+
+    /**
+     * Edit existing Filing Request
+     * 
+     * This API is available by invitation only.
+     * A "filing request" represents a request to change an existing filing calendar.  Filing requests
+     * 
+     * @param companyId The unique ID of the company that owns the filing request object
+     * @param id The unique ID of the filing request object
+     * @param model A list of filing calendar edits to be made
+     * @return FilingRequestModel
+     */
+    public FilingRequestModel updateFilingRequest(Integer companyId, Integer id, FilingRequestModel model) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingrequests/{id}");
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
+        return ((RestCall<FilingRequestModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<FilingRequestModel>(){})).call();
+    }
+
+    /**
+     * Edit existing Filing Request
+     * 
+     * This API is available by invitation only.
+     * A "filing request" represents a request to change an existing filing calendar.  Filing requests
+     * 
+     * @param companyId The unique ID of the company that owns the filing request object
+     * @param id The unique ID of the filing request object
+     * @param model A list of filing calendar edits to be made
+     * @return FilingRequestModel
+     */
+    public Future<FilingRequestModel> updateFilingRequestAsync(Integer companyId, Integer id, FilingRequestModel model) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingrequests/{id}");
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
+        return this.threadPool.submit((RestCall<FilingRequestModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<FilingRequestModel>(){}));
     }
 
     /**
@@ -3411,13 +3617,13 @@ public class AvaTaxClient {
     /**
      * Retrieve worksheet checkup report for company and filing period.
      * 
-     * @param worksheetId The unique id of the worksheet.
+     * @param filingsId The unique id of the worksheet.
      * @param companyId The unique ID of the company that owns the worksheet.
      * @return FilingsCheckupModel
      */
-    public FilingsCheckupModel filingsCheckupReport(Integer worksheetId, Integer companyId) throws Exception {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{worksheetId}/checkup");
-        path.applyField("worksheetId", worksheetId);
+    public FilingsCheckupModel filingsCheckupReport(Integer filingsId, Integer companyId) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{filingsId}/checkup");
+        path.applyField("filingsId", filingsId);
         path.applyField("companyId", companyId);
         return ((RestCall<FilingsCheckupModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<FilingsCheckupModel>(){})).call();
     }
@@ -3425,13 +3631,13 @@ public class AvaTaxClient {
     /**
      * Retrieve worksheet checkup report for company and filing period.
      * 
-     * @param worksheetId The unique id of the worksheet.
+     * @param filingsId The unique id of the worksheet.
      * @param companyId The unique ID of the company that owns the worksheet.
      * @return FilingsCheckupModel
      */
-    public Future<FilingsCheckupModel> filingsCheckupReportAsync(Integer worksheetId, Integer companyId) {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{worksheetId}/checkup");
-        path.applyField("worksheetId", worksheetId);
+    public Future<FilingsCheckupModel> filingsCheckupReportAsync(Integer filingsId, Integer companyId) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{filingsId}/checkup");
+        path.applyField("filingsId", filingsId);
         path.applyField("companyId", companyId);
         return this.threadPool.submit((RestCall<FilingsCheckupModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<FilingsCheckupModel>(){}));
     }
@@ -3753,6 +3959,56 @@ public class AvaTaxClient {
     }
 
     /**
+     * Retrieve a list of filings for the specified company in the year and month of a given filing period.  
+This gets the basic information from the filings and doesn't include anything extra.
+     * 
+     * @param companyId The ID of the company that owns these batches
+     * @param endPeriodMonth The month of the period you are trying to retrieve
+     * @param endPeriodYear The year of the period you are trying to retrieve
+     * @param frequency The frequency of the return you are trying to retrieve (See FilingFrequencyId::* for a list of allowable values)
+     * @param status The status of the return(s) you are trying to retrieve (See FilingStatusId::* for a list of allowable values)
+     * @param country The country of the return(s) you are trying to retrieve
+     * @param region The region of the return(s) you are trying to retrieve
+     * @return FetchResult<FilingReturnModelBasic>
+     */
+    public FetchResult<FilingReturnModelBasic> getFilingsReturns(Integer companyId, Integer endPeriodMonth, Integer endPeriodYear, FilingFrequencyId frequency, FilingStatusId status, String country, String region) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/returns");
+        path.applyField("companyId", companyId);
+        path.addQuery("endPeriodMonth", endPeriodMonth);
+        path.addQuery("endPeriodYear", endPeriodYear);
+        path.addQuery("frequency", frequency);
+        path.addQuery("status", status);
+        path.addQuery("country", country);
+        path.addQuery("region", region);
+        return ((RestCall<FetchResult<FilingReturnModelBasic>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<FilingReturnModelBasic>>(){})).call();
+    }
+
+    /**
+     * Retrieve a list of filings for the specified company in the year and month of a given filing period.  
+This gets the basic information from the filings and doesn't include anything extra.
+     * 
+     * @param companyId The ID of the company that owns these batches
+     * @param endPeriodMonth The month of the period you are trying to retrieve
+     * @param endPeriodYear The year of the period you are trying to retrieve
+     * @param frequency The frequency of the return you are trying to retrieve (See FilingFrequencyId::* for a list of allowable values)
+     * @param status The status of the return(s) you are trying to retrieve (See FilingStatusId::* for a list of allowable values)
+     * @param country The country of the return(s) you are trying to retrieve
+     * @param region The region of the return(s) you are trying to retrieve
+     * @return FetchResult<FilingReturnModelBasic>
+     */
+    public Future<FetchResult<FilingReturnModelBasic>> getFilingsReturnsAsync(Integer companyId, Integer endPeriodMonth, Integer endPeriodYear, FilingFrequencyId frequency, FilingStatusId status, String country, String region) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/returns");
+        path.applyField("companyId", companyId);
+        path.addQuery("endPeriodMonth", endPeriodMonth);
+        path.addQuery("endPeriodYear", endPeriodYear);
+        path.addQuery("frequency", frequency);
+        path.addQuery("status", status);
+        path.addQuery("country", country);
+        path.addQuery("region", region);
+        return this.threadPool.submit((RestCall<FetchResult<FilingReturnModelBasic>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<FilingReturnModelBasic>>(){}));
+    }
+
+    /**
      * Rebuild a set of filings for the specified company in the given filing period.
      * 
      * This API is available by invitation only.
@@ -4037,11 +4293,15 @@ public class AvaTaxClient {
      * 
      * The TaxRates API is a free-to-use, no cost option for estimating sales tax rates.
      * Any customer can request a free AvaTax account and make use of the TaxRates API.
-     * However, this API is currently limited for US only
      * 
-     * Note that the TaxRates API assumes the sale of general tangible personal property when estimating the sales tax
-     * rate for a specified address.  Avalara provides the `CreateTransaction` API, which provides extensive tax calculation 
-     * support for scenarios including, but not limited to:
+     * Usage of this API is subject to rate limits.  Users who exceed the rate limit will receive HTTP
+     * response code 429 - `Too Many Requests`.
+     * 
+     * This API assumes that you are selling general tangible personal property at a retail point-of-sale
+     * location in the United States only.  
+     * 
+     * For more powerful tax calculation, please consider upgrading to the `CreateTransaction` API,
+     * which supports features including, but not limited to:
      * 
      * * Nexus declarations
      * * Taxability based on product/service type
@@ -4082,11 +4342,15 @@ public class AvaTaxClient {
      * 
      * The TaxRates API is a free-to-use, no cost option for estimating sales tax rates.
      * Any customer can request a free AvaTax account and make use of the TaxRates API.
-     * However, this API is currently limited for US only
      * 
-     * Note that the TaxRates API assumes the sale of general tangible personal property when estimating the sales tax
-     * rate for a specified address.  Avalara provides the `CreateTransaction` API, which provides extensive tax calculation 
-     * support for scenarios including, but not limited to:
+     * Usage of this API is subject to rate limits.  Users who exceed the rate limit will receive HTTP
+     * response code 429 - `Too Many Requests`.
+     * 
+     * This API assumes that you are selling general tangible personal property at a retail point-of-sale
+     * location in the United States only.  
+     * 
+     * For more powerful tax calculation, please consider upgrading to the `CreateTransaction` API,
+     * which supports features including, but not limited to:
      * 
      * * Nexus declarations
      * * Taxability based on product/service type
@@ -4127,11 +4391,15 @@ public class AvaTaxClient {
      * 
      * The TaxRates API is a free-to-use, no cost option for estimating sales tax rates.
      * Any customer can request a free AvaTax account and make use of the TaxRates API.
-     * However, this API is currently limited for US only
      * 
-     * Note that the TaxRates API assumes the sale of general tangible personal property when estimating the sales tax
-     * rate for a specified address.  Avalara provides the `CreateTransaction` API, which provides extensive tax calculation 
-     * support for scenarios including, but not limited to:
+     * Usage of this API is subject to rate limits.  Users who exceed the rate limit will receive HTTP
+     * response code 429 - `Too Many Requests`.
+     * 
+     * This API assumes that you are selling general tangible personal property at a retail point-of-sale
+     * location in the United States only.  
+     * 
+     * For more powerful tax calculation, please consider upgrading to the `CreateTransaction` API,
+     * which supports features including, but not limited to:
      * 
      * * Nexus declarations
      * * Taxability based on product/service type
@@ -4162,11 +4430,15 @@ public class AvaTaxClient {
      * 
      * The TaxRates API is a free-to-use, no cost option for estimating sales tax rates.
      * Any customer can request a free AvaTax account and make use of the TaxRates API.
-     * However, this API is currently limited for US only
      * 
-     * Note that the TaxRates API assumes the sale of general tangible personal property when estimating the sales tax
-     * rate for a specified address.  Avalara provides the `CreateTransaction` API, which provides extensive tax calculation 
-     * support for scenarios including, but not limited to:
+     * Usage of this API is subject to rate limits.  Users who exceed the rate limit will receive HTTP
+     * response code 429 - `Too Many Requests`.
+     * 
+     * This API assumes that you are selling general tangible personal property at a retail point-of-sale
+     * location in the United States only.  
+     * 
+     * For more powerful tax calculation, please consider upgrading to the `CreateTransaction` API,
+     * which supports features including, but not limited to:
      * 
      * * Nexus declarations
      * * Taxability based on product/service type
@@ -4764,62 +5036,6 @@ public class AvaTaxClient {
         path.applyField("accountId", accountId);
         path.applyField("id", id);
         return this.threadPool.submit((RestCall<JurisdictionOverrideModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<JurisdictionOverrideModel>(){}));
-    }
-
-    /**
-     * Point of sale data file generation
-     * 
-     * Builds a point-of-sale data file containing tax rates and rules for this location, containing tax rates for all
-     * items defined for this company.  This data file can be used to correctly calculate tax in the event a 
-     * point-of-sale device is not able to reach AvaTax.
-     * This data file can be customized for specific partner devices and usage conditions.
-     * The result of this API is the file you requested in the format you requested using the 'responseType' field.
-     * 
-     * @param companyId The ID number of the company that owns this location.
-     * @param id The ID number of the location to retrieve point-of-sale data.
-     * @param date The date for which point-of-sale data would be calculated (today by default)
-     * @param format The format of the file (JSON by default) (See PointOfSaleFileType::* for a list of allowable values)
-     * @param partnerId If specified, requests a custom partner-formatted version of the file. (See PointOfSalePartnerId::* for a list of allowable values)
-     * @param includeJurisCodes When true, the file will include jurisdiction codes in the result.
-     * @return String
-     */
-    public String buildPointOfSaleDataForLocation(Integer companyId, Integer id, Date date, PointOfSaleFileType format, PointOfSalePartnerId partnerId, Boolean includeJurisCodes) throws Exception {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/locations/{id}/pointofsaledata");
-        path.applyField("companyId", companyId);
-        path.applyField("id", id);
-        path.addQuery("date", date);
-        path.addQuery("format", format);
-        path.addQuery("partnerId", partnerId);
-        path.addQuery("includeJurisCodes", includeJurisCodes);
-        return ((RestCall<String>)restCallFactory.createRestCall("get", path, null, new TypeToken<String>(){})).call();
-    }
-
-    /**
-     * Point of sale data file generation
-     * 
-     * Builds a point-of-sale data file containing tax rates and rules for this location, containing tax rates for all
-     * items defined for this company.  This data file can be used to correctly calculate tax in the event a 
-     * point-of-sale device is not able to reach AvaTax.
-     * This data file can be customized for specific partner devices and usage conditions.
-     * The result of this API is the file you requested in the format you requested using the 'responseType' field.
-     * 
-     * @param companyId The ID number of the company that owns this location.
-     * @param id The ID number of the location to retrieve point-of-sale data.
-     * @param date The date for which point-of-sale data would be calculated (today by default)
-     * @param format The format of the file (JSON by default) (See PointOfSaleFileType::* for a list of allowable values)
-     * @param partnerId If specified, requests a custom partner-formatted version of the file. (See PointOfSalePartnerId::* for a list of allowable values)
-     * @param includeJurisCodes When true, the file will include jurisdiction codes in the result.
-     * @return String
-     */
-    public Future<String> buildPointOfSaleDataForLocationAsync(Integer companyId, Integer id, Date date, PointOfSaleFileType format, PointOfSalePartnerId partnerId, Boolean includeJurisCodes) {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/locations/{id}/pointofsaledata");
-        path.applyField("companyId", companyId);
-        path.applyField("id", id);
-        path.addQuery("date", date);
-        path.addQuery("format", format);
-        path.addQuery("partnerId", partnerId);
-        path.addQuery("includeJurisCodes", includeJurisCodes);
-        return this.threadPool.submit((RestCall<String>)restCallFactory.createRestCall("get", path, null, new TypeToken<String>(){}));
     }
 
     /**
@@ -5649,6 +5865,86 @@ public class AvaTaxClient {
     }
 
     /**
+     * Delete a single responsibility
+     * 
+     * This API is available by invitation only.
+     * Mark the existing notice object at this URL as deleted.
+     * A 'notice' represents a letter sent to a business by a tax authority regarding tax filing issues.  Avalara
+     * 
+     * @param companyId The ID of the company that owns this notice.
+     * @param noticeId The ID of the notice you wish to delete.
+     * @param id The ID of the responsibility you wish to delete.
+     * @return ArrayList<ErrorDetail>
+     */
+    public ArrayList<ErrorDetail> deleteResponsibilities(Integer companyId, Integer noticeId, Integer id) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/{noticeId}/responsibilities/{id}");
+        path.applyField("companyId", companyId);
+        path.applyField("noticeId", noticeId);
+        path.applyField("id", id);
+        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){})).call();
+    }
+
+    /**
+     * Delete a single responsibility
+     * 
+     * This API is available by invitation only.
+     * Mark the existing notice object at this URL as deleted.
+     * A 'notice' represents a letter sent to a business by a tax authority regarding tax filing issues.  Avalara
+     * 
+     * @param companyId The ID of the company that owns this notice.
+     * @param noticeId The ID of the notice you wish to delete.
+     * @param id The ID of the responsibility you wish to delete.
+     * @return ArrayList<ErrorDetail>
+     */
+    public Future<ArrayList<ErrorDetail>> deleteResponsibilitiesAsync(Integer companyId, Integer noticeId, Integer id) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/{noticeId}/responsibilities/{id}");
+        path.applyField("companyId", companyId);
+        path.applyField("noticeId", noticeId);
+        path.applyField("id", id);
+        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){}));
+    }
+
+    /**
+     * Delete a single root cause.
+     * 
+     * This API is available by invitation only.
+     * Mark the existing notice object at this URL as deleted.
+     * A 'notice' represents a letter sent to a business by a tax authority regarding tax filing issues.  Avalara
+     * 
+     * @param companyId The ID of the company that owns this notice.
+     * @param noticeId The ID of the notice you wish to delete.
+     * @param id The ID of the root cause you wish to delete.
+     * @return ArrayList<ErrorDetail>
+     */
+    public ArrayList<ErrorDetail> deleteRootCauses(Integer companyId, Integer noticeId, Integer id) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/{noticeId}/rootcauses/{id}");
+        path.applyField("companyId", companyId);
+        path.applyField("noticeId", noticeId);
+        path.applyField("id", id);
+        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){})).call();
+    }
+
+    /**
+     * Delete a single root cause.
+     * 
+     * This API is available by invitation only.
+     * Mark the existing notice object at this URL as deleted.
+     * A 'notice' represents a letter sent to a business by a tax authority regarding tax filing issues.  Avalara
+     * 
+     * @param companyId The ID of the company that owns this notice.
+     * @param noticeId The ID of the notice you wish to delete.
+     * @param id The ID of the root cause you wish to delete.
+     * @return ArrayList<ErrorDetail>
+     */
+    public Future<ArrayList<ErrorDetail>> deleteRootCausesAsync(Integer companyId, Integer noticeId, Integer id) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/{noticeId}/rootcauses/{id}");
+        path.applyField("companyId", companyId);
+        path.applyField("noticeId", noticeId);
+        path.applyField("id", id);
+        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){}));
+    }
+
+    /**
      * Retrieve a single attachment
      * 
      * This API is available by invitation only.
@@ -6074,38 +6370,6 @@ public class AvaTaxClient {
     public Future<NewAccountModel> requestNewAccountAsync(NewAccountRequestModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/request");
         return this.threadPool.submit((RestCall<NewAccountModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<NewAccountModel>(){}));
-    }
-
-    /**
-     * Point of sale data file generation
-     * 
-     * Builds a point-of-sale data file containing tax rates and rules for items and locations that can be used
-     * to correctly calculate tax in the event a point-of-sale device is not able to reach AvaTax.
-     * This data file can be customized for specific partner devices and usage conditions.
-     * The result of this API is the file you requested in the format you requested using the 'responseType' field.
-     * 
-     * @param model Parameters about the desired file format and report format, specifying which company, locations and TaxCodes to include.
-     * @return String
-     */
-    public String buildPointOfSaleDataFile(PointOfSaleDataRequestModel model) throws Exception {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/pointofsaledata/build");
-        return ((RestCall<String>)restCallFactory.createRestCall("post", path, model, new TypeToken<String>(){})).call();
-    }
-
-    /**
-     * Point of sale data file generation
-     * 
-     * Builds a point-of-sale data file containing tax rates and rules for items and locations that can be used
-     * to correctly calculate tax in the event a point-of-sale device is not able to reach AvaTax.
-     * This data file can be customized for specific partner devices and usage conditions.
-     * The result of this API is the file you requested in the format you requested using the 'responseType' field.
-     * 
-     * @param model Parameters about the desired file format and report format, specifying which company, locations and TaxCodes to include.
-     * @return String
-     */
-    public Future<String> buildPointOfSaleDataFileAsync(PointOfSaleDataRequestModel model) {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/pointofsaledata/build");
-        return this.threadPool.submit((RestCall<String>)restCallFactory.createRestCall("post", path, model, new TypeToken<String>(){}));
     }
 
     /**
@@ -7212,6 +7476,116 @@ public class AvaTaxClient {
         path.applyField("companyId", companyId);
         path.applyField("id", id);
         return this.threadPool.submit((RestCall<TaxCodeModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<TaxCodeModel>(){}));
+    }
+
+    /**
+     * Build a multi-location tax content file
+     * 
+     * Builds a tax content file containing information useful for a retail point-of-sale solution.
+     * 
+     * This file contains tax rates and rules for items and locations that can be used
+     * to correctly calculate tax in the event a point-of-sale device is not able to reach AvaTax.
+     * 
+     * This data file can be customized for specific partner devices and usage conditions.
+     * 
+     * The result of this API is the file you requested in the format you requested using the `responseType` field.
+     * 
+     * This API builds the file on demand, and is limited to files with no more than 7500 scenarios.  To build a tax content
+     * 
+     * @param model Parameters about the desired file format and report format, specifying which company, locations and TaxCodes to include.
+     * @return String
+     */
+    public String buildTaxContentFile(PointOfSaleDataRequestModel model) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/pointofsaledata/build");
+        return ((RestCall<String>)restCallFactory.createRestCall("post", path, model, new TypeToken<String>(){})).call();
+    }
+
+    /**
+     * Build a multi-location tax content file
+     * 
+     * Builds a tax content file containing information useful for a retail point-of-sale solution.
+     * 
+     * This file contains tax rates and rules for items and locations that can be used
+     * to correctly calculate tax in the event a point-of-sale device is not able to reach AvaTax.
+     * 
+     * This data file can be customized for specific partner devices and usage conditions.
+     * 
+     * The result of this API is the file you requested in the format you requested using the `responseType` field.
+     * 
+     * This API builds the file on demand, and is limited to files with no more than 7500 scenarios.  To build a tax content
+     * 
+     * @param model Parameters about the desired file format and report format, specifying which company, locations and TaxCodes to include.
+     * @return String
+     */
+    public Future<String> buildTaxContentFileAsync(PointOfSaleDataRequestModel model) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/pointofsaledata/build");
+        return this.threadPool.submit((RestCall<String>)restCallFactory.createRestCall("post", path, model, new TypeToken<String>(){}));
+    }
+
+    /**
+     * Build a tax content file for a single location
+     * 
+     * Builds a tax content file containing information useful for a retail point-of-sale solution.
+     * 
+     * This file contains tax rates and rules for all items for a single location.  Data from this API
+     * can be used to correctly calculate tax in the event a point-of-sale device is not able to reach AvaTax.
+     * 
+     * This data file can be customized for specific partner devices and usage conditions.
+     * 
+     * The result of this API is the file you requested in the format you requested using the `responseType` field.
+     * 
+     * This API builds the file on demand, and is limited to files with no more than 7500 scenarios.  To build a tax content
+     * 
+     * @param companyId The ID number of the company that owns this location.
+     * @param id The ID number of the location to retrieve point-of-sale data.
+     * @param date The date for which point-of-sale data would be calculated (today by default)
+     * @param format The format of the file (JSON by default) (See PointOfSaleFileType::* for a list of allowable values)
+     * @param partnerId If specified, requests a custom partner-formatted version of the file. (See PointOfSalePartnerId::* for a list of allowable values)
+     * @param includeJurisCodes When true, the file will include jurisdiction codes in the result.
+     * @return String
+     */
+    public String buildTaxContentFileForLocation(Integer companyId, Integer id, Date date, PointOfSaleFileType format, PointOfSalePartnerId partnerId, Boolean includeJurisCodes) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/locations/{id}/pointofsaledata");
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
+        path.addQuery("date", date);
+        path.addQuery("format", format);
+        path.addQuery("partnerId", partnerId);
+        path.addQuery("includeJurisCodes", includeJurisCodes);
+        return ((RestCall<String>)restCallFactory.createRestCall("get", path, null, new TypeToken<String>(){})).call();
+    }
+
+    /**
+     * Build a tax content file for a single location
+     * 
+     * Builds a tax content file containing information useful for a retail point-of-sale solution.
+     * 
+     * This file contains tax rates and rules for all items for a single location.  Data from this API
+     * can be used to correctly calculate tax in the event a point-of-sale device is not able to reach AvaTax.
+     * 
+     * This data file can be customized for specific partner devices and usage conditions.
+     * 
+     * The result of this API is the file you requested in the format you requested using the `responseType` field.
+     * 
+     * This API builds the file on demand, and is limited to files with no more than 7500 scenarios.  To build a tax content
+     * 
+     * @param companyId The ID number of the company that owns this location.
+     * @param id The ID number of the location to retrieve point-of-sale data.
+     * @param date The date for which point-of-sale data would be calculated (today by default)
+     * @param format The format of the file (JSON by default) (See PointOfSaleFileType::* for a list of allowable values)
+     * @param partnerId If specified, requests a custom partner-formatted version of the file. (See PointOfSalePartnerId::* for a list of allowable values)
+     * @param includeJurisCodes When true, the file will include jurisdiction codes in the result.
+     * @return String
+     */
+    public Future<String> buildTaxContentFileForLocationAsync(Integer companyId, Integer id, Date date, PointOfSaleFileType format, PointOfSalePartnerId partnerId, Boolean includeJurisCodes) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/locations/{id}/pointofsaledata");
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
+        path.addQuery("date", date);
+        path.addQuery("format", format);
+        path.addQuery("partnerId", partnerId);
+        path.addQuery("includeJurisCodes", includeJurisCodes);
+        return this.threadPool.submit((RestCall<String>)restCallFactory.createRestCall("get", path, null, new TypeToken<String>(){}));
     }
 
     /**

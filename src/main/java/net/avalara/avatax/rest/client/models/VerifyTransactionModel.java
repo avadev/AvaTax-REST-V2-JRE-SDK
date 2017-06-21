@@ -20,7 +20,7 @@ import java.util.HashMap;
  * @author     Dustin Welden <dustin.welden@avalara.com>
  * @copyright  2004-2017 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
- * @version    17.5.2-77
+ * @version    17.6.0-85
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
  */
 
@@ -36,6 +36,8 @@ public class VerifyTransactionModel {
      * Getter for verifyTransactionDate
      *
      * Transaction Date - The date on the invoice, purchase order, etc.
+    *  
+    * This is used to verify data consistency with the client application.
      */
     public Date getVerifyTransactionDate() {
         return this.verifyTransactionDate;
@@ -45,6 +47,8 @@ public class VerifyTransactionModel {
      * Setter for verifyTransactionDate
      *
      * Transaction Date - The date on the invoice, purchase order, etc.
+    *  
+    * This is used to verify data consistency with the client application.
      */
     public void setVerifyTransactionDate(Date value) {
         this.verifyTransactionDate = value;
@@ -57,6 +61,8 @@ public class VerifyTransactionModel {
      * Getter for verifyTotalAmount
      *
      * Total Amount - The total amount (not including tax) for the document.
+    *  
+    * This is used to verify data consistency with the client application.
      */
     public BigDecimal getVerifyTotalAmount() {
         return this.verifyTotalAmount;
@@ -66,6 +72,8 @@ public class VerifyTransactionModel {
      * Setter for verifyTotalAmount
      *
      * Total Amount - The total amount (not including tax) for the document.
+    *  
+    * This is used to verify data consistency with the client application.
      */
     public void setVerifyTotalAmount(BigDecimal value) {
         this.verifyTotalAmount = value;
@@ -78,6 +86,8 @@ public class VerifyTransactionModel {
      * Getter for verifyTotalTax
      *
      * Total Tax - The total tax for the document.
+    *  
+    * This is used to verify data consistency with the client application.
      */
     public BigDecimal getVerifyTotalTax() {
         return this.verifyTotalTax;
@@ -87,6 +97,8 @@ public class VerifyTransactionModel {
      * Setter for verifyTotalTax
      *
      * Total Tax - The total tax for the document.
+    *  
+    * This is used to verify data consistency with the client application.
      */
     public void setVerifyTotalTax(BigDecimal value) {
         this.verifyTotalTax = value;

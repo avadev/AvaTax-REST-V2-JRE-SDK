@@ -20,7 +20,7 @@ import java.util.HashMap;
  * @author     Dustin Welden <dustin.welden@avalara.com>
  * @copyright  2004-2017 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
- * @version    17.5.2-77
+ * @version    17.6.0-85
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
  */
 
@@ -56,7 +56,9 @@ public class AdjustTransactionModel {
     /**
      * Getter for adjustmentDescription
      *
-     * If the AdjustmentReason is "Other", specify the reason here
+     * If the AdjustmentReason is "Other", specify the reason here.
+    * 
+    * This is required when the AdjustmentReason is 8 (Other).
      */
     public String getAdjustmentDescription() {
         return this.adjustmentDescription;
@@ -65,7 +67,9 @@ public class AdjustTransactionModel {
     /**
      * Setter for adjustmentDescription
      *
-     * If the AdjustmentReason is "Other", specify the reason here
+     * If the AdjustmentReason is "Other", specify the reason here.
+    * 
+    * This is required when the AdjustmentReason is 8 (Other).
      */
     public void setAdjustmentDescription(String value) {
         this.adjustmentDescription = value;

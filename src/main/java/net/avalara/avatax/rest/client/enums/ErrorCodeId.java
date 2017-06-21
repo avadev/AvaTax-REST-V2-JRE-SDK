@@ -11,7 +11,7 @@ package net.avalara.avatax.rest.client.enums;
  * @author     Dustin Welden <dustin.welden@avalara.com>
  * @copyright  2004-2017 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
- * @version    17.5.2-77
+ * @version    17.6.0-85
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
  */
 
@@ -248,6 +248,16 @@ public enum ErrorCodeId {
      * 
      */
     CompanyProfileNotSet,
+
+    /** 
+     * 
+     */
+    CannotAssignUserToCompany,
+
+    /** 
+     * 
+     */
+    MustAssignUserToCompany,
 
     /** 
      * 
@@ -520,6 +530,16 @@ public enum ErrorCodeId {
     PasswordLengthInvalid,
 
     /** 
+     * 
+     */
+    LocalNexusConflict,
+
+    /** 
+     * 
+     */
+    InvalidEcmsOverrideCode,
+
+    /** 
      * Batch errors
      */
     BatchSalesAuditMustBeZippedError,
@@ -625,6 +645,11 @@ public enum ErrorCodeId {
     BadDocumentFetch,
 
     /** 
+     * 
+     */
+    CannotChangeFilingStatus,
+
+    /** 
      * Represents a SQL server timeout error / deadlock error
      */
     ServerUnreachable,
@@ -658,6 +683,16 @@ public enum ErrorCodeId {
      * 
      */
     FreeTrialNotAvailable,
+
+    /** 
+     * 
+     */
+    AccountExistsDifferentEmail,
+
+    /** 
+     * 
+     */
+    AvalaraIdentityApiError,
 
     /** 
      * Refund API error codes
@@ -725,6 +760,11 @@ public enum ErrorCodeId {
     NonOutletForm,
 
     /** 
+     * 
+     */
+    OverlappingFilingCalendar,
+
+    /** 
      * Location error codes
      */
     QuestionNotNeededForThisAddress,
@@ -753,6 +793,41 @@ public enum ErrorCodeId {
      * 
      */
     LinesNotSpecified,
+
+    /** 
+     * 
+     */
+    InvalidBusinessType,
+
+    /** 
+     * 
+     */
+    CannotModifyExemptCert,
+
+    /** 
+     * Multi company error codes
+     */
+    TransactionNotCancelled,
+
+    /** 
+     * 
+     */
+    TooManyTransactionLines,
+
+    /** 
+     * 
+     */
+    OnlyTaxDateOverrideIsAllowed,
+
+    /** 
+     * Communications Tax error codes
+     */
+    CommsConfigClientIdMissing,
+
+    /** 
+     * 
+     */
+    CommsConfigClientIdBadValue,
 
 }
     

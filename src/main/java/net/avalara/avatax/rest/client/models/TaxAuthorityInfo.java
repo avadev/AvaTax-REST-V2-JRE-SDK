@@ -20,12 +20,12 @@ import java.util.HashMap;
  * @author     Dustin Welden <dustin.welden@avalara.com>
  * @copyright  2004-2017 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
- * @version    17.5.2-77
+ * @version    17.6.0-85
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
  */
 
 /**
- * Tax Authority Info
+ * Information about a tax authority relevant for an address.
  */
 public class TaxAuthorityInfo {
 
@@ -35,7 +35,7 @@ public class TaxAuthorityInfo {
     /**
      * Getter for avalaraId
      *
-     * Avalara Id
+     * A unique ID number assigned by Avalara to this tax authority.
      */
     public String getAvalaraId() {
         return this.avalaraId;
@@ -44,7 +44,7 @@ public class TaxAuthorityInfo {
     /**
      * Setter for avalaraId
      *
-     * Avalara Id
+     * A unique ID number assigned by Avalara to this tax authority.
      */
     public void setAvalaraId(String value) {
         this.avalaraId = value;
@@ -56,7 +56,7 @@ public class TaxAuthorityInfo {
     /**
      * Getter for jurisdictionName
      *
-     * Jurisdiction Name
+     * The friendly jurisdiction name for this tax authority.
      */
     public String getJurisdictionName() {
         return this.jurisdictionName;
@@ -65,7 +65,7 @@ public class TaxAuthorityInfo {
     /**
      * Setter for jurisdictionName
      *
-     * Jurisdiction Name
+     * The friendly jurisdiction name for this tax authority.
      */
     public void setJurisdictionName(String value) {
         this.jurisdictionName = value;
@@ -77,7 +77,7 @@ public class TaxAuthorityInfo {
     /**
      * Getter for jurisdictionType
      *
-     * Jurisdiction Type
+     * The type of jurisdiction referenced by this tax authority.
      */
     public JurisdictionType getJurisdictionType() {
         return this.jurisdictionType;
@@ -86,7 +86,7 @@ public class TaxAuthorityInfo {
     /**
      * Setter for jurisdictionType
      *
-     * Jurisdiction Type
+     * The type of jurisdiction referenced by this tax authority.
      */
     public void setJurisdictionType(JurisdictionType value) {
         this.jurisdictionType = value;
@@ -98,7 +98,7 @@ public class TaxAuthorityInfo {
     /**
      * Getter for signatureCode
      *
-     * Signature Code
+     * An Avalara-assigned signature code for this tax authority.
      */
     public String getSignatureCode() {
         return this.signatureCode;
@@ -107,7 +107,7 @@ public class TaxAuthorityInfo {
     /**
      * Setter for signatureCode
      *
-     * Signature Code
+     * An Avalara-assigned signature code for this tax authority.
      */
     public void setSignatureCode(String value) {
         this.signatureCode = value;

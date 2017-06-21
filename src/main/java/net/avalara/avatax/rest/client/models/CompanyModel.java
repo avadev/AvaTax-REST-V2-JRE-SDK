@@ -20,7 +20,7 @@ import java.util.HashMap;
  * @author     Dustin Welden <dustin.welden@avalara.com>
  * @copyright  2004-2017 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
- * @version    17.5.2-77
+ * @version    17.6.0-85
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
  */
 
@@ -738,6 +738,27 @@ public class CompanyModel {
      */
     public void setUpcs(ArrayList<UPCModel> value) {
         this.upcs = value;
+    }
+
+
+    private ArrayList<EcmsModel> exemptCerts;
+
+    /**
+     * Getter for exemptCerts
+     *
+     * Optional: A list of exempt certificates defined for this company. To fetch this list, add the query string "?$include=UPCs" to your URL.
+     */
+    public ArrayList<EcmsModel> getExemptCerts() {
+        return this.exemptCerts;
+    }
+
+    /**
+     * Setter for exemptCerts
+     *
+     * Optional: A list of exempt certificates defined for this company. To fetch this list, add the query string "?$include=UPCs" to your URL.
+     */
+    public void setExemptCerts(ArrayList<EcmsModel> value) {
+        this.exemptCerts = value;
     }
 
 
