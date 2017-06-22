@@ -50,24 +50,24 @@ public class CommunicationsTransactionTypeModel {
     }
 
 
-    private String avaTax.Communications.TransactionType;
+    private String transactionType;
 
     /**
-     * Getter for avaTax.Communications.TransactionType
+     * Getter for transactionType
      *
      * The name of the transaction type.
      */
-    public String getAvaTax.Communications.TransactionType() {
-        return this.avaTax.Communications.TransactionType;
+    public String getTransactionType() {
+        return this.transactionType;
     }
 
     /**
-     * Setter for avaTax.Communications.TransactionType
+     * Setter for transactionType
      *
      * The name of the transaction type.
      */
-    public void setAvaTax.Communications.TransactionType(String value) {
-        this.avaTax.Communications.TransactionType = value;
+    public void setTransactionType(String value) {
+        this.transactionType = value;
     }
 
 
