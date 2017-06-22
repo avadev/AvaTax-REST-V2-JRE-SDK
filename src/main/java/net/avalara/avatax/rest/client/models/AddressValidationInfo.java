@@ -20,7 +20,7 @@ import java.util.HashMap;
  * @author     Dustin Welden <dustin.welden@avalara.com>
  * @copyright  2004-2017 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
- * @version    17.6.0-85
+ * @version    17.6.0-89
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
  */
 
@@ -56,7 +56,7 @@ public class AddressValidationInfo {
     /**
      * Getter for line1
      *
-     * Line1
+     * First line of the street address
      */
     public String getLine1() {
         return this.line1;
@@ -65,7 +65,7 @@ public class AddressValidationInfo {
     /**
      * Setter for line1
      *
-     * Line1
+     * First line of the street address
      */
     public void setLine1(String value) {
         this.line1 = value;
@@ -77,7 +77,7 @@ public class AddressValidationInfo {
     /**
      * Getter for line2
      *
-     * Line2
+     * Second line of the street address
      */
     public String getLine2() {
         return this.line2;
@@ -86,7 +86,7 @@ public class AddressValidationInfo {
     /**
      * Setter for line2
      *
-     * Line2
+     * Second line of the street address
      */
     public void setLine2(String value) {
         this.line2 = value;
@@ -98,7 +98,7 @@ public class AddressValidationInfo {
     /**
      * Getter for line3
      *
-     * Line3
+     * Third line of the street address
      */
     public String getLine3() {
         return this.line3;
@@ -107,7 +107,7 @@ public class AddressValidationInfo {
     /**
      * Setter for line3
      *
-     * Line3
+     * Third line of the street address
      */
     public void setLine3(String value) {
         this.line3 = value;
@@ -119,7 +119,7 @@ public class AddressValidationInfo {
     /**
      * Getter for city
      *
-     * City
+     * City component of the address
      */
     public String getCity() {
         return this.city;
@@ -128,7 +128,7 @@ public class AddressValidationInfo {
     /**
      * Setter for city
      *
-     * City
+     * City component of the address
      */
     public void setCity(String value) {
         this.city = value;
@@ -140,7 +140,7 @@ public class AddressValidationInfo {
     /**
      * Getter for region
      *
-     * State / Province / Region
+     * State / Province / Region component of the address.
      */
     public String getRegion() {
         return this.region;
@@ -149,7 +149,7 @@ public class AddressValidationInfo {
     /**
      * Setter for region
      *
-     * State / Province / Region
+     * State / Province / Region component of the address.
      */
     public void setRegion(String value) {
         this.region = value;
@@ -161,7 +161,7 @@ public class AddressValidationInfo {
     /**
      * Getter for country
      *
-     * Two character ISO 3166 Country Code
+     * Two character ISO 3166 Country Code. Call `ListCountries` for a list of ISO 3166 country codes.
      */
     public String getCountry() {
         return this.country;
@@ -170,7 +170,7 @@ public class AddressValidationInfo {
     /**
      * Setter for country
      *
-     * Two character ISO 3166 Country Code
+     * Two character ISO 3166 Country Code. Call `ListCountries` for a list of ISO 3166 country codes.
      */
     public void setCountry(String value) {
         this.country = value;
@@ -182,7 +182,7 @@ public class AddressValidationInfo {
     /**
      * Getter for postalCode
      *
-     * Postal Code / Zip Code
+     * Postal Code / Zip Code component of the address.
      */
     public String getPostalCode() {
         return this.postalCode;
@@ -191,7 +191,7 @@ public class AddressValidationInfo {
     /**
      * Setter for postalCode
      *
-     * Postal Code / Zip Code
+     * Postal Code / Zip Code component of the address.
      */
     public void setPostalCode(String value) {
         this.postalCode = value;
@@ -203,7 +203,7 @@ public class AddressValidationInfo {
     /**
      * Getter for latitude
      *
-     * Geospatial latitude measurement
+     * Geospatial latitude measurement, in Decimal Degrees floating point format.
      */
     public BigDecimal getLatitude() {
         return this.latitude;
@@ -212,7 +212,7 @@ public class AddressValidationInfo {
     /**
      * Setter for latitude
      *
-     * Geospatial latitude measurement
+     * Geospatial latitude measurement, in Decimal Degrees floating point format.
      */
     public void setLatitude(BigDecimal value) {
         this.latitude = value;
@@ -224,7 +224,7 @@ public class AddressValidationInfo {
     /**
      * Getter for longitude
      *
-     * Geospatial longitude measurement
+     * Geospatial longitude measurement, in Decimal Degrees floating point format.
      */
     public BigDecimal getLongitude() {
         return this.longitude;
@@ -233,7 +233,7 @@ public class AddressValidationInfo {
     /**
      * Setter for longitude
      *
-     * Geospatial longitude measurement
+     * Geospatial longitude measurement, in Decimal Degrees floating point format.
      */
     public void setLongitude(BigDecimal value) {
         this.longitude = value;

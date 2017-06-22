@@ -20,12 +20,21 @@ import java.util.HashMap;
  * @author     Dustin Welden <dustin.welden@avalara.com>
  * @copyright  2004-2017 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
- * @version    17.6.0-85
+ * @version    17.6.0-89
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
  */
 
 /**
- * A series of addresses information in a GetTax call
+ * Information about all the addresses involved in this transaction.
+* 
+* For a physical in-person transaction at a retail point-of-sale location, please specify only one address using
+* the `singleLocation` field.
+* 
+* For a transaction that was shipped, delivered, or provided from an origin location such as a warehouse to
+* a destination location such as a customer, please specify the `shipFrom` and `shipTo` addresses.
+* 
+* In the United States, some jurisdictions recognize the address types `pointOfOrderOrigin` and `pointOfOrderAcceptance`.
+* These address types affect the sourcing models of some transactions.
  */
 public class AddressesModel {
 
@@ -35,7 +44,8 @@ public class AddressesModel {
     /**
      * Getter for singleLocation
      *
-     * If this transaction occurred at a retail point-of-sale location, use this
+     * If this transaction occurred at a retail point-of-sale location, provide that single address here and leave
+    * all other address types null.
      */
     public AddressLocationInfo getSingleLocation() {
         return this.singleLocation;
@@ -44,7 +54,8 @@ public class AddressesModel {
     /**
      * Setter for singleLocation
      *
-     * If this transaction occurred at a retail point-of-sale location, use this
+     * If this transaction occurred at a retail point-of-sale location, provide that single address here and leave
+    * all other address types null.
      */
     public void setSingleLocation(AddressLocationInfo value) {
         this.singleLocation = value;
@@ -56,7 +67,7 @@ public class AddressesModel {
     /**
      * Getter for shipFrom
      *
-     * If this transaction was shipped from a warehouse location to a customer location, specify both "ShipFrom" and "ShipTo".
+     * The origination address where the products were shipped from, or from where the services originated.
      */
     public AddressLocationInfo getShipFrom() {
         return this.shipFrom;
@@ -65,7 +76,7 @@ public class AddressesModel {
     /**
      * Setter for shipFrom
      *
-     * If this transaction was shipped from a warehouse location to a customer location, specify both "ShipFrom" and "ShipTo".
+     * The origination address where the products were shipped from, or from where the services originated.
      */
     public void setShipFrom(AddressLocationInfo value) {
         this.shipFrom = value;
@@ -77,7 +88,7 @@ public class AddressesModel {
     /**
      * Getter for shipTo
      *
-     * If this transaction was shipped from a warehouse location to a customer location, specify both "ShipFrom" and "ShipTo".
+     * The destination address where the products were shipped to, or where the services were delivered.
      */
     public AddressLocationInfo getShipTo() {
         return this.shipTo;
@@ -86,7 +97,7 @@ public class AddressesModel {
     /**
      * Setter for shipTo
      *
-     * If this transaction was shipped from a warehouse location to a customer location, specify both "ShipFrom" and "ShipTo".
+     * The destination address where the products were shipped to, or where the services were delivered.
      */
     public void setShipTo(AddressLocationInfo value) {
         this.shipTo = value;
@@ -98,7 +109,8 @@ public class AddressesModel {
     /**
      * Getter for pointOfOrderOrigin
      *
-     * The place of business where you receive the customer's order.
+     * The place of business where you receive the customer's order. This address type is valid in the United States only
+    * and only applies to tangible personal property.
      */
     public AddressLocationInfo getPointOfOrderOrigin() {
         return this.pointOfOrderOrigin;
@@ -107,7 +119,8 @@ public class AddressesModel {
     /**
      * Setter for pointOfOrderOrigin
      *
-     * The place of business where you receive the customer's order.
+     * The place of business where you receive the customer's order. This address type is valid in the United States only
+    * and only applies to tangible personal property.
      */
     public void setPointOfOrderOrigin(AddressLocationInfo value) {
         this.pointOfOrderOrigin = value;
@@ -120,7 +133,8 @@ public class AddressesModel {
      * Getter for pointOfOrderAcceptance
      *
      * The place of business where you accept/approve the customer’s order,
-    * thereby becoming contractually obligated to make the sale.
+    * thereby becoming contractually obligated to make the sale. This address type is valid in the United States only
+    * and only applies to tangible personal property.
      */
     public AddressLocationInfo getPointOfOrderAcceptance() {
         return this.pointOfOrderAcceptance;
@@ -130,7 +144,8 @@ public class AddressesModel {
      * Setter for pointOfOrderAcceptance
      *
      * The place of business where you accept/approve the customer’s order,
-    * thereby becoming contractually obligated to make the sale.
+    * thereby becoming contractually obligated to make the sale. This address type is valid in the United States only
+    * and only applies to tangible personal property.
      */
     public void setPointOfOrderAcceptance(AddressLocationInfo value) {
         this.pointOfOrderAcceptance = value;
