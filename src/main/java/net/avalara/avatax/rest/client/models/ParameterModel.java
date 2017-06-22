@@ -20,7 +20,6 @@ import java.util.HashMap;
  * @author     Dustin Welden <dustin.welden@avalara.com>
  * @copyright  2004-2017 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
- * @version    17.5.2-77
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
  */
 
@@ -56,7 +55,8 @@ public class ParameterModel {
     /**
      * Getter for category
      *
-     * The service category of this property. Some properties may require that you subscribe to certain features of avatax before they can be used.
+     * The category grouping of this parameter. When your user interface displays a large number of parameters, they should
+    * be grouped by their category value.
      */
     public String getCategory() {
         return this.category;
@@ -65,7 +65,8 @@ public class ParameterModel {
     /**
      * Setter for category
      *
-     * The service category of this property. Some properties may require that you subscribe to certain features of avatax before they can be used.
+     * The category grouping of this parameter. When your user interface displays a large number of parameters, they should
+    * be grouped by their category value.
      */
     public void setCategory(String value) {
         this.category = value;
@@ -77,7 +78,7 @@ public class ParameterModel {
     /**
      * Getter for name
      *
-     * The name of the property. To use this property, add a field on the "properties" object of a /api/v2/companies/(code)/transactions/create call.
+     * The name of the property. To use this property, add a field on the `parameters` object of a `/api/v2/transactions/create` call.
      */
     public String getName() {
         return this.name;
@@ -86,7 +87,7 @@ public class ParameterModel {
     /**
      * Setter for name
      *
-     * The name of the property. To use this property, add a field on the "properties" object of a /api/v2/companies/(code)/transactions/create call.
+     * The name of the property. To use this property, add a field on the `parameters` object of a `/api/v2/transactions/create` call.
      */
     public void setName(String value) {
         this.name = value;
@@ -114,24 +115,93 @@ public class ParameterModel {
     }
 
 
-    private String description;
+    private String helpText;
 
     /**
-     * Getter for description
+     * Getter for helpText
      *
-     * A full description of this property.
+     * Help text to be shown to the user when they are filling out this parameter. Help text may include HTML links to additional
+    * content with more information about a parameter.
      */
-    public String getDescription() {
-        return this.description;
+    public String getHelpText() {
+        return this.helpText;
     }
 
     /**
-     * Setter for description
+     * Setter for helpText
      *
-     * A full description of this property.
+     * Help text to be shown to the user when they are filling out this parameter. Help text may include HTML links to additional
+    * content with more information about a parameter.
      */
-    public void setDescription(String value) {
-        this.description = value;
+    public void setHelpText(String value) {
+        this.helpText = value;
+    }
+
+
+    private ArrayList<String> serviceTypes;
+
+    /**
+     * Getter for serviceTypes
+     *
+     * A list of service types to which this parameter applies.
+     */
+    public ArrayList<String> getServiceTypes() {
+        return this.serviceTypes;
+    }
+
+    /**
+     * Setter for serviceTypes
+     *
+     * A list of service types to which this parameter applies.
+     */
+    public void setServiceTypes(ArrayList<String> value) {
+        this.serviceTypes = value;
+    }
+
+
+    private String prompt;
+
+    /**
+     * Getter for prompt
+     *
+     * The prompt you should use when displaying this parameter to a user. For example, if your user interface displays a
+    * parameter in a text box, this is the label you should use to identify that text box.
+     */
+    public String getPrompt() {
+        return this.prompt;
+    }
+
+    /**
+     * Setter for prompt
+     *
+     * The prompt you should use when displaying this parameter to a user. For example, if your user interface displays a
+    * parameter in a text box, this is the label you should use to identify that text box.
+     */
+    public void setPrompt(String value) {
+        this.prompt = value;
+    }
+
+
+    private String regularExpression;
+
+    /**
+     * Getter for regularExpression
+     *
+     * If your user interface permits client-side validation of parameters, this string is a regular expression you can use
+    * to validate the user's data entry prior to submitting a tax request.
+     */
+    public String getRegularExpression() {
+        return this.regularExpression;
+    }
+
+    /**
+     * Setter for regularExpression
+     *
+     * If your user interface permits client-side validation of parameters, this string is a regular expression you can use
+    * to validate the user's data entry prior to submitting a tax request.
+     */
+    public void setRegularExpression(String value) {
+        this.regularExpression = value;
     }
 
 
