@@ -20,7 +20,6 @@ import java.util.HashMap;
  * @author     Dustin Welden <dustin.welden@avalara.com>
  * @copyright  2004-2017 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
- * @version    17.5.2-77
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
  */
 
@@ -195,6 +194,216 @@ public class JurisdictionModel {
      */
     public void setUseRate(BigDecimal value) {
         this.useRate = value;
+    }
+
+
+    private String city;
+
+    /**
+     * Getter for city
+     *
+     * The city name of this jurisdiction
+     */
+    public String getCity() {
+        return this.city;
+    }
+
+    /**
+     * Setter for city
+     *
+     * The city name of this jurisdiction
+     */
+    public void setCity(String value) {
+        this.city = value;
+    }
+
+
+    private String county;
+
+    /**
+     * Getter for county
+     *
+     * The county name of this jurisdiction
+     */
+    public String getCounty() {
+        return this.county;
+    }
+
+    /**
+     * Setter for county
+     *
+     * The county name of this jurisdiction
+     */
+    public void setCounty(String value) {
+        this.county = value;
+    }
+
+
+    private String country;
+
+    /**
+     * Getter for country
+     *
+     * The Country name of this jurisdiction
+     */
+    public String getCountry() {
+        return this.country;
+    }
+
+    /**
+     * Setter for country
+     *
+     * The Country name of this jurisdiction
+     */
+    public void setCountry(String value) {
+        this.country = value;
+    }
+
+
+    private String shortName;
+
+    /**
+     * Getter for shortName
+     *
+     * A short name of the jurisidiction
+     */
+    public String getShortName() {
+        return this.shortName;
+    }
+
+    /**
+     * Setter for shortName
+     *
+     * A short name of the jurisidiction
+     */
+    public void setShortName(String value) {
+        this.shortName = value;
+    }
+
+
+    private String stateFips;
+
+    /**
+     * Getter for stateFips
+     *
+     * State FIPS code
+     */
+    public String getStateFips() {
+        return this.stateFips;
+    }
+
+    /**
+     * Setter for stateFips
+     *
+     * State FIPS code
+     */
+    public void setStateFips(String value) {
+        this.stateFips = value;
+    }
+
+
+    private String countyFips;
+
+    /**
+     * Getter for countyFips
+     *
+     * County FIPS code
+     */
+    public String getCountyFips() {
+        return this.countyFips;
+    }
+
+    /**
+     * Setter for countyFips
+     *
+     * County FIPS code
+     */
+    public void setCountyFips(String value) {
+        this.countyFips = value;
+    }
+
+
+    private String placeFips;
+
+    /**
+     * Getter for placeFips
+     *
+     * City FIPS code
+     */
+    public String getPlaceFips() {
+        return this.placeFips;
+    }
+
+    /**
+     * Setter for placeFips
+     *
+     * City FIPS code
+     */
+    public void setPlaceFips(String value) {
+        this.placeFips = value;
+    }
+
+
+    private Integer id;
+
+    /**
+     * Getter for id
+     *
+     * Unique AvaTax Id of this Jurisdiction
+     */
+    public Integer getId() {
+        return this.id;
+    }
+
+    /**
+     * Setter for id
+     *
+     * Unique AvaTax Id of this Jurisdiction
+     */
+    public void setId(Integer value) {
+        this.id = value;
+    }
+
+
+    private Date effectiveDate;
+
+    /**
+     * Getter for effectiveDate
+     *
+     * The date this jurisdiction starts to take effect on tax calculations
+     */
+    public Date getEffectiveDate() {
+        return this.effectiveDate;
+    }
+
+    /**
+     * Setter for effectiveDate
+     *
+     * The date this jurisdiction starts to take effect on tax calculations
+     */
+    public void setEffectiveDate(Date value) {
+        this.effectiveDate = value;
+    }
+
+
+    private Date endDate;
+
+    /**
+     * Getter for endDate
+     *
+     * The date this jurisdiction stops to take effect on tax calculations
+     */
+    public Date getEndDate() {
+        return this.endDate;
+    }
+
+    /**
+     * Setter for endDate
+     *
+     * The date this jurisdiction stops to take effect on tax calculations
+     */
+    public void setEndDate(Date value) {
+        this.endDate = value;
     }
 
 

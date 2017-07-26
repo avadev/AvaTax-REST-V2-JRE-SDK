@@ -20,12 +20,11 @@ import java.util.HashMap;
  * @author     Dustin Welden <dustin.welden@avalara.com>
  * @copyright  2004-2017 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
- * @version    17.5.2-77
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
  */
 
 /**
- * A single transaction - for example, a sales invoice or purchase order.
+ * This object represents a single transaction; for example, a sales invoice or purchase order.
  */
 public class TransactionModel {
 
@@ -314,8 +313,8 @@ public class TransactionModel {
     /**
      * Getter for locationCode
      *
-     * If this transaction was made from a specific reporting location, this is the code string of the location.
-    * For customers using Returns, this indicates how tax will be reported according to different locations on the tax forms.
+     * (DEPRECATED) This field has been replaced by the reportingLocationCode field
+    * In order to ensure consistency of field names, Please use reportingLocationCode instead.
      */
     public String getLocationCode() {
         return this.locationCode;
@@ -324,11 +323,38 @@ public class TransactionModel {
     /**
      * Setter for locationCode
      *
-     * If this transaction was made from a specific reporting location, this is the code string of the location.
-    * For customers using Returns, this indicates how tax will be reported according to different locations on the tax forms.
+     * (DEPRECATED) This field has been replaced by the reportingLocationCode field
+    * In order to ensure consistency of field names, Please use reportingLocationCode instead.
      */
     public void setLocationCode(String value) {
         this.locationCode = value;
+    }
+
+
+    private String reportingLocationCode;
+
+    /**
+     * Getter for reportingLocationCode
+     *
+     * If this transaction was made from a specific reporting location, this is the code string of the location.
+    * For customers using Returns, this indicates how tax will be reported according to different locations on the tax forms.
+    * In another words, this code does not affect the address of a transaction, it instead affects which tax return it will be reported on.
+    * Both locationCode and reportingLocationCode refer to LocationCode in Document table, if both are set, reportingLocationCode wins
+     */
+    public String getReportingLocationCode() {
+        return this.reportingLocationCode;
+    }
+
+    /**
+     * Setter for reportingLocationCode
+     *
+     * If this transaction was made from a specific reporting location, this is the code string of the location.
+    * For customers using Returns, this indicates how tax will be reported according to different locations on the tax forms.
+    * In another words, this code does not affect the address of a transaction, it instead affects which tax return it will be reported on.
+    * Both locationCode and reportingLocationCode refer to LocationCode in Document table, if both are set, reportingLocationCode wins
+     */
+    public void setReportingLocationCode(String value) {
+        this.reportingLocationCode = value;
     }
 
 
@@ -822,7 +848,7 @@ public class TransactionModel {
     /**
      * Getter for description
      *
-     * Description of this transaction.
+     * Description of this transaction. Field permits unicode values.
      */
     public String getDescription() {
         return this.description;
@@ -831,7 +857,7 @@ public class TransactionModel {
     /**
      * Setter for description
      *
-     * Description of this transaction.
+     * Description of this transaction. Field permits unicode values.
      */
     public void setDescription(String value) {
         this.description = value;

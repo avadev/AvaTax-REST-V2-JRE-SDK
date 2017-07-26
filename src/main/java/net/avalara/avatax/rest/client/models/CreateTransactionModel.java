@@ -20,7 +20,6 @@ import java.util.HashMap;
  * @author     Dustin Welden <dustin.welden@avalara.com>
  * @copyright  2004-2017 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
- * @version    17.5.2-77
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
  */
 
@@ -28,27 +27,6 @@ import java.util.HashMap;
  * Create a transaction
  */
 public class CreateTransactionModel {
-
-
-    private DocumentType type;
-
-    /**
-     * Getter for type
-     *
-     * Document Type: if not specified, a document with type of SalesOrder will be created by default
-     */
-    public DocumentType getType() {
-        return this.type;
-    }
-
-    /**
-     * Setter for type
-     *
-     * Document Type: if not specified, a document with type of SalesOrder will be created by default
-     */
-    public void setType(DocumentType value) {
-        this.type = value;
-    }
 
 
     private String code;
@@ -71,6 +49,56 @@ public class CreateTransactionModel {
      */
     public void setCode(String value) {
         this.code = value;
+    }
+
+
+    private ArrayList<LineItemModel> lines;
+
+    /**
+     * Getter for lines
+     *
+     * Document line items list
+     */
+    public ArrayList<LineItemModel> getLines() {
+        return this.lines;
+    }
+
+    /**
+     * Setter for lines
+     *
+     * Document line items list
+     */
+    public void setLines(ArrayList<LineItemModel> value) {
+        this.lines = value;
+    }
+
+
+    private DocumentType type;
+
+    /**
+     * Getter for type
+     *
+     * Specifies the type of document to create. A document type ending with `Invoice` is a permanent transaction
+    * that will be recorded in AvaTax. A document type ending with `Order` is a temporary estimate that will not
+    * be preserved.
+    * 
+    * If you omit this value, the API will assume you want to create a `SalesOrder`.
+     */
+    public DocumentType getType() {
+        return this.type;
+    }
+
+    /**
+     * Setter for type
+     *
+     * Specifies the type of document to create. A document type ending with `Invoice` is a permanent transaction
+    * that will be recorded in AvaTax. A document type ending with `Order` is a temporary estimate that will not
+    * be preserved.
+    * 
+    * If you omit this value, the API will assume you want to create a `SalesOrder`.
+     */
+    public void setType(DocumentType value) {
+        this.type = value;
     }
 
 
@@ -103,6 +131,9 @@ public class CreateTransactionModel {
      * Getter for date
      *
      * Transaction Date - The date on the invoice, purchase order, etc.
+    * 
+    * By default, this date will be used to calculate the tax rates for the transaction. If you wish to use a
+    * different date to calculate tax rates, please specify a `taxOverride` of type `taxDate`.
      */
     public Date getDate() {
         return this.date;
@@ -112,6 +143,9 @@ public class CreateTransactionModel {
      * Setter for date
      *
      * Transaction Date - The date on the invoice, purchase order, etc.
+    * 
+    * By default, this date will be used to calculate the tax rates for the transaction. If you wish to use a
+    * different date to calculate tax rates, please specify a `taxOverride` of type `taxDate`.
      */
     public void setDate(Date value) {
         this.date = value;
@@ -213,7 +247,8 @@ public class CreateTransactionModel {
     /**
      * Getter for purchaseOrderNo
      *
-     * Purchase Order Number for this document
+     * Purchase Order Number for this document.
+    * 
     * This is required for single use exemption certificates to match the order and invoice with the certificate.
      */
     public String getPurchaseOrderNo() {
@@ -223,7 +258,8 @@ public class CreateTransactionModel {
     /**
      * Setter for purchaseOrderNo
      *
-     * Purchase Order Number for this document
+     * Purchase Order Number for this document.
+    * 
     * This is required for single use exemption certificates to match the order and invoice with the certificate.
      */
     public void setPurchaseOrderNo(String value) {
@@ -236,7 +272,11 @@ public class CreateTransactionModel {
     /**
      * Getter for exemptionNo
      *
-     * Exemption Number for this document
+     * Exemption Number for this document.
+    * 
+    * If you specify an exemption number for this document, this document will be considered exempt, and you
+    * may be asked to provide proof of this exemption certificate in the event that you are asked by an auditor
+    * to verify your exemptions.
      */
     public String getExemptionNo() {
         return this.exemptionNo;
@@ -245,7 +285,11 @@ public class CreateTransactionModel {
     /**
      * Setter for exemptionNo
      *
-     * Exemption Number for this document
+     * Exemption Number for this document.
+    * 
+    * If you specify an exemption number for this document, this document will be considered exempt, and you
+    * may be asked to provide proof of this exemption certificate in the event that you are asked by an auditor
+    * to verify your exemptions.
      */
     public void setExemptionNo(String value) {
         this.exemptionNo = value;
@@ -257,7 +301,11 @@ public class CreateTransactionModel {
     /**
      * Getter for addresses
      *
-     * Default addresses for all lines in this document
+     * Default addresses for all lines in this document. 
+    * 
+    * These addresses are the default values that will be used for any lines that do not have their own
+    * address information. If you specify addresses for a line, then no default addresses will be loaded
+    * for that line.
      */
     public AddressesModel getAddresses() {
         return this.addresses;
@@ -266,31 +314,14 @@ public class CreateTransactionModel {
     /**
      * Setter for addresses
      *
-     * Default addresses for all lines in this document
+     * Default addresses for all lines in this document. 
+    * 
+    * These addresses are the default values that will be used for any lines that do not have their own
+    * address information. If you specify addresses for a line, then no default addresses will be loaded
+    * for that line.
      */
     public void setAddresses(AddressesModel value) {
         this.addresses = value;
-    }
-
-
-    private ArrayList<LineItemModel> lines;
-
-    /**
-     * Getter for lines
-     *
-     * Document line items list
-     */
-    public ArrayList<LineItemModel> getLines() {
-        return this.lines;
-    }
-
-    /**
-     * Setter for lines
-     *
-     * Document line items list
-     */
-    public void setLines(ArrayList<LineItemModel> value) {
-        this.lines = value;
     }
 
 
@@ -300,7 +331,8 @@ public class CreateTransactionModel {
      * Getter for parameters
      *
      * Special parameters for this transaction.
-    * To get a full list of available parameters, please use the /api/v2/definitions/parameters endpoint.
+    * 
+    * To get a full list of available parameters, please use the `/api/v2/definitions/parameters` endpoint.
      */
     public HashMap<String, String> getParameters() {
         return this.parameters;
@@ -310,7 +342,8 @@ public class CreateTransactionModel {
      * Setter for parameters
      *
      * Special parameters for this transaction.
-    * To get a full list of available parameters, please use the /api/v2/definitions/parameters endpoint.
+    * 
+    * To get a full list of available parameters, please use the `/api/v2/definitions/parameters` endpoint.
      */
     public void setParameters(HashMap<String, String> value) {
         this.parameters = value;
@@ -322,7 +355,10 @@ public class CreateTransactionModel {
     /**
      * Getter for referenceCode
      *
-     * Reference Code used to reference the original document for a return invoice
+     * Customer-provided Reference Code with information about this transaction.
+    * 
+    * This field could be used to reference the original document for a return invoice, or for any other
+    * reference purpose.
      */
     public String getReferenceCode() {
         return this.referenceCode;
@@ -331,7 +367,10 @@ public class CreateTransactionModel {
     /**
      * Setter for referenceCode
      *
-     * Reference Code used to reference the original document for a return invoice
+     * Customer-provided Reference Code with information about this transaction.
+    * 
+    * This field could be used to reference the original document for a return invoice, or for any other
+    * reference purpose.
      */
     public void setReferenceCode(String value) {
         this.referenceCode = value;
@@ -344,6 +383,9 @@ public class CreateTransactionModel {
      * Getter for reportingLocationCode
      *
      * Sets the sale location code (Outlet ID) for reporting this document to the tax authority.
+    * 
+    * This value is used by Avalara Managed Returns to group documents together by reporting locations
+    * for tax authorities that require location-based reporting.
      */
     public String getReportingLocationCode() {
         return this.reportingLocationCode;
@@ -353,6 +395,9 @@ public class CreateTransactionModel {
      * Setter for reportingLocationCode
      *
      * Sets the sale location code (Outlet ID) for reporting this document to the tax authority.
+    * 
+    * This value is used by Avalara Managed Returns to group documents together by reporting locations
+    * for tax authorities that require location-based reporting.
      */
     public void setReportingLocationCode(String value) {
         this.reportingLocationCode = value;
@@ -429,7 +474,7 @@ public class CreateTransactionModel {
     /**
      * Getter for currencyCode
      *
-     * 3 character ISO 4217 currency code.
+     * The three-character ISO 4217 currency code for this transaction.
      */
     public String getCurrencyCode() {
         return this.currencyCode;
@@ -438,7 +483,7 @@ public class CreateTransactionModel {
     /**
      * Setter for currencyCode
      *
-     * 3 character ISO 4217 currency code.
+     * The three-character ISO 4217 currency code for this transaction.
      */
     public void setCurrencyCode(String value) {
         this.currencyCode = value;
@@ -474,6 +519,9 @@ public class CreateTransactionModel {
      * Getter for exchangeRate
      *
      * Currency exchange rate from this transaction to the company base currency.
+    *  
+    * This only needs to be set if the transaction currency is different than the company base currency.
+    * It defaults to 1.0.
      */
     public BigDecimal getExchangeRate() {
         return this.exchangeRate;
@@ -483,6 +531,9 @@ public class CreateTransactionModel {
      * Setter for exchangeRate
      *
      * Currency exchange rate from this transaction to the company base currency.
+    *  
+    * This only needs to be set if the transaction currency is different than the company base currency.
+    * It defaults to 1.0.
      */
     public void setExchangeRate(BigDecimal value) {
         this.exchangeRate = value;
@@ -515,7 +566,7 @@ public class CreateTransactionModel {
     /**
      * Getter for posLaneCode
      *
-     * Sets the POS Lane Code sent by the User for this document.
+     * Sets the Point of Sale Lane Code sent by the User for this document.
      */
     public String getPosLaneCode() {
         return this.posLaneCode;
@@ -524,7 +575,7 @@ public class CreateTransactionModel {
     /**
      * Setter for posLaneCode
      *
-     * Sets the POS Lane Code sent by the User for this document.
+     * Sets the Point of Sale Lane Code sent by the User for this document.
      */
     public void setPosLaneCode(String value) {
         this.posLaneCode = value;
@@ -567,7 +618,7 @@ public class CreateTransactionModel {
     /**
      * Getter for isSellerImporterOfRecord
      *
-     * Specifies if the Transaction has the seller as IsSellerImporterOfRecord
+     * Specifies if the Transaction has the seller as IsSellerImporterOfRecord.
      */
     public Boolean getIsSellerImporterOfRecord() {
         return this.isSellerImporterOfRecord;
@@ -576,7 +627,7 @@ public class CreateTransactionModel {
     /**
      * Setter for isSellerImporterOfRecord
      *
-     * Specifies if the Transaction has the seller as IsSellerImporterOfRecord
+     * Specifies if the Transaction has the seller as IsSellerImporterOfRecord.
      */
     public void setIsSellerImporterOfRecord(Boolean value) {
         this.isSellerImporterOfRecord = value;
@@ -588,7 +639,7 @@ public class CreateTransactionModel {
     /**
      * Getter for description
      *
-     * Description
+     * User-supplied description for this transaction.
      */
     public String getDescription() {
         return this.description;
@@ -597,7 +648,7 @@ public class CreateTransactionModel {
     /**
      * Setter for description
      *
-     * Description
+     * User-supplied description for this transaction.
      */
     public void setDescription(String value) {
         this.description = value;
@@ -609,7 +660,7 @@ public class CreateTransactionModel {
     /**
      * Getter for email
      *
-     * Email
+     * User-supplied email address relevant for this transaction.
      */
     public String getEmail() {
         return this.email;
@@ -618,7 +669,7 @@ public class CreateTransactionModel {
     /**
      * Setter for email
      *
-     * Email
+     * User-supplied email address relevant for this transaction.
      */
     public void setEmail(String value) {
         this.email = value;
@@ -630,7 +681,7 @@ public class CreateTransactionModel {
     /**
      * Getter for debugLevel
      *
-     * If the user wishes to request additional debug information from this transaction, specify a level higher than 'normal'
+     * If the user wishes to request additional debug information from this transaction, specify a level higher than `normal`.
      */
     public TaxDebugLevel getDebugLevel() {
         return this.debugLevel;
@@ -639,7 +690,7 @@ public class CreateTransactionModel {
     /**
      * Setter for debugLevel
      *
-     * If the user wishes to request additional debug information from this transaction, specify a level higher than 'normal'
+     * If the user wishes to request additional debug information from this transaction, specify a level higher than `normal`.
      */
     public void setDebugLevel(TaxDebugLevel value) {
         this.debugLevel = value;

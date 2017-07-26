@@ -25,7 +25,6 @@ import java.util.ArrayList;
  * @author     Dustin Welden <dustin.welden@avalara.com>
  * @copyright  2004-2017 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
- * @version    17.5.2-77
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
  */
  
@@ -129,12 +128,14 @@ public class AvaTaxClient {
      * If you have not read or accepted the terms and conditions, this API call will return the
      * 
      * @param id The ID of the account to activate
+     * @param include A comma separated list of child objects to return underneath the primary object.
      * @param model The activation request
      * @return AccountModel
      */
-    public AccountModel activateAccount(Integer id, ActivateAccountModel model) throws Exception {
+    public AccountModel activateAccount(Integer id, String include, ActivateAccountModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{id}/activate");
         path.applyField("id", id);
+        path.addQuery("$include", include);
         return ((RestCall<AccountModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<AccountModel>(){})).call();
     }
 
@@ -149,12 +150,14 @@ public class AvaTaxClient {
      * If you have not read or accepted the terms and conditions, this API call will return the
      * 
      * @param id The ID of the account to activate
+     * @param include A comma separated list of child objects to return underneath the primary object.
      * @param model The activation request
      * @return AccountModel
      */
-    public Future<AccountModel> activateAccountAsync(Integer id, ActivateAccountModel model) {
+    public Future<AccountModel> activateAccountAsync(Integer id, String include, ActivateAccountModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{id}/activate");
         path.applyField("id", id);
+        path.addQuery("$include", include);
         return this.threadPool.submit((RestCall<AccountModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<AccountModel>(){}));
     }
 
@@ -404,8 +407,7 @@ public class AvaTaxClient {
      * Create a new batch
      * 
      * Create one or more new batch objects attached to this company.
-     * A batch object is a large collection of API calls stored in a compact file.
-     * When you create a batch, it is added to the AvaTax Batch Queue and will be processed in the order it was received.
+     * When you create a batch, it is added to the AvaTaxBatch.Batch table and will be processed in the order it was received.
      * You may fetch a batch to check on its status and retrieve the results of the batch operation.
      * 
      * @param companyId The ID of the company that owns this batch.
@@ -422,8 +424,7 @@ public class AvaTaxClient {
      * Create a new batch
      * 
      * Create one or more new batch objects attached to this company.
-     * A batch object is a large collection of API calls stored in a compact file.
-     * When you create a batch, it is added to the AvaTax Batch Queue and will be processed in the order it was received.
+     * When you create a batch, it is added to the AvaTaxBatch.Batch table and will be processed in the order it was received.
      * You may fetch a batch to check on its status and retrieve the results of the batch operation.
      * 
      * @param companyId The ID of the company that owns this batch.
@@ -643,6 +644,58 @@ public class AvaTaxClient {
     }
 
     /**
+     * Change the filing status of this company
+     * 
+     * Changes the current filing status of this company.
+     * 
+     * For customers using Avalara's Managed Returns Service, each company within their account can request
+     * for Avalara to file tax returns on their behalf.  Avalara compliance team members will review all
+     * requested filing calendars prior to beginning filing tax returns on behalf of this company.
+     * 
+     * The following changes may be requested through this API:
+     * 
+     * * If a company is in `NotYetFiling` status, the customer may request this be changed to `FilingRequested`.
+     * * Avalara compliance team members may change a company from `FilingRequested` to `FirstFiling`.
+     * * Avalara compliance team members may change a company from `FirstFiling` to `Active`.
+     * 
+     * 
+     * @param id 
+     * @param model 
+     * @return String
+     */
+    public String changeFilingStatus(Integer id, FilingStatusChangeModel model) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{id}/filingstatus");
+        path.applyField("id", id);
+        return ((RestCall<String>)restCallFactory.createRestCall("post", path, model, new TypeToken<String>(){})).call();
+    }
+
+    /**
+     * Change the filing status of this company
+     * 
+     * Changes the current filing status of this company.
+     * 
+     * For customers using Avalara's Managed Returns Service, each company within their account can request
+     * for Avalara to file tax returns on their behalf.  Avalara compliance team members will review all
+     * requested filing calendars prior to beginning filing tax returns on behalf of this company.
+     * 
+     * The following changes may be requested through this API:
+     * 
+     * * If a company is in `NotYetFiling` status, the customer may request this be changed to `FilingRequested`.
+     * * Avalara compliance team members may change a company from `FilingRequested` to `FirstFiling`.
+     * * Avalara compliance team members may change a company from `FirstFiling` to `Active`.
+     * 
+     * 
+     * @param id 
+     * @param model 
+     * @return String
+     */
+    public Future<String> changeFilingStatusAsync(Integer id, FilingStatusChangeModel model) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{id}/filingstatus");
+        path.applyField("id", id);
+        return this.threadPool.submit((RestCall<String>)restCallFactory.createRestCall("post", path, model, new TypeToken<String>(){}));
+    }
+
+    /**
      * Quick setup for a company with a single physical address
      * 
      * Shortcut to quickly setup a single-physical-location company with critical information and activate it.
@@ -798,6 +851,7 @@ public class AvaTaxClient {
      *  * Settings
      *  * TaxCodes
      *  * TaxRules
+     *  * UPC
      * 
      * @param id The ID of the company to retrieve.
      * @param include A comma separated list of child objects to return underneath the primary object.
@@ -824,6 +878,7 @@ public class AvaTaxClient {
      *  * Settings
      *  * TaxCodes
      *  * TaxRules
+     *  * UPC
      * 
      * @param id The ID of the company to retrieve.
      * @param include A comma separated list of child objects to return underneath the primary object.
@@ -834,6 +889,26 @@ public class AvaTaxClient {
         path.applyField("id", id);
         path.addQuery("$include", include);
         return this.threadPool.submit((RestCall<CompanyModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<CompanyModel>(){}));
+    }
+
+    /**
+     * 
+     * 
+     * @return FetchResult<CompanyModel>
+     */
+    public FetchResult<CompanyModel> getCompany() throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/mrs");
+        return ((RestCall<FetchResult<CompanyModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CompanyModel>>(){})).call();
+    }
+
+    /**
+     * 
+     * 
+     * @return FetchResult<CompanyModel>
+     */
+    public Future<FetchResult<CompanyModel>> getCompanyAsync() {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/mrs");
+        return this.threadPool.submit((RestCall<FetchResult<CompanyModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CompanyModel>>(){}));
     }
 
     /**
@@ -885,6 +960,56 @@ public class AvaTaxClient {
     }
 
     /**
+     * Get this company's filing status
+     * 
+     * Retrieve the current filing status of this company.
+     * 
+     * For customers using Avalara's Managed Returns Service, each company within their account can request
+     * for Avalara to file tax returns on their behalf.  Avalara compliance team members will review all
+     * requested filing calendars prior to beginning filing tax returns on behalf of this company.
+     * 
+     * A company's filing status can be one of the following values:
+     * 
+     * * `NoReporting` - This company is not configured to report tax returns; instead, it reports through a parent company.
+     * * `NotYetFiling` - This company has not yet begun filing tax returns through Avalara's Managed Returns Service.
+     * * `FilingRequested` - The company has requested to begin filing tax returns, but Avalara's compliance team has not yet begun filing.
+     * * `FirstFiling` - The company has recently filing tax returns and is in a new status.
+     * 
+     * @param id 
+     * @return String
+     */
+    public String getFilingStatus(Integer id) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{id}/filingstatus");
+        path.applyField("id", id);
+        return ((RestCall<String>)restCallFactory.createRestCall("get", path, null, new TypeToken<String>(){})).call();
+    }
+
+    /**
+     * Get this company's filing status
+     * 
+     * Retrieve the current filing status of this company.
+     * 
+     * For customers using Avalara's Managed Returns Service, each company within their account can request
+     * for Avalara to file tax returns on their behalf.  Avalara compliance team members will review all
+     * requested filing calendars prior to beginning filing tax returns on behalf of this company.
+     * 
+     * A company's filing status can be one of the following values:
+     * 
+     * * `NoReporting` - This company is not configured to report tax returns; instead, it reports through a parent company.
+     * * `NotYetFiling` - This company has not yet begun filing tax returns through Avalara's Managed Returns Service.
+     * * `FilingRequested` - The company has requested to begin filing tax returns, but Avalara's compliance team has not yet begun filing.
+     * * `FirstFiling` - The company has recently filing tax returns and is in a new status.
+     * 
+     * @param id 
+     * @return String
+     */
+    public Future<String> getFilingStatusAsync(Integer id) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{id}/filingstatus");
+        path.applyField("id", id);
+        return this.threadPool.submit((RestCall<String>)restCallFactory.createRestCall("get", path, null, new TypeToken<String>(){}));
+    }
+
+    /**
      * Check managed returns funding configuration for a company
      * 
      * This API is available by invitation only.
@@ -932,6 +1057,7 @@ public class AvaTaxClient {
      * * Settings
      * * TaxCodes
      * * TaxRules
+     * * UPC
      * 
      * @param include A comma separated list of child objects to return underneath the primary object.
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
@@ -966,6 +1092,7 @@ public class AvaTaxClient {
      * * Settings
      * * TaxCodes
      * * TaxRules
+     * * UPC
      * 
      * @param include A comma separated list of child objects to return underneath the primary object.
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
@@ -1307,100 +1434,24 @@ public class AvaTaxClient {
     }
 
     /**
-     * Retrieve the full list of Avalara-supported nexus for a country and region.
-     * 
-     * Returns all Avalara-supported nexus for the specified country and region.
-     * 
-     * @param country The two-character ISO-3166 code for the country.
-     * @param region The two or three character region code for the region.
-     * @return FetchResult<NexusModel>
-     */
-    public FetchResult<NexusModel> apiV2DefinitionsNexusByCountryByRegionGet(String country, String region) throws Exception {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/nexus/{country}/{region}");
-        path.applyField("country", country);
-        path.applyField("region", region);
-        return ((RestCall<FetchResult<NexusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NexusModel>>(){})).call();
-    }
-
-    /**
-     * Retrieve the full list of Avalara-supported nexus for a country and region.
-     * 
-     * Returns all Avalara-supported nexus for the specified country and region.
-     * 
-     * @param country The two-character ISO-3166 code for the country.
-     * @param region The two or three character region code for the region.
-     * @return FetchResult<NexusModel>
-     */
-    public Future<FetchResult<NexusModel>> apiV2DefinitionsNexusByCountryByRegionGetAsync(String country, String region) {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/nexus/{country}/{region}");
-        path.applyField("country", country);
-        path.applyField("region", region);
-        return this.threadPool.submit((RestCall<FetchResult<NexusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NexusModel>>(){}));
-    }
-
-    /**
-     * Retrieve the full list of Avalara-supported nexus for a country.
-     * 
-     * Returns all Avalara-supported nexus for the specified country.
-     * 
-     * @param country 
-     * @return FetchResult<NexusModel>
-     */
-    public FetchResult<NexusModel> apiV2DefinitionsNexusByCountryGet(String country) throws Exception {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/nexus/{country}");
-        path.applyField("country", country);
-        return ((RestCall<FetchResult<NexusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NexusModel>>(){})).call();
-    }
-
-    /**
-     * Retrieve the full list of Avalara-supported nexus for a country.
-     * 
-     * Returns all Avalara-supported nexus for the specified country.
-     * 
-     * @param country 
-     * @return FetchResult<NexusModel>
-     */
-    public Future<FetchResult<NexusModel>> apiV2DefinitionsNexusByCountryGetAsync(String country) {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/nexus/{country}");
-        path.applyField("country", country);
-        return this.threadPool.submit((RestCall<FetchResult<NexusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NexusModel>>(){}));
-    }
-
-    /**
-     * Retrieve the full list of Avalara-supported nexus for all countries and regions.
-     * 
-     * Returns the full list of all Avalara-supported nexus for all countries and regions.  
-     * 
-     * @return FetchResult<NexusModel>
-     */
-    public FetchResult<NexusModel> apiV2DefinitionsNexusGet() throws Exception {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/nexus");
-        return ((RestCall<FetchResult<NexusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NexusModel>>(){})).call();
-    }
-
-    /**
-     * Retrieve the full list of Avalara-supported nexus for all countries and regions.
-     * 
-     * Returns the full list of all Avalara-supported nexus for all countries and regions.  
-     * 
-     * @return FetchResult<NexusModel>
-     */
-    public Future<FetchResult<NexusModel>> apiV2DefinitionsNexusGetAsync() {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/nexus");
-        return this.threadPool.submit((RestCall<FetchResult<NexusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NexusModel>>(){}));
-    }
-
-    /**
      * Test whether a form supports online login verification
      * 
      * This API is intended to be useful to identify whether the user should be allowed
      * 
      * @param form The name of the form you would like to verify. This can be the tax form code or the legacy return name
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
+     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<SkyscraperStatusModel>
      */
-    public FetchResult<SkyscraperStatusModel> getLoginVerifierByForm(String form) throws Exception {
+    public FetchResult<SkyscraperStatusModel> getLoginVerifierByForm(String form, String filter, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/filingcalendars/loginverifiers/{form}");
         path.applyField("form", form);
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
         return ((RestCall<FetchResult<SkyscraperStatusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<SkyscraperStatusModel>>(){})).call();
     }
 
@@ -1410,11 +1461,19 @@ public class AvaTaxClient {
      * This API is intended to be useful to identify whether the user should be allowed
      * 
      * @param form The name of the form you would like to verify. This can be the tax form code or the legacy return name
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
+     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<SkyscraperStatusModel>
      */
-    public Future<FetchResult<SkyscraperStatusModel>> getLoginVerifierByFormAsync(String form) {
+    public Future<FetchResult<SkyscraperStatusModel>> getLoginVerifierByFormAsync(String form, String filter, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/filingcalendars/loginverifiers/{form}");
         path.applyField("form", form);
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
         return this.threadPool.submit((RestCall<FetchResult<SkyscraperStatusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<SkyscraperStatusModel>>(){}));
     }
 
@@ -1423,10 +1482,18 @@ public class AvaTaxClient {
      * 
      * Returns the full list of Avalara-supported AvaFile Forms
      * 
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
+     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<AvaFileFormModel>
      */
-    public FetchResult<AvaFileFormModel> listAvaFileForms() throws Exception {
+    public FetchResult<AvaFileFormModel> listAvaFileForms(String filter, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/avafileforms");
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
         return ((RestCall<FetchResult<AvaFileFormModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<AvaFileFormModel>>(){})).call();
     }
 
@@ -1435,11 +1502,143 @@ public class AvaTaxClient {
      * 
      * Returns the full list of Avalara-supported AvaFile Forms
      * 
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
+     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<AvaFileFormModel>
      */
-    public Future<FetchResult<AvaFileFormModel>> listAvaFileFormsAsync() {
+    public Future<FetchResult<AvaFileFormModel>> listAvaFileFormsAsync(String filter, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/avafileforms");
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
         return this.threadPool.submit((RestCall<FetchResult<AvaFileFormModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<AvaFileFormModel>>(){}));
+    }
+
+    /**
+     * Retrieve the full list of communications transactiontypes
+     * 
+     * Returns full list of communications transaction types which
+     * 
+     * @param id 
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
+     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @return FetchResult<CommunicationsTSPairModel>
+     */
+    public FetchResult<CommunicationsTSPairModel> listCommunicationsServiceTypes(Integer id, String filter, Integer top, Integer skip, String orderBy) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/communications/transactiontypes/{id}/servicetypes");
+        path.applyField("id", id);
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
+        return ((RestCall<FetchResult<CommunicationsTSPairModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CommunicationsTSPairModel>>(){})).call();
+    }
+
+    /**
+     * Retrieve the full list of communications transactiontypes
+     * 
+     * Returns full list of communications transaction types which
+     * 
+     * @param id 
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
+     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @return FetchResult<CommunicationsTSPairModel>
+     */
+    public Future<FetchResult<CommunicationsTSPairModel>> listCommunicationsServiceTypesAsync(Integer id, String filter, Integer top, Integer skip, String orderBy) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/communications/transactiontypes/{id}/servicetypes");
+        path.applyField("id", id);
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
+        return this.threadPool.submit((RestCall<FetchResult<CommunicationsTSPairModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CommunicationsTSPairModel>>(){}));
+    }
+
+    /**
+     * Retrieve the full list of communications transactiontypes
+     * 
+     * Returns full list of communications transaction types which
+     * 
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
+     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @return FetchResult<CommunicationsTransactionTypeModel>
+     */
+    public FetchResult<CommunicationsTransactionTypeModel> listCommunicationsTransactionTypes(String filter, Integer top, Integer skip, String orderBy) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/communications/transactiontypes");
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
+        return ((RestCall<FetchResult<CommunicationsTransactionTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CommunicationsTransactionTypeModel>>(){})).call();
+    }
+
+    /**
+     * Retrieve the full list of communications transactiontypes
+     * 
+     * Returns full list of communications transaction types which
+     * 
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
+     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @return FetchResult<CommunicationsTransactionTypeModel>
+     */
+    public Future<FetchResult<CommunicationsTransactionTypeModel>> listCommunicationsTransactionTypesAsync(String filter, Integer top, Integer skip, String orderBy) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/communications/transactiontypes");
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
+        return this.threadPool.submit((RestCall<FetchResult<CommunicationsTransactionTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CommunicationsTransactionTypeModel>>(){}));
+    }
+
+    /**
+     * Retrieve the full list of communications transaction/service type pairs
+     * 
+     * Returns full list of communications transaction/service type pairs which
+     * 
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
+     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @return FetchResult<CommunicationsTSPairModel>
+     */
+    public FetchResult<CommunicationsTSPairModel> listCommunicationsTSPairs(String filter, Integer top, Integer skip, String orderBy) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/communications/tspairs");
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
+        return ((RestCall<FetchResult<CommunicationsTSPairModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CommunicationsTSPairModel>>(){})).call();
+    }
+
+    /**
+     * Retrieve the full list of communications transaction/service type pairs
+     * 
+     * Returns full list of communications transaction/service type pairs which
+     * 
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
+     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @return FetchResult<CommunicationsTSPairModel>
+     */
+    public Future<FetchResult<CommunicationsTSPairModel>> listCommunicationsTSPairsAsync(String filter, Integer top, Integer skip, String orderBy) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/communications/tspairs");
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
+        return this.threadPool.submit((RestCall<FetchResult<CommunicationsTSPairModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CommunicationsTSPairModel>>(){}));
     }
 
     /**
@@ -1448,10 +1647,18 @@ public class AvaTaxClient {
      * Returns a list of all ISO 3166 country codes, and their US English friendly names.
      * This API is intended to be useful when presenting a dropdown box in your website to allow customers to select a country for 
      * 
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
+     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<IsoCountryModel>
      */
-    public FetchResult<IsoCountryModel> listCountries() throws Exception {
+    public FetchResult<IsoCountryModel> listCountries(String filter, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/countries");
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
         return ((RestCall<FetchResult<IsoCountryModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<IsoCountryModel>>(){})).call();
     }
 
@@ -1461,10 +1668,18 @@ public class AvaTaxClient {
      * Returns a list of all ISO 3166 country codes, and their US English friendly names.
      * This API is intended to be useful when presenting a dropdown box in your website to allow customers to select a country for 
      * 
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
+     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<IsoCountryModel>
      */
-    public Future<FetchResult<IsoCountryModel>> listCountriesAsync() {
+    public Future<FetchResult<IsoCountryModel>> listCountriesAsync(String filter, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/countries");
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
         return this.threadPool.submit((RestCall<FetchResult<IsoCountryModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<IsoCountryModel>>(){}));
     }
 
@@ -1476,10 +1691,18 @@ public class AvaTaxClient {
      * is occurring.  This information is generally used to determine taxability of the product.
      * In order to facilitate correct reporting of your taxes, you are encouraged to select the proper entity use codes for
      * 
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
+     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<EntityUseCodeModel>
      */
-    public FetchResult<EntityUseCodeModel> listEntityUseCodes() throws Exception {
+    public FetchResult<EntityUseCodeModel> listEntityUseCodes(String filter, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/entityusecodes");
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
         return ((RestCall<FetchResult<EntityUseCodeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<EntityUseCodeModel>>(){})).call();
     }
 
@@ -1491,10 +1714,18 @@ public class AvaTaxClient {
      * is occurring.  This information is generally used to determine taxability of the product.
      * In order to facilitate correct reporting of your taxes, you are encouraged to select the proper entity use codes for
      * 
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
+     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<EntityUseCodeModel>
      */
-    public Future<FetchResult<EntityUseCodeModel>> listEntityUseCodesAsync() {
+    public Future<FetchResult<EntityUseCodeModel>> listEntityUseCodesAsync(String filter, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/entityusecodes");
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
         return this.threadPool.submit((RestCall<FetchResult<EntityUseCodeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<EntityUseCodeModel>>(){}));
     }
 
@@ -1503,10 +1734,18 @@ public class AvaTaxClient {
      * 
      * Returns the full list of Avalara-supported filing frequencies.
      * 
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
+     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<FilingFrequencyModel>
      */
-    public FetchResult<FilingFrequencyModel> listFilingFrequencies() throws Exception {
+    public FetchResult<FilingFrequencyModel> listFilingFrequencies(String filter, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/filingfrequencies");
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
         return ((RestCall<FetchResult<FilingFrequencyModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<FilingFrequencyModel>>(){})).call();
     }
 
@@ -1515,11 +1754,63 @@ public class AvaTaxClient {
      * 
      * Returns the full list of Avalara-supported filing frequencies.
      * 
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
+     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<FilingFrequencyModel>
      */
-    public Future<FetchResult<FilingFrequencyModel>> listFilingFrequenciesAsync() {
+    public Future<FetchResult<FilingFrequencyModel>> listFilingFrequenciesAsync(String filter, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/filingfrequencies");
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
         return this.threadPool.submit((RestCall<FetchResult<FilingFrequencyModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<FilingFrequencyModel>>(){}));
+    }
+
+    /**
+     * List jurisdictions based on the filter provided
+     * 
+     * Returns a list of all Avalara-supported taxing jurisdictions.
+     * 
+     * This API allows you to examine all Avalara-supported jurisdictions. You can filter your search by supplying
+     * 
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
+     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @return FetchResult<JurisdictionModel>
+     */
+    public FetchResult<JurisdictionModel> listJurisdictions(String filter, Integer top, Integer skip, String orderBy) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/jurisdictions");
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
+        return ((RestCall<FetchResult<JurisdictionModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<JurisdictionModel>>(){})).call();
+    }
+
+    /**
+     * List jurisdictions based on the filter provided
+     * 
+     * Returns a list of all Avalara-supported taxing jurisdictions.
+     * 
+     * This API allows you to examine all Avalara-supported jurisdictions. You can filter your search by supplying
+     * 
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
+     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @return FetchResult<JurisdictionModel>
+     */
+    public Future<FetchResult<JurisdictionModel>> listJurisdictionsAsync(String filter, Integer top, Integer skip, String orderBy) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/jurisdictions");
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
+        return this.threadPool.submit((RestCall<FetchResult<JurisdictionModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<JurisdictionModel>>(){}));
     }
 
     /**
@@ -1539,9 +1830,13 @@ public class AvaTaxClient {
      * @param region The region, state, or province code portion of this address.
      * @param postalCode The postal code or zip code portion of this address.
      * @param country The two-character ISO-3166 code of the country portion of this address.
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
+     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<JurisdictionOverrideModel>
      */
-    public FetchResult<JurisdictionOverrideModel> listJurisdictionsByAddress(String line1, String line2, String line3, String city, String region, String postalCode, String country) throws Exception {
+    public FetchResult<JurisdictionOverrideModel> listJurisdictionsByAddress(String line1, String line2, String line3, String city, String region, String postalCode, String country, String filter, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/jurisdictionsnearaddress");
         path.addQuery("line1", line1);
         path.addQuery("line2", line2);
@@ -1550,6 +1845,10 @@ public class AvaTaxClient {
         path.addQuery("region", region);
         path.addQuery("postalCode", postalCode);
         path.addQuery("country", country);
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
         return ((RestCall<FetchResult<JurisdictionOverrideModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<JurisdictionOverrideModel>>(){})).call();
     }
 
@@ -1570,9 +1869,13 @@ public class AvaTaxClient {
      * @param region The region, state, or province code portion of this address.
      * @param postalCode The postal code or zip code portion of this address.
      * @param country The two-character ISO-3166 code of the country portion of this address.
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
+     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<JurisdictionOverrideModel>
      */
-    public Future<FetchResult<JurisdictionOverrideModel>> listJurisdictionsByAddressAsync(String line1, String line2, String line3, String city, String region, String postalCode, String country) {
+    public Future<FetchResult<JurisdictionOverrideModel>> listJurisdictionsByAddressAsync(String line1, String line2, String line3, String city, String region, String postalCode, String country, String filter, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/jurisdictionsnearaddress");
         path.addQuery("line1", line1);
         path.addQuery("line2", line2);
@@ -1581,6 +1884,10 @@ public class AvaTaxClient {
         path.addQuery("region", region);
         path.addQuery("postalCode", postalCode);
         path.addQuery("country", country);
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
         return this.threadPool.submit((RestCall<FetchResult<JurisdictionOverrideModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<JurisdictionOverrideModel>>(){}));
     }
 
@@ -1602,9 +1909,13 @@ public class AvaTaxClient {
      * @param country The country part of this location's address.
      * @param latitude Optionally identify the location via latitude/longitude instead of via address.
      * @param longitude Optionally identify the location via latitude/longitude instead of via address.
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
+     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<LocationQuestionModel>
      */
-    public FetchResult<LocationQuestionModel> listLocationQuestionsByAddress(String line1, String line2, String line3, String city, String region, String postalCode, String country, BigDecimal latitude, BigDecimal longitude) throws Exception {
+    public FetchResult<LocationQuestionModel> listLocationQuestionsByAddress(String line1, String line2, String line3, String city, String region, String postalCode, String country, BigDecimal latitude, BigDecimal longitude, String filter, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/locationquestions");
         path.addQuery("line1", line1);
         path.addQuery("line2", line2);
@@ -1615,6 +1926,10 @@ public class AvaTaxClient {
         path.addQuery("country", country);
         path.addQuery("latitude", latitude);
         path.addQuery("longitude", longitude);
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
         return ((RestCall<FetchResult<LocationQuestionModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<LocationQuestionModel>>(){})).call();
     }
 
@@ -1636,9 +1951,13 @@ public class AvaTaxClient {
      * @param country The country part of this location's address.
      * @param latitude Optionally identify the location via latitude/longitude instead of via address.
      * @param longitude Optionally identify the location via latitude/longitude instead of via address.
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
+     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<LocationQuestionModel>
      */
-    public Future<FetchResult<LocationQuestionModel>> listLocationQuestionsByAddressAsync(String line1, String line2, String line3, String city, String region, String postalCode, String country, BigDecimal latitude, BigDecimal longitude) {
+    public Future<FetchResult<LocationQuestionModel>> listLocationQuestionsByAddressAsync(String line1, String line2, String line3, String city, String region, String postalCode, String country, BigDecimal latitude, BigDecimal longitude, String filter, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/locationquestions");
         path.addQuery("line1", line1);
         path.addQuery("line2", line2);
@@ -1649,6 +1968,10 @@ public class AvaTaxClient {
         path.addQuery("country", country);
         path.addQuery("latitude", latitude);
         path.addQuery("longitude", longitude);
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
         return this.threadPool.submit((RestCall<FetchResult<LocationQuestionModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<LocationQuestionModel>>(){}));
     }
 
@@ -1658,10 +1981,18 @@ public class AvaTaxClient {
      * List all forms where logins can be verified automatically.
      * This API is intended to be useful to identify whether the user should be allowed
      * 
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
+     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<SkyscraperStatusModel>
      */
-    public FetchResult<SkyscraperStatusModel> listLoginVerifiers() throws Exception {
+    public FetchResult<SkyscraperStatusModel> listLoginVerifiers(String filter, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/filingcalendars/loginverifiers");
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
         return ((RestCall<FetchResult<SkyscraperStatusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<SkyscraperStatusModel>>(){})).call();
     }
 
@@ -1671,11 +2002,59 @@ public class AvaTaxClient {
      * List all forms where logins can be verified automatically.
      * This API is intended to be useful to identify whether the user should be allowed
      * 
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
+     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<SkyscraperStatusModel>
      */
-    public Future<FetchResult<SkyscraperStatusModel>> listLoginVerifiersAsync() {
+    public Future<FetchResult<SkyscraperStatusModel>> listLoginVerifiersAsync(String filter, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/filingcalendars/loginverifiers");
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
         return this.threadPool.submit((RestCall<FetchResult<SkyscraperStatusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<SkyscraperStatusModel>>(){}));
+    }
+
+    /**
+     * Retrieve the full list of Avalara-supported nexus for all countries and regions.
+     * 
+     * Returns the full list of all Avalara-supported nexus for all countries and regions.  
+     * 
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
+     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @return FetchResult<NexusModel>
+     */
+    public FetchResult<NexusModel> listNexus(String filter, Integer top, Integer skip, String orderBy) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/nexus");
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
+        return ((RestCall<FetchResult<NexusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NexusModel>>(){})).call();
+    }
+
+    /**
+     * Retrieve the full list of Avalara-supported nexus for all countries and regions.
+     * 
+     * Returns the full list of all Avalara-supported nexus for all countries and regions.  
+     * 
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
+     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @return FetchResult<NexusModel>
+     */
+    public Future<FetchResult<NexusModel>> listNexusAsync(String filter, Integer top, Integer skip, String orderBy) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/nexus");
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
+        return this.threadPool.submit((RestCall<FetchResult<NexusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NexusModel>>(){}));
     }
 
     /**
@@ -1693,9 +2072,13 @@ public class AvaTaxClient {
      * @param region The region, state, or province code portion of this address.
      * @param postalCode The postal code or zip code portion of this address.
      * @param country The two-character ISO-3166 code of the country portion of this address.
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
+     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<NexusModel>
      */
-    public FetchResult<NexusModel> listNexusByAddress(String line1, String line2, String line3, String city, String region, String postalCode, String country) throws Exception {
+    public FetchResult<NexusModel> listNexusByAddress(String line1, String line2, String line3, String city, String region, String postalCode, String country, String filter, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/nexus/byaddress");
         path.addQuery("line1", line1);
         path.addQuery("line2", line2);
@@ -1704,6 +2087,10 @@ public class AvaTaxClient {
         path.addQuery("region", region);
         path.addQuery("postalCode", postalCode);
         path.addQuery("country", country);
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
         return ((RestCall<FetchResult<NexusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NexusModel>>(){})).call();
     }
 
@@ -1722,9 +2109,13 @@ public class AvaTaxClient {
      * @param region The region, state, or province code portion of this address.
      * @param postalCode The postal code or zip code portion of this address.
      * @param country The two-character ISO-3166 code of the country portion of this address.
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
+     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<NexusModel>
      */
-    public Future<FetchResult<NexusModel>> listNexusByAddressAsync(String line1, String line2, String line3, String city, String region, String postalCode, String country) {
+    public Future<FetchResult<NexusModel>> listNexusByAddressAsync(String line1, String line2, String line3, String city, String region, String postalCode, String country, String filter, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/nexus/byaddress");
         path.addQuery("line1", line1);
         path.addQuery("line2", line2);
@@ -1733,6 +2124,102 @@ public class AvaTaxClient {
         path.addQuery("region", region);
         path.addQuery("postalCode", postalCode);
         path.addQuery("country", country);
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
+        return this.threadPool.submit((RestCall<FetchResult<NexusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NexusModel>>(){}));
+    }
+
+    /**
+     * Retrieve the full list of Avalara-supported nexus for a country.
+     * 
+     * Returns all Avalara-supported nexus for the specified country.
+     * 
+     * @param country The country in which you want to fetch the system nexus
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
+     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @return FetchResult<NexusModel>
+     */
+    public FetchResult<NexusModel> listNexusByCountry(String country, String filter, Integer top, Integer skip, String orderBy) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/nexus/{country}");
+        path.applyField("country", country);
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
+        return ((RestCall<FetchResult<NexusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NexusModel>>(){})).call();
+    }
+
+    /**
+     * Retrieve the full list of Avalara-supported nexus for a country.
+     * 
+     * Returns all Avalara-supported nexus for the specified country.
+     * 
+     * @param country The country in which you want to fetch the system nexus
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
+     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @return FetchResult<NexusModel>
+     */
+    public Future<FetchResult<NexusModel>> listNexusByCountryAsync(String country, String filter, Integer top, Integer skip, String orderBy) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/nexus/{country}");
+        path.applyField("country", country);
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
+        return this.threadPool.submit((RestCall<FetchResult<NexusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NexusModel>>(){}));
+    }
+
+    /**
+     * Retrieve the full list of Avalara-supported nexus for a country and region.
+     * 
+     * Returns all Avalara-supported nexus for the specified country and region.
+     * 
+     * @param country The two-character ISO-3166 code for the country.
+     * @param region The two or three character region code for the region.
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
+     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @return FetchResult<NexusModel>
+     */
+    public FetchResult<NexusModel> listNexusByCountryAndRegion(String country, String region, String filter, Integer top, Integer skip, String orderBy) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/nexus/{country}/{region}");
+        path.applyField("country", country);
+        path.applyField("region", region);
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
+        return ((RestCall<FetchResult<NexusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NexusModel>>(){})).call();
+    }
+
+    /**
+     * Retrieve the full list of Avalara-supported nexus for a country and region.
+     * 
+     * Returns all Avalara-supported nexus for the specified country and region.
+     * 
+     * @param country The two-character ISO-3166 code for the country.
+     * @param region The two or three character region code for the region.
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
+     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @return FetchResult<NexusModel>
+     */
+    public Future<FetchResult<NexusModel>> listNexusByCountryAndRegionAsync(String country, String region, String filter, Integer top, Integer skip, String orderBy) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/nexus/{country}/{region}");
+        path.applyField("country", country);
+        path.applyField("region", region);
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
         return this.threadPool.submit((RestCall<FetchResult<NexusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NexusModel>>(){}));
     }
 
@@ -1751,11 +2238,19 @@ public class AvaTaxClient {
      * a tax form, you may want to know whether you have declared nexus in all the jurisdictions related to that tax 
      * 
      * @param formCode The form code that we are looking up the nexus for
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
+     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return NexusByTaxFormModel
      */
-    public NexusByTaxFormModel listNexusByFormCode(String formCode) throws Exception {
+    public NexusByTaxFormModel listNexusByFormCode(String formCode, String filter, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/nexus/byform/{formCode}");
         path.applyField("formCode", formCode);
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
         return ((RestCall<NexusByTaxFormModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<NexusByTaxFormModel>(){})).call();
     }
 
@@ -1774,11 +2269,19 @@ public class AvaTaxClient {
      * a tax form, you may want to know whether you have declared nexus in all the jurisdictions related to that tax 
      * 
      * @param formCode The form code that we are looking up the nexus for
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
+     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return NexusByTaxFormModel
      */
-    public Future<NexusByTaxFormModel> listNexusByFormCodeAsync(String formCode) {
+    public Future<NexusByTaxFormModel> listNexusByFormCodeAsync(String formCode, String filter, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/nexus/byform/{formCode}");
         path.applyField("formCode", formCode);
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
         return this.threadPool.submit((RestCall<NexusByTaxFormModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<NexusByTaxFormModel>(){}));
     }
 
@@ -1787,10 +2290,18 @@ public class AvaTaxClient {
      * 
      * Returns the full list of Avalara-supported nexus tax type groups
      * 
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
+     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<NexusTaxTypeGroupModel>
      */
-    public FetchResult<NexusTaxTypeGroupModel> listNexusTaxTypeGroups() throws Exception {
+    public FetchResult<NexusTaxTypeGroupModel> listNexusTaxTypeGroups(String filter, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/nexustaxtypegroups");
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
         return ((RestCall<FetchResult<NexusTaxTypeGroupModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NexusTaxTypeGroupModel>>(){})).call();
     }
 
@@ -1799,10 +2310,18 @@ public class AvaTaxClient {
      * 
      * Returns the full list of Avalara-supported nexus tax type groups
      * 
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
+     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<NexusTaxTypeGroupModel>
      */
-    public Future<FetchResult<NexusTaxTypeGroupModel>> listNexusTaxTypeGroupsAsync() {
+    public Future<FetchResult<NexusTaxTypeGroupModel>> listNexusTaxTypeGroupsAsync(String filter, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/nexustaxtypegroups");
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
         return this.threadPool.submit((RestCall<FetchResult<NexusTaxTypeGroupModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NexusTaxTypeGroupModel>>(){}));
     }
 
@@ -1811,10 +2330,18 @@ public class AvaTaxClient {
      * 
      * Returns the full list of Avalara-supported tax notice customer funding options.
      * 
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
+     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<NoticeCustomerFundingOptionModel>
      */
-    public FetchResult<NoticeCustomerFundingOptionModel> listNoticeCustomerFundingOptions() throws Exception {
+    public FetchResult<NoticeCustomerFundingOptionModel> listNoticeCustomerFundingOptions(String filter, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/noticecustomerfundingoptions");
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
         return ((RestCall<FetchResult<NoticeCustomerFundingOptionModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NoticeCustomerFundingOptionModel>>(){})).call();
     }
 
@@ -1823,10 +2350,18 @@ public class AvaTaxClient {
      * 
      * Returns the full list of Avalara-supported tax notice customer funding options.
      * 
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
+     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<NoticeCustomerFundingOptionModel>
      */
-    public Future<FetchResult<NoticeCustomerFundingOptionModel>> listNoticeCustomerFundingOptionsAsync() {
+    public Future<FetchResult<NoticeCustomerFundingOptionModel>> listNoticeCustomerFundingOptionsAsync(String filter, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/noticecustomerfundingoptions");
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
         return this.threadPool.submit((RestCall<FetchResult<NoticeCustomerFundingOptionModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NoticeCustomerFundingOptionModel>>(){}));
     }
 
@@ -1835,10 +2370,18 @@ public class AvaTaxClient {
      * 
      * Returns the full list of Avalara-supported tax notice customer types.
      * 
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
+     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<NoticeCustomerTypeModel>
      */
-    public FetchResult<NoticeCustomerTypeModel> listNoticeCustomerTypes() throws Exception {
+    public FetchResult<NoticeCustomerTypeModel> listNoticeCustomerTypes(String filter, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/noticecustomertypes");
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
         return ((RestCall<FetchResult<NoticeCustomerTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NoticeCustomerTypeModel>>(){})).call();
     }
 
@@ -1847,10 +2390,18 @@ public class AvaTaxClient {
      * 
      * Returns the full list of Avalara-supported tax notice customer types.
      * 
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
+     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<NoticeCustomerTypeModel>
      */
-    public Future<FetchResult<NoticeCustomerTypeModel>> listNoticeCustomerTypesAsync() {
+    public Future<FetchResult<NoticeCustomerTypeModel>> listNoticeCustomerTypesAsync(String filter, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/noticecustomertypes");
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
         return this.threadPool.submit((RestCall<FetchResult<NoticeCustomerTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NoticeCustomerTypeModel>>(){}));
     }
 
@@ -1859,10 +2410,18 @@ public class AvaTaxClient {
      * 
      * Returns the full list of Avalara-supported tax notice filing types.
      * 
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
+     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<NoticeFilingTypeModel>
      */
-    public FetchResult<NoticeFilingTypeModel> listNoticeFilingtypes() throws Exception {
+    public FetchResult<NoticeFilingTypeModel> listNoticeFilingtypes(String filter, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/noticefilingtypes");
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
         return ((RestCall<FetchResult<NoticeFilingTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NoticeFilingTypeModel>>(){})).call();
     }
 
@@ -1871,10 +2430,18 @@ public class AvaTaxClient {
      * 
      * Returns the full list of Avalara-supported tax notice filing types.
      * 
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
+     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<NoticeFilingTypeModel>
      */
-    public Future<FetchResult<NoticeFilingTypeModel>> listNoticeFilingtypesAsync() {
+    public Future<FetchResult<NoticeFilingTypeModel>> listNoticeFilingtypesAsync(String filter, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/noticefilingtypes");
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
         return this.threadPool.submit((RestCall<FetchResult<NoticeFilingTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NoticeFilingTypeModel>>(){}));
     }
 
@@ -1883,10 +2450,18 @@ public class AvaTaxClient {
      * 
      * Returns the full list of Avalara-supported tax notice priorities.
      * 
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
+     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<NoticePriorityModel>
      */
-    public FetchResult<NoticePriorityModel> listNoticePriorities() throws Exception {
+    public FetchResult<NoticePriorityModel> listNoticePriorities(String filter, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/noticepriorities");
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
         return ((RestCall<FetchResult<NoticePriorityModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NoticePriorityModel>>(){})).call();
     }
 
@@ -1895,10 +2470,18 @@ public class AvaTaxClient {
      * 
      * Returns the full list of Avalara-supported tax notice priorities.
      * 
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
+     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<NoticePriorityModel>
      */
-    public Future<FetchResult<NoticePriorityModel>> listNoticePrioritiesAsync() {
+    public Future<FetchResult<NoticePriorityModel>> listNoticePrioritiesAsync(String filter, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/noticepriorities");
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
         return this.threadPool.submit((RestCall<FetchResult<NoticePriorityModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NoticePriorityModel>>(){}));
     }
 
@@ -1907,10 +2490,18 @@ public class AvaTaxClient {
      * 
      * Returns the full list of Avalara-supported tax notice reasons.
      * 
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
+     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<NoticeReasonModel>
      */
-    public FetchResult<NoticeReasonModel> listNoticeReasons() throws Exception {
+    public FetchResult<NoticeReasonModel> listNoticeReasons(String filter, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/noticereasons");
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
         return ((RestCall<FetchResult<NoticeReasonModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NoticeReasonModel>>(){})).call();
     }
 
@@ -1919,10 +2510,18 @@ public class AvaTaxClient {
      * 
      * Returns the full list of Avalara-supported tax notice reasons.
      * 
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
+     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<NoticeReasonModel>
      */
-    public Future<FetchResult<NoticeReasonModel>> listNoticeReasonsAsync() {
+    public Future<FetchResult<NoticeReasonModel>> listNoticeReasonsAsync(String filter, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/noticereasons");
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
         return this.threadPool.submit((RestCall<FetchResult<NoticeReasonModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NoticeReasonModel>>(){}));
     }
 
@@ -1931,10 +2530,18 @@ public class AvaTaxClient {
      * 
      * Returns the full list of Avalara-supported tax notice responsibility ids
      * 
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
+     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<NoticeResponsibilityModel>
      */
-    public FetchResult<NoticeResponsibilityModel> listNoticeResponsibilities() throws Exception {
+    public FetchResult<NoticeResponsibilityModel> listNoticeResponsibilities(String filter, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/noticeresponsibilities");
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
         return ((RestCall<FetchResult<NoticeResponsibilityModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NoticeResponsibilityModel>>(){})).call();
     }
 
@@ -1943,10 +2550,18 @@ public class AvaTaxClient {
      * 
      * Returns the full list of Avalara-supported tax notice responsibility ids
      * 
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
+     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<NoticeResponsibilityModel>
      */
-    public Future<FetchResult<NoticeResponsibilityModel>> listNoticeResponsibilitiesAsync() {
+    public Future<FetchResult<NoticeResponsibilityModel>> listNoticeResponsibilitiesAsync(String filter, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/noticeresponsibilities");
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
         return this.threadPool.submit((RestCall<FetchResult<NoticeResponsibilityModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NoticeResponsibilityModel>>(){}));
     }
 
@@ -1955,10 +2570,18 @@ public class AvaTaxClient {
      * 
      * Returns the full list of Avalara-supported tax notice root causes
      * 
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
+     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<NoticeRootCauseModel>
      */
-    public FetchResult<NoticeRootCauseModel> listNoticeRootCauses() throws Exception {
+    public FetchResult<NoticeRootCauseModel> listNoticeRootCauses(String filter, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/noticerootcauses");
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
         return ((RestCall<FetchResult<NoticeRootCauseModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NoticeRootCauseModel>>(){})).call();
     }
 
@@ -1967,10 +2590,18 @@ public class AvaTaxClient {
      * 
      * Returns the full list of Avalara-supported tax notice root causes
      * 
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
+     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<NoticeRootCauseModel>
      */
-    public Future<FetchResult<NoticeRootCauseModel>> listNoticeRootCausesAsync() {
+    public Future<FetchResult<NoticeRootCauseModel>> listNoticeRootCausesAsync(String filter, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/noticerootcauses");
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
         return this.threadPool.submit((RestCall<FetchResult<NoticeRootCauseModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NoticeRootCauseModel>>(){}));
     }
 
@@ -1979,10 +2610,18 @@ public class AvaTaxClient {
      * 
      * Returns the full list of Avalara-supported tax notice statuses.
      * 
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
+     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<NoticeStatusModel>
      */
-    public FetchResult<NoticeStatusModel> listNoticeStatuses() throws Exception {
+    public FetchResult<NoticeStatusModel> listNoticeStatuses(String filter, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/noticestatuses");
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
         return ((RestCall<FetchResult<NoticeStatusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NoticeStatusModel>>(){})).call();
     }
 
@@ -1991,10 +2630,18 @@ public class AvaTaxClient {
      * 
      * Returns the full list of Avalara-supported tax notice statuses.
      * 
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
+     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<NoticeStatusModel>
      */
-    public Future<FetchResult<NoticeStatusModel>> listNoticeStatusesAsync() {
+    public Future<FetchResult<NoticeStatusModel>> listNoticeStatusesAsync(String filter, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/noticestatuses");
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
         return this.threadPool.submit((RestCall<FetchResult<NoticeStatusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NoticeStatusModel>>(){}));
     }
 
@@ -2003,10 +2650,18 @@ public class AvaTaxClient {
      * 
      * Returns the full list of Avalara-supported tax notice types.
      * 
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
+     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<NoticeTypeModel>
      */
-    public FetchResult<NoticeTypeModel> listNoticeTypes() throws Exception {
+    public FetchResult<NoticeTypeModel> listNoticeTypes(String filter, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/noticetypes");
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
         return ((RestCall<FetchResult<NoticeTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NoticeTypeModel>>(){})).call();
     }
 
@@ -2015,10 +2670,18 @@ public class AvaTaxClient {
      * 
      * Returns the full list of Avalara-supported tax notice types.
      * 
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
+     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<NoticeTypeModel>
      */
-    public Future<FetchResult<NoticeTypeModel>> listNoticeTypesAsync() {
+    public Future<FetchResult<NoticeTypeModel>> listNoticeTypesAsync(String filter, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/noticetypes");
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
         return this.threadPool.submit((RestCall<FetchResult<NoticeTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NoticeTypeModel>>(){}));
     }
 
@@ -2028,10 +2691,18 @@ public class AvaTaxClient {
      * Returns the full list of Avalara-supported extra parameters for the 'Create Transaction' API call.
      * This list of parameters is available for use when configuring your transaction.
      * 
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
+     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<ParameterModel>
      */
-    public FetchResult<ParameterModel> listParameters() throws Exception {
+    public FetchResult<ParameterModel> listParameters(String filter, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/parameters");
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
         return ((RestCall<FetchResult<ParameterModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ParameterModel>>(){})).call();
     }
 
@@ -2041,10 +2712,18 @@ public class AvaTaxClient {
      * Returns the full list of Avalara-supported extra parameters for the 'Create Transaction' API call.
      * This list of parameters is available for use when configuring your transaction.
      * 
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
+     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<ParameterModel>
      */
-    public Future<FetchResult<ParameterModel>> listParametersAsync() {
+    public Future<FetchResult<ParameterModel>> listParametersAsync(String filter, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/parameters");
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
         return this.threadPool.submit((RestCall<FetchResult<ParameterModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ParameterModel>>(){}));
     }
 
@@ -2053,10 +2732,18 @@ public class AvaTaxClient {
      * 
      * Returns the full list of Avalara-supported permission types.
      * 
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
+     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<String>
      */
-    public FetchResult<String> listPermissions() throws Exception {
+    public FetchResult<String> listPermissions(String filter, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/permissions");
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
         return ((RestCall<FetchResult<String>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<String>>(){})).call();
     }
 
@@ -2065,10 +2752,18 @@ public class AvaTaxClient {
      * 
      * Returns the full list of Avalara-supported permission types.
      * 
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
+     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<String>
      */
-    public Future<FetchResult<String>> listPermissionsAsync() {
+    public Future<FetchResult<String>> listPermissionsAsync(String filter, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/permissions");
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
         return this.threadPool.submit((RestCall<FetchResult<String>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<String>>(){}));
     }
 
@@ -2078,11 +2773,19 @@ public class AvaTaxClient {
      * Returns the full list of Avalara-supported rate type file types
      * 
      * @param country 
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
+     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<RateTypeModel>
      */
-    public FetchResult<RateTypeModel> listRateTypesByCountry(String country) throws Exception {
+    public FetchResult<RateTypeModel> listRateTypesByCountry(String country, String filter, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/countries/{country}/ratetypes");
         path.applyField("country", country);
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
         return ((RestCall<FetchResult<RateTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<RateTypeModel>>(){})).call();
     }
 
@@ -2092,11 +2795,19 @@ public class AvaTaxClient {
      * Returns the full list of Avalara-supported rate type file types
      * 
      * @param country 
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
+     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<RateTypeModel>
      */
-    public Future<FetchResult<RateTypeModel>> listRateTypesByCountryAsync(String country) {
+    public Future<FetchResult<RateTypeModel>> listRateTypesByCountryAsync(String country, String filter, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/countries/{country}/ratetypes");
         path.applyField("country", country);
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
         return this.threadPool.submit((RestCall<FetchResult<RateTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<RateTypeModel>>(){}));
     }
 
@@ -2106,10 +2817,18 @@ public class AvaTaxClient {
      * Returns a list of all ISO 3166 region codes and their US English friendly names.
      * This API is intended to be useful when presenting a dropdown box in your website to allow customers to select a region 
      * 
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
+     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<IsoRegionModel>
      */
-    public FetchResult<IsoRegionModel> listRegions() throws Exception {
+    public FetchResult<IsoRegionModel> listRegions(String filter, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/regions");
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
         return ((RestCall<FetchResult<IsoRegionModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<IsoRegionModel>>(){})).call();
     }
 
@@ -2119,10 +2838,18 @@ public class AvaTaxClient {
      * Returns a list of all ISO 3166 region codes and their US English friendly names.
      * This API is intended to be useful when presenting a dropdown box in your website to allow customers to select a region 
      * 
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
+     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<IsoRegionModel>
      */
-    public Future<FetchResult<IsoRegionModel>> listRegionsAsync() {
+    public Future<FetchResult<IsoRegionModel>> listRegionsAsync(String filter, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/regions");
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
         return this.threadPool.submit((RestCall<FetchResult<IsoRegionModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<IsoRegionModel>>(){}));
     }
 
@@ -2132,12 +2859,20 @@ public class AvaTaxClient {
      * Returns a list of all ISO 3166 region codes for a specific country code, and their US English friendly names.
      * This API is intended to be useful when presenting a dropdown box in your website to allow customers to select a region 
      * 
-     * @param country 
+     * @param country The country of which you want to fetch ISO 3166 regions
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
+     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<IsoRegionModel>
      */
-    public FetchResult<IsoRegionModel> listRegionsByCountry(String country) throws Exception {
+    public FetchResult<IsoRegionModel> listRegionsByCountry(String country, String filter, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/countries/{country}/regions");
         path.applyField("country", country);
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
         return ((RestCall<FetchResult<IsoRegionModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<IsoRegionModel>>(){})).call();
     }
 
@@ -2147,12 +2882,20 @@ public class AvaTaxClient {
      * Returns a list of all ISO 3166 region codes for a specific country code, and their US English friendly names.
      * This API is intended to be useful when presenting a dropdown box in your website to allow customers to select a region 
      * 
-     * @param country 
+     * @param country The country of which you want to fetch ISO 3166 regions
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
+     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<IsoRegionModel>
      */
-    public Future<FetchResult<IsoRegionModel>> listRegionsByCountryAsync(String country) {
+    public Future<FetchResult<IsoRegionModel>> listRegionsByCountryAsync(String country, String filter, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/countries/{country}/regions");
         path.applyField("country", country);
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
         return this.threadPool.submit((RestCall<FetchResult<IsoRegionModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<IsoRegionModel>>(){}));
     }
 
@@ -2161,10 +2904,18 @@ public class AvaTaxClient {
      * 
      * Returns the full list of Avalara-supported resource file types
      * 
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
+     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<ResourceFileTypeModel>
      */
-    public FetchResult<ResourceFileTypeModel> listResourceFileTypes() throws Exception {
+    public FetchResult<ResourceFileTypeModel> listResourceFileTypes(String filter, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/resourcefiletypes");
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
         return ((RestCall<FetchResult<ResourceFileTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ResourceFileTypeModel>>(){})).call();
     }
 
@@ -2173,10 +2924,18 @@ public class AvaTaxClient {
      * 
      * Returns the full list of Avalara-supported resource file types
      * 
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
+     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<ResourceFileTypeModel>
      */
-    public Future<FetchResult<ResourceFileTypeModel>> listResourceFileTypesAsync() {
+    public Future<FetchResult<ResourceFileTypeModel>> listResourceFileTypesAsync(String filter, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/resourcefiletypes");
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
         return this.threadPool.submit((RestCall<FetchResult<ResourceFileTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ResourceFileTypeModel>>(){}));
     }
 
@@ -2186,10 +2945,18 @@ public class AvaTaxClient {
      * Returns the full list of Avalara-supported permission types.
      * This API is intended to be useful when designing a user interface for selecting the security role of a user account.
      * 
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
+     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<SecurityRoleModel>
      */
-    public FetchResult<SecurityRoleModel> listSecurityRoles() throws Exception {
+    public FetchResult<SecurityRoleModel> listSecurityRoles(String filter, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/securityroles");
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
         return ((RestCall<FetchResult<SecurityRoleModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<SecurityRoleModel>>(){})).call();
     }
 
@@ -2199,10 +2966,18 @@ public class AvaTaxClient {
      * Returns the full list of Avalara-supported permission types.
      * This API is intended to be useful when designing a user interface for selecting the security role of a user account.
      * 
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
+     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<SecurityRoleModel>
      */
-    public Future<FetchResult<SecurityRoleModel>> listSecurityRolesAsync() {
+    public Future<FetchResult<SecurityRoleModel>> listSecurityRolesAsync(String filter, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/securityroles");
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
         return this.threadPool.submit((RestCall<FetchResult<SecurityRoleModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<SecurityRoleModel>>(){}));
     }
 
@@ -2213,10 +2988,18 @@ public class AvaTaxClient {
      * This API is intended to be useful for identifying which features you have added to your account.
      * You may always contact Avalara's sales department for information on available products or services.
      * 
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
+     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<SubscriptionTypeModel>
      */
-    public FetchResult<SubscriptionTypeModel> listSubscriptionTypes() throws Exception {
+    public FetchResult<SubscriptionTypeModel> listSubscriptionTypes(String filter, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/subscriptiontypes");
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
         return ((RestCall<FetchResult<SubscriptionTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<SubscriptionTypeModel>>(){})).call();
     }
 
@@ -2227,10 +3010,18 @@ public class AvaTaxClient {
      * This API is intended to be useful for identifying which features you have added to your account.
      * You may always contact Avalara's sales department for information on available products or services.
      * 
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
+     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<SubscriptionTypeModel>
      */
-    public Future<FetchResult<SubscriptionTypeModel>> listSubscriptionTypesAsync() {
+    public Future<FetchResult<SubscriptionTypeModel>> listSubscriptionTypesAsync(String filter, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/subscriptiontypes");
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
         return this.threadPool.submit((RestCall<FetchResult<SubscriptionTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<SubscriptionTypeModel>>(){}));
     }
 
@@ -2239,10 +3030,18 @@ public class AvaTaxClient {
      * 
      * Returns the full list of Avalara-supported tax authorities.
      * 
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
+     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<TaxAuthorityModel>
      */
-    public FetchResult<TaxAuthorityModel> listTaxAuthorities() throws Exception {
+    public FetchResult<TaxAuthorityModel> listTaxAuthorities(String filter, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/taxauthorities");
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
         return ((RestCall<FetchResult<TaxAuthorityModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxAuthorityModel>>(){})).call();
     }
 
@@ -2251,10 +3050,18 @@ public class AvaTaxClient {
      * 
      * Returns the full list of Avalara-supported tax authorities.
      * 
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
+     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<TaxAuthorityModel>
      */
-    public Future<FetchResult<TaxAuthorityModel>> listTaxAuthoritiesAsync() {
+    public Future<FetchResult<TaxAuthorityModel>> listTaxAuthoritiesAsync(String filter, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/taxauthorities");
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
         return this.threadPool.submit((RestCall<FetchResult<TaxAuthorityModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxAuthorityModel>>(){}));
     }
 
@@ -2265,10 +3072,18 @@ public class AvaTaxClient {
      * This list represents tax forms that Avalara recognizes.
      * Customers who subscribe to Avalara Managed Returns Service can request these forms to be filed automatically 
      * 
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
+     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<TaxAuthorityFormModel>
      */
-    public FetchResult<TaxAuthorityFormModel> listTaxAuthorityForms() throws Exception {
+    public FetchResult<TaxAuthorityFormModel> listTaxAuthorityForms(String filter, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/taxauthorityforms");
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
         return ((RestCall<FetchResult<TaxAuthorityFormModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxAuthorityFormModel>>(){})).call();
     }
 
@@ -2279,10 +3094,18 @@ public class AvaTaxClient {
      * This list represents tax forms that Avalara recognizes.
      * Customers who subscribe to Avalara Managed Returns Service can request these forms to be filed automatically 
      * 
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
+     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<TaxAuthorityFormModel>
      */
-    public Future<FetchResult<TaxAuthorityFormModel>> listTaxAuthorityFormsAsync() {
+    public Future<FetchResult<TaxAuthorityFormModel>> listTaxAuthorityFormsAsync(String filter, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/taxauthorityforms");
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
         return this.threadPool.submit((RestCall<FetchResult<TaxAuthorityFormModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxAuthorityFormModel>>(){}));
     }
 
@@ -2291,10 +3114,18 @@ public class AvaTaxClient {
      * 
      * Returns the full list of Avalara-supported tax authority types.
      * 
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
+     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<TaxAuthorityTypeModel>
      */
-    public FetchResult<TaxAuthorityTypeModel> listTaxAuthorityTypes() throws Exception {
+    public FetchResult<TaxAuthorityTypeModel> listTaxAuthorityTypes(String filter, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/taxauthoritytypes");
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
         return ((RestCall<FetchResult<TaxAuthorityTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxAuthorityTypeModel>>(){})).call();
     }
 
@@ -2303,10 +3134,18 @@ public class AvaTaxClient {
      * 
      * Returns the full list of Avalara-supported tax authority types.
      * 
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
+     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<TaxAuthorityTypeModel>
      */
-    public Future<FetchResult<TaxAuthorityTypeModel>> listTaxAuthorityTypesAsync() {
+    public Future<FetchResult<TaxAuthorityTypeModel>> listTaxAuthorityTypesAsync(String filter, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/taxauthoritytypes");
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
         return this.threadPool.submit((RestCall<FetchResult<TaxAuthorityTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxAuthorityTypeModel>>(){}));
     }
 
@@ -2318,10 +3157,18 @@ public class AvaTaxClient {
      * Avalara supports correct tax rates and taxability rules for all TaxCodes in all supported jurisdictions.
      * If you identify your products by tax code in your 'Create Transacion' API calls, Avalara will correctly calculate tax rates and
      * 
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
+     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<TaxCodeModel>
      */
-    public FetchResult<TaxCodeModel> listTaxCodes() throws Exception {
+    public FetchResult<TaxCodeModel> listTaxCodes(String filter, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/taxcodes");
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
         return ((RestCall<FetchResult<TaxCodeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxCodeModel>>(){})).call();
     }
 
@@ -2333,10 +3180,18 @@ public class AvaTaxClient {
      * Avalara supports correct tax rates and taxability rules for all TaxCodes in all supported jurisdictions.
      * If you identify your products by tax code in your 'Create Transacion' API calls, Avalara will correctly calculate tax rates and
      * 
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
+     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<TaxCodeModel>
      */
-    public Future<FetchResult<TaxCodeModel>> listTaxCodesAsync() {
+    public Future<FetchResult<TaxCodeModel>> listTaxCodesAsync(String filter, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/taxcodes");
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
         return this.threadPool.submit((RestCall<FetchResult<TaxCodeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxCodeModel>>(){}));
     }
 
@@ -2346,10 +3201,18 @@ public class AvaTaxClient {
      * Returns the full list of recognized tax code types.
      * A 'Tax Code Type' represents a broad category of tax codes, and is less detailed than a single TaxCode.
      * 
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
+     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return TaxCodeTypesModel
      */
-    public TaxCodeTypesModel listTaxCodeTypes() throws Exception {
+    public TaxCodeTypesModel listTaxCodeTypes(String filter, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/taxcodetypes");
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
         return ((RestCall<TaxCodeTypesModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<TaxCodeTypesModel>(){})).call();
     }
 
@@ -2359,10 +3222,18 @@ public class AvaTaxClient {
      * Returns the full list of recognized tax code types.
      * A 'Tax Code Type' represents a broad category of tax codes, and is less detailed than a single TaxCode.
      * 
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
+     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return TaxCodeTypesModel
      */
-    public Future<TaxCodeTypesModel> listTaxCodeTypesAsync() {
+    public Future<TaxCodeTypesModel> listTaxCodeTypesAsync(String filter, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/taxcodetypes");
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
         return this.threadPool.submit((RestCall<TaxCodeTypesModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<TaxCodeTypesModel>(){}));
     }
 
@@ -2371,10 +3242,18 @@ public class AvaTaxClient {
      * 
      * Returns the full list of Avalara-supported tax sub-types
      * 
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
+     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<TaxSubTypeModel>
      */
-    public FetchResult<TaxSubTypeModel> listTaxSubTypes() throws Exception {
+    public FetchResult<TaxSubTypeModel> listTaxSubTypes(String filter, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/taxsubtypes");
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
         return ((RestCall<FetchResult<TaxSubTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxSubTypeModel>>(){})).call();
     }
 
@@ -2383,10 +3262,18 @@ public class AvaTaxClient {
      * 
      * Returns the full list of Avalara-supported tax sub-types
      * 
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
+     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<TaxSubTypeModel>
      */
-    public Future<FetchResult<TaxSubTypeModel>> listTaxSubTypesAsync() {
+    public Future<FetchResult<TaxSubTypeModel>> listTaxSubTypesAsync(String filter, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/taxsubtypes");
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
         return this.threadPool.submit((RestCall<FetchResult<TaxSubTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxSubTypeModel>>(){}));
     }
 
@@ -2395,10 +3282,18 @@ public class AvaTaxClient {
      * 
      * Returns the full list of Avalara-supported tax type groups
      * 
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
+     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<TaxTypeGroupModel>
      */
-    public FetchResult<TaxTypeGroupModel> listTaxTypeGroups() throws Exception {
+    public FetchResult<TaxTypeGroupModel> listTaxTypeGroups(String filter, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/taxtypegroups");
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
         return ((RestCall<FetchResult<TaxTypeGroupModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxTypeGroupModel>>(){})).call();
     }
 
@@ -2407,125 +3302,159 @@ public class AvaTaxClient {
      * 
      * Returns the full list of Avalara-supported tax type groups
      * 
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
+     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<TaxTypeGroupModel>
      */
-    public Future<FetchResult<TaxTypeGroupModel>> listTaxTypeGroupsAsync() {
+    public Future<FetchResult<TaxTypeGroupModel>> listTaxTypeGroupsAsync(String filter, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/taxtypegroups");
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
         return this.threadPool.submit((RestCall<FetchResult<TaxTypeGroupModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxTypeGroupModel>>(){}));
     }
 
     /**
-     * Retrieve a single filing calendar
+     * Approve existing Filing Request
      * 
-     * @param companyId The ID of the company that owns this filing calendar
-     * @param id The primary key of this filing calendar
-     * @return FilingCalendarModel
+     * This API is available by invitation only.
+     * A "filing request" represents a request to change an existing filing calendar.  Filing requests
+     * are reviewed and validated by Avalara Compliance before being implemented.
+     * 
+     * @param companyId The unique ID of the company that owns the filing request object
+     * @param id The unique ID of the filing request object
+     * @return FilingRequestModel
      */
-    public FilingCalendarModel apiV2CompaniesByCompanyIdFilingcalendarsByIdGet(Integer companyId, Integer id) throws Exception {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingcalendars/{id}");
+    public FilingRequestModel approveFilingRequest(Integer companyId, Integer id) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingrequests/{id}/approve");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return ((RestCall<FilingCalendarModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<FilingCalendarModel>(){})).call();
+        return ((RestCall<FilingRequestModel>)restCallFactory.createRestCall("post", path, null, new TypeToken<FilingRequestModel>(){})).call();
     }
 
     /**
-     * Retrieve a single filing calendar
+     * Approve existing Filing Request
      * 
-     * @param companyId The ID of the company that owns this filing calendar
-     * @param id The primary key of this filing calendar
-     * @return FilingCalendarModel
+     * This API is available by invitation only.
+     * A "filing request" represents a request to change an existing filing calendar.  Filing requests
+     * are reviewed and validated by Avalara Compliance before being implemented.
+     * 
+     * @param companyId The unique ID of the company that owns the filing request object
+     * @param id The unique ID of the filing request object
+     * @return FilingRequestModel
      */
-    public Future<FilingCalendarModel> apiV2CompaniesByCompanyIdFilingcalendarsByIdGetAsync(Integer companyId, Integer id) {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingcalendars/{id}");
+    public Future<FilingRequestModel> approveFilingRequestAsync(Integer companyId, Integer id) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingrequests/{id}/approve");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<FilingCalendarModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<FilingCalendarModel>(){}));
+        return this.threadPool.submit((RestCall<FilingRequestModel>)restCallFactory.createRestCall("post", path, null, new TypeToken<FilingRequestModel>(){}));
     }
 
     /**
-     * Retrieve all filing calendars for this company
-     * 
-     * @param companyId The ID of the company that owns these batches
-     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
-     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<FilingCalendarModel>
-     */
-    public FetchResult<FilingCalendarModel> apiV2CompaniesByCompanyIdFilingcalendarsGet(Integer companyId, String filter, Integer top, Integer skip, String orderBy) throws Exception {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingcalendars");
-        path.applyField("companyId", companyId);
-        path.addQuery("$filter", filter);
-        path.addQuery("$top", top);
-        path.addQuery("$skip", skip);
-        path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<FilingCalendarModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<FilingCalendarModel>>(){})).call();
-    }
-
-    /**
-     * Retrieve all filing calendars for this company
-     * 
-     * @param companyId The ID of the company that owns these batches
-     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
-     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<FilingCalendarModel>
-     */
-    public Future<FetchResult<FilingCalendarModel>> apiV2CompaniesByCompanyIdFilingcalendarsGetAsync(Integer companyId, String filter, Integer top, Integer skip, String orderBy) {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingcalendars");
-        path.applyField("companyId", companyId);
-        path.addQuery("$filter", filter);
-        path.addQuery("$top", top);
-        path.addQuery("$skip", skip);
-        path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<FilingCalendarModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<FilingCalendarModel>>(){}));
-    }
-
-    /**
-     * Retrieve all filing requests for this company
+     * Cancel existing Filing Request
      * 
      * This API is available by invitation only.
      * A "filing request" represents a request to change an existing filing calendar.  Filing requests
      * 
-     * @param companyId The ID of the company that owns these batches
-     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
-     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<FilingRequestModel>
+     * @param companyId The unique ID of the company that owns the filing request object
+     * @param id The unique ID of the filing request object
+     * @return FilingRequestModel
      */
-    public FetchResult<FilingRequestModel> apiV2CompaniesByCompanyIdFilingrequestsGet(Integer companyId, String filter, Integer top, Integer skip, String orderBy) throws Exception {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingrequests");
+    public FilingRequestModel cancelFilingRequest(Integer companyId, Integer id) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingrequests/{id}/cancel");
         path.applyField("companyId", companyId);
-        path.addQuery("$filter", filter);
-        path.addQuery("$top", top);
-        path.addQuery("$skip", skip);
-        path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<FilingRequestModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<FilingRequestModel>>(){})).call();
+        path.applyField("id", id);
+        return ((RestCall<FilingRequestModel>)restCallFactory.createRestCall("post", path, null, new TypeToken<FilingRequestModel>(){})).call();
     }
 
     /**
-     * Retrieve all filing requests for this company
+     * Cancel existing Filing Request
      * 
      * This API is available by invitation only.
      * A "filing request" represents a request to change an existing filing calendar.  Filing requests
      * 
-     * @param companyId The ID of the company that owns these batches
-     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
-     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<FilingRequestModel>
+     * @param companyId The unique ID of the company that owns the filing request object
+     * @param id The unique ID of the filing request object
+     * @return FilingRequestModel
      */
-    public Future<FetchResult<FilingRequestModel>> apiV2CompaniesByCompanyIdFilingrequestsGetAsync(Integer companyId, String filter, Integer top, Integer skip, String orderBy) {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingrequests");
+    public Future<FilingRequestModel> cancelFilingRequestAsync(Integer companyId, Integer id) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingrequests/{id}/cancel");
         path.applyField("companyId", companyId);
-        path.addQuery("$filter", filter);
-        path.addQuery("$top", top);
-        path.addQuery("$skip", skip);
-        path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<FilingRequestModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<FilingRequestModel>>(){}));
+        path.applyField("id", id);
+        return this.threadPool.submit((RestCall<FilingRequestModel>)restCallFactory.createRestCall("post", path, null, new TypeToken<FilingRequestModel>(){}));
+    }
+
+    /**
+     * Create a new filing request to cancel a filing calendar
+     * 
+     * This API is available by invitation only.
+     * 
+     * A "filing request" represents a request to change an existing filing calendar.  Filing requests
+     * 
+     * @param companyId The unique ID of the company that owns the filing calendar object
+     * @param id The unique ID number of the filing calendar to cancel
+     * @param model The cancellation request for this filing calendar
+     * @return FilingRequestModel
+     */
+    public FilingRequestModel cancelFilingRequests(Integer companyId, Integer id, ArrayList<FilingRequestModel> model) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingcalendars/{id}/cancel/request");
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
+        return ((RestCall<FilingRequestModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<FilingRequestModel>(){})).call();
+    }
+
+    /**
+     * Create a new filing request to cancel a filing calendar
+     * 
+     * This API is available by invitation only.
+     * 
+     * A "filing request" represents a request to change an existing filing calendar.  Filing requests
+     * 
+     * @param companyId The unique ID of the company that owns the filing calendar object
+     * @param id The unique ID number of the filing calendar to cancel
+     * @param model The cancellation request for this filing calendar
+     * @return FilingRequestModel
+     */
+    public Future<FilingRequestModel> cancelFilingRequestsAsync(Integer companyId, Integer id, ArrayList<FilingRequestModel> model) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingcalendars/{id}/cancel/request");
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
+        return this.threadPool.submit((RestCall<FilingRequestModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<FilingRequestModel>(){}));
+    }
+
+    /**
+     * Create a new filing request to create a filing calendar
+     * 
+     * This API is available by invitation only.
+     * A "filing request" represents a request to change an existing filing calendar.  Filing requests
+     * 
+     * @param companyId The unique ID of the company that will add the new filing calendar
+     * @param model Information about the proposed new filing calendar
+     * @return FilingRequestModel
+     */
+    public FilingRequestModel createFilingRequests(Integer companyId, ArrayList<FilingRequestModel> model) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingcalendars/add/request");
+        path.applyField("companyId", companyId);
+        return ((RestCall<FilingRequestModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<FilingRequestModel>(){})).call();
+    }
+
+    /**
+     * Create a new filing request to create a filing calendar
+     * 
+     * This API is available by invitation only.
+     * A "filing request" represents a request to change an existing filing calendar.  Filing requests
+     * 
+     * @param companyId The unique ID of the company that will add the new filing calendar
+     * @param model Information about the proposed new filing calendar
+     * @return FilingRequestModel
+     */
+    public Future<FilingRequestModel> createFilingRequestsAsync(Integer companyId, ArrayList<FilingRequestModel> model) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingcalendars/add/request");
+        path.applyField("companyId", companyId);
+        return this.threadPool.submit((RestCall<FilingRequestModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<FilingRequestModel>(){}));
     }
 
     /**
@@ -2651,39 +3580,31 @@ public class AvaTaxClient {
     }
 
     /**
-     * Edit existing Filing Calendar's Notes
+     * Retrieve a single filing calendar
      * 
-     * This API is available by invitation only.
-     * This API only allows updating of internal notes and company filing instructions.
-     * 
-     * @param companyId The unique ID of the company that owns the filing request object
-     * @param id The unique ID of the filing calendar object
-     * @param model The filing calendar model you are wishing to update with.
+     * @param companyId The ID of the company that owns this filing calendar
+     * @param id The primary key of this filing calendar
      * @return FilingCalendarModel
      */
-    public FilingCalendarModel filingCalendarUpdate(Integer companyId, Integer id, FilingCalendarModel model) throws Exception {
+    public FilingCalendarModel getFilingCalendar(Integer companyId, Integer id) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingcalendars/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return ((RestCall<FilingCalendarModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<FilingCalendarModel>(){})).call();
+        return ((RestCall<FilingCalendarModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<FilingCalendarModel>(){})).call();
     }
 
     /**
-     * Edit existing Filing Calendar's Notes
+     * Retrieve a single filing calendar
      * 
-     * This API is available by invitation only.
-     * This API only allows updating of internal notes and company filing instructions.
-     * 
-     * @param companyId The unique ID of the company that owns the filing request object
-     * @param id The unique ID of the filing calendar object
-     * @param model The filing calendar model you are wishing to update with.
+     * @param companyId The ID of the company that owns this filing calendar
+     * @param id The primary key of this filing calendar
      * @return FilingCalendarModel
      */
-    public Future<FilingCalendarModel> filingCalendarUpdateAsync(Integer companyId, Integer id, FilingCalendarModel model) {
+    public Future<FilingCalendarModel> getFilingCalendarAsync(Integer companyId, Integer id) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingcalendars/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<FilingCalendarModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<FilingCalendarModel>(){}));
+        return this.threadPool.submit((RestCall<FilingCalendarModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<FilingCalendarModel>(){}));
     }
 
     /**
@@ -2696,7 +3617,7 @@ public class AvaTaxClient {
      * @param id The primary key of this filing calendar
      * @return FilingRequestModel
      */
-    public FilingRequestModel filingRequests(Integer companyId, Integer id) throws Exception {
+    public FilingRequestModel getFilingRequest(Integer companyId, Integer id) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingrequests/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
@@ -2713,7 +3634,7 @@ public class AvaTaxClient {
      * @param id The primary key of this filing calendar
      * @return FilingRequestModel
      */
-    public Future<FilingRequestModel> filingRequestsAsync(Integer companyId, Integer id) {
+    public Future<FilingRequestModel> getFilingRequestAsync(Integer companyId, Integer id) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingrequests/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
@@ -2721,222 +3642,138 @@ public class AvaTaxClient {
     }
 
     /**
-     * Create a new filing request to create a filing calendar
+     * Retrieve all filing calendars for this company
      * 
-     * This API is available by invitation only.
-     * A "filing request" represents a request to change an existing filing calendar.  Filing requests
-     * 
-     * @param companyId The unique ID of the company that will add the new filing calendar
-     * @param model Information about the proposed new filing calendar
-     * @return FilingRequestModel
+     * @param companyId The ID of the company that owns these batches
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
+     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @param returnCountry A comma separated list of countries
+     * @param returnRegion A comma separated list of regions
+     * @return FetchResult<FilingCalendarModel>
      */
-    public FilingRequestModel filingRequestsAdd(Integer companyId, ArrayList<FilingRequestModel> model) throws Exception {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingcalendars/add/request");
+    public FetchResult<FilingCalendarModel> listFilingCalendars(Integer companyId, String filter, Integer top, Integer skip, String orderBy, String returnCountry, String returnRegion) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingcalendars");
         path.applyField("companyId", companyId);
-        return ((RestCall<FilingRequestModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<FilingRequestModel>(){})).call();
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
+        path.addQuery("returnCountry", returnCountry);
+        path.addQuery("returnRegion", returnRegion);
+        return ((RestCall<FetchResult<FilingCalendarModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<FilingCalendarModel>>(){})).call();
     }
 
     /**
-     * Create a new filing request to create a filing calendar
+     * Retrieve all filing calendars for this company
      * 
-     * This API is available by invitation only.
-     * A "filing request" represents a request to change an existing filing calendar.  Filing requests
-     * 
-     * @param companyId The unique ID of the company that will add the new filing calendar
-     * @param model Information about the proposed new filing calendar
-     * @return FilingRequestModel
+     * @param companyId The ID of the company that owns these batches
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
+     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @param returnCountry A comma separated list of countries
+     * @param returnRegion A comma separated list of regions
+     * @return FetchResult<FilingCalendarModel>
      */
-    public Future<FilingRequestModel> filingRequestsAddAsync(Integer companyId, ArrayList<FilingRequestModel> model) {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingcalendars/add/request");
+    public Future<FetchResult<FilingCalendarModel>> listFilingCalendarsAsync(Integer companyId, String filter, Integer top, Integer skip, String orderBy, String returnCountry, String returnRegion) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingcalendars");
         path.applyField("companyId", companyId);
-        return this.threadPool.submit((RestCall<FilingRequestModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<FilingRequestModel>(){}));
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
+        path.addQuery("returnCountry", returnCountry);
+        path.addQuery("returnRegion", returnRegion);
+        return this.threadPool.submit((RestCall<FetchResult<FilingCalendarModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<FilingCalendarModel>>(){}));
     }
 
     /**
-     * Approve existing Filing Request
+     * Retrieve all filing requests for this company
      * 
      * This API is available by invitation only.
      * A "filing request" represents a request to change an existing filing calendar.  Filing requests
-     * are reviewed and validated by Avalara Compliance before being implemented.
      * 
-     * @param companyId The unique ID of the company that owns the filing request object
-     * @param id The unique ID of the filing request object
-     * @return FilingRequestModel
+     * @param companyId The ID of the company that owns these batches
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
+     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @return FetchResult<FilingRequestModel>
      */
-    public FilingRequestModel filingRequestsApprove(Integer companyId, Integer id) throws Exception {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingrequests/{id}/approve");
+    public FetchResult<FilingRequestModel> listFilingRequests(Integer companyId, String filter, Integer top, Integer skip, String orderBy) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingrequests");
         path.applyField("companyId", companyId);
-        path.applyField("id", id);
-        return ((RestCall<FilingRequestModel>)restCallFactory.createRestCall("post", path, null, new TypeToken<FilingRequestModel>(){})).call();
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
+        return ((RestCall<FetchResult<FilingRequestModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<FilingRequestModel>>(){})).call();
     }
 
     /**
-     * Approve existing Filing Request
+     * Retrieve all filing requests for this company
      * 
      * This API is available by invitation only.
      * A "filing request" represents a request to change an existing filing calendar.  Filing requests
-     * are reviewed and validated by Avalara Compliance before being implemented.
      * 
-     * @param companyId The unique ID of the company that owns the filing request object
-     * @param id The unique ID of the filing request object
-     * @return FilingRequestModel
+     * @param companyId The ID of the company that owns these batches
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
+     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @return FetchResult<FilingRequestModel>
      */
-    public Future<FilingRequestModel> filingRequestsApproveAsync(Integer companyId, Integer id) {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingrequests/{id}/approve");
+    public Future<FetchResult<FilingRequestModel>> listFilingRequestsAsync(Integer companyId, String filter, Integer top, Integer skip, String orderBy) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingrequests");
         path.applyField("companyId", companyId);
-        path.applyField("id", id);
-        return this.threadPool.submit((RestCall<FilingRequestModel>)restCallFactory.createRestCall("post", path, null, new TypeToken<FilingRequestModel>(){}));
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
+        return this.threadPool.submit((RestCall<FetchResult<FilingRequestModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<FilingRequestModel>>(){}));
     }
 
     /**
-     * Cancel existing Filing Request
+     * New request for getting for validating customer's login credentials
      * 
      * This API is available by invitation only.
-     * A "filing request" represents a request to change an existing filing calendar.  Filing requests
      * 
-     * @param companyId The unique ID of the company that owns the filing request object
-     * @param id The unique ID of the filing request object
-     * @return FilingRequestModel
+     * 
+     * @param model The model of the login information we are verifying
+     * @return LoginVerificationOutputModel
      */
-    public FilingRequestModel filingRequestsCancel(Integer companyId, Integer id) throws Exception {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingrequests/{id}/cancel");
-        path.applyField("companyId", companyId);
-        path.applyField("id", id);
-        return ((RestCall<FilingRequestModel>)restCallFactory.createRestCall("post", path, null, new TypeToken<FilingRequestModel>(){})).call();
+    public LoginVerificationOutputModel loginVerificationRequest(LoginVerificationInputModel model) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/filingcalendars/credentials/verify");
+        return ((RestCall<LoginVerificationOutputModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<LoginVerificationOutputModel>(){})).call();
     }
 
     /**
-     * Cancel existing Filing Request
+     * New request for getting for validating customer's login credentials
      * 
      * This API is available by invitation only.
-     * A "filing request" represents a request to change an existing filing calendar.  Filing requests
      * 
-     * @param companyId The unique ID of the company that owns the filing request object
-     * @param id The unique ID of the filing request object
-     * @return FilingRequestModel
+     * 
+     * @param model The model of the login information we are verifying
+     * @return LoginVerificationOutputModel
      */
-    public Future<FilingRequestModel> filingRequestsCancelAsync(Integer companyId, Integer id) {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingrequests/{id}/cancel");
-        path.applyField("companyId", companyId);
-        path.applyField("id", id);
-        return this.threadPool.submit((RestCall<FilingRequestModel>)restCallFactory.createRestCall("post", path, null, new TypeToken<FilingRequestModel>(){}));
-    }
-
-    /**
-     * Create a new filing request to cancel a filing calendar
-     * 
-     * This API is available by invitation only.
-     * A "filing request" represents a request to change an existing filing calendar.  Filing requests
-     * 
-     * @param companyId The unique ID of the company that owns the filing calendar object
-     * @param id The unique ID number of the filing calendar to cancel
-     * @param model The cancellation request for this filing calendar
-     * @return FilingRequestModel
-     */
-    public FilingRequestModel filingRequestsNewCancel(Integer companyId, Integer id, ArrayList<FilingRequestModel> model) throws Exception {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingcalendars/{id}/cancel/request");
-        path.applyField("companyId", companyId);
-        path.applyField("id", id);
-        return ((RestCall<FilingRequestModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<FilingRequestModel>(){})).call();
-    }
-
-    /**
-     * Create a new filing request to cancel a filing calendar
-     * 
-     * This API is available by invitation only.
-     * A "filing request" represents a request to change an existing filing calendar.  Filing requests
-     * 
-     * @param companyId The unique ID of the company that owns the filing calendar object
-     * @param id The unique ID number of the filing calendar to cancel
-     * @param model The cancellation request for this filing calendar
-     * @return FilingRequestModel
-     */
-    public Future<FilingRequestModel> filingRequestsNewCancelAsync(Integer companyId, Integer id, ArrayList<FilingRequestModel> model) {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingcalendars/{id}/cancel/request");
-        path.applyField("companyId", companyId);
-        path.applyField("id", id);
-        return this.threadPool.submit((RestCall<FilingRequestModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<FilingRequestModel>(){}));
-    }
-
-    /**
-     * Create a new filing request to edit a filing calendar
-     * 
-     * This API is available by invitation only.
-     * A "filing request" represents a request to change an existing filing calendar.  Filing requests
-     * 
-     * @param companyId The unique ID of the company that owns the filing calendar object
-     * @param id The unique ID number of the filing calendar to edit
-     * @param model A list of filing calendar edits to be made
-     * @return FilingRequestModel
-     */
-    public FilingRequestModel filingRequestsNewEdit(Integer companyId, Integer id, ArrayList<FilingRequestModel> model) throws Exception {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingcalendars/{id}/edit/request");
-        path.applyField("companyId", companyId);
-        path.applyField("id", id);
-        return ((RestCall<FilingRequestModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<FilingRequestModel>(){})).call();
-    }
-
-    /**
-     * Create a new filing request to edit a filing calendar
-     * 
-     * This API is available by invitation only.
-     * A "filing request" represents a request to change an existing filing calendar.  Filing requests
-     * 
-     * @param companyId The unique ID of the company that owns the filing calendar object
-     * @param id The unique ID number of the filing calendar to edit
-     * @param model A list of filing calendar edits to be made
-     * @return FilingRequestModel
-     */
-    public Future<FilingRequestModel> filingRequestsNewEditAsync(Integer companyId, Integer id, ArrayList<FilingRequestModel> model) {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingcalendars/{id}/edit/request");
-        path.applyField("companyId", companyId);
-        path.applyField("id", id);
-        return this.threadPool.submit((RestCall<FilingRequestModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<FilingRequestModel>(){}));
-    }
-
-    /**
-     * Edit existing Filing Request
-     * 
-     * This API is available by invitation only.
-     * A "filing request" represents a request to change an existing filing calendar.  Filing requests
-     * 
-     * @param companyId The unique ID of the company that owns the filing request object
-     * @param id The unique ID of the filing request object
-     * @param model A list of filing calendar edits to be made
-     * @return FilingRequestModel
-     */
-    public FilingRequestModel filingRequestsUpdate(Integer companyId, Integer id, FilingRequestModel model) throws Exception {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingrequests/{id}");
-        path.applyField("companyId", companyId);
-        path.applyField("id", id);
-        return ((RestCall<FilingRequestModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<FilingRequestModel>(){})).call();
-    }
-
-    /**
-     * Edit existing Filing Request
-     * 
-     * This API is available by invitation only.
-     * A "filing request" represents a request to change an existing filing calendar.  Filing requests
-     * 
-     * @param companyId The unique ID of the company that owns the filing request object
-     * @param id The unique ID of the filing request object
-     * @param model A list of filing calendar edits to be made
-     * @return FilingRequestModel
-     */
-    public Future<FilingRequestModel> filingRequestsUpdateAsync(Integer companyId, Integer id, FilingRequestModel model) {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingrequests/{id}");
-        path.applyField("companyId", companyId);
-        path.applyField("id", id);
-        return this.threadPool.submit((RestCall<FilingRequestModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<FilingRequestModel>(){}));
+    public Future<LoginVerificationOutputModel> loginVerificationRequestAsync(LoginVerificationInputModel model) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/filingcalendars/credentials/verify");
+        return this.threadPool.submit((RestCall<LoginVerificationOutputModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<LoginVerificationOutputModel>(){}));
     }
 
     /**
      * Gets the request status and Login Result
      * 
+     * This API is available by invitation only.
+     * 
+     * This API checks the status of a login verification request.  It may only be called by authorized users from the account 
+     * 
      * @param jobId The unique ID number of this login request
      * @return LoginVerificationOutputModel
      */
-    public LoginVerificationOutputModel loginVerificationGet(Integer jobId) throws Exception {
+    public LoginVerificationOutputModel loginVerificationStatus(Integer jobId) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/filingcalendars/credentials/{jobId}");
         path.applyField("jobId", jobId);
         return ((RestCall<LoginVerificationOutputModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<LoginVerificationOutputModel>(){})).call();
@@ -2945,35 +3782,17 @@ public class AvaTaxClient {
     /**
      * Gets the request status and Login Result
      * 
+     * This API is available by invitation only.
+     * 
+     * This API checks the status of a login verification request.  It may only be called by authorized users from the account 
+     * 
      * @param jobId The unique ID number of this login request
      * @return LoginVerificationOutputModel
      */
-    public Future<LoginVerificationOutputModel> loginVerificationGetAsync(Integer jobId) {
+    public Future<LoginVerificationOutputModel> loginVerificationStatusAsync(Integer jobId) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/filingcalendars/credentials/{jobId}");
         path.applyField("jobId", jobId);
         return this.threadPool.submit((RestCall<LoginVerificationOutputModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<LoginVerificationOutputModel>(){}));
-    }
-
-    /**
-     * New request for getting for validating customer's login credentials
-     * 
-     * @param model The model of the login information we are verifying
-     * @return LoginVerificationOutputModel
-     */
-    public LoginVerificationOutputModel loginVerificationPost(LoginVerificationInputModel model) throws Exception {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/filingcalendars/credentials/verify");
-        return ((RestCall<LoginVerificationOutputModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<LoginVerificationOutputModel>(){})).call();
-    }
-
-    /**
-     * New request for getting for validating customer's login credentials
-     * 
-     * @param model The model of the login information we are verifying
-     * @return LoginVerificationOutputModel
-     */
-    public Future<LoginVerificationOutputModel> loginVerificationPostAsync(LoginVerificationInputModel model) {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/filingcalendars/credentials/verify");
-        return this.threadPool.submit((RestCall<LoginVerificationOutputModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<LoginVerificationOutputModel>(){}));
     }
 
     /**
@@ -2983,14 +3802,18 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @param returnCountry 
+     * @param returnRegion 
      * @return FetchResult<FilingCalendarModel>
      */
-    public FetchResult<FilingCalendarModel> queryFilingCalendars(String filter, Integer top, Integer skip, String orderBy) throws Exception {
+    public FetchResult<FilingCalendarModel> queryFilingCalendars(String filter, Integer top, Integer skip, String orderBy, String returnCountry, String returnRegion) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/filingcalendars");
         path.addQuery("$filter", filter);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
+        path.addQuery("returnCountry", returnCountry);
+        path.addQuery("returnRegion", returnRegion);
         return ((RestCall<FetchResult<FilingCalendarModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<FilingCalendarModel>>(){})).call();
     }
 
@@ -3001,14 +3824,18 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @param returnCountry 
+     * @param returnRegion 
      * @return FetchResult<FilingCalendarModel>
      */
-    public Future<FetchResult<FilingCalendarModel>> queryFilingCalendarsAsync(String filter, Integer top, Integer skip, String orderBy) {
+    public Future<FetchResult<FilingCalendarModel>> queryFilingCalendarsAsync(String filter, Integer top, Integer skip, String orderBy, String returnCountry, String returnRegion) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/filingcalendars");
         path.addQuery("$filter", filter);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
+        path.addQuery("returnCountry", returnCountry);
+        path.addQuery("returnRegion", returnRegion);
         return this.threadPool.submit((RestCall<FetchResult<FilingCalendarModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<FilingCalendarModel>>(){}));
     }
 
@@ -3058,6 +3885,122 @@ public class AvaTaxClient {
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
         return this.threadPool.submit((RestCall<FetchResult<FilingRequestModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<FilingRequestModel>>(){}));
+    }
+
+    /**
+     * Create a new filing request to edit a filing calendar
+     * 
+     * This API is available by invitation only.
+     * 
+     * A "filing request" represents a request to change an existing filing calendar.  Filing requests
+     * are reviewed and validated by Avalara Compliance before being implemented.
+     * 
+     * Certain users may not update filing calendars directly.  Instead, they may submit an edit request
+     * 
+     * @param companyId The unique ID of the company that owns the filing calendar object
+     * @param id The unique ID number of the filing calendar to edit
+     * @param model A list of filing calendar edits to be made
+     * @return FilingRequestModel
+     */
+    public FilingRequestModel requestFilingCalendarUpdate(Integer companyId, Integer id, ArrayList<FilingRequestModel> model) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingcalendars/{id}/edit/request");
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
+        return ((RestCall<FilingRequestModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<FilingRequestModel>(){})).call();
+    }
+
+    /**
+     * Create a new filing request to edit a filing calendar
+     * 
+     * This API is available by invitation only.
+     * 
+     * A "filing request" represents a request to change an existing filing calendar.  Filing requests
+     * are reviewed and validated by Avalara Compliance before being implemented.
+     * 
+     * Certain users may not update filing calendars directly.  Instead, they may submit an edit request
+     * 
+     * @param companyId The unique ID of the company that owns the filing calendar object
+     * @param id The unique ID number of the filing calendar to edit
+     * @param model A list of filing calendar edits to be made
+     * @return FilingRequestModel
+     */
+    public Future<FilingRequestModel> requestFilingCalendarUpdateAsync(Integer companyId, Integer id, ArrayList<FilingRequestModel> model) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingcalendars/{id}/edit/request");
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
+        return this.threadPool.submit((RestCall<FilingRequestModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<FilingRequestModel>(){}));
+    }
+
+    /**
+     * Edit existing Filing Calendar's Notes
+     * 
+     * This API is available by invitation only.
+     * This API only allows updating of internal notes and company filing instructions.
+     * 
+     * @param companyId The unique ID of the company that owns the filing request object
+     * @param id The unique ID of the filing calendar object
+     * @param model The filing calendar model you are wishing to update with.
+     * @return FilingCalendarModel
+     */
+    public FilingCalendarModel updateFilingCalendar(Integer companyId, Integer id, FilingCalendarModel model) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingcalendars/{id}");
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
+        return ((RestCall<FilingCalendarModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<FilingCalendarModel>(){})).call();
+    }
+
+    /**
+     * Edit existing Filing Calendar's Notes
+     * 
+     * This API is available by invitation only.
+     * This API only allows updating of internal notes and company filing instructions.
+     * 
+     * @param companyId The unique ID of the company that owns the filing request object
+     * @param id The unique ID of the filing calendar object
+     * @param model The filing calendar model you are wishing to update with.
+     * @return FilingCalendarModel
+     */
+    public Future<FilingCalendarModel> updateFilingCalendarAsync(Integer companyId, Integer id, FilingCalendarModel model) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingcalendars/{id}");
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
+        return this.threadPool.submit((RestCall<FilingCalendarModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<FilingCalendarModel>(){}));
+    }
+
+    /**
+     * Edit existing Filing Request
+     * 
+     * This API is available by invitation only.
+     * A "filing request" represents a request to change an existing filing calendar.  Filing requests
+     * 
+     * @param companyId The unique ID of the company that owns the filing request object
+     * @param id The unique ID of the filing request object
+     * @param model A list of filing calendar edits to be made
+     * @return FilingRequestModel
+     */
+    public FilingRequestModel updateFilingRequest(Integer companyId, Integer id, FilingRequestModel model) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingrequests/{id}");
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
+        return ((RestCall<FilingRequestModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<FilingRequestModel>(){})).call();
+    }
+
+    /**
+     * Edit existing Filing Request
+     * 
+     * This API is available by invitation only.
+     * A "filing request" represents a request to change an existing filing calendar.  Filing requests
+     * 
+     * @param companyId The unique ID of the company that owns the filing request object
+     * @param id The unique ID of the filing request object
+     * @param model A list of filing calendar edits to be made
+     * @return FilingRequestModel
+     */
+    public Future<FilingRequestModel> updateFilingRequestAsync(Integer companyId, Integer id, FilingRequestModel model) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingrequests/{id}");
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
+        return this.threadPool.submit((RestCall<FilingRequestModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<FilingRequestModel>(){}));
     }
 
     /**
@@ -3331,6 +4274,64 @@ public class AvaTaxClient {
     }
 
     /**
+     * Add an payment to a given filing.
+     * 
+     * This API is available by invitation only.
+     * An "Payment" is usually an increase or decrease to customer funding to Avalara,
+     * such as early filer discount amounts that are refunded to the customer, or efile fees from websites. 
+     * Sometimes may be a manual change in tax liability similar to an augmentation.
+     * This API creates a new payment for an existing tax filing.
+     * 
+     * @param companyId The ID of the company that owns the filing being adjusted.
+     * @param year The year of the filing's filing period being adjusted.
+     * @param month The month of the filing's filing period being adjusted.
+     * @param country The two-character ISO-3166 code for the country of the filing being adjusted.
+     * @param region The two or three character region code for the region.
+     * @param formCode The unique code of the form being adjusted.
+     * @param model A list of Payments to be created for the specified filing.
+     * @return ArrayList<FilingPaymentModel>
+     */
+    public ArrayList<FilingPaymentModel> createReturnPayment(Integer companyId, Short year, Byte month, String country, String region, String formCode, ArrayList<FilingPaymentModel> model) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/{country}/{region}/{formCode}/payment");
+        path.applyField("companyId", companyId);
+        path.applyField("year", year);
+        path.applyField("month", month);
+        path.applyField("country", country);
+        path.applyField("region", region);
+        path.applyField("formCode", formCode);
+        return ((RestCall<ArrayList<FilingPaymentModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<FilingPaymentModel>>(){})).call();
+    }
+
+    /**
+     * Add an payment to a given filing.
+     * 
+     * This API is available by invitation only.
+     * An "Payment" is usually an increase or decrease to customer funding to Avalara,
+     * such as early filer discount amounts that are refunded to the customer, or efile fees from websites. 
+     * Sometimes may be a manual change in tax liability similar to an augmentation.
+     * This API creates a new payment for an existing tax filing.
+     * 
+     * @param companyId The ID of the company that owns the filing being adjusted.
+     * @param year The year of the filing's filing period being adjusted.
+     * @param month The month of the filing's filing period being adjusted.
+     * @param country The two-character ISO-3166 code for the country of the filing being adjusted.
+     * @param region The two or three character region code for the region.
+     * @param formCode The unique code of the form being adjusted.
+     * @param model A list of Payments to be created for the specified filing.
+     * @return ArrayList<FilingPaymentModel>
+     */
+    public Future<ArrayList<FilingPaymentModel>> createReturnPaymentAsync(Integer companyId, Short year, Byte month, String country, String region, String formCode, ArrayList<FilingPaymentModel> model) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/{country}/{region}/{formCode}/payment");
+        path.applyField("companyId", companyId);
+        path.applyField("year", year);
+        path.applyField("month", month);
+        path.applyField("country", country);
+        path.applyField("region", region);
+        path.applyField("formCode", formCode);
+        return this.threadPool.submit((RestCall<ArrayList<FilingPaymentModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<FilingPaymentModel>>(){}));
+    }
+
+    /**
      * Delete an adjustment for a given filing.
      * 
      * This API is available by invitation only.
@@ -3409,15 +4410,55 @@ public class AvaTaxClient {
     }
 
     /**
+     * Delete an payment for a given filing.
+     * 
+     * This API is available by invitation only.
+     * An "Payment" is usually an increase or decrease to customer funding to Avalara,
+     * such as early filer discount amounts that are refunded to the customer, or efile fees from websites. 
+     * Sometimes may be a manual change in tax liability similar to an augmentation.
+     * This API deletes an payment for an existing tax filing.
+     * 
+     * @param companyId The ID of the company that owns the filing being adjusted.
+     * @param id The ID of the payment being deleted.
+     * @return ArrayList<ErrorDetail>
+     */
+    public ArrayList<ErrorDetail> deleteReturnPayment(Integer companyId, Long id) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/payment/{id}");
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
+        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){})).call();
+    }
+
+    /**
+     * Delete an payment for a given filing.
+     * 
+     * This API is available by invitation only.
+     * An "Payment" is usually an increase or decrease to customer funding to Avalara,
+     * such as early filer discount amounts that are refunded to the customer, or efile fees from websites. 
+     * Sometimes may be a manual change in tax liability similar to an augmentation.
+     * This API deletes an payment for an existing tax filing.
+     * 
+     * @param companyId The ID of the company that owns the filing being adjusted.
+     * @param id The ID of the payment being deleted.
+     * @return ArrayList<ErrorDetail>
+     */
+    public Future<ArrayList<ErrorDetail>> deleteReturnPaymentAsync(Integer companyId, Long id) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/payment/{id}");
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
+        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){}));
+    }
+
+    /**
      * Retrieve worksheet checkup report for company and filing period.
      * 
-     * @param worksheetId The unique id of the worksheet.
+     * @param filingsId The unique id of the worksheet.
      * @param companyId The unique ID of the company that owns the worksheet.
      * @return FilingsCheckupModel
      */
-    public FilingsCheckupModel filingsCheckupReport(Integer worksheetId, Integer companyId) throws Exception {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{worksheetId}/checkup");
-        path.applyField("worksheetId", worksheetId);
+    public FilingsCheckupModel filingsCheckupReport(Integer filingsId, Integer companyId) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{filingsId}/checkup");
+        path.applyField("filingsId", filingsId);
         path.applyField("companyId", companyId);
         return ((RestCall<FilingsCheckupModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<FilingsCheckupModel>(){})).call();
     }
@@ -3425,13 +4466,13 @@ public class AvaTaxClient {
     /**
      * Retrieve worksheet checkup report for company and filing period.
      * 
-     * @param worksheetId The unique id of the worksheet.
+     * @param filingsId The unique id of the worksheet.
      * @param companyId The unique ID of the company that owns the worksheet.
      * @return FilingsCheckupModel
      */
-    public Future<FilingsCheckupModel> filingsCheckupReportAsync(Integer worksheetId, Integer companyId) {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{worksheetId}/checkup");
-        path.applyField("worksheetId", worksheetId);
+    public Future<FilingsCheckupModel> filingsCheckupReportAsync(Integer filingsId, Integer companyId) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{filingsId}/checkup");
+        path.applyField("filingsId", filingsId);
         path.applyField("companyId", companyId);
         return this.threadPool.submit((RestCall<FilingsCheckupModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<FilingsCheckupModel>(){}));
     }
@@ -3574,6 +4615,40 @@ public class AvaTaxClient {
         path.applyField("year", year);
         path.applyField("month", month);
         return this.threadPool.submit((RestCall<String>)restCallFactory.createRestCall("get", path, null, new TypeToken<String>(){}));
+    }
+
+    /**
+     * Retrieve a filing for the specified company and id.
+     * 
+     * This API is available by invitation only.
+     * A "filing period" is the year and month of the date of the latest customer transaction allowed to be reported on a filing, 
+     * 
+     * @param companyId The ID of the company that owns the filings.
+     * @param id The id of the filing return your retrieving
+     * @return FetchResult<FilingReturnModel>
+     */
+    public FetchResult<FilingReturnModel> getFilingReturn(Integer companyId, Integer id) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/returns/{id}");
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
+        return ((RestCall<FetchResult<FilingReturnModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<FilingReturnModel>>(){})).call();
+    }
+
+    /**
+     * Retrieve a filing for the specified company and id.
+     * 
+     * This API is available by invitation only.
+     * A "filing period" is the year and month of the date of the latest customer transaction allowed to be reported on a filing, 
+     * 
+     * @param companyId The ID of the company that owns the filings.
+     * @param id The id of the filing return your retrieving
+     * @return FetchResult<FilingReturnModel>
+     */
+    public Future<FetchResult<FilingReturnModel>> getFilingReturnAsync(Integer companyId, Integer id) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/returns/{id}");
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
+        return this.threadPool.submit((RestCall<FetchResult<FilingReturnModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<FilingReturnModel>>(){}));
     }
 
     /**
@@ -3750,6 +4825,56 @@ public class AvaTaxClient {
         path.applyField("region", region);
         path.applyField("formCode", formCode);
         return this.threadPool.submit((RestCall<FetchResult<FilingModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<FilingModel>>(){}));
+    }
+
+    /**
+     * Retrieve a list of filings for the specified company in the year and month of a given filing period.  
+This gets the basic information from the filings and doesn't include anything extra.
+     * 
+     * @param companyId The ID of the company that owns these batches
+     * @param endPeriodMonth The month of the period you are trying to retrieve
+     * @param endPeriodYear The year of the period you are trying to retrieve
+     * @param frequency The frequency of the return you are trying to retrieve (See FilingFrequencyId::* for a list of allowable values)
+     * @param status The status of the return(s) you are trying to retrieve (See FilingStatusId::* for a list of allowable values)
+     * @param country The country of the return(s) you are trying to retrieve
+     * @param region The region of the return(s) you are trying to retrieve
+     * @return FetchResult<FilingReturnModelBasic>
+     */
+    public FetchResult<FilingReturnModelBasic> getFilingsReturns(Integer companyId, Integer endPeriodMonth, Integer endPeriodYear, FilingFrequencyId frequency, FilingStatusId status, String country, String region) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/returns");
+        path.applyField("companyId", companyId);
+        path.addQuery("endPeriodMonth", endPeriodMonth);
+        path.addQuery("endPeriodYear", endPeriodYear);
+        path.addQuery("frequency", frequency);
+        path.addQuery("status", status);
+        path.addQuery("country", country);
+        path.addQuery("region", region);
+        return ((RestCall<FetchResult<FilingReturnModelBasic>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<FilingReturnModelBasic>>(){})).call();
+    }
+
+    /**
+     * Retrieve a list of filings for the specified company in the year and month of a given filing period.  
+This gets the basic information from the filings and doesn't include anything extra.
+     * 
+     * @param companyId The ID of the company that owns these batches
+     * @param endPeriodMonth The month of the period you are trying to retrieve
+     * @param endPeriodYear The year of the period you are trying to retrieve
+     * @param frequency The frequency of the return you are trying to retrieve (See FilingFrequencyId::* for a list of allowable values)
+     * @param status The status of the return(s) you are trying to retrieve (See FilingStatusId::* for a list of allowable values)
+     * @param country The country of the return(s) you are trying to retrieve
+     * @param region The region of the return(s) you are trying to retrieve
+     * @return FetchResult<FilingReturnModelBasic>
+     */
+    public Future<FetchResult<FilingReturnModelBasic>> getFilingsReturnsAsync(Integer companyId, Integer endPeriodMonth, Integer endPeriodYear, FilingFrequencyId frequency, FilingStatusId status, String country, String region) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/returns");
+        path.applyField("companyId", companyId);
+        path.addQuery("endPeriodMonth", endPeriodMonth);
+        path.addQuery("endPeriodYear", endPeriodYear);
+        path.addQuery("frequency", frequency);
+        path.addQuery("status", status);
+        path.addQuery("country", country);
+        path.addQuery("region", region);
+        return this.threadPool.submit((RestCall<FetchResult<FilingReturnModelBasic>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<FilingReturnModelBasic>>(){}));
     }
 
     /**
@@ -3985,6 +5110,48 @@ public class AvaTaxClient {
     }
 
     /**
+     * Edit an payment for a given filing.
+     * 
+     * This API is available by invitation only.
+     * An "Payment" is usually an increase or decrease to customer funding to Avalara,
+     * such as early filer discount amounts that are refunded to the customer, or efile fees from websites. 
+     * Sometimes may be a manual change in tax liability similar to an augmentation.
+     * This API modifies an payment for an existing tax filing.
+     * 
+     * @param companyId The ID of the company that owns the filing being adjusted.
+     * @param id The ID of the payment being edited.
+     * @param model The updated Payment.
+     * @return FilingPaymentModel
+     */
+    public FilingPaymentModel updateReturnPayment(Integer companyId, Long id, FilingPaymentModel model) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/payment/{id}");
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
+        return ((RestCall<FilingPaymentModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<FilingPaymentModel>(){})).call();
+    }
+
+    /**
+     * Edit an payment for a given filing.
+     * 
+     * This API is available by invitation only.
+     * An "Payment" is usually an increase or decrease to customer funding to Avalara,
+     * such as early filer discount amounts that are refunded to the customer, or efile fees from websites. 
+     * Sometimes may be a manual change in tax liability similar to an augmentation.
+     * This API modifies an payment for an existing tax filing.
+     * 
+     * @param companyId The ID of the company that owns the filing being adjusted.
+     * @param id The ID of the payment being edited.
+     * @param model The updated Payment.
+     * @return FilingPaymentModel
+     */
+    public Future<FilingPaymentModel> updateReturnPaymentAsync(Integer companyId, Long id, FilingPaymentModel model) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/payment/{id}");
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
+        return this.threadPool.submit((RestCall<FilingPaymentModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<FilingPaymentModel>(){}));
+    }
+
+    /**
      * FREE API - Request a free trial of AvaTax
      * 
      * Call this API to obtain a free AvaTax sandbox account.
@@ -4037,11 +5204,15 @@ public class AvaTaxClient {
      * 
      * The TaxRates API is a free-to-use, no cost option for estimating sales tax rates.
      * Any customer can request a free AvaTax account and make use of the TaxRates API.
-     * However, this API is currently limited for US only
      * 
-     * Note that the TaxRates API assumes the sale of general tangible personal property when estimating the sales tax
-     * rate for a specified address.  Avalara provides the `CreateTransaction` API, which provides extensive tax calculation 
-     * support for scenarios including, but not limited to:
+     * Usage of this API is subject to rate limits.  Users who exceed the rate limit will receive HTTP
+     * response code 429 - `Too Many Requests`.
+     * 
+     * This API assumes that you are selling general tangible personal property at a retail point-of-sale
+     * location in the United States only.  
+     * 
+     * For more powerful tax calculation, please consider upgrading to the `CreateTransaction` API,
+     * which supports features including, but not limited to:
      * 
      * * Nexus declarations
      * * Taxability based on product/service type
@@ -4082,11 +5253,15 @@ public class AvaTaxClient {
      * 
      * The TaxRates API is a free-to-use, no cost option for estimating sales tax rates.
      * Any customer can request a free AvaTax account and make use of the TaxRates API.
-     * However, this API is currently limited for US only
      * 
-     * Note that the TaxRates API assumes the sale of general tangible personal property when estimating the sales tax
-     * rate for a specified address.  Avalara provides the `CreateTransaction` API, which provides extensive tax calculation 
-     * support for scenarios including, but not limited to:
+     * Usage of this API is subject to rate limits.  Users who exceed the rate limit will receive HTTP
+     * response code 429 - `Too Many Requests`.
+     * 
+     * This API assumes that you are selling general tangible personal property at a retail point-of-sale
+     * location in the United States only.  
+     * 
+     * For more powerful tax calculation, please consider upgrading to the `CreateTransaction` API,
+     * which supports features including, but not limited to:
      * 
      * * Nexus declarations
      * * Taxability based on product/service type
@@ -4127,11 +5302,15 @@ public class AvaTaxClient {
      * 
      * The TaxRates API is a free-to-use, no cost option for estimating sales tax rates.
      * Any customer can request a free AvaTax account and make use of the TaxRates API.
-     * However, this API is currently limited for US only
      * 
-     * Note that the TaxRates API assumes the sale of general tangible personal property when estimating the sales tax
-     * rate for a specified address.  Avalara provides the `CreateTransaction` API, which provides extensive tax calculation 
-     * support for scenarios including, but not limited to:
+     * Usage of this API is subject to rate limits.  Users who exceed the rate limit will receive HTTP
+     * response code 429 - `Too Many Requests`.
+     * 
+     * This API assumes that you are selling general tangible personal property at a retail point-of-sale
+     * location in the United States only.  
+     * 
+     * For more powerful tax calculation, please consider upgrading to the `CreateTransaction` API,
+     * which supports features including, but not limited to:
      * 
      * * Nexus declarations
      * * Taxability based on product/service type
@@ -4162,11 +5341,15 @@ public class AvaTaxClient {
      * 
      * The TaxRates API is a free-to-use, no cost option for estimating sales tax rates.
      * Any customer can request a free AvaTax account and make use of the TaxRates API.
-     * However, this API is currently limited for US only
      * 
-     * Note that the TaxRates API assumes the sale of general tangible personal property when estimating the sales tax
-     * rate for a specified address.  Avalara provides the `CreateTransaction` API, which provides extensive tax calculation 
-     * support for scenarios including, but not limited to:
+     * Usage of this API is subject to rate limits.  Users who exceed the rate limit will receive HTTP
+     * response code 429 - `Too Many Requests`.
+     * 
+     * This API assumes that you are selling general tangible personal property at a retail point-of-sale
+     * location in the United States only.  
+     * 
+     * For more powerful tax calculation, please consider upgrading to the `CreateTransaction` API,
+     * which supports features including, but not limited to:
      * 
      * * Nexus declarations
      * * Taxability based on product/service type
@@ -4767,62 +5950,6 @@ public class AvaTaxClient {
     }
 
     /**
-     * Point of sale data file generation
-     * 
-     * Builds a point-of-sale data file containing tax rates and rules for this location, containing tax rates for all
-     * items defined for this company.  This data file can be used to correctly calculate tax in the event a 
-     * point-of-sale device is not able to reach AvaTax.
-     * This data file can be customized for specific partner devices and usage conditions.
-     * The result of this API is the file you requested in the format you requested using the 'responseType' field.
-     * 
-     * @param companyId The ID number of the company that owns this location.
-     * @param id The ID number of the location to retrieve point-of-sale data.
-     * @param date The date for which point-of-sale data would be calculated (today by default)
-     * @param format The format of the file (JSON by default) (See PointOfSaleFileType::* for a list of allowable values)
-     * @param partnerId If specified, requests a custom partner-formatted version of the file. (See PointOfSalePartnerId::* for a list of allowable values)
-     * @param includeJurisCodes When true, the file will include jurisdiction codes in the result.
-     * @return String
-     */
-    public String buildPointOfSaleDataForLocation(Integer companyId, Integer id, Date date, PointOfSaleFileType format, PointOfSalePartnerId partnerId, Boolean includeJurisCodes) throws Exception {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/locations/{id}/pointofsaledata");
-        path.applyField("companyId", companyId);
-        path.applyField("id", id);
-        path.addQuery("date", date);
-        path.addQuery("format", format);
-        path.addQuery("partnerId", partnerId);
-        path.addQuery("includeJurisCodes", includeJurisCodes);
-        return ((RestCall<String>)restCallFactory.createRestCall("get", path, null, new TypeToken<String>(){})).call();
-    }
-
-    /**
-     * Point of sale data file generation
-     * 
-     * Builds a point-of-sale data file containing tax rates and rules for this location, containing tax rates for all
-     * items defined for this company.  This data file can be used to correctly calculate tax in the event a 
-     * point-of-sale device is not able to reach AvaTax.
-     * This data file can be customized for specific partner devices and usage conditions.
-     * The result of this API is the file you requested in the format you requested using the 'responseType' field.
-     * 
-     * @param companyId The ID number of the company that owns this location.
-     * @param id The ID number of the location to retrieve point-of-sale data.
-     * @param date The date for which point-of-sale data would be calculated (today by default)
-     * @param format The format of the file (JSON by default) (See PointOfSaleFileType::* for a list of allowable values)
-     * @param partnerId If specified, requests a custom partner-formatted version of the file. (See PointOfSalePartnerId::* for a list of allowable values)
-     * @param includeJurisCodes When true, the file will include jurisdiction codes in the result.
-     * @return String
-     */
-    public Future<String> buildPointOfSaleDataForLocationAsync(Integer companyId, Integer id, Date date, PointOfSaleFileType format, PointOfSalePartnerId partnerId, Boolean includeJurisCodes) {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/locations/{id}/pointofsaledata");
-        path.applyField("companyId", companyId);
-        path.applyField("id", id);
-        path.addQuery("date", date);
-        path.addQuery("format", format);
-        path.addQuery("partnerId", partnerId);
-        path.addQuery("includeJurisCodes", includeJurisCodes);
-        return this.threadPool.submit((RestCall<String>)restCallFactory.createRestCall("get", path, null, new TypeToken<String>(){}));
-    }
-
-    /**
      * Create a new location
      * 
      * @param companyId The ID of the company that owns this location.
@@ -4883,15 +6010,21 @@ public class AvaTaxClient {
      * An 'Location' represents a physical address where a company does business.
      * Many taxing authorities require that you define a list of all locations where your company does business.
      * These locations may require additional custom configuration or tax registration with these authorities.
+     * For more information on metadata requirements, see the '/api/v2/definitions/locationquestions' API.
+     * 
+     * You may specify one or more of the following values in the `$include` parameter to fetch additional nested data, using commas to separate multiple values:
+     *             
      * 
      * @param companyId The ID of the company that owns this location
      * @param id The primary key of this location
+     * @param include A comma separated list of child objects to return underneath the primary object.
      * @return LocationModel
      */
-    public LocationModel getLocation(Integer companyId, Integer id) throws Exception {
+    public LocationModel getLocation(Integer companyId, Integer id, String include) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/locations/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
+        path.addQuery("$include", include);
         return ((RestCall<LocationModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<LocationModel>(){})).call();
     }
 
@@ -4902,15 +6035,21 @@ public class AvaTaxClient {
      * An 'Location' represents a physical address where a company does business.
      * Many taxing authorities require that you define a list of all locations where your company does business.
      * These locations may require additional custom configuration or tax registration with these authorities.
+     * For more information on metadata requirements, see the '/api/v2/definitions/locationquestions' API.
+     * 
+     * You may specify one or more of the following values in the `$include` parameter to fetch additional nested data, using commas to separate multiple values:
+     *             
      * 
      * @param companyId The ID of the company that owns this location
      * @param id The primary key of this location
+     * @param include A comma separated list of child objects to return underneath the primary object.
      * @return LocationModel
      */
-    public Future<LocationModel> getLocationAsync(Integer companyId, Integer id) {
+    public Future<LocationModel> getLocationAsync(Integer companyId, Integer id, String include) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/locations/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
+        path.addQuery("$include", include);
         return this.threadPool.submit((RestCall<LocationModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<LocationModel>(){}));
     }
 
@@ -4924,6 +6063,9 @@ public class AvaTaxClient {
      * For more information on metadata requirements, see the '/api/v2/definitions/locationquestions' API.
      * 
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * Paginate your results using the `$top`, `$skip`, and `$orderby` parameters.
+     * You may specify one or more of the following values in the `$include` parameter to fetch additional nested data, using commas to separate multiple values:
+     *             
      * 
      * @param companyId The ID of the company that owns these locations
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
@@ -4954,6 +6096,9 @@ public class AvaTaxClient {
      * For more information on metadata requirements, see the '/api/v2/definitions/locationquestions' API.
      * 
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * Paginate your results using the `$top`, `$skip`, and `$orderby` parameters.
+     * You may specify one or more of the following values in the `$include` parameter to fetch additional nested data, using commas to separate multiple values:
+     *             
      * 
      * @param companyId The ID of the company that owns these locations
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
@@ -4984,6 +6129,10 @@ public class AvaTaxClient {
      * For more information on metadata requirements, see the '/api/v2/definitions/locationquestions' API.
      * 
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * Paginate your results using the `$top`, `$skip`, and `$orderby` parameters.
+     * 
+     * You may specify one or more of the following values in the `$include` parameter to fetch additional nested data, using commas to separate multiple values:
+     *             
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * @param include A comma separated list of child objects to return underneath the primary object.
@@ -5012,6 +6161,10 @@ public class AvaTaxClient {
      * For more information on metadata requirements, see the '/api/v2/definitions/locationquestions' API.
      * 
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * Paginate your results using the `$top`, `$skip`, and `$orderby` parameters.
+     * 
+     * You may specify one or more of the following values in the `$include` parameter to fetch additional nested data, using commas to separate multiple values:
+     *             
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * @param include A comma separated list of child objects to return underneath the primary object.
@@ -5649,6 +6802,86 @@ public class AvaTaxClient {
     }
 
     /**
+     * Delete a single responsibility
+     * 
+     * This API is available by invitation only.
+     * Mark the existing notice object at this URL as deleted.
+     * A 'notice' represents a letter sent to a business by a tax authority regarding tax filing issues.  Avalara
+     * 
+     * @param companyId The ID of the company that owns this notice.
+     * @param noticeId The ID of the notice you wish to delete.
+     * @param id The ID of the responsibility you wish to delete.
+     * @return ArrayList<ErrorDetail>
+     */
+    public ArrayList<ErrorDetail> deleteResponsibilities(Integer companyId, Integer noticeId, Integer id) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/{noticeId}/responsibilities/{id}");
+        path.applyField("companyId", companyId);
+        path.applyField("noticeId", noticeId);
+        path.applyField("id", id);
+        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){})).call();
+    }
+
+    /**
+     * Delete a single responsibility
+     * 
+     * This API is available by invitation only.
+     * Mark the existing notice object at this URL as deleted.
+     * A 'notice' represents a letter sent to a business by a tax authority regarding tax filing issues.  Avalara
+     * 
+     * @param companyId The ID of the company that owns this notice.
+     * @param noticeId The ID of the notice you wish to delete.
+     * @param id The ID of the responsibility you wish to delete.
+     * @return ArrayList<ErrorDetail>
+     */
+    public Future<ArrayList<ErrorDetail>> deleteResponsibilitiesAsync(Integer companyId, Integer noticeId, Integer id) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/{noticeId}/responsibilities/{id}");
+        path.applyField("companyId", companyId);
+        path.applyField("noticeId", noticeId);
+        path.applyField("id", id);
+        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){}));
+    }
+
+    /**
+     * Delete a single root cause.
+     * 
+     * This API is available by invitation only.
+     * Mark the existing notice object at this URL as deleted.
+     * A 'notice' represents a letter sent to a business by a tax authority regarding tax filing issues.  Avalara
+     * 
+     * @param companyId The ID of the company that owns this notice.
+     * @param noticeId The ID of the notice you wish to delete.
+     * @param id The ID of the root cause you wish to delete.
+     * @return ArrayList<ErrorDetail>
+     */
+    public ArrayList<ErrorDetail> deleteRootCauses(Integer companyId, Integer noticeId, Integer id) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/{noticeId}/rootcauses/{id}");
+        path.applyField("companyId", companyId);
+        path.applyField("noticeId", noticeId);
+        path.applyField("id", id);
+        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){})).call();
+    }
+
+    /**
+     * Delete a single root cause.
+     * 
+     * This API is available by invitation only.
+     * Mark the existing notice object at this URL as deleted.
+     * A 'notice' represents a letter sent to a business by a tax authority regarding tax filing issues.  Avalara
+     * 
+     * @param companyId The ID of the company that owns this notice.
+     * @param noticeId The ID of the notice you wish to delete.
+     * @param id The ID of the root cause you wish to delete.
+     * @return ArrayList<ErrorDetail>
+     */
+    public Future<ArrayList<ErrorDetail>> deleteRootCausesAsync(Integer companyId, Integer noticeId, Integer id) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/{noticeId}/rootcauses/{id}");
+        path.applyField("companyId", companyId);
+        path.applyField("noticeId", noticeId);
+        path.applyField("id", id);
+        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){}));
+    }
+
+    /**
      * Retrieve a single attachment
      * 
      * This API is available by invitation only.
@@ -6074,38 +7307,6 @@ public class AvaTaxClient {
     public Future<NewAccountModel> requestNewAccountAsync(NewAccountRequestModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/request");
         return this.threadPool.submit((RestCall<NewAccountModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<NewAccountModel>(){}));
-    }
-
-    /**
-     * Point of sale data file generation
-     * 
-     * Builds a point-of-sale data file containing tax rates and rules for items and locations that can be used
-     * to correctly calculate tax in the event a point-of-sale device is not able to reach AvaTax.
-     * This data file can be customized for specific partner devices and usage conditions.
-     * The result of this API is the file you requested in the format you requested using the 'responseType' field.
-     * 
-     * @param model Parameters about the desired file format and report format, specifying which company, locations and TaxCodes to include.
-     * @return String
-     */
-    public String buildPointOfSaleDataFile(PointOfSaleDataRequestModel model) throws Exception {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/pointofsaledata/build");
-        return ((RestCall<String>)restCallFactory.createRestCall("post", path, model, new TypeToken<String>(){})).call();
-    }
-
-    /**
-     * Point of sale data file generation
-     * 
-     * Builds a point-of-sale data file containing tax rates and rules for items and locations that can be used
-     * to correctly calculate tax in the event a point-of-sale device is not able to reach AvaTax.
-     * This data file can be customized for specific partner devices and usage conditions.
-     * The result of this API is the file you requested in the format you requested using the 'responseType' field.
-     * 
-     * @param model Parameters about the desired file format and report format, specifying which company, locations and TaxCodes to include.
-     * @return String
-     */
-    public Future<String> buildPointOfSaleDataFileAsync(PointOfSaleDataRequestModel model) {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/pointofsaledata/build");
-        return this.threadPool.submit((RestCall<String>)restCallFactory.createRestCall("post", path, model, new TypeToken<String>(){}));
     }
 
     /**
@@ -7212,6 +8413,116 @@ public class AvaTaxClient {
         path.applyField("companyId", companyId);
         path.applyField("id", id);
         return this.threadPool.submit((RestCall<TaxCodeModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<TaxCodeModel>(){}));
+    }
+
+    /**
+     * Build a multi-location tax content file
+     * 
+     * Builds a tax content file containing information useful for a retail point-of-sale solution.
+     * 
+     * This file contains tax rates and rules for items and locations that can be used
+     * to correctly calculate tax in the event a point-of-sale device is not able to reach AvaTax.
+     * 
+     * This data file can be customized for specific partner devices and usage conditions.
+     * 
+     * The result of this API is the file you requested in the format you requested using the `responseType` field.
+     * 
+     * This API builds the file on demand, and is limited to files with no more than 7500 scenarios.  To build a tax content
+     * 
+     * @param model Parameters about the desired file format and report format, specifying which company, locations and TaxCodes to include.
+     * @return String
+     */
+    public String buildTaxContentFile(PointOfSaleDataRequestModel model) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/pointofsaledata/build");
+        return ((RestCall<String>)restCallFactory.createRestCall("post", path, model, new TypeToken<String>(){})).call();
+    }
+
+    /**
+     * Build a multi-location tax content file
+     * 
+     * Builds a tax content file containing information useful for a retail point-of-sale solution.
+     * 
+     * This file contains tax rates and rules for items and locations that can be used
+     * to correctly calculate tax in the event a point-of-sale device is not able to reach AvaTax.
+     * 
+     * This data file can be customized for specific partner devices and usage conditions.
+     * 
+     * The result of this API is the file you requested in the format you requested using the `responseType` field.
+     * 
+     * This API builds the file on demand, and is limited to files with no more than 7500 scenarios.  To build a tax content
+     * 
+     * @param model Parameters about the desired file format and report format, specifying which company, locations and TaxCodes to include.
+     * @return String
+     */
+    public Future<String> buildTaxContentFileAsync(PointOfSaleDataRequestModel model) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/pointofsaledata/build");
+        return this.threadPool.submit((RestCall<String>)restCallFactory.createRestCall("post", path, model, new TypeToken<String>(){}));
+    }
+
+    /**
+     * Build a tax content file for a single location
+     * 
+     * Builds a tax content file containing information useful for a retail point-of-sale solution.
+     * 
+     * This file contains tax rates and rules for all items for a single location.  Data from this API
+     * can be used to correctly calculate tax in the event a point-of-sale device is not able to reach AvaTax.
+     * 
+     * This data file can be customized for specific partner devices and usage conditions.
+     * 
+     * The result of this API is the file you requested in the format you requested using the `responseType` field.
+     * 
+     * This API builds the file on demand, and is limited to files with no more than 7500 scenarios.  To build a tax content
+     * 
+     * @param companyId The ID number of the company that owns this location.
+     * @param id The ID number of the location to retrieve point-of-sale data.
+     * @param date The date for which point-of-sale data would be calculated (today by default)
+     * @param format The format of the file (JSON by default) (See PointOfSaleFileType::* for a list of allowable values)
+     * @param partnerId If specified, requests a custom partner-formatted version of the file. (See PointOfSalePartnerId::* for a list of allowable values)
+     * @param includeJurisCodes When true, the file will include jurisdiction codes in the result.
+     * @return String
+     */
+    public String buildTaxContentFileForLocation(Integer companyId, Integer id, Date date, PointOfSaleFileType format, PointOfSalePartnerId partnerId, Boolean includeJurisCodes) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/locations/{id}/pointofsaledata");
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
+        path.addQuery("date", date);
+        path.addQuery("format", format);
+        path.addQuery("partnerId", partnerId);
+        path.addQuery("includeJurisCodes", includeJurisCodes);
+        return ((RestCall<String>)restCallFactory.createRestCall("get", path, null, new TypeToken<String>(){})).call();
+    }
+
+    /**
+     * Build a tax content file for a single location
+     * 
+     * Builds a tax content file containing information useful for a retail point-of-sale solution.
+     * 
+     * This file contains tax rates and rules for all items for a single location.  Data from this API
+     * can be used to correctly calculate tax in the event a point-of-sale device is not able to reach AvaTax.
+     * 
+     * This data file can be customized for specific partner devices and usage conditions.
+     * 
+     * The result of this API is the file you requested in the format you requested using the `responseType` field.
+     * 
+     * This API builds the file on demand, and is limited to files with no more than 7500 scenarios.  To build a tax content
+     * 
+     * @param companyId The ID number of the company that owns this location.
+     * @param id The ID number of the location to retrieve point-of-sale data.
+     * @param date The date for which point-of-sale data would be calculated (today by default)
+     * @param format The format of the file (JSON by default) (See PointOfSaleFileType::* for a list of allowable values)
+     * @param partnerId If specified, requests a custom partner-formatted version of the file. (See PointOfSalePartnerId::* for a list of allowable values)
+     * @param includeJurisCodes When true, the file will include jurisdiction codes in the result.
+     * @return String
+     */
+    public Future<String> buildTaxContentFileForLocationAsync(Integer companyId, Integer id, Date date, PointOfSaleFileType format, PointOfSalePartnerId partnerId, Boolean includeJurisCodes) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/locations/{id}/pointofsaledata");
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
+        path.addQuery("date", date);
+        path.addQuery("format", format);
+        path.addQuery("partnerId", partnerId);
+        path.addQuery("includeJurisCodes", includeJurisCodes);
+        return this.threadPool.submit((RestCall<String>)restCallFactory.createRestCall("get", path, null, new TypeToken<String>(){}));
     }
 
     /**

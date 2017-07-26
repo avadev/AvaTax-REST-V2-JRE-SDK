@@ -20,12 +20,22 @@ import java.util.HashMap;
  * @author     Dustin Welden <dustin.welden@avalara.com>
  * @copyright  2004-2017 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
- * @version    17.5.2-77
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
  */
 
 /**
- * Tax Rate Model
+ * Contains information about the general tangible personal property sales tax rates for this jurisdiction.
+* 
+* This rate is calculated by making assumptions about the tax calculation process. It does not account for:
+* 
+* * Sourcing rules, such as origin-and-destination based transactions.
+* * Product taxability rules, such as different tax rates for different product types.
+* * Nexus declarations, where some customers are not obligated to collect tax in specific jurisdictions.
+* * Tax thresholds and rate differences by amounts.
+* * And many more custom use cases.
+* 
+* To upgrade to a fully-featured and accurate tax process that handles these scenarios correctly, please
+* contact Avalara to upgrade to AvaTax!
  */
 public class TaxRateModel {
 
@@ -35,7 +45,8 @@ public class TaxRateModel {
     /**
      * Getter for totalRate
      *
-     * Total Rate
+     * The total sales tax rate for general tangible personal property sold at a retail point of presence
+    * in this jurisdiction on this date.
      */
     public BigDecimal getTotalRate() {
         return this.totalRate;
@@ -44,7 +55,8 @@ public class TaxRateModel {
     /**
      * Setter for totalRate
      *
-     * Total Rate
+     * The total sales tax rate for general tangible personal property sold at a retail point of presence
+    * in this jurisdiction on this date.
      */
     public void setTotalRate(BigDecimal value) {
         this.totalRate = value;
@@ -56,7 +68,8 @@ public class TaxRateModel {
     /**
      * Getter for rates
      *
-     * Rates
+     * The list of individual rate elements for general tangible personal property sold at a retail
+    * point of presence in this jurisdiction on this date.
      */
     public ArrayList<RateModel> getRates() {
         return this.rates;
@@ -65,7 +78,8 @@ public class TaxRateModel {
     /**
      * Setter for rates
      *
-     * Rates
+     * The list of individual rate elements for general tangible personal property sold at a retail
+    * point of presence in this jurisdiction on this date.
      */
     public void setRates(ArrayList<RateModel> value) {
         this.rates = value;

@@ -20,7 +20,6 @@ import java.util.HashMap;
  * @author     Dustin Welden <dustin.welden@avalara.com>
  * @copyright  2004-2017 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
- * @version    17.5.2-77
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
  */
 
@@ -174,6 +173,27 @@ public class BatchFileModel {
      */
     public void setFileExtension(String value) {
         this.fileExtension = value;
+    }
+
+
+    private String filePath;
+
+    /**
+     * Getter for filePath
+     *
+     * Path to the file - name/S3 key
+     */
+    public String getFilePath() {
+        return this.filePath;
+    }
+
+    /**
+     * Setter for filePath
+     *
+     * Path to the file - name/S3 key
+     */
+    public void setFilePath(String value) {
+        this.filePath = value;
     }
 
 

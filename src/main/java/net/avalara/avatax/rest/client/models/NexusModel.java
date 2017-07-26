@@ -20,7 +20,6 @@ import java.util.HashMap;
  * @author     Dustin Welden <dustin.welden@avalara.com>
  * @copyright  2004-2017 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
- * @version    17.5.2-77
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
  */
 
@@ -541,6 +540,27 @@ public class NexusModel {
      */
     public void setNexusTaxTypeGroup(String value) {
         this.nexusTaxTypeGroup = value;
+    }
+
+
+    private Long taxAuthorityId;
+
+    /**
+     * Getter for taxAuthorityId
+     *
+     * The tax authority id associated with the jurisdiction the nexus is for
+     */
+    public Long getTaxAuthorityId() {
+        return this.taxAuthorityId;
+    }
+
+    /**
+     * Setter for taxAuthorityId
+     *
+     * The tax authority id associated with the jurisdiction the nexus is for
+     */
+    public void setTaxAuthorityId(Long value) {
+        this.taxAuthorityId = value;
     }
 
 
