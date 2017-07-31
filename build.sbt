@@ -4,7 +4,7 @@ organization := "net.avalara.avatax"
 
 version := "17.7.0.96"
 
-scalaVersion := "17.7.0.96"
+scalaVersion := "2.11.8"
 
 useGpg := true
 
