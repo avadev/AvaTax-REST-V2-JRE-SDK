@@ -6,6 +6,8 @@ version := "17.7.0.96"
 
 scalaVersion := "2.11.8"
 
+javacOptions ++= Seq("-source", "1.8", "-target", "1.7")
+
 useGpg := true
 
 usePgpKeyHex("7C14D882A238CB42")
