@@ -1,4 +1,4 @@
-﻿package net.avalara.avatax.rest.client;
+package net.avalara.avatax.rest.client;
 
 import com.google.gson.reflect.TypeToken;
 import net.avalara.avatax.rest.client.models.CreateTransactionModel;
