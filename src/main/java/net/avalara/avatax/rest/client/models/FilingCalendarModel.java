@@ -20,7 +20,6 @@ import java.util.HashMap;
  * @author     Dustin Welden <dustin.welden@avalara.com>
  * @copyright  2004-2017 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
- * @version    17.5.2-77
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
  */
 
@@ -78,7 +77,7 @@ public class FilingCalendarModel {
     /**
      * Getter for returnName
      *
-     * The name of the tax form to file.
+     * DEPRECATED - The legacy return name of the tax form to file. Please use `taxFormCode` instead.
      */
     public String getReturnName() {
         return this.returnName;
@@ -87,10 +86,75 @@ public class FilingCalendarModel {
     /**
      * Setter for returnName
      *
-     * The name of the tax form to file.
+     * DEPRECATED - The legacy return name of the tax form to file. Please use `taxFormCode` instead.
      */
     public void setReturnName(String value) {
         this.returnName = value;
+    }
+
+
+    private String formCountry;
+
+    /**
+     * Getter for formCountry
+     *
+     * The two character ISO 3166 country code of the country that issued the tax form for this filing calendar.
+     */
+    public String getFormCountry() {
+        return this.formCountry;
+    }
+
+    /**
+     * Setter for formCountry
+     *
+     * The two character ISO 3166 country code of the country that issued the tax form for this filing calendar.
+     */
+    public void setFormCountry(String value) {
+        this.formCountry = value;
+    }
+
+
+    private String formRegion;
+
+    /**
+     * Getter for formRegion
+     *
+     * The two or three character ISO 3166 code of the region / state / province that issued the tax form for this filing calendar.
+     */
+    public String getFormRegion() {
+        return this.formRegion;
+    }
+
+    /**
+     * Setter for formRegion
+     *
+     * The two or three character ISO 3166 code of the region / state / province that issued the tax form for this filing calendar.
+     */
+    public void setFormRegion(String value) {
+        this.formRegion = value;
+    }
+
+
+    private String taxFormCode;
+
+    /**
+     * Getter for taxFormCode
+     *
+     * The Avalara standard tax form code of the tax form for this filing calendar. The first two characters of the tax form code
+    * are the ISO 3166 country code of the country that issued this form.
+     */
+    public String getTaxFormCode() {
+        return this.taxFormCode;
+    }
+
+    /**
+     * Setter for taxFormCode
+     *
+     * The Avalara standard tax form code of the tax form for this filing calendar. The first two characters of the tax form code
+    * are the ISO 3166 country code of the country that issued this form.
+     */
+    public void setTaxFormCode(String value) {
+        this.taxFormCode = value;
     }
 
 
@@ -267,7 +331,8 @@ public class FilingCalendarModel {
     /**
      * Getter for line1
      *
-     * The first line of the physical address to be used when filing this tax return.
+     * DEPRECATED - The first line of the mailing address that will be used when filling out this tax return.
+    * Field will be no longer be available after the 17.9 release.
      */
     public String getLine1() {
         return this.line1;
@@ -276,7 +341,8 @@ public class FilingCalendarModel {
     /**
      * Setter for line1
      *
-     * The first line of the physical address to be used when filing this tax return.
+     * DEPRECATED - The first line of the mailing address that will be used when filling out this tax return.
+    * Field will be no longer be available after the 17.9 release.
      */
     public void setLine1(String value) {
         this.line1 = value;
@@ -288,8 +354,10 @@ public class FilingCalendarModel {
     /**
      * Getter for line2
      *
-     * The second line of the physical address to be used when filing this tax return.
+     * DEPRECATED - The second line of the mailing address that will be used when filling out this tax return.
     * Please note that some tax forms do not support multiple address lines.
+    * 
+    * Field will be no longer be available after the 17.9 release.
      */
     public String getLine2() {
         return this.line2;
@@ -298,8 +366,10 @@ public class FilingCalendarModel {
     /**
      * Setter for line2
      *
-     * The second line of the physical address to be used when filing this tax return.
+     * DEPRECATED - The second line of the mailing address that will be used when filling out this tax return.
     * Please note that some tax forms do not support multiple address lines.
+    * 
+    * Field will be no longer be available after the 17.9 release.
      */
     public void setLine2(String value) {
         this.line2 = value;
@@ -311,7 +381,9 @@ public class FilingCalendarModel {
     /**
      * Getter for city
      *
-     * The city name of the physical address to be used when filing this tax return.
+     * DEPRECATED - The city name of the mailing address that will be used when filling out this tax return.
+    * 
+    * Field will be no longer be available after the 17.9 release.
      */
     public String getCity() {
         return this.city;
@@ -320,7 +392,9 @@ public class FilingCalendarModel {
     /**
      * Setter for city
      *
-     * The city name of the physical address to be used when filing this tax return.
+     * DEPRECATED - The city name of the mailing address that will be used when filling out this tax return.
+    * 
+    * Field will be no longer be available after the 17.9 release.
      */
     public void setCity(String value) {
         this.city = value;
@@ -332,7 +406,9 @@ public class FilingCalendarModel {
     /**
      * Getter for region
      *
-     * The state, region, or province of the physical address to be used when filing this tax return.
+     * DEPRECATED - The state, region, or province of the mailing address that will be used when filling out this tax return.
+    * 
+    * Field will be no longer be available after the 17.9 release.
      */
     public String getRegion() {
         return this.region;
@@ -341,7 +417,9 @@ public class FilingCalendarModel {
     /**
      * Setter for region
      *
-     * The state, region, or province of the physical address to be used when filing this tax return.
+     * DEPRECATED - The state, region, or province of the mailing address that will be used when filling out this tax return.
+    * 
+    * Field will be no longer be available after the 17.9 release.
      */
     public void setRegion(String value) {
         this.region = value;
@@ -353,7 +431,9 @@ public class FilingCalendarModel {
     /**
      * Getter for postalCode
      *
-     * The postal code or zip code of the physical address to be used when filing this tax return.
+     * DEPRECATED - The postal code or zip code of the mailing address that will be used when filling out this tax return.
+    * 
+    * Field will be no longer be available after the 17.9 release.
      */
     public String getPostalCode() {
         return this.postalCode;
@@ -362,7 +442,9 @@ public class FilingCalendarModel {
     /**
      * Setter for postalCode
      *
-     * The postal code or zip code of the physical address to be used when filing this tax return.
+     * DEPRECATED - The postal code or zip code of the mailing address that will be used when filling out this tax return.
+    * 
+    * Field will be no longer be available after the 17.9 release.
      */
     public void setPostalCode(String value) {
         this.postalCode = value;
@@ -374,7 +456,9 @@ public class FilingCalendarModel {
     /**
      * Getter for country
      *
-     * The two character ISO-3166 country code of the physical address to be used when filing this return.
+     * DEPRECATED - The two character ISO-3166 country code of the mailing address that will be used when filling out this tax return.
+    * 
+    * Field will be no longer be available after the 17.9 release.
      */
     public String getCountry() {
         return this.country;
@@ -383,10 +467,140 @@ public class FilingCalendarModel {
     /**
      * Setter for country
      *
-     * The two character ISO-3166 country code of the physical address to be used when filing this return.
+     * DEPRECATED - The two character ISO-3166 country code of the mailing address that will be used when filling out this tax return.
+    * 
+    * Field will be no longer be available after the 17.9 release.
      */
     public void setCountry(String value) {
         this.country = value;
+    }
+
+
+    private String mailingAddressLine1;
+
+    /**
+     * Getter for mailingAddressLine1
+     *
+     * The first line of the mailing address that will be used when filling out this tax return.
+     */
+    public String getMailingAddressLine1() {
+        return this.mailingAddressLine1;
+    }
+
+    /**
+     * Setter for mailingAddressLine1
+     *
+     * The first line of the mailing address that will be used when filling out this tax return.
+     */
+    public void setMailingAddressLine1(String value) {
+        this.mailingAddressLine1 = value;
+    }
+
+
+    private String mailingAddressLine2;
+
+    /**
+     * Getter for mailingAddressLine2
+     *
+     * The second line of the mailing address that will be used when filling out this tax return.
+    * Please note that some tax forms do not support multiple address lines.
+     */
+    public String getMailingAddressLine2() {
+        return this.mailingAddressLine2;
+    }
+
+    /**
+     * Setter for mailingAddressLine2
+     *
+     * The second line of the mailing address that will be used when filling out this tax return.
+    * Please note that some tax forms do not support multiple address lines.
+     */
+    public void setMailingAddressLine2(String value) {
+        this.mailingAddressLine2 = value;
+    }
+
+
+    private String mailingAddressCity;
+
+    /**
+     * Getter for mailingAddressCity
+     *
+     * The city name of the mailing address that will be used when filling out this tax return.
+     */
+    public String getMailingAddressCity() {
+        return this.mailingAddressCity;
+    }
+
+    /**
+     * Setter for mailingAddressCity
+     *
+     * The city name of the mailing address that will be used when filling out this tax return.
+     */
+    public void setMailingAddressCity(String value) {
+        this.mailingAddressCity = value;
+    }
+
+
+    private String mailingAddressRegion;
+
+    /**
+     * Getter for mailingAddressRegion
+     *
+     * The state, region, or province of the mailing address that will be used when filling out this tax return.
+     */
+    public String getMailingAddressRegion() {
+        return this.mailingAddressRegion;
+    }
+
+    /**
+     * Setter for mailingAddressRegion
+     *
+     * The state, region, or province of the mailing address that will be used when filling out this tax return.
+     */
+    public void setMailingAddressRegion(String value) {
+        this.mailingAddressRegion = value;
+    }
+
+
+    private String mailingAddressPostalCode;
+
+    /**
+     * Getter for mailingAddressPostalCode
+     *
+     * The postal code or zip code of the mailing address that will be used when filling out this tax return.
+     */
+    public String getMailingAddressPostalCode() {
+        return this.mailingAddressPostalCode;
+    }
+
+    /**
+     * Setter for mailingAddressPostalCode
+     *
+     * The postal code or zip code of the mailing address that will be used when filling out this tax return.
+     */
+    public void setMailingAddressPostalCode(String value) {
+        this.mailingAddressPostalCode = value;
+    }
+
+
+    private String mailingAddressCountry;
+
+    /**
+     * Getter for mailingAddressCountry
+     *
+     * The two character ISO-3166 country code of the mailing address that will be used when filling out this tax return.
+     */
+    public String getMailingAddressCountry() {
+        return this.mailingAddressCountry;
+    }
+
+    /**
+     * Setter for mailingAddressCountry
+     *
+     * The two character ISO-3166 country code of the mailing address that will be used when filling out this tax return.
+     */
+    public void setMailingAddressCountry(String value) {
+        this.mailingAddressCountry = value;
     }
 
 

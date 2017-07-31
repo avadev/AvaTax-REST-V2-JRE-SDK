@@ -40,11 +40,11 @@ class AvaTaxClientSpec extends fixture.FreeSpec {
       assert(address.getValidatedAddresses.get(0).getCountry == "US")
     }
     "return the complete list of countries" in { accountInfo =>
-      val countries = client.withSecurity(accountInfo.username, accountInfo.password).listCountries().getValue.asScala
+      val countries = client.withSecurity(accountInfo.username, accountInfo.password).listCountries("", 0, 0, "").getValue.asScala
       assert(countries.length == 254)
     }
     "return a nexus by its address" in { accountInfo =>
-      val nexusModel = client.withSecurity(accountInfo.username, accountInfo.password).listNexusByAddress("100 ravine ln ne", "", "", "Bainbridge Island", "WA", "98110", "US").getValue.asScala
+      val nexusModel = client.withSecurity(accountInfo.username, accountInfo.password).listNexusByAddress("100 ravine ln ne", "", "", "Bainbridge Island", "WA", "98110", "US", "", 0, 0, "").getValue.asScala
       assert(nexusModel.nonEmpty)
     }
     "return a tax code" in { accountInfo =>

@@ -20,7 +20,6 @@ import java.util.HashMap;
  * @author     Dustin Welden <dustin.welden@avalara.com>
  * @copyright  2004-2017 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
- * @version    17.5.2-77
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
  */
 
@@ -636,6 +635,48 @@ public class FilingReturnModel {
      */
     public void setAugmentations(ArrayList<FilingAugmentationModel> value) {
         this.augmentations = value;
+    }
+
+
+    private BigDecimal totalPayments;
+
+    /**
+     * Getter for totalPayments
+     *
+     * Total amount of payments on this return
+     */
+    public BigDecimal getTotalPayments() {
+        return this.totalPayments;
+    }
+
+    /**
+     * Setter for totalPayments
+     *
+     * Total amount of payments on this return
+     */
+    public void setTotalPayments(BigDecimal value) {
+        this.totalPayments = value;
+    }
+
+
+    private ArrayList<FilingPaymentModel> payments;
+
+    /**
+     * Getter for payments
+     *
+     * The payments for this return.
+     */
+    public ArrayList<FilingPaymentModel> getPayments() {
+        return this.payments;
+    }
+
+    /**
+     * Setter for payments
+     *
+     * The payments for this return.
+     */
+    public void setPayments(ArrayList<FilingPaymentModel> value) {
+        this.payments = value;
     }
 
 

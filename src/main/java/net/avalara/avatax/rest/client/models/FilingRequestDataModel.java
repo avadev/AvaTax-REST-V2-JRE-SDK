@@ -20,7 +20,6 @@ import java.util.HashMap;
  * @author     Dustin Welden <dustin.welden@avalara.com>
  * @copyright  2004-2017 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
- * @version    17.5.2-77
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
  */
 
@@ -57,7 +56,7 @@ public class FilingRequestDataModel {
     /**
      * Getter for returnName
      *
-     * The return name of the requested calendar
+     * DEPRECATED - The legacy return name of the requested calendar.
      */
     public String getReturnName() {
         return this.returnName;
@@ -66,10 +65,33 @@ public class FilingRequestDataModel {
     /**
      * Setter for returnName
      *
-     * The return name of the requested calendar
+     * DEPRECATED - The legacy return name of the requested calendar.
      */
     public void setReturnName(String value) {
         this.returnName = value;
+    }
+
+
+    private String taxFormCode;
+
+    /**
+     * Getter for taxFormCode
+     *
+     * The Avalara standard tax form code of the tax form for this filing calendar. The first two characters of the tax form code
+    * are the ISO 3166 country code of the country that issued this form.
+     */
+    public String getTaxFormCode() {
+        return this.taxFormCode;
+    }
+
+    /**
+     * Setter for taxFormCode
+     *
+     * The Avalara standard tax form code of the tax form for this filing calendar. The first two characters of the tax form code
+    * are the ISO 3166 country code of the country that issued this form.
+     */
+    public void setTaxFormCode(String value) {
+        this.taxFormCode = value;
     }
 
 
@@ -241,12 +263,33 @@ public class FilingRequestDataModel {
     }
 
 
+    private String country;
+
+    /**
+     * Getter for country
+     *
+     * The two character ISO 3166 country code of the country that issued the tax form for this filing calendar.
+     */
+    public String getCountry() {
+        return this.country;
+    }
+
+    /**
+     * Setter for country
+     *
+     * The two character ISO 3166 country code of the country that issued the tax form for this filing calendar.
+     */
+    public void setCountry(String value) {
+        this.country = value;
+    }
+
+
     private String region;
 
     /**
      * Getter for region
      *
-     * The region this request is for
+     * The two or three character ISO 3166 code of the region / state / province that issued the tax form for this filing calendar.
      */
     public String getRegion() {
         return this.region;
@@ -255,7 +298,7 @@ public class FilingRequestDataModel {
     /**
      * Setter for region
      *
-     * The region this request is for
+     * The two or three character ISO 3166 code of the region / state / province that issued the tax form for this filing calendar.
      */
     public void setRegion(String value) {
         this.region = value;

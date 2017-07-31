@@ -20,7 +20,6 @@ import java.util.HashMap;
  * @author     Dustin Welden <dustin.welden@avalara.com>
  * @copyright  2004-2017 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
- * @version    17.5.2-77
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
  */
 
@@ -411,6 +410,27 @@ public class CompanyInitializationModel {
      */
     public void setFaxNumber(String value) {
         this.faxNumber = value;
+    }
+
+
+    private Integer parentCompanyId;
+
+    /**
+     * Getter for parentCompanyId
+     *
+     * Parent Company ID
+     */
+    public Integer getParentCompanyId() {
+        return this.parentCompanyId;
+    }
+
+    /**
+     * Setter for parentCompanyId
+     *
+     * Parent Company ID
+     */
+    public void setParentCompanyId(Integer value) {
+        this.parentCompanyId = value;
     }
 
 

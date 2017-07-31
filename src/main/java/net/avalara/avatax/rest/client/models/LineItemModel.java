@@ -20,7 +20,6 @@ import java.util.HashMap;
  * @author     Dustin Welden <dustin.welden@avalara.com>
  * @copyright  2004-2017 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
- * @version    17.5.2-77
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
  */
 
@@ -98,7 +97,12 @@ public class LineItemModel {
     /**
      * Getter for addresses
      *
-     * Specify any differences for addresses between this line and the rest of the document
+     * The addresses to use for this transaction line.
+    * 
+    * If you set this value to `null`, or if you omit this element from your API call, then instead the transaction
+    * will use the `addresses` from the document level.
+    * 
+    * If you specify any other value besides `null`, only addresses specified for this line will be used for this line.
      */
     public AddressesModel getAddresses() {
         return this.addresses;
@@ -107,7 +111,12 @@ public class LineItemModel {
     /**
      * Setter for addresses
      *
-     * Specify any differences for addresses between this line and the rest of the document
+     * The addresses to use for this transaction line.
+    * 
+    * If you set this value to `null`, or if you omit this element from your API call, then instead the transaction
+    * will use the `addresses` from the document level.
+    * 
+    * If you specify any other value besides `null`, only addresses specified for this line will be used for this line.
      */
     public void setAddresses(AddressesModel value) {
         this.addresses = value;
@@ -120,6 +129,8 @@ public class LineItemModel {
      * Getter for taxCode
      *
      * Tax Code - System or Custom Tax Code.
+    *  
+    * You can use your own tax code mapping or standard Avalara tax codes. For a full list of tax codes, see `ListTaxCodes`.
      */
     public String getTaxCode() {
         return this.taxCode;
@@ -129,6 +140,8 @@ public class LineItemModel {
      * Setter for taxCode
      *
      * Tax Code - System or Custom Tax Code.
+    *  
+    * You can use your own tax code mapping or standard Avalara tax codes. For a full list of tax codes, see `ListTaxCodes`.
      */
     public void setTaxCode(String value) {
         this.taxCode = value;

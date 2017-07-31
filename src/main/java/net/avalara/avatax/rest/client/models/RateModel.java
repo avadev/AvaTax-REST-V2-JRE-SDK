@@ -20,12 +20,11 @@ import java.util.HashMap;
  * @author     Dustin Welden <dustin.welden@avalara.com>
  * @copyright  2004-2017 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
- * @version    17.5.2-77
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
  */
 
 /**
- * Rate Model
+ * Indicates one element of a sales tax rate.
  */
 public class RateModel {
 
@@ -35,7 +34,7 @@ public class RateModel {
     /**
      * Getter for rate
      *
-     * Rate
+     * The sales tax rate for general tangible personal property in this jurisdiction.
      */
     public BigDecimal getRate() {
         return this.rate;
@@ -44,7 +43,7 @@ public class RateModel {
     /**
      * Setter for rate
      *
-     * Rate
+     * The sales tax rate for general tangible personal property in this jurisdiction.
      */
     public void setRate(BigDecimal value) {
         this.rate = value;
@@ -56,7 +55,7 @@ public class RateModel {
     /**
      * Getter for name
      *
-     * Name
+     * A readable name of the tax or taxing jurisdiction related to this tax rate.
      */
     public String getName() {
         return this.name;
@@ -65,7 +64,7 @@ public class RateModel {
     /**
      * Setter for name
      *
-     * Name
+     * A readable name of the tax or taxing jurisdiction related to this tax rate.
      */
     public void setName(String value) {
         this.name = value;
@@ -77,7 +76,7 @@ public class RateModel {
     /**
      * Getter for type
      *
-     * Type
+     * The type of jurisdiction associated with this tax rate.
      */
     public JurisdictionType getType() {
         return this.type;
@@ -86,7 +85,7 @@ public class RateModel {
     /**
      * Setter for type
      *
-     * Type
+     * The type of jurisdiction associated with this tax rate.
      */
     public void setType(JurisdictionType value) {
         this.type = value;
