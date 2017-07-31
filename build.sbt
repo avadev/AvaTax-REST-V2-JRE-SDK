@@ -1,4 +1,4 @@
-﻿name := """avatax-rest-v2-api-java"""
+name := """avatax-rest-v2-api-java"""
 
 organization := "net.avalara.avatax"
 
