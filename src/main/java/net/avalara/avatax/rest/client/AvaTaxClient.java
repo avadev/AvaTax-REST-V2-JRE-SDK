@@ -94,6 +94,7 @@ public class AvaTaxClient {
      * @param id The ID of the account you wish to update.
      * @param model A request confirming that you wish to reset the license key of this account.
      * @return LicenseKeyModel
+     * @throws Exception an Exception
      */
     public LicenseKeyModel accountResetLicenseKey(Integer id, ResetLicenseKeyModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{id}/resetlicensekey");
@@ -131,6 +132,7 @@ public class AvaTaxClient {
      * @param include A comma separated list of child objects to return underneath the primary object.
      * @param model The activation request
      * @return AccountModel
+     * @throws Exception an Exception
      */
     public AccountModel activateAccount(Integer id, String include, ActivateAccountModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{id}/activate");
@@ -172,6 +174,7 @@ public class AvaTaxClient {
      * @param id The ID of the account to retrieve
      * @param include A comma separated list of child objects to return underneath the primary object.
      * @return AccountModel
+     * @throws Exception an Exception
      */
     public AccountModel getAccount(Integer id, String include) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{id}");
@@ -214,8 +217,9 @@ public class AvaTaxClient {
      * 
      * Avalara-based account settings for `TaxServiceConfig` and `AddressServiceConfig` affect your account's
      * 
-     * @param id 
-     * @return ArrayList<AccountConfigurationModel>
+     * @param id id
+     * @return ArrayList&lt;AccountConfigurationModel&gt;
+     * @throws Exception an Exception
      */
     public ArrayList<AccountConfigurationModel> getAccountConfiguration(Integer id) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{id}/configuration");
@@ -238,8 +242,8 @@ public class AvaTaxClient {
      * 
      * Avalara-based account settings for `TaxServiceConfig` and `AddressServiceConfig` affect your account's
      * 
-     * @param id 
-     * @return ArrayList<AccountConfigurationModel>
+     * @param id id
+     * @return ArrayList&lt;AccountConfigurationModel&gt;
      */
     public Future<ArrayList<AccountConfigurationModel>> getAccountConfigurationAsync(Integer id) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{id}/configuration");
@@ -262,9 +266,10 @@ public class AvaTaxClient {
      * 
      * Avalara-based account settings for `TaxServiceConfig` and `AddressServiceConfig` affect your account's
      * 
-     * @param id 
-     * @param model 
-     * @return ArrayList<AccountConfigurationModel>
+     * @param id id
+     * @param model model
+     * @return ArrayList&lt;AccountConfigurationModel&gt;
+     * @throws Exception an Exception
      */
     public ArrayList<AccountConfigurationModel> setAccountConfiguration(Integer id, ArrayList<AccountConfigurationModel> model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{id}/configuration");
@@ -287,9 +292,9 @@ public class AvaTaxClient {
      * 
      * Avalara-based account settings for `TaxServiceConfig` and `AddressServiceConfig` affect your account's
      * 
-     * @param id 
-     * @param model 
-     * @return ArrayList<AccountConfigurationModel>
+     * @param id id
+     * @param model model
+     * @return ArrayList&lt;AccountConfigurationModel&gt;
      */
     public Future<ArrayList<AccountConfigurationModel>> setAccountConfigurationAsync(Integer id, ArrayList<AccountConfigurationModel> model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{id}/configuration");
@@ -317,6 +322,7 @@ public class AvaTaxClient {
      * @param latitude Geospatial latitude measurement
      * @param longitude Geospatial longitude measurement
      * @return AddressResolutionModel
+     * @throws Exception an Exception
      */
     public AddressResolutionModel resolveAddress(String line1, String line2, String line3, String city, String region, String postalCode, String country, TextCase textCase, BigDecimal latitude, BigDecimal longitude) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/addresses/resolve");
@@ -380,6 +386,7 @@ public class AvaTaxClient {
      * 
      * @param model The address to resolve
      * @return AddressResolutionModel
+     * @throws Exception an Exception
      */
     public AddressResolutionModel resolveAddressPost(AddressValidationInfo model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/addresses/resolve");
@@ -412,7 +419,8 @@ public class AvaTaxClient {
      * 
      * @param companyId The ID of the company that owns this batch.
      * @param model The batch you wish to create.
-     * @return ArrayList<BatchModel>
+     * @return ArrayList&lt;BatchModel&gt;
+     * @throws Exception an Exception
      */
     public ArrayList<BatchModel> createBatches(Integer companyId, ArrayList<BatchModel> model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/batches");
@@ -429,7 +437,7 @@ public class AvaTaxClient {
      * 
      * @param companyId The ID of the company that owns this batch.
      * @param model The batch you wish to create.
-     * @return ArrayList<BatchModel>
+     * @return ArrayList&lt;BatchModel&gt;
      */
     public Future<ArrayList<BatchModel>> createBatchesAsync(Integer companyId, ArrayList<BatchModel> model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/batches");
@@ -442,7 +450,8 @@ public class AvaTaxClient {
      * 
      * @param companyId The ID of the company that owns this batch.
      * @param id The ID of the batch you wish to delete.
-     * @return ArrayList<ErrorDetail>
+     * @return ArrayList&lt;ErrorDetail&gt;
+     * @throws Exception an Exception
      */
     public ArrayList<ErrorDetail> deleteBatch(Integer companyId, Integer id) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/batches/{id}");
@@ -456,7 +465,7 @@ public class AvaTaxClient {
      * 
      * @param companyId The ID of the company that owns this batch.
      * @param id The ID of the batch you wish to delete.
-     * @return ArrayList<ErrorDetail>
+     * @return ArrayList&lt;ErrorDetail&gt;
      */
     public Future<ArrayList<ErrorDetail>> deleteBatchAsync(Integer companyId, Integer id) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/batches/{id}");
@@ -472,6 +481,7 @@ public class AvaTaxClient {
      * @param batchId The ID of the batch object
      * @param id The primary key of this batch file object
      * @return String
+     * @throws Exception an Exception
      */
     public String downloadBatch(Integer companyId, Integer batchId, Integer id) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/batches/{batchId}/files/{id}/attachment");
@@ -507,6 +517,7 @@ public class AvaTaxClient {
      * @param companyId The ID of the company that owns this batch
      * @param id The primary key of this batch
      * @return BatchModel
+     * @throws Exception an Exception
      */
     public BatchModel getBatch(Integer companyId, Integer id) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/batches/{id}");
@@ -548,7 +559,8 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<BatchModel>
+     * @return FetchResult&lt;BatchModel&gt;
+     * @throws Exception an Exception
      */
     public FetchResult<BatchModel> listBatchesByCompany(Integer companyId, String filter, String include, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/batches");
@@ -576,7 +588,7 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<BatchModel>
+     * @return FetchResult&lt;BatchModel&gt;
      */
     public Future<FetchResult<BatchModel>> listBatchesByCompanyAsync(Integer companyId, String filter, String include, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/batches");
@@ -604,7 +616,8 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<BatchModel>
+     * @return FetchResult&lt;BatchModel&gt;
+     * @throws Exception an Exception
      */
     public FetchResult<BatchModel> queryBatches(String filter, String include, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/batches");
@@ -631,7 +644,7 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<BatchModel>
+     * @return FetchResult&lt;BatchModel&gt;
      */
     public Future<FetchResult<BatchModel>> queryBatchesAsync(String filter, String include, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/batches");
@@ -659,9 +672,10 @@ public class AvaTaxClient {
      * * Avalara compliance team members may change a company from `FirstFiling` to `Active`.
      * 
      * 
-     * @param id 
-     * @param model 
+     * @param id id
+     * @param model model
      * @return String
+     * @throws Exception an Exception
      */
     public String changeFilingStatus(Integer id, FilingStatusChangeModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{id}/filingstatus");
@@ -685,8 +699,8 @@ public class AvaTaxClient {
      * * Avalara compliance team members may change a company from `FirstFiling` to `Active`.
      * 
      * 
-     * @param id 
-     * @param model 
+     * @param id id
+     * @param model model
      * @return String
      */
     public Future<String> changeFilingStatusAsync(Integer id, FilingStatusChangeModel model) {
@@ -711,6 +725,7 @@ public class AvaTaxClient {
      * 
      * @param model Information about the company you wish to create.
      * @return CompanyModel
+     * @throws Exception an Exception
      */
     public CompanyModel companyInitialize(CompanyInitializationModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/initialize");
@@ -746,7 +761,8 @@ public class AvaTaxClient {
      * A 'company' represents a single corporation or individual that is registered to handle transactional taxes.
      * 
      * @param model Either a single company object or an array of companies to create
-     * @return ArrayList<CompanyModel>
+     * @return ArrayList&lt;CompanyModel&gt;
+     * @throws Exception an Exception
      */
     public ArrayList<CompanyModel> createCompanies(ArrayList<CompanyModel> model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies");
@@ -760,7 +776,7 @@ public class AvaTaxClient {
      * A 'company' represents a single corporation or individual that is registered to handle transactional taxes.
      * 
      * @param model Either a single company object or an array of companies to create
-     * @return ArrayList<CompanyModel>
+     * @return ArrayList&lt;CompanyModel&gt;
      */
     public Future<ArrayList<CompanyModel>> createCompaniesAsync(ArrayList<CompanyModel> model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies");
@@ -783,6 +799,7 @@ public class AvaTaxClient {
      * @param id The unique identifier of the company
      * @param model The funding initialization request
      * @return FundingStatusModel
+     * @throws Exception an Exception
      */
     public FundingStatusModel createFundingRequest(Integer id, FundingInitiateModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{id}/funding/setup");
@@ -817,7 +834,8 @@ public class AvaTaxClient {
      * Delete a single company
      * 
      * @param id The ID of the company you wish to delete.
-     * @return ArrayList<ErrorDetail>
+     * @return ArrayList&lt;ErrorDetail&gt;
+     * @throws Exception an Exception
      */
     public ArrayList<ErrorDetail> deleteCompany(Integer id) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{id}");
@@ -829,7 +847,7 @@ public class AvaTaxClient {
      * Delete a single company
      * 
      * @param id The ID of the company you wish to delete.
-     * @return ArrayList<ErrorDetail>
+     * @return ArrayList&lt;ErrorDetail&gt;
      */
     public Future<ArrayList<ErrorDetail>> deleteCompanyAsync(Integer id) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{id}");
@@ -856,6 +874,7 @@ public class AvaTaxClient {
      * @param id The ID of the company to retrieve.
      * @param include A comma separated list of child objects to return underneath the primary object.
      * @return CompanyModel
+     * @throws Exception an Exception
      */
     public CompanyModel getCompany(Integer id, String include) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{id}");
@@ -894,7 +913,8 @@ public class AvaTaxClient {
     /**
      * 
      * 
-     * @return FetchResult<CompanyModel>
+     * @return FetchResult&lt;CompanyModel&gt;
+     * @throws Exception an Exception
      */
     public FetchResult<CompanyModel> getCompany() throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/mrs");
@@ -904,7 +924,7 @@ public class AvaTaxClient {
     /**
      * 
      * 
-     * @return FetchResult<CompanyModel>
+     * @return FetchResult&lt;CompanyModel&gt;
      */
     public Future<FetchResult<CompanyModel>> getCompanyAsync() {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/mrs");
@@ -926,8 +946,9 @@ public class AvaTaxClient {
      * 
      * Avalara-based account settings for `AvaCertServiceConfig` affect your account's exemption certificate
      * 
-     * @param id 
-     * @return ArrayList<CompanyConfigurationModel>
+     * @param id id
+     * @return ArrayList&lt;CompanyConfigurationModel&gt;
+     * @throws Exception an Exception
      */
     public ArrayList<CompanyConfigurationModel> getCompanyConfiguration(Integer id) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{id}/configuration");
@@ -950,8 +971,8 @@ public class AvaTaxClient {
      * 
      * Avalara-based account settings for `AvaCertServiceConfig` affect your account's exemption certificate
      * 
-     * @param id 
-     * @return ArrayList<CompanyConfigurationModel>
+     * @param id id
+     * @return ArrayList&lt;CompanyConfigurationModel&gt;
      */
     public Future<ArrayList<CompanyConfigurationModel>> getCompanyConfigurationAsync(Integer id) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{id}/configuration");
@@ -975,8 +996,9 @@ public class AvaTaxClient {
      * * `FilingRequested` - The company has requested to begin filing tax returns, but Avalara's compliance team has not yet begun filing.
      * * `FirstFiling` - The company has recently filing tax returns and is in a new status.
      * 
-     * @param id 
+     * @param id id
      * @return String
+     * @throws Exception an Exception
      */
     public String getFilingStatus(Integer id) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{id}/filingstatus");
@@ -1000,7 +1022,7 @@ public class AvaTaxClient {
      * * `FilingRequested` - The company has requested to begin filing tax returns, but Avalara's compliance team has not yet begun filing.
      * * `FirstFiling` - The company has recently filing tax returns and is in a new status.
      * 
-     * @param id 
+     * @param id id
      * @return String
      */
     public Future<String> getFilingStatusAsync(Integer id) {
@@ -1017,7 +1039,8 @@ public class AvaTaxClient {
      * Returns a list of funding setup requests and their current status.
      * 
      * @param id The unique identifier of the company
-     * @return ArrayList<FundingStatusModel>
+     * @return ArrayList&lt;FundingStatusModel&gt;
+     * @throws Exception an Exception
      */
     public ArrayList<FundingStatusModel> listFundingRequestsByCompany(Integer id) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{id}/funding");
@@ -1033,7 +1056,7 @@ public class AvaTaxClient {
      * Returns a list of funding setup requests and their current status.
      * 
      * @param id The unique identifier of the company
-     * @return ArrayList<FundingStatusModel>
+     * @return ArrayList&lt;FundingStatusModel&gt;
      */
     public Future<ArrayList<FundingStatusModel>> listFundingRequestsByCompanyAsync(Integer id) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{id}/funding");
@@ -1064,7 +1087,8 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<CompanyModel>
+     * @return FetchResult&lt;CompanyModel&gt;
+     * @throws Exception an Exception
      */
     public FetchResult<CompanyModel> queryCompanies(String include, String filter, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies");
@@ -1099,7 +1123,7 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<CompanyModel>
+     * @return FetchResult&lt;CompanyModel&gt;
      */
     public Future<FetchResult<CompanyModel>> queryCompaniesAsync(String include, String filter, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies");
@@ -1126,9 +1150,10 @@ public class AvaTaxClient {
      * 
      * Avalara-based account settings for `AvaCertServiceConfig` affect your account's exemption certificate
      * 
-     * @param id 
-     * @param model 
-     * @return ArrayList<CompanyConfigurationModel>
+     * @param id id
+     * @param model model
+     * @return ArrayList&lt;CompanyConfigurationModel&gt;
+     * @throws Exception an Exception
      */
     public ArrayList<CompanyConfigurationModel> setCompanyConfiguration(Integer id, ArrayList<CompanyConfigurationModel> model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{id}/configuration");
@@ -1151,9 +1176,9 @@ public class AvaTaxClient {
      * 
      * Avalara-based account settings for `AvaCertServiceConfig` affect your account's exemption certificate
      * 
-     * @param id 
-     * @param model 
-     * @return ArrayList<CompanyConfigurationModel>
+     * @param id id
+     * @param model model
+     * @return ArrayList&lt;CompanyConfigurationModel&gt;
      */
     public Future<ArrayList<CompanyConfigurationModel>> setCompanyConfigurationAsync(Integer id, ArrayList<CompanyConfigurationModel> model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{id}/configuration");
@@ -1171,6 +1196,7 @@ public class AvaTaxClient {
      * @param id The ID of the company you wish to update.
      * @param model The company object you wish to update.
      * @return CompanyModel
+     * @throws Exception an Exception
      */
     public CompanyModel updateCompany(Integer id, CompanyModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{id}");
@@ -1203,7 +1229,8 @@ public class AvaTaxClient {
      * 
      * @param companyId The ID of the company that owns this contact.
      * @param model The contacts you wish to create.
-     * @return ArrayList<ContactModel>
+     * @return ArrayList&lt;ContactModel&gt;
+     * @throws Exception an Exception
      */
     public ArrayList<ContactModel> createContacts(Integer companyId, ArrayList<ContactModel> model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/contacts");
@@ -1219,7 +1246,7 @@ public class AvaTaxClient {
      * 
      * @param companyId The ID of the company that owns this contact.
      * @param model The contacts you wish to create.
-     * @return ArrayList<ContactModel>
+     * @return ArrayList&lt;ContactModel&gt;
      */
     public Future<ArrayList<ContactModel>> createContactsAsync(Integer companyId, ArrayList<ContactModel> model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/contacts");
@@ -1232,7 +1259,8 @@ public class AvaTaxClient {
      * 
      * @param companyId The ID of the company that owns this contact.
      * @param id The ID of the contact you wish to delete.
-     * @return ArrayList<ErrorDetail>
+     * @return ArrayList&lt;ErrorDetail&gt;
+     * @throws Exception an Exception
      */
     public ArrayList<ErrorDetail> deleteContact(Integer companyId, Integer id) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/contacts/{id}");
@@ -1246,7 +1274,7 @@ public class AvaTaxClient {
      * 
      * @param companyId The ID of the company that owns this contact.
      * @param id The ID of the contact you wish to delete.
-     * @return ArrayList<ErrorDetail>
+     * @return ArrayList&lt;ErrorDetail&gt;
      */
     public Future<ArrayList<ErrorDetail>> deleteContactAsync(Integer companyId, Integer id) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/contacts/{id}");
@@ -1264,6 +1292,7 @@ public class AvaTaxClient {
      * @param companyId The ID of the company for this contact
      * @param id The primary key of this contact
      * @return ContactModel
+     * @throws Exception an Exception
      */
     public ContactModel getContact(Integer companyId, Integer id) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/contacts/{id}");
@@ -1302,7 +1331,8 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<ContactModel>
+     * @return FetchResult&lt;ContactModel&gt;
+     * @throws Exception an Exception
      */
     public FetchResult<ContactModel> listContactsByCompany(Integer companyId, String filter, String include, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/contacts");
@@ -1328,7 +1358,7 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<ContactModel>
+     * @return FetchResult&lt;ContactModel&gt;
      */
     public Future<FetchResult<ContactModel>> listContactsByCompanyAsync(Integer companyId, String filter, String include, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/contacts");
@@ -1355,7 +1385,8 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<ContactModel>
+     * @return FetchResult&lt;ContactModel&gt;
+     * @throws Exception an Exception
      */
     public FetchResult<ContactModel> queryContacts(String filter, String include, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/contacts");
@@ -1381,7 +1412,7 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<ContactModel>
+     * @return FetchResult&lt;ContactModel&gt;
      */
     public Future<FetchResult<ContactModel>> queryContactsAsync(String filter, String include, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/contacts");
@@ -1405,6 +1436,7 @@ public class AvaTaxClient {
      * @param id The ID of the contact you wish to update
      * @param model The contact you wish to update.
      * @return ContactModel
+     * @throws Exception an Exception
      */
     public ContactModel updateContact(Integer companyId, Integer id, ContactModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/contacts/{id}");
@@ -1443,7 +1475,8 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<SkyscraperStatusModel>
+     * @return FetchResult&lt;SkyscraperStatusModel&gt;
+     * @throws Exception an Exception
      */
     public FetchResult<SkyscraperStatusModel> getLoginVerifierByForm(String form, String filter, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/filingcalendars/loginverifiers/{form}");
@@ -1465,7 +1498,7 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<SkyscraperStatusModel>
+     * @return FetchResult&lt;SkyscraperStatusModel&gt;
      */
     public Future<FetchResult<SkyscraperStatusModel>> getLoginVerifierByFormAsync(String form, String filter, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/filingcalendars/loginverifiers/{form}");
@@ -1486,7 +1519,8 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<AvaFileFormModel>
+     * @return FetchResult&lt;AvaFileFormModel&gt;
+     * @throws Exception an Exception
      */
     public FetchResult<AvaFileFormModel> listAvaFileForms(String filter, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/avafileforms");
@@ -1506,7 +1540,7 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<AvaFileFormModel>
+     * @return FetchResult&lt;AvaFileFormModel&gt;
      */
     public Future<FetchResult<AvaFileFormModel>> listAvaFileFormsAsync(String filter, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/avafileforms");
@@ -1522,12 +1556,13 @@ public class AvaTaxClient {
      * 
      * Returns full list of communications transaction types which
      * 
-     * @param id 
+     * @param id id
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<CommunicationsTSPairModel>
+     * @return FetchResult&lt;CommunicationsTSPairModel&gt;
+     * @throws Exception an Exception
      */
     public FetchResult<CommunicationsTSPairModel> listCommunicationsServiceTypes(Integer id, String filter, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/communications/transactiontypes/{id}/servicetypes");
@@ -1544,12 +1579,12 @@ public class AvaTaxClient {
      * 
      * Returns full list of communications transaction types which
      * 
-     * @param id 
+     * @param id id
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<CommunicationsTSPairModel>
+     * @return FetchResult&lt;CommunicationsTSPairModel&gt;
      */
     public Future<FetchResult<CommunicationsTSPairModel>> listCommunicationsServiceTypesAsync(Integer id, String filter, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/communications/transactiontypes/{id}/servicetypes");
@@ -1570,7 +1605,8 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<CommunicationsTransactionTypeModel>
+     * @return FetchResult&lt;CommunicationsTransactionTypeModel&gt;
+     * @throws Exception an Exception
      */
     public FetchResult<CommunicationsTransactionTypeModel> listCommunicationsTransactionTypes(String filter, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/communications/transactiontypes");
@@ -1590,7 +1626,7 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<CommunicationsTransactionTypeModel>
+     * @return FetchResult&lt;CommunicationsTransactionTypeModel&gt;
      */
     public Future<FetchResult<CommunicationsTransactionTypeModel>> listCommunicationsTransactionTypesAsync(String filter, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/communications/transactiontypes");
@@ -1610,7 +1646,8 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<CommunicationsTSPairModel>
+     * @return FetchResult&lt;CommunicationsTSPairModel&gt;
+     * @throws Exception an Exception
      */
     public FetchResult<CommunicationsTSPairModel> listCommunicationsTSPairs(String filter, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/communications/tspairs");
@@ -1630,7 +1667,7 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<CommunicationsTSPairModel>
+     * @return FetchResult&lt;CommunicationsTSPairModel&gt;
      */
     public Future<FetchResult<CommunicationsTSPairModel>> listCommunicationsTSPairsAsync(String filter, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/communications/tspairs");
@@ -1651,7 +1688,8 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<IsoCountryModel>
+     * @return FetchResult&lt;IsoCountryModel&gt;
+     * @throws Exception an Exception
      */
     public FetchResult<IsoCountryModel> listCountries(String filter, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/countries");
@@ -1672,7 +1710,7 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<IsoCountryModel>
+     * @return FetchResult&lt;IsoCountryModel&gt;
      */
     public Future<FetchResult<IsoCountryModel>> listCountriesAsync(String filter, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/countries");
@@ -1695,7 +1733,8 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<EntityUseCodeModel>
+     * @return FetchResult&lt;EntityUseCodeModel&gt;
+     * @throws Exception an Exception
      */
     public FetchResult<EntityUseCodeModel> listEntityUseCodes(String filter, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/entityusecodes");
@@ -1718,7 +1757,7 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<EntityUseCodeModel>
+     * @return FetchResult&lt;EntityUseCodeModel&gt;
      */
     public Future<FetchResult<EntityUseCodeModel>> listEntityUseCodesAsync(String filter, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/entityusecodes");
@@ -1738,7 +1777,8 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<FilingFrequencyModel>
+     * @return FetchResult&lt;FilingFrequencyModel&gt;
+     * @throws Exception an Exception
      */
     public FetchResult<FilingFrequencyModel> listFilingFrequencies(String filter, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/filingfrequencies");
@@ -1758,7 +1798,7 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<FilingFrequencyModel>
+     * @return FetchResult&lt;FilingFrequencyModel&gt;
      */
     public Future<FetchResult<FilingFrequencyModel>> listFilingFrequenciesAsync(String filter, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/filingfrequencies");
@@ -1780,7 +1820,8 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<JurisdictionModel>
+     * @return FetchResult&lt;JurisdictionModel&gt;
+     * @throws Exception an Exception
      */
     public FetchResult<JurisdictionModel> listJurisdictions(String filter, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/jurisdictions");
@@ -1802,7 +1843,7 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<JurisdictionModel>
+     * @return FetchResult&lt;JurisdictionModel&gt;
      */
     public Future<FetchResult<JurisdictionModel>> listJurisdictionsAsync(String filter, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/jurisdictions");
@@ -1834,7 +1875,8 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<JurisdictionOverrideModel>
+     * @return FetchResult&lt;JurisdictionOverrideModel&gt;
+     * @throws Exception an Exception
      */
     public FetchResult<JurisdictionOverrideModel> listJurisdictionsByAddress(String line1, String line2, String line3, String city, String region, String postalCode, String country, String filter, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/jurisdictionsnearaddress");
@@ -1873,7 +1915,7 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<JurisdictionOverrideModel>
+     * @return FetchResult&lt;JurisdictionOverrideModel&gt;
      */
     public Future<FetchResult<JurisdictionOverrideModel>> listJurisdictionsByAddressAsync(String line1, String line2, String line3, String city, String region, String postalCode, String country, String filter, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/jurisdictionsnearaddress");
@@ -1913,7 +1955,8 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<LocationQuestionModel>
+     * @return FetchResult&lt;LocationQuestionModel&gt;
+     * @throws Exception an Exception
      */
     public FetchResult<LocationQuestionModel> listLocationQuestionsByAddress(String line1, String line2, String line3, String city, String region, String postalCode, String country, BigDecimal latitude, BigDecimal longitude, String filter, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/locationquestions");
@@ -1955,7 +1998,7 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<LocationQuestionModel>
+     * @return FetchResult&lt;LocationQuestionModel&gt;
      */
     public Future<FetchResult<LocationQuestionModel>> listLocationQuestionsByAddressAsync(String line1, String line2, String line3, String city, String region, String postalCode, String country, BigDecimal latitude, BigDecimal longitude, String filter, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/locationquestions");
@@ -1985,7 +2028,8 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<SkyscraperStatusModel>
+     * @return FetchResult&lt;SkyscraperStatusModel&gt;
+     * @throws Exception an Exception
      */
     public FetchResult<SkyscraperStatusModel> listLoginVerifiers(String filter, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/filingcalendars/loginverifiers");
@@ -2006,7 +2050,7 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<SkyscraperStatusModel>
+     * @return FetchResult&lt;SkyscraperStatusModel&gt;
      */
     public Future<FetchResult<SkyscraperStatusModel>> listLoginVerifiersAsync(String filter, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/filingcalendars/loginverifiers");
@@ -2026,7 +2070,8 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<NexusModel>
+     * @return FetchResult&lt;NexusModel&gt;
+     * @throws Exception an Exception
      */
     public FetchResult<NexusModel> listNexus(String filter, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/nexus");
@@ -2046,7 +2091,7 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<NexusModel>
+     * @return FetchResult&lt;NexusModel&gt;
      */
     public Future<FetchResult<NexusModel>> listNexusAsync(String filter, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/nexus");
@@ -2076,7 +2121,8 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<NexusModel>
+     * @return FetchResult&lt;NexusModel&gt;
+     * @throws Exception an Exception
      */
     public FetchResult<NexusModel> listNexusByAddress(String line1, String line2, String line3, String city, String region, String postalCode, String country, String filter, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/nexus/byaddress");
@@ -2113,7 +2159,7 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<NexusModel>
+     * @return FetchResult&lt;NexusModel&gt;
      */
     public Future<FetchResult<NexusModel>> listNexusByAddressAsync(String line1, String line2, String line3, String city, String region, String postalCode, String country, String filter, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/nexus/byaddress");
@@ -2141,7 +2187,8 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<NexusModel>
+     * @return FetchResult&lt;NexusModel&gt;
+     * @throws Exception an Exception
      */
     public FetchResult<NexusModel> listNexusByCountry(String country, String filter, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/nexus/{country}");
@@ -2163,7 +2210,7 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<NexusModel>
+     * @return FetchResult&lt;NexusModel&gt;
      */
     public Future<FetchResult<NexusModel>> listNexusByCountryAsync(String country, String filter, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/nexus/{country}");
@@ -2186,7 +2233,8 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<NexusModel>
+     * @return FetchResult&lt;NexusModel&gt;
+     * @throws Exception an Exception
      */
     public FetchResult<NexusModel> listNexusByCountryAndRegion(String country, String region, String filter, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/nexus/{country}/{region}");
@@ -2210,7 +2258,7 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<NexusModel>
+     * @return FetchResult&lt;NexusModel&gt;
      */
     public Future<FetchResult<NexusModel>> listNexusByCountryAndRegionAsync(String country, String region, String filter, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/nexus/{country}/{region}");
@@ -2243,6 +2291,7 @@ public class AvaTaxClient {
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return NexusByTaxFormModel
+     * @throws Exception an Exception
      */
     public NexusByTaxFormModel listNexusByFormCode(String formCode, String filter, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/nexus/byform/{formCode}");
@@ -2294,7 +2343,8 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<NexusTaxTypeGroupModel>
+     * @return FetchResult&lt;NexusTaxTypeGroupModel&gt;
+     * @throws Exception an Exception
      */
     public FetchResult<NexusTaxTypeGroupModel> listNexusTaxTypeGroups(String filter, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/nexustaxtypegroups");
@@ -2314,7 +2364,7 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<NexusTaxTypeGroupModel>
+     * @return FetchResult&lt;NexusTaxTypeGroupModel&gt;
      */
     public Future<FetchResult<NexusTaxTypeGroupModel>> listNexusTaxTypeGroupsAsync(String filter, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/nexustaxtypegroups");
@@ -2334,7 +2384,8 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<NoticeCustomerFundingOptionModel>
+     * @return FetchResult&lt;NoticeCustomerFundingOptionModel&gt;
+     * @throws Exception an Exception
      */
     public FetchResult<NoticeCustomerFundingOptionModel> listNoticeCustomerFundingOptions(String filter, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/noticecustomerfundingoptions");
@@ -2354,7 +2405,7 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<NoticeCustomerFundingOptionModel>
+     * @return FetchResult&lt;NoticeCustomerFundingOptionModel&gt;
      */
     public Future<FetchResult<NoticeCustomerFundingOptionModel>> listNoticeCustomerFundingOptionsAsync(String filter, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/noticecustomerfundingoptions");
@@ -2374,7 +2425,8 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<NoticeCustomerTypeModel>
+     * @return FetchResult&lt;NoticeCustomerTypeModel&gt;
+     * @throws Exception an Exception
      */
     public FetchResult<NoticeCustomerTypeModel> listNoticeCustomerTypes(String filter, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/noticecustomertypes");
@@ -2394,7 +2446,7 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<NoticeCustomerTypeModel>
+     * @return FetchResult&lt;NoticeCustomerTypeModel&gt;
      */
     public Future<FetchResult<NoticeCustomerTypeModel>> listNoticeCustomerTypesAsync(String filter, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/noticecustomertypes");
@@ -2414,7 +2466,8 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<NoticeFilingTypeModel>
+     * @return FetchResult&lt;NoticeFilingTypeModel&gt;
+     * @throws Exception an Exception
      */
     public FetchResult<NoticeFilingTypeModel> listNoticeFilingtypes(String filter, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/noticefilingtypes");
@@ -2434,7 +2487,7 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<NoticeFilingTypeModel>
+     * @return FetchResult&lt;NoticeFilingTypeModel&gt;
      */
     public Future<FetchResult<NoticeFilingTypeModel>> listNoticeFilingtypesAsync(String filter, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/noticefilingtypes");
@@ -2454,7 +2507,8 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<NoticePriorityModel>
+     * @return FetchResult&lt;NoticePriorityModel&gt;
+     * @throws Exception an Exception
      */
     public FetchResult<NoticePriorityModel> listNoticePriorities(String filter, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/noticepriorities");
@@ -2474,7 +2528,7 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<NoticePriorityModel>
+     * @return FetchResult&lt;NoticePriorityModel&gt;
      */
     public Future<FetchResult<NoticePriorityModel>> listNoticePrioritiesAsync(String filter, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/noticepriorities");
@@ -2494,7 +2548,8 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<NoticeReasonModel>
+     * @return FetchResult&lt;NoticeReasonModel&gt;
+     * @throws Exception an Exception
      */
     public FetchResult<NoticeReasonModel> listNoticeReasons(String filter, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/noticereasons");
@@ -2514,7 +2569,7 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<NoticeReasonModel>
+     * @return FetchResult&lt;NoticeReasonModel&gt;
      */
     public Future<FetchResult<NoticeReasonModel>> listNoticeReasonsAsync(String filter, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/noticereasons");
@@ -2534,7 +2589,8 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<NoticeResponsibilityModel>
+     * @return FetchResult&lt;NoticeResponsibilityModel&gt;
+     * @throws Exception an Exception
      */
     public FetchResult<NoticeResponsibilityModel> listNoticeResponsibilities(String filter, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/noticeresponsibilities");
@@ -2554,7 +2610,7 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<NoticeResponsibilityModel>
+     * @return FetchResult&lt;NoticeResponsibilityModel&gt;
      */
     public Future<FetchResult<NoticeResponsibilityModel>> listNoticeResponsibilitiesAsync(String filter, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/noticeresponsibilities");
@@ -2574,7 +2630,8 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<NoticeRootCauseModel>
+     * @return FetchResult&lt;NoticeRootCauseModel&gt;
+     * @throws Exception an Exception
      */
     public FetchResult<NoticeRootCauseModel> listNoticeRootCauses(String filter, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/noticerootcauses");
@@ -2594,7 +2651,7 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<NoticeRootCauseModel>
+     * @return FetchResult&lt;NoticeRootCauseModel&gt;
      */
     public Future<FetchResult<NoticeRootCauseModel>> listNoticeRootCausesAsync(String filter, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/noticerootcauses");
@@ -2614,7 +2671,8 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<NoticeStatusModel>
+     * @return FetchResult&lt;NoticeStatusModel&gt;
+     * @throws Exception an Exception
      */
     public FetchResult<NoticeStatusModel> listNoticeStatuses(String filter, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/noticestatuses");
@@ -2634,7 +2692,7 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<NoticeStatusModel>
+     * @return FetchResult&lt;NoticeStatusModel&gt;
      */
     public Future<FetchResult<NoticeStatusModel>> listNoticeStatusesAsync(String filter, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/noticestatuses");
@@ -2654,7 +2712,8 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<NoticeTypeModel>
+     * @return FetchResult&lt;NoticeTypeModel&gt;
+     * @throws Exception an Exception
      */
     public FetchResult<NoticeTypeModel> listNoticeTypes(String filter, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/noticetypes");
@@ -2674,7 +2733,7 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<NoticeTypeModel>
+     * @return FetchResult&lt;NoticeTypeModel&gt;
      */
     public Future<FetchResult<NoticeTypeModel>> listNoticeTypesAsync(String filter, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/noticetypes");
@@ -2695,7 +2754,8 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<ParameterModel>
+     * @return FetchResult&lt;ParameterModel&gt;
+     * @throws Exception an Exception
      */
     public FetchResult<ParameterModel> listParameters(String filter, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/parameters");
@@ -2716,7 +2776,7 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<ParameterModel>
+     * @return FetchResult&lt;ParameterModel&gt;
      */
     public Future<FetchResult<ParameterModel>> listParametersAsync(String filter, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/parameters");
@@ -2736,7 +2796,8 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<String>
+     * @return FetchResult&lt;String&gt;
+     * @throws Exception an Exception
      */
     public FetchResult<String> listPermissions(String filter, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/permissions");
@@ -2756,7 +2817,7 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<String>
+     * @return FetchResult&lt;String&gt;
      */
     public Future<FetchResult<String>> listPermissionsAsync(String filter, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/permissions");
@@ -2772,12 +2833,13 @@ public class AvaTaxClient {
      * 
      * Returns the full list of Avalara-supported rate type file types
      * 
-     * @param country 
+     * @param country country
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<RateTypeModel>
+     * @return FetchResult&lt;RateTypeModel&gt;
+     * @throws Exception an Exception
      */
     public FetchResult<RateTypeModel> listRateTypesByCountry(String country, String filter, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/countries/{country}/ratetypes");
@@ -2794,12 +2856,12 @@ public class AvaTaxClient {
      * 
      * Returns the full list of Avalara-supported rate type file types
      * 
-     * @param country 
+     * @param country country
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<RateTypeModel>
+     * @return FetchResult&lt;RateTypeModel&gt;
      */
     public Future<FetchResult<RateTypeModel>> listRateTypesByCountryAsync(String country, String filter, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/countries/{country}/ratetypes");
@@ -2821,7 +2883,8 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<IsoRegionModel>
+     * @return FetchResult&lt;IsoRegionModel&gt;
+     * @throws Exception an Exception
      */
     public FetchResult<IsoRegionModel> listRegions(String filter, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/regions");
@@ -2842,7 +2905,7 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<IsoRegionModel>
+     * @return FetchResult&lt;IsoRegionModel&gt;
      */
     public Future<FetchResult<IsoRegionModel>> listRegionsAsync(String filter, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/regions");
@@ -2864,7 +2927,8 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<IsoRegionModel>
+     * @return FetchResult&lt;IsoRegionModel&gt;
+     * @throws Exception an Exception
      */
     public FetchResult<IsoRegionModel> listRegionsByCountry(String country, String filter, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/countries/{country}/regions");
@@ -2887,7 +2951,7 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<IsoRegionModel>
+     * @return FetchResult&lt;IsoRegionModel&gt;
      */
     public Future<FetchResult<IsoRegionModel>> listRegionsByCountryAsync(String country, String filter, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/countries/{country}/regions");
@@ -2908,7 +2972,8 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<ResourceFileTypeModel>
+     * @return FetchResult&lt;ResourceFileTypeModel&gt;
+     * @throws Exception an Exception
      */
     public FetchResult<ResourceFileTypeModel> listResourceFileTypes(String filter, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/resourcefiletypes");
@@ -2928,7 +2993,7 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<ResourceFileTypeModel>
+     * @return FetchResult&lt;ResourceFileTypeModel&gt;
      */
     public Future<FetchResult<ResourceFileTypeModel>> listResourceFileTypesAsync(String filter, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/resourcefiletypes");
@@ -2949,7 +3014,8 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<SecurityRoleModel>
+     * @return FetchResult&lt;SecurityRoleModel&gt;
+     * @throws Exception an Exception
      */
     public FetchResult<SecurityRoleModel> listSecurityRoles(String filter, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/securityroles");
@@ -2970,7 +3036,7 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<SecurityRoleModel>
+     * @return FetchResult&lt;SecurityRoleModel&gt;
      */
     public Future<FetchResult<SecurityRoleModel>> listSecurityRolesAsync(String filter, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/securityroles");
@@ -2992,7 +3058,8 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<SubscriptionTypeModel>
+     * @return FetchResult&lt;SubscriptionTypeModel&gt;
+     * @throws Exception an Exception
      */
     public FetchResult<SubscriptionTypeModel> listSubscriptionTypes(String filter, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/subscriptiontypes");
@@ -3014,7 +3081,7 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<SubscriptionTypeModel>
+     * @return FetchResult&lt;SubscriptionTypeModel&gt;
      */
     public Future<FetchResult<SubscriptionTypeModel>> listSubscriptionTypesAsync(String filter, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/subscriptiontypes");
@@ -3034,7 +3101,8 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<TaxAuthorityModel>
+     * @return FetchResult&lt;TaxAuthorityModel&gt;
+     * @throws Exception an Exception
      */
     public FetchResult<TaxAuthorityModel> listTaxAuthorities(String filter, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/taxauthorities");
@@ -3054,7 +3122,7 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<TaxAuthorityModel>
+     * @return FetchResult&lt;TaxAuthorityModel&gt;
      */
     public Future<FetchResult<TaxAuthorityModel>> listTaxAuthoritiesAsync(String filter, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/taxauthorities");
@@ -3076,7 +3144,8 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<TaxAuthorityFormModel>
+     * @return FetchResult&lt;TaxAuthorityFormModel&gt;
+     * @throws Exception an Exception
      */
     public FetchResult<TaxAuthorityFormModel> listTaxAuthorityForms(String filter, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/taxauthorityforms");
@@ -3098,7 +3167,7 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<TaxAuthorityFormModel>
+     * @return FetchResult&lt;TaxAuthorityFormModel&gt;
      */
     public Future<FetchResult<TaxAuthorityFormModel>> listTaxAuthorityFormsAsync(String filter, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/taxauthorityforms");
@@ -3118,7 +3187,8 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<TaxAuthorityTypeModel>
+     * @return FetchResult&lt;TaxAuthorityTypeModel&gt;
+     * @throws Exception an Exception
      */
     public FetchResult<TaxAuthorityTypeModel> listTaxAuthorityTypes(String filter, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/taxauthoritytypes");
@@ -3138,7 +3208,7 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<TaxAuthorityTypeModel>
+     * @return FetchResult&lt;TaxAuthorityTypeModel&gt;
      */
     public Future<FetchResult<TaxAuthorityTypeModel>> listTaxAuthorityTypesAsync(String filter, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/taxauthoritytypes");
@@ -3161,7 +3231,8 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<TaxCodeModel>
+     * @return FetchResult&lt;TaxCodeModel&gt;
+     * @throws Exception an Exception
      */
     public FetchResult<TaxCodeModel> listTaxCodes(String filter, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/taxcodes");
@@ -3184,7 +3255,7 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<TaxCodeModel>
+     * @return FetchResult&lt;TaxCodeModel&gt;
      */
     public Future<FetchResult<TaxCodeModel>> listTaxCodesAsync(String filter, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/taxcodes");
@@ -3206,6 +3277,7 @@ public class AvaTaxClient {
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return TaxCodeTypesModel
+     * @throws Exception an Exception
      */
     public TaxCodeTypesModel listTaxCodeTypes(String filter, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/taxcodetypes");
@@ -3246,7 +3318,8 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<TaxSubTypeModel>
+     * @return FetchResult&lt;TaxSubTypeModel&gt;
+     * @throws Exception an Exception
      */
     public FetchResult<TaxSubTypeModel> listTaxSubTypes(String filter, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/taxsubtypes");
@@ -3266,7 +3339,7 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<TaxSubTypeModel>
+     * @return FetchResult&lt;TaxSubTypeModel&gt;
      */
     public Future<FetchResult<TaxSubTypeModel>> listTaxSubTypesAsync(String filter, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/taxsubtypes");
@@ -3286,7 +3359,8 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<TaxTypeGroupModel>
+     * @return FetchResult&lt;TaxTypeGroupModel&gt;
+     * @throws Exception an Exception
      */
     public FetchResult<TaxTypeGroupModel> listTaxTypeGroups(String filter, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/taxtypegroups");
@@ -3306,7 +3380,7 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<TaxTypeGroupModel>
+     * @return FetchResult&lt;TaxTypeGroupModel&gt;
      */
     public Future<FetchResult<TaxTypeGroupModel>> listTaxTypeGroupsAsync(String filter, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/taxtypegroups");
@@ -3327,6 +3401,7 @@ public class AvaTaxClient {
      * @param companyId The unique ID of the company that owns the filing request object
      * @param id The unique ID of the filing request object
      * @return FilingRequestModel
+     * @throws Exception an Exception
      */
     public FilingRequestModel approveFilingRequest(Integer companyId, Integer id) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingrequests/{id}/approve");
@@ -3362,6 +3437,7 @@ public class AvaTaxClient {
      * @param companyId The unique ID of the company that owns the filing request object
      * @param id The unique ID of the filing request object
      * @return FilingRequestModel
+     * @throws Exception an Exception
      */
     public FilingRequestModel cancelFilingRequest(Integer companyId, Integer id) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingrequests/{id}/cancel");
@@ -3398,6 +3474,7 @@ public class AvaTaxClient {
      * @param id The unique ID number of the filing calendar to cancel
      * @param model The cancellation request for this filing calendar
      * @return FilingRequestModel
+     * @throws Exception an Exception
      */
     public FilingRequestModel cancelFilingRequests(Integer companyId, Integer id, ArrayList<FilingRequestModel> model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingcalendars/{id}/cancel/request");
@@ -3434,6 +3511,7 @@ public class AvaTaxClient {
      * @param companyId The unique ID of the company that will add the new filing calendar
      * @param model Information about the proposed new filing calendar
      * @return FilingRequestModel
+     * @throws Exception an Exception
      */
     public FilingRequestModel createFilingRequests(Integer companyId, ArrayList<FilingRequestModel> model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingcalendars/add/request");
@@ -3462,7 +3540,8 @@ public class AvaTaxClient {
      * 
      * @param companyId The unique ID of the company that owns the filing calendar object
      * @param formCode The unique code of the form
-     * @return ArrayList<CycleAddOptionModel>
+     * @return ArrayList&lt;CycleAddOptionModel&gt;
+     * @throws Exception an Exception
      */
     public ArrayList<CycleAddOptionModel> cycleSafeAdd(Integer companyId, String formCode) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingcalendars/add/options");
@@ -3476,7 +3555,7 @@ public class AvaTaxClient {
      * 
      * @param companyId The unique ID of the company that owns the filing calendar object
      * @param formCode The unique code of the form
-     * @return ArrayList<CycleAddOptionModel>
+     * @return ArrayList&lt;CycleAddOptionModel&gt;
      */
     public Future<ArrayList<CycleAddOptionModel>> cycleSafeAddAsync(Integer companyId, String formCode) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingcalendars/add/options");
@@ -3492,6 +3571,7 @@ public class AvaTaxClient {
      * @param id The unique ID of the filing calendar object
      * @param model A list of filing calendar edits to be made
      * @return CycleEditOptionModel
+     * @throws Exception an Exception
      */
     public CycleEditOptionModel cycleSafeEdit(Integer companyId, Integer id, ArrayList<FilingCalendarEditModel> model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingcalendars/{id}/edit/options");
@@ -3521,6 +3601,7 @@ public class AvaTaxClient {
      * @param companyId The unique ID of the company that owns the filing calendar object
      * @param id The unique ID of the filing calendar object
      * @return CycleExpireModel
+     * @throws Exception an Exception
      */
     public CycleExpireModel cycleSafeExpiration(Integer companyId, Integer id) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingcalendars/{id}/cancel/options");
@@ -3552,7 +3633,8 @@ public class AvaTaxClient {
      * 
      * @param companyId The ID of the company that owns this filing calendar.
      * @param id The ID of the filing calendar you wish to delete.
-     * @return ArrayList<ErrorDetail>
+     * @return ArrayList&lt;ErrorDetail&gt;
+     * @throws Exception an Exception
      */
     public ArrayList<ErrorDetail> deleteFilingCalendar(Integer companyId, Integer id) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingcalendars/{id}");
@@ -3570,7 +3652,7 @@ public class AvaTaxClient {
      * 
      * @param companyId The ID of the company that owns this filing calendar.
      * @param id The ID of the filing calendar you wish to delete.
-     * @return ArrayList<ErrorDetail>
+     * @return ArrayList&lt;ErrorDetail&gt;
      */
     public Future<ArrayList<ErrorDetail>> deleteFilingCalendarAsync(Integer companyId, Integer id) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingcalendars/{id}");
@@ -3585,6 +3667,7 @@ public class AvaTaxClient {
      * @param companyId The ID of the company that owns this filing calendar
      * @param id The primary key of this filing calendar
      * @return FilingCalendarModel
+     * @throws Exception an Exception
      */
     public FilingCalendarModel getFilingCalendar(Integer companyId, Integer id) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingcalendars/{id}");
@@ -3616,6 +3699,7 @@ public class AvaTaxClient {
      * @param companyId The ID of the company that owns this filing calendar
      * @param id The primary key of this filing calendar
      * @return FilingRequestModel
+     * @throws Exception an Exception
      */
     public FilingRequestModel getFilingRequest(Integer companyId, Integer id) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingrequests/{id}");
@@ -3651,7 +3735,8 @@ public class AvaTaxClient {
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @param returnCountry A comma separated list of countries
      * @param returnRegion A comma separated list of regions
-     * @return FetchResult<FilingCalendarModel>
+     * @return FetchResult&lt;FilingCalendarModel&gt;
+     * @throws Exception an Exception
      */
     public FetchResult<FilingCalendarModel> listFilingCalendars(Integer companyId, String filter, Integer top, Integer skip, String orderBy, String returnCountry, String returnRegion) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingcalendars");
@@ -3675,7 +3760,7 @@ public class AvaTaxClient {
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @param returnCountry A comma separated list of countries
      * @param returnRegion A comma separated list of regions
-     * @return FetchResult<FilingCalendarModel>
+     * @return FetchResult&lt;FilingCalendarModel&gt;
      */
     public Future<FetchResult<FilingCalendarModel>> listFilingCalendarsAsync(Integer companyId, String filter, Integer top, Integer skip, String orderBy, String returnCountry, String returnRegion) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingcalendars");
@@ -3700,7 +3785,8 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<FilingRequestModel>
+     * @return FetchResult&lt;FilingRequestModel&gt;
+     * @throws Exception an Exception
      */
     public FetchResult<FilingRequestModel> listFilingRequests(Integer companyId, String filter, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingrequests");
@@ -3723,7 +3809,7 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<FilingRequestModel>
+     * @return FetchResult&lt;FilingRequestModel&gt;
      */
     public Future<FetchResult<FilingRequestModel>> listFilingRequestsAsync(Integer companyId, String filter, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingrequests");
@@ -3743,6 +3829,7 @@ public class AvaTaxClient {
      * 
      * @param model The model of the login information we are verifying
      * @return LoginVerificationOutputModel
+     * @throws Exception an Exception
      */
     public LoginVerificationOutputModel loginVerificationRequest(LoginVerificationInputModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/filingcalendars/credentials/verify");
@@ -3772,6 +3859,7 @@ public class AvaTaxClient {
      * 
      * @param jobId The unique ID number of this login request
      * @return LoginVerificationOutputModel
+     * @throws Exception an Exception
      */
     public LoginVerificationOutputModel loginVerificationStatus(Integer jobId) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/filingcalendars/credentials/{jobId}");
@@ -3802,9 +3890,10 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @param returnCountry 
-     * @param returnRegion 
-     * @return FetchResult<FilingCalendarModel>
+     * @param returnCountry Return Country
+     * @param returnRegion Return Region
+     * @return FetchResult&lt;FilingCalendarModel&gt;
+     * @throws Exception an Exception
      */
     public FetchResult<FilingCalendarModel> queryFilingCalendars(String filter, Integer top, Integer skip, String orderBy, String returnCountry, String returnRegion) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/filingcalendars");
@@ -3824,9 +3913,9 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @param returnCountry 
-     * @param returnRegion 
-     * @return FetchResult<FilingCalendarModel>
+     * @param returnCountry Return Country
+     * @param returnRegion Return Region
+     * @return FetchResult&lt;FilingCalendarModel&gt;
      */
     public Future<FetchResult<FilingCalendarModel>> queryFilingCalendarsAsync(String filter, Integer top, Integer skip, String orderBy, String returnCountry, String returnRegion) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/filingcalendars");
@@ -3852,7 +3941,8 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<FilingRequestModel>
+     * @return FetchResult&lt;FilingRequestModel&gt;
+     * @throws Exception an Exception
      */
     public FetchResult<FilingRequestModel> queryFilingRequests(String filter, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/filingrequests");
@@ -3876,7 +3966,7 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<FilingRequestModel>
+     * @return FetchResult&lt;FilingRequestModel&gt;
      */
     public Future<FetchResult<FilingRequestModel>> queryFilingRequestsAsync(String filter, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/filingrequests");
@@ -3901,6 +3991,7 @@ public class AvaTaxClient {
      * @param id The unique ID number of the filing calendar to edit
      * @param model A list of filing calendar edits to be made
      * @return FilingRequestModel
+     * @throws Exception an Exception
      */
     public FilingRequestModel requestFilingCalendarUpdate(Integer companyId, Integer id, ArrayList<FilingRequestModel> model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingcalendars/{id}/edit/request");
@@ -3941,6 +4032,7 @@ public class AvaTaxClient {
      * @param id The unique ID of the filing calendar object
      * @param model The filing calendar model you are wishing to update with.
      * @return FilingCalendarModel
+     * @throws Exception an Exception
      */
     public FilingCalendarModel updateFilingCalendar(Integer companyId, Integer id, FilingCalendarModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingcalendars/{id}");
@@ -3977,6 +4069,7 @@ public class AvaTaxClient {
      * @param id The unique ID of the filing request object
      * @param model A list of filing calendar edits to be made
      * @return FilingRequestModel
+     * @throws Exception an Exception
      */
     public FilingRequestModel updateFilingRequest(Integer companyId, Integer id, FilingRequestModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingrequests/{id}");
@@ -4017,7 +4110,8 @@ public class AvaTaxClient {
      * @param year The year of the filing period to approve.
      * @param month The month of the filing period to approve.
      * @param model The approve request you wish to execute.
-     * @return ArrayList<FilingModel>
+     * @return ArrayList&lt;FilingModel&gt;
+     * @throws Exception an Exception
      */
     public ArrayList<FilingModel> approveFilings(Integer companyId, Short year, Byte month, ApproveFilingsModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/approve");
@@ -4041,7 +4135,7 @@ public class AvaTaxClient {
      * @param year The year of the filing period to approve.
      * @param month The month of the filing period to approve.
      * @param model The approve request you wish to execute.
-     * @return ArrayList<FilingModel>
+     * @return ArrayList&lt;FilingModel&gt;
      */
     public Future<ArrayList<FilingModel>> approveFilingsAsync(Integer companyId, Short year, Byte month, ApproveFilingsModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/approve");
@@ -4066,7 +4160,8 @@ public class AvaTaxClient {
      * @param month The month of the filing period to approve.
      * @param country The two-character ISO-3166 code for the country.
      * @param model The approve request you wish to execute.
-     * @return ArrayList<FilingModel>
+     * @return ArrayList&lt;FilingModel&gt;
+     * @throws Exception an Exception
      */
     public ArrayList<FilingModel> approveFilingsCountry(Integer companyId, Short year, Byte month, String country, ApproveFilingsModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/{country}/approve");
@@ -4092,7 +4187,7 @@ public class AvaTaxClient {
      * @param month The month of the filing period to approve.
      * @param country The two-character ISO-3166 code for the country.
      * @param model The approve request you wish to execute.
-     * @return ArrayList<FilingModel>
+     * @return ArrayList&lt;FilingModel&gt;
      */
     public Future<ArrayList<FilingModel>> approveFilingsCountryAsync(Integer companyId, Short year, Byte month, String country, ApproveFilingsModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/{country}/approve");
@@ -4119,7 +4214,8 @@ public class AvaTaxClient {
      * @param country The two-character ISO-3166 code for the country.
      * @param region The two or three character region code for the region.
      * @param model The approve request you wish to execute.
-     * @return ArrayList<FilingModel>
+     * @return ArrayList&lt;FilingModel&gt;
+     * @throws Exception an Exception
      */
     public ArrayList<FilingModel> approveFilingsCountryRegion(Integer companyId, Short year, Byte month, String country, String region, ApproveFilingsModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/{country}/{region}/approve");
@@ -4147,7 +4243,7 @@ public class AvaTaxClient {
      * @param country The two-character ISO-3166 code for the country.
      * @param region The two or three character region code for the region.
      * @param model The approve request you wish to execute.
-     * @return ArrayList<FilingModel>
+     * @return ArrayList&lt;FilingModel&gt;
      */
     public Future<ArrayList<FilingModel>> approveFilingsCountryRegionAsync(Integer companyId, Short year, Byte month, String country, String region, ApproveFilingsModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/{country}/{region}/approve");
@@ -4175,7 +4271,8 @@ public class AvaTaxClient {
      * @param region The two or three character region code for the region.
      * @param formCode The unique code of the form being adjusted.
      * @param model A list of Adjustments to be created for the specified filing.
-     * @return ArrayList<FilingAdjustmentModel>
+     * @return ArrayList&lt;FilingAdjustmentModel&gt;
+     * @throws Exception an Exception
      */
     public ArrayList<FilingAdjustmentModel> createReturnAdjustment(Integer companyId, Short year, Byte month, String country, String region, String formCode, ArrayList<FilingAdjustmentModel> model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/{country}/{region}/{formCode}/adjust");
@@ -4204,7 +4301,7 @@ public class AvaTaxClient {
      * @param region The two or three character region code for the region.
      * @param formCode The unique code of the form being adjusted.
      * @param model A list of Adjustments to be created for the specified filing.
-     * @return ArrayList<FilingAdjustmentModel>
+     * @return ArrayList&lt;FilingAdjustmentModel&gt;
      */
     public Future<ArrayList<FilingAdjustmentModel>> createReturnAdjustmentAsync(Integer companyId, Short year, Byte month, String country, String region, String formCode, ArrayList<FilingAdjustmentModel> model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/{country}/{region}/{formCode}/adjust");
@@ -4232,7 +4329,8 @@ public class AvaTaxClient {
      * @param region The two or three character region code for the region of the filing being changed.
      * @param formCode The unique code of the form being changed.
      * @param model A list of augmentations to be created for the specified filing.
-     * @return ArrayList<FilingAugmentationModel>
+     * @return ArrayList&lt;FilingAugmentationModel&gt;
+     * @throws Exception an Exception
      */
     public ArrayList<FilingAugmentationModel> createReturnAugmentation(Integer companyId, Short year, Byte month, String country, String region, String formCode, ArrayList<FilingAugmentationModel> model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/{country}/{region}/{formCode}/augment");
@@ -4260,7 +4358,7 @@ public class AvaTaxClient {
      * @param region The two or three character region code for the region of the filing being changed.
      * @param formCode The unique code of the form being changed.
      * @param model A list of augmentations to be created for the specified filing.
-     * @return ArrayList<FilingAugmentationModel>
+     * @return ArrayList&lt;FilingAugmentationModel&gt;
      */
     public Future<ArrayList<FilingAugmentationModel>> createReturnAugmentationAsync(Integer companyId, Short year, Byte month, String country, String region, String formCode, ArrayList<FilingAugmentationModel> model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/{country}/{region}/{formCode}/augment");
@@ -4289,7 +4387,8 @@ public class AvaTaxClient {
      * @param region The two or three character region code for the region.
      * @param formCode The unique code of the form being adjusted.
      * @param model A list of Payments to be created for the specified filing.
-     * @return ArrayList<FilingPaymentModel>
+     * @return ArrayList&lt;FilingPaymentModel&gt;
+     * @throws Exception an Exception
      */
     public ArrayList<FilingPaymentModel> createReturnPayment(Integer companyId, Short year, Byte month, String country, String region, String formCode, ArrayList<FilingPaymentModel> model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/{country}/{region}/{formCode}/payment");
@@ -4318,7 +4417,7 @@ public class AvaTaxClient {
      * @param region The two or three character region code for the region.
      * @param formCode The unique code of the form being adjusted.
      * @param model A list of Payments to be created for the specified filing.
-     * @return ArrayList<FilingPaymentModel>
+     * @return ArrayList&lt;FilingPaymentModel&gt;
      */
     public Future<ArrayList<FilingPaymentModel>> createReturnPaymentAsync(Integer companyId, Short year, Byte month, String country, String region, String formCode, ArrayList<FilingPaymentModel> model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/{country}/{region}/{formCode}/payment");
@@ -4342,7 +4441,8 @@ public class AvaTaxClient {
      * 
      * @param companyId The ID of the company that owns the filing being adjusted.
      * @param id The ID of the adjustment being deleted.
-     * @return ArrayList<ErrorDetail>
+     * @return ArrayList&lt;ErrorDetail&gt;
+     * @throws Exception an Exception
      */
     public ArrayList<ErrorDetail> deleteReturnAdjustment(Integer companyId, Long id) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/adjust/{id}");
@@ -4362,7 +4462,7 @@ public class AvaTaxClient {
      * 
      * @param companyId The ID of the company that owns the filing being adjusted.
      * @param id The ID of the adjustment being deleted.
-     * @return ArrayList<ErrorDetail>
+     * @return ArrayList&lt;ErrorDetail&gt;
      */
     public Future<ArrayList<ErrorDetail>> deleteReturnAdjustmentAsync(Integer companyId, Long id) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/adjust/{id}");
@@ -4381,7 +4481,8 @@ public class AvaTaxClient {
      * 
      * @param companyId The ID of the company that owns the filing being changed.
      * @param id The ID of the augmentation being added.
-     * @return ArrayList<ErrorDetail>
+     * @return ArrayList&lt;ErrorDetail&gt;
+     * @throws Exception an Exception
      */
     public ArrayList<ErrorDetail> deleteReturnAugmentation(Integer companyId, Long id) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/augment/{id}");
@@ -4400,7 +4501,7 @@ public class AvaTaxClient {
      * 
      * @param companyId The ID of the company that owns the filing being changed.
      * @param id The ID of the augmentation being added.
-     * @return ArrayList<ErrorDetail>
+     * @return ArrayList&lt;ErrorDetail&gt;
      */
     public Future<ArrayList<ErrorDetail>> deleteReturnAugmentationAsync(Integer companyId, Long id) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/augment/{id}");
@@ -4420,7 +4521,8 @@ public class AvaTaxClient {
      * 
      * @param companyId The ID of the company that owns the filing being adjusted.
      * @param id The ID of the payment being deleted.
-     * @return ArrayList<ErrorDetail>
+     * @return ArrayList&lt;ErrorDetail&gt;
+     * @throws Exception an Exception
      */
     public ArrayList<ErrorDetail> deleteReturnPayment(Integer companyId, Long id) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/payment/{id}");
@@ -4440,7 +4542,7 @@ public class AvaTaxClient {
      * 
      * @param companyId The ID of the company that owns the filing being adjusted.
      * @param id The ID of the payment being deleted.
-     * @return ArrayList<ErrorDetail>
+     * @return ArrayList&lt;ErrorDetail&gt;
      */
     public Future<ArrayList<ErrorDetail>> deleteReturnPaymentAsync(Integer companyId, Long id) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/payment/{id}");
@@ -4455,6 +4557,7 @@ public class AvaTaxClient {
      * @param filingsId The unique id of the worksheet.
      * @param companyId The unique ID of the company that owns the worksheet.
      * @return FilingsCheckupModel
+     * @throws Exception an Exception
      */
     public FilingsCheckupModel filingsCheckupReport(Integer filingsId, Integer companyId) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{filingsId}/checkup");
@@ -4484,6 +4587,7 @@ public class AvaTaxClient {
      * @param year The year of the filing period.
      * @param month The month of the filing period.
      * @return FilingsCheckupModel
+     * @throws Exception an Exception
      */
     public FilingsCheckupModel filingsCheckupReports(Integer companyId, Integer year, Integer month) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/checkup");
@@ -4516,6 +4620,7 @@ public class AvaTaxClient {
      * @param filingId The unique id of the worksheet return.
      * @param fileId The unique id of the document you are downloading
      * @return String
+     * @throws Exception an Exception
      */
     public String getFilingAttachment(Integer companyId, Long filingId, Long fileId) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{filingId}/attachment");
@@ -4551,6 +4656,7 @@ public class AvaTaxClient {
      * @param year The year of the filing period.
      * @param month The two digit month of the filing period.
      * @return String
+     * @throws Exception an Exception
      */
     public String getFilingAttachments(Integer companyId, Short year, Byte month) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/attachments");
@@ -4589,6 +4695,7 @@ public class AvaTaxClient {
      * @param year The year of the filing period.
      * @param month The two digit month of the filing period.
      * @return String
+     * @throws Exception an Exception
      */
     public String getFilingAttachmentsTraceFile(Integer companyId, Short year, Byte month) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/attachments/tracefile");
@@ -4625,7 +4732,8 @@ public class AvaTaxClient {
      * 
      * @param companyId The ID of the company that owns the filings.
      * @param id The id of the filing return your retrieving
-     * @return FetchResult<FilingReturnModel>
+     * @return FetchResult&lt;FilingReturnModel&gt;
+     * @throws Exception an Exception
      */
     public FetchResult<FilingReturnModel> getFilingReturn(Integer companyId, Integer id) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/returns/{id}");
@@ -4642,7 +4750,7 @@ public class AvaTaxClient {
      * 
      * @param companyId The ID of the company that owns the filings.
      * @param id The id of the filing return your retrieving
-     * @return FetchResult<FilingReturnModel>
+     * @return FetchResult&lt;FilingReturnModel&gt;
      */
     public Future<FetchResult<FilingReturnModel>> getFilingReturnAsync(Integer companyId, Integer id) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/returns/{id}");
@@ -4660,7 +4768,8 @@ public class AvaTaxClient {
      * @param companyId The ID of the company that owns the filings.
      * @param year The year of the filing period.
      * @param month The two digit month of the filing period.
-     * @return FetchResult<FilingModel>
+     * @return FetchResult&lt;FilingModel&gt;
+     * @throws Exception an Exception
      */
     public FetchResult<FilingModel> getFilings(Integer companyId, Short year, Byte month) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}");
@@ -4679,7 +4788,7 @@ public class AvaTaxClient {
      * @param companyId The ID of the company that owns the filings.
      * @param year The year of the filing period.
      * @param month The two digit month of the filing period.
-     * @return FetchResult<FilingModel>
+     * @return FetchResult&lt;FilingModel&gt;
      */
     public Future<FetchResult<FilingModel>> getFilingsAsync(Integer companyId, Short year, Byte month) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}");
@@ -4699,7 +4808,8 @@ public class AvaTaxClient {
      * @param year The year of the filing period.
      * @param month The two digit month of the filing period.
      * @param country The two-character ISO-3166 code for the country.
-     * @return FetchResult<FilingModel>
+     * @return FetchResult&lt;FilingModel&gt;
+     * @throws Exception an Exception
      */
     public FetchResult<FilingModel> getFilingsByCountry(Integer companyId, Short year, Byte month, String country) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/{country}");
@@ -4720,7 +4830,7 @@ public class AvaTaxClient {
      * @param year The year of the filing period.
      * @param month The two digit month of the filing period.
      * @param country The two-character ISO-3166 code for the country.
-     * @return FetchResult<FilingModel>
+     * @return FetchResult&lt;FilingModel&gt;
      */
     public Future<FetchResult<FilingModel>> getFilingsByCountryAsync(Integer companyId, Short year, Byte month, String country) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/{country}");
@@ -4742,7 +4852,8 @@ public class AvaTaxClient {
      * @param month The two digit month of the filing period.
      * @param country The two-character ISO-3166 code for the country.
      * @param region The two or three character region code for the region.
-     * @return FetchResult<FilingModel>
+     * @return FetchResult&lt;FilingModel&gt;
+     * @throws Exception an Exception
      */
     public FetchResult<FilingModel> getFilingsByCountryRegion(Integer companyId, Short year, Byte month, String country, String region) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/{country}/{region}");
@@ -4765,7 +4876,7 @@ public class AvaTaxClient {
      * @param month The two digit month of the filing period.
      * @param country The two-character ISO-3166 code for the country.
      * @param region The two or three character region code for the region.
-     * @return FetchResult<FilingModel>
+     * @return FetchResult&lt;FilingModel&gt;
      */
     public Future<FetchResult<FilingModel>> getFilingsByCountryRegionAsync(Integer companyId, Short year, Byte month, String country, String region) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/{country}/{region}");
@@ -4789,7 +4900,8 @@ public class AvaTaxClient {
      * @param country The two-character ISO-3166 code for the country.
      * @param region The two or three character region code for the region.
      * @param formCode The unique code of the form.
-     * @return FetchResult<FilingModel>
+     * @return FetchResult&lt;FilingModel&gt;
+     * @throws Exception an Exception
      */
     public FetchResult<FilingModel> getFilingsByReturnName(Integer companyId, Short year, Byte month, String country, String region, String formCode) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/{country}/{region}/{formCode}");
@@ -4814,7 +4926,7 @@ public class AvaTaxClient {
      * @param country The two-character ISO-3166 code for the country.
      * @param region The two or three character region code for the region.
      * @param formCode The unique code of the form.
-     * @return FetchResult<FilingModel>
+     * @return FetchResult&lt;FilingModel&gt;
      */
     public Future<FetchResult<FilingModel>> getFilingsByReturnNameAsync(Integer companyId, Short year, Byte month, String country, String region, String formCode) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/{country}/{region}/{formCode}");
@@ -4838,7 +4950,8 @@ This gets the basic information from the filings and doesn't include anything ex
      * @param status The status of the return(s) you are trying to retrieve (See FilingStatusId::* for a list of allowable values)
      * @param country The country of the return(s) you are trying to retrieve
      * @param region The region of the return(s) you are trying to retrieve
-     * @return FetchResult<FilingReturnModelBasic>
+     * @return FetchResult&lt;FilingReturnModelBasic&gt;
+     * @throws Exception an Exception
      */
     public FetchResult<FilingReturnModelBasic> getFilingsReturns(Integer companyId, Integer endPeriodMonth, Integer endPeriodYear, FilingFrequencyId frequency, FilingStatusId status, String country, String region) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/returns");
@@ -4863,7 +4976,7 @@ This gets the basic information from the filings and doesn't include anything ex
      * @param status The status of the return(s) you are trying to retrieve (See FilingStatusId::* for a list of allowable values)
      * @param country The country of the return(s) you are trying to retrieve
      * @param region The region of the return(s) you are trying to retrieve
-     * @return FetchResult<FilingReturnModelBasic>
+     * @return FetchResult&lt;FilingReturnModelBasic&gt;
      */
     public Future<FetchResult<FilingReturnModelBasic>> getFilingsReturnsAsync(Integer companyId, Integer endPeriodMonth, Integer endPeriodYear, FilingFrequencyId frequency, FilingStatusId status, String country, String region) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/returns");
@@ -4890,7 +5003,8 @@ This gets the basic information from the filings and doesn't include anything ex
      * @param year The year of the filing period to be rebuilt.
      * @param month The month of the filing period to be rebuilt.
      * @param model The rebuild request you wish to execute.
-     * @return FetchResult<FilingModel>
+     * @return FetchResult&lt;FilingModel&gt;
+     * @throws Exception an Exception
      */
     public FetchResult<FilingModel> rebuildFilings(Integer companyId, Short year, Byte month, RebuildFilingsModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/rebuild");
@@ -4913,7 +5027,7 @@ This gets the basic information from the filings and doesn't include anything ex
      * @param year The year of the filing period to be rebuilt.
      * @param month The month of the filing period to be rebuilt.
      * @param model The rebuild request you wish to execute.
-     * @return FetchResult<FilingModel>
+     * @return FetchResult&lt;FilingModel&gt;
      */
     public Future<FetchResult<FilingModel>> rebuildFilingsAsync(Integer companyId, Short year, Byte month, RebuildFilingsModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/rebuild");
@@ -4937,7 +5051,8 @@ This gets the basic information from the filings and doesn't include anything ex
      * @param month The month of the filing period to be rebuilt.
      * @param country The two-character ISO-3166 code for the country.
      * @param model The rebuild request you wish to execute.
-     * @return FetchResult<FilingModel>
+     * @return FetchResult&lt;FilingModel&gt;
+     * @throws Exception an Exception
      */
     public FetchResult<FilingModel> rebuildFilingsByCountry(Integer companyId, Short year, Byte month, String country, RebuildFilingsModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/{country}/rebuild");
@@ -4962,7 +5077,7 @@ This gets the basic information from the filings and doesn't include anything ex
      * @param month The month of the filing period to be rebuilt.
      * @param country The two-character ISO-3166 code for the country.
      * @param model The rebuild request you wish to execute.
-     * @return FetchResult<FilingModel>
+     * @return FetchResult&lt;FilingModel&gt;
      */
     public Future<FetchResult<FilingModel>> rebuildFilingsByCountryAsync(Integer companyId, Short year, Byte month, String country, RebuildFilingsModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/{country}/rebuild");
@@ -4988,7 +5103,8 @@ This gets the basic information from the filings and doesn't include anything ex
      * @param country The two-character ISO-3166 code for the country.
      * @param region The two or three character region code for the region.
      * @param model The rebuild request you wish to execute.
-     * @return FetchResult<FilingModel>
+     * @return FetchResult&lt;FilingModel&gt;
+     * @throws Exception an Exception
      */
     public FetchResult<FilingModel> rebuildFilingsByCountryRegion(Integer companyId, Short year, Byte month, String country, String region, RebuildFilingsModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/{country}/{region}/rebuild");
@@ -5015,7 +5131,7 @@ This gets the basic information from the filings and doesn't include anything ex
      * @param country The two-character ISO-3166 code for the country.
      * @param region The two or three character region code for the region.
      * @param model The rebuild request you wish to execute.
-     * @return FetchResult<FilingModel>
+     * @return FetchResult&lt;FilingModel&gt;
      */
     public Future<FetchResult<FilingModel>> rebuildFilingsByCountryRegionAsync(Integer companyId, Short year, Byte month, String country, String region, RebuildFilingsModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/{country}/{region}/rebuild");
@@ -5040,6 +5156,7 @@ This gets the basic information from the filings and doesn't include anything ex
      * @param id The ID of the adjustment being edited.
      * @param model The updated Adjustment.
      * @return FilingAdjustmentModel
+     * @throws Exception an Exception
      */
     public FilingAdjustmentModel updateReturnAdjustment(Integer companyId, Long id, FilingAdjustmentModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/adjust/{id}");
@@ -5081,6 +5198,7 @@ This gets the basic information from the filings and doesn't include anything ex
      * @param id The ID of the augmentation being edited.
      * @param model The updated Augmentation.
      * @return FilingModel
+     * @throws Exception an Exception
      */
     public FilingModel updateReturnAugmentation(Integer companyId, Long id, FilingAugmentationModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/augment/{id}");
@@ -5122,6 +5240,7 @@ This gets the basic information from the filings and doesn't include anything ex
      * @param id The ID of the payment being edited.
      * @param model The updated Payment.
      * @return FilingPaymentModel
+     * @throws Exception an Exception
      */
     public FilingPaymentModel updateReturnPayment(Integer companyId, Long id, FilingPaymentModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/payment/{id}");
@@ -5168,6 +5287,7 @@ This gets the basic information from the filings and doesn't include anything ex
      * 
      * @param model Required information to provision a free trial account.
      * @return NewAccountModel
+     * @throws Exception an Exception
      */
     public NewAccountModel requestFreeTrial(FreeTrialRequestModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/freetrials/request");
@@ -5233,6 +5353,7 @@ This gets the basic information from the filings and doesn't include anything ex
      * @param postalCode The postal code of the location.
      * @param country The two letter ISO-3166 country code.
      * @return TaxRateModel
+     * @throws Exception an Exception
      */
     public TaxRateModel taxRatesByAddress(String line1, String line2, String line3, String city, String region, String postalCode, String country) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/taxrates/byaddress");
@@ -5326,6 +5447,7 @@ This gets the basic information from the filings and doesn't include anything ex
      * @param country The two letter ISO-3166 country code.
      * @param postalCode The postal code of the location.
      * @return TaxRateModel
+     * @throws Exception an Exception
      */
     public TaxRateModel taxRatesByPostalCode(String country, String postalCode) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/taxrates/bypostalcode");
@@ -5390,6 +5512,7 @@ This gets the basic information from the filings and doesn't include anything ex
      * 
      * @param id The unique ID number of this funding request
      * @return FundingStatusModel
+     * @throws Exception an Exception
      */
     public FundingStatusModel activateFundingRequest(Long id) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/fundingrequests/{id}/widget");
@@ -5436,6 +5559,7 @@ This gets the basic information from the filings and doesn't include anything ex
      * 
      * @param id The unique ID number of this funding request
      * @return FundingStatusModel
+     * @throws Exception an Exception
      */
     public FundingStatusModel fundingRequestStatus(Integer id) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/fundingrequests/{id}");
@@ -5470,7 +5594,8 @@ This gets the basic information from the filings and doesn't include anything ex
      * 
      * @param companyId The ID of the company that owns this item.
      * @param model The item you wish to create.
-     * @return ArrayList<ItemModel>
+     * @return ArrayList&lt;ItemModel&gt;
+     * @throws Exception an Exception
      */
     public ArrayList<ItemModel> createItems(Integer companyId, ArrayList<ItemModel> model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/items");
@@ -5483,7 +5608,7 @@ This gets the basic information from the filings and doesn't include anything ex
      * 
      * @param companyId The ID of the company that owns this item.
      * @param model The item you wish to create.
-     * @return ArrayList<ItemModel>
+     * @return ArrayList&lt;ItemModel&gt;
      */
     public Future<ArrayList<ItemModel>> createItemsAsync(Integer companyId, ArrayList<ItemModel> model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/items");
@@ -5496,7 +5621,8 @@ This gets the basic information from the filings and doesn't include anything ex
      * 
      * @param companyId The ID of the company that owns this item.
      * @param id The ID of the item you wish to delete.
-     * @return ArrayList<ErrorDetail>
+     * @return ArrayList&lt;ErrorDetail&gt;
+     * @throws Exception an Exception
      */
     public ArrayList<ErrorDetail> deleteItem(Integer companyId, Long id) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/items/{id}");
@@ -5510,7 +5636,7 @@ This gets the basic information from the filings and doesn't include anything ex
      * 
      * @param companyId The ID of the company that owns this item.
      * @param id The ID of the item you wish to delete.
-     * @return ArrayList<ErrorDetail>
+     * @return ArrayList&lt;ErrorDetail&gt;
      */
     public Future<ArrayList<ErrorDetail>> deleteItemAsync(Integer companyId, Long id) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/items/{id}");
@@ -5527,6 +5653,7 @@ This gets the basic information from the filings and doesn't include anything ex
      * @param companyId The ID of the company that owns this item object
      * @param id The primary key of this item
      * @return ItemModel
+     * @throws Exception an Exception
      */
     public ItemModel getItem(Integer companyId, Long id) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/items/{id}");
@@ -5566,7 +5693,8 @@ This gets the basic information from the filings and doesn't include anything ex
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<ItemModel>
+     * @return FetchResult&lt;ItemModel&gt;
+     * @throws Exception an Exception
      */
     public FetchResult<ItemModel> listItemsByCompany(Integer companyId, String filter, String include, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/items");
@@ -5594,7 +5722,7 @@ This gets the basic information from the filings and doesn't include anything ex
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<ItemModel>
+     * @return FetchResult&lt;ItemModel&gt;
      */
     public Future<FetchResult<ItemModel>> listItemsByCompanyAsync(Integer companyId, String filter, String include, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/items");
@@ -5620,7 +5748,8 @@ This gets the basic information from the filings and doesn't include anything ex
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<ItemModel>
+     * @return FetchResult&lt;ItemModel&gt;
+     * @throws Exception an Exception
      */
     public FetchResult<ItemModel> queryItems(String filter, String include, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/items");
@@ -5645,7 +5774,7 @@ This gets the basic information from the filings and doesn't include anything ex
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<ItemModel>
+     * @return FetchResult&lt;ItemModel&gt;
      */
     public Future<FetchResult<ItemModel>> queryItemsAsync(String filter, String include, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/items");
@@ -5667,6 +5796,7 @@ This gets the basic information from the filings and doesn't include anything ex
      * @param id The ID of the item you wish to update
      * @param model The item object you wish to update.
      * @return ItemModel
+     * @throws Exception an Exception
      */
     public ItemModel updateItem(Integer companyId, Long id, ItemModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/items/{id}");
@@ -5704,7 +5834,8 @@ This gets the basic information from the filings and doesn't include anything ex
      * 
      * @param accountId The ID of the account that owns this override
      * @param model The jurisdiction override objects to create
-     * @return ArrayList<JurisdictionOverrideModel>
+     * @return ArrayList&lt;JurisdictionOverrideModel&gt;
+     * @throws Exception an Exception
      */
     public ArrayList<JurisdictionOverrideModel> createJurisdictionOverrides(Integer accountId, ArrayList<JurisdictionOverrideModel> model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/jurisdictionoverrides");
@@ -5723,7 +5854,7 @@ This gets the basic information from the filings and doesn't include anything ex
      * 
      * @param accountId The ID of the account that owns this override
      * @param model The jurisdiction override objects to create
-     * @return ArrayList<JurisdictionOverrideModel>
+     * @return ArrayList&lt;JurisdictionOverrideModel&gt;
      */
     public Future<ArrayList<JurisdictionOverrideModel>> createJurisdictionOverridesAsync(Integer accountId, ArrayList<JurisdictionOverrideModel> model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/jurisdictionoverrides");
@@ -5736,7 +5867,8 @@ This gets the basic information from the filings and doesn't include anything ex
      * 
      * @param accountId The ID of the account that owns this override
      * @param id The ID of the override you wish to delete
-     * @return ArrayList<ErrorDetail>
+     * @return ArrayList&lt;ErrorDetail&gt;
+     * @throws Exception an Exception
      */
     public ArrayList<ErrorDetail> deleteJurisdictionOverride(Integer accountId, Integer id) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/jurisdictionoverrides/{id}");
@@ -5750,7 +5882,7 @@ This gets the basic information from the filings and doesn't include anything ex
      * 
      * @param accountId The ID of the account that owns this override
      * @param id The ID of the override you wish to delete
-     * @return ArrayList<ErrorDetail>
+     * @return ArrayList&lt;ErrorDetail&gt;
      */
     public Future<ArrayList<ErrorDetail>> deleteJurisdictionOverrideAsync(Integer accountId, Integer id) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/jurisdictionoverrides/{id}");
@@ -5771,6 +5903,7 @@ This gets the basic information from the filings and doesn't include anything ex
      * @param accountId The ID of the account that owns this override
      * @param id The primary key of this override
      * @return JurisdictionOverrideModel
+     * @throws Exception an Exception
      */
     public JurisdictionOverrideModel getJurisdictionOverride(Integer accountId, Integer id) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/jurisdictionoverrides/{id}");
@@ -5817,7 +5950,8 @@ This gets the basic information from the filings and doesn't include anything ex
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<JurisdictionOverrideModel>
+     * @return FetchResult&lt;JurisdictionOverrideModel&gt;
+     * @throws Exception an Exception
      */
     public FetchResult<JurisdictionOverrideModel> listJurisdictionOverridesByAccount(Integer accountId, String filter, String include, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/jurisdictionoverrides");
@@ -5848,7 +5982,7 @@ This gets the basic information from the filings and doesn't include anything ex
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<JurisdictionOverrideModel>
+     * @return FetchResult&lt;JurisdictionOverrideModel&gt;
      */
     public Future<FetchResult<JurisdictionOverrideModel>> listJurisdictionOverridesByAccountAsync(Integer accountId, String filter, String include, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/jurisdictionoverrides");
@@ -5878,7 +6012,8 @@ This gets the basic information from the filings and doesn't include anything ex
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<JurisdictionOverrideModel>
+     * @return FetchResult&lt;JurisdictionOverrideModel&gt;
+     * @throws Exception an Exception
      */
     public FetchResult<JurisdictionOverrideModel> queryJurisdictionOverrides(String filter, String include, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/jurisdictionoverrides");
@@ -5907,7 +6042,7 @@ This gets the basic information from the filings and doesn't include anything ex
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<JurisdictionOverrideModel>
+     * @return FetchResult&lt;JurisdictionOverrideModel&gt;
      */
     public Future<FetchResult<JurisdictionOverrideModel>> queryJurisdictionOverridesAsync(String filter, String include, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/jurisdictionoverrides");
@@ -5926,6 +6061,7 @@ This gets the basic information from the filings and doesn't include anything ex
      * @param id The ID of the jurisdictionoverride you wish to update
      * @param model The jurisdictionoverride object you wish to update.
      * @return JurisdictionOverrideModel
+     * @throws Exception an Exception
      */
     public JurisdictionOverrideModel updateJurisdictionOverride(Integer accountId, Integer id, JurisdictionOverrideModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/jurisdictionoverrides/{id}");
@@ -5954,7 +6090,8 @@ This gets the basic information from the filings and doesn't include anything ex
      * 
      * @param companyId The ID of the company that owns this location.
      * @param model The location you wish to create.
-     * @return ArrayList<LocationModel>
+     * @return ArrayList&lt;LocationModel&gt;
+     * @throws Exception an Exception
      */
     public ArrayList<LocationModel> createLocations(Integer companyId, ArrayList<LocationModel> model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/locations");
@@ -5967,7 +6104,7 @@ This gets the basic information from the filings and doesn't include anything ex
      * 
      * @param companyId The ID of the company that owns this location.
      * @param model The location you wish to create.
-     * @return ArrayList<LocationModel>
+     * @return ArrayList&lt;LocationModel&gt;
      */
     public Future<ArrayList<LocationModel>> createLocationsAsync(Integer companyId, ArrayList<LocationModel> model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/locations");
@@ -5980,7 +6117,8 @@ This gets the basic information from the filings and doesn't include anything ex
      * 
      * @param companyId The ID of the company that owns this location.
      * @param id The ID of the location you wish to delete.
-     * @return ArrayList<ErrorDetail>
+     * @return ArrayList&lt;ErrorDetail&gt;
+     * @throws Exception an Exception
      */
     public ArrayList<ErrorDetail> deleteLocation(Integer companyId, Integer id) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/locations/{id}");
@@ -5994,7 +6132,7 @@ This gets the basic information from the filings and doesn't include anything ex
      * 
      * @param companyId The ID of the company that owns this location.
      * @param id The ID of the location you wish to delete.
-     * @return ArrayList<ErrorDetail>
+     * @return ArrayList&lt;ErrorDetail&gt;
      */
     public Future<ArrayList<ErrorDetail>> deleteLocationAsync(Integer companyId, Integer id) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/locations/{id}");
@@ -6019,6 +6157,7 @@ This gets the basic information from the filings and doesn't include anything ex
      * @param id The primary key of this location
      * @param include A comma separated list of child objects to return underneath the primary object.
      * @return LocationModel
+     * @throws Exception an Exception
      */
     public LocationModel getLocation(Integer companyId, Integer id, String include) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/locations/{id}");
@@ -6073,7 +6212,8 @@ This gets the basic information from the filings and doesn't include anything ex
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<LocationModel>
+     * @return FetchResult&lt;LocationModel&gt;
+     * @throws Exception an Exception
      */
     public FetchResult<LocationModel> listLocationsByCompany(Integer companyId, String filter, String include, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/locations");
@@ -6106,7 +6246,7 @@ This gets the basic information from the filings and doesn't include anything ex
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<LocationModel>
+     * @return FetchResult&lt;LocationModel&gt;
      */
     public Future<FetchResult<LocationModel>> listLocationsByCompanyAsync(Integer companyId, String filter, String include, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/locations");
@@ -6139,7 +6279,8 @@ This gets the basic information from the filings and doesn't include anything ex
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<LocationModel>
+     * @return FetchResult&lt;LocationModel&gt;
+     * @throws Exception an Exception
      */
     public FetchResult<LocationModel> queryLocations(String filter, String include, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/locations");
@@ -6171,7 +6312,7 @@ This gets the basic information from the filings and doesn't include anything ex
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<LocationModel>
+     * @return FetchResult&lt;LocationModel&gt;
      */
     public Future<FetchResult<LocationModel>> queryLocationsAsync(String filter, String include, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/locations");
@@ -6193,6 +6334,7 @@ This gets the basic information from the filings and doesn't include anything ex
      * @param id The ID of the location you wish to update
      * @param model The location you wish to update.
      * @return LocationModel
+     * @throws Exception an Exception
      */
     public LocationModel updateLocation(Integer companyId, Integer id, LocationModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/locations/{id}");
@@ -6228,6 +6370,7 @@ This gets the basic information from the filings and doesn't include anything ex
      * @param companyId The ID of the company that owns this location
      * @param id The primary key of this location
      * @return LocationValidationModel
+     * @throws Exception an Exception
      */
     public LocationValidationModel validateLocation(Integer companyId, Integer id) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/locations/{id}/validate");
@@ -6266,7 +6409,8 @@ This gets the basic information from the filings and doesn't include anything ex
      * 
      * @param companyId The ID of the company that owns this nexus.
      * @param model The nexus you wish to create.
-     * @return ArrayList<NexusModel>
+     * @return ArrayList&lt;NexusModel&gt;
+     * @throws Exception an Exception
      */
     public ArrayList<NexusModel> createNexus(Integer companyId, ArrayList<NexusModel> model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/nexus");
@@ -6287,7 +6431,7 @@ This gets the basic information from the filings and doesn't include anything ex
      * 
      * @param companyId The ID of the company that owns this nexus.
      * @param model The nexus you wish to create.
-     * @return ArrayList<NexusModel>
+     * @return ArrayList&lt;NexusModel&gt;
      */
     public Future<ArrayList<NexusModel>> createNexusAsync(Integer companyId, ArrayList<NexusModel> model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/nexus");
@@ -6300,7 +6444,8 @@ This gets the basic information from the filings and doesn't include anything ex
      * 
      * @param companyId The ID of the company that owns this nexus.
      * @param id The ID of the nexus you wish to delete.
-     * @return ArrayList<ErrorDetail>
+     * @return ArrayList&lt;ErrorDetail&gt;
+     * @throws Exception an Exception
      */
     public ArrayList<ErrorDetail> deleteNexus(Integer companyId, Integer id) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/nexus/{id}");
@@ -6314,7 +6459,7 @@ This gets the basic information from the filings and doesn't include anything ex
      * 
      * @param companyId The ID of the company that owns this nexus.
      * @param id The ID of the nexus you wish to delete.
-     * @return ArrayList<ErrorDetail>
+     * @return ArrayList&lt;ErrorDetail&gt;
      */
     public Future<ArrayList<ErrorDetail>> deleteNexusAsync(Integer companyId, Integer id) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/nexus/{id}");
@@ -6334,6 +6479,7 @@ This gets the basic information from the filings and doesn't include anything ex
      * @param companyId The ID of the company that owns this nexus object
      * @param id The primary key of this nexus
      * @return NexusModel
+     * @throws Exception an Exception
      */
     public NexusModel getNexus(Integer companyId, Integer id) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/nexus/{id}");
@@ -6378,6 +6524,7 @@ This gets the basic information from the filings and doesn't include anything ex
      * @param companyId The ID of the company that owns this nexus object
      * @param formCode The form code that we are looking up the nexus for
      * @return NexusByTaxFormModel
+     * @throws Exception an Exception
      */
     public NexusByTaxFormModel getNexusByFormCode(Integer companyId, String formCode) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/nexus/byform/{formCode}");
@@ -6428,7 +6575,8 @@ This gets the basic information from the filings and doesn't include anything ex
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<NexusModel>
+     * @return FetchResult&lt;NexusModel&gt;
+     * @throws Exception an Exception
      */
     public FetchResult<NexusModel> listNexusByCompany(Integer companyId, String filter, String include, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/nexus");
@@ -6458,7 +6606,7 @@ This gets the basic information from the filings and doesn't include anything ex
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<NexusModel>
+     * @return FetchResult&lt;NexusModel&gt;
      */
     public Future<FetchResult<NexusModel>> listNexusByCompanyAsync(Integer companyId, String filter, String include, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/nexus");
@@ -6487,7 +6635,8 @@ This gets the basic information from the filings and doesn't include anything ex
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<NexusModel>
+     * @return FetchResult&lt;NexusModel&gt;
+     * @throws Exception an Exception
      */
     public FetchResult<NexusModel> queryNexus(String filter, String include, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/nexus");
@@ -6515,7 +6664,7 @@ This gets the basic information from the filings and doesn't include anything ex
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<NexusModel>
+     * @return FetchResult&lt;NexusModel&gt;
      */
     public Future<FetchResult<NexusModel>> queryNexusAsync(String filter, String include, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/nexus");
@@ -6544,6 +6693,7 @@ This gets the basic information from the filings and doesn't include anything ex
      * @param id The ID of the nexus you wish to update
      * @param model The nexus object you wish to update.
      * @return NexusModel
+     * @throws Exception an Exception
      */
     public NexusModel updateNexus(Integer companyId, Integer id, NexusModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/nexus/{id}");
@@ -6587,7 +6737,8 @@ This gets the basic information from the filings and doesn't include anything ex
      * @param companyId The ID of the company that owns this notice.
      * @param id The ID of the tax notice we are adding the comment for.
      * @param model The notice comments you wish to create.
-     * @return ArrayList<NoticeCommentModel>
+     * @return ArrayList&lt;NoticeCommentModel&gt;
+     * @throws Exception an Exception
      */
     public ArrayList<NoticeCommentModel> createNoticeComment(Integer companyId, Integer id, ArrayList<NoticeCommentModel> model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/{id}/comments");
@@ -6606,7 +6757,7 @@ This gets the basic information from the filings and doesn't include anything ex
      * @param companyId The ID of the company that owns this notice.
      * @param id The ID of the tax notice we are adding the comment for.
      * @param model The notice comments you wish to create.
-     * @return ArrayList<NoticeCommentModel>
+     * @return ArrayList&lt;NoticeCommentModel&gt;
      */
     public Future<ArrayList<NoticeCommentModel>> createNoticeCommentAsync(Integer companyId, Integer id, ArrayList<NoticeCommentModel> model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/{id}/comments");
@@ -6626,7 +6777,8 @@ This gets the basic information from the filings and doesn't include anything ex
      * @param companyId The ID of the company that owns this notice.
      * @param id The ID of the notice added to the finance details.
      * @param model The notice finance details you wish to create.
-     * @return ArrayList<NoticeFinanceModel>
+     * @return ArrayList&lt;NoticeFinanceModel&gt;
+     * @throws Exception an Exception
      */
     public ArrayList<NoticeFinanceModel> createNoticeFinanceDetails(Integer companyId, Integer id, ArrayList<NoticeFinanceModel> model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/{id}/financedetails");
@@ -6646,7 +6798,7 @@ This gets the basic information from the filings and doesn't include anything ex
      * @param companyId The ID of the company that owns this notice.
      * @param id The ID of the notice added to the finance details.
      * @param model The notice finance details you wish to create.
-     * @return ArrayList<NoticeFinanceModel>
+     * @return ArrayList&lt;NoticeFinanceModel&gt;
      */
     public Future<ArrayList<NoticeFinanceModel>> createNoticeFinanceDetailsAsync(Integer companyId, Integer id, ArrayList<NoticeFinanceModel> model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/{id}/financedetails");
@@ -6665,7 +6817,8 @@ This gets the basic information from the filings and doesn't include anything ex
      * @param companyId The ID of the company that owns this notice.
      * @param id The ID of the tax notice we are adding the responsibility for.
      * @param model The notice responsibilities you wish to create.
-     * @return ArrayList<NoticeResponsibilityDetailModel>
+     * @return ArrayList&lt;NoticeResponsibilityDetailModel&gt;
+     * @throws Exception an Exception
      */
     public ArrayList<NoticeResponsibilityDetailModel> createNoticeResponsibilities(Integer companyId, Integer id, ArrayList<NoticeResponsibilityDetailModel> model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/{id}/responsibilities");
@@ -6684,7 +6837,7 @@ This gets the basic information from the filings and doesn't include anything ex
      * @param companyId The ID of the company that owns this notice.
      * @param id The ID of the tax notice we are adding the responsibility for.
      * @param model The notice responsibilities you wish to create.
-     * @return ArrayList<NoticeResponsibilityDetailModel>
+     * @return ArrayList&lt;NoticeResponsibilityDetailModel&gt;
      */
     public Future<ArrayList<NoticeResponsibilityDetailModel>> createNoticeResponsibilitiesAsync(Integer companyId, Integer id, ArrayList<NoticeResponsibilityDetailModel> model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/{id}/responsibilities");
@@ -6703,7 +6856,8 @@ This gets the basic information from the filings and doesn't include anything ex
      * @param companyId The ID of the company that owns this notice.
      * @param id The ID of the tax notice we are adding the responsibility for.
      * @param model The notice root causes you wish to create.
-     * @return ArrayList<NoticeRootCauseDetailModel>
+     * @return ArrayList&lt;NoticeRootCauseDetailModel&gt;
+     * @throws Exception an Exception
      */
     public ArrayList<NoticeRootCauseDetailModel> createNoticeRootCauses(Integer companyId, Integer id, ArrayList<NoticeRootCauseDetailModel> model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/{id}/rootcauses");
@@ -6722,7 +6876,7 @@ This gets the basic information from the filings and doesn't include anything ex
      * @param companyId The ID of the company that owns this notice.
      * @param id The ID of the tax notice we are adding the responsibility for.
      * @param model The notice root causes you wish to create.
-     * @return ArrayList<NoticeRootCauseDetailModel>
+     * @return ArrayList&lt;NoticeRootCauseDetailModel&gt;
      */
     public Future<ArrayList<NoticeRootCauseDetailModel>> createNoticeRootCausesAsync(Integer companyId, Integer id, ArrayList<NoticeRootCauseDetailModel> model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/{id}/rootcauses");
@@ -6740,7 +6894,8 @@ This gets the basic information from the filings and doesn't include anything ex
      * 
      * @param companyId The ID of the company that owns this notice.
      * @param model The notice object you wish to create.
-     * @return ArrayList<NoticeModel>
+     * @return ArrayList&lt;NoticeModel&gt;
+     * @throws Exception an Exception
      */
     public ArrayList<NoticeModel> createNotices(Integer companyId, ArrayList<NoticeModel> model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices");
@@ -6757,7 +6912,7 @@ This gets the basic information from the filings and doesn't include anything ex
      * 
      * @param companyId The ID of the company that owns this notice.
      * @param model The notice object you wish to create.
-     * @return ArrayList<NoticeModel>
+     * @return ArrayList&lt;NoticeModel&gt;
      */
     public Future<ArrayList<NoticeModel>> createNoticesAsync(Integer companyId, ArrayList<NoticeModel> model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices");
@@ -6774,7 +6929,8 @@ This gets the basic information from the filings and doesn't include anything ex
      * 
      * @param companyId The ID of the company that owns this notice.
      * @param id The ID of the notice you wish to delete.
-     * @return ArrayList<ErrorDetail>
+     * @return ArrayList&lt;ErrorDetail&gt;
+     * @throws Exception an Exception
      */
     public ArrayList<ErrorDetail> deleteNotice(Integer companyId, Integer id) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/{id}");
@@ -6792,7 +6948,7 @@ This gets the basic information from the filings and doesn't include anything ex
      * 
      * @param companyId The ID of the company that owns this notice.
      * @param id The ID of the notice you wish to delete.
-     * @return ArrayList<ErrorDetail>
+     * @return ArrayList&lt;ErrorDetail&gt;
      */
     public Future<ArrayList<ErrorDetail>> deleteNoticeAsync(Integer companyId, Integer id) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/{id}");
@@ -6811,7 +6967,8 @@ This gets the basic information from the filings and doesn't include anything ex
      * @param companyId The ID of the company that owns this notice.
      * @param noticeId The ID of the notice you wish to delete.
      * @param id The ID of the responsibility you wish to delete.
-     * @return ArrayList<ErrorDetail>
+     * @return ArrayList&lt;ErrorDetail&gt;
+     * @throws Exception an Exception
      */
     public ArrayList<ErrorDetail> deleteResponsibilities(Integer companyId, Integer noticeId, Integer id) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/{noticeId}/responsibilities/{id}");
@@ -6831,7 +6988,7 @@ This gets the basic information from the filings and doesn't include anything ex
      * @param companyId The ID of the company that owns this notice.
      * @param noticeId The ID of the notice you wish to delete.
      * @param id The ID of the responsibility you wish to delete.
-     * @return ArrayList<ErrorDetail>
+     * @return ArrayList&lt;ErrorDetail&gt;
      */
     public Future<ArrayList<ErrorDetail>> deleteResponsibilitiesAsync(Integer companyId, Integer noticeId, Integer id) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/{noticeId}/responsibilities/{id}");
@@ -6851,7 +7008,8 @@ This gets the basic information from the filings and doesn't include anything ex
      * @param companyId The ID of the company that owns this notice.
      * @param noticeId The ID of the notice you wish to delete.
      * @param id The ID of the root cause you wish to delete.
-     * @return ArrayList<ErrorDetail>
+     * @return ArrayList&lt;ErrorDetail&gt;
+     * @throws Exception an Exception
      */
     public ArrayList<ErrorDetail> deleteRootCauses(Integer companyId, Integer noticeId, Integer id) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/{noticeId}/rootcauses/{id}");
@@ -6871,7 +7029,7 @@ This gets the basic information from the filings and doesn't include anything ex
      * @param companyId The ID of the company that owns this notice.
      * @param noticeId The ID of the notice you wish to delete.
      * @param id The ID of the root cause you wish to delete.
-     * @return ArrayList<ErrorDetail>
+     * @return ArrayList&lt;ErrorDetail&gt;
      */
     public Future<ArrayList<ErrorDetail>> deleteRootCausesAsync(Integer companyId, Integer noticeId, Integer id) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/{noticeId}/rootcauses/{id}");
@@ -6889,6 +7047,7 @@ This gets the basic information from the filings and doesn't include anything ex
      * @param companyId The ID of the company for this attachment.
      * @param id The ResourceFileId of the attachment to download.
      * @return String
+     * @throws Exception an Exception
      */
     public String downloadNoticeAttachment(Integer companyId, Long id) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/files/{id}/attachment");
@@ -6923,6 +7082,7 @@ This gets the basic information from the filings and doesn't include anything ex
      * @param companyId The ID of the company for this notice.
      * @param id The ID of this notice.
      * @return NoticeModel
+     * @throws Exception an Exception
      */
     public NoticeModel getNotice(Integer companyId, Integer id) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/{id}");
@@ -6958,7 +7118,8 @@ This gets the basic information from the filings and doesn't include anything ex
      * 
      * @param id The ID of the notice.
      * @param companyId The ID of the company that owns these notices.
-     * @return FetchResult<NoticeCommentModel>
+     * @return FetchResult&lt;NoticeCommentModel&gt;
+     * @throws Exception an Exception
      */
     public FetchResult<NoticeCommentModel> getNoticeComments(Integer id, Integer companyId) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/{id}/comments");
@@ -6976,7 +7137,7 @@ This gets the basic information from the filings and doesn't include anything ex
      * 
      * @param id The ID of the notice.
      * @param companyId The ID of the company that owns these notices.
-     * @return FetchResult<NoticeCommentModel>
+     * @return FetchResult&lt;NoticeCommentModel&gt;
      */
     public Future<FetchResult<NoticeCommentModel>> getNoticeCommentsAsync(Integer id, Integer companyId) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/{id}/comments");
@@ -6995,7 +7156,8 @@ This gets the basic information from the filings and doesn't include anything ex
      * 
      * @param id The ID of the company that owns these notices.
      * @param companyId The ID of the company that owns these notices.
-     * @return FetchResult<NoticeFinanceModel>
+     * @return FetchResult&lt;NoticeFinanceModel&gt;
+     * @throws Exception an Exception
      */
     public FetchResult<NoticeFinanceModel> getNoticeFinanceDetails(Integer id, Integer companyId) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/{id}/financedetails");
@@ -7014,7 +7176,7 @@ This gets the basic information from the filings and doesn't include anything ex
      * 
      * @param id The ID of the company that owns these notices.
      * @param companyId The ID of the company that owns these notices.
-     * @return FetchResult<NoticeFinanceModel>
+     * @return FetchResult&lt;NoticeFinanceModel&gt;
      */
     public Future<FetchResult<NoticeFinanceModel>> getNoticeFinanceDetailsAsync(Integer id, Integer companyId) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/{id}/financedetails");
@@ -7032,7 +7194,8 @@ This gets the basic information from the filings and doesn't include anything ex
      * 
      * @param id The ID of the notice.
      * @param companyId The ID of the company that owns these notices.
-     * @return FetchResult<NoticeResponsibilityDetailModel>
+     * @return FetchResult&lt;NoticeResponsibilityDetailModel&gt;
+     * @throws Exception an Exception
      */
     public FetchResult<NoticeResponsibilityDetailModel> getNoticeResponsibilities(Integer id, Integer companyId) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/{id}/responsibilities");
@@ -7050,7 +7213,7 @@ This gets the basic information from the filings and doesn't include anything ex
      * 
      * @param id The ID of the notice.
      * @param companyId The ID of the company that owns these notices.
-     * @return FetchResult<NoticeResponsibilityDetailModel>
+     * @return FetchResult&lt;NoticeResponsibilityDetailModel&gt;
      */
     public Future<FetchResult<NoticeResponsibilityDetailModel>> getNoticeResponsibilitiesAsync(Integer id, Integer companyId) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/{id}/responsibilities");
@@ -7068,7 +7231,8 @@ This gets the basic information from the filings and doesn't include anything ex
      * 
      * @param id The ID of the notice.
      * @param companyId The ID of the company that owns these notices.
-     * @return FetchResult<NoticeRootCauseDetailModel>
+     * @return FetchResult&lt;NoticeRootCauseDetailModel&gt;
+     * @throws Exception an Exception
      */
     public FetchResult<NoticeRootCauseDetailModel> getNoticeRootCauses(Integer id, Integer companyId) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/{id}/rootcauses");
@@ -7086,7 +7250,7 @@ This gets the basic information from the filings and doesn't include anything ex
      * 
      * @param id The ID of the notice.
      * @param companyId The ID of the company that owns these notices.
-     * @return FetchResult<NoticeRootCauseDetailModel>
+     * @return FetchResult&lt;NoticeRootCauseDetailModel&gt;
      */
     public Future<FetchResult<NoticeRootCauseDetailModel>> getNoticeRootCausesAsync(Integer id, Integer companyId) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/{id}/rootcauses");
@@ -7111,7 +7275,8 @@ This gets the basic information from the filings and doesn't include anything ex
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<NoticeModel>
+     * @return FetchResult&lt;NoticeModel&gt;
+     * @throws Exception an Exception
      */
     public FetchResult<NoticeModel> listNoticesByCompany(Integer companyId, String filter, String include, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices");
@@ -7140,7 +7305,7 @@ This gets the basic information from the filings and doesn't include anything ex
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<NoticeModel>
+     * @return FetchResult&lt;NoticeModel&gt;
      */
     public Future<FetchResult<NoticeModel>> listNoticesByCompanyAsync(Integer companyId, String filter, String include, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices");
@@ -7168,7 +7333,8 @@ This gets the basic information from the filings and doesn't include anything ex
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<NoticeModel>
+     * @return FetchResult&lt;NoticeModel&gt;
+     * @throws Exception an Exception
      */
     public FetchResult<NoticeModel> queryNotices(String filter, String include, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/notices");
@@ -7195,7 +7361,7 @@ This gets the basic information from the filings and doesn't include anything ex
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<NoticeModel>
+     * @return FetchResult&lt;NoticeModel&gt;
      */
     public Future<FetchResult<NoticeModel>> queryNoticesAsync(String filter, String include, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/notices");
@@ -7220,6 +7386,7 @@ This gets the basic information from the filings and doesn't include anything ex
      * @param id The ID of the notice you wish to update.
      * @param model The notice object you wish to update.
      * @return NoticeModel
+     * @throws Exception an Exception
      */
     public NoticeModel updateNotice(Integer companyId, Integer id, NoticeModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/{id}");
@@ -7257,6 +7424,7 @@ This gets the basic information from the filings and doesn't include anything ex
      * @param companyId The ID of the company for this attachment.
      * @param model The ResourceFileId of the attachment to download.
      * @return String
+     * @throws Exception an Exception
      */
     public String uploadAttachment(Integer companyId, ResourceFileUploadRequestModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/files/attachment");
@@ -7288,6 +7456,7 @@ This gets the basic information from the filings and doesn't include anything ex
      * 
      * @param model Information about the account you wish to create and the selected product offerings.
      * @return NewAccountModel
+     * @throws Exception an Exception
      */
     public NewAccountModel requestNewAccount(NewAccountRequestModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/request");
@@ -7320,6 +7489,7 @@ This gets the basic information from the filings and doesn't include anything ex
      * 
      * @param model An object containing your current password and the new password.
      * @return String
+     * @throws Exception an Exception
      */
     public String changePassword(PasswordChangeModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/passwords");
@@ -7353,6 +7523,7 @@ This gets the basic information from the filings and doesn't include anything ex
      * 
      * @param model The account you wish to create.
      * @return AccountModel
+     * @throws Exception an Exception
      */
     public AccountModel createAccount(AccountModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts");
@@ -7386,7 +7557,8 @@ This gets the basic information from the filings and doesn't include anything ex
      * 
      * @param accountId The ID of the account that owns this subscription.
      * @param model The subscription you wish to create.
-     * @return ArrayList<SubscriptionModel>
+     * @return ArrayList&lt;SubscriptionModel&gt;
+     * @throws Exception an Exception
      */
     public ArrayList<SubscriptionModel> createSubscriptions(Integer accountId, ArrayList<SubscriptionModel> model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/subscriptions");
@@ -7405,7 +7577,7 @@ This gets the basic information from the filings and doesn't include anything ex
      * 
      * @param accountId The ID of the account that owns this subscription.
      * @param model The subscription you wish to create.
-     * @return ArrayList<SubscriptionModel>
+     * @return ArrayList&lt;SubscriptionModel&gt;
      */
     public Future<ArrayList<SubscriptionModel>> createSubscriptionsAsync(Integer accountId, ArrayList<SubscriptionModel> model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/subscriptions");
@@ -7423,7 +7595,8 @@ This gets the basic information from the filings and doesn't include anything ex
      * 
      * @param accountId The unique ID number of the account where these users will be created.
      * @param model The user or array of users you wish to create.
-     * @return ArrayList<UserModel>
+     * @return ArrayList&lt;UserModel&gt;
+     * @throws Exception an Exception
      */
     public ArrayList<UserModel> createUsers(Integer accountId, ArrayList<UserModel> model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/users");
@@ -7441,7 +7614,7 @@ This gets the basic information from the filings and doesn't include anything ex
      * 
      * @param accountId The unique ID number of the account where these users will be created.
      * @param model The user or array of users you wish to create.
-     * @return ArrayList<UserModel>
+     * @return ArrayList&lt;UserModel&gt;
      */
     public Future<ArrayList<UserModel>> createUsersAsync(Integer accountId, ArrayList<UserModel> model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/users");
@@ -7458,7 +7631,8 @@ This gets the basic information from the filings and doesn't include anything ex
      * Delete an account.
      * 
      * @param id The ID of the account you wish to delete.
-     * @return ArrayList<ErrorDetail>
+     * @return ArrayList&lt;ErrorDetail&gt;
+     * @throws Exception an Exception
      */
     public ArrayList<ErrorDetail> deleteAccount(Integer id) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{id}");
@@ -7475,7 +7649,7 @@ This gets the basic information from the filings and doesn't include anything ex
      * Delete an account.
      * 
      * @param id The ID of the account you wish to delete.
-     * @return ArrayList<ErrorDetail>
+     * @return ArrayList&lt;ErrorDetail&gt;
      */
     public Future<ArrayList<ErrorDetail>> deleteAccountAsync(Integer id) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{id}");
@@ -7492,7 +7666,8 @@ This gets the basic information from the filings and doesn't include anything ex
      * 
      * @param accountId The ID of the account that owns this subscription.
      * @param id The ID of the subscription you wish to delete.
-     * @return ArrayList<ErrorDetail>
+     * @return ArrayList&lt;ErrorDetail&gt;
+     * @throws Exception an Exception
      */
     public ArrayList<ErrorDetail> deleteSubscription(Integer accountId, Integer id) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/subscriptions/{id}");
@@ -7510,7 +7685,7 @@ This gets the basic information from the filings and doesn't include anything ex
      * 
      * @param accountId The ID of the account that owns this subscription.
      * @param id The ID of the subscription you wish to delete.
-     * @return ArrayList<ErrorDetail>
+     * @return ArrayList&lt;ErrorDetail&gt;
      */
     public Future<ArrayList<ErrorDetail>> deleteSubscriptionAsync(Integer accountId, Integer id) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/subscriptions/{id}");
@@ -7528,7 +7703,8 @@ This gets the basic information from the filings and doesn't include anything ex
      * 
      * @param id The ID of the user you wish to delete.
      * @param accountId The accountID of the user you wish to delete.
-     * @return ArrayList<ErrorDetail>
+     * @return ArrayList&lt;ErrorDetail&gt;
+     * @throws Exception an Exception
      */
     public ArrayList<ErrorDetail> deleteUser(Integer id, Integer accountId) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/users/{id}");
@@ -7546,7 +7722,7 @@ This gets the basic information from the filings and doesn't include anything ex
      * 
      * @param id The ID of the user you wish to delete.
      * @param accountId The accountID of the user you wish to delete.
-     * @return ArrayList<ErrorDetail>
+     * @return ArrayList&lt;ErrorDetail&gt;
      */
     public Future<ArrayList<ErrorDetail>> deleteUserAsync(Integer id, Integer accountId) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/users/{id}");
@@ -7575,7 +7751,8 @@ This gets the basic information from the filings and doesn't include anything ex
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<AccountModel>
+     * @return FetchResult&lt;AccountModel&gt;
+     * @throws Exception an Exception
      */
     public FetchResult<AccountModel> queryAccounts(String include, String filter, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts");
@@ -7607,7 +7784,7 @@ This gets the basic information from the filings and doesn't include anything ex
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<AccountModel>
+     * @return FetchResult&lt;AccountModel&gt;
      */
     public Future<FetchResult<AccountModel>> queryAccountsAsync(String include, String filter, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts");
@@ -7631,6 +7808,7 @@ This gets the basic information from the filings and doesn't include anything ex
      * @param userId The unique ID of the user whose password will be changed
      * @param model The new password for this user
      * @return String
+     * @throws Exception an Exception
      */
     public String resetPassword(Integer userId, SetPasswordModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/passwords/{userId}/reset");
@@ -7667,6 +7845,7 @@ This gets the basic information from the filings and doesn't include anything ex
      * @param id The ID of the account you wish to update.
      * @param model The account object you wish to update.
      * @return AccountModel
+     * @throws Exception an Exception
      */
     public AccountModel updateAccount(Integer id, AccountModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{id}");
@@ -7706,6 +7885,7 @@ This gets the basic information from the filings and doesn't include anything ex
      * @param id The ID of the subscription you wish to update
      * @param model The subscription you wish to update.
      * @return SubscriptionModel
+     * @throws Exception an Exception
      */
     public SubscriptionModel updateSubscription(Integer accountId, Integer id, SubscriptionModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/subscriptions/{id}");
@@ -7749,7 +7929,8 @@ This gets the basic information from the filings and doesn't include anything ex
      * 
      * @param companyId The ID of the company that owns this setting.
      * @param model The setting you wish to create.
-     * @return ArrayList<SettingModel>
+     * @return ArrayList&lt;SettingModel&gt;
+     * @throws Exception an Exception
      */
     public ArrayList<SettingModel> createSettings(Integer companyId, ArrayList<SettingModel> model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/settings");
@@ -7769,7 +7950,7 @@ This gets the basic information from the filings and doesn't include anything ex
      * 
      * @param companyId The ID of the company that owns this setting.
      * @param model The setting you wish to create.
-     * @return ArrayList<SettingModel>
+     * @return ArrayList&lt;SettingModel&gt;
      */
     public Future<ArrayList<SettingModel>> createSettingsAsync(Integer companyId, ArrayList<SettingModel> model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/settings");
@@ -7782,7 +7963,8 @@ This gets the basic information from the filings and doesn't include anything ex
      * 
      * @param companyId The ID of the company that owns this setting.
      * @param id The ID of the setting you wish to delete.
-     * @return ArrayList<ErrorDetail>
+     * @return ArrayList&lt;ErrorDetail&gt;
+     * @throws Exception an Exception
      */
     public ArrayList<ErrorDetail> deleteSetting(Integer companyId, Integer id) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/settings/{id}");
@@ -7796,7 +7978,7 @@ This gets the basic information from the filings and doesn't include anything ex
      * 
      * @param companyId The ID of the company that owns this setting.
      * @param id The ID of the setting you wish to delete.
-     * @return ArrayList<ErrorDetail>
+     * @return ArrayList&lt;ErrorDetail&gt;
      */
     public Future<ArrayList<ErrorDetail>> deleteSettingAsync(Integer companyId, Integer id) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/settings/{id}");
@@ -7818,6 +8000,7 @@ This gets the basic information from the filings and doesn't include anything ex
      * @param companyId The ID of the company that owns this setting
      * @param id The primary key of this setting
      * @return SettingModel
+     * @throws Exception an Exception
      */
     public SettingModel getSetting(Integer companyId, Integer id) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/settings/{id}");
@@ -7866,7 +8049,8 @@ This gets the basic information from the filings and doesn't include anything ex
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<SettingModel>
+     * @return FetchResult&lt;SettingModel&gt;
+     * @throws Exception an Exception
      */
     public FetchResult<SettingModel> listSettingsByCompany(Integer companyId, String filter, String include, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/settings");
@@ -7898,7 +8082,7 @@ This gets the basic information from the filings and doesn't include anything ex
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<SettingModel>
+     * @return FetchResult&lt;SettingModel&gt;
      */
     public Future<FetchResult<SettingModel>> listSettingsByCompanyAsync(Integer companyId, String filter, String include, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/settings");
@@ -7929,7 +8113,8 @@ This gets the basic information from the filings and doesn't include anything ex
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<SettingModel>
+     * @return FetchResult&lt;SettingModel&gt;
+     * @throws Exception an Exception
      */
     public FetchResult<SettingModel> querySettings(String filter, String include, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/settings");
@@ -7959,7 +8144,7 @@ This gets the basic information from the filings and doesn't include anything ex
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<SettingModel>
+     * @return FetchResult&lt;SettingModel&gt;
      */
     public Future<FetchResult<SettingModel>> querySettingsAsync(String filter, String include, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/settings");
@@ -7987,6 +8172,7 @@ This gets the basic information from the filings and doesn't include anything ex
      * @param id The ID of the setting you wish to update
      * @param model The setting you wish to update.
      * @return SettingModel
+     * @throws Exception an Exception
      */
     public SettingModel updateSetting(Integer companyId, Integer id, SettingModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/settings/{id}");
@@ -8028,6 +8214,7 @@ This gets the basic information from the filings and doesn't include anything ex
      * @param accountId The ID of the account that owns this subscription
      * @param id The primary key of this subscription
      * @return SubscriptionModel
+     * @throws Exception an Exception
      */
     public SubscriptionModel getSubscription(Integer accountId, Integer id) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/subscriptions/{id}");
@@ -8067,7 +8254,8 @@ This gets the basic information from the filings and doesn't include anything ex
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<SubscriptionModel>
+     * @return FetchResult&lt;SubscriptionModel&gt;
+     * @throws Exception an Exception
      */
     public FetchResult<SubscriptionModel> listSubscriptionsByAccount(Integer accountId, String filter, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/subscriptions");
@@ -8093,7 +8281,7 @@ This gets the basic information from the filings and doesn't include anything ex
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<SubscriptionModel>
+     * @return FetchResult&lt;SubscriptionModel&gt;
      */
     public Future<FetchResult<SubscriptionModel>> listSubscriptionsByAccountAsync(Integer accountId, String filter, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/subscriptions");
@@ -8118,7 +8306,8 @@ This gets the basic information from the filings and doesn't include anything ex
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<SubscriptionModel>
+     * @return FetchResult&lt;SubscriptionModel&gt;
+     * @throws Exception an Exception
      */
     public FetchResult<SubscriptionModel> querySubscriptions(String filter, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/subscriptions");
@@ -8142,7 +8331,7 @@ This gets the basic information from the filings and doesn't include anything ex
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<SubscriptionModel>
+     * @return FetchResult&lt;SubscriptionModel&gt;
      */
     public Future<FetchResult<SubscriptionModel>> querySubscriptionsAsync(String filter, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/subscriptions");
@@ -8163,7 +8352,8 @@ This gets the basic information from the filings and doesn't include anything ex
      * 
      * @param companyId The ID of the company that owns this tax code.
      * @param model The tax code you wish to create.
-     * @return ArrayList<TaxCodeModel>
+     * @return ArrayList&lt;TaxCodeModel&gt;
+     * @throws Exception an Exception
      */
     public ArrayList<TaxCodeModel> createTaxCodes(Integer companyId, ArrayList<TaxCodeModel> model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/taxcodes");
@@ -8181,7 +8371,7 @@ This gets the basic information from the filings and doesn't include anything ex
      * 
      * @param companyId The ID of the company that owns this tax code.
      * @param model The tax code you wish to create.
-     * @return ArrayList<TaxCodeModel>
+     * @return ArrayList&lt;TaxCodeModel&gt;
      */
     public Future<ArrayList<TaxCodeModel>> createTaxCodesAsync(Integer companyId, ArrayList<TaxCodeModel> model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/taxcodes");
@@ -8194,7 +8384,8 @@ This gets the basic information from the filings and doesn't include anything ex
      * 
      * @param companyId The ID of the company that owns this tax code.
      * @param id The ID of the tax code you wish to delete.
-     * @return ArrayList<ErrorDetail>
+     * @return ArrayList&lt;ErrorDetail&gt;
+     * @throws Exception an Exception
      */
     public ArrayList<ErrorDetail> deleteTaxCode(Integer companyId, Integer id) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/taxcodes/{id}");
@@ -8208,7 +8399,7 @@ This gets the basic information from the filings and doesn't include anything ex
      * 
      * @param companyId The ID of the company that owns this tax code.
      * @param id The ID of the tax code you wish to delete.
-     * @return ArrayList<ErrorDetail>
+     * @return ArrayList&lt;ErrorDetail&gt;
      */
     public Future<ArrayList<ErrorDetail>> deleteTaxCodeAsync(Integer companyId, Integer id) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/taxcodes/{id}");
@@ -8228,6 +8419,7 @@ This gets the basic information from the filings and doesn't include anything ex
      * @param companyId The ID of the company that owns this tax code
      * @param id The primary key of this tax code
      * @return TaxCodeModel
+     * @throws Exception an Exception
      */
     public TaxCodeModel getTaxCode(Integer companyId, Integer id) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/taxcodes/{id}");
@@ -8272,7 +8464,8 @@ This gets the basic information from the filings and doesn't include anything ex
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<TaxCodeModel>
+     * @return FetchResult&lt;TaxCodeModel&gt;
+     * @throws Exception an Exception
      */
     public FetchResult<TaxCodeModel> listTaxCodesByCompany(Integer companyId, String filter, String include, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/taxcodes");
@@ -8302,7 +8495,7 @@ This gets the basic information from the filings and doesn't include anything ex
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<TaxCodeModel>
+     * @return FetchResult&lt;TaxCodeModel&gt;
      */
     public Future<FetchResult<TaxCodeModel>> listTaxCodesByCompanyAsync(Integer companyId, String filter, String include, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/taxcodes");
@@ -8331,7 +8524,8 @@ This gets the basic information from the filings and doesn't include anything ex
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<TaxCodeModel>
+     * @return FetchResult&lt;TaxCodeModel&gt;
+     * @throws Exception an Exception
      */
     public FetchResult<TaxCodeModel> queryTaxCodes(String filter, String include, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/taxcodes");
@@ -8359,7 +8553,7 @@ This gets the basic information from the filings and doesn't include anything ex
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<TaxCodeModel>
+     * @return FetchResult&lt;TaxCodeModel&gt;
      */
     public Future<FetchResult<TaxCodeModel>> queryTaxCodesAsync(String filter, String include, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/taxcodes");
@@ -8385,6 +8579,7 @@ This gets the basic information from the filings and doesn't include anything ex
      * @param id The ID of the tax code you wish to update
      * @param model The tax code you wish to update.
      * @return TaxCodeModel
+     * @throws Exception an Exception
      */
     public TaxCodeModel updateTaxCode(Integer companyId, Integer id, TaxCodeModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/taxcodes/{id}");
@@ -8431,6 +8626,7 @@ This gets the basic information from the filings and doesn't include anything ex
      * 
      * @param model Parameters about the desired file format and report format, specifying which company, locations and TaxCodes to include.
      * @return String
+     * @throws Exception an Exception
      */
     public String buildTaxContentFile(PointOfSaleDataRequestModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/pointofsaledata/build");
@@ -8480,6 +8676,7 @@ This gets the basic information from the filings and doesn't include anything ex
      * @param partnerId If specified, requests a custom partner-formatted version of the file. (See PointOfSalePartnerId::* for a list of allowable values)
      * @param includeJurisCodes When true, the file will include jurisdiction codes in the result.
      * @return String
+     * @throws Exception an Exception
      */
     public String buildTaxContentFileForLocation(Integer companyId, Integer id, Date date, PointOfSaleFileType format, PointOfSalePartnerId partnerId, Boolean includeJurisCodes) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/locations/{id}/pointofsaledata");
@@ -8535,7 +8732,8 @@ This gets the basic information from the filings and doesn't include anything ex
      * 
      * @param companyId The ID of the company that owns this tax rule.
      * @param model The tax rule you wish to create.
-     * @return ArrayList<TaxRuleModel>
+     * @return ArrayList&lt;TaxRuleModel&gt;
+     * @throws Exception an Exception
      */
     public ArrayList<TaxRuleModel> createTaxRules(Integer companyId, ArrayList<TaxRuleModel> model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/taxrules");
@@ -8553,7 +8751,7 @@ This gets the basic information from the filings and doesn't include anything ex
      * 
      * @param companyId The ID of the company that owns this tax rule.
      * @param model The tax rule you wish to create.
-     * @return ArrayList<TaxRuleModel>
+     * @return ArrayList&lt;TaxRuleModel&gt;
      */
     public Future<ArrayList<TaxRuleModel>> createTaxRulesAsync(Integer companyId, ArrayList<TaxRuleModel> model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/taxrules");
@@ -8566,7 +8764,8 @@ This gets the basic information from the filings and doesn't include anything ex
      * 
      * @param companyId The ID of the company that owns this tax rule.
      * @param id The ID of the tax rule you wish to delete.
-     * @return ArrayList<ErrorDetail>
+     * @return ArrayList&lt;ErrorDetail&gt;
+     * @throws Exception an Exception
      */
     public ArrayList<ErrorDetail> deleteTaxRule(Integer companyId, Integer id) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/taxrules/{id}");
@@ -8580,7 +8779,7 @@ This gets the basic information from the filings and doesn't include anything ex
      * 
      * @param companyId The ID of the company that owns this tax rule.
      * @param id The ID of the tax rule you wish to delete.
-     * @return ArrayList<ErrorDetail>
+     * @return ArrayList&lt;ErrorDetail&gt;
      */
     public Future<ArrayList<ErrorDetail>> deleteTaxRuleAsync(Integer companyId, Integer id) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/taxrules/{id}");
@@ -8600,6 +8799,7 @@ This gets the basic information from the filings and doesn't include anything ex
      * @param companyId The ID of the company that owns this tax rule
      * @param id The primary key of this tax rule
      * @return TaxRuleModel
+     * @throws Exception an Exception
      */
     public TaxRuleModel getTaxRule(Integer companyId, Integer id) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/taxrules/{id}");
@@ -8644,7 +8844,8 @@ This gets the basic information from the filings and doesn't include anything ex
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<TaxRuleModel>
+     * @return FetchResult&lt;TaxRuleModel&gt;
+     * @throws Exception an Exception
      */
     public FetchResult<TaxRuleModel> listTaxRules(Integer companyId, String filter, String include, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/taxrules");
@@ -8674,7 +8875,7 @@ This gets the basic information from the filings and doesn't include anything ex
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<TaxRuleModel>
+     * @return FetchResult&lt;TaxRuleModel&gt;
      */
     public Future<FetchResult<TaxRuleModel>> listTaxRulesAsync(Integer companyId, String filter, String include, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/taxrules");
@@ -8703,7 +8904,8 @@ This gets the basic information from the filings and doesn't include anything ex
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<TaxRuleModel>
+     * @return FetchResult&lt;TaxRuleModel&gt;
+     * @throws Exception an Exception
      */
     public FetchResult<TaxRuleModel> queryTaxRules(String filter, String include, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/taxrules");
@@ -8731,7 +8933,7 @@ This gets the basic information from the filings and doesn't include anything ex
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<TaxRuleModel>
+     * @return FetchResult&lt;TaxRuleModel&gt;
      */
     public Future<FetchResult<TaxRuleModel>> queryTaxRulesAsync(String filter, String include, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/taxrules");
@@ -8757,6 +8959,7 @@ This gets the basic information from the filings and doesn't include anything ex
      * @param id The ID of the tax rule you wish to update
      * @param model The tax rule you wish to update.
      * @return TaxRuleModel
+     * @throws Exception an Exception
      */
     public TaxRuleModel updateTaxRule(Integer companyId, Integer id, TaxRuleModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/taxrules/{id}");
@@ -8811,6 +9014,7 @@ This gets the basic information from the filings and doesn't include anything ex
      * @param include A comma separated list of child objects to return underneath the primary object.
      * @param model information about the transaction and lines to be added
      * @return TransactionModel
+     * @throws Exception an Exception
      */
     public TransactionModel addLines(String include, AddTransactionLineModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/transactions/lines/add");
@@ -8867,6 +9071,7 @@ This gets the basic information from the filings and doesn't include anything ex
      * @param transactionCode The transaction code to adjust
      * @param model The adjustment you wish to make
      * @return TransactionModel
+     * @throws Exception an Exception
      */
     public TransactionModel adjustTransaction(String companyCode, String transactionCode, AdjustTransactionModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyCode}/transactions/{transactionCode}/adjust");
@@ -8922,6 +9127,7 @@ This gets the basic information from the filings and doesn't include anything ex
      * @param companyCode The code identifying the company that owns this transaction
      * @param transactionCode The code identifying the transaction
      * @return AuditTransactionModel
+     * @throws Exception an Exception
      */
     public AuditTransactionModel auditTransaction(String companyCode, String transactionCode) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyCode}/transactions/{transactionCode}/audit");
@@ -8981,6 +9187,7 @@ This gets the basic information from the filings and doesn't include anything ex
      * @param transactionCode The code identifying the transaction
      * @param documentType The document type of the original transaction (See DocumentType::* for a list of allowable values)
      * @return AuditTransactionModel
+     * @throws Exception an Exception
      */
     public AuditTransactionModel auditTransactionWithType(String companyCode, String transactionCode, DocumentType documentType) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyCode}/transactions/{transactionCode}/types/{documentType}/audit");
@@ -9033,6 +9240,7 @@ This gets the basic information from the filings and doesn't include anything ex
      * 
      * @param model bulk lock request
      * @return BulkLockTransactionResult
+     * @throws Exception an Exception
      */
     public BulkLockTransactionResult bulkLockTransaction(BulkLockTransactionModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/transactions/lock");
@@ -9068,6 +9276,7 @@ This gets the basic information from the filings and doesn't include anything ex
      * @param transactionCode The transaction code to change
      * @param model The code change request you wish to execute
      * @return TransactionModel
+     * @throws Exception an Exception
      */
     public TransactionModel changeTransactionCode(String companyCode, String transactionCode, ChangeTransactionCodeModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyCode}/transactions/{transactionCode}/changecode");
@@ -9107,6 +9316,7 @@ This gets the basic information from the filings and doesn't include anything ex
      * @param transactionCode The transaction code to commit
      * @param model The commit request you wish to execute
      * @return TransactionModel
+     * @throws Exception an Exception
      */
     public TransactionModel commitTransaction(String companyCode, String transactionCode, CommitTransactionModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyCode}/transactions/{transactionCode}/commit");
@@ -9159,6 +9369,7 @@ This gets the basic information from the filings and doesn't include anything ex
      * @param include A comma separated list of child objects to return underneath the primary object.
      * @param model The transaction you wish to create
      * @return TransactionModel
+     * @throws Exception an Exception
      */
     public TransactionModel createOrAdjustTransaction(String include, CreateOrAdjustTransactionModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/transactions/createoradjust");
@@ -9221,6 +9432,7 @@ This gets the basic information from the filings and doesn't include anything ex
      * @param include A comma separated list of child objects to return underneath the primary object.
      * @param model The transaction you wish to create
      * @return TransactionModel
+     * @throws Exception an Exception
      */
     public TransactionModel createTransaction(String include, CreateTransactionModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/transactions/create");
@@ -9280,6 +9492,7 @@ This gets the basic information from the filings and doesn't include anything ex
      * @param include A comma separated list of child objects to return underneath the primary object.
      * @param model information about the transaction and lines to be removed
      * @return TransactionModel
+     * @throws Exception an Exception
      */
     public TransactionModel deleteLines(String include, RemoveTransactionLineModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/transactions/lines/delete");
@@ -9331,6 +9544,7 @@ This gets the basic information from the filings and doesn't include anything ex
      * @param transactionCode The transaction code to retrieve
      * @param include A comma separated list of child objects to return underneath the primary object.
      * @return TransactionModel
+     * @throws Exception an Exception
      */
     public TransactionModel getTransactionByCode(String companyCode, String transactionCode, String include) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyCode}/transactions/{transactionCode}");
@@ -9382,6 +9596,7 @@ This gets the basic information from the filings and doesn't include anything ex
      * @param documentType The transaction type to retrieve (See DocumentType::* for a list of allowable values)
      * @param include A comma separated list of child objects to return underneath the primary object.
      * @return TransactionModel
+     * @throws Exception an Exception
      */
     public TransactionModel getTransactionByCodeAndType(String companyCode, String transactionCode, DocumentType documentType, String include) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyCode}/transactions/{transactionCode}/types/{documentType}");
@@ -9436,6 +9651,7 @@ This gets the basic information from the filings and doesn't include anything ex
      * @param id The unique ID number of the transaction to retrieve
      * @param include A comma separated list of child objects to return underneath the primary object.
      * @return TransactionModel
+     * @throws Exception an Exception
      */
     public TransactionModel getTransactionById(Long id, String include) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/transactions/{id}");
@@ -9491,7 +9707,8 @@ This gets the basic information from the filings and doesn't include anything ex
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<TransactionModel>
+     * @return FetchResult&lt;TransactionModel&gt;
+     * @throws Exception an Exception
      */
     public FetchResult<TransactionModel> listTransactionsByCompany(String companyCode, String include, String filter, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyCode}/transactions");
@@ -9526,7 +9743,7 @@ This gets the basic information from the filings and doesn't include anything ex
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<TransactionModel>
+     * @return FetchResult&lt;TransactionModel&gt;
      */
     public Future<FetchResult<TransactionModel>> listTransactionsByCompanyAsync(String companyCode, String include, String filter, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyCode}/transactions");
@@ -9555,6 +9772,7 @@ This gets the basic information from the filings and doesn't include anything ex
      * @param transactionCode The transaction code to lock
      * @param model The lock request you wish to execute
      * @return TransactionModel
+     * @throws Exception an Exception
      */
     public TransactionModel lockTransaction(String companyCode, String transactionCode, LockTransactionModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyCode}/transactions/{transactionCode}/lock");
@@ -9611,6 +9829,7 @@ This gets the basic information from the filings and doesn't include anything ex
      * @param include A comma separated list of child objects to return underneath the primary object.
      * @param model Information about the refund to create
      * @return TransactionModel
+     * @throws Exception an Exception
      */
     public TransactionModel refundTransaction(String companyCode, String transactionCode, String include, RefundTransactionModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyCode}/transactions/{transactionCode}/refund");
@@ -9660,6 +9879,7 @@ This gets the basic information from the filings and doesn't include anything ex
      * @param transactionCode The transaction code to settle
      * @param model The settle request containing the actions you wish to execute
      * @return TransactionModel
+     * @throws Exception an Exception
      */
     public TransactionModel settleTransaction(String companyCode, String transactionCode, SettleTransactionModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyCode}/transactions/{transactionCode}/settle");
@@ -9694,6 +9914,7 @@ This gets the basic information from the filings and doesn't include anything ex
      * @param transactionCode The transaction code to settle
      * @param model The settle request you wish to execute
      * @return TransactionModel
+     * @throws Exception an Exception
      */
     public TransactionModel verifyTransaction(String companyCode, String transactionCode, VerifyTransactionModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyCode}/transactions/{transactionCode}/verify");
@@ -9733,6 +9954,7 @@ This gets the basic information from the filings and doesn't include anything ex
      * @param transactionCode The transaction code to void
      * @param model The void request you wish to execute
      * @return TransactionModel
+     * @throws Exception an Exception
      */
     public TransactionModel voidTransaction(String companyCode, String transactionCode, VoidTransactionModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyCode}/transactions/{transactionCode}/void");
@@ -9768,7 +9990,8 @@ This gets the basic information from the filings and doesn't include anything ex
      * 
      * @param companyId The ID of the company that owns this UPC.
      * @param model The UPC you wish to create.
-     * @return ArrayList<UPCModel>
+     * @return ArrayList&lt;UPCModel&gt;
+     * @throws Exception an Exception
      */
     public ArrayList<UPCModel> createUPCs(Integer companyId, ArrayList<UPCModel> model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/upcs");
@@ -9783,7 +10006,7 @@ This gets the basic information from the filings and doesn't include anything ex
      * 
      * @param companyId The ID of the company that owns this UPC.
      * @param model The UPC you wish to create.
-     * @return ArrayList<UPCModel>
+     * @return ArrayList&lt;UPCModel&gt;
      */
     public Future<ArrayList<UPCModel>> createUPCsAsync(Integer companyId, ArrayList<UPCModel> model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/upcs");
@@ -9796,7 +10019,8 @@ This gets the basic information from the filings and doesn't include anything ex
      * 
      * @param companyId The ID of the company that owns this UPC.
      * @param id The ID of the UPC you wish to delete.
-     * @return ArrayList<ErrorDetail>
+     * @return ArrayList&lt;ErrorDetail&gt;
+     * @throws Exception an Exception
      */
     public ArrayList<ErrorDetail> deleteUPC(Integer companyId, Integer id) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/upcs/{id}");
@@ -9810,7 +10034,7 @@ This gets the basic information from the filings and doesn't include anything ex
      * 
      * @param companyId The ID of the company that owns this UPC.
      * @param id The ID of the UPC you wish to delete.
-     * @return ArrayList<ErrorDetail>
+     * @return ArrayList&lt;ErrorDetail&gt;
      */
     public Future<ArrayList<ErrorDetail>> deleteUPCAsync(Integer companyId, Integer id) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/upcs/{id}");
@@ -9827,6 +10051,7 @@ This gets the basic information from the filings and doesn't include anything ex
      * @param companyId The ID of the company that owns this UPC
      * @param id The primary key of this UPC
      * @return UPCModel
+     * @throws Exception an Exception
      */
     public UPCModel getUPC(Integer companyId, Integer id) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/upcs/{id}");
@@ -9865,7 +10090,8 @@ This gets the basic information from the filings and doesn't include anything ex
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<UPCModel>
+     * @return FetchResult&lt;UPCModel&gt;
+     * @throws Exception an Exception
      */
     public FetchResult<UPCModel> listUPCsByCompany(Integer companyId, String filter, String include, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/upcs");
@@ -9892,7 +10118,7 @@ This gets the basic information from the filings and doesn't include anything ex
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<UPCModel>
+     * @return FetchResult&lt;UPCModel&gt;
      */
     public Future<FetchResult<UPCModel>> listUPCsByCompanyAsync(Integer companyId, String filter, String include, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/upcs");
@@ -9918,7 +10144,8 @@ This gets the basic information from the filings and doesn't include anything ex
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<UPCModel>
+     * @return FetchResult&lt;UPCModel&gt;
+     * @throws Exception an Exception
      */
     public FetchResult<UPCModel> queryUPCs(String filter, String include, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/upcs");
@@ -9943,7 +10170,7 @@ This gets the basic information from the filings and doesn't include anything ex
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<UPCModel>
+     * @return FetchResult&lt;UPCModel&gt;
      */
     public Future<FetchResult<UPCModel>> queryUPCsAsync(String filter, String include, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/upcs");
@@ -9966,6 +10193,7 @@ This gets the basic information from the filings and doesn't include anything ex
      * @param id The ID of the UPC you wish to update
      * @param model The UPC you wish to update.
      * @return UPCModel
+     * @throws Exception an Exception
      */
     public UPCModel updateUPC(Integer companyId, Integer id, UPCModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/upcs/{id}");
@@ -10002,6 +10230,7 @@ This gets the basic information from the filings and doesn't include anything ex
      * @param accountId The accountID of the user you wish to get.
      * @param include A comma separated list of child objects to return underneath the primary object.
      * @return UserModel
+     * @throws Exception an Exception
      */
     public UserModel getUser(Integer id, Integer accountId, String include) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/users/{id}");
@@ -10050,6 +10279,7 @@ This gets the basic information from the filings and doesn't include anything ex
      * @param id The ID of the user to retrieve.
      * @param accountId The accountID of the user you wish to get.
      * @return UserEntitlementModel
+     * @throws Exception an Exception
      */
     public UserEntitlementModel getUserEntitlements(Integer id, Integer accountId) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/users/{id}/entitlements");
@@ -10101,7 +10331,8 @@ This gets the basic information from the filings and doesn't include anything ex
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<UserModel>
+     * @return FetchResult&lt;UserModel&gt;
+     * @throws Exception an Exception
      */
     public FetchResult<UserModel> listUsersByAccount(Integer accountId, String include, String filter, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/users");
@@ -10128,7 +10359,7 @@ This gets the basic information from the filings and doesn't include anything ex
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<UserModel>
+     * @return FetchResult&lt;UserModel&gt;
      */
     public Future<FetchResult<UserModel>> listUsersByAccountAsync(Integer accountId, String include, String filter, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/users");
@@ -10154,7 +10385,8 @@ This gets the basic information from the filings and doesn't include anything ex
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<UserModel>
+     * @return FetchResult&lt;UserModel&gt;
+     * @throws Exception an Exception
      */
     public FetchResult<UserModel> queryUsers(String include, String filter, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/users");
@@ -10179,7 +10411,7 @@ This gets the basic information from the filings and doesn't include anything ex
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<UserModel>
+     * @return FetchResult&lt;UserModel&gt;
      */
     public Future<FetchResult<UserModel>> queryUsersAsync(String include, String filter, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/users");
@@ -10202,6 +10434,7 @@ This gets the basic information from the filings and doesn't include anything ex
      * @param accountId The accountID of the user you wish to update.
      * @param model The user object you wish to update.
      * @return UserModel
+     * @throws Exception an Exception
      */
     public UserModel updateUser(Integer id, Integer accountId, UserModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/users/{id}");
@@ -10237,6 +10470,7 @@ This gets the basic information from the filings and doesn't include anything ex
      * 
      * @param serviceTypeId The service to check (See ServiceTypeId::* for a list of allowable values)
      * @return SubscriptionModel
+     * @throws Exception an Exception
      */
     public SubscriptionModel getMySubscription(ServiceTypeId serviceTypeId) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/utilities/subscriptions/{serviceTypeId}");
@@ -10265,7 +10499,8 @@ This gets the basic information from the filings and doesn't include anything ex
      * Returns the list of all subscriptions enabled for the current account.
      * This API is intended to help you determine whether you have the necessary subscription to use certain API calls
      * 
-     * @return FetchResult<SubscriptionModel>
+     * @return FetchResult&lt;SubscriptionModel&gt;
+     * @throws Exception an Exception
      */
     public FetchResult<SubscriptionModel> listMySubscriptions() throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/utilities/subscriptions");
@@ -10278,7 +10513,7 @@ This gets the basic information from the filings and doesn't include anything ex
      * Returns the list of all subscriptions enabled for the current account.
      * This API is intended to help you determine whether you have the necessary subscription to use certain API calls
      * 
-     * @return FetchResult<SubscriptionModel>
+     * @return FetchResult&lt;SubscriptionModel&gt;
      */
     public Future<FetchResult<SubscriptionModel>> listMySubscriptionsAsync() {
         AvaTaxPath path = new AvaTaxPath("/api/v2/utilities/subscriptions");
@@ -10294,6 +10529,8 @@ This gets the basic information from the filings and doesn't include anything ex
      * whether your authentication credentials are recognized, and the roundtrip time it takes to communicate with
      * 
      * @return PingResultModel
+     * @throws Exception an Exception
+
      */
     public PingResultModel ping() throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/utilities/ping");

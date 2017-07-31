@@ -6,7 +6,9 @@ version := "17.7.0.96-SNAPSHOT"
 
 scalaVersion := "2.11.8"
 
-javacOptions ++= Seq("-source", "1.8", "-target", "1.7")
+javacOptions ++= Seq("-source", "1.7", "-target", "1.7")
+
+javacOptions in doc := Seq("-source", "1.7", "-Xdoclint:none")
 
 useGpg := true
 

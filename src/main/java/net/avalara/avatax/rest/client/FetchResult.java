@@ -15,6 +15,8 @@ public class FetchResult<T> {
 
     /**
      * Construct this from a different FetchResult, but maintain the count
+     * @param originalRowCount The original row count
+     * @param newlist The new value
      */
     public FetchResult(int originalRowCount, List<T> newlist) {
         this.count = originalRowCount;
