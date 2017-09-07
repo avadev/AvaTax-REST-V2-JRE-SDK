@@ -24,7 +24,7 @@ class AvaTaxClientSpec extends fixture.FreeSpec {
 
     "successfully fetch an account" in { accountInfo =>
       val account = client.withSecurity(accountInfo.username, accountInfo.password).getAccount(accountInfo.accountId, "")
-      assert(account.getAccountStatusId() == AccountStatusId.Test)
+      assert(account.getAccountStatusId() == AccountStatusId.Active)
       assert(account.getName() == accountInfo.accountName)
       assert(account.getModifiedDate() != null)
       assert(account.getId() == accountInfo.accountId)
@@ -79,7 +79,7 @@ class AvaTaxClientSpec extends fixture.FreeSpec {
         .withLine(java.math.BigDecimal.valueOf(10), java.math.BigDecimal.valueOf(1), "P0000000")
         .Create()
 
-      assert(transaction.getTotalTax().equals(new java.math.BigDecimal("0.9")))
+      assert(transaction.getTotalTax().equals(new java.math.BigDecimal("0.87")))
     }
     "throws an AvaTaxClientException with an ErrorResult containing the errors" in { accountInfo =>
       val dateFormat = new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss")
