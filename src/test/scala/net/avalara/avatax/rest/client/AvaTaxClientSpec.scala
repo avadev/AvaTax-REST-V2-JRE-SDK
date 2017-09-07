@@ -20,7 +20,7 @@ class AvaTaxClientSpec extends fixture.FreeSpec {
   }
 
   "AvaTaxClient should" - {
-    var client = new AvaTaxClient("Test", "1.0", "Test", AvaTaxEnvironment.Production)
+    var client = new AvaTaxClient("Test", "1.0", "Test", AvaTaxEnvironment.Sandbox)
 
     "successfully fetch an account" in { accountInfo =>
       val account = client.withSecurity(accountInfo.username, accountInfo.password).getAccount(accountInfo.accountId, "")
