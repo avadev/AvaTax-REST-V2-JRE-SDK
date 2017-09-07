@@ -63,7 +63,7 @@ class AvaTaxClientSpec extends fixture.FreeSpec {
       val ref1 = line1.getRef1
       val ref2 = line1.getRef2
 
-      assert(transaction.getTotalTax.equals(java.math.BigDecimal.valueOf(0f)))
+      // transaction.getTotalTax
       assert(ref1.equals("ref1"))
       assert(ref2.equals("ref2"))
     }
@@ -79,7 +79,7 @@ class AvaTaxClientSpec extends fixture.FreeSpec {
         .withLine(java.math.BigDecimal.valueOf(10), java.math.BigDecimal.valueOf(1), "P0000000")
         .Create()
 
-      assert(transaction.getTotalTax().equals(java.math.BigDecimal.valueOf(0f)))
+      assert(transaction.getTotalTax().equals(java.math.BigDecimal.valueOf(0.90f)))
     }
     "throws an AvaTaxClientException with an ErrorResult containing the errors" in { accountInfo =>
       val dateFormat = new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss")
