@@ -24,7 +24,9 @@ import java.util.HashMap;
  */
 
 /**
- * Information about a zone in which this certificate is valid
+ * Information about a physical area or zone in which a certificate can apply.
+* An exposure zone for an exemption certificate will generally be a tax authority such
+* as a state, country, or local government entity.
  */
 public class ExposureZoneModel {
 
@@ -34,7 +36,7 @@ public class ExposureZoneModel {
     /**
      * Getter for id
      *
-     * 
+     * A unique ID number representing this exposure zone.
      */
     public Integer getId() {
         return this.id;
@@ -43,10 +45,31 @@ public class ExposureZoneModel {
     /**
      * Setter for id
      *
-     * 
+     * A unique ID number representing this exposure zone.
      */
     public void setId(Integer value) {
         this.id = value;
+    }
+
+
+    private Integer companyId;
+
+    /**
+     * Getter for companyId
+     *
+     * The unique ID number of the AvaTax company that recorded this customer.
+     */
+    public Integer getCompanyId() {
+        return this.companyId;
+    }
+
+    /**
+     * Setter for companyId
+     *
+     * The unique ID number of the AvaTax company that recorded this customer.
+     */
+    public void setCompanyId(Integer value) {
+        this.companyId = value;
     }
 
 
@@ -55,7 +78,7 @@ public class ExposureZoneModel {
     /**
      * Getter for name
      *
-     * 
+     * The short name of this exposure zone, suitable for use in a drop-down list.
      */
     public String getName() {
         return this.name;
@@ -64,7 +87,7 @@ public class ExposureZoneModel {
     /**
      * Setter for name
      *
-     * 
+     * The short name of this exposure zone, suitable for use in a drop-down list.
      */
     public void setName(String value) {
         this.name = value;
@@ -76,7 +99,7 @@ public class ExposureZoneModel {
     /**
      * Getter for tag
      *
-     * 
+     * A tag indicating
      */
     public String getTag() {
         return this.tag;
@@ -85,10 +108,115 @@ public class ExposureZoneModel {
     /**
      * Setter for tag
      *
-     * 
+     * A tag indicating
      */
     public void setTag(String value) {
         this.tag = value;
+    }
+
+
+    private String description;
+
+    /**
+     * Getter for description
+     *
+     * A more complete description of this exposure zone, suitable for use as a tooltip or help text.
+     */
+    public String getDescription() {
+        return this.description;
+    }
+
+    /**
+     * Setter for description
+     *
+     * A more complete description of this exposure zone, suitable for use as a tooltip or help text.
+     */
+    public void setDescription(String value) {
+        this.description = value;
+    }
+
+
+    private Date created;
+
+    /**
+     * Getter for created
+     *
+     * The date when this record was created.
+     */
+    public Date getCreated() {
+        return this.created;
+    }
+
+    /**
+     * Setter for created
+     *
+     * The date when this record was created.
+     */
+    public void setCreated(Date value) {
+        this.created = value;
+    }
+
+
+    private Date modified;
+
+    /**
+     * Getter for modified
+     *
+     * The date/time when this record was last modified.
+     */
+    public Date getModified() {
+        return this.modified;
+    }
+
+    /**
+     * Setter for modified
+     *
+     * The date/time when this record was last modified.
+     */
+    public void setModified(Date value) {
+        this.modified = value;
+    }
+
+
+    private String region;
+
+    /**
+     * Getter for region
+     *
+     * Two or three character ISO 3166 region, province, or state name of this exposure zone.
+     */
+    public String getRegion() {
+        return this.region;
+    }
+
+    /**
+     * Setter for region
+     *
+     * Two or three character ISO 3166 region, province, or state name of this exposure zone.
+     */
+    public void setRegion(String value) {
+        this.region = value;
+    }
+
+
+    private String country;
+
+    /**
+     * Getter for country
+     *
+     * Two character ISO 3166 county code for the country component of this exposure zone.
+     */
+    public String getCountry() {
+        return this.country;
+    }
+
+    /**
+     * Setter for country
+     *
+     * Two character ISO 3166 county code for the country component of this exposure zone.
+     */
+    public void setCountry(String value) {
+        this.country = value;
     }
 
 

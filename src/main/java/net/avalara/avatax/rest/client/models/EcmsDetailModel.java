@@ -24,7 +24,7 @@ import java.util.HashMap;
  */
 
 /**
- * 
+ * Represents an ECMS record, used internally by AvaTax to track information about exemptions.
  */
 public class EcmsDetailModel {
 

@@ -34,7 +34,7 @@ public class CustomerModel {
     /**
      * Getter for id
      *
-     * Unique ID number assigned to each company by Avalara.
+     * Unique ID number of this customer.
      */
     public Integer getId() {
         return this.id;
@@ -43,7 +43,7 @@ public class CustomerModel {
     /**
      * Setter for id
      *
-     * Unique ID number assigned to each company by Avalara.
+     * Unique ID number of this customer.
      */
     public void setId(Integer value) {
         this.id = value;
@@ -55,7 +55,7 @@ public class CustomerModel {
     /**
      * Getter for companyId
      *
-     * The unique ID number of the AvaTax company that maintains this customer record.
+     * The unique ID number of the AvaTax company that recorded this customer.
      */
     public Integer getCompanyId() {
         return this.companyId;
@@ -64,52 +64,37 @@ public class CustomerModel {
     /**
      * Setter for companyId
      *
-     * The unique ID number of the AvaTax company that maintains this customer record.
+     * The unique ID number of the AvaTax company that recorded this customer.
      */
     public void setCompanyId(Integer value) {
         this.companyId = value;
     }
 
 
-    private Integer clientId;
+    private String customerCode;
 
     /**
-     * Getter for clientId
+     * Getter for customerCode
      *
-     * TODO
+     * The unique code identifying this customer. Must be unique within your company.
+    * 
+    * This code should be used in the `customerCode` field of any call that creates or adjusts a transaction
+    * in order to ensure that all exemptions that apply to this customer are correctly considered.
      */
-    public Integer getClientId() {
-        return this.clientId;
+    public String getCustomerCode() {
+        return this.customerCode;
     }
 
     /**
-     * Setter for clientId
+     * Setter for customerCode
      *
-     * TODO
+     * The unique code identifying this customer. Must be unique within your company.
+    * 
+    * This code should be used in the `customerCode` field of any call that creates or adjusts a transaction
+    * in order to ensure that all exemptions that apply to this customer are correctly considered.
      */
-    public void setClientId(Integer value) {
-        this.clientId = value;
-    }
-
-
-    private String customerNumber;
-
-    /**
-     * Getter for customerNumber
-     *
-     * A number by which this customer is known by your system. Must be unique within your company.
-     */
-    public String getCustomerNumber() {
-        return this.customerNumber;
-    }
-
-    /**
-     * Setter for customerNumber
-     *
-     * A number by which this customer is known by your system. Must be unique within your company.
-     */
-    public void setCustomerNumber(String value) {
-        this.customerNumber = value;
+    public void setCustomerCode(String value) {
+        this.customerCode = value;
     }
 
 
@@ -118,7 +103,8 @@ public class CustomerModel {
     /**
      * Getter for alternateId
      *
-     * Alternate Id
+     * A customer-configurable alternate ID number for this customer. You may set this value to match any
+    * other system that would like to reference this customer record.
      */
     public String getAlternateId() {
         return this.alternateId;
@@ -127,7 +113,8 @@ public class CustomerModel {
     /**
      * Setter for alternateId
      *
-     * Alternate Id
+     * A customer-configurable alternate ID number for this customer. You may set this value to match any
+    * other system that would like to reference this customer record.
      */
     public void setAlternateId(String value) {
         this.alternateId = value;
@@ -139,7 +126,7 @@ public class CustomerModel {
     /**
      * Getter for name
      *
-     * Customer name
+     * A friendly name identifying this customer.
      */
     public String getName() {
         return this.name;
@@ -148,7 +135,7 @@ public class CustomerModel {
     /**
      * Setter for name
      *
-     * Customer name
+     * A friendly name identifying this customer.
      */
     public void setName(String value) {
         this.name = value;
@@ -183,7 +170,7 @@ public class CustomerModel {
     /**
      * Getter for line1
      *
-     * First line of the street address
+     * First line of the street address of this customer.
      */
     public String getLine1() {
         return this.line1;
@@ -192,7 +179,7 @@ public class CustomerModel {
     /**
      * Setter for line1
      *
-     * First line of the street address
+     * First line of the street address of this customer.
      */
     public void setLine1(String value) {
         this.line1 = value;
@@ -204,7 +191,7 @@ public class CustomerModel {
     /**
      * Getter for line2
      *
-     * Second line of the street address
+     * Second line of the street address of this customer.
      */
     public String getLine2() {
         return this.line2;
@@ -213,7 +200,7 @@ public class CustomerModel {
     /**
      * Setter for line2
      *
-     * Second line of the street address
+     * Second line of the street address of this customer.
      */
     public void setLine2(String value) {
         this.line2 = value;
@@ -225,7 +212,7 @@ public class CustomerModel {
     /**
      * Getter for city
      *
-     * City component of the address
+     * City component of the street address of this customer.
      */
     public String getCity() {
         return this.city;
@@ -234,7 +221,7 @@ public class CustomerModel {
     /**
      * Setter for city
      *
-     * City component of the address
+     * City component of the street address of this customer.
      */
     public void setCity(String value) {
         this.city = value;
@@ -246,7 +233,7 @@ public class CustomerModel {
     /**
      * Getter for postalCode
      *
-     * Postal Code / Zip Code component of the address.
+     * Postal Code / Zip Code component of the address of this customer.
      */
     public String getPostalCode() {
         return this.postalCode;
@@ -255,7 +242,7 @@ public class CustomerModel {
     /**
      * Setter for postalCode
      *
-     * Postal Code / Zip Code component of the address.
+     * Postal Code / Zip Code component of the address of this customer.
      */
     public void setPostalCode(String value) {
         this.postalCode = value;
@@ -267,7 +254,7 @@ public class CustomerModel {
     /**
      * Getter for phoneNumber
      *
-     * Customer phone number
+     * The main phone number for this customer.
      */
     public String getPhoneNumber() {
         return this.phoneNumber;
@@ -276,7 +263,7 @@ public class CustomerModel {
     /**
      * Setter for phoneNumber
      *
-     * Customer phone number
+     * The main phone number for this customer.
      */
     public void setPhoneNumber(String value) {
         this.phoneNumber = value;
@@ -288,7 +275,7 @@ public class CustomerModel {
     /**
      * Getter for faxNumber
      *
-     * Customer fax number
+     * The fax phone number for this customer, if any.
      */
     public String getFaxNumber() {
         return this.faxNumber;
@@ -297,7 +284,7 @@ public class CustomerModel {
     /**
      * Setter for faxNumber
      *
-     * Customer fax number
+     * The fax phone number for this customer, if any.
      */
     public void setFaxNumber(String value) {
         this.faxNumber = value;
@@ -309,7 +296,7 @@ public class CustomerModel {
     /**
      * Getter for emailAddress
      *
-     * Customer email
+     * The main email address for this customer.
      */
     public String getEmailAddress() {
         return this.emailAddress;
@@ -318,7 +305,7 @@ public class CustomerModel {
     /**
      * Setter for emailAddress
      *
-     * Customer email
+     * The main email address for this customer.
      */
     public void setEmailAddress(String value) {
         this.emailAddress = value;
@@ -330,7 +317,7 @@ public class CustomerModel {
     /**
      * Getter for contactName
      *
-     * Customer contact name
+     * The name of the main contact person for this customer.
      */
     public String getContactName() {
         return this.contactName;
@@ -339,7 +326,7 @@ public class CustomerModel {
     /**
      * Setter for contactName
      *
-     * Customer contact name
+     * The name of the main contact person for this customer.
      */
     public void setContactName(String value) {
         this.contactName = value;
@@ -351,7 +338,7 @@ public class CustomerModel {
     /**
      * Getter for lastTransaction
      *
-     * When last transaction was happened,
+     * Date when this customer last executed a transaction.
      */
     public Date getLastTransaction() {
         return this.lastTransaction;
@@ -360,7 +347,7 @@ public class CustomerModel {
     /**
      * Setter for lastTransaction
      *
-     * When last transaction was happened,
+     * Date when this customer last executed a transaction.
      */
     public void setLastTransaction(Date value) {
         this.lastTransaction = value;
@@ -414,7 +401,7 @@ public class CustomerModel {
     /**
      * Getter for country
      *
-     * Two character ISO 3166 county code for this country
+     * Two character ISO 3166 county code for the country component of the address of this customer.
      */
     public String getCountry() {
         return this.country;
@@ -423,7 +410,7 @@ public class CustomerModel {
     /**
      * Setter for country
      *
-     * Two character ISO 3166 county code for this country
+     * Two character ISO 3166 county code for the country component of the address of this customer.
      */
     public void setCountry(String value) {
         this.country = value;
@@ -435,7 +422,7 @@ public class CustomerModel {
     /**
      * Getter for region
      *
-     * Two or three character ISO 3166 region, province, or state name
+     * Two or three character ISO 3166 region, province, or state name of the address of this customer.
      */
     public String getRegion() {
         return this.region;
@@ -444,7 +431,7 @@ public class CustomerModel {
     /**
      * Setter for region
      *
-     * Two or three character ISO 3166 region, province, or state name
+     * Two or three character ISO 3166 region, province, or state name of the address of this customer.
      */
     public void setRegion(String value) {
         this.region = value;
@@ -456,7 +443,7 @@ public class CustomerModel {
     /**
      * Getter for isBill
      *
-     * TODO
+     * True if this customer record is specifically used for bill-to purposes.
      */
     public Boolean getIsBill() {
         return this.isBill;
@@ -465,7 +452,7 @@ public class CustomerModel {
     /**
      * Setter for isBill
      *
-     * TODO
+     * True if this customer record is specifically used for bill-to purposes.
      */
     public void setIsBill(Boolean value) {
         this.isBill = value;
@@ -477,7 +464,7 @@ public class CustomerModel {
     /**
      * Getter for isShip
      *
-     * TODO
+     * True if this customer record is specifically used for ship-to purposes.
      */
     public Boolean getIsShip() {
         return this.isShip;
@@ -486,7 +473,7 @@ public class CustomerModel {
     /**
      * Setter for isShip
      *
-     * TODO
+     * True if this customer record is specifically used for ship-to purposes.
      */
     public void setIsShip(Boolean value) {
         this.isShip = value;
@@ -521,7 +508,8 @@ public class CustomerModel {
     /**
      * Getter for certificates
      *
-     * A list of exemption certficates that apply to this customer.
+     * A list of exemption certficates that apply to this customer. You can fetch this data by specifying 
+    * `$include=certificates` when calling a customer fetch API.
      */
     public ArrayList<CertificateModel> getCertificates() {
         return this.certificates;
@@ -530,7 +518,8 @@ public class CustomerModel {
     /**
      * Setter for certificates
      *
-     * A list of exemption certficates that apply to this customer.
+     * A list of exemption certficates that apply to this customer. You can fetch this data by specifying 
+    * `$include=certificates` when calling a customer fetch API.
      */
     public void setCertificates(ArrayList<CertificateModel> value) {
         this.certificates = value;

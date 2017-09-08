@@ -30,112 +30,24 @@ import java.util.HashMap;
 public class NewAccountRequestModel {
 
 
-    private ArrayList<String> products;
+    private String offer;
 
     /**
-     * Getter for products
+     * Getter for offer
      *
-     * The list of products to which this account would like to subscribe.
+     * Offer with which the partner account needs to be created
      */
-    public ArrayList<String> getProducts() {
-        return this.products;
+    public String getOffer() {
+        return this.offer;
     }
 
     /**
-     * Setter for products
+     * Setter for offer
      *
-     * The list of products to which this account would like to subscribe.
+     * Offer with which the partner account needs to be created
      */
-    public void setProducts(ArrayList<String> value) {
-        this.products = value;
-    }
-
-
-    private String connectorName;
-
-    /**
-     * Getter for connectorName
-     *
-     * The name of the connector that will be the primary method of access used to call the account created.
-    * For a list of available connectors, please contact your Avalara representative.
-     */
-    public String getConnectorName() {
-        return this.connectorName;
-    }
-
-    /**
-     * Setter for connectorName
-     *
-     * The name of the connector that will be the primary method of access used to call the account created.
-    * For a list of available connectors, please contact your Avalara representative.
-     */
-    public void setConnectorName(String value) {
-        this.connectorName = value;
-    }
-
-
-    private String parentAccountNumber;
-
-    /**
-     * Getter for parentAccountNumber
-     *
-     * An approved partner account can be referenced when provisioning an account, allowing a link between 
-    * the partner and the provisioned account.
-     */
-    public String getParentAccountNumber() {
-        return this.parentAccountNumber;
-    }
-
-    /**
-     * Setter for parentAccountNumber
-     *
-     * An approved partner account can be referenced when provisioning an account, allowing a link between 
-    * the partner and the provisioned account.
-     */
-    public void setParentAccountNumber(String value) {
-        this.parentAccountNumber = value;
-    }
-
-
-    private String referrerId;
-
-    /**
-     * Getter for referrerId
-     *
-     * Identifies a referring partner for the assessment of referral-based commissions.
-     */
-    public String getReferrerId() {
-        return this.referrerId;
-    }
-
-    /**
-     * Setter for referrerId
-     *
-     * Identifies a referring partner for the assessment of referral-based commissions.
-     */
-    public void setReferrerId(String value) {
-        this.referrerId = value;
-    }
-
-
-    private String paymentMethodId;
-
-    /**
-     * Getter for paymentMethodId
-     *
-     * Zuora-generated Payment ID to which the new account should be associated. For free trial accounts, an empty string is acceptable.
-     */
-    public String getPaymentMethodId() {
-        return this.paymentMethodId;
-    }
-
-    /**
-     * Setter for paymentMethodId
-     *
-     * Zuora-generated Payment ID to which the new account should be associated. For free trial accounts, an empty string is acceptable.
-     */
-    public void setPaymentMethodId(String value) {
-        this.paymentMethodId = value;
+    public void setOffer(String value) {
+        this.offer = value;
     }
 
 
@@ -199,6 +111,27 @@ public class NewAccountRequestModel {
      */
     public void setAccountName(String value) {
         this.accountName = value;
+    }
+
+
+    private String website;
+
+    /**
+     * Getter for website
+     *
+     * Website of the partner account being created
+     */
+    public String getWebsite() {
+        return this.website;
+    }
+
+    /**
+     * Setter for website
+     *
+     * Website of the partner account being created
+     */
+    public void setWebsite(String value) {
+        this.website = value;
     }
 
 
@@ -329,6 +262,115 @@ public class NewAccountRequestModel {
      */
     public void setUserPassword(String value) {
         this.userPassword = value;
+    }
+
+
+    private WelcomeEmail welcomeEmail;
+
+    /**
+     * Getter for welcomeEmail
+     *
+     * Normal - If a welcome email needs to be generated for the user.
+    * Suppressed - If no welcome email needs to be generated for the user.
+    * Custom - If a custom welcome email needs to be generated for the user.
+     */
+    public WelcomeEmail getWelcomeEmail() {
+        return this.welcomeEmail;
+    }
+
+    /**
+     * Setter for welcomeEmail
+     *
+     * Normal - If a welcome email needs to be generated for the user.
+    * Suppressed - If no welcome email needs to be generated for the user.
+    * Custom - If a custom welcome email needs to be generated for the user.
+     */
+    public void setWelcomeEmail(WelcomeEmail value) {
+        this.welcomeEmail = value;
+    }
+
+
+    private CompanyAddress companyAddress;
+
+    /**
+     * Getter for companyAddress
+     *
+     * Address information of the account being created.
+     */
+    public CompanyAddress getCompanyAddress() {
+        return this.companyAddress;
+    }
+
+    /**
+     * Setter for companyAddress
+     *
+     * Address information of the account being created.
+     */
+    public void setCompanyAddress(CompanyAddress value) {
+        this.companyAddress = value;
+    }
+
+
+    private ArrayList<String> properties;
+
+    /**
+     * Getter for properties
+     *
+     * Properties of the primary contact person for this account
+     */
+    public ArrayList<String> getProperties() {
+        return this.properties;
+    }
+
+    /**
+     * Setter for properties
+     *
+     * Properties of the primary contact person for this account
+     */
+    public void setProperties(ArrayList<String> value) {
+        this.properties = value;
+    }
+
+
+    private Boolean acceptAvalaraTermsAndConditions;
+
+    /**
+     * Getter for acceptAvalaraTermsAndConditions
+     *
+     * Set this to true if and only if the owner of the newly created account accepts Avalara's terms and conditions for your account.
+     */
+    public Boolean getAcceptAvalaraTermsAndConditions() {
+        return this.acceptAvalaraTermsAndConditions;
+    }
+
+    /**
+     * Setter for acceptAvalaraTermsAndConditions
+     *
+     * Set this to true if and only if the owner of the newly created account accepts Avalara's terms and conditions for your account.
+     */
+    public void setAcceptAvalaraTermsAndConditions(Boolean value) {
+        this.acceptAvalaraTermsAndConditions = value;
+    }
+
+
+    private Boolean haveReadAvalaraTermsAndConditions;
+
+    /**
+     * Getter for haveReadAvalaraTermsAndConditions
+     *
+     * Set this to true if and only if the owner of the newly created account has fully read Avalara's terms and conditions for your account.
+     */
+    public Boolean getHaveReadAvalaraTermsAndConditions() {
+        return this.haveReadAvalaraTermsAndConditions;
+    }
+
+    /**
+     * Setter for haveReadAvalaraTermsAndConditions
+     *
+     * Set this to true if and only if the owner of the newly created account has fully read Avalara's terms and conditions for your account.
+     */
+    public void setHaveReadAvalaraTermsAndConditions(Boolean value) {
+        this.haveReadAvalaraTermsAndConditions = value;
     }
 
 

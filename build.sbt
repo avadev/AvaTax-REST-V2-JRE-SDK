@@ -1,10 +1,10 @@
-name := """avatax-rest-v2-api-java"""
+﻿name := """avatax-rest-v2-api-java"""
 
 organization := "net.avalara.avatax"
 
-version := "17.7.0.96"
+version := "17.8.1.722"
 
-scalaVersion := "2.11.8"
+scalaVersion := "17.8.1.722"
 
 javacOptions ++= Seq("-source", "1.7", "-target", "1.7")
 

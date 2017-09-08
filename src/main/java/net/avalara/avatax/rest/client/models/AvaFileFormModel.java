@@ -24,7 +24,7 @@ import java.util.HashMap;
  */
 
 /**
- * 
+ * Represents information about a tax form known to Avalara
  */
 public class AvaFileFormModel {
 

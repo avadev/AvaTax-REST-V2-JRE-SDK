@@ -24,7 +24,7 @@ import java.util.HashMap;
  */
 
 /**
- * 
+ * Represents a tax subtype
  */
 public class TaxSubTypeModel {
 

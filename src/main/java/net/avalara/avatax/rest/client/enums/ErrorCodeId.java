@@ -539,6 +539,26 @@ public enum ErrorCodeId {
     InvalidEcmsOverrideCode,
 
     /** 
+     * 
+     */
+    AccountDoesNotExist,
+
+    /** 
+     * 
+     */
+    InvalidTaxType,
+
+    /** 
+     * 
+     */
+    IncorrectFieldValue,
+
+    /** 
+     * 
+     */
+    LeadingOrTrailingException,
+
+    /** 
      * Batch errors
      */
     BatchSalesAuditMustBeZippedError,
@@ -577,6 +597,16 @@ public enum ErrorCodeId {
      * 
      */
     PointOfSaleSetup,
+
+    /** 
+     * 
+     */
+    InvalidInputDate,
+
+    /** 
+     * 
+     */
+    RequestedFileNotExist,
 
     /** 
      * Errors in Soap V1 Passthrough / GetTax calls
@@ -682,16 +712,6 @@ public enum ErrorCodeId {
      * 
      */
     InvitationOnly,
-
-    /** 
-     * 
-     */
-    ZTBListConnectorFail,
-
-    /** 
-     * 
-     */
-    ZTBCreateSubscriptionsFail,
 
     /** 
      * 
@@ -809,7 +829,7 @@ public enum ErrorCodeId {
     LinesNotSpecified,
 
     /** 
-     * 
+     * Exempt cert error codes
      */
     InvalidBusinessType,
 
@@ -841,12 +861,52 @@ public enum ErrorCodeId {
     /** 
      * 
      */
-    AddCustomersForCertificateError,
+    AddRelationshipsError,
 
     /** 
      * 
      */
-    AddCertificatesForCustomerError,
+    MissingExposureZone,
+
+    /** 
+     * 
+     */
+    ConflictingExposureZone,
+
+    /** 
+     * 
+     */
+    MissingFieldToCreateExposureZone,
+
+    /** 
+     * 
+     */
+    MissingExemptReason,
+
+    /** 
+     * 
+     */
+    InvalidExemptReason,
+
+    /** 
+     * 
+     */
+    InvalidCertCaptureOperation,
+
+    /** 
+     * 
+     */
+    ConflictingFields,
+
+    /** 
+     * 
+     */
+    InvalidPdfOrImageFile,
+
+    /** 
+     * 
+     */
+    InvalidCoverLetterTitle,
 
     /** 
      * Multi company error codes
@@ -872,6 +932,16 @@ public enum ErrorCodeId {
      * 
      */
     CommsConfigClientIdBadValue,
+
+    /** 
+     * BizTech API error codes
+     */
+    BizTechCustomerAccountFailure,
+
+    /** 
+     * 
+     */
+    BizTechOpportunityCreationFailure,
 
 }
     
