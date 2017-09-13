@@ -34,7 +34,7 @@ public class ExportDocumentLineModel {
     /**
      * Getter for format
      *
-     * The output format: CSV, XML, etc.
+     * The output format: CSV, XML, etc. If no preference, report will be in CSV format.
      */
     public ReportFormat getFormat() {
         return this.format;
@@ -43,7 +43,7 @@ public class ExportDocumentLineModel {
     /**
      * Setter for format
      *
-     * The output format: CSV, XML, etc.
+     * The output format: CSV, XML, etc. If no preference, report will be in CSV format.
      */
     public void setFormat(ReportFormat value) {
         this.format = value;
@@ -55,7 +55,7 @@ public class ExportDocumentLineModel {
     /**
      * Getter for startDate
      *
-     * The start date filter for report execution
+     * The start date filter for report execution. If no date provided, same date of last month will be used as the startDate.
      */
     public Date getStartDate() {
         return this.startDate;
@@ -64,7 +64,7 @@ public class ExportDocumentLineModel {
     /**
      * Setter for startDate
      *
-     * The start date filter for report execution
+     * The start date filter for report execution. If no date provided, same date of last month will be used as the startDate.
      */
     public void setStartDate(Date value) {
         this.startDate = value;
@@ -76,7 +76,7 @@ public class ExportDocumentLineModel {
     /**
      * Getter for endDate
      *
-     * The end date filter for report execution
+     * The end date filter for report execution. If no date provided, today's date will be used as the endDate.
      */
     public Date getEndDate() {
         return this.endDate;
@@ -85,7 +85,7 @@ public class ExportDocumentLineModel {
     /**
      * Setter for endDate
      *
-     * The end date filter for report execution
+     * The end date filter for report execution. If no date provided, today's date will be used as the endDate.
      */
     public void setEndDate(Date value) {
         this.endDate = value;
@@ -124,8 +124,7 @@ public class ExportDocumentLineModel {
     /**
      * Getter for state
      *
-     * The transactions in which state you wish to run a report:
-    * use "ALL" for all states
+     * The state associated with the transactions you wish to run a report on: use "ALL" for all states.
      */
     public String getState() {
         return this.state;
@@ -134,52 +133,51 @@ public class ExportDocumentLineModel {
     /**
      * Setter for state
      *
-     * The transactions in which state you wish to run a report:
-    * use "ALL" for all states
+     * The state associated with the transactions you wish to run a report on: use "ALL" for all states.
      */
     public void setState(String value) {
         this.state = value;
     }
 
 
-    private String dateFilter;
+    private ReportDateFilter dateFilter;
 
     /**
      * Getter for dateFilter
      *
-     * The way your date filter operates on: "RD" for Reporting Date, "DD" for Document Date, "TD" for Tax Date, "PD" for Payment Date
+     * The type of date to filter your transactions
      */
-    public String getDateFilter() {
+    public ReportDateFilter getDateFilter() {
         return this.dateFilter;
     }
 
     /**
      * Setter for dateFilter
      *
-     * The way your date filter operates on: "RD" for Reporting Date, "DD" for Document Date, "TD" for Tax Date, "PD" for Payment Date
+     * The type of date to filter your transactions
      */
-    public void setDateFilter(String value) {
+    public void setDateFilter(ReportDateFilter value) {
         this.dateFilter = value;
     }
 
 
-    private String docType;
+    private ReportDocType docType;
 
     /**
      * Getter for docType
      *
-     * The transaction type you want to run a report: "S" for Sales, "C" for Consumer Use
+     * The transaction type you want to run a report on
      */
-    public String getDocType() {
+    public ReportDocType getDocType() {
         return this.docType;
     }
 
     /**
      * Setter for docType
      *
-     * The transaction type you want to run a report: "S" for Sales, "C" for Consumer Use
+     * The transaction type you want to run a report on
      */
-    public void setDocType(String value) {
+    public void setDocType(ReportDocType value) {
         this.docType = value;
     }
 

@@ -10034,60 +10034,6 @@ This gets the basic information from the filings and doesn't include anything ex
     }
 
     /**
-     * Download a file listing tax rates by postal code
-     * 
-     * Download a CSV file containing all five digit postal codes in the United States and their sales
-     * and use tax rates for tangible personal property.
-     * 
-     * This rates file is intended to be used as a default for tax calculation when your software cannot
-     * call the `CreateTransaction` API call.  When using this file, your software will be unable to
-     * handle complex tax rules such as:
-     * 
-     * * Zip+9 - This tax file does not contain 
-     * * Different product types - This tax file contains tangible personal property tax rates only.
-     * * Mixed sourcing - This tax file cannot be used to resolve origin-based taxes.
-     * * Threshold-based taxes - This tax file does not contain information about thresholds.
-     * 
-     * If you use this file to provide default tax rates, please ensure that your software calls `CreateTransaction`
-     * to reconcile the actual transaction and determine the difference between the estimated general tax
-     * 
-     * @param date The date for which
-     * @return String
-     */
-    public String downloadTaxRatesByZipCode(Date date) throws Exception {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/taxratesbyzipcode/download/{date}");
-        path.applyField("date", date);
-        return ((RestCall<String>)restCallFactory.createRestCall("get", path, null, new TypeToken<String>(){})).call();
-    }
-
-    /**
-     * Download a file listing tax rates by postal code
-     * 
-     * Download a CSV file containing all five digit postal codes in the United States and their sales
-     * and use tax rates for tangible personal property.
-     * 
-     * This rates file is intended to be used as a default for tax calculation when your software cannot
-     * call the `CreateTransaction` API call.  When using this file, your software will be unable to
-     * handle complex tax rules such as:
-     * 
-     * * Zip+9 - This tax file does not contain 
-     * * Different product types - This tax file contains tangible personal property tax rates only.
-     * * Mixed sourcing - This tax file cannot be used to resolve origin-based taxes.
-     * * Threshold-based taxes - This tax file does not contain information about thresholds.
-     * 
-     * If you use this file to provide default tax rates, please ensure that your software calls `CreateTransaction`
-     * to reconcile the actual transaction and determine the difference between the estimated general tax
-     * 
-     * @param date The date for which
-     * @return String
-     */
-    public Future<String> downloadTaxRatesByZipCodeAsync(Date date) {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/taxratesbyzipcode/download/{date}");
-        path.applyField("date", date);
-        return this.threadPool.submit((RestCall<String>)restCallFactory.createRestCall("get", path, null, new TypeToken<String>(){}));
-    }
-
-    /**
      * Create a new tax rule
      * 
      * Create one or more new taxrule objects attached to this company.
