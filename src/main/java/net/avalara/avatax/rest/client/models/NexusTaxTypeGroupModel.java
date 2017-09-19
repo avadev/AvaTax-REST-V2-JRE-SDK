@@ -24,7 +24,7 @@ import java.util.HashMap;
  */
 
 /**
- * 
+ * Represents a group of tax types
  */
 public class NexusTaxTypeGroupModel {
 

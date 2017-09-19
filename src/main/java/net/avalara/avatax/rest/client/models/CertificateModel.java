@@ -24,7 +24,10 @@ import java.util.HashMap;
  */
 
 /**
- * Certificate model in CertCapture
+ * A certificate is a document stored in either AvaTax Exemptions or CertCapture. The certificate document
+* can contain information about a customer's eligibility for exemption from sales or use taxes based on
+* criteria you specify when you store the certificate. To view or manage your certificates directly, please 
+* log onto the administrative website for the product you purchased.
  */
 public class CertificateModel {
 
@@ -34,7 +37,7 @@ public class CertificateModel {
     /**
      * Getter for id
      *
-     * Cerificate ID
+     * Unique ID number of this certificate.
      */
     public Integer getId() {
         return this.id;
@@ -43,7 +46,7 @@ public class CertificateModel {
     /**
      * Setter for id
      *
-     * Cerificate ID
+     * Unique ID number of this certificate.
      */
     public void setId(Integer value) {
         this.id = value;
@@ -55,7 +58,7 @@ public class CertificateModel {
     /**
      * Getter for companyId
      *
-     * The unique ID number of the AvaTax company that received this certificate.
+     * The unique ID number of the AvaTax company that recorded this certificate.
      */
     public Integer getCompanyId() {
         return this.companyId;
@@ -64,7 +67,7 @@ public class CertificateModel {
     /**
      * Setter for companyId
      *
-     * The unique ID number of the AvaTax company that received this certificate.
+     * The unique ID number of the AvaTax company that recorded this certificate.
      */
     public void setCompanyId(Integer value) {
         this.companyId = value;
@@ -76,7 +79,7 @@ public class CertificateModel {
     /**
      * Getter for signedDate
      *
-     * When the certifcate was signed
+     * The date when this certificate was signed.
      */
     public Date getSignedDate() {
         return this.signedDate;
@@ -85,7 +88,7 @@ public class CertificateModel {
     /**
      * Setter for signedDate
      *
-     * When the certifcate was signed
+     * The date when this certificate was signed.
      */
     public void setSignedDate(Date value) {
         this.signedDate = value;
@@ -97,7 +100,7 @@ public class CertificateModel {
     /**
      * Getter for expirationDate
      *
-     * When the certificate will be/was expired
+     * Expiration date when this certificate will no longer be valid.
      */
     public Date getExpirationDate() {
         return this.expirationDate;
@@ -106,7 +109,7 @@ public class CertificateModel {
     /**
      * Setter for expirationDate
      *
-     * When the certificate will be/was expired
+     * Expiration date when this certificate will no longer be valid.
      */
     public void setExpirationDate(Date value) {
         this.expirationDate = value;
@@ -118,7 +121,14 @@ public class CertificateModel {
     /**
      * Getter for filename
      *
-     * File name for the certificate
+     * File name for the image of this certificate.
+    * 
+    * When creating a certificate, if you do not upload a PDF or JPG image, you must specify the filename
+    * of the certificate as it is tracked in your repository.
+    * 
+    * To create a certificate, you must provide one of the following fields: either a `filename`, a `pdf` file,
+    * or an array of JPG `pages`. The API will return an error if you omit these fields or if you attempt to
+    * put values in more than one of them.
      */
     public String getFilename() {
         return this.filename;
@@ -127,7 +137,14 @@ public class CertificateModel {
     /**
      * Setter for filename
      *
-     * File name for the certificate
+     * File name for the image of this certificate.
+    * 
+    * When creating a certificate, if you do not upload a PDF or JPG image, you must specify the filename
+    * of the certificate as it is tracked in your repository.
+    * 
+    * To create a certificate, you must provide one of the following fields: either a `filename`, a `pdf` file,
+    * or an array of JPG `pages`. The API will return an error if you omit these fields or if you attempt to
+    * put values in more than one of them.
      */
     public void setFilename(String value) {
         this.filename = value;
@@ -139,7 +156,9 @@ public class CertificateModel {
     /**
      * Getter for valid
      *
-     * Is the certificate valid?
+     * True if this certificate is marked as valid. A valid certificate can be considered for exemption purposes.
+    * When a certificate is marked invalid, it will no longer be considered when calculating exemption for
+    * a customer.
      */
     public Boolean getValid() {
         return this.valid;
@@ -148,7 +167,9 @@ public class CertificateModel {
     /**
      * Setter for valid
      *
-     * Is the certificate valid?
+     * True if this certificate is marked as valid. A valid certificate can be considered for exemption purposes.
+    * When a certificate is marked invalid, it will no longer be considered when calculating exemption for
+    * a customer.
      */
     public void setValid(Boolean value) {
         this.valid = value;
@@ -160,7 +181,8 @@ public class CertificateModel {
     /**
      * Getter for verified
      *
-     * Is the certificate verified?
+     * This value is true if the certificate has gone through the certificate validation process.
+    * For more information on the certificate validation process, please see the Avalara Help Center.
      */
     public Boolean getVerified() {
         return this.verified;
@@ -169,73 +191,11 @@ public class CertificateModel {
     /**
      * Setter for verified
      *
-     * Is the certificate verified?
+     * This value is true if the certificate has gone through the certificate validation process.
+    * For more information on the certificate validation process, please see the Avalara Help Center.
      */
     public void setVerified(Boolean value) {
         this.verified = value;
-    }
-
-
-    private Boolean neverRenew;
-
-    /**
-     * Getter for neverRenew
-     *
-     * The certificate is never renewed
-     */
-    public Boolean getNeverRenew() {
-        return this.neverRenew;
-    }
-
-    /**
-     * Setter for neverRenew
-     *
-     * The certificate is never renewed
-     */
-    public void setNeverRenew(Boolean value) {
-        this.neverRenew = value;
-    }
-
-
-    private Boolean renewable;
-
-    /**
-     * Getter for renewable
-     *
-     * Is this certificate renewable?
-     */
-    public Boolean getRenewable() {
-        return this.renewable;
-    }
-
-    /**
-     * Setter for renewable
-     *
-     * Is this certificate renewable?
-     */
-    public void setRenewable(Boolean value) {
-        this.renewable = value;
-    }
-
-
-    private Boolean unusedMultiCert;
-
-    /**
-     * Getter for unusedMultiCert
-     *
-     * TODO
-     */
-    public Boolean getUnusedMultiCert() {
-        return this.unusedMultiCert;
-    }
-
-    /**
-     * Setter for unusedMultiCert
-     *
-     * TODO
-     */
-    public void setUnusedMultiCert(Boolean value) {
-        this.unusedMultiCert = value;
     }
 
 
@@ -244,7 +204,10 @@ public class CertificateModel {
     /**
      * Getter for exemptPercentage
      *
-     * What is the exempt percentage from this certificate
+     * If this certificate provides exemption from transactional taxes, what percentage of the transaction 
+    * is considered exempt?
+    * 
+    * For a fully exempt certificate, this percentage should be 100.
      */
     public BigDecimal getExemptPercentage() {
         return this.exemptPercentage;
@@ -253,178 +216,57 @@ public class CertificateModel {
     /**
      * Setter for exemptPercentage
      *
-     * What is the exempt percentage from this certificate
+     * If this certificate provides exemption from transactional taxes, what percentage of the transaction 
+    * is considered exempt?
+    * 
+    * For a fully exempt certificate, this percentage should be 100.
      */
     public void setExemptPercentage(BigDecimal value) {
         this.exemptPercentage = value;
     }
 
 
-    private Integer verificationNumber;
+    private Boolean isSingleCertificate;
 
     /**
-     * Getter for verificationNumber
+     * Getter for isSingleCertificate
      *
-     * TODO
+     * This value is true if this certificate is a single (or standalone) certificate. This value is set
+    * during the audit stage of the certificate validation process.
      */
-    public Integer getVerificationNumber() {
-        return this.verificationNumber;
+    public Boolean getIsSingleCertificate() {
+        return this.isSingleCertificate;
     }
 
     /**
-     * Setter for verificationNumber
+     * Setter for isSingleCertificate
      *
-     * TODO
+     * This value is true if this certificate is a single (or standalone) certificate. This value is set
+    * during the audit stage of the certificate validation process.
      */
-    public void setVerificationNumber(Integer value) {
-        this.verificationNumber = value;
+    public void setIsSingleCertificate(Boolean value) {
+        this.isSingleCertificate = value;
     }
 
 
-    private Integer taxNumber;
+    private ExemptionReasonModel exemptionReason;
 
     /**
-     * Getter for taxNumber
+     * Getter for exemptionReason
      *
-     * TODO
+     * The exemption reason associated with this certificate.
      */
-    public Integer getTaxNumber() {
-        return this.taxNumber;
+    public ExemptionReasonModel getExemptionReason() {
+        return this.exemptionReason;
     }
 
     /**
-     * Setter for taxNumber
+     * Setter for exemptionReason
      *
-     * TODO
+     * The exemption reason associated with this certificate.
      */
-    public void setTaxNumber(Integer value) {
-        this.taxNumber = value;
-    }
-
-
-    private Boolean barcodeRead;
-
-    /**
-     * Getter for barcodeRead
-     *
-     * TODO
-     */
-    public Boolean getBarcodeRead() {
-        return this.barcodeRead;
-    }
-
-    /**
-     * Setter for barcodeRead
-     *
-     * TODO
-     */
-    public void setBarcodeRead(Boolean value) {
-        this.barcodeRead = value;
-    }
-
-
-    private Boolean isSingle;
-
-    /**
-     * Getter for isSingle
-     *
-     * TODO
-     */
-    public Boolean getIsSingle() {
-        return this.isSingle;
-    }
-
-    /**
-     * Setter for isSingle
-     *
-     * TODO
-     */
-    public void setIsSingle(Boolean value) {
-        this.isSingle = value;
-    }
-
-
-    private Integer legacyCertificateId;
-
-    /**
-     * Getter for legacyCertificateId
-     *
-     * TODO
-     */
-    public Integer getLegacyCertificateId() {
-        return this.legacyCertificateId;
-    }
-
-    /**
-     * Setter for legacyCertificateId
-     *
-     * TODO
-     */
-    public void setLegacyCertificateId(Integer value) {
-        this.legacyCertificateId = value;
-    }
-
-
-    private Integer calcId;
-
-    /**
-     * Getter for calcId
-     *
-     * TODO
-     */
-    public Integer getCalcId() {
-        return this.calcId;
-    }
-
-    /**
-     * Setter for calcId
-     *
-     * TODO
-     */
-    public void setCalcId(Integer value) {
-        this.calcId = value;
-    }
-
-
-    private CertificateTaxCodeModel expectedTaxCode;
-
-    /**
-     * Getter for expectedTaxCode
-     *
-     * TODO
-     */
-    public CertificateTaxCodeModel getExpectedTaxCode() {
-        return this.expectedTaxCode;
-    }
-
-    /**
-     * Setter for expectedTaxCode
-     *
-     * TODO
-     */
-    public void setExpectedTaxCode(CertificateTaxCodeModel value) {
-        this.expectedTaxCode = value;
-    }
-
-
-    private CertificateTaxCodeModel actualTaxCode;
-
-    /**
-     * Getter for actualTaxCode
-     *
-     * TODO
-     */
-    public CertificateTaxCodeModel getActualTaxCode() {
-        return this.actualTaxCode;
-    }
-
-    /**
-     * Setter for actualTaxCode
-     *
-     * TODO
-     */
-    public void setActualTaxCode(CertificateTaxCodeModel value) {
-        this.actualTaxCode = value;
+    public void setExemptionReason(ExemptionReasonModel value) {
+        this.exemptionReason = value;
     }
 
 
@@ -433,7 +275,7 @@ public class CertificateModel {
     /**
      * Getter for createdDate
      *
-     * TODO
+     * The date/time when this record was created.
      */
     public Date getCreatedDate() {
         return this.createdDate;
@@ -442,7 +284,7 @@ public class CertificateModel {
     /**
      * Setter for createdDate
      *
-     * TODO
+     * The date/time when this record was created.
      */
     public void setCreatedDate(Date value) {
         this.createdDate = value;
@@ -454,7 +296,7 @@ public class CertificateModel {
     /**
      * Getter for modifiedDate
      *
-     * TODO
+     * The date/time when this record was last modified.
      */
     public Date getModifiedDate() {
         return this.modifiedDate;
@@ -463,199 +305,10 @@ public class CertificateModel {
     /**
      * Setter for modifiedDate
      *
-     * TODO
+     * The date/time when this record was last modified.
      */
     public void setModifiedDate(Date value) {
         this.modifiedDate = value;
-    }
-
-
-    private ExposureZoneModel exposureZone;
-
-    /**
-     * Getter for exposureZone
-     *
-     * TODO
-     */
-    public ExposureZoneModel getExposureZone() {
-        return this.exposureZone;
-    }
-
-    /**
-     * Setter for exposureZone
-     *
-     * TODO
-     */
-    public void setExposureZone(ExposureZoneModel value) {
-        this.exposureZone = value;
-    }
-
-
-    private Integer replacement;
-
-    /**
-     * Getter for replacement
-     *
-     * TODO
-     */
-    public Integer getReplacement() {
-        return this.replacement;
-    }
-
-    /**
-     * Setter for replacement
-     *
-     * TODO
-     */
-    public void setReplacement(Integer value) {
-        this.replacement = value;
-    }
-
-
-    private String certificateNumber;
-
-    /**
-     * Getter for certificateNumber
-     *
-     * TODO
-     */
-    public String getCertificateNumber() {
-        return this.certificateNumber;
-    }
-
-    /**
-     * Setter for certificateNumber
-     *
-     * TODO
-     */
-    public void setCertificateNumber(String value) {
-        this.certificateNumber = value;
-    }
-
-
-    private Boolean jsSingle;
-
-    /**
-     * Getter for jsSingle
-     *
-     * TODO
-     */
-    public Boolean getJsSingle() {
-        return this.jsSingle;
-    }
-
-    /**
-     * Setter for jsSingle
-     *
-     * TODO
-     */
-    public void setJsSingle(Boolean value) {
-        this.jsSingle = value;
-    }
-
-
-    private String taxNumberType;
-
-    /**
-     * Getter for taxNumberType
-     *
-     * TODO
-     */
-    public String getTaxNumberType() {
-        return this.taxNumberType;
-    }
-
-    /**
-     * Setter for taxNumberType
-     *
-     * TODO
-     */
-    public void setTaxNumberType(String value) {
-        this.taxNumberType = value;
-    }
-
-
-    private Integer businessNumber;
-
-    /**
-     * Getter for businessNumber
-     *
-     * TODO
-     */
-    public Integer getBusinessNumber() {
-        return this.businessNumber;
-    }
-
-    /**
-     * Setter for businessNumber
-     *
-     * TODO
-     */
-    public void setBusinessNumber(Integer value) {
-        this.businessNumber = value;
-    }
-
-
-    private String businessNumberType;
-
-    /**
-     * Getter for businessNumberType
-     *
-     * TODO
-     */
-    public String getBusinessNumberType() {
-        return this.businessNumberType;
-    }
-
-    /**
-     * Setter for businessNumberType
-     *
-     * TODO
-     */
-    public void setBusinessNumberType(String value) {
-        this.businessNumberType = value;
-    }
-
-
-    private String exemptReasonDescription;
-
-    /**
-     * Getter for exemptReasonDescription
-     *
-     * TODO
-     */
-    public String getExemptReasonDescription() {
-        return this.exemptReasonDescription;
-    }
-
-    /**
-     * Setter for exemptReasonDescription
-     *
-     * TODO
-     */
-    public void setExemptReasonDescription(String value) {
-        this.exemptReasonDescription = value;
-    }
-
-
-    private String sstMetadata;
-
-    /**
-     * Getter for sstMetadata
-     *
-     * TODO
-     */
-    public String getSstMetadata() {
-        return this.sstMetadata;
-    }
-
-    /**
-     * Setter for sstMetadata
-     *
-     * TODO
-     */
-    public void setSstMetadata(String value) {
-        this.sstMetadata = value;
     }
 
 
@@ -664,7 +317,7 @@ public class CertificateModel {
     /**
      * Getter for pageCount
      *
-     * TODO
+     * Number of pages contained within this certificate.
      */
     public Integer getPageCount() {
         return this.pageCount;
@@ -673,73 +326,10 @@ public class CertificateModel {
     /**
      * Setter for pageCount
      *
-     * TODO
+     * Number of pages contained within this certificate.
      */
     public void setPageCount(Integer value) {
         this.pageCount = value;
-    }
-
-
-    private Integer communicationId;
-
-    /**
-     * Getter for communicationId
-     *
-     * TODO
-     */
-    public Integer getCommunicationId() {
-        return this.communicationId;
-    }
-
-    /**
-     * Setter for communicationId
-     *
-     * TODO
-     */
-    public void setCommunicationId(Integer value) {
-        this.communicationId = value;
-    }
-
-
-    private Integer locationId;
-
-    /**
-     * Getter for locationId
-     *
-     * TODO
-     */
-    public Integer getLocationId() {
-        return this.locationId;
-    }
-
-    /**
-     * Setter for locationId
-     *
-     * TODO
-     */
-    public void setLocationId(Integer value) {
-        this.locationId = value;
-    }
-
-
-    private Integer documentTypeId;
-
-    /**
-     * Getter for documentTypeId
-     *
-     * TODO
-     */
-    public Integer getDocumentTypeId() {
-        return this.documentTypeId;
-    }
-
-    /**
-     * Setter for documentTypeId
-     *
-     * TODO
-     */
-    public void setDocumentTypeId(Integer value) {
-        this.documentTypeId = value;
     }
 
 
@@ -748,7 +338,8 @@ public class CertificateModel {
     /**
      * Getter for customers
      *
-     * A list of customers to which this certificate applies.
+     * A list of customers to which this certificate applies. You can fetch this data by specifying
+    * `$include=customers` when calling a certificate fetch API.
      */
     public ArrayList<CustomerModel> getCustomers() {
         return this.customers;
@@ -757,31 +348,164 @@ public class CertificateModel {
     /**
      * Setter for customers
      *
-     * A list of customers to which this certificate applies.
+     * A list of customers to which this certificate applies. You can fetch this data by specifying
+    * `$include=customers` when calling a certificate fetch API.
      */
     public void setCustomers(ArrayList<CustomerModel> value) {
         this.customers = value;
     }
 
 
-    private ArrayList<PoNumberModel> poNumber;
+    private ArrayList<PoNumberModel> poNumbers;
 
     /**
-     * Getter for poNumber
+     * Getter for poNumbers
      *
-     * TODO
+     * A list of purchase order numbers that are valid for use with this certificate.
+    * 
+    * If this certificate is applicable for all purchase order numbers, this field will be empty.
+    * 
+    * You can fetch this data by specifying `$include=ponumbers` when calling a certificate fetch API.
      */
-    public ArrayList<PoNumberModel> getPoNumber() {
-        return this.poNumber;
+    public ArrayList<PoNumberModel> getPoNumbers() {
+        return this.poNumbers;
     }
 
     /**
-     * Setter for poNumber
+     * Setter for poNumbers
      *
-     * TODO
+     * A list of purchase order numbers that are valid for use with this certificate.
+    * 
+    * If this certificate is applicable for all purchase order numbers, this field will be empty.
+    * 
+    * You can fetch this data by specifying `$include=ponumbers` when calling a certificate fetch API.
      */
-    public void setPoNumber(ArrayList<PoNumberModel> value) {
-        this.poNumber = value;
+    public void setPoNumbers(ArrayList<PoNumberModel> value) {
+        this.poNumbers = value;
+    }
+
+
+    private ExposureZoneModel exposureZone;
+
+    /**
+     * Getter for exposureZone
+     *
+     * The exposure zone where this certificate is valid.
+     */
+    public ExposureZoneModel getExposureZone() {
+        return this.exposureZone;
+    }
+
+    /**
+     * Setter for exposureZone
+     *
+     * The exposure zone where this certificate is valid.
+     */
+    public void setExposureZone(ExposureZoneModel value) {
+        this.exposureZone = value;
+    }
+
+
+    private ArrayList<CertificateAttributeModel> attributes;
+
+    /**
+     * Getter for attributes
+     *
+     * A list of certificate attributes that apply to this certificate.
+    * 
+    * You can fetch this data by specifying `$include=attributes` when calling a certificate fetch API.
+     */
+    public ArrayList<CertificateAttributeModel> getAttributes() {
+        return this.attributes;
+    }
+
+    /**
+     * Setter for attributes
+     *
+     * A list of certificate attributes that apply to this certificate.
+    * 
+    * You can fetch this data by specifying `$include=attributes` when calling a certificate fetch API.
+     */
+    public void setAttributes(ArrayList<CertificateAttributeModel> value) {
+        this.attributes = value;
+    }
+
+
+    private String pdf;
+
+    /**
+     * Getter for pdf
+     *
+     * This field is available for input only. To retrieve the image after creation, use the 
+    * `DownloadCertificateImage` API.
+    * 
+    * When creating a certificate, you may optionally provide a PDF image in Base64 URLEncoded format. 
+    * PDFs are automatically parsed into individual page JPG images and can be retrieved back
+    * later as either the original PDF or the individual pages. 
+    * 
+    * To create a certificate, you must provide one of the following fields: either a `filename`, a `pdf` file,
+    * or an array of JPG `pages`. The API will return an error if you omit these fields or if you attempt to
+    * put values in more than one of them.
+     */
+    public String getPdf() {
+        return this.pdf;
+    }
+
+    /**
+     * Setter for pdf
+     *
+     * This field is available for input only. To retrieve the image after creation, use the 
+    * `DownloadCertificateImage` API.
+    * 
+    * When creating a certificate, you may optionally provide a PDF image in Base64 URLEncoded format. 
+    * PDFs are automatically parsed into individual page JPG images and can be retrieved back
+    * later as either the original PDF or the individual pages. 
+    * 
+    * To create a certificate, you must provide one of the following fields: either a `filename`, a `pdf` file,
+    * or an array of JPG `pages`. The API will return an error if you omit these fields or if you attempt to
+    * put values in more than one of them.
+     */
+    public void setPdf(String value) {
+        this.pdf = value;
+    }
+
+
+    private ArrayList<String> pages;
+
+    /**
+     * Getter for pages
+     *
+     * This field is available for input only. To retrieve the image after creation, use the 
+    * `DownloadCertificateImage` API.
+    * 
+    * When creating a certificate, you may optionally provide a list of JPG images, one per page, in
+    * Base64 URLEncoded format. These JPG images are automatically combined into a single downloadable
+    * PDF and can be retrieved back later as either the original JPG images or the combined PDF. 
+    * 
+    * To create a certificate, you must provide one of the following fields: either a `filename`, a `pdf` file,
+    * or an array of JPG `pages`. The API will return an error if you omit these fields or if you attempt to
+    * put values in more than one of them.
+     */
+    public ArrayList<String> getPages() {
+        return this.pages;
+    }
+
+    /**
+     * Setter for pages
+     *
+     * This field is available for input only. To retrieve the image after creation, use the 
+    * `DownloadCertificateImage` API.
+    * 
+    * When creating a certificate, you may optionally provide a list of JPG images, one per page, in
+    * Base64 URLEncoded format. These JPG images are automatically combined into a single downloadable
+    * PDF and can be retrieved back later as either the original JPG images or the combined PDF. 
+    * 
+    * To create a certificate, you must provide one of the following fields: either a `filename`, a `pdf` file,
+    * or an array of JPG `pages`. The API will return an error if you omit these fields or if you attempt to
+    * put values in more than one of them.
+     */
+    public void setPages(ArrayList<String> value) {
+        this.pages = value;
     }
 
 

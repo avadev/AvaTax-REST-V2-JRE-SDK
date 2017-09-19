@@ -526,7 +526,7 @@ public class NexusModel {
      * Getter for nexusTaxTypeGroup
      *
      * The type of nexus that this company is declaring.Replaces NexusTypeId.
-    * Use /api/v2/definitions/nexustaxtypegroup for a list of tax type groups.
+    * Use `/api/v2/definitions/taxtypegroups` for a list of tax type groups.
      */
     public String getNexusTaxTypeGroup() {
         return this.nexusTaxTypeGroup;
@@ -536,7 +536,7 @@ public class NexusModel {
      * Setter for nexusTaxTypeGroup
      *
      * The type of nexus that this company is declaring.Replaces NexusTypeId.
-    * Use /api/v2/definitions/nexustaxtypegroup for a list of tax type groups.
+    * Use `/api/v2/definitions/taxtypegroups` for a list of tax type groups.
      */
     public void setNexusTaxTypeGroup(String value) {
         this.nexusTaxTypeGroup = value;

@@ -134,6 +134,27 @@ public class NewAccountModel {
     }
 
 
+    private String licenseKey;
+
+    /**
+     * Getter for licenseKey
+     *
+     * The license key of the account that was created
+     */
+    public String getLicenseKey() {
+        return this.licenseKey;
+    }
+
+    /**
+     * Setter for licenseKey
+     *
+     * The license key of the account that was created
+     */
+    public void setLicenseKey(String value) {
+        this.licenseKey = value;
+    }
+
+
     /**
      * Returns a JSON string representation of NewAccountModel
      */

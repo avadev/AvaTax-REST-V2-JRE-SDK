@@ -24,7 +24,7 @@ import java.util.HashMap;
  */
 
 /**
- * 
+ * Represents a transaction/service type pair for telecommunications tax
  */
 public class CommunicationsTSPairModel {
 

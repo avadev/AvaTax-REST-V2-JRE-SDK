@@ -24,55 +24,57 @@ import java.util.HashMap;
  */
 
 /**
- * Represents information about a type of telecommunications transaction
+ * An exemption reason defines why a certificate allows a customer to be exempt
+* for purposes of tax calculation. For a full list of defined exemption reasons,
+* please call the `ListCertificateExemptionReasons` API.
  */
-public class CommunicationsTransactionTypeModel {
+public class ExemptionReasonModel {
 
 
-    private Integer transactionTypeId;
+    private Integer id;
 
     /**
-     * Getter for transactionTypeId
+     * Getter for id
      *
-     * The numeric Id of the transaction type.
+     * A unique ID number representing this exemption reason.
      */
-    public Integer getTransactionTypeId() {
-        return this.transactionTypeId;
+    public Integer getId() {
+        return this.id;
     }
 
     /**
-     * Setter for transactionTypeId
+     * Setter for id
      *
-     * The numeric Id of the transaction type.
+     * A unique ID number representing this exemption reason.
      */
-    public void setTransactionTypeId(Integer value) {
-        this.transactionTypeId = value;
+    public void setId(Integer value) {
+        this.id = value;
     }
 
 
-    private String transactionType;
+    private String name;
 
     /**
-     * Getter for transactionType
+     * Getter for name
      *
-     * The name of the transaction type.
+     * A friendly name describing this exemption reason.
      */
-    public String getTransactionType() {
-        return this.transactionType;
+    public String getName() {
+        return this.name;
     }
 
     /**
-     * Setter for transactionType
+     * Setter for name
      *
-     * The name of the transaction type.
+     * A friendly name describing this exemption reason.
      */
-    public void setTransactionType(String value) {
-        this.transactionType = value;
+    public void setName(String value) {
+        this.name = value;
     }
 
 
     /**
-     * Returns a JSON string representation of CommunicationsTransactionTypeModel
+     * Returns a JSON string representation of ExemptionReasonModel
      */
     @Override
     public String toString() {

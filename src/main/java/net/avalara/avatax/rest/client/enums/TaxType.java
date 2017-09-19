@@ -29,6 +29,11 @@ public enum TaxType {
     Bottle,
 
     /** 
+     * EWaste tax type
+     */
+    EWaste,
+
+    /** 
      * Consumer Use Tax
      */
     ConsumerUse,

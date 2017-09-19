@@ -76,7 +76,7 @@ public class SubscriptionModel {
     /**
      * Getter for subscriptionTypeId
      *
-     * The unique ID number of the service that the account is subscribed to.
+     * The unique ID number of the service that the account is subscribed to. If this is provided, subscription description is ignored.
      */
     public Integer getSubscriptionTypeId() {
         return this.subscriptionTypeId;
@@ -85,7 +85,7 @@ public class SubscriptionModel {
     /**
      * Setter for subscriptionTypeId
      *
-     * The unique ID number of the service that the account is subscribed to.
+     * The unique ID number of the service that the account is subscribed to. If this is provided, subscription description is ignored.
      */
     public void setSubscriptionTypeId(Integer value) {
         this.subscriptionTypeId = value;
@@ -97,7 +97,8 @@ public class SubscriptionModel {
     /**
      * Getter for subscriptionDescription
      *
-     * A friendly description of the service that the account is subscribed to.
+     * A friendly description of the service that the account is subscribed to. You can either provide the subscription type Id or this but not both. If 
+    * subscription type Id is provided, then this information is ignored and this field will be updated with the information from subscription type id.
      */
     public String getSubscriptionDescription() {
         return this.subscriptionDescription;
@@ -106,7 +107,8 @@ public class SubscriptionModel {
     /**
      * Setter for subscriptionDescription
      *
-     * A friendly description of the service that the account is subscribed to.
+     * A friendly description of the service that the account is subscribed to. You can either provide the subscription type Id or this but not both. If 
+    * subscription type Id is provided, then this information is ignored and this field will be updated with the information from subscription type id.
      */
     public void setSubscriptionDescription(String value) {
         this.subscriptionDescription = value;

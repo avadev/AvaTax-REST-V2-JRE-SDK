@@ -24,55 +24,55 @@ import java.util.HashMap;
  */
 
 /**
- * Represents information about a type of telecommunications transaction
+ * Indicates the customer's exemption status in a specific country and region.
  */
-public class CommunicationsTransactionTypeModel {
+public class ExemptionStatusModel {
 
 
-    private Integer transactionTypeId;
+    private String status;
 
     /**
-     * Getter for transactionTypeId
+     * Getter for status
      *
-     * The numeric Id of the transaction type.
+     * The exemption status of this customer in this country/region.
      */
-    public Integer getTransactionTypeId() {
-        return this.transactionTypeId;
+    public String getStatus() {
+        return this.status;
     }
 
     /**
-     * Setter for transactionTypeId
+     * Setter for status
      *
-     * The numeric Id of the transaction type.
+     * The exemption status of this customer in this country/region.
      */
-    public void setTransactionTypeId(Integer value) {
-        this.transactionTypeId = value;
+    public void setStatus(String value) {
+        this.status = value;
     }
 
 
-    private String transactionType;
+    private CertificateModel certificate;
 
     /**
-     * Getter for transactionType
+     * Getter for certificate
      *
-     * The name of the transaction type.
+     * Certificate if the customer is exempted
      */
-    public String getTransactionType() {
-        return this.transactionType;
+    public CertificateModel getCertificate() {
+        return this.certificate;
     }
 
     /**
-     * Setter for transactionType
+     * Setter for certificate
      *
-     * The name of the transaction type.
+     * Certificate if the customer is exempted
      */
-    public void setTransactionType(String value) {
-        this.transactionType = value;
+    public void setCertificate(CertificateModel value) {
+        this.certificate = value;
     }
 
 
     /**
-     * Returns a JSON string representation of CommunicationsTransactionTypeModel
+     * Returns a JSON string representation of ExemptionStatusModel
      */
     @Override
     public String toString() {

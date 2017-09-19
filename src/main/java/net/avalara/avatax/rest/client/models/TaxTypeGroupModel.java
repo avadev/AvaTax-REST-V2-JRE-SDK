@@ -24,7 +24,7 @@ import java.util.HashMap;
  */
 
 /**
- * 
+ * Represents a tax type group
  */
 public class TaxTypeGroupModel {
 

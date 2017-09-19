@@ -50,6 +50,27 @@ public class AccountModel {
     }
 
 
+    private String crmid;
+
+    /**
+     * Getter for crmid
+     *
+     * For system registrar use only.
+     */
+    public String getCrmid() {
+        return this.crmid;
+    }
+
+    /**
+     * Setter for crmid
+     *
+     * For system registrar use only.
+     */
+    public void setCrmid(String value) {
+        this.crmid = value;
+    }
+
+
     private String name;
 
     /**
