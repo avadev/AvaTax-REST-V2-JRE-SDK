@@ -4,7 +4,7 @@ organization := "net.avalara.avatax"
 
 version := "17.8.1.120"
 
-scalaVersion := "17.8.1.120"
+scalaVersion := "2.11.8"
 
 javacOptions ++= Seq("-source", "1.7", "-target", "1.7")
 
