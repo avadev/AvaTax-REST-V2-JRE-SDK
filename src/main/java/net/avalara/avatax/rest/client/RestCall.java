@@ -1,4 +1,4 @@
-package net.avalara.avatax.rest.client;
+﻿package net.avalara.avatax.rest.client;
 
 import com.google.gson.reflect.TypeToken;
 import net.avalara.avatax.rest.client.models.CreateTransactionModel;
@@ -94,7 +94,7 @@ public class RestCall<T> implements Callable<T> {
     }
 
     private void buildRequest(HttpRequestBase baseRequest) {
-        String clientId = String.format("%s; %s; %s; %s; %s", appName, appVersion, "JavaRestClient", "17.8.1.120", machineName);
+        String clientId = String.format("%s; %s; %s; %s; %s", appName, appVersion, "JavaRestClient", "17.9.0.126", machineName);
         baseRequest.setHeader(AvaTaxConstants.XClientHeader, clientId);
     }
 }

@@ -496,7 +496,7 @@ public class FilingReturnModel {
     /**
      * Getter for consumerUseTaxAmount
      *
-     * Consumer use tax liability.
+     * Consumer use tax liability during the period.
      */
     public BigDecimal getConsumerUseTaxAmount() {
         return this.consumerUseTaxAmount;
@@ -505,10 +505,31 @@ public class FilingReturnModel {
     /**
      * Setter for consumerUseTaxAmount
      *
-     * Consumer use tax liability.
+     * Consumer use tax liability during the period.
      */
     public void setConsumerUseTaxAmount(BigDecimal value) {
         this.consumerUseTaxAmount = value;
+    }
+
+
+    private BigDecimal consumerUseTaxDueAmount;
+
+    /**
+     * Getter for consumerUseTaxDueAmount
+     *
+     * Consumer use tax liability accrued during the period.
+     */
+    public BigDecimal getConsumerUseTaxDueAmount() {
+        return this.consumerUseTaxDueAmount;
+    }
+
+    /**
+     * Setter for consumerUseTaxDueAmount
+     *
+     * Consumer use tax liability accrued during the period.
+     */
+    public void setConsumerUseTaxDueAmount(BigDecimal value) {
+        this.consumerUseTaxDueAmount = value;
     }
 
 

@@ -745,7 +745,7 @@ public class CompanyModel {
     /**
      * Getter for exemptCerts
      *
-     * Optional: A list of exempt certificates defined for this company. To fetch this list, add the query string "?$include=UPCs" to your URL.
+     * DEPRECATED - Please use the `ListCertificates` API.
      */
     public ArrayList<EcmsModel> getExemptCerts() {
         return this.exemptCerts;
@@ -754,7 +754,7 @@ public class CompanyModel {
     /**
      * Setter for exemptCerts
      *
-     * Optional: A list of exempt certificates defined for this company. To fetch this list, add the query string "?$include=UPCs" to your URL.
+     * DEPRECATED - Please use the `ListCertificates` API.
      */
     public void setExemptCerts(ArrayList<EcmsModel> value) {
         this.exemptCerts = value;
