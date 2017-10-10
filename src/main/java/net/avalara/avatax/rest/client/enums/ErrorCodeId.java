@@ -559,6 +559,36 @@ public enum ErrorCodeId {
     LeadingOrTrailingException,
 
     /** 
+     * 
+     */
+    NotEnoughAddressesInfo,
+
+    /** 
+     * 
+     */
+    ReportNotInitiated,
+
+    /** 
+     * 
+     */
+    FailedToBuildReport,
+
+    /** 
+     * 
+     */
+    ReportNotFinished,
+
+    /** 
+     * 
+     */
+    FailedToUploadReport,
+
+    /** 
+     * 
+     */
+    FailedToDownloadReport,
+
+    /** 
      * Batch errors
      */
     BatchSalesAuditMustBeZippedError,
@@ -684,6 +714,16 @@ public enum ErrorCodeId {
     InvalidDocumentTypesToFetch,
 
     /** 
+     * 
+     */
+    TimeoutRequested,
+
+    /** 
+     * 
+     */
+    InvalidAddress,
+
+    /** 
      * Represents a malformed document fetch command
      */
     BadDocumentFetch,
@@ -727,6 +767,11 @@ public enum ErrorCodeId {
      * 
      */
     AvalaraIdentityApiError,
+
+    /** 
+     * 
+     */
+    InvalidIPAddress,
 
     /** 
      * Refund API error codes
@@ -942,6 +987,11 @@ public enum ErrorCodeId {
      * 
      */
     BizTechOpportunityCreationFailure,
+
+    /** 
+     * Account Activate error codes
+     */
+    AccountInNewStatusException,
 
 }
     

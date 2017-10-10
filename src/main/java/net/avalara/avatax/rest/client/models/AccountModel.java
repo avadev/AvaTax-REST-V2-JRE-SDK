@@ -281,27 +281,6 @@ public class AccountModel {
     }
 
 
-    private String licenseKey;
-
-    /**
-     * Getter for licenseKey
-     *
-     * The account license
-     */
-    public String getLicenseKey() {
-        return this.licenseKey;
-    }
-
-    /**
-     * Setter for licenseKey
-     *
-     * The account license
-     */
-    public void setLicenseKey(String value) {
-        this.licenseKey = value;
-    }
-
-
     /**
      * Returns a JSON string representation of AccountModel
      */

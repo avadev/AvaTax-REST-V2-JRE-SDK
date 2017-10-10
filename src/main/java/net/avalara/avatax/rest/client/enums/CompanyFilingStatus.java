@@ -47,5 +47,10 @@ public enum CompanyFilingStatus {
      */
     Active,
 
+    /** 
+     * This company has not been configured for compliance
+     */
+    NotConfiguredForCompliance,
+
 }
     

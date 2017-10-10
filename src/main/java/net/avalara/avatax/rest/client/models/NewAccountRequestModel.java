@@ -311,6 +311,27 @@ public class NewAccountRequestModel {
     }
 
 
+    private String companyCode;
+
+    /**
+     * Getter for companyCode
+     *
+     * Company code to be assigned to the company created for this account.
+     */
+    public String getCompanyCode() {
+        return this.companyCode;
+    }
+
+    /**
+     * Setter for companyCode
+     *
+     * Company code to be assigned to the company created for this account.
+     */
+    public void setCompanyCode(String value) {
+        this.companyCode = value;
+    }
+
+
     private ArrayList<String> properties;
 
     /**
