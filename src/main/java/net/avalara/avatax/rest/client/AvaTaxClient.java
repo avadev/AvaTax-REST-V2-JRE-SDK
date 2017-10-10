@@ -89,7 +89,16 @@ public class AvaTaxClient {
      * Reset this account's license key
      * 
      * Resets the existing license key for this account to a new key.
+     * 
      * To reset your account, you must specify the ID of the account you wish to reset and confirm the action.
+     * 
+     * This API is only available to account administrators for the account in question, and may only be called after
+     * an account has been activated by reading and accepting Avalara's terms and conditions.  To activate your account
+     * please log onto the AvaTax website or call the `ActivateAccount` API.
+     * 
+     * Resetting a license key cannot be undone.  Any previous license keys will immediately cease to work when a new key is created.
+     * 
+     * When you call this API, all account administrators for this account will receive an email with the newly updated license key.
      * 
      * @param id The ID of the account you wish to update.
      * @param model A request confirming that you wish to reset the license key of this account.
@@ -105,7 +114,16 @@ public class AvaTaxClient {
      * Reset this account's license key
      * 
      * Resets the existing license key for this account to a new key.
+     * 
      * To reset your account, you must specify the ID of the account you wish to reset and confirm the action.
+     * 
+     * This API is only available to account administrators for the account in question, and may only be called after
+     * an account has been activated by reading and accepting Avalara's terms and conditions.  To activate your account
+     * please log onto the AvaTax website or call the `ActivateAccount` API.
+     * 
+     * Resetting a license key cannot be undone.  Any previous license keys will immediately cease to work when a new key is created.
+     * 
+     * When you call this API, all account administrators for this account will receive an email with the newly updated license key.
      * 
      * @param id The ID of the account you wish to update.
      * @param model A request confirming that you wish to reset the license key of this account.
@@ -124,6 +142,9 @@ public class AvaTaxClient {
      * 
      * This activation request can only be called by account administrators.  You must indicate 
      * that you have read and accepted Avalara's terms and conditions to call this API.
+     * 
+     * Once you have activated your account, use the `AccountResetLicenseKey` API to generate
+     * a license key for your account.
      * 
      * If you have not read or accepted the terms and conditions, this API call will return the
      * 
@@ -146,6 +167,9 @@ public class AvaTaxClient {
      * 
      * This activation request can only be called by account administrators.  You must indicate 
      * that you have read and accepted Avalara's terms and conditions to call this API.
+     * 
+     * Once you have activated your account, use the `AccountResetLicenseKey` API to generate
+     * a license key for your account.
      * 
      * If you have not read or accepted the terms and conditions, this API call will return the
      * 
@@ -1538,6 +1562,7 @@ public class AvaTaxClient {
      * * Activate the company
      *             
      * This API only provides a limited subset of functionality compared to the 'Create Company' API call.  
+     * If you need additional features or options not present in this 'Quick Setup' API call, please use the full 'Create Company' call instead.
      * 
      * @param model Information about the company you wish to create.
      * @return CompanyModel
@@ -1560,6 +1585,7 @@ public class AvaTaxClient {
      * * Activate the company
      *             
      * This API only provides a limited subset of functionality compared to the 'Create Company' API call.  
+     * If you need additional features or options not present in this 'Quick Setup' API call, please use the full 'Create Company' call instead.
      * 
      * @param model Information about the company you wish to create.
      * @return CompanyModel
@@ -4888,6 +4914,36 @@ public class AvaTaxClient {
     }
 
     /**
+     * Create a filing calendar
+     * 
+     * This API is available by invitation only and only available for users with Compliance access
+     * 
+     * @param companyId The unique ID of the company that will add the new filing calendar
+     * @param model Filing calendars that will be added
+     * @return FilingCalendarModel
+     */
+    public FilingCalendarModel createFilingCalendars(Integer companyId, ArrayList<FilingCalendarModel> model) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingcalendars");
+        path.applyField("companyId", companyId);
+        return ((RestCall<FilingCalendarModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<FilingCalendarModel>(){})).call();
+    }
+
+    /**
+     * Create a filing calendar
+     * 
+     * This API is available by invitation only and only available for users with Compliance access
+     * 
+     * @param companyId The unique ID of the company that will add the new filing calendar
+     * @param model Filing calendars that will be added
+     * @return FilingCalendarModel
+     */
+    public Future<FilingCalendarModel> createFilingCalendarsAsync(Integer companyId, ArrayList<FilingCalendarModel> model) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingcalendars");
+        path.applyField("companyId", companyId);
+        return this.threadPool.submit((RestCall<FilingCalendarModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<FilingCalendarModel>(){}));
+    }
+
+    /**
      * Create a new filing request to create a filing calendar
      * 
      * This API is available by invitation only.
@@ -5394,10 +5450,7 @@ public class AvaTaxClient {
     }
 
     /**
-     * Edit existing Filing Calendar's Notes
-     * 
-     * This API is available by invitation only.
-     * This API only allows updating of internal notes and company filing instructions.
+     * Edit existing Filing Calendar
      * 
      * @param companyId The unique ID of the company that owns the filing request object
      * @param id The unique ID of the filing calendar object
@@ -5412,10 +5465,7 @@ public class AvaTaxClient {
     }
 
     /**
-     * Edit existing Filing Calendar's Notes
-     * 
-     * This API is available by invitation only.
-     * This API only allows updating of internal notes and company filing instructions.
+     * Edit existing Filing Calendar
      * 
      * @param companyId The unique ID of the company that owns the filing request object
      * @param id The unique ID of the filing calendar object
@@ -6438,7 +6488,7 @@ This gets the basic information from the filings and doesn't include anything ex
     /**
      * Rebuild a set of filings for the specified company in the given filing period, country and region.
      * 
-     * This API is available by invitation only.
+     * This API is available by invitation only.audit.CheckAuthorizationReturns(null, companyId);
      * Rebuilding a return means re-creating or updating the amounts to be filed for a filing.
      * Rebuilding has to be done whenever a customer adds transactions to a filing.        
      * A "filing period" is the year and month of the date of the latest customer transaction allowed to be reported on a filing, 
@@ -6465,7 +6515,7 @@ This gets the basic information from the filings and doesn't include anything ex
     /**
      * Rebuild a set of filings for the specified company in the given filing period, country and region.
      * 
-     * This API is available by invitation only.
+     * This API is available by invitation only.audit.CheckAuthorizationReturns(null, companyId);
      * Rebuilding a return means re-creating or updating the amounts to be filed for a filing.
      * Rebuilding has to be done whenever a customer adds transactions to a filing.        
      * A "filing period" is the year and month of the date of the latest customer transaction allowed to be reported on a filing, 
@@ -7725,6 +7775,7 @@ This gets the basic information from the filings and doesn't include anything ex
      * in all jurisdictions affected by your transactions.
      * Note that not all fields within a nexus can be updated; Avalara publishes a list of all defined nexus at the
      * '/api/v2/definitions/nexus' endpoint.
+     * You may only define nexus matching the official list of declared nexus.
      * 
      * @param companyId The ID of the company that owns this nexus.
      * @param model The nexus you wish to create.
@@ -7746,6 +7797,7 @@ This gets the basic information from the filings and doesn't include anything ex
      * in all jurisdictions affected by your transactions.
      * Note that not all fields within a nexus can be updated; Avalara publishes a list of all defined nexus at the
      * '/api/v2/definitions/nexus' endpoint.
+     * You may only define nexus matching the official list of declared nexus.
      * 
      * @param companyId The ID of the company that owns this nexus.
      * @param model The nexus you wish to create.
@@ -7760,6 +7812,8 @@ This gets the basic information from the filings and doesn't include anything ex
     /**
      * Delete a single nexus
      * 
+     * Marks the existing nexus object at this URL as deleted.
+     * 
      * @param companyId The ID of the company that owns this nexus.
      * @param id The ID of the nexus you wish to delete.
      * @return ArrayList<ErrorDetail>
@@ -7773,6 +7827,8 @@ This gets the basic information from the filings and doesn't include anything ex
 
     /**
      * Delete a single nexus
+     * 
+     * Marks the existing nexus object at this URL as deleted.
      * 
      * @param companyId The ID of the company that owns this nexus.
      * @param id The ID of the nexus you wish to delete.
@@ -8001,6 +8057,7 @@ This gets the basic information from the filings and doesn't include anything ex
      * '/api/v2/definitions/nexus' endpoint.
      * You may only define nexus matching the official list of declared nexus.
      * All data from the existing object will be replaced with data in the object you PUT.  
+     * To set a field's value to null, you may either set its value to null or omit that field from the object you post.
      * 
      * @param companyId The ID of the company that this nexus belongs to.
      * @param id The ID of the nexus you wish to update
@@ -8026,6 +8083,7 @@ This gets the basic information from the filings and doesn't include anything ex
      * '/api/v2/definitions/nexus' endpoint.
      * You may only define nexus matching the official list of declared nexus.
      * All data from the existing object will be replaced with data in the object you PUT.  
+     * To set a field's value to null, you may either set its value to null or omit that field from the object you post.
      * 
      * @param companyId The ID of the company that this nexus belongs to.
      * @param id The ID of the nexus you wish to update
@@ -9220,10 +9278,70 @@ This gets the basic information from the filings and doesn't include anything ex
     }
 
     /**
-     * Export a report accurate to the line level
+     * Download a report
      * 
-     * @param companyId 
-     * @param model 
+     * This API downloads the file associated with a report.
+     * 
+     * If the report is not yet complete, you will receive a `ReportNotFinished` error.  To check if a report is complete,
+     * use the `GetReport` API.
+     * 
+     * Reports are run as asynchronous report tasks on the server.  When complete, the report file will be available for download
+     * for up to 30 days after completion.  To run an asynchronous report, you should follow these steps:
+     * 
+     * * Begin a report by calling the report's Initiate API.  There is a separate initiate API call for each report type.
+     * * In the result of the Initiate API, you receive back a report's `id` value.
+     * * Check the status of a report by calling `GetReport` and passing in the report's `id` value.
+     * * When a report's status is `Completed`, call `DownloadReport` to retrieve the file.
+     * 
+     * 
+     * @param id The unique ID number of this report
+     * @return String
+     */
+    public String downloadReport(Long id) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/reports/{id}/attachment");
+        path.applyField("id", id);
+        return ((RestCall<String>)restCallFactory.createRestCall("get", path, null, new TypeToken<String>(){})).call();
+    }
+
+    /**
+     * Download a report
+     * 
+     * This API downloads the file associated with a report.
+     * 
+     * If the report is not yet complete, you will receive a `ReportNotFinished` error.  To check if a report is complete,
+     * use the `GetReport` API.
+     * 
+     * Reports are run as asynchronous report tasks on the server.  When complete, the report file will be available for download
+     * for up to 30 days after completion.  To run an asynchronous report, you should follow these steps:
+     * 
+     * * Begin a report by calling the report's Initiate API.  There is a separate initiate API call for each report type.
+     * * In the result of the Initiate API, you receive back a report's `id` value.
+     * * Check the status of a report by calling `GetReport` and passing in the report's `id` value.
+     * * When a report's status is `Completed`, call `DownloadReport` to retrieve the file.
+     * 
+     * 
+     * @param id The unique ID number of this report
+     * @return String
+     */
+    public Future<String> downloadReportAsync(Long id) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/reports/{id}/attachment");
+        path.applyField("id", id);
+        return this.threadPool.submit((RestCall<String>)restCallFactory.createRestCall("get", path, null, new TypeToken<String>(){}));
+    }
+
+    /**
+     * Intiate and download an ExportDocumentLine report
+     * 
+     * This API is deprecated. 
+     * 
+     * Please use the asynchronous reports APIs:
+     * 
+     * * Begin a report by calling the report's Initiate API.  There is a separate initiate API call for each report type.
+     * * In the result of the Initiate API, you receive back a report's `id` value.
+     * * Check the status of a report by calling `GetReport` and passing in the report's `id` value.
+     * 
+     * @param companyId The unique ID number of the company to report on.
+     * @param model Options that may be configured to customize the report.
      * @return String
      */
     public String exportDocumentLine(Integer companyId, ExportDocumentLineModel model) throws Exception {
@@ -9233,16 +9351,160 @@ This gets the basic information from the filings and doesn't include anything ex
     }
 
     /**
-     * Export a report accurate to the line level
+     * Intiate and download an ExportDocumentLine report
      * 
-     * @param companyId 
-     * @param model 
+     * This API is deprecated. 
+     * 
+     * Please use the asynchronous reports APIs:
+     * 
+     * * Begin a report by calling the report's Initiate API.  There is a separate initiate API call for each report type.
+     * * In the result of the Initiate API, you receive back a report's `id` value.
+     * * Check the status of a report by calling `GetReport` and passing in the report's `id` value.
+     * 
+     * @param companyId The unique ID number of the company to report on.
+     * @param model Options that may be configured to customize the report.
      * @return String
      */
     public Future<String> exportDocumentLineAsync(Integer companyId, ExportDocumentLineModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/reports/exportdocumentline");
         path.applyField("companyId", companyId);
         return this.threadPool.submit((RestCall<String>)restCallFactory.createRestCall("post", path, model, new TypeToken<String>(){}));
+    }
+
+    /**
+     * Retrieve a single report
+     * 
+     * Retrieve a single report by its unique ID number.
+     * 
+     * Reports are run as asynchronous report tasks on the server.  When complete, the report file will be available for download
+     * for up to 30 days after completion.  To run an asynchronous report, you should follow these steps:
+     * 
+     * * Begin a report by calling the report's Initiate API.  There is a separate initiate API call for each report type.
+     * * In the result of the Initiate API, you receive back a report's `id` value.
+     * * Check the status of a report by calling `GetReport` and passing in the report's `id` value.
+     * * When a report's status is `Completed`, call `DownloadReport` to retrieve the file.
+     * 
+     * 
+     * @param id The unique ID number of the report to retrieve
+     * @return ReportModel
+     */
+    public ReportModel getReport(Long id) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/reports/{id}");
+        path.applyField("id", id);
+        return ((RestCall<ReportModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<ReportModel>(){})).call();
+    }
+
+    /**
+     * Retrieve a single report
+     * 
+     * Retrieve a single report by its unique ID number.
+     * 
+     * Reports are run as asynchronous report tasks on the server.  When complete, the report file will be available for download
+     * for up to 30 days after completion.  To run an asynchronous report, you should follow these steps:
+     * 
+     * * Begin a report by calling the report's Initiate API.  There is a separate initiate API call for each report type.
+     * * In the result of the Initiate API, you receive back a report's `id` value.
+     * * Check the status of a report by calling `GetReport` and passing in the report's `id` value.
+     * * When a report's status is `Completed`, call `DownloadReport` to retrieve the file.
+     * 
+     * 
+     * @param id The unique ID number of the report to retrieve
+     * @return ReportModel
+     */
+    public Future<ReportModel> getReportAsync(Long id) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/reports/{id}");
+        path.applyField("id", id);
+        return this.threadPool.submit((RestCall<ReportModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<ReportModel>(){}));
+    }
+
+    /**
+     * Initiate an ExportDocumentLine report task
+     * 
+     * Begins running an `ExportDocumentLine` report task and returns the identity of the report.
+     * 
+     * Reports are run as asynchronous report tasks on the server.  When complete, the report file will be available for download
+     * for up to 30 days after completion.  To run an asynchronous report, you should follow these steps:
+     * 
+     * * Begin a report by calling the report's Initiate API.  There is a separate initiate API call for each report type.
+     * * In the result of the Initiate API, you receive back a report's `id` value.
+     * * Check the status of a report by calling `GetReport` and passing in the report's `id` value.
+     * * When a report's status is `Completed`, call `DownloadReport` to retrieve the file.
+     * 
+     * 
+     * @param companyId The unique ID number of the company to report on.
+     * @param model Options that may be configured to customize the report.
+     * @return String
+     */
+    public String initiateExportDocumentLineReport(Integer companyId, ExportDocumentLineModel model) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/reports/exportdocumentline/initiate");
+        path.applyField("companyId", companyId);
+        return ((RestCall<String>)restCallFactory.createRestCall("post", path, model, new TypeToken<String>(){})).call();
+    }
+
+    /**
+     * Initiate an ExportDocumentLine report task
+     * 
+     * Begins running an `ExportDocumentLine` report task and returns the identity of the report.
+     * 
+     * Reports are run as asynchronous report tasks on the server.  When complete, the report file will be available for download
+     * for up to 30 days after completion.  To run an asynchronous report, you should follow these steps:
+     * 
+     * * Begin a report by calling the report's Initiate API.  There is a separate initiate API call for each report type.
+     * * In the result of the Initiate API, you receive back a report's `id` value.
+     * * Check the status of a report by calling `GetReport` and passing in the report's `id` value.
+     * * When a report's status is `Completed`, call `DownloadReport` to retrieve the file.
+     * 
+     * 
+     * @param companyId The unique ID number of the company to report on.
+     * @param model Options that may be configured to customize the report.
+     * @return String
+     */
+    public Future<String> initiateExportDocumentLineReportAsync(Integer companyId, ExportDocumentLineModel model) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/reports/exportdocumentline/initiate");
+        path.applyField("companyId", companyId);
+        return this.threadPool.submit((RestCall<String>)restCallFactory.createRestCall("post", path, model, new TypeToken<String>(){}));
+    }
+
+    /**
+     * List all report tasks for account
+     * 
+     * List all report tasks for your account.
+     * 
+     * Reports are run as asynchronous report tasks on the server.  When complete, the report file will be available for download
+     * for up to 30 days after completion.  To run an asynchronous report, you should follow these steps:
+     * 
+     * * Begin a report by calling the report's Initiate API.  There is a separate initiate API call for each report type.
+     * * In the result of the Initiate API, you receive back a report's `id` value.
+     * * Check the status of a report by calling `GetReport` and passing in the report's `id` value.
+     * * When a report's status is `Completed`, call `DownloadReport` to retrieve the file.
+     * 
+     * 
+     * @return FetchResult<ReportModel>
+     */
+    public FetchResult<ReportModel> listReports() throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/reports");
+        return ((RestCall<FetchResult<ReportModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ReportModel>>(){})).call();
+    }
+
+    /**
+     * List all report tasks for account
+     * 
+     * List all report tasks for your account.
+     * 
+     * Reports are run as asynchronous report tasks on the server.  When complete, the report file will be available for download
+     * for up to 30 days after completion.  To run an asynchronous report, you should follow these steps:
+     * 
+     * * Begin a report by calling the report's Initiate API.  There is a separate initiate API call for each report type.
+     * * In the result of the Initiate API, you receive back a report's `id` value.
+     * * Check the status of a report by calling `GetReport` and passing in the report's `id` value.
+     * * When a report's status is `Completed`, call `DownloadReport` to retrieve the file.
+     * 
+     * 
+     * @return FetchResult<ReportModel>
+     */
+    public Future<FetchResult<ReportModel>> listReportsAsync() {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/reports");
+        return this.threadPool.submit((RestCall<FetchResult<ReportModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ReportModel>>(){}));
     }
 
     /**
@@ -9936,6 +10198,8 @@ This gets the basic information from the filings and doesn't include anything ex
      * The result of this API is the file you requested in the format you requested using the `responseType` field.
      * 
      * This API builds the file on demand, and is limited to files with no more than 7500 scenarios.  To build a tax content
+     * file for a single location at a time, please use `BuildTaxContentFileForLocation`.
+     * 
      * 
      * @param model Parameters about the desired file format and report format, specifying which company, locations and TaxCodes to include.
      * @return String
@@ -9958,6 +10222,8 @@ This gets the basic information from the filings and doesn't include anything ex
      * The result of this API is the file you requested in the format you requested using the `responseType` field.
      * 
      * This API builds the file on demand, and is limited to files with no more than 7500 scenarios.  To build a tax content
+     * file for a single location at a time, please use `BuildTaxContentFileForLocation`.
+     * 
      * 
      * @param model Parameters about the desired file format and report format, specifying which company, locations and TaxCodes to include.
      * @return String
@@ -9980,6 +10246,8 @@ This gets the basic information from the filings and doesn't include anything ex
      * The result of this API is the file you requested in the format you requested using the `responseType` field.
      * 
      * This API builds the file on demand, and is limited to files with no more than 7500 scenarios.  To build a tax content
+     * file for a multiple locations in a single file, please use `BuildTaxContentFile`.
+     * 
      * 
      * @param companyId The ID number of the company that owns this location.
      * @param id The ID number of the location to retrieve point-of-sale data.
@@ -10013,6 +10281,8 @@ This gets the basic information from the filings and doesn't include anything ex
      * The result of this API is the file you requested in the format you requested using the `responseType` field.
      * 
      * This API builds the file on demand, and is limited to files with no more than 7500 scenarios.  To build a tax content
+     * file for a multiple locations in a single file, please use `BuildTaxContentFile`.
+     * 
      * 
      * @param companyId The ID number of the company that owns this location.
      * @param id The ID number of the location to retrieve point-of-sale data.
@@ -10418,7 +10688,7 @@ This gets the basic information from the filings and doesn't include anything ex
      * 
      * Retrieve audit information about a transaction stored in AvaTax.
      *  
-     * The 'AuditTransaction' endpoint retrieves audit information related to a specific transaction.  This audit 
+     * The `AuditTransaction` API retrieves audit information related to a specific transaction.  This audit 
      * information includes the following:
      * 
      * * The `CompanyId` of the company that created the transaction
@@ -10447,7 +10717,7 @@ This gets the basic information from the filings and doesn't include anything ex
      * 
      * Retrieve audit information about a transaction stored in AvaTax.
      *  
-     * The 'AuditTransaction' endpoint retrieves audit information related to a specific transaction.  This audit 
+     * The `AuditTransaction` API retrieves audit information related to a specific transaction.  This audit 
      * information includes the following:
      * 
      * * The `CompanyId` of the company that created the transaction
@@ -10476,7 +10746,7 @@ This gets the basic information from the filings and doesn't include anything ex
      * 
      * Retrieve audit information about a transaction stored in AvaTax.
      *  
-     * The 'AuditTransaction' endpoint retrieves audit information related to a specific transaction.  This audit 
+     * The `AuditTransaction` API retrieves audit information related to a specific transaction.  This audit 
      * information includes the following:
      * 
      * * The `CompanyId` of the company that created the transaction
@@ -10507,7 +10777,7 @@ This gets the basic information from the filings and doesn't include anything ex
      * 
      * Retrieve audit information about a transaction stored in AvaTax.
      *  
-     * The 'AuditTransaction' endpoint retrieves audit information related to a specific transaction.  This audit 
+     * The `AuditTransaction` API retrieves audit information related to a specific transaction.  This audit 
      * information includes the following:
      * 
      * * The `CompanyId` of the company that created the transaction
@@ -10648,15 +10918,22 @@ This gets the basic information from the filings and doesn't include anything ex
     }
 
     /**
-     * Create a new transaction
+     * Create or adjust a transaction
      * 
-     * Records a new transaction or adjust an existing in AvaTax.
+     * Records a new transaction or adjust an existing transaction in AvaTax.
      * 
-     * The `CreateOrAdjustTransaction` endpoint is used to create a new transaction if the input transaction does not exist
-     * or if there exists a transaction identified by code, the original transaction will be adjusted by using the meta data 
-     * in the input transaction
+     * The `CreateOrAdjustTransaction` endpoint is used to create a new transaction or update an existing one.  This API
+     * can help you create an idempotent service that creates transactions 
+     * If there exists a transaction identified by code, the original transaction will be adjusted by using the meta data 
+     * in the input transaction.
      * 
-     * If you don't specify type in the provided data, a new transaction with type of SalesOrder will be recorded by default.
+     * The `CreateOrAdjustTransaction` API cannot modify any transaction that has been reported to a tax authority using 
+     * the Avalara Managed Returns Service or any other tax filing service.  If you call this API to attempt to modify
+     * a transaction that has been reported on a tax filing, you will receive the error `CannotModifyLockedTransaction`.
+     * 
+     * To generate a refund for a transaction, use the `RefundTransaction` API.
+     *             
+     * If you don't specify the field `type` in your request, you will get an estimate of type `SalesOrder`, which will not be recorded in the database.
      * 
      * A transaction represents a unique potentially taxable action that your company has recorded, and transactions include actions like
      * sales, purchases, inventory transfer, and returns (also called refunds).
@@ -10668,10 +10945,11 @@ This gets the basic information from the filings and doesn't include anything ex
      * * Addresses
      * * SummaryOnly (omit lines and details - reduces API response size)
      * * LinesOnly (omit details - reduces API response size)
+     * * ForceTimeout - Simulates a timeout.  This adds a 30 second delay and error to your API call.  This can be used to test your code to ensure it can respond correctly in the case of a dropped connection.
      *             
      * 
      * @param include Specifies objects to include in the response after transaction is created
-     * @param model The transaction you wish to create
+     * @param model The transaction you wish to create or adjust
      * @return TransactionModel
      */
     public TransactionModel createOrAdjustTransaction(String include, CreateOrAdjustTransactionModel model) throws Exception {
@@ -10681,15 +10959,22 @@ This gets the basic information from the filings and doesn't include anything ex
     }
 
     /**
-     * Create a new transaction
+     * Create or adjust a transaction
      * 
-     * Records a new transaction or adjust an existing in AvaTax.
+     * Records a new transaction or adjust an existing transaction in AvaTax.
      * 
-     * The `CreateOrAdjustTransaction` endpoint is used to create a new transaction if the input transaction does not exist
-     * or if there exists a transaction identified by code, the original transaction will be adjusted by using the meta data 
-     * in the input transaction
+     * The `CreateOrAdjustTransaction` endpoint is used to create a new transaction or update an existing one.  This API
+     * can help you create an idempotent service that creates transactions 
+     * If there exists a transaction identified by code, the original transaction will be adjusted by using the meta data 
+     * in the input transaction.
      * 
-     * If you don't specify type in the provided data, a new transaction with type of SalesOrder will be recorded by default.
+     * The `CreateOrAdjustTransaction` API cannot modify any transaction that has been reported to a tax authority using 
+     * the Avalara Managed Returns Service or any other tax filing service.  If you call this API to attempt to modify
+     * a transaction that has been reported on a tax filing, you will receive the error `CannotModifyLockedTransaction`.
+     * 
+     * To generate a refund for a transaction, use the `RefundTransaction` API.
+     *             
+     * If you don't specify the field `type` in your request, you will get an estimate of type `SalesOrder`, which will not be recorded in the database.
      * 
      * A transaction represents a unique potentially taxable action that your company has recorded, and transactions include actions like
      * sales, purchases, inventory transfer, and returns (also called refunds).
@@ -10701,10 +10986,11 @@ This gets the basic information from the filings and doesn't include anything ex
      * * Addresses
      * * SummaryOnly (omit lines and details - reduces API response size)
      * * LinesOnly (omit details - reduces API response size)
+     * * ForceTimeout - Simulates a timeout.  This adds a 30 second delay and error to your API call.  This can be used to test your code to ensure it can respond correctly in the case of a dropped connection.
      *             
      * 
      * @param include Specifies objects to include in the response after transaction is created
-     * @param model The transaction you wish to create
+     * @param model The transaction you wish to create or adjust
      * @return TransactionModel
      */
     public Future<TransactionModel> createOrAdjustTransactionAsync(String include, CreateOrAdjustTransactionModel model) {
@@ -10722,7 +11008,13 @@ This gets the basic information from the filings and doesn't include anything ex
      * and rates to apply to all line items in this transaction, and reports the total tax calculated by AvaTax based on your
      * company's configuration and the data provided in this API call.
      * 
-     * If you don't specify type in the provided data, a new transaction with type of SalesOrder will be recorded by default.
+     * The `CreateTransaction` API will report an error if a committed transaction already exists with the same `code`.  To
+     * avoid this error, use the `CreateOrAdjustTransaction` API - it will create the transaction if it does not exist, or
+     * update it if it does exist.
+     * 
+     * To generate a refund for a transaction, use the `RefundTransaction` API.
+     * 
+     * If you don't specify the field `type` in your request, you will get an estimate of type `SalesOrder`, which will not be recorded in the database.
      * 
      * A transaction represents a unique potentially taxable action that your company has recorded, and transactions include actions like
      * sales, purchases, inventory transfer, and returns (also called refunds).
@@ -10734,6 +11026,7 @@ This gets the basic information from the filings and doesn't include anything ex
      * * Addresses
      * * SummaryOnly (omit lines and details - reduces API response size)
      * * LinesOnly (omit details - reduces API response size)
+     * * ForceTimeout - Simulates a timeout.  This adds a 30 second delay and error to your API call.  This can be used to test your code to ensure it can respond correctly in the case of a dropped connection.
      *             
      * 
      * @param include Specifies objects to include in the response after transaction is created
@@ -10755,7 +11048,13 @@ This gets the basic information from the filings and doesn't include anything ex
      * and rates to apply to all line items in this transaction, and reports the total tax calculated by AvaTax based on your
      * company's configuration and the data provided in this API call.
      * 
-     * If you don't specify type in the provided data, a new transaction with type of SalesOrder will be recorded by default.
+     * The `CreateTransaction` API will report an error if a committed transaction already exists with the same `code`.  To
+     * avoid this error, use the `CreateOrAdjustTransaction` API - it will create the transaction if it does not exist, or
+     * update it if it does exist.
+     * 
+     * To generate a refund for a transaction, use the `RefundTransaction` API.
+     * 
+     * If you don't specify the field `type` in your request, you will get an estimate of type `SalesOrder`, which will not be recorded in the database.
      * 
      * A transaction represents a unique potentially taxable action that your company has recorded, and transactions include actions like
      * sales, purchases, inventory transfer, and returns (also called refunds).
@@ -10767,6 +11066,7 @@ This gets the basic information from the filings and doesn't include anything ex
      * * Addresses
      * * SummaryOnly (omit lines and details - reduces API response size)
      * * LinesOnly (omit details - reduces API response size)
+     * * ForceTimeout - Simulates a timeout.  This adds a 30 second delay and error to your API call.  This can be used to test your code to ensure it can respond correctly in the case of a dropped connection.
      *             
      * 
      * @param include Specifies objects to include in the response after transaction is created
@@ -10842,10 +11142,14 @@ This gets the basic information from the filings and doesn't include anything ex
     /**
      * Retrieve a single transaction by code
      * 
-     * Get the current transaction identified by this URL.
+     * Get the current `SalesInvoice` transaction identified by this URL.
+     * 
+     * To fetch other kinds of transactions, use `GetTransactionByCodeAndType`.
+     * 
      * If this transaction was adjusted, the return value of this API will be the current transaction with this code, and previous revisions of
-     * the transaction will be attached to the 'history' data field.
-     * You may specify one or more of the following values in the '$include' parameter to fetch additional nested data, using commas to separate multiple values:
+     * the transaction will be attached to the `history` data field.
+     * 
+     * You may specify one or more of the following values in the `$include` parameter to fetch additional nested data, using commas to separate multiple values:
      *             
      * * Lines
      * * Details (implies lines)
@@ -10869,10 +11173,14 @@ This gets the basic information from the filings and doesn't include anything ex
     /**
      * Retrieve a single transaction by code
      * 
-     * Get the current transaction identified by this URL.
+     * Get the current `SalesInvoice` transaction identified by this URL.
+     * 
+     * To fetch other kinds of transactions, use `GetTransactionByCodeAndType`.
+     * 
      * If this transaction was adjusted, the return value of this API will be the current transaction with this code, and previous revisions of
-     * the transaction will be attached to the 'history' data field.
-     * You may specify one or more of the following values in the '$include' parameter to fetch additional nested data, using commas to separate multiple values:
+     * the transaction will be attached to the `history` data field.
+     * 
+     * You may specify one or more of the following values in the `$include` parameter to fetch additional nested data, using commas to separate multiple values:
      *             
      * * Lines
      * * Details (implies lines)
@@ -10897,9 +11205,11 @@ This gets the basic information from the filings and doesn't include anything ex
      * Retrieve a single transaction by code
      * 
      * Get the current transaction identified by this URL.
+     * 
      * If this transaction was adjusted, the return value of this API will be the current transaction with this code, and previous revisions of
-     * the transaction will be attached to the 'history' data field.
-     * You may specify one or more of the following values in the '$include' parameter to fetch additional nested data, using commas to separate multiple values:
+     * the transaction will be attached to the `history` data field.
+     * 
+     * You may specify one or more of the following values in the `$include` parameter to fetch additional nested data, using commas to separate multiple values:
      *             
      * * Lines
      * * Details (implies lines)
@@ -10926,9 +11236,11 @@ This gets the basic information from the filings and doesn't include anything ex
      * Retrieve a single transaction by code
      * 
      * Get the current transaction identified by this URL.
+     * 
      * If this transaction was adjusted, the return value of this API will be the current transaction with this code, and previous revisions of
-     * the transaction will be attached to the 'history' data field.
-     * You may specify one or more of the following values in the '$include' parameter to fetch additional nested data, using commas to separate multiple values:
+     * the transaction will be attached to the `history` data field.
+     * 
+     * You may specify one or more of the following values in the `$include` parameter to fetch additional nested data, using commas to separate multiple values:
      *             
      * * Lines
      * * Details (implies lines)
@@ -11136,8 +11448,21 @@ This gets the basic information from the filings and doesn't include anything ex
      * for a previously created `SalesInvoice` transaction.  You can choose to create a full or partial refund, and
      * specify individual line items from the original sale for refund.
      * 
-     * A transaction represents a unique potentially taxable action that your company has recorded, and transactions include actions like
-     * sales, purchases, inventory transfer, and returns (also called refunds).
+     * The `RefundTransaction` API ensures that the tax amount you refund to the customer exactly matches the tax that
+     * was calculated during the original transaction, regardless of any changes to your company's configuration, rules,
+     * nexus, or any other setting.
+     * 
+     * This API is intended to be a shortcut to allow you to quickly and accurately generate a refund for the following 
+     * common refund scenarios:
+     * 
+     * * A full refund of a previous sale
+     * * Refunding the tax that was charged on a previous sale, when the customer provides an exemption certificate after the purchase
+     * * Refunding one or more items (lines) from a previous sale
+     * * Granting a customer a percentage refund of a previous sale
+     * 
+     * For more complex scenarios than the ones above, please use `CreateTransaction` with document type `ReturnInvoice` to
+     * create a custom refund transaction.
+     * 
      * You may specify one or more of the following values in the '$include' parameter to fetch additional nested data, using commas to separate multiple values:
      *             
      * * Lines
@@ -11171,8 +11496,21 @@ This gets the basic information from the filings and doesn't include anything ex
      * for a previously created `SalesInvoice` transaction.  You can choose to create a full or partial refund, and
      * specify individual line items from the original sale for refund.
      * 
-     * A transaction represents a unique potentially taxable action that your company has recorded, and transactions include actions like
-     * sales, purchases, inventory transfer, and returns (also called refunds).
+     * The `RefundTransaction` API ensures that the tax amount you refund to the customer exactly matches the tax that
+     * was calculated during the original transaction, regardless of any changes to your company's configuration, rules,
+     * nexus, or any other setting.
+     * 
+     * This API is intended to be a shortcut to allow you to quickly and accurately generate a refund for the following 
+     * common refund scenarios:
+     * 
+     * * A full refund of a previous sale
+     * * Refunding the tax that was charged on a previous sale, when the customer provides an exemption certificate after the purchase
+     * * Refunding one or more items (lines) from a previous sale
+     * * Granting a customer a percentage refund of a previous sale
+     * 
+     * For more complex scenarios than the ones above, please use `CreateTransaction` with document type `ReturnInvoice` to
+     * create a custom refund transaction.
+     * 
      * You may specify one or more of the following values in the '$include' parameter to fetch additional nested data, using commas to separate multiple values:
      *             
      * * Lines
