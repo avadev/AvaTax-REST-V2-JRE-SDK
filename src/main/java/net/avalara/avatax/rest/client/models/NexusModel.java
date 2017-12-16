@@ -76,7 +76,15 @@ public class NexusModel {
     /**
      * Getter for country
      *
-     * The two character ISO-3166 country code of the country in which this company declared nexus.
+     * Name or ISO 3166 code identifying the country in which this company declared nexus.
+    * 
+    * This field supports many different country identifiers:
+    *  * Two character ISO 3166 codes
+    *  * Three character ISO 3166 codes
+    *  * Fully spelled out names of the country in ISO supported languages
+    *  * Common alternative spellings for many countries
+    * 
+    * For a full list of all supported codes and names, please see the Definitions API `ListCountries`.
      */
     public String getCountry() {
         return this.country;
@@ -85,7 +93,15 @@ public class NexusModel {
     /**
      * Setter for country
      *
-     * The two character ISO-3166 country code of the country in which this company declared nexus.
+     * Name or ISO 3166 code identifying the country in which this company declared nexus.
+    * 
+    * This field supports many different country identifiers:
+    *  * Two character ISO 3166 codes
+    *  * Three character ISO 3166 codes
+    *  * Fully spelled out names of the country in ISO supported languages
+    *  * Common alternative spellings for many countries
+    * 
+    * For a full list of all supported codes and names, please see the Definitions API `ListCountries`.
      */
     public void setCountry(String value) {
         this.country = value;
@@ -97,7 +113,16 @@ public class NexusModel {
     /**
      * Getter for region
      *
-     * The two or three character ISO region code of the region, state, or province in which this company declared nexus.
+     * Name or ISO 3166 code identifying the region within the country.
+    * 
+    * If the `jurisTypeId` field is set to `CNT` or `Country`, this field can be left blank.
+    * 
+    * This field supports many different region identifiers:
+    *  * Two and three character ISO 3166 region codes
+    *  * Fully spelled out names of the region in ISO supported languages
+    *  * Common alternative spellings for many regions
+    * 
+    * For a full list of all supported codes and names, please see the Definitions API `ListRegions`.
      */
     public String getRegion() {
         return this.region;
@@ -106,7 +131,16 @@ public class NexusModel {
     /**
      * Setter for region
      *
-     * The two or three character ISO region code of the region, state, or province in which this company declared nexus.
+     * Name or ISO 3166 code identifying the region within the country.
+    * 
+    * If the `jurisTypeId` field is set to `CNT` or `Country`, this field can be left blank.
+    * 
+    * This field supports many different region identifiers:
+    *  * Two and three character ISO 3166 region codes
+    *  * Fully spelled out names of the region in ISO supported languages
+    *  * Common alternative spellings for many regions
+    * 
+    * For a full list of all supported codes and names, please see the Definitions API `ListRegions`.
      */
     public void setRegion(String value) {
         this.region = value;
@@ -286,8 +320,18 @@ public class NexusModel {
     /**
      * Getter for nexusTypeId
      *
-     * (DEPRECATED) The type of nexus that this company is declaring.
-    * Please use NexusTaxTypeGroupId instead.
+     * The type of nexus that this company is declaring.
+    * 
+    * If you are voluntarily declaring nexus in a jurisdiction, you should select `SalesOrSellersUseTax` for your
+    * nexus type option. This option allows you to calculate tax correctly whether you are selling in-state or
+    * shipping from an out-of-state location.
+    * 
+    * If you are legally obligated to declare nexus due to physical presence or other sufficient nexus, you
+    * should select `SalesTax`. This indicates that, as a legal requirement, your company must always collect
+    * and remit full sales tax in this jurisdiction.
+    * 
+    * If you are participating in the Streamlined Sales Tax program, your SST administrator will select nexus
+    * settings for you in all SST jurisdictions. Do not select any SST options by yourself.
      */
     public NexusTypeId getNexusTypeId() {
         return this.nexusTypeId;
@@ -296,8 +340,18 @@ public class NexusModel {
     /**
      * Setter for nexusTypeId
      *
-     * (DEPRECATED) The type of nexus that this company is declaring.
-    * Please use NexusTaxTypeGroupId instead.
+     * The type of nexus that this company is declaring.
+    * 
+    * If you are voluntarily declaring nexus in a jurisdiction, you should select `SalesOrSellersUseTax` for your
+    * nexus type option. This option allows you to calculate tax correctly whether you are selling in-state or
+    * shipping from an out-of-state location.
+    * 
+    * If you are legally obligated to declare nexus due to physical presence or other sufficient nexus, you
+    * should select `SalesTax`. This indicates that, as a legal requirement, your company must always collect
+    * and remit full sales tax in this jurisdiction.
+    * 
+    * If you are participating in the Streamlined Sales Tax program, your SST administrator will select nexus
+    * settings for you in all SST jurisdictions. Do not select any SST options by yourself.
      */
     public void setNexusTypeId(NexusTypeId value) {
         this.nexusTypeId = value;

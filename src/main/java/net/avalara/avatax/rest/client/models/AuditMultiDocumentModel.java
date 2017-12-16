@@ -24,50 +24,81 @@ import java.util.HashMap;
  */
 
 /**
- * Information about a previously created transaction
+ * Information about a previously created MultiDocument transaction
  */
-public class AuditTransactionModel {
+public class AuditMultiDocumentModel {
 
 
-    private Integer companyId;
-
-    /**
-     * Getter for companyId
-     *
-     * Unique ID number of the company that created this transaction
-     */
-    public Integer getCompanyId() {
-        return this.companyId;
-    }
-
-    /**
-     * Setter for companyId
-     *
-     * Unique ID number of the company that created this transaction
-     */
-    public void setCompanyId(Integer value) {
-        this.companyId = value;
-    }
-
-
-    private ReconstructedApiRequestResponseModel reconstructed;
+    private ReconstructedMultiDocumentModel reconstructed;
 
     /**
      * Getter for reconstructed
      *
-     * Reconstructed API request/response
+     * Reconstructed API request/response pair that can be used to adjust or re-create this MultiDocument transaction.
      */
-    public ReconstructedApiRequestResponseModel getReconstructed() {
+    public ReconstructedMultiDocumentModel getReconstructed() {
         return this.reconstructed;
     }
 
     /**
      * Setter for reconstructed
      *
-     * Reconstructed API request/response
+     * Reconstructed API request/response pair that can be used to adjust or re-create this MultiDocument transaction.
      */
-    public void setReconstructed(ReconstructedApiRequestResponseModel value) {
+    public void setReconstructed(ReconstructedMultiDocumentModel value) {
         this.reconstructed = value;
+    }
+
+
+    private String code;
+
+    /**
+     * Getter for code
+     *
+     * Represents the unique code of this MultiDocument transaction.
+    * 
+    * A MultiDocument transaction is uniquely identified by its `accountId`, `code`, and `type`.
+     */
+    public String getCode() {
+        return this.code;
+    }
+
+    /**
+     * Setter for code
+     *
+     * Represents the unique code of this MultiDocument transaction.
+    * 
+    * A MultiDocument transaction is uniquely identified by its `accountId`, `code`, and `type`.
+     */
+    public void setCode(String value) {
+        this.code = value;
+    }
+
+
+    private DocumentType type;
+
+    /**
+     * Getter for type
+     *
+     * Represents the document type of this MultiDocument transaction. For more information about
+    * document types, see [DocumentType](https://developer.avalara.com/api-reference/avatax/rest/v2/models/enums/DocumentType/).
+    * 
+    * A MultiDocument transaction is uniquely identified by its `accountId`, `code`, and `type`.
+     */
+    public DocumentType getType() {
+        return this.type;
+    }
+
+    /**
+     * Setter for type
+     *
+     * Represents the document type of this MultiDocument transaction. For more information about
+    * document types, see [DocumentType](https://developer.avalara.com/api-reference/avatax/rest/v2/models/enums/DocumentType/).
+    * 
+    * A MultiDocument transaction is uniquely identified by its `accountId`, `code`, and `type`.
+     */
+    public void setType(DocumentType value) {
+        this.type = value;
     }
 
 
@@ -156,7 +187,7 @@ public class AuditTransactionModel {
 
 
     /**
-     * Returns a JSON string representation of AuditTransactionModel
+     * Returns a JSON string representation of AuditMultiDocumentModel
      */
     @Override
     public String toString() {

@@ -137,6 +137,69 @@ public class FreeTrialRequestModel {
     }
 
 
+    private String campaign;
+
+    /**
+     * Getter for campaign
+     *
+     * Campaign identifier for Notification purpose
+     */
+    public String getCampaign() {
+        return this.campaign;
+    }
+
+    /**
+     * Setter for campaign
+     *
+     * Campaign identifier for Notification purpose
+     */
+    public void setCampaign(String value) {
+        this.campaign = value;
+    }
+
+
+    private CompanyAddress companyAddress;
+
+    /**
+     * Getter for companyAddress
+     *
+     * The Address information of the account
+     */
+    public CompanyAddress getCompanyAddress() {
+        return this.companyAddress;
+    }
+
+    /**
+     * Setter for companyAddress
+     *
+     * The Address information of the account
+     */
+    public void setCompanyAddress(CompanyAddress value) {
+        this.companyAddress = value;
+    }
+
+
+    private String website;
+
+    /**
+     * Getter for website
+     *
+     * Website of the company or user requesting a free trial
+     */
+    public String getWebsite() {
+        return this.website;
+    }
+
+    /**
+     * Setter for website
+     *
+     * Website of the company or user requesting a free trial
+     */
+    public void setWebsite(String value) {
+        this.website = value;
+    }
+
+
     /**
      * Returns a JSON string representation of FreeTrialRequestModel
      */

@@ -76,7 +76,14 @@ public class CompanyAddress {
     /**
      * Getter for region
      *
-     * Two character ISO 3166 Region code for this company's primary business location.
+     * Name or ISO 3166 code identifying the region within the country.
+    * 
+    * This field supports many different region identifiers:
+    *  * Two and three character ISO 3166 region codes
+    *  * Fully spelled out names of the region in ISO supported languages
+    *  * Common alternative spellings for many regions
+    * 
+    * For a full list of all supported codes and names, please see the Definitions API `ListRegions`.
      */
     public String getRegion() {
         return this.region;
@@ -85,7 +92,14 @@ public class CompanyAddress {
     /**
      * Setter for region
      *
-     * Two character ISO 3166 Region code for this company's primary business location.
+     * Name or ISO 3166 code identifying the region within the country.
+    * 
+    * This field supports many different region identifiers:
+    *  * Two and three character ISO 3166 region codes
+    *  * Fully spelled out names of the region in ISO supported languages
+    *  * Common alternative spellings for many regions
+    * 
+    * For a full list of all supported codes and names, please see the Definitions API `ListRegions`.
      */
     public void setRegion(String value) {
         this.region = value;
@@ -97,7 +111,15 @@ public class CompanyAddress {
     /**
      * Getter for country
      *
-     * Two character ISO 3166 Country code for this company's primary business location.
+     * Name or ISO 3166 code identifying the country.
+    * 
+    * This field supports many different country identifiers:
+    *  * Two character ISO 3166 codes
+    *  * Three character ISO 3166 codes
+    *  * Fully spelled out names of the country in ISO supported languages
+    *  * Common alternative spellings for many countries
+    * 
+    * For a full list of all supported codes and names, please see the Definitions API `ListCountries`.
      */
     public String getCountry() {
         return this.country;
@@ -106,7 +128,15 @@ public class CompanyAddress {
     /**
      * Setter for country
      *
-     * Two character ISO 3166 Country code for this company's primary business location.
+     * Name or ISO 3166 code identifying the country.
+    * 
+    * This field supports many different country identifiers:
+    *  * Two character ISO 3166 codes
+    *  * Three character ISO 3166 codes
+    *  * Fully spelled out names of the country in ISO supported languages
+    *  * Common alternative spellings for many countries
+    * 
+    * For a full list of all supported codes and names, please see the Definitions API `ListCountries`.
      */
     public void setCountry(String value) {
         this.country = value;

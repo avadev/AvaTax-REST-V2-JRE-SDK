@@ -24,9 +24,59 @@ import java.util.HashMap;
  */
 
 /**
- * Represents one line item in a transaction
+ * Represents one line item in a MultiDocument transaction
  */
-public class LineItemModel {
+public class MultiDocumentLineItemModel {
+
+
+    private String companyCode;
+
+    /**
+     * Getter for companyCode
+     *
+     * Specify the code of the company for this line of transaction. 
+    * 
+    * If you leave this value null, the `companyCode` at the root level will be used instead.
+     */
+    public String getCompanyCode() {
+        return this.companyCode;
+    }
+
+    /**
+     * Setter for companyCode
+     *
+     * Specify the code of the company for this line of transaction. 
+    * 
+    * If you leave this value null, the `companyCode` at the root level will be used instead.
+     */
+    public void setCompanyCode(String value) {
+        this.companyCode = value;
+    }
+
+
+    private String reportingLocationCode;
+
+    /**
+     * Getter for reportingLocationCode
+     *
+     * Sets the sale location code (Outlet ID) for reporting this document to the tax authority. 
+    * 
+    * If you leave this value `null`, the `reportingLocationCode` at the root level will be used instead.
+     */
+    public String getReportingLocationCode() {
+        return this.reportingLocationCode;
+    }
+
+    /**
+     * Setter for reportingLocationCode
+     *
+     * Sets the sale location code (Outlet ID) for reporting this document to the tax authority. 
+    * 
+    * If you leave this value `null`, the `reportingLocationCode` at the root level will be used instead.
+     */
+    public void setReportingLocationCode(String value) {
+        this.reportingLocationCode = value;
+    }
 
 
     private String number;
@@ -444,7 +494,7 @@ public class LineItemModel {
 
 
     /**
-     * Returns a JSON string representation of LineItemModel
+     * Returns a JSON string representation of MultiDocumentLineItemModel
      */
     @Override
     public String toString() {

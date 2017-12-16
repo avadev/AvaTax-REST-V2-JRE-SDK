@@ -265,7 +265,14 @@ public class ContactModel {
     /**
      * Getter for region
      *
-     * The state, region, or province of the postal mailing address of this contact.
+     * Name or ISO 3166 code identifying the region within the country.
+    * 
+    * This field supports many different region identifiers:
+    *  * Two and three character ISO 3166 region codes
+    *  * Fully spelled out names of the region in ISO supported languages
+    *  * Common alternative spellings for many regions
+    * 
+    * For a full list of all supported codes and names, please see the Definitions API `ListRegions`.
      */
     public String getRegion() {
         return this.region;
@@ -274,7 +281,14 @@ public class ContactModel {
     /**
      * Setter for region
      *
-     * The state, region, or province of the postal mailing address of this contact.
+     * Name or ISO 3166 code identifying the region within the country.
+    * 
+    * This field supports many different region identifiers:
+    *  * Two and three character ISO 3166 region codes
+    *  * Fully spelled out names of the region in ISO supported languages
+    *  * Common alternative spellings for many regions
+    * 
+    * For a full list of all supported codes and names, please see the Definitions API `ListRegions`.
      */
     public void setRegion(String value) {
         this.region = value;
@@ -307,7 +321,15 @@ public class ContactModel {
     /**
      * Getter for country
      *
-     * The ISO 3166 two-character country code of the postal mailing address of this contact.
+     * Name or ISO 3166 code identifying the country.
+    * 
+    * This field supports many different country identifiers:
+    *  * Two character ISO 3166 codes
+    *  * Three character ISO 3166 codes
+    *  * Fully spelled out names of the country in ISO supported languages
+    *  * Common alternative spellings for many countries
+    * 
+    * For a full list of all supported codes and names, please see the Definitions API `ListCountries`.
      */
     public String getCountry() {
         return this.country;
@@ -316,7 +338,15 @@ public class ContactModel {
     /**
      * Setter for country
      *
-     * The ISO 3166 two-character country code of the postal mailing address of this contact.
+     * Name or ISO 3166 code identifying the country.
+    * 
+    * This field supports many different country identifiers:
+    *  * Two character ISO 3166 codes
+    *  * Three character ISO 3166 codes
+    *  * Fully spelled out names of the country in ISO supported languages
+    *  * Common alternative spellings for many countries
+    * 
+    * For a full list of all supported codes and names, please see the Definitions API `ListCountries`.
      */
     public void setCountry(String value) {
         this.country = value;
