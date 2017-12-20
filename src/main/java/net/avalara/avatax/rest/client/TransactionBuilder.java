@@ -356,6 +356,45 @@ public class TransactionBuilder {
         return this;
     }
 
+    public TransactionBuilder withSeparateAddressLineQuantityAndItemCode(BigDecimal amount, BigDecimal quantity, String itemCode, TransactionAddressType type, String line1, String line2, String line3, String city, String region, String postalCode, String country) {
+        LineItemModel line = new LineItemModel();
+        line.setAmount(amount);
+        line.setQuantity(quantity);
+        line.setNumber(((Integer)this.lineNumber).toString());
+
+        if (itemCode != null && !itemCode.isEmpty()) {
+            line.setItemCode(itemCode);
+        }
+
+        AddressesModel addresses = new AddressesModel();
+        AddressLocationInfo info = new AddressLocationInfo();
+        info.setLine1(line1);
+        info.setLine2(line2);
+        info.setLine3(line3);
+        info.setCity(city);
+        info.setRegion(region);
+        info.setPostalCode(postalCode);
+        info.setCountry(country);
+
+        if (type == TransactionAddressType.ShipTo) {
+            addresses.setShipTo(info);
+        } else if (type == TransactionAddressType.ShipFrom) {
+            addresses.setShipFrom(info);
+        } else if (type == TransactionAddressType.PointOfOrderAcceptance) {
+            addresses.setPointOfOrderAcceptance(info);
+        } else if (type == TransactionAddressType.PointOfOrderOrigin) {
+            addresses.setPointOfOrderOrigin(info);
+        } else if (type == TransactionAddressType.SingleLocation) {
+            addresses.setSingleLocation(info);
+        }
+
+        line.setAddresses(addresses);
+
+        this.model.getLines().add(line);
+        this.lineNumber++;
+        return this;
+    }
+
     public TransactionBuilder withExemptLine(BigDecimal amount, String exemptionCode) {
         LineItemModel line = new LineItemModel();
         line.setAmount(amount);
