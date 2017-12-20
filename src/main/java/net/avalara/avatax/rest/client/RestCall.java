@@ -42,7 +42,7 @@ public class RestCall<T> implements Callable<T> {
             this.request = new HttpDelete(environmentUrl + path.toString());
         } else if (method == "put") {
             this.request = new HttpPut(environmentUrl + path.toString());
-            ((HttpPost)this.request).setEntity(new StringEntity(JsonSerializer.SerializeObject(model), ContentType.create("application/json", "UTF-8")));
+            ((HttpPut)this.request).setEntity(new StringEntity(JsonSerializer.SerializeObject(model), ContentType.create("application/json", "UTF-8")));
         }
 
         buildRequest(this.request);

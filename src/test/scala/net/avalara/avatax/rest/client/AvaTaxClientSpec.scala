@@ -1,7 +1,9 @@
 package net.avalara.avatax.rest.client
 
+import java.util
+
 import net.avalara.avatax.rest.client.enums._
-import net.avalara.avatax.rest.client.models.CreateTransactionModel
+import net.avalara.avatax.rest.client.models._
 import org.scalatest.fixture
 
 import scala.collection.JavaConverters._
@@ -67,6 +69,41 @@ class AvaTaxClientSpec extends fixture.FreeSpec {
       assert(ref1.equals("ref1"))
       assert(ref2.equals("ref2"))
     }
+    "create a transaction from the underlying model" in { accountInfo =>
+      import org.scalatest.Matchers._
+
+      noException should be thrownBy {
+        val dateFormat = new java.text.SimpleDateFormat("yyyy-MM-dd")
+        val api = client.withSecurity(accountInfo.username, accountInfo.password)
+        val model = new CreateTransactionModel()
+        val addrs = new AddressesModel()
+        val ali = new AddressLocationInfo()
+
+        ali.setLine1("100 Ravine Ln NE")
+        ali.setCity("Bainbridge Island")
+        ali.setRegion("WA")
+        ali.setCountry("US")
+        ali.setPostalCode("98110")
+
+        addrs.setSingleLocation(ali)
+        model.setAddresses(addrs)
+
+        model.setCompanyCode("DEFAULT")
+        model.setCustomerCode("0")
+        model.setType(DocumentType.SalesOrder)
+        model.setDiscount(java.math.BigDecimal.valueOf(20))
+        model.setDate(dateFormat.parse("2017-11-28"))
+
+        val list = new util.ArrayList[LineItemModel]()
+        val line = new LineItemModel()
+        line.setAmount(java.math.BigDecimal.valueOf(100))
+        line.setDiscounted(true)
+        list.add(line)
+
+        model.setLines(list)
+        val transaction = api.createTransaction(null, model)
+      }
+    }
     "create a transaction with an overridden tax date" in { accountInfo =>
       val dateFormat = new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss")
       val transaction = new TransactionBuilder(client.withSecurity(accountInfo.username, accountInfo.password), "DEFAULT", DocumentType.SalesOrder, "1")
@@ -111,6 +148,22 @@ class AvaTaxClientSpec extends fixture.FreeSpec {
     "succesfully ping" in { accountInfo =>
       val pong = client.withSecurity(accountInfo.username, accountInfo.password).ping()
       assert(pong.getAuthenticatedUserName == accountInfo.username)
+    }
+    "update a company" in { accountInfo =>
+      import org.scalatest.Matchers._
+
+      noException should be thrownBy {
+        val cli = client.withSecurity(accountInfo.username, accountInfo.password)
+        val companies = cli.queryCompanies(null, null, 10, 0, null)
+
+        for (company <- companies.getValue.asScala) {
+          if (!company.getIsDefault) {
+            if (company.getTaxpayerIdNumber != null && !company.getTaxpayerIdNumber.isEmpty && company.getDefaultCountry != null && !company.getDefaultCountry.isEmpty) {
+              cli.updateCompany(company.getId, company)
+            }
+          }
+        }
+      }
     }
   }
 }
