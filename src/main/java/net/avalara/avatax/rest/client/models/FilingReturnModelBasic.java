@@ -92,6 +92,27 @@ public class FilingReturnModelBasic {
     }
 
 
+    private Long resourceFileId;
+
+    /**
+     * Getter for resourceFileId
+     *
+     * The resourceFileId of the return
+     */
+    public Long getResourceFileId() {
+        return this.resourceFileId;
+    }
+
+    /**
+     * Setter for resourceFileId
+     *
+     * The resourceFileId of the return
+     */
+    public void setResourceFileId(Long value) {
+        this.resourceFileId = value;
+    }
+
+
     private Long filingRegionId;
 
     /**

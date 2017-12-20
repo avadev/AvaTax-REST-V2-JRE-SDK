@@ -34,7 +34,7 @@ public class RateTypeModel {
     /**
      * Getter for id
      *
-     * The unique ID number of this tax authority.
+     * The unique ID number of this rate type.
      */
     public String getId() {
         return this.id;
@@ -43,7 +43,7 @@ public class RateTypeModel {
     /**
      * Setter for id
      *
-     * The unique ID number of this tax authority.
+     * The unique ID number of this rate type.
      */
     public void setId(String value) {
         this.id = value;
