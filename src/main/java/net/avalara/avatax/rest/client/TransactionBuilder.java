@@ -287,73 +287,11 @@ public class TransactionBuilder {
     }
 
     public TransactionBuilder withSeparateAddressLine(BigDecimal amount, TransactionAddressType type, String line1, String line2, String line3, String city, String region, String postalCode, String country) {
-        LineItemModel line = new LineItemModel();
-        line.setAmount(amount);
-        line.setQuantity(BigDecimal.ONE);
-        line.setNumber(((Integer)this.lineNumber).toString());
-
-        AddressesModel addresses = new AddressesModel();
-        AddressLocationInfo info = new AddressLocationInfo();
-        info.setLine1(line1);
-        info.setLine2(line2);
-        info.setLine3(line3);
-        info.setCity(city);
-        info.setRegion(region);
-        info.setPostalCode(postalCode);
-        info.setCountry(country);
-
-        if (type == TransactionAddressType.ShipTo) {
-            addresses.setShipTo(info);
-        } else if (type == TransactionAddressType.ShipFrom) {
-            addresses.setShipFrom(info);
-        } else if (type == TransactionAddressType.PointOfOrderAcceptance) {
-            addresses.setPointOfOrderAcceptance(info);
-        } else if (type == TransactionAddressType.PointOfOrderOrigin) {
-            addresses.setPointOfOrderOrigin(info);
-        } else if (type == TransactionAddressType.SingleLocation) {
-            addresses.setSingleLocation(info);
-        }
-
-        line.setAddresses(addresses);
-
-        this.model.getLines().add(line);
-        this.lineNumber++;
-        return this;
+        return this.withSeparateAddressLineAndQuantity(amount, BigDecimal.ONE, type, line1, line2, line3, city, region, postalCode, country);
     }
 
     public TransactionBuilder withSeparateAddressLineAndQuantity(BigDecimal amount, BigDecimal quantity, TransactionAddressType type, String line1, String line2, String line3, String city, String region, String postalCode, String country) {
-        LineItemModel line = new LineItemModel();
-        line.setAmount(amount);
-        line.setQuantity(quantity);
-        line.setNumber(((Integer)this.lineNumber).toString());
-
-        AddressesModel addresses = new AddressesModel();
-        AddressLocationInfo info = new AddressLocationInfo();
-        info.setLine1(line1);
-        info.setLine2(line2);
-        info.setLine3(line3);
-        info.setCity(city);
-        info.setRegion(region);
-        info.setPostalCode(postalCode);
-        info.setCountry(country);
-
-        if (type == TransactionAddressType.ShipTo) {
-            addresses.setShipTo(info);
-        } else if (type == TransactionAddressType.ShipFrom) {
-            addresses.setShipFrom(info);
-        } else if (type == TransactionAddressType.PointOfOrderAcceptance) {
-            addresses.setPointOfOrderAcceptance(info);
-        } else if (type == TransactionAddressType.PointOfOrderOrigin) {
-            addresses.setPointOfOrderOrigin(info);
-        } else if (type == TransactionAddressType.SingleLocation) {
-            addresses.setSingleLocation(info);
-        }
-
-        line.setAddresses(addresses);
-
-        this.model.getLines().add(line);
-        this.lineNumber++;
-        return this;
+        return this.withSeparateAddressLineQuantityAndItemCode(amount, quantity, null, type, line1, line2, line3, city, region, postalCode, country);
     }
 
     public TransactionBuilder withSeparateAddressLineQuantityAndItemCode(BigDecimal amount, BigDecimal quantity, String itemCode, TransactionAddressType type, String line1, String line2, String line3, String city, String region, String postalCode, String country) {
