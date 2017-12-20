@@ -53,7 +53,7 @@ libraryDependencies ++= Seq(
   // Uncomment to use Akka
   //"com.typesafe.akka" % "akka-actor_2.11" % "2.3.9",
   "org.scalatest" %% "scalatest" % "3.0.1" % "test",
-  "com.google.code.gson" % "gson" % "2.8.0",
+  "com.google.code.gson" % "gson" % "2.8.2",
   "org.apache.httpcomponents" % "httpclient" % "4.5.2"
 )
 
