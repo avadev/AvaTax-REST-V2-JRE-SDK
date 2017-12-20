@@ -229,7 +229,8 @@ public class TransactionModel {
     /**
      * Getter for customerUsageType
      *
-     * The customer usage type for this transaction. Customer usage types often affect exemption or taxability rules.
+     * DEPRECATED - The customer usage type for this transaction. Customer usage types often affect exemption or taxability rules.
+    * Please use entityUseCode instead.
      */
     public String getCustomerUsageType() {
         return this.customerUsageType;
@@ -238,10 +239,32 @@ public class TransactionModel {
     /**
      * Setter for customerUsageType
      *
-     * The customer usage type for this transaction. Customer usage types often affect exemption or taxability rules.
+     * DEPRECATED - The customer usage type for this transaction. Customer usage types often affect exemption or taxability rules.
+    * Please use entityUseCode instead.
      */
     public void setCustomerUsageType(String value) {
         this.customerUsageType = value;
+    }
+
+
+    private String entityUseCode;
+
+    /**
+     * Getter for entityUseCode
+     *
+     * The entity use code for this transaction. Entity use codes often affect exemption or taxability rules.
+     */
+    public String getEntityUseCode() {
+        return this.entityUseCode;
+    }
+
+    /**
+     * Setter for entityUseCode
+     *
+     * The entity use code for this transaction. Entity use codes often affect exemption or taxability rules.
+     */
+    public void setEntityUseCode(String value) {
+        this.entityUseCode = value;
     }
 
 
@@ -523,6 +546,27 @@ public class TransactionModel {
      */
     public void setTotalExempt(BigDecimal value) {
         this.totalExempt = value;
+    }
+
+
+    private BigDecimal totalDiscount;
+
+    /**
+     * Getter for totalDiscount
+     *
+     * The total amount of discounts applied to all lines within this transaction.
+     */
+    public BigDecimal getTotalDiscount() {
+        return this.totalDiscount;
+    }
+
+    /**
+     * Setter for totalDiscount
+     *
+     * The total amount of discounts applied to all lines within this transaction.
+     */
+    public void setTotalDiscount(BigDecimal value) {
+        this.totalDiscount = value;
     }
 
 
@@ -828,6 +872,13 @@ public class TransactionModel {
      * Getter for isSellerImporterOfRecord
      *
      * If true, this seller was considered the importer of record of a product shipped internationally.
+    * 
+    * If this transaction is not an international transaction, this field may be left blank.
+    * 
+    * The "importer of record" is liable to pay customs and import duties for products shipped internationally. If 
+    * you specify that the seller is the importer of record, then estimates of customs and import duties will be added
+    * as tax details to the transaction. Otherwise, the buyer is considered the importer of record, and customs
+    * and import duties will not be added to the tax details for this transaction.
      */
     public Boolean getIsSellerImporterOfRecord() {
         return this.isSellerImporterOfRecord;
@@ -837,6 +888,13 @@ public class TransactionModel {
      * Setter for isSellerImporterOfRecord
      *
      * If true, this seller was considered the importer of record of a product shipped internationally.
+    * 
+    * If this transaction is not an international transaction, this field may be left blank.
+    * 
+    * The "importer of record" is liable to pay customs and import duties for products shipped internationally. If 
+    * you specify that the seller is the importer of record, then estimates of customs and import duties will be added
+    * as tax details to the transaction. Otherwise, the buyer is considered the importer of record, and customs
+    * and import duties will not be added to the tax details for this transaction.
      */
     public void setIsSellerImporterOfRecord(Boolean value) {
         this.isSellerImporterOfRecord = value;
@@ -1029,27 +1087,6 @@ public class TransactionModel {
      */
     public void setLocationTypes(ArrayList<TransactionLocationTypeModel> value) {
         this.locationTypes = value;
-    }
-
-
-    private ArrayList<TransactionModel> history;
-
-    /**
-     * Getter for history
-     *
-     * If this transaction has been adjusted, this list contains all the previous versions of the document.
-     */
-    public ArrayList<TransactionModel> getHistory() {
-        return this.history;
-    }
-
-    /**
-     * Setter for history
-     *
-     * If this transaction has been adjusted, this list contains all the previous versions of the document.
-     */
-    public void setHistory(ArrayList<TransactionModel> value) {
-        this.history = value;
     }
 
 

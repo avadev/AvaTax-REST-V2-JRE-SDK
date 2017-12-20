@@ -24,38 +24,35 @@ import java.util.HashMap;
  */
 
 /**
- * Commit this transaction as permanent so that it can be reported on a tax filing.
+ * Contains information about the original API request and response that created
+* a MultiDocument object.
  */
-public class CommitTransactionModel {
+public class ReconstructedMultiDocumentModel {
 
 
-    private Boolean commit;
+    private CreateMultiDocumentModel request;
 
     /**
-     * Getter for commit
+     * Getter for request
      *
-     * Set this value to be `true` to commit this transaction.
-    * 
-    * Committing a transaction allows it to be reported on a tax filing. Uncommitted transactions will not be reported.
+     * The original request that was used to create a MultiDocument object.
      */
-    public Boolean getCommit() {
-        return this.commit;
+    public CreateMultiDocumentModel getRequest() {
+        return this.request;
     }
 
     /**
-     * Setter for commit
+     * Setter for request
      *
-     * Set this value to be `true` to commit this transaction.
-    * 
-    * Committing a transaction allows it to be reported on a tax filing. Uncommitted transactions will not be reported.
+     * The original request that was used to create a MultiDocument object.
      */
-    public void setCommit(Boolean value) {
-        this.commit = value;
+    public void setRequest(CreateMultiDocumentModel value) {
+        this.request = value;
     }
 
 
     /**
-     * Returns a JSON string representation of CommitTransactionModel
+     * Returns a JSON string representation of ReconstructedMultiDocumentModel
      */
     @Override
     public String toString() {

@@ -81,6 +81,11 @@ public enum ErrorCodeId {
     /** 
      * 
      */
+    MaxStringLengthError,
+
+    /** 
+     * 
+     */
     EmailValidationError,
 
     /** 
@@ -589,6 +594,26 @@ public enum ErrorCodeId {
     FailedToDownloadReport,
 
     /** 
+     * 
+     */
+    MalformedFilterException,
+
+    /** 
+     * 
+     */
+    ExpectedConjunctionError,
+
+    /** 
+     * 
+     */
+    CriteriaNotSupportedError,
+
+    /** 
+     * 
+     */
+    CompanyAccountAndParentAccountMismatch,
+
+    /** 
      * Batch errors
      */
     BatchSalesAuditMustBeZippedError,
@@ -617,6 +642,16 @@ public enum ErrorCodeId {
      * 
      */
     BatchCannotDeleteBatchFile,
+
+    /** 
+     * 
+     */
+    BatchMustContainOneFile,
+
+    /** 
+     * 
+     */
+    MissingBatchFileContent,
 
     /** 
      * Point Of Sale API exceptions
@@ -724,6 +759,11 @@ public enum ErrorCodeId {
     InvalidAddress,
 
     /** 
+     * 
+     */
+    InvalidPostalCode,
+
+    /** 
      * Represents a malformed document fetch command
      */
     BadDocumentFetch,
@@ -817,6 +857,11 @@ public enum ErrorCodeId {
      * 
      */
     RefundPercentageOutOfRange,
+
+    /** 
+     * 
+     */
+    RefundPercentageMissing,
 
     /** 
      * Free API error codes
@@ -954,19 +999,64 @@ public enum ErrorCodeId {
     InvalidCoverLetterTitle,
 
     /** 
-     * Multi company error codes
+     * Multi document error codes
      */
     TransactionNotCancelled,
 
     /** 
      * 
      */
-    TooManyTransactionLines,
+    TooManyTransactions,
 
     /** 
      * 
      */
     OnlyTaxDateOverrideIsAllowed,
+
+    /** 
+     * 
+     */
+    TransactionAlreadyExists,
+
+    /** 
+     * 
+     */
+    DateMismatch,
+
+    /** 
+     * 
+     */
+    InvalidDocumentStatusForVerify,
+
+    /** 
+     * 
+     */
+    TotalAmountMismatch,
+
+    /** 
+     * 
+     */
+    TotalTaxMismatch,
+
+    /** 
+     * 
+     */
+    InvalidDocumentStatusForCommit,
+
+    /** 
+     * 
+     */
+    InvalidDocumentType,
+
+    /** 
+     * 
+     */
+    MultiDocumentPartiallyLocked,
+
+    /** 
+     * 
+     */
+    TransactionIsCommitted,
 
     /** 
      * Communications Tax error codes
@@ -992,6 +1082,11 @@ public enum ErrorCodeId {
      * Account Activate error codes
      */
     AccountInNewStatusException,
+
+    /** 
+     * Worksheet Exception
+     */
+    WorksheetException,
 
 }
     

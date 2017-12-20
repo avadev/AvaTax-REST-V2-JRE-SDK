@@ -24,13 +24,66 @@ import java.util.HashMap;
  */
 
 /**
- * Verify this transaction by matching it to values in your accounting system.
+ * Verify that a MultiDocument object matches the information in your accounting system.
 * 
-* You may specify one or more of the following fields to verify: `date`, `totalAmount`, or `totalTax`.
-* This call will report an error if there is any difference between the data stored in AvaTax and
-* the data stored in your accounting system.
+* If all attributes of the MultiDocument object match the values in your request, the
+* MultiDocument object will be moved to the document status `Posted`.
+* 
+* For more information on document status, see [DocumentStatus](https://developer.avalara.com/api-reference/avatax/rest/v2/models/enums/DocumentStatus/).
  */
-public class VerifyTransactionModel {
+public class VerifyMultiDocumentModel {
+
+
+    private String code;
+
+    /**
+     * Getter for code
+     *
+     * Represents the unique code of this MultiDocument transaction.
+    * 
+    * A MultiDocument transaction is uniquely identified by its `accountId`, `code`, and `type`.
+     */
+    public String getCode() {
+        return this.code;
+    }
+
+    /**
+     * Setter for code
+     *
+     * Represents the unique code of this MultiDocument transaction.
+    * 
+    * A MultiDocument transaction is uniquely identified by its `accountId`, `code`, and `type`.
+     */
+    public void setCode(String value) {
+        this.code = value;
+    }
+
+
+    private DocumentType type;
+
+    /**
+     * Getter for type
+     *
+     * Represents the document type of this MultiDocument transaction. For more information about
+    * document types, see [DocumentType](https://developer.avalara.com/api-reference/avatax/rest/v2/models/enums/DocumentType/).
+    * 
+    * A MultiDocument transaction is uniquely identified by its `accountId`, `code`, and `type`.
+     */
+    public DocumentType getType() {
+        return this.type;
+    }
+
+    /**
+     * Setter for type
+     *
+     * Represents the document type of this MultiDocument transaction. For more information about
+    * document types, see [DocumentType](https://developer.avalara.com/api-reference/avatax/rest/v2/models/enums/DocumentType/).
+    * 
+    * A MultiDocument transaction is uniquely identified by its `accountId`, `code`, and `type`.
+     */
+    public void setType(DocumentType value) {
+        this.type = value;
+    }
 
 
     private Date verifyTransactionDate;
@@ -115,7 +168,7 @@ public class VerifyTransactionModel {
 
 
     /**
-     * Returns a JSON string representation of VerifyTransactionModel
+     * Returns a JSON string representation of VerifyMultiDocumentModel
      */
     @Override
     public String toString() {

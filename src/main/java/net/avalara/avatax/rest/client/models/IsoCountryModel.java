@@ -50,12 +50,35 @@ public class IsoCountryModel {
     }
 
 
+    private String alpha3Code;
+
+    /**
+     * Getter for alpha3Code
+     *
+     * The three character ISO 3166 country code
+     */
+    public String getAlpha3Code() {
+        return this.alpha3Code;
+    }
+
+    /**
+     * Setter for alpha3Code
+     *
+     * The three character ISO 3166 country code
+     */
+    public void setAlpha3Code(String value) {
+        this.alpha3Code = value;
+    }
+
+
     private String name;
 
     /**
      * Getter for name
      *
-     * The full name of this country as it is known in US English
+     * The full name of this country in uppercase.
+    * 
+    * For names in proper or formal case, or for names in other languages, please examine the `localizedNames` element for an appropriate name.
      */
     public String getName() {
         return this.name;
@@ -64,7 +87,9 @@ public class IsoCountryModel {
     /**
      * Setter for name
      *
-     * The full name of this country as it is known in US English
+     * The full name of this country in uppercase.
+    * 
+    * For names in proper or formal case, or for names in other languages, please examine the `localizedNames` element for an appropriate name.
      */
     public void setName(String value) {
         this.name = value;
@@ -89,6 +114,31 @@ public class IsoCountryModel {
      */
     public void setIsEuropeanUnion(Boolean value) {
         this.isEuropeanUnion = value;
+    }
+
+
+    private ArrayList<IsoLocalizedName> localizedNames;
+
+    /**
+     * Getter for localizedNames
+     *
+     * A list of localized names in a variety of languages.
+    * 
+    * This list is maintained by the International Standards Organization.
+     */
+    public ArrayList<IsoLocalizedName> getLocalizedNames() {
+        return this.localizedNames;
+    }
+
+    /**
+     * Setter for localizedNames
+     *
+     * A list of localized names in a variety of languages.
+    * 
+    * This list is maintained by the International Standards Organization.
+     */
+    public void setLocalizedNames(ArrayList<IsoLocalizedName> value) {
+        this.localizedNames = value;
     }
 
 

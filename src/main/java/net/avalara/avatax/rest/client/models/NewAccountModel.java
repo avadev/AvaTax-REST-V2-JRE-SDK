@@ -155,6 +155,27 @@ public class NewAccountModel {
     }
 
 
+    private String paymentUrl;
+
+    /**
+     * Getter for paymentUrl
+     *
+     * The payment url where the payment method can be set up
+     */
+    public String getPaymentUrl() {
+        return this.paymentUrl;
+    }
+
+    /**
+     * Setter for paymentUrl
+     *
+     * The payment url where the payment method can be set up
+     */
+    public void setPaymentUrl(String value) {
+        this.paymentUrl = value;
+    }
+
+
     /**
      * Returns a JSON string representation of NewAccountModel
      */

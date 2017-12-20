@@ -202,7 +202,14 @@ public class EcmsModel {
     /**
      * Getter for region
      *
-     * Region
+     * Name or ISO 3166 code identifying the region within the country.
+    * 
+    * This field supports many different region identifiers:
+    *  * Two and three character ISO 3166 region codes
+    *  * Fully spelled out names of the region in ISO supported languages
+    *  * Common alternative spellings for many regions
+    * 
+    * For a full list of all supported codes and names, please see the Definitions API `ListRegions`.
      */
     public String getRegion() {
         return this.region;
@@ -211,7 +218,14 @@ public class EcmsModel {
     /**
      * Setter for region
      *
-     * Region
+     * Name or ISO 3166 code identifying the region within the country.
+    * 
+    * This field supports many different region identifiers:
+    *  * Two and three character ISO 3166 region codes
+    *  * Fully spelled out names of the region in ISO supported languages
+    *  * Common alternative spellings for many regions
+    * 
+    * For a full list of all supported codes and names, please see the Definitions API `ListRegions`.
      */
     public void setRegion(String value) {
         this.region = value;
@@ -244,7 +258,15 @@ public class EcmsModel {
     /**
      * Getter for country
      *
-     * Country
+     * Name or ISO 3166 code identifying the country.
+    * 
+    * This field supports many different country identifiers:
+    *  * Two character ISO 3166 codes
+    *  * Three character ISO 3166 codes
+    *  * Fully spelled out names of the country in ISO supported languages
+    *  * Common alternative spellings for many countries
+    * 
+    * For a full list of all supported codes and names, please see the Definitions API `ListCountries`.
      */
     public String getCountry() {
         return this.country;
@@ -253,7 +275,15 @@ public class EcmsModel {
     /**
      * Setter for country
      *
-     * Country
+     * Name or ISO 3166 code identifying the country.
+    * 
+    * This field supports many different country identifiers:
+    *  * Two character ISO 3166 codes
+    *  * Three character ISO 3166 codes
+    *  * Fully spelled out names of the country in ISO supported languages
+    *  * Common alternative spellings for many countries
+    * 
+    * For a full list of all supported codes and names, please see the Definitions API `ListCountries`.
      */
     public void setCountry(String value) {
         this.country = value;
@@ -412,7 +442,9 @@ public class EcmsModel {
     /**
      * Getter for regionsApplicable
      *
-     * Applicable regions for this exempt certificate
+     * A list of applicable regions for this exempt certificate.
+    * 
+    * To list more than one applicable region, separate the list of region codes with commas.
      */
     public String getRegionsApplicable() {
         return this.regionsApplicable;
@@ -421,7 +453,9 @@ public class EcmsModel {
     /**
      * Setter for regionsApplicable
      *
-     * Applicable regions for this exempt certificate
+     * A list of applicable regions for this exempt certificate.
+    * 
+    * To list more than one applicable region, separate the list of region codes with commas.
      */
     public void setRegionsApplicable(String value) {
         this.regionsApplicable = value;
@@ -580,7 +614,15 @@ public class EcmsModel {
     /**
      * Getter for countryIssued
      *
-     * Which country issued this exempt certificate
+     * Name or ISO 3166 code identifying the country that issued this ECMS certificate.
+    * 
+    * This field supports many different country identifiers:
+    *  * Two character ISO 3166 codes
+    *  * Three character ISO 3166 codes
+    *  * Fully spelled out names of the country in ISO supported languages
+    *  * Common alternative spellings for many countries
+    * 
+    * For a full list of all supported codes and names, please see the Definitions API `ListCountries`.
      */
     public String getCountryIssued() {
         return this.countryIssued;
@@ -589,7 +631,15 @@ public class EcmsModel {
     /**
      * Setter for countryIssued
      *
-     * Which country issued this exempt certificate
+     * Name or ISO 3166 code identifying the country that issued this ECMS certificate.
+    * 
+    * This field supports many different country identifiers:
+    *  * Two character ISO 3166 codes
+    *  * Three character ISO 3166 codes
+    *  * Fully spelled out names of the country in ISO supported languages
+    *  * Common alternative spellings for many countries
+    * 
+    * For a full list of all supported codes and names, please see the Definitions API `ListCountries`.
      */
     public void setCountryIssued(String value) {
         this.countryIssued = value;

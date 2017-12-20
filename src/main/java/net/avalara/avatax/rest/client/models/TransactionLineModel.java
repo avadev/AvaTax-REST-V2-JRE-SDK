@@ -118,7 +118,8 @@ public class TransactionLineModel {
     /**
      * Getter for customerUsageType
      *
-     * The customer usage type for this line item. Usage type often affects taxability rules.
+     * DEPRECATED - The customer usage type for this line item. Usage type often affects taxability rules.
+    * Please use entityUseCode instead.
      */
     public String getCustomerUsageType() {
         return this.customerUsageType;
@@ -127,10 +128,32 @@ public class TransactionLineModel {
     /**
      * Setter for customerUsageType
      *
-     * The customer usage type for this line item. Usage type often affects taxability rules.
+     * DEPRECATED - The customer usage type for this line item. Usage type often affects taxability rules.
+    * Please use entityUseCode instead.
      */
     public void setCustomerUsageType(String value) {
         this.customerUsageType = value;
+    }
+
+
+    private String entityUseCode;
+
+    /**
+     * Getter for entityUseCode
+     *
+     * The entity use code for this line item. Usage type often affects taxability rules.
+     */
+    public String getEntityUseCode() {
+        return this.entityUseCode;
+    }
+
+    /**
+     * Setter for entityUseCode
+     *
+     * The entity use code for this line item. Usage type often affects taxability rules.
+     */
+    public void setEntityUseCode(String value) {
+        this.entityUseCode = value;
     }
 
 
@@ -787,7 +810,11 @@ public class TransactionLineModel {
     /**
      * Getter for taxIncluded
      *
-     * True if tax was included in the purchase price of the item.
+     * Indicates whether the `amount` for this line already includes tax.
+    * 
+    * If this value is `true`, the final price of this line including tax will equal the value in `amount`. 
+    * 
+    * If this value is `null` or `false`, the final price will equal `amount` plus whatever taxes apply to this line.
      */
     public Boolean getTaxIncluded() {
         return this.taxIncluded;
@@ -796,7 +823,11 @@ public class TransactionLineModel {
     /**
      * Setter for taxIncluded
      *
-     * True if tax was included in the purchase price of the item.
+     * Indicates whether the `amount` for this line already includes tax.
+    * 
+    * If this value is `true`, the final price of this line including tax will equal the value in `amount`. 
+    * 
+    * If this value is `null` or `false`, the final price will equal `amount` plus whatever taxes apply to this line.
      */
     public void setTaxIncluded(Boolean value) {
         this.taxIncluded = value;
