@@ -24,9 +24,14 @@ import java.util.HashMap;
  */
 
 /**
- * Create a transaction
+ * A MultiDocument transaction represents a sale or purchase that occurred between more than two companies.
+* 
+* A traditional transaction requires exactly two parties: a seller and a buyer. MultiDocument transactions can
+* involve a marketplace of vendors, each of which contributes some portion of the final transaction. Within
+* a MultiDocument transaction, each individual buyer and seller pair are matched up and converted to a separate
+* document. This separation of documents allows each seller to file their taxes separately.
  */
-public class CreateTransactionModel {
+public class CreateMultiDocumentModel {
 
 
     private String code;
@@ -34,8 +39,11 @@ public class CreateTransactionModel {
     /**
      * Getter for code
      *
-     * The internal reference code used by the client application. This is used for operations such as
-    * Get, Adjust, Settle, and Void. If you leave the transaction code blank, a GUID will be assigned to each transaction.
+     * The transaction code of the MultiDocument transaction.
+    * 
+    * All individual transactions within this MultiDocument object will have this code as a prefix.
+    * 
+    * If you leave the `code` field blank, a GUID will be assigned.
      */
     public String getCode() {
         return this.code;
@@ -44,32 +52,70 @@ public class CreateTransactionModel {
     /**
      * Setter for code
      *
-     * The internal reference code used by the client application. This is used for operations such as
-    * Get, Adjust, Settle, and Void. If you leave the transaction code blank, a GUID will be assigned to each transaction.
+     * The transaction code of the MultiDocument transaction.
+    * 
+    * All individual transactions within this MultiDocument object will have this code as a prefix.
+    * 
+    * If you leave the `code` field blank, a GUID will be assigned.
      */
     public void setCode(String value) {
         this.code = value;
     }
 
 
-    private ArrayList<LineItemModel> lines;
+    private ArrayList<MultiDocumentLineItemModel> lines;
 
     /**
      * Getter for lines
      *
-     * A list of line items that will appear on this transaction.
+     * Lines that will appear on the invoice.
+    * 
+    * For a MultiDocument transaction, each line may represent a different company or reporting location code. AvaTax
+    * will separate this MultiDocument transaction object into many different transactions, one for each pair of legal
+    * entities, so that each legal entity can file their transactional taxes correctly.
      */
-    public ArrayList<LineItemModel> getLines() {
+    public ArrayList<MultiDocumentLineItemModel> getLines() {
         return this.lines;
     }
 
     /**
      * Setter for lines
      *
-     * A list of line items that will appear on this transaction.
+     * Lines that will appear on the invoice.
+    * 
+    * For a MultiDocument transaction, each line may represent a different company or reporting location code. AvaTax
+    * will separate this MultiDocument transaction object into many different transactions, one for each pair of legal
+    * entities, so that each legal entity can file their transactional taxes correctly.
      */
-    public void setLines(ArrayList<LineItemModel> value) {
+    public void setLines(ArrayList<MultiDocumentLineItemModel> value) {
         this.lines = value;
+    }
+
+
+    private Boolean allowAdjust;
+
+    /**
+     * Getter for allowAdjust
+     *
+     * Set this value to true to allow this API call to adjust the MultiDocument model if one already exists.
+    * 
+    * If you omit this field, or if the value is `null`, you will receive an error if you try to create two MultiDocument
+    * objects with the same `code`.
+     */
+    public Boolean getAllowAdjust() {
+        return this.allowAdjust;
+    }
+
+    /**
+     * Setter for allowAdjust
+     *
+     * Set this value to true to allow this API call to adjust the MultiDocument model if one already exists.
+    * 
+    * If you omit this field, or if the value is `null`, you will receive an error if you try to create two MultiDocument
+    * objects with the same `code`.
+     */
+    public void setAllowAdjust(Boolean value) {
+        this.allowAdjust = value;
     }
 
 
@@ -723,7 +769,7 @@ public class CreateTransactionModel {
 
 
     /**
-     * Returns a JSON string representation of CreateTransactionModel
+     * Returns a JSON string representation of CreateMultiDocumentModel
      */
     @Override
     public String toString() {

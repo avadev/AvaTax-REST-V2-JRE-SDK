@@ -76,7 +76,9 @@ public class IsoRegionModel {
     /**
      * Getter for name
      *
-     * The full name, using localized characters, for this region
+     * The full name, using localized characters, for this region, in uppercase.
+    * 
+    * For names in proper or formal case, or for names in other languages, please examine the `localizedNames` element for an appropriate name.
      */
     public String getName() {
         return this.name;
@@ -85,7 +87,9 @@ public class IsoRegionModel {
     /**
      * Setter for name
      *
-     * The full name, using localized characters, for this region
+     * The full name, using localized characters, for this region, in uppercase.
+    * 
+    * For names in proper or formal case, or for names in other languages, please examine the `localizedNames` element for an appropriate name.
      */
     public void setName(String value) {
         this.name = value;
@@ -133,6 +137,31 @@ public class IsoRegionModel {
      */
     public void setStreamlinedSalesTax(Boolean value) {
         this.streamlinedSalesTax = value;
+    }
+
+
+    private ArrayList<IsoLocalizedName> localizedNames;
+
+    /**
+     * Getter for localizedNames
+     *
+     * A list of localized names in a variety of languages.
+    * 
+    * This list is maintained by the International Standards Organization.
+     */
+    public ArrayList<IsoLocalizedName> getLocalizedNames() {
+        return this.localizedNames;
+    }
+
+    /**
+     * Setter for localizedNames
+     *
+     * A list of localized names in a variety of languages.
+    * 
+    * This list is maintained by the International Standards Organization.
+     */
+    public void setLocalizedNames(ArrayList<IsoLocalizedName> value) {
+        this.localizedNames = value;
     }
 
 

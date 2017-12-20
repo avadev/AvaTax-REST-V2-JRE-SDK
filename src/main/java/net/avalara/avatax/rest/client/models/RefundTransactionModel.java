@@ -34,7 +34,7 @@ public class RefundTransactionModel {
     /**
      * Getter for refundTransactionCode
      *
-     * the transaction code for this refund
+     * The transaction code for the refund. This code will be saved to the `ReturnInvoice` transaction, and does not need to match the code of the original sale.
      */
     public String getRefundTransactionCode() {
         return this.refundTransactionCode;
@@ -43,7 +43,7 @@ public class RefundTransactionModel {
     /**
      * Setter for refundTransactionCode
      *
-     * the transaction code for this refund
+     * The transaction code for the refund. This code will be saved to the `ReturnInvoice` transaction, and does not need to match the code of the original sale.
      */
     public void setRefundTransactionCode(String value) {
         this.refundTransactionCode = value;
@@ -55,7 +55,8 @@ public class RefundTransactionModel {
     /**
      * Getter for refundDate
      *
-     * The date of the refund. If null, today's date will be used
+     * The date of the refund. For customers using Avalara's Managed Returns Service, this date controls the month in which the refund
+    * transaction will be reported on a tax filing.
      */
     public Date getRefundDate() {
         return this.refundDate;
@@ -64,7 +65,8 @@ public class RefundTransactionModel {
     /**
      * Setter for refundDate
      *
-     * The date of the refund. If null, today's date will be used
+     * The date of the refund. For customers using Avalara's Managed Returns Service, this date controls the month in which the refund
+    * transaction will be reported on a tax filing.
      */
     public void setRefundDate(Date value) {
         this.refundDate = value;
@@ -76,7 +78,15 @@ public class RefundTransactionModel {
     /**
      * Getter for refundType
      *
-     * Type of this refund
+     * Type of this refund. 
+    * 
+    * To submit a full refund, specify `Full`. 
+    * 
+    * To refund only specific lines from the transaction, specify `Partial` and indicate the lines you wish to apply in the `refundLines` field.
+    * 
+    * To refund the tax that was paid in the previous transaction, specify `TaxOnly`.
+    * 
+    * To issue a percentage-based discount, specify `Percentage`.
      */
     public RefundType getRefundType() {
         return this.refundType;
@@ -85,7 +95,15 @@ public class RefundTransactionModel {
     /**
      * Setter for refundType
      *
-     * Type of this refund
+     * Type of this refund. 
+    * 
+    * To submit a full refund, specify `Full`. 
+    * 
+    * To refund only specific lines from the transaction, specify `Partial` and indicate the lines you wish to apply in the `refundLines` field.
+    * 
+    * To refund the tax that was paid in the previous transaction, specify `TaxOnly`.
+    * 
+    * To issue a percentage-based discount, specify `Percentage`.
      */
     public void setRefundType(RefundType value) {
         this.refundType = value;
@@ -97,7 +115,9 @@ public class RefundTransactionModel {
     /**
      * Getter for refundPercentage
      *
-     * Percentage for refund
+     * The percentage for refund.
+    * 
+    * This value only applies if you choose `refundType = Percentage` or `refundType = Partial`.
      */
     public BigDecimal getRefundPercentage() {
         return this.refundPercentage;
@@ -106,7 +126,9 @@ public class RefundTransactionModel {
     /**
      * Setter for refundPercentage
      *
-     * Percentage for refund
+     * The percentage for refund.
+    * 
+    * This value only applies if you choose `refundType = Percentage` or `refundType = Partial`.
      */
     public void setRefundPercentage(BigDecimal value) {
         this.refundPercentage = value;
@@ -118,7 +140,7 @@ public class RefundTransactionModel {
     /**
      * Getter for refundLines
      *
-     * Process refund for these lines
+     * If you chose a refund of type `Partial`, this indicates which lines from the original transaction are being refunded.
      */
     public ArrayList<String> getRefundLines() {
         return this.refundLines;
@@ -127,7 +149,7 @@ public class RefundTransactionModel {
     /**
      * Setter for refundLines
      *
-     * Process refund for these lines
+     * If you chose a refund of type `Partial`, this indicates which lines from the original transaction are being refunded.
      */
     public void setRefundLines(ArrayList<String> value) {
         this.refundLines = value;
@@ -139,7 +161,7 @@ public class RefundTransactionModel {
     /**
      * Getter for referenceCode
      *
-     * Reference code for this refund
+     * A user-defined reference field containing information about this refund.
      */
     public String getReferenceCode() {
         return this.referenceCode;
@@ -148,7 +170,7 @@ public class RefundTransactionModel {
     /**
      * Setter for referenceCode
      *
-     * Reference code for this refund
+     * A user-defined reference field containing information about this refund.
      */
     public void setReferenceCode(String value) {
         this.referenceCode = value;

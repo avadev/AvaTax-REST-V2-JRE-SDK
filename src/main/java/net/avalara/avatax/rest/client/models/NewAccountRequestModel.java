@@ -35,7 +35,11 @@ public class NewAccountRequestModel {
     /**
      * Getter for offer
      *
-     * Offer with which the partner account needs to be created
+     * The offer code provided to you by your Avalara business development contact. 
+    * 
+    * This code controls what services and rates the customer will be provisioned with upon creation.
+    * 
+    * If you do not know your offer code, please contact your Avalara business development representative.
      */
     public String getOffer() {
         return this.offer;
@@ -44,10 +48,76 @@ public class NewAccountRequestModel {
     /**
      * Setter for offer
      *
-     * Offer with which the partner account needs to be created
+     * The offer code provided to you by your Avalara business development contact. 
+    * 
+    * This code controls what services and rates the customer will be provisioned with upon creation.
+    * 
+    * If you do not know your offer code, please contact your Avalara business development representative.
      */
     public void setOffer(String value) {
         this.offer = value;
+    }
+
+
+    private String campaign;
+
+    /**
+     * Getter for campaign
+     *
+     * If your Avalara business development representative requests, please provide the campaign ID associated with your
+    * signup process. This campaign identifier helps Avalara match users to the context in which they learned about the product
+    * to help improve the accuracy of our messaging.
+    *  
+    * The `campaign` field must be either null or a value provided to you by an Avalara business development representative.
+    * If you provide an unexpected value in this field, your API call will fail.
+     */
+    public String getCampaign() {
+        return this.campaign;
+    }
+
+    /**
+     * Setter for campaign
+     *
+     * If your Avalara business development representative requests, please provide the campaign ID associated with your
+    * signup process. This campaign identifier helps Avalara match users to the context in which they learned about the product
+    * to help improve the accuracy of our messaging.
+    *  
+    * The `campaign` field must be either null or a value provided to you by an Avalara business development representative.
+    * If you provide an unexpected value in this field, your API call will fail.
+     */
+    public void setCampaign(String value) {
+        this.campaign = value;
+    }
+
+
+    private String leadSource;
+
+    /**
+     * Getter for leadSource
+     *
+     * If your Avalara business development representative requests, please provide the lead source value associated with your
+    * signup process. This lead source identifier helps Avalara match users to the context in which they learned about the product
+    * to help improve the accuracy of our messaging.
+    *  
+    * The `leadSource` field must be either null or a value provided to you by an Avalara business development representative.
+    * If you provide an unexpected value in this field, your API call will fail.
+     */
+    public String getLeadSource() {
+        return this.leadSource;
+    }
+
+    /**
+     * Setter for leadSource
+     *
+     * If your Avalara business development representative requests, please provide the lead source value associated with your
+    * signup process. This lead source identifier helps Avalara match users to the context in which they learned about the product
+    * to help improve the accuracy of our messaging.
+    *  
+    * The `leadSource` field must be either null or a value provided to you by an Avalara business development representative.
+    * If you provide an unexpected value in this field, your API call will fail.
+     */
+    public void setLeadSource(String value) {
+        this.leadSource = value;
     }
 
 
@@ -57,6 +127,8 @@ public class NewAccountRequestModel {
      * Getter for effectiveDate
      *
      * The date on which the account should take effect. If null, defaults to today.
+    * 
+    * You should leave this value `null` unless specifically requested by your Avalara business development manager.
      */
     public Date getEffectiveDate() {
         return this.effectiveDate;
@@ -66,6 +138,8 @@ public class NewAccountRequestModel {
      * Setter for effectiveDate
      *
      * The date on which the account should take effect. If null, defaults to today.
+    * 
+    * You should leave this value `null` unless specifically requested by your Avalara business development manager.
      */
     public void setEffectiveDate(Date value) {
         this.effectiveDate = value;
@@ -77,7 +151,9 @@ public class NewAccountRequestModel {
     /**
      * Getter for endDate
      *
-     * The date on which the account should expire. If null, defaults to a 90-day trial account.
+     * The date on which the account should expire.
+    * 
+    * You should leave this value `null` unless specifically requested by your Avalara business development manager.
      */
     public Date getEndDate() {
         return this.endDate;
@@ -86,7 +162,9 @@ public class NewAccountRequestModel {
     /**
      * Setter for endDate
      *
-     * The date on which the account should expire. If null, defaults to a 90-day trial account.
+     * The date on which the account should expire.
+    * 
+    * You should leave this value `null` unless specifically requested by your Avalara business development manager.
      */
     public void setEndDate(Date value) {
         this.endDate = value;
@@ -98,7 +176,7 @@ public class NewAccountRequestModel {
     /**
      * Getter for accountName
      *
-     * Account Name
+     * The name of the account to create
      */
     public String getAccountName() {
         return this.accountName;
@@ -107,7 +185,7 @@ public class NewAccountRequestModel {
     /**
      * Setter for accountName
      *
-     * Account Name
+     * The name of the account to create
      */
     public void setAccountName(String value) {
         this.accountName = value;
@@ -119,7 +197,10 @@ public class NewAccountRequestModel {
     /**
      * Getter for website
      *
-     * Website of the partner account being created
+     * Website of the new customer whose account is being created. 
+    * 
+    * It is strongly recommended to provide the customer's website URL, as this will help our support representatives better
+    * assist customers.
      */
     public String getWebsite() {
         return this.website;
@@ -128,7 +209,10 @@ public class NewAccountRequestModel {
     /**
      * Setter for website
      *
-     * Website of the partner account being created
+     * Website of the new customer whose account is being created. 
+    * 
+    * It is strongly recommended to provide the customer's website URL, as this will help our support representatives better
+    * assist customers.
      */
     public void setWebsite(String value) {
         this.website = value;
@@ -140,7 +224,7 @@ public class NewAccountRequestModel {
     /**
      * Getter for firstName
      *
-     * First Name of the primary contact person for this account
+     * First name of the primary contact person for this account
      */
     public String getFirstName() {
         return this.firstName;
@@ -149,7 +233,7 @@ public class NewAccountRequestModel {
     /**
      * Setter for firstName
      *
-     * First Name of the primary contact person for this account
+     * First name of the primary contact person for this account
      */
     public void setFirstName(String value) {
         this.firstName = value;
@@ -161,7 +245,7 @@ public class NewAccountRequestModel {
     /**
      * Getter for lastName
      *
-     * Last Name of the primary contact person for this account
+     * Last name of the primary contact person for this account
      */
     public String getLastName() {
         return this.lastName;
@@ -170,7 +254,7 @@ public class NewAccountRequestModel {
     /**
      * Setter for lastName
      *
-     * Last Name of the primary contact person for this account
+     * Last name of the primary contact person for this account
      */
     public void setLastName(String value) {
         this.lastName = value;
@@ -245,9 +329,11 @@ public class NewAccountRequestModel {
     /**
      * Getter for userPassword
      *
-     * If no password is supplied, an a tempoarary password is generated by the system and emailed to the user. The user will 
-    * be challenged to change this password upon logging in to the Admin Console. If supplied, will be the set password for 
-    * the default created user, and the user will not be challenged to change their password upon login to the Admin Console.
+     * If instructed by your Avalara business development manager, set this value to a temporary password to permit the user to continue their onboarding process.
+    * 
+    * If this value is null, a temporary password is generated by the system and emailed to the user. 
+    * 
+    * The user will then be asked to choose a permanent password when they first log on to the AvaTax website.
      */
     public String getUserPassword() {
         return this.userPassword;
@@ -256,9 +342,11 @@ public class NewAccountRequestModel {
     /**
      * Setter for userPassword
      *
-     * If no password is supplied, an a tempoarary password is generated by the system and emailed to the user. The user will 
-    * be challenged to change this password upon logging in to the Admin Console. If supplied, will be the set password for 
-    * the default created user, and the user will not be challenged to change their password upon login to the Admin Console.
+     * If instructed by your Avalara business development manager, set this value to a temporary password to permit the user to continue their onboarding process.
+    * 
+    * If this value is null, a temporary password is generated by the system and emailed to the user. 
+    * 
+    * The user will then be asked to choose a permanent password when they first log on to the AvaTax website.
      */
     public void setUserPassword(String value) {
         this.userPassword = value;
@@ -270,9 +358,11 @@ public class NewAccountRequestModel {
     /**
      * Getter for welcomeEmail
      *
-     * Normal - If a welcome email needs to be generated for the user.
-    * Suppressed - If no welcome email needs to be generated for the user.
-    * Custom - If a custom welcome email needs to be generated for the user.
+     * This option controls what type of a welcome email is sent when the account is created.
+    * 
+    * * `Normal` - A standard welcome email will be sent.
+    * * `Suppressed` - No email will be sent.
+    * * `Custom` - If your Avalara business development representative provides you with a customized welcome email for your customers, please select this option.
      */
     public WelcomeEmail getWelcomeEmail() {
         return this.welcomeEmail;
@@ -281,9 +371,11 @@ public class NewAccountRequestModel {
     /**
      * Setter for welcomeEmail
      *
-     * Normal - If a welcome email needs to be generated for the user.
-    * Suppressed - If no welcome email needs to be generated for the user.
-    * Custom - If a custom welcome email needs to be generated for the user.
+     * This option controls what type of a welcome email is sent when the account is created.
+    * 
+    * * `Normal` - A standard welcome email will be sent.
+    * * `Suppressed` - No email will be sent.
+    * * `Custom` - If your Avalara business development representative provides you with a customized welcome email for your customers, please select this option.
      */
     public void setWelcomeEmail(WelcomeEmail value) {
         this.welcomeEmail = value;
@@ -317,6 +409,8 @@ public class NewAccountRequestModel {
      * Getter for companyCode
      *
      * Company code to be assigned to the company created for this account.
+    * 
+    * If no company code is provided, this will be defaulted to "DEFAULT" company code.
      */
     public String getCompanyCode() {
         return this.companyCode;
@@ -326,6 +420,8 @@ public class NewAccountRequestModel {
      * Setter for companyCode
      *
      * Company code to be assigned to the company created for this account.
+    * 
+    * If no company code is provided, this will be defaulted to "DEFAULT" company code.
      */
     public void setCompanyCode(String value) {
         this.companyCode = value;
@@ -359,6 +455,8 @@ public class NewAccountRequestModel {
      * Getter for acceptAvalaraTermsAndConditions
      *
      * Set this to true if and only if the owner of the newly created account accepts Avalara's terms and conditions for your account.
+    * 
+    * Reading and accepting Avalara's terms and conditions is necessary in order for the account to receive a license key.
      */
     public Boolean getAcceptAvalaraTermsAndConditions() {
         return this.acceptAvalaraTermsAndConditions;
@@ -368,6 +466,8 @@ public class NewAccountRequestModel {
      * Setter for acceptAvalaraTermsAndConditions
      *
      * Set this to true if and only if the owner of the newly created account accepts Avalara's terms and conditions for your account.
+    * 
+    * Reading and accepting Avalara's terms and conditions is necessary in order for the account to receive a license key.
      */
     public void setAcceptAvalaraTermsAndConditions(Boolean value) {
         this.acceptAvalaraTermsAndConditions = value;
@@ -380,6 +480,8 @@ public class NewAccountRequestModel {
      * Getter for haveReadAvalaraTermsAndConditions
      *
      * Set this to true if and only if the owner of the newly created account has fully read Avalara's terms and conditions for your account.
+    * 
+    * Reading and accepting Avalara's terms and conditions is necessary in order for the account to receive a license key.
      */
     public Boolean getHaveReadAvalaraTermsAndConditions() {
         return this.haveReadAvalaraTermsAndConditions;
@@ -389,6 +491,8 @@ public class NewAccountRequestModel {
      * Setter for haveReadAvalaraTermsAndConditions
      *
      * Set this to true if and only if the owner of the newly created account has fully read Avalara's terms and conditions for your account.
+    * 
+    * Reading and accepting Avalara's terms and conditions is necessary in order for the account to receive a license key.
      */
     public void setHaveReadAvalaraTermsAndConditions(Boolean value) {
         this.haveReadAvalaraTermsAndConditions = value;

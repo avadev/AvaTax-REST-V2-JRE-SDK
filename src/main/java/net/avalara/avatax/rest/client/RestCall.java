@@ -10,6 +10,7 @@ import org.apache.http.client.methods.*;
 import org.apache.http.entity.ContentType;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.CloseableHttpClient;
+import org.apache.http.impl.client.HttpClientBuilder;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.impl.conn.DefaultProxyRoutePlanner;
 import org.apache.http.util.EntityUtils;
@@ -42,7 +43,7 @@ public class RestCall<T> implements Callable<T> {
             this.request = new HttpDelete(environmentUrl + path.toString());
         } else if (method == "put") {
             this.request = new HttpPut(environmentUrl + path.toString());
-            ((HttpPost)this.request).setEntity(new StringEntity(JsonSerializer.SerializeObject(model), ContentType.create("application/json", "UTF-8")));
+            ((HttpPut)this.request).setEntity(new StringEntity(JsonSerializer.SerializeObject(model), ContentType.create("application/json", "UTF-8")));
         }
 
         buildRequest(this.request);
@@ -52,8 +53,18 @@ public class RestCall<T> implements Callable<T> {
         this(appName, appVersion, machineName, environmentUrl, method, path, model, typeToken, HttpClients.createDefault());
     }
 
+    public RestCall(String appName, String appVersion, String machineName, String environmentUrl, String method, AvaTaxPath path, Object model, TypeToken<T> typeToken, HttpClientBuilder httpClientBuilder) {
+        this(appName, appVersion, machineName, environmentUrl, method, path, model, typeToken, httpClientBuilder.build());
+    }
+
     public RestCall(String appName, String appVersion, String machineName, String environmentUrl, String header, String method, AvaTaxPath path, Object model, TypeToken<T> typeToken) {
         this(appName, appVersion, machineName, environmentUrl, method, path, model, typeToken);
+
+        this.request.setHeader("Authorization", "Basic " + header);
+    }
+
+    public RestCall(String appName, String appVersion, String machineName, String environmentUrl, String header, String method, AvaTaxPath path, Object model, TypeToken<T> typeToken, HttpClientBuilder httpClientBuilder) {
+        this(appName, appVersion, machineName, environmentUrl, method, path, model, typeToken, httpClientBuilder);
 
         this.request.setHeader("Authorization", "Basic " + header);
     }
@@ -94,7 +105,7 @@ public class RestCall<T> implements Callable<T> {
     }
 
     private void buildRequest(HttpRequestBase baseRequest) {
-        String clientId = String.format("%s; %s; %s; %s; %s", appName, appVersion, "JavaRestClient", "17.9.0.126", machineName);
+        String clientId = String.format("%s; %s; %s; %s; %s", appName, appVersion, "JavaRestClient", "17.12.0.147", machineName);
         baseRequest.setHeader(AvaTaxConstants.XClientHeader, clientId);
     }
 }

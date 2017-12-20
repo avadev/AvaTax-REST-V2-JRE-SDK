@@ -25,6 +25,7 @@ import java.util.HashMap;
 
 /**
  * Settle this transaction with your ledger by executing one or many actions against that transaction. 
+* 
 * You may use this endpoint to verify the transaction, change the transaction's code, and commit the transaction for reporting purposes.
 * This endpoint may be used to execute any or all of these actions at once.
  */
@@ -36,7 +37,9 @@ public class SettleTransactionModel {
     /**
      * Getter for verify
      *
-     * To use the "Settle" endpoint to verify a transaction, fill out this value.
+     * To verify this transaction, you may provide information in this field.
+    * 
+    * If you leave this field null, the transaction will not be verified.
      */
     public VerifyTransactionModel getVerify() {
         return this.verify;
@@ -45,7 +48,9 @@ public class SettleTransactionModel {
     /**
      * Setter for verify
      *
-     * To use the "Settle" endpoint to verify a transaction, fill out this value.
+     * To verify this transaction, you may provide information in this field.
+    * 
+    * If you leave this field null, the transaction will not be verified.
      */
     public void setVerify(VerifyTransactionModel value) {
         this.verify = value;
@@ -57,7 +62,9 @@ public class SettleTransactionModel {
     /**
      * Getter for changeCode
      *
-     * To use the "Settle" endpoint to change a transaction's code, fill out this value.
+     * To change the code for this transaction, you may provide information in this field.
+    * 
+    * If you leave this field null, the transaction's code will not be changed.
      */
     public ChangeTransactionCodeModel getChangeCode() {
         return this.changeCode;
@@ -66,7 +73,9 @@ public class SettleTransactionModel {
     /**
      * Setter for changeCode
      *
-     * To use the "Settle" endpoint to change a transaction's code, fill out this value.
+     * To change the code for this transaction, you may provide information in this field.
+    * 
+    * If you leave this field null, the transaction's code will not be changed.
      */
     public void setChangeCode(ChangeTransactionCodeModel value) {
         this.changeCode = value;
@@ -78,8 +87,11 @@ public class SettleTransactionModel {
     /**
      * Getter for commit
      *
-     * To use the "Settle" endpoint to commit a transaction for reporting purposes, fill out this value.
-    * If you use Avalara Returns, committing a transaction will cause that transaction to be filed.
+     * To commit this transaction so that it can be reported on a tax filing, you may provide information in this field.
+    * 
+    * If you leave this field null, the transaction's commit status will not be changed.
+    * 
+    * If you use Avalara's Managed Returns Service, committing a transaction will allow that transaction to be filed.
      */
     public CommitTransactionModel getCommit() {
         return this.commit;
@@ -88,8 +100,11 @@ public class SettleTransactionModel {
     /**
      * Setter for commit
      *
-     * To use the "Settle" endpoint to commit a transaction for reporting purposes, fill out this value.
-    * If you use Avalara Returns, committing a transaction will cause that transaction to be filed.
+     * To commit this transaction so that it can be reported on a tax filing, you may provide information in this field.
+    * 
+    * If you leave this field null, the transaction's commit status will not be changed.
+    * 
+    * If you use Avalara's Managed Returns Service, committing a transaction will allow that transaction to be filed.
      */
     public void setCommit(CommitTransactionModel value) {
         this.commit = value;

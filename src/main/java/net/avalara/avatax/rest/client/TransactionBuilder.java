@@ -229,16 +229,32 @@ public class TransactionBuilder {
         return this;
     }
 
+    public TransactionBuilder withLine(String lineNo, BigDecimal amount, BigDecimal quantity, String taxCode) {
+        return withLine(lineNo, amount, quantity, taxCode, null, null, null, null, null);
+    }
+
     public TransactionBuilder withLine(BigDecimal amount, BigDecimal quantity, String taxCode) {
         return withLine(amount, quantity, taxCode, null, null, null, null, null);
+    }
+
+    public TransactionBuilder withLine(String lineNo, BigDecimal amount, BigDecimal quantity, String taxCode, String itemCode) {
+        return withLine(lineNo, amount, quantity, taxCode, itemCode, null, null, null, null);
     }
 
     public TransactionBuilder withLine(BigDecimal amount, BigDecimal quantity, String taxCode, String itemCode) {
         return withLine(amount, quantity, taxCode, itemCode, null, null, null, null);
     }
 
+    public TransactionBuilder withLine(String lineNo, BigDecimal amount, BigDecimal quantity, String taxCode, String itemCode, String description) {
+        return withLine(lineNo, amount, quantity, taxCode, itemCode, description, null, null, null);
+    }
+
     public TransactionBuilder withLine(BigDecimal amount, BigDecimal quantity, String taxCode, String itemCode, String description) {
         return withLine(amount, quantity, taxCode, itemCode, description, null, null, null);
+    }
+
+    public TransactionBuilder withLine(String lineNo, BigDecimal amount, BigDecimal quantity, String taxCode, String itemCode, String description, String ref1, String ref2) {
+        return withLine(lineNo, amount, quantity, taxCode, itemCode, description, ref1, ref2, null);
     }
 
     public TransactionBuilder withLine(BigDecimal amount, BigDecimal quantity, String taxCode, String itemCode, String description, String ref1, String ref2) {
@@ -246,6 +262,10 @@ public class TransactionBuilder {
     }
 
     public TransactionBuilder withLine(BigDecimal amount, BigDecimal quantity, String taxCode, String itemCode, String description, String ref1, String ref2, String customerUsageType) {
+        return withLine(null, amount, quantity, taxCode, itemCode, description, ref1, ref2, customerUsageType);
+    }
+
+    public TransactionBuilder withLine(String lineNo, BigDecimal amount, BigDecimal quantity, String taxCode, String itemCode, String description, String ref1, String ref2, String customerUsageType) {
         if (quantity == null) {
             quantity = BigDecimal.ONE;
         }
@@ -253,7 +273,12 @@ public class TransactionBuilder {
         LineItemModel line = new LineItemModel();
         line.setAmount(amount);
         line.setQuantity(quantity);
-        line.setNumber(((Integer)this.lineNumber).toString());
+
+        if (lineNo != null && !lineNo.isEmpty()) {
+            line.setNumber(lineNo);
+        } else {
+            line.setNumber(((Integer)this.lineNumber).toString());
+        }
 
         if (taxCode != null && !taxCode.isEmpty()) {
             line.setTaxCode(taxCode);
@@ -287,45 +312,22 @@ public class TransactionBuilder {
     }
 
     public TransactionBuilder withSeparateAddressLine(BigDecimal amount, TransactionAddressType type, String line1, String line2, String line3, String city, String region, String postalCode, String country) {
-        LineItemModel line = new LineItemModel();
-        line.setAmount(amount);
-        line.setQuantity(BigDecimal.ONE);
-        line.setNumber(((Integer)this.lineNumber).toString());
-
-        AddressesModel addresses = new AddressesModel();
-        AddressLocationInfo info = new AddressLocationInfo();
-        info.setLine1(line1);
-        info.setLine2(line2);
-        info.setLine3(line3);
-        info.setCity(city);
-        info.setRegion(region);
-        info.setPostalCode(postalCode);
-        info.setCountry(country);
-
-        if (type == TransactionAddressType.ShipTo) {
-            addresses.setShipTo(info);
-        } else if (type == TransactionAddressType.ShipFrom) {
-            addresses.setShipFrom(info);
-        } else if (type == TransactionAddressType.PointOfOrderAcceptance) {
-            addresses.setPointOfOrderAcceptance(info);
-        } else if (type == TransactionAddressType.PointOfOrderOrigin) {
-            addresses.setPointOfOrderOrigin(info);
-        } else if (type == TransactionAddressType.SingleLocation) {
-            addresses.setSingleLocation(info);
-        }
-
-        line.setAddresses(addresses);
-
-        this.model.getLines().add(line);
-        this.lineNumber++;
-        return this;
+        return this.withSeparateAddressLineAndQuantity(amount, BigDecimal.ONE, type, line1, line2, line3, city, region, postalCode, country);
     }
 
     public TransactionBuilder withSeparateAddressLineAndQuantity(BigDecimal amount, BigDecimal quantity, TransactionAddressType type, String line1, String line2, String line3, String city, String region, String postalCode, String country) {
+        return this.withSeparateAddressLineQuantityAndItemCode(amount, quantity, null, type, line1, line2, line3, city, region, postalCode, country);
+    }
+
+    public TransactionBuilder withSeparateAddressLineQuantityAndItemCode(BigDecimal amount, BigDecimal quantity, String itemCode, TransactionAddressType type, String line1, String line2, String line3, String city, String region, String postalCode, String country) {
         LineItemModel line = new LineItemModel();
         line.setAmount(amount);
         line.setQuantity(quantity);
         line.setNumber(((Integer)this.lineNumber).toString());
+
+        if (itemCode != null && !itemCode.isEmpty()) {
+            line.setItemCode(itemCode);
+        }
 
         AddressesModel addresses = new AddressesModel();
         AddressLocationInfo info = new AddressLocationInfo();

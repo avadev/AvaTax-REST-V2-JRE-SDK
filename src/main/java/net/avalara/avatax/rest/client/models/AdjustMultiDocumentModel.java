@@ -24,9 +24,9 @@ import java.util.HashMap;
  */
 
 /**
- * Replace an existing transaction recorded in AvaTax with a new one.
+ * Replace an existing MultiDocument transaction recorded in AvaTax with a new one.
  */
-public class AdjustTransactionModel {
+public class AdjustMultiDocumentModel {
 
 
     private AdjustmentReason adjustmentReason;
@@ -50,54 +50,54 @@ public class AdjustTransactionModel {
     }
 
 
-    private String adjustmentDescription;
+    private String adjustDescription;
 
     /**
-     * Getter for adjustmentDescription
+     * Getter for adjustDescription
      *
      * If the AdjustmentReason is "Other", specify the reason here.
     * 
     * This is required when the AdjustmentReason is 8 (Other).
      */
-    public String getAdjustmentDescription() {
-        return this.adjustmentDescription;
+    public String getAdjustDescription() {
+        return this.adjustDescription;
     }
 
     /**
-     * Setter for adjustmentDescription
+     * Setter for adjustDescription
      *
      * If the AdjustmentReason is "Other", specify the reason here.
     * 
     * This is required when the AdjustmentReason is 8 (Other).
      */
-    public void setAdjustmentDescription(String value) {
-        this.adjustmentDescription = value;
+    public void setAdjustDescription(String value) {
+        this.adjustDescription = value;
     }
 
 
-    private CreateTransactionModel newTransaction;
+    private CreateMultiDocumentModel newTransaction;
 
     /**
      * Getter for newTransaction
      *
-     * Replace the current transaction with tax data calculated for this new transaction
+     * Replace the current MultiDocument transaction with tax data calculated for this new MultiDocument transaction
      */
-    public CreateTransactionModel getNewTransaction() {
+    public CreateMultiDocumentModel getNewTransaction() {
         return this.newTransaction;
     }
 
     /**
      * Setter for newTransaction
      *
-     * Replace the current transaction with tax data calculated for this new transaction
+     * Replace the current MultiDocument transaction with tax data calculated for this new MultiDocument transaction
      */
-    public void setNewTransaction(CreateTransactionModel value) {
+    public void setNewTransaction(CreateMultiDocumentModel value) {
         this.newTransaction = value;
     }
 
 
     /**
-     * Returns a JSON string representation of AdjustTransactionModel
+     * Returns a JSON string representation of AdjustMultiDocumentModel
      */
     @Override
     public String toString() {

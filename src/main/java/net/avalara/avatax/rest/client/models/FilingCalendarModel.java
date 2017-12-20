@@ -98,7 +98,15 @@ public class FilingCalendarModel {
     /**
      * Getter for formCountry
      *
-     * The two character ISO 3166 country code of the country that issued the tax form for this filing calendar.
+     * Name or ISO 3166 code identifying the country that issued the tax form for this filing calendar.
+    * 
+    * This field supports many different country identifiers:
+    *  * Two character ISO 3166 codes
+    *  * Three character ISO 3166 codes
+    *  * Fully spelled out names of the country in ISO supported languages
+    *  * Common alternative spellings for many countries
+    * 
+    * For a full list of all supported codes and names, please see the Definitions API `ListCountries`.
      */
     public String getFormCountry() {
         return this.formCountry;
@@ -107,7 +115,15 @@ public class FilingCalendarModel {
     /**
      * Setter for formCountry
      *
-     * The two character ISO 3166 country code of the country that issued the tax form for this filing calendar.
+     * Name or ISO 3166 code identifying the country that issued the tax form for this filing calendar.
+    * 
+    * This field supports many different country identifiers:
+    *  * Two character ISO 3166 codes
+    *  * Three character ISO 3166 codes
+    *  * Fully spelled out names of the country in ISO supported languages
+    *  * Common alternative spellings for many countries
+    * 
+    * For a full list of all supported codes and names, please see the Definitions API `ListCountries`.
      */
     public void setFormCountry(String value) {
         this.formCountry = value;
@@ -119,7 +135,14 @@ public class FilingCalendarModel {
     /**
      * Getter for formRegion
      *
-     * The two or three character ISO 3166 code of the region / state / province that issued the tax form for this filing calendar.
+     * Name or ISO 3166 code identifying the region that issued the tax form for this filing calendar.
+    * 
+    * This field supports many different region identifiers:
+    *  * Two and three character ISO 3166 region codes
+    *  * Fully spelled out names of the region in ISO supported languages
+    *  * Common alternative spellings for many regions
+    * 
+    * For a full list of all supported codes and names, please see the Definitions API `ListRegions`.
      */
     public String getFormRegion() {
         return this.formRegion;
@@ -128,7 +151,14 @@ public class FilingCalendarModel {
     /**
      * Setter for formRegion
      *
-     * The two or three character ISO 3166 code of the region / state / province that issued the tax form for this filing calendar.
+     * Name or ISO 3166 code identifying the region that issued the tax form for this filing calendar.
+    * 
+    * This field supports many different region identifiers:
+    *  * Two and three character ISO 3166 region codes
+    *  * Fully spelled out names of the region in ISO supported languages
+    *  * Common alternative spellings for many regions
+    * 
+    * For a full list of all supported codes and names, please see the Definitions API `ListRegions`.
      */
     public void setFormRegion(String value) {
         this.formRegion = value;
@@ -546,7 +576,14 @@ public class FilingCalendarModel {
     /**
      * Getter for mailingAddressRegion
      *
-     * The state, region, or province of the mailing address that will be used when filling out this tax return.
+     * Name or ISO 3166 code identifying the region of the mailing address that will be used when filling out this tax return.
+    * 
+    * This field supports many different region identifiers:
+    *  * Two and three character ISO 3166 region codes
+    *  * Fully spelled out names of the region in ISO supported languages
+    *  * Common alternative spellings for many regions
+    * 
+    * For a full list of all supported codes and names, please see the Definitions API `ListRegions`.
      */
     public String getMailingAddressRegion() {
         return this.mailingAddressRegion;
@@ -555,7 +592,14 @@ public class FilingCalendarModel {
     /**
      * Setter for mailingAddressRegion
      *
-     * The state, region, or province of the mailing address that will be used when filling out this tax return.
+     * Name or ISO 3166 code identifying the region of the mailing address that will be used when filling out this tax return.
+    * 
+    * This field supports many different region identifiers:
+    *  * Two and three character ISO 3166 region codes
+    *  * Fully spelled out names of the region in ISO supported languages
+    *  * Common alternative spellings for many regions
+    * 
+    * For a full list of all supported codes and names, please see the Definitions API `ListRegions`.
      */
     public void setMailingAddressRegion(String value) {
         this.mailingAddressRegion = value;
@@ -588,7 +632,15 @@ public class FilingCalendarModel {
     /**
      * Getter for mailingAddressCountry
      *
-     * The two character ISO-3166 country code of the mailing address that will be used when filling out this tax return.
+     * Name or ISO 3166 code identifying the country of the mailing address that will be used when filling out this tax return.
+    * 
+    * This field supports many different country identifiers:
+    *  * Two character ISO 3166 codes
+    *  * Three character ISO 3166 codes
+    *  * Fully spelled out names of the country in ISO supported languages
+    *  * Common alternative spellings for many countries
+    * 
+    * For a full list of all supported codes and names, please see the Definitions API `ListCountries`.
      */
     public String getMailingAddressCountry() {
         return this.mailingAddressCountry;
@@ -597,7 +649,15 @@ public class FilingCalendarModel {
     /**
      * Setter for mailingAddressCountry
      *
-     * The two character ISO-3166 country code of the mailing address that will be used when filling out this tax return.
+     * Name or ISO 3166 code identifying the country of the mailing address that will be used when filling out this tax return.
+    * 
+    * This field supports many different country identifiers:
+    *  * Two character ISO 3166 codes
+    *  * Three character ISO 3166 codes
+    *  * Fully spelled out names of the country in ISO supported languages
+    *  * Common alternative spellings for many countries
+    * 
+    * For a full list of all supported codes and names, please see the Definitions API `ListCountries`.
      */
     public void setMailingAddressCountry(String value) {
         this.mailingAddressCountry = value;
