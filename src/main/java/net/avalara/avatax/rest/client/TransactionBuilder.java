@@ -229,16 +229,32 @@ public class TransactionBuilder {
         return this;
     }
 
+    public TransactionBuilder withLine(String lineNo, BigDecimal amount, BigDecimal quantity, String taxCode) {
+        return withLine(lineNo, amount, quantity, taxCode, null, null, null, null, null);
+    }
+
     public TransactionBuilder withLine(BigDecimal amount, BigDecimal quantity, String taxCode) {
         return withLine(amount, quantity, taxCode, null, null, null, null, null);
+    }
+
+    public TransactionBuilder withLine(String lineNo, BigDecimal amount, BigDecimal quantity, String taxCode, String itemCode) {
+        return withLine(lineNo, amount, quantity, taxCode, itemCode, null, null, null, null);
     }
 
     public TransactionBuilder withLine(BigDecimal amount, BigDecimal quantity, String taxCode, String itemCode) {
         return withLine(amount, quantity, taxCode, itemCode, null, null, null, null);
     }
 
+    public TransactionBuilder withLine(String lineNo, BigDecimal amount, BigDecimal quantity, String taxCode, String itemCode, String description) {
+        return withLine(lineNo, amount, quantity, taxCode, itemCode, description, null, null, null);
+    }
+
     public TransactionBuilder withLine(BigDecimal amount, BigDecimal quantity, String taxCode, String itemCode, String description) {
         return withLine(amount, quantity, taxCode, itemCode, description, null, null, null);
+    }
+
+    public TransactionBuilder withLine(String lineNo, BigDecimal amount, BigDecimal quantity, String taxCode, String itemCode, String description, String ref1, String ref2) {
+        return withLine(lineNo, amount, quantity, taxCode, itemCode, description, ref1, ref2, null);
     }
 
     public TransactionBuilder withLine(BigDecimal amount, BigDecimal quantity, String taxCode, String itemCode, String description, String ref1, String ref2) {
@@ -246,6 +262,10 @@ public class TransactionBuilder {
     }
 
     public TransactionBuilder withLine(BigDecimal amount, BigDecimal quantity, String taxCode, String itemCode, String description, String ref1, String ref2, String customerUsageType) {
+        return withLine(null, amount, quantity, taxCode, itemCode, description, ref1, ref2, customerUsageType);
+    }
+
+    public TransactionBuilder withLine(String lineNo, BigDecimal amount, BigDecimal quantity, String taxCode, String itemCode, String description, String ref1, String ref2, String customerUsageType) {
         if (quantity == null) {
             quantity = BigDecimal.ONE;
         }
@@ -253,7 +273,12 @@ public class TransactionBuilder {
         LineItemModel line = new LineItemModel();
         line.setAmount(amount);
         line.setQuantity(quantity);
-        line.setNumber(((Integer)this.lineNumber).toString());
+
+        if (lineNo != null && !lineNo.isEmpty()) {
+            line.setNumber(lineNo);
+        } else {
+            line.setNumber(((Integer)this.lineNumber).toString());
+        }
 
         if (taxCode != null && !taxCode.isEmpty()) {
             line.setTaxCode(taxCode);
