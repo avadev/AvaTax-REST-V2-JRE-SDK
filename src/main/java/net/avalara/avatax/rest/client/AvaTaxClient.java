@@ -5,6 +5,7 @@ import net.avalara.avatax.rest.client.models.*;
 import net.avalara.avatax.rest.client.enums.*;
 
 import org.apache.commons.codec.binary.Base64;
+import org.apache.http.impl.client.HttpClientBuilder;
 
 import java.math.BigDecimal;
 import java.util.Date;
@@ -46,7 +47,7 @@ public class AvaTaxClient {
     }
 
     public AvaTaxClient(String appName, String appVersion, String machineName, AvaTaxEnvironment environment) {
-        this(appName, appVersion, machineName, environment == AvaTaxEnvironment.Production ? AvaTaxConstants.Production_Url : AvaTaxConstants.Sandbox_Url);
+        this(appName, appVersion, machineName, environment, null);
     }
 
     public AvaTaxClient(String appName, String appVersion, String machineName, String environmentUrl) {
@@ -55,7 +56,7 @@ public class AvaTaxClient {
     }
 
     public AvaTaxClient(String appName, String appVersion, String machineName, AvaTaxEnvironment environment, String proxyHost, int proxyPort, String proxySchema) {
-        this(appName, appVersion, machineName, environment == AvaTaxEnvironment.Production ? AvaTaxConstants.Production_Url : AvaTaxConstants.Sandbox_Url, proxyHost, proxyPort, proxySchema);
+        this(appName, appVersion, machineName, environment, proxyHost, proxyPort, proxySchema, null);
     }
 
     public AvaTaxClient(String appName, String appVersion, String machineName, String environmentUrl, String proxyHost, int proxyPort, String proxySchema) {
@@ -63,6 +64,32 @@ public class AvaTaxClient {
         this.restCallFactory = new RestCallFactory(appName, appVersion, machineName, environmentUrl, proxyHost, proxyPort, proxySchema);
     }
 
+    public AvaTaxClient(String appName, String appVersion, String machineName, AvaTaxEnvironment environment, ExecutorService threadPool) {
+        this(appName, appVersion, machineName, environment == AvaTaxEnvironment.Production ? AvaTaxConstants.Production_Url : AvaTaxConstants.Sandbox_Url, threadPool);
+    }
+
+    public AvaTaxClient(String appName, String appVersion, String machineName, AvaTaxEnvironment environment, ExecutorService threadPool, HttpClientBuilder httpClientBuilder) {
+        this(appName, appVersion, machineName, environment == AvaTaxEnvironment.Production ? AvaTaxConstants.Production_Url : AvaTaxConstants.Sandbox_Url, threadPool, httpClientBuilder);
+    }
+
+    public AvaTaxClient(String appName, String appVersion, String machineName, String environmentUrl, ExecutorService threadPool) {
+        this(threadPool);
+        this.restCallFactory = new RestCallFactory(appName, appVersion, machineName, environmentUrl);
+    }
+
+    public AvaTaxClient(String appName, String appVersion, String machineName, String environmentUrl, ExecutorService threadPool, HttpClientBuilder httpClientBuilder) {
+        this(threadPool);
+        this.restCallFactory = new RestCallFactory(appName, appVersion, machineName, environmentUrl, httpClientBuilder);
+    }
+
+    public AvaTaxClient(String appName, String appVersion, String machineName, AvaTaxEnvironment environment, String proxyHost, int proxyPort, String proxySchema, ExecutorService threadPool) {
+        this(appName, appVersion, machineName, environment == AvaTaxEnvironment.Production ? AvaTaxConstants.Production_Url : AvaTaxConstants.Sandbox_Url, proxyHost, proxyPort, proxySchema, threadPool);
+    }
+
+    public AvaTaxClient(String appName, String appVersion, String machineName, String environmentUrl, String proxyHost, int proxyPort, String proxySchema, ExecutorService threadPool) {
+        this(threadPool);
+        this.restCallFactory = new RestCallFactory(appName, appVersion, machineName, environmentUrl, proxyHost, proxyPort, proxySchema);
+    }
 
     public AvaTaxClient withSecurity(String securityHeader) {
         this.restCallFactory.addSecurityHeader(securityHeader);
