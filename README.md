@@ -16,10 +16,10 @@ Travis-CI
 The AvaTax JRE SDK is available for download on [Maven](http://search.maven.org/#search%7Cga%7C1%7Cg%3A%22net.avalara.avatax%22).
 
 For the AvaTax JRE SDK, there are four different files available to download:
-* pom : This Project Object Model is an XML file that contains information about the project and configuration details used by Maven to build the project. This file is not needed in order to run the AvaTax JRE SDK. 
-* jar : This is what file you will use to import into your project in order to access AvaTax. This file is needed in order to run the AvaTax JRE SDK. 
-* javadoc.jar : This file is documentation generated from the source code in the jar file. This file is not needed in order to run the AvaTax JRE SDK.
-* sources.jar : This file contains the source code for the jar file. This file is not needed in order to run the AvaTax JRE SDK, but it is helpful to use in order to view the code within the jar file in the editor. In order to view the code, download this file and attach it as a source to the jar file. 
+* **pom** : This Project Object Model is an XML file that contains information about the project and configuration details used by Maven to build the project. This file is not needed in order to run the AvaTax JRE SDK. 
+* **jar** : This is what file you will use to import into your project in order to access AvaTax. This file is needed in order to run the AvaTax JRE SDK. 
+* **javadoc.jar** : This file is documentation generated from the source code in the jar file. This file is not needed in order to run the AvaTax JRE SDK.
+* **sources.jar** : This file contains the source code for the jar file. This file is not needed in order to run the AvaTax JRE SDK, but it is helpful to use in order to view the code within the jar file in the editor. In order to view the code, download this file and attach it as a source to the jar file. 
 
 Once you have the jar file downloaded, import it into your editor as an external jar file. 
 
