@@ -181,7 +181,7 @@ public class TransactionAddressModel {
     /**
      * Getter for region
      *
-     * The region, state, or province for the address.
+     * The ISO 3166 region code. E.g., the second part of ISO 3166-2.
      */
     public String getRegion() {
         return this.region;
@@ -190,7 +190,7 @@ public class TransactionAddressModel {
     /**
      * Setter for region
      *
-     * The region, state, or province for the address.
+     * The ISO 3166 region code. E.g., the second part of ISO 3166-2.
      */
     public void setRegion(String value) {
         this.region = value;
@@ -223,7 +223,7 @@ public class TransactionAddressModel {
     /**
      * Getter for country
      *
-     * The country for the address.
+     * The ISO 3166 country code
      */
     public String getCountry() {
         return this.country;
@@ -232,7 +232,7 @@ public class TransactionAddressModel {
     /**
      * Setter for country
      *
-     * The country for the address.
+     * The ISO 3166 country code
      */
     public void setCountry(String value) {
         this.country = value;
@@ -265,7 +265,7 @@ public class TransactionAddressModel {
     /**
      * Getter for latitude
      *
-     * Latitude for this address (CALC - 13394)
+     * Latitude for this address
      */
     public String getLatitude() {
         return this.latitude;
@@ -274,7 +274,7 @@ public class TransactionAddressModel {
     /**
      * Setter for latitude
      *
-     * Latitude for this address (CALC - 13394)
+     * Latitude for this address
      */
     public void setLatitude(String value) {
         this.latitude = value;
@@ -286,7 +286,7 @@ public class TransactionAddressModel {
     /**
      * Getter for longitude
      *
-     * Longitude for this address (CALC - 13394)
+     * Longitude for this address
      */
     public String getLongitude() {
         return this.longitude;
@@ -295,7 +295,7 @@ public class TransactionAddressModel {
     /**
      * Setter for longitude
      *
-     * Longitude for this address (CALC - 13394)
+     * Longitude for this address
      */
     public void setLongitude(String value) {
         this.longitude = value;

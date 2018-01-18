@@ -134,6 +134,27 @@ public class MrsCompanyModel {
     }
 
 
+    private String companyCode;
+
+    /**
+     * Getter for companyCode
+     *
+     * The company code for the company
+     */
+    public String getCompanyCode() {
+        return this.companyCode;
+    }
+
+    /**
+     * Setter for companyCode
+     *
+     * The company code for the company
+     */
+    public void setCompanyCode(String value) {
+        this.companyCode = value;
+    }
+
+
     /**
      * Returns a JSON string representation of MrsCompanyModel
      */

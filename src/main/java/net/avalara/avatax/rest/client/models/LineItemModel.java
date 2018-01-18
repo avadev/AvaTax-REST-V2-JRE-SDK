@@ -34,7 +34,7 @@ public class LineItemModel {
     /**
      * Getter for number
      *
-     * Line number within this document
+     * The line number of this line within the document. This can be any text that is useful to you, such as numeric line numbers, alphabetic line numbers, or other text.
      */
     public String getNumber() {
         return this.number;
@@ -43,7 +43,7 @@ public class LineItemModel {
     /**
      * Setter for number
      *
-     * Line number within this document
+     * The line number of this line within the document. This can be any text that is useful to you, such as numeric line numbers, alphabetic line numbers, or other text.
      */
     public void setNumber(String value) {
         this.number = value;
@@ -55,7 +55,9 @@ public class LineItemModel {
     /**
      * Getter for quantity
      *
-     * Quantity of items in this line
+     * Quantity of items in this line. This quantity value should always be a positive value representing the quantity of product that changed hands, even when handling returns or refunds.
+    * 
+    * If not provided, or if set to zero, the quantity value is assumed to be one (1).
      */
     public BigDecimal getQuantity() {
         return this.quantity;
@@ -64,7 +66,9 @@ public class LineItemModel {
     /**
      * Setter for quantity
      *
-     * Quantity of items in this line
+     * Quantity of items in this line. This quantity value should always be a positive value representing the quantity of product that changed hands, even when handling returns or refunds.
+    * 
+    * If not provided, or if set to zero, the quantity value is assumed to be one (1).
      */
     public void setQuantity(BigDecimal value) {
         this.quantity = value;
@@ -76,7 +80,11 @@ public class LineItemModel {
     /**
      * Getter for amount
      *
-     * Total amount for this line
+     * Total amount for this line. The amount represents the net currency value that changed hands from the customer (represented by the `customerCode` field) to the company (represented by the `companyCode`) field.
+    * 
+    * For sale transactions, this value must be positive. It indicates the amount of money paid by the customer to the company.
+    * 
+    * For refund or return transactions, this value must be negative.
      */
     public BigDecimal getAmount() {
         return this.amount;
@@ -85,7 +93,11 @@ public class LineItemModel {
     /**
      * Setter for amount
      *
-     * Total amount for this line
+     * Total amount for this line. The amount represents the net currency value that changed hands from the customer (represented by the `customerCode` field) to the company (represented by the `companyCode`) field.
+    * 
+    * For sale transactions, this value must be positive. It indicates the amount of money paid by the customer to the company.
+    * 
+    * For refund or return transactions, this value must be negative.
      */
     public void setAmount(BigDecimal value) {
         this.amount = value;
@@ -153,8 +165,7 @@ public class LineItemModel {
     /**
      * Getter for customerUsageType
      *
-     * DEPERECATED - Customer Usage Type - The client application customer or usage type.
-    * Please use entityUseCode instead.
+     * DEPRECATED - Please use `entityUseCode` instead.
      */
     public String getCustomerUsageType() {
         return this.customerUsageType;
@@ -163,8 +174,7 @@ public class LineItemModel {
     /**
      * Setter for customerUsageType
      *
-     * DEPERECATED - Customer Usage Type - The client application customer or usage type.
-    * Please use entityUseCode instead.
+     * DEPRECATED - Please use `entityUseCode` instead.
      */
     public void setCustomerUsageType(String value) {
         this.customerUsageType = value;
@@ -176,7 +186,10 @@ public class LineItemModel {
     /**
      * Getter for entityUseCode
      *
-     * Entity Use Code - The client application customer or usage type.
+     * Entity Use Code - The client application customer or usage type. This field allows you to designate a type of usage that 
+    * may make this transaction considered exempt by reason of exempt usage.
+    * 
+    * For a list of entity use codes, see the Definitions API `ListEntityUseCodes`.
      */
     public String getEntityUseCode() {
         return this.entityUseCode;
@@ -185,7 +198,10 @@ public class LineItemModel {
     /**
      * Setter for entityUseCode
      *
-     * Entity Use Code - The client application customer or usage type.
+     * Entity Use Code - The client application customer or usage type. This field allows you to designate a type of usage that 
+    * may make this transaction considered exempt by reason of exempt usage.
+    * 
+    * For a list of entity use codes, see the Definitions API `ListEntityUseCodes`.
      */
     public void setEntityUseCode(String value) {
         this.entityUseCode = value;
@@ -197,7 +213,8 @@ public class LineItemModel {
     /**
      * Getter for itemCode
      *
-     * Item Code (SKU)
+     * Item Code (SKU). If you provide an `itemCode` field, the AvaTax API will look up the item you created with the `CreateItems` API call
+    * and use all the information available about that item for this transaction.
      */
     public String getItemCode() {
         return this.itemCode;
@@ -206,7 +223,8 @@ public class LineItemModel {
     /**
      * Setter for itemCode
      *
-     * Item Code (SKU)
+     * Item Code (SKU). If you provide an `itemCode` field, the AvaTax API will look up the item you created with the `CreateItems` API call
+    * and use all the information available about that item for this transaction.
      */
     public void setItemCode(String value) {
         this.itemCode = value;
@@ -218,7 +236,7 @@ public class LineItemModel {
     /**
      * Getter for exemptionCode
      *
-     * Exemption number for this line
+     * Exemption certificate number for this line.
      */
     public String getExemptionCode() {
         return this.exemptionCode;
@@ -227,7 +245,7 @@ public class LineItemModel {
     /**
      * Setter for exemptionCode
      *
-     * Exemption number for this line
+     * Exemption certificate number for this line.
      */
     public void setExemptionCode(String value) {
         this.exemptionCode = value;
@@ -239,7 +257,8 @@ public class LineItemModel {
     /**
      * Getter for discounted
      *
-     * True if the document discount should be applied to this line
+     * True if the document discount should be applied to this line. If this value is false, or not provided, discounts will not be 
+    * applied to this line even if they are specified on the root `discount` element.
      */
     public Boolean getDiscounted() {
         return this.discounted;
@@ -248,7 +267,8 @@ public class LineItemModel {
     /**
      * Setter for discounted
      *
-     * True if the document discount should be applied to this line
+     * True if the document discount should be applied to this line. If this value is false, or not provided, discounts will not be 
+    * applied to this line even if they are specified on the root `discount` element.
      */
     public void setDiscounted(Boolean value) {
         this.discounted = value;
@@ -289,7 +309,9 @@ public class LineItemModel {
     /**
      * Getter for revenueAccount
      *
-     * Revenue Account
+     * Revenue Account (Customer Defined Field).
+    * 
+    * This field is available for you to use to provide whatever information your implementation requires. It does not affect tax calculation.
      */
     public String getRevenueAccount() {
         return this.revenueAccount;
@@ -298,7 +320,9 @@ public class LineItemModel {
     /**
      * Setter for revenueAccount
      *
-     * Revenue Account
+     * Revenue Account (Customer Defined Field).
+    * 
+    * This field is available for you to use to provide whatever information your implementation requires. It does not affect tax calculation.
      */
     public void setRevenueAccount(String value) {
         this.revenueAccount = value;
@@ -310,7 +334,9 @@ public class LineItemModel {
     /**
      * Getter for ref1
      *
-     * Reference 1 - Client specific reference field
+     * Ref1 (Customer Defined Field)
+    * 
+    * This field is available for you to use to provide whatever information your implementation requires. It does not affect tax calculation.
      */
     public String getRef1() {
         return this.ref1;
@@ -319,7 +345,9 @@ public class LineItemModel {
     /**
      * Setter for ref1
      *
-     * Reference 1 - Client specific reference field
+     * Ref1 (Customer Defined Field)
+    * 
+    * This field is available for you to use to provide whatever information your implementation requires. It does not affect tax calculation.
      */
     public void setRef1(String value) {
         this.ref1 = value;
@@ -331,7 +359,9 @@ public class LineItemModel {
     /**
      * Getter for ref2
      *
-     * Reference 2 - Client specific reference field
+     * Ref2 (Customer Defined Field)
+    * 
+    * This field is available for you to use to provide whatever information your implementation requires. It does not affect tax calculation.
      */
     public String getRef2() {
         return this.ref2;
@@ -340,7 +370,9 @@ public class LineItemModel {
     /**
      * Setter for ref2
      *
-     * Reference 2 - Client specific reference field
+     * Ref2 (Customer Defined Field)
+    * 
+    * This field is available for you to use to provide whatever information your implementation requires. It does not affect tax calculation.
      */
     public void setRef2(String value) {
         this.ref2 = value;
@@ -352,7 +384,9 @@ public class LineItemModel {
     /**
      * Getter for description
      *
-     * Item description. This is required for SST transactions if an unmapped ItemCode is used.
+     * Item description.
+    * 
+    * For Streamlined Sales Tax (SST) customers, this field is required if an unmapped `itemCode` is used.
      */
     public String getDescription() {
         return this.description;
@@ -361,7 +395,9 @@ public class LineItemModel {
     /**
      * Setter for description
      *
-     * Item description. This is required for SST transactions if an unmapped ItemCode is used.
+     * Item description.
+    * 
+    * For Streamlined Sales Tax (SST) customers, this field is required if an unmapped `itemCode` is used.
      */
     public void setDescription(String value) {
         this.description = value;
@@ -404,7 +440,7 @@ public class LineItemModel {
     /**
      * Getter for taxOverride
      *
-     * Specifies a tax override for this line
+     * Specifies a tax override for this line.
      */
     public TaxOverrideModel getTaxOverride() {
         return this.taxOverride;
@@ -413,7 +449,7 @@ public class LineItemModel {
     /**
      * Setter for taxOverride
      *
-     * Specifies a tax override for this line
+     * Specifies a tax override for this line.
      */
     public void setTaxOverride(TaxOverrideModel value) {
         this.taxOverride = value;
@@ -426,7 +462,8 @@ public class LineItemModel {
      * Getter for parameters
      *
      * Special parameters that apply to this line within this transaction.
-    * To get a full list of available parameters, please use the /api/v2/definitions/parameters endpoint.
+    * 
+    * To get a full list of available parameters, please use the `ListParameters` API.
      */
     public HashMap<String, String> getParameters() {
         return this.parameters;
@@ -436,10 +473,38 @@ public class LineItemModel {
      * Setter for parameters
      *
      * Special parameters that apply to this line within this transaction.
-    * To get a full list of available parameters, please use the /api/v2/definitions/parameters endpoint.
+    * 
+    * To get a full list of available parameters, please use the `ListParameters` API.
      */
     public void setParameters(HashMap<String, String> value) {
         this.parameters = value;
+    }
+
+
+    private String hsCode;
+
+    /**
+     * Getter for hsCode
+     *
+     * The Item code for Custom Duty / Global Import tax determination
+    * Harmonized Tariff System code for this transaction.
+    * 
+    * For a list of harmonized tariff codes, see the Definitions API for harmonized tariff codes.
+     */
+    public String getHsCode() {
+        return this.hsCode;
+    }
+
+    /**
+     * Setter for hsCode
+     *
+     * The Item code for Custom Duty / Global Import tax determination
+    * Harmonized Tariff System code for this transaction.
+    * 
+    * For a list of harmonized tariff codes, see the Definitions API for harmonized tariff codes.
+     */
+    public void setHsCode(String value) {
+        this.hsCode = value;
     }
 
 

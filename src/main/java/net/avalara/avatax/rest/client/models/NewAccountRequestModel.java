@@ -219,6 +219,33 @@ public class NewAccountRequestModel {
     }
 
 
+    private String paymentMethodId;
+
+    /**
+     * Getter for paymentMethodId
+     *
+     * Payment Method to be associated with the account.
+    * 
+    * This is strictly to be used internally unless your Avalara business development manager specifically asks you to provide this value
+    * while attempting to create an account.
+     */
+    public String getPaymentMethodId() {
+        return this.paymentMethodId;
+    }
+
+    /**
+     * Setter for paymentMethodId
+     *
+     * Payment Method to be associated with the account.
+    * 
+    * This is strictly to be used internally unless your Avalara business development manager specifically asks you to provide this value
+    * while attempting to create an account.
+     */
+    public void setPaymentMethodId(String value) {
+        this.paymentMethodId = value;
+    }
+
+
     private String firstName;
 
     /**

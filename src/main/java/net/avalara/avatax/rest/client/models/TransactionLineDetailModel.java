@@ -852,6 +852,31 @@ public class TransactionLineDetailModel {
     }
 
 
+    private Boolean isNonPassThru;
+
+    /**
+     * Getter for isNonPassThru
+     *
+     * True if this value is a non-passthrough tax.
+    * 
+    * A non-passthrough tax is a tax that may not be charged to a customer; it must be paid directly by the company.
+     */
+    public Boolean getIsNonPassThru() {
+        return this.isNonPassThru;
+    }
+
+    /**
+     * Setter for isNonPassThru
+     *
+     * True if this value is a non-passthrough tax.
+    * 
+    * A non-passthrough tax is a tax that may not be charged to a customer; it must be paid directly by the company.
+     */
+    public void setIsNonPassThru(Boolean value) {
+        this.isNonPassThru = value;
+    }
+
+
     /**
      * Returns a JSON string representation of TransactionLineDetailModel
      */

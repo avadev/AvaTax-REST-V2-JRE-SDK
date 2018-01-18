@@ -761,6 +761,48 @@ public class CompanyModel {
     }
 
 
+    private String mossId;
+
+    /**
+     * Getter for mossId
+     *
+     * The unique identifier of the mini-one-stop-shop used for Value Added Tax (VAT) processing.
+     */
+    public String getMossId() {
+        return this.mossId;
+    }
+
+    /**
+     * Setter for mossId
+     *
+     * The unique identifier of the mini-one-stop-shop used for Value Added Tax (VAT) processing.
+     */
+    public void setMossId(String value) {
+        this.mossId = value;
+    }
+
+
+    private String mossCountry;
+
+    /**
+     * Getter for mossCountry
+     *
+     * The country code of the mini-one-stop-shop used for Value Added Tax (VAT) processing.
+     */
+    public String getMossCountry() {
+        return this.mossCountry;
+    }
+
+    /**
+     * Setter for mossCountry
+     *
+     * The country code of the mini-one-stop-shop used for Value Added Tax (VAT) processing.
+     */
+    public void setMossCountry(String value) {
+        this.mossCountry = value;
+    }
+
+
     /**
      * Returns a JSON string representation of CompanyModel
      */
