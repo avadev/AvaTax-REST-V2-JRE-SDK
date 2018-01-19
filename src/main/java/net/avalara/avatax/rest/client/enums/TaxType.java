@@ -34,6 +34,11 @@ public enum TaxType {
     EWaste,
 
     /** 
+     * LandedCost tax type
+     */
+    LandedCost,
+
+    /** 
      * Consumer Use Tax
      */
     ConsumerUse,

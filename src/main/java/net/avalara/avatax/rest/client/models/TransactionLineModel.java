@@ -839,7 +839,12 @@ public class TransactionLineModel {
     /**
      * Getter for details
      *
-     * Optional: A list of tax details for this line item. To fetch this list, add the query string "?$include=Details" to your URL.
+     * Optional: A list of tax details for this line item. 
+    * 
+    * Tax details represent taxes being charged by various tax authorities. Taxes that appear in the `details` collection are intended to be 
+    * displayed to the customer and charged as a 'tax' on the invoice.
+    * 
+    * To fetch this list, add the query string `?$include=Details` to your URL.
      */
     public ArrayList<TransactionLineDetailModel> getDetails() {
         return this.details;
@@ -848,10 +853,42 @@ public class TransactionLineModel {
     /**
      * Setter for details
      *
-     * Optional: A list of tax details for this line item. To fetch this list, add the query string "?$include=Details" to your URL.
+     * Optional: A list of tax details for this line item. 
+    * 
+    * Tax details represent taxes being charged by various tax authorities. Taxes that appear in the `details` collection are intended to be 
+    * displayed to the customer and charged as a 'tax' on the invoice.
+    * 
+    * To fetch this list, add the query string `?$include=Details` to your URL.
      */
     public void setDetails(ArrayList<TransactionLineDetailModel> value) {
         this.details = value;
+    }
+
+
+    private ArrayList<TransactionLineDetailModel> nonPassthroughDetails;
+
+    /**
+     * Getter for nonPassthroughDetails
+     *
+     * Optional: A list of non-passthrough tax details for this line item.
+    * 
+    * Tax details represent taxes being charged by various tax authorities. Taxes that appear in the `nonPassthroughDetails` collection are 
+    * taxes that must be paid directly by the company and not shown to the customer.
+     */
+    public ArrayList<TransactionLineDetailModel> getNonPassthroughDetails() {
+        return this.nonPassthroughDetails;
+    }
+
+    /**
+     * Setter for nonPassthroughDetails
+     *
+     * Optional: A list of non-passthrough tax details for this line item.
+    * 
+    * Tax details represent taxes being charged by various tax authorities. Taxes that appear in the `nonPassthroughDetails` collection are 
+    * taxes that must be paid directly by the company and not shown to the customer.
+     */
+    public void setNonPassthroughDetails(ArrayList<TransactionLineDetailModel> value) {
+        this.nonPassthroughDetails = value;
     }
 
 
@@ -894,6 +931,50 @@ public class TransactionLineModel {
      */
     public void setParameters(HashMap<String, String> value) {
         this.parameters = value;
+    }
+
+
+    private String hsCode;
+
+    /**
+     * Getter for hsCode
+     *
+     * The cross-border harmonized system code (HSCode) used to calculate tariffs and duties for this line item. 
+    * For a full list of HS codes, see `ListCrossBorderCodes()`.
+     */
+    public String getHsCode() {
+        return this.hsCode;
+    }
+
+    /**
+     * Setter for hsCode
+     *
+     * The cross-border harmonized system code (HSCode) used to calculate tariffs and duties for this line item. 
+    * For a full list of HS codes, see `ListCrossBorderCodes()`.
+     */
+    public void setHsCode(String value) {
+        this.hsCode = value;
+    }
+
+
+    private BigDecimal costInsuranceFreight;
+
+    /**
+     * Getter for costInsuranceFreight
+     *
+     * Indicates the cost of insurance and freight for this line.
+     */
+    public BigDecimal getCostInsuranceFreight() {
+        return this.costInsuranceFreight;
+    }
+
+    /**
+     * Setter for costInsuranceFreight
+     *
+     * Indicates the cost of insurance and freight for this line.
+     */
+    public void setCostInsuranceFreight(BigDecimal value) {
+        this.costInsuranceFreight = value;
     }
 
 

@@ -108,5 +108,10 @@ public enum ServiceTypeId {
      */
     AvaBottle,
 
+    /** 
+     * MRSComplianceManager
+     */
+    MRSComplianceManager,
+
 }
     

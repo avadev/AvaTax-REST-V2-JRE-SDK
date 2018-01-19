@@ -155,6 +155,27 @@ public class PingResultModel {
     }
 
 
+    private String crmid;
+
+    /**
+     * Getter for crmid
+     *
+     * The connected Salesforce account.
+     */
+    public String getCrmid() {
+        return this.crmid;
+    }
+
+    /**
+     * Setter for crmid
+     *
+     * The connected Salesforce account.
+     */
+    public void setCrmid(String value) {
+        this.crmid = value;
+    }
+
+
     /**
      * Returns a JSON string representation of PingResultModel
      */

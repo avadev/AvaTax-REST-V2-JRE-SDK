@@ -871,7 +871,10 @@ public class TransactionModel {
     /**
      * Getter for isSellerImporterOfRecord
      *
-     * If true, this seller was considered the importer of record of a product shipped internationally.
+     * By default, the value is null, when the value is null, the value can be set at nexus level and used.
+    * If the value is not null, it will override the value at nexus level.
+    * 
+    * If true, this seller was considered the importer of record of a product shipped internationally.
     * 
     * If this transaction is not an international transaction, this field may be left blank.
     * 
@@ -887,7 +890,10 @@ public class TransactionModel {
     /**
      * Setter for isSellerImporterOfRecord
      *
-     * If true, this seller was considered the importer of record of a product shipped internationally.
+     * By default, the value is null, when the value is null, the value can be set at nexus level and used.
+    * If the value is not null, it will override the value at nexus level.
+    * 
+    * If true, this seller was considered the importer of record of a product shipped internationally.
     * 
     * If this transaction is not an international transaction, this field may be left blank.
     * 

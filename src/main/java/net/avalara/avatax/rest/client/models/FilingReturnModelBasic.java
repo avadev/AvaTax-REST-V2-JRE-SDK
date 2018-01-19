@@ -625,6 +625,69 @@ public class FilingReturnModelBasic {
     }
 
 
+    private BigDecimal excludedSalesAmount;
+
+    /**
+     * Getter for excludedSalesAmount
+     *
+     * The amount of sales excluded from the liability calculation
+     */
+    public BigDecimal getExcludedSalesAmount() {
+        return this.excludedSalesAmount;
+    }
+
+    /**
+     * Setter for excludedSalesAmount
+     *
+     * The amount of sales excluded from the liability calculation
+     */
+    public void setExcludedSalesAmount(BigDecimal value) {
+        this.excludedSalesAmount = value;
+    }
+
+
+    private BigDecimal excludedNonTaxableAmount;
+
+    /**
+     * Getter for excludedNonTaxableAmount
+     *
+     * The amount of non-taxable sales excluded from the liability calculation
+     */
+    public BigDecimal getExcludedNonTaxableAmount() {
+        return this.excludedNonTaxableAmount;
+    }
+
+    /**
+     * Setter for excludedNonTaxableAmount
+     *
+     * The amount of non-taxable sales excluded from the liability calculation
+     */
+    public void setExcludedNonTaxableAmount(BigDecimal value) {
+        this.excludedNonTaxableAmount = value;
+    }
+
+
+    private BigDecimal excludedTaxAmount;
+
+    /**
+     * Getter for excludedTaxAmount
+     *
+     * The amount of tax excluded from the liability calculation
+     */
+    public BigDecimal getExcludedTaxAmount() {
+        return this.excludedTaxAmount;
+    }
+
+    /**
+     * Setter for excludedTaxAmount
+     *
+     * The amount of tax excluded from the liability calculation
+     */
+    public void setExcludedTaxAmount(BigDecimal value) {
+        this.excludedTaxAmount = value;
+    }
+
+
     private AccrualType accrualType;
 
     /**

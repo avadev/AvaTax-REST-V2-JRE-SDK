@@ -614,6 +614,36 @@ public enum ErrorCodeId {
     CompanyAccountAndParentAccountMismatch,
 
     /** 
+     * 
+     */
+    InvalidFileContentType,
+
+    /** 
+     * 
+     */
+    InvalidItemAttributeName,
+
+    /** 
+     * 
+     */
+    EcmsDisabled,
+
+    /** 
+     * 
+     */
+    UnknownConjunctionError,
+
+    /** 
+     * 
+     */
+    NoLinesDiscounted,
+
+    /** 
+     * 
+     */
+    FailedToDelete,
+
+    /** 
      * Batch errors
      */
     BatchSalesAuditMustBeZippedError,
@@ -836,7 +866,7 @@ public enum ErrorCodeId {
     /** 
      * 
      */
-    NullRefundPercentageAndLines,
+    RefundLinesRequired,
 
     /** 
      * 
@@ -999,6 +1029,11 @@ public enum ErrorCodeId {
     InvalidCoverLetterTitle,
 
     /** 
+     * 
+     */
+    AccountNotProvisioned,
+
+    /** 
      * Multi document error codes
      */
     TransactionNotCancelled,
@@ -1087,6 +1122,11 @@ public enum ErrorCodeId {
      * Worksheet Exception
      */
     WorksheetException,
+
+    /** 
+     * LandedCost Exception
+     */
+    MissingSystemId,
 
 }
     

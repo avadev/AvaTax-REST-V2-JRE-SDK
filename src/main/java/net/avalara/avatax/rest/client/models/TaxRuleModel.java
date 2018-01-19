@@ -595,6 +595,7 @@ public class TaxRuleModel {
     *  * Common alternative spellings for many regions
     * 
     * For a full list of all supported codes and names, please see the Definitions API `ListRegions`.
+    * NOTE: Region is not required for non-US countries because the user may be either creating a Country-level or Region-level rule.
      */
     public String getRegion() {
         return this.region;
@@ -611,6 +612,7 @@ public class TaxRuleModel {
     *  * Common alternative spellings for many regions
     * 
     * For a full list of all supported codes and names, please see the Definitions API `ListRegions`.
+    * NOTE: Region is not required for non-US countries because the user may be either creating a Country-level or Region-level rule.
      */
     public void setRegion(String value) {
         this.region = value;
@@ -803,6 +805,100 @@ public class TaxRuleModel {
      */
     public void setRateTypeTaxTypeMappingId(Integer value) {
         this.rateTypeTaxTypeMappingId = value;
+    }
+
+
+    private String nonPassthroughExpression;
+
+    /**
+     * Getter for nonPassthroughExpression
+     *
+     * Indicates the expression to use to determine whether this tax rule generates a non-passthrough tax.
+    * 
+    * Non-passthrough taxes are taxes that cannot be charged to the customer.
+     */
+    public String getNonPassthroughExpression() {
+        return this.nonPassthroughExpression;
+    }
+
+    /**
+     * Setter for nonPassthroughExpression
+     *
+     * Indicates the expression to use to determine whether this tax rule generates a non-passthrough tax.
+    * 
+    * Non-passthrough taxes are taxes that cannot be charged to the customer.
+     */
+    public void setNonPassthroughExpression(String value) {
+        this.nonPassthroughExpression = value;
+    }
+
+
+    private String currencyCode;
+
+    /**
+     * Getter for currencyCode
+     *
+     * The currency code to use for this rule.
+     */
+    public String getCurrencyCode() {
+        return this.currencyCode;
+    }
+
+    /**
+     * Setter for currencyCode
+     *
+     * The currency code to use for this rule.
+     */
+    public void setCurrencyCode(String value) {
+        this.currencyCode = value;
+    }
+
+
+    private Integer preferredProgramId;
+
+    /**
+     * Getter for preferredProgramId
+     *
+     * For rules that only apply to one tax code program, this value indicates what program should be used for implementing this rule.
+     */
+    public Integer getPreferredProgramId() {
+        return this.preferredProgramId;
+    }
+
+    /**
+     * Setter for preferredProgramId
+     *
+     * For rules that only apply to one tax code program, this value indicates what program should be used for implementing this rule.
+     */
+    public void setPreferredProgramId(Integer value) {
+        this.preferredProgramId = value;
+    }
+
+
+    private Integer uomId;
+
+    /**
+     * Getter for uomId
+     *
+     * For tax rules that are calculated using units of measurement, this indicates the unit of measurement type
+    * used to calculate the amounts for this rule.
+    * 
+    * For a list of units of measurement, please call `ListUnitsOfMeasurement()`.
+     */
+    public Integer getUomId() {
+        return this.uomId;
+    }
+
+    /**
+     * Setter for uomId
+     *
+     * For tax rules that are calculated using units of measurement, this indicates the unit of measurement type
+    * used to calculate the amounts for this rule.
+    * 
+    * For a list of units of measurement, please call `ListUnitsOfMeasurement()`.
+     */
+    public void setUomId(Integer value) {
+        this.uomId = value;
     }
 
 
