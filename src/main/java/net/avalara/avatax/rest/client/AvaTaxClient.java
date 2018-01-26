@@ -12383,6 +12383,8 @@ This gets the basic information from the filings and doesn't include anything ex
      * 
      * After this API call succeeds, the transaction will have a new URL matching its new `code`.
      * 
+     * If you have more than one document with the same `code`, specify the `documentType` parameter to choose between them.
+     * 
      * A transaction represents a unique potentially taxable action that your company has recorded, and transactions include actions like
      * 
      * @param companyCode The company code of the company that recorded this transaction
@@ -12409,6 +12411,8 @@ This gets the basic information from the filings and doesn't include anything ex
      * 
      * After this API call succeeds, the transaction will have a new URL matching its new `code`.
      * 
+     * If you have more than one document with the same `code`, specify the `documentType` parameter to choose between them.
+     * 
      * A transaction represents a unique potentially taxable action that your company has recorded, and transactions include actions like
      * 
      * @param companyCode The company code of the company that recorded this transaction
@@ -12428,10 +12432,15 @@ This gets the basic information from the filings and doesn't include anything ex
     /**
      * Commit a transaction for reporting
      * 
-     * Marks a transaction by changing its status to 'Committed'.
+     * Marks a transaction by changing its status to `Committed`.
+     * 
      * Transactions that are committed are available to be reported to a tax authority by Avalara Managed Returns.
+     * 
      * A transaction represents a unique potentially taxable action that your company has recorded, and transactions include actions like
      * sales, purchases, inventory transfer, and returns (also called refunds).
+     * 
+     * If you have more than one document with the same `code`, specify the `documentType` parameter to choose between them.
+     * 
      * 
      * @param companyCode The company code of the company that recorded this transaction
      * @param transactionCode The transaction code to commit
@@ -12450,10 +12459,15 @@ This gets the basic information from the filings and doesn't include anything ex
     /**
      * Commit a transaction for reporting
      * 
-     * Marks a transaction by changing its status to 'Committed'.
+     * Marks a transaction by changing its status to `Committed`.
+     * 
      * Transactions that are committed are available to be reported to a tax authority by Avalara Managed Returns.
+     * 
      * A transaction represents a unique potentially taxable action that your company has recorded, and transactions include actions like
      * sales, purchases, inventory transfer, and returns (also called refunds).
+     * 
+     * If you have more than one document with the same `code`, specify the `documentType` parameter to choose between them.
+     * 
      * 
      * @param companyCode The company code of the company that recorded this transaction
      * @param transactionCode The transaction code to commit
@@ -12981,6 +12995,8 @@ This gets the basic information from the filings and doesn't include anything ex
      * 
      * This API is only available to customers in Sandbox with AvaTaxPro subscription.  On production servers, this API is available by invitation only.
      * 
+     * If you have more than one document with the same `code`, specify the `documentType` parameter to choose between them.
+     * 
      * A transaction represents a unique potentially taxable action that your company has recorded, and transactions include actions like
      * 
      * @param companyCode The company code of the company that recorded this transaction
@@ -13006,6 +13022,8 @@ This gets the basic information from the filings and doesn't include anything ex
      * After this API call succeeds, the document will be locked and can't be voided or adjusted.
      * 
      * This API is only available to customers in Sandbox with AvaTaxPro subscription.  On production servers, this API is available by invitation only.
+     * 
+     * If you have more than one document with the same `code`, specify the `documentType` parameter to choose between them.
      * 
      * A transaction represents a unique potentially taxable action that your company has recorded, and transactions include actions like
      * 
@@ -13133,6 +13151,8 @@ This gets the basic information from the filings and doesn't include anything ex
      * A transaction represents a unique potentially taxable action that your company has recorded, and transactions include actions like
      * sales, purchases, inventory transfer, and returns (also called refunds).
      * 
+     * If you have more than one document with the same `code`, specify the `documentType` parameter to choose between them.
+     * 
      * 
      * @param companyCode The company code of the company that recorded this transaction
      * @param transactionCode The transaction code to settle
@@ -13158,6 +13178,8 @@ This gets the basic information from the filings and doesn't include anything ex
      * A transaction represents a unique potentially taxable action that your company has recorded, and transactions include actions like
      * sales, purchases, inventory transfer, and returns (also called refunds).
      * 
+     * If you have more than one document with the same `code`, specify the `documentType` parameter to choose between them.
+     * 
      * 
      * @param companyCode The company code of the company that recorded this transaction
      * @param transactionCode The transaction code to settle
@@ -13179,6 +13201,8 @@ This gets the basic information from the filings and doesn't include anything ex
      * Verifies that the transaction uniquely identified by this URL matches certain expected values.
      * 
      * If the transaction does not match these expected values, this API will return an error code indicating which value did not match.
+     * 
+     * If you have more than one document with the same `code`, specify the `documentType` parameter to choose between them.
      * 
      * A transaction represents a unique potentially taxable action that your company has recorded, and transactions include actions like
      * 
@@ -13203,6 +13227,8 @@ This gets the basic information from the filings and doesn't include anything ex
      * 
      * If the transaction does not match these expected values, this API will return an error code indicating which value did not match.
      * 
+     * If you have more than one document with the same `code`, specify the `documentType` parameter to choose between them.
+     * 
      * A transaction represents a unique potentially taxable action that your company has recorded, and transactions include actions like
      * 
      * @param companyCode The company code of the company that recorded this transaction
@@ -13223,9 +13249,14 @@ This gets the basic information from the filings and doesn't include anything ex
      * Void a transaction
      * 
      * Voids the current transaction uniquely identified by this URL.
+     * 
      * A transaction represents a unique potentially taxable action that your company has recorded, and transactions include actions like
      * sales, purchases, inventory transfer, and returns (also called refunds).
-     * When you void a transaction, that transaction's status is recorded as 'DocVoided'.
+     * 
+     * When you void a transaction, that transaction's status is recorded as `DocVoided`.
+     * 
+     * If you have more than one document with the same `code`, specify the `documentType` parameter to choose between them.
+     * 
      * 
      * @param companyCode The company code of the company that recorded this transaction
      * @param transactionCode The transaction code to void
@@ -13245,9 +13276,14 @@ This gets the basic information from the filings and doesn't include anything ex
      * Void a transaction
      * 
      * Voids the current transaction uniquely identified by this URL.
+     * 
      * A transaction represents a unique potentially taxable action that your company has recorded, and transactions include actions like
      * sales, purchases, inventory transfer, and returns (also called refunds).
-     * When you void a transaction, that transaction's status is recorded as 'DocVoided'.
+     * 
+     * When you void a transaction, that transaction's status is recorded as `DocVoided`.
+     * 
+     * If you have more than one document with the same `code`, specify the `documentType` parameter to choose between them.
+     * 
      * 
      * @param companyCode The company code of the company that recorded this transaction
      * @param transactionCode The transaction code to void
