@@ -5,6 +5,7 @@ import net.avalara.avatax.rest.client.models.*;
 import net.avalara.avatax.rest.client.enums.*;
 
 import org.apache.commons.codec.binary.Base64;
+import org.apache.http.impl.client.HttpClientBuilder;
 
 import java.math.BigDecimal;
 import java.util.Date;
