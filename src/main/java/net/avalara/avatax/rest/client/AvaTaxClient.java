@@ -5,6 +5,7 @@ import net.avalara.avatax.rest.client.models.*;
 import net.avalara.avatax.rest.client.enums.*;
 
 import org.apache.commons.codec.binary.Base64;
+import org.apache.http.impl.client.HttpClientBuilder;
 
 import java.math.BigDecimal;
 import java.util.Date;
@@ -46,7 +47,7 @@ public class AvaTaxClient {
     }
 
     public AvaTaxClient(String appName, String appVersion, String machineName, AvaTaxEnvironment environment) {
-        this(appName, appVersion, machineName, environment == AvaTaxEnvironment.Production ? AvaTaxConstants.Production_Url : AvaTaxConstants.Sandbox_Url);
+        this(appName, appVersion, machineName, environment, null);
     }
 
     public AvaTaxClient(String appName, String appVersion, String machineName, String environmentUrl) {
@@ -55,7 +56,7 @@ public class AvaTaxClient {
     }
 
     public AvaTaxClient(String appName, String appVersion, String machineName, AvaTaxEnvironment environment, String proxyHost, int proxyPort, String proxySchema) {
-        this(appName, appVersion, machineName, environment == AvaTaxEnvironment.Production ? AvaTaxConstants.Production_Url : AvaTaxConstants.Sandbox_Url, proxyHost, proxyPort, proxySchema);
+        this(appName, appVersion, machineName, environment, proxyHost, proxyPort, proxySchema, null);
     }
 
     public AvaTaxClient(String appName, String appVersion, String machineName, String environmentUrl, String proxyHost, int proxyPort, String proxySchema) {
@@ -63,6 +64,32 @@ public class AvaTaxClient {
         this.restCallFactory = new RestCallFactory(appName, appVersion, machineName, environmentUrl, proxyHost, proxyPort, proxySchema);
     }
 
+    public AvaTaxClient(String appName, String appVersion, String machineName, AvaTaxEnvironment environment, ExecutorService threadPool) {
+        this(appName, appVersion, machineName, environment == AvaTaxEnvironment.Production ? AvaTaxConstants.Production_Url : AvaTaxConstants.Sandbox_Url, threadPool);
+    }
+
+    public AvaTaxClient(String appName, String appVersion, String machineName, AvaTaxEnvironment environment, ExecutorService threadPool, HttpClientBuilder httpClientBuilder) {
+        this(appName, appVersion, machineName, environment == AvaTaxEnvironment.Production ? AvaTaxConstants.Production_Url : AvaTaxConstants.Sandbox_Url, threadPool, httpClientBuilder);
+    }
+
+    public AvaTaxClient(String appName, String appVersion, String machineName, String environmentUrl, ExecutorService threadPool) {
+        this(threadPool);
+        this.restCallFactory = new RestCallFactory(appName, appVersion, machineName, environmentUrl);
+    }
+
+    public AvaTaxClient(String appName, String appVersion, String machineName, String environmentUrl, ExecutorService threadPool, HttpClientBuilder httpClientBuilder) {
+        this(threadPool);
+        this.restCallFactory = new RestCallFactory(appName, appVersion, machineName, environmentUrl, httpClientBuilder);
+    }
+
+    public AvaTaxClient(String appName, String appVersion, String machineName, AvaTaxEnvironment environment, String proxyHost, int proxyPort, String proxySchema, ExecutorService threadPool) {
+        this(appName, appVersion, machineName, environment == AvaTaxEnvironment.Production ? AvaTaxConstants.Production_Url : AvaTaxConstants.Sandbox_Url, proxyHost, proxyPort, proxySchema, threadPool);
+    }
+
+    public AvaTaxClient(String appName, String appVersion, String machineName, String environmentUrl, String proxyHost, int proxyPort, String proxySchema, ExecutorService threadPool) {
+        this(threadPool);
+        this.restCallFactory = new RestCallFactory(appName, appVersion, machineName, environmentUrl, proxyHost, proxyPort, proxySchema);
+    }
 
     public AvaTaxClient withSecurity(String securityHeader) {
         this.restCallFactory.addSecurityHeader(securityHeader);
@@ -681,7 +708,7 @@ public class AvaTaxClient {
      * Using CertExpress with this API will ensure that your certificates are automatically linked correctly into
      * your company so that they can be used for tax exemptions.
      * 
-     * Please note that if this is your first call to CertCapture endpoints, you may experience upto 3 minute delay because your
+     * You may experience up to a three minute delay on your very first call to the exemption related endpoints 
      * 
      * @param companyId The unique ID number of the company that will record certificates
      * @param customerCode The number of the customer where the request is sent to
@@ -709,7 +736,7 @@ public class AvaTaxClient {
      * Using CertExpress with this API will ensure that your certificates are automatically linked correctly into
      * your company so that they can be used for tax exemptions.
      * 
-     * Please note that if this is your first call to CertCapture endpoints, you may experience upto 3 minute delay because your
+     * You may experience up to a three minute delay on your very first call to the exemption related endpoints 
      * 
      * @param companyId The unique ID number of the company that will record certificates
      * @param customerCode The number of the customer where the request is sent to
@@ -737,7 +764,7 @@ public class AvaTaxClient {
      * Using CertExpress with this API will ensure that your certificates are automatically linked correctly into
      * your company so that they can be used for tax exemptions.
      * 
-     * Please note that if this is your first call to CertCapture endpoints, you may experience upto 3 minute delay because your
+     * You may experience up to a three minute delay on your very first call to the exemption related endpoints 
      * 
      * @param companyId The unique ID number of the company that issued this invitation
      * @param customerCode The number of the customer where the request is sent to
@@ -768,7 +795,7 @@ public class AvaTaxClient {
      * Using CertExpress with this API will ensure that your certificates are automatically linked correctly into
      * your company so that they can be used for tax exemptions.
      * 
-     * Please note that if this is your first call to CertCapture endpoints, you may experience upto 3 minute delay because your
+     * You may experience up to a three minute delay on your very first call to the exemption related endpoints 
      * 
      * @param companyId The unique ID number of the company that issued this invitation
      * @param customerCode The number of the customer where the request is sent to
@@ -799,7 +826,7 @@ public class AvaTaxClient {
      * Using CertExpress with this API will ensure that your certificates are automatically linked correctly into
      * your company so that they can be used for tax exemptions.
      * 
-     * Please note that if this is your first call to CertCapture endpoints, you may experience upto 3 minute delay because your
+     * You may experience up to a three minute delay on your very first call to the exemption related endpoints 
      * 
      * @param companyId The unique ID number of the company that issued this invitation
      * @param include OPTIONAL: A comma separated list of special fetch options.       No options are defined at this time.
@@ -834,7 +861,7 @@ public class AvaTaxClient {
      * Using CertExpress with this API will ensure that your certificates are automatically linked correctly into
      * your company so that they can be used for tax exemptions.
      * 
-     * Please note that if this is your first call to CertCapture endpoints, you may experience upto 3 minute delay because your
+     * You may experience up to a three minute delay on your very first call to the exemption related endpoints 
      * 
      * @param companyId The unique ID number of the company that issued this invitation
      * @param include OPTIONAL: A comma separated list of special fetch options.       No options are defined at this time.
@@ -873,7 +900,7 @@ public class AvaTaxClient {
      * * A link to the customer that is allowed to use this certificate
      * * Your tax transaction must contain the correct customer code
      * 
-     * Please note that if this is your first call to CertCapture endpoints, you may experience upto 3 minute delay because your
+     * You may experience up to a three minute delay on your very first call to the exemption related endpoints 
      * 
      * @param companyId The ID number of the company recording this certificate
      * @param model Certificates to be created
@@ -903,7 +930,7 @@ public class AvaTaxClient {
      * * A link to the customer that is allowed to use this certificate
      * * Your tax transaction must contain the correct customer code
      * 
-     * Please note that if this is your first call to CertCapture endpoints, you may experience upto 3 minute delay because your
+     * You may experience up to a three minute delay on your very first call to the exemption related endpoints 
      * 
      * @param companyId The ID number of the company recording this certificate
      * @param model Certificates to be created
@@ -927,7 +954,7 @@ public class AvaTaxClient {
      * 
      * Revoked certificates can no longer be used.
      * 
-     * Please note that if this is your first call to CertCapture endpoints, you may experience upto 3 minute delay because your
+     * You may experience up to a three minute delay on your very first call to the exemption related endpoints 
      * 
      * @param companyId The unique ID number of the company that recorded this certificate
      * @param id The unique ID number of this certificate
@@ -952,7 +979,7 @@ public class AvaTaxClient {
      * 
      * Revoked certificates can no longer be used.
      * 
-     * Please note that if this is your first call to CertCapture endpoints, you may experience upto 3 minute delay because your
+     * You may experience up to a three minute delay on your very first call to the exemption related endpoints 
      * 
      * @param companyId The unique ID number of the company that recorded this certificate
      * @param id The unique ID number of this certificate
@@ -978,7 +1005,7 @@ public class AvaTaxClient {
      * criteria you specify when you store the certificate.  To view or manage your certificates directly, please 
      * log onto the administrative website for the product you purchased.
      * 
-     * Please note that if this is your first call to CertCapture endpoints, you may experience upto 3 minute delay because your
+     * You may experience up to a three minute delay on your very first call to the exemption related endpoints 
      * 
      * @param companyId The unique ID number of the company that recorded this certificate
      * @param id The unique ID number of this certificate
@@ -1008,7 +1035,7 @@ public class AvaTaxClient {
      * criteria you specify when you store the certificate.  To view or manage your certificates directly, please 
      * log onto the administrative website for the product you purchased.
      * 
-     * Please note that if this is your first call to CertCapture endpoints, you may experience upto 3 minute delay because your
+     * You may experience up to a three minute delay on your very first call to the exemption related endpoints 
      * 
      * @param companyId The unique ID number of the company that recorded this certificate
      * @param id The unique ID number of this certificate
@@ -1041,7 +1068,7 @@ public class AvaTaxClient {
      * * PoNumbers - Retrieves all PO numbers tied to the certificate.
      * * Attributes - Retrieves all attributes applied to the certificate.
      * 
-     * Please note that if this is your first call to CertCapture endpoints, you may experience upto 3 minute delay because your
+     * You may experience up to a three minute delay on your very first call to the exemption related endpoints 
      * 
      * @param companyId The ID number of the company that recorded this certificate
      * @param id The unique ID number of this certificate
@@ -1072,7 +1099,7 @@ public class AvaTaxClient {
      * * PoNumbers - Retrieves all PO numbers tied to the certificate.
      * * Attributes - Retrieves all attributes applied to the certificate.
      * 
-     * Please note that if this is your first call to CertCapture endpoints, you may experience upto 3 minute delay because your
+     * You may experience up to a three minute delay on your very first call to the exemption related endpoints 
      * 
      * @param companyId The ID number of the company that recorded this certificate
      * @param id The unique ID number of this certificate
@@ -1100,7 +1127,7 @@ public class AvaTaxClient {
      * criteria you specify when you store the certificate.  To view or manage your certificates directly, please 
      * log onto the administrative website for the product you purchased.
      * 
-     * Please note that if this is your first call to CertCapture endpoints, you may experience upto 3 minute delay because your
+     * You may experience up to a three minute delay on your very first call to the exemption related endpoints 
      * 
      * @param companyId The unique ID number of the company that recorded this certificate
      * @param id The unique ID number of this certificate
@@ -1127,7 +1154,7 @@ public class AvaTaxClient {
      * criteria you specify when you store the certificate.  To view or manage your certificates directly, please 
      * log onto the administrative website for the product you purchased.
      * 
-     * Please note that if this is your first call to CertCapture endpoints, you may experience upto 3 minute delay because your
+     * You may experience up to a three minute delay on your very first call to the exemption related endpoints 
      * 
      * @param companyId The unique ID number of the company that recorded this certificate
      * @param id The unique ID number of this certificate
@@ -1155,7 +1182,7 @@ public class AvaTaxClient {
      * criteria you specify when you store the certificate.  To view or manage your certificates directly, please 
      * log onto the administrative website for the product you purchased.
      * 
-     * Please note that if this is your first call to CertCapture endpoints, you may experience upto 3 minute delay because your
+     * You may experience up to a three minute delay on your very first call to the exemption related endpoints 
      * 
      * @param companyId The unique ID number of the company that recorded this certificate
      * @param id The unique ID number of this certificate
@@ -1183,7 +1210,7 @@ public class AvaTaxClient {
      * criteria you specify when you store the certificate.  To view or manage your certificates directly, please 
      * log onto the administrative website for the product you purchased.
      * 
-     * Please note that if this is your first call to CertCapture endpoints, you may experience upto 3 minute delay because your
+     * You may experience up to a three minute delay on your very first call to the exemption related endpoints 
      * 
      * @param companyId The unique ID number of the company that recorded this certificate
      * @param id The unique ID number of this certificate
@@ -1210,7 +1237,7 @@ public class AvaTaxClient {
      * criteria you specify when you store the certificate.  To view or manage your certificates directly, please 
      * log onto the administrative website for the product you purchased.
      * 
-     * Please note that if this is your first call to CertCapture endpoints, you may experience upto 3 minute delay because your
+     * You may experience up to a three minute delay on your very first call to the exemption related endpoints 
      * 
      * @param companyId The unique ID number of the company that recorded this certificate
      * @param id The unique ID number of this certificate
@@ -1236,7 +1263,7 @@ public class AvaTaxClient {
      * criteria you specify when you store the certificate.  To view or manage your certificates directly, please 
      * log onto the administrative website for the product you purchased.
      * 
-     * Please note that if this is your first call to CertCapture endpoints, you may experience upto 3 minute delay because your
+     * You may experience up to a three minute delay on your very first call to the exemption related endpoints 
      * 
      * @param companyId The unique ID number of the company that recorded this certificate
      * @param id The unique ID number of this certificate
@@ -1262,7 +1289,7 @@ public class AvaTaxClient {
      * criteria you specify when you store the certificate.  To view or manage your certificates directly, please 
      * log onto the administrative website for the product you purchased.
      * 
-     * Please note that if this is your first call to CertCapture endpoints, you may experience upto 3 minute delay because your
+     * You may experience up to a three minute delay on your very first call to the exemption related endpoints 
      * 
      * @param companyId The unique ID number of the company that recorded this certificate
      * @param id The unique ID number of this certificate
@@ -1290,7 +1317,7 @@ public class AvaTaxClient {
      * criteria you specify when you store the certificate.  To view or manage your certificates directly, please 
      * log onto the administrative website for the product you purchased.
      * 
-     * Please note that if this is your first call to CertCapture endpoints, you may experience upto 3 minute delay because your
+     * You may experience up to a three minute delay on your very first call to the exemption related endpoints 
      * 
      * @param companyId The unique ID number of the company that recorded this certificate
      * @param id The unique ID number of this certificate
@@ -1321,7 +1348,7 @@ public class AvaTaxClient {
      * * PoNumbers - Retrieves all PO numbers tied to the certificate.
      * * Attributes - Retrieves all attributes applied to the certificate.
      * 
-     * Please note that if this is your first call to CertCapture endpoints, you may experience upto 3 minute delay because your
+     * You may experience up to a three minute delay on your very first call to the exemption related endpoints 
      * 
      * @param companyId The ID number of the company to search
      * @param include OPTIONAL: A comma separated list of special fetch options. You can specify one or more of the following:      * Customers - Retrieves the list of customers linked to the certificate.   * PoNumbers - Retrieves all PO numbers tied to the certificate.   * Attributes - Retrieves all attributes applied to the certificate.
@@ -1358,7 +1385,7 @@ public class AvaTaxClient {
      * * PoNumbers - Retrieves all PO numbers tied to the certificate.
      * * Attributes - Retrieves all attributes applied to the certificate.
      * 
-     * Please note that if this is your first call to CertCapture endpoints, you may experience upto 3 minute delay because your
+     * You may experience up to a three minute delay on your very first call to the exemption related endpoints 
      * 
      * @param companyId The ID number of the company to search
      * @param include OPTIONAL: A comma separated list of special fetch options. You can specify one or more of the following:      * Customers - Retrieves the list of customers linked to the certificate.   * PoNumbers - Retrieves all PO numbers tied to the certificate.   * Attributes - Retrieves all attributes applied to the certificate.
@@ -1392,7 +1419,7 @@ public class AvaTaxClient {
      * criteria you specify when you store the certificate.  To view or manage your certificates directly, please 
      * log onto the administrative website for the product you purchased.
      * 
-     * Please note that if this is your first call to CertCapture endpoints, you may experience upto 3 minute delay because your
+     * You may experience up to a three minute delay on your very first call to the exemption related endpoints 
      * 
      * @param companyId The unique ID number of the company that recorded this certificate
      * @param id The unique ID number of this certificate
@@ -1419,7 +1446,7 @@ public class AvaTaxClient {
      * criteria you specify when you store the certificate.  To view or manage your certificates directly, please 
      * log onto the administrative website for the product you purchased.
      * 
-     * Please note that if this is your first call to CertCapture endpoints, you may experience upto 3 minute delay because your
+     * You may experience up to a three minute delay on your very first call to the exemption related endpoints 
      * 
      * @param companyId The unique ID number of the company that recorded this certificate
      * @param id The unique ID number of this certificate
@@ -1448,7 +1475,7 @@ public class AvaTaxClient {
      * criteria you specify when you store the certificate.  To view or manage your certificates directly, please 
      * log onto the administrative website for the product you purchased.
      * 
-     * Please note that if this is your first call to CertCapture endpoints, you may experience upto 3 minute delay because your
+     * You may experience up to a three minute delay on your very first call to the exemption related endpoints 
      * 
      * @param companyId The unique ID number of the company that recorded this certificate
      * @param id The unique ID number of this certificate
@@ -1477,7 +1504,7 @@ public class AvaTaxClient {
      * criteria you specify when you store the certificate.  To view or manage your certificates directly, please 
      * log onto the administrative website for the product you purchased.
      * 
-     * Please note that if this is your first call to CertCapture endpoints, you may experience upto 3 minute delay because your
+     * You may experience up to a three minute delay on your very first call to the exemption related endpoints 
      * 
      * @param companyId The unique ID number of the company that recorded this certificate
      * @param id The unique ID number of this certificate
@@ -1501,7 +1528,7 @@ public class AvaTaxClient {
      * criteria you specify when you store the certificate.  To view or manage your certificates directly, please 
      * log onto the administrative website for the product you purchased.
      * 
-     * Please note that if this is your first call to CertCapture endpoints, you may experience upto 3 minute delay because your
+     * You may experience up to a three minute delay on your very first call to the exemption related endpoints 
      * 
      * @param companyId The ID number of the company that recorded this certificate
      * @param id The unique ID number of this certificate
@@ -1525,7 +1552,7 @@ public class AvaTaxClient {
      * criteria you specify when you store the certificate.  To view or manage your certificates directly, please 
      * log onto the administrative website for the product you purchased.
      * 
-     * Please note that if this is your first call to CertCapture endpoints, you may experience upto 3 minute delay because your
+     * You may experience up to a three minute delay on your very first call to the exemption related endpoints 
      * 
      * @param companyId The ID number of the company that recorded this certificate
      * @param id The unique ID number of this certificate
@@ -1552,7 +1579,7 @@ public class AvaTaxClient {
      * criteria you specify when you store the certificate.  To view or manage your certificates directly, please 
      * log onto the administrative website for the product you purchased.
      * 
-     * Please note that if this is your first call to CertCapture endpoints, you may experience upto 3 minute delay because your
+     * You may experience up to a three minute delay on your very first call to the exemption related endpoints 
      * 
      * @param companyId The unique ID number of the company that recorded this certificate
      * @param id The unique ID number of this certificate
@@ -1579,7 +1606,7 @@ public class AvaTaxClient {
      * criteria you specify when you store the certificate.  To view or manage your certificates directly, please 
      * log onto the administrative website for the product you purchased.
      * 
-     * Please note that if this is your first call to CertCapture endpoints, you may experience upto 3 minute delay because your
+     * You may experience up to a three minute delay on your very first call to the exemption related endpoints 
      * 
      * @param companyId The unique ID number of the company that recorded this certificate
      * @param id The unique ID number of this certificate
@@ -2466,7 +2493,7 @@ public class AvaTaxClient {
      * identify any certificates linked to this `customer` object.  If any certificate applies to the transaction,
      * AvaTax will record the appropriate elements of the transaction as exempt and link it to the `certificate`.
      * 
-     * Please note that if this is your first call to the CertCapture endpoints, you may experience upto 3 minute delay because your
+     * You may experience up to a three minute delay on your very first call to the exemption related endpoints 
      * 
      * @param companyId The unique ID number of the company that recorded this customer
      * @param model The list of customer objects to be created
@@ -2489,7 +2516,7 @@ public class AvaTaxClient {
      * identify any certificates linked to this `customer` object.  If any certificate applies to the transaction,
      * AvaTax will record the appropriate elements of the transaction as exempt and link it to the `certificate`.
      * 
-     * Please note that if this is your first call to the CertCapture endpoints, you may experience upto 3 minute delay because your
+     * You may experience up to a three minute delay on your very first call to the exemption related endpoints 
      * 
      * @param companyId The unique ID number of the company that recorded this customer
      * @param model The list of customer objects to be created
@@ -2512,7 +2539,7 @@ public class AvaTaxClient {
      * identify any certificates linked to this `customer` object.  If any certificate applies to the transaction,
      * AvaTax will record the appropriate elements of the transaction as exempt and link it to the `certificate`.
      * 
-     * Please note that if this is your first call to CertCapture endpoints, you may experience upto 3 minute delay because your
+     * You may experience up to a three minute delay on your very first call to the exemption related endpoints 
      * 
      * @param companyId The unique ID number of the company that recorded this customer
      * @param customerCode The unique code representing this customer
@@ -2536,7 +2563,7 @@ public class AvaTaxClient {
      * identify any certificates linked to this `customer` object.  If any certificate applies to the transaction,
      * AvaTax will record the appropriate elements of the transaction as exempt and link it to the `certificate`.
      * 
-     * Please note that if this is your first call to CertCapture endpoints, you may experience upto 3 minute delay because your
+     * You may experience up to a three minute delay on your very first call to the exemption related endpoints 
      * 
      * @param companyId The unique ID number of the company that recorded this customer
      * @param customerCode The unique code representing this customer
@@ -2564,7 +2591,7 @@ public class AvaTaxClient {
      * 
      * * Certificates - Fetch a list of certificates linked to this customer.
      * 
-     * Please note that if this is your first call to CertCapture endpoints, you may experience upto 3 minute delay because your
+     * You may experience up to a three minute delay on your very first call to the exemption related endpoints 
      * 
      * @param companyId The unique ID number of the company that recorded this customer
      * @param customerCode The unique code representing this customer
@@ -2594,7 +2621,7 @@ public class AvaTaxClient {
      * 
      * * Certificates - Fetch a list of certificates linked to this customer.
      * 
-     * Please note that if this is your first call to CertCapture endpoints, you may experience upto 3 minute delay because your
+     * You may experience up to a three minute delay on your very first call to the exemption related endpoints 
      * 
      * @param companyId The unique ID number of the company that recorded this customer
      * @param customerCode The unique code representing this customer
@@ -2620,7 +2647,7 @@ public class AvaTaxClient {
      * identify any certificates linked to this `customer` object.  If any certificate applies to the transaction,
      * AvaTax will record the appropriate elements of the transaction as exempt and link it to the `certificate`.
      * 
-     * Please note that if this is your first call to CertCapture endpoints, you may experience upto 3 minute delay because your
+     * You may experience up to a three minute delay on your very first call to the exemption related endpoints 
      * 
      * @param companyId The unique ID number of the company that recorded this customer
      * @param customerCode The unique code representing this customer
@@ -2645,7 +2672,7 @@ public class AvaTaxClient {
      * identify any certificates linked to this `customer` object.  If any certificate applies to the transaction,
      * AvaTax will record the appropriate elements of the transaction as exempt and link it to the `certificate`.
      * 
-     * Please note that if this is your first call to CertCapture endpoints, you may experience upto 3 minute delay because your
+     * You may experience up to a three minute delay on your very first call to the exemption related endpoints 
      * 
      * @param companyId The unique ID number of the company that recorded this customer
      * @param customerCode The unique code representing this customer
@@ -2670,7 +2697,7 @@ public class AvaTaxClient {
      * identify any certificates linked to this `customer` object.  If any certificate applies to the transaction,
      * AvaTax will record the appropriate elements of the transaction as exempt and link it to the `certificate`.
      * 
-     * Please note that if this is your first call to CertCapture endpoints, you may experience upto 3 minute delay because your
+     * You may experience up to a three minute delay on your very first call to the exemption related endpoints 
      * 
      * @param companyId The unique ID number of the company that recorded this customer
      * @param customerCode The unique code representing this customer
@@ -2704,7 +2731,7 @@ public class AvaTaxClient {
      * identify any certificates linked to this `customer` object.  If any certificate applies to the transaction,
      * AvaTax will record the appropriate elements of the transaction as exempt and link it to the `certificate`.
      * 
-     * Please note that if this is your first call to CertCapture endpoints, you may experience upto 3 minute delay because your
+     * You may experience up to a three minute delay on your very first call to the exemption related endpoints 
      * 
      * @param companyId The unique ID number of the company that recorded this customer
      * @param customerCode The unique code representing this customer
@@ -2741,7 +2768,7 @@ public class AvaTaxClient {
      * a CertExpress invitation link so that the customer can upload proof of their exemption certificate.  Please
      * see the `CreateCertExpressInvitation` API to create an invitation link for this customer.
      * 
-     * Please note that if this is your first call to CertCapture endpoints, you may experience upto 3 minute delay because your
+     * You may experience up to a three minute delay on your very first call to the exemption related endpoints 
      * 
      * @param companyId The unique ID number of the company that recorded this customer
      * @param customerCode The unique code representing this customer
@@ -2772,7 +2799,7 @@ public class AvaTaxClient {
      * a CertExpress invitation link so that the customer can upload proof of their exemption certificate.  Please
      * see the `CreateCertExpressInvitation` API to create an invitation link for this customer.
      * 
-     * Please note that if this is your first call to CertCapture endpoints, you may experience upto 3 minute delay because your
+     * You may experience up to a three minute delay on your very first call to the exemption related endpoints 
      * 
      * @param companyId The unique ID number of the company that recorded this customer
      * @param customerCode The unique code representing this customer
@@ -2804,7 +2831,7 @@ public class AvaTaxClient {
      * 
      * * Certificates - Fetch a list of certificates linked to this customer.
      * 
-     * Please note that if this is your first call to CertCapture endpoints, you may experience upto 3 minute delay because your
+     * You may experience up to a three minute delay on your very first call to the exemption related endpoints 
      * 
      * @param companyId The unique ID number of the company that recorded this customer
      * @param include OPTIONAL - You can specify the value `certificates` to fetch information about certificates linked to the customer.
@@ -2840,7 +2867,7 @@ public class AvaTaxClient {
      * 
      * * Certificates - Fetch a list of certificates linked to this customer.
      * 
-     * Please note that if this is your first call to CertCapture endpoints, you may experience upto 3 minute delay because your
+     * You may experience up to a three minute delay on your very first call to the exemption related endpoints 
      * 
      * @param companyId The unique ID number of the company that recorded this customer
      * @param include OPTIONAL - You can specify the value `certificates` to fetch information about certificates linked to the customer.
@@ -2872,7 +2899,7 @@ public class AvaTaxClient {
      * identify any certificates linked to this `customer` object.  If any certificate applies to the transaction,
      * AvaTax will record the appropriate elements of the transaction as exempt and link it to the `certificate`.
      * 
-     * Please note that if this is your first call to CertCapture endpoints, you may experience upto 3 minute delay because your
+     * You may experience up to a three minute delay on your very first call to the exemption related endpoints 
      * 
      * @param companyId The unique ID number of the company that recorded this customer
      * @param customerCode The unique code representing this customer
@@ -2897,7 +2924,7 @@ public class AvaTaxClient {
      * identify any certificates linked to this `customer` object.  If any certificate applies to the transaction,
      * AvaTax will record the appropriate elements of the transaction as exempt and link it to the `certificate`.
      * 
-     * Please note that if this is your first call to CertCapture endpoints, you may experience upto 3 minute delay because your
+     * You may experience up to a three minute delay on your very first call to the exemption related endpoints 
      * 
      * @param companyId The unique ID number of the company that recorded this customer
      * @param customerCode The unique code representing this customer
@@ -2922,7 +2949,7 @@ public class AvaTaxClient {
      * identify any certificates linked to this `customer` object.  If any certificate applies to the transaction,
      * AvaTax will record the appropriate elements of the transaction as exempt and link it to the `certificate`.
      * 
-     * Please note that if this is your first call to CertCapture endpoints, you may experience upto 3 minute delay because your
+     * You may experience up to a three minute delay on your very first call to the exemption related endpoints 
      * 
      * @param companyId The unique ID number of the company that recorded this customer
      * @param customerCode The unique code representing this customer
@@ -2947,7 +2974,7 @@ public class AvaTaxClient {
      * identify any certificates linked to this `customer` object.  If any certificate applies to the transaction,
      * AvaTax will record the appropriate elements of the transaction as exempt and link it to the `certificate`.
      * 
-     * Please note that if this is your first call to CertCapture endpoints, you may experience upto 3 minute delay because your
+     * You may experience up to a three minute delay on your very first call to the exemption related endpoints 
      * 
      * @param companyId The unique ID number of the company that recorded this customer
      * @param customerCode The unique code representing this customer
@@ -3109,7 +3136,7 @@ public class AvaTaxClient {
      * A certificate may have multiple attributes that control its behavior.  You may apply or remove attributes to a
      * certificate at any time.
      * 
-     * Please note that if this is your first call to CertCapture endpoints, you may experience upto 3 minute delay because your
+     * You may experience up to a three minute delay on your very first call to the exemption related endpoints 
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
@@ -3134,7 +3161,7 @@ public class AvaTaxClient {
      * A certificate may have multiple attributes that control its behavior.  You may apply or remove attributes to a
      * certificate at any time.
      * 
-     * Please note that if this is your first call to CertCapture endpoints, you may experience upto 3 minute delay because your
+     * You may experience up to a three minute delay on your very first call to the exemption related endpoints 
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
@@ -3159,7 +3186,7 @@ public class AvaTaxClient {
      * An exemption reason defines why a certificate allows a customer to be exempt
      * for purposes of tax calculation.
      * 
-     * Please note that if this is your first call to CertCapture endpoints, you may experience upto 3 minute delay because your
+     * You may experience up to a three minute delay on your very first call to the exemption related endpoints 
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
@@ -3184,7 +3211,7 @@ public class AvaTaxClient {
      * An exemption reason defines why a certificate allows a customer to be exempt
      * for purposes of tax calculation.
      * 
-     * Please note that if this is your first call to CertCapture endpoints, you may experience upto 3 minute delay because your
+     * You may experience up to a three minute delay on your very first call to the exemption related endpoints 
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
@@ -3209,7 +3236,7 @@ public class AvaTaxClient {
      * An exposure zone is a location where a certificate can be valid.  Exposure zones may indicate a taxing
      * authority or other legal entity to which a certificate may apply.
      * 
-     * Please note that if this is your first call to CertCapture endpoints, you may experience upto 3 minute delay because your
+     * You may experience up to a three minute delay on your very first call to the exemption related endpoints 
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
@@ -3234,7 +3261,7 @@ public class AvaTaxClient {
      * An exposure zone is a location where a certificate can be valid.  Exposure zones may indicate a taxing
      * authority or other legal entity to which a certificate may apply.
      * 
-     * Please note that if this is your first call to CertCapture endpoints, you may experience upto 3 minute delay because your
+     * You may experience up to a three minute delay on your very first call to the exemption related endpoints 
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
@@ -3426,7 +3453,7 @@ public class AvaTaxClient {
      * upload certificates.  An invitation allows customers to use CertExpress to upload their exemption 
      * certificates directly; this cover letter explains why the invitation was sent.
      * 
-     * Please note that if this is your first call to CertCapture endpoints, you may experience upto 3 minute delay because your
+     * You may experience up to a three minute delay on your very first call to the exemption related endpoints 
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
@@ -3452,7 +3479,7 @@ public class AvaTaxClient {
      * upload certificates.  An invitation allows customers to use CertExpress to upload their exemption 
      * certificates directly; this cover letter explains why the invitation was sent.
      * 
-     * Please note that if this is your first call to CertCapture endpoints, you may experience upto 3 minute delay because your
+     * You may experience up to a three minute delay on your very first call to the exemption related endpoints 
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
@@ -12357,6 +12384,8 @@ This gets the basic information from the filings and doesn't include anything ex
      * 
      * After this API call succeeds, the transaction will have a new URL matching its new `code`.
      * 
+     * If you have more than one document with the same `code`, specify the `documentType` parameter to choose between them.
+     * 
      * A transaction represents a unique potentially taxable action that your company has recorded, and transactions include actions like
      * 
      * @param companyCode The company code of the company that recorded this transaction
@@ -12383,6 +12412,8 @@ This gets the basic information from the filings and doesn't include anything ex
      * 
      * After this API call succeeds, the transaction will have a new URL matching its new `code`.
      * 
+     * If you have more than one document with the same `code`, specify the `documentType` parameter to choose between them.
+     * 
      * A transaction represents a unique potentially taxable action that your company has recorded, and transactions include actions like
      * 
      * @param companyCode The company code of the company that recorded this transaction
@@ -12402,10 +12433,15 @@ This gets the basic information from the filings and doesn't include anything ex
     /**
      * Commit a transaction for reporting
      * 
-     * Marks a transaction by changing its status to 'Committed'.
+     * Marks a transaction by changing its status to `Committed`.
+     * 
      * Transactions that are committed are available to be reported to a tax authority by Avalara Managed Returns.
+     * 
      * A transaction represents a unique potentially taxable action that your company has recorded, and transactions include actions like
      * sales, purchases, inventory transfer, and returns (also called refunds).
+     * 
+     * If you have more than one document with the same `code`, specify the `documentType` parameter to choose between them.
+     * 
      * 
      * @param companyCode The company code of the company that recorded this transaction
      * @param transactionCode The transaction code to commit
@@ -12424,10 +12460,15 @@ This gets the basic information from the filings and doesn't include anything ex
     /**
      * Commit a transaction for reporting
      * 
-     * Marks a transaction by changing its status to 'Committed'.
+     * Marks a transaction by changing its status to `Committed`.
+     * 
      * Transactions that are committed are available to be reported to a tax authority by Avalara Managed Returns.
+     * 
      * A transaction represents a unique potentially taxable action that your company has recorded, and transactions include actions like
      * sales, purchases, inventory transfer, and returns (also called refunds).
+     * 
+     * If you have more than one document with the same `code`, specify the `documentType` parameter to choose between them.
+     * 
      * 
      * @param companyCode The company code of the company that recorded this transaction
      * @param transactionCode The transaction code to commit
@@ -12955,6 +12996,8 @@ This gets the basic information from the filings and doesn't include anything ex
      * 
      * This API is only available to customers in Sandbox with AvaTaxPro subscription.  On production servers, this API is available by invitation only.
      * 
+     * If you have more than one document with the same `code`, specify the `documentType` parameter to choose between them.
+     * 
      * A transaction represents a unique potentially taxable action that your company has recorded, and transactions include actions like
      * 
      * @param companyCode The company code of the company that recorded this transaction
@@ -12980,6 +13023,8 @@ This gets the basic information from the filings and doesn't include anything ex
      * After this API call succeeds, the document will be locked and can't be voided or adjusted.
      * 
      * This API is only available to customers in Sandbox with AvaTaxPro subscription.  On production servers, this API is available by invitation only.
+     * 
+     * If you have more than one document with the same `code`, specify the `documentType` parameter to choose between them.
      * 
      * A transaction represents a unique potentially taxable action that your company has recorded, and transactions include actions like
      * 
@@ -13107,6 +13152,8 @@ This gets the basic information from the filings and doesn't include anything ex
      * A transaction represents a unique potentially taxable action that your company has recorded, and transactions include actions like
      * sales, purchases, inventory transfer, and returns (also called refunds).
      * 
+     * If you have more than one document with the same `code`, specify the `documentType` parameter to choose between them.
+     * 
      * 
      * @param companyCode The company code of the company that recorded this transaction
      * @param transactionCode The transaction code to settle
@@ -13132,6 +13179,8 @@ This gets the basic information from the filings and doesn't include anything ex
      * A transaction represents a unique potentially taxable action that your company has recorded, and transactions include actions like
      * sales, purchases, inventory transfer, and returns (also called refunds).
      * 
+     * If you have more than one document with the same `code`, specify the `documentType` parameter to choose between them.
+     * 
      * 
      * @param companyCode The company code of the company that recorded this transaction
      * @param transactionCode The transaction code to settle
@@ -13153,6 +13202,8 @@ This gets the basic information from the filings and doesn't include anything ex
      * Verifies that the transaction uniquely identified by this URL matches certain expected values.
      * 
      * If the transaction does not match these expected values, this API will return an error code indicating which value did not match.
+     * 
+     * If you have more than one document with the same `code`, specify the `documentType` parameter to choose between them.
      * 
      * A transaction represents a unique potentially taxable action that your company has recorded, and transactions include actions like
      * 
@@ -13177,6 +13228,8 @@ This gets the basic information from the filings and doesn't include anything ex
      * 
      * If the transaction does not match these expected values, this API will return an error code indicating which value did not match.
      * 
+     * If you have more than one document with the same `code`, specify the `documentType` parameter to choose between them.
+     * 
      * A transaction represents a unique potentially taxable action that your company has recorded, and transactions include actions like
      * 
      * @param companyCode The company code of the company that recorded this transaction
@@ -13197,9 +13250,14 @@ This gets the basic information from the filings and doesn't include anything ex
      * Void a transaction
      * 
      * Voids the current transaction uniquely identified by this URL.
+     * 
      * A transaction represents a unique potentially taxable action that your company has recorded, and transactions include actions like
      * sales, purchases, inventory transfer, and returns (also called refunds).
-     * When you void a transaction, that transaction's status is recorded as 'DocVoided'.
+     * 
+     * When you void a transaction, that transaction's status is recorded as `DocVoided`.
+     * 
+     * If you have more than one document with the same `code`, specify the `documentType` parameter to choose between them.
+     * 
      * 
      * @param companyCode The company code of the company that recorded this transaction
      * @param transactionCode The transaction code to void
@@ -13219,9 +13277,14 @@ This gets the basic information from the filings and doesn't include anything ex
      * Void a transaction
      * 
      * Voids the current transaction uniquely identified by this URL.
+     * 
      * A transaction represents a unique potentially taxable action that your company has recorded, and transactions include actions like
      * sales, purchases, inventory transfer, and returns (also called refunds).
-     * When you void a transaction, that transaction's status is recorded as 'DocVoided'.
+     * 
+     * When you void a transaction, that transaction's status is recorded as `DocVoided`.
+     * 
+     * If you have more than one document with the same `code`, specify the `documentType` parameter to choose between them.
+     * 
      * 
      * @param companyCode The company code of the company that recorded this transaction
      * @param transactionCode The transaction code to void
