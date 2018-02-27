@@ -15,18 +15,30 @@ package net.avalara.avatax.rest.client.enums;
  */
 
 /**
- * The output DocumentType for a report
+ * 
  */
-public enum ReportDocType {
+public enum CertCaptureProvisionStatus {
     /** 
-     * Output all ConsumerUse tax transactions in the report
+     * Account and company are provisioned
      */
-    ConsumerUse,
+    Finished,
 
     /** 
-     * Output all Sales tax transactions in the report
+     * Account are not provisioned
      */
-    Sales,
+    NotStarted,
+
+    /** 
+     * Provision job is being queued
+     *  This could also be an indication that some companies under an account has been provisioned, while others
+     *  under the same account has not.
+     */
+    InProgress,
+
+    /** 
+     * The account is put into provisioned queue.
+     */
+    Queued,
 
 }
     

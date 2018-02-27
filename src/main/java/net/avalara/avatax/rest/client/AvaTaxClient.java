@@ -18,13 +18,13 @@ import java.util.ArrayList;
 /*
  * AvaTax Software Development Kit for Java JRE based environments
  *
- * (c) 2004-2017 Avalara, Inc.
+ * (c) 2004-2018 Avalara, Inc.
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  *
  * @author     Dustin Welden <dustin.welden@avalara.com>
- * @copyright  2004-2017 Avalara, Inc.
+ * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
  */
@@ -708,7 +708,9 @@ public class AvaTaxClient {
      * Using CertExpress with this API will ensure that your certificates are automatically linked correctly into
      * your company so that they can be used for tax exemptions.
      * 
-     * You may experience up to a three minute delay on your very first call to the exemption related endpoints 
+     * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
+     * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
+     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document 
      * 
      * @param companyId The unique ID number of the company that will record certificates
      * @param customerCode The number of the customer where the request is sent to
@@ -736,7 +738,9 @@ public class AvaTaxClient {
      * Using CertExpress with this API will ensure that your certificates are automatically linked correctly into
      * your company so that they can be used for tax exemptions.
      * 
-     * You may experience up to a three minute delay on your very first call to the exemption related endpoints 
+     * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
+     * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
+     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document 
      * 
      * @param companyId The unique ID number of the company that will record certificates
      * @param customerCode The number of the customer where the request is sent to
@@ -764,7 +768,9 @@ public class AvaTaxClient {
      * Using CertExpress with this API will ensure that your certificates are automatically linked correctly into
      * your company so that they can be used for tax exemptions.
      * 
-     * You may experience up to a three minute delay on your very first call to the exemption related endpoints 
+     * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
+     * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
+     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document 
      * 
      * @param companyId The unique ID number of the company that issued this invitation
      * @param customerCode The number of the customer where the request is sent to
@@ -795,7 +801,9 @@ public class AvaTaxClient {
      * Using CertExpress with this API will ensure that your certificates are automatically linked correctly into
      * your company so that they can be used for tax exemptions.
      * 
-     * You may experience up to a three minute delay on your very first call to the exemption related endpoints 
+     * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
+     * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
+     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document 
      * 
      * @param companyId The unique ID number of the company that issued this invitation
      * @param customerCode The number of the customer where the request is sent to
@@ -826,7 +834,9 @@ public class AvaTaxClient {
      * Using CertExpress with this API will ensure that your certificates are automatically linked correctly into
      * your company so that they can be used for tax exemptions.
      * 
-     * You may experience up to a three minute delay on your very first call to the exemption related endpoints 
+     * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
+     * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
+     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document 
      * 
      * @param companyId The unique ID number of the company that issued this invitation
      * @param include OPTIONAL: A comma separated list of special fetch options.       No options are defined at this time.
@@ -861,7 +871,9 @@ public class AvaTaxClient {
      * Using CertExpress with this API will ensure that your certificates are automatically linked correctly into
      * your company so that they can be used for tax exemptions.
      * 
-     * You may experience up to a three minute delay on your very first call to the exemption related endpoints 
+     * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
+     * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
+     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document 
      * 
      * @param companyId The unique ID number of the company that issued this invitation
      * @param include OPTIONAL: A comma separated list of special fetch options.       No options are defined at this time.
@@ -900,7 +912,9 @@ public class AvaTaxClient {
      * * A link to the customer that is allowed to use this certificate
      * * Your tax transaction must contain the correct customer code
      * 
-     * You may experience up to a three minute delay on your very first call to the exemption related endpoints 
+     * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
+     * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
+     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document 
      * 
      * @param companyId The ID number of the company recording this certificate
      * @param model Certificates to be created
@@ -930,7 +944,9 @@ public class AvaTaxClient {
      * * A link to the customer that is allowed to use this certificate
      * * Your tax transaction must contain the correct customer code
      * 
-     * You may experience up to a three minute delay on your very first call to the exemption related endpoints 
+     * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
+     * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
+     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document 
      * 
      * @param companyId The ID number of the company recording this certificate
      * @param model Certificates to be created
@@ -954,7 +970,9 @@ public class AvaTaxClient {
      * 
      * Revoked certificates can no longer be used.
      * 
-     * You may experience up to a three minute delay on your very first call to the exemption related endpoints 
+     * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
+     * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
+     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document 
      * 
      * @param companyId The unique ID number of the company that recorded this certificate
      * @param id The unique ID number of this certificate
@@ -979,7 +997,9 @@ public class AvaTaxClient {
      * 
      * Revoked certificates can no longer be used.
      * 
-     * You may experience up to a three minute delay on your very first call to the exemption related endpoints 
+     * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
+     * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
+     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document 
      * 
      * @param companyId The unique ID number of the company that recorded this certificate
      * @param id The unique ID number of this certificate
@@ -1005,7 +1025,9 @@ public class AvaTaxClient {
      * criteria you specify when you store the certificate.  To view or manage your certificates directly, please 
      * log onto the administrative website for the product you purchased.
      * 
-     * You may experience up to a three minute delay on your very first call to the exemption related endpoints 
+     * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
+     * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
+     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document 
      * 
      * @param companyId The unique ID number of the company that recorded this certificate
      * @param id The unique ID number of this certificate
@@ -1035,7 +1057,9 @@ public class AvaTaxClient {
      * criteria you specify when you store the certificate.  To view or manage your certificates directly, please 
      * log onto the administrative website for the product you purchased.
      * 
-     * You may experience up to a three minute delay on your very first call to the exemption related endpoints 
+     * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
+     * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
+     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document 
      * 
      * @param companyId The unique ID number of the company that recorded this certificate
      * @param id The unique ID number of this certificate
@@ -1068,7 +1092,9 @@ public class AvaTaxClient {
      * * PoNumbers - Retrieves all PO numbers tied to the certificate.
      * * Attributes - Retrieves all attributes applied to the certificate.
      * 
-     * You may experience up to a three minute delay on your very first call to the exemption related endpoints 
+     * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
+     * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
+     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document 
      * 
      * @param companyId The ID number of the company that recorded this certificate
      * @param id The unique ID number of this certificate
@@ -1099,7 +1125,9 @@ public class AvaTaxClient {
      * * PoNumbers - Retrieves all PO numbers tied to the certificate.
      * * Attributes - Retrieves all attributes applied to the certificate.
      * 
-     * You may experience up to a three minute delay on your very first call to the exemption related endpoints 
+     * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
+     * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
+     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document 
      * 
      * @param companyId The ID number of the company that recorded this certificate
      * @param id The unique ID number of this certificate
@@ -1115,6 +1143,44 @@ public class AvaTaxClient {
     }
 
     /**
+     * Check a company's exemption certificate status.
+     * 
+     * Checks whether this company is configured to use exemption certificates in AvaTax.
+     * 
+     * Exemption certificates are tracked through a different auditable data store than the one that 
+     * holds AvaTax transactions.  To use the AvaTax exemption certificate document store, please call
+     * `GetCertificateSetup` to see if your company is configured to use the exemption certificate
+     * document store.  To request setup, please call `RequestCertificateSetup` and your company will
+     * 
+     * @param companyId The company ID to check
+     * @return ProvisionStatusModel
+     */
+    public ProvisionStatusModel getCertificateSetup(Integer companyId) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/certificates/setup");
+        path.applyField("companyId", companyId);
+        return ((RestCall<ProvisionStatusModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<ProvisionStatusModel>(){})).call();
+    }
+
+    /**
+     * Check a company's exemption certificate status.
+     * 
+     * Checks whether this company is configured to use exemption certificates in AvaTax.
+     * 
+     * Exemption certificates are tracked through a different auditable data store than the one that 
+     * holds AvaTax transactions.  To use the AvaTax exemption certificate document store, please call
+     * `GetCertificateSetup` to see if your company is configured to use the exemption certificate
+     * document store.  To request setup, please call `RequestCertificateSetup` and your company will
+     * 
+     * @param companyId The company ID to check
+     * @return ProvisionStatusModel
+     */
+    public Future<ProvisionStatusModel> getCertificateSetupAsync(Integer companyId) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/certificates/setup");
+        path.applyField("companyId", companyId);
+        return this.threadPool.submit((RestCall<ProvisionStatusModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<ProvisionStatusModel>(){}));
+    }
+
+    /**
      * Link attributes to a certificate
      * 
      * Link one or many attributes to a certificate.
@@ -1127,7 +1193,9 @@ public class AvaTaxClient {
      * criteria you specify when you store the certificate.  To view or manage your certificates directly, please 
      * log onto the administrative website for the product you purchased.
      * 
-     * You may experience up to a three minute delay on your very first call to the exemption related endpoints 
+     * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
+     * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
+     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document 
      * 
      * @param companyId The unique ID number of the company that recorded this certificate
      * @param id The unique ID number of this certificate
@@ -1154,7 +1222,9 @@ public class AvaTaxClient {
      * criteria you specify when you store the certificate.  To view or manage your certificates directly, please 
      * log onto the administrative website for the product you purchased.
      * 
-     * You may experience up to a three minute delay on your very first call to the exemption related endpoints 
+     * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
+     * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
+     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document 
      * 
      * @param companyId The unique ID number of the company that recorded this certificate
      * @param id The unique ID number of this certificate
@@ -1182,7 +1252,9 @@ public class AvaTaxClient {
      * criteria you specify when you store the certificate.  To view or manage your certificates directly, please 
      * log onto the administrative website for the product you purchased.
      * 
-     * You may experience up to a three minute delay on your very first call to the exemption related endpoints 
+     * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
+     * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
+     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document 
      * 
      * @param companyId The unique ID number of the company that recorded this certificate
      * @param id The unique ID number of this certificate
@@ -1210,7 +1282,9 @@ public class AvaTaxClient {
      * criteria you specify when you store the certificate.  To view or manage your certificates directly, please 
      * log onto the administrative website for the product you purchased.
      * 
-     * You may experience up to a three minute delay on your very first call to the exemption related endpoints 
+     * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
+     * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
+     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document 
      * 
      * @param companyId The unique ID number of the company that recorded this certificate
      * @param id The unique ID number of this certificate
@@ -1237,7 +1311,9 @@ public class AvaTaxClient {
      * criteria you specify when you store the certificate.  To view or manage your certificates directly, please 
      * log onto the administrative website for the product you purchased.
      * 
-     * You may experience up to a three minute delay on your very first call to the exemption related endpoints 
+     * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
+     * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
+     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document 
      * 
      * @param companyId The unique ID number of the company that recorded this certificate
      * @param id The unique ID number of this certificate
@@ -1263,7 +1339,9 @@ public class AvaTaxClient {
      * criteria you specify when you store the certificate.  To view or manage your certificates directly, please 
      * log onto the administrative website for the product you purchased.
      * 
-     * You may experience up to a three minute delay on your very first call to the exemption related endpoints 
+     * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
+     * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
+     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document 
      * 
      * @param companyId The unique ID number of the company that recorded this certificate
      * @param id The unique ID number of this certificate
@@ -1289,7 +1367,9 @@ public class AvaTaxClient {
      * criteria you specify when you store the certificate.  To view or manage your certificates directly, please 
      * log onto the administrative website for the product you purchased.
      * 
-     * You may experience up to a three minute delay on your very first call to the exemption related endpoints 
+     * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
+     * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
+     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document 
      * 
      * @param companyId The unique ID number of the company that recorded this certificate
      * @param id The unique ID number of this certificate
@@ -1317,7 +1397,9 @@ public class AvaTaxClient {
      * criteria you specify when you store the certificate.  To view or manage your certificates directly, please 
      * log onto the administrative website for the product you purchased.
      * 
-     * You may experience up to a three minute delay on your very first call to the exemption related endpoints 
+     * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
+     * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
+     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document 
      * 
      * @param companyId The unique ID number of the company that recorded this certificate
      * @param id The unique ID number of this certificate
@@ -1348,7 +1430,9 @@ public class AvaTaxClient {
      * * PoNumbers - Retrieves all PO numbers tied to the certificate.
      * * Attributes - Retrieves all attributes applied to the certificate.
      * 
-     * You may experience up to a three minute delay on your very first call to the exemption related endpoints 
+     * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
+     * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
+     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document 
      * 
      * @param companyId The ID number of the company to search
      * @param include OPTIONAL: A comma separated list of special fetch options. You can specify one or more of the following:      * Customers - Retrieves the list of customers linked to the certificate.   * PoNumbers - Retrieves all PO numbers tied to the certificate.   * Attributes - Retrieves all attributes applied to the certificate.
@@ -1385,7 +1469,9 @@ public class AvaTaxClient {
      * * PoNumbers - Retrieves all PO numbers tied to the certificate.
      * * Attributes - Retrieves all attributes applied to the certificate.
      * 
-     * You may experience up to a three minute delay on your very first call to the exemption related endpoints 
+     * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
+     * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
+     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document 
      * 
      * @param companyId The ID number of the company to search
      * @param include OPTIONAL: A comma separated list of special fetch options. You can specify one or more of the following:      * Customers - Retrieves the list of customers linked to the certificate.   * PoNumbers - Retrieves all PO numbers tied to the certificate.   * Attributes - Retrieves all attributes applied to the certificate.
@@ -1407,6 +1493,48 @@ public class AvaTaxClient {
     }
 
     /**
+     * Request setup of exemption certificates for this company.
+     * 
+     * Requests the setup of exemption certificates for this company.
+     * 
+     * Exemption certificates are tracked through a different auditable data store than the one that 
+     * holds AvaTax transactions.  To use the AvaTax exemption certificate document store, please call
+     * `GetCertificateSetup` to see if your company is configured to use the exemption certificate
+     * document store.  To request setup, please call `RequestCertificateSetup` and your company will
+     * be configured with data storage in the auditable certificate system.
+     * 
+     * 
+     * @param companyId 
+     * @return ProvisionStatusModel
+     */
+    public ProvisionStatusModel requestCertificateSetup(Integer companyId) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/certificates/setup");
+        path.applyField("companyId", companyId);
+        return ((RestCall<ProvisionStatusModel>)restCallFactory.createRestCall("post", path, null, new TypeToken<ProvisionStatusModel>(){})).call();
+    }
+
+    /**
+     * Request setup of exemption certificates for this company.
+     * 
+     * Requests the setup of exemption certificates for this company.
+     * 
+     * Exemption certificates are tracked through a different auditable data store than the one that 
+     * holds AvaTax transactions.  To use the AvaTax exemption certificate document store, please call
+     * `GetCertificateSetup` to see if your company is configured to use the exemption certificate
+     * document store.  To request setup, please call `RequestCertificateSetup` and your company will
+     * be configured with data storage in the auditable certificate system.
+     * 
+     * 
+     * @param companyId 
+     * @return ProvisionStatusModel
+     */
+    public Future<ProvisionStatusModel> requestCertificateSetupAsync(Integer companyId) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/certificates/setup");
+        path.applyField("companyId", companyId);
+        return this.threadPool.submit((RestCall<ProvisionStatusModel>)restCallFactory.createRestCall("post", path, null, new TypeToken<ProvisionStatusModel>(){}));
+    }
+
+    /**
      * Unlink attributes from a certificate
      * 
      * Unlink one or many attributes from a certificate.
@@ -1419,7 +1547,9 @@ public class AvaTaxClient {
      * criteria you specify when you store the certificate.  To view or manage your certificates directly, please 
      * log onto the administrative website for the product you purchased.
      * 
-     * You may experience up to a three minute delay on your very first call to the exemption related endpoints 
+     * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
+     * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
+     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document 
      * 
      * @param companyId The unique ID number of the company that recorded this certificate
      * @param id The unique ID number of this certificate
@@ -1446,7 +1576,9 @@ public class AvaTaxClient {
      * criteria you specify when you store the certificate.  To view or manage your certificates directly, please 
      * log onto the administrative website for the product you purchased.
      * 
-     * You may experience up to a three minute delay on your very first call to the exemption related endpoints 
+     * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
+     * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
+     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document 
      * 
      * @param companyId The unique ID number of the company that recorded this certificate
      * @param id The unique ID number of this certificate
@@ -1475,7 +1607,9 @@ public class AvaTaxClient {
      * criteria you specify when you store the certificate.  To view or manage your certificates directly, please 
      * log onto the administrative website for the product you purchased.
      * 
-     * You may experience up to a three minute delay on your very first call to the exemption related endpoints 
+     * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
+     * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
+     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document 
      * 
      * @param companyId The unique ID number of the company that recorded this certificate
      * @param id The unique ID number of this certificate
@@ -1504,7 +1638,9 @@ public class AvaTaxClient {
      * criteria you specify when you store the certificate.  To view or manage your certificates directly, please 
      * log onto the administrative website for the product you purchased.
      * 
-     * You may experience up to a three minute delay on your very first call to the exemption related endpoints 
+     * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
+     * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
+     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document 
      * 
      * @param companyId The unique ID number of the company that recorded this certificate
      * @param id The unique ID number of this certificate
@@ -1528,7 +1664,9 @@ public class AvaTaxClient {
      * criteria you specify when you store the certificate.  To view or manage your certificates directly, please 
      * log onto the administrative website for the product you purchased.
      * 
-     * You may experience up to a three minute delay on your very first call to the exemption related endpoints 
+     * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
+     * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
+     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document 
      * 
      * @param companyId The ID number of the company that recorded this certificate
      * @param id The unique ID number of this certificate
@@ -1552,7 +1690,9 @@ public class AvaTaxClient {
      * criteria you specify when you store the certificate.  To view or manage your certificates directly, please 
      * log onto the administrative website for the product you purchased.
      * 
-     * You may experience up to a three minute delay on your very first call to the exemption related endpoints 
+     * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
+     * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
+     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document 
      * 
      * @param companyId The ID number of the company that recorded this certificate
      * @param id The unique ID number of this certificate
@@ -1579,7 +1719,9 @@ public class AvaTaxClient {
      * criteria you specify when you store the certificate.  To view or manage your certificates directly, please 
      * log onto the administrative website for the product you purchased.
      * 
-     * You may experience up to a three minute delay on your very first call to the exemption related endpoints 
+     * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
+     * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
+     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document 
      * 
      * @param companyId The unique ID number of the company that recorded this certificate
      * @param id The unique ID number of this certificate
@@ -1606,7 +1748,9 @@ public class AvaTaxClient {
      * criteria you specify when you store the certificate.  To view or manage your certificates directly, please 
      * log onto the administrative website for the product you purchased.
      * 
-     * You may experience up to a three minute delay on your very first call to the exemption related endpoints 
+     * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
+     * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
+     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document 
      * 
      * @param companyId The unique ID number of the company that recorded this certificate
      * @param id The unique ID number of this certificate
@@ -2493,7 +2637,9 @@ public class AvaTaxClient {
      * identify any certificates linked to this `customer` object.  If any certificate applies to the transaction,
      * AvaTax will record the appropriate elements of the transaction as exempt and link it to the `certificate`.
      * 
-     * You may experience up to a three minute delay on your very first call to the exemption related endpoints 
+     * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
+     * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
+     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document 
      * 
      * @param companyId The unique ID number of the company that recorded this customer
      * @param model The list of customer objects to be created
@@ -2516,7 +2662,9 @@ public class AvaTaxClient {
      * identify any certificates linked to this `customer` object.  If any certificate applies to the transaction,
      * AvaTax will record the appropriate elements of the transaction as exempt and link it to the `certificate`.
      * 
-     * You may experience up to a three minute delay on your very first call to the exemption related endpoints 
+     * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
+     * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
+     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document 
      * 
      * @param companyId The unique ID number of the company that recorded this customer
      * @param model The list of customer objects to be created
@@ -2539,7 +2687,9 @@ public class AvaTaxClient {
      * identify any certificates linked to this `customer` object.  If any certificate applies to the transaction,
      * AvaTax will record the appropriate elements of the transaction as exempt and link it to the `certificate`.
      * 
-     * You may experience up to a three minute delay on your very first call to the exemption related endpoints 
+     * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
+     * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
+     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document 
      * 
      * @param companyId The unique ID number of the company that recorded this customer
      * @param customerCode The unique code representing this customer
@@ -2563,7 +2713,9 @@ public class AvaTaxClient {
      * identify any certificates linked to this `customer` object.  If any certificate applies to the transaction,
      * AvaTax will record the appropriate elements of the transaction as exempt and link it to the `certificate`.
      * 
-     * You may experience up to a three minute delay on your very first call to the exemption related endpoints 
+     * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
+     * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
+     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document 
      * 
      * @param companyId The unique ID number of the company that recorded this customer
      * @param customerCode The unique code representing this customer
@@ -2591,7 +2743,9 @@ public class AvaTaxClient {
      * 
      * * Certificates - Fetch a list of certificates linked to this customer.
      * 
-     * You may experience up to a three minute delay on your very first call to the exemption related endpoints 
+     * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
+     * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
+     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document 
      * 
      * @param companyId The unique ID number of the company that recorded this customer
      * @param customerCode The unique code representing this customer
@@ -2621,7 +2775,9 @@ public class AvaTaxClient {
      * 
      * * Certificates - Fetch a list of certificates linked to this customer.
      * 
-     * You may experience up to a three minute delay on your very first call to the exemption related endpoints 
+     * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
+     * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
+     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document 
      * 
      * @param companyId The unique ID number of the company that recorded this customer
      * @param customerCode The unique code representing this customer
@@ -2647,7 +2803,9 @@ public class AvaTaxClient {
      * identify any certificates linked to this `customer` object.  If any certificate applies to the transaction,
      * AvaTax will record the appropriate elements of the transaction as exempt and link it to the `certificate`.
      * 
-     * You may experience up to a three minute delay on your very first call to the exemption related endpoints 
+     * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
+     * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
+     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document 
      * 
      * @param companyId The unique ID number of the company that recorded this customer
      * @param customerCode The unique code representing this customer
@@ -2672,7 +2830,9 @@ public class AvaTaxClient {
      * identify any certificates linked to this `customer` object.  If any certificate applies to the transaction,
      * AvaTax will record the appropriate elements of the transaction as exempt and link it to the `certificate`.
      * 
-     * You may experience up to a three minute delay on your very first call to the exemption related endpoints 
+     * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
+     * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
+     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document 
      * 
      * @param companyId The unique ID number of the company that recorded this customer
      * @param customerCode The unique code representing this customer
@@ -2697,7 +2857,9 @@ public class AvaTaxClient {
      * identify any certificates linked to this `customer` object.  If any certificate applies to the transaction,
      * AvaTax will record the appropriate elements of the transaction as exempt and link it to the `certificate`.
      * 
-     * You may experience up to a three minute delay on your very first call to the exemption related endpoints 
+     * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
+     * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
+     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document 
      * 
      * @param companyId The unique ID number of the company that recorded this customer
      * @param customerCode The unique code representing this customer
@@ -2731,7 +2893,9 @@ public class AvaTaxClient {
      * identify any certificates linked to this `customer` object.  If any certificate applies to the transaction,
      * AvaTax will record the appropriate elements of the transaction as exempt and link it to the `certificate`.
      * 
-     * You may experience up to a three minute delay on your very first call to the exemption related endpoints 
+     * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
+     * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
+     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document 
      * 
      * @param companyId The unique ID number of the company that recorded this customer
      * @param customerCode The unique code representing this customer
@@ -2768,7 +2932,9 @@ public class AvaTaxClient {
      * a CertExpress invitation link so that the customer can upload proof of their exemption certificate.  Please
      * see the `CreateCertExpressInvitation` API to create an invitation link for this customer.
      * 
-     * You may experience up to a three minute delay on your very first call to the exemption related endpoints 
+     * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
+     * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
+     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document 
      * 
      * @param companyId The unique ID number of the company that recorded this customer
      * @param customerCode The unique code representing this customer
@@ -2799,7 +2965,9 @@ public class AvaTaxClient {
      * a CertExpress invitation link so that the customer can upload proof of their exemption certificate.  Please
      * see the `CreateCertExpressInvitation` API to create an invitation link for this customer.
      * 
-     * You may experience up to a three minute delay on your very first call to the exemption related endpoints 
+     * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
+     * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
+     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document 
      * 
      * @param companyId The unique ID number of the company that recorded this customer
      * @param customerCode The unique code representing this customer
@@ -2831,7 +2999,9 @@ public class AvaTaxClient {
      * 
      * * Certificates - Fetch a list of certificates linked to this customer.
      * 
-     * You may experience up to a three minute delay on your very first call to the exemption related endpoints 
+     * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
+     * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
+     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document 
      * 
      * @param companyId The unique ID number of the company that recorded this customer
      * @param include OPTIONAL - You can specify the value `certificates` to fetch information about certificates linked to the customer.
@@ -2867,7 +3037,9 @@ public class AvaTaxClient {
      * 
      * * Certificates - Fetch a list of certificates linked to this customer.
      * 
-     * You may experience up to a three minute delay on your very first call to the exemption related endpoints 
+     * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
+     * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
+     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document 
      * 
      * @param companyId The unique ID number of the company that recorded this customer
      * @param include OPTIONAL - You can specify the value `certificates` to fetch information about certificates linked to the customer.
@@ -2899,7 +3071,9 @@ public class AvaTaxClient {
      * identify any certificates linked to this `customer` object.  If any certificate applies to the transaction,
      * AvaTax will record the appropriate elements of the transaction as exempt and link it to the `certificate`.
      * 
-     * You may experience up to a three minute delay on your very first call to the exemption related endpoints 
+     * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
+     * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
+     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document 
      * 
      * @param companyId The unique ID number of the company that recorded this customer
      * @param customerCode The unique code representing this customer
@@ -2924,7 +3098,9 @@ public class AvaTaxClient {
      * identify any certificates linked to this `customer` object.  If any certificate applies to the transaction,
      * AvaTax will record the appropriate elements of the transaction as exempt and link it to the `certificate`.
      * 
-     * You may experience up to a three minute delay on your very first call to the exemption related endpoints 
+     * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
+     * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
+     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document 
      * 
      * @param companyId The unique ID number of the company that recorded this customer
      * @param customerCode The unique code representing this customer
@@ -2949,7 +3125,9 @@ public class AvaTaxClient {
      * identify any certificates linked to this `customer` object.  If any certificate applies to the transaction,
      * AvaTax will record the appropriate elements of the transaction as exempt and link it to the `certificate`.
      * 
-     * You may experience up to a three minute delay on your very first call to the exemption related endpoints 
+     * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
+     * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
+     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document 
      * 
      * @param companyId The unique ID number of the company that recorded this customer
      * @param customerCode The unique code representing this customer
@@ -2974,7 +3152,9 @@ public class AvaTaxClient {
      * identify any certificates linked to this `customer` object.  If any certificate applies to the transaction,
      * AvaTax will record the appropriate elements of the transaction as exempt and link it to the `certificate`.
      * 
-     * You may experience up to a three minute delay on your very first call to the exemption related endpoints 
+     * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
+     * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
+     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document 
      * 
      * @param companyId The unique ID number of the company that recorded this customer
      * @param customerCode The unique code representing this customer
@@ -3136,7 +3316,7 @@ public class AvaTaxClient {
      * A certificate may have multiple attributes that control its behavior.  You may apply or remove attributes to a
      * certificate at any time.
      * 
-     * You may experience up to a three minute delay on your very first call to the exemption related endpoints 
+     * If you see the 'CertCaptureNotConfiguredError', please use CheckProvision and RequestProvision endpoints to
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
@@ -3161,7 +3341,7 @@ public class AvaTaxClient {
      * A certificate may have multiple attributes that control its behavior.  You may apply or remove attributes to a
      * certificate at any time.
      * 
-     * You may experience up to a three minute delay on your very first call to the exemption related endpoints 
+     * If you see the 'CertCaptureNotConfiguredError', please use CheckProvision and RequestProvision endpoints to
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
@@ -3186,7 +3366,7 @@ public class AvaTaxClient {
      * An exemption reason defines why a certificate allows a customer to be exempt
      * for purposes of tax calculation.
      * 
-     * You may experience up to a three minute delay on your very first call to the exemption related endpoints 
+     * If you see the 'CertCaptureNotConfiguredError', please use CheckProvision and RequestProvision endpoints to
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
@@ -3211,7 +3391,7 @@ public class AvaTaxClient {
      * An exemption reason defines why a certificate allows a customer to be exempt
      * for purposes of tax calculation.
      * 
-     * You may experience up to a three minute delay on your very first call to the exemption related endpoints 
+     * If you see the 'CertCaptureNotConfiguredError', please use CheckProvision and RequestProvision endpoints to
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
@@ -3236,7 +3416,7 @@ public class AvaTaxClient {
      * An exposure zone is a location where a certificate can be valid.  Exposure zones may indicate a taxing
      * authority or other legal entity to which a certificate may apply.
      * 
-     * You may experience up to a three minute delay on your very first call to the exemption related endpoints 
+     * If you see the 'CertCaptureNotConfiguredError', please use CheckProvision and RequestProvision endpoints to
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
@@ -3261,7 +3441,7 @@ public class AvaTaxClient {
      * An exposure zone is a location where a certificate can be valid.  Exposure zones may indicate a taxing
      * authority or other legal entity to which a certificate may apply.
      * 
-     * You may experience up to a three minute delay on your very first call to the exemption related endpoints 
+     * If you see the 'CertCaptureNotConfiguredError', please use CheckProvision and RequestProvision endpoints to
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
@@ -3453,7 +3633,7 @@ public class AvaTaxClient {
      * upload certificates.  An invitation allows customers to use CertExpress to upload their exemption 
      * certificates directly; this cover letter explains why the invitation was sent.
      * 
-     * You may experience up to a three minute delay on your very first call to the exemption related endpoints 
+     * If you see the 'CertCaptureNotConfiguredError', please use CheckProvision and RequestProvision endpoints to
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
@@ -3479,7 +3659,7 @@ public class AvaTaxClient {
      * upload certificates.  An invitation allows customers to use CertExpress to upload their exemption 
      * certificates directly; this cover letter explains why the invitation was sent.
      * 
-     * You may experience up to a three minute delay on your very first call to the exemption related endpoints 
+     * If you see the 'CertCaptureNotConfiguredError', please use CheckProvision and RequestProvision endpoints to
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
@@ -3570,6 +3750,50 @@ public class AvaTaxClient {
     public Future<FetchResult<HsCodeModel>> listCrossBorderSectionsAsync() {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/crossborder/sections");
         return this.threadPool.submit((RestCall<FetchResult<HsCodeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<HsCodeModel>>(){}));
+    }
+
+    /**
+     * List all ISO 4217 currencies supported by AvaTax.
+     * 
+     * Lists all ISO 4217 currencies supported by AvaTax.
+     * 
+     * This API produces a list of currency codes that can be used when calling AvaTax.  The values from this API can be used to fill out the
+     * 
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
+     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @return FetchResult<CurrencyModel>
+     */
+    public FetchResult<CurrencyModel> listCurrencies(String filter, Integer top, Integer skip, String orderBy) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/currencies");
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
+        return ((RestCall<FetchResult<CurrencyModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CurrencyModel>>(){})).call();
+    }
+
+    /**
+     * List all ISO 4217 currencies supported by AvaTax.
+     * 
+     * Lists all ISO 4217 currencies supported by AvaTax.
+     * 
+     * This API produces a list of currency codes that can be used when calling AvaTax.  The values from this API can be used to fill out the
+     * 
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
+     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @return FetchResult<CurrencyModel>
+     */
+    public Future<FetchResult<CurrencyModel>> listCurrenciesAsync(String filter, Integer top, Integer skip, String orderBy) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/currencies");
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
+        return this.threadPool.submit((RestCall<FetchResult<CurrencyModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CurrencyModel>>(){}));
     }
 
     /**
@@ -4699,6 +4923,60 @@ public class AvaTaxClient {
     }
 
     /**
+     * List all customs duty programs recognized by AvaTax
+     * 
+     * List all preferred customs duty programs recognized by AvaTax.
+     * 
+     * A customs duty program is an optional program you can use to obtain favorable treatment from customs and duty agents.
+     * An example of a preferred program is NAFTA, which provides preferential rates for products being shipped from neighboring
+     * countries.
+     * 
+     * To select a preferred program for calculating customs and duty rates, call this API to find the appropriate code for your
+     * preferred program.  Next, set the parameter `AvaTax.LC.PreferredProgram` in your `CreateTransaction` call to the code of
+     * 
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
+     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @return FetchResult<PreferredProgramModel>
+     */
+    public FetchResult<PreferredProgramModel> listPreferredPrograms(String filter, Integer top, Integer skip, String orderBy) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/preferredprograms");
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
+        return ((RestCall<FetchResult<PreferredProgramModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<PreferredProgramModel>>(){})).call();
+    }
+
+    /**
+     * List all customs duty programs recognized by AvaTax
+     * 
+     * List all preferred customs duty programs recognized by AvaTax.
+     * 
+     * A customs duty program is an optional program you can use to obtain favorable treatment from customs and duty agents.
+     * An example of a preferred program is NAFTA, which provides preferential rates for products being shipped from neighboring
+     * countries.
+     * 
+     * To select a preferred program for calculating customs and duty rates, call this API to find the appropriate code for your
+     * preferred program.  Next, set the parameter `AvaTax.LC.PreferredProgram` in your `CreateTransaction` call to the code of
+     * 
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
+     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @return FetchResult<PreferredProgramModel>
+     */
+    public Future<FetchResult<PreferredProgramModel>> listPreferredProgramsAsync(String filter, Integer top, Integer skip, String orderBy) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/preferredprograms");
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
+        return this.threadPool.submit((RestCall<FetchResult<PreferredProgramModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<PreferredProgramModel>>(){}));
+    }
+
+    /**
      * Retrieve the full list of rate types for each country
      * 
      * Returns the full list of Avalara-supported rate type file types
@@ -5499,7 +5777,7 @@ public class AvaTaxClient {
     /**
      * Retrieve all DistanceThreshold objects
      * 
-     * Lists all DistanceThreshold objects that belong to this company.
+     * Lists all DistanceThreshold objects that belong to this account.
      * 
      * A company-distance-threshold model indicates the distance between a company
      * and the taxing borders of various countries.  Distance thresholds are necessary
@@ -5527,7 +5805,7 @@ public class AvaTaxClient {
     /**
      * Retrieve all DistanceThreshold objects
      * 
-     * Lists all DistanceThreshold objects that belong to this company.
+     * Lists all DistanceThreshold objects that belong to this account.
      * 
      * A company-distance-threshold model indicates the distance between a company
      * and the taxing borders of various countries.  Distance thresholds are necessary
@@ -11794,13 +12072,15 @@ This gets the basic information from the filings and doesn't include anything ex
      * call the `CreateTransaction` API call.  When using this file, your software will be unable to
      * handle complex tax rules such as:
      * 
-     * * Zip+9 - This tax file does not contain 
+     * * Zip+4 - This tax file contains five digit zip codes only.
      * * Different product types - This tax file contains tangible personal property tax rates only.
      * * Mixed sourcing - This tax file cannot be used to resolve origin-based taxes.
      * * Threshold-based taxes - This tax file does not contain information about thresholds.
      * 
      * If you use this file to provide default tax rates, please ensure that your software calls `CreateTransaction`
      * to reconcile the actual transaction and determine the difference between the estimated general tax
+     * rate and the final transaction tax.
+     * 
      * 
      * @param date The date for which point-of-sale data would be calculated (today by default). Example input: 2016-12-31
      * @return String
@@ -11821,13 +12101,15 @@ This gets the basic information from the filings and doesn't include anything ex
      * call the `CreateTransaction` API call.  When using this file, your software will be unable to
      * handle complex tax rules such as:
      * 
-     * * Zip+9 - This tax file does not contain 
+     * * Zip+4 - This tax file contains five digit zip codes only.
      * * Different product types - This tax file contains tangible personal property tax rates only.
      * * Mixed sourcing - This tax file cannot be used to resolve origin-based taxes.
      * * Threshold-based taxes - This tax file does not contain information about thresholds.
      * 
      * If you use this file to provide default tax rates, please ensure that your software calls `CreateTransaction`
      * to reconcile the actual transaction and determine the difference between the estimated general tax
+     * rate and the final transaction tax.
+     * 
      * 
      * @param date The date for which point-of-sale data would be calculated (today by default). Example input: 2016-12-31
      * @return String
@@ -12182,13 +12464,15 @@ This gets the basic information from the filings and doesn't include anything ex
      * 
      * @param companyCode The company code of the company that recorded this transaction
      * @param transactionCode The transaction code to adjust
+     * @param documentType (Optional): The document type of the transaction to adjust. (See DocumentType::* for a list of allowable values)
      * @param model The adjustment you wish to make
      * @return TransactionModel
      */
-    public TransactionModel adjustTransaction(String companyCode, String transactionCode, AdjustTransactionModel model) throws Exception {
+    public TransactionModel adjustTransaction(String companyCode, String transactionCode, DocumentType documentType, AdjustTransactionModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyCode}/transactions/{transactionCode}/adjust");
         path.applyField("companyCode", companyCode);
         path.applyField("transactionCode", transactionCode);
+        path.addQuery("documentType", documentType);
         return ((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<TransactionModel>(){})).call();
     }
 
@@ -12208,13 +12492,15 @@ This gets the basic information from the filings and doesn't include anything ex
      * 
      * @param companyCode The company code of the company that recorded this transaction
      * @param transactionCode The transaction code to adjust
+     * @param documentType (Optional): The document type of the transaction to adjust. (See DocumentType::* for a list of allowable values)
      * @param model The adjustment you wish to make
      * @return TransactionModel
      */
-    public Future<TransactionModel> adjustTransactionAsync(String companyCode, String transactionCode, AdjustTransactionModel model) {
+    public Future<TransactionModel> adjustTransactionAsync(String companyCode, String transactionCode, DocumentType documentType, AdjustTransactionModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyCode}/transactions/{transactionCode}/adjust");
         path.applyField("companyCode", companyCode);
         path.applyField("transactionCode", transactionCode);
+        path.addQuery("documentType", documentType);
         return this.threadPool.submit((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<TransactionModel>(){}));
     }
 
