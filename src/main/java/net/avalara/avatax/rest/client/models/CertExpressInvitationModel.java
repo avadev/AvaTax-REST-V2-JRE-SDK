@@ -12,13 +12,13 @@ import java.util.HashMap;
 /*
  * AvaTax Software Development Kit for Java JRE based environments
  *
- * (c) 2004-2017 Avalara, Inc.
+ * (c) 2004-2018 Avalara, Inc.
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  *
  * @author     Dustin Welden <dustin.welden@avalara.com>
- * @copyright  2004-2017 Avalara, Inc.
+ * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
  */
@@ -102,6 +102,8 @@ public class CertExpressInvitationModel {
      * Getter for customerCode
      *
      * The unique code of the customer that received this invitation.
+    * Note: This field is case sensitive. To have exemption certificates apply, this value should
+    * be the same as the one passed to create a customer.
      */
     public String getCustomerCode() {
         return this.customerCode;
@@ -111,6 +113,8 @@ public class CertExpressInvitationModel {
      * Setter for customerCode
      *
      * The unique code of the customer that received this invitation.
+    * Note: This field is case sensitive. To have exemption certificates apply, this value should
+    * be the same as the one passed to create a customer.
      */
     public void setCustomerCode(String value) {
         this.customerCode = value;
@@ -210,6 +214,8 @@ public class CertExpressInvitationModel {
      *
      * When an invitation is sent, it contains a list of exposure zones for which the customer is invited to upload
     * their exemption certificates. This list contains the ID numbers of the exposure zones identified.
+    * 
+    * For a list of exposure zones, please call `ListCertificateExposureZones`.
      */
     public ArrayList<Integer> getExposureZones() {
         return this.exposureZones;
@@ -220,6 +226,8 @@ public class CertExpressInvitationModel {
      *
      * When an invitation is sent, it contains a list of exposure zones for which the customer is invited to upload
     * their exemption certificates. This list contains the ID numbers of the exposure zones identified.
+    * 
+    * For a list of exposure zones, please call `ListCertificateExposureZones`.
      */
     public void setExposureZones(ArrayList<Integer> value) {
         this.exposureZones = value;
@@ -232,6 +240,8 @@ public class CertExpressInvitationModel {
      * Getter for exemptReasons
      *
      * The list of exemption reasons identified by this CertExpress invitation.
+    * 
+    * For a list of reason codes, please call `ListCertificateExemptReasons`.
      */
     public ArrayList<Integer> getExemptReasons() {
         return this.exemptReasons;
@@ -241,6 +251,8 @@ public class CertExpressInvitationModel {
      * Setter for exemptReasons
      *
      * The list of exemption reasons identified by this CertExpress invitation.
+    * 
+    * For a list of reason codes, please call `ListCertificateExemptReasons`.
      */
     public void setExemptReasons(ArrayList<Integer> value) {
         this.exemptReasons = value;
@@ -315,8 +327,9 @@ public class CertExpressInvitationModel {
     /**
      * Getter for requestLink
      *
-     * The web link for this CertExpress invitation. This value is only usable if the status of this invitation is `Ready`.
-    * If this invitation was sent via email, this value will be null.
+     * The web link (URL) that a customer can click on or visit to begin using this CertExpress invitation. 
+    * 
+    * This value is only usable if the status of this invitation is `Ready` and the request was created with type `Download`.
      */
     public String getRequestLink() {
         return this.requestLink;
@@ -325,8 +338,9 @@ public class CertExpressInvitationModel {
     /**
      * Setter for requestLink
      *
-     * The web link for this CertExpress invitation. This value is only usable if the status of this invitation is `Ready`.
-    * If this invitation was sent via email, this value will be null.
+     * The web link (URL) that a customer can click on or visit to begin using this CertExpress invitation. 
+    * 
+    * This value is only usable if the status of this invitation is `Ready` and the request was created with type `Download`.
      */
     public void setRequestLink(String value) {
         this.requestLink = value;

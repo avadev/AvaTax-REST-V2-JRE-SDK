@@ -12,13 +12,13 @@ import java.util.HashMap;
 /*
  * AvaTax Software Development Kit for Java JRE based environments
  *
- * (c) 2004-2017 Avalara, Inc.
+ * (c) 2004-2018 Avalara, Inc.
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  *
  * @author     Dustin Welden <dustin.welden@avalara.com>
- * @copyright  2004-2017 Avalara, Inc.
+ * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
  */
@@ -656,6 +656,258 @@ public class FilingReturnModel {
      */
     public void setExcludedTaxAmount(BigDecimal value) {
         this.excludedTaxAmount = value;
+    }
+
+
+    private BigDecimal carryOverSalesAmount;
+
+    /**
+     * Getter for carryOverSalesAmount
+     *
+     * The amount of carry over sales applied to the liability calculation
+     */
+    public BigDecimal getCarryOverSalesAmount() {
+        return this.carryOverSalesAmount;
+    }
+
+    /**
+     * Setter for carryOverSalesAmount
+     *
+     * The amount of carry over sales applied to the liability calculation
+     */
+    public void setCarryOverSalesAmount(BigDecimal value) {
+        this.carryOverSalesAmount = value;
+    }
+
+
+    private BigDecimal carryOverNonTaxableAmount;
+
+    /**
+     * Getter for carryOverNonTaxableAmount
+     *
+     * The amount of carry over non taxable sales applied to the liability calculation
+     */
+    public BigDecimal getCarryOverNonTaxableAmount() {
+        return this.carryOverNonTaxableAmount;
+    }
+
+    /**
+     * Setter for carryOverNonTaxableAmount
+     *
+     * The amount of carry over non taxable sales applied to the liability calculation
+     */
+    public void setCarryOverNonTaxableAmount(BigDecimal value) {
+        this.carryOverNonTaxableAmount = value;
+    }
+
+
+    private BigDecimal carryOverTaxAmount;
+
+    /**
+     * Getter for carryOverTaxAmount
+     *
+     * The amount of carry over sales tax applied to the liability calculation
+     */
+    public BigDecimal getCarryOverTaxAmount() {
+        return this.carryOverTaxAmount;
+    }
+
+    /**
+     * Setter for carryOverTaxAmount
+     *
+     * The amount of carry over sales tax applied to the liability calculation
+     */
+    public void setCarryOverTaxAmount(BigDecimal value) {
+        this.carryOverTaxAmount = value;
+    }
+
+
+    private BigDecimal carryOverConsumerUseTaxAmount;
+
+    /**
+     * Getter for carryOverConsumerUseTaxAmount
+     *
+     * The amount of carry over consumer use tax applied to the liability calculation
+     */
+    public BigDecimal getCarryOverConsumerUseTaxAmount() {
+        return this.carryOverConsumerUseTaxAmount;
+    }
+
+    /**
+     * Setter for carryOverConsumerUseTaxAmount
+     *
+     * The amount of carry over consumer use tax applied to the liability calculation
+     */
+    public void setCarryOverConsumerUseTaxAmount(BigDecimal value) {
+        this.carryOverConsumerUseTaxAmount = value;
+    }
+
+
+    private BigDecimal taxAccrualAmount;
+
+    /**
+     * Getter for taxAccrualAmount
+     *
+     * The total amount of total tax accrued in the current active period
+     */
+    public BigDecimal getTaxAccrualAmount() {
+        return this.taxAccrualAmount;
+    }
+
+    /**
+     * Setter for taxAccrualAmount
+     *
+     * The total amount of total tax accrued in the current active period
+     */
+    public void setTaxAccrualAmount(BigDecimal value) {
+        this.taxAccrualAmount = value;
+    }
+
+
+    private BigDecimal salesAccrualAmount;
+
+    /**
+     * Getter for salesAccrualAmount
+     *
+     * The total amount of sales accrued in the current active period
+     */
+    public BigDecimal getSalesAccrualAmount() {
+        return this.salesAccrualAmount;
+    }
+
+    /**
+     * Setter for salesAccrualAmount
+     *
+     * The total amount of sales accrued in the current active period
+     */
+    public void setSalesAccrualAmount(BigDecimal value) {
+        this.salesAccrualAmount = value;
+    }
+
+
+    private BigDecimal nonTaxableAccrualAmount;
+
+    /**
+     * Getter for nonTaxableAccrualAmount
+     *
+     * The total amount of nontaxable sales accrued in the current active period
+     */
+    public BigDecimal getNonTaxableAccrualAmount() {
+        return this.nonTaxableAccrualAmount;
+    }
+
+    /**
+     * Setter for nonTaxableAccrualAmount
+     *
+     * The total amount of nontaxable sales accrued in the current active period
+     */
+    public void setNonTaxableAccrualAmount(BigDecimal value) {
+        this.nonTaxableAccrualAmount = value;
+    }
+
+
+    private BigDecimal salesTaxAccrualAmount;
+
+    /**
+     * Getter for salesTaxAccrualAmount
+     *
+     * The total amount of sales tax accrued in the current active period
+     */
+    public BigDecimal getSalesTaxAccrualAmount() {
+        return this.salesTaxAccrualAmount;
+    }
+
+    /**
+     * Setter for salesTaxAccrualAmount
+     *
+     * The total amount of sales tax accrued in the current active period
+     */
+    public void setSalesTaxAccrualAmount(BigDecimal value) {
+        this.salesTaxAccrualAmount = value;
+    }
+
+
+    private BigDecimal sellersUseTaxAccrualAmount;
+
+    /**
+     * Getter for sellersUseTaxAccrualAmount
+     *
+     * The total amount of sellers use tax accrued in the current active period
+     */
+    public BigDecimal getSellersUseTaxAccrualAmount() {
+        return this.sellersUseTaxAccrualAmount;
+    }
+
+    /**
+     * Setter for sellersUseTaxAccrualAmount
+     *
+     * The total amount of sellers use tax accrued in the current active period
+     */
+    public void setSellersUseTaxAccrualAmount(BigDecimal value) {
+        this.sellersUseTaxAccrualAmount = value;
+    }
+
+
+    private BigDecimal consumerUseTaxAccrualAmount;
+
+    /**
+     * Getter for consumerUseTaxAccrualAmount
+     *
+     * The total amount of consumer use tax accrued in the current active period
+     */
+    public BigDecimal getConsumerUseTaxAccrualAmount() {
+        return this.consumerUseTaxAccrualAmount;
+    }
+
+    /**
+     * Setter for consumerUseTaxAccrualAmount
+     *
+     * The total amount of consumer use tax accrued in the current active period
+     */
+    public void setConsumerUseTaxAccrualAmount(BigDecimal value) {
+        this.consumerUseTaxAccrualAmount = value;
+    }
+
+
+    private BigDecimal consumerUseTaxableAccrualAmount;
+
+    /**
+     * Getter for consumerUseTaxableAccrualAmount
+     *
+     * The total amount of consumer use taxable sales accrued in the current active period
+     */
+    public BigDecimal getConsumerUseTaxableAccrualAmount() {
+        return this.consumerUseTaxableAccrualAmount;
+    }
+
+    /**
+     * Setter for consumerUseTaxableAccrualAmount
+     *
+     * The total amount of consumer use taxable sales accrued in the current active period
+     */
+    public void setConsumerUseTaxableAccrualAmount(BigDecimal value) {
+        this.consumerUseTaxableAccrualAmount = value;
+    }
+
+
+    private BigDecimal consumerUseNonTaxableAccrualAmount;
+
+    /**
+     * Getter for consumerUseNonTaxableAccrualAmount
+     *
+     * The total amount of consumer use non taxable sales accrued in the current active period
+     */
+    public BigDecimal getConsumerUseNonTaxableAccrualAmount() {
+        return this.consumerUseNonTaxableAccrualAmount;
+    }
+
+    /**
+     * Setter for consumerUseNonTaxableAccrualAmount
+     *
+     * The total amount of consumer use non taxable sales accrued in the current active period
+     */
+    public void setConsumerUseNonTaxableAccrualAmount(BigDecimal value) {
+        this.consumerUseNonTaxableAccrualAmount = value;
     }
 
 

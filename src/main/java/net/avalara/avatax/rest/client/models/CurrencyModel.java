@@ -24,29 +24,29 @@ import java.util.HashMap;
  */
 
 /**
- * FilingFrequency Model
+ * Represents an ISO 4217 currency code used for designating the currency of a transaction.
  */
-public class FilingFrequencyModel {
+public class CurrencyModel {
 
 
-    private Integer id;
+    private String code;
 
     /**
-     * Getter for id
+     * Getter for code
      *
-     * The unique ID number of this filing frequency.
+     * The ISO 4217 currency code for this currency.
      */
-    public Integer getId() {
-        return this.id;
+    public String getCode() {
+        return this.code;
     }
 
     /**
-     * Setter for id
+     * Setter for code
      *
-     * The unique ID number of this filing frequency.
+     * The ISO 4217 currency code for this currency.
      */
-    public void setId(Integer value) {
-        this.id = value;
+    public void setCode(String value) {
+        this.code = value;
     }
 
 
@@ -55,7 +55,7 @@ public class FilingFrequencyModel {
     /**
      * Getter for description
      *
-     * The description name of this filing frequency
+     * A friendly human-readable name representing this currency.
      */
     public String getDescription() {
         return this.description;
@@ -64,15 +64,36 @@ public class FilingFrequencyModel {
     /**
      * Setter for description
      *
-     * The description name of this filing frequency
+     * A friendly human-readable name representing this currency.
      */
     public void setDescription(String value) {
         this.description = value;
     }
 
 
+    private Byte decimalDigits;
+
     /**
-     * Returns a JSON string representation of FilingFrequencyModel
+     * Getter for decimalDigits
+     *
+     * The number of decimal digits to use when formatting a currency value for display.
+     */
+    public Byte getDecimalDigits() {
+        return this.decimalDigits;
+    }
+
+    /**
+     * Setter for decimalDigits
+     *
+     * The number of decimal digits to use when formatting a currency value for display.
+     */
+    public void setDecimalDigits(Byte value) {
+        this.decimalDigits = value;
+    }
+
+
+    /**
+     * Returns a JSON string representation of CurrencyModel
      */
     @Override
     public String toString() {
