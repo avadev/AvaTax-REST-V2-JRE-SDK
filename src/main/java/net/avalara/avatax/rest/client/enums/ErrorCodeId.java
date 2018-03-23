@@ -663,7 +663,7 @@ public enum ErrorCodeId {
      */
     UserNoAccess,
 
-    /** 
+    /**
      * 
      */
     InvalidEntry,
@@ -674,6 +674,7 @@ public enum ErrorCodeId {
     TransactionAlreadyCancelled,
 
     /** 
+
      * Batch errors
      */
     BatchSalesAuditMustBeZippedError,
@@ -1187,6 +1188,7 @@ public enum ErrorCodeId {
      * 
      */
     NexusChildDateMismatch,
+
 
 }
     
