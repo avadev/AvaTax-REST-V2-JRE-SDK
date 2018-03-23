@@ -12,13 +12,13 @@ import java.util.HashMap;
 /*
  * AvaTax Software Development Kit for Java JRE based environments
  *
- * (c) 2004-2017 Avalara, Inc.
+ * (c) 2004-2018 Avalara, Inc.
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  *
  * @author     Dustin Welden <dustin.welden@avalara.com>
- * @copyright  2004-2017 Avalara, Inc.
+ * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
  */
@@ -36,6 +36,13 @@ public class AddressLocationInfo {
      *
      * If you wish to use the address of an existing location for this company, specify the address here.
     * Otherwise, leave this value empty.
+    * 
+    * The `locationCode` field on this object allows you to quickly use the address of an existing `locationModel` object instead
+    * of having to retype the address completely.
+    * 
+    * This field does not affect the behavior of transactions that must be filed on location-based tax returns. To specify how a
+    * transaction will be reported on location-based tax returns, please see the `reportingLocationCode` field 
+    * on the [CreateTransactionModel](https://developer.avalara.com/api-reference/avatax/rest/v2/models/CreateTransactionModel/) element.
      */
     public String getLocationCode() {
         return this.locationCode;
@@ -46,6 +53,13 @@ public class AddressLocationInfo {
      *
      * If you wish to use the address of an existing location for this company, specify the address here.
     * Otherwise, leave this value empty.
+    * 
+    * The `locationCode` field on this object allows you to quickly use the address of an existing `locationModel` object instead
+    * of having to retype the address completely.
+    * 
+    * This field does not affect the behavior of transactions that must be filed on location-based tax returns. To specify how a
+    * transaction will be reported on location-based tax returns, please see the `reportingLocationCode` field 
+    * on the [CreateTransactionModel](https://developer.avalara.com/api-reference/avatax/rest/v2/models/CreateTransactionModel/) element.
      */
     public void setLocationCode(String value) {
         this.locationCode = value;

@@ -12,13 +12,13 @@ import java.util.HashMap;
 /*
  * AvaTax Software Development Kit for Java JRE based environments
  *
- * (c) 2004-2017 Avalara, Inc.
+ * (c) 2004-2018 Avalara, Inc.
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  *
  * @author     Dustin Welden <dustin.welden@avalara.com>
- * @copyright  2004-2017 Avalara, Inc.
+ * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
  */
@@ -197,14 +197,14 @@ public class AvaFileFormModel {
     }
 
 
-    private Byte formTypeId;
+    private FormTypeId formTypeId;
 
     /**
      * Getter for formTypeId
      *
      * The type of the form being submitted
      */
-    public Byte getFormTypeId() {
+    public FormTypeId getFormTypeId() {
         return this.formTypeId;
     }
 
@@ -213,19 +213,19 @@ public class AvaFileFormModel {
      *
      * The type of the form being submitted
      */
-    public void setFormTypeId(Byte value) {
+    public void setFormTypeId(FormTypeId value) {
         this.formTypeId = value;
     }
 
 
-    private Byte filingOptionTypeId;
+    private FilingOptionTypeId filingOptionTypeId;
 
     /**
      * Getter for filingOptionTypeId
      *
      * 
      */
-    public Byte getFilingOptionTypeId() {
+    public FilingOptionTypeId getFilingOptionTypeId() {
         return this.filingOptionTypeId;
     }
 
@@ -234,19 +234,19 @@ public class AvaFileFormModel {
      *
      * 
      */
-    public void setFilingOptionTypeId(Byte value) {
+    public void setFilingOptionTypeId(FilingOptionTypeId value) {
         this.filingOptionTypeId = value;
     }
 
 
-    private Byte dueDateTypeId;
+    private DueDateTypeId dueDateTypeId;
 
     /**
      * Getter for dueDateTypeId
      *
      * The type of the due date
      */
-    public Byte getDueDateTypeId() {
+    public DueDateTypeId getDueDateTypeId() {
         return this.dueDateTypeId;
     }
 
@@ -255,7 +255,7 @@ public class AvaFileFormModel {
      *
      * The type of the due date
      */
-    public void setDueDateTypeId(Byte value) {
+    public void setDueDateTypeId(DueDateTypeId value) {
         this.dueDateTypeId = value;
     }
 
@@ -281,14 +281,14 @@ public class AvaFileFormModel {
     }
 
 
-    private Byte efileDueDateTypeId;
+    private DueDateTypeId efileDueDateTypeId;
 
     /**
      * Getter for efileDueDateTypeId
      *
      * 
      */
-    public Byte getEfileDueDateTypeId() {
+    public DueDateTypeId getEfileDueDateTypeId() {
         return this.efileDueDateTypeId;
     }
 
@@ -297,7 +297,7 @@ public class AvaFileFormModel {
      *
      * 
      */
-    public void setEfileDueDateTypeId(Byte value) {
+    public void setEfileDueDateTypeId(DueDateTypeId value) {
         this.efileDueDateTypeId = value;
     }
 
@@ -365,14 +365,14 @@ public class AvaFileFormModel {
     }
 
 
-    private Byte roundingTypeId;
+    private RoundingTypeId roundingTypeId;
 
     /**
      * Getter for roundingTypeId
      *
      * The way system does the rounding
      */
-    public Byte getRoundingTypeId() {
+    public RoundingTypeId getRoundingTypeId() {
         return this.roundingTypeId;
     }
 
@@ -381,8 +381,29 @@ public class AvaFileFormModel {
      *
      * The way system does the rounding
      */
-    public void setRoundingTypeId(Byte value) {
+    public void setRoundingTypeId(RoundingTypeId value) {
         this.roundingTypeId = value;
+    }
+
+
+    private OutletTypeId outletTypeId;
+
+    /**
+     * Getter for outletTypeId
+     *
+     * The outlet type of the form
+     */
+    public OutletTypeId getOutletTypeId() {
+        return this.outletTypeId;
+    }
+
+    /**
+     * Setter for outletTypeId
+     *
+     * The outlet type of the form
+     */
+    public void setOutletTypeId(OutletTypeId value) {
+        this.outletTypeId = value;
     }
 
 

@@ -12,13 +12,13 @@ import java.util.HashMap;
 /*
  * AvaTax Software Development Kit for Java JRE based environments
  *
- * (c) 2004-2017 Avalara, Inc.
+ * (c) 2004-2018 Avalara, Inc.
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  *
  * @author     Dustin Welden <dustin.welden@avalara.com>
- * @copyright  2004-2017 Avalara, Inc.
+ * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
  */
@@ -370,7 +370,8 @@ public class TransactionLineDetailModel {
     /**
      * Getter for jurisType
      *
-     * The type of the jurisdiction to which this tax detail applies.
+     * (DEPRECATED) The type of the jurisdiction to which this tax detail applies.
+    * NOTE: Use jurisdictionTypeId instead.
      */
     public JurisTypeId getJurisType() {
         return this.jurisType;
@@ -379,10 +380,32 @@ public class TransactionLineDetailModel {
     /**
      * Setter for jurisType
      *
-     * The type of the jurisdiction to which this tax detail applies.
+     * (DEPRECATED) The type of the jurisdiction to which this tax detail applies.
+    * NOTE: Use jurisdictionTypeId instead.
      */
     public void setJurisType(JurisTypeId value) {
         this.jurisType = value;
+    }
+
+
+    private JurisdictionType jurisdictionType;
+
+    /**
+     * Getter for jurisdictionType
+     *
+     * The type of the jurisdiction in which this tax detail applies.
+     */
+    public JurisdictionType getJurisdictionType() {
+        return this.jurisdictionType;
+    }
+
+    /**
+     * Setter for jurisdictionType
+     *
+     * The type of the jurisdiction in which this tax detail applies.
+     */
+    public void setJurisdictionType(JurisdictionType value) {
+        this.jurisdictionType = value;
     }
 
 

@@ -12,13 +12,13 @@ import java.util.HashMap;
 /*
  * AvaTax Software Development Kit for Java JRE based environments
  *
- * (c) 2004-2017 Avalara, Inc.
+ * (c) 2004-2018 Avalara, Inc.
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  *
  * @author     Dustin Welden <dustin.welden@avalara.com>
- * @copyright  2004-2017 Avalara, Inc.
+ * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
  */
@@ -313,14 +313,14 @@ public class NoticeModel {
     }
 
 
-    private FilingTypeId filingTypeId;
+    private TaxNoticeFilingTypeId filingTypeId;
 
     /**
      * Getter for filingTypeId
      *
      * The filing type of the notice
      */
-    public FilingTypeId getFilingTypeId() {
+    public TaxNoticeFilingTypeId getFilingTypeId() {
         return this.filingTypeId;
     }
 
@@ -329,7 +329,7 @@ public class NoticeModel {
      *
      * The filing type of the notice
      */
-    public void setFilingTypeId(FilingTypeId value) {
+    public void setFilingTypeId(TaxNoticeFilingTypeId value) {
         this.filingTypeId = value;
     }
 

@@ -12,13 +12,13 @@ import java.util.HashMap;
 /*
  * AvaTax Software Development Kit for Java JRE based environments
  *
- * (c) 2004-2017 Avalara, Inc.
+ * (c) 2004-2018 Avalara, Inc.
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  *
  * @author     Dustin Welden <dustin.welden@avalara.com>
- * @copyright  2004-2017 Avalara, Inc.
+ * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
  */
@@ -185,7 +185,8 @@ public class TaxRuleModel {
     /**
      * Getter for jurisTypeId
      *
-     * The type of the jurisdiction to which this tax rule applies.
+     * (DEPRECATED) The type of the jurisdiction to which this tax rule applies.
+    * NOTE: Use jurisdictionTypeId instead.
      */
     public JurisTypeId getJurisTypeId() {
         return this.jurisTypeId;
@@ -194,10 +195,32 @@ public class TaxRuleModel {
     /**
      * Setter for jurisTypeId
      *
-     * The type of the jurisdiction to which this tax rule applies.
+     * (DEPRECATED) The type of the jurisdiction to which this tax rule applies.
+    * NOTE: Use jurisdictionTypeId instead.
      */
     public void setJurisTypeId(JurisTypeId value) {
         this.jurisTypeId = value;
+    }
+
+
+    private JurisdictionType jurisdictionTypeId;
+
+    /**
+     * Getter for jurisdictionTypeId
+     *
+     * The type of the jurisdiction to which this tax rule applies.
+     */
+    public JurisdictionType getJurisdictionTypeId() {
+        return this.jurisdictionTypeId;
+    }
+
+    /**
+     * Setter for jurisdictionTypeId
+     *
+     * The type of the jurisdiction to which this tax rule applies.
+     */
+    public void setJurisdictionTypeId(JurisdictionType value) {
+        this.jurisdictionTypeId = value;
     }
 
 
@@ -595,7 +618,7 @@ public class TaxRuleModel {
     *  * Common alternative spellings for many regions
     * 
     * For a full list of all supported codes and names, please see the Definitions API `ListRegions`.
-    * NOTE: Region is not required for non-US countries because the user may be either creating a Country-level or Region-level rule.
+    * NOTE: Region is required for US and not required for non-US countries because the user may be either creating a Country-level or Region-level rule.
      */
     public String getRegion() {
         return this.region;
@@ -612,7 +635,7 @@ public class TaxRuleModel {
     *  * Common alternative spellings for many regions
     * 
     * For a full list of all supported codes and names, please see the Definitions API `ListRegions`.
-    * NOTE: Region is not required for non-US countries because the user may be either creating a Country-level or Region-level rule.
+    * NOTE: Region is required for US and not required for non-US countries because the user may be either creating a Country-level or Region-level rule.
      */
     public void setRegion(String value) {
         this.region = value;
