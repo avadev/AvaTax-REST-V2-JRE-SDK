@@ -15,27 +15,28 @@ package net.avalara.avatax.rest.client.enums;
  */
 
 /**
- * 
+ * Indicates the rounding behavior of a form
  */
-public enum CertCaptureProvisionStatus {
+public enum RoundingTypeId {
     /** 
-     * Account and company are provisioned
+     * There is no rounding on the return
      */
-    Provisioned,
-
-
-    /** 
-     * Provision job is being queued
-     *  This could also be an indication that some companies under an account has been provisioned, while others
-     *  under the same account has not.
-     */
-    InProgress,
+    None,
 
     /** 
-     * 
+     * Round to the nearest whole number
      */
-    NotProvisioned,
+    Nearest,
 
+    /** 
+     * Always round up
+     */
+    Up,
+
+    /** 
+     * Always round down
+     */
+    Down,
 
 }
     

@@ -560,6 +560,31 @@ public class CustomerModel {
     }
 
 
+    private ArrayList<CustomFieldModel> customFields;
+
+    /**
+     * Getter for customFields
+     *
+     * A list of custom fields defined on this customer. 
+    * 
+    * For more information about custom fields, see the [Avalara Help Center article about custom fields](https://help.avalara.com/0021_Avalara_CertCapture/All_About_CertCapture/Edit_or_Remove_Details_about_Customers).
+     */
+    public ArrayList<CustomFieldModel> getCustomFields() {
+        return this.customFields;
+    }
+
+    /**
+     * Setter for customFields
+     *
+     * A list of custom fields defined on this customer. 
+    * 
+    * For more information about custom fields, see the [Avalara Help Center article about custom fields](https://help.avalara.com/0021_Avalara_CertCapture/All_About_CertCapture/Edit_or_Remove_Details_about_Customers).
+     */
+    public void setCustomFields(ArrayList<CustomFieldModel> value) {
+        this.customFields = value;
+    }
+
+
     /**
      * Returns a JSON string representation of CustomerModel
      */

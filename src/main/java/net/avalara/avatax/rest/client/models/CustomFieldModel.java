@@ -24,50 +24,34 @@ import java.util.HashMap;
  */
 
 /**
- * Represents the answer to one local jurisdiction question for a location.
+ * A custom field provides extra information about a customer or certificate.
+* 
+* Custom fields are provided to permit you to store additional information about an exemption certificate or customer. They are available to 
+* support additional use cases beyond that supported directly by Avalara's exemption certificate software.
+* 
+* For more information about custom fields, see the [Avalara Help Center article about custom fields](https://help.avalara.com/0021_Avalara_CertCapture/All_About_CertCapture/Edit_or_Remove_Details_about_Customers).
  */
-public class LocationSettingModel {
+public class CustomFieldModel {
 
 
-    private Integer questionId;
+    private String name;
 
     /**
-     * Getter for questionId
+     * Getter for name
      *
-     * The unique ID number of the location question answered.
+     * The name of the custom field.
      */
-    public Integer getQuestionId() {
-        return this.questionId;
+    public String getName() {
+        return this.name;
     }
 
     /**
-     * Setter for questionId
+     * Setter for name
      *
-     * The unique ID number of the location question answered.
+     * The name of the custom field.
      */
-    public void setQuestionId(Integer value) {
-        this.questionId = value;
-    }
-
-
-    private String questionName;
-
-    /**
-     * Getter for questionName
-     *
-     * The name of the question
-     */
-    public String getQuestionName() {
-        return this.questionName;
-    }
-
-    /**
-     * Setter for questionName
-     *
-     * The name of the question
-     */
-    public void setQuestionName(String value) {
-        this.questionName = value;
+    public void setName(String value) {
+        this.name = value;
     }
 
 
@@ -76,7 +60,7 @@ public class LocationSettingModel {
     /**
      * Getter for value
      *
-     * The answer the user provided.
+     * The value of the custom field.
      */
     public String getValue() {
         return this.value;
@@ -85,7 +69,7 @@ public class LocationSettingModel {
     /**
      * Setter for value
      *
-     * The answer the user provided.
+     * The value of the custom field.
      */
     public void setValue(String value) {
         this.value = value;
@@ -93,7 +77,7 @@ public class LocationSettingModel {
 
 
     /**
-     * Returns a JSON string representation of LocationSettingModel
+     * Returns a JSON string representation of CustomFieldModel
      */
     @Override
     public String toString() {

@@ -185,7 +185,8 @@ public class TaxRuleModel {
     /**
      * Getter for jurisTypeId
      *
-     * The type of the jurisdiction to which this tax rule applies.
+     * (DEPRECATED) The type of the jurisdiction to which this tax rule applies.
+    * NOTE: Use jurisdictionTypeId instead.
      */
     public JurisTypeId getJurisTypeId() {
         return this.jurisTypeId;
@@ -194,10 +195,32 @@ public class TaxRuleModel {
     /**
      * Setter for jurisTypeId
      *
-     * The type of the jurisdiction to which this tax rule applies.
+     * (DEPRECATED) The type of the jurisdiction to which this tax rule applies.
+    * NOTE: Use jurisdictionTypeId instead.
      */
     public void setJurisTypeId(JurisTypeId value) {
         this.jurisTypeId = value;
+    }
+
+
+    private JurisdictionType jurisdictionTypeId;
+
+    /**
+     * Getter for jurisdictionTypeId
+     *
+     * The type of the jurisdiction to which this tax rule applies.
+     */
+    public JurisdictionType getJurisdictionTypeId() {
+        return this.jurisdictionTypeId;
+    }
+
+    /**
+     * Setter for jurisdictionTypeId
+     *
+     * The type of the jurisdiction to which this tax rule applies.
+     */
+    public void setJurisdictionTypeId(JurisdictionType value) {
+        this.jurisdictionTypeId = value;
     }
 
 

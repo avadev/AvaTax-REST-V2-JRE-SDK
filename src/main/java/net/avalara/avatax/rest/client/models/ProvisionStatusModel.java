@@ -80,6 +80,27 @@ public class ProvisionStatusModel {
     }
 
 
+    private Integer companyId;
+
+    /**
+     * Getter for companyId
+     *
+     * The AvaTax company represented by this status
+     */
+    public Integer getCompanyId() {
+        return this.companyId;
+    }
+
+    /**
+     * Setter for companyId
+     *
+     * The AvaTax company represented by this status
+     */
+    public void setCompanyId(Integer value) {
+        this.companyId = value;
+    }
+
+
     /**
      * Returns a JSON string representation of ProvisionStatusModel
      */

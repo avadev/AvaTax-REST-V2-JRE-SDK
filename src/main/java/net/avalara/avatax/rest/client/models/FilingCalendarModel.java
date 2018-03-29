@@ -1285,6 +1285,27 @@ public class FilingCalendarModel {
     }
 
 
+    private ArrayList<CompanyReturnSettingModel> settings;
+
+    /**
+     * Getter for settings
+     *
+     * CompanyReturn settings for complext filing calendar
+     */
+    public ArrayList<CompanyReturnSettingModel> getSettings() {
+        return this.settings;
+    }
+
+    /**
+     * Setter for settings
+     *
+     * CompanyReturn settings for complext filing calendar
+     */
+    public void setSettings(ArrayList<CompanyReturnSettingModel> value) {
+        this.settings = value;
+    }
+
+
     /**
      * Returns a JSON string representation of FilingCalendarModel
      */

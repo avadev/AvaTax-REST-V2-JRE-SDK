@@ -1087,6 +1087,27 @@ public class FilingReturnModel {
     }
 
 
+    private ArrayList<FilingAttachmentModel> attachments;
+
+    /**
+     * Getter for attachments
+     *
+     * The attachments for this return.
+     */
+    public ArrayList<FilingAttachmentModel> getAttachments() {
+        return this.attachments;
+    }
+
+    /**
+     * Setter for attachments
+     *
+     * The attachments for this return.
+     */
+    public void setAttachments(ArrayList<FilingAttachmentModel> value) {
+        this.attachments = value;
+    }
+
+
     private Date createdDate;
 
     /**
