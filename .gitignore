@@ -6,3 +6,4 @@
 /project/swagger.json
 /target/
 .idea/
+release.sh
