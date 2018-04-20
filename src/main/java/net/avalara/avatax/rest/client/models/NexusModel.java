@@ -12,13 +12,13 @@ import java.util.HashMap;
 /*
  * AvaTax Software Development Kit for Java JRE based environments
  *
- * (c) 2004-2017 Avalara, Inc.
+ * (c) 2004-2018 Avalara, Inc.
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  *
  * @author     Dustin Welden <dustin.welden@avalara.com>
- * @copyright  2004-2017 Avalara, Inc.
+ * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
  */
@@ -152,7 +152,8 @@ public class NexusModel {
     /**
      * Getter for jurisTypeId
      *
-     * The jurisdiction type of the jurisdiction in which this company declared nexus.
+     * (DEPRECATED) The jurisdiction type of the jurisdiction in which this company declared nexus.
+    * NOTE: Use jurisdictionTypeId instead.
      */
     public JurisTypeId getJurisTypeId() {
         return this.jurisTypeId;
@@ -161,10 +162,32 @@ public class NexusModel {
     /**
      * Setter for jurisTypeId
      *
-     * The jurisdiction type of the jurisdiction in which this company declared nexus.
+     * (DEPRECATED) The jurisdiction type of the jurisdiction in which this company declared nexus.
+    * NOTE: Use jurisdictionTypeId instead.
      */
     public void setJurisTypeId(JurisTypeId value) {
         this.jurisTypeId = value;
+    }
+
+
+    private JurisdictionType jurisdictionTypeId;
+
+    /**
+     * Getter for jurisdictionTypeId
+     *
+     * The type of the jurisdiction in which this company declared nexus.
+     */
+    public JurisdictionType getJurisdictionTypeId() {
+        return this.jurisdictionTypeId;
+    }
+
+    /**
+     * Setter for jurisdictionTypeId
+     *
+     * The type of the jurisdiction in which this company declared nexus.
+     */
+    public void setJurisdictionTypeId(JurisdictionType value) {
+        this.jurisdictionTypeId = value;
     }
 
 

@@ -3,13 +3,13 @@ package net.avalara.avatax.rest.client.enums;
 /*
  * AvaTax Software Development Kit for Java JRE based environments
  *
- * (c) 2004-2017 Avalara, Inc.
+ * (c) 2004-2018 Avalara, Inc.
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  *
  * @author     Dustin Welden <dustin.welden@avalara.com>
- * @copyright  2004-2017 Avalara, Inc.
+ * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
  */
@@ -132,11 +132,6 @@ public enum ErrorCodeId {
      * 
      */
     CannotChangePassword,
-
-    /** 
-     * 
-     */
-    CannotChangeCompanyCode,
 
     /** 
      * 
@@ -621,11 +616,6 @@ public enum ErrorCodeId {
     /** 
      * 
      */
-    InvalidItemAttributeName,
-
-    /** 
-     * 
-     */
     EcmsDisabled,
 
     /** 
@@ -642,6 +632,46 @@ public enum ErrorCodeId {
      * 
      */
     FailedToDelete,
+
+    /** 
+     * 
+     */
+    CircularCompanyHierarchies,
+
+    /** 
+     * 
+     */
+    DuplicateEntry,
+
+    /** 
+     * 
+     */
+    DuplicateFieldNameInOrderBy,
+
+    /** 
+     * 
+     */
+    CannotAdjustDocumentType,
+
+    /** 
+     * 
+     */
+    UserNoAccess,
+
+    /** 
+     * 
+     */
+    InvalidEntry,
+
+    /** 
+     * 
+     */
+    TransactionAlreadyCancelled,
+
+    /** 
+     * 
+     */
+    QueryParameterOutOfRange,
 
     /** 
      * Batch errors
@@ -746,7 +776,7 @@ public enum ErrorCodeId {
     /** 
      * 
      */
-    AddressIncomplete,
+    InvalidAddress,
 
     /** 
      * 
@@ -782,11 +812,6 @@ public enum ErrorCodeId {
      * 
      */
     TimeoutRequested,
-
-    /** 
-     * 
-     */
-    InvalidAddress,
 
     /** 
      * 
@@ -896,7 +921,12 @@ public enum ErrorCodeId {
     /** 
      * Free API error codes
      */
-    TaxRateNotAvailableForFreeInThisCountry,
+    MustUseCreateTransaction,
+
+    /** 
+     * 
+     */
+    MustAcceptTermsAndConditions,
 
     /** 
      * Filing Calendar Error Codes
@@ -961,12 +991,12 @@ public enum ErrorCodeId {
     /** 
      * 
      */
-    CertCaptureFieldValidationError,
+    CertificatesFieldInvalid,
 
     /** 
      * 
      */
-    CertCaptureError,
+    CertificatesError,
 
     /** 
      * 
@@ -976,7 +1006,7 @@ public enum ErrorCodeId {
     /** 
      * 
      */
-    CertCaptureNotConfiguredError,
+    CertificatesNotSetup,
 
     /** 
      * 
@@ -1011,7 +1041,7 @@ public enum ErrorCodeId {
     /** 
      * 
      */
-    InvalidCertCaptureOperation,
+    InvalidExemptionOperation,
 
     /** 
      * 
@@ -1124,9 +1154,64 @@ public enum ErrorCodeId {
     WorksheetException,
 
     /** 
-     * LandedCost Exception
+     * 
      */
-    MissingSystemId,
+    InvalidAccountOverride,
+
+    /** 
+     * 
+     */
+    AccountOverrideNotAuthorized,
+
+    /** 
+     * 
+     */
+    ParserFieldNotQueryableError,
+
+    /** 
+     * 
+     */
+    UsernameRequired,
+
+    /** 
+     * 
+     */
+    InvalidAuditMessage,
+
+    /** 
+     * Nexus validation error codes
+     */
+    CannotDeleteParentBeforeChildNexus,
+
+    /** 
+     * 
+     */
+    NexusChildDateMismatch,
+
+    /** 
+     * Advanced rule errors
+     */
+    AdvancedRuleBadScript,
+
+    /** 
+     * 
+     */
+    AdvancedRuleBadCsvTable,
+
+    /** 
+     * 
+     */
+    AdvancedRuleRequestRuleError,
+
+    /** 
+     * 
+     */
+    AdvancedRuleResponseRuleError,
+
+    /** 
+     * 
+     */
+    InvalidDocumentStatusToAddOrDeleteLines,
 
 }
     

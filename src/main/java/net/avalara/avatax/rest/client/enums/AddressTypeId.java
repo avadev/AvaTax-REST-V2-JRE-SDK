@@ -3,13 +3,13 @@ package net.avalara.avatax.rest.client.enums;
 /*
  * AvaTax Software Development Kit for Java JRE based environments
  *
- * (c) 2004-2017 Avalara, Inc.
+ * (c) 2004-2018 Avalara, Inc.
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  *
  * @author     Dustin Welden <dustin.welden@avalara.com>
- * @copyright  2004-2017 Avalara, Inc.
+ * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
  */
@@ -27,6 +27,14 @@ public enum AddressTypeId {
      * A person's address who performs sales tasks for the company remotely from an office.
      */
     Salesperson,
+
+    /** 
+     * This location is a marketplace vendor that handles transactions on behalf of the company.
+     *  When you select `Marketplace` as the address type for a location, you must then choose either
+     *  `SellersRemitsTax` or `MarketplaceRemitsTax` to indicate which business entity is responsible
+     *  for collecting and remitting tax for this location.
+     */
+    Marketplace,
 
 }
     

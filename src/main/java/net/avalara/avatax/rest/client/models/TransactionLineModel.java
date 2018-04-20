@@ -12,13 +12,13 @@ import java.util.HashMap;
 /*
  * AvaTax Software Development Kit for Java JRE based environments
  *
- * (c) 2004-2017 Avalara, Inc.
+ * (c) 2004-2018 Avalara, Inc.
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  *
  * @author     Dustin Welden <dustin.welden@avalara.com>
- * @copyright  2004-2017 Avalara, Inc.
+ * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
  */
@@ -575,7 +575,14 @@ public class TransactionLineModel {
     /**
      * Getter for tax
      *
-     * The amount of tax generated for this line item.
+     * The tax for this line in this transaction.
+    * 
+    * If you used a `taxOverride` of type `taxAmount` for this line, this value 
+    * will represent the amount of your override. AvaTax will still attempt to calculate the correct tax
+    * for this line and will store that calculated value in the `taxCalculated` field.
+    * 
+    * You can compare the `tax` and `taxCalculated` fields to check for any discrepancies
+    * between an external tax calculation provider and the calculation performed by AvaTax.
      */
     public BigDecimal getTax() {
         return this.tax;
@@ -584,7 +591,14 @@ public class TransactionLineModel {
     /**
      * Setter for tax
      *
-     * The amount of tax generated for this line item.
+     * The tax for this line in this transaction.
+    * 
+    * If you used a `taxOverride` of type `taxAmount` for this line, this value 
+    * will represent the amount of your override. AvaTax will still attempt to calculate the correct tax
+    * for this line and will store that calculated value in the `taxCalculated` field.
+    * 
+    * You can compare the `tax` and `taxCalculated` fields to check for any discrepancies
+    * between an external tax calculation provider and the calculation performed by AvaTax.
      */
     public void setTax(BigDecimal value) {
         this.tax = value;
@@ -617,7 +631,14 @@ public class TransactionLineModel {
     /**
      * Getter for taxCalculated
      *
-     * The tax calculated for this line by Avalara. If the transaction was calculated with a tax override, this amount will be different from the "tax" value.
+     * The amount of tax that AvaTax calculated for the transaction.
+    * 
+    * If you used a `taxOverride` of type `taxAmount` for this line, there will be a difference between
+    * the `tax` field which represents your override, and the `taxCalculated` field which represents the
+    * amount of tax that AvaTax calculated for this line.
+    * 
+    * You can compare the `tax` and `taxCalculated` fields to check for any discrepancies
+    * between an external tax calculation provider and the calculation performed by AvaTax.
      */
     public BigDecimal getTaxCalculated() {
         return this.taxCalculated;
@@ -626,7 +647,14 @@ public class TransactionLineModel {
     /**
      * Setter for taxCalculated
      *
-     * The tax calculated for this line by Avalara. If the transaction was calculated with a tax override, this amount will be different from the "tax" value.
+     * The amount of tax that AvaTax calculated for the transaction.
+    * 
+    * If you used a `taxOverride` of type `taxAmount` for this line, there will be a difference between
+    * the `tax` field which represents your override, and the `taxCalculated` field which represents the
+    * amount of tax that AvaTax calculated for this line.
+    * 
+    * You can compare the `tax` and `taxCalculated` fields to check for any discrepancies
+    * between an external tax calculation provider and the calculation performed by AvaTax.
      */
     public void setTaxCalculated(BigDecimal value) {
         this.taxCalculated = value;
@@ -975,6 +1003,48 @@ public class TransactionLineModel {
      */
     public void setCostInsuranceFreight(BigDecimal value) {
         this.costInsuranceFreight = value;
+    }
+
+
+    private String vatCode;
+
+    /**
+     * Getter for vatCode
+     *
+     * Indicates the VAT code for this line item.
+     */
+    public String getVatCode() {
+        return this.vatCode;
+    }
+
+    /**
+     * Setter for vatCode
+     *
+     * Indicates the VAT code for this line item.
+     */
+    public void setVatCode(String value) {
+        this.vatCode = value;
+    }
+
+
+    private Integer vatNumberTypeId;
+
+    /**
+     * Getter for vatNumberTypeId
+     *
+     * Indicates the VAT number type for this line item.
+     */
+    public Integer getVatNumberTypeId() {
+        return this.vatNumberTypeId;
+    }
+
+    /**
+     * Setter for vatNumberTypeId
+     *
+     * Indicates the VAT number type for this line item.
+     */
+    public void setVatNumberTypeId(Integer value) {
+        this.vatNumberTypeId = value;
     }
 
 

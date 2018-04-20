@@ -18,13 +18,13 @@ import java.util.ArrayList;
 /*
  * AvaTax Software Development Kit for Java JRE based environments
  *
- * (c) 2004-2017 Avalara, Inc.
+ * (c) 2004-2018 Avalara, Inc.
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  *
  * @author     Dustin Welden <dustin.welden@avalara.com>
- * @copyright  2004-2017 Avalara, Inc.
+ * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
  */
@@ -455,11 +455,479 @@ public class AvaTaxClient {
     }
 
     /**
+     * Approve an advanced rule script to run.
+     * 
+     * This API is available by invite only and implementation support is required. 
+     * Please contact your Customer Account Manager if you are interested in using 
+     * 
+     * @param accountId The ID of the account that owns the Advanced Rule.
+     * @param scriptType The script transform type: Request or Response. (See AdvancedRuleScriptType::* for a list of allowable values)
+     * @return AdvancedRuleScriptModel
+     */
+    public AdvancedRuleScriptModel approveAdvancedRuleScript(Integer accountId, AdvancedRuleScriptType scriptType) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/advancedrulescripts/{scriptType}/approve");
+        path.applyField("accountId", accountId);
+        path.applyField("scriptType", scriptType);
+        return ((RestCall<AdvancedRuleScriptModel>)restCallFactory.createRestCall("post", path, null, new TypeToken<AdvancedRuleScriptModel>(){})).call();
+    }
+
+    /**
+     * Approve an advanced rule script to run.
+     * 
+     * This API is available by invite only and implementation support is required. 
+     * Please contact your Customer Account Manager if you are interested in using 
+     * 
+     * @param accountId The ID of the account that owns the Advanced Rule.
+     * @param scriptType The script transform type: Request or Response. (See AdvancedRuleScriptType::* for a list of allowable values)
+     * @return AdvancedRuleScriptModel
+     */
+    public Future<AdvancedRuleScriptModel> approveAdvancedRuleScriptAsync(Integer accountId, AdvancedRuleScriptType scriptType) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/advancedrulescripts/{scriptType}/approve");
+        path.applyField("accountId", accountId);
+        path.applyField("scriptType", scriptType);
+        return this.threadPool.submit((RestCall<AdvancedRuleScriptModel>)restCallFactory.createRestCall("post", path, null, new TypeToken<AdvancedRuleScriptModel>(){}));
+    }
+
+    /**
+     * Create an advanced rule.
+     * 
+     * This API is available by invite only and implementation support is required. 
+     * Please contact your Customer Account Manager if you are interested in using 
+     * 
+     * @param accountId The ID of the account that will own the Advanced Rule.
+     * @param scriptType The script transform type, Request or Response. (See AdvancedRuleScriptType::* for a list of allowable values)
+     * @param crashBehavior The behavior the script should take if it crashes: Fail or Proceed. (See AdvancedRuleCrashBehavior::* for a list of allowable values)
+     * @param file The JavaScript file containing the advanced rule.
+     * @return String
+     */
+    public String createAdvancedRuleScript(Integer accountId, AdvancedRuleScriptType scriptType, AdvancedRuleCrashBehavior crashBehavior, String file) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/advancedrulescripts/{scriptType}");
+        path.applyField("accountId", accountId);
+        path.applyField("scriptType", scriptType);
+        path.addQuery("crashBehavior", crashBehavior);
+        return ((RestCall<String>)restCallFactory.createRestCall("post", path, null, new TypeToken<String>(){})).call();
+    }
+
+    /**
+     * Create an advanced rule.
+     * 
+     * This API is available by invite only and implementation support is required. 
+     * Please contact your Customer Account Manager if you are interested in using 
+     * 
+     * @param accountId The ID of the account that will own the Advanced Rule.
+     * @param scriptType The script transform type, Request or Response. (See AdvancedRuleScriptType::* for a list of allowable values)
+     * @param crashBehavior The behavior the script should take if it crashes: Fail or Proceed. (See AdvancedRuleCrashBehavior::* for a list of allowable values)
+     * @param file The JavaScript file containing the advanced rule.
+     * @return String
+     */
+    public Future<String> createAdvancedRuleScriptAsync(Integer accountId, AdvancedRuleScriptType scriptType, AdvancedRuleCrashBehavior crashBehavior, String file) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/advancedrulescripts/{scriptType}");
+        path.applyField("accountId", accountId);
+        path.applyField("scriptType", scriptType);
+        path.addQuery("crashBehavior", crashBehavior);
+        return this.threadPool.submit((RestCall<String>)restCallFactory.createRestCall("post", path, null, new TypeToken<String>(){}));
+    }
+
+    /**
+     * Create a lookup table for an advanced rule
+     * 
+     * This API is available by invite only and implementation support is required. 
+     * Please contact your Customer Account Manager if you are interested in using 
+     * 
+     * @param accountId The ID of the account that owns the Advanced Rule.
+     * @param csvTableName The name to assign the CSV lookup table.
+     * @param file A CSV file containing lookup data for an advanced rule.
+     * @return String
+     */
+    public String createAdvancedRuleTable(Integer accountId, String csvTableName, String file) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/advancedruletables/{csvTableName}");
+        path.applyField("accountId", accountId);
+        path.applyField("csvTableName", csvTableName);
+        return ((RestCall<String>)restCallFactory.createRestCall("post", path, null, new TypeToken<String>(){})).call();
+    }
+
+    /**
+     * Create a lookup table for an advanced rule
+     * 
+     * This API is available by invite only and implementation support is required. 
+     * Please contact your Customer Account Manager if you are interested in using 
+     * 
+     * @param accountId The ID of the account that owns the Advanced Rule.
+     * @param csvTableName The name to assign the CSV lookup table.
+     * @param file A CSV file containing lookup data for an advanced rule.
+     * @return String
+     */
+    public Future<String> createAdvancedRuleTableAsync(Integer accountId, String csvTableName, String file) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/advancedruletables/{csvTableName}");
+        path.applyField("accountId", accountId);
+        path.applyField("csvTableName", csvTableName);
+        return this.threadPool.submit((RestCall<String>)restCallFactory.createRestCall("post", path, null, new TypeToken<String>(){}));
+    }
+
+    /**
+     * Delete an account's active advanced rule
+     * 
+     * This API is available by invite only and implementation support is required. 
+     * Please contact your Customer Account Manager if you are interested in using 
+     * 
+     * @param accountId The ID of the account that owns the Advanced Rule.
+     * @param scriptType The script transform type: Request or Response. (See AdvancedRuleScriptType::* for a list of allowable values)
+     * @return ArrayList<ErrorDetail>
+     */
+    public ArrayList<ErrorDetail> deleteAdvancedRuleScript(Integer accountId, AdvancedRuleScriptType scriptType) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/advancedrulescripts/{scriptType}");
+        path.applyField("accountId", accountId);
+        path.applyField("scriptType", scriptType);
+        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){})).call();
+    }
+
+    /**
+     * Delete an account's active advanced rule
+     * 
+     * This API is available by invite only and implementation support is required. 
+     * Please contact your Customer Account Manager if you are interested in using 
+     * 
+     * @param accountId The ID of the account that owns the Advanced Rule.
+     * @param scriptType The script transform type: Request or Response. (See AdvancedRuleScriptType::* for a list of allowable values)
+     * @return ArrayList<ErrorDetail>
+     */
+    public Future<ArrayList<ErrorDetail>> deleteAdvancedRuleScriptAsync(Integer accountId, AdvancedRuleScriptType scriptType) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/advancedrulescripts/{scriptType}");
+        path.applyField("accountId", accountId);
+        path.applyField("scriptType", scriptType);
+        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){}));
+    }
+
+    /**
+     * Delete a lookup table for an advanced rule.
+     * 
+     * This API is available by invite only and implementation support is required. 
+     * Please contact your Customer Account Manager if you are interested in using 
+     * 
+     * @param accountId The ID of the account that owns the Advanced Rule.
+     * @param csvTableName The name of the CSV lookup table to delete.
+     * @return ArrayList<ErrorDetail>
+     */
+    public ArrayList<ErrorDetail> deleteAdvancedRuleTable(Integer accountId, String csvTableName) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/advancedruletables/{csvTableName}");
+        path.applyField("accountId", accountId);
+        path.applyField("csvTableName", csvTableName);
+        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){})).call();
+    }
+
+    /**
+     * Delete a lookup table for an advanced rule.
+     * 
+     * This API is available by invite only and implementation support is required. 
+     * Please contact your Customer Account Manager if you are interested in using 
+     * 
+     * @param accountId The ID of the account that owns the Advanced Rule.
+     * @param csvTableName The name of the CSV lookup table to delete.
+     * @return ArrayList<ErrorDetail>
+     */
+    public Future<ArrayList<ErrorDetail>> deleteAdvancedRuleTableAsync(Integer accountId, String csvTableName) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/advancedruletables/{csvTableName}");
+        path.applyField("accountId", accountId);
+        path.applyField("csvTableName", csvTableName);
+        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){}));
+    }
+
+    /**
+     * Get an account's advanced rule script.
+     * 
+     * This API is available by invite only and implementation support is required. 
+     * Please contact your Customer Account Manager if you are interested in using 
+     * 
+     * @param accountId The ID of the account that owns the Advanced Rule.
+     * @param scriptType The script transform type: Request or Response. (See AdvancedRuleScriptType::* for a list of allowable values)
+     * @return AdvancedRuleScriptModel
+     */
+    public AdvancedRuleScriptModel getAdvancedRuleScript(Integer accountId, AdvancedRuleScriptType scriptType) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/advancedrulescripts/{scriptType}");
+        path.applyField("accountId", accountId);
+        path.applyField("scriptType", scriptType);
+        return ((RestCall<AdvancedRuleScriptModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<AdvancedRuleScriptModel>(){})).call();
+    }
+
+    /**
+     * Get an account's advanced rule script.
+     * 
+     * This API is available by invite only and implementation support is required. 
+     * Please contact your Customer Account Manager if you are interested in using 
+     * 
+     * @param accountId The ID of the account that owns the Advanced Rule.
+     * @param scriptType The script transform type: Request or Response. (See AdvancedRuleScriptType::* for a list of allowable values)
+     * @return AdvancedRuleScriptModel
+     */
+    public Future<AdvancedRuleScriptModel> getAdvancedRuleScriptAsync(Integer accountId, AdvancedRuleScriptType scriptType) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/advancedrulescripts/{scriptType}");
+        path.applyField("accountId", accountId);
+        path.applyField("scriptType", scriptType);
+        return this.threadPool.submit((RestCall<AdvancedRuleScriptModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<AdvancedRuleScriptModel>(){}));
+    }
+
+    /**
+     * Get an advanced rule lookup table for an account
+     * 
+     * This API is available by invite only and implementation support is required. 
+     * Please contact your Customer Account Manager if you are interested in using 
+     * 
+     * @param accountId The ID of the account that owns the Advanced Rule.
+     * @param csvTableName The name of the CSV lookup table to get.
+     * @return AdvancedRuleTableModel
+     */
+    public AdvancedRuleTableModel getAdvancedRuleTable(Integer accountId, String csvTableName) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/advancedruletables/{csvTableName}");
+        path.applyField("accountId", accountId);
+        path.applyField("csvTableName", csvTableName);
+        return ((RestCall<AdvancedRuleTableModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<AdvancedRuleTableModel>(){})).call();
+    }
+
+    /**
+     * Get an advanced rule lookup table for an account
+     * 
+     * This API is available by invite only and implementation support is required. 
+     * Please contact your Customer Account Manager if you are interested in using 
+     * 
+     * @param accountId The ID of the account that owns the Advanced Rule.
+     * @param csvTableName The name of the CSV lookup table to get.
+     * @return AdvancedRuleTableModel
+     */
+    public Future<AdvancedRuleTableModel> getAdvancedRuleTableAsync(Integer accountId, String csvTableName) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/advancedruletables/{csvTableName}");
+        path.applyField("accountId", accountId);
+        path.applyField("csvTableName", csvTableName);
+        return this.threadPool.submit((RestCall<AdvancedRuleTableModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<AdvancedRuleTableModel>(){}));
+    }
+
+    /**
+     * Get all advanced rule lookup tables for an account
+     * 
+     * This API is available by invite only and implementation support is required. 
+     * Please contact your Customer Account Manager if you are interested in using 
+     * 
+     * @param accountId The ID of the account that owns the Advanced Rule.
+     * @return AdvancedRuleTableModel
+     */
+    public AdvancedRuleTableModel getAdvancedRuleTables(Integer accountId) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/advancedruletables");
+        path.applyField("accountId", accountId);
+        return ((RestCall<AdvancedRuleTableModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<AdvancedRuleTableModel>(){})).call();
+    }
+
+    /**
+     * Get all advanced rule lookup tables for an account
+     * 
+     * This API is available by invite only and implementation support is required. 
+     * Please contact your Customer Account Manager if you are interested in using 
+     * 
+     * @param accountId The ID of the account that owns the Advanced Rule.
+     * @return AdvancedRuleTableModel
+     */
+    public Future<AdvancedRuleTableModel> getAdvancedRuleTablesAsync(Integer accountId) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/advancedruletables");
+        path.applyField("accountId", accountId);
+        return this.threadPool.submit((RestCall<AdvancedRuleTableModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<AdvancedRuleTableModel>(){}));
+    }
+
+    /**
+     * Unapprove an advanced rule script so that it cannot be run.
+     * 
+     * This API is available by invite only and implementation support is required. 
+     * Please contact your Customer Account Manager if you are interested in using 
+     * 
+     * @param accountId The ID of the account that owns the Advanced Rule.
+     * @param scriptType The script transform type: Request or Response. (See AdvancedRuleScriptType::* for a list of allowable values)
+     * @return AdvancedRuleScriptModel
+     */
+    public AdvancedRuleScriptModel unapproveAdvancedRuleScript(Integer accountId, AdvancedRuleScriptType scriptType) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/advancedrulescripts/{scriptType}/unapprove");
+        path.applyField("accountId", accountId);
+        path.applyField("scriptType", scriptType);
+        return ((RestCall<AdvancedRuleScriptModel>)restCallFactory.createRestCall("post", path, null, new TypeToken<AdvancedRuleScriptModel>(){})).call();
+    }
+
+    /**
+     * Unapprove an advanced rule script so that it cannot be run.
+     * 
+     * This API is available by invite only and implementation support is required. 
+     * Please contact your Customer Account Manager if you are interested in using 
+     * 
+     * @param accountId The ID of the account that owns the Advanced Rule.
+     * @param scriptType The script transform type: Request or Response. (See AdvancedRuleScriptType::* for a list of allowable values)
+     * @return AdvancedRuleScriptModel
+     */
+    public Future<AdvancedRuleScriptModel> unapproveAdvancedRuleScriptAsync(Integer accountId, AdvancedRuleScriptType scriptType) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/advancedrulescripts/{scriptType}/unapprove");
+        path.applyField("accountId", accountId);
+        path.applyField("scriptType", scriptType);
+        return this.threadPool.submit((RestCall<AdvancedRuleScriptModel>)restCallFactory.createRestCall("post", path, null, new TypeToken<AdvancedRuleScriptModel>(){}));
+    }
+
+    /**
+     * Create a new AvaFileForm
+     * 
+     * Create one or more AvaFileForms
+     * 
+     * @param model The AvaFileForm you wish to create.
+     * @return ArrayList<AvaFileFormModel>
+     */
+    public ArrayList<AvaFileFormModel> createAvaFileForms(ArrayList<AvaFileFormModel> model) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/avafileforms");
+        return ((RestCall<ArrayList<AvaFileFormModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<AvaFileFormModel>>(){})).call();
+    }
+
+    /**
+     * Create a new AvaFileForm
+     * 
+     * Create one or more AvaFileForms
+     * 
+     * @param model The AvaFileForm you wish to create.
+     * @return ArrayList<AvaFileFormModel>
+     */
+    public Future<ArrayList<AvaFileFormModel>> createAvaFileFormsAsync(ArrayList<AvaFileFormModel> model) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/avafileforms");
+        return this.threadPool.submit((RestCall<ArrayList<AvaFileFormModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<AvaFileFormModel>>(){}));
+    }
+
+    /**
+     * Delete a single AvaFileForm
+     * 
+     * @param id The ID of the AvaFileForm you wish to delete.
+     * @return ArrayList<ErrorDetail>
+     */
+    public ArrayList<ErrorDetail> deleteAvaFileForm(Integer id) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/avafileforms/{id}");
+        path.applyField("id", id);
+        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){})).call();
+    }
+
+    /**
+     * Delete a single AvaFileForm
+     * 
+     * @param id The ID of the AvaFileForm you wish to delete.
+     * @return ArrayList<ErrorDetail>
+     */
+    public Future<ArrayList<ErrorDetail>> deleteAvaFileFormAsync(Integer id) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/avafileforms/{id}");
+        path.applyField("id", id);
+        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){}));
+    }
+
+    /**
+     * Retrieve a single AvaFileForm
+     * 
+     * @param id The primary key of this AvaFileForm
+     * @return AvaFileFormModel
+     */
+    public AvaFileFormModel getAvaFileForm(String id) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/avafileforms/{id}");
+        path.applyField("id", id);
+        return ((RestCall<AvaFileFormModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<AvaFileFormModel>(){})).call();
+    }
+
+    /**
+     * Retrieve a single AvaFileForm
+     * 
+     * @param id The primary key of this AvaFileForm
+     * @return AvaFileFormModel
+     */
+    public Future<AvaFileFormModel> getAvaFileFormAsync(String id) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/avafileforms/{id}");
+        path.applyField("id", id);
+        return this.threadPool.submit((RestCall<AvaFileFormModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<AvaFileFormModel>(){}));
+    }
+
+    /**
+     * Retrieve all AvaFileForms
+     * 
+     * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * 
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param include A comma separated list of additional data to retrieve.
+     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
+     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @return FetchResult<AvaFileFormModel>
+     */
+    public FetchResult<AvaFileFormModel> queryAvaFileForms(String filter, String include, Integer top, Integer skip, String orderBy) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/avafileforms");
+        path.addQuery("$filter", filter);
+        path.addQuery("$include", include);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
+        return ((RestCall<FetchResult<AvaFileFormModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<AvaFileFormModel>>(){})).call();
+    }
+
+    /**
+     * Retrieve all AvaFileForms
+     * 
+     * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * 
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param include A comma separated list of additional data to retrieve.
+     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
+     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @return FetchResult<AvaFileFormModel>
+     */
+    public Future<FetchResult<AvaFileFormModel>> queryAvaFileFormsAsync(String filter, String include, Integer top, Integer skip, String orderBy) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/avafileforms");
+        path.addQuery("$filter", filter);
+        path.addQuery("$include", include);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
+        return this.threadPool.submit((RestCall<FetchResult<AvaFileFormModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<AvaFileFormModel>>(){}));
+    }
+
+    /**
+     * Update a AvaFileForm
+     * 
+     * All data from the existing object will be replaced with data in the object you PUT.  
+     * 
+     * @param id The ID of the AvaFileForm you wish to update
+     * @param model The AvaFileForm model you wish to update.
+     * @return AvaFileFormModel
+     */
+    public AvaFileFormModel updateAvaFileForm(Integer id, AvaFileFormModel model) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/avafileforms/{id}");
+        path.applyField("id", id);
+        return ((RestCall<AvaFileFormModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<AvaFileFormModel>(){})).call();
+    }
+
+    /**
+     * Update a AvaFileForm
+     * 
+     * All data from the existing object will be replaced with data in the object you PUT.  
+     * 
+     * @param id The ID of the AvaFileForm you wish to update
+     * @param model The AvaFileForm model you wish to update.
+     * @return AvaFileFormModel
+     */
+    public Future<AvaFileFormModel> updateAvaFileFormAsync(Integer id, AvaFileFormModel model) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/avafileforms/{id}");
+        path.applyField("id", id);
+        return this.threadPool.submit((RestCall<AvaFileFormModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<AvaFileFormModel>(){}));
+    }
+
+    /**
      * Create a new batch
      * 
      * Create one or more new batch objects attached to this company.
-     * When you create a batch, it is added to the AvaTaxBatch.Batch table and will be processed in the order it was received.
-     * You may fetch a batch to check on its status and retrieve the results of the batch operation.
+     * 
+     * Each batch object may have one or more file objects (currently only one file is supported).
+     * 
+     * When a batch is created, it is added to the AvaTax Batch Queue and will be 
+     * processed as quickly as possible in the order it was received. To check the 
+     * status of a batch, fetch the batch and retrieve the results of the batch 
+     * operation.
+     * 
+     * Because the batch system processes with a degree of concurrency, and
+     * because of batch sizes in the queue vary, AvaTax API is unable to accurately 
+     * predict when a batch will complete. If high performance processing is 
+     * required, please use the 
      * 
      * @param companyId The ID of the company that owns this batch.
      * @param model The batch you wish to create.
@@ -475,8 +943,18 @@ public class AvaTaxClient {
      * Create a new batch
      * 
      * Create one or more new batch objects attached to this company.
-     * When you create a batch, it is added to the AvaTaxBatch.Batch table and will be processed in the order it was received.
-     * You may fetch a batch to check on its status and retrieve the results of the batch operation.
+     * 
+     * Each batch object may have one or more file objects (currently only one file is supported).
+     * 
+     * When a batch is created, it is added to the AvaTax Batch Queue and will be 
+     * processed as quickly as possible in the order it was received. To check the 
+     * status of a batch, fetch the batch and retrieve the results of the batch 
+     * operation.
+     * 
+     * Because the batch system processes with a degree of concurrency, and
+     * because of batch sizes in the queue vary, AvaTax API is unable to accurately 
+     * predict when a batch will complete. If high performance processing is 
+     * required, please use the 
      * 
      * @param companyId The ID of the company that owns this batch.
      * @param model The batch you wish to create.
@@ -492,7 +970,7 @@ public class AvaTaxClient {
      * Delete a single batch
      * 
      * @param companyId The ID of the company that owns this batch.
-     * @param id The ID of the batch you wish to delete.
+     * @param id The ID of the batch to delete.
      * @return ArrayList<ErrorDetail>
      */
     public ArrayList<ErrorDetail> deleteBatch(Integer companyId, Integer id) throws Exception {
@@ -506,7 +984,7 @@ public class AvaTaxClient {
      * Delete a single batch
      * 
      * @param companyId The ID of the company that owns this batch.
-     * @param id The ID of the batch you wish to delete.
+     * @param id The ID of the batch to delete.
      * @return ArrayList<ErrorDetail>
      */
     public Future<ArrayList<ErrorDetail>> deleteBatchAsync(Integer companyId, Integer id) {
@@ -551,9 +1029,20 @@ public class AvaTaxClient {
     /**
      * Retrieve a single batch
      * 
-     * Get the batch object identified by this URL.
-     * A batch object is a large collection of API calls stored in a compact file.
-     * When you create a batch, it is added to the AvaTax Batch Queue and will be processed in the order it was received.
+     * Get the batch object identified by this URL. A batch object is a large 
+     * collection of API calls stored in a compact file.
+     * 
+     * Use this endpoint to retrieve the results or check the status of a batch.
+     * 
+     * When a batch is created, it is added to the AvaTax Batch Queue and will be 
+     * processed as quickly as possible in the order it was received. To check the 
+     * status of a batch, fetch the batch and retrieve the results of the batch 
+     * operation.
+     * 
+     * Because the batch system processes with a degree of concurrency, and
+     * because of batch sizes in the queue vary, AvaTax API is unable to accurately 
+     * predict when a batch will complete. If high performance processing is 
+     * required, please use the 
      * 
      * @param companyId The ID of the company that owns this batch
      * @param id The primary key of this batch
@@ -569,9 +1058,20 @@ public class AvaTaxClient {
     /**
      * Retrieve a single batch
      * 
-     * Get the batch object identified by this URL.
-     * A batch object is a large collection of API calls stored in a compact file.
-     * When you create a batch, it is added to the AvaTax Batch Queue and will be processed in the order it was received.
+     * Get the batch object identified by this URL. A batch object is a large 
+     * collection of API calls stored in a compact file.
+     * 
+     * Use this endpoint to retrieve the results or check the status of a batch.
+     * 
+     * When a batch is created, it is added to the AvaTax Batch Queue and will be 
+     * processed as quickly as possible in the order it was received. To check the 
+     * status of a batch, fetch the batch and retrieve the results of the batch 
+     * operation.
+     * 
+     * Because the batch system processes with a degree of concurrency, and
+     * because of batch sizes in the queue vary, AvaTax API is unable to accurately 
+     * predict when a batch will complete. If high performance processing is 
+     * required, please use the 
      * 
      * @param companyId The ID of the company that owns this batch
      * @param id The primary key of this batch
@@ -588,10 +1088,25 @@ public class AvaTaxClient {
      * Retrieve all batches for this company
      * 
      * List all batch objects attached to the specified company.
+     * 
      * A batch object is a large collection of API calls stored in a compact file.
-     * When you create a batch, it is added to the AvaTax Batch Queue and will be processed in the order it was received.
-     * You may fetch a batch to check on its status and retrieve the results of the batch operation.
-     * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * 
+     * Search for specific objects using the criteria in the `$filter` parameter; 
+     * full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * Paginate results using the `$top`, `$skip`, and `$orderby` parameters.
+     * 
+     * Use [GetBatch](https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Batches/GetBatch/) 
+     * to retrieve the results, or check the status, of an individual batch.
+     * 
+     * When a batch is created, it is added to the AvaTax Batch Queue and will be 
+     * processed as quickly as possible in the order it was received. To check the 
+     * status of a batch, fetch the batch and retrieve the results of the batch 
+     * operation.
+     * 
+     * Because the batch system processes with a degree of concurrency, and
+     * because of batch sizes in the queue vary, AvaTax API is unable to accurately 
+     * predict when a batch will complete. If high performance processing is 
+     * required, please use the
      * 
      * @param companyId The ID of the company that owns these batches
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
@@ -616,10 +1131,25 @@ public class AvaTaxClient {
      * Retrieve all batches for this company
      * 
      * List all batch objects attached to the specified company.
+     * 
      * A batch object is a large collection of API calls stored in a compact file.
-     * When you create a batch, it is added to the AvaTax Batch Queue and will be processed in the order it was received.
-     * You may fetch a batch to check on its status and retrieve the results of the batch operation.
-     * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * 
+     * Search for specific objects using the criteria in the `$filter` parameter; 
+     * full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * Paginate results using the `$top`, `$skip`, and `$orderby` parameters.
+     * 
+     * Use [GetBatch](https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Batches/GetBatch/) 
+     * to retrieve the results, or check the status, of an individual batch.
+     * 
+     * When a batch is created, it is added to the AvaTax Batch Queue and will be 
+     * processed as quickly as possible in the order it was received. To check the 
+     * status of a batch, fetch the batch and retrieve the results of the batch 
+     * operation.
+     * 
+     * Because the batch system processes with a degree of concurrency, and
+     * because of batch sizes in the queue vary, AvaTax API is unable to accurately 
+     * predict when a batch will complete. If high performance processing is 
+     * required, please use the
      * 
      * @param companyId The ID of the company that owns these batches
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
@@ -644,11 +1174,22 @@ public class AvaTaxClient {
      * Retrieve all batches
      * 
      * Get multiple batch objects across all companies.
-     * A batch object is a large collection of API calls stored in a compact file.
-     * When you create a batch, it is added to the AvaTax Batch Queue and will be processed in the order it was received.
-     * You may fetch a batch to check on its status and retrieve the results of the batch operation.
      * 
-     * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * A batch object is a large collection of API calls stored in a compact file.
+     * 
+     * Search for specific objects using the criteria in the `$filter` parameter; 
+     * full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * Paginate results using the `$top`, `$skip`, and `$orderby` parameters.
+     * 
+     * When a batch is created, it is added to the AvaTax Batch Queue and will be 
+     * processed as quickly as possible in the order it was received. To check the 
+     * status of a batch, fetch the batch and retrieve the results of the batch 
+     * operation.
+     * 
+     * Because the batch system processes with a degree of concurrency, and
+     * because of batch sizes in the queue vary, AvaTax API is unable to accurately 
+     * predict when a batch will complete. If high performance processing is 
+     * required, please use the
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * @param include A comma separated list of additional data to retrieve.
@@ -671,11 +1212,22 @@ public class AvaTaxClient {
      * Retrieve all batches
      * 
      * Get multiple batch objects across all companies.
-     * A batch object is a large collection of API calls stored in a compact file.
-     * When you create a batch, it is added to the AvaTax Batch Queue and will be processed in the order it was received.
-     * You may fetch a batch to check on its status and retrieve the results of the batch operation.
      * 
-     * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * A batch object is a large collection of API calls stored in a compact file.
+     * 
+     * Search for specific objects using the criteria in the `$filter` parameter; 
+     * full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * Paginate results using the `$top`, `$skip`, and `$orderby` parameters.
+     * 
+     * When a batch is created, it is added to the AvaTax Batch Queue and will be 
+     * processed as quickly as possible in the order it was received. To check the 
+     * status of a batch, fetch the batch and retrieve the results of the batch 
+     * operation.
+     * 
+     * Because the batch system processes with a degree of concurrency, and
+     * because of batch sizes in the queue vary, AvaTax API is unable to accurately 
+     * predict when a batch will complete. If high performance processing is 
+     * required, please use the
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * @param include A comma separated list of additional data to retrieve.
@@ -708,7 +1260,9 @@ public class AvaTaxClient {
      * Using CertExpress with this API will ensure that your certificates are automatically linked correctly into
      * your company so that they can be used for tax exemptions.
      * 
-     * You may experience up to a three minute delay on your very first call to the exemption related endpoints 
+     * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
+     * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
+     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document 
      * 
      * @param companyId The unique ID number of the company that will record certificates
      * @param customerCode The number of the customer where the request is sent to
@@ -736,7 +1290,9 @@ public class AvaTaxClient {
      * Using CertExpress with this API will ensure that your certificates are automatically linked correctly into
      * your company so that they can be used for tax exemptions.
      * 
-     * You may experience up to a three minute delay on your very first call to the exemption related endpoints 
+     * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
+     * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
+     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document 
      * 
      * @param companyId The unique ID number of the company that will record certificates
      * @param customerCode The number of the customer where the request is sent to
@@ -764,7 +1320,9 @@ public class AvaTaxClient {
      * Using CertExpress with this API will ensure that your certificates are automatically linked correctly into
      * your company so that they can be used for tax exemptions.
      * 
-     * You may experience up to a three minute delay on your very first call to the exemption related endpoints 
+     * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
+     * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
+     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document 
      * 
      * @param companyId The unique ID number of the company that issued this invitation
      * @param customerCode The number of the customer where the request is sent to
@@ -795,7 +1353,9 @@ public class AvaTaxClient {
      * Using CertExpress with this API will ensure that your certificates are automatically linked correctly into
      * your company so that they can be used for tax exemptions.
      * 
-     * You may experience up to a three minute delay on your very first call to the exemption related endpoints 
+     * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
+     * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
+     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document 
      * 
      * @param companyId The unique ID number of the company that issued this invitation
      * @param customerCode The number of the customer where the request is sent to
@@ -826,7 +1386,9 @@ public class AvaTaxClient {
      * Using CertExpress with this API will ensure that your certificates are automatically linked correctly into
      * your company so that they can be used for tax exemptions.
      * 
-     * You may experience up to a three minute delay on your very first call to the exemption related endpoints 
+     * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
+     * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
+     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document 
      * 
      * @param companyId The unique ID number of the company that issued this invitation
      * @param include OPTIONAL: A comma separated list of special fetch options.       No options are defined at this time.
@@ -861,7 +1423,9 @@ public class AvaTaxClient {
      * Using CertExpress with this API will ensure that your certificates are automatically linked correctly into
      * your company so that they can be used for tax exemptions.
      * 
-     * You may experience up to a three minute delay on your very first call to the exemption related endpoints 
+     * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
+     * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
+     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document 
      * 
      * @param companyId The unique ID number of the company that issued this invitation
      * @param include OPTIONAL: A comma separated list of special fetch options.       No options are defined at this time.
@@ -900,7 +1464,9 @@ public class AvaTaxClient {
      * * A link to the customer that is allowed to use this certificate
      * * Your tax transaction must contain the correct customer code
      * 
-     * You may experience up to a three minute delay on your very first call to the exemption related endpoints 
+     * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
+     * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
+     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document 
      * 
      * @param companyId The ID number of the company recording this certificate
      * @param model Certificates to be created
@@ -930,7 +1496,9 @@ public class AvaTaxClient {
      * * A link to the customer that is allowed to use this certificate
      * * Your tax transaction must contain the correct customer code
      * 
-     * You may experience up to a three minute delay on your very first call to the exemption related endpoints 
+     * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
+     * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
+     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document 
      * 
      * @param companyId The ID number of the company recording this certificate
      * @param model Certificates to be created
@@ -954,7 +1522,9 @@ public class AvaTaxClient {
      * 
      * Revoked certificates can no longer be used.
      * 
-     * You may experience up to a three minute delay on your very first call to the exemption related endpoints 
+     * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
+     * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
+     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document 
      * 
      * @param companyId The unique ID number of the company that recorded this certificate
      * @param id The unique ID number of this certificate
@@ -979,7 +1549,9 @@ public class AvaTaxClient {
      * 
      * Revoked certificates can no longer be used.
      * 
-     * You may experience up to a three minute delay on your very first call to the exemption related endpoints 
+     * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
+     * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
+     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document 
      * 
      * @param companyId The unique ID number of the company that recorded this certificate
      * @param id The unique ID number of this certificate
@@ -1005,7 +1577,9 @@ public class AvaTaxClient {
      * criteria you specify when you store the certificate.  To view or manage your certificates directly, please 
      * log onto the administrative website for the product you purchased.
      * 
-     * You may experience up to a three minute delay on your very first call to the exemption related endpoints 
+     * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
+     * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
+     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document 
      * 
      * @param companyId The unique ID number of the company that recorded this certificate
      * @param id The unique ID number of this certificate
@@ -1035,7 +1609,9 @@ public class AvaTaxClient {
      * criteria you specify when you store the certificate.  To view or manage your certificates directly, please 
      * log onto the administrative website for the product you purchased.
      * 
-     * You may experience up to a three minute delay on your very first call to the exemption related endpoints 
+     * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
+     * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
+     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document 
      * 
      * @param companyId The unique ID number of the company that recorded this certificate
      * @param id The unique ID number of this certificate
@@ -1068,7 +1644,9 @@ public class AvaTaxClient {
      * * PoNumbers - Retrieves all PO numbers tied to the certificate.
      * * Attributes - Retrieves all attributes applied to the certificate.
      * 
-     * You may experience up to a three minute delay on your very first call to the exemption related endpoints 
+     * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
+     * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
+     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document 
      * 
      * @param companyId The ID number of the company that recorded this certificate
      * @param id The unique ID number of this certificate
@@ -1099,7 +1677,9 @@ public class AvaTaxClient {
      * * PoNumbers - Retrieves all PO numbers tied to the certificate.
      * * Attributes - Retrieves all attributes applied to the certificate.
      * 
-     * You may experience up to a three minute delay on your very first call to the exemption related endpoints 
+     * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
+     * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
+     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document 
      * 
      * @param companyId The ID number of the company that recorded this certificate
      * @param id The unique ID number of this certificate
@@ -1115,6 +1695,44 @@ public class AvaTaxClient {
     }
 
     /**
+     * Check a company's exemption certificate status.
+     * 
+     * Checks whether this company is configured to use exemption certificates in AvaTax.
+     * 
+     * Exemption certificates are tracked through a different auditable data store than the one that 
+     * holds AvaTax transactions.  To use the AvaTax exemption certificate document store, please call
+     * `GetCertificateSetup` to see if your company is configured to use the exemption certificate
+     * document store.  To request setup, please call `RequestCertificateSetup` and your company will
+     * 
+     * @param companyId The company ID to check
+     * @return ProvisionStatusModel
+     */
+    public ProvisionStatusModel getCertificateSetup(Integer companyId) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/certificates/setup");
+        path.applyField("companyId", companyId);
+        return ((RestCall<ProvisionStatusModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<ProvisionStatusModel>(){})).call();
+    }
+
+    /**
+     * Check a company's exemption certificate status.
+     * 
+     * Checks whether this company is configured to use exemption certificates in AvaTax.
+     * 
+     * Exemption certificates are tracked through a different auditable data store than the one that 
+     * holds AvaTax transactions.  To use the AvaTax exemption certificate document store, please call
+     * `GetCertificateSetup` to see if your company is configured to use the exemption certificate
+     * document store.  To request setup, please call `RequestCertificateSetup` and your company will
+     * 
+     * @param companyId The company ID to check
+     * @return ProvisionStatusModel
+     */
+    public Future<ProvisionStatusModel> getCertificateSetupAsync(Integer companyId) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/certificates/setup");
+        path.applyField("companyId", companyId);
+        return this.threadPool.submit((RestCall<ProvisionStatusModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<ProvisionStatusModel>(){}));
+    }
+
+    /**
      * Link attributes to a certificate
      * 
      * Link one or many attributes to a certificate.
@@ -1127,7 +1745,9 @@ public class AvaTaxClient {
      * criteria you specify when you store the certificate.  To view or manage your certificates directly, please 
      * log onto the administrative website for the product you purchased.
      * 
-     * You may experience up to a three minute delay on your very first call to the exemption related endpoints 
+     * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
+     * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
+     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document 
      * 
      * @param companyId The unique ID number of the company that recorded this certificate
      * @param id The unique ID number of this certificate
@@ -1154,7 +1774,9 @@ public class AvaTaxClient {
      * criteria you specify when you store the certificate.  To view or manage your certificates directly, please 
      * log onto the administrative website for the product you purchased.
      * 
-     * You may experience up to a three minute delay on your very first call to the exemption related endpoints 
+     * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
+     * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
+     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document 
      * 
      * @param companyId The unique ID number of the company that recorded this certificate
      * @param id The unique ID number of this certificate
@@ -1182,7 +1804,9 @@ public class AvaTaxClient {
      * criteria you specify when you store the certificate.  To view or manage your certificates directly, please 
      * log onto the administrative website for the product you purchased.
      * 
-     * You may experience up to a three minute delay on your very first call to the exemption related endpoints 
+     * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
+     * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
+     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document 
      * 
      * @param companyId The unique ID number of the company that recorded this certificate
      * @param id The unique ID number of this certificate
@@ -1210,7 +1834,9 @@ public class AvaTaxClient {
      * criteria you specify when you store the certificate.  To view or manage your certificates directly, please 
      * log onto the administrative website for the product you purchased.
      * 
-     * You may experience up to a three minute delay on your very first call to the exemption related endpoints 
+     * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
+     * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
+     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document 
      * 
      * @param companyId The unique ID number of the company that recorded this certificate
      * @param id The unique ID number of this certificate
@@ -1237,7 +1863,9 @@ public class AvaTaxClient {
      * criteria you specify when you store the certificate.  To view or manage your certificates directly, please 
      * log onto the administrative website for the product you purchased.
      * 
-     * You may experience up to a three minute delay on your very first call to the exemption related endpoints 
+     * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
+     * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
+     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document 
      * 
      * @param companyId The unique ID number of the company that recorded this certificate
      * @param id The unique ID number of this certificate
@@ -1263,7 +1891,9 @@ public class AvaTaxClient {
      * criteria you specify when you store the certificate.  To view or manage your certificates directly, please 
      * log onto the administrative website for the product you purchased.
      * 
-     * You may experience up to a three minute delay on your very first call to the exemption related endpoints 
+     * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
+     * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
+     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document 
      * 
      * @param companyId The unique ID number of the company that recorded this certificate
      * @param id The unique ID number of this certificate
@@ -1289,7 +1919,9 @@ public class AvaTaxClient {
      * criteria you specify when you store the certificate.  To view or manage your certificates directly, please 
      * log onto the administrative website for the product you purchased.
      * 
-     * You may experience up to a three minute delay on your very first call to the exemption related endpoints 
+     * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
+     * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
+     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document 
      * 
      * @param companyId The unique ID number of the company that recorded this certificate
      * @param id The unique ID number of this certificate
@@ -1317,7 +1949,9 @@ public class AvaTaxClient {
      * criteria you specify when you store the certificate.  To view or manage your certificates directly, please 
      * log onto the administrative website for the product you purchased.
      * 
-     * You may experience up to a three minute delay on your very first call to the exemption related endpoints 
+     * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
+     * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
+     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document 
      * 
      * @param companyId The unique ID number of the company that recorded this certificate
      * @param id The unique ID number of this certificate
@@ -1348,7 +1982,9 @@ public class AvaTaxClient {
      * * PoNumbers - Retrieves all PO numbers tied to the certificate.
      * * Attributes - Retrieves all attributes applied to the certificate.
      * 
-     * You may experience up to a three minute delay on your very first call to the exemption related endpoints 
+     * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
+     * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
+     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document 
      * 
      * @param companyId The ID number of the company to search
      * @param include OPTIONAL: A comma separated list of special fetch options. You can specify one or more of the following:      * Customers - Retrieves the list of customers linked to the certificate.   * PoNumbers - Retrieves all PO numbers tied to the certificate.   * Attributes - Retrieves all attributes applied to the certificate.
@@ -1385,7 +2021,9 @@ public class AvaTaxClient {
      * * PoNumbers - Retrieves all PO numbers tied to the certificate.
      * * Attributes - Retrieves all attributes applied to the certificate.
      * 
-     * You may experience up to a three minute delay on your very first call to the exemption related endpoints 
+     * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
+     * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
+     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document 
      * 
      * @param companyId The ID number of the company to search
      * @param include OPTIONAL: A comma separated list of special fetch options. You can specify one or more of the following:      * Customers - Retrieves the list of customers linked to the certificate.   * PoNumbers - Retrieves all PO numbers tied to the certificate.   * Attributes - Retrieves all attributes applied to the certificate.
@@ -1407,6 +2045,48 @@ public class AvaTaxClient {
     }
 
     /**
+     * Request setup of exemption certificates for this company.
+     * 
+     * Requests the setup of exemption certificates for this company.
+     * 
+     * Exemption certificates are tracked through a different auditable data store than the one that 
+     * holds AvaTax transactions.  To use the AvaTax exemption certificate document store, please call
+     * `GetCertificateSetup` to see if your company is configured to use the exemption certificate
+     * document store.  To request setup, please call `RequestCertificateSetup` and your company will
+     * be configured with data storage in the auditable certificate system.
+     * 
+     * 
+     * @param companyId 
+     * @return ProvisionStatusModel
+     */
+    public ProvisionStatusModel requestCertificateSetup(Integer companyId) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/certificates/setup");
+        path.applyField("companyId", companyId);
+        return ((RestCall<ProvisionStatusModel>)restCallFactory.createRestCall("post", path, null, new TypeToken<ProvisionStatusModel>(){})).call();
+    }
+
+    /**
+     * Request setup of exemption certificates for this company.
+     * 
+     * Requests the setup of exemption certificates for this company.
+     * 
+     * Exemption certificates are tracked through a different auditable data store than the one that 
+     * holds AvaTax transactions.  To use the AvaTax exemption certificate document store, please call
+     * `GetCertificateSetup` to see if your company is configured to use the exemption certificate
+     * document store.  To request setup, please call `RequestCertificateSetup` and your company will
+     * be configured with data storage in the auditable certificate system.
+     * 
+     * 
+     * @param companyId 
+     * @return ProvisionStatusModel
+     */
+    public Future<ProvisionStatusModel> requestCertificateSetupAsync(Integer companyId) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/certificates/setup");
+        path.applyField("companyId", companyId);
+        return this.threadPool.submit((RestCall<ProvisionStatusModel>)restCallFactory.createRestCall("post", path, null, new TypeToken<ProvisionStatusModel>(){}));
+    }
+
+    /**
      * Unlink attributes from a certificate
      * 
      * Unlink one or many attributes from a certificate.
@@ -1419,7 +2099,9 @@ public class AvaTaxClient {
      * criteria you specify when you store the certificate.  To view or manage your certificates directly, please 
      * log onto the administrative website for the product you purchased.
      * 
-     * You may experience up to a three minute delay on your very first call to the exemption related endpoints 
+     * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
+     * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
+     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document 
      * 
      * @param companyId The unique ID number of the company that recorded this certificate
      * @param id The unique ID number of this certificate
@@ -1446,7 +2128,9 @@ public class AvaTaxClient {
      * criteria you specify when you store the certificate.  To view or manage your certificates directly, please 
      * log onto the administrative website for the product you purchased.
      * 
-     * You may experience up to a three minute delay on your very first call to the exemption related endpoints 
+     * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
+     * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
+     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document 
      * 
      * @param companyId The unique ID number of the company that recorded this certificate
      * @param id The unique ID number of this certificate
@@ -1475,7 +2159,9 @@ public class AvaTaxClient {
      * criteria you specify when you store the certificate.  To view or manage your certificates directly, please 
      * log onto the administrative website for the product you purchased.
      * 
-     * You may experience up to a three minute delay on your very first call to the exemption related endpoints 
+     * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
+     * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
+     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document 
      * 
      * @param companyId The unique ID number of the company that recorded this certificate
      * @param id The unique ID number of this certificate
@@ -1504,7 +2190,9 @@ public class AvaTaxClient {
      * criteria you specify when you store the certificate.  To view or manage your certificates directly, please 
      * log onto the administrative website for the product you purchased.
      * 
-     * You may experience up to a three minute delay on your very first call to the exemption related endpoints 
+     * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
+     * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
+     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document 
      * 
      * @param companyId The unique ID number of the company that recorded this certificate
      * @param id The unique ID number of this certificate
@@ -1528,7 +2216,9 @@ public class AvaTaxClient {
      * criteria you specify when you store the certificate.  To view or manage your certificates directly, please 
      * log onto the administrative website for the product you purchased.
      * 
-     * You may experience up to a three minute delay on your very first call to the exemption related endpoints 
+     * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
+     * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
+     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document 
      * 
      * @param companyId The ID number of the company that recorded this certificate
      * @param id The unique ID number of this certificate
@@ -1552,7 +2242,9 @@ public class AvaTaxClient {
      * criteria you specify when you store the certificate.  To view or manage your certificates directly, please 
      * log onto the administrative website for the product you purchased.
      * 
-     * You may experience up to a three minute delay on your very first call to the exemption related endpoints 
+     * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
+     * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
+     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document 
      * 
      * @param companyId The ID number of the company that recorded this certificate
      * @param id The unique ID number of this certificate
@@ -1579,7 +2271,9 @@ public class AvaTaxClient {
      * criteria you specify when you store the certificate.  To view or manage your certificates directly, please 
      * log onto the administrative website for the product you purchased.
      * 
-     * You may experience up to a three minute delay on your very first call to the exemption related endpoints 
+     * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
+     * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
+     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document 
      * 
      * @param companyId The unique ID number of the company that recorded this certificate
      * @param id The unique ID number of this certificate
@@ -1606,7 +2300,9 @@ public class AvaTaxClient {
      * criteria you specify when you store the certificate.  To view or manage your certificates directly, please 
      * log onto the administrative website for the product you purchased.
      * 
-     * You may experience up to a three minute delay on your very first call to the exemption related endpoints 
+     * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
+     * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
+     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document 
      * 
      * @param companyId The unique ID number of the company that recorded this certificate
      * @param id The unique ID number of this certificate
@@ -2493,7 +3189,12 @@ public class AvaTaxClient {
      * identify any certificates linked to this `customer` object.  If any certificate applies to the transaction,
      * AvaTax will record the appropriate elements of the transaction as exempt and link it to the `certificate`.
      * 
-     * You may experience up to a three minute delay on your very first call to the exemption related endpoints 
+     * A nested object such as CustomFields could be specified and created along with the customer object. To fetch the
+     * nested object, please call 'GetCustomer' API with appropriate $include parameters.
+     * 
+     * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
+     * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
+     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document 
      * 
      * @param companyId The unique ID number of the company that recorded this customer
      * @param model The list of customer objects to be created
@@ -2516,7 +3217,12 @@ public class AvaTaxClient {
      * identify any certificates linked to this `customer` object.  If any certificate applies to the transaction,
      * AvaTax will record the appropriate elements of the transaction as exempt and link it to the `certificate`.
      * 
-     * You may experience up to a three minute delay on your very first call to the exemption related endpoints 
+     * A nested object such as CustomFields could be specified and created along with the customer object. To fetch the
+     * nested object, please call 'GetCustomer' API with appropriate $include parameters.
+     * 
+     * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
+     * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
+     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document 
      * 
      * @param companyId The unique ID number of the company that recorded this customer
      * @param model The list of customer objects to be created
@@ -2539,7 +3245,9 @@ public class AvaTaxClient {
      * identify any certificates linked to this `customer` object.  If any certificate applies to the transaction,
      * AvaTax will record the appropriate elements of the transaction as exempt and link it to the `certificate`.
      * 
-     * You may experience up to a three minute delay on your very first call to the exemption related endpoints 
+     * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
+     * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
+     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document 
      * 
      * @param companyId The unique ID number of the company that recorded this customer
      * @param customerCode The unique code representing this customer
@@ -2563,7 +3271,9 @@ public class AvaTaxClient {
      * identify any certificates linked to this `customer` object.  If any certificate applies to the transaction,
      * AvaTax will record the appropriate elements of the transaction as exempt and link it to the `certificate`.
      * 
-     * You may experience up to a three minute delay on your very first call to the exemption related endpoints 
+     * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
+     * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
+     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document 
      * 
      * @param companyId The unique ID number of the company that recorded this customer
      * @param customerCode The unique code representing this customer
@@ -2590,8 +3300,11 @@ public class AvaTaxClient {
      * You can use the `$include` parameter to fetch the following additional objects for expansion:
      * 
      * * Certificates - Fetch a list of certificates linked to this customer.
+     * * CustomFields - Fetch a list of custom fields associated to this customer.
      * 
-     * You may experience up to a three minute delay on your very first call to the exemption related endpoints 
+     * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
+     * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
+     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document 
      * 
      * @param companyId The unique ID number of the company that recorded this customer
      * @param customerCode The unique code representing this customer
@@ -2620,8 +3333,11 @@ public class AvaTaxClient {
      * You can use the `$include` parameter to fetch the following additional objects for expansion:
      * 
      * * Certificates - Fetch a list of certificates linked to this customer.
+     * * CustomFields - Fetch a list of custom fields associated to this customer.
      * 
-     * You may experience up to a three minute delay on your very first call to the exemption related endpoints 
+     * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
+     * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
+     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document 
      * 
      * @param companyId The unique ID number of the company that recorded this customer
      * @param customerCode The unique code representing this customer
@@ -2647,7 +3363,9 @@ public class AvaTaxClient {
      * identify any certificates linked to this `customer` object.  If any certificate applies to the transaction,
      * AvaTax will record the appropriate elements of the transaction as exempt and link it to the `certificate`.
      * 
-     * You may experience up to a three minute delay on your very first call to the exemption related endpoints 
+     * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
+     * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
+     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document 
      * 
      * @param companyId The unique ID number of the company that recorded this customer
      * @param customerCode The unique code representing this customer
@@ -2672,7 +3390,9 @@ public class AvaTaxClient {
      * identify any certificates linked to this `customer` object.  If any certificate applies to the transaction,
      * AvaTax will record the appropriate elements of the transaction as exempt and link it to the `certificate`.
      * 
-     * You may experience up to a three minute delay on your very first call to the exemption related endpoints 
+     * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
+     * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
+     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document 
      * 
      * @param companyId The unique ID number of the company that recorded this customer
      * @param customerCode The unique code representing this customer
@@ -2697,7 +3417,9 @@ public class AvaTaxClient {
      * identify any certificates linked to this `customer` object.  If any certificate applies to the transaction,
      * AvaTax will record the appropriate elements of the transaction as exempt and link it to the `certificate`.
      * 
-     * You may experience up to a three minute delay on your very first call to the exemption related endpoints 
+     * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
+     * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
+     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document 
      * 
      * @param companyId The unique ID number of the company that recorded this customer
      * @param customerCode The unique code representing this customer
@@ -2731,7 +3453,9 @@ public class AvaTaxClient {
      * identify any certificates linked to this `customer` object.  If any certificate applies to the transaction,
      * AvaTax will record the appropriate elements of the transaction as exempt and link it to the `certificate`.
      * 
-     * You may experience up to a three minute delay on your very first call to the exemption related endpoints 
+     * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
+     * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
+     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document 
      * 
      * @param companyId The unique ID number of the company that recorded this customer
      * @param customerCode The unique code representing this customer
@@ -2768,7 +3492,9 @@ public class AvaTaxClient {
      * a CertExpress invitation link so that the customer can upload proof of their exemption certificate.  Please
      * see the `CreateCertExpressInvitation` API to create an invitation link for this customer.
      * 
-     * You may experience up to a three minute delay on your very first call to the exemption related endpoints 
+     * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
+     * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
+     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document 
      * 
      * @param companyId The unique ID number of the company that recorded this customer
      * @param customerCode The unique code representing this customer
@@ -2799,7 +3525,9 @@ public class AvaTaxClient {
      * a CertExpress invitation link so that the customer can upload proof of their exemption certificate.  Please
      * see the `CreateCertExpressInvitation` API to create an invitation link for this customer.
      * 
-     * You may experience up to a three minute delay on your very first call to the exemption related endpoints 
+     * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
+     * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
+     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document 
      * 
      * @param companyId The unique ID number of the company that recorded this customer
      * @param customerCode The unique code representing this customer
@@ -2831,7 +3559,9 @@ public class AvaTaxClient {
      * 
      * * Certificates - Fetch a list of certificates linked to this customer.
      * 
-     * You may experience up to a three minute delay on your very first call to the exemption related endpoints 
+     * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
+     * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
+     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document 
      * 
      * @param companyId The unique ID number of the company that recorded this customer
      * @param include OPTIONAL - You can specify the value `certificates` to fetch information about certificates linked to the customer.
@@ -2867,7 +3597,9 @@ public class AvaTaxClient {
      * 
      * * Certificates - Fetch a list of certificates linked to this customer.
      * 
-     * You may experience up to a three minute delay on your very first call to the exemption related endpoints 
+     * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
+     * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
+     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document 
      * 
      * @param companyId The unique ID number of the company that recorded this customer
      * @param include OPTIONAL - You can specify the value `certificates` to fetch information about certificates linked to the customer.
@@ -2899,7 +3631,9 @@ public class AvaTaxClient {
      * identify any certificates linked to this `customer` object.  If any certificate applies to the transaction,
      * AvaTax will record the appropriate elements of the transaction as exempt and link it to the `certificate`.
      * 
-     * You may experience up to a three minute delay on your very first call to the exemption related endpoints 
+     * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
+     * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
+     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document 
      * 
      * @param companyId The unique ID number of the company that recorded this customer
      * @param customerCode The unique code representing this customer
@@ -2924,7 +3658,9 @@ public class AvaTaxClient {
      * identify any certificates linked to this `customer` object.  If any certificate applies to the transaction,
      * AvaTax will record the appropriate elements of the transaction as exempt and link it to the `certificate`.
      * 
-     * You may experience up to a three minute delay on your very first call to the exemption related endpoints 
+     * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
+     * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
+     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document 
      * 
      * @param companyId The unique ID number of the company that recorded this customer
      * @param customerCode The unique code representing this customer
@@ -2949,7 +3685,9 @@ public class AvaTaxClient {
      * identify any certificates linked to this `customer` object.  If any certificate applies to the transaction,
      * AvaTax will record the appropriate elements of the transaction as exempt and link it to the `certificate`.
      * 
-     * You may experience up to a three minute delay on your very first call to the exemption related endpoints 
+     * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
+     * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
+     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document 
      * 
      * @param companyId The unique ID number of the company that recorded this customer
      * @param customerCode The unique code representing this customer
@@ -2974,7 +3712,9 @@ public class AvaTaxClient {
      * identify any certificates linked to this `customer` object.  If any certificate applies to the transaction,
      * AvaTax will record the appropriate elements of the transaction as exempt and link it to the `certificate`.
      * 
-     * You may experience up to a three minute delay on your very first call to the exemption related endpoints 
+     * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
+     * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
+     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document 
      * 
      * @param companyId The unique ID number of the company that recorded this customer
      * @param customerCode The unique code representing this customer
@@ -3136,7 +3876,7 @@ public class AvaTaxClient {
      * A certificate may have multiple attributes that control its behavior.  You may apply or remove attributes to a
      * certificate at any time.
      * 
-     * You may experience up to a three minute delay on your very first call to the exemption related endpoints 
+     * If you see the 'CertCaptureNotConfiguredError', please use CheckProvision and RequestProvision endpoints to
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
@@ -3161,7 +3901,7 @@ public class AvaTaxClient {
      * A certificate may have multiple attributes that control its behavior.  You may apply or remove attributes to a
      * certificate at any time.
      * 
-     * You may experience up to a three minute delay on your very first call to the exemption related endpoints 
+     * If you see the 'CertCaptureNotConfiguredError', please use CheckProvision and RequestProvision endpoints to
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
@@ -3179,14 +3919,14 @@ public class AvaTaxClient {
     }
 
     /**
-     * List certificate attributes used by a company
+     * List the certificate exempt reasons defined by a company
      * 
      * List the certificate exempt reasons defined by a company.
      * 
      * An exemption reason defines why a certificate allows a customer to be exempt
      * for purposes of tax calculation.
      * 
-     * You may experience up to a three minute delay on your very first call to the exemption related endpoints 
+     * If you see the 'CertCaptureNotConfiguredError', please use CheckProvision and RequestProvision endpoints to
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
@@ -3204,14 +3944,14 @@ public class AvaTaxClient {
     }
 
     /**
-     * List certificate attributes used by a company
+     * List the certificate exempt reasons defined by a company
      * 
      * List the certificate exempt reasons defined by a company.
      * 
      * An exemption reason defines why a certificate allows a customer to be exempt
      * for purposes of tax calculation.
      * 
-     * You may experience up to a three minute delay on your very first call to the exemption related endpoints 
+     * If you see the 'CertCaptureNotConfiguredError', please use CheckProvision and RequestProvision endpoints to
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
@@ -3236,7 +3976,7 @@ public class AvaTaxClient {
      * An exposure zone is a location where a certificate can be valid.  Exposure zones may indicate a taxing
      * authority or other legal entity to which a certificate may apply.
      * 
-     * You may experience up to a three minute delay on your very first call to the exemption related endpoints 
+     * If you see the 'CertCaptureNotConfiguredError', please use CheckProvision and RequestProvision endpoints to
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
@@ -3261,7 +4001,7 @@ public class AvaTaxClient {
      * An exposure zone is a location where a certificate can be valid.  Exposure zones may indicate a taxing
      * authority or other legal entity to which a certificate may apply.
      * 
-     * You may experience up to a three minute delay on your very first call to the exemption related endpoints 
+     * If you see the 'CertCaptureNotConfiguredError', please use CheckProvision and RequestProvision endpoints to
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
@@ -3279,9 +4019,7 @@ public class AvaTaxClient {
     }
 
     /**
-     * Retrieve the full list of communications transactiontypes
-     * 
-     * Returns full list of communications transaction types which
+     * Retrieve the full list of communications service types
      * 
      * @param id The transaction type ID to examine
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
@@ -3301,9 +4039,7 @@ public class AvaTaxClient {
     }
 
     /**
-     * Retrieve the full list of communications transactiontypes
-     * 
-     * Returns full list of communications transaction types which
+     * Retrieve the full list of communications service types
      * 
      * @param id The transaction type ID to examine
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
@@ -3453,7 +4189,7 @@ public class AvaTaxClient {
      * upload certificates.  An invitation allows customers to use CertExpress to upload their exemption 
      * certificates directly; this cover letter explains why the invitation was sent.
      * 
-     * You may experience up to a three minute delay on your very first call to the exemption related endpoints 
+     * If you see the 'CertCaptureNotConfiguredError', please use CheckProvision and RequestProvision endpoints to
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
@@ -3479,7 +4215,7 @@ public class AvaTaxClient {
      * upload certificates.  An invitation allows customers to use CertExpress to upload their exemption 
      * certificates directly; this cover letter explains why the invitation was sent.
      * 
-     * You may experience up to a three minute delay on your very first call to the exemption related endpoints 
+     * If you see the 'CertCaptureNotConfiguredError', please use CheckProvision and RequestProvision endpoints to
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
@@ -3509,12 +4245,20 @@ public class AvaTaxClient {
      * 
      * @param country The name or code of the destination country.
      * @param hsCode The Section or partial HS Code for which you would like to view the next level of HS Code detail, if more detail is available.
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
+     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<HsCodeModel>
      */
-    public FetchResult<HsCodeModel> listCrossBorderCodes(String country, String hsCode) throws Exception {
+    public FetchResult<HsCodeModel> listCrossBorderCodes(String country, String hsCode, String filter, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/crossborder/{country}/{hsCode}");
         path.applyField("country", country);
         path.applyField("hsCode", hsCode);
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
         return ((RestCall<FetchResult<HsCodeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<HsCodeModel>>(){})).call();
     }
 
@@ -3531,12 +4275,20 @@ public class AvaTaxClient {
      * 
      * @param country The name or code of the destination country.
      * @param hsCode The Section or partial HS Code for which you would like to view the next level of HS Code detail, if more detail is available.
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
+     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<HsCodeModel>
      */
-    public Future<FetchResult<HsCodeModel>> listCrossBorderCodesAsync(String country, String hsCode) {
+    public Future<FetchResult<HsCodeModel>> listCrossBorderCodesAsync(String country, String hsCode, String filter, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/crossborder/{country}/{hsCode}");
         path.applyField("country", country);
         path.applyField("hsCode", hsCode);
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
         return this.threadPool.submit((RestCall<FetchResult<HsCodeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<HsCodeModel>>(){}));
     }
 
@@ -3570,6 +4322,50 @@ public class AvaTaxClient {
     public Future<FetchResult<HsCodeModel>> listCrossBorderSectionsAsync() {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/crossborder/sections");
         return this.threadPool.submit((RestCall<FetchResult<HsCodeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<HsCodeModel>>(){}));
+    }
+
+    /**
+     * List all ISO 4217 currencies supported by AvaTax.
+     * 
+     * Lists all ISO 4217 currencies supported by AvaTax.
+     * 
+     * This API produces a list of currency codes that can be used when calling AvaTax.  The values from this API can be used to fill out the
+     * 
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
+     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @return FetchResult<CurrencyModel>
+     */
+    public FetchResult<CurrencyModel> listCurrencies(String filter, Integer top, Integer skip, String orderBy) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/currencies");
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
+        return ((RestCall<FetchResult<CurrencyModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CurrencyModel>>(){})).call();
+    }
+
+    /**
+     * List all ISO 4217 currencies supported by AvaTax.
+     * 
+     * Lists all ISO 4217 currencies supported by AvaTax.
+     * 
+     * This API produces a list of currency codes that can be used when calling AvaTax.  The values from this API can be used to fill out the
+     * 
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
+     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @return FetchResult<CurrencyModel>
+     */
+    public Future<FetchResult<CurrencyModel>> listCurrenciesAsync(String filter, Integer top, Integer skip, String orderBy) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/currencies");
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
+        return this.threadPool.submit((RestCall<FetchResult<CurrencyModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CurrencyModel>>(){}));
     }
 
     /**
@@ -4699,6 +5495,60 @@ public class AvaTaxClient {
     }
 
     /**
+     * List all customs duty programs recognized by AvaTax
+     * 
+     * List all preferred customs duty programs recognized by AvaTax.
+     * 
+     * A customs duty program is an optional program you can use to obtain favorable treatment from customs and duty agents.
+     * An example of a preferred program is NAFTA, which provides preferential rates for products being shipped from neighboring
+     * countries.
+     * 
+     * To select a preferred program for calculating customs and duty rates, call this API to find the appropriate code for your
+     * preferred program.  Next, set the parameter `AvaTax.LC.PreferredProgram` in your `CreateTransaction` call to the code of
+     * 
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
+     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @return FetchResult<PreferredProgramModel>
+     */
+    public FetchResult<PreferredProgramModel> listPreferredPrograms(String filter, Integer top, Integer skip, String orderBy) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/preferredprograms");
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
+        return ((RestCall<FetchResult<PreferredProgramModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<PreferredProgramModel>>(){})).call();
+    }
+
+    /**
+     * List all customs duty programs recognized by AvaTax
+     * 
+     * List all preferred customs duty programs recognized by AvaTax.
+     * 
+     * A customs duty program is an optional program you can use to obtain favorable treatment from customs and duty agents.
+     * An example of a preferred program is NAFTA, which provides preferential rates for products being shipped from neighboring
+     * countries.
+     * 
+     * To select a preferred program for calculating customs and duty rates, call this API to find the appropriate code for your
+     * preferred program.  Next, set the parameter `AvaTax.LC.PreferredProgram` in your `CreateTransaction` call to the code of
+     * 
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
+     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @return FetchResult<PreferredProgramModel>
+     */
+    public Future<FetchResult<PreferredProgramModel>> listPreferredProgramsAsync(String filter, Integer top, Integer skip, String orderBy) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/preferredprograms");
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
+        return this.threadPool.submit((RestCall<FetchResult<PreferredProgramModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<PreferredProgramModel>>(){}));
+    }
+
+    /**
      * Retrieve the full list of rate types for each country
      * 
      * Returns the full list of Avalara-supported rate type file types
@@ -5499,7 +6349,7 @@ public class AvaTaxClient {
     /**
      * Retrieve all DistanceThreshold objects
      * 
-     * Lists all DistanceThreshold objects that belong to this company.
+     * Lists all DistanceThreshold objects that belong to this account.
      * 
      * A company-distance-threshold model indicates the distance between a company
      * and the taxing borders of various countries.  Distance thresholds are necessary
@@ -5527,7 +6377,7 @@ public class AvaTaxClient {
     /**
      * Retrieve all DistanceThreshold objects
      * 
-     * Lists all DistanceThreshold objects that belong to this company.
+     * Lists all DistanceThreshold objects that belong to this account.
      * 
      * A company-distance-threshold model indicates the distance between a company
      * and the taxing borders of various countries.  Distance thresholds are necessary
@@ -6790,7 +7640,7 @@ public class AvaTaxClient {
      * @param month The month of the filing period.
      * @return FilingsCheckupModel
      */
-    public FilingsCheckupModel filingsCheckupReports(Integer companyId, Integer year, Integer month) throws Exception {
+    public FilingsCheckupModel filingsCheckupReports(Integer companyId, Short year, Byte month) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/checkup");
         path.applyField("companyId", companyId);
         path.applyField("year", year);
@@ -6806,7 +7656,7 @@ public class AvaTaxClient {
      * @param month The month of the filing period.
      * @return FilingsCheckupModel
      */
-    public Future<FilingsCheckupModel> filingsCheckupReportsAsync(Integer companyId, Integer year, Integer month) {
+    public Future<FilingsCheckupModel> filingsCheckupReportsAsync(Integer companyId, Short year, Byte month) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/checkup");
         path.applyField("companyId", companyId);
         path.applyField("year", year);
@@ -7465,7 +8315,7 @@ This gets the basic information from the filings and doesn't include anything ex
      * 
      * Call this API to obtain a free AvaTax sandbox account.
      * 
-     * This API is free to use.  No authentication credentials are required to call this API.
+     * This API is free to use.  No authentication credentials are required to call this API. You must read and accept Avalara's terms and conditions.
      * The account will grant a full trial version of AvaTax (e.g. AvaTaxPro) for a limited period of time.
      * After this introductory period, you may continue to use the free TaxRates API.
      * 
@@ -7488,7 +8338,7 @@ This gets the basic information from the filings and doesn't include anything ex
      * 
      * Call this API to obtain a free AvaTax sandbox account.
      * 
-     * This API is free to use.  No authentication credentials are required to call this API.
+     * This API is free to use.  No authentication credentials are required to call this API. You must read and accept Avalara's terms and conditions.
      * The account will grant a full trial version of AvaTax (e.g. AvaTaxPro) for a limited period of time.
      * After this introductory period, you may continue to use the free TaxRates API.
      * 
@@ -9327,6 +10177,64 @@ This gets the basic information from the filings and doesn't include anything ex
     }
 
     /**
+     * Creates nexus for a list of addresses.
+     * 
+     * This call is intended to simplify adding all applicable nexus to a company, for an address or addresses. Calling this 
+     * API declares nexus for this company, for the list of addresses provided,
+     * for the date range provided. You may also use this API to extend effective date on an already-declared nexus.
+     * 
+     * The concept of 'Nexus' indicates a place where your company has sufficient physical presence and is obligated
+     * to collect and remit transaction-based taxes.
+     * 
+     * When defining companies in AvaTax, you must declare nexus for your company in order to correctly calculate tax
+     * in all jurisdictions affected by your transactions.
+     * 
+     * Note that not all fields within a nexus can be updated; Avalara publishes a list of all defined nexus at the
+     * '/api/v2/definitions/nexus' endpoint.
+     * 
+     * You may only define nexus matching the official list of declared nexus.
+     * 
+     * 
+     * @param companyId The ID of the company that will own this nexus.
+     * @param model The nexus you wish to create.
+     * @return ArrayList<NexusByAddressModel>
+     */
+    public ArrayList<NexusByAddressModel> declareNexusByAddress(Integer companyId, ArrayList<DeclareNexusByAddressModel> model) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/nexus/byaddress");
+        path.applyField("companyId", companyId);
+        return ((RestCall<ArrayList<NexusByAddressModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<NexusByAddressModel>>(){})).call();
+    }
+
+    /**
+     * Creates nexus for a list of addresses.
+     * 
+     * This call is intended to simplify adding all applicable nexus to a company, for an address or addresses. Calling this 
+     * API declares nexus for this company, for the list of addresses provided,
+     * for the date range provided. You may also use this API to extend effective date on an already-declared nexus.
+     * 
+     * The concept of 'Nexus' indicates a place where your company has sufficient physical presence and is obligated
+     * to collect and remit transaction-based taxes.
+     * 
+     * When defining companies in AvaTax, you must declare nexus for your company in order to correctly calculate tax
+     * in all jurisdictions affected by your transactions.
+     * 
+     * Note that not all fields within a nexus can be updated; Avalara publishes a list of all defined nexus at the
+     * '/api/v2/definitions/nexus' endpoint.
+     * 
+     * You may only define nexus matching the official list of declared nexus.
+     * 
+     * 
+     * @param companyId The ID of the company that will own this nexus.
+     * @param model The nexus you wish to create.
+     * @return ArrayList<NexusByAddressModel>
+     */
+    public Future<ArrayList<NexusByAddressModel>> declareNexusByAddressAsync(Integer companyId, ArrayList<DeclareNexusByAddressModel> model) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/nexus/byaddress");
+        path.applyField("companyId", companyId);
+        return this.threadPool.submit((RestCall<ArrayList<NexusByAddressModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<NexusByAddressModel>>(){}));
+    }
+
+    /**
      * Delete a single nexus
      * 
      * Marks the existing nexus object at this URL as deleted.
@@ -10914,12 +11822,12 @@ This gets the basic information from the filings and doesn't include anything ex
      * 
      * @param companyId The unique ID number of the company to report on.
      * @param model Options that may be configured to customize the report.
-     * @return String
+     * @return ArrayList<ReportModel>
      */
-    public String initiateExportDocumentLineReport(Integer companyId, ExportDocumentLineModel model) throws Exception {
+    public ArrayList<ReportModel> initiateExportDocumentLineReport(Integer companyId, ExportDocumentLineModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/reports/exportdocumentline/initiate");
         path.applyField("companyId", companyId);
-        return ((RestCall<String>)restCallFactory.createRestCall("post", path, model, new TypeToken<String>(){})).call();
+        return ((RestCall<ArrayList<ReportModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<ReportModel>>(){})).call();
     }
 
     /**
@@ -10938,12 +11846,12 @@ This gets the basic information from the filings and doesn't include anything ex
      * 
      * @param companyId The unique ID number of the company to report on.
      * @param model Options that may be configured to customize the report.
-     * @return String
+     * @return ArrayList<ReportModel>
      */
-    public Future<String> initiateExportDocumentLineReportAsync(Integer companyId, ExportDocumentLineModel model) {
+    public Future<ArrayList<ReportModel>> initiateExportDocumentLineReportAsync(Integer companyId, ExportDocumentLineModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/reports/exportdocumentline/initiate");
         path.applyField("companyId", companyId);
-        return this.threadPool.submit((RestCall<String>)restCallFactory.createRestCall("post", path, model, new TypeToken<String>(){}));
+        return this.threadPool.submit((RestCall<ArrayList<ReportModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<ReportModel>>(){}));
     }
 
     /**
@@ -10992,11 +11900,14 @@ This gets the basic information from the filings and doesn't include anything ex
      * Create a new setting
      * 
      * Create one or more new setting objects attached to this company.
-     * A 'setting' is a piece of user-defined data that can be attached to a company, and it provides you the ability to store information
-     * not defined or managed by Avalara.
-     * You may create, update, and delete your own settings objects as required, and there is no mandatory data format for the 'name' and 
-     * 'value' data fields.
-     * To ensure correct operation of other programs or connectors, please create a new GUID for your application and use that value for
+     * 
+     * The company settings system is a metadata system that you can use to store extra information
+     * about a company.  Your integration or connector could use this data storage to keep track of
+     * preference information, reminders, or any other storage that would need to persist even if
+     * the customer uninstalls your application.
+     * 
+     * A setting can refer to any type of data you need to remember about this company object.
+     * When creating this object, you may define your own `set`, `name`, and `value` parameters.
      * 
      * @param companyId The ID of the company that owns this setting.
      * @param model The setting you wish to create.
@@ -11012,11 +11923,14 @@ This gets the basic information from the filings and doesn't include anything ex
      * Create a new setting
      * 
      * Create one or more new setting objects attached to this company.
-     * A 'setting' is a piece of user-defined data that can be attached to a company, and it provides you the ability to store information
-     * not defined or managed by Avalara.
-     * You may create, update, and delete your own settings objects as required, and there is no mandatory data format for the 'name' and 
-     * 'value' data fields.
-     * To ensure correct operation of other programs or connectors, please create a new GUID for your application and use that value for
+     * 
+     * The company settings system is a metadata system that you can use to store extra information
+     * about a company.  Your integration or connector could use this data storage to keep track of
+     * preference information, reminders, or any other storage that would need to persist even if
+     * the customer uninstalls your application.
+     * 
+     * A setting can refer to any type of data you need to remember about this company object.
+     * When creating this object, you may define your own `set`, `name`, and `value` parameters.
      * 
      * @param companyId The ID of the company that owns this setting.
      * @param model The setting you wish to create.
@@ -11031,6 +11945,16 @@ This gets the basic information from the filings and doesn't include anything ex
     /**
      * Delete a single setting
      * 
+     * Mark the setting object at this URL as deleted.
+     * 
+     * The company settings system is a metadata system that you can use to store extra information
+     * about a company.  Your integration or connector could use this data storage to keep track of
+     * preference information, reminders, or any other storage that would need to persist even if
+     * the customer uninstalls your application.
+     * 
+     * A setting can refer to any type of data you need to remember about this company object.
+     * When creating this object, you may define your own `set`, `name`, and `value` parameters.
+     * 
      * @param companyId The ID of the company that owns this setting.
      * @param id The ID of the setting you wish to delete.
      * @return ArrayList<ErrorDetail>
@@ -11044,6 +11968,16 @@ This gets the basic information from the filings and doesn't include anything ex
 
     /**
      * Delete a single setting
+     * 
+     * Mark the setting object at this URL as deleted.
+     * 
+     * The company settings system is a metadata system that you can use to store extra information
+     * about a company.  Your integration or connector could use this data storage to keep track of
+     * preference information, reminders, or any other storage that would need to persist even if
+     * the customer uninstalls your application.
+     * 
+     * A setting can refer to any type of data you need to remember about this company object.
+     * When creating this object, you may define your own `set`, `name`, and `value` parameters.
      * 
      * @param companyId The ID of the company that owns this setting.
      * @param id The ID of the setting you wish to delete.
@@ -11060,11 +11994,14 @@ This gets the basic information from the filings and doesn't include anything ex
      * Retrieve a single setting
      * 
      * Get a single setting object by its unique ID.
-     * A 'setting' is a piece of user-defined data that can be attached to a company, and it provides you the ability to store information
-     * not defined or managed by Avalara.
-     * You may create, update, and delete your own settings objects as required, and there is no mandatory data format for the 'name' and 
-     * 'value' data fields.
-     * To ensure correct operation of other programs or connectors, please create a new GUID for your application and use that value for
+     * 
+     * The company settings system is a metadata system that you can use to store extra information
+     * about a company.  Your integration or connector could use this data storage to keep track of
+     * preference information, reminders, or any other storage that would need to persist even if
+     * the customer uninstalls your application.
+     * 
+     * A setting can refer to any type of data you need to remember about this company object.
+     * When creating this object, you may define your own `set`, `name`, and `value` parameters.
      * 
      * @param companyId The ID of the company that owns this setting
      * @param id The primary key of this setting
@@ -11081,11 +12018,14 @@ This gets the basic information from the filings and doesn't include anything ex
      * Retrieve a single setting
      * 
      * Get a single setting object by its unique ID.
-     * A 'setting' is a piece of user-defined data that can be attached to a company, and it provides you the ability to store information
-     * not defined or managed by Avalara.
-     * You may create, update, and delete your own settings objects as required, and there is no mandatory data format for the 'name' and 
-     * 'value' data fields.
-     * To ensure correct operation of other programs or connectors, please create a new GUID for your application and use that value for
+     * 
+     * The company settings system is a metadata system that you can use to store extra information
+     * about a company.  Your integration or connector could use this data storage to keep track of
+     * preference information, reminders, or any other storage that would need to persist even if
+     * the customer uninstalls your application.
+     * 
+     * A setting can refer to any type of data you need to remember about this company object.
+     * When creating this object, you may define your own `set`, `name`, and `value` parameters.
      * 
      * @param companyId The ID of the company that owns this setting
      * @param id The primary key of this setting
@@ -11102,12 +12042,15 @@ This gets the basic information from the filings and doesn't include anything ex
      * Retrieve all settings for this company
      * 
      * List all setting objects attached to this company.
-     * A 'setting' is a piece of user-defined data that can be attached to a company, and it provides you the ability to store information
-     * not defined or managed by Avalara.
-     * You may create, update, and delete your own settings objects as required, and there is no mandatory data format for the 'name' and 
-     * 'value' data fields.
-     * To ensure correct operation of other programs or connectors, please create a new GUID for your application and use that value for
-     * the 'set' data field.
+     * 
+     * The company settings system is a metadata system that you can use to store extra information
+     * about a company.  Your integration or connector could use this data storage to keep track of
+     * preference information, reminders, or any other storage that would need to persist even if
+     * the customer uninstalls your application.
+     * 
+     * A setting can refer to any type of data you need to remember about this company object.
+     * When creating this object, you may define your own `set`, `name`, and `value` parameters.
+     * To define your own values, please choose a `set` name that begins with `X-` to indicate an extension.
      * 
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * 
@@ -11134,12 +12077,15 @@ This gets the basic information from the filings and doesn't include anything ex
      * Retrieve all settings for this company
      * 
      * List all setting objects attached to this company.
-     * A 'setting' is a piece of user-defined data that can be attached to a company, and it provides you the ability to store information
-     * not defined or managed by Avalara.
-     * You may create, update, and delete your own settings objects as required, and there is no mandatory data format for the 'name' and 
-     * 'value' data fields.
-     * To ensure correct operation of other programs or connectors, please create a new GUID for your application and use that value for
-     * the 'set' data field.
+     * 
+     * The company settings system is a metadata system that you can use to store extra information
+     * about a company.  Your integration or connector could use this data storage to keep track of
+     * preference information, reminders, or any other storage that would need to persist even if
+     * the customer uninstalls your application.
+     * 
+     * A setting can refer to any type of data you need to remember about this company object.
+     * When creating this object, you may define your own `set`, `name`, and `value` parameters.
+     * To define your own values, please choose a `set` name that begins with `X-` to indicate an extension.
      * 
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * 
@@ -11166,12 +12112,15 @@ This gets the basic information from the filings and doesn't include anything ex
      * Retrieve all settings
      * 
      * Get multiple setting objects across all companies.
-     * A 'setting' is a piece of user-defined data that can be attached to a company, and it provides you the ability to store information
-     * not defined or managed by Avalara.
-     * You may create, update, and delete your own settings objects as required, and there is no mandatory data format for the 'name' and 
-     * 'value' data fields.
-     * To ensure correct operation of other programs or connectors, please create a new GUID for your application and use that value for
-     * the 'set' data field.
+     * 
+     * The company settings system is a metadata system that you can use to store extra information
+     * about a company.  Your integration or connector could use this data storage to keep track of
+     * preference information, reminders, or any other storage that would need to persist even if
+     * the customer uninstalls your application.
+     * 
+     * A setting can refer to any type of data you need to remember about this company object.
+     * When creating this object, you may define your own `set`, `name`, and `value` parameters.
+     * To define your own values, please choose a `set` name that begins with `X-` to indicate an extension.
      * 
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * 
@@ -11196,12 +12145,15 @@ This gets the basic information from the filings and doesn't include anything ex
      * Retrieve all settings
      * 
      * Get multiple setting objects across all companies.
-     * A 'setting' is a piece of user-defined data that can be attached to a company, and it provides you the ability to store information
-     * not defined or managed by Avalara.
-     * You may create, update, and delete your own settings objects as required, and there is no mandatory data format for the 'name' and 
-     * 'value' data fields.
-     * To ensure correct operation of other programs or connectors, please create a new GUID for your application and use that value for
-     * the 'set' data field.
+     * 
+     * The company settings system is a metadata system that you can use to store extra information
+     * about a company.  Your integration or connector could use this data storage to keep track of
+     * preference information, reminders, or any other storage that would need to persist even if
+     * the customer uninstalls your application.
+     * 
+     * A setting can refer to any type of data you need to remember about this company object.
+     * When creating this object, you may define your own `set`, `name`, and `value` parameters.
+     * To define your own values, please choose a `set` name that begins with `X-` to indicate an extension.
      * 
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * 
@@ -11226,13 +12178,18 @@ This gets the basic information from the filings and doesn't include anything ex
      * Update a single setting
      * 
      * Replace the existing setting object at this URL with an updated object.
-     * A 'setting' is a piece of user-defined data that can be attached to a company, and it provides you the ability to store information
-     * not defined or managed by Avalara.
-     * You may create, update, and delete your own settings objects as required, and there is no mandatory data format for the 'name' and 
-     * 'value' data fields.
-     * To ensure correct operation of other programs or connectors, please create a new GUID for your application and use that value for
-     * the 'set' data field.
-     * All data from the existing object will be replaced with data in the object you PUT.  
+     * 
+     * The company settings system is a metadata system that you can use to store extra information
+     * about a company.  Your integration or connector could use this data storage to keep track of
+     * preference information, reminders, or any other storage that would need to persist even if
+     * the customer uninstalls your application.
+     * 
+     * A setting can refer to any type of data you need to remember about this company object.
+     * When creating this object, you may define your own `set`, `name`, and `value` parameters.
+     * To define your own values, please choose a `set` name that begins with `X-` to indicate an extension.
+     *             
+     * All data from the existing object will be replaced with data in the object you `PUT`.  
+     * 
      * 
      * @param companyId The ID of the company that this setting belongs to.
      * @param id The ID of the setting you wish to update
@@ -11250,13 +12207,18 @@ This gets the basic information from the filings and doesn't include anything ex
      * Update a single setting
      * 
      * Replace the existing setting object at this URL with an updated object.
-     * A 'setting' is a piece of user-defined data that can be attached to a company, and it provides you the ability to store information
-     * not defined or managed by Avalara.
-     * You may create, update, and delete your own settings objects as required, and there is no mandatory data format for the 'name' and 
-     * 'value' data fields.
-     * To ensure correct operation of other programs or connectors, please create a new GUID for your application and use that value for
-     * the 'set' data field.
-     * All data from the existing object will be replaced with data in the object you PUT.  
+     * 
+     * The company settings system is a metadata system that you can use to store extra information
+     * about a company.  Your integration or connector could use this data storage to keep track of
+     * preference information, reminders, or any other storage that would need to persist even if
+     * the customer uninstalls your application.
+     * 
+     * A setting can refer to any type of data you need to remember about this company object.
+     * When creating this object, you may define your own `set`, `name`, and `value` parameters.
+     * To define your own values, please choose a `set` name that begins with `X-` to indicate an extension.
+     *             
+     * All data from the existing object will be replaced with data in the object you `PUT`.  
+     * 
      * 
      * @param companyId The ID of the company that this setting belongs to.
      * @param id The ID of the setting you wish to update
@@ -11794,20 +12756,24 @@ This gets the basic information from the filings and doesn't include anything ex
      * call the `CreateTransaction` API call.  When using this file, your software will be unable to
      * handle complex tax rules such as:
      * 
-     * * Zip+9 - This tax file does not contain 
+     * * Zip+4 - This tax file contains five digit zip codes only.
      * * Different product types - This tax file contains tangible personal property tax rates only.
      * * Mixed sourcing - This tax file cannot be used to resolve origin-based taxes.
      * * Threshold-based taxes - This tax file does not contain information about thresholds.
      * 
      * If you use this file to provide default tax rates, please ensure that your software calls `CreateTransaction`
      * to reconcile the actual transaction and determine the difference between the estimated general tax
+     * rate and the final transaction tax.
+     * 
      * 
      * @param date The date for which point-of-sale data would be calculated (today by default). Example input: 2016-12-31
+     * @param region If the region is provided, this API is going to generate the tax rate per zipcode for only the region specified.
      * @return String
      */
-    public String downloadTaxRatesByZipCode(Date date) throws Exception {
+    public String downloadTaxRatesByZipCode(Date date, String region) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/taxratesbyzipcode/download/{date}");
         path.applyField("date", date);
+        path.addQuery("region", region);
         return ((RestCall<String>)restCallFactory.createRestCall("get", path, null, new TypeToken<String>(){})).call();
     }
 
@@ -11821,20 +12787,24 @@ This gets the basic information from the filings and doesn't include anything ex
      * call the `CreateTransaction` API call.  When using this file, your software will be unable to
      * handle complex tax rules such as:
      * 
-     * * Zip+9 - This tax file does not contain 
+     * * Zip+4 - This tax file contains five digit zip codes only.
      * * Different product types - This tax file contains tangible personal property tax rates only.
      * * Mixed sourcing - This tax file cannot be used to resolve origin-based taxes.
      * * Threshold-based taxes - This tax file does not contain information about thresholds.
      * 
      * If you use this file to provide default tax rates, please ensure that your software calls `CreateTransaction`
      * to reconcile the actual transaction and determine the difference between the estimated general tax
+     * rate and the final transaction tax.
+     * 
      * 
      * @param date The date for which point-of-sale data would be calculated (today by default). Example input: 2016-12-31
+     * @param region If the region is provided, this API is going to generate the tax rate per zipcode for only the region specified.
      * @return String
      */
-    public Future<String> downloadTaxRatesByZipCodeAsync(Date date) {
+    public Future<String> downloadTaxRatesByZipCodeAsync(Date date, String region) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/taxratesbyzipcode/download/{date}");
         path.applyField("date", date);
+        path.addQuery("region", region);
         return this.threadPool.submit((RestCall<String>)restCallFactory.createRestCall("get", path, null, new TypeToken<String>(){}));
     }
 
@@ -12182,13 +13152,15 @@ This gets the basic information from the filings and doesn't include anything ex
      * 
      * @param companyCode The company code of the company that recorded this transaction
      * @param transactionCode The transaction code to adjust
+     * @param documentType (Optional): The document type of the transaction to adjust. (See DocumentType::* for a list of allowable values)
      * @param model The adjustment you wish to make
      * @return TransactionModel
      */
-    public TransactionModel adjustTransaction(String companyCode, String transactionCode, AdjustTransactionModel model) throws Exception {
+    public TransactionModel adjustTransaction(String companyCode, String transactionCode, DocumentType documentType, AdjustTransactionModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyCode}/transactions/{transactionCode}/adjust");
         path.applyField("companyCode", companyCode);
         path.applyField("transactionCode", transactionCode);
+        path.addQuery("documentType", documentType);
         return ((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<TransactionModel>(){})).call();
     }
 
@@ -12208,13 +13180,15 @@ This gets the basic information from the filings and doesn't include anything ex
      * 
      * @param companyCode The company code of the company that recorded this transaction
      * @param transactionCode The transaction code to adjust
+     * @param documentType (Optional): The document type of the transaction to adjust. (See DocumentType::* for a list of allowable values)
      * @param model The adjustment you wish to make
      * @return TransactionModel
      */
-    public Future<TransactionModel> adjustTransactionAsync(String companyCode, String transactionCode, AdjustTransactionModel model) {
+    public Future<TransactionModel> adjustTransactionAsync(String companyCode, String transactionCode, DocumentType documentType, AdjustTransactionModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyCode}/transactions/{transactionCode}/adjust");
         path.applyField("companyCode", companyCode);
         path.applyField("transactionCode", transactionCode);
+        path.addQuery("documentType", documentType);
         return this.threadPool.submit((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<TransactionModel>(){}));
     }
 
@@ -12723,9 +13697,13 @@ This gets the basic information from the filings and doesn't include anything ex
     /**
      * Retrieve a single transaction by code
      * 
-     * Get the current `SalesInvoice` transaction identified by this URL.
+     * Get the current transaction identified by this company code, transaction code, and document type.
      * 
-     * To fetch other kinds of transactions, use `GetTransactionByCodeAndType`.
+     * A transaction is uniquely identified by `companyCode`, `code` (often called Transaction Code), and `documentType`.  
+     * 
+     * For compatibility purposes, when this API finds multiple transactions with the same transaction code, and if you have not specified
+     * the `type` parameter to this API, it will default to selecting the `SalesInvoices` transaction. To change this behavior, use the 
+     * optional `documentType` parameter to specify the specific document type you wish to find.
      * 
      * If this transaction was adjusted, the return value of this API will be the current transaction with this code.
      * 
@@ -12739,13 +13717,15 @@ This gets the basic information from the filings and doesn't include anything ex
      * 
      * @param companyCode The company code of the company that recorded this transaction
      * @param transactionCode The transaction code to retrieve
+     * @param documentType (Optional): The document type of the transaction to retrieve (See DocumentType::* for a list of allowable values)
      * @param include Specifies objects to include in this fetch call
      * @return TransactionModel
      */
-    public TransactionModel getTransactionByCode(String companyCode, String transactionCode, String include) throws Exception {
+    public TransactionModel getTransactionByCode(String companyCode, String transactionCode, DocumentType documentType, String include) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyCode}/transactions/{transactionCode}");
         path.applyField("companyCode", companyCode);
         path.applyField("transactionCode", transactionCode);
+        path.addQuery("documentType", documentType);
         path.addQuery("$include", include);
         return ((RestCall<TransactionModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<TransactionModel>(){})).call();
     }
@@ -12753,9 +13733,13 @@ This gets the basic information from the filings and doesn't include anything ex
     /**
      * Retrieve a single transaction by code
      * 
-     * Get the current `SalesInvoice` transaction identified by this URL.
+     * Get the current transaction identified by this company code, transaction code, and document type.
      * 
-     * To fetch other kinds of transactions, use `GetTransactionByCodeAndType`.
+     * A transaction is uniquely identified by `companyCode`, `code` (often called Transaction Code), and `documentType`.  
+     * 
+     * For compatibility purposes, when this API finds multiple transactions with the same transaction code, and if you have not specified
+     * the `type` parameter to this API, it will default to selecting the `SalesInvoices` transaction. To change this behavior, use the 
+     * optional `documentType` parameter to specify the specific document type you wish to find.
      * 
      * If this transaction was adjusted, the return value of this API will be the current transaction with this code.
      * 
@@ -12769,31 +13753,21 @@ This gets the basic information from the filings and doesn't include anything ex
      * 
      * @param companyCode The company code of the company that recorded this transaction
      * @param transactionCode The transaction code to retrieve
+     * @param documentType (Optional): The document type of the transaction to retrieve (See DocumentType::* for a list of allowable values)
      * @param include Specifies objects to include in this fetch call
      * @return TransactionModel
      */
-    public Future<TransactionModel> getTransactionByCodeAsync(String companyCode, String transactionCode, String include) {
+    public Future<TransactionModel> getTransactionByCodeAsync(String companyCode, String transactionCode, DocumentType documentType, String include) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyCode}/transactions/{transactionCode}");
         path.applyField("companyCode", companyCode);
         path.applyField("transactionCode", transactionCode);
+        path.addQuery("documentType", documentType);
         path.addQuery("$include", include);
         return this.threadPool.submit((RestCall<TransactionModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<TransactionModel>(){}));
     }
 
     /**
      * Retrieve a single transaction by code
-     * 
-     * Get the current transaction identified by this URL.
-     * 
-     * If this transaction was adjusted, the return value of this API will be the current transaction with this code.
-     * 
-     * You may specify one or more of the following values in the `$include` parameter to fetch additional nested data, using commas to separate multiple values:
-     *             
-     * * Lines
-     * * Details (implies lines)
-     * * Summary (implies details)
-     * * Addresses
-     * * SummaryOnly (omit lines and details - reduces API response size)
      * 
      * @param companyCode The company code of the company that recorded this transaction
      * @param transactionCode The transaction code to retrieve
@@ -12812,18 +13786,6 @@ This gets the basic information from the filings and doesn't include anything ex
 
     /**
      * Retrieve a single transaction by code
-     * 
-     * Get the current transaction identified by this URL.
-     * 
-     * If this transaction was adjusted, the return value of this API will be the current transaction with this code.
-     * 
-     * You may specify one or more of the following values in the `$include` parameter to fetch additional nested data, using commas to separate multiple values:
-     *             
-     * * Lines
-     * * Details (implies lines)
-     * * Summary (implies details)
-     * * Addresses
-     * * SummaryOnly (omit lines and details - reduces API response size)
      * 
      * @param companyCode The company code of the company that recorded this transaction
      * @param transactionCode The transaction code to retrieve
@@ -13080,15 +14042,17 @@ This gets the basic information from the filings and doesn't include anything ex
      * @param transactionCode The transaction code of the original sale
      * @param include Specifies objects to include in the response after transaction is created
      * @param documentType (Optional): The document type of the transaction to refund. If not provided, the default is SalesInvoice. (See DocumentType::* for a list of allowable values)
+     * @param useTaxDateOverride (Optional): If set to true, processes refund using taxDateOverride rather than taxAmountOverride (Note: taxAmountOverride is not allowed for SST states).
      * @param model Information about the refund to create
      * @return TransactionModel
      */
-    public TransactionModel refundTransaction(String companyCode, String transactionCode, String include, DocumentType documentType, RefundTransactionModel model) throws Exception {
+    public TransactionModel refundTransaction(String companyCode, String transactionCode, String include, DocumentType documentType, Boolean useTaxDateOverride, RefundTransactionModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyCode}/transactions/{transactionCode}/refund");
         path.applyField("companyCode", companyCode);
         path.applyField("transactionCode", transactionCode);
         path.addQuery("$include", include);
         path.addQuery("documentType", documentType);
+        path.addQuery("useTaxDateOverride", useTaxDateOverride);
         return ((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<TransactionModel>(){})).call();
     }
 
@@ -13130,15 +14094,17 @@ This gets the basic information from the filings and doesn't include anything ex
      * @param transactionCode The transaction code of the original sale
      * @param include Specifies objects to include in the response after transaction is created
      * @param documentType (Optional): The document type of the transaction to refund. If not provided, the default is SalesInvoice. (See DocumentType::* for a list of allowable values)
+     * @param useTaxDateOverride (Optional): If set to true, processes refund using taxDateOverride rather than taxAmountOverride (Note: taxAmountOverride is not allowed for SST states).
      * @param model Information about the refund to create
      * @return TransactionModel
      */
-    public Future<TransactionModel> refundTransactionAsync(String companyCode, String transactionCode, String include, DocumentType documentType, RefundTransactionModel model) {
+    public Future<TransactionModel> refundTransactionAsync(String companyCode, String transactionCode, String include, DocumentType documentType, Boolean useTaxDateOverride, RefundTransactionModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyCode}/transactions/{transactionCode}/refund");
         path.applyField("companyCode", companyCode);
         path.applyField("transactionCode", transactionCode);
         path.addQuery("$include", include);
         path.addQuery("documentType", documentType);
+        path.addQuery("useTaxDateOverride", useTaxDateOverride);
         return this.threadPool.submit((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<TransactionModel>(){}));
     }
 
@@ -13194,6 +14160,46 @@ This gets the basic information from the filings and doesn't include anything ex
         path.applyField("transactionCode", transactionCode);
         path.addQuery("documentType", documentType);
         return this.threadPool.submit((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<TransactionModel>(){}));
+    }
+
+    /**
+     * Uncommit a transaction for reporting
+     * 
+     * Adjusts a transaction by changing it to an uncommitted status.
+     * 
+     * Transactions that have been previously reported to a tax authority by Avalara Managed Returns are considered `locked` and are 
+     * 
+     * @param companyCode The company code of the company that recorded this transaction
+     * @param transactionCode The transaction code to commit
+     * @param documentType (Optional): The document type of the transaction to commit. If not provided, the default is SalesInvoice. (See DocumentType::* for a list of allowable values)
+     * @return TransactionModel
+     */
+    public TransactionModel uncommitTransaction(String companyCode, String transactionCode, DocumentType documentType) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyCode}/transactions/{transactionCode}/uncommit");
+        path.applyField("companyCode", companyCode);
+        path.applyField("transactionCode", transactionCode);
+        path.addQuery("documentType", documentType);
+        return ((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, null, new TypeToken<TransactionModel>(){})).call();
+    }
+
+    /**
+     * Uncommit a transaction for reporting
+     * 
+     * Adjusts a transaction by changing it to an uncommitted status.
+     * 
+     * Transactions that have been previously reported to a tax authority by Avalara Managed Returns are considered `locked` and are 
+     * 
+     * @param companyCode The company code of the company that recorded this transaction
+     * @param transactionCode The transaction code to commit
+     * @param documentType (Optional): The document type of the transaction to commit. If not provided, the default is SalesInvoice. (See DocumentType::* for a list of allowable values)
+     * @return TransactionModel
+     */
+    public Future<TransactionModel> uncommitTransactionAsync(String companyCode, String transactionCode, DocumentType documentType) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyCode}/transactions/{transactionCode}/uncommit");
+        path.applyField("companyCode", companyCode);
+        path.applyField("transactionCode", transactionCode);
+        path.addQuery("documentType", documentType);
+        return this.threadPool.submit((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, null, new TypeToken<TransactionModel>(){}));
     }
 
     /**
@@ -13671,10 +14677,45 @@ This gets the basic information from the filings and doesn't include anything ex
     }
 
     /**
+     * Get information about a username.
+     * 
+     * You may call this API prior to creating a user, to check if a particular username is available for use.  Using this API, you can 
+     * present a friendly experience prior to attempting to create a new user object.
+     * 
+     * 
+     * @param username The username to search.
+     * @return UsernameModel
+     */
+    public UsernameModel getUsername(String username) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/usernames");
+        path.addQuery("username", username);
+        return ((RestCall<UsernameModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<UsernameModel>(){})).call();
+    }
+
+    /**
+     * Get information about a username.
+     * 
+     * You may call this API prior to creating a user, to check if a particular username is available for use.  Using this API, you can 
+     * present a friendly experience prior to attempting to create a new user object.
+     * 
+     * 
+     * @param username The username to search.
+     * @return UsernameModel
+     */
+    public Future<UsernameModel> getUsernameAsync(String username) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/usernames");
+        path.addQuery("username", username);
+        return this.threadPool.submit((RestCall<UsernameModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<UsernameModel>(){}));
+    }
+
+    /**
      * Retrieve users for this account
      * 
      * List all user objects attached to this account.
      * A user represents one person with access privileges to make API calls and work with a specific account.
+     * 
+     * When an API is called using a legacy AvaTax License Key, the API log entry is recorded as being performed by a special user attached to that license key.
+     * By default, this API will not return a listing of license key users.  Users with registrar-level security may call this API to list license key users.
      * 
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * 
@@ -13703,6 +14744,9 @@ This gets the basic information from the filings and doesn't include anything ex
      * List all user objects attached to this account.
      * A user represents one person with access privileges to make API calls and work with a specific account.
      * 
+     * When an API is called using a legacy AvaTax License Key, the API log entry is recorded as being performed by a special user attached to that license key.
+     * By default, this API will not return a listing of license key users.  Users with registrar-level security may call this API to list license key users.
+     * 
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * 
      * @param accountId The accountID of the user you wish to list.
@@ -13728,7 +14772,12 @@ This gets the basic information from the filings and doesn't include anything ex
      * Retrieve all users
      * 
      * Get multiple user objects across all accounts.
-     * A user represents one person with access privileges to make API calls and work with a specific account.
+     * 
+     * A user represents one person or set of credentials with access privileges to make API calls and work with a specific account.  A user can be authenticated
+     * via either username / password authentication, an OpenID / OAuth Bearer Token, or a legacy AvaTax License Key.
+     * 
+     * When an API is called using a legacy AvaTax License Key, the API log entry is recorded as being performed by a special user attached to that license key.
+     * By default, this API will not return a listing of license key users.  Users with registrar-level security may call this API to list license key users.
      * 
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * 
@@ -13753,7 +14802,12 @@ This gets the basic information from the filings and doesn't include anything ex
      * Retrieve all users
      * 
      * Get multiple user objects across all accounts.
-     * A user represents one person with access privileges to make API calls and work with a specific account.
+     * 
+     * A user represents one person or set of credentials with access privileges to make API calls and work with a specific account.  A user can be authenticated
+     * via either username / password authentication, an OpenID / OAuth Bearer Token, or a legacy AvaTax License Key.
+     * 
+     * When an API is called using a legacy AvaTax License Key, the API log entry is recorded as being performed by a special user attached to that license key.
+     * By default, this API will not return a listing of license key users.  Users with registrar-level security may call this API to list license key users.
      * 
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * 

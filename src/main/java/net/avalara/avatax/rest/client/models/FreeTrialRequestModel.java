@@ -12,13 +12,13 @@ import java.util.HashMap;
 /*
  * AvaTax Software Development Kit for Java JRE based environments
  *
- * (c) 2004-2017 Avalara, Inc.
+ * (c) 2004-2018 Avalara, Inc.
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  *
  * @author     Dustin Welden <dustin.welden@avalara.com>
- * @copyright  2004-2017 Avalara, Inc.
+ * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
  */
@@ -197,6 +197,48 @@ public class FreeTrialRequestModel {
      */
     public void setWebsite(String value) {
         this.website = value;
+    }
+
+
+    private Boolean haveReadAvalaraTermsAndConditions;
+
+    /**
+     * Getter for haveReadAvalaraTermsAndConditions
+     *
+     * Read Avalara's terms and conditions is necessary for a free trial account
+     */
+    public Boolean getHaveReadAvalaraTermsAndConditions() {
+        return this.haveReadAvalaraTermsAndConditions;
+    }
+
+    /**
+     * Setter for haveReadAvalaraTermsAndConditions
+     *
+     * Read Avalara's terms and conditions is necessary for a free trial account
+     */
+    public void setHaveReadAvalaraTermsAndConditions(Boolean value) {
+        this.haveReadAvalaraTermsAndConditions = value;
+    }
+
+
+    private Boolean acceptAvalaraTermsAndConditions;
+
+    /**
+     * Getter for acceptAvalaraTermsAndConditions
+     *
+     * Accept Avalara's terms and conditions is necessary for a free trial
+     */
+    public Boolean getAcceptAvalaraTermsAndConditions() {
+        return this.acceptAvalaraTermsAndConditions;
+    }
+
+    /**
+     * Setter for acceptAvalaraTermsAndConditions
+     *
+     * Accept Avalara's terms and conditions is necessary for a free trial
+     */
+    public void setAcceptAvalaraTermsAndConditions(Boolean value) {
+        this.acceptAvalaraTermsAndConditions = value;
     }
 
 
