@@ -24,11 +24,6 @@ public enum JurisdictionType {
     Country,
 
     /** 
-     * Deprecated
-     */
-    Composite,
-
-    /** 
      * State
      */
     State,

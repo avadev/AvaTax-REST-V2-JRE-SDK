@@ -313,14 +313,14 @@ public class NoticeModel {
     }
 
 
-    private FilingTypeId filingTypeId;
+    private TaxNoticeFilingTypeId filingTypeId;
 
     /**
      * Getter for filingTypeId
      *
      * The filing type of the notice
      */
-    public FilingTypeId getFilingTypeId() {
+    public TaxNoticeFilingTypeId getFilingTypeId() {
         return this.filingTypeId;
     }
 
@@ -329,7 +329,7 @@ public class NoticeModel {
      *
      * The filing type of the notice
      */
-    public void setFilingTypeId(FilingTypeId value) {
+    public void setFilingTypeId(TaxNoticeFilingTypeId value) {
         this.filingTypeId = value;
     }
 

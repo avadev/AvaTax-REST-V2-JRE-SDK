@@ -95,7 +95,12 @@ public class RestCall<T> implements Callable<T> {
             }
 
             if (entity != null) {
-                obj = (T)JsonSerializer.DeserializeObject(EntityUtils.toString(entity), typeToken.getType());
+                if(ContentType.getOrDefault(entity).getMimeType().equals("application/json")) {
+                    obj = (T)JsonSerializer.DeserializeObject(EntityUtils.toString(entity), typeToken.getType());
+                }
+                else {
+                    obj = (T)EntityUtils.toString(entity);
+                }
             }
         } finally {
             response.close();
@@ -105,7 +110,8 @@ public class RestCall<T> implements Callable<T> {
     }
 
     private void buildRequest(HttpRequestBase baseRequest) {
-        String clientId = String.format("%s; %s; %s; %s; %s", appName, appVersion, "JavaRestClient", "18.2.0.167", machineName);
+        String clientId = String.format("%s; %s; %s; %s; %s", appName, appVersion, "JavaRestClient", "18.3.0.171", machineName);
+
         baseRequest.setHeader(AvaTaxConstants.XClientHeader, clientId);
     }
 }

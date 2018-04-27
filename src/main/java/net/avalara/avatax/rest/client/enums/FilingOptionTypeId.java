@@ -15,27 +15,23 @@ package net.avalara.avatax.rest.client.enums;
  */
 
 /**
- * 
+ * A list of possible AvaFile filing option types.
  */
-public enum CertCaptureProvisionStatus {
+public enum FilingOptionTypeId {
     /** 
-     * Account and company are provisioned
+     * Denotes the tax return is being filed on paper.
      */
-    Provisioned,
-
-
-    /** 
-     * Provision job is being queued
-     *  This could also be an indication that some companies under an account has been provisioned, while others
-     *  under the same account has not.
-     */
-    InProgress,
+    Paper,
 
     /** 
-     * 
+     * Denotes the form can be efiled optionally.
      */
-    NotProvisioned,
+    OptionalEfile,
 
+    /** 
+     * Denotes the form is being filed via efile.
+     */
+    MandatoryEfile,
 
 }
     

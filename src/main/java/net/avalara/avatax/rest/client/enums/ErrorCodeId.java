@@ -663,7 +663,18 @@ public enum ErrorCodeId {
      */
     UserNoAccess,
 
+    /**
+     * 
+     */
+    InvalidEntry,
+
     /** 
+     * 
+     */
+    TransactionAlreadyCancelled,
+
+    /** 
+
      * Batch errors
      */
     BatchSalesAuditMustBeZippedError,
@@ -981,12 +992,12 @@ public enum ErrorCodeId {
     /** 
      * 
      */
-    CertCaptureFieldValidationError,
+    CertificatesFieldInvalid,
 
     /** 
      * 
      */
-    CertCaptureError,
+    CertificatesError,
 
     /** 
      * 
@@ -996,7 +1007,7 @@ public enum ErrorCodeId {
     /** 
      * 
      */
-    CertCaptureNotConfiguredError,
+    CertificatesNotSetup,
 
     /** 
      * 
@@ -1031,7 +1042,7 @@ public enum ErrorCodeId {
     /** 
      * 
      */
-    InvalidCertCaptureOperation,
+    InvalidExemptionOperation,
 
     /** 
      * 
@@ -1142,6 +1153,42 @@ public enum ErrorCodeId {
      * Worksheet Exception
      */
     WorksheetException,
+
+    /** 
+     * 
+     */
+    InvalidAccountOverride,
+
+    /** 
+     * 
+     */
+    AccountOverrideNotAuthorized,
+
+    /** 
+     * 
+     */
+    ParserFieldNotQueryableError,
+
+    /** 
+     * 
+     */
+    UsernameRequired,
+
+    /** 
+     * 
+     */
+    InvalidAuditMessage,
+
+    /** 
+     * Nexus validation error codes
+     */
+    CannotDeleteParentBeforeChildNexus,
+
+    /** 
+     * 
+     */
+    NexusChildDateMismatch,
+
 
 }
     

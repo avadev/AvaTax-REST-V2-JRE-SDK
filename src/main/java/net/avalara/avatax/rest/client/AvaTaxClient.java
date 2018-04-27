@@ -455,11 +455,169 @@ public class AvaTaxClient {
     }
 
     /**
+     * Create a new AvaFileForm
+     * 
+     * Create one or more AvaFileForms
+     * 
+     * @param model The AvaFileForm you wish to create.
+     * @return ArrayList<AvaFileFormModel>
+     */
+    public ArrayList<AvaFileFormModel> createAvaFileForms(ArrayList<AvaFileFormModel> model) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/avafileforms");
+        return ((RestCall<ArrayList<AvaFileFormModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<AvaFileFormModel>>(){})).call();
+    }
+
+    /**
+     * Create a new AvaFileForm
+     * 
+     * Create one or more AvaFileForms
+     * 
+     * @param model The AvaFileForm you wish to create.
+     * @return ArrayList<AvaFileFormModel>
+     */
+    public Future<ArrayList<AvaFileFormModel>> createAvaFileFormsAsync(ArrayList<AvaFileFormModel> model) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/avafileforms");
+        return this.threadPool.submit((RestCall<ArrayList<AvaFileFormModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<AvaFileFormModel>>(){}));
+    }
+
+    /**
+     * Delete a single AvaFileForm
+     * 
+     * @param id The ID of the AvaFileForm you wish to delete.
+     * @return ArrayList<ErrorDetail>
+     */
+    public ArrayList<ErrorDetail> deleteAvaFileForm(Integer id) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/avafileforms/{id}");
+        path.applyField("id", id);
+        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){})).call();
+    }
+
+    /**
+     * Delete a single AvaFileForm
+     * 
+     * @param id The ID of the AvaFileForm you wish to delete.
+     * @return ArrayList<ErrorDetail>
+     */
+    public Future<ArrayList<ErrorDetail>> deleteAvaFileFormAsync(Integer id) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/avafileforms/{id}");
+        path.applyField("id", id);
+        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){}));
+    }
+
+    /**
+     * Retrieve a single AvaFileForm
+     * 
+     * @param id The primary key of this AvaFileForm
+     * @return AvaFileFormModel
+     */
+    public AvaFileFormModel getAvaFileForm(String id) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/avafileforms/{id}");
+        path.applyField("id", id);
+        return ((RestCall<AvaFileFormModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<AvaFileFormModel>(){})).call();
+    }
+
+    /**
+     * Retrieve a single AvaFileForm
+     * 
+     * @param id The primary key of this AvaFileForm
+     * @return AvaFileFormModel
+     */
+    public Future<AvaFileFormModel> getAvaFileFormAsync(String id) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/avafileforms/{id}");
+        path.applyField("id", id);
+        return this.threadPool.submit((RestCall<AvaFileFormModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<AvaFileFormModel>(){}));
+    }
+
+    /**
+     * Retrieve all AvaFileForms
+     * 
+     * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * 
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param include A comma separated list of additional data to retrieve.
+     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
+     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @return FetchResult<AvaFileFormModel>
+     */
+    public FetchResult<AvaFileFormModel> queryAvaFileForms(String filter, String include, Integer top, Integer skip, String orderBy) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/avafileforms");
+        path.addQuery("$filter", filter);
+        path.addQuery("$include", include);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
+        return ((RestCall<FetchResult<AvaFileFormModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<AvaFileFormModel>>(){})).call();
+    }
+
+    /**
+     * Retrieve all AvaFileForms
+     * 
+     * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * 
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param include A comma separated list of additional data to retrieve.
+     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
+     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @return FetchResult<AvaFileFormModel>
+     */
+    public Future<FetchResult<AvaFileFormModel>> queryAvaFileFormsAsync(String filter, String include, Integer top, Integer skip, String orderBy) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/avafileforms");
+        path.addQuery("$filter", filter);
+        path.addQuery("$include", include);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
+        return this.threadPool.submit((RestCall<FetchResult<AvaFileFormModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<AvaFileFormModel>>(){}));
+    }
+
+    /**
+     * Update a AvaFileForm
+     * 
+     * All data from the existing object will be replaced with data in the object you PUT.  
+     * 
+     * @param id The ID of the AvaFileForm you wish to update
+     * @param model The AvaFileForm model you wish to update.
+     * @return AvaFileFormModel
+     */
+    public AvaFileFormModel updateAvaFileForm(Integer id, AvaFileFormModel model) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/avafileforms/{id}");
+        path.applyField("id", id);
+        return ((RestCall<AvaFileFormModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<AvaFileFormModel>(){})).call();
+    }
+
+    /**
+     * Update a AvaFileForm
+     * 
+     * All data from the existing object will be replaced with data in the object you PUT.  
+     * 
+     * @param id The ID of the AvaFileForm you wish to update
+     * @param model The AvaFileForm model you wish to update.
+     * @return AvaFileFormModel
+     */
+    public Future<AvaFileFormModel> updateAvaFileFormAsync(Integer id, AvaFileFormModel model) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/avafileforms/{id}");
+        path.applyField("id", id);
+        return this.threadPool.submit((RestCall<AvaFileFormModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<AvaFileFormModel>(){}));
+    }
+
+    /**
      * Create a new batch
      * 
      * Create one or more new batch objects attached to this company.
-     * When you create a batch, it is added to the AvaTaxBatch.Batch table and will be processed in the order it was received.
-     * You may fetch a batch to check on its status and retrieve the results of the batch operation.
+     * 
+     * Each batch object may have one or more file objects (currently only one file is supported).
+     * 
+     * When a batch is created, it is added to the AvaTax Batch Queue and will be 
+     * processed as quickly as possible in the order it was received. To check the 
+     * status of a batch, fetch the batch and retrieve the results of the batch 
+     * operation.
+     * 
+     * Because the batch system processes with a degree of concurrency, and
+     * because of batch sizes in the queue vary, AvaTax API is unable to accurately 
+     * predict when a batch will complete. If high performance processing is 
+     * required, please use the 
      * 
      * @param companyId The ID of the company that owns this batch.
      * @param model The batch you wish to create.
@@ -475,8 +633,18 @@ public class AvaTaxClient {
      * Create a new batch
      * 
      * Create one or more new batch objects attached to this company.
-     * When you create a batch, it is added to the AvaTaxBatch.Batch table and will be processed in the order it was received.
-     * You may fetch a batch to check on its status and retrieve the results of the batch operation.
+     * 
+     * Each batch object may have one or more file objects (currently only one file is supported).
+     * 
+     * When a batch is created, it is added to the AvaTax Batch Queue and will be 
+     * processed as quickly as possible in the order it was received. To check the 
+     * status of a batch, fetch the batch and retrieve the results of the batch 
+     * operation.
+     * 
+     * Because the batch system processes with a degree of concurrency, and
+     * because of batch sizes in the queue vary, AvaTax API is unable to accurately 
+     * predict when a batch will complete. If high performance processing is 
+     * required, please use the 
      * 
      * @param companyId The ID of the company that owns this batch.
      * @param model The batch you wish to create.
@@ -492,7 +660,7 @@ public class AvaTaxClient {
      * Delete a single batch
      * 
      * @param companyId The ID of the company that owns this batch.
-     * @param id The ID of the batch you wish to delete.
+     * @param id The ID of the batch to delete.
      * @return ArrayList<ErrorDetail>
      */
     public ArrayList<ErrorDetail> deleteBatch(Integer companyId, Integer id) throws Exception {
@@ -506,7 +674,7 @@ public class AvaTaxClient {
      * Delete a single batch
      * 
      * @param companyId The ID of the company that owns this batch.
-     * @param id The ID of the batch you wish to delete.
+     * @param id The ID of the batch to delete.
      * @return ArrayList<ErrorDetail>
      */
     public Future<ArrayList<ErrorDetail>> deleteBatchAsync(Integer companyId, Integer id) {
@@ -551,9 +719,20 @@ public class AvaTaxClient {
     /**
      * Retrieve a single batch
      * 
-     * Get the batch object identified by this URL.
-     * A batch object is a large collection of API calls stored in a compact file.
-     * When you create a batch, it is added to the AvaTax Batch Queue and will be processed in the order it was received.
+     * Get the batch object identified by this URL. A batch object is a large 
+     * collection of API calls stored in a compact file.
+     * 
+     * Use this endpoint to retrieve the results or check the status of a batch.
+     * 
+     * When a batch is created, it is added to the AvaTax Batch Queue and will be 
+     * processed as quickly as possible in the order it was received. To check the 
+     * status of a batch, fetch the batch and retrieve the results of the batch 
+     * operation.
+     * 
+     * Because the batch system processes with a degree of concurrency, and
+     * because of batch sizes in the queue vary, AvaTax API is unable to accurately 
+     * predict when a batch will complete. If high performance processing is 
+     * required, please use the 
      * 
      * @param companyId The ID of the company that owns this batch
      * @param id The primary key of this batch
@@ -569,9 +748,20 @@ public class AvaTaxClient {
     /**
      * Retrieve a single batch
      * 
-     * Get the batch object identified by this URL.
-     * A batch object is a large collection of API calls stored in a compact file.
-     * When you create a batch, it is added to the AvaTax Batch Queue and will be processed in the order it was received.
+     * Get the batch object identified by this URL. A batch object is a large 
+     * collection of API calls stored in a compact file.
+     * 
+     * Use this endpoint to retrieve the results or check the status of a batch.
+     * 
+     * When a batch is created, it is added to the AvaTax Batch Queue and will be 
+     * processed as quickly as possible in the order it was received. To check the 
+     * status of a batch, fetch the batch and retrieve the results of the batch 
+     * operation.
+     * 
+     * Because the batch system processes with a degree of concurrency, and
+     * because of batch sizes in the queue vary, AvaTax API is unable to accurately 
+     * predict when a batch will complete. If high performance processing is 
+     * required, please use the 
      * 
      * @param companyId The ID of the company that owns this batch
      * @param id The primary key of this batch
@@ -588,10 +778,25 @@ public class AvaTaxClient {
      * Retrieve all batches for this company
      * 
      * List all batch objects attached to the specified company.
+     * 
      * A batch object is a large collection of API calls stored in a compact file.
-     * When you create a batch, it is added to the AvaTax Batch Queue and will be processed in the order it was received.
-     * You may fetch a batch to check on its status and retrieve the results of the batch operation.
-     * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * 
+     * Search for specific objects using the criteria in the `$filter` parameter; 
+     * full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * Paginate results using the `$top`, `$skip`, and `$orderby` parameters.
+     * 
+     * Use [GetBatch](https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Batches/GetBatch/) 
+     * to retrieve the results, or check the status, of an individual batch.
+     * 
+     * When a batch is created, it is added to the AvaTax Batch Queue and will be 
+     * processed as quickly as possible in the order it was received. To check the 
+     * status of a batch, fetch the batch and retrieve the results of the batch 
+     * operation.
+     * 
+     * Because the batch system processes with a degree of concurrency, and
+     * because of batch sizes in the queue vary, AvaTax API is unable to accurately 
+     * predict when a batch will complete. If high performance processing is 
+     * required, please use the
      * 
      * @param companyId The ID of the company that owns these batches
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
@@ -616,10 +821,25 @@ public class AvaTaxClient {
      * Retrieve all batches for this company
      * 
      * List all batch objects attached to the specified company.
+     * 
      * A batch object is a large collection of API calls stored in a compact file.
-     * When you create a batch, it is added to the AvaTax Batch Queue and will be processed in the order it was received.
-     * You may fetch a batch to check on its status and retrieve the results of the batch operation.
-     * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * 
+     * Search for specific objects using the criteria in the `$filter` parameter; 
+     * full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * Paginate results using the `$top`, `$skip`, and `$orderby` parameters.
+     * 
+     * Use [GetBatch](https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Batches/GetBatch/) 
+     * to retrieve the results, or check the status, of an individual batch.
+     * 
+     * When a batch is created, it is added to the AvaTax Batch Queue and will be 
+     * processed as quickly as possible in the order it was received. To check the 
+     * status of a batch, fetch the batch and retrieve the results of the batch 
+     * operation.
+     * 
+     * Because the batch system processes with a degree of concurrency, and
+     * because of batch sizes in the queue vary, AvaTax API is unable to accurately 
+     * predict when a batch will complete. If high performance processing is 
+     * required, please use the
      * 
      * @param companyId The ID of the company that owns these batches
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
@@ -644,11 +864,22 @@ public class AvaTaxClient {
      * Retrieve all batches
      * 
      * Get multiple batch objects across all companies.
-     * A batch object is a large collection of API calls stored in a compact file.
-     * When you create a batch, it is added to the AvaTax Batch Queue and will be processed in the order it was received.
-     * You may fetch a batch to check on its status and retrieve the results of the batch operation.
      * 
-     * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * A batch object is a large collection of API calls stored in a compact file.
+     * 
+     * Search for specific objects using the criteria in the `$filter` parameter; 
+     * full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * Paginate results using the `$top`, `$skip`, and `$orderby` parameters.
+     * 
+     * When a batch is created, it is added to the AvaTax Batch Queue and will be 
+     * processed as quickly as possible in the order it was received. To check the 
+     * status of a batch, fetch the batch and retrieve the results of the batch 
+     * operation.
+     * 
+     * Because the batch system processes with a degree of concurrency, and
+     * because of batch sizes in the queue vary, AvaTax API is unable to accurately 
+     * predict when a batch will complete. If high performance processing is 
+     * required, please use the
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * @param include A comma separated list of additional data to retrieve.
@@ -671,11 +902,22 @@ public class AvaTaxClient {
      * Retrieve all batches
      * 
      * Get multiple batch objects across all companies.
-     * A batch object is a large collection of API calls stored in a compact file.
-     * When you create a batch, it is added to the AvaTax Batch Queue and will be processed in the order it was received.
-     * You may fetch a batch to check on its status and retrieve the results of the batch operation.
      * 
-     * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * A batch object is a large collection of API calls stored in a compact file.
+     * 
+     * Search for specific objects using the criteria in the `$filter` parameter; 
+     * full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * Paginate results using the `$top`, `$skip`, and `$orderby` parameters.
+     * 
+     * When a batch is created, it is added to the AvaTax Batch Queue and will be 
+     * processed as quickly as possible in the order it was received. To check the 
+     * status of a batch, fetch the batch and retrieve the results of the batch 
+     * operation.
+     * 
+     * Because the batch system processes with a degree of concurrency, and
+     * because of batch sizes in the queue vary, AvaTax API is unable to accurately 
+     * predict when a batch will complete. If high performance processing is 
+     * required, please use the
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * @param include A comma separated list of additional data to retrieve.
@@ -2742,6 +2984,7 @@ public class AvaTaxClient {
      * You can use the `$include` parameter to fetch the following additional objects for expansion:
      * 
      * * Certificates - Fetch a list of certificates linked to this customer.
+     * * CustomFields - Fetch a list of custom fields associated to this customer.
      * 
      * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
      * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
@@ -2774,6 +3017,7 @@ public class AvaTaxClient {
      * You can use the `$include` parameter to fetch the following additional objects for expansion:
      * 
      * * Certificates - Fetch a list of certificates linked to this customer.
+     * * CustomFields - Fetch a list of custom fields associated to this customer.
      * 
      * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
      * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
@@ -3689,12 +3933,20 @@ public class AvaTaxClient {
      * 
      * @param country The name or code of the destination country.
      * @param hsCode The Section or partial HS Code for which you would like to view the next level of HS Code detail, if more detail is available.
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
+     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<HsCodeModel>
      */
-    public FetchResult<HsCodeModel> listCrossBorderCodes(String country, String hsCode) throws Exception {
+    public FetchResult<HsCodeModel> listCrossBorderCodes(String country, String hsCode, String filter, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/crossborder/{country}/{hsCode}");
         path.applyField("country", country);
         path.applyField("hsCode", hsCode);
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
         return ((RestCall<FetchResult<HsCodeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<HsCodeModel>>(){})).call();
     }
 
@@ -3711,12 +3963,20 @@ public class AvaTaxClient {
      * 
      * @param country The name or code of the destination country.
      * @param hsCode The Section or partial HS Code for which you would like to view the next level of HS Code detail, if more detail is available.
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
+     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<HsCodeModel>
      */
-    public Future<FetchResult<HsCodeModel>> listCrossBorderCodesAsync(String country, String hsCode) {
+    public Future<FetchResult<HsCodeModel>> listCrossBorderCodesAsync(String country, String hsCode, String filter, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/crossborder/{country}/{hsCode}");
         path.applyField("country", country);
         path.applyField("hsCode", hsCode);
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
         return this.threadPool.submit((RestCall<FetchResult<HsCodeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<HsCodeModel>>(){}));
     }
 
@@ -13009,9 +13269,13 @@ This gets the basic information from the filings and doesn't include anything ex
     /**
      * Retrieve a single transaction by code
      * 
-     * Get the current `SalesInvoice` transaction identified by this URL.
+     * Get the current transaction identified by this company code, transaction code, and document type.
      * 
-     * To fetch other kinds of transactions, use `GetTransactionByCodeAndType`.
+     * A transaction is uniquely identified by `companyCode`, `code` (often called Transaction Code), and `documentType`.  
+     * 
+     * For compatibility purposes, when this API finds multiple transactions with the same transaction code, and if you have not specified
+     * the `type` parameter to this API, it will default to selecting the `SalesInvoices` transaction. To change this behavior, use the 
+     * optional `documentType` parameter to specify the specific document type you wish to find.
      * 
      * If this transaction was adjusted, the return value of this API will be the current transaction with this code.
      * 
@@ -13025,13 +13289,15 @@ This gets the basic information from the filings and doesn't include anything ex
      * 
      * @param companyCode The company code of the company that recorded this transaction
      * @param transactionCode The transaction code to retrieve
+     * @param documentType (Optional): The document type of the transaction to retrieve (See DocumentType::* for a list of allowable values)
      * @param include Specifies objects to include in this fetch call
      * @return TransactionModel
      */
-    public TransactionModel getTransactionByCode(String companyCode, String transactionCode, String include) throws Exception {
+    public TransactionModel getTransactionByCode(String companyCode, String transactionCode, DocumentType documentType, String include) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyCode}/transactions/{transactionCode}");
         path.applyField("companyCode", companyCode);
         path.applyField("transactionCode", transactionCode);
+        path.addQuery("documentType", documentType);
         path.addQuery("$include", include);
         return ((RestCall<TransactionModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<TransactionModel>(){})).call();
     }
@@ -13039,9 +13305,13 @@ This gets the basic information from the filings and doesn't include anything ex
     /**
      * Retrieve a single transaction by code
      * 
-     * Get the current `SalesInvoice` transaction identified by this URL.
+     * Get the current transaction identified by this company code, transaction code, and document type.
      * 
-     * To fetch other kinds of transactions, use `GetTransactionByCodeAndType`.
+     * A transaction is uniquely identified by `companyCode`, `code` (often called Transaction Code), and `documentType`.  
+     * 
+     * For compatibility purposes, when this API finds multiple transactions with the same transaction code, and if you have not specified
+     * the `type` parameter to this API, it will default to selecting the `SalesInvoices` transaction. To change this behavior, use the 
+     * optional `documentType` parameter to specify the specific document type you wish to find.
      * 
      * If this transaction was adjusted, the return value of this API will be the current transaction with this code.
      * 
@@ -13055,31 +13325,21 @@ This gets the basic information from the filings and doesn't include anything ex
      * 
      * @param companyCode The company code of the company that recorded this transaction
      * @param transactionCode The transaction code to retrieve
+     * @param documentType (Optional): The document type of the transaction to retrieve (See DocumentType::* for a list of allowable values)
      * @param include Specifies objects to include in this fetch call
      * @return TransactionModel
      */
-    public Future<TransactionModel> getTransactionByCodeAsync(String companyCode, String transactionCode, String include) {
+    public Future<TransactionModel> getTransactionByCodeAsync(String companyCode, String transactionCode, DocumentType documentType, String include) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyCode}/transactions/{transactionCode}");
         path.applyField("companyCode", companyCode);
         path.applyField("transactionCode", transactionCode);
+        path.addQuery("documentType", documentType);
         path.addQuery("$include", include);
         return this.threadPool.submit((RestCall<TransactionModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<TransactionModel>(){}));
     }
 
     /**
      * Retrieve a single transaction by code
-     * 
-     * Get the current transaction identified by this URL.
-     * 
-     * If this transaction was adjusted, the return value of this API will be the current transaction with this code.
-     * 
-     * You may specify one or more of the following values in the `$include` parameter to fetch additional nested data, using commas to separate multiple values:
-     *             
-     * * Lines
-     * * Details (implies lines)
-     * * Summary (implies details)
-     * * Addresses
-     * * SummaryOnly (omit lines and details - reduces API response size)
      * 
      * @param companyCode The company code of the company that recorded this transaction
      * @param transactionCode The transaction code to retrieve
@@ -13098,18 +13358,6 @@ This gets the basic information from the filings and doesn't include anything ex
 
     /**
      * Retrieve a single transaction by code
-     * 
-     * Get the current transaction identified by this URL.
-     * 
-     * If this transaction was adjusted, the return value of this API will be the current transaction with this code.
-     * 
-     * You may specify one or more of the following values in the `$include` parameter to fetch additional nested data, using commas to separate multiple values:
-     *             
-     * * Lines
-     * * Details (implies lines)
-     * * Summary (implies details)
-     * * Addresses
-     * * SummaryOnly (omit lines and details - reduces API response size)
      * 
      * @param companyCode The company code of the company that recorded this transaction
      * @param transactionCode The transaction code to retrieve
@@ -13366,15 +13614,17 @@ This gets the basic information from the filings and doesn't include anything ex
      * @param transactionCode The transaction code of the original sale
      * @param include Specifies objects to include in the response after transaction is created
      * @param documentType (Optional): The document type of the transaction to refund. If not provided, the default is SalesInvoice. (See DocumentType::* for a list of allowable values)
+     * @param useTaxDateOverride (Optional): If set to true, processes refund using taxDateOverride rather than taxAmountOverride (Note: taxAmountOverride is not allowed for SST states).
      * @param model Information about the refund to create
      * @return TransactionModel
      */
-    public TransactionModel refundTransaction(String companyCode, String transactionCode, String include, DocumentType documentType, RefundTransactionModel model) throws Exception {
+    public TransactionModel refundTransaction(String companyCode, String transactionCode, String include, DocumentType documentType, Boolean useTaxDateOverride, RefundTransactionModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyCode}/transactions/{transactionCode}/refund");
         path.applyField("companyCode", companyCode);
         path.applyField("transactionCode", transactionCode);
         path.addQuery("$include", include);
         path.addQuery("documentType", documentType);
+        path.addQuery("useTaxDateOverride", useTaxDateOverride);
         return ((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<TransactionModel>(){})).call();
     }
 
@@ -13416,15 +13666,17 @@ This gets the basic information from the filings and doesn't include anything ex
      * @param transactionCode The transaction code of the original sale
      * @param include Specifies objects to include in the response after transaction is created
      * @param documentType (Optional): The document type of the transaction to refund. If not provided, the default is SalesInvoice. (See DocumentType::* for a list of allowable values)
+     * @param useTaxDateOverride (Optional): If set to true, processes refund using taxDateOverride rather than taxAmountOverride (Note: taxAmountOverride is not allowed for SST states).
      * @param model Information about the refund to create
      * @return TransactionModel
      */
-    public Future<TransactionModel> refundTransactionAsync(String companyCode, String transactionCode, String include, DocumentType documentType, RefundTransactionModel model) {
+    public Future<TransactionModel> refundTransactionAsync(String companyCode, String transactionCode, String include, DocumentType documentType, Boolean useTaxDateOverride, RefundTransactionModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyCode}/transactions/{transactionCode}/refund");
         path.applyField("companyCode", companyCode);
         path.applyField("transactionCode", transactionCode);
         path.addQuery("$include", include);
         path.addQuery("documentType", documentType);
+        path.addQuery("useTaxDateOverride", useTaxDateOverride);
         return this.threadPool.submit((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<TransactionModel>(){}));
     }
 
@@ -13957,10 +14209,45 @@ This gets the basic information from the filings and doesn't include anything ex
     }
 
     /**
+     * Get information about a username.
+     * 
+     * You may call this API prior to creating a user, to check if a particular username is available for use.  Using this API, you can 
+     * present a friendly experience prior to attempting to create a new user object.
+     * 
+     * 
+     * @param username The username to search.
+     * @return UsernameModel
+     */
+    public UsernameModel getUsername(String username) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/usernames");
+        path.addQuery("username", username);
+        return ((RestCall<UsernameModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<UsernameModel>(){})).call();
+    }
+
+    /**
+     * Get information about a username.
+     * 
+     * You may call this API prior to creating a user, to check if a particular username is available for use.  Using this API, you can 
+     * present a friendly experience prior to attempting to create a new user object.
+     * 
+     * 
+     * @param username The username to search.
+     * @return UsernameModel
+     */
+    public Future<UsernameModel> getUsernameAsync(String username) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/usernames");
+        path.addQuery("username", username);
+        return this.threadPool.submit((RestCall<UsernameModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<UsernameModel>(){}));
+    }
+
+    /**
      * Retrieve users for this account
      * 
      * List all user objects attached to this account.
      * A user represents one person with access privileges to make API calls and work with a specific account.
+     * 
+     * When an API is called using a legacy AvaTax License Key, the API log entry is recorded as being performed by a special user attached to that license key.
+     * By default, this API will not return a listing of license key users.  Users with registrar-level security may call this API to list license key users.
      * 
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * 
@@ -13989,6 +14276,9 @@ This gets the basic information from the filings and doesn't include anything ex
      * List all user objects attached to this account.
      * A user represents one person with access privileges to make API calls and work with a specific account.
      * 
+     * When an API is called using a legacy AvaTax License Key, the API log entry is recorded as being performed by a special user attached to that license key.
+     * By default, this API will not return a listing of license key users.  Users with registrar-level security may call this API to list license key users.
+     * 
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * 
      * @param accountId The accountID of the user you wish to list.
@@ -14014,7 +14304,12 @@ This gets the basic information from the filings and doesn't include anything ex
      * Retrieve all users
      * 
      * Get multiple user objects across all accounts.
-     * A user represents one person with access privileges to make API calls and work with a specific account.
+     * 
+     * A user represents one person or set of credentials with access privileges to make API calls and work with a specific account.  A user can be authenticated
+     * via either username / password authentication, an OpenID / OAuth Bearer Token, or a legacy AvaTax License Key.
+     * 
+     * When an API is called using a legacy AvaTax License Key, the API log entry is recorded as being performed by a special user attached to that license key.
+     * By default, this API will not return a listing of license key users.  Users with registrar-level security may call this API to list license key users.
      * 
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * 
@@ -14039,7 +14334,12 @@ This gets the basic information from the filings and doesn't include anything ex
      * Retrieve all users
      * 
      * Get multiple user objects across all accounts.
-     * A user represents one person with access privileges to make API calls and work with a specific account.
+     * 
+     * A user represents one person or set of credentials with access privileges to make API calls and work with a specific account.  A user can be authenticated
+     * via either username / password authentication, an OpenID / OAuth Bearer Token, or a legacy AvaTax License Key.
+     * 
+     * When an API is called using a legacy AvaTax License Key, the API log entry is recorded as being performed by a special user attached to that license key.
+     * By default, this API will not return a listing of license key users.  Users with registrar-level security may call this API to list license key users.
      * 
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * 

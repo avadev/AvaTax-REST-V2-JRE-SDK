@@ -152,7 +152,8 @@ public class NexusModel {
     /**
      * Getter for jurisTypeId
      *
-     * The jurisdiction type of the jurisdiction in which this company declared nexus.
+     * (DEPRECATED) The jurisdiction type of the jurisdiction in which this company declared nexus.
+    * NOTE: Use jurisdictionTypeId instead.
      */
     public JurisTypeId getJurisTypeId() {
         return this.jurisTypeId;
@@ -161,10 +162,32 @@ public class NexusModel {
     /**
      * Setter for jurisTypeId
      *
-     * The jurisdiction type of the jurisdiction in which this company declared nexus.
+     * (DEPRECATED) The jurisdiction type of the jurisdiction in which this company declared nexus.
+    * NOTE: Use jurisdictionTypeId instead.
      */
     public void setJurisTypeId(JurisTypeId value) {
         this.jurisTypeId = value;
+    }
+
+
+    private JurisdictionType jurisdictionTypeId;
+
+    /**
+     * Getter for jurisdictionTypeId
+     *
+     * The type of the jurisdiction in which this company declared nexus.
+     */
+    public JurisdictionType getJurisdictionTypeId() {
+        return this.jurisdictionTypeId;
+    }
+
+    /**
+     * Setter for jurisdictionTypeId
+     *
+     * The type of the jurisdiction in which this company declared nexus.
+     */
+    public void setJurisdictionTypeId(JurisdictionType value) {
+        this.jurisdictionTypeId = value;
     }
 
 

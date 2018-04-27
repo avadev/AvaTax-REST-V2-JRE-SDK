@@ -15,27 +15,23 @@ package net.avalara.avatax.rest.client.enums;
  */
 
 /**
- * 
+ * A list of possible Due Date Types
  */
-public enum CertCaptureProvisionStatus {
+public enum DueDateTypeId {
     /** 
-     * Account and company are provisioned
+     * Denotes form is due on the due day
      */
-    Provisioned,
-
-
-    /** 
-     * Provision job is being queued
-     *  This could also be an indication that some companies under an account has been provisioned, while others
-     *  under the same account has not.
-     */
-    InProgress,
+    ByDay,
 
     /** 
-     * 
+     * Denotes form is due by last day of the month
      */
-    NotProvisioned,
+    ByLastDay,
 
+    /** 
+     * Denotes form is due by second to last day of the month
+     */
+    BySecondLastDay,
 
 }
     
