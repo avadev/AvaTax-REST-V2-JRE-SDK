@@ -136,11 +136,6 @@ public enum ErrorCodeId {
     /** 
      * 
      */
-    CannotChangeCompanyCode,
-
-    /** 
-     * 
-     */
     DateFormatError,
 
     /** 
@@ -663,7 +658,7 @@ public enum ErrorCodeId {
      */
     UserNoAccess,
 
-    /**
+    /** 
      * 
      */
     InvalidEntry,
@@ -674,7 +669,11 @@ public enum ErrorCodeId {
     TransactionAlreadyCancelled,
 
     /** 
+     * 
+     */
+    QueryParameterOutOfRange,
 
+    /** 
      * Batch errors
      */
     BatchSalesAuditMustBeZippedError,
@@ -777,7 +776,7 @@ public enum ErrorCodeId {
     /** 
      * 
      */
-    AddressIncomplete,
+    InvalidAddress,
 
     /** 
      * 
@@ -813,11 +812,6 @@ public enum ErrorCodeId {
      * 
      */
     TimeoutRequested,
-
-    /** 
-     * 
-     */
-    InvalidAddress,
 
     /** 
      * 
@@ -928,6 +922,11 @@ public enum ErrorCodeId {
      * Free API error codes
      */
     MustUseCreateTransaction,
+
+    /** 
+     * 
+     */
+    MustAcceptTermsAndConditions,
 
     /** 
      * Filing Calendar Error Codes
@@ -1189,6 +1188,30 @@ public enum ErrorCodeId {
      */
     NexusChildDateMismatch,
 
+    /** 
+     * Advanced rule errors
+     */
+    AdvancedRuleBadScript,
+
+    /** 
+     * 
+     */
+    AdvancedRuleBadCsvTable,
+
+    /** 
+     * 
+     */
+    AdvancedRuleRequestRuleError,
+
+    /** 
+     * 
+     */
+    AdvancedRuleResponseRuleError,
+
+    /** 
+     * 
+     */
+    InvalidDocumentStatusToAddOrDeleteLines,
 
 }
     

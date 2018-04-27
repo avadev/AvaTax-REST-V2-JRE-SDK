@@ -142,6 +142,27 @@ public class IsoCountryModel {
     }
 
 
+    private Boolean addressesRequireRegion;
+
+    /**
+     * Getter for addressesRequireRegion
+     *
+     * Whether or not this country requires a region in postal addresses.
+     */
+    public Boolean getAddressesRequireRegion() {
+        return this.addressesRequireRegion;
+    }
+
+    /**
+     * Setter for addressesRequireRegion
+     *
+     * Whether or not this country requires a region in postal addresses.
+     */
+    public void setAddressesRequireRegion(Boolean value) {
+        this.addressesRequireRegion = value;
+    }
+
+
     /**
      * Returns a JSON string representation of IsoCountryModel
      */

@@ -200,6 +200,48 @@ public class FreeTrialRequestModel {
     }
 
 
+    private Boolean haveReadAvalaraTermsAndConditions;
+
+    /**
+     * Getter for haveReadAvalaraTermsAndConditions
+     *
+     * Read Avalara's terms and conditions is necessary for a free trial account
+     */
+    public Boolean getHaveReadAvalaraTermsAndConditions() {
+        return this.haveReadAvalaraTermsAndConditions;
+    }
+
+    /**
+     * Setter for haveReadAvalaraTermsAndConditions
+     *
+     * Read Avalara's terms and conditions is necessary for a free trial account
+     */
+    public void setHaveReadAvalaraTermsAndConditions(Boolean value) {
+        this.haveReadAvalaraTermsAndConditions = value;
+    }
+
+
+    private Boolean acceptAvalaraTermsAndConditions;
+
+    /**
+     * Getter for acceptAvalaraTermsAndConditions
+     *
+     * Accept Avalara's terms and conditions is necessary for a free trial
+     */
+    public Boolean getAcceptAvalaraTermsAndConditions() {
+        return this.acceptAvalaraTermsAndConditions;
+    }
+
+    /**
+     * Setter for acceptAvalaraTermsAndConditions
+     *
+     * Accept Avalara's terms and conditions is necessary for a free trial
+     */
+    public void setAcceptAvalaraTermsAndConditions(Boolean value) {
+        this.acceptAvalaraTermsAndConditions = value;
+    }
+
+
     /**
      * Returns a JSON string representation of FreeTrialRequestModel
      */

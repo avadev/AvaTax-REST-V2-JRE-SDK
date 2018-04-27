@@ -17,71 +17,16 @@ package net.avalara.avatax.rest.client.enums;
 /**
  * 
  */
-public enum AdjustmentTypeId {
+public enum AdvancedRuleCrashBehavior {
     /** 
      * 
      */
-    Other,
+    FailOnError,
 
     /** 
      * 
      */
-    CurrentPeriodRounding,
-
-    /** 
-     * 
-     */
-    PriorPeriodRounding,
-
-    /** 
-     * 
-     */
-    CurrentPeriodDiscount,
-
-    /** 
-     * 
-     */
-    PriorPeriodDiscount,
-
-    /** 
-     * 
-     */
-    CurrentPeriodCollection,
-
-    /** 
-     * 
-     */
-    PriorPeriodCollection,
-
-    /** 
-     * 
-     */
-    Penalty,
-
-    /** 
-     * 
-     */
-    Interest,
-
-    /** 
-     * 
-     */
-    Discount,
-
-    /** 
-     * 
-     */
-    Rounding,
-
-    /** 
-     * 
-     */
-    CspFee,
-
-    /** 
-     * 
-     */
-    Marketplace,
+    ProceedWithOriginal,
 
 }
     

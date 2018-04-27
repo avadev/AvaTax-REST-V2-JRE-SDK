@@ -23,7 +23,6 @@ public enum CertCaptureProvisionStatus {
      */
     Provisioned,
 
-
     /** 
      * Provision job is being queued
      *  This could also be an indication that some companies under an account has been provisioned, while others
@@ -35,7 +34,6 @@ public enum CertCaptureProvisionStatus {
      * 
      */
     NotProvisioned,
-
 
 }
     

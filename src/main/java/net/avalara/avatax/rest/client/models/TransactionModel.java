@@ -632,7 +632,15 @@ public class TransactionModel {
     /**
      * Getter for totalTax
      *
-     * The total tax calculated for all lines in this transaction.
+     * The total tax for all lines in this transaction.
+    * 
+    * If you used a `taxOverride` of type `taxAmount` for any lines in this transaction, this value 
+    * may be different than the amount of tax calculated by AvaTax. The amount of tax calculated by
+    * AvaTax will be stored in the `totalTaxCalculated` field, whereas this field will contain the
+    * total tax that was charged on the transaction.
+    * 
+    * You can compare the `totalTax` and `totalTaxCalculated` fields to check for any discrepancies
+    * between an external tax calculation provider and the calculation performed by AvaTax.
      */
     public BigDecimal getTotalTax() {
         return this.totalTax;
@@ -641,7 +649,15 @@ public class TransactionModel {
     /**
      * Setter for totalTax
      *
-     * The total tax calculated for all lines in this transaction.
+     * The total tax for all lines in this transaction.
+    * 
+    * If you used a `taxOverride` of type `taxAmount` for any lines in this transaction, this value 
+    * may be different than the amount of tax calculated by AvaTax. The amount of tax calculated by
+    * AvaTax will be stored in the `totalTaxCalculated` field, whereas this field will contain the
+    * total tax that was charged on the transaction.
+    * 
+    * You can compare the `totalTax` and `totalTaxCalculated` fields to check for any discrepancies
+    * between an external tax calculation provider and the calculation performed by AvaTax.
      */
     public void setTotalTax(BigDecimal value) {
         this.totalTax = value;
@@ -674,7 +690,14 @@ public class TransactionModel {
     /**
      * Getter for totalTaxCalculated
      *
-     * If a tax override was applied to this transaction, indicates the amount of tax Avalara calculated for the transaction.
+     * The amount of tax that AvaTax calculated for the transaction.
+    * 
+    * If you used a `taxOverride` of type `taxAmount` for any lines in this transaction, this value 
+    * will still represent the amount that AvaTax calculated for this transaction, although the field
+    * `totalTax` will be the total amount of tax after all overrides are applied.
+    * 
+    * You can compare the `totalTax` and `totalTaxCalculated` fields to check for any discrepancies
+    * between an external tax calculation provider and the calculation performed by AvaTax.
      */
     public BigDecimal getTotalTaxCalculated() {
         return this.totalTaxCalculated;
@@ -683,7 +706,14 @@ public class TransactionModel {
     /**
      * Setter for totalTaxCalculated
      *
-     * If a tax override was applied to this transaction, indicates the amount of tax Avalara calculated for the transaction.
+     * The amount of tax that AvaTax calculated for the transaction.
+    * 
+    * If you used a `taxOverride` of type `taxAmount` for any lines in this transaction, this value 
+    * will still represent the amount that AvaTax calculated for this transaction, although the field
+    * `totalTax` will be the total amount of tax after all overrides are applied.
+    * 
+    * You can compare the `totalTax` and `totalTaxCalculated` fields to check for any discrepancies
+    * between an external tax calculation provider and the calculation performed by AvaTax.
      */
     public void setTotalTaxCalculated(BigDecimal value) {
         this.totalTaxCalculated = value;

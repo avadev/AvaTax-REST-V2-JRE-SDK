@@ -640,6 +640,48 @@ public class TransactionLineDetailModel {
     }
 
 
+    private String taxSubTypeId;
+
+    /**
+     * Getter for taxSubTypeId
+     *
+     * The id of the tax subtype.
+     */
+    public String getTaxSubTypeId() {
+        return this.taxSubTypeId;
+    }
+
+    /**
+     * Setter for taxSubTypeId
+     *
+     * The id of the tax subtype.
+     */
+    public void setTaxSubTypeId(String value) {
+        this.taxSubTypeId = value;
+    }
+
+
+    private String taxTypeGroupId;
+
+    /**
+     * Getter for taxTypeGroupId
+     *
+     * The id of the tax type group.
+     */
+    public String getTaxTypeGroupId() {
+        return this.taxTypeGroupId;
+    }
+
+    /**
+     * Setter for taxTypeGroupId
+     *
+     * The id of the tax type group.
+     */
+    public void setTaxTypeGroupId(String value) {
+        this.taxTypeGroupId = value;
+    }
+
+
     private String taxName;
 
     /**

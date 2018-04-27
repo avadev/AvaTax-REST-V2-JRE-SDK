@@ -455,6 +455,316 @@ public class AvaTaxClient {
     }
 
     /**
+     * Approve an advanced rule script to run.
+     * 
+     * This API is available by invite only and implementation support is required. 
+     * Please contact your Customer Account Manager if you are interested in using 
+     * 
+     * @param accountId The ID of the account that owns the Advanced Rule.
+     * @param scriptType The script transform type: Request or Response. (See AdvancedRuleScriptType::* for a list of allowable values)
+     * @return AdvancedRuleScriptModel
+     */
+    public AdvancedRuleScriptModel approveAdvancedRuleScript(Integer accountId, AdvancedRuleScriptType scriptType) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/advancedrulescripts/{scriptType}/approve");
+        path.applyField("accountId", accountId);
+        path.applyField("scriptType", scriptType);
+        return ((RestCall<AdvancedRuleScriptModel>)restCallFactory.createRestCall("post", path, null, new TypeToken<AdvancedRuleScriptModel>(){})).call();
+    }
+
+    /**
+     * Approve an advanced rule script to run.
+     * 
+     * This API is available by invite only and implementation support is required. 
+     * Please contact your Customer Account Manager if you are interested in using 
+     * 
+     * @param accountId The ID of the account that owns the Advanced Rule.
+     * @param scriptType The script transform type: Request or Response. (See AdvancedRuleScriptType::* for a list of allowable values)
+     * @return AdvancedRuleScriptModel
+     */
+    public Future<AdvancedRuleScriptModel> approveAdvancedRuleScriptAsync(Integer accountId, AdvancedRuleScriptType scriptType) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/advancedrulescripts/{scriptType}/approve");
+        path.applyField("accountId", accountId);
+        path.applyField("scriptType", scriptType);
+        return this.threadPool.submit((RestCall<AdvancedRuleScriptModel>)restCallFactory.createRestCall("post", path, null, new TypeToken<AdvancedRuleScriptModel>(){}));
+    }
+
+    /**
+     * Create an advanced rule.
+     * 
+     * This API is available by invite only and implementation support is required. 
+     * Please contact your Customer Account Manager if you are interested in using 
+     * 
+     * @param accountId The ID of the account that will own the Advanced Rule.
+     * @param scriptType The script transform type, Request or Response. (See AdvancedRuleScriptType::* for a list of allowable values)
+     * @param crashBehavior The behavior the script should take if it crashes: Fail or Proceed. (See AdvancedRuleCrashBehavior::* for a list of allowable values)
+     * @param file The JavaScript file containing the advanced rule.
+     * @return String
+     */
+    public String createAdvancedRuleScript(Integer accountId, AdvancedRuleScriptType scriptType, AdvancedRuleCrashBehavior crashBehavior, String file) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/advancedrulescripts/{scriptType}");
+        path.applyField("accountId", accountId);
+        path.applyField("scriptType", scriptType);
+        path.addQuery("crashBehavior", crashBehavior);
+        return ((RestCall<String>)restCallFactory.createRestCall("post", path, null, new TypeToken<String>(){})).call();
+    }
+
+    /**
+     * Create an advanced rule.
+     * 
+     * This API is available by invite only and implementation support is required. 
+     * Please contact your Customer Account Manager if you are interested in using 
+     * 
+     * @param accountId The ID of the account that will own the Advanced Rule.
+     * @param scriptType The script transform type, Request or Response. (See AdvancedRuleScriptType::* for a list of allowable values)
+     * @param crashBehavior The behavior the script should take if it crashes: Fail or Proceed. (See AdvancedRuleCrashBehavior::* for a list of allowable values)
+     * @param file The JavaScript file containing the advanced rule.
+     * @return String
+     */
+    public Future<String> createAdvancedRuleScriptAsync(Integer accountId, AdvancedRuleScriptType scriptType, AdvancedRuleCrashBehavior crashBehavior, String file) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/advancedrulescripts/{scriptType}");
+        path.applyField("accountId", accountId);
+        path.applyField("scriptType", scriptType);
+        path.addQuery("crashBehavior", crashBehavior);
+        return this.threadPool.submit((RestCall<String>)restCallFactory.createRestCall("post", path, null, new TypeToken<String>(){}));
+    }
+
+    /**
+     * Create a lookup table for an advanced rule
+     * 
+     * This API is available by invite only and implementation support is required. 
+     * Please contact your Customer Account Manager if you are interested in using 
+     * 
+     * @param accountId The ID of the account that owns the Advanced Rule.
+     * @param csvTableName The name to assign the CSV lookup table.
+     * @param file A CSV file containing lookup data for an advanced rule.
+     * @return String
+     */
+    public String createAdvancedRuleTable(Integer accountId, String csvTableName, String file) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/advancedruletables/{csvTableName}");
+        path.applyField("accountId", accountId);
+        path.applyField("csvTableName", csvTableName);
+        return ((RestCall<String>)restCallFactory.createRestCall("post", path, null, new TypeToken<String>(){})).call();
+    }
+
+    /**
+     * Create a lookup table for an advanced rule
+     * 
+     * This API is available by invite only and implementation support is required. 
+     * Please contact your Customer Account Manager if you are interested in using 
+     * 
+     * @param accountId The ID of the account that owns the Advanced Rule.
+     * @param csvTableName The name to assign the CSV lookup table.
+     * @param file A CSV file containing lookup data for an advanced rule.
+     * @return String
+     */
+    public Future<String> createAdvancedRuleTableAsync(Integer accountId, String csvTableName, String file) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/advancedruletables/{csvTableName}");
+        path.applyField("accountId", accountId);
+        path.applyField("csvTableName", csvTableName);
+        return this.threadPool.submit((RestCall<String>)restCallFactory.createRestCall("post", path, null, new TypeToken<String>(){}));
+    }
+
+    /**
+     * Delete an account's active advanced rule
+     * 
+     * This API is available by invite only and implementation support is required. 
+     * Please contact your Customer Account Manager if you are interested in using 
+     * 
+     * @param accountId The ID of the account that owns the Advanced Rule.
+     * @param scriptType The script transform type: Request or Response. (See AdvancedRuleScriptType::* for a list of allowable values)
+     * @return ArrayList<ErrorDetail>
+     */
+    public ArrayList<ErrorDetail> deleteAdvancedRuleScript(Integer accountId, AdvancedRuleScriptType scriptType) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/advancedrulescripts/{scriptType}");
+        path.applyField("accountId", accountId);
+        path.applyField("scriptType", scriptType);
+        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){})).call();
+    }
+
+    /**
+     * Delete an account's active advanced rule
+     * 
+     * This API is available by invite only and implementation support is required. 
+     * Please contact your Customer Account Manager if you are interested in using 
+     * 
+     * @param accountId The ID of the account that owns the Advanced Rule.
+     * @param scriptType The script transform type: Request or Response. (See AdvancedRuleScriptType::* for a list of allowable values)
+     * @return ArrayList<ErrorDetail>
+     */
+    public Future<ArrayList<ErrorDetail>> deleteAdvancedRuleScriptAsync(Integer accountId, AdvancedRuleScriptType scriptType) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/advancedrulescripts/{scriptType}");
+        path.applyField("accountId", accountId);
+        path.applyField("scriptType", scriptType);
+        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){}));
+    }
+
+    /**
+     * Delete a lookup table for an advanced rule.
+     * 
+     * This API is available by invite only and implementation support is required. 
+     * Please contact your Customer Account Manager if you are interested in using 
+     * 
+     * @param accountId The ID of the account that owns the Advanced Rule.
+     * @param csvTableName The name of the CSV lookup table to delete.
+     * @return ArrayList<ErrorDetail>
+     */
+    public ArrayList<ErrorDetail> deleteAdvancedRuleTable(Integer accountId, String csvTableName) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/advancedruletables/{csvTableName}");
+        path.applyField("accountId", accountId);
+        path.applyField("csvTableName", csvTableName);
+        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){})).call();
+    }
+
+    /**
+     * Delete a lookup table for an advanced rule.
+     * 
+     * This API is available by invite only and implementation support is required. 
+     * Please contact your Customer Account Manager if you are interested in using 
+     * 
+     * @param accountId The ID of the account that owns the Advanced Rule.
+     * @param csvTableName The name of the CSV lookup table to delete.
+     * @return ArrayList<ErrorDetail>
+     */
+    public Future<ArrayList<ErrorDetail>> deleteAdvancedRuleTableAsync(Integer accountId, String csvTableName) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/advancedruletables/{csvTableName}");
+        path.applyField("accountId", accountId);
+        path.applyField("csvTableName", csvTableName);
+        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){}));
+    }
+
+    /**
+     * Get an account's advanced rule script.
+     * 
+     * This API is available by invite only and implementation support is required. 
+     * Please contact your Customer Account Manager if you are interested in using 
+     * 
+     * @param accountId The ID of the account that owns the Advanced Rule.
+     * @param scriptType The script transform type: Request or Response. (See AdvancedRuleScriptType::* for a list of allowable values)
+     * @return AdvancedRuleScriptModel
+     */
+    public AdvancedRuleScriptModel getAdvancedRuleScript(Integer accountId, AdvancedRuleScriptType scriptType) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/advancedrulescripts/{scriptType}");
+        path.applyField("accountId", accountId);
+        path.applyField("scriptType", scriptType);
+        return ((RestCall<AdvancedRuleScriptModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<AdvancedRuleScriptModel>(){})).call();
+    }
+
+    /**
+     * Get an account's advanced rule script.
+     * 
+     * This API is available by invite only and implementation support is required. 
+     * Please contact your Customer Account Manager if you are interested in using 
+     * 
+     * @param accountId The ID of the account that owns the Advanced Rule.
+     * @param scriptType The script transform type: Request or Response. (See AdvancedRuleScriptType::* for a list of allowable values)
+     * @return AdvancedRuleScriptModel
+     */
+    public Future<AdvancedRuleScriptModel> getAdvancedRuleScriptAsync(Integer accountId, AdvancedRuleScriptType scriptType) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/advancedrulescripts/{scriptType}");
+        path.applyField("accountId", accountId);
+        path.applyField("scriptType", scriptType);
+        return this.threadPool.submit((RestCall<AdvancedRuleScriptModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<AdvancedRuleScriptModel>(){}));
+    }
+
+    /**
+     * Get an advanced rule lookup table for an account
+     * 
+     * This API is available by invite only and implementation support is required. 
+     * Please contact your Customer Account Manager if you are interested in using 
+     * 
+     * @param accountId The ID of the account that owns the Advanced Rule.
+     * @param csvTableName The name of the CSV lookup table to get.
+     * @return AdvancedRuleTableModel
+     */
+    public AdvancedRuleTableModel getAdvancedRuleTable(Integer accountId, String csvTableName) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/advancedruletables/{csvTableName}");
+        path.applyField("accountId", accountId);
+        path.applyField("csvTableName", csvTableName);
+        return ((RestCall<AdvancedRuleTableModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<AdvancedRuleTableModel>(){})).call();
+    }
+
+    /**
+     * Get an advanced rule lookup table for an account
+     * 
+     * This API is available by invite only and implementation support is required. 
+     * Please contact your Customer Account Manager if you are interested in using 
+     * 
+     * @param accountId The ID of the account that owns the Advanced Rule.
+     * @param csvTableName The name of the CSV lookup table to get.
+     * @return AdvancedRuleTableModel
+     */
+    public Future<AdvancedRuleTableModel> getAdvancedRuleTableAsync(Integer accountId, String csvTableName) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/advancedruletables/{csvTableName}");
+        path.applyField("accountId", accountId);
+        path.applyField("csvTableName", csvTableName);
+        return this.threadPool.submit((RestCall<AdvancedRuleTableModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<AdvancedRuleTableModel>(){}));
+    }
+
+    /**
+     * Get all advanced rule lookup tables for an account
+     * 
+     * This API is available by invite only and implementation support is required. 
+     * Please contact your Customer Account Manager if you are interested in using 
+     * 
+     * @param accountId The ID of the account that owns the Advanced Rule.
+     * @return AdvancedRuleTableModel
+     */
+    public AdvancedRuleTableModel getAdvancedRuleTables(Integer accountId) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/advancedruletables");
+        path.applyField("accountId", accountId);
+        return ((RestCall<AdvancedRuleTableModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<AdvancedRuleTableModel>(){})).call();
+    }
+
+    /**
+     * Get all advanced rule lookup tables for an account
+     * 
+     * This API is available by invite only and implementation support is required. 
+     * Please contact your Customer Account Manager if you are interested in using 
+     * 
+     * @param accountId The ID of the account that owns the Advanced Rule.
+     * @return AdvancedRuleTableModel
+     */
+    public Future<AdvancedRuleTableModel> getAdvancedRuleTablesAsync(Integer accountId) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/advancedruletables");
+        path.applyField("accountId", accountId);
+        return this.threadPool.submit((RestCall<AdvancedRuleTableModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<AdvancedRuleTableModel>(){}));
+    }
+
+    /**
+     * Unapprove an advanced rule script so that it cannot be run.
+     * 
+     * This API is available by invite only and implementation support is required. 
+     * Please contact your Customer Account Manager if you are interested in using 
+     * 
+     * @param accountId The ID of the account that owns the Advanced Rule.
+     * @param scriptType The script transform type: Request or Response. (See AdvancedRuleScriptType::* for a list of allowable values)
+     * @return AdvancedRuleScriptModel
+     */
+    public AdvancedRuleScriptModel unapproveAdvancedRuleScript(Integer accountId, AdvancedRuleScriptType scriptType) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/advancedrulescripts/{scriptType}/unapprove");
+        path.applyField("accountId", accountId);
+        path.applyField("scriptType", scriptType);
+        return ((RestCall<AdvancedRuleScriptModel>)restCallFactory.createRestCall("post", path, null, new TypeToken<AdvancedRuleScriptModel>(){})).call();
+    }
+
+    /**
+     * Unapprove an advanced rule script so that it cannot be run.
+     * 
+     * This API is available by invite only and implementation support is required. 
+     * Please contact your Customer Account Manager if you are interested in using 
+     * 
+     * @param accountId The ID of the account that owns the Advanced Rule.
+     * @param scriptType The script transform type: Request or Response. (See AdvancedRuleScriptType::* for a list of allowable values)
+     * @return AdvancedRuleScriptModel
+     */
+    public Future<AdvancedRuleScriptModel> unapproveAdvancedRuleScriptAsync(Integer accountId, AdvancedRuleScriptType scriptType) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/advancedrulescripts/{scriptType}/unapprove");
+        path.applyField("accountId", accountId);
+        path.applyField("scriptType", scriptType);
+        return this.threadPool.submit((RestCall<AdvancedRuleScriptModel>)restCallFactory.createRestCall("post", path, null, new TypeToken<AdvancedRuleScriptModel>(){}));
+    }
+
+    /**
      * Create a new AvaFileForm
      * 
      * Create one or more AvaFileForms
@@ -1777,6 +2087,48 @@ public class AvaTaxClient {
     }
 
     /**
+     * Request setup of exemption certificates for this company.
+     * 
+     * Requests the setup of exemption certificates for this company.
+     * 
+     * Exemption certificates are tracked through a different auditable data store than the one that 
+     * holds AvaTax transactions.  To use the AvaTax exemption certificate document store, please call
+     * `GetCertificateSetup` to see if your company is configured to use the exemption certificate
+     * document store.  To request setup, please call `RequestCertificateSetup` and your company will
+     * be configured with data storage in the auditable certificate system.
+     * 
+     * 
+     * @param companyId 
+     * @return ProvisionStatusModel
+     */
+    public ProvisionStatusModel requestCertificateSetup(Integer companyId) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/certificates/setup");
+        path.applyField("companyId", companyId);
+        return ((RestCall<ProvisionStatusModel>)restCallFactory.createRestCall("post", path, null, new TypeToken<ProvisionStatusModel>(){})).call();
+    }
+
+    /**
+     * Request setup of exemption certificates for this company.
+     * 
+     * Requests the setup of exemption certificates for this company.
+     * 
+     * Exemption certificates are tracked through a different auditable data store than the one that 
+     * holds AvaTax transactions.  To use the AvaTax exemption certificate document store, please call
+     * `GetCertificateSetup` to see if your company is configured to use the exemption certificate
+     * document store.  To request setup, please call `RequestCertificateSetup` and your company will
+     * be configured with data storage in the auditable certificate system.
+     * 
+     * 
+     * @param companyId 
+     * @return ProvisionStatusModel
+     */
+    public Future<ProvisionStatusModel> requestCertificateSetupAsync(Integer companyId) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/certificates/setup");
+        path.applyField("companyId", companyId);
+        return this.threadPool.submit((RestCall<ProvisionStatusModel>)restCallFactory.createRestCall("post", path, null, new TypeToken<ProvisionStatusModel>(){}));
+    }
+
+    /**
      * Unlink attributes from a certificate
      * 
      * Unlink one or many attributes from a certificate.
@@ -2879,6 +3231,9 @@ public class AvaTaxClient {
      * identify any certificates linked to this `customer` object.  If any certificate applies to the transaction,
      * AvaTax will record the appropriate elements of the transaction as exempt and link it to the `certificate`.
      * 
+     * A nested object such as CustomFields could be specified and created along with the customer object. To fetch the
+     * nested object, please call 'GetCustomer' API with appropriate $include parameters.
+     * 
      * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
      * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
      * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document 
@@ -2904,6 +3259,9 @@ public class AvaTaxClient {
      * identify any certificates linked to this `customer` object.  If any certificate applies to the transaction,
      * AvaTax will record the appropriate elements of the transaction as exempt and link it to the `certificate`.
      * 
+     * A nested object such as CustomFields could be specified and created along with the customer object. To fetch the
+     * nested object, please call 'GetCustomer' API with appropriate $include parameters.
+     *
      * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
      * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
      * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document 
@@ -3603,7 +3961,7 @@ public class AvaTaxClient {
     }
 
     /**
-     * List certificate attributes used by a company
+     * List the certificate exempt reasons defined by a company
      * 
      * List the certificate exempt reasons defined by a company.
      * 
@@ -3628,7 +3986,7 @@ public class AvaTaxClient {
     }
 
     /**
-     * List certificate attributes used by a company
+     * List the certificate exempt reasons defined by a company
      * 
      * List the certificate exempt reasons defined by a company.
      * 
@@ -3703,9 +4061,7 @@ public class AvaTaxClient {
     }
 
     /**
-     * Retrieve the full list of communications transactiontypes
-     * 
-     * Returns full list of communications transaction types which
+     * Retrieve the full list of communications service types
      * 
      * @param id The transaction type ID to examine
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
@@ -3725,9 +4081,7 @@ public class AvaTaxClient {
     }
 
     /**
-     * Retrieve the full list of communications transactiontypes
-     * 
-     * Returns full list of communications transaction types which
+     * Retrieve the full list of communications service types
      * 
      * @param id The transaction type ID to examine
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
@@ -7328,7 +7682,7 @@ public class AvaTaxClient {
      * @param month The month of the filing period.
      * @return FilingsCheckupModel
      */
-    public FilingsCheckupModel filingsCheckupReports(Integer companyId, Integer year, Integer month) throws Exception {
+    public FilingsCheckupModel filingsCheckupReports(Integer companyId, Short year, Byte month) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/checkup");
         path.applyField("companyId", companyId);
         path.applyField("year", year);
@@ -7344,7 +7698,7 @@ public class AvaTaxClient {
      * @param month The month of the filing period.
      * @return FilingsCheckupModel
      */
-    public Future<FilingsCheckupModel> filingsCheckupReportsAsync(Integer companyId, Integer year, Integer month) {
+    public Future<FilingsCheckupModel> filingsCheckupReportsAsync(Integer companyId, Short year, Byte month) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/checkup");
         path.applyField("companyId", companyId);
         path.applyField("year", year);
@@ -8003,7 +8357,7 @@ This gets the basic information from the filings and doesn't include anything ex
      * 
      * Call this API to obtain a free AvaTax sandbox account.
      * 
-     * This API is free to use.  No authentication credentials are required to call this API.
+     * This API is free to use.  No authentication credentials are required to call this API. You must read and accept Avalara's terms and conditions.
      * The account will grant a full trial version of AvaTax (e.g. AvaTaxPro) for a limited period of time.
      * After this introductory period, you may continue to use the free TaxRates API.
      * 
@@ -8026,7 +8380,7 @@ This gets the basic information from the filings and doesn't include anything ex
      * 
      * Call this API to obtain a free AvaTax sandbox account.
      * 
-     * This API is free to use.  No authentication credentials are required to call this API.
+     * This API is free to use.  No authentication credentials are required to call this API. You must read and accept Avalara's terms and conditions.
      * The account will grant a full trial version of AvaTax (e.g. AvaTaxPro) for a limited period of time.
      * After this introductory period, you may continue to use the free TaxRates API.
      * 
@@ -9865,6 +10219,64 @@ This gets the basic information from the filings and doesn't include anything ex
     }
 
     /**
+     * Creates nexus for a list of addresses.
+     * 
+     * This call is intended to simplify adding all applicable nexus to a company, for an address or addresses. Calling this 
+     * API declares nexus for this company, for the list of addresses provided,
+     * for the date range provided. You may also use this API to extend effective date on an already-declared nexus.
+     * 
+     * The concept of 'Nexus' indicates a place where your company has sufficient physical presence and is obligated
+     * to collect and remit transaction-based taxes.
+     * 
+     * When defining companies in AvaTax, you must declare nexus for your company in order to correctly calculate tax
+     * in all jurisdictions affected by your transactions.
+     * 
+     * Note that not all fields within a nexus can be updated; Avalara publishes a list of all defined nexus at the
+     * '/api/v2/definitions/nexus' endpoint.
+     * 
+     * You may only define nexus matching the official list of declared nexus.
+     * 
+     * 
+     * @param companyId The ID of the company that will own this nexus.
+     * @param model The nexus you wish to create.
+     * @return ArrayList<NexusByAddressModel>
+     */
+    public ArrayList<NexusByAddressModel> declareNexusByAddress(Integer companyId, ArrayList<DeclareNexusByAddressModel> model) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/nexus/byaddress");
+        path.applyField("companyId", companyId);
+        return ((RestCall<ArrayList<NexusByAddressModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<NexusByAddressModel>>(){})).call();
+    }
+
+    /**
+     * Creates nexus for a list of addresses.
+     * 
+     * This call is intended to simplify adding all applicable nexus to a company, for an address or addresses. Calling this 
+     * API declares nexus for this company, for the list of addresses provided,
+     * for the date range provided. You may also use this API to extend effective date on an already-declared nexus.
+     * 
+     * The concept of 'Nexus' indicates a place where your company has sufficient physical presence and is obligated
+     * to collect and remit transaction-based taxes.
+     * 
+     * When defining companies in AvaTax, you must declare nexus for your company in order to correctly calculate tax
+     * in all jurisdictions affected by your transactions.
+     * 
+     * Note that not all fields within a nexus can be updated; Avalara publishes a list of all defined nexus at the
+     * '/api/v2/definitions/nexus' endpoint.
+     * 
+     * You may only define nexus matching the official list of declared nexus.
+     * 
+     * 
+     * @param companyId The ID of the company that will own this nexus.
+     * @param model The nexus you wish to create.
+     * @return ArrayList<NexusByAddressModel>
+     */
+    public Future<ArrayList<NexusByAddressModel>> declareNexusByAddressAsync(Integer companyId, ArrayList<DeclareNexusByAddressModel> model) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/nexus/byaddress");
+        path.applyField("companyId", companyId);
+        return this.threadPool.submit((RestCall<ArrayList<NexusByAddressModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<NexusByAddressModel>>(){}));
+    }
+
+    /**
      * Delete a single nexus
      * 
      * Marks the existing nexus object at this URL as deleted.
@@ -11452,12 +11864,12 @@ This gets the basic information from the filings and doesn't include anything ex
      * 
      * @param companyId The unique ID number of the company to report on.
      * @param model Options that may be configured to customize the report.
-     * @return String
+     * @return ArrayList<ReportModel>
      */
-    public String initiateExportDocumentLineReport(Integer companyId, ExportDocumentLineModel model) throws Exception {
+    public ArrayList<ReportModel> initiateExportDocumentLineReport(Integer companyId, ExportDocumentLineModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/reports/exportdocumentline/initiate");
         path.applyField("companyId", companyId);
-        return ((RestCall<String>)restCallFactory.createRestCall("post", path, model, new TypeToken<String>(){})).call();
+        return ((RestCall<ArrayList<ReportModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<ReportModel>>(){})).call();
     }
 
     /**
@@ -11476,12 +11888,12 @@ This gets the basic information from the filings and doesn't include anything ex
      * 
      * @param companyId The unique ID number of the company to report on.
      * @param model Options that may be configured to customize the report.
-     * @return String
+     * @return ArrayList<ReportModel>
      */
-    public Future<String> initiateExportDocumentLineReportAsync(Integer companyId, ExportDocumentLineModel model) {
+    public Future<ArrayList<ReportModel>> initiateExportDocumentLineReportAsync(Integer companyId, ExportDocumentLineModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/reports/exportdocumentline/initiate");
         path.applyField("companyId", companyId);
-        return this.threadPool.submit((RestCall<String>)restCallFactory.createRestCall("post", path, model, new TypeToken<String>(){}));
+        return this.threadPool.submit((RestCall<ArrayList<ReportModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<ReportModel>>(){}));
     }
 
     /**
@@ -11530,11 +11942,14 @@ This gets the basic information from the filings and doesn't include anything ex
      * Create a new setting
      * 
      * Create one or more new setting objects attached to this company.
-     * A 'setting' is a piece of user-defined data that can be attached to a company, and it provides you the ability to store information
-     * not defined or managed by Avalara.
-     * You may create, update, and delete your own settings objects as required, and there is no mandatory data format for the 'name' and 
-     * 'value' data fields.
-     * To ensure correct operation of other programs or connectors, please create a new GUID for your application and use that value for
+     * 
+     * The company settings system is a metadata system that you can use to store extra information
+     * about a company.  Your integration or connector could use this data storage to keep track of
+     * preference information, reminders, or any other storage that would need to persist even if
+     * the customer uninstalls your application.
+     * 
+     * A setting can refer to any type of data you need to remember about this company object.
+     * When creating this object, you may define your own `set`, `name`, and `value` parameters.
      * 
      * @param companyId The ID of the company that owns this setting.
      * @param model The setting you wish to create.
@@ -11550,11 +11965,14 @@ This gets the basic information from the filings and doesn't include anything ex
      * Create a new setting
      * 
      * Create one or more new setting objects attached to this company.
-     * A 'setting' is a piece of user-defined data that can be attached to a company, and it provides you the ability to store information
-     * not defined or managed by Avalara.
-     * You may create, update, and delete your own settings objects as required, and there is no mandatory data format for the 'name' and 
-     * 'value' data fields.
-     * To ensure correct operation of other programs or connectors, please create a new GUID for your application and use that value for
+     * 
+     * The company settings system is a metadata system that you can use to store extra information
+     * about a company.  Your integration or connector could use this data storage to keep track of
+     * preference information, reminders, or any other storage that would need to persist even if
+     * the customer uninstalls your application.
+     * 
+     * A setting can refer to any type of data you need to remember about this company object.
+     * When creating this object, you may define your own `set`, `name`, and `value` parameters.
      * 
      * @param companyId The ID of the company that owns this setting.
      * @param model The setting you wish to create.
@@ -11569,6 +11987,16 @@ This gets the basic information from the filings and doesn't include anything ex
     /**
      * Delete a single setting
      * 
+     * Mark the setting object at this URL as deleted.
+     * 
+     * The company settings system is a metadata system that you can use to store extra information
+     * about a company.  Your integration or connector could use this data storage to keep track of
+     * preference information, reminders, or any other storage that would need to persist even if
+     * the customer uninstalls your application.
+     * 
+     * A setting can refer to any type of data you need to remember about this company object.
+     * When creating this object, you may define your own `set`, `name`, and `value` parameters.
+     * 
      * @param companyId The ID of the company that owns this setting.
      * @param id The ID of the setting you wish to delete.
      * @return ArrayList<ErrorDetail>
@@ -11582,6 +12010,16 @@ This gets the basic information from the filings and doesn't include anything ex
 
     /**
      * Delete a single setting
+     * 
+     * Mark the setting object at this URL as deleted.
+     * 
+     * The company settings system is a metadata system that you can use to store extra information
+     * about a company.  Your integration or connector could use this data storage to keep track of
+     * preference information, reminders, or any other storage that would need to persist even if
+     * the customer uninstalls your application.
+     * 
+     * A setting can refer to any type of data you need to remember about this company object.
+     * When creating this object, you may define your own `set`, `name`, and `value` parameters.
      * 
      * @param companyId The ID of the company that owns this setting.
      * @param id The ID of the setting you wish to delete.
@@ -11598,11 +12036,14 @@ This gets the basic information from the filings and doesn't include anything ex
      * Retrieve a single setting
      * 
      * Get a single setting object by its unique ID.
-     * A 'setting' is a piece of user-defined data that can be attached to a company, and it provides you the ability to store information
-     * not defined or managed by Avalara.
-     * You may create, update, and delete your own settings objects as required, and there is no mandatory data format for the 'name' and 
-     * 'value' data fields.
-     * To ensure correct operation of other programs or connectors, please create a new GUID for your application and use that value for
+     * 
+     * The company settings system is a metadata system that you can use to store extra information
+     * about a company.  Your integration or connector could use this data storage to keep track of
+     * preference information, reminders, or any other storage that would need to persist even if
+     * the customer uninstalls your application.
+     * 
+     * A setting can refer to any type of data you need to remember about this company object.
+     * When creating this object, you may define your own `set`, `name`, and `value` parameters.
      * 
      * @param companyId The ID of the company that owns this setting
      * @param id The primary key of this setting
@@ -11619,11 +12060,14 @@ This gets the basic information from the filings and doesn't include anything ex
      * Retrieve a single setting
      * 
      * Get a single setting object by its unique ID.
-     * A 'setting' is a piece of user-defined data that can be attached to a company, and it provides you the ability to store information
-     * not defined or managed by Avalara.
-     * You may create, update, and delete your own settings objects as required, and there is no mandatory data format for the 'name' and 
-     * 'value' data fields.
-     * To ensure correct operation of other programs or connectors, please create a new GUID for your application and use that value for
+     * 
+     * The company settings system is a metadata system that you can use to store extra information
+     * about a company.  Your integration or connector could use this data storage to keep track of
+     * preference information, reminders, or any other storage that would need to persist even if
+     * the customer uninstalls your application.
+     * 
+     * A setting can refer to any type of data you need to remember about this company object.
+     * When creating this object, you may define your own `set`, `name`, and `value` parameters.
      * 
      * @param companyId The ID of the company that owns this setting
      * @param id The primary key of this setting
@@ -11640,12 +12084,15 @@ This gets the basic information from the filings and doesn't include anything ex
      * Retrieve all settings for this company
      * 
      * List all setting objects attached to this company.
-     * A 'setting' is a piece of user-defined data that can be attached to a company, and it provides you the ability to store information
-     * not defined or managed by Avalara.
-     * You may create, update, and delete your own settings objects as required, and there is no mandatory data format for the 'name' and 
-     * 'value' data fields.
-     * To ensure correct operation of other programs or connectors, please create a new GUID for your application and use that value for
-     * the 'set' data field.
+     * 
+     * The company settings system is a metadata system that you can use to store extra information
+     * about a company.  Your integration or connector could use this data storage to keep track of
+     * preference information, reminders, or any other storage that would need to persist even if
+     * the customer uninstalls your application.
+     * 
+     * A setting can refer to any type of data you need to remember about this company object.
+     * When creating this object, you may define your own `set`, `name`, and `value` parameters.
+     * To define your own values, please choose a `set` name that begins with `X-` to indicate an extension.
      * 
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * 
@@ -11672,12 +12119,15 @@ This gets the basic information from the filings and doesn't include anything ex
      * Retrieve all settings for this company
      * 
      * List all setting objects attached to this company.
-     * A 'setting' is a piece of user-defined data that can be attached to a company, and it provides you the ability to store information
-     * not defined or managed by Avalara.
-     * You may create, update, and delete your own settings objects as required, and there is no mandatory data format for the 'name' and 
-     * 'value' data fields.
-     * To ensure correct operation of other programs or connectors, please create a new GUID for your application and use that value for
-     * the 'set' data field.
+     * 
+     * The company settings system is a metadata system that you can use to store extra information
+     * about a company.  Your integration or connector could use this data storage to keep track of
+     * preference information, reminders, or any other storage that would need to persist even if
+     * the customer uninstalls your application.
+     * 
+     * A setting can refer to any type of data you need to remember about this company object.
+     * When creating this object, you may define your own `set`, `name`, and `value` parameters.
+     * To define your own values, please choose a `set` name that begins with `X-` to indicate an extension.
      * 
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * 
@@ -11704,12 +12154,15 @@ This gets the basic information from the filings and doesn't include anything ex
      * Retrieve all settings
      * 
      * Get multiple setting objects across all companies.
-     * A 'setting' is a piece of user-defined data that can be attached to a company, and it provides you the ability to store information
-     * not defined or managed by Avalara.
-     * You may create, update, and delete your own settings objects as required, and there is no mandatory data format for the 'name' and 
-     * 'value' data fields.
-     * To ensure correct operation of other programs or connectors, please create a new GUID for your application and use that value for
-     * the 'set' data field.
+     * 
+     * The company settings system is a metadata system that you can use to store extra information
+     * about a company.  Your integration or connector could use this data storage to keep track of
+     * preference information, reminders, or any other storage that would need to persist even if
+     * the customer uninstalls your application.
+     * 
+     * A setting can refer to any type of data you need to remember about this company object.
+     * When creating this object, you may define your own `set`, `name`, and `value` parameters.
+     * To define your own values, please choose a `set` name that begins with `X-` to indicate an extension.
      * 
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * 
@@ -11734,12 +12187,15 @@ This gets the basic information from the filings and doesn't include anything ex
      * Retrieve all settings
      * 
      * Get multiple setting objects across all companies.
-     * A 'setting' is a piece of user-defined data that can be attached to a company, and it provides you the ability to store information
-     * not defined or managed by Avalara.
-     * You may create, update, and delete your own settings objects as required, and there is no mandatory data format for the 'name' and 
-     * 'value' data fields.
-     * To ensure correct operation of other programs or connectors, please create a new GUID for your application and use that value for
-     * the 'set' data field.
+     * 
+     * The company settings system is a metadata system that you can use to store extra information
+     * about a company.  Your integration or connector could use this data storage to keep track of
+     * preference information, reminders, or any other storage that would need to persist even if
+     * the customer uninstalls your application.
+     * 
+     * A setting can refer to any type of data you need to remember about this company object.
+     * When creating this object, you may define your own `set`, `name`, and `value` parameters.
+     * To define your own values, please choose a `set` name that begins with `X-` to indicate an extension.
      * 
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * 
@@ -11764,13 +12220,18 @@ This gets the basic information from the filings and doesn't include anything ex
      * Update a single setting
      * 
      * Replace the existing setting object at this URL with an updated object.
-     * A 'setting' is a piece of user-defined data that can be attached to a company, and it provides you the ability to store information
-     * not defined or managed by Avalara.
-     * You may create, update, and delete your own settings objects as required, and there is no mandatory data format for the 'name' and 
-     * 'value' data fields.
-     * To ensure correct operation of other programs or connectors, please create a new GUID for your application and use that value for
-     * the 'set' data field.
-     * All data from the existing object will be replaced with data in the object you PUT.  
+     * 
+     * The company settings system is a metadata system that you can use to store extra information
+     * about a company.  Your integration or connector could use this data storage to keep track of
+     * preference information, reminders, or any other storage that would need to persist even if
+     * the customer uninstalls your application.
+     * 
+     * A setting can refer to any type of data you need to remember about this company object.
+     * When creating this object, you may define your own `set`, `name`, and `value` parameters.
+     * To define your own values, please choose a `set` name that begins with `X-` to indicate an extension.
+     *             
+     * All data from the existing object will be replaced with data in the object you `PUT`.  
+     * 
      * 
      * @param companyId The ID of the company that this setting belongs to.
      * @param id The ID of the setting you wish to update
@@ -11788,13 +12249,18 @@ This gets the basic information from the filings and doesn't include anything ex
      * Update a single setting
      * 
      * Replace the existing setting object at this URL with an updated object.
-     * A 'setting' is a piece of user-defined data that can be attached to a company, and it provides you the ability to store information
-     * not defined or managed by Avalara.
-     * You may create, update, and delete your own settings objects as required, and there is no mandatory data format for the 'name' and 
-     * 'value' data fields.
-     * To ensure correct operation of other programs or connectors, please create a new GUID for your application and use that value for
-     * the 'set' data field.
-     * All data from the existing object will be replaced with data in the object you PUT.  
+     * 
+     * The company settings system is a metadata system that you can use to store extra information
+     * about a company.  Your integration or connector could use this data storage to keep track of
+     * preference information, reminders, or any other storage that would need to persist even if
+     * the customer uninstalls your application.
+     * 
+     * A setting can refer to any type of data you need to remember about this company object.
+     * When creating this object, you may define your own `set`, `name`, and `value` parameters.
+     * To define your own values, please choose a `set` name that begins with `X-` to indicate an extension.
+     *             
+     * All data from the existing object will be replaced with data in the object you `PUT`.  
+     * 
      * 
      * @param companyId The ID of the company that this setting belongs to.
      * @param id The ID of the setting you wish to update
@@ -12343,11 +12809,13 @@ This gets the basic information from the filings and doesn't include anything ex
      * 
      * 
      * @param date The date for which point-of-sale data would be calculated (today by default). Example input: 2016-12-31
+     * @param region If the region is provided, this API is going to generate the tax rate per zipcode for only the region specified.
      * @return String
      */
-    public String downloadTaxRatesByZipCode(Date date) throws Exception {
+    public String downloadTaxRatesByZipCode(Date date, String region) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/taxratesbyzipcode/download/{date}");
         path.applyField("date", date);
+        path.addQuery("region", region);
         return ((RestCall<String>)restCallFactory.createRestCall("get", path, null, new TypeToken<String>(){})).call();
     }
 
@@ -12372,11 +12840,13 @@ This gets the basic information from the filings and doesn't include anything ex
      * 
      * 
      * @param date The date for which point-of-sale data would be calculated (today by default). Example input: 2016-12-31
+     * @param region If the region is provided, this API is going to generate the tax rate per zipcode for only the region specified.
      * @return String
      */
-    public Future<String> downloadTaxRatesByZipCodeAsync(Date date) {
+    public Future<String> downloadTaxRatesByZipCodeAsync(Date date, String region) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/taxratesbyzipcode/download/{date}");
         path.applyField("date", date);
+        path.addQuery("region", region);
         return this.threadPool.submit((RestCall<String>)restCallFactory.createRestCall("get", path, null, new TypeToken<String>(){}));
     }
 
@@ -13732,6 +14202,46 @@ This gets the basic information from the filings and doesn't include anything ex
         path.applyField("transactionCode", transactionCode);
         path.addQuery("documentType", documentType);
         return this.threadPool.submit((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<TransactionModel>(){}));
+    }
+
+    /**
+     * Uncommit a transaction for reporting
+     * 
+     * Adjusts a transaction by changing it to an uncommitted status.
+     * 
+     * Transactions that have been previously reported to a tax authority by Avalara Managed Returns are considered `locked` and are 
+     * 
+     * @param companyCode The company code of the company that recorded this transaction
+     * @param transactionCode The transaction code to commit
+     * @param documentType (Optional): The document type of the transaction to commit. If not provided, the default is SalesInvoice. (See DocumentType::* for a list of allowable values)
+     * @return TransactionModel
+     */
+    public TransactionModel uncommitTransaction(String companyCode, String transactionCode, DocumentType documentType) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyCode}/transactions/{transactionCode}/uncommit");
+        path.applyField("companyCode", companyCode);
+        path.applyField("transactionCode", transactionCode);
+        path.addQuery("documentType", documentType);
+        return ((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, null, new TypeToken<TransactionModel>(){})).call();
+    }
+
+    /**
+     * Uncommit a transaction for reporting
+     * 
+     * Adjusts a transaction by changing it to an uncommitted status.
+     * 
+     * Transactions that have been previously reported to a tax authority by Avalara Managed Returns are considered `locked` and are 
+     * 
+     * @param companyCode The company code of the company that recorded this transaction
+     * @param transactionCode The transaction code to commit
+     * @param documentType (Optional): The document type of the transaction to commit. If not provided, the default is SalesInvoice. (See DocumentType::* for a list of allowable values)
+     * @return TransactionModel
+     */
+    public Future<TransactionModel> uncommitTransactionAsync(String companyCode, String transactionCode, DocumentType documentType) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyCode}/transactions/{transactionCode}/uncommit");
+        path.applyField("companyCode", companyCode);
+        path.applyField("transactionCode", transactionCode);
+        path.addQuery("documentType", documentType);
+        return this.threadPool.submit((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, null, new TypeToken<TransactionModel>(){}));
     }
 
     /**
