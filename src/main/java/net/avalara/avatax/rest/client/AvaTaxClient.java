@@ -2087,48 +2087,6 @@ public class AvaTaxClient {
     }
 
     /**
-     * Request setup of exemption certificates for this company.
-     * 
-     * Requests the setup of exemption certificates for this company.
-     * 
-     * Exemption certificates are tracked through a different auditable data store than the one that 
-     * holds AvaTax transactions.  To use the AvaTax exemption certificate document store, please call
-     * `GetCertificateSetup` to see if your company is configured to use the exemption certificate
-     * document store.  To request setup, please call `RequestCertificateSetup` and your company will
-     * be configured with data storage in the auditable certificate system.
-     * 
-     * 
-     * @param companyId 
-     * @return ProvisionStatusModel
-     */
-    public ProvisionStatusModel requestCertificateSetup(Integer companyId) throws Exception {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/certificates/setup");
-        path.applyField("companyId", companyId);
-        return ((RestCall<ProvisionStatusModel>)restCallFactory.createRestCall("post", path, null, new TypeToken<ProvisionStatusModel>(){})).call();
-    }
-
-    /**
-     * Request setup of exemption certificates for this company.
-     * 
-     * Requests the setup of exemption certificates for this company.
-     * 
-     * Exemption certificates are tracked through a different auditable data store than the one that 
-     * holds AvaTax transactions.  To use the AvaTax exemption certificate document store, please call
-     * `GetCertificateSetup` to see if your company is configured to use the exemption certificate
-     * document store.  To request setup, please call `RequestCertificateSetup` and your company will
-     * be configured with data storage in the auditable certificate system.
-     * 
-     * 
-     * @param companyId 
-     * @return ProvisionStatusModel
-     */
-    public Future<ProvisionStatusModel> requestCertificateSetupAsync(Integer companyId) {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/certificates/setup");
-        path.applyField("companyId", companyId);
-        return this.threadPool.submit((RestCall<ProvisionStatusModel>)restCallFactory.createRestCall("post", path, null, new TypeToken<ProvisionStatusModel>(){}));
-    }
-
-    /**
      * Unlink attributes from a certificate
      * 
      * Unlink one or many attributes from a certificate.
