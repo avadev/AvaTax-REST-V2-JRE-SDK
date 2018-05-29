@@ -865,6 +865,27 @@ public class FilingCalendarModel {
     }
 
 
+    private BigDecimal fixedPrepaymentAmount;
+
+    /**
+     * Getter for fixedPrepaymentAmount
+     *
+     * If your company is required to make a prepayment that is designated by a fixed amount each period, please specify the amount here.
+     */
+    public BigDecimal getFixedPrepaymentAmount() {
+        return this.fixedPrepaymentAmount;
+    }
+
+    /**
+     * Setter for fixedPrepaymentAmount
+     *
+     * If your company is required to make a prepayment that is designated by a fixed amount each period, please specify the amount here.
+     */
+    public void setFixedPrepaymentAmount(BigDecimal value) {
+        this.fixedPrepaymentAmount = value;
+    }
+
+
     private MatchingTaxType taxTypeId;
 
     /**

@@ -1252,6 +1252,27 @@ public class TransactionModel {
     }
 
 
+    private ArrayList<InvoiceMessageModel> invoiceMessages;
+
+    /**
+     * Getter for invoiceMessages
+     *
+     * Invoice messages associated with this document. Currently, this stores legally-required VAT messages.
+     */
+    public ArrayList<InvoiceMessageModel> getInvoiceMessages() {
+        return this.invoiceMessages;
+    }
+
+    /**
+     * Setter for invoiceMessages
+     *
+     * Invoice messages associated with this document. Currently, this stores legally-required VAT messages.
+     */
+    public void setInvoiceMessages(ArrayList<InvoiceMessageModel> value) {
+        this.invoiceMessages = value;
+    }
+
+
     /**
      * Returns a JSON string representation of TransactionModel
      */
