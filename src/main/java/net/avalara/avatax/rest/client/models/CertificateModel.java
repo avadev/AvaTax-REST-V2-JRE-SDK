@@ -254,7 +254,10 @@ public class CertificateModel {
     /**
      * Getter for exemptionReason
      *
-     * The exemption reason associated with this certificate.
+     * The exemption reason associated with this certificate. For example, the reason code for exemption
+    * for purposes of resale is `RESALE`.
+    *  
+    * For a list of exemption reasons, call `ListCertificateExemptReasons`.
      */
     public ExemptionReasonModel getExemptionReason() {
         return this.exemptionReason;
@@ -263,7 +266,10 @@ public class CertificateModel {
     /**
      * Setter for exemptionReason
      *
-     * The exemption reason associated with this certificate.
+     * The exemption reason associated with this certificate. For example, the reason code for exemption
+    * for purposes of resale is `RESALE`.
+    *  
+    * For a list of exemption reasons, call `ListCertificateExemptReasons`.
      */
     public void setExemptionReason(ExemptionReasonModel value) {
         this.exemptionReason = value;

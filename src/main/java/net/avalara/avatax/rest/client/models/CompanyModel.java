@@ -577,7 +577,10 @@ public class CompanyModel {
     /**
      * Getter for contacts
      *
-     * Optional: A list of contacts defined for this company. To fetch this list, add the query string "?$include=Contacts" to your URL.
+     * Optional: A list of contacts defined for this company. To fetch this list, add the query string `?$include=Contacts` to your URL.
+    * 
+    * When calling `CreateCompany`, you may provide a list of objects in this element and they will be created alongside the company.
+    * The `UpdateCompany` API does not permit updating nested objects.
      */
     public ArrayList<ContactModel> getContacts() {
         return this.contacts;
@@ -586,7 +589,10 @@ public class CompanyModel {
     /**
      * Setter for contacts
      *
-     * Optional: A list of contacts defined for this company. To fetch this list, add the query string "?$include=Contacts" to your URL.
+     * Optional: A list of contacts defined for this company. To fetch this list, add the query string `?$include=Contacts` to your URL.
+    * 
+    * When calling `CreateCompany`, you may provide a list of objects in this element and they will be created alongside the company.
+    * The `UpdateCompany` API does not permit updating nested objects.
      */
     public void setContacts(ArrayList<ContactModel> value) {
         this.contacts = value;
@@ -598,7 +604,10 @@ public class CompanyModel {
     /**
      * Getter for items
      *
-     * Optional: A list of items defined for this company. To fetch this list, add the query string "?$include=Items" to your URL.
+     * Optional: A list of items defined for this company. To fetch this list, add the query string `?$include=Items` to your URL.
+    * 
+    * When calling `CreateCompany`, you may provide a list of objects in this element and they will be created alongside the company.
+    * The `UpdateCompany` API does not permit updating nested objects.
      */
     public ArrayList<ItemModel> getItems() {
         return this.items;
@@ -607,7 +616,10 @@ public class CompanyModel {
     /**
      * Setter for items
      *
-     * Optional: A list of items defined for this company. To fetch this list, add the query string "?$include=Items" to your URL.
+     * Optional: A list of items defined for this company. To fetch this list, add the query string `?$include=Items` to your URL.
+    * 
+    * When calling `CreateCompany`, you may provide a list of objects in this element and they will be created alongside the company.
+    * The `UpdateCompany` API does not permit updating nested objects.
      */
     public void setItems(ArrayList<ItemModel> value) {
         this.items = value;
@@ -619,7 +631,10 @@ public class CompanyModel {
     /**
      * Getter for locations
      *
-     * Optional: A list of locations defined for this company. To fetch this list, add the query string "?$include=Locations" to your URL.
+     * Optional: A list of locations defined for this company. To fetch this list, add the query string `?$include=Locations` to your URL.
+    * 
+    * When calling `CreateCompany`, you may provide a list of objects in this element and they will be created alongside the company.
+    * The `UpdateCompany` API does not permit updating nested objects.
      */
     public ArrayList<LocationModel> getLocations() {
         return this.locations;
@@ -628,7 +643,10 @@ public class CompanyModel {
     /**
      * Setter for locations
      *
-     * Optional: A list of locations defined for this company. To fetch this list, add the query string "?$include=Locations" to your URL.
+     * Optional: A list of locations defined for this company. To fetch this list, add the query string `?$include=Locations` to your URL.
+    * 
+    * When calling `CreateCompany`, you may provide a list of objects in this element and they will be created alongside the company.
+    * The `UpdateCompany` API does not permit updating nested objects.
      */
     public void setLocations(ArrayList<LocationModel> value) {
         this.locations = value;
@@ -640,7 +658,10 @@ public class CompanyModel {
     /**
      * Getter for nexus
      *
-     * Optional: A list of nexus defined for this company. To fetch this list, add the query string "?$include=Nexus" to your URL.
+     * Optional: A list of nexus defined for this company. To fetch this list, add the query string `?$include=Nexus` to your URL.
+    * 
+    * When calling `CreateCompany`, you may provide a list of objects in this element and they will be created alongside the company.
+    * The `UpdateCompany` API does not permit updating nested objects.
      */
     public ArrayList<NexusModel> getNexus() {
         return this.nexus;
@@ -649,7 +670,10 @@ public class CompanyModel {
     /**
      * Setter for nexus
      *
-     * Optional: A list of nexus defined for this company. To fetch this list, add the query string "?$include=Nexus" to your URL.
+     * Optional: A list of nexus defined for this company. To fetch this list, add the query string `?$include=Nexus` to your URL.
+    * 
+    * When calling `CreateCompany`, you may provide a list of objects in this element and they will be created alongside the company.
+    * The `UpdateCompany` API does not permit updating nested objects.
      */
     public void setNexus(ArrayList<NexusModel> value) {
         this.nexus = value;
@@ -661,7 +685,10 @@ public class CompanyModel {
     /**
      * Getter for settings
      *
-     * Optional: A list of settings defined for this company. To fetch this list, add the query string "?$include=Settings" to your URL.
+     * Optional: A list of settings defined for this company. To fetch this list, add the query string `?$include=Settings` to your URL.
+    * 
+    * When calling `CreateCompany`, you may provide a list of objects in this element and they will be created alongside the company.
+    * The `UpdateCompany` API does not permit updating nested objects.
      */
     public ArrayList<SettingModel> getSettings() {
         return this.settings;
@@ -670,7 +697,10 @@ public class CompanyModel {
     /**
      * Setter for settings
      *
-     * Optional: A list of settings defined for this company. To fetch this list, add the query string "?$include=Settings" to your URL.
+     * Optional: A list of settings defined for this company. To fetch this list, add the query string `?$include=Settings` to your URL.
+    * 
+    * When calling `CreateCompany`, you may provide a list of objects in this element and they will be created alongside the company.
+    * The `UpdateCompany` API does not permit updating nested objects.
      */
     public void setSettings(ArrayList<SettingModel> value) {
         this.settings = value;
@@ -682,7 +712,10 @@ public class CompanyModel {
     /**
      * Getter for taxCodes
      *
-     * Optional: A list of tax codes defined for this company. To fetch this list, add the query string "?$include=TaxCodes" to your URL.
+     * Optional: A list of tax codes defined for this company. To fetch this list, add the query string `?$include=TaxCodes` to your URL.
+    * 
+    * When calling `CreateCompany`, you may provide a list of objects in this element and they will be created alongside the company.
+    * The `UpdateCompany` API does not permit updating nested objects.
      */
     public ArrayList<TaxCodeModel> getTaxCodes() {
         return this.taxCodes;
@@ -691,7 +724,10 @@ public class CompanyModel {
     /**
      * Setter for taxCodes
      *
-     * Optional: A list of tax codes defined for this company. To fetch this list, add the query string "?$include=TaxCodes" to your URL.
+     * Optional: A list of tax codes defined for this company. To fetch this list, add the query string `?$include=TaxCodes` to your URL.
+    * 
+    * When calling `CreateCompany`, you may provide a list of objects in this element and they will be created alongside the company.
+    * The `UpdateCompany` API does not permit updating nested objects.
      */
     public void setTaxCodes(ArrayList<TaxCodeModel> value) {
         this.taxCodes = value;
@@ -703,7 +739,10 @@ public class CompanyModel {
     /**
      * Getter for taxRules
      *
-     * Optional: A list of tax rules defined for this company. To fetch this list, add the query string "?$include=TaxRules" to your URL.
+     * Optional: A list of tax rules defined for this company. To fetch this list, add the query string `?$include=TaxRules` to your URL.
+    * 
+    * When calling `CreateCompany`, you may provide a list of objects in this element and they will be created alongside the company.
+    * The `UpdateCompany` API does not permit updating nested objects.
      */
     public ArrayList<TaxRuleModel> getTaxRules() {
         return this.taxRules;
@@ -712,7 +751,10 @@ public class CompanyModel {
     /**
      * Setter for taxRules
      *
-     * Optional: A list of tax rules defined for this company. To fetch this list, add the query string "?$include=TaxRules" to your URL.
+     * Optional: A list of tax rules defined for this company. To fetch this list, add the query string `?$include=TaxRules` to your URL.
+    * 
+    * When calling `CreateCompany`, you may provide a list of objects in this element and they will be created alongside the company.
+    * The `UpdateCompany` API does not permit updating nested objects.
      */
     public void setTaxRules(ArrayList<TaxRuleModel> value) {
         this.taxRules = value;
@@ -724,7 +766,10 @@ public class CompanyModel {
     /**
      * Getter for upcs
      *
-     * Optional: A list of UPCs defined for this company. To fetch this list, add the query string "?$include=UPCs" to your URL.
+     * Optional: A list of UPCs defined for this company. To fetch this list, add the query string `?$include=UPCs` to your URL.
+    * 
+    * When calling `CreateCompany`, you may provide a list of objects in this element and they will be created alongside the company.
+    * The `UpdateCompany` API does not permit updating nested objects.
      */
     public ArrayList<UPCModel> getUpcs() {
         return this.upcs;
@@ -733,7 +778,10 @@ public class CompanyModel {
     /**
      * Setter for upcs
      *
-     * Optional: A list of UPCs defined for this company. To fetch this list, add the query string "?$include=UPCs" to your URL.
+     * Optional: A list of UPCs defined for this company. To fetch this list, add the query string `?$include=UPCs` to your URL.
+    * 
+    * When calling `CreateCompany`, you may provide a list of objects in this element and they will be created alongside the company.
+    * The `UpdateCompany` API does not permit updating nested objects.
      */
     public void setUpcs(ArrayList<UPCModel> value) {
         this.upcs = value;

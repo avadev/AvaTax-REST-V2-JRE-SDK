@@ -949,16 +949,6 @@ public enum ErrorCodeId {
     OverlappingFilingCalendar,
 
     /** 
-     * Location error codes
-     */
-    QuestionNotNeededForThisAddress,
-
-    /** 
-     * 
-     */
-    QuestionNotValidForThisAddress,
-
-    /** 
      * Create or update transaction error codes
      */
     CannotModifyLockedTransaction,
@@ -1062,6 +1052,11 @@ public enum ErrorCodeId {
      * 
      */
     AccountNotProvisioned,
+
+    /** 
+     * 
+     */
+    InvalidRequestContentType,
 
     /** 
      * Multi document error codes
@@ -1211,7 +1206,17 @@ public enum ErrorCodeId {
     /** 
      * 
      */
+    AdvancedRuleNotApproved,
+
+    /** 
+     * 
+     */
     InvalidDocumentStatusToAddOrDeleteLines,
+
+    /** 
+     * SendSales API errors
+     */
+    UnsupportedFileFormat,
 
 }
     

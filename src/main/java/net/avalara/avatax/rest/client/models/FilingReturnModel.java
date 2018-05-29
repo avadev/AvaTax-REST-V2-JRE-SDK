@@ -806,6 +806,27 @@ public class FilingReturnModel {
     }
 
 
+    private BigDecimal taxableAccrualAmount;
+
+    /**
+     * Getter for taxableAccrualAmount
+     *
+     * The total amount of taxable sales accrued in the current active period
+     */
+    public BigDecimal getTaxableAccrualAmount() {
+        return this.taxableAccrualAmount;
+    }
+
+    /**
+     * Setter for taxableAccrualAmount
+     *
+     * The total amount of taxable sales accrued in the current active period
+     */
+    public void setTaxableAccrualAmount(BigDecimal value) {
+        this.taxableAccrualAmount = value;
+    }
+
+
     private BigDecimal salesTaxAccrualAmount;
 
     /**

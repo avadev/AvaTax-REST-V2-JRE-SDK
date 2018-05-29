@@ -92,6 +92,27 @@ public class LoginVerificationInputModel {
     }
 
 
+    private String taxFormCode;
+
+    /**
+     * Getter for taxFormCode
+     *
+     * TaxFormCode for the verification request
+     */
+    public String getTaxFormCode() {
+        return this.taxFormCode;
+    }
+
+    /**
+     * Setter for taxFormCode
+     *
+     * TaxFormCode for the verification request
+     */
+    public void setTaxFormCode(String value) {
+        this.taxFormCode = value;
+    }
+
+
     private String username;
 
     /**

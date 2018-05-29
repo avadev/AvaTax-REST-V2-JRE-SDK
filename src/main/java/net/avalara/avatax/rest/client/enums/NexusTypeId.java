@@ -25,15 +25,11 @@ public enum NexusTypeId {
 
     /** 
      * Indicates the entity is voluntarily collecting tax (default)
-     *  
-     *  This has replaced Collect
      */
     SalesOrSellersUseTax,
 
     /** 
      * Indicates the entity is required to collect tax in the state
-     *  
-     *  This has replaced Legal
      */
     SalesTax,
 
