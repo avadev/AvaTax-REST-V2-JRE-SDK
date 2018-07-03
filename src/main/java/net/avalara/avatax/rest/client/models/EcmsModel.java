@@ -34,7 +34,7 @@ public class EcmsModel {
     /**
      * Getter for exemptCertId
      *
-     * Exempt certificate ID
+     * The calc_id associated with a certificate in CertCapture.
      */
     public Integer getExemptCertId() {
         return this.exemptCertId;
@@ -43,7 +43,7 @@ public class EcmsModel {
     /**
      * Setter for exemptCertId
      *
-     * Exempt certificate ID
+     * The calc_id associated with a certificate in CertCapture.
      */
     public void setExemptCertId(Integer value) {
         this.exemptCertId = value;
@@ -295,7 +295,7 @@ public class EcmsModel {
     /**
      * Getter for exemptCertTypeId
      *
-     * Exempt cert type
+     * The type of exemption certificate. Permitted values are: Blanket and Single.
      */
     public ExemptCertTypeId getExemptCertTypeId() {
         return this.exemptCertTypeId;
@@ -304,7 +304,7 @@ public class EcmsModel {
     /**
      * Setter for exemptCertTypeId
      *
-     * Exempt cert type
+     * The type of exemption certificate. Permitted values are: Blanket and Single.
      */
     public void setExemptCertTypeId(ExemptCertTypeId value) {
         this.exemptCertTypeId = value;
@@ -316,7 +316,7 @@ public class EcmsModel {
     /**
      * Getter for documentRefNo
      *
-     * Document Reference Number
+     * Document Reference Number, in the case of single-use exemption certificates, the DocumentCode or PurchaseOrderNo to which the certificate should apply.
      */
     public String getDocumentRefNo() {
         return this.documentRefNo;
@@ -325,7 +325,7 @@ public class EcmsModel {
     /**
      * Setter for documentRefNo
      *
-     * Document Reference Number
+     * Document Reference Number, in the case of single-use exemption certificates, the DocumentCode or PurchaseOrderNo to which the certificate should apply.
      */
     public void setDocumentRefNo(String value) {
         this.documentRefNo = value;
@@ -337,7 +337,7 @@ public class EcmsModel {
     /**
      * Getter for businessTypeId
      *
-     * Business type
+     * Business type the customer belongs to.
      */
     public Byte getBusinessTypeId() {
         return this.businessTypeId;
@@ -346,7 +346,7 @@ public class EcmsModel {
     /**
      * Setter for businessTypeId
      *
-     * Business type
+     * Business type the customer belongs to.
      */
     public void setBusinessTypeId(Byte value) {
         this.businessTypeId = value;
@@ -379,7 +379,8 @@ public class EcmsModel {
     /**
      * Getter for exemptReasonId
      *
-     * Exempt reason ID
+     * Exempt reason associated with the certificate, coded by CustomerUsageType.
+    * Example: A - Federal Government.
      */
     public String getExemptReasonId() {
         return this.exemptReasonId;
@@ -388,7 +389,8 @@ public class EcmsModel {
     /**
      * Setter for exemptReasonId
      *
-     * Exempt reason ID
+     * Exempt reason associated with the certificate, coded by CustomerUsageType.
+    * Example: A - Federal Government.
      */
     public void setExemptReasonId(String value) {
         this.exemptReasonId = value;
@@ -400,7 +402,7 @@ public class EcmsModel {
     /**
      * Getter for exemptReasonOtherDescription
      *
-     * Other description for exempt reason
+     * Other description for exempt reason i.e. Populated on if exemptReasonId is 'L' - Other.
      */
     public String getExemptReasonOtherDescription() {
         return this.exemptReasonOtherDescription;
@@ -409,7 +411,7 @@ public class EcmsModel {
     /**
      * Setter for exemptReasonOtherDescription
      *
-     * Other description for exempt reason
+     * Other description for exempt reason i.e. Populated on if exemptReasonId is 'L' - Other.
      */
     public void setExemptReasonOtherDescription(String value) {
         this.exemptReasonOtherDescription = value;
@@ -651,7 +653,8 @@ public class EcmsModel {
     /**
      * Getter for avaCertId
      *
-     * Certificate ID for AvaTax?
+     * If the certificate record was synced from an AvaTax Certs account(as opposed to being entered in ECMS directly), 
+    * the unique AvaTax Certs identifier for the certificate record. Usually same as the Id of a Certificate.
      */
     public String getAvaCertId() {
         return this.avaCertId;
@@ -660,7 +663,8 @@ public class EcmsModel {
     /**
      * Setter for avaCertId
      *
-     * Certificate ID for AvaTax?
+     * If the certificate record was synced from an AvaTax Certs account(as opposed to being entered in ECMS directly), 
+    * the unique AvaTax Certs identifier for the certificate record. Usually same as the Id of a Certificate.
      */
     public void setAvaCertId(String value) {
         this.avaCertId = value;

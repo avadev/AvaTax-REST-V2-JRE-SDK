@@ -299,6 +299,70 @@ public class AvaTaxClient {
     }
 
     /**
+     * Retrieve all accounts
+     * 
+     * List all account objects that can be seen by the current user.
+     * 
+     * This API lists all accounts you are allowed to see.  In general, most users will only be able to see their own account.
+     * 
+     * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * Paginate your results using the `$top`, `$skip`, and `$orderby` parameters.
+     * You may specify one or more of the following values in the `$include` parameter to fetch additional nested data, using commas to separate multiple values:
+     *             
+     * * Subscriptions
+     * * Users
+     *             
+     * 
+     * @param include A comma separated list of objects to fetch underneath this account. Any object with a URL path underneath this account can be fetched by specifying its name.
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
+     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @return FetchResult<AccountModel>
+     */
+    public FetchResult<AccountModel> queryAccounts(String include, String filter, Integer top, Integer skip, String orderBy) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/accounts");
+        path.addQuery("$include", include);
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
+        return ((RestCall<FetchResult<AccountModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<AccountModel>>(){})).call();
+    }
+
+    /**
+     * Retrieve all accounts
+     * 
+     * List all account objects that can be seen by the current user.
+     * 
+     * This API lists all accounts you are allowed to see.  In general, most users will only be able to see their own account.
+     * 
+     * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * Paginate your results using the `$top`, `$skip`, and `$orderby` parameters.
+     * You may specify one or more of the following values in the `$include` parameter to fetch additional nested data, using commas to separate multiple values:
+     *             
+     * * Subscriptions
+     * * Users
+     *             
+     * 
+     * @param include A comma separated list of objects to fetch underneath this account. Any object with a URL path underneath this account can be fetched by specifying its name.
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
+     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @return FetchResult<AccountModel>
+     */
+    public Future<FetchResult<AccountModel>> queryAccountsAsync(String include, String filter, Integer top, Integer skip, String orderBy) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/accounts");
+        path.addQuery("$include", include);
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
+        return this.threadPool.submit((RestCall<FetchResult<AccountModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<AccountModel>>(){}));
+    }
+
+    /**
      * Change configuration settings for this account
      * 
      * Update configuration settings tied to this account.
@@ -630,6 +694,74 @@ public class AvaTaxClient {
         path.applyField("accountId", accountId);
         path.applyField("csvTableName", csvTableName);
         return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){}));
+    }
+
+    /**
+     * Disable an advanced rule so that it cannot be run.
+     * 
+     * This API is available by invite only and implementation support is required. 
+     * Please contact your Customer Account Manager if you are interested in using 
+     * 
+     * @param accountId 
+     * @param scriptType The script transform type: Request or Response. (See AdvancedRuleScriptType::* for a list of allowable values)
+     * @return AdvancedRuleScriptModel
+     */
+    public AdvancedRuleScriptModel disableAdvancedRuleScript(Integer accountId, AdvancedRuleScriptType scriptType) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/advancedrulescripts/{scriptType}/disable");
+        path.applyField("accountId", accountId);
+        path.applyField("scriptType", scriptType);
+        return ((RestCall<AdvancedRuleScriptModel>)restCallFactory.createRestCall("post", path, null, new TypeToken<AdvancedRuleScriptModel>(){})).call();
+    }
+
+    /**
+     * Disable an advanced rule so that it cannot be run.
+     * 
+     * This API is available by invite only and implementation support is required. 
+     * Please contact your Customer Account Manager if you are interested in using 
+     * 
+     * @param accountId 
+     * @param scriptType The script transform type: Request or Response. (See AdvancedRuleScriptType::* for a list of allowable values)
+     * @return AdvancedRuleScriptModel
+     */
+    public Future<AdvancedRuleScriptModel> disableAdvancedRuleScriptAsync(Integer accountId, AdvancedRuleScriptType scriptType) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/advancedrulescripts/{scriptType}/disable");
+        path.applyField("accountId", accountId);
+        path.applyField("scriptType", scriptType);
+        return this.threadPool.submit((RestCall<AdvancedRuleScriptModel>)restCallFactory.createRestCall("post", path, null, new TypeToken<AdvancedRuleScriptModel>(){}));
+    }
+
+    /**
+     * Enable an approved advanced rule so that it can be run.
+     * 
+     * This API is available by invite only and implementation support is required. 
+     * Please contact your Customer Account Manager if you are interested in using 
+     * 
+     * @param accountId 
+     * @param scriptType The script transform type: Request or Response. (See AdvancedRuleScriptType::* for a list of allowable values)
+     * @return AdvancedRuleScriptModel
+     */
+    public AdvancedRuleScriptModel enableAdvancedRuleScript(Integer accountId, AdvancedRuleScriptType scriptType) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/advancedrulescripts/{scriptType}/enable");
+        path.applyField("accountId", accountId);
+        path.applyField("scriptType", scriptType);
+        return ((RestCall<AdvancedRuleScriptModel>)restCallFactory.createRestCall("post", path, null, new TypeToken<AdvancedRuleScriptModel>(){})).call();
+    }
+
+    /**
+     * Enable an approved advanced rule so that it can be run.
+     * 
+     * This API is available by invite only and implementation support is required. 
+     * Please contact your Customer Account Manager if you are interested in using 
+     * 
+     * @param accountId 
+     * @param scriptType The script transform type: Request or Response. (See AdvancedRuleScriptType::* for a list of allowable values)
+     * @return AdvancedRuleScriptModel
+     */
+    public Future<AdvancedRuleScriptModel> enableAdvancedRuleScriptAsync(Integer accountId, AdvancedRuleScriptType scriptType) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/advancedrulescripts/{scriptType}/enable");
+        path.applyField("accountId", accountId);
+        path.applyField("scriptType", scriptType);
+        return this.threadPool.submit((RestCall<AdvancedRuleScriptModel>)restCallFactory.createRestCall("post", path, null, new TypeToken<AdvancedRuleScriptModel>(){}));
     }
 
     /**
@@ -969,6 +1101,16 @@ public class AvaTaxClient {
     /**
      * Delete a single batch
      * 
+     * Marks the batch identified by this URL as deleted.
+     * 
+     * If you attempt to delete a batch that is being processed, you will receive an error message.
+     * Deleting a batch does not delete any transactions that were created by importing the batch.
+     * 
+     * Because the batch system processes with a degree of concurrency, and
+     * because of batch sizes in the queue vary, AvaTax API is unable to accurately 
+     * predict when a batch will complete. If high performance processing is 
+     * required, please use the 
+     * 
      * @param companyId The ID of the company that owns this batch.
      * @param id The ID of the batch to delete.
      * @return ArrayList<ErrorDetail>
@@ -982,6 +1124,16 @@ public class AvaTaxClient {
 
     /**
      * Delete a single batch
+     * 
+     * Marks the batch identified by this URL as deleted.
+     * 
+     * If you attempt to delete a batch that is being processed, you will receive an error message.
+     * Deleting a batch does not delete any transactions that were created by importing the batch.
+     * 
+     * Because the batch system processes with a degree of concurrency, and
+     * because of batch sizes in the queue vary, AvaTax API is unable to accurately 
+     * predict when a batch will complete. If high performance processing is 
+     * required, please use the 
      * 
      * @param companyId The ID of the company that owns this batch.
      * @param id The ID of the batch to delete.
@@ -1856,7 +2008,7 @@ public class AvaTaxClient {
      * Retrieve the list of attributes that are linked to this certificate.
      * 
      * A certificate may have multiple attributes that control its behavior.  You may link or unlink attributes to a
-     * certificate at any time.  The full list of defined attributes may be found using `/api/v2/definitions/certificateattributes`.
+     * certificate at any time.  The full list of defined attributes may be found using [ListCertificateAttributes](https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Definitions/ListCertificateAttributes/) API.
      * 
      * A certificate is a document stored in either AvaTax Exemptions or CertCapture.  The certificate document
      * can contain information about a customer's eligibility for exemption from sales or use taxes based on
@@ -1884,7 +2036,7 @@ public class AvaTaxClient {
      * Retrieve the list of attributes that are linked to this certificate.
      * 
      * A certificate may have multiple attributes that control its behavior.  You may link or unlink attributes to a
-     * certificate at any time.  The full list of defined attributes may be found using `/api/v2/definitions/certificateattributes`.
+     * certificate at any time.  The full list of defined attributes may be found using [ListCertificateAttributes](https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Definitions/ListCertificateAttributes/) API.
      * 
      * A certificate is a document stored in either AvaTax Exemptions or CertCapture.  The certificate document
      * can contain information about a customer's eligibility for exemption from sales or use taxes based on
@@ -2792,7 +2944,9 @@ public class AvaTaxClient {
      * Retrieve all companies
      * 
      * Get multiple company objects.
-     * A 'company' represents a single corporation or individual that is registered to handle transactional taxes.
+     * 
+     * A `company` represents a single corporation or individual that is registered to handle transactional taxes.
+     * 
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * Paginate your results using the `$top`, `$skip`, and `$orderby` parameters.
      * You may specify one or more of the following values in the `$include` parameter to fetch additional nested data, using commas to separate multiple values:
@@ -2826,7 +2980,9 @@ public class AvaTaxClient {
      * Retrieve all companies
      * 
      * Get multiple company objects.
-     * A 'company' represents a single corporation or individual that is registered to handle transactional taxes.
+     * 
+     * A `company` represents a single corporation or individual that is registered to handle transactional taxes.
+     * 
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * Paginate your results using the `$top`, `$skip`, and `$orderby` parameters.
      * You may specify one or more of the following values in the `$include` parameter to fetch additional nested data, using commas to separate multiple values:
@@ -2910,8 +3066,13 @@ public class AvaTaxClient {
      * Update a single company
      * 
      * Replace the existing company object at this URL with an updated object.
-     * A 'company' represents a single corporation or individual that is registered to handle transactional taxes.
+     *             
+     * A `CompanyModel` represents a single corporation or individual that is registered to handle transactional taxes.
      * All data from the existing object will be replaced with data in the object you PUT.  
+     *             
+     * When calling `UpdateCompany`, you are permitted to update the company itself.  Updates to the nested objects
+     * such as contacts, locations, or settings are not permitted.  To update the nested objects
+     *             
      * 
      * @param id The ID of the company you wish to update.
      * @param model The company object you wish to update.
@@ -2927,8 +3088,13 @@ public class AvaTaxClient {
      * Update a single company
      * 
      * Replace the existing company object at this URL with an updated object.
-     * A 'company' represents a single corporation or individual that is registered to handle transactional taxes.
+     *             
+     * A `CompanyModel` represents a single corporation or individual that is registered to handle transactional taxes.
      * All data from the existing object will be replaced with data in the object you PUT.  
+     *             
+     * When calling `UpdateCompany`, you are permitted to update the company itself.  Updates to the nested objects
+     * such as contacts, locations, or settings are not permitted.  To update the nested objects
+     *             
      * 
      * @param id The ID of the company you wish to update.
      * @param model The company object you wish to update.
@@ -3219,7 +3385,7 @@ public class AvaTaxClient {
      * 
      * A nested object such as CustomFields could be specified and created along with the customer object. To fetch the
      * nested object, please call 'GetCustomer' API with appropriate $include parameters.
-     *
+     * 
      * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
      * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
      * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document 
@@ -5423,18 +5589,14 @@ public class AvaTaxClient {
      * 
      * Returns the full list of Avalara-supported permission types.
      * 
-     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
-     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<String>
      */
-    public FetchResult<String> listPermissions(String filter, Integer top, Integer skip, String orderBy) throws Exception {
+    public FetchResult<String> listPermissions(Integer top, Integer skip) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/permissions");
-        path.addQuery("$filter", filter);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
-        path.addQuery("$orderBy", orderBy);
         return ((RestCall<FetchResult<String>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<String>>(){})).call();
     }
 
@@ -5443,18 +5605,14 @@ public class AvaTaxClient {
      * 
      * Returns the full list of Avalara-supported permission types.
      * 
-     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
-     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<String>
      */
-    public Future<FetchResult<String>> listPermissionsAsync(String filter, Integer top, Integer skip, String orderBy) {
+    public Future<FetchResult<String>> listPermissionsAsync(Integer top, Integer skip) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/permissions");
-        path.addQuery("$filter", filter);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
-        path.addQuery("$orderBy", orderBy);
         return this.threadPool.submit((RestCall<FetchResult<String>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<String>>(){}));
     }
 
@@ -5982,18 +6140,14 @@ public class AvaTaxClient {
      * Returns the full list of recognized tax code types.
      * A 'Tax Code Type' represents a broad category of tax codes, and is less detailed than a single TaxCode.
      * 
-     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
-     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return TaxCodeTypesModel
      */
-    public TaxCodeTypesModel listTaxCodeTypes(String filter, Integer top, Integer skip, String orderBy) throws Exception {
+    public TaxCodeTypesModel listTaxCodeTypes(Integer top, Integer skip) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/taxcodetypes");
-        path.addQuery("$filter", filter);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
-        path.addQuery("$orderBy", orderBy);
         return ((RestCall<TaxCodeTypesModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<TaxCodeTypesModel>(){})).call();
     }
 
@@ -6003,18 +6157,14 @@ public class AvaTaxClient {
      * Returns the full list of recognized tax code types.
      * A 'Tax Code Type' represents a broad category of tax codes, and is less detailed than a single TaxCode.
      * 
-     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
-     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return TaxCodeTypesModel
      */
-    public Future<TaxCodeTypesModel> listTaxCodeTypesAsync(String filter, Integer top, Integer skip, String orderBy) {
+    public Future<TaxCodeTypesModel> listTaxCodeTypesAsync(Integer top, Integer skip) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/taxcodetypes");
-        path.addQuery("$filter", filter);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
-        path.addQuery("$orderBy", orderBy);
         return this.threadPool.submit((RestCall<TaxCodeTypesModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<TaxCodeTypesModel>(){}));
     }
 
@@ -6683,7 +6833,7 @@ public class AvaTaxClient {
      * @param id The unique ID of the filing calendar object
      * @return CycleExpireModel
      */
-    public CycleExpireModel cycleSafeExpiration(Integer companyId, Integer id) throws Exception {
+    public CycleExpireModel cycleSafeExpiration(Integer companyId, Long id) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingcalendars/{id}/cancel/options");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
@@ -6697,7 +6847,7 @@ public class AvaTaxClient {
      * @param id The unique ID of the filing calendar object
      * @return CycleExpireModel
      */
-    public Future<CycleExpireModel> cycleSafeExpirationAsync(Integer companyId, Integer id) {
+    public Future<CycleExpireModel> cycleSafeExpirationAsync(Integer companyId, Long id) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingcalendars/{id}/cancel/options");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
@@ -6857,15 +7007,17 @@ public class AvaTaxClient {
      * A "filing request" represents a request to change an existing filing calendar.  Filing requests
      * 
      * @param companyId The ID of the company that owns these batches
+     * @param filingCalendarId Specific filing calendar id for the request
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<FilingRequestModel>
      */
-    public FetchResult<FilingRequestModel> listFilingRequests(Integer companyId, String filter, Integer top, Integer skip, String orderBy) throws Exception {
+    public FetchResult<FilingRequestModel> listFilingRequests(Integer companyId, Integer filingCalendarId, String filter, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingrequests");
         path.applyField("companyId", companyId);
+        path.addQuery("filingCalendarId", filingCalendarId);
         path.addQuery("$filter", filter);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
@@ -6880,15 +7032,17 @@ public class AvaTaxClient {
      * A "filing request" represents a request to change an existing filing calendar.  Filing requests
      * 
      * @param companyId The ID of the company that owns these batches
+     * @param filingCalendarId Specific filing calendar id for the request
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<FilingRequestModel>
      */
-    public Future<FetchResult<FilingRequestModel>> listFilingRequestsAsync(Integer companyId, String filter, Integer top, Integer skip, String orderBy) {
+    public Future<FetchResult<FilingRequestModel>> listFilingRequestsAsync(Integer companyId, Integer filingCalendarId, String filter, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingrequests");
         path.applyField("companyId", companyId);
+        path.addQuery("filingCalendarId", filingCalendarId);
         path.addQuery("$filter", filter);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
@@ -7009,14 +7163,16 @@ public class AvaTaxClient {
      * 
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * 
+     * @param filingCalendarId Specific filing calendar id for the request
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<FilingRequestModel>
      */
-    public FetchResult<FilingRequestModel> queryFilingRequests(String filter, Integer top, Integer skip, String orderBy) throws Exception {
+    public FetchResult<FilingRequestModel> queryFilingRequests(Integer filingCalendarId, String filter, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/filingrequests");
+        path.addQuery("filingCalendarId", filingCalendarId);
         path.addQuery("$filter", filter);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
@@ -7033,14 +7189,16 @@ public class AvaTaxClient {
      * 
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * 
+     * @param filingCalendarId Specific filing calendar id for the request
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
      * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<FilingRequestModel>
      */
-    public Future<FetchResult<FilingRequestModel>> queryFilingRequestsAsync(String filter, Integer top, Integer skip, String orderBy) {
+    public Future<FetchResult<FilingRequestModel>> queryFilingRequestsAsync(Integer filingCalendarId, String filter, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/filingrequests");
+        path.addQuery("filingCalendarId", filingCalendarId);
         path.addQuery("$filter", filter);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
@@ -8313,17 +8471,15 @@ This gets the basic information from the filings and doesn't include anything ex
     /**
      * FREE API - Request a free trial of AvaTax
      * 
-     * Call this API to obtain a free AvaTax sandbox account.
+     * Call this API to obtain a free AvaTax account.
      * 
-     * This API is free to use.  No authentication credentials are required to call this API. You must read and accept Avalara's terms and conditions.
-     * The account will grant a full trial version of AvaTax (e.g. AvaTaxPro) for a limited period of time.
-     * After this introductory period, you may continue to use the free TaxRates API.
-     * 
-     * Limitations on free trial accounts:
+     * This API is free to use.  No authentication credentials are required to call this API. You must read and 
+     * accept [Avalara's terms and conditions](https://www1.avalara.com/us/en/legal/terms.html) for the account to be 
+     * created.  
      *             
-     * * Only one free trial per company.
-     * * The free trial account does not expire.
-     * * Includes a limited time free trial of AvaTaxPro; after that date, the free TaxRates API will continue to work.
+     * If all conditions are met, this API will grant a free trial version of AvaTax.  For a list of functionality
+     * available in the free trial and its limitations, please see the [AvaTax Developer Website Free Trial page](https://developer.avalara.com/avatax/signup/).
+     *             
      * 
      * @param model Required information to provision a free trial account.
      * @return NewAccountModel
@@ -8336,17 +8492,15 @@ This gets the basic information from the filings and doesn't include anything ex
     /**
      * FREE API - Request a free trial of AvaTax
      * 
-     * Call this API to obtain a free AvaTax sandbox account.
+     * Call this API to obtain a free AvaTax account.
      * 
-     * This API is free to use.  No authentication credentials are required to call this API. You must read and accept Avalara's terms and conditions.
-     * The account will grant a full trial version of AvaTax (e.g. AvaTaxPro) for a limited period of time.
-     * After this introductory period, you may continue to use the free TaxRates API.
-     * 
-     * Limitations on free trial accounts:
+     * This API is free to use.  No authentication credentials are required to call this API. You must read and 
+     * accept [Avalara's terms and conditions](https://www1.avalara.com/us/en/legal/terms.html) for the account to be 
+     * created.  
      *             
-     * * Only one free trial per company.
-     * * The free trial account does not expire.
-     * * Includes a limited time free trial of AvaTaxPro; after that date, the free TaxRates API will continue to work.
+     * If all conditions are met, this API will grant a free trial version of AvaTax.  For a list of functionality
+     * available in the free trial and its limitations, please see the [AvaTax Developer Website Free Trial page](https://developer.avalara.com/avatax/signup/).
+     *             
      * 
      * @param model Required information to provision a free trial account.
      * @return NewAccountModel
@@ -10714,6 +10868,88 @@ This gets the basic information from the filings and doesn't include anything ex
      * Delete a single notice.
      * 
      * This API is available by invitation only.
+     * 'Notice comments' are updates by the notice team on the work to be done and that has been done so far on a notice.
+     * A 'notice' represents a letter sent to a business by a tax authority regarding tax filing issues.  Avalara
+     * 
+     * @param companyId The ID of the company that owns this notice.
+     * @param id The ID of the notice you wish to delete the finance detail from.
+     * @param commentDetailsId The ID of the comment you wish to delete.
+     * @return ArrayList<ErrorDetail>
+     */
+    public ArrayList<ErrorDetail> deleteCommentDetails(Integer companyId, Integer id, Integer commentDetailsId) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/{id}/commentdetails/{commentdetailsid}");
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
+        path.applyField("commentDetailsId", commentDetailsId);
+        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){})).call();
+    }
+
+    /**
+     * Delete a single notice.
+     * 
+     * This API is available by invitation only.
+     * 'Notice comments' are updates by the notice team on the work to be done and that has been done so far on a notice.
+     * A 'notice' represents a letter sent to a business by a tax authority regarding tax filing issues.  Avalara
+     * 
+     * @param companyId The ID of the company that owns this notice.
+     * @param id The ID of the notice you wish to delete the finance detail from.
+     * @param commentDetailsId The ID of the comment you wish to delete.
+     * @return ArrayList<ErrorDetail>
+     */
+    public Future<ArrayList<ErrorDetail>> deleteCommentDetailsAsync(Integer companyId, Integer id, Integer commentDetailsId) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/{id}/commentdetails/{commentdetailsid}");
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
+        path.applyField("commentDetailsId", commentDetailsId);
+        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){}));
+    }
+
+    /**
+     * Delete a single notice.
+     * 
+     * This API is available by invitation only.
+     * 'Notice finance details' is the categorical breakdown of the total charge levied by the tax authority on our customer,
+     * as broken down in our "notice log" found in Workflow. Main examples of the categories are 'Tax Due', 'Interest', 'Penalty', 'Total Abated'.
+     * A 'notice' represents a letter sent to a business by a tax authority regarding tax filing issues.  Avalara
+     * 
+     * @param companyId The ID of the company that owns this notice.
+     * @param id The ID of the notice you wish to delete the finance detail from.
+     * @param financeDetailsId The ID of the finance detail you wish to delete.
+     * @return ArrayList<ErrorDetail>
+     */
+    public ArrayList<ErrorDetail> deleteFinanceDetails(Integer companyId, Integer id, Integer financeDetailsId) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/{id}/financedetails/{financedetailsid}");
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
+        path.applyField("financeDetailsId", financeDetailsId);
+        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){})).call();
+    }
+
+    /**
+     * Delete a single notice.
+     * 
+     * This API is available by invitation only.
+     * 'Notice finance details' is the categorical breakdown of the total charge levied by the tax authority on our customer,
+     * as broken down in our "notice log" found in Workflow. Main examples of the categories are 'Tax Due', 'Interest', 'Penalty', 'Total Abated'.
+     * A 'notice' represents a letter sent to a business by a tax authority regarding tax filing issues.  Avalara
+     * 
+     * @param companyId The ID of the company that owns this notice.
+     * @param id The ID of the notice you wish to delete the finance detail from.
+     * @param financeDetailsId The ID of the finance detail you wish to delete.
+     * @return ArrayList<ErrorDetail>
+     */
+    public Future<ArrayList<ErrorDetail>> deleteFinanceDetailsAsync(Integer companyId, Integer id, Integer financeDetailsId) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/{id}/financedetails/{financedetailsid}");
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
+        path.applyField("financeDetailsId", financeDetailsId);
+        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){}));
+    }
+
+    /**
+     * Delete a single notice.
+     * 
+     * This API is available by invitation only.
      * Mark the existing notice object at this URL as deleted.
      * A 'notice' represents a letter sent to a business by a tax authority regarding tax filing issues.  Avalara
      * 
@@ -11153,6 +11389,46 @@ This gets the basic information from the filings and doesn't include anything ex
     }
 
     /**
+     * Update a single notice finance detail.
+     * 
+     * This API is available by invitation only.
+     * All data from the existing object will be replaced with data in the object you PUT.  
+     * 
+     * @param companyId The ID of the company that this notice finance detail belongs to.
+     * @param noticeid The ID of the notice finance detail you wish to update.
+     * @param financeDetailsId The ID of the finance detail you wish to delete.
+     * @param model The notice finance detail object you wish to update.
+     * @return NoticeFinanceModel
+     */
+    public NoticeFinanceModel updateFinanceDetails(Integer companyId, Integer noticeid, Integer financeDetailsId, NoticeFinanceModel model) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/{noticeid}/financedetails/{financedetailsid}");
+        path.applyField("companyId", companyId);
+        path.applyField("noticeid", noticeid);
+        path.applyField("financeDetailsId", financeDetailsId);
+        return ((RestCall<NoticeFinanceModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<NoticeFinanceModel>(){})).call();
+    }
+
+    /**
+     * Update a single notice finance detail.
+     * 
+     * This API is available by invitation only.
+     * All data from the existing object will be replaced with data in the object you PUT.  
+     * 
+     * @param companyId The ID of the company that this notice finance detail belongs to.
+     * @param noticeid The ID of the notice finance detail you wish to update.
+     * @param financeDetailsId The ID of the finance detail you wish to delete.
+     * @param model The notice finance detail object you wish to update.
+     * @return NoticeFinanceModel
+     */
+    public Future<NoticeFinanceModel> updateFinanceDetailsAsync(Integer companyId, Integer noticeid, Integer financeDetailsId, NoticeFinanceModel model) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/{noticeid}/financedetails/{financedetailsid}");
+        path.applyField("companyId", companyId);
+        path.applyField("noticeid", noticeid);
+        path.applyField("financeDetailsId", financeDetailsId);
+        return this.threadPool.submit((RestCall<NoticeFinanceModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<NoticeFinanceModel>(){}));
+    }
+
+    /**
      * Update a single notice.
      * 
      * This API is available by invitation only.
@@ -11195,6 +11471,46 @@ This gets the basic information from the filings and doesn't include anything ex
     }
 
     /**
+     * Update a single notice comment.
+     * 
+     * This API is available by invitation only.
+     * All data from the existing object will be replaced with data in the object you PUT.  
+     * 
+     * @param companyId The ID of the company that this notice comment belongs to.
+     * @param noticeid The ID of the notice you wish to update.
+     * @param commentDetailsId The ID of the comment you wish to update.
+     * @param model The notice comment object you wish to update.
+     * @return NoticeCommentModel
+     */
+    public NoticeCommentModel updateNoticeComments(Integer companyId, Integer noticeid, Integer commentDetailsId, NoticeCommentModel model) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/{noticeid}/commentdetails/{commentdetailsid}");
+        path.applyField("companyId", companyId);
+        path.applyField("noticeid", noticeid);
+        path.applyField("commentDetailsId", commentDetailsId);
+        return ((RestCall<NoticeCommentModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<NoticeCommentModel>(){})).call();
+    }
+
+    /**
+     * Update a single notice comment.
+     * 
+     * This API is available by invitation only.
+     * All data from the existing object will be replaced with data in the object you PUT.  
+     * 
+     * @param companyId The ID of the company that this notice comment belongs to.
+     * @param noticeid The ID of the notice you wish to update.
+     * @param commentDetailsId The ID of the comment you wish to update.
+     * @param model The notice comment object you wish to update.
+     * @return NoticeCommentModel
+     */
+    public Future<NoticeCommentModel> updateNoticeCommentsAsync(Integer companyId, Integer noticeid, Integer commentDetailsId, NoticeCommentModel model) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/{noticeid}/commentdetails/{commentdetailsid}");
+        path.applyField("companyId", companyId);
+        path.applyField("noticeid", noticeid);
+        path.applyField("commentDetailsId", commentDetailsId);
+        return this.threadPool.submit((RestCall<NoticeCommentModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<NoticeCommentModel>(){}));
+    }
+
+    /**
      * Retrieve a single attachment
      * 
      * This API is available by invitation only.
@@ -11222,6 +11538,152 @@ This gets the basic information from the filings and doesn't include anything ex
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/files/attachment");
         path.applyField("companyId", companyId);
         return this.threadPool.submit((RestCall<String>)restCallFactory.createRestCall("post", path, model, new TypeToken<String>(){}));
+    }
+
+    /**
+     * Mark a single notification as dismissed.
+     * 
+     * Marks the notification identified by this URL as dismissed.
+     * 
+     * A notification is a message from Avalara that may have relevance to your business.  You may want
+     * to regularly review notifications and then dismiss them when you are certain that you have addressed
+     * any relevant concerns raised by this notification.
+     * 
+     * An example of a notification would be a message about new software, or a change to AvaTax that may
+     * affect you, or a potential issue with your company's tax profile.
+     * 
+     * When you dismiss a notification, the notification will track the user and time when it was
+     * dismissed.  You can then later review which employees of your company dismissed notifications to
+     * 
+     * @param id The id of the notification you wish to mark as dismissed.
+     * @return NotificationModel
+     */
+    public NotificationModel dismissNotification(Long id) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/notifications/{id}/dismiss");
+        path.applyField("id", id);
+        return ((RestCall<NotificationModel>)restCallFactory.createRestCall("put", path, null, new TypeToken<NotificationModel>(){})).call();
+    }
+
+    /**
+     * Mark a single notification as dismissed.
+     * 
+     * Marks the notification identified by this URL as dismissed.
+     * 
+     * A notification is a message from Avalara that may have relevance to your business.  You may want
+     * to regularly review notifications and then dismiss them when you are certain that you have addressed
+     * any relevant concerns raised by this notification.
+     * 
+     * An example of a notification would be a message about new software, or a change to AvaTax that may
+     * affect you, or a potential issue with your company's tax profile.
+     * 
+     * When you dismiss a notification, the notification will track the user and time when it was
+     * dismissed.  You can then later review which employees of your company dismissed notifications to
+     * 
+     * @param id The id of the notification you wish to mark as dismissed.
+     * @return NotificationModel
+     */
+    public Future<NotificationModel> dismissNotificationAsync(Long id) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/notifications/{id}/dismiss");
+        path.applyField("id", id);
+        return this.threadPool.submit((RestCall<NotificationModel>)restCallFactory.createRestCall("put", path, null, new TypeToken<NotificationModel>(){}));
+    }
+
+    /**
+     * Retrieve a single notification.
+     * 
+     * Retrieve a single notification by its unique ID number.
+     * 
+     * A notification is a message from Avalara that may have relevance to your business.  You may want
+     * to regularly review notifications and then dismiss them when you are certain that you have addressed
+     * any relevant concerns raised by this notification.
+     * 
+     * An example of a notification would be a message about new software, or a change to AvaTax that may
+     * 
+     * @param id The id of the notification to retrieve.
+     * @return NotificationModel
+     */
+    public NotificationModel getNotification(Long id) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/notifications/{id}");
+        path.applyField("id", id);
+        return ((RestCall<NotificationModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<NotificationModel>(){})).call();
+    }
+
+    /**
+     * Retrieve a single notification.
+     * 
+     * Retrieve a single notification by its unique ID number.
+     * 
+     * A notification is a message from Avalara that may have relevance to your business.  You may want
+     * to regularly review notifications and then dismiss them when you are certain that you have addressed
+     * any relevant concerns raised by this notification.
+     * 
+     * An example of a notification would be a message about new software, or a change to AvaTax that may
+     * 
+     * @param id The id of the notification to retrieve.
+     * @return NotificationModel
+     */
+    public Future<NotificationModel> getNotificationAsync(Long id) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/notifications/{id}");
+        path.applyField("id", id);
+        return this.threadPool.submit((RestCall<NotificationModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<NotificationModel>(){}));
+    }
+
+    /**
+     * List all notifications.
+     * 
+     * List all notifications.
+     * 
+     * A notification is a message from Avalara that may have relevance to your business.  You may want
+     * to regularly review notifications and then dismiss them when you are certain that you have addressed
+     * any relevant concerns raised by this notification.
+     * 
+     * An example of a notification would be a message about new software, or a change to AvaTax that may
+     * affect you, or a potential issue with your company's tax profile.
+     * 
+     * You may search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * 
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
+     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @return FetchResult<NotificationModel>
+     */
+    public FetchResult<NotificationModel> listNotifications(String filter, Integer top, Integer skip, String orderBy) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/notifications");
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
+        return ((RestCall<FetchResult<NotificationModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NotificationModel>>(){})).call();
+    }
+
+    /**
+     * List all notifications.
+     * 
+     * List all notifications.
+     * 
+     * A notification is a message from Avalara that may have relevance to your business.  You may want
+     * to regularly review notifications and then dismiss them when you are certain that you have addressed
+     * any relevant concerns raised by this notification.
+     * 
+     * An example of a notification would be a message about new software, or a change to AvaTax that may
+     * affect you, or a potential issue with your company's tax profile.
+     * 
+     * You may search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * 
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
+     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @return FetchResult<NotificationModel>
+     */
+    public Future<FetchResult<NotificationModel>> listNotificationsAsync(String filter, Integer top, Integer skip, String orderBy) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/notifications");
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
+        return this.threadPool.submit((RestCall<FetchResult<NotificationModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NotificationModel>>(){}));
     }
 
     /**
@@ -11275,6 +11737,38 @@ This gets the basic information from the filings and doesn't include anything ex
     }
 
     /**
+     * Request a new entitilement to an existing customer
+     * 
+     * This API is for use by partner onboarding services customers only. This will allow the partners to allow
+     * 
+     * @param id The avatax account id of the customer
+     * @param offer The offer to be added to an already existing customer
+     * @return OfferModel
+     */
+    public OfferModel requestNewEntitlement(Integer id, String offer) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{id}/entitlements/{offer}");
+        path.applyField("id", id);
+        path.applyField("offer", offer);
+        return ((RestCall<OfferModel>)restCallFactory.createRestCall("post", path, null, new TypeToken<OfferModel>(){})).call();
+    }
+
+    /**
+     * Request a new entitilement to an existing customer
+     * 
+     * This API is for use by partner onboarding services customers only. This will allow the partners to allow
+     * 
+     * @param id The avatax account id of the customer
+     * @param offer The offer to be added to an already existing customer
+     * @return OfferModel
+     */
+    public Future<OfferModel> requestNewEntitlementAsync(Integer id, String offer) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{id}/entitlements/{offer}");
+        path.applyField("id", id);
+        path.applyField("offer", offer);
+        return this.threadPool.submit((RestCall<OfferModel>)restCallFactory.createRestCall("post", path, null, new TypeToken<OfferModel>(){}));
+    }
+
+    /**
      * Change Password
      * 
      * # For Registrar Use Only
@@ -11317,11 +11811,11 @@ This gets the basic information from the filings and doesn't include anything ex
      * Create a single new account object.  
      * 
      * @param model The account you wish to create.
-     * @return AccountModel
+     * @return ArrayList<AccountModel>
      */
-    public AccountModel createAccount(AccountModel model) throws Exception {
+    public ArrayList<AccountModel> createAccount(AccountModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts");
-        return ((RestCall<AccountModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<AccountModel>(){})).call();
+        return ((RestCall<ArrayList<AccountModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<AccountModel>>(){})).call();
     }
 
     /**
@@ -11333,11 +11827,53 @@ This gets the basic information from the filings and doesn't include anything ex
      * Create a single new account object.  
      * 
      * @param model The account you wish to create.
-     * @return AccountModel
+     * @return ArrayList<AccountModel>
      */
-    public Future<AccountModel> createAccountAsync(AccountModel model) {
+    public Future<ArrayList<AccountModel>> createAccountAsync(AccountModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts");
-        return this.threadPool.submit((RestCall<AccountModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<AccountModel>(){}));
+        return this.threadPool.submit((RestCall<ArrayList<AccountModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<AccountModel>>(){}));
+    }
+
+    /**
+     * Create new notifications.
+     * 
+     * This API is available by invitation only.
+     * 
+     * Create a single notification.
+     * 
+     * A notification is a message from Avalara that may have relevance to your business.  You may want
+     * to regularly review notifications and then dismiss them when you are certain that you have addressed
+     * any relevant concerns raised by this notification.
+     * 
+     * An example of a notification would be a message about new software, or a change to AvaTax that may
+     * 
+     * @param model The notifications you wish to create.
+     * @return ArrayList<NotificationModel>
+     */
+    public ArrayList<NotificationModel> createNotifications(ArrayList<NotificationModel> model) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/notifications");
+        return ((RestCall<ArrayList<NotificationModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<NotificationModel>>(){})).call();
+    }
+
+    /**
+     * Create new notifications.
+     * 
+     * This API is available by invitation only.
+     * 
+     * Create a single notification.
+     * 
+     * A notification is a message from Avalara that may have relevance to your business.  You may want
+     * to regularly review notifications and then dismiss them when you are certain that you have addressed
+     * any relevant concerns raised by this notification.
+     * 
+     * An example of a notification would be a message about new software, or a change to AvaTax that may
+     * 
+     * @param model The notifications you wish to create.
+     * @return ArrayList<NotificationModel>
+     */
+    public Future<ArrayList<NotificationModel>> createNotificationsAsync(ArrayList<NotificationModel> model) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/notifications");
+        return this.threadPool.submit((RestCall<ArrayList<NotificationModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<NotificationModel>>(){}));
     }
 
     /**
@@ -11408,6 +11944,50 @@ This gets the basic information from the filings and doesn't include anything ex
      */
     public Future<ArrayList<ErrorDetail>> deleteAccountAsync(Integer id) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{id}");
+        path.applyField("id", id);
+        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){}));
+    }
+
+    /**
+     * Delete a single notification.
+     * 
+     * This API is available by invitation only.
+     * 
+     * Delete the existing notification identified by this URL.
+     * 
+     * A notification is a message from Avalara that may have relevance to your business.  You may want
+     * to regularly review notifications and then dismiss them when you are certain that you have addressed
+     * any relevant concerns raised by this notification.
+     * 
+     * An example of a notification would be a message about new software, or a change to AvaTax that may
+     * 
+     * @param id The id of the notification you wish to delete.
+     * @return ArrayList<ErrorDetail>
+     */
+    public ArrayList<ErrorDetail> deleteNotification(Long id) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/notifications/{id}");
+        path.applyField("id", id);
+        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){})).call();
+    }
+
+    /**
+     * Delete a single notification.
+     * 
+     * This API is available by invitation only.
+     * 
+     * Delete the existing notification identified by this URL.
+     * 
+     * A notification is a message from Avalara that may have relevance to your business.  You may want
+     * to regularly review notifications and then dismiss them when you are certain that you have addressed
+     * any relevant concerns raised by this notification.
+     * 
+     * An example of a notification would be a message about new software, or a change to AvaTax that may
+     * 
+     * @param id The id of the notification you wish to delete.
+     * @return ArrayList<ErrorDetail>
+     */
+    public Future<ArrayList<ErrorDetail>> deleteNotificationAsync(Long id) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/notifications/{id}");
         path.applyField("id", id);
         return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){}));
     }
@@ -11485,70 +12065,6 @@ This gets the basic information from the filings and doesn't include anything ex
     }
 
     /**
-     * Retrieve all accounts
-     * 
-     * # For Registrar Use Only
-     * This API is for use by Avalara Registrar administrative users only.
-     * 
-     * Get multiple account objects.
-     * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * Paginate your results using the `$top`, `$skip`, and `$orderby` parameters.
-     * You may specify one or more of the following values in the `$include` parameter to fetch additional nested data, using commas to separate multiple values:
-     *             
-     * * Subscriptions
-     * * Users
-     *             
-     * 
-     * @param include A comma separated list of objects to fetch underneath this account. Any object with a URL path underneath this account can be fetched by specifying its name.
-     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
-     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<AccountModel>
-     */
-    public FetchResult<AccountModel> queryAccounts(String include, String filter, Integer top, Integer skip, String orderBy) throws Exception {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/accounts");
-        path.addQuery("$include", include);
-        path.addQuery("$filter", filter);
-        path.addQuery("$top", top);
-        path.addQuery("$skip", skip);
-        path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<AccountModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<AccountModel>>(){})).call();
-    }
-
-    /**
-     * Retrieve all accounts
-     * 
-     * # For Registrar Use Only
-     * This API is for use by Avalara Registrar administrative users only.
-     * 
-     * Get multiple account objects.
-     * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * Paginate your results using the `$top`, `$skip`, and `$orderby` parameters.
-     * You may specify one or more of the following values in the `$include` parameter to fetch additional nested data, using commas to separate multiple values:
-     *             
-     * * Subscriptions
-     * * Users
-     *             
-     * 
-     * @param include A comma separated list of objects to fetch underneath this account. Any object with a URL path underneath this account can be fetched by specifying its name.
-     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
-     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<AccountModel>
-     */
-    public Future<FetchResult<AccountModel>> queryAccountsAsync(String include, String filter, Integer top, Integer skip, String orderBy) {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/accounts");
-        path.addQuery("$include", include);
-        path.addQuery("$filter", filter);
-        path.addQuery("$top", top);
-        path.addQuery("$skip", skip);
-        path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<AccountModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<AccountModel>>(){}));
-    }
-
-    /**
      * Reset a user's password programmatically
      * 
      * # For Registrar Use Only
@@ -11618,6 +12134,52 @@ This gets the basic information from the filings and doesn't include anything ex
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{id}");
         path.applyField("id", id);
         return this.threadPool.submit((RestCall<AccountModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<AccountModel>(){}));
+    }
+
+    /**
+     * Update a single notification.
+     * 
+     * This API is available by invitation only.
+     * 
+     * Replaces the notification identified by this URL with a new notification.
+     * 
+     * A notification is a message from Avalara that may have relevance to your business.  You may want
+     * to regularly review notifications and then dismiss them when you are certain that you have addressed
+     * any relevant concerns raised by this notification.
+     * 
+     * An example of a notification would be a message about new software, or a change to AvaTax that may
+     * 
+     * @param id The id of the notification you wish to update.
+     * @param model The notification object you wish to update.
+     * @return NotificationModel
+     */
+    public NotificationModel updateNotification(Long id, NotificationModel model) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/notifications/{id}");
+        path.applyField("id", id);
+        return ((RestCall<NotificationModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<NotificationModel>(){})).call();
+    }
+
+    /**
+     * Update a single notification.
+     * 
+     * This API is available by invitation only.
+     * 
+     * Replaces the notification identified by this URL with a new notification.
+     * 
+     * A notification is a message from Avalara that may have relevance to your business.  You may want
+     * to regularly review notifications and then dismiss them when you are certain that you have addressed
+     * any relevant concerns raised by this notification.
+     * 
+     * An example of a notification would be a message about new software, or a change to AvaTax that may
+     * 
+     * @param id The id of the notification you wish to update.
+     * @param model The notification object you wish to update.
+     * @return NotificationModel
+     */
+    public Future<NotificationModel> updateNotificationAsync(Long id, NotificationModel model) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/notifications/{id}");
+        path.applyField("id", id);
+        return this.threadPool.submit((RestCall<NotificationModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<NotificationModel>(){}));
     }
 
     /**
@@ -12633,8 +13195,12 @@ This gets the basic information from the filings and doesn't include anything ex
      * 
      * Builds a tax content file containing information useful for a retail point-of-sale solution.
      * 
-     * This file contains tax rates and rules for items and locations that can be used
-     * to correctly calculate tax in the event a point-of-sale device is not able to reach AvaTax.
+     * A TaxContent file contains a matrix of the taxes that would be charged when you sell any of your
+     * Items at any of your Locations.  To create items, use `CreateItems()`.  To create locations, use
+     * `CreateLocations()`.  The file is built by looking up the tax profile for your location and your 
+     * item and calculating taxes for each in turn.  To include a custom `TaxCode` in this tax content
+     * file, first create the custom tax code using `CreateTaxCodes()` to create the custom tax code,
+     * then use `CreateItems()` to create an item that uses the custom tax code.
      * 
      * This data file can be customized for specific partner devices and usage conditions.
      * 
@@ -12657,8 +13223,12 @@ This gets the basic information from the filings and doesn't include anything ex
      * 
      * Builds a tax content file containing information useful for a retail point-of-sale solution.
      * 
-     * This file contains tax rates and rules for items and locations that can be used
-     * to correctly calculate tax in the event a point-of-sale device is not able to reach AvaTax.
+     * A TaxContent file contains a matrix of the taxes that would be charged when you sell any of your
+     * Items at any of your Locations.  To create items, use `CreateItems()`.  To create locations, use
+     * `CreateLocations()`.  The file is built by looking up the tax profile for your location and your 
+     * item and calculating taxes for each in turn.  To include a custom `TaxCode` in this tax content
+     * file, first create the custom tax code using `CreateTaxCodes()` to create the custom tax code,
+     * then use `CreateItems()` to create an item that uses the custom tax code.
      * 
      * This data file can be customized for specific partner devices and usage conditions.
      * 
@@ -12681,8 +13251,12 @@ This gets the basic information from the filings and doesn't include anything ex
      * 
      * Builds a tax content file containing information useful for a retail point-of-sale solution.
      * 
-     * This file contains tax rates and rules for all items for a single location.  Data from this API
-     * can be used to correctly calculate tax in the event a point-of-sale device is not able to reach AvaTax.
+     * A TaxContent file contains a matrix of the taxes that would be charged when you sell any of your
+     * Items at any of your Locations.  To create items, use `CreateItems()`.  To create locations, use
+     * `CreateLocations()`.  The file is built by looking up the tax profile for your location and your 
+     * item and calculating taxes for each in turn.  To include a custom `TaxCode` in this tax content
+     * file, first create the custom tax code using `CreateTaxCodes()` to create the custom tax code,
+     * then use `CreateItems()` to create an item that uses the custom tax code.
      * 
      * This data file can be customized for specific partner devices and usage conditions.
      * 
@@ -12716,8 +13290,12 @@ This gets the basic information from the filings and doesn't include anything ex
      * 
      * Builds a tax content file containing information useful for a retail point-of-sale solution.
      * 
-     * This file contains tax rates and rules for all items for a single location.  Data from this API
-     * can be used to correctly calculate tax in the event a point-of-sale device is not able to reach AvaTax.
+     * A TaxContent file contains a matrix of the taxes that would be charged when you sell any of your
+     * Items at any of your Locations.  To create items, use `CreateItems()`.  To create locations, use
+     * `CreateLocations()`.  The file is built by looking up the tax profile for your location and your 
+     * item and calculating taxes for each in turn.  To include a custom `TaxCode` in this tax content
+     * file, first create the custom tax code using `CreateTaxCodes()` to create the custom tax code,
+     * then use `CreateItems()` to create an item that uses the custom tax code.
      * 
      * This data file can be customized for specific partner devices and usage conditions.
      * 
@@ -12765,6 +13343,23 @@ This gets the basic information from the filings and doesn't include anything ex
      * to reconcile the actual transaction and determine the difference between the estimated general tax
      * rate and the final transaction tax.
      * 
+     * The file provided by this API is in CSV format with the following columns:
+     * 
+     * * ZIP_CODE - The five digit zip code for this record.
+     * * STATE_ABBREV - A valid two character US state abbreviation for this record.  Zip codes may span multiple states.
+     * * COUNTY_NAME - A valid county name for this record.  Zip codes may span multiple counties.
+     * * CITY_NAME - A valid city name for this record.  Zip codes may span multiple cities.
+     * * STATE_SALES_TAX - The state component of the sales tax rate.
+     * * STATE_USE_TAX - The state component of the use tax rate.
+     * * COUNTY_SALES_TAX - The county component of the sales tax rate.
+     * * COUNTY_USE_TAX - The county component of the use tax rate.
+     * * CITY_SALES_TAX - The city component of the sales tax rate.
+     * * CITY_USE_TAX - The city component of the use tax rate.
+     * * TOTAL_SALES_TAX - The total tax rate for sales tax for this postal code.  This value may not equal the sum of the state/county/city due to special tax jurisdiction rules.
+     * * TOTAL_USE_TAX - The total tax rate for use tax for this postal code.  This value may not equal the sum of the state/county/city due to special tax jurisdiction rules.
+     * * TAX_SHIPPING_ALONE - This column contains 'Y' if shipping is taxable.
+     * * TAX_SHIPPING_AND_HANDLING_TOGETHER - This column contains 'Y' if shipping and handling are taxable when sent together.
+     * 
      * 
      * @param date The date for which point-of-sale data would be calculated (today by default). Example input: 2016-12-31
      * @param region If the region is provided, this API is going to generate the tax rate per zipcode for only the region specified.
@@ -12795,6 +13390,23 @@ This gets the basic information from the filings and doesn't include anything ex
      * If you use this file to provide default tax rates, please ensure that your software calls `CreateTransaction`
      * to reconcile the actual transaction and determine the difference between the estimated general tax
      * rate and the final transaction tax.
+     * 
+     * The file provided by this API is in CSV format with the following columns:
+     * 
+     * * ZIP_CODE - The five digit zip code for this record.
+     * * STATE_ABBREV - A valid two character US state abbreviation for this record.  Zip codes may span multiple states.
+     * * COUNTY_NAME - A valid county name for this record.  Zip codes may span multiple counties.
+     * * CITY_NAME - A valid city name for this record.  Zip codes may span multiple cities.
+     * * STATE_SALES_TAX - The state component of the sales tax rate.
+     * * STATE_USE_TAX - The state component of the use tax rate.
+     * * COUNTY_SALES_TAX - The county component of the sales tax rate.
+     * * COUNTY_USE_TAX - The county component of the use tax rate.
+     * * CITY_SALES_TAX - The city component of the sales tax rate.
+     * * CITY_USE_TAX - The city component of the use tax rate.
+     * * TOTAL_SALES_TAX - The total tax rate for sales tax for this postal code.  This value may not equal the sum of the state/county/city due to special tax jurisdiction rules.
+     * * TOTAL_USE_TAX - The total tax rate for use tax for this postal code.  This value may not equal the sum of the state/county/city due to special tax jurisdiction rules.
+     * * TAX_SHIPPING_ALONE - This column contains 'Y' if shipping is taxable.
+     * * TAX_SHIPPING_AND_HANDLING_TOGETHER - This column contains 'Y' if shipping and handling are taxable when sent together.
      * 
      * 
      * @param date The date for which point-of-sale data would be calculated (today by default). Example input: 2016-12-31

@@ -819,6 +819,16 @@ public enum ErrorCodeId {
     InvalidPostalCode,
 
     /** 
+     * Subscription error codes
+     */
+    InvalidSubscriptionDescription,
+
+    /** 
+     * 
+     */
+    InvalidSubscriptionTypeId,
+
+    /** 
      * Represents a malformed document fetch command
      */
     BadDocumentFetch,
@@ -949,16 +959,6 @@ public enum ErrorCodeId {
     OverlappingFilingCalendar,
 
     /** 
-     * Location error codes
-     */
-    QuestionNotNeededForThisAddress,
-
-    /** 
-     * 
-     */
-    QuestionNotValidForThisAddress,
-
-    /** 
      * Create or update transaction error codes
      */
     CannotModifyLockedTransaction,
@@ -1064,6 +1064,21 @@ public enum ErrorCodeId {
     AccountNotProvisioned,
 
     /** 
+     * 
+     */
+    InvalidRequestContentType,
+
+    /** 
+     * 
+     */
+    ExemptionPaginationLimits,
+
+    /** 
+     * 
+     */
+    ExemptionSortLimits,
+
+    /** 
      * Multi document error codes
      */
     TransactionNotCancelled,
@@ -1134,16 +1149,6 @@ public enum ErrorCodeId {
     CommsConfigClientIdBadValue,
 
     /** 
-     * BizTech API error codes
-     */
-    BizTechCustomerAccountFailure,
-
-    /** 
-     * 
-     */
-    BizTechOpportunityCreationFailure,
-
-    /** 
      * Account Activate error codes
      */
     AccountInNewStatusException,
@@ -1211,7 +1216,22 @@ public enum ErrorCodeId {
     /** 
      * 
      */
+    AdvancedRuleNotApproved,
+
+    /** 
+     * 
+     */
     InvalidDocumentStatusToAddOrDeleteLines,
+
+    /** 
+     * 
+     */
+    TaxRuleRequiresNexus,
+
+    /** 
+     * SendSales API errors
+     */
+    UnsupportedFileFormat,
 
 }
     

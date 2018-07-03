@@ -249,12 +249,36 @@ public class CertificateModel {
     }
 
 
+    private ExemptionReasonModel validatedExemptionReason;
+
+    /**
+     * Getter for validatedExemptionReason
+     *
+     * The exemption reason that CertCapture audit/internal logic identifies for created certificate.
+     */
+    public ExemptionReasonModel getValidatedExemptionReason() {
+        return this.validatedExemptionReason;
+    }
+
+    /**
+     * Setter for validatedExemptionReason
+     *
+     * The exemption reason that CertCapture audit/internal logic identifies for created certificate.
+     */
+    public void setValidatedExemptionReason(ExemptionReasonModel value) {
+        this.validatedExemptionReason = value;
+    }
+
+
     private ExemptionReasonModel exemptionReason;
 
     /**
      * Getter for exemptionReason
      *
-     * The exemption reason associated with this certificate.
+     * The exemption reason associated with this certificate. For example, the reason code for exemption
+    * for purposes of resale is `RESALE`.
+    *  
+    * For a list of exemption reasons, call `ListCertificateExemptReasons`.
      */
     public ExemptionReasonModel getExemptionReason() {
         return this.exemptionReason;
@@ -263,7 +287,10 @@ public class CertificateModel {
     /**
      * Setter for exemptionReason
      *
-     * The exemption reason associated with this certificate.
+     * The exemption reason associated with this certificate. For example, the reason code for exemption
+    * for purposes of resale is `RESALE`.
+    *  
+    * For a list of exemption reasons, call `ListCertificateExemptReasons`.
      */
     public void setExemptionReason(ExemptionReasonModel value) {
         this.exemptionReason = value;

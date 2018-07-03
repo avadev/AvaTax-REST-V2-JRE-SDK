@@ -265,7 +265,7 @@ public class TransactionSummary {
     /**
      * Getter for rateTypeCode
      *
-     * Indicates the code of the rate type. Use `/api/v2/definitions/ratetypes` for a full list of rate type codes.
+     * Indicates the code of the rate type. Use [ListRateTypesByCountry](https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Definitions/ListRateTypesByCountry/) API for a full list of rate type codes.
      */
     public String getRateTypeCode() {
         return this.rateTypeCode;
@@ -274,7 +274,7 @@ public class TransactionSummary {
     /**
      * Setter for rateTypeCode
      *
-     * Indicates the code of the rate type. Use `/api/v2/definitions/ratetypes` for a full list of rate type codes.
+     * Indicates the code of the rate type. Use [ListRateTypesByCountry](https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Definitions/ListRateTypesByCountry/) API for a full list of rate type codes.
      */
     public void setRateTypeCode(String value) {
         this.rateTypeCode = value;

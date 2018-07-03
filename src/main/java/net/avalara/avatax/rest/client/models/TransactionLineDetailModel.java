@@ -817,7 +817,7 @@ public class TransactionLineDetailModel {
     /**
      * Getter for rateTypeCode
      *
-     * Indicates the code of the rate type that was used to calculate this tax detail. Use `/api/v2/definitions/ratetypes` for a full list of rate type codes.
+     * Indicates the code of the rate type that was used to calculate this tax detail. Use [ListRateTypesByCountry](https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Definitions/ListRateTypesByCountry/) API for a full list of rate type codes.
      */
     public String getRateTypeCode() {
         return this.rateTypeCode;
@@ -826,7 +826,7 @@ public class TransactionLineDetailModel {
     /**
      * Setter for rateTypeCode
      *
-     * Indicates the code of the rate type that was used to calculate this tax detail. Use `/api/v2/definitions/ratetypes` for a full list of rate type codes.
+     * Indicates the code of the rate type that was used to calculate this tax detail. Use [ListRateTypesByCountry](https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Definitions/ListRateTypesByCountry/) API for a full list of rate type codes.
      */
     public void setRateTypeCode(String value) {
         this.rateTypeCode = value;

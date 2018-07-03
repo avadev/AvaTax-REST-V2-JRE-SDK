@@ -49,7 +49,7 @@ public enum AddressCategoryId {
      *  and your company is responsible for collecting and remitting all taxes for transactions tied
      *  to this location.
      */
-    SellersRemitsTax,
+    SellerRemitsTax,
 
     /** 
      * The marketplace vendor collects and remits tax on your behalf for all transactions tied

@@ -97,7 +97,7 @@ public class SkyscraperStatusModel {
     /**
      * Getter for scraperType
      *
-     * They Scraper type
+     * The Scraper type
      */
     public ScraperType getScraperType() {
         return this.scraperType;
@@ -106,7 +106,7 @@ public class SkyscraperStatusModel {
     /**
      * Setter for scraperType
      *
-     * They Scraper type
+     * The Scraper type
      */
     public void setScraperType(ScraperType value) {
         this.scraperType = value;

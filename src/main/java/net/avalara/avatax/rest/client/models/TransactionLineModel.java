@@ -298,7 +298,7 @@ public class TransactionLineModel {
     /**
      * Getter for exemptCertId
      *
-     * The unique ID number of the exemption certificate that applied to this line item.
+     * The unique ID number of the exemption certificate that applied to this line item. It is the calc_id associated with a certificate in CertCapture.
      */
     public Integer getExemptCertId() {
         return this.exemptCertId;
@@ -307,7 +307,7 @@ public class TransactionLineModel {
     /**
      * Setter for exemptCertId
      *
-     * The unique ID number of the exemption certificate that applied to this line item.
+     * The unique ID number of the exemption certificate that applied to this line item. It is the calc_id associated with a certificate in CertCapture.
      */
     public void setExemptCertId(Integer value) {
         this.exemptCertId = value;
@@ -340,7 +340,10 @@ public class TransactionLineModel {
     /**
      * Getter for exemptNo
      *
-     * If this line item was exempt, this string contains the word `Exempt`.
+     * The customer Tax Id Number (tax_number) associated with a certificate - Sales tax calculation requests first determine if there is an applicable 
+    * ECMS entry available, and will utilize it for exemption processing. If no applicable ECMS entry is available, the AvaTax service 
+    * will determine if an Exemption Number field is populated or an Entity/Use Code is included in the sales tax calculation request, 
+    * and will perform exemption processing using either of those two options.
      */
     public String getExemptNo() {
         return this.exemptNo;
@@ -349,7 +352,10 @@ public class TransactionLineModel {
     /**
      * Setter for exemptNo
      *
-     * If this line item was exempt, this string contains the word `Exempt`.
+     * The customer Tax Id Number (tax_number) associated with a certificate - Sales tax calculation requests first determine if there is an applicable 
+    * ECMS entry available, and will utilize it for exemption processing. If no applicable ECMS entry is available, the AvaTax service 
+    * will determine if an Exemption Number field is populated or an Entity/Use Code is included in the sales tax calculation request, 
+    * and will perform exemption processing using either of those two options.
      */
     public void setExemptNo(String value) {
         this.exemptNo = value;
