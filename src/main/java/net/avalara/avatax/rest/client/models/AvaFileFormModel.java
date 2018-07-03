@@ -223,7 +223,7 @@ public class AvaFileFormModel {
     /**
      * Getter for filingOptionTypeId
      *
-     * 
+     * The type of Filing option
      */
     public FilingOptionTypeId getFilingOptionTypeId() {
         return this.filingOptionTypeId;
@@ -232,7 +232,7 @@ public class AvaFileFormModel {
     /**
      * Setter for filingOptionTypeId
      *
-     * 
+     * The type of Filing option
      */
     public void setFilingOptionTypeId(FilingOptionTypeId value) {
         this.filingOptionTypeId = value;
@@ -286,7 +286,7 @@ public class AvaFileFormModel {
     /**
      * Getter for efileDueDateTypeId
      *
-     * 
+     * The type of E-file due date.
      */
     public DueDateTypeId getEfileDueDateTypeId() {
         return this.efileDueDateTypeId;
@@ -295,7 +295,7 @@ public class AvaFileFormModel {
     /**
      * Setter for efileDueDateTypeId
      *
-     * 
+     * The type of E-file due date.
      */
     public void setEfileDueDateTypeId(DueDateTypeId value) {
         this.efileDueDateTypeId = value;

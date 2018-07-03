@@ -155,6 +155,27 @@ public class AdvancedRuleScriptModel {
     }
 
 
+    private Boolean isDisabled;
+
+    /**
+     * Getter for isDisabled
+     *
+     * The rule has been disabled
+     */
+    public Boolean getIsDisabled() {
+        return this.isDisabled;
+    }
+
+    /**
+     * Setter for isDisabled
+     *
+     * The rule has been disabled
+     */
+    public void setIsDisabled(Boolean value) {
+        this.isDisabled = value;
+    }
+
+
     /**
      * Returns a JSON string representation of AdvancedRuleScriptModel
      */

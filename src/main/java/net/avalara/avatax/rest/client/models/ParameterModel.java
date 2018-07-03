@@ -78,7 +78,7 @@ public class ParameterModel {
     /**
      * Getter for name
      *
-     * The name of the property. To use this property, add a field on the `parameters` object of a `/api/v2/transactions/create` call.
+     * The name of the property. To use this property, add a field on the `parameters` object of a [CreateTransaction](https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Transactions/CreateTransaction/) call.
      */
     public String getName() {
         return this.name;
@@ -87,7 +87,7 @@ public class ParameterModel {
     /**
      * Setter for name
      *
-     * The name of the property. To use this property, add a field on the `parameters` object of a `/api/v2/transactions/create` call.
+     * The name of the property. To use this property, add a field on the `parameters` object of a [CreateTransaction](https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Transactions/CreateTransaction/) call.
      */
     public void setName(String value) {
         this.name = value;

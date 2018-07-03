@@ -339,7 +339,10 @@ public class TransactionModel {
     /**
      * Getter for exemptNo
      *
-     * If this transaction was exempt, this field will contain the word "Exempt".
+     * The customer Tax Id Number (tax_number) associated with a certificate - Sales tax calculation requests first determine if there is an applicable 
+    * ECMS entry available, and will utilize it for exemption processing. If no applicable ECMS entry is available, the AvaTax service 
+    * will determine if an Exemption Number field is populated or an Entity/Use Code is included in the sales tax calculation request, 
+    * and will perform exemption processing using either of those two options.
      */
     public String getExemptNo() {
         return this.exemptNo;
@@ -348,7 +351,10 @@ public class TransactionModel {
     /**
      * Setter for exemptNo
      *
-     * If this transaction was exempt, this field will contain the word "Exempt".
+     * The customer Tax Id Number (tax_number) associated with a certificate - Sales tax calculation requests first determine if there is an applicable 
+    * ECMS entry available, and will utilize it for exemption processing. If no applicable ECMS entry is available, the AvaTax service 
+    * will determine if an Exemption Number field is populated or an Entity/Use Code is included in the sales tax calculation request, 
+    * and will perform exemption processing using either of those two options.
      */
     public void setExemptNo(String value) {
         this.exemptNo = value;
@@ -1249,6 +1255,27 @@ public class TransactionModel {
      */
     public void setMessages(ArrayList<AvaTaxMessage> value) {
         this.messages = value;
+    }
+
+
+    private ArrayList<InvoiceMessageModel> invoiceMessages;
+
+    /**
+     * Getter for invoiceMessages
+     *
+     * Invoice messages associated with this document. Currently, this stores legally-required VAT messages.
+     */
+    public ArrayList<InvoiceMessageModel> getInvoiceMessages() {
+        return this.invoiceMessages;
+    }
+
+    /**
+     * Setter for invoiceMessages
+     *
+     * Invoice messages associated with this document. Currently, this stores legally-required VAT messages.
+     */
+    public void setInvoiceMessages(ArrayList<InvoiceMessageModel> value) {
+        this.invoiceMessages = value;
     }
 
 

@@ -585,6 +585,43 @@ public class CustomerModel {
     }
 
 
+    private ArrayList<ExposureZoneModel> exposureZones;
+
+    /**
+     * Getter for exposureZones
+     *
+     * A list of exposure zones where you do business with this customer. 
+    * 
+    * To keep track of certificates that are needed for each customer, set this value to a list of all exposure zones where you
+    * sell products to this customer. You can find a list of exposure zones by calling `ListExposureZones`.
+    * 
+    * This field is often called "Ship-To States" or "Ship-To Zones", since it generally refers to locations where you ship products
+    * when this customer makes a purchase.
+    * 
+    * This field is useful for audit purposes since it helps you ensure you have the necessary certificates for each customer.
+     */
+    public ArrayList<ExposureZoneModel> getExposureZones() {
+        return this.exposureZones;
+    }
+
+    /**
+     * Setter for exposureZones
+     *
+     * A list of exposure zones where you do business with this customer. 
+    * 
+    * To keep track of certificates that are needed for each customer, set this value to a list of all exposure zones where you
+    * sell products to this customer. You can find a list of exposure zones by calling `ListExposureZones`.
+    * 
+    * This field is often called "Ship-To States" or "Ship-To Zones", since it generally refers to locations where you ship products
+    * when this customer makes a purchase.
+    * 
+    * This field is useful for audit purposes since it helps you ensure you have the necessary certificates for each customer.
+     */
+    public void setExposureZones(ArrayList<ExposureZoneModel> value) {
+        this.exposureZones = value;
+    }
+
+
     /**
      * Returns a JSON string representation of CustomerModel
      */

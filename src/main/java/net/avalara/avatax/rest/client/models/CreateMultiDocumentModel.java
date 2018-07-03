@@ -249,8 +249,7 @@ public class CreateMultiDocumentModel {
     /**
      * Getter for customerUsageType
      *
-     * DEPRECATED - Customer Usage Type - The client application customer or usage type. For a list of 
-    * available usage types, see `/api/v2/definitions/entityusecodes`.
+     * DEPRECATED - Customer Usage Type - The client application customer or usage type.
     * Please use entityUseCode instead.
      */
     public String getCustomerUsageType() {
@@ -260,8 +259,7 @@ public class CreateMultiDocumentModel {
     /**
      * Setter for customerUsageType
      *
-     * DEPRECATED - Customer Usage Type - The client application customer or usage type. For a list of 
-    * available usage types, see `/api/v2/definitions/entityusecodes`.
+     * DEPRECATED - Customer Usage Type - The client application customer or usage type.
     * Please use entityUseCode instead.
      */
     public void setCustomerUsageType(String value) {
@@ -275,7 +273,7 @@ public class CreateMultiDocumentModel {
      * Getter for entityUseCode
      *
      * Entity Use Code - The client application customer or usage type. For a list of 
-    * available usage types, see `/api/v2/definitions/entityusecodes`.
+    * available usage types, use [ListEntityUseCodes](https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Definitions/ListEntityUseCodes/) API.
      */
     public String getEntityUseCode() {
         return this.entityUseCode;
@@ -285,7 +283,7 @@ public class CreateMultiDocumentModel {
      * Setter for entityUseCode
      *
      * Entity Use Code - The client application customer or usage type. For a list of 
-    * available usage types, see `/api/v2/definitions/entityusecodes`.
+    * available usage types, use [ListEntityUseCodes](https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Definitions/ListEntityUseCodes/) API.
      */
     public void setEntityUseCode(String value) {
         this.entityUseCode = value;
@@ -352,6 +350,7 @@ public class CreateMultiDocumentModel {
     * If you specify an exemption number for this document, this document will be considered exempt, and you
     * may be asked to provide proof of this exemption certificate in the event that you are asked by an auditor
     * to verify your exemptions.
+    * Note: This is same as 'exemptNo' in TransactionModel.
      */
     public String getExemptionNo() {
         return this.exemptionNo;
@@ -365,6 +364,7 @@ public class CreateMultiDocumentModel {
     * If you specify an exemption number for this document, this document will be considered exempt, and you
     * may be asked to provide proof of this exemption certificate in the event that you are asked by an auditor
     * to verify your exemptions.
+    * Note: This is same as 'exemptNo' in TransactionModel.
      */
     public void setExemptionNo(String value) {
         this.exemptionNo = value;
@@ -407,7 +407,7 @@ public class CreateMultiDocumentModel {
      *
      * Special parameters for this transaction.
     * 
-    * To get a full list of available parameters, please use the `/api/v2/definitions/parameters` endpoint.
+    * To get a full list of available parameters, please use the [ListParameters](https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Definitions/ListParameters/) endpoint.
      */
     public HashMap<String, String> getParameters() {
         return this.parameters;
@@ -418,7 +418,7 @@ public class CreateMultiDocumentModel {
      *
      * Special parameters for this transaction.
     * 
-    * To get a full list of available parameters, please use the `/api/v2/definitions/parameters` endpoint.
+    * To get a full list of available parameters, please use the [ListParameters](https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Definitions/ListParameters/) endpoint.
      */
     public void setParameters(HashMap<String, String> value) {
         this.parameters = value;

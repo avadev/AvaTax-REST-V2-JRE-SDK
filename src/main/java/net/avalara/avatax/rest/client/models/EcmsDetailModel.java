@@ -34,7 +34,7 @@ public class EcmsDetailModel {
     /**
      * Getter for exemptCertDetailId
      *
-     * detail id
+     * Unique, system-assigned identifier of a ExemptCertDetail record.
      */
     public Integer getExemptCertDetailId() {
         return this.exemptCertDetailId;
@@ -43,7 +43,7 @@ public class EcmsDetailModel {
     /**
      * Setter for exemptCertDetailId
      *
-     * detail id
+     * Unique, system-assigned identifier of a ExemptCertDetail record.
      */
     public void setExemptCertDetailId(Integer value) {
         this.exemptCertDetailId = value;
@@ -55,7 +55,7 @@ public class EcmsDetailModel {
     /**
      * Getter for exemptCertId
      *
-     * exempt certificate id
+     * The calc_id associated with a certificate in CertCapture.
      */
     public Integer getExemptCertId() {
         return this.exemptCertId;
@@ -64,7 +64,7 @@ public class EcmsDetailModel {
     /**
      * Setter for exemptCertId
      *
-     * exempt certificate id
+     * The calc_id associated with a certificate in CertCapture.
      */
     public void setExemptCertId(Integer value) {
         this.exemptCertId = value;
@@ -132,7 +132,7 @@ public class EcmsDetailModel {
     /**
      * Getter for idNo
      *
-     * ID number
+     * The customer Tax Id Number (tax_number) associated with a certificate. This is same as exemptionNo in Transactions.
      */
     public String getIdNo() {
         return this.idNo;
@@ -141,7 +141,7 @@ public class EcmsDetailModel {
     /**
      * Setter for idNo
      *
-     * ID number
+     * The customer Tax Id Number (tax_number) associated with a certificate. This is same as exemptionNo in Transactions.
      */
     public void setIdNo(String value) {
         this.idNo = value;
@@ -211,7 +211,8 @@ public class EcmsDetailModel {
     /**
      * Getter for idType
      *
-     * ID type of this exempt certificate
+     * The type of idNo (tax_number) associated with a certificate.
+    * Example: Driver's Licence Number, Permit Number.
      */
     public String getIdType() {
         return this.idType;
@@ -220,7 +221,8 @@ public class EcmsDetailModel {
     /**
      * Setter for idType
      *
-     * ID type of this exempt certificate
+     * The type of idNo (tax_number) associated with a certificate.
+    * Example: Driver's Licence Number, Permit Number.
      */
     public void setIdType(String value) {
         this.idType = value;

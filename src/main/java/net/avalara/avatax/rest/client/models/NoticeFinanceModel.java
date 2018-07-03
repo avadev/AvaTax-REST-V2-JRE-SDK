@@ -34,7 +34,7 @@ public class NoticeFinanceModel {
     /**
      * Getter for id
      *
-     * 
+     * The Unique Id of the Finance Model
      */
     public Integer getId() {
         return this.id;
@@ -43,7 +43,7 @@ public class NoticeFinanceModel {
     /**
      * Setter for id
      *
-     * 
+     * The Unique Id of the Finance Model
      */
     public void setId(Integer value) {
         this.id = value;
@@ -55,7 +55,7 @@ public class NoticeFinanceModel {
     /**
      * Getter for noticeId
      *
-     * 
+     * The unique ID of the the tax notice associated with the the finance detail
      */
     public Integer getNoticeId() {
         return this.noticeId;
@@ -64,7 +64,7 @@ public class NoticeFinanceModel {
     /**
      * Setter for noticeId
      *
-     * 
+     * The unique ID of the the tax notice associated with the the finance detail
      */
     public void setNoticeId(Integer value) {
         this.noticeId = value;
@@ -76,7 +76,7 @@ public class NoticeFinanceModel {
     /**
      * Getter for noticeDate
      *
-     * 
+     * The date of the notice
      */
     public Date getNoticeDate() {
         return this.noticeDate;
@@ -85,7 +85,7 @@ public class NoticeFinanceModel {
     /**
      * Setter for noticeDate
      *
-     * 
+     * The date of the notice
      */
     public void setNoticeDate(Date value) {
         this.noticeDate = value;
@@ -97,7 +97,7 @@ public class NoticeFinanceModel {
     /**
      * Getter for dueDate
      *
-     * 
+     * The due date of the notice
      */
     public Date getDueDate() {
         return this.dueDate;
@@ -106,7 +106,7 @@ public class NoticeFinanceModel {
     /**
      * Setter for dueDate
      *
-     * 
+     * The due date of the notice
      */
     public void setDueDate(Date value) {
         this.dueDate = value;
@@ -118,7 +118,7 @@ public class NoticeFinanceModel {
     /**
      * Getter for noticeNumber
      *
-     * 
+     * The sequential number of the notice
      */
     public String getNoticeNumber() {
         return this.noticeNumber;
@@ -127,7 +127,7 @@ public class NoticeFinanceModel {
     /**
      * Setter for noticeNumber
      *
-     * 
+     * The sequential number of the notice
      */
     public void setNoticeNumber(String value) {
         this.noticeNumber = value;
@@ -139,7 +139,7 @@ public class NoticeFinanceModel {
     /**
      * Getter for taxDue
      *
-     * 
+     * The amount of tax due on the notice
      */
     public BigDecimal getTaxDue() {
         return this.taxDue;
@@ -148,7 +148,7 @@ public class NoticeFinanceModel {
     /**
      * Setter for taxDue
      *
-     * 
+     * The amount of tax due on the notice
      */
     public void setTaxDue(BigDecimal value) {
         this.taxDue = value;
@@ -160,7 +160,7 @@ public class NoticeFinanceModel {
     /**
      * Getter for penalty
      *
-     * 
+     * The amound of penalty listed on the notice
      */
     public BigDecimal getPenalty() {
         return this.penalty;
@@ -169,7 +169,7 @@ public class NoticeFinanceModel {
     /**
      * Setter for penalty
      *
-     * 
+     * The amound of penalty listed on the notice
      */
     public void setPenalty(BigDecimal value) {
         this.penalty = value;
@@ -181,7 +181,7 @@ public class NoticeFinanceModel {
     /**
      * Getter for interest
      *
-     * 
+     * The amount of interest listed on the notice
      */
     public BigDecimal getInterest() {
         return this.interest;
@@ -190,7 +190,7 @@ public class NoticeFinanceModel {
     /**
      * Setter for interest
      *
-     * 
+     * The amount of interest listed on the notice
      */
     public void setInterest(BigDecimal value) {
         this.interest = value;
@@ -202,7 +202,7 @@ public class NoticeFinanceModel {
     /**
      * Getter for credits
      *
-     * 
+     * The amount of credits listed on the notice
      */
     public BigDecimal getCredits() {
         return this.credits;
@@ -211,7 +211,7 @@ public class NoticeFinanceModel {
     /**
      * Setter for credits
      *
-     * 
+     * The amount of credits listed on the notice
      */
     public void setCredits(BigDecimal value) {
         this.credits = value;
@@ -223,7 +223,7 @@ public class NoticeFinanceModel {
     /**
      * Getter for taxAbated
      *
-     * 
+     * The amount of tax abated on the notice
      */
     public BigDecimal getTaxAbated() {
         return this.taxAbated;
@@ -232,7 +232,7 @@ public class NoticeFinanceModel {
     /**
      * Setter for taxAbated
      *
-     * 
+     * The amount of tax abated on the notice
      */
     public void setTaxAbated(BigDecimal value) {
         this.taxAbated = value;
@@ -244,7 +244,7 @@ public class NoticeFinanceModel {
     /**
      * Getter for customerPenalty
      *
-     * 
+     * The amount of customer penalty on the notice
      */
     public BigDecimal getCustomerPenalty() {
         return this.customerPenalty;
@@ -253,7 +253,7 @@ public class NoticeFinanceModel {
     /**
      * Setter for customerPenalty
      *
-     * 
+     * The amount of customer penalty on the notice
      */
     public void setCustomerPenalty(BigDecimal value) {
         this.customerPenalty = value;
@@ -265,7 +265,7 @@ public class NoticeFinanceModel {
     /**
      * Getter for customerInterest
      *
-     * 
+     * The amount of customer interest on the notice
      */
     public BigDecimal getCustomerInterest() {
         return this.customerInterest;
@@ -274,7 +274,7 @@ public class NoticeFinanceModel {
     /**
      * Setter for customerInterest
      *
-     * 
+     * The amount of customer interest on the notice
      */
     public void setCustomerInterest(BigDecimal value) {
         this.customerInterest = value;
@@ -286,7 +286,7 @@ public class NoticeFinanceModel {
     /**
      * Getter for cspFeeRefund
      *
-     * 
+     * The amount of CSP Fee Refund on the notice
      */
     public BigDecimal getCspFeeRefund() {
         return this.cspFeeRefund;
@@ -295,7 +295,7 @@ public class NoticeFinanceModel {
     /**
      * Setter for cspFeeRefund
      *
-     * 
+     * The amount of CSP Fee Refund on the notice
      */
     public void setCspFeeRefund(BigDecimal value) {
         this.cspFeeRefund = value;
@@ -307,7 +307,7 @@ public class NoticeFinanceModel {
     /**
      * Getter for fileName
      *
-     * resourceFileId
+     * The name of the file attached to the finance detail
      */
     public String getFileName() {
         return this.fileName;
@@ -316,7 +316,7 @@ public class NoticeFinanceModel {
     /**
      * Setter for fileName
      *
-     * resourceFileId
+     * The name of the file attached to the finance detail
      */
     public void setFileName(String value) {
         this.fileName = value;
@@ -328,7 +328,7 @@ public class NoticeFinanceModel {
     /**
      * Getter for resourceFileId
      *
-     * resourceFileId
+     * The ResourceFileId of the finance detail attachment
      */
     public Long getResourceFileId() {
         return this.resourceFileId;
@@ -337,7 +337,7 @@ public class NoticeFinanceModel {
     /**
      * Setter for resourceFileId
      *
-     * resourceFileId
+     * The ResourceFileId of the finance detail attachment
      */
     public void setResourceFileId(Long value) {
         this.resourceFileId = value;
