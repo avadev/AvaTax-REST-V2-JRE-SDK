@@ -176,6 +176,27 @@ public class TaxTypeGroupModel {
     }
 
 
+    private Integer displaySequence;
+
+    /**
+     * Getter for displaySequence
+     *
+     * The order this record is being returned in the response
+     */
+    public Integer getDisplaySequence() {
+        return this.displaySequence;
+    }
+
+    /**
+     * Setter for displaySequence
+     *
+     * The order this record is being returned in the response
+     */
+    public void setDisplaySequence(Integer value) {
+        this.displaySequence = value;
+    }
+
+
     /**
      * Returns a JSON string representation of TaxTypeGroupModel
      */

@@ -55,7 +55,8 @@ public class ParameterModel {
     /**
      * Getter for category
      *
-     * The category grouping of this parameter. When your user interface displays a large number of parameters, they should
+     * DEPRECATED
+    * The category grouping of this parameter. When your user interface displays a large number of parameters, they should
     * be grouped by their category value.
      */
     public String getCategory() {
@@ -65,7 +66,8 @@ public class ParameterModel {
     /**
      * Setter for category
      *
-     * The category grouping of this parameter. When your user interface displays a large number of parameters, they should
+     * DEPRECATED
+    * The category grouping of this parameter. When your user interface displays a large number of parameters, they should
     * be grouped by their category value.
      */
     public void setCategory(String value) {
@@ -94,14 +96,14 @@ public class ParameterModel {
     }
 
 
-    private ParameterBagDataType dataType;
+    private String dataType;
 
     /**
      * Getter for dataType
      *
      * The data type of the property.
      */
-    public ParameterBagDataType getDataType() {
+    public String getDataType() {
         return this.dataType;
     }
 
@@ -110,7 +112,7 @@ public class ParameterModel {
      *
      * The data type of the property.
      */
-    public void setDataType(ParameterBagDataType value) {
+    public void setDataType(String value) {
         this.dataType = value;
     }
 
@@ -164,7 +166,8 @@ public class ParameterModel {
     /**
      * Getter for prompt
      *
-     * The prompt you should use when displaying this parameter to a user. For example, if your user interface displays a
+     * DEPRECATED
+    * The prompt you should use when displaying this parameter to a user. For example, if your user interface displays a
     * parameter in a text box, this is the label you should use to identify that text box.
      */
     public String getPrompt() {
@@ -174,7 +177,8 @@ public class ParameterModel {
     /**
      * Setter for prompt
      *
-     * The prompt you should use when displaying this parameter to a user. For example, if your user interface displays a
+     * DEPRECATED
+    * The prompt you should use when displaying this parameter to a user. For example, if your user interface displays a
     * parameter in a text box, this is the label you should use to identify that text box.
      */
     public void setPrompt(String value) {
@@ -187,7 +191,9 @@ public class ParameterModel {
     /**
      * Getter for regularExpression
      *
-     * If your user interface permits client-side validation of parameters, this string is a regular expression you can use
+     * DEPRECATED 
+    * 
+    * If your user interface permits client-side validation of parameters, this string is a regular expression you can use
     * to validate the user's data entry prior to submitting a tax request.
      */
     public String getRegularExpression() {
@@ -197,7 +203,9 @@ public class ParameterModel {
     /**
      * Setter for regularExpression
      *
-     * If your user interface permits client-side validation of parameters, this string is a regular expression you can use
+     * DEPRECATED 
+    * 
+    * If your user interface permits client-side validation of parameters, this string is a regular expression you can use
     * to validate the user's data entry prior to submitting a tax request.
      */
     public void setRegularExpression(String value) {

@@ -449,24 +449,24 @@ public class AuditModel {
     }
 
 
-    private Integer lbDuration;
+    private Integer loadBalancerDuration;
 
     /**
-     * Getter for lbDuration
+     * Getter for loadBalancerDuration
      *
      * The load balancer duration
      */
-    public Integer getLbDuration() {
-        return this.lbDuration;
+    public Integer getLoadBalancerDuration() {
+        return this.loadBalancerDuration;
     }
 
     /**
-     * Setter for lbDuration
+     * Setter for loadBalancerDuration
      *
      * The load balancer duration
      */
-    public void setLbDuration(Integer value) {
-        this.lbDuration = value;
+    public void setLoadBalancerDuration(Integer value) {
+        this.loadBalancerDuration = value;
     }
 
 
@@ -664,7 +664,7 @@ public class AuditModel {
     /**
      * Getter for responseStatus
      *
-     * The resposne status
+     * The response status
      */
     public Integer getResponseStatus() {
         return this.responseStatus;
@@ -673,7 +673,7 @@ public class AuditModel {
     /**
      * Setter for responseStatus
      *
-     * The resposne status
+     * The response status
      */
     public void setResponseStatus(Integer value) {
         this.responseStatus = value;

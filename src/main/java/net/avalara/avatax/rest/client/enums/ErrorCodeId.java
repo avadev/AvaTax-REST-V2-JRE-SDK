@@ -276,7 +276,22 @@ public enum ErrorCodeId {
     /** 
      * 
      */
+    InvalidAdjustmentType,
+
+    /** 
+     * 
+     */
     DeleteInformation,
+
+    /** 
+     * 
+     */
+    OutOfRange,
+
+    /** 
+     * 
+     */
+    UnspecifiedTimeZone,
 
     /** 
      * 
@@ -612,6 +627,11 @@ public enum ErrorCodeId {
      * 
      */
     InvalidFileContentType,
+
+    /** 
+     * 
+     */
+    RequestTooLarge,
 
     /** 
      * 
@@ -1079,6 +1099,21 @@ public enum ErrorCodeId {
     ExemptionSortLimits,
 
     /** 
+     * 
+     */
+    CustomerCantBeBothShipToAndBillTo,
+
+    /** 
+     * 
+     */
+    BillToCustomerExpected,
+
+    /** 
+     * 
+     */
+    ShipToCustomerExpected,
+
+    /** 
      * Multi document error codes
      */
     TransactionNotCancelled,
@@ -1229,9 +1264,24 @@ public enum ErrorCodeId {
     TaxRuleRequiresNexus,
 
     /** 
+     * 
+     */
+    UPCCodeNotUnique,
+
+    /** 
      * SendSales API errors
      */
     UnsupportedFileFormat,
+
+    /** 
+     * 
+     */
+    UnsupportedOutputFileType,
+
+    /** 
+     * 
+     */
+    ConcurrentApiCallIsNotAllowed,
 
 }
     

@@ -622,6 +622,27 @@ public class CustomerModel {
     }
 
 
+    private ArrayList<CustomerModel> shipTos;
+
+    /**
+     * Getter for shipTos
+     *
+     * ToDo
+     */
+    public ArrayList<CustomerModel> getShipTos() {
+        return this.shipTos;
+    }
+
+    /**
+     * Setter for shipTos
+     *
+     * ToDo
+     */
+    public void setShipTos(ArrayList<CustomerModel> value) {
+        this.shipTos = value;
+    }
+
+
     /**
      * Returns a JSON string representation of CustomerModel
      */

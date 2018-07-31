@@ -118,7 +118,7 @@ public class TransactionModel {
     /**
      * Getter for paymentDate
      *
-     * The date when payment was made on this transaction. By default, this should be the same as the date of the transaction.
+     * DEPRECATED - The date when payment was made on this transaction. By default, this should be the same as the date of the transaction.
      */
     public Date getPaymentDate() {
         return this.paymentDate;
@@ -127,7 +127,7 @@ public class TransactionModel {
     /**
      * Setter for paymentDate
      *
-     * The date when payment was made on this transaction. By default, this should be the same as the date of the transaction.
+     * DEPRECATED - The date when payment was made on this transaction. By default, this should be the same as the date of the transaction.
      */
     public void setPaymentDate(Date value) {
         this.paymentDate = value;

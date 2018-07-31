@@ -113,14 +113,14 @@ public class FilingAdjustmentModel {
     }
 
 
-    private AdjustmentTypeId type;
+    private String type;
 
     /**
      * Getter for type
      *
      * The type of the adjustment.
      */
-    public AdjustmentTypeId getType() {
+    public String getType() {
         return this.type;
     }
 
@@ -129,7 +129,7 @@ public class FilingAdjustmentModel {
      *
      * The type of the adjustment.
      */
-    public void setType(AdjustmentTypeId value) {
+    public void setType(String value) {
         this.type = value;
     }
 
