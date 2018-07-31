@@ -78,6 +78,8 @@ public class TaxRuleModel {
      *
      * The unique ID number of the tax code for this rule.
     * When creating or updating a tax rule, you may specify either the taxCodeId value or the taxCode value.
+    * 
+    * If both `taxCodeId` and `taxCode` are null, this tax rule will apply to all tax codes.
      */
     public Integer getTaxCodeId() {
         return this.taxCodeId;
@@ -88,6 +90,8 @@ public class TaxRuleModel {
      *
      * The unique ID number of the tax code for this rule.
     * When creating or updating a tax rule, you may specify either the taxCodeId value or the taxCode value.
+    * 
+    * If both `taxCodeId` and `taxCode` are null, this tax rule will apply to all tax codes.
      */
     public void setTaxCodeId(Integer value) {
         this.taxCodeId = value;
@@ -101,6 +105,8 @@ public class TaxRuleModel {
      *
      * The code string of the tax code for this rule.
     * When creating or updating a tax rule, you may specify either the taxCodeId value or the taxCode value.
+    * 
+    * If both `taxCodeId` and `taxCode` are null, this tax rule will apply to all tax codes.
      */
     public String getTaxCode() {
         return this.taxCode;
@@ -111,6 +117,8 @@ public class TaxRuleModel {
      *
      * The code string of the tax code for this rule.
     * When creating or updating a tax rule, you may specify either the taxCodeId value or the taxCode value.
+    * 
+    * If both `taxCodeId` and `taxCode` are null, this tax rule will apply to all tax codes.
      */
     public void setTaxCode(String value) {
         this.taxCode = value;
@@ -230,7 +238,7 @@ public class TaxRuleModel {
      * Getter for customerUsageType
      *
      * DEPRECATED - The type of customer usage to which this rule applies.
-    * Please use entityUseCode instead.
+    * Please use `entityUseCode` instead.
      */
     public String getCustomerUsageType() {
         return this.customerUsageType;
@@ -240,7 +248,7 @@ public class TaxRuleModel {
      * Setter for customerUsageType
      *
      * DEPRECATED - The type of customer usage to which this rule applies.
-    * Please use entityUseCode instead.
+    * Please use `entityUseCode` instead.
      */
     public void setCustomerUsageType(String value) {
         this.customerUsageType = value;
@@ -253,6 +261,8 @@ public class TaxRuleModel {
      * Getter for entityUseCode
      *
      * The type of customer usage to which this rule applies.
+    * 
+    * For a full list of entity use codes, see the `ListEntityUseCodes` API.
      */
     public String getEntityUseCode() {
         return this.entityUseCode;
@@ -262,6 +272,8 @@ public class TaxRuleModel {
      * Setter for entityUseCode
      *
      * The type of customer usage to which this rule applies.
+    * 
+    * For a full list of entity use codes, see the `ListEntityUseCodes` API.
      */
     public void setEntityUseCode(String value) {
         this.entityUseCode = value;

@@ -213,6 +213,68 @@ public class AvaTaxClient {
     }
 
     /**
+     * Retrieve audit history for an account.
+     * 
+     * Retrieve audit history for an account.
+     * 
+     * Audit history provides you with the data necessary to report and investigate calls made from your account.
+     * 
+     * When specifying a start and end datetime, please include a valid timezone indicator, such as the "Z" present in the examples for the start and end query parameters.
+     * You can learn more about valid time zone designators at https://en.wikipedia.org/wiki/ISO_8601#Time_zone_designators.
+     * 
+     * For performance reasons, there are are limits to the request size. Currently, the per-call limits are a one hour duration, 50 MB of data, and 30 records at a time. 
+     * 
+     * Due to the volume of traffic from the system, audit history is not guaranteed to be immediately available. In some cases, this could even take an hour or more.
+     * 
+     * @param id The ID of the account you wish to audit.
+     * @param start The start datetime of audit history you with to retrieve, e.g. "2018-06-08T17:00:00Z". Defaults to the past 15 minutes.
+     * @param end The end datetime of audit history you with to retrieve, e.g. "2018-06-08T17:15:00Z. Defaults to the current time. Maximum of an hour after the start time.
+     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
+     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @return FetchResult<AuditModel>
+     */
+    public FetchResult<AuditModel> auditAccount(Integer id, Date start, Date end, Integer top, Integer skip) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{id}/audit");
+        path.applyField("id", id);
+        path.addQuery("start", start);
+        path.addQuery("end", end);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        return ((RestCall<FetchResult<AuditModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<AuditModel>>(){})).call();
+    }
+
+    /**
+     * Retrieve audit history for an account.
+     * 
+     * Retrieve audit history for an account.
+     * 
+     * Audit history provides you with the data necessary to report and investigate calls made from your account.
+     * 
+     * When specifying a start and end datetime, please include a valid timezone indicator, such as the "Z" present in the examples for the start and end query parameters.
+     * You can learn more about valid time zone designators at https://en.wikipedia.org/wiki/ISO_8601#Time_zone_designators.
+     * 
+     * For performance reasons, there are are limits to the request size. Currently, the per-call limits are a one hour duration, 50 MB of data, and 30 records at a time. 
+     * 
+     * Due to the volume of traffic from the system, audit history is not guaranteed to be immediately available. In some cases, this could even take an hour or more.
+     * 
+     * @param id The ID of the account you wish to audit.
+     * @param start The start datetime of audit history you with to retrieve, e.g. "2018-06-08T17:00:00Z". Defaults to the past 15 minutes.
+     * @param end The end datetime of audit history you with to retrieve, e.g. "2018-06-08T17:15:00Z. Defaults to the current time. Maximum of an hour after the start time.
+     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
+     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @return FetchResult<AuditModel>
+     */
+    public Future<FetchResult<AuditModel>> auditAccountAsync(Integer id, Date start, Date end, Integer top, Integer skip) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{id}/audit");
+        path.applyField("id", id);
+        path.addQuery("start", start);
+        path.addQuery("end", end);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        return this.threadPool.submit((RestCall<FetchResult<AuditModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<AuditModel>>(){}));
+    }
+
+    /**
      * Retrieve a single account
      * 
      * Get the account object identified by this URL.
@@ -3570,6 +3632,36 @@ public class AvaTaxClient {
         path.applyField("companyId", companyId);
         path.applyField("customerCode", customerCode);
         return this.threadPool.submit((RestCall<FetchResult<CertificateModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<FetchResult<CertificateModel>>(){}));
+    }
+
+    /**
+     * ToDo
+     * 
+     * @param companyId 
+     * @param code 
+     * @param model 
+     * @return CustomerModel
+     */
+    public CustomerModel linkShipToCustomersToBillCustomer(Integer companyId, String code, LinkCustomersModel model) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/customers/billto/{code}/shipto/link");
+        path.applyField("companyId", companyId);
+        path.applyField("code", code);
+        return ((RestCall<CustomerModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<CustomerModel>(){})).call();
+    }
+
+    /**
+     * ToDo
+     * 
+     * @param companyId 
+     * @param code 
+     * @param model 
+     * @return CustomerModel
+     */
+    public Future<CustomerModel> linkShipToCustomersToBillCustomerAsync(Integer companyId, String code, LinkCustomersModel model) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/customers/billto/{code}/shipto/link");
+        path.applyField("companyId", companyId);
+        path.applyField("code", code);
+        return this.threadPool.submit((RestCall<CustomerModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<CustomerModel>(){}));
     }
 
     /**
