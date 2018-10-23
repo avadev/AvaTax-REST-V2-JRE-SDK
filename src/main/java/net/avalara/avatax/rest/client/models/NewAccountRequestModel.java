@@ -59,6 +59,27 @@ public class NewAccountRequestModel {
     }
 
 
+    private String connectorId;
+
+    /**
+     * Getter for connectorId
+     *
+     * The id associated with the connector
+     */
+    public String getConnectorId() {
+        return this.connectorId;
+    }
+
+    /**
+     * Setter for connectorId
+     *
+     * The id associated with the connector
+     */
+    public void setConnectorId(String value) {
+        this.connectorId = value;
+    }
+
+
     private String campaign;
 
     /**
@@ -523,6 +544,27 @@ public class NewAccountRequestModel {
      */
     public void setHaveReadAvalaraTermsAndConditions(Boolean value) {
         this.haveReadAvalaraTermsAndConditions = value;
+    }
+
+
+    private HashMap<String, String> marketingContext;
+
+    /**
+     * Getter for marketingContext
+     *
+     * A dynamic key-value pair for the marketing context information
+     */
+    public HashMap<String, String> getMarketingContext() {
+        return this.marketingContext;
+    }
+
+    /**
+     * Setter for marketingContext
+     *
+     * A dynamic key-value pair for the marketing context information
+     */
+    public void setMarketingContext(HashMap<String, String> value) {
+        this.marketingContext = value;
     }
 
 

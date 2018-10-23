@@ -755,14 +755,14 @@ public class TransactionLineModel {
     }
 
 
-    private TaxOverrideTypeId taxOverrideType;
+    private TaxOverrideType taxOverrideType;
 
     /**
      * Getter for taxOverrideType
      *
      * If a tax override was specified, this indicates the type of tax override.
      */
-    public TaxOverrideTypeId getTaxOverrideType() {
+    public TaxOverrideType getTaxOverrideType() {
         return this.taxOverrideType;
     }
 
@@ -771,7 +771,7 @@ public class TransactionLineModel {
      *
      * If a tax override was specified, this indicates the type of tax override.
      */
-    public void setTaxOverrideType(TaxOverrideTypeId value) {
+    public void setTaxOverrideType(TaxOverrideType value) {
         this.taxOverrideType = value;
     }
 

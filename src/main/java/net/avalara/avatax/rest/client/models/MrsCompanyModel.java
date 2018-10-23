@@ -155,6 +155,90 @@ public class MrsCompanyModel {
     }
 
 
+    private Date createdDate;
+
+    /**
+     * Getter for createdDate
+     *
+     * The date when this record was created.
+     */
+    public Date getCreatedDate() {
+        return this.createdDate;
+    }
+
+    /**
+     * Setter for createdDate
+     *
+     * The date when this record was created.
+     */
+    public void setCreatedDate(Date value) {
+        this.createdDate = value;
+    }
+
+
+    private Integer createdUserId;
+
+    /**
+     * Getter for createdUserId
+     *
+     * The User ID of the user who created this record.
+     */
+    public Integer getCreatedUserId() {
+        return this.createdUserId;
+    }
+
+    /**
+     * Setter for createdUserId
+     *
+     * The User ID of the user who created this record.
+     */
+    public void setCreatedUserId(Integer value) {
+        this.createdUserId = value;
+    }
+
+
+    private Date modifiedDate;
+
+    /**
+     * Getter for modifiedDate
+     *
+     * The date/time when this record was last modified.
+     */
+    public Date getModifiedDate() {
+        return this.modifiedDate;
+    }
+
+    /**
+     * Setter for modifiedDate
+     *
+     * The date/time when this record was last modified.
+     */
+    public void setModifiedDate(Date value) {
+        this.modifiedDate = value;
+    }
+
+
+    private Integer modifiedUserId;
+
+    /**
+     * Getter for modifiedUserId
+     *
+     * The user ID of the user who last modified this record.
+     */
+    public Integer getModifiedUserId() {
+        return this.modifiedUserId;
+    }
+
+    /**
+     * Setter for modifiedUserId
+     *
+     * The user ID of the user who last modified this record.
+     */
+    public void setModifiedUserId(Integer value) {
+        this.modifiedUserId = value;
+    }
+
+
     /**
      * Returns a JSON string representation of MrsCompanyModel
      */

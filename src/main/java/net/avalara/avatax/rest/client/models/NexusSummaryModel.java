@@ -24,55 +24,55 @@ import java.util.HashMap;
  */
 
 /**
- * Represents a single security role.
+ * Nexus summary model
  */
-public class SecurityRoleModel {
+public class NexusSummaryModel {
 
 
-    private Integer id;
+    private Integer companyId;
 
     /**
-     * Getter for id
+     * Getter for companyId
      *
-     * The unique ID number of this security role.
+     * Company Id
      */
-    public Integer getId() {
-        return this.id;
+    public Integer getCompanyId() {
+        return this.companyId;
     }
 
     /**
-     * Setter for id
+     * Setter for companyId
      *
-     * The unique ID number of this security role.
+     * Company Id
      */
-    public void setId(Integer value) {
-        this.id = value;
+    public void setCompanyId(Integer value) {
+        this.companyId = value;
     }
 
 
-    private String description;
+    private ArrayList<NexusTaxTypeGroupCountModel> nexusSummary;
 
     /**
-     * Getter for description
+     * Getter for nexusSummary
      *
-     * A description of this security role
+     * Nexus summary for this company
      */
-    public String getDescription() {
-        return this.description;
+    public ArrayList<NexusTaxTypeGroupCountModel> getNexusSummary() {
+        return this.nexusSummary;
     }
 
     /**
-     * Setter for description
+     * Setter for nexusSummary
      *
-     * A description of this security role
+     * Nexus summary for this company
      */
-    public void setDescription(String value) {
-        this.description = value;
+    public void setNexusSummary(ArrayList<NexusTaxTypeGroupCountModel> value) {
+        this.nexusSummary = value;
     }
 
 
     /**
-     * Returns a JSON string representation of SecurityRoleModel
+     * Returns a JSON string representation of NexusSummaryModel
      */
     @Override
     public String toString() {

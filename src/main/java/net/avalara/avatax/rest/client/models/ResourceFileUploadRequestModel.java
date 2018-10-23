@@ -29,14 +29,14 @@ import java.util.HashMap;
 public class ResourceFileUploadRequestModel {
 
 
-    private String content;
+    private Byte content;
 
     /**
      * Getter for content
      *
      * This stream contains the bytes of the file being uploaded.
      */
-    public String getContent() {
+    public Byte getContent() {
         return this.content;
     }
 
@@ -45,7 +45,7 @@ public class ResourceFileUploadRequestModel {
      *
      * This stream contains the bytes of the file being uploaded.
      */
-    public void setContent(String value) {
+    public void setContent(Byte value) {
         this.content = value;
     }
 

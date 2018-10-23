@@ -19,6 +19,51 @@ package net.avalara.avatax.rest.client.enums;
  */
 public enum TaxType {
     /** 
+     * Sales tax
+     */
+    Sales,
+
+    /** 
+     * Use tax
+     */
+    Use,
+
+    /** 
+     * Consumer Use Tax
+     */
+    ConsumerUse,
+
+    /** 
+     * VAT/GST Output tax
+     */
+    Output,
+
+    /** 
+     * VAT/GST Input tax
+     */
+    Input,
+
+    /** 
+     * VAT/GST Nonrecoverable Input tax
+     */
+    Nonrecoverable,
+
+    /** 
+     * Fee - PIFs (Public Improvement Fees) and RSFs (Retail Sales Fees)
+     */
+    Fee,
+
+    /** 
+     * Rental Tax
+     */
+    Rental,
+
+    /** 
+     * Medical Excise Tax
+     */
+    Excise,
+
+    /** 
      * Match Lodging tax type
      */
     Lodging,
@@ -37,51 +82,6 @@ public enum TaxType {
      * LandedCost tax type
      */
     LandedCost,
-
-    /** 
-     * Consumer Use Tax
-     */
-    ConsumerUse,
-
-    /** 
-     * Medical Excise Tax
-     */
-    Excise,
-
-    /** 
-     * Fee - PIFs (Public Improvement Fees) and RSFs (Retail Sales Fees)
-     */
-    Fee,
-
-    /** 
-     * VAT/GST Input tax
-     */
-    Input,
-
-    /** 
-     * VAT/GST Nonrecoverable Input tax
-     */
-    Nonrecoverable,
-
-    /** 
-     * VAT/GST Output tax
-     */
-    Output,
-
-    /** 
-     * Rental Tax
-     */
-    Rental,
-
-    /** 
-     * Sales tax
-     */
-    Sales,
-
-    /** 
-     * Use tax
-     */
-    Use,
 
 }
     

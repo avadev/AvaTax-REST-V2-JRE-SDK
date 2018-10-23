@@ -63,5 +63,10 @@ public enum FormTypeId {
      */
     Prepayment,
 
+    /** 
+     * Denotes the form type is Prepayment Allowance
+     */
+    PrepaymentAllowed,
+
 }
     

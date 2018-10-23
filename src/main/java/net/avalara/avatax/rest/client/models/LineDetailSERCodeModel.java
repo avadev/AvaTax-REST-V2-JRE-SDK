@@ -24,55 +24,55 @@ import java.util.HashMap;
  */
 
 /**
- * Represents a single security role.
+ * SER code fixup
  */
-public class SecurityRoleModel {
+public class LineDetailSERCodeModel {
 
 
-    private Integer id;
+    private Long transactionLineDetailId;
 
     /**
-     * Getter for id
+     * Getter for transactionLineDetailId
      *
-     * The unique ID number of this security role.
+     * Transaction line detail Id
      */
-    public Integer getId() {
-        return this.id;
+    public Long getTransactionLineDetailId() {
+        return this.transactionLineDetailId;
     }
 
     /**
-     * Setter for id
+     * Setter for transactionLineDetailId
      *
-     * The unique ID number of this security role.
+     * Transaction line detail Id
      */
-    public void setId(Integer value) {
-        this.id = value;
+    public void setTransactionLineDetailId(Long value) {
+        this.transactionLineDetailId = value;
     }
 
 
-    private String description;
+    private String serCode;
 
     /**
-     * Getter for description
+     * Getter for serCode
      *
-     * A description of this security role
+     * Updated SER code
      */
-    public String getDescription() {
-        return this.description;
+    public String getSerCode() {
+        return this.serCode;
     }
 
     /**
-     * Setter for description
+     * Setter for serCode
      *
-     * A description of this security role
+     * Updated SER code
      */
-    public void setDescription(String value) {
-        this.description = value;
+    public void setSerCode(String value) {
+        this.serCode = value;
     }
 
 
     /**
-     * Returns a JSON string representation of SecurityRoleModel
+     * Returns a JSON string representation of LineDetailSERCodeModel
      */
     @Override
     public String toString() {

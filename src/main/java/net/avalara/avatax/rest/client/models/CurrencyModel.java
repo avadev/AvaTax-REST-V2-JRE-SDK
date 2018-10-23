@@ -71,14 +71,14 @@ public class CurrencyModel {
     }
 
 
-    private Byte decimalDigits;
+    private Integer decimalDigits;
 
     /**
      * Getter for decimalDigits
      *
      * The number of decimal digits to use when formatting a currency value for display.
      */
-    public Byte getDecimalDigits() {
+    public Integer getDecimalDigits() {
         return this.decimalDigits;
     }
 
@@ -87,7 +87,7 @@ public class CurrencyModel {
      *
      * The number of decimal digits to use when formatting a currency value for display.
      */
-    public void setDecimalDigits(Byte value) {
+    public void setDecimalDigits(Integer value) {
         this.decimalDigits = value;
     }
 

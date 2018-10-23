@@ -276,7 +276,42 @@ public enum ErrorCodeId {
     /** 
      * 
      */
+    RuleMustHaveTaxCode,
+
+    /** 
+     * 
+     */
+    RuleTypeRestricted,
+
+    /** 
+     * 
+     */
+    AllJurisRuleLimits,
+
+    /** 
+     * 
+     */
+    InvalidCompanyLocationSetting,
+
+    /** 
+     * 
+     */
+    InvalidAdjustmentType,
+
+    /** 
+     * 
+     */
     DeleteInformation,
+
+    /** 
+     * 
+     */
+    OutOfRange,
+
+    /** 
+     * 
+     */
+    UnspecifiedTimeZone,
 
     /** 
      * 
@@ -471,11 +506,6 @@ public enum ErrorCodeId {
     /** 
      * 
      */
-    TechSupportAuditRequired,
-
-    /** 
-     * 
-     */
     NexusParentDateMismatch,
 
     /** 
@@ -581,11 +611,6 @@ public enum ErrorCodeId {
     /** 
      * 
      */
-    FailedToUploadReport,
-
-    /** 
-     * 
-     */
     FailedToDownloadReport,
 
     /** 
@@ -612,6 +637,11 @@ public enum ErrorCodeId {
      * 
      */
     InvalidFileContentType,
+
+    /** 
+     * 
+     */
+    RequestTooLarge,
 
     /** 
      * 
@@ -729,11 +759,6 @@ public enum ErrorCodeId {
     InvalidInputDate,
 
     /** 
-     * 
-     */
-    RequestedFileNotExist,
-
-    /** 
      * Errors in Soap V1 Passthrough / GetTax calls
      */
     GetTaxError,
@@ -756,17 +781,7 @@ public enum ErrorCodeId {
     /** 
      * 
      */
-    InvalidParameter,
-
-    /** 
-     * 
-     */
     InvalidParameterValue,
-
-    /** 
-     * 
-     */
-    CompanyCodeConflict,
 
     /** 
      * 
@@ -801,11 +816,6 @@ public enum ErrorCodeId {
     /** 
      * 
      */
-    MultiDocumentTypesError,
-
-    /** 
-     * 
-     */
     InvalidDocumentTypesToFetch,
 
     /** 
@@ -830,11 +840,6 @@ public enum ErrorCodeId {
 
     /** 
      * Represents a malformed document fetch command
-     */
-    BadDocumentFetch,
-
-    /** 
-     * 
      */
     CannotChangeFilingStatus,
 
@@ -979,6 +984,16 @@ public enum ErrorCodeId {
     LinesNotSpecified,
 
     /** 
+     * 
+     */
+    LineDetailsDoesNotExist,
+
+    /** 
+     * 
+     */
+    CannotCreateTransactionWithDeletedDataSource,
+
+    /** 
      * Exempt cert error codes
      */
     InvalidBusinessType,
@@ -987,11 +1002,6 @@ public enum ErrorCodeId {
      * 
      */
     CannotModifyExemptCert,
-
-    /** 
-     * 
-     */
-    CertificatesFieldInvalid,
 
     /** 
      * 
@@ -1077,6 +1087,21 @@ public enum ErrorCodeId {
      * 
      */
     ExemptionSortLimits,
+
+    /** 
+     * 
+     */
+    CustomerCantBeBothShipToAndBillTo,
+
+    /** 
+     * 
+     */
+    BillToCustomerExpected,
+
+    /** 
+     * 
+     */
+    ShipToCustomerExpected,
 
     /** 
      * Multi document error codes
@@ -1194,6 +1219,11 @@ public enum ErrorCodeId {
     NexusChildDateMismatch,
 
     /** 
+     * Remote validation Error
+     */
+    RemoteValidationError,
+
+    /** 
      * Advanced rule errors
      */
     AdvancedRuleBadScript,
@@ -1219,7 +1249,7 @@ public enum ErrorCodeId {
     AdvancedRuleNotApproved,
 
     /** 
-     * 
+     * Miscellaneous
      */
     InvalidDocumentStatusToAddOrDeleteLines,
 
@@ -1229,9 +1259,49 @@ public enum ErrorCodeId {
     TaxRuleRequiresNexus,
 
     /** 
+     * 
+     */
+    UPCCodeNotUnique,
+
+    /** 
+     * 
+     */
+    CannotUpdateSourceOrInstance,
+
+    /** 
      * SendSales API errors
      */
     UnsupportedFileFormat,
+
+    /** 
+     * 
+     */
+    UnsupportedOutputFileType,
+
+    /** 
+     * TaxProfile API errors
+     */
+    TaxProfileNotProvided,
+
+    /** 
+     * 
+     */
+    InvalidTaxProfile,
+
+    /** 
+     * 
+     */
+    CompanyTaxProfileEntryRequired,
+
+    /** 
+     * 
+     */
+    ErrorReadingTaxProfileEntry,
+
+    /** 
+     * AuditAccount API errors
+     */
+    TraceDataNotAvailable,
 
 }
     

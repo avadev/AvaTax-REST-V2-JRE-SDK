@@ -19,6 +19,11 @@ package net.avalara.avatax.rest.client.enums;
  */
 public enum NotificationSeverityLevel {
     /** 
+     * A completed notification
+     */
+    Complete,
+
+    /** 
      * Low priority notification, Default.
      */
     Neutral,
@@ -32,11 +37,6 @@ public enum NotificationSeverityLevel {
      * High priority notification.
      */
     Blocking,
-
-    /** 
-     * A completed notification
-     */
-    Complete,
 
 }
     

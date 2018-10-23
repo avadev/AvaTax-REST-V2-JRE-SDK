@@ -155,14 +155,14 @@ public class LoginVerificationInputModel {
     }
 
 
-    private String additionalOptions;
+    private HashMap<String, String> additionalOptions;
 
     /**
      * Getter for additionalOptions
      *
      * Additional options of the verification
      */
-    public String getAdditionalOptions() {
+    public HashMap<String, String> getAdditionalOptions() {
         return this.additionalOptions;
     }
 
@@ -171,7 +171,7 @@ public class LoginVerificationInputModel {
      *
      * Additional options of the verification
      */
-    public void setAdditionalOptions(String value) {
+    public void setAdditionalOptions(HashMap<String, String> value) {
         this.additionalOptions = value;
     }
 

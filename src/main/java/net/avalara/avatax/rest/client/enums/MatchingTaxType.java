@@ -21,21 +21,6 @@ package net.avalara.avatax.rest.client.enums;
  */
 public enum MatchingTaxType {
     /** 
-     * Match medical excise type
-     */
-    Excise,
-
-    /** 
-     * Match Lodging tax type
-     */
-    Lodging,
-
-    /** 
-     * Match bottle tax type
-     */
-    Bottle,
-
-    /** 
      * Match all tax types
      */
     All,
@@ -51,19 +36,19 @@ public enum MatchingTaxType {
     ConsumerUseTax,
 
     /** 
-     * Match both Consumer Use and Seller's Use Tax types
+     * Match Sales Tax only
      */
-    ConsumersUseAndSellersUseTax,
+    SalesTax,
 
     /** 
-     * Match both Consumer Use and Sales Tax types
+     * Match Seller's Use Tax only
      */
-    ConsumerUseAndSalesTax,
+    UseTax,
 
     /** 
-     * Match Fee tax types only
+     * Match VAT Output Tax only
      */
-    Fee,
+    VATOutputTax,
 
     /** 
      * Match VAT Input Tax only
@@ -76,9 +61,9 @@ public enum MatchingTaxType {
     VATNonrecoverableInputTax,
 
     /** 
-     * Match VAT Output Tax only
+     * Match Fee tax types only
      */
-    VATOutputTax,
+    Fee,
 
     /** 
      * Match Rental tax types only
@@ -86,14 +71,34 @@ public enum MatchingTaxType {
     Rental,
 
     /** 
-     * Match Sales Tax only
+     * Match both Consumer Use and Sales Tax types
      */
-    SalesTax,
+    ConsumerUseAndSalesTax,
 
     /** 
-     * Match Seller's Use Tax only
+     * Match both Consumer Use and Seller's Use Tax types
      */
-    UseTax,
+    ConsumersUseAndSellersUseTax,
+
+    /** 
+     * Match medical excise type
+     */
+    Excise,
+
+    /** 
+     * Match Lodging tax type
+     */
+    Lodging,
+
+    /** 
+     * Match bottle tax type
+     */
+    Bottle,
+
+    /** 
+     * Match RentToOwn tax type
+     */
+    RentToOwn,
 
 }
     

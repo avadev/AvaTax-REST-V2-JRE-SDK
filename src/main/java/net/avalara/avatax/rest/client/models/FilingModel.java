@@ -71,7 +71,7 @@ public class FilingModel {
     }
 
 
-    private Byte month;
+    private Integer month;
 
     /**
      * Getter for month
@@ -80,7 +80,7 @@ public class FilingModel {
     * The filing period represents the year and month of the last day of taxes being reported on this filing. 
     * For example, an annual tax filing for Jan-Dec 2015 would have a filing period of Dec 2015.
      */
-    public Byte getMonth() {
+    public Integer getMonth() {
         return this.month;
     }
 
@@ -91,7 +91,7 @@ public class FilingModel {
     * The filing period represents the year and month of the last day of taxes being reported on this filing. 
     * For example, an annual tax filing for Jan-Dec 2015 would have a filing period of Dec 2015.
      */
-    public void setMonth(Byte value) {
+    public void setMonth(Integer value) {
         this.month = value;
     }
 

@@ -332,14 +332,14 @@ public class EcmsModel {
     }
 
 
-    private Byte businessTypeId;
+    private Integer businessTypeId;
 
     /**
      * Getter for businessTypeId
      *
      * Business type the customer belongs to.
      */
-    public Byte getBusinessTypeId() {
+    public Integer getBusinessTypeId() {
         return this.businessTypeId;
     }
 
@@ -348,7 +348,7 @@ public class EcmsModel {
      *
      * Business type the customer belongs to.
      */
-    public void setBusinessTypeId(Byte value) {
+    public void setBusinessTypeId(Integer value) {
         this.businessTypeId = value;
     }
 

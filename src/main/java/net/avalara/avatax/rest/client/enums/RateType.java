@@ -21,16 +21,6 @@ public enum RateType {
     /** 
      * 
      */
-    ReducedA,
-
-    /** 
-     * 
-     */
-    ReducedB,
-
-    /** 
-     * 
-     */
     Food,
 
     /** 
@@ -61,7 +51,12 @@ public enum RateType {
     /** 
      * 
      */
-    SuperReduced,
+    ReducedA,
+
+    /** 
+     * 
+     */
+    ReducedB,
 
     /** 
      * 
@@ -76,7 +71,17 @@ public enum RateType {
     /** 
      * 
      */
+    SuperReduced,
+
+    /** 
+     * 
+     */
     Zero,
+
+    /** 
+     * 
+     */
+    Services,
 
 }
     
