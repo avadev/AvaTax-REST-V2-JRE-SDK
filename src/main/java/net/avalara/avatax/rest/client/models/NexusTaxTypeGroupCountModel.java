@@ -24,55 +24,55 @@ import java.util.HashMap;
  */
 
 /**
- * Represents a single security role.
+ * Nexus tax type groupe with count
  */
-public class SecurityRoleModel {
+public class NexusTaxTypeGroupCountModel {
 
 
-    private Integer id;
+    private String nexusTaxTypeGroup;
 
     /**
-     * Getter for id
+     * Getter for nexusTaxTypeGroup
      *
-     * The unique ID number of this security role.
+     * Which nexus tax type group
      */
-    public Integer getId() {
-        return this.id;
+    public String getNexusTaxTypeGroup() {
+        return this.nexusTaxTypeGroup;
     }
 
     /**
-     * Setter for id
+     * Setter for nexusTaxTypeGroup
      *
-     * The unique ID number of this security role.
+     * Which nexus tax type group
      */
-    public void setId(Integer value) {
-        this.id = value;
+    public void setNexusTaxTypeGroup(String value) {
+        this.nexusTaxTypeGroup = value;
     }
 
 
-    private String description;
+    private Integer count;
 
     /**
-     * Getter for description
+     * Getter for count
      *
-     * A description of this security role
+     * How many nexus in the group
      */
-    public String getDescription() {
-        return this.description;
+    public Integer getCount() {
+        return this.count;
     }
 
     /**
-     * Setter for description
+     * Setter for count
      *
-     * A description of this security role
+     * How many nexus in the group
      */
-    public void setDescription(String value) {
-        this.description = value;
+    public void setCount(Integer value) {
+        this.count = value;
     }
 
 
     /**
-     * Returns a JSON string representation of SecurityRoleModel
+     * Returns a JSON string representation of NexusTaxTypeGroupCountModel
      */
     @Override
     public String toString() {

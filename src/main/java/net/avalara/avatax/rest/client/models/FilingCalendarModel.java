@@ -842,7 +842,7 @@ public class FilingCalendarModel {
     }
 
 
-    private Byte prepayPercentage;
+    private Integer prepayPercentage;
 
     /**
      * Getter for prepayPercentage
@@ -850,7 +850,7 @@ public class FilingCalendarModel {
      * If you are required to prepay a percentage of taxes for future periods, please specify the percentage in whole numbers; 
     * for example, the value 90 would indicate 90%.
      */
-    public Byte getPrepayPercentage() {
+    public Integer getPrepayPercentage() {
         return this.prepayPercentage;
     }
 
@@ -860,7 +860,7 @@ public class FilingCalendarModel {
      * If you are required to prepay a percentage of taxes for future periods, please specify the percentage in whole numbers; 
     * for example, the value 90 would indicate 90%.
      */
-    public void setPrepayPercentage(Byte value) {
+    public void setPrepayPercentage(Integer value) {
         this.prepayPercentage = value;
     }
 

@@ -25,6 +25,10 @@ import java.util.HashMap;
 
 /**
  * Provides detailed information about an API call.
+* 
+* The information on this record was captured by AvaTax when your API call was made. If you are unsure why you
+* received an error, you can fetch these audit objects and examine the `RequestUrl`, `RequestBody`, and `ErrorMessage`
+* fields to determine root cause for the error.
  */
 public class AuditModel {
 
@@ -34,7 +38,7 @@ public class AuditModel {
     /**
      * Getter for transactionId
      *
-     * The transaction id
+     * A unique ID number referring to this individual API call.
      */
     public Long getTransactionId() {
         return this.transactionId;
@@ -43,7 +47,7 @@ public class AuditModel {
     /**
      * Setter for transactionId
      *
-     * The transaction id
+     * A unique ID number referring to this individual API call.
      */
     public void setTransactionId(Long value) {
         this.transactionId = value;
@@ -55,7 +59,7 @@ public class AuditModel {
     /**
      * Getter for accountId
      *
-     * The account id
+     * The unique ID number of the account to which the user belongs.
      */
     public Integer getAccountId() {
         return this.accountId;
@@ -64,7 +68,7 @@ public class AuditModel {
     /**
      * Setter for accountId
      *
-     * The account id
+     * The unique ID number of the account to which the user belongs.
      */
     public void setAccountId(Integer value) {
         this.accountId = value;
@@ -76,7 +80,7 @@ public class AuditModel {
     /**
      * Getter for userId
      *
-     * The user id
+     * The unique ID number of the user that performed this API call.
      */
     public Integer getUserId() {
         return this.userId;
@@ -85,7 +89,7 @@ public class AuditModel {
     /**
      * Setter for userId
      *
-     * The user id
+     * The unique ID number of the user that performed this API call.
      */
     public void setUserId(Integer value) {
         this.userId = value;
@@ -97,7 +101,9 @@ public class AuditModel {
     /**
      * Getter for ipAddress
      *
-     * The IP address
+     * The origin IP address from which AvaTax received this API call. If you use a proxy layer or other
+    * gateway, this IP address may be the address of the gateway. This information is not guaranteed
+    * to be accurate and may change based on network conditions between your site and AvaTax.
      */
     public String getIpAddress() {
         return this.ipAddress;
@@ -106,7 +112,9 @@ public class AuditModel {
     /**
      * Setter for ipAddress
      *
-     * The IP address
+     * The origin IP address from which AvaTax received this API call. If you use a proxy layer or other
+    * gateway, this IP address may be the address of the gateway. This information is not guaranteed
+    * to be accurate and may change based on network conditions between your site and AvaTax.
      */
     public void setIpAddress(String value) {
         this.ipAddress = value;
@@ -118,7 +126,8 @@ public class AuditModel {
     /**
      * Getter for machineName
      *
-     * The machine name
+     * If your API call specified a `MachineName` in the [Client Profile Headers](https://developer.avalara.com/avatax/client-headers/), this
+    * variable will contain its value. This information is self-reported by the client and is not guaranteed to be present.
      */
     public String getMachineName() {
         return this.machineName;
@@ -127,7 +136,8 @@ public class AuditModel {
     /**
      * Setter for machineName
      *
-     * The machine name
+     * If your API call specified a `MachineName` in the [Client Profile Headers](https://developer.avalara.com/avatax/client-headers/), this
+    * variable will contain its value. This information is self-reported by the client and is not guaranteed to be present.
      */
     public void setMachineName(String value) {
         this.machineName = value;
@@ -139,7 +149,8 @@ public class AuditModel {
     /**
      * Getter for clientName
      *
-     * The client name
+     * If your API call specified a `ClientName` in the [Client Profile Headers](https://developer.avalara.com/avatax/client-headers/), this
+    * variable will contain its value. This information is self-reported by the client and is not guaranteed to be present.
      */
     public String getClientName() {
         return this.clientName;
@@ -148,7 +159,8 @@ public class AuditModel {
     /**
      * Setter for clientName
      *
-     * The client name
+     * If your API call specified a `ClientName` in the [Client Profile Headers](https://developer.avalara.com/avatax/client-headers/), this
+    * variable will contain its value. This information is self-reported by the client and is not guaranteed to be present.
      */
     public void setClientName(String value) {
         this.clientName = value;
@@ -160,7 +172,8 @@ public class AuditModel {
     /**
      * Getter for clientVersion
      *
-     * The client version
+     * If your API call specified a `ClientVersion` in the [Client Profile Headers](https://developer.avalara.com/avatax/client-headers/), this
+    * variable will contain its value. This information is self-reported by the client and is not guaranteed to be present.
      */
     public String getClientVersion() {
         return this.clientVersion;
@@ -169,7 +182,8 @@ public class AuditModel {
     /**
      * Setter for clientVersion
      *
-     * The client version
+     * If your API call specified a `ClientVersion` in the [Client Profile Headers](https://developer.avalara.com/avatax/client-headers/), this
+    * variable will contain its value. This information is self-reported by the client and is not guaranteed to be present.
      */
     public void setClientVersion(String value) {
         this.clientVersion = value;
@@ -181,7 +195,8 @@ public class AuditModel {
     /**
      * Getter for adapterName
      *
-     * The adapter name
+     * If your API call specified a `AdapterName` in the [Client Profile Headers](https://developer.avalara.com/avatax/client-headers/), this
+    * variable will contain its value. This information is self-reported by the client and is not guaranteed to be present.
      */
     public String getAdapterName() {
         return this.adapterName;
@@ -190,7 +205,8 @@ public class AuditModel {
     /**
      * Setter for adapterName
      *
-     * The adapter name
+     * If your API call specified a `AdapterName` in the [Client Profile Headers](https://developer.avalara.com/avatax/client-headers/), this
+    * variable will contain its value. This information is self-reported by the client and is not guaranteed to be present.
      */
     public void setAdapterName(String value) {
         this.adapterName = value;
@@ -202,7 +218,8 @@ public class AuditModel {
     /**
      * Getter for adapterVersion
      *
-     * The adapter version
+     * If your API call specified a `AdapterVersion` in the [Client Profile Headers](https://developer.avalara.com/avatax/client-headers/), this
+    * variable will contain its value. This information is self-reported by the client and is not guaranteed to be present.
      */
     public String getAdapterVersion() {
         return this.adapterVersion;
@@ -211,7 +228,8 @@ public class AuditModel {
     /**
      * Setter for adapterVersion
      *
-     * The adapter version
+     * If your API call specified a `AdapterVersion` in the [Client Profile Headers](https://developer.avalara.com/avatax/client-headers/), this
+    * variable will contain its value. This information is self-reported by the client and is not guaranteed to be present.
      */
     public void setAdapterVersion(String value) {
         this.adapterVersion = value;
@@ -223,7 +241,7 @@ public class AuditModel {
     /**
      * Getter for serverName
      *
-     * The server name
+     * The server name of the AvaTax server that responded to this API call.
      */
     public String getServerName() {
         return this.serverName;
@@ -232,7 +250,7 @@ public class AuditModel {
     /**
      * Setter for serverName
      *
-     * The server name
+     * The server name of the AvaTax server that responded to this API call.
      */
     public void setServerName(String value) {
         this.serverName = value;
@@ -244,7 +262,7 @@ public class AuditModel {
     /**
      * Getter for serverVersion
      *
-     * The server version
+     * The software version number of the currently deployed AvaTax API software on the server that responded to this API call.
      */
     public String getServerVersion() {
         return this.serverVersion;
@@ -253,7 +271,7 @@ public class AuditModel {
     /**
      * Setter for serverVersion
      *
-     * The server version
+     * The software version number of the currently deployed AvaTax API software on the server that responded to this API call.
      */
     public void setServerVersion(String value) {
         this.serverVersion = value;
@@ -265,7 +283,8 @@ public class AuditModel {
     /**
      * Getter for referenceId
      *
-     * The reference id
+     * A context-dependent reference ID for this API call. This reference ID is not guaranteed to contain a specific value
+    * and may be used differently by various API calls.
      */
     public Long getReferenceId() {
         return this.referenceId;
@@ -274,30 +293,33 @@ public class AuditModel {
     /**
      * Setter for referenceId
      *
-     * The reference id
+     * A context-dependent reference ID for this API call. This reference ID is not guaranteed to contain a specific value
+    * and may be used differently by various API calls.
      */
     public void setReferenceId(Long value) {
         this.referenceId = value;
     }
 
 
-    private String severityLevelId;
+    private Integer severityLevelId;
 
     /**
      * Getter for severityLevelId
      *
-     * The severity level id
+     * If the API contained a specific type of error code, this value would contain the unique ID number of the severity level
+    * of the response returned to the client.
      */
-    public String getSeverityLevelId() {
+    public Integer getSeverityLevelId() {
         return this.severityLevelId;
     }
 
     /**
      * Setter for severityLevelId
      *
-     * The severity level id
+     * If the API contained a specific type of error code, this value would contain the unique ID number of the severity level
+    * of the response returned to the client.
      */
-    public void setSeverityLevelId(String value) {
+    public void setSeverityLevelId(Integer value) {
         this.severityLevelId = value;
     }
 
@@ -307,7 +329,7 @@ public class AuditModel {
     /**
      * Getter for serverTimestamp
      *
-     * The server timestamp
+     * The server timestamp, in UTC, of the time when the server received this API call.
      */
     public Date getServerTimestamp() {
         return this.serverTimestamp;
@@ -316,7 +338,7 @@ public class AuditModel {
     /**
      * Setter for serverTimestamp
      *
-     * The server timestamp
+     * The server timestamp, in UTC, of the time when the server received this API call.
      */
     public void setServerTimestamp(Date value) {
         this.serverTimestamp = value;
@@ -328,7 +350,7 @@ public class AuditModel {
     /**
      * Getter for serverDuration
      *
-     * The server duration
+     * The number of milliseconds that the AvaTax server took to respond to this API call.
      */
     public Integer getServerDuration() {
         return this.serverDuration;
@@ -337,7 +359,7 @@ public class AuditModel {
     /**
      * Setter for serverDuration
      *
-     * The server duration
+     * The number of milliseconds that the AvaTax server took to respond to this API call.
      */
     public void setServerDuration(Integer value) {
         this.serverDuration = value;
@@ -349,7 +371,7 @@ public class AuditModel {
     /**
      * Getter for serviceName
      *
-     * The service name
+     * The service name of the AvaTax API service that responded to this API call.
      */
     public String getServiceName() {
         return this.serviceName;
@@ -358,7 +380,7 @@ public class AuditModel {
     /**
      * Setter for serviceName
      *
-     * The service name
+     * The service name of the AvaTax API service that responded to this API call.
      */
     public void setServiceName(String value) {
         this.serviceName = value;
@@ -370,7 +392,7 @@ public class AuditModel {
     /**
      * Getter for operation
      *
-     * The operation
+     * The operation name of this API call.
      */
     public String getOperation() {
         return this.operation;
@@ -379,7 +401,7 @@ public class AuditModel {
     /**
      * Setter for operation
      *
-     * The operation
+     * The operation name of this API call.
      */
     public void setOperation(String value) {
         this.operation = value;
@@ -391,7 +413,8 @@ public class AuditModel {
     /**
      * Getter for referenceCode
      *
-     * The reference code
+     * A context-dependent reference code for this API call. This reference code is not guaranteed to contain a specific value
+    * and may be used differently by various API calls.
      */
     public String getReferenceCode() {
         return this.referenceCode;
@@ -400,7 +423,8 @@ public class AuditModel {
     /**
      * Setter for referenceCode
      *
-     * The reference code
+     * A context-dependent reference code for this API call. This reference code is not guaranteed to contain a specific value
+    * and may be used differently by various API calls.
      */
     public void setReferenceCode(String value) {
         this.referenceCode = value;
@@ -412,7 +436,8 @@ public class AuditModel {
     /**
      * Getter for errorMessage
      *
-     * The error message
+     * If this API call reported an error, this contains the name of the error that was returned. You can look up more
+    * information about AvaTax error messages on the [AvaTax REST Error Page](https://developer.avalara.com/avatax/errors/).
      */
     public String getErrorMessage() {
         return this.errorMessage;
@@ -421,7 +446,8 @@ public class AuditModel {
     /**
      * Setter for errorMessage
      *
-     * The error message
+     * If this API call reported an error, this contains the name of the error that was returned. You can look up more
+    * information about AvaTax error messages on the [AvaTax REST Error Page](https://developer.avalara.com/avatax/errors/).
      */
     public void setErrorMessage(String value) {
         this.errorMessage = value;
@@ -433,7 +459,7 @@ public class AuditModel {
     /**
      * Getter for auditMessage
      *
-     * The audit message
+     * Reserved for Avalara internal usage.
      */
     public String getAuditMessage() {
         return this.auditMessage;
@@ -442,31 +468,31 @@ public class AuditModel {
     /**
      * Setter for auditMessage
      *
-     * The audit message
+     * Reserved for Avalara internal usage.
      */
     public void setAuditMessage(String value) {
         this.auditMessage = value;
     }
 
 
-    private Integer lbDuration;
+    private Integer loadBalancerDuration;
 
     /**
-     * Getter for lbDuration
+     * Getter for loadBalancerDuration
      *
-     * The load balancer duration
+     * Reserved for Avalara internal usage.
      */
-    public Integer getLbDuration() {
-        return this.lbDuration;
+    public Integer getLoadBalancerDuration() {
+        return this.loadBalancerDuration;
     }
 
     /**
-     * Setter for lbDuration
+     * Setter for loadBalancerDuration
      *
-     * The load balancer duration
+     * Reserved for Avalara internal usage.
      */
-    public void setLbDuration(Integer value) {
-        this.lbDuration = value;
+    public void setLoadBalancerDuration(Integer value) {
+        this.loadBalancerDuration = value;
     }
 
 
@@ -475,7 +501,7 @@ public class AuditModel {
     /**
      * Getter for recordCount
      *
-     * The record count
+     * If this API call returned an array of information, this value contains the number of records returned.
      */
     public Integer getRecordCount() {
         return this.recordCount;
@@ -484,7 +510,7 @@ public class AuditModel {
     /**
      * Setter for recordCount
      *
-     * The record count
+     * If this API call returned an array of information, this value contains the number of records returned.
      */
     public void setRecordCount(Integer value) {
         this.recordCount = value;
@@ -496,7 +522,7 @@ public class AuditModel {
     /**
      * Getter for referenceAuthorization
      *
-     * The reference authorization
+     * Reserved for Avalara internal usage.
      */
     public String getReferenceAuthorization() {
         return this.referenceAuthorization;
@@ -505,7 +531,7 @@ public class AuditModel {
     /**
      * Setter for referenceAuthorization
      *
-     * The reference authorization
+     * Reserved for Avalara internal usage.
      */
     public void setReferenceAuthorization(String value) {
         this.referenceAuthorization = value;
@@ -517,7 +543,7 @@ public class AuditModel {
     /**
      * Getter for isQueued
      *
-     * Whether or not it is queued
+     * Reserved for Avalara internal usage.
      */
     public Boolean getIsQueued() {
         return this.isQueued;
@@ -526,7 +552,7 @@ public class AuditModel {
     /**
      * Setter for isQueued
      *
-     * Whether or not it is queued
+     * Reserved for Avalara internal usage.
      */
     public void setIsQueued(Boolean value) {
         this.isQueued = value;
@@ -538,7 +564,9 @@ public class AuditModel {
     /**
      * Getter for databaseCallCount
      *
-     * The number of calls to the database
+     * If this API call included requests made to any of the AvaTax data layers, this contains the number of requests that were traced.
+    * 
+    * Please note that not all data layers support this measurement.
      */
     public Integer getDatabaseCallCount() {
         return this.databaseCallCount;
@@ -547,7 +575,9 @@ public class AuditModel {
     /**
      * Setter for databaseCallCount
      *
-     * The number of calls to the database
+     * If this API call included requests made to any of the AvaTax data layers, this contains the number of requests that were traced.
+    * 
+    * Please note that not all data layers support this measurement.
      */
     public void setDatabaseCallCount(Integer value) {
         this.databaseCallCount = value;
@@ -559,7 +589,9 @@ public class AuditModel {
     /**
      * Getter for databaseCallDuration
      *
-     * The time to make a call to the database
+     * If this API call included requests made to any of the AvaTax data layers, this contains the total duration time measured for all the requests.
+    * 
+    * Please note that not all data layers support this measurement.
      */
     public String getDatabaseCallDuration() {
         return this.databaseCallDuration;
@@ -568,7 +600,9 @@ public class AuditModel {
     /**
      * Setter for databaseCallDuration
      *
-     * The time to make a call to the database
+     * If this API call included requests made to any of the AvaTax data layers, this contains the total duration time measured for all the requests.
+    * 
+    * Please note that not all data layers support this measurement.
      */
     public void setDatabaseCallDuration(String value) {
         this.databaseCallDuration = value;
@@ -580,7 +614,7 @@ public class AuditModel {
     /**
      * Getter for remoteCallDuration
      *
-     * The time to receive a response from a remote server
+     * If this API call included interoperation with other Avalara services, this contains the amount of time taken by those services.
      */
     public String getRemoteCallDuration() {
         return this.remoteCallDuration;
@@ -589,7 +623,7 @@ public class AuditModel {
     /**
      * Setter for remoteCallDuration
      *
-     * The time to receive a response from a remote server
+     * If this API call included interoperation with other Avalara services, this contains the amount of time taken by those services.
      */
     public void setRemoteCallDuration(String value) {
         this.remoteCallDuration = value;
@@ -601,7 +635,7 @@ public class AuditModel {
     /**
      * Getter for events
      *
-     * Audit events
+     * Reserved for Avalara internal usage.
      */
     public ArrayList<AuditEvent> getEvents() {
         return this.events;
@@ -610,7 +644,7 @@ public class AuditModel {
     /**
      * Setter for events
      *
-     * Audit events
+     * Reserved for Avalara internal usage.
      */
     public void setEvents(ArrayList<AuditEvent> value) {
         this.events = value;
@@ -622,7 +656,7 @@ public class AuditModel {
     /**
      * Getter for requestUrl
      *
-     * The request url
+     * The original request URL as provided by the client.
      */
     public String getRequestUrl() {
         return this.requestUrl;
@@ -631,7 +665,7 @@ public class AuditModel {
     /**
      * Setter for requestUrl
      *
-     * The request url
+     * The original request URL as provided by the client.
      */
     public void setRequestUrl(String value) {
         this.requestUrl = value;
@@ -643,7 +677,10 @@ public class AuditModel {
     /**
      * Getter for requestBody
      *
-     * The request body
+     * If this request was an HTTP request that included a body such as a POST or a PUT, this will contain the request body sent by the client.
+    * 
+    * This request body is represented as a string, exactly as it was received from the client. Regardless of whether the request was JSON,
+    * Base64 encoded bytes, or a CSV file, this contains the exact contents of the request body.
      */
     public String getRequestBody() {
         return this.requestBody;
@@ -652,7 +689,10 @@ public class AuditModel {
     /**
      * Setter for requestBody
      *
-     * The request body
+     * If this request was an HTTP request that included a body such as a POST or a PUT, this will contain the request body sent by the client.
+    * 
+    * This request body is represented as a string, exactly as it was received from the client. Regardless of whether the request was JSON,
+    * Base64 encoded bytes, or a CSV file, this contains the exact contents of the request body.
      */
     public void setRequestBody(String value) {
         this.requestBody = value;
@@ -664,7 +704,7 @@ public class AuditModel {
     /**
      * Getter for responseStatus
      *
-     * The resposne status
+     * The HTTP response code that was sent by the server.
      */
     public Integer getResponseStatus() {
         return this.responseStatus;
@@ -673,7 +713,7 @@ public class AuditModel {
     /**
      * Setter for responseStatus
      *
-     * The resposne status
+     * The HTTP response code that was sent by the server.
      */
     public void setResponseStatus(Integer value) {
         this.responseStatus = value;
@@ -685,7 +725,8 @@ public class AuditModel {
     /**
      * Getter for responseBody
      *
-     * The response body
+     * The entire response body sent from the AvaTax server to the client. This value is returned as a string regardless of whether the results
+    * were JSON-formatted text, CSV files, or raw strings.
      */
     public String getResponseBody() {
         return this.responseBody;
@@ -694,7 +735,8 @@ public class AuditModel {
     /**
      * Setter for responseBody
      *
-     * The response body
+     * The entire response body sent from the AvaTax server to the client. This value is returned as a string regardless of whether the results
+    * were JSON-formatted text, CSV files, or raw strings.
      */
     public void setResponseBody(String value) {
         this.responseBody = value;
@@ -706,7 +748,7 @@ public class AuditModel {
     /**
      * Getter for remoteCalls
      *
-     * The remote calls
+     * Reserved for Avalara internal usage.
      */
     public ArrayList<AuditModel> getRemoteCalls() {
         return this.remoteCalls;
@@ -715,7 +757,7 @@ public class AuditModel {
     /**
      * Setter for remoteCalls
      *
-     * The remote calls
+     * Reserved for Avalara internal usage.
      */
     public void setRemoteCalls(ArrayList<AuditModel> value) {
         this.remoteCalls = value;

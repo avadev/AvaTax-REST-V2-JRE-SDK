@@ -260,14 +260,14 @@ public class AvaFileFormModel {
     }
 
 
-    private Byte dueDay;
+    private Integer dueDay;
 
     /**
      * Getter for dueDay
      *
      * Due date
      */
-    public Byte getDueDay() {
+    public Integer getDueDay() {
         return this.dueDay;
     }
 
@@ -276,7 +276,7 @@ public class AvaFileFormModel {
      *
      * Due date
      */
-    public void setDueDay(Byte value) {
+    public void setDueDay(Integer value) {
         this.dueDay = value;
     }
 
@@ -302,14 +302,14 @@ public class AvaFileFormModel {
     }
 
 
-    private Byte efileDueDay;
+    private Integer efileDueDay;
 
     /**
      * Getter for efileDueDay
      *
      * The date by when the E-filing should be submitted
      */
-    public Byte getEfileDueDay() {
+    public Integer getEfileDueDay() {
         return this.efileDueDay;
     }
 
@@ -318,7 +318,7 @@ public class AvaFileFormModel {
      *
      * The date by when the E-filing should be submitted
      */
-    public void setEfileDueDay(Byte value) {
+    public void setEfileDueDay(Integer value) {
         this.efileDueDay = value;
     }
 

@@ -197,7 +197,7 @@ public class FilingReturnModelBasic {
     }
 
 
-    private Byte endPeriodMonth;
+    private Integer endPeriodMonth;
 
     /**
      * Getter for endPeriodMonth
@@ -206,7 +206,7 @@ public class FilingReturnModelBasic {
     * The filing period represents the year and month of the last day of taxes being reported on this filing. 
     * For example, an annual tax filing for Jan-Dec 2015 would have a filing period of Dec 2015.
      */
-    public Byte getEndPeriodMonth() {
+    public Integer getEndPeriodMonth() {
         return this.endPeriodMonth;
     }
 
@@ -217,7 +217,7 @@ public class FilingReturnModelBasic {
     * The filing period represents the year and month of the last day of taxes being reported on this filing. 
     * For example, an annual tax filing for Jan-Dec 2015 would have a filing period of Dec 2015.
      */
-    public void setEndPeriodMonth(Byte value) {
+    public void setEndPeriodMonth(Integer value) {
         this.endPeriodMonth = value;
     }
 

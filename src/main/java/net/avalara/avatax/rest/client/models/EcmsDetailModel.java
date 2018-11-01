@@ -229,14 +229,14 @@ public class EcmsDetailModel {
     }
 
 
-    private Byte isTaxCodeListExclusionList;
+    private Integer isTaxCodeListExclusionList;
 
     /**
      * Getter for isTaxCodeListExclusionList
      *
      * Is the tax code list an exculsion list?
      */
-    public Byte getIsTaxCodeListExclusionList() {
+    public Integer getIsTaxCodeListExclusionList() {
         return this.isTaxCodeListExclusionList;
     }
 
@@ -245,7 +245,7 @@ public class EcmsDetailModel {
      *
      * Is the tax code list an exculsion list?
      */
-    public void setIsTaxCodeListExclusionList(Byte value) {
+    public void setIsTaxCodeListExclusionList(Integer value) {
         this.isTaxCodeListExclusionList = value;
     }
 

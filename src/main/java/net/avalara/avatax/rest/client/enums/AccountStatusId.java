@@ -35,6 +35,9 @@ public enum AccountStatusId {
 
     /** 
      * The account is new and is currently in the onboarding process.
+     *  
+     *  An account is considered new until the account administrator has reviewed and accepted 
+     *  [Avalara's terms and conditions](https://www.avalara.com/us/en/legal/terms.html).
      */
     New,
 

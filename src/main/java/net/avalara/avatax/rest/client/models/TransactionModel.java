@@ -118,7 +118,7 @@ public class TransactionModel {
     /**
      * Getter for paymentDate
      *
-     * The date when payment was made on this transaction. By default, this should be the same as the date of the transaction.
+     * DEPRECATED - The date when payment was made on this transaction. By default, this should be the same as the date of the transaction.
      */
     public Date getPaymentDate() {
         return this.paymentDate;
@@ -127,7 +127,7 @@ public class TransactionModel {
     /**
      * Setter for paymentDate
      *
-     * The date when payment was made on this transaction. By default, this should be the same as the date of the transaction.
+     * DEPRECATED - The date when payment was made on this transaction. By default, this should be the same as the date of the transaction.
      */
     public void setPaymentDate(Date value) {
         this.paymentDate = value;
@@ -507,14 +507,14 @@ public class TransactionModel {
     }
 
 
-    private TaxOverrideTypeId taxOverrideType;
+    private TaxOverrideType taxOverrideType;
 
     /**
      * Getter for taxOverrideType
      *
      * If a tax override was applied to this transaction, indicates what type of tax override was applied.
      */
-    public TaxOverrideTypeId getTaxOverrideType() {
+    public TaxOverrideType getTaxOverrideType() {
         return this.taxOverrideType;
     }
 
@@ -523,7 +523,7 @@ public class TransactionModel {
      *
      * If a tax override was applied to this transaction, indicates what type of tax override was applied.
      */
-    public void setTaxOverrideType(TaxOverrideTypeId value) {
+    public void setTaxOverrideType(TaxOverrideType value) {
         this.taxOverrideType = value;
     }
 
@@ -1213,6 +1213,27 @@ public class TransactionModel {
      */
     public void setSummary(ArrayList<TransactionSummary> value) {
         this.summary = value;
+    }
+
+
+    private ArrayList<TaxDetailsByTaxType> taxDetailsByTaxType;
+
+    /**
+     * Getter for taxDetailsByTaxType
+     *
+     * Constains the tax details per tax type
+     */
+    public ArrayList<TaxDetailsByTaxType> getTaxDetailsByTaxType() {
+        return this.taxDetailsByTaxType;
+    }
+
+    /**
+     * Setter for taxDetailsByTaxType
+     *
+     * Constains the tax details per tax type
+     */
+    public void setTaxDetailsByTaxType(ArrayList<TaxDetailsByTaxType> value) {
+        this.taxDetailsByTaxType = value;
     }
 
 

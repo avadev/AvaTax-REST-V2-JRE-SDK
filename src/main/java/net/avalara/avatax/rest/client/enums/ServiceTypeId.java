@@ -109,6 +109,36 @@ public enum ServiceTypeId {
     AvaBottle,
 
     /** 
+     * AvaComms
+     */
+    AvaComms,
+
+    /** 
+     * AvaEWaste
+     */
+    AvaEWaste,
+
+    /** 
+     * AvaExemptTier1
+     */
+    AvaExemptTier1,
+
+    /** 
+     * AvaExemptTier2
+     */
+    AvaExemptTier2,
+
+    /** 
+     * AvaExemptTier3
+     */
+    AvaExemptTier3,
+
+    /** 
+     * AvaExemptTier4
+     */
+    AvaExemptTier4,
+
+    /** 
      * MRSComplianceManager
      */
     MRSComplianceManager,

@@ -213,6 +213,74 @@ public class AvaTaxClient {
     }
 
     /**
+     * Retrieve audit history for an account.
+     * 
+     * Retrieve audit trace history for an account.
+     * 
+     * Your audit trace history contains a record of all API calls made against the AvaTax REST API.  You can use this API to investigate
+     * problems and see exactly what information was sent back and forth between your code and AvaTax.
+     * 
+     * When specifying a start and end datetime, please include a valid timezone indicator, such as the "Z" present in the examples for the start and end query parameters.
+     * You can learn more about valid time zone designators at https://en.wikipedia.org/wiki/ISO_8601#Time_zone_designators.
+     * 
+     * This API enforces limits to the amount of data retrieved. These limits are subject to change.
+     * 
+     * * You may request data from a maximum of a one-hour time period.
+     * * The amount of data and number of API calls returned by this API are limited and may be adjusted at any time.
+     * * Old records may be migrated out of immediately available storage.  To request older data, please contact your account manager.
+     * 
+     * @param id The ID of the account you wish to audit.
+     * @param start The start datetime of audit history you with to retrieve, e.g. "2018-06-08T17:00:00Z". Defaults to the past 15 minutes.
+     * @param end The end datetime of audit history you with to retrieve, e.g. "2018-06-08T17:15:00Z. Defaults to the current time. Maximum of an hour after the start time.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
+     * @return FetchResult<AuditModel>
+     */
+    public FetchResult<AuditModel> auditAccount(Integer id, Date start, Date end, Integer top, Integer skip) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{id}/audit");
+        path.applyField("id", id);
+        path.addQuery("start", start);
+        path.addQuery("end", end);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        return ((RestCall<FetchResult<AuditModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<AuditModel>>(){})).call();
+    }
+
+    /**
+     * Retrieve audit history for an account.
+     * 
+     * Retrieve audit trace history for an account.
+     * 
+     * Your audit trace history contains a record of all API calls made against the AvaTax REST API.  You can use this API to investigate
+     * problems and see exactly what information was sent back and forth between your code and AvaTax.
+     * 
+     * When specifying a start and end datetime, please include a valid timezone indicator, such as the "Z" present in the examples for the start and end query parameters.
+     * You can learn more about valid time zone designators at https://en.wikipedia.org/wiki/ISO_8601#Time_zone_designators.
+     * 
+     * This API enforces limits to the amount of data retrieved. These limits are subject to change.
+     * 
+     * * You may request data from a maximum of a one-hour time period.
+     * * The amount of data and number of API calls returned by this API are limited and may be adjusted at any time.
+     * * Old records may be migrated out of immediately available storage.  To request older data, please contact your account manager.
+     * 
+     * @param id The ID of the account you wish to audit.
+     * @param start The start datetime of audit history you with to retrieve, e.g. "2018-06-08T17:00:00Z". Defaults to the past 15 minutes.
+     * @param end The end datetime of audit history you with to retrieve, e.g. "2018-06-08T17:15:00Z. Defaults to the current time. Maximum of an hour after the start time.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
+     * @return FetchResult<AuditModel>
+     */
+    public Future<FetchResult<AuditModel>> auditAccountAsync(Integer id, Date start, Date end, Integer top, Integer skip) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{id}/audit");
+        path.applyField("id", id);
+        path.addQuery("start", start);
+        path.addQuery("end", end);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        return this.threadPool.submit((RestCall<FetchResult<AuditModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<AuditModel>>(){}));
+    }
+
+    /**
      * Retrieve a single account
      * 
      * Get the account object identified by this URL.
@@ -315,8 +383,8 @@ public class AvaTaxClient {
      * 
      * @param include A comma separated list of objects to fetch underneath this account. Any object with a URL path underneath this account can be fetched by specifying its name.
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<AccountModel>
      */
@@ -347,8 +415,8 @@ public class AvaTaxClient {
      * 
      * @param include A comma separated list of objects to fetch underneath this account. Any object with a URL path underneath this account can be fetched by specifying its name.
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<AccountModel>
      */
@@ -429,11 +497,9 @@ public class AvaTaxClient {
      * @param postalCode Postal Code / Zip Code
      * @param country Two character ISO 3166 Country Code (see /api/v2/definitions/countries for a full list)
      * @param textCase selectable text case for address validation (See TextCase::* for a list of allowable values)
-     * @param latitude Geospatial latitude measurement
-     * @param longitude Geospatial longitude measurement
      * @return AddressResolutionModel
      */
-    public AddressResolutionModel resolveAddress(String line1, String line2, String line3, String city, String region, String postalCode, String country, TextCase textCase, BigDecimal latitude, BigDecimal longitude) throws Exception {
+    public AddressResolutionModel resolveAddress(String line1, String line2, String line3, String city, String region, String postalCode, String country, TextCase textCase) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/addresses/resolve");
         path.addQuery("line1", line1);
         path.addQuery("line2", line2);
@@ -443,8 +509,6 @@ public class AvaTaxClient {
         path.addQuery("postalCode", postalCode);
         path.addQuery("country", country);
         path.addQuery("textCase", textCase);
-        path.addQuery("latitude", latitude);
-        path.addQuery("longitude", longitude);
         return ((RestCall<AddressResolutionModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<AddressResolutionModel>(){})).call();
     }
 
@@ -465,11 +529,9 @@ public class AvaTaxClient {
      * @param postalCode Postal Code / Zip Code
      * @param country Two character ISO 3166 Country Code (see /api/v2/definitions/countries for a full list)
      * @param textCase selectable text case for address validation (See TextCase::* for a list of allowable values)
-     * @param latitude Geospatial latitude measurement
-     * @param longitude Geospatial longitude measurement
      * @return AddressResolutionModel
      */
-    public Future<AddressResolutionModel> resolveAddressAsync(String line1, String line2, String line3, String city, String region, String postalCode, String country, TextCase textCase, BigDecimal latitude, BigDecimal longitude) {
+    public Future<AddressResolutionModel> resolveAddressAsync(String line1, String line2, String line3, String city, String region, String postalCode, String country, TextCase textCase) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/addresses/resolve");
         path.addQuery("line1", line1);
         path.addQuery("line2", line2);
@@ -479,8 +541,6 @@ public class AvaTaxClient {
         path.addQuery("postalCode", postalCode);
         path.addQuery("country", country);
         path.addQuery("textCase", textCase);
-        path.addQuery("latitude", latitude);
-        path.addQuery("longitude", longitude);
         return this.threadPool.submit((RestCall<AddressResolutionModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<AddressResolutionModel>(){}));
     }
 
@@ -977,8 +1037,8 @@ public class AvaTaxClient {
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * @param include A comma separated list of additional data to retrieve.
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<AvaFileFormModel>
      */
@@ -999,8 +1059,8 @@ public class AvaTaxClient {
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * @param include A comma separated list of additional data to retrieve.
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<AvaFileFormModel>
      */
@@ -1263,8 +1323,8 @@ public class AvaTaxClient {
      * @param companyId The ID of the company that owns these batches
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * @param include A comma separated list of additional data to retrieve.
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<BatchModel>
      */
@@ -1306,8 +1366,8 @@ public class AvaTaxClient {
      * @param companyId The ID of the company that owns these batches
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * @param include A comma separated list of additional data to retrieve.
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<BatchModel>
      */
@@ -1345,8 +1405,8 @@ public class AvaTaxClient {
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * @param include A comma separated list of additional data to retrieve.
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<BatchModel>
      */
@@ -1383,8 +1443,8 @@ public class AvaTaxClient {
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * @param include A comma separated list of additional data to retrieve.
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<BatchModel>
      */
@@ -1545,8 +1605,8 @@ public class AvaTaxClient {
      * @param companyId The unique ID number of the company that issued this invitation
      * @param include OPTIONAL: A comma separated list of special fetch options.       No options are defined at this time.
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<CertExpressInvitationModel>
      */
@@ -1582,8 +1642,8 @@ public class AvaTaxClient {
      * @param companyId The unique ID number of the company that issued this invitation
      * @param include OPTIONAL: A comma separated list of special fetch options.       No options are defined at this time.
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<CertExpressInvitationModel>
      */
@@ -2141,8 +2201,8 @@ public class AvaTaxClient {
      * @param companyId The ID number of the company to search
      * @param include OPTIONAL: A comma separated list of special fetch options. You can specify one or more of the following:      * Customers - Retrieves the list of customers linked to the certificate.   * PoNumbers - Retrieves all PO numbers tied to the certificate.   * Attributes - Retrieves all attributes applied to the certificate.
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<CertificateModel>
      */
@@ -2180,8 +2240,8 @@ public class AvaTaxClient {
      * @param companyId The ID number of the company to search
      * @param include OPTIONAL: A comma separated list of special fetch options. You can specify one or more of the following:      * Customers - Retrieves the list of customers linked to the certificate.   * PoNumbers - Retrieves all PO numbers tied to the certificate.   * Attributes - Retrieves all attributes applied to the certificate.
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<CertificateModel>
      */
@@ -2961,8 +3021,8 @@ public class AvaTaxClient {
      * 
      * @param include A comma separated list of objects to fetch underneath this company. Any object with a URL path underneath this company can be fetched by specifying its name.
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<CompanyModel>
      */
@@ -2997,8 +3057,8 @@ public class AvaTaxClient {
      * 
      * @param include A comma separated list of objects to fetch underneath this company. Any object with a URL path underneath this company can be fetched by specifying its name.
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<CompanyModel>
      */
@@ -3210,8 +3270,8 @@ public class AvaTaxClient {
      * @param companyId The ID of the company that owns these contacts
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * @param include A comma separated list of additional data to retrieve.
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<ContactModel>
      */
@@ -3236,8 +3296,8 @@ public class AvaTaxClient {
      * @param companyId The ID of the company that owns these contacts
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * @param include A comma separated list of additional data to retrieve.
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<ContactModel>
      */
@@ -3263,8 +3323,8 @@ public class AvaTaxClient {
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * @param include A comma separated list of additional data to retrieve.
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<ContactModel>
      */
@@ -3289,8 +3349,8 @@ public class AvaTaxClient {
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * @param include A comma separated list of additional data to retrieve.
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<ContactModel>
      */
@@ -3573,6 +3633,62 @@ public class AvaTaxClient {
     }
 
     /**
+     * Link two customer records together
+     * 
+     * Links a Ship-To customer record with a Bill-To customer record.
+     * 
+     * Customer records represent businesses or individuals who can provide exemption certificates.  Some customers
+     * may have certificates that are linked to their shipping address or their billing address.  To group these
+     * customer records together, you may link multiple bill-to and ship-to addresses together to represent a single
+     * entity that has multiple different addresses of different kinds.
+     * 
+     * In general, a customer will have only one primary billing address and multiple ship-to addresses, representing
+     * all of the different locations where they receive goods.  To facilitate this type of customer, you can send in
+     * one bill-to customer code and multiple ship-to customer codes in a single API call.
+     * 
+     * Note that you can only link a ship-to customer record to a bill-to customer record.  You may not link two customers
+     * 
+     * @param companyId The unique ID number of the company defining customers.
+     * @param code The code of the bill-to customer to link.
+     * @param model A list of information about ship-to customers to link to this bill-to customer.
+     * @return CustomerModel
+     */
+    public CustomerModel linkShipToCustomersToBillCustomer(Integer companyId, String code, LinkCustomersModel model) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/customers/billto/{code}/shipto/link");
+        path.applyField("companyId", companyId);
+        path.applyField("code", code);
+        return ((RestCall<CustomerModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<CustomerModel>(){})).call();
+    }
+
+    /**
+     * Link two customer records together
+     * 
+     * Links a Ship-To customer record with a Bill-To customer record.
+     * 
+     * Customer records represent businesses or individuals who can provide exemption certificates.  Some customers
+     * may have certificates that are linked to their shipping address or their billing address.  To group these
+     * customer records together, you may link multiple bill-to and ship-to addresses together to represent a single
+     * entity that has multiple different addresses of different kinds.
+     * 
+     * In general, a customer will have only one primary billing address and multiple ship-to addresses, representing
+     * all of the different locations where they receive goods.  To facilitate this type of customer, you can send in
+     * one bill-to customer code and multiple ship-to customer codes in a single API call.
+     * 
+     * Note that you can only link a ship-to customer record to a bill-to customer record.  You may not link two customers
+     * 
+     * @param companyId The unique ID number of the company defining customers.
+     * @param code The code of the bill-to customer to link.
+     * @param model A list of information about ship-to customers to link to this bill-to customer.
+     * @return CustomerModel
+     */
+    public Future<CustomerModel> linkShipToCustomersToBillCustomerAsync(Integer companyId, String code, LinkCustomersModel model) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/customers/billto/{code}/shipto/link");
+        path.applyField("companyId", companyId);
+        path.applyField("code", code);
+        return this.threadPool.submit((RestCall<CustomerModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<CustomerModel>(){}));
+    }
+
+    /**
      * List certificates linked to a customer
      * 
      * List all certificates linked to a customer.
@@ -3591,8 +3707,8 @@ public class AvaTaxClient {
      * @param customerCode The unique code representing this customer
      * @param include OPTIONAL: A comma separated list of special fetch options. You can specify one or more of the following:      * Customers - Retrieves the list of customers linked to the certificate.   * PoNumbers - Retrieves all PO numbers tied to the certificate.   * Attributes - Retrieves all attributes applied to the certificate.
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<CertificateModel>
      */
@@ -3627,8 +3743,8 @@ public class AvaTaxClient {
      * @param customerCode The unique code representing this customer
      * @param include OPTIONAL: A comma separated list of special fetch options. You can specify one or more of the following:      * Customers - Retrieves the list of customers linked to the certificate.   * PoNumbers - Retrieves all PO numbers tied to the certificate.   * Attributes - Retrieves all attributes applied to the certificate.
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<CertificateModel>
      */
@@ -3732,8 +3848,8 @@ public class AvaTaxClient {
      * @param companyId The unique ID number of the company that recorded this customer
      * @param include OPTIONAL - You can specify the value `certificates` to fetch information about certificates linked to the customer.
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<CustomerModel>
      */
@@ -3770,8 +3886,8 @@ public class AvaTaxClient {
      * @param companyId The unique ID number of the company that recorded this customer
      * @param include OPTIONAL - You can specify the value `certificates` to fetch information about certificates linked to the customer.
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<CustomerModel>
      */
@@ -3895,6 +4011,202 @@ public class AvaTaxClient {
     }
 
     /**
+     * Create and store new datasources for the respective companies.
+     * 
+     * @param companyId The id of the company you which to create the datasources
+     * @param model 
+     * @return ArrayList<DataSourceModel>
+     */
+    public ArrayList<DataSourceModel> createDataSources(Integer companyId, ArrayList<DataSourceModel> model) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/datasources");
+        path.applyField("companyId", companyId);
+        return ((RestCall<ArrayList<DataSourceModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<DataSourceModel>>(){})).call();
+    }
+
+    /**
+     * Create and store new datasources for the respective companies.
+     * 
+     * @param companyId The id of the company you which to create the datasources
+     * @param model 
+     * @return ArrayList<DataSourceModel>
+     */
+    public Future<ArrayList<DataSourceModel>> createDataSourcesAsync(Integer companyId, ArrayList<DataSourceModel> model) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/datasources");
+        path.applyField("companyId", companyId);
+        return this.threadPool.submit((RestCall<ArrayList<DataSourceModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<DataSourceModel>>(){}));
+    }
+
+    /**
+     * Delete a datasource by datasource id for a company.
+     * 
+     * @param companyId The id of the company the datasource belongs to.
+     * @param id The id of the datasource you wish to delete.
+     * @return ArrayList<ErrorDetail>
+     */
+    public ArrayList<ErrorDetail> deleteDataSource(Integer companyId, Integer id) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/datasources/{id}");
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
+        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){})).call();
+    }
+
+    /**
+     * Delete a datasource by datasource id for a company.
+     * 
+     * @param companyId The id of the company the datasource belongs to.
+     * @param id The id of the datasource you wish to delete.
+     * @return ArrayList<ErrorDetail>
+     */
+    public Future<ArrayList<ErrorDetail>> deleteDataSourceAsync(Integer companyId, Integer id) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/datasources/{id}");
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
+        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){}));
+    }
+
+    /**
+     * Get data source by data source id
+     * 
+     * @param companyId 
+     * @param id data source id
+     * @return DataSourceModel
+     */
+    public DataSourceModel getDataSourceById(Integer companyId, Integer id) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/datasources/{id}");
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
+        return ((RestCall<DataSourceModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<DataSourceModel>(){})).call();
+    }
+
+    /**
+     * Get data source by data source id
+     * 
+     * @param companyId 
+     * @param id data source id
+     * @return DataSourceModel
+     */
+    public Future<DataSourceModel> getDataSourceByIdAsync(Integer companyId, Integer id) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/datasources/{id}");
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
+        return this.threadPool.submit((RestCall<DataSourceModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<DataSourceModel>(){}));
+    }
+
+    /**
+     * Retrieve all datasources for this company
+     * 
+     * @param companyId The id of the company you wish to retrieve the datasources.
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @return FetchResult<DataSourceModel>
+     */
+    public FetchResult<DataSourceModel> listDataSources(Integer companyId, String filter, Integer top, Integer skip, String orderBy) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/datasources");
+        path.applyField("companyId", companyId);
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
+        return ((RestCall<FetchResult<DataSourceModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<DataSourceModel>>(){})).call();
+    }
+
+    /**
+     * Retrieve all datasources for this company
+     * 
+     * @param companyId The id of the company you wish to retrieve the datasources.
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @return FetchResult<DataSourceModel>
+     */
+    public Future<FetchResult<DataSourceModel>> listDataSourcesAsync(Integer companyId, String filter, Integer top, Integer skip, String orderBy) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/datasources");
+        path.applyField("companyId", companyId);
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
+        return this.threadPool.submit((RestCall<FetchResult<DataSourceModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<DataSourceModel>>(){}));
+    }
+
+    /**
+     * Retrieve all datasources
+     * 
+     * Get multiple datasource objects across all companies.
+     * 
+     * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * 
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @return FetchResult<DataSourceModel>
+     */
+    public FetchResult<DataSourceModel> queryDataSources(String filter, Integer top, Integer skip, String orderBy) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/datasources");
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
+        return ((RestCall<FetchResult<DataSourceModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<DataSourceModel>>(){})).call();
+    }
+
+    /**
+     * Retrieve all datasources
+     * 
+     * Get multiple datasource objects across all companies.
+     * 
+     * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * 
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @return FetchResult<DataSourceModel>
+     */
+    public Future<FetchResult<DataSourceModel>> queryDataSourcesAsync(String filter, Integer top, Integer skip, String orderBy) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/datasources");
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
+        return this.threadPool.submit((RestCall<FetchResult<DataSourceModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<DataSourceModel>>(){}));
+    }
+
+    /**
+     * Update a datasource identified by id for a company
+     * 
+     * @param companyId The id of the company the datasource belongs to.
+     * @param id The id of the datasource you wish to delete.
+     * @param model 
+     * @return DataSourceModel
+     */
+    public DataSourceModel updateDataSource(Integer companyId, Integer id, DataSourceModel model) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/datasources/{id}");
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
+        return ((RestCall<DataSourceModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<DataSourceModel>(){})).call();
+    }
+
+    /**
+     * Update a datasource identified by id for a company
+     * 
+     * @param companyId The id of the company the datasource belongs to.
+     * @param id The id of the datasource you wish to delete.
+     * @param model 
+     * @return DataSourceModel
+     */
+    public Future<DataSourceModel> updateDataSourceAsync(Integer companyId, Integer id, DataSourceModel model) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/datasources/{id}");
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
+        return this.threadPool.submit((RestCall<DataSourceModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<DataSourceModel>(){}));
+    }
+
+    /**
      * Lists all parents of an HS Code.
      * 
      * Retrieves the specified HS code and all of its parents, reflecting all sections, chapters, headings, and subheadings
@@ -3949,8 +4261,8 @@ public class AvaTaxClient {
      * 
      * @param form The name of the form you would like to verify. This can be the tax form code or the legacy return name
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<SkyscraperStatusModel>
      */
@@ -3971,8 +4283,8 @@ public class AvaTaxClient {
      * 
      * @param form The name of the form you would like to verify. This can be the tax form code or the legacy return name
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<SkyscraperStatusModel>
      */
@@ -3996,8 +4308,8 @@ public class AvaTaxClient {
      * Returns the full list of Avalara-supported AvaFile Forms
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<AvaFileFormModel>
      */
@@ -4020,8 +4332,8 @@ public class AvaTaxClient {
      * Returns the full list of Avalara-supported AvaFile Forms
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<AvaFileFormModel>
      */
@@ -4045,8 +4357,8 @@ public class AvaTaxClient {
      * If you see the 'CertCaptureNotConfiguredError', please use CheckProvision and RequestProvision endpoints to
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<CertificateAttributeModel>
      */
@@ -4070,8 +4382,8 @@ public class AvaTaxClient {
      * If you see the 'CertCaptureNotConfiguredError', please use CheckProvision and RequestProvision endpoints to
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<CertificateAttributeModel>
      */
@@ -4095,8 +4407,8 @@ public class AvaTaxClient {
      * If you see the 'CertCaptureNotConfiguredError', please use CheckProvision and RequestProvision endpoints to
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<ExemptionReasonModel>
      */
@@ -4120,8 +4432,8 @@ public class AvaTaxClient {
      * If you see the 'CertCaptureNotConfiguredError', please use CheckProvision and RequestProvision endpoints to
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<ExemptionReasonModel>
      */
@@ -4145,8 +4457,8 @@ public class AvaTaxClient {
      * If you see the 'CertCaptureNotConfiguredError', please use CheckProvision and RequestProvision endpoints to
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<ExposureZoneModel>
      */
@@ -4170,8 +4482,8 @@ public class AvaTaxClient {
      * If you see the 'CertCaptureNotConfiguredError', please use CheckProvision and RequestProvision endpoints to
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<ExposureZoneModel>
      */
@@ -4189,8 +4501,8 @@ public class AvaTaxClient {
      * 
      * @param id The transaction type ID to examine
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<CommunicationsTSPairModel>
      */
@@ -4209,8 +4521,8 @@ public class AvaTaxClient {
      * 
      * @param id The transaction type ID to examine
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<CommunicationsTSPairModel>
      */
@@ -4230,8 +4542,8 @@ public class AvaTaxClient {
      * Returns full list of communications transaction types which
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<CommunicationsTransactionTypeModel>
      */
@@ -4250,8 +4562,8 @@ public class AvaTaxClient {
      * Returns full list of communications transaction types which
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<CommunicationsTransactionTypeModel>
      */
@@ -4270,8 +4582,8 @@ public class AvaTaxClient {
      * Returns full list of communications transaction/service type pairs which
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<CommunicationsTSPairModel>
      */
@@ -4290,8 +4602,8 @@ public class AvaTaxClient {
      * Returns full list of communications transaction/service type pairs which
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<CommunicationsTSPairModel>
      */
@@ -4311,8 +4623,8 @@ public class AvaTaxClient {
      * This API is intended to be useful when presenting a dropdown box in your website to allow customers to select a country for 
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<IsoCountryModel>
      */
@@ -4332,8 +4644,8 @@ public class AvaTaxClient {
      * This API is intended to be useful when presenting a dropdown box in your website to allow customers to select a country for 
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<IsoCountryModel>
      */
@@ -4358,8 +4670,8 @@ public class AvaTaxClient {
      * If you see the 'CertCaptureNotConfiguredError', please use CheckProvision and RequestProvision endpoints to
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<CoverLetterModel>
      */
@@ -4384,8 +4696,8 @@ public class AvaTaxClient {
      * If you see the 'CertCaptureNotConfiguredError', please use CheckProvision and RequestProvision endpoints to
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<CoverLetterModel>
      */
@@ -4412,8 +4724,8 @@ public class AvaTaxClient {
      * @param country The name or code of the destination country.
      * @param hsCode The Section or partial HS Code for which you would like to view the next level of HS Code detail, if more detail is available.
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<HsCodeModel>
      */
@@ -4442,8 +4754,8 @@ public class AvaTaxClient {
      * @param country The name or code of the destination country.
      * @param hsCode The Section or partial HS Code for which you would like to view the next level of HS Code detail, if more detail is available.
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<HsCodeModel>
      */
@@ -4498,8 +4810,8 @@ public class AvaTaxClient {
      * This API produces a list of currency codes that can be used when calling AvaTax.  The values from this API can be used to fill out the
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<CurrencyModel>
      */
@@ -4520,8 +4832,8 @@ public class AvaTaxClient {
      * This API produces a list of currency codes that can be used when calling AvaTax.  The values from this API can be used to fill out the
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<CurrencyModel>
      */
@@ -4543,8 +4855,8 @@ public class AvaTaxClient {
      * In order to facilitate correct reporting of your taxes, you are encouraged to select the proper entity use codes for
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<EntityUseCodeModel>
      */
@@ -4566,8 +4878,8 @@ public class AvaTaxClient {
      * In order to facilitate correct reporting of your taxes, you are encouraged to select the proper entity use codes for
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<EntityUseCodeModel>
      */
@@ -4586,8 +4898,8 @@ public class AvaTaxClient {
      * Returns the full list of Avalara-supported filing frequencies.
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<FilingFrequencyModel>
      */
@@ -4606,8 +4918,8 @@ public class AvaTaxClient {
      * Returns the full list of Avalara-supported filing frequencies.
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<FilingFrequencyModel>
      */
@@ -4628,8 +4940,8 @@ public class AvaTaxClient {
      * This API allows you to examine all Avalara-supported jurisdictions. You can filter your search by supplying
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<JurisdictionModel>
      */
@@ -4650,8 +4962,8 @@ public class AvaTaxClient {
      * This API allows you to examine all Avalara-supported jurisdictions. You can filter your search by supplying
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<JurisdictionModel>
      */
@@ -4682,8 +4994,8 @@ public class AvaTaxClient {
      * @param postalCode The postal code or zip code portion of this address.
      * @param country The two-character ISO-3166 code of the country portion of this address.
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<JurisdictionOverrideModel>
      */
@@ -4721,8 +5033,8 @@ public class AvaTaxClient {
      * @param postalCode The postal code or zip code portion of this address.
      * @param country The two-character ISO-3166 code of the country portion of this address.
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<JurisdictionOverrideModel>
      */
@@ -4761,8 +5073,8 @@ public class AvaTaxClient {
      * @param latitude Optionally identify the location via latitude/longitude instead of via address.
      * @param longitude Optionally identify the location via latitude/longitude instead of via address.
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<LocationQuestionModel>
      */
@@ -4803,8 +5115,8 @@ public class AvaTaxClient {
      * @param latitude Optionally identify the location via latitude/longitude instead of via address.
      * @param longitude Optionally identify the location via latitude/longitude instead of via address.
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<LocationQuestionModel>
      */
@@ -4833,8 +5145,8 @@ public class AvaTaxClient {
      * This API is intended to be useful to identify whether the user should be allowed
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<SkyscraperStatusModel>
      */
@@ -4854,8 +5166,8 @@ public class AvaTaxClient {
      * This API is intended to be useful to identify whether the user should be allowed
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<SkyscraperStatusModel>
      */
@@ -4875,8 +5187,8 @@ public class AvaTaxClient {
      * 
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<NexusModel>
      */
@@ -4896,8 +5208,8 @@ public class AvaTaxClient {
      * 
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<NexusModel>
      */
@@ -4926,8 +5238,8 @@ public class AvaTaxClient {
      * @param postalCode The postal code or zip code portion of this address.
      * @param country Name or ISO 3166 code identifying the country portion of this address.      This field supports many different country identifiers:   * Two character ISO 3166 codes   * Three character ISO 3166 codes   * Fully spelled out names of the country in ISO supported languages   * Common alternative spellings for many countries      For a full list of all supported codes and names, please see the Definitions API `ListCountries`.
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<NexusModel>
      */
@@ -4963,8 +5275,8 @@ public class AvaTaxClient {
      * @param postalCode The postal code or zip code portion of this address.
      * @param country Name or ISO 3166 code identifying the country portion of this address.      This field supports many different country identifiers:   * Two character ISO 3166 codes   * Three character ISO 3166 codes   * Fully spelled out names of the country in ISO supported languages   * Common alternative spellings for many countries      For a full list of all supported codes and names, please see the Definitions API `ListCountries`.
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<NexusModel>
      */
@@ -4992,8 +5304,8 @@ public class AvaTaxClient {
      * 
      * @param country The country in which you want to fetch the system nexus
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<NexusModel>
      */
@@ -5015,8 +5327,8 @@ public class AvaTaxClient {
      * 
      * @param country The country in which you want to fetch the system nexus
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<NexusModel>
      */
@@ -5039,8 +5351,8 @@ public class AvaTaxClient {
      * @param country The two-character ISO-3166 code for the country.
      * @param region The two or three character region code for the region.
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<NexusModel>
      */
@@ -5064,8 +5376,8 @@ public class AvaTaxClient {
      * @param country The two-character ISO-3166 code for the country.
      * @param region The two or three character region code for the region.
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<NexusModel>
      */
@@ -5095,19 +5407,11 @@ public class AvaTaxClient {
      * a tax form, you may want to know whether you have declared nexus in all the jurisdictions related to that tax 
      * 
      * @param formCode The form code that we are looking up the nexus for
-     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
-     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return NexusByTaxFormModel
      */
-    public NexusByTaxFormModel listNexusByFormCode(String formCode, String filter, Integer top, Integer skip, String orderBy) throws Exception {
+    public NexusByTaxFormModel listNexusByFormCode(String formCode) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/nexus/byform/{formCode}");
         path.applyField("formCode", formCode);
-        path.addQuery("$filter", filter);
-        path.addQuery("$top", top);
-        path.addQuery("$skip", skip);
-        path.addQuery("$orderBy", orderBy);
         return ((RestCall<NexusByTaxFormModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<NexusByTaxFormModel>(){})).call();
     }
 
@@ -5126,19 +5430,11 @@ public class AvaTaxClient {
      * a tax form, you may want to know whether you have declared nexus in all the jurisdictions related to that tax 
      * 
      * @param formCode The form code that we are looking up the nexus for
-     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
-     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return NexusByTaxFormModel
      */
-    public Future<NexusByTaxFormModel> listNexusByFormCodeAsync(String formCode, String filter, Integer top, Integer skip, String orderBy) {
+    public Future<NexusByTaxFormModel> listNexusByFormCodeAsync(String formCode) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/nexus/byform/{formCode}");
         path.applyField("formCode", formCode);
-        path.addQuery("$filter", filter);
-        path.addQuery("$top", top);
-        path.addQuery("$skip", skip);
-        path.addQuery("$orderBy", orderBy);
         return this.threadPool.submit((RestCall<NexusByTaxFormModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<NexusByTaxFormModel>(){}));
     }
 
@@ -5148,8 +5444,8 @@ public class AvaTaxClient {
      * Returns the full list of Avalara-supported nexus tax type groups
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<NexusTaxTypeGroupModel>
      */
@@ -5168,8 +5464,8 @@ public class AvaTaxClient {
      * Returns the full list of Avalara-supported nexus tax type groups
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<NexusTaxTypeGroupModel>
      */
@@ -5188,8 +5484,8 @@ public class AvaTaxClient {
      * Returns the full list of Avalara-supported tax notice customer funding options.
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<NoticeCustomerFundingOptionModel>
      */
@@ -5208,8 +5504,8 @@ public class AvaTaxClient {
      * Returns the full list of Avalara-supported tax notice customer funding options.
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<NoticeCustomerFundingOptionModel>
      */
@@ -5228,8 +5524,8 @@ public class AvaTaxClient {
      * Returns the full list of Avalara-supported tax notice customer types.
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<NoticeCustomerTypeModel>
      */
@@ -5248,8 +5544,8 @@ public class AvaTaxClient {
      * Returns the full list of Avalara-supported tax notice customer types.
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<NoticeCustomerTypeModel>
      */
@@ -5268,8 +5564,8 @@ public class AvaTaxClient {
      * Returns the full list of Avalara-supported tax notice filing types.
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<NoticeFilingTypeModel>
      */
@@ -5288,8 +5584,8 @@ public class AvaTaxClient {
      * Returns the full list of Avalara-supported tax notice filing types.
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<NoticeFilingTypeModel>
      */
@@ -5308,8 +5604,8 @@ public class AvaTaxClient {
      * Returns the full list of Avalara-supported tax notice priorities.
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<NoticePriorityModel>
      */
@@ -5328,8 +5624,8 @@ public class AvaTaxClient {
      * Returns the full list of Avalara-supported tax notice priorities.
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<NoticePriorityModel>
      */
@@ -5348,8 +5644,8 @@ public class AvaTaxClient {
      * Returns the full list of Avalara-supported tax notice reasons.
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<NoticeReasonModel>
      */
@@ -5368,8 +5664,8 @@ public class AvaTaxClient {
      * Returns the full list of Avalara-supported tax notice reasons.
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<NoticeReasonModel>
      */
@@ -5388,8 +5684,8 @@ public class AvaTaxClient {
      * Returns the full list of Avalara-supported tax notice responsibility ids
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<NoticeResponsibilityModel>
      */
@@ -5408,8 +5704,8 @@ public class AvaTaxClient {
      * Returns the full list of Avalara-supported tax notice responsibility ids
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<NoticeResponsibilityModel>
      */
@@ -5428,8 +5724,8 @@ public class AvaTaxClient {
      * Returns the full list of Avalara-supported tax notice root causes
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<NoticeRootCauseModel>
      */
@@ -5448,8 +5744,8 @@ public class AvaTaxClient {
      * Returns the full list of Avalara-supported tax notice root causes
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<NoticeRootCauseModel>
      */
@@ -5468,8 +5764,8 @@ public class AvaTaxClient {
      * Returns the full list of Avalara-supported tax notice statuses.
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<NoticeStatusModel>
      */
@@ -5488,8 +5784,8 @@ public class AvaTaxClient {
      * Returns the full list of Avalara-supported tax notice statuses.
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<NoticeStatusModel>
      */
@@ -5508,8 +5804,8 @@ public class AvaTaxClient {
      * Returns the full list of Avalara-supported tax notice types.
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<NoticeTypeModel>
      */
@@ -5528,8 +5824,8 @@ public class AvaTaxClient {
      * Returns the full list of Avalara-supported tax notice types.
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<NoticeTypeModel>
      */
@@ -5549,8 +5845,8 @@ public class AvaTaxClient {
      * This list of parameters is available for use when configuring your transaction.
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<ParameterModel>
      */
@@ -5570,8 +5866,8 @@ public class AvaTaxClient {
      * This list of parameters is available for use when configuring your transaction.
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<ParameterModel>
      */
@@ -5589,8 +5885,8 @@ public class AvaTaxClient {
      * 
      * Returns the full list of Avalara-supported permission types.
      * 
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @return FetchResult<String>
      */
     public FetchResult<String> listPermissions(Integer top, Integer skip) throws Exception {
@@ -5605,8 +5901,8 @@ public class AvaTaxClient {
      * 
      * Returns the full list of Avalara-supported permission types.
      * 
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @return FetchResult<String>
      */
     public Future<FetchResult<String>> listPermissionsAsync(Integer top, Integer skip) {
@@ -5620,8 +5916,8 @@ public class AvaTaxClient {
      * Retrieve the full list of Avalara-supported postal codes.
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<PostalCodeModel>
      */
@@ -5638,8 +5934,8 @@ public class AvaTaxClient {
      * Retrieve the full list of Avalara-supported postal codes.
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<PostalCodeModel>
      */
@@ -5665,8 +5961,8 @@ public class AvaTaxClient {
      * preferred program.  Next, set the parameter `AvaTax.LC.PreferredProgram` in your `CreateTransaction` call to the code of
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<PreferredProgramModel>
      */
@@ -5692,8 +5988,8 @@ public class AvaTaxClient {
      * preferred program.  Next, set the parameter `AvaTax.LC.PreferredProgram` in your `CreateTransaction` call to the code of
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<PreferredProgramModel>
      */
@@ -5713,8 +6009,8 @@ public class AvaTaxClient {
      * 
      * @param country The country to examine for rate types
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<RateTypeModel>
      */
@@ -5735,8 +6031,8 @@ public class AvaTaxClient {
      * 
      * @param country The country to examine for rate types
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<RateTypeModel>
      */
@@ -5757,8 +6053,8 @@ public class AvaTaxClient {
      * This API is intended to be useful when presenting a dropdown box in your website to allow customers to select a region 
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<IsoRegionModel>
      */
@@ -5778,8 +6074,8 @@ public class AvaTaxClient {
      * This API is intended to be useful when presenting a dropdown box in your website to allow customers to select a region 
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<IsoRegionModel>
      */
@@ -5800,8 +6096,8 @@ public class AvaTaxClient {
      * 
      * @param country The country of which you want to fetch ISO 3166 regions
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<IsoRegionModel>
      */
@@ -5823,8 +6119,8 @@ public class AvaTaxClient {
      * 
      * @param country The country of which you want to fetch ISO 3166 regions
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<IsoRegionModel>
      */
@@ -5844,8 +6140,8 @@ public class AvaTaxClient {
      * Returns the full list of Avalara-supported resource file types
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<ResourceFileTypeModel>
      */
@@ -5864,8 +6160,8 @@ public class AvaTaxClient {
      * Returns the full list of Avalara-supported resource file types
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<ResourceFileTypeModel>
      */
@@ -5885,8 +6181,8 @@ public class AvaTaxClient {
      * This API is intended to be useful when designing a user interface for selecting the security role of a user account.
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<SecurityRoleModel>
      */
@@ -5906,8 +6202,8 @@ public class AvaTaxClient {
      * This API is intended to be useful when designing a user interface for selecting the security role of a user account.
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<SecurityRoleModel>
      */
@@ -5928,8 +6224,8 @@ public class AvaTaxClient {
      * You may always contact Avalara's sales department for information on available products or services.
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<SubscriptionTypeModel>
      */
@@ -5950,8 +6246,8 @@ public class AvaTaxClient {
      * You may always contact Avalara's sales department for information on available products or services.
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<SubscriptionTypeModel>
      */
@@ -5970,8 +6266,8 @@ public class AvaTaxClient {
      * Returns the full list of Avalara-supported tax authorities.
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<TaxAuthorityModel>
      */
@@ -5990,8 +6286,8 @@ public class AvaTaxClient {
      * Returns the full list of Avalara-supported tax authorities.
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<TaxAuthorityModel>
      */
@@ -6012,8 +6308,8 @@ public class AvaTaxClient {
      * Customers who subscribe to Avalara Managed Returns Service can request these forms to be filed automatically 
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<TaxAuthorityFormModel>
      */
@@ -6034,8 +6330,8 @@ public class AvaTaxClient {
      * Customers who subscribe to Avalara Managed Returns Service can request these forms to be filed automatically 
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<TaxAuthorityFormModel>
      */
@@ -6054,8 +6350,8 @@ public class AvaTaxClient {
      * Returns the full list of Avalara-supported tax authority types.
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<TaxAuthorityTypeModel>
      */
@@ -6074,8 +6370,8 @@ public class AvaTaxClient {
      * Returns the full list of Avalara-supported tax authority types.
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<TaxAuthorityTypeModel>
      */
@@ -6097,8 +6393,8 @@ public class AvaTaxClient {
      * If you identify your products by tax code in your 'Create Transacion' API calls, Avalara will correctly calculate tax rates and
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<TaxCodeModel>
      */
@@ -6120,8 +6416,8 @@ public class AvaTaxClient {
      * If you identify your products by tax code in your 'Create Transacion' API calls, Avalara will correctly calculate tax rates and
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<TaxCodeModel>
      */
@@ -6140,8 +6436,8 @@ public class AvaTaxClient {
      * Returns the full list of recognized tax code types.
      * A 'Tax Code Type' represents a broad category of tax codes, and is less detailed than a single TaxCode.
      * 
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @return TaxCodeTypesModel
      */
     public TaxCodeTypesModel listTaxCodeTypes(Integer top, Integer skip) throws Exception {
@@ -6157,8 +6453,8 @@ public class AvaTaxClient {
      * Returns the full list of recognized tax code types.
      * A 'Tax Code Type' represents a broad category of tax codes, and is less detailed than a single TaxCode.
      * 
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @return TaxCodeTypesModel
      */
     public Future<TaxCodeTypesModel> listTaxCodeTypesAsync(Integer top, Integer skip) {
@@ -6174,8 +6470,8 @@ public class AvaTaxClient {
      * Returns the full list of Avalara-supported Tax Forms
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<FormMasterModel>
      */
@@ -6194,8 +6490,8 @@ public class AvaTaxClient {
      * Returns the full list of Avalara-supported Tax Forms
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<FormMasterModel>
      */
@@ -6214,8 +6510,8 @@ public class AvaTaxClient {
      * Returns the full list of Avalara-supported tax sub-types
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<TaxSubTypeModel>
      */
@@ -6234,8 +6530,8 @@ public class AvaTaxClient {
      * Returns the full list of Avalara-supported tax sub-types
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<TaxSubTypeModel>
      */
@@ -6254,8 +6550,8 @@ public class AvaTaxClient {
      * Returns the full list of Avalara-supported tax type groups
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<TaxTypeGroupModel>
      */
@@ -6274,8 +6570,8 @@ public class AvaTaxClient {
      * Returns the full list of Avalara-supported tax type groups
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<TaxTypeGroupModel>
      */
@@ -6295,8 +6591,8 @@ public class AvaTaxClient {
      * 
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<UomModel>
      */
@@ -6316,8 +6612,8 @@ public class AvaTaxClient {
      * 
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<UomModel>
      */
@@ -6453,8 +6749,8 @@ public class AvaTaxClient {
      * @param companyId The ID of the company whose DistanceThreshold objects you wish to list.
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * @param include A comma separated list of additional data to retrieve.
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<CompanyDistanceThresholdModel>
      */
@@ -6480,8 +6776,8 @@ public class AvaTaxClient {
      * @param companyId The ID of the company whose DistanceThreshold objects you wish to list.
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * @param include A comma separated list of additional data to retrieve.
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<CompanyDistanceThresholdModel>
      */
@@ -6509,8 +6805,8 @@ public class AvaTaxClient {
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * @param include A comma separated list of additional data to retrieve.
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<CompanyDistanceThresholdModel>
      */
@@ -6537,8 +6833,8 @@ public class AvaTaxClient {
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * @param include A comma separated list of additional data to retrieve.
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<CompanyDistanceThresholdModel>
      */
@@ -6957,8 +7253,8 @@ public class AvaTaxClient {
      * 
      * @param companyId The ID of the company that owns these batches
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @param returnCountry A comma separated list of countries
      * @param returnRegion A comma separated list of regions
@@ -6981,8 +7277,8 @@ public class AvaTaxClient {
      * 
      * @param companyId The ID of the company that owns these batches
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @param returnCountry A comma separated list of countries
      * @param returnRegion A comma separated list of regions
@@ -7009,8 +7305,8 @@ public class AvaTaxClient {
      * @param companyId The ID of the company that owns these batches
      * @param filingCalendarId Specific filing calendar id for the request
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<FilingRequestModel>
      */
@@ -7034,8 +7330,8 @@ public class AvaTaxClient {
      * @param companyId The ID of the company that owns these batches
      * @param filingCalendarId Specific filing calendar id for the request
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<FilingRequestModel>
      */
@@ -7114,8 +7410,8 @@ public class AvaTaxClient {
      * Retrieve all filing calendars
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @param returnCountry If specified, fetches only filing calendars that apply to tax filings in this specific country. Uses ISO 3166 country codes.
      * @param returnRegion If specified, fetches only filing calendars that apply to tax filings in this specific region. Uses ISO 3166 region codes.
@@ -7136,8 +7432,8 @@ public class AvaTaxClient {
      * Retrieve all filing calendars
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @param returnCountry If specified, fetches only filing calendars that apply to tax filings in this specific country. Uses ISO 3166 country codes.
      * @param returnRegion If specified, fetches only filing calendars that apply to tax filings in this specific region. Uses ISO 3166 region codes.
@@ -7165,8 +7461,8 @@ public class AvaTaxClient {
      * 
      * @param filingCalendarId Specific filing calendar id for the request
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<FilingRequestModel>
      */
@@ -7191,8 +7487,8 @@ public class AvaTaxClient {
      * 
      * @param filingCalendarId Specific filing calendar id for the request
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<FilingRequestModel>
      */
@@ -7938,12 +8234,14 @@ public class AvaTaxClient {
      * 
      * @param companyId The ID of the company that owns the filings.
      * @param id The id of the filing return your retrieving
+     * @param details Indicates if you would like the credit details returned
      * @return FetchResult<FilingReturnModel>
      */
-    public FetchResult<FilingReturnModel> getFilingReturn(Integer companyId, Integer id) throws Exception {
+    public FetchResult<FilingReturnModel> getFilingReturn(Integer companyId, Integer id, Boolean details) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/returns/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
+        path.addQuery("details", details);
         return ((RestCall<FetchResult<FilingReturnModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<FilingReturnModel>>(){})).call();
     }
 
@@ -7955,12 +8253,14 @@ public class AvaTaxClient {
      * 
      * @param companyId The ID of the company that owns the filings.
      * @param id The id of the filing return your retrieving
+     * @param details Indicates if you would like the credit details returned
      * @return FetchResult<FilingReturnModel>
      */
-    public Future<FetchResult<FilingReturnModel>> getFilingReturnAsync(Integer companyId, Integer id) {
+    public Future<FetchResult<FilingReturnModel>> getFilingReturnAsync(Integer companyId, Integer id, Boolean details) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/returns/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
+        path.addQuery("details", details);
         return this.threadPool.submit((RestCall<FetchResult<FilingReturnModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<FilingReturnModel>>(){}));
     }
 
@@ -8867,7 +9167,7 @@ This gets the basic information from the filings and doesn't include anything ex
     /**
      * Retrieve a single item
      * 
-     * Get the item object identified by this URL.
+     * Get the `Item` object identified by this URL.
      * 
      * Items are a way of separating your tax calculation process from your tax configuration details.  If you choose, you
      * can provide `itemCode` values for each `CreateTransaction()` API call rather than specifying tax codes, parameters, descriptions,
@@ -8888,7 +9188,7 @@ This gets the basic information from the filings and doesn't include anything ex
     /**
      * Retrieve a single item
      * 
-     * Get the item object identified by this URL.
+     * Get the `Item` object identified by this URL.
      * 
      * Items are a way of separating your tax calculation process from your tax configuration details.  If you choose, you
      * can provide `itemCode` values for each `CreateTransaction()` API call rather than specifying tax codes, parameters, descriptions,
@@ -8918,6 +9218,7 @@ This gets the basic information from the filings and doesn't include anything ex
      * team can manage your item catalog and adjust the tax behavior of items without having to modify your software.
      * 
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * 
      * Paginate your results using the `$top`, `$skip`, and `$orderby` parameters.
      * 
      * You may specify one or more of the following values in the `$include` parameter to fetch additional nested data, using commas to separate multiple values:
@@ -8926,8 +9227,8 @@ This gets the basic information from the filings and doesn't include anything ex
      * @param companyId The ID of the company that defined these items
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * @param include A comma separated list of additional data to retrieve.
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<ItemModel>
      */
@@ -8954,6 +9255,7 @@ This gets the basic information from the filings and doesn't include anything ex
      * team can manage your item catalog and adjust the tax behavior of items without having to modify your software.
      * 
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * 
      * Paginate your results using the `$top`, `$skip`, and `$orderby` parameters.
      * 
      * You may specify one or more of the following values in the `$include` parameter to fetch additional nested data, using commas to separate multiple values:
@@ -8962,8 +9264,8 @@ This gets the basic information from the filings and doesn't include anything ex
      * @param companyId The ID of the company that defined these items
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * @param include A comma separated list of additional data to retrieve.
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<ItemModel>
      */
@@ -8990,6 +9292,7 @@ This gets the basic information from the filings and doesn't include anything ex
      * team can manage your item catalog and adjust the tax behavior of items without having to modify your software.
      * 
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * 
      * Paginate your results using the `$top`, `$skip`, and `$orderby` parameters.
      * 
      * You may specify one or more of the following values in the `$include` parameter to fetch additional nested data, using commas to separate multiple values:
@@ -8997,8 +9300,8 @@ This gets the basic information from the filings and doesn't include anything ex
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * @param include A comma separated list of additional data to retrieve.
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<ItemModel>
      */
@@ -9024,6 +9327,7 @@ This gets the basic information from the filings and doesn't include anything ex
      * team can manage your item catalog and adjust the tax behavior of items without having to modify your software.
      * 
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * 
      * Paginate your results using the `$top`, `$skip`, and `$orderby` parameters.
      * 
      * You may specify one or more of the following values in the `$include` parameter to fetch additional nested data, using commas to separate multiple values:
@@ -9031,8 +9335,8 @@ This gets the basic information from the filings and doesn't include anything ex
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * @param include A comma separated list of additional data to retrieve.
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<ItemModel>
      */
@@ -9057,7 +9361,7 @@ This gets the basic information from the filings and doesn't include anything ex
      * from the item table instead.  This allows your CreateTransaction call to be as simple as possible, and your tax compliance
      * team can manage your item catalog and adjust the tax behavior of items without having to modify your software.
      * 
-     * All data from the existing object will be replaced with data in the object you PUT.  
+     * All data from the existing object will be replaced with data in the object you PUT.  To set a field's value to null, 
      * 
      * @param companyId The ID of the company that this item belongs to.
      * @param id The ID of the item you wish to update
@@ -9082,7 +9386,7 @@ This gets the basic information from the filings and doesn't include anything ex
      * from the item table instead.  This allows your CreateTransaction call to be as simple as possible, and your tax compliance
      * team can manage your item catalog and adjust the tax behavior of items without having to modify your software.
      * 
-     * All data from the existing object will be replaced with data in the object you PUT.  
+     * All data from the existing object will be replaced with data in the object you PUT.  To set a field's value to null, 
      * 
      * @param companyId The ID of the company that this item belongs to.
      * @param id The ID of the item you wish to update
@@ -9217,8 +9521,8 @@ This gets the basic information from the filings and doesn't include anything ex
      * @param accountId The ID of the account that owns this override
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * @param include A comma separated list of additional data to retrieve.
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<JurisdictionOverrideModel>
      */
@@ -9248,8 +9552,8 @@ This gets the basic information from the filings and doesn't include anything ex
      * @param accountId The ID of the account that owns this override
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * @param include A comma separated list of additional data to retrieve.
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<JurisdictionOverrideModel>
      */
@@ -9278,8 +9582,8 @@ This gets the basic information from the filings and doesn't include anything ex
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * @param include A comma separated list of additional data to retrieve.
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<JurisdictionOverrideModel>
      */
@@ -9307,8 +9611,8 @@ This gets the basic information from the filings and doesn't include anything ex
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * @param include A comma separated list of additional data to retrieve.
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<JurisdictionOverrideModel>
      */
@@ -9473,8 +9777,8 @@ This gets the basic information from the filings and doesn't include anything ex
      * @param companyId The ID of the company that owns these locations
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * @param include A comma separated list of additional data to retrieve. You may specify `LocationSettings` to retrieve location settings.
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<LocationModel>
      */
@@ -9506,8 +9810,8 @@ This gets the basic information from the filings and doesn't include anything ex
      * @param companyId The ID of the company that owns these locations
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * @param include A comma separated list of additional data to retrieve. You may specify `LocationSettings` to retrieve location settings.
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<LocationModel>
      */
@@ -9539,8 +9843,8 @@ This gets the basic information from the filings and doesn't include anything ex
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * @param include A comma separated list of additional data to retrieve. You may specify `LocationSettings` to retrieve location settings.
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<LocationModel>
      */
@@ -9571,8 +9875,8 @@ This gets the basic information from the filings and doesn't include anything ex
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * @param include A comma separated list of additional data to retrieve. You may specify `LocationSettings` to retrieve location settings.
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<LocationModel>
      */
@@ -10044,8 +10348,8 @@ This gets the basic information from the filings and doesn't include anything ex
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * @param include Specifies objects to include in the response after transaction is created
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<MultiDocumentModel>
      */
@@ -10083,8 +10387,8 @@ This gets the basic information from the filings and doesn't include anything ex
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * @param include Specifies objects to include in the response after transaction is created
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<MultiDocumentModel>
      */
@@ -10289,14 +10593,24 @@ This gets the basic information from the filings and doesn't include anything ex
     /**
      * Create a new nexus
      * 
-     * Creates one or more new nexus objects attached to this company.
-     * The concept of 'Nexus' indicates a place where your company has sufficient physical presence and is obligated
-     * to collect and remit transaction-based taxes.
-     * When defining companies in AvaTax, you must declare nexus for your company in order to correctly calculate tax
-     * in all jurisdictions affected by your transactions.
-     * Note that not all fields within a nexus can be updated; Avalara publishes a list of all defined nexus at the
-     * '/api/v2/definitions/nexus' endpoint.
-     * You may only define nexus matching the official list of declared nexus.
+     * Creates one or more new nexus declarations attached to this company.
+     * 
+     * The concept of Nexus indicates a place where your company is legally obligated to collect and remit transactional 
+     * taxes.  The legal requirements for nexus may vary per country and per jurisdiction; please seek advice from your
+     * accountant or lawyer prior to declaring nexus.
+     * 
+     * To create a nexus declaration for your company, you must first call the Definitions API `ListNexus` to obtain a
+     * list of Avalara-defined nexus.  Once you have determined which nexus you wish to declare, you should customize 
+     * only the user-selectable fields in this object.
+     * 
+     * The user selectable fields for the nexus object are `companyId`, `effectiveDate`, `endDate`, `localNexusTypeId`, 
+     * `taxId`, `nexusTypeId`, `hasPermanentEstablishment`, and `isSellerImporterOfRecord`.
+     * 
+     * When calling `CreateNexus` or `UpdateNexus`, all values in your nexus object except for the user-selectable fields
+     * must match an Avalara-defined system nexus object.  You can retrieve a list of Avalara-defined system nexus objects
+     * by calling `ListNexus`.  If any data does not match, AvaTax may not recognize your nexus declaration.
+     * 
+     * Please note that nexus changes may not take effect immediately and you should plan to update your nexus settings in advance
      * 
      * @param companyId The ID of the company that owns this nexus.
      * @param model The nexus you wish to create.
@@ -10311,14 +10625,24 @@ This gets the basic information from the filings and doesn't include anything ex
     /**
      * Create a new nexus
      * 
-     * Creates one or more new nexus objects attached to this company.
-     * The concept of 'Nexus' indicates a place where your company has sufficient physical presence and is obligated
-     * to collect and remit transaction-based taxes.
-     * When defining companies in AvaTax, you must declare nexus for your company in order to correctly calculate tax
-     * in all jurisdictions affected by your transactions.
-     * Note that not all fields within a nexus can be updated; Avalara publishes a list of all defined nexus at the
-     * '/api/v2/definitions/nexus' endpoint.
-     * You may only define nexus matching the official list of declared nexus.
+     * Creates one or more new nexus declarations attached to this company.
+     * 
+     * The concept of Nexus indicates a place where your company is legally obligated to collect and remit transactional 
+     * taxes.  The legal requirements for nexus may vary per country and per jurisdiction; please seek advice from your
+     * accountant or lawyer prior to declaring nexus.
+     * 
+     * To create a nexus declaration for your company, you must first call the Definitions API `ListNexus` to obtain a
+     * list of Avalara-defined nexus.  Once you have determined which nexus you wish to declare, you should customize 
+     * only the user-selectable fields in this object.
+     * 
+     * The user selectable fields for the nexus object are `companyId`, `effectiveDate`, `endDate`, `localNexusTypeId`, 
+     * `taxId`, `nexusTypeId`, `hasPermanentEstablishment`, and `isSellerImporterOfRecord`.
+     * 
+     * When calling `CreateNexus` or `UpdateNexus`, all values in your nexus object except for the user-selectable fields
+     * must match an Avalara-defined system nexus object.  You can retrieve a list of Avalara-defined system nexus objects
+     * by calling `ListNexus`.  If any data does not match, AvaTax may not recognize your nexus declaration.
+     * 
+     * Please note that nexus changes may not take effect immediately and you should plan to update your nexus settings in advance
      * 
      * @param companyId The ID of the company that owns this nexus.
      * @param model The nexus you wish to create.
@@ -10337,17 +10661,16 @@ This gets the basic information from the filings and doesn't include anything ex
      * API declares nexus for this company, for the list of addresses provided,
      * for the date range provided. You may also use this API to extend effective date on an already-declared nexus.
      * 
-     * The concept of 'Nexus' indicates a place where your company has sufficient physical presence and is obligated
-     * to collect and remit transaction-based taxes.
-     * 
-     * When defining companies in AvaTax, you must declare nexus for your company in order to correctly calculate tax
-     * in all jurisdictions affected by your transactions.
+     * The concept of Nexus indicates a place where your company is legally obligated to collect and remit transactional 
+     * taxes.  The legal requirements for nexus may vary per country and per jurisdiction; please seek advice from your
+     * accountant or lawyer prior to declaring nexus.
      * 
      * Note that not all fields within a nexus can be updated; Avalara publishes a list of all defined nexus at the
      * '/api/v2/definitions/nexus' endpoint.
      * 
      * You may only define nexus matching the official list of declared nexus.
      * 
+     * Please note that nexus changes may not take effect immediately and you should plan to update your nexus settings in advance
      * 
      * @param companyId The ID of the company that will own this nexus.
      * @param model The nexus you wish to create.
@@ -10366,17 +10689,16 @@ This gets the basic information from the filings and doesn't include anything ex
      * API declares nexus for this company, for the list of addresses provided,
      * for the date range provided. You may also use this API to extend effective date on an already-declared nexus.
      * 
-     * The concept of 'Nexus' indicates a place where your company has sufficient physical presence and is obligated
-     * to collect and remit transaction-based taxes.
-     * 
-     * When defining companies in AvaTax, you must declare nexus for your company in order to correctly calculate tax
-     * in all jurisdictions affected by your transactions.
+     * The concept of Nexus indicates a place where your company is legally obligated to collect and remit transactional 
+     * taxes.  The legal requirements for nexus may vary per country and per jurisdiction; please seek advice from your
+     * accountant or lawyer prior to declaring nexus.
      * 
      * Note that not all fields within a nexus can be updated; Avalara publishes a list of all defined nexus at the
      * '/api/v2/definitions/nexus' endpoint.
      * 
      * You may only define nexus matching the official list of declared nexus.
      * 
+     * Please note that nexus changes may not take effect immediately and you should plan to update your nexus settings in advance
      * 
      * @param companyId The ID of the company that will own this nexus.
      * @param model The nexus you wish to create.
@@ -10392,6 +10714,12 @@ This gets the basic information from the filings and doesn't include anything ex
      * Delete a single nexus
      * 
      * Marks the existing nexus object at this URL as deleted.
+     * 
+     * The concept of Nexus indicates a place where your company is legally obligated to collect and remit transactional 
+     * taxes.  The legal requirements for nexus may vary per country and per jurisdiction; please seek advice from your
+     * accountant or lawyer prior to declaring nexus.
+     * 
+     * Please note that nexus changes may not take effect immediately and you should plan to update your nexus settings in advance
      * 
      * @param companyId The ID of the company that owns this nexus.
      * @param id The ID of the nexus you wish to delete.
@@ -10409,6 +10737,12 @@ This gets the basic information from the filings and doesn't include anything ex
      * 
      * Marks the existing nexus object at this URL as deleted.
      * 
+     * The concept of Nexus indicates a place where your company is legally obligated to collect and remit transactional 
+     * taxes.  The legal requirements for nexus may vary per country and per jurisdiction; please seek advice from your
+     * accountant or lawyer prior to declaring nexus.
+     * 
+     * Please note that nexus changes may not take effect immediately and you should plan to update your nexus settings in advance
+     * 
      * @param companyId The ID of the company that owns this nexus.
      * @param id The ID of the nexus you wish to delete.
      * @return ArrayList<ErrorDetail>
@@ -10424,9 +10758,9 @@ This gets the basic information from the filings and doesn't include anything ex
      * Retrieve a single nexus
      * 
      * Get the nexus object identified by this URL.
-     * The concept of 'Nexus' indicates a place where your company has sufficient physical presence and is obligated
-     * to collect and remit transaction-based taxes.
-     * When defining companies in AvaTax, you must declare nexus for your company in order to correctly calculate tax
+     * 
+     * The concept of Nexus indicates a place where your company is legally obligated to collect and remit transactional 
+     * taxes.  The legal requirements for nexus may vary per country and per jurisdiction; please seek advice from your
      * 
      * @param companyId The ID of the company that owns this nexus object
      * @param id The primary key of this nexus
@@ -10443,9 +10777,9 @@ This gets the basic information from the filings and doesn't include anything ex
      * Retrieve a single nexus
      * 
      * Get the nexus object identified by this URL.
-     * The concept of 'Nexus' indicates a place where your company has sufficient physical presence and is obligated
-     * to collect and remit transaction-based taxes.
-     * When defining companies in AvaTax, you must declare nexus for your company in order to correctly calculate tax
+     * 
+     * The concept of Nexus indicates a place where your company is legally obligated to collect and remit transactional 
+     * taxes.  The legal requirements for nexus may vary per country and per jurisdiction; please seek advice from your
      * 
      * @param companyId The ID of the company that owns this nexus object
      * @param id The primary key of this nexus
@@ -10463,11 +10797,9 @@ This gets the basic information from the filings and doesn't include anything ex
      * 
      * Retrieves a list of nexus related to a tax form.
      * 
-     * The concept of `Nexus` indicates a place where your company has sufficient physical presence and is obligated
-     * to collect and remit transaction-based taxes.
-     * 
-     * When defining companies in AvaTax, you must declare nexus for your company in order to correctly calculate tax
-     * in all jurisdictions affected by your transactions.
+     * The concept of Nexus indicates a place where your company is legally obligated to collect and remit transactional 
+     * taxes.  The legal requirements for nexus may vary per country and per jurisdiction; please seek advice from your
+     * accountant or lawyer prior to declaring nexus.
      * 
      * This API is intended to provide useful information when examining a tax form.  If you are about to begin filing
      * a tax form, you may want to know whether you have declared nexus in all the jurisdictions related to that tax 
@@ -10488,11 +10820,9 @@ This gets the basic information from the filings and doesn't include anything ex
      * 
      * Retrieves a list of nexus related to a tax form.
      * 
-     * The concept of `Nexus` indicates a place where your company has sufficient physical presence and is obligated
-     * to collect and remit transaction-based taxes.
-     * 
-     * When defining companies in AvaTax, you must declare nexus for your company in order to correctly calculate tax
-     * in all jurisdictions affected by your transactions.
+     * The concept of Nexus indicates a place where your company is legally obligated to collect and remit transactional 
+     * taxes.  The legal requirements for nexus may vary per country and per jurisdiction; please seek advice from your
+     * accountant or lawyer prior to declaring nexus.
      * 
      * This API is intended to provide useful information when examining a tax form.  If you are about to begin filing
      * a tax form, you may want to know whether you have declared nexus in all the jurisdictions related to that tax 
@@ -10512,18 +10842,18 @@ This gets the basic information from the filings and doesn't include anything ex
      * Retrieve nexus for this company
      * 
      * List all nexus objects defined for this company.
-     * The concept of 'Nexus' indicates a place where your company has sufficient physical presence and is obligated
-     * to collect and remit transaction-based taxes.
-     * When defining companies in AvaTax, you must declare nexus for your company in order to correctly calculate tax
-     * in all jurisdictions affected by your transactions.
+     * 
+     * The concept of Nexus indicates a place where your company is legally obligated to collect and remit transactional 
+     * taxes.  The legal requirements for nexus may vary per country and per jurisdiction; please seek advice from your
+     * accountant or lawyer prior to declaring nexus.
      * 
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * 
      * @param companyId The ID of the company that owns these nexus objects
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * @param include A comma separated list of additional data to retrieve.
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<NexusModel>
      */
@@ -10542,18 +10872,18 @@ This gets the basic information from the filings and doesn't include anything ex
      * Retrieve nexus for this company
      * 
      * List all nexus objects defined for this company.
-     * The concept of 'Nexus' indicates a place where your company has sufficient physical presence and is obligated
-     * to collect and remit transaction-based taxes.
-     * When defining companies in AvaTax, you must declare nexus for your company in order to correctly calculate tax
-     * in all jurisdictions affected by your transactions.
+     * 
+     * The concept of Nexus indicates a place where your company is legally obligated to collect and remit transactional 
+     * taxes.  The legal requirements for nexus may vary per country and per jurisdiction; please seek advice from your
+     * accountant or lawyer prior to declaring nexus.
      * 
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * 
      * @param companyId The ID of the company that owns these nexus objects
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * @param include A comma separated list of additional data to retrieve.
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<NexusModel>
      */
@@ -10572,17 +10902,17 @@ This gets the basic information from the filings and doesn't include anything ex
      * Retrieve all nexus
      * 
      * Get multiple nexus objects across all companies.
-     * The concept of 'Nexus' indicates a place where your company has sufficient physical presence and is obligated
-     * to collect and remit transaction-based taxes.
-     * When defining companies in AvaTax, you must declare nexus for your company in order to correctly calculate tax
-     * in all jurisdictions affected by your transactions.
+     * 
+     * The concept of Nexus indicates a place where your company is legally obligated to collect and remit transactional 
+     * taxes.  The legal requirements for nexus may vary per country and per jurisdiction; please seek advice from your
+     * accountant or lawyer prior to declaring nexus.
      * 
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * @param include A comma separated list of additional data to retrieve.
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<NexusModel>
      */
@@ -10600,17 +10930,17 @@ This gets the basic information from the filings and doesn't include anything ex
      * Retrieve all nexus
      * 
      * Get multiple nexus objects across all companies.
-     * The concept of 'Nexus' indicates a place where your company has sufficient physical presence and is obligated
-     * to collect and remit transaction-based taxes.
-     * When defining companies in AvaTax, you must declare nexus for your company in order to correctly calculate tax
-     * in all jurisdictions affected by your transactions.
+     * 
+     * The concept of Nexus indicates a place where your company is legally obligated to collect and remit transactional 
+     * taxes.  The legal requirements for nexus may vary per country and per jurisdiction; please seek advice from your
+     * accountant or lawyer prior to declaring nexus.
      * 
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * @param include A comma separated list of additional data to retrieve.
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<NexusModel>
      */
@@ -10627,16 +10957,24 @@ This gets the basic information from the filings and doesn't include anything ex
     /**
      * Update a single nexus
      * 
-     * Replace the existing nexus object at this URL with an updated object.
-     * The concept of 'Nexus' indicates a place where your company has sufficient physical presence and is obligated
-     * to collect and remit transaction-based taxes.
-     * When defining companies in AvaTax, you must declare nexus for your company in order to correctly calculate tax
-     * in all jurisdictions affected by your transactions.
-     * Note that not all fields within a nexus can be updated; Avalara publishes a list of all defined nexus at the
-     * '/api/v2/definitions/nexus' endpoint.
-     * You may only define nexus matching the official list of declared nexus.
-     * All data from the existing object will be replaced with data in the object you PUT.  
-     * To set a field's value to null, you may either set its value to null or omit that field from the object you post.
+     * Replace the existing nexus declaration object at this URL with an updated object.
+     * 
+     * The concept of Nexus indicates a place where your company is legally obligated to collect and remit transactional 
+     * taxes.  The legal requirements for nexus may vary per country and per jurisdiction; please seek advice from your
+     * accountant or lawyer prior to declaring nexus.
+     * 
+     * To create a nexus declaration for your company, you must first call the Definitions API `ListNexus` to obtain a
+     * list of Avalara-defined nexus.  Once you have determined which nexus you wish to declare, you should customize 
+     * only the user-selectable fields in this object.
+     * 
+     * The user selectable fields for the nexus object are `companyId`, `effectiveDate`, `endDate`, `localNexusTypeId`, 
+     * `taxId`, `nexusTypeId`, `hasPermanentEstablishment`, and `isSellerImporterOfRecord`.
+     * 
+     * When calling `CreateNexus` or `UpdateNexus`, all values in your nexus object except for the user-selectable fields
+     * must match an Avalara-defined system nexus object.  You can retrieve a list of Avalara-defined system nexus objects
+     * by calling `ListNexus`.  If any data does not match, AvaTax may not recognize your nexus declaration.
+     * 
+     * Please note that nexus changes may not take effect immediately and you should plan to update your nexus settings in advance
      * 
      * @param companyId The ID of the company that this nexus belongs to.
      * @param id The ID of the nexus you wish to update
@@ -10653,16 +10991,24 @@ This gets the basic information from the filings and doesn't include anything ex
     /**
      * Update a single nexus
      * 
-     * Replace the existing nexus object at this URL with an updated object.
-     * The concept of 'Nexus' indicates a place where your company has sufficient physical presence and is obligated
-     * to collect and remit transaction-based taxes.
-     * When defining companies in AvaTax, you must declare nexus for your company in order to correctly calculate tax
-     * in all jurisdictions affected by your transactions.
-     * Note that not all fields within a nexus can be updated; Avalara publishes a list of all defined nexus at the
-     * '/api/v2/definitions/nexus' endpoint.
-     * You may only define nexus matching the official list of declared nexus.
-     * All data from the existing object will be replaced with data in the object you PUT.  
-     * To set a field's value to null, you may either set its value to null or omit that field from the object you post.
+     * Replace the existing nexus declaration object at this URL with an updated object.
+     * 
+     * The concept of Nexus indicates a place where your company is legally obligated to collect and remit transactional 
+     * taxes.  The legal requirements for nexus may vary per country and per jurisdiction; please seek advice from your
+     * accountant or lawyer prior to declaring nexus.
+     * 
+     * To create a nexus declaration for your company, you must first call the Definitions API `ListNexus` to obtain a
+     * list of Avalara-defined nexus.  Once you have determined which nexus you wish to declare, you should customize 
+     * only the user-selectable fields in this object.
+     * 
+     * The user selectable fields for the nexus object are `companyId`, `effectiveDate`, `endDate`, `localNexusTypeId`, 
+     * `taxId`, `nexusTypeId`, `hasPermanentEstablishment`, and `isSellerImporterOfRecord`.
+     * 
+     * When calling `CreateNexus` or `UpdateNexus`, all values in your nexus object except for the user-selectable fields
+     * must match an Avalara-defined system nexus object.  You can retrieve a list of Avalara-defined system nexus objects
+     * by calling `ListNexus`.  If any data does not match, AvaTax may not recognize your nexus declaration.
+     * 
+     * Please note that nexus changes may not take effect immediately and you should plan to update your nexus settings in advance
      * 
      * @param companyId The ID of the company that this nexus belongs to.
      * @param id The ID of the nexus you wish to update
@@ -11289,8 +11635,8 @@ This gets the basic information from the filings and doesn't include anything ex
      * @param companyId The ID of the company that owns these notices.
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * @param include A comma separated list of additional data to retrieve.
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<NoticeModel>
      */
@@ -11318,8 +11664,8 @@ This gets the basic information from the filings and doesn't include anything ex
      * @param companyId The ID of the company that owns these notices.
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * @param include A comma separated list of additional data to retrieve.
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<NoticeModel>
      */
@@ -11346,8 +11692,8 @@ This gets the basic information from the filings and doesn't include anything ex
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * @param include A comma separated list of additional data to retrieve.
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<NoticeModel>
      */
@@ -11373,8 +11719,8 @@ This gets the basic information from the filings and doesn't include anything ex
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * @param include A comma separated list of additional data to retrieve.
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<NoticeModel>
      */
@@ -11643,8 +11989,8 @@ This gets the basic information from the filings and doesn't include anything ex
      * You may search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<NotificationModel>
      */
@@ -11672,8 +12018,8 @@ This gets the basic information from the filings and doesn't include anything ex
      * You may search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<NotificationModel>
      */
@@ -11766,40 +12112,6 @@ This gets the basic information from the filings and doesn't include anything ex
         path.applyField("id", id);
         path.applyField("offer", offer);
         return this.threadPool.submit((RestCall<OfferModel>)restCallFactory.createRestCall("post", path, null, new TypeToken<OfferModel>(){}));
-    }
-
-    /**
-     * Change Password
-     * 
-     * # For Registrar Use Only
-     * This API is for use by Avalara Registrar administrative users only.
-     * 
-     * Allows a user to change their password via the API.
-     * This API only allows the currently authenticated user to change their password; it cannot be used to apply to a
-     * 
-     * @param model An object containing your current password and the new password.
-     * @return String
-     */
-    public String changePassword(PasswordChangeModel model) throws Exception {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/passwords");
-        return ((RestCall<String>)restCallFactory.createRestCall("put", path, model, new TypeToken<String>(){})).call();
-    }
-
-    /**
-     * Change Password
-     * 
-     * # For Registrar Use Only
-     * This API is for use by Avalara Registrar administrative users only.
-     * 
-     * Allows a user to change their password via the API.
-     * This API only allows the currently authenticated user to change their password; it cannot be used to apply to a
-     * 
-     * @param model An object containing your current password and the new password.
-     * @return String
-     */
-    public Future<String> changePasswordAsync(PasswordChangeModel model) {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/passwords");
-        return this.threadPool.submit((RestCall<String>)restCallFactory.createRestCall("put", path, model, new TypeToken<String>(){}));
     }
 
     /**
@@ -12025,42 +12337,6 @@ This gets the basic information from the filings and doesn't include anything ex
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/subscriptions/{id}");
         path.applyField("accountId", accountId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){}));
-    }
-
-    /**
-     * Delete a single user
-     * 
-     * # For Registrar Use Only
-     * This API is for use by Avalara Registrar administrative users only.
-     * 
-     * 
-     * @param id The ID of the user you wish to delete.
-     * @param accountId The accountID of the user you wish to delete.
-     * @return ArrayList<ErrorDetail>
-     */
-    public ArrayList<ErrorDetail> deleteUser(Integer id, Integer accountId) throws Exception {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/users/{id}");
-        path.applyField("id", id);
-        path.applyField("accountId", accountId);
-        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){})).call();
-    }
-
-    /**
-     * Delete a single user
-     * 
-     * # For Registrar Use Only
-     * This API is for use by Avalara Registrar administrative users only.
-     * 
-     * 
-     * @param id The ID of the user you wish to delete.
-     * @param accountId The accountID of the user you wish to delete.
-     * @return ArrayList<ErrorDetail>
-     */
-    public Future<ArrayList<ErrorDetail>> deleteUserAsync(Integer id, Integer accountId) {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/users/{id}");
-        path.applyField("id", id);
-        path.applyField("accountId", accountId);
         return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){}));
     }
 
@@ -12619,8 +12895,8 @@ This gets the basic information from the filings and doesn't include anything ex
      * @param companyId The ID of the company that owns these settings
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * @param include A comma separated list of additional data to retrieve.
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<SettingModel>
      */
@@ -12654,8 +12930,8 @@ This gets the basic information from the filings and doesn't include anything ex
      * @param companyId The ID of the company that owns these settings
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * @param include A comma separated list of additional data to retrieve.
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<SettingModel>
      */
@@ -12688,8 +12964,8 @@ This gets the basic information from the filings and doesn't include anything ex
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * @param include A comma separated list of additional data to retrieve.
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<SettingModel>
      */
@@ -12721,8 +12997,8 @@ This gets the basic information from the filings and doesn't include anything ex
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * @param include A comma separated list of additional data to retrieve.
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<SettingModel>
      */
@@ -12839,8 +13115,8 @@ This gets the basic information from the filings and doesn't include anything ex
      * 
      * @param accountId The ID of the account that owns these subscriptions
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<SubscriptionModel>
      */
@@ -12865,8 +13141,8 @@ This gets the basic information from the filings and doesn't include anything ex
      * 
      * @param accountId The ID of the account that owns these subscriptions
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<SubscriptionModel>
      */
@@ -12890,8 +13166,8 @@ This gets the basic information from the filings and doesn't include anything ex
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<SubscriptionModel>
      */
@@ -12914,8 +13190,8 @@ This gets the basic information from the filings and doesn't include anything ex
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<SubscriptionModel>
      */
@@ -13044,8 +13320,8 @@ This gets the basic information from the filings and doesn't include anything ex
      * @param companyId The ID of the company that owns these tax codes
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * @param include A comma separated list of additional data to retrieve.
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<TaxCodeModel>
      */
@@ -13074,8 +13350,8 @@ This gets the basic information from the filings and doesn't include anything ex
      * @param companyId The ID of the company that owns these tax codes
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * @param include A comma separated list of additional data to retrieve.
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<TaxCodeModel>
      */
@@ -13103,8 +13379,8 @@ This gets the basic information from the filings and doesn't include anything ex
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * @param include A comma separated list of additional data to retrieve.
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<TaxCodeModel>
      */
@@ -13131,8 +13407,8 @@ This gets the basic information from the filings and doesn't include anything ex
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * @param include A comma separated list of additional data to retrieve.
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<TaxCodeModel>
      */
@@ -13195,6 +13471,12 @@ This gets the basic information from the filings and doesn't include anything ex
      * 
      * Builds a tax content file containing information useful for a retail point-of-sale solution.
      * 
+     * Since tax rates may change based on decisions made by a variety of tax authorities, we recommend
+     * that users of this tax content API download new data every day.  Many tax authorities may finalize
+     * decisions on tax changes at unexpected times and may make changes in response to legal issues or
+     * governmental priorities.  Any tax content downloaded for future time periods is subject to change
+     * if tax rates or tax laws change.
+     * 
      * A TaxContent file contains a matrix of the taxes that would be charged when you sell any of your
      * Items at any of your Locations.  To create items, use `CreateItems()`.  To create locations, use
      * `CreateLocations()`.  The file is built by looking up the tax profile for your location and your 
@@ -13223,6 +13505,12 @@ This gets the basic information from the filings and doesn't include anything ex
      * 
      * Builds a tax content file containing information useful for a retail point-of-sale solution.
      * 
+     * Since tax rates may change based on decisions made by a variety of tax authorities, we recommend
+     * that users of this tax content API download new data every day.  Many tax authorities may finalize
+     * decisions on tax changes at unexpected times and may make changes in response to legal issues or
+     * governmental priorities.  Any tax content downloaded for future time periods is subject to change
+     * if tax rates or tax laws change.
+     * 
      * A TaxContent file contains a matrix of the taxes that would be charged when you sell any of your
      * Items at any of your Locations.  To create items, use `CreateItems()`.  To create locations, use
      * `CreateLocations()`.  The file is built by looking up the tax profile for your location and your 
@@ -13250,6 +13538,12 @@ This gets the basic information from the filings and doesn't include anything ex
      * Build a tax content file for a single location
      * 
      * Builds a tax content file containing information useful for a retail point-of-sale solution.
+     * 
+     * Since tax rates may change based on decisions made by a variety of tax authorities, we recommend
+     * that users of this tax content API download new data every day.  Many tax authorities may finalize
+     * decisions on tax changes at unexpected times and may make changes in response to legal issues or
+     * governmental priorities.  Any tax content downloaded for future time periods is subject to change
+     * if tax rates or tax laws change.
      * 
      * A TaxContent file contains a matrix of the taxes that would be charged when you sell any of your
      * Items at any of your Locations.  To create items, use `CreateItems()`.  To create locations, use
@@ -13290,6 +13584,12 @@ This gets the basic information from the filings and doesn't include anything ex
      * 
      * Builds a tax content file containing information useful for a retail point-of-sale solution.
      * 
+     * Since tax rates may change based on decisions made by a variety of tax authorities, we recommend
+     * that users of this tax content API download new data every day.  Many tax authorities may finalize
+     * decisions on tax changes at unexpected times and may make changes in response to legal issues or
+     * governmental priorities.  Any tax content downloaded for future time periods is subject to change
+     * if tax rates or tax laws change.
+     * 
      * A TaxContent file contains a matrix of the taxes that would be charged when you sell any of your
      * Items at any of your Locations.  To create items, use `CreateItems()`.  To create locations, use
      * `CreateLocations()`.  The file is built by looking up the tax profile for your location and your 
@@ -13329,6 +13629,12 @@ This gets the basic information from the filings and doesn't include anything ex
      * 
      * Download a CSV file containing all five digit postal codes in the United States and their sales
      * and use tax rates for tangible personal property.
+     * 
+     * Since tax rates may change based on decisions made by a variety of tax authorities, we recommend
+     * that users of this tax content API download new data every day.  Many tax authorities may finalize
+     * decisions on tax changes at unexpected times and may make changes in response to legal issues or
+     * governmental priorities.  Any tax content downloaded for future time periods is subject to change
+     * if tax rates or tax laws change.
      * 
      * This rates file is intended to be used as a default for tax calculation when your software cannot
      * call the `CreateTransaction` API call.  When using this file, your software will be unable to
@@ -13378,6 +13684,12 @@ This gets the basic information from the filings and doesn't include anything ex
      * Download a CSV file containing all five digit postal codes in the United States and their sales
      * and use tax rates for tangible personal property.
      * 
+     * Since tax rates may change based on decisions made by a variety of tax authorities, we recommend
+     * that users of this tax content API download new data every day.  Many tax authorities may finalize
+     * decisions on tax changes at unexpected times and may make changes in response to legal issues or
+     * governmental priorities.  Any tax content downloaded for future time periods is subject to change
+     * if tax rates or tax laws change.
+     * 
      * This rates file is intended to be used as a default for tax calculation when your software cannot
      * call the `CreateTransaction` API call.  When using this file, your software will be unable to
      * handle complex tax rules such as:
@@ -13423,10 +13735,18 @@ This gets the basic information from the filings and doesn't include anything ex
     /**
      * Create a new tax rule
      * 
-     * Create one or more new taxrule objects attached to this company.
-     * A tax rule represents a custom taxability rule for a product or service sold by your company.
-     * If you have obtained a custom tax ruling from an auditor that changes the behavior of certain goods or services
-     * within certain taxing jurisdictions, or you have obtained special tax concessions for certain dates or locations,
+     * Create one or more custom tax rules attached to this company.
+     * 
+     * A tax rule represents a rule that changes the default AvaTax behavior for a product or jurisdiction.  Custom tax rules
+     * can be used to change the taxability of an item, to change the tax base of an item, or to change the tax rate 
+     * charged when selling an item.  Tax rules can also change tax behavior depending on the `entityUseCode` value submitted
+     * with the transaction.
+     * 
+     * You can create custom tax rules to customize the behavior of AvaTax to match specific rules that are custom to your
+     * business.  If you have obtained a ruling from a tax auditor that requires custom tax calculations, you can use
+     * custom tax rules to redefine the behavior for your company or item.
+     * 
+     * Please use custom tax rules carefully and ensure that these tax rules match the behavior agreed upon with your
      * 
      * @param companyId The ID of the company that owns this tax rule.
      * @param model The tax rule you wish to create.
@@ -13441,10 +13761,18 @@ This gets the basic information from the filings and doesn't include anything ex
     /**
      * Create a new tax rule
      * 
-     * Create one or more new taxrule objects attached to this company.
-     * A tax rule represents a custom taxability rule for a product or service sold by your company.
-     * If you have obtained a custom tax ruling from an auditor that changes the behavior of certain goods or services
-     * within certain taxing jurisdictions, or you have obtained special tax concessions for certain dates or locations,
+     * Create one or more custom tax rules attached to this company.
+     * 
+     * A tax rule represents a rule that changes the default AvaTax behavior for a product or jurisdiction.  Custom tax rules
+     * can be used to change the taxability of an item, to change the tax base of an item, or to change the tax rate 
+     * charged when selling an item.  Tax rules can also change tax behavior depending on the `entityUseCode` value submitted
+     * with the transaction.
+     * 
+     * You can create custom tax rules to customize the behavior of AvaTax to match specific rules that are custom to your
+     * business.  If you have obtained a ruling from a tax auditor that requires custom tax calculations, you can use
+     * custom tax rules to redefine the behavior for your company or item.
+     * 
+     * Please use custom tax rules carefully and ensure that these tax rules match the behavior agreed upon with your
      * 
      * @param companyId The ID of the company that owns this tax rule.
      * @param model The tax rule you wish to create.
@@ -13459,6 +13787,19 @@ This gets the basic information from the filings and doesn't include anything ex
     /**
      * Delete a single tax rule
      * 
+     * Mark the custom tax rule identified by this URL as deleted.
+     * 
+     * A tax rule represents a rule that changes the default AvaTax behavior for a product or jurisdiction.  Custom tax rules
+     * can be used to change the taxability of an item, to change the tax base of an item, or to change the tax rate 
+     * charged when selling an item.  Tax rules can also change tax behavior depending on the `entityUseCode` value submitted
+     * with the transaction.
+     * 
+     * You can create custom tax rules to customize the behavior of AvaTax to match specific rules that are custom to your
+     * business.  If you have obtained a ruling from a tax auditor that requires custom tax calculations, you can use
+     * custom tax rules to redefine the behavior for your company or item.
+     * 
+     * Please use custom tax rules carefully and ensure that these tax rules match the behavior agreed upon with your
+     * 
      * @param companyId The ID of the company that owns this tax rule.
      * @param id The ID of the tax rule you wish to delete.
      * @return ArrayList<ErrorDetail>
@@ -13472,6 +13813,19 @@ This gets the basic information from the filings and doesn't include anything ex
 
     /**
      * Delete a single tax rule
+     * 
+     * Mark the custom tax rule identified by this URL as deleted.
+     * 
+     * A tax rule represents a rule that changes the default AvaTax behavior for a product or jurisdiction.  Custom tax rules
+     * can be used to change the taxability of an item, to change the tax base of an item, or to change the tax rate 
+     * charged when selling an item.  Tax rules can also change tax behavior depending on the `entityUseCode` value submitted
+     * with the transaction.
+     * 
+     * You can create custom tax rules to customize the behavior of AvaTax to match specific rules that are custom to your
+     * business.  If you have obtained a ruling from a tax auditor that requires custom tax calculations, you can use
+     * custom tax rules to redefine the behavior for your company or item.
+     * 
+     * Please use custom tax rules carefully and ensure that these tax rules match the behavior agreed upon with your
      * 
      * @param companyId The ID of the company that owns this tax rule.
      * @param id The ID of the tax rule you wish to delete.
@@ -13488,9 +13842,17 @@ This gets the basic information from the filings and doesn't include anything ex
      * Retrieve a single tax rule
      * 
      * Get the taxrule object identified by this URL.
-     * A tax rule represents a custom taxability rule for a product or service sold by your company.
-     * If you have obtained a custom tax ruling from an auditor that changes the behavior of certain goods or services
-     * within certain taxing jurisdictions, or you have obtained special tax concessions for certain dates or locations,
+     * 
+     * A tax rule represents a rule that changes the default AvaTax behavior for a product or jurisdiction.  Custom tax rules
+     * can be used to change the taxability of an item, to change the tax base of an item, or to change the tax rate 
+     * charged when selling an item.  Tax rules can also change tax behavior depending on the `entityUseCode` value submitted
+     * with the transaction.
+     * 
+     * You can create custom tax rules to customize the behavior of AvaTax to match specific rules that are custom to your
+     * business.  If you have obtained a ruling from a tax auditor that requires custom tax calculations, you can use
+     * custom tax rules to redefine the behavior for your company or item.
+     * 
+     * Please use custom tax rules carefully and ensure that these tax rules match the behavior agreed upon with your
      * 
      * @param companyId The ID of the company that owns this tax rule
      * @param id The primary key of this tax rule
@@ -13507,9 +13869,17 @@ This gets the basic information from the filings and doesn't include anything ex
      * Retrieve a single tax rule
      * 
      * Get the taxrule object identified by this URL.
-     * A tax rule represents a custom taxability rule for a product or service sold by your company.
-     * If you have obtained a custom tax ruling from an auditor that changes the behavior of certain goods or services
-     * within certain taxing jurisdictions, or you have obtained special tax concessions for certain dates or locations,
+     * 
+     * A tax rule represents a rule that changes the default AvaTax behavior for a product or jurisdiction.  Custom tax rules
+     * can be used to change the taxability of an item, to change the tax base of an item, or to change the tax rate 
+     * charged when selling an item.  Tax rules can also change tax behavior depending on the `entityUseCode` value submitted
+     * with the transaction.
+     * 
+     * You can create custom tax rules to customize the behavior of AvaTax to match specific rules that are custom to your
+     * business.  If you have obtained a ruling from a tax auditor that requires custom tax calculations, you can use
+     * custom tax rules to redefine the behavior for your company or item.
+     * 
+     * Please use custom tax rules carefully and ensure that these tax rules match the behavior agreed upon with your
      * 
      * @param companyId The ID of the company that owns this tax rule
      * @param id The primary key of this tax rule
@@ -13526,18 +13896,26 @@ This gets the basic information from the filings and doesn't include anything ex
      * Retrieve tax rules for this company
      * 
      * List all taxrule objects attached to this company.
-     * A tax rule represents a custom taxability rule for a product or service sold by your company.
-     * If you have obtained a custom tax ruling from an auditor that changes the behavior of certain goods or services
-     * within certain taxing jurisdictions, or you have obtained special tax concessions for certain dates or locations,
-     * you may wish to create a TaxRule object to override the AvaTax engine's default behavior in those circumstances.
+     * 
+     * A tax rule represents a rule that changes the default AvaTax behavior for a product or jurisdiction.  Custom tax rules
+     * can be used to change the taxability of an item, to change the tax base of an item, or to change the tax rate 
+     * charged when selling an item.  Tax rules can also change tax behavior depending on the `entityUseCode` value submitted
+     * with the transaction.
+     * 
+     * You can create custom tax rules to customize the behavior of AvaTax to match specific rules that are custom to your
+     * business.  If you have obtained a ruling from a tax auditor that requires custom tax calculations, you can use
+     * custom tax rules to redefine the behavior for your company or item.
+     * 
+     * Please use custom tax rules carefully and ensure that these tax rules match the behavior agreed upon with your
+     * auditor, legal representative, and accounting team.
      * 
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * 
      * @param companyId The ID of the company that owns these tax rules
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * @param include A comma separated list of additional data to retrieve.
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<TaxRuleModel>
      */
@@ -13556,18 +13934,26 @@ This gets the basic information from the filings and doesn't include anything ex
      * Retrieve tax rules for this company
      * 
      * List all taxrule objects attached to this company.
-     * A tax rule represents a custom taxability rule for a product or service sold by your company.
-     * If you have obtained a custom tax ruling from an auditor that changes the behavior of certain goods or services
-     * within certain taxing jurisdictions, or you have obtained special tax concessions for certain dates or locations,
-     * you may wish to create a TaxRule object to override the AvaTax engine's default behavior in those circumstances.
+     * 
+     * A tax rule represents a rule that changes the default AvaTax behavior for a product or jurisdiction.  Custom tax rules
+     * can be used to change the taxability of an item, to change the tax base of an item, or to change the tax rate 
+     * charged when selling an item.  Tax rules can also change tax behavior depending on the `entityUseCode` value submitted
+     * with the transaction.
+     * 
+     * You can create custom tax rules to customize the behavior of AvaTax to match specific rules that are custom to your
+     * business.  If you have obtained a ruling from a tax auditor that requires custom tax calculations, you can use
+     * custom tax rules to redefine the behavior for your company or item.
+     * 
+     * Please use custom tax rules carefully and ensure that these tax rules match the behavior agreed upon with your
+     * auditor, legal representative, and accounting team.
      * 
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * 
      * @param companyId The ID of the company that owns these tax rules
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * @param include A comma separated list of additional data to retrieve.
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<TaxRuleModel>
      */
@@ -13586,17 +13972,25 @@ This gets the basic information from the filings and doesn't include anything ex
      * Retrieve all tax rules
      * 
      * Get multiple taxrule objects across all companies.
-     * A tax rule represents a custom taxability rule for a product or service sold by your company.
-     * If you have obtained a custom tax ruling from an auditor that changes the behavior of certain goods or services
-     * within certain taxing jurisdictions, or you have obtained special tax concessions for certain dates or locations,
-     * you may wish to create a TaxRule object to override the AvaTax engine's default behavior in those circumstances.
+     * 
+     * A tax rule represents a rule that changes the default AvaTax behavior for a product or jurisdiction.  Custom tax rules
+     * can be used to change the taxability of an item, to change the tax base of an item, or to change the tax rate 
+     * charged when selling an item.  Tax rules can also change tax behavior depending on the `entityUseCode` value submitted
+     * with the transaction.
+     * 
+     * You can create custom tax rules to customize the behavior of AvaTax to match specific rules that are custom to your
+     * business.  If you have obtained a ruling from a tax auditor that requires custom tax calculations, you can use
+     * custom tax rules to redefine the behavior for your company or item.
+     * 
+     * Please use custom tax rules carefully and ensure that these tax rules match the behavior agreed upon with your
+     * auditor, legal representative, and accounting team.
      * 
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * @param include A comma separated list of additional data to retrieve.
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<TaxRuleModel>
      */
@@ -13614,17 +14008,25 @@ This gets the basic information from the filings and doesn't include anything ex
      * Retrieve all tax rules
      * 
      * Get multiple taxrule objects across all companies.
-     * A tax rule represents a custom taxability rule for a product or service sold by your company.
-     * If you have obtained a custom tax ruling from an auditor that changes the behavior of certain goods or services
-     * within certain taxing jurisdictions, or you have obtained special tax concessions for certain dates or locations,
-     * you may wish to create a TaxRule object to override the AvaTax engine's default behavior in those circumstances.
+     * 
+     * A tax rule represents a rule that changes the default AvaTax behavior for a product or jurisdiction.  Custom tax rules
+     * can be used to change the taxability of an item, to change the tax base of an item, or to change the tax rate 
+     * charged when selling an item.  Tax rules can also change tax behavior depending on the `entityUseCode` value submitted
+     * with the transaction.
+     * 
+     * You can create custom tax rules to customize the behavior of AvaTax to match specific rules that are custom to your
+     * business.  If you have obtained a ruling from a tax auditor that requires custom tax calculations, you can use
+     * custom tax rules to redefine the behavior for your company or item.
+     * 
+     * Please use custom tax rules carefully and ensure that these tax rules match the behavior agreed upon with your
+     * auditor, legal representative, and accounting team.
      * 
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * @param include A comma separated list of additional data to retrieve.
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<TaxRuleModel>
      */
@@ -13641,12 +14043,18 @@ This gets the basic information from the filings and doesn't include anything ex
     /**
      * Update a single tax rule
      * 
-     * Replace the existing taxrule object at this URL with an updated object.
-     * A tax rule represents a custom taxability rule for a product or service sold by your company.
-     * If you have obtained a custom tax ruling from an auditor that changes the behavior of certain goods or services
-     * within certain taxing jurisdictions, or you have obtained special tax concessions for certain dates or locations,
-     * you may wish to create a TaxRule object to override the AvaTax engine's default behavior in those circumstances.
-     * All data from the existing object will be replaced with data in the object you PUT.  
+     * Replace the existing custom tax rule object at this URL with an updated object.
+     * 
+     * A tax rule represents a rule that changes the default AvaTax behavior for a product or jurisdiction.  Custom tax rules
+     * can be used to change the taxability of an item, to change the tax base of an item, or to change the tax rate 
+     * charged when selling an item.  Tax rules can also change tax behavior depending on the `entityUseCode` value submitted
+     * with the transaction.
+     * 
+     * You can create custom tax rules to customize the behavior of AvaTax to match specific rules that are custom to your
+     * business.  If you have obtained a ruling from a tax auditor that requires custom tax calculations, you can use
+     * custom tax rules to redefine the behavior for your company or item.
+     * 
+     * Please use custom tax rules carefully and ensure that these tax rules match the behavior agreed upon with your
      * 
      * @param companyId The ID of the company that this tax rule belongs to.
      * @param id The ID of the tax rule you wish to update
@@ -13663,12 +14071,18 @@ This gets the basic information from the filings and doesn't include anything ex
     /**
      * Update a single tax rule
      * 
-     * Replace the existing taxrule object at this URL with an updated object.
-     * A tax rule represents a custom taxability rule for a product or service sold by your company.
-     * If you have obtained a custom tax ruling from an auditor that changes the behavior of certain goods or services
-     * within certain taxing jurisdictions, or you have obtained special tax concessions for certain dates or locations,
-     * you may wish to create a TaxRule object to override the AvaTax engine's default behavior in those circumstances.
-     * All data from the existing object will be replaced with data in the object you PUT.  
+     * Replace the existing custom tax rule object at this URL with an updated object.
+     * 
+     * A tax rule represents a rule that changes the default AvaTax behavior for a product or jurisdiction.  Custom tax rules
+     * can be used to change the taxability of an item, to change the tax base of an item, or to change the tax rate 
+     * charged when selling an item.  Tax rules can also change tax behavior depending on the `entityUseCode` value submitted
+     * with the transaction.
+     * 
+     * You can create custom tax rules to customize the behavior of AvaTax to match specific rules that are custom to your
+     * business.  If you have obtained a ruling from a tax auditor that requires custom tax calculations, you can use
+     * custom tax rules to redefine the behavior for your company or item.
+     * 
+     * Please use custom tax rules carefully and ensure that these tax rules match the behavior agreed upon with your
      * 
      * @param companyId The ID of the company that this tax rule belongs to.
      * @param id The ID of the tax rule you wish to update
@@ -14187,7 +14601,8 @@ This gets the basic information from the filings and doesn't include anything ex
      * * SummaryOnly (omit lines and details - reduces API response size)
      * * LinesOnly (omit details - reduces API response size)
      * * ForceTimeout - Simulates a timeout.  This adds a 30 second delay and error to your API call.  This can be used to test your code to ensure it can respond correctly in the case of a dropped connection.
-     *             
+     * * TaxDetailsByTaxType - Includes the aggregated tax, exempt tax, taxable and non-taxable for each tax type returned in the transaction summary.
+     * 
      * 
      * @param include Specifies objects to include in the response after transaction is created
      * @param model The transaction you wish to create
@@ -14234,7 +14649,8 @@ This gets the basic information from the filings and doesn't include anything ex
      * * SummaryOnly (omit lines and details - reduces API response size)
      * * LinesOnly (omit details - reduces API response size)
      * * ForceTimeout - Simulates a timeout.  This adds a 30 second delay and error to your API call.  This can be used to test your code to ensure it can respond correctly in the case of a dropped connection.
-     *             
+     * * TaxDetailsByTaxType - Includes the aggregated tax, exempt tax, taxable and non-taxable for each tax type returned in the transaction summary.
+     * 
      * 
      * @param include Specifies objects to include in the response after transaction is created
      * @param model The transaction you wish to create
@@ -14501,8 +14917,8 @@ This gets the basic information from the filings and doesn't include anything ex
      * @param companyCode The company code of the company that recorded this transaction
      * @param include Specifies objects to include in this fetch call
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<TransactionModel>
      */
@@ -14544,8 +14960,8 @@ This gets the basic information from the filings and doesn't include anything ex
      * @param companyCode The company code of the company that recorded this transaction
      * @param include Specifies objects to include in this fetch call
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<TransactionModel>
      */
@@ -15019,8 +15435,8 @@ This gets the basic information from the filings and doesn't include anything ex
      * @param companyId The ID of the company that owns these UPCs
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * @param include A comma separated list of additional data to retrieve.
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<UPCModel>
      */
@@ -15046,8 +15462,8 @@ This gets the basic information from the filings and doesn't include anything ex
      * @param companyId The ID of the company that owns these UPCs
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * @param include A comma separated list of additional data to retrieve.
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<UPCModel>
      */
@@ -15072,8 +15488,8 @@ This gets the basic information from the filings and doesn't include anything ex
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * @param include A comma separated list of additional data to retrieve.
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<UPCModel>
      */
@@ -15097,8 +15513,8 @@ This gets the basic information from the filings and doesn't include anything ex
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * @param include A comma separated list of additional data to retrieve.
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<UPCModel>
      */
@@ -15151,6 +15567,42 @@ This gets the basic information from the filings and doesn't include anything ex
     }
 
     /**
+     * Change Password
+     * 
+     * Allows a user to change their password via an API call.
+     * 
+     * This API allows an authenticated user to change their password via an API call.  This feature is only available
+     * for accounts that do not use SAML integrated password validation.
+     * 
+     * This API only allows the currently authenticated user to change their password; it cannot be used to apply to a
+     * 
+     * @param model An object containing your current password and the new password.
+     * @return String
+     */
+    public String changePassword(PasswordChangeModel model) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/passwords");
+        return ((RestCall<String>)restCallFactory.createRestCall("put", path, model, new TypeToken<String>(){})).call();
+    }
+
+    /**
+     * Change Password
+     * 
+     * Allows a user to change their password via an API call.
+     * 
+     * This API allows an authenticated user to change their password via an API call.  This feature is only available
+     * for accounts that do not use SAML integrated password validation.
+     * 
+     * This API only allows the currently authenticated user to change their password; it cannot be used to apply to a
+     * 
+     * @param model An object containing your current password and the new password.
+     * @return String
+     */
+    public Future<String> changePasswordAsync(PasswordChangeModel model) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/passwords");
+        return this.threadPool.submit((RestCall<String>)restCallFactory.createRestCall("put", path, model, new TypeToken<String>(){}));
+    }
+
+    /**
      * Create new users
      * 
      * Create one or more new user objects attached to this account.
@@ -15192,6 +15644,46 @@ This gets the basic information from the filings and doesn't include anything ex
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/users");
         path.applyField("accountId", accountId);
         return this.threadPool.submit((RestCall<ArrayList<UserModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<UserModel>>(){}));
+    }
+
+    /**
+     * Delete a single user
+     * 
+     * Mark the user object identified by this URL as deleted.
+     * 
+     * This API is available for use by account and company administrators only.
+     * 
+     * Account and company administrators may only delete users within the appropriate organizations
+     * 
+     * @param id The ID of the user you wish to delete.
+     * @param accountId The accountID of the user you wish to delete.
+     * @return ArrayList<ErrorDetail>
+     */
+    public ArrayList<ErrorDetail> deleteUser(Integer id, Integer accountId) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/users/{id}");
+        path.applyField("id", id);
+        path.applyField("accountId", accountId);
+        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){})).call();
+    }
+
+    /**
+     * Delete a single user
+     * 
+     * Mark the user object identified by this URL as deleted.
+     * 
+     * This API is available for use by account and company administrators only.
+     * 
+     * Account and company administrators may only delete users within the appropriate organizations
+     * 
+     * @param id The ID of the user you wish to delete.
+     * @param accountId The accountID of the user you wish to delete.
+     * @return ArrayList<ErrorDetail>
+     */
+    public Future<ArrayList<ErrorDetail>> deleteUserAsync(Integer id, Integer accountId) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/users/{id}");
+        path.applyField("id", id);
+        path.applyField("accountId", accountId);
+        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){}));
     }
 
     /**
@@ -15289,38 +15781,6 @@ This gets the basic information from the filings and doesn't include anything ex
     }
 
     /**
-     * Get information about a username.
-     * 
-     * You may call this API prior to creating a user, to check if a particular username is available for use.  Using this API, you can 
-     * present a friendly experience prior to attempting to create a new user object.
-     * 
-     * 
-     * @param username The username to search.
-     * @return UsernameModel
-     */
-    public UsernameModel getUsername(String username) throws Exception {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/usernames");
-        path.addQuery("username", username);
-        return ((RestCall<UsernameModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<UsernameModel>(){})).call();
-    }
-
-    /**
-     * Get information about a username.
-     * 
-     * You may call this API prior to creating a user, to check if a particular username is available for use.  Using this API, you can 
-     * present a friendly experience prior to attempting to create a new user object.
-     * 
-     * 
-     * @param username The username to search.
-     * @return UsernameModel
-     */
-    public Future<UsernameModel> getUsernameAsync(String username) {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/usernames");
-        path.addQuery("username", username);
-        return this.threadPool.submit((RestCall<UsernameModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<UsernameModel>(){}));
-    }
-
-    /**
      * Retrieve users for this account
      * 
      * List all user objects attached to this account.
@@ -15334,8 +15794,8 @@ This gets the basic information from the filings and doesn't include anything ex
      * @param accountId The accountID of the user you wish to list.
      * @param include Optional fetch commands.
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<UserModel>
      */
@@ -15364,8 +15824,8 @@ This gets the basic information from the filings and doesn't include anything ex
      * @param accountId The accountID of the user you wish to list.
      * @param include Optional fetch commands.
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<UserModel>
      */
@@ -15395,8 +15855,8 @@ This gets the basic information from the filings and doesn't include anything ex
      * 
      * @param include Optional fetch commands.
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<UserModel>
      */
@@ -15425,8 +15885,8 @@ This gets the basic information from the filings and doesn't include anything ex
      * 
      * @param include Optional fetch commands.
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * @param top If nonzero, return no more than this number of results. Used with $skip to provide pagination for large datasets.
-     * @param skip If nonzero, skip this number of results before returning data. Used with $top to provide pagination for large datasets.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<UserModel>
      */
@@ -15482,7 +15942,12 @@ This gets the basic information from the filings and doesn't include anything ex
      * Checks if the current user is subscribed to a specific service
      * 
      * Returns a subscription object for the current account, or 404 Not Found if this subscription is not enabled for this account.
-     * This API call is intended to allow you to identify whether you have the necessary account configuration to access certain
+     * 
+     * This API will return an error if it is called with invalid authentication credentials.
+     * 
+     * This API is intended to help you determine whether you have the necessary subscription to use certain API calls
+     * within AvaTax.  You can examine the subscriptions returned from this API call to look for a particular product
+     * or subscription to provide useful information to the current user as to whether they are entitled to use
      * 
      * @param serviceTypeId The service to check (See ServiceTypeId::* for a list of allowable values)
      * @return SubscriptionModel
@@ -15497,7 +15962,12 @@ This gets the basic information from the filings and doesn't include anything ex
      * Checks if the current user is subscribed to a specific service
      * 
      * Returns a subscription object for the current account, or 404 Not Found if this subscription is not enabled for this account.
-     * This API call is intended to allow you to identify whether you have the necessary account configuration to access certain
+     * 
+     * This API will return an error if it is called with invalid authentication credentials.
+     * 
+     * This API is intended to help you determine whether you have the necessary subscription to use certain API calls
+     * within AvaTax.  You can examine the subscriptions returned from this API call to look for a particular product
+     * or subscription to provide useful information to the current user as to whether they are entitled to use
      * 
      * @param serviceTypeId The service to check (See ServiceTypeId::* for a list of allowable values)
      * @return SubscriptionModel
@@ -15511,8 +15981,13 @@ This gets the basic information from the filings and doesn't include anything ex
     /**
      * List all services to which the current user is subscribed
      * 
-     * Returns the list of all subscriptions enabled for the current account.
+     * Returns the list of all subscriptions enabled for the currently logged in user.
+     * 
+     * This API will return an error if it is called with invalid authentication credentials.
+     * 
      * This API is intended to help you determine whether you have the necessary subscription to use certain API calls
+     * within AvaTax.  You can examine the subscriptions returned from this API call to look for a particular product
+     * or subscription to provide useful information to the current user as to whether they are entitled to use
      * 
      * @return FetchResult<SubscriptionModel>
      */
@@ -15524,8 +15999,13 @@ This gets the basic information from the filings and doesn't include anything ex
     /**
      * List all services to which the current user is subscribed
      * 
-     * Returns the list of all subscriptions enabled for the current account.
+     * Returns the list of all subscriptions enabled for the currently logged in user.
+     * 
+     * This API will return an error if it is called with invalid authentication credentials.
+     * 
      * This API is intended to help you determine whether you have the necessary subscription to use certain API calls
+     * within AvaTax.  You can examine the subscriptions returned from this API call to look for a particular product
+     * or subscription to provide useful information to the current user as to whether they are entitled to use
      * 
      * @return FetchResult<SubscriptionModel>
      */
@@ -15537,10 +16017,21 @@ This gets the basic information from the filings and doesn't include anything ex
     /**
      * Tests connectivity and version of the service
      * 
+     * Check connectivity to AvaTax and return information about the AvaTax API server.
+     * 
+     * This API is intended to help you verify that your connection is working.  This API will always succeed and will
+     * never return a error.  It provides basic information about the server you connect to:
+     * 
+     * * `version` - The version number of the AvaTax API server that responded to your request.  The AvaTax API version number is updated once per month during Avalara's update process.
+     * * `authenticated` - A boolean flag indicating whether or not you sent valid credentials with your API request.
+     * * `authenticationType` - If you provided valid credentials to the API, this field will tell you whether you used Bearer, Username, or LicenseKey authentication.
+     * * `authenticatedUserName` - If you provided valid credentials to the API, this field will tell you the username of the currently logged in user.
+     * * `authenticatedUserId` - If you provided valid credentials to the API, this field will tell you the user ID of the currently logged in user.
+     * * `authenticatedAccountId` - If you provided valid credentials to the API, this field will contain the account ID of the currently logged in user.
+     * 
      * This API helps diagnose connectivity problems between your application and AvaTax; you may call this API even 
-     * if you do not have verified connection credentials.
-     * The results of this API call will help you determine whether your computer can contact AvaTax via the network,
-     * whether your authentication credentials are recognized, and the roundtrip time it takes to communicate with
+     * if you do not have verified connection credentials.  If this API fails, either your computer is not connected to 
+     * the internet, or there is a routing problem between your office and Avalara, or the Avalara server is not available.
      * 
      * @return PingResultModel
      */
@@ -15552,10 +16043,21 @@ This gets the basic information from the filings and doesn't include anything ex
     /**
      * Tests connectivity and version of the service
      * 
+     * Check connectivity to AvaTax and return information about the AvaTax API server.
+     * 
+     * This API is intended to help you verify that your connection is working.  This API will always succeed and will
+     * never return a error.  It provides basic information about the server you connect to:
+     * 
+     * * `version` - The version number of the AvaTax API server that responded to your request.  The AvaTax API version number is updated once per month during Avalara's update process.
+     * * `authenticated` - A boolean flag indicating whether or not you sent valid credentials with your API request.
+     * * `authenticationType` - If you provided valid credentials to the API, this field will tell you whether you used Bearer, Username, or LicenseKey authentication.
+     * * `authenticatedUserName` - If you provided valid credentials to the API, this field will tell you the username of the currently logged in user.
+     * * `authenticatedUserId` - If you provided valid credentials to the API, this field will tell you the user ID of the currently logged in user.
+     * * `authenticatedAccountId` - If you provided valid credentials to the API, this field will contain the account ID of the currently logged in user.
+     * 
      * This API helps diagnose connectivity problems between your application and AvaTax; you may call this API even 
-     * if you do not have verified connection credentials.
-     * The results of this API call will help you determine whether your computer can contact AvaTax via the network,
-     * whether your authentication credentials are recognized, and the roundtrip time it takes to communicate with
+     * if you do not have verified connection credentials.  If this API fails, either your computer is not connected to 
+     * the internet, or there is a routing problem between your office and Avalara, or the Avalara server is not available.
      * 
      * @return PingResultModel
      */

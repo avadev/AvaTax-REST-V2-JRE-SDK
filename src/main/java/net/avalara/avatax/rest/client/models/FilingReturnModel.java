@@ -1058,7 +1058,7 @@ public class FilingReturnModel {
     }
 
 
-    private Byte month;
+    private Integer month;
 
     /**
      * Getter for month
@@ -1067,7 +1067,7 @@ public class FilingReturnModel {
     * The filing period represents the year and month of the last day of taxes being reported on this filing. 
     * For example, an annual tax filing for Jan-Dec 2015 would have a filing period of Dec 2015.
      */
-    public Byte getMonth() {
+    public Integer getMonth() {
         return this.month;
     }
 
@@ -1078,7 +1078,7 @@ public class FilingReturnModel {
     * The filing period represents the year and month of the last day of taxes being reported on this filing. 
     * For example, an annual tax filing for Jan-Dec 2015 would have a filing period of Dec 2015.
      */
-    public void setMonth(Byte value) {
+    public void setMonth(Integer value) {
         this.month = value;
     }
 
@@ -1126,6 +1126,48 @@ public class FilingReturnModel {
      */
     public void setAttachments(ArrayList<FilingAttachmentModel> value) {
         this.attachments = value;
+    }
+
+
+    private FilingReturnCreditModel excludedCarryOverCredits;
+
+    /**
+     * Getter for excludedCarryOverCredits
+     *
+     * The excluded carry over credit documents
+     */
+    public FilingReturnCreditModel getExcludedCarryOverCredits() {
+        return this.excludedCarryOverCredits;
+    }
+
+    /**
+     * Setter for excludedCarryOverCredits
+     *
+     * The excluded carry over credit documents
+     */
+    public void setExcludedCarryOverCredits(FilingReturnCreditModel value) {
+        this.excludedCarryOverCredits = value;
+    }
+
+
+    private FilingReturnCreditModel appliedCarryOverCredits;
+
+    /**
+     * Getter for appliedCarryOverCredits
+     *
+     * The applied carry over credit documents
+     */
+    public FilingReturnCreditModel getAppliedCarryOverCredits() {
+        return this.appliedCarryOverCredits;
+    }
+
+    /**
+     * Setter for appliedCarryOverCredits
+     *
+     * The applied carry over credit documents
+     */
+    public void setAppliedCarryOverCredits(FilingReturnCreditModel value) {
+        this.appliedCarryOverCredits = value;
     }
 
 

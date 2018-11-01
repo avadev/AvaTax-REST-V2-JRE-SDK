@@ -71,14 +71,14 @@ public class AuditEvent {
     }
 
 
-    private String auditEventLevelId;
+    private Integer auditEventLevelId;
 
     /**
      * Getter for auditEventLevelId
      *
      * 
      */
-    public String getAuditEventLevelId() {
+    public Integer getAuditEventLevelId() {
         return this.auditEventLevelId;
     }
 
@@ -87,7 +87,7 @@ public class AuditEvent {
      *
      * 
      */
-    public void setAuditEventLevelId(String value) {
+    public void setAuditEventLevelId(Integer value) {
         this.auditEventLevelId = value;
     }
 

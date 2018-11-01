@@ -622,6 +622,37 @@ public class CustomerModel {
     }
 
 
+    private ArrayList<CustomerModel> shipTos;
+
+    /**
+     * Getter for shipTos
+     *
+     * A list of ship-to customer records that are connected to this bill-to customer.
+    * 
+    * Customer records represent businesses or individuals who can provide exemption certificates. Some customers
+    * may have certificates that are linked to their shipping address or their billing address. To group these
+    * customer records together, you may link multiple bill-to and ship-to addresses together to represent a single
+    * entity that has multiple different addresses of different kinds.
+     */
+    public ArrayList<CustomerModel> getShipTos() {
+        return this.shipTos;
+    }
+
+    /**
+     * Setter for shipTos
+     *
+     * A list of ship-to customer records that are connected to this bill-to customer.
+    * 
+    * Customer records represent businesses or individuals who can provide exemption certificates. Some customers
+    * may have certificates that are linked to their shipping address or their billing address. To group these
+    * customer records together, you may link multiple bill-to and ship-to addresses together to represent a single
+    * entity that has multiple different addresses of different kinds.
+     */
+    public void setShipTos(ArrayList<CustomerModel> value) {
+        this.shipTos = value;
+    }
+
+
     /**
      * Returns a JSON string representation of CustomerModel
      */
