@@ -34,7 +34,7 @@ class AvaTaxClientSpec extends fixture.FreeSpec {
       assert(account.getCreatedDate() != null)
     }
     "successfully validate an address" in { accountInfo =>
-      val address = client.withSecurity(accountInfo.username, accountInfo.password).resolveAddress("100 ravine ln ne", "", "", "Bainbridge Island", "WA", "98110", "US", TextCase.Upper, null, null)
+      val address = client.withSecurity(accountInfo.username, accountInfo.password).resolveAddress("100 ravine ln ne", "", "", "Bainbridge Island", "WA", "98110", "US", TextCase.Upper)
       assert(address.getValidatedAddresses.get(0).getLine1 == "100 RAVINE LN NE")
       assert(address.getValidatedAddresses.get(0).getCity == "BAINBRIDGE ISLAND")
       assert(address.getValidatedAddresses.get(0).getRegion == "WA")
