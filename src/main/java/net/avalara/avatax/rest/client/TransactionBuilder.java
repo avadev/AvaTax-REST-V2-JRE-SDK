@@ -382,15 +382,15 @@ public class TransactionBuilder {
         return this.model;
     }
 
-    public Future<TransactionModel> CreateAsync() {
+    public Future<TransactionModel> createAsync() {
         return this.client.createTransactionAsync(null, this.model);
     }
 
-    public TransactionModel Create() throws Exception {
+    public TransactionModel create() throws Exception {
         return this.client.createTransaction(null, this.model);
     }
 
-    public AdjustTransactionModel CreateAdjustmentRequest(String description, AdjustmentReason reason) {
+    public AdjustTransactionModel createAdjustmentRequest(String description, AdjustmentReason reason) {
         AdjustTransactionModel adjust = new AdjustTransactionModel();
         adjust.setAdjustmentDescription(description);
         adjust.setAdjustmentReason(reason);
