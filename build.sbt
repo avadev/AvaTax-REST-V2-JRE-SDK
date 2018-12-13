@@ -2,7 +2,7 @@ name := """avatax-rest-v2-api-java"""
 
 organization := "net.avalara.avatax"
 
-version := "18.10.2.245"
+version := "18.10.3.247"
 
 scalaVersion := "2.11.8"
 
