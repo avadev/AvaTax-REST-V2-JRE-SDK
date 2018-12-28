@@ -1,0 +1,6 @@
+[submodule "examples/examples/app"]
+	path = examples/examples/app
+	url = https://github.com/WayneMyerAvalara/app
+[submodule "examples/app"]
+	path = examples/app
+	url = https://github.com/WayneMyerAvalara/app
