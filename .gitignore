@@ -7,3 +7,5 @@
 /target/
 .idea/
 release.sh
+
+key\.asc
