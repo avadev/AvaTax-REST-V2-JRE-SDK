@@ -67,6 +67,11 @@ public class TransactionBuilder {
         return this;
     }
 
+    public TransactionBuilder withIsSellerImporterOfRecord(Boolean isSellerImporterOfRecord) {
+        this.model.setIsSellerImporterOfRecord(isSellerImporterOfRecord);
+        return this;
+    }
+
     public TransactionBuilder withLineParameter(String name, String value) {
         LineItemModel line = getMostRecentLine("WithLineParameter");
         HashMap<String, String> params = line.getParameters();
@@ -230,15 +235,15 @@ public class TransactionBuilder {
     }
 
     public TransactionBuilder withLine(String lineNo, BigDecimal amount, BigDecimal quantity, String taxCode) {
-        return withLine(lineNo, amount, quantity, taxCode, null, null, null, null, null);
+        return withLine(lineNo, amount, quantity, taxCode, null, null, null, null);
     }
 
     public TransactionBuilder withLine(BigDecimal amount, BigDecimal quantity, String taxCode) {
-        return withLine(amount, quantity, taxCode, null, null, null, null, null);
+        return withLine(amount, quantity, taxCode, null, null);
     }
 
     public TransactionBuilder withLine(String lineNo, BigDecimal amount, BigDecimal quantity, String taxCode, String itemCode) {
-        return withLine(lineNo, amount, quantity, taxCode, itemCode, null, null, null, null);
+        return withLine(lineNo, amount, quantity, taxCode, itemCode, null);
     }
 
     public TransactionBuilder withLine(BigDecimal amount, BigDecimal quantity, String taxCode, String itemCode) {
@@ -246,15 +251,15 @@ public class TransactionBuilder {
     }
 
     public TransactionBuilder withLine(String lineNo, BigDecimal amount, BigDecimal quantity, String taxCode, String itemCode, String description) {
-        return withLine(lineNo, amount, quantity, taxCode, itemCode, description, null, null, null);
+        return withLine(lineNo, amount, quantity, taxCode, itemCode, description, null, null);
     }
 
     public TransactionBuilder withLine(BigDecimal amount, BigDecimal quantity, String taxCode, String itemCode, String description) {
-        return withLine(amount, quantity, taxCode, itemCode, description, null, null, null);
+        return withLine(null, amount, quantity, taxCode, itemCode, description, null, null, null, null);
     }
 
     public TransactionBuilder withLine(String lineNo, BigDecimal amount, BigDecimal quantity, String taxCode, String itemCode, String description, String ref1, String ref2) {
-        return withLine(lineNo, amount, quantity, taxCode, itemCode, description, ref1, ref2, null);
+        return withLine(lineNo, amount, quantity, taxCode, itemCode, description, ref1, ref2, null, null);
     }
 
     public TransactionBuilder withLine(BigDecimal amount, BigDecimal quantity, String taxCode, String itemCode, String description, String ref1, String ref2) {
@@ -262,10 +267,10 @@ public class TransactionBuilder {
     }
 
     public TransactionBuilder withLine(BigDecimal amount, BigDecimal quantity, String taxCode, String itemCode, String description, String ref1, String ref2, String customerUsageType) {
-        return withLine(null, amount, quantity, taxCode, itemCode, description, ref1, ref2, customerUsageType);
+        return withLine(null, amount, quantity, taxCode, itemCode, description, ref1, ref2, customerUsageType, null);
     }
 
-    public TransactionBuilder withLine(String lineNo, BigDecimal amount, BigDecimal quantity, String taxCode, String itemCode, String description, String ref1, String ref2, String customerUsageType) {
+    public TransactionBuilder withLine(String lineNo, BigDecimal amount, BigDecimal quantity, String taxCode, String itemCode, String description, String ref1, String ref2, String customerUsageType, String hsCode) {
         if (quantity == null) {
             quantity = BigDecimal.ONE;
         }
@@ -304,6 +309,10 @@ public class TransactionBuilder {
 
         if (customerUsageType != null && !customerUsageType.isEmpty()) {
             line.setCustomerUsageType(customerUsageType);
+        }
+
+        if(hsCode != null && !hsCode.isEmpty()) {
+            line.setHsCode(hsCode);
         }
 
         this.model.getLines().add(line);
