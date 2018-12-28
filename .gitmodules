@@ -1,0 +1,3 @@
+[submodule "examples/TaxCodeCheckApp"]
+	path = examples/TaxCodeCheckApp
+	url = https://github.com/TaxCodeCheck/app
