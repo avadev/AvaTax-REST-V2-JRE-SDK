@@ -97,7 +97,8 @@ public class ItemModel {
     /**
      * Getter for taxCodeId
      *
-     * The unique ID number of the tax code that is applied when selling this item.
+     * DEPRECATED - For identifying an `Item` with `Avalara TaxCode`, please call the [CreateItemClassification API] with your ItemCode and the Avalara TaxCode.
+    * The unique ID number of the tax code that is applied when selling this item.
     * When creating or updating an item, you can either specify the Tax Code ID number or the Tax Code string; you do not need to specify both values.
      */
     public Integer getTaxCodeId() {
@@ -107,7 +108,8 @@ public class ItemModel {
     /**
      * Setter for taxCodeId
      *
-     * The unique ID number of the tax code that is applied when selling this item.
+     * DEPRECATED - For identifying an `Item` with `Avalara TaxCode`, please call the [CreateItemClassification API] with your ItemCode and the Avalara TaxCode.
+    * The unique ID number of the tax code that is applied when selling this item.
     * When creating or updating an item, you can either specify the Tax Code ID number or the Tax Code string; you do not need to specify both values.
      */
     public void setTaxCodeId(Integer value) {
@@ -120,7 +122,8 @@ public class ItemModel {
     /**
      * Getter for taxCode
      *
-     * The unique code string of the Tax Code that is applied when selling this item.
+     * DEPRECATED - For identifying an `Item` with `Avalara TaxCode`, please call the [CreateItemClassification API] with your ItemCode and the Avalara TaxCode.
+    * The unique code string of the Tax Code that is applied when selling this item.
     * When creating or updating an item, you can either specify the Tax Code ID number or the Tax Code string; you do not need to specify both values.
      */
     public String getTaxCode() {
@@ -130,7 +133,8 @@ public class ItemModel {
     /**
      * Setter for taxCode
      *
-     * The unique code string of the Tax Code that is applied when selling this item.
+     * DEPRECATED - For identifying an `Item` with `Avalara TaxCode`, please call the [CreateItemClassification API] with your ItemCode and the Avalara TaxCode.
+    * The unique code string of the Tax Code that is applied when selling this item.
     * When creating or updating an item, you can either specify the Tax Code ID number or the Tax Code string; you do not need to specify both values.
      */
     public void setTaxCode(String value) {
@@ -156,6 +160,27 @@ public class ItemModel {
      */
     public void setDescription(String value) {
         this.description = value;
+    }
+
+
+    private String itemGroup;
+
+    /**
+     * Getter for itemGroup
+     *
+     * A way to group similar items.
+     */
+    public String getItemGroup() {
+        return this.itemGroup;
+    }
+
+    /**
+     * Setter for itemGroup
+     *
+     * A way to group similar items.
+     */
+    public void setItemGroup(String value) {
+        this.itemGroup = value;
     }
 
 
@@ -240,6 +265,50 @@ public class ItemModel {
      */
     public void setModifiedUserId(Integer value) {
         this.modifiedUserId = value;
+    }
+
+
+    private ArrayList<ClassificationModel> classifications;
+
+    /**
+     * Getter for classifications
+     *
+     * List of classifications that belong to this item.
+    * A single classification consits of a productCode and a systemCode for a particular item.
+     */
+    public ArrayList<ClassificationModel> getClassifications() {
+        return this.classifications;
+    }
+
+    /**
+     * Setter for classifications
+     *
+     * List of classifications that belong to this item.
+    * A single classification consits of a productCode and a systemCode for a particular item.
+     */
+    public void setClassifications(ArrayList<ClassificationModel> value) {
+        this.classifications = value;
+    }
+
+
+    private ArrayList<ItemParameterModel> parameters;
+
+    /**
+     * Getter for parameters
+     *
+     * List of item parameters.
+     */
+    public ArrayList<ItemParameterModel> getParameters() {
+        return this.parameters;
+    }
+
+    /**
+     * Setter for parameters
+     *
+     * List of item parameters.
+     */
+    public void setParameters(ArrayList<ItemParameterModel> value) {
+        this.parameters = value;
     }
 
 

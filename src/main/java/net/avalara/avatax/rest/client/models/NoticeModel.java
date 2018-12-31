@@ -796,6 +796,27 @@ public class NoticeModel {
     }
 
 
+    private String taxFormCode;
+
+    /**
+     * Getter for taxFormCode
+     *
+     * The tax form code of the notice
+     */
+    public String getTaxFormCode() {
+        return this.taxFormCode;
+    }
+
+    /**
+     * Setter for taxFormCode
+     *
+     * The tax form code of the notice
+     */
+    public void setTaxFormCode(String value) {
+        this.taxFormCode = value;
+    }
+
+
     private String documentReference;
 
     /**

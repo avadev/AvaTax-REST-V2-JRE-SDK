@@ -223,7 +223,7 @@ public class UserModel {
     /**
      * Getter for passwordStatus
      *
-     * The status of the user's password.
+     * The status of the user's password. For a new user created, this is always going to be `UserMustChange`
      */
     public PasswordStatusId getPasswordStatus() {
         return this.passwordStatus;
@@ -232,7 +232,7 @@ public class UserModel {
     /**
      * Setter for passwordStatus
      *
-     * The status of the user's password.
+     * The status of the user's password. For a new user created, this is always going to be `UserMustChange`
      */
     public void setPasswordStatus(PasswordStatusId value) {
         this.passwordStatus = value;

@@ -213,6 +213,111 @@ public class ParameterModel {
     }
 
 
+    private String label;
+
+    /**
+     * Getter for label
+     *
+     * Label that helps the user to identify a parameter
+     */
+    public String getLabel() {
+        return this.label;
+    }
+
+    /**
+     * Setter for label
+     *
+     * Label that helps the user to identify a parameter
+     */
+    public void setLabel(String value) {
+        this.label = value;
+    }
+
+
+    private String helpUrl;
+
+    /**
+     * Getter for helpUrl
+     *
+     * A help url that provides more information about the parameter
+     */
+    public String getHelpUrl() {
+        return this.helpUrl;
+    }
+
+    /**
+     * Setter for helpUrl
+     *
+     * A help url that provides more information about the parameter
+     */
+    public void setHelpUrl(String value) {
+        this.helpUrl = value;
+    }
+
+
+    private String attributeType;
+
+    /**
+     * Getter for attributeType
+     *
+     * The type of parameter as determined by its application, e.g. Product, Transaction, Calculated
+     */
+    public String getAttributeType() {
+        return this.attributeType;
+    }
+
+    /**
+     * Setter for attributeType
+     *
+     * The type of parameter as determined by its application, e.g. Product, Transaction, Calculated
+     */
+    public void setAttributeType(String value) {
+        this.attributeType = value;
+    }
+
+
+    private ArrayList<String> values;
+
+    /**
+     * Getter for values
+     *
+     * If the parameter is of enumeration data type, then this list will be populated with all of the possible enumeration values.
+     */
+    public ArrayList<String> getValues() {
+        return this.values;
+    }
+
+    /**
+     * Setter for values
+     *
+     * If the parameter is of enumeration data type, then this list will be populated with all of the possible enumeration values.
+     */
+    public void setValues(ArrayList<String> value) {
+        this.values = value;
+    }
+
+
+    private String measurementType;
+
+    /**
+     * Getter for measurementType
+     *
+     * The unit of measurement type of the parameter
+     */
+    public String getMeasurementType() {
+        return this.measurementType;
+    }
+
+    /**
+     * Setter for measurementType
+     *
+     * The unit of measurement type of the parameter
+     */
+    public void setMeasurementType(String value) {
+        this.measurementType = value;
+    }
+
+
     /**
      * Returns a JSON string representation of ParameterModel
      */

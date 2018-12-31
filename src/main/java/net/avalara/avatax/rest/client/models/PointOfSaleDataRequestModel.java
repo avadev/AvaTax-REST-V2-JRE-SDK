@@ -113,6 +113,27 @@ public class PointOfSaleDataRequestModel {
     }
 
 
+    private ArrayList<String> itemCodes;
+
+    /**
+     * Getter for itemCodes
+     *
+     * A list of item codes to include in this point-of-sale file. If no item codes are specified, responese will include all distinct item codes associated with the Items within your company.
+     */
+    public ArrayList<String> getItemCodes() {
+        return this.itemCodes;
+    }
+
+    /**
+     * Setter for itemCodes
+     *
+     * A list of item codes to include in this point-of-sale file. If no item codes are specified, responese will include all distinct item codes associated with the Items within your company.
+     */
+    public void setItemCodes(ArrayList<String> value) {
+        this.itemCodes = value;
+    }
+
+
     private ArrayList<String> locationCodes;
 
     /**

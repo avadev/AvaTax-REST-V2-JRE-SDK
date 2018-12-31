@@ -66,6 +66,11 @@ public enum ErrorCodeId {
     /** 
      * 
      */
+    EntityLimitExceeded,
+
+    /** 
+     * 
+     */
     CommonPassword,
 
     /** 
@@ -232,6 +237,11 @@ public enum ErrorCodeId {
      * 
      */
     JsonFormatError,
+
+    /** 
+     * 
+     */
+    InvalidDecimalValue,
 
     /** 
      * 
@@ -884,6 +894,11 @@ public enum ErrorCodeId {
     InvalidIPAddress,
 
     /** 
+     * 
+     */
+    OfferCodeAlreadyApplied,
+
+    /** 
      * Refund API error codes
      */
     InvalidDocumentStatusForRefund,
@@ -1269,6 +1284,16 @@ public enum ErrorCodeId {
     CannotUpdateSourceOrInstance,
 
     /** 
+     * 
+     */
+    TaxCodeAssociatedWithItemCodeNotFound,
+
+    /** 
+     * 
+     */
+    DuplicateSystemForItem,
+
+    /** 
      * SendSales API errors
      */
     UnsupportedFileFormat,
@@ -1302,6 +1327,31 @@ public enum ErrorCodeId {
      * AuditAccount API errors
      */
     TraceDataNotAvailable,
+
+    /** 
+     * Item parameter errors
+     */
+    InvalidParameterUnitMeasurementType,
+
+    /** 
+     * 
+     */
+    ParameterUnitRequired,
+
+    /** 
+     * 
+     */
+    InvalidParameterValueDataType,
+
+    /** 
+     * 
+     */
+    InvalidParameterAttributeType,
+
+    /** 
+     * 
+     */
+    SubscriptionRequiredForParameter,
 
 }
     
