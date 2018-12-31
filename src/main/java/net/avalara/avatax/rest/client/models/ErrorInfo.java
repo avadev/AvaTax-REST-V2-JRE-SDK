@@ -9,86 +9,115 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 
+/*
+ * AvaTax Software Development Kit for Java JRE based environments
+ *
+ * (c) 2004-2018 Avalara, Inc.
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ *
+ * @author     Dustin Welden <dustin.welden@avalara.com>
+ * @copyright  2004-2018 Avalara, Inc.
+ * @license    https://www.apache.org/licenses/LICENSE-2.0
+ * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ */
+
 /**
  * Information about the error that occurred
  */
 public class ErrorInfo {
+
+
     private ErrorCodeId code;
 
     /**
-     * Getter for code - Type of error that occurred
+     * Getter for code
+     *
+     * Type of error that occurred
      */
     public ErrorCodeId getCode() {
         return this.code;
     }
 
     /**
-     * Setter for code - Type of error that occurred
+     * Setter for code
+     *
+     * Type of error that occurred
      */
-    public void setCode(ErrorCodeId code) {
-        this.code = code;
+    public void setCode(ErrorCodeId value) {
+        this.code = value;
     }
 
-    
+
     private String message;
 
     /**
-     * Getter for message - Short one-line message to summaryize what went wrong
+     * Getter for message
+     *
+     * Short one-line message to summaryize what went wrong
      */
     public String getMessage() {
         return this.message;
     }
 
     /**
-     * Setter for message - Short one-line message to summaryize what went wrong
+     * Setter for message
+     *
+     * Short one-line message to summaryize what went wrong
      */
-    public void setMessage(String message) {
-        this.message = message;
+    public void setMessage(String value) {
+        this.message = value;
     }
 
-    
+
     private ErrorTargetCode target;
 
     /**
-     * Getter for target - What object or service caused the error?
+     * Getter for target
+     *
+     * What object or service caused the error?
      */
     public ErrorTargetCode getTarget() {
         return this.target;
     }
 
     /**
-     * Setter for target - What object or service caused the error?
+     * Setter for target
+     *
+     * What object or service caused the error?
      */
-    public void setTarget(ErrorTargetCode target) {
-        this.target = target;
+    public void setTarget(ErrorTargetCode value) {
+        this.target = value;
     }
 
-    
+
     private ArrayList<ErrorDetail> details;
 
     /**
-     * Getter for details - Array of detailed error messages
+     * Getter for details
+     *
+     * Array of detailed error messages
      */
     public ArrayList<ErrorDetail> getDetails() {
         return this.details;
     }
 
     /**
-     * Setter for details - Array of detailed error messages
+     * Setter for details
+     *
+     * Array of detailed error messages
      */
-    public void setDetails(ArrayList<ErrorDetail> details) {
-        this.details = details;
+    public void setDetails(ArrayList<ErrorDetail> value) {
+        this.details = value;
     }
-
-    
 
 
     /**
-     * Returns a JSON string representation of ErrorInfo.
+     * Returns a JSON string representation of ErrorInfo
      */
     @Override
     public String toString() {
         return JsonSerializer.SerializeObject(this);
     }
 }
-    

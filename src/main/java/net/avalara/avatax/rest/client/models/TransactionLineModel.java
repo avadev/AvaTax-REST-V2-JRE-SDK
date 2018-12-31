@@ -639,9 +639,9 @@ public class TransactionLineModel {
      *
      * The amount of tax that AvaTax calculated for the transaction.
     * 
-    * If you used a `taxOverride` of type `taxAmount` for this line, there will be a difference between
-    * the `tax` field which represents your override, and the `taxCalculated` field which represents the
-    * amount of tax that AvaTax calculated for this line.
+    * If you used a `taxOverride` of type `taxAmount`, there may be a difference between
+    * the `tax` field which applies your override, and the `taxCalculated` field which
+    * represents the amount of tax that AvaTax calculated without the override.
     * 
     * You can compare the `tax` and `taxCalculated` fields to check for any discrepancies
     * between an external tax calculation provider and the calculation performed by AvaTax.
@@ -655,9 +655,9 @@ public class TransactionLineModel {
      *
      * The amount of tax that AvaTax calculated for the transaction.
     * 
-    * If you used a `taxOverride` of type `taxAmount` for this line, there will be a difference between
-    * the `tax` field which represents your override, and the `taxCalculated` field which represents the
-    * amount of tax that AvaTax calculated for this line.
+    * If you used a `taxOverride` of type `taxAmount`, there may be a difference between
+    * the `tax` field which applies your override, and the `taxCalculated` field which
+    * represents the amount of tax that AvaTax calculated without the override.
     * 
     * You can compare the `tax` and `taxCalculated` fields to check for any discrepancies
     * between an external tax calculation provider and the calculation performed by AvaTax.

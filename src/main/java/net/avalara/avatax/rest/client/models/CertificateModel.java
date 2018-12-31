@@ -297,6 +297,27 @@ public class CertificateModel {
     }
 
 
+    private String status;
+
+    /**
+     * Getter for status
+     *
+     * The status of the certificate
+     */
+    public String getStatus() {
+        return this.status;
+    }
+
+    /**
+     * Setter for status
+     *
+     * The status of the certificate
+     */
+    public void setStatus(String value) {
+        this.status = value;
+    }
+
+
     private Date createdDate;
 
     /**

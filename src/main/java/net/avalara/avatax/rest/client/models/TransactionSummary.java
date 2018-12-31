@@ -349,7 +349,13 @@ public class TransactionSummary {
     /**
      * Getter for taxCalculated
      *
-     * Tax Calculated by Avalara AvaTax. This may be overriden by a TaxOverride.TaxAmount.
+     * The amount of tax that AvaTax calculated for the transaction.
+    *  
+    * If you used a `taxOverride` of type `taxAmount`, there may be a difference between
+    * the `tax` field which applies your override, and the `TaxCalculated` field which
+    * represents the amount of tax that AvaTax calculated for this transaction without override.
+    *  
+    * You can use this for comparison.
      */
     public BigDecimal getTaxCalculated() {
         return this.taxCalculated;
@@ -358,7 +364,13 @@ public class TransactionSummary {
     /**
      * Setter for taxCalculated
      *
-     * Tax Calculated by Avalara AvaTax. This may be overriden by a TaxOverride.TaxAmount.
+     * The amount of tax that AvaTax calculated for the transaction.
+    *  
+    * If you used a `taxOverride` of type `taxAmount`, there may be a difference between
+    * the `tax` field which applies your override, and the `TaxCalculated` field which
+    * represents the amount of tax that AvaTax calculated for this transaction without override.
+    *  
+    * You can use this for comparison.
      */
     public void setTaxCalculated(BigDecimal value) {
         this.taxCalculated = value;

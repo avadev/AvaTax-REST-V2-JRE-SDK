@@ -24,38 +24,55 @@ import java.util.HashMap;
  */
 
 /**
- * A request to void a previously created transaction
+ * Represents a classification for a given item.
  */
-public class VoidTransactionModel {
+public class ClassificationModel {
 
 
-    private VoidReasonCode code;
+    private String productCode;
 
     /**
-     * Getter for code
+     * Getter for productCode
      *
-     * Please specify the reason for voiding or cancelling this transaction.
-    * To void the transaction, please specify the reason 'DocVoided'.
-    * If you do not provide a reason, the void command will fail.
+     * The product code of an item in a given system.
      */
-    public VoidReasonCode getCode() {
-        return this.code;
+    public String getProductCode() {
+        return this.productCode;
     }
 
     /**
-     * Setter for code
+     * Setter for productCode
      *
-     * Please specify the reason for voiding or cancelling this transaction.
-    * To void the transaction, please specify the reason 'DocVoided'.
-    * If you do not provide a reason, the void command will fail.
+     * The product code of an item in a given system.
      */
-    public void setCode(VoidReasonCode value) {
-        this.code = value;
+    public void setProductCode(String value) {
+        this.productCode = value;
+    }
+
+
+    private String systemCode;
+
+    /**
+     * Getter for systemCode
+     *
+     * The system code in which the product belongs.
+     */
+    public String getSystemCode() {
+        return this.systemCode;
+    }
+
+    /**
+     * Setter for systemCode
+     *
+     * The system code in which the product belongs.
+     */
+    public void setSystemCode(String value) {
+        this.systemCode = value;
     }
 
 
     /**
-     * Returns a JSON string representation of VoidTransactionModel
+     * Returns a JSON string representation of ClassificationModel
      */
     @Override
     public String toString() {

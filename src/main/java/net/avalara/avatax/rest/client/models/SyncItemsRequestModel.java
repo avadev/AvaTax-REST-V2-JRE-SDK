@@ -24,38 +24,34 @@ import java.util.HashMap;
  */
 
 /**
- * A request to void a previously created transaction
+ * Represents a request to sync items.
  */
-public class VoidTransactionModel {
+public class SyncItemsRequestModel {
 
 
-    private VoidReasonCode code;
+    private ArrayList<ItemSyncModel> items;
 
     /**
-     * Getter for code
+     * Getter for items
      *
-     * Please specify the reason for voiding or cancelling this transaction.
-    * To void the transaction, please specify the reason 'DocVoided'.
-    * If you do not provide a reason, the void command will fail.
+     * A list of items to sync with AvaTax.
      */
-    public VoidReasonCode getCode() {
-        return this.code;
+    public ArrayList<ItemSyncModel> getItems() {
+        return this.items;
     }
 
     /**
-     * Setter for code
+     * Setter for items
      *
-     * Please specify the reason for voiding or cancelling this transaction.
-    * To void the transaction, please specify the reason 'DocVoided'.
-    * If you do not provide a reason, the void command will fail.
+     * A list of items to sync with AvaTax.
      */
-    public void setCode(VoidReasonCode value) {
-        this.code = value;
+    public void setItems(ArrayList<ItemSyncModel> value) {
+        this.items = value;
     }
 
 
     /**
-     * Returns a JSON string representation of VoidTransactionModel
+     * Returns a JSON string representation of SyncItemsRequestModel
      */
     @Override
     public String toString() {

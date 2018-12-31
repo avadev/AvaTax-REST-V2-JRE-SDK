@@ -60,5 +60,10 @@ public enum AddressCategoryId {
      */
     MarketplaceRemitsTax,
 
+    /** 
+     * Address refers to the mailing address of your company which is not a physical location.
+     */
+    NonPhysical,
+
 }
     

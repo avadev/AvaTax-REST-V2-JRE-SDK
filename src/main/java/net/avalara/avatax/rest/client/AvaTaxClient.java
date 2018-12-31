@@ -176,14 +176,12 @@ public class AvaTaxClient {
      * If you have not read or accepted the terms and conditions, this API call will return the
      * 
      * @param id The ID of the account to activate
-     * @param include Elements to include when fetching the account
      * @param model The activation request
      * @return AccountModel
      */
-    public AccountModel activateAccount(Integer id, String include, ActivateAccountModel model) throws Exception {
+    public AccountModel activateAccount(Integer id, ActivateAccountModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{id}/activate");
         path.applyField("id", id);
-        path.addQuery("$include", include);
         return ((RestCall<AccountModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<AccountModel>(){})).call();
     }
 
@@ -201,14 +199,12 @@ public class AvaTaxClient {
      * If you have not read or accepted the terms and conditions, this API call will return the
      * 
      * @param id The ID of the account to activate
-     * @param include Elements to include when fetching the account
      * @param model The activation request
      * @return AccountModel
      */
-    public Future<AccountModel> activateAccountAsync(Integer id, String include, ActivateAccountModel model) {
+    public Future<AccountModel> activateAccountAsync(Integer id, ActivateAccountModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{id}/activate");
         path.applyField("id", id);
-        path.addQuery("$include", include);
         return this.threadPool.submit((RestCall<AccountModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<AccountModel>(){}));
     }
 
@@ -1012,7 +1008,7 @@ public class AvaTaxClient {
      * @param id The primary key of this AvaFileForm
      * @return AvaFileFormModel
      */
-    public AvaFileFormModel getAvaFileForm(String id) throws Exception {
+    public AvaFileFormModel getAvaFileForm(Integer id) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/avafileforms/{id}");
         path.applyField("id", id);
         return ((RestCall<AvaFileFormModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<AvaFileFormModel>(){})).call();
@@ -1024,7 +1020,7 @@ public class AvaTaxClient {
      * @param id The primary key of this AvaFileForm
      * @return AvaFileFormModel
      */
-    public Future<AvaFileFormModel> getAvaFileFormAsync(String id) {
+    public Future<AvaFileFormModel> getAvaFileFormAsync(Integer id) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/avafileforms/{id}");
         path.applyField("id", id);
         return this.threadPool.submit((RestCall<AvaFileFormModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<AvaFileFormModel>(){}));
@@ -1681,12 +1677,14 @@ public class AvaTaxClient {
      * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document 
      * 
      * @param companyId The ID number of the company recording this certificate
+     * @param preValidatedExemptionReason If set to true, the certificate will bypass the human verification process.
      * @param model Certificates to be created
      * @return ArrayList<CertificateModel>
      */
-    public ArrayList<CertificateModel> createCertificates(Integer companyId, ArrayList<CertificateModel> model) throws Exception {
+    public ArrayList<CertificateModel> createCertificates(Integer companyId, Boolean preValidatedExemptionReason, ArrayList<CertificateModel> model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/certificates");
         path.applyField("companyId", companyId);
+        path.addQuery("$preValidatedExemptionReason", preValidatedExemptionReason);
         return ((RestCall<ArrayList<CertificateModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<CertificateModel>>(){})).call();
     }
 
@@ -1713,12 +1711,14 @@ public class AvaTaxClient {
      * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document 
      * 
      * @param companyId The ID number of the company recording this certificate
+     * @param preValidatedExemptionReason If set to true, the certificate will bypass the human verification process.
      * @param model Certificates to be created
      * @return ArrayList<CertificateModel>
      */
-    public Future<ArrayList<CertificateModel>> createCertificatesAsync(Integer companyId, ArrayList<CertificateModel> model) {
+    public Future<ArrayList<CertificateModel>> createCertificatesAsync(Integer companyId, Boolean preValidatedExemptionReason, ArrayList<CertificateModel> model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/certificates");
         path.applyField("companyId", companyId);
+        path.addQuery("$preValidatedExemptionReason", preValidatedExemptionReason);
         return this.threadPool.submit((RestCall<ArrayList<CertificateModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<CertificateModel>>(){}));
     }
 
@@ -2850,14 +2850,14 @@ public class AvaTaxClient {
      * Retrieve a list of all configuration settings tied to this company.
      * 
      * Configuration settings provide you with the ability to control features of your account and of your
-     * tax software.  The category names `AvaCertServiceConfig` is reserved for
-     * Avalara internal software configuration values; to store your own account-level settings, please
+     * tax software.  The category name `AvaCertServiceConfig` is reserved for
+     * Avalara internal software configuration values; to store your own company-level settings, please
      * create a new category name that begins with `X-`, for example, `X-MyCustomCategory`.
      * 
      * Company settings are permanent settings that cannot be deleted.  You can set the value of a
-     * company setting to null if desired.
+     * company setting to null if desired and if the particular setting supports it.
      * 
-     * Avalara-based account settings for `AvaCertServiceConfig` affect your account's exemption certificate
+     * Avalara-based company settings for `AvaCertServiceConfig` affect your company's exemption certificate
      * 
      * @param id 
      * @return ArrayList<CompanyConfigurationModel>
@@ -2874,14 +2874,14 @@ public class AvaTaxClient {
      * Retrieve a list of all configuration settings tied to this company.
      * 
      * Configuration settings provide you with the ability to control features of your account and of your
-     * tax software.  The category names `AvaCertServiceConfig` is reserved for
-     * Avalara internal software configuration values; to store your own account-level settings, please
+     * tax software.  The category name `AvaCertServiceConfig` is reserved for
+     * Avalara internal software configuration values; to store your own company-level settings, please
      * create a new category name that begins with `X-`, for example, `X-MyCustomCategory`.
      * 
      * Company settings are permanent settings that cannot be deleted.  You can set the value of a
-     * company setting to null if desired.
+     * company setting to null if desired and if the particular setting supports it.
      * 
-     * Avalara-based account settings for `AvaCertServiceConfig` affect your account's exemption certificate
+     * Avalara-based company settings for `AvaCertServiceConfig` affect your company's exemption certificate
      * 
      * @param id 
      * @return ArrayList<CompanyConfigurationModel>
@@ -3073,19 +3073,19 @@ public class AvaTaxClient {
     }
 
     /**
-     * Change configuration settings for this account
+     * Change configuration settings for this company
      * 
-     * Update configuration settings tied to this account.
+     * Update configuration settings tied to this company.
      * 
      * Configuration settings provide you with the ability to control features of your account and of your
      * tax software.  The category names `AvaCertServiceConfig` is reserved for
-     * Avalara internal software configuration values; to store your own account-level settings, please
+     * Avalara internal software configuration values; to store your own company-level settings, please
      * create a new category name that begins with `X-`, for example, `X-MyCustomCategory`.
      * 
      * Company settings are permanent settings that cannot be deleted.  You can set the value of a
-     * company setting to null if desired.
+     * company setting to null if desired and if the particular setting supports it.
      * 
-     * Avalara-based account settings for `AvaCertServiceConfig` affect your account's exemption certificate
+     * Avalara-based company settings for `AvaCertServiceConfig` affect your company's exemption certificate
      * 
      * @param id 
      * @param model 
@@ -3098,19 +3098,19 @@ public class AvaTaxClient {
     }
 
     /**
-     * Change configuration settings for this account
+     * Change configuration settings for this company
      * 
-     * Update configuration settings tied to this account.
+     * Update configuration settings tied to this company.
      * 
      * Configuration settings provide you with the ability to control features of your account and of your
      * tax software.  The category names `AvaCertServiceConfig` is reserved for
-     * Avalara internal software configuration values; to store your own account-level settings, please
+     * Avalara internal software configuration values; to store your own company-level settings, please
      * create a new category name that begins with `X-`, for example, `X-MyCustomCategory`.
      * 
      * Company settings are permanent settings that cannot be deleted.  You can set the value of a
-     * company setting to null if desired.
+     * company setting to null if desired and if the particular setting supports it.
      * 
-     * Avalara-based account settings for `AvaCertServiceConfig` affect your account's exemption certificate
+     * Avalara-based company settings for `AvaCertServiceConfig` affect your company's exemption certificate
      * 
      * @param id 
      * @param model 
@@ -4259,7 +4259,7 @@ public class AvaTaxClient {
      * 
      * This API is intended to be useful to identify whether the user should be allowed
      * 
-     * @param form The name of the form you would like to verify. This can be the tax form code or the legacy return name
+     * @param form The name of the form you would like to verify. This is the tax form code
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
@@ -4281,7 +4281,7 @@ public class AvaTaxClient {
      * 
      * This API is intended to be useful to identify whether the user should be allowed
      * 
-     * @param form The name of the form you would like to verify. This can be the tax form code or the legacy return name
+     * @param form The name of the form you would like to verify. This is the tax form code
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
@@ -5881,6 +5881,50 @@ public class AvaTaxClient {
     }
 
     /**
+     * Retrieve the parameters by companyCode and itemCode.
+     * 
+     * @param companyCode Company code.
+     * @param itemCode Item code.
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @return FetchResult<ParameterModel>
+     */
+    public FetchResult<ParameterModel> listParametersByItem(String companyCode, String itemCode, String filter, Integer top, Integer skip, String orderBy) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/parameters/byitem/{companyCode}/{itemCode}");
+        path.applyField("companyCode", companyCode);
+        path.applyField("itemCode", itemCode);
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
+        return ((RestCall<FetchResult<ParameterModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ParameterModel>>(){})).call();
+    }
+
+    /**
+     * Retrieve the parameters by companyCode and itemCode.
+     * 
+     * @param companyCode Company code.
+     * @param itemCode Item code.
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @return FetchResult<ParameterModel>
+     */
+    public Future<FetchResult<ParameterModel>> listParametersByItemAsync(String companyCode, String itemCode, String filter, Integer top, Integer skip, String orderBy) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/parameters/byitem/{companyCode}/{itemCode}");
+        path.applyField("companyCode", companyCode);
+        path.applyField("itemCode", itemCode);
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
+        return this.threadPool.submit((RestCall<FetchResult<ParameterModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ParameterModel>>(){}));
+    }
+
+    /**
      * Retrieve the full list of Avalara-supported permissions
      * 
      * Returns the full list of Avalara-supported permission types.
@@ -6000,6 +6044,98 @@ public class AvaTaxClient {
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
         return this.threadPool.submit((RestCall<FetchResult<PreferredProgramModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<PreferredProgramModel>>(){}));
+    }
+
+    /**
+     * List all available product classification systems.
+     * 
+     * List all available product classification systems.
+     * 
+     * Tax authorities use product classification systems as a way to identify products and associate them with a tax rate.
+     * 
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @return FetchResult<ProductClassificationSystemModel>
+     */
+    public FetchResult<ProductClassificationSystemModel> listProductClassificationSystems(String filter, Integer top, Integer skip, String orderBy) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/productclassificationsystems");
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
+        return ((RestCall<FetchResult<ProductClassificationSystemModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ProductClassificationSystemModel>>(){})).call();
+    }
+
+    /**
+     * List all available product classification systems.
+     * 
+     * List all available product classification systems.
+     * 
+     * Tax authorities use product classification systems as a way to identify products and associate them with a tax rate.
+     * 
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @return FetchResult<ProductClassificationSystemModel>
+     */
+    public Future<FetchResult<ProductClassificationSystemModel>> listProductClassificationSystemsAsync(String filter, Integer top, Integer skip, String orderBy) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/productclassificationsystems");
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
+        return this.threadPool.submit((RestCall<FetchResult<ProductClassificationSystemModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ProductClassificationSystemModel>>(){}));
+    }
+
+    /**
+     * List all product classification systems available to a company based on its nexus.
+     * 
+     * Lists all product classification systems available to a company based on its nexus.
+     * 
+     * Tax authorities use product classification systems as a way to identify products and associate them with a tax rate.
+     * 
+     * @param companyCode The company code.
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @return FetchResult<ProductClassificationSystemModel>
+     */
+    public FetchResult<ProductClassificationSystemModel> listProductClassificationSystemsByCompany(String companyCode, String filter, Integer top, Integer skip, String orderBy) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/productclassificationsystems/bycompany/{companyCode}");
+        path.applyField("companyCode", companyCode);
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
+        return ((RestCall<FetchResult<ProductClassificationSystemModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ProductClassificationSystemModel>>(){})).call();
+    }
+
+    /**
+     * List all product classification systems available to a company based on its nexus.
+     * 
+     * Lists all product classification systems available to a company based on its nexus.
+     * 
+     * Tax authorities use product classification systems as a way to identify products and associate them with a tax rate.
+     * 
+     * @param companyCode The company code.
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @return FetchResult<ProductClassificationSystemModel>
+     */
+    public Future<FetchResult<ProductClassificationSystemModel>> listProductClassificationSystemsByCompanyAsync(String companyCode, String filter, Integer top, Integer skip, String orderBy) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/productclassificationsystems/bycompany/{companyCode}");
+        path.applyField("companyCode", companyCode);
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
+        return this.threadPool.submit((RestCall<FetchResult<ProductClassificationSystemModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ProductClassificationSystemModel>>(){}));
     }
 
     /**
@@ -8235,14 +8371,14 @@ public class AvaTaxClient {
      * @param companyId The ID of the company that owns the filings.
      * @param id The id of the filing return your retrieving
      * @param details Indicates if you would like the credit details returned
-     * @return FetchResult<FilingReturnModel>
+     * @return FilingReturnModel
      */
-    public FetchResult<FilingReturnModel> getFilingReturn(Integer companyId, Integer id, Boolean details) throws Exception {
+    public FilingReturnModel getFilingReturn(Integer companyId, Integer id, Boolean details) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/returns/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
         path.addQuery("details", details);
-        return ((RestCall<FetchResult<FilingReturnModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<FilingReturnModel>>(){})).call();
+        return ((RestCall<FilingReturnModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<FilingReturnModel>(){})).call();
     }
 
     /**
@@ -8254,14 +8390,14 @@ public class AvaTaxClient {
      * @param companyId The ID of the company that owns the filings.
      * @param id The id of the filing return your retrieving
      * @param details Indicates if you would like the credit details returned
-     * @return FetchResult<FilingReturnModel>
+     * @return FilingReturnModel
      */
-    public Future<FetchResult<FilingReturnModel>> getFilingReturnAsync(Integer companyId, Integer id, Boolean details) {
+    public Future<FilingReturnModel> getFilingReturnAsync(Integer companyId, Integer id, Boolean details) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/returns/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
         path.addQuery("details", details);
-        return this.threadPool.submit((RestCall<FetchResult<FilingReturnModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<FilingReturnModel>>(){}));
+        return this.threadPool.submit((RestCall<FilingReturnModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<FilingReturnModel>(){}));
     }
 
     /**
@@ -9083,6 +9219,102 @@ This gets the basic information from the filings and doesn't include anything ex
     }
 
     /**
+     * Add classifications to an item.
+     * 
+     * Add classifications to an item.
+     * 
+     * A classification is the code for a product in a particular tax system. Classifications enable an item to be used in multiple tax systems which may have different tax rates for a product.
+     * 
+     * When an item is used in a transaction, the applicable classification will be used to determine the appropriate tax rate.
+     * 
+     * 
+     * @param companyId The company id.
+     * @param itemId The item id.
+     * @param model The item classifications you wish to create.
+     * @return ArrayList<ItemClassificationOutputModel>
+     */
+    public ArrayList<ItemClassificationOutputModel> createItemClassifications(Integer companyId, Long itemId, ArrayList<ItemClassificationInputModel> model) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/items/{itemId}/classifications");
+        path.applyField("companyId", companyId);
+        path.applyField("itemId", itemId);
+        return ((RestCall<ArrayList<ItemClassificationOutputModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<ItemClassificationOutputModel>>(){})).call();
+    }
+
+    /**
+     * Add classifications to an item.
+     * 
+     * Add classifications to an item.
+     * 
+     * A classification is the code for a product in a particular tax system. Classifications enable an item to be used in multiple tax systems which may have different tax rates for a product.
+     * 
+     * When an item is used in a transaction, the applicable classification will be used to determine the appropriate tax rate.
+     * 
+     * 
+     * @param companyId The company id.
+     * @param itemId The item id.
+     * @param model The item classifications you wish to create.
+     * @return ArrayList<ItemClassificationOutputModel>
+     */
+    public Future<ArrayList<ItemClassificationOutputModel>> createItemClassificationsAsync(Integer companyId, Long itemId, ArrayList<ItemClassificationInputModel> model) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/items/{itemId}/classifications");
+        path.applyField("companyId", companyId);
+        path.applyField("itemId", itemId);
+        return this.threadPool.submit((RestCall<ArrayList<ItemClassificationOutputModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<ItemClassificationOutputModel>>(){}));
+    }
+
+    /**
+     * Add parameters to an item.
+     * 
+     * Add parameters to an item.
+     * 
+     * Some items can be taxed differently depending on the properties of that item, such as the item grade or by a particular measurement of that item. In AvaTax, these tax-affecting properties are called "parameters".
+     * 
+     * A parameter added to an item will be used by default in tax calculation but will not show on the transaction line referencing the item .
+     * 
+     * A parameter specified on a transaction line will override an item parameter if they share the same parameter name.
+     * 
+     * To see available parameters for this item, call `/api/v2/definitions/parameters?$filter=attributeType eq Product`
+     * 
+     * 
+     * @param companyId The ID of the company that owns this item parameter.
+     * @param itemId The item id.
+     * @param model The item parameters you wish to create.
+     * @return ArrayList<ItemParameterModel>
+     */
+    public ArrayList<ItemParameterModel> createItemParameters(Integer companyId, Long itemId, ArrayList<ItemParameterModel> model) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/items/{itemId}/parameters");
+        path.applyField("companyId", companyId);
+        path.applyField("itemId", itemId);
+        return ((RestCall<ArrayList<ItemParameterModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<ItemParameterModel>>(){})).call();
+    }
+
+    /**
+     * Add parameters to an item.
+     * 
+     * Add parameters to an item.
+     * 
+     * Some items can be taxed differently depending on the properties of that item, such as the item grade or by a particular measurement of that item. In AvaTax, these tax-affecting properties are called "parameters".
+     * 
+     * A parameter added to an item will be used by default in tax calculation but will not show on the transaction line referencing the item .
+     * 
+     * A parameter specified on a transaction line will override an item parameter if they share the same parameter name.
+     * 
+     * To see available parameters for this item, call `/api/v2/definitions/parameters?$filter=attributeType eq Product`
+     * 
+     * 
+     * @param companyId The ID of the company that owns this item parameter.
+     * @param itemId The item id.
+     * @param model The item parameters you wish to create.
+     * @return ArrayList<ItemParameterModel>
+     */
+    public Future<ArrayList<ItemParameterModel>> createItemParametersAsync(Integer companyId, Long itemId, ArrayList<ItemParameterModel> model) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/items/{itemId}/parameters");
+        path.applyField("companyId", companyId);
+        path.applyField("itemId", itemId);
+        return this.threadPool.submit((RestCall<ArrayList<ItemParameterModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<ItemParameterModel>>(){}));
+    }
+
+    /**
      * Create a new item
      * 
      * Creates one or more new item objects attached to this company.
@@ -9091,6 +9323,8 @@ This gets the basic information from the filings and doesn't include anything ex
      * can provide `itemCode` values for each `CreateTransaction()` API call rather than specifying tax codes, parameters, descriptions,
      * and other data fields.  AvaTax will automatically look up each `itemCode` and apply the correct tax codes and parameters
      * from the item table instead.  This allows your CreateTransaction call to be as simple as possible, and your tax compliance
+     * team can manage your item catalog and adjust the tax behavior of items without having to modify your software.
+     *             
      * 
      * @param companyId The ID of the company that owns this item.
      * @param model The item you wish to create.
@@ -9111,6 +9345,8 @@ This gets the basic information from the filings and doesn't include anything ex
      * can provide `itemCode` values for each `CreateTransaction()` API call rather than specifying tax codes, parameters, descriptions,
      * and other data fields.  AvaTax will automatically look up each `itemCode` and apply the correct tax codes and parameters
      * from the item table instead.  This allows your CreateTransaction call to be as simple as possible, and your tax compliance
+     * team can manage your item catalog and adjust the tax behavior of items without having to modify your software.
+     *             
      * 
      * @param companyId The ID of the company that owns this item.
      * @param model The item you wish to create.
@@ -9125,12 +9361,14 @@ This gets the basic information from the filings and doesn't include anything ex
     /**
      * Delete a single item
      * 
-     * Marks the item object at this URL as deleted.
+     * Deletes the item object at this URL.
      * 
      * Items are a way of separating your tax calculation process from your tax configuration details.  If you choose, you
      * can provide `itemCode` values for each `CreateTransaction()` API call rather than specifying tax codes, parameters, descriptions,
      * and other data fields.  AvaTax will automatically look up each `itemCode` and apply the correct tax codes and parameters
      * from the item table instead.  This allows your CreateTransaction call to be as simple as possible, and your tax compliance
+     * team can manage your item catalog and adjust the tax behavior of items without having to modify your software.
+     * 
      * 
      * @param companyId The ID of the company that owns this item.
      * @param id The ID of the item you wish to delete.
@@ -9146,12 +9384,14 @@ This gets the basic information from the filings and doesn't include anything ex
     /**
      * Delete a single item
      * 
-     * Marks the item object at this URL as deleted.
+     * Deletes the item object at this URL.
      * 
      * Items are a way of separating your tax calculation process from your tax configuration details.  If you choose, you
      * can provide `itemCode` values for each `CreateTransaction()` API call rather than specifying tax codes, parameters, descriptions,
      * and other data fields.  AvaTax will automatically look up each `itemCode` and apply the correct tax codes and parameters
      * from the item table instead.  This allows your CreateTransaction call to be as simple as possible, and your tax compliance
+     * team can manage your item catalog and adjust the tax behavior of items without having to modify your software.
+     * 
      * 
      * @param companyId The ID of the company that owns this item.
      * @param id The ID of the item you wish to delete.
@@ -9160,6 +9400,94 @@ This gets the basic information from the filings and doesn't include anything ex
     public Future<ArrayList<ErrorDetail>> deleteItemAsync(Integer companyId, Long id) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/items/{id}");
         path.applyField("companyId", companyId);
+        path.applyField("id", id);
+        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){}));
+    }
+
+    /**
+     * Delete a single item classification.
+     * 
+     * Delete a single item classification.
+     * 
+     * A classification is the code for a product in a particular tax system. Classifications enable an item to be used in multiple tax systems which may have different tax rates for a product.
+     * 
+     * 
+     * @param companyId The company id.
+     * @param itemId The item id.
+     * @param id The item classification id.
+     * @return ArrayList<ErrorDetail>
+     */
+    public ArrayList<ErrorDetail> deleteItemClassification(Integer companyId, Long itemId, Long id) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/items/{itemId}/classifications/{id}");
+        path.applyField("companyId", companyId);
+        path.applyField("itemId", itemId);
+        path.applyField("id", id);
+        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){})).call();
+    }
+
+    /**
+     * Delete a single item classification.
+     * 
+     * Delete a single item classification.
+     * 
+     * A classification is the code for a product in a particular tax system. Classifications enable an item to be used in multiple tax systems which may have different tax rates for a product.
+     * 
+     * 
+     * @param companyId The company id.
+     * @param itemId The item id.
+     * @param id The item classification id.
+     * @return ArrayList<ErrorDetail>
+     */
+    public Future<ArrayList<ErrorDetail>> deleteItemClassificationAsync(Integer companyId, Long itemId, Long id) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/items/{itemId}/classifications/{id}");
+        path.applyField("companyId", companyId);
+        path.applyField("itemId", itemId);
+        path.applyField("id", id);
+        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){}));
+    }
+
+    /**
+     * Delete a single item parameter
+     * 
+     * Delete a single item parameter.
+     * 
+     * Some items can be taxed differently depending on the properties of that item, such as the item grade or by a particular measurement of that item. In AvaTax, these tax-affecting properties are called "parameters".
+     * 
+     * A parameter added to an item will be used by default in tax calculation but will not show on the transaction line referencing the item .
+     * 
+     * 
+     * @param companyId The company id
+     * @param itemId The item id
+     * @param id The parameter id
+     * @return ArrayList<ErrorDetail>
+     */
+    public ArrayList<ErrorDetail> deleteItemParameter(Integer companyId, Long itemId, Long id) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/items/{itemId}/parameters/{id}");
+        path.applyField("companyId", companyId);
+        path.applyField("itemId", itemId);
+        path.applyField("id", id);
+        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){})).call();
+    }
+
+    /**
+     * Delete a single item parameter
+     * 
+     * Delete a single item parameter.
+     * 
+     * Some items can be taxed differently depending on the properties of that item, such as the item grade or by a particular measurement of that item. In AvaTax, these tax-affecting properties are called "parameters".
+     * 
+     * A parameter added to an item will be used by default in tax calculation but will not show on the transaction line referencing the item .
+     * 
+     * 
+     * @param companyId The company id
+     * @param itemId The item id
+     * @param id The parameter id
+     * @return ArrayList<ErrorDetail>
+     */
+    public Future<ArrayList<ErrorDetail>> deleteItemParameterAsync(Integer companyId, Long itemId, Long id) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/items/{itemId}/parameters/{id}");
+        path.applyField("companyId", companyId);
+        path.applyField("itemId", itemId);
         path.applyField("id", id);
         return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){}));
     }
@@ -9176,12 +9504,14 @@ This gets the basic information from the filings and doesn't include anything ex
      * 
      * @param companyId The ID of the company that owns this item object
      * @param id The primary key of this item
+     * @param include A comma separated list of additional data to retrieve.
      * @return ItemModel
      */
-    public ItemModel getItem(Integer companyId, Long id) throws Exception {
+    public ItemModel getItem(Integer companyId, Long id, String include) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/items/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
+        path.addQuery("$include", include);
         return ((RestCall<ItemModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<ItemModel>(){})).call();
     }
 
@@ -9197,13 +9527,227 @@ This gets the basic information from the filings and doesn't include anything ex
      * 
      * @param companyId The ID of the company that owns this item object
      * @param id The primary key of this item
+     * @param include A comma separated list of additional data to retrieve.
      * @return ItemModel
      */
-    public Future<ItemModel> getItemAsync(Integer companyId, Long id) {
+    public Future<ItemModel> getItemAsync(Integer companyId, Long id, String include) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/items/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
+        path.addQuery("$include", include);
         return this.threadPool.submit((RestCall<ItemModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<ItemModel>(){}));
+    }
+
+    /**
+     * Retrieve a single item classification.
+     * 
+     * Retrieve a single item classification.
+     * 
+     * A classification is the code for a product in a particular tax system. Classifications enable an item to be used in multiple tax systems which may have different tax rates for a product.
+     * 
+     * 
+     * @param companyId The company id.
+     * @param itemId The item id.
+     * @param id The item classification id.
+     * @return ItemClassificationOutputModel
+     */
+    public ItemClassificationOutputModel getItemClassification(Integer companyId, Long itemId, Long id) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/items/{itemId}/classifications/{id}");
+        path.applyField("companyId", companyId);
+        path.applyField("itemId", itemId);
+        path.applyField("id", id);
+        return ((RestCall<ItemClassificationOutputModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<ItemClassificationOutputModel>(){})).call();
+    }
+
+    /**
+     * Retrieve a single item classification.
+     * 
+     * Retrieve a single item classification.
+     * 
+     * A classification is the code for a product in a particular tax system. Classifications enable an item to be used in multiple tax systems which may have different tax rates for a product.
+     * 
+     * 
+     * @param companyId The company id.
+     * @param itemId The item id.
+     * @param id The item classification id.
+     * @return ItemClassificationOutputModel
+     */
+    public Future<ItemClassificationOutputModel> getItemClassificationAsync(Integer companyId, Long itemId, Long id) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/items/{itemId}/classifications/{id}");
+        path.applyField("companyId", companyId);
+        path.applyField("itemId", itemId);
+        path.applyField("id", id);
+        return this.threadPool.submit((RestCall<ItemClassificationOutputModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<ItemClassificationOutputModel>(){}));
+    }
+
+    /**
+     * Retrieve a single item parameter
+     * 
+     * Retrieve a single item parameter.
+     * 
+     * Some items can be taxed differently depending on the properties of that item, such as the item grade or by a particular measurement of that item. In AvaTax, these tax-affecting properties are called "parameters".
+     * 
+     * A parameter added to an item will be used by default in tax calculation but will not show on the transaction line referencing the item .
+     * 
+     * 
+     * @param companyId The company id
+     * @param itemId The item id
+     * @param id The parameter id
+     * @return ItemParameterModel
+     */
+    public ItemParameterModel getItemParameter(Integer companyId, Long itemId, Long id) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/items/{itemId}/parameters/{id}");
+        path.applyField("companyId", companyId);
+        path.applyField("itemId", itemId);
+        path.applyField("id", id);
+        return ((RestCall<ItemParameterModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<ItemParameterModel>(){})).call();
+    }
+
+    /**
+     * Retrieve a single item parameter
+     * 
+     * Retrieve a single item parameter.
+     * 
+     * Some items can be taxed differently depending on the properties of that item, such as the item grade or by a particular measurement of that item. In AvaTax, these tax-affecting properties are called "parameters".
+     * 
+     * A parameter added to an item will be used by default in tax calculation but will not show on the transaction line referencing the item .
+     * 
+     * 
+     * @param companyId The company id
+     * @param itemId The item id
+     * @param id The parameter id
+     * @return ItemParameterModel
+     */
+    public Future<ItemParameterModel> getItemParameterAsync(Integer companyId, Long itemId, Long id) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/items/{itemId}/parameters/{id}");
+        path.applyField("companyId", companyId);
+        path.applyField("itemId", itemId);
+        path.applyField("id", id);
+        return this.threadPool.submit((RestCall<ItemParameterModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<ItemParameterModel>(){}));
+    }
+
+    /**
+     * Retrieve classifications for an item.
+     * 
+     * List classifications for an item.
+     * 
+     * A classification is the code for a product in a particular tax system. Classifications enable an item to be used in multiple tax systems which may have different tax rates for a product.
+     * 
+     * When an item is used in a transaction, the applicable classification will be used to determine the appropriate tax rate.
+     * 
+     * Search for specific objects using the criteria in the `$filter` classification; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * 
+     * @param companyId The company id.
+     * @param itemId The item id.
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @return FetchResult<ItemClassificationOutputModel>
+     */
+    public FetchResult<ItemClassificationOutputModel> listItemClassifications(Integer companyId, Long itemId, String filter, Integer top, Integer skip, String orderBy) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/items/{itemId}/classifications");
+        path.applyField("companyId", companyId);
+        path.applyField("itemId", itemId);
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
+        return ((RestCall<FetchResult<ItemClassificationOutputModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ItemClassificationOutputModel>>(){})).call();
+    }
+
+    /**
+     * Retrieve classifications for an item.
+     * 
+     * List classifications for an item.
+     * 
+     * A classification is the code for a product in a particular tax system. Classifications enable an item to be used in multiple tax systems which may have different tax rates for a product.
+     * 
+     * When an item is used in a transaction, the applicable classification will be used to determine the appropriate tax rate.
+     * 
+     * Search for specific objects using the criteria in the `$filter` classification; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * 
+     * @param companyId The company id.
+     * @param itemId The item id.
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @return FetchResult<ItemClassificationOutputModel>
+     */
+    public Future<FetchResult<ItemClassificationOutputModel>> listItemClassificationsAsync(Integer companyId, Long itemId, String filter, Integer top, Integer skip, String orderBy) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/items/{itemId}/classifications");
+        path.applyField("companyId", companyId);
+        path.applyField("itemId", itemId);
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
+        return this.threadPool.submit((RestCall<FetchResult<ItemClassificationOutputModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ItemClassificationOutputModel>>(){}));
+    }
+
+    /**
+     * Retrieve parameters for an item
+     * 
+     * List parameters for an item.
+     * 
+     * Some items can be taxed differently depending on the properties of that item, such as the item grade or by a particular measurement of that item. In AvaTax, these tax-affecting properties are called "parameters".
+     * 
+     * A parameter added to an item will be used by default in tax calculation but will not show on the transaction line referencing the item .
+     * 
+     * A parameter specified on a transaction line will override an item parameter if they share the same parameter name.
+     * 
+     * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * 
+     * @param companyId The company id
+     * @param itemId The item id
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @return FetchResult<ItemParameterModel>
+     */
+    public FetchResult<ItemParameterModel> listItemParameters(Integer companyId, Long itemId, String filter, Integer top, Integer skip, String orderBy) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/items/{itemId}/parameters");
+        path.applyField("companyId", companyId);
+        path.applyField("itemId", itemId);
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
+        return ((RestCall<FetchResult<ItemParameterModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ItemParameterModel>>(){})).call();
+    }
+
+    /**
+     * Retrieve parameters for an item
+     * 
+     * List parameters for an item.
+     * 
+     * Some items can be taxed differently depending on the properties of that item, such as the item grade or by a particular measurement of that item. In AvaTax, these tax-affecting properties are called "parameters".
+     * 
+     * A parameter added to an item will be used by default in tax calculation but will not show on the transaction line referencing the item .
+     * 
+     * A parameter specified on a transaction line will override an item parameter if they share the same parameter name.
+     * 
+     * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * 
+     * @param companyId The company id
+     * @param itemId The item id
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @return FetchResult<ItemParameterModel>
+     */
+    public Future<FetchResult<ItemParameterModel>> listItemParametersAsync(Integer companyId, Long itemId, String filter, Integer top, Integer skip, String orderBy) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/items/{itemId}/parameters");
+        path.applyField("companyId", companyId);
+        path.applyField("itemId", itemId);
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
+        return this.threadPool.submit((RestCall<FetchResult<ItemParameterModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ItemParameterModel>>(){}));
     }
 
     /**
@@ -9223,6 +9767,7 @@ This gets the basic information from the filings and doesn't include anything ex
      * 
      * You may specify one or more of the following values in the `$include` parameter to fetch additional nested data, using commas to separate multiple values:
      *             
+     * * Parameters
      * 
      * @param companyId The ID of the company that defined these items
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
@@ -9260,6 +9805,7 @@ This gets the basic information from the filings and doesn't include anything ex
      * 
      * You may specify one or more of the following values in the `$include` parameter to fetch additional nested data, using commas to separate multiple values:
      *             
+     * * Parameters
      * 
      * @param companyId The ID of the company that defined these items
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
@@ -9293,10 +9839,6 @@ This gets the basic information from the filings and doesn't include anything ex
      * 
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * 
-     * Paginate your results using the `$top`, `$skip`, and `$orderby` parameters.
-     * 
-     * You may specify one or more of the following values in the `$include` parameter to fetch additional nested data, using commas to separate multiple values:
-     *             
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * @param include A comma separated list of additional data to retrieve.
@@ -9328,10 +9870,6 @@ This gets the basic information from the filings and doesn't include anything ex
      * 
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * 
-     * Paginate your results using the `$top`, `$skip`, and `$orderby` parameters.
-     * 
-     * You may specify one or more of the following values in the `$include` parameter to fetch additional nested data, using commas to separate multiple values:
-     *             
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * @param include A comma separated list of additional data to retrieve.
@@ -9362,6 +9900,8 @@ This gets the basic information from the filings and doesn't include anything ex
      * team can manage your item catalog and adjust the tax behavior of items without having to modify your software.
      * 
      * All data from the existing object will be replaced with data in the object you PUT.  To set a field's value to null, 
+     * you may either set its value to null or omit that field from the object you post.
+     *             
      * 
      * @param companyId The ID of the company that this item belongs to.
      * @param id The ID of the item you wish to update
@@ -9387,6 +9927,8 @@ This gets the basic information from the filings and doesn't include anything ex
      * team can manage your item catalog and adjust the tax behavior of items without having to modify your software.
      * 
      * All data from the existing object will be replaced with data in the object you PUT.  To set a field's value to null, 
+     * you may either set its value to null or omit that field from the object you post.
+     *             
      * 
      * @param companyId The ID of the company that this item belongs to.
      * @param id The ID of the item you wish to update
@@ -9398,6 +9940,102 @@ This gets the basic information from the filings and doesn't include anything ex
         path.applyField("companyId", companyId);
         path.applyField("id", id);
         return this.threadPool.submit((RestCall<ItemModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<ItemModel>(){}));
+    }
+
+    /**
+     * Update an item classification.
+     * 
+     * Update an item classification.
+     * 
+     * A classification is the code for a product in a particular tax system. Classifications enable an item to be used in multiple tax systems which may have different tax rates for a product.
+     * 
+     * When an item is used in a transaction, the applicable classification will be used to determine the appropriate tax rate.
+     * 
+     * 
+     * @param companyId The company id.
+     * @param itemId The item id.
+     * @param id The item classification id.
+     * @param model The item object you wish to update.
+     * @return ItemClassificationOutputModel
+     */
+    public ItemClassificationOutputModel updateItemClassification(Integer companyId, Long itemId, Long id, ItemClassificationInputModel model) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/items/{itemId}/classifications/{id}");
+        path.applyField("companyId", companyId);
+        path.applyField("itemId", itemId);
+        path.applyField("id", id);
+        return ((RestCall<ItemClassificationOutputModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<ItemClassificationOutputModel>(){})).call();
+    }
+
+    /**
+     * Update an item classification.
+     * 
+     * Update an item classification.
+     * 
+     * A classification is the code for a product in a particular tax system. Classifications enable an item to be used in multiple tax systems which may have different tax rates for a product.
+     * 
+     * When an item is used in a transaction, the applicable classification will be used to determine the appropriate tax rate.
+     * 
+     * 
+     * @param companyId The company id.
+     * @param itemId The item id.
+     * @param id The item classification id.
+     * @param model The item object you wish to update.
+     * @return ItemClassificationOutputModel
+     */
+    public Future<ItemClassificationOutputModel> updateItemClassificationAsync(Integer companyId, Long itemId, Long id, ItemClassificationInputModel model) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/items/{itemId}/classifications/{id}");
+        path.applyField("companyId", companyId);
+        path.applyField("itemId", itemId);
+        path.applyField("id", id);
+        return this.threadPool.submit((RestCall<ItemClassificationOutputModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<ItemClassificationOutputModel>(){}));
+    }
+
+    /**
+     * Update an item parameter
+     * 
+     * Update an item parameter.
+     * 
+     * Some items can be taxed differently depending on the properties of that item, such as the item grade or by a particular measurement of that item. In AvaTax, these tax-affecting properties are called "parameters".
+     * 
+     * A parameter added to an item will be used by default in tax calculation but will not show on the transaction line referencing the item .
+     * 
+     * 
+     * @param companyId The company id.
+     * @param itemId The item id
+     * @param id The item parameter id
+     * @param model The item object you wish to update.
+     * @return ItemParameterModel
+     */
+    public ItemParameterModel updateItemParameter(Integer companyId, Long itemId, Long id, ItemParameterModel model) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/items/{itemId}/parameters/{id}");
+        path.applyField("companyId", companyId);
+        path.applyField("itemId", itemId);
+        path.applyField("id", id);
+        return ((RestCall<ItemParameterModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<ItemParameterModel>(){})).call();
+    }
+
+    /**
+     * Update an item parameter
+     * 
+     * Update an item parameter.
+     * 
+     * Some items can be taxed differently depending on the properties of that item, such as the item grade or by a particular measurement of that item. In AvaTax, these tax-affecting properties are called "parameters".
+     * 
+     * A parameter added to an item will be used by default in tax calculation but will not show on the transaction line referencing the item .
+     * 
+     * 
+     * @param companyId The company id.
+     * @param itemId The item id
+     * @param id The item parameter id
+     * @param model The item object you wish to update.
+     * @return ItemParameterModel
+     */
+    public Future<ItemParameterModel> updateItemParameterAsync(Integer companyId, Long itemId, Long id, ItemParameterModel model) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/items/{itemId}/parameters/{id}");
+        path.applyField("companyId", companyId);
+        path.applyField("itemId", itemId);
+        path.applyField("id", id);
+        return this.threadPool.submit((RestCall<ItemParameterModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<ItemParameterModel>(){}));
     }
 
     /**
@@ -12350,12 +12988,14 @@ This gets the basic information from the filings and doesn't include anything ex
      * This API is only available for Avalara Registrar Admins, and can be used to reset the password of any
      * 
      * @param userId The unique ID of the user whose password will be changed
+     * @param unmigrateFromAi If user's password was migrated to AI, undo this.
      * @param model The new password for this user
      * @return String
      */
-    public String resetPassword(Integer userId, SetPasswordModel model) throws Exception {
+    public String resetPassword(Integer userId, Boolean unmigrateFromAi, SetPasswordModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/passwords/{userId}/reset");
         path.applyField("userId", userId);
+        path.addQuery("unmigrateFromAi", unmigrateFromAi);
         return ((RestCall<String>)restCallFactory.createRestCall("post", path, model, new TypeToken<String>(){})).call();
     }
 
@@ -12369,12 +13009,14 @@ This gets the basic information from the filings and doesn't include anything ex
      * This API is only available for Avalara Registrar Admins, and can be used to reset the password of any
      * 
      * @param userId The unique ID of the user whose password will be changed
+     * @param unmigrateFromAi If user's password was migrated to AI, undo this.
      * @param model The new password for this user
      * @return String
      */
-    public Future<String> resetPasswordAsync(Integer userId, SetPasswordModel model) {
+    public Future<String> resetPasswordAsync(Integer userId, Boolean unmigrateFromAi, SetPasswordModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/passwords/{userId}/reset");
         path.applyField("userId", userId);
+        path.addQuery("unmigrateFromAi", unmigrateFromAi);
         return this.threadPool.submit((RestCall<String>)restCallFactory.createRestCall("post", path, model, new TypeToken<String>(){}));
     }
 
@@ -14848,6 +15490,7 @@ This gets the basic information from the filings and doesn't include anything ex
      * * Summary (implies details)
      * * Addresses
      * * SummaryOnly (omit lines and details - reduces API response size)
+     * * LinesOnly (omit details - reduces API response size)
      * 
      * @param id The unique ID number of the transaction to retrieve
      * @param include Specifies objects to include in this fetch call
@@ -14878,6 +15521,7 @@ This gets the basic information from the filings and doesn't include anything ex
      * * Summary (implies details)
      * * Addresses
      * * SummaryOnly (omit lines and details - reduces API response size)
+     * * LinesOnly (omit details - reduces API response size)
      * 
      * @param id The unique ID number of the transaction to retrieve
      * @param include Specifies objects to include in this fetch call
@@ -15296,7 +15940,7 @@ This gets the basic information from the filings and doesn't include anything ex
      * @param companyCode The company code of the company that recorded this transaction
      * @param transactionCode The transaction code to void
      * @param documentType (Optional): The document type of the transaction to void. If not provided, the default is SalesInvoice. (See DocumentType::* for a list of allowable values)
-     * @param model The void request you wish to execute
+     * @param model The void request you wish to execute. To void a transaction the code must be set to 'DocVoided'
      * @return TransactionModel
      */
     public TransactionModel voidTransaction(String companyCode, String transactionCode, DocumentType documentType, VoidTransactionModel model) throws Exception {
@@ -15323,7 +15967,7 @@ This gets the basic information from the filings and doesn't include anything ex
      * @param companyCode The company code of the company that recorded this transaction
      * @param transactionCode The transaction code to void
      * @param documentType (Optional): The document type of the transaction to void. If not provided, the default is SalesInvoice. (See DocumentType::* for a list of allowable values)
-     * @param model The void request you wish to execute
+     * @param model The void request you wish to execute. To void a transaction the code must be set to 'DocVoided'
      * @return TransactionModel
      */
     public Future<TransactionModel> voidTransactionAsync(String companyCode, String transactionCode, DocumentType documentType, VoidTransactionModel model) {
