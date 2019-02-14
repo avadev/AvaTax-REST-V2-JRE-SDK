@@ -21,12 +21,12 @@ public enum PointOfSalePartnerId {
     /** 
      * 
      */
-    DMA,
+    DMA = 1,
 
     /** 
      * 
      */
-    AX7,
+    AX7 = 2,
 
 }
     

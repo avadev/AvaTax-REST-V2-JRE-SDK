@@ -21,84 +21,84 @@ package net.avalara.avatax.rest.client.enums;
  */
 public enum MatchingTaxType {
     /** 
-     * Match all tax types
-     */
-    All,
-
-    /** 
-     * Match both Sales and Use Tax only
-     */
-    BothSalesAndUseTax,
-
-    /** 
-     * Match Consumer Use Tax only
-     */
-    ConsumerUseTax,
-
-    /** 
-     * Match Sales Tax only
-     */
-    SalesTax,
-
-    /** 
-     * Match Seller's Use Tax only
-     */
-    UseTax,
-
-    /** 
-     * Match VAT Output Tax only
-     */
-    VATOutputTax,
-
-    /** 
-     * Match VAT Input Tax only
-     */
-    VATInputTax,
-
-    /** 
-     * Match VAT Nonrecoverable Input Tax only
-     */
-    VATNonrecoverableInputTax,
-
-    /** 
-     * Match Fee tax types only
-     */
-    Fee,
-
-    /** 
-     * Match Rental tax types only
-     */
-    Rental,
-
-    /** 
-     * Match both Consumer Use and Sales Tax types
-     */
-    ConsumerUseAndSalesTax,
-
-    /** 
-     * Match both Consumer Use and Seller's Use Tax types
-     */
-    ConsumersUseAndSellersUseTax,
-
-    /** 
      * Match medical excise type
      */
-    Excise,
+    Excise = 5,
 
     /** 
      * Match Lodging tax type
      */
-    Lodging,
+    Lodging = 6,
 
     /** 
      * Match bottle tax type
      */
-    Bottle,
+    Bottle = 7,
 
     /** 
      * Match RentToOwn tax type
      */
-    RentToOwn,
+    RentToOwn = 8,
+
+    /** 
+     * Match all tax types
+     */
+    All = 65,
+
+    /** 
+     * Match both Sales and Use Tax only
+     */
+    BothSalesAndUseTax = 66,
+
+    /** 
+     * Match Consumer Use Tax only
+     */
+    ConsumerUseTax = 67,
+
+    /** 
+     * Match both Consumer Use and Seller's Use Tax types
+     */
+    ConsumersUseAndSellersUseTax = 68,
+
+    /** 
+     * Match both Consumer Use and Sales Tax types
+     */
+    ConsumerUseAndSalesTax = 69,
+
+    /** 
+     * Match Fee tax types only
+     */
+    Fee = 70,
+
+    /** 
+     * Match VAT Input Tax only
+     */
+    VATInputTax = 73,
+
+    /** 
+     * Match VAT Nonrecoverable Input Tax only
+     */
+    VATNonrecoverableInputTax = 78,
+
+    /** 
+     * Match VAT Output Tax only
+     */
+    VATOutputTax = 79,
+
+    /** 
+     * Match Rental tax types only
+     */
+    Rental = 82,
+
+    /** 
+     * Match Sales Tax only
+     */
+    SalesTax = 83,
+
+    /** 
+     * Match Seller's Use Tax only
+     */
+    UseTax = 85,
 
 }
     

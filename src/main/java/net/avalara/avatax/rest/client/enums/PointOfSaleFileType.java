@@ -21,17 +21,17 @@ public enum PointOfSaleFileType {
     /** 
      * File is in Javascript Object Notation format
      */
-    Json,
+    Json = 0,
 
     /** 
      * File is in Comma Separated Values format
      */
-    Csv,
+    Csv = 1,
 
     /** 
      * File is in Extended Markup Language format
      */
-    Xml,
+    Xml = 2,
 
 }
     

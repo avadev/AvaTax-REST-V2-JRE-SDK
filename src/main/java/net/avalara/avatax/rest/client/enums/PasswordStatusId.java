@@ -21,17 +21,17 @@ public enum PasswordStatusId {
     /** 
      * UserCannotChange
      */
-    UserCannotChange,
+    UserCannotChange = 0,
 
     /** 
      * UserCanChange
      */
-    UserCanChange,
+    UserCanChange = 1,
 
     /** 
      * UserMustChange
      */
-    UserMustChange,
+    UserMustChange = 2,
 
 }
     

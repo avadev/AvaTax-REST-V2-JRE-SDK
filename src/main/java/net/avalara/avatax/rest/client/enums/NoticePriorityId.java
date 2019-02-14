@@ -21,22 +21,22 @@ public enum NoticePriorityId {
     /** 
      * Immediate Attention Required
      */
-    ImmediateAttentionRequired,
+    ImmediateAttentionRequired = 1,
 
     /** 
      * High
      */
-    High,
+    High = 2,
 
     /** 
      * Normal
      */
-    Normal,
+    Normal = 3,
 
     /** 
      * Low
      */
-    Low,
+    Low = 4,
 
 }
     

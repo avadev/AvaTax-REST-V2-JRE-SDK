@@ -21,47 +21,47 @@ public enum BatchStatus {
     /** 
      * Batch file has been received and is in the queue to be processed.
      */
-    Waiting,
+    Waiting = 0,
 
     /** 
      * Batch file experienced system errors and cannot be processed.
      */
-    SystemErrors,
+    SystemErrors = 1,
 
     /** 
      * Batch file is cancelled
      */
-    Cancelled,
+    Cancelled = 2,
 
     /** 
      * Batch file has been completely processed.
      */
-    Completed,
+    Completed = 3,
 
     /** 
      * Batch file is currently being created.
      */
-    Creating,
+    Creating = 4,
 
     /** 
      * Batch file has been deleted.
      */
-    Deleted,
+    Deleted = 5,
 
     /** 
      * Batch file was processed with some errors.
      */
-    Errors,
+    Errors = 6,
 
     /** 
      * Batch processing was paused.
      */
-    Paused,
+    Paused = 7,
 
     /** 
      * Batch is currently being processed.
      */
-    Processing,
+    Processing = 8,
 
 }
     

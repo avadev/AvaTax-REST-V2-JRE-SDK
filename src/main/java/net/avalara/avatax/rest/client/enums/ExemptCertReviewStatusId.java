@@ -21,17 +21,17 @@ public enum ExemptCertReviewStatusId {
     /** 
      * Review pending
      */
-    Pending,
+    Pending = 0,
 
     /** 
      * Certificate was accepted
      */
-    Accepted,
+    Accepted = 1,
 
     /** 
      * Certificate was rejected
      */
-    Rejected,
+    Rejected = 2,
 
 }
     

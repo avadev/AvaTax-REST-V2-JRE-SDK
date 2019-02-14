@@ -21,47 +21,47 @@ public enum FilingRequestStatus {
     /** 
      * Customer is building a request for a new filing calendar
      */
-    New,
+    New = 1,
 
     /** 
      * Customer’s information validated before submitting to go live. All required information as per state and form selection is entered.
      */
-    Validated,
+    Validated = 2,
 
     /** 
      * Customer submitted a request for a new filing calendar
      */
-    Pending,
+    Pending = 3,
 
     /** 
      * Filing calender is active
      */
-    Active,
+    Active = 4,
 
     /** 
      * Customer requested to deactivate filing calendar
      */
-    PendingStop,
+    PendingStop = 5,
 
     /** 
      * Filing calendar is inactive
      */
-    Inactive,
+    Inactive = 6,
 
     /** 
      * This indicates that there is a new change request.
      */
-    ChangeRequest,
+    ChangeRequest = 7,
 
     /** 
      * This indicates that the change request was approved.
      */
-    RequestApproved,
+    RequestApproved = 8,
 
     /** 
      * This indicates that compliance rejected the request.
      */
-    RequestDenied,
+    RequestDenied = 9,
 
 }
     
