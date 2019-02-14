@@ -21,22 +21,22 @@ public enum NotificationSeverityLevel {
     /** 
      * Low priority notification, Default.
      */
-    Neutral = 0,
+    Neutral(0),
 
     /** 
      * Medium priority notification.
      */
-    Advisory = 1,
+    Advisory(1),
 
     /** 
      * High priority notification.
      */
-    Blocking = 2,
+    Blocking(2),
 
     /** 
      * A completed notification
      */
-    Complete = -1,
+    Complete(-1),
 
 }
     

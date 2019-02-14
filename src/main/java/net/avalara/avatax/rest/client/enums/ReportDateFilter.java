@@ -22,22 +22,22 @@ public enum ReportDateFilter {
     /** 
      * The date when the transaction is posted
      */
-    DocumentDate = 68,
+    DocumentDate(68),
 
     /** 
      * The date when the transaction is paid for
      */
-    PaymentDate = 80,
+    PaymentDate(80),
 
     /** 
      * The date when the transaction is added to report
      */
-    ReportingDate = 82,
+    ReportingDate(82),
 
     /** 
      * The date when the transaction is being taxed
      */
-    TaxDate = 84,
+    TaxDate(84),
 
 }
     

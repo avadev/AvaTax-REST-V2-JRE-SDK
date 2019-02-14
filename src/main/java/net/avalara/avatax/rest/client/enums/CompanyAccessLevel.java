@@ -21,22 +21,22 @@ public enum CompanyAccessLevel {
     /** 
      * No permission to access companies.
      */
-    None = 0,
+    None(0),
 
     /** 
      * Permission to access a single company and its children.
      */
-    SingleCompany = 1,
+    SingleCompany(1),
 
     /** 
      * Permission to access all companies in a single account.
      */
-    SingleAccount = 2,
+    SingleAccount(2),
 
     /** 
      * Permission to access all companies in all accounts. Reserved for system administration tasks.
      */
-    AllCompanies = 3,
+    AllCompanies(3),
 
 }
     

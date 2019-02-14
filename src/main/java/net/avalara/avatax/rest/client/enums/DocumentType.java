@@ -28,7 +28,7 @@ public enum DocumentType {
      *  
      *  This is a temporary document type and is not saved in tax history.
      */
-    SalesOrder = 0,
+    SalesOrder(0),
 
     /** 
      * Represents a sale that has been finalized.
@@ -39,7 +39,7 @@ public enum DocumentType {
      *  
      *  This is a permanent document and is recorded in AvaTax.
      */
-    SalesInvoice = 1,
+    SalesInvoice(1),
 
     /** 
      * Represents an estimate, or a purchase order, or a quote.
@@ -51,7 +51,7 @@ public enum DocumentType {
      *  
      *  This is a temporary document type and is not saved in tax history.
      */
-    PurchaseOrder = 2,
+    PurchaseOrder(2),
 
     /** 
      * Represents a sale that has been finalized.
@@ -62,7 +62,7 @@ public enum DocumentType {
      *  
      *  This is a permanent document and is recorded in AvaTax.
      */
-    PurchaseInvoice = 3,
+    PurchaseInvoice(3),
 
     /** 
      * Represents an estimate of tax to be refunded if a refund or return is processed.
@@ -75,7 +75,7 @@ public enum DocumentType {
      *  
      *  This is a temporary document type and is not saved in tax history.
      */
-    ReturnOrder = 4,
+    ReturnOrder(4),
 
     /** 
      * Represents an refund that has been finalized.
@@ -92,7 +92,7 @@ public enum DocumentType {
      *  on a sales tax filing, and some refund transactions may be unable to file immediately due to credit netting
      *  rules.
      */
-    ReturnInvoice = 5,
+    ReturnInvoice(5),
 
     /** 
      * Represents a proposed movement of inventory from one jurisdiction to another.
@@ -105,7 +105,7 @@ public enum DocumentType {
      *  
      *  This is a temporary document type and is not saved in tax history.
      */
-    InventoryTransferOrder = 6,
+    InventoryTransferOrder(6),
 
     /** 
      * Represents a movement of inventory from one jurisdiction to another that has been finalized.
@@ -118,7 +118,7 @@ public enum DocumentType {
      *  
      *  This is a permanent document and is recorded in AvaTax.
      */
-    InventoryTransferInvoice = 7,
+    InventoryTransferInvoice(7),
 
     /** 
      * Represents a VAT "Reverse Charge" mechanism transaction as defined in the European Union.
@@ -129,7 +129,7 @@ public enum DocumentType {
      *  
      *  This is a temporary document type and is not saved in tax history.
      */
-    ReverseChargeOrder = 8,
+    ReverseChargeOrder(8),
 
     /** 
      * Represents a VAT "Reverse Charge" mechanism transaction as defined in the European Union.
@@ -140,7 +140,7 @@ public enum DocumentType {
      *  
      *  This is a permanent document and is recorded in AvaTax.
      */
-    ReverseChargeInvoice = 9,
+    ReverseChargeInvoice(9),
 
     /** 
      * Not a real document type.
@@ -148,7 +148,7 @@ public enum DocumentType {
      *  This value is used when querying for documents. You can specify the type `Any` in some cases to permit the
      *  system to find any document matching other criteria.
      */
-    Any = -1,
+    Any(-1),
 
 }
     
