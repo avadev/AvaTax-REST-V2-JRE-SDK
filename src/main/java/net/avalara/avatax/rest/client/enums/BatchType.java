@@ -21,68 +21,68 @@ public enum BatchType {
     /** 
      * 
      */
-    AvaCertUpdate,
+    AvaCertUpdate = 0,
 
     /** 
      * 
      */
-    AvaCertUpdateAll,
+    AvaCertUpdateAll = 1,
 
     /** 
      * 
      */
-    BatchMaintenance,
+    BatchMaintenance = 2,
 
     /** 
      * 
      */
-    CompanyLocationImport,
+    CompanyLocationImport = 3,
 
     /** 
      * 
      */
-    DocumentImport,
+    DocumentImport = 4,
 
     /** 
      * 
      */
-    ExemptCertImport,
+    ExemptCertImport = 5,
 
     /** 
      * 
      */
-    ItemImport,
+    ItemImport = 6,
 
     /** 
      * 
      */
-    SalesAuditExport,
+    SalesAuditExport = 7,
 
     /** 
      * 
      */
-    SstpTestDeckImport,
+    SstpTestDeckImport = 8,
 
     /** 
      * 
      */
-    TaxRuleImport,
+    TaxRuleImport = 9,
 
     /** 
      * This batch type represents tax transaction data being uploaded to AvaTax. Each line in the batch represents a single transaction
      *  or a line in a multi-line transaction. For reference, see [Batched Transactions in REST v2](http://developer.avalara.com/blog/2016/10/24/batch-transaction-upload-in-rest-v2)
      */
-    TransactionImport,
+    TransactionImport = 10,
 
     /** 
      * 
      */
-    UPCBulkImport,
+    UPCBulkImport = 11,
 
     /** 
      * 
      */
-    UPCValidationImport,
+    UPCValidationImport = 12,
 
 }
     

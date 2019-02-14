@@ -21,28 +21,28 @@ public enum TaxRuleTypeId {
     /** 
      * Reserved for Avalara internal usage.
      */
-    RateRule,
+    RateRule = 0,
 
     /** 
      * Specifies a rule that changes the rate of tax for a specified set of criteria.
      *  
      *  This rule can apply to one specific type of product (identified by `TaxCode`) or all products (identified by a null `TaxCode`).
      */
-    RateOverrideRule,
+    RateOverrideRule = 1,
 
     /** 
      * Specifies a rule that changes the tax base of a specific product.
      *  
      *  This rule can apply to one specific type of product (identified by `TaxCode`) or all products (identified by a null `TaxCode`).
      */
-    BaseRule,
+    BaseRule = 2,
 
     /** 
      * Indicates that a particular product is exempt from tax due to an exempt usage reason.
      *  
      *  Amounts exempted by this rule are stored in the `exemptAmount` field on the transaction.
      */
-    ExemptEntityRule,
+    ExemptEntityRule = 3,
 
     /** 
      * Specifies a rule that changes whether a product is taxable or not.
@@ -57,12 +57,12 @@ public enum TaxRuleTypeId {
      *  
      *  This type of rule can also determine the rate type for a product or to apply a cap or threshold.
      */
-    ProductTaxabilityRule,
+    ProductTaxabilityRule = 4,
 
     /** 
      * Reserved for Avalara internal usage.
      */
-    NexusRule,
+    NexusRule = 5,
 
 }
     

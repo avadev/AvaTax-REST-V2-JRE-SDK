@@ -21,1337 +21,1352 @@ public enum ErrorCodeId {
     /** 
      * Server has a configuration or setup problem
      */
-    ServerConfiguration,
+    ServerConfiguration = 1,
 
     /** 
      * User doesn't have rights to this account or company
      */
-    AccountInvalidException,
+    AccountInvalidException = 2,
 
     /** 
      * 
      */
-    CompanyInvalidException,
+    CompanyInvalidException = 3,
 
     /** 
      * Use this error message when the user is trying to fetch a single object and the object either does not exist or cannot be seen by the current user.
      */
-    EntityNotFoundError,
+    EntityNotFoundError = 4,
 
     /** 
      * 
      */
-    ValueRequiredError,
+    ValueRequiredError = 5,
 
     /** 
      * 
      */
-    RangeError,
+    RangeError = 6,
 
     /** 
      * 
      */
-    RangeCompareError,
+    RangeCompareError = 7,
 
     /** 
      * 
      */
-    RangeSetError,
+    RangeSetError = 8,
 
     /** 
      * 
      */
-    TaxpayerNumberRequired,
+    TaxpayerNumberRequired = 9,
 
     /** 
      * 
      */
-    EntityLimitExceeded,
+    EntityLimitExceeded = 10,
 
     /** 
      * 
      */
-    CommonPassword,
+    CommonPassword = 11,
 
     /** 
      * 
      */
-    WeakPassword,
+    WeakPassword = 12,
 
     /** 
      * 
      */
-    StringLengthError,
+    StringLengthError = 13,
 
     /** 
      * 
      */
-    MaxStringLengthError,
+    MaxStringLengthError = 14,
 
     /** 
      * 
      */
-    EmailValidationError,
+    EmailValidationError = 15,
 
     /** 
      * 
      */
-    EmailMissingError,
+    EmailMissingError = 16,
 
     /** 
      * 
      */
-    ParserFieldNameError,
+    ParserFieldNameError = 17,
 
     /** 
      * 
      */
-    ParserFieldValueError,
+    ParserFieldValueError = 18,
 
     /** 
      * 
      */
-    ParserSyntaxError,
+    ParserSyntaxError = 19,
 
     /** 
      * 
      */
-    ParserTooManyParametersError,
+    ParserTooManyParametersError = 20,
 
     /** 
      * 
      */
-    ParserUnterminatedValueError,
+    ParserUnterminatedValueError = 21,
 
     /** 
      * 
      */
-    DeleteUserSelfError,
+    DeleteUserSelfError = 22,
 
     /** 
      * 
      */
-    OldPasswordInvalid,
+    OldPasswordInvalid = 23,
 
     /** 
      * 
      */
-    CannotChangePassword,
+    CannotChangePassword = 24,
 
     /** 
      * 
      */
-    DateFormatError,
+    DateFormatError = 26,
 
     /** 
      * 
      */
-    NoDefaultCompany,
+    NoDefaultCompany = 27,
 
     /** 
      * 
      */
-    AuthenticationException,
+    AuthenticationException = 30,
 
     /** 
      * 
      */
-    AuthorizationException,
+    AuthorizationException = 31,
 
     /** 
      * 
      */
-    ValidationException,
+    ValidationException = 32,
 
     /** 
      * 
      */
-    InactiveUserError,
+    InactiveUserError = 33,
 
     /** 
      * 
      */
-    AuthenticationIncomplete,
+    AuthenticationIncomplete = 34,
 
     /** 
      * 
      */
-    BasicAuthIncorrect,
+    BasicAuthIncorrect = 35,
 
     /** 
      * 
      */
-    IdentityServerError,
+    IdentityServerError = 36,
 
     /** 
      * 
      */
-    BearerTokenInvalid,
+    BearerTokenInvalid = 37,
 
     /** 
      * 
      */
-    ModelRequiredException,
+    ModelRequiredException = 38,
 
     /** 
      * 
      */
-    AccountExpiredException,
+    AccountExpiredException = 39,
 
     /** 
      * 
      */
-    VisibilityError,
+    VisibilityError = 40,
 
     /** 
      * 
      */
-    BearerTokenNotSupported,
+    BearerTokenNotSupported = 41,
 
     /** 
      * 
      */
-    InvalidSecurityRole,
+    InvalidSecurityRole = 42,
 
     /** 
      * 
      */
-    InvalidRegistrarAction,
+    InvalidRegistrarAction = 43,
 
     /** 
      * 
      */
-    RemoteServerError,
+    RemoteServerError = 44,
 
     /** 
      * 
      */
-    NoFilterCriteriaException,
+    NoFilterCriteriaException = 45,
 
     /** 
      * 
      */
-    OpenClauseException,
+    OpenClauseException = 46,
 
     /** 
      * 
      */
-    JsonFormatError,
+    JsonFormatError = 47,
 
     /** 
      * 
      */
-    InvalidDecimalValue,
+    InvalidDecimalValue = 48,
 
     /** 
      * 
      */
-    UnhandledException,
+    UnhandledException = 50,
 
     /** 
      * 
      */
-    ReportingCompanyMustHaveContactsError,
+    ReportingCompanyMustHaveContactsError = 60,
 
     /** 
      * 
      */
-    CompanyProfileNotSet,
+    CompanyProfileNotSet = 61,
 
     /** 
      * 
      */
-    CannotAssignUserToCompany,
+    CannotAssignUserToCompany = 62,
 
     /** 
      * 
      */
-    MustAssignUserToCompany,
+    MustAssignUserToCompany = 63,
 
     /** 
      * 
      */
-    ModelStateInvalid,
+    ModelStateInvalid = 70,
 
     /** 
      * 
      */
-    DateRangeError,
+    DateRangeError = 80,
 
     /** 
      * 
      */
-    InvalidDateRangeError,
+    InvalidDateRangeError = 81,
 
     /** 
      * 
      */
-    RuleMustHaveTaxCode,
+    RuleMustHaveTaxCode = 82,
 
     /** 
      * 
      */
-    RuleTypeRestricted,
+    RuleTypeRestricted = 83,
 
     /** 
      * 
      */
-    AllJurisRuleLimits,
+    AllJurisRuleLimits = 84,
 
     /** 
      * 
      */
-    InvalidCompanyLocationSetting,
+    InvalidCompanyLocationSetting = 85,
 
     /** 
      * 
      */
-    InvalidAdjustmentType,
+    InvalidAdjustmentType = 99,
 
     /** 
      * 
      */
-    DeleteInformation,
+    DeleteInformation = 100,
 
     /** 
      * 
      */
-    OutOfRange,
+    OutOfRange = 118,
 
     /** 
      * 
      */
-    UnspecifiedTimeZone,
+    UnspecifiedTimeZone = 119,
 
     /** 
      * 
      */
-    CannotCreateDeletedObjects,
+    CannotCreateDeletedObjects = 120,
 
     /** 
      * 
      */
-    CannotModifyDeletedObjects,
+    CannotModifyDeletedObjects = 121,
 
     /** 
      * 
      */
-    ReturnNameNotFound,
+    ReturnNameNotFound = 122,
 
     /** 
      * 
      */
-    InvalidAddressTypeAndCategory,
+    InvalidAddressTypeAndCategory = 123,
 
     /** 
      * 
      */
-    DefaultCompanyLocation,
+    DefaultCompanyLocation = 124,
 
     /** 
      * 
      */
-    InvalidCountry,
+    InvalidCountry = 125,
 
     /** 
      * 
      */
-    InvalidCountryRegion,
+    InvalidCountryRegion = 126,
 
     /** 
      * 
      */
-    BrazilValidationError,
+    BrazilValidationError = 127,
 
     /** 
      * 
      */
-    BrazilExemptValidationError,
+    BrazilExemptValidationError = 128,
 
     /** 
      * 
      */
-    BrazilPisCofinsError,
+    BrazilPisCofinsError = 129,
 
     /** 
      * 
      */
-    JurisdictionNotFoundError,
+    JurisdictionNotFoundError = 130,
 
     /** 
      * 
      */
-    MedicalExciseError,
+    MedicalExciseError = 131,
 
     /** 
      * 
      */
-    RateDependsTaxabilityError,
+    RateDependsTaxabilityError = 132,
 
     /** 
      * 
      */
-    RateDependsEuropeError,
+    RateDependsEuropeError = 133,
 
     /** 
      * 
      */
-    InvalidRateTypeCode,
+    InvalidRateTypeCode = 134,
 
     /** 
      * 
      */
-    RateTypeNotSupported,
+    RateTypeNotSupported = 135,
 
     /** 
      * 
      */
-    CannotUpdateNestedObjects,
+    CannotUpdateNestedObjects = 136,
 
     /** 
      * 
      */
-    UPCCodeInvalidChars,
+    UPCCodeInvalidChars = 137,
 
     /** 
      * 
      */
-    UPCCodeInvalidLength,
+    UPCCodeInvalidLength = 138,
 
     /** 
      * 
      */
-    IncorrectPathError,
+    IncorrectPathError = 139,
 
     /** 
      * 
      */
-    InvalidJurisdictionType,
+    InvalidJurisdictionType = 140,
 
     /** 
      * 
      */
-    MustConfirmResetLicenseKey,
+    MustConfirmResetLicenseKey = 141,
 
     /** 
      * 
      */
-    DuplicateCompanyCode,
+    DuplicateCompanyCode = 142,
 
     /** 
      * 
      */
-    TINFormatError,
+    TINFormatError = 143,
 
     /** 
      * 
      */
-    DuplicateNexusError,
+    DuplicateNexusError = 144,
 
     /** 
      * 
      */
-    UnknownNexusError,
+    UnknownNexusError = 145,
 
     /** 
      * 
      */
-    ParentNexusNotFound,
+    ParentNexusNotFound = 146,
 
     /** 
      * 
      */
-    InvalidTaxCodeType,
+    InvalidTaxCodeType = 147,
 
     /** 
      * 
      */
-    CannotActivateCompany,
+    CannotActivateCompany = 148,
 
     /** 
      * 
      */
-    DuplicateEntityProperty,
+    DuplicateEntityProperty = 149,
 
     /** 
      * 
      */
-    ReportingEntityError,
+    ReportingEntityError = 150,
 
     /** 
      * 
      */
-    InvalidReturnOperationError,
+    InvalidReturnOperationError = 151,
 
     /** 
      * 
      */
-    CannotDeleteCompany,
+    CannotDeleteCompany = 152,
 
     /** 
      * 
      */
-    CountryOverridesNotAvailable,
+    CountryOverridesNotAvailable = 153,
 
     /** 
      * 
      */
-    JurisdictionOverrideMismatch,
+    JurisdictionOverrideMismatch = 154,
 
     /** 
      * 
      */
-    DuplicateSystemTaxCode,
+    DuplicateSystemTaxCode = 155,
 
     /** 
      * 
      */
-    SSTOverridesNotAvailable,
+    SSTOverridesNotAvailable = 156,
 
     /** 
      * 
      */
-    NexusDateMismatch,
+    NexusDateMismatch = 157,
 
     /** 
      * 
      */
-    NexusParentDateMismatch,
+    NexusParentDateMismatch = 159,
 
     /** 
      * 
      */
-    BearerTokenParseUserIdError,
+    BearerTokenParseUserIdError = 160,
 
     /** 
      * 
      */
-    RetrieveUserError,
+    RetrieveUserError = 161,
 
     /** 
      * 
      */
-    InvalidConfigurationSetting,
+    InvalidConfigurationSetting = 162,
 
     /** 
      * 
      */
-    InvalidConfigurationValue,
+    InvalidConfigurationValue = 163,
 
     /** 
      * 
      */
-    InvalidEnumValue,
+    InvalidEnumValue = 164,
 
     /** 
      * 
      */
-    TaxCodeAssociatedTaxRule,
+    TaxCodeAssociatedTaxRule = 165,
 
     /** 
      * 
      */
-    CannotSwitchAccountId,
+    CannotSwitchAccountId = 166,
 
     /** 
      * 
      */
-    RequestIncomplete,
+    RequestIncomplete = 167,
 
     /** 
      * 
      */
-    AccountNotNew,
+    AccountNotNew = 168,
 
     /** 
      * 
      */
-    PasswordLengthInvalid,
+    PasswordLengthInvalid = 169,
 
     /** 
      * 
      */
-    LocalNexusConflict,
+    LocalNexusConflict = 170,
 
     /** 
      * 
      */
-    InvalidEcmsOverrideCode,
+    InvalidEcmsOverrideCode = 171,
 
     /** 
      * 
      */
-    AccountDoesNotExist,
+    AccountDoesNotExist = 172,
 
     /** 
      * 
      */
-    InvalidTaxType,
+    InvalidTaxType = 173,
 
     /** 
      * 
      */
-    IncorrectFieldValue,
+    IncorrectFieldValue = 174,
 
     /** 
      * 
      */
-    LeadingOrTrailingException,
+    LeadingOrTrailingException = 175,
 
     /** 
      * 
      */
-    NotEnoughAddressesInfo,
+    NotEnoughAddressesInfo = 176,
 
     /** 
      * 
      */
-    ReportNotInitiated,
+    ReportNotInitiated = 177,
 
     /** 
      * 
      */
-    FailedToBuildReport,
+    FailedToBuildReport = 178,
 
     /** 
      * 
      */
-    ReportNotFinished,
+    ReportNotFinished = 179,
 
     /** 
      * 
      */
-    FailedToDownloadReport,
+    FailedToDownloadReport = 181,
 
     /** 
      * 
      */
-    MalformedFilterException,
+    MalformedFilterException = 182,
 
     /** 
      * 
      */
-    ExpectedConjunctionError,
+    ExpectedConjunctionError = 183,
 
     /** 
      * 
      */
-    CriteriaNotSupportedError,
+    CriteriaNotSupportedError = 184,
 
     /** 
      * 
      */
-    CompanyAccountAndParentAccountMismatch,
+    CompanyAccountAndParentAccountMismatch = 185,
 
     /** 
      * 
      */
-    InvalidFileContentType,
+    InvalidFileContentType = 186,
 
     /** 
      * 
      */
-    RequestTooLarge,
+    RequestTooLarge = 187,
 
     /** 
      * 
      */
-    EcmsDisabled,
+    EcmsDisabled = 188,
 
     /** 
      * 
      */
-    UnknownConjunctionError,
+    UnknownConjunctionError = 189,
 
     /** 
      * 
      */
-    NoLinesDiscounted,
+    NoLinesDiscounted = 190,
 
     /** 
      * 
      */
-    FailedToDelete,
+    FailedToDelete = 191,
 
     /** 
      * 
      */
-    CircularCompanyHierarchies,
+    CircularCompanyHierarchies = 192,
 
     /** 
      * 
      */
-    DuplicateEntry,
+    DuplicateEntry = 193,
 
     /** 
      * 
      */
-    DuplicateFieldNameInOrderBy,
+    DuplicateFieldNameInOrderBy = 194,
 
     /** 
      * 
      */
-    CannotAdjustDocumentType,
+    CannotAdjustDocumentType = 195,
 
     /** 
      * 
      */
-    UserNoAccess,
+    UserNoAccess = 196,
 
     /** 
      * 
      */
-    InvalidEntry,
+    InvalidEntry = 197,
 
     /** 
      * 
      */
-    TransactionAlreadyCancelled,
+    TransactionAlreadyCancelled = 198,
 
     /** 
      * 
      */
-    QueryParameterOutOfRange,
+    QueryParameterOutOfRange = 199,
 
     /** 
      * Batch errors
      */
-    BatchSalesAuditMustBeZippedError,
+    BatchSalesAuditMustBeZippedError = 200,
 
     /** 
      * 
      */
-    BatchZipMustContainOneFileError,
+    BatchZipMustContainOneFileError = 201,
 
     /** 
      * 
      */
-    BatchInvalidFileTypeError,
+    BatchInvalidFileTypeError = 202,
 
     /** 
      * 
      */
-    BatchCannotSaveBatchFile,
+    BatchCannotSaveBatchFile = 203,
 
     /** 
      * 
      */
-    BatchCannotGetBatchFile,
+    BatchCannotGetBatchFile = 204,
 
     /** 
      * 
      */
-    BatchCannotDeleteBatchFile,
+    BatchCannotDeleteBatchFile = 205,
 
     /** 
      * 
      */
-    BatchMustContainOneFile,
+    BatchMustContainOneFile = 206,
 
     /** 
      * 
      */
-    MissingBatchFileContent,
+    MissingBatchFileContent = 207,
 
     /** 
      * Point Of Sale API exceptions
      */
-    PointOfSaleFileSize,
+    PointOfSaleFileSize = 250,
 
     /** 
      * 
      */
-    PointOfSaleSetup,
+    PointOfSaleSetup = 251,
 
     /** 
      * 
      */
-    InvalidInputDate,
+    InvalidInputDate = 252,
 
     /** 
      * Errors in Soap V1 Passthrough / GetTax calls
      */
-    GetTaxError,
+    GetTaxError = 300,
 
     /** 
      * 
      */
-    AddressConflictException,
+    AddressConflictException = 301,
 
     /** 
      * 
      */
-    DocumentCodeConflict,
+    DocumentCodeConflict = 303,
 
     /** 
      * 
      */
-    MissingAddress,
+    MissingAddress = 304,
 
     /** 
      * 
      */
-    InvalidParameterValue,
+    InvalidParameterValue = 306,
 
     /** 
      * 
      */
-    DocumentFetchLimit,
+    DocumentFetchLimit = 308,
 
     /** 
      * 
      */
-    InvalidAddress,
+    InvalidAddress = 309,
 
     /** 
      * 
      */
-    AddressLocationNotFound,
+    AddressLocationNotFound = 310,
 
     /** 
      * 
      */
-    MissingLine,
+    MissingLine = 311,
 
     /** 
      * 
      */
-    InvalidAddressTextCase,
+    InvalidAddressTextCase = 312,
 
     /** 
      * 
      */
-    DocumentNotCommitted,
+    DocumentNotCommitted = 313,
 
     /** 
      * 
      */
-    InvalidDocumentTypesToFetch,
+    InvalidDocumentTypesToFetch = 315,
 
     /** 
      * 
      */
-    TimeoutRequested,
+    TimeoutRequested = 316,
 
     /** 
      * 
      */
-    InvalidPostalCode,
+    InvalidPostalCode = 317,
 
     /** 
      * Subscription error codes
      */
-    InvalidSubscriptionDescription,
+    InvalidSubscriptionDescription = 318,
 
     /** 
      * 
      */
-    InvalidSubscriptionTypeId,
+    InvalidSubscriptionTypeId = 319,
 
     /** 
      * Represents a malformed document fetch command
      */
-    CannotChangeFilingStatus,
+    CannotChangeFilingStatus = 401,
 
     /** 
      * Represents a SQL server timeout error / deadlock error
      */
-    ServerUnreachable,
+    ServerUnreachable = 500,
 
     /** 
      * Partner API error codes
      */
-    SubscriptionRequired,
+    SubscriptionRequired = 600,
 
     /** 
      * 
      */
-    AccountExists,
+    AccountExists = 601,
 
     /** 
      * 
      */
-    InvitationOnly,
+    InvitationOnly = 602,
 
     /** 
      * 
      */
-    FreeTrialNotAvailable,
+    FreeTrialNotAvailable = 606,
 
     /** 
      * 
      */
-    AccountExistsDifferentEmail,
+    AccountExistsDifferentEmail = 607,
 
     /** 
      * 
      */
-    AvalaraIdentityApiError,
+    AvalaraIdentityApiError = 608,
 
     /** 
      * 
      */
-    InvalidIPAddress,
+    InvalidIPAddress = 609,
 
     /** 
      * 
      */
-    OfferCodeAlreadyApplied,
+    OfferCodeAlreadyApplied = 610,
 
     /** 
      * Refund API error codes
      */
-    InvalidDocumentStatusForRefund,
+    InvalidDocumentStatusForRefund = 700,
 
     /** 
      * 
      */
-    RefundTypeAndPercentageMismatch,
+    RefundTypeAndPercentageMismatch = 701,
 
     /** 
      * 
      */
-    InvalidDocumentTypeForRefund,
+    InvalidDocumentTypeForRefund = 702,
 
     /** 
      * 
      */
-    RefundTypeAndLineMismatch,
+    RefundTypeAndLineMismatch = 703,
 
     /** 
      * 
      */
-    RefundLinesRequired,
+    RefundLinesRequired = 704,
 
     /** 
      * 
      */
-    InvalidRefundType,
+    InvalidRefundType = 705,
 
     /** 
      * 
      */
-    RefundPercentageForTaxOnly,
+    RefundPercentageForTaxOnly = 706,
 
     /** 
      * 
      */
-    LineNoOutOfRange,
+    LineNoOutOfRange = 707,
 
     /** 
      * 
      */
-    RefundPercentageOutOfRange,
+    RefundPercentageOutOfRange = 708,
 
     /** 
      * 
      */
-    RefundPercentageMissing,
+    RefundPercentageMissing = 709,
 
     /** 
      * Free API error codes
      */
-    MustUseCreateTransaction,
+    MustUseCreateTransaction = 800,
 
     /** 
      * 
      */
-    MustAcceptTermsAndConditions,
+    MustAcceptTermsAndConditions = 801,
 
     /** 
      * Filing Calendar Error Codes
      */
-    FilingCalendarCannotBeDeleted,
+    FilingCalendarCannotBeDeleted = 900,
 
     /** 
      * 
      */
-    InvalidEffectiveDate,
+    InvalidEffectiveDate = 901,
 
     /** 
      * 
      */
-    NonOutletForm,
+    NonOutletForm = 902,
 
     /** 
      * 
      */
-    OverlappingFilingCalendar,
+    OverlappingFilingCalendar = 903,
+
+    /** 
+     * 
+     */
+    FilingCalendarCannotBeEdited = 904,
 
     /** 
      * Create or update transaction error codes
      */
-    CannotModifyLockedTransaction,
+    CannotModifyLockedTransaction = 1100,
 
     /** 
      * 
      */
-    LineAlreadyExists,
+    LineAlreadyExists = 1101,
 
     /** 
      * 
      */
-    LineDoesNotExist,
+    LineDoesNotExist = 1102,
 
     /** 
      * 
      */
-    LinesNotSpecified,
+    LinesNotSpecified = 1103,
 
     /** 
      * 
      */
-    LineDetailsDoesNotExist,
+    LineDetailsDoesNotExist = 1104,
 
     /** 
      * 
      */
-    CannotCreateTransactionWithDeletedDataSource,
+    CannotCreateTransactionWithDeletedDataSource = 1105,
 
     /** 
      * Exempt cert error codes
      */
-    InvalidBusinessType,
+    InvalidBusinessType = 1200,
 
     /** 
      * 
      */
-    CannotModifyExemptCert,
+    CannotModifyExemptCert = 1201,
 
     /** 
      * 
      */
-    CertificatesError,
+    CertificatesError = 1203,
 
     /** 
      * 
      */
-    MissingRequiredFields,
+    MissingRequiredFields = 1204,
 
     /** 
      * 
      */
-    CertificatesNotSetup,
+    CertificatesNotSetup = 1205,
 
     /** 
      * 
      */
-    AddRelationshipsError,
+    AddRelationshipsError = 1206,
 
     /** 
      * 
      */
-    MissingExposureZone,
+    MissingExposureZone = 1207,
 
     /** 
      * 
      */
-    ConflictingExposureZone,
+    ConflictingExposureZone = 1208,
 
     /** 
      * 
      */
-    MissingFieldToCreateExposureZone,
+    MissingFieldToCreateExposureZone = 1209,
 
     /** 
      * 
      */
-    MissingExemptReason,
+    MissingExemptReason = 1210,
 
     /** 
      * 
      */
-    InvalidExemptReason,
+    InvalidExemptReason = 1211,
 
     /** 
      * 
      */
-    InvalidExemptionOperation,
+    InvalidExemptionOperation = 1212,
 
     /** 
      * 
      */
-    ConflictingFields,
+    ConflictingFields = 1213,
 
     /** 
      * 
      */
-    InvalidPdfOrImageFile,
+    InvalidPdfOrImageFile = 1214,
 
     /** 
      * 
      */
-    InvalidCoverLetterTitle,
+    InvalidCoverLetterTitle = 1215,
 
     /** 
      * 
      */
-    AccountNotProvisioned,
+    AccountNotProvisioned = 1216,
 
     /** 
      * 
      */
-    InvalidRequestContentType,
+    InvalidRequestContentType = 1217,
 
     /** 
      * 
      */
-    ExemptionPaginationLimits,
+    ExemptionPaginationLimits = 1218,
 
     /** 
      * 
      */
-    ExemptionSortLimits,
+    ExemptionSortLimits = 1219,
 
     /** 
      * 
      */
-    CustomerCantBeBothShipToAndBillTo,
+    CustomerCantBeBothShipToAndBillTo = 1220,
 
     /** 
      * 
      */
-    BillToCustomerExpected,
+    BillToCustomerExpected = 1221,
 
     /** 
      * 
      */
-    ShipToCustomerExpected,
+    ShipToCustomerExpected = 1222,
+
+    /** 
+     * 
+     */
+    EcmsSstCertsRequired = 1223,
 
     /** 
      * Multi document error codes
      */
-    TransactionNotCancelled,
+    TransactionNotCancelled = 1300,
 
     /** 
      * 
      */
-    TooManyTransactions,
+    TooManyTransactions = 1301,
 
     /** 
      * 
      */
-    OnlyTaxDateOverrideIsAllowed,
+    OnlyTaxDateOverrideIsAllowed = 1302,
 
     /** 
      * 
      */
-    TransactionAlreadyExists,
+    TransactionAlreadyExists = 1303,
 
     /** 
      * 
      */
-    DateMismatch,
+    DateMismatch = 1305,
 
     /** 
      * 
      */
-    InvalidDocumentStatusForVerify,
+    InvalidDocumentStatusForVerify = 1306,
 
     /** 
      * 
      */
-    TotalAmountMismatch,
+    TotalAmountMismatch = 1307,
 
     /** 
      * 
      */
-    TotalTaxMismatch,
+    TotalTaxMismatch = 1308,
 
     /** 
      * 
      */
-    InvalidDocumentStatusForCommit,
+    InvalidDocumentStatusForCommit = 1309,
 
     /** 
      * 
      */
-    InvalidDocumentType,
+    InvalidDocumentType = 1310,
 
     /** 
      * 
      */
-    MultiDocumentPartiallyLocked,
+    MultiDocumentPartiallyLocked = 1312,
 
     /** 
      * 
      */
-    TransactionIsCommitted,
+    TransactionIsCommitted = 1313,
 
     /** 
      * Communications Tax error codes
      */
-    CommsConfigClientIdMissing,
+    CommsConfigClientIdMissing = 1400,
 
     /** 
      * 
      */
-    CommsConfigClientIdBadValue,
+    CommsConfigClientIdBadValue = 1401,
 
     /** 
      * Account Activate error codes
      */
-    AccountInNewStatusException,
+    AccountInNewStatusException = 1404,
 
     /** 
      * Worksheet Exception
      */
-    WorksheetException,
+    WorksheetException = 1405,
 
     /** 
      * 
      */
-    InvalidAccountOverride,
+    InvalidAccountOverride = 1406,
 
     /** 
      * 
      */
-    AccountOverrideNotAuthorized,
+    AccountOverrideNotAuthorized = 1407,
 
     /** 
      * 
      */
-    ParserFieldNotQueryableError,
+    ParserFieldNotQueryableError = 1408,
 
     /** 
      * 
      */
-    UsernameRequired,
+    UsernameRequired = 1409,
 
     /** 
      * 
      */
-    InvalidAuditMessage,
+    InvalidAuditMessage = 1410,
 
     /** 
      * Nexus validation error codes
      */
-    CannotDeleteParentBeforeChildNexus,
+    CannotDeleteParentBeforeChildNexus = 1500,
 
     /** 
      * 
      */
-    NexusChildDateMismatch,
+    NexusChildDateMismatch = 1501,
 
     /** 
      * Remote validation Error
      */
-    RemoteValidationError,
+    RemoteValidationError = 1502,
 
     /** 
      * Advanced rule errors
      */
-    AdvancedRuleBadScript,
+    AdvancedRuleBadScript = 1600,
 
     /** 
      * 
      */
-    AdvancedRuleBadCsvTable,
+    AdvancedRuleBadCsvTable = 1601,
 
     /** 
      * 
      */
-    AdvancedRuleRequestRuleError,
+    AdvancedRuleRequestRuleError = 1602,
 
     /** 
      * 
      */
-    AdvancedRuleResponseRuleError,
+    AdvancedRuleResponseRuleError = 1603,
 
     /** 
      * 
      */
-    AdvancedRuleNotApproved,
+    AdvancedRuleNotApproved = 1604,
 
     /** 
      * Miscellaneous
      */
-    InvalidDocumentStatusToAddOrDeleteLines,
+    InvalidDocumentStatusToAddOrDeleteLines = 1700,
 
     /** 
      * 
      */
-    TaxRuleRequiresNexus,
+    TaxRuleRequiresNexus = 1701,
 
     /** 
      * 
      */
-    UPCCodeNotUnique,
+    UPCCodeNotUnique = 1702,
 
     /** 
      * 
      */
-    CannotUpdateSourceOrInstance,
+    CannotUpdateSourceOrInstance = 1703,
 
     /** 
      * 
      */
-    TaxCodeAssociatedWithItemCodeNotFound,
+    TaxCodeAssociatedWithItemCodeNotFound = 1704,
 
     /** 
      * 
      */
-    DuplicateSystemForItem,
+    DuplicateSystemForItem = 1705,
+
+    /** 
+     * 
+     */
+    CannotDismissGlobalNotification = 1706,
 
     /** 
      * SendSales API errors
      */
-    UnsupportedFileFormat,
+    UnsupportedFileFormat = 1800,
 
     /** 
      * 
      */
-    UnsupportedOutputFileType,
+    UnsupportedOutputFileType = 1801,
 
     /** 
      * TaxProfile API errors
      */
-    TaxProfileNotProvided,
+    TaxProfileNotProvided = 1900,
 
     /** 
      * 
      */
-    InvalidTaxProfile,
+    InvalidTaxProfile = 1901,
 
     /** 
      * 
      */
-    CompanyTaxProfileEntryRequired,
+    CompanyTaxProfileEntryRequired = 1902,
 
     /** 
      * 
      */
-    ErrorReadingTaxProfileEntry,
+    ErrorReadingTaxProfileEntry = 1903,
 
     /** 
      * AuditAccount API errors
      */
-    TraceDataNotAvailable,
+    TraceDataNotAvailable = 2000,
 
     /** 
      * Item parameter errors
      */
-    InvalidParameterUnitMeasurementType,
+    InvalidParameterUnitMeasurementType = 2100,
 
     /** 
      * 
      */
-    ParameterUnitRequired,
+    ParameterUnitRequired = 2101,
 
     /** 
      * 
      */
-    InvalidParameterValueDataType,
+    InvalidParameterValueDataType = 2102,
 
     /** 
      * 
      */
-    InvalidParameterAttributeType,
+    InvalidParameterAttributeType = 2103,
 
     /** 
      * 
      */
-    SubscriptionRequiredForParameter,
+    SubscriptionRequiredForParameter = 2104,
 
 }
     

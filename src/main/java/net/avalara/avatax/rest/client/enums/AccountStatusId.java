@@ -21,17 +21,17 @@ public enum AccountStatusId {
     /** 
      * This account is not currently active.
      */
-    Inactive,
+    Inactive = 0,
 
     /** 
      * This account is active and in use.
      */
-    Active,
+    Active = 1,
 
     /** 
      * This account is flagged as a test account and may be temporary.
      */
-    Test,
+    Test = 2,
 
     /** 
      * The account is new and is currently in the onboarding process.
@@ -39,7 +39,7 @@ public enum AccountStatusId {
      *  An account is considered new until the account administrator has reviewed and accepted 
      *  [Avalara's terms and conditions](https://www.avalara.com/us/en/legal/terms.html).
      */
-    New,
+    New = 3,
 
 }
     

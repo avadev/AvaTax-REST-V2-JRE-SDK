@@ -21,12 +21,12 @@ public enum ScraperType {
     /** 
      * Indicates that is is a login type
      */
-    Login,
+    Login = 1,
 
     /** 
      * Indicates that it is a Customer DOR Data type
      */
-    CustomerDorData,
+    CustomerDorData = 2,
 
 }
     

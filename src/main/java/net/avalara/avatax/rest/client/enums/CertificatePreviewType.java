@@ -21,12 +21,12 @@ public enum CertificatePreviewType {
     /** 
      * Download a full printable PDF
      */
-    Pdf,
+    Pdf = 1,
 
     /** 
      * Download a single page of the certificate in JPG format
      */
-    Jpeg,
+    Jpeg = 2,
 
 }
     

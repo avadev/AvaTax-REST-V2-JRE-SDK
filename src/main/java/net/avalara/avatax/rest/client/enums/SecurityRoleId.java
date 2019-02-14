@@ -21,117 +21,117 @@ public enum SecurityRoleId {
     /** 
      * NoAccess
      */
-    NoAccess,
+    NoAccess = 0,
 
     /** 
      * SiteAdmin
      */
-    SiteAdmin,
+    SiteAdmin = 1,
 
     /** 
      * AccountOperator
      */
-    AccountOperator,
+    AccountOperator = 2,
 
     /** 
      * AccountAdmin
      */
-    AccountAdmin,
+    AccountAdmin = 3,
 
     /** 
      * AccountUser
      */
-    AccountUser,
+    AccountUser = 4,
 
     /** 
      * SystemAdmin
      */
-    SystemAdmin,
+    SystemAdmin = 5,
 
     /** 
      * Registrar
      */
-    Registrar,
+    Registrar = 6,
 
     /** 
      * CSPTester
      */
-    CSPTester,
+    CSPTester = 7,
 
     /** 
      * CSPAdmin
      */
-    CSPAdmin,
+    CSPAdmin = 8,
 
     /** 
      * SystemOperator
      */
-    SystemOperator,
+    SystemOperator = 9,
 
     /** 
      * TechnicalSupportUser
      */
-    TechnicalSupportUser,
+    TechnicalSupportUser = 10,
 
     /** 
      * TechnicalSupportAdmin
      */
-    TechnicalSupportAdmin,
+    TechnicalSupportAdmin = 11,
 
     /** 
      * TreasuryUser
      */
-    TreasuryUser,
+    TreasuryUser = 12,
 
     /** 
      * TreasuryAdmin
      */
-    TreasuryAdmin,
+    TreasuryAdmin = 13,
 
     /** 
      * ComplianceUser
      */
-    ComplianceUser,
+    ComplianceUser = 14,
 
     /** 
      * ComplianceAdmin
      */
-    ComplianceAdmin,
+    ComplianceAdmin = 15,
 
     /** 
      * ProStoresOperator
      */
-    ProStoresOperator,
+    ProStoresOperator = 16,
 
     /** 
      * CompanyUser
      */
-    CompanyUser,
+    CompanyUser = 17,
 
     /** 
      * CompanyAdmin
      */
-    CompanyAdmin,
+    CompanyAdmin = 18,
 
     /** 
      * ComplianceTempUser
      */
-    ComplianceTempUser,
+    ComplianceTempUser = 19,
 
     /** 
      * ComplianceRootUser
      */
-    ComplianceRootUser,
+    ComplianceRootUser = 20,
 
     /** 
      * ComplianceOperator
      */
-    ComplianceOperator,
+    ComplianceOperator = 21,
 
     /** 
      * SSTAdmin
      */
-    SSTAdmin,
+    SSTAdmin = 22,
 
 }
     

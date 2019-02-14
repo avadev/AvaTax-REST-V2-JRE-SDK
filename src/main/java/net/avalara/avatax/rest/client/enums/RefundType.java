@@ -21,22 +21,22 @@ public enum RefundType {
     /** 
      * Refund the whole transaction.
      */
-    Full,
+    Full = 0,
 
     /** 
      * Refund only specific lines from the original a transaction.
      */
-    Partial,
+    Partial = 1,
 
     /** 
      * Only refund the tax part of the transaction.
      */
-    TaxOnly,
+    TaxOnly = 2,
 
     /** 
      * Refund a percentage of the value of this transaction.
      */
-    Percentage,
+    Percentage = 3,
 
 }
     
