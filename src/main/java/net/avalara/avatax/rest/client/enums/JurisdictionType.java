@@ -21,27 +21,27 @@ public enum JurisdictionType {
     /** 
      * Country
      */
-    Country,
+    Country = 0,
 
     /** 
      * State
      */
-    State,
+    State = 1,
 
     /** 
      * County
      */
-    County,
+    County = 2,
 
     /** 
      * City
      */
-    City,
+    City = 3,
 
     /** 
      * Special Tax Jurisdiction
      */
-    Special,
+    Special = 4,
 
 }
     

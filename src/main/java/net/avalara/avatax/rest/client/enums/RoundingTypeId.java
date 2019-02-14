@@ -21,22 +21,22 @@ public enum RoundingTypeId {
     /** 
      * There is no rounding on the return
      */
-    None,
+    None = 0,
 
     /** 
      * Round to the nearest whole number
      */
-    Nearest,
+    Nearest = 1,
 
     /** 
      * Always round up
      */
-    Up,
+    Up = 2,
 
     /** 
      * Always round down
      */
-    Down,
+    Down = 3,
 
 }
     

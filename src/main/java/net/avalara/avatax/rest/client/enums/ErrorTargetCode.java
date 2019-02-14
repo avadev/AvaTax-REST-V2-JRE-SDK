@@ -21,37 +21,37 @@ public enum ErrorTargetCode {
     /** 
      * Error target is unknown
      */
-    Unknown,
+    Unknown = 0,
 
     /** 
      * There was an error in the request URL, querystring, or body
      */
-    HttpRequest,
+    HttpRequest = 1,
 
     /** 
      * There was an error in the HTTP Request headers
      */
-    HttpRequestHeaders,
+    HttpRequestHeaders = 2,
 
     /** 
      * Some data provided by the user was incorrect
      */
-    IncorrectData,
+    IncorrectData = 3,
 
     /** 
      * There was an error in the AvaTax API Server
      */
-    AvaTaxApiServer,
+    AvaTaxApiServer = 10,
 
     /** 
      * There was an error in the Avalara Identity Server
      */
-    AvalaraIdentityServer,
+    AvalaraIdentityServer = 11,
 
     /** 
      * The customer's account setup does not permit certain actions
      */
-    CustomerAccountSetup,
+    CustomerAccountSetup = 12,
 
 }
     

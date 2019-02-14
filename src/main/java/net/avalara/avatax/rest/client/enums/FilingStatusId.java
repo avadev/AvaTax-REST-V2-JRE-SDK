@@ -21,87 +21,87 @@ public enum FilingStatusId {
     /** 
      * 
      */
-    PendingApproval,
+    PendingApproval = 0,
 
     /** 
      * 
      */
-    Dirty,
+    Dirty = 1,
 
     /** 
      * 
      */
-    ApprovedToFile,
+    ApprovedToFile = 2,
 
     /** 
      * 
      */
-    PendingFiling,
+    PendingFiling = 3,
 
     /** 
      * 
      */
-    PendingFilingOnBehalf,
+    PendingFilingOnBehalf = 4,
 
     /** 
      * 
      */
-    Filed,
+    Filed = 5,
 
     /** 
      * 
      */
-    FiledOnBehalf,
+    FiledOnBehalf = 6,
 
     /** 
      * 
      */
-    ReturnAccepted,
+    ReturnAccepted = 7,
 
     /** 
      * 
      */
-    ReturnAcceptedOnBehalf,
+    ReturnAcceptedOnBehalf = 8,
 
     /** 
      * 
      */
-    PaymentRemitted,
+    PaymentRemitted = 9,
 
     /** 
      * 
      */
-    Voided,
+    Voided = 10,
 
     /** 
      * 
      */
-    PendingReturn,
+    PendingReturn = 11,
 
     /** 
      * 
      */
-    PendingReturnOnBehalf,
+    PendingReturnOnBehalf = 12,
 
     /** 
      * 
      */
-    DoNotFile,
+    DoNotFile = 13,
 
     /** 
      * 
      */
-    ReturnRejected,
+    ReturnRejected = 14,
 
     /** 
      * 
      */
-    ReturnRejectedOnBehalf,
+    ReturnRejectedOnBehalf = 15,
 
     /** 
      * 
      */
-    ApprovedToFileOnBehalf,
+    ApprovedToFileOnBehalf = 16,
 
 }
     

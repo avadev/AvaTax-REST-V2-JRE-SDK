@@ -25,7 +25,7 @@ public enum DocumentStatus {
      *  
      *  This document has not been recorded to AvaTax
      */
-    Temporary,
+    Temporary = 0,
 
     /** 
      * Saved document (SalesInvoice or PurchaseInvoice) ready to be posted.
@@ -41,7 +41,7 @@ public enum DocumentStatus {
      *  To adjust or void this transaction, call `AdjustTransaction`, `CreateOrAdjustTransaction`, or
      *  `VoidTransaction`.
      */
-    Saved,
+    Saved = 1,
 
     /** 
      * A posted document (not committed).
@@ -54,7 +54,7 @@ public enum DocumentStatus {
      *  To adjust or void this transaction, call `AdjustTransaction`, `CreateOrAdjustTransaction`, or
      *  `VoidTransaction`.
      */
-    Posted,
+    Posted = 2,
 
     /** 
      * A posted document that has been committed.
@@ -69,7 +69,7 @@ public enum DocumentStatus {
      *  As long as the transaction has not been locked, you may adjust or void this transaction using 
      *  `AdjustTransaction`, `CreateOrAdjustTransaction`, or `VoidTransaction`.
      */
-    Committed,
+    Committed = 3,
 
     /** 
      * A document that has been cancelled.
@@ -80,7 +80,7 @@ public enum DocumentStatus {
      *  When a transaction has been cancelled, it is considered to no longer exist. You are free to create 
      *  a new transaction with the same code.
      */
-    Cancelled,
+    Cancelled = 4,
 
     /** 
      * An older version of a document that has been adjusted.
@@ -89,12 +89,12 @@ public enum DocumentStatus {
      *  of the new document. The old document is changed to the status `Adjusted`, and the new document
      *  is created in the status you requested.
      */
-    Adjusted,
+    Adjusted = 5,
 
     /** 
      * DEPRECATED - A document which is queued for later processing.
      */
-    Queued,
+    Queued = 6,
 
     /** 
      * Indicates that this document requires approval from a governmental agency before it can be finalized.
@@ -103,13 +103,13 @@ public enum DocumentStatus {
      *  detects that a transaction must be verified with a governmental agency, this transaction will be flagged
      *  as `PendingApproval` until the government has certified the transaction.
      */
-    PendingApproval,
+    PendingApproval = 7,
 
     /** 
      * DEPRECATED - Represents "a document in any status" when searching. Please search using the 
      *  [Filtering in REST](/avatax/filtering-in-rest/) documentation.
      */
-    Any,
+    Any = -1,
 
 }
     

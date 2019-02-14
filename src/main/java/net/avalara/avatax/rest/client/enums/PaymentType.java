@@ -21,22 +21,22 @@ public enum PaymentType {
     /** 
      * The payment is for the current payment
      */
-    CurrentPeriod,
+    CurrentPeriod = 0,
 
     /** 
      * The payment is a prepayment
      */
-    Prepayment,
+    Prepayment = 1,
 
     /** 
      * The payment is a prior payment
      */
-    PriorPayment,
+    PriorPayment = 2,
 
     /** 
      * The payment is a prior CSP fee
      */
-    PriorCspFee,
+    PriorCspFee = 3,
 
 }
     

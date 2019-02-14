@@ -21,52 +21,52 @@ public enum AdjustmentReason {
     /** 
      * The transaction has not been adjusted
      */
-    NotAdjusted,
+    NotAdjusted = 0,
 
     /** 
      * A sourcing issue existed which caused the transaction to be adjusted
      */
-    SourcingIssue,
+    SourcingIssue = 1,
 
     /** 
      * Transaction was adjusted to reconcile it with a general ledger
      */
-    ReconciledWithGeneralLedger,
+    ReconciledWithGeneralLedger = 2,
 
     /** 
      * Transaction was adjusted after an exemption certificate was applied
      */
-    ExemptCertApplied,
+    ExemptCertApplied = 3,
 
     /** 
      * Transaction was adjusted when the price of an item changed
      */
-    PriceAdjusted,
+    PriceAdjusted = 4,
 
     /** 
      * Transaction was adjusted due to a product return
      */
-    ProductReturned,
+    ProductReturned = 5,
 
     /** 
      * Transaction was adjusted due to a product exchange
      */
-    ProductExchanged,
+    ProductExchanged = 6,
 
     /** 
      * Transaction was adjusted due to bad or uncollectable debt
      */
-    BadDebt,
+    BadDebt = 7,
 
     /** 
      * Transaction was adjusted for another reason not specified
      */
-    Other,
+    Other = 8,
 
     /** 
      * Offline
      */
-    Offline,
+    Offline = 9,
 
 }
     

@@ -21,22 +21,22 @@ public enum TaxDependencyLevelId {
     /** 
      * Document
      */
-    Document,
+    Document = 0,
 
     /** 
      * State
      */
-    State,
+    State = 1,
 
     /** 
      * TaxRegion
      */
-    TaxRegion,
+    TaxRegion = 2,
 
     /** 
      * Address
      */
-    Address,
+    Address = 3,
 
 }
     

@@ -21,17 +21,17 @@ public enum WorksheetTypeId {
     /** 
      * The original filing for a period
      */
-    Original,
+    Original = 0,
 
     /** 
      * Represents an amended filing for a period
      */
-    Amended,
+    Amended = 1,
 
     /** 
      * Represents a test filing
      */
-    Test,
+    Test = 2,
 
 }
     
