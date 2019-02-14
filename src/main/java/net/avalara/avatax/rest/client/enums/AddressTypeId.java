@@ -21,12 +21,12 @@ public enum AddressTypeId {
     /** 
      * A business location, for example a store, warehouse, or office.
      */
-    Location,
+    Location = 1,
 
     /** 
      * A person's address who performs sales tasks for the company remotely from an office.
      */
-    Salesperson,
+    Salesperson = 2,
 
     /** 
      * This location is a marketplace vendor that handles transactions on behalf of the company.
@@ -34,7 +34,7 @@ public enum AddressTypeId {
      *  `SellerRemitsTax` or `MarketplaceRemitsTax` to indicate which business entity is responsible
      *  for collecting and remitting tax for this location.
      */
-    Marketplace,
+    Marketplace = 3,
 
 }
     

@@ -21,27 +21,27 @@ public enum AddressCategoryId {
     /** 
      * Address refers to a storefront location
      */
-    Storefront,
+    Storefront = 1,
 
     /** 
      * Address refers to a main office of this company
      */
-    MainOffice,
+    MainOffice = 2,
 
     /** 
      * Address refers to a warehouse or other non-public location
      */
-    Warehouse,
+    Warehouse = 3,
 
     /** 
      * Address refers to a location for a single salesperson
      */
-    Salesperson,
+    Salesperson = 4,
 
     /** 
      * Address is a type not reflected in the other lists
      */
-    Other,
+    Other = 5,
 
     /** 
      * The marketplace vendor does not collect and remit tax for transactions tied to this
@@ -49,7 +49,7 @@ public enum AddressCategoryId {
      *  and your company is responsible for collecting and remitting all taxes for transactions tied
      *  to this location.
      */
-    SellerRemitsTax,
+    SellerRemitsTax = 6,
 
     /** 
      * The marketplace vendor collects and remits tax on your behalf for all transactions tied
@@ -58,12 +58,12 @@ public enum AddressCategoryId {
      *  will be treated as already filed, and will be listed on each sales tax return as amounts
      *  already paid.
      */
-    MarketplaceRemitsTax,
+    MarketplaceRemitsTax = 7,
 
     /** 
      * Address refers to the mailing address of your company which is not a physical location.
      */
-    NonPhysical,
+    NonPhysical = 8,
 
 }
     

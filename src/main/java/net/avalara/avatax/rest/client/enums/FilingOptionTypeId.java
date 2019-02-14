@@ -21,17 +21,17 @@ public enum FilingOptionTypeId {
     /** 
      * Denotes the tax return is being filed on paper.
      */
-    Paper,
+    Paper = 0,
 
     /** 
      * Denotes the form can be efiled optionally.
      */
-    OptionalEfile,
+    OptionalEfile = 1,
 
     /** 
      * Denotes the form is being filed via efile.
      */
-    MandatoryEfile,
+    MandatoryEfile = 2,
 
 }
     

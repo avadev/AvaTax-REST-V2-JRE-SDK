@@ -21,62 +21,62 @@ public enum ResolutionQuality {
     /** 
      * Location was not geocoded
      */
-    NotCoded,
+    NotCoded = 0,
 
     /** 
      * Location was already geocoded on the request
      */
-    External,
+    External = 1,
 
     /** 
      * Avalara-defined country centroid
      */
-    CountryCentroid,
+    CountryCentroid = 2,
 
     /** 
      * Avalara-defined state / province centroid
      */
-    RegionCentroid,
+    RegionCentroid = 3,
 
     /** 
      * Geocoded at a level more coarse than a PostalCentroid1
      */
-    PartialCentroid,
+    PartialCentroid = 4,
 
     /** 
      * Largest postal code (zip5 in US, left three in CA, etc
      */
-    PostalCentroidGood,
+    PostalCentroidGood = 5,
 
     /** 
      * Better postal code (zip7 in US)
      */
-    PostalCentroidBetter,
+    PostalCentroidBetter = 6,
 
     /** 
      * Best postal code (zip9 in US, complete postal code elsewhere)
      */
-    PostalCentroidBest,
+    PostalCentroidBest = 7,
 
     /** 
      * Nearest intersection
      */
-    Intersection,
+    Intersection = 8,
 
     /** 
      * Interpolated to rooftop
      */
-    Interpolated,
+    Interpolated = 9,
 
     /** 
      * Assumed to be rooftop level, non-interpolated
      */
-    Rooftop,
+    Rooftop = 10,
 
     /** 
      * Pulled from a static list of geocodes for specific jurisdictions
      */
-    Constant,
+    Constant = 11,
 
 }
     
