@@ -22,17 +22,17 @@ public enum BoundaryLevel {
     /** 
      * Street address precision
      */
-    Address = 0,
+    Address(0),
 
     /** 
      * 9-digit zip precision
      */
-    Zip9 = 1,
+    Zip9(1),
 
     /** 
      * 5-digit zip precision
      */
-    Zip5 = 2,
+    Zip5(2),
 
 }
     

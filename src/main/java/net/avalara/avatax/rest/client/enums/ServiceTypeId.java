@@ -21,147 +21,147 @@ public enum ServiceTypeId {
     /** 
      * None
      */
-    None = 0,
+    None(0),
 
     /** 
      * AvaTaxST
      */
-    AvaTaxST = 1,
+    AvaTaxST(1),
 
     /** 
      * AvaTaxPro
      */
-    AvaTaxPro = 2,
+    AvaTaxPro(2),
 
     /** 
      * AvaTaxGlobal
      */
-    AvaTaxGlobal = 3,
+    AvaTaxGlobal(3),
 
     /** 
      * AutoAddress
      */
-    AutoAddress = 4,
+    AutoAddress(4),
 
     /** 
      * AutoReturns
      */
-    AutoReturns = 5,
+    AutoReturns(5),
 
     /** 
      * TaxSolver
      */
-    TaxSolver = 6,
+    TaxSolver(6),
 
     /** 
      * AvaTaxCsp
      */
-    AvaTaxCsp = 7,
+    AvaTaxCsp(7),
 
     /** 
      * Twe
      */
-    Twe = 8,
+    Twe(8),
 
     /** 
      * Mrs
      */
-    Mrs = 9,
+    Mrs(9),
 
     /** 
      * AvaCert
      */
-    AvaCert = 10,
+    AvaCert(10),
 
     /** 
      * AuthorizationPartner
      */
-    AuthorizationPartner = 11,
+    AuthorizationPartner(11),
 
     /** 
      * CertCapture
      */
-    CertCapture = 12,
+    CertCapture(12),
 
     /** 
      * AvaUpc
      */
-    AvaUpc = 13,
+    AvaUpc(13),
 
     /** 
      * AvaCUT
      */
-    AvaCUT = 14,
+    AvaCUT(14),
 
     /** 
      * AvaLandedCost
      */
-    AvaLandedCost = 15,
+    AvaLandedCost(15),
 
     /** 
      * AvaLodging
      */
-    AvaLodging = 16,
+    AvaLodging(16),
 
     /** 
      * AvaBottle
      */
-    AvaBottle = 17,
+    AvaBottle(17),
 
     /** 
      * AvaComms
      */
-    AvaComms = 18,
+    AvaComms(18),
 
     /** 
      * AvaEWaste
      */
-    AvaEWaste = 19,
+    AvaEWaste(19),
 
     /** 
      * AvaExemptTier1
      */
-    AvaExemptTier1 = 20,
+    AvaExemptTier1(20),
 
     /** 
      * AvaExemptTier2
      */
-    AvaExemptTier2 = 21,
+    AvaExemptTier2(21),
 
     /** 
      * AvaExemptTier3
      */
-    AvaExemptTier3 = 22,
+    AvaExemptTier3(22),
 
     /** 
      * AvaExemptTier4
      */
-    AvaExemptTier4 = 23,
+    AvaExemptTier4(23),
 
     /** 
      * MRSComplianceManager
      */
-    MRSComplianceManager = 24,
+    MRSComplianceManager(24),
 
     /** 
      * AvaBikeTax
      */
-    AvaBikeTax = 25,
+    AvaBikeTax(25),
 
     /** 
      * AvaCheckoutBag
      */
-    AvaCheckoutBag = 26,
+    AvaCheckoutBag(26),
 
     /** 
      * TFOCompliance
      */
-    TFOCompliance = 27,
+    TFOCompliance(27),
 
     /** 
      * Send Sales Rate file service
      */
-    SendSalesRateFile = 28,
+    SendSalesRateFile(28),
 
 }
     

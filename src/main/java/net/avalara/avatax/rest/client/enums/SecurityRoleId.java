@@ -21,117 +21,117 @@ public enum SecurityRoleId {
     /** 
      * NoAccess
      */
-    NoAccess = 0,
+    NoAccess(0),
 
     /** 
      * SiteAdmin
      */
-    SiteAdmin = 1,
+    SiteAdmin(1),
 
     /** 
      * AccountOperator
      */
-    AccountOperator = 2,
+    AccountOperator(2),
 
     /** 
      * AccountAdmin
      */
-    AccountAdmin = 3,
+    AccountAdmin(3),
 
     /** 
      * AccountUser
      */
-    AccountUser = 4,
+    AccountUser(4),
 
     /** 
      * SystemAdmin
      */
-    SystemAdmin = 5,
+    SystemAdmin(5),
 
     /** 
      * Registrar
      */
-    Registrar = 6,
+    Registrar(6),
 
     /** 
      * CSPTester
      */
-    CSPTester = 7,
+    CSPTester(7),
 
     /** 
      * CSPAdmin
      */
-    CSPAdmin = 8,
+    CSPAdmin(8),
 
     /** 
      * SystemOperator
      */
-    SystemOperator = 9,
+    SystemOperator(9),
 
     /** 
      * TechnicalSupportUser
      */
-    TechnicalSupportUser = 10,
+    TechnicalSupportUser(10),
 
     /** 
      * TechnicalSupportAdmin
      */
-    TechnicalSupportAdmin = 11,
+    TechnicalSupportAdmin(11),
 
     /** 
      * TreasuryUser
      */
-    TreasuryUser = 12,
+    TreasuryUser(12),
 
     /** 
      * TreasuryAdmin
      */
-    TreasuryAdmin = 13,
+    TreasuryAdmin(13),
 
     /** 
      * ComplianceUser
      */
-    ComplianceUser = 14,
+    ComplianceUser(14),
 
     /** 
      * ComplianceAdmin
      */
-    ComplianceAdmin = 15,
+    ComplianceAdmin(15),
 
     /** 
      * ProStoresOperator
      */
-    ProStoresOperator = 16,
+    ProStoresOperator(16),
 
     /** 
      * CompanyUser
      */
-    CompanyUser = 17,
+    CompanyUser(17),
 
     /** 
      * CompanyAdmin
      */
-    CompanyAdmin = 18,
+    CompanyAdmin(18),
 
     /** 
      * ComplianceTempUser
      */
-    ComplianceTempUser = 19,
+    ComplianceTempUser(19),
 
     /** 
      * ComplianceRootUser
      */
-    ComplianceRootUser = 20,
+    ComplianceRootUser(20),
 
     /** 
      * ComplianceOperator
      */
-    ComplianceOperator = 21,
+    ComplianceOperator(21),
 
     /** 
      * SSTAdmin
      */
-    SSTAdmin = 22,
+    SSTAdmin(22),
 
 }
     

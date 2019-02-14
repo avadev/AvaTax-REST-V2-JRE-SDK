@@ -21,12 +21,12 @@ public enum TextCase {
     /** 
      * Upper case
      */
-    Upper = 0,
+    Upper(0),
 
     /** 
      * Mixed Case
      */
-    Mixed = 1,
+    Mixed(1),
 
 }
     

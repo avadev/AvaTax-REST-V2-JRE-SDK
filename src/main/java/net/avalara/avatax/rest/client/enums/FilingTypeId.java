@@ -21,37 +21,37 @@ public enum FilingTypeId {
     /** 
      * Denotes the tax return is being filed on paper.
      */
-    PaperReturn = 0,
+    PaperReturn(0),
 
     /** 
      * Denotes the tax return is being filed via electronic means; excludes SST electronic filing.
      */
-    ElectronicReturn = 1,
+    ElectronicReturn(1),
 
     /** 
      * Denotes the tax return is an SST filing.
      */
-    SER = 2,
+    SER(2),
 
     /** 
      * Denotes a return is paid via EFT and filed on paper without payment.
      */
-    EFTPaper = 3,
+    EFTPaper(3),
 
     /** 
      * Denotes a return is paid via phone and filed on paper without payment.
      */
-    PhonePaper = 4,
+    PhonePaper(4),
 
     /** 
      * Denotes a return is prepared but delivered to the customer for filing and payment.
      */
-    SignatureReady = 5,
+    SignatureReady(5),
 
     /** 
      * Denotes a return which is filed online but paid by check.
      */
-    EfileCheck = 6,
+    EfileCheck(6),
 
 }
     

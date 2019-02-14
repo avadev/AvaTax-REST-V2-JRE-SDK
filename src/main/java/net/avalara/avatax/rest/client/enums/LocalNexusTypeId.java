@@ -21,21 +21,21 @@ public enum LocalNexusTypeId {
     /** 
      * Only the specific nexus objects declared for this company are declared.
      */
-    Selected = 0,
+    Selected(0),
 
     /** 
      * Customer declares nexus in all state administered taxing authorities.
      *  
      *  This value only takes effect if you set `hasLocalNexus` = true.
      */
-    StateAdministered = 1,
+    StateAdministered(1),
 
     /** 
      * Customer declares nexus in all local taxing authorities. 
      *  
      *  This value only takes effect if you set `hasLocalNexus` = true.
      */
-    All = 2,
+    All(2),
 
 }
     

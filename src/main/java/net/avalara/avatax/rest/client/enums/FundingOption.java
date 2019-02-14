@@ -21,12 +21,12 @@ public enum FundingOption {
     /** 
      * Pull
      */
-    Pull = 1,
+    Pull(1),
 
     /** 
      * Wire
      */
-    Wire = 2,
+    Wire(2),
 
 }
     
