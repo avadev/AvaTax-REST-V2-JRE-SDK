@@ -23,22 +23,22 @@ public enum OutletTypeId {
     /** 
      * File a single return per cycle for your entire business.
      */
-    None = 0,
+    None,
 
     /** 
      * You may file separate forms for each outlet; contact the tax authority for more details about location based reporting requirements.
      */
-    Schedule = 1,
+    Schedule,
 
     /** 
      * You may file separate forms for each outlet; contact the tax authority for more details about location based reporting requirements.
      */
-    Duplicate = 2,
+    Duplicate,
 
     /** 
      * File a single return, but you must have a line item for each place of business.
      */
-    Consolidated = 3,
+    Consolidated,
 
 }
     

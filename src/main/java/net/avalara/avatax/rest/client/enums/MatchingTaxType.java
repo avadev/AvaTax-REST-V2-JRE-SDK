@@ -21,84 +21,84 @@ package net.avalara.avatax.rest.client.enums;
  */
 public enum MatchingTaxType {
     /** 
-     * Match medical excise type
-     */
-    Excise = 5,
-
-    /** 
-     * Match Lodging tax type
-     */
-    Lodging = 6,
-
-    /** 
-     * Match bottle tax type
-     */
-    Bottle = 7,
-
-    /** 
-     * Match RentToOwn tax type
-     */
-    RentToOwn = 8,
-
-    /** 
      * Match all tax types
      */
-    All = 65,
+    All,
 
     /** 
      * Match both Sales and Use Tax only
      */
-    BothSalesAndUseTax = 66,
+    BothSalesAndUseTax,
 
     /** 
      * Match Consumer Use Tax only
      */
-    ConsumerUseTax = 67,
-
-    /** 
-     * Match both Consumer Use and Seller's Use Tax types
-     */
-    ConsumersUseAndSellersUseTax = 68,
-
-    /** 
-     * Match both Consumer Use and Sales Tax types
-     */
-    ConsumerUseAndSalesTax = 69,
-
-    /** 
-     * Match Fee tax types only
-     */
-    Fee = 70,
-
-    /** 
-     * Match VAT Input Tax only
-     */
-    VATInputTax = 73,
-
-    /** 
-     * Match VAT Nonrecoverable Input Tax only
-     */
-    VATNonrecoverableInputTax = 78,
-
-    /** 
-     * Match VAT Output Tax only
-     */
-    VATOutputTax = 79,
-
-    /** 
-     * Match Rental tax types only
-     */
-    Rental = 82,
+    ConsumerUseTax,
 
     /** 
      * Match Sales Tax only
      */
-    SalesTax = 83,
+    SalesTax,
 
     /** 
      * Match Seller's Use Tax only
      */
-    UseTax = 85,
+    UseTax,
+
+    /** 
+     * Match VAT Output Tax only
+     */
+    VATOutputTax,
+
+    /** 
+     * Match VAT Input Tax only
+     */
+    VATInputTax,
+
+    /** 
+     * Match VAT Nonrecoverable Input Tax only
+     */
+    VATNonrecoverableInputTax,
+
+    /** 
+     * Match Fee tax types only
+     */
+    Fee,
+
+    /** 
+     * Match Rental tax types only
+     */
+    Rental,
+
+    /** 
+     * Match both Consumer Use and Sales Tax types
+     */
+    ConsumerUseAndSalesTax,
+
+    /** 
+     * Match both Consumer Use and Seller's Use Tax types
+     */
+    ConsumersUseAndSellersUseTax,
+
+    /** 
+     * Match medical excise type
+     */
+    Excise,
+
+    /** 
+     * Match Lodging tax type
+     */
+    Lodging,
+
+    /** 
+     * Match bottle tax type
+     */
+    Bottle,
+
+    /** 
+     * Match RentToOwn tax type
+     */
+    RentToOwn,
 
 }
     

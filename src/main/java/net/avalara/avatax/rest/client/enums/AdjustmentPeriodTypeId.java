@@ -21,17 +21,17 @@ public enum AdjustmentPeriodTypeId {
     /** 
      * 
      */
-    None = 0,
+    None,
 
     /** 
      * 
      */
-    CurrentPeriod = 1,
+    CurrentPeriod,
 
     /** 
      * 
      */
-    NextPeriod = 2,
+    NextPeriod,
 
 }
     

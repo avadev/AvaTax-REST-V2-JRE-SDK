@@ -21,28 +21,28 @@ public enum VoidReasonCode {
     /** 
      * Unspecified reason
      */
-    Unspecified = 0,
+    Unspecified,
 
     /** 
      * Post operation failed - Document status will be changed to unposted
      */
-    PostFailed = 1,
+    PostFailed,
 
     /** 
      * Document deleted - If committed, document status will be changed to Cancelled. If not committed, document will be
      *  deleted.
      */
-    DocDeleted = 2,
+    DocDeleted,
 
     /** 
      * Document has been voided and DocStatus will be set to Cancelled
      */
-    DocVoided = 3,
+    DocVoided,
 
     /** 
      * AdjustTax operation has been cancelled. Adjustment will be reversed.
      */
-    AdjustmentCancelled = 4,
+    AdjustmentCancelled,
 
 }
     

@@ -21,27 +21,27 @@ public enum NoticeCustomerType {
     /** 
      * AvaTax Returns
      */
-    AvaTaxReturns = 1,
+    AvaTaxReturns,
 
     /** 
      * Stand Alone
      */
-    StandAlone = 2,
+    StandAlone,
 
     /** 
      * Strategic
      */
-    Strategic = 3,
+    Strategic,
 
     /** 
      * SST
      */
-    SST = 4,
+    SST,
 
     /** 
      * TrustFile
      */
-    TrustFile = 5,
+    TrustFile,
 
 }
     

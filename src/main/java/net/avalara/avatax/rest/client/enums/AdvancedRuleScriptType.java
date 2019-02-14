@@ -21,12 +21,12 @@ public enum AdvancedRuleScriptType {
     /** 
      * 
      */
-    RequestRule = 0,
+    RequestRule,
 
     /** 
      * 
      */
-    ResponseRule = 1,
+    ResponseRule,
 
 }
     

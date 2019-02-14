@@ -21,22 +21,22 @@ public enum SeverityLevel {
     /** 
      * Operation succeeded
      */
-    Success = 0,
+    Success,
 
     /** 
      * Warnings occured, operation succeeded
      */
-    Warning = 1,
+    Warning,
 
     /** 
      * Errors occured, operation failed
      */
-    Error = 2,
+    Error,
 
     /** 
      * Unexpected exceptions occurred, operation failed
      */
-    Exception = 3,
+    Exception,
 
 }
     

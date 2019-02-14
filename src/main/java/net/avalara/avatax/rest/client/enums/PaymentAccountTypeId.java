@@ -21,22 +21,22 @@ public enum PaymentAccountTypeId {
     /** 
      * 
      */
-    None = 0,
+    None,
 
     /** 
      * 
      */
-    AccountsReceivableAccountsPayable = 1,
+    AccountsReceivableAccountsPayable,
 
     /** 
      * 
      */
-    AccountsReceivable = 2,
+    AccountsReceivable,
 
     /** 
      * 
      */
-    AccountsPayable = 3,
+    AccountsPayable,
 
 }
     

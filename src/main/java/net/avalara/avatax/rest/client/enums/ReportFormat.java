@@ -21,12 +21,12 @@ public enum ReportFormat {
     /** 
      * The Comma Separated Values file format
      */
-    CSV = 0,
+    CSV,
 
     /** 
      * The Extensible Markup Language file format
      */
-    XML = 1,
+    XML,
 
 }
     

@@ -21,52 +21,52 @@ public enum TaxNoticeFilingTypeId {
     /** 
      * Denotes the tax return is being filed via electronic means; excludes SST electronic filing.
      */
-    ElectronicReturn = 1,
+    ElectronicReturn,
 
     /** 
      * Denotes the tax return is being filed on paper.
      */
-    PaperReturn = 2,
+    PaperReturn,
 
     /** 
      * Denotes the tax return that was not filed.
      */
-    ReturnNotFiled = 3,
+    ReturnNotFiled,
 
     /** 
      * Denotes a return is paid via EFT and filed on paper without payment.
      */
-    EFTPaper = 4,
+    EFTPaper,
 
     /** 
      * Denotes the tax return is an SST filing.
      */
-    SER = 5,
+    SER,
 
     /** 
      * Denotes the tax return is a Trudsfile-EDI filing.
      */
-    TrustfileEdi = 6,
+    TrustfileEdi,
 
     /** 
      * Denotes the tax return is an uploaded file.
      */
-    UploadFile = 7,
+    UploadFile,
 
     /** 
      * Denotes the tax return was manually filed via paper
      */
-    PaperManual = 8,
+    PaperManual,
 
     /** 
      * Denotes a cert capture return
      */
-    CertCapture = 9,
+    CertCapture,
 
     /** 
      * Denotes a signature ready return
      */
-    SignatureReady = 10,
+    SignatureReady,
 
 }
     

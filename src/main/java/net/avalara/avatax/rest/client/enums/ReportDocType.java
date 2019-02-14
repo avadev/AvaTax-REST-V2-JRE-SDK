@@ -19,14 +19,14 @@ package net.avalara.avatax.rest.client.enums;
  */
 public enum ReportDocType {
     /** 
-     * Output all ConsumerUse tax transactions in the report
-     */
-    ConsumerUse = 67,
-
-    /** 
      * Output all Sales tax transactions in the report
      */
-    Sales = 83,
+    Sales,
+
+    /** 
+     * Output all ConsumerUse tax transactions in the report
+     */
+    ConsumerUse,
 
 }
     

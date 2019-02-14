@@ -19,19 +19,19 @@ package net.avalara.avatax.rest.client.enums;
  */
 public enum Sourcing {
     /** 
-     * Mixed sourcing, for states that do both origin and destination calculation
+     * Origin
      */
-    Mixed = 42,
+    Origin,
 
     /** 
      * Destination
      */
-    Destination = 68,
+    Destination,
 
     /** 
-     * Origin
+     * Mixed sourcing, for states that do both origin and destination calculation
      */
-    Origin = 79,
+    Mixed,
 
 }
     

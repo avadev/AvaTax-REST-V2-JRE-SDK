@@ -21,17 +21,17 @@ public enum DueDateTypeId {
     /** 
      * Denotes form is due on the due day
      */
-    ByDay = 0,
+    ByDay,
 
     /** 
      * Denotes form is due by last day of the month
      */
-    ByLastDay = 1,
+    ByLastDay,
 
     /** 
      * Denotes form is due by second to last day of the month
      */
-    BySecondLastDay = 2,
+    BySecondLastDay,
 
 }
     

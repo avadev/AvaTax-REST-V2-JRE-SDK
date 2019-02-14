@@ -21,17 +21,17 @@ public enum ApiCallStatus {
     /** 
      * If the original api call is availabe on S3
      */
-    OriginalApiCallAvailable = 0,
+    OriginalApiCallAvailable,
 
     /** 
      * if the original api call is not available, reconstructed api call should always be available
      */
-    ReconstructedApiCallAvailable = 1,
+    ReconstructedApiCallAvailable,
 
     /** 
      * Any other api call status
      */
-    Any = -1,
+    Any,
 
 }
     

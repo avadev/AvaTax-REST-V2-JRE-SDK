@@ -21,52 +21,52 @@ public enum FormTypeId {
     /** 
      * Denotes the form type is Sales and Use Tax
      */
-    SalesAndUse = 0,
+    SalesAndUse,
 
     /** 
      * Denotes the form type is Sales Tax only
      */
-    Sales = 1,
+    Sales,
 
     /** 
      * Denotes the form type is Sellers Use Tax only
      */
-    SellersUse = 2,
+    SellersUse,
 
     /** 
      * Denotes the form type is Lodging Tax only
      */
-    Lodging = 3,
+    Lodging,
 
     /** 
      * Denotes the form type is Sales and Lodging Tax
      */
-    SalesAndLodging = 4,
+    SalesAndLodging,
 
     /** 
      * Denotes the form type is Consumer Use Tax only
      */
-    ConsumerUse = 5,
+    ConsumerUse,
 
     /** 
      * Denotes the form type is Resort and Rental Tax
      */
-    ResortAndRental = 6,
+    ResortAndRental,
 
     /** 
      * Denotes the form type is Tourist and Rental Tax
      */
-    TouristAndRental = 7,
+    TouristAndRental,
 
     /** 
      * Denotes the form type is Prepayment
      */
-    Prepayment = 8,
+    Prepayment,
 
     /** 
      * Denotes the form type is Prepayment Allowance
      */
-    PrepaymentAllowed = 9,
+    PrepaymentAllowed,
 
 }
     

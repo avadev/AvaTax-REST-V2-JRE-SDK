@@ -21,67 +21,67 @@ public enum RateType {
     /** 
      * 
      */
-    ReducedA = 65,
+    Food,
 
     /** 
      * 
      */
-    ReducedB = 66,
+    General,
 
     /** 
      * 
      */
-    Food = 70,
+    IncreasedStandard,
 
     /** 
      * 
      */
-    General = 71,
+    LinenRental,
 
     /** 
      * 
      */
-    IncreasedStandard = 73,
+    Medical,
 
     /** 
      * 
      */
-    LinenRental = 76,
+    Parking,
 
     /** 
      * 
      */
-    Medical = 77,
+    ReducedA,
 
     /** 
      * 
      */
-    Parking = 80,
+    ReducedB,
 
     /** 
      * 
      */
-    SuperReduced = 81,
+    ReducedR,
 
     /** 
      * 
      */
-    ReducedR = 82,
+    Standard,
 
     /** 
      * 
      */
-    Standard = 83,
+    SuperReduced,
 
     /** 
      * 
      */
-    Services = 88,
+    Zero,
 
     /** 
      * 
      */
-    Zero = 90,
+    Services,
 
 }
     

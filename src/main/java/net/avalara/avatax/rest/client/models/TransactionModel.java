@@ -1221,7 +1221,7 @@ public class TransactionModel {
     /**
      * Getter for taxDetailsByTaxType
      *
-     * Contains the tax details per tax type
+     * Constains the tax details per tax type
      */
     public ArrayList<TaxDetailsByTaxType> getTaxDetailsByTaxType() {
         return this.taxDetailsByTaxType;
@@ -1230,7 +1230,7 @@ public class TransactionModel {
     /**
      * Setter for taxDetailsByTaxType
      *
-     * Contains the tax details per tax type
+     * Constains the tax details per tax type
      */
     public void setTaxDetailsByTaxType(ArrayList<TaxDetailsByTaxType> value) {
         this.taxDetailsByTaxType = value;

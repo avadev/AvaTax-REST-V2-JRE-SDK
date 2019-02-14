@@ -25,7 +25,7 @@ public enum TaxOverrideType {
     /** 
      * AvaTax calculated the tax for this transaction, and no override occurred.
      */
-    None = 0,
+    None,
 
     /** 
      * AvaTax calculated tax for this transaction, but the final tax amount on the transaction was
@@ -37,12 +37,12 @@ public enum TaxOverrideType {
      *  `RefundTransaction` API, AvaTax will ensure that the exact tax charged to the customer is refunded
      *  to the customer using a tax amount override.
      */
-    TaxAmount = 1,
+    TaxAmount,
 
     /** 
      * Entity exemption was ignored (e.g. item was consumed)
      */
-    Exemption = 2,
+    Exemption,
 
     /** 
      * AvaTax was instructed to calculate this transaction using the tax rules that were in effect
@@ -52,17 +52,17 @@ public enum TaxOverrideType {
      *  without a receipt that shows the exact tax amount paid, AvaTax can calculate tax on the date
      *  when they believed that the product was purchased.
      */
-    TaxDate = 3,
+    TaxDate,
 
     /** 
      * To support Consumer Use Tax
      */
-    AccruedTaxAmount = 4,
+    AccruedTaxAmount,
 
     /** 
      * Derive the taxable amount from the tax amount
      */
-    DeriveTaxable = 5,
+    DeriveTaxable,
 
 }
     

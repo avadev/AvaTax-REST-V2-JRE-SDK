@@ -8631,56 +8631,6 @@ This gets the basic information from the filings and doesn't include anything ex
     }
 
     /**
-     * Retrieve a list of filings for the specified company in the year and month of a given filing period.
-     * 
-     * This API is available by invitation only.
-     * A "filing period" is the year and month of the date of the latest customer transaction allowed to be reported on a filing, 
-     * 
-     * @param companyId The ID of the company that owns the filings.
-     * @param year The year of the filing period.
-     * @param month The two digit month of the filing period.
-     * @param country The two-character ISO-3166 code for the country.
-     * @param region The two or three character region code for the region.
-     * @param formCode The unique code of the form.
-     * @return FetchResult<MultiTaxFilingModel>
-     */
-    public FetchResult<MultiTaxFilingModel> getTaxFilings(Integer companyId, Integer year, Integer month, String country, String region, String formCode) throws Exception {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings");
-        path.applyField("companyId", companyId);
-        path.addQuery("year", year);
-        path.addQuery("month", month);
-        path.addQuery("country", country);
-        path.addQuery("region", region);
-        path.addQuery("formCode", formCode);
-        return ((RestCall<FetchResult<MultiTaxFilingModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<MultiTaxFilingModel>>(){})).call();
-    }
-
-    /**
-     * Retrieve a list of filings for the specified company in the year and month of a given filing period.
-     * 
-     * This API is available by invitation only.
-     * A "filing period" is the year and month of the date of the latest customer transaction allowed to be reported on a filing, 
-     * 
-     * @param companyId The ID of the company that owns the filings.
-     * @param year The year of the filing period.
-     * @param month The two digit month of the filing period.
-     * @param country The two-character ISO-3166 code for the country.
-     * @param region The two or three character region code for the region.
-     * @param formCode The unique code of the form.
-     * @return FetchResult<MultiTaxFilingModel>
-     */
-    public Future<FetchResult<MultiTaxFilingModel>> getTaxFilingsAsync(Integer companyId, Integer year, Integer month, String country, String region, String formCode) {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings");
-        path.applyField("companyId", companyId);
-        path.addQuery("year", year);
-        path.addQuery("month", month);
-        path.addQuery("country", country);
-        path.addQuery("region", region);
-        path.addQuery("formCode", formCode);
-        return this.threadPool.submit((RestCall<FetchResult<MultiTaxFilingModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<MultiTaxFilingModel>>(){}));
-    }
-
-    /**
      * Rebuild a set of filings for the specified company in the given filing period.
      * 
      * This API is available by invitation only.

@@ -21,12 +21,12 @@ public enum AdvancedRuleCrashBehavior {
     /** 
      * 
      */
-    FailOnError = 0,
+    FailOnError,
 
     /** 
      * 
      */
-    ProceedWithOriginal = 1,
+    ProceedWithOriginal,
 
 }
     

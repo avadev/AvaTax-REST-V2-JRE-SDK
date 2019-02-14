@@ -21,22 +21,22 @@ public enum AuthenticationTypeId {
     /** 
      * This API call was not authenticated.
      */
-    None = 0,
+    None,
 
     /** 
      * This API call was authenticated by your username/password.
      */
-    UsernamePassword = 1,
+    UsernamePassword,
 
     /** 
      * This API call was authenticated by your Avalara Account ID and private license key.
      */
-    AccountIdLicenseKey = 2,
+    AccountIdLicenseKey,
 
     /** 
      * This API call was authenticated by OpenID Bearer Token.
      */
-    OpenIdBearerToken = 3,
+    OpenIdBearerToken,
 
 }
     

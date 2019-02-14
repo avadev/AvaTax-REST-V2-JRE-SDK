@@ -21,12 +21,12 @@ public enum ExemptCertTypeId {
     /** 
      * Blanked certificate
      */
-    Blanket = 0,
+    Blanket,
 
     /** 
      * Single use
      */
-    SingleUse = 1,
+    SingleUse,
 
 }
     
