@@ -21,27 +21,27 @@ public enum JurisTypeId {
     /** 
      * State
      */
-    STA = 1,
+    STA(1),
 
     /** 
      * County
      */
-    CTY = 2,
+    CTY(2),
 
     /** 
      * City
      */
-    CIT = 3,
+    CIT(3),
 
     /** 
      * Special
      */
-    STJ = 4,
+    STJ(4),
 
     /** 
      * Country
      */
-    CNT = 5,
+    CNT(5),
 
 }
     

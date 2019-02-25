@@ -21,37 +21,37 @@ public enum FilingFrequencyId {
     /** 
      * File once per month
      */
-    Monthly = 1,
+    Monthly(1),
 
     /** 
      * File once per three months
      */
-    Quarterly = 2,
+    Quarterly(2),
 
     /** 
      * File twice per year
      */
-    SemiAnnually = 3,
+    SemiAnnually(3),
 
     /** 
      * File once per year
      */
-    Annually = 4,
+    Annually(4),
 
     /** 
      * File every other month
      */
-    Bimonthly = 5,
+    Bimonthly(5),
 
     /** 
      * File only when there are documents to report
      */
-    Occasional = 6,
+    Occasional(6),
 
     /** 
      * File for the first two months of each quarter, then do not file on the quarterly month.
      */
-    InverseQuarterly = 7,
+    InverseQuarterly(7),
 
 }
     

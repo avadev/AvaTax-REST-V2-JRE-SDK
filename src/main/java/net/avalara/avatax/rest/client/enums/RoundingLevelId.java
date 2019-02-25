@@ -21,12 +21,12 @@ public enum RoundingLevelId {
     /** 
      * Round tax on each line separately
      */
-    Line = 0,
+    Line(0),
 
     /** 
      * Round tax at the document level
      */
-    Document = 1,
+    Document(1),
 
 }
     

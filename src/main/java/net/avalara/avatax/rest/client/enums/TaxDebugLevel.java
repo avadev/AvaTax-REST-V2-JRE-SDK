@@ -21,12 +21,12 @@ public enum TaxDebugLevel {
     /** 
      * User requests the normal level of debug information when creating a tax transaction
      */
-    Normal = 0,
+    Normal(0),
 
     /** 
      * User requests additional diagnostic information when creating a tax transaction
      */
-    Diagnostic = 1,
+    Diagnostic(1),
 
 }
     

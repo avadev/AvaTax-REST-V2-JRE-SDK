@@ -21,17 +21,17 @@ public enum WelcomeEmail {
     /** 
      * Normal
      */
-    Normal = 0,
+    Normal(0),
 
     /** 
      * Suppressed
      */
-    Suppressed = 1,
+    Suppressed(1),
 
     /** 
      * Custom
      */
-    Custom = 2,
+    Custom(2),
 
 }
     

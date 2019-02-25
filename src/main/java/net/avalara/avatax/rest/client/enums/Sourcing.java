@@ -21,17 +21,17 @@ public enum Sourcing {
     /** 
      * Mixed sourcing, for states that do both origin and destination calculation
      */
-    Mixed = 42,
+    Mixed(42),
 
     /** 
      * Destination
      */
-    Destination = 68,
+    Destination(68),
 
     /** 
      * Origin
      */
-    Origin = 79,
+    Origin(79),
 
 }
     

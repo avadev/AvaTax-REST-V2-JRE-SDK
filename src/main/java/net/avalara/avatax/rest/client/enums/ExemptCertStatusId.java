@@ -21,22 +21,22 @@ public enum ExemptCertStatusId {
     /** 
      * Inactive certificate
      */
-    Inactive = 0,
+    Inactive(0),
 
     /** 
      * Active certificate
      */
-    Active = 1,
+    Active(1),
 
     /** 
      * Expired certificate
      */
-    Expired = 2,
+    Expired(2),
 
     /** 
      * Revoked certificate
      */
-    Revoked = 3,
+    Revoked(3),
 
 }
     

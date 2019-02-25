@@ -21,29 +21,29 @@ public enum NexusTypeId {
     /** 
      * Indicates no nexus
      */
-    None = 0,
+    None(0),
 
     /** 
      * Indicates the entity is voluntarily collecting tax (default)
      */
-    SalesOrSellersUseTax = 1,
+    SalesOrSellersUseTax(1),
 
     /** 
      * Indicates the entity is required to collect tax in the state
      */
-    SalesTax = 2,
+    SalesTax(2),
 
     /** 
      * Indicates the entity is registered as a Volunteer in an SST state.
      *  Only your SST administrator may set this option.
      */
-    SSTVolunteer = 3,
+    SSTVolunteer(3),
 
     /** 
      * Indicates the entity is registered as a Non-Volunteer in an SST state.
      *  Only your SST administrator may set this option.
      */
-    SSTNonVolunteer = 4,
+    SSTNonVolunteer(4),
 
 }
     

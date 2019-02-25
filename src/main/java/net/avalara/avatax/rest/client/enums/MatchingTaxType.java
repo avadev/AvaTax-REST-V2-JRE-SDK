@@ -23,82 +23,82 @@ public enum MatchingTaxType {
     /** 
      * Match medical excise type
      */
-    Excise = 5,
+    Excise(5),
 
     /** 
      * Match Lodging tax type
      */
-    Lodging = 6,
+    Lodging(6),
 
     /** 
      * Match bottle tax type
      */
-    Bottle = 7,
+    Bottle(7),
 
     /** 
      * Match RentToOwn tax type
      */
-    RentToOwn = 8,
+    RentToOwn(8),
 
     /** 
      * Match all tax types
      */
-    All = 65,
+    All(65),
 
     /** 
      * Match both Sales and Use Tax only
      */
-    BothSalesAndUseTax = 66,
+    BothSalesAndUseTax(66),
 
     /** 
      * Match Consumer Use Tax only
      */
-    ConsumerUseTax = 67,
+    ConsumerUseTax(67),
 
     /** 
      * Match both Consumer Use and Seller's Use Tax types
      */
-    ConsumersUseAndSellersUseTax = 68,
+    ConsumersUseAndSellersUseTax(68),
 
     /** 
      * Match both Consumer Use and Sales Tax types
      */
-    ConsumerUseAndSalesTax = 69,
+    ConsumerUseAndSalesTax(69),
 
     /** 
      * Match Fee tax types only
      */
-    Fee = 70,
+    Fee(70),
 
     /** 
      * Match VAT Input Tax only
      */
-    VATInputTax = 73,
+    VATInputTax(73),
 
     /** 
      * Match VAT Nonrecoverable Input Tax only
      */
-    VATNonrecoverableInputTax = 78,
+    VATNonrecoverableInputTax(78),
 
     /** 
      * Match VAT Output Tax only
      */
-    VATOutputTax = 79,
+    VATOutputTax(79),
 
     /** 
      * Match Rental tax types only
      */
-    Rental = 82,
+    Rental(82),
 
     /** 
      * Match Sales Tax only
      */
-    SalesTax = 83,
+    SalesTax(83),
 
     /** 
      * Match Seller's Use Tax only
      */
-    UseTax = 85,
+    UseTax(85),
 
 }
     
