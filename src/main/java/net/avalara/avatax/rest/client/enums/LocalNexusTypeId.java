@@ -37,7 +37,7 @@ public enum LocalNexusTypeId {
      *  
      *  This value only takes effect if you set `hasLocalNexus` = true.
      */
-    All(2),
+    All(2)
 
     private int value;
 	private static Map map = new HashMap<>();

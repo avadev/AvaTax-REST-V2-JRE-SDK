@@ -33,7 +33,7 @@ public enum PointOfSaleFileType {
     /** 
      * File is in Extended Markup Language format
      */
-    Xml(2),
+    Xml(2)
 
     private int value;
 	private static Map map = new HashMap<>();

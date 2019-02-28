@@ -58,7 +58,7 @@ public enum FilingFrequencyId {
     /** 
      * File every week
      */
-    Weekly(8),
+    Weekly(8)
 
     private int value;
 	private static Map map = new HashMap<>();

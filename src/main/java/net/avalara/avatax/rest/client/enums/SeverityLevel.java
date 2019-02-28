@@ -38,7 +38,7 @@ public enum SeverityLevel {
     /** 
      * Unexpected exceptions occurred, operation failed
      */
-    Exception(3),
+    Exception(3)
 
     private int value;
 	private static Map map = new HashMap<>();

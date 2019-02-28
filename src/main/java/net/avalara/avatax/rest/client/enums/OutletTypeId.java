@@ -40,7 +40,7 @@ public enum OutletTypeId {
     /** 
      * File a single return, but you must have a line item for each place of business.
      */
-    Consolidated(3),
+    Consolidated(3)
 
     private int value;
 	private static Map map = new HashMap<>();

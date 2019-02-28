@@ -78,7 +78,7 @@ public enum ResolutionQuality {
     /** 
      * Pulled from a static list of geocodes for specific jurisdictions
      */
-    Constant(11),
+    Constant(11)
 
     private int value;
 	private static Map map = new HashMap<>();

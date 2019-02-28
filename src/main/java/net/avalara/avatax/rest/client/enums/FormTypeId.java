@@ -68,7 +68,7 @@ public enum FormTypeId {
     /** 
      * Denotes the form type is Prepayment Allowance
      */
-    PrepaymentAllowed(9),
+    PrepaymentAllowed(9)
 
     private int value;
 	private static Map map = new HashMap<>();

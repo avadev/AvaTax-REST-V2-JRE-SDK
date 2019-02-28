@@ -64,7 +64,7 @@ public enum TaxRuleTypeId {
     /** 
      * Reserved for Avalara internal usage.
      */
-    NexusRule(5),
+    NexusRule(5)
 
     private int value;
 	private static Map map = new HashMap<>();

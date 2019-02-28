@@ -33,7 +33,7 @@ public enum WorksheetTypeId {
     /** 
      * Represents a test filing
      */
-    Test(2),
+    Test(2)
 
     private int value;
 	private static Map map = new HashMap<>();

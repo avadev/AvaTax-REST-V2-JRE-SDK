@@ -163,7 +163,7 @@ public enum ServiceTypeId {
     /** 
      * Send Sales Rate file service
      */
-    SendSalesRateFile(28),
+    SendSalesRateFile(28)
 
     private int value;
 	private static Map map = new HashMap<>();

@@ -38,7 +38,7 @@ public enum RefundType {
     /** 
      * Refund a percentage of the value of this transaction.
      */
-    Percentage(3),
+    Percentage(3)
 
     private int value;
 	private static Map map = new HashMap<>();

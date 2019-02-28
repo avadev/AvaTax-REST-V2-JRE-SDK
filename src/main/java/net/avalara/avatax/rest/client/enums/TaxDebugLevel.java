@@ -28,7 +28,7 @@ public enum TaxDebugLevel {
     /** 
      * User requests additional diagnostic information when creating a tax transaction
      */
-    Diagnostic(1),
+    Diagnostic(1)
 
     private int value;
 	private static Map map = new HashMap<>();

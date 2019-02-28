@@ -38,7 +38,7 @@ public enum CompanyAccessLevel {
     /** 
      * Permission to access all companies in all accounts. Reserved for system administration tasks.
      */
-    AllCompanies(3),
+    AllCompanies(3)
 
     private int value;
 	private static Map map = new HashMap<>();

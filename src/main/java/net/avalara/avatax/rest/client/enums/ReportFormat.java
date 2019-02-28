@@ -28,7 +28,7 @@ public enum ReportFormat {
     /** 
      * The Extensible Markup Language file format
      */
-    XML(1),
+    XML(1)
 
     private int value;
 	private static Map map = new HashMap<>();

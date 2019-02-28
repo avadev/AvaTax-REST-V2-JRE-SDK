@@ -38,7 +38,7 @@ public enum ExemptCertStatusId {
     /** 
      * Revoked certificate
      */
-    Revoked(3),
+    Revoked(3)
 
     private int value;
 	private static Map map = new HashMap<>();

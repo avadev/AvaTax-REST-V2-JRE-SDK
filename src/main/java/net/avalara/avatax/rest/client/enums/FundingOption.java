@@ -28,7 +28,7 @@ public enum FundingOption {
     /** 
      * Wire
      */
-    Wire(2),
+    Wire(2)
 
     private int value;
 	private static Map map = new HashMap<>();

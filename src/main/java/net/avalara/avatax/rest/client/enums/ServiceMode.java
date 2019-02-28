@@ -33,7 +33,7 @@ public enum ServiceMode {
     /** 
      * Remote server only
      */
-    Remote(2),
+    Remote(2)
 
     private int value;
 	private static Map map = new HashMap<>();

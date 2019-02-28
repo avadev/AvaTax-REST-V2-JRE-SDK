@@ -35,7 +35,7 @@ public enum CertCaptureProvisionStatus {
     /** 
      * 
      */
-    NotProvisioned(2),
+    NotProvisioned(2)
 
     private int value;
 	private static Map map = new HashMap<>();

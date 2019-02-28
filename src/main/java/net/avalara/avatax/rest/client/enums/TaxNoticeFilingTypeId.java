@@ -68,7 +68,7 @@ public enum TaxNoticeFilingTypeId {
     /** 
      * Denotes a signature ready return
      */
-    SignatureReady(10),
+    SignatureReady(10)
 
     private int value;
 	private static Map map = new HashMap<>();

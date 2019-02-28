@@ -111,7 +111,7 @@ public enum DocumentStatus {
      * DEPRECATED - Represents "a document in any status" when searching. Please search using the 
      *  [Filtering in REST](/avatax/filtering-in-rest/) documentation.
      */
-    Any(-1),
+    Any(-1)
 
     private int value;
 	private static Map map = new HashMap<>();

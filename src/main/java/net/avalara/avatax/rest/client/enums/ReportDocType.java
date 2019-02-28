@@ -28,7 +28,7 @@ public enum ReportDocType {
     /** 
      * Output all Sales tax transactions in the report
      */
-    Sales(83),
+    Sales(83)
 
     private int value;
 	private static Map map = new HashMap<>();

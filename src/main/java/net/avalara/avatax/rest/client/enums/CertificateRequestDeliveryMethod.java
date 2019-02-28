@@ -36,7 +36,7 @@ public enum CertificateRequestDeliveryMethod {
      * The request will be processed and turned into a web link (URL) which the user can click on to visit the CertExpress site and immediately
      *  begin entering data about their certificates.
      */
-    Download(3),
+    Download(3)
 
     private int value;
 	private static Map map = new HashMap<>();

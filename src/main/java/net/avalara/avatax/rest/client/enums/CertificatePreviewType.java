@@ -28,7 +28,7 @@ public enum CertificatePreviewType {
     /** 
      * Download a single page of the certificate in JPG format
      */
-    Jpeg(2),
+    Jpeg(2)
 
     private int value;
 	private static Map map = new HashMap<>();

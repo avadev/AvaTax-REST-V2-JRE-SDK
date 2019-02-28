@@ -53,7 +53,7 @@ public enum ErrorTargetCode {
     /** 
      * The customer's account setup does not permit certain actions
      */
-    CustomerAccountSetup(12),
+    CustomerAccountSetup(12)
 
     private int value;
 	private static Map map = new HashMap<>();

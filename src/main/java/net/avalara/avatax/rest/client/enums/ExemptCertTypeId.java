@@ -28,7 +28,7 @@ public enum ExemptCertTypeId {
     /** 
      * Single use
      */
-    SingleUse(1),
+    SingleUse(1)
 
     private int value;
 	private static Map map = new HashMap<>();

@@ -33,7 +33,7 @@ public enum ExemptCertReviewStatusId {
     /** 
      * Certificate was rejected
      */
-    Rejected(2),
+    Rejected(2)
 
     private int value;
 	private static Map map = new HashMap<>();

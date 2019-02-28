@@ -53,7 +53,7 @@ public enum FilingTypeId {
     /** 
      * Denotes a return which is filed online but paid by check.
      */
-    EfileCheck(6),
+    EfileCheck(6)
 
     private int value;
 	private static Map map = new HashMap<>();

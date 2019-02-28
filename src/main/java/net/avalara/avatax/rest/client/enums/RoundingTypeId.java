@@ -38,7 +38,7 @@ public enum RoundingTypeId {
     /** 
      * Always round down
      */
-    Down(3),
+    Down(3)
 
     private int value;
 	private static Map map = new HashMap<>();

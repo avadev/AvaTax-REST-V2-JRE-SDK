@@ -29,7 +29,7 @@ public enum CertExpressInvitationStatus {
     /** 
      * Indicates that the CertExpress invitation has been completed and is ready to use.
      */
-    Ready(1),
+    Ready(1)
 
     private int value;
 	private static Map map = new HashMap<>();

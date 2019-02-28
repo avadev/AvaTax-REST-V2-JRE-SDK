@@ -28,7 +28,7 @@ public enum PointOfSalePartnerId {
     /** 
      * 
      */
-    AX7(2),
+    AX7(2)
 
     private int value;
 	private static Map map = new HashMap<>();

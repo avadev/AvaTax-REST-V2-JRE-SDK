@@ -33,7 +33,7 @@ public enum Sourcing {
     /** 
      * Origin
      */
-    Origin(79),
+    Origin(79)
 
     private int value;
 	private static Map map = new HashMap<>();

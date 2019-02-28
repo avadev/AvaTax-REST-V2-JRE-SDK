@@ -1378,7 +1378,7 @@ public enum ErrorCodeId {
     /** 
      * 
      */
-    SubscriptionRequiredForParameter(2104),
+    SubscriptionRequiredForParameter(2104)
 
     private int value;
 	private static Map map = new HashMap<>();

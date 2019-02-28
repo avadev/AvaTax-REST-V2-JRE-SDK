@@ -33,7 +33,7 @@ public enum PasswordStatusId {
     /** 
      * UserMustChange
      */
-    UserMustChange(2),
+    UserMustChange(2)
 
     private int value;
 	private static Map map = new HashMap<>();

@@ -38,7 +38,7 @@ public enum PaymentType {
     /** 
      * The payment is a prior CSP fee
      */
-    PriorCspFee(3),
+    PriorCspFee(3)
 
     private int value;
 	private static Map map = new HashMap<>();

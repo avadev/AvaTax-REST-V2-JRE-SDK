@@ -36,7 +36,7 @@ public enum AddressTypeId {
      *  `SellerRemitsTax` or `MarketplaceRemitsTax` to indicate which business entity is responsible
      *  for collecting and remitting tax for this location.
      */
-    Marketplace(3),
+    Marketplace(3)
 
     private int value;
 	private static Map map = new HashMap<>();

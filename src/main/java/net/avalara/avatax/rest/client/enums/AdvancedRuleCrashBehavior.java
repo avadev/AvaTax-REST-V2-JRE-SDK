@@ -28,7 +28,7 @@ public enum AdvancedRuleCrashBehavior {
     /** 
      * 
      */
-    ProceedWithOriginal(1),
+    ProceedWithOriginal(1)
 
     private int value;
 	private static Map map = new HashMap<>();

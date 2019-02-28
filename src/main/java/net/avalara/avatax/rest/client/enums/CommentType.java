@@ -28,7 +28,7 @@ public enum CommentType {
     /** 
      * Customer comments are those comments that both compliance and the customer can read
      */
-    Customer(2),
+    Customer(2)
 
     private int value;
 	private static Map map = new HashMap<>();

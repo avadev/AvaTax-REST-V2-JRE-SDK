@@ -38,7 +38,7 @@ public enum NoticePriorityId {
     /** 
      * Low
      */
-    Low(4),
+    Low(4)
 
     private int value;
 	private static Map map = new HashMap<>();

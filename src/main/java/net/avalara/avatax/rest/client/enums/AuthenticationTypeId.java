@@ -38,7 +38,7 @@ public enum AuthenticationTypeId {
     /** 
      * This API call was authenticated by OpenID Bearer Token.
      */
-    OpenIdBearerToken(3),
+    OpenIdBearerToken(3)
 
     private int value;
 	private static Map map = new HashMap<>();

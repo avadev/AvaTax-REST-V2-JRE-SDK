@@ -28,7 +28,7 @@ public enum TextCase {
     /** 
      * Mixed Case
      */
-    Mixed(1),
+    Mixed(1)
 
     private int value;
 	private static Map map = new HashMap<>();
