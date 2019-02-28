@@ -33,7 +33,7 @@ public enum ApiCallStatus {
     /** 
      * Any other api call status
      */
-    Any(-1)
+    Any(-1);
 
     private int value;
 	private static Map map = new HashMap<>();

@@ -52,7 +52,7 @@ public enum CompanyFilingStatus {
     /** 
      * This company has not been configured for compliance
      */
-    NotConfiguredForCompliance(5)
+    NotConfiguredForCompliance(5);
 
     private int value;
 	private static Map map = new HashMap<>();

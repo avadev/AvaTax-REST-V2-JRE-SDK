@@ -28,7 +28,7 @@ public enum RoundingLevelId {
     /** 
      * Round tax at the document level
      */
-    Document(1)
+    Document(1);
 
     private int value;
 	private static Map map = new HashMap<>();

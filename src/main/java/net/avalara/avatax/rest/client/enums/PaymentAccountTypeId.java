@@ -38,7 +38,7 @@ public enum PaymentAccountTypeId {
     /** 
      * 
      */
-    AccountsPayable(3)
+    AccountsPayable(3);
 
     private int value;
 	private static Map map = new HashMap<>();

@@ -38,7 +38,7 @@ public enum NotificationSeverityLevel {
     /** 
      * A completed notification
      */
-    Complete(-1)
+    Complete(-1);
 
     private int value;
 	private static Map map = new HashMap<>();

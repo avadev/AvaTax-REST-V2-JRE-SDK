@@ -33,7 +33,7 @@ public enum AdjustmentPeriodTypeId {
     /** 
      * 
      */
-    NextPeriod(2)
+    NextPeriod(2);
 
     private int value;
 	private static Map map = new HashMap<>();

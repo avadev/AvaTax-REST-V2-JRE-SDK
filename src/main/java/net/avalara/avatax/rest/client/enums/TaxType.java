@@ -83,7 +83,7 @@ public enum TaxType {
     /** 
      * Use tax
      */
-    Use(85)
+    Use(85);
 
     private int value;
 	private static Map map = new HashMap<>();

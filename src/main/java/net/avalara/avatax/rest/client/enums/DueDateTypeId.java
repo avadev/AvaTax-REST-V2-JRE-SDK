@@ -33,7 +33,7 @@ public enum DueDateTypeId {
     /** 
      * Denotes form is due by second to last day of the month
      */
-    BySecondLastDay(2)
+    BySecondLastDay(2);
 
     private int value;
 	private static Map map = new HashMap<>();

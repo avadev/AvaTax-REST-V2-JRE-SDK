@@ -100,7 +100,7 @@ public enum MatchingTaxType {
     /** 
      * Match Seller's Use Tax only
      */
-    UseTax(85)
+    UseTax(85);
 
     private int value;
 	private static Map map = new HashMap<>();

@@ -39,7 +39,7 @@ public enum ReportDateFilter {
     /** 
      * The date when the transaction is being taxed
      */
-    TaxDate(84)
+    TaxDate(84);
 
     private int value;
 	private static Map map = new HashMap<>();

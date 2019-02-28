@@ -28,7 +28,7 @@ public enum AccrualType {
     /** 
      * An Accrual filing indicates taxes that are accrued, intended to be filed on a future tax return. For example, if you file annually, you will have eleven months of Accrual returns and one Filing return.
      */
-    Accrual(2)
+    Accrual(2);
 
     private int value;
 	private static Map map = new HashMap<>();

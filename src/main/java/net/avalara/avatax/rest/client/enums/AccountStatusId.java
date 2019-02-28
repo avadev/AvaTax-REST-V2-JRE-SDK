@@ -41,7 +41,7 @@ public enum AccountStatusId {
      *  An account is considered new until the account administrator has reviewed and accepted 
      *  [Avalara's terms and conditions](https://www.avalara.com/us/en/legal/terms.html).
      */
-    New(3)
+    New(3);
 
     private int value;
 	private static Map map = new HashMap<>();

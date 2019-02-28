@@ -33,7 +33,7 @@ public enum FilingOptionTypeId {
     /** 
      * Denotes the form is being filed via efile.
      */
-    MandatoryEfile(2)
+    MandatoryEfile(2);
 
     private int value;
 	private static Map map = new HashMap<>();

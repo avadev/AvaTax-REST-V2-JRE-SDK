@@ -64,7 +64,7 @@ public enum TaxOverrideType {
     /** 
      * Derive the taxable amount from the tax amount
      */
-    DeriveTaxable(5)
+    DeriveTaxable(5);
 
     private int value;
 	private static Map map = new HashMap<>();

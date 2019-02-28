@@ -65,7 +65,7 @@ public enum AddressCategoryId {
     /** 
      * Address refers to the mailing address of your company which is not a physical location.
      */
-    NonPhysical(8)
+    NonPhysical(8);
 
     private int value;
 	private static Map map = new HashMap<>();

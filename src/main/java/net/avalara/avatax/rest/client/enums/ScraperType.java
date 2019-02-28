@@ -28,7 +28,7 @@ public enum ScraperType {
     /** 
      * Indicates that it is a Customer DOR Data type
      */
-    CustomerDorData(2)
+    CustomerDorData(2);
 
     private int value;
 	private static Map map = new HashMap<>();

@@ -28,7 +28,7 @@ public enum AdvancedRuleScriptType {
     /** 
      * 
      */
-    ResponseRule(1)
+    ResponseRule(1);
 
     private int value;
 	private static Map map = new HashMap<>();

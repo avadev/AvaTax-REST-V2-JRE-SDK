@@ -38,7 +38,7 @@ public enum TaxDependencyLevelId {
     /** 
      * Address
      */
-    Address(3)
+    Address(3);
 
     private int value;
 	private static Map map = new HashMap<>();

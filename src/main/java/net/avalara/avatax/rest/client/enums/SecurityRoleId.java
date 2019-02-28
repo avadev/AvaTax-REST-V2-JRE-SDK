@@ -133,7 +133,7 @@ public enum SecurityRoleId {
     /** 
      * SSTAdmin
      */
-    SSTAdmin(22)
+    SSTAdmin(22);
 
     private int value;
 	private static Map map = new HashMap<>();

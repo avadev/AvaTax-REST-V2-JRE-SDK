@@ -43,7 +43,7 @@ public enum JurisTypeId {
     /** 
      * Country
      */
-    CNT(5)
+    CNT(5);
 
     private int value;
 	private static Map map = new HashMap<>();

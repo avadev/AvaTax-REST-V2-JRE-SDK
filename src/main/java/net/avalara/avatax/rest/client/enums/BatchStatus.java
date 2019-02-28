@@ -63,7 +63,7 @@ public enum BatchStatus {
     /** 
      * Batch is currently being processed.
      */
-    Processing(8)
+    Processing(8);
 
     private int value;
 	private static Map map = new HashMap<>();

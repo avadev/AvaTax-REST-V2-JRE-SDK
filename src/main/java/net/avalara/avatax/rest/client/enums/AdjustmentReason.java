@@ -68,7 +68,7 @@ public enum AdjustmentReason {
     /** 
      * Offline
      */
-    Offline(9)
+    Offline(9);
 
     private int value;
 	private static Map map = new HashMap<>();

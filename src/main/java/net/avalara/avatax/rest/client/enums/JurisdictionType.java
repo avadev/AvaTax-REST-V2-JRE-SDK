@@ -43,7 +43,7 @@ public enum JurisdictionType {
     /** 
      * Special Tax Jurisdiction
      */
-    Special(4)
+    Special(4);
 
     private int value;
 	private static Map map = new HashMap<>();

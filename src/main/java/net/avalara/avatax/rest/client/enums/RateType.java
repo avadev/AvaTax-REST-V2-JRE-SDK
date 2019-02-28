@@ -83,7 +83,7 @@ public enum RateType {
     /** 
      * 
      */
-    Zero(90)
+    Zero(90);
 
     private int value;
 	private static Map map = new HashMap<>();

@@ -43,7 +43,7 @@ public enum NoticeCustomerType {
     /** 
      * TrustFile
      */
-    TrustFile(5)
+    TrustFile(5);
 
     private int value;
 	private static Map map = new HashMap<>();

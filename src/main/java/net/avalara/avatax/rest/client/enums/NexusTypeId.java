@@ -45,7 +45,7 @@ public enum NexusTypeId {
      * Indicates the entity is registered as a Non-Volunteer in an SST state.
      *  Only your SST administrator may set this option.
      */
-    SSTNonVolunteer(4)
+    SSTNonVolunteer(4);
 
     private int value;
 	private static Map map = new HashMap<>();

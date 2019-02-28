@@ -63,7 +63,7 @@ public enum FilingRequestStatus {
     /** 
      * This indicates that compliance rejected the request.
      */
-    RequestDenied(9)
+    RequestDenied(9);
 
     private int value;
 	private static Map map = new HashMap<>();

@@ -150,7 +150,7 @@ public enum DocumentType {
      *  This value is used when querying for documents. You can specify the type `Any` in some cases to permit the
      *  system to find any document matching other criteria.
      */
-    Any(-1)
+    Any(-1);
 
     private int value;
 	private static Map map = new HashMap<>();

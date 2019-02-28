@@ -44,7 +44,7 @@ public enum VoidReasonCode {
     /** 
      * AdjustTax operation has been cancelled. Adjustment will be reversed.
      */
-    AdjustmentCancelled(4)
+    AdjustmentCancelled(4);
 
     private int value;
 	private static Map map = new HashMap<>();

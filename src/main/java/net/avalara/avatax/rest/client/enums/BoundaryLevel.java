@@ -34,7 +34,7 @@ public enum BoundaryLevel {
     /** 
      * 5-digit zip precision
      */
-    Zip5(2)
+    Zip5(2);
 
     private int value;
 	private static Map map = new HashMap<>();
