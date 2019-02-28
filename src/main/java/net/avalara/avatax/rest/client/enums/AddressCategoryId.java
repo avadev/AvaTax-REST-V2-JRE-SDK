@@ -68,30 +68,24 @@ public enum AddressCategoryId {
      */
     NonPhysical(8),
 
-    /**
-     * Integer value for AddressCategoryId
-     */
-    public final int Value;
-
-    private AddressCategoryId(int value) {
-		Value = value;
-    }
+    private int value;
+	private static Map map = new HashMap<>();
 	
-	/**
-	 * Map AddressCategoryId to AddressCategoryId integer ID.
-	 */
-	 private static final Map<Integer, AddressCategoryId> _map = new HashMap<Integer, AddressCategoryId>();
-	 static
-	 {
-		 for (AddressCategoryId modelName : AddressCategoryId.values()
-			 _map.put(modelName.Value, modelName);
-	 }
-	 
-	 /**
-	  * Get AddressCategoryId from value 
-	  */
-	 public static AddressCategoryId from(int value)
-	 {
-		 return _map.get(value);
-	 }
+	private AddressCategoryId(int value) {
+		this.value = value;
+	}
+	
+	static {
+		for (AddressCategoryId enumName : AddressCategoryId.values()) {
+			map.put(enumName.value, enumName);
+		}
+	}
+	
+	public static AddressCategoryId valueOf(int intValue) {
+		return (AddressCategoryId) map.get(intValue);
+	}
+	
+	public int getValue() {
+		return value;
+	}
 }

@@ -153,30 +153,24 @@ public enum DocumentType {
      */
     Any(-1),
 
-    /**
-     * Integer value for DocumentType
-     */
-    public final int Value;
-
-    private DocumentType(int value) {
-		Value = value;
-    }
+    private int value;
+	private static Map map = new HashMap<>();
 	
-	/**
-	 * Map DocumentType to DocumentType integer ID.
-	 */
-	 private static final Map<Integer, DocumentType> _map = new HashMap<Integer, DocumentType>();
-	 static
-	 {
-		 for (DocumentType modelName : DocumentType.values()
-			 _map.put(modelName.Value, modelName);
-	 }
-	 
-	 /**
-	  * Get DocumentType from value 
-	  */
-	 public static DocumentType from(int value)
-	 {
-		 return _map.get(value);
-	 }
+	private DocumentType(int value) {
+		this.value = value;
+	}
+	
+	static {
+		for (DocumentType enumName : DocumentType.values()) {
+			map.put(enumName.value, enumName);
+		}
+	}
+	
+	public static DocumentType valueOf(int intValue) {
+		return (DocumentType) map.get(intValue);
+	}
+	
+	public int getValue() {
+		return value;
+	}
 }

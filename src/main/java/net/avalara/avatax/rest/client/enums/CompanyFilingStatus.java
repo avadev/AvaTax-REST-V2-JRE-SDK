@@ -55,30 +55,24 @@ public enum CompanyFilingStatus {
      */
     NotConfiguredForCompliance(5),
 
-    /**
-     * Integer value for CompanyFilingStatus
-     */
-    public final int Value;
-
-    private CompanyFilingStatus(int value) {
-		Value = value;
-    }
+    private int value;
+	private static Map map = new HashMap<>();
 	
-	/**
-	 * Map CompanyFilingStatus to CompanyFilingStatus integer ID.
-	 */
-	 private static final Map<Integer, CompanyFilingStatus> _map = new HashMap<Integer, CompanyFilingStatus>();
-	 static
-	 {
-		 for (CompanyFilingStatus modelName : CompanyFilingStatus.values()
-			 _map.put(modelName.Value, modelName);
-	 }
-	 
-	 /**
-	  * Get CompanyFilingStatus from value 
-	  */
-	 public static CompanyFilingStatus from(int value)
-	 {
-		 return _map.get(value);
-	 }
+	private CompanyFilingStatus(int value) {
+		this.value = value;
+	}
+	
+	static {
+		for (CompanyFilingStatus enumName : CompanyFilingStatus.values()) {
+			map.put(enumName.value, enumName);
+		}
+	}
+	
+	public static CompanyFilingStatus valueOf(int intValue) {
+		return (CompanyFilingStatus) map.get(intValue);
+	}
+	
+	public int getValue() {
+		return value;
+	}
 }

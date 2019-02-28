@@ -166,30 +166,24 @@ public enum ServiceTypeId {
      */
     SendSalesRateFile(28),
 
-    /**
-     * Integer value for ServiceTypeId
-     */
-    public final int Value;
-
-    private ServiceTypeId(int value) {
-		Value = value;
-    }
+    private int value;
+	private static Map map = new HashMap<>();
 	
-	/**
-	 * Map ServiceTypeId to ServiceTypeId integer ID.
-	 */
-	 private static final Map<Integer, ServiceTypeId> _map = new HashMap<Integer, ServiceTypeId>();
-	 static
-	 {
-		 for (ServiceTypeId modelName : ServiceTypeId.values()
-			 _map.put(modelName.Value, modelName);
-	 }
-	 
-	 /**
-	  * Get ServiceTypeId from value 
-	  */
-	 public static ServiceTypeId from(int value)
-	 {
-		 return _map.get(value);
-	 }
+	private ServiceTypeId(int value) {
+		this.value = value;
+	}
+	
+	static {
+		for (ServiceTypeId enumName : ServiceTypeId.values()) {
+			map.put(enumName.value, enumName);
+		}
+	}
+	
+	public static ServiceTypeId valueOf(int intValue) {
+		return (ServiceTypeId) map.get(intValue);
+	}
+	
+	public int getValue() {
+		return value;
+	}
 }

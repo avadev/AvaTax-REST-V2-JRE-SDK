@@ -66,30 +66,24 @@ public enum BatchStatus {
      */
     Processing(8),
 
-    /**
-     * Integer value for BatchStatus
-     */
-    public final int Value;
-
-    private BatchStatus(int value) {
-		Value = value;
-    }
+    private int value;
+	private static Map map = new HashMap<>();
 	
-	/**
-	 * Map BatchStatus to BatchStatus integer ID.
-	 */
-	 private static final Map<Integer, BatchStatus> _map = new HashMap<Integer, BatchStatus>();
-	 static
-	 {
-		 for (BatchStatus modelName : BatchStatus.values()
-			 _map.put(modelName.Value, modelName);
-	 }
-	 
-	 /**
-	  * Get BatchStatus from value 
-	  */
-	 public static BatchStatus from(int value)
-	 {
-		 return _map.get(value);
-	 }
+	private BatchStatus(int value) {
+		this.value = value;
+	}
+	
+	static {
+		for (BatchStatus enumName : BatchStatus.values()) {
+			map.put(enumName.value, enumName);
+		}
+	}
+	
+	public static BatchStatus valueOf(int intValue) {
+		return (BatchStatus) map.get(intValue);
+	}
+	
+	public int getValue() {
+		return value;
+	}
 }

@@ -47,30 +47,24 @@ public enum VoidReasonCode {
      */
     AdjustmentCancelled(4),
 
-    /**
-     * Integer value for VoidReasonCode
-     */
-    public final int Value;
-
-    private VoidReasonCode(int value) {
-		Value = value;
-    }
+    private int value;
+	private static Map map = new HashMap<>();
 	
-	/**
-	 * Map VoidReasonCode to VoidReasonCode integer ID.
-	 */
-	 private static final Map<Integer, VoidReasonCode> _map = new HashMap<Integer, VoidReasonCode>();
-	 static
-	 {
-		 for (VoidReasonCode modelName : VoidReasonCode.values()
-			 _map.put(modelName.Value, modelName);
-	 }
-	 
-	 /**
-	  * Get VoidReasonCode from value 
-	  */
-	 public static VoidReasonCode from(int value)
-	 {
-		 return _map.get(value);
-	 }
+	private VoidReasonCode(int value) {
+		this.value = value;
+	}
+	
+	static {
+		for (VoidReasonCode enumName : VoidReasonCode.values()) {
+			map.put(enumName.value, enumName);
+		}
+	}
+	
+	public static VoidReasonCode valueOf(int intValue) {
+		return (VoidReasonCode) map.get(intValue);
+	}
+	
+	public int getValue() {
+		return value;
+	}
 }

@@ -81,30 +81,24 @@ public enum ResolutionQuality {
      */
     Constant(11),
 
-    /**
-     * Integer value for ResolutionQuality
-     */
-    public final int Value;
-
-    private ResolutionQuality(int value) {
-		Value = value;
-    }
+    private int value;
+	private static Map map = new HashMap<>();
 	
-	/**
-	 * Map ResolutionQuality to ResolutionQuality integer ID.
-	 */
-	 private static final Map<Integer, ResolutionQuality> _map = new HashMap<Integer, ResolutionQuality>();
-	 static
-	 {
-		 for (ResolutionQuality modelName : ResolutionQuality.values()
-			 _map.put(modelName.Value, modelName);
-	 }
-	 
-	 /**
-	  * Get ResolutionQuality from value 
-	  */
-	 public static ResolutionQuality from(int value)
-	 {
-		 return _map.get(value);
-	 }
+	private ResolutionQuality(int value) {
+		this.value = value;
+	}
+	
+	static {
+		for (ResolutionQuality enumName : ResolutionQuality.values()) {
+			map.put(enumName.value, enumName);
+		}
+	}
+	
+	public static ResolutionQuality valueOf(int intValue) {
+		return (ResolutionQuality) map.get(intValue);
+	}
+	
+	public int getValue() {
+		return value;
+	}
 }

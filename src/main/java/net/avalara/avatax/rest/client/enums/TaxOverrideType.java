@@ -67,30 +67,24 @@ public enum TaxOverrideType {
      */
     DeriveTaxable(5),
 
-    /**
-     * Integer value for TaxOverrideType
-     */
-    public final int Value;
-
-    private TaxOverrideType(int value) {
-		Value = value;
-    }
+    private int value;
+	private static Map map = new HashMap<>();
 	
-	/**
-	 * Map TaxOverrideType to TaxOverrideType integer ID.
-	 */
-	 private static final Map<Integer, TaxOverrideType> _map = new HashMap<Integer, TaxOverrideType>();
-	 static
-	 {
-		 for (TaxOverrideType modelName : TaxOverrideType.values()
-			 _map.put(modelName.Value, modelName);
-	 }
-	 
-	 /**
-	  * Get TaxOverrideType from value 
-	  */
-	 public static TaxOverrideType from(int value)
-	 {
-		 return _map.get(value);
-	 }
+	private TaxOverrideType(int value) {
+		this.value = value;
+	}
+	
+	static {
+		for (TaxOverrideType enumName : TaxOverrideType.values()) {
+			map.put(enumName.value, enumName);
+		}
+	}
+	
+	public static TaxOverrideType valueOf(int intValue) {
+		return (TaxOverrideType) map.get(intValue);
+	}
+	
+	public int getValue() {
+		return value;
+	}
 }

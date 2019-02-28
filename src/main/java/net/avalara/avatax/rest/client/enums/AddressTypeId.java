@@ -39,30 +39,24 @@ public enum AddressTypeId {
      */
     Marketplace(3),
 
-    /**
-     * Integer value for AddressTypeId
-     */
-    public final int Value;
-
-    private AddressTypeId(int value) {
-		Value = value;
-    }
+    private int value;
+	private static Map map = new HashMap<>();
 	
-	/**
-	 * Map AddressTypeId to AddressTypeId integer ID.
-	 */
-	 private static final Map<Integer, AddressTypeId> _map = new HashMap<Integer, AddressTypeId>();
-	 static
-	 {
-		 for (AddressTypeId modelName : AddressTypeId.values()
-			 _map.put(modelName.Value, modelName);
-	 }
-	 
-	 /**
-	  * Get AddressTypeId from value 
-	  */
-	 public static AddressTypeId from(int value)
-	 {
-		 return _map.get(value);
-	 }
+	private AddressTypeId(int value) {
+		this.value = value;
+	}
+	
+	static {
+		for (AddressTypeId enumName : AddressTypeId.values()) {
+			map.put(enumName.value, enumName);
+		}
+	}
+	
+	public static AddressTypeId valueOf(int intValue) {
+		return (AddressTypeId) map.get(intValue);
+	}
+	
+	public int getValue() {
+		return value;
+	}
 }

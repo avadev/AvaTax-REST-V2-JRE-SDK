@@ -61,30 +61,24 @@ public enum FilingFrequencyId {
      */
     Weekly(8),
 
-    /**
-     * Integer value for FilingFrequencyId
-     */
-    public final int Value;
-
-    private FilingFrequencyId(int value) {
-		Value = value;
-    }
+    private int value;
+	private static Map map = new HashMap<>();
 	
-	/**
-	 * Map FilingFrequencyId to FilingFrequencyId integer ID.
-	 */
-	 private static final Map<Integer, FilingFrequencyId> _map = new HashMap<Integer, FilingFrequencyId>();
-	 static
-	 {
-		 for (FilingFrequencyId modelName : FilingFrequencyId.values()
-			 _map.put(modelName.Value, modelName);
-	 }
-	 
-	 /**
-	  * Get FilingFrequencyId from value 
-	  */
-	 public static FilingFrequencyId from(int value)
-	 {
-		 return _map.get(value);
-	 }
+	private FilingFrequencyId(int value) {
+		this.value = value;
+	}
+	
+	static {
+		for (FilingFrequencyId enumName : FilingFrequencyId.values()) {
+			map.put(enumName.value, enumName);
+		}
+	}
+	
+	public static FilingFrequencyId valueOf(int intValue) {
+		return (FilingFrequencyId) map.get(intValue);
+	}
+	
+	public int getValue() {
+		return value;
+	}
 }

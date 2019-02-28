@@ -48,30 +48,24 @@ public enum NexusTypeId {
      */
     SSTNonVolunteer(4),
 
-    /**
-     * Integer value for NexusTypeId
-     */
-    public final int Value;
-
-    private NexusTypeId(int value) {
-		Value = value;
-    }
+    private int value;
+	private static Map map = new HashMap<>();
 	
-	/**
-	 * Map NexusTypeId to NexusTypeId integer ID.
-	 */
-	 private static final Map<Integer, NexusTypeId> _map = new HashMap<Integer, NexusTypeId>();
-	 static
-	 {
-		 for (NexusTypeId modelName : NexusTypeId.values()
-			 _map.put(modelName.Value, modelName);
-	 }
-	 
-	 /**
-	  * Get NexusTypeId from value 
-	  */
-	 public static NexusTypeId from(int value)
-	 {
-		 return _map.get(value);
-	 }
+	private NexusTypeId(int value) {
+		this.value = value;
+	}
+	
+	static {
+		for (NexusTypeId enumName : NexusTypeId.values()) {
+			map.put(enumName.value, enumName);
+		}
+	}
+	
+	public static NexusTypeId valueOf(int intValue) {
+		return (NexusTypeId) map.get(intValue);
+	}
+	
+	public int getValue() {
+		return value;
+	}
 }

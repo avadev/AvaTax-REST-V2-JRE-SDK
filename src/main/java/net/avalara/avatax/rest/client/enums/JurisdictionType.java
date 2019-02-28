@@ -46,30 +46,24 @@ public enum JurisdictionType {
      */
     Special(4),
 
-    /**
-     * Integer value for JurisdictionType
-     */
-    public final int Value;
-
-    private JurisdictionType(int value) {
-		Value = value;
-    }
+    private int value;
+	private static Map map = new HashMap<>();
 	
-	/**
-	 * Map JurisdictionType to JurisdictionType integer ID.
-	 */
-	 private static final Map<Integer, JurisdictionType> _map = new HashMap<Integer, JurisdictionType>();
-	 static
-	 {
-		 for (JurisdictionType modelName : JurisdictionType.values()
-			 _map.put(modelName.Value, modelName);
-	 }
-	 
-	 /**
-	  * Get JurisdictionType from value 
-	  */
-	 public static JurisdictionType from(int value)
-	 {
-		 return _map.get(value);
-	 }
+	private JurisdictionType(int value) {
+		this.value = value;
+	}
+	
+	static {
+		for (JurisdictionType enumName : JurisdictionType.values()) {
+			map.put(enumName.value, enumName);
+		}
+	}
+	
+	public static JurisdictionType valueOf(int intValue) {
+		return (JurisdictionType) map.get(intValue);
+	}
+	
+	public int getValue() {
+		return value;
+	}
 }

@@ -41,30 +41,24 @@ public enum RefundType {
      */
     Percentage(3),
 
-    /**
-     * Integer value for RefundType
-     */
-    public final int Value;
-
-    private RefundType(int value) {
-		Value = value;
-    }
+    private int value;
+	private static Map map = new HashMap<>();
 	
-	/**
-	 * Map RefundType to RefundType integer ID.
-	 */
-	 private static final Map<Integer, RefundType> _map = new HashMap<Integer, RefundType>();
-	 static
-	 {
-		 for (RefundType modelName : RefundType.values()
-			 _map.put(modelName.Value, modelName);
-	 }
-	 
-	 /**
-	  * Get RefundType from value 
-	  */
-	 public static RefundType from(int value)
-	 {
-		 return _map.get(value);
-	 }
+	private RefundType(int value) {
+		this.value = value;
+	}
+	
+	static {
+		for (RefundType enumName : RefundType.values()) {
+			map.put(enumName.value, enumName);
+		}
+	}
+	
+	public static RefundType valueOf(int intValue) {
+		return (RefundType) map.get(intValue);
+	}
+	
+	public int getValue() {
+		return value;
+	}
 }

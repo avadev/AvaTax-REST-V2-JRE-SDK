@@ -31,30 +31,24 @@ public enum CommentType {
      */
     Customer(2),
 
-    /**
-     * Integer value for CommentType
-     */
-    public final int Value;
-
-    private CommentType(int value) {
-		Value = value;
-    }
+    private int value;
+	private static Map map = new HashMap<>();
 	
-	/**
-	 * Map CommentType to CommentType integer ID.
-	 */
-	 private static final Map<Integer, CommentType> _map = new HashMap<Integer, CommentType>();
-	 static
-	 {
-		 for (CommentType modelName : CommentType.values()
-			 _map.put(modelName.Value, modelName);
-	 }
-	 
-	 /**
-	  * Get CommentType from value 
-	  */
-	 public static CommentType from(int value)
-	 {
-		 return _map.get(value);
-	 }
+	private CommentType(int value) {
+		this.value = value;
+	}
+	
+	static {
+		for (CommentType enumName : CommentType.values()) {
+			map.put(enumName.value, enumName);
+		}
+	}
+	
+	public static CommentType valueOf(int intValue) {
+		return (CommentType) map.get(intValue);
+	}
+	
+	public int getValue() {
+		return value;
+	}
 }

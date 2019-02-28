@@ -36,30 +36,24 @@ public enum DueDateTypeId {
      */
     BySecondLastDay(2),
 
-    /**
-     * Integer value for DueDateTypeId
-     */
-    public final int Value;
-
-    private DueDateTypeId(int value) {
-		Value = value;
-    }
+    private int value;
+	private static Map map = new HashMap<>();
 	
-	/**
-	 * Map DueDateTypeId to DueDateTypeId integer ID.
-	 */
-	 private static final Map<Integer, DueDateTypeId> _map = new HashMap<Integer, DueDateTypeId>();
-	 static
-	 {
-		 for (DueDateTypeId modelName : DueDateTypeId.values()
-			 _map.put(modelName.Value, modelName);
-	 }
-	 
-	 /**
-	  * Get DueDateTypeId from value 
-	  */
-	 public static DueDateTypeId from(int value)
-	 {
-		 return _map.get(value);
-	 }
+	private DueDateTypeId(int value) {
+		this.value = value;
+	}
+	
+	static {
+		for (DueDateTypeId enumName : DueDateTypeId.values()) {
+			map.put(enumName.value, enumName);
+		}
+	}
+	
+	public static DueDateTypeId valueOf(int intValue) {
+		return (DueDateTypeId) map.get(intValue);
+	}
+	
+	public int getValue() {
+		return value;
+	}
 }

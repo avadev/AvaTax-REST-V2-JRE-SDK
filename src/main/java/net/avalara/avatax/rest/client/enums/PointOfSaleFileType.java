@@ -36,30 +36,24 @@ public enum PointOfSaleFileType {
      */
     Xml(2),
 
-    /**
-     * Integer value for PointOfSaleFileType
-     */
-    public final int Value;
-
-    private PointOfSaleFileType(int value) {
-		Value = value;
-    }
+    private int value;
+	private static Map map = new HashMap<>();
 	
-	/**
-	 * Map PointOfSaleFileType to PointOfSaleFileType integer ID.
-	 */
-	 private static final Map<Integer, PointOfSaleFileType> _map = new HashMap<Integer, PointOfSaleFileType>();
-	 static
-	 {
-		 for (PointOfSaleFileType modelName : PointOfSaleFileType.values()
-			 _map.put(modelName.Value, modelName);
-	 }
-	 
-	 /**
-	  * Get PointOfSaleFileType from value 
-	  */
-	 public static PointOfSaleFileType from(int value)
-	 {
-		 return _map.get(value);
-	 }
+	private PointOfSaleFileType(int value) {
+		this.value = value;
+	}
+	
+	static {
+		for (PointOfSaleFileType enumName : PointOfSaleFileType.values()) {
+			map.put(enumName.value, enumName);
+		}
+	}
+	
+	public static PointOfSaleFileType valueOf(int intValue) {
+		return (PointOfSaleFileType) map.get(intValue);
+	}
+	
+	public int getValue() {
+		return value;
+	}
 }

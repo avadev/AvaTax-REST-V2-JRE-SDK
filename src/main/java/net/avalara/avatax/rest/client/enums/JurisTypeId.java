@@ -46,30 +46,24 @@ public enum JurisTypeId {
      */
     CNT(5),
 
-    /**
-     * Integer value for JurisTypeId
-     */
-    public final int Value;
-
-    private JurisTypeId(int value) {
-		Value = value;
-    }
+    private int value;
+	private static Map map = new HashMap<>();
 	
-	/**
-	 * Map JurisTypeId to JurisTypeId integer ID.
-	 */
-	 private static final Map<Integer, JurisTypeId> _map = new HashMap<Integer, JurisTypeId>();
-	 static
-	 {
-		 for (JurisTypeId modelName : JurisTypeId.values()
-			 _map.put(modelName.Value, modelName);
-	 }
-	 
-	 /**
-	  * Get JurisTypeId from value 
-	  */
-	 public static JurisTypeId from(int value)
-	 {
-		 return _map.get(value);
-	 }
+	private JurisTypeId(int value) {
+		this.value = value;
+	}
+	
+	static {
+		for (JurisTypeId enumName : JurisTypeId.values()) {
+			map.put(enumName.value, enumName);
+		}
+	}
+	
+	public static JurisTypeId valueOf(int intValue) {
+		return (JurisTypeId) map.get(intValue);
+	}
+	
+	public int getValue() {
+		return value;
+	}
 }

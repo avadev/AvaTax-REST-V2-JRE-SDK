@@ -31,30 +31,24 @@ public enum RoundingLevelId {
      */
     Document(1),
 
-    /**
-     * Integer value for RoundingLevelId
-     */
-    public final int Value;
-
-    private RoundingLevelId(int value) {
-		Value = value;
-    }
+    private int value;
+	private static Map map = new HashMap<>();
 	
-	/**
-	 * Map RoundingLevelId to RoundingLevelId integer ID.
-	 */
-	 private static final Map<Integer, RoundingLevelId> _map = new HashMap<Integer, RoundingLevelId>();
-	 static
-	 {
-		 for (RoundingLevelId modelName : RoundingLevelId.values()
-			 _map.put(modelName.Value, modelName);
-	 }
-	 
-	 /**
-	  * Get RoundingLevelId from value 
-	  */
-	 public static RoundingLevelId from(int value)
-	 {
-		 return _map.get(value);
-	 }
+	private RoundingLevelId(int value) {
+		this.value = value;
+	}
+	
+	static {
+		for (RoundingLevelId enumName : RoundingLevelId.values()) {
+			map.put(enumName.value, enumName);
+		}
+	}
+	
+	public static RoundingLevelId valueOf(int intValue) {
+		return (RoundingLevelId) map.get(intValue);
+	}
+	
+	public int getValue() {
+		return value;
+	}
 }

@@ -66,30 +66,24 @@ public enum FilingRequestStatus {
      */
     RequestDenied(9),
 
-    /**
-     * Integer value for FilingRequestStatus
-     */
-    public final int Value;
-
-    private FilingRequestStatus(int value) {
-		Value = value;
-    }
+    private int value;
+	private static Map map = new HashMap<>();
 	
-	/**
-	 * Map FilingRequestStatus to FilingRequestStatus integer ID.
-	 */
-	 private static final Map<Integer, FilingRequestStatus> _map = new HashMap<Integer, FilingRequestStatus>();
-	 static
-	 {
-		 for (FilingRequestStatus modelName : FilingRequestStatus.values()
-			 _map.put(modelName.Value, modelName);
-	 }
-	 
-	 /**
-	  * Get FilingRequestStatus from value 
-	  */
-	 public static FilingRequestStatus from(int value)
-	 {
-		 return _map.get(value);
-	 }
+	private FilingRequestStatus(int value) {
+		this.value = value;
+	}
+	
+	static {
+		for (FilingRequestStatus enumName : FilingRequestStatus.values()) {
+			map.put(enumName.value, enumName);
+		}
+	}
+	
+	public static FilingRequestStatus valueOf(int intValue) {
+		return (FilingRequestStatus) map.get(intValue);
+	}
+	
+	public int getValue() {
+		return value;
+	}
 }

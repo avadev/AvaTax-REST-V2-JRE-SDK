@@ -31,30 +31,24 @@ public enum AdvancedRuleScriptType {
      */
     ResponseRule(1),
 
-    /**
-     * Integer value for AdvancedRuleScriptType
-     */
-    public final int Value;
-
-    private AdvancedRuleScriptType(int value) {
-		Value = value;
-    }
+    private int value;
+	private static Map map = new HashMap<>();
 	
-	/**
-	 * Map AdvancedRuleScriptType to AdvancedRuleScriptType integer ID.
-	 */
-	 private static final Map<Integer, AdvancedRuleScriptType> _map = new HashMap<Integer, AdvancedRuleScriptType>();
-	 static
-	 {
-		 for (AdvancedRuleScriptType modelName : AdvancedRuleScriptType.values()
-			 _map.put(modelName.Value, modelName);
-	 }
-	 
-	 /**
-	  * Get AdvancedRuleScriptType from value 
-	  */
-	 public static AdvancedRuleScriptType from(int value)
-	 {
-		 return _map.get(value);
-	 }
+	private AdvancedRuleScriptType(int value) {
+		this.value = value;
+	}
+	
+	static {
+		for (AdvancedRuleScriptType enumName : AdvancedRuleScriptType.values()) {
+			map.put(enumName.value, enumName);
+		}
+	}
+	
+	public static AdvancedRuleScriptType valueOf(int intValue) {
+		return (AdvancedRuleScriptType) map.get(intValue);
+	}
+	
+	public int getValue() {
+		return value;
+	}
 }

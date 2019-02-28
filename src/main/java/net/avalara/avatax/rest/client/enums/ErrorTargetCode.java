@@ -56,30 +56,24 @@ public enum ErrorTargetCode {
      */
     CustomerAccountSetup(12),
 
-    /**
-     * Integer value for ErrorTargetCode
-     */
-    public final int Value;
-
-    private ErrorTargetCode(int value) {
-		Value = value;
-    }
+    private int value;
+	private static Map map = new HashMap<>();
 	
-	/**
-	 * Map ErrorTargetCode to ErrorTargetCode integer ID.
-	 */
-	 private static final Map<Integer, ErrorTargetCode> _map = new HashMap<Integer, ErrorTargetCode>();
-	 static
-	 {
-		 for (ErrorTargetCode modelName : ErrorTargetCode.values()
-			 _map.put(modelName.Value, modelName);
-	 }
-	 
-	 /**
-	  * Get ErrorTargetCode from value 
-	  */
-	 public static ErrorTargetCode from(int value)
-	 {
-		 return _map.get(value);
-	 }
+	private ErrorTargetCode(int value) {
+		this.value = value;
+	}
+	
+	static {
+		for (ErrorTargetCode enumName : ErrorTargetCode.values()) {
+			map.put(enumName.value, enumName);
+		}
+	}
+	
+	public static ErrorTargetCode valueOf(int intValue) {
+		return (ErrorTargetCode) map.get(intValue);
+	}
+	
+	public int getValue() {
+		return value;
+	}
 }

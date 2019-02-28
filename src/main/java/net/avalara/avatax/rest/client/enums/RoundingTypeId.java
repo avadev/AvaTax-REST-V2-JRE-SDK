@@ -41,30 +41,24 @@ public enum RoundingTypeId {
      */
     Down(3),
 
-    /**
-     * Integer value for RoundingTypeId
-     */
-    public final int Value;
-
-    private RoundingTypeId(int value) {
-		Value = value;
-    }
+    private int value;
+	private static Map map = new HashMap<>();
 	
-	/**
-	 * Map RoundingTypeId to RoundingTypeId integer ID.
-	 */
-	 private static final Map<Integer, RoundingTypeId> _map = new HashMap<Integer, RoundingTypeId>();
-	 static
-	 {
-		 for (RoundingTypeId modelName : RoundingTypeId.values()
-			 _map.put(modelName.Value, modelName);
-	 }
-	 
-	 /**
-	  * Get RoundingTypeId from value 
-	  */
-	 public static RoundingTypeId from(int value)
-	 {
-		 return _map.get(value);
-	 }
+	private RoundingTypeId(int value) {
+		this.value = value;
+	}
+	
+	static {
+		for (RoundingTypeId enumName : RoundingTypeId.values()) {
+			map.put(enumName.value, enumName);
+		}
+	}
+	
+	public static RoundingTypeId valueOf(int intValue) {
+		return (RoundingTypeId) map.get(intValue);
+	}
+	
+	public int getValue() {
+		return value;
+	}
 }

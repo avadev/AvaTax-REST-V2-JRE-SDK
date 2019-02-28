@@ -106,30 +106,24 @@ public enum FilingStatusId {
      */
     ApprovedToFileOnBehalf(16),
 
-    /**
-     * Integer value for FilingStatusId
-     */
-    public final int Value;
-
-    private FilingStatusId(int value) {
-		Value = value;
-    }
+    private int value;
+	private static Map map = new HashMap<>();
 	
-	/**
-	 * Map FilingStatusId to FilingStatusId integer ID.
-	 */
-	 private static final Map<Integer, FilingStatusId> _map = new HashMap<Integer, FilingStatusId>();
-	 static
-	 {
-		 for (FilingStatusId modelName : FilingStatusId.values()
-			 _map.put(modelName.Value, modelName);
-	 }
-	 
-	 /**
-	  * Get FilingStatusId from value 
-	  */
-	 public static FilingStatusId from(int value)
-	 {
-		 return _map.get(value);
-	 }
+	private FilingStatusId(int value) {
+		this.value = value;
+	}
+	
+	static {
+		for (FilingStatusId enumName : FilingStatusId.values()) {
+			map.put(enumName.value, enumName);
+		}
+	}
+	
+	public static FilingStatusId valueOf(int intValue) {
+		return (FilingStatusId) map.get(intValue);
+	}
+	
+	public int getValue() {
+		return value;
+	}
 }

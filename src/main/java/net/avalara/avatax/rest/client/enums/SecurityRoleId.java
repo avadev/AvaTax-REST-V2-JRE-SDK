@@ -136,30 +136,24 @@ public enum SecurityRoleId {
      */
     SSTAdmin(22),
 
-    /**
-     * Integer value for SecurityRoleId
-     */
-    public final int Value;
-
-    private SecurityRoleId(int value) {
-		Value = value;
-    }
+    private int value;
+	private static Map map = new HashMap<>();
 	
-	/**
-	 * Map SecurityRoleId to SecurityRoleId integer ID.
-	 */
-	 private static final Map<Integer, SecurityRoleId> _map = new HashMap<Integer, SecurityRoleId>();
-	 static
-	 {
-		 for (SecurityRoleId modelName : SecurityRoleId.values()
-			 _map.put(modelName.Value, modelName);
-	 }
-	 
-	 /**
-	  * Get SecurityRoleId from value 
-	  */
-	 public static SecurityRoleId from(int value)
-	 {
-		 return _map.get(value);
-	 }
+	private SecurityRoleId(int value) {
+		this.value = value;
+	}
+	
+	static {
+		for (SecurityRoleId enumName : SecurityRoleId.values()) {
+			map.put(enumName.value, enumName);
+		}
+	}
+	
+	public static SecurityRoleId valueOf(int intValue) {
+		return (SecurityRoleId) map.get(intValue);
+	}
+	
+	public int getValue() {
+		return value;
+	}
 }

@@ -40,30 +40,24 @@ public enum LocalNexusTypeId {
      */
     All(2),
 
-    /**
-     * Integer value for LocalNexusTypeId
-     */
-    public final int Value;
-
-    private LocalNexusTypeId(int value) {
-		Value = value;
-    }
+    private int value;
+	private static Map map = new HashMap<>();
 	
-	/**
-	 * Map LocalNexusTypeId to LocalNexusTypeId integer ID.
-	 */
-	 private static final Map<Integer, LocalNexusTypeId> _map = new HashMap<Integer, LocalNexusTypeId>();
-	 static
-	 {
-		 for (LocalNexusTypeId modelName : LocalNexusTypeId.values()
-			 _map.put(modelName.Value, modelName);
-	 }
-	 
-	 /**
-	  * Get LocalNexusTypeId from value 
-	  */
-	 public static LocalNexusTypeId from(int value)
-	 {
-		 return _map.get(value);
-	 }
+	private LocalNexusTypeId(int value) {
+		this.value = value;
+	}
+	
+	static {
+		for (LocalNexusTypeId enumName : LocalNexusTypeId.values()) {
+			map.put(enumName.value, enumName);
+		}
+	}
+	
+	public static LocalNexusTypeId valueOf(int intValue) {
+		return (LocalNexusTypeId) map.get(intValue);
+	}
+	
+	public int getValue() {
+		return value;
+	}
 }

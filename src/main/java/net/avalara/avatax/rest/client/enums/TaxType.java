@@ -86,30 +86,24 @@ public enum TaxType {
      */
     Use(85),
 
-    /**
-     * Integer value for TaxType
-     */
-    public final int Value;
-
-    private TaxType(int value) {
-		Value = value;
-    }
+    private int value;
+	private static Map map = new HashMap<>();
 	
-	/**
-	 * Map TaxType to TaxType integer ID.
-	 */
-	 private static final Map<Integer, TaxType> _map = new HashMap<Integer, TaxType>();
-	 static
-	 {
-		 for (TaxType modelName : TaxType.values()
-			 _map.put(modelName.Value, modelName);
-	 }
-	 
-	 /**
-	  * Get TaxType from value 
-	  */
-	 public static TaxType from(int value)
-	 {
-		 return _map.get(value);
-	 }
+	private TaxType(int value) {
+		this.value = value;
+	}
+	
+	static {
+		for (TaxType enumName : TaxType.values()) {
+			map.put(enumName.value, enumName);
+		}
+	}
+	
+	public static TaxType valueOf(int intValue) {
+		return (TaxType) map.get(intValue);
+	}
+	
+	public int getValue() {
+		return value;
+	}
 }

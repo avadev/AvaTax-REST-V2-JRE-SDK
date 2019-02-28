@@ -41,30 +41,24 @@ public enum CompanyAccessLevel {
      */
     AllCompanies(3),
 
-    /**
-     * Integer value for CompanyAccessLevel
-     */
-    public final int Value;
-
-    private CompanyAccessLevel(int value) {
-		Value = value;
-    }
+    private int value;
+	private static Map map = new HashMap<>();
 	
-	/**
-	 * Map CompanyAccessLevel to CompanyAccessLevel integer ID.
-	 */
-	 private static final Map<Integer, CompanyAccessLevel> _map = new HashMap<Integer, CompanyAccessLevel>();
-	 static
-	 {
-		 for (CompanyAccessLevel modelName : CompanyAccessLevel.values()
-			 _map.put(modelName.Value, modelName);
-	 }
-	 
-	 /**
-	  * Get CompanyAccessLevel from value 
-	  */
-	 public static CompanyAccessLevel from(int value)
-	 {
-		 return _map.get(value);
-	 }
+	private CompanyAccessLevel(int value) {
+		this.value = value;
+	}
+	
+	static {
+		for (CompanyAccessLevel enumName : CompanyAccessLevel.values()) {
+			map.put(enumName.value, enumName);
+		}
+	}
+	
+	public static CompanyAccessLevel valueOf(int intValue) {
+		return (CompanyAccessLevel) map.get(intValue);
+	}
+	
+	public int getValue() {
+		return value;
+	}
 }

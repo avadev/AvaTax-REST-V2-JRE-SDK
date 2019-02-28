@@ -32,30 +32,24 @@ public enum CertExpressInvitationStatus {
      */
     Ready(1),
 
-    /**
-     * Integer value for CertExpressInvitationStatus
-     */
-    public final int Value;
-
-    private CertExpressInvitationStatus(int value) {
-		Value = value;
-    }
+    private int value;
+	private static Map map = new HashMap<>();
 	
-	/**
-	 * Map CertExpressInvitationStatus to CertExpressInvitationStatus integer ID.
-	 */
-	 private static final Map<Integer, CertExpressInvitationStatus> _map = new HashMap<Integer, CertExpressInvitationStatus>();
-	 static
-	 {
-		 for (CertExpressInvitationStatus modelName : CertExpressInvitationStatus.values()
-			 _map.put(modelName.Value, modelName);
-	 }
-	 
-	 /**
-	  * Get CertExpressInvitationStatus from value 
-	  */
-	 public static CertExpressInvitationStatus from(int value)
-	 {
-		 return _map.get(value);
-	 }
+	private CertExpressInvitationStatus(int value) {
+		this.value = value;
+	}
+	
+	static {
+		for (CertExpressInvitationStatus enumName : CertExpressInvitationStatus.values()) {
+			map.put(enumName.value, enumName);
+		}
+	}
+	
+	public static CertExpressInvitationStatus valueOf(int intValue) {
+		return (CertExpressInvitationStatus) map.get(intValue);
+	}
+	
+	public int getValue() {
+		return value;
+	}
 }

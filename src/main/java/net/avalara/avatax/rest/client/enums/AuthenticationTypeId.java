@@ -41,30 +41,24 @@ public enum AuthenticationTypeId {
      */
     OpenIdBearerToken(3),
 
-    /**
-     * Integer value for AuthenticationTypeId
-     */
-    public final int Value;
-
-    private AuthenticationTypeId(int value) {
-		Value = value;
-    }
+    private int value;
+	private static Map map = new HashMap<>();
 	
-	/**
-	 * Map AuthenticationTypeId to AuthenticationTypeId integer ID.
-	 */
-	 private static final Map<Integer, AuthenticationTypeId> _map = new HashMap<Integer, AuthenticationTypeId>();
-	 static
-	 {
-		 for (AuthenticationTypeId modelName : AuthenticationTypeId.values()
-			 _map.put(modelName.Value, modelName);
-	 }
-	 
-	 /**
-	  * Get AuthenticationTypeId from value 
-	  */
-	 public static AuthenticationTypeId from(int value)
-	 {
-		 return _map.get(value);
-	 }
+	private AuthenticationTypeId(int value) {
+		this.value = value;
+	}
+	
+	static {
+		for (AuthenticationTypeId enumName : AuthenticationTypeId.values()) {
+			map.put(enumName.value, enumName);
+		}
+	}
+	
+	public static AuthenticationTypeId valueOf(int intValue) {
+		return (AuthenticationTypeId) map.get(intValue);
+	}
+	
+	public int getValue() {
+		return value;
+	}
 }

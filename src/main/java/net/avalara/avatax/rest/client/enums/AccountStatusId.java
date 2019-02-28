@@ -44,30 +44,24 @@ public enum AccountStatusId {
      */
     New(3),
 
-    /**
-     * Integer value for AccountStatusId
-     */
-    public final int Value;
-
-    private AccountStatusId(int value) {
-		Value = value;
-    }
+    private int value;
+	private static Map map = new HashMap<>();
 	
-	/**
-	 * Map AccountStatusId to AccountStatusId integer ID.
-	 */
-	 private static final Map<Integer, AccountStatusId> _map = new HashMap<Integer, AccountStatusId>();
-	 static
-	 {
-		 for (AccountStatusId modelName : AccountStatusId.values()
-			 _map.put(modelName.Value, modelName);
-	 }
-	 
-	 /**
-	  * Get AccountStatusId from value 
-	  */
-	 public static AccountStatusId from(int value)
-	 {
-		 return _map.get(value);
-	 }
+	private AccountStatusId(int value) {
+		this.value = value;
+	}
+	
+	static {
+		for (AccountStatusId enumName : AccountStatusId.values()) {
+			map.put(enumName.value, enumName);
+		}
+	}
+	
+	public static AccountStatusId valueOf(int intValue) {
+		return (AccountStatusId) map.get(intValue);
+	}
+	
+	public int getValue() {
+		return value;
+	}
 }

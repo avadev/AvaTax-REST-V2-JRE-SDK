@@ -37,30 +37,24 @@ public enum BoundaryLevel {
      */
     Zip5(2),
 
-    /**
-     * Integer value for BoundaryLevel
-     */
-    public final int Value;
-
-    private BoundaryLevel(int value) {
-		Value = value;
-    }
+    private int value;
+	private static Map map = new HashMap<>();
 	
-	/**
-	 * Map BoundaryLevel to BoundaryLevel integer ID.
-	 */
-	 private static final Map<Integer, BoundaryLevel> _map = new HashMap<Integer, BoundaryLevel>();
-	 static
-	 {
-		 for (BoundaryLevel modelName : BoundaryLevel.values()
-			 _map.put(modelName.Value, modelName);
-	 }
-	 
-	 /**
-	  * Get BoundaryLevel from value 
-	  */
-	 public static BoundaryLevel from(int value)
-	 {
-		 return _map.get(value);
-	 }
+	private BoundaryLevel(int value) {
+		this.value = value;
+	}
+	
+	static {
+		for (BoundaryLevel enumName : BoundaryLevel.values()) {
+			map.put(enumName.value, enumName);
+		}
+	}
+	
+	public static BoundaryLevel valueOf(int intValue) {
+		return (BoundaryLevel) map.get(intValue);
+	}
+	
+	public int getValue() {
+		return value;
+	}
 }

@@ -36,30 +36,24 @@ public enum FilingOptionTypeId {
      */
     MandatoryEfile(2),
 
-    /**
-     * Integer value for FilingOptionTypeId
-     */
-    public final int Value;
-
-    private FilingOptionTypeId(int value) {
-		Value = value;
-    }
+    private int value;
+	private static Map map = new HashMap<>();
 	
-	/**
-	 * Map FilingOptionTypeId to FilingOptionTypeId integer ID.
-	 */
-	 private static final Map<Integer, FilingOptionTypeId> _map = new HashMap<Integer, FilingOptionTypeId>();
-	 static
-	 {
-		 for (FilingOptionTypeId modelName : FilingOptionTypeId.values()
-			 _map.put(modelName.Value, modelName);
-	 }
-	 
-	 /**
-	  * Get FilingOptionTypeId from value 
-	  */
-	 public static FilingOptionTypeId from(int value)
-	 {
-		 return _map.get(value);
-	 }
+	private FilingOptionTypeId(int value) {
+		this.value = value;
+	}
+	
+	static {
+		for (FilingOptionTypeId enumName : FilingOptionTypeId.values()) {
+			map.put(enumName.value, enumName);
+		}
+	}
+	
+	public static FilingOptionTypeId valueOf(int intValue) {
+		return (FilingOptionTypeId) map.get(intValue);
+	}
+	
+	public int getValue() {
+		return value;
+	}
 }

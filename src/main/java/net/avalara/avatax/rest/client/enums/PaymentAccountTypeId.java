@@ -41,30 +41,24 @@ public enum PaymentAccountTypeId {
      */
     AccountsPayable(3),
 
-    /**
-     * Integer value for PaymentAccountTypeId
-     */
-    public final int Value;
-
-    private PaymentAccountTypeId(int value) {
-		Value = value;
-    }
+    private int value;
+	private static Map map = new HashMap<>();
 	
-	/**
-	 * Map PaymentAccountTypeId to PaymentAccountTypeId integer ID.
-	 */
-	 private static final Map<Integer, PaymentAccountTypeId> _map = new HashMap<Integer, PaymentAccountTypeId>();
-	 static
-	 {
-		 for (PaymentAccountTypeId modelName : PaymentAccountTypeId.values()
-			 _map.put(modelName.Value, modelName);
-	 }
-	 
-	 /**
-	  * Get PaymentAccountTypeId from value 
-	  */
-	 public static PaymentAccountTypeId from(int value)
-	 {
-		 return _map.get(value);
-	 }
+	private PaymentAccountTypeId(int value) {
+		this.value = value;
+	}
+	
+	static {
+		for (PaymentAccountTypeId enumName : PaymentAccountTypeId.values()) {
+			map.put(enumName.value, enumName);
+		}
+	}
+	
+	public static PaymentAccountTypeId valueOf(int intValue) {
+		return (PaymentAccountTypeId) map.get(intValue);
+	}
+	
+	public int getValue() {
+		return value;
+	}
 }

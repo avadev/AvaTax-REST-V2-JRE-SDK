@@ -39,30 +39,24 @@ public enum CertificateRequestDeliveryMethod {
      */
     Download(3),
 
-    /**
-     * Integer value for CertificateRequestDeliveryMethod
-     */
-    public final int Value;
-
-    private CertificateRequestDeliveryMethod(int value) {
-		Value = value;
-    }
+    private int value;
+	private static Map map = new HashMap<>();
 	
-	/**
-	 * Map CertificateRequestDeliveryMethod to CertificateRequestDeliveryMethod integer ID.
-	 */
-	 private static final Map<Integer, CertificateRequestDeliveryMethod> _map = new HashMap<Integer, CertificateRequestDeliveryMethod>();
-	 static
-	 {
-		 for (CertificateRequestDeliveryMethod modelName : CertificateRequestDeliveryMethod.values()
-			 _map.put(modelName.Value, modelName);
-	 }
-	 
-	 /**
-	  * Get CertificateRequestDeliveryMethod from value 
-	  */
-	 public static CertificateRequestDeliveryMethod from(int value)
-	 {
-		 return _map.get(value);
-	 }
+	private CertificateRequestDeliveryMethod(int value) {
+		this.value = value;
+	}
+	
+	static {
+		for (CertificateRequestDeliveryMethod enumName : CertificateRequestDeliveryMethod.values()) {
+			map.put(enumName.value, enumName);
+		}
+	}
+	
+	public static CertificateRequestDeliveryMethod valueOf(int intValue) {
+		return (CertificateRequestDeliveryMethod) map.get(intValue);
+	}
+	
+	public int getValue() {
+		return value;
+	}
 }

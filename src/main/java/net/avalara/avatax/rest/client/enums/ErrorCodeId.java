@@ -1381,30 +1381,24 @@ public enum ErrorCodeId {
      */
     SubscriptionRequiredForParameter(2104),
 
-    /**
-     * Integer value for ErrorCodeId
-     */
-    public final int Value;
-
-    private ErrorCodeId(int value) {
-		Value = value;
-    }
+    private int value;
+	private static Map map = new HashMap<>();
 	
-	/**
-	 * Map ErrorCodeId to ErrorCodeId integer ID.
-	 */
-	 private static final Map<Integer, ErrorCodeId> _map = new HashMap<Integer, ErrorCodeId>();
-	 static
-	 {
-		 for (ErrorCodeId modelName : ErrorCodeId.values()
-			 _map.put(modelName.Value, modelName);
-	 }
-	 
-	 /**
-	  * Get ErrorCodeId from value 
-	  */
-	 public static ErrorCodeId from(int value)
-	 {
-		 return _map.get(value);
-	 }
+	private ErrorCodeId(int value) {
+		this.value = value;
+	}
+	
+	static {
+		for (ErrorCodeId enumName : ErrorCodeId.values()) {
+			map.put(enumName.value, enumName);
+		}
+	}
+	
+	public static ErrorCodeId valueOf(int intValue) {
+		return (ErrorCodeId) map.get(intValue);
+	}
+	
+	public int getValue() {
+		return value;
+	}
 }

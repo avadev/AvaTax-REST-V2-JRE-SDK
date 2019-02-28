@@ -41,30 +41,24 @@ public enum ExemptCertStatusId {
      */
     Revoked(3),
 
-    /**
-     * Integer value for ExemptCertStatusId
-     */
-    public final int Value;
-
-    private ExemptCertStatusId(int value) {
-		Value = value;
-    }
+    private int value;
+	private static Map map = new HashMap<>();
 	
-	/**
-	 * Map ExemptCertStatusId to ExemptCertStatusId integer ID.
-	 */
-	 private static final Map<Integer, ExemptCertStatusId> _map = new HashMap<Integer, ExemptCertStatusId>();
-	 static
-	 {
-		 for (ExemptCertStatusId modelName : ExemptCertStatusId.values()
-			 _map.put(modelName.Value, modelName);
-	 }
-	 
-	 /**
-	  * Get ExemptCertStatusId from value 
-	  */
-	 public static ExemptCertStatusId from(int value)
-	 {
-		 return _map.get(value);
-	 }
+	private ExemptCertStatusId(int value) {
+		this.value = value;
+	}
+	
+	static {
+		for (ExemptCertStatusId enumName : ExemptCertStatusId.values()) {
+			map.put(enumName.value, enumName);
+		}
+	}
+	
+	public static ExemptCertStatusId valueOf(int intValue) {
+		return (ExemptCertStatusId) map.get(intValue);
+	}
+	
+	public int getValue() {
+		return value;
+	}
 }

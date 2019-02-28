@@ -42,30 +42,24 @@ public enum ReportDateFilter {
      */
     TaxDate(84),
 
-    /**
-     * Integer value for ReportDateFilter
-     */
-    public final int Value;
-
-    private ReportDateFilter(int value) {
-		Value = value;
-    }
+    private int value;
+	private static Map map = new HashMap<>();
 	
-	/**
-	 * Map ReportDateFilter to ReportDateFilter integer ID.
-	 */
-	 private static final Map<Integer, ReportDateFilter> _map = new HashMap<Integer, ReportDateFilter>();
-	 static
-	 {
-		 for (ReportDateFilter modelName : ReportDateFilter.values()
-			 _map.put(modelName.Value, modelName);
-	 }
-	 
-	 /**
-	  * Get ReportDateFilter from value 
-	  */
-	 public static ReportDateFilter from(int value)
-	 {
-		 return _map.get(value);
-	 }
+	private ReportDateFilter(int value) {
+		this.value = value;
+	}
+	
+	static {
+		for (ReportDateFilter enumName : ReportDateFilter.values()) {
+			map.put(enumName.value, enumName);
+		}
+	}
+	
+	public static ReportDateFilter valueOf(int intValue) {
+		return (ReportDateFilter) map.get(intValue);
+	}
+	
+	public int getValue() {
+		return value;
+	}
 }

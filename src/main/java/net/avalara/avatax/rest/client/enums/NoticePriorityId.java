@@ -41,30 +41,24 @@ public enum NoticePriorityId {
      */
     Low(4),
 
-    /**
-     * Integer value for NoticePriorityId
-     */
-    public final int Value;
-
-    private NoticePriorityId(int value) {
-		Value = value;
-    }
+    private int value;
+	private static Map map = new HashMap<>();
 	
-	/**
-	 * Map NoticePriorityId to NoticePriorityId integer ID.
-	 */
-	 private static final Map<Integer, NoticePriorityId> _map = new HashMap<Integer, NoticePriorityId>();
-	 static
-	 {
-		 for (NoticePriorityId modelName : NoticePriorityId.values()
-			 _map.put(modelName.Value, modelName);
-	 }
-	 
-	 /**
-	  * Get NoticePriorityId from value 
-	  */
-	 public static NoticePriorityId from(int value)
-	 {
-		 return _map.get(value);
-	 }
+	private NoticePriorityId(int value) {
+		this.value = value;
+	}
+	
+	static {
+		for (NoticePriorityId enumName : NoticePriorityId.values()) {
+			map.put(enumName.value, enumName);
+		}
+	}
+	
+	public static NoticePriorityId valueOf(int intValue) {
+		return (NoticePriorityId) map.get(intValue);
+	}
+	
+	public int getValue() {
+		return value;
+	}
 }

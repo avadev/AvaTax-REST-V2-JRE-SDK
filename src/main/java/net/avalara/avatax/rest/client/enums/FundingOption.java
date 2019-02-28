@@ -31,30 +31,24 @@ public enum FundingOption {
      */
     Wire(2),
 
-    /**
-     * Integer value for FundingOption
-     */
-    public final int Value;
-
-    private FundingOption(int value) {
-		Value = value;
-    }
+    private int value;
+	private static Map map = new HashMap<>();
 	
-	/**
-	 * Map FundingOption to FundingOption integer ID.
-	 */
-	 private static final Map<Integer, FundingOption> _map = new HashMap<Integer, FundingOption>();
-	 static
-	 {
-		 for (FundingOption modelName : FundingOption.values()
-			 _map.put(modelName.Value, modelName);
-	 }
-	 
-	 /**
-	  * Get FundingOption from value 
-	  */
-	 public static FundingOption from(int value)
-	 {
-		 return _map.get(value);
-	 }
+	private FundingOption(int value) {
+		this.value = value;
+	}
+	
+	static {
+		for (FundingOption enumName : FundingOption.values()) {
+			map.put(enumName.value, enumName);
+		}
+	}
+	
+	public static FundingOption valueOf(int intValue) {
+		return (FundingOption) map.get(intValue);
+	}
+	
+	public int getValue() {
+		return value;
+	}
 }

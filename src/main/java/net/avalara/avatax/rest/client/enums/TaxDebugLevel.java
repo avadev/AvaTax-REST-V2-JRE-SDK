@@ -31,30 +31,24 @@ public enum TaxDebugLevel {
      */
     Diagnostic(1),
 
-    /**
-     * Integer value for TaxDebugLevel
-     */
-    public final int Value;
-
-    private TaxDebugLevel(int value) {
-		Value = value;
-    }
+    private int value;
+	private static Map map = new HashMap<>();
 	
-	/**
-	 * Map TaxDebugLevel to TaxDebugLevel integer ID.
-	 */
-	 private static final Map<Integer, TaxDebugLevel> _map = new HashMap<Integer, TaxDebugLevel>();
-	 static
-	 {
-		 for (TaxDebugLevel modelName : TaxDebugLevel.values()
-			 _map.put(modelName.Value, modelName);
-	 }
-	 
-	 /**
-	  * Get TaxDebugLevel from value 
-	  */
-	 public static TaxDebugLevel from(int value)
-	 {
-		 return _map.get(value);
-	 }
+	private TaxDebugLevel(int value) {
+		this.value = value;
+	}
+	
+	static {
+		for (TaxDebugLevel enumName : TaxDebugLevel.values()) {
+			map.put(enumName.value, enumName);
+		}
+	}
+	
+	public static TaxDebugLevel valueOf(int intValue) {
+		return (TaxDebugLevel) map.get(intValue);
+	}
+	
+	public int getValue() {
+		return value;
+	}
 }

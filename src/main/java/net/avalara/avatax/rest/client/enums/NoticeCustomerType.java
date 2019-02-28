@@ -46,30 +46,24 @@ public enum NoticeCustomerType {
      */
     TrustFile(5),
 
-    /**
-     * Integer value for NoticeCustomerType
-     */
-    public final int Value;
-
-    private NoticeCustomerType(int value) {
-		Value = value;
-    }
+    private int value;
+	private static Map map = new HashMap<>();
 	
-	/**
-	 * Map NoticeCustomerType to NoticeCustomerType integer ID.
-	 */
-	 private static final Map<Integer, NoticeCustomerType> _map = new HashMap<Integer, NoticeCustomerType>();
-	 static
-	 {
-		 for (NoticeCustomerType modelName : NoticeCustomerType.values()
-			 _map.put(modelName.Value, modelName);
-	 }
-	 
-	 /**
-	  * Get NoticeCustomerType from value 
-	  */
-	 public static NoticeCustomerType from(int value)
-	 {
-		 return _map.get(value);
-	 }
+	private NoticeCustomerType(int value) {
+		this.value = value;
+	}
+	
+	static {
+		for (NoticeCustomerType enumName : NoticeCustomerType.values()) {
+			map.put(enumName.value, enumName);
+		}
+	}
+	
+	public static NoticeCustomerType valueOf(int intValue) {
+		return (NoticeCustomerType) map.get(intValue);
+	}
+	
+	public int getValue() {
+		return value;
+	}
 }

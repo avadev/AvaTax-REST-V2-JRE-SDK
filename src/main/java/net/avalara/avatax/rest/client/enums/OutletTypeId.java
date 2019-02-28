@@ -43,30 +43,24 @@ public enum OutletTypeId {
      */
     Consolidated(3),
 
-    /**
-     * Integer value for OutletTypeId
-     */
-    public final int Value;
-
-    private OutletTypeId(int value) {
-		Value = value;
-    }
+    private int value;
+	private static Map map = new HashMap<>();
 	
-	/**
-	 * Map OutletTypeId to OutletTypeId integer ID.
-	 */
-	 private static final Map<Integer, OutletTypeId> _map = new HashMap<Integer, OutletTypeId>();
-	 static
-	 {
-		 for (OutletTypeId modelName : OutletTypeId.values()
-			 _map.put(modelName.Value, modelName);
-	 }
-	 
-	 /**
-	  * Get OutletTypeId from value 
-	  */
-	 public static OutletTypeId from(int value)
-	 {
-		 return _map.get(value);
-	 }
+	private OutletTypeId(int value) {
+		this.value = value;
+	}
+	
+	static {
+		for (OutletTypeId enumName : OutletTypeId.values()) {
+			map.put(enumName.value, enumName);
+		}
+	}
+	
+	public static OutletTypeId valueOf(int intValue) {
+		return (OutletTypeId) map.get(intValue);
+	}
+	
+	public int getValue() {
+		return value;
+	}
 }

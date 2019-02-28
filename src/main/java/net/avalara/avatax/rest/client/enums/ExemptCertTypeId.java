@@ -31,30 +31,24 @@ public enum ExemptCertTypeId {
      */
     SingleUse(1),
 
-    /**
-     * Integer value for ExemptCertTypeId
-     */
-    public final int Value;
-
-    private ExemptCertTypeId(int value) {
-		Value = value;
-    }
+    private int value;
+	private static Map map = new HashMap<>();
 	
-	/**
-	 * Map ExemptCertTypeId to ExemptCertTypeId integer ID.
-	 */
-	 private static final Map<Integer, ExemptCertTypeId> _map = new HashMap<Integer, ExemptCertTypeId>();
-	 static
-	 {
-		 for (ExemptCertTypeId modelName : ExemptCertTypeId.values()
-			 _map.put(modelName.Value, modelName);
-	 }
-	 
-	 /**
-	  * Get ExemptCertTypeId from value 
-	  */
-	 public static ExemptCertTypeId from(int value)
-	 {
-		 return _map.get(value);
-	 }
+	private ExemptCertTypeId(int value) {
+		this.value = value;
+	}
+	
+	static {
+		for (ExemptCertTypeId enumName : ExemptCertTypeId.values()) {
+			map.put(enumName.value, enumName);
+		}
+	}
+	
+	public static ExemptCertTypeId valueOf(int intValue) {
+		return (ExemptCertTypeId) map.get(intValue);
+	}
+	
+	public int getValue() {
+		return value;
+	}
 }

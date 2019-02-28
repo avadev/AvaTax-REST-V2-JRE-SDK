@@ -36,30 +36,24 @@ public enum WorksheetTypeId {
      */
     Test(2),
 
-    /**
-     * Integer value for WorksheetTypeId
-     */
-    public final int Value;
-
-    private WorksheetTypeId(int value) {
-		Value = value;
-    }
+    private int value;
+	private static Map map = new HashMap<>();
 	
-	/**
-	 * Map WorksheetTypeId to WorksheetTypeId integer ID.
-	 */
-	 private static final Map<Integer, WorksheetTypeId> _map = new HashMap<Integer, WorksheetTypeId>();
-	 static
-	 {
-		 for (WorksheetTypeId modelName : WorksheetTypeId.values()
-			 _map.put(modelName.Value, modelName);
-	 }
-	 
-	 /**
-	  * Get WorksheetTypeId from value 
-	  */
-	 public static WorksheetTypeId from(int value)
-	 {
-		 return _map.get(value);
-	 }
+	private WorksheetTypeId(int value) {
+		this.value = value;
+	}
+	
+	static {
+		for (WorksheetTypeId enumName : WorksheetTypeId.values()) {
+			map.put(enumName.value, enumName);
+		}
+	}
+	
+	public static WorksheetTypeId valueOf(int intValue) {
+		return (WorksheetTypeId) map.get(intValue);
+	}
+	
+	public int getValue() {
+		return value;
+	}
 }

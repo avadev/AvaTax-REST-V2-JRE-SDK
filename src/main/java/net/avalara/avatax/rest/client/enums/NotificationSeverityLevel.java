@@ -41,30 +41,24 @@ public enum NotificationSeverityLevel {
      */
     Complete(-1),
 
-    /**
-     * Integer value for NotificationSeverityLevel
-     */
-    public final int Value;
-
-    private NotificationSeverityLevel(int value) {
-		Value = value;
-    }
+    private int value;
+	private static Map map = new HashMap<>();
 	
-	/**
-	 * Map NotificationSeverityLevel to NotificationSeverityLevel integer ID.
-	 */
-	 private static final Map<Integer, NotificationSeverityLevel> _map = new HashMap<Integer, NotificationSeverityLevel>();
-	 static
-	 {
-		 for (NotificationSeverityLevel modelName : NotificationSeverityLevel.values()
-			 _map.put(modelName.Value, modelName);
-	 }
-	 
-	 /**
-	  * Get NotificationSeverityLevel from value 
-	  */
-	 public static NotificationSeverityLevel from(int value)
-	 {
-		 return _map.get(value);
-	 }
+	private NotificationSeverityLevel(int value) {
+		this.value = value;
+	}
+	
+	static {
+		for (NotificationSeverityLevel enumName : NotificationSeverityLevel.values()) {
+			map.put(enumName.value, enumName);
+		}
+	}
+	
+	public static NotificationSeverityLevel valueOf(int intValue) {
+		return (NotificationSeverityLevel) map.get(intValue);
+	}
+	
+	public int getValue() {
+		return value;
+	}
 }

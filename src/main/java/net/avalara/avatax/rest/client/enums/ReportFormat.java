@@ -31,30 +31,24 @@ public enum ReportFormat {
      */
     XML(1),
 
-    /**
-     * Integer value for ReportFormat
-     */
-    public final int Value;
-
-    private ReportFormat(int value) {
-		Value = value;
-    }
+    private int value;
+	private static Map map = new HashMap<>();
 	
-	/**
-	 * Map ReportFormat to ReportFormat integer ID.
-	 */
-	 private static final Map<Integer, ReportFormat> _map = new HashMap<Integer, ReportFormat>();
-	 static
-	 {
-		 for (ReportFormat modelName : ReportFormat.values()
-			 _map.put(modelName.Value, modelName);
-	 }
-	 
-	 /**
-	  * Get ReportFormat from value 
-	  */
-	 public static ReportFormat from(int value)
-	 {
-		 return _map.get(value);
-	 }
+	private ReportFormat(int value) {
+		this.value = value;
+	}
+	
+	static {
+		for (ReportFormat enumName : ReportFormat.values()) {
+			map.put(enumName.value, enumName);
+		}
+	}
+	
+	public static ReportFormat valueOf(int intValue) {
+		return (ReportFormat) map.get(intValue);
+	}
+	
+	public int getValue() {
+		return value;
+	}
 }

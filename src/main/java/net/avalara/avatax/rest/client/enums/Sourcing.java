@@ -36,30 +36,24 @@ public enum Sourcing {
      */
     Origin(79),
 
-    /**
-     * Integer value for Sourcing
-     */
-    public final int Value;
-
-    private Sourcing(int value) {
-		Value = value;
-    }
+    private int value;
+	private static Map map = new HashMap<>();
 	
-	/**
-	 * Map Sourcing to Sourcing integer ID.
-	 */
-	 private static final Map<Integer, Sourcing> _map = new HashMap<Integer, Sourcing>();
-	 static
-	 {
-		 for (Sourcing modelName : Sourcing.values()
-			 _map.put(modelName.Value, modelName);
-	 }
-	 
-	 /**
-	  * Get Sourcing from value 
-	  */
-	 public static Sourcing from(int value)
-	 {
-		 return _map.get(value);
-	 }
+	private Sourcing(int value) {
+		this.value = value;
+	}
+	
+	static {
+		for (Sourcing enumName : Sourcing.values()) {
+			map.put(enumName.value, enumName);
+		}
+	}
+	
+	public static Sourcing valueOf(int intValue) {
+		return (Sourcing) map.get(intValue);
+	}
+	
+	public int getValue() {
+		return value;
+	}
 }

@@ -31,30 +31,24 @@ public enum AccrualType {
      */
     Accrual(2),
 
-    /**
-     * Integer value for AccrualType
-     */
-    public final int Value;
-
-    private AccrualType(int value) {
-		Value = value;
-    }
+    private int value;
+	private static Map map = new HashMap<>();
 	
-	/**
-	 * Map AccrualType to AccrualType integer ID.
-	 */
-	 private static final Map<Integer, AccrualType> _map = new HashMap<Integer, AccrualType>();
-	 static
-	 {
-		 for (AccrualType modelName : AccrualType.values()
-			 _map.put(modelName.Value, modelName);
-	 }
-	 
-	 /**
-	  * Get AccrualType from value 
-	  */
-	 public static AccrualType from(int value)
-	 {
-		 return _map.get(value);
-	 }
+	private AccrualType(int value) {
+		this.value = value;
+	}
+	
+	static {
+		for (AccrualType enumName : AccrualType.values()) {
+			map.put(enumName.value, enumName);
+		}
+	}
+	
+	public static AccrualType valueOf(int intValue) {
+		return (AccrualType) map.get(intValue);
+	}
+	
+	public int getValue() {
+		return value;
+	}
 }

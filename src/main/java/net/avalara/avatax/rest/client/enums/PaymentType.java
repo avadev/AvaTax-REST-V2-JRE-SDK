@@ -41,30 +41,24 @@ public enum PaymentType {
      */
     PriorCspFee(3),
 
-    /**
-     * Integer value for PaymentType
-     */
-    public final int Value;
-
-    private PaymentType(int value) {
-		Value = value;
-    }
+    private int value;
+	private static Map map = new HashMap<>();
 	
-	/**
-	 * Map PaymentType to PaymentType integer ID.
-	 */
-	 private static final Map<Integer, PaymentType> _map = new HashMap<Integer, PaymentType>();
-	 static
-	 {
-		 for (PaymentType modelName : PaymentType.values()
-			 _map.put(modelName.Value, modelName);
-	 }
-	 
-	 /**
-	  * Get PaymentType from value 
-	  */
-	 public static PaymentType from(int value)
-	 {
-		 return _map.get(value);
-	 }
+	private PaymentType(int value) {
+		this.value = value;
+	}
+	
+	static {
+		for (PaymentType enumName : PaymentType.values()) {
+			map.put(enumName.value, enumName);
+		}
+	}
+	
+	public static PaymentType valueOf(int intValue) {
+		return (PaymentType) map.get(intValue);
+	}
+	
+	public int getValue() {
+		return value;
+	}
 }

@@ -41,30 +41,24 @@ public enum TaxDependencyLevelId {
      */
     Address(3),
 
-    /**
-     * Integer value for TaxDependencyLevelId
-     */
-    public final int Value;
-
-    private TaxDependencyLevelId(int value) {
-		Value = value;
-    }
+    private int value;
+	private static Map map = new HashMap<>();
 	
-	/**
-	 * Map TaxDependencyLevelId to TaxDependencyLevelId integer ID.
-	 */
-	 private static final Map<Integer, TaxDependencyLevelId> _map = new HashMap<Integer, TaxDependencyLevelId>();
-	 static
-	 {
-		 for (TaxDependencyLevelId modelName : TaxDependencyLevelId.values()
-			 _map.put(modelName.Value, modelName);
-	 }
-	 
-	 /**
-	  * Get TaxDependencyLevelId from value 
-	  */
-	 public static TaxDependencyLevelId from(int value)
-	 {
-		 return _map.get(value);
-	 }
+	private TaxDependencyLevelId(int value) {
+		this.value = value;
+	}
+	
+	static {
+		for (TaxDependencyLevelId enumName : TaxDependencyLevelId.values()) {
+			map.put(enumName.value, enumName);
+		}
+	}
+	
+	public static TaxDependencyLevelId valueOf(int intValue) {
+		return (TaxDependencyLevelId) map.get(intValue);
+	}
+	
+	public int getValue() {
+		return value;
+	}
 }

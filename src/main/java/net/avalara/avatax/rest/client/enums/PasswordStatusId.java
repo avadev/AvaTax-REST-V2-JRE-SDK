@@ -36,30 +36,24 @@ public enum PasswordStatusId {
      */
     UserMustChange(2),
 
-    /**
-     * Integer value for PasswordStatusId
-     */
-    public final int Value;
-
-    private PasswordStatusId(int value) {
-		Value = value;
-    }
+    private int value;
+	private static Map map = new HashMap<>();
 	
-	/**
-	 * Map PasswordStatusId to PasswordStatusId integer ID.
-	 */
-	 private static final Map<Integer, PasswordStatusId> _map = new HashMap<Integer, PasswordStatusId>();
-	 static
-	 {
-		 for (PasswordStatusId modelName : PasswordStatusId.values()
-			 _map.put(modelName.Value, modelName);
-	 }
-	 
-	 /**
-	  * Get PasswordStatusId from value 
-	  */
-	 public static PasswordStatusId from(int value)
-	 {
-		 return _map.get(value);
-	 }
+	private PasswordStatusId(int value) {
+		this.value = value;
+	}
+	
+	static {
+		for (PasswordStatusId enumName : PasswordStatusId.values()) {
+			map.put(enumName.value, enumName);
+		}
+	}
+	
+	public static PasswordStatusId valueOf(int intValue) {
+		return (PasswordStatusId) map.get(intValue);
+	}
+	
+	public int getValue() {
+		return value;
+	}
 }

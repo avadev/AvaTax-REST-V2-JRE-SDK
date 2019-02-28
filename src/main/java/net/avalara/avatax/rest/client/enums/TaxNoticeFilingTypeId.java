@@ -71,30 +71,24 @@ public enum TaxNoticeFilingTypeId {
      */
     SignatureReady(10),
 
-    /**
-     * Integer value for TaxNoticeFilingTypeId
-     */
-    public final int Value;
-
-    private TaxNoticeFilingTypeId(int value) {
-		Value = value;
-    }
+    private int value;
+	private static Map map = new HashMap<>();
 	
-	/**
-	 * Map TaxNoticeFilingTypeId to TaxNoticeFilingTypeId integer ID.
-	 */
-	 private static final Map<Integer, TaxNoticeFilingTypeId> _map = new HashMap<Integer, TaxNoticeFilingTypeId>();
-	 static
-	 {
-		 for (TaxNoticeFilingTypeId modelName : TaxNoticeFilingTypeId.values()
-			 _map.put(modelName.Value, modelName);
-	 }
-	 
-	 /**
-	  * Get TaxNoticeFilingTypeId from value 
-	  */
-	 public static TaxNoticeFilingTypeId from(int value)
-	 {
-		 return _map.get(value);
-	 }
+	private TaxNoticeFilingTypeId(int value) {
+		this.value = value;
+	}
+	
+	static {
+		for (TaxNoticeFilingTypeId enumName : TaxNoticeFilingTypeId.values()) {
+			map.put(enumName.value, enumName);
+		}
+	}
+	
+	public static TaxNoticeFilingTypeId valueOf(int intValue) {
+		return (TaxNoticeFilingTypeId) map.get(intValue);
+	}
+	
+	public int getValue() {
+		return value;
+	}
 }

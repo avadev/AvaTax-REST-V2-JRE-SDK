@@ -71,30 +71,24 @@ public enum AdjustmentReason {
      */
     Offline(9),
 
-    /**
-     * Integer value for AdjustmentReason
-     */
-    public final int Value;
-
-    private AdjustmentReason(int value) {
-		Value = value;
-    }
+    private int value;
+	private static Map map = new HashMap<>();
 	
-	/**
-	 * Map AdjustmentReason to AdjustmentReason integer ID.
-	 */
-	 private static final Map<Integer, AdjustmentReason> _map = new HashMap<Integer, AdjustmentReason>();
-	 static
-	 {
-		 for (AdjustmentReason modelName : AdjustmentReason.values()
-			 _map.put(modelName.Value, modelName);
-	 }
-	 
-	 /**
-	  * Get AdjustmentReason from value 
-	  */
-	 public static AdjustmentReason from(int value)
-	 {
-		 return _map.get(value);
-	 }
+	private AdjustmentReason(int value) {
+		this.value = value;
+	}
+	
+	static {
+		for (AdjustmentReason enumName : AdjustmentReason.values()) {
+			map.put(enumName.value, enumName);
+		}
+	}
+	
+	public static AdjustmentReason valueOf(int intValue) {
+		return (AdjustmentReason) map.get(intValue);
+	}
+	
+	public int getValue() {
+		return value;
+	}
 }

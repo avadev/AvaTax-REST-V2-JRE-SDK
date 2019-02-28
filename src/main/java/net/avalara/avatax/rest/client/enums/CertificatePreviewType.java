@@ -31,30 +31,24 @@ public enum CertificatePreviewType {
      */
     Jpeg(2),
 
-    /**
-     * Integer value for CertificatePreviewType
-     */
-    public final int Value;
-
-    private CertificatePreviewType(int value) {
-		Value = value;
-    }
+    private int value;
+	private static Map map = new HashMap<>();
 	
-	/**
-	 * Map CertificatePreviewType to CertificatePreviewType integer ID.
-	 */
-	 private static final Map<Integer, CertificatePreviewType> _map = new HashMap<Integer, CertificatePreviewType>();
-	 static
-	 {
-		 for (CertificatePreviewType modelName : CertificatePreviewType.values()
-			 _map.put(modelName.Value, modelName);
-	 }
-	 
-	 /**
-	  * Get CertificatePreviewType from value 
-	  */
-	 public static CertificatePreviewType from(int value)
-	 {
-		 return _map.get(value);
-	 }
+	private CertificatePreviewType(int value) {
+		this.value = value;
+	}
+	
+	static {
+		for (CertificatePreviewType enumName : CertificatePreviewType.values()) {
+			map.put(enumName.value, enumName);
+		}
+	}
+	
+	public static CertificatePreviewType valueOf(int intValue) {
+		return (CertificatePreviewType) map.get(intValue);
+	}
+	
+	public int getValue() {
+		return value;
+	}
 }

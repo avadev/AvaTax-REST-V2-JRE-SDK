@@ -56,30 +56,24 @@ public enum FilingTypeId {
      */
     EfileCheck(6),
 
-    /**
-     * Integer value for FilingTypeId
-     */
-    public final int Value;
-
-    private FilingTypeId(int value) {
-		Value = value;
-    }
+    private int value;
+	private static Map map = new HashMap<>();
 	
-	/**
-	 * Map FilingTypeId to FilingTypeId integer ID.
-	 */
-	 private static final Map<Integer, FilingTypeId> _map = new HashMap<Integer, FilingTypeId>();
-	 static
-	 {
-		 for (FilingTypeId modelName : FilingTypeId.values()
-			 _map.put(modelName.Value, modelName);
-	 }
-	 
-	 /**
-	  * Get FilingTypeId from value 
-	  */
-	 public static FilingTypeId from(int value)
-	 {
-		 return _map.get(value);
-	 }
+	private FilingTypeId(int value) {
+		this.value = value;
+	}
+	
+	static {
+		for (FilingTypeId enumName : FilingTypeId.values()) {
+			map.put(enumName.value, enumName);
+		}
+	}
+	
+	public static FilingTypeId valueOf(int intValue) {
+		return (FilingTypeId) map.get(intValue);
+	}
+	
+	public int getValue() {
+		return value;
+	}
 }

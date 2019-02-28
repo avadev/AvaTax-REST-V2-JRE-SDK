@@ -31,30 +31,24 @@ public enum PointOfSalePartnerId {
      */
     AX7(2),
 
-    /**
-     * Integer value for PointOfSalePartnerId
-     */
-    public final int Value;
-
-    private PointOfSalePartnerId(int value) {
-		Value = value;
-    }
+    private int value;
+	private static Map map = new HashMap<>();
 	
-	/**
-	 * Map PointOfSalePartnerId to PointOfSalePartnerId integer ID.
-	 */
-	 private static final Map<Integer, PointOfSalePartnerId> _map = new HashMap<Integer, PointOfSalePartnerId>();
-	 static
-	 {
-		 for (PointOfSalePartnerId modelName : PointOfSalePartnerId.values()
-			 _map.put(modelName.Value, modelName);
-	 }
-	 
-	 /**
-	  * Get PointOfSalePartnerId from value 
-	  */
-	 public static PointOfSalePartnerId from(int value)
-	 {
-		 return _map.get(value);
-	 }
+	private PointOfSalePartnerId(int value) {
+		this.value = value;
+	}
+	
+	static {
+		for (PointOfSalePartnerId enumName : PointOfSalePartnerId.values()) {
+			map.put(enumName.value, enumName);
+		}
+	}
+	
+	public static PointOfSalePartnerId valueOf(int intValue) {
+		return (PointOfSalePartnerId) map.get(intValue);
+	}
+	
+	public int getValue() {
+		return value;
+	}
 }

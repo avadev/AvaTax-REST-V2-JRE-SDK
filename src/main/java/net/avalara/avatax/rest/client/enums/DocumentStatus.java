@@ -114,30 +114,24 @@ public enum DocumentStatus {
      */
     Any(-1),
 
-    /**
-     * Integer value for DocumentStatus
-     */
-    public final int Value;
-
-    private DocumentStatus(int value) {
-		Value = value;
-    }
+    private int value;
+	private static Map map = new HashMap<>();
 	
-	/**
-	 * Map DocumentStatus to DocumentStatus integer ID.
-	 */
-	 private static final Map<Integer, DocumentStatus> _map = new HashMap<Integer, DocumentStatus>();
-	 static
-	 {
-		 for (DocumentStatus modelName : DocumentStatus.values()
-			 _map.put(modelName.Value, modelName);
-	 }
-	 
-	 /**
-	  * Get DocumentStatus from value 
-	  */
-	 public static DocumentStatus from(int value)
-	 {
-		 return _map.get(value);
-	 }
+	private DocumentStatus(int value) {
+		this.value = value;
+	}
+	
+	static {
+		for (DocumentStatus enumName : DocumentStatus.values()) {
+			map.put(enumName.value, enumName);
+		}
+	}
+	
+	public static DocumentStatus valueOf(int intValue) {
+		return (DocumentStatus) map.get(intValue);
+	}
+	
+	public int getValue() {
+		return value;
+	}
 }

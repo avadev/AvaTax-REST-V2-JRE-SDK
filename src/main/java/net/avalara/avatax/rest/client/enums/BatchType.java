@@ -87,30 +87,24 @@ public enum BatchType {
      */
     UPCValidationImport(12),
 
-    /**
-     * Integer value for BatchType
-     */
-    public final int Value;
-
-    private BatchType(int value) {
-		Value = value;
-    }
+    private int value;
+	private static Map map = new HashMap<>();
 	
-	/**
-	 * Map BatchType to BatchType integer ID.
-	 */
-	 private static final Map<Integer, BatchType> _map = new HashMap<Integer, BatchType>();
-	 static
-	 {
-		 for (BatchType modelName : BatchType.values()
-			 _map.put(modelName.Value, modelName);
-	 }
-	 
-	 /**
-	  * Get BatchType from value 
-	  */
-	 public static BatchType from(int value)
-	 {
-		 return _map.get(value);
-	 }
+	private BatchType(int value) {
+		this.value = value;
+	}
+	
+	static {
+		for (BatchType enumName : BatchType.values()) {
+			map.put(enumName.value, enumName);
+		}
+	}
+	
+	public static BatchType valueOf(int intValue) {
+		return (BatchType) map.get(intValue);
+	}
+	
+	public int getValue() {
+		return value;
+	}
 }

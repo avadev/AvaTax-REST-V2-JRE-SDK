@@ -31,30 +31,24 @@ public enum TextCase {
      */
     Mixed(1),
 
-    /**
-     * Integer value for TextCase
-     */
-    public final int Value;
-
-    private TextCase(int value) {
-		Value = value;
-    }
+    private int value;
+	private static Map map = new HashMap<>();
 	
-	/**
-	 * Map TextCase to TextCase integer ID.
-	 */
-	 private static final Map<Integer, TextCase> _map = new HashMap<Integer, TextCase>();
-	 static
-	 {
-		 for (TextCase modelName : TextCase.values()
-			 _map.put(modelName.Value, modelName);
-	 }
-	 
-	 /**
-	  * Get TextCase from value 
-	  */
-	 public static TextCase from(int value)
-	 {
-		 return _map.get(value);
-	 }
+	private TextCase(int value) {
+		this.value = value;
+	}
+	
+	static {
+		for (TextCase enumName : TextCase.values()) {
+			map.put(enumName.value, enumName);
+		}
+	}
+	
+	public static TextCase valueOf(int intValue) {
+		return (TextCase) map.get(intValue);
+	}
+	
+	public int getValue() {
+		return value;
+	}
 }

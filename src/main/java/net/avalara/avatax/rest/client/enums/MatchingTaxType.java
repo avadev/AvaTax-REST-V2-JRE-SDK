@@ -103,30 +103,24 @@ public enum MatchingTaxType {
      */
     UseTax(85),
 
-    /**
-     * Integer value for MatchingTaxType
-     */
-    public final int Value;
-
-    private MatchingTaxType(int value) {
-		Value = value;
-    }
+    private int value;
+	private static Map map = new HashMap<>();
 	
-	/**
-	 * Map MatchingTaxType to MatchingTaxType integer ID.
-	 */
-	 private static final Map<Integer, MatchingTaxType> _map = new HashMap<Integer, MatchingTaxType>();
-	 static
-	 {
-		 for (MatchingTaxType modelName : MatchingTaxType.values()
-			 _map.put(modelName.Value, modelName);
-	 }
-	 
-	 /**
-	  * Get MatchingTaxType from value 
-	  */
-	 public static MatchingTaxType from(int value)
-	 {
-		 return _map.get(value);
-	 }
+	private MatchingTaxType(int value) {
+		this.value = value;
+	}
+	
+	static {
+		for (MatchingTaxType enumName : MatchingTaxType.values()) {
+			map.put(enumName.value, enumName);
+		}
+	}
+	
+	public static MatchingTaxType valueOf(int intValue) {
+		return (MatchingTaxType) map.get(intValue);
+	}
+	
+	public int getValue() {
+		return value;
+	}
 }

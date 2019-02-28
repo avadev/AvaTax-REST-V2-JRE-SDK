@@ -36,30 +36,24 @@ public enum ApiCallStatus {
      */
     Any(-1),
 
-    /**
-     * Integer value for ApiCallStatus
-     */
-    public final int Value;
-
-    private ApiCallStatus(int value) {
-		Value = value;
-    }
+    private int value;
+	private static Map map = new HashMap<>();
 	
-	/**
-	 * Map ApiCallStatus to ApiCallStatus integer ID.
-	 */
-	 private static final Map<Integer, ApiCallStatus> _map = new HashMap<Integer, ApiCallStatus>();
-	 static
-	 {
-		 for (ApiCallStatus modelName : ApiCallStatus.values()
-			 _map.put(modelName.Value, modelName);
-	 }
-	 
-	 /**
-	  * Get ApiCallStatus from value 
-	  */
-	 public static ApiCallStatus from(int value)
-	 {
-		 return _map.get(value);
-	 }
+	private ApiCallStatus(int value) {
+		this.value = value;
+	}
+	
+	static {
+		for (ApiCallStatus enumName : ApiCallStatus.values()) {
+			map.put(enumName.value, enumName);
+		}
+	}
+	
+	public static ApiCallStatus valueOf(int intValue) {
+		return (ApiCallStatus) map.get(intValue);
+	}
+	
+	public int getValue() {
+		return value;
+	}
 }

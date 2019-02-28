@@ -31,30 +31,24 @@ public enum AdvancedRuleCrashBehavior {
      */
     ProceedWithOriginal(1),
 
-    /**
-     * Integer value for AdvancedRuleCrashBehavior
-     */
-    public final int Value;
-
-    private AdvancedRuleCrashBehavior(int value) {
-		Value = value;
-    }
+    private int value;
+	private static Map map = new HashMap<>();
 	
-	/**
-	 * Map AdvancedRuleCrashBehavior to AdvancedRuleCrashBehavior integer ID.
-	 */
-	 private static final Map<Integer, AdvancedRuleCrashBehavior> _map = new HashMap<Integer, AdvancedRuleCrashBehavior>();
-	 static
-	 {
-		 for (AdvancedRuleCrashBehavior modelName : AdvancedRuleCrashBehavior.values()
-			 _map.put(modelName.Value, modelName);
-	 }
-	 
-	 /**
-	  * Get AdvancedRuleCrashBehavior from value 
-	  */
-	 public static AdvancedRuleCrashBehavior from(int value)
-	 {
-		 return _map.get(value);
-	 }
+	private AdvancedRuleCrashBehavior(int value) {
+		this.value = value;
+	}
+	
+	static {
+		for (AdvancedRuleCrashBehavior enumName : AdvancedRuleCrashBehavior.values()) {
+			map.put(enumName.value, enumName);
+		}
+	}
+	
+	public static AdvancedRuleCrashBehavior valueOf(int intValue) {
+		return (AdvancedRuleCrashBehavior) map.get(intValue);
+	}
+	
+	public int getValue() {
+		return value;
+	}
 }

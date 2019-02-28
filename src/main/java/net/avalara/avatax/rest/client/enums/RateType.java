@@ -86,30 +86,24 @@ public enum RateType {
      */
     Zero(90),
 
-    /**
-     * Integer value for RateType
-     */
-    public final int Value;
-
-    private RateType(int value) {
-		Value = value;
-    }
+    private int value;
+	private static Map map = new HashMap<>();
 	
-	/**
-	 * Map RateType to RateType integer ID.
-	 */
-	 private static final Map<Integer, RateType> _map = new HashMap<Integer, RateType>();
-	 static
-	 {
-		 for (RateType modelName : RateType.values()
-			 _map.put(modelName.Value, modelName);
-	 }
-	 
-	 /**
-	  * Get RateType from value 
-	  */
-	 public static RateType from(int value)
-	 {
-		 return _map.get(value);
-	 }
+	private RateType(int value) {
+		this.value = value;
+	}
+	
+	static {
+		for (RateType enumName : RateType.values()) {
+			map.put(enumName.value, enumName);
+		}
+	}
+	
+	public static RateType valueOf(int intValue) {
+		return (RateType) map.get(intValue);
+	}
+	
+	public int getValue() {
+		return value;
+	}
 }

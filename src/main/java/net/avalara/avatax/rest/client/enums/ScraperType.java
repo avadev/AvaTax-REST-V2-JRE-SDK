@@ -31,30 +31,24 @@ public enum ScraperType {
      */
     CustomerDorData(2),
 
-    /**
-     * Integer value for ScraperType
-     */
-    public final int Value;
-
-    private ScraperType(int value) {
-		Value = value;
-    }
+    private int value;
+	private static Map map = new HashMap<>();
 	
-	/**
-	 * Map ScraperType to ScraperType integer ID.
-	 */
-	 private static final Map<Integer, ScraperType> _map = new HashMap<Integer, ScraperType>();
-	 static
-	 {
-		 for (ScraperType modelName : ScraperType.values()
-			 _map.put(modelName.Value, modelName);
-	 }
-	 
-	 /**
-	  * Get ScraperType from value 
-	  */
-	 public static ScraperType from(int value)
-	 {
-		 return _map.get(value);
-	 }
+	private ScraperType(int value) {
+		this.value = value;
+	}
+	
+	static {
+		for (ScraperType enumName : ScraperType.values()) {
+			map.put(enumName.value, enumName);
+		}
+	}
+	
+	public static ScraperType valueOf(int intValue) {
+		return (ScraperType) map.get(intValue);
+	}
+	
+	public int getValue() {
+		return value;
+	}
 }

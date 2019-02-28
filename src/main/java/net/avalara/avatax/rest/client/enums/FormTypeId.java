@@ -71,30 +71,24 @@ public enum FormTypeId {
      */
     PrepaymentAllowed(9),
 
-    /**
-     * Integer value for FormTypeId
-     */
-    public final int Value;
-
-    private FormTypeId(int value) {
-		Value = value;
-    }
+    private int value;
+	private static Map map = new HashMap<>();
 	
-	/**
-	 * Map FormTypeId to FormTypeId integer ID.
-	 */
-	 private static final Map<Integer, FormTypeId> _map = new HashMap<Integer, FormTypeId>();
-	 static
-	 {
-		 for (FormTypeId modelName : FormTypeId.values()
-			 _map.put(modelName.Value, modelName);
-	 }
-	 
-	 /**
-	  * Get FormTypeId from value 
-	  */
-	 public static FormTypeId from(int value)
-	 {
-		 return _map.get(value);
-	 }
+	private FormTypeId(int value) {
+		this.value = value;
+	}
+	
+	static {
+		for (FormTypeId enumName : FormTypeId.values()) {
+			map.put(enumName.value, enumName);
+		}
+	}
+	
+	public static FormTypeId valueOf(int intValue) {
+		return (FormTypeId) map.get(intValue);
+	}
+	
+	public int getValue() {
+		return value;
+	}
 }

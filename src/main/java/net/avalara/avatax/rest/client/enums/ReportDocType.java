@@ -31,30 +31,24 @@ public enum ReportDocType {
      */
     Sales(83),
 
-    /**
-     * Integer value for ReportDocType
-     */
-    public final int Value;
-
-    private ReportDocType(int value) {
-		Value = value;
-    }
+    private int value;
+	private static Map map = new HashMap<>();
 	
-	/**
-	 * Map ReportDocType to ReportDocType integer ID.
-	 */
-	 private static final Map<Integer, ReportDocType> _map = new HashMap<Integer, ReportDocType>();
-	 static
-	 {
-		 for (ReportDocType modelName : ReportDocType.values()
-			 _map.put(modelName.Value, modelName);
-	 }
-	 
-	 /**
-	  * Get ReportDocType from value 
-	  */
-	 public static ReportDocType from(int value)
-	 {
-		 return _map.get(value);
-	 }
+	private ReportDocType(int value) {
+		this.value = value;
+	}
+	
+	static {
+		for (ReportDocType enumName : ReportDocType.values()) {
+			map.put(enumName.value, enumName);
+		}
+	}
+	
+	public static ReportDocType valueOf(int intValue) {
+		return (ReportDocType) map.get(intValue);
+	}
+	
+	public int getValue() {
+		return value;
+	}
 }

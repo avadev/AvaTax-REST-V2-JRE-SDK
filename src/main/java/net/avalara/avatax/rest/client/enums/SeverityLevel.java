@@ -41,30 +41,24 @@ public enum SeverityLevel {
      */
     Exception(3),
 
-    /**
-     * Integer value for SeverityLevel
-     */
-    public final int Value;
-
-    private SeverityLevel(int value) {
-		Value = value;
-    }
+    private int value;
+	private static Map map = new HashMap<>();
 	
-	/**
-	 * Map SeverityLevel to SeverityLevel integer ID.
-	 */
-	 private static final Map<Integer, SeverityLevel> _map = new HashMap<Integer, SeverityLevel>();
-	 static
-	 {
-		 for (SeverityLevel modelName : SeverityLevel.values()
-			 _map.put(modelName.Value, modelName);
-	 }
-	 
-	 /**
-	  * Get SeverityLevel from value 
-	  */
-	 public static SeverityLevel from(int value)
-	 {
-		 return _map.get(value);
-	 }
+	private SeverityLevel(int value) {
+		this.value = value;
+	}
+	
+	static {
+		for (SeverityLevel enumName : SeverityLevel.values()) {
+			map.put(enumName.value, enumName);
+		}
+	}
+	
+	public static SeverityLevel valueOf(int intValue) {
+		return (SeverityLevel) map.get(intValue);
+	}
+	
+	public int getValue() {
+		return value;
+	}
 }

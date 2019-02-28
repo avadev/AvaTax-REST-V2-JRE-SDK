@@ -36,30 +36,24 @@ public enum AdjustmentPeriodTypeId {
      */
     NextPeriod(2),
 
-    /**
-     * Integer value for AdjustmentPeriodTypeId
-     */
-    public final int Value;
-
-    private AdjustmentPeriodTypeId(int value) {
-		Value = value;
-    }
+    private int value;
+	private static Map map = new HashMap<>();
 	
-	/**
-	 * Map AdjustmentPeriodTypeId to AdjustmentPeriodTypeId integer ID.
-	 */
-	 private static final Map<Integer, AdjustmentPeriodTypeId> _map = new HashMap<Integer, AdjustmentPeriodTypeId>();
-	 static
-	 {
-		 for (AdjustmentPeriodTypeId modelName : AdjustmentPeriodTypeId.values()
-			 _map.put(modelName.Value, modelName);
-	 }
-	 
-	 /**
-	  * Get AdjustmentPeriodTypeId from value 
-	  */
-	 public static AdjustmentPeriodTypeId from(int value)
-	 {
-		 return _map.get(value);
-	 }
+	private AdjustmentPeriodTypeId(int value) {
+		this.value = value;
+	}
+	
+	static {
+		for (AdjustmentPeriodTypeId enumName : AdjustmentPeriodTypeId.values()) {
+			map.put(enumName.value, enumName);
+		}
+	}
+	
+	public static AdjustmentPeriodTypeId valueOf(int intValue) {
+		return (AdjustmentPeriodTypeId) map.get(intValue);
+	}
+	
+	public int getValue() {
+		return value;
+	}
 }

@@ -36,30 +36,24 @@ public enum ServiceMode {
      */
     Remote(2),
 
-    /**
-     * Integer value for ServiceMode
-     */
-    public final int Value;
-
-    private ServiceMode(int value) {
-		Value = value;
-    }
+    private int value;
+	private static Map map = new HashMap<>();
 	
-	/**
-	 * Map ServiceMode to ServiceMode integer ID.
-	 */
-	 private static final Map<Integer, ServiceMode> _map = new HashMap<Integer, ServiceMode>();
-	 static
-	 {
-		 for (ServiceMode modelName : ServiceMode.values()
-			 _map.put(modelName.Value, modelName);
-	 }
-	 
-	 /**
-	  * Get ServiceMode from value 
-	  */
-	 public static ServiceMode from(int value)
-	 {
-		 return _map.get(value);
-	 }
+	private ServiceMode(int value) {
+		this.value = value;
+	}
+	
+	static {
+		for (ServiceMode enumName : ServiceMode.values()) {
+			map.put(enumName.value, enumName);
+		}
+	}
+	
+	public static ServiceMode valueOf(int intValue) {
+		return (ServiceMode) map.get(intValue);
+	}
+	
+	public int getValue() {
+		return value;
+	}
 }
