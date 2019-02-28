@@ -1,3 +1,5 @@
+import java.util.HashMap;
+
 package net.avalara.avatax.rest.client.enums;
 
 /*
@@ -18,6 +20,7 @@ package net.avalara.avatax.rest.client.enums;
  * 
  */
 public enum RateType {
+	
     /** 
      * 
      */
@@ -83,5 +86,30 @@ public enum RateType {
      */
     Zero(90),
 
+    /**
+     * Integer value for RateType
+     */
+    public final int Value;
+
+    private RateType(int value) {
+		Value = value;
+    }
+	
+	/**
+	 * Map RateType to RateType integer ID.
+	 */
+	 private static final Map<Integer, RateType> _map = new HashMap<Integer, RateType>();
+	 static
+	 {
+		 for (RateType modelName : RateType.values()
+			 _map.put(modelName.Value, modelName);
+	 }
+	 
+	 /**
+	  * Get RateType from value 
+	  */
+	 public static RateType from(int value)
+	 {
+		 return _map.get(value);
+	 }
 }
-    

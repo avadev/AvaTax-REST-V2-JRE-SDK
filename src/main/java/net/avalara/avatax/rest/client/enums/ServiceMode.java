@@ -1,3 +1,5 @@
+import java.util.HashMap;
+
 package net.avalara.avatax.rest.client.enums;
 
 /*
@@ -18,6 +20,7 @@ package net.avalara.avatax.rest.client.enums;
  * Service modes for tax calculation when using an AvaLocal server.
  */
 public enum ServiceMode {
+	
     /** 
      * Automatically use local or remote (default)
      */
@@ -33,5 +36,30 @@ public enum ServiceMode {
      */
     Remote(2),
 
+    /**
+     * Integer value for ServiceMode
+     */
+    public final int Value;
+
+    private ServiceMode(int value) {
+		Value = value;
+    }
+	
+	/**
+	 * Map ServiceMode to ServiceMode integer ID.
+	 */
+	 private static final Map<Integer, ServiceMode> _map = new HashMap<Integer, ServiceMode>();
+	 static
+	 {
+		 for (ServiceMode modelName : ServiceMode.values()
+			 _map.put(modelName.Value, modelName);
+	 }
+	 
+	 /**
+	  * Get ServiceMode from value 
+	  */
+	 public static ServiceMode from(int value)
+	 {
+		 return _map.get(value);
+	 }
 }
-    

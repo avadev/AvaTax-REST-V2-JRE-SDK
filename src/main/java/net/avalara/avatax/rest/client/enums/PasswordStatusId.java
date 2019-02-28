@@ -1,3 +1,5 @@
+import java.util.HashMap;
+
 package net.avalara.avatax.rest.client.enums;
 
 /*
@@ -18,6 +20,7 @@ package net.avalara.avatax.rest.client.enums;
  * PasswordStatusId
  */
 public enum PasswordStatusId {
+	
     /** 
      * UserCannotChange
      */
@@ -33,5 +36,30 @@ public enum PasswordStatusId {
      */
     UserMustChange(2),
 
+    /**
+     * Integer value for PasswordStatusId
+     */
+    public final int Value;
+
+    private PasswordStatusId(int value) {
+		Value = value;
+    }
+	
+	/**
+	 * Map PasswordStatusId to PasswordStatusId integer ID.
+	 */
+	 private static final Map<Integer, PasswordStatusId> _map = new HashMap<Integer, PasswordStatusId>();
+	 static
+	 {
+		 for (PasswordStatusId modelName : PasswordStatusId.values()
+			 _map.put(modelName.Value, modelName);
+	 }
+	 
+	 /**
+	  * Get PasswordStatusId from value 
+	  */
+	 public static PasswordStatusId from(int value)
+	 {
+		 return _map.get(value);
+	 }
 }
-    

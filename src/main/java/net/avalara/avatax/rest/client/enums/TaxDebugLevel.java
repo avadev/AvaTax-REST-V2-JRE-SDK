@@ -1,3 +1,5 @@
+import java.util.HashMap;
+
 package net.avalara.avatax.rest.client.enums;
 
 /*
@@ -18,6 +20,7 @@ package net.avalara.avatax.rest.client.enums;
  * Indicates the level of detail requested from a tax API call
  */
 public enum TaxDebugLevel {
+	
     /** 
      * User requests the normal level of debug information when creating a tax transaction
      */
@@ -28,5 +31,30 @@ public enum TaxDebugLevel {
      */
     Diagnostic(1),
 
+    /**
+     * Integer value for TaxDebugLevel
+     */
+    public final int Value;
+
+    private TaxDebugLevel(int value) {
+		Value = value;
+    }
+	
+	/**
+	 * Map TaxDebugLevel to TaxDebugLevel integer ID.
+	 */
+	 private static final Map<Integer, TaxDebugLevel> _map = new HashMap<Integer, TaxDebugLevel>();
+	 static
+	 {
+		 for (TaxDebugLevel modelName : TaxDebugLevel.values()
+			 _map.put(modelName.Value, modelName);
+	 }
+	 
+	 /**
+	  * Get TaxDebugLevel from value 
+	  */
+	 public static TaxDebugLevel from(int value)
+	 {
+		 return _map.get(value);
+	 }
 }
-    

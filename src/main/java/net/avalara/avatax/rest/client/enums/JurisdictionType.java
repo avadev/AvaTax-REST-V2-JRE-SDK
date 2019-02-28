@@ -1,3 +1,5 @@
+import java.util.HashMap;
+
 package net.avalara.avatax.rest.client.enums;
 
 /*
@@ -18,6 +20,7 @@ package net.avalara.avatax.rest.client.enums;
  * Jurisdiction Type
  */
 public enum JurisdictionType {
+	
     /** 
      * Country
      */
@@ -43,5 +46,30 @@ public enum JurisdictionType {
      */
     Special(4),
 
+    /**
+     * Integer value for JurisdictionType
+     */
+    public final int Value;
+
+    private JurisdictionType(int value) {
+		Value = value;
+    }
+	
+	/**
+	 * Map JurisdictionType to JurisdictionType integer ID.
+	 */
+	 private static final Map<Integer, JurisdictionType> _map = new HashMap<Integer, JurisdictionType>();
+	 static
+	 {
+		 for (JurisdictionType modelName : JurisdictionType.values()
+			 _map.put(modelName.Value, modelName);
+	 }
+	 
+	 /**
+	  * Get JurisdictionType from value 
+	  */
+	 public static JurisdictionType from(int value)
+	 {
+		 return _map.get(value);
+	 }
 }
-    

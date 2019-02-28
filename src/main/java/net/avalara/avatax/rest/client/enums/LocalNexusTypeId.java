@@ -1,3 +1,5 @@
+import java.util.HashMap;
+
 package net.avalara.avatax.rest.client.enums;
 
 /*
@@ -18,6 +20,7 @@ package net.avalara.avatax.rest.client.enums;
  * Describes nexus type id
  */
 public enum LocalNexusTypeId {
+	
     /** 
      * Only the specific nexus objects declared for this company are declared.
      */
@@ -37,5 +40,30 @@ public enum LocalNexusTypeId {
      */
     All(2),
 
+    /**
+     * Integer value for LocalNexusTypeId
+     */
+    public final int Value;
+
+    private LocalNexusTypeId(int value) {
+		Value = value;
+    }
+	
+	/**
+	 * Map LocalNexusTypeId to LocalNexusTypeId integer ID.
+	 */
+	 private static final Map<Integer, LocalNexusTypeId> _map = new HashMap<Integer, LocalNexusTypeId>();
+	 static
+	 {
+		 for (LocalNexusTypeId modelName : LocalNexusTypeId.values()
+			 _map.put(modelName.Value, modelName);
+	 }
+	 
+	 /**
+	  * Get LocalNexusTypeId from value 
+	  */
+	 public static LocalNexusTypeId from(int value)
+	 {
+		 return _map.get(value);
+	 }
 }
-    

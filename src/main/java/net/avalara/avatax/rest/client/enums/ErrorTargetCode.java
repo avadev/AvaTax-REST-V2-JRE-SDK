@@ -1,3 +1,5 @@
+import java.util.HashMap;
+
 package net.avalara.avatax.rest.client.enums;
 
 /*
@@ -18,6 +20,7 @@ package net.avalara.avatax.rest.client.enums;
  * What object experienced the error?
  */
 public enum ErrorTargetCode {
+	
     /** 
      * Error target is unknown
      */
@@ -53,5 +56,30 @@ public enum ErrorTargetCode {
      */
     CustomerAccountSetup(12),
 
+    /**
+     * Integer value for ErrorTargetCode
+     */
+    public final int Value;
+
+    private ErrorTargetCode(int value) {
+		Value = value;
+    }
+	
+	/**
+	 * Map ErrorTargetCode to ErrorTargetCode integer ID.
+	 */
+	 private static final Map<Integer, ErrorTargetCode> _map = new HashMap<Integer, ErrorTargetCode>();
+	 static
+	 {
+		 for (ErrorTargetCode modelName : ErrorTargetCode.values()
+			 _map.put(modelName.Value, modelName);
+	 }
+	 
+	 /**
+	  * Get ErrorTargetCode from value 
+	  */
+	 public static ErrorTargetCode from(int value)
+	 {
+		 return _map.get(value);
+	 }
 }
-    

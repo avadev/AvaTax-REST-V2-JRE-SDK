@@ -1,3 +1,5 @@
+import java.util.HashMap;
+
 package net.avalara.avatax.rest.client.enums;
 
 /*
@@ -18,6 +20,7 @@ package net.avalara.avatax.rest.client.enums;
  * The type of data contained in this batch
  */
 public enum BatchType {
+	
     /** 
      * 
      */
@@ -84,5 +87,30 @@ public enum BatchType {
      */
     UPCValidationImport(12),
 
+    /**
+     * Integer value for BatchType
+     */
+    public final int Value;
+
+    private BatchType(int value) {
+		Value = value;
+    }
+	
+	/**
+	 * Map BatchType to BatchType integer ID.
+	 */
+	 private static final Map<Integer, BatchType> _map = new HashMap<Integer, BatchType>();
+	 static
+	 {
+		 for (BatchType modelName : BatchType.values()
+			 _map.put(modelName.Value, modelName);
+	 }
+	 
+	 /**
+	  * Get BatchType from value 
+	  */
+	 public static BatchType from(int value)
+	 {
+		 return _map.get(value);
+	 }
 }
-    

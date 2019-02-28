@@ -1,3 +1,5 @@
+import java.util.HashMap;
+
 package net.avalara.avatax.rest.client.enums;
 
 /*
@@ -18,6 +20,7 @@ package net.avalara.avatax.rest.client.enums;
  * Represents a error code message
  */
 public enum ErrorCodeId {
+	
     /** 
      * Server has a configuration or setup problem
      */
@@ -101,27 +104,27 @@ public enum ErrorCodeId {
     /** 
      * 
      */
-    ParserFieldNameError(17),
+    InvalidQueryField(17),
 
     /** 
      * 
      */
-    ParserFieldValueError(18),
+    InvalidQueryValue(18),
 
     /** 
      * 
      */
-    ParserSyntaxError(19),
+    SyntaxError(19),
 
     /** 
      * 
      */
-    ParserTooManyParametersError(20),
+    TooManyParametersError(20),
 
     /** 
      * 
      */
-    ParserUnterminatedValueError(21),
+    UnterminatedValueError(21),
 
     /** 
      * 
@@ -247,6 +250,11 @@ public enum ErrorCodeId {
      * 
      */
     UnhandledException(50),
+
+    /** 
+     * 
+     */
+    InactiveAccount(51),
 
     /** 
      * 
@@ -1221,7 +1229,7 @@ public enum ErrorCodeId {
     /** 
      * 
      */
-    ParserFieldNotQueryableError(1408),
+    FieldNotQueryableError(1408),
 
     /** 
      * 
@@ -1232,6 +1240,11 @@ public enum ErrorCodeId {
      * 
      */
     InvalidAuditMessage(1410),
+
+    /** 
+     * 
+     */
+    FieldNotOrderableError(1411),
 
     /** 
      * Nexus validation error codes
@@ -1368,5 +1381,30 @@ public enum ErrorCodeId {
      */
     SubscriptionRequiredForParameter(2104),
 
+    /**
+     * Integer value for ErrorCodeId
+     */
+    public final int Value;
+
+    private ErrorCodeId(int value) {
+		Value = value;
+    }
+	
+	/**
+	 * Map ErrorCodeId to ErrorCodeId integer ID.
+	 */
+	 private static final Map<Integer, ErrorCodeId> _map = new HashMap<Integer, ErrorCodeId>();
+	 static
+	 {
+		 for (ErrorCodeId modelName : ErrorCodeId.values()
+			 _map.put(modelName.Value, modelName);
+	 }
+	 
+	 /**
+	  * Get ErrorCodeId from value 
+	  */
+	 public static ErrorCodeId from(int value)
+	 {
+		 return _map.get(value);
+	 }
 }
-    

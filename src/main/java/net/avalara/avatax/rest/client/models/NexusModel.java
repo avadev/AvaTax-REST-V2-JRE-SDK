@@ -25,14 +25,14 @@ import java.util.HashMap;
 
 /**
  * Represents a declaration of nexus within a particular taxing jurisdiction.
-* 
+*  
 * To create a nexus declaration for your company, you must first call the Definitions API `ListNexus` to obtain a
-* list of Avalara-defined nexus. Once you have determined which nexus you wish to declare, you should customize 
+* list of Avalara-defined nexus. Once you have determined which nexus you wish to declare, you should customize
 * only the user-selectable fields in this object.
-* 
-* The user selectable fields for the nexus object are `companyId`, `effectiveDate`, `endDate`, `localNexusTypeId`, 
+*  
+* The user selectable fields for the nexus object are `companyId`, `effectiveDate`, `endDate`, `localNexusTypeId`,
 * `taxId`, `nexusTypeId`, `hasPermanentEstablishment`, and `isSellerImporterOfRecord`.
-* 
+*  
 * When calling `CreateNexus` or `UpdateNexus`, all values in your nexus object except for the user-selectable fields
 * must match an Avalara-defined system nexus object. You can retrieve a list of Avalara-defined system nexus objects
 * by calling `ListNexus`. If any data does not match, AvaTax may not recognize your nexus declaration.
@@ -46,7 +46,7 @@ public class NexusModel {
      * Getter for id
      *
      * The unique ID number of this declaration of nexus.
-    * 
+    *  
     * This field is defined automatically when you declare nexus. You do not need to provide a value for this field.
      */
     public Integer getId() {
@@ -57,7 +57,7 @@ public class NexusModel {
      * Setter for id
      *
      * The unique ID number of this declaration of nexus.
-    * 
+    *  
     * This field is defined automatically when you declare nexus. You do not need to provide a value for this field.
      */
     public void setId(Integer value) {
@@ -71,7 +71,7 @@ public class NexusModel {
      * Getter for companyId
      *
      * The unique ID number of the company that declared nexus.
-    * 
+    *  
     * This field is user-selectable and should be provided when creating or updating a nexus object.
      */
     public Integer getCompanyId() {
@@ -82,7 +82,7 @@ public class NexusModel {
      * Setter for companyId
      *
      * The unique ID number of the company that declared nexus.
-    * 
+    *  
     * This field is user-selectable and should be provided when creating or updating a nexus object.
      */
     public void setCompanyId(Integer value) {
@@ -96,7 +96,7 @@ public class NexusModel {
      * Getter for country
      *
      * Name or ISO 3166 code identifying the country in which this company declared nexus.
-    * 
+    *  
     * This field is defined by Avalara. All Avalara-defined fields must match an Avalara-defined nexus object found by calling `ListNexus`.
      */
     public String getCountry() {
@@ -107,7 +107,7 @@ public class NexusModel {
      * Setter for country
      *
      * Name or ISO 3166 code identifying the country in which this company declared nexus.
-    * 
+    *  
     * This field is defined by Avalara. All Avalara-defined fields must match an Avalara-defined nexus object found by calling `ListNexus`.
      */
     public void setCountry(String value) {
@@ -121,7 +121,7 @@ public class NexusModel {
      * Getter for region
      *
      * Name or ISO 3166 code identifying the region within the country.
-    * 
+    *  
     * This field is defined by Avalara. All Avalara-defined fields must match an Avalara-defined nexus object found by calling `ListNexus`.
      */
     public String getRegion() {
@@ -132,7 +132,7 @@ public class NexusModel {
      * Setter for region
      *
      * Name or ISO 3166 code identifying the region within the country.
-    * 
+    *  
     * This field is defined by Avalara. All Avalara-defined fields must match an Avalara-defined nexus object found by calling `ListNexus`.
      */
     public void setRegion(String value) {
@@ -169,7 +169,7 @@ public class NexusModel {
      * Getter for jurisdictionTypeId
      *
      * The type of the jurisdiction in which this company declared nexus.
-    * 
+    *  
     * This field is defined by Avalara. All Avalara-defined fields must match an Avalara-defined nexus object found by calling `ListNexus`.
      */
     public JurisdictionType getJurisdictionTypeId() {
@@ -180,7 +180,7 @@ public class NexusModel {
      * Setter for jurisdictionTypeId
      *
      * The type of the jurisdiction in which this company declared nexus.
-    * 
+    *  
     * This field is defined by Avalara. All Avalara-defined fields must match an Avalara-defined nexus object found by calling `ListNexus`.
      */
     public void setJurisdictionTypeId(JurisdictionType value) {
@@ -194,7 +194,7 @@ public class NexusModel {
      * Getter for jurisCode
      *
      * The code identifying the jurisdiction in which this company declared nexus.
-    * 
+    *  
     * This field is defined by Avalara. All Avalara-defined fields must match an Avalara-defined nexus object found by calling `ListNexus`.
      */
     public String getJurisCode() {
@@ -205,7 +205,7 @@ public class NexusModel {
      * Setter for jurisCode
      *
      * The code identifying the jurisdiction in which this company declared nexus.
-    * 
+    *  
     * This field is defined by Avalara. All Avalara-defined fields must match an Avalara-defined nexus object found by calling `ListNexus`.
      */
     public void setJurisCode(String value) {
@@ -219,7 +219,7 @@ public class NexusModel {
      * Getter for jurisName
      *
      * The common name of the jurisdiction in which this company declared nexus.
-    * 
+    *  
     * This field is defined by Avalara. All Avalara-defined fields must match an Avalara-defined nexus object found by calling `ListNexus`.
      */
     public String getJurisName() {
@@ -230,7 +230,7 @@ public class NexusModel {
      * Setter for jurisName
      *
      * The common name of the jurisdiction in which this company declared nexus.
-    * 
+    *  
     * This field is defined by Avalara. All Avalara-defined fields must match an Avalara-defined nexus object found by calling `ListNexus`.
      */
     public void setJurisName(String value) {
@@ -244,7 +244,7 @@ public class NexusModel {
      * Getter for effectiveDate
      *
      * The date when this nexus began. If not known, set to null.
-    * 
+    *  
     * This field is user-selectable and should be provided when creating or updating a nexus object.
      */
     public Date getEffectiveDate() {
@@ -255,7 +255,7 @@ public class NexusModel {
      * Setter for effectiveDate
      *
      * The date when this nexus began. If not known, set to null.
-    * 
+    *  
     * This field is user-selectable and should be provided when creating or updating a nexus object.
      */
     public void setEffectiveDate(Date value) {
@@ -269,7 +269,7 @@ public class NexusModel {
      * Getter for endDate
      *
      * If this nexus will end or has ended on a specific date, set this to the date when this nexus ends.
-    * 
+    *  
     * This field is user-selectable and should be provided when creating or updating a nexus object.
      */
     public Date getEndDate() {
@@ -280,7 +280,7 @@ public class NexusModel {
      * Setter for endDate
      *
      * If this nexus will end or has ended on a specific date, set this to the date when this nexus ends.
-    * 
+    *  
     * This field is user-selectable and should be provided when creating or updating a nexus object.
      */
     public void setEndDate(Date value) {
@@ -294,7 +294,7 @@ public class NexusModel {
      * Getter for shortName
      *
      * The short name of the jurisdiction.
-    * 
+    *  
     * This field is defined by Avalara. All Avalara-defined fields must match an Avalara-defined nexus object found by calling `ListNexus`.
      */
     public String getShortName() {
@@ -305,7 +305,7 @@ public class NexusModel {
      * Setter for shortName
      *
      * The short name of the jurisdiction.
-    * 
+    *  
     * This field is defined by Avalara. All Avalara-defined fields must match an Avalara-defined nexus object found by calling `ListNexus`.
      */
     public void setShortName(String value) {
@@ -319,7 +319,7 @@ public class NexusModel {
      * Getter for signatureCode
      *
      * The signature code of the boundary region as defined by Avalara.
-    * 
+    *  
     * This field is defined by Avalara. All Avalara-defined fields must match an Avalara-defined nexus object found by calling `ListNexus`.
      */
     public String getSignatureCode() {
@@ -330,7 +330,7 @@ public class NexusModel {
      * Setter for signatureCode
      *
      * The signature code of the boundary region as defined by Avalara.
-    * 
+    *  
     * This field is defined by Avalara. All Avalara-defined fields must match an Avalara-defined nexus object found by calling `ListNexus`.
      */
     public void setSignatureCode(String value) {
@@ -344,7 +344,7 @@ public class NexusModel {
      * Getter for stateAssignedNo
      *
      * The state assigned number of this jurisdiction.
-    * 
+    *  
     * This field is defined by Avalara. All Avalara-defined fields must match an Avalara-defined nexus object found by calling `ListNexus`.
      */
     public String getStateAssignedNo() {
@@ -355,7 +355,7 @@ public class NexusModel {
      * Setter for stateAssignedNo
      *
      * The state assigned number of this jurisdiction.
-    * 
+    *  
     * This field is defined by Avalara. All Avalara-defined fields must match an Avalara-defined nexus object found by calling `ListNexus`.
      */
     public void setStateAssignedNo(String value) {
@@ -369,18 +369,18 @@ public class NexusModel {
      * Getter for nexusTypeId
      *
      * The type of nexus that this company is declaring.
-    * 
+    *  
     * If you are voluntarily declaring nexus in a jurisdiction, you should select `SalesOrSellersUseTax` for your
     * nexus type option. This option allows you to calculate tax correctly whether you are selling in-state or
     * shipping from an out-of-state location.
-    * 
+    *  
     * If you are legally obligated to declare nexus due to physical presence or other sufficient nexus, you
     * should select `SalesTax`. This indicates that, as a legal requirement, your company must always collect
     * and remit full sales tax in this jurisdiction.
-    * 
+    *  
     * If you are participating in the Streamlined Sales Tax program, your SST administrator will select nexus
     * settings for you in all SST jurisdictions. Do not select any SST options by yourself.
-    * 
+    *  
     * This field is user-selectable and should be provided when creating or updating a nexus object.
      */
     public NexusTypeId getNexusTypeId() {
@@ -391,18 +391,18 @@ public class NexusModel {
      * Setter for nexusTypeId
      *
      * The type of nexus that this company is declaring.
-    * 
+    *  
     * If you are voluntarily declaring nexus in a jurisdiction, you should select `SalesOrSellersUseTax` for your
     * nexus type option. This option allows you to calculate tax correctly whether you are selling in-state or
     * shipping from an out-of-state location.
-    * 
+    *  
     * If you are legally obligated to declare nexus due to physical presence or other sufficient nexus, you
     * should select `SalesTax`. This indicates that, as a legal requirement, your company must always collect
     * and remit full sales tax in this jurisdiction.
-    * 
+    *  
     * If you are participating in the Streamlined Sales Tax program, your SST administrator will select nexus
     * settings for you in all SST jurisdictions. Do not select any SST options by yourself.
-    * 
+    *  
     * This field is user-selectable and should be provided when creating or updating a nexus object.
      */
     public void setNexusTypeId(NexusTypeId value) {
@@ -416,7 +416,7 @@ public class NexusModel {
      * Getter for sourcing
      *
      * Indicates whether this nexus is defined as origin or destination nexus.
-    * 
+    *  
     * This field is defined by Avalara. All Avalara-defined fields must match an Avalara-defined nexus object found by calling `ListNexus`.
      */
     public Sourcing getSourcing() {
@@ -427,7 +427,7 @@ public class NexusModel {
      * Setter for sourcing
      *
      * Indicates whether this nexus is defined as origin or destination nexus.
-    * 
+    *  
     * This field is defined by Avalara. All Avalara-defined fields must match an Avalara-defined nexus object found by calling `ListNexus`.
      */
     public void setSourcing(Sourcing value) {
@@ -442,7 +442,7 @@ public class NexusModel {
      *
      * True if you are also declaring local nexus within this jurisdiction.
     * Many U.S. states have options for declaring nexus in local jurisdictions as well as within the state.
-    * 
+    *  
     * This field is defined by Avalara. All Avalara-defined fields must match an Avalara-defined nexus object found by calling `ListNexus`.
      */
     public Boolean getHasLocalNexus() {
@@ -454,7 +454,7 @@ public class NexusModel {
      *
      * True if you are also declaring local nexus within this jurisdiction.
     * Many U.S. states have options for declaring nexus in local jurisdictions as well as within the state.
-    * 
+    *  
     * This field is defined by Avalara. All Avalara-defined fields must match an Avalara-defined nexus object found by calling `ListNexus`.
      */
     public void setHasLocalNexus(Boolean value) {
@@ -467,9 +467,9 @@ public class NexusModel {
     /**
      * Getter for localNexusTypeId
      *
-     * If you are declaring local nexus within this jurisdiction, this indicates whether you are declaring only 
+     * If you are declaring local nexus within this jurisdiction, this indicates whether you are declaring only
     * a specified list of local jurisdictions, all state-administered local jurisdictions, or all local jurisdictions.
-    * 
+    *  
     * This field is user-selectable and should be provided when creating or updating a nexus object.
      */
     public LocalNexusTypeId getLocalNexusTypeId() {
@@ -479,9 +479,9 @@ public class NexusModel {
     /**
      * Setter for localNexusTypeId
      *
-     * If you are declaring local nexus within this jurisdiction, this indicates whether you are declaring only 
+     * If you are declaring local nexus within this jurisdiction, this indicates whether you are declaring only
     * a specified list of local jurisdictions, all state-administered local jurisdictions, or all local jurisdictions.
-    * 
+    *  
     * This field is user-selectable and should be provided when creating or updating a nexus object.
      */
     public void setLocalNexusTypeId(LocalNexusTypeId value) {
@@ -495,7 +495,7 @@ public class NexusModel {
      * Getter for hasPermanentEstablishment
      *
      * Set this value to true if your company has a permanent establishment within this jurisdiction.
-    * 
+    *  
     * This field is user-selectable and should be provided when creating or updating a nexus object.
      */
     public Boolean getHasPermanentEstablishment() {
@@ -506,7 +506,7 @@ public class NexusModel {
      * Setter for hasPermanentEstablishment
      *
      * Set this value to true if your company has a permanent establishment within this jurisdiction.
-    * 
+    *  
     * This field is user-selectable and should be provided when creating or updating a nexus object.
      */
     public void setHasPermanentEstablishment(Boolean value) {
@@ -520,7 +520,7 @@ public class NexusModel {
      * Getter for taxId
      *
      * Optional - the tax identification number under which you declared nexus.
-    * 
+    *  
     * This field is user-selectable and should be provided when creating or updating a nexus object.
      */
     public String getTaxId() {
@@ -531,7 +531,7 @@ public class NexusModel {
      * Setter for taxId
      *
      * Optional - the tax identification number under which you declared nexus.
-    * 
+    *  
     * This field is user-selectable and should be provided when creating or updating a nexus object.
      */
     public void setTaxId(String value) {
@@ -544,9 +544,9 @@ public class NexusModel {
     /**
      * Getter for streamlinedSalesTax
      *
-     * For the United States, this flag indicates whether this particular nexus falls within a U.S. State that participates 
+     * For the United States, this flag indicates whether this particular nexus falls within a U.S. State that participates
     * in the Streamlined Sales Tax program. For countries other than the US, this flag is null.
-    * 
+    *  
     * This field is defined by Avalara. All Avalara-defined fields must match an Avalara-defined nexus object found by calling `ListNexus`.
      */
     public Boolean getStreamlinedSalesTax() {
@@ -556,9 +556,9 @@ public class NexusModel {
     /**
      * Setter for streamlinedSalesTax
      *
-     * For the United States, this flag indicates whether this particular nexus falls within a U.S. State that participates 
+     * For the United States, this flag indicates whether this particular nexus falls within a U.S. State that participates
     * in the Streamlined Sales Tax program. For countries other than the US, this flag is null.
-    * 
+    *  
     * This field is defined by Avalara. All Avalara-defined fields must match an Avalara-defined nexus object found by calling `ListNexus`.
      */
     public void setStreamlinedSalesTax(Boolean value) {
@@ -572,7 +572,7 @@ public class NexusModel {
      * Getter for createdDate
      *
      * The date when this record was created.
-    * 
+    *  
     * This field is defined automatically when you declare nexus. You do not need to provide a value for this field.
      */
     public Date getCreatedDate() {
@@ -583,7 +583,7 @@ public class NexusModel {
      * Setter for createdDate
      *
      * The date when this record was created.
-    * 
+    *  
     * This field is defined automatically when you declare nexus. You do not need to provide a value for this field.
      */
     public void setCreatedDate(Date value) {
@@ -597,7 +597,7 @@ public class NexusModel {
      * Getter for createdUserId
      *
      * The User ID of the user who created this record.
-    * 
+    *  
     * This field is defined automatically when you declare nexus. You do not need to provide a value for this field.
      */
     public Integer getCreatedUserId() {
@@ -608,7 +608,7 @@ public class NexusModel {
      * Setter for createdUserId
      *
      * The User ID of the user who created this record.
-    * 
+    *  
     * This field is defined automatically when you declare nexus. You do not need to provide a value for this field.
      */
     public void setCreatedUserId(Integer value) {
@@ -622,7 +622,7 @@ public class NexusModel {
      * Getter for modifiedDate
      *
      * The date/time when this record was last modified.
-    * 
+    *  
     * This field is defined automatically when you declare nexus. You do not need to provide a value for this field.
      */
     public Date getModifiedDate() {
@@ -633,7 +633,7 @@ public class NexusModel {
      * Setter for modifiedDate
      *
      * The date/time when this record was last modified.
-    * 
+    *  
     * This field is defined automatically when you declare nexus. You do not need to provide a value for this field.
      */
     public void setModifiedDate(Date value) {
@@ -647,7 +647,7 @@ public class NexusModel {
      * Getter for modifiedUserId
      *
      * The user ID of the user who last modified this record.
-    * 
+    *  
     * This field is defined automatically when you declare nexus. You do not need to provide a value for this field.
      */
     public Integer getModifiedUserId() {
@@ -658,7 +658,7 @@ public class NexusModel {
      * Setter for modifiedUserId
      *
      * The user ID of the user who last modified this record.
-    * 
+    *  
     * This field is defined automatically when you declare nexus. You do not need to provide a value for this field.
      */
     public void setModifiedUserId(Integer value) {
@@ -673,7 +673,7 @@ public class NexusModel {
      *
      * The type of nexus that this company is declaring.Replaces NexusTypeId.
     * Use [ListNexusTaxTypeGroups](https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Definitions/ListNexusTaxTypeGroups/) API for a list of nexus tax type groups.
-    * 
+    *  
     * This field is defined by Avalara. All Avalara-defined fields must match an Avalara-defined nexus object found by calling `ListNexus`.
      */
     public String getNexusTaxTypeGroup() {
@@ -685,7 +685,7 @@ public class NexusModel {
      *
      * The type of nexus that this company is declaring.Replaces NexusTypeId.
     * Use [ListNexusTaxTypeGroups](https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Definitions/ListNexusTaxTypeGroups/) API for a list of nexus tax type groups.
-    * 
+    *  
     * This field is defined by Avalara. All Avalara-defined fields must match an Avalara-defined nexus object found by calling `ListNexus`.
      */
     public void setNexusTaxTypeGroup(String value) {
@@ -699,7 +699,7 @@ public class NexusModel {
      * Getter for taxAuthorityId
      *
      * A unique ID number of the tax authority that is associated with this nexus.
-    * 
+    *  
     * This field is defined by Avalara. All Avalara-defined fields must match an Avalara-defined nexus object found by calling `ListNexus`.
      */
     public Long getTaxAuthorityId() {
@@ -710,7 +710,7 @@ public class NexusModel {
      * Setter for taxAuthorityId
      *
      * A unique ID number of the tax authority that is associated with this nexus.
-    * 
+    *  
     * This field is defined by Avalara. All Avalara-defined fields must match an Avalara-defined nexus object found by calling `ListNexus`.
      */
     public void setTaxAuthorityId(Long value) {
@@ -724,16 +724,16 @@ public class NexusModel {
      * Getter for isSellerImporterOfRecord
      *
      * For nexus declarations at the country level, specifies whether this company is considered the importer of record in this nexus region.
-    * 
+    *  
     * Some taxes only apply if the seller is the importer of record for a product. In cases where companies are working together to
     * ship products, there may be mutual agreement as to which company is the entity designated as importer of record. The importer
     * of record will then be the company designated to pay taxes marked as being obligated to the importer of record.
-    * 
+    *  
     * Set this value to `true` to consider your company as the importer of record and collect these taxes. Leave this value as false
     * or null and taxes will be calculated as if your company is not the importer of record.
-    * 
+    *  
     * This value may also be set during each transaction API call. See `CreateTransaction()` for more information.
-    * 
+    *  
     * This field is user-selectable and should be provided when creating or updating a nexus object.
      */
     public Boolean getIsSellerImporterOfRecord() {
@@ -744,16 +744,16 @@ public class NexusModel {
      * Setter for isSellerImporterOfRecord
      *
      * For nexus declarations at the country level, specifies whether this company is considered the importer of record in this nexus region.
-    * 
+    *  
     * Some taxes only apply if the seller is the importer of record for a product. In cases where companies are working together to
     * ship products, there may be mutual agreement as to which company is the entity designated as importer of record. The importer
     * of record will then be the company designated to pay taxes marked as being obligated to the importer of record.
-    * 
+    *  
     * Set this value to `true` to consider your company as the importer of record and collect these taxes. Leave this value as false
     * or null and taxes will be calculated as if your company is not the importer of record.
-    * 
+    *  
     * This value may also be set during each transaction API call. See `CreateTransaction()` for more information.
-    * 
+    *  
     * This field is user-selectable and should be provided when creating or updating a nexus object.
      */
     public void setIsSellerImporterOfRecord(Boolean value) {

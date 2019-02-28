@@ -1,3 +1,5 @@
+import java.util.HashMap;
+
 package net.avalara.avatax.rest.client.enums;
 
 /*
@@ -18,6 +20,7 @@ package net.avalara.avatax.rest.client.enums;
  * Filing Frequency types
  */
 public enum FilingFrequencyId {
+	
     /** 
      * File once per month
      */
@@ -53,5 +56,35 @@ public enum FilingFrequencyId {
      */
     InverseQuarterly(7),
 
+    /** 
+     * File every week
+     */
+    Weekly(8),
+
+    /**
+     * Integer value for FilingFrequencyId
+     */
+    public final int Value;
+
+    private FilingFrequencyId(int value) {
+		Value = value;
+    }
+	
+	/**
+	 * Map FilingFrequencyId to FilingFrequencyId integer ID.
+	 */
+	 private static final Map<Integer, FilingFrequencyId> _map = new HashMap<Integer, FilingFrequencyId>();
+	 static
+	 {
+		 for (FilingFrequencyId modelName : FilingFrequencyId.values()
+			 _map.put(modelName.Value, modelName);
+	 }
+	 
+	 /**
+	  * Get FilingFrequencyId from value 
+	  */
+	 public static FilingFrequencyId from(int value)
+	 {
+		 return _map.get(value);
+	 }
 }
-    

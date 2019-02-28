@@ -1,3 +1,5 @@
+import java.util.HashMap;
+
 package net.avalara.avatax.rest.client.enums;
 
 /*
@@ -18,6 +20,7 @@ package net.avalara.avatax.rest.client.enums;
  * Sourcing
  */
 public enum Sourcing {
+	
     /** 
      * Mixed sourcing, for states that do both origin and destination calculation
      */
@@ -33,5 +36,30 @@ public enum Sourcing {
      */
     Origin(79),
 
+    /**
+     * Integer value for Sourcing
+     */
+    public final int Value;
+
+    private Sourcing(int value) {
+		Value = value;
+    }
+	
+	/**
+	 * Map Sourcing to Sourcing integer ID.
+	 */
+	 private static final Map<Integer, Sourcing> _map = new HashMap<Integer, Sourcing>();
+	 static
+	 {
+		 for (Sourcing modelName : Sourcing.values()
+			 _map.put(modelName.Value, modelName);
+	 }
+	 
+	 /**
+	  * Get Sourcing from value 
+	  */
+	 public static Sourcing from(int value)
+	 {
+		 return _map.get(value);
+	 }
 }
-    

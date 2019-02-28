@@ -1,3 +1,5 @@
+import java.util.HashMap;
+
 package net.avalara.avatax.rest.client.enums;
 
 /*
@@ -18,6 +20,7 @@ package net.avalara.avatax.rest.client.enums;
  * 
  */
 public enum AdjustmentPeriodTypeId {
+	
     /** 
      * 
      */
@@ -33,5 +36,30 @@ public enum AdjustmentPeriodTypeId {
      */
     NextPeriod(2),
 
+    /**
+     * Integer value for AdjustmentPeriodTypeId
+     */
+    public final int Value;
+
+    private AdjustmentPeriodTypeId(int value) {
+		Value = value;
+    }
+	
+	/**
+	 * Map AdjustmentPeriodTypeId to AdjustmentPeriodTypeId integer ID.
+	 */
+	 private static final Map<Integer, AdjustmentPeriodTypeId> _map = new HashMap<Integer, AdjustmentPeriodTypeId>();
+	 static
+	 {
+		 for (AdjustmentPeriodTypeId modelName : AdjustmentPeriodTypeId.values()
+			 _map.put(modelName.Value, modelName);
+	 }
+	 
+	 /**
+	  * Get AdjustmentPeriodTypeId from value 
+	  */
+	 public static AdjustmentPeriodTypeId from(int value)
+	 {
+		 return _map.get(value);
+	 }
 }
-    

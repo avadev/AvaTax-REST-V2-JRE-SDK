@@ -1,3 +1,5 @@
+import java.util.HashMap;
+
 package net.avalara.avatax.rest.client.enums;
 
 /*
@@ -18,6 +20,7 @@ package net.avalara.avatax.rest.client.enums;
  * The output DocumentType for a report
  */
 public enum ReportDocType {
+	
     /** 
      * Output all ConsumerUse tax transactions in the report
      */
@@ -28,5 +31,30 @@ public enum ReportDocType {
      */
     Sales(83),
 
+    /**
+     * Integer value for ReportDocType
+     */
+    public final int Value;
+
+    private ReportDocType(int value) {
+		Value = value;
+    }
+	
+	/**
+	 * Map ReportDocType to ReportDocType integer ID.
+	 */
+	 private static final Map<Integer, ReportDocType> _map = new HashMap<Integer, ReportDocType>();
+	 static
+	 {
+		 for (ReportDocType modelName : ReportDocType.values()
+			 _map.put(modelName.Value, modelName);
+	 }
+	 
+	 /**
+	  * Get ReportDocType from value 
+	  */
+	 public static ReportDocType from(int value)
+	 {
+		 return _map.get(value);
+	 }
 }
-    

@@ -1,3 +1,5 @@
+import java.util.HashMap;
+
 package net.avalara.avatax.rest.client.enums;
 
 /*
@@ -18,6 +20,7 @@ package net.avalara.avatax.rest.client.enums;
  * Reason code for voiding or cancelling a transaction
  */
 public enum VoidReasonCode {
+	
     /** 
      * Unspecified reason
      */
@@ -44,5 +47,30 @@ public enum VoidReasonCode {
      */
     AdjustmentCancelled(4),
 
+    /**
+     * Integer value for VoidReasonCode
+     */
+    public final int Value;
+
+    private VoidReasonCode(int value) {
+		Value = value;
+    }
+	
+	/**
+	 * Map VoidReasonCode to VoidReasonCode integer ID.
+	 */
+	 private static final Map<Integer, VoidReasonCode> _map = new HashMap<Integer, VoidReasonCode>();
+	 static
+	 {
+		 for (VoidReasonCode modelName : VoidReasonCode.values()
+			 _map.put(modelName.Value, modelName);
+	 }
+	 
+	 /**
+	  * Get VoidReasonCode from value 
+	  */
+	 public static VoidReasonCode from(int value)
+	 {
+		 return _map.get(value);
+	 }
 }
-    

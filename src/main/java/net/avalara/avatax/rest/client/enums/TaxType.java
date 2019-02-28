@@ -1,3 +1,5 @@
+import java.util.HashMap;
+
 package net.avalara.avatax.rest.client.enums;
 
 /*
@@ -18,6 +20,7 @@ package net.avalara.avatax.rest.client.enums;
  * Tax type
  */
 public enum TaxType {
+	
     /** 
      * Match Lodging tax type
      */
@@ -83,5 +86,30 @@ public enum TaxType {
      */
     Use(85),
 
+    /**
+     * Integer value for TaxType
+     */
+    public final int Value;
+
+    private TaxType(int value) {
+		Value = value;
+    }
+	
+	/**
+	 * Map TaxType to TaxType integer ID.
+	 */
+	 private static final Map<Integer, TaxType> _map = new HashMap<Integer, TaxType>();
+	 static
+	 {
+		 for (TaxType modelName : TaxType.values()
+			 _map.put(modelName.Value, modelName);
+	 }
+	 
+	 /**
+	  * Get TaxType from value 
+	  */
+	 public static TaxType from(int value)
+	 {
+		 return _map.get(value);
+	 }
 }
-    

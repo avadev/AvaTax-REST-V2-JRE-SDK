@@ -1,3 +1,5 @@
+import java.util.HashMap;
+
 package net.avalara.avatax.rest.client.enums;
 
 /*
@@ -18,6 +20,7 @@ package net.avalara.avatax.rest.client.enums;
  * Indicates the type of adjustment that was performed on a transaction
  */
 public enum AdjustmentReason {
+	
     /** 
      * The transaction has not been adjusted
      */
@@ -68,5 +71,30 @@ public enum AdjustmentReason {
      */
     Offline(9),
 
+    /**
+     * Integer value for AdjustmentReason
+     */
+    public final int Value;
+
+    private AdjustmentReason(int value) {
+		Value = value;
+    }
+	
+	/**
+	 * Map AdjustmentReason to AdjustmentReason integer ID.
+	 */
+	 private static final Map<Integer, AdjustmentReason> _map = new HashMap<Integer, AdjustmentReason>();
+	 static
+	 {
+		 for (AdjustmentReason modelName : AdjustmentReason.values()
+			 _map.put(modelName.Value, modelName);
+	 }
+	 
+	 /**
+	  * Get AdjustmentReason from value 
+	  */
+	 public static AdjustmentReason from(int value)
+	 {
+		 return _map.get(value);
+	 }
 }
-    

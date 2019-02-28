@@ -1,3 +1,5 @@
+import java.util.HashMap;
+
 package net.avalara.avatax.rest.client.enums;
 
 /*
@@ -18,6 +20,7 @@ package net.avalara.avatax.rest.client.enums;
  * Different types of formats allowed for exporting a report
  */
 public enum ReportFormat {
+	
     /** 
      * The Comma Separated Values file format
      */
@@ -28,5 +31,30 @@ public enum ReportFormat {
      */
     XML(1),
 
+    /**
+     * Integer value for ReportFormat
+     */
+    public final int Value;
+
+    private ReportFormat(int value) {
+		Value = value;
+    }
+	
+	/**
+	 * Map ReportFormat to ReportFormat integer ID.
+	 */
+	 private static final Map<Integer, ReportFormat> _map = new HashMap<Integer, ReportFormat>();
+	 static
+	 {
+		 for (ReportFormat modelName : ReportFormat.values()
+			 _map.put(modelName.Value, modelName);
+	 }
+	 
+	 /**
+	  * Get ReportFormat from value 
+	  */
+	 public static ReportFormat from(int value)
+	 {
+		 return _map.get(value);
+	 }
 }
-    

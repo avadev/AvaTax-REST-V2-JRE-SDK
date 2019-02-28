@@ -1,3 +1,5 @@
+import java.util.HashMap;
+
 package net.avalara.avatax.rest.client.enums;
 
 /*
@@ -18,6 +20,7 @@ package net.avalara.avatax.rest.client.enums;
  * Filing Status
  */
 public enum FilingStatusId {
+	
     /** 
      * 
      */
@@ -103,5 +106,30 @@ public enum FilingStatusId {
      */
     ApprovedToFileOnBehalf(16),
 
+    /**
+     * Integer value for FilingStatusId
+     */
+    public final int Value;
+
+    private FilingStatusId(int value) {
+		Value = value;
+    }
+	
+	/**
+	 * Map FilingStatusId to FilingStatusId integer ID.
+	 */
+	 private static final Map<Integer, FilingStatusId> _map = new HashMap<Integer, FilingStatusId>();
+	 static
+	 {
+		 for (FilingStatusId modelName : FilingStatusId.values()
+			 _map.put(modelName.Value, modelName);
+	 }
+	 
+	 /**
+	  * Get FilingStatusId from value 
+	  */
+	 public static FilingStatusId from(int value)
+	 {
+		 return _map.get(value);
+	 }
 }
-    

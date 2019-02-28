@@ -1,3 +1,5 @@
+import java.util.HashMap;
+
 package net.avalara.avatax.rest.client.enums;
 
 /*
@@ -18,6 +20,7 @@ package net.avalara.avatax.rest.client.enums;
  * Filing worksheet Type
  */
 public enum WorksheetTypeId {
+	
     /** 
      * The original filing for a period
      */
@@ -33,5 +36,30 @@ public enum WorksheetTypeId {
      */
     Test(2),
 
+    /**
+     * Integer value for WorksheetTypeId
+     */
+    public final int Value;
+
+    private WorksheetTypeId(int value) {
+		Value = value;
+    }
+	
+	/**
+	 * Map WorksheetTypeId to WorksheetTypeId integer ID.
+	 */
+	 private static final Map<Integer, WorksheetTypeId> _map = new HashMap<Integer, WorksheetTypeId>();
+	 static
+	 {
+		 for (WorksheetTypeId modelName : WorksheetTypeId.values()
+			 _map.put(modelName.Value, modelName);
+	 }
+	 
+	 /**
+	  * Get WorksheetTypeId from value 
+	  */
+	 public static WorksheetTypeId from(int value)
+	 {
+		 return _map.get(value);
+	 }
 }
-    

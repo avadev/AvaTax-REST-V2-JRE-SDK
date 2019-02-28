@@ -1,3 +1,5 @@
+import java.util.HashMap;
+
 package net.avalara.avatax.rest.client.enums;
 
 /*
@@ -19,6 +21,7 @@ package net.avalara.avatax.rest.client.enums;
  *  as well as the precision level of the state provided jurisdiction boundaries.
  */
 public enum BoundaryLevel {
+	
     /** 
      * Street address precision
      */
@@ -34,5 +37,30 @@ public enum BoundaryLevel {
      */
     Zip5(2),
 
+    /**
+     * Integer value for BoundaryLevel
+     */
+    public final int Value;
+
+    private BoundaryLevel(int value) {
+		Value = value;
+    }
+	
+	/**
+	 * Map BoundaryLevel to BoundaryLevel integer ID.
+	 */
+	 private static final Map<Integer, BoundaryLevel> _map = new HashMap<Integer, BoundaryLevel>();
+	 static
+	 {
+		 for (BoundaryLevel modelName : BoundaryLevel.values()
+			 _map.put(modelName.Value, modelName);
+	 }
+	 
+	 /**
+	  * Get BoundaryLevel from value 
+	  */
+	 public static BoundaryLevel from(int value)
+	 {
+		 return _map.get(value);
+	 }
 }
-    

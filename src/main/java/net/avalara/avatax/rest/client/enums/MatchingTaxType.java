@@ -1,3 +1,5 @@
+import java.util.HashMap;
+
 package net.avalara.avatax.rest.client.enums;
 
 /*
@@ -20,6 +22,7 @@ package net.avalara.avatax.rest.client.enums;
  *  For example, if you specify BothSalesAndUseTax, this value matches with both sales and seller's use tax.
  */
 public enum MatchingTaxType {
+	
     /** 
      * Match medical excise type
      */
@@ -100,5 +103,30 @@ public enum MatchingTaxType {
      */
     UseTax(85),
 
+    /**
+     * Integer value for MatchingTaxType
+     */
+    public final int Value;
+
+    private MatchingTaxType(int value) {
+		Value = value;
+    }
+	
+	/**
+	 * Map MatchingTaxType to MatchingTaxType integer ID.
+	 */
+	 private static final Map<Integer, MatchingTaxType> _map = new HashMap<Integer, MatchingTaxType>();
+	 static
+	 {
+		 for (MatchingTaxType modelName : MatchingTaxType.values()
+			 _map.put(modelName.Value, modelName);
+	 }
+	 
+	 /**
+	  * Get MatchingTaxType from value 
+	  */
+	 public static MatchingTaxType from(int value)
+	 {
+		 return _map.get(value);
+	 }
 }
-    

@@ -1,3 +1,5 @@
+import java.util.HashMap;
+
 package net.avalara.avatax.rest.client.enums;
 
 /*
@@ -18,6 +20,7 @@ package net.avalara.avatax.rest.client.enums;
  * Indicates what level of auditing information is available for a transaction
  */
 public enum ApiCallStatus {
+	
     /** 
      * If the original api call is availabe on S3
      */
@@ -33,5 +36,30 @@ public enum ApiCallStatus {
      */
     Any(-1),
 
+    /**
+     * Integer value for ApiCallStatus
+     */
+    public final int Value;
+
+    private ApiCallStatus(int value) {
+		Value = value;
+    }
+	
+	/**
+	 * Map ApiCallStatus to ApiCallStatus integer ID.
+	 */
+	 private static final Map<Integer, ApiCallStatus> _map = new HashMap<Integer, ApiCallStatus>();
+	 static
+	 {
+		 for (ApiCallStatus modelName : ApiCallStatus.values()
+			 _map.put(modelName.Value, modelName);
+	 }
+	 
+	 /**
+	  * Get ApiCallStatus from value 
+	  */
+	 public static ApiCallStatus from(int value)
+	 {
+		 return _map.get(value);
+	 }
 }
-    

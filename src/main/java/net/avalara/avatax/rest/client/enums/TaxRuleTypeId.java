@@ -1,3 +1,5 @@
+import java.util.HashMap;
+
 package net.avalara.avatax.rest.client.enums;
 
 /*
@@ -18,6 +20,7 @@ package net.avalara.avatax.rest.client.enums;
  * Specifies the type of custom tax rule you have created.
  */
 public enum TaxRuleTypeId {
+	
     /** 
      * Reserved for Avalara internal usage.
      */
@@ -64,5 +67,30 @@ public enum TaxRuleTypeId {
      */
     NexusRule(5),
 
+    /**
+     * Integer value for TaxRuleTypeId
+     */
+    public final int Value;
+
+    private TaxRuleTypeId(int value) {
+		Value = value;
+    }
+	
+	/**
+	 * Map TaxRuleTypeId to TaxRuleTypeId integer ID.
+	 */
+	 private static final Map<Integer, TaxRuleTypeId> _map = new HashMap<Integer, TaxRuleTypeId>();
+	 static
+	 {
+		 for (TaxRuleTypeId modelName : TaxRuleTypeId.values()
+			 _map.put(modelName.Value, modelName);
+	 }
+	 
+	 /**
+	  * Get TaxRuleTypeId from value 
+	  */
+	 public static TaxRuleTypeId from(int value)
+	 {
+		 return _map.get(value);
+	 }
 }
-    

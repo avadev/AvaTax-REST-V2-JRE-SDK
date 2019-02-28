@@ -1,3 +1,5 @@
+import java.util.HashMap;
+
 package net.avalara.avatax.rest.client.enums;
 
 /*
@@ -18,6 +20,7 @@ package net.avalara.avatax.rest.client.enums;
  * The way of delivering request
  */
 public enum CertificateRequestDeliveryMethod {
+	
     /** 
      * The invitation will be sent via email to the recipient's email address.
      */
@@ -36,5 +39,30 @@ public enum CertificateRequestDeliveryMethod {
      */
     Download(3),
 
+    /**
+     * Integer value for CertificateRequestDeliveryMethod
+     */
+    public final int Value;
+
+    private CertificateRequestDeliveryMethod(int value) {
+		Value = value;
+    }
+	
+	/**
+	 * Map CertificateRequestDeliveryMethod to CertificateRequestDeliveryMethod integer ID.
+	 */
+	 private static final Map<Integer, CertificateRequestDeliveryMethod> _map = new HashMap<Integer, CertificateRequestDeliveryMethod>();
+	 static
+	 {
+		 for (CertificateRequestDeliveryMethod modelName : CertificateRequestDeliveryMethod.values()
+			 _map.put(modelName.Value, modelName);
+	 }
+	 
+	 /**
+	  * Get CertificateRequestDeliveryMethod from value 
+	  */
+	 public static CertificateRequestDeliveryMethod from(int value)
+	 {
+		 return _map.get(value);
+	 }
 }
-    

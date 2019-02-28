@@ -1,3 +1,5 @@
+import java.util.HashMap;
+
 package net.avalara.avatax.rest.client.enums;
 
 /*
@@ -18,6 +20,7 @@ package net.avalara.avatax.rest.client.enums;
  * Type of file request
  */
 public enum PointOfSaleFileType {
+	
     /** 
      * File is in Javascript Object Notation format
      */
@@ -33,5 +36,30 @@ public enum PointOfSaleFileType {
      */
     Xml(2),
 
+    /**
+     * Integer value for PointOfSaleFileType
+     */
+    public final int Value;
+
+    private PointOfSaleFileType(int value) {
+		Value = value;
+    }
+	
+	/**
+	 * Map PointOfSaleFileType to PointOfSaleFileType integer ID.
+	 */
+	 private static final Map<Integer, PointOfSaleFileType> _map = new HashMap<Integer, PointOfSaleFileType>();
+	 static
+	 {
+		 for (PointOfSaleFileType modelName : PointOfSaleFileType.values()
+			 _map.put(modelName.Value, modelName);
+	 }
+	 
+	 /**
+	  * Get PointOfSaleFileType from value 
+	  */
+	 public static PointOfSaleFileType from(int value)
+	 {
+		 return _map.get(value);
+	 }
 }
-    

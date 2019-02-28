@@ -1,3 +1,5 @@
+import java.util.HashMap;
+
 package net.avalara.avatax.rest.client.enums;
 
 /*
@@ -22,6 +24,7 @@ package net.avalara.avatax.rest.client.enums;
  *  as it was charged. AvaTax will record the type of override used for each transaction.
  */
 public enum TaxOverrideType {
+	
     /** 
      * AvaTax calculated the tax for this transaction, and no override occurred.
      */
@@ -64,5 +67,30 @@ public enum TaxOverrideType {
      */
     DeriveTaxable(5),
 
+    /**
+     * Integer value for TaxOverrideType
+     */
+    public final int Value;
+
+    private TaxOverrideType(int value) {
+		Value = value;
+    }
+	
+	/**
+	 * Map TaxOverrideType to TaxOverrideType integer ID.
+	 */
+	 private static final Map<Integer, TaxOverrideType> _map = new HashMap<Integer, TaxOverrideType>();
+	 static
+	 {
+		 for (TaxOverrideType modelName : TaxOverrideType.values()
+			 _map.put(modelName.Value, modelName);
+	 }
+	 
+	 /**
+	  * Get TaxOverrideType from value 
+	  */
+	 public static TaxOverrideType from(int value)
+	 {
+		 return _map.get(value);
+	 }
 }
-    

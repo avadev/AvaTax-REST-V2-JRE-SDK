@@ -1,3 +1,5 @@
+import java.util.HashMap;
+
 package net.avalara.avatax.rest.client.enums;
 
 /*
@@ -18,6 +20,7 @@ package net.avalara.avatax.rest.client.enums;
  * Represents the type of service or subscription given to a user
  */
 public enum ServiceTypeId {
+	
     /** 
      * None
      */
@@ -163,5 +166,30 @@ public enum ServiceTypeId {
      */
     SendSalesRateFile(28),
 
+    /**
+     * Integer value for ServiceTypeId
+     */
+    public final int Value;
+
+    private ServiceTypeId(int value) {
+		Value = value;
+    }
+	
+	/**
+	 * Map ServiceTypeId to ServiceTypeId integer ID.
+	 */
+	 private static final Map<Integer, ServiceTypeId> _map = new HashMap<Integer, ServiceTypeId>();
+	 static
+	 {
+		 for (ServiceTypeId modelName : ServiceTypeId.values()
+			 _map.put(modelName.Value, modelName);
+	 }
+	 
+	 /**
+	  * Get ServiceTypeId from value 
+	  */
+	 public static ServiceTypeId from(int value)
+	 {
+		 return _map.get(value);
+	 }
 }
-    

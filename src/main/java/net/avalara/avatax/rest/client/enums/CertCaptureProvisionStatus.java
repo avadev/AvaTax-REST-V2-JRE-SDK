@@ -1,3 +1,5 @@
+import java.util.HashMap;
+
 package net.avalara.avatax.rest.client.enums;
 
 /*
@@ -18,6 +20,7 @@ package net.avalara.avatax.rest.client.enums;
  * 
  */
 public enum CertCaptureProvisionStatus {
+	
     /** 
      * Account and company are provisioned
      */
@@ -35,5 +38,30 @@ public enum CertCaptureProvisionStatus {
      */
     NotProvisioned(2),
 
+    /**
+     * Integer value for CertCaptureProvisionStatus
+     */
+    public final int Value;
+
+    private CertCaptureProvisionStatus(int value) {
+		Value = value;
+    }
+	
+	/**
+	 * Map CertCaptureProvisionStatus to CertCaptureProvisionStatus integer ID.
+	 */
+	 private static final Map<Integer, CertCaptureProvisionStatus> _map = new HashMap<Integer, CertCaptureProvisionStatus>();
+	 static
+	 {
+		 for (CertCaptureProvisionStatus modelName : CertCaptureProvisionStatus.values()
+			 _map.put(modelName.Value, modelName);
+	 }
+	 
+	 /**
+	  * Get CertCaptureProvisionStatus from value 
+	  */
+	 public static CertCaptureProvisionStatus from(int value)
+	 {
+		 return _map.get(value);
+	 }
 }
-    

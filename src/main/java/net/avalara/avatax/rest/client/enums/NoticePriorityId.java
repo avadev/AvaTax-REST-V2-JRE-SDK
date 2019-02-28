@@ -1,3 +1,5 @@
+import java.util.HashMap;
+
 package net.avalara.avatax.rest.client.enums;
 
 /*
@@ -18,6 +20,7 @@ package net.avalara.avatax.rest.client.enums;
  * Filing Frequency types
  */
 public enum NoticePriorityId {
+	
     /** 
      * Immediate Attention Required
      */
@@ -38,5 +41,30 @@ public enum NoticePriorityId {
      */
     Low(4),
 
+    /**
+     * Integer value for NoticePriorityId
+     */
+    public final int Value;
+
+    private NoticePriorityId(int value) {
+		Value = value;
+    }
+	
+	/**
+	 * Map NoticePriorityId to NoticePriorityId integer ID.
+	 */
+	 private static final Map<Integer, NoticePriorityId> _map = new HashMap<Integer, NoticePriorityId>();
+	 static
+	 {
+		 for (NoticePriorityId modelName : NoticePriorityId.values()
+			 _map.put(modelName.Value, modelName);
+	 }
+	 
+	 /**
+	  * Get NoticePriorityId from value 
+	  */
+	 public static NoticePriorityId from(int value)
+	 {
+		 return _map.get(value);
+	 }
 }
-    

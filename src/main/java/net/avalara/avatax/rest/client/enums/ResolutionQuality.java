@@ -1,3 +1,5 @@
+import java.util.HashMap;
+
 package net.avalara.avatax.rest.client.enums;
 
 /*
@@ -18,6 +20,7 @@ package net.avalara.avatax.rest.client.enums;
  * The address resolution quality of an address validation result
  */
 public enum ResolutionQuality {
+	
     /** 
      * Location was not geocoded
      */
@@ -78,5 +81,30 @@ public enum ResolutionQuality {
      */
     Constant(11),
 
+    /**
+     * Integer value for ResolutionQuality
+     */
+    public final int Value;
+
+    private ResolutionQuality(int value) {
+		Value = value;
+    }
+	
+	/**
+	 * Map ResolutionQuality to ResolutionQuality integer ID.
+	 */
+	 private static final Map<Integer, ResolutionQuality> _map = new HashMap<Integer, ResolutionQuality>();
+	 static
+	 {
+		 for (ResolutionQuality modelName : ResolutionQuality.values()
+			 _map.put(modelName.Value, modelName);
+	 }
+	 
+	 /**
+	  * Get ResolutionQuality from value 
+	  */
+	 public static ResolutionQuality from(int value)
+	 {
+		 return _map.get(value);
+	 }
 }
-    

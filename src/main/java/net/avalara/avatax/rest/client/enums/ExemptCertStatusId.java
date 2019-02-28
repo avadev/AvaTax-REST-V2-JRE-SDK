@@ -1,3 +1,5 @@
+import java.util.HashMap;
+
 package net.avalara.avatax.rest.client.enums;
 
 /*
@@ -18,6 +20,7 @@ package net.avalara.avatax.rest.client.enums;
  * Status for this exempt certificate
  */
 public enum ExemptCertStatusId {
+	
     /** 
      * Inactive certificate
      */
@@ -38,5 +41,30 @@ public enum ExemptCertStatusId {
      */
     Revoked(3),
 
+    /**
+     * Integer value for ExemptCertStatusId
+     */
+    public final int Value;
+
+    private ExemptCertStatusId(int value) {
+		Value = value;
+    }
+	
+	/**
+	 * Map ExemptCertStatusId to ExemptCertStatusId integer ID.
+	 */
+	 private static final Map<Integer, ExemptCertStatusId> _map = new HashMap<Integer, ExemptCertStatusId>();
+	 static
+	 {
+		 for (ExemptCertStatusId modelName : ExemptCertStatusId.values()
+			 _map.put(modelName.Value, modelName);
+	 }
+	 
+	 /**
+	  * Get ExemptCertStatusId from value 
+	  */
+	 public static ExemptCertStatusId from(int value)
+	 {
+		 return _map.get(value);
+	 }
 }
-    

@@ -1,3 +1,5 @@
+import java.util.HashMap;
+
 package net.avalara.avatax.rest.client.enums;
 
 /*
@@ -18,6 +20,7 @@ package net.avalara.avatax.rest.client.enums;
  * Describes the different types of statuses which describe an entity (company).
  */
 public enum NexusTypeId {
+	
     /** 
      * Indicates no nexus
      */
@@ -45,5 +48,30 @@ public enum NexusTypeId {
      */
     SSTNonVolunteer(4),
 
+    /**
+     * Integer value for NexusTypeId
+     */
+    public final int Value;
+
+    private NexusTypeId(int value) {
+		Value = value;
+    }
+	
+	/**
+	 * Map NexusTypeId to NexusTypeId integer ID.
+	 */
+	 private static final Map<Integer, NexusTypeId> _map = new HashMap<Integer, NexusTypeId>();
+	 static
+	 {
+		 for (NexusTypeId modelName : NexusTypeId.values()
+			 _map.put(modelName.Value, modelName);
+	 }
+	 
+	 /**
+	  * Get NexusTypeId from value 
+	  */
+	 public static NexusTypeId from(int value)
+	 {
+		 return _map.get(value);
+	 }
 }
-    

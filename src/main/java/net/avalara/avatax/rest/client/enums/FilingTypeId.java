@@ -1,3 +1,5 @@
+import java.util.HashMap;
+
 package net.avalara.avatax.rest.client.enums;
 
 /*
@@ -18,6 +20,7 @@ package net.avalara.avatax.rest.client.enums;
  * A list of possible AvaFile filing types.
  */
 public enum FilingTypeId {
+	
     /** 
      * Denotes the tax return is being filed on paper.
      */
@@ -53,5 +56,30 @@ public enum FilingTypeId {
      */
     EfileCheck(6),
 
+    /**
+     * Integer value for FilingTypeId
+     */
+    public final int Value;
+
+    private FilingTypeId(int value) {
+		Value = value;
+    }
+	
+	/**
+	 * Map FilingTypeId to FilingTypeId integer ID.
+	 */
+	 private static final Map<Integer, FilingTypeId> _map = new HashMap<Integer, FilingTypeId>();
+	 static
+	 {
+		 for (FilingTypeId modelName : FilingTypeId.values()
+			 _map.put(modelName.Value, modelName);
+	 }
+	 
+	 /**
+	  * Get FilingTypeId from value 
+	  */
+	 public static FilingTypeId from(int value)
+	 {
+		 return _map.get(value);
+	 }
 }
-    

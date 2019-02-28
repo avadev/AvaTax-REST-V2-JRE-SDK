@@ -1,3 +1,5 @@
+import java.util.HashMap;
+
 package net.avalara.avatax.rest.client.enums;
 
 /*
@@ -18,6 +20,7 @@ package net.avalara.avatax.rest.client.enums;
  * Status of an Avalara account
  */
 public enum AccountStatusId {
+	
     /** 
      * This account is not currently active.
      */
@@ -41,5 +44,30 @@ public enum AccountStatusId {
      */
     New(3),
 
+    /**
+     * Integer value for AccountStatusId
+     */
+    public final int Value;
+
+    private AccountStatusId(int value) {
+		Value = value;
+    }
+	
+	/**
+	 * Map AccountStatusId to AccountStatusId integer ID.
+	 */
+	 private static final Map<Integer, AccountStatusId> _map = new HashMap<Integer, AccountStatusId>();
+	 static
+	 {
+		 for (AccountStatusId modelName : AccountStatusId.values()
+			 _map.put(modelName.Value, modelName);
+	 }
+	 
+	 /**
+	  * Get AccountStatusId from value 
+	  */
+	 public static AccountStatusId from(int value)
+	 {
+		 return _map.get(value);
+	 }
 }
-    

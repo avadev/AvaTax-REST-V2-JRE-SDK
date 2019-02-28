@@ -1,3 +1,5 @@
+import java.util.HashMap;
+
 package net.avalara.avatax.rest.client.enums;
 
 /*
@@ -18,6 +20,7 @@ package net.avalara.avatax.rest.client.enums;
  * Filing Frequency types
  */
 public enum FundingOption {
+	
     /** 
      * Pull
      */
@@ -28,5 +31,30 @@ public enum FundingOption {
      */
     Wire(2),
 
+    /**
+     * Integer value for FundingOption
+     */
+    public final int Value;
+
+    private FundingOption(int value) {
+		Value = value;
+    }
+	
+	/**
+	 * Map FundingOption to FundingOption integer ID.
+	 */
+	 private static final Map<Integer, FundingOption> _map = new HashMap<Integer, FundingOption>();
+	 static
+	 {
+		 for (FundingOption modelName : FundingOption.values()
+			 _map.put(modelName.Value, modelName);
+	 }
+	 
+	 /**
+	  * Get FundingOption from value 
+	  */
+	 public static FundingOption from(int value)
+	 {
+		 return _map.get(value);
+	 }
 }
-    

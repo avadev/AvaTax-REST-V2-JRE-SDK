@@ -1,3 +1,5 @@
+import java.util.HashMap;
+
 package net.avalara.avatax.rest.client.enums;
 
 /*
@@ -18,6 +20,7 @@ package net.avalara.avatax.rest.client.enums;
  * Severity of message
  */
 public enum SeverityLevel {
+	
     /** 
      * Operation succeeded
      */
@@ -38,5 +41,30 @@ public enum SeverityLevel {
      */
     Exception(3),
 
+    /**
+     * Integer value for SeverityLevel
+     */
+    public final int Value;
+
+    private SeverityLevel(int value) {
+		Value = value;
+    }
+	
+	/**
+	 * Map SeverityLevel to SeverityLevel integer ID.
+	 */
+	 private static final Map<Integer, SeverityLevel> _map = new HashMap<Integer, SeverityLevel>();
+	 static
+	 {
+		 for (SeverityLevel modelName : SeverityLevel.values()
+			 _map.put(modelName.Value, modelName);
+	 }
+	 
+	 /**
+	  * Get SeverityLevel from value 
+	  */
+	 public static SeverityLevel from(int value)
+	 {
+		 return _map.get(value);
+	 }
 }
-    

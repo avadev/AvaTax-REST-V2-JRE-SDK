@@ -1,3 +1,5 @@
+import java.util.HashMap;
+
 package net.avalara.avatax.rest.client.enums;
 
 /*
@@ -18,6 +20,7 @@ package net.avalara.avatax.rest.client.enums;
  * A list of possible AvaFile filing types for tax notices.
  */
 public enum TaxNoticeFilingTypeId {
+	
     /** 
      * Denotes the tax return is being filed via electronic means; excludes SST electronic filing.
      */
@@ -68,5 +71,30 @@ public enum TaxNoticeFilingTypeId {
      */
     SignatureReady(10),
 
+    /**
+     * Integer value for TaxNoticeFilingTypeId
+     */
+    public final int Value;
+
+    private TaxNoticeFilingTypeId(int value) {
+		Value = value;
+    }
+	
+	/**
+	 * Map TaxNoticeFilingTypeId to TaxNoticeFilingTypeId integer ID.
+	 */
+	 private static final Map<Integer, TaxNoticeFilingTypeId> _map = new HashMap<Integer, TaxNoticeFilingTypeId>();
+	 static
+	 {
+		 for (TaxNoticeFilingTypeId modelName : TaxNoticeFilingTypeId.values()
+			 _map.put(modelName.Value, modelName);
+	 }
+	 
+	 /**
+	  * Get TaxNoticeFilingTypeId from value 
+	  */
+	 public static TaxNoticeFilingTypeId from(int value)
+	 {
+		 return _map.get(value);
+	 }
 }
-    

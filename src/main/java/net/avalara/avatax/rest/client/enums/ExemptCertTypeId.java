@@ -1,3 +1,5 @@
+import java.util.HashMap;
+
 package net.avalara.avatax.rest.client.enums;
 
 /*
@@ -18,6 +20,7 @@ package net.avalara.avatax.rest.client.enums;
  * Exempt Cert type
  */
 public enum ExemptCertTypeId {
+	
     /** 
      * Blanked certificate
      */
@@ -28,5 +31,30 @@ public enum ExemptCertTypeId {
      */
     SingleUse(1),
 
+    /**
+     * Integer value for ExemptCertTypeId
+     */
+    public final int Value;
+
+    private ExemptCertTypeId(int value) {
+		Value = value;
+    }
+	
+	/**
+	 * Map ExemptCertTypeId to ExemptCertTypeId integer ID.
+	 */
+	 private static final Map<Integer, ExemptCertTypeId> _map = new HashMap<Integer, ExemptCertTypeId>();
+	 static
+	 {
+		 for (ExemptCertTypeId modelName : ExemptCertTypeId.values()
+			 _map.put(modelName.Value, modelName);
+	 }
+	 
+	 /**
+	  * Get ExemptCertTypeId from value 
+	  */
+	 public static ExemptCertTypeId from(int value)
+	 {
+		 return _map.get(value);
+	 }
 }
-    

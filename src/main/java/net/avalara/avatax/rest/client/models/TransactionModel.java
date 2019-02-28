@@ -160,15 +160,15 @@ public class TransactionModel {
     /**
      * Getter for type
      *
-     * The type of the transaction. 
-    * 
+     * The type of the transaction.
+    *  
     * Transactions of type `SalesOrder`, `ReturnOrder`, and so on are temporary estimates and will not be saved.
-    * 
+    *  
     * Transactions of type `SalesInvoice, `ReturnInvoice`, and so on are permanent transactions that can be reported to tax authorities
     * if they are in status `Committed`.
-    * 
+    *  
     * A sales transaction represents a sale from the company to a customer. A purchase transaction represents a purchase made by the company.
-    * A return transaction represents a customer who decided to request a refund after purchasing a product from the company. An inventory 
+    * A return transaction represents a customer who decided to request a refund after purchasing a product from the company. An inventory
     * transfer transaction represents goods that were moved from one location of the company to another location without changing ownership.
      */
     public DocumentType getType() {
@@ -178,15 +178,15 @@ public class TransactionModel {
     /**
      * Setter for type
      *
-     * The type of the transaction. 
-    * 
+     * The type of the transaction.
+    *  
     * Transactions of type `SalesOrder`, `ReturnOrder`, and so on are temporary estimates and will not be saved.
-    * 
+    *  
     * Transactions of type `SalesInvoice, `ReturnInvoice`, and so on are permanent transactions that can be reported to tax authorities
     * if they are in status `Committed`.
-    * 
+    *  
     * A sales transaction represents a sale from the company to a customer. A purchase transaction represents a purchase made by the company.
-    * A return transaction represents a customer who decided to request a refund after purchasing a product from the company. An inventory 
+    * A return transaction represents a customer who decided to request a refund after purchasing a product from the company. An inventory
     * transfer transaction represents goods that were moved from one location of the company to another location without changing ownership.
      */
     public void setType(DocumentType value) {
@@ -286,7 +286,7 @@ public class TransactionModel {
      * Getter for customerVendorCode
      *
      * DEPRECATED - Please use `customerCode`.
-    * 
+    *  
     * This field has been renamed to `customerCode` to match documentation for other APIs related to exemption customers.
      */
     public String getCustomerVendorCode() {
@@ -297,7 +297,7 @@ public class TransactionModel {
      * Setter for customerVendorCode
      *
      * DEPRECATED - Please use `customerCode`.
-    * 
+    *  
     * This field has been renamed to `customerCode` to match documentation for other APIs related to exemption customers.
      */
     public void setCustomerVendorCode(String value) {
@@ -310,8 +310,8 @@ public class TransactionModel {
     /**
      * Getter for customerCode
      *
-     * Unique code identifying the customer that requested this transaction. 
-    * 
+     * Unique code identifying the customer that requested this transaction.
+    *  
     * When you specify a `customerCode`, AvaTax will look to see if a customer exists with this code in the exemption certificate system.
     * If that customer exists, and if that customer has uploaded an exemption certificate that applies to this transaction, the relevant
     * parts of this transaction that can use the exemption certificate will be treated as exempt.
@@ -323,8 +323,8 @@ public class TransactionModel {
     /**
      * Setter for customerCode
      *
-     * Unique code identifying the customer that requested this transaction. 
-    * 
+     * Unique code identifying the customer that requested this transaction.
+    *  
     * When you specify a `customerCode`, AvaTax will look to see if a customer exists with this code in the exemption certificate system.
     * If that customer exists, and if that customer has uploaded an exemption certificate that applies to this transaction, the relevant
     * parts of this transaction that can use the exemption certificate will be treated as exempt.
@@ -339,9 +339,9 @@ public class TransactionModel {
     /**
      * Getter for exemptNo
      *
-     * The customer Tax Id Number (tax_number) associated with a certificate - Sales tax calculation requests first determine if there is an applicable 
-    * ECMS entry available, and will utilize it for exemption processing. If no applicable ECMS entry is available, the AvaTax service 
-    * will determine if an Exemption Number field is populated or an Entity/Use Code is included in the sales tax calculation request, 
+     * The customer Tax Id Number (tax_number) associated with a certificate - Sales tax calculation requests first determine if there is an applicable
+    * ECMS entry available, and will utilize it for exemption processing. If no applicable ECMS entry is available, the AvaTax service
+    * will determine if an Exemption Number field is populated or an Entity/Use Code is included in the sales tax calculation request,
     * and will perform exemption processing using either of those two options.
      */
     public String getExemptNo() {
@@ -351,9 +351,9 @@ public class TransactionModel {
     /**
      * Setter for exemptNo
      *
-     * The customer Tax Id Number (tax_number) associated with a certificate - Sales tax calculation requests first determine if there is an applicable 
-    * ECMS entry available, and will utilize it for exemption processing. If no applicable ECMS entry is available, the AvaTax service 
-    * will determine if an Exemption Number field is populated or an Entity/Use Code is included in the sales tax calculation request, 
+     * The customer Tax Id Number (tax_number) associated with a certificate - Sales tax calculation requests first determine if there is an applicable
+    * ECMS entry available, and will utilize it for exemption processing. If no applicable ECMS entry is available, the AvaTax service
+    * will determine if an Exemption Number field is populated or an Entity/Use Code is included in the sales tax calculation request,
     * and will perform exemption processing using either of those two options.
      */
     public void setExemptNo(String value) {
@@ -410,15 +410,15 @@ public class TransactionModel {
     /**
      * Getter for reportingLocationCode
      *
-     * For customers who use [location-based tax reporting](https://developer.avalara.com/avatax/dev-guide/locations/location-based-reporting), 
+     * For customers who use [location-based tax reporting](https://developer.avalara.com/avatax/dev-guide/locations/location-based-reporting),
     * this field controls how this transaction will be filed for multi-location tax filings.
-    * 
-    * If you specify a non-null value for this field, AvaTax will ensure that this transaction is reported on the tax return associated 
+    *  
+    * If you specify a non-null value for this field, AvaTax will ensure that this transaction is reported on the tax return associated
     * with the [LocationModel](https://developer.avalara.com/api-reference/avatax/rest/v2/models/LocationModel/) identified by this code.
-    * 
+    *  
     * This field does not affect any addresses for the transaction. It only controls the tax filing behavior of this transaction.
-    * 
-    * If you are looking for information about how to set up addresses for a transaction, please see [Using Address Types](https://developer.avalara.com/avatax/dev-guide/customizing-transaction/address-types/) 
+    *  
+    * If you are looking for information about how to set up addresses for a transaction, please see [Using Address Types](https://developer.avalara.com/avatax/dev-guide/customizing-transaction/address-types/)
     * in the AvaTax Developer Guide.
      */
     public String getReportingLocationCode() {
@@ -428,15 +428,15 @@ public class TransactionModel {
     /**
      * Setter for reportingLocationCode
      *
-     * For customers who use [location-based tax reporting](https://developer.avalara.com/avatax/dev-guide/locations/location-based-reporting), 
+     * For customers who use [location-based tax reporting](https://developer.avalara.com/avatax/dev-guide/locations/location-based-reporting),
     * this field controls how this transaction will be filed for multi-location tax filings.
-    * 
-    * If you specify a non-null value for this field, AvaTax will ensure that this transaction is reported on the tax return associated 
+    *  
+    * If you specify a non-null value for this field, AvaTax will ensure that this transaction is reported on the tax return associated
     * with the [LocationModel](https://developer.avalara.com/api-reference/avatax/rest/v2/models/LocationModel/) identified by this code.
-    * 
+    *  
     * This field does not affect any addresses for the transaction. It only controls the tax filing behavior of this transaction.
-    * 
-    * If you are looking for information about how to set up addresses for a transaction, please see [Using Address Types](https://developer.avalara.com/avatax/dev-guide/customizing-transaction/address-types/) 
+    *  
+    * If you are looking for information about how to set up addresses for a transaction, please see [Using Address Types](https://developer.avalara.com/avatax/dev-guide/customizing-transaction/address-types/)
     * in the AvaTax Developer Guide.
      */
     public void setReportingLocationCode(String value) {
@@ -639,12 +639,12 @@ public class TransactionModel {
      * Getter for totalTax
      *
      * The total tax for all lines in this transaction.
-    * 
-    * If you used a `taxOverride` of type `taxAmount` for any lines in this transaction, this value 
+    *  
+    * If you used a `taxOverride` of type `taxAmount` for any lines in this transaction, this value
     * may be different than the amount of tax calculated by AvaTax. The amount of tax calculated by
     * AvaTax will be stored in the `totalTaxCalculated` field, whereas this field will contain the
     * total tax that was charged on the transaction.
-    * 
+    *  
     * You can compare the `totalTax` and `totalTaxCalculated` fields to check for any discrepancies
     * between an external tax calculation provider and the calculation performed by AvaTax.
      */
@@ -656,12 +656,12 @@ public class TransactionModel {
      * Setter for totalTax
      *
      * The total tax for all lines in this transaction.
-    * 
-    * If you used a `taxOverride` of type `taxAmount` for any lines in this transaction, this value 
+    *  
+    * If you used a `taxOverride` of type `taxAmount` for any lines in this transaction, this value
     * may be different than the amount of tax calculated by AvaTax. The amount of tax calculated by
     * AvaTax will be stored in the `totalTaxCalculated` field, whereas this field will contain the
     * total tax that was charged on the transaction.
-    * 
+    *  
     * You can compare the `totalTax` and `totalTaxCalculated` fields to check for any discrepancies
     * between an external tax calculation provider and the calculation performed by AvaTax.
      */
@@ -697,11 +697,11 @@ public class TransactionModel {
      * Getter for totalTaxCalculated
      *
      * The amount of tax that AvaTax calculated for the transaction.
-    * 
-    * If you used a `taxOverride` of type `taxAmount` for any lines in this transaction, this value 
+    *  
+    * If you used a `taxOverride` of type `taxAmount` for any lines in this transaction, this value
     * will represent the amount that AvaTax calculated for this transaction without applying the override.
     * The field `totalTax` will be the total amount of tax after all overrides are applied.
-    * 
+    *  
     * You can compare the `totalTax` and `totalTaxCalculated` fields to check for any discrepancies
     * between an external tax calculation provider and the calculation performed by AvaTax.
      */
@@ -713,11 +713,11 @@ public class TransactionModel {
      * Setter for totalTaxCalculated
      *
      * The amount of tax that AvaTax calculated for the transaction.
-    * 
-    * If you used a `taxOverride` of type `taxAmount` for any lines in this transaction, this value 
+    *  
+    * If you used a `taxOverride` of type `taxAmount` for any lines in this transaction, this value
     * will represent the amount that AvaTax calculated for this transaction without applying the override.
     * The field `totalTax` will be the total amount of tax after all overrides are applied.
-    * 
+    *  
     * You can compare the `totalTax` and `totalTaxCalculated` fields to check for any discrepancies
     * between an external tax calculation provider and the calculation performed by AvaTax.
      */
@@ -966,12 +966,12 @@ public class TransactionModel {
      *
      * By default, the value is null, when the value is null, the value can be set at nexus level and used.
     * If the value is not null, it will override the value at nexus level.
-    * 
+    *  
     * If true, this seller was considered the importer of record of a product shipped internationally.
-    * 
+    *  
     * If this transaction is not an international transaction, this field may be left blank.
-    * 
-    * The "importer of record" is liable to pay customs and import duties for products shipped internationally. If 
+    *  
+    * The "importer of record" is liable to pay customs and import duties for products shipped internationally. If
     * you specify that the seller is the importer of record, then estimates of customs and import duties will be added
     * as tax details to the transaction. Otherwise, the buyer is considered the importer of record, and customs
     * and import duties will not be added to the tax details for this transaction.
@@ -985,12 +985,12 @@ public class TransactionModel {
      *
      * By default, the value is null, when the value is null, the value can be set at nexus level and used.
     * If the value is not null, it will override the value at nexus level.
-    * 
+    *  
     * If true, this seller was considered the importer of record of a product shipped internationally.
-    * 
+    *  
     * If this transaction is not an international transaction, this field may be left blank.
-    * 
-    * The "importer of record" is liable to pay customs and import duties for products shipped internationally. If 
+    *  
+    * The "importer of record" is liable to pay customs and import duties for products shipped internationally. If
     * you specify that the seller is the importer of record, then estimates of customs and import duties will be added
     * as tax details to the transaction. Otherwise, the buyer is considered the importer of record, and customs
     * and import duties will not be added to the tax details for this transaction.
@@ -1153,8 +1153,8 @@ public class TransactionModel {
      * Getter for addresses
      *
      * A list of line items in this transaction. To fetch this list, add the query string `?$include=Addresses` to your URL.
-    * 
-    * For more information about transaction addresses, please see [Using Address Types](https://developer.avalara.com/avatax/dev-guide/customizing-transaction/address-types/) 
+    *  
+    * For more information about transaction addresses, please see [Using Address Types](https://developer.avalara.com/avatax/dev-guide/customizing-transaction/address-types/)
     * in the AvaTax Developer Guide.
      */
     public ArrayList<TransactionAddressModel> getAddresses() {
@@ -1165,8 +1165,8 @@ public class TransactionModel {
      * Setter for addresses
      *
      * A list of line items in this transaction. To fetch this list, add the query string `?$include=Addresses` to your URL.
-    * 
-    * For more information about transaction addresses, please see [Using Address Types](https://developer.avalara.com/avatax/dev-guide/customizing-transaction/address-types/) 
+    *  
+    * For more information about transaction addresses, please see [Using Address Types](https://developer.avalara.com/avatax/dev-guide/customizing-transaction/address-types/)
     * in the AvaTax Developer Guide.
      */
     public void setAddresses(ArrayList<TransactionAddressModel> value) {

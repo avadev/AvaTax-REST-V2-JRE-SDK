@@ -1,3 +1,5 @@
+import java.util.HashMap;
+
 package net.avalara.avatax.rest.client.enums;
 
 /*
@@ -18,6 +20,7 @@ package net.avalara.avatax.rest.client.enums;
  * 
  */
 public enum AdvancedRuleScriptType {
+	
     /** 
      * 
      */
@@ -28,5 +31,30 @@ public enum AdvancedRuleScriptType {
      */
     ResponseRule(1),
 
+    /**
+     * Integer value for AdvancedRuleScriptType
+     */
+    public final int Value;
+
+    private AdvancedRuleScriptType(int value) {
+		Value = value;
+    }
+	
+	/**
+	 * Map AdvancedRuleScriptType to AdvancedRuleScriptType integer ID.
+	 */
+	 private static final Map<Integer, AdvancedRuleScriptType> _map = new HashMap<Integer, AdvancedRuleScriptType>();
+	 static
+	 {
+		 for (AdvancedRuleScriptType modelName : AdvancedRuleScriptType.values()
+			 _map.put(modelName.Value, modelName);
+	 }
+	 
+	 /**
+	  * Get AdvancedRuleScriptType from value 
+	  */
+	 public static AdvancedRuleScriptType from(int value)
+	 {
+		 return _map.get(value);
+	 }
 }
-    

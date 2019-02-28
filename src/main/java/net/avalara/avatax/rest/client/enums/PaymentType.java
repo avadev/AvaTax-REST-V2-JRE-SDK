@@ -1,3 +1,5 @@
+import java.util.HashMap;
+
 package net.avalara.avatax.rest.client.enums;
 
 /*
@@ -18,6 +20,7 @@ package net.avalara.avatax.rest.client.enums;
  * Indicates the type of payments
  */
 public enum PaymentType {
+	
     /** 
      * The payment is for the current payment
      */
@@ -38,5 +41,30 @@ public enum PaymentType {
      */
     PriorCspFee(3),
 
+    /**
+     * Integer value for PaymentType
+     */
+    public final int Value;
+
+    private PaymentType(int value) {
+		Value = value;
+    }
+	
+	/**
+	 * Map PaymentType to PaymentType integer ID.
+	 */
+	 private static final Map<Integer, PaymentType> _map = new HashMap<Integer, PaymentType>();
+	 static
+	 {
+		 for (PaymentType modelName : PaymentType.values()
+			 _map.put(modelName.Value, modelName);
+	 }
+	 
+	 /**
+	  * Get PaymentType from value 
+	  */
+	 public static PaymentType from(int value)
+	 {
+		 return _map.get(value);
+	 }
 }
-    

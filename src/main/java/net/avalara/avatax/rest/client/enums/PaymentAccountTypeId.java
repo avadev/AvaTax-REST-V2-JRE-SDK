@@ -1,3 +1,5 @@
+import java.util.HashMap;
+
 package net.avalara.avatax.rest.client.enums;
 
 /*
@@ -18,6 +20,7 @@ package net.avalara.avatax.rest.client.enums;
  * 
  */
 public enum PaymentAccountTypeId {
+	
     /** 
      * 
      */
@@ -38,5 +41,30 @@ public enum PaymentAccountTypeId {
      */
     AccountsPayable(3),
 
+    /**
+     * Integer value for PaymentAccountTypeId
+     */
+    public final int Value;
+
+    private PaymentAccountTypeId(int value) {
+		Value = value;
+    }
+	
+	/**
+	 * Map PaymentAccountTypeId to PaymentAccountTypeId integer ID.
+	 */
+	 private static final Map<Integer, PaymentAccountTypeId> _map = new HashMap<Integer, PaymentAccountTypeId>();
+	 static
+	 {
+		 for (PaymentAccountTypeId modelName : PaymentAccountTypeId.values()
+			 _map.put(modelName.Value, modelName);
+	 }
+	 
+	 /**
+	  * Get PaymentAccountTypeId from value 
+	  */
+	 public static PaymentAccountTypeId from(int value)
+	 {
+		 return _map.get(value);
+	 }
 }
-    

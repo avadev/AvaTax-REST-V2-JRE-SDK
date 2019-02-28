@@ -1,3 +1,5 @@
+import java.util.HashMap;
+
 package net.avalara.avatax.rest.client.enums;
 
 /*
@@ -18,6 +20,7 @@ package net.avalara.avatax.rest.client.enums;
  * The status of a batch file
  */
 public enum BatchStatus {
+	
     /** 
      * Batch file has been received and is in the queue to be processed.
      */
@@ -63,5 +66,30 @@ public enum BatchStatus {
      */
     Processing(8),
 
+    /**
+     * Integer value for BatchStatus
+     */
+    public final int Value;
+
+    private BatchStatus(int value) {
+		Value = value;
+    }
+	
+	/**
+	 * Map BatchStatus to BatchStatus integer ID.
+	 */
+	 private static final Map<Integer, BatchStatus> _map = new HashMap<Integer, BatchStatus>();
+	 static
+	 {
+		 for (BatchStatus modelName : BatchStatus.values()
+			 _map.put(modelName.Value, modelName);
+	 }
+	 
+	 /**
+	  * Get BatchStatus from value 
+	  */
+	 public static BatchStatus from(int value)
+	 {
+		 return _map.get(value);
+	 }
 }
-    

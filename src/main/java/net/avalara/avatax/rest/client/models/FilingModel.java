@@ -76,8 +76,8 @@ public class FilingModel {
     /**
      * Getter for month
      *
-     * The month of the filing period for this tax filing. 
-    * The filing period represents the year and month of the last day of taxes being reported on this filing. 
+     * The month of the filing period for this tax filing.
+    * The filing period represents the year and month of the last day of taxes being reported on this filing.
     * For example, an annual tax filing for Jan-Dec 2015 would have a filing period of Dec 2015.
      */
     public Integer getMonth() {
@@ -87,8 +87,8 @@ public class FilingModel {
     /**
      * Setter for month
      *
-     * The month of the filing period for this tax filing. 
-    * The filing period represents the year and month of the last day of taxes being reported on this filing. 
+     * The month of the filing period for this tax filing.
+    * The filing period represents the year and month of the last day of taxes being reported on this filing.
     * For example, an annual tax filing for Jan-Dec 2015 would have a filing period of Dec 2015.
      */
     public void setMonth(Integer value) {
@@ -102,7 +102,7 @@ public class FilingModel {
      * Getter for year
      *
      * The year of the filing period for this tax filing.
-    * The filing period represents the year and month of the last day of taxes being reported on this filing. 
+    * The filing period represents the year and month of the last day of taxes being reported on this filing.
     * For example, an annual tax filing for Jan-Dec 2015 would have a filing period of Dec 2015.
      */
     public Short getYear() {
@@ -113,7 +113,7 @@ public class FilingModel {
      * Setter for year
      *
      * The year of the filing period for this tax filing.
-    * The filing period represents the year and month of the last day of taxes being reported on this filing. 
+    * The filing period represents the year and month of the last day of taxes being reported on this filing.
     * For example, an annual tax filing for Jan-Dec 2015 would have a filing period of Dec 2015.
      */
     public void setYear(Short value) {

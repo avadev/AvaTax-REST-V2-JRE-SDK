@@ -1,3 +1,5 @@
+import java.util.HashMap;
+
 package net.avalara.avatax.rest.client.enums;
 
 /*
@@ -20,6 +22,7 @@ package net.avalara.avatax.rest.client.enums;
  *  Some tax authorities require that a separate form must be filed for each place of business.
  */
 public enum OutletTypeId {
+	
     /** 
      * File a single return per cycle for your entire business.
      */
@@ -40,5 +43,30 @@ public enum OutletTypeId {
      */
     Consolidated(3),
 
+    /**
+     * Integer value for OutletTypeId
+     */
+    public final int Value;
+
+    private OutletTypeId(int value) {
+		Value = value;
+    }
+	
+	/**
+	 * Map OutletTypeId to OutletTypeId integer ID.
+	 */
+	 private static final Map<Integer, OutletTypeId> _map = new HashMap<Integer, OutletTypeId>();
+	 static
+	 {
+		 for (OutletTypeId modelName : OutletTypeId.values()
+			 _map.put(modelName.Value, modelName);
+	 }
+	 
+	 /**
+	  * Get OutletTypeId from value 
+	  */
+	 public static OutletTypeId from(int value)
+	 {
+		 return _map.get(value);
+	 }
 }
-    

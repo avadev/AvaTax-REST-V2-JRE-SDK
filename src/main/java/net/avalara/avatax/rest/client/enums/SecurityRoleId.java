@@ -1,3 +1,5 @@
+import java.util.HashMap;
+
 package net.avalara.avatax.rest.client.enums;
 
 /*
@@ -18,6 +20,7 @@ package net.avalara.avatax.rest.client.enums;
  * Permission level of a user
  */
 public enum SecurityRoleId {
+	
     /** 
      * NoAccess
      */
@@ -133,5 +136,30 @@ public enum SecurityRoleId {
      */
     SSTAdmin(22),
 
+    /**
+     * Integer value for SecurityRoleId
+     */
+    public final int Value;
+
+    private SecurityRoleId(int value) {
+		Value = value;
+    }
+	
+	/**
+	 * Map SecurityRoleId to SecurityRoleId integer ID.
+	 */
+	 private static final Map<Integer, SecurityRoleId> _map = new HashMap<Integer, SecurityRoleId>();
+	 static
+	 {
+		 for (SecurityRoleId modelName : SecurityRoleId.values()
+			 _map.put(modelName.Value, modelName);
+	 }
+	 
+	 /**
+	  * Get SecurityRoleId from value 
+	  */
+	 public static SecurityRoleId from(int value)
+	 {
+		 return _map.get(value);
+	 }
 }
-    

@@ -1,3 +1,5 @@
+import java.util.HashMap;
+
 package net.avalara.avatax.rest.client.enums;
 
 /*
@@ -18,6 +20,7 @@ package net.avalara.avatax.rest.client.enums;
  * Refund types
  */
 public enum RefundType {
+	
     /** 
      * Refund the whole transaction.
      */
@@ -38,5 +41,30 @@ public enum RefundType {
      */
     Percentage(3),
 
+    /**
+     * Integer value for RefundType
+     */
+    public final int Value;
+
+    private RefundType(int value) {
+		Value = value;
+    }
+	
+	/**
+	 * Map RefundType to RefundType integer ID.
+	 */
+	 private static final Map<Integer, RefundType> _map = new HashMap<Integer, RefundType>();
+	 static
+	 {
+		 for (RefundType modelName : RefundType.values()
+			 _map.put(modelName.Value, modelName);
+	 }
+	 
+	 /**
+	  * Get RefundType from value 
+	  */
+	 public static RefundType from(int value)
+	 {
+		 return _map.get(value);
+	 }
 }
-    

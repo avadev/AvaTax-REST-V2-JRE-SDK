@@ -1,3 +1,5 @@
+import java.util.HashMap;
+
 package net.avalara.avatax.rest.client.enums;
 
 /*
@@ -19,6 +21,7 @@ package net.avalara.avatax.rest.client.enums;
  *  "RD" for Reporting Date, "DD" for Document Date, "TD" for Tax Date, "PD" for Payment Date
  */
 public enum ReportDateFilter {
+	
     /** 
      * The date when the transaction is posted
      */
@@ -39,5 +42,30 @@ public enum ReportDateFilter {
      */
     TaxDate(84),
 
+    /**
+     * Integer value for ReportDateFilter
+     */
+    public final int Value;
+
+    private ReportDateFilter(int value) {
+		Value = value;
+    }
+	
+	/**
+	 * Map ReportDateFilter to ReportDateFilter integer ID.
+	 */
+	 private static final Map<Integer, ReportDateFilter> _map = new HashMap<Integer, ReportDateFilter>();
+	 static
+	 {
+		 for (ReportDateFilter modelName : ReportDateFilter.values()
+			 _map.put(modelName.Value, modelName);
+	 }
+	 
+	 /**
+	  * Get ReportDateFilter from value 
+	  */
+	 public static ReportDateFilter from(int value)
+	 {
+		 return _map.get(value);
+	 }
 }
-    

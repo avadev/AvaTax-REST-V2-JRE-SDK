@@ -1,3 +1,5 @@
+import java.util.HashMap;
+
 package net.avalara.avatax.rest.client.enums;
 
 /*
@@ -18,6 +20,7 @@ package net.avalara.avatax.rest.client.enums;
  * Severity level of a notification.
  */
 public enum NotificationSeverityLevel {
+	
     /** 
      * Low priority notification, Default.
      */
@@ -38,5 +41,30 @@ public enum NotificationSeverityLevel {
      */
     Complete(-1),
 
+    /**
+     * Integer value for NotificationSeverityLevel
+     */
+    public final int Value;
+
+    private NotificationSeverityLevel(int value) {
+		Value = value;
+    }
+	
+	/**
+	 * Map NotificationSeverityLevel to NotificationSeverityLevel integer ID.
+	 */
+	 private static final Map<Integer, NotificationSeverityLevel> _map = new HashMap<Integer, NotificationSeverityLevel>();
+	 static
+	 {
+		 for (NotificationSeverityLevel modelName : NotificationSeverityLevel.values()
+			 _map.put(modelName.Value, modelName);
+	 }
+	 
+	 /**
+	  * Get NotificationSeverityLevel from value 
+	  */
+	 public static NotificationSeverityLevel from(int value)
+	 {
+		 return _map.get(value);
+	 }
 }
-    

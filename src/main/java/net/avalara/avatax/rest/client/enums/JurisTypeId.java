@@ -1,3 +1,5 @@
+import java.util.HashMap;
+
 package net.avalara.avatax.rest.client.enums;
 
 /*
@@ -18,6 +20,7 @@ package net.avalara.avatax.rest.client.enums;
  * Types of jurisdiction referenced in a transaction
  */
 public enum JurisTypeId {
+	
     /** 
      * State
      */
@@ -43,5 +46,30 @@ public enum JurisTypeId {
      */
     CNT(5),
 
+    /**
+     * Integer value for JurisTypeId
+     */
+    public final int Value;
+
+    private JurisTypeId(int value) {
+		Value = value;
+    }
+	
+	/**
+	 * Map JurisTypeId to JurisTypeId integer ID.
+	 */
+	 private static final Map<Integer, JurisTypeId> _map = new HashMap<Integer, JurisTypeId>();
+	 static
+	 {
+		 for (JurisTypeId modelName : JurisTypeId.values()
+			 _map.put(modelName.Value, modelName);
+	 }
+	 
+	 /**
+	  * Get JurisTypeId from value 
+	  */
+	 public static JurisTypeId from(int value)
+	 {
+		 return _map.get(value);
+	 }
 }
-    

@@ -1,3 +1,5 @@
+import java.util.HashMap;
+
 package net.avalara.avatax.rest.client.enums;
 
 /*
@@ -18,6 +20,7 @@ package net.avalara.avatax.rest.client.enums;
  * Comment Types
  */
 public enum CommentType {
+	
     /** 
      * Internal comments are those comments only intended to be for compliance users
      */
@@ -28,5 +31,30 @@ public enum CommentType {
      */
     Customer(2),
 
+    /**
+     * Integer value for CommentType
+     */
+    public final int Value;
+
+    private CommentType(int value) {
+		Value = value;
+    }
+	
+	/**
+	 * Map CommentType to CommentType integer ID.
+	 */
+	 private static final Map<Integer, CommentType> _map = new HashMap<Integer, CommentType>();
+	 static
+	 {
+		 for (CommentType modelName : CommentType.values()
+			 _map.put(modelName.Value, modelName);
+	 }
+	 
+	 /**
+	  * Get CommentType from value 
+	  */
+	 public static CommentType from(int value)
+	 {
+		 return _map.get(value);
+	 }
 }
-    

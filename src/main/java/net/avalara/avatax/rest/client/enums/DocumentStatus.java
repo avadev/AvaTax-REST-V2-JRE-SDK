@@ -1,3 +1,5 @@
+import java.util.HashMap;
+
 package net.avalara.avatax.rest.client.enums;
 
 /*
@@ -20,6 +22,7 @@ package net.avalara.avatax.rest.client.enums;
  *  in the [AvaTax Developer Guide](https://developer.avalara.com/avatax/dev-guide/transactions/should-i-commit).
  */
 public enum DocumentStatus {
+	
     /** 
      * Temporary document not saved (SalesOrder, PurchaseOrder).
      *  
@@ -111,5 +114,30 @@ public enum DocumentStatus {
      */
     Any(-1),
 
+    /**
+     * Integer value for DocumentStatus
+     */
+    public final int Value;
+
+    private DocumentStatus(int value) {
+		Value = value;
+    }
+	
+	/**
+	 * Map DocumentStatus to DocumentStatus integer ID.
+	 */
+	 private static final Map<Integer, DocumentStatus> _map = new HashMap<Integer, DocumentStatus>();
+	 static
+	 {
+		 for (DocumentStatus modelName : DocumentStatus.values()
+			 _map.put(modelName.Value, modelName);
+	 }
+	 
+	 /**
+	  * Get DocumentStatus from value 
+	  */
+	 public static DocumentStatus from(int value)
+	 {
+		 return _map.get(value);
+	 }
 }
-    

@@ -1,3 +1,5 @@
+import java.util.HashMap;
+
 package net.avalara.avatax.rest.client.enums;
 
 /*
@@ -18,6 +20,7 @@ package net.avalara.avatax.rest.client.enums;
  * Type of verification task
  */
 public enum ScraperType {
+	
     /** 
      * Indicates that is is a login type
      */
@@ -28,5 +31,30 @@ public enum ScraperType {
      */
     CustomerDorData(2),
 
+    /**
+     * Integer value for ScraperType
+     */
+    public final int Value;
+
+    private ScraperType(int value) {
+		Value = value;
+    }
+	
+	/**
+	 * Map ScraperType to ScraperType integer ID.
+	 */
+	 private static final Map<Integer, ScraperType> _map = new HashMap<Integer, ScraperType>();
+	 static
+	 {
+		 for (ScraperType modelName : ScraperType.values()
+			 _map.put(modelName.Value, modelName);
+	 }
+	 
+	 /**
+	  * Get ScraperType from value 
+	  */
+	 public static ScraperType from(int value)
+	 {
+		 return _map.get(value);
+	 }
 }
-    

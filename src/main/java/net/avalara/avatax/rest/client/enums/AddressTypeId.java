@@ -1,3 +1,5 @@
+import java.util.HashMap;
+
 package net.avalara.avatax.rest.client.enums;
 
 /*
@@ -18,6 +20,7 @@ package net.avalara.avatax.rest.client.enums;
  * Indicates whether this address refers to a person or an business
  */
 public enum AddressTypeId {
+	
     /** 
      * A business location, for example a store, warehouse, or office.
      */
@@ -36,5 +39,30 @@ public enum AddressTypeId {
      */
     Marketplace(3),
 
+    /**
+     * Integer value for AddressTypeId
+     */
+    public final int Value;
+
+    private AddressTypeId(int value) {
+		Value = value;
+    }
+	
+	/**
+	 * Map AddressTypeId to AddressTypeId integer ID.
+	 */
+	 private static final Map<Integer, AddressTypeId> _map = new HashMap<Integer, AddressTypeId>();
+	 static
+	 {
+		 for (AddressTypeId modelName : AddressTypeId.values()
+			 _map.put(modelName.Value, modelName);
+	 }
+	 
+	 /**
+	  * Get AddressTypeId from value 
+	  */
+	 public static AddressTypeId from(int value)
+	 {
+		 return _map.get(value);
+	 }
 }
-    

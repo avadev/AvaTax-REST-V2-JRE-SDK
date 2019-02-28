@@ -1,3 +1,5 @@
+import java.util.HashMap;
+
 package net.avalara.avatax.rest.client.enums;
 
 /*
@@ -18,6 +20,7 @@ package net.avalara.avatax.rest.client.enums;
  * Casing to use for validation result
  */
 public enum TextCase {
+	
     /** 
      * Upper case
      */
@@ -28,5 +31,30 @@ public enum TextCase {
      */
     Mixed(1),
 
+    /**
+     * Integer value for TextCase
+     */
+    public final int Value;
+
+    private TextCase(int value) {
+		Value = value;
+    }
+	
+	/**
+	 * Map TextCase to TextCase integer ID.
+	 */
+	 private static final Map<Integer, TextCase> _map = new HashMap<Integer, TextCase>();
+	 static
+	 {
+		 for (TextCase modelName : TextCase.values()
+			 _map.put(modelName.Value, modelName);
+	 }
+	 
+	 /**
+	  * Get TextCase from value 
+	  */
+	 public static TextCase from(int value)
+	 {
+		 return _map.get(value);
+	 }
 }
-    

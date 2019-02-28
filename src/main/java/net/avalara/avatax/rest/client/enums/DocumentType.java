@@ -1,3 +1,5 @@
+import java.util.HashMap;
+
 package net.avalara.avatax.rest.client.enums;
 
 /*
@@ -18,6 +20,7 @@ package net.avalara.avatax.rest.client.enums;
  * Represents the different types of transactions that AvaTax can process.
  */
 public enum DocumentType {
+	
     /** 
      * Represents an estimate, or a sales order, or a quote. 
      *  
@@ -150,5 +153,30 @@ public enum DocumentType {
      */
     Any(-1),
 
+    /**
+     * Integer value for DocumentType
+     */
+    public final int Value;
+
+    private DocumentType(int value) {
+		Value = value;
+    }
+	
+	/**
+	 * Map DocumentType to DocumentType integer ID.
+	 */
+	 private static final Map<Integer, DocumentType> _map = new HashMap<Integer, DocumentType>();
+	 static
+	 {
+		 for (DocumentType modelName : DocumentType.values()
+			 _map.put(modelName.Value, modelName);
+	 }
+	 
+	 /**
+	  * Get DocumentType from value 
+	  */
+	 public static DocumentType from(int value)
+	 {
+		 return _map.get(value);
+	 }
 }
-    

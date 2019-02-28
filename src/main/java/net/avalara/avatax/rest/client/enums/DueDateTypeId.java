@@ -1,3 +1,5 @@
+import java.util.HashMap;
+
 package net.avalara.avatax.rest.client.enums;
 
 /*
@@ -18,6 +20,7 @@ package net.avalara.avatax.rest.client.enums;
  * A list of possible Due Date Types
  */
 public enum DueDateTypeId {
+	
     /** 
      * Denotes form is due on the due day
      */
@@ -33,5 +36,30 @@ public enum DueDateTypeId {
      */
     BySecondLastDay(2),
 
+    /**
+     * Integer value for DueDateTypeId
+     */
+    public final int Value;
+
+    private DueDateTypeId(int value) {
+		Value = value;
+    }
+	
+	/**
+	 * Map DueDateTypeId to DueDateTypeId integer ID.
+	 */
+	 private static final Map<Integer, DueDateTypeId> _map = new HashMap<Integer, DueDateTypeId>();
+	 static
+	 {
+		 for (DueDateTypeId modelName : DueDateTypeId.values()
+			 _map.put(modelName.Value, modelName);
+	 }
+	 
+	 /**
+	  * Get DueDateTypeId from value 
+	  */
+	 public static DueDateTypeId from(int value)
+	 {
+		 return _map.get(value);
+	 }
 }
-    

@@ -1,3 +1,5 @@
+import java.util.HashMap;
+
 package net.avalara.avatax.rest.client.enums;
 
 /*
@@ -18,6 +20,7 @@ package net.avalara.avatax.rest.client.enums;
  * Choice of rounding level for a transaction
  */
 public enum RoundingLevelId {
+	
     /** 
      * Round tax on each line separately
      */
@@ -28,5 +31,30 @@ public enum RoundingLevelId {
      */
     Document(1),
 
+    /**
+     * Integer value for RoundingLevelId
+     */
+    public final int Value;
+
+    private RoundingLevelId(int value) {
+		Value = value;
+    }
+	
+	/**
+	 * Map RoundingLevelId to RoundingLevelId integer ID.
+	 */
+	 private static final Map<Integer, RoundingLevelId> _map = new HashMap<Integer, RoundingLevelId>();
+	 static
+	 {
+		 for (RoundingLevelId modelName : RoundingLevelId.values()
+			 _map.put(modelName.Value, modelName);
+	 }
+	 
+	 /**
+	  * Get RoundingLevelId from value 
+	  */
+	 public static RoundingLevelId from(int value)
+	 {
+		 return _map.get(value);
+	 }
 }
-    

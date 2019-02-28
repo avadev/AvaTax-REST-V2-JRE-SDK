@@ -1,3 +1,5 @@
+import java.util.HashMap;
+
 package net.avalara.avatax.rest.client.enums;
 
 /*
@@ -18,6 +20,7 @@ package net.avalara.avatax.rest.client.enums;
  * Accrual types
  */
 public enum AccrualType {
+	
     /** 
      * Filing indicates that this tax return should be filed with its tax authority by its due date. For example, if you file annually, you will have eleven months of Accrual returns and one Filing return.
      */
@@ -28,5 +31,30 @@ public enum AccrualType {
      */
     Accrual(2),
 
+    /**
+     * Integer value for AccrualType
+     */
+    public final int Value;
+
+    private AccrualType(int value) {
+		Value = value;
+    }
+	
+	/**
+	 * Map AccrualType to AccrualType integer ID.
+	 */
+	 private static final Map<Integer, AccrualType> _map = new HashMap<Integer, AccrualType>();
+	 static
+	 {
+		 for (AccrualType modelName : AccrualType.values()
+			 _map.put(modelName.Value, modelName);
+	 }
+	 
+	 /**
+	  * Get AccrualType from value 
+	  */
+	 public static AccrualType from(int value)
+	 {
+		 return _map.get(value);
+	 }
 }
-    

@@ -1,3 +1,5 @@
+import java.util.HashMap;
+
 package net.avalara.avatax.rest.client.enums;
 
 /*
@@ -18,6 +20,7 @@ package net.avalara.avatax.rest.client.enums;
  * The type of address represented by this object
  */
 public enum AddressCategoryId {
+	
     /** 
      * Address refers to a storefront location
      */
@@ -65,5 +68,30 @@ public enum AddressCategoryId {
      */
     NonPhysical(8),
 
+    /**
+     * Integer value for AddressCategoryId
+     */
+    public final int Value;
+
+    private AddressCategoryId(int value) {
+		Value = value;
+    }
+	
+	/**
+	 * Map AddressCategoryId to AddressCategoryId integer ID.
+	 */
+	 private static final Map<Integer, AddressCategoryId> _map = new HashMap<Integer, AddressCategoryId>();
+	 static
+	 {
+		 for (AddressCategoryId modelName : AddressCategoryId.values()
+			 _map.put(modelName.Value, modelName);
+	 }
+	 
+	 /**
+	  * Get AddressCategoryId from value 
+	  */
+	 public static AddressCategoryId from(int value)
+	 {
+		 return _map.get(value);
+	 }
 }
-    
