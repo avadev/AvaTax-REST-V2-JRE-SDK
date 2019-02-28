@@ -1,6 +1,5 @@
-import java.util.HashMap;
-
 package net.avalara.avatax.rest.client.enums;
+import java.util.HashMap;
 
 /*
  * AvaTax Software Development Kit for Java JRE based environments
