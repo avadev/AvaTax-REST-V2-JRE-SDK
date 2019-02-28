@@ -20,7 +20,6 @@ package net.avalara.avatax.rest.client.enums;
  * Indicates whether this address refers to a person or an business
  */
 public enum AddressTypeId {
-	
     /** 
      * A business location, for example a store, warehouse, or office.
      */

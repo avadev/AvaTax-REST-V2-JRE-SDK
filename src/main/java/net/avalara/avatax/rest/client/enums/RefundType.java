@@ -20,7 +20,6 @@ package net.avalara.avatax.rest.client.enums;
  * Refund types
  */
 public enum RefundType {
-	
     /** 
      * Refund the whole transaction.
      */

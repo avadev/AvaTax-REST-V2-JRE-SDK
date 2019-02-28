@@ -20,7 +20,6 @@ package net.avalara.avatax.rest.client.enums;
  * Different types of formats allowed for exporting a report
  */
 public enum ReportFormat {
-	
     /** 
      * The Comma Separated Values file format
      */

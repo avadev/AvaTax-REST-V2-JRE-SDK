@@ -20,7 +20,6 @@ package net.avalara.avatax.rest.client.enums;
  * Indicates the status of a CertExpress invitation link.
  */
 public enum CertExpressInvitationStatus {
-	
     /** 
      * The CertExpress website is currently building a landing page for the customer. Please
      *  wait about 10 seconds and fetch this request again to see when it will be ready.

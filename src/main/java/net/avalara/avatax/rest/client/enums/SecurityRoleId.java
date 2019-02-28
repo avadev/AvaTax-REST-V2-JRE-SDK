@@ -20,7 +20,6 @@ package net.avalara.avatax.rest.client.enums;
  * Permission level of a user
  */
 public enum SecurityRoleId {
-	
     /** 
      * NoAccess
      */

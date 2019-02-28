@@ -21,7 +21,6 @@ package net.avalara.avatax.rest.client.enums;
  *  "RD" for Reporting Date, "DD" for Document Date, "TD" for Tax Date, "PD" for Payment Date
  */
 public enum ReportDateFilter {
-	
     /** 
      * The date when the transaction is posted
      */

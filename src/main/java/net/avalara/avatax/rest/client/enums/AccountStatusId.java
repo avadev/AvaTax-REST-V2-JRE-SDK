@@ -20,7 +20,6 @@ package net.avalara.avatax.rest.client.enums;
  * Status of an Avalara account
  */
 public enum AccountStatusId {
-	
     /** 
      * This account is not currently active.
      */

@@ -20,7 +20,6 @@ package net.avalara.avatax.rest.client.enums;
  * Accrual types
  */
 public enum AccrualType {
-	
     /** 
      * Filing indicates that this tax return should be filed with its tax authority by its due date. For example, if you file annually, you will have eleven months of Accrual returns and one Filing return.
      */

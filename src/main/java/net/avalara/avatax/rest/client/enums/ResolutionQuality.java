@@ -20,7 +20,6 @@ package net.avalara.avatax.rest.client.enums;
  * The address resolution quality of an address validation result
  */
 public enum ResolutionQuality {
-	
     /** 
      * Location was not geocoded
      */

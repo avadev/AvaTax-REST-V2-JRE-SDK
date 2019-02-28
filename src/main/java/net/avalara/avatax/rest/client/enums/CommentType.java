@@ -20,7 +20,6 @@ package net.avalara.avatax.rest.client.enums;
  * Comment Types
  */
 public enum CommentType {
-	
     /** 
      * Internal comments are those comments only intended to be for compliance users
      */

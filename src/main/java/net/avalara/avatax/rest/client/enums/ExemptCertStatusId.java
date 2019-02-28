@@ -20,7 +20,6 @@ package net.avalara.avatax.rest.client.enums;
  * Status for this exempt certificate
  */
 public enum ExemptCertStatusId {
-	
     /** 
      * Inactive certificate
      */

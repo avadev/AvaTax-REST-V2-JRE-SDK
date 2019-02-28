@@ -20,7 +20,6 @@ package net.avalara.avatax.rest.client.enums;
  * Exempt certificate review status
  */
 public enum ExemptCertReviewStatusId {
-	
     /** 
      * Review pending
      */

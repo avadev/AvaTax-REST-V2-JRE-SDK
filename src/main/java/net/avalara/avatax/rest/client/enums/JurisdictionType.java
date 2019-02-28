@@ -20,7 +20,6 @@ package net.avalara.avatax.rest.client.enums;
  * Jurisdiction Type
  */
 public enum JurisdictionType {
-	
     /** 
      * Country
      */

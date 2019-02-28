@@ -20,7 +20,6 @@ package net.avalara.avatax.rest.client.enums;
  * Exempt Cert type
  */
 public enum ExemptCertTypeId {
-	
     /** 
      * Blanked certificate
      */

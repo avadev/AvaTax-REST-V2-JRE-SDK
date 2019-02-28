@@ -20,7 +20,6 @@ package net.avalara.avatax.rest.client.enums;
  * Indicates whether Avalara Managed Returns has begun filing for this company.
  */
 public enum CompanyFilingStatus {
-	
     /** 
      * This company is not a reporting entity and cannot file taxes. To change this behavior, you must mark
      *  the company as a reporting entity.

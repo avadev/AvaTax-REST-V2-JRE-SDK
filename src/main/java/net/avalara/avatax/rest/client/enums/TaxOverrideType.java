@@ -24,7 +24,6 @@ package net.avalara.avatax.rest.client.enums;
  *  as it was charged. AvaTax will record the type of override used for each transaction.
  */
 public enum TaxOverrideType {
-	
     /** 
      * AvaTax calculated the tax for this transaction, and no override occurred.
      */

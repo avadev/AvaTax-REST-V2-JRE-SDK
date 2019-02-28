@@ -22,7 +22,6 @@ package net.avalara.avatax.rest.client.enums;
  *  Some tax authorities require that a separate form must be filed for each place of business.
  */
 public enum OutletTypeId {
-	
     /** 
      * File a single return per cycle for your entire business.
      */

@@ -20,7 +20,6 @@ package net.avalara.avatax.rest.client.enums;
  * The type of data contained in this batch
  */
 public enum BatchType {
-	
     /** 
      * 
      */

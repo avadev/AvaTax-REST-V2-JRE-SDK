@@ -20,7 +20,6 @@ package net.avalara.avatax.rest.client.enums;
  * Filing worksheet Type
  */
 public enum WorksheetTypeId {
-	
     /** 
      * The original filing for a period
      */

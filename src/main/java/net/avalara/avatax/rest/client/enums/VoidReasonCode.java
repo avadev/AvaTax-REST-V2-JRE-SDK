@@ -20,7 +20,6 @@ package net.avalara.avatax.rest.client.enums;
  * Reason code for voiding or cancelling a transaction
  */
 public enum VoidReasonCode {
-	
     /** 
      * Unspecified reason
      */

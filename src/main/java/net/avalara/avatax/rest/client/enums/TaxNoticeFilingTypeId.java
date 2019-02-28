@@ -20,7 +20,6 @@ package net.avalara.avatax.rest.client.enums;
  * A list of possible AvaFile filing types for tax notices.
  */
 public enum TaxNoticeFilingTypeId {
-	
     /** 
      * Denotes the tax return is being filed via electronic means; excludes SST electronic filing.
      */

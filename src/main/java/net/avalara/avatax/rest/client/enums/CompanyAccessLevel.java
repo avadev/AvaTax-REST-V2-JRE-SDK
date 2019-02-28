@@ -20,7 +20,6 @@ package net.avalara.avatax.rest.client.enums;
  * Indicates the level of companies that can be accessed
  */
 public enum CompanyAccessLevel {
-	
     /** 
      * No permission to access companies.
      */

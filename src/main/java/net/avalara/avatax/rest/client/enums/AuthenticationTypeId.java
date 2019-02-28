@@ -20,7 +20,6 @@ package net.avalara.avatax.rest.client.enums;
  * Represents the type of authentication provided to the API call
  */
 public enum AuthenticationTypeId {
-	
     /** 
      * This API call was not authenticated.
      */

@@ -20,7 +20,6 @@ package net.avalara.avatax.rest.client.enums;
  * The way of delivering request
  */
 public enum CertificateRequestDeliveryMethod {
-	
     /** 
      * The invitation will be sent via email to the recipient's email address.
      */

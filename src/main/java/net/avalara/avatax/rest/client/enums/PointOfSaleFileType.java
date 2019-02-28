@@ -20,7 +20,6 @@ package net.avalara.avatax.rest.client.enums;
  * Type of file request
  */
 public enum PointOfSaleFileType {
-	
     /** 
      * File is in Javascript Object Notation format
      */

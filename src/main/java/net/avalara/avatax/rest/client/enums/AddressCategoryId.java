@@ -20,7 +20,6 @@ package net.avalara.avatax.rest.client.enums;
  * The type of address represented by this object
  */
 public enum AddressCategoryId {
-	
     /** 
      * Address refers to a storefront location
      */

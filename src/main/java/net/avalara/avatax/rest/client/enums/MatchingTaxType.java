@@ -22,7 +22,6 @@ package net.avalara.avatax.rest.client.enums;
  *  For example, if you specify BothSalesAndUseTax, this value matches with both sales and seller's use tax.
  */
 public enum MatchingTaxType {
-	
     /** 
      * Match medical excise type
      */

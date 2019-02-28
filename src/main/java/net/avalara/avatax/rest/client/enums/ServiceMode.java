@@ -20,7 +20,6 @@ package net.avalara.avatax.rest.client.enums;
  * Service modes for tax calculation when using an AvaLocal server.
  */
 public enum ServiceMode {
-	
     /** 
      * Automatically use local or remote (default)
      */

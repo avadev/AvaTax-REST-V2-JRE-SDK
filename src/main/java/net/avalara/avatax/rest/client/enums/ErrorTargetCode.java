@@ -20,7 +20,6 @@ package net.avalara.avatax.rest.client.enums;
  * What object experienced the error?
  */
 public enum ErrorTargetCode {
-	
     /** 
      * Error target is unknown
      */

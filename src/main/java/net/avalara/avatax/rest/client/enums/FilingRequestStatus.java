@@ -20,7 +20,6 @@ package net.avalara.avatax.rest.client.enums;
  * Filing Request Status types
  */
 public enum FilingRequestStatus {
-	
     /** 
      * Customer is building a request for a new filing calendar
      */

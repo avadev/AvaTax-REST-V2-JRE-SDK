@@ -20,7 +20,6 @@ package net.avalara.avatax.rest.client.enums;
  * Indicates the type of payments
  */
 public enum PaymentType {
-	
     /** 
      * The payment is for the current payment
      */

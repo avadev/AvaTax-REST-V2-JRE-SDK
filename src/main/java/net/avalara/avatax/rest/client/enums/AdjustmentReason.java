@@ -20,7 +20,6 @@ package net.avalara.avatax.rest.client.enums;
  * Indicates the type of adjustment that was performed on a transaction
  */
 public enum AdjustmentReason {
-	
     /** 
      * The transaction has not been adjusted
      */

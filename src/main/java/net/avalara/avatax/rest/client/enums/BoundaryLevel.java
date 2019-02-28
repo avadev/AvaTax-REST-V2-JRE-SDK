@@ -21,7 +21,6 @@ package net.avalara.avatax.rest.client.enums;
  *  as well as the precision level of the state provided jurisdiction boundaries.
  */
 public enum BoundaryLevel {
-	
     /** 
      * Street address precision
      */

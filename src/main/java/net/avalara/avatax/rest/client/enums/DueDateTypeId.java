@@ -20,7 +20,6 @@ package net.avalara.avatax.rest.client.enums;
  * A list of possible Due Date Types
  */
 public enum DueDateTypeId {
-	
     /** 
      * Denotes form is due on the due day
      */

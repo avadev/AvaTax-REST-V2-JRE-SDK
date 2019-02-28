@@ -20,7 +20,6 @@ package net.avalara.avatax.rest.client.enums;
  * 
  */
 public enum RateType {
-	
     /** 
      * 
      */

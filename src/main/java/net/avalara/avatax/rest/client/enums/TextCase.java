@@ -20,7 +20,6 @@ package net.avalara.avatax.rest.client.enums;
  * Casing to use for validation result
  */
 public enum TextCase {
-	
     /** 
      * Upper case
      */

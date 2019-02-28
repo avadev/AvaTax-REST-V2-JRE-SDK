@@ -20,7 +20,6 @@ package net.avalara.avatax.rest.client.enums;
  * Types of jurisdiction referenced in a transaction
  */
 public enum JurisTypeId {
-	
     /** 
      * State
      */

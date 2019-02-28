@@ -20,7 +20,6 @@ package net.avalara.avatax.rest.client.enums;
  * Represents the type of service or subscription given to a user
  */
 public enum ServiceTypeId {
-	
     /** 
      * None
      */

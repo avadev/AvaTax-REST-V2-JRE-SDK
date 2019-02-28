@@ -20,7 +20,6 @@ package net.avalara.avatax.rest.client.enums;
  * A list of possible AvaFile filing types.
  */
 public enum FilingTypeId {
-	
     /** 
      * Denotes the tax return is being filed on paper.
      */

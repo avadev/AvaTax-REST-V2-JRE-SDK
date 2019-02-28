@@ -20,7 +20,6 @@ package net.avalara.avatax.rest.client.enums;
  * 
  */
 public enum CertCaptureProvisionStatus {
-	
     /** 
      * Account and company are provisioned
      */

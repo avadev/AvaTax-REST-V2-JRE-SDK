@@ -20,7 +20,6 @@ package net.avalara.avatax.rest.client.enums;
  * Choice of rounding level for a transaction
  */
 public enum RoundingLevelId {
-	
     /** 
      * Round tax on each line separately
      */

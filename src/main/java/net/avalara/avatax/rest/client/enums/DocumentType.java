@@ -20,7 +20,6 @@ package net.avalara.avatax.rest.client.enums;
  * Represents the different types of transactions that AvaTax can process.
  */
 public enum DocumentType {
-	
     /** 
      * Represents an estimate, or a sales order, or a quote. 
      *  

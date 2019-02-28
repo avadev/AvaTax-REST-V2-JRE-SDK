@@ -20,7 +20,6 @@ package net.avalara.avatax.rest.client.enums;
  * Describes the different types of statuses which describe an entity (company).
  */
 public enum NexusTypeId {
-	
     /** 
      * Indicates no nexus
      */

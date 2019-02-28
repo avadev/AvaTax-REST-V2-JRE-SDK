@@ -20,7 +20,6 @@ package net.avalara.avatax.rest.client.enums;
  * Filing Status
  */
 public enum FilingStatusId {
-	
     /** 
      * 
      */

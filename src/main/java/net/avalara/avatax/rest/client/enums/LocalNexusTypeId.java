@@ -20,7 +20,6 @@ package net.avalara.avatax.rest.client.enums;
  * Describes nexus type id
  */
 public enum LocalNexusTypeId {
-	
     /** 
      * Only the specific nexus objects declared for this company are declared.
      */

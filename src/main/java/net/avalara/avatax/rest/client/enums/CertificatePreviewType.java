@@ -20,7 +20,6 @@ package net.avalara.avatax.rest.client.enums;
  * Type of certificate preview to download
  */
 public enum CertificatePreviewType {
-	
     /** 
      * Download a full printable PDF
      */

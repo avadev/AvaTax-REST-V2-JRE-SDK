@@ -20,7 +20,6 @@ package net.avalara.avatax.rest.client.enums;
  * A list of possible AvaFile Form Types.
  */
 public enum FormTypeId {
-	
     /** 
      * Denotes the form type is Sales and Use Tax
      */

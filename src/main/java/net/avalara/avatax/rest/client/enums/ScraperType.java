@@ -20,7 +20,6 @@ package net.avalara.avatax.rest.client.enums;
  * Type of verification task
  */
 public enum ScraperType {
-	
     /** 
      * Indicates that is is a login type
      */

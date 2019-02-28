@@ -22,7 +22,6 @@ package net.avalara.avatax.rest.client.enums;
  *  in the [AvaTax Developer Guide](https://developer.avalara.com/avatax/dev-guide/transactions/should-i-commit).
  */
 public enum DocumentStatus {
-	
     /** 
      * Temporary document not saved (SalesOrder, PurchaseOrder).
      *  

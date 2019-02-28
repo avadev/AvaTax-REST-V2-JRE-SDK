@@ -20,7 +20,6 @@ package net.avalara.avatax.rest.client.enums;
  * Tax type
  */
 public enum TaxType {
-	
     /** 
      * Match Lodging tax type
      */

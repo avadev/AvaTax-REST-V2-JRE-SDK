@@ -20,7 +20,6 @@ package net.avalara.avatax.rest.client.enums;
  * Represents a error code message
  */
 public enum ErrorCodeId {
-	
     /** 
      * Server has a configuration or setup problem
      */

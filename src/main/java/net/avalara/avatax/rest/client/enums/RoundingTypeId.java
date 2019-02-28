@@ -20,7 +20,6 @@ package net.avalara.avatax.rest.client.enums;
  * Indicates the rounding behavior of a form
  */
 public enum RoundingTypeId {
-	
     /** 
      * There is no rounding on the return
      */

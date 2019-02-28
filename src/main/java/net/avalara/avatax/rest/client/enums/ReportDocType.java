@@ -20,7 +20,6 @@ package net.avalara.avatax.rest.client.enums;
  * The output DocumentType for a report
  */
 public enum ReportDocType {
-	
     /** 
      * Output all ConsumerUse tax transactions in the report
      */

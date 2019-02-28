@@ -20,7 +20,6 @@ package net.avalara.avatax.rest.client.enums;
  * The status of a batch file
  */
 public enum BatchStatus {
-	
     /** 
      * Batch file has been received and is in the queue to be processed.
      */

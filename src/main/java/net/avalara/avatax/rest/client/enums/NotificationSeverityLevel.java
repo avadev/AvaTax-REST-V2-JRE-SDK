@@ -20,7 +20,6 @@ package net.avalara.avatax.rest.client.enums;
  * Severity level of a notification.
  */
 public enum NotificationSeverityLevel {
-	
     /** 
      * Low priority notification, Default.
      */

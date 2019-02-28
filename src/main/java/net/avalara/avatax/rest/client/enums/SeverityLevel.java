@@ -20,7 +20,6 @@ package net.avalara.avatax.rest.client.enums;
  * Severity of message
  */
 public enum SeverityLevel {
-	
     /** 
      * Operation succeeded
      */

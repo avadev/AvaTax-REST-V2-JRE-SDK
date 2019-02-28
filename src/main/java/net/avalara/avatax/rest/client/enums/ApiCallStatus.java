@@ -20,7 +20,6 @@ package net.avalara.avatax.rest.client.enums;
  * Indicates what level of auditing information is available for a transaction
  */
 public enum ApiCallStatus {
-	
     /** 
      * If the original api call is availabe on S3
      */

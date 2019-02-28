@@ -20,7 +20,6 @@ package net.avalara.avatax.rest.client.enums;
  * Specifies the type of custom tax rule you have created.
  */
 public enum TaxRuleTypeId {
-	
     /** 
      * Reserved for Avalara internal usage.
      */

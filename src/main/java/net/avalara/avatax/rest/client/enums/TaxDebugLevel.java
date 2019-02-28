@@ -20,7 +20,6 @@ package net.avalara.avatax.rest.client.enums;
  * Indicates the level of detail requested from a tax API call
  */
 public enum TaxDebugLevel {
-	
     /** 
      * User requests the normal level of debug information when creating a tax transaction
      */
