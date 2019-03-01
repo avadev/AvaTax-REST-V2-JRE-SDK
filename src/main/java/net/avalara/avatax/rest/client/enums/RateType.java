@@ -85,7 +85,7 @@ public enum RateType {
     Zero(90);
 
     private int value;
-	private static Map map = new HashMap<>();
+	private static HashMap map = new HashMap<>();
 	
 	private RateType(int value) {
 		this.value = value;

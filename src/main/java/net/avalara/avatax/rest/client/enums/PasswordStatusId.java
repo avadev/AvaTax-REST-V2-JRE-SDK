@@ -35,7 +35,7 @@ public enum PasswordStatusId {
     UserMustChange(2);
 
     private int value;
-	private static Map map = new HashMap<>();
+	private static HashMap map = new HashMap<>();
 	
 	private PasswordStatusId(int value) {
 		this.value = value;

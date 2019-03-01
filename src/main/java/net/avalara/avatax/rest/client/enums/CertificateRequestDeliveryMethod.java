@@ -38,7 +38,7 @@ public enum CertificateRequestDeliveryMethod {
     Download(3);
 
     private int value;
-	private static Map map = new HashMap<>();
+	private static HashMap map = new HashMap<>();
 	
 	private CertificateRequestDeliveryMethod(int value) {
 		this.value = value;

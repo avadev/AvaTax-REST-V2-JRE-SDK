@@ -30,7 +30,7 @@ public enum ReportDocType {
     Sales(83);
 
     private int value;
-	private static Map map = new HashMap<>();
+	private static HashMap map = new HashMap<>();
 	
 	private ReportDocType(int value) {
 		this.value = value;

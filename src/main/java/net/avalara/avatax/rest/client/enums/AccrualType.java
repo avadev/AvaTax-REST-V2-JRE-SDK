@@ -30,7 +30,7 @@ public enum AccrualType {
     Accrual(2);
 
     private int value;
-	private static Map map = new HashMap<>();
+	private static HashMap map = new HashMap<>();
 	
 	private AccrualType(int value) {
 		this.value = value;

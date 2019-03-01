@@ -105,7 +105,7 @@ public enum FilingStatusId {
     ApprovedToFileOnBehalf(16);
 
     private int value;
-	private static Map map = new HashMap<>();
+	private static HashMap map = new HashMap<>();
 	
 	private FilingStatusId(int value) {
 		this.value = value;

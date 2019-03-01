@@ -30,7 +30,7 @@ public enum TextCase {
     Mixed(1);
 
     private int value;
-	private static Map map = new HashMap<>();
+	private static HashMap map = new HashMap<>();
 	
 	private TextCase(int value) {
 		this.value = value;

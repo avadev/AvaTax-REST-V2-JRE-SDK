@@ -40,7 +40,7 @@ public enum NotificationSeverityLevel {
     Complete(-1);
 
     private int value;
-	private static Map map = new HashMap<>();
+	private static HashMap map = new HashMap<>();
 	
 	private NotificationSeverityLevel(int value) {
 		this.value = value;

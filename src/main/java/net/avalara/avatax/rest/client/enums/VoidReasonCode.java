@@ -46,7 +46,7 @@ public enum VoidReasonCode {
     AdjustmentCancelled(4);
 
     private int value;
-	private static Map map = new HashMap<>();
+	private static HashMap map = new HashMap<>();
 	
 	private VoidReasonCode(int value) {
 		this.value = value;

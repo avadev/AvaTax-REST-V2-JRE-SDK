@@ -30,7 +30,7 @@ public enum FundingOption {
     Wire(2);
 
     private int value;
-	private static Map map = new HashMap<>();
+	private static HashMap map = new HashMap<>();
 	
 	private FundingOption(int value) {
 		this.value = value;

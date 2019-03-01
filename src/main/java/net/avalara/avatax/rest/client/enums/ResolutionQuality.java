@@ -80,7 +80,7 @@ public enum ResolutionQuality {
     Constant(11);
 
     private int value;
-	private static Map map = new HashMap<>();
+	private static HashMap map = new HashMap<>();
 	
 	private ResolutionQuality(int value) {
 		this.value = value;

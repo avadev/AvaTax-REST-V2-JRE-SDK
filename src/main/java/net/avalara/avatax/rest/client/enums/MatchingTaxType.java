@@ -102,7 +102,7 @@ public enum MatchingTaxType {
     UseTax(85);
 
     private int value;
-	private static Map map = new HashMap<>();
+	private static HashMap map = new HashMap<>();
 	
 	private MatchingTaxType(int value) {
 		this.value = value;

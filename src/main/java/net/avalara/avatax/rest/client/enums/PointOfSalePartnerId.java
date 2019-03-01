@@ -30,7 +30,7 @@ public enum PointOfSalePartnerId {
     AX7(2);
 
     private int value;
-	private static Map map = new HashMap<>();
+	private static HashMap map = new HashMap<>();
 	
 	private PointOfSalePartnerId(int value) {
 		this.value = value;

@@ -135,7 +135,7 @@ public enum SecurityRoleId {
     SSTAdmin(22);
 
     private int value;
-	private static Map map = new HashMap<>();
+	private static HashMap map = new HashMap<>();
 	
 	private SecurityRoleId(int value) {
 		this.value = value;

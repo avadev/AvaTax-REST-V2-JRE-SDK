@@ -35,7 +35,7 @@ public enum ExemptCertReviewStatusId {
     Rejected(2);
 
     private int value;
-	private static Map map = new HashMap<>();
+	private static HashMap map = new HashMap<>();
 	
 	private ExemptCertReviewStatusId(int value) {
 		this.value = value;

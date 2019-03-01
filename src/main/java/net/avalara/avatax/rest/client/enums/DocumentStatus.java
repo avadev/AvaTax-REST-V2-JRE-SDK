@@ -113,7 +113,7 @@ public enum DocumentStatus {
     Any(-1);
 
     private int value;
-	private static Map map = new HashMap<>();
+	private static HashMap map = new HashMap<>();
 	
 	private DocumentStatus(int value) {
 		this.value = value;

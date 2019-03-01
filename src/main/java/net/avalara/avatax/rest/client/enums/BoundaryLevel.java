@@ -36,7 +36,7 @@ public enum BoundaryLevel {
     Zip5(2);
 
     private int value;
-	private static Map map = new HashMap<>();
+	private static HashMap map = new HashMap<>();
 	
 	private BoundaryLevel(int value) {
 		this.value = value;

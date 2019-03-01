@@ -41,7 +41,7 @@ public enum ReportDateFilter {
     TaxDate(84);
 
     private int value;
-	private static Map map = new HashMap<>();
+	private static HashMap map = new HashMap<>();
 	
 	private ReportDateFilter(int value) {
 		this.value = value;

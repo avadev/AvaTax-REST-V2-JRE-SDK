@@ -65,7 +65,7 @@ public enum BatchStatus {
     Processing(8);
 
     private int value;
-	private static Map map = new HashMap<>();
+	private static HashMap map = new HashMap<>();
 	
 	private BatchStatus(int value) {
 		this.value = value;

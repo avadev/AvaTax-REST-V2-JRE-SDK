@@ -40,7 +40,7 @@ public enum ExemptCertStatusId {
     Revoked(3);
 
     private int value;
-	private static Map map = new HashMap<>();
+	private static HashMap map = new HashMap<>();
 	
 	private ExemptCertStatusId(int value) {
 		this.value = value;

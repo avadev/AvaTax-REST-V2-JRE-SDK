@@ -85,7 +85,7 @@ public enum TaxType {
     Use(85);
 
     private int value;
-	private static Map map = new HashMap<>();
+	private static HashMap map = new HashMap<>();
 	
 	private TaxType(int value) {
 		this.value = value;

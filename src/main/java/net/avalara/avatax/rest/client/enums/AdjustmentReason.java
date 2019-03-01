@@ -70,7 +70,7 @@ public enum AdjustmentReason {
     Offline(9);
 
     private int value;
-	private static Map map = new HashMap<>();
+	private static HashMap map = new HashMap<>();
 	
 	private AdjustmentReason(int value) {
 		this.value = value;

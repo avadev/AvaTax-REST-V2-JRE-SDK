@@ -35,7 +35,7 @@ public enum Sourcing {
     Origin(79);
 
     private int value;
-	private static Map map = new HashMap<>();
+	private static HashMap map = new HashMap<>();
 	
 	private Sourcing(int value) {
 		this.value = value;

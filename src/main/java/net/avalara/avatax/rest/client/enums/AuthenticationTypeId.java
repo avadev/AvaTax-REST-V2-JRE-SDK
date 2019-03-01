@@ -40,7 +40,7 @@ public enum AuthenticationTypeId {
     OpenIdBearerToken(3);
 
     private int value;
-	private static Map map = new HashMap<>();
+	private static HashMap map = new HashMap<>();
 	
 	private AuthenticationTypeId(int value) {
 		this.value = value;

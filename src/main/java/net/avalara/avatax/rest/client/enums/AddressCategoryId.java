@@ -67,7 +67,7 @@ public enum AddressCategoryId {
     NonPhysical(8);
 
     private int value;
-	private static Map map = new HashMap<>();
+	private static HashMap map = new HashMap<>();
 	
 	private AddressCategoryId(int value) {
 		this.value = value;

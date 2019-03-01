@@ -35,7 +35,7 @@ public enum AdjustmentPeriodTypeId {
     NextPeriod(2);
 
     private int value;
-	private static Map map = new HashMap<>();
+	private static HashMap map = new HashMap<>();
 	
 	private AdjustmentPeriodTypeId(int value) {
 		this.value = value;

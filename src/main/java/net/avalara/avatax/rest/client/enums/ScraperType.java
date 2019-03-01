@@ -30,7 +30,7 @@ public enum ScraperType {
     CustomerDorData(2);
 
     private int value;
-	private static Map map = new HashMap<>();
+	private static HashMap map = new HashMap<>();
 	
 	private ScraperType(int value) {
 		this.value = value;

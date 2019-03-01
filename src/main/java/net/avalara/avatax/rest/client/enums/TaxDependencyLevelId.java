@@ -40,7 +40,7 @@ public enum TaxDependencyLevelId {
     Address(3);
 
     private int value;
-	private static Map map = new HashMap<>();
+	private static HashMap map = new HashMap<>();
 	
 	private TaxDependencyLevelId(int value) {
 		this.value = value;

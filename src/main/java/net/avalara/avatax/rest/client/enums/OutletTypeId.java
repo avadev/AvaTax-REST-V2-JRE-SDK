@@ -42,7 +42,7 @@ public enum OutletTypeId {
     Consolidated(3);
 
     private int value;
-	private static Map map = new HashMap<>();
+	private static HashMap map = new HashMap<>();
 	
 	private OutletTypeId(int value) {
 		this.value = value;

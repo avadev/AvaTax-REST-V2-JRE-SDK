@@ -55,7 +55,7 @@ public enum ErrorTargetCode {
     CustomerAccountSetup(12);
 
     private int value;
-	private static Map map = new HashMap<>();
+	private static HashMap map = new HashMap<>();
 	
 	private ErrorTargetCode(int value) {
 		this.value = value;
