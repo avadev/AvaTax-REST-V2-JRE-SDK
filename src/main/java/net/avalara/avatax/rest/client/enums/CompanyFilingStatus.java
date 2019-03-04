@@ -1,4 +1,5 @@
 package net.avalara.avatax.rest.client.enums;
+import java.util.HashMap;
 
 /*
  * AvaTax Software Development Kit for Java JRE based environments
@@ -50,7 +51,26 @@ public enum CompanyFilingStatus {
     /** 
      * This company has not been configured for compliance
      */
-    NotConfiguredForCompliance(5),
+    NotConfiguredForCompliance(5);
 
+    private int value;
+	private static HashMap map = new HashMap<>();
+	
+	private CompanyFilingStatus(int value) {
+		this.value = value;
+	}
+	
+	static {
+		for (CompanyFilingStatus enumName : CompanyFilingStatus.values()) {
+			map.put(enumName.value, enumName);
+		}
+	}
+	
+	public static CompanyFilingStatus valueOf(int intValue) {
+		return (CompanyFilingStatus) map.get(intValue);
+	}
+	
+	public int getValue() {
+		return value;
+	}
 }
-    

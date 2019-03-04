@@ -1,4 +1,5 @@
 package net.avalara.avatax.rest.client.enums;
+import java.util.HashMap;
 
 /*
  * AvaTax Software Development Kit for Java JRE based environments
@@ -26,7 +27,26 @@ public enum AdvancedRuleScriptType {
     /** 
      * 
      */
-    ResponseRule(1),
+    ResponseRule(1);
 
+    private int value;
+	private static HashMap map = new HashMap<>();
+	
+	private AdvancedRuleScriptType(int value) {
+		this.value = value;
+	}
+	
+	static {
+		for (AdvancedRuleScriptType enumName : AdvancedRuleScriptType.values()) {
+			map.put(enumName.value, enumName);
+		}
+	}
+	
+	public static AdvancedRuleScriptType valueOf(int intValue) {
+		return (AdvancedRuleScriptType) map.get(intValue);
+	}
+	
+	public int getValue() {
+		return value;
+	}
 }
-    

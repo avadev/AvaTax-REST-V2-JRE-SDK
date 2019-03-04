@@ -1,4 +1,5 @@
 package net.avalara.avatax.rest.client.enums;
+import java.util.HashMap;
 
 /*
  * AvaTax Software Development Kit for Java JRE based environments
@@ -26,7 +27,26 @@ public enum PointOfSalePartnerId {
     /** 
      * 
      */
-    AX7(2),
+    AX7(2);
 
+    private int value;
+	private static HashMap map = new HashMap<>();
+	
+	private PointOfSalePartnerId(int value) {
+		this.value = value;
+	}
+	
+	static {
+		for (PointOfSalePartnerId enumName : PointOfSalePartnerId.values()) {
+			map.put(enumName.value, enumName);
+		}
+	}
+	
+	public static PointOfSalePartnerId valueOf(int intValue) {
+		return (PointOfSalePartnerId) map.get(intValue);
+	}
+	
+	public int getValue() {
+		return value;
+	}
 }
-    

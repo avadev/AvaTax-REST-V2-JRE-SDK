@@ -1,4 +1,5 @@
 package net.avalara.avatax.rest.client.enums;
+import java.util.HashMap;
 
 /*
  * AvaTax Software Development Kit for Java JRE based environments
@@ -41,7 +42,26 @@ public enum JurisdictionType {
     /** 
      * Special Tax Jurisdiction
      */
-    Special(4),
+    Special(4);
 
+    private int value;
+	private static HashMap map = new HashMap<>();
+	
+	private JurisdictionType(int value) {
+		this.value = value;
+	}
+	
+	static {
+		for (JurisdictionType enumName : JurisdictionType.values()) {
+			map.put(enumName.value, enumName);
+		}
+	}
+	
+	public static JurisdictionType valueOf(int intValue) {
+		return (JurisdictionType) map.get(intValue);
+	}
+	
+	public int getValue() {
+		return value;
+	}
 }
-    

@@ -1,4 +1,5 @@
 package net.avalara.avatax.rest.client.enums;
+import java.util.HashMap;
 
 /*
  * AvaTax Software Development Kit for Java JRE based environments
@@ -109,7 +110,26 @@ public enum DocumentStatus {
      * DEPRECATED - Represents "a document in any status" when searching. Please search using the 
      *  [Filtering in REST](/avatax/filtering-in-rest/) documentation.
      */
-    Any(-1),
+    Any(-1);
 
+    private int value;
+	private static HashMap map = new HashMap<>();
+	
+	private DocumentStatus(int value) {
+		this.value = value;
+	}
+	
+	static {
+		for (DocumentStatus enumName : DocumentStatus.values()) {
+			map.put(enumName.value, enumName);
+		}
+	}
+	
+	public static DocumentStatus valueOf(int intValue) {
+		return (DocumentStatus) map.get(intValue);
+	}
+	
+	public int getValue() {
+		return value;
+	}
 }
-    

@@ -1,4 +1,5 @@
 package net.avalara.avatax.rest.client.enums;
+import java.util.HashMap;
 
 /*
  * AvaTax Software Development Kit for Java JRE based environments
@@ -98,7 +99,26 @@ public enum MatchingTaxType {
     /** 
      * Match Seller's Use Tax only
      */
-    UseTax(85),
+    UseTax(85);
 
+    private int value;
+	private static HashMap map = new HashMap<>();
+	
+	private MatchingTaxType(int value) {
+		this.value = value;
+	}
+	
+	static {
+		for (MatchingTaxType enumName : MatchingTaxType.values()) {
+			map.put(enumName.value, enumName);
+		}
+	}
+	
+	public static MatchingTaxType valueOf(int intValue) {
+		return (MatchingTaxType) map.get(intValue);
+	}
+	
+	public int getValue() {
+		return value;
+	}
 }
-    

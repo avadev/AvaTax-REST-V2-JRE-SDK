@@ -1,4 +1,5 @@
 package net.avalara.avatax.rest.client.enums;
+import java.util.HashMap;
 
 /*
  * AvaTax Software Development Kit for Java JRE based environments
@@ -61,7 +62,26 @@ public enum BatchStatus {
     /** 
      * Batch is currently being processed.
      */
-    Processing(8),
+    Processing(8);
 
+    private int value;
+	private static HashMap map = new HashMap<>();
+	
+	private BatchStatus(int value) {
+		this.value = value;
+	}
+	
+	static {
+		for (BatchStatus enumName : BatchStatus.values()) {
+			map.put(enumName.value, enumName);
+		}
+	}
+	
+	public static BatchStatus valueOf(int intValue) {
+		return (BatchStatus) map.get(intValue);
+	}
+	
+	public int getValue() {
+		return value;
+	}
 }
-    

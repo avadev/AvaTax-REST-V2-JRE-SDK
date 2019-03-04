@@ -1,4 +1,5 @@
 package net.avalara.avatax.rest.client.enums;
+import java.util.HashMap;
 
 /*
  * AvaTax Software Development Kit for Java JRE based environments
@@ -32,7 +33,26 @@ public enum BoundaryLevel {
     /** 
      * 5-digit zip precision
      */
-    Zip5(2),
+    Zip5(2);
 
+    private int value;
+	private static HashMap map = new HashMap<>();
+	
+	private BoundaryLevel(int value) {
+		this.value = value;
+	}
+	
+	static {
+		for (BoundaryLevel enumName : BoundaryLevel.values()) {
+			map.put(enumName.value, enumName);
+		}
+	}
+	
+	public static BoundaryLevel valueOf(int intValue) {
+		return (BoundaryLevel) map.get(intValue);
+	}
+	
+	public int getValue() {
+		return value;
+	}
 }
-    

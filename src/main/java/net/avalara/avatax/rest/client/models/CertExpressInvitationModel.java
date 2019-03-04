@@ -214,7 +214,7 @@ public class CertExpressInvitationModel {
      *
      * When an invitation is sent, it contains a list of exposure zones for which the customer is invited to upload
     * their exemption certificates. This list contains the ID numbers of the exposure zones identified.
-    * 
+    *  
     * For a list of exposure zones, please call `ListCertificateExposureZones`.
      */
     public ArrayList<Integer> getExposureZones() {
@@ -226,7 +226,7 @@ public class CertExpressInvitationModel {
      *
      * When an invitation is sent, it contains a list of exposure zones for which the customer is invited to upload
     * their exemption certificates. This list contains the ID numbers of the exposure zones identified.
-    * 
+    *  
     * For a list of exposure zones, please call `ListCertificateExposureZones`.
      */
     public void setExposureZones(ArrayList<Integer> value) {
@@ -240,7 +240,7 @@ public class CertExpressInvitationModel {
      * Getter for exemptReasons
      *
      * The list of exemption reasons identified by this CertExpress invitation.
-    * 
+    *  
     * For a list of reason codes, please call `ListCertificateExemptReasons`.
      */
     public ArrayList<Integer> getExemptReasons() {
@@ -251,7 +251,7 @@ public class CertExpressInvitationModel {
      * Setter for exemptReasons
      *
      * The list of exemption reasons identified by this CertExpress invitation.
-    * 
+    *  
     * For a list of reason codes, please call `ListCertificateExemptReasons`.
      */
     public void setExemptReasons(ArrayList<Integer> value) {
@@ -327,8 +327,8 @@ public class CertExpressInvitationModel {
     /**
      * Getter for requestLink
      *
-     * The web link (URL) that a customer can click on or visit to begin using this CertExpress invitation. 
-    * 
+     * The web link (URL) that a customer can click on or visit to begin using this CertExpress invitation.
+    *  
     * This value is only usable if the status of this invitation is `Ready` and the request was created with type `Download`.
     * NOTE: This link usually takes a few minutes to be available.
      */
@@ -339,8 +339,8 @@ public class CertExpressInvitationModel {
     /**
      * Setter for requestLink
      *
-     * The web link (URL) that a customer can click on or visit to begin using this CertExpress invitation. 
-    * 
+     * The web link (URL) that a customer can click on or visit to begin using this CertExpress invitation.
+    *  
     * This value is only usable if the status of this invitation is `Ready` and the request was created with type `Download`.
     * NOTE: This link usually takes a few minutes to be available.
      */

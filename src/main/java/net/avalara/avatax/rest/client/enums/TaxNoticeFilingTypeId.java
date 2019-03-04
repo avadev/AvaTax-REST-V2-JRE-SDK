@@ -1,4 +1,5 @@
 package net.avalara.avatax.rest.client.enums;
+import java.util.HashMap;
 
 /*
  * AvaTax Software Development Kit for Java JRE based environments
@@ -66,7 +67,26 @@ public enum TaxNoticeFilingTypeId {
     /** 
      * Denotes a signature ready return
      */
-    SignatureReady(10),
+    SignatureReady(10);
 
+    private int value;
+	private static HashMap map = new HashMap<>();
+	
+	private TaxNoticeFilingTypeId(int value) {
+		this.value = value;
+	}
+	
+	static {
+		for (TaxNoticeFilingTypeId enumName : TaxNoticeFilingTypeId.values()) {
+			map.put(enumName.value, enumName);
+		}
+	}
+	
+	public static TaxNoticeFilingTypeId valueOf(int intValue) {
+		return (TaxNoticeFilingTypeId) map.get(intValue);
+	}
+	
+	public int getValue() {
+		return value;
+	}
 }
-    

@@ -1,4 +1,5 @@
 package net.avalara.avatax.rest.client.enums;
+import java.util.HashMap;
 
 /*
  * AvaTax Software Development Kit for Java JRE based environments
@@ -26,7 +27,26 @@ public enum TextCase {
     /** 
      * Mixed Case
      */
-    Mixed(1),
+    Mixed(1);
 
+    private int value;
+	private static HashMap map = new HashMap<>();
+	
+	private TextCase(int value) {
+		this.value = value;
+	}
+	
+	static {
+		for (TextCase enumName : TextCase.values()) {
+			map.put(enumName.value, enumName);
+		}
+	}
+	
+	public static TextCase valueOf(int intValue) {
+		return (TextCase) map.get(intValue);
+	}
+	
+	public int getValue() {
+		return value;
+	}
 }
-    

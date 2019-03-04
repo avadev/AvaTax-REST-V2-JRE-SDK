@@ -1,4 +1,5 @@
 package net.avalara.avatax.rest.client.enums;
+import java.util.HashMap;
 
 /*
  * AvaTax Software Development Kit for Java JRE based environments
@@ -26,7 +27,26 @@ public enum ReportFormat {
     /** 
      * The Extensible Markup Language file format
      */
-    XML(1),
+    XML(1);
 
+    private int value;
+	private static HashMap map = new HashMap<>();
+	
+	private ReportFormat(int value) {
+		this.value = value;
+	}
+	
+	static {
+		for (ReportFormat enumName : ReportFormat.values()) {
+			map.put(enumName.value, enumName);
+		}
+	}
+	
+	public static ReportFormat valueOf(int intValue) {
+		return (ReportFormat) map.get(intValue);
+	}
+	
+	public int getValue() {
+		return value;
+	}
 }
-    

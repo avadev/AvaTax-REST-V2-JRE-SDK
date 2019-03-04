@@ -1,4 +1,5 @@
 package net.avalara.avatax.rest.client.enums;
+import java.util.HashMap;
 
 /*
  * AvaTax Software Development Kit for Java JRE based environments
@@ -26,7 +27,26 @@ public enum AdvancedRuleCrashBehavior {
     /** 
      * 
      */
-    ProceedWithOriginal(1),
+    ProceedWithOriginal(1);
 
+    private int value;
+	private static HashMap map = new HashMap<>();
+	
+	private AdvancedRuleCrashBehavior(int value) {
+		this.value = value;
+	}
+	
+	static {
+		for (AdvancedRuleCrashBehavior enumName : AdvancedRuleCrashBehavior.values()) {
+			map.put(enumName.value, enumName);
+		}
+	}
+	
+	public static AdvancedRuleCrashBehavior valueOf(int intValue) {
+		return (AdvancedRuleCrashBehavior) map.get(intValue);
+	}
+	
+	public int getValue() {
+		return value;
+	}
 }
-    

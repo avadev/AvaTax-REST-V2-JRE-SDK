@@ -1,4 +1,5 @@
 package net.avalara.avatax.rest.client.enums;
+import java.util.HashMap;
 
 /*
  * AvaTax Software Development Kit for Java JRE based environments
@@ -81,7 +82,26 @@ public enum TaxType {
     /** 
      * Use tax
      */
-    Use(85),
+    Use(85);
 
+    private int value;
+	private static HashMap map = new HashMap<>();
+	
+	private TaxType(int value) {
+		this.value = value;
+	}
+	
+	static {
+		for (TaxType enumName : TaxType.values()) {
+			map.put(enumName.value, enumName);
+		}
+	}
+	
+	public static TaxType valueOf(int intValue) {
+		return (TaxType) map.get(intValue);
+	}
+	
+	public int getValue() {
+		return value;
+	}
 }
-    

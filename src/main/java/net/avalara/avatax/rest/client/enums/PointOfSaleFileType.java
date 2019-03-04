@@ -1,4 +1,5 @@
 package net.avalara.avatax.rest.client.enums;
+import java.util.HashMap;
 
 /*
  * AvaTax Software Development Kit for Java JRE based environments
@@ -31,7 +32,26 @@ public enum PointOfSaleFileType {
     /** 
      * File is in Extended Markup Language format
      */
-    Xml(2),
+    Xml(2);
 
+    private int value;
+	private static HashMap map = new HashMap<>();
+	
+	private PointOfSaleFileType(int value) {
+		this.value = value;
+	}
+	
+	static {
+		for (PointOfSaleFileType enumName : PointOfSaleFileType.values()) {
+			map.put(enumName.value, enumName);
+		}
+	}
+	
+	public static PointOfSaleFileType valueOf(int intValue) {
+		return (PointOfSaleFileType) map.get(intValue);
+	}
+	
+	public int getValue() {
+		return value;
+	}
 }
-    

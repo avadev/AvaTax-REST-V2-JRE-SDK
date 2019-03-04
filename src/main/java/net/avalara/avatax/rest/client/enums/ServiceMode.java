@@ -1,4 +1,5 @@
 package net.avalara.avatax.rest.client.enums;
+import java.util.HashMap;
 
 /*
  * AvaTax Software Development Kit for Java JRE based environments
@@ -31,7 +32,26 @@ public enum ServiceMode {
     /** 
      * Remote server only
      */
-    Remote(2),
+    Remote(2);
 
+    private int value;
+	private static HashMap map = new HashMap<>();
+	
+	private ServiceMode(int value) {
+		this.value = value;
+	}
+	
+	static {
+		for (ServiceMode enumName : ServiceMode.values()) {
+			map.put(enumName.value, enumName);
+		}
+	}
+	
+	public static ServiceMode valueOf(int intValue) {
+		return (ServiceMode) map.get(intValue);
+	}
+	
+	public int getValue() {
+		return value;
+	}
 }
-    

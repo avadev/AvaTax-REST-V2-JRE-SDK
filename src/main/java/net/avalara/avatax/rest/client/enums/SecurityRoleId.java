@@ -1,4 +1,5 @@
 package net.avalara.avatax.rest.client.enums;
+import java.util.HashMap;
 
 /*
  * AvaTax Software Development Kit for Java JRE based environments
@@ -131,7 +132,26 @@ public enum SecurityRoleId {
     /** 
      * SSTAdmin
      */
-    SSTAdmin(22),
+    SSTAdmin(22);
 
+    private int value;
+	private static HashMap map = new HashMap<>();
+	
+	private SecurityRoleId(int value) {
+		this.value = value;
+	}
+	
+	static {
+		for (SecurityRoleId enumName : SecurityRoleId.values()) {
+			map.put(enumName.value, enumName);
+		}
+	}
+	
+	public static SecurityRoleId valueOf(int intValue) {
+		return (SecurityRoleId) map.get(intValue);
+	}
+	
+	public int getValue() {
+		return value;
+	}
 }
-    

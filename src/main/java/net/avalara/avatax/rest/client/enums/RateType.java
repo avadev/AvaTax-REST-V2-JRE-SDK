@@ -1,4 +1,5 @@
 package net.avalara.avatax.rest.client.enums;
+import java.util.HashMap;
 
 /*
  * AvaTax Software Development Kit for Java JRE based environments
@@ -81,7 +82,26 @@ public enum RateType {
     /** 
      * 
      */
-    Zero(90),
+    Zero(90);
 
+    private int value;
+	private static HashMap map = new HashMap<>();
+	
+	private RateType(int value) {
+		this.value = value;
+	}
+	
+	static {
+		for (RateType enumName : RateType.values()) {
+			map.put(enumName.value, enumName);
+		}
+	}
+	
+	public static RateType valueOf(int intValue) {
+		return (RateType) map.get(intValue);
+	}
+	
+	public int getValue() {
+		return value;
+	}
 }
-    

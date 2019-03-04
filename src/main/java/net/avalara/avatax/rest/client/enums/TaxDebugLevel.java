@@ -1,4 +1,5 @@
 package net.avalara.avatax.rest.client.enums;
+import java.util.HashMap;
 
 /*
  * AvaTax Software Development Kit for Java JRE based environments
@@ -26,7 +27,26 @@ public enum TaxDebugLevel {
     /** 
      * User requests additional diagnostic information when creating a tax transaction
      */
-    Diagnostic(1),
+    Diagnostic(1);
 
+    private int value;
+	private static HashMap map = new HashMap<>();
+	
+	private TaxDebugLevel(int value) {
+		this.value = value;
+	}
+	
+	static {
+		for (TaxDebugLevel enumName : TaxDebugLevel.values()) {
+			map.put(enumName.value, enumName);
+		}
+	}
+	
+	public static TaxDebugLevel valueOf(int intValue) {
+		return (TaxDebugLevel) map.get(intValue);
+	}
+	
+	public int getValue() {
+		return value;
+	}
 }
-    

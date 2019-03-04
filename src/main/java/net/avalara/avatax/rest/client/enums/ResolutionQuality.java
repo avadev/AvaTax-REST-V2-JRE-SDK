@@ -1,4 +1,5 @@
 package net.avalara.avatax.rest.client.enums;
+import java.util.HashMap;
 
 /*
  * AvaTax Software Development Kit for Java JRE based environments
@@ -76,7 +77,26 @@ public enum ResolutionQuality {
     /** 
      * Pulled from a static list of geocodes for specific jurisdictions
      */
-    Constant(11),
+    Constant(11);
 
+    private int value;
+	private static HashMap map = new HashMap<>();
+	
+	private ResolutionQuality(int value) {
+		this.value = value;
+	}
+	
+	static {
+		for (ResolutionQuality enumName : ResolutionQuality.values()) {
+			map.put(enumName.value, enumName);
+		}
+	}
+	
+	public static ResolutionQuality valueOf(int intValue) {
+		return (ResolutionQuality) map.get(intValue);
+	}
+	
+	public int getValue() {
+		return value;
+	}
 }
-    

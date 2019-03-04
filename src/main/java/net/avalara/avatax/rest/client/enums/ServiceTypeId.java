@@ -1,4 +1,5 @@
 package net.avalara.avatax.rest.client.enums;
+import java.util.HashMap;
 
 /*
  * AvaTax Software Development Kit for Java JRE based environments
@@ -161,7 +162,26 @@ public enum ServiceTypeId {
     /** 
      * Send Sales Rate file service
      */
-    SendSalesRateFile(28),
+    SendSalesRateFile(28);
 
+    private int value;
+	private static HashMap map = new HashMap<>();
+	
+	private ServiceTypeId(int value) {
+		this.value = value;
+	}
+	
+	static {
+		for (ServiceTypeId enumName : ServiceTypeId.values()) {
+			map.put(enumName.value, enumName);
+		}
+	}
+	
+	public static ServiceTypeId valueOf(int intValue) {
+		return (ServiceTypeId) map.get(intValue);
+	}
+	
+	public int getValue() {
+		return value;
+	}
 }
-    

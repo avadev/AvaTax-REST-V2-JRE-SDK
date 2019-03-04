@@ -1,4 +1,5 @@
 package net.avalara.avatax.rest.client.enums;
+import java.util.HashMap;
 
 /*
  * AvaTax Software Development Kit for Java JRE based environments
@@ -36,7 +37,26 @@ public enum TaxDependencyLevelId {
     /** 
      * Address
      */
-    Address(3),
+    Address(3);
 
+    private int value;
+	private static HashMap map = new HashMap<>();
+	
+	private TaxDependencyLevelId(int value) {
+		this.value = value;
+	}
+	
+	static {
+		for (TaxDependencyLevelId enumName : TaxDependencyLevelId.values()) {
+			map.put(enumName.value, enumName);
+		}
+	}
+	
+	public static TaxDependencyLevelId valueOf(int intValue) {
+		return (TaxDependencyLevelId) map.get(intValue);
+	}
+	
+	public int getValue() {
+		return value;
+	}
 }
-    

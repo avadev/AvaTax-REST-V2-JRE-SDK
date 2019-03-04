@@ -1,4 +1,5 @@
 package net.avalara.avatax.rest.client.enums;
+import java.util.HashMap;
 
 /*
  * AvaTax Software Development Kit for Java JRE based environments
@@ -31,7 +32,26 @@ public enum FilingOptionTypeId {
     /** 
      * Denotes the form is being filed via efile.
      */
-    MandatoryEfile(2),
+    MandatoryEfile(2);
 
+    private int value;
+	private static HashMap map = new HashMap<>();
+	
+	private FilingOptionTypeId(int value) {
+		this.value = value;
+	}
+	
+	static {
+		for (FilingOptionTypeId enumName : FilingOptionTypeId.values()) {
+			map.put(enumName.value, enumName);
+		}
+	}
+	
+	public static FilingOptionTypeId valueOf(int intValue) {
+		return (FilingOptionTypeId) map.get(intValue);
+	}
+	
+	public int getValue() {
+		return value;
+	}
 }
-    

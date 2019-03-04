@@ -1,4 +1,5 @@
 package net.avalara.avatax.rest.client.enums;
+import java.util.HashMap;
 
 /*
  * AvaTax Software Development Kit for Java JRE based environments
@@ -36,7 +37,26 @@ public enum NotificationSeverityLevel {
     /** 
      * A completed notification
      */
-    Complete(-1),
+    Complete(-1);
 
+    private int value;
+	private static HashMap map = new HashMap<>();
+	
+	private NotificationSeverityLevel(int value) {
+		this.value = value;
+	}
+	
+	static {
+		for (NotificationSeverityLevel enumName : NotificationSeverityLevel.values()) {
+			map.put(enumName.value, enumName);
+		}
+	}
+	
+	public static NotificationSeverityLevel valueOf(int intValue) {
+		return (NotificationSeverityLevel) map.get(intValue);
+	}
+	
+	public int getValue() {
+		return value;
+	}
 }
-    

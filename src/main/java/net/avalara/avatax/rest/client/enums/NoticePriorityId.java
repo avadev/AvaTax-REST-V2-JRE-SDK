@@ -1,4 +1,5 @@
 package net.avalara.avatax.rest.client.enums;
+import java.util.HashMap;
 
 /*
  * AvaTax Software Development Kit for Java JRE based environments
@@ -36,7 +37,26 @@ public enum NoticePriorityId {
     /** 
      * Low
      */
-    Low(4),
+    Low(4);
 
+    private int value;
+	private static HashMap map = new HashMap<>();
+	
+	private NoticePriorityId(int value) {
+		this.value = value;
+	}
+	
+	static {
+		for (NoticePriorityId enumName : NoticePriorityId.values()) {
+			map.put(enumName.value, enumName);
+		}
+	}
+	
+	public static NoticePriorityId valueOf(int intValue) {
+		return (NoticePriorityId) map.get(intValue);
+	}
+	
+	public int getValue() {
+		return value;
+	}
 }
-    

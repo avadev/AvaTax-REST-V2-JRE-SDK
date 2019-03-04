@@ -1,4 +1,5 @@
 package net.avalara.avatax.rest.client.enums;
+import java.util.HashMap;
 
 /*
  * AvaTax Software Development Kit for Java JRE based environments
@@ -43,7 +44,26 @@ public enum NexusTypeId {
      * Indicates the entity is registered as a Non-Volunteer in an SST state.
      *  Only your SST administrator may set this option.
      */
-    SSTNonVolunteer(4),
+    SSTNonVolunteer(4);
 
+    private int value;
+	private static HashMap map = new HashMap<>();
+	
+	private NexusTypeId(int value) {
+		this.value = value;
+	}
+	
+	static {
+		for (NexusTypeId enumName : NexusTypeId.values()) {
+			map.put(enumName.value, enumName);
+		}
+	}
+	
+	public static NexusTypeId valueOf(int intValue) {
+		return (NexusTypeId) map.get(intValue);
+	}
+	
+	public int getValue() {
+		return value;
+	}
 }
-    

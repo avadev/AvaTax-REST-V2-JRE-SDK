@@ -1,4 +1,5 @@
 package net.avalara.avatax.rest.client.enums;
+import java.util.HashMap;
 
 /*
  * AvaTax Software Development Kit for Java JRE based environments
@@ -31,7 +32,26 @@ public enum Sourcing {
     /** 
      * Origin
      */
-    Origin(79),
+    Origin(79);
 
+    private int value;
+	private static HashMap map = new HashMap<>();
+	
+	private Sourcing(int value) {
+		this.value = value;
+	}
+	
+	static {
+		for (Sourcing enumName : Sourcing.values()) {
+			map.put(enumName.value, enumName);
+		}
+	}
+	
+	public static Sourcing valueOf(int intValue) {
+		return (Sourcing) map.get(intValue);
+	}
+	
+	public int getValue() {
+		return value;
+	}
 }
-    

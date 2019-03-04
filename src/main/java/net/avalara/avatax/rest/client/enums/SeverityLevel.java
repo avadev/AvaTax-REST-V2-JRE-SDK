@@ -1,4 +1,5 @@
 package net.avalara.avatax.rest.client.enums;
+import java.util.HashMap;
 
 /*
  * AvaTax Software Development Kit for Java JRE based environments
@@ -36,7 +37,26 @@ public enum SeverityLevel {
     /** 
      * Unexpected exceptions occurred, operation failed
      */
-    Exception(3),
+    Exception(3);
 
+    private int value;
+	private static HashMap map = new HashMap<>();
+	
+	private SeverityLevel(int value) {
+		this.value = value;
+	}
+	
+	static {
+		for (SeverityLevel enumName : SeverityLevel.values()) {
+			map.put(enumName.value, enumName);
+		}
+	}
+	
+	public static SeverityLevel valueOf(int intValue) {
+		return (SeverityLevel) map.get(intValue);
+	}
+	
+	public int getValue() {
+		return value;
+	}
 }
-    

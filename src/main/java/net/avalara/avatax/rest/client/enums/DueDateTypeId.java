@@ -1,4 +1,5 @@
 package net.avalara.avatax.rest.client.enums;
+import java.util.HashMap;
 
 /*
  * AvaTax Software Development Kit for Java JRE based environments
@@ -31,7 +32,26 @@ public enum DueDateTypeId {
     /** 
      * Denotes form is due by second to last day of the month
      */
-    BySecondLastDay(2),
+    BySecondLastDay(2);
 
+    private int value;
+	private static HashMap map = new HashMap<>();
+	
+	private DueDateTypeId(int value) {
+		this.value = value;
+	}
+	
+	static {
+		for (DueDateTypeId enumName : DueDateTypeId.values()) {
+			map.put(enumName.value, enumName);
+		}
+	}
+	
+	public static DueDateTypeId valueOf(int intValue) {
+		return (DueDateTypeId) map.get(intValue);
+	}
+	
+	public int getValue() {
+		return value;
+	}
 }
-    

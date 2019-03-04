@@ -1,4 +1,5 @@
 package net.avalara.avatax.rest.client.enums;
+import java.util.HashMap;
 
 /*
  * AvaTax Software Development Kit for Java JRE based environments
@@ -101,7 +102,26 @@ public enum FilingStatusId {
     /** 
      * 
      */
-    ApprovedToFileOnBehalf(16),
+    ApprovedToFileOnBehalf(16);
 
+    private int value;
+	private static HashMap map = new HashMap<>();
+	
+	private FilingStatusId(int value) {
+		this.value = value;
+	}
+	
+	static {
+		for (FilingStatusId enumName : FilingStatusId.values()) {
+			map.put(enumName.value, enumName);
+		}
+	}
+	
+	public static FilingStatusId valueOf(int intValue) {
+		return (FilingStatusId) map.get(intValue);
+	}
+	
+	public int getValue() {
+		return value;
+	}
 }
-    

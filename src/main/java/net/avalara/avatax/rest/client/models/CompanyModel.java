@@ -223,10 +223,10 @@ public class CompanyModel {
     /**
      * Getter for taxpayerIdNumber
      *
-     * For United States companies, this field contains your Taxpayer Identification Number. 
-    * This is a nine digit number that is usually called an EIN for an Employer Identification Number if this company is a corporation, 
+     * For United States companies, this field contains your Taxpayer Identification Number.
+    * This is a nine digit number that is usually called an EIN for an Employer Identification Number if this company is a corporation,
     * or SSN for a Social Security Number if this company is a person.
-    * This value is required if you subscribe to Avalara Managed Returns or the SST Certified Service Provider services, 
+    * This value is required if you subscribe to Avalara Managed Returns or the SST Certified Service Provider services,
     * but it is optional if you do not subscribe to either of those services.
      */
     public String getTaxpayerIdNumber() {
@@ -236,10 +236,10 @@ public class CompanyModel {
     /**
      * Setter for taxpayerIdNumber
      *
-     * For United States companies, this field contains your Taxpayer Identification Number. 
-    * This is a nine digit number that is usually called an EIN for an Employer Identification Number if this company is a corporation, 
+     * For United States companies, this field contains your Taxpayer Identification Number.
+    * This is a nine digit number that is usually called an EIN for an Employer Identification Number if this company is a corporation,
     * or SSN for a Social Security Number if this company is a person.
-    * This value is required if you subscribe to Avalara Managed Returns or the SST Certified Service Provider services, 
+    * This value is required if you subscribe to Avalara Managed Returns or the SST Certified Service Provider services,
     * but it is optional if you do not subscribe to either of those services.
      */
     public void setTaxpayerIdNumber(String value) {
@@ -578,7 +578,7 @@ public class CompanyModel {
      * Getter for contacts
      *
      * Optional: A list of contacts defined for this company. To fetch this list, add the query string `?$include=Contacts` to your URL.
-    * 
+    *  
     * When calling `CreateCompany`, you may provide a list of objects in this element and they will be created alongside the company.
     * The `UpdateCompany` API does not permit updating nested objects.
      */
@@ -590,7 +590,7 @@ public class CompanyModel {
      * Setter for contacts
      *
      * Optional: A list of contacts defined for this company. To fetch this list, add the query string `?$include=Contacts` to your URL.
-    * 
+    *  
     * When calling `CreateCompany`, you may provide a list of objects in this element and they will be created alongside the company.
     * The `UpdateCompany` API does not permit updating nested objects.
      */
@@ -605,7 +605,7 @@ public class CompanyModel {
      * Getter for items
      *
      * Optional: A list of items defined for this company. To fetch this list, add the query string `?$include=Items` to your URL.
-    * 
+    *  
     * When calling `CreateCompany`, you may provide a list of objects in this element and they will be created alongside the company.
     * The `UpdateCompany` API does not permit updating nested objects.
      */
@@ -617,7 +617,7 @@ public class CompanyModel {
      * Setter for items
      *
      * Optional: A list of items defined for this company. To fetch this list, add the query string `?$include=Items` to your URL.
-    * 
+    *  
     * When calling `CreateCompany`, you may provide a list of objects in this element and they will be created alongside the company.
     * The `UpdateCompany` API does not permit updating nested objects.
      */
@@ -632,7 +632,7 @@ public class CompanyModel {
      * Getter for locations
      *
      * Optional: A list of locations defined for this company. To fetch this list, add the query string `?$include=Locations` to your URL.
-    * 
+    *  
     * When calling `CreateCompany`, you may provide a list of objects in this element and they will be created alongside the company.
     * The `UpdateCompany` API does not permit updating nested objects.
      */
@@ -644,7 +644,7 @@ public class CompanyModel {
      * Setter for locations
      *
      * Optional: A list of locations defined for this company. To fetch this list, add the query string `?$include=Locations` to your URL.
-    * 
+    *  
     * When calling `CreateCompany`, you may provide a list of objects in this element and they will be created alongside the company.
     * The `UpdateCompany` API does not permit updating nested objects.
      */
@@ -659,7 +659,7 @@ public class CompanyModel {
      * Getter for nexus
      *
      * Optional: A list of nexus defined for this company. To fetch this list, add the query string `?$include=Nexus` to your URL.
-    * 
+    *  
     * When calling `CreateCompany`, you may provide a list of objects in this element and they will be created alongside the company.
     * The `UpdateCompany` API does not permit updating nested objects.
      */
@@ -671,7 +671,7 @@ public class CompanyModel {
      * Setter for nexus
      *
      * Optional: A list of nexus defined for this company. To fetch this list, add the query string `?$include=Nexus` to your URL.
-    * 
+    *  
     * When calling `CreateCompany`, you may provide a list of objects in this element and they will be created alongside the company.
     * The `UpdateCompany` API does not permit updating nested objects.
      */
@@ -686,7 +686,7 @@ public class CompanyModel {
      * Getter for settings
      *
      * Optional: A list of settings defined for this company. To fetch this list, add the query string `?$include=Settings` to your URL.
-    * 
+    *  
     * When calling `CreateCompany`, you may provide a list of objects in this element and they will be created alongside the company.
     * The `UpdateCompany` API does not permit updating nested objects.
      */
@@ -698,7 +698,7 @@ public class CompanyModel {
      * Setter for settings
      *
      * Optional: A list of settings defined for this company. To fetch this list, add the query string `?$include=Settings` to your URL.
-    * 
+    *  
     * When calling `CreateCompany`, you may provide a list of objects in this element and they will be created alongside the company.
     * The `UpdateCompany` API does not permit updating nested objects.
      */
@@ -713,7 +713,7 @@ public class CompanyModel {
      * Getter for taxCodes
      *
      * Optional: A list of tax codes defined for this company. To fetch this list, add the query string `?$include=TaxCodes` to your URL.
-    * 
+    *  
     * When calling `CreateCompany`, you may provide a list of objects in this element and they will be created alongside the company.
     * The `UpdateCompany` API does not permit updating nested objects.
      */
@@ -725,7 +725,7 @@ public class CompanyModel {
      * Setter for taxCodes
      *
      * Optional: A list of tax codes defined for this company. To fetch this list, add the query string `?$include=TaxCodes` to your URL.
-    * 
+    *  
     * When calling `CreateCompany`, you may provide a list of objects in this element and they will be created alongside the company.
     * The `UpdateCompany` API does not permit updating nested objects.
      */
@@ -740,7 +740,7 @@ public class CompanyModel {
      * Getter for taxRules
      *
      * Optional: A list of tax rules defined for this company. To fetch this list, add the query string `?$include=TaxRules` to your URL.
-    * 
+    *  
     * When calling `CreateCompany`, you may provide a list of objects in this element and they will be created alongside the company.
     * The `UpdateCompany` API does not permit updating nested objects.
      */
@@ -752,7 +752,7 @@ public class CompanyModel {
      * Setter for taxRules
      *
      * Optional: A list of tax rules defined for this company. To fetch this list, add the query string `?$include=TaxRules` to your URL.
-    * 
+    *  
     * When calling `CreateCompany`, you may provide a list of objects in this element and they will be created alongside the company.
     * The `UpdateCompany` API does not permit updating nested objects.
      */
@@ -767,7 +767,7 @@ public class CompanyModel {
      * Getter for upcs
      *
      * Optional: A list of UPCs defined for this company. To fetch this list, add the query string `?$include=UPCs` to your URL.
-    * 
+    *  
     * When calling `CreateCompany`, you may provide a list of objects in this element and they will be created alongside the company.
     * The `UpdateCompany` API does not permit updating nested objects.
      */
@@ -779,7 +779,7 @@ public class CompanyModel {
      * Setter for upcs
      *
      * Optional: A list of UPCs defined for this company. To fetch this list, add the query string `?$include=UPCs` to your URL.
-    * 
+    *  
     * When calling `CreateCompany`, you may provide a list of objects in this element and they will be created alongside the company.
     * The `UpdateCompany` API does not permit updating nested objects.
      */

@@ -1,4 +1,5 @@
 package net.avalara.avatax.rest.client.enums;
+import java.util.HashMap;
 
 /*
  * AvaTax Software Development Kit for Java JRE based environments
@@ -26,7 +27,26 @@ public enum ExemptCertTypeId {
     /** 
      * Single use
      */
-    SingleUse(1),
+    SingleUse(1);
 
+    private int value;
+	private static HashMap map = new HashMap<>();
+	
+	private ExemptCertTypeId(int value) {
+		this.value = value;
+	}
+	
+	static {
+		for (ExemptCertTypeId enumName : ExemptCertTypeId.values()) {
+			map.put(enumName.value, enumName);
+		}
+	}
+	
+	public static ExemptCertTypeId valueOf(int intValue) {
+		return (ExemptCertTypeId) map.get(intValue);
+	}
+	
+	public int getValue() {
+		return value;
+	}
 }
-    
