@@ -42,7 +42,7 @@ public enum WelcomeEmail {
 	}
 	
 	static {
-		for (WelcomeEmail enumName : TextCase.values()) {
+		for (WelcomeEmail enumName : WelcomeEmail.values()) {
 			map.put(enumName.value, enumName);
 		}
 	}
