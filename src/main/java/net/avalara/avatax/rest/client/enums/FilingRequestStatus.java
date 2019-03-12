@@ -1,4 +1,5 @@
 package net.avalara.avatax.rest.client.enums;
+import java.util.HashMap;
 
 /*
  * AvaTax Software Development Kit for Java JRE based environments
@@ -61,7 +62,26 @@ public enum FilingRequestStatus {
     /** 
      * This indicates that compliance rejected the request.
      */
-    RequestDenied(9),
+    RequestDenied(9);
 
+    private int value;
+	private static HashMap map = new HashMap<>();
+	
+	private FilingRequestStatus(int value) {
+		this.value = value;
+	}
+	
+	static {
+		for (FilingRequestStatus enumName : FilingRequestStatus.values()) {
+			map.put(enumName.value, enumName);
+		}
+	}
+	
+	public static FilingRequestStatus valueOf(int intValue) {
+		return (FilingRequestStatus) map.get(intValue);
+	}
+	
+	public int getValue() {
+		return value;
+	}
 }
-    

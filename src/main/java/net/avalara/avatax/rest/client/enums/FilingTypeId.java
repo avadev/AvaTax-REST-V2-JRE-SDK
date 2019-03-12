@@ -1,4 +1,5 @@
 package net.avalara.avatax.rest.client.enums;
+import java.util.HashMap;
 
 /*
  * AvaTax Software Development Kit for Java JRE based environments
@@ -51,7 +52,26 @@ public enum FilingTypeId {
     /** 
      * Denotes a return which is filed online but paid by check.
      */
-    EfileCheck(6),
+    EfileCheck(6);
 
+    private int value;
+	private static HashMap map = new HashMap<>();
+	
+	private FilingTypeId(int value) {
+		this.value = value;
+	}
+	
+	static {
+		for (FilingTypeId enumName : FilingTypeId.values()) {
+			map.put(enumName.value, enumName);
+		}
+	}
+	
+	public static FilingTypeId valueOf(int intValue) {
+		return (FilingTypeId) map.get(intValue);
+	}
+	
+	public int getValue() {
+		return value;
+	}
 }
-    

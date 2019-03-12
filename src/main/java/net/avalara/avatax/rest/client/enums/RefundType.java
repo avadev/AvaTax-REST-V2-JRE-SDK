@@ -1,4 +1,5 @@
 package net.avalara.avatax.rest.client.enums;
+import java.util.HashMap;
 
 /*
  * AvaTax Software Development Kit for Java JRE based environments
@@ -36,7 +37,26 @@ public enum RefundType {
     /** 
      * Refund a percentage of the value of this transaction.
      */
-    Percentage(3),
+    Percentage(3);
 
+    private int value;
+	private static HashMap map = new HashMap<>();
+	
+	private RefundType(int value) {
+		this.value = value;
+	}
+	
+	static {
+		for (RefundType enumName : RefundType.values()) {
+			map.put(enumName.value, enumName);
+		}
+	}
+	
+	public static RefundType valueOf(int intValue) {
+		return (RefundType) map.get(intValue);
+	}
+	
+	public int getValue() {
+		return value;
+	}
 }
-    

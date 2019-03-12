@@ -202,8 +202,8 @@ public class FilingReturnModelBasic {
     /**
      * Getter for endPeriodMonth
      *
-     * The month of the filing period for this tax filing. 
-    * The filing period represents the year and month of the last day of taxes being reported on this filing. 
+     * The month of the filing period for this tax filing.
+    * The filing period represents the year and month of the last day of taxes being reported on this filing.
     * For example, an annual tax filing for Jan-Dec 2015 would have a filing period of Dec 2015.
      */
     public Integer getEndPeriodMonth() {
@@ -213,8 +213,8 @@ public class FilingReturnModelBasic {
     /**
      * Setter for endPeriodMonth
      *
-     * The month of the filing period for this tax filing. 
-    * The filing period represents the year and month of the last day of taxes being reported on this filing. 
+     * The month of the filing period for this tax filing.
+    * The filing period represents the year and month of the last day of taxes being reported on this filing.
     * For example, an annual tax filing for Jan-Dec 2015 would have a filing period of Dec 2015.
      */
     public void setEndPeriodMonth(Integer value) {
@@ -228,7 +228,7 @@ public class FilingReturnModelBasic {
      * Getter for endPeriodYear
      *
      * The year of the filing period for this tax filing.
-    * The filing period represents the year and month of the last day of taxes being reported on this filing. 
+    * The filing period represents the year and month of the last day of taxes being reported on this filing.
     * For example, an annual tax filing for Jan-Dec 2015 would have a filing period of Dec 2015.
      */
     public Short getEndPeriodYear() {
@@ -239,7 +239,7 @@ public class FilingReturnModelBasic {
      * Setter for endPeriodYear
      *
      * The year of the filing period for this tax filing.
-    * The filing period represents the year and month of the last day of taxes being reported on this filing. 
+    * The filing period represents the year and month of the last day of taxes being reported on this filing.
     * For example, an annual tax filing for Jan-Dec 2015 would have a filing period of Dec 2015.
      */
     public void setEndPeriodYear(Short value) {

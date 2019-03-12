@@ -1,4 +1,5 @@
 package net.avalara.avatax.rest.client.enums;
+import java.util.HashMap;
 
 /*
  * AvaTax Software Development Kit for Java JRE based environments
@@ -34,7 +35,26 @@ public enum CertificateRequestDeliveryMethod {
      * The request will be processed and turned into a web link (URL) which the user can click on to visit the CertExpress site and immediately
      *  begin entering data about their certificates.
      */
-    Download(3),
+    Download(3);
 
+    private int value;
+	private static HashMap map = new HashMap<>();
+	
+	private CertificateRequestDeliveryMethod(int value) {
+		this.value = value;
+	}
+	
+	static {
+		for (CertificateRequestDeliveryMethod enumName : CertificateRequestDeliveryMethod.values()) {
+			map.put(enumName.value, enumName);
+		}
+	}
+	
+	public static CertificateRequestDeliveryMethod valueOf(int intValue) {
+		return (CertificateRequestDeliveryMethod) map.get(intValue);
+	}
+	
+	public int getValue() {
+		return value;
+	}
 }
-    

@@ -1,4 +1,5 @@
 package net.avalara.avatax.rest.client.enums;
+import java.util.HashMap;
 
 /*
  * AvaTax Software Development Kit for Java JRE based environments
@@ -35,7 +36,26 @@ public enum LocalNexusTypeId {
      *  
      *  This value only takes effect if you set `hasLocalNexus` = true.
      */
-    All(2),
+    All(2);
 
+    private int value;
+	private static HashMap map = new HashMap<>();
+	
+	private LocalNexusTypeId(int value) {
+		this.value = value;
+	}
+	
+	static {
+		for (LocalNexusTypeId enumName : LocalNexusTypeId.values()) {
+			map.put(enumName.value, enumName);
+		}
+	}
+	
+	public static LocalNexusTypeId valueOf(int intValue) {
+		return (LocalNexusTypeId) map.get(intValue);
+	}
+	
+	public int getValue() {
+		return value;
+	}
 }
-    

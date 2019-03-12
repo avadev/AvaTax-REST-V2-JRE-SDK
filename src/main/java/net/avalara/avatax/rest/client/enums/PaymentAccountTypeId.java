@@ -1,4 +1,5 @@
 package net.avalara.avatax.rest.client.enums;
+import java.util.HashMap;
 
 /*
  * AvaTax Software Development Kit for Java JRE based environments
@@ -36,7 +37,26 @@ public enum PaymentAccountTypeId {
     /** 
      * 
      */
-    AccountsPayable(3),
+    AccountsPayable(3);
 
+    private int value;
+	private static HashMap map = new HashMap<>();
+	
+	private PaymentAccountTypeId(int value) {
+		this.value = value;
+	}
+	
+	static {
+		for (PaymentAccountTypeId enumName : PaymentAccountTypeId.values()) {
+			map.put(enumName.value, enumName);
+		}
+	}
+	
+	public static PaymentAccountTypeId valueOf(int intValue) {
+		return (PaymentAccountTypeId) map.get(intValue);
+	}
+	
+	public int getValue() {
+		return value;
+	}
 }
-    

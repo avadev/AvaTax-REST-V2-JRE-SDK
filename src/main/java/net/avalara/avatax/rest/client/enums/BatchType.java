@@ -1,4 +1,5 @@
 package net.avalara.avatax.rest.client.enums;
+import java.util.HashMap;
 
 /*
  * AvaTax Software Development Kit for Java JRE based environments
@@ -82,7 +83,26 @@ public enum BatchType {
     /** 
      * 
      */
-    UPCValidationImport(12),
+    UPCValidationImport(12);
 
+    private int value;
+	private static HashMap map = new HashMap<>();
+	
+	private BatchType(int value) {
+		this.value = value;
+	}
+	
+	static {
+		for (BatchType enumName : BatchType.values()) {
+			map.put(enumName.value, enumName);
+		}
+	}
+	
+	public static BatchType valueOf(int intValue) {
+		return (BatchType) map.get(intValue);
+	}
+	
+	public int getValue() {
+		return value;
+	}
 }
-    

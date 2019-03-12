@@ -1,4 +1,5 @@
 package net.avalara.avatax.rest.client.enums;
+import java.util.HashMap;
 
 /*
  * AvaTax Software Development Kit for Java JRE based environments
@@ -37,7 +38,26 @@ public enum ReportDateFilter {
     /** 
      * The date when the transaction is being taxed
      */
-    TaxDate(84),
+    TaxDate(84);
 
+    private int value;
+	private static HashMap map = new HashMap<>();
+	
+	private ReportDateFilter(int value) {
+		this.value = value;
+	}
+	
+	static {
+		for (ReportDateFilter enumName : ReportDateFilter.values()) {
+			map.put(enumName.value, enumName);
+		}
+	}
+	
+	public static ReportDateFilter valueOf(int intValue) {
+		return (ReportDateFilter) map.get(intValue);
+	}
+	
+	public int getValue() {
+		return value;
+	}
 }
-    

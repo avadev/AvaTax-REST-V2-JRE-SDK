@@ -1,4 +1,5 @@
 package net.avalara.avatax.rest.client.enums;
+import java.util.HashMap;
 
 /*
  * AvaTax Software Development Kit for Java JRE based environments
@@ -38,7 +39,26 @@ public enum OutletTypeId {
     /** 
      * File a single return, but you must have a line item for each place of business.
      */
-    Consolidated(3),
+    Consolidated(3);
 
+    private int value;
+	private static HashMap map = new HashMap<>();
+	
+	private OutletTypeId(int value) {
+		this.value = value;
+	}
+	
+	static {
+		for (OutletTypeId enumName : OutletTypeId.values()) {
+			map.put(enumName.value, enumName);
+		}
+	}
+	
+	public static OutletTypeId valueOf(int intValue) {
+		return (OutletTypeId) map.get(intValue);
+	}
+	
+	public int getValue() {
+		return value;
+	}
 }
-    

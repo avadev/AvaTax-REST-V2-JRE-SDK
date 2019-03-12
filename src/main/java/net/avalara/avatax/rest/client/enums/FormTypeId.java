@@ -1,4 +1,5 @@
 package net.avalara.avatax.rest.client.enums;
+import java.util.HashMap;
 
 /*
  * AvaTax Software Development Kit for Java JRE based environments
@@ -66,7 +67,26 @@ public enum FormTypeId {
     /** 
      * Denotes the form type is Prepayment Allowance
      */
-    PrepaymentAllowed(9),
+    PrepaymentAllowed(9);
 
+    private int value;
+	private static HashMap map = new HashMap<>();
+	
+	private FormTypeId(int value) {
+		this.value = value;
+	}
+	
+	static {
+		for (FormTypeId enumName : FormTypeId.values()) {
+			map.put(enumName.value, enumName);
+		}
+	}
+	
+	public static FormTypeId valueOf(int intValue) {
+		return (FormTypeId) map.get(intValue);
+	}
+	
+	public int getValue() {
+		return value;
+	}
 }
-    

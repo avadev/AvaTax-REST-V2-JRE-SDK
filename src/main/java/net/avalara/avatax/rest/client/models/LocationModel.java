@@ -267,12 +267,12 @@ public class LocationModel {
      * Getter for region
      *
      * Name or ISO 3166 code identifying the region within the country of the physical address of this location.
-    * 
+    *  
     * This field supports many different region identifiers:
     *  * Two and three character ISO 3166 region codes
     *  * Fully spelled out names of the region in ISO supported languages
     *  * Common alternative spellings for many regions
-    * 
+    *  
     * For a full list of all supported codes and names, please see the Definitions API `ListRegions`.
      */
     public String getRegion() {
@@ -283,12 +283,12 @@ public class LocationModel {
      * Setter for region
      *
      * Name or ISO 3166 code identifying the region within the country of the physical address of this location.
-    * 
+    *  
     * This field supports many different region identifiers:
     *  * Two and three character ISO 3166 region codes
     *  * Fully spelled out names of the region in ISO supported languages
     *  * Common alternative spellings for many regions
-    * 
+    *  
     * For a full list of all supported codes and names, please see the Definitions API `ListRegions`.
      */
     public void setRegion(String value) {
@@ -323,13 +323,13 @@ public class LocationModel {
      * Getter for country
      *
      * Name or ISO 3166 code identifying the country of the physical address of this location.
-    * 
+    *  
     * This field supports many different country identifiers:
     *  * Two character ISO 3166 codes
     *  * Three character ISO 3166 codes
     *  * Fully spelled out names of the country in ISO supported languages
     *  * Common alternative spellings for many countries
-    * 
+    *  
     * For a full list of all supported codes and names, please see the Definitions API `ListCountries`.
      */
     public String getCountry() {
@@ -340,13 +340,13 @@ public class LocationModel {
      * Setter for country
      *
      * Name or ISO 3166 code identifying the country of the physical address of this location.
-    * 
+    *  
     * This field supports many different country identifiers:
     *  * Two character ISO 3166 codes
     *  * Three character ISO 3166 codes
     *  * Fully spelled out names of the country in ISO supported languages
     *  * Common alternative spellings for many countries
-    * 
+    *  
     * For a full list of all supported codes and names, please see the Definitions API `ListCountries`.
      */
     public void setCountry(String value) {
@@ -612,7 +612,7 @@ public class LocationModel {
      * Getter for settings
      *
      * Extra information required by certain jurisdictions for filing.
-    * For a list of settings recognized by Avalara, query the endpoint "/api/v2/definitions/locationquestions". 
+    * For a list of settings recognized by Avalara, query the endpoint "/api/v2/definitions/locationquestions".
     * To determine the list of settings required for this location, query the endpoint "/api/v2/companies/(id)/locations/(id)/validate".
      */
     public ArrayList<LocationSettingModel> getSettings() {
@@ -623,7 +623,7 @@ public class LocationModel {
      * Setter for settings
      *
      * Extra information required by certain jurisdictions for filing.
-    * For a list of settings recognized by Avalara, query the endpoint "/api/v2/definitions/locationquestions". 
+    * For a list of settings recognized by Avalara, query the endpoint "/api/v2/definitions/locationquestions".
     * To determine the list of settings required for this location, query the endpoint "/api/v2/companies/(id)/locations/(id)/validate".
      */
     public void setSettings(ArrayList<LocationSettingModel> value) {

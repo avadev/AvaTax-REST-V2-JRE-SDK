@@ -1,4 +1,5 @@
 package net.avalara.avatax.rest.client.enums;
+import java.util.HashMap;
 
 /*
  * AvaTax Software Development Kit for Java JRE based environments
@@ -34,7 +35,26 @@ public enum AddressTypeId {
      *  `SellerRemitsTax` or `MarketplaceRemitsTax` to indicate which business entity is responsible
      *  for collecting and remitting tax for this location.
      */
-    Marketplace(3),
+    Marketplace(3);
 
+    private int value;
+	private static HashMap map = new HashMap<>();
+	
+	private AddressTypeId(int value) {
+		this.value = value;
+	}
+	
+	static {
+		for (AddressTypeId enumName : AddressTypeId.values()) {
+			map.put(enumName.value, enumName);
+		}
+	}
+	
+	public static AddressTypeId valueOf(int intValue) {
+		return (AddressTypeId) map.get(intValue);
+	}
+	
+	public int getValue() {
+		return value;
+	}
 }
-    

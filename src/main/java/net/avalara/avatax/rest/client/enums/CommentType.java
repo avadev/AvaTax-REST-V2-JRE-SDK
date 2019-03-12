@@ -1,4 +1,5 @@
 package net.avalara.avatax.rest.client.enums;
+import java.util.HashMap;
 
 /*
  * AvaTax Software Development Kit for Java JRE based environments
@@ -26,7 +27,26 @@ public enum CommentType {
     /** 
      * Customer comments are those comments that both compliance and the customer can read
      */
-    Customer(2),
+    Customer(2);
 
+    private int value;
+	private static HashMap map = new HashMap<>();
+	
+	private CommentType(int value) {
+		this.value = value;
+	}
+	
+	static {
+		for (CommentType enumName : CommentType.values()) {
+			map.put(enumName.value, enumName);
+		}
+	}
+	
+	public static CommentType valueOf(int intValue) {
+		return (CommentType) map.get(intValue);
+	}
+	
+	public int getValue() {
+		return value;
+	}
 }
-    

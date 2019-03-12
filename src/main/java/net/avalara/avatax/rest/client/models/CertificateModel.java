@@ -413,7 +413,7 @@ public class CertificateModel {
     * 
     * If this certificate is applicable for all purchase order numbers, this field will be empty.
     * 
-    * You can fetch this data by specifying `$include=ponumbers` when calling a certificate fetch API.
+    * You can fetch this data by specifying `$include=po_numbers` when calling a certificate fetch API.
      */
     public ArrayList<PoNumberModel> getPoNumbers() {
         return this.poNumbers;
@@ -426,7 +426,7 @@ public class CertificateModel {
     * 
     * If this certificate is applicable for all purchase order numbers, this field will be empty.
     * 
-    * You can fetch this data by specifying `$include=ponumbers` when calling a certificate fetch API.
+    * You can fetch this data by specifying `$include=po_numbers` when calling a certificate fetch API.
      */
     public void setPoNumbers(ArrayList<PoNumberModel> value) {
         this.poNumbers = value;

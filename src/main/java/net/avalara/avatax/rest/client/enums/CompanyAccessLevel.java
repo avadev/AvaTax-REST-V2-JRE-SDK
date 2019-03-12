@@ -1,4 +1,5 @@
 package net.avalara.avatax.rest.client.enums;
+import java.util.HashMap;
 
 /*
  * AvaTax Software Development Kit for Java JRE based environments
@@ -36,7 +37,26 @@ public enum CompanyAccessLevel {
     /** 
      * Permission to access all companies in all accounts. Reserved for system administration tasks.
      */
-    AllCompanies(3),
+    AllCompanies(3);
 
+    private int value;
+	private static HashMap map = new HashMap<>();
+	
+	private CompanyAccessLevel(int value) {
+		this.value = value;
+	}
+	
+	static {
+		for (CompanyAccessLevel enumName : CompanyAccessLevel.values()) {
+			map.put(enumName.value, enumName);
+		}
+	}
+	
+	public static CompanyAccessLevel valueOf(int intValue) {
+		return (CompanyAccessLevel) map.get(intValue);
+	}
+	
+	public int getValue() {
+		return value;
+	}
 }
-    

@@ -1,4 +1,5 @@
 package net.avalara.avatax.rest.client.enums;
+import java.util.HashMap;
 
 /*
  * AvaTax Software Development Kit for Java JRE based environments
@@ -51,7 +52,26 @@ public enum ErrorTargetCode {
     /** 
      * The customer's account setup does not permit certain actions
      */
-    CustomerAccountSetup(12),
+    CustomerAccountSetup(12);
 
+    private int value;
+	private static HashMap map = new HashMap<>();
+	
+	private ErrorTargetCode(int value) {
+		this.value = value;
+	}
+	
+	static {
+		for (ErrorTargetCode enumName : ErrorTargetCode.values()) {
+			map.put(enumName.value, enumName);
+		}
+	}
+	
+	public static ErrorTargetCode valueOf(int intValue) {
+		return (ErrorTargetCode) map.get(intValue);
+	}
+	
+	public int getValue() {
+		return value;
+	}
 }
-    

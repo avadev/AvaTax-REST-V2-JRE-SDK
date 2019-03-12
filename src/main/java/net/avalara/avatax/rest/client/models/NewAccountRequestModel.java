@@ -401,7 +401,7 @@ public class NewAccountRequestModel {
     }
 
 
-    private WelcomeEmail welcomeEmail;
+    private String welcomeEmail;
 
     /**
      * Getter for welcomeEmail
@@ -412,7 +412,7 @@ public class NewAccountRequestModel {
     * * `Suppressed` - No email will be sent.
     * * `Custom` - If your Avalara business development representative provides you with a customized welcome email for your customers, please select this option.
      */
-    public WelcomeEmail getWelcomeEmail() {
+    public String getWelcomeEmail() {
         return this.welcomeEmail;
     }
 
@@ -425,7 +425,7 @@ public class NewAccountRequestModel {
     * * `Suppressed` - No email will be sent.
     * * `Custom` - If your Avalara business development representative provides you with a customized welcome email for your customers, please select this option.
      */
-    public void setWelcomeEmail(WelcomeEmail value) {
+    public void setWelcomeEmail(String value) {
         this.welcomeEmail = value;
     }
 

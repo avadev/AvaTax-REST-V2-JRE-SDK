@@ -1,4 +1,5 @@
 package net.avalara.avatax.rest.client.enums;
+import java.util.HashMap;
 
 /*
  * AvaTax Software Development Kit for Java JRE based environments
@@ -101,27 +102,27 @@ public enum ErrorCodeId {
     /** 
      * 
      */
-    ParserFieldNameError(17),
+    InvalidQueryField(17),
 
     /** 
      * 
      */
-    ParserFieldValueError(18),
+    InvalidQueryValue(18),
 
     /** 
      * 
      */
-    ParserSyntaxError(19),
+    SyntaxError(19),
 
     /** 
      * 
      */
-    ParserTooManyParametersError(20),
+    TooManyParametersError(20),
 
     /** 
      * 
      */
-    ParserUnterminatedValueError(21),
+    UnterminatedValueError(21),
 
     /** 
      * 
@@ -247,6 +248,11 @@ public enum ErrorCodeId {
      * 
      */
     UnhandledException(50),
+
+    /** 
+     * 
+     */
+    InactiveAccount(51),
 
     /** 
      * 
@@ -1221,7 +1227,7 @@ public enum ErrorCodeId {
     /** 
      * 
      */
-    ParserFieldNotQueryableError(1408),
+    FieldNotQueryableError(1408),
 
     /** 
      * 
@@ -1232,6 +1238,11 @@ public enum ErrorCodeId {
      * 
      */
     InvalidAuditMessage(1410),
+
+    /** 
+     * 
+     */
+    FieldNotOrderableError(1411),
 
     /** 
      * Nexus validation error codes
@@ -1366,7 +1377,26 @@ public enum ErrorCodeId {
     /** 
      * 
      */
-    SubscriptionRequiredForParameter(2104),
+    SubscriptionRequiredForParameter(2104);
 
+    private int value;
+	private static HashMap map = new HashMap<>();
+	
+	private ErrorCodeId(int value) {
+		this.value = value;
+	}
+	
+	static {
+		for (ErrorCodeId enumName : ErrorCodeId.values()) {
+			map.put(enumName.value, enumName);
+		}
+	}
+	
+	public static ErrorCodeId valueOf(int intValue) {
+		return (ErrorCodeId) map.get(intValue);
+	}
+	
+	public int getValue() {
+		return value;
+	}
 }
-    

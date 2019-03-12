@@ -1,4 +1,5 @@
 package net.avalara.avatax.rest.client.enums;
+import java.util.HashMap;
 
 /*
  * AvaTax Software Development Kit for Java JRE based environments
@@ -63,7 +64,26 @@ public enum AddressCategoryId {
     /** 
      * Address refers to the mailing address of your company which is not a physical location.
      */
-    NonPhysical(8),
+    NonPhysical(8);
 
+    private int value;
+	private static HashMap map = new HashMap<>();
+	
+	private AddressCategoryId(int value) {
+		this.value = value;
+	}
+	
+	static {
+		for (AddressCategoryId enumName : AddressCategoryId.values()) {
+			map.put(enumName.value, enumName);
+		}
+	}
+	
+	public static AddressCategoryId valueOf(int intValue) {
+		return (AddressCategoryId) map.get(intValue);
+	}
+	
+	public int getValue() {
+		return value;
+	}
 }
-    

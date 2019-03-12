@@ -1,4 +1,5 @@
 package net.avalara.avatax.rest.client.enums;
+import java.util.HashMap;
 
 /*
  * AvaTax Software Development Kit for Java JRE based environments
@@ -31,7 +32,26 @@ public enum PasswordStatusId {
     /** 
      * UserMustChange
      */
-    UserMustChange(2),
+    UserMustChange(2);
 
+    private int value;
+	private static HashMap map = new HashMap<>();
+	
+	private PasswordStatusId(int value) {
+		this.value = value;
+	}
+	
+	static {
+		for (PasswordStatusId enumName : PasswordStatusId.values()) {
+			map.put(enumName.value, enumName);
+		}
+	}
+	
+	public static PasswordStatusId valueOf(int intValue) {
+		return (PasswordStatusId) map.get(intValue);
+	}
+	
+	public int getValue() {
+		return value;
+	}
 }
-    

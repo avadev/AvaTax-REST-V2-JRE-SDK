@@ -1,4 +1,5 @@
 package net.avalara.avatax.rest.client.enums;
+import java.util.HashMap;
 
 /*
  * AvaTax Software Development Kit for Java JRE based environments
@@ -26,7 +27,26 @@ public enum ReportDocType {
     /** 
      * Output all Sales tax transactions in the report
      */
-    Sales(83),
+    Sales(83);
 
+    private int value;
+	private static HashMap map = new HashMap<>();
+	
+	private ReportDocType(int value) {
+		this.value = value;
+	}
+	
+	static {
+		for (ReportDocType enumName : ReportDocType.values()) {
+			map.put(enumName.value, enumName);
+		}
+	}
+	
+	public static ReportDocType valueOf(int intValue) {
+		return (ReportDocType) map.get(intValue);
+	}
+	
+	public int getValue() {
+		return value;
+	}
 }
-    

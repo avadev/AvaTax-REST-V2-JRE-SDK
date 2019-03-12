@@ -1,4 +1,5 @@
 package net.avalara.avatax.rest.client.enums;
+import java.util.HashMap;
 
 /*
  * AvaTax Software Development Kit for Java JRE based environments
@@ -26,7 +27,26 @@ public enum CertificatePreviewType {
     /** 
      * Download a single page of the certificate in JPG format
      */
-    Jpeg(2),
+    Jpeg(2);
 
+    private int value;
+	private static HashMap map = new HashMap<>();
+	
+	private CertificatePreviewType(int value) {
+		this.value = value;
+	}
+	
+	static {
+		for (CertificatePreviewType enumName : CertificatePreviewType.values()) {
+			map.put(enumName.value, enumName);
+		}
+	}
+	
+	public static CertificatePreviewType valueOf(int intValue) {
+		return (CertificatePreviewType) map.get(intValue);
+	}
+	
+	public int getValue() {
+		return value;
+	}
 }
-    

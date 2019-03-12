@@ -1,4 +1,5 @@
 package net.avalara.avatax.rest.client.enums;
+import java.util.HashMap;
 
 /*
  * AvaTax Software Development Kit for Java JRE based environments
@@ -26,7 +27,26 @@ public enum ScraperType {
     /** 
      * Indicates that it is a Customer DOR Data type
      */
-    CustomerDorData(2),
+    CustomerDorData(2);
 
+    private int value;
+	private static HashMap map = new HashMap<>();
+	
+	private ScraperType(int value) {
+		this.value = value;
+	}
+	
+	static {
+		for (ScraperType enumName : ScraperType.values()) {
+			map.put(enumName.value, enumName);
+		}
+	}
+	
+	public static ScraperType valueOf(int intValue) {
+		return (ScraperType) map.get(intValue);
+	}
+	
+	public int getValue() {
+		return value;
+	}
 }
-    

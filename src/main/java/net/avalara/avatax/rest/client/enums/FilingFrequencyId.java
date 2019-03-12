@@ -1,4 +1,5 @@
 package net.avalara.avatax.rest.client.enums;
+import java.util.HashMap;
 
 /*
  * AvaTax Software Development Kit for Java JRE based environments
@@ -53,5 +54,29 @@ public enum FilingFrequencyId {
      */
     InverseQuarterly(7),
 
+    /** 
+     * File every week
+     */
+    Weekly(8);
+
+    private int value;
+	private static HashMap map = new HashMap<>();
+	
+	private FilingFrequencyId(int value) {
+		this.value = value;
+	}
+	
+	static {
+		for (FilingFrequencyId enumName : FilingFrequencyId.values()) {
+			map.put(enumName.value, enumName);
+		}
+	}
+	
+	public static FilingFrequencyId valueOf(int intValue) {
+		return (FilingFrequencyId) map.get(intValue);
+	}
+	
+	public int getValue() {
+		return value;
+	}
 }
-    

@@ -1,4 +1,5 @@
 package net.avalara.avatax.rest.client.enums;
+import java.util.HashMap;
 
 /*
  * AvaTax Software Development Kit for Java JRE based environments
@@ -36,7 +37,26 @@ public enum AuthenticationTypeId {
     /** 
      * This API call was authenticated by OpenID Bearer Token.
      */
-    OpenIdBearerToken(3),
+    OpenIdBearerToken(3);
 
+    private int value;
+	private static HashMap map = new HashMap<>();
+	
+	private AuthenticationTypeId(int value) {
+		this.value = value;
+	}
+	
+	static {
+		for (AuthenticationTypeId enumName : AuthenticationTypeId.values()) {
+			map.put(enumName.value, enumName);
+		}
+	}
+	
+	public static AuthenticationTypeId valueOf(int intValue) {
+		return (AuthenticationTypeId) map.get(intValue);
+	}
+	
+	public int getValue() {
+		return value;
+	}
 }
-    

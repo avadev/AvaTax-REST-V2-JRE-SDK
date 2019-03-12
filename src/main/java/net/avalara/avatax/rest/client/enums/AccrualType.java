@@ -1,4 +1,5 @@
 package net.avalara.avatax.rest.client.enums;
+import java.util.HashMap;
 
 /*
  * AvaTax Software Development Kit for Java JRE based environments
@@ -26,7 +27,26 @@ public enum AccrualType {
     /** 
      * An Accrual filing indicates taxes that are accrued, intended to be filed on a future tax return. For example, if you file annually, you will have eleven months of Accrual returns and one Filing return.
      */
-    Accrual(2),
+    Accrual(2);
 
+    private int value;
+	private static HashMap map = new HashMap<>();
+	
+	private AccrualType(int value) {
+		this.value = value;
+	}
+	
+	static {
+		for (AccrualType enumName : AccrualType.values()) {
+			map.put(enumName.value, enumName);
+		}
+	}
+	
+	public static AccrualType valueOf(int intValue) {
+		return (AccrualType) map.get(intValue);
+	}
+	
+	public int getValue() {
+		return value;
+	}
 }
-    

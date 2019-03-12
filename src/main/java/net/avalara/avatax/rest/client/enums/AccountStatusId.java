@@ -1,4 +1,5 @@
 package net.avalara.avatax.rest.client.enums;
+import java.util.HashMap;
 
 /*
  * AvaTax Software Development Kit for Java JRE based environments
@@ -39,7 +40,26 @@ public enum AccountStatusId {
      *  An account is considered new until the account administrator has reviewed and accepted 
      *  [Avalara's terms and conditions](https://www.avalara.com/us/en/legal/terms.html).
      */
-    New(3),
+    New(3);
 
+    private int value;
+	private static HashMap map = new HashMap<>();
+	
+	private AccountStatusId(int value) {
+		this.value = value;
+	}
+	
+	static {
+		for (AccountStatusId enumName : AccountStatusId.values()) {
+			map.put(enumName.value, enumName);
+		}
+	}
+	
+	public static AccountStatusId valueOf(int intValue) {
+		return (AccountStatusId) map.get(intValue);
+	}
+	
+	public int getValue() {
+		return value;
+	}
 }
-    

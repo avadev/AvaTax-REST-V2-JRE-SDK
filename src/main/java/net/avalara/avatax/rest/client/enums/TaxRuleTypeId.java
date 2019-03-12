@@ -1,4 +1,5 @@
 package net.avalara.avatax.rest.client.enums;
+import java.util.HashMap;
 
 /*
  * AvaTax Software Development Kit for Java JRE based environments
@@ -62,7 +63,26 @@ public enum TaxRuleTypeId {
     /** 
      * Reserved for Avalara internal usage.
      */
-    NexusRule(5),
+    NexusRule(5);
 
+    private int value;
+	private static HashMap map = new HashMap<>();
+	
+	private TaxRuleTypeId(int value) {
+		this.value = value;
+	}
+	
+	static {
+		for (TaxRuleTypeId enumName : TaxRuleTypeId.values()) {
+			map.put(enumName.value, enumName);
+		}
+	}
+	
+	public static TaxRuleTypeId valueOf(int intValue) {
+		return (TaxRuleTypeId) map.get(intValue);
+	}
+	
+	public int getValue() {
+		return value;
+	}
 }
-    

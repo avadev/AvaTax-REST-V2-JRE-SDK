@@ -1,4 +1,5 @@
 package net.avalara.avatax.rest.client.enums;
+import java.util.HashMap;
 
 /*
  * AvaTax Software Development Kit for Java JRE based environments
@@ -27,7 +28,26 @@ public enum CertExpressInvitationStatus {
     /** 
      * Indicates that the CertExpress invitation has been completed and is ready to use.
      */
-    Ready(1),
+    Ready(1);
 
+    private int value;
+	private static HashMap map = new HashMap<>();
+	
+	private CertExpressInvitationStatus(int value) {
+		this.value = value;
+	}
+	
+	static {
+		for (CertExpressInvitationStatus enumName : CertExpressInvitationStatus.values()) {
+			map.put(enumName.value, enumName);
+		}
+	}
+	
+	public static CertExpressInvitationStatus valueOf(int intValue) {
+		return (CertExpressInvitationStatus) map.get(intValue);
+	}
+	
+	public int getValue() {
+		return value;
+	}
 }
-    

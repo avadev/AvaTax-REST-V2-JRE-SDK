@@ -1,4 +1,5 @@
 package net.avalara.avatax.rest.client.enums;
+import java.util.HashMap;
 
 /*
  * AvaTax Software Development Kit for Java JRE based environments
@@ -36,7 +37,26 @@ public enum PaymentType {
     /** 
      * The payment is a prior CSP fee
      */
-    PriorCspFee(3),
+    PriorCspFee(3);
 
+    private int value;
+	private static HashMap map = new HashMap<>();
+	
+	private PaymentType(int value) {
+		this.value = value;
+	}
+	
+	static {
+		for (PaymentType enumName : PaymentType.values()) {
+			map.put(enumName.value, enumName);
+		}
+	}
+	
+	public static PaymentType valueOf(int intValue) {
+		return (PaymentType) map.get(intValue);
+	}
+	
+	public int getValue() {
+		return value;
+	}
 }
-    

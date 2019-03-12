@@ -99,13 +99,13 @@ public class FilingCalendarModel {
      * Getter for formCountry
      *
      * Name or ISO 3166 code identifying the country that issued the tax form for this filing calendar.
-    * 
+    *  
     * This field supports many different country identifiers:
     *  * Two character ISO 3166 codes
     *  * Three character ISO 3166 codes
     *  * Fully spelled out names of the country in ISO supported languages
     *  * Common alternative spellings for many countries
-    * 
+    *  
     * For a full list of all supported codes and names, please see the Definitions API `ListCountries`.
      */
     public String getFormCountry() {
@@ -116,13 +116,13 @@ public class FilingCalendarModel {
      * Setter for formCountry
      *
      * Name or ISO 3166 code identifying the country that issued the tax form for this filing calendar.
-    * 
+    *  
     * This field supports many different country identifiers:
     *  * Two character ISO 3166 codes
     *  * Three character ISO 3166 codes
     *  * Fully spelled out names of the country in ISO supported languages
     *  * Common alternative spellings for many countries
-    * 
+    *  
     * For a full list of all supported codes and names, please see the Definitions API `ListCountries`.
      */
     public void setFormCountry(String value) {
@@ -136,12 +136,12 @@ public class FilingCalendarModel {
      * Getter for formRegion
      *
      * Name or ISO 3166 code identifying the region that issued the tax form for this filing calendar.
-    * 
+    *  
     * This field supports many different region identifiers:
     *  * Two and three character ISO 3166 region codes
     *  * Fully spelled out names of the region in ISO supported languages
     *  * Common alternative spellings for many regions
-    * 
+    *  
     * For a full list of all supported codes and names, please see the Definitions API `ListRegions`.
      */
     public String getFormRegion() {
@@ -152,12 +152,12 @@ public class FilingCalendarModel {
      * Setter for formRegion
      *
      * Name or ISO 3166 code identifying the region that issued the tax form for this filing calendar.
-    * 
+    *  
     * This field supports many different region identifiers:
     *  * Two and three character ISO 3166 region codes
     *  * Fully spelled out names of the region in ISO supported languages
     *  * Common alternative spellings for many regions
-    * 
+    *  
     * For a full list of all supported codes and names, please see the Definitions API `ListRegions`.
      */
     public void setFormRegion(String value) {
@@ -386,7 +386,7 @@ public class FilingCalendarModel {
      *
      * DEPRECATED - The second line of the mailing address that will be used when filling out this tax return.
     * Please note that some tax forms do not support multiple address lines.
-    * 
+    *  
     * Field will be no longer be available after the 17.9 release.
      */
     public String getLine2() {
@@ -398,7 +398,7 @@ public class FilingCalendarModel {
      *
      * DEPRECATED - The second line of the mailing address that will be used when filling out this tax return.
     * Please note that some tax forms do not support multiple address lines.
-    * 
+    *  
     * Field will be no longer be available after the 17.9 release.
      */
     public void setLine2(String value) {
@@ -412,7 +412,7 @@ public class FilingCalendarModel {
      * Getter for city
      *
      * DEPRECATED - The city name of the mailing address that will be used when filling out this tax return.
-    * 
+    *  
     * Field will be no longer be available after the 17.9 release.
      */
     public String getCity() {
@@ -423,7 +423,7 @@ public class FilingCalendarModel {
      * Setter for city
      *
      * DEPRECATED - The city name of the mailing address that will be used when filling out this tax return.
-    * 
+    *  
     * Field will be no longer be available after the 17.9 release.
      */
     public void setCity(String value) {
@@ -437,7 +437,7 @@ public class FilingCalendarModel {
      * Getter for region
      *
      * DEPRECATED - The state, region, or province of the mailing address that will be used when filling out this tax return.
-    * 
+    *  
     * Field will be no longer be available after the 17.9 release.
      */
     public String getRegion() {
@@ -448,7 +448,7 @@ public class FilingCalendarModel {
      * Setter for region
      *
      * DEPRECATED - The state, region, or province of the mailing address that will be used when filling out this tax return.
-    * 
+    *  
     * Field will be no longer be available after the 17.9 release.
      */
     public void setRegion(String value) {
@@ -462,7 +462,7 @@ public class FilingCalendarModel {
      * Getter for postalCode
      *
      * DEPRECATED - The postal code or zip code of the mailing address that will be used when filling out this tax return.
-    * 
+    *  
     * Field will be no longer be available after the 17.9 release.
      */
     public String getPostalCode() {
@@ -473,7 +473,7 @@ public class FilingCalendarModel {
      * Setter for postalCode
      *
      * DEPRECATED - The postal code or zip code of the mailing address that will be used when filling out this tax return.
-    * 
+    *  
     * Field will be no longer be available after the 17.9 release.
      */
     public void setPostalCode(String value) {
@@ -487,7 +487,7 @@ public class FilingCalendarModel {
      * Getter for country
      *
      * DEPRECATED - The two character ISO-3166 country code of the mailing address that will be used when filling out this tax return.
-    * 
+    *  
     * Field will be no longer be available after the 17.9 release.
      */
     public String getCountry() {
@@ -498,7 +498,7 @@ public class FilingCalendarModel {
      * Setter for country
      *
      * DEPRECATED - The two character ISO-3166 country code of the mailing address that will be used when filling out this tax return.
-    * 
+    *  
     * Field will be no longer be available after the 17.9 release.
      */
     public void setCountry(String value) {
@@ -577,12 +577,12 @@ public class FilingCalendarModel {
      * Getter for mailingAddressRegion
      *
      * Name or ISO 3166 code identifying the region of the mailing address that will be used when filling out this tax return.
-    * 
+    *  
     * This field supports many different region identifiers:
     *  * Two and three character ISO 3166 region codes
     *  * Fully spelled out names of the region in ISO supported languages
     *  * Common alternative spellings for many regions
-    * 
+    *  
     * For a full list of all supported codes and names, please see the Definitions API `ListRegions`.
      */
     public String getMailingAddressRegion() {
@@ -593,12 +593,12 @@ public class FilingCalendarModel {
      * Setter for mailingAddressRegion
      *
      * Name or ISO 3166 code identifying the region of the mailing address that will be used when filling out this tax return.
-    * 
+    *  
     * This field supports many different region identifiers:
     *  * Two and three character ISO 3166 region codes
     *  * Fully spelled out names of the region in ISO supported languages
     *  * Common alternative spellings for many regions
-    * 
+    *  
     * For a full list of all supported codes and names, please see the Definitions API `ListRegions`.
      */
     public void setMailingAddressRegion(String value) {
@@ -633,13 +633,13 @@ public class FilingCalendarModel {
      * Getter for mailingAddressCountry
      *
      * Name or ISO 3166 code identifying the country of the mailing address that will be used when filling out this tax return.
-    * 
+    *  
     * This field supports many different country identifiers:
     *  * Two character ISO 3166 codes
     *  * Three character ISO 3166 codes
     *  * Fully spelled out names of the country in ISO supported languages
     *  * Common alternative spellings for many countries
-    * 
+    *  
     * For a full list of all supported codes and names, please see the Definitions API `ListCountries`.
      */
     public String getMailingAddressCountry() {
@@ -650,13 +650,13 @@ public class FilingCalendarModel {
      * Setter for mailingAddressCountry
      *
      * Name or ISO 3166 code identifying the country of the mailing address that will be used when filling out this tax return.
-    * 
+    *  
     * This field supports many different country identifiers:
     *  * Two character ISO 3166 codes
     *  * Three character ISO 3166 codes
     *  * Fully spelled out names of the country in ISO supported languages
     *  * Common alternative spellings for many countries
-    * 
+    *  
     * For a full list of all supported codes and names, please see the Definitions API `ListCountries`.
      */
     public void setMailingAddressCountry(String value) {
@@ -847,7 +847,7 @@ public class FilingCalendarModel {
     /**
      * Getter for prepayPercentage
      *
-     * If you are required to prepay a percentage of taxes for future periods, please specify the percentage in whole numbers; 
+     * If you are required to prepay a percentage of taxes for future periods, please specify the percentage in whole numbers;
     * for example, the value 90 would indicate 90%.
      */
     public Integer getPrepayPercentage() {
@@ -857,7 +857,7 @@ public class FilingCalendarModel {
     /**
      * Setter for prepayPercentage
      *
-     * If you are required to prepay a percentage of taxes for future periods, please specify the percentage in whole numbers; 
+     * If you are required to prepay a percentage of taxes for future periods, please specify the percentage in whole numbers;
     * for example, the value 90 would indicate 90%.
      */
     public void setPrepayPercentage(Integer value) {
