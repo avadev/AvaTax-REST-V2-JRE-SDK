@@ -391,15 +391,40 @@ public class TransactionBuilder {
         return this.model;
     }
 
+    /*
+     * DEPRECATED - use public Future<TransactionModel> createAsync() instead.
+     */
     public Future<TransactionModel> CreateAsync() {
         return this.client.createTransactionAsync(null, this.model);
     }
 
+    public Future<TransactionModel> createAsync() {
+        return this.client.createTransactionAsync(null, this.model);
+    }
+
+    /*
+     * DEPRECATED - use public TransactionModel create() instead.
+     */
     public TransactionModel Create() throws Exception {
         return this.client.createTransaction(null, this.model);
     }
 
+    public TransactionModel create() throws Exception {
+        return this.client.createTransaction(null, this.model);
+    }
+
+    /*
+     * DEPRECATED - use public AdjustTransactionModel CreateAdjustmentRequest instead.
+     */
     public AdjustTransactionModel CreateAdjustmentRequest(String description, AdjustmentReason reason) {
+        AdjustTransactionModel adjust = new AdjustTransactionModel();
+        adjust.setAdjustmentDescription(description);
+        adjust.setAdjustmentReason(reason);
+        adjust.setNewTransaction(this.model);
+        return adjust;
+    }
+
+    public AdjustTransactionModel createAdjustmentRequest(String description, AdjustmentReason reason) {
         AdjustTransactionModel adjust = new AdjustTransactionModel();
         adjust.setAdjustmentDescription(description);
         adjust.setAdjustmentReason(reason);
