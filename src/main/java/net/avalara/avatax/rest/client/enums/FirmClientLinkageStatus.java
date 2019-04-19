@@ -16,49 +16,44 @@ import java.util.HashMap;
  */
 
 /**
- * Indicates the level of companies that can be accessed
+ * Account Linkage status
  */
-public enum CompanyAccessLevel {
+public enum FirmClientLinkageStatus {
     /** 
-     * No permission to access companies.
+     * Requested
      */
-    None(0),
+    Requested(1),
 
     /** 
-     * Permission to access a single company and its children.
+     * Approved
      */
-    SingleCompany(1),
+    Approved(2),
 
     /** 
-     * Permission to access all companies in a single account.
+     * Rejected
      */
-    SingleAccount(2),
+    Rejected(3),
 
     /** 
-     * Permission to access all companies in all accounts. Reserved for system administration tasks.
+     * Revoked
      */
-    AllCompanies(3),
-
-    /** 
-     * Permission to access all companies in all accounts managed by a firm account.
-     */
-    FirmManagedAccounts(4);
+    Revoked(4);
 
     private int value;
 	private static HashMap map = new HashMap<>();
 	
-	private CompanyAccessLevel(int value) {
+	private FirmClientLinkageStatus(int value) {
 		this.value = value;
 	}
 	
 	static {
-		for (CompanyAccessLevel enumName : CompanyAccessLevel.values()) {
+		for (FirmClientLinkageStatus enumName : FirmClientLinkageStatus.values()) {
 			map.put(enumName.value, enumName);
 		}
 	}
 	
-	public static CompanyAccessLevel valueOf(int intValue) {
-		return (CompanyAccessLevel) map.get(intValue);
+	public static FirmClientLinkageStatus valueOf(int intValue) {
+		return (FirmClientLinkageStatus) map.get(intValue);
 	}
 	
 	public int getValue() {

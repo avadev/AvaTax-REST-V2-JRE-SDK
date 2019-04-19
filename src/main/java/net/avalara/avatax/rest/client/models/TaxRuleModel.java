@@ -265,7 +265,7 @@ public class TaxRuleModel {
     /**
      * Getter for jurisTypeId
      *
-     * (DEPRECATED) Please use `jurisdictionTypeId` instead.
+     * DEPRECATED - Date: 12/20/2017, Version: 18.1, Message: Please use `jurisdictionTypeId` instead.
      */
     public JurisTypeId getJurisTypeId() {
         return this.jurisTypeId;
@@ -274,7 +274,7 @@ public class TaxRuleModel {
     /**
      * Setter for jurisTypeId
      *
-     * (DEPRECATED) Please use `jurisdictionTypeId` instead.
+     * DEPRECATED - Date: 12/20/2017, Version: 18.1, Message: Please use `jurisdictionTypeId` instead.
      */
     public void setJurisTypeId(JurisTypeId value) {
         this.jurisTypeId = value;
@@ -327,7 +327,7 @@ public class TaxRuleModel {
     /**
      * Getter for customerUsageType
      *
-     * DEPRECATED - Please use `entityUseCode` instead.
+     * DEPRECATED - Date: 10/16/2017, Version: 17.11, Message: Please use `entityUseCode` instead.
      */
     public String getCustomerUsageType() {
         return this.customerUsageType;
@@ -336,7 +336,7 @@ public class TaxRuleModel {
     /**
      * Setter for customerUsageType
      *
-     * DEPRECATED - Please use `entityUseCode` instead.
+     * DEPRECATED - Date: 10/16/2017, Version: 17.11, Message: Please use `entityUseCode` instead.
      */
     public void setCustomerUsageType(String value) {
         this.customerUsageType = value;
@@ -408,7 +408,7 @@ public class TaxRuleModel {
     /**
      * Getter for rateTypeId
      *
-     * (DEPRECATED) Please use `rateTypeCode`, `taxTypeGroup` and `subTaxType` instead.
+     * DEPRECATED - Date: 8/27/2018, Version: 18.9, Message: Please use `rateTypeCode`, `taxTypeGroup` and `subTaxType` instead.
      */
     public RateType getRateTypeId() {
         return this.rateTypeId;
@@ -417,7 +417,7 @@ public class TaxRuleModel {
     /**
      * Setter for rateTypeId
      *
-     * (DEPRECATED) Please use `rateTypeCode`, `taxTypeGroup` and `subTaxType` instead.
+     * DEPRECATED - Date: 8/27/2018, Version: 18.9, Message: Please use `rateTypeCode`, `taxTypeGroup` and `subTaxType` instead.
      */
     public void setRateTypeId(RateType value) {
         this.rateTypeId = value;
@@ -718,7 +718,7 @@ public class TaxRuleModel {
     /**
      * Getter for isSTPro
      *
-     * (DEPRECATED) This field is no longer required.
+     * DEPRECATED - Date: 8/27/2018, Version: 18.9, Message: This field is no longer required.
      */
     public Boolean getIsSTPro() {
         return this.isSTPro;
@@ -727,7 +727,7 @@ public class TaxRuleModel {
     /**
      * Setter for isSTPro
      *
-     * (DEPRECATED) This field is no longer required.
+     * DEPRECATED - Date: 8/27/2018, Version: 18.9, Message: This field is no longer required.
      */
     public void setIsSTPro(Boolean value) {
         this.isSTPro = value;

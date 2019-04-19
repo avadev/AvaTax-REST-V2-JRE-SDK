@@ -77,7 +77,8 @@ public class FilingCalendarModel {
     /**
      * Getter for returnName
      *
-     * DEPRECATED - The legacy return name of the tax form to file. Please use `taxFormCode` instead.
+     * DEPRECATED - Date: 9/13/2018, Version: 18.10, Message: Please use `taxFormCode` instead.
+    * The legacy return name of the tax form to file.
      */
     public String getReturnName() {
         return this.returnName;
@@ -86,7 +87,8 @@ public class FilingCalendarModel {
     /**
      * Setter for returnName
      *
-     * DEPRECATED - The legacy return name of the tax form to file. Please use `taxFormCode` instead.
+     * DEPRECATED - Date: 9/13/2018, Version: 18.10, Message: Please use `taxFormCode` instead.
+    * The legacy return name of the tax form to file.
      */
     public void setReturnName(String value) {
         this.returnName = value;
@@ -361,8 +363,8 @@ public class FilingCalendarModel {
     /**
      * Getter for line1
      *
-     * DEPRECATED - The first line of the mailing address that will be used when filling out this tax return.
-    * Field will be no longer be available after the 17.9 release.
+     * DEPRECATED - Date: 9/1/2017, Version: 17.9, Message: Field will be no longer be available after the 17.9 release.
+    * The first line of the mailing address that will be used when filling out this tax return.
      */
     public String getLine1() {
         return this.line1;
@@ -371,8 +373,8 @@ public class FilingCalendarModel {
     /**
      * Setter for line1
      *
-     * DEPRECATED - The first line of the mailing address that will be used when filling out this tax return.
-    * Field will be no longer be available after the 17.9 release.
+     * DEPRECATED - Date: 9/1/2017, Version: 17.9, Message: Field will be no longer be available after the 17.9 release.
+    * The first line of the mailing address that will be used when filling out this tax return.
      */
     public void setLine1(String value) {
         this.line1 = value;
@@ -384,10 +386,9 @@ public class FilingCalendarModel {
     /**
      * Getter for line2
      *
-     * DEPRECATED - The second line of the mailing address that will be used when filling out this tax return.
+     * DEPRECATED - Date: 9/1/2017, Version: 17.9, Message: Field will be no longer be available after the 17.9 release.
+    * The second line of the mailing address that will be used when filling out this tax return.
     * Please note that some tax forms do not support multiple address lines.
-    *  
-    * Field will be no longer be available after the 17.9 release.
      */
     public String getLine2() {
         return this.line2;
@@ -396,10 +397,9 @@ public class FilingCalendarModel {
     /**
      * Setter for line2
      *
-     * DEPRECATED - The second line of the mailing address that will be used when filling out this tax return.
+     * DEPRECATED - Date: 9/1/2017, Version: 17.9, Message: Field will be no longer be available after the 17.9 release.
+    * The second line of the mailing address that will be used when filling out this tax return.
     * Please note that some tax forms do not support multiple address lines.
-    *  
-    * Field will be no longer be available after the 17.9 release.
      */
     public void setLine2(String value) {
         this.line2 = value;
@@ -411,9 +411,8 @@ public class FilingCalendarModel {
     /**
      * Getter for city
      *
-     * DEPRECATED - The city name of the mailing address that will be used when filling out this tax return.
-    *  
-    * Field will be no longer be available after the 17.9 release.
+     * DEPRECATED - Date: 9/1/2017, Version: 17.9, Message: Field will be no longer be available after the 17.9 release.
+    * The city name of the mailing address that will be used when filling out this tax return.
      */
     public String getCity() {
         return this.city;
@@ -422,9 +421,8 @@ public class FilingCalendarModel {
     /**
      * Setter for city
      *
-     * DEPRECATED - The city name of the mailing address that will be used when filling out this tax return.
-    *  
-    * Field will be no longer be available after the 17.9 release.
+     * DEPRECATED - Date: 9/1/2017, Version: 17.9, Message: Field will be no longer be available after the 17.9 release.
+    * The city name of the mailing address that will be used when filling out this tax return.
      */
     public void setCity(String value) {
         this.city = value;
@@ -436,9 +434,8 @@ public class FilingCalendarModel {
     /**
      * Getter for region
      *
-     * DEPRECATED - The state, region, or province of the mailing address that will be used when filling out this tax return.
-    *  
-    * Field will be no longer be available after the 17.9 release.
+     * DEPRECATED - Date: 9/1/2017, Version: 17.9, Message: Field will be no longer be available after the 17.9 release.
+    * The state, region, or province of the mailing address that will be used when filling out this tax return.
      */
     public String getRegion() {
         return this.region;
@@ -447,9 +444,8 @@ public class FilingCalendarModel {
     /**
      * Setter for region
      *
-     * DEPRECATED - The state, region, or province of the mailing address that will be used when filling out this tax return.
-    *  
-    * Field will be no longer be available after the 17.9 release.
+     * DEPRECATED - Date: 9/1/2017, Version: 17.9, Message: Field will be no longer be available after the 17.9 release.
+    * The state, region, or province of the mailing address that will be used when filling out this tax return.
      */
     public void setRegion(String value) {
         this.region = value;
@@ -461,9 +457,8 @@ public class FilingCalendarModel {
     /**
      * Getter for postalCode
      *
-     * DEPRECATED - The postal code or zip code of the mailing address that will be used when filling out this tax return.
-    *  
-    * Field will be no longer be available after the 17.9 release.
+     * DEPRECATED - Date: 9/1/2017, Version: 17.9, Message: Field will be no longer be available after the 17.9 release.
+    * The postal code or zip code of the mailing address that will be used when filling out this tax return.
      */
     public String getPostalCode() {
         return this.postalCode;
@@ -472,9 +467,8 @@ public class FilingCalendarModel {
     /**
      * Setter for postalCode
      *
-     * DEPRECATED - The postal code or zip code of the mailing address that will be used when filling out this tax return.
-    *  
-    * Field will be no longer be available after the 17.9 release.
+     * DEPRECATED - Date: 9/1/2017, Version: 17.9, Message: Field will be no longer be available after the 17.9 release.
+    * The postal code or zip code of the mailing address that will be used when filling out this tax return.
      */
     public void setPostalCode(String value) {
         this.postalCode = value;
@@ -486,9 +480,8 @@ public class FilingCalendarModel {
     /**
      * Getter for country
      *
-     * DEPRECATED - The two character ISO-3166 country code of the mailing address that will be used when filling out this tax return.
-    *  
-    * Field will be no longer be available after the 17.9 release.
+     * DEPRECATED - Date: 9/1/2017, Version: 17.9, Message: Field will be no longer be available after the 17.9 release.
+    * The two character ISO-3166 country code of the mailing address that will be used when filling out this tax return.
      */
     public String getCountry() {
         return this.country;
@@ -497,9 +490,8 @@ public class FilingCalendarModel {
     /**
      * Setter for country
      *
-     * DEPRECATED - The two character ISO-3166 country code of the mailing address that will be used when filling out this tax return.
-    *  
-    * Field will be no longer be available after the 17.9 release.
+     * DEPRECATED - Date: 9/1/2017, Version: 17.9, Message: Field will be no longer be available after the 17.9 release.
+    * The two character ISO-3166 country code of the mailing address that will be used when filling out this tax return.
      */
     public void setCountry(String value) {
         this.country = value;

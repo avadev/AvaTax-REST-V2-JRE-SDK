@@ -142,12 +142,27 @@ public enum ErrorCodeId {
     /** 
      * 
      */
+    ReadOnly(25),
+
+    /** 
+     * 
+     */
     DateFormatError(26),
 
     /** 
      * 
      */
     NoDefaultCompany(27),
+
+    /** 
+     * 
+     */
+    AccountTypeNotSupported(28),
+
+    /** 
+     * 
+     */
+    InvalidFirmClientOffer(29),
 
     /** 
      * 
@@ -247,12 +262,27 @@ public enum ErrorCodeId {
     /** 
      * 
      */
+    PermissionRequired(49),
+
+    /** 
+     * 
+     */
     UnhandledException(50),
 
     /** 
      * 
      */
     InactiveAccount(51),
+
+    /** 
+     * 
+     */
+    LinkageNotAllowed(52),
+
+    /** 
+     * 
+     */
+    LinkageStatusUpdateNotSupported(53),
 
     /** 
      * 
@@ -273,6 +303,11 @@ public enum ErrorCodeId {
      * 
      */
     MustAssignUserToCompany(63),
+
+    /** 
+     * 
+     */
+    InvalidTaxTypeMapping(64),
 
     /** 
      * 
@@ -905,6 +940,11 @@ public enum ErrorCodeId {
     OfferCodeAlreadyApplied(610),
 
     /** 
+     * 
+     */
+    AccountAlreadyExists(611),
+
+    /** 
      * Refund API error codes
      */
     InvalidDocumentStatusForRefund(700),
@@ -1048,11 +1088,6 @@ public enum ErrorCodeId {
      * 
      */
     AddRelationshipsError(1206),
-
-    /** 
-     * 
-     */
-    MissingExposureZone(1207),
 
     /** 
      * 
@@ -1262,16 +1297,6 @@ public enum ErrorCodeId {
     /** 
      * Advanced rule errors
      */
-    AdvancedRuleBadScript(1600),
-
-    /** 
-     * 
-     */
-    AdvancedRuleBadCsvTable(1601),
-
-    /** 
-     * 
-     */
     AdvancedRuleRequestRuleError(1602),
 
     /** 
@@ -1282,7 +1307,7 @@ public enum ErrorCodeId {
     /** 
      * 
      */
-    AdvancedRuleNotApproved(1604),
+    AdvancedRuleError(1605),
 
     /** 
      * Miscellaneous
@@ -1318,6 +1343,16 @@ public enum ErrorCodeId {
      * 
      */
     CannotDismissGlobalNotification(1706),
+
+    /** 
+     * 
+     */
+    GenericTaxCodeForItem(1707),
+
+    /** 
+     * 
+     */
+    CannotCertifyCompany(1708),
 
     /** 
      * SendSales API errors

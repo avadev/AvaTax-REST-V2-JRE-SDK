@@ -145,8 +145,8 @@ public class NexusModel {
     /**
      * Getter for jurisTypeId
      *
-     * (DEPRECATED) The jurisdiction type of the jurisdiction in which this company declared nexus.
-    * NOTE: Use jurisdictionTypeId instead.
+     * DEPRECATED - Date: 12/20/2017, Version: 18.1, Message: Please use jurisdictionTypeId instead.
+    * The jurisdiction type of the jurisdiction in which this company declared nexus.
      */
     public JurisTypeId getJurisTypeId() {
         return this.jurisTypeId;
@@ -155,8 +155,8 @@ public class NexusModel {
     /**
      * Setter for jurisTypeId
      *
-     * (DEPRECATED) The jurisdiction type of the jurisdiction in which this company declared nexus.
-    * NOTE: Use jurisdictionTypeId instead.
+     * DEPRECATED - Date: 12/20/2017, Version: 18.1, Message: Please use jurisdictionTypeId instead.
+    * The jurisdiction type of the jurisdiction in which this company declared nexus.
      */
     public void setJurisTypeId(JurisTypeId value) {
         this.jurisTypeId = value;
@@ -544,7 +544,8 @@ public class NexusModel {
     /**
      * Getter for streamlinedSalesTax
      *
-     * For the United States, this flag indicates whether this particular nexus falls within a U.S. State that participates
+     * DEPRECATED - Date: 4/29/2017, Version: 19.4, Message: Please use isSSTActive instead.
+    * For the United States, this flag indicates whether this particular nexus falls within a U.S. State that participates
     * in the Streamlined Sales Tax program. For countries other than the US, this flag is null.
     *  
     * This field is defined by Avalara. All Avalara-defined fields must match an Avalara-defined nexus object found by calling `ListNexus`.
@@ -556,13 +557,43 @@ public class NexusModel {
     /**
      * Setter for streamlinedSalesTax
      *
-     * For the United States, this flag indicates whether this particular nexus falls within a U.S. State that participates
+     * DEPRECATED - Date: 4/29/2017, Version: 19.4, Message: Please use isSSTActive instead.
+    * For the United States, this flag indicates whether this particular nexus falls within a U.S. State that participates
     * in the Streamlined Sales Tax program. For countries other than the US, this flag is null.
     *  
     * This field is defined by Avalara. All Avalara-defined fields must match an Avalara-defined nexus object found by calling `ListNexus`.
      */
     public void setStreamlinedSalesTax(Boolean value) {
         this.streamlinedSalesTax = value;
+    }
+
+
+    private Boolean isSSTActive;
+
+    /**
+     * Getter for isSSTActive
+     *
+     * For the United States, this flag indicates whether this particular nexus falls within a U.S. State that participates
+    * in the Streamlined Sales Tax program and if the account associated with the Nexus has an active AvaTaxCsp subscription.
+    * For countries other than the US, this flag is null.
+    *  
+    * This field is defined by Avalara. All Avalara-defined fields must match an Avalara-defined nexus object found by calling `ListNexus`.
+     */
+    public Boolean getIsSSTActive() {
+        return this.isSSTActive;
+    }
+
+    /**
+     * Setter for isSSTActive
+     *
+     * For the United States, this flag indicates whether this particular nexus falls within a U.S. State that participates
+    * in the Streamlined Sales Tax program and if the account associated with the Nexus has an active AvaTaxCsp subscription.
+    * For countries other than the US, this flag is null.
+    *  
+    * This field is defined by Avalara. All Avalara-defined fields must match an Avalara-defined nexus object found by calling `ListNexus`.
+     */
+    public void setIsSSTActive(Boolean value) {
+        this.isSSTActive = value;
     }
 
 

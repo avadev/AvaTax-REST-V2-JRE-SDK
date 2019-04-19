@@ -132,7 +132,17 @@ public enum SecurityRoleId {
     /** 
      * SSTAdmin
      */
-    SSTAdmin(22);
+    SSTAdmin(22),
+
+    /** 
+     * FirmUser
+     */
+    FirmUser(23),
+
+    /** 
+     * FirmAdmin
+     */
+    FirmAdmin(24);
 
     private int value;
 	private static HashMap map = new HashMap<>();

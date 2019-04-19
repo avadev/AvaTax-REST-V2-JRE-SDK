@@ -116,16 +116,21 @@ public class AvaTaxClient {
      * Reset this account's license key
      * 
      * Resets the existing license key for this account to a new key.
-     * 
+     *             
      * To reset your account, you must specify the ID of the account you wish to reset and confirm the action.
-     * 
+     *             
      * This API is only available to account administrators for the account in question, and may only be called after
      * an account has been activated by reading and accepting Avalara's terms and conditions.  To activate your account
      * please log onto the AvaTax website or call the `ActivateAccount` API.
-     * 
+     *             
      * Resetting a license key cannot be undone.  Any previous license keys will immediately cease to work when a new key is created.
-     * 
+     *             
      * When you call this API, all account administrators for this account will receive an email with the newly updated license key.
+     * The email will specify which user reset the license key and it will contain the new key to use to update your connectors.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
      * 
      * @param id The ID of the account you wish to update.
      * @param model A request confirming that you wish to reset the license key of this account.
@@ -141,16 +146,21 @@ public class AvaTaxClient {
      * Reset this account's license key
      * 
      * Resets the existing license key for this account to a new key.
-     * 
+     *             
      * To reset your account, you must specify the ID of the account you wish to reset and confirm the action.
-     * 
+     *             
      * This API is only available to account administrators for the account in question, and may only be called after
      * an account has been activated by reading and accepting Avalara's terms and conditions.  To activate your account
      * please log onto the AvaTax website or call the `ActivateAccount` API.
-     * 
+     *             
      * Resetting a license key cannot be undone.  Any previous license keys will immediately cease to work when a new key is created.
-     * 
+     *             
      * When you call this API, all account administrators for this account will receive an email with the newly updated license key.
+     * The email will specify which user reset the license key and it will contain the new key to use to update your connectors.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
      * 
      * @param id The ID of the account you wish to update.
      * @param model A request confirming that you wish to reset the license key of this account.
@@ -166,14 +176,19 @@ public class AvaTaxClient {
      * Activate an account by accepting terms and conditions
      * 
      * Activate the account specified by the unique accountId number.
-     * 
-     * This activation request can only be called by account administrators.  You must indicate 
+     *             
+     * This activation request can only be called by account administrators.  You must indicate
      * that you have read and accepted Avalara's terms and conditions to call this API.
-     * 
+     *             
      * Once you have activated your account, use the `AccountResetLicenseKey` API to generate
      * a license key for your account.
-     * 
+     *             
      * If you have not read or accepted the terms and conditions, this API call will return the
+     * unchanged account model.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, FirmAdmin, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
      * 
      * @param id The ID of the account to activate
      * @param model The activation request
@@ -189,14 +204,19 @@ public class AvaTaxClient {
      * Activate an account by accepting terms and conditions
      * 
      * Activate the account specified by the unique accountId number.
-     * 
-     * This activation request can only be called by account administrators.  You must indicate 
+     *             
+     * This activation request can only be called by account administrators.  You must indicate
      * that you have read and accepted Avalara's terms and conditions to call this API.
-     * 
+     *             
      * Once you have activated your account, use the `AccountResetLicenseKey` API to generate
      * a license key for your account.
-     * 
+     *             
      * If you have not read or accepted the terms and conditions, this API call will return the
+     * unchanged account model.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, FirmAdmin, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
      * 
      * @param id The ID of the account to activate
      * @param model The activation request
@@ -212,18 +232,23 @@ public class AvaTaxClient {
      * Retrieve audit history for an account.
      * 
      * Retrieve audit trace history for an account.
-     * 
+     *             
      * Your audit trace history contains a record of all API calls made against the AvaTax REST API.  You can use this API to investigate
      * problems and see exactly what information was sent back and forth between your code and AvaTax.
-     * 
+     *             
      * When specifying a start and end datetime, please include a valid timezone indicator, such as the "Z" present in the examples for the start and end query parameters.
      * You can learn more about valid time zone designators at https://en.wikipedia.org/wiki/ISO_8601#Time_zone_designators.
-     * 
+     *             
      * This API enforces limits to the amount of data retrieved. These limits are subject to change.
-     * 
+     *             
      * * You may request data from a maximum of a one-hour time period.
      * * The amount of data and number of API calls returned by this API are limited and may be adjusted at any time.
      * * Old records may be migrated out of immediately available storage.  To request older data, please contact your account manager.
+     * * New records must migrate to available storage before they can be retrieved.  You may need to wait a period of time before newly created records can be fetched.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
      * @param id The ID of the account you wish to audit.
      * @param start The start datetime of audit history you with to retrieve, e.g. "2018-06-08T17:00:00Z". Defaults to the past 15 minutes.
@@ -246,18 +271,23 @@ public class AvaTaxClient {
      * Retrieve audit history for an account.
      * 
      * Retrieve audit trace history for an account.
-     * 
+     *             
      * Your audit trace history contains a record of all API calls made against the AvaTax REST API.  You can use this API to investigate
      * problems and see exactly what information was sent back and forth between your code and AvaTax.
-     * 
+     *             
      * When specifying a start and end datetime, please include a valid timezone indicator, such as the "Z" present in the examples for the start and end query parameters.
      * You can learn more about valid time zone designators at https://en.wikipedia.org/wiki/ISO_8601#Time_zone_designators.
-     * 
+     *             
      * This API enforces limits to the amount of data retrieved. These limits are subject to change.
-     * 
+     *             
      * * You may request data from a maximum of a one-hour time period.
      * * The amount of data and number of API calls returned by this API are limited and may be adjusted at any time.
      * * Old records may be migrated out of immediately available storage.  To request older data, please contact your account manager.
+     * * New records must migrate to available storage before they can be retrieved.  You may need to wait a period of time before newly created records can be fetched.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
      * @param id The ID of the account you wish to audit.
      * @param start The start datetime of audit history you with to retrieve, e.g. "2018-06-08T17:00:00Z". Defaults to the past 15 minutes.
@@ -281,8 +311,13 @@ public class AvaTaxClient {
      * 
      * Get the account object identified by this URL.
      * You may use the '$include' parameter to fetch additional nested data:
-     * 
+     *             
      * * Subscriptions
+     * * Users
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
      * @param id The ID of the account to retrieve
      * @param include A comma separated list of special fetch options
@@ -300,8 +335,13 @@ public class AvaTaxClient {
      * 
      * Get the account object identified by this URL.
      * You may use the '$include' parameter to fetch additional nested data:
-     * 
+     *             
      * * Subscriptions
+     * * Users
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
      * @param id The ID of the account to retrieve
      * @param include A comma separated list of special fetch options
@@ -318,16 +358,21 @@ public class AvaTaxClient {
      * Get configuration settings for this account
      * 
      * Retrieve a list of all configuration settings tied to this account.
-     * 
+     *             
      * Configuration settings provide you with the ability to control features of your account and of your
      * tax software.  The category names `TaxServiceConfig` and `AddressServiceConfig` are reserved for
      * Avalara internal software configuration values; to store your own account-level settings, please
      * create a new category name that begins with `X-`, for example, `X-MyCustomCategory`.
-     * 
+     *             
      * Account settings are permanent settings that cannot be deleted.  You can set the value of an
      * account setting to null if desired.
-     * 
+     *             
      * Avalara-based account settings for `TaxServiceConfig` and `AddressServiceConfig` affect your account's
+     * tax calculation and address resolution, and should only be changed with care.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
      * @param id 
      * @return ArrayList<AccountConfigurationModel>
@@ -342,16 +387,21 @@ public class AvaTaxClient {
      * Get configuration settings for this account
      * 
      * Retrieve a list of all configuration settings tied to this account.
-     * 
+     *             
      * Configuration settings provide you with the ability to control features of your account and of your
      * tax software.  The category names `TaxServiceConfig` and `AddressServiceConfig` are reserved for
      * Avalara internal software configuration values; to store your own account-level settings, please
      * create a new category name that begins with `X-`, for example, `X-MyCustomCategory`.
-     * 
+     *             
      * Account settings are permanent settings that cannot be deleted.  You can set the value of an
      * account setting to null if desired.
-     * 
+     *             
      * Avalara-based account settings for `TaxServiceConfig` and `AddressServiceConfig` affect your account's
+     * tax calculation and address resolution, and should only be changed with care.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
      * @param id 
      * @return ArrayList<AccountConfigurationModel>
@@ -366,9 +416,9 @@ public class AvaTaxClient {
      * Retrieve all accounts
      * 
      * List all account objects that can be seen by the current user.
-     * 
+     *             
      * This API lists all accounts you are allowed to see.  In general, most users will only be able to see their own account.
-     * 
+     *             
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * Paginate your results using the `$top`, `$skip`, and `$orderby` parameters.
      * You may specify one or more of the following values in the `$include` parameter to fetch additional nested data, using commas to separate multiple values:
@@ -376,6 +426,11 @@ public class AvaTaxClient {
      * * Subscriptions
      * * Users
      *             
+     * For more information about filtering in REST, please see the documentation at http://developer.avalara.com/avatax/filtering-in-rest/ .
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
      * @param include A comma separated list of objects to fetch underneath this account. Any object with a URL path underneath this account can be fetched by specifying its name.
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* subscriptions, users
@@ -398,9 +453,9 @@ public class AvaTaxClient {
      * Retrieve all accounts
      * 
      * List all account objects that can be seen by the current user.
-     * 
+     *             
      * This API lists all accounts you are allowed to see.  In general, most users will only be able to see their own account.
-     * 
+     *             
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * Paginate your results using the `$top`, `$skip`, and `$orderby` parameters.
      * You may specify one or more of the following values in the `$include` parameter to fetch additional nested data, using commas to separate multiple values:
@@ -408,6 +463,11 @@ public class AvaTaxClient {
      * * Subscriptions
      * * Users
      *             
+     * For more information about filtering in REST, please see the documentation at http://developer.avalara.com/avatax/filtering-in-rest/ .
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
      * @param include A comma separated list of objects to fetch underneath this account. Any object with a URL path underneath this account can be fetched by specifying its name.
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* subscriptions, users
@@ -430,16 +490,21 @@ public class AvaTaxClient {
      * Change configuration settings for this account
      * 
      * Update configuration settings tied to this account.
-     * 
+     *             
      * Configuration settings provide you with the ability to control features of your account and of your
      * tax software.  The category names `TaxServiceConfig` and `AddressServiceConfig` are reserved for
      * Avalara internal software configuration values; to store your own account-level settings, please
      * create a new category name that begins with `X-`, for example, `X-MyCustomCategory`.
-     * 
+     *             
      * Account settings are permanent settings that cannot be deleted.  You can set the value of an
      * account setting to null if desired.
-     * 
+     *             
      * Avalara-based account settings for `TaxServiceConfig` and `AddressServiceConfig` affect your account's
+     * tax calculation and address resolution, and should only be changed with care.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin.
      * 
      * @param id 
      * @param model 
@@ -455,16 +520,21 @@ public class AvaTaxClient {
      * Change configuration settings for this account
      * 
      * Update configuration settings tied to this account.
-     * 
+     *             
      * Configuration settings provide you with the ability to control features of your account and of your
      * tax software.  The category names `TaxServiceConfig` and `AddressServiceConfig` are reserved for
      * Avalara internal software configuration values; to store your own account-level settings, please
      * create a new category name that begins with `X-`, for example, `X-MyCustomCategory`.
-     * 
+     *             
      * Account settings are permanent settings that cannot be deleted.  You can set the value of an
      * account setting to null if desired.
-     * 
+     *             
      * Avalara-based account settings for `TaxServiceConfig` and `AddressServiceConfig` affect your account's
+     * tax calculation and address resolution, and should only be changed with care.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin.
      * 
      * @param id 
      * @param model 
@@ -479,11 +549,17 @@ public class AvaTaxClient {
     /**
      * Retrieve geolocation information for a specified address
      * 
-     * Resolve an address against Avalara's address-validation system.  If the address can be resolved, this API 
-     * provides the latitude and longitude of the resolved location.  The value 'resolutionQuality' can be used 
-     * to identify how closely this address can be located.  If the address cannot be clearly located, use the 
+     * Resolve an address against Avalara's address-validation system.  If the address can be resolved, this API
+     * provides the latitude and longitude of the resolved location.  The value 'resolutionQuality' can be used
+     * to identify how closely this address can be located.  If the address cannot be clearly located, use the
      * 'messages' structure to learn more about problems with this address.
      * This is the same API as the POST /api/v2/addresses/resolve endpoint.
+     * Both verbs are supported to provide for flexible implementation.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
+     * * This API depends on the following active services<br />*Required* (all):  AutoAddress.
      * 
      * @param line1 Line 1
      * @param line2 Line 2
@@ -511,11 +587,17 @@ public class AvaTaxClient {
     /**
      * Retrieve geolocation information for a specified address
      * 
-     * Resolve an address against Avalara's address-validation system.  If the address can be resolved, this API 
-     * provides the latitude and longitude of the resolved location.  The value 'resolutionQuality' can be used 
-     * to identify how closely this address can be located.  If the address cannot be clearly located, use the 
+     * Resolve an address against Avalara's address-validation system.  If the address can be resolved, this API
+     * provides the latitude and longitude of the resolved location.  The value 'resolutionQuality' can be used
+     * to identify how closely this address can be located.  If the address cannot be clearly located, use the
      * 'messages' structure to learn more about problems with this address.
      * This is the same API as the POST /api/v2/addresses/resolve endpoint.
+     * Both verbs are supported to provide for flexible implementation.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
+     * * This API depends on the following active services<br />*Required* (all):  AutoAddress.
      * 
      * @param line1 Line 1
      * @param line2 Line 2
@@ -543,11 +625,17 @@ public class AvaTaxClient {
     /**
      * Retrieve geolocation information for a specified address
      * 
-     * Resolve an address against Avalara's address-validation system.  If the address can be resolved, this API 
-     * provides the latitude and longitude of the resolved location.  The value 'resolutionQuality' can be used 
-     * to identify how closely this address can be located.  If the address cannot be clearly located, use the 
+     * Resolve an address against Avalara's address-validation system.  If the address can be resolved, this API
+     * provides the latitude and longitude of the resolved location.  The value 'resolutionQuality' can be used
+     * to identify how closely this address can be located.  If the address cannot be clearly located, use the
      * 'messages' structure to learn more about problems with this address.
      * This is the same API as the GET /api/v2/addresses/resolve endpoint.
+     * Both verbs are supported to provide for flexible implementation.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
+     * * This API depends on the following active services<br />*Required* (all):  AutoAddress.
      * 
      * @param model The address to resolve
      * @return AddressResolutionModel
@@ -560,11 +648,17 @@ public class AvaTaxClient {
     /**
      * Retrieve geolocation information for a specified address
      * 
-     * Resolve an address against Avalara's address-validation system.  If the address can be resolved, this API 
-     * provides the latitude and longitude of the resolved location.  The value 'resolutionQuality' can be used 
-     * to identify how closely this address can be located.  If the address cannot be clearly located, use the 
+     * Resolve an address against Avalara's address-validation system.  If the address can be resolved, this API
+     * provides the latitude and longitude of the resolved location.  The value 'resolutionQuality' can be used
+     * to identify how closely this address can be located.  If the address cannot be clearly located, use the
      * 'messages' structure to learn more about problems with this address.
      * This is the same API as the GET /api/v2/addresses/resolve endpoint.
+     * Both verbs are supported to provide for flexible implementation.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
+     * * This API depends on the following active services<br />*Required* (all):  AutoAddress.
      * 
      * @param model The address to resolve
      * @return AddressResolutionModel
@@ -575,387 +669,16 @@ public class AvaTaxClient {
     }
 
     /**
-     * Approve an advanced rule script to run.
-     * 
-     * This API is available by invite only and implementation support is required. 
-     * Please contact your Customer Account Manager if you are interested in using 
-     * 
-     * @param accountId The ID of the account that owns the Advanced Rule.
-     * @param scriptType The script transform type: Request or Response. (See AdvancedRuleScriptType::* for a list of allowable values)
-     * @return AdvancedRuleScriptModel
-     */
-    public AdvancedRuleScriptModel approveAdvancedRuleScript(Integer accountId, AdvancedRuleScriptType scriptType) throws Exception {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/advancedrulescripts/{scriptType}/approve");
-        path.applyField("accountId", accountId);
-        path.applyField("scriptType", scriptType);
-        return ((RestCall<AdvancedRuleScriptModel>)restCallFactory.createRestCall("post", path, null, new TypeToken<AdvancedRuleScriptModel>(){})).call();
-    }
-
-    /**
-     * Approve an advanced rule script to run.
-     * 
-     * This API is available by invite only and implementation support is required. 
-     * Please contact your Customer Account Manager if you are interested in using 
-     * 
-     * @param accountId The ID of the account that owns the Advanced Rule.
-     * @param scriptType The script transform type: Request or Response. (See AdvancedRuleScriptType::* for a list of allowable values)
-     * @return AdvancedRuleScriptModel
-     */
-    public Future<AdvancedRuleScriptModel> approveAdvancedRuleScriptAsync(Integer accountId, AdvancedRuleScriptType scriptType) {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/advancedrulescripts/{scriptType}/approve");
-        path.applyField("accountId", accountId);
-        path.applyField("scriptType", scriptType);
-        return this.threadPool.submit((RestCall<AdvancedRuleScriptModel>)restCallFactory.createRestCall("post", path, null, new TypeToken<AdvancedRuleScriptModel>(){}));
-    }
-
-    /**
-     * Create an advanced rule.
-     * 
-     * This API is available by invite only and implementation support is required. 
-     * Please contact your Customer Account Manager if you are interested in using 
-     * 
-     * @param accountId The ID of the account that will own the Advanced Rule.
-     * @param scriptType The script transform type, Request or Response. (See AdvancedRuleScriptType::* for a list of allowable values)
-     * @param crashBehavior The behavior the script should take if it crashes: Fail or Proceed. (See AdvancedRuleCrashBehavior::* for a list of allowable values)
-     * @param file The JavaScript file containing the advanced rule.
-     * @return String
-     */
-    public String createAdvancedRuleScript(Integer accountId, AdvancedRuleScriptType scriptType, AdvancedRuleCrashBehavior crashBehavior, String file) throws Exception {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/advancedrulescripts/{scriptType}");
-        path.applyField("accountId", accountId);
-        path.applyField("scriptType", scriptType);
-        path.addQuery("crashBehavior", crashBehavior);
-        return ((RestCall<String>)restCallFactory.createRestCall("post", path, null, new TypeToken<String>(){})).call();
-    }
-
-    /**
-     * Create an advanced rule.
-     * 
-     * This API is available by invite only and implementation support is required. 
-     * Please contact your Customer Account Manager if you are interested in using 
-     * 
-     * @param accountId The ID of the account that will own the Advanced Rule.
-     * @param scriptType The script transform type, Request or Response. (See AdvancedRuleScriptType::* for a list of allowable values)
-     * @param crashBehavior The behavior the script should take if it crashes: Fail or Proceed. (See AdvancedRuleCrashBehavior::* for a list of allowable values)
-     * @param file The JavaScript file containing the advanced rule.
-     * @return String
-     */
-    public Future<String> createAdvancedRuleScriptAsync(Integer accountId, AdvancedRuleScriptType scriptType, AdvancedRuleCrashBehavior crashBehavior, String file) {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/advancedrulescripts/{scriptType}");
-        path.applyField("accountId", accountId);
-        path.applyField("scriptType", scriptType);
-        path.addQuery("crashBehavior", crashBehavior);
-        return this.threadPool.submit((RestCall<String>)restCallFactory.createRestCall("post", path, null, new TypeToken<String>(){}));
-    }
-
-    /**
-     * Create a lookup table for an advanced rule
-     * 
-     * This API is available by invite only and implementation support is required. 
-     * Please contact your Customer Account Manager if you are interested in using 
-     * 
-     * @param accountId The ID of the account that owns the Advanced Rule.
-     * @param csvTableName The name to assign the CSV lookup table.
-     * @param file A CSV file containing lookup data for an advanced rule.
-     * @return String
-     */
-    public String createAdvancedRuleTable(Integer accountId, String csvTableName, String file) throws Exception {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/advancedruletables/{csvTableName}");
-        path.applyField("accountId", accountId);
-        path.applyField("csvTableName", csvTableName);
-        return ((RestCall<String>)restCallFactory.createRestCall("post", path, null, new TypeToken<String>(){})).call();
-    }
-
-    /**
-     * Create a lookup table for an advanced rule
-     * 
-     * This API is available by invite only and implementation support is required. 
-     * Please contact your Customer Account Manager if you are interested in using 
-     * 
-     * @param accountId The ID of the account that owns the Advanced Rule.
-     * @param csvTableName The name to assign the CSV lookup table.
-     * @param file A CSV file containing lookup data for an advanced rule.
-     * @return String
-     */
-    public Future<String> createAdvancedRuleTableAsync(Integer accountId, String csvTableName, String file) {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/advancedruletables/{csvTableName}");
-        path.applyField("accountId", accountId);
-        path.applyField("csvTableName", csvTableName);
-        return this.threadPool.submit((RestCall<String>)restCallFactory.createRestCall("post", path, null, new TypeToken<String>(){}));
-    }
-
-    /**
-     * Delete an account's active advanced rule
-     * 
-     * This API is available by invite only and implementation support is required. 
-     * Please contact your Customer Account Manager if you are interested in using 
-     * 
-     * @param accountId The ID of the account that owns the Advanced Rule.
-     * @param scriptType The script transform type: Request or Response. (See AdvancedRuleScriptType::* for a list of allowable values)
-     * @return ArrayList<ErrorDetail>
-     */
-    public ArrayList<ErrorDetail> deleteAdvancedRuleScript(Integer accountId, AdvancedRuleScriptType scriptType) throws Exception {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/advancedrulescripts/{scriptType}");
-        path.applyField("accountId", accountId);
-        path.applyField("scriptType", scriptType);
-        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){})).call();
-    }
-
-    /**
-     * Delete an account's active advanced rule
-     * 
-     * This API is available by invite only and implementation support is required. 
-     * Please contact your Customer Account Manager if you are interested in using 
-     * 
-     * @param accountId The ID of the account that owns the Advanced Rule.
-     * @param scriptType The script transform type: Request or Response. (See AdvancedRuleScriptType::* for a list of allowable values)
-     * @return ArrayList<ErrorDetail>
-     */
-    public Future<ArrayList<ErrorDetail>> deleteAdvancedRuleScriptAsync(Integer accountId, AdvancedRuleScriptType scriptType) {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/advancedrulescripts/{scriptType}");
-        path.applyField("accountId", accountId);
-        path.applyField("scriptType", scriptType);
-        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){}));
-    }
-
-    /**
-     * Delete a lookup table for an advanced rule.
-     * 
-     * This API is available by invite only and implementation support is required. 
-     * Please contact your Customer Account Manager if you are interested in using 
-     * 
-     * @param accountId The ID of the account that owns the Advanced Rule.
-     * @param csvTableName The name of the CSV lookup table to delete.
-     * @return ArrayList<ErrorDetail>
-     */
-    public ArrayList<ErrorDetail> deleteAdvancedRuleTable(Integer accountId, String csvTableName) throws Exception {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/advancedruletables/{csvTableName}");
-        path.applyField("accountId", accountId);
-        path.applyField("csvTableName", csvTableName);
-        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){})).call();
-    }
-
-    /**
-     * Delete a lookup table for an advanced rule.
-     * 
-     * This API is available by invite only and implementation support is required. 
-     * Please contact your Customer Account Manager if you are interested in using 
-     * 
-     * @param accountId The ID of the account that owns the Advanced Rule.
-     * @param csvTableName The name of the CSV lookup table to delete.
-     * @return ArrayList<ErrorDetail>
-     */
-    public Future<ArrayList<ErrorDetail>> deleteAdvancedRuleTableAsync(Integer accountId, String csvTableName) {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/advancedruletables/{csvTableName}");
-        path.applyField("accountId", accountId);
-        path.applyField("csvTableName", csvTableName);
-        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){}));
-    }
-
-    /**
-     * Disable an advanced rule so that it cannot be run.
-     * 
-     * This API is available by invite only and implementation support is required. 
-     * Please contact your Customer Account Manager if you are interested in using 
-     * 
-     * @param accountId 
-     * @param scriptType The script transform type: Request or Response. (See AdvancedRuleScriptType::* for a list of allowable values)
-     * @return AdvancedRuleScriptModel
-     */
-    public AdvancedRuleScriptModel disableAdvancedRuleScript(Integer accountId, AdvancedRuleScriptType scriptType) throws Exception {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/advancedrulescripts/{scriptType}/disable");
-        path.applyField("accountId", accountId);
-        path.applyField("scriptType", scriptType);
-        return ((RestCall<AdvancedRuleScriptModel>)restCallFactory.createRestCall("post", path, null, new TypeToken<AdvancedRuleScriptModel>(){})).call();
-    }
-
-    /**
-     * Disable an advanced rule so that it cannot be run.
-     * 
-     * This API is available by invite only and implementation support is required. 
-     * Please contact your Customer Account Manager if you are interested in using 
-     * 
-     * @param accountId 
-     * @param scriptType The script transform type: Request or Response. (See AdvancedRuleScriptType::* for a list of allowable values)
-     * @return AdvancedRuleScriptModel
-     */
-    public Future<AdvancedRuleScriptModel> disableAdvancedRuleScriptAsync(Integer accountId, AdvancedRuleScriptType scriptType) {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/advancedrulescripts/{scriptType}/disable");
-        path.applyField("accountId", accountId);
-        path.applyField("scriptType", scriptType);
-        return this.threadPool.submit((RestCall<AdvancedRuleScriptModel>)restCallFactory.createRestCall("post", path, null, new TypeToken<AdvancedRuleScriptModel>(){}));
-    }
-
-    /**
-     * Enable an approved advanced rule so that it can be run.
-     * 
-     * This API is available by invite only and implementation support is required. 
-     * Please contact your Customer Account Manager if you are interested in using 
-     * 
-     * @param accountId 
-     * @param scriptType The script transform type: Request or Response. (See AdvancedRuleScriptType::* for a list of allowable values)
-     * @return AdvancedRuleScriptModel
-     */
-    public AdvancedRuleScriptModel enableAdvancedRuleScript(Integer accountId, AdvancedRuleScriptType scriptType) throws Exception {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/advancedrulescripts/{scriptType}/enable");
-        path.applyField("accountId", accountId);
-        path.applyField("scriptType", scriptType);
-        return ((RestCall<AdvancedRuleScriptModel>)restCallFactory.createRestCall("post", path, null, new TypeToken<AdvancedRuleScriptModel>(){})).call();
-    }
-
-    /**
-     * Enable an approved advanced rule so that it can be run.
-     * 
-     * This API is available by invite only and implementation support is required. 
-     * Please contact your Customer Account Manager if you are interested in using 
-     * 
-     * @param accountId 
-     * @param scriptType The script transform type: Request or Response. (See AdvancedRuleScriptType::* for a list of allowable values)
-     * @return AdvancedRuleScriptModel
-     */
-    public Future<AdvancedRuleScriptModel> enableAdvancedRuleScriptAsync(Integer accountId, AdvancedRuleScriptType scriptType) {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/advancedrulescripts/{scriptType}/enable");
-        path.applyField("accountId", accountId);
-        path.applyField("scriptType", scriptType);
-        return this.threadPool.submit((RestCall<AdvancedRuleScriptModel>)restCallFactory.createRestCall("post", path, null, new TypeToken<AdvancedRuleScriptModel>(){}));
-    }
-
-    /**
-     * Get an account's advanced rule script.
-     * 
-     * This API is available by invite only and implementation support is required. 
-     * Please contact your Customer Account Manager if you are interested in using 
-     * 
-     * @param accountId The ID of the account that owns the Advanced Rule.
-     * @param scriptType The script transform type: Request or Response. (See AdvancedRuleScriptType::* for a list of allowable values)
-     * @return AdvancedRuleScriptModel
-     */
-    public AdvancedRuleScriptModel getAdvancedRuleScript(Integer accountId, AdvancedRuleScriptType scriptType) throws Exception {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/advancedrulescripts/{scriptType}");
-        path.applyField("accountId", accountId);
-        path.applyField("scriptType", scriptType);
-        return ((RestCall<AdvancedRuleScriptModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<AdvancedRuleScriptModel>(){})).call();
-    }
-
-    /**
-     * Get an account's advanced rule script.
-     * 
-     * This API is available by invite only and implementation support is required. 
-     * Please contact your Customer Account Manager if you are interested in using 
-     * 
-     * @param accountId The ID of the account that owns the Advanced Rule.
-     * @param scriptType The script transform type: Request or Response. (See AdvancedRuleScriptType::* for a list of allowable values)
-     * @return AdvancedRuleScriptModel
-     */
-    public Future<AdvancedRuleScriptModel> getAdvancedRuleScriptAsync(Integer accountId, AdvancedRuleScriptType scriptType) {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/advancedrulescripts/{scriptType}");
-        path.applyField("accountId", accountId);
-        path.applyField("scriptType", scriptType);
-        return this.threadPool.submit((RestCall<AdvancedRuleScriptModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<AdvancedRuleScriptModel>(){}));
-    }
-
-    /**
-     * Get an advanced rule lookup table for an account
-     * 
-     * This API is available by invite only and implementation support is required. 
-     * Please contact your Customer Account Manager if you are interested in using 
-     * 
-     * @param accountId The ID of the account that owns the Advanced Rule.
-     * @param csvTableName The name of the CSV lookup table to get.
-     * @return AdvancedRuleTableModel
-     */
-    public AdvancedRuleTableModel getAdvancedRuleTable(Integer accountId, String csvTableName) throws Exception {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/advancedruletables/{csvTableName}");
-        path.applyField("accountId", accountId);
-        path.applyField("csvTableName", csvTableName);
-        return ((RestCall<AdvancedRuleTableModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<AdvancedRuleTableModel>(){})).call();
-    }
-
-    /**
-     * Get an advanced rule lookup table for an account
-     * 
-     * This API is available by invite only and implementation support is required. 
-     * Please contact your Customer Account Manager if you are interested in using 
-     * 
-     * @param accountId The ID of the account that owns the Advanced Rule.
-     * @param csvTableName The name of the CSV lookup table to get.
-     * @return AdvancedRuleTableModel
-     */
-    public Future<AdvancedRuleTableModel> getAdvancedRuleTableAsync(Integer accountId, String csvTableName) {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/advancedruletables/{csvTableName}");
-        path.applyField("accountId", accountId);
-        path.applyField("csvTableName", csvTableName);
-        return this.threadPool.submit((RestCall<AdvancedRuleTableModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<AdvancedRuleTableModel>(){}));
-    }
-
-    /**
-     * Get all advanced rule lookup tables for an account
-     * 
-     * This API is available by invite only and implementation support is required. 
-     * Please contact your Customer Account Manager if you are interested in using 
-     * 
-     * @param accountId The ID of the account that owns the Advanced Rule.
-     * @return AdvancedRuleTableModel
-     */
-    public AdvancedRuleTableModel getAdvancedRuleTables(Integer accountId) throws Exception {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/advancedruletables");
-        path.applyField("accountId", accountId);
-        return ((RestCall<AdvancedRuleTableModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<AdvancedRuleTableModel>(){})).call();
-    }
-
-    /**
-     * Get all advanced rule lookup tables for an account
-     * 
-     * This API is available by invite only and implementation support is required. 
-     * Please contact your Customer Account Manager if you are interested in using 
-     * 
-     * @param accountId The ID of the account that owns the Advanced Rule.
-     * @return AdvancedRuleTableModel
-     */
-    public Future<AdvancedRuleTableModel> getAdvancedRuleTablesAsync(Integer accountId) {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/advancedruletables");
-        path.applyField("accountId", accountId);
-        return this.threadPool.submit((RestCall<AdvancedRuleTableModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<AdvancedRuleTableModel>(){}));
-    }
-
-    /**
-     * Unapprove an advanced rule script so that it cannot be run.
-     * 
-     * This API is available by invite only and implementation support is required. 
-     * Please contact your Customer Account Manager if you are interested in using 
-     * 
-     * @param accountId The ID of the account that owns the Advanced Rule.
-     * @param scriptType The script transform type: Request or Response. (See AdvancedRuleScriptType::* for a list of allowable values)
-     * @return AdvancedRuleScriptModel
-     */
-    public AdvancedRuleScriptModel unapproveAdvancedRuleScript(Integer accountId, AdvancedRuleScriptType scriptType) throws Exception {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/advancedrulescripts/{scriptType}/unapprove");
-        path.applyField("accountId", accountId);
-        path.applyField("scriptType", scriptType);
-        return ((RestCall<AdvancedRuleScriptModel>)restCallFactory.createRestCall("post", path, null, new TypeToken<AdvancedRuleScriptModel>(){})).call();
-    }
-
-    /**
-     * Unapprove an advanced rule script so that it cannot be run.
-     * 
-     * This API is available by invite only and implementation support is required. 
-     * Please contact your Customer Account Manager if you are interested in using 
-     * 
-     * @param accountId The ID of the account that owns the Advanced Rule.
-     * @param scriptType The script transform type: Request or Response. (See AdvancedRuleScriptType::* for a list of allowable values)
-     * @return AdvancedRuleScriptModel
-     */
-    public Future<AdvancedRuleScriptModel> unapproveAdvancedRuleScriptAsync(Integer accountId, AdvancedRuleScriptType scriptType) {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/advancedrulescripts/{scriptType}/unapprove");
-        path.applyField("accountId", accountId);
-        path.applyField("scriptType", scriptType);
-        return this.threadPool.submit((RestCall<AdvancedRuleScriptModel>)restCallFactory.createRestCall("post", path, null, new TypeToken<AdvancedRuleScriptModel>(){}));
-    }
-
-    /**
      * Create a new AvaFileForm
      * 
      * Create one or more AvaFileForms
+     * A 'AvaFileForm' represents a form supported by our returns team
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires the user role Compliance Root User.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.
+     * * This API is available by invitation only.  To request access to this feature, please speak to a business development manager and request host address whitelisting for [Returns] for your servers.
      * 
      * @param model The AvaFileForm you wish to create.
      * @return ArrayList<AvaFileFormModel>
@@ -969,6 +692,13 @@ public class AvaTaxClient {
      * Create a new AvaFileForm
      * 
      * Create one or more AvaFileForms
+     * A 'AvaFileForm' represents a form supported by our returns team
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires the user role Compliance Root User.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.
+     * * This API is available by invitation only.  To request access to this feature, please speak to a business development manager and request host address whitelisting for [Returns] for your servers.
      * 
      * @param model The AvaFileForm you wish to create.
      * @return ArrayList<AvaFileFormModel>
@@ -980,6 +710,14 @@ public class AvaTaxClient {
 
     /**
      * Delete a single AvaFileForm
+     * 
+     * Marks the existing AvaFileForm object at this URL as deleted.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: Compliance Root User, ComplianceUser, FirmAdmin.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.
+     * * This API is available by invitation only.  To request access to this feature, please speak to a business development manager and request host address whitelisting for [Returns] for your servers.
      * 
      * @param id The ID of the AvaFileForm you wish to delete.
      * @return ArrayList<ErrorDetail>
@@ -993,6 +731,14 @@ public class AvaTaxClient {
     /**
      * Delete a single AvaFileForm
      * 
+     * Marks the existing AvaFileForm object at this URL as deleted.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: Compliance Root User, ComplianceUser, FirmAdmin.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.
+     * * This API is available by invitation only.  To request access to this feature, please speak to a business development manager and request host address whitelisting for [Returns] for your servers.
+     * 
      * @param id The ID of the AvaFileForm you wish to delete.
      * @return ArrayList<ErrorDetail>
      */
@@ -1005,6 +751,14 @@ public class AvaTaxClient {
     /**
      * Retrieve a single AvaFileForm
      * 
+     * Get the AvaFileForm object identified by this URL.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, CompanyAdmin, CompanyUser, Compliance Root User, Compliance Temp User, ComplianceAdmin, ComplianceUser, FirmAdmin, FirmUser, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin.
+     * * This API is available by invitation only.  To request access to this feature, please speak to a business development manager and request host address whitelisting for [Returns] for your servers.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.
+     * 
      * @param id The primary key of this AvaFileForm
      * @return AvaFileFormModel
      */
@@ -1016,6 +770,14 @@ public class AvaTaxClient {
 
     /**
      * Retrieve a single AvaFileForm
+     * 
+     * Get the AvaFileForm object identified by this URL.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, CompanyAdmin, CompanyUser, Compliance Root User, Compliance Temp User, ComplianceAdmin, ComplianceUser, FirmAdmin, FirmUser, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin.
+     * * This API is available by invitation only.  To request access to this feature, please speak to a business development manager and request host address whitelisting for [Returns] for your servers.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.
      * 
      * @param id The primary key of this AvaFileForm
      * @return AvaFileFormModel
@@ -1030,6 +792,13 @@ public class AvaTaxClient {
      * Retrieve all AvaFileForms
      * 
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * Paginate your results using the `$top`, `$skip`, and `$orderby` parameters.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, CompanyAdmin, CompanyUser, Compliance Root User, Compliance Temp User, ComplianceAdmin, ComplianceUser, FirmAdmin, FirmUser, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.
+     * * This API is available by invitation only.  To request access to this feature, please speak to a business development manager and request host address whitelisting for [Returns] for your servers.
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* outletTypeId
      * @param include A comma separated list of additional data to retrieve.
@@ -1052,6 +821,13 @@ public class AvaTaxClient {
      * Retrieve all AvaFileForms
      * 
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * Paginate your results using the `$top`, `$skip`, and `$orderby` parameters.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, CompanyAdmin, CompanyUser, Compliance Root User, Compliance Temp User, ComplianceAdmin, ComplianceUser, FirmAdmin, FirmUser, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.
+     * * This API is available by invitation only.  To request access to this feature, please speak to a business development manager and request host address whitelisting for [Returns] for your servers.
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* outletTypeId
      * @param include A comma separated list of additional data to retrieve.
@@ -1074,6 +850,13 @@ public class AvaTaxClient {
      * Update a AvaFileForm
      * 
      * All data from the existing object will be replaced with data in the object you PUT.  
+     * To set a field's value to null, you may either set its value to null or omit that field from the object you post.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires the user role Compliance Root User.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.
+     * * This API is available by invitation only.  To request access to this feature, please speak to a business development manager and request host address whitelisting for [Returns] for your servers.
      * 
      * @param id The ID of the AvaFileForm you wish to update
      * @param model The AvaFileForm model you wish to update.
@@ -1089,6 +872,13 @@ public class AvaTaxClient {
      * Update a AvaFileForm
      * 
      * All data from the existing object will be replaced with data in the object you PUT.  
+     * To set a field's value to null, you may either set its value to null or omit that field from the object you post.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires the user role Compliance Root User.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.
+     * * This API is available by invitation only.  To request access to this feature, please speak to a business development manager and request host address whitelisting for [Returns] for your servers.
      * 
      * @param id The ID of the AvaFileForm you wish to update
      * @param model The AvaFileForm model you wish to update.
@@ -1116,6 +906,11 @@ public class AvaTaxClient {
      * because of batch sizes in the queue vary, AvaTax API is unable to accurately 
      * predict when a batch will complete. If high performance processing is 
      * required, please use the 
+     * [CreateTransaction API](https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Transactions/CreateTransaction/).
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, CompanyAdmin, CSPTester, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin.
      * 
      * @param companyId The ID of the company that owns this batch.
      * @param model The batch you wish to create.
@@ -1143,6 +938,11 @@ public class AvaTaxClient {
      * because of batch sizes in the queue vary, AvaTax API is unable to accurately 
      * predict when a batch will complete. If high performance processing is 
      * required, please use the 
+     * [CreateTransaction API](https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Transactions/CreateTransaction/).
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, CompanyAdmin, CSPTester, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin.
      * 
      * @param companyId The ID of the company that owns this batch.
      * @param model The batch you wish to create.
@@ -1166,6 +966,11 @@ public class AvaTaxClient {
      * because of batch sizes in the queue vary, AvaTax API is unable to accurately 
      * predict when a batch will complete. If high performance processing is 
      * required, please use the 
+     * [CreateTransaction API](https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Transactions/CreateTransaction/).
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: CSPAdmin, CSPTester, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin.
      * 
      * @param companyId The ID of the company that owns this batch.
      * @param id The ID of the batch to delete.
@@ -1190,6 +995,11 @@ public class AvaTaxClient {
      * because of batch sizes in the queue vary, AvaTax API is unable to accurately 
      * predict when a batch will complete. If high performance processing is 
      * required, please use the 
+     * [CreateTransaction API](https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Transactions/CreateTransaction/).
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: CSPAdmin, CSPTester, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin.
      * 
      * @param companyId The ID of the company that owns this batch.
      * @param id The ID of the batch to delete.
@@ -1204,6 +1014,12 @@ public class AvaTaxClient {
 
     /**
      * Download a single batch file
+     * 
+     * Download a single batch file identified by this URL.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
      * @param companyId The ID of the company that owns this batch
      * @param batchId The ID of the batch object
@@ -1220,6 +1036,12 @@ public class AvaTaxClient {
 
     /**
      * Download a single batch file
+     * 
+     * Download a single batch file identified by this URL.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
      * @param companyId The ID of the company that owns this batch
      * @param batchId The ID of the batch object
@@ -1251,6 +1073,11 @@ public class AvaTaxClient {
      * because of batch sizes in the queue vary, AvaTax API is unable to accurately 
      * predict when a batch will complete. If high performance processing is 
      * required, please use the 
+     * [CreateTransaction API](https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Transactions/CreateTransaction/).
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
      * @param companyId The ID of the company that owns this batch
      * @param id The primary key of this batch
@@ -1280,6 +1107,11 @@ public class AvaTaxClient {
      * because of batch sizes in the queue vary, AvaTax API is unable to accurately 
      * predict when a batch will complete. If high performance processing is 
      * required, please use the 
+     * [CreateTransaction API](https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Transactions/CreateTransaction/).
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
      * @param companyId The ID of the company that owns this batch
      * @param id The primary key of this batch
@@ -1315,6 +1147,11 @@ public class AvaTaxClient {
      * because of batch sizes in the queue vary, AvaTax API is unable to accurately 
      * predict when a batch will complete. If high performance processing is 
      * required, please use the
+     * [CreateTransaction API](https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Transactions/CreateTransaction/).
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
      * @param companyId The ID of the company that owns these batches
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* files
@@ -1358,6 +1195,11 @@ public class AvaTaxClient {
      * because of batch sizes in the queue vary, AvaTax API is unable to accurately 
      * predict when a batch will complete. If high performance processing is 
      * required, please use the
+     * [CreateTransaction API](https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Transactions/CreateTransaction/).
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
      * @param companyId The ID of the company that owns these batches
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* files
@@ -1398,6 +1240,11 @@ public class AvaTaxClient {
      * because of batch sizes in the queue vary, AvaTax API is unable to accurately 
      * predict when a batch will complete. If high performance processing is 
      * required, please use the
+     * [CreateTransaction API](https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Transactions/CreateTransaction/).
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* files
      * @param include A comma separated list of additional data to retrieve.
@@ -1436,6 +1283,11 @@ public class AvaTaxClient {
      * because of batch sizes in the queue vary, AvaTax API is unable to accurately 
      * predict when a batch will complete. If high performance processing is 
      * required, please use the
+     * [CreateTransaction API](https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Transactions/CreateTransaction/).
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* files
      * @param include A comma separated list of additional data to retrieve.
@@ -1471,6 +1323,12 @@ public class AvaTaxClient {
      * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
      * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
      * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document 
+     * storage for this company, call `RequestCertificateSetup`.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin.
+     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
      * 
      * @param companyId The unique ID number of the company that will record certificates
      * @param customerCode The number of the customer where the request is sent to
@@ -1501,6 +1359,12 @@ public class AvaTaxClient {
      * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
      * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
      * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document 
+     * storage for this company, call `RequestCertificateSetup`.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin.
+     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
      * 
      * @param companyId The unique ID number of the company that will record certificates
      * @param customerCode The number of the customer where the request is sent to
@@ -1531,6 +1395,12 @@ public class AvaTaxClient {
      * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
      * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
      * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document 
+     * storage for this company, call `RequestCertificateSetup`.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
+     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
      * 
      * @param companyId The unique ID number of the company that issued this invitation
      * @param customerCode The number of the customer where the request is sent to
@@ -1564,6 +1434,12 @@ public class AvaTaxClient {
      * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
      * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
      * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document 
+     * storage for this company, call `RequestCertificateSetup`.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
+     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
      * 
      * @param companyId The unique ID number of the company that issued this invitation
      * @param customerCode The number of the customer where the request is sent to
@@ -1597,6 +1473,12 @@ public class AvaTaxClient {
      * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
      * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
      * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document 
+     * storage for this company, call `RequestCertificateSetup`.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
+     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
      * 
      * @param companyId The unique ID number of the company that issued this invitation
      * @param include OPTIONAL: A comma separated list of special fetch options.       No options are defined at this time.
@@ -1634,6 +1516,12 @@ public class AvaTaxClient {
      * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
      * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
      * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document 
+     * storage for this company, call `RequestCertificateSetup`.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
+     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
      * 
      * @param companyId The unique ID number of the company that issued this invitation
      * @param include OPTIONAL: A comma separated list of special fetch options.       No options are defined at this time.
@@ -1658,23 +1546,29 @@ public class AvaTaxClient {
      * Create certificates for this company
      * 
      * Record one or more certificates document for this company.
-     * 
+     *             
      * A certificate is a document stored in either AvaTax Exemptions or CertCapture.  The certificate document
      * can contain information about a customer's eligibility for exemption from sales or use taxes based on
-     * criteria you specify when you store the certificate.  To view or manage your certificates directly, please 
+     * criteria you specify when you store the certificate.  To view or manage your certificates directly, please
      * log onto the administrative website for the product you purchased.
-     * 
+     *             
      * When you create a certificate, it will be processed by Avalara and will become available for use in
      * calculating tax exemptions when processing is complete.  For a certificate to be used in calculating exemptions,
      * it must have the following:
-     * 
+     *             
      * * A list of exposure zones indicating where the certificate is valid
      * * A link to the customer that is allowed to use this certificate
      * * Your tax transaction must contain the correct customer code
-     * 
+     *             
      * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
      * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
-     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document 
+     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document
+     * storage for this company, call `RequestCertificateSetup`.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
+     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
      * 
      * @param companyId The ID number of the company recording this certificate
      * @param preValidatedExemptionReason If set to true, the certificate will bypass the human verification process.
@@ -1692,23 +1586,29 @@ public class AvaTaxClient {
      * Create certificates for this company
      * 
      * Record one or more certificates document for this company.
-     * 
+     *             
      * A certificate is a document stored in either AvaTax Exemptions or CertCapture.  The certificate document
      * can contain information about a customer's eligibility for exemption from sales or use taxes based on
-     * criteria you specify when you store the certificate.  To view or manage your certificates directly, please 
+     * criteria you specify when you store the certificate.  To view or manage your certificates directly, please
      * log onto the administrative website for the product you purchased.
-     * 
+     *             
      * When you create a certificate, it will be processed by Avalara and will become available for use in
      * calculating tax exemptions when processing is complete.  For a certificate to be used in calculating exemptions,
      * it must have the following:
-     * 
+     *             
      * * A list of exposure zones indicating where the certificate is valid
      * * A link to the customer that is allowed to use this certificate
      * * Your tax transaction must contain the correct customer code
-     * 
+     *             
      * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
      * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
-     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document 
+     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document
+     * storage for this company, call `RequestCertificateSetup`.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
+     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
      * 
      * @param companyId The ID number of the company recording this certificate
      * @param preValidatedExemptionReason If set to true, the certificate will bypass the human verification process.
@@ -1726,17 +1626,23 @@ public class AvaTaxClient {
      * Revoke and delete a certificate
      * 
      * Revoke the certificate identified by this URL, then delete it.
-     * 
+     *             
      * A certificate is a document stored in either AvaTax Exemptions or CertCapture.  The certificate document
      * can contain information about a customer's eligibility for exemption from sales or use taxes based on
-     * criteria you specify when you store the certificate.  To view or manage your certificates directly, please 
+     * criteria you specify when you store the certificate.  To view or manage your certificates directly, please
      * log onto the administrative website for the product you purchased.
-     * 
+     *             
      * Revoked certificates can no longer be used.
-     * 
+     *             
      * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
      * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
-     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document 
+     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document
+     * storage for this company, call `RequestCertificateSetup`.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin.
+     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
      * 
      * @param companyId The unique ID number of the company that recorded this certificate
      * @param id The unique ID number of this certificate
@@ -1753,17 +1659,23 @@ public class AvaTaxClient {
      * Revoke and delete a certificate
      * 
      * Revoke the certificate identified by this URL, then delete it.
-     * 
+     *             
      * A certificate is a document stored in either AvaTax Exemptions or CertCapture.  The certificate document
      * can contain information about a customer's eligibility for exemption from sales or use taxes based on
-     * criteria you specify when you store the certificate.  To view or manage your certificates directly, please 
+     * criteria you specify when you store the certificate.  To view or manage your certificates directly, please
      * log onto the administrative website for the product you purchased.
-     * 
+     *             
      * Revoked certificates can no longer be used.
-     * 
+     *             
      * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
      * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
-     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document 
+     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document
+     * storage for this company, call `RequestCertificateSetup`.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin.
+     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
      * 
      * @param companyId The unique ID number of the company that recorded this certificate
      * @param id The unique ID number of this certificate
@@ -1780,18 +1692,24 @@ public class AvaTaxClient {
      * Download an image for this certificate
      * 
      * Download an image or PDF file for this certificate.
-     * 
+     *             
      * This API can be used to download either a single-page preview of the certificate or a full PDF document.
      * To retrieve a preview image, set the `$type` parameter to `Jpeg` and the `$page` parameter to `1`.
-     * 
+     *             
      * A certificate is a document stored in either AvaTax Exemptions or CertCapture.  The certificate document
      * can contain information about a customer's eligibility for exemption from sales or use taxes based on
-     * criteria you specify when you store the certificate.  To view or manage your certificates directly, please 
+     * criteria you specify when you store the certificate.  To view or manage your certificates directly, please
      * log onto the administrative website for the product you purchased.
-     * 
+     *             
      * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
      * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
-     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document 
+     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document
+     * storage for this company, call `RequestCertificateSetup`.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
+     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
      * 
      * @param companyId The unique ID number of the company that recorded this certificate
      * @param id The unique ID number of this certificate
@@ -1812,18 +1730,24 @@ public class AvaTaxClient {
      * Download an image for this certificate
      * 
      * Download an image or PDF file for this certificate.
-     * 
+     *             
      * This API can be used to download either a single-page preview of the certificate or a full PDF document.
      * To retrieve a preview image, set the `$type` parameter to `Jpeg` and the `$page` parameter to `1`.
-     * 
+     *             
      * A certificate is a document stored in either AvaTax Exemptions or CertCapture.  The certificate document
      * can contain information about a customer's eligibility for exemption from sales or use taxes based on
-     * criteria you specify when you store the certificate.  To view or manage your certificates directly, please 
+     * criteria you specify when you store the certificate.  To view or manage your certificates directly, please
      * log onto the administrative website for the product you purchased.
-     * 
+     *             
      * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
      * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
-     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document 
+     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document
+     * storage for this company, call `RequestCertificateSetup`.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
+     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
      * 
      * @param companyId The unique ID number of the company that recorded this certificate
      * @param id The unique ID number of this certificate
@@ -1844,21 +1768,27 @@ public class AvaTaxClient {
      * Retrieve a single certificate
      * 
      * Get the current certificate identified by this URL.
-     * 
+     *             
      * A certificate is a document stored in either AvaTax Exemptions or CertCapture.  The certificate document
      * can contain information about a customer's eligibility for exemption from sales or use taxes based on
-     * criteria you specify when you store the certificate.  To view or manage your certificates directly, please 
+     * criteria you specify when you store the certificate.  To view or manage your certificates directly, please
      * log onto the administrative website for the product you purchased.
-     * 
+     *             
      * You can use the `$include` parameter to fetch the following additional objects for expansion:
-     * 
+     *             
      * * customers - Retrieves the list of customers linked to the certificate.
      * * po_numbers - Retrieves all PO numbers tied to the certificate.
      * * attributes - Retrieves all attributes applied to the certificate.
-     * 
+     *             
      * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
      * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
-     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document 
+     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document
+     * storage for this company, call `RequestCertificateSetup`.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
+     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
      * 
      * @param companyId The ID number of the company that recorded this certificate
      * @param id The unique ID number of this certificate
@@ -1877,21 +1807,27 @@ public class AvaTaxClient {
      * Retrieve a single certificate
      * 
      * Get the current certificate identified by this URL.
-     * 
+     *             
      * A certificate is a document stored in either AvaTax Exemptions or CertCapture.  The certificate document
      * can contain information about a customer's eligibility for exemption from sales or use taxes based on
-     * criteria you specify when you store the certificate.  To view or manage your certificates directly, please 
+     * criteria you specify when you store the certificate.  To view or manage your certificates directly, please
      * log onto the administrative website for the product you purchased.
-     * 
+     *             
      * You can use the `$include` parameter to fetch the following additional objects for expansion:
-     * 
+     *             
      * * customers - Retrieves the list of customers linked to the certificate.
      * * po_numbers - Retrieves all PO numbers tied to the certificate.
      * * attributes - Retrieves all attributes applied to the certificate.
-     * 
+     *             
      * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
      * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
-     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document 
+     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document
+     * storage for this company, call `RequestCertificateSetup`.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
+     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
      * 
      * @param companyId The ID number of the company that recorded this certificate
      * @param id The unique ID number of this certificate
@@ -1910,11 +1846,17 @@ public class AvaTaxClient {
      * Check a company's exemption certificate status.
      * 
      * Checks whether this company is configured to use exemption certificates in AvaTax.
-     * 
-     * Exemption certificates are tracked through a different auditable data store than the one that 
+     *             
+     * Exemption certificates are tracked through a different auditable data store than the one that
      * holds AvaTax transactions.  To use the AvaTax exemption certificate document store, please call
      * `GetCertificateSetup` to see if your company is configured to use the exemption certificate
      * document store.  To request setup, please call `RequestCertificateSetup` and your company will
+     * be configured with data storage in the auditable certificate system.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
+     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
      * 
      * @param companyId The company ID to check
      * @return ProvisionStatusModel
@@ -1929,11 +1871,17 @@ public class AvaTaxClient {
      * Check a company's exemption certificate status.
      * 
      * Checks whether this company is configured to use exemption certificates in AvaTax.
-     * 
-     * Exemption certificates are tracked through a different auditable data store than the one that 
+     *             
+     * Exemption certificates are tracked through a different auditable data store than the one that
      * holds AvaTax transactions.  To use the AvaTax exemption certificate document store, please call
      * `GetCertificateSetup` to see if your company is configured to use the exemption certificate
      * document store.  To request setup, please call `RequestCertificateSetup` and your company will
+     * be configured with data storage in the auditable certificate system.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
+     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
      * 
      * @param companyId The company ID to check
      * @return ProvisionStatusModel
@@ -1948,18 +1896,24 @@ public class AvaTaxClient {
      * Link attributes to a certificate
      * 
      * Link one or many attributes to a certificate.
-     * 
+     *             
      * A certificate may have multiple attributes that control its behavior.  You may link or unlink attributes to a
      * certificate at any time.  The full list of defined attributes may be found using `ListCertificateAttributes`.
-     * 
+     *             
      * A certificate is a document stored in either AvaTax Exemptions or CertCapture.  The certificate document
      * can contain information about a customer's eligibility for exemption from sales or use taxes based on
-     * criteria you specify when you store the certificate.  To view or manage your certificates directly, please 
+     * criteria you specify when you store the certificate.  To view or manage your certificates directly, please
      * log onto the administrative website for the product you purchased.
-     * 
+     *             
      * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
      * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
-     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document 
+     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document
+     * storage for this company, call `RequestCertificateSetup`.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin.
+     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
      * 
      * @param companyId The unique ID number of the company that recorded this certificate
      * @param id The unique ID number of this certificate
@@ -1977,18 +1931,24 @@ public class AvaTaxClient {
      * Link attributes to a certificate
      * 
      * Link one or many attributes to a certificate.
-     * 
+     *             
      * A certificate may have multiple attributes that control its behavior.  You may link or unlink attributes to a
      * certificate at any time.  The full list of defined attributes may be found using `ListCertificateAttributes`.
-     * 
+     *             
      * A certificate is a document stored in either AvaTax Exemptions or CertCapture.  The certificate document
      * can contain information about a customer's eligibility for exemption from sales or use taxes based on
-     * criteria you specify when you store the certificate.  To view or manage your certificates directly, please 
+     * criteria you specify when you store the certificate.  To view or manage your certificates directly, please
      * log onto the administrative website for the product you purchased.
-     * 
+     *             
      * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
      * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
-     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document 
+     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document
+     * storage for this company, call `RequestCertificateSetup`.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin.
+     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
      * 
      * @param companyId The unique ID number of the company that recorded this certificate
      * @param id The unique ID number of this certificate
@@ -2006,19 +1966,25 @@ public class AvaTaxClient {
      * Link customers to a certificate
      * 
      * Link one or more customers to an existing certificate.
-     * 
+     *             
      * Customers and certificates must be linked before a customer can make use of a certificate to obtain
      * a tax exemption in AvaTax.  Since some certificates may cover more than one business entity, a certificate
      * can be connected to multiple customer records using the `LinkCustomersToCertificate` API.
-     * 
+     *             
      * A certificate is a document stored in either AvaTax Exemptions or CertCapture.  The certificate document
      * can contain information about a customer's eligibility for exemption from sales or use taxes based on
-     * criteria you specify when you store the certificate.  To view or manage your certificates directly, please 
+     * criteria you specify when you store the certificate.  To view or manage your certificates directly, please
      * log onto the administrative website for the product you purchased.
-     * 
+     *             
      * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
      * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
-     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document 
+     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document
+     * storage for this company, call `RequestCertificateSetup`.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin.
+     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
      * 
      * @param companyId The unique ID number of the company that recorded this certificate
      * @param id The unique ID number of this certificate
@@ -2036,19 +2002,25 @@ public class AvaTaxClient {
      * Link customers to a certificate
      * 
      * Link one or more customers to an existing certificate.
-     * 
+     *             
      * Customers and certificates must be linked before a customer can make use of a certificate to obtain
      * a tax exemption in AvaTax.  Since some certificates may cover more than one business entity, a certificate
      * can be connected to multiple customer records using the `LinkCustomersToCertificate` API.
-     * 
+     *             
      * A certificate is a document stored in either AvaTax Exemptions or CertCapture.  The certificate document
      * can contain information about a customer's eligibility for exemption from sales or use taxes based on
-     * criteria you specify when you store the certificate.  To view or manage your certificates directly, please 
+     * criteria you specify when you store the certificate.  To view or manage your certificates directly, please
      * log onto the administrative website for the product you purchased.
-     * 
+     *             
      * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
      * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
-     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document 
+     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document
+     * storage for this company, call `RequestCertificateSetup`.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin.
+     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
      * 
      * @param companyId The unique ID number of the company that recorded this certificate
      * @param id The unique ID number of this certificate
@@ -2066,18 +2038,24 @@ public class AvaTaxClient {
      * List all attributes applied to this certificate
      * 
      * Retrieve the list of attributes that are linked to this certificate.
-     * 
+     *             
      * A certificate may have multiple attributes that control its behavior.  You may link or unlink attributes to a
      * certificate at any time.  The full list of defined attributes may be found using [ListCertificateAttributes](https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Definitions/ListCertificateAttributes/) API.
-     * 
+     *             
      * A certificate is a document stored in either AvaTax Exemptions or CertCapture.  The certificate document
      * can contain information about a customer's eligibility for exemption from sales or use taxes based on
-     * criteria you specify when you store the certificate.  To view or manage your certificates directly, please 
+     * criteria you specify when you store the certificate.  To view or manage your certificates directly, please
      * log onto the administrative website for the product you purchased.
-     * 
+     *             
      * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
      * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
-     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document 
+     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document
+     * storage for this company, call `RequestCertificateSetup`.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin.
+     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
      * 
      * @param companyId The unique ID number of the company that recorded this certificate
      * @param id The unique ID number of this certificate
@@ -2094,18 +2072,24 @@ public class AvaTaxClient {
      * List all attributes applied to this certificate
      * 
      * Retrieve the list of attributes that are linked to this certificate.
-     * 
+     *             
      * A certificate may have multiple attributes that control its behavior.  You may link or unlink attributes to a
      * certificate at any time.  The full list of defined attributes may be found using [ListCertificateAttributes](https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Definitions/ListCertificateAttributes/) API.
-     * 
+     *             
      * A certificate is a document stored in either AvaTax Exemptions or CertCapture.  The certificate document
      * can contain information about a customer's eligibility for exemption from sales or use taxes based on
-     * criteria you specify when you store the certificate.  To view or manage your certificates directly, please 
+     * criteria you specify when you store the certificate.  To view or manage your certificates directly, please
      * log onto the administrative website for the product you purchased.
-     * 
+     *             
      * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
      * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
-     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document 
+     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document
+     * storage for this company, call `RequestCertificateSetup`.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin.
+     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
      * 
      * @param companyId The unique ID number of the company that recorded this certificate
      * @param id The unique ID number of this certificate
@@ -2122,22 +2106,28 @@ public class AvaTaxClient {
      * List customers linked to this certificate
      * 
      * List all customers linked to this certificate.
-     * 
+     *             
      * Customers must be linked to a certificate in order to make use of its tax exemption features.  You
      * can link or unlink customers to a certificate at any time.
-     * 
+     *             
      * A certificate is a document stored in either AvaTax Exemptions or CertCapture.  The certificate document
      * can contain information about a customer's eligibility for exemption from sales or use taxes based on
-     * criteria you specify when you store the certificate.  To view or manage your certificates directly, please 
+     * criteria you specify when you store the certificate.  To view or manage your certificates directly, please
      * log onto the administrative website for the product you purchased.
-     * 
+     *             
      * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
      * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
-     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document 
+     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document
+     * storage for this company, call `RequestCertificateSetup`.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin.
+     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
      * 
      * @param companyId The unique ID number of the company that recorded this certificate
      * @param id The unique ID number of this certificate
-     * @param include OPTIONAL: A comma separated list of special fetch options.    No options are currently available when fetching customers.
+     * @param include OPTIONAL: A comma separated list of special fetch options.   No options are currently available when fetching customers.
      * @return FetchResult<CustomerModel>
      */
     public FetchResult<CustomerModel> listCustomersForCertificate(Integer companyId, Integer id, String include) throws Exception {
@@ -2152,22 +2142,28 @@ public class AvaTaxClient {
      * List customers linked to this certificate
      * 
      * List all customers linked to this certificate.
-     * 
+     *             
      * Customers must be linked to a certificate in order to make use of its tax exemption features.  You
      * can link or unlink customers to a certificate at any time.
-     * 
+     *             
      * A certificate is a document stored in either AvaTax Exemptions or CertCapture.  The certificate document
      * can contain information about a customer's eligibility for exemption from sales or use taxes based on
-     * criteria you specify when you store the certificate.  To view or manage your certificates directly, please 
+     * criteria you specify when you store the certificate.  To view or manage your certificates directly, please
      * log onto the administrative website for the product you purchased.
-     * 
+     *             
      * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
      * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
-     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document 
+     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document
+     * storage for this company, call `RequestCertificateSetup`.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin.
+     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
      * 
      * @param companyId The unique ID number of the company that recorded this certificate
      * @param id The unique ID number of this certificate
-     * @param include OPTIONAL: A comma separated list of special fetch options.    No options are currently available when fetching customers.
+     * @param include OPTIONAL: A comma separated list of special fetch options.   No options are currently available when fetching customers.
      * @return FetchResult<CustomerModel>
      */
     public Future<FetchResult<CustomerModel>> listCustomersForCertificateAsync(Integer companyId, Integer id, String include) {
@@ -2182,21 +2178,27 @@ public class AvaTaxClient {
      * List all certificates for a company
      * 
      * List all certificates recorded by a company
-     * 
+     *             
      * A certificate is a document stored in either AvaTax Exemptions or CertCapture.  The certificate document
      * can contain information about a customer's eligibility for exemption from sales or use taxes based on
-     * criteria you specify when you store the certificate.  To view or manage your certificates directly, please 
+     * criteria you specify when you store the certificate.  To view or manage your certificates directly, please
      * log onto the administrative website for the product you purchased.
-     * 
+     *             
      * You can use the `$include` parameter to fetch the following additional objects for expansion:
-     * 
+     *             
      * * customers - Retrieves the list of customers linked to the certificate.
      * * po_numbers - Retrieves all PO numbers tied to the certificate.
      * * attributes - Retrieves all attributes applied to the certificate.
-     * 
+     *             
      * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
      * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
-     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document 
+     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document
+     * storage for this company, call `RequestCertificateSetup`.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
+     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
      * 
      * @param companyId The ID number of the company to search
      * @param include OPTIONAL: A comma separated list of special fetch options. You can specify one or more of the following:      * customers - Retrieves the list of customers linked to the certificate.   * po_numbers - Retrieves all PO numbers tied to the certificate.   * attributes - Retrieves all attributes applied to the certificate.
@@ -2221,21 +2223,27 @@ public class AvaTaxClient {
      * List all certificates for a company
      * 
      * List all certificates recorded by a company
-     * 
+     *             
      * A certificate is a document stored in either AvaTax Exemptions or CertCapture.  The certificate document
      * can contain information about a customer's eligibility for exemption from sales or use taxes based on
-     * criteria you specify when you store the certificate.  To view or manage your certificates directly, please 
+     * criteria you specify when you store the certificate.  To view or manage your certificates directly, please
      * log onto the administrative website for the product you purchased.
-     * 
+     *             
      * You can use the `$include` parameter to fetch the following additional objects for expansion:
-     * 
+     *             
      * * customers - Retrieves the list of customers linked to the certificate.
      * * po_numbers - Retrieves all PO numbers tied to the certificate.
      * * attributes - Retrieves all attributes applied to the certificate.
-     * 
+     *             
      * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
      * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
-     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document 
+     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document
+     * storage for this company, call `RequestCertificateSetup`.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
+     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
      * 
      * @param companyId The ID number of the company to search
      * @param include OPTIONAL: A comma separated list of special fetch options. You can specify one or more of the following:      * customers - Retrieves the list of customers linked to the certificate.   * po_numbers - Retrieves all PO numbers tied to the certificate.   * attributes - Retrieves all attributes applied to the certificate.
@@ -2260,13 +2268,19 @@ public class AvaTaxClient {
      * Request setup of exemption certificates for this company.
      * 
      * Requests the setup of exemption certificates for this company.
-     * 
-     * Exemption certificates are tracked through a different auditable data store than the one that 
+     *             
+     * Exemption certificates are tracked through a different auditable data store than the one that
      * holds AvaTax transactions.  To use the AvaTax exemption certificate document store, please call
      * `GetCertificateSetup` to see if your company is configured to use the exemption certificate
      * document store.  To request setup, please call `RequestCertificateSetup` and your company will
      * be configured with data storage in the auditable certificate system.
+     *             
+     * This API will return the current status of exemption certificate setup for this company.
      * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
+     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
      * 
      * @param companyId 
      * @return ProvisionStatusModel
@@ -2281,13 +2295,19 @@ public class AvaTaxClient {
      * Request setup of exemption certificates for this company.
      * 
      * Requests the setup of exemption certificates for this company.
-     * 
-     * Exemption certificates are tracked through a different auditable data store than the one that 
+     *             
+     * Exemption certificates are tracked through a different auditable data store than the one that
      * holds AvaTax transactions.  To use the AvaTax exemption certificate document store, please call
      * `GetCertificateSetup` to see if your company is configured to use the exemption certificate
      * document store.  To request setup, please call `RequestCertificateSetup` and your company will
      * be configured with data storage in the auditable certificate system.
+     *             
+     * This API will return the current status of exemption certificate setup for this company.
      * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
+     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
      * 
      * @param companyId 
      * @return ProvisionStatusModel
@@ -2302,18 +2322,24 @@ public class AvaTaxClient {
      * Unlink attributes from a certificate
      * 
      * Unlink one or many attributes from a certificate.
-     * 
+     *             
      * A certificate may have multiple attributes that control its behavior.  You may link or unlink attributes to a
      * certificate at any time.  The full list of defined attributes may be found using `ListCertificateAttributes`.
-     * 
+     *             
      * A certificate is a document stored in either AvaTax Exemptions or CertCapture.  The certificate document
      * can contain information about a customer's eligibility for exemption from sales or use taxes based on
-     * criteria you specify when you store the certificate.  To view or manage your certificates directly, please 
+     * criteria you specify when you store the certificate.  To view or manage your certificates directly, please
      * log onto the administrative website for the product you purchased.
-     * 
+     *             
      * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
      * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
-     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document 
+     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document
+     * storage for this company, call `RequestCertificateSetup`.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin.
+     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
      * 
      * @param companyId The unique ID number of the company that recorded this certificate
      * @param id The unique ID number of this certificate
@@ -2331,18 +2357,24 @@ public class AvaTaxClient {
      * Unlink attributes from a certificate
      * 
      * Unlink one or many attributes from a certificate.
-     * 
+     *             
      * A certificate may have multiple attributes that control its behavior.  You may link or unlink attributes to a
      * certificate at any time.  The full list of defined attributes may be found using `ListCertificateAttributes`.
-     * 
+     *             
      * A certificate is a document stored in either AvaTax Exemptions or CertCapture.  The certificate document
      * can contain information about a customer's eligibility for exemption from sales or use taxes based on
-     * criteria you specify when you store the certificate.  To view or manage your certificates directly, please 
+     * criteria you specify when you store the certificate.  To view or manage your certificates directly, please
      * log onto the administrative website for the product you purchased.
-     * 
+     *             
      * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
      * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
-     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document 
+     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document
+     * storage for this company, call `RequestCertificateSetup`.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin.
+     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
      * 
      * @param companyId The unique ID number of the company that recorded this certificate
      * @param id The unique ID number of this certificate
@@ -2360,20 +2392,26 @@ public class AvaTaxClient {
      * Unlink customers from a certificate
      * 
      * Unlinks one or more customers from a certificate.
-     * 
+     *             
      * Unlinking a certificate from a customer will prevent the certificate from being used to generate
      * tax exemptions for the customer in the future.  If any previous transactions for this customer had
      * used this linked certificate, those transactions will be unchanged and will still have a link to the
      * exemption certificate in question.
-     * 
+     *             
      * A certificate is a document stored in either AvaTax Exemptions or CertCapture.  The certificate document
      * can contain information about a customer's eligibility for exemption from sales or use taxes based on
-     * criteria you specify when you store the certificate.  To view or manage your certificates directly, please 
+     * criteria you specify when you store the certificate.  To view or manage your certificates directly, please
      * log onto the administrative website for the product you purchased.
-     * 
+     *             
      * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
      * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
-     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document 
+     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document
+     * storage for this company, call `RequestCertificateSetup`.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin.
+     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
      * 
      * @param companyId The unique ID number of the company that recorded this certificate
      * @param id The unique ID number of this certificate
@@ -2391,20 +2429,26 @@ public class AvaTaxClient {
      * Unlink customers from a certificate
      * 
      * Unlinks one or more customers from a certificate.
-     * 
+     *             
      * Unlinking a certificate from a customer will prevent the certificate from being used to generate
      * tax exemptions for the customer in the future.  If any previous transactions for this customer had
      * used this linked certificate, those transactions will be unchanged and will still have a link to the
      * exemption certificate in question.
-     * 
+     *             
      * A certificate is a document stored in either AvaTax Exemptions or CertCapture.  The certificate document
      * can contain information about a customer's eligibility for exemption from sales or use taxes based on
-     * criteria you specify when you store the certificate.  To view or manage your certificates directly, please 
+     * criteria you specify when you store the certificate.  To view or manage your certificates directly, please
      * log onto the administrative website for the product you purchased.
-     * 
+     *             
      * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
      * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
-     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document 
+     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document
+     * storage for this company, call `RequestCertificateSetup`.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin.
+     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
      * 
      * @param companyId The unique ID number of the company that recorded this certificate
      * @param id The unique ID number of this certificate
@@ -2422,15 +2466,21 @@ public class AvaTaxClient {
      * Update a single certificate
      * 
      * Replace the certificate identified by this URL with a new one.
-     * 
+     *             
      * A certificate is a document stored in either AvaTax Exemptions or CertCapture.  The certificate document
      * can contain information about a customer's eligibility for exemption from sales or use taxes based on
-     * criteria you specify when you store the certificate.  To view or manage your certificates directly, please 
+     * criteria you specify when you store the certificate.  To view or manage your certificates directly, please
      * log onto the administrative website for the product you purchased.
-     * 
+     *             
      * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
      * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
-     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document 
+     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document
+     * storage for this company, call `RequestCertificateSetup`.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin.
+     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
      * 
      * @param companyId The ID number of the company that recorded this certificate
      * @param id The unique ID number of this certificate
@@ -2448,15 +2498,21 @@ public class AvaTaxClient {
      * Update a single certificate
      * 
      * Replace the certificate identified by this URL with a new one.
-     * 
+     *             
      * A certificate is a document stored in either AvaTax Exemptions or CertCapture.  The certificate document
      * can contain information about a customer's eligibility for exemption from sales or use taxes based on
-     * criteria you specify when you store the certificate.  To view or manage your certificates directly, please 
+     * criteria you specify when you store the certificate.  To view or manage your certificates directly, please
      * log onto the administrative website for the product you purchased.
-     * 
+     *             
      * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
      * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
-     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document 
+     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document
+     * storage for this company, call `RequestCertificateSetup`.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin.
+     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
      * 
      * @param companyId The ID number of the company that recorded this certificate
      * @param id The unique ID number of this certificate
@@ -2474,18 +2530,24 @@ public class AvaTaxClient {
      * Upload an image or PDF attachment for this certificate
      * 
      * Upload an image or PDF attachment for this certificate.
-     * 
+     *             
      * Image attachments can be of the format `PDF`, `JPEG`, `TIFF`, or `PNG`.  To upload a multi-page image, please
      * use the `PDF` data type.
-     * 
+     *             
      * A certificate is a document stored in either AvaTax Exemptions or CertCapture.  The certificate document
      * can contain information about a customer's eligibility for exemption from sales or use taxes based on
-     * criteria you specify when you store the certificate.  To view or manage your certificates directly, please 
+     * criteria you specify when you store the certificate.  To view or manage your certificates directly, please
      * log onto the administrative website for the product you purchased.
-     * 
+     *             
      * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
      * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
-     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document 
+     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document
+     * storage for this company, call `RequestCertificateSetup`.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
+     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
      * 
      * @param companyId The unique ID number of the company that recorded this certificate
      * @param id The unique ID number of this certificate
@@ -2503,18 +2565,24 @@ public class AvaTaxClient {
      * Upload an image or PDF attachment for this certificate
      * 
      * Upload an image or PDF attachment for this certificate.
-     * 
+     *             
      * Image attachments can be of the format `PDF`, `JPEG`, `TIFF`, or `PNG`.  To upload a multi-page image, please
      * use the `PDF` data type.
-     * 
+     *             
      * A certificate is a document stored in either AvaTax Exemptions or CertCapture.  The certificate document
      * can contain information about a customer's eligibility for exemption from sales or use taxes based on
-     * criteria you specify when you store the certificate.  To view or manage your certificates directly, please 
+     * criteria you specify when you store the certificate.  To view or manage your certificates directly, please
      * log onto the administrative website for the product you purchased.
-     * 
+     *             
      * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
      * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
-     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document 
+     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document
+     * storage for this company, call `RequestCertificateSetup`.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
+     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
      * 
      * @param companyId The unique ID number of the company that recorded this certificate
      * @param id The unique ID number of this certificate
@@ -2532,17 +2600,22 @@ public class AvaTaxClient {
      * Change the filing status of this company
      * 
      * Changes the current filing status of this company.
-     * 
+     *             
      * For customers using Avalara's Managed Returns Service, each company within their account can request
      * for Avalara to file tax returns on their behalf.  Avalara compliance team members will review all
      * requested filing calendars prior to beginning filing tax returns on behalf of this company.
-     * 
+     *             
      * The following changes may be requested through this API:
-     * 
+     *             
      * * If a company is in `NotYetFiling` status, the customer may request this be changed to `FilingRequested`.
      * * Avalara compliance team members may change a company from `FilingRequested` to `FirstFiling`.
      * * Avalara compliance team members may change a company from `FirstFiling` to `Active`.
+     *             
+     * All other status changes must be requested through the Avalara customer support team.
      * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, FirmAdmin, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
      * 
      * @param id 
      * @param model 
@@ -2558,17 +2631,22 @@ public class AvaTaxClient {
      * Change the filing status of this company
      * 
      * Changes the current filing status of this company.
-     * 
+     *             
      * For customers using Avalara's Managed Returns Service, each company within their account can request
      * for Avalara to file tax returns on their behalf.  Avalara compliance team members will review all
      * requested filing calendars prior to beginning filing tax returns on behalf of this company.
-     * 
+     *             
      * The following changes may be requested through this API:
-     * 
+     *             
      * * If a company is in `NotYetFiling` status, the customer may request this be changed to `FilingRequested`.
      * * Avalara compliance team members may change a company from `FilingRequested` to `FirstFiling`.
      * * Avalara compliance team members may change a company from `FirstFiling` to `Active`.
+     *             
+     * All other status changes must be requested through the Avalara customer support team.
      * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, FirmAdmin, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
      * 
      * @param id 
      * @param model 
@@ -2592,8 +2670,13 @@ public class AvaTaxClient {
      * * Declare nexus in all taxing jurisdictions for that main office address
      * * Activate the company
      *             
-     * This API only provides a limited subset of functionality compared to the 'Create Company' API call.  
+     * This API only provides a limited subset of functionality compared to the 'Create Company' API call.
      * If you need additional features or options not present in this 'Quick Setup' API call, please use the full 'Create Company' call instead.
+     * Please allow 1 minute before making transactions using the company.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, FirmAdmin, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
      * 
      * @param model Information about the company you wish to create.
      * @return CompanyModel
@@ -2615,8 +2698,13 @@ public class AvaTaxClient {
      * * Declare nexus in all taxing jurisdictions for that main office address
      * * Activate the company
      *             
-     * This API only provides a limited subset of functionality compared to the 'Create Company' API call.  
+     * This API only provides a limited subset of functionality compared to the 'Create Company' API call.
      * If you need additional features or options not present in this 'Quick Setup' API call, please use the full 'Create Company' call instead.
+     * Please allow 1 minute before making transactions using the company.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, FirmAdmin, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
      * 
      * @param model Information about the company you wish to create.
      * @return CompanyModel
@@ -2631,6 +2719,11 @@ public class AvaTaxClient {
      * 
      * Create one or more new company objects.
      * A 'company' represents a single corporation or individual that is registered to handle transactional taxes.
+     * You may attach nested data objects such as contacts, locations, and nexus with this CREATE call, and those objects will be created with the company.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, FirmAdmin, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
      * 
      * @param model Either a single company object or an array of companies to create
      * @return ArrayList<CompanyModel>
@@ -2645,6 +2738,11 @@ public class AvaTaxClient {
      * 
      * Create one or more new company objects.
      * A 'company' represents a single corporation or individual that is registered to handle transactional taxes.
+     * You may attach nested data objects such as contacts, locations, and nexus with this CREATE call, and those objects will be created with the company.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, FirmAdmin, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
      * 
      * @param model Either a single company object or an array of companies to create
      * @return ArrayList<CompanyModel>
@@ -2658,14 +2756,19 @@ public class AvaTaxClient {
      * Request managed returns funding setup for a company
      * 
      * This API is available by invitation only.
-     * Companies that use the Avalara Managed Returns or the SST Certified Service Provider services are 
-     * required to setup their funding configuration before Avalara can begin filing tax returns on their 
+     * Companies that use the Avalara Managed Returns or the SST Certified Service Provider services are
+     * required to setup their funding configuration before Avalara can begin filing tax returns on their
      * behalf.
      * Funding configuration for each company is set up by submitting a funding setup request, which can
      * be sent either via email or via an embedded HTML widget.
      * When the funding configuration is submitted to Avalara, it will be reviewed by treasury team members
      * before approval.
      * This API records that an ambedded HTML funding setup widget was activated.
+     * This API requires a subscription to Avalara Managed Returns or SST Certified Service Provider.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, FirmAdmin, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
      * 
      * @param id The unique identifier of the company
      * @param model The funding initialization request
@@ -2681,14 +2784,19 @@ public class AvaTaxClient {
      * Request managed returns funding setup for a company
      * 
      * This API is available by invitation only.
-     * Companies that use the Avalara Managed Returns or the SST Certified Service Provider services are 
-     * required to setup their funding configuration before Avalara can begin filing tax returns on their 
+     * Companies that use the Avalara Managed Returns or the SST Certified Service Provider services are
+     * required to setup their funding configuration before Avalara can begin filing tax returns on their
      * behalf.
      * Funding configuration for each company is set up by submitting a funding setup request, which can
      * be sent either via email or via an embedded HTML widget.
      * When the funding configuration is submitted to Avalara, it will be reviewed by treasury team members
      * before approval.
      * This API records that an ambedded HTML funding setup widget was activated.
+     * This API requires a subscription to Avalara Managed Returns or SST Certified Service Provider.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, FirmAdmin, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
      * 
      * @param id The unique identifier of the company
      * @param model The funding initialization request
@@ -2703,6 +2811,12 @@ public class AvaTaxClient {
     /**
      * Delete a single company
      * 
+     * Deleting a company will delete all child companies, and all users attached to this company.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, FirmAdmin, SSTAdmin, TechnicalSupportAdmin.
+     * 
      * @param id The ID of the company you wish to delete.
      * @return ArrayList<ErrorDetail>
      */
@@ -2714,6 +2828,12 @@ public class AvaTaxClient {
 
     /**
      * Delete a single company
+     * 
+     * Deleting a company will delete all child companies, and all users attached to this company.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, FirmAdmin, SSTAdmin, TechnicalSupportAdmin.
      * 
      * @param id The ID of the company you wish to delete.
      * @return ArrayList<ErrorDetail>
@@ -2730,6 +2850,13 @@ public class AvaTaxClient {
      * This API is available by invitation only.
      * Requires a subscription to Avalara Managed Returns or SST Certified Service Provider.
      * Returns the funding configuration of the requested company.
+     * .
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.
+     * * This API is available by invitation only.  To request access to this feature, please speak to a business development manager and request host address whitelisting for [Returns] for your servers.
      * 
      * @param companyId The unique identifier of the company
      * @return FundingConfigurationModel
@@ -2746,6 +2873,13 @@ public class AvaTaxClient {
      * This API is available by invitation only.
      * Requires a subscription to Avalara Managed Returns or SST Certified Service Provider.
      * Returns the funding configuration of the requested company.
+     * .
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.
+     * * This API is available by invitation only.  To request access to this feature, please speak to a business development manager and request host address whitelisting for [Returns] for your servers.
      * 
      * @param companyId The unique identifier of the company
      * @return FundingConfigurationModel
@@ -2762,6 +2896,13 @@ public class AvaTaxClient {
      * This API is available by invitation only.
      * Requires a subscription to Avalara Managed Returns or SST Certified Service Provider.
      * Returns the funding configuration of the requested company.
+     * .
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.
+     * * This API is available by invitation only.  To request access to this feature, please speak to a business development manager and request host address whitelisting for [Returns] for your servers.
      * 
      * @param companyId The unique identifier of the company
      * @param currency The currency of the funding. USD and CAD are the only valid currencies
@@ -2780,6 +2921,13 @@ public class AvaTaxClient {
      * This API is available by invitation only.
      * Requires a subscription to Avalara Managed Returns or SST Certified Service Provider.
      * Returns the funding configuration of the requested company.
+     * .
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.
+     * * This API is available by invitation only.  To request access to this feature, please speak to a business development manager and request host address whitelisting for [Returns] for your servers.
      * 
      * @param companyId The unique identifier of the company
      * @param currency The currency of the funding. USD and CAD are the only valid currencies
@@ -2798,7 +2946,7 @@ public class AvaTaxClient {
      * Get the company object identified by this URL.
      * A 'company' represents a single corporation or individual that is registered to handle transactional taxes.
      * You may specify one or more of the following values in the '$include' parameter to fetch additional nested data, using commas to separate multiple values:
-     * 
+     *             
      *  * Contacts
      *  * Items
      *  * Locations
@@ -2806,9 +2954,14 @@ public class AvaTaxClient {
      *  * Settings
      *  * TaxCodes
      *  * TaxRules
+     *  * UPC
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
      * @param id The ID of the company to retrieve.
-     * @param include OPTIONAL: A comma separated list of special fetch options.       * Child objects - Specify one or more of the following to retrieve objects related to each company: "Contacts", "FilingCalendars", "Items", "Locations", "Nexus", "TaxCodes", or "TaxRules".   * Deleted objects - Specify "FetchDeleted" to retrieve information about previously deleted objects.
+     * @param include OPTIONAL: A comma separated list of special fetch options.      * Child objects - Specify one or more of the following to retrieve objects related to each company: "Contacts", "FilingCalendars", "Items", "Locations", "Nexus", "TaxCodes", "NonReportingChildren" or "TaxRules".   * Deleted objects - Specify "FetchDeleted" to retrieve information about previously deleted objects.
      * @return CompanyModel
      */
     public CompanyModel getCompany(Integer id, String include) throws Exception {
@@ -2824,7 +2977,7 @@ public class AvaTaxClient {
      * Get the company object identified by this URL.
      * A 'company' represents a single corporation or individual that is registered to handle transactional taxes.
      * You may specify one or more of the following values in the '$include' parameter to fetch additional nested data, using commas to separate multiple values:
-     * 
+     *             
      *  * Contacts
      *  * Items
      *  * Locations
@@ -2832,9 +2985,14 @@ public class AvaTaxClient {
      *  * Settings
      *  * TaxCodes
      *  * TaxRules
+     *  * UPC
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
      * @param id The ID of the company to retrieve.
-     * @param include OPTIONAL: A comma separated list of special fetch options.       * Child objects - Specify one or more of the following to retrieve objects related to each company: "Contacts", "FilingCalendars", "Items", "Locations", "Nexus", "TaxCodes", or "TaxRules".   * Deleted objects - Specify "FetchDeleted" to retrieve information about previously deleted objects.
+     * @param include OPTIONAL: A comma separated list of special fetch options.      * Child objects - Specify one or more of the following to retrieve objects related to each company: "Contacts", "FilingCalendars", "Items", "Locations", "Nexus", "TaxCodes", "NonReportingChildren" or "TaxRules".   * Deleted objects - Specify "FetchDeleted" to retrieve information about previously deleted objects.
      * @return CompanyModel
      */
     public Future<CompanyModel> getCompanyAsync(Integer id, String include) {
@@ -2848,16 +3006,21 @@ public class AvaTaxClient {
      * Get configuration settings for this company
      * 
      * Retrieve a list of all configuration settings tied to this company.
-     * 
+     *             
      * Configuration settings provide you with the ability to control features of your account and of your
      * tax software.  The category name `AvaCertServiceConfig` is reserved for
      * Avalara internal software configuration values; to store your own company-level settings, please
      * create a new category name that begins with `X-`, for example, `X-MyCustomCategory`.
-     * 
+     *             
      * Company settings are permanent settings that cannot be deleted.  You can set the value of a
      * company setting to null if desired and if the particular setting supports it.
-     * 
+     *             
      * Avalara-based company settings for `AvaCertServiceConfig` affect your company's exemption certificate
+     * processing, and should be changed with care.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
      * @param id 
      * @return ArrayList<CompanyConfigurationModel>
@@ -2872,16 +3035,21 @@ public class AvaTaxClient {
      * Get configuration settings for this company
      * 
      * Retrieve a list of all configuration settings tied to this company.
-     * 
+     *             
      * Configuration settings provide you with the ability to control features of your account and of your
      * tax software.  The category name `AvaCertServiceConfig` is reserved for
      * Avalara internal software configuration values; to store your own company-level settings, please
      * create a new category name that begins with `X-`, for example, `X-MyCustomCategory`.
-     * 
+     *             
      * Company settings are permanent settings that cannot be deleted.  You can set the value of a
      * company setting to null if desired and if the particular setting supports it.
-     * 
+     *             
      * Avalara-based company settings for `AvaCertServiceConfig` affect your company's exemption certificate
+     * processing, and should be changed with care.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
      * @param id 
      * @return ArrayList<CompanyConfigurationModel>
@@ -2896,17 +3064,22 @@ public class AvaTaxClient {
      * Get this company's filing status
      * 
      * Retrieve the current filing status of this company.
-     * 
+     *             
      * For customers using Avalara's Managed Returns Service, each company within their account can request
      * for Avalara to file tax returns on their behalf.  Avalara compliance team members will review all
      * requested filing calendars prior to beginning filing tax returns on behalf of this company.
-     * 
+     *             
      * A company's filing status can be one of the following values:
-     * 
+     *             
      * * `NoReporting` - This company is not configured to report tax returns; instead, it reports through a parent company.
      * * `NotYetFiling` - This company has not yet begun filing tax returns through Avalara's Managed Returns Service.
      * * `FilingRequested` - The company has requested to begin filing tax returns, but Avalara's compliance team has not yet begun filing.
      * * `FirstFiling` - The company has recently filing tax returns and is in a new status.
+     * * `Active` - The company is currently active and is filing tax returns via Avalara Managed Returns.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
      * @param id 
      * @return String
@@ -2921,17 +3094,22 @@ public class AvaTaxClient {
      * Get this company's filing status
      * 
      * Retrieve the current filing status of this company.
-     * 
+     *             
      * For customers using Avalara's Managed Returns Service, each company within their account can request
      * for Avalara to file tax returns on their behalf.  Avalara compliance team members will review all
      * requested filing calendars prior to beginning filing tax returns on behalf of this company.
-     * 
+     *             
      * A company's filing status can be one of the following values:
-     * 
+     *             
      * * `NoReporting` - This company is not configured to report tax returns; instead, it reports through a parent company.
      * * `NotYetFiling` - This company has not yet begun filing tax returns through Avalara's Managed Returns Service.
      * * `FilingRequested` - The company has requested to begin filing tax returns, but Avalara's compliance team has not yet begun filing.
      * * `FirstFiling` - The company has recently filing tax returns and is in a new status.
+     * * `Active` - The company is currently active and is filing tax returns via Avalara Managed Returns.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
      * @param id 
      * @return String
@@ -2948,6 +3126,11 @@ public class AvaTaxClient {
      * This API is available by invitation only.
      * Requires a subscription to Avalara Managed Returns or SST Certified Service Provider.
      * Returns a list of funding setup requests and their current status.
+     * Each object in the result is a request that was made to setup or adjust funding status for this company.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
      * @param id The unique identifier of the company
      * @return ArrayList<FundingStatusModel>
@@ -2964,6 +3147,11 @@ public class AvaTaxClient {
      * This API is available by invitation only.
      * Requires a subscription to Avalara Managed Returns or SST Certified Service Provider.
      * Returns a list of funding setup requests and their current status.
+     * Each object in the result is a request that was made to setup or adjust funding status for this company.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
      * @param id The unique identifier of the company
      * @return ArrayList<FundingStatusModel>
@@ -2978,7 +3166,12 @@ public class AvaTaxClient {
      * Retrieve a list of MRS Companies with account
      * 
      * This API is available by invitation only.
+     *             
+     * Get a list of companies with an active MRS service.
      * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
      * @return FetchResult<MrsCompanyModel>
      */
@@ -2991,7 +3184,12 @@ public class AvaTaxClient {
      * Retrieve a list of MRS Companies with account
      * 
      * This API is available by invitation only.
+     *             
+     * Get a list of companies with an active MRS service.
      * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
      * @return FetchResult<MrsCompanyModel>
      */
@@ -3004,9 +3202,9 @@ public class AvaTaxClient {
      * Retrieve all companies
      * 
      * Get multiple company objects.
-     * 
+     *             
      * A `company` represents a single corporation or individual that is registered to handle transactional taxes.
-     * 
+     *             
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * Paginate your results using the `$top`, `$skip`, and `$orderby` parameters.
      * You may specify one or more of the following values in the `$include` parameter to fetch additional nested data, using commas to separate multiple values:
@@ -3018,9 +3216,14 @@ public class AvaTaxClient {
      * * Settings
      * * TaxCodes
      * * TaxRules
+     * * UPC
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
      * @param include A comma separated list of objects to fetch underneath this company. Any object with a URL path underneath this company can be fetched by specifying its name.
-     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* contacts, items, locations, nexus, settings, taxCodes, taxRules, upcs, exemptCerts
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* contacts, items, locations, nexus, settings, taxCodes, taxRules, upcs, nonReportingChildCompanies, exemptCerts
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
@@ -3040,9 +3243,9 @@ public class AvaTaxClient {
      * Retrieve all companies
      * 
      * Get multiple company objects.
-     * 
+     *             
      * A `company` represents a single corporation or individual that is registered to handle transactional taxes.
-     * 
+     *             
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * Paginate your results using the `$top`, `$skip`, and `$orderby` parameters.
      * You may specify one or more of the following values in the `$include` parameter to fetch additional nested data, using commas to separate multiple values:
@@ -3054,9 +3257,14 @@ public class AvaTaxClient {
      * * Settings
      * * TaxCodes
      * * TaxRules
+     * * UPC
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
      * @param include A comma separated list of objects to fetch underneath this company. Any object with a URL path underneath this company can be fetched by specifying its name.
-     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* contacts, items, locations, nexus, settings, taxCodes, taxRules, upcs, exemptCerts
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* contacts, items, locations, nexus, settings, taxCodes, taxRules, upcs, nonReportingChildCompanies, exemptCerts
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
@@ -3076,16 +3284,21 @@ public class AvaTaxClient {
      * Change configuration settings for this company
      * 
      * Update configuration settings tied to this company.
-     * 
+     *             
      * Configuration settings provide you with the ability to control features of your account and of your
      * tax software.  The category names `AvaCertServiceConfig` is reserved for
      * Avalara internal software configuration values; to store your own company-level settings, please
      * create a new category name that begins with `X-`, for example, `X-MyCustomCategory`.
-     * 
+     *             
      * Company settings are permanent settings that cannot be deleted.  You can set the value of a
      * company setting to null if desired and if the particular setting supports it.
-     * 
+     *             
      * Avalara-based company settings for `AvaCertServiceConfig` affect your company's exemption certificate
+     * processing, and should be changed with care.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin.
      * 
      * @param id 
      * @param model 
@@ -3101,16 +3314,21 @@ public class AvaTaxClient {
      * Change configuration settings for this company
      * 
      * Update configuration settings tied to this company.
-     * 
+     *             
      * Configuration settings provide you with the ability to control features of your account and of your
      * tax software.  The category names `AvaCertServiceConfig` is reserved for
      * Avalara internal software configuration values; to store your own company-level settings, please
      * create a new category name that begins with `X-`, for example, `X-MyCustomCategory`.
-     * 
+     *             
      * Company settings are permanent settings that cannot be deleted.  You can set the value of a
      * company setting to null if desired and if the particular setting supports it.
-     * 
+     *             
      * Avalara-based company settings for `AvaCertServiceConfig` affect your company's exemption certificate
+     * processing, and should be changed with care.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin.
      * 
      * @param id 
      * @param model 
@@ -3128,11 +3346,16 @@ public class AvaTaxClient {
      * Replace the existing company object at this URL with an updated object.
      *             
      * A `CompanyModel` represents a single corporation or individual that is registered to handle transactional taxes.
-     * All data from the existing object will be replaced with data in the object you PUT.  
+     * All data from the existing object will be replaced with data in the object you PUT.
      *             
      * When calling `UpdateCompany`, you are permitted to update the company itself.  Updates to the nested objects
      * such as contacts, locations, or settings are not permitted.  To update the nested objects
      *             
+     * To set a field's value to `null`, you may either set its value to `null` or omit that field from the object you PUT.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, FirmAdmin, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
      * 
      * @param id The ID of the company you wish to update.
      * @param model The company object you wish to update.
@@ -3150,11 +3373,16 @@ public class AvaTaxClient {
      * Replace the existing company object at this URL with an updated object.
      *             
      * A `CompanyModel` represents a single corporation or individual that is registered to handle transactional taxes.
-     * All data from the existing object will be replaced with data in the object you PUT.  
+     * All data from the existing object will be replaced with data in the object you PUT.
      *             
      * When calling `UpdateCompany`, you are permitted to update the company itself.  Updates to the nested objects
      * such as contacts, locations, or settings are not permitted.  To update the nested objects
      *             
+     * To set a field's value to `null`, you may either set its value to `null` or omit that field from the object you PUT.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, FirmAdmin, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
      * 
      * @param id The ID of the company you wish to update.
      * @param model The company object you wish to update.
@@ -3171,6 +3399,11 @@ public class AvaTaxClient {
      * 
      * Create one or more new contact objects.
      * A 'contact' is a person associated with a company who is designated to handle certain responsibilities of
+     * a tax collecting and filing entity.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, FirmAdmin, SSTAdmin, TechnicalSupportAdmin.
      * 
      * @param companyId The ID of the company that owns this contact.
      * @param model The contacts you wish to create.
@@ -3187,6 +3420,11 @@ public class AvaTaxClient {
      * 
      * Create one or more new contact objects.
      * A 'contact' is a person associated with a company who is designated to handle certain responsibilities of
+     * a tax collecting and filing entity.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, FirmAdmin, SSTAdmin, TechnicalSupportAdmin.
      * 
      * @param companyId The ID of the company that owns this contact.
      * @param model The contacts you wish to create.
@@ -3201,6 +3439,12 @@ public class AvaTaxClient {
     /**
      * Delete a single contact
      * 
+     * Mark the existing contact object at this URL as deleted.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, FirmAdmin, SSTAdmin, TechnicalSupportAdmin.
+     * 
      * @param companyId The ID of the company that owns this contact.
      * @param id The ID of the contact you wish to delete.
      * @return ArrayList<ErrorDetail>
@@ -3214,6 +3458,12 @@ public class AvaTaxClient {
 
     /**
      * Delete a single contact
+     * 
+     * Mark the existing contact object at this URL as deleted.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, FirmAdmin, SSTAdmin, TechnicalSupportAdmin.
      * 
      * @param companyId The ID of the company that owns this contact.
      * @param id The ID of the contact you wish to delete.
@@ -3231,6 +3481,11 @@ public class AvaTaxClient {
      * 
      * Get the contact object identified by this URL.
      * A 'contact' is a person associated with a company who is designated to handle certain responsibilities of
+     * a tax collecting and filing entity.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, FirmAdmin, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
      * @param companyId The ID of the company for this contact
      * @param id The primary key of this contact
@@ -3248,6 +3503,11 @@ public class AvaTaxClient {
      * 
      * Get the contact object identified by this URL.
      * A 'contact' is a person associated with a company who is designated to handle certain responsibilities of
+     * a tax collecting and filing entity.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, FirmAdmin, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
      * @param companyId The ID of the company for this contact
      * @param id The primary key of this contact
@@ -3266,6 +3526,11 @@ public class AvaTaxClient {
      * List all contact objects assigned to this company.
      * 
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * Paginate your results using the `$top`, `$skip`, and `$orderby` parameters.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, FirmAdmin, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
      * @param companyId The ID of the company that owns these contacts
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).
@@ -3292,6 +3557,11 @@ public class AvaTaxClient {
      * List all contact objects assigned to this company.
      * 
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * Paginate your results using the `$top`, `$skip`, and `$orderby` parameters.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, FirmAdmin, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
      * @param companyId The ID of the company that owns these contacts
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).
@@ -3320,6 +3590,11 @@ public class AvaTaxClient {
      * a tax collecting and filing entity.
      * 
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * Paginate your results using the `$top`, `$skip`, and `$orderby` parameters.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, FirmAdmin, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).
      * @param include A comma separated list of additional data to retrieve.
@@ -3346,6 +3621,11 @@ public class AvaTaxClient {
      * a tax collecting and filing entity.
      * 
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * Paginate your results using the `$top`, `$skip`, and `$orderby` parameters.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, FirmAdmin, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).
      * @param include A comma separated list of additional data to retrieve.
@@ -3371,6 +3651,11 @@ public class AvaTaxClient {
      * A 'contact' is a person associated with a company who is designated to handle certain responsibilities of
      * a tax collecting and filing entity.
      * All data from the existing object will be replaced with data in the object you PUT.  
+     * To set a field's value to null, you may either set its value to null or omit that field from the object you post.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, FirmAdmin, SSTAdmin, TechnicalSupportAdmin.
      * 
      * @param companyId The ID of the company that this contact belongs to.
      * @param id The ID of the contact you wish to update
@@ -3391,6 +3676,11 @@ public class AvaTaxClient {
      * A 'contact' is a person associated with a company who is designated to handle certain responsibilities of
      * a tax collecting and filing entity.
      * All data from the existing object will be replaced with data in the object you PUT.  
+     * To set a field's value to null, you may either set its value to null or omit that field from the object you post.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, FirmAdmin, SSTAdmin, TechnicalSupportAdmin.
      * 
      * @param companyId The ID of the company that this contact belongs to.
      * @param id The ID of the contact you wish to update
@@ -3408,19 +3698,25 @@ public class AvaTaxClient {
      * Create customers for this company
      * 
      * Create one or more customers for this company.
-     * 
+     *             
      * A customer object defines information about a person or business that purchases products from your
      * company.  When you create a tax transaction in AvaTax, you can use the `customerCode` from this
      * record in your `CreateTransaction` API call.  AvaTax will search for this `customerCode` value and
      * identify any certificates linked to this `customer` object.  If any certificate applies to the transaction,
      * AvaTax will record the appropriate elements of the transaction as exempt and link it to the `certificate`.
-     * 
+     *             
      * A nested object such as CustomFields could be specified and created along with the customer object. To fetch the
      * nested object, please call 'GetCustomer' API with appropriate $include parameters.
-     * 
+     *             
      * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
      * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
-     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document 
+     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document
+     * storage for this company, call `RequestCertificateSetup`.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin.
+     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
      * 
      * @param companyId The unique ID number of the company that recorded this customer
      * @param model The list of customer objects to be created
@@ -3436,19 +3732,25 @@ public class AvaTaxClient {
      * Create customers for this company
      * 
      * Create one or more customers for this company.
-     * 
+     *             
      * A customer object defines information about a person or business that purchases products from your
      * company.  When you create a tax transaction in AvaTax, you can use the `customerCode` from this
      * record in your `CreateTransaction` API call.  AvaTax will search for this `customerCode` value and
      * identify any certificates linked to this `customer` object.  If any certificate applies to the transaction,
      * AvaTax will record the appropriate elements of the transaction as exempt and link it to the `certificate`.
-     * 
+     *             
      * A nested object such as CustomFields could be specified and created along with the customer object. To fetch the
      * nested object, please call 'GetCustomer' API with appropriate $include parameters.
-     * 
+     *             
      * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
      * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
-     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document 
+     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document
+     * storage for this company, call `RequestCertificateSetup`.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin.
+     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
      * 
      * @param companyId The unique ID number of the company that recorded this customer
      * @param model The list of customer objects to be created
@@ -3464,16 +3766,22 @@ public class AvaTaxClient {
      * Delete a customer record
      * 
      * Deletes the customer object referenced by this URL.
-     * 
+     *             
      * A customer object defines information about a person or business that purchases products from your
      * company.  When you create a tax transaction in AvaTax, you can use the `customerCode` from this
      * record in your `CreateTransaction` API call.  AvaTax will search for this `customerCode` value and
      * identify any certificates linked to this `customer` object.  If any certificate applies to the transaction,
      * AvaTax will record the appropriate elements of the transaction as exempt and link it to the `certificate`.
-     * 
+     *             
      * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
      * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
-     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document 
+     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document
+     * storage for this company, call `RequestCertificateSetup`.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin.
+     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
      * 
      * @param companyId The unique ID number of the company that recorded this customer
      * @param customerCode The unique code representing this customer
@@ -3490,16 +3798,22 @@ public class AvaTaxClient {
      * Delete a customer record
      * 
      * Deletes the customer object referenced by this URL.
-     * 
+     *             
      * A customer object defines information about a person or business that purchases products from your
      * company.  When you create a tax transaction in AvaTax, you can use the `customerCode` from this
      * record in your `CreateTransaction` API call.  AvaTax will search for this `customerCode` value and
      * identify any certificates linked to this `customer` object.  If any certificate applies to the transaction,
      * AvaTax will record the appropriate elements of the transaction as exempt and link it to the `certificate`.
-     * 
+     *             
      * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
      * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
-     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document 
+     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document
+     * storage for this company, call `RequestCertificateSetup`.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin.
+     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
      * 
      * @param companyId The unique ID number of the company that recorded this customer
      * @param customerCode The unique code representing this customer
@@ -3516,21 +3830,27 @@ public class AvaTaxClient {
      * Retrieve a single customer
      * 
      * Retrieve the customer identified by this URL.
-     * 
+     *             
      * A customer object defines information about a person or business that purchases products from your
      * company.  When you create a tax transaction in AvaTax, you can use the `customerCode` from this
      * record in your `CreateTransaction` API call.  AvaTax will search for this `customerCode` value and
      * identify any certificates linked to this customer object.  If any certificate applies to the transaction,
      * AvaTax will record the appropriate elements of the transaction as exempt and link it to the `certificate`.
-     * 
+     *             
      * You can use the `$include` parameter to fetch the following additional objects for expansion:
-     * 
+     *             
      * * Certificates - Fetch a list of certificates linked to this customer.
      * * CustomFields - Fetch a list of custom fields associated to this customer.
-     * 
+     *             
      * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
      * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
-     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document 
+     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document
+     * storage for this company, call `RequestCertificateSetup`.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
+     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
      * 
      * @param companyId The unique ID number of the company that recorded this customer
      * @param customerCode The unique code representing this customer
@@ -3549,21 +3869,27 @@ public class AvaTaxClient {
      * Retrieve a single customer
      * 
      * Retrieve the customer identified by this URL.
-     * 
+     *             
      * A customer object defines information about a person or business that purchases products from your
      * company.  When you create a tax transaction in AvaTax, you can use the `customerCode` from this
      * record in your `CreateTransaction` API call.  AvaTax will search for this `customerCode` value and
      * identify any certificates linked to this customer object.  If any certificate applies to the transaction,
      * AvaTax will record the appropriate elements of the transaction as exempt and link it to the `certificate`.
-     * 
+     *             
      * You can use the `$include` parameter to fetch the following additional objects for expansion:
-     * 
+     *             
      * * Certificates - Fetch a list of certificates linked to this customer.
      * * CustomFields - Fetch a list of custom fields associated to this customer.
-     * 
+     *             
      * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
      * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
-     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document 
+     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document
+     * storage for this company, call `RequestCertificateSetup`.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
+     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
      * 
      * @param companyId The unique ID number of the company that recorded this customer
      * @param customerCode The unique code representing this customer
@@ -3582,16 +3908,22 @@ public class AvaTaxClient {
      * Link certificates to a customer
      * 
      * Link one or more certificates to a customer.
-     * 
+     *             
      * A customer object defines information about a person or business that purchases products from your
      * company.  When you create a tax transaction in AvaTax, you can use the `customerCode` from this
      * record in your `CreateTransaction` API call.  AvaTax will search for this `customerCode` value and
      * identify any certificates linked to this `customer` object.  If any certificate applies to the transaction,
      * AvaTax will record the appropriate elements of the transaction as exempt and link it to the `certificate`.
-     * 
+     *             
      * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
      * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
-     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document 
+     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document
+     * storage for this company, call `RequestCertificateSetup`.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
+     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
      * 
      * @param companyId The unique ID number of the company that recorded this customer
      * @param customerCode The unique code representing this customer
@@ -3609,16 +3941,22 @@ public class AvaTaxClient {
      * Link certificates to a customer
      * 
      * Link one or more certificates to a customer.
-     * 
+     *             
      * A customer object defines information about a person or business that purchases products from your
      * company.  When you create a tax transaction in AvaTax, you can use the `customerCode` from this
      * record in your `CreateTransaction` API call.  AvaTax will search for this `customerCode` value and
      * identify any certificates linked to this `customer` object.  If any certificate applies to the transaction,
      * AvaTax will record the appropriate elements of the transaction as exempt and link it to the `certificate`.
-     * 
+     *             
      * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
      * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
-     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document 
+     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document
+     * storage for this company, call `RequestCertificateSetup`.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
+     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
      * 
      * @param companyId The unique ID number of the company that recorded this customer
      * @param customerCode The unique code representing this customer
@@ -3636,17 +3974,23 @@ public class AvaTaxClient {
      * Link two customer records together
      * 
      * Links a Ship-To customer record with a Bill-To customer record.
-     * 
+     *             
      * Customer records represent businesses or individuals who can provide exemption certificates.  Some customers
      * may have certificates that are linked to their shipping address or their billing address.  To group these
      * customer records together, you may link multiple bill-to and ship-to addresses together to represent a single
      * entity that has multiple different addresses of different kinds.
-     * 
+     *             
      * In general, a customer will have only one primary billing address and multiple ship-to addresses, representing
      * all of the different locations where they receive goods.  To facilitate this type of customer, you can send in
      * one bill-to customer code and multiple ship-to customer codes in a single API call.
-     * 
+     *             
      * Note that you can only link a ship-to customer record to a bill-to customer record.  You may not link two customers
+     * of the same kind together.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
+     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
      * 
      * @param companyId The unique ID number of the company defining customers.
      * @param code The code of the bill-to customer to link.
@@ -3664,17 +4008,23 @@ public class AvaTaxClient {
      * Link two customer records together
      * 
      * Links a Ship-To customer record with a Bill-To customer record.
-     * 
+     *             
      * Customer records represent businesses or individuals who can provide exemption certificates.  Some customers
      * may have certificates that are linked to their shipping address or their billing address.  To group these
      * customer records together, you may link multiple bill-to and ship-to addresses together to represent a single
      * entity that has multiple different addresses of different kinds.
-     * 
+     *             
      * In general, a customer will have only one primary billing address and multiple ship-to addresses, representing
      * all of the different locations where they receive goods.  To facilitate this type of customer, you can send in
      * one bill-to customer code and multiple ship-to customer codes in a single API call.
-     * 
+     *             
      * Note that you can only link a ship-to customer record to a bill-to customer record.  You may not link two customers
+     * of the same kind together.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
+     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
      * 
      * @param companyId The unique ID number of the company defining customers.
      * @param code The code of the bill-to customer to link.
@@ -3692,16 +4042,22 @@ public class AvaTaxClient {
      * List certificates linked to a customer
      * 
      * List all certificates linked to a customer.
-     * 
+     *             
      * A customer object defines information about a person or business that purchases products from your
      * company.  When you create a tax transaction in AvaTax, you can use the `customerCode` from this
      * record in your `CreateTransaction` API call.  AvaTax will search for this `customerCode` value and
      * identify any certificates linked to this `customer` object.  If any certificate applies to the transaction,
      * AvaTax will record the appropriate elements of the transaction as exempt and link it to the `certificate`.
-     * 
+     *             
      * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
      * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
-     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document 
+     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document
+     * storage for this company, call `RequestCertificateSetup`.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
+     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
      * 
      * @param companyId The unique ID number of the company that recorded this customer
      * @param customerCode The unique code representing this customer
@@ -3728,16 +4084,22 @@ public class AvaTaxClient {
      * List certificates linked to a customer
      * 
      * List all certificates linked to a customer.
-     * 
+     *             
      * A customer object defines information about a person or business that purchases products from your
      * company.  When you create a tax transaction in AvaTax, you can use the `customerCode` from this
      * record in your `CreateTransaction` API call.  AvaTax will search for this `customerCode` value and
      * identify any certificates linked to this `customer` object.  If any certificate applies to the transaction,
      * AvaTax will record the appropriate elements of the transaction as exempt and link it to the `certificate`.
-     * 
+     *             
      * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
      * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
-     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document 
+     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document
+     * storage for this company, call `RequestCertificateSetup`.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
+     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
      * 
      * @param companyId The unique ID number of the company that recorded this customer
      * @param customerCode The unique code representing this customer
@@ -3764,19 +4126,25 @@ public class AvaTaxClient {
      * List active certificates for a location
      * 
      * List valid certificates linked to a customer in a particular country and region.
-     * 
+     *             
      * This API is intended to help identify whether a customer has already provided a certificate that
      * applies to a particular country and region.  This API is intended to help you remind a customer
      * when they have or have not provided copies of their exemption certificates to you during the sales
-     * order process.  
-     * 
+     * order process.
+     *             
      * If a customer does not have a certificate on file and they wish to provide one, you should send the customer
      * a CertExpress invitation link so that the customer can upload proof of their exemption certificate.  Please
      * see the `CreateCertExpressInvitation` API to create an invitation link for this customer.
-     * 
+     *             
      * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
      * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
-     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document 
+     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document
+     * storage for this company, call `RequestCertificateSetup`.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
+     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
      * 
      * @param companyId The unique ID number of the company that recorded this customer
      * @param customerCode The unique code representing this customer
@@ -3797,19 +4165,25 @@ public class AvaTaxClient {
      * List active certificates for a location
      * 
      * List valid certificates linked to a customer in a particular country and region.
-     * 
+     *             
      * This API is intended to help identify whether a customer has already provided a certificate that
      * applies to a particular country and region.  This API is intended to help you remind a customer
      * when they have or have not provided copies of their exemption certificates to you during the sales
-     * order process.  
-     * 
+     * order process.
+     *             
      * If a customer does not have a certificate on file and they wish to provide one, you should send the customer
      * a CertExpress invitation link so that the customer can upload proof of their exemption certificate.  Please
      * see the `CreateCertExpressInvitation` API to create an invitation link for this customer.
-     * 
+     *             
      * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
      * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
-     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document 
+     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document
+     * storage for this company, call `RequestCertificateSetup`.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
+     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
      * 
      * @param companyId The unique ID number of the company that recorded this customer
      * @param customerCode The unique code representing this customer
@@ -3830,20 +4204,26 @@ public class AvaTaxClient {
      * List all customers for this company
      * 
      * List all customers recorded by this company matching the specified criteria.
-     * 
+     *             
      * A customer object defines information about a person or business that purchases products from your
      * company.  When you create a tax transaction in AvaTax, you can use the `customerCode` from this
      * record in your `CreateTransaction` API call.  AvaTax will search for this `customerCode` value and
      * identify any certificates linked to this `customer` object.  If any certificate applies to the transaction,
      * AvaTax will record the appropriate elements of the transaction as exempt and link it to the `certificate`.
-     * 
+     *             
      * You can use the `$include` parameter to fetch the following additional objects for expansion:
-     * 
+     *             
      * * Certificates - Fetch a list of certificates linked to this customer.
-     * 
+     *             
      * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
      * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
-     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document 
+     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document
+     * storage for this company, call `RequestCertificateSetup`.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
+     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
      * 
      * @param companyId The unique ID number of the company that recorded this customer
      * @param include OPTIONAL - You can specify the value `certificates` to fetch information about certificates linked to the customer.
@@ -3868,20 +4248,26 @@ public class AvaTaxClient {
      * List all customers for this company
      * 
      * List all customers recorded by this company matching the specified criteria.
-     * 
+     *             
      * A customer object defines information about a person or business that purchases products from your
      * company.  When you create a tax transaction in AvaTax, you can use the `customerCode` from this
      * record in your `CreateTransaction` API call.  AvaTax will search for this `customerCode` value and
      * identify any certificates linked to this `customer` object.  If any certificate applies to the transaction,
      * AvaTax will record the appropriate elements of the transaction as exempt and link it to the `certificate`.
-     * 
+     *             
      * You can use the `$include` parameter to fetch the following additional objects for expansion:
-     * 
+     *             
      * * Certificates - Fetch a list of certificates linked to this customer.
-     * 
+     *             
      * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
      * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
-     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document 
+     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document
+     * storage for this company, call `RequestCertificateSetup`.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
+     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
      * 
      * @param companyId The unique ID number of the company that recorded this customer
      * @param include OPTIONAL - You can specify the value `certificates` to fetch information about certificates linked to the customer.
@@ -3906,16 +4292,22 @@ public class AvaTaxClient {
      * Unlink certificates from a customer
      * 
      * Remove one or more certificates to a customer.
-     * 
+     *             
      * A customer object defines information about a person or business that purchases products from your
      * company.  When you create a tax transaction in AvaTax, you can use the `customerCode` from this
      * record in your `CreateTransaction` API call.  AvaTax will search for this `customerCode` value and
      * identify any certificates linked to this `customer` object.  If any certificate applies to the transaction,
      * AvaTax will record the appropriate elements of the transaction as exempt and link it to the `certificate`.
-     * 
+     *             
      * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
      * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
-     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document 
+     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document
+     * storage for this company, call `RequestCertificateSetup`.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
+     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
      * 
      * @param companyId The unique ID number of the company that recorded this customer
      * @param customerCode The unique code representing this customer
@@ -3933,16 +4325,22 @@ public class AvaTaxClient {
      * Unlink certificates from a customer
      * 
      * Remove one or more certificates to a customer.
-     * 
+     *             
      * A customer object defines information about a person or business that purchases products from your
      * company.  When you create a tax transaction in AvaTax, you can use the `customerCode` from this
      * record in your `CreateTransaction` API call.  AvaTax will search for this `customerCode` value and
      * identify any certificates linked to this `customer` object.  If any certificate applies to the transaction,
      * AvaTax will record the appropriate elements of the transaction as exempt and link it to the `certificate`.
-     * 
+     *             
      * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
      * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
-     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document 
+     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document
+     * storage for this company, call `RequestCertificateSetup`.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
+     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
      * 
      * @param companyId The unique ID number of the company that recorded this customer
      * @param customerCode The unique code representing this customer
@@ -3960,16 +4358,22 @@ public class AvaTaxClient {
      * Update a single customer
      * 
      * Replace the customer object at this URL with a new record.
-     * 
+     *             
      * A customer object defines information about a person or business that purchases products from your
      * company.  When you create a tax transaction in AvaTax, you can use the `customerCode` from this
      * record in your `CreateTransaction` API call.  AvaTax will search for this `customerCode` value and
      * identify any certificates linked to this `customer` object.  If any certificate applies to the transaction,
      * AvaTax will record the appropriate elements of the transaction as exempt and link it to the `certificate`.
-     * 
+     *             
      * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
      * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
-     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document 
+     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document
+     * storage for this company, call `RequestCertificateSetup`.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin.
+     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
      * 
      * @param companyId The unique ID number of the company that recorded this customer
      * @param customerCode The unique code representing this customer
@@ -3987,16 +4391,22 @@ public class AvaTaxClient {
      * Update a single customer
      * 
      * Replace the customer object at this URL with a new record.
-     * 
+     *             
      * A customer object defines information about a person or business that purchases products from your
      * company.  When you create a tax transaction in AvaTax, you can use the `customerCode` from this
      * record in your `CreateTransaction` API call.  AvaTax will search for this `customerCode` value and
      * identify any certificates linked to this `customer` object.  If any certificate applies to the transaction,
      * AvaTax will record the appropriate elements of the transaction as exempt and link it to the `certificate`.
-     * 
+     *             
      * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
      * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
-     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document 
+     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document
+     * storage for this company, call `RequestCertificateSetup`.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin.
+     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
      * 
      * @param companyId The unique ID number of the company that recorded this customer
      * @param customerCode The unique code representing this customer
@@ -4013,6 +4423,13 @@ public class AvaTaxClient {
     /**
      * Create and store new datasources for the respective companies.
      * 
+     * Create one or more datasource objects.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, FirmAdmin, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
+     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
+     * 
      * @param companyId The id of the company you which to create the datasources
      * @param model 
      * @return ArrayList<DataSourceModel>
@@ -4026,6 +4443,13 @@ public class AvaTaxClient {
     /**
      * Create and store new datasources for the respective companies.
      * 
+     * Create one or more datasource objects.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, FirmAdmin, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
+     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
+     * 
      * @param companyId The id of the company you which to create the datasources
      * @param model 
      * @return ArrayList<DataSourceModel>
@@ -4038,6 +4462,13 @@ public class AvaTaxClient {
 
     /**
      * Delete a datasource by datasource id for a company.
+     * 
+     * Marks the existing datasource for a company as deleted.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, FirmAdmin, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
+     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
      * 
      * @param companyId The id of the company the datasource belongs to.
      * @param id The id of the datasource you wish to delete.
@@ -4053,6 +4484,13 @@ public class AvaTaxClient {
     /**
      * Delete a datasource by datasource id for a company.
      * 
+     * Marks the existing datasource for a company as deleted.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, FirmAdmin, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
+     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
+     * 
      * @param companyId The id of the company the datasource belongs to.
      * @param id The id of the datasource you wish to delete.
      * @return ArrayList<ErrorDetail>
@@ -4066,6 +4504,13 @@ public class AvaTaxClient {
 
     /**
      * Get data source by data source id
+     * 
+     * Retrieve the data source by its unique ID number.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
      * 
      * @param companyId 
      * @param id data source id
@@ -4081,6 +4526,13 @@ public class AvaTaxClient {
     /**
      * Get data source by data source id
      * 
+     * Retrieve the data source by its unique ID number.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
+     * 
      * @param companyId 
      * @param id data source id
      * @return DataSourceModel
@@ -4094,6 +4546,13 @@ public class AvaTaxClient {
 
     /**
      * Retrieve all datasources for this company
+     * 
+     * Gets multiple datasource objects for a given company.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
      * 
      * @param companyId The id of the company you wish to retrieve the datasources.
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* isEnabled, isSynced, isAuthorized
@@ -4114,6 +4573,13 @@ public class AvaTaxClient {
 
     /**
      * Retrieve all datasources for this company
+     * 
+     * Gets multiple datasource objects for a given company.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
      * 
      * @param companyId The id of the company you wish to retrieve the datasources.
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* isEnabled, isSynced, isAuthorized
@@ -4136,8 +4602,14 @@ public class AvaTaxClient {
      * Retrieve all datasources
      * 
      * Get multiple datasource objects across all companies.
-     * 
+     *             
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * Paginate your results using the `$top`, `$skip`, and `$orderby` parameters.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* isEnabled, isSynced, isAuthorized
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
@@ -4158,8 +4630,14 @@ public class AvaTaxClient {
      * Retrieve all datasources
      * 
      * Get multiple datasource objects across all companies.
-     * 
+     *             
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * Paginate your results using the `$top`, `$skip`, and `$orderby` parameters.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* isEnabled, isSynced, isAuthorized
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
@@ -4179,6 +4657,13 @@ public class AvaTaxClient {
     /**
      * Update a datasource identified by id for a company
      * 
+     * Updates a datasource for a company.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, FirmAdmin, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
+     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
+     * 
      * @param companyId The id of the company the datasource belongs to.
      * @param id The id of the datasource you wish to delete.
      * @param model 
@@ -4193,6 +4678,13 @@ public class AvaTaxClient {
 
     /**
      * Update a datasource identified by id for a company
+     * 
+     * Updates a datasource for a company.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, FirmAdmin, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
+     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
      * 
      * @param companyId The id of the company the datasource belongs to.
      * @param id The id of the datasource you wish to delete.
@@ -4210,14 +4702,19 @@ public class AvaTaxClient {
      * Lists all parents of an HS Code.
      * 
      * Retrieves the specified HS code and all of its parents, reflecting all sections, chapters, headings, and subheadings
-     * 
-     * a list of HS Codes that are the parents and information branches of the HS Code for the given 
-     * destination country, if lower detail is available. 
-     * 
+     *             
+     * a list of HS Codes that are the parents and information branches of the HS Code for the given
+     * destination country, if lower detail is available.
+     *             
      * This API will include information branches if applicable. These do not have HS Codes and cannot be referenced,
-     * but can contain information relevant to deciding the correct HS Code. 
-     * 
+     * but can contain information relevant to deciding the correct HS Code.
+     *             
      * This API is intended to be useful to review the descriptive hierarchy of an HS Code, which can be particularly helpful
+     * when HS Codes can have multiple levels of generic descriptions.
+     * 
+     * ### Security Policies
+     * 
+     * * This API depends on the following active services<br />*Required* (all):  AvaTaxGlobal.
      * 
      * @param country The name or code of the destination country.
      * @param hsCode The partial or full HS Code for which you would like to view all of the parents.
@@ -4234,14 +4731,19 @@ public class AvaTaxClient {
      * Lists all parents of an HS Code.
      * 
      * Retrieves the specified HS code and all of its parents, reflecting all sections, chapters, headings, and subheadings
-     * 
-     * a list of HS Codes that are the parents and information branches of the HS Code for the given 
-     * destination country, if lower detail is available. 
-     * 
+     *             
+     * a list of HS Codes that are the parents and information branches of the HS Code for the given
+     * destination country, if lower detail is available.
+     *             
      * This API will include information branches if applicable. These do not have HS Codes and cannot be referenced,
-     * but can contain information relevant to deciding the correct HS Code. 
-     * 
+     * but can contain information relevant to deciding the correct HS Code.
+     *             
      * This API is intended to be useful to review the descriptive hierarchy of an HS Code, which can be particularly helpful
+     * when HS Codes can have multiple levels of generic descriptions.
+     * 
+     * ### Security Policies
+     * 
+     * * This API depends on the following active services<br />*Required* (all):  AvaTaxGlobal.
      * 
      * @param country The name or code of the destination country.
      * @param hsCode The partial or full HS Code for which you would like to view all of the parents.
@@ -4301,10 +4803,10 @@ public class AvaTaxClient {
     /**
      * Retrieve the full list of the AvaFile Forms available
      * 
-     * This API is deprecated. 
-     * 
+     * This API is deprecated.
+     *             
      * Please use the ListTaxForms API.
-     * 
+     *             
      * Returns the full list of Avalara-supported AvaFile Forms
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* outletTypeId
@@ -4325,10 +4827,10 @@ public class AvaTaxClient {
     /**
      * Retrieve the full list of the AvaFile Forms available
      * 
-     * This API is deprecated. 
-     * 
+     * This API is deprecated.
+     *             
      * Please use the ListTaxForms API.
-     * 
+     *             
      * Returns the full list of Avalara-supported AvaFile Forms
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* outletTypeId
@@ -4350,10 +4852,10 @@ public class AvaTaxClient {
      * List certificate attributes used by a company
      * 
      * List the certificate attributes defined by a company.
-     * 
+     *             
      * A certificate may have multiple attributes that control its behavior.  You may apply or remove attributes to a
      * certificate at any time.
-     * 
+     *             
      * If you see the 'CertCaptureNotConfiguredError', please use CheckProvision and RequestProvision endpoints to
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).
@@ -4375,10 +4877,10 @@ public class AvaTaxClient {
      * List certificate attributes used by a company
      * 
      * List the certificate attributes defined by a company.
-     * 
+     *             
      * A certificate may have multiple attributes that control its behavior.  You may apply or remove attributes to a
      * certificate at any time.
-     * 
+     *             
      * If you see the 'CertCaptureNotConfiguredError', please use CheckProvision and RequestProvision endpoints to
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).
@@ -4400,10 +4902,10 @@ public class AvaTaxClient {
      * List the certificate exempt reasons defined by a company
      * 
      * List the certificate exempt reasons defined by a company.
-     * 
+     *             
      * An exemption reason defines why a certificate allows a customer to be exempt
      * for purposes of tax calculation.
-     * 
+     *             
      * If you see the 'CertCaptureNotConfiguredError', please use CheckProvision and RequestProvision endpoints to
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).
@@ -4425,10 +4927,10 @@ public class AvaTaxClient {
      * List the certificate exempt reasons defined by a company
      * 
      * List the certificate exempt reasons defined by a company.
-     * 
+     *             
      * An exemption reason defines why a certificate allows a customer to be exempt
      * for purposes of tax calculation.
-     * 
+     *             
      * If you see the 'CertCaptureNotConfiguredError', please use CheckProvision and RequestProvision endpoints to
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).
@@ -4450,10 +4952,10 @@ public class AvaTaxClient {
      * List certificate exposure zones used by a company
      * 
      * List the certificate exposure zones defined by a company.
-     * 
+     *             
      * An exposure zone is a location where a certificate can be valid.  Exposure zones may indicate a taxing
      * authority or other legal entity to which a certificate may apply.
-     * 
+     *             
      * If you see the 'CertCaptureNotConfiguredError', please use CheckProvision and RequestProvision endpoints to
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* id, companyId, name, tag, description, created, modified, region, country
@@ -4475,10 +4977,10 @@ public class AvaTaxClient {
      * List certificate exposure zones used by a company
      * 
      * List the certificate exposure zones defined by a company.
-     * 
+     *             
      * An exposure zone is a location where a certificate can be valid.  Exposure zones may indicate a taxing
      * authority or other legal entity to which a certificate may apply.
-     * 
+     *             
      * If you see the 'CertCaptureNotConfiguredError', please use CheckProvision and RequestProvision endpoints to
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* id, companyId, name, tag, description, created, modified, region, country
@@ -4620,7 +5122,7 @@ public class AvaTaxClient {
      * List all ISO 3166 countries
      * 
      * Returns a list of all ISO 3166 country codes, and their US English friendly names.
-     * This API is intended to be useful when presenting a dropdown box in your website to allow customers to select a country for 
+     * This API is intended to be useful when presenting a dropdown box in your website to allow customers to select a country for
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* alpha3Code, isEuropeanUnion, localizedNames, addressesRequireRegion
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
@@ -4641,7 +5143,7 @@ public class AvaTaxClient {
      * List all ISO 3166 countries
      * 
      * Returns a list of all ISO 3166 country codes, and their US English friendly names.
-     * This API is intended to be useful when presenting a dropdown box in your website to allow customers to select a country for 
+     * This API is intended to be useful when presenting a dropdown box in your website to allow customers to select a country for
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* alpha3Code, isEuropeanUnion, localizedNames, addressesRequireRegion
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
@@ -4662,11 +5164,11 @@ public class AvaTaxClient {
      * List certificate exposure zones used by a company
      * 
      * List available cover letters that can be used when sending invitation to use CertExpress to upload certificates.
-     * 
+     *             
      * The CoverLetter model represents a message sent along with an invitation to use CertExpress to
-     * upload certificates.  An invitation allows customers to use CertExpress to upload their exemption 
+     * upload certificates.  An invitation allows customers to use CertExpress to upload their exemption
      * certificates directly; this cover letter explains why the invitation was sent.
-     * 
+     *             
      * If you see the 'CertCaptureNotConfiguredError', please use CheckProvision and RequestProvision endpoints to
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* id, companyId, subject, description, createdDate, modifiedDate, pageCount, templateFilename, version
@@ -4688,11 +5190,11 @@ public class AvaTaxClient {
      * List certificate exposure zones used by a company
      * 
      * List available cover letters that can be used when sending invitation to use CertExpress to upload certificates.
-     * 
+     *             
      * The CoverLetter model represents a message sent along with an invitation to use CertExpress to
-     * upload certificates.  An invitation allows customers to use CertExpress to upload their exemption 
+     * upload certificates.  An invitation allows customers to use CertExpress to upload their exemption
      * certificates directly; this cover letter explains why the invitation was sent.
-     * 
+     *             
      * If you see the 'CertCaptureNotConfiguredError', please use CheckProvision and RequestProvision endpoints to
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* id, companyId, subject, description, createdDate, modifiedDate, pageCount, templateFilename, version
@@ -4713,13 +5215,18 @@ public class AvaTaxClient {
     /**
      * Lists the next level of HS Codes given a destination country and HS Code prefix.
      * 
-     * Retrieves a list of HS Codes that are the children of the prefix for the given destination country, if 
-     * additional children are available. 
-     * 
+     * Retrieves a list of HS Codes that are the children of the prefix for the given destination country, if
+     * additional children are available.
+     *             
      * HS Code is interchangeable with "tariff code" and definitions are generally unique to a destination country.
-     * An HS Code describes an item and its eligibility/rate for tariffs. HS Codes are organized by 
+     * An HS Code describes an item and its eligibility/rate for tariffs. HS Codes are organized by
      * Section/Chapter/Heading/Subheading/Classification.
+     *             
+     * This API is intended to be useful to identify the correct HS Code to use for your item.
      * 
+     * ### Security Policies
+     * 
+     * * This API depends on the following active services<br />*Required* (all):  AvaTaxGlobal.
      * 
      * @param country The name or code of the destination country.
      * @param hsCode The Section or partial HS Code for which you would like to view the next level of HS Code detail, if more detail is available.
@@ -4743,13 +5250,18 @@ public class AvaTaxClient {
     /**
      * Lists the next level of HS Codes given a destination country and HS Code prefix.
      * 
-     * Retrieves a list of HS Codes that are the children of the prefix for the given destination country, if 
-     * additional children are available. 
-     * 
+     * Retrieves a list of HS Codes that are the children of the prefix for the given destination country, if
+     * additional children are available.
+     *             
      * HS Code is interchangeable with "tariff code" and definitions are generally unique to a destination country.
-     * An HS Code describes an item and its eligibility/rate for tariffs. HS Codes are organized by 
+     * An HS Code describes an item and its eligibility/rate for tariffs. HS Codes are organized by
      * Section/Chapter/Heading/Subheading/Classification.
+     *             
+     * This API is intended to be useful to identify the correct HS Code to use for your item.
      * 
+     * ### Security Policies
+     * 
+     * * This API depends on the following active services<br />*Required* (all):  AvaTaxGlobal.
      * 
      * @param country The name or code of the destination country.
      * @param hsCode The Section or partial HS Code for which you would like to view the next level of HS Code detail, if more detail is available.
@@ -4773,11 +5285,16 @@ public class AvaTaxClient {
     /**
      * List top level HS Code Sections.
      * 
-     * Returns the full list of top level HS Code Sections. Sections are the broadest level of detail for 
-     * classifying tariff codes and the items to which they apply. HS Codes are organized 
+     * Returns the full list of top level HS Code Sections. Sections are the broadest level of detail for
+     * classifying tariff codes and the items to which they apply. HS Codes are organized
      * by Section/Chapter/Heading/Subheading/Classification.
+     *             
+     * This API is intended to be useful to identify the top level Sections for
+     * further LandedCost HS Code lookups.
      * 
-     * This API is intended to be useful to identify the top level Sections for 
+     * ### Security Policies
+     * 
+     * * This API depends on the following active services<br />*Required* (all):  AvaTaxGlobal.
      * 
      * @return FetchResult<HsCodeModel>
      */
@@ -4789,11 +5306,16 @@ public class AvaTaxClient {
     /**
      * List top level HS Code Sections.
      * 
-     * Returns the full list of top level HS Code Sections. Sections are the broadest level of detail for 
-     * classifying tariff codes and the items to which they apply. HS Codes are organized 
+     * Returns the full list of top level HS Code Sections. Sections are the broadest level of detail for
+     * classifying tariff codes and the items to which they apply. HS Codes are organized
      * by Section/Chapter/Heading/Subheading/Classification.
+     *             
+     * This API is intended to be useful to identify the top level Sections for
+     * further LandedCost HS Code lookups.
      * 
-     * This API is intended to be useful to identify the top level Sections for 
+     * ### Security Policies
+     * 
+     * * This API depends on the following active services<br />*Required* (all):  AvaTaxGlobal.
      * 
      * @return FetchResult<HsCodeModel>
      */
@@ -4806,7 +5328,7 @@ public class AvaTaxClient {
      * List all ISO 4217 currencies supported by AvaTax.
      * 
      * Lists all ISO 4217 currencies supported by AvaTax.
-     * 
+     *             
      * This API produces a list of currency codes that can be used when calling AvaTax.  The values from this API can be used to fill out the
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).
@@ -4828,7 +5350,7 @@ public class AvaTaxClient {
      * List all ISO 4217 currencies supported by AvaTax.
      * 
      * Lists all ISO 4217 currencies supported by AvaTax.
-     * 
+     *             
      * This API produces a list of currency codes that can be used when calling AvaTax.  The values from this API can be used to fill out the
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).
@@ -4936,7 +5458,7 @@ public class AvaTaxClient {
      * List jurisdictions based on the filter provided
      * 
      * Returns a list of all Avalara-supported taxing jurisdictions.
-     * 
+     *             
      * This API allows you to examine all Avalara-supported jurisdictions. You can filter your search by supplying
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* rate, salesRate, signatureCode, useRate
@@ -4958,7 +5480,7 @@ public class AvaTaxClient {
      * List jurisdictions based on the filter provided
      * 
      * Returns a list of all Avalara-supported taxing jurisdictions.
-     * 
+     *             
      * This API allows you to examine all Avalara-supported jurisdictions. You can filter your search by supplying
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* rate, salesRate, signatureCode, useRate
@@ -4980,9 +5502,9 @@ public class AvaTaxClient {
      * List jurisdictions near a specific address
      * 
      * Returns a list of all Avalara-supported taxing jurisdictions that apply to this address.
-     * 
+     *             
      * This API allows you to identify which jurisdictions are nearby a specific address according to the best available geocoding information.
-     * It is intended to allow you to create a "Jurisdiction Override", which allows an address to be configured as belonging to a nearby 
+     * It is intended to allow you to create a "Jurisdiction Override", which allows an address to be configured as belonging to a nearby
      * jurisdiction in AvaTax.
      *             
      * 
@@ -5019,9 +5541,9 @@ public class AvaTaxClient {
      * List jurisdictions near a specific address
      * 
      * Returns a list of all Avalara-supported taxing jurisdictions that apply to this address.
-     * 
+     *             
      * This API allows you to identify which jurisdictions are nearby a specific address according to the best available geocoding information.
-     * It is intended to allow you to create a "Jurisdiction Override", which allows an address to be configured as belonging to a nearby 
+     * It is intended to allow you to create a "Jurisdiction Override", which allows an address to be configured as belonging to a nearby
      * jurisdiction in AvaTax.
      *             
      * 
@@ -5183,10 +5705,10 @@ public class AvaTaxClient {
     /**
      * Retrieve the full list of Avalara-supported nexus for all countries and regions.
      * 
-     * Returns the full list of all Avalara-supported nexus for all countries and regions. 
+     * Returns the full list of all Avalara-supported nexus for all countries and regions.
+     *             
      * 
-     * 
-     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* streamlinedSalesTax, taxAuthorityId
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* streamlinedSalesTax, isSSTActive, taxAuthorityId
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
@@ -5204,10 +5726,10 @@ public class AvaTaxClient {
     /**
      * Retrieve the full list of Avalara-supported nexus for all countries and regions.
      * 
-     * Returns the full list of all Avalara-supported nexus for all countries and regions. 
+     * Returns the full list of all Avalara-supported nexus for all countries and regions.
+     *             
      * 
-     * 
-     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* streamlinedSalesTax, taxAuthorityId
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* streamlinedSalesTax, isSSTActive, taxAuthorityId
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
@@ -5237,7 +5759,7 @@ public class AvaTaxClient {
      * @param region Name or ISO 3166 code identifying the region portion of the address.      This field supports many different region identifiers:   * Two and three character ISO 3166 region codes   * Fully spelled out names of the region in ISO supported languages   * Common alternative spellings for many regions      For a full list of all supported codes and names, please see the Definitions API `ListRegions`.
      * @param postalCode The postal code or zip code portion of this address.
      * @param country Name or ISO 3166 code identifying the country portion of this address.      This field supports many different country identifiers:   * Two character ISO 3166 codes   * Three character ISO 3166 codes   * Fully spelled out names of the country in ISO supported languages   * Common alternative spellings for many countries      For a full list of all supported codes and names, please see the Definitions API `ListCountries`.
-     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* streamlinedSalesTax, taxAuthorityId
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* streamlinedSalesTax, isSSTActive, taxAuthorityId
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
@@ -5274,7 +5796,7 @@ public class AvaTaxClient {
      * @param region Name or ISO 3166 code identifying the region portion of the address.      This field supports many different region identifiers:   * Two and three character ISO 3166 region codes   * Fully spelled out names of the region in ISO supported languages   * Common alternative spellings for many regions      For a full list of all supported codes and names, please see the Definitions API `ListRegions`.
      * @param postalCode The postal code or zip code portion of this address.
      * @param country Name or ISO 3166 code identifying the country portion of this address.      This field supports many different country identifiers:   * Two character ISO 3166 codes   * Three character ISO 3166 codes   * Fully spelled out names of the country in ISO supported languages   * Common alternative spellings for many countries      For a full list of all supported codes and names, please see the Definitions API `ListCountries`.
-     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* streamlinedSalesTax, taxAuthorityId
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* streamlinedSalesTax, isSSTActive, taxAuthorityId
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
@@ -5300,10 +5822,10 @@ public class AvaTaxClient {
      * Retrieve the full list of Avalara-supported nexus for a country.
      * 
      * Returns all Avalara-supported nexus for the specified country.
-     * 
+     *             
      * 
      * @param country The country in which you want to fetch the system nexus
-     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* streamlinedSalesTax, taxAuthorityId
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* streamlinedSalesTax, isSSTActive, taxAuthorityId
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
@@ -5323,10 +5845,10 @@ public class AvaTaxClient {
      * Retrieve the full list of Avalara-supported nexus for a country.
      * 
      * Returns all Avalara-supported nexus for the specified country.
-     * 
+     *             
      * 
      * @param country The country in which you want to fetch the system nexus
-     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* streamlinedSalesTax, taxAuthorityId
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* streamlinedSalesTax, isSSTActive, taxAuthorityId
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
@@ -5346,11 +5868,11 @@ public class AvaTaxClient {
      * Retrieve the full list of Avalara-supported nexus for a country and region.
      * 
      * Returns all Avalara-supported nexus for the specified country and region.
-     * 
+     *             
      * 
      * @param country The two-character ISO-3166 code for the country.
      * @param region The two or three character region code for the region.
-     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* streamlinedSalesTax, taxAuthorityId
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* streamlinedSalesTax, isSSTActive, taxAuthorityId
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
@@ -5371,11 +5893,11 @@ public class AvaTaxClient {
      * Retrieve the full list of Avalara-supported nexus for a country and region.
      * 
      * Returns all Avalara-supported nexus for the specified country and region.
-     * 
+     *             
      * 
      * @param country The two-character ISO-3166 code for the country.
      * @param region The two or three character region code for the region.
-     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* streamlinedSalesTax, taxAuthorityId
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* streamlinedSalesTax, isSSTActive, taxAuthorityId
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
@@ -5396,15 +5918,20 @@ public class AvaTaxClient {
      * List nexus related to a tax form
      * 
      * Retrieves a list of nexus related to a tax form.
-     * 
+     *             
      * The concept of `Nexus` indicates a place where your company has sufficient physical presence and is obligated
      * to collect and remit transaction-based taxes.
-     * 
+     *             
      * When defining companies in AvaTax, you must declare nexus for your company in order to correctly calculate tax
      * in all jurisdictions affected by your transactions.
-     * 
+     *             
      * This API is intended to provide useful information when examining a tax form.  If you are about to begin filing
-     * a tax form, you may want to know whether you have declared nexus in all the jurisdictions related to that tax 
+     * a tax form, you may want to know whether you have declared nexus in all the jurisdictions related to that tax
+     * form in order to better understand how the form will be filled out.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
      * @param formCode The form code that we are looking up the nexus for
      * @return NexusByTaxFormModel
@@ -5419,15 +5946,20 @@ public class AvaTaxClient {
      * List nexus related to a tax form
      * 
      * Retrieves a list of nexus related to a tax form.
-     * 
+     *             
      * The concept of `Nexus` indicates a place where your company has sufficient physical presence and is obligated
      * to collect and remit transaction-based taxes.
-     * 
+     *             
      * When defining companies in AvaTax, you must declare nexus for your company in order to correctly calculate tax
      * in all jurisdictions affected by your transactions.
-     * 
+     *             
      * This API is intended to provide useful information when examining a tax form.  If you are about to begin filing
-     * a tax form, you may want to know whether you have declared nexus in all the jurisdictions related to that tax 
+     * a tax form, you may want to know whether you have declared nexus in all the jurisdictions related to that tax
+     * form in order to better understand how the form will be filled out.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
      * @param formCode The form code that we are looking up the nexus for
      * @return NexusByTaxFormModel
@@ -5883,6 +6415,12 @@ public class AvaTaxClient {
     /**
      * Retrieve the parameters by companyCode and itemCode.
      * 
+     * Returns the list of parameters based on the company country and state jurisdiction and the item code.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
+     * 
      * @param companyCode Company code.
      * @param itemCode Item code.
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* serviceTypes, regularExpression, values
@@ -5904,6 +6442,12 @@ public class AvaTaxClient {
 
     /**
      * Retrieve the parameters by companyCode and itemCode.
+     * 
+     * Returns the list of parameters based on the company country and state jurisdiction and the item code.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
      * @param companyCode Company code.
      * @param itemCode Item code.
@@ -5996,11 +6540,11 @@ public class AvaTaxClient {
      * List all customs duty programs recognized by AvaTax
      * 
      * List all preferred customs duty programs recognized by AvaTax.
-     * 
+     *             
      * A customs duty program is an optional program you can use to obtain favorable treatment from customs and duty agents.
      * An example of a preferred program is NAFTA, which provides preferential rates for products being shipped from neighboring
      * countries.
-     * 
+     *             
      * To select a preferred program for calculating customs and duty rates, call this API to find the appropriate code for your
      * preferred program.  Next, set the parameter `AvaTax.LC.PreferredProgram` in your `CreateTransaction` call to the code of
      * 
@@ -6023,11 +6567,11 @@ public class AvaTaxClient {
      * List all customs duty programs recognized by AvaTax
      * 
      * List all preferred customs duty programs recognized by AvaTax.
-     * 
+     *             
      * A customs duty program is an optional program you can use to obtain favorable treatment from customs and duty agents.
      * An example of a preferred program is NAFTA, which provides preferential rates for products being shipped from neighboring
      * countries.
-     * 
+     *             
      * To select a preferred program for calculating customs and duty rates, call this API to find the appropriate code for your
      * preferred program.  Next, set the parameter `AvaTax.LC.PreferredProgram` in your `CreateTransaction` call to the code of
      * 
@@ -6050,7 +6594,7 @@ public class AvaTaxClient {
      * List all available product classification systems.
      * 
      * List all available product classification systems.
-     * 
+     *             
      * Tax authorities use product classification systems as a way to identify products and associate them with a tax rate.
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* countries
@@ -6072,7 +6616,7 @@ public class AvaTaxClient {
      * List all available product classification systems.
      * 
      * List all available product classification systems.
-     * 
+     *             
      * Tax authorities use product classification systems as a way to identify products and associate them with a tax rate.
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* countries
@@ -6094,7 +6638,7 @@ public class AvaTaxClient {
      * List all product classification systems available to a company based on its nexus.
      * 
      * Lists all product classification systems available to a company based on its nexus.
-     * 
+     *             
      * Tax authorities use product classification systems as a way to identify products and associate them with a tax rate.
      * 
      * @param companyCode The company code.
@@ -6118,7 +6662,7 @@ public class AvaTaxClient {
      * List all product classification systems available to a company based on its nexus.
      * 
      * Lists all product classification systems available to a company based on its nexus.
-     * 
+     *             
      * Tax authorities use product classification systems as a way to identify products and associate them with a tax rate.
      * 
      * @param companyCode The company code.
@@ -6186,7 +6730,7 @@ public class AvaTaxClient {
      * List all ISO 3166 regions
      * 
      * Returns a list of all ISO 3166 region codes and their US English friendly names.
-     * This API is intended to be useful when presenting a dropdown box in your website to allow customers to select a region 
+     * This API is intended to be useful when presenting a dropdown box in your website to allow customers to select a region
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* localizedNames
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
@@ -6207,7 +6751,7 @@ public class AvaTaxClient {
      * List all ISO 3166 regions
      * 
      * Returns a list of all ISO 3166 region codes and their US English friendly names.
-     * This API is intended to be useful when presenting a dropdown box in your website to allow customers to select a region 
+     * This API is intended to be useful when presenting a dropdown box in your website to allow customers to select a region
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* localizedNames
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
@@ -6228,7 +6772,7 @@ public class AvaTaxClient {
      * List all ISO 3166 regions for a country
      * 
      * Returns a list of all ISO 3166 region codes for a specific country code, and their US English friendly names.
-     * This API is intended to be useful when presenting a dropdown box in your website to allow customers to select a region 
+     * This API is intended to be useful when presenting a dropdown box in your website to allow customers to select a region
      * 
      * @param country The country of which you want to fetch ISO 3166 regions
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* localizedNames
@@ -6251,7 +6795,7 @@ public class AvaTaxClient {
      * List all ISO 3166 regions for a country
      * 
      * Returns a list of all ISO 3166 region codes for a specific country code, and their US English friendly names.
-     * This API is intended to be useful when presenting a dropdown box in your website to allow customers to select a region 
+     * This API is intended to be useful when presenting a dropdown box in your website to allow customers to select a region
      * 
      * @param country The country of which you want to fetch ISO 3166 regions
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* localizedNames
@@ -6441,7 +6985,7 @@ public class AvaTaxClient {
      * 
      * Returns the full list of Avalara-supported forms for each tax authority.
      * This list represents tax forms that Avalara recognizes.
-     * Customers who subscribe to Avalara Managed Returns Service can request these forms to be filed automatically 
+     * Customers who subscribe to Avalara Managed Returns Service can request these forms to be filed automatically
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
@@ -6463,7 +7007,7 @@ public class AvaTaxClient {
      * 
      * Returns the full list of Avalara-supported forms for each tax authority.
      * This list represents tax forms that Avalara recognizes.
-     * Customers who subscribe to Avalara Managed Returns Service can request these forms to be filed automatically 
+     * Customers who subscribe to Avalara Managed Returns Service can request these forms to be filed automatically
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
@@ -6527,6 +7071,11 @@ public class AvaTaxClient {
      * A 'TaxCode' represents a uniquely identified type of product, good, or service.
      * Avalara supports correct tax rates and taxability rules for all TaxCodes in all supported jurisdictions.
      * If you identify your products by tax code in your 'Create Transacion' API calls, Avalara will correctly calculate tax rates and
+     * taxability rules for this product in all supported jurisdictions.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
@@ -6550,6 +7099,11 @@ public class AvaTaxClient {
      * A 'TaxCode' represents a uniquely identified type of product, good, or service.
      * Avalara supports correct tax rates and taxability rules for all TaxCodes in all supported jurisdictions.
      * If you identify your products by tax code in your 'Create Transacion' API calls, Avalara will correctly calculate tax rates and
+     * taxability rules for this product in all supported jurisdictions.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
@@ -6724,7 +7278,7 @@ public class AvaTaxClient {
      * List all defined units of measurement
      * 
      * List all units of measurement systems defined by Avalara.
-     * 
+     *             
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* id
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
@@ -6745,7 +7299,7 @@ public class AvaTaxClient {
      * List all defined units of measurement
      * 
      * List all units of measurement systems defined by Avalara.
-     * 
+     *             
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* id
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
@@ -6769,6 +7323,11 @@ public class AvaTaxClient {
      * 
      * A company-distance-threshold model indicates the distance between a company
      * and the taxing borders of various countries.  Distance thresholds are necessary
+     * to correctly calculate some value-added taxes.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPAdmin, CSPTester, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
      * 
      * @param companyId The unique ID number of the company that owns this DistanceThreshold
      * @param model The DistanceThreshold object or objects you wish to create.
@@ -6787,6 +7346,11 @@ public class AvaTaxClient {
      * 
      * A company-distance-threshold model indicates the distance between a company
      * and the taxing borders of various countries.  Distance thresholds are necessary
+     * to correctly calculate some value-added taxes.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPAdmin, CSPTester, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
      * 
      * @param companyId The unique ID number of the company that owns this DistanceThreshold
      * @param model The DistanceThreshold object or objects you wish to create.
@@ -6805,6 +7369,11 @@ public class AvaTaxClient {
      * 
      * A company-distance-threshold model indicates the distance between a company
      * and the taxing borders of various countries.  Distance thresholds are necessary
+     * to correctly calculate some value-added taxes.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPAdmin, CSPTester, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
      * 
      * @param companyId The unique ID number of the company that owns this DistanceThreshold
      * @param id The unique ID number of the DistanceThreshold object you wish to delete.
@@ -6824,6 +7393,11 @@ public class AvaTaxClient {
      * 
      * A company-distance-threshold model indicates the distance between a company
      * and the taxing borders of various countries.  Distance thresholds are necessary
+     * to correctly calculate some value-added taxes.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPAdmin, CSPTester, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
      * 
      * @param companyId The unique ID number of the company that owns this DistanceThreshold
      * @param id The unique ID number of the DistanceThreshold object you wish to delete.
@@ -6843,6 +7417,11 @@ public class AvaTaxClient {
      * 
      * A company-distance-threshold model indicates the distance between a company
      * and the taxing borders of various countries.  Distance thresholds are necessary
+     * to correctly calculate some value-added taxes.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
      * @param companyId The ID of the company that owns this DistanceThreshold object
      * @param id The unique ID number referring to this DistanceThreshold object
@@ -6862,6 +7441,11 @@ public class AvaTaxClient {
      * 
      * A company-distance-threshold model indicates the distance between a company
      * and the taxing borders of various countries.  Distance thresholds are necessary
+     * to correctly calculate some value-added taxes.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
      * @param companyId The ID of the company that owns this DistanceThreshold object
      * @param id The unique ID number referring to this DistanceThreshold object
@@ -6881,6 +7465,11 @@ public class AvaTaxClient {
      * 
      * A company-distance-threshold model indicates the distance between a company
      * and the taxing borders of various countries.  Distance thresholds are necessary
+     * to correctly calculate some value-added taxes.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
      * @param companyId The ID of the company whose DistanceThreshold objects you wish to list.
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).
@@ -6908,6 +7497,11 @@ public class AvaTaxClient {
      * 
      * A company-distance-threshold model indicates the distance between a company
      * and the taxing borders of various countries.  Distance thresholds are necessary
+     * to correctly calculate some value-added taxes.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
      * @param companyId The ID of the company whose DistanceThreshold objects you wish to list.
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).
@@ -6938,6 +7532,11 @@ public class AvaTaxClient {
      * to correctly calculate some value-added taxes.
      * 
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * Paginate your results using the `$top`, `$skip`, and `$orderby` parameters.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).
      * @param include A comma separated list of additional data to retrieve.
@@ -6966,6 +7565,11 @@ public class AvaTaxClient {
      * to correctly calculate some value-added taxes.
      * 
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * Paginate your results using the `$top`, `$skip`, and `$orderby` parameters.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).
      * @param include A comma separated list of additional data to retrieve.
@@ -6994,6 +7598,11 @@ public class AvaTaxClient {
      * to correctly calculate some value-added taxes.
      *             
      * All data from the existing object will be replaced with data in the object you PUT.  
+     * To set a field's value to null, you may either set its value to null or omit that field from the object you post.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPAdmin, CSPTester, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
      * 
      * @param companyId The unique ID number of the company that owns this DistanceThreshold object.
      * @param id The unique ID number of the DistanceThreshold object to replace.
@@ -7017,6 +7626,11 @@ public class AvaTaxClient {
      * to correctly calculate some value-added taxes.
      *             
      * All data from the existing object will be replaced with data in the object you PUT.  
+     * To set a field's value to null, you may either set its value to null or omit that field from the object you post.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPAdmin, CSPTester, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
      * 
      * @param companyId The unique ID number of the company that owns this DistanceThreshold object.
      * @param id The unique ID number of the DistanceThreshold object to replace.
@@ -7036,6 +7650,13 @@ public class AvaTaxClient {
      * This API is available by invitation only.
      * A "filing request" represents a request to change an existing filing calendar.  Filing requests
      * are reviewed and validated by Avalara Compliance before being implemented.
+     * The filing request must be in the "ChangeRequest" status to be approved.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.
+     * * This API is available by invitation only.  To request access to this feature, please speak to a business development manager and request host address whitelisting for [Returns] for your servers.
      * 
      * @param companyId The unique ID of the company that owns the filing request object
      * @param id The unique ID of the filing request object
@@ -7054,6 +7675,13 @@ public class AvaTaxClient {
      * This API is available by invitation only.
      * A "filing request" represents a request to change an existing filing calendar.  Filing requests
      * are reviewed and validated by Avalara Compliance before being implemented.
+     * The filing request must be in the "ChangeRequest" status to be approved.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.
+     * * This API is available by invitation only.  To request access to this feature, please speak to a business development manager and request host address whitelisting for [Returns] for your servers.
      * 
      * @param companyId The unique ID of the company that owns the filing request object
      * @param id The unique ID of the filing request object
@@ -7071,6 +7699,13 @@ public class AvaTaxClient {
      * 
      * This API is available by invitation only.
      * A "filing request" represents a request to change an existing filing calendar.  Filing requests
+     * are reviewed and validated by Avalara Compliance before being implemented.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.
+     * * This API is available by invitation only.  To request access to this feature, please speak to a business development manager and request host address whitelisting for [Returns] for your servers.
      * 
      * @param companyId The unique ID of the company that owns the filing request object
      * @param id The unique ID of the filing request object
@@ -7088,6 +7723,13 @@ public class AvaTaxClient {
      * 
      * This API is available by invitation only.
      * A "filing request" represents a request to change an existing filing calendar.  Filing requests
+     * are reviewed and validated by Avalara Compliance before being implemented.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.
+     * * This API is available by invitation only.  To request access to this feature, please speak to a business development manager and request host address whitelisting for [Returns] for your servers.
      * 
      * @param companyId The unique ID of the company that owns the filing request object
      * @param id The unique ID of the filing request object
@@ -7104,8 +7746,15 @@ public class AvaTaxClient {
      * Create a new filing request to cancel a filing calendar
      * 
      * This API is available by invitation only.
-     * 
+     *             
      * A "filing request" represents a request to change an existing filing calendar.  Filing requests
+     * are reviewed and validated by Avalara Compliance before being implemented.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.
+     * * This API is available by invitation only.  To request access to this feature, please speak to a business development manager and request host address whitelisting for [Returns] for your servers.
      * 
      * @param companyId The unique ID of the company that owns the filing calendar object
      * @param id The unique ID number of the filing calendar to cancel
@@ -7123,8 +7772,15 @@ public class AvaTaxClient {
      * Create a new filing request to cancel a filing calendar
      * 
      * This API is available by invitation only.
-     * 
+     *             
      * A "filing request" represents a request to change an existing filing calendar.  Filing requests
+     * are reviewed and validated by Avalara Compliance before being implemented.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.
+     * * This API is available by invitation only.  To request access to this feature, please speak to a business development manager and request host address whitelisting for [Returns] for your servers.
      * 
      * @param companyId The unique ID of the company that owns the filing calendar object
      * @param id The unique ID number of the filing calendar to cancel
@@ -7142,6 +7798,13 @@ public class AvaTaxClient {
      * Create a filing calendar
      * 
      * This API is available by invitation only and only available for users with Compliance access
+     * A "filing request" represents information that compliance uses to file a return
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.
+     * * This API is available by invitation only.  To request access to this feature, please speak to a business development manager and request host address whitelisting for [Returns] for your servers.
      * 
      * @param companyId The unique ID of the company that will add the new filing calendar
      * @param model Filing calendars that will be added
@@ -7157,6 +7820,13 @@ public class AvaTaxClient {
      * Create a filing calendar
      * 
      * This API is available by invitation only and only available for users with Compliance access
+     * A "filing request" represents information that compliance uses to file a return
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.
+     * * This API is available by invitation only.  To request access to this feature, please speak to a business development manager and request host address whitelisting for [Returns] for your servers.
      * 
      * @param companyId The unique ID of the company that will add the new filing calendar
      * @param model Filing calendars that will be added
@@ -7173,6 +7843,13 @@ public class AvaTaxClient {
      * 
      * This API is available by invitation only.
      * A "filing request" represents a request to change an existing filing calendar.  Filing requests
+     * are reviewed and validated by Avalara Compliance before being implemented.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.
+     * * This API is available by invitation only.  To request access to this feature, please speak to a business development manager and request host address whitelisting for [Returns] for your servers.
      * 
      * @param companyId The unique ID of the company that will add the new filing calendar
      * @param model Information about the proposed new filing calendar
@@ -7189,6 +7866,13 @@ public class AvaTaxClient {
      * 
      * This API is available by invitation only.
      * A "filing request" represents a request to change an existing filing calendar.  Filing requests
+     * are reviewed and validated by Avalara Compliance before being implemented.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.
+     * * This API is available by invitation only.  To request access to this feature, please speak to a business development manager and request host address whitelisting for [Returns] for your servers.
      * 
      * @param companyId The unique ID of the company that will add the new filing calendar
      * @param model Information about the proposed new filing calendar
@@ -7202,6 +7886,14 @@ public class AvaTaxClient {
 
     /**
      * Returns a list of options for adding the specified form.
+     * 
+     * This API is available by invitation only.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.
+     * * This API is available by invitation only.  To request access to this feature, please speak to a business development manager and request host address whitelisting for [Returns] for your servers.
      * 
      * @param companyId The unique ID of the company that owns the filing calendar object
      * @param formCode The unique code of the form
@@ -7217,6 +7909,14 @@ public class AvaTaxClient {
     /**
      * Returns a list of options for adding the specified form.
      * 
+     * This API is available by invitation only.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.
+     * * This API is available by invitation only.  To request access to this feature, please speak to a business development manager and request host address whitelisting for [Returns] for your servers.
+     * 
      * @param companyId The unique ID of the company that owns the filing calendar object
      * @param formCode The unique code of the form
      * @return ArrayList<CycleAddOptionModel>
@@ -7230,6 +7930,14 @@ public class AvaTaxClient {
 
     /**
      * Indicates when changes are allowed to be made to a filing calendar.
+     * 
+     * This API is available by invitation only.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.
+     * * This API is available by invitation only.  To request access to this feature, please speak to a business development manager and request host address whitelisting for [Returns] for your servers.
      * 
      * @param companyId The unique ID of the company that owns the filing calendar object
      * @param id The unique ID of the filing calendar object
@@ -7246,6 +7954,14 @@ public class AvaTaxClient {
     /**
      * Indicates when changes are allowed to be made to a filing calendar.
      * 
+     * This API is available by invitation only.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.
+     * * This API is available by invitation only.  To request access to this feature, please speak to a business development manager and request host address whitelisting for [Returns] for your servers.
+     * 
      * @param companyId The unique ID of the company that owns the filing calendar object
      * @param id The unique ID of the filing calendar object
      * @param model A list of filing calendar edits to be made
@@ -7261,6 +7977,14 @@ public class AvaTaxClient {
     /**
      * Returns a list of options for expiring a filing calendar
      * 
+     * This API is available by invitation only.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.
+     * * This API is available by invitation only.  To request access to this feature, please speak to a business development manager and request host address whitelisting for [Returns] for your servers.
+     * 
      * @param companyId The unique ID of the company that owns the filing calendar object
      * @param id The unique ID of the filing calendar object
      * @return CycleExpireModel
@@ -7274,6 +7998,14 @@ public class AvaTaxClient {
 
     /**
      * Returns a list of options for expiring a filing calendar
+     * 
+     * This API is available by invitation only.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.
+     * * This API is available by invitation only.  To request access to this feature, please speak to a business development manager and request host address whitelisting for [Returns] for your servers.
      * 
      * @param companyId The unique ID of the company that owns the filing calendar object
      * @param id The unique ID of the filing calendar object
@@ -7292,6 +8024,13 @@ public class AvaTaxClient {
      * This API is available by invitation only.
      * Mark the existing notice object at this URL as deleted.
      * A 'notice' represents a letter sent to a business by a tax authority regarding tax filing issues.  Avalara
+     * Returns customers often receive support and assistance from the Compliance Notices team in handling notices received by taxing authorities.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.
+     * * This API is available by invitation only.  To request access to this feature, please speak to a business development manager and request host address whitelisting for [Returns] for your servers.
      * 
      * @param companyId The ID of the company that owns this filing calendar.
      * @param id The ID of the filing calendar you wish to delete.
@@ -7310,6 +8049,13 @@ public class AvaTaxClient {
      * This API is available by invitation only.
      * Mark the existing notice object at this URL as deleted.
      * A 'notice' represents a letter sent to a business by a tax authority regarding tax filing issues.  Avalara
+     * Returns customers often receive support and assistance from the Compliance Notices team in handling notices received by taxing authorities.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.
+     * * This API is available by invitation only.  To request access to this feature, please speak to a business development manager and request host address whitelisting for [Returns] for your servers.
      * 
      * @param companyId The ID of the company that owns this filing calendar.
      * @param id The ID of the filing calendar you wish to delete.
@@ -7325,6 +8071,14 @@ public class AvaTaxClient {
     /**
      * Retrieve a single filing calendar
      * 
+     * This API is available by invitation only.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.
+     * * This API is available by invitation only.  To request access to this feature, please speak to a business development manager and request host address whitelisting for [Returns] for your servers.
+     * 
      * @param companyId The ID of the company that owns this filing calendar
      * @param id The primary key of this filing calendar
      * @return FilingCalendarModel
@@ -7338,6 +8092,14 @@ public class AvaTaxClient {
 
     /**
      * Retrieve a single filing calendar
+     * 
+     * This API is available by invitation only.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.
+     * * This API is available by invitation only.  To request access to this feature, please speak to a business development manager and request host address whitelisting for [Returns] for your servers.
      * 
      * @param companyId The ID of the company that owns this filing calendar
      * @param id The primary key of this filing calendar
@@ -7355,6 +8117,13 @@ public class AvaTaxClient {
      * 
      * This API is available by invitation only.
      * A "filing request" represents a request to change an existing filing calendar.  Filing requests
+     * are reviewed and validated by Avalara Compliance before being implemented.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.
+     * * This API is available by invitation only.  To request access to this feature, please speak to a business development manager and request host address whitelisting for [Returns] for your servers.
      * 
      * @param companyId The ID of the company that owns this filing calendar
      * @param id The primary key of this filing calendar
@@ -7372,6 +8141,13 @@ public class AvaTaxClient {
      * 
      * This API is available by invitation only.
      * A "filing request" represents a request to change an existing filing calendar.  Filing requests
+     * are reviewed and validated by Avalara Compliance before being implemented.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.
+     * * This API is available by invitation only.  To request access to this feature, please speak to a business development manager and request host address whitelisting for [Returns] for your servers.
      * 
      * @param companyId The ID of the company that owns this filing calendar
      * @param id The primary key of this filing calendar
@@ -7386,6 +8162,14 @@ public class AvaTaxClient {
 
     /**
      * Retrieve all filing calendars for this company
+     * 
+     * This API is available by invitation only.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.
+     * * This API is available by invitation only.  To request access to this feature, please speak to a business development manager and request host address whitelisting for [Returns] for your servers.
      * 
      * @param companyId The ID of the company that owns these batches
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* formCountry, formRegion, taxFormCode, taxAuthorityId, taxAuthorityName, taxAuthorityType, settings
@@ -7410,6 +8194,14 @@ public class AvaTaxClient {
 
     /**
      * Retrieve all filing calendars for this company
+     * 
+     * This API is available by invitation only.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.
+     * * This API is available by invitation only.  To request access to this feature, please speak to a business development manager and request host address whitelisting for [Returns] for your servers.
      * 
      * @param companyId The ID of the company that owns these batches
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* formCountry, formRegion, taxFormCode, taxAuthorityId, taxAuthorityName, taxAuthorityType, settings
@@ -7437,6 +8229,13 @@ public class AvaTaxClient {
      * 
      * This API is available by invitation only.
      * A "filing request" represents a request to change an existing filing calendar.  Filing requests
+     * are reviewed and validated by Avalara Compliance before being implemented.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.
+     * * This API is available by invitation only.  To request access to this feature, please speak to a business development manager and request host address whitelisting for [Returns] for your servers.
      * 
      * @param companyId The ID of the company that owns these batches
      * @param filingCalendarId Specific filing calendar id for the request
@@ -7462,6 +8261,13 @@ public class AvaTaxClient {
      * 
      * This API is available by invitation only.
      * A "filing request" represents a request to change an existing filing calendar.  Filing requests
+     * are reviewed and validated by Avalara Compliance before being implemented.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.
+     * * This API is available by invitation only.  To request access to this feature, please speak to a business development manager and request host address whitelisting for [Returns] for your servers.
      * 
      * @param companyId The ID of the company that owns these batches
      * @param filingCalendarId Specific filing calendar id for the request
@@ -7486,7 +8292,14 @@ public class AvaTaxClient {
      * New request for getting for validating customer's login credentials
      * 
      * This API is available by invitation only.
+     *             
+     * This API verifies that a customer has submitted correct login credentials for a tax authority's online filing system.
      * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.
+     * * This API is available by invitation only.  To request access to this feature, please speak to a business development manager and request host address whitelisting for [Returns] for your servers.
      * 
      * @param model The model of the login information we are verifying
      * @return LoginVerificationOutputModel
@@ -7500,7 +8313,14 @@ public class AvaTaxClient {
      * New request for getting for validating customer's login credentials
      * 
      * This API is available by invitation only.
+     *             
+     * This API verifies that a customer has submitted correct login credentials for a tax authority's online filing system.
      * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.
+     * * This API is available by invitation only.  To request access to this feature, please speak to a business development manager and request host address whitelisting for [Returns] for your servers.
      * 
      * @param model The model of the login information we are verifying
      * @return LoginVerificationOutputModel
@@ -7514,8 +8334,15 @@ public class AvaTaxClient {
      * Gets the request status and Login Result
      * 
      * This API is available by invitation only.
+     *             
+     * This API checks the status of a login verification request.  It may only be called by authorized users from the account
+     * that initially requested the login verification.
      * 
-     * This API checks the status of a login verification request.  It may only be called by authorized users from the account 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.
+     * * This API is available by invitation only.  To request access to this feature, please speak to a business development manager and request host address whitelisting for [Returns] for your servers.
      * 
      * @param jobId The unique ID number of this login request
      * @return LoginVerificationOutputModel
@@ -7530,8 +8357,15 @@ public class AvaTaxClient {
      * Gets the request status and Login Result
      * 
      * This API is available by invitation only.
+     *             
+     * This API checks the status of a login verification request.  It may only be called by authorized users from the account
+     * that initially requested the login verification.
      * 
-     * This API checks the status of a login verification request.  It may only be called by authorized users from the account 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.
+     * * This API is available by invitation only.  To request access to this feature, please speak to a business development manager and request host address whitelisting for [Returns] for your servers.
      * 
      * @param jobId The unique ID number of this login request
      * @return LoginVerificationOutputModel
@@ -7544,6 +8378,16 @@ public class AvaTaxClient {
 
     /**
      * Retrieve all filing calendars
+     * 
+     * This API is available by invitation only.
+     *             
+     * This API is deprecated - please use POST `/api/v2/filingrequests/query` API.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.
+     * * This API is available by invitation only.  To request access to this feature, please speak to a business development manager and request host address whitelisting for [Returns] for your servers.
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* formCountry, formRegion, taxFormCode, taxAuthorityId, taxAuthorityName, taxAuthorityType, settings
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
@@ -7567,6 +8411,16 @@ public class AvaTaxClient {
     /**
      * Retrieve all filing calendars
      * 
+     * This API is available by invitation only.
+     *             
+     * This API is deprecated - please use POST `/api/v2/filingrequests/query` API.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.
+     * * This API is available by invitation only.  To request access to this feature, please speak to a business development manager and request host address whitelisting for [Returns] for your servers.
+     * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* formCountry, formRegion, taxFormCode, taxAuthorityId, taxAuthorityName, taxAuthorityType, settings
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
@@ -7587,13 +8441,75 @@ public class AvaTaxClient {
     }
 
     /**
+     * Retrieve all filing calendars
+     * 
+     * This API is available by invitation only.
+     *             
+     * This API is intended to replace the GET `/api/v2/filingcalendars` API. The fetch request object is posted on the body of the request instead of the URI, so it's not limited by a set number of characters.
+     * The documentation of the GET API shows how filtering, sorting and pagination works.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.
+     * * This API is available by invitation only.  To request access to this feature, please speak to a business development manager and request host address whitelisting for [Returns] for your servers.
+     * 
+     * @param returnCountry If specified, fetches only filing calendars that apply to tax filings in this specific country. Uses ISO 3166 country codes.
+     * @param returnRegion If specified, fetches only filing calendars that apply to tax filings in this specific region. Uses ISO 3166 region codes.
+     * @param model Query object to filter, sort and paginate the filing calendars.
+     * @return FetchResult<FilingCalendarModel>
+     */
+    public FetchResult<FilingCalendarModel> queryFilingCalendarsPost(String returnCountry, String returnRegion, QueryRequestModel model) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/filingcalendars/query");
+        path.addQuery("returnCountry", returnCountry);
+        path.addQuery("returnRegion", returnRegion);
+        return ((RestCall<FetchResult<FilingCalendarModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<FetchResult<FilingCalendarModel>>(){})).call();
+    }
+
+    /**
+     * Retrieve all filing calendars
+     * 
+     * This API is available by invitation only.
+     *             
+     * This API is intended to replace the GET `/api/v2/filingcalendars` API. The fetch request object is posted on the body of the request instead of the URI, so it's not limited by a set number of characters.
+     * The documentation of the GET API shows how filtering, sorting and pagination works.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.
+     * * This API is available by invitation only.  To request access to this feature, please speak to a business development manager and request host address whitelisting for [Returns] for your servers.
+     * 
+     * @param returnCountry If specified, fetches only filing calendars that apply to tax filings in this specific country. Uses ISO 3166 country codes.
+     * @param returnRegion If specified, fetches only filing calendars that apply to tax filings in this specific region. Uses ISO 3166 region codes.
+     * @param model Query object to filter, sort and paginate the filing calendars.
+     * @return FetchResult<FilingCalendarModel>
+     */
+    public Future<FetchResult<FilingCalendarModel>> queryFilingCalendarsPostAsync(String returnCountry, String returnRegion, QueryRequestModel model) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/filingcalendars/query");
+        path.addQuery("returnCountry", returnCountry);
+        path.addQuery("returnRegion", returnRegion);
+        return this.threadPool.submit((RestCall<FetchResult<FilingCalendarModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<FetchResult<FilingCalendarModel>>(){}));
+    }
+
+    /**
      * Retrieve all filing requests
      * 
      * This API is available by invitation only.
+     *             
+     * This API is deprecated - please use POST `/api/v2/filingrequests/query` API.
+     *             
      * A "filing request" represents a request to change an existing filing calendar.  Filing requests
      * are reviewed and validated by Avalara Compliance before being implemented.
-     * 
+     *             
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * Paginate your results using the `$top`, `$skip`, and `$orderby` parameters.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.
+     * * This API is available by invitation only.  To request access to this feature, please speak to a business development manager and request host address whitelisting for [Returns] for your servers.
      * 
      * @param filingCalendarId Specific filing calendar id for the request
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).
@@ -7616,10 +8532,20 @@ public class AvaTaxClient {
      * Retrieve all filing requests
      * 
      * This API is available by invitation only.
+     *             
+     * This API is deprecated - please use POST `/api/v2/filingrequests/query` API.
+     *             
      * A "filing request" represents a request to change an existing filing calendar.  Filing requests
      * are reviewed and validated by Avalara Compliance before being implemented.
-     * 
+     *             
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * Paginate your results using the `$top`, `$skip`, and `$orderby` parameters.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.
+     * * This API is available by invitation only.  To request access to this feature, please speak to a business development manager and request host address whitelisting for [Returns] for your servers.
      * 
      * @param filingCalendarId Specific filing calendar id for the request
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).
@@ -7639,14 +8565,69 @@ public class AvaTaxClient {
     }
 
     /**
+     * Retrieve all filing requests
+     * 
+     * This API is available by invitation only.
+     *             
+     * This API is intended to replace the GET `/api/v2/filingrequests` API. The fetch request object is posted on the body of the request instead of the URI, so it's not limited by a set number of characters.
+     * The documentation of the GET API shows how filtering, sorting and pagination works.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.
+     * * This API is available by invitation only.  To request access to this feature, please speak to a business development manager and request host address whitelisting for [Returns] for your servers.
+     * 
+     * @param filingCalendarId Specific filing calendar id for the request
+     * @param model Query object to filter, sort and paginate the filing calendars.
+     * @return FetchResult<FilingRequestModel>
+     */
+    public FetchResult<FilingRequestModel> queryFilingRequestsPost(Integer filingCalendarId, QueryRequestModel model) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/filingrequests/query");
+        path.addQuery("filingCalendarId", filingCalendarId);
+        return ((RestCall<FetchResult<FilingRequestModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<FetchResult<FilingRequestModel>>(){})).call();
+    }
+
+    /**
+     * Retrieve all filing requests
+     * 
+     * This API is available by invitation only.
+     *             
+     * This API is intended to replace the GET `/api/v2/filingrequests` API. The fetch request object is posted on the body of the request instead of the URI, so it's not limited by a set number of characters.
+     * The documentation of the GET API shows how filtering, sorting and pagination works.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.
+     * * This API is available by invitation only.  To request access to this feature, please speak to a business development manager and request host address whitelisting for [Returns] for your servers.
+     * 
+     * @param filingCalendarId Specific filing calendar id for the request
+     * @param model Query object to filter, sort and paginate the filing calendars.
+     * @return FetchResult<FilingRequestModel>
+     */
+    public Future<FetchResult<FilingRequestModel>> queryFilingRequestsPostAsync(Integer filingCalendarId, QueryRequestModel model) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/filingrequests/query");
+        path.addQuery("filingCalendarId", filingCalendarId);
+        return this.threadPool.submit((RestCall<FetchResult<FilingRequestModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<FetchResult<FilingRequestModel>>(){}));
+    }
+
+    /**
      * Create a new filing request to edit a filing calendar
      * 
      * This API is available by invitation only.
-     * 
+     *             
      * A "filing request" represents a request to change an existing filing calendar.  Filing requests
      * are reviewed and validated by Avalara Compliance before being implemented.
-     * 
+     *             
      * Certain users may not update filing calendars directly.  Instead, they may submit an edit request
+     * to modify the value of a filing calendar using this API.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.
+     * * This API is available by invitation only.  To request access to this feature, please speak to a business development manager and request host address whitelisting for [Returns] for your servers.
      * 
      * @param companyId The unique ID of the company that owns the filing calendar object
      * @param id The unique ID number of the filing calendar to edit
@@ -7664,11 +8645,18 @@ public class AvaTaxClient {
      * Create a new filing request to edit a filing calendar
      * 
      * This API is available by invitation only.
-     * 
+     *             
      * A "filing request" represents a request to change an existing filing calendar.  Filing requests
      * are reviewed and validated by Avalara Compliance before being implemented.
-     * 
+     *             
      * Certain users may not update filing calendars directly.  Instead, they may submit an edit request
+     * to modify the value of a filing calendar using this API.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.
+     * * This API is available by invitation only.  To request access to this feature, please speak to a business development manager and request host address whitelisting for [Returns] for your servers.
      * 
      * @param companyId The unique ID of the company that owns the filing calendar object
      * @param id The unique ID number of the filing calendar to edit
@@ -7685,12 +8673,20 @@ public class AvaTaxClient {
     /**
      * Edit existing Filing Calendar
      * 
-     * @param companyId The unique ID of the company that owns the filing request object
+     * This API is available by invitation only.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.
+     * * This API is available by invitation only.  To request access to this feature, please speak to a business development manager and request host address whitelisting for [Returns] for your servers.
+     * 
+     * @param companyId The unique ID of the company that owns the filing calendar object
      * @param id The unique ID of the filing calendar object
      * @param model The filing calendar model you are wishing to update with.
      * @return FilingCalendarModel
      */
-    public FilingCalendarModel updateFilingCalendar(Integer companyId, Integer id, FilingCalendarModel model) throws Exception {
+    public FilingCalendarModel updateFilingCalendar(Integer companyId, Long id, FilingCalendarModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingcalendars/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
@@ -7700,12 +8696,20 @@ public class AvaTaxClient {
     /**
      * Edit existing Filing Calendar
      * 
-     * @param companyId The unique ID of the company that owns the filing request object
+     * This API is available by invitation only.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.
+     * * This API is available by invitation only.  To request access to this feature, please speak to a business development manager and request host address whitelisting for [Returns] for your servers.
+     * 
+     * @param companyId The unique ID of the company that owns the filing calendar object
      * @param id The unique ID of the filing calendar object
      * @param model The filing calendar model you are wishing to update with.
      * @return FilingCalendarModel
      */
-    public Future<FilingCalendarModel> updateFilingCalendarAsync(Integer companyId, Integer id, FilingCalendarModel model) {
+    public Future<FilingCalendarModel> updateFilingCalendarAsync(Integer companyId, Long id, FilingCalendarModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingcalendars/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
@@ -7717,6 +8721,13 @@ public class AvaTaxClient {
      * 
      * This API is available by invitation only.
      * A "filing request" represents a request to change an existing filing calendar.  Filing requests
+     * are reviewed and validated by Avalara Compliance before being implemented.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.
+     * * This API is available by invitation only.  To request access to this feature, please speak to a business development manager and request host address whitelisting for [Returns] for your servers.
      * 
      * @param companyId The unique ID of the company that owns the filing request object
      * @param id The unique ID of the filing request object
@@ -7735,6 +8746,13 @@ public class AvaTaxClient {
      * 
      * This API is available by invitation only.
      * A "filing request" represents a request to change an existing filing calendar.  Filing requests
+     * are reviewed and validated by Avalara Compliance before being implemented.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.
+     * * This API is available by invitation only.  To request access to this feature, please speak to a business development manager and request host address whitelisting for [Returns] for your servers.
      * 
      * @param companyId The unique ID of the company that owns the filing request object
      * @param id The unique ID of the filing request object
@@ -7753,10 +8771,17 @@ public class AvaTaxClient {
      * 
      * This API is available by invitation only.
      * Approving a return means the customer is ready to let Avalara file that return.
-     * Customer either approves themselves from admin console, 
+     * Customer either approves themselves from admin console,
      * else system auto-approves the night before the filing cycle.
      * Sometimes Compliance has to manually unapprove and reapprove to modify liability or filing for the customer.
-     * A "filing period" is the year and month of the date of the latest customer transaction allowed to be reported on a filing, 
+     * A "filing period" is the year and month of the date of the latest customer transaction allowed to be reported on a filing,
+     * based on filing frequency of filing.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, CSPTester, FirmUser, SSTAdmin, TechnicalSupportAdmin.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.
+     * * This API is available by invitation only.  To request access to this feature, please speak to a business development manager and request host address whitelisting for [Returns] for your servers.
      * 
      * @param companyId The ID of the company that owns the filings.
      * @param year The year of the filing period to approve.
@@ -7777,10 +8802,17 @@ public class AvaTaxClient {
      * 
      * This API is available by invitation only.
      * Approving a return means the customer is ready to let Avalara file that return.
-     * Customer either approves themselves from admin console, 
+     * Customer either approves themselves from admin console,
      * else system auto-approves the night before the filing cycle.
      * Sometimes Compliance has to manually unapprove and reapprove to modify liability or filing for the customer.
-     * A "filing period" is the year and month of the date of the latest customer transaction allowed to be reported on a filing, 
+     * A "filing period" is the year and month of the date of the latest customer transaction allowed to be reported on a filing,
+     * based on filing frequency of filing.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, CSPTester, FirmUser, SSTAdmin, TechnicalSupportAdmin.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.
+     * * This API is available by invitation only.  To request access to this feature, please speak to a business development manager and request host address whitelisting for [Returns] for your servers.
      * 
      * @param companyId The ID of the company that owns the filings.
      * @param year The year of the filing period to approve.
@@ -7801,10 +8833,17 @@ public class AvaTaxClient {
      * 
      * This API is available by invitation only.
      * Approving a return means the customer is ready to let Avalara file that return.
-     * Customer either approves themselves from admin console, 
+     * Customer either approves themselves from admin console,
      * else system auto-approves the night before the filing cycle.
      * Sometimes Compliance has to manually unapprove and reapprove to modify liability or filing for the customer.
-     * A "filing period" is the year and month of the date of the latest customer transaction allowed to be reported on a filing, 
+     * A "filing period" is the year and month of the date of the latest customer transaction allowed to be reported on a filing,
+     * based on filing frequency of filing.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, CSPTester, FirmUser, SSTAdmin, TechnicalSupportAdmin.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.
+     * * This API is available by invitation only.  To request access to this feature, please speak to a business development manager and request host address whitelisting for [Returns] for your servers.
      * 
      * @param companyId The ID of the company that owns the filings.
      * @param year The year of the filing period to approve.
@@ -7827,10 +8866,17 @@ public class AvaTaxClient {
      * 
      * This API is available by invitation only.
      * Approving a return means the customer is ready to let Avalara file that return.
-     * Customer either approves themselves from admin console, 
+     * Customer either approves themselves from admin console,
      * else system auto-approves the night before the filing cycle.
      * Sometimes Compliance has to manually unapprove and reapprove to modify liability or filing for the customer.
-     * A "filing period" is the year and month of the date of the latest customer transaction allowed to be reported on a filing, 
+     * A "filing period" is the year and month of the date of the latest customer transaction allowed to be reported on a filing,
+     * based on filing frequency of filing.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, CSPTester, FirmUser, SSTAdmin, TechnicalSupportAdmin.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.
+     * * This API is available by invitation only.  To request access to this feature, please speak to a business development manager and request host address whitelisting for [Returns] for your servers.
      * 
      * @param companyId The ID of the company that owns the filings.
      * @param year The year of the filing period to approve.
@@ -7853,10 +8899,17 @@ public class AvaTaxClient {
      * 
      * This API is available by invitation only.
      * Approving a return means the customer is ready to let Avalara file that return.
-     * Customer either approves themselves from admin console, 
+     * Customer either approves themselves from admin console,
      * else system auto-approves the night before the filing cycle
      * Sometimes Compliance has to manually unapprove and reapprove to modify liability or filing for the customer.
-     * A "filing period" is the year and month of the date of the latest customer transaction allowed to be reported on a filing, 
+     * A "filing period" is the year and month of the date of the latest customer transaction allowed to be reported on a filing,
+     * based on filing frequency of filing.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, CSPTester, FirmUser, SSTAdmin, TechnicalSupportAdmin.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.
+     * * This API is available by invitation only.  To request access to this feature, please speak to a business development manager and request host address whitelisting for [Returns] for your servers.
      * 
      * @param companyId The ID of the company that owns the filings.
      * @param year The year of the filing period to approve.
@@ -7881,10 +8934,17 @@ public class AvaTaxClient {
      * 
      * This API is available by invitation only.
      * Approving a return means the customer is ready to let Avalara file that return.
-     * Customer either approves themselves from admin console, 
+     * Customer either approves themselves from admin console,
      * else system auto-approves the night before the filing cycle
      * Sometimes Compliance has to manually unapprove and reapprove to modify liability or filing for the customer.
-     * A "filing period" is the year and month of the date of the latest customer transaction allowed to be reported on a filing, 
+     * A "filing period" is the year and month of the date of the latest customer transaction allowed to be reported on a filing,
+     * based on filing frequency of filing.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, CSPTester, FirmUser, SSTAdmin, TechnicalSupportAdmin.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.
+     * * This API is available by invitation only.  To request access to this feature, please speak to a business development manager and request host address whitelisting for [Returns] for your servers.
      * 
      * @param companyId The ID of the company that owns the filings.
      * @param year The year of the filing period to approve.
@@ -7909,9 +8969,16 @@ public class AvaTaxClient {
      * 
      * This API is available by invitation only.
      * An "Adjustment" is usually an increase or decrease to customer funding to Avalara,
-     * such as early filer discount amounts that are refunded to the customer, or efile fees from websites. 
+     * such as early filer discount amounts that are refunded to the customer, or efile fees from websites.
      * Sometimes may be a manual change in tax liability similar to an augmentation.
      * This API creates a new adjustment for an existing tax filing.
+     * This API can only be used when the filing has not yet been approved.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.
+     * * This API is available by invitation only.  To request access to this feature, please speak to a business development manager and request host address whitelisting for [Returns] for your servers.
      * 
      * @param companyId The ID of the company that owns the filing being adjusted.
      * @param year The year of the filing's filing period being adjusted.
@@ -7938,9 +9005,16 @@ public class AvaTaxClient {
      * 
      * This API is available by invitation only.
      * An "Adjustment" is usually an increase or decrease to customer funding to Avalara,
-     * such as early filer discount amounts that are refunded to the customer, or efile fees from websites. 
+     * such as early filer discount amounts that are refunded to the customer, or efile fees from websites.
      * Sometimes may be a manual change in tax liability similar to an augmentation.
      * This API creates a new adjustment for an existing tax filing.
+     * This API can only be used when the filing has not yet been approved.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.
+     * * This API is available by invitation only.  To request access to this feature, please speak to a business development manager and request host address whitelisting for [Returns] for your servers.
      * 
      * @param companyId The ID of the company that owns the filing being adjusted.
      * @param year The year of the filing's filing period being adjusted.
@@ -7966,9 +9040,16 @@ public class AvaTaxClient {
      * Add an augmentation for a given filing.
      * 
      * This API is available by invitation only.
-     * An "Augmentation" is a manually added increase or decrease in tax liability, by either customer or Avalara 
+     * An "Augmentation" is a manually added increase or decrease in tax liability, by either customer or Avalara
      * usually due to customer wanting to report tax Avatax does not support, e.g. bad debts, rental tax.
      * This API creates a new augmentation for an existing tax filing.
+     * This API can only be used when the filing has not been approved.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, CSPTester, FirmUser, SSTAdmin, TechnicalSupportAdmin.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.
+     * * This API is available by invitation only.  To request access to this feature, please speak to a business development manager and request host address whitelisting for [Returns] for your servers.
      * 
      * @param companyId The ID of the company that owns the filing being changed.
      * @param year The month of the filing's filing period being changed.
@@ -7994,9 +9075,16 @@ public class AvaTaxClient {
      * Add an augmentation for a given filing.
      * 
      * This API is available by invitation only.
-     * An "Augmentation" is a manually added increase or decrease in tax liability, by either customer or Avalara 
+     * An "Augmentation" is a manually added increase or decrease in tax liability, by either customer or Avalara
      * usually due to customer wanting to report tax Avatax does not support, e.g. bad debts, rental tax.
      * This API creates a new augmentation for an existing tax filing.
+     * This API can only be used when the filing has not been approved.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, CSPTester, FirmUser, SSTAdmin, TechnicalSupportAdmin.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.
+     * * This API is available by invitation only.  To request access to this feature, please speak to a business development manager and request host address whitelisting for [Returns] for your servers.
      * 
      * @param companyId The ID of the company that owns the filing being changed.
      * @param year The month of the filing's filing period being changed.
@@ -8023,9 +9111,16 @@ public class AvaTaxClient {
      * 
      * This API is available by invitation only.
      * An "Payment" is usually an increase or decrease to customer funding to Avalara,
-     * such as early filer discount amounts that are refunded to the customer, or efile fees from websites. 
+     * such as early filer discount amounts that are refunded to the customer, or efile fees from websites.
      * Sometimes may be a manual change in tax liability similar to an augmentation.
      * This API creates a new payment for an existing tax filing.
+     * This API can only be used when the filing has not yet been approved.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, CSPTester, FirmUser, SSTAdmin, TechnicalSupportAdmin.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.
+     * * This API is available by invitation only.  To request access to this feature, please speak to a business development manager and request host address whitelisting for [Returns] for your servers.
      * 
      * @param companyId The ID of the company that owns the filing being adjusted.
      * @param year The year of the filing's filing period being adjusted.
@@ -8052,9 +9147,16 @@ public class AvaTaxClient {
      * 
      * This API is available by invitation only.
      * An "Payment" is usually an increase or decrease to customer funding to Avalara,
-     * such as early filer discount amounts that are refunded to the customer, or efile fees from websites. 
+     * such as early filer discount amounts that are refunded to the customer, or efile fees from websites.
      * Sometimes may be a manual change in tax liability similar to an augmentation.
      * This API creates a new payment for an existing tax filing.
+     * This API can only be used when the filing has not yet been approved.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, CSPTester, FirmUser, SSTAdmin, TechnicalSupportAdmin.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.
+     * * This API is available by invitation only.  To request access to this feature, please speak to a business development manager and request host address whitelisting for [Returns] for your servers.
      * 
      * @param companyId The ID of the company that owns the filing being adjusted.
      * @param year The year of the filing's filing period being adjusted.
@@ -8081,9 +9183,16 @@ public class AvaTaxClient {
      * 
      * This API is available by invitation only.
      * An "Adjustment" is usually an increase or decrease to customer funding to Avalara,
-     * such as early filer discount amounts that are refunded to the customer, or efile fees from websites. 
+     * such as early filer discount amounts that are refunded to the customer, or efile fees from websites.
      * Sometimes may be a manual change in tax liability similar to an augmentation.
      * This API deletes an adjustment for an existing tax filing.
+     * This API can only be used when the filing has been unapproved.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, CSPTester, FirmUser, SSTAdmin, TechnicalSupportAdmin.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.
+     * * This API is available by invitation only.  To request access to this feature, please speak to a business development manager and request host address whitelisting for [Returns] for your servers.
      * 
      * @param companyId The ID of the company that owns the filing being adjusted.
      * @param id The ID of the adjustment being deleted.
@@ -8101,9 +9210,16 @@ public class AvaTaxClient {
      * 
      * This API is available by invitation only.
      * An "Adjustment" is usually an increase or decrease to customer funding to Avalara,
-     * such as early filer discount amounts that are refunded to the customer, or efile fees from websites. 
+     * such as early filer discount amounts that are refunded to the customer, or efile fees from websites.
      * Sometimes may be a manual change in tax liability similar to an augmentation.
      * This API deletes an adjustment for an existing tax filing.
+     * This API can only be used when the filing has been unapproved.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, CSPTester, FirmUser, SSTAdmin, TechnicalSupportAdmin.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.
+     * * This API is available by invitation only.  To request access to this feature, please speak to a business development manager and request host address whitelisting for [Returns] for your servers.
      * 
      * @param companyId The ID of the company that owns the filing being adjusted.
      * @param id The ID of the adjustment being deleted.
@@ -8120,9 +9236,16 @@ public class AvaTaxClient {
      * Delete an augmentation for a given filing.
      * 
      * This API is available by invitation only.
-     * An "Augmentation" is a manually added increase or decrease in tax liability, by either customer or Avalara 
+     * An "Augmentation" is a manually added increase or decrease in tax liability, by either customer or Avalara
      * usually due to customer wanting to report tax Avatax does not support, e.g. bad debts, rental tax.
      * This API deletes an augmentation for an existing tax filing.
+     * This API can only be used when the filing has been unapproved.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, CSPTester, FirmUser, SSTAdmin, TechnicalSupportAdmin.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.
+     * * This API is available by invitation only.  To request access to this feature, please speak to a business development manager and request host address whitelisting for [Returns] for your servers.
      * 
      * @param companyId The ID of the company that owns the filing being changed.
      * @param id The ID of the augmentation being added.
@@ -8139,9 +9262,16 @@ public class AvaTaxClient {
      * Delete an augmentation for a given filing.
      * 
      * This API is available by invitation only.
-     * An "Augmentation" is a manually added increase or decrease in tax liability, by either customer or Avalara 
+     * An "Augmentation" is a manually added increase or decrease in tax liability, by either customer or Avalara
      * usually due to customer wanting to report tax Avatax does not support, e.g. bad debts, rental tax.
      * This API deletes an augmentation for an existing tax filing.
+     * This API can only be used when the filing has been unapproved.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, CSPTester, FirmUser, SSTAdmin, TechnicalSupportAdmin.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.
+     * * This API is available by invitation only.  To request access to this feature, please speak to a business development manager and request host address whitelisting for [Returns] for your servers.
      * 
      * @param companyId The ID of the company that owns the filing being changed.
      * @param id The ID of the augmentation being added.
@@ -8159,9 +9289,16 @@ public class AvaTaxClient {
      * 
      * This API is available by invitation only.
      * An "Payment" is usually an increase or decrease to customer funding to Avalara,
-     * such as early filer discount amounts that are refunded to the customer, or efile fees from websites. 
+     * such as early filer discount amounts that are refunded to the customer, or efile fees from websites.
      * Sometimes may be a manual change in tax liability similar to an augmentation.
      * This API deletes an payment for an existing tax filing.
+     * This API can only be used when the filing has been unapproved.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, CSPTester, FirmUser, SSTAdmin, TechnicalSupportAdmin.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.
+     * * This API is available by invitation only.  To request access to this feature, please speak to a business development manager and request host address whitelisting for [Returns] for your servers.
      * 
      * @param companyId The ID of the company that owns the filing being adjusted.
      * @param id The ID of the payment being deleted.
@@ -8179,9 +9316,16 @@ public class AvaTaxClient {
      * 
      * This API is available by invitation only.
      * An "Payment" is usually an increase or decrease to customer funding to Avalara,
-     * such as early filer discount amounts that are refunded to the customer, or efile fees from websites. 
+     * such as early filer discount amounts that are refunded to the customer, or efile fees from websites.
      * Sometimes may be a manual change in tax liability similar to an augmentation.
      * This API deletes an payment for an existing tax filing.
+     * This API can only be used when the filing has been unapproved.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, CSPTester, FirmUser, SSTAdmin, TechnicalSupportAdmin.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.
+     * * This API is available by invitation only.  To request access to this feature, please speak to a business development manager and request host address whitelisting for [Returns] for your servers.
      * 
      * @param companyId The ID of the company that owns the filing being adjusted.
      * @param id The ID of the payment being deleted.
@@ -8197,6 +9341,14 @@ public class AvaTaxClient {
     /**
      * Retrieve worksheet checkup report for company and filing period.
      * 
+     * This API is available by invitation only.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.
+     * * This API is available by invitation only.  To request access to this feature, please speak to a business development manager and request host address whitelisting for [Returns] for your servers.
+     * 
      * @param filingsId The unique id of the worksheet.
      * @param companyId The unique ID of the company that owns the worksheet.
      * @return FilingsCheckupModel
@@ -8211,6 +9363,14 @@ public class AvaTaxClient {
     /**
      * Retrieve worksheet checkup report for company and filing period.
      * 
+     * This API is available by invitation only.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.
+     * * This API is available by invitation only.  To request access to this feature, please speak to a business development manager and request host address whitelisting for [Returns] for your servers.
+     * 
      * @param filingsId The unique id of the worksheet.
      * @param companyId The unique ID of the company that owns the worksheet.
      * @return FilingsCheckupModel
@@ -8224,6 +9384,14 @@ public class AvaTaxClient {
 
     /**
      * Retrieve worksheet checkup report for company and filing period.
+     * 
+     * This API is available by invitation only.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.
+     * * This API is available by invitation only.  To request access to this feature, please speak to a business development manager and request host address whitelisting for [Returns] for your servers.
      * 
      * @param companyId The unique ID of the company that owns the worksheets object.
      * @param year The year of the filing period.
@@ -8241,6 +9409,14 @@ public class AvaTaxClient {
     /**
      * Retrieve worksheet checkup report for company and filing period.
      * 
+     * This API is available by invitation only.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.
+     * * This API is available by invitation only.  To request access to this feature, please speak to a business development manager and request host address whitelisting for [Returns] for your servers.
+     * 
      * @param companyId The unique ID of the company that owns the worksheets object.
      * @param year The year of the filing period.
      * @param month The month of the filing period.
@@ -8255,7 +9431,55 @@ public class AvaTaxClient {
     }
 
     /**
+     * Retrieve a list of filings for the specified accrual return.
+     * 
+     * 
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * 
+     * @param companyId The ID of the company that owns these batches
+     * @param filingReturnId The ID of the accrual return
+     * @return FetchResult<FilingReturnModel>
+     */
+    public FetchResult<FilingReturnModel> getAccrualFillings(Integer companyId, Long filingReturnId) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/accrual/{filingReturnId}");
+        path.applyField("companyId", companyId);
+        path.applyField("filingReturnId", filingReturnId);
+        return ((RestCall<FetchResult<FilingReturnModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<FilingReturnModel>>(){})).call();
+    }
+
+    /**
+     * Retrieve a list of filings for the specified accrual return.
+     * 
+     * 
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * 
+     * @param companyId The ID of the company that owns these batches
+     * @param filingReturnId The ID of the accrual return
+     * @return FetchResult<FilingReturnModel>
+     */
+    public Future<FetchResult<FilingReturnModel>> getAccrualFillingsAsync(Integer companyId, Long filingReturnId) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/accrual/{filingReturnId}");
+        path.applyField("companyId", companyId);
+        path.applyField("filingReturnId", filingReturnId);
+        return this.threadPool.submit((RestCall<FetchResult<FilingReturnModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<FilingReturnModel>>(){}));
+    }
+
+    /**
      * Retrieve a single attachment for a filing
+     * 
+     * This API is available by invitation only.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.
+     * * This API is available by invitation only.  To request access to this feature, please speak to a business development manager and request host address whitelisting for [Returns] for your servers.
      * 
      * @param companyId The ID of the company that owns the filings.
      * @param filingReturnId The unique id of the worksheet return.
@@ -8272,6 +9496,14 @@ public class AvaTaxClient {
 
     /**
      * Retrieve a single attachment for a filing
+     * 
+     * This API is available by invitation only.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.
+     * * This API is available by invitation only.  To request access to this feature, please speak to a business development manager and request host address whitelisting for [Returns] for your servers.
      * 
      * @param companyId The ID of the company that owns the filings.
      * @param filingReturnId The unique id of the worksheet return.
@@ -8290,7 +9522,14 @@ public class AvaTaxClient {
      * Retrieve a list of filings for the specified company in the year and month of a given filing period.
      * 
      * This API is available by invitation only.
-     * A "filing period" is the year and month of the date of the latest customer transaction allowed to be reported on a filing, 
+     * A "filing period" is the year and month of the date of the latest customer transaction allowed to be reported on a filing,
+     * based on filing frequency of filing.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.
+     * * This API is available by invitation only.  To request access to this feature, please speak to a business development manager and request host address whitelisting for [Returns] for your servers.
      * 
      * @param companyId The ID of the company that owns the filings.
      * @param year The year of the filing period.
@@ -8309,7 +9548,14 @@ public class AvaTaxClient {
      * Retrieve a list of filings for the specified company in the year and month of a given filing period.
      * 
      * This API is available by invitation only.
-     * A "filing period" is the year and month of the date of the latest customer transaction allowed to be reported on a filing, 
+     * A "filing period" is the year and month of the date of the latest customer transaction allowed to be reported on a filing,
+     * based on filing frequency of filing.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.
+     * * This API is available by invitation only.  To request access to this feature, please speak to a business development manager and request host address whitelisting for [Returns] for your servers.
      * 
      * @param companyId The ID of the company that owns the filings.
      * @param year The year of the filing period.
@@ -8328,7 +9574,14 @@ public class AvaTaxClient {
      * Retrieve a single trace file for a company filing period
      * 
      * This API is available by invitation only.
-     * A "filing period" is the year and month of the date of the latest customer transaction allowed to be reported on a filing, 
+     * A "filing period" is the year and month of the date of the latest customer transaction allowed to be reported on a filing,
+     * based on filing frequency of filing.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.
+     * * This API is available by invitation only.  To request access to this feature, please speak to a business development manager and request host address whitelisting for [Returns] for your servers.
      * 
      * @param companyId The ID of the company that owns the filings.
      * @param year The year of the filing period.
@@ -8347,7 +9600,14 @@ public class AvaTaxClient {
      * Retrieve a single trace file for a company filing period
      * 
      * This API is available by invitation only.
-     * A "filing period" is the year and month of the date of the latest customer transaction allowed to be reported on a filing, 
+     * A "filing period" is the year and month of the date of the latest customer transaction allowed to be reported on a filing,
+     * based on filing frequency of filing.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.
+     * * This API is available by invitation only.  To request access to this feature, please speak to a business development manager and request host address whitelisting for [Returns] for your servers.
      * 
      * @param companyId The ID of the company that owns the filings.
      * @param year The year of the filing period.
@@ -8366,7 +9626,14 @@ public class AvaTaxClient {
      * Retrieve a filing for the specified company and id.
      * 
      * This API is available by invitation only.
-     * A "filing period" is the year and month of the date of the latest customer transaction allowed to be reported on a filing, 
+     * A "filing period" is the year and month of the date of the latest customer transaction allowed to be reported on a filing,
+     * based on filing frequency of filing.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.
+     * * This API is available by invitation only.  To request access to this feature, please speak to a business development manager and request host address whitelisting for [Returns] for your servers.
      * 
      * @param companyId The ID of the company that owns the filings.
      * @param id The id of the filing return your retrieving
@@ -8385,7 +9652,14 @@ public class AvaTaxClient {
      * Retrieve a filing for the specified company and id.
      * 
      * This API is available by invitation only.
-     * A "filing period" is the year and month of the date of the latest customer transaction allowed to be reported on a filing, 
+     * A "filing period" is the year and month of the date of the latest customer transaction allowed to be reported on a filing,
+     * based on filing frequency of filing.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.
+     * * This API is available by invitation only.  To request access to this feature, please speak to a business development manager and request host address whitelisting for [Returns] for your servers.
      * 
      * @param companyId The ID of the company that owns the filings.
      * @param id The id of the filing return your retrieving
@@ -8404,7 +9678,14 @@ public class AvaTaxClient {
      * Retrieve a list of filings for the specified company in the year and month of a given filing period.
      * 
      * This API is available by invitation only.
-     * A "filing period" is the year and month of the date of the latest customer transaction allowed to be reported on a filing, 
+     * A "filing period" is the year and month of the date of the latest customer transaction allowed to be reported on a filing,
+     * based on filing frequency of filing.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API is available by invitation only.  To request access to this feature, please speak to a business development manager and request host address whitelisting for [Returns] for your servers.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.
      * 
      * @param companyId The ID of the company that owns the filings.
      * @param year The year of the filing period.
@@ -8423,7 +9704,14 @@ public class AvaTaxClient {
      * Retrieve a list of filings for the specified company in the year and month of a given filing period.
      * 
      * This API is available by invitation only.
-     * A "filing period" is the year and month of the date of the latest customer transaction allowed to be reported on a filing, 
+     * A "filing period" is the year and month of the date of the latest customer transaction allowed to be reported on a filing,
+     * based on filing frequency of filing.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API is available by invitation only.  To request access to this feature, please speak to a business development manager and request host address whitelisting for [Returns] for your servers.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.
      * 
      * @param companyId The ID of the company that owns the filings.
      * @param year The year of the filing period.
@@ -8442,7 +9730,14 @@ public class AvaTaxClient {
      * Retrieve a list of filings for the specified company in the given filing period and country.
      * 
      * This API is available by invitation only.
-     * A "filing period" is the year and month of the date of the latest customer transaction allowed to be reported on a filing, 
+     * A "filing period" is the year and month of the date of the latest customer transaction allowed to be reported on a filing,
+     * based on filing frequency of filing.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API is available by invitation only.  To request access to this feature, please speak to a business development manager and request host address whitelisting for [Returns] for your servers.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.
      * 
      * @param companyId The ID of the company that owns the filings.
      * @param year The year of the filing period.
@@ -8463,7 +9758,14 @@ public class AvaTaxClient {
      * Retrieve a list of filings for the specified company in the given filing period and country.
      * 
      * This API is available by invitation only.
-     * A "filing period" is the year and month of the date of the latest customer transaction allowed to be reported on a filing, 
+     * A "filing period" is the year and month of the date of the latest customer transaction allowed to be reported on a filing,
+     * based on filing frequency of filing.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API is available by invitation only.  To request access to this feature, please speak to a business development manager and request host address whitelisting for [Returns] for your servers.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.
      * 
      * @param companyId The ID of the company that owns the filings.
      * @param year The year of the filing period.
@@ -8484,7 +9786,14 @@ public class AvaTaxClient {
      * Retrieve a list of filings for the specified company in the filing period, country and region.
      * 
      * This API is available by invitation only.
-     * A "filing period" is the year and month of the date of the latest customer transaction allowed to be reported on a filing, 
+     * A "filing period" is the year and month of the date of the latest customer transaction allowed to be reported on a filing,
+     * based on filing frequency of filing.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API is available by invitation only.  To request access to this feature, please speak to a business development manager and request host address whitelisting for [Returns] for your servers.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.
      * 
      * @param companyId The ID of the company that owns the filings.
      * @param year The year of the filing period.
@@ -8507,7 +9816,14 @@ public class AvaTaxClient {
      * Retrieve a list of filings for the specified company in the filing period, country and region.
      * 
      * This API is available by invitation only.
-     * A "filing period" is the year and month of the date of the latest customer transaction allowed to be reported on a filing, 
+     * A "filing period" is the year and month of the date of the latest customer transaction allowed to be reported on a filing,
+     * based on filing frequency of filing.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API is available by invitation only.  To request access to this feature, please speak to a business development manager and request host address whitelisting for [Returns] for your servers.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.
      * 
      * @param companyId The ID of the company that owns the filings.
      * @param year The year of the filing period.
@@ -8530,7 +9846,14 @@ public class AvaTaxClient {
      * Retrieve a list of filings for the specified company in the given filing period, country, region and form.
      * 
      * This API is available by invitation only.
-     * A "filing period" is the year and month of the date of the latest customer transaction allowed to be reported on a filing, 
+     * A "filing period" is the year and month of the date of the latest customer transaction allowed to be reported on a filing,
+     * based on filing frequency of filing.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API is available by invitation only.  To request access to this feature, please speak to a business development manager and request host address whitelisting for [Returns] for your servers.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.
      * 
      * @param companyId The ID of the company that owns the filings.
      * @param year The year of the filing period.
@@ -8555,7 +9878,14 @@ public class AvaTaxClient {
      * Retrieve a list of filings for the specified company in the given filing period, country, region and form.
      * 
      * This API is available by invitation only.
-     * A "filing period" is the year and month of the date of the latest customer transaction allowed to be reported on a filing, 
+     * A "filing period" is the year and month of the date of the latest customer transaction allowed to be reported on a filing,
+     * based on filing frequency of filing.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API is available by invitation only.  To request access to this feature, please speak to a business development manager and request host address whitelisting for [Returns] for your servers.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.
      * 
      * @param companyId The ID of the company that owns the filings.
      * @param year The year of the filing period.
@@ -8577,8 +9907,16 @@ public class AvaTaxClient {
     }
 
     /**
-     * Retrieve a list of filings for the specified company in the year and month of a given filing period.  
+     * Retrieve a list of filings for the specified company in the year and month of a given filing period.
 This gets the basic information from the filings and doesn't include anything extra.
+     * 
+     * 
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API is available by invitation only.  To request access to this feature, please speak to a business development manager and request host address whitelisting for [Returns] for your servers.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.
      * 
      * @param companyId The ID of the company that owns these batches
      * @param endPeriodMonth The month of the period you are trying to retrieve
@@ -8604,8 +9942,16 @@ This gets the basic information from the filings and doesn't include anything ex
     }
 
     /**
-     * Retrieve a list of filings for the specified company in the year and month of a given filing period.  
+     * Retrieve a list of filings for the specified company in the year and month of a given filing period.
 This gets the basic information from the filings and doesn't include anything extra.
+     * 
+     * 
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API is available by invitation only.  To request access to this feature, please speak to a business development manager and request host address whitelisting for [Returns] for your servers.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.
      * 
      * @param companyId The ID of the company that owns these batches
      * @param endPeriodMonth The month of the period you are trying to retrieve
@@ -8634,7 +9980,14 @@ This gets the basic information from the filings and doesn't include anything ex
      * Retrieve a list of filings for the specified company in the year and month of a given filing period.
      * 
      * This API is available by invitation only.
-     * A "filing period" is the year and month of the date of the latest customer transaction allowed to be reported on a filing, 
+     * A "filing period" is the year and month of the date of the latest customer transaction allowed to be reported on a filing,
+     * based on filing frequency of filing.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.
+     * * This API is available by invitation only.  To request access to this feature, please speak to a business development manager and request host address whitelisting for [Returns] for your servers.
      * 
      * @param companyId The ID of the company that owns the filings.
      * @param year The year of the filing period.
@@ -8659,7 +10012,14 @@ This gets the basic information from the filings and doesn't include anything ex
      * Retrieve a list of filings for the specified company in the year and month of a given filing period.
      * 
      * This API is available by invitation only.
-     * A "filing period" is the year and month of the date of the latest customer transaction allowed to be reported on a filing, 
+     * A "filing period" is the year and month of the date of the latest customer transaction allowed to be reported on a filing,
+     * based on filing frequency of filing.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.
+     * * This API is available by invitation only.  To request access to this feature, please speak to a business development manager and request host address whitelisting for [Returns] for your servers.
      * 
      * @param companyId The ID of the company that owns the filings.
      * @param year The year of the filing period.
@@ -8686,8 +10046,15 @@ This gets the basic information from the filings and doesn't include anything ex
      * This API is available by invitation only.
      * Rebuilding a return means re-creating or updating the amounts to be filed (worksheet) for a filing.
      * Rebuilding has to be done whenever a customer adds transactions to a filing.
-     * A "filing period" is the year and month of the date of the latest customer transaction allowed to be reported on a filing, 
+     * A "filing period" is the year and month of the date of the latest customer transaction allowed to be reported on a filing,
      * based on filing frequency of filing.
+     * This API requires filing to be unapproved.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, CSPTester, FirmUser, SSTAdmin, TechnicalSupportAdmin.
+     * * This API is available by invitation only.  To request access to this feature, please speak to a business development manager and request host address whitelisting for [Returns] for your servers.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.
      * 
      * @param companyId The ID of the company that owns the filings.
      * @param year The year of the filing period to be rebuilt.
@@ -8709,8 +10076,15 @@ This gets the basic information from the filings and doesn't include anything ex
      * This API is available by invitation only.
      * Rebuilding a return means re-creating or updating the amounts to be filed (worksheet) for a filing.
      * Rebuilding has to be done whenever a customer adds transactions to a filing.
-     * A "filing period" is the year and month of the date of the latest customer transaction allowed to be reported on a filing, 
+     * A "filing period" is the year and month of the date of the latest customer transaction allowed to be reported on a filing,
      * based on filing frequency of filing.
+     * This API requires filing to be unapproved.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, CSPTester, FirmUser, SSTAdmin, TechnicalSupportAdmin.
+     * * This API is available by invitation only.  To request access to this feature, please speak to a business development manager and request host address whitelisting for [Returns] for your servers.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.
      * 
      * @param companyId The ID of the company that owns the filings.
      * @param year The year of the filing period to be rebuilt.
@@ -8732,8 +10106,15 @@ This gets the basic information from the filings and doesn't include anything ex
      * This API is available by invitation only.
      * Rebuilding a return means re-creating or updating the amounts to be filed (worksheet) for a filing.
      * Rebuilding has to be done whenever a customer adds transactions to a filing.
-     * A "filing period" is the year and month of the date of the latest customer transaction allowed to be reported on a filing, 
+     * A "filing period" is the year and month of the date of the latest customer transaction allowed to be reported on a filing,
      * based on filing frequency of filing.
+     * This API requires filing to be unapproved.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, CSPTester, FirmUser, SSTAdmin, TechnicalSupportAdmin.
+     * * This API is available by invitation only.  To request access to this feature, please speak to a business development manager and request host address whitelisting for [Returns] for your servers.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.
      * 
      * @param companyId The ID of the company that owns the filings.
      * @param year The year of the filing period to be rebuilt.
@@ -8757,8 +10138,15 @@ This gets the basic information from the filings and doesn't include anything ex
      * This API is available by invitation only.
      * Rebuilding a return means re-creating or updating the amounts to be filed (worksheet) for a filing.
      * Rebuilding has to be done whenever a customer adds transactions to a filing.
-     * A "filing period" is the year and month of the date of the latest customer transaction allowed to be reported on a filing, 
+     * A "filing period" is the year and month of the date of the latest customer transaction allowed to be reported on a filing,
      * based on filing frequency of filing.
+     * This API requires filing to be unapproved.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, CSPTester, FirmUser, SSTAdmin, TechnicalSupportAdmin.
+     * * This API is available by invitation only.  To request access to this feature, please speak to a business development manager and request host address whitelisting for [Returns] for your servers.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.
      * 
      * @param companyId The ID of the company that owns the filings.
      * @param year The year of the filing period to be rebuilt.
@@ -8781,9 +10169,16 @@ This gets the basic information from the filings and doesn't include anything ex
      * 
      * This API is available by invitation only.audit.CheckAuthorizationReturns(null, companyId);
      * Rebuilding a return means re-creating or updating the amounts to be filed for a filing.
-     * Rebuilding has to be done whenever a customer adds transactions to a filing.        
-     * A "filing period" is the year and month of the date of the latest customer transaction allowed to be reported on a filing, 
+     * Rebuilding has to be done whenever a customer adds transactions to a filing.
+     * A "filing period" is the year and month of the date of the latest customer transaction allowed to be reported on a filing,
      * based on filing frequency of filing.
+     * This API requires filing to be unapproved.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, CSPTester, FirmUser, SSTAdmin, TechnicalSupportAdmin.
+     * * This API is available by invitation only.  To request access to this feature, please speak to a business development manager and request host address whitelisting for [Returns] for your servers.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.
      * 
      * @param companyId The ID of the company that owns the filings.
      * @param year The year of the filing period to be rebuilt.
@@ -8808,9 +10203,16 @@ This gets the basic information from the filings and doesn't include anything ex
      * 
      * This API is available by invitation only.audit.CheckAuthorizationReturns(null, companyId);
      * Rebuilding a return means re-creating or updating the amounts to be filed for a filing.
-     * Rebuilding has to be done whenever a customer adds transactions to a filing.        
-     * A "filing period" is the year and month of the date of the latest customer transaction allowed to be reported on a filing, 
+     * Rebuilding has to be done whenever a customer adds transactions to a filing.
+     * A "filing period" is the year and month of the date of the latest customer transaction allowed to be reported on a filing,
      * based on filing frequency of filing.
+     * This API requires filing to be unapproved.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, CSPTester, FirmUser, SSTAdmin, TechnicalSupportAdmin.
+     * * This API is available by invitation only.  To request access to this feature, please speak to a business development manager and request host address whitelisting for [Returns] for your servers.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.
      * 
      * @param companyId The ID of the company that owns the filings.
      * @param year The year of the filing period to be rebuilt.
@@ -8835,9 +10237,16 @@ This gets the basic information from the filings and doesn't include anything ex
      * 
      * This API is available by invitation only.
      * An "Adjustment" is usually an increase or decrease to customer funding to Avalara,
-     * such as early filer discount amounts that are refunded to the customer, or efile fees from websites. 
+     * such as early filer discount amounts that are refunded to the customer, or efile fees from websites.
      * Sometimes may be a manual change in tax liability similar to an augmentation.
      * This API modifies an adjustment for an existing tax filing.
+     * This API can only be used when the filing has not yet been approved.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, CSPTester, FirmUser, SSTAdmin, TechnicalSupportAdmin.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.
+     * * This API is available by invitation only.  To request access to this feature, please speak to a business development manager and request host address whitelisting for [Returns] for your servers.
      * 
      * @param companyId The ID of the company that owns the filing being adjusted.
      * @param id The ID of the adjustment being edited.
@@ -8856,9 +10265,16 @@ This gets the basic information from the filings and doesn't include anything ex
      * 
      * This API is available by invitation only.
      * An "Adjustment" is usually an increase or decrease to customer funding to Avalara,
-     * such as early filer discount amounts that are refunded to the customer, or efile fees from websites. 
+     * such as early filer discount amounts that are refunded to the customer, or efile fees from websites.
      * Sometimes may be a manual change in tax liability similar to an augmentation.
      * This API modifies an adjustment for an existing tax filing.
+     * This API can only be used when the filing has not yet been approved.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, CSPTester, FirmUser, SSTAdmin, TechnicalSupportAdmin.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.
+     * * This API is available by invitation only.  To request access to this feature, please speak to a business development manager and request host address whitelisting for [Returns] for your servers.
      * 
      * @param companyId The ID of the company that owns the filing being adjusted.
      * @param id The ID of the adjustment being edited.
@@ -8876,9 +10292,16 @@ This gets the basic information from the filings and doesn't include anything ex
      * Edit an augmentation for a given filing.
      * 
      * This API is available by invitation only.
-     * An "Augmentation" is a manually added increase or decrease in tax liability, by either customer or Avalara 
+     * An "Augmentation" is a manually added increase or decrease in tax liability, by either customer or Avalara
      * usually due to customer wanting to report tax Avatax does not support, e.g. bad debts, rental tax.
      * This API modifies an augmentation for an existing tax filing.
+     * This API can only be used when the filing has not been approved.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, CSPTester, FirmUser, SSTAdmin, TechnicalSupportAdmin.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.
+     * * This API is available by invitation only.  To request access to this feature, please speak to a business development manager and request host address whitelisting for [Returns] for your servers.
      * 
      * @param companyId The ID of the company that owns the filing being changed.
      * @param id The ID of the augmentation being edited.
@@ -8896,9 +10319,16 @@ This gets the basic information from the filings and doesn't include anything ex
      * Edit an augmentation for a given filing.
      * 
      * This API is available by invitation only.
-     * An "Augmentation" is a manually added increase or decrease in tax liability, by either customer or Avalara 
+     * An "Augmentation" is a manually added increase or decrease in tax liability, by either customer or Avalara
      * usually due to customer wanting to report tax Avatax does not support, e.g. bad debts, rental tax.
      * This API modifies an augmentation for an existing tax filing.
+     * This API can only be used when the filing has not been approved.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, CSPTester, FirmUser, SSTAdmin, TechnicalSupportAdmin.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.
+     * * This API is available by invitation only.  To request access to this feature, please speak to a business development manager and request host address whitelisting for [Returns] for your servers.
      * 
      * @param companyId The ID of the company that owns the filing being changed.
      * @param id The ID of the augmentation being edited.
@@ -8917,9 +10347,16 @@ This gets the basic information from the filings and doesn't include anything ex
      * 
      * This API is available by invitation only.
      * An "Payment" is usually an increase or decrease to customer funding to Avalara,
-     * such as early filer discount amounts that are refunded to the customer, or efile fees from websites. 
+     * such as early filer discount amounts that are refunded to the customer, or efile fees from websites.
      * Sometimes may be a manual change in tax liability similar to an augmentation.
      * This API modifies an payment for an existing tax filing.
+     * This API can only be used when the filing has not yet been approved.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, CSPTester, FirmUser, SSTAdmin, TechnicalSupportAdmin.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.
+     * * This API is available by invitation only.  To request access to this feature, please speak to a business development manager and request host address whitelisting for [Returns] for your servers.
      * 
      * @param companyId The ID of the company that owns the filing being adjusted.
      * @param id The ID of the payment being edited.
@@ -8938,9 +10375,16 @@ This gets the basic information from the filings and doesn't include anything ex
      * 
      * This API is available by invitation only.
      * An "Payment" is usually an increase or decrease to customer funding to Avalara,
-     * such as early filer discount amounts that are refunded to the customer, or efile fees from websites. 
+     * such as early filer discount amounts that are refunded to the customer, or efile fees from websites.
      * Sometimes may be a manual change in tax liability similar to an augmentation.
      * This API modifies an payment for an existing tax filing.
+     * This API can only be used when the filing has not yet been approved.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, CSPTester, FirmUser, SSTAdmin, TechnicalSupportAdmin.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.
+     * * This API is available by invitation only.  To request access to this feature, please speak to a business development manager and request host address whitelisting for [Returns] for your servers.
      * 
      * @param companyId The ID of the company that owns the filing being adjusted.
      * @param id The ID of the payment being edited.
@@ -8958,14 +10402,19 @@ This gets the basic information from the filings and doesn't include anything ex
      * FREE API - Request a free trial of AvaTax
      * 
      * Call this API to obtain a free AvaTax account.
-     * 
-     * This API is free to use.  No authentication credentials are required to call this API. You must read and 
-     * accept [Avalara's terms and conditions](https://www1.avalara.com/us/en/legal/terms.html) for the account to be 
-     * created.  
+     *             
+     * This API is free to use.  No authentication credentials are required to call this API. You must read and
+     * accept [Avalara's terms and conditions](https://www1.avalara.com/us/en/legal/terms.html) for the account to be
+     * created.
      *             
      * If all conditions are met, this API will grant a free trial version of AvaTax.  For a list of functionality
      * available in the free trial and its limitations, please see the [AvaTax Developer Website Free Trial page](https://developer.avalara.com/avatax/signup/).
      *             
+     * After your free trial concludes, you will still be able to use the [Free AvaTax API Suite](https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Free/).
+     * 
+     * ### Security Policies
+     * 
+     * * This API may be called without providing authentication credentials.
      * 
      * @param model Required information to provision a free trial account.
      * @return NewAccountModel
@@ -8979,14 +10428,19 @@ This gets the basic information from the filings and doesn't include anything ex
      * FREE API - Request a free trial of AvaTax
      * 
      * Call this API to obtain a free AvaTax account.
-     * 
-     * This API is free to use.  No authentication credentials are required to call this API. You must read and 
-     * accept [Avalara's terms and conditions](https://www1.avalara.com/us/en/legal/terms.html) for the account to be 
-     * created.  
+     *             
+     * This API is free to use.  No authentication credentials are required to call this API. You must read and
+     * accept [Avalara's terms and conditions](https://www1.avalara.com/us/en/legal/terms.html) for the account to be
+     * created.
      *             
      * If all conditions are met, this API will grant a free trial version of AvaTax.  For a list of functionality
      * available in the free trial and its limitations, please see the [AvaTax Developer Website Free Trial page](https://developer.avalara.com/avatax/signup/).
      *             
+     * After your free trial concludes, you will still be able to use the [Free AvaTax API Suite](https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Free/).
+     * 
+     * ### Security Policies
+     * 
+     * * This API may be called without providing authentication credentials.
      * 
      * @param model Required information to provision a free trial account.
      * @return NewAccountModel
@@ -9180,16 +10634,23 @@ This gets the basic information from the filings and doesn't include anything ex
      * Request the javascript for a funding setup widget
      * 
      * This API is available by invitation only.
-     * Companies that use the Avalara Managed Returns or the SST Certified Service Provider services are 
-     * required to setup their funding configuration before Avalara can begin filing tax returns on their 
+     * Companies that use the Avalara Managed Returns or the SST Certified Service Provider services are
+     * required to setup their funding configuration before Avalara can begin filing tax returns on their
      * behalf.
      * Funding configuration for each company is set up by submitting a funding setup request, which can
      * be sent either via email or via an embedded HTML widget.
      * When the funding configuration is submitted to Avalara, it will be reviewed by treasury team members
      * before approval.
-     * This API returns back the actual javascript code to insert into your application to render the 
+     * This API returns back the actual javascript code to insert into your application to render the
      * JavaScript funding setup widget inline.
      * Use the 'methodReturn.javaScript' return value to insert this widget into your HTML page.
+     * This API requires a subscription to Avalara Managed Returns or SST Certified Service Provider.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.
+     * * This API is available by invitation only.  To request access to this feature, please speak to a business development manager and request host address whitelisting for [Returns] for your servers.
      * 
      * @param id The unique ID number of this funding request
      * @return FundingStatusModel
@@ -9204,16 +10665,23 @@ This gets the basic information from the filings and doesn't include anything ex
      * Request the javascript for a funding setup widget
      * 
      * This API is available by invitation only.
-     * Companies that use the Avalara Managed Returns or the SST Certified Service Provider services are 
-     * required to setup their funding configuration before Avalara can begin filing tax returns on their 
+     * Companies that use the Avalara Managed Returns or the SST Certified Service Provider services are
+     * required to setup their funding configuration before Avalara can begin filing tax returns on their
      * behalf.
      * Funding configuration for each company is set up by submitting a funding setup request, which can
      * be sent either via email or via an embedded HTML widget.
      * When the funding configuration is submitted to Avalara, it will be reviewed by treasury team members
      * before approval.
-     * This API returns back the actual javascript code to insert into your application to render the 
+     * This API returns back the actual javascript code to insert into your application to render the
      * JavaScript funding setup widget inline.
      * Use the 'methodReturn.javaScript' return value to insert this widget into your HTML page.
+     * This API requires a subscription to Avalara Managed Returns or SST Certified Service Provider.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.
+     * * This API is available by invitation only.  To request access to this feature, please speak to a business development manager and request host address whitelisting for [Returns] for your servers.
      * 
      * @param id The unique ID number of this funding request
      * @return FundingStatusModel
@@ -9228,14 +10696,21 @@ This gets the basic information from the filings and doesn't include anything ex
      * Retrieve status about a funding setup request
      * 
      * This API is available by invitation only.
-     * Companies that use the Avalara Managed Returns or the SST Certified Service Provider services are 
-     * required to setup their funding configuration before Avalara can begin filing tax returns on their 
+     * Companies that use the Avalara Managed Returns or the SST Certified Service Provider services are
+     * required to setup their funding configuration before Avalara can begin filing tax returns on their
      * behalf.
      * Funding configuration for each company is set up by submitting a funding setup request, which can
      * be sent either via email or via an embedded HTML widget.
      * When the funding configuration is submitted to Avalara, it will be reviewed by treasury team members
      * before approval.
      * This API checks the status on an existing funding request.
+     * This API requires a subscription to Avalara Managed Returns or SST Certified Service Provider.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, FirmAdmin, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.
+     * * This API is available by invitation only.  To request access to this feature, please speak to a business development manager and request host address whitelisting for [Returns] for your servers.
      * 
      * @param id The unique ID number of this funding request
      * @return FundingStatusModel
@@ -9250,14 +10725,21 @@ This gets the basic information from the filings and doesn't include anything ex
      * Retrieve status about a funding setup request
      * 
      * This API is available by invitation only.
-     * Companies that use the Avalara Managed Returns or the SST Certified Service Provider services are 
-     * required to setup their funding configuration before Avalara can begin filing tax returns on their 
+     * Companies that use the Avalara Managed Returns or the SST Certified Service Provider services are
+     * required to setup their funding configuration before Avalara can begin filing tax returns on their
      * behalf.
      * Funding configuration for each company is set up by submitting a funding setup request, which can
      * be sent either via email or via an embedded HTML widget.
      * When the funding configuration is submitted to Avalara, it will be reviewed by treasury team members
      * before approval.
      * This API checks the status on an existing funding request.
+     * This API requires a subscription to Avalara Managed Returns or SST Certified Service Provider.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, FirmAdmin, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.
+     * * This API is available by invitation only.  To request access to this feature, please speak to a business development manager and request host address whitelisting for [Returns] for your servers.
      * 
      * @param id The unique ID number of this funding request
      * @return FundingStatusModel
@@ -9272,11 +10754,16 @@ This gets the basic information from the filings and doesn't include anything ex
      * Add classifications to an item.
      * 
      * Add classifications to an item.
-     * 
+     *             
      * A classification is the code for a product in a particular tax system. Classifications enable an item to be used in multiple tax systems which may have different tax rates for a product.
-     * 
+     *             
      * When an item is used in a transaction, the applicable classification will be used to determine the appropriate tax rate.
+     *             
+     * An item may only have one classification per tax system.
      * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin.
      * 
      * @param companyId The company id.
      * @param itemId The item id.
@@ -9294,11 +10781,16 @@ This gets the basic information from the filings and doesn't include anything ex
      * Add classifications to an item.
      * 
      * Add classifications to an item.
-     * 
+     *             
      * A classification is the code for a product in a particular tax system. Classifications enable an item to be used in multiple tax systems which may have different tax rates for a product.
-     * 
+     *             
      * When an item is used in a transaction, the applicable classification will be used to determine the appropriate tax rate.
+     *             
+     * An item may only have one classification per tax system.
      * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin.
      * 
      * @param companyId The company id.
      * @param itemId The item id.
@@ -9316,15 +10808,20 @@ This gets the basic information from the filings and doesn't include anything ex
      * Add parameters to an item.
      * 
      * Add parameters to an item.
-     * 
+     *             
      * Some items can be taxed differently depending on the properties of that item, such as the item grade or by a particular measurement of that item. In AvaTax, these tax-affecting properties are called "parameters".
-     * 
+     *             
      * A parameter added to an item will be used by default in tax calculation but will not show on the transaction line referencing the item .
-     * 
+     *             
      * A parameter specified on a transaction line will override an item parameter if they share the same parameter name.
-     * 
+     *             
      * To see available parameters for this item, call `/api/v2/definitions/parameters?$filter=attributeType eq Product`
+     *             
+     * Some parameters are only available for use if you have subscribed to specific AvaTax services. To see which parameters you are able to use, add the query parameter "$showSubscribed=true" to the parameter definition call above.
      * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin.
      * 
      * @param companyId The ID of the company that owns this item parameter.
      * @param itemId The item id.
@@ -9342,15 +10839,20 @@ This gets the basic information from the filings and doesn't include anything ex
      * Add parameters to an item.
      * 
      * Add parameters to an item.
-     * 
+     *             
      * Some items can be taxed differently depending on the properties of that item, such as the item grade or by a particular measurement of that item. In AvaTax, these tax-affecting properties are called "parameters".
-     * 
+     *             
      * A parameter added to an item will be used by default in tax calculation but will not show on the transaction line referencing the item .
-     * 
+     *             
      * A parameter specified on a transaction line will override an item parameter if they share the same parameter name.
-     * 
+     *             
      * To see available parameters for this item, call `/api/v2/definitions/parameters?$filter=attributeType eq Product`
+     *             
+     * Some parameters are only available for use if you have subscribed to specific AvaTax services. To see which parameters you are able to use, add the query parameter "$showSubscribed=true" to the parameter definition call above.
      * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin.
      * 
      * @param companyId The ID of the company that owns this item parameter.
      * @param itemId The item id.
@@ -9368,13 +10870,18 @@ This gets the basic information from the filings and doesn't include anything ex
      * Create a new item
      * 
      * Creates one or more new item objects attached to this company.
-     * 
+     *             
      * Items are a way of separating your tax calculation process from your tax configuration details.  If you choose, you
      * can provide `itemCode` values for each `CreateTransaction()` API call rather than specifying tax codes, parameters, descriptions,
      * and other data fields.  AvaTax will automatically look up each `itemCode` and apply the correct tax codes and parameters
      * from the item table instead.  This allows your CreateTransaction call to be as simple as possible, and your tax compliance
      * team can manage your item catalog and adjust the tax behavior of items without having to modify your software.
      *             
+     * The tax code takes precedence over the tax code id if both are provided.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin.
      * 
      * @param companyId The ID of the company that owns this item.
      * @param model The item you wish to create.
@@ -9390,13 +10897,18 @@ This gets the basic information from the filings and doesn't include anything ex
      * Create a new item
      * 
      * Creates one or more new item objects attached to this company.
-     * 
+     *             
      * Items are a way of separating your tax calculation process from your tax configuration details.  If you choose, you
      * can provide `itemCode` values for each `CreateTransaction()` API call rather than specifying tax codes, parameters, descriptions,
      * and other data fields.  AvaTax will automatically look up each `itemCode` and apply the correct tax codes and parameters
      * from the item table instead.  This allows your CreateTransaction call to be as simple as possible, and your tax compliance
      * team can manage your item catalog and adjust the tax behavior of items without having to modify your software.
      *             
+     * The tax code takes precedence over the tax code id if both are provided.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin.
      * 
      * @param companyId The ID of the company that owns this item.
      * @param model The item you wish to create.
@@ -9412,13 +10924,18 @@ This gets the basic information from the filings and doesn't include anything ex
      * Delete a single item
      * 
      * Deletes the item object at this URL.
-     * 
+     *             
      * Items are a way of separating your tax calculation process from your tax configuration details.  If you choose, you
      * can provide `itemCode` values for each `CreateTransaction()` API call rather than specifying tax codes, parameters, descriptions,
      * and other data fields.  AvaTax will automatically look up each `itemCode` and apply the correct tax codes and parameters
      * from the item table instead.  This allows your CreateTransaction call to be as simple as possible, and your tax compliance
      * team can manage your item catalog and adjust the tax behavior of items without having to modify your software.
+     *             
+     * Deleting an item will also delete the parameters and classifications associated with that item.
      * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin.
      * 
      * @param companyId The ID of the company that owns this item.
      * @param id The ID of the item you wish to delete.
@@ -9435,13 +10952,18 @@ This gets the basic information from the filings and doesn't include anything ex
      * Delete a single item
      * 
      * Deletes the item object at this URL.
-     * 
+     *             
      * Items are a way of separating your tax calculation process from your tax configuration details.  If you choose, you
      * can provide `itemCode` values for each `CreateTransaction()` API call rather than specifying tax codes, parameters, descriptions,
      * and other data fields.  AvaTax will automatically look up each `itemCode` and apply the correct tax codes and parameters
      * from the item table instead.  This allows your CreateTransaction call to be as simple as possible, and your tax compliance
      * team can manage your item catalog and adjust the tax behavior of items without having to modify your software.
+     *             
+     * Deleting an item will also delete the parameters and classifications associated with that item.
      * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin.
      * 
      * @param companyId The ID of the company that owns this item.
      * @param id The ID of the item you wish to delete.
@@ -9458,9 +10980,14 @@ This gets the basic information from the filings and doesn't include anything ex
      * Delete a single item classification.
      * 
      * Delete a single item classification.
-     * 
+     *             
      * A classification is the code for a product in a particular tax system. Classifications enable an item to be used in multiple tax systems which may have different tax rates for a product.
+     *             
+     * When an item is used in a transaction, the applicable classification will be used to determine the appropriate tax rate.
      * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin.
      * 
      * @param companyId The company id.
      * @param itemId The item id.
@@ -9479,9 +11006,14 @@ This gets the basic information from the filings and doesn't include anything ex
      * Delete a single item classification.
      * 
      * Delete a single item classification.
-     * 
+     *             
      * A classification is the code for a product in a particular tax system. Classifications enable an item to be used in multiple tax systems which may have different tax rates for a product.
+     *             
+     * When an item is used in a transaction, the applicable classification will be used to determine the appropriate tax rate.
      * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin.
      * 
      * @param companyId The company id.
      * @param itemId The item id.
@@ -9500,11 +11032,16 @@ This gets the basic information from the filings and doesn't include anything ex
      * Delete a single item parameter
      * 
      * Delete a single item parameter.
-     * 
+     *             
      * Some items can be taxed differently depending on the properties of that item, such as the item grade or by a particular measurement of that item. In AvaTax, these tax-affecting properties are called "parameters".
-     * 
+     *             
      * A parameter added to an item will be used by default in tax calculation but will not show on the transaction line referencing the item .
+     *             
+     * A parameter specified on a transaction line will override an item parameter if they share the same parameter name.
      * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin.
      * 
      * @param companyId The company id
      * @param itemId The item id
@@ -9523,11 +11060,16 @@ This gets the basic information from the filings and doesn't include anything ex
      * Delete a single item parameter
      * 
      * Delete a single item parameter.
-     * 
+     *             
      * Some items can be taxed differently depending on the properties of that item, such as the item grade or by a particular measurement of that item. In AvaTax, these tax-affecting properties are called "parameters".
-     * 
+     *             
      * A parameter added to an item will be used by default in tax calculation but will not show on the transaction line referencing the item .
+     *             
+     * A parameter specified on a transaction line will override an item parameter if they share the same parameter name.
      * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin.
      * 
      * @param companyId The company id
      * @param itemId The item id
@@ -9546,11 +11088,16 @@ This gets the basic information from the filings and doesn't include anything ex
      * Retrieve a single item
      * 
      * Get the `Item` object identified by this URL.
-     * 
+     *             
      * Items are a way of separating your tax calculation process from your tax configuration details.  If you choose, you
      * can provide `itemCode` values for each `CreateTransaction()` API call rather than specifying tax codes, parameters, descriptions,
      * and other data fields.  AvaTax will automatically look up each `itemCode` and apply the correct tax codes and parameters
      * from the item table instead.  This allows your CreateTransaction call to be as simple as possible, and your tax compliance
+     * team can manage your item catalog and adjust the tax behavior of items without having to modify your software.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
      * @param companyId The ID of the company that owns this item object
      * @param id The primary key of this item
@@ -9569,11 +11116,16 @@ This gets the basic information from the filings and doesn't include anything ex
      * Retrieve a single item
      * 
      * Get the `Item` object identified by this URL.
-     * 
+     *             
      * Items are a way of separating your tax calculation process from your tax configuration details.  If you choose, you
      * can provide `itemCode` values for each `CreateTransaction()` API call rather than specifying tax codes, parameters, descriptions,
      * and other data fields.  AvaTax will automatically look up each `itemCode` and apply the correct tax codes and parameters
      * from the item table instead.  This allows your CreateTransaction call to be as simple as possible, and your tax compliance
+     * team can manage your item catalog and adjust the tax behavior of items without having to modify your software.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
      * @param companyId The ID of the company that owns this item object
      * @param id The primary key of this item
@@ -9592,9 +11144,14 @@ This gets the basic information from the filings and doesn't include anything ex
      * Retrieve a single item classification.
      * 
      * Retrieve a single item classification.
-     * 
+     *             
      * A classification is the code for a product in a particular tax system. Classifications enable an item to be used in multiple tax systems which may have different tax rates for a product.
+     *             
+     * When an item is used in a transaction, the applicable classification will be used to determine the appropriate tax rate.
      * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
      * @param companyId The company id.
      * @param itemId The item id.
@@ -9613,9 +11170,14 @@ This gets the basic information from the filings and doesn't include anything ex
      * Retrieve a single item classification.
      * 
      * Retrieve a single item classification.
-     * 
+     *             
      * A classification is the code for a product in a particular tax system. Classifications enable an item to be used in multiple tax systems which may have different tax rates for a product.
+     *             
+     * When an item is used in a transaction, the applicable classification will be used to determine the appropriate tax rate.
      * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
      * @param companyId The company id.
      * @param itemId The item id.
@@ -9634,11 +11196,16 @@ This gets the basic information from the filings and doesn't include anything ex
      * Retrieve a single item parameter
      * 
      * Retrieve a single item parameter.
-     * 
+     *             
      * Some items can be taxed differently depending on the properties of that item, such as the item grade or by a particular measurement of that item. In AvaTax, these tax-affecting properties are called "parameters".
-     * 
+     *             
      * A parameter added to an item will be used by default in tax calculation but will not show on the transaction line referencing the item .
+     *             
+     * A parameter specified on a transaction line will override an item parameter if they share the same parameter name.
      * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
      * @param companyId The company id
      * @param itemId The item id
@@ -9657,11 +11224,16 @@ This gets the basic information from the filings and doesn't include anything ex
      * Retrieve a single item parameter
      * 
      * Retrieve a single item parameter.
-     * 
+     *             
      * Some items can be taxed differently depending on the properties of that item, such as the item grade or by a particular measurement of that item. In AvaTax, these tax-affecting properties are called "parameters".
-     * 
+     *             
      * A parameter added to an item will be used by default in tax calculation but will not show on the transaction line referencing the item .
+     *             
+     * A parameter specified on a transaction line will override an item parameter if they share the same parameter name.
      * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
      * @param companyId The company id
      * @param itemId The item id
@@ -9680,12 +11252,17 @@ This gets the basic information from the filings and doesn't include anything ex
      * Retrieve classifications for an item.
      * 
      * List classifications for an item.
-     * 
+     *             
      * A classification is the code for a product in a particular tax system. Classifications enable an item to be used in multiple tax systems which may have different tax rates for a product.
-     * 
+     *             
      * When an item is used in a transaction, the applicable classification will be used to determine the appropriate tax rate.
-     * 
+     *             
      * Search for specific objects using the criteria in the `$filter` classification; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * Paginate your results using the `$top`, `$skip`, and `$orderby` classifications.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
      * @param companyId The company id.
      * @param itemId The item id.
@@ -9710,12 +11287,17 @@ This gets the basic information from the filings and doesn't include anything ex
      * Retrieve classifications for an item.
      * 
      * List classifications for an item.
-     * 
+     *             
      * A classification is the code for a product in a particular tax system. Classifications enable an item to be used in multiple tax systems which may have different tax rates for a product.
-     * 
+     *             
      * When an item is used in a transaction, the applicable classification will be used to determine the appropriate tax rate.
-     * 
+     *             
      * Search for specific objects using the criteria in the `$filter` classification; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * Paginate your results using the `$top`, `$skip`, and `$orderby` classifications.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
      * @param companyId The company id.
      * @param itemId The item id.
@@ -9740,14 +11322,19 @@ This gets the basic information from the filings and doesn't include anything ex
      * Retrieve parameters for an item
      * 
      * List parameters for an item.
-     * 
+     *             
      * Some items can be taxed differently depending on the properties of that item, such as the item grade or by a particular measurement of that item. In AvaTax, these tax-affecting properties are called "parameters".
-     * 
+     *             
      * A parameter added to an item will be used by default in tax calculation but will not show on the transaction line referencing the item .
-     * 
+     *             
      * A parameter specified on a transaction line will override an item parameter if they share the same parameter name.
-     * 
+     *             
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * Paginate your results using the `$top`, `$skip`, and `$orderby` parameters.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
      * @param companyId The company id
      * @param itemId The item id
@@ -9772,14 +11359,19 @@ This gets the basic information from the filings and doesn't include anything ex
      * Retrieve parameters for an item
      * 
      * List parameters for an item.
-     * 
+     *             
      * Some items can be taxed differently depending on the properties of that item, such as the item grade or by a particular measurement of that item. In AvaTax, these tax-affecting properties are called "parameters".
-     * 
+     *             
      * A parameter added to an item will be used by default in tax calculation but will not show on the transaction line referencing the item .
-     * 
+     *             
      * A parameter specified on a transaction line will override an item parameter if they share the same parameter name.
-     * 
+     *             
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * Paginate your results using the `$top`, `$skip`, and `$orderby` parameters.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
      * @param companyId The company id
      * @param itemId The item id
@@ -9804,20 +11396,25 @@ This gets the basic information from the filings and doesn't include anything ex
      * Retrieve items for this company
      * 
      * List all items defined for the current company.
-     * 
+     *             
      * Items are a way of separating your tax calculation process from your tax configuration details.  If you choose, you
      * can provide `itemCode` values for each `CreateTransaction()` API call rather than specifying tax codes, parameters, descriptions,
      * and other data fields.  AvaTax will automatically look up each `itemCode` and apply the correct tax codes and parameters
      * from the item table instead.  This allows your CreateTransaction call to be as simple as possible, and your tax compliance
      * team can manage your item catalog and adjust the tax behavior of items without having to modify your software.
-     * 
+     *             
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * 
+     *             
      * Paginate your results using the `$top`, `$skip`, and `$orderby` parameters.
-     * 
+     *             
      * You may specify one or more of the following values in the `$include` parameter to fetch additional nested data, using commas to separate multiple values:
      *             
      * * Parameters
+     * * Classifications
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
      * @param companyId The ID of the company that defined these items
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* taxCode, classifications, parameters
@@ -9842,20 +11439,25 @@ This gets the basic information from the filings and doesn't include anything ex
      * Retrieve items for this company
      * 
      * List all items defined for the current company.
-     * 
+     *             
      * Items are a way of separating your tax calculation process from your tax configuration details.  If you choose, you
      * can provide `itemCode` values for each `CreateTransaction()` API call rather than specifying tax codes, parameters, descriptions,
      * and other data fields.  AvaTax will automatically look up each `itemCode` and apply the correct tax codes and parameters
      * from the item table instead.  This allows your CreateTransaction call to be as simple as possible, and your tax compliance
      * team can manage your item catalog and adjust the tax behavior of items without having to modify your software.
-     * 
+     *             
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * 
+     *             
      * Paginate your results using the `$top`, `$skip`, and `$orderby` parameters.
-     * 
+     *             
      * You may specify one or more of the following values in the `$include` parameter to fetch additional nested data, using commas to separate multiple values:
      *             
      * * Parameters
+     * * Classifications
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
      * @param companyId The ID of the company that defined these items
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* taxCode, classifications, parameters
@@ -9880,15 +11482,20 @@ This gets the basic information from the filings and doesn't include anything ex
      * Retrieve all items
      * 
      * Get multiple item objects across all companies.
-     * 
+     *             
      * Items are a way of separating your tax calculation process from your tax configuration details.  If you choose, you
      * can provide `itemCode` values for each `CreateTransaction()` API call rather than specifying tax codes, parameters, descriptions,
      * and other data fields.  AvaTax will automatically look up each `itemCode` and apply the correct tax codes and parameters
      * from the item table instead.  This allows your CreateTransaction call to be as simple as possible, and your tax compliance
      * team can manage your item catalog and adjust the tax behavior of items without having to modify your software.
-     * 
+     *             
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     *             
+     * Paginate your results using the `$top`, `$skip`, and `$orderby` parameters.
      * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* taxCode, classifications, parameters
      * @param include A comma separated list of additional data to retrieve.
@@ -9911,15 +11518,20 @@ This gets the basic information from the filings and doesn't include anything ex
      * Retrieve all items
      * 
      * Get multiple item objects across all companies.
-     * 
+     *             
      * Items are a way of separating your tax calculation process from your tax configuration details.  If you choose, you
      * can provide `itemCode` values for each `CreateTransaction()` API call rather than specifying tax codes, parameters, descriptions,
      * and other data fields.  AvaTax will automatically look up each `itemCode` and apply the correct tax codes and parameters
      * from the item table instead.  This allows your CreateTransaction call to be as simple as possible, and your tax compliance
      * team can manage your item catalog and adjust the tax behavior of items without having to modify your software.
-     * 
+     *             
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     *             
+     * Paginate your results using the `$top`, `$skip`, and `$orderby` parameters.
      * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* taxCode, classifications, parameters
      * @param include A comma separated list of additional data to retrieve.
@@ -9942,16 +11554,21 @@ This gets the basic information from the filings and doesn't include anything ex
      * Update a single item
      * 
      * Replace the existing `Item` object at this URL with an updated object.
-     * 
+     *             
      * Items are a way of separating your tax calculation process from your tax configuration details.  If you choose, you
      * can provide `itemCode` values for each `CreateTransaction()` API call rather than specifying tax codes, parameters, descriptions,
      * and other data fields.  AvaTax will automatically look up each `itemCode` and apply the correct tax codes and parameters
      * from the item table instead.  This allows your CreateTransaction call to be as simple as possible, and your tax compliance
      * team can manage your item catalog and adjust the tax behavior of items without having to modify your software.
-     * 
-     * All data from the existing object will be replaced with data in the object you PUT.  To set a field's value to null, 
+     *             
+     * All data from the existing object will be replaced with data in the object you PUT.  To set a field's value to null,
      * you may either set its value to null or omit that field from the object you post.
      *             
+     * The tax code takes precedence over the tax code id if both are provided.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin.
      * 
      * @param companyId The ID of the company that this item belongs to.
      * @param id The ID of the item you wish to update
@@ -9969,16 +11586,21 @@ This gets the basic information from the filings and doesn't include anything ex
      * Update a single item
      * 
      * Replace the existing `Item` object at this URL with an updated object.
-     * 
+     *             
      * Items are a way of separating your tax calculation process from your tax configuration details.  If you choose, you
      * can provide `itemCode` values for each `CreateTransaction()` API call rather than specifying tax codes, parameters, descriptions,
      * and other data fields.  AvaTax will automatically look up each `itemCode` and apply the correct tax codes and parameters
      * from the item table instead.  This allows your CreateTransaction call to be as simple as possible, and your tax compliance
      * team can manage your item catalog and adjust the tax behavior of items without having to modify your software.
-     * 
-     * All data from the existing object will be replaced with data in the object you PUT.  To set a field's value to null, 
+     *             
+     * All data from the existing object will be replaced with data in the object you PUT.  To set a field's value to null,
      * you may either set its value to null or omit that field from the object you post.
      *             
+     * The tax code takes precedence over the tax code id if both are provided.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin.
      * 
      * @param companyId The ID of the company that this item belongs to.
      * @param id The ID of the item you wish to update
@@ -9996,11 +11618,16 @@ This gets the basic information from the filings and doesn't include anything ex
      * Update an item classification.
      * 
      * Update an item classification.
-     * 
+     *             
      * A classification is the code for a product in a particular tax system. Classifications enable an item to be used in multiple tax systems which may have different tax rates for a product.
-     * 
+     *             
      * When an item is used in a transaction, the applicable classification will be used to determine the appropriate tax rate.
+     *             
+     * An item may only have one classification per tax system.
      * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin.
      * 
      * @param companyId The company id.
      * @param itemId The item id.
@@ -10020,11 +11647,16 @@ This gets the basic information from the filings and doesn't include anything ex
      * Update an item classification.
      * 
      * Update an item classification.
-     * 
+     *             
      * A classification is the code for a product in a particular tax system. Classifications enable an item to be used in multiple tax systems which may have different tax rates for a product.
-     * 
+     *             
      * When an item is used in a transaction, the applicable classification will be used to determine the appropriate tax rate.
+     *             
+     * An item may only have one classification per tax system.
      * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin.
      * 
      * @param companyId The company id.
      * @param itemId The item id.
@@ -10044,11 +11676,16 @@ This gets the basic information from the filings and doesn't include anything ex
      * Update an item parameter
      * 
      * Update an item parameter.
-     * 
+     *             
      * Some items can be taxed differently depending on the properties of that item, such as the item grade or by a particular measurement of that item. In AvaTax, these tax-affecting properties are called "parameters".
-     * 
+     *             
      * A parameter added to an item will be used by default in tax calculation but will not show on the transaction line referencing the item .
+     *             
+     * A parameter specified on a transaction line will override an item parameter if they share the same parameter name.
      * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin.
      * 
      * @param companyId The company id.
      * @param itemId The item id
@@ -10068,11 +11705,16 @@ This gets the basic information from the filings and doesn't include anything ex
      * Update an item parameter
      * 
      * Update an item parameter.
-     * 
+     *             
      * Some items can be taxed differently depending on the properties of that item, such as the item grade or by a particular measurement of that item. In AvaTax, these tax-affecting properties are called "parameters".
-     * 
+     *             
      * A parameter added to an item will be used by default in tax calculation but will not show on the transaction line referencing the item .
+     *             
+     * A parameter specified on a transaction line will override an item parameter if they share the same parameter name.
      * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin.
      * 
      * @param companyId The company id.
      * @param itemId The item id
@@ -10092,10 +11734,15 @@ This gets the basic information from the filings and doesn't include anything ex
      * Create one or more overrides
      * 
      * Creates one or more jurisdiction override objects for this account.
-     * 
+     *             
      * A Jurisdiction Override is a configuration setting that allows you to select the taxing
      * jurisdiction for a specific address.  If you encounter an address that is on the boundary
      * between two different jurisdictions, you can choose to set up a jurisdiction override
+     * to switch this address to use different taxing jurisdictions.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin.
      * 
      * @param accountId The ID of the account that owns this override
      * @param model The jurisdiction override objects to create
@@ -10111,10 +11758,15 @@ This gets the basic information from the filings and doesn't include anything ex
      * Create one or more overrides
      * 
      * Creates one or more jurisdiction override objects for this account.
-     * 
+     *             
      * A Jurisdiction Override is a configuration setting that allows you to select the taxing
      * jurisdiction for a specific address.  If you encounter an address that is on the boundary
      * between two different jurisdictions, you can choose to set up a jurisdiction override
+     * to switch this address to use different taxing jurisdictions.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin.
      * 
      * @param accountId The ID of the account that owns this override
      * @param model The jurisdiction override objects to create
@@ -10129,6 +11781,12 @@ This gets the basic information from the filings and doesn't include anything ex
     /**
      * Delete a single override
      * 
+     * Marks the item object at this URL as deleted.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin.
+     * 
      * @param accountId The ID of the account that owns this override
      * @param id The ID of the override you wish to delete
      * @return ArrayList<ErrorDetail>
@@ -10142,6 +11800,12 @@ This gets the basic information from the filings and doesn't include anything ex
 
     /**
      * Delete a single override
+     * 
+     * Marks the item object at this URL as deleted.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin.
      * 
      * @param accountId The ID of the account that owns this override
      * @param id The ID of the override you wish to delete
@@ -10158,10 +11822,15 @@ This gets the basic information from the filings and doesn't include anything ex
      * Retrieve a single override
      * 
      * Get the item object identified by this URL.
-     * 
+     *             
      * A Jurisdiction Override is a configuration setting that allows you to select the taxing
      * jurisdiction for a specific address.  If you encounter an address that is on the boundary
      * between two different jurisdictions, you can choose to set up a jurisdiction override
+     * to switch this address to use different taxing jurisdictions.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
      * @param accountId The ID of the account that owns this override
      * @param id The primary key of this override
@@ -10178,10 +11847,15 @@ This gets the basic information from the filings and doesn't include anything ex
      * Retrieve a single override
      * 
      * Get the item object identified by this URL.
-     * 
+     *             
      * A Jurisdiction Override is a configuration setting that allows you to select the taxing
      * jurisdiction for a specific address.  If you encounter an address that is on the boundary
      * between two different jurisdictions, you can choose to set up a jurisdiction override
+     * to switch this address to use different taxing jurisdictions.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
      * @param accountId The ID of the account that owns this override
      * @param id The primary key of this override
@@ -10198,13 +11872,18 @@ This gets the basic information from the filings and doesn't include anything ex
      * Retrieve overrides for this account
      * 
      * List all jurisdiction override objects defined for this account.
-     * 
+     *             
      * A Jurisdiction Override is a configuration setting that allows you to select the taxing
      * jurisdiction for a specific address.  If you encounter an address that is on the boundary
      * between two different jurisdictions, you can choose to set up a jurisdiction override
      * to switch this address to use different taxing jurisdictions.
-     * 
+     *             
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * Paginate your results using the `$top`, `$skip`, and `$orderby` parameters.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
      * @param accountId The ID of the account that owns this override
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* country, Jurisdictions
@@ -10229,13 +11908,18 @@ This gets the basic information from the filings and doesn't include anything ex
      * Retrieve overrides for this account
      * 
      * List all jurisdiction override objects defined for this account.
-     * 
+     *             
      * A Jurisdiction Override is a configuration setting that allows you to select the taxing
      * jurisdiction for a specific address.  If you encounter an address that is on the boundary
      * between two different jurisdictions, you can choose to set up a jurisdiction override
      * to switch this address to use different taxing jurisdictions.
-     * 
+     *             
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * Paginate your results using the `$top`, `$skip`, and `$orderby` parameters.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
      * @param accountId The ID of the account that owns this override
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* country, Jurisdictions
@@ -10260,13 +11944,18 @@ This gets the basic information from the filings and doesn't include anything ex
      * Retrieve all overrides
      * 
      * Get multiple jurisdiction override objects across all companies.
-     * 
+     *             
      * A Jurisdiction Override is a configuration setting that allows you to select the taxing
      * jurisdiction for a specific address.  If you encounter an address that is on the boundary
      * between two different jurisdictions, you can choose to set up a jurisdiction override
      * to switch this address to use different taxing jurisdictions.
-     * 
+     *             
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * Paginate your results using the `$top`, `$skip`, and `$orderby` parameters.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* country, Jurisdictions
      * @param include A comma separated list of additional data to retrieve.
@@ -10289,13 +11978,18 @@ This gets the basic information from the filings and doesn't include anything ex
      * Retrieve all overrides
      * 
      * Get multiple jurisdiction override objects across all companies.
-     * 
+     *             
      * A Jurisdiction Override is a configuration setting that allows you to select the taxing
      * jurisdiction for a specific address.  If you encounter an address that is on the boundary
      * between two different jurisdictions, you can choose to set up a jurisdiction override
      * to switch this address to use different taxing jurisdictions.
-     * 
+     *             
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * Paginate your results using the `$top`, `$skip`, and `$orderby` parameters.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* country, Jurisdictions
      * @param include A comma separated list of additional data to retrieve.
@@ -10317,6 +12011,12 @@ This gets the basic information from the filings and doesn't include anything ex
     /**
      * Update a single jurisdictionoverride
      * 
+     * Replace the existing jurisdictionoverride object at this URL with an updated object.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin.
+     * 
      * @param accountId The ID of the account that this jurisdictionoverride belongs to.
      * @param id The ID of the jurisdictionoverride you wish to update
      * @param model The jurisdictionoverride object you wish to update.
@@ -10331,6 +12031,12 @@ This gets the basic information from the filings and doesn't include anything ex
 
     /**
      * Update a single jurisdictionoverride
+     * 
+     * Replace the existing jurisdictionoverride object at this URL with an updated object.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin.
      * 
      * @param accountId The ID of the account that this jurisdictionoverride belongs to.
      * @param id The ID of the jurisdictionoverride you wish to update
@@ -10347,6 +12053,12 @@ This gets the basic information from the filings and doesn't include anything ex
     /**
      * Create a new location
      * 
+     * Create one or more new location objects attached to this company.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPAdmin, CSPTester, FirmAdmin, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
+     * 
      * @param companyId The ID of the company that owns this location.
      * @param model The location you wish to create.
      * @return ArrayList<LocationModel>
@@ -10359,6 +12071,12 @@ This gets the basic information from the filings and doesn't include anything ex
 
     /**
      * Create a new location
+     * 
+     * Create one or more new location objects attached to this company.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPAdmin, CSPTester, FirmAdmin, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
      * 
      * @param companyId The ID of the company that owns this location.
      * @param model The location you wish to create.
@@ -10373,6 +12091,12 @@ This gets the basic information from the filings and doesn't include anything ex
     /**
      * Delete a single location
      * 
+     * Mark the location object at this URL as deleted.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPAdmin, CSPTester, FirmAdmin, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
+     * 
      * @param companyId The ID of the company that owns this location.
      * @param id The ID of the location you wish to delete.
      * @return ArrayList<ErrorDetail>
@@ -10386,6 +12110,12 @@ This gets the basic information from the filings and doesn't include anything ex
 
     /**
      * Delete a single location
+     * 
+     * Mark the location object at this URL as deleted.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPAdmin, CSPTester, FirmAdmin, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
      * 
      * @param companyId The ID of the company that owns this location.
      * @param id The ID of the location you wish to delete.
@@ -10409,6 +12139,11 @@ This gets the basic information from the filings and doesn't include anything ex
      * 
      * You may specify one or more of the following values in the `$include` parameter to fetch additional nested data, using commas to separate multiple values:
      *             
+     * * LocationSettings
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, FirmAdmin, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
      * @param companyId The ID of the company that owns this location
      * @param id The primary key of this location
@@ -10434,6 +12169,11 @@ This gets the basic information from the filings and doesn't include anything ex
      * 
      * You may specify one or more of the following values in the `$include` parameter to fetch additional nested data, using commas to separate multiple values:
      *             
+     * * LocationSettings
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, FirmAdmin, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
      * @param companyId The ID of the company that owns this location
      * @param id The primary key of this location
@@ -10461,6 +12201,11 @@ This gets the basic information from the filings and doesn't include anything ex
      * Paginate your results using the `$top`, `$skip`, and `$orderby` parameters.
      * You may specify one or more of the following values in the `$include` parameter to fetch additional nested data, using commas to separate multiple values:
      *             
+     * * LocationSettings
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, FirmAdmin, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
      * @param companyId The ID of the company that owns these locations
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* settings
@@ -10494,6 +12239,11 @@ This gets the basic information from the filings and doesn't include anything ex
      * Paginate your results using the `$top`, `$skip`, and `$orderby` parameters.
      * You may specify one or more of the following values in the `$include` parameter to fetch additional nested data, using commas to separate multiple values:
      *             
+     * * LocationSettings
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, FirmAdmin, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
      * @param companyId The ID of the company that owns these locations
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* settings
@@ -10528,6 +12278,11 @@ This gets the basic information from the filings and doesn't include anything ex
      * 
      * You may specify one or more of the following values in the `$include` parameter to fetch additional nested data, using commas to separate multiple values:
      *             
+     * * LocationSettings
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, FirmAdmin, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* settings
      * @param include A comma separated list of additional data to retrieve. You may specify `LocationSettings` to retrieve location settings.
@@ -10560,6 +12315,11 @@ This gets the basic information from the filings and doesn't include anything ex
      * 
      * You may specify one or more of the following values in the `$include` parameter to fetch additional nested data, using commas to separate multiple values:
      *             
+     * * LocationSettings
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, FirmAdmin, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* settings
      * @param include A comma separated list of additional data to retrieve. You may specify `LocationSettings` to retrieve location settings.
@@ -10583,6 +12343,11 @@ This gets the basic information from the filings and doesn't include anything ex
      * 
      * Replace the existing location object at this URL with an updated object.
      * All data from the existing object will be replaced with data in the object you PUT.  
+     * To set a field's value to null, you may either set its value to null or omit that field from the object you post.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPAdmin, CSPTester, FirmAdmin, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
      * 
      * @param companyId The ID of the company that this location belongs to.
      * @param id The ID of the location you wish to update
@@ -10601,6 +12366,11 @@ This gets the basic information from the filings and doesn't include anything ex
      * 
      * Replace the existing location object at this URL with an updated object.
      * All data from the existing object will be replaced with data in the object you PUT.  
+     * To set a field's value to null, you may either set its value to null or omit that field from the object you post.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPAdmin, CSPTester, FirmAdmin, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
      * 
      * @param companyId The ID of the company that this location belongs to.
      * @param id The ID of the location you wish to update
@@ -10619,6 +12389,11 @@ This gets the basic information from the filings and doesn't include anything ex
      * 
      * Returns validation information for this location.
      * This API call is intended to compare this location against the currently known taxing authority rules and regulations,
+     * and provide information about what additional work is required to completely setup this location.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, FirmAdmin, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
      * @param companyId The ID of the company that owns this location
      * @param id The primary key of this location
@@ -10636,6 +12411,11 @@ This gets the basic information from the filings and doesn't include anything ex
      * 
      * Returns validation information for this location.
      * This API call is intended to compare this location against the currently known taxing authority rules and regulations,
+     * and provide information about what additional work is required to completely setup this location.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, FirmAdmin, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
      * @param companyId The ID of the company that owns this location
      * @param id The primary key of this location
@@ -10652,14 +12432,20 @@ This gets the basic information from the filings and doesn't include anything ex
      * Adjust a MultiDocument transaction
      * 
      * Adjusts the current MultiDocument transaction uniquely identified by this URL.
-     * 
+     *             
      * A transaction represents a unique potentially taxable action that your company has recorded, and transactions include actions like
      * sales, purchases, inventory transfer, and returns (also called refunds).
-     * 
-     * When you adjust a transaction, that transaction's status is recorded as `Adjusted`. 
-     * 
+     *             
+     * When you adjust a transaction, that transaction's status is recorded as `Adjusted`.
+     *             
      * Both the revisions will be available for retrieval based on their code and ID numbers. Only transactions in Committed status can be reported on a tax filing by Avalara's Managed Returns Service.
+     *             
+     * Transactions that have been previously reported to a tax authority by Avalara Managed Returns are considered locked and are no longer available for adjustments.
      * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
+     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
      * 
      * @param code The transaction code for this MultiDocument transaction
      * @param type The transaction type for this MultiDocument transaction (See DocumentType::* for a list of allowable values)
@@ -10679,14 +12465,20 @@ This gets the basic information from the filings and doesn't include anything ex
      * Adjust a MultiDocument transaction
      * 
      * Adjusts the current MultiDocument transaction uniquely identified by this URL.
-     * 
+     *             
      * A transaction represents a unique potentially taxable action that your company has recorded, and transactions include actions like
      * sales, purchases, inventory transfer, and returns (also called refunds).
-     * 
-     * When you adjust a transaction, that transaction's status is recorded as `Adjusted`. 
-     * 
+     *             
+     * When you adjust a transaction, that transaction's status is recorded as `Adjusted`.
+     *             
      * Both the revisions will be available for retrieval based on their code and ID numbers. Only transactions in Committed status can be reported on a tax filing by Avalara's Managed Returns Service.
+     *             
+     * Transactions that have been previously reported to a tax authority by Avalara Managed Returns are considered locked and are no longer available for adjustments.
      * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
+     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
      * 
      * @param code The transaction code for this MultiDocument transaction
      * @param type The transaction type for this MultiDocument transaction (See DocumentType::* for a list of allowable values)
@@ -10706,18 +12498,24 @@ This gets the basic information from the filings and doesn't include anything ex
      * Get audit information about a MultiDocument transaction
      * 
      * Retrieve audit information about a MultiDocument transaction stored in AvaTax.
-     *  
-     * The audit API retrieves audit information related to a specific MultiDocument transaction.  This audit 
+     *             
+     * The audit API retrieves audit information related to a specific MultiDocument transaction.  This audit
      * information includes the following:
-     * 
+     *             
      * * The `code` of the MultiDocument transaction
      * * The `type` of the MultiDocument transaction
      * * The server timestamp representing the exact server time when the transaction was created
      * * The server duration - how long it took to process this transaction
      * * Whether exact API call details were logged
      * * A reconstructed API call showing what the original create call looked like
-     * 
+     *             
      * A transaction represents a unique potentially taxable action that your company has recorded, and transactions include actions like
+     * sales, purchases, inventory transfer, and returns (also called refunds).
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, ProStoresOperator, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
+     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
      * 
      * @param code The transaction code for this MultiDocument transaction
      * @param type The transaction type for this MultiDocument transaction (See DocumentType::* for a list of allowable values)
@@ -10734,18 +12532,24 @@ This gets the basic information from the filings and doesn't include anything ex
      * Get audit information about a MultiDocument transaction
      * 
      * Retrieve audit information about a MultiDocument transaction stored in AvaTax.
-     *  
-     * The audit API retrieves audit information related to a specific MultiDocument transaction.  This audit 
+     *             
+     * The audit API retrieves audit information related to a specific MultiDocument transaction.  This audit
      * information includes the following:
-     * 
+     *             
      * * The `code` of the MultiDocument transaction
      * * The `type` of the MultiDocument transaction
      * * The server timestamp representing the exact server time when the transaction was created
      * * The server duration - how long it took to process this transaction
      * * Whether exact API call details were logged
      * * A reconstructed API call showing what the original create call looked like
-     * 
+     *             
      * A transaction represents a unique potentially taxable action that your company has recorded, and transactions include actions like
+     * sales, purchases, inventory transfer, and returns (also called refunds).
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, ProStoresOperator, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
+     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
      * 
      * @param code The transaction code for this MultiDocument transaction
      * @param type The transaction type for this MultiDocument transaction (See DocumentType::* for a list of allowable values)
@@ -10762,12 +12566,18 @@ This gets the basic information from the filings and doesn't include anything ex
      * Commit a MultiDocument transaction
      * 
      * Marks a list of transactions by changing its status to `Committed`.
-     * 
+     *             
      * Transactions that are committed are available to be reported to a tax authority by Avalara Managed Returns.
-     * 
+     *             
      * A transaction represents a unique potentially taxable action that your company has recorded, and transactions include actions like
      * sales, purchases, inventory transfer, and returns (also called refunds).
+     *             
+     * Any changes made to a committed transaction will generate a transaction history.
      * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, ProStoresOperator, SSTAdmin, TechnicalSupportAdmin.
+     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
      * 
      * @param model The commit request you wish to execute
      * @return MultiDocumentModel
@@ -10781,12 +12591,18 @@ This gets the basic information from the filings and doesn't include anything ex
      * Commit a MultiDocument transaction
      * 
      * Marks a list of transactions by changing its status to `Committed`.
-     * 
+     *             
      * Transactions that are committed are available to be reported to a tax authority by Avalara Managed Returns.
-     * 
+     *             
      * A transaction represents a unique potentially taxable action that your company has recorded, and transactions include actions like
      * sales, purchases, inventory transfer, and returns (also called refunds).
+     *             
+     * Any changes made to a committed transaction will generate a transaction history.
      * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, ProStoresOperator, SSTAdmin, TechnicalSupportAdmin.
+     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
      * 
      * @param model The commit request you wish to execute
      * @return MultiDocumentModel
@@ -10800,26 +12616,26 @@ This gets the basic information from the filings and doesn't include anything ex
      * Create a new MultiDocument transaction
      * 
      * Records a new MultiDocument transaction in AvaTax.
-     * 
+     *             
      * A traditional transaction requires exactly two parties: a seller and a buyer.  MultiDocument transactions can
      * involve a marketplace of vendors, each of which contributes some portion of the final transaction.  Within
      * a MultiDocument transaction, each individual buyer and seller pair are matched up and converted to a separate
      * document.  This separation of documents allows each seller to file their taxes separately.
-     * 
+     *             
      * This API will report an error if you attempt to create a transaction when one already exists with the specified `code`.
      * If you would like the API to automatically update the transaction when it already exists, please set the `allowAdjust`
      * value to `true`.
-     * 
+     *             
      * To generate a refund for a transaction, use the `RefundTransaction` API.
-     * 
+     *             
      * The field `type` identifies the kind of transaction - for example, a sale, purchase, or refund.  If you do not specify
      * a `type` value, you will receive an estimate of type `SalesOrder`, which will not be recorded.
-     * 
+     *             
      * The origin and destination locations for a transaction must be identified by either address or geocode.  For address-based transactions, please
      * provide addresses in the fields `line`, `city`, `region`, `country` and `postalCode`.  For geocode-based transactions, please provide the geocode
      * information in the fields `latitude` and `longitude`.  If either `latitude` or `longitude` or both are null, the transaction will be calculated
      * using the best available address location information.
-     * 
+     *             
      * You may specify one or more of the following values in the `$include` parameter to fetch additional nested data, using commas to separate multiple values:
      *             
      * * Lines
@@ -10830,6 +12646,12 @@ This gets the basic information from the filings and doesn't include anything ex
      * * LinesOnly (omit details - reduces API response size)
      * * ForceTimeout - Simulates a timeout.  This adds a 30 second delay and error to your API call.  This can be used to test your code to ensure it can respond correctly in the case of a dropped connection.
      *             
+     * If you omit the `$include` parameter, the API will assume you want `Summary,Addresses`.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
+     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
      * 
      * @param include Specifies objects to include in the response after transaction is created
      * @param model the multi document transaction model
@@ -10845,26 +12667,26 @@ This gets the basic information from the filings and doesn't include anything ex
      * Create a new MultiDocument transaction
      * 
      * Records a new MultiDocument transaction in AvaTax.
-     * 
+     *             
      * A traditional transaction requires exactly two parties: a seller and a buyer.  MultiDocument transactions can
      * involve a marketplace of vendors, each of which contributes some portion of the final transaction.  Within
      * a MultiDocument transaction, each individual buyer and seller pair are matched up and converted to a separate
      * document.  This separation of documents allows each seller to file their taxes separately.
-     * 
+     *             
      * This API will report an error if you attempt to create a transaction when one already exists with the specified `code`.
      * If you would like the API to automatically update the transaction when it already exists, please set the `allowAdjust`
      * value to `true`.
-     * 
+     *             
      * To generate a refund for a transaction, use the `RefundTransaction` API.
-     * 
+     *             
      * The field `type` identifies the kind of transaction - for example, a sale, purchase, or refund.  If you do not specify
      * a `type` value, you will receive an estimate of type `SalesOrder`, which will not be recorded.
-     * 
+     *             
      * The origin and destination locations for a transaction must be identified by either address or geocode.  For address-based transactions, please
      * provide addresses in the fields `line`, `city`, `region`, `country` and `postalCode`.  For geocode-based transactions, please provide the geocode
      * information in the fields `latitude` and `longitude`.  If either `latitude` or `longitude` or both are null, the transaction will be calculated
      * using the best available address location information.
-     * 
+     *             
      * You may specify one or more of the following values in the `$include` parameter to fetch additional nested data, using commas to separate multiple values:
      *             
      * * Lines
@@ -10875,6 +12697,12 @@ This gets the basic information from the filings and doesn't include anything ex
      * * LinesOnly (omit details - reduces API response size)
      * * ForceTimeout - Simulates a timeout.  This adds a 30 second delay and error to your API call.  This can be used to test your code to ensure it can respond correctly in the case of a dropped connection.
      *             
+     * If you omit the `$include` parameter, the API will assume you want `Summary,Addresses`.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
+     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
      * 
      * @param include Specifies objects to include in the response after transaction is created
      * @param model the multi document transaction model
@@ -10890,9 +12718,9 @@ This gets the basic information from the filings and doesn't include anything ex
      * Retrieve a MultiDocument transaction
      * 
      * Get the current MultiDocument transaction identified by this URL.
-     * 
+     *             
      * If this transaction was adjusted, the return value of this API will be the current transaction with this code.
-     * 
+     *             
      * You may specify one or more of the following values in the `$include` parameter to fetch additional nested data, using commas to separate multiple values:
      *             
      * * Lines
@@ -10900,6 +12728,12 @@ This gets the basic information from the filings and doesn't include anything ex
      * * Summary (implies details)
      * * Addresses
      * * SummaryOnly (omit lines and details - reduces API response size)
+     * * LinesOnly (omit details - reduces API response size)
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, ProStoresOperator, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
+     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
      * 
      * @param code 
      * @param type  (See DocumentType::* for a list of allowable values)
@@ -10918,9 +12752,9 @@ This gets the basic information from the filings and doesn't include anything ex
      * Retrieve a MultiDocument transaction
      * 
      * Get the current MultiDocument transaction identified by this URL.
-     * 
+     *             
      * If this transaction was adjusted, the return value of this API will be the current transaction with this code.
-     * 
+     *             
      * You may specify one or more of the following values in the `$include` parameter to fetch additional nested data, using commas to separate multiple values:
      *             
      * * Lines
@@ -10928,6 +12762,12 @@ This gets the basic information from the filings and doesn't include anything ex
      * * Summary (implies details)
      * * Addresses
      * * SummaryOnly (omit lines and details - reduces API response size)
+     * * LinesOnly (omit details - reduces API response size)
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, ProStoresOperator, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
+     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
      * 
      * @param code 
      * @param type  (See DocumentType::* for a list of allowable values)
@@ -10946,18 +12786,18 @@ This gets the basic information from the filings and doesn't include anything ex
      * Retrieve a MultiDocument transaction by ID
      * 
      * Get the unique MultiDocument transaction identified by this URL.
-     * 
+     *             
      * A traditional transaction requires exactly two parties: a seller and a buyer.  MultiDocument transactions can
      * involve a marketplace of vendors, each of which contributes some portion of the final transaction.  Within
      * a MultiDocument transaction, each individual buyer and seller pair are matched up and converted to a separate
      * document.  This separation of documents allows each seller to file their taxes separately.
-     * 
+     *             
      * This endpoint retrieves the exact transaction identified by this ID number even if that transaction was later adjusted
      * by using the `AdjustTransaction` endpoint.
-     * 
+     *             
      * A transaction represents a unique potentially taxable action that your company has recorded, and transactions include actions like
      * sales, purchases, inventory transfer, and returns (also called refunds).
-     * 
+     *             
      * You may specify one or more of the following values in the `$include` parameter to fetch additional nested data, using commas to separate multiple values:
      *             
      * * Lines
@@ -10965,6 +12805,12 @@ This gets the basic information from the filings and doesn't include anything ex
      * * Summary (implies details)
      * * Addresses
      * * SummaryOnly (omit lines and details - reduces API response size)
+     * * LinesOnly (omit details - reduces API response size)
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, ProStoresOperator, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
+     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
      * 
      * @param id The unique ID number of the MultiDocument transaction to retrieve
      * @param include Specifies objects to include in the response after transaction is created
@@ -10981,18 +12827,18 @@ This gets the basic information from the filings and doesn't include anything ex
      * Retrieve a MultiDocument transaction by ID
      * 
      * Get the unique MultiDocument transaction identified by this URL.
-     * 
+     *             
      * A traditional transaction requires exactly two parties: a seller and a buyer.  MultiDocument transactions can
      * involve a marketplace of vendors, each of which contributes some portion of the final transaction.  Within
      * a MultiDocument transaction, each individual buyer and seller pair are matched up and converted to a separate
      * document.  This separation of documents allows each seller to file their taxes separately.
-     * 
+     *             
      * This endpoint retrieves the exact transaction identified by this ID number even if that transaction was later adjusted
      * by using the `AdjustTransaction` endpoint.
-     * 
+     *             
      * A transaction represents a unique potentially taxable action that your company has recorded, and transactions include actions like
      * sales, purchases, inventory transfer, and returns (also called refunds).
-     * 
+     *             
      * You may specify one or more of the following values in the `$include` parameter to fetch additional nested data, using commas to separate multiple values:
      *             
      * * Lines
@@ -11000,6 +12846,12 @@ This gets the basic information from the filings and doesn't include anything ex
      * * Summary (implies details)
      * * Addresses
      * * SummaryOnly (omit lines and details - reduces API response size)
+     * * LinesOnly (omit details - reduces API response size)
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, ProStoresOperator, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
+     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
      * 
      * @param id The unique ID number of the MultiDocument transaction to retrieve
      * @param include Specifies objects to include in the response after transaction is created
@@ -11016,16 +12868,16 @@ This gets the basic information from the filings and doesn't include anything ex
      * Retrieve all MultiDocument transactions
      * 
      * List all MultiDocument transactions within this account.
-     * 
+     *             
      * This endpoint is limited to returning 1,000 MultiDocument transactions at a time.  To retrieve more than 1,000 MultiDocument
      * transactions, please use the pagination features of the API.
-     * 
+     *             
      * A transaction represents a unique potentially taxable action that your company has recorded, and transactions include actions like
      * sales, purchases, inventory transfer, and returns (also called refunds).
-     * 
+     *             
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * Paginate your results using the `$top`, `$skip`, and `$orderby` parameters.
-     * 
+     *             
      * You may specify one or more of the following values in the `$include` parameter to fetch additional nested data, using commas to separate multiple values:
      *             
      * * Lines
@@ -11033,6 +12885,12 @@ This gets the basic information from the filings and doesn't include anything ex
      * * Summary (implies details)
      * * Addresses
      * * SummaryOnly (omit lines and details - reduces API response size)
+     * * LinesOnly (omit details - reduces API response size)
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, ProStoresOperator, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
+     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* documents
      * @param include Specifies objects to include in the response after transaction is created
@@ -11055,16 +12913,16 @@ This gets the basic information from the filings and doesn't include anything ex
      * Retrieve all MultiDocument transactions
      * 
      * List all MultiDocument transactions within this account.
-     * 
+     *             
      * This endpoint is limited to returning 1,000 MultiDocument transactions at a time.  To retrieve more than 1,000 MultiDocument
      * transactions, please use the pagination features of the API.
-     * 
+     *             
      * A transaction represents a unique potentially taxable action that your company has recorded, and transactions include actions like
      * sales, purchases, inventory transfer, and returns (also called refunds).
-     * 
+     *             
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * Paginate your results using the `$top`, `$skip`, and `$orderby` parameters.
-     * 
+     *             
      * You may specify one or more of the following values in the `$include` parameter to fetch additional nested data, using commas to separate multiple values:
      *             
      * * Lines
@@ -11072,6 +12930,12 @@ This gets the basic information from the filings and doesn't include anything ex
      * * Summary (implies details)
      * * Addresses
      * * SummaryOnly (omit lines and details - reduces API response size)
+     * * LinesOnly (omit details - reduces API response size)
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, ProStoresOperator, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
+     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* documents
      * @param include Specifies objects to include in the response after transaction is created
@@ -11094,31 +12958,31 @@ This gets the basic information from the filings and doesn't include anything ex
      * Create a refund for a MultiDocument transaction
      * 
      * Create a refund for a MultiDocument transaction.
-     * 
+     *             
      * A traditional transaction requires exactly two parties: a seller and a buyer.  MultiDocument transactions can
      * involve a marketplace of vendors, each of which contributes some portion of the final transaction.  Within
      * a MultiDocument transaction, each individual buyer and seller pair are matched up and converted to a separate
      * document.  This separation of documents allows each seller to file their taxes separately.
-     * 
+     *             
      * The `RefundTransaction` API allows you to quickly and easily create a `ReturnInvoice` representing a refund
      * for a previously created `SalesInvoice` transaction.  You can choose to create a full or partial refund, and
      * specify individual line items from the original sale for refund.
-     * 
+     *             
      * The `RefundTransaction` API ensures that the tax amount you refund to the customer exactly matches the tax that
      * was calculated during the original transaction, regardless of any changes to your company's configuration, rules,
      * nexus, or any other setting.
-     * 
-     * This API is intended to be a shortcut to allow you to quickly and accurately generate a refund for the following 
+     *             
+     * This API is intended to be a shortcut to allow you to quickly and accurately generate a refund for the following
      * common refund scenarios:
-     * 
+     *             
      * * A full refund of a previous sale
      * * Refunding the tax that was charged on a previous sale, when the customer provides an exemption certificate after the purchase
      * * Refunding one or more items (lines) from a previous sale
      * * Granting a customer a percentage refund of a previous sale
-     * 
+     *             
      * For more complex scenarios than the ones above, please use `CreateTransaction` with document type `ReturnInvoice` to
      * create a custom refund transaction.
-     * 
+     *             
      * You may specify one or more of the following values in the `$include` parameter to fetch additional nested data, using commas to separate multiple values:
      *             
      * * Lines
@@ -11128,6 +12992,12 @@ This gets the basic information from the filings and doesn't include anything ex
      * * SummaryOnly (omit lines and details - reduces API response size)
      * * LinesOnly (omit details - reduces API response size)
      *             
+     * If you omit the `$include` parameter, the API will assume you want `Summary,Addresses`.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
+     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
      * 
      * @param code The code of this MultiDocument transaction
      * @param type The type of this MultiDocument transaction (See DocumentType::* for a list of allowable values)
@@ -11147,31 +13017,31 @@ This gets the basic information from the filings and doesn't include anything ex
      * Create a refund for a MultiDocument transaction
      * 
      * Create a refund for a MultiDocument transaction.
-     * 
+     *             
      * A traditional transaction requires exactly two parties: a seller and a buyer.  MultiDocument transactions can
      * involve a marketplace of vendors, each of which contributes some portion of the final transaction.  Within
      * a MultiDocument transaction, each individual buyer and seller pair are matched up and converted to a separate
      * document.  This separation of documents allows each seller to file their taxes separately.
-     * 
+     *             
      * The `RefundTransaction` API allows you to quickly and easily create a `ReturnInvoice` representing a refund
      * for a previously created `SalesInvoice` transaction.  You can choose to create a full or partial refund, and
      * specify individual line items from the original sale for refund.
-     * 
+     *             
      * The `RefundTransaction` API ensures that the tax amount you refund to the customer exactly matches the tax that
      * was calculated during the original transaction, regardless of any changes to your company's configuration, rules,
      * nexus, or any other setting.
-     * 
-     * This API is intended to be a shortcut to allow you to quickly and accurately generate a refund for the following 
+     *             
+     * This API is intended to be a shortcut to allow you to quickly and accurately generate a refund for the following
      * common refund scenarios:
-     * 
+     *             
      * * A full refund of a previous sale
      * * Refunding the tax that was charged on a previous sale, when the customer provides an exemption certificate after the purchase
      * * Refunding one or more items (lines) from a previous sale
      * * Granting a customer a percentage refund of a previous sale
-     * 
+     *             
      * For more complex scenarios than the ones above, please use `CreateTransaction` with document type `ReturnInvoice` to
      * create a custom refund transaction.
-     * 
+     *             
      * You may specify one or more of the following values in the `$include` parameter to fetch additional nested data, using commas to separate multiple values:
      *             
      * * Lines
@@ -11181,6 +13051,12 @@ This gets the basic information from the filings and doesn't include anything ex
      * * SummaryOnly (omit lines and details - reduces API response size)
      * * LinesOnly (omit details - reduces API response size)
      *             
+     * If you omit the `$include` parameter, the API will assume you want `Summary,Addresses`.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
+     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
      * 
      * @param code The code of this MultiDocument transaction
      * @param type The type of this MultiDocument transaction (See DocumentType::* for a list of allowable values)
@@ -11200,10 +13076,16 @@ This gets the basic information from the filings and doesn't include anything ex
      * Verify a MultiDocument transaction
      * 
      * Verifies that the MultiDocument transaction uniquely identified by this URL matches certain expected values.
-     * 
+     *             
      * If the transaction does not match these expected values, this API will return an error code indicating which value did not match.
-     * 
+     *             
      * A transaction represents a unique potentially taxable action that your company has recorded, and transactions include actions like
+     * sales, purchases, inventory transfer, and returns (also called refunds).
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, ProStoresOperator, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
+     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
      * 
      * @param model Information from your accounting system to verify against this MultiDocument transaction as it is stored in AvaTax
      * @return MultiDocumentModel
@@ -11217,10 +13099,16 @@ This gets the basic information from the filings and doesn't include anything ex
      * Verify a MultiDocument transaction
      * 
      * Verifies that the MultiDocument transaction uniquely identified by this URL matches certain expected values.
-     * 
+     *             
      * If the transaction does not match these expected values, this API will return an error code indicating which value did not match.
-     * 
+     *             
      * A transaction represents a unique potentially taxable action that your company has recorded, and transactions include actions like
+     * sales, purchases, inventory transfer, and returns (also called refunds).
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, ProStoresOperator, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
+     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
      * 
      * @param model Information from your accounting system to verify against this MultiDocument transaction as it is stored in AvaTax
      * @return MultiDocumentModel
@@ -11234,13 +13122,19 @@ This gets the basic information from the filings and doesn't include anything ex
      * Void a MultiDocument transaction
      * 
      * Voids the current transaction uniquely identified by this URL.
-     * 
+     *             
      * A transaction represents a unique potentially taxable action that your company has recorded, and transactions include actions like
      * sales, purchases, inventory transfer, and returns (also called refunds).
-     * 
+     *             
      * When you void a transaction, that transaction's status is recorded as `DocVoided`.
-     * 
+     *             
      * Transactions that have been previously reported to a tax authority by Avalara Managed Returns Service are considered `locked`,
+     * and they are no longer available to be voided.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, CompanyAdmin, CSPTester, ProStoresOperator, SSTAdmin, TechnicalSupportAdmin.
+     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
      * 
      * @param code The transaction code for this MultiDocument transaction
      * @param type The transaction type for this MultiDocument transaction (See DocumentType::* for a list of allowable values)
@@ -11258,13 +13152,19 @@ This gets the basic information from the filings and doesn't include anything ex
      * Void a MultiDocument transaction
      * 
      * Voids the current transaction uniquely identified by this URL.
-     * 
+     *             
      * A transaction represents a unique potentially taxable action that your company has recorded, and transactions include actions like
      * sales, purchases, inventory transfer, and returns (also called refunds).
-     * 
+     *             
      * When you void a transaction, that transaction's status is recorded as `DocVoided`.
-     * 
+     *             
      * Transactions that have been previously reported to a tax authority by Avalara Managed Returns Service are considered `locked`,
+     * and they are no longer available to be voided.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, CompanyAdmin, CSPTester, ProStoresOperator, SSTAdmin, TechnicalSupportAdmin.
+     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
      * 
      * @param code The transaction code for this MultiDocument transaction
      * @param type The transaction type for this MultiDocument transaction (See DocumentType::* for a list of allowable values)
@@ -11282,23 +13182,28 @@ This gets the basic information from the filings and doesn't include anything ex
      * Create a new nexus
      * 
      * Creates one or more new nexus declarations attached to this company.
-     * 
-     * The concept of Nexus indicates a place where your company is legally obligated to collect and remit transactional 
+     *             
+     * The concept of Nexus indicates a place where your company is legally obligated to collect and remit transactional
      * taxes.  The legal requirements for nexus may vary per country and per jurisdiction; please seek advice from your
      * accountant or lawyer prior to declaring nexus.
-     * 
+     *             
      * To create a nexus declaration for your company, you must first call the Definitions API `ListNexus` to obtain a
-     * list of Avalara-defined nexus.  Once you have determined which nexus you wish to declare, you should customize 
+     * list of Avalara-defined nexus.  Once you have determined which nexus you wish to declare, you should customize
      * only the user-selectable fields in this object.
-     * 
-     * The user selectable fields for the nexus object are `companyId`, `effectiveDate`, `endDate`, `localNexusTypeId`, 
+     *             
+     * The user selectable fields for the nexus object are `companyId`, `effectiveDate`, `endDate`, `localNexusTypeId`,
      * `taxId`, `nexusTypeId`, `hasPermanentEstablishment`, and `isSellerImporterOfRecord`.
-     * 
+     *             
      * When calling `CreateNexus` or `UpdateNexus`, all values in your nexus object except for the user-selectable fields
      * must match an Avalara-defined system nexus object.  You can retrieve a list of Avalara-defined system nexus objects
      * by calling `ListNexus`.  If any data does not match, AvaTax may not recognize your nexus declaration.
-     * 
+     *             
      * Please note that nexus changes may not take effect immediately and you should plan to update your nexus settings in advance
+     * of calculating tax for a location.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin.
      * 
      * @param companyId The ID of the company that owns this nexus.
      * @param model The nexus you wish to create.
@@ -11314,23 +13219,28 @@ This gets the basic information from the filings and doesn't include anything ex
      * Create a new nexus
      * 
      * Creates one or more new nexus declarations attached to this company.
-     * 
-     * The concept of Nexus indicates a place where your company is legally obligated to collect and remit transactional 
+     *             
+     * The concept of Nexus indicates a place where your company is legally obligated to collect and remit transactional
      * taxes.  The legal requirements for nexus may vary per country and per jurisdiction; please seek advice from your
      * accountant or lawyer prior to declaring nexus.
-     * 
+     *             
      * To create a nexus declaration for your company, you must first call the Definitions API `ListNexus` to obtain a
-     * list of Avalara-defined nexus.  Once you have determined which nexus you wish to declare, you should customize 
+     * list of Avalara-defined nexus.  Once you have determined which nexus you wish to declare, you should customize
      * only the user-selectable fields in this object.
-     * 
-     * The user selectable fields for the nexus object are `companyId`, `effectiveDate`, `endDate`, `localNexusTypeId`, 
+     *             
+     * The user selectable fields for the nexus object are `companyId`, `effectiveDate`, `endDate`, `localNexusTypeId`,
      * `taxId`, `nexusTypeId`, `hasPermanentEstablishment`, and `isSellerImporterOfRecord`.
-     * 
+     *             
      * When calling `CreateNexus` or `UpdateNexus`, all values in your nexus object except for the user-selectable fields
      * must match an Avalara-defined system nexus object.  You can retrieve a list of Avalara-defined system nexus objects
      * by calling `ListNexus`.  If any data does not match, AvaTax may not recognize your nexus declaration.
-     * 
+     *             
      * Please note that nexus changes may not take effect immediately and you should plan to update your nexus settings in advance
+     * of calculating tax for a location.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin.
      * 
      * @param companyId The ID of the company that owns this nexus.
      * @param model The nexus you wish to create.
@@ -11345,20 +13255,25 @@ This gets the basic information from the filings and doesn't include anything ex
     /**
      * Creates nexus for a list of addresses.
      * 
-     * This call is intended to simplify adding all applicable nexus to a company, for an address or addresses. Calling this 
+     * This call is intended to simplify adding all applicable nexus to a company, for an address or addresses. Calling this
      * API declares nexus for this company, for the list of addresses provided,
      * for the date range provided. You may also use this API to extend effective date on an already-declared nexus.
-     * 
-     * The concept of Nexus indicates a place where your company is legally obligated to collect and remit transactional 
+     *             
+     * The concept of Nexus indicates a place where your company is legally obligated to collect and remit transactional
      * taxes.  The legal requirements for nexus may vary per country and per jurisdiction; please seek advice from your
      * accountant or lawyer prior to declaring nexus.
-     * 
+     *             
      * Note that not all fields within a nexus can be updated; Avalara publishes a list of all defined nexus at the
      * '/api/v2/definitions/nexus' endpoint.
-     * 
+     *             
      * You may only define nexus matching the official list of declared nexus.
-     * 
+     *             
      * Please note that nexus changes may not take effect immediately and you should plan to update your nexus settings in advance
+     * of calculating tax for a location.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin.
      * 
      * @param companyId The ID of the company that will own this nexus.
      * @param model The nexus you wish to create.
@@ -11373,20 +13288,25 @@ This gets the basic information from the filings and doesn't include anything ex
     /**
      * Creates nexus for a list of addresses.
      * 
-     * This call is intended to simplify adding all applicable nexus to a company, for an address or addresses. Calling this 
+     * This call is intended to simplify adding all applicable nexus to a company, for an address or addresses. Calling this
      * API declares nexus for this company, for the list of addresses provided,
      * for the date range provided. You may also use this API to extend effective date on an already-declared nexus.
-     * 
-     * The concept of Nexus indicates a place where your company is legally obligated to collect and remit transactional 
+     *             
+     * The concept of Nexus indicates a place where your company is legally obligated to collect and remit transactional
      * taxes.  The legal requirements for nexus may vary per country and per jurisdiction; please seek advice from your
      * accountant or lawyer prior to declaring nexus.
-     * 
+     *             
      * Note that not all fields within a nexus can be updated; Avalara publishes a list of all defined nexus at the
      * '/api/v2/definitions/nexus' endpoint.
-     * 
+     *             
      * You may only define nexus matching the official list of declared nexus.
-     * 
+     *             
      * Please note that nexus changes may not take effect immediately and you should plan to update your nexus settings in advance
+     * of calculating tax for a location.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin.
      * 
      * @param companyId The ID of the company that will own this nexus.
      * @param model The nexus you wish to create.
@@ -11402,12 +13322,17 @@ This gets the basic information from the filings and doesn't include anything ex
      * Delete a single nexus
      * 
      * Marks the existing nexus object at this URL as deleted.
-     * 
-     * The concept of Nexus indicates a place where your company is legally obligated to collect and remit transactional 
+     *             
+     * The concept of Nexus indicates a place where your company is legally obligated to collect and remit transactional
      * taxes.  The legal requirements for nexus may vary per country and per jurisdiction; please seek advice from your
      * accountant or lawyer prior to declaring nexus.
-     * 
+     *             
      * Please note that nexus changes may not take effect immediately and you should plan to update your nexus settings in advance
+     * of calculating tax for a location.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin.
      * 
      * @param companyId The ID of the company that owns this nexus.
      * @param id The ID of the nexus you wish to delete.
@@ -11424,12 +13349,17 @@ This gets the basic information from the filings and doesn't include anything ex
      * Delete a single nexus
      * 
      * Marks the existing nexus object at this URL as deleted.
-     * 
-     * The concept of Nexus indicates a place where your company is legally obligated to collect and remit transactional 
+     *             
+     * The concept of Nexus indicates a place where your company is legally obligated to collect and remit transactional
      * taxes.  The legal requirements for nexus may vary per country and per jurisdiction; please seek advice from your
      * accountant or lawyer prior to declaring nexus.
-     * 
+     *             
      * Please note that nexus changes may not take effect immediately and you should plan to update your nexus settings in advance
+     * of calculating tax for a location.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin.
      * 
      * @param companyId The ID of the company that owns this nexus.
      * @param id The ID of the nexus you wish to delete.
@@ -11446,9 +13376,14 @@ This gets the basic information from the filings and doesn't include anything ex
      * Retrieve a single nexus
      * 
      * Get the nexus object identified by this URL.
-     * 
-     * The concept of Nexus indicates a place where your company is legally obligated to collect and remit transactional 
+     *             
+     * The concept of Nexus indicates a place where your company is legally obligated to collect and remit transactional
      * taxes.  The legal requirements for nexus may vary per country and per jurisdiction; please seek advice from your
+     * accountant or lawyer prior to declaring nexus.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
      * @param companyId The ID of the company that owns this nexus object
      * @param id The primary key of this nexus
@@ -11465,9 +13400,14 @@ This gets the basic information from the filings and doesn't include anything ex
      * Retrieve a single nexus
      * 
      * Get the nexus object identified by this URL.
-     * 
-     * The concept of Nexus indicates a place where your company is legally obligated to collect and remit transactional 
+     *             
+     * The concept of Nexus indicates a place where your company is legally obligated to collect and remit transactional
      * taxes.  The legal requirements for nexus may vary per country and per jurisdiction; please seek advice from your
+     * accountant or lawyer prior to declaring nexus.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
      * @param companyId The ID of the company that owns this nexus object
      * @param id The primary key of this nexus
@@ -11484,13 +13424,18 @@ This gets the basic information from the filings and doesn't include anything ex
      * List company nexus related to a tax form
      * 
      * Retrieves a list of nexus related to a tax form.
-     * 
-     * The concept of Nexus indicates a place where your company is legally obligated to collect and remit transactional 
+     *             
+     * The concept of Nexus indicates a place where your company is legally obligated to collect and remit transactional
      * taxes.  The legal requirements for nexus may vary per country and per jurisdiction; please seek advice from your
      * accountant or lawyer prior to declaring nexus.
-     * 
+     *             
      * This API is intended to provide useful information when examining a tax form.  If you are about to begin filing
-     * a tax form, you may want to know whether you have declared nexus in all the jurisdictions related to that tax 
+     * a tax form, you may want to know whether you have declared nexus in all the jurisdictions related to that tax
+     * form in order to better understand how the form will be filled out.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
      * @param companyId The ID of the company that owns this nexus object
      * @param formCode The form code that we are looking up the nexus for
@@ -11507,13 +13452,18 @@ This gets the basic information from the filings and doesn't include anything ex
      * List company nexus related to a tax form
      * 
      * Retrieves a list of nexus related to a tax form.
-     * 
-     * The concept of Nexus indicates a place where your company is legally obligated to collect and remit transactional 
+     *             
+     * The concept of Nexus indicates a place where your company is legally obligated to collect and remit transactional
      * taxes.  The legal requirements for nexus may vary per country and per jurisdiction; please seek advice from your
      * accountant or lawyer prior to declaring nexus.
-     * 
+     *             
      * This API is intended to provide useful information when examining a tax form.  If you are about to begin filing
-     * a tax form, you may want to know whether you have declared nexus in all the jurisdictions related to that tax 
+     * a tax form, you may want to know whether you have declared nexus in all the jurisdictions related to that tax
+     * form in order to better understand how the form will be filled out.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
      * @param companyId The ID of the company that owns this nexus object
      * @param formCode The form code that we are looking up the nexus for
@@ -11530,15 +13480,20 @@ This gets the basic information from the filings and doesn't include anything ex
      * Retrieve nexus for this company
      * 
      * List all nexus objects defined for this company.
-     * 
-     * The concept of Nexus indicates a place where your company is legally obligated to collect and remit transactional 
+     *             
+     * The concept of Nexus indicates a place where your company is legally obligated to collect and remit transactional
      * taxes.  The legal requirements for nexus may vary per country and per jurisdiction; please seek advice from your
      * accountant or lawyer prior to declaring nexus.
-     * 
+     *             
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * Paginate your results using the `$top`, `$skip`, and `$orderby` parameters.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
      * @param companyId The ID of the company that owns these nexus objects
-     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* streamlinedSalesTax, taxAuthorityId
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* streamlinedSalesTax, isSSTActive, taxAuthorityId
      * @param include A comma separated list of additional data to retrieve.
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
@@ -11560,15 +13515,20 @@ This gets the basic information from the filings and doesn't include anything ex
      * Retrieve nexus for this company
      * 
      * List all nexus objects defined for this company.
-     * 
-     * The concept of Nexus indicates a place where your company is legally obligated to collect and remit transactional 
+     *             
+     * The concept of Nexus indicates a place where your company is legally obligated to collect and remit transactional
      * taxes.  The legal requirements for nexus may vary per country and per jurisdiction; please seek advice from your
      * accountant or lawyer prior to declaring nexus.
-     * 
+     *             
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * Paginate your results using the `$top`, `$skip`, and `$orderby` parameters.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
      * @param companyId The ID of the company that owns these nexus objects
-     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* streamlinedSalesTax, taxAuthorityId
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* streamlinedSalesTax, isSSTActive, taxAuthorityId
      * @param include A comma separated list of additional data to retrieve.
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
@@ -11590,14 +13550,19 @@ This gets the basic information from the filings and doesn't include anything ex
      * Retrieve all nexus
      * 
      * Get multiple nexus objects across all companies.
-     * 
-     * The concept of Nexus indicates a place where your company is legally obligated to collect and remit transactional 
+     *             
+     * The concept of Nexus indicates a place where your company is legally obligated to collect and remit transactional
      * taxes.  The legal requirements for nexus may vary per country and per jurisdiction; please seek advice from your
      * accountant or lawyer prior to declaring nexus.
-     * 
+     *             
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * Paginate your results using the `$top`, `$skip`, and `$orderby` parameters.
      * 
-     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* streamlinedSalesTax, taxAuthorityId
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
+     * 
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* streamlinedSalesTax, isSSTActive, taxAuthorityId
      * @param include A comma separated list of additional data to retrieve.
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
@@ -11618,14 +13583,19 @@ This gets the basic information from the filings and doesn't include anything ex
      * Retrieve all nexus
      * 
      * Get multiple nexus objects across all companies.
-     * 
-     * The concept of Nexus indicates a place where your company is legally obligated to collect and remit transactional 
+     *             
+     * The concept of Nexus indicates a place where your company is legally obligated to collect and remit transactional
      * taxes.  The legal requirements for nexus may vary per country and per jurisdiction; please seek advice from your
      * accountant or lawyer prior to declaring nexus.
-     * 
+     *             
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * Paginate your results using the `$top`, `$skip`, and `$orderby` parameters.
      * 
-     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* streamlinedSalesTax, taxAuthorityId
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
+     * 
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* streamlinedSalesTax, isSSTActive, taxAuthorityId
      * @param include A comma separated list of additional data to retrieve.
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
@@ -11646,23 +13616,28 @@ This gets the basic information from the filings and doesn't include anything ex
      * Update a single nexus
      * 
      * Replace the existing nexus declaration object at this URL with an updated object.
-     * 
-     * The concept of Nexus indicates a place where your company is legally obligated to collect and remit transactional 
+     *             
+     * The concept of Nexus indicates a place where your company is legally obligated to collect and remit transactional
      * taxes.  The legal requirements for nexus may vary per country and per jurisdiction; please seek advice from your
      * accountant or lawyer prior to declaring nexus.
-     * 
+     *             
      * To create a nexus declaration for your company, you must first call the Definitions API `ListNexus` to obtain a
-     * list of Avalara-defined nexus.  Once you have determined which nexus you wish to declare, you should customize 
+     * list of Avalara-defined nexus.  Once you have determined which nexus you wish to declare, you should customize
      * only the user-selectable fields in this object.
-     * 
-     * The user selectable fields for the nexus object are `companyId`, `effectiveDate`, `endDate`, `localNexusTypeId`, 
+     *             
+     * The user selectable fields for the nexus object are `companyId`, `effectiveDate`, `endDate`, `localNexusTypeId`,
      * `taxId`, `nexusTypeId`, `hasPermanentEstablishment`, and `isSellerImporterOfRecord`.
-     * 
+     *             
      * When calling `CreateNexus` or `UpdateNexus`, all values in your nexus object except for the user-selectable fields
      * must match an Avalara-defined system nexus object.  You can retrieve a list of Avalara-defined system nexus objects
      * by calling `ListNexus`.  If any data does not match, AvaTax may not recognize your nexus declaration.
-     * 
+     *             
      * Please note that nexus changes may not take effect immediately and you should plan to update your nexus settings in advance
+     * of calculating tax for a location.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin.
      * 
      * @param companyId The ID of the company that this nexus belongs to.
      * @param id The ID of the nexus you wish to update
@@ -11680,23 +13655,28 @@ This gets the basic information from the filings and doesn't include anything ex
      * Update a single nexus
      * 
      * Replace the existing nexus declaration object at this URL with an updated object.
-     * 
-     * The concept of Nexus indicates a place where your company is legally obligated to collect and remit transactional 
+     *             
+     * The concept of Nexus indicates a place where your company is legally obligated to collect and remit transactional
      * taxes.  The legal requirements for nexus may vary per country and per jurisdiction; please seek advice from your
      * accountant or lawyer prior to declaring nexus.
-     * 
+     *             
      * To create a nexus declaration for your company, you must first call the Definitions API `ListNexus` to obtain a
-     * list of Avalara-defined nexus.  Once you have determined which nexus you wish to declare, you should customize 
+     * list of Avalara-defined nexus.  Once you have determined which nexus you wish to declare, you should customize
      * only the user-selectable fields in this object.
-     * 
-     * The user selectable fields for the nexus object are `companyId`, `effectiveDate`, `endDate`, `localNexusTypeId`, 
+     *             
+     * The user selectable fields for the nexus object are `companyId`, `effectiveDate`, `endDate`, `localNexusTypeId`,
      * `taxId`, `nexusTypeId`, `hasPermanentEstablishment`, and `isSellerImporterOfRecord`.
-     * 
+     *             
      * When calling `CreateNexus` or `UpdateNexus`, all values in your nexus object except for the user-selectable fields
      * must match an Avalara-defined system nexus object.  You can retrieve a list of Avalara-defined system nexus objects
      * by calling `ListNexus`.  If any data does not match, AvaTax may not recognize your nexus declaration.
-     * 
+     *             
      * Please note that nexus changes may not take effect immediately and you should plan to update your nexus settings in advance
+     * of calculating tax for a location.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin.
      * 
      * @param companyId The ID of the company that this nexus belongs to.
      * @param id The ID of the nexus you wish to update
@@ -11716,6 +13696,13 @@ This gets the basic information from the filings and doesn't include anything ex
      * This API is available by invitation only.
      * 'Notice comments' are updates by the notice team on the work to be done and that has been done so far on a notice.
      * A 'notice' represents a letter sent to a business by a tax authority regarding tax filing issues.  Avalara
+     * Returns customers often receive support and assistance from the Compliance Notices team in handling notices received by taxing authorities.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Operator, Compliance Root User, Compliance Temp User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.
+     * * This API is available by invitation only.  To request access to this feature, please speak to a business development manager and request host address whitelisting for [Returns] for your servers.
      * 
      * @param companyId The ID of the company that owns this notice.
      * @param id The ID of the tax notice we are adding the comment for.
@@ -11735,6 +13722,13 @@ This gets the basic information from the filings and doesn't include anything ex
      * This API is available by invitation only.
      * 'Notice comments' are updates by the notice team on the work to be done and that has been done so far on a notice.
      * A 'notice' represents a letter sent to a business by a tax authority regarding tax filing issues.  Avalara
+     * Returns customers often receive support and assistance from the Compliance Notices team in handling notices received by taxing authorities.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Operator, Compliance Root User, Compliance Temp User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.
+     * * This API is available by invitation only.  To request access to this feature, please speak to a business development manager and request host address whitelisting for [Returns] for your servers.
      * 
      * @param companyId The ID of the company that owns this notice.
      * @param id The ID of the tax notice we are adding the comment for.
@@ -11755,6 +13749,13 @@ This gets the basic information from the filings and doesn't include anything ex
      * 'Notice finance details' is the categorical breakdown of the total charge levied by the tax authority on our customer,
      * as broken down in our "notice log" found in Workflow. Main examples of the categories are 'Tax Due', 'Interest', 'Penalty', 'Total Abated'.
      * A 'notice' represents a letter sent to a business by a tax authority regarding tax filing issues.  Avalara
+     * Returns customers often receive support and assistance from the Compliance Notices team in handling notices received by taxing authorities.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Operator, Compliance Root User, Compliance Temp User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.
+     * * This API is available by invitation only.  To request access to this feature, please speak to a business development manager and request host address whitelisting for [Returns] for your servers.
      * 
      * @param companyId The ID of the company that owns this notice.
      * @param id The ID of the notice added to the finance details.
@@ -11775,6 +13776,13 @@ This gets the basic information from the filings and doesn't include anything ex
      * 'Notice finance details' is the categorical breakdown of the total charge levied by the tax authority on our customer,
      * as broken down in our "notice log" found in Workflow. Main examples of the categories are 'Tax Due', 'Interest', 'Penalty', 'Total Abated'.
      * A 'notice' represents a letter sent to a business by a tax authority regarding tax filing issues.  Avalara
+     * Returns customers often receive support and assistance from the Compliance Notices team in handling notices received by taxing authorities.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Operator, Compliance Root User, Compliance Temp User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.
+     * * This API is available by invitation only.  To request access to this feature, please speak to a business development manager and request host address whitelisting for [Returns] for your servers.
      * 
      * @param companyId The ID of the company that owns this notice.
      * @param id The ID of the notice added to the finance details.
@@ -11794,6 +13802,13 @@ This gets the basic information from the filings and doesn't include anything ex
      * This API is available by invitation only.
      * 'Notice comments' are updates by the notice team on the work to be done and that has been done so far on a notice.
      * A 'notice' represents a letter sent to a business by a tax authority regarding tax filing issues.  Avalara
+     * Returns customers often receive support and assistance from the Compliance Notices team in handling notices received by taxing authorities.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Operator, Compliance Root User, Compliance Temp User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.
+     * * This API is available by invitation only.  To request access to this feature, please speak to a business development manager and request host address whitelisting for [Returns] for your servers.
      * 
      * @param companyId The ID of the company that owns this notice.
      * @param id The ID of the tax notice we are adding the responsibility for.
@@ -11813,6 +13828,13 @@ This gets the basic information from the filings and doesn't include anything ex
      * This API is available by invitation only.
      * 'Notice comments' are updates by the notice team on the work to be done and that has been done so far on a notice.
      * A 'notice' represents a letter sent to a business by a tax authority regarding tax filing issues.  Avalara
+     * Returns customers often receive support and assistance from the Compliance Notices team in handling notices received by taxing authorities.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Operator, Compliance Root User, Compliance Temp User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.
+     * * This API is available by invitation only.  To request access to this feature, please speak to a business development manager and request host address whitelisting for [Returns] for your servers.
      * 
      * @param companyId The ID of the company that owns this notice.
      * @param id The ID of the tax notice we are adding the responsibility for.
@@ -11832,6 +13854,13 @@ This gets the basic information from the filings and doesn't include anything ex
      * This API is available by invitation only.
      * 'Notice root causes' are are those who are responsible for the notice.
      * A 'notice' represents a letter sent to a business by a tax authority regarding tax filing issues.  Avalara
+     * Returns customers often receive support and assistance from the Compliance Notices team in handling notices received by taxing authorities.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Operator, Compliance Root User, Compliance Temp User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.
+     * * This API is available by invitation only.  To request access to this feature, please speak to a business development manager and request host address whitelisting for [Returns] for your servers.
      * 
      * @param companyId The ID of the company that owns this notice.
      * @param id The ID of the tax notice we are adding the responsibility for.
@@ -11851,6 +13880,13 @@ This gets the basic information from the filings and doesn't include anything ex
      * This API is available by invitation only.
      * 'Notice root causes' are are those who are responsible for the notice.
      * A 'notice' represents a letter sent to a business by a tax authority regarding tax filing issues.  Avalara
+     * Returns customers often receive support and assistance from the Compliance Notices team in handling notices received by taxing authorities.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Operator, Compliance Root User, Compliance Temp User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.
+     * * This API is available by invitation only.  To request access to this feature, please speak to a business development manager and request host address whitelisting for [Returns] for your servers.
      * 
      * @param companyId The ID of the company that owns this notice.
      * @param id The ID of the tax notice we are adding the responsibility for.
@@ -11870,6 +13906,13 @@ This gets the basic information from the filings and doesn't include anything ex
      * This API is available by invitation only.
      * Create one or more new notice objects.
      * A 'notice' represents a letter sent to a business by a tax authority regarding tax filing issues.  Avalara
+     * Returns customers often receive support and assistance from the Compliance Notices team in handling notices received by taxing authorities.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Operator, Compliance Root User, Compliance Temp User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.
+     * * This API is available by invitation only.  To request access to this feature, please speak to a business development manager and request host address whitelisting for [Returns] for your servers.
      * 
      * @param companyId The ID of the company that owns this notice.
      * @param model The notice object you wish to create.
@@ -11887,6 +13930,13 @@ This gets the basic information from the filings and doesn't include anything ex
      * This API is available by invitation only.
      * Create one or more new notice objects.
      * A 'notice' represents a letter sent to a business by a tax authority regarding tax filing issues.  Avalara
+     * Returns customers often receive support and assistance from the Compliance Notices team in handling notices received by taxing authorities.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Operator, Compliance Root User, Compliance Temp User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.
+     * * This API is available by invitation only.  To request access to this feature, please speak to a business development manager and request host address whitelisting for [Returns] for your servers.
      * 
      * @param companyId The ID of the company that owns this notice.
      * @param model The notice object you wish to create.
@@ -11904,6 +13954,13 @@ This gets the basic information from the filings and doesn't include anything ex
      * This API is available by invitation only.
      * 'Notice comments' are updates by the notice team on the work to be done and that has been done so far on a notice.
      * A 'notice' represents a letter sent to a business by a tax authority regarding tax filing issues.  Avalara
+     * Returns customers often receive support and assistance from the Compliance Notices team in handling notices received by taxing authorities.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Operator, Compliance Root User, Compliance Temp User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.
+     * * This API is available by invitation only.  To request access to this feature, please speak to a business development manager and request host address whitelisting for [Returns] for your servers.
      * 
      * @param companyId The ID of the company that owns this notice.
      * @param id The ID of the notice you wish to delete the finance detail from.
@@ -11924,6 +13981,13 @@ This gets the basic information from the filings and doesn't include anything ex
      * This API is available by invitation only.
      * 'Notice comments' are updates by the notice team on the work to be done and that has been done so far on a notice.
      * A 'notice' represents a letter sent to a business by a tax authority regarding tax filing issues.  Avalara
+     * Returns customers often receive support and assistance from the Compliance Notices team in handling notices received by taxing authorities.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Operator, Compliance Root User, Compliance Temp User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.
+     * * This API is available by invitation only.  To request access to this feature, please speak to a business development manager and request host address whitelisting for [Returns] for your servers.
      * 
      * @param companyId The ID of the company that owns this notice.
      * @param id The ID of the notice you wish to delete the finance detail from.
@@ -11945,6 +14009,13 @@ This gets the basic information from the filings and doesn't include anything ex
      * 'Notice finance details' is the categorical breakdown of the total charge levied by the tax authority on our customer,
      * as broken down in our "notice log" found in Workflow. Main examples of the categories are 'Tax Due', 'Interest', 'Penalty', 'Total Abated'.
      * A 'notice' represents a letter sent to a business by a tax authority regarding tax filing issues.  Avalara
+     * Returns customers often receive support and assistance from the Compliance Notices team in handling notices received by taxing authorities.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Operator, Compliance Root User, Compliance Temp User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.
+     * * This API is available by invitation only.  To request access to this feature, please speak to a business development manager and request host address whitelisting for [Returns] for your servers.
      * 
      * @param companyId The ID of the company that owns this notice.
      * @param id The ID of the notice you wish to delete the finance detail from.
@@ -11966,6 +14037,13 @@ This gets the basic information from the filings and doesn't include anything ex
      * 'Notice finance details' is the categorical breakdown of the total charge levied by the tax authority on our customer,
      * as broken down in our "notice log" found in Workflow. Main examples of the categories are 'Tax Due', 'Interest', 'Penalty', 'Total Abated'.
      * A 'notice' represents a letter sent to a business by a tax authority regarding tax filing issues.  Avalara
+     * Returns customers often receive support and assistance from the Compliance Notices team in handling notices received by taxing authorities.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Operator, Compliance Root User, Compliance Temp User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.
+     * * This API is available by invitation only.  To request access to this feature, please speak to a business development manager and request host address whitelisting for [Returns] for your servers.
      * 
      * @param companyId The ID of the company that owns this notice.
      * @param id The ID of the notice you wish to delete the finance detail from.
@@ -11986,6 +14064,13 @@ This gets the basic information from the filings and doesn't include anything ex
      * This API is available by invitation only.
      * Mark the existing notice object at this URL as deleted.
      * A 'notice' represents a letter sent to a business by a tax authority regarding tax filing issues.  Avalara
+     * Returns customers often receive support and assistance from the Compliance Notices team in handling notices received by taxing authorities.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Operator, Compliance Root User, Compliance Temp User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.
+     * * This API is available by invitation only.  To request access to this feature, please speak to a business development manager and request host address whitelisting for [Returns] for your servers.
      * 
      * @param companyId The ID of the company that owns this notice.
      * @param id The ID of the notice you wish to delete.
@@ -12004,6 +14089,13 @@ This gets the basic information from the filings and doesn't include anything ex
      * This API is available by invitation only.
      * Mark the existing notice object at this URL as deleted.
      * A 'notice' represents a letter sent to a business by a tax authority regarding tax filing issues.  Avalara
+     * Returns customers often receive support and assistance from the Compliance Notices team in handling notices received by taxing authorities.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Operator, Compliance Root User, Compliance Temp User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.
+     * * This API is available by invitation only.  To request access to this feature, please speak to a business development manager and request host address whitelisting for [Returns] for your servers.
      * 
      * @param companyId The ID of the company that owns this notice.
      * @param id The ID of the notice you wish to delete.
@@ -12022,6 +14114,13 @@ This gets the basic information from the filings and doesn't include anything ex
      * This API is available by invitation only.
      * Mark the existing notice object at this URL as deleted.
      * A 'notice' represents a letter sent to a business by a tax authority regarding tax filing issues.  Avalara
+     * Returns customers often receive support and assistance from the Compliance Notices team in handling notices received by taxing authorities.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Operator, Compliance Root User, Compliance Temp User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.
+     * * This API is available by invitation only.  To request access to this feature, please speak to a business development manager and request host address whitelisting for [Returns] for your servers.
      * 
      * @param companyId The ID of the company that owns this notice.
      * @param noticeId The ID of the notice you wish to delete.
@@ -12042,6 +14141,13 @@ This gets the basic information from the filings and doesn't include anything ex
      * This API is available by invitation only.
      * Mark the existing notice object at this URL as deleted.
      * A 'notice' represents a letter sent to a business by a tax authority regarding tax filing issues.  Avalara
+     * Returns customers often receive support and assistance from the Compliance Notices team in handling notices received by taxing authorities.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Operator, Compliance Root User, Compliance Temp User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.
+     * * This API is available by invitation only.  To request access to this feature, please speak to a business development manager and request host address whitelisting for [Returns] for your servers.
      * 
      * @param companyId The ID of the company that owns this notice.
      * @param noticeId The ID of the notice you wish to delete.
@@ -12062,6 +14168,13 @@ This gets the basic information from the filings and doesn't include anything ex
      * This API is available by invitation only.
      * Mark the existing notice object at this URL as deleted.
      * A 'notice' represents a letter sent to a business by a tax authority regarding tax filing issues.  Avalara
+     * Returns customers often receive support and assistance from the Compliance Notices team in handling notices received by taxing authorities.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Operator, Compliance Root User, Compliance Temp User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.
+     * * This API is available by invitation only.  To request access to this feature, please speak to a business development manager and request host address whitelisting for [Returns] for your servers.
      * 
      * @param companyId The ID of the company that owns this notice.
      * @param noticeId The ID of the notice you wish to delete.
@@ -12082,6 +14195,13 @@ This gets the basic information from the filings and doesn't include anything ex
      * This API is available by invitation only.
      * Mark the existing notice object at this URL as deleted.
      * A 'notice' represents a letter sent to a business by a tax authority regarding tax filing issues.  Avalara
+     * Returns customers often receive support and assistance from the Compliance Notices team in handling notices received by taxing authorities.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Operator, Compliance Root User, Compliance Temp User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.
+     * * This API is available by invitation only.  To request access to this feature, please speak to a business development manager and request host address whitelisting for [Returns] for your servers.
      * 
      * @param companyId The ID of the company that owns this notice.
      * @param noticeId The ID of the notice you wish to delete.
@@ -12100,6 +14220,13 @@ This gets the basic information from the filings and doesn't include anything ex
      * Retrieve a single attachment
      * 
      * This API is available by invitation only.
+     * Get the file attachment identified by this URL.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Operator, Compliance Root User, Compliance Temp User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.
+     * * This API is available by invitation only.  To request access to this feature, please speak to a business development manager and request host address whitelisting for [Returns] for your servers.
      * 
      * @param companyId The ID of the company for this attachment.
      * @param id The ResourceFileId of the attachment to download.
@@ -12116,6 +14243,13 @@ This gets the basic information from the filings and doesn't include anything ex
      * Retrieve a single attachment
      * 
      * This API is available by invitation only.
+     * Get the file attachment identified by this URL.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Operator, Compliance Root User, Compliance Temp User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.
+     * * This API is available by invitation only.  To request access to this feature, please speak to a business development manager and request host address whitelisting for [Returns] for your servers.
      * 
      * @param companyId The ID of the company for this attachment.
      * @param id The ResourceFileId of the attachment to download.
@@ -12134,6 +14268,13 @@ This gets the basic information from the filings and doesn't include anything ex
      * This API is available by invitation only.
      * Get the tax notice object identified by this URL.
      * A 'notice' represents a letter sent to a business by a tax authority regarding tax filing issues.  Avalara
+     * Returns customers often receive support and assistance from the Compliance Notices team in handling notices received by taxing authorities.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Operator, Compliance Root User, Compliance Temp User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.
+     * * This API is available by invitation only.  To request access to this feature, please speak to a business development manager and request host address whitelisting for [Returns] for your servers.
      * 
      * @param companyId The ID of the company for this notice.
      * @param id The ID of this notice.
@@ -12152,6 +14293,13 @@ This gets the basic information from the filings and doesn't include anything ex
      * This API is available by invitation only.
      * Get the tax notice object identified by this URL.
      * A 'notice' represents a letter sent to a business by a tax authority regarding tax filing issues.  Avalara
+     * Returns customers often receive support and assistance from the Compliance Notices team in handling notices received by taxing authorities.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Operator, Compliance Root User, Compliance Temp User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.
+     * * This API is available by invitation only.  To request access to this feature, please speak to a business development manager and request host address whitelisting for [Returns] for your servers.
      * 
      * @param companyId The ID of the company for this notice.
      * @param id The ID of this notice.
@@ -12170,6 +14318,13 @@ This gets the basic information from the filings and doesn't include anything ex
      * This API is available by invitation only.
      * 'Notice comments' are updates by the notice team on the work to be done and that has been done so far on a notice.
      * A 'notice' represents a letter sent to a business by a tax authority regarding tax filing issues.  Avalara
+     * Returns customers often receive support and assistance from the Compliance Notices team in handling notices received by taxing authorities.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Operator, Compliance Root User, Compliance Temp User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.
+     * * This API is available by invitation only.  To request access to this feature, please speak to a business development manager and request host address whitelisting for [Returns] for your servers.
      * 
      * @param id The ID of the notice.
      * @param companyId The ID of the company that owns these notices.
@@ -12188,6 +14343,13 @@ This gets the basic information from the filings and doesn't include anything ex
      * This API is available by invitation only.
      * 'Notice comments' are updates by the notice team on the work to be done and that has been done so far on a notice.
      * A 'notice' represents a letter sent to a business by a tax authority regarding tax filing issues.  Avalara
+     * Returns customers often receive support and assistance from the Compliance Notices team in handling notices received by taxing authorities.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Operator, Compliance Root User, Compliance Temp User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.
+     * * This API is available by invitation only.  To request access to this feature, please speak to a business development manager and request host address whitelisting for [Returns] for your servers.
      * 
      * @param id The ID of the notice.
      * @param companyId The ID of the company that owns these notices.
@@ -12207,6 +14369,13 @@ This gets the basic information from the filings and doesn't include anything ex
      * 'Notice finance details' is the categorical breakdown of the total charge levied by the tax authority on our customer,
      * as broken down in our "notice log" found in Workflow. Main examples of the categories are 'Tax Due', 'Interest', 'Penalty', 'Total Abated'.
      * A 'notice' represents a letter sent to a business by a tax authority regarding tax filing issues.  Avalara
+     * Returns customers often receive support and assistance from the Compliance Notices team in handling notices received by taxing authorities.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Operator, Compliance Root User, Compliance Temp User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.
+     * * This API is available by invitation only.  To request access to this feature, please speak to a business development manager and request host address whitelisting for [Returns] for your servers.
      * 
      * @param id The ID of the company that owns these notices.
      * @param companyId The ID of the company that owns these notices.
@@ -12226,6 +14395,13 @@ This gets the basic information from the filings and doesn't include anything ex
      * 'Notice finance details' is the categorical breakdown of the total charge levied by the tax authority on our customer,
      * as broken down in our "notice log" found in Workflow. Main examples of the categories are 'Tax Due', 'Interest', 'Penalty', 'Total Abated'.
      * A 'notice' represents a letter sent to a business by a tax authority regarding tax filing issues.  Avalara
+     * Returns customers often receive support and assistance from the Compliance Notices team in handling notices received by taxing authorities.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Operator, Compliance Root User, Compliance Temp User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.
+     * * This API is available by invitation only.  To request access to this feature, please speak to a business development manager and request host address whitelisting for [Returns] for your servers.
      * 
      * @param id The ID of the company that owns these notices.
      * @param companyId The ID of the company that owns these notices.
@@ -12244,6 +14420,13 @@ This gets the basic information from the filings and doesn't include anything ex
      * This API is available by invitation only.
      * 'Notice responsibilities' are are those who are responsible for the notice.
      * A 'notice' represents a letter sent to a business by a tax authority regarding tax filing issues.  Avalara
+     * Returns customers often receive support and assistance from the Compliance Notices team in handling notices received by taxing authorities.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Operator, Compliance Root User, Compliance Temp User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.
+     * * This API is available by invitation only.  To request access to this feature, please speak to a business development manager and request host address whitelisting for [Returns] for your servers.
      * 
      * @param id The ID of the notice.
      * @param companyId The ID of the company that owns these notices.
@@ -12262,6 +14445,13 @@ This gets the basic information from the filings and doesn't include anything ex
      * This API is available by invitation only.
      * 'Notice responsibilities' are are those who are responsible for the notice.
      * A 'notice' represents a letter sent to a business by a tax authority regarding tax filing issues.  Avalara
+     * Returns customers often receive support and assistance from the Compliance Notices team in handling notices received by taxing authorities.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Operator, Compliance Root User, Compliance Temp User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.
+     * * This API is available by invitation only.  To request access to this feature, please speak to a business development manager and request host address whitelisting for [Returns] for your servers.
      * 
      * @param id The ID of the notice.
      * @param companyId The ID of the company that owns these notices.
@@ -12280,6 +14470,13 @@ This gets the basic information from the filings and doesn't include anything ex
      * This API is available by invitation only.
      * 'Notice root causes' are are those who are responsible for the notice.
      * A 'notice' represents a letter sent to a business by a tax authority regarding tax filing issues.  Avalara
+     * Returns customers often receive support and assistance from the Compliance Notices team in handling notices received by taxing authorities.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Operator, Compliance Root User, Compliance Temp User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.
+     * * This API is available by invitation only.  To request access to this feature, please speak to a business development manager and request host address whitelisting for [Returns] for your servers.
      * 
      * @param id The ID of the notice.
      * @param companyId The ID of the company that owns these notices.
@@ -12298,6 +14495,13 @@ This gets the basic information from the filings and doesn't include anything ex
      * This API is available by invitation only.
      * 'Notice root causes' are are those who are responsible for the notice.
      * A 'notice' represents a letter sent to a business by a tax authority regarding tax filing issues.  Avalara
+     * Returns customers often receive support and assistance from the Compliance Notices team in handling notices received by taxing authorities.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Operator, Compliance Root User, Compliance Temp User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.
+     * * This API is available by invitation only.  To request access to this feature, please speak to a business development manager and request host address whitelisting for [Returns] for your servers.
      * 
      * @param id The ID of the notice.
      * @param companyId The ID of the company that owns these notices.
@@ -12317,8 +14521,15 @@ This gets the basic information from the filings and doesn't include anything ex
      * List all tax notice objects assigned to this company.
      * A 'notice' represents a letter sent to a business by a tax authority regarding tax filing issues.  Avalara
      * Returns customers often receive support and assistance from the Compliance Notices team in handling notices received by taxing authorities.
-     * 
+     *             
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * Paginate your results using the `$top`, `$skip`, and `$orderby` parameters.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Operator, Compliance Root User, Compliance Temp User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.
+     * * This API is available by invitation only.  To request access to this feature, please speak to a business development manager and request host address whitelisting for [Returns] for your servers.
      * 
      * @param companyId The ID of the company that owns these notices.
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* status, totalRemit, ticketReferenceNo, ticketReferenceUrl, reason, type, createdByUserName, documentReference, jurisdictionName, jurisdictionType, comments, finances, responsibility, rootCause
@@ -12346,8 +14557,15 @@ This gets the basic information from the filings and doesn't include anything ex
      * List all tax notice objects assigned to this company.
      * A 'notice' represents a letter sent to a business by a tax authority regarding tax filing issues.  Avalara
      * Returns customers often receive support and assistance from the Compliance Notices team in handling notices received by taxing authorities.
-     * 
+     *             
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * Paginate your results using the `$top`, `$skip`, and `$orderby` parameters.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Operator, Compliance Root User, Compliance Temp User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.
+     * * This API is available by invitation only.  To request access to this feature, please speak to a business development manager and request host address whitelisting for [Returns] for your servers.
      * 
      * @param companyId The ID of the company that owns these notices.
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* status, totalRemit, ticketReferenceNo, ticketReferenceUrl, reason, type, createdByUserName, documentReference, jurisdictionName, jurisdictionType, comments, finances, responsibility, rootCause
@@ -12372,11 +14590,21 @@ This gets the basic information from the filings and doesn't include anything ex
      * Retrieve all notices.
      * 
      * This API is available by invitation only.
+     *             
+     * This API is deprecated - please use POST `/api/v2/notices/query` API.
+     *             
      * Get multiple notice objects across all companies.
      * A 'notice' represents a letter sent to a business by a tax authority regarding tax filing issues.  Avalara
      * Returns customers often receive support and assistance from the Compliance Notices team in handling notices received by taxing authorities.
-     * 
+     *             
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * Paginate your results using the `$top`, `$skip`, and `$orderby` parameters.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Operator, Compliance Root User, Compliance Temp User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.
+     * * This API is available by invitation only.  To request access to this feature, please speak to a business development manager and request host address whitelisting for [Returns] for your servers.
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* status, totalRemit, ticketReferenceNo, ticketReferenceUrl, reason, type, createdByUserName, documentReference, jurisdictionName, jurisdictionType, comments, finances, responsibility, rootCause
      * @param include A comma separated list of additional data to retrieve.
@@ -12399,11 +14627,21 @@ This gets the basic information from the filings and doesn't include anything ex
      * Retrieve all notices.
      * 
      * This API is available by invitation only.
+     *             
+     * This API is deprecated - please use POST `/api/v2/notices/query` API.
+     *             
      * Get multiple notice objects across all companies.
      * A 'notice' represents a letter sent to a business by a tax authority regarding tax filing issues.  Avalara
      * Returns customers often receive support and assistance from the Compliance Notices team in handling notices received by taxing authorities.
-     * 
+     *             
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * Paginate your results using the `$top`, `$skip`, and `$orderby` parameters.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Operator, Compliance Root User, Compliance Temp User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.
+     * * This API is available by invitation only.  To request access to this feature, please speak to a business development manager and request host address whitelisting for [Returns] for your servers.
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* status, totalRemit, ticketReferenceNo, ticketReferenceUrl, reason, type, createdByUserName, documentReference, jurisdictionName, jurisdictionType, comments, finances, responsibility, rootCause
      * @param include A comma separated list of additional data to retrieve.
@@ -12423,10 +14661,61 @@ This gets the basic information from the filings and doesn't include anything ex
     }
 
     /**
+     * Retrieve all notices.
+     * 
+     * This API is available by invitation only.
+     *             
+     * This API is intended to replace the GET `/api/v2/notices` API. The fetch request object is posted on the body of the request instead of the URI, so it's not limited by a set number of characters.
+     * The documentation of the GET API shows how filtering, sorting and pagination works.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Operator, Compliance Root User, Compliance Temp User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.
+     * * This API is available by invitation only.  To request access to this feature, please speak to a business development manager and request host address whitelisting for [Returns] for your servers.
+     * 
+     * @param model Query object to filter, sort and paginate the filing calendars.
+     * @return FetchResult<NoticeModel>
+     */
+    public FetchResult<NoticeModel> queryNoticesPost(QueryRequestModel model) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/notices/query");
+        return ((RestCall<FetchResult<NoticeModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<FetchResult<NoticeModel>>(){})).call();
+    }
+
+    /**
+     * Retrieve all notices.
+     * 
+     * This API is available by invitation only.
+     *             
+     * This API is intended to replace the GET `/api/v2/notices` API. The fetch request object is posted on the body of the request instead of the URI, so it's not limited by a set number of characters.
+     * The documentation of the GET API shows how filtering, sorting and pagination works.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Operator, Compliance Root User, Compliance Temp User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.
+     * * This API is available by invitation only.  To request access to this feature, please speak to a business development manager and request host address whitelisting for [Returns] for your servers.
+     * 
+     * @param model Query object to filter, sort and paginate the filing calendars.
+     * @return FetchResult<NoticeModel>
+     */
+    public Future<FetchResult<NoticeModel>> queryNoticesPostAsync(QueryRequestModel model) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/notices/query");
+        return this.threadPool.submit((RestCall<FetchResult<NoticeModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<FetchResult<NoticeModel>>(){}));
+    }
+
+    /**
      * Update a single notice finance detail.
      * 
      * This API is available by invitation only.
-     * All data from the existing object will be replaced with data in the object you PUT.  
+     * All data from the existing object will be replaced with data in the object you PUT.
+     * To set a field's value to null, you may either set its value to null or omit that field from the object you post.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Operator, Compliance Root User, Compliance Temp User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.
+     * * This API is available by invitation only.  To request access to this feature, please speak to a business development manager and request host address whitelisting for [Returns] for your servers.
      * 
      * @param companyId The ID of the company that this notice finance detail belongs to.
      * @param noticeid The ID of the notice finance detail you wish to update.
@@ -12446,7 +14735,14 @@ This gets the basic information from the filings and doesn't include anything ex
      * Update a single notice finance detail.
      * 
      * This API is available by invitation only.
-     * All data from the existing object will be replaced with data in the object you PUT.  
+     * All data from the existing object will be replaced with data in the object you PUT.
+     * To set a field's value to null, you may either set its value to null or omit that field from the object you post.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Operator, Compliance Root User, Compliance Temp User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.
+     * * This API is available by invitation only.  To request access to this feature, please speak to a business development manager and request host address whitelisting for [Returns] for your servers.
      * 
      * @param companyId The ID of the company that this notice finance detail belongs to.
      * @param noticeid The ID of the notice finance detail you wish to update.
@@ -12469,7 +14765,14 @@ This gets the basic information from the filings and doesn't include anything ex
      * Replace the existing notice object at this URL with an updated object.
      * A 'notice' represents a letter sent to a business by a tax authority regarding tax filing issues.  Avalara
      * Returns customers often receive support and assistance from the Compliance Notices team in handling notices received by taxing authorities.
-     * All data from the existing object will be replaced with data in the object you PUT.  
+     * All data from the existing object will be replaced with data in the object you PUT.
+     * To set a field's value to null, you may either set its value to null or omit that field from the object you post.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Operator, Compliance Root User, Compliance Temp User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.
+     * * This API is available by invitation only.  To request access to this feature, please speak to a business development manager and request host address whitelisting for [Returns] for your servers.
      * 
      * @param companyId The ID of the company that this notice belongs to.
      * @param id The ID of the notice you wish to update.
@@ -12490,7 +14793,14 @@ This gets the basic information from the filings and doesn't include anything ex
      * Replace the existing notice object at this URL with an updated object.
      * A 'notice' represents a letter sent to a business by a tax authority regarding tax filing issues.  Avalara
      * Returns customers often receive support and assistance from the Compliance Notices team in handling notices received by taxing authorities.
-     * All data from the existing object will be replaced with data in the object you PUT.  
+     * All data from the existing object will be replaced with data in the object you PUT.
+     * To set a field's value to null, you may either set its value to null or omit that field from the object you post.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Operator, Compliance Root User, Compliance Temp User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.
+     * * This API is available by invitation only.  To request access to this feature, please speak to a business development manager and request host address whitelisting for [Returns] for your servers.
      * 
      * @param companyId The ID of the company that this notice belongs to.
      * @param id The ID of the notice you wish to update.
@@ -12508,7 +14818,14 @@ This gets the basic information from the filings and doesn't include anything ex
      * Update a single notice comment.
      * 
      * This API is available by invitation only.
-     * All data from the existing object will be replaced with data in the object you PUT.  
+     * All data from the existing object will be replaced with data in the object you PUT.
+     * To set a field's value to null, you may either set its value to null or omit that field from the object you post.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Operator, Compliance Root User, Compliance Temp User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.
+     * * This API is available by invitation only.  To request access to this feature, please speak to a business development manager and request host address whitelisting for [Returns] for your servers.
      * 
      * @param companyId The ID of the company that this notice comment belongs to.
      * @param noticeid The ID of the notice you wish to update.
@@ -12528,7 +14845,14 @@ This gets the basic information from the filings and doesn't include anything ex
      * Update a single notice comment.
      * 
      * This API is available by invitation only.
-     * All data from the existing object will be replaced with data in the object you PUT.  
+     * All data from the existing object will be replaced with data in the object you PUT.
+     * To set a field's value to null, you may either set its value to null or omit that field from the object you post.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Operator, Compliance Root User, Compliance Temp User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.
+     * * This API is available by invitation only.  To request access to this feature, please speak to a business development manager and request host address whitelisting for [Returns] for your servers.
      * 
      * @param companyId The ID of the company that this notice comment belongs to.
      * @param noticeid The ID of the notice you wish to update.
@@ -12548,46 +14872,67 @@ This gets the basic information from the filings and doesn't include anything ex
      * Retrieve a single attachment
      * 
      * This API is available by invitation only.
+     *             
+     * Uploads a file attachment for a tax notice.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Operator, Compliance Root User, Compliance Temp User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.
+     * * This API is available by invitation only.  To request access to this feature, please speak to a business development manager and request host address whitelisting for [Returns] for your servers.
      * 
      * @param companyId The ID of the company for this attachment.
-     * @param model The ResourceFileId of the attachment to download.
-     * @return String
+     * @param model The upload request.
+     * @return ResourceFileUploadResultModel
      */
-    public String uploadAttachment(Integer companyId, ResourceFileUploadRequestModel model) throws Exception {
+    public ResourceFileUploadResultModel uploadAttachment(Integer companyId, ResourceFileUploadRequestModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/files/attachment");
         path.applyField("companyId", companyId);
-        return ((RestCall<String>)restCallFactory.createRestCall("post", path, model, new TypeToken<String>(){})).call();
+        return ((RestCall<ResourceFileUploadResultModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<ResourceFileUploadResultModel>(){})).call();
     }
 
     /**
      * Retrieve a single attachment
      * 
      * This API is available by invitation only.
+     *             
+     * Uploads a file attachment for a tax notice.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Operator, Compliance Root User, Compliance Temp User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.
+     * * This API is available by invitation only.  To request access to this feature, please speak to a business development manager and request host address whitelisting for [Returns] for your servers.
      * 
      * @param companyId The ID of the company for this attachment.
-     * @param model The ResourceFileId of the attachment to download.
-     * @return String
+     * @param model The upload request.
+     * @return ResourceFileUploadResultModel
      */
-    public Future<String> uploadAttachmentAsync(Integer companyId, ResourceFileUploadRequestModel model) {
+    public Future<ResourceFileUploadResultModel> uploadAttachmentAsync(Integer companyId, ResourceFileUploadRequestModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/files/attachment");
         path.applyField("companyId", companyId);
-        return this.threadPool.submit((RestCall<String>)restCallFactory.createRestCall("post", path, model, new TypeToken<String>(){}));
+        return this.threadPool.submit((RestCall<ResourceFileUploadResultModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<ResourceFileUploadResultModel>(){}));
     }
 
     /**
      * Mark a single notification as dismissed.
      * 
      * Marks the notification identified by this URL as dismissed.
-     * 
+     *             
      * A notification is a message from Avalara that may have relevance to your business.  You may want
      * to regularly review notifications and then dismiss them when you are certain that you have addressed
      * any relevant concerns raised by this notification.
-     * 
+     *             
      * An example of a notification would be a message about new software, or a change to AvaTax that may
      * affect you, or a potential issue with your company's tax profile.
-     * 
+     *             
      * When you dismiss a notification, the notification will track the user and time when it was
      * dismissed.  You can then later review which employees of your company dismissed notifications to
+     * determine if they were resolved appropriately.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, FirmAdmin, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
      * 
      * @param id The id of the notification you wish to mark as dismissed.
      * @return NotificationModel
@@ -12602,16 +14947,21 @@ This gets the basic information from the filings and doesn't include anything ex
      * Mark a single notification as dismissed.
      * 
      * Marks the notification identified by this URL as dismissed.
-     * 
+     *             
      * A notification is a message from Avalara that may have relevance to your business.  You may want
      * to regularly review notifications and then dismiss them when you are certain that you have addressed
      * any relevant concerns raised by this notification.
-     * 
+     *             
      * An example of a notification would be a message about new software, or a change to AvaTax that may
      * affect you, or a potential issue with your company's tax profile.
-     * 
+     *             
      * When you dismiss a notification, the notification will track the user and time when it was
      * dismissed.  You can then later review which employees of your company dismissed notifications to
+     * determine if they were resolved appropriately.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, FirmAdmin, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
      * 
      * @param id The id of the notification you wish to mark as dismissed.
      * @return NotificationModel
@@ -12626,12 +14976,17 @@ This gets the basic information from the filings and doesn't include anything ex
      * Retrieve a single notification.
      * 
      * Retrieve a single notification by its unique ID number.
-     * 
+     *             
      * A notification is a message from Avalara that may have relevance to your business.  You may want
      * to regularly review notifications and then dismiss them when you are certain that you have addressed
      * any relevant concerns raised by this notification.
-     * 
+     *             
      * An example of a notification would be a message about new software, or a change to AvaTax that may
+     * affect you, or a potential issue with your company's tax profile.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
      * @param id The id of the notification to retrieve.
      * @return NotificationModel
@@ -12646,12 +15001,17 @@ This gets the basic information from the filings and doesn't include anything ex
      * Retrieve a single notification.
      * 
      * Retrieve a single notification by its unique ID number.
-     * 
+     *             
      * A notification is a message from Avalara that may have relevance to your business.  You may want
      * to regularly review notifications and then dismiss them when you are certain that you have addressed
      * any relevant concerns raised by this notification.
-     * 
+     *             
      * An example of a notification would be a message about new software, or a change to AvaTax that may
+     * affect you, or a potential issue with your company's tax profile.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
      * @param id The id of the notification to retrieve.
      * @return NotificationModel
@@ -12666,15 +15026,20 @@ This gets the basic information from the filings and doesn't include anything ex
      * List all notifications.
      * 
      * List all notifications.
-     * 
+     *             
      * A notification is a message from Avalara that may have relevance to your business.  You may want
      * to regularly review notifications and then dismiss them when you are certain that you have addressed
      * any relevant concerns raised by this notification.
-     * 
+     *             
      * An example of a notification would be a message about new software, or a change to AvaTax that may
      * affect you, or a potential issue with your company's tax profile.
-     * 
+     *             
      * You may search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * Paginate your results using the `$top`, `$skip`, and `$orderby` parameters.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
@@ -12695,15 +15060,20 @@ This gets the basic information from the filings and doesn't include anything ex
      * List all notifications.
      * 
      * List all notifications.
-     * 
+     *             
      * A notification is a message from Avalara that may have relevance to your business.  You may want
      * to regularly review notifications and then dismiss them when you are certain that you have addressed
      * any relevant concerns raised by this notification.
-     * 
+     *             
      * An example of a notification would be a message about new software, or a change to AvaTax that may
      * affect you, or a potential issue with your company's tax profile.
-     * 
+     *             
      * You may search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * Paginate your results using the `$top`, `$skip`, and `$orderby` parameters.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
@@ -12724,18 +15094,25 @@ This gets the basic information from the filings and doesn't include anything ex
      * Request a new Avalara account
      * 
      * This API is for use by partner onboarding services customers only.
-     * 
+     *             
      * Avalara invites select partners to refer new customers to the AvaTax service using the onboarding features
      * of AvaTax.  These partners can create accounts for new customers using this API.
-     * 
+     *             
      * Calling this API creates an account with the specified product subscriptions, but does not configure billing.
      * The customer will receive information from Avalara about how to configure billing for their account.
      * You should call this API when a customer has requested to begin using Avalara services.
-     * 
+     *             
      * If the newly created account owner wishes, they can confirm that they have read and agree to the Avalara
      * terms and conditions.  If they do so, they can receive a license key as part of this API and their
      * API will be created in `Active` status.  If the customer has not yet read and accepted these terms and
      * conditions, the account will be created in `New` status and they can receive a license key by logging
+     * onto the AvaTax website and reviewing terms and conditions online.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, FirmAdmin, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
+     * * This API is available by invitation only.  To request access to this feature, please speak to a business development manager and request host address whitelisting for [Onboarding] for your servers.
+     * * This API is available by invitation only.  To request access to this feature, please speak to a business development manager and request access to [Onboarding:RequestNewAccount].
      * 
      * @param model Information about the account you wish to create and the selected product offerings.
      * @return NewAccountModel
@@ -12749,18 +15126,25 @@ This gets the basic information from the filings and doesn't include anything ex
      * Request a new Avalara account
      * 
      * This API is for use by partner onboarding services customers only.
-     * 
+     *             
      * Avalara invites select partners to refer new customers to the AvaTax service using the onboarding features
      * of AvaTax.  These partners can create accounts for new customers using this API.
-     * 
+     *             
      * Calling this API creates an account with the specified product subscriptions, but does not configure billing.
      * The customer will receive information from Avalara about how to configure billing for their account.
      * You should call this API when a customer has requested to begin using Avalara services.
-     * 
+     *             
      * If the newly created account owner wishes, they can confirm that they have read and agree to the Avalara
      * terms and conditions.  If they do so, they can receive a license key as part of this API and their
      * API will be created in `Active` status.  If the customer has not yet read and accepted these terms and
      * conditions, the account will be created in `New` status and they can receive a license key by logging
+     * onto the AvaTax website and reviewing terms and conditions online.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, FirmAdmin, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
+     * * This API is available by invitation only.  To request access to this feature, please speak to a business development manager and request host address whitelisting for [Onboarding] for your servers.
+     * * This API is available by invitation only.  To request access to this feature, please speak to a business development manager and request access to [Onboarding:RequestNewAccount].
      * 
      * @param model Information about the account you wish to create and the selected product offerings.
      * @return NewAccountModel
@@ -12774,6 +15158,13 @@ This gets the basic information from the filings and doesn't include anything ex
      * Request a new entitilement to an existing customer
      * 
      * This API is for use by partner onboarding services customers only. This will allow the partners to allow
+     * the add new entitlement to an existing customer
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, FirmAdmin, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
+     * * This API is available by invitation only.  To request access to this feature, please speak to a business development manager and request host address whitelisting for [Onboarding] for your servers.
+     * * This API is available by invitation only.  To request access to this feature, please speak to a business development manager and request access to [Onboarding:RequestNewAccount].
      * 
      * @param id The avatax account id of the customer
      * @param offer The offer to be added to an already existing customer
@@ -12790,6 +15181,13 @@ This gets the basic information from the filings and doesn't include anything ex
      * Request a new entitilement to an existing customer
      * 
      * This API is for use by partner onboarding services customers only. This will allow the partners to allow
+     * the add new entitlement to an existing customer
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, FirmAdmin, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
+     * * This API is available by invitation only.  To request access to this feature, please speak to a business development manager and request host address whitelisting for [Onboarding] for your servers.
+     * * This API is available by invitation only.  To request access to this feature, please speak to a business development manager and request access to [Onboarding:RequestNewAccount].
      * 
      * @param id The avatax account id of the customer
      * @param offer The offer to be added to an already existing customer
@@ -12807,8 +15205,13 @@ This gets the basic information from the filings and doesn't include anything ex
      * 
      * # For Registrar Use Only
      * This API is for use by Avalara Registrar administrative users only.
+     *             
+     * Create a single new account object.
+     * When creating an account object you may attach subscriptions and users as part of the 'Create' call.
      * 
-     * Create a single new account object.  
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: FirmAdmin, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
      * 
      * @param model The account you wish to create.
      * @return ArrayList<AccountModel>
@@ -12823,8 +15226,13 @@ This gets the basic information from the filings and doesn't include anything ex
      * 
      * # For Registrar Use Only
      * This API is for use by Avalara Registrar administrative users only.
+     *             
+     * Create a single new account object.
+     * When creating an account object you may attach subscriptions and users as part of the 'Create' call.
      * 
-     * Create a single new account object.  
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: FirmAdmin, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
      * 
      * @param model The account you wish to create.
      * @return ArrayList<AccountModel>
@@ -12838,14 +15246,20 @@ This gets the basic information from the filings and doesn't include anything ex
      * Create new notifications.
      * 
      * This API is available by invitation only.
-     * 
+     *             
      * Create a single notification.
-     * 
+     *             
      * A notification is a message from Avalara that may have relevance to your business.  You may want
      * to regularly review notifications and then dismiss them when you are certain that you have addressed
      * any relevant concerns raised by this notification.
-     * 
+     *             
      * An example of a notification would be a message about new software, or a change to AvaTax that may
+     * affect you, or a potential issue with your company's tax profile.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: FirmAdmin, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
+     * * This API is available by invitation only.  To request access to this feature, please speak to a business development manager and request access to [NotificationsAPI:Create].
      * 
      * @param model The notifications you wish to create.
      * @return ArrayList<NotificationModel>
@@ -12859,14 +15273,20 @@ This gets the basic information from the filings and doesn't include anything ex
      * Create new notifications.
      * 
      * This API is available by invitation only.
-     * 
+     *             
      * Create a single notification.
-     * 
+     *             
      * A notification is a message from Avalara that may have relevance to your business.  You may want
      * to regularly review notifications and then dismiss them when you are certain that you have addressed
      * any relevant concerns raised by this notification.
-     * 
+     *             
      * An example of a notification would be a message about new software, or a change to AvaTax that may
+     * affect you, or a potential issue with your company's tax profile.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: FirmAdmin, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
+     * * This API is available by invitation only.  To request access to this feature, please speak to a business development manager and request access to [NotificationsAPI:Create].
      * 
      * @param model The notifications you wish to create.
      * @return ArrayList<NotificationModel>
@@ -12879,11 +15299,15 @@ This gets the basic information from the filings and doesn't include anything ex
     /**
      * Create a new subscription
      * 
-     * # For Registrar Use Only
      * This API is for use by Avalara Registrar administrative users only.
-     * 
+     *             
      * Create one or more new subscription objects attached to this account.
      * A 'subscription' indicates a licensed subscription to a named Avalara service.
+     * To request or remove subscriptions, please contact Avalara sales or your customer account manager.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
      * 
      * @param accountId The ID of the account that owns this subscription.
      * @param model The subscription you wish to create.
@@ -12898,11 +15322,15 @@ This gets the basic information from the filings and doesn't include anything ex
     /**
      * Create a new subscription
      * 
-     * # For Registrar Use Only
      * This API is for use by Avalara Registrar administrative users only.
-     * 
+     *             
      * Create one or more new subscription objects attached to this account.
      * A 'subscription' indicates a licensed subscription to a named Avalara service.
+     * To request or remove subscriptions, please contact Avalara sales or your customer account manager.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
      * 
      * @param accountId The ID of the account that owns this subscription.
      * @param model The subscription you wish to create.
@@ -12919,8 +15347,13 @@ This gets the basic information from the filings and doesn't include anything ex
      * 
      * # For Registrar Use Only
      * This API is for use by Avalara Registrar administrative users only.
-     * 
+     *             
      * Delete an account.
+     * Deleting an account will delete all companies and all account level users attached to this account.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires the user role SystemAdmin.
      * 
      * @param id The ID of the account you wish to delete.
      * @return ArrayList<ErrorDetail>
@@ -12936,8 +15369,13 @@ This gets the basic information from the filings and doesn't include anything ex
      * 
      * # For Registrar Use Only
      * This API is for use by Avalara Registrar administrative users only.
-     * 
+     *             
      * Delete an account.
+     * Deleting an account will delete all companies and all account level users attached to this account.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires the user role SystemAdmin.
      * 
      * @param id The ID of the account you wish to delete.
      * @return ArrayList<ErrorDetail>
@@ -12952,14 +15390,20 @@ This gets the basic information from the filings and doesn't include anything ex
      * Delete a single notification.
      * 
      * This API is available by invitation only.
-     * 
+     *             
      * Delete the existing notification identified by this URL.
-     * 
+     *             
      * A notification is a message from Avalara that may have relevance to your business.  You may want
      * to regularly review notifications and then dismiss them when you are certain that you have addressed
      * any relevant concerns raised by this notification.
-     * 
+     *             
      * An example of a notification would be a message about new software, or a change to AvaTax that may
+     * affect you, or a potential issue with your company's tax profile.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: FirmAdmin, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
+     * * This API is available by invitation only.  To request access to this feature, please speak to a business development manager and request access to [NotificationsAPI:Create].
      * 
      * @param id The id of the notification you wish to delete.
      * @return ArrayList<ErrorDetail>
@@ -12974,14 +15418,20 @@ This gets the basic information from the filings and doesn't include anything ex
      * Delete a single notification.
      * 
      * This API is available by invitation only.
-     * 
+     *             
      * Delete the existing notification identified by this URL.
-     * 
+     *             
      * A notification is a message from Avalara that may have relevance to your business.  You may want
      * to regularly review notifications and then dismiss them when you are certain that you have addressed
      * any relevant concerns raised by this notification.
-     * 
+     *             
      * An example of a notification would be a message about new software, or a change to AvaTax that may
+     * affect you, or a potential issue with your company's tax profile.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: FirmAdmin, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
+     * * This API is available by invitation only.  To request access to this feature, please speak to a business development manager and request access to [NotificationsAPI:Create].
      * 
      * @param id The id of the notification you wish to delete.
      * @return ArrayList<ErrorDetail>
@@ -12997,7 +15447,12 @@ This gets the basic information from the filings and doesn't include anything ex
      * 
      * # For Registrar Use Only
      * This API is for use by Avalara Registrar administrative users only.
+     *             
+     * Mark the existing account identified by this URL as deleted.
      * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
      * 
      * @param accountId The ID of the account that owns this subscription.
      * @param id The ID of the subscription you wish to delete.
@@ -13015,7 +15470,12 @@ This gets the basic information from the filings and doesn't include anything ex
      * 
      * # For Registrar Use Only
      * This API is for use by Avalara Registrar administrative users only.
+     *             
+     * Mark the existing account identified by this URL as deleted.
      * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
      * 
      * @param accountId The ID of the account that owns this subscription.
      * @param id The ID of the subscription you wish to delete.
@@ -13036,6 +15496,12 @@ This gets the basic information from the filings and doesn't include anything ex
      * 
      * Allows a system admin to reset the password for a specific user via the API.
      * This API is only available for Avalara Registrar Admins, and can be used to reset the password of any
+     * user based on internal Avalara business processes.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API is available to Avalara system-level (registrar-level) users only.
      * 
      * @param userId The unique ID of the user whose password will be changed
      * @param unmigrateFromAi If user's password was migrated to AI, undo this.
@@ -13057,6 +15523,12 @@ This gets the basic information from the filings and doesn't include anything ex
      * 
      * Allows a system admin to reset the password for a specific user via the API.
      * This API is only available for Avalara Registrar Admins, and can be used to reset the password of any
+     * user based on internal Avalara business processes.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API is available to Avalara system-level (registrar-level) users only.
      * 
      * @param userId The unique ID of the user whose password will be changed
      * @param unmigrateFromAi If user's password was migrated to AI, undo this.
@@ -13075,7 +15547,12 @@ This gets the basic information from the filings and doesn't include anything ex
      * 
      * # For Registrar Use Only
      * This API is for use by Avalara Registrar administrative users only.
+     *             
+     * Replace an existing account object with an updated account object.
      * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: FirmAdmin, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
      * 
      * @param id The ID of the account you wish to update.
      * @param model The account object you wish to update.
@@ -13092,7 +15569,12 @@ This gets the basic information from the filings and doesn't include anything ex
      * 
      * # For Registrar Use Only
      * This API is for use by Avalara Registrar administrative users only.
+     *             
+     * Replace an existing account object with an updated account object.
      * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: FirmAdmin, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
      * 
      * @param id The ID of the account you wish to update.
      * @param model The account object you wish to update.
@@ -13108,14 +15590,20 @@ This gets the basic information from the filings and doesn't include anything ex
      * Update a single notification.
      * 
      * This API is available by invitation only.
-     * 
+     *             
      * Replaces the notification identified by this URL with a new notification.
-     * 
+     *             
      * A notification is a message from Avalara that may have relevance to your business.  You may want
      * to regularly review notifications and then dismiss them when you are certain that you have addressed
      * any relevant concerns raised by this notification.
-     * 
+     *             
      * An example of a notification would be a message about new software, or a change to AvaTax that may
+     * affect you, or a potential issue with your company's tax profile.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: FirmAdmin, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
+     * * This API is available by invitation only.  To request access to this feature, please speak to a business development manager and request access to [NotificationsAPI:Create].
      * 
      * @param id The id of the notification you wish to update.
      * @param model The notification object you wish to update.
@@ -13131,14 +15619,20 @@ This gets the basic information from the filings and doesn't include anything ex
      * Update a single notification.
      * 
      * This API is available by invitation only.
-     * 
+     *             
      * Replaces the notification identified by this URL with a new notification.
-     * 
+     *             
      * A notification is a message from Avalara that may have relevance to your business.  You may want
      * to regularly review notifications and then dismiss them when you are certain that you have addressed
      * any relevant concerns raised by this notification.
-     * 
+     *             
      * An example of a notification would be a message about new software, or a change to AvaTax that may
+     * affect you, or a potential issue with your company's tax profile.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: FirmAdmin, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
+     * * This API is available by invitation only.  To request access to this feature, please speak to a business development manager and request access to [NotificationsAPI:Create].
      * 
      * @param id The id of the notification you wish to update.
      * @param model The notification object you wish to update.
@@ -13155,11 +15649,16 @@ This gets the basic information from the filings and doesn't include anything ex
      * 
      * # For Registrar Use Only
      * This API is for use by Avalara Registrar administrative users only.
-     * 
+     *             
      * Replace the existing subscription object at this URL with an updated object.
      * A 'subscription' indicates a licensed subscription to a named Avalara service.
      * To request or remove subscriptions, please contact Avalara sales or your customer account manager.
-     * All data from the existing object will be replaced with data in the object you PUT.  
+     * All data from the existing object will be replaced with data in the object you PUT.
+     * To set a field's value to null, you may either set its value to null or omit that field from the object you post.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
      * 
      * @param accountId The ID of the account that this subscription belongs to.
      * @param id The ID of the subscription you wish to update
@@ -13178,11 +15677,16 @@ This gets the basic information from the filings and doesn't include anything ex
      * 
      * # For Registrar Use Only
      * This API is for use by Avalara Registrar administrative users only.
-     * 
+     *             
      * Replace the existing subscription object at this URL with an updated object.
      * A 'subscription' indicates a licensed subscription to a named Avalara service.
      * To request or remove subscriptions, please contact Avalara sales or your customer account manager.
-     * All data from the existing object will be replaced with data in the object you PUT.  
+     * All data from the existing object will be replaced with data in the object you PUT.
+     * To set a field's value to null, you may either set its value to null or omit that field from the object you post.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
      * 
      * @param accountId The ID of the account that this subscription belongs to.
      * @param id The ID of the subscription you wish to update
@@ -13200,18 +15704,23 @@ This gets the basic information from the filings and doesn't include anything ex
      * Download a report
      * 
      * This API downloads the file associated with a report.
-     * 
+     *             
      * If the report is not yet complete, you will receive a `ReportNotFinished` error.  To check if a report is complete,
      * use the `GetReport` API.
-     * 
+     *             
      * Reports are run as asynchronous report tasks on the server.  When complete, the report file will be available for download
      * for up to 30 days after completion.  To run an asynchronous report, you should follow these steps:
-     * 
+     *             
      * * Begin a report by calling the report's Initiate API.  There is a separate initiate API call for each report type.
      * * In the result of the Initiate API, you receive back a report's `id` value.
      * * Check the status of a report by calling `GetReport` and passing in the report's `id` value.
      * * When a report's status is `Completed`, call `DownloadReport` to retrieve the file.
+     *             
+     * This API works for all report types.
      * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, ProStoresOperator, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
      * @param id The unique ID number of this report
      * @return String
@@ -13226,18 +15735,23 @@ This gets the basic information from the filings and doesn't include anything ex
      * Download a report
      * 
      * This API downloads the file associated with a report.
-     * 
+     *             
      * If the report is not yet complete, you will receive a `ReportNotFinished` error.  To check if a report is complete,
      * use the `GetReport` API.
-     * 
+     *             
      * Reports are run as asynchronous report tasks on the server.  When complete, the report file will be available for download
      * for up to 30 days after completion.  To run an asynchronous report, you should follow these steps:
-     * 
+     *             
      * * Begin a report by calling the report's Initiate API.  There is a separate initiate API call for each report type.
      * * In the result of the Initiate API, you receive back a report's `id` value.
      * * Check the status of a report by calling `GetReport` and passing in the report's `id` value.
      * * When a report's status is `Completed`, call `DownloadReport` to retrieve the file.
+     *             
+     * This API works for all report types.
      * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, ProStoresOperator, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
      * @param id The unique ID number of this report
      * @return String
@@ -13251,13 +15765,18 @@ This gets the basic information from the filings and doesn't include anything ex
     /**
      * Intiate and download an ExportDocumentLine report
      * 
-     * This API is deprecated. 
-     * 
+     * This API is deprecated.
+     *             
      * Please use the asynchronous reports APIs:
-     * 
+     *             
      * * Begin a report by calling the report's Initiate API.  There is a separate initiate API call for each report type.
      * * In the result of the Initiate API, you receive back a report's `id` value.
      * * Check the status of a report by calling `GetReport` and passing in the report's `id` value.
+     * * When a report's status is `Completed`, call `DownloadReport` to retrieve the file.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, ProStoresOperator, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
      * @param companyId The unique ID number of the company to report on.
      * @param model Options that may be configured to customize the report.
@@ -13272,13 +15791,18 @@ This gets the basic information from the filings and doesn't include anything ex
     /**
      * Intiate and download an ExportDocumentLine report
      * 
-     * This API is deprecated. 
-     * 
+     * This API is deprecated.
+     *             
      * Please use the asynchronous reports APIs:
-     * 
+     *             
      * * Begin a report by calling the report's Initiate API.  There is a separate initiate API call for each report type.
      * * In the result of the Initiate API, you receive back a report's `id` value.
      * * Check the status of a report by calling `GetReport` and passing in the report's `id` value.
+     * * When a report's status is `Completed`, call `DownloadReport` to retrieve the file.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, ProStoresOperator, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
      * @param companyId The unique ID number of the company to report on.
      * @param model Options that may be configured to customize the report.
@@ -13294,15 +15818,15 @@ This gets the basic information from the filings and doesn't include anything ex
      * Retrieve a single report
      * 
      * Retrieve a single report by its unique ID number.
-     * 
+     *             
      * Reports are run as asynchronous report tasks on the server.  When complete, the report file will be available for download
      * for up to 30 days after completion.  To run an asynchronous report, you should follow these steps:
-     * 
+     *             
      * * Begin a report by calling the report's Initiate API.  There is a separate initiate API call for each report type.
      * * In the result of the Initiate API, you receive back a report's `id` value.
      * * Check the status of a report by calling `GetReport` and passing in the report's `id` value.
      * * When a report's status is `Completed`, call `DownloadReport` to retrieve the file.
-     * 
+     *             
      * 
      * @param id The unique ID number of the report to retrieve
      * @return ReportModel
@@ -13317,15 +15841,15 @@ This gets the basic information from the filings and doesn't include anything ex
      * Retrieve a single report
      * 
      * Retrieve a single report by its unique ID number.
-     * 
+     *             
      * Reports are run as asynchronous report tasks on the server.  When complete, the report file will be available for download
      * for up to 30 days after completion.  To run an asynchronous report, you should follow these steps:
-     * 
+     *             
      * * Begin a report by calling the report's Initiate API.  There is a separate initiate API call for each report type.
      * * In the result of the Initiate API, you receive back a report's `id` value.
      * * Check the status of a report by calling `GetReport` and passing in the report's `id` value.
      * * When a report's status is `Completed`, call `DownloadReport` to retrieve the file.
-     * 
+     *             
      * 
      * @param id The unique ID number of the report to retrieve
      * @return ReportModel
@@ -13340,15 +15864,20 @@ This gets the basic information from the filings and doesn't include anything ex
      * Initiate an ExportDocumentLine report task
      * 
      * Begins running an `ExportDocumentLine` report task and returns the identity of the report.
-     * 
+     *             
      * Reports are run as asynchronous report tasks on the server.  When complete, the report file will be available for download
      * for up to 30 days after completion.  To run an asynchronous report, you should follow these steps:
-     * 
+     *             
      * * Begin a report by calling the report's Initiate API.  There is a separate initiate API call for each report type.
      * * In the result of the Initiate API, you receive back a report's `id` value.
      * * Check the status of a report by calling `GetReport` and passing in the report's `id` value.
      * * When a report's status is `Completed`, call `DownloadReport` to retrieve the file.
+     *             
+     * The `ExportDocumentLine` report produces information about invoice lines recorded within your account.
      * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
      * @param companyId The unique ID number of the company to report on.
      * @param model Options that may be configured to customize the report.
@@ -13364,15 +15893,20 @@ This gets the basic information from the filings and doesn't include anything ex
      * Initiate an ExportDocumentLine report task
      * 
      * Begins running an `ExportDocumentLine` report task and returns the identity of the report.
-     * 
+     *             
      * Reports are run as asynchronous report tasks on the server.  When complete, the report file will be available for download
      * for up to 30 days after completion.  To run an asynchronous report, you should follow these steps:
-     * 
+     *             
      * * Begin a report by calling the report's Initiate API.  There is a separate initiate API call for each report type.
      * * In the result of the Initiate API, you receive back a report's `id` value.
      * * Check the status of a report by calling `GetReport` and passing in the report's `id` value.
      * * When a report's status is `Completed`, call `DownloadReport` to retrieve the file.
+     *             
+     * The `ExportDocumentLine` report produces information about invoice lines recorded within your account.
      * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
      * @param companyId The unique ID number of the company to report on.
      * @param model Options that may be configured to customize the report.
@@ -13388,15 +15922,20 @@ This gets the basic information from the filings and doesn't include anything ex
      * List all report tasks for account
      * 
      * List all report tasks for your account.
-     * 
+     *             
      * Reports are run as asynchronous report tasks on the server.  When complete, the report file will be available for download
      * for up to 30 days after completion.  To run an asynchronous report, you should follow these steps:
-     * 
+     *             
      * * Begin a report by calling the report's Initiate API.  There is a separate initiate API call for each report type.
      * * In the result of the Initiate API, you receive back a report's `id` value.
      * * Check the status of a report by calling `GetReport` and passing in the report's `id` value.
      * * When a report's status is `Completed`, call `DownloadReport` to retrieve the file.
+     *             
+     * This API call returns information about all report types across your entire account.
      * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, ProStoresOperator, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
      * @return FetchResult<ReportModel>
      */
@@ -13409,15 +15948,20 @@ This gets the basic information from the filings and doesn't include anything ex
      * List all report tasks for account
      * 
      * List all report tasks for your account.
-     * 
+     *             
      * Reports are run as asynchronous report tasks on the server.  When complete, the report file will be available for download
      * for up to 30 days after completion.  To run an asynchronous report, you should follow these steps:
-     * 
+     *             
      * * Begin a report by calling the report's Initiate API.  There is a separate initiate API call for each report type.
      * * In the result of the Initiate API, you receive back a report's `id` value.
      * * Check the status of a report by calling `GetReport` and passing in the report's `id` value.
      * * When a report's status is `Completed`, call `DownloadReport` to retrieve the file.
+     *             
+     * This API call returns information about all report types across your entire account.
      * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, ProStoresOperator, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
      * @return FetchResult<ReportModel>
      */
@@ -13438,6 +15982,11 @@ This gets the basic information from the filings and doesn't include anything ex
      * 
      * A setting can refer to any type of data you need to remember about this company object.
      * When creating this object, you may define your own `set`, `name`, and `value` parameters.
+     * To define your own values, please choose a `set` name that begins with `X-` to indicate an extension.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
      * 
      * @param companyId The ID of the company that owns this setting.
      * @param model The setting you wish to create.
@@ -13461,6 +16010,11 @@ This gets the basic information from the filings and doesn't include anything ex
      * 
      * A setting can refer to any type of data you need to remember about this company object.
      * When creating this object, you may define your own `set`, `name`, and `value` parameters.
+     * To define your own values, please choose a `set` name that begins with `X-` to indicate an extension.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
      * 
      * @param companyId The ID of the company that owns this setting.
      * @param model The setting you wish to create.
@@ -13484,6 +16038,11 @@ This gets the basic information from the filings and doesn't include anything ex
      * 
      * A setting can refer to any type of data you need to remember about this company object.
      * When creating this object, you may define your own `set`, `name`, and `value` parameters.
+     * To define your own values, please choose a `set` name that begins with `X-` to indicate an extension.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, FirmAdmin, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
      * 
      * @param companyId The ID of the company that owns this setting.
      * @param id The ID of the setting you wish to delete.
@@ -13508,6 +16067,11 @@ This gets the basic information from the filings and doesn't include anything ex
      * 
      * A setting can refer to any type of data you need to remember about this company object.
      * When creating this object, you may define your own `set`, `name`, and `value` parameters.
+     * To define your own values, please choose a `set` name that begins with `X-` to indicate an extension.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, FirmAdmin, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
      * 
      * @param companyId The ID of the company that owns this setting.
      * @param id The ID of the setting you wish to delete.
@@ -13532,6 +16096,11 @@ This gets the basic information from the filings and doesn't include anything ex
      * 
      * A setting can refer to any type of data you need to remember about this company object.
      * When creating this object, you may define your own `set`, `name`, and `value` parameters.
+     * To define your own values, please choose a `set` name that begins with `X-` to indicate an extension.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
      * @param companyId The ID of the company that owns this setting
      * @param id The primary key of this setting
@@ -13556,6 +16125,11 @@ This gets the basic information from the filings and doesn't include anything ex
      * 
      * A setting can refer to any type of data you need to remember about this company object.
      * When creating this object, you may define your own `set`, `name`, and `value` parameters.
+     * To define your own values, please choose a `set` name that begins with `X-` to indicate an extension.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
      * @param companyId The ID of the company that owns this setting
      * @param id The primary key of this setting
@@ -13583,6 +16157,11 @@ This gets the basic information from the filings and doesn't include anything ex
      * To define your own values, please choose a `set` name that begins with `X-` to indicate an extension.
      * 
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * Paginate your results using the `$top`, `$skip`, and `$orderby` parameters.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
      * @param companyId The ID of the company that owns these settings
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).
@@ -13618,6 +16197,11 @@ This gets the basic information from the filings and doesn't include anything ex
      * To define your own values, please choose a `set` name that begins with `X-` to indicate an extension.
      * 
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * Paginate your results using the `$top`, `$skip`, and `$orderby` parameters.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
      * @param companyId The ID of the company that owns these settings
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).
@@ -13653,6 +16237,11 @@ This gets the basic information from the filings and doesn't include anything ex
      * To define your own values, please choose a `set` name that begins with `X-` to indicate an extension.
      * 
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * Paginate your results using the `$top`, `$skip`, and `$orderby` parameters.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).
      * @param include A comma separated list of additional data to retrieve.
@@ -13686,6 +16275,11 @@ This gets the basic information from the filings and doesn't include anything ex
      * To define your own values, please choose a `set` name that begins with `X-` to indicate an extension.
      * 
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * Paginate your results using the `$top`, `$skip`, and `$orderby` parameters.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).
      * @param include A comma separated list of additional data to retrieve.
@@ -13720,6 +16314,11 @@ This gets the basic information from the filings and doesn't include anything ex
      *             
      * All data from the existing object will be replaced with data in the object you `PUT`.  
      * 
+     * To set a field's value to `null`, you may either set its value to `null` or omit that field from the object when calling update.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
      * 
      * @param companyId The ID of the company that this setting belongs to.
      * @param id The ID of the setting you wish to update
@@ -13749,6 +16348,11 @@ This gets the basic information from the filings and doesn't include anything ex
      *             
      * All data from the existing object will be replaced with data in the object you `PUT`.  
      * 
+     * To set a field's value to `null`, you may either set its value to `null` or omit that field from the object when calling update.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
      * 
      * @param companyId The ID of the company that this setting belongs to.
      * @param id The ID of the setting you wish to update
@@ -13767,6 +16371,11 @@ This gets the basic information from the filings and doesn't include anything ex
      * 
      * Get the subscription object identified by this URL.
      * A 'subscription' indicates a licensed subscription to a named Avalara service.
+     * To request or remove subscriptions, please contact Avalara sales or your customer account manager.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
      * @param accountId The ID of the account that owns this subscription
      * @param id The primary key of this subscription
@@ -13784,6 +16393,11 @@ This gets the basic information from the filings and doesn't include anything ex
      * 
      * Get the subscription object identified by this URL.
      * A 'subscription' indicates a licensed subscription to a named Avalara service.
+     * To request or remove subscriptions, please contact Avalara sales or your customer account manager.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
      * @param accountId The ID of the account that owns this subscription
      * @param id The primary key of this subscription
@@ -13802,8 +16416,13 @@ This gets the basic information from the filings and doesn't include anything ex
      * List all subscription objects attached to this account.
      * A 'subscription' indicates a licensed subscription to a named Avalara service.
      * To request or remove subscriptions, please contact Avalara sales or your customer account manager.
-     * 
+     *             
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * Paginate your results using the `$top`, `$skip`, and `$orderby` parameters.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
      * @param accountId The ID of the account that owns these subscriptions
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* subscriptionDescription
@@ -13828,8 +16447,13 @@ This gets the basic information from the filings and doesn't include anything ex
      * List all subscription objects attached to this account.
      * A 'subscription' indicates a licensed subscription to a named Avalara service.
      * To request or remove subscriptions, please contact Avalara sales or your customer account manager.
-     * 
+     *             
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * Paginate your results using the `$top`, `$skip`, and `$orderby` parameters.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
      * @param accountId The ID of the account that owns these subscriptions
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* subscriptionDescription
@@ -13854,8 +16478,13 @@ This gets the basic information from the filings and doesn't include anything ex
      * Get multiple subscription objects across all accounts.
      * A 'subscription' indicates a licensed subscription to a named Avalara service.
      * To request or remove subscriptions, please contact Avalara sales or your customer account manager.
-     * 
+     *             
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * Paginate your results using the `$top`, `$skip`, and `$orderby` parameters.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* subscriptionDescription
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
@@ -13878,8 +16507,13 @@ This gets the basic information from the filings and doesn't include anything ex
      * Get multiple subscription objects across all accounts.
      * A 'subscription' indicates a licensed subscription to a named Avalara service.
      * To request or remove subscriptions, please contact Avalara sales or your customer account manager.
-     * 
+     *             
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * Paginate your results using the `$top`, `$skip`, and `$orderby` parameters.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* subscriptionDescription
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
@@ -13903,6 +16537,11 @@ This gets the basic information from the filings and doesn't include anything ex
      * A 'TaxCode' represents a uniquely identified type of product, good, or service.
      * Avalara supports correct tax rates and taxability rules for all TaxCodes in all supported jurisdictions.
      * If you identify your products by tax code in your 'Create Transacion' API calls, Avalara will correctly calculate tax rates and
+     * taxability rules for this product in all supported jurisdictions.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin.
      * 
      * @param companyId The ID of the company that owns this tax code.
      * @param model The tax code you wish to create.
@@ -13921,6 +16560,11 @@ This gets the basic information from the filings and doesn't include anything ex
      * A 'TaxCode' represents a uniquely identified type of product, good, or service.
      * Avalara supports correct tax rates and taxability rules for all TaxCodes in all supported jurisdictions.
      * If you identify your products by tax code in your 'Create Transacion' API calls, Avalara will correctly calculate tax rates and
+     * taxability rules for this product in all supported jurisdictions.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin.
      * 
      * @param companyId The ID of the company that owns this tax code.
      * @param model The tax code you wish to create.
@@ -13935,6 +16579,12 @@ This gets the basic information from the filings and doesn't include anything ex
     /**
      * Delete a single tax code
      * 
+     * Marks the existing TaxCode object at this URL as deleted.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin.
+     * 
      * @param companyId The ID of the company that owns this tax code.
      * @param id The ID of the tax code you wish to delete.
      * @return ArrayList<ErrorDetail>
@@ -13948,6 +16598,12 @@ This gets the basic information from the filings and doesn't include anything ex
 
     /**
      * Delete a single tax code
+     * 
+     * Marks the existing TaxCode object at this URL as deleted.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin.
      * 
      * @param companyId The ID of the company that owns this tax code.
      * @param id The ID of the tax code you wish to delete.
@@ -13967,6 +16623,11 @@ This gets the basic information from the filings and doesn't include anything ex
      * A 'TaxCode' represents a uniquely identified type of product, good, or service.
      * Avalara supports correct tax rates and taxability rules for all TaxCodes in all supported jurisdictions.
      * If you identify your products by tax code in your 'Create Transacion' API calls, Avalara will correctly calculate tax rates and
+     * taxability rules for this product in all supported jurisdictions.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
      * @param companyId The ID of the company that owns this tax code
      * @param id The primary key of this tax code
@@ -13986,6 +16647,11 @@ This gets the basic information from the filings and doesn't include anything ex
      * A 'TaxCode' represents a uniquely identified type of product, good, or service.
      * Avalara supports correct tax rates and taxability rules for all TaxCodes in all supported jurisdictions.
      * If you identify your products by tax code in your 'Create Transacion' API calls, Avalara will correctly calculate tax rates and
+     * taxability rules for this product in all supported jurisdictions.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
      * @param companyId The ID of the company that owns this tax code
      * @param id The primary key of this tax code
@@ -14008,6 +16674,11 @@ This gets the basic information from the filings and doesn't include anything ex
      * taxability rules for this product in all supported jurisdictions.
      * 
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * Paginate your results using the `$top`, `$skip`, and `$orderby` parameters.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
      * @param companyId The ID of the company that owns these tax codes
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).
@@ -14038,6 +16709,11 @@ This gets the basic information from the filings and doesn't include anything ex
      * taxability rules for this product in all supported jurisdictions.
      * 
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * Paginate your results using the `$top`, `$skip`, and `$orderby` parameters.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
      * @param companyId The ID of the company that owns these tax codes
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).
@@ -14068,6 +16744,11 @@ This gets the basic information from the filings and doesn't include anything ex
      * taxability rules for this product in all supported jurisdictions.
      * 
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * Paginate your results using the `$top`, `$skip`, and `$orderby` parameters.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).
      * @param include A comma separated list of additional data to retrieve.
@@ -14096,6 +16777,11 @@ This gets the basic information from the filings and doesn't include anything ex
      * taxability rules for this product in all supported jurisdictions.
      * 
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * Paginate your results using the `$top`, `$skip`, and `$orderby` parameters.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).
      * @param include A comma separated list of additional data to retrieve.
@@ -14123,6 +16809,11 @@ This gets the basic information from the filings and doesn't include anything ex
      * If you identify your products by tax code in your 'Create Transacion' API calls, Avalara will correctly calculate tax rates and
      * taxability rules for this product in all supported jurisdictions.
      * All data from the existing object will be replaced with data in the object you PUT.  
+     * To set a field's value to null, you may either set its value to null or omit that field from the object you post.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin.
      * 
      * @param companyId The ID of the company that this tax code belongs to.
      * @param id The ID of the tax code you wish to update
@@ -14145,6 +16836,11 @@ This gets the basic information from the filings and doesn't include anything ex
      * If you identify your products by tax code in your 'Create Transacion' API calls, Avalara will correctly calculate tax rates and
      * taxability rules for this product in all supported jurisdictions.
      * All data from the existing object will be replaced with data in the object you PUT.  
+     * To set a field's value to null, you may either set its value to null or omit that field from the object you post.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin.
      * 
      * @param companyId The ID of the company that this tax code belongs to.
      * @param id The ID of the tax code you wish to update
@@ -14183,6 +16879,12 @@ This gets the basic information from the filings and doesn't include anything ex
      * This API builds the file on demand, and is limited to files with no more than 7500 scenarios.  To build a tax content
      * file for a single location at a time, please use `BuildTaxContentFileForLocation`.
      * 
+     * NOTE: This API does not work for Tennessee tax holiday scenarios.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
+     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
      * 
      * @param model Parameters about the desired file format and report format, specifying which company, locations and TaxCodes to include.
      * @return String
@@ -14217,6 +16919,12 @@ This gets the basic information from the filings and doesn't include anything ex
      * This API builds the file on demand, and is limited to files with no more than 7500 scenarios.  To build a tax content
      * file for a single location at a time, please use `BuildTaxContentFileForLocation`.
      * 
+     * NOTE: This API does not work for Tennessee tax holiday scenarios.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
+     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
      * 
      * @param model Parameters about the desired file format and report format, specifying which company, locations and TaxCodes to include.
      * @return String
@@ -14251,6 +16959,12 @@ This gets the basic information from the filings and doesn't include anything ex
      * This API builds the file on demand, and is limited to files with no more than 7500 scenarios.  To build a tax content
      * file for a multiple locations in a single file, please use `BuildTaxContentFile`.
      * 
+     * NOTE: This API does not work for Tennessee tax holiday scenarios.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
+     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
      * 
      * @param companyId The ID number of the company that owns this location.
      * @param id The ID number of the location to retrieve point-of-sale data.
@@ -14296,6 +17010,12 @@ This gets the basic information from the filings and doesn't include anything ex
      * This API builds the file on demand, and is limited to files with no more than 7500 scenarios.  To build a tax content
      * file for a multiple locations in a single file, please use `BuildTaxContentFile`.
      * 
+     * NOTE: This API does not work for Tennessee tax holiday scenarios.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
+     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
      * 
      * @param companyId The ID number of the company that owns this location.
      * @param id The ID number of the location to retrieve point-of-sale data.
@@ -14358,6 +17078,11 @@ This gets the basic information from the filings and doesn't include anything ex
      * * TAX_SHIPPING_ALONE - This column contains 'Y' if shipping is taxable.
      * * TAX_SHIPPING_AND_HANDLING_TOGETHER - This column contains 'Y' if shipping and handling are taxable when sent together.
      * 
+     * For more detailed tax content, please use the `BuildTaxContentFile` API which allows usage of exact items and exact locations.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
      * @param date The date for which point-of-sale data would be calculated (today by default). Example input: 2016-12-31
      * @param region If the region is provided, this API is going to generate the tax rate per zipcode for only the region specified.
@@ -14412,6 +17137,11 @@ This gets the basic information from the filings and doesn't include anything ex
      * * TAX_SHIPPING_ALONE - This column contains 'Y' if shipping is taxable.
      * * TAX_SHIPPING_AND_HANDLING_TOGETHER - This column contains 'Y' if shipping and handling are taxable when sent together.
      * 
+     * For more detailed tax content, please use the `BuildTaxContentFile` API which allows usage of exact items and exact locations.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
      * @param date The date for which point-of-sale data would be calculated (today by default). Example input: 2016-12-31
      * @param region If the region is provided, this API is going to generate the tax rate per zipcode for only the region specified.
@@ -14439,6 +17169,11 @@ This gets the basic information from the filings and doesn't include anything ex
      * custom tax rules to redefine the behavior for your company or item.
      * 
      * Please use custom tax rules carefully and ensure that these tax rules match the behavior agreed upon with your
+     * auditor, legal representative, and accounting team.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin.
      * 
      * @param companyId The ID of the company that owns this tax rule.
      * @param model The tax rule you wish to create.
@@ -14465,6 +17200,11 @@ This gets the basic information from the filings and doesn't include anything ex
      * custom tax rules to redefine the behavior for your company or item.
      * 
      * Please use custom tax rules carefully and ensure that these tax rules match the behavior agreed upon with your
+     * auditor, legal representative, and accounting team.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin.
      * 
      * @param companyId The ID of the company that owns this tax rule.
      * @param model The tax rule you wish to create.
@@ -14491,6 +17231,11 @@ This gets the basic information from the filings and doesn't include anything ex
      * custom tax rules to redefine the behavior for your company or item.
      * 
      * Please use custom tax rules carefully and ensure that these tax rules match the behavior agreed upon with your
+     * auditor, legal representative, and accounting team.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin.
      * 
      * @param companyId The ID of the company that owns this tax rule.
      * @param id The ID of the tax rule you wish to delete.
@@ -14518,6 +17263,11 @@ This gets the basic information from the filings and doesn't include anything ex
      * custom tax rules to redefine the behavior for your company or item.
      * 
      * Please use custom tax rules carefully and ensure that these tax rules match the behavior agreed upon with your
+     * auditor, legal representative, and accounting team.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin.
      * 
      * @param companyId The ID of the company that owns this tax rule.
      * @param id The ID of the tax rule you wish to delete.
@@ -14545,6 +17295,11 @@ This gets the basic information from the filings and doesn't include anything ex
      * custom tax rules to redefine the behavior for your company or item.
      * 
      * Please use custom tax rules carefully and ensure that these tax rules match the behavior agreed upon with your
+     * auditor, legal representative, and accounting team.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
      * @param companyId The ID of the company that owns this tax rule
      * @param id The primary key of this tax rule
@@ -14572,6 +17327,11 @@ This gets the basic information from the filings and doesn't include anything ex
      * custom tax rules to redefine the behavior for your company or item.
      * 
      * Please use custom tax rules carefully and ensure that these tax rules match the behavior agreed upon with your
+     * auditor, legal representative, and accounting team.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
      * @param companyId The ID of the company that owns this tax rule
      * @param id The primary key of this tax rule
@@ -14602,6 +17362,11 @@ This gets the basic information from the filings and doesn't include anything ex
      * auditor, legal representative, and accounting team.
      * 
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * Paginate your results using the `$top`, `$skip`, and `$orderby` parameters.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
      * @param companyId The ID of the company that owns these tax rules
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* taxCode, rateTypeCode, taxTypeGroup, taxSubType
@@ -14640,6 +17405,11 @@ This gets the basic information from the filings and doesn't include anything ex
      * auditor, legal representative, and accounting team.
      * 
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * Paginate your results using the `$top`, `$skip`, and `$orderby` parameters.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
      * @param companyId The ID of the company that owns these tax rules
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* taxCode, rateTypeCode, taxTypeGroup, taxSubType
@@ -14678,6 +17448,11 @@ This gets the basic information from the filings and doesn't include anything ex
      * auditor, legal representative, and accounting team.
      * 
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * Paginate your results using the `$top`, `$skip`, and `$orderby` parameters.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* taxCode, rateTypeCode, taxTypeGroup, taxSubType
      * @param include A comma separated list of additional data to retrieve.
@@ -14714,6 +17489,11 @@ This gets the basic information from the filings and doesn't include anything ex
      * auditor, legal representative, and accounting team.
      * 
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * Paginate your results using the `$top`, `$skip`, and `$orderby` parameters.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* taxCode, rateTypeCode, taxTypeGroup, taxSubType
      * @param include A comma separated list of additional data to retrieve.
@@ -14747,6 +17527,11 @@ This gets the basic information from the filings and doesn't include anything ex
      * custom tax rules to redefine the behavior for your company or item.
      * 
      * Please use custom tax rules carefully and ensure that these tax rules match the behavior agreed upon with your
+     * auditor, legal representative, and accounting team.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin.
      * 
      * @param companyId The ID of the company that this tax rule belongs to.
      * @param id The ID of the tax rule you wish to update
@@ -14775,6 +17560,11 @@ This gets the basic information from the filings and doesn't include anything ex
      * custom tax rules to redefine the behavior for your company or item.
      * 
      * Please use custom tax rules carefully and ensure that these tax rules match the behavior agreed upon with your
+     * auditor, legal representative, and accounting team.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin.
      * 
      * @param companyId The ID of the company that this tax rule belongs to.
      * @param id The ID of the tax rule you wish to update
@@ -14792,24 +17582,30 @@ This gets the basic information from the filings and doesn't include anything ex
      * Add lines to an existing unlocked transaction
      * 
      *  Add lines to an existing unlocked transaction.
-     *  
+     *             
      *  The `AddLines` API allows you to add additional transaction lines to existing transaction, so that customer will
      *  be able to append multiple calls together and form an extremely large transaction. If customer does not specify line number
      *  in the lines to be added, a new random Guid string will be generated for line number. If customer are not satisfied with
-     *  the line number for the transaction lines, they can turn on the renumber switch to have REST v2 automatically renumber all 
+     *  the line number for the transaction lines, they can turn on the renumber switch to have REST v2 automatically renumber all
      *  transaction lines for them, in this case, the line number becomes: "1", "2", "3", ...
-     *  
+     *             
      *  A transaction represents a unique potentially taxable action that your company has recorded, and transactions include actions like
      *  sales, purchases, inventory transfer, and returns (also called refunds).
      *  You may specify one or more of the following values in the `$include` parameter to fetch additional nested data, using commas to separate multiple values:
-     * 
+     *             
      *  * Lines
      *  * Details (implies lines)
      *  * Summary (implies details)
      *  * Addresses
      * * SummaryOnly (omit lines and details - reduces API response size)
      * * LinesOnly (omit details - reduces API response size)
+     *             
+     *  If you omit the `$include` parameter, the API will assume you want `Summary,Addresses`.
      * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
+     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
      * 
      * @param include Specifies objects to include in the response after transaction is created
      * @param model information about the transaction and lines to be added
@@ -14825,24 +17621,30 @@ This gets the basic information from the filings and doesn't include anything ex
      * Add lines to an existing unlocked transaction
      * 
      *  Add lines to an existing unlocked transaction.
-     *  
+     *             
      *  The `AddLines` API allows you to add additional transaction lines to existing transaction, so that customer will
      *  be able to append multiple calls together and form an extremely large transaction. If customer does not specify line number
      *  in the lines to be added, a new random Guid string will be generated for line number. If customer are not satisfied with
-     *  the line number for the transaction lines, they can turn on the renumber switch to have REST v2 automatically renumber all 
+     *  the line number for the transaction lines, they can turn on the renumber switch to have REST v2 automatically renumber all
      *  transaction lines for them, in this case, the line number becomes: "1", "2", "3", ...
-     *  
+     *             
      *  A transaction represents a unique potentially taxable action that your company has recorded, and transactions include actions like
      *  sales, purchases, inventory transfer, and returns (also called refunds).
      *  You may specify one or more of the following values in the `$include` parameter to fetch additional nested data, using commas to separate multiple values:
-     * 
+     *             
      *  * Lines
      *  * Details (implies lines)
      *  * Summary (implies details)
      *  * Addresses
      * * SummaryOnly (omit lines and details - reduces API response size)
      * * LinesOnly (omit details - reduces API response size)
+     *             
+     *  If you omit the `$include` parameter, the API will assume you want `Summary,Addresses`.
      * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
+     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
      * 
      * @param include Specifies objects to include in the response after transaction is created
      * @param model information about the transaction and lines to be added
@@ -14858,27 +17660,45 @@ This gets the basic information from the filings and doesn't include anything ex
      * Correct a previously created transaction
      * 
      * Replaces the current transaction uniquely identified by this URL with a new transaction.
-     * 
+     *             
      * A transaction represents a unique potentially taxable action that your company has recorded, and transactions include actions like
      * sales, purchases, inventory transfer, and returns (also called refunds).
-     * 
+     *             
      * When you adjust a committed transaction, the original transaction will be updated with the status code `Adjusted`, and
      * both revisions will be available for retrieval based on their code and ID numbers.
      * Only transactions in `Committed` status are reported by Avalara Managed Returns.
+     *             
+     * Transactions that have been previously reported to a tax authority by Avalara Managed Returns are considered `locked` and are
+     * no longer available for adjustments.
      * 
-     * Transactions that have been previously reported to a tax authority by Avalara Managed Returns are considered `locked` and are 
+     * You may specify one or more of the following values in the `$include` parameter to fetch additional nested data, using commas to separate multiple values:
+     *             
+     * * Lines
+     * * Details (implies lines)
+     * * Summary (implies details)
+     * * Addresses
+     * * SummaryOnly (omit lines and details - reduces API response size)
+     * * LinesOnly (omit details - reduces API response size)
+     * * TaxDetailsByTaxType - Includes the aggregated tax, exempt tax, taxable and non-taxable for each tax type returned in the transaction summary.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
+     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
      * 
      * @param companyCode The company code of the company that recorded this transaction
      * @param transactionCode The transaction code to adjust
      * @param documentType (Optional): The document type of the transaction to adjust. (See DocumentType::* for a list of allowable values)
+     * @param include Specifies objects to include in this fetch call
      * @param model The adjustment you wish to make
      * @return TransactionModel
      */
-    public TransactionModel adjustTransaction(String companyCode, String transactionCode, DocumentType documentType, AdjustTransactionModel model) throws Exception {
+    public TransactionModel adjustTransaction(String companyCode, String transactionCode, DocumentType documentType, String include, AdjustTransactionModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyCode}/transactions/{transactionCode}/adjust");
         path.applyField("companyCode", companyCode);
         path.applyField("transactionCode", transactionCode);
         path.addQuery("documentType", documentType);
+        path.addQuery("$include", include);
         return ((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<TransactionModel>(){})).call();
     }
 
@@ -14886,27 +17706,45 @@ This gets the basic information from the filings and doesn't include anything ex
      * Correct a previously created transaction
      * 
      * Replaces the current transaction uniquely identified by this URL with a new transaction.
-     * 
+     *             
      * A transaction represents a unique potentially taxable action that your company has recorded, and transactions include actions like
      * sales, purchases, inventory transfer, and returns (also called refunds).
-     * 
+     *             
      * When you adjust a committed transaction, the original transaction will be updated with the status code `Adjusted`, and
      * both revisions will be available for retrieval based on their code and ID numbers.
      * Only transactions in `Committed` status are reported by Avalara Managed Returns.
+     *             
+     * Transactions that have been previously reported to a tax authority by Avalara Managed Returns are considered `locked` and are
+     * no longer available for adjustments.
      * 
-     * Transactions that have been previously reported to a tax authority by Avalara Managed Returns are considered `locked` and are 
+     * You may specify one or more of the following values in the `$include` parameter to fetch additional nested data, using commas to separate multiple values:
+     *             
+     * * Lines
+     * * Details (implies lines)
+     * * Summary (implies details)
+     * * Addresses
+     * * SummaryOnly (omit lines and details - reduces API response size)
+     * * LinesOnly (omit details - reduces API response size)
+     * * TaxDetailsByTaxType - Includes the aggregated tax, exempt tax, taxable and non-taxable for each tax type returned in the transaction summary.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
+     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
      * 
      * @param companyCode The company code of the company that recorded this transaction
      * @param transactionCode The transaction code to adjust
      * @param documentType (Optional): The document type of the transaction to adjust. (See DocumentType::* for a list of allowable values)
+     * @param include Specifies objects to include in this fetch call
      * @param model The adjustment you wish to make
      * @return TransactionModel
      */
-    public Future<TransactionModel> adjustTransactionAsync(String companyCode, String transactionCode, DocumentType documentType, AdjustTransactionModel model) {
+    public Future<TransactionModel> adjustTransactionAsync(String companyCode, String transactionCode, DocumentType documentType, String include, AdjustTransactionModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyCode}/transactions/{transactionCode}/adjust");
         path.applyField("companyCode", companyCode);
         path.applyField("transactionCode", transactionCode);
         path.addQuery("documentType", documentType);
+        path.addQuery("$include", include);
         return this.threadPool.submit((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<TransactionModel>(){}));
     }
 
@@ -14914,19 +17752,25 @@ This gets the basic information from the filings and doesn't include anything ex
      * Get audit information about a transaction
      * 
      * Retrieve audit information about a transaction stored in AvaTax.
-     *  
-     * The `AuditTransaction` API retrieves audit information related to a specific transaction.  This audit 
+     *             
+     * The `AuditTransaction` API retrieves audit information related to a specific transaction.  This audit
      * information includes the following:
-     * 
+     *             
      * * The `CompanyId` of the company that created the transaction
      * * The server timestamp representing the exact server time when the transaction was created
      * * The server duration - how long it took to process this transaction
      * * Whether exact API call details were logged
      * * A reconstructed API call showing what the original CreateTransaction call looked like
-     * 
+     *             
      * This API can be used to examine information about a previously created transaction.
-     * 
+     *             
      * A transaction represents a unique potentially taxable action that your company has recorded, and transactions include actions like
+     * sales, purchases, inventory transfer, and returns (also called refunds).
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, ProStoresOperator, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
+     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
      * 
      * @param companyCode The code identifying the company that owns this transaction
      * @param transactionCode The code identifying the transaction
@@ -14943,19 +17787,25 @@ This gets the basic information from the filings and doesn't include anything ex
      * Get audit information about a transaction
      * 
      * Retrieve audit information about a transaction stored in AvaTax.
-     *  
-     * The `AuditTransaction` API retrieves audit information related to a specific transaction.  This audit 
+     *             
+     * The `AuditTransaction` API retrieves audit information related to a specific transaction.  This audit
      * information includes the following:
-     * 
+     *             
      * * The `CompanyId` of the company that created the transaction
      * * The server timestamp representing the exact server time when the transaction was created
      * * The server duration - how long it took to process this transaction
      * * Whether exact API call details were logged
      * * A reconstructed API call showing what the original CreateTransaction call looked like
-     * 
+     *             
      * This API can be used to examine information about a previously created transaction.
-     * 
+     *             
      * A transaction represents a unique potentially taxable action that your company has recorded, and transactions include actions like
+     * sales, purchases, inventory transfer, and returns (also called refunds).
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, ProStoresOperator, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
+     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
      * 
      * @param companyCode The code identifying the company that owns this transaction
      * @param transactionCode The code identifying the transaction
@@ -14972,19 +17822,25 @@ This gets the basic information from the filings and doesn't include anything ex
      * Get audit information about a transaction
      * 
      * Retrieve audit information about a transaction stored in AvaTax.
-     *  
-     * The `AuditTransaction` API retrieves audit information related to a specific transaction.  This audit 
+     *             
+     * The `AuditTransaction` API retrieves audit information related to a specific transaction.  This audit
      * information includes the following:
-     * 
+     *             
      * * The `CompanyId` of the company that created the transaction
      * * The server timestamp representing the exact server time when the transaction was created
      * * The server duration - how long it took to process this transaction
      * * Whether exact API call details were logged
      * * A reconstructed API call showing what the original CreateTransaction call looked like
-     * 
+     *             
      * This API can be used to examine information about a previously created transaction.
-     * 
+     *             
      * A transaction represents a unique potentially taxable action that your company has recorded, and transactions include actions like
+     * sales, purchases, inventory transfer, and returns (also called refunds).
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, ProStoresOperator, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
+     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
      * 
      * @param companyCode The code identifying the company that owns this transaction
      * @param transactionCode The code identifying the transaction
@@ -15003,19 +17859,25 @@ This gets the basic information from the filings and doesn't include anything ex
      * Get audit information about a transaction
      * 
      * Retrieve audit information about a transaction stored in AvaTax.
-     *  
-     * The `AuditTransaction` API retrieves audit information related to a specific transaction.  This audit 
+     *             
+     * The `AuditTransaction` API retrieves audit information related to a specific transaction.  This audit
      * information includes the following:
-     * 
+     *             
      * * The `CompanyId` of the company that created the transaction
      * * The server timestamp representing the exact server time when the transaction was created
      * * The server duration - how long it took to process this transaction
      * * Whether exact API call details were logged
      * * A reconstructed API call showing what the original CreateTransaction call looked like
-     * 
+     *             
      * This API can be used to examine information about a previously created transaction.
-     * 
+     *             
      * A transaction represents a unique potentially taxable action that your company has recorded, and transactions include actions like
+     * sales, purchases, inventory transfer, and returns (also called refunds).
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, ProStoresOperator, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
+     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
      * 
      * @param companyCode The code identifying the company that owns this transaction
      * @param transactionCode The code identifying the transaction
@@ -15034,11 +17896,17 @@ This gets the basic information from the filings and doesn't include anything ex
      * Lock a set of documents
      * 
      * This API is available by invitation only.
-     * 
+     *             
      * Lock a set of transactions uniquely identified by DocumentIds provided. This API allows locking multiple documents at once.
      * After this API call succeeds, documents will be locked and can't be voided.
-     * 
+     *             
      * A transaction represents a unique potentially taxable action that your company has recorded, and transactions include actions like
+     * sales, purchases, inventory transfer, and returns (also called refunds).
+     * 
+     * ### Security Policies
+     * 
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.
+     * * This API is available by invitation only.  To request access to this feature, please speak to a business development manager and request host address whitelisting for [Returns] for your servers.
      * 
      * @param model bulk lock request
      * @return BulkLockTransactionResult
@@ -15052,11 +17920,17 @@ This gets the basic information from the filings and doesn't include anything ex
      * Lock a set of documents
      * 
      * This API is available by invitation only.
-     * 
+     *             
      * Lock a set of transactions uniquely identified by DocumentIds provided. This API allows locking multiple documents at once.
      * After this API call succeeds, documents will be locked and can't be voided.
-     * 
+     *             
      * A transaction represents a unique potentially taxable action that your company has recorded, and transactions include actions like
+     * sales, purchases, inventory transfer, and returns (also called refunds).
+     * 
+     * ### Security Policies
+     * 
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.
+     * * This API is available by invitation only.  To request access to this feature, please speak to a business development manager and request host address whitelisting for [Returns] for your servers.
      * 
      * @param model bulk lock request
      * @return BulkLockTransactionResult
@@ -15070,27 +17944,45 @@ This gets the basic information from the filings and doesn't include anything ex
      * Change a transaction's code
      * 
      * Renames a transaction uniquely identified by this URL by changing its `code` value.
-     * 
+     *             
      * This API is available as long as the transaction is in `saved` or `posted` status.  When a transaction
      * is `committed`, it can be modified by using the [AdjustTransaction](https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Transactions/AdjustTransaction/) method.
-     * 
+     *             
      * After this API call succeeds, the transaction will have a new URL matching its new `code`.
-     * 
+     *             
      * If you have more than one document with the same `code`, specify the `documentType` parameter to choose between them.
-     * 
+     *             
      * A transaction represents a unique potentially taxable action that your company has recorded, and transactions include actions like
+     * sales, purchases, inventory transfer, and returns (also called refunds).
+     * 
+     * You may specify one or more of the following values in the `$include` parameter to fetch additional nested data, using commas to separate multiple values:
+     *             
+     * * Lines
+     * * Details (implies lines)
+     * * Summary (implies details)
+     * * Addresses
+     * * SummaryOnly (omit lines and details - reduces API response size)
+     * * LinesOnly (omit details - reduces API response size)
+     * * TaxDetailsByTaxType - Includes the aggregated tax, exempt tax, taxable and non-taxable for each tax type returned in the transaction summary.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, ProStoresOperator, SSTAdmin, TechnicalSupportAdmin.
+     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro, AvaTaxST.
      * 
      * @param companyCode The company code of the company that recorded this transaction
      * @param transactionCode The transaction code to change
      * @param documentType (Optional): The document type of the transaction to change document code. If not provided, the default is SalesInvoice. (See DocumentType::* for a list of allowable values)
+     * @param include Specifies objects to include in this fetch call
      * @param model The code change request you wish to execute
      * @return TransactionModel
      */
-    public TransactionModel changeTransactionCode(String companyCode, String transactionCode, DocumentType documentType, ChangeTransactionCodeModel model) throws Exception {
+    public TransactionModel changeTransactionCode(String companyCode, String transactionCode, DocumentType documentType, String include, ChangeTransactionCodeModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyCode}/transactions/{transactionCode}/changecode");
         path.applyField("companyCode", companyCode);
         path.applyField("transactionCode", transactionCode);
         path.addQuery("documentType", documentType);
+        path.addQuery("$include", include);
         return ((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<TransactionModel>(){})).call();
     }
 
@@ -15098,27 +17990,45 @@ This gets the basic information from the filings and doesn't include anything ex
      * Change a transaction's code
      * 
      * Renames a transaction uniquely identified by this URL by changing its `code` value.
-     * 
+     *             
      * This API is available as long as the transaction is in `saved` or `posted` status.  When a transaction
      * is `committed`, it can be modified by using the [AdjustTransaction](https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Transactions/AdjustTransaction/) method.
-     * 
+     *             
      * After this API call succeeds, the transaction will have a new URL matching its new `code`.
-     * 
+     *             
      * If you have more than one document with the same `code`, specify the `documentType` parameter to choose between them.
-     * 
+     *             
      * A transaction represents a unique potentially taxable action that your company has recorded, and transactions include actions like
+     * sales, purchases, inventory transfer, and returns (also called refunds).
+     * 
+     * You may specify one or more of the following values in the `$include` parameter to fetch additional nested data, using commas to separate multiple values:
+     *             
+     * * Lines
+     * * Details (implies lines)
+     * * Summary (implies details)
+     * * Addresses
+     * * SummaryOnly (omit lines and details - reduces API response size)
+     * * LinesOnly (omit details - reduces API response size)
+     * * TaxDetailsByTaxType - Includes the aggregated tax, exempt tax, taxable and non-taxable for each tax type returned in the transaction summary.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, ProStoresOperator, SSTAdmin, TechnicalSupportAdmin.
+     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro, AvaTaxST.
      * 
      * @param companyCode The company code of the company that recorded this transaction
      * @param transactionCode The transaction code to change
      * @param documentType (Optional): The document type of the transaction to change document code. If not provided, the default is SalesInvoice. (See DocumentType::* for a list of allowable values)
+     * @param include Specifies objects to include in this fetch call
      * @param model The code change request you wish to execute
      * @return TransactionModel
      */
-    public Future<TransactionModel> changeTransactionCodeAsync(String companyCode, String transactionCode, DocumentType documentType, ChangeTransactionCodeModel model) {
+    public Future<TransactionModel> changeTransactionCodeAsync(String companyCode, String transactionCode, DocumentType documentType, String include, ChangeTransactionCodeModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyCode}/transactions/{transactionCode}/changecode");
         path.applyField("companyCode", companyCode);
         path.applyField("transactionCode", transactionCode);
         path.addQuery("documentType", documentType);
+        path.addQuery("$include", include);
         return this.threadPool.submit((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<TransactionModel>(){}));
     }
 
@@ -15126,26 +18036,43 @@ This gets the basic information from the filings and doesn't include anything ex
      * Commit a transaction for reporting
      * 
      * Marks a transaction by changing its status to `Committed`.
-     * 
+     *             
      * Transactions that are committed are available to be reported to a tax authority by Avalara Managed Returns.
-     * 
+     *             
      * A transaction represents a unique potentially taxable action that your company has recorded, and transactions include actions like
      * sales, purchases, inventory transfer, and returns (also called refunds).
-     * 
+     *             
      * If you have more than one document with the same `code`, specify the `documentType` parameter to choose between them.
+     *             
+     * Any changes made to a committed transaction will generate a transaction history.
      * 
+     * You may specify one or more of the following values in the `$include` parameter to fetch additional nested data, using commas to separate multiple values:
+     *             
+     * * Lines
+     * * Details (implies lines)
+     * * Summary (implies details)
+     * * Addresses
+     * * SummaryOnly (omit lines and details - reduces API response size)
+     * * LinesOnly (omit details - reduces API response size)
+     * * TaxDetailsByTaxType - Includes the aggregated tax, exempt tax, taxable and non-taxable for each tax type returned in the transaction summary.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, ProStoresOperator, SSTAdmin, TechnicalSupportAdmin.
      * 
      * @param companyCode The company code of the company that recorded this transaction
      * @param transactionCode The transaction code to commit
      * @param documentType (Optional): The document type of the transaction to commit. If not provided, the default is SalesInvoice. (See DocumentType::* for a list of allowable values)
+     * @param include Specifies objects to include in this fetch call
      * @param model The commit request you wish to execute
      * @return TransactionModel
      */
-    public TransactionModel commitTransaction(String companyCode, String transactionCode, DocumentType documentType, CommitTransactionModel model) throws Exception {
+    public TransactionModel commitTransaction(String companyCode, String transactionCode, DocumentType documentType, String include, CommitTransactionModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyCode}/transactions/{transactionCode}/commit");
         path.applyField("companyCode", companyCode);
         path.applyField("transactionCode", transactionCode);
         path.addQuery("documentType", documentType);
+        path.addQuery("$include", include);
         return ((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<TransactionModel>(){})).call();
     }
 
@@ -15153,26 +18080,43 @@ This gets the basic information from the filings and doesn't include anything ex
      * Commit a transaction for reporting
      * 
      * Marks a transaction by changing its status to `Committed`.
-     * 
+     *             
      * Transactions that are committed are available to be reported to a tax authority by Avalara Managed Returns.
-     * 
+     *             
      * A transaction represents a unique potentially taxable action that your company has recorded, and transactions include actions like
      * sales, purchases, inventory transfer, and returns (also called refunds).
-     * 
+     *             
      * If you have more than one document with the same `code`, specify the `documentType` parameter to choose between them.
+     *             
+     * Any changes made to a committed transaction will generate a transaction history.
      * 
+     * You may specify one or more of the following values in the `$include` parameter to fetch additional nested data, using commas to separate multiple values:
+     *             
+     * * Lines
+     * * Details (implies lines)
+     * * Summary (implies details)
+     * * Addresses
+     * * SummaryOnly (omit lines and details - reduces API response size)
+     * * LinesOnly (omit details - reduces API response size)
+     * * TaxDetailsByTaxType - Includes the aggregated tax, exempt tax, taxable and non-taxable for each tax type returned in the transaction summary.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, ProStoresOperator, SSTAdmin, TechnicalSupportAdmin.
      * 
      * @param companyCode The company code of the company that recorded this transaction
      * @param transactionCode The transaction code to commit
      * @param documentType (Optional): The document type of the transaction to commit. If not provided, the default is SalesInvoice. (See DocumentType::* for a list of allowable values)
+     * @param include Specifies objects to include in this fetch call
      * @param model The commit request you wish to execute
      * @return TransactionModel
      */
-    public Future<TransactionModel> commitTransactionAsync(String companyCode, String transactionCode, DocumentType documentType, CommitTransactionModel model) {
+    public Future<TransactionModel> commitTransactionAsync(String companyCode, String transactionCode, DocumentType documentType, String include, CommitTransactionModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyCode}/transactions/{transactionCode}/commit");
         path.applyField("companyCode", companyCode);
         path.applyField("transactionCode", transactionCode);
         path.addQuery("documentType", documentType);
+        path.addQuery("$include", include);
         return this.threadPool.submit((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<TransactionModel>(){}));
     }
 
@@ -15180,20 +18124,20 @@ This gets the basic information from the filings and doesn't include anything ex
      * Create or adjust a transaction
      * 
      * Records a new transaction or adjust an existing transaction in AvaTax.
-     * 
+     *             
      * The `CreateOrAdjustTransaction` endpoint is used to create a new transaction or update an existing one.  This API
-     * can help you create an idempotent service that creates transactions 
-     * If there exists a transaction identified by code, the original transaction will be adjusted by using the meta data 
+     * can help you create an idempotent service that creates transactions
+     * If there exists a transaction identified by code, the original transaction will be adjusted by using the meta data
      * in the input transaction.
-     * 
-     * The `CreateOrAdjustTransaction` API cannot modify any transaction that has been reported to a tax authority using 
+     *             
+     * The `CreateOrAdjustTransaction` API cannot modify any transaction that has been reported to a tax authority using
      * the Avalara Managed Returns Service or any other tax filing service.  If you call this API to attempt to modify
      * a transaction that has been reported on a tax filing, you will receive the error `CannotModifyLockedTransaction`.
-     * 
+     *             
      * To generate a refund for a transaction, use the `RefundTransaction` API.
      *             
      * If you don't specify the field `type` in your request, you will get an estimate of type `SalesOrder`, which will not be recorded in the database.
-     * 
+     *             
      * A transaction represents a unique potentially taxable action that your company has recorded, and transactions include actions like
      * sales, purchases, inventory transfer, and returns (also called refunds).
      * You may specify one or more of the following values in the `$include` parameter to fetch additional nested data, using commas to separate multiple values:
@@ -15206,6 +18150,12 @@ This gets the basic information from the filings and doesn't include anything ex
      * * LinesOnly (omit details - reduces API response size)
      * * ForceTimeout - Simulates a timeout.  This adds a 30 second delay and error to your API call.  This can be used to test your code to ensure it can respond correctly in the case of a dropped connection.
      *             
+     * If you omit the `$include` parameter, the API will assume you want `Summary,Addresses`.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
+     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
      * 
      * @param include Specifies objects to include in the response after transaction is created
      * @param model The transaction you wish to create or adjust
@@ -15221,20 +18171,20 @@ This gets the basic information from the filings and doesn't include anything ex
      * Create or adjust a transaction
      * 
      * Records a new transaction or adjust an existing transaction in AvaTax.
-     * 
+     *             
      * The `CreateOrAdjustTransaction` endpoint is used to create a new transaction or update an existing one.  This API
-     * can help you create an idempotent service that creates transactions 
-     * If there exists a transaction identified by code, the original transaction will be adjusted by using the meta data 
+     * can help you create an idempotent service that creates transactions
+     * If there exists a transaction identified by code, the original transaction will be adjusted by using the meta data
      * in the input transaction.
-     * 
-     * The `CreateOrAdjustTransaction` API cannot modify any transaction that has been reported to a tax authority using 
+     *             
+     * The `CreateOrAdjustTransaction` API cannot modify any transaction that has been reported to a tax authority using
      * the Avalara Managed Returns Service or any other tax filing service.  If you call this API to attempt to modify
      * a transaction that has been reported on a tax filing, you will receive the error `CannotModifyLockedTransaction`.
-     * 
+     *             
      * To generate a refund for a transaction, use the `RefundTransaction` API.
      *             
      * If you don't specify the field `type` in your request, you will get an estimate of type `SalesOrder`, which will not be recorded in the database.
-     * 
+     *             
      * A transaction represents a unique potentially taxable action that your company has recorded, and transactions include actions like
      * sales, purchases, inventory transfer, and returns (also called refunds).
      * You may specify one or more of the following values in the `$include` parameter to fetch additional nested data, using commas to separate multiple values:
@@ -15247,6 +18197,12 @@ This gets the basic information from the filings and doesn't include anything ex
      * * LinesOnly (omit details - reduces API response size)
      * * ForceTimeout - Simulates a timeout.  This adds a 30 second delay and error to your API call.  This can be used to test your code to ensure it can respond correctly in the case of a dropped connection.
      *             
+     * If you omit the `$include` parameter, the API will assume you want `Summary,Addresses`.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
+     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
      * 
      * @param include Specifies objects to include in the response after transaction is created
      * @param model The transaction you wish to create or adjust
@@ -15262,28 +18218,28 @@ This gets the basic information from the filings and doesn't include anything ex
      * Create a new transaction
      * 
      * Records a new transaction in AvaTax.
-     * 
+     *             
      * A transaction represents a unique potentially taxable action that your company has recorded, and transactions include actions like
      * sales, purchases, inventory transfer, and returns (also called refunds).
-     * 
+     *             
      * The `CreateTransaction` endpoint uses the tax profile of your company to identify the correct tax rules
      * and rates to apply to all line items in this transaction.  The end result will be the total tax calculated by AvaTax based on your
      * company's configuration and the data provided in this API call.
-     * 
+     *             
      * The `CreateTransaction` API will report an error if a committed transaction already exists with the same `code`.  To
      * avoid this error, use the `CreateOrAdjustTransaction` API - it will create the transaction if it does not exist, or
      * update it if it does exist.
-     * 
+     *             
      * To generate a refund for a transaction, use the `RefundTransaction` API.
-     * 
+     *             
      * The field `type` identifies the kind of transaction - for example, a sale, purchase, or refund.  If you do not specify
      * a `type` value, you will receive an estimate of type `SalesOrder`, which will not be recorded.
-     * 
+     *             
      * The origin and destination locations for a transaction must be identified by either address or geocode.  For address-based transactions, please
      * provide addresses in the fields `line`, `city`, `region`, `country` and `postalCode`.  For geocode-based transactions, please provide the geocode
      * information in the fields `latitude` and `longitude`.  If either `latitude` or `longitude` or both are null, the transaction will be calculated
      * using the best available address location information.
-     * 
+     *             
      * You may specify one or more of the following values in the `$include` parameter to fetch additional nested data, using commas to separate multiple values:
      *             
      * * Lines
@@ -15294,7 +18250,13 @@ This gets the basic information from the filings and doesn't include anything ex
      * * LinesOnly (omit details - reduces API response size)
      * * ForceTimeout - Simulates a timeout.  This adds a 30 second delay and error to your API call.  This can be used to test your code to ensure it can respond correctly in the case of a dropped connection.
      * * TaxDetailsByTaxType - Includes the aggregated tax, exempt tax, taxable and non-taxable for each tax type returned in the transaction summary.
+     *             
+     * If you omit the `$include` parameter, the API will assume you want `Summary,Addresses`.
      * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
+     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
      * 
      * @param include Specifies objects to include in the response after transaction is created
      * @param model The transaction you wish to create
@@ -15310,28 +18272,28 @@ This gets the basic information from the filings and doesn't include anything ex
      * Create a new transaction
      * 
      * Records a new transaction in AvaTax.
-     * 
+     *             
      * A transaction represents a unique potentially taxable action that your company has recorded, and transactions include actions like
      * sales, purchases, inventory transfer, and returns (also called refunds).
-     * 
+     *             
      * The `CreateTransaction` endpoint uses the tax profile of your company to identify the correct tax rules
      * and rates to apply to all line items in this transaction.  The end result will be the total tax calculated by AvaTax based on your
      * company's configuration and the data provided in this API call.
-     * 
+     *             
      * The `CreateTransaction` API will report an error if a committed transaction already exists with the same `code`.  To
      * avoid this error, use the `CreateOrAdjustTransaction` API - it will create the transaction if it does not exist, or
      * update it if it does exist.
-     * 
+     *             
      * To generate a refund for a transaction, use the `RefundTransaction` API.
-     * 
+     *             
      * The field `type` identifies the kind of transaction - for example, a sale, purchase, or refund.  If you do not specify
      * a `type` value, you will receive an estimate of type `SalesOrder`, which will not be recorded.
-     * 
+     *             
      * The origin and destination locations for a transaction must be identified by either address or geocode.  For address-based transactions, please
      * provide addresses in the fields `line`, `city`, `region`, `country` and `postalCode`.  For geocode-based transactions, please provide the geocode
      * information in the fields `latitude` and `longitude`.  If either `latitude` or `longitude` or both are null, the transaction will be calculated
      * using the best available address location information.
-     * 
+     *             
      * You may specify one or more of the following values in the `$include` parameter to fetch additional nested data, using commas to separate multiple values:
      *             
      * * Lines
@@ -15342,7 +18304,13 @@ This gets the basic information from the filings and doesn't include anything ex
      * * LinesOnly (omit details - reduces API response size)
      * * ForceTimeout - Simulates a timeout.  This adds a 30 second delay and error to your API call.  This can be used to test your code to ensure it can respond correctly in the case of a dropped connection.
      * * TaxDetailsByTaxType - Includes the aggregated tax, exempt tax, taxable and non-taxable for each tax type returned in the transaction summary.
+     *             
+     * If you omit the `$include` parameter, the API will assume you want `Summary,Addresses`.
      * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
+     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
      * 
      * @param include Specifies objects to include in the response after transaction is created
      * @param model The transaction you wish to create
@@ -15358,21 +18326,27 @@ This gets the basic information from the filings and doesn't include anything ex
      * Remove lines from an existing unlocked transaction
      * 
      *  Remove lines to an existing unlocked transaction.
-     *  
+     *             
      *  The `DeleteLines` API allows you to remove transaction lines from existing unlocked transaction, so that customer will
      *  be able to delete transaction lines and adjust original transaction the way they like
-     *  
+     *             
      *  A transaction represents a unique potentially taxable action that your company has recorded, and transactions include actions like
      *  sales, purchases, inventory transfer, and returns (also called refunds).
      *  You may specify one or more of the following values in the `$include` parameter to fetch additional nested data, using commas to separate multiple values:
-     * 
+     *             
      *  * Lines
      *  * Details (implies lines)
      *  * Summary (implies details)
      *  * Addresses
      * * SummaryOnly (omit lines and details - reduces API response size)
      * * LinesOnly (omit details - reduces API response size)
+     *             
+     *  If you omit the `$include` parameter, the API will assume you want `Summary,Addresses`.
      * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
+     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
      * 
      * @param include Specifies objects to include in the response after transaction is created
      * @param model information about the transaction and lines to be removed
@@ -15388,21 +18362,27 @@ This gets the basic information from the filings and doesn't include anything ex
      * Remove lines from an existing unlocked transaction
      * 
      *  Remove lines to an existing unlocked transaction.
-     *  
+     *             
      *  The `DeleteLines` API allows you to remove transaction lines from existing unlocked transaction, so that customer will
      *  be able to delete transaction lines and adjust original transaction the way they like
-     *  
+     *             
      *  A transaction represents a unique potentially taxable action that your company has recorded, and transactions include actions like
      *  sales, purchases, inventory transfer, and returns (also called refunds).
      *  You may specify one or more of the following values in the `$include` parameter to fetch additional nested data, using commas to separate multiple values:
-     * 
+     *             
      *  * Lines
      *  * Details (implies lines)
      *  * Summary (implies details)
      *  * Addresses
      * * SummaryOnly (omit lines and details - reduces API response size)
      * * LinesOnly (omit details - reduces API response size)
+     *             
+     *  If you omit the `$include` parameter, the API will assume you want `Summary,Addresses`.
      * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
+     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
      * 
      * @param include Specifies objects to include in the response after transaction is created
      * @param model information about the transaction and lines to be removed
@@ -15418,15 +18398,15 @@ This gets the basic information from the filings and doesn't include anything ex
      * Retrieve a single transaction by code
      * 
      * Get the current transaction identified by this company code, transaction code, and document type.
-     * 
-     * A transaction is uniquely identified by `companyCode`, `code` (often called Transaction Code), and `documentType`.  
-     * 
+     *             
+     * A transaction is uniquely identified by `companyCode`, `code` (often called Transaction Code), and `documentType`.
+     *             
      * For compatibility purposes, when this API finds multiple transactions with the same transaction code, and if you have not specified
-     * the `type` parameter to this API, it will default to selecting the `SalesInvoices` transaction. To change this behavior, use the 
+     * the `type` parameter to this API, it will default to selecting the `SalesInvoices` transaction. To change this behavior, use the
      * optional `documentType` parameter to specify the specific document type you wish to find.
-     * 
+     *             
      * If this transaction was adjusted, the return value of this API will be the current transaction with this code.
-     * 
+     *             
      * You may specify one or more of the following values in the `$include` parameter to fetch additional nested data, using commas to separate multiple values:
      *             
      * * Lines
@@ -15434,6 +18414,12 @@ This gets the basic information from the filings and doesn't include anything ex
      * * Summary (implies details)
      * * Addresses
      * * SummaryOnly (omit lines and details - reduces API response size)
+     * * LinesOnly (omit details - reduces API response size)
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, ProStoresOperator, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
+     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
      * 
      * @param companyCode The company code of the company that recorded this transaction
      * @param transactionCode The transaction code to retrieve
@@ -15454,15 +18440,15 @@ This gets the basic information from the filings and doesn't include anything ex
      * Retrieve a single transaction by code
      * 
      * Get the current transaction identified by this company code, transaction code, and document type.
-     * 
-     * A transaction is uniquely identified by `companyCode`, `code` (often called Transaction Code), and `documentType`.  
-     * 
+     *             
+     * A transaction is uniquely identified by `companyCode`, `code` (often called Transaction Code), and `documentType`.
+     *             
      * For compatibility purposes, when this API finds multiple transactions with the same transaction code, and if you have not specified
-     * the `type` parameter to this API, it will default to selecting the `SalesInvoices` transaction. To change this behavior, use the 
+     * the `type` parameter to this API, it will default to selecting the `SalesInvoices` transaction. To change this behavior, use the
      * optional `documentType` parameter to specify the specific document type you wish to find.
-     * 
+     *             
      * If this transaction was adjusted, the return value of this API will be the current transaction with this code.
-     * 
+     *             
      * You may specify one or more of the following values in the `$include` parameter to fetch additional nested data, using commas to separate multiple values:
      *             
      * * Lines
@@ -15470,6 +18456,12 @@ This gets the basic information from the filings and doesn't include anything ex
      * * Summary (implies details)
      * * Addresses
      * * SummaryOnly (omit lines and details - reduces API response size)
+     * * LinesOnly (omit details - reduces API response size)
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, ProStoresOperator, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
+     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
      * 
      * @param companyCode The company code of the company that recorded this transaction
      * @param transactionCode The transaction code to retrieve
@@ -15489,6 +18481,13 @@ This gets the basic information from the filings and doesn't include anything ex
     /**
      * Retrieve a single transaction by code
      * 
+     * DEPRECATED: Please use the `GetTransactionByCode` API instead.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, ProStoresOperator, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
+     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
+     * 
      * @param companyCode The company code of the company that recorded this transaction
      * @param transactionCode The transaction code to retrieve
      * @param documentType The transaction type to retrieve (See DocumentType::* for a list of allowable values)
@@ -15506,6 +18505,13 @@ This gets the basic information from the filings and doesn't include anything ex
 
     /**
      * Retrieve a single transaction by code
+     * 
+     * DEPRECATED: Please use the `GetTransactionByCode` API instead.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, ProStoresOperator, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
+     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
      * 
      * @param companyCode The company code of the company that recorded this transaction
      * @param transactionCode The transaction code to retrieve
@@ -15526,13 +18532,13 @@ This gets the basic information from the filings and doesn't include anything ex
      * Retrieve a single transaction by ID
      * 
      * Get the unique transaction identified by this URL.
-     * 
+     *             
      * This endpoint retrieves the exact transaction identified by this ID number even if that transaction was later adjusted
      * by using the `AdjustTransaction` endpoint.
-     * 
+     *             
      * A transaction represents a unique potentially taxable action that your company has recorded, and transactions include actions like
      * sales, purchases, inventory transfer, and returns (also called refunds).
-     * 
+     *             
      * You may specify one or more of the following values in the `$include` parameter to fetch additional nested data, using commas to separate multiple values:
      *             
      * * Lines
@@ -15541,6 +18547,12 @@ This gets the basic information from the filings and doesn't include anything ex
      * * Addresses
      * * SummaryOnly (omit lines and details - reduces API response size)
      * * LinesOnly (omit details - reduces API response size)
+     * * TaxDetailsByTaxType - Includes the aggregated tax, exempt tax, taxable and non-taxable for each tax type returned in the transaction summary.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, ProStoresOperator, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
+     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
      * 
      * @param id The unique ID number of the transaction to retrieve
      * @param include Specifies objects to include in this fetch call
@@ -15557,13 +18569,13 @@ This gets the basic information from the filings and doesn't include anything ex
      * Retrieve a single transaction by ID
      * 
      * Get the unique transaction identified by this URL.
-     * 
+     *             
      * This endpoint retrieves the exact transaction identified by this ID number even if that transaction was later adjusted
      * by using the `AdjustTransaction` endpoint.
-     * 
+     *             
      * A transaction represents a unique potentially taxable action that your company has recorded, and transactions include actions like
      * sales, purchases, inventory transfer, and returns (also called refunds).
-     * 
+     *             
      * You may specify one or more of the following values in the `$include` parameter to fetch additional nested data, using commas to separate multiple values:
      *             
      * * Lines
@@ -15572,6 +18584,12 @@ This gets the basic information from the filings and doesn't include anything ex
      * * Addresses
      * * SummaryOnly (omit lines and details - reduces API response size)
      * * LinesOnly (omit details - reduces API response size)
+     * * TaxDetailsByTaxType - Includes the aggregated tax, exempt tax, taxable and non-taxable for each tax type returned in the transaction summary.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, ProStoresOperator, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
+     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
      * 
      * @param id The unique ID number of the transaction to retrieve
      * @param include Specifies objects to include in this fetch call
@@ -15588,18 +18606,18 @@ This gets the basic information from the filings and doesn't include anything ex
      * Retrieve all transactions
      * 
      * List all transactions attached to this company.
-     * 
+     *             
      * This endpoint is limited to returning 1,000 transactions at a time maximum.
-     * 
+     *             
      * When listing transactions, you must specify a `date` range filter.  If you do not specify a `$filter` that includes a `date` field
      * criteria, the query will default to looking at only those transactions with `date` in the past 30 days.
-     * 
+     *             
      * A transaction represents a unique potentially taxable action that your company has recorded, and transactions include actions like
      * sales, purchases, inventory transfer, and returns (also called refunds).
-     * 
+     *             
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * Paginate your results using the `$top`, `$skip`, and `$orderby` parameters.
-     * 
+     *             
      * You may specify one or more of the following values in the `$include` parameter to fetch additional nested data, using commas to separate multiple values:
      *             
      * * Lines
@@ -15607,6 +18625,12 @@ This gets the basic information from the filings and doesn't include anything ex
      * * Summary (implies details)
      * * Addresses
      * * SummaryOnly (omit lines and details - reduces API response size)
+     * * LinesOnly (omit details - reduces API response size)
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, ProStoresOperator, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
+     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
      * 
      * @param companyCode The company code of the company that recorded this transaction
      * @param dataSourceId Optionally filter transactions to those from a specific data source.
@@ -15633,18 +18657,18 @@ This gets the basic information from the filings and doesn't include anything ex
      * Retrieve all transactions
      * 
      * List all transactions attached to this company.
-     * 
+     *             
      * This endpoint is limited to returning 1,000 transactions at a time maximum.
-     * 
+     *             
      * When listing transactions, you must specify a `date` range filter.  If you do not specify a `$filter` that includes a `date` field
      * criteria, the query will default to looking at only those transactions with `date` in the past 30 days.
-     * 
+     *             
      * A transaction represents a unique potentially taxable action that your company has recorded, and transactions include actions like
      * sales, purchases, inventory transfer, and returns (also called refunds).
-     * 
+     *             
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * Paginate your results using the `$top`, `$skip`, and `$orderby` parameters.
-     * 
+     *             
      * You may specify one or more of the following values in the `$include` parameter to fetch additional nested data, using commas to separate multiple values:
      *             
      * * Lines
@@ -15652,6 +18676,12 @@ This gets the basic information from the filings and doesn't include anything ex
      * * Summary (implies details)
      * * Addresses
      * * SummaryOnly (omit lines and details - reduces API response size)
+     * * LinesOnly (omit details - reduces API response size)
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, ProStoresOperator, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
+     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
      * 
      * @param companyCode The company code of the company that recorded this transaction
      * @param dataSourceId Optionally filter transactions to those from a specific data source.
@@ -15677,82 +18707,17 @@ This gets the basic information from the filings and doesn't include anything ex
     /**
      * Lock a single transaction
      * 
-     * Lock a transaction uniquely identified by this URL. 
-     * 
+     * Lock a transaction uniquely identified by this URL.
+     *             
      * This API is mainly used for connector developer to simulate what happens when Returns product locks a document.
      * After this API call succeeds, the document will be locked and can't be voided or adjusted.
-     * 
+     *             
      * This API is only available to customers in Sandbox with AvaTaxPro subscription.  On production servers, this API is available by invitation only.
-     * 
+     *             
      * If you have more than one document with the same `code`, specify the `documentType` parameter to choose between them.
-     * 
+     *             
      * A transaction represents a unique potentially taxable action that your company has recorded, and transactions include actions like
-     * 
-     * @param companyCode The company code of the company that recorded this transaction
-     * @param transactionCode The transaction code to lock
-     * @param documentType (Optional): The document type of the transaction to lock. If not provided, the default is SalesInvoice. (See DocumentType::* for a list of allowable values)
-     * @param model The lock request you wish to execute
-     * @return TransactionModel
-     */
-    public TransactionModel lockTransaction(String companyCode, String transactionCode, DocumentType documentType, LockTransactionModel model) throws Exception {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyCode}/transactions/{transactionCode}/lock");
-        path.applyField("companyCode", companyCode);
-        path.applyField("transactionCode", transactionCode);
-        path.addQuery("documentType", documentType);
-        return ((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<TransactionModel>(){})).call();
-    }
-
-    /**
-     * Lock a single transaction
-     * 
-     * Lock a transaction uniquely identified by this URL. 
-     * 
-     * This API is mainly used for connector developer to simulate what happens when Returns product locks a document.
-     * After this API call succeeds, the document will be locked and can't be voided or adjusted.
-     * 
-     * This API is only available to customers in Sandbox with AvaTaxPro subscription.  On production servers, this API is available by invitation only.
-     * 
-     * If you have more than one document with the same `code`, specify the `documentType` parameter to choose between them.
-     * 
-     * A transaction represents a unique potentially taxable action that your company has recorded, and transactions include actions like
-     * 
-     * @param companyCode The company code of the company that recorded this transaction
-     * @param transactionCode The transaction code to lock
-     * @param documentType (Optional): The document type of the transaction to lock. If not provided, the default is SalesInvoice. (See DocumentType::* for a list of allowable values)
-     * @param model The lock request you wish to execute
-     * @return TransactionModel
-     */
-    public Future<TransactionModel> lockTransactionAsync(String companyCode, String transactionCode, DocumentType documentType, LockTransactionModel model) {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyCode}/transactions/{transactionCode}/lock");
-        path.applyField("companyCode", companyCode);
-        path.applyField("transactionCode", transactionCode);
-        path.addQuery("documentType", documentType);
-        return this.threadPool.submit((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<TransactionModel>(){}));
-    }
-
-    /**
-     * Create a refund for a transaction
-     * 
-     * Create a refund for a transaction.
-     * 
-     * The `RefundTransaction` API allows you to quickly and easily create a `ReturnInvoice` representing a refund
-     * for a previously created `SalesInvoice` transaction.  You can choose to create a full or partial refund, and
-     * specify individual line items from the original sale for refund.
-     * 
-     * The `RefundTransaction` API ensures that the tax amount you refund to the customer exactly matches the tax that
-     * was calculated during the original transaction, regardless of any changes to your company's configuration, rules,
-     * nexus, or any other setting.
-     * 
-     * This API is intended to be a shortcut to allow you to quickly and accurately generate a refund for the following 
-     * common refund scenarios:
-     * 
-     * * A full refund of a previous sale
-     * * Refunding the tax that was charged on a previous sale, when the customer provides an exemption certificate after the purchase
-     * * Refunding one or more items (lines) from a previous sale
-     * * Granting a customer a percentage refund of a previous sale
-     * 
-     * For more complex scenarios than the ones above, please use `CreateTransaction` with document type `ReturnInvoice` to
-     * create a custom refund transaction.
+     * sales, purchases, inventory transfer, and returns (also called refunds).
      * 
      * You may specify one or more of the following values in the `$include` parameter to fetch additional nested data, using commas to separate multiple values:
      *             
@@ -15762,7 +18727,114 @@ This gets the basic information from the filings and doesn't include anything ex
      * * Addresses
      * * SummaryOnly (omit lines and details - reduces API response size)
      * * LinesOnly (omit details - reduces API response size)
+     * * TaxDetailsByTaxType - Includes the aggregated tax, exempt tax, taxable and non-taxable for each tax type returned in the transaction summary.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.
+     * 
+     * @param companyCode The company code of the company that recorded this transaction
+     * @param transactionCode The transaction code to lock
+     * @param documentType (Optional): The document type of the transaction to lock. If not provided, the default is SalesInvoice. (See DocumentType::* for a list of allowable values)
+     * @param include Specifies objects to include in this fetch call
+     * @param model The lock request you wish to execute
+     * @return TransactionModel
+     */
+    public TransactionModel lockTransaction(String companyCode, String transactionCode, DocumentType documentType, String include, LockTransactionModel model) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyCode}/transactions/{transactionCode}/lock");
+        path.applyField("companyCode", companyCode);
+        path.applyField("transactionCode", transactionCode);
+        path.addQuery("documentType", documentType);
+        path.addQuery("$include", include);
+        return ((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<TransactionModel>(){})).call();
+    }
+
+    /**
+     * Lock a single transaction
+     * 
+     * Lock a transaction uniquely identified by this URL.
      *             
+     * This API is mainly used for connector developer to simulate what happens when Returns product locks a document.
+     * After this API call succeeds, the document will be locked and can't be voided or adjusted.
+     *             
+     * This API is only available to customers in Sandbox with AvaTaxPro subscription.  On production servers, this API is available by invitation only.
+     *             
+     * If you have more than one document with the same `code`, specify the `documentType` parameter to choose between them.
+     *             
+     * A transaction represents a unique potentially taxable action that your company has recorded, and transactions include actions like
+     * sales, purchases, inventory transfer, and returns (also called refunds).
+     * 
+     * You may specify one or more of the following values in the `$include` parameter to fetch additional nested data, using commas to separate multiple values:
+     *             
+     * * Lines
+     * * Details (implies lines)
+     * * Summary (implies details)
+     * * Addresses
+     * * SummaryOnly (omit lines and details - reduces API response size)
+     * * LinesOnly (omit details - reduces API response size)
+     * * TaxDetailsByTaxType - Includes the aggregated tax, exempt tax, taxable and non-taxable for each tax type returned in the transaction summary.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.
+     * 
+     * @param companyCode The company code of the company that recorded this transaction
+     * @param transactionCode The transaction code to lock
+     * @param documentType (Optional): The document type of the transaction to lock. If not provided, the default is SalesInvoice. (See DocumentType::* for a list of allowable values)
+     * @param include Specifies objects to include in this fetch call
+     * @param model The lock request you wish to execute
+     * @return TransactionModel
+     */
+    public Future<TransactionModel> lockTransactionAsync(String companyCode, String transactionCode, DocumentType documentType, String include, LockTransactionModel model) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyCode}/transactions/{transactionCode}/lock");
+        path.applyField("companyCode", companyCode);
+        path.applyField("transactionCode", transactionCode);
+        path.addQuery("documentType", documentType);
+        path.addQuery("$include", include);
+        return this.threadPool.submit((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<TransactionModel>(){}));
+    }
+
+    /**
+     * Create a refund for a transaction
+     * 
+     * Create a refund for a transaction.
+     *             
+     * The `RefundTransaction` API allows you to quickly and easily create a `ReturnInvoice` representing a refund
+     * for a previously created `SalesInvoice` transaction.  You can choose to create a full or partial refund, and
+     * specify individual line items from the original sale for refund.
+     *             
+     * The `RefundTransaction` API ensures that the tax amount you refund to the customer exactly matches the tax that
+     * was calculated during the original transaction, regardless of any changes to your company's configuration, rules,
+     * nexus, or any other setting.
+     *             
+     * This API is intended to be a shortcut to allow you to quickly and accurately generate a refund for the following
+     * common refund scenarios:
+     *             
+     * * A full refund of a previous sale
+     * * Refunding the tax that was charged on a previous sale, when the customer provides an exemption certificate after the purchase
+     * * Refunding one or more items (lines) from a previous sale
+     * * Granting a customer a percentage refund of a previous sale
+     *             
+     * For more complex scenarios than the ones above, please use `CreateTransaction` with document type `ReturnInvoice` to
+     * create a custom refund transaction.
+     *             
+     * You may specify one or more of the following values in the `$include` parameter to fetch additional nested data, using commas to separate multiple values:
+     *             
+     * * Lines
+     * * Details (implies lines)
+     * * Summary (implies details)
+     * * Addresses
+     * * SummaryOnly (omit lines and details - reduces API response size)
+     * * LinesOnly (omit details - reduces API response size)
+     * * TaxDetailsByTaxType - Includes the aggregated tax, exempt tax, taxable and non-taxable for each tax type returned in the transaction summary.
+     * If you omit the `$include` parameter, the API will assume you want `Summary,Addresses`.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
+     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
      * 
      * @param companyCode The code of the company that made the original sale
      * @param transactionCode The transaction code of the original sale
@@ -15786,26 +18858,26 @@ This gets the basic information from the filings and doesn't include anything ex
      * Create a refund for a transaction
      * 
      * Create a refund for a transaction.
-     * 
+     *             
      * The `RefundTransaction` API allows you to quickly and easily create a `ReturnInvoice` representing a refund
      * for a previously created `SalesInvoice` transaction.  You can choose to create a full or partial refund, and
      * specify individual line items from the original sale for refund.
-     * 
+     *             
      * The `RefundTransaction` API ensures that the tax amount you refund to the customer exactly matches the tax that
      * was calculated during the original transaction, regardless of any changes to your company's configuration, rules,
      * nexus, or any other setting.
-     * 
-     * This API is intended to be a shortcut to allow you to quickly and accurately generate a refund for the following 
+     *             
+     * This API is intended to be a shortcut to allow you to quickly and accurately generate a refund for the following
      * common refund scenarios:
-     * 
+     *             
      * * A full refund of a previous sale
      * * Refunding the tax that was charged on a previous sale, when the customer provides an exemption certificate after the purchase
      * * Refunding one or more items (lines) from a previous sale
      * * Granting a customer a percentage refund of a previous sale
-     * 
+     *             
      * For more complex scenarios than the ones above, please use `CreateTransaction` with document type `ReturnInvoice` to
      * create a custom refund transaction.
-     * 
+     *             
      * You may specify one or more of the following values in the `$include` parameter to fetch additional nested data, using commas to separate multiple values:
      *             
      * * Lines
@@ -15814,7 +18886,13 @@ This gets the basic information from the filings and doesn't include anything ex
      * * Addresses
      * * SummaryOnly (omit lines and details - reduces API response size)
      * * LinesOnly (omit details - reduces API response size)
-     *             
+     * * TaxDetailsByTaxType - Includes the aggregated tax, exempt tax, taxable and non-taxable for each tax type returned in the transaction summary.
+     * If you omit the `$include` parameter, the API will assume you want `Summary,Addresses`.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
+     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
      * 
      * @param companyCode The code of the company that made the original sale
      * @param transactionCode The transaction code of the original sale
@@ -15838,26 +18916,43 @@ This gets the basic information from the filings and doesn't include anything ex
      * Perform multiple actions on a transaction
      * 
      * Performs one or more actions against the current transaction uniquely identified by this URL.
-     * 
+     *             
      * The `SettleTransaction` API call can perform the work of `ChangeCode`, `VerifyTransaction`, and `CommitTransaction`.
-     * 
+     *             
      * A transaction represents a unique potentially taxable action that your company has recorded, and transactions include actions like
      * sales, purchases, inventory transfer, and returns (also called refunds).
-     * 
+     *             
      * If you have more than one document with the same `code`, specify the `documentType` parameter to choose between them.
+     *             
+     * This API is available for users who want to execute more than one action at a time.
      * 
+     * You may specify one or more of the following values in the `$include` parameter to fetch additional nested data, using commas to separate multiple values:
+     *             
+     * * Lines
+     * * Details (implies lines)
+     * * Summary (implies details)
+     * * Addresses
+     * * SummaryOnly (omit lines and details - reduces API response size)
+     * * LinesOnly (omit details - reduces API response size)
+     * * TaxDetailsByTaxType - Includes the aggregated tax, exempt tax, taxable and non-taxable for each tax type returned in the transaction summary.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, ProStoresOperator, SSTAdmin, TechnicalSupportAdmin.
      * 
      * @param companyCode The company code of the company that recorded this transaction
      * @param transactionCode The transaction code to settle
      * @param documentType (Optional): The document type of the transaction to settle. If not provided, the default is SalesInvoice. (See DocumentType::* for a list of allowable values)
+     * @param include Specifies objects to include in this fetch call
      * @param model The data from an external system to reconcile against AvaTax
      * @return TransactionModel
      */
-    public TransactionModel settleTransaction(String companyCode, String transactionCode, DocumentType documentType, SettleTransactionModel model) throws Exception {
+    public TransactionModel settleTransaction(String companyCode, String transactionCode, DocumentType documentType, String include, SettleTransactionModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyCode}/transactions/{transactionCode}/settle");
         path.applyField("companyCode", companyCode);
         path.applyField("transactionCode", transactionCode);
         path.addQuery("documentType", documentType);
+        path.addQuery("$include", include);
         return ((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<TransactionModel>(){})).call();
     }
 
@@ -15865,26 +18960,43 @@ This gets the basic information from the filings and doesn't include anything ex
      * Perform multiple actions on a transaction
      * 
      * Performs one or more actions against the current transaction uniquely identified by this URL.
-     * 
+     *             
      * The `SettleTransaction` API call can perform the work of `ChangeCode`, `VerifyTransaction`, and `CommitTransaction`.
-     * 
+     *             
      * A transaction represents a unique potentially taxable action that your company has recorded, and transactions include actions like
      * sales, purchases, inventory transfer, and returns (also called refunds).
-     * 
+     *             
      * If you have more than one document with the same `code`, specify the `documentType` parameter to choose between them.
+     *             
+     * This API is available for users who want to execute more than one action at a time.
      * 
+     * You may specify one or more of the following values in the `$include` parameter to fetch additional nested data, using commas to separate multiple values:
+     *             
+     * * Lines
+     * * Details (implies lines)
+     * * Summary (implies details)
+     * * Addresses
+     * * SummaryOnly (omit lines and details - reduces API response size)
+     * * LinesOnly (omit details - reduces API response size)
+     * * TaxDetailsByTaxType - Includes the aggregated tax, exempt tax, taxable and non-taxable for each tax type returned in the transaction summary.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, ProStoresOperator, SSTAdmin, TechnicalSupportAdmin.
      * 
      * @param companyCode The company code of the company that recorded this transaction
      * @param transactionCode The transaction code to settle
      * @param documentType (Optional): The document type of the transaction to settle. If not provided, the default is SalesInvoice. (See DocumentType::* for a list of allowable values)
+     * @param include Specifies objects to include in this fetch call
      * @param model The data from an external system to reconcile against AvaTax
      * @return TransactionModel
      */
-    public Future<TransactionModel> settleTransactionAsync(String companyCode, String transactionCode, DocumentType documentType, SettleTransactionModel model) {
+    public Future<TransactionModel> settleTransactionAsync(String companyCode, String transactionCode, DocumentType documentType, String include, SettleTransactionModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyCode}/transactions/{transactionCode}/settle");
         path.applyField("companyCode", companyCode);
         path.applyField("transactionCode", transactionCode);
         path.addQuery("documentType", documentType);
+        path.addQuery("$include", include);
         return this.threadPool.submit((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<TransactionModel>(){}));
     }
 
@@ -15892,19 +19004,37 @@ This gets the basic information from the filings and doesn't include anything ex
      * Uncommit a transaction for reporting
      * 
      * Adjusts a transaction by changing it to an uncommitted status.
+     *             
+     * Transactions that have been previously reported to a tax authority by Avalara Managed Returns are considered `locked` and are
+     * no longer available to be uncommitted.
      * 
-     * Transactions that have been previously reported to a tax authority by Avalara Managed Returns are considered `locked` and are 
+     * You may specify one or more of the following values in the `$include` parameter to fetch additional nested data, using commas to separate multiple values:
+     *             
+     * * Lines
+     * * Details (implies lines)
+     * * Summary (implies details)
+     * * Addresses
+     * * SummaryOnly (omit lines and details - reduces API response size)
+     * * LinesOnly (omit details - reduces API response size)
+     * * TaxDetailsByTaxType - Includes the aggregated tax, exempt tax, taxable and non-taxable for each tax type returned in the transaction summary.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
+     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
      * 
      * @param companyCode The company code of the company that recorded this transaction
      * @param transactionCode The transaction code to commit
      * @param documentType (Optional): The document type of the transaction to commit. If not provided, the default is SalesInvoice. (See DocumentType::* for a list of allowable values)
+     * @param include Specifies objects to include in this fetch call
      * @return TransactionModel
      */
-    public TransactionModel uncommitTransaction(String companyCode, String transactionCode, DocumentType documentType) throws Exception {
+    public TransactionModel uncommitTransaction(String companyCode, String transactionCode, DocumentType documentType, String include) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyCode}/transactions/{transactionCode}/uncommit");
         path.applyField("companyCode", companyCode);
         path.applyField("transactionCode", transactionCode);
         path.addQuery("documentType", documentType);
+        path.addQuery("$include", include);
         return ((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, null, new TypeToken<TransactionModel>(){})).call();
     }
 
@@ -15912,19 +19042,37 @@ This gets the basic information from the filings and doesn't include anything ex
      * Uncommit a transaction for reporting
      * 
      * Adjusts a transaction by changing it to an uncommitted status.
+     *             
+     * Transactions that have been previously reported to a tax authority by Avalara Managed Returns are considered `locked` and are
+     * no longer available to be uncommitted.
      * 
-     * Transactions that have been previously reported to a tax authority by Avalara Managed Returns are considered `locked` and are 
+     * You may specify one or more of the following values in the `$include` parameter to fetch additional nested data, using commas to separate multiple values:
+     *             
+     * * Lines
+     * * Details (implies lines)
+     * * Summary (implies details)
+     * * Addresses
+     * * SummaryOnly (omit lines and details - reduces API response size)
+     * * LinesOnly (omit details - reduces API response size)
+     * * TaxDetailsByTaxType - Includes the aggregated tax, exempt tax, taxable and non-taxable for each tax type returned in the transaction summary.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
+     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
      * 
      * @param companyCode The company code of the company that recorded this transaction
      * @param transactionCode The transaction code to commit
      * @param documentType (Optional): The document type of the transaction to commit. If not provided, the default is SalesInvoice. (See DocumentType::* for a list of allowable values)
+     * @param include Specifies objects to include in this fetch call
      * @return TransactionModel
      */
-    public Future<TransactionModel> uncommitTransactionAsync(String companyCode, String transactionCode, DocumentType documentType) {
+    public Future<TransactionModel> uncommitTransactionAsync(String companyCode, String transactionCode, DocumentType documentType, String include) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyCode}/transactions/{transactionCode}/uncommit");
         path.applyField("companyCode", companyCode);
         path.applyField("transactionCode", transactionCode);
         path.addQuery("documentType", documentType);
+        path.addQuery("$include", include);
         return this.threadPool.submit((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, null, new TypeToken<TransactionModel>(){}));
     }
 
@@ -15932,24 +19080,42 @@ This gets the basic information from the filings and doesn't include anything ex
      * Verify a transaction
      * 
      * Verifies that the transaction uniquely identified by this URL matches certain expected values.
-     * 
+     *             
      * If the transaction does not match these expected values, this API will return an error code indicating which value did not match.
-     * 
+     *             
      * If you have more than one document with the same `code`, specify the `documentType` parameter to choose between them.
-     * 
+     *             
      * A transaction represents a unique potentially taxable action that your company has recorded, and transactions include actions like
+     * sales, purchases, inventory transfer, and returns (also called refunds).
+     * 
+     * You may specify one or more of the following values in the `$include` parameter to fetch additional nested data, using commas to separate multiple values:
+     *             
+     * * Lines
+     * * Details (implies lines)
+     * * Summary (implies details)
+     * * Addresses
+     * * SummaryOnly (omit lines and details - reduces API response size)
+     * * LinesOnly (omit details - reduces API response size)
+     * * TaxDetailsByTaxType - Includes the aggregated tax, exempt tax, taxable and non-taxable for each tax type returned in the transaction summary.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, ProStoresOperator, SSTAdmin, TechnicalSupportAdmin.
+     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
      * 
      * @param companyCode The company code of the company that recorded this transaction
      * @param transactionCode The transaction code to settle
      * @param documentType (Optional): The document type of the transaction to verify. If not provided, the default is SalesInvoice. (See DocumentType::* for a list of allowable values)
+     * @param include Specifies objects to include in this fetch call
      * @param model The data from an external system to reconcile against AvaTax
      * @return TransactionModel
      */
-    public TransactionModel verifyTransaction(String companyCode, String transactionCode, DocumentType documentType, VerifyTransactionModel model) throws Exception {
+    public TransactionModel verifyTransaction(String companyCode, String transactionCode, DocumentType documentType, String include, VerifyTransactionModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyCode}/transactions/{transactionCode}/verify");
         path.applyField("companyCode", companyCode);
         path.applyField("transactionCode", transactionCode);
         path.addQuery("documentType", documentType);
+        path.addQuery("$include", include);
         return ((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<TransactionModel>(){})).call();
     }
 
@@ -15957,24 +19123,42 @@ This gets the basic information from the filings and doesn't include anything ex
      * Verify a transaction
      * 
      * Verifies that the transaction uniquely identified by this URL matches certain expected values.
-     * 
+     *             
      * If the transaction does not match these expected values, this API will return an error code indicating which value did not match.
-     * 
+     *             
      * If you have more than one document with the same `code`, specify the `documentType` parameter to choose between them.
-     * 
+     *             
      * A transaction represents a unique potentially taxable action that your company has recorded, and transactions include actions like
+     * sales, purchases, inventory transfer, and returns (also called refunds).
+     * 
+     * You may specify one or more of the following values in the `$include` parameter to fetch additional nested data, using commas to separate multiple values:
+     *             
+     * * Lines
+     * * Details (implies lines)
+     * * Summary (implies details)
+     * * Addresses
+     * * SummaryOnly (omit lines and details - reduces API response size)
+     * * LinesOnly (omit details - reduces API response size)
+     * * TaxDetailsByTaxType - Includes the aggregated tax, exempt tax, taxable and non-taxable for each tax type returned in the transaction summary.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, ProStoresOperator, SSTAdmin, TechnicalSupportAdmin.
+     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
      * 
      * @param companyCode The company code of the company that recorded this transaction
      * @param transactionCode The transaction code to settle
      * @param documentType (Optional): The document type of the transaction to verify. If not provided, the default is SalesInvoice. (See DocumentType::* for a list of allowable values)
+     * @param include Specifies objects to include in this fetch call
      * @param model The data from an external system to reconcile against AvaTax
      * @return TransactionModel
      */
-    public Future<TransactionModel> verifyTransactionAsync(String companyCode, String transactionCode, DocumentType documentType, VerifyTransactionModel model) {
+    public Future<TransactionModel> verifyTransactionAsync(String companyCode, String transactionCode, DocumentType documentType, String include, VerifyTransactionModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyCode}/transactions/{transactionCode}/verify");
         path.applyField("companyCode", companyCode);
         path.applyField("transactionCode", transactionCode);
         path.addQuery("documentType", documentType);
+        path.addQuery("$include", include);
         return this.threadPool.submit((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<TransactionModel>(){}));
     }
 
@@ -15982,26 +19166,44 @@ This gets the basic information from the filings and doesn't include anything ex
      * Void a transaction
      * 
      * Voids the current transaction uniquely identified by this URL.
-     * 
+     *             
      * A transaction represents a unique potentially taxable action that your company has recorded, and transactions include actions like
      * sales, purchases, inventory transfer, and returns (also called refunds).
-     * 
+     *             
      * When you void a transaction, that transaction's status is recorded as `DocVoided`.
-     * 
+     *             
      * If you have more than one document with the same `code`, specify the `documentType` parameter to choose between them.
+     *             
+     * Transactions that have been previously reported to a tax authority by Avalara Managed Returns are no longer available to be voided.
      * 
+     * You may specify one or more of the following values in the `$include` parameter to fetch additional nested data, using commas to separate multiple values:
+     *             
+     * * Lines
+     * * Details (implies lines)
+     * * Summary (implies details)
+     * * Addresses
+     * * SummaryOnly (omit lines and details - reduces API response size)
+     * * LinesOnly (omit details - reduces API response size)
+     * * TaxDetailsByTaxType - Includes the aggregated tax, exempt tax, taxable and non-taxable for each tax type returned in the transaction summary.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, CompanyAdmin, CSPTester, ProStoresOperator, SSTAdmin, TechnicalSupportAdmin.
+     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
      * 
      * @param companyCode The company code of the company that recorded this transaction
      * @param transactionCode The transaction code to void
      * @param documentType (Optional): The document type of the transaction to void. If not provided, the default is SalesInvoice. (See DocumentType::* for a list of allowable values)
+     * @param include Specifies objects to include in this fetch call
      * @param model The void request you wish to execute. To void a transaction the code must be set to 'DocVoided'
      * @return TransactionModel
      */
-    public TransactionModel voidTransaction(String companyCode, String transactionCode, DocumentType documentType, VoidTransactionModel model) throws Exception {
+    public TransactionModel voidTransaction(String companyCode, String transactionCode, DocumentType documentType, String include, VoidTransactionModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyCode}/transactions/{transactionCode}/void");
         path.applyField("companyCode", companyCode);
         path.applyField("transactionCode", transactionCode);
         path.addQuery("documentType", documentType);
+        path.addQuery("$include", include);
         return ((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<TransactionModel>(){})).call();
     }
 
@@ -16009,26 +19211,44 @@ This gets the basic information from the filings and doesn't include anything ex
      * Void a transaction
      * 
      * Voids the current transaction uniquely identified by this URL.
-     * 
+     *             
      * A transaction represents a unique potentially taxable action that your company has recorded, and transactions include actions like
      * sales, purchases, inventory transfer, and returns (also called refunds).
-     * 
+     *             
      * When you void a transaction, that transaction's status is recorded as `DocVoided`.
-     * 
+     *             
      * If you have more than one document with the same `code`, specify the `documentType` parameter to choose between them.
+     *             
+     * Transactions that have been previously reported to a tax authority by Avalara Managed Returns are no longer available to be voided.
      * 
+     * You may specify one or more of the following values in the `$include` parameter to fetch additional nested data, using commas to separate multiple values:
+     *             
+     * * Lines
+     * * Details (implies lines)
+     * * Summary (implies details)
+     * * Addresses
+     * * SummaryOnly (omit lines and details - reduces API response size)
+     * * LinesOnly (omit details - reduces API response size)
+     * * TaxDetailsByTaxType - Includes the aggregated tax, exempt tax, taxable and non-taxable for each tax type returned in the transaction summary.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, CompanyAdmin, CSPTester, ProStoresOperator, SSTAdmin, TechnicalSupportAdmin.
+     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
      * 
      * @param companyCode The company code of the company that recorded this transaction
      * @param transactionCode The transaction code to void
      * @param documentType (Optional): The document type of the transaction to void. If not provided, the default is SalesInvoice. (See DocumentType::* for a list of allowable values)
+     * @param include Specifies objects to include in this fetch call
      * @param model The void request you wish to execute. To void a transaction the code must be set to 'DocVoided'
      * @return TransactionModel
      */
-    public Future<TransactionModel> voidTransactionAsync(String companyCode, String transactionCode, DocumentType documentType, VoidTransactionModel model) {
+    public Future<TransactionModel> voidTransactionAsync(String companyCode, String transactionCode, DocumentType documentType, String include, VoidTransactionModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyCode}/transactions/{transactionCode}/void");
         path.applyField("companyCode", companyCode);
         path.applyField("transactionCode", transactionCode);
         path.addQuery("documentType", documentType);
+        path.addQuery("$include", include);
         return this.threadPool.submit((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<TransactionModel>(){}));
     }
 
@@ -16036,6 +19256,12 @@ This gets the basic information from the filings and doesn't include anything ex
      * Create a new UPC
      * 
      * Create one or more new UPC objects attached to this company.
+     * A UPC represents a single UPC code in your catalog and matches this product to the tax code identified by this UPC.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin.
+     * * This API depends on the following active services<br />*Required* (all):  AvaUpc.
      * 
      * @param companyId The ID of the company that owns this UPC.
      * @param model The UPC you wish to create.
@@ -16051,6 +19277,12 @@ This gets the basic information from the filings and doesn't include anything ex
      * Create a new UPC
      * 
      * Create one or more new UPC objects attached to this company.
+     * A UPC represents a single UPC code in your catalog and matches this product to the tax code identified by this UPC.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin.
+     * * This API depends on the following active services<br />*Required* (all):  AvaUpc.
      * 
      * @param companyId The ID of the company that owns this UPC.
      * @param model The UPC you wish to create.
@@ -16065,6 +19297,13 @@ This gets the basic information from the filings and doesn't include anything ex
     /**
      * Delete a single UPC
      * 
+     * Marks the UPC object identified by this URL as deleted.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin.
+     * * This API depends on the following active services<br />*Required* (all):  AvaUpc.
+     * 
      * @param companyId The ID of the company that owns this UPC.
      * @param id The ID of the UPC you wish to delete.
      * @return ArrayList<ErrorDetail>
@@ -16078,6 +19317,13 @@ This gets the basic information from the filings and doesn't include anything ex
 
     /**
      * Delete a single UPC
+     * 
+     * Marks the UPC object identified by this URL as deleted.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin.
+     * * This API depends on the following active services<br />*Required* (all):  AvaUpc.
      * 
      * @param companyId The ID of the company that owns this UPC.
      * @param id The ID of the UPC you wish to delete.
@@ -16094,6 +19340,12 @@ This gets the basic information from the filings and doesn't include anything ex
      * Retrieve a single UPC
      * 
      * Get the UPC object identified by this URL.
+     * A UPC represents a single UPC code in your catalog and matches this product to the tax code identified by this UPC.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
+     * * This API depends on the following active services<br />*Required* (all):  AvaUpc.
      * 
      * @param companyId The ID of the company that owns this UPC
      * @param id The primary key of this UPC
@@ -16110,6 +19362,12 @@ This gets the basic information from the filings and doesn't include anything ex
      * Retrieve a single UPC
      * 
      * Get the UPC object identified by this URL.
+     * A UPC represents a single UPC code in your catalog and matches this product to the tax code identified by this UPC.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
+     * * This API depends on the following active services<br />*Required* (all):  AvaUpc.
      * 
      * @param companyId The ID of the company that owns this UPC
      * @param id The primary key of this UPC
@@ -16127,8 +19385,14 @@ This gets the basic information from the filings and doesn't include anything ex
      * 
      * List all UPC objects attached to this company.
      * A UPC represents a single UPC code in your catalog and matches this product to the tax code identified by this UPC.
-     * 
+     *             
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * Paginate your results using the `$top`, `$skip`, and `$orderby` parameters.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
+     * * This API depends on the following active services<br />*Required* (all):  AvaUpc.
      * 
      * @param companyId The ID of the company that owns these UPCs
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).
@@ -16154,8 +19418,14 @@ This gets the basic information from the filings and doesn't include anything ex
      * 
      * List all UPC objects attached to this company.
      * A UPC represents a single UPC code in your catalog and matches this product to the tax code identified by this UPC.
-     * 
+     *             
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * Paginate your results using the `$top`, `$skip`, and `$orderby` parameters.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
+     * * This API depends on the following active services<br />*Required* (all):  AvaUpc.
      * 
      * @param companyId The ID of the company that owns these UPCs
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).
@@ -16181,8 +19451,14 @@ This gets the basic information from the filings and doesn't include anything ex
      * 
      * Get multiple UPC objects across all companies.
      * A UPC represents a single UPC code in your catalog and matches this product to the tax code identified by this UPC.
-     * 
+     *             
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * Paginate your results using the `$top`, `$skip`, and `$orderby` parameters.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
+     * * This API depends on the following active services<br />*Required* (all):  AvaUpc.
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).
      * @param include A comma separated list of additional data to retrieve.
@@ -16206,8 +19482,14 @@ This gets the basic information from the filings and doesn't include anything ex
      * 
      * Get multiple UPC objects across all companies.
      * A UPC represents a single UPC code in your catalog and matches this product to the tax code identified by this UPC.
-     * 
+     *             
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * Paginate your results using the `$top`, `$skip`, and `$orderby` parameters.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
+     * * This API depends on the following active services<br />*Required* (all):  AvaUpc.
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).
      * @param include A comma separated list of additional data to retrieve.
@@ -16231,7 +19513,13 @@ This gets the basic information from the filings and doesn't include anything ex
      * 
      * Replace the existing UPC object at this URL with an updated object.
      * A UPC represents a single UPC code in your catalog and matches this product to the tax code identified by this UPC.
-     * All data from the existing object will be replaced with data in the object you PUT.  
+     * All data from the existing object will be replaced with data in the object you PUT.
+     * To set a field's value to null, you may either set its value to null or omit that field from the object you post.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin.
+     * * This API depends on the following active services<br />*Required* (all):  AvaUpc.
      * 
      * @param companyId The ID of the company that this UPC belongs to.
      * @param id The ID of the UPC you wish to update
@@ -16250,7 +19538,13 @@ This gets the basic information from the filings and doesn't include anything ex
      * 
      * Replace the existing UPC object at this URL with an updated object.
      * A UPC represents a single UPC code in your catalog and matches this product to the tax code identified by this UPC.
-     * All data from the existing object will be replaced with data in the object you PUT.  
+     * All data from the existing object will be replaced with data in the object you PUT.
+     * To set a field's value to null, you may either set its value to null or omit that field from the object you post.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin.
+     * * This API depends on the following active services<br />*Required* (all):  AvaUpc.
      * 
      * @param companyId The ID of the company that this UPC belongs to.
      * @param id The ID of the UPC you wish to update
@@ -16273,6 +19567,11 @@ This gets the basic information from the filings and doesn't include anything ex
      * for accounts that do not use SAML integrated password validation.
      * 
      * This API only allows the currently authenticated user to change their password; it cannot be used to apply to a
+     * different user than the one authenticating the current API call.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
      * @param model An object containing your current password and the new password.
      * @return String
@@ -16291,6 +19590,11 @@ This gets the basic information from the filings and doesn't include anything ex
      * for accounts that do not use SAML integrated password validation.
      * 
      * This API only allows the currently authenticated user to change their password; it cannot be used to apply to a
+     * different user than the one authenticating the current API call.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
      * @param model An object containing your current password and the new password.
      * @return String
@@ -16304,13 +19608,18 @@ This gets the basic information from the filings and doesn't include anything ex
      * Create new users
      * 
      * Create one or more new user objects attached to this account.
-     * 
+     *             
      * A user represents one person with access privileges to make API calls and work with a specific account.
-     * 
+     *             
      * Users who are account administrators or company users are permitted to create user records to invite
      * additional team members to work with AvaTax.
-     * 
+     *             
      * A newly created user will receive an email inviting them to create their password.  This means that you
+     * must provide a valid email address for all user accounts created.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
      * @param accountId The unique ID number of the account where these users will be created.
      * @param model The user or array of users you wish to create.
@@ -16326,13 +19635,18 @@ This gets the basic information from the filings and doesn't include anything ex
      * Create new users
      * 
      * Create one or more new user objects attached to this account.
-     * 
+     *             
      * A user represents one person with access privileges to make API calls and work with a specific account.
-     * 
+     *             
      * Users who are account administrators or company users are permitted to create user records to invite
      * additional team members to work with AvaTax.
-     * 
+     *             
      * A newly created user will receive an email inviting them to create their password.  This means that you
+     * must provide a valid email address for all user accounts created.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
      * @param accountId The unique ID number of the account where these users will be created.
      * @param model The user or array of users you wish to create.
@@ -16348,10 +19662,15 @@ This gets the basic information from the filings and doesn't include anything ex
      * Delete a single user
      * 
      * Mark the user object identified by this URL as deleted.
-     * 
+     *             
      * This API is available for use by account and company administrators only.
-     * 
+     *             
      * Account and company administrators may only delete users within the appropriate organizations
+     * they control.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, CSPTester, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TreasuryAdmin.
      * 
      * @param id The ID of the user you wish to delete.
      * @param accountId The accountID of the user you wish to delete.
@@ -16368,10 +19687,15 @@ This gets the basic information from the filings and doesn't include anything ex
      * Delete a single user
      * 
      * Mark the user object identified by this URL as deleted.
-     * 
+     *             
      * This API is available for use by account and company administrators only.
-     * 
+     *             
      * Account and company administrators may only delete users within the appropriate organizations
+     * they control.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, CSPTester, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TreasuryAdmin.
      * 
      * @param id The ID of the user you wish to delete.
      * @param accountId The accountID of the user you wish to delete.
@@ -16388,6 +19712,15 @@ This gets the basic information from the filings and doesn't include anything ex
      * Retrieve a single user
      * 
      * Get the user object identified by this URL.
+     * A user represents one person with access privileges to make API calls and work with a specific account.
+     * 
+     *  You may specify one or more of the following values in the `$include` parameter to fetch additional nested data, using commas to separate multiple values:
+     *             
+     * * FetchDeleted
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
      * @param id The ID of the user to retrieve.
      * @param accountId The accountID of the user you wish to get.
@@ -16406,6 +19739,15 @@ This gets the basic information from the filings and doesn't include anything ex
      * Retrieve a single user
      * 
      * Get the user object identified by this URL.
+     * A user represents one person with access privileges to make API calls and work with a specific account.
+     * 
+     *  You may specify one or more of the following values in the `$include` parameter to fetch additional nested data, using commas to separate multiple values:
+     *             
+     * * FetchDeleted
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
      * @param id The ID of the user to retrieve.
      * @param accountId The accountID of the user you wish to get.
@@ -16424,19 +19766,24 @@ This gets the basic information from the filings and doesn't include anything ex
      * Retrieve all entitlements for a single user
      * 
      * Return a list of all entitlements to which this user has rights to access.
-     * Entitlements are a list of specified API calls the user is permitted to make, a list of identifier numbers for companies the user is 
+     * Entitlements are a list of specified API calls the user is permitted to make, a list of identifier numbers for companies the user is
      * allowed to use, and an access level identifier that indicates what types of access roles the user is allowed to use.
      * This API call is intended to provide a validation endpoint to determine, before making an API call, whether this call is likely to succeed.
      * For example, if user 567 within account 999 is attempting to create a new child company underneath company 12345, you could preview the user's
      * entitlements and predict whether this call would succeed:
      *             
-     * * Retrieve entitlements by calling '/api/v2/accounts/999/users/567/entitlements' .  If the call fails, you do not have accurate 
+     * * Retrieve entitlements by calling '/api/v2/accounts/999/users/567/entitlements' .  If the call fails, you do not have accurate
      *     credentials for this user.
      * * If the 'accessLevel' field within entitlements is 'None', the call will fail.
      * * If the 'accessLevel' field within entitlements is 'SingleCompany' or 'SingleAccount', the call will fail if the companies
      *     table does not contain the ID number 12345.
      * * If the 'permissions' array within entitlements does not contain 'AccountSvc.CompanySave', the call will fail.
      *             
+     * For a full list of defined permissions, please use '/api/v2/definitions/permissions' .
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
      * @param id The ID of the user to retrieve.
      * @param accountId The accountID of the user you wish to get.
@@ -16453,19 +19800,24 @@ This gets the basic information from the filings and doesn't include anything ex
      * Retrieve all entitlements for a single user
      * 
      * Return a list of all entitlements to which this user has rights to access.
-     * Entitlements are a list of specified API calls the user is permitted to make, a list of identifier numbers for companies the user is 
+     * Entitlements are a list of specified API calls the user is permitted to make, a list of identifier numbers for companies the user is
      * allowed to use, and an access level identifier that indicates what types of access roles the user is allowed to use.
      * This API call is intended to provide a validation endpoint to determine, before making an API call, whether this call is likely to succeed.
      * For example, if user 567 within account 999 is attempting to create a new child company underneath company 12345, you could preview the user's
      * entitlements and predict whether this call would succeed:
      *             
-     * * Retrieve entitlements by calling '/api/v2/accounts/999/users/567/entitlements' .  If the call fails, you do not have accurate 
+     * * Retrieve entitlements by calling '/api/v2/accounts/999/users/567/entitlements' .  If the call fails, you do not have accurate
      *     credentials for this user.
      * * If the 'accessLevel' field within entitlements is 'None', the call will fail.
      * * If the 'accessLevel' field within entitlements is 'SingleCompany' or 'SingleAccount', the call will fail if the companies
      *     table does not contain the ID number 12345.
      * * If the 'permissions' array within entitlements does not contain 'AccountSvc.CompanySave', the call will fail.
      *             
+     * For a full list of defined permissions, please use '/api/v2/definitions/permissions' .
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
      * @param id The ID of the user to retrieve.
      * @param accountId The accountID of the user you wish to get.
@@ -16483,11 +19835,20 @@ This gets the basic information from the filings and doesn't include anything ex
      * 
      * List all user objects attached to this account.
      * A user represents one person with access privileges to make API calls and work with a specific account.
-     * 
+     *             
      * When an API is called using a legacy AvaTax License Key, the API log entry is recorded as being performed by a special user attached to that license key.
      * By default, this API will not return a listing of license key users.  Users with registrar-level security may call this API to list license key users.
-     * 
+     *             
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * Paginate your results using the `$top`, `$skip`, and `$orderby` parameters.
+     * 
+     * You may specify one or more of the following values in the `$include` parameter to fetch additional nested data, using commas to separate multiple values:
+     *             
+     * * FetchDeleted
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
      * @param accountId The accountID of the user you wish to list.
      * @param include Optional fetch commands.
@@ -16513,11 +19874,20 @@ This gets the basic information from the filings and doesn't include anything ex
      * 
      * List all user objects attached to this account.
      * A user represents one person with access privileges to make API calls and work with a specific account.
-     * 
+     *             
      * When an API is called using a legacy AvaTax License Key, the API log entry is recorded as being performed by a special user attached to that license key.
      * By default, this API will not return a listing of license key users.  Users with registrar-level security may call this API to list license key users.
-     * 
+     *             
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * Paginate your results using the `$top`, `$skip`, and `$orderby` parameters.
+     * 
+     * You may specify one or more of the following values in the `$include` parameter to fetch additional nested data, using commas to separate multiple values:
+     *             
+     * * FetchDeleted
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
      * @param accountId The accountID of the user you wish to list.
      * @param include Optional fetch commands.
@@ -16542,14 +19912,23 @@ This gets the basic information from the filings and doesn't include anything ex
      * Retrieve all users
      * 
      * Get multiple user objects across all accounts.
-     * 
+     *             
      * A user represents one person or set of credentials with access privileges to make API calls and work with a specific account.  A user can be authenticated
      * via either username / password authentication, an OpenID / OAuth Bearer Token, or a legacy AvaTax License Key.
-     * 
+     *             
      * When an API is called using a legacy AvaTax License Key, the API log entry is recorded as being performed by a special user attached to that license key.
      * By default, this API will not return a listing of license key users.  Users with registrar-level security may call this API to list license key users.
-     * 
+     *             
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * Paginate your results using the `$top`, `$skip`, and `$orderby` parameters.
+     * 
+     * You may specify one or more of the following values in the `$include` parameter to fetch additional nested data, using commas to separate multiple values:
+     *             
+     * * FetchDeleted
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
      * @param include Optional fetch commands.
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).
@@ -16572,14 +19951,23 @@ This gets the basic information from the filings and doesn't include anything ex
      * Retrieve all users
      * 
      * Get multiple user objects across all accounts.
-     * 
+     *             
      * A user represents one person or set of credentials with access privileges to make API calls and work with a specific account.  A user can be authenticated
      * via either username / password authentication, an OpenID / OAuth Bearer Token, or a legacy AvaTax License Key.
-     * 
+     *             
      * When an API is called using a legacy AvaTax License Key, the API log entry is recorded as being performed by a special user attached to that license key.
      * By default, this API will not return a listing of license key users.  Users with registrar-level security may call this API to list license key users.
-     * 
+     *             
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * Paginate your results using the `$top`, `$skip`, and `$orderby` parameters.
+     * 
+     * You may specify one or more of the following values in the `$include` parameter to fetch additional nested data, using commas to separate multiple values:
+     *             
+     * * FetchDeleted
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
      * @param include Optional fetch commands.
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).
@@ -16603,7 +19991,12 @@ This gets the basic information from the filings and doesn't include anything ex
      * 
      * Replace the existing user object at this URL with an updated object.
      * A user represents one person with access privileges to make API calls and work with a specific account.
-     * All data from the existing object will be replaced with data in the object you PUT.  
+     * All data from the existing object will be replaced with data in the object you PUT.
+     * To set a field's value to null, you may either set its value to null or omit that field from the object you post.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
      * @param id The ID of the user you wish to update.
      * @param accountId The accountID of the user you wish to update.
@@ -16622,7 +20015,12 @@ This gets the basic information from the filings and doesn't include anything ex
      * 
      * Replace the existing user object at this URL with an updated object.
      * A user represents one person with access privileges to make API calls and work with a specific account.
-     * All data from the existing object will be replaced with data in the object you PUT.  
+     * All data from the existing object will be replaced with data in the object you PUT.
+     * To set a field's value to null, you may either set its value to null or omit that field from the object you post.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
      * @param id The ID of the user you wish to update.
      * @param accountId The accountID of the user you wish to update.
@@ -16640,9 +20038,9 @@ This gets the basic information from the filings and doesn't include anything ex
      * Checks if the current user is subscribed to a specific service
      * 
      * Returns a subscription object for the current account, or 404 Not Found if this subscription is not enabled for this account.
-     * 
+     *             
      * This API will return an error if it is called with invalid authentication credentials.
-     * 
+     *             
      * This API is intended to help you determine whether you have the necessary subscription to use certain API calls
      * within AvaTax.  You can examine the subscriptions returned from this API call to look for a particular product
      * or subscription to provide useful information to the current user as to whether they are entitled to use
@@ -16660,9 +20058,9 @@ This gets the basic information from the filings and doesn't include anything ex
      * Checks if the current user is subscribed to a specific service
      * 
      * Returns a subscription object for the current account, or 404 Not Found if this subscription is not enabled for this account.
-     * 
+     *             
      * This API will return an error if it is called with invalid authentication credentials.
-     * 
+     *             
      * This API is intended to help you determine whether you have the necessary subscription to use certain API calls
      * within AvaTax.  You can examine the subscriptions returned from this API call to look for a particular product
      * or subscription to provide useful information to the current user as to whether they are entitled to use
@@ -16680,9 +20078,9 @@ This gets the basic information from the filings and doesn't include anything ex
      * List all services to which the current user is subscribed
      * 
      * Returns the list of all subscriptions enabled for the currently logged in user.
-     * 
+     *             
      * This API will return an error if it is called with invalid authentication credentials.
-     * 
+     *             
      * This API is intended to help you determine whether you have the necessary subscription to use certain API calls
      * within AvaTax.  You can examine the subscriptions returned from this API call to look for a particular product
      * or subscription to provide useful information to the current user as to whether they are entitled to use
@@ -16698,9 +20096,9 @@ This gets the basic information from the filings and doesn't include anything ex
      * List all services to which the current user is subscribed
      * 
      * Returns the list of all subscriptions enabled for the currently logged in user.
-     * 
+     *             
      * This API will return an error if it is called with invalid authentication credentials.
-     * 
+     *             
      * This API is intended to help you determine whether you have the necessary subscription to use certain API calls
      * within AvaTax.  You can examine the subscriptions returned from this API call to look for a particular product
      * or subscription to provide useful information to the current user as to whether they are entitled to use
@@ -16716,20 +20114,25 @@ This gets the basic information from the filings and doesn't include anything ex
      * Tests connectivity and version of the service
      * 
      * Check connectivity to AvaTax and return information about the AvaTax API server.
-     * 
+     *             
      * This API is intended to help you verify that your connection is working.  This API will always succeed and will
      * never return a error.  It provides basic information about the server you connect to:
-     * 
+     *             
      * * `version` - The version number of the AvaTax API server that responded to your request.  The AvaTax API version number is updated once per month during Avalara's update process.
      * * `authenticated` - A boolean flag indicating whether or not you sent valid credentials with your API request.
      * * `authenticationType` - If you provided valid credentials to the API, this field will tell you whether you used Bearer, Username, or LicenseKey authentication.
      * * `authenticatedUserName` - If you provided valid credentials to the API, this field will tell you the username of the currently logged in user.
      * * `authenticatedUserId` - If you provided valid credentials to the API, this field will tell you the user ID of the currently logged in user.
      * * `authenticatedAccountId` - If you provided valid credentials to the API, this field will contain the account ID of the currently logged in user.
-     * 
-     * This API helps diagnose connectivity problems between your application and AvaTax; you may call this API even 
-     * if you do not have verified connection credentials.  If this API fails, either your computer is not connected to 
+     *             
+     * This API helps diagnose connectivity problems between your application and AvaTax; you may call this API even
+     * if you do not have verified connection credentials.  If this API fails, either your computer is not connected to
      * the internet, or there is a routing problem between your office and Avalara, or the Avalara server is not available.
+     * For more information on the uptime of AvaTax, please see [Avalara's AvaTax Status Page](https://status.avalara.com/).
+     * 
+     * ### Security Policies
+     * 
+     * * This API may be called without providing authentication credentials.
      * 
      * @return PingResultModel
      */
@@ -16742,20 +20145,25 @@ This gets the basic information from the filings and doesn't include anything ex
      * Tests connectivity and version of the service
      * 
      * Check connectivity to AvaTax and return information about the AvaTax API server.
-     * 
+     *             
      * This API is intended to help you verify that your connection is working.  This API will always succeed and will
      * never return a error.  It provides basic information about the server you connect to:
-     * 
+     *             
      * * `version` - The version number of the AvaTax API server that responded to your request.  The AvaTax API version number is updated once per month during Avalara's update process.
      * * `authenticated` - A boolean flag indicating whether or not you sent valid credentials with your API request.
      * * `authenticationType` - If you provided valid credentials to the API, this field will tell you whether you used Bearer, Username, or LicenseKey authentication.
      * * `authenticatedUserName` - If you provided valid credentials to the API, this field will tell you the username of the currently logged in user.
      * * `authenticatedUserId` - If you provided valid credentials to the API, this field will tell you the user ID of the currently logged in user.
      * * `authenticatedAccountId` - If you provided valid credentials to the API, this field will contain the account ID of the currently logged in user.
-     * 
-     * This API helps diagnose connectivity problems between your application and AvaTax; you may call this API even 
-     * if you do not have verified connection credentials.  If this API fails, either your computer is not connected to 
+     *             
+     * This API helps diagnose connectivity problems between your application and AvaTax; you may call this API even
+     * if you do not have verified connection credentials.  If this API fails, either your computer is not connected to
      * the internet, or there is a routing problem between your office and Avalara, or the Avalara server is not available.
+     * For more information on the uptime of AvaTax, please see [Avalara's AvaTax Status Page](https://status.avalara.com/).
+     * 
+     * ### Security Policies
+     * 
+     * * This API may be called without providing authentication credentials.
      * 
      * @return PingResultModel
      */

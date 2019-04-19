@@ -29,14 +29,14 @@ import java.util.HashMap;
 public class FilingsTaxDetailsModel {
 
 
-    private TaxType taxType;
+    private String taxType;
 
     /**
      * Getter for taxType
      *
      * The tax type associated with the summary
      */
-    public TaxType getTaxType() {
+    public String getTaxType() {
         return this.taxType;
     }
 
@@ -45,7 +45,7 @@ public class FilingsTaxDetailsModel {
      *
      * The tax type associated with the summary
      */
-    public void setTaxType(TaxType value) {
+    public void setTaxType(String value) {
         this.taxType = value;
     }
 

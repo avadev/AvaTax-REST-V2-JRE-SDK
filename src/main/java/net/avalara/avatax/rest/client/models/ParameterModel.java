@@ -55,7 +55,7 @@ public class ParameterModel {
     /**
      * Getter for category
      *
-     * DEPRECATED
+     * DEPRECATED - Date: 07/25/2018, Version: 18.7, Message: This field is deprecated and will return null.
     * The category grouping of this parameter. When your user interface displays a large number of parameters, they should
     * be grouped by their category value.
      */
@@ -66,7 +66,7 @@ public class ParameterModel {
     /**
      * Setter for category
      *
-     * DEPRECATED
+     * DEPRECATED - Date: 07/25/2018, Version: 18.7, Message: This field is deprecated and will return null.
     * The category grouping of this parameter. When your user interface displays a large number of parameters, they should
     * be grouped by their category value.
      */
@@ -166,7 +166,7 @@ public class ParameterModel {
     /**
      * Getter for prompt
      *
-     * DEPRECATED
+     * DEPRECATED - Date: 07/25/2018, Version: 18.7, Message: This field is deprecated and will return null.
     * The prompt you should use when displaying this parameter to a user. For example, if your user interface displays a
     * parameter in a text box, this is the label you should use to identify that text box.
      */
@@ -177,7 +177,7 @@ public class ParameterModel {
     /**
      * Setter for prompt
      *
-     * DEPRECATED
+     * DEPRECATED - Date: 07/25/2018, Version: 18.7, Message: This field is deprecated and will return null.
     * The prompt you should use when displaying this parameter to a user. For example, if your user interface displays a
     * parameter in a text box, this is the label you should use to identify that text box.
      */
@@ -191,8 +191,7 @@ public class ParameterModel {
     /**
      * Getter for regularExpression
      *
-     * DEPRECATED 
-    * 
+     * DEPRECATED - Date: 07/25/2018, Version: 18.7, Message: This field is deprecated and will return null.
     * If your user interface permits client-side validation of parameters, this string is a regular expression you can use
     * to validate the user's data entry prior to submitting a tax request.
      */
@@ -203,8 +202,7 @@ public class ParameterModel {
     /**
      * Setter for regularExpression
      *
-     * DEPRECATED 
-    * 
+     * DEPRECATED - Date: 07/25/2018, Version: 18.7, Message: This field is deprecated and will return null.
     * If your user interface permits client-side validation of parameters, this string is a regular expression you can use
     * to validate the user's data entry prior to submitting a tax request.
      */

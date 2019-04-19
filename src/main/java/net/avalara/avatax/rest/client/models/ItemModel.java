@@ -97,7 +97,7 @@ public class ItemModel {
     /**
      * Getter for taxCodeId
      *
-     * DEPRECATED - For identifying an `Item` with `Avalara TaxCode`, please call the [CreateItemClassification API] with your ItemCode and the Avalara TaxCode.
+     * DEPRECATED - Date: 11/13/2018, Version: 18.12, Message: For identifying an `Item` with `Avalara TaxCode`, please call the [CreateItemClassification API] with your ItemCode and the Avalara TaxCode.
     * The unique ID number of the tax code that is applied when selling this item.
     * When creating or updating an item, you can either specify the Tax Code ID number or the Tax Code string; you do not need to specify both values.
      */
@@ -108,7 +108,7 @@ public class ItemModel {
     /**
      * Setter for taxCodeId
      *
-     * DEPRECATED - For identifying an `Item` with `Avalara TaxCode`, please call the [CreateItemClassification API] with your ItemCode and the Avalara TaxCode.
+     * DEPRECATED - Date: 11/13/2018, Version: 18.12, Message: For identifying an `Item` with `Avalara TaxCode`, please call the [CreateItemClassification API] with your ItemCode and the Avalara TaxCode.
     * The unique ID number of the tax code that is applied when selling this item.
     * When creating or updating an item, you can either specify the Tax Code ID number or the Tax Code string; you do not need to specify both values.
      */
@@ -122,7 +122,7 @@ public class ItemModel {
     /**
      * Getter for taxCode
      *
-     * DEPRECATED - For identifying an `Item` with `Avalara TaxCode`, please call the [CreateItemClassification API] with your ItemCode and the Avalara TaxCode.
+     * DEPRECATED - Date: 11/13/2018, Version: 18.12, Message: For identifying an `Item` with `Avalara TaxCode`, please call the [CreateItemClassification API] with your ItemCode and the Avalara TaxCode.
     * The unique code string of the Tax Code that is applied when selling this item.
     * When creating or updating an item, you can either specify the Tax Code ID number or the Tax Code string; you do not need to specify both values.
      */
@@ -133,7 +133,7 @@ public class ItemModel {
     /**
      * Setter for taxCode
      *
-     * DEPRECATED - For identifying an `Item` with `Avalara TaxCode`, please call the [CreateItemClassification API] with your ItemCode and the Avalara TaxCode.
+     * DEPRECATED - Date: 11/13/2018, Version: 18.12, Message: For identifying an `Item` with `Avalara TaxCode`, please call the [CreateItemClassification API] with your ItemCode and the Avalara TaxCode.
     * The unique code string of the Tax Code that is applied when selling this item.
     * When creating or updating an item, you can either specify the Tax Code ID number or the Tax Code string; you do not need to specify both values.
      */

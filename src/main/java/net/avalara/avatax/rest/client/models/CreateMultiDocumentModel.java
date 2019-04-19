@@ -25,7 +25,7 @@ import java.util.HashMap;
 
 /**
  * A MultiDocument transaction represents a sale or purchase that occurred between more than two companies.
-* 
+*  
 * A traditional transaction requires exactly two parties: a seller and a buyer. MultiDocument transactions can
 * involve a marketplace of vendors, each of which contributes some portion of the final transaction. Within
 * a MultiDocument transaction, each individual buyer and seller pair are matched up and converted to a separate
@@ -40,9 +40,9 @@ public class CreateMultiDocumentModel {
      * Getter for code
      *
      * The transaction code of the MultiDocument transaction.
-    * 
+    *  
     * All individual transactions within this MultiDocument object will have this code as a prefix.
-    * 
+    *  
     * If you leave the `code` field blank, a GUID will be assigned.
      */
     public String getCode() {
@@ -53,9 +53,9 @@ public class CreateMultiDocumentModel {
      * Setter for code
      *
      * The transaction code of the MultiDocument transaction.
-    * 
+    *  
     * All individual transactions within this MultiDocument object will have this code as a prefix.
-    * 
+    *  
     * If you leave the `code` field blank, a GUID will be assigned.
      */
     public void setCode(String value) {
@@ -69,7 +69,7 @@ public class CreateMultiDocumentModel {
      * Getter for lines
      *
      * Lines that will appear on the invoice.
-    * 
+    *  
     * For a MultiDocument transaction, each line may represent a different company or reporting location code. AvaTax
     * will separate this MultiDocument transaction object into many different transactions, one for each pair of legal
     * entities, so that each legal entity can file their transactional taxes correctly.
@@ -82,7 +82,7 @@ public class CreateMultiDocumentModel {
      * Setter for lines
      *
      * Lines that will appear on the invoice.
-    * 
+    *  
     * For a MultiDocument transaction, each line may represent a different company or reporting location code. AvaTax
     * will separate this MultiDocument transaction object into many different transactions, one for each pair of legal
     * entities, so that each legal entity can file their transactional taxes correctly.
@@ -98,7 +98,7 @@ public class CreateMultiDocumentModel {
      * Getter for allowAdjust
      *
      * Set this value to true to allow this API call to adjust the MultiDocument model if one already exists.
-    * 
+    *  
     * If you omit this field, or if the value is `null`, you will receive an error if you try to create two MultiDocument
     * objects with the same `code`.
      */
@@ -110,7 +110,7 @@ public class CreateMultiDocumentModel {
      * Setter for allowAdjust
      *
      * Set this value to true to allow this API call to adjust the MultiDocument model if one already exists.
-    * 
+    *  
     * If you omit this field, or if the value is `null`, you will receive an error if you try to create two MultiDocument
     * objects with the same `code`.
      */
@@ -249,8 +249,8 @@ public class CreateMultiDocumentModel {
     /**
      * Getter for customerUsageType
      *
-     * DEPRECATED - Customer Usage Type - The client application customer or usage type.
-    * Please use entityUseCode instead.
+     * DEPRECATED - Date: 10/16/2017, Version: 17.11, Message: Please use entityUseCode instead.
+    * Customer Usage Type - The client application customer or usage type.
      */
     public String getCustomerUsageType() {
         return this.customerUsageType;
@@ -259,8 +259,8 @@ public class CreateMultiDocumentModel {
     /**
      * Setter for customerUsageType
      *
-     * DEPRECATED - Customer Usage Type - The client application customer or usage type.
-    * Please use entityUseCode instead.
+     * DEPRECATED - Date: 10/16/2017, Version: 17.11, Message: Please use entityUseCode instead.
+    * Customer Usage Type - The client application customer or usage type.
      */
     public void setCustomerUsageType(String value) {
         this.customerUsageType = value;
@@ -400,7 +400,7 @@ public class CreateMultiDocumentModel {
     }
 
 
-    private HashMap<String, String> parameters;
+    private ArrayList<TransactionParameterModel> parameters;
 
     /**
      * Getter for parameters
@@ -409,7 +409,7 @@ public class CreateMultiDocumentModel {
     * 
     * To get a full list of available parameters, please use the [ListParameters](https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Definitions/ListParameters/) endpoint.
      */
-    public HashMap<String, String> getParameters() {
+    public ArrayList<TransactionParameterModel> getParameters() {
         return this.parameters;
     }
 
@@ -420,7 +420,7 @@ public class CreateMultiDocumentModel {
     * 
     * To get a full list of available parameters, please use the [ListParameters](https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Definitions/ListParameters/) endpoint.
      */
-    public void setParameters(HashMap<String, String> value) {
+    public void setParameters(ArrayList<TransactionParameterModel> value) {
         this.parameters = value;
     }
 

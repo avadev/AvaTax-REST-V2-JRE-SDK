@@ -24,7 +24,7 @@ public enum MatchingTaxType {
     /** 
      * Match medical excise type
      */
-    Excise(5),
+    E(5),
 
     /** 
      * Match Lodging tax type

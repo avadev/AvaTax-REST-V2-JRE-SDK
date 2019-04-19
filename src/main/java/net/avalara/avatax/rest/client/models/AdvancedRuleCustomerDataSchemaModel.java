@@ -24,55 +24,55 @@ import java.util.HashMap;
  */
 
 /**
- * Represents the exact API request and response from the original transaction API call, if available
+ * Model for retrieving customer data schema
  */
-public class OriginalApiRequestResponseModel {
+public class AdvancedRuleCustomerDataSchemaModel {
 
 
-    private CreateTransactionModel request;
+    private String ruleId;
 
     /**
-     * Getter for request
+     * Getter for ruleId
      *
-     * API request
+     * Unique identifier for the rule
      */
-    public CreateTransactionModel getRequest() {
-        return this.request;
+    public String getRuleId() {
+        return this.ruleId;
     }
 
     /**
-     * Setter for request
+     * Setter for ruleId
      *
-     * API request
+     * Unique identifier for the rule
      */
-    public void setRequest(CreateTransactionModel value) {
-        this.request = value;
+    public void setRuleId(String value) {
+        this.ruleId = value;
     }
 
 
-    private TransactionModel response;
+    private String customerDataSchema;
 
     /**
-     * Getter for response
+     * Getter for customerDataSchema
      *
-     * API response
+     * Customer data schema
      */
-    public TransactionModel getResponse() {
-        return this.response;
+    public String getCustomerDataSchema() {
+        return this.customerDataSchema;
     }
 
     /**
-     * Setter for response
+     * Setter for customerDataSchema
      *
-     * API response
+     * Customer data schema
      */
-    public void setResponse(TransactionModel value) {
-        this.response = value;
+    public void setCustomerDataSchema(String value) {
+        this.customerDataSchema = value;
     }
 
 
     /**
-     * Returns a JSON string representation of OriginalApiRequestResponseModel
+     * Returns a JSON string representation of AdvancedRuleCustomerDataSchemaModel
      */
     @Override
     public String toString() {

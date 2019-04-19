@@ -16,59 +16,34 @@ import java.util.HashMap;
  */
 
 /**
- * Filing Frequency types
+ * 
  */
-public enum NoticeCustomerType {
+public enum SendSalesFileType {
     /** 
-     * AvaTax Returns
+     * File is in Comma Separated Values format
      */
-    AvaTaxReturns(1),
+    Csv(0),
 
     /** 
-     * Stand Alone
+     * File is in Javascript Object Notation format
      */
-    StandAlone(2),
-
-    /** 
-     * Strategic
-     */
-    Strategic(3),
-
-    /** 
-     * SST
-     */
-    SST(4),
-
-    /** 
-     * TrustFile
-     */
-    TrustFile(5),
-
-    /** 
-     * PWC
-     */
-    PWC(6),
-
-    /** 
-     * Hudson Group
-     */
-    HudsonGroup(7);
+    Json(1);
 
     private int value;
 	private static HashMap map = new HashMap<>();
 	
-	private NoticeCustomerType(int value) {
+	private SendSalesFileType(int value) {
 		this.value = value;
 	}
 	
 	static {
-		for (NoticeCustomerType enumName : NoticeCustomerType.values()) {
+		for (SendSalesFileType enumName : SendSalesFileType.values()) {
 			map.put(enumName.value, enumName);
 		}
 	}
 	
-	public static NoticeCustomerType valueOf(int intValue) {
-		return (NoticeCustomerType) map.get(intValue);
+	public static SendSalesFileType valueOf(int intValue) {
+		return (SendSalesFileType) map.get(intValue);
 	}
 	
 	public int getValue() {

@@ -16,49 +16,39 @@ import java.util.HashMap;
  */
 
 /**
- * Indicates the level of companies that can be accessed
+ * Status of an Avalara account
  */
-public enum CompanyAccessLevel {
+public enum AccountTypeId {
     /** 
-     * No permission to access companies.
+     * Regular AvaTax account.
      */
-    None(0),
+    Regular(1),
 
     /** 
-     * Permission to access a single company and its children.
+     * Firm account.
      */
-    SingleCompany(1),
+    Firm(2),
 
     /** 
-     * Permission to access all companies in a single account.
+     * Client account created by firm.
      */
-    SingleAccount(2),
-
-    /** 
-     * Permission to access all companies in all accounts. Reserved for system administration tasks.
-     */
-    AllCompanies(3),
-
-    /** 
-     * Permission to access all companies in all accounts managed by a firm account.
-     */
-    FirmManagedAccounts(4);
+    FirmClient(3);
 
     private int value;
 	private static HashMap map = new HashMap<>();
 	
-	private CompanyAccessLevel(int value) {
+	private AccountTypeId(int value) {
 		this.value = value;
 	}
 	
 	static {
-		for (CompanyAccessLevel enumName : CompanyAccessLevel.values()) {
+		for (AccountTypeId enumName : AccountTypeId.values()) {
 			map.put(enumName.value, enumName);
 		}
 	}
 	
-	public static CompanyAccessLevel valueOf(int intValue) {
-		return (CompanyAccessLevel) map.get(intValue);
+	public static AccountTypeId valueOf(int intValue) {
+		return (AccountTypeId) map.get(intValue);
 	}
 	
 	public int getValue() {
