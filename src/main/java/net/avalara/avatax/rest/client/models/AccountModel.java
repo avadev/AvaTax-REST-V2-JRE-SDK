@@ -155,6 +155,27 @@ public class AccountModel {
     }
 
 
+    private AccountTypeId accountTypeId;
+
+    /**
+     * Getter for accountTypeId
+     *
+     * The type of this account.
+     */
+    public AccountTypeId getAccountTypeId() {
+        return this.accountTypeId;
+    }
+
+    /**
+     * Setter for accountTypeId
+     *
+     * The type of this account.
+     */
+    public void setAccountTypeId(AccountTypeId value) {
+        this.accountTypeId = value;
+    }
+
+
     private Date createdDate;
 
     /**

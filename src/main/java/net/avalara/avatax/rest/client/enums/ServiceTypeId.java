@@ -162,7 +162,27 @@ public enum ServiceTypeId {
     /** 
      * Send Sales Rate file service
      */
-    SendSalesRateFile(28);
+    SendSalesRateFile(28),
+
+    /** 
+     * AvaMeals
+     */
+    AvaMeals(29),
+
+    /** 
+     * AvaAlcohol
+     */
+    AvaAlcohol(30),
+
+    /** 
+     * Accounting Firm ARA Service Type
+     */
+    ARA(31),
+
+    /** 
+     * Accounting Firm ManagedARA Service Type
+     */
+    ManagedARA(32);
 
     private int value;
 	private static HashMap map = new HashMap<>();

@@ -16,49 +16,45 @@ import java.util.HashMap;
  */
 
 /**
- * Indicates the level of companies that can be accessed
+ * Defines how a stack rate is determined for a specific country and region.
  */
-public enum CompanyAccessLevel {
+public enum StackAggregationOption {
     /** 
-     * No permission to access companies.
+     * No aggregation.
+     *  The component rate is used for the stack rate.
      */
-    None(0),
+    NoStackAggregation(0),
 
     /** 
-     * Permission to access a single company and its children.
+     * Rates are aggregated across all jurisdiction types.
      */
-    SingleCompany(1),
+    FullStackAggregation(1),
 
     /** 
-     * Permission to access all companies in a single account.
+     * State and county rates are aggregated.
      */
-    SingleAccount(2),
+    AggregateStateAndCounty(2),
 
     /** 
-     * Permission to access all companies in all accounts. Reserved for system administration tasks.
+     * City and county rates are aggregated.
      */
-    AllCompanies(3),
-
-    /** 
-     * Permission to access all companies in all accounts managed by a firm account.
-     */
-    FirmManagedAccounts(4);
+    AggregateCityAndCounty(3);
 
     private int value;
 	private static HashMap map = new HashMap<>();
 	
-	private CompanyAccessLevel(int value) {
+	private StackAggregationOption(int value) {
 		this.value = value;
 	}
 	
 	static {
-		for (CompanyAccessLevel enumName : CompanyAccessLevel.values()) {
+		for (StackAggregationOption enumName : StackAggregationOption.values()) {
 			map.put(enumName.value, enumName);
 		}
 	}
 	
-	public static CompanyAccessLevel valueOf(int intValue) {
-		return (CompanyAccessLevel) map.get(intValue);
+	public static StackAggregationOption valueOf(int intValue) {
+		return (StackAggregationOption) map.get(intValue);
 	}
 	
 	public int getValue() {

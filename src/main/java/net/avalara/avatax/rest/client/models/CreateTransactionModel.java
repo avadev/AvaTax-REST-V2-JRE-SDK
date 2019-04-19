@@ -203,8 +203,8 @@ public class CreateTransactionModel {
     /**
      * Getter for customerUsageType
      *
-     * DEPRECATED - Customer Usage Type - The client application customer or usage type.
-    * Please use entityUseCode instead.
+     * DEPRECATED - Date: 10/16/2017, Version: 17.11, Message: Please use entityUseCode instead.
+    * Customer Usage Type - The client application customer or usage type.
      */
     public String getCustomerUsageType() {
         return this.customerUsageType;
@@ -213,8 +213,8 @@ public class CreateTransactionModel {
     /**
      * Setter for customerUsageType
      *
-     * DEPRECATED - Customer Usage Type - The client application customer or usage type.
-    * Please use entityUseCode instead.
+     * DEPRECATED - Date: 10/16/2017, Version: 17.11, Message: Please use entityUseCode instead.
+    * Customer Usage Type - The client application customer or usage type.
      */
     public void setCustomerUsageType(String value) {
         this.customerUsageType = value;
@@ -354,7 +354,7 @@ public class CreateTransactionModel {
     }
 
 
-    private HashMap<String, String> parameters;
+    private ArrayList<TransactionParameterModel> parameters;
 
     /**
      * Getter for parameters
@@ -363,7 +363,7 @@ public class CreateTransactionModel {
     * 
     * To get a full list of available parameters, please use the [ListParameters](https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Definitions/ListParameters/) endpoint.
      */
-    public HashMap<String, String> getParameters() {
+    public ArrayList<TransactionParameterModel> getParameters() {
         return this.parameters;
     }
 
@@ -374,7 +374,7 @@ public class CreateTransactionModel {
     * 
     * To get a full list of available parameters, please use the [ListParameters](https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Definitions/ListParameters/) endpoint.
      */
-    public void setParameters(HashMap<String, String> value) {
+    public void setParameters(ArrayList<TransactionParameterModel> value) {
         this.parameters = value;
     }
 

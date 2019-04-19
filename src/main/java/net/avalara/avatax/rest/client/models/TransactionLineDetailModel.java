@@ -370,8 +370,8 @@ public class TransactionLineDetailModel {
     /**
      * Getter for jurisType
      *
-     * (DEPRECATED) The type of the jurisdiction to which this tax detail applies.
-    * NOTE: Use jurisdictionTypeId instead.
+     * DEPRECATED - Date: 12/20/2017, Version: 18.1, Message: Use jurisdictionTypeId instead.
+    * The type of the jurisdiction to which this tax detail applies.
      */
     public JurisTypeId getJurisType() {
         return this.jurisType;
@@ -380,8 +380,8 @@ public class TransactionLineDetailModel {
     /**
      * Setter for jurisType
      *
-     * (DEPRECATED) The type of the jurisdiction to which this tax detail applies.
-    * NOTE: Use jurisdictionTypeId instead.
+     * DEPRECATED - Date: 12/20/2017, Version: 18.1, Message: Use jurisdictionTypeId instead.
+    * The type of the jurisdiction to which this tax detail applies.
      */
     public void setJurisType(JurisTypeId value) {
         this.jurisType = value;
@@ -796,7 +796,8 @@ public class TransactionLineDetailModel {
     /**
      * Getter for rateType
      *
-     * (DEPRECATED) The rate type for this tax detail. Please use rateTypeCode instead.
+     * DEPRECATED - Date: 12/20/2017, Version: 18.1, Message: Please use rateTypeCode instead.
+    * The rate type for this tax detail.
      */
     public RateType getRateType() {
         return this.rateType;
@@ -805,7 +806,8 @@ public class TransactionLineDetailModel {
     /**
      * Setter for rateType
      *
-     * (DEPRECATED) The rate type for this tax detail. Please use rateTypeCode instead.
+     * DEPRECATED - Date: 12/20/2017, Version: 18.1, Message: Please use rateTypeCode instead.
+    * The rate type for this tax detail.
      */
     public void setRateType(RateType value) {
         this.rateType = value;

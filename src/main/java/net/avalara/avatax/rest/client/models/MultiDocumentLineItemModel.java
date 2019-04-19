@@ -34,8 +34,8 @@ public class MultiDocumentLineItemModel {
     /**
      * Getter for companyCode
      *
-     * Specify the code of the company for this line of transaction. 
-    * 
+     * Specify the code of the company for this line of transaction.
+    *  
     * If you leave this value null, the `companyCode` at the root level will be used instead.
      */
     public String getCompanyCode() {
@@ -45,8 +45,8 @@ public class MultiDocumentLineItemModel {
     /**
      * Setter for companyCode
      *
-     * Specify the code of the company for this line of transaction. 
-    * 
+     * Specify the code of the company for this line of transaction.
+    *  
     * If you leave this value null, the `companyCode` at the root level will be used instead.
      */
     public void setCompanyCode(String value) {
@@ -59,8 +59,8 @@ public class MultiDocumentLineItemModel {
     /**
      * Getter for reportingLocationCode
      *
-     * Sets the sale location code (Outlet ID) for reporting this document to the tax authority. 
-    * 
+     * Sets the sale location code (Outlet ID) for reporting this document to the tax authority.
+    *  
     * If you leave this value `null`, the `reportingLocationCode` at the root level will be used instead.
      */
     public String getReportingLocationCode() {
@@ -70,8 +70,8 @@ public class MultiDocumentLineItemModel {
     /**
      * Setter for reportingLocationCode
      *
-     * Sets the sale location code (Outlet ID) for reporting this document to the tax authority. 
-    * 
+     * Sets the sale location code (Outlet ID) for reporting this document to the tax authority.
+    *  
     * If you leave this value `null`, the `reportingLocationCode` at the root level will be used instead.
      */
     public void setReportingLocationCode(String value) {
@@ -215,7 +215,7 @@ public class MultiDocumentLineItemModel {
     /**
      * Getter for customerUsageType
      *
-     * DEPRECATED - Please use `entityUseCode` instead.
+     * DEPRECATED - Date: 10/16/2017, Version: 17.11, Message: Please use `entityUseCode` instead.
      */
     public String getCustomerUsageType() {
         return this.customerUsageType;
@@ -224,7 +224,7 @@ public class MultiDocumentLineItemModel {
     /**
      * Setter for customerUsageType
      *
-     * DEPRECATED - Please use `entityUseCode` instead.
+     * DEPRECATED - Date: 10/16/2017, Version: 17.11, Message: Please use `entityUseCode` instead.
      */
     public void setCustomerUsageType(String value) {
         this.customerUsageType = value;
@@ -514,7 +514,7 @@ public class MultiDocumentLineItemModel {
     }
 
 
-    private HashMap<String, String> parameters;
+    private ArrayList<TransactionLineParameterModel> parameters;
 
     /**
      * Getter for parameters
@@ -523,7 +523,7 @@ public class MultiDocumentLineItemModel {
     * 
     * To get a full list of available parameters, please use the `ListParameters` API.
      */
-    public HashMap<String, String> getParameters() {
+    public ArrayList<TransactionLineParameterModel> getParameters() {
         return this.parameters;
     }
 
@@ -534,7 +534,7 @@ public class MultiDocumentLineItemModel {
     * 
     * To get a full list of available parameters, please use the `ListParameters` API.
      */
-    public void setParameters(HashMap<String, String> value) {
+    public void setParameters(ArrayList<TransactionLineParameterModel> value) {
         this.parameters = value;
     }
 

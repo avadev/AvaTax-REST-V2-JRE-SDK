@@ -118,8 +118,8 @@ public class TransactionLineModel {
     /**
      * Getter for customerUsageType
      *
-     * DEPRECATED - The customer usage type for this line item. Usage type often affects taxability rules.
-    * Please use entityUseCode instead.
+     * DEPRECATED - Date: 10/16/2017, Version: 17.11, Message: Please use entityUseCode instead.
+    * The customer usage type for this line item. Usage type often affects taxability rules.
      */
     public String getCustomerUsageType() {
         return this.customerUsageType;
@@ -128,8 +128,8 @@ public class TransactionLineModel {
     /**
      * Setter for customerUsageType
      *
-     * DEPRECATED - The customer usage type for this line item. Usage type often affects taxability rules.
-    * Please use entityUseCode instead.
+     * DEPRECATED - Date: 10/16/2017, Version: 17.11, Message: Please use entityUseCode instead.
+    * The customer usage type for this line item. Usage type often affects taxability rules.
      */
     public void setCustomerUsageType(String value) {
         this.customerUsageType = value;
@@ -947,14 +947,14 @@ public class TransactionLineModel {
     }
 
 
-    private HashMap<String, String> parameters;
+    private ArrayList<TransactionLineParameterModel> parameters;
 
     /**
      * Getter for parameters
      *
      * Contains a list of extra parameters that were set when the transaction was created.
      */
-    public HashMap<String, String> getParameters() {
+    public ArrayList<TransactionLineParameterModel> getParameters() {
         return this.parameters;
     }
 
@@ -963,7 +963,7 @@ public class TransactionLineModel {
      *
      * Contains a list of extra parameters that were set when the transaction was created.
      */
-    public void setParameters(HashMap<String, String> value) {
+    public void setParameters(ArrayList<TransactionLineParameterModel> value) {
         this.parameters = value;
     }
 

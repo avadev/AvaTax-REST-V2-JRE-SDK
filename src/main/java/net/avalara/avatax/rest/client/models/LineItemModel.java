@@ -165,7 +165,7 @@ public class LineItemModel {
     /**
      * Getter for customerUsageType
      *
-     * DEPRECATED - Please use `entityUseCode` instead.
+     * DEPRECATED - Date: 10/16/2017, Version: 17.11, Message: Please use `entityUseCode` instead.
      */
     public String getCustomerUsageType() {
         return this.customerUsageType;
@@ -174,7 +174,7 @@ public class LineItemModel {
     /**
      * Setter for customerUsageType
      *
-     * DEPRECATED - Please use `entityUseCode` instead.
+     * DEPRECATED - Date: 10/16/2017, Version: 17.11, Message: Please use `entityUseCode` instead.
      */
     public void setCustomerUsageType(String value) {
         this.customerUsageType = value;
@@ -464,7 +464,7 @@ public class LineItemModel {
     }
 
 
-    private HashMap<String, String> parameters;
+    private ArrayList<TransactionLineParameterModel> parameters;
 
     /**
      * Getter for parameters
@@ -473,7 +473,7 @@ public class LineItemModel {
     * 
     * To get a full list of available parameters, please use the `ListParameters` API.
      */
-    public HashMap<String, String> getParameters() {
+    public ArrayList<TransactionLineParameterModel> getParameters() {
         return this.parameters;
     }
 
@@ -484,7 +484,7 @@ public class LineItemModel {
     * 
     * To get a full list of available parameters, please use the `ListParameters` API.
      */
-    public void setParameters(HashMap<String, String> value) {
+    public void setParameters(ArrayList<TransactionLineParameterModel> value) {
         this.parameters = value;
     }
 

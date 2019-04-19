@@ -244,7 +244,8 @@ public class TransactionSummary {
     /**
      * Getter for rateType
      *
-     * (DEPRECATED) Indicates the tax rate type. Please use rateTypeCode instead.
+     * DEPRECATED - Date: 3/1/2018, Version: 18.3, Message: Please use rateTypeCode instead.
+    * Indicates the tax rate type.
      */
     public RateType getRateType() {
         return this.rateType;
@@ -253,7 +254,8 @@ public class TransactionSummary {
     /**
      * Setter for rateType
      *
-     * (DEPRECATED) Indicates the tax rate type. Please use rateTypeCode instead.
+     * DEPRECATED - Date: 3/1/2018, Version: 18.3, Message: Please use rateTypeCode instead.
+    * Indicates the tax rate type.
      */
     public void setRateType(RateType value) {
         this.rateType = value;

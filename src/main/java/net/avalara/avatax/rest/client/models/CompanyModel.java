@@ -788,12 +788,33 @@ public class CompanyModel {
     }
 
 
+    private ArrayList<CompanyModel> nonReportingChildCompanies;
+
+    /**
+     * Getter for nonReportingChildCompanies
+     *
+     * Optional: A list of non reporting child companies associated with this company. To fetch this list, add the query string `?$include=NonReportingChildren` to your URL.
+     */
+    public ArrayList<CompanyModel> getNonReportingChildCompanies() {
+        return this.nonReportingChildCompanies;
+    }
+
+    /**
+     * Setter for nonReportingChildCompanies
+     *
+     * Optional: A list of non reporting child companies associated with this company. To fetch this list, add the query string `?$include=NonReportingChildren` to your URL.
+     */
+    public void setNonReportingChildCompanies(ArrayList<CompanyModel> value) {
+        this.nonReportingChildCompanies = value;
+    }
+
+
     private ArrayList<EcmsModel> exemptCerts;
 
     /**
      * Getter for exemptCerts
      *
-     * DEPRECATED - Please use the `ListCertificates` API.
+     * DEPRECATED - Date: 9/15/2017, Version: 17.10, Message: Please use the `ListCertificates` API.
      */
     public ArrayList<EcmsModel> getExemptCerts() {
         return this.exemptCerts;
@@ -802,7 +823,7 @@ public class CompanyModel {
     /**
      * Setter for exemptCerts
      *
-     * DEPRECATED - Please use the `ListCertificates` API.
+     * DEPRECATED - Date: 9/15/2017, Version: 17.10, Message: Please use the `ListCertificates` API.
      */
     public void setExemptCerts(ArrayList<EcmsModel> value) {
         this.exemptCerts = value;

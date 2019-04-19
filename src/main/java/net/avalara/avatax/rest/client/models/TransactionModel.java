@@ -118,7 +118,8 @@ public class TransactionModel {
     /**
      * Getter for paymentDate
      *
-     * DEPRECATED - The date when payment was made on this transaction. By default, this should be the same as the date of the transaction.
+     * DEPRECATED - Date: 07/25/2018, Version: 18.7, Message: This field is deprecated and will return null till its removed.
+    * The date when payment was made on this transaction. By default, this should be the same as the date of the transaction.
      */
     public Date getPaymentDate() {
         return this.paymentDate;
@@ -127,7 +128,8 @@ public class TransactionModel {
     /**
      * Setter for paymentDate
      *
-     * DEPRECATED - The date when payment was made on this transaction. By default, this should be the same as the date of the transaction.
+     * DEPRECATED - Date: 07/25/2018, Version: 18.7, Message: This field is deprecated and will return null till its removed.
+    * The date when payment was made on this transaction. By default, this should be the same as the date of the transaction.
      */
     public void setPaymentDate(Date value) {
         this.paymentDate = value;
@@ -241,8 +243,8 @@ public class TransactionModel {
     /**
      * Getter for customerUsageType
      *
-     * DEPRECATED - The customer usage type for this transaction. Customer usage types often affect exemption or taxability rules.
-    * Please use entityUseCode instead.
+     * DEPRECATED - Date: 10/16/2017, Version: 17.11, Message: Please use entityUseCode instead.
+    * The customer usage type for this transaction. Customer usage types often affect exemption or taxability rules.
      */
     public String getCustomerUsageType() {
         return this.customerUsageType;
@@ -251,8 +253,8 @@ public class TransactionModel {
     /**
      * Setter for customerUsageType
      *
-     * DEPRECATED - The customer usage type for this transaction. Customer usage types often affect exemption or taxability rules.
-    * Please use entityUseCode instead.
+     * DEPRECATED - Date: 10/16/2017, Version: 17.11, Message: Please use entityUseCode instead.
+    * The customer usage type for this transaction. Customer usage types often affect exemption or taxability rules.
      */
     public void setCustomerUsageType(String value) {
         this.customerUsageType = value;
@@ -285,8 +287,7 @@ public class TransactionModel {
     /**
      * Getter for customerVendorCode
      *
-     * DEPRECATED - Please use `customerCode`.
-    *  
+     * DEPRECATED - Date: 3/1/2018, Version: 18.3, Message: Please use `customerCode`
     * This field has been renamed to `customerCode` to match documentation for other APIs related to exemption customers.
      */
     public String getCustomerVendorCode() {
@@ -296,8 +297,7 @@ public class TransactionModel {
     /**
      * Setter for customerVendorCode
      *
-     * DEPRECATED - Please use `customerCode`.
-    *  
+     * DEPRECATED - Date: 3/1/2018, Version: 18.3, Message: Please use `customerCode`
     * This field has been renamed to `customerCode` to match documentation for other APIs related to exemption customers.
      */
     public void setCustomerVendorCode(String value) {
@@ -387,8 +387,8 @@ public class TransactionModel {
     /**
      * Getter for locationCode
      *
-     * (DEPRECATED) This field has been replaced by the reportingLocationCode field
-    * In order to ensure consistency of field names, Please use reportingLocationCode instead.
+     * DEPRECATED - Date: 3/1/2018, Version: 18.3, Message: In order to ensure consistency of field names, Please use reportingLocationCode instead.
+    * This field has been replaced by the reportingLocationCode field
      */
     public String getLocationCode() {
         return this.locationCode;
@@ -397,8 +397,8 @@ public class TransactionModel {
     /**
      * Setter for locationCode
      *
-     * (DEPRECATED) This field has been replaced by the reportingLocationCode field
-    * In order to ensure consistency of field names, Please use reportingLocationCode instead.
+     * DEPRECATED - Date: 3/1/2018, Version: 18.3, Message: In order to ensure consistency of field names, Please use reportingLocationCode instead.
+    * This field has been replaced by the reportingLocationCode field
      */
     public void setLocationCode(String value) {
         this.locationCode = value;
@@ -1237,14 +1237,14 @@ public class TransactionModel {
     }
 
 
-    private HashMap<String, String> parameters;
+    private ArrayList<TransactionParameterModel> parameters;
 
     /**
      * Getter for parameters
      *
      * Contains a list of extra parameters that were set when the transaction was created.
      */
-    public HashMap<String, String> getParameters() {
+    public ArrayList<TransactionParameterModel> getParameters() {
         return this.parameters;
     }
 
@@ -1253,7 +1253,7 @@ public class TransactionModel {
      *
      * Contains a list of extra parameters that were set when the transaction was created.
      */
-    public void setParameters(HashMap<String, String> value) {
+    public void setParameters(ArrayList<TransactionParameterModel> value) {
         this.parameters = value;
     }
 
