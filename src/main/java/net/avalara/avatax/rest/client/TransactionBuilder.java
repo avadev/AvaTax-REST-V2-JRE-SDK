@@ -67,7 +67,10 @@ public class TransactionBuilder {
             this.model.setParameters(params);
         }
 
-        final TransactionParameterModel param = new TransactionParameterModel() {{name = name; value = value; unit = unit;}};
+        TransactionParameterModel param = new TransactionParameterModel();
+        param.setName(name);
+        param.setValue(value);
+        param.setUnit(unit);
         params.add(param);
         return this;
     }
@@ -90,7 +93,10 @@ public class TransactionBuilder {
             line.setParameters(params);
         }
 
-        final TransactionLineParameterModel param = new TransactionLineParameterModel() {{name = name; value = value; unit = unit;}};
+        TransactionLineParameterModel param = new TransactionLineParameterModel();
+        param.setName(name);
+        param.setValue(value);
+        param.setUnit(unit);
         params.add(param);
         return this;
     }
