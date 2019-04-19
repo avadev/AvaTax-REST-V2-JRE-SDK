@@ -56,14 +56,18 @@ public class TransactionBuilder {
     }
 
     public TransactionBuilder withParameter(String name, String value) {
-        HashMap<String, String> params = this.model.getParameters();
+        return this.withParameter(name, value, "");
+    }
+
+    public TransactionBuilder withParameter(String name, String value, String unit) {
+        ArrayList<TransactionParameterModel> params = this.model.getParameters();
 
         if (params == null) {
-            params = new HashMap<>();
+            params = new ArrayList<TransactionParameterModel>();
             this.model.setParameters(params);
         }
 
-        params.put(name, value);
+        params.put(name, value, unit);
         return this;
     }
 
@@ -73,15 +77,19 @@ public class TransactionBuilder {
     }
 
     public TransactionBuilder withLineParameter(String name, String value) {
+        return this.withLineParameter(name, value, "");
+    }
+
+    public TransactionBuilder withLineParameter(String name, String value, String unit) {
         LineItemModel line = getMostRecentLine("WithLineParameter");
-        HashMap<String, String> params = line.getParameters();
+        ArrayList<TransactionLineParameterModel> params = line.getParameters();
 
         if (params == null) {
-            params = new HashMap<>();
+            params = new ArrayList<TransactionLineParameterModel>();
             line.setParameters(params);
         }
 
-        params.put(name, value);
+        params.put(name, valuem unit);
         return this;
     }
 
