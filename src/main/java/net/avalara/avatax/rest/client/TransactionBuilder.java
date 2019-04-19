@@ -89,7 +89,7 @@ public class TransactionBuilder {
             line.setParameters(params);
         }
 
-        params.put(name, valuem unit);
+        params.put(name, value, unit);
         return this;
     }
 
