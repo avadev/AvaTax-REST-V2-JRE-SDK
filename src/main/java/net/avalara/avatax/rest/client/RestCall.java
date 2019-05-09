@@ -110,7 +110,7 @@ public class RestCall<T> implements Callable<T> {
     }
 
     private void buildRequest(HttpRequestBase baseRequest) {
-        String clientId = String.format("%s; %s; %s; %s; %s", appName, appVersion, "JavaRestClient", "19.4.0", machineName);
+        String clientId = String.format("%s; %s; %s; %s; %s", appName, appVersion, "JavaRestClient", "19.4.2", machineName);
         baseRequest.setHeader(AvaTaxConstants.XClientHeader, clientId);
     }
 }
