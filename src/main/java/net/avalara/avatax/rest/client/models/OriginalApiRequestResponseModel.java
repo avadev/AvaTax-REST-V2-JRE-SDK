@@ -12,7 +12,7 @@ import java.util.HashMap;
 /*
  * AvaTax Software Development Kit for Java JRE based environments
  *
- * (c) 2004-2018 Avalara, Inc.
+ * (c) 2004-2019 Avalara, Inc.
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -29,44 +29,48 @@ import java.util.HashMap;
 public class OriginalApiRequestResponseModel {
 
 
-    private CreateTransactionModel request;
+    private Object request;
 
     /**
      * Getter for request
+     * Caution: this member object will change type in v19.5.
      *
      * API request
      */
-    public CreateTransactionModel getRequest() {
+    public Object getRequest() {
         return this.request;
     }
 
     /**
      * Setter for request
+     * Caution: this member object will change type in v19.5.
      *
      * API request
      */
-    public void setRequest(CreateTransactionModel value) {
+    public void Object(CreateTransactionModel value) {
         this.request = value;
     }
 
 
-    private TransactionModel response;
+    private Object response;
 
     /**
      * Getter for response
+     * Caution: this member object will change type in v19.5.
      *
      * API response
      */
-    public TransactionModel getResponse() {
+    public Object getResponse() {
         return this.response;
     }
 
     /**
      * Setter for response
+     * Caution: this member object will change type in v19.5.
      *
      * API response
      */
-    public void setResponse(TransactionModel value) {
+    public void setResponse(Object value) {
         this.response = value;
     }
 
