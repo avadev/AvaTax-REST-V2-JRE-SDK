@@ -38,7 +38,7 @@ public enum CompanyFilingStatus {
     FilingRequested(2),
 
     /** 
-     * Avalara has begun filing tax returns for this company. Normally, this status will change to `Active` after 
+     * Avalara has begun filing tax returns for this company. Normally, this status will change to `Active` after
      *  one month of successful filing of tax returns.
      */
     FirstFiling(3),

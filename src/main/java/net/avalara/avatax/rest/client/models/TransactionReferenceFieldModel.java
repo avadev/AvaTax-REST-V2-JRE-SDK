@@ -56,7 +56,7 @@ public class TransactionReferenceFieldModel {
      * Getter for reportingLocationCode
      *
      * Sets the sale location code (Outlet ID) for reporting this document to the tax authority.
-    * 
+    *  
     * This value is used by Avalara Managed Returns to group documents together by reporting locations
     * for tax authorities that require location-based reporting.
      */
@@ -68,7 +68,7 @@ public class TransactionReferenceFieldModel {
      * Setter for reportingLocationCode
      *
      * Sets the sale location code (Outlet ID) for reporting this document to the tax authority.
-    * 
+    *  
     * This value is used by Avalara Managed Returns to group documents together by reporting locations
     * for tax authorities that require location-based reporting.
      */

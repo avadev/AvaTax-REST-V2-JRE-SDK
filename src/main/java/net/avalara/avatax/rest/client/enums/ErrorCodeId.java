@@ -217,11 +217,6 @@ public enum ErrorCodeId {
     /** 
      * 
      */
-    VisibilityError(40),
-
-    /** 
-     * 
-     */
     BearerTokenNotSupported(41),
 
     /** 
@@ -947,11 +942,6 @@ public enum ErrorCodeId {
     /** 
      * Refund API error codes
      */
-    InvalidDocumentStatusForRefund(700),
-
-    /** 
-     * 
-     */
     RefundTypeAndPercentageMismatch(701),
 
     /** 
@@ -1212,11 +1202,6 @@ public enum ErrorCodeId {
     /** 
      * 
      */
-    InvalidDocumentStatusForCommit(1309),
-
-    /** 
-     * 
-     */
     InvalidDocumentType(1310),
 
     /** 
@@ -1228,6 +1213,11 @@ public enum ErrorCodeId {
      * 
      */
     TransactionIsCommitted(1313),
+
+    /** 
+     * 
+     */
+    InvalidDocumentStatus(1314),
 
     /** 
      * Communications Tax error codes
@@ -1312,22 +1302,12 @@ public enum ErrorCodeId {
     /** 
      * Miscellaneous
      */
-    InvalidDocumentStatusToAddOrDeleteLines(1700),
-
-    /** 
-     * 
-     */
     TaxRuleRequiresNexus(1701),
 
     /** 
      * 
      */
     UPCCodeNotUnique(1702),
-
-    /** 
-     * 
-     */
-    CannotUpdateSourceOrInstance(1703),
 
     /** 
      * 
@@ -1353,6 +1333,36 @@ public enum ErrorCodeId {
      * 
      */
     CannotCertifyCompany(1708),
+
+    /** 
+     * 
+     */
+    NoVoidedDocuments(1709),
+
+    /** 
+     * 
+     */
+    InadequateCommittedDocuments(1710),
+
+    /** 
+     * 
+     */
+    DocumentCodeIsGuid(1711),
+
+    /** 
+     * 
+     */
+    CustomerVendorCodeIsGuid(1712),
+
+    /** 
+     * 
+     */
+    CannotUpdateAccountTypeId(1713),
+
+    /** 
+     * 
+     */
+    InadequateDocumentLineCount(1714),
 
     /** 
      * SendSales API errors
@@ -1412,7 +1422,17 @@ public enum ErrorCodeId {
     /** 
      * 
      */
-    SubscriptionRequiredForParameter(2104);
+    SubscriptionRequiredForParameter(2104),
+
+    /** 
+     * Accounting Firm errors
+     */
+    InvalidAccountType(2105),
+
+    /** 
+     * 
+     */
+    NoExemptionNoOrCustomerUsageType(2208);
 
     private int value;
 	private static HashMap map = new HashMap<>();

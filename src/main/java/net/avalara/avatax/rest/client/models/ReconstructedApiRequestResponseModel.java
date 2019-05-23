@@ -26,7 +26,7 @@ import java.util.HashMap;
 /**
  * This model contains a reconstructed CreateTransaction request object that could potentially be used
 * to recreate this transaction.
-* 
+*  
 * Note that the API changes over time, and this reconstructed model is likely different from the exact request
 * that was originally used to create this transaction.
  */

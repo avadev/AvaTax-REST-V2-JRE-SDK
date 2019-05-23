@@ -35,7 +35,7 @@ public class CommitMultiDocumentModel {
      * Getter for code
      *
      * Represents the unique code of this MultiDocument transaction.
-    * 
+    *  
     * A MultiDocument transaction is uniquely identified by its `accountId`, `code`, and `type`. ///
      */
     public String getCode() {
@@ -46,7 +46,7 @@ public class CommitMultiDocumentModel {
      * Setter for code
      *
      * Represents the unique code of this MultiDocument transaction.
-    * 
+    *  
     * A MultiDocument transaction is uniquely identified by its `accountId`, `code`, and `type`. ///
      */
     public void setCode(String value) {
@@ -61,7 +61,7 @@ public class CommitMultiDocumentModel {
      *
      * Represents the document type of this MultiDocument transaction. For more information about
     * document types, see [DocumentType](https://developer.avalara.com/api-reference/avatax/rest/v2/models/enums/DocumentType/).
-    * 
+    *  
     * A MultiDocument transaction is uniquely identified by its `accountId`, `code`, and `type`.
      */
     public DocumentType getType() {
@@ -73,7 +73,7 @@ public class CommitMultiDocumentModel {
      *
      * Represents the document type of this MultiDocument transaction. For more information about
     * document types, see [DocumentType](https://developer.avalara.com/api-reference/avatax/rest/v2/models/enums/DocumentType/).
-    * 
+    *  
     * A MultiDocument transaction is uniquely identified by its `accountId`, `code`, and `type`.
      */
     public void setType(DocumentType value) {
@@ -87,7 +87,7 @@ public class CommitMultiDocumentModel {
      * Getter for commit
      *
      * Set this value to be `true` to commit this transaction.
-    * 
+    *  
     * Committing a transaction allows it to be reported on a tax filing. Uncommitted transactions will not be reported.
      */
     public Boolean getCommit() {
@@ -98,7 +98,7 @@ public class CommitMultiDocumentModel {
      * Setter for commit
      *
      * Set this value to be `true` to commit this transaction.
-    * 
+    *  
     * Committing a transaction allows it to be reported on a tax filing. Uncommitted transactions will not be reported.
      */
     public void setCommit(Boolean value) {

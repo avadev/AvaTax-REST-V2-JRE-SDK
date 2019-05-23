@@ -77,7 +77,7 @@ public class IsoCountryModel {
      * Getter for name
      *
      * The full name of this country in uppercase.
-    * 
+    *  
     * For names in proper or formal case, or for names in other languages, please examine the `localizedNames` element for an appropriate name.
      */
     public String getName() {
@@ -88,7 +88,7 @@ public class IsoCountryModel {
      * Setter for name
      *
      * The full name of this country in uppercase.
-    * 
+    *  
     * For names in proper or formal case, or for names in other languages, please examine the `localizedNames` element for an appropriate name.
      */
     public void setName(String value) {
@@ -123,7 +123,7 @@ public class IsoCountryModel {
      * Getter for localizedNames
      *
      * A list of localized names in a variety of languages.
-    * 
+    *  
     * This list is maintained by the International Standards Organization.
      */
     public ArrayList<IsoLocalizedName> getLocalizedNames() {
@@ -134,7 +134,7 @@ public class IsoCountryModel {
      * Setter for localizedNames
      *
      * A list of localized names in a variety of languages.
-    * 
+    *  
     * This list is maintained by the International Standards Organization.
      */
     public void setLocalizedNames(ArrayList<IsoLocalizedName> value) {

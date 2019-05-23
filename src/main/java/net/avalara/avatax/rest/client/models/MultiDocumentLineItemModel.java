@@ -106,7 +106,7 @@ public class MultiDocumentLineItemModel {
      * Getter for quantity
      *
      * Quantity of items in this line. This quantity value should always be a positive value representing the quantity of product that changed hands, even when handling returns or refunds.
-    * 
+    *  
     * If not provided, or if set to zero, the quantity value is assumed to be one (1).
      */
     public BigDecimal getQuantity() {
@@ -117,7 +117,7 @@ public class MultiDocumentLineItemModel {
      * Setter for quantity
      *
      * Quantity of items in this line. This quantity value should always be a positive value representing the quantity of product that changed hands, even when handling returns or refunds.
-    * 
+    *  
     * If not provided, or if set to zero, the quantity value is assumed to be one (1).
      */
     public void setQuantity(BigDecimal value) {
@@ -131,9 +131,9 @@ public class MultiDocumentLineItemModel {
      * Getter for amount
      *
      * Total amount for this line. The amount represents the net currency value that changed hands from the customer (represented by the `customerCode` field) to the company (represented by the `companyCode`) field.
-    * 
+    *  
     * For sale transactions, this value must be positive. It indicates the amount of money paid by the customer to the company.
-    * 
+    *  
     * For refund or return transactions, this value must be negative.
      */
     public BigDecimal getAmount() {
@@ -144,9 +144,9 @@ public class MultiDocumentLineItemModel {
      * Setter for amount
      *
      * Total amount for this line. The amount represents the net currency value that changed hands from the customer (represented by the `customerCode` field) to the company (represented by the `companyCode`) field.
-    * 
+    *  
     * For sale transactions, this value must be positive. It indicates the amount of money paid by the customer to the company.
-    * 
+    *  
     * For refund or return transactions, this value must be negative.
      */
     public void setAmount(BigDecimal value) {
@@ -160,10 +160,10 @@ public class MultiDocumentLineItemModel {
      * Getter for addresses
      *
      * The addresses to use for this transaction line.
-    * 
+    *  
     * If you set this value to `null`, or if you omit this element from your API call, then instead the transaction
     * will use the `addresses` from the document level.
-    * 
+    *  
     * If you specify any other value besides `null`, only addresses specified for this line will be used for this line.
      */
     public AddressesModel getAddresses() {
@@ -174,10 +174,10 @@ public class MultiDocumentLineItemModel {
      * Setter for addresses
      *
      * The addresses to use for this transaction line.
-    * 
+    *  
     * If you set this value to `null`, or if you omit this element from your API call, then instead the transaction
     * will use the `addresses` from the document level.
-    * 
+    *  
     * If you specify any other value besides `null`, only addresses specified for this line will be used for this line.
      */
     public void setAddresses(AddressesModel value) {
@@ -236,9 +236,9 @@ public class MultiDocumentLineItemModel {
     /**
      * Getter for entityUseCode
      *
-     * Entity Use Code - The client application customer or usage type. This field allows you to designate a type of usage that 
+     * Entity Use Code - The client application customer or usage type. This field allows you to designate a type of usage that
     * may make this transaction considered exempt by reason of exempt usage.
-    * 
+    *  
     * For a list of entity use codes, see the Definitions API `ListEntityUseCodes`.
      */
     public String getEntityUseCode() {
@@ -248,9 +248,9 @@ public class MultiDocumentLineItemModel {
     /**
      * Setter for entityUseCode
      *
-     * Entity Use Code - The client application customer or usage type. This field allows you to designate a type of usage that 
+     * Entity Use Code - The client application customer or usage type. This field allows you to designate a type of usage that
     * may make this transaction considered exempt by reason of exempt usage.
-    * 
+    *  
     * For a list of entity use codes, see the Definitions API `ListEntityUseCodes`.
      */
     public void setEntityUseCode(String value) {
@@ -286,9 +286,9 @@ public class MultiDocumentLineItemModel {
     /**
      * Getter for exemptionCode
      *
-     * The customer Tax Id Number (tax_number) associated with a certificate - Sales tax calculation requests first determine if there is an applicable 
-    * ECMS entry available, and will utilize it for exemption processing. If no applicable ECMS entry is available, the AvaTax service 
-    * will determine if an Exemption Number field is populated or an Entity/Use Code is included in the sales tax calculation request, 
+     * The customer Tax Id Number (tax_number) associated with a certificate - Sales tax calculation requests first determine if there is an applicable
+    * ECMS entry available, and will utilize it for exemption processing. If no applicable ECMS entry is available, the AvaTax service
+    * will determine if an Exemption Number field is populated or an Entity/Use Code is included in the sales tax calculation request,
     * and will perform exemption processing using either of those two options.
     * Note: This is same as 'exemptNo' in TransactionModel.
      */
@@ -299,9 +299,9 @@ public class MultiDocumentLineItemModel {
     /**
      * Setter for exemptionCode
      *
-     * The customer Tax Id Number (tax_number) associated with a certificate - Sales tax calculation requests first determine if there is an applicable 
-    * ECMS entry available, and will utilize it for exemption processing. If no applicable ECMS entry is available, the AvaTax service 
-    * will determine if an Exemption Number field is populated or an Entity/Use Code is included in the sales tax calculation request, 
+     * The customer Tax Id Number (tax_number) associated with a certificate - Sales tax calculation requests first determine if there is an applicable
+    * ECMS entry available, and will utilize it for exemption processing. If no applicable ECMS entry is available, the AvaTax service
+    * will determine if an Exemption Number field is populated or an Entity/Use Code is included in the sales tax calculation request,
     * and will perform exemption processing using either of those two options.
     * Note: This is same as 'exemptNo' in TransactionModel.
      */
@@ -315,7 +315,7 @@ public class MultiDocumentLineItemModel {
     /**
      * Getter for discounted
      *
-     * True if the document discount should be applied to this line. If this value is false, or not provided, discounts will not be 
+     * True if the document discount should be applied to this line. If this value is false, or not provided, discounts will not be
     * applied to this line even if they are specified on the root `discount` element.
      */
     public Boolean getDiscounted() {
@@ -325,7 +325,7 @@ public class MultiDocumentLineItemModel {
     /**
      * Setter for discounted
      *
-     * True if the document discount should be applied to this line. If this value is false, or not provided, discounts will not be 
+     * True if the document discount should be applied to this line. If this value is false, or not provided, discounts will not be
     * applied to this line even if they are specified on the root `discount` element.
      */
     public void setDiscounted(Boolean value) {
@@ -339,9 +339,9 @@ public class MultiDocumentLineItemModel {
      * Getter for taxIncluded
      *
      * Indicates whether the `amount` for this line already includes tax.
-    * 
-    * If this value is `true`, the final price of this line including tax will equal the value in `amount`. 
-    * 
+    *  
+    * If this value is `true`, the final price of this line including tax will equal the value in `amount`.
+    *  
     * If this value is `null` or `false`, the final price will equal `amount` plus whatever taxes apply to this line.
      */
     public Boolean getTaxIncluded() {
@@ -352,9 +352,9 @@ public class MultiDocumentLineItemModel {
      * Setter for taxIncluded
      *
      * Indicates whether the `amount` for this line already includes tax.
-    * 
-    * If this value is `true`, the final price of this line including tax will equal the value in `amount`. 
-    * 
+    *  
+    * If this value is `true`, the final price of this line including tax will equal the value in `amount`.
+    *  
     * If this value is `null` or `false`, the final price will equal `amount` plus whatever taxes apply to this line.
      */
     public void setTaxIncluded(Boolean value) {
@@ -368,7 +368,7 @@ public class MultiDocumentLineItemModel {
      * Getter for revenueAccount
      *
      * Revenue Account (Customer Defined Field).
-    * 
+    *  
     * This field is available for you to use to provide whatever information your implementation requires. It does not affect tax calculation.
      */
     public String getRevenueAccount() {
@@ -379,7 +379,7 @@ public class MultiDocumentLineItemModel {
      * Setter for revenueAccount
      *
      * Revenue Account (Customer Defined Field).
-    * 
+    *  
     * This field is available for you to use to provide whatever information your implementation requires. It does not affect tax calculation.
      */
     public void setRevenueAccount(String value) {
@@ -393,7 +393,7 @@ public class MultiDocumentLineItemModel {
      * Getter for ref1
      *
      * Ref1 (Customer Defined Field)
-    * 
+    *  
     * This field is available for you to use to provide whatever information your implementation requires. It does not affect tax calculation.
      */
     public String getRef1() {
@@ -404,7 +404,7 @@ public class MultiDocumentLineItemModel {
      * Setter for ref1
      *
      * Ref1 (Customer Defined Field)
-    * 
+    *  
     * This field is available for you to use to provide whatever information your implementation requires. It does not affect tax calculation.
      */
     public void setRef1(String value) {
@@ -418,7 +418,7 @@ public class MultiDocumentLineItemModel {
      * Getter for ref2
      *
      * Ref2 (Customer Defined Field)
-    * 
+    *  
     * This field is available for you to use to provide whatever information your implementation requires. It does not affect tax calculation.
      */
     public String getRef2() {
@@ -429,7 +429,7 @@ public class MultiDocumentLineItemModel {
      * Setter for ref2
      *
      * Ref2 (Customer Defined Field)
-    * 
+    *  
     * This field is available for you to use to provide whatever information your implementation requires. It does not affect tax calculation.
      */
     public void setRef2(String value) {
@@ -443,7 +443,7 @@ public class MultiDocumentLineItemModel {
      * Getter for description
      *
      * Item description.
-    * 
+    *  
     * For Streamlined Sales Tax (SST) customers, this field is required if an unmapped `itemCode` is used.
      */
     public String getDescription() {
@@ -454,7 +454,7 @@ public class MultiDocumentLineItemModel {
      * Setter for description
      *
      * Item description.
-    * 
+    *  
     * For Streamlined Sales Tax (SST) customers, this field is required if an unmapped `itemCode` is used.
      */
     public void setDescription(String value) {
@@ -469,9 +469,9 @@ public class MultiDocumentLineItemModel {
      *
      * VAT business identification number for the customer for this line item. If you leave this field empty,
     * this line item will use whatever business identification number you provided at the transaction level.
-    * 
+    *  
     * If you specify a VAT business identification number for the customer in this transaction and you have also set up
-    * a business identification number for your company during company setup, this transaction will be treated as a 
+    * a business identification number for your company during company setup, this transaction will be treated as a
     * business-to-business transaction for VAT purposes and it will be calculated according to VAT tax rules.
      */
     public String getBusinessIdentificationNo() {
@@ -483,9 +483,9 @@ public class MultiDocumentLineItemModel {
      *
      * VAT business identification number for the customer for this line item. If you leave this field empty,
     * this line item will use whatever business identification number you provided at the transaction level.
-    * 
+    *  
     * If you specify a VAT business identification number for the customer in this transaction and you have also set up
-    * a business identification number for your company during company setup, this transaction will be treated as a 
+    * a business identification number for your company during company setup, this transaction will be treated as a
     * business-to-business transaction for VAT purposes and it will be calculated according to VAT tax rules.
      */
     public void setBusinessIdentificationNo(String value) {
@@ -520,7 +520,7 @@ public class MultiDocumentLineItemModel {
      * Getter for parameters
      *
      * Special parameters that apply to this line within this transaction.
-    * 
+    *  
     * To get a full list of available parameters, please use the `ListParameters` API.
      */
     public ArrayList<TransactionLineParameterModel> getParameters() {
@@ -531,7 +531,7 @@ public class MultiDocumentLineItemModel {
      * Setter for parameters
      *
      * Special parameters that apply to this line within this transaction.
-    * 
+    *  
     * To get a full list of available parameters, please use the `ListParameters` API.
      */
     public void setParameters(ArrayList<TransactionLineParameterModel> value) {
@@ -546,7 +546,7 @@ public class MultiDocumentLineItemModel {
      *
      * The Item code for Custom Duty / Global Import tax determination
     * Harmonized Tariff System code for this transaction.
-    * 
+    *  
     * For a list of harmonized tariff codes, see the Definitions API for harmonized tariff codes.
      */
     public String getHsCode() {
@@ -558,7 +558,7 @@ public class MultiDocumentLineItemModel {
      *
      * The Item code for Custom Duty / Global Import tax determination
     * Harmonized Tariff System code for this transaction.
-    * 
+    *  
     * For a list of harmonized tariff codes, see the Definitions API for harmonized tariff codes.
      */
     public void setHsCode(String value) {

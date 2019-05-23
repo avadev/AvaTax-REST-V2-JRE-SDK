@@ -24,8 +24,8 @@ import java.util.HashMap;
  */
 
 /**
- * Settle this transaction with your ledger by executing one or many actions against that transaction. 
-* 
+ * Settle this transaction with your ledger by executing one or many actions against that transaction.
+*  
 * You may use this endpoint to verify the transaction, change the transaction's code, and commit the transaction for reporting purposes.
 * This endpoint may be used to execute any or all of these actions at once.
  */
@@ -38,7 +38,7 @@ public class SettleTransactionModel {
      * Getter for verify
      *
      * To verify this transaction, you may provide information in this field.
-    * 
+    *  
     * If you leave this field null, the transaction will not be verified.
      */
     public VerifyTransactionModel getVerify() {
@@ -49,7 +49,7 @@ public class SettleTransactionModel {
      * Setter for verify
      *
      * To verify this transaction, you may provide information in this field.
-    * 
+    *  
     * If you leave this field null, the transaction will not be verified.
      */
     public void setVerify(VerifyTransactionModel value) {
@@ -63,7 +63,7 @@ public class SettleTransactionModel {
      * Getter for changeCode
      *
      * To change the code for this transaction, you may provide information in this field.
-    * 
+    *  
     * If you leave this field null, the transaction's code will not be changed.
      */
     public ChangeTransactionCodeModel getChangeCode() {
@@ -74,7 +74,7 @@ public class SettleTransactionModel {
      * Setter for changeCode
      *
      * To change the code for this transaction, you may provide information in this field.
-    * 
+    *  
     * If you leave this field null, the transaction's code will not be changed.
      */
     public void setChangeCode(ChangeTransactionCodeModel value) {
@@ -88,9 +88,9 @@ public class SettleTransactionModel {
      * Getter for commit
      *
      * To commit this transaction so that it can be reported on a tax filing, you may provide information in this field.
-    * 
+    *  
     * If you leave this field null, the transaction's commit status will not be changed.
-    * 
+    *  
     * If you use Avalara's Managed Returns Service, committing a transaction will allow that transaction to be filed.
      */
     public CommitTransactionModel getCommit() {
@@ -101,9 +101,9 @@ public class SettleTransactionModel {
      * Setter for commit
      *
      * To commit this transaction so that it can be reported on a tax filing, you may provide information in this field.
-    * 
+    *  
     * If you leave this field null, the transaction's commit status will not be changed.
-    * 
+    *  
     * If you use Avalara's Managed Returns Service, committing a transaction will allow that transaction to be filed.
      */
     public void setCommit(CommitTransactionModel value) {

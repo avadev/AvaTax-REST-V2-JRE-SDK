@@ -35,7 +35,7 @@ public class CommitTransactionModel {
      * Getter for commit
      *
      * Set this value to be `true` to commit this transaction.
-    * 
+    *  
     * Committing a transaction allows it to be reported on a tax filing. Uncommitted transactions will not be reported.
      */
     public Boolean getCommit() {
@@ -46,7 +46,7 @@ public class CommitTransactionModel {
      * Setter for commit
      *
      * Set this value to be `true` to commit this transaction.
-    * 
+    *  
     * Committing a transaction allows it to be reported on a tax filing. Uncommitted transactions will not be reported.
      */
     public void setCommit(Boolean value) {

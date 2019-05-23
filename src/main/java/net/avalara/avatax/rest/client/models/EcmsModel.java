@@ -203,12 +203,12 @@ public class EcmsModel {
      * Getter for region
      *
      * Name or ISO 3166 code identifying the region within the country.
-    * 
+    *  
     * This field supports many different region identifiers:
     *  * Two and three character ISO 3166 region codes
     *  * Fully spelled out names of the region in ISO supported languages
     *  * Common alternative spellings for many regions
-    * 
+    *  
     * For a full list of all supported codes and names, please see the Definitions API `ListRegions`.
      */
     public String getRegion() {
@@ -219,12 +219,12 @@ public class EcmsModel {
      * Setter for region
      *
      * Name or ISO 3166 code identifying the region within the country.
-    * 
+    *  
     * This field supports many different region identifiers:
     *  * Two and three character ISO 3166 region codes
     *  * Fully spelled out names of the region in ISO supported languages
     *  * Common alternative spellings for many regions
-    * 
+    *  
     * For a full list of all supported codes and names, please see the Definitions API `ListRegions`.
      */
     public void setRegion(String value) {
@@ -259,13 +259,13 @@ public class EcmsModel {
      * Getter for country
      *
      * Name or ISO 3166 code identifying the country.
-    * 
+    *  
     * This field supports many different country identifiers:
     *  * Two character ISO 3166 codes
     *  * Three character ISO 3166 codes
     *  * Fully spelled out names of the country in ISO supported languages
     *  * Common alternative spellings for many countries
-    * 
+    *  
     * For a full list of all supported codes and names, please see the Definitions API `ListCountries`.
      */
     public String getCountry() {
@@ -276,13 +276,13 @@ public class EcmsModel {
      * Setter for country
      *
      * Name or ISO 3166 code identifying the country.
-    * 
+    *  
     * This field supports many different country identifiers:
     *  * Two character ISO 3166 codes
     *  * Three character ISO 3166 codes
     *  * Fully spelled out names of the country in ISO supported languages
     *  * Common alternative spellings for many countries
-    * 
+    *  
     * For a full list of all supported codes and names, please see the Definitions API `ListCountries`.
      */
     public void setCountry(String value) {
@@ -445,7 +445,7 @@ public class EcmsModel {
      * Getter for regionsApplicable
      *
      * A list of applicable regions for this exempt certificate.
-    * 
+    *  
     * To list more than one applicable region, separate the list of region codes with commas.
      */
     public String getRegionsApplicable() {
@@ -456,7 +456,7 @@ public class EcmsModel {
      * Setter for regionsApplicable
      *
      * A list of applicable regions for this exempt certificate.
-    * 
+    *  
     * To list more than one applicable region, separate the list of region codes with commas.
      */
     public void setRegionsApplicable(String value) {
@@ -617,13 +617,13 @@ public class EcmsModel {
      * Getter for countryIssued
      *
      * Name or ISO 3166 code identifying the country that issued this ECMS certificate.
-    * 
+    *  
     * This field supports many different country identifiers:
     *  * Two character ISO 3166 codes
     *  * Three character ISO 3166 codes
     *  * Fully spelled out names of the country in ISO supported languages
     *  * Common alternative spellings for many countries
-    * 
+    *  
     * For a full list of all supported codes and names, please see the Definitions API `ListCountries`.
      */
     public String getCountryIssued() {
@@ -634,13 +634,13 @@ public class EcmsModel {
      * Setter for countryIssued
      *
      * Name or ISO 3166 code identifying the country that issued this ECMS certificate.
-    * 
+    *  
     * This field supports many different country identifiers:
     *  * Two character ISO 3166 codes
     *  * Three character ISO 3166 codes
     *  * Fully spelled out names of the country in ISO supported languages
     *  * Common alternative spellings for many countries
-    * 
+    *  
     * For a full list of all supported codes and names, please see the Definitions API `ListCountries`.
      */
     public void setCountryIssued(String value) {
@@ -653,7 +653,7 @@ public class EcmsModel {
     /**
      * Getter for avaCertId
      *
-     * If the certificate record was synced from an AvaTax Certs account(as opposed to being entered in ECMS directly), 
+     * If the certificate record was synced from an AvaTax Certs account(as opposed to being entered in ECMS directly),
     * the unique AvaTax Certs identifier for the certificate record. Usually same as the Id of a Certificate.
      */
     public String getAvaCertId() {
@@ -663,7 +663,7 @@ public class EcmsModel {
     /**
      * Setter for avaCertId
      *
-     * If the certificate record was synced from an AvaTax Certs account(as opposed to being entered in ECMS directly), 
+     * If the certificate record was synced from an AvaTax Certs account(as opposed to being entered in ECMS directly),
     * the unique AvaTax Certs identifier for the certificate record. Usually same as the Id of a Certificate.
      */
     public void setAvaCertId(String value) {

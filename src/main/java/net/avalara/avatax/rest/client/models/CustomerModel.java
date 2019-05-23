@@ -77,10 +77,10 @@ public class CustomerModel {
      * Getter for customerCode
      *
      * The unique code identifying this customer. Must be unique within your company.
-    * 
+    *  
     * This code should be used in the `customerCode` field of any call that creates or adjusts a transaction
     * in order to ensure that all exemptions that apply to this customer are correctly considered.
-    * 
+    *  
     * Note: This field is case sensitive.
      */
     public String getCustomerCode() {
@@ -91,10 +91,10 @@ public class CustomerModel {
      * Setter for customerCode
      *
      * The unique code identifying this customer. Must be unique within your company.
-    * 
+    *  
     * This code should be used in the `customerCode` field of any call that creates or adjusts a transaction
     * in order to ensure that all exemptions that apply to this customer are correctly considered.
-    * 
+    *  
     * Note: This field is case sensitive.
      */
     public void setCustomerCode(String value) {
@@ -151,7 +151,7 @@ public class CustomerModel {
     /**
      * Getter for attnName
      *
-     * Indicates the "Attn:" component of the address for this customer, if this customer requires mailings to be shipped 
+     * Indicates the "Attn:" component of the address for this customer, if this customer requires mailings to be shipped
     * to the attention of a specific person or department name.
      */
     public String getAttnName() {
@@ -161,7 +161,7 @@ public class CustomerModel {
     /**
      * Setter for attnName
      *
-     * Indicates the "Attn:" component of the address for this customer, if this customer requires mailings to be shipped 
+     * Indicates the "Attn:" component of the address for this customer, if this customer requires mailings to be shipped
     * to the attention of a specific person or department name.
      */
     public void setAttnName(String value) {
@@ -406,13 +406,13 @@ public class CustomerModel {
      * Getter for country
      *
      * Name or ISO 3166 code identifying the country.
-    * 
+    *  
     * This field supports many different country identifiers:
     *  * Two character ISO 3166 codes
     *  * Three character ISO 3166 codes
     *  * Fully spelled out names of the country in ISO supported languages
     *  * Common alternative spellings for many countries
-    * 
+    *  
     * For a full list of all supported codes and names, please see the Definitions API `ListCountries`.
      */
     public String getCountry() {
@@ -423,13 +423,13 @@ public class CustomerModel {
      * Setter for country
      *
      * Name or ISO 3166 code identifying the country.
-    * 
+    *  
     * This field supports many different country identifiers:
     *  * Two character ISO 3166 codes
     *  * Three character ISO 3166 codes
     *  * Fully spelled out names of the country in ISO supported languages
     *  * Common alternative spellings for many countries
-    * 
+    *  
     * For a full list of all supported codes and names, please see the Definitions API `ListCountries`.
      */
     public void setCountry(String value) {
@@ -443,12 +443,12 @@ public class CustomerModel {
      * Getter for region
      *
      * Name or ISO 3166 code identifying the region within the country.
-    * 
+    *  
     * This field supports many different region identifiers:
     *  * Two and three character ISO 3166 region codes
     *  * Fully spelled out names of the region in ISO supported languages
     *  * Common alternative spellings for many regions
-    * 
+    *  
     * For a full list of all supported codes and names, please see the Definitions API `ListRegions`.
      */
     public String getRegion() {
@@ -459,12 +459,12 @@ public class CustomerModel {
      * Setter for region
      *
      * Name or ISO 3166 code identifying the region within the country.
-    * 
+    *  
     * This field supports many different region identifiers:
     *  * Two and three character ISO 3166 region codes
     *  * Fully spelled out names of the region in ISO supported languages
     *  * Common alternative spellings for many regions
-    * 
+    *  
     * For a full list of all supported codes and names, please see the Definitions API `ListRegions`.
      */
     public void setRegion(String value) {
@@ -519,7 +519,7 @@ public class CustomerModel {
     /**
      * Getter for taxpayerIdNumber
      *
-     * For customers in the United States, this field is the federal taxpayer ID number. For businesses, this is 
+     * For customers in the United States, this field is the federal taxpayer ID number. For businesses, this is
     * a Federal Employer Identification Number. For individuals, this will be a Social Security Number.
      */
     public String getTaxpayerIdNumber() {
@@ -529,7 +529,7 @@ public class CustomerModel {
     /**
      * Setter for taxpayerIdNumber
      *
-     * For customers in the United States, this field is the federal taxpayer ID number. For businesses, this is 
+     * For customers in the United States, this field is the federal taxpayer ID number. For businesses, this is
     * a Federal Employer Identification Number. For individuals, this will be a Social Security Number.
      */
     public void setTaxpayerIdNumber(String value) {
@@ -542,7 +542,7 @@ public class CustomerModel {
     /**
      * Getter for certificates
      *
-     * A list of exemption certficates that apply to this customer. You can fetch this data by specifying 
+     * A list of exemption certficates that apply to this customer. You can fetch this data by specifying
     * `$include=certificates` when calling a customer fetch API.
      */
     public ArrayList<CertificateModel> getCertificates() {
@@ -552,7 +552,7 @@ public class CustomerModel {
     /**
      * Setter for certificates
      *
-     * A list of exemption certficates that apply to this customer. You can fetch this data by specifying 
+     * A list of exemption certficates that apply to this customer. You can fetch this data by specifying
     * `$include=certificates` when calling a customer fetch API.
      */
     public void setCertificates(ArrayList<CertificateModel> value) {
@@ -565,8 +565,8 @@ public class CustomerModel {
     /**
      * Getter for customFields
      *
-     * A list of custom fields defined on this customer. 
-    * 
+     * A list of custom fields defined on this customer.
+    *  
     * For more information about custom fields, see the [Avalara Help Center article about custom fields](https://help.avalara.com/0021_Avalara_CertCapture/All_About_CertCapture/Edit_or_Remove_Details_about_Customers).
      */
     public ArrayList<CustomFieldModel> getCustomFields() {
@@ -576,8 +576,8 @@ public class CustomerModel {
     /**
      * Setter for customFields
      *
-     * A list of custom fields defined on this customer. 
-    * 
+     * A list of custom fields defined on this customer.
+    *  
     * For more information about custom fields, see the [Avalara Help Center article about custom fields](https://help.avalara.com/0021_Avalara_CertCapture/All_About_CertCapture/Edit_or_Remove_Details_about_Customers).
      */
     public void setCustomFields(ArrayList<CustomFieldModel> value) {
@@ -590,14 +590,14 @@ public class CustomerModel {
     /**
      * Getter for exposureZones
      *
-     * A list of exposure zones where you do business with this customer. 
-    * 
+     * A list of exposure zones where you do business with this customer.
+    *  
     * To keep track of certificates that are needed for each customer, set this value to a list of all exposure zones where you
     * sell products to this customer. You can find a list of exposure zones by calling `ListExposureZones`.
-    * 
+    *  
     * This field is often called "Ship-To States" or "Ship-To Zones", since it generally refers to locations where you ship products
     * when this customer makes a purchase.
-    * 
+    *  
     * This field is useful for audit purposes since it helps you ensure you have the necessary certificates for each customer.
      */
     public ArrayList<ExposureZoneModel> getExposureZones() {
@@ -607,14 +607,14 @@ public class CustomerModel {
     /**
      * Setter for exposureZones
      *
-     * A list of exposure zones where you do business with this customer. 
-    * 
+     * A list of exposure zones where you do business with this customer.
+    *  
     * To keep track of certificates that are needed for each customer, set this value to a list of all exposure zones where you
     * sell products to this customer. You can find a list of exposure zones by calling `ListExposureZones`.
-    * 
+    *  
     * This field is often called "Ship-To States" or "Ship-To Zones", since it generally refers to locations where you ship products
     * when this customer makes a purchase.
-    * 
+    *  
     * This field is useful for audit purposes since it helps you ensure you have the necessary certificates for each customer.
      */
     public void setExposureZones(ArrayList<ExposureZoneModel> value) {
@@ -628,7 +628,7 @@ public class CustomerModel {
      * Getter for shipTos
      *
      * A list of ship-to customer records that are connected to this bill-to customer.
-    * 
+    *  
     * Customer records represent businesses or individuals who can provide exemption certificates. Some customers
     * may have certificates that are linked to their shipping address or their billing address. To group these
     * customer records together, you may link multiple bill-to and ship-to addresses together to represent a single
@@ -642,7 +642,7 @@ public class CustomerModel {
      * Setter for shipTos
      *
      * A list of ship-to customer records that are connected to this bill-to customer.
-    * 
+    *  
     * Customer records represent businesses or individuals who can provide exemption certificates. Some customers
     * may have certificates that are linked to their shipping address or their billing address. To group these
     * customer records together, you may link multiple bill-to and ship-to addresses together to represent a single

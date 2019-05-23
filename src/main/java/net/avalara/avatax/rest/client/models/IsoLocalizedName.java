@@ -36,7 +36,7 @@ public class IsoLocalizedName {
      * Getter for languageAlpha2Code
      *
      * The two-character alphanumeric code identifying the language in which this name is used.
-    * 
+    *  
     * Note that languageAlpha2Code and language3AlphaCode refer to the same language.
      */
     public String getLanguageAlpha2Code() {
@@ -47,7 +47,7 @@ public class IsoLocalizedName {
      * Setter for languageAlpha2Code
      *
      * The two-character alphanumeric code identifying the language in which this name is used.
-    * 
+    *  
     * Note that languageAlpha2Code and language3AlphaCode refer to the same language.
      */
     public void setLanguageAlpha2Code(String value) {
@@ -61,7 +61,7 @@ public class IsoLocalizedName {
      * Getter for languageAlpha3Code
      *
      * The three-character alphanumeric code identifying the language in which this name is used.
-    * 
+    *  
     * Note that languageAlpha2Code and language3AlphaCode refer to the same language.
      */
     public String getLanguageAlpha3Code() {
@@ -72,7 +72,7 @@ public class IsoLocalizedName {
      * Setter for languageAlpha3Code
      *
      * The three-character alphanumeric code identifying the language in which this name is used.
-    * 
+    *  
     * Note that languageAlpha2Code and language3AlphaCode refer to the same language.
      */
     public void setLanguageAlpha3Code(String value) {

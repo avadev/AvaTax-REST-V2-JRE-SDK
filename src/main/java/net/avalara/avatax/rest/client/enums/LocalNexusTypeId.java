@@ -32,7 +32,7 @@ public enum LocalNexusTypeId {
     StateAdministered(1),
 
     /** 
-     * Customer declares nexus in all local taxing authorities. 
+     * Customer declares nexus in all local taxing authorities.
      *  
      *  This value only takes effect if you set `hasLocalNexus` = true.
      */

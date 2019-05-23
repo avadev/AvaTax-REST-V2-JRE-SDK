@@ -56,7 +56,7 @@ public class AdjustMultiDocumentModel {
      * Getter for adjustDescription
      *
      * If the AdjustmentReason is "Other", specify the reason here.
-    * 
+    *  
     * This is required when the AdjustmentReason is 8 (Other).
      */
     public String getAdjustDescription() {
@@ -67,7 +67,7 @@ public class AdjustMultiDocumentModel {
      * Setter for adjustDescription
      *
      * If the AdjustmentReason is "Other", specify the reason here.
-    * 
+    *  
     * This is required when the AdjustmentReason is 8 (Other).
      */
     public void setAdjustDescription(String value) {

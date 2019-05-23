@@ -24,40 +24,34 @@ import java.util.HashMap;
  */
 
 /**
- * Create or adjust transaction model
+ * Model for updating rule execution order
  */
-public class CreateOrAdjustTransactionModel {
+public class AdvancedRuleExecutionOrderModel {
 
 
-    private CreateTransactionModel createTransactionModel;
+    private ArrayList<String> ruleExecutionIds;
 
     /**
-     * Getter for createTransactionModel
+     * Getter for ruleExecutionIds
      *
-     * The create transaction model to be created or updated.
-    *  
-    * If the transaction does not exist, create transaction.
-    * If the transaction exists, adjust the existing transaction.
+     * The rule execution Ids in the desired order
      */
-    public CreateTransactionModel getCreateTransactionModel() {
-        return this.createTransactionModel;
+    public ArrayList<String> getRuleExecutionIds() {
+        return this.ruleExecutionIds;
     }
 
     /**
-     * Setter for createTransactionModel
+     * Setter for ruleExecutionIds
      *
-     * The create transaction model to be created or updated.
-    *  
-    * If the transaction does not exist, create transaction.
-    * If the transaction exists, adjust the existing transaction.
+     * The rule execution Ids in the desired order
      */
-    public void setCreateTransactionModel(CreateTransactionModel value) {
-        this.createTransactionModel = value;
+    public void setRuleExecutionIds(ArrayList<String> value) {
+        this.ruleExecutionIds = value;
     }
 
 
     /**
-     * Returns a JSON string representation of CreateOrAdjustTransactionModel
+     * Returns a JSON string representation of AdvancedRuleExecutionOrderModel
      */
     @Override
     public String toString() {

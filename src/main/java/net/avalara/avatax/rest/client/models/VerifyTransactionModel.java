@@ -25,7 +25,7 @@ import java.util.HashMap;
 
 /**
  * Verify this transaction by matching it to values in your accounting system.
-* 
+*  
 * You may specify one or more of the following fields to verify: `date`, `totalAmount`, or `totalTax`.
 * This call will report an error if there is any difference between the data stored in AvaTax and
 * the data stored in your accounting system.
@@ -40,7 +40,7 @@ public class VerifyTransactionModel {
      *
      * Set this value if you wish to verify a match between `verifyTransactionDate` and
     * the `documentDate` value on the transaction recorded in AvaTax.
-    * 
+    *  
     * If you leave this field empty, we will skip verification for this field.
      */
     public Date getVerifyTransactionDate() {
@@ -52,7 +52,7 @@ public class VerifyTransactionModel {
      *
      * Set this value if you wish to verify a match between `verifyTransactionDate` and
     * the `documentDate` value on the transaction recorded in AvaTax.
-    * 
+    *  
     * If you leave this field empty, we will skip verification for this field.
      */
     public void setVerifyTransactionDate(Date value) {
@@ -67,7 +67,7 @@ public class VerifyTransactionModel {
      *
      * Set this value if you wish to verify a match between `verifyTotalAmount` and
     * the `totalAmount` value on the transaction recorded in AvaTax.
-    * 
+    *  
     * If you leave this field empty, we will skip verification for this field.
      */
     public BigDecimal getVerifyTotalAmount() {
@@ -79,7 +79,7 @@ public class VerifyTransactionModel {
      *
      * Set this value if you wish to verify a match between `verifyTotalAmount` and
     * the `totalAmount` value on the transaction recorded in AvaTax.
-    * 
+    *  
     * If you leave this field empty, we will skip verification for this field.
      */
     public void setVerifyTotalAmount(BigDecimal value) {
@@ -94,7 +94,7 @@ public class VerifyTransactionModel {
      *
      * Set this value if you wish to verify a match between `verifyTotalTax` and
     * the `totalTax` value on the transaction recorded in AvaTax.
-    * 
+    *  
     * If you leave this field empty, we will skip verification for this field.
      */
     public BigDecimal getVerifyTotalTax() {
@@ -106,7 +106,7 @@ public class VerifyTransactionModel {
      *
      * Set this value if you wish to verify a match between `verifyTotalTax` and
     * the `totalTax` value on the transaction recorded in AvaTax.
-    * 
+    *  
     * If you leave this field empty, we will skip verification for this field.
      */
     public void setVerifyTotalTax(BigDecimal value) {

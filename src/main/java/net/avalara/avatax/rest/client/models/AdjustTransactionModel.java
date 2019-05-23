@@ -56,7 +56,7 @@ public class AdjustTransactionModel {
      * Getter for adjustmentDescription
      *
      * If the AdjustmentReason is "Other", specify the reason here.
-    * 
+    *  
     * This is required when the AdjustmentReason is 8 (Other).
      */
     public String getAdjustmentDescription() {
@@ -67,7 +67,7 @@ public class AdjustTransactionModel {
      * Setter for adjustmentDescription
      *
      * If the AdjustmentReason is "Other", specify the reason here.
-    * 
+    *  
     * This is required when the AdjustmentReason is 8 (Other).
      */
     public void setAdjustmentDescription(String value) {
