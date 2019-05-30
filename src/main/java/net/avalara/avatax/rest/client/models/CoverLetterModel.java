@@ -25,7 +25,7 @@ import java.util.HashMap;
 
 /**
  * The CoverLetter model represents a message sent along with an invitation to use CertExpress to
-* upload certificates. An invitation allows customers to use CertExpress to upload their exemption 
+* upload certificates. An invitation allows customers to use CertExpress to upload their exemption
 * certificates directly; this cover letter explains why the invitation was sent.
  */
 public class CoverLetterModel {

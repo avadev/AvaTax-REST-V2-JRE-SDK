@@ -24,14 +24,30 @@ import java.util.HashMap;
  */
 
 /**
- * A custom field provides extra information about a customer or certificate.
-*  
-* Custom fields are provided to permit you to store additional information about an exemption certificate or customer. They are available to
-* support additional use cases beyond that supported directly by Avalara's exemption certificate software.
-*  
-* For more information about custom fields, see the [Avalara Help Center article about custom fields](https://help.avalara.com/0021_Avalara_CertCapture/All_About_CertCapture/Edit_or_Remove_Details_about_Customers).
+ * A generic global advanced rule encapsulating a script
  */
-public class CustomFieldModel {
+public class AdvancedRuleModel {
+
+
+    private String ruleId;
+
+    /**
+     * Getter for ruleId
+     *
+     * Unique identifier for a rule
+     */
+    public String getRuleId() {
+        return this.ruleId;
+    }
+
+    /**
+     * Setter for ruleId
+     *
+     * Unique identifier for a rule
+     */
+    public void setRuleId(String value) {
+        this.ruleId = value;
+    }
 
 
     private String name;
@@ -39,7 +55,7 @@ public class CustomFieldModel {
     /**
      * Getter for name
      *
-     * The name of the custom field.
+     * Rule name
      */
     public String getName() {
         return this.name;
@@ -48,36 +64,36 @@ public class CustomFieldModel {
     /**
      * Setter for name
      *
-     * The name of the custom field.
+     * Rule name
      */
     public void setName(String value) {
         this.name = value;
     }
 
 
-    private String value;
+    private String description;
 
     /**
-     * Getter for value
+     * Getter for description
      *
-     * The value of the custom field.
+     * Description of the rule
      */
-    public String getValue() {
-        return this.value;
+    public String getDescription() {
+        return this.description;
     }
 
     /**
-     * Setter for value
+     * Setter for description
      *
-     * The value of the custom field.
+     * Description of the rule
      */
-    public void setValue(String value) {
-        this.value = value;
+    public void setDescription(String value) {
+        this.description = value;
     }
 
 
     /**
-     * Returns a JSON string representation of CustomFieldModel
+     * Returns a JSON string representation of AdvancedRuleModel
      */
     @Override
     public String toString() {

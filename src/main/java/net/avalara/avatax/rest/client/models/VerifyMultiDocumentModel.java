@@ -25,10 +25,10 @@ import java.util.HashMap;
 
 /**
  * Verify that a MultiDocument object matches the information in your accounting system.
-* 
+*  
 * If all attributes of the MultiDocument object match the values in your request, the
 * MultiDocument object will be moved to the document status `Posted`.
-* 
+*  
 * For more information on document status, see [DocumentStatus](https://developer.avalara.com/api-reference/avatax/rest/v2/models/enums/DocumentStatus/).
  */
 public class VerifyMultiDocumentModel {
@@ -40,7 +40,7 @@ public class VerifyMultiDocumentModel {
      * Getter for code
      *
      * Represents the unique code of this MultiDocument transaction.
-    * 
+    *  
     * A MultiDocument transaction is uniquely identified by its `accountId`, `code`, and `type`.
      */
     public String getCode() {
@@ -51,7 +51,7 @@ public class VerifyMultiDocumentModel {
      * Setter for code
      *
      * Represents the unique code of this MultiDocument transaction.
-    * 
+    *  
     * A MultiDocument transaction is uniquely identified by its `accountId`, `code`, and `type`.
      */
     public void setCode(String value) {
@@ -66,7 +66,7 @@ public class VerifyMultiDocumentModel {
      *
      * Represents the document type of this MultiDocument transaction. For more information about
     * document types, see [DocumentType](https://developer.avalara.com/api-reference/avatax/rest/v2/models/enums/DocumentType/).
-    * 
+    *  
     * A MultiDocument transaction is uniquely identified by its `accountId`, `code`, and `type`.
      */
     public DocumentType getType() {
@@ -78,7 +78,7 @@ public class VerifyMultiDocumentModel {
      *
      * Represents the document type of this MultiDocument transaction. For more information about
     * document types, see [DocumentType](https://developer.avalara.com/api-reference/avatax/rest/v2/models/enums/DocumentType/).
-    * 
+    *  
     * A MultiDocument transaction is uniquely identified by its `accountId`, `code`, and `type`.
      */
     public void setType(DocumentType value) {
@@ -93,7 +93,7 @@ public class VerifyMultiDocumentModel {
      *
      * Set this value if you wish to verify a match between `verifyTransactionDate` and
     * the `documentDate` value on the transaction recorded in AvaTax.
-    * 
+    *  
     * If you leave this field empty, we will skip verification for this field.
      */
     public Date getVerifyTransactionDate() {
@@ -105,7 +105,7 @@ public class VerifyMultiDocumentModel {
      *
      * Set this value if you wish to verify a match between `verifyTransactionDate` and
     * the `documentDate` value on the transaction recorded in AvaTax.
-    * 
+    *  
     * If you leave this field empty, we will skip verification for this field.
      */
     public void setVerifyTransactionDate(Date value) {
@@ -120,7 +120,7 @@ public class VerifyMultiDocumentModel {
      *
      * Set this value if you wish to verify a match between `verifyTotalAmount` and
     * the `totalAmount` value on the transaction recorded in AvaTax.
-    * 
+    *  
     * If you leave this field empty, we will skip verification for this field.
      */
     public BigDecimal getVerifyTotalAmount() {
@@ -132,7 +132,7 @@ public class VerifyMultiDocumentModel {
      *
      * Set this value if you wish to verify a match between `verifyTotalAmount` and
     * the `totalAmount` value on the transaction recorded in AvaTax.
-    * 
+    *  
     * If you leave this field empty, we will skip verification for this field.
      */
     public void setVerifyTotalAmount(BigDecimal value) {
@@ -147,7 +147,7 @@ public class VerifyMultiDocumentModel {
      *
      * Set this value if you wish to verify a match between `verifyTotalTax` and
     * the `totalTax` value on the transaction recorded in AvaTax.
-    * 
+    *  
     * If you leave this field empty, we will skip verification for this field.
      */
     public BigDecimal getVerifyTotalTax() {
@@ -159,7 +159,7 @@ public class VerifyMultiDocumentModel {
      *
      * Set this value if you wish to verify a match between `verifyTotalTax` and
     * the `totalTax` value on the transaction recorded in AvaTax.
-    * 
+    *  
     * If you leave this field empty, we will skip verification for this field.
      */
     public void setVerifyTotalTax(BigDecimal value) {

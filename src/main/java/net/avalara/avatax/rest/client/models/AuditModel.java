@@ -25,7 +25,7 @@ import java.util.HashMap;
 
 /**
  * Provides detailed information about an API call.
-* 
+*  
 * The information on this record was captured by AvaTax when your API call was made. If you are unsure why you
 * received an error, you can fetch these audit objects and examine the `RequestUrl`, `RequestBody`, and `ErrorMessage`
 * fields to determine root cause for the error.
@@ -565,7 +565,7 @@ public class AuditModel {
      * Getter for databaseCallCount
      *
      * If this API call included requests made to any of the AvaTax data layers, this contains the number of requests that were traced.
-    * 
+    *  
     * Please note that not all data layers support this measurement.
      */
     public Integer getDatabaseCallCount() {
@@ -576,7 +576,7 @@ public class AuditModel {
      * Setter for databaseCallCount
      *
      * If this API call included requests made to any of the AvaTax data layers, this contains the number of requests that were traced.
-    * 
+    *  
     * Please note that not all data layers support this measurement.
      */
     public void setDatabaseCallCount(Integer value) {
@@ -590,7 +590,7 @@ public class AuditModel {
      * Getter for databaseCallDuration
      *
      * If this API call included requests made to any of the AvaTax data layers, this contains the total duration time measured for all the requests.
-    * 
+    *  
     * Please note that not all data layers support this measurement.
      */
     public String getDatabaseCallDuration() {
@@ -601,7 +601,7 @@ public class AuditModel {
      * Setter for databaseCallDuration
      *
      * If this API call included requests made to any of the AvaTax data layers, this contains the total duration time measured for all the requests.
-    * 
+    *  
     * Please note that not all data layers support this measurement.
      */
     public void setDatabaseCallDuration(String value) {
@@ -678,7 +678,7 @@ public class AuditModel {
      * Getter for requestBody
      *
      * If this request was an HTTP request that included a body such as a POST or a PUT, this will contain the request body sent by the client.
-    * 
+    *  
     * This request body is represented as a string, exactly as it was received from the client. Regardless of whether the request was JSON,
     * Base64 encoded bytes, or a CSV file, this contains the exact contents of the request body.
      */
@@ -690,7 +690,7 @@ public class AuditModel {
      * Setter for requestBody
      *
      * If this request was an HTTP request that included a body such as a POST or a PUT, this will contain the request body sent by the client.
-    * 
+    *  
     * This request body is represented as a string, exactly as it was received from the client. Regardless of whether the request was JSON,
     * Base64 encoded bytes, or a CSV file, this contains the exact contents of the request body.
      */

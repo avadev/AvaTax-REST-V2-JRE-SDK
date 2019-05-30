@@ -98,7 +98,7 @@ public class FreeTrialRequestModel {
     /**
      * Getter for company
      *
-     * The company or organizational name for this free trial. If this account is for personal use, it is acceptable 
+     * The company or organizational name for this free trial. If this account is for personal use, it is acceptable
     * to use your full name here.
      */
     public String getCompany() {
@@ -108,7 +108,7 @@ public class FreeTrialRequestModel {
     /**
      * Setter for company
      *
-     * The company or organizational name for this free trial. If this account is for personal use, it is acceptable 
+     * The company or organizational name for this free trial. If this account is for personal use, it is acceptable
     * to use your full name here.
      */
     public void setCompany(String value) {

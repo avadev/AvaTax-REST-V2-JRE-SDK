@@ -568,14 +568,14 @@ public class NewAccountRequestModel {
     }
 
 
-    private String accountType;
+    private AccountTypeId accountType;
 
     /**
      * Getter for accountType
      *
      * Type of the account to be created. Regular, Firm or FirmClient
      */
-    public String getAccountType() {
+    public AccountTypeId getAccountType() {
         return this.accountType;
     }
 
@@ -584,7 +584,7 @@ public class NewAccountRequestModel {
      *
      * Type of the account to be created. Regular, Firm or FirmClient
      */
-    public void setAccountType(String value) {
+    public void setAccountType(AccountTypeId value) {
         this.accountType = value;
     }
 
@@ -594,9 +594,9 @@ public class NewAccountRequestModel {
     /**
      * Getter for taxPayerIdNumber
      *
-     * United States Taxpayer ID number, usually your Employer Identification Number if you are a business or your 
+     * United States Taxpayer ID number, usually your Employer Identification Number if you are a business or your
     * Social Security Number if you are an individual.
-    * This value is required if you subscribe to Avalara Managed Returns or the SST Certified Service Provider services, 
+    * This value is required if you subscribe to Avalara Managed Returns or the SST Certified Service Provider services,
     * but it is optional if you do not subscribe to either of those services.
      */
     public String getTaxPayerIdNumber() {
@@ -606,9 +606,9 @@ public class NewAccountRequestModel {
     /**
      * Setter for taxPayerIdNumber
      *
-     * United States Taxpayer ID number, usually your Employer Identification Number if you are a business or your 
+     * United States Taxpayer ID number, usually your Employer Identification Number if you are a business or your
     * Social Security Number if you are an individual.
-    * This value is required if you subscribe to Avalara Managed Returns or the SST Certified Service Provider services, 
+    * This value is required if you subscribe to Avalara Managed Returns or the SST Certified Service Provider services,
     * but it is optional if you do not subscribe to either of those services.
      */
     public void setTaxPayerIdNumber(String value) {

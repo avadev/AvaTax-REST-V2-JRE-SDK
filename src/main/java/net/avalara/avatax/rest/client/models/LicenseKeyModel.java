@@ -80,7 +80,7 @@ public class LicenseKeyModel {
     /**
      * Getter for httpRequestHeader
      *
-     * If your software allows you to specify the HTTP Authorization header directly, this is the header string you 
+     * If your software allows you to specify the HTTP Authorization header directly, this is the header string you
     * should use when contacting Avalara to make API calls with this license key.
      */
     public String getHttpRequestHeader() {
@@ -90,7 +90,7 @@ public class LicenseKeyModel {
     /**
      * Setter for httpRequestHeader
      *
-     * If your software allows you to specify the HTTP Authorization header directly, this is the header string you 
+     * If your software allows you to specify the HTTP Authorization header directly, this is the header string you
     * should use when contacting Avalara to make API calls with this license key.
      */
     public void setHttpRequestHeader(String value) {

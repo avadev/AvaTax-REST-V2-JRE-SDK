@@ -197,6 +197,27 @@ public class TransactionSummary {
     }
 
 
+    private String taxSubType;
+
+    /**
+     * Getter for taxSubType
+     *
+     * The tax subtype of this tax.
+     */
+    public String getTaxSubType() {
+        return this.taxSubType;
+    }
+
+    /**
+     * Setter for taxSubType
+     *
+     * The tax subtype of this tax.
+     */
+    public void setTaxSubType(String value) {
+        this.taxSubType = value;
+    }
+
+
     private String taxName;
 
     /**

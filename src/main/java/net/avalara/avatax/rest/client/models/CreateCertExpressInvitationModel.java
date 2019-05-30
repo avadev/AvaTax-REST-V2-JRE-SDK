@@ -38,7 +38,7 @@ public class CreateCertExpressInvitationModel {
     /**
      * Getter for recipient
      *
-     * If the value of `deliveryMethod` is set to `Email`, please specify the email address of the recipient 
+     * If the value of `deliveryMethod` is set to `Email`, please specify the email address of the recipient
     * for the request.
      */
     public String getRecipient() {
@@ -48,7 +48,7 @@ public class CreateCertExpressInvitationModel {
     /**
      * Setter for recipient
      *
-     * If the value of `deliveryMethod` is set to `Email`, please specify the email address of the recipient 
+     * If the value of `deliveryMethod` is set to `Email`, please specify the email address of the recipient
     * for the request.
      */
     public void setRecipient(String value) {
@@ -84,10 +84,10 @@ public class CreateCertExpressInvitationModel {
     /**
      * Getter for exposureZones
      *
-     * You may optionally specify a list of exposure zones to request in this CertExpress invitation. If you list 
-    * more than one exposure zone, the customer will be prompted to provide an exemption certificate for each one. 
+     * You may optionally specify a list of exposure zones to request in this CertExpress invitation. If you list
+    * more than one exposure zone, the customer will be prompted to provide an exemption certificate for each one.
     * If you do not provide a list of exposure zones, the customer will be prompted to select an exposure zone.
-    * 
+    *  
     * For a list of available exposure zones, please call `ListCertificateExposureZones`.
      */
     public ArrayList<Integer> getExposureZones() {
@@ -97,10 +97,10 @@ public class CreateCertExpressInvitationModel {
     /**
      * Setter for exposureZones
      *
-     * You may optionally specify a list of exposure zones to request in this CertExpress invitation. If you list 
-    * more than one exposure zone, the customer will be prompted to provide an exemption certificate for each one. 
+     * You may optionally specify a list of exposure zones to request in this CertExpress invitation. If you list
+    * more than one exposure zone, the customer will be prompted to provide an exemption certificate for each one.
     * If you do not provide a list of exposure zones, the customer will be prompted to select an exposure zone.
-    * 
+    *  
     * For a list of available exposure zones, please call `ListCertificateExposureZones`.
      */
     public void setExposureZones(ArrayList<Integer> value) {
@@ -115,8 +115,8 @@ public class CreateCertExpressInvitationModel {
      *
      * You may optionally specify a list of exemption reasons to pre-populate in this CertExpress invitation.
     * If you list exemption reasons, the customer will have part of their form already filled in when they visit
-    * the CertExpress website. 
-    * 
+    * the CertExpress website.
+    *  
     * For a list of available exemption reasons, please call `ListCertificateExemptReasons`.
      */
     public ArrayList<Integer> getExemptReasons() {
@@ -128,8 +128,8 @@ public class CreateCertExpressInvitationModel {
      *
      * You may optionally specify a list of exemption reasons to pre-populate in this CertExpress invitation.
     * If you list exemption reasons, the customer will have part of their form already filled in when they visit
-    * the CertExpress website. 
-    * 
+    * the CertExpress website.
+    *  
     * For a list of available exemption reasons, please call `ListCertificateExemptReasons`.
      */
     public void setExemptReasons(ArrayList<Integer> value) {
@@ -143,9 +143,9 @@ public class CreateCertExpressInvitationModel {
      * Getter for deliveryMethod
      *
      * Specify the type of invitation. CertExpress invitations can be delivered via email, web link, or
-    * facsimile. 
-    * 
-    * * If you specify `Email`, the invitation will be delivered via email. Please ask the customer to ensure that 
+    * facsimile.
+    *  
+    * * If you specify `Email`, the invitation will be delivered via email. Please ask the customer to ensure that
     * * If you specify `Fax`, the invitation will be sent via fax to the customer's fax number on file.
     * * If you specify `Download`, the invitation will be prepared as a web link that you can display to the customer.
      */
@@ -157,9 +157,9 @@ public class CreateCertExpressInvitationModel {
      * Setter for deliveryMethod
      *
      * Specify the type of invitation. CertExpress invitations can be delivered via email, web link, or
-    * facsimile. 
-    * 
-    * * If you specify `Email`, the invitation will be delivered via email. Please ask the customer to ensure that 
+    * facsimile.
+    *  
+    * * If you specify `Email`, the invitation will be delivered via email. Please ask the customer to ensure that
     * * If you specify `Fax`, the invitation will be sent via fax to the customer's fax number on file.
     * * If you specify `Download`, the invitation will be prepared as a web link that you can display to the customer.
      */

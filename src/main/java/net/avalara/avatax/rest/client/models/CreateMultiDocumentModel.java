@@ -127,7 +127,7 @@ public class CreateMultiDocumentModel {
      * Specifies the type of document to create. A document type ending with `Invoice` is a permanent transaction
     * that will be recorded in AvaTax. A document type ending with `Order` is a temporary estimate that will not
     * be preserved.
-    * 
+    *  
     * If you omit this value, the API will assume you want to create a `SalesOrder`.
      */
     public DocumentType getType() {
@@ -140,7 +140,7 @@ public class CreateMultiDocumentModel {
      * Specifies the type of document to create. A document type ending with `Invoice` is a permanent transaction
     * that will be recorded in AvaTax. A document type ending with `Order` is a temporary estimate that will not
     * be preserved.
-    * 
+    *  
     * If you omit this value, the API will assume you want to create a `SalesOrder`.
      */
     public void setType(DocumentType value) {
@@ -177,7 +177,7 @@ public class CreateMultiDocumentModel {
      * Getter for date
      *
      * Transaction Date - The date on the invoice, purchase order, etc.
-    * 
+    *  
     * By default, this date will be used to calculate the tax rates for the transaction. If you wish to use a
     * different date to calculate tax rates, please specify a `taxOverride` of type `taxDate`.
      */
@@ -189,7 +189,7 @@ public class CreateMultiDocumentModel {
      * Setter for date
      *
      * Transaction Date - The date on the invoice, purchase order, etc.
-    * 
+    *  
     * By default, this date will be used to calculate the tax rates for the transaction. If you wish to use a
     * different date to calculate tax rates, please specify a `taxOverride` of type `taxDate`.
      */
@@ -272,7 +272,7 @@ public class CreateMultiDocumentModel {
     /**
      * Getter for entityUseCode
      *
-     * Entity Use Code - The client application customer or usage type. For a list of 
+     * Entity Use Code - The client application customer or usage type. For a list of
     * available usage types, use [ListEntityUseCodes](https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Definitions/ListEntityUseCodes/) API.
      */
     public String getEntityUseCode() {
@@ -282,7 +282,7 @@ public class CreateMultiDocumentModel {
     /**
      * Setter for entityUseCode
      *
-     * Entity Use Code - The client application customer or usage type. For a list of 
+     * Entity Use Code - The client application customer or usage type. For a list of
     * available usage types, use [ListEntityUseCodes](https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Definitions/ListEntityUseCodes/) API.
      */
     public void setEntityUseCode(String value) {
@@ -321,7 +321,7 @@ public class CreateMultiDocumentModel {
      * Getter for purchaseOrderNo
      *
      * Purchase Order Number for this document.
-    * 
+    *  
     * This is required for single use exemption certificates to match the order and invoice with the certificate.
      */
     public String getPurchaseOrderNo() {
@@ -332,7 +332,7 @@ public class CreateMultiDocumentModel {
      * Setter for purchaseOrderNo
      *
      * Purchase Order Number for this document.
-    * 
+    *  
     * This is required for single use exemption certificates to match the order and invoice with the certificate.
      */
     public void setPurchaseOrderNo(String value) {
@@ -346,7 +346,7 @@ public class CreateMultiDocumentModel {
      * Getter for exemptionNo
      *
      * Exemption Number for this document.
-    * 
+    *  
     * If you specify an exemption number for this document, this document will be considered exempt, and you
     * may be asked to provide proof of this exemption certificate in the event that you are asked by an auditor
     * to verify your exemptions.
@@ -360,7 +360,7 @@ public class CreateMultiDocumentModel {
      * Setter for exemptionNo
      *
      * Exemption Number for this document.
-    * 
+    *  
     * If you specify an exemption number for this document, this document will be considered exempt, and you
     * may be asked to provide proof of this exemption certificate in the event that you are asked by an auditor
     * to verify your exemptions.
@@ -376,8 +376,8 @@ public class CreateMultiDocumentModel {
     /**
      * Getter for addresses
      *
-     * Default addresses for all lines in this document. 
-    * 
+     * Default addresses for all lines in this document.
+    *  
     * These addresses are the default values that will be used for any lines that do not have their own
     * address information. If you specify addresses for a line, then no default addresses will be loaded
     * for that line.
@@ -389,8 +389,8 @@ public class CreateMultiDocumentModel {
     /**
      * Setter for addresses
      *
-     * Default addresses for all lines in this document. 
-    * 
+     * Default addresses for all lines in this document.
+    *  
     * These addresses are the default values that will be used for any lines that do not have their own
     * address information. If you specify addresses for a line, then no default addresses will be loaded
     * for that line.
@@ -406,7 +406,7 @@ public class CreateMultiDocumentModel {
      * Getter for parameters
      *
      * Special parameters for this transaction.
-    * 
+    *  
     * To get a full list of available parameters, please use the [ListParameters](https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Definitions/ListParameters/) endpoint.
      */
     public ArrayList<TransactionParameterModel> getParameters() {
@@ -417,7 +417,7 @@ public class CreateMultiDocumentModel {
      * Setter for parameters
      *
      * Special parameters for this transaction.
-    * 
+    *  
     * To get a full list of available parameters, please use the [ListParameters](https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Definitions/ListParameters/) endpoint.
      */
     public void setParameters(ArrayList<TransactionParameterModel> value) {
@@ -431,7 +431,7 @@ public class CreateMultiDocumentModel {
      * Getter for referenceCode
      *
      * Customer-provided Reference Code with information about this transaction.
-    * 
+    *  
     * This field could be used to reference the original document for a return invoice, or for any other
     * reference purpose.
      */
@@ -443,7 +443,7 @@ public class CreateMultiDocumentModel {
      * Setter for referenceCode
      *
      * Customer-provided Reference Code with information about this transaction.
-    * 
+    *  
     * This field could be used to reference the original document for a return invoice, or for any other
     * reference purpose.
      */
@@ -458,7 +458,7 @@ public class CreateMultiDocumentModel {
      * Getter for reportingLocationCode
      *
      * Sets the sale location code (Outlet ID) for reporting this document to the tax authority.
-    * 
+    *  
     * This value is used by Avalara Managed Returns to group documents together by reporting locations
     * for tax authorities that require location-based reporting.
      */
@@ -470,7 +470,7 @@ public class CreateMultiDocumentModel {
      * Setter for reportingLocationCode
      *
      * Sets the sale location code (Outlet ID) for reporting this document to the tax authority.
-    * 
+    *  
     * This value is used by Avalara Managed Returns to group documents together by reporting locations
     * for tax authorities that require location-based reporting.
      */
@@ -484,7 +484,7 @@ public class CreateMultiDocumentModel {
     /**
      * Getter for commit
      *
-     * Causes the document to be committed if true. This option is only applicable for invoice document 
+     * Causes the document to be committed if true. This option is only applicable for invoice document
     * types, not orders.
      */
     public Boolean getCommit() {
@@ -494,7 +494,7 @@ public class CreateMultiDocumentModel {
     /**
      * Setter for commit
      *
-     * Causes the document to be committed if true. This option is only applicable for invoice document 
+     * Causes the document to be committed if true. This option is only applicable for invoice document
     * types, not orders.
      */
     public void setCommit(Boolean value) {
@@ -570,7 +570,7 @@ public class CreateMultiDocumentModel {
     /**
      * Getter for serviceMode
      *
-     * Specifies whether the tax calculation is handled Local, Remote, or Automatic (default). This only 
+     * Specifies whether the tax calculation is handled Local, Remote, or Automatic (default). This only
     * applies when using an AvaLocal server.
      */
     public ServiceMode getServiceMode() {
@@ -580,7 +580,7 @@ public class CreateMultiDocumentModel {
     /**
      * Setter for serviceMode
      *
-     * Specifies whether the tax calculation is handled Local, Remote, or Automatic (default). This only 
+     * Specifies whether the tax calculation is handled Local, Remote, or Automatic (default). This only
     * applies when using an AvaLocal server.
      */
     public void setServiceMode(ServiceMode value) {
@@ -662,11 +662,11 @@ public class CreateMultiDocumentModel {
     /**
      * Getter for businessIdentificationNo
      *
-     * VAT business identification number for the customer for this transaction. This number will be used for all lines 
+     * VAT business identification number for the customer for this transaction. This number will be used for all lines
     * in the transaction, except for those lines where you have defined a different business identification number.
-    * 
+    *  
     * If you specify a VAT business identification number for the customer in this transaction and you have also set up
-    * a business identification number for your company during company setup, this transaction will be treated as a 
+    * a business identification number for your company during company setup, this transaction will be treated as a
     * business-to-business transaction for VAT purposes and it will be calculated according to VAT tax rules.
      */
     public String getBusinessIdentificationNo() {
@@ -676,11 +676,11 @@ public class CreateMultiDocumentModel {
     /**
      * Setter for businessIdentificationNo
      *
-     * VAT business identification number for the customer for this transaction. This number will be used for all lines 
+     * VAT business identification number for the customer for this transaction. This number will be used for all lines
     * in the transaction, except for those lines where you have defined a different business identification number.
-    * 
+    *  
     * If you specify a VAT business identification number for the customer in this transaction and you have also set up
-    * a business identification number for your company during company setup, this transaction will be treated as a 
+    * a business identification number for your company during company setup, this transaction will be treated as a
     * business-to-business transaction for VAT purposes and it will be calculated according to VAT tax rules.
      */
     public void setBusinessIdentificationNo(String value) {
@@ -694,13 +694,13 @@ public class CreateMultiDocumentModel {
      * Getter for isSellerImporterOfRecord
      *
      * Specifies if the transaction should have value-added and cross-border taxes calculated with the seller as the importer of record.
-    * 
+    *  
     * Some taxes only apply if the seller is the importer of record for a product. In cases where companies are working together to
     * ship products, there may be mutual agreement as to which company is the entity designated as importer of record. The importer
     * of record will then be the company designated to pay taxes marked as being obligated to the importer of record.
-    * 
+    *  
     * Set this value to `true` to consider your company as the importer of record and collect these taxes.
-    * 
+    *  
     * This value may also be set at the Nexus level. See `NexusModel` for more information.
      */
     public Boolean getIsSellerImporterOfRecord() {
@@ -711,13 +711,13 @@ public class CreateMultiDocumentModel {
      * Setter for isSellerImporterOfRecord
      *
      * Specifies if the transaction should have value-added and cross-border taxes calculated with the seller as the importer of record.
-    * 
+    *  
     * Some taxes only apply if the seller is the importer of record for a product. In cases where companies are working together to
     * ship products, there may be mutual agreement as to which company is the entity designated as importer of record. The importer
     * of record will then be the company designated to pay taxes marked as being obligated to the importer of record.
-    * 
+    *  
     * Set this value to `true` to consider your company as the importer of record and collect these taxes.
-    * 
+    *  
     * This value may also be set at the Nexus level. See `NexusModel` for more information.
      */
     public void setIsSellerImporterOfRecord(Boolean value) {

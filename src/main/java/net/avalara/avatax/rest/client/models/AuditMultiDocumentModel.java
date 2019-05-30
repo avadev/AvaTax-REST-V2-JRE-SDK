@@ -56,7 +56,7 @@ public class AuditMultiDocumentModel {
      * Getter for code
      *
      * Represents the unique code of this MultiDocument transaction.
-    * 
+    *  
     * A MultiDocument transaction is uniquely identified by its `accountId`, `code`, and `type`.
      */
     public String getCode() {
@@ -67,7 +67,7 @@ public class AuditMultiDocumentModel {
      * Setter for code
      *
      * Represents the unique code of this MultiDocument transaction.
-    * 
+    *  
     * A MultiDocument transaction is uniquely identified by its `accountId`, `code`, and `type`.
      */
     public void setCode(String value) {
@@ -82,7 +82,7 @@ public class AuditMultiDocumentModel {
      *
      * Represents the document type of this MultiDocument transaction. For more information about
     * document types, see [DocumentType](https://developer.avalara.com/api-reference/avatax/rest/v2/models/enums/DocumentType/).
-    * 
+    *  
     * A MultiDocument transaction is uniquely identified by its `accountId`, `code`, and `type`.
      */
     public DocumentType getType() {
@@ -94,7 +94,7 @@ public class AuditMultiDocumentModel {
      *
      * Represents the document type of this MultiDocument transaction. For more information about
     * document types, see [DocumentType](https://developer.avalara.com/api-reference/avatax/rest/v2/models/enums/DocumentType/).
-    * 
+    *  
     * A MultiDocument transaction is uniquely identified by its `accountId`, `code`, and `type`.
      */
     public void setType(DocumentType value) {

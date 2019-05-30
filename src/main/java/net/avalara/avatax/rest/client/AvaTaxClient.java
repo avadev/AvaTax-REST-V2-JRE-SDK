@@ -672,18 +672,18 @@ public class AvaTaxClient {
      * Create a new batch
      * 
      * Create one or more new batch objects attached to this company.
-     * 
+     *             
      * Each batch object may have one or more file objects (currently only one file is supported).
-     * 
-     * When a batch is created, it is added to the AvaTax Batch Queue and will be 
-     * processed as quickly as possible in the order it was received. To check the 
-     * status of a batch, fetch the batch and retrieve the results of the batch 
+     *             
+     * When a batch is created, it is added to the AvaTax Batch Queue and will be
+     * processed as quickly as possible in the order it was received. To check the
+     * status of a batch, fetch the batch and retrieve the results of the batch
      * operation.
-     * 
+     *             
      * Because the batch system processes with a degree of concurrency, and
-     * because of batch sizes in the queue vary, AvaTax API is unable to accurately 
-     * predict when a batch will complete. If high performance processing is 
-     * required, please use the 
+     * because of batch sizes in the queue vary, AvaTax API is unable to accurately
+     * predict when a batch will complete. If high performance processing is
+     * required, please use the
      * [CreateTransaction API](https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Transactions/CreateTransaction/).
      * 
      * ### Security Policies
@@ -704,18 +704,18 @@ public class AvaTaxClient {
      * Create a new batch
      * 
      * Create one or more new batch objects attached to this company.
-     * 
+     *             
      * Each batch object may have one or more file objects (currently only one file is supported).
-     * 
-     * When a batch is created, it is added to the AvaTax Batch Queue and will be 
-     * processed as quickly as possible in the order it was received. To check the 
-     * status of a batch, fetch the batch and retrieve the results of the batch 
+     *             
+     * When a batch is created, it is added to the AvaTax Batch Queue and will be
+     * processed as quickly as possible in the order it was received. To check the
+     * status of a batch, fetch the batch and retrieve the results of the batch
      * operation.
-     * 
+     *             
      * Because the batch system processes with a degree of concurrency, and
-     * because of batch sizes in the queue vary, AvaTax API is unable to accurately 
-     * predict when a batch will complete. If high performance processing is 
-     * required, please use the 
+     * because of batch sizes in the queue vary, AvaTax API is unable to accurately
+     * predict when a batch will complete. If high performance processing is
+     * required, please use the
      * [CreateTransaction API](https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Transactions/CreateTransaction/).
      * 
      * ### Security Policies
@@ -736,14 +736,14 @@ public class AvaTaxClient {
      * Delete a single batch
      * 
      * Marks the batch identified by this URL as deleted.
-     * 
+     *             
      * If you attempt to delete a batch that is being processed, you will receive an error message.
      * Deleting a batch does not delete any transactions that were created by importing the batch.
-     * 
+     *             
      * Because the batch system processes with a degree of concurrency, and
-     * because of batch sizes in the queue vary, AvaTax API is unable to accurately 
-     * predict when a batch will complete. If high performance processing is 
-     * required, please use the 
+     * because of batch sizes in the queue vary, AvaTax API is unable to accurately
+     * predict when a batch will complete. If high performance processing is
+     * required, please use the
      * [CreateTransaction API](https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Transactions/CreateTransaction/).
      * 
      * ### Security Policies
@@ -765,14 +765,14 @@ public class AvaTaxClient {
      * Delete a single batch
      * 
      * Marks the batch identified by this URL as deleted.
-     * 
+     *             
      * If you attempt to delete a batch that is being processed, you will receive an error message.
      * Deleting a batch does not delete any transactions that were created by importing the batch.
-     * 
+     *             
      * Because the batch system processes with a degree of concurrency, and
-     * because of batch sizes in the queue vary, AvaTax API is unable to accurately 
-     * predict when a batch will complete. If high performance processing is 
-     * required, please use the 
+     * because of batch sizes in the queue vary, AvaTax API is unable to accurately
+     * predict when a batch will complete. If high performance processing is
+     * required, please use the
      * [CreateTransaction API](https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Transactions/CreateTransaction/).
      * 
      * ### Security Policies
@@ -837,20 +837,20 @@ public class AvaTaxClient {
     /**
      * Retrieve a single batch
      * 
-     * Get the batch object identified by this URL. A batch object is a large 
+     * Get the batch object identified by this URL. A batch object is a large
      * collection of API calls stored in a compact file.
-     * 
+     *             
      * Use this endpoint to retrieve the results or check the status of a batch.
-     * 
-     * When a batch is created, it is added to the AvaTax Batch Queue and will be 
-     * processed as quickly as possible in the order it was received. To check the 
-     * status of a batch, fetch the batch and retrieve the results of the batch 
+     *             
+     * When a batch is created, it is added to the AvaTax Batch Queue and will be
+     * processed as quickly as possible in the order it was received. To check the
+     * status of a batch, fetch the batch and retrieve the results of the batch
      * operation.
-     * 
+     *             
      * Because the batch system processes with a degree of concurrency, and
-     * because of batch sizes in the queue vary, AvaTax API is unable to accurately 
-     * predict when a batch will complete. If high performance processing is 
-     * required, please use the 
+     * because of batch sizes in the queue vary, AvaTax API is unable to accurately
+     * predict when a batch will complete. If high performance processing is
+     * required, please use the
      * [CreateTransaction API](https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Transactions/CreateTransaction/).
      * 
      * ### Security Policies
@@ -871,20 +871,20 @@ public class AvaTaxClient {
     /**
      * Retrieve a single batch
      * 
-     * Get the batch object identified by this URL. A batch object is a large 
+     * Get the batch object identified by this URL. A batch object is a large
      * collection of API calls stored in a compact file.
-     * 
+     *             
      * Use this endpoint to retrieve the results or check the status of a batch.
-     * 
-     * When a batch is created, it is added to the AvaTax Batch Queue and will be 
-     * processed as quickly as possible in the order it was received. To check the 
-     * status of a batch, fetch the batch and retrieve the results of the batch 
+     *             
+     * When a batch is created, it is added to the AvaTax Batch Queue and will be
+     * processed as quickly as possible in the order it was received. To check the
+     * status of a batch, fetch the batch and retrieve the results of the batch
      * operation.
-     * 
+     *             
      * Because the batch system processes with a degree of concurrency, and
-     * because of batch sizes in the queue vary, AvaTax API is unable to accurately 
-     * predict when a batch will complete. If high performance processing is 
-     * required, please use the 
+     * because of batch sizes in the queue vary, AvaTax API is unable to accurately
+     * predict when a batch will complete. If high performance processing is
+     * required, please use the
      * [CreateTransaction API](https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Transactions/CreateTransaction/).
      * 
      * ### Security Policies
@@ -906,24 +906,24 @@ public class AvaTaxClient {
      * Retrieve all batches for this company
      * 
      * List all batch objects attached to the specified company.
-     * 
+     *             
      * A batch object is a large collection of API calls stored in a compact file.
-     * 
-     * Search for specific objects using the criteria in the `$filter` parameter; 
+     *             
+     * Search for specific objects using the criteria in the `$filter` parameter;
      * full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * Paginate results using the `$top`, `$skip`, and `$orderby` parameters.
-     * 
-     * Use [GetBatch](https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Batches/GetBatch/) 
+     *             
+     * Use [GetBatch](https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Batches/GetBatch/)
      * to retrieve the results, or check the status, of an individual batch.
-     * 
-     * When a batch is created, it is added to the AvaTax Batch Queue and will be 
-     * processed as quickly as possible in the order it was received. To check the 
-     * status of a batch, fetch the batch and retrieve the results of the batch 
+     *             
+     * When a batch is created, it is added to the AvaTax Batch Queue and will be
+     * processed as quickly as possible in the order it was received. To check the
+     * status of a batch, fetch the batch and retrieve the results of the batch
      * operation.
-     * 
+     *             
      * Because the batch system processes with a degree of concurrency, and
-     * because of batch sizes in the queue vary, AvaTax API is unable to accurately 
-     * predict when a batch will complete. If high performance processing is 
+     * because of batch sizes in the queue vary, AvaTax API is unable to accurately
+     * predict when a batch will complete. If high performance processing is
      * required, please use the
      * [CreateTransaction API](https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Transactions/CreateTransaction/).
      * 
@@ -954,24 +954,24 @@ public class AvaTaxClient {
      * Retrieve all batches for this company
      * 
      * List all batch objects attached to the specified company.
-     * 
+     *             
      * A batch object is a large collection of API calls stored in a compact file.
-     * 
-     * Search for specific objects using the criteria in the `$filter` parameter; 
+     *             
+     * Search for specific objects using the criteria in the `$filter` parameter;
      * full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * Paginate results using the `$top`, `$skip`, and `$orderby` parameters.
-     * 
-     * Use [GetBatch](https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Batches/GetBatch/) 
+     *             
+     * Use [GetBatch](https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Batches/GetBatch/)
      * to retrieve the results, or check the status, of an individual batch.
-     * 
-     * When a batch is created, it is added to the AvaTax Batch Queue and will be 
-     * processed as quickly as possible in the order it was received. To check the 
-     * status of a batch, fetch the batch and retrieve the results of the batch 
+     *             
+     * When a batch is created, it is added to the AvaTax Batch Queue and will be
+     * processed as quickly as possible in the order it was received. To check the
+     * status of a batch, fetch the batch and retrieve the results of the batch
      * operation.
-     * 
+     *             
      * Because the batch system processes with a degree of concurrency, and
-     * because of batch sizes in the queue vary, AvaTax API is unable to accurately 
-     * predict when a batch will complete. If high performance processing is 
+     * because of batch sizes in the queue vary, AvaTax API is unable to accurately
+     * predict when a batch will complete. If high performance processing is
      * required, please use the
      * [CreateTransaction API](https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Transactions/CreateTransaction/).
      * 
@@ -1002,21 +1002,21 @@ public class AvaTaxClient {
      * Retrieve all batches
      * 
      * Get multiple batch objects across all companies.
-     * 
+     *             
      * A batch object is a large collection of API calls stored in a compact file.
-     * 
-     * Search for specific objects using the criteria in the `$filter` parameter; 
+     *             
+     * Search for specific objects using the criteria in the `$filter` parameter;
      * full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * Paginate results using the `$top`, `$skip`, and `$orderby` parameters.
-     * 
-     * When a batch is created, it is added to the AvaTax Batch Queue and will be 
-     * processed as quickly as possible in the order it was received. To check the 
-     * status of a batch, fetch the batch and retrieve the results of the batch 
+     *             
+     * When a batch is created, it is added to the AvaTax Batch Queue and will be
+     * processed as quickly as possible in the order it was received. To check the
+     * status of a batch, fetch the batch and retrieve the results of the batch
      * operation.
-     * 
+     *             
      * Because the batch system processes with a degree of concurrency, and
-     * because of batch sizes in the queue vary, AvaTax API is unable to accurately 
-     * predict when a batch will complete. If high performance processing is 
+     * because of batch sizes in the queue vary, AvaTax API is unable to accurately
+     * predict when a batch will complete. If high performance processing is
      * required, please use the
      * [CreateTransaction API](https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Transactions/CreateTransaction/).
      * 
@@ -1045,21 +1045,21 @@ public class AvaTaxClient {
      * Retrieve all batches
      * 
      * Get multiple batch objects across all companies.
-     * 
+     *             
      * A batch object is a large collection of API calls stored in a compact file.
-     * 
-     * Search for specific objects using the criteria in the `$filter` parameter; 
+     *             
+     * Search for specific objects using the criteria in the `$filter` parameter;
      * full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * Paginate results using the `$top`, `$skip`, and `$orderby` parameters.
-     * 
-     * When a batch is created, it is added to the AvaTax Batch Queue and will be 
-     * processed as quickly as possible in the order it was received. To check the 
-     * status of a batch, fetch the batch and retrieve the results of the batch 
+     *             
+     * When a batch is created, it is added to the AvaTax Batch Queue and will be
+     * processed as quickly as possible in the order it was received. To check the
+     * status of a batch, fetch the batch and retrieve the results of the batch
      * operation.
-     * 
+     *             
      * Because the batch system processes with a degree of concurrency, and
-     * because of batch sizes in the queue vary, AvaTax API is unable to accurately 
-     * predict when a batch will complete. If high performance processing is 
+     * because of batch sizes in the queue vary, AvaTax API is unable to accurately
+     * predict when a batch will complete. If high performance processing is
      * required, please use the
      * [CreateTransaction API](https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Transactions/CreateTransaction/).
      * 
@@ -1088,19 +1088,19 @@ public class AvaTaxClient {
      * Create a CertExpress invitation
      * 
      * Creates an invitation for a customer to self-report certificates using the CertExpress website.
-     * 
+     *             
      * This invitation is delivered by your choice of method, or you can present a hyperlink to the user
      * directly in your connector.  Your customer will be redirected to https://app.certexpress.com/ where
      * they can follow a step-by-step guide to enter information about their exemption certificates.  The
      * certificates entered will be recorded and automatically linked to their customer record.
-     * 
+     *             
      * The [CertExpress website](https://app.certexpress.com/home) is available for customers to use at any time.
      * Using CertExpress with this API will ensure that your certificates are automatically linked correctly into
      * your company so that they can be used for tax exemptions.
-     * 
+     *             
      * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
      * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
-     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document 
+     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document
      * storage for this company, call `RequestCertificateSetup`.
      * 
      * ### Security Policies
@@ -1124,19 +1124,19 @@ public class AvaTaxClient {
      * Create a CertExpress invitation
      * 
      * Creates an invitation for a customer to self-report certificates using the CertExpress website.
-     * 
+     *             
      * This invitation is delivered by your choice of method, or you can present a hyperlink to the user
      * directly in your connector.  Your customer will be redirected to https://app.certexpress.com/ where
      * they can follow a step-by-step guide to enter information about their exemption certificates.  The
      * certificates entered will be recorded and automatically linked to their customer record.
-     * 
+     *             
      * The [CertExpress website](https://app.certexpress.com/home) is available for customers to use at any time.
      * Using CertExpress with this API will ensure that your certificates are automatically linked correctly into
      * your company so that they can be used for tax exemptions.
-     * 
+     *             
      * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
      * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
-     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document 
+     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document
      * storage for this company, call `RequestCertificateSetup`.
      * 
      * ### Security Policies
@@ -1160,19 +1160,19 @@ public class AvaTaxClient {
      * Retrieve a single CertExpress invitation
      * 
      * Retrieve an existing CertExpress invitation sent to a customer.
-     * 
+     *             
      * A CertExpression invitation allows a customer to follow a helpful step-by-step guide to provide information
-     * about their certificates.  This step by step guide allows the customer to complete and upload the full 
+     * about their certificates.  This step by step guide allows the customer to complete and upload the full
      * certificate in a convenient, friendly web browser experience.  When the customer completes their certificates,
      * they will automatically be recorded to your company and linked to the customer record.
-     * 
+     *             
      * The [CertExpress website](https://app.certexpress.com/home) is available for customers to use at any time.
      * Using CertExpress with this API will ensure that your certificates are automatically linked correctly into
      * your company so that they can be used for tax exemptions.
-     * 
+     *             
      * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
      * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
-     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document 
+     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document
      * storage for this company, call `RequestCertificateSetup`.
      * 
      * ### Security Policies
@@ -1199,19 +1199,19 @@ public class AvaTaxClient {
      * Retrieve a single CertExpress invitation
      * 
      * Retrieve an existing CertExpress invitation sent to a customer.
-     * 
+     *             
      * A CertExpression invitation allows a customer to follow a helpful step-by-step guide to provide information
-     * about their certificates.  This step by step guide allows the customer to complete and upload the full 
+     * about their certificates.  This step by step guide allows the customer to complete and upload the full
      * certificate in a convenient, friendly web browser experience.  When the customer completes their certificates,
      * they will automatically be recorded to your company and linked to the customer record.
-     * 
+     *             
      * The [CertExpress website](https://app.certexpress.com/home) is available for customers to use at any time.
      * Using CertExpress with this API will ensure that your certificates are automatically linked correctly into
      * your company so that they can be used for tax exemptions.
-     * 
+     *             
      * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
      * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
-     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document 
+     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document
      * storage for this company, call `RequestCertificateSetup`.
      * 
      * ### Security Policies
@@ -1238,19 +1238,19 @@ public class AvaTaxClient {
      * List CertExpress invitations
      * 
      * Retrieve CertExpress invitations sent by this company.
-     * 
+     *             
      * A CertExpression invitation allows a customer to follow a helpful step-by-step guide to provide information
-     * about their certificates.  This step by step guide allows the customer to complete and upload the full 
+     * about their certificates.  This step by step guide allows the customer to complete and upload the full
      * certificate in a convenient, friendly web browser experience.  When the customer completes their certificates,
      * they will automatically be recorded to your company and linked to the customer record.
-     * 
+     *             
      * The [CertExpress website](https://app.certexpress.com/home) is available for customers to use at any time.
      * Using CertExpress with this API will ensure that your certificates are automatically linked correctly into
      * your company so that they can be used for tax exemptions.
-     * 
+     *             
      * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
      * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
-     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document 
+     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document
      * storage for this company, call `RequestCertificateSetup`.
      * 
      * ### Security Policies
@@ -1259,7 +1259,7 @@ public class AvaTaxClient {
      * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
      * 
      * @param companyId The unique ID number of the company that issued this invitation
-     * @param include OPTIONAL: A comma separated list of special fetch options.       No options are defined at this time.
+     * @param include OPTIONAL: A comma separated list of special fetch options.      No options are defined at this time.
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* companyId, customer, coverLetter, exposureZones, exemptReasons, requestLink
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
@@ -1281,19 +1281,19 @@ public class AvaTaxClient {
      * List CertExpress invitations
      * 
      * Retrieve CertExpress invitations sent by this company.
-     * 
+     *             
      * A CertExpression invitation allows a customer to follow a helpful step-by-step guide to provide information
-     * about their certificates.  This step by step guide allows the customer to complete and upload the full 
+     * about their certificates.  This step by step guide allows the customer to complete and upload the full
      * certificate in a convenient, friendly web browser experience.  When the customer completes their certificates,
      * they will automatically be recorded to your company and linked to the customer record.
-     * 
+     *             
      * The [CertExpress website](https://app.certexpress.com/home) is available for customers to use at any time.
      * Using CertExpress with this API will ensure that your certificates are automatically linked correctly into
      * your company so that they can be used for tax exemptions.
-     * 
+     *             
      * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
      * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
-     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document 
+     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document
      * storage for this company, call `RequestCertificateSetup`.
      * 
      * ### Security Policies
@@ -1302,7 +1302,7 @@ public class AvaTaxClient {
      * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
      * 
      * @param companyId The unique ID number of the company that issued this invitation
-     * @param include OPTIONAL: A comma separated list of special fetch options.       No options are defined at this time.
+     * @param include OPTIONAL: A comma separated list of special fetch options.      No options are defined at this time.
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* companyId, customer, coverLetter, exposureZones, exemptReasons, requestLink
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
@@ -2393,7 +2393,7 @@ public class AvaTaxClient {
      * 
      * ### Security Policies
      * 
-     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, FirmAdmin, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
      * @param id 
      * @param model 
@@ -2424,7 +2424,7 @@ public class AvaTaxClient {
      * 
      * ### Security Policies
      * 
-     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, FirmAdmin, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
      * @param id 
      * @param model 
@@ -2546,7 +2546,7 @@ public class AvaTaxClient {
      * 
      * ### Security Policies
      * 
-     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, FirmAdmin, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
      * @param id The unique identifier of the company
      * @param model The funding initialization request
@@ -2574,7 +2574,7 @@ public class AvaTaxClient {
      * 
      * ### Security Policies
      * 
-     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, FirmAdmin, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
      * @param id The unique identifier of the company
      * @param model The funding initialization request
@@ -3302,7 +3302,7 @@ public class AvaTaxClient {
      * Retrieve contacts for this company
      * 
      * List all contact objects assigned to this company.
-     * 
+     *             
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * Paginate your results using the `$top`, `$skip`, and `$orderby` parameters.
      * 
@@ -3312,17 +3312,15 @@ public class AvaTaxClient {
      * 
      * @param companyId The ID of the company that owns these contacts
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).
-     * @param include A comma separated list of additional data to retrieve.
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<ContactModel>
      */
-    public FetchResult<ContactModel> listContactsByCompany(Integer companyId, String filter, String include, Integer top, Integer skip, String orderBy) throws Exception {
+    public FetchResult<ContactModel> listContactsByCompany(Integer companyId, String filter, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/contacts");
         path.applyField("companyId", companyId);
         path.addQuery("$filter", filter);
-        path.addQuery("$include", include);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
@@ -3333,7 +3331,7 @@ public class AvaTaxClient {
      * Retrieve contacts for this company
      * 
      * List all contact objects assigned to this company.
-     * 
+     *             
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * Paginate your results using the `$top`, `$skip`, and `$orderby` parameters.
      * 
@@ -3343,17 +3341,15 @@ public class AvaTaxClient {
      * 
      * @param companyId The ID of the company that owns these contacts
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).
-     * @param include A comma separated list of additional data to retrieve.
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<ContactModel>
      */
-    public Future<FetchResult<ContactModel>> listContactsByCompanyAsync(Integer companyId, String filter, String include, Integer top, Integer skip, String orderBy) {
+    public Future<FetchResult<ContactModel>> listContactsByCompanyAsync(Integer companyId, String filter, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/contacts");
         path.applyField("companyId", companyId);
         path.addQuery("$filter", filter);
-        path.addQuery("$include", include);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
@@ -3366,7 +3362,7 @@ public class AvaTaxClient {
      * Get multiple contact objects across all companies.
      * A 'contact' is a person associated with a company who is designated to handle certain responsibilities of
      * a tax collecting and filing entity.
-     * 
+     *             
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * Paginate your results using the `$top`, `$skip`, and `$orderby` parameters.
      * 
@@ -3375,16 +3371,14 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, FirmAdmin, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).
-     * @param include A comma separated list of additional data to retrieve.
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<ContactModel>
      */
-    public FetchResult<ContactModel> queryContacts(String filter, String include, Integer top, Integer skip, String orderBy) throws Exception {
+    public FetchResult<ContactModel> queryContacts(String filter, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/contacts");
         path.addQuery("$filter", filter);
-        path.addQuery("$include", include);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
@@ -3397,7 +3391,7 @@ public class AvaTaxClient {
      * Get multiple contact objects across all companies.
      * A 'contact' is a person associated with a company who is designated to handle certain responsibilities of
      * a tax collecting and filing entity.
-     * 
+     *             
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * Paginate your results using the `$top`, `$skip`, and `$orderby` parameters.
      * 
@@ -3406,16 +3400,14 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, FirmAdmin, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).
-     * @param include A comma separated list of additional data to retrieve.
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<ContactModel>
      */
-    public Future<FetchResult<ContactModel>> queryContactsAsync(String filter, String include, Integer top, Integer skip, String orderBy) {
+    public Future<FetchResult<ContactModel>> queryContactsAsync(String filter, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/contacts");
         path.addQuery("$filter", filter);
-        path.addQuery("$include", include);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
@@ -3428,7 +3420,7 @@ public class AvaTaxClient {
      * Replace the existing contact object at this URL with an updated object.
      * A 'contact' is a person associated with a company who is designated to handle certain responsibilities of
      * a tax collecting and filing entity.
-     * All data from the existing object will be replaced with data in the object you PUT.  
+     * All data from the existing object will be replaced with data in the object you PUT.
      * To set a field's value to null, you may either set its value to null or omit that field from the object you post.
      * 
      * ### Security Policies
@@ -3453,7 +3445,7 @@ public class AvaTaxClient {
      * Replace the existing contact object at this URL with an updated object.
      * A 'contact' is a person associated with a company who is designated to handle certain responsibilities of
      * a tax collecting and filing entity.
-     * All data from the existing object will be replaced with data in the object you PUT.  
+     * All data from the existing object will be replaced with data in the object you PUT.
      * To set a field's value to null, you may either set its value to null or omit that field from the object you post.
      * 
      * ### Security Policies
@@ -7098,7 +7090,7 @@ public class AvaTaxClient {
      * Create one or more DistanceThreshold objects
      * 
      * Create one or more DistanceThreshold objects for this company.
-     * 
+     *             
      * A company-distance-threshold model indicates the distance between a company
      * and the taxing borders of various countries.  Distance thresholds are necessary
      * to correctly calculate some value-added taxes.
@@ -7121,7 +7113,7 @@ public class AvaTaxClient {
      * Create one or more DistanceThreshold objects
      * 
      * Create one or more DistanceThreshold objects for this company.
-     * 
+     *             
      * A company-distance-threshold model indicates the distance between a company
      * and the taxing borders of various countries.  Distance thresholds are necessary
      * to correctly calculate some value-added taxes.
@@ -7144,7 +7136,7 @@ public class AvaTaxClient {
      * Delete a single DistanceThreshold object
      * 
      * Marks the DistanceThreshold object identified by this URL as deleted.
-     * 
+     *             
      * A company-distance-threshold model indicates the distance between a company
      * and the taxing borders of various countries.  Distance thresholds are necessary
      * to correctly calculate some value-added taxes.
@@ -7168,7 +7160,7 @@ public class AvaTaxClient {
      * Delete a single DistanceThreshold object
      * 
      * Marks the DistanceThreshold object identified by this URL as deleted.
-     * 
+     *             
      * A company-distance-threshold model indicates the distance between a company
      * and the taxing borders of various countries.  Distance thresholds are necessary
      * to correctly calculate some value-added taxes.
@@ -7192,7 +7184,7 @@ public class AvaTaxClient {
      * Retrieve a single DistanceThreshold
      * 
      * Retrieves a single DistanceThreshold object defined by this URL.
-     * 
+     *             
      * A company-distance-threshold model indicates the distance between a company
      * and the taxing borders of various countries.  Distance thresholds are necessary
      * to correctly calculate some value-added taxes.
@@ -7216,7 +7208,7 @@ public class AvaTaxClient {
      * Retrieve a single DistanceThreshold
      * 
      * Retrieves a single DistanceThreshold object defined by this URL.
-     * 
+     *             
      * A company-distance-threshold model indicates the distance between a company
      * and the taxing borders of various countries.  Distance thresholds are necessary
      * to correctly calculate some value-added taxes.
@@ -7240,7 +7232,7 @@ public class AvaTaxClient {
      * Retrieve all DistanceThresholds for this company.
      * 
      * Lists all DistanceThreshold objects that belong to this company.
-     * 
+     *             
      * A company-distance-threshold model indicates the distance between a company
      * and the taxing borders of various countries.  Distance thresholds are necessary
      * to correctly calculate some value-added taxes.
@@ -7272,7 +7264,7 @@ public class AvaTaxClient {
      * Retrieve all DistanceThresholds for this company.
      * 
      * Lists all DistanceThreshold objects that belong to this company.
-     * 
+     *             
      * A company-distance-threshold model indicates the distance between a company
      * and the taxing borders of various countries.  Distance thresholds are necessary
      * to correctly calculate some value-added taxes.
@@ -7304,11 +7296,11 @@ public class AvaTaxClient {
      * Retrieve all DistanceThreshold objects
      * 
      * Lists all DistanceThreshold objects that belong to this account.
-     * 
+     *             
      * A company-distance-threshold model indicates the distance between a company
      * and the taxing borders of various countries.  Distance thresholds are necessary
      * to correctly calculate some value-added taxes.
-     * 
+     *             
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * Paginate your results using the `$top`, `$skip`, and `$orderby` parameters.
      * 
@@ -7337,11 +7329,11 @@ public class AvaTaxClient {
      * Retrieve all DistanceThreshold objects
      * 
      * Lists all DistanceThreshold objects that belong to this account.
-     * 
+     *             
      * A company-distance-threshold model indicates the distance between a company
      * and the taxing borders of various countries.  Distance thresholds are necessary
      * to correctly calculate some value-added taxes.
-     * 
+     *             
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * Paginate your results using the `$top`, `$skip`, and `$orderby` parameters.
      * 
@@ -7370,12 +7362,12 @@ public class AvaTaxClient {
      * Update a DistanceThreshold object
      * 
      * Replace the existing DistanceThreshold object at this URL with an updated object.
-     * 
+     *             
      * A company-distance-threshold model indicates the distance between a company
      * and the taxing borders of various countries.  Distance thresholds are necessary
      * to correctly calculate some value-added taxes.
      *             
-     * All data from the existing object will be replaced with data in the object you PUT.  
+     * All data from the existing object will be replaced with data in the object you PUT.
      * To set a field's value to null, you may either set its value to null or omit that field from the object you post.
      * 
      * ### Security Policies
@@ -7398,12 +7390,12 @@ public class AvaTaxClient {
      * Update a DistanceThreshold object
      * 
      * Replace the existing DistanceThreshold object at this URL with an updated object.
-     * 
+     *             
      * A company-distance-threshold model indicates the distance between a company
      * and the taxing borders of various countries.  Distance thresholds are necessary
      * to correctly calculate some value-added taxes.
      *             
-     * All data from the existing object will be replaced with data in the object you PUT.  
+     * All data from the existing object will be replaced with data in the object you PUT.
      * To set a field's value to null, you may either set its value to null or omit that field from the object you post.
      * 
      * ### Security Policies
@@ -7582,19 +7574,19 @@ public class AvaTaxClient {
      * FREE API - Sales tax rates for a specified address
      * 
      * # Free-To-Use
-     * 
+     *             
      * The TaxRates API is a free-to-use, no cost option for estimating sales tax rates.
      * Any customer can request a free AvaTax account and make use of the TaxRates API.
-     * 
+     *             
      * Usage of this API is subject to rate limits.  Users who exceed the rate limit will receive HTTP
      * response code 429 - `Too Many Requests`.
-     * 
+     *             
      * This API assumes that you are selling general tangible personal property at a retail point-of-sale
-     * location in the United States only.  
-     * 
+     * location in the United States only.
+     *             
      * For more powerful tax calculation, please consider upgrading to the `CreateTransaction` API,
      * which supports features including, but not limited to:
-     * 
+     *             
      * * Nexus declarations
      * * Taxability based on product/service type
      * * Sourcing rules affecting origin/destination states
@@ -7603,16 +7595,16 @@ public class AvaTaxClient {
      * * Refunds for products purchased on a different date
      * * Detailed jurisdiction names and state assigned codes
      * * And more!
-     * 
+     *             
      * Please see [Estimating Tax with REST v2](http://developer.avalara.com/blog/2016/11/04/estimating-tax-with-rest-v2/)
      * 
      * @param line1 The street address of the location.
      * @param line2 The street address of the location.
      * @param line3 The street address of the location.
      * @param city The city name of the location.
-     * @param region Name or ISO 3166 code identifying the region within the country.    This field supports many different region identifiers:   * Two and three character ISO 3166 region codes   * Fully spelled out names of the region in ISO supported languages   * Common alternative spellings for many regions    For a full list of all supported codes and names, please see the Definitions API `ListRegions`.
+     * @param region Name or ISO 3166 code identifying the region within the country.     This field supports many different region identifiers:   * Two and three character ISO 3166 region codes   * Fully spelled out names of the region in ISO supported languages   * Common alternative spellings for many regions     For a full list of all supported codes and names, please see the Definitions API `ListRegions`.
      * @param postalCode The postal code of the location.
-     * @param country Name or ISO 3166 code identifying the country.    This field supports many different country identifiers:   * Two character ISO 3166 codes   * Three character ISO 3166 codes   * Fully spelled out names of the country in ISO supported languages   * Common alternative spellings for many countries    For a full list of all supported codes and names, please see the Definitions API `ListCountries`.
+     * @param country Name or ISO 3166 code identifying the country.     This field supports many different country identifiers:   * Two character ISO 3166 codes   * Three character ISO 3166 codes   * Fully spelled out names of the country in ISO supported languages   * Common alternative spellings for many countries     For a full list of all supported codes and names, please see the Definitions API `ListCountries`.
      * @return TaxRateModel
      */
     public TaxRateModel taxRatesByAddress(String line1, String line2, String line3, String city, String region, String postalCode, String country) throws Exception {
@@ -7631,19 +7623,19 @@ public class AvaTaxClient {
      * FREE API - Sales tax rates for a specified address
      * 
      * # Free-To-Use
-     * 
+     *             
      * The TaxRates API is a free-to-use, no cost option for estimating sales tax rates.
      * Any customer can request a free AvaTax account and make use of the TaxRates API.
-     * 
+     *             
      * Usage of this API is subject to rate limits.  Users who exceed the rate limit will receive HTTP
      * response code 429 - `Too Many Requests`.
-     * 
+     *             
      * This API assumes that you are selling general tangible personal property at a retail point-of-sale
-     * location in the United States only.  
-     * 
+     * location in the United States only.
+     *             
      * For more powerful tax calculation, please consider upgrading to the `CreateTransaction` API,
      * which supports features including, but not limited to:
-     * 
+     *             
      * * Nexus declarations
      * * Taxability based on product/service type
      * * Sourcing rules affecting origin/destination states
@@ -7652,16 +7644,16 @@ public class AvaTaxClient {
      * * Refunds for products purchased on a different date
      * * Detailed jurisdiction names and state assigned codes
      * * And more!
-     * 
+     *             
      * Please see [Estimating Tax with REST v2](http://developer.avalara.com/blog/2016/11/04/estimating-tax-with-rest-v2/)
      * 
      * @param line1 The street address of the location.
      * @param line2 The street address of the location.
      * @param line3 The street address of the location.
      * @param city The city name of the location.
-     * @param region Name or ISO 3166 code identifying the region within the country.    This field supports many different region identifiers:   * Two and three character ISO 3166 region codes   * Fully spelled out names of the region in ISO supported languages   * Common alternative spellings for many regions    For a full list of all supported codes and names, please see the Definitions API `ListRegions`.
+     * @param region Name or ISO 3166 code identifying the region within the country.     This field supports many different region identifiers:   * Two and three character ISO 3166 region codes   * Fully spelled out names of the region in ISO supported languages   * Common alternative spellings for many regions     For a full list of all supported codes and names, please see the Definitions API `ListRegions`.
      * @param postalCode The postal code of the location.
-     * @param country Name or ISO 3166 code identifying the country.    This field supports many different country identifiers:   * Two character ISO 3166 codes   * Three character ISO 3166 codes   * Fully spelled out names of the country in ISO supported languages   * Common alternative spellings for many countries    For a full list of all supported codes and names, please see the Definitions API `ListCountries`.
+     * @param country Name or ISO 3166 code identifying the country.     This field supports many different country identifiers:   * Two character ISO 3166 codes   * Three character ISO 3166 codes   * Fully spelled out names of the country in ISO supported languages   * Common alternative spellings for many countries     For a full list of all supported codes and names, please see the Definitions API `ListCountries`.
      * @return TaxRateModel
      */
     public Future<TaxRateModel> taxRatesByAddressAsync(String line1, String line2, String line3, String city, String region, String postalCode, String country) {
@@ -7680,21 +7672,21 @@ public class AvaTaxClient {
      * FREE API - Sales tax rates for a specified country and postal code. This API is only available for US postal codes.
      * 
      * # Free-To-Use
-     * 
+     *             
      * This API is only available for a US postal codes.
-     * 
+     *             
      * The TaxRates API is a free-to-use, no cost option for estimating sales tax rates.
      * Any customer can request a free AvaTax account and make use of the TaxRates API.
-     * 
+     *             
      * Usage of this API is subject to rate limits.  Users who exceed the rate limit will receive HTTP
      * response code 429 - `Too Many Requests`.
-     * 
+     *             
      * This API assumes that you are selling general tangible personal property at a retail point-of-sale
-     * location in the United States only.  
-     * 
+     * location in the United States only.
+     *             
      * For more powerful tax calculation, please consider upgrading to the `CreateTransaction` API,
      * which supports features including, but not limited to:
-     * 
+     *             
      * * Nexus declarations
      * * Taxability based on product/service type
      * * Sourcing rules affecting origin/destination states
@@ -7703,10 +7695,10 @@ public class AvaTaxClient {
      * * Refunds for products purchased on a different date
      * * Detailed jurisdiction names and state assigned codes
      * * And more!
-     * 
+     *             
      * Please see [Estimating Tax with REST v2](http://developer.avalara.com/blog/2016/11/04/estimating-tax-with-rest-v2/)
      * 
-     * @param country Name or ISO 3166 code identifying the country.    This field supports many different country identifiers:   * Two character ISO 3166 codes   * Three character ISO 3166 codes   * Fully spelled out names of the country in ISO supported languages   * Common alternative spellings for many countries    For a full list of all supported codes and names, please see the Definitions API `ListCountries`.
+     * @param country Name or ISO 3166 code identifying the country.     This field supports many different country identifiers:   * Two character ISO 3166 codes   * Three character ISO 3166 codes   * Fully spelled out names of the country in ISO supported languages   * Common alternative spellings for many countries     For a full list of all supported codes and names, please see the Definitions API `ListCountries`.
      * @param postalCode The postal code of the location.
      * @return TaxRateModel
      */
@@ -7721,21 +7713,21 @@ public class AvaTaxClient {
      * FREE API - Sales tax rates for a specified country and postal code. This API is only available for US postal codes.
      * 
      * # Free-To-Use
-     * 
+     *             
      * This API is only available for a US postal codes.
-     * 
+     *             
      * The TaxRates API is a free-to-use, no cost option for estimating sales tax rates.
      * Any customer can request a free AvaTax account and make use of the TaxRates API.
-     * 
+     *             
      * Usage of this API is subject to rate limits.  Users who exceed the rate limit will receive HTTP
      * response code 429 - `Too Many Requests`.
-     * 
+     *             
      * This API assumes that you are selling general tangible personal property at a retail point-of-sale
-     * location in the United States only.  
-     * 
+     * location in the United States only.
+     *             
      * For more powerful tax calculation, please consider upgrading to the `CreateTransaction` API,
      * which supports features including, but not limited to:
-     * 
+     *             
      * * Nexus declarations
      * * Taxability based on product/service type
      * * Sourcing rules affecting origin/destination states
@@ -7744,10 +7736,10 @@ public class AvaTaxClient {
      * * Refunds for products purchased on a different date
      * * Detailed jurisdiction names and state assigned codes
      * * And more!
-     * 
+     *             
      * Please see [Estimating Tax with REST v2](http://developer.avalara.com/blog/2016/11/04/estimating-tax-with-rest-v2/)
      * 
-     * @param country Name or ISO 3166 code identifying the country.    This field supports many different country identifiers:   * Two character ISO 3166 codes   * Three character ISO 3166 codes   * Fully spelled out names of the country in ISO supported languages   * Common alternative spellings for many countries    For a full list of all supported codes and names, please see the Definitions API `ListCountries`.
+     * @param country Name or ISO 3166 code identifying the country.     This field supports many different country identifiers:   * Two character ISO 3166 codes   * Three character ISO 3166 codes   * Fully spelled out names of the country in ISO supported languages   * Common alternative spellings for many countries     For a full list of all supported codes and names, please see the Definitions API `ListCountries`.
      * @param postalCode The postal code of the location.
      * @return TaxRateModel
      */
@@ -9144,7 +9136,7 @@ public class AvaTaxClient {
      * Many taxing authorities require that you define a list of all locations where your company does business.
      * These locations may require additional custom configuration or tax registration with these authorities.
      * For more information on metadata requirements, see the '/api/v2/definitions/locationquestions' API.
-     * 
+     *             
      * You may specify one or more of the following values in the `$include` parameter to fetch additional nested data, using commas to separate multiple values:
      *             
      * * LocationSettings
@@ -9174,7 +9166,7 @@ public class AvaTaxClient {
      * Many taxing authorities require that you define a list of all locations where your company does business.
      * These locations may require additional custom configuration or tax registration with these authorities.
      * For more information on metadata requirements, see the '/api/v2/definitions/locationquestions' API.
-     * 
+     *             
      * You may specify one or more of the following values in the `$include` parameter to fetch additional nested data, using commas to separate multiple values:
      *             
      * * LocationSettings
@@ -9204,7 +9196,7 @@ public class AvaTaxClient {
      * Many taxing authorities require that you define a list of all locations where your company does business.
      * These locations may require additional custom configuration or tax registration with these authorities.
      * For more information on metadata requirements, see the '/api/v2/definitions/locationquestions' API.
-     * 
+     *             
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * Paginate your results using the `$top`, `$skip`, and `$orderby` parameters.
      * You may specify one or more of the following values in the `$include` parameter to fetch additional nested data, using commas to separate multiple values:
@@ -9242,7 +9234,7 @@ public class AvaTaxClient {
      * Many taxing authorities require that you define a list of all locations where your company does business.
      * These locations may require additional custom configuration or tax registration with these authorities.
      * For more information on metadata requirements, see the '/api/v2/definitions/locationquestions' API.
-     * 
+     *             
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * Paginate your results using the `$top`, `$skip`, and `$orderby` parameters.
      * You may specify one or more of the following values in the `$include` parameter to fetch additional nested data, using commas to separate multiple values:
@@ -9280,10 +9272,10 @@ public class AvaTaxClient {
      * Many taxing authorities require that you define a list of all locations where your company does business.
      * These locations may require additional custom configuration or tax registration with these authorities.
      * For more information on metadata requirements, see the '/api/v2/definitions/locationquestions' API.
-     * 
+     *             
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * Paginate your results using the `$top`, `$skip`, and `$orderby` parameters.
-     * 
+     *             
      * You may specify one or more of the following values in the `$include` parameter to fetch additional nested data, using commas to separate multiple values:
      *             
      * * LocationSettings
@@ -9317,10 +9309,10 @@ public class AvaTaxClient {
      * Many taxing authorities require that you define a list of all locations where your company does business.
      * These locations may require additional custom configuration or tax registration with these authorities.
      * For more information on metadata requirements, see the '/api/v2/definitions/locationquestions' API.
-     * 
+     *             
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * Paginate your results using the `$top`, `$skip`, and `$orderby` parameters.
-     * 
+     *             
      * You may specify one or more of the following values in the `$include` parameter to fetch additional nested data, using commas to separate multiple values:
      *             
      * * LocationSettings
@@ -9350,7 +9342,7 @@ public class AvaTaxClient {
      * Update a single location
      * 
      * Replace the existing location object at this URL with an updated object.
-     * All data from the existing object will be replaced with data in the object you PUT.  
+     * All data from the existing object will be replaced with data in the object you PUT.
      * To set a field's value to null, you may either set its value to null or omit that field from the object you post.
      * 
      * ### Security Policies
@@ -9373,7 +9365,7 @@ public class AvaTaxClient {
      * Update a single location
      * 
      * Replace the existing location object at this URL with an updated object.
-     * All data from the existing object will be replaced with data in the object you PUT.  
+     * All data from the existing object will be replaced with data in the object you PUT.
      * To set a field's value to null, you may either set its value to null or omit that field from the object you post.
      * 
      * ### Security Policies
@@ -11940,7 +11932,7 @@ public class AvaTaxClient {
      * 
      * ### Security Policies
      * 
-     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, FirmAdmin, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
      * @param id The id of the notification you wish to mark as dismissed.
      * @return NotificationModel
@@ -11969,7 +11961,7 @@ public class AvaTaxClient {
      * 
      * ### Security Policies
      * 
-     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, FirmAdmin, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
      * @param id The id of the notification you wish to mark as dismissed.
      * @return NotificationModel
@@ -12501,7 +12493,7 @@ public class AvaTaxClient {
      * 
      * # For Registrar Use Only
      * This API is for use by Avalara Registrar administrative users only.
-     * 
+     *             
      * Allows a system admin to reset the password for a specific user via the API.
      * This API is only available for Avalara Registrar Admins, and can be used to reset the password of any
      * user based on internal Avalara business processes.
@@ -12528,7 +12520,7 @@ public class AvaTaxClient {
      * 
      * # For Registrar Use Only
      * This API is for use by Avalara Registrar administrative users only.
-     * 
+     *             
      * Allows a system admin to reset the password for a specific user via the API.
      * This API is only available for Avalara Registrar Admins, and can be used to reset the password of any
      * user based on internal Avalara business processes.
@@ -12945,10 +12937,18 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, ProStoresOperator, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* reportType, parameters, createdUser, completedDate
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<ReportModel>
      */
-    public FetchResult<ReportModel> listReports() throws Exception {
+    public FetchResult<ReportModel> listReports(String filter, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/reports");
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
         return ((RestCall<FetchResult<ReportModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ReportModel>>(){})).call();
     }
 
@@ -12971,10 +12971,18 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, ProStoresOperator, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* reportType, parameters, createdUser, completedDate
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @return FetchResult<ReportModel>
      */
-    public Future<FetchResult<ReportModel>> listReportsAsync() {
+    public Future<FetchResult<ReportModel>> listReportsAsync(String filter, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/reports");
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
         return this.threadPool.submit((RestCall<FetchResult<ReportModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ReportModel>>(){}));
     }
 
@@ -12982,12 +12990,12 @@ public class AvaTaxClient {
      * Create a new setting
      * 
      * Create one or more new setting objects attached to this company.
-     * 
+     *             
      * The company settings system is a metadata system that you can use to store extra information
      * about a company.  Your integration or connector could use this data storage to keep track of
      * preference information, reminders, or any other storage that would need to persist even if
      * the customer uninstalls your application.
-     * 
+     *             
      * A setting can refer to any type of data you need to remember about this company object.
      * When creating this object, you may define your own `set`, `name`, and `value` parameters.
      * To define your own values, please choose a `set` name that begins with `X-` to indicate an extension.
@@ -13010,12 +13018,12 @@ public class AvaTaxClient {
      * Create a new setting
      * 
      * Create one or more new setting objects attached to this company.
-     * 
+     *             
      * The company settings system is a metadata system that you can use to store extra information
      * about a company.  Your integration or connector could use this data storage to keep track of
      * preference information, reminders, or any other storage that would need to persist even if
      * the customer uninstalls your application.
-     * 
+     *             
      * A setting can refer to any type of data you need to remember about this company object.
      * When creating this object, you may define your own `set`, `name`, and `value` parameters.
      * To define your own values, please choose a `set` name that begins with `X-` to indicate an extension.
@@ -13038,12 +13046,12 @@ public class AvaTaxClient {
      * Delete a single setting
      * 
      * Mark the setting object at this URL as deleted.
-     * 
+     *             
      * The company settings system is a metadata system that you can use to store extra information
      * about a company.  Your integration or connector could use this data storage to keep track of
      * preference information, reminders, or any other storage that would need to persist even if
      * the customer uninstalls your application.
-     * 
+     *             
      * A setting can refer to any type of data you need to remember about this company object.
      * When creating this object, you may define your own `set`, `name`, and `value` parameters.
      * To define your own values, please choose a `set` name that begins with `X-` to indicate an extension.
@@ -13067,12 +13075,12 @@ public class AvaTaxClient {
      * Delete a single setting
      * 
      * Mark the setting object at this URL as deleted.
-     * 
+     *             
      * The company settings system is a metadata system that you can use to store extra information
      * about a company.  Your integration or connector could use this data storage to keep track of
      * preference information, reminders, or any other storage that would need to persist even if
      * the customer uninstalls your application.
-     * 
+     *             
      * A setting can refer to any type of data you need to remember about this company object.
      * When creating this object, you may define your own `set`, `name`, and `value` parameters.
      * To define your own values, please choose a `set` name that begins with `X-` to indicate an extension.
@@ -13096,12 +13104,12 @@ public class AvaTaxClient {
      * Retrieve a single setting
      * 
      * Get a single setting object by its unique ID.
-     * 
+     *             
      * The company settings system is a metadata system that you can use to store extra information
      * about a company.  Your integration or connector could use this data storage to keep track of
      * preference information, reminders, or any other storage that would need to persist even if
      * the customer uninstalls your application.
-     * 
+     *             
      * A setting can refer to any type of data you need to remember about this company object.
      * When creating this object, you may define your own `set`, `name`, and `value` parameters.
      * To define your own values, please choose a `set` name that begins with `X-` to indicate an extension.
@@ -13125,12 +13133,12 @@ public class AvaTaxClient {
      * Retrieve a single setting
      * 
      * Get a single setting object by its unique ID.
-     * 
+     *             
      * The company settings system is a metadata system that you can use to store extra information
      * about a company.  Your integration or connector could use this data storage to keep track of
      * preference information, reminders, or any other storage that would need to persist even if
      * the customer uninstalls your application.
-     * 
+     *             
      * A setting can refer to any type of data you need to remember about this company object.
      * When creating this object, you may define your own `set`, `name`, and `value` parameters.
      * To define your own values, please choose a `set` name that begins with `X-` to indicate an extension.
@@ -13154,16 +13162,16 @@ public class AvaTaxClient {
      * Retrieve all settings for this company
      * 
      * List all setting objects attached to this company.
-     * 
+     *             
      * The company settings system is a metadata system that you can use to store extra information
      * about a company.  Your integration or connector could use this data storage to keep track of
      * preference information, reminders, or any other storage that would need to persist even if
      * the customer uninstalls your application.
-     * 
+     *             
      * A setting can refer to any type of data you need to remember about this company object.
      * When creating this object, you may define your own `set`, `name`, and `value` parameters.
      * To define your own values, please choose a `set` name that begins with `X-` to indicate an extension.
-     * 
+     *             
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * Paginate your results using the `$top`, `$skip`, and `$orderby` parameters.
      * 
@@ -13194,16 +13202,16 @@ public class AvaTaxClient {
      * Retrieve all settings for this company
      * 
      * List all setting objects attached to this company.
-     * 
+     *             
      * The company settings system is a metadata system that you can use to store extra information
      * about a company.  Your integration or connector could use this data storage to keep track of
      * preference information, reminders, or any other storage that would need to persist even if
      * the customer uninstalls your application.
-     * 
+     *             
      * A setting can refer to any type of data you need to remember about this company object.
      * When creating this object, you may define your own `set`, `name`, and `value` parameters.
      * To define your own values, please choose a `set` name that begins with `X-` to indicate an extension.
-     * 
+     *             
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * Paginate your results using the `$top`, `$skip`, and `$orderby` parameters.
      * 
@@ -13234,16 +13242,16 @@ public class AvaTaxClient {
      * Retrieve all settings
      * 
      * Get multiple setting objects across all companies.
-     * 
+     *             
      * The company settings system is a metadata system that you can use to store extra information
      * about a company.  Your integration or connector could use this data storage to keep track of
      * preference information, reminders, or any other storage that would need to persist even if
      * the customer uninstalls your application.
-     * 
+     *             
      * A setting can refer to any type of data you need to remember about this company object.
      * When creating this object, you may define your own `set`, `name`, and `value` parameters.
      * To define your own values, please choose a `set` name that begins with `X-` to indicate an extension.
-     * 
+     *             
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * Paginate your results using the `$top`, `$skip`, and `$orderby` parameters.
      * 
@@ -13272,16 +13280,16 @@ public class AvaTaxClient {
      * Retrieve all settings
      * 
      * Get multiple setting objects across all companies.
-     * 
+     *             
      * The company settings system is a metadata system that you can use to store extra information
      * about a company.  Your integration or connector could use this data storage to keep track of
      * preference information, reminders, or any other storage that would need to persist even if
      * the customer uninstalls your application.
-     * 
+     *             
      * A setting can refer to any type of data you need to remember about this company object.
      * When creating this object, you may define your own `set`, `name`, and `value` parameters.
      * To define your own values, please choose a `set` name that begins with `X-` to indicate an extension.
-     * 
+     *             
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * Paginate your results using the `$top`, `$skip`, and `$orderby` parameters.
      * 
@@ -13310,18 +13318,18 @@ public class AvaTaxClient {
      * Update a single setting
      * 
      * Replace the existing setting object at this URL with an updated object.
-     * 
+     *             
      * The company settings system is a metadata system that you can use to store extra information
      * about a company.  Your integration or connector could use this data storage to keep track of
      * preference information, reminders, or any other storage that would need to persist even if
      * the customer uninstalls your application.
-     * 
+     *             
      * A setting can refer to any type of data you need to remember about this company object.
      * When creating this object, you may define your own `set`, `name`, and `value` parameters.
      * To define your own values, please choose a `set` name that begins with `X-` to indicate an extension.
      *             
-     * All data from the existing object will be replaced with data in the object you `PUT`.  
-     * 
+     * All data from the existing object will be replaced with data in the object you `PUT`.
+     *             
      * To set a field's value to `null`, you may either set its value to `null` or omit that field from the object when calling update.
      * 
      * ### Security Policies
@@ -13344,18 +13352,18 @@ public class AvaTaxClient {
      * Update a single setting
      * 
      * Replace the existing setting object at this URL with an updated object.
-     * 
+     *             
      * The company settings system is a metadata system that you can use to store extra information
      * about a company.  Your integration or connector could use this data storage to keep track of
      * preference information, reminders, or any other storage that would need to persist even if
      * the customer uninstalls your application.
-     * 
+     *             
      * A setting can refer to any type of data you need to remember about this company object.
      * When creating this object, you may define your own `set`, `name`, and `value` parameters.
      * To define your own values, please choose a `set` name that begins with `X-` to indicate an extension.
      *             
-     * All data from the existing object will be replaced with data in the object you `PUT`.  
-     * 
+     * All data from the existing object will be replaced with data in the object you `PUT`.
+     *             
      * To set a field's value to `null`, you may either set its value to `null` or omit that field from the object when calling update.
      * 
      * ### Security Policies
@@ -13680,7 +13688,7 @@ public class AvaTaxClient {
      * Avalara supports correct tax rates and taxability rules for all TaxCodes in all supported jurisdictions.
      * If you identify your products by tax code in your 'Create Transacion' API calls, Avalara will correctly calculate tax rates and
      * taxability rules for this product in all supported jurisdictions.
-     * 
+     *             
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * Paginate your results using the `$top`, `$skip`, and `$orderby` parameters.
      * 
@@ -13715,7 +13723,7 @@ public class AvaTaxClient {
      * Avalara supports correct tax rates and taxability rules for all TaxCodes in all supported jurisdictions.
      * If you identify your products by tax code in your 'Create Transacion' API calls, Avalara will correctly calculate tax rates and
      * taxability rules for this product in all supported jurisdictions.
-     * 
+     *             
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * Paginate your results using the `$top`, `$skip`, and `$orderby` parameters.
      * 
@@ -13750,7 +13758,7 @@ public class AvaTaxClient {
      * Avalara supports correct tax rates and taxability rules for all TaxCodes in all supported jurisdictions.
      * If you identify your products by tax code in your 'Create Transacion' API calls, Avalara will correctly calculate tax rates and
      * taxability rules for this product in all supported jurisdictions.
-     * 
+     *             
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * Paginate your results using the `$top`, `$skip`, and `$orderby` parameters.
      * 
@@ -13783,7 +13791,7 @@ public class AvaTaxClient {
      * Avalara supports correct tax rates and taxability rules for all TaxCodes in all supported jurisdictions.
      * If you identify your products by tax code in your 'Create Transacion' API calls, Avalara will correctly calculate tax rates and
      * taxability rules for this product in all supported jurisdictions.
-     * 
+     *             
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * Paginate your results using the `$top`, `$skip`, and `$orderby` parameters.
      * 
@@ -13816,7 +13824,7 @@ public class AvaTaxClient {
      * Avalara supports correct tax rates and taxability rules for all TaxCodes in all supported jurisdictions.
      * If you identify your products by tax code in your 'Create Transacion' API calls, Avalara will correctly calculate tax rates and
      * taxability rules for this product in all supported jurisdictions.
-     * All data from the existing object will be replaced with data in the object you PUT.  
+     * All data from the existing object will be replaced with data in the object you PUT.
      * To set a field's value to null, you may either set its value to null or omit that field from the object you post.
      * 
      * ### Security Policies
@@ -13843,7 +13851,7 @@ public class AvaTaxClient {
      * Avalara supports correct tax rates and taxability rules for all TaxCodes in all supported jurisdictions.
      * If you identify your products by tax code in your 'Create Transacion' API calls, Avalara will correctly calculate tax rates and
      * taxability rules for this product in all supported jurisdictions.
-     * All data from the existing object will be replaced with data in the object you PUT.  
+     * All data from the existing object will be replaced with data in the object you PUT.
      * To set a field's value to null, you may either set its value to null or omit that field from the object you post.
      * 
      * ### Security Policies
@@ -13866,32 +13874,32 @@ public class AvaTaxClient {
      * Build a multi-location tax content file
      * 
      * Builds a tax content file containing information useful for a retail point-of-sale solution.
-     * 
+     *             
      * Since tax rates may change based on decisions made by a variety of tax authorities, we recommend
      * that users of this tax content API download new data every day.  Many tax authorities may finalize
      * decisions on tax changes at unexpected times and may make changes in response to legal issues or
      * governmental priorities.  Any tax content downloaded for future time periods is subject to change
      * if tax rates or tax laws change.
-     * 
+     *             
      * A TaxContent file contains a matrix of the taxes that would be charged when you sell any of your
      * Items at any of your Locations.  To create items, use `CreateItems()`.  To create locations, use
-     * `CreateLocations()`.  The file is built by looking up the tax profile for your location and your 
+     * `CreateLocations()`.  The file is built by looking up the tax profile for your location and your
      * item and calculating taxes for each in turn.  To include a custom `TaxCode` in this tax content
      * file, first create the custom tax code using `CreateTaxCodes()` to create the custom tax code,
      * then use `CreateItems()` to create an item that uses the custom tax code.
-     * 
+     *             
      * This data file can be customized for specific partner devices and usage conditions.
-     * 
+     *             
      * The result of this API is the file you requested in the format you requested using the `responseType` field.
-     * 
+     *             
      * This API builds the file on demand, and is limited to files with no more than 7500 scenarios.  To build a tax content
      * file for a single location at a time, please use `BuildTaxContentFileForLocation`.
-     * 
+     *             
      * NOTE: This API does not work for Tennessee tax holiday scenarios.
      * 
      * ### Security Policies
      * 
-     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
      * 
      * @param model Parameters about the desired file format and report format, specifying which company, locations and TaxCodes to include.
@@ -13906,32 +13914,32 @@ public class AvaTaxClient {
      * Build a multi-location tax content file
      * 
      * Builds a tax content file containing information useful for a retail point-of-sale solution.
-     * 
+     *             
      * Since tax rates may change based on decisions made by a variety of tax authorities, we recommend
      * that users of this tax content API download new data every day.  Many tax authorities may finalize
      * decisions on tax changes at unexpected times and may make changes in response to legal issues or
      * governmental priorities.  Any tax content downloaded for future time periods is subject to change
      * if tax rates or tax laws change.
-     * 
+     *             
      * A TaxContent file contains a matrix of the taxes that would be charged when you sell any of your
      * Items at any of your Locations.  To create items, use `CreateItems()`.  To create locations, use
-     * `CreateLocations()`.  The file is built by looking up the tax profile for your location and your 
+     * `CreateLocations()`.  The file is built by looking up the tax profile for your location and your
      * item and calculating taxes for each in turn.  To include a custom `TaxCode` in this tax content
      * file, first create the custom tax code using `CreateTaxCodes()` to create the custom tax code,
      * then use `CreateItems()` to create an item that uses the custom tax code.
-     * 
+     *             
      * This data file can be customized for specific partner devices and usage conditions.
-     * 
+     *             
      * The result of this API is the file you requested in the format you requested using the `responseType` field.
-     * 
+     *             
      * This API builds the file on demand, and is limited to files with no more than 7500 scenarios.  To build a tax content
      * file for a single location at a time, please use `BuildTaxContentFileForLocation`.
-     * 
+     *             
      * NOTE: This API does not work for Tennessee tax holiday scenarios.
      * 
      * ### Security Policies
      * 
-     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
      * 
      * @param model Parameters about the desired file format and report format, specifying which company, locations and TaxCodes to include.
@@ -13946,32 +13954,32 @@ public class AvaTaxClient {
      * Build a tax content file for a single location
      * 
      * Builds a tax content file containing information useful for a retail point-of-sale solution.
-     * 
+     *             
      * Since tax rates may change based on decisions made by a variety of tax authorities, we recommend
      * that users of this tax content API download new data every day.  Many tax authorities may finalize
      * decisions on tax changes at unexpected times and may make changes in response to legal issues or
      * governmental priorities.  Any tax content downloaded for future time periods is subject to change
      * if tax rates or tax laws change.
-     * 
+     *             
      * A TaxContent file contains a matrix of the taxes that would be charged when you sell any of your
      * Items at any of your Locations.  To create items, use `CreateItems()`.  To create locations, use
-     * `CreateLocations()`.  The file is built by looking up the tax profile for your location and your 
+     * `CreateLocations()`.  The file is built by looking up the tax profile for your location and your
      * item and calculating taxes for each in turn.  To include a custom `TaxCode` in this tax content
      * file, first create the custom tax code using `CreateTaxCodes()` to create the custom tax code,
      * then use `CreateItems()` to create an item that uses the custom tax code.
-     * 
+     *             
      * This data file can be customized for specific partner devices and usage conditions.
-     * 
+     *             
      * The result of this API is the file you requested in the format you requested using the `responseType` field.
-     * 
+     *             
      * This API builds the file on demand, and is limited to files with no more than 7500 scenarios.  To build a tax content
      * file for a multiple locations in a single file, please use `BuildTaxContentFile`.
-     * 
+     *             
      * NOTE: This API does not work for Tennessee tax holiday scenarios.
      * 
      * ### Security Policies
      * 
-     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
      * 
      * @param companyId The ID number of the company that owns this location.
@@ -13997,32 +14005,32 @@ public class AvaTaxClient {
      * Build a tax content file for a single location
      * 
      * Builds a tax content file containing information useful for a retail point-of-sale solution.
-     * 
+     *             
      * Since tax rates may change based on decisions made by a variety of tax authorities, we recommend
      * that users of this tax content API download new data every day.  Many tax authorities may finalize
      * decisions on tax changes at unexpected times and may make changes in response to legal issues or
      * governmental priorities.  Any tax content downloaded for future time periods is subject to change
      * if tax rates or tax laws change.
-     * 
+     *             
      * A TaxContent file contains a matrix of the taxes that would be charged when you sell any of your
      * Items at any of your Locations.  To create items, use `CreateItems()`.  To create locations, use
-     * `CreateLocations()`.  The file is built by looking up the tax profile for your location and your 
+     * `CreateLocations()`.  The file is built by looking up the tax profile for your location and your
      * item and calculating taxes for each in turn.  To include a custom `TaxCode` in this tax content
      * file, first create the custom tax code using `CreateTaxCodes()` to create the custom tax code,
      * then use `CreateItems()` to create an item that uses the custom tax code.
-     * 
+     *             
      * This data file can be customized for specific partner devices and usage conditions.
-     * 
+     *             
      * The result of this API is the file you requested in the format you requested using the `responseType` field.
-     * 
+     *             
      * This API builds the file on demand, and is limited to files with no more than 7500 scenarios.  To build a tax content
      * file for a multiple locations in a single file, please use `BuildTaxContentFile`.
-     * 
+     *             
      * NOTE: This API does not work for Tennessee tax holiday scenarios.
      * 
      * ### Security Policies
      * 
-     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
      * 
      * @param companyId The ID number of the company that owns this location.
@@ -14049,28 +14057,28 @@ public class AvaTaxClient {
      * 
      * Download a CSV file containing all five digit postal codes in the United States and their sales
      * and use tax rates for tangible personal property.
-     * 
+     *             
      * Since tax rates may change based on decisions made by a variety of tax authorities, we recommend
      * that users of this tax content API download new data every day.  Many tax authorities may finalize
      * decisions on tax changes at unexpected times and may make changes in response to legal issues or
      * governmental priorities.  Any tax content downloaded for future time periods is subject to change
      * if tax rates or tax laws change.
-     * 
+     *             
      * This rates file is intended to be used as a default for tax calculation when your software cannot
      * call the `CreateTransaction` API call.  When using this file, your software will be unable to
      * handle complex tax rules such as:
-     * 
+     *             
      * * Zip+4 - This tax file contains five digit zip codes only.
      * * Different product types - This tax file contains tangible personal property tax rates only.
      * * Mixed sourcing - This tax file cannot be used to resolve origin-based taxes.
      * * Threshold-based taxes - This tax file does not contain information about thresholds.
-     * 
+     *             
      * If you use this file to provide default tax rates, please ensure that your software calls `CreateTransaction`
      * to reconcile the actual transaction and determine the difference between the estimated general tax
      * rate and the final transaction tax.
-     * 
+     *             
      * The file provided by this API is in CSV format with the following columns:
-     * 
+     *             
      * * ZIP_CODE - The five digit zip code for this record.
      * * STATE_ABBREV - A valid two character US state abbreviation for this record.  Zip codes may span multiple states.
      * * COUNTY_NAME - A valid county name for this record.  Zip codes may span multiple counties.
@@ -14085,12 +14093,12 @@ public class AvaTaxClient {
      * * TOTAL_USE_TAX - The total tax rate for use tax for this postal code.  This value may not equal the sum of the state/county/city due to special tax jurisdiction rules.
      * * TAX_SHIPPING_ALONE - This column contains 'Y' if shipping is taxable.
      * * TAX_SHIPPING_AND_HANDLING_TOGETHER - This column contains 'Y' if shipping and handling are taxable when sent together.
-     * 
+     *             
      * For more detailed tax content, please use the `BuildTaxContentFile` API which allows usage of exact items and exact locations.
      * 
      * ### Security Policies
      * 
-     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
      * @param date The date for which point-of-sale data would be calculated (today by default). Example input: 2016-12-31
      * @param region If the region is provided, this API is going to generate the tax rate per zipcode for only the region specified.
@@ -14108,28 +14116,28 @@ public class AvaTaxClient {
      * 
      * Download a CSV file containing all five digit postal codes in the United States and their sales
      * and use tax rates for tangible personal property.
-     * 
+     *             
      * Since tax rates may change based on decisions made by a variety of tax authorities, we recommend
      * that users of this tax content API download new data every day.  Many tax authorities may finalize
      * decisions on tax changes at unexpected times and may make changes in response to legal issues or
      * governmental priorities.  Any tax content downloaded for future time periods is subject to change
      * if tax rates or tax laws change.
-     * 
+     *             
      * This rates file is intended to be used as a default for tax calculation when your software cannot
      * call the `CreateTransaction` API call.  When using this file, your software will be unable to
      * handle complex tax rules such as:
-     * 
+     *             
      * * Zip+4 - This tax file contains five digit zip codes only.
      * * Different product types - This tax file contains tangible personal property tax rates only.
      * * Mixed sourcing - This tax file cannot be used to resolve origin-based taxes.
      * * Threshold-based taxes - This tax file does not contain information about thresholds.
-     * 
+     *             
      * If you use this file to provide default tax rates, please ensure that your software calls `CreateTransaction`
      * to reconcile the actual transaction and determine the difference between the estimated general tax
      * rate and the final transaction tax.
-     * 
+     *             
      * The file provided by this API is in CSV format with the following columns:
-     * 
+     *             
      * * ZIP_CODE - The five digit zip code for this record.
      * * STATE_ABBREV - A valid two character US state abbreviation for this record.  Zip codes may span multiple states.
      * * COUNTY_NAME - A valid county name for this record.  Zip codes may span multiple counties.
@@ -14144,12 +14152,12 @@ public class AvaTaxClient {
      * * TOTAL_USE_TAX - The total tax rate for use tax for this postal code.  This value may not equal the sum of the state/county/city due to special tax jurisdiction rules.
      * * TAX_SHIPPING_ALONE - This column contains 'Y' if shipping is taxable.
      * * TAX_SHIPPING_AND_HANDLING_TOGETHER - This column contains 'Y' if shipping and handling are taxable when sent together.
-     * 
+     *             
      * For more detailed tax content, please use the `BuildTaxContentFile` API which allows usage of exact items and exact locations.
      * 
      * ### Security Policies
      * 
-     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
      * @param date The date for which point-of-sale data would be calculated (today by default). Example input: 2016-12-31
      * @param region If the region is provided, this API is going to generate the tax rate per zipcode for only the region specified.
@@ -14166,16 +14174,16 @@ public class AvaTaxClient {
      * Create a new tax rule
      * 
      * Create one or more custom tax rules attached to this company.
-     * 
+     *             
      * A tax rule represents a rule that changes the default AvaTax behavior for a product or jurisdiction.  Custom tax rules
-     * can be used to change the taxability of an item, to change the tax base of an item, or to change the tax rate 
+     * can be used to change the taxability of an item, to change the tax base of an item, or to change the tax rate
      * charged when selling an item.  Tax rules can also change tax behavior depending on the `entityUseCode` value submitted
      * with the transaction.
-     * 
+     *             
      * You can create custom tax rules to customize the behavior of AvaTax to match specific rules that are custom to your
      * business.  If you have obtained a ruling from a tax auditor that requires custom tax calculations, you can use
      * custom tax rules to redefine the behavior for your company or item.
-     * 
+     *             
      * Please use custom tax rules carefully and ensure that these tax rules match the behavior agreed upon with your
      * auditor, legal representative, and accounting team.
      * 
@@ -14197,16 +14205,16 @@ public class AvaTaxClient {
      * Create a new tax rule
      * 
      * Create one or more custom tax rules attached to this company.
-     * 
+     *             
      * A tax rule represents a rule that changes the default AvaTax behavior for a product or jurisdiction.  Custom tax rules
-     * can be used to change the taxability of an item, to change the tax base of an item, or to change the tax rate 
+     * can be used to change the taxability of an item, to change the tax base of an item, or to change the tax rate
      * charged when selling an item.  Tax rules can also change tax behavior depending on the `entityUseCode` value submitted
      * with the transaction.
-     * 
+     *             
      * You can create custom tax rules to customize the behavior of AvaTax to match specific rules that are custom to your
      * business.  If you have obtained a ruling from a tax auditor that requires custom tax calculations, you can use
      * custom tax rules to redefine the behavior for your company or item.
-     * 
+     *             
      * Please use custom tax rules carefully and ensure that these tax rules match the behavior agreed upon with your
      * auditor, legal representative, and accounting team.
      * 
@@ -14228,16 +14236,16 @@ public class AvaTaxClient {
      * Delete a single tax rule
      * 
      * Mark the custom tax rule identified by this URL as deleted.
-     * 
+     *             
      * A tax rule represents a rule that changes the default AvaTax behavior for a product or jurisdiction.  Custom tax rules
-     * can be used to change the taxability of an item, to change the tax base of an item, or to change the tax rate 
+     * can be used to change the taxability of an item, to change the tax base of an item, or to change the tax rate
      * charged when selling an item.  Tax rules can also change tax behavior depending on the `entityUseCode` value submitted
      * with the transaction.
-     * 
+     *             
      * You can create custom tax rules to customize the behavior of AvaTax to match specific rules that are custom to your
      * business.  If you have obtained a ruling from a tax auditor that requires custom tax calculations, you can use
      * custom tax rules to redefine the behavior for your company or item.
-     * 
+     *             
      * Please use custom tax rules carefully and ensure that these tax rules match the behavior agreed upon with your
      * auditor, legal representative, and accounting team.
      * 
@@ -14260,16 +14268,16 @@ public class AvaTaxClient {
      * Delete a single tax rule
      * 
      * Mark the custom tax rule identified by this URL as deleted.
-     * 
+     *             
      * A tax rule represents a rule that changes the default AvaTax behavior for a product or jurisdiction.  Custom tax rules
-     * can be used to change the taxability of an item, to change the tax base of an item, or to change the tax rate 
+     * can be used to change the taxability of an item, to change the tax base of an item, or to change the tax rate
      * charged when selling an item.  Tax rules can also change tax behavior depending on the `entityUseCode` value submitted
      * with the transaction.
-     * 
+     *             
      * You can create custom tax rules to customize the behavior of AvaTax to match specific rules that are custom to your
      * business.  If you have obtained a ruling from a tax auditor that requires custom tax calculations, you can use
      * custom tax rules to redefine the behavior for your company or item.
-     * 
+     *             
      * Please use custom tax rules carefully and ensure that these tax rules match the behavior agreed upon with your
      * auditor, legal representative, and accounting team.
      * 
@@ -14292,16 +14300,16 @@ public class AvaTaxClient {
      * Retrieve a single tax rule
      * 
      * Get the taxrule object identified by this URL.
-     * 
+     *             
      * A tax rule represents a rule that changes the default AvaTax behavior for a product or jurisdiction.  Custom tax rules
-     * can be used to change the taxability of an item, to change the tax base of an item, or to change the tax rate 
+     * can be used to change the taxability of an item, to change the tax base of an item, or to change the tax rate
      * charged when selling an item.  Tax rules can also change tax behavior depending on the `entityUseCode` value submitted
      * with the transaction.
-     * 
+     *             
      * You can create custom tax rules to customize the behavior of AvaTax to match specific rules that are custom to your
      * business.  If you have obtained a ruling from a tax auditor that requires custom tax calculations, you can use
      * custom tax rules to redefine the behavior for your company or item.
-     * 
+     *             
      * Please use custom tax rules carefully and ensure that these tax rules match the behavior agreed upon with your
      * auditor, legal representative, and accounting team.
      * 
@@ -14324,16 +14332,16 @@ public class AvaTaxClient {
      * Retrieve a single tax rule
      * 
      * Get the taxrule object identified by this URL.
-     * 
+     *             
      * A tax rule represents a rule that changes the default AvaTax behavior for a product or jurisdiction.  Custom tax rules
-     * can be used to change the taxability of an item, to change the tax base of an item, or to change the tax rate 
+     * can be used to change the taxability of an item, to change the tax base of an item, or to change the tax rate
      * charged when selling an item.  Tax rules can also change tax behavior depending on the `entityUseCode` value submitted
      * with the transaction.
-     * 
+     *             
      * You can create custom tax rules to customize the behavior of AvaTax to match specific rules that are custom to your
      * business.  If you have obtained a ruling from a tax auditor that requires custom tax calculations, you can use
      * custom tax rules to redefine the behavior for your company or item.
-     * 
+     *             
      * Please use custom tax rules carefully and ensure that these tax rules match the behavior agreed upon with your
      * auditor, legal representative, and accounting team.
      * 
@@ -14356,19 +14364,19 @@ public class AvaTaxClient {
      * Retrieve tax rules for this company
      * 
      * List all taxrule objects attached to this company.
-     * 
+     *             
      * A tax rule represents a rule that changes the default AvaTax behavior for a product or jurisdiction.  Custom tax rules
-     * can be used to change the taxability of an item, to change the tax base of an item, or to change the tax rate 
+     * can be used to change the taxability of an item, to change the tax base of an item, or to change the tax rate
      * charged when selling an item.  Tax rules can also change tax behavior depending on the `entityUseCode` value submitted
      * with the transaction.
-     * 
+     *             
      * You can create custom tax rules to customize the behavior of AvaTax to match specific rules that are custom to your
      * business.  If you have obtained a ruling from a tax auditor that requires custom tax calculations, you can use
      * custom tax rules to redefine the behavior for your company or item.
-     * 
+     *             
      * Please use custom tax rules carefully and ensure that these tax rules match the behavior agreed upon with your
      * auditor, legal representative, and accounting team.
-     * 
+     *             
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * Paginate your results using the `$top`, `$skip`, and `$orderby` parameters.
      * 
@@ -14399,19 +14407,19 @@ public class AvaTaxClient {
      * Retrieve tax rules for this company
      * 
      * List all taxrule objects attached to this company.
-     * 
+     *             
      * A tax rule represents a rule that changes the default AvaTax behavior for a product or jurisdiction.  Custom tax rules
-     * can be used to change the taxability of an item, to change the tax base of an item, or to change the tax rate 
+     * can be used to change the taxability of an item, to change the tax base of an item, or to change the tax rate
      * charged when selling an item.  Tax rules can also change tax behavior depending on the `entityUseCode` value submitted
      * with the transaction.
-     * 
+     *             
      * You can create custom tax rules to customize the behavior of AvaTax to match specific rules that are custom to your
      * business.  If you have obtained a ruling from a tax auditor that requires custom tax calculations, you can use
      * custom tax rules to redefine the behavior for your company or item.
-     * 
+     *             
      * Please use custom tax rules carefully and ensure that these tax rules match the behavior agreed upon with your
      * auditor, legal representative, and accounting team.
-     * 
+     *             
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * Paginate your results using the `$top`, `$skip`, and `$orderby` parameters.
      * 
@@ -14442,19 +14450,19 @@ public class AvaTaxClient {
      * Retrieve all tax rules
      * 
      * Get multiple taxrule objects across all companies.
-     * 
+     *             
      * A tax rule represents a rule that changes the default AvaTax behavior for a product or jurisdiction.  Custom tax rules
-     * can be used to change the taxability of an item, to change the tax base of an item, or to change the tax rate 
+     * can be used to change the taxability of an item, to change the tax base of an item, or to change the tax rate
      * charged when selling an item.  Tax rules can also change tax behavior depending on the `entityUseCode` value submitted
      * with the transaction.
-     * 
+     *             
      * You can create custom tax rules to customize the behavior of AvaTax to match specific rules that are custom to your
      * business.  If you have obtained a ruling from a tax auditor that requires custom tax calculations, you can use
      * custom tax rules to redefine the behavior for your company or item.
-     * 
+     *             
      * Please use custom tax rules carefully and ensure that these tax rules match the behavior agreed upon with your
      * auditor, legal representative, and accounting team.
-     * 
+     *             
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * Paginate your results using the `$top`, `$skip`, and `$orderby` parameters.
      * 
@@ -14483,19 +14491,19 @@ public class AvaTaxClient {
      * Retrieve all tax rules
      * 
      * Get multiple taxrule objects across all companies.
-     * 
+     *             
      * A tax rule represents a rule that changes the default AvaTax behavior for a product or jurisdiction.  Custom tax rules
-     * can be used to change the taxability of an item, to change the tax base of an item, or to change the tax rate 
+     * can be used to change the taxability of an item, to change the tax base of an item, or to change the tax rate
      * charged when selling an item.  Tax rules can also change tax behavior depending on the `entityUseCode` value submitted
      * with the transaction.
-     * 
+     *             
      * You can create custom tax rules to customize the behavior of AvaTax to match specific rules that are custom to your
      * business.  If you have obtained a ruling from a tax auditor that requires custom tax calculations, you can use
      * custom tax rules to redefine the behavior for your company or item.
-     * 
+     *             
      * Please use custom tax rules carefully and ensure that these tax rules match the behavior agreed upon with your
      * auditor, legal representative, and accounting team.
-     * 
+     *             
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * Paginate your results using the `$top`, `$skip`, and `$orderby` parameters.
      * 
@@ -14524,16 +14532,16 @@ public class AvaTaxClient {
      * Update a single tax rule
      * 
      * Replace the existing custom tax rule object at this URL with an updated object.
-     * 
+     *             
      * A tax rule represents a rule that changes the default AvaTax behavior for a product or jurisdiction.  Custom tax rules
-     * can be used to change the taxability of an item, to change the tax base of an item, or to change the tax rate 
+     * can be used to change the taxability of an item, to change the tax base of an item, or to change the tax rate
      * charged when selling an item.  Tax rules can also change tax behavior depending on the `entityUseCode` value submitted
      * with the transaction.
-     * 
+     *             
      * You can create custom tax rules to customize the behavior of AvaTax to match specific rules that are custom to your
      * business.  If you have obtained a ruling from a tax auditor that requires custom tax calculations, you can use
      * custom tax rules to redefine the behavior for your company or item.
-     * 
+     *             
      * Please use custom tax rules carefully and ensure that these tax rules match the behavior agreed upon with your
      * auditor, legal representative, and accounting team.
      * 
@@ -14557,16 +14565,16 @@ public class AvaTaxClient {
      * Update a single tax rule
      * 
      * Replace the existing custom tax rule object at this URL with an updated object.
-     * 
+     *             
      * A tax rule represents a rule that changes the default AvaTax behavior for a product or jurisdiction.  Custom tax rules
-     * can be used to change the taxability of an item, to change the tax base of an item, or to change the tax rate 
+     * can be used to change the taxability of an item, to change the tax base of an item, or to change the tax rate
      * charged when selling an item.  Tax rules can also change tax behavior depending on the `entityUseCode` value submitted
      * with the transaction.
-     * 
+     *             
      * You can create custom tax rules to customize the behavior of AvaTax to match specific rules that are custom to your
      * business.  If you have obtained a ruling from a tax auditor that requires custom tax calculations, you can use
      * custom tax rules to redefine the behavior for your company or item.
-     * 
+     *             
      * Please use custom tax rules carefully and ensure that these tax rules match the behavior agreed upon with your
      * auditor, legal representative, and accounting team.
      * 
@@ -14678,7 +14686,7 @@ public class AvaTaxClient {
      *             
      * Transactions that have been previously reported to a tax authority by Avalara Managed Returns are considered `locked` and are
      * no longer available for adjustments.
-     * 
+     *             
      * You may specify one or more of the following values in the `$include` parameter to fetch additional nested data, using commas to separate multiple values:
      *             
      * * Lines
@@ -14724,7 +14732,7 @@ public class AvaTaxClient {
      *             
      * Transactions that have been previously reported to a tax authority by Avalara Managed Returns are considered `locked` and are
      * no longer available for adjustments.
-     * 
+     *             
      * You may specify one or more of the following values in the `$include` parameter to fetch additional nested data, using commas to separate multiple values:
      *             
      * * Lines
@@ -14913,6 +14921,7 @@ public class AvaTaxClient {
      * 
      * ### Security Policies
      * 
+     * * This API requires the user role Compliance Root User.
      * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.
      * * This API is available by invitation only.<br />*Exempt security roles*:  ComplianceRootUser, ComplianceAdmin, ComplianceUser, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
@@ -14937,6 +14946,7 @@ public class AvaTaxClient {
      * 
      * ### Security Policies
      * 
+     * * This API requires the user role Compliance Root User.
      * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.
      * * This API is available by invitation only.<br />*Exempt security roles*:  ComplianceRootUser, ComplianceAdmin, ComplianceUser, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
@@ -14962,7 +14972,7 @@ public class AvaTaxClient {
      *             
      * A transaction represents a unique potentially taxable action that your company has recorded, and transactions include actions like
      * sales, purchases, inventory transfer, and returns (also called refunds).
-     * 
+     *             
      * You may specify one or more of the following values in the `$include` parameter to fetch additional nested data, using commas to separate multiple values:
      *             
      * * Lines
@@ -15008,7 +15018,7 @@ public class AvaTaxClient {
      *             
      * A transaction represents a unique potentially taxable action that your company has recorded, and transactions include actions like
      * sales, purchases, inventory transfer, and returns (also called refunds).
-     * 
+     *             
      * You may specify one or more of the following values in the `$include` parameter to fetch additional nested data, using commas to separate multiple values:
      *             
      * * Lines
@@ -15053,7 +15063,7 @@ public class AvaTaxClient {
      * If you have more than one document with the same `code`, specify the `documentType` parameter to choose between them.
      *             
      * Any changes made to a committed transaction will generate a transaction history.
-     * 
+     *             
      * You may specify one or more of the following values in the `$include` parameter to fetch additional nested data, using commas to separate multiple values:
      *             
      * * Lines
@@ -15097,7 +15107,7 @@ public class AvaTaxClient {
      * If you have more than one document with the same `code`, specify the `documentType` parameter to choose between them.
      *             
      * Any changes made to a committed transaction will generate a transaction history.
-     * 
+     *             
      * You may specify one or more of the following values in the `$include` parameter to fetch additional nested data, using commas to separate multiple values:
      *             
      * * Lines
@@ -15726,7 +15736,7 @@ public class AvaTaxClient {
      *             
      * A transaction represents a unique potentially taxable action that your company has recorded, and transactions include actions like
      * sales, purchases, inventory transfer, and returns (also called refunds).
-     * 
+     *             
      * You may specify one or more of the following values in the `$include` parameter to fetch additional nested data, using commas to separate multiple values:
      *             
      * * Lines
@@ -15772,7 +15782,7 @@ public class AvaTaxClient {
      *             
      * A transaction represents a unique potentially taxable action that your company has recorded, and transactions include actions like
      * sales, purchases, inventory transfer, and returns (also called refunds).
-     * 
+     *             
      * You may specify one or more of the following values in the `$include` parameter to fetch additional nested data, using commas to separate multiple values:
      *             
      * * Lines
@@ -15933,7 +15943,7 @@ public class AvaTaxClient {
      * If you have more than one document with the same `code`, specify the `documentType` parameter to choose between them.
      *             
      * This API is available for users who want to execute more than one action at a time.
-     * 
+     *             
      * You may specify one or more of the following values in the `$include` parameter to fetch additional nested data, using commas to separate multiple values:
      *             
      * * Lines
@@ -15977,7 +15987,7 @@ public class AvaTaxClient {
      * If you have more than one document with the same `code`, specify the `documentType` parameter to choose between them.
      *             
      * This API is available for users who want to execute more than one action at a time.
-     * 
+     *             
      * You may specify one or more of the following values in the `$include` parameter to fetch additional nested data, using commas to separate multiple values:
      *             
      * * Lines
@@ -16015,7 +16025,7 @@ public class AvaTaxClient {
      *             
      * Transactions that have been previously reported to a tax authority by Avalara Managed Returns are considered `locked` and are
      * no longer available to be uncommitted.
-     * 
+     *             
      * You may specify one or more of the following values in the `$include` parameter to fetch additional nested data, using commas to separate multiple values:
      *             
      * * Lines
@@ -16053,7 +16063,7 @@ public class AvaTaxClient {
      *             
      * Transactions that have been previously reported to a tax authority by Avalara Managed Returns are considered `locked` and are
      * no longer available to be uncommitted.
-     * 
+     *             
      * You may specify one or more of the following values in the `$include` parameter to fetch additional nested data, using commas to separate multiple values:
      *             
      * * Lines
@@ -16085,6 +16095,76 @@ public class AvaTaxClient {
     }
 
     /**
+     * Unvoids a transaction
+     * 
+     * Unvoids a voided transaction
+     *             
+     * You may specify one or more of the following values in the `$include` parameter to fetch additional nested data, using commas to separate multiple values:
+     *             
+     * * Lines
+     * * Details (implies lines)
+     * * Summary (implies details)
+     * * Addresses
+     * * SummaryOnly (omit lines and details - reduces API response size)
+     * * LinesOnly (omit details - reduces API response size)
+     * * TaxDetailsByTaxType - Includes the aggregated tax, exempt tax, taxable and non-taxable for each tax type returned in the transaction summary.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
+     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
+     * 
+     * @param companyCode The company code of the company that recorded this transaction
+     * @param transactionCode The transaction code to commit
+     * @param documentType (Optional): The document type of the transaction to commit. If not provided, the default is SalesInvoice. (See DocumentType::* for a list of allowable values)
+     * @param include Specifies objects to include in this fetch call
+     * @return TransactionModel
+     */
+    public TransactionModel unvoidTransaction(String companyCode, String transactionCode, DocumentType documentType, String include) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyCode}/transactions/{transactionCode}/unvoid");
+        path.applyField("companyCode", companyCode);
+        path.applyField("transactionCode", transactionCode);
+        path.addQuery("documentType", documentType);
+        path.addQuery("$include", include);
+        return ((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, null, new TypeToken<TransactionModel>(){})).call();
+    }
+
+    /**
+     * Unvoids a transaction
+     * 
+     * Unvoids a voided transaction
+     *             
+     * You may specify one or more of the following values in the `$include` parameter to fetch additional nested data, using commas to separate multiple values:
+     *             
+     * * Lines
+     * * Details (implies lines)
+     * * Summary (implies details)
+     * * Addresses
+     * * SummaryOnly (omit lines and details - reduces API response size)
+     * * LinesOnly (omit details - reduces API response size)
+     * * TaxDetailsByTaxType - Includes the aggregated tax, exempt tax, taxable and non-taxable for each tax type returned in the transaction summary.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
+     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
+     * 
+     * @param companyCode The company code of the company that recorded this transaction
+     * @param transactionCode The transaction code to commit
+     * @param documentType (Optional): The document type of the transaction to commit. If not provided, the default is SalesInvoice. (See DocumentType::* for a list of allowable values)
+     * @param include Specifies objects to include in this fetch call
+     * @return TransactionModel
+     */
+    public Future<TransactionModel> unvoidTransactionAsync(String companyCode, String transactionCode, DocumentType documentType, String include) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyCode}/transactions/{transactionCode}/unvoid");
+        path.applyField("companyCode", companyCode);
+        path.applyField("transactionCode", transactionCode);
+        path.addQuery("documentType", documentType);
+        path.addQuery("$include", include);
+        return this.threadPool.submit((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, null, new TypeToken<TransactionModel>(){}));
+    }
+
+    /**
      * Verify a transaction
      * 
      * Verifies that the transaction uniquely identified by this URL matches certain expected values.
@@ -16095,7 +16175,7 @@ public class AvaTaxClient {
      *             
      * A transaction represents a unique potentially taxable action that your company has recorded, and transactions include actions like
      * sales, purchases, inventory transfer, and returns (also called refunds).
-     * 
+     *             
      * You may specify one or more of the following values in the `$include` parameter to fetch additional nested data, using commas to separate multiple values:
      *             
      * * Lines
@@ -16138,7 +16218,7 @@ public class AvaTaxClient {
      *             
      * A transaction represents a unique potentially taxable action that your company has recorded, and transactions include actions like
      * sales, purchases, inventory transfer, and returns (also called refunds).
-     * 
+     *             
      * You may specify one or more of the following values in the `$include` parameter to fetch additional nested data, using commas to separate multiple values:
      *             
      * * Lines
@@ -16183,7 +16263,7 @@ public class AvaTaxClient {
      * If you have more than one document with the same `code`, specify the `documentType` parameter to choose between them.
      *             
      * Transactions that have been previously reported to a tax authority by Avalara Managed Returns are no longer available to be voided.
-     * 
+     *             
      * You may specify one or more of the following values in the `$include` parameter to fetch additional nested data, using commas to separate multiple values:
      *             
      * * Lines
@@ -16228,7 +16308,7 @@ public class AvaTaxClient {
      * If you have more than one document with the same `code`, specify the `documentType` parameter to choose between them.
      *             
      * Transactions that have been previously reported to a tax authority by Avalara Managed Returns are no longer available to be voided.
-     * 
+     *             
      * You may specify one or more of the following values in the `$include` parameter to fetch additional nested data, using commas to separate multiple values:
      *             
      * * Lines
@@ -16570,10 +16650,10 @@ public class AvaTaxClient {
      * Change Password
      * 
      * Allows a user to change their password via an API call.
-     * 
+     *             
      * This API allows an authenticated user to change their password via an API call.  This feature is only available
      * for accounts that do not use SAML integrated password validation.
-     * 
+     *             
      * This API only allows the currently authenticated user to change their password; it cannot be used to apply to a
      * different user than the one authenticating the current API call.
      * 
@@ -16593,10 +16673,10 @@ public class AvaTaxClient {
      * Change Password
      * 
      * Allows a user to change their password via an API call.
-     * 
+     *             
      * This API allows an authenticated user to change their password via an API call.  This feature is only available
      * for accounts that do not use SAML integrated password validation.
-     * 
+     *             
      * This API only allows the currently authenticated user to change their password; it cannot be used to apply to a
      * different user than the one authenticating the current API call.
      * 
@@ -16721,7 +16801,7 @@ public class AvaTaxClient {
      * 
      * Get the user object identified by this URL.
      * A user represents one person with access privileges to make API calls and work with a specific account.
-     * 
+     *             
      *  You may specify one or more of the following values in the `$include` parameter to fetch additional nested data, using commas to separate multiple values:
      *             
      * * FetchDeleted
@@ -16748,7 +16828,7 @@ public class AvaTaxClient {
      * 
      * Get the user object identified by this URL.
      * A user represents one person with access privileges to make API calls and work with a specific account.
-     * 
+     *             
      *  You may specify one or more of the following values in the `$include` parameter to fetch additional nested data, using commas to separate multiple values:
      *             
      * * FetchDeleted
@@ -16849,7 +16929,7 @@ public class AvaTaxClient {
      *             
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * Paginate your results using the `$top`, `$skip`, and `$orderby` parameters.
-     * 
+     *             
      * You may specify one or more of the following values in the `$include` parameter to fetch additional nested data, using commas to separate multiple values:
      *             
      * * FetchDeleted
@@ -16888,7 +16968,7 @@ public class AvaTaxClient {
      *             
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * Paginate your results using the `$top`, `$skip`, and `$orderby` parameters.
-     * 
+     *             
      * You may specify one or more of the following values in the `$include` parameter to fetch additional nested data, using commas to separate multiple values:
      *             
      * * FetchDeleted
@@ -16929,7 +17009,7 @@ public class AvaTaxClient {
      *             
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * Paginate your results using the `$top`, `$skip`, and `$orderby` parameters.
-     * 
+     *             
      * You may specify one or more of the following values in the `$include` parameter to fetch additional nested data, using commas to separate multiple values:
      *             
      * * FetchDeleted
@@ -16968,7 +17048,7 @@ public class AvaTaxClient {
      *             
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * Paginate your results using the `$top`, `$skip`, and `$orderby` parameters.
-     * 
+     *             
      * You may specify one or more of the following values in the `$include` parameter to fetch additional nested data, using commas to separate multiple values:
      *             
      * * FetchDeleted

@@ -97,7 +97,7 @@ public class SubscriptionModel {
     /**
      * Getter for subscriptionDescription
      *
-     * A friendly description of the service that the account is subscribed to. You can either provide the subscription type Id or this but not both. If 
+     * A friendly description of the service that the account is subscribed to. You can either provide the subscription type Id or this but not both. If
     * subscription type Id is provided, then this information is ignored and this field will be updated with the information from subscription type id.
      */
     public String getSubscriptionDescription() {
@@ -107,7 +107,7 @@ public class SubscriptionModel {
     /**
      * Setter for subscriptionDescription
      *
-     * A friendly description of the service that the account is subscribed to. You can either provide the subscription type Id or this but not both. If 
+     * A friendly description of the service that the account is subscribed to. You can either provide the subscription type Id or this but not both. If
     * subscription type Id is provided, then this information is ignored and this field will be updated with the information from subscription type id.
      */
     public void setSubscriptionDescription(String value) {

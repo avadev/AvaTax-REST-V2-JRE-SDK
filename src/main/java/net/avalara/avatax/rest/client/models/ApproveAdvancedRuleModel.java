@@ -24,40 +24,34 @@ import java.util.HashMap;
  */
 
 /**
- * Create or adjust transaction model
+ * Model for changing the approved status of an advanced rule
  */
-public class CreateOrAdjustTransactionModel {
+public class ApproveAdvancedRuleModel {
 
 
-    private CreateTransactionModel createTransactionModel;
+    private Boolean isApproved;
 
     /**
-     * Getter for createTransactionModel
+     * Getter for isApproved
      *
-     * The create transaction model to be created or updated.
-    *  
-    * If the transaction does not exist, create transaction.
-    * If the transaction exists, adjust the existing transaction.
+     * Should the rule be approved
      */
-    public CreateTransactionModel getCreateTransactionModel() {
-        return this.createTransactionModel;
+    public Boolean getIsApproved() {
+        return this.isApproved;
     }
 
     /**
-     * Setter for createTransactionModel
+     * Setter for isApproved
      *
-     * The create transaction model to be created or updated.
-    *  
-    * If the transaction does not exist, create transaction.
-    * If the transaction exists, adjust the existing transaction.
+     * Should the rule be approved
      */
-    public void setCreateTransactionModel(CreateTransactionModel value) {
-        this.createTransactionModel = value;
+    public void setIsApproved(Boolean value) {
+        this.isApproved = value;
     }
 
 
     /**
-     * Returns a JSON string representation of CreateOrAdjustTransactionModel
+     * Returns a JSON string representation of ApproveAdvancedRuleModel
      */
     @Override
     public String toString() {
