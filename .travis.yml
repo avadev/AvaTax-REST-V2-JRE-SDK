@@ -3,4 +3,4 @@ script: sbt test
 scala:
   - 2.12.1
 jdk:
-  - oraclejdk11
+  - openjdk10
