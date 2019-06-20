@@ -7415,6 +7415,62 @@ public class AvaTaxClient {
     }
 
     /**
+     * Checks to see if the company has a valid POA for a tax form code
+     * 
+     * This API is available by invitation only.
+     *             
+     * This API fetches valid POA's for a company by TaxFormCode or by country/region
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Operator, Compliance Root User, Compliance Temp User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.
+     * * This API is available by invitation only.
+     * 
+     * @param companyId The company id that we are checking about
+     * @param taxFormCode The tax form code that we are checking
+     * @param country The country we are fetching POAs for
+     * @param region The region we are fetching POAs for
+     * @return ArrayList<PowerOfAttorneyCheckModel>
+     */
+    public ArrayList<PowerOfAttorneyCheckModel> activePowerOfAttorney(Integer companyId, String taxFormCode, String country, String region) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingcalendars/powerofattorney");
+        path.applyField("companyId", companyId);
+        path.addQuery("taxFormCode", taxFormCode);
+        path.addQuery("country", country);
+        path.addQuery("region", region);
+        return ((RestCall<ArrayList<PowerOfAttorneyCheckModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<ArrayList<PowerOfAttorneyCheckModel>>(){})).call();
+    }
+
+    /**
+     * Checks to see if the company has a valid POA for a tax form code
+     * 
+     * This API is available by invitation only.
+     *             
+     * This API fetches valid POA's for a company by TaxFormCode or by country/region
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Operator, Compliance Root User, Compliance Temp User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.
+     * * This API is available by invitation only.
+     * 
+     * @param companyId The company id that we are checking about
+     * @param taxFormCode The tax form code that we are checking
+     * @param country The country we are fetching POAs for
+     * @param region The region we are fetching POAs for
+     * @return ArrayList<PowerOfAttorneyCheckModel>
+     */
+    public Future<ArrayList<PowerOfAttorneyCheckModel>> activePowerOfAttorneyAsync(Integer companyId, String taxFormCode, String country, String region) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingcalendars/powerofattorney");
+        path.applyField("companyId", companyId);
+        path.addQuery("taxFormCode", taxFormCode);
+        path.addQuery("country", country);
+        path.addQuery("region", region);
+        return this.threadPool.submit((RestCall<ArrayList<PowerOfAttorneyCheckModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<ArrayList<PowerOfAttorneyCheckModel>>(){}));
+    }
+
+    /**
      * Retrieve a list of filings for the specified company in the year and month of a given filing period.
      * 
      * This API is available by invitation only.

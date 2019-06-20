@@ -442,14 +442,10 @@ public class CustomerModel {
     /**
      * Getter for region
      *
-     * Name or ISO 3166 code identifying the region within the country.
+     * ISO 3166 code identifying the region within the country.
+    * Two and three character ISO 3166 region codes.
     *  
-    * This field supports many different region identifiers:
-    *  * Two and three character ISO 3166 region codes
-    *  * Fully spelled out names of the region in ISO supported languages
-    *  * Common alternative spellings for many regions
-    *  
-    * For a full list of all supported codes and names, please see the Definitions API `ListRegions`.
+    * For a full list of all supported codes, please see the Definitions API `ListRegions`.
      */
     public String getRegion() {
         return this.region;
@@ -458,14 +454,10 @@ public class CustomerModel {
     /**
      * Setter for region
      *
-     * Name or ISO 3166 code identifying the region within the country.
+     * ISO 3166 code identifying the region within the country.
+    * Two and three character ISO 3166 region codes.
     *  
-    * This field supports many different region identifiers:
-    *  * Two and three character ISO 3166 region codes
-    *  * Fully spelled out names of the region in ISO supported languages
-    *  * Common alternative spellings for many regions
-    *  
-    * For a full list of all supported codes and names, please see the Definitions API `ListRegions`.
+    * For a full list of all supported codes, please see the Definitions API `ListRegions`.
      */
     public void setRegion(String value) {
         this.region = value;

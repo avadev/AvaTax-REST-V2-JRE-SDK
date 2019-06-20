@@ -180,9 +180,9 @@ public enum ServiceTypeId {
     ARA(31),
 
     /** 
-     * Accounting Firm ManagedARA Service Type
+     * Accounting Firm ARAManaged Service Type
      */
-    ManagedARA(32);
+    ARAManaged(32);
 
     private int value;
 	private static HashMap map = new HashMap<>();
