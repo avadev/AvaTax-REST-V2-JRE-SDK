@@ -607,11 +607,6 @@ public enum ErrorCodeId {
     /** 
      * 
      */
-    LocalNexusConflict(170),
-
-    /** 
-     * 
-     */
     InvalidEcmsOverrideCode(171),
 
     /** 
@@ -1285,6 +1280,11 @@ public enum ErrorCodeId {
     RemoteValidationError(1502),
 
     /** 
+     * 
+     */
+    CannotModifySstNexus(1503),
+
+    /** 
      * Advanced rule errors
      */
     AdvancedRuleRequestRuleError(1602),
@@ -1327,42 +1327,7 @@ public enum ErrorCodeId {
     /** 
      * 
      */
-    GenericTaxCodeForItem(1707),
-
-    /** 
-     * 
-     */
-    CannotCertifyCompany(1708),
-
-    /** 
-     * 
-     */
-    NoVoidedDocuments(1709),
-
-    /** 
-     * 
-     */
-    InadequateCommittedDocuments(1710),
-
-    /** 
-     * 
-     */
-    DocumentCodeIsGuid(1711),
-
-    /** 
-     * 
-     */
-    CustomerVendorCodeIsGuid(1712),
-
-    /** 
-     * 
-     */
     CannotUpdateAccountTypeId(1713),
-
-    /** 
-     * 
-     */
-    InadequateDocumentLineCount(1714),
 
     /** 
      * SendSales API errors
@@ -1430,9 +1395,84 @@ public enum ErrorCodeId {
     InvalidAccountType(2105),
 
     /** 
+     * Certify Company Errors
+     */
+    GenericTaxCodeForItem(2200),
+
+    /** 
      * 
      */
-    NoExemptionNoOrCustomerUsageType(2208);
+    CannotCertifyCompany(2201),
+
+    /** 
+     * 
+     */
+    NoVoidedDocuments(2202),
+
+    /** 
+     * 
+     */
+    InadequateCommittedDocuments(2203),
+
+    /** 
+     * 
+     */
+    DocumentCodeIsGuid(2204),
+
+    /** 
+     * 
+     */
+    CustomerVendorCodeIsGuid(2205),
+
+    /** 
+     * 
+     */
+    InadequateDocumentLineCount(2206),
+
+    /** 
+     * 
+     */
+    SameDocumentDescription(2207),
+
+    /** 
+     * 
+     */
+    NoExemptionNoOrCustomerUsageType(2208),
+
+    /** 
+     * 
+     */
+    InadequateUniqueAddresses(2209),
+
+    /** 
+     * 
+     */
+    ItemCodesAreAllSame(2210),
+
+    /** 
+     * 
+     */
+    TaxCodesAreAllSame(2211),
+
+    /** 
+     * 
+     */
+    RepeatedLinesInDocument(2213),
+
+    /** 
+     * 
+     */
+    TaxDateOverrideAndNegativeLineAmount(2214),
+
+    /** 
+     * 
+     */
+    AllUSDCurrencyCodes(2215),
+
+    /** 
+     * 
+     */
+    NoDocumentsToTest(2218);
 
     private int value;
 	private static HashMap map = new HashMap<>();

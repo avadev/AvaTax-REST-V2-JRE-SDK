@@ -92,27 +92,6 @@ public class FilingsCheckupSuggestedFormModel {
     }
 
 
-    private String returnName;
-
-    /**
-     * Getter for returnName
-     *
-     * 
-     */
-    public String getReturnName() {
-        return this.returnName;
-    }
-
-    /**
-     * Setter for returnName
-     *
-     * 
-     */
-    public void setReturnName(String value) {
-        this.returnName = value;
-    }
-
-
     private String taxFormCode;
 
     /**
@@ -131,6 +110,27 @@ public class FilingsCheckupSuggestedFormModel {
      */
     public void setTaxFormCode(String value) {
         this.taxFormCode = value;
+    }
+
+
+    private String returnName;
+
+    /**
+     * Getter for returnName
+     *
+     * Legacy Name of the suggested form returned
+     */
+    public String getReturnName() {
+        return this.returnName;
+    }
+
+    /**
+     * Setter for returnName
+     *
+     * Legacy Name of the suggested form returned
+     */
+    public void setReturnName(String value) {
+        this.returnName = value;
     }
 
 

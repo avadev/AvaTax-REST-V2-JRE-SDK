@@ -24,29 +24,29 @@ import java.util.HashMap;
  */
 
 /**
- * Tax Details by Tax Type
+ * Tax Details by Tax subtype
  */
-public class TaxDetailsByTaxType {
+public class TaxDetailsByTaxSubType {
 
 
-    private String taxType;
+    private String taxSubType;
 
     /**
-     * Getter for taxType
+     * Getter for taxSubType
      *
-     * Tax Type
+     * Tax subtype
      */
-    public String getTaxType() {
-        return this.taxType;
+    public String getTaxSubType() {
+        return this.taxSubType;
     }
 
     /**
-     * Setter for taxType
+     * Setter for taxSubType
      *
-     * Tax Type
+     * Tax subtype
      */
-    public void setTaxType(String value) {
-        this.taxType = value;
+    public void setTaxSubType(String value) {
+        this.taxSubType = value;
     }
 
 
@@ -134,29 +134,8 @@ public class TaxDetailsByTaxType {
     }
 
 
-    private ArrayList<TaxDetailsByTaxSubType> taxSubTypeDetails;
-
     /**
-     * Getter for taxSubTypeDetails
-     *
-     * Tax subtype details
-     */
-    public ArrayList<TaxDetailsByTaxSubType> getTaxSubTypeDetails() {
-        return this.taxSubTypeDetails;
-    }
-
-    /**
-     * Setter for taxSubTypeDetails
-     *
-     * Tax subtype details
-     */
-    public void setTaxSubTypeDetails(ArrayList<TaxDetailsByTaxSubType> value) {
-        this.taxSubTypeDetails = value;
-    }
-
-
-    /**
-     * Returns a JSON string representation of TaxDetailsByTaxType
+     * Returns a JSON string representation of TaxDetailsByTaxSubType
      */
     @Override
     public String toString() {
