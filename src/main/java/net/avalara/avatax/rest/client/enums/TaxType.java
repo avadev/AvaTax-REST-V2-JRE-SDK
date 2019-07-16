@@ -82,7 +82,17 @@ public enum TaxType {
     /** 
      * Use tax
      */
-    Use(85);
+    Use(85),
+
+    /** 
+     * Alcohol tax type
+     */
+    Alcohol(1014),
+
+    /** 
+     * Batteries tax type
+     */
+    Batteries(1015);
 
     private int value;
 	private static HashMap map = new HashMap<>();

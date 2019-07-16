@@ -160,6 +160,27 @@ public class FilingRequestDataModel {
     }
 
 
+    private Integer fiscalYearStartMonth;
+
+    /**
+     * Getter for fiscalYearStartMonth
+     *
+     * The start period of a fiscal year for this form/company
+     */
+    public Integer getFiscalYearStartMonth() {
+        return this.fiscalYearStartMonth;
+    }
+
+    /**
+     * Setter for fiscalYearStartMonth
+     *
+     * The start period of a fiscal year for this form/company
+     */
+    public void setFiscalYearStartMonth(Integer value) {
+        this.fiscalYearStartMonth = value;
+    }
+
+
     private MatchingTaxType taxTypeId;
 
     /**

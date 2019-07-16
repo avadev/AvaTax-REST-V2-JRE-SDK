@@ -134,27 +134,6 @@ public class FirmClientLinkageOutputModel {
     }
 
 
-    private String offer;
-
-    /**
-     * Getter for offer
-     *
-     * Offer requested
-     */
-    public String getOffer() {
-        return this.offer;
-    }
-
-    /**
-     * Setter for offer
-     *
-     * Offer requested
-     */
-    public void setOffer(String value) {
-        this.offer = value;
-    }
-
-
     private Date createdDate;
 
     /**

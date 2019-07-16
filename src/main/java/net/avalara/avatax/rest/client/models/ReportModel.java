@@ -155,14 +155,14 @@ public class ReportModel {
     }
 
 
-    private Integer size;
+    private Long size;
 
     /**
      * Getter for size
      *
      * The size of the report file, if available
      */
-    public Integer getSize() {
+    public Long getSize() {
         return this.size;
     }
 
@@ -171,7 +171,7 @@ public class ReportModel {
      *
      * The size of the report file, if available
      */
-    public void setSize(Integer value) {
+    public void setSize(Long value) {
         this.size = value;
     }
 

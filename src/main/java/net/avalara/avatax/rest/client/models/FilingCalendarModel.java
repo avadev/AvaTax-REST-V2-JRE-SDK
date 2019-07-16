@@ -190,6 +190,27 @@ public class FilingCalendarModel {
     }
 
 
+    private Integer fiscalYearStartMonth;
+
+    /**
+     * Getter for fiscalYearStartMonth
+     *
+     * The start period of a fiscal year for this form/company
+     */
+    public Integer getFiscalYearStartMonth() {
+        return this.fiscalYearStartMonth;
+    }
+
+    /**
+     * Setter for fiscalYearStartMonth
+     *
+     * The start period of a fiscal year for this form/company
+     */
+    public void setFiscalYearStartMonth(Integer value) {
+        this.fiscalYearStartMonth = value;
+    }
+
+
     private String locationCode;
 
     /**
@@ -854,6 +875,27 @@ public class FilingCalendarModel {
      */
     public void setPrepayPercentage(Integer value) {
         this.prepayPercentage = value;
+    }
+
+
+    private Boolean prePaymentRequired;
+
+    /**
+     * Getter for prePaymentRequired
+     *
+     * Determines if a prepayment is required for this filing calendar
+     */
+    public Boolean getPrePaymentRequired() {
+        return this.prePaymentRequired;
+    }
+
+    /**
+     * Setter for prePaymentRequired
+     *
+     * Determines if a prepayment is required for this filing calendar
+     */
+    public void setPrePaymentRequired(Boolean value) {
+        this.prePaymentRequired = value;
     }
 
 
