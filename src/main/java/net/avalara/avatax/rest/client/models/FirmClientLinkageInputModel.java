@@ -71,27 +71,6 @@ public class FirmClientLinkageInputModel {
     }
 
 
-    private String offer;
-
-    /**
-     * Getter for offer
-     *
-     * Offer to be associated
-     */
-    public String getOffer() {
-        return this.offer;
-    }
-
-    /**
-     * Setter for offer
-     *
-     * Offer to be associated
-     */
-    public void setOffer(String value) {
-        this.offer = value;
-    }
-
-
     /**
      * Returns a JSON string representation of FirmClientLinkageInputModel
      */

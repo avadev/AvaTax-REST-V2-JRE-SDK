@@ -22,12 +22,7 @@ public enum ReportFormat {
     /** 
      * The Comma Separated Values file format
      */
-    CSV(0),
-
-    /** 
-     * The Extensible Markup Language file format
-     */
-    XML(1);
+    CSV(0);
 
     private int value;
 	private static HashMap map = new HashMap<>();

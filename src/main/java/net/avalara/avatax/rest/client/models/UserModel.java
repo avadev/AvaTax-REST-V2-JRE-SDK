@@ -281,27 +281,6 @@ public class UserModel {
     }
 
 
-    private Integer createdUserId;
-
-    /**
-     * Getter for createdUserId
-     *
-     * The User ID of the user who created this record.
-     */
-    public Integer getCreatedUserId() {
-        return this.createdUserId;
-    }
-
-    /**
-     * Setter for createdUserId
-     *
-     * The User ID of the user who created this record.
-     */
-    public void setCreatedUserId(Integer value) {
-        this.createdUserId = value;
-    }
-
-
     private Date modifiedDate;
 
     /**
@@ -320,27 +299,6 @@ public class UserModel {
      */
     public void setModifiedDate(Date value) {
         this.modifiedDate = value;
-    }
-
-
-    private Integer modifiedUserId;
-
-    /**
-     * Getter for modifiedUserId
-     *
-     * The user ID of the user who last modified this record.
-     */
-    public Integer getModifiedUserId() {
-        return this.modifiedUserId;
-    }
-
-    /**
-     * Setter for modifiedUserId
-     *
-     * The user ID of the user who last modified this record.
-     */
-    public void setModifiedUserId(Integer value) {
-        this.modifiedUserId = value;
     }
 
 

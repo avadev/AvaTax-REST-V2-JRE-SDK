@@ -34,7 +34,7 @@ public class ExportDocumentLineModel {
     /**
      * Getter for format
      *
-     * The output format: CSV, XML, etc. If no preference, report will be in CSV format.
+     * The file format.
      */
     public ReportFormat getFormat() {
         return this.format;
@@ -43,7 +43,7 @@ public class ExportDocumentLineModel {
     /**
      * Setter for format
      *
-     * The output format: CSV, XML, etc. If no preference, report will be in CSV format.
+     * The file format.
      */
     public void setFormat(ReportFormat value) {
         this.format = value;

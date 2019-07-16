@@ -182,7 +182,12 @@ public enum ServiceTypeId {
     /** 
      * Accounting Firm ARAManaged Service Type
      */
-    ARAManaged(32);
+    ARAManaged(32),
+
+    /** 
+     * Premium Returns Service Type
+     */
+    MRSPremium(33);
 
     private int value;
 	private static HashMap map = new HashMap<>();

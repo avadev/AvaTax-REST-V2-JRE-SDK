@@ -249,6 +249,27 @@ public class CertificateModel {
     }
 
 
+    private String exemptionNumber;
+
+    /**
+     * Getter for exemptionNumber
+     *
+     * Indicates the tax number passed in for the certificate.
+     */
+    public String getExemptionNumber() {
+        return this.exemptionNumber;
+    }
+
+    /**
+     * Setter for exemptionNumber
+     *
+     * Indicates the tax number passed in for the certificate.
+     */
+    public void setExemptionNumber(String value) {
+        this.exemptionNumber = value;
+    }
+
+
     private ExemptionReasonModel validatedExemptionReason;
 
     /**

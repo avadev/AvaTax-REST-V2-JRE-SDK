@@ -162,11 +162,6 @@ public enum ErrorCodeId {
     /** 
      * 
      */
-    InvalidFirmClientOffer(29),
-
-    /** 
-     * 
-     */
     AuthenticationException(30),
 
     /** 
@@ -607,6 +602,11 @@ public enum ErrorCodeId {
     /** 
      * 
      */
+    InvalidPageKey(170),
+
+    /** 
+     * 
+     */
     InvalidEcmsOverrideCode(171),
 
     /** 
@@ -827,7 +827,7 @@ public enum ErrorCodeId {
     /** 
      * 
      */
-    DocumentFetchLimit(308),
+    FetchLimit(308),
 
     /** 
      * 
@@ -1330,6 +1330,11 @@ public enum ErrorCodeId {
     CannotUpdateAccountTypeId(1713),
 
     /** 
+     * 
+     */
+    TaxpayerNumberIsRequired(1714),
+
+    /** 
      * SendSales API errors
      */
     UnsupportedFileFormat(1800),
@@ -1395,6 +1400,11 @@ public enum ErrorCodeId {
     InvalidAccountType(2105),
 
     /** 
+     * 
+     */
+    InvalidFirmSubscriptions(2106),
+
+    /** 
      * Certify Company Errors
      */
     GenericTaxCodeForItem(2200),
@@ -1457,6 +1467,11 @@ public enum ErrorCodeId {
     /** 
      * 
      */
+    LocationCodeNotUsed(2212),
+
+    /** 
+     * 
+     */
     RepeatedLinesInDocument(2213),
 
     /** 
@@ -1472,7 +1487,22 @@ public enum ErrorCodeId {
     /** 
      * 
      */
-    NoDocumentsToTest(2218);
+    NoVATBuyerId(2216),
+
+    /** 
+     * 
+     */
+    AllUSCountryCodes(2217),
+
+    /** 
+     * 
+     */
+    NoDocumentsToTest(2218),
+
+    /** 
+     * 
+     */
+    NoShippingCharge(2219);
 
     private int value;
 	private static HashMap map = new HashMap<>();

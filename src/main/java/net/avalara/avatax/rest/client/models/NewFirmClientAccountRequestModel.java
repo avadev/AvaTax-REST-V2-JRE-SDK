@@ -29,35 +29,6 @@ import java.util.HashMap;
 public class NewFirmClientAccountRequestModel {
 
 
-    private String offer;
-
-    /**
-     * Getter for offer
-     *
-     * The offer code provided to you by your Avalara business development contact.
-    *  
-    * This code controls what services and rates the customer will be provisioned with upon creation.
-    *  
-    * If you do not know your offer code, please contact your Avalara business development representative.
-     */
-    public String getOffer() {
-        return this.offer;
-    }
-
-    /**
-     * Setter for offer
-     *
-     * The offer code provided to you by your Avalara business development contact.
-    *  
-    * This code controls what services and rates the customer will be provisioned with upon creation.
-    *  
-    * If you do not know your offer code, please contact your Avalara business development representative.
-     */
-    public void setOffer(String value) {
-        this.offer = value;
-    }
-
-
     private String accountName;
 
     /**
@@ -237,7 +208,7 @@ public class NewFirmClientAccountRequestModel {
      *
      * United States Taxpayer ID number, usually your Employer Identification Number if you are a business or your
     * Social Security Number if you are an individual.
-    * This value is required if the address provided is inside the US and if you subscribed to the Avalara Managed Returns or SST Certified Service Provider service. Otherwise it is optional.
+    * This value is required if the address provided is inside the US. Otherwise it is optional.
      */
     public String getTaxPayerIdNumber() {
         return this.taxPayerIdNumber;
@@ -248,7 +219,7 @@ public class NewFirmClientAccountRequestModel {
      *
      * United States Taxpayer ID number, usually your Employer Identification Number if you are a business or your
     * Social Security Number if you are an individual.
-    * This value is required if the address provided is inside the US and if you subscribed to the Avalara Managed Returns or SST Certified Service Provider service. Otherwise it is optional.
+    * This value is required if the address provided is inside the US. Otherwise it is optional.
      */
     public void setTaxPayerIdNumber(String value) {
         this.taxPayerIdNumber = value;
