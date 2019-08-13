@@ -151,6 +151,27 @@ public class CertificateModel {
     }
 
 
+    private Boolean documentExists;
+
+    /**
+     * Getter for documentExists
+     *
+     * This value is true if there exists scanned PDF copy of this certificate or the PDF version of the form that the customer filled via the CertCapture wizard on S3 bucket.
+     */
+    public Boolean getDocumentExists() {
+        return this.documentExists;
+    }
+
+    /**
+     * Setter for documentExists
+     *
+     * This value is true if there exists scanned PDF copy of this certificate or the PDF version of the form that the customer filled via the CertCapture wizard on S3 bucket.
+     */
+    public void setDocumentExists(Boolean value) {
+        this.documentExists = value;
+    }
+
+
     private Boolean valid;
 
     /**
@@ -497,6 +518,48 @@ public class CertificateModel {
      */
     public void setAttributes(ArrayList<CertificateAttributeModel> value) {
         this.attributes = value;
+    }
+
+
+    private Integer ecmsId;
+
+    /**
+     * Getter for ecmsId
+     *
+     * The unique ID number of current AvaTax Exemption Certificate that refers this certificate.
+     */
+    public Integer getEcmsId() {
+        return this.ecmsId;
+    }
+
+    /**
+     * Setter for ecmsId
+     *
+     * The unique ID number of current AvaTax Exemption Certificate that refers this certificate.
+     */
+    public void setEcmsId(Integer value) {
+        this.ecmsId = value;
+    }
+
+
+    private String ecmsStatus;
+
+    /**
+     * Getter for ecmsStatus
+     *
+     * The status of current AvaTax Exemption Certificate that refers to this certificate.
+     */
+    public String getEcmsStatus() {
+        return this.ecmsStatus;
+    }
+
+    /**
+     * Setter for ecmsStatus
+     *
+     * The status of current AvaTax Exemption Certificate that refers to this certificate.
+     */
+    public void setEcmsStatus(String value) {
+        this.ecmsStatus = value;
     }
 
 

@@ -785,6 +785,11 @@ public enum ErrorCodeId {
     MissingBatchFileContent(207),
 
     /** 
+     * 
+     */
+    BatchCannotBeDeletedWhileProcessing(208),
+
+    /** 
      * Point Of Sale API exceptions
      */
     PointOfSaleFileSize(250),
@@ -1072,11 +1077,6 @@ public enum ErrorCodeId {
     /** 
      * 
      */
-    AddRelationshipsError(1206),
-
-    /** 
-     * 
-     */
     ConflictingExposureZone(1208),
 
     /** 
@@ -1335,6 +1335,16 @@ public enum ErrorCodeId {
     TaxpayerNumberIsRequired(1714),
 
     /** 
+     * 
+     */
+    RequestLimitExceeded(1715),
+
+    /** 
+     * 
+     */
+    ConcurrentRequestLimitExceeded(1716),
+
+    /** 
      * SendSales API errors
      */
     UnsupportedFileFormat(1800),
@@ -1502,7 +1512,12 @@ public enum ErrorCodeId {
     /** 
      * 
      */
-    NoShippingCharge(2219);
+    NoShippingCharge(2219),
+
+    /** 
+     * Company Controller Related Errors
+     */
+    FailedToUpdateCompanyLocation(2314);
 
     private int value;
 	private static HashMap map = new HashMap<>();
