@@ -77,6 +77,11 @@ public enum MatchingTaxType {
     VATInputTax(73),
 
     /** 
+     * LightBulbs tax type
+     */
+    LightBulbs(76),
+
+    /** 
      * Match VAT Nonrecoverable Input Tax only
      */
     VATNonrecoverableInputTax(78),
@@ -99,7 +104,17 @@ public enum MatchingTaxType {
     /** 
      * Match Seller's Use Tax only
      */
-    UseTax(85);
+    UseTax(85),
+
+    /** 
+     * EWaste tax type
+     */
+    EWaste(87),
+
+    /** 
+     * Batteries tax type
+     */
+    Batteries(90);
 
     private int value;
 	private static HashMap map = new HashMap<>();

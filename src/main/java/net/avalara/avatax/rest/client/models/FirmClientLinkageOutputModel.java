@@ -268,6 +268,48 @@ public class FirmClientLinkageOutputModel {
     }
 
 
+    private String firmContactName;
+
+    /**
+     * Getter for firmContactName
+     *
+     * Name of the firm's point of contact person for the client
+     */
+    public String getFirmContactName() {
+        return this.firmContactName;
+    }
+
+    /**
+     * Setter for firmContactName
+     *
+     * Name of the firm's point of contact person for the client
+     */
+    public void setFirmContactName(String value) {
+        this.firmContactName = value;
+    }
+
+
+    private String firmContactEmail;
+
+    /**
+     * Getter for firmContactEmail
+     *
+     * Email of the firm's point of contact person for the client
+     */
+    public String getFirmContactEmail() {
+        return this.firmContactEmail;
+    }
+
+    /**
+     * Setter for firmContactEmail
+     *
+     * Email of the firm's point of contact person for the client
+     */
+    public void setFirmContactEmail(String value) {
+        this.firmContactEmail = value;
+    }
+
+
     /**
      * Returns a JSON string representation of FirmClientLinkageOutputModel
      */

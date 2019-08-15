@@ -302,6 +302,27 @@ public class AdvancedRuleFullDetailsModel {
     }
 
 
+    private ArrayList<Integer> accountsVisibleFor;
+
+    /**
+     * Getter for accountsVisibleFor
+     *
+     * Account Ids the rule is visible for in CUP, when IsVisibleInCUP = false
+     */
+    public ArrayList<Integer> getAccountsVisibleFor() {
+        return this.accountsVisibleFor;
+    }
+
+    /**
+     * Setter for accountsVisibleFor
+     *
+     * Account Ids the rule is visible for in CUP, when IsVisibleInCUP = false
+     */
+    public void setAccountsVisibleFor(ArrayList<Integer> value) {
+        this.accountsVisibleFor = value;
+    }
+
+
     private String ruleId;
 
     /**

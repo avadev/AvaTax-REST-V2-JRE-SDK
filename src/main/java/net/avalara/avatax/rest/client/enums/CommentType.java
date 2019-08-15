@@ -27,7 +27,12 @@ public enum CommentType {
     /** 
      * Customer comments are those comments that both compliance and the customer can read
      */
-    Customer(2);
+    Customer(2),
+
+    /** 
+     * A comment that has a POA Attachment on it
+     */
+    POAAttachment(3);
 
     private int value;
 	private static HashMap map = new HashMap<>();

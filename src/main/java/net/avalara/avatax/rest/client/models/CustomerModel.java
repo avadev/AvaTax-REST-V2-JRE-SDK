@@ -645,6 +645,31 @@ public class CustomerModel {
     }
 
 
+    private ArrayList<CustomerAttributeModel> attributes;
+
+    /**
+     * Getter for attributes
+     *
+     * A list of attributes that apply to this customer.
+    *  
+    * You can fetch this data by specifying `$include=attributes` when calling a customer fetch API.
+     */
+    public ArrayList<CustomerAttributeModel> getAttributes() {
+        return this.attributes;
+    }
+
+    /**
+     * Setter for attributes
+     *
+     * A list of attributes that apply to this customer.
+    *  
+    * You can fetch this data by specifying `$include=attributes` when calling a customer fetch API.
+     */
+    public void setAttributes(ArrayList<CustomerAttributeModel> value) {
+        this.attributes = value;
+    }
+
+
     /**
      * Returns a JSON string representation of CustomerModel
      */
