@@ -3317,7 +3317,7 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
      * @param include A comma separated list of objects to fetch underneath this company. Any object with a URL path underneath this company can be fetched by specifying its name.
-     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* contacts, items, locations, nexus, settings, taxCodes, taxRules, upcs, nonReportingChildCompanies, exemptCerts
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* IsFein, contacts, items, locations, nexus, settings, taxCodes, taxRules, upcs, nonReportingChildCompanies, exemptCerts
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
@@ -3358,7 +3358,7 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
      * @param include A comma separated list of objects to fetch underneath this company. Any object with a URL path underneath this company can be fetched by specifying its name.
-     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* contacts, items, locations, nexus, settings, taxCodes, taxRules, upcs, nonReportingChildCompanies, exemptCerts
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* IsFein, contacts, items, locations, nexus, settings, taxCodes, taxRules, upcs, nonReportingChildCompanies, exemptCerts
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
@@ -4379,7 +4379,7 @@ public class AvaTaxClient {
     }
 
     /**
-     * List active certificates for a location
+     * List valid certificates for a location
      * 
      * List valid certificates linked to a customer in a particular country and region.
      *             
@@ -4418,7 +4418,7 @@ public class AvaTaxClient {
     }
 
     /**
-     * List active certificates for a location
+     * List valid certificates for a location
      * 
      * List valid certificates linked to a customer in a particular country and region.
      *             
@@ -7975,2859 +7975,107 @@ public class AvaTaxClient {
     }
 
     /**
-     * Checks to see if the company has a valid POA for a tax form code
+     * Delete a batch of error transactions
      * 
-     * This API is available by invitation only.
+     * Delete a batch of error transactions attached to a company.
      *             
-     * This API fetches valid POA's for a company by TaxFormCode or by country/region
+     * If any of the provided error transaction isn't found then it'll be treated as a success.
      * 
      * ### Security Policies
      * 
-     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Operator, Compliance Root User, Compliance Temp User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
-     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
-     * * This API is available by invitation only.
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, ProStoresOperator, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
+     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
      * 
-     * @param companyId The company id that we are checking about
-     * @param taxFormCode The tax form code that we are checking
-     * @param country The country we are fetching POAs for
-     * @param region The region we are fetching POAs for
-     * @return ArrayList<PowerOfAttorneyCheckModel>
+     * @param model The request that contains error transactions to be deleted
+     * @return DeleteErrorTransactionsResponseModel
      */
-    public ArrayList<PowerOfAttorneyCheckModel> activePowerOfAttorney(Integer companyId, String taxFormCode, String country, String region) throws Exception {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingcalendars/powerofattorney");
-        path.applyField("companyId", companyId);
-        path.addQuery("taxFormCode", taxFormCode);
-        path.addQuery("country", country);
-        path.addQuery("region", region);
-        return ((RestCall<ArrayList<PowerOfAttorneyCheckModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<ArrayList<PowerOfAttorneyCheckModel>>(){})).call();
+    public DeleteErrorTransactionsResponseModel deleteErrorTransactions(DeleteErrorTransactionsRequestModel model) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/errortransactions");
+        return ((RestCall<DeleteErrorTransactionsResponseModel>)restCallFactory.createRestCall("delete", path, model, new TypeToken<DeleteErrorTransactionsResponseModel>(){})).call();
     }
 
     /**
-     * Checks to see if the company has a valid POA for a tax form code
+     * Delete a batch of error transactions
      * 
-     * This API is available by invitation only.
+     * Delete a batch of error transactions attached to a company.
      *             
-     * This API fetches valid POA's for a company by TaxFormCode or by country/region
+     * If any of the provided error transaction isn't found then it'll be treated as a success.
      * 
      * ### Security Policies
      * 
-     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Operator, Compliance Root User, Compliance Temp User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
-     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
-     * * This API is available by invitation only.
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, ProStoresOperator, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
+     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
      * 
-     * @param companyId The company id that we are checking about
-     * @param taxFormCode The tax form code that we are checking
-     * @param country The country we are fetching POAs for
-     * @param region The region we are fetching POAs for
-     * @return ArrayList<PowerOfAttorneyCheckModel>
+     * @param model The request that contains error transactions to be deleted
+     * @return DeleteErrorTransactionsResponseModel
      */
-    public Future<ArrayList<PowerOfAttorneyCheckModel>> activePowerOfAttorneyAsync(Integer companyId, String taxFormCode, String country, String region) {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingcalendars/powerofattorney");
-        path.applyField("companyId", companyId);
-        path.addQuery("taxFormCode", taxFormCode);
-        path.addQuery("country", country);
-        path.addQuery("region", region);
-        return this.threadPool.submit((RestCall<ArrayList<PowerOfAttorneyCheckModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<ArrayList<PowerOfAttorneyCheckModel>>(){}));
+    public Future<DeleteErrorTransactionsResponseModel> deleteErrorTransactionsAsync(DeleteErrorTransactionsRequestModel model) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/errortransactions");
+        return this.threadPool.submit((RestCall<DeleteErrorTransactionsResponseModel>)restCallFactory.createRestCall("delete", path, model, new TypeToken<DeleteErrorTransactionsResponseModel>(){}));
     }
 
     /**
-     * Approve existing Filing Request
+     * Retrieve list of error transactions
      * 
-     * This API is available by invitation only.
-     * A "filing request" represents a request to change an existing filing calendar.  Filing requests
-     * are reviewed and validated by Avalara Compliance before being implemented.
-     * The filing request must be in the "ChangeRequest" status to be approved.
-     * 
-     * ### Security Policies
-     * 
-     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
-     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
-     * * This API is available by invitation only.<br />*Exempt security roles*:  ComplianceRootUser, ComplianceAdmin, ComplianceUser, TechnicalSupportAdmin, TechnicalSupportUser.
-     * 
-     * @param companyId The unique ID of the company that owns the filing request object
-     * @param id The unique ID of the filing request object
-     * @return FilingRequestModel
-     */
-    public FilingRequestModel approveFilingRequest(Integer companyId, Integer id) throws Exception {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingrequests/{id}/approve");
-        path.applyField("companyId", companyId);
-        path.applyField("id", id);
-        return ((RestCall<FilingRequestModel>)restCallFactory.createRestCall("post", path, null, new TypeToken<FilingRequestModel>(){})).call();
-    }
-
-    /**
-     * Approve existing Filing Request
-     * 
-     * This API is available by invitation only.
-     * A "filing request" represents a request to change an existing filing calendar.  Filing requests
-     * are reviewed and validated by Avalara Compliance before being implemented.
-     * The filing request must be in the "ChangeRequest" status to be approved.
-     * 
-     * ### Security Policies
-     * 
-     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
-     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
-     * * This API is available by invitation only.<br />*Exempt security roles*:  ComplianceRootUser, ComplianceAdmin, ComplianceUser, TechnicalSupportAdmin, TechnicalSupportUser.
-     * 
-     * @param companyId The unique ID of the company that owns the filing request object
-     * @param id The unique ID of the filing request object
-     * @return FilingRequestModel
-     */
-    public Future<FilingRequestModel> approveFilingRequestAsync(Integer companyId, Integer id) {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingrequests/{id}/approve");
-        path.applyField("companyId", companyId);
-        path.applyField("id", id);
-        return this.threadPool.submit((RestCall<FilingRequestModel>)restCallFactory.createRestCall("post", path, null, new TypeToken<FilingRequestModel>(){}));
-    }
-
-    /**
-     * Cancel existing Filing Request
-     * 
-     * This API is available by invitation only.
-     * A "filing request" represents a request to change an existing filing calendar.  Filing requests
-     * are reviewed and validated by Avalara Compliance before being implemented.
-     * 
-     * ### Security Policies
-     * 
-     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
-     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
-     * * This API is available by invitation only.<br />*Exempt security roles*:  ComplianceRootUser, ComplianceAdmin, ComplianceUser, TechnicalSupportAdmin, TechnicalSupportUser.
-     * 
-     * @param companyId The unique ID of the company that owns the filing request object
-     * @param id The unique ID of the filing request object
-     * @return FilingRequestModel
-     */
-    public FilingRequestModel cancelFilingRequest(Integer companyId, Integer id) throws Exception {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingrequests/{id}/cancel");
-        path.applyField("companyId", companyId);
-        path.applyField("id", id);
-        return ((RestCall<FilingRequestModel>)restCallFactory.createRestCall("post", path, null, new TypeToken<FilingRequestModel>(){})).call();
-    }
-
-    /**
-     * Cancel existing Filing Request
-     * 
-     * This API is available by invitation only.
-     * A "filing request" represents a request to change an existing filing calendar.  Filing requests
-     * are reviewed and validated by Avalara Compliance before being implemented.
-     * 
-     * ### Security Policies
-     * 
-     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
-     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
-     * * This API is available by invitation only.<br />*Exempt security roles*:  ComplianceRootUser, ComplianceAdmin, ComplianceUser, TechnicalSupportAdmin, TechnicalSupportUser.
-     * 
-     * @param companyId The unique ID of the company that owns the filing request object
-     * @param id The unique ID of the filing request object
-     * @return FilingRequestModel
-     */
-    public Future<FilingRequestModel> cancelFilingRequestAsync(Integer companyId, Integer id) {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingrequests/{id}/cancel");
-        path.applyField("companyId", companyId);
-        path.applyField("id", id);
-        return this.threadPool.submit((RestCall<FilingRequestModel>)restCallFactory.createRestCall("post", path, null, new TypeToken<FilingRequestModel>(){}));
-    }
-
-    /**
-     * Create a new filing request to cancel a filing calendar
-     * 
-     * This API is available by invitation only.
+     * List error transactions attached to this company. Results are dependent on `$filter` if provided.
      *             
-     * A "filing request" represents a request to change an existing filing calendar.  Filing requests
-     * are reviewed and validated by Avalara Compliance before being implemented.
-     * 
-     * ### Security Policies
-     * 
-     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
-     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
-     * * This API is available by invitation only.<br />*Exempt security roles*:  ComplianceRootUser, ComplianceAdmin, ComplianceUser, TechnicalSupportAdmin, TechnicalSupportUser.
-     * 
-     * @param companyId The unique ID of the company that owns the filing calendar object
-     * @param id The unique ID number of the filing calendar to cancel
-     * @param model The cancellation request for this filing calendar
-     * @return FilingRequestModel
-     */
-    public FilingRequestModel cancelFilingRequests(Integer companyId, Integer id, ArrayList<FilingRequestModel> model) throws Exception {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingcalendars/{id}/cancel/request");
-        path.applyField("companyId", companyId);
-        path.applyField("id", id);
-        return ((RestCall<FilingRequestModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<FilingRequestModel>(){})).call();
-    }
-
-    /**
-     * Create a new filing request to cancel a filing calendar
-     * 
-     * This API is available by invitation only.
-     *             
-     * A "filing request" represents a request to change an existing filing calendar.  Filing requests
-     * are reviewed and validated by Avalara Compliance before being implemented.
-     * 
-     * ### Security Policies
-     * 
-     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
-     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
-     * * This API is available by invitation only.<br />*Exempt security roles*:  ComplianceRootUser, ComplianceAdmin, ComplianceUser, TechnicalSupportAdmin, TechnicalSupportUser.
-     * 
-     * @param companyId The unique ID of the company that owns the filing calendar object
-     * @param id The unique ID number of the filing calendar to cancel
-     * @param model The cancellation request for this filing calendar
-     * @return FilingRequestModel
-     */
-    public Future<FilingRequestModel> cancelFilingRequestsAsync(Integer companyId, Integer id, ArrayList<FilingRequestModel> model) {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingcalendars/{id}/cancel/request");
-        path.applyField("companyId", companyId);
-        path.applyField("id", id);
-        return this.threadPool.submit((RestCall<FilingRequestModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<FilingRequestModel>(){}));
-    }
-
-    /**
-     * Create a filing calendar
-     * 
-     * This API is available by invitation only and only available for users with Compliance access
-     * A "filing request" represents information that compliance uses to file a return
-     * 
-     * ### Security Policies
-     * 
-     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
-     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
-     * * This API is available by invitation only.<br />*Exempt security roles*:  ComplianceRootUser, ComplianceAdmin, ComplianceUser, TechnicalSupportAdmin, TechnicalSupportUser.
-     * 
-     * @param companyId The unique ID of the company that will add the new filing calendar
-     * @param model Filing calendars that will be added
-     * @return ArrayList<FilingCalendarModel>
-     */
-    public ArrayList<FilingCalendarModel> createFilingCalendars(Integer companyId, ArrayList<FilingCalendarModel> model) throws Exception {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingcalendars");
-        path.applyField("companyId", companyId);
-        return ((RestCall<ArrayList<FilingCalendarModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<FilingCalendarModel>>(){})).call();
-    }
-
-    /**
-     * Create a filing calendar
-     * 
-     * This API is available by invitation only and only available for users with Compliance access
-     * A "filing request" represents information that compliance uses to file a return
-     * 
-     * ### Security Policies
-     * 
-     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
-     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
-     * * This API is available by invitation only.<br />*Exempt security roles*:  ComplianceRootUser, ComplianceAdmin, ComplianceUser, TechnicalSupportAdmin, TechnicalSupportUser.
-     * 
-     * @param companyId The unique ID of the company that will add the new filing calendar
-     * @param model Filing calendars that will be added
-     * @return ArrayList<FilingCalendarModel>
-     */
-    public Future<ArrayList<FilingCalendarModel>> createFilingCalendarsAsync(Integer companyId, ArrayList<FilingCalendarModel> model) {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingcalendars");
-        path.applyField("companyId", companyId);
-        return this.threadPool.submit((RestCall<ArrayList<FilingCalendarModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<FilingCalendarModel>>(){}));
-    }
-
-    /**
-     * Create a new filing request to create a filing calendar
-     * 
-     * This API is available by invitation only.
-     * A "filing request" represents a request to change an existing filing calendar.  Filing requests
-     * are reviewed and validated by Avalara Compliance before being implemented.
-     * 
-     * ### Security Policies
-     * 
-     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
-     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
-     * * This API is available by invitation only.<br />*Exempt security roles*:  ComplianceRootUser, ComplianceAdmin, ComplianceUser, TechnicalSupportAdmin, TechnicalSupportUser.
-     * 
-     * @param companyId The unique ID of the company that will add the new filing calendar
-     * @param model Information about the proposed new filing calendar
-     * @return ArrayList<FilingRequestModel>
-     */
-    public ArrayList<FilingRequestModel> createFilingRequests(Integer companyId, ArrayList<FilingRequestModel> model) throws Exception {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingcalendars/add/request");
-        path.applyField("companyId", companyId);
-        return ((RestCall<ArrayList<FilingRequestModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<FilingRequestModel>>(){})).call();
-    }
-
-    /**
-     * Create a new filing request to create a filing calendar
-     * 
-     * This API is available by invitation only.
-     * A "filing request" represents a request to change an existing filing calendar.  Filing requests
-     * are reviewed and validated by Avalara Compliance before being implemented.
-     * 
-     * ### Security Policies
-     * 
-     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
-     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
-     * * This API is available by invitation only.<br />*Exempt security roles*:  ComplianceRootUser, ComplianceAdmin, ComplianceUser, TechnicalSupportAdmin, TechnicalSupportUser.
-     * 
-     * @param companyId The unique ID of the company that will add the new filing calendar
-     * @param model Information about the proposed new filing calendar
-     * @return ArrayList<FilingRequestModel>
-     */
-    public Future<ArrayList<FilingRequestModel>> createFilingRequestsAsync(Integer companyId, ArrayList<FilingRequestModel> model) {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingcalendars/add/request");
-        path.applyField("companyId", companyId);
-        return this.threadPool.submit((RestCall<ArrayList<FilingRequestModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<FilingRequestModel>>(){}));
-    }
-
-    /**
-     * Create a company return setting
-     * 
-     * This API is available by invitation only and only available for users with Compliance access
-     * 
-     * ### Security Policies
-     * 
-     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
-     * 
-     * @param companyId The unique ID of the company that will add the new filing calendar
-     * @param filingCalendarId The unique ID of the filing calendar that will add the new filing calendar setting
-     * @param model CompanyReturnSettings that will be added
-     * @return ArrayList<CompanyReturnSettingModel>
-     */
-    public ArrayList<CompanyReturnSettingModel> createUpdateCompanyReturnSettings(Integer companyId, Long filingCalendarId, ArrayList<CompanyReturnSettingModel> model) throws Exception {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingcalendars/{filingCalendarId}/settings");
-        path.applyField("companyId", companyId);
-        path.applyField("filingCalendarId", filingCalendarId);
-        return ((RestCall<ArrayList<CompanyReturnSettingModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<CompanyReturnSettingModel>>(){})).call();
-    }
-
-    /**
-     * Create a company return setting
-     * 
-     * This API is available by invitation only and only available for users with Compliance access
-     * 
-     * ### Security Policies
-     * 
-     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
-     * 
-     * @param companyId The unique ID of the company that will add the new filing calendar
-     * @param filingCalendarId The unique ID of the filing calendar that will add the new filing calendar setting
-     * @param model CompanyReturnSettings that will be added
-     * @return ArrayList<CompanyReturnSettingModel>
-     */
-    public Future<ArrayList<CompanyReturnSettingModel>> createUpdateCompanyReturnSettingsAsync(Integer companyId, Long filingCalendarId, ArrayList<CompanyReturnSettingModel> model) {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingcalendars/{filingCalendarId}/settings");
-        path.applyField("companyId", companyId);
-        path.applyField("filingCalendarId", filingCalendarId);
-        return this.threadPool.submit((RestCall<ArrayList<CompanyReturnSettingModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<CompanyReturnSettingModel>>(){}));
-    }
-
-    /**
-     * Returns a list of options for adding the specified form.
-     * 
-     * This API is available by invitation only.
-     * 
-     * ### Security Policies
-     * 
-     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
-     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
-     * * This API is available by invitation only.<br />*Exempt security roles*:  ComplianceRootUser, ComplianceAdmin, ComplianceUser, TechnicalSupportAdmin, TechnicalSupportUser.
-     * 
-     * @param companyId The unique ID of the company that owns the filing calendar object
-     * @param formCode The unique code of the form
-     * @return ArrayList<CycleAddOptionModel>
-     */
-    public ArrayList<CycleAddOptionModel> cycleSafeAdd(Integer companyId, String formCode) throws Exception {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingcalendars/add/options");
-        path.applyField("companyId", companyId);
-        path.addQuery("formCode", formCode);
-        return ((RestCall<ArrayList<CycleAddOptionModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<ArrayList<CycleAddOptionModel>>(){})).call();
-    }
-
-    /**
-     * Returns a list of options for adding the specified form.
-     * 
-     * This API is available by invitation only.
-     * 
-     * ### Security Policies
-     * 
-     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
-     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
-     * * This API is available by invitation only.<br />*Exempt security roles*:  ComplianceRootUser, ComplianceAdmin, ComplianceUser, TechnicalSupportAdmin, TechnicalSupportUser.
-     * 
-     * @param companyId The unique ID of the company that owns the filing calendar object
-     * @param formCode The unique code of the form
-     * @return ArrayList<CycleAddOptionModel>
-     */
-    public Future<ArrayList<CycleAddOptionModel>> cycleSafeAddAsync(Integer companyId, String formCode) {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingcalendars/add/options");
-        path.applyField("companyId", companyId);
-        path.addQuery("formCode", formCode);
-        return this.threadPool.submit((RestCall<ArrayList<CycleAddOptionModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<ArrayList<CycleAddOptionModel>>(){}));
-    }
-
-    /**
-     * Indicates when changes are allowed to be made to a filing calendar.
-     * 
-     * This API is available by invitation only.
-     * 
-     * ### Security Policies
-     * 
-     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
-     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
-     * * This API is available by invitation only.<br />*Exempt security roles*:  ComplianceRootUser, ComplianceAdmin, ComplianceUser, TechnicalSupportAdmin, TechnicalSupportUser.
-     * 
-     * @param companyId The unique ID of the company that owns the filing calendar object
-     * @param id The unique ID of the filing calendar object
-     * @param model A list of filing calendar edits to be made
-     * @return CycleEditOptionModel
-     */
-    public CycleEditOptionModel cycleSafeEdit(Integer companyId, Integer id, ArrayList<FilingCalendarEditModel> model) throws Exception {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingcalendars/{id}/edit/options");
-        path.applyField("companyId", companyId);
-        path.applyField("id", id);
-        return ((RestCall<CycleEditOptionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<CycleEditOptionModel>(){})).call();
-    }
-
-    /**
-     * Indicates when changes are allowed to be made to a filing calendar.
-     * 
-     * This API is available by invitation only.
-     * 
-     * ### Security Policies
-     * 
-     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
-     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
-     * * This API is available by invitation only.<br />*Exempt security roles*:  ComplianceRootUser, ComplianceAdmin, ComplianceUser, TechnicalSupportAdmin, TechnicalSupportUser.
-     * 
-     * @param companyId The unique ID of the company that owns the filing calendar object
-     * @param id The unique ID of the filing calendar object
-     * @param model A list of filing calendar edits to be made
-     * @return CycleEditOptionModel
-     */
-    public Future<CycleEditOptionModel> cycleSafeEditAsync(Integer companyId, Integer id, ArrayList<FilingCalendarEditModel> model) {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingcalendars/{id}/edit/options");
-        path.applyField("companyId", companyId);
-        path.applyField("id", id);
-        return this.threadPool.submit((RestCall<CycleEditOptionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<CycleEditOptionModel>(){}));
-    }
-
-    /**
-     * Returns a list of options for expiring a filing calendar
-     * 
-     * This API is available by invitation only.
-     * 
-     * ### Security Policies
-     * 
-     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
-     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
-     * * This API is available by invitation only.<br />*Exempt security roles*:  ComplianceRootUser, ComplianceAdmin, ComplianceUser, TechnicalSupportAdmin, TechnicalSupportUser.
-     * 
-     * @param companyId The unique ID of the company that owns the filing calendar object
-     * @param id The unique ID of the filing calendar object
-     * @return CycleExpireModel
-     */
-    public CycleExpireModel cycleSafeExpiration(Integer companyId, Long id) throws Exception {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingcalendars/{id}/cancel/options");
-        path.applyField("companyId", companyId);
-        path.applyField("id", id);
-        return ((RestCall<CycleExpireModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<CycleExpireModel>(){})).call();
-    }
-
-    /**
-     * Returns a list of options for expiring a filing calendar
-     * 
-     * This API is available by invitation only.
-     * 
-     * ### Security Policies
-     * 
-     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
-     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
-     * * This API is available by invitation only.<br />*Exempt security roles*:  ComplianceRootUser, ComplianceAdmin, ComplianceUser, TechnicalSupportAdmin, TechnicalSupportUser.
-     * 
-     * @param companyId The unique ID of the company that owns the filing calendar object
-     * @param id The unique ID of the filing calendar object
-     * @return CycleExpireModel
-     */
-    public Future<CycleExpireModel> cycleSafeExpirationAsync(Integer companyId, Long id) {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingcalendars/{id}/cancel/options");
-        path.applyField("companyId", companyId);
-        path.applyField("id", id);
-        return this.threadPool.submit((RestCall<CycleExpireModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<CycleExpireModel>(){}));
-    }
-
-    /**
-     * Delete a single filing calendar.
-     * 
-     * This API is available by invitation only.
-     * Mark the existing notice object at this URL as deleted.
-     * A 'notice' represents a letter sent to a business by a tax authority regarding tax filing issues.  Avalara
-     * Returns customers often receive support and assistance from the Compliance Notices team in handling notices received by taxing authorities.
-     * 
-     * ### Security Policies
-     * 
-     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
-     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
-     * * This API is available by invitation only.<br />*Exempt security roles*:  ComplianceRootUser, ComplianceAdmin, ComplianceUser, TechnicalSupportAdmin, TechnicalSupportUser.
-     * 
-     * @param companyId The ID of the company that owns this filing calendar.
-     * @param id The ID of the filing calendar you wish to delete.
-     * @return ArrayList<ErrorDetail>
-     */
-    public ArrayList<ErrorDetail> deleteFilingCalendar(Integer companyId, Integer id) throws Exception {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingcalendars/{id}");
-        path.applyField("companyId", companyId);
-        path.applyField("id", id);
-        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){})).call();
-    }
-
-    /**
-     * Delete a single filing calendar.
-     * 
-     * This API is available by invitation only.
-     * Mark the existing notice object at this URL as deleted.
-     * A 'notice' represents a letter sent to a business by a tax authority regarding tax filing issues.  Avalara
-     * Returns customers often receive support and assistance from the Compliance Notices team in handling notices received by taxing authorities.
-     * 
-     * ### Security Policies
-     * 
-     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
-     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
-     * * This API is available by invitation only.<br />*Exempt security roles*:  ComplianceRootUser, ComplianceAdmin, ComplianceUser, TechnicalSupportAdmin, TechnicalSupportUser.
-     * 
-     * @param companyId The ID of the company that owns this filing calendar.
-     * @param id The ID of the filing calendar you wish to delete.
-     * @return ArrayList<ErrorDetail>
-     */
-    public Future<ArrayList<ErrorDetail>> deleteFilingCalendarAsync(Integer companyId, Integer id) {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingcalendars/{id}");
-        path.applyField("companyId", companyId);
-        path.applyField("id", id);
-        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){}));
-    }
-
-    /**
-     * Retrieve a single filing calendar
-     * 
-     * This API is available by invitation only.
-     * 
-     * ### Security Policies
-     * 
-     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
-     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
-     * * This API is available by invitation only.<br />*Exempt security roles*:  ComplianceRootUser, ComplianceAdmin, ComplianceUser, TechnicalSupportAdmin, TechnicalSupportUser.
-     * 
-     * @param companyId The ID of the company that owns this filing calendar
-     * @param id The primary key of this filing calendar
-     * @return FilingCalendarModel
-     */
-    public FilingCalendarModel getFilingCalendar(Integer companyId, Long id) throws Exception {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingcalendars/{id}");
-        path.applyField("companyId", companyId);
-        path.applyField("id", id);
-        return ((RestCall<FilingCalendarModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<FilingCalendarModel>(){})).call();
-    }
-
-    /**
-     * Retrieve a single filing calendar
-     * 
-     * This API is available by invitation only.
-     * 
-     * ### Security Policies
-     * 
-     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
-     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
-     * * This API is available by invitation only.<br />*Exempt security roles*:  ComplianceRootUser, ComplianceAdmin, ComplianceUser, TechnicalSupportAdmin, TechnicalSupportUser.
-     * 
-     * @param companyId The ID of the company that owns this filing calendar
-     * @param id The primary key of this filing calendar
-     * @return FilingCalendarModel
-     */
-    public Future<FilingCalendarModel> getFilingCalendarAsync(Integer companyId, Long id) {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingcalendars/{id}");
-        path.applyField("companyId", companyId);
-        path.applyField("id", id);
-        return this.threadPool.submit((RestCall<FilingCalendarModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<FilingCalendarModel>(){}));
-    }
-
-    /**
-     * Retrieve a single filing request
-     * 
-     * This API is available by invitation only.
-     * A "filing request" represents a request to change an existing filing calendar.  Filing requests
-     * are reviewed and validated by Avalara Compliance before being implemented.
-     * 
-     * ### Security Policies
-     * 
-     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
-     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
-     * * This API is available by invitation only.<br />*Exempt security roles*:  ComplianceRootUser, ComplianceAdmin, ComplianceUser, TechnicalSupportAdmin, TechnicalSupportUser.
-     * 
-     * @param companyId The ID of the company that owns this filing calendar
-     * @param id The primary key of this filing calendar
-     * @return FilingRequestModel
-     */
-    public FilingRequestModel getFilingRequest(Integer companyId, Integer id) throws Exception {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingrequests/{id}");
-        path.applyField("companyId", companyId);
-        path.applyField("id", id);
-        return ((RestCall<FilingRequestModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<FilingRequestModel>(){})).call();
-    }
-
-    /**
-     * Retrieve a single filing request
-     * 
-     * This API is available by invitation only.
-     * A "filing request" represents a request to change an existing filing calendar.  Filing requests
-     * are reviewed and validated by Avalara Compliance before being implemented.
-     * 
-     * ### Security Policies
-     * 
-     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
-     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
-     * * This API is available by invitation only.<br />*Exempt security roles*:  ComplianceRootUser, ComplianceAdmin, ComplianceUser, TechnicalSupportAdmin, TechnicalSupportUser.
-     * 
-     * @param companyId The ID of the company that owns this filing calendar
-     * @param id The primary key of this filing calendar
-     * @return FilingRequestModel
-     */
-    public Future<FilingRequestModel> getFilingRequestAsync(Integer companyId, Integer id) {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingrequests/{id}");
-        path.applyField("companyId", companyId);
-        path.applyField("id", id);
-        return this.threadPool.submit((RestCall<FilingRequestModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<FilingRequestModel>(){}));
-    }
-
-    /**
-     * Retrieve all filing calendars for this company
-     * 
-     * This API is available by invitation only.
-     * 
-     * ### Security Policies
-     * 
-     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
-     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
-     * * This API is available by invitation only.<br />*Exempt security roles*:  ComplianceRootUser, ComplianceAdmin, ComplianceUser, TechnicalSupportAdmin, TechnicalSupportUser.
-     * 
-     * @param companyId The ID of the company that owns these batches
-     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* taxAuthorityId, taxAuthorityName, taxAuthorityType, settings
-     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
-     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
-     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @param returnCountry A comma separated list of countries
-     * @param returnRegion A comma separated list of regions
-     * @return FetchResult<FilingCalendarModel>
-     */
-    public FetchResult<FilingCalendarModel> listFilingCalendars(Integer companyId, String filter, Integer top, Integer skip, String orderBy, String returnCountry, String returnRegion) throws Exception {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingcalendars");
-        path.applyField("companyId", companyId);
-        path.addQuery("$filter", filter);
-        path.addQuery("$top", top);
-        path.addQuery("$skip", skip);
-        path.addQuery("$orderBy", orderBy);
-        path.addQuery("returnCountry", returnCountry);
-        path.addQuery("returnRegion", returnRegion);
-        return ((RestCall<FetchResult<FilingCalendarModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<FilingCalendarModel>>(){})).call();
-    }
-
-    /**
-     * Retrieve all filing calendars for this company
-     * 
-     * This API is available by invitation only.
-     * 
-     * ### Security Policies
-     * 
-     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
-     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
-     * * This API is available by invitation only.<br />*Exempt security roles*:  ComplianceRootUser, ComplianceAdmin, ComplianceUser, TechnicalSupportAdmin, TechnicalSupportUser.
-     * 
-     * @param companyId The ID of the company that owns these batches
-     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* taxAuthorityId, taxAuthorityName, taxAuthorityType, settings
-     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
-     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
-     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @param returnCountry A comma separated list of countries
-     * @param returnRegion A comma separated list of regions
-     * @return FetchResult<FilingCalendarModel>
-     */
-    public Future<FetchResult<FilingCalendarModel>> listFilingCalendarsAsync(Integer companyId, String filter, Integer top, Integer skip, String orderBy, String returnCountry, String returnRegion) {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingcalendars");
-        path.applyField("companyId", companyId);
-        path.addQuery("$filter", filter);
-        path.addQuery("$top", top);
-        path.addQuery("$skip", skip);
-        path.addQuery("$orderBy", orderBy);
-        path.addQuery("returnCountry", returnCountry);
-        path.addQuery("returnRegion", returnRegion);
-        return this.threadPool.submit((RestCall<FetchResult<FilingCalendarModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<FilingCalendarModel>>(){}));
-    }
-
-    /**
-     * Retrieve all filing requests for this company
-     * 
-     * This API is available by invitation only.
-     * A "filing request" represents a request to change an existing filing calendar.  Filing requests
-     * are reviewed and validated by Avalara Compliance before being implemented.
-     * 
-     * ### Security Policies
-     * 
-     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
-     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
-     * * This API is available by invitation only.<br />*Exempt security roles*:  ComplianceRootUser, ComplianceAdmin, ComplianceUser, TechnicalSupportAdmin, TechnicalSupportUser.
-     * 
-     * @param companyId The ID of the company that owns these batches
-     * @param filingCalendarId Specific filing calendar id for the request
-     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).
-     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
-     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
-     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<FilingRequestModel>
-     */
-    public FetchResult<FilingRequestModel> listFilingRequests(Integer companyId, Integer filingCalendarId, String filter, Integer top, Integer skip, String orderBy) throws Exception {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingrequests");
-        path.applyField("companyId", companyId);
-        path.addQuery("filingCalendarId", filingCalendarId);
-        path.addQuery("$filter", filter);
-        path.addQuery("$top", top);
-        path.addQuery("$skip", skip);
-        path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<FilingRequestModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<FilingRequestModel>>(){})).call();
-    }
-
-    /**
-     * Retrieve all filing requests for this company
-     * 
-     * This API is available by invitation only.
-     * A "filing request" represents a request to change an existing filing calendar.  Filing requests
-     * are reviewed and validated by Avalara Compliance before being implemented.
-     * 
-     * ### Security Policies
-     * 
-     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
-     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
-     * * This API is available by invitation only.<br />*Exempt security roles*:  ComplianceRootUser, ComplianceAdmin, ComplianceUser, TechnicalSupportAdmin, TechnicalSupportUser.
-     * 
-     * @param companyId The ID of the company that owns these batches
-     * @param filingCalendarId Specific filing calendar id for the request
-     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).
-     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
-     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
-     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<FilingRequestModel>
-     */
-    public Future<FetchResult<FilingRequestModel>> listFilingRequestsAsync(Integer companyId, Integer filingCalendarId, String filter, Integer top, Integer skip, String orderBy) {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingrequests");
-        path.applyField("companyId", companyId);
-        path.addQuery("filingCalendarId", filingCalendarId);
-        path.addQuery("$filter", filter);
-        path.addQuery("$top", top);
-        path.addQuery("$skip", skip);
-        path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<FilingRequestModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<FilingRequestModel>>(){}));
-    }
-
-    /**
-     * New request for getting for validating customer's login credentials
-     * 
-     * This API is available by invitation only.
-     *             
-     * This API verifies that a customer has submitted correct login credentials for a tax authority's online filing system.
-     * 
-     * ### Security Policies
-     * 
-     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
-     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
-     * * This API is available by invitation only.<br />*Exempt security roles*:  ComplianceRootUser, ComplianceAdmin, ComplianceUser, TechnicalSupportAdmin, TechnicalSupportUser.
-     * 
-     * @param model The model of the login information we are verifying
-     * @return LoginVerificationOutputModel
-     */
-    public LoginVerificationOutputModel loginVerificationRequest(LoginVerificationInputModel model) throws Exception {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/filingcalendars/credentials/verify");
-        return ((RestCall<LoginVerificationOutputModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<LoginVerificationOutputModel>(){})).call();
-    }
-
-    /**
-     * New request for getting for validating customer's login credentials
-     * 
-     * This API is available by invitation only.
-     *             
-     * This API verifies that a customer has submitted correct login credentials for a tax authority's online filing system.
-     * 
-     * ### Security Policies
-     * 
-     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
-     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
-     * * This API is available by invitation only.<br />*Exempt security roles*:  ComplianceRootUser, ComplianceAdmin, ComplianceUser, TechnicalSupportAdmin, TechnicalSupportUser.
-     * 
-     * @param model The model of the login information we are verifying
-     * @return LoginVerificationOutputModel
-     */
-    public Future<LoginVerificationOutputModel> loginVerificationRequestAsync(LoginVerificationInputModel model) {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/filingcalendars/credentials/verify");
-        return this.threadPool.submit((RestCall<LoginVerificationOutputModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<LoginVerificationOutputModel>(){}));
-    }
-
-    /**
-     * Gets the request status and Login Result
-     * 
-     * This API is available by invitation only.
-     *             
-     * This API checks the status of a login verification request.  It may only be called by authorized users from the account
-     * that initially requested the login verification.
-     * 
-     * ### Security Policies
-     * 
-     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
-     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
-     * * This API is available by invitation only.<br />*Exempt security roles*:  ComplianceRootUser, ComplianceAdmin, ComplianceUser, TechnicalSupportAdmin, TechnicalSupportUser.
-     * 
-     * @param jobId The unique ID number of this login request
-     * @return LoginVerificationOutputModel
-     */
-    public LoginVerificationOutputModel loginVerificationStatus(Integer jobId) throws Exception {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/filingcalendars/credentials/{jobId}");
-        path.applyField("jobId", jobId);
-        return ((RestCall<LoginVerificationOutputModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<LoginVerificationOutputModel>(){})).call();
-    }
-
-    /**
-     * Gets the request status and Login Result
-     * 
-     * This API is available by invitation only.
-     *             
-     * This API checks the status of a login verification request.  It may only be called by authorized users from the account
-     * that initially requested the login verification.
-     * 
-     * ### Security Policies
-     * 
-     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
-     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
-     * * This API is available by invitation only.<br />*Exempt security roles*:  ComplianceRootUser, ComplianceAdmin, ComplianceUser, TechnicalSupportAdmin, TechnicalSupportUser.
-     * 
-     * @param jobId The unique ID number of this login request
-     * @return LoginVerificationOutputModel
-     */
-    public Future<LoginVerificationOutputModel> loginVerificationStatusAsync(Integer jobId) {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/filingcalendars/credentials/{jobId}");
-        path.applyField("jobId", jobId);
-        return this.threadPool.submit((RestCall<LoginVerificationOutputModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<LoginVerificationOutputModel>(){}));
-    }
-
-    /**
-     * Retrieve all filing calendars
-     * 
-     * This API is available by invitation only.
-     *             
-     * This API is deprecated - please use POST `/api/v2/filingrequests/query` API.
-     * 
-     * ### Security Policies
-     * 
-     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
-     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
-     * * This API is available by invitation only.<br />*Exempt security roles*:  ComplianceRootUser, ComplianceAdmin, ComplianceUser, TechnicalSupportAdmin, TechnicalSupportUser.
-     * 
-     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* taxAuthorityId, taxAuthorityName, taxAuthorityType, settings
-     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
-     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
-     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @param returnCountry If specified, fetches only filing calendars that apply to tax filings in this specific country. Uses ISO 3166 country codes.
-     * @param returnRegion If specified, fetches only filing calendars that apply to tax filings in this specific region. Uses ISO 3166 region codes.
-     * @return FetchResult<FilingCalendarModel>
-     */
-    public FetchResult<FilingCalendarModel> queryFilingCalendars(String filter, Integer top, Integer skip, String orderBy, String returnCountry, String returnRegion) throws Exception {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/filingcalendars");
-        path.addQuery("$filter", filter);
-        path.addQuery("$top", top);
-        path.addQuery("$skip", skip);
-        path.addQuery("$orderBy", orderBy);
-        path.addQuery("returnCountry", returnCountry);
-        path.addQuery("returnRegion", returnRegion);
-        return ((RestCall<FetchResult<FilingCalendarModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<FilingCalendarModel>>(){})).call();
-    }
-
-    /**
-     * Retrieve all filing calendars
-     * 
-     * This API is available by invitation only.
-     *             
-     * This API is deprecated - please use POST `/api/v2/filingrequests/query` API.
-     * 
-     * ### Security Policies
-     * 
-     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
-     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
-     * * This API is available by invitation only.<br />*Exempt security roles*:  ComplianceRootUser, ComplianceAdmin, ComplianceUser, TechnicalSupportAdmin, TechnicalSupportUser.
-     * 
-     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* taxAuthorityId, taxAuthorityName, taxAuthorityType, settings
-     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
-     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
-     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @param returnCountry If specified, fetches only filing calendars that apply to tax filings in this specific country. Uses ISO 3166 country codes.
-     * @param returnRegion If specified, fetches only filing calendars that apply to tax filings in this specific region. Uses ISO 3166 region codes.
-     * @return FetchResult<FilingCalendarModel>
-     */
-    public Future<FetchResult<FilingCalendarModel>> queryFilingCalendarsAsync(String filter, Integer top, Integer skip, String orderBy, String returnCountry, String returnRegion) {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/filingcalendars");
-        path.addQuery("$filter", filter);
-        path.addQuery("$top", top);
-        path.addQuery("$skip", skip);
-        path.addQuery("$orderBy", orderBy);
-        path.addQuery("returnCountry", returnCountry);
-        path.addQuery("returnRegion", returnRegion);
-        return this.threadPool.submit((RestCall<FetchResult<FilingCalendarModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<FilingCalendarModel>>(){}));
-    }
-
-    /**
-     * Retrieve all filing calendars
-     * 
-     * This API is available by invitation only.
-     *             
-     * This API is intended to replace the GET `/api/v2/filingcalendars` API. The fetch request object is posted on the body of the request instead of the URI, so it's not limited by a set number of characters.
-     * The documentation of the GET API shows how filtering, sorting and pagination works.
-     * 
-     * ### Security Policies
-     * 
-     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
-     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
-     * * This API is available by invitation only.<br />*Exempt security roles*:  ComplianceRootUser, ComplianceAdmin, ComplianceUser, TechnicalSupportAdmin, TechnicalSupportUser.
-     * 
-     * @param returnCountry If specified, fetches only filing calendars that apply to tax filings in this specific country. Uses ISO 3166 country codes.
-     * @param returnRegion If specified, fetches only filing calendars that apply to tax filings in this specific region. Uses ISO 3166 region codes.
-     * @param model Query object to filter, sort and paginate the filing calendars.
-     * @return FetchResult<FilingCalendarModel>
-     */
-    public FetchResult<FilingCalendarModel> queryFilingCalendarsPost(String returnCountry, String returnRegion, QueryRequestModel model) throws Exception {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/filingcalendars/query");
-        path.addQuery("returnCountry", returnCountry);
-        path.addQuery("returnRegion", returnRegion);
-        return ((RestCall<FetchResult<FilingCalendarModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<FetchResult<FilingCalendarModel>>(){})).call();
-    }
-
-    /**
-     * Retrieve all filing calendars
-     * 
-     * This API is available by invitation only.
-     *             
-     * This API is intended to replace the GET `/api/v2/filingcalendars` API. The fetch request object is posted on the body of the request instead of the URI, so it's not limited by a set number of characters.
-     * The documentation of the GET API shows how filtering, sorting and pagination works.
-     * 
-     * ### Security Policies
-     * 
-     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
-     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
-     * * This API is available by invitation only.<br />*Exempt security roles*:  ComplianceRootUser, ComplianceAdmin, ComplianceUser, TechnicalSupportAdmin, TechnicalSupportUser.
-     * 
-     * @param returnCountry If specified, fetches only filing calendars that apply to tax filings in this specific country. Uses ISO 3166 country codes.
-     * @param returnRegion If specified, fetches only filing calendars that apply to tax filings in this specific region. Uses ISO 3166 region codes.
-     * @param model Query object to filter, sort and paginate the filing calendars.
-     * @return FetchResult<FilingCalendarModel>
-     */
-    public Future<FetchResult<FilingCalendarModel>> queryFilingCalendarsPostAsync(String returnCountry, String returnRegion, QueryRequestModel model) {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/filingcalendars/query");
-        path.addQuery("returnCountry", returnCountry);
-        path.addQuery("returnRegion", returnRegion);
-        return this.threadPool.submit((RestCall<FetchResult<FilingCalendarModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<FetchResult<FilingCalendarModel>>(){}));
-    }
-
-    /**
-     * Retrieve all filing requests
-     * 
-     * This API is available by invitation only.
-     *             
-     * This API is deprecated - please use POST `/api/v2/filingrequests/query` API.
-     *             
-     * A "filing request" represents a request to change an existing filing calendar.  Filing requests
-     * are reviewed and validated by Avalara Compliance before being implemented.
+     * This endpoint is limited to returning 250 error transactions at a time maximum.
      *             
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * Paginate your results using the `$top`, `$skip`, and `$orderby` parameters.
      * 
      * ### Security Policies
      * 
-     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
-     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
-     * * This API is available by invitation only.<br />*Exempt security roles*:  ComplianceRootUser, ComplianceAdmin, ComplianceUser, TechnicalSupportAdmin, TechnicalSupportUser.
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, ProStoresOperator, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
+     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
      * 
-     * @param filingCalendarId Specific filing calendar id for the request
-     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).
+     * @param companyCode The company code to filter on. This query parameter is required.
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* companyId, avataxErrorJson, avataxCreateTransactionJson
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<FilingRequestModel>
+     * @return FetchResult<ErrorTransactionOutputModel>
      */
-    public FetchResult<FilingRequestModel> queryFilingRequests(Integer filingCalendarId, String filter, Integer top, Integer skip, String orderBy) throws Exception {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/filingrequests");
-        path.addQuery("filingCalendarId", filingCalendarId);
+    public FetchResult<ErrorTransactionOutputModel> listErrorTransactions(String companyCode, String filter, Integer top, Integer skip, String orderBy) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/errortransactions");
+        path.addQuery("companyCode", companyCode);
         path.addQuery("$filter", filter);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<FilingRequestModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<FilingRequestModel>>(){})).call();
+        return ((RestCall<FetchResult<ErrorTransactionOutputModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ErrorTransactionOutputModel>>(){})).call();
     }
 
     /**
-     * Retrieve all filing requests
+     * Retrieve list of error transactions
      * 
-     * This API is available by invitation only.
+     * List error transactions attached to this company. Results are dependent on `$filter` if provided.
      *             
-     * This API is deprecated - please use POST `/api/v2/filingrequests/query` API.
-     *             
-     * A "filing request" represents a request to change an existing filing calendar.  Filing requests
-     * are reviewed and validated by Avalara Compliance before being implemented.
+     * This endpoint is limited to returning 250 error transactions at a time maximum.
      *             
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * Paginate your results using the `$top`, `$skip`, and `$orderby` parameters.
      * 
      * ### Security Policies
      * 
-     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
-     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
-     * * This API is available by invitation only.<br />*Exempt security roles*:  ComplianceRootUser, ComplianceAdmin, ComplianceUser, TechnicalSupportAdmin, TechnicalSupportUser.
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, ProStoresOperator, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
+     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
      * 
-     * @param filingCalendarId Specific filing calendar id for the request
-     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).
+     * @param companyCode The company code to filter on. This query parameter is required.
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* companyId, avataxErrorJson, avataxCreateTransactionJson
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<FilingRequestModel>
+     * @return FetchResult<ErrorTransactionOutputModel>
      */
-    public Future<FetchResult<FilingRequestModel>> queryFilingRequestsAsync(Integer filingCalendarId, String filter, Integer top, Integer skip, String orderBy) {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/filingrequests");
-        path.addQuery("filingCalendarId", filingCalendarId);
+    public Future<FetchResult<ErrorTransactionOutputModel>> listErrorTransactionsAsync(String companyCode, String filter, Integer top, Integer skip, String orderBy) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/errortransactions");
+        path.addQuery("companyCode", companyCode);
         path.addQuery("$filter", filter);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<FilingRequestModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<FilingRequestModel>>(){}));
-    }
-
-    /**
-     * Retrieve all filing requests
-     * 
-     * This API is available by invitation only.
-     *             
-     * This API is intended to replace the GET `/api/v2/filingrequests` API. The fetch request object is posted on the body of the request instead of the URI, so it's not limited by a set number of characters.
-     * The documentation of the GET API shows how filtering, sorting and pagination works.
-     * 
-     * ### Security Policies
-     * 
-     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
-     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
-     * * This API is available by invitation only.<br />*Exempt security roles*:  ComplianceRootUser, ComplianceAdmin, ComplianceUser, TechnicalSupportAdmin, TechnicalSupportUser.
-     * 
-     * @param filingCalendarId Specific filing calendar id for the request
-     * @param model Query object to filter, sort and paginate the filing calendars.
-     * @return FetchResult<FilingRequestModel>
-     */
-    public FetchResult<FilingRequestModel> queryFilingRequestsPost(Integer filingCalendarId, QueryRequestModel model) throws Exception {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/filingrequests/query");
-        path.addQuery("filingCalendarId", filingCalendarId);
-        return ((RestCall<FetchResult<FilingRequestModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<FetchResult<FilingRequestModel>>(){})).call();
-    }
-
-    /**
-     * Retrieve all filing requests
-     * 
-     * This API is available by invitation only.
-     *             
-     * This API is intended to replace the GET `/api/v2/filingrequests` API. The fetch request object is posted on the body of the request instead of the URI, so it's not limited by a set number of characters.
-     * The documentation of the GET API shows how filtering, sorting and pagination works.
-     * 
-     * ### Security Policies
-     * 
-     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
-     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
-     * * This API is available by invitation only.<br />*Exempt security roles*:  ComplianceRootUser, ComplianceAdmin, ComplianceUser, TechnicalSupportAdmin, TechnicalSupportUser.
-     * 
-     * @param filingCalendarId Specific filing calendar id for the request
-     * @param model Query object to filter, sort and paginate the filing calendars.
-     * @return FetchResult<FilingRequestModel>
-     */
-    public Future<FetchResult<FilingRequestModel>> queryFilingRequestsPostAsync(Integer filingCalendarId, QueryRequestModel model) {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/filingrequests/query");
-        path.addQuery("filingCalendarId", filingCalendarId);
-        return this.threadPool.submit((RestCall<FetchResult<FilingRequestModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<FetchResult<FilingRequestModel>>(){}));
-    }
-
-    /**
-     * Create a new filing request to edit a filing calendar
-     * 
-     * This API is available by invitation only.
-     *             
-     * A "filing request" represents a request to change an existing filing calendar.  Filing requests
-     * are reviewed and validated by Avalara Compliance before being implemented.
-     *             
-     * Certain users may not update filing calendars directly.  Instead, they may submit an edit request
-     * to modify the value of a filing calendar using this API.
-     * 
-     * ### Security Policies
-     * 
-     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
-     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
-     * * This API is available by invitation only.<br />*Exempt security roles*:  ComplianceRootUser, ComplianceAdmin, ComplianceUser, TechnicalSupportAdmin, TechnicalSupportUser.
-     * 
-     * @param companyId The unique ID of the company that owns the filing calendar object
-     * @param id The unique ID number of the filing calendar to edit
-     * @param model A list of filing calendar edits to be made
-     * @return FilingRequestModel
-     */
-    public FilingRequestModel requestFilingCalendarUpdate(Integer companyId, Integer id, ArrayList<FilingRequestModel> model) throws Exception {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingcalendars/{id}/edit/request");
-        path.applyField("companyId", companyId);
-        path.applyField("id", id);
-        return ((RestCall<FilingRequestModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<FilingRequestModel>(){})).call();
-    }
-
-    /**
-     * Create a new filing request to edit a filing calendar
-     * 
-     * This API is available by invitation only.
-     *             
-     * A "filing request" represents a request to change an existing filing calendar.  Filing requests
-     * are reviewed and validated by Avalara Compliance before being implemented.
-     *             
-     * Certain users may not update filing calendars directly.  Instead, they may submit an edit request
-     * to modify the value of a filing calendar using this API.
-     * 
-     * ### Security Policies
-     * 
-     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
-     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
-     * * This API is available by invitation only.<br />*Exempt security roles*:  ComplianceRootUser, ComplianceAdmin, ComplianceUser, TechnicalSupportAdmin, TechnicalSupportUser.
-     * 
-     * @param companyId The unique ID of the company that owns the filing calendar object
-     * @param id The unique ID number of the filing calendar to edit
-     * @param model A list of filing calendar edits to be made
-     * @return FilingRequestModel
-     */
-    public Future<FilingRequestModel> requestFilingCalendarUpdateAsync(Integer companyId, Integer id, ArrayList<FilingRequestModel> model) {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingcalendars/{id}/edit/request");
-        path.applyField("companyId", companyId);
-        path.applyField("id", id);
-        return this.threadPool.submit((RestCall<FilingRequestModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<FilingRequestModel>(){}));
-    }
-
-    /**
-     * Edit existing Filing Calendar
-     * 
-     * This API is available by invitation only.
-     * 
-     * ### Security Policies
-     * 
-     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
-     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
-     * * This API is available by invitation only.<br />*Exempt security roles*:  ComplianceRootUser, ComplianceAdmin, ComplianceUser, TechnicalSupportAdmin, TechnicalSupportUser.
-     * 
-     * @param companyId The unique ID of the company that owns the filing calendar object
-     * @param id The unique ID of the filing calendar object
-     * @param model The filing calendar model you are wishing to update with.
-     * @return FilingCalendarModel
-     */
-    public FilingCalendarModel updateFilingCalendar(Integer companyId, Long id, FilingCalendarModel model) throws Exception {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingcalendars/{id}");
-        path.applyField("companyId", companyId);
-        path.applyField("id", id);
-        return ((RestCall<FilingCalendarModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<FilingCalendarModel>(){})).call();
-    }
-
-    /**
-     * Edit existing Filing Calendar
-     * 
-     * This API is available by invitation only.
-     * 
-     * ### Security Policies
-     * 
-     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
-     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
-     * * This API is available by invitation only.<br />*Exempt security roles*:  ComplianceRootUser, ComplianceAdmin, ComplianceUser, TechnicalSupportAdmin, TechnicalSupportUser.
-     * 
-     * @param companyId The unique ID of the company that owns the filing calendar object
-     * @param id The unique ID of the filing calendar object
-     * @param model The filing calendar model you are wishing to update with.
-     * @return FilingCalendarModel
-     */
-    public Future<FilingCalendarModel> updateFilingCalendarAsync(Integer companyId, Long id, FilingCalendarModel model) {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingcalendars/{id}");
-        path.applyField("companyId", companyId);
-        path.applyField("id", id);
-        return this.threadPool.submit((RestCall<FilingCalendarModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<FilingCalendarModel>(){}));
-    }
-
-    /**
-     * Edit existing Filing Request
-     * 
-     * This API is available by invitation only.
-     * A "filing request" represents a request to change an existing filing calendar.  Filing requests
-     * are reviewed and validated by Avalara Compliance before being implemented.
-     * 
-     * ### Security Policies
-     * 
-     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
-     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
-     * * This API is available by invitation only.<br />*Exempt security roles*:  ComplianceRootUser, ComplianceAdmin, ComplianceUser, TechnicalSupportAdmin, TechnicalSupportUser.
-     * 
-     * @param companyId The unique ID of the company that owns the filing request object
-     * @param id The unique ID of the filing request object
-     * @param model A list of filing calendar edits to be made
-     * @return FilingRequestModel
-     */
-    public FilingRequestModel updateFilingRequest(Integer companyId, Integer id, FilingRequestModel model) throws Exception {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingrequests/{id}");
-        path.applyField("companyId", companyId);
-        path.applyField("id", id);
-        return ((RestCall<FilingRequestModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<FilingRequestModel>(){})).call();
-    }
-
-    /**
-     * Edit existing Filing Request
-     * 
-     * This API is available by invitation only.
-     * A "filing request" represents a request to change an existing filing calendar.  Filing requests
-     * are reviewed and validated by Avalara Compliance before being implemented.
-     * 
-     * ### Security Policies
-     * 
-     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
-     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
-     * * This API is available by invitation only.<br />*Exempt security roles*:  ComplianceRootUser, ComplianceAdmin, ComplianceUser, TechnicalSupportAdmin, TechnicalSupportUser.
-     * 
-     * @param companyId The unique ID of the company that owns the filing request object
-     * @param id The unique ID of the filing request object
-     * @param model A list of filing calendar edits to be made
-     * @return FilingRequestModel
-     */
-    public Future<FilingRequestModel> updateFilingRequestAsync(Integer companyId, Integer id, FilingRequestModel model) {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingrequests/{id}");
-        path.applyField("companyId", companyId);
-        path.applyField("id", id);
-        return this.threadPool.submit((RestCall<FilingRequestModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<FilingRequestModel>(){}));
-    }
-
-    /**
-     * Approve all filings for the specified company in the given filing period.
-     * 
-     * This API is available by invitation only.
-     * Approving a return means the customer is ready to let Avalara file that return.
-     * Customer either approves themselves from admin console,
-     * else system auto-approves the night before the filing cycle.
-     * Sometimes Compliance has to manually unapprove and reapprove to modify liability or filing for the customer.
-     * A "filing period" is the year and month of the date of the latest customer transaction allowed to be reported on a filing,
-     * based on filing frequency of filing.
-     * 
-     * ### Security Policies
-     * 
-     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, CSPTester, FirmUser, SSTAdmin, TechnicalSupportAdmin.
-     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
-     * * This API is available by invitation only.<br />*Exempt security roles*:  ComplianceRootUser, ComplianceAdmin, ComplianceUser, TechnicalSupportAdmin, TechnicalSupportUser.
-     * 
-     * @param companyId The ID of the company that owns the filings.
-     * @param year The year of the filing period to approve.
-     * @param month The month of the filing period to approve.
-     * @param model The approve request you wish to execute.
-     * @return ArrayList<FilingModel>
-     */
-    public ArrayList<FilingModel> approveFilings(Integer companyId, Short year, Byte month, ApproveFilingsModel model) throws Exception {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/approve");
-        path.applyField("companyId", companyId);
-        path.applyField("year", year);
-        path.applyField("month", month);
-        return ((RestCall<ArrayList<FilingModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<FilingModel>>(){})).call();
-    }
-
-    /**
-     * Approve all filings for the specified company in the given filing period.
-     * 
-     * This API is available by invitation only.
-     * Approving a return means the customer is ready to let Avalara file that return.
-     * Customer either approves themselves from admin console,
-     * else system auto-approves the night before the filing cycle.
-     * Sometimes Compliance has to manually unapprove and reapprove to modify liability or filing for the customer.
-     * A "filing period" is the year and month of the date of the latest customer transaction allowed to be reported on a filing,
-     * based on filing frequency of filing.
-     * 
-     * ### Security Policies
-     * 
-     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, CSPTester, FirmUser, SSTAdmin, TechnicalSupportAdmin.
-     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
-     * * This API is available by invitation only.<br />*Exempt security roles*:  ComplianceRootUser, ComplianceAdmin, ComplianceUser, TechnicalSupportAdmin, TechnicalSupportUser.
-     * 
-     * @param companyId The ID of the company that owns the filings.
-     * @param year The year of the filing period to approve.
-     * @param month The month of the filing period to approve.
-     * @param model The approve request you wish to execute.
-     * @return ArrayList<FilingModel>
-     */
-    public Future<ArrayList<FilingModel>> approveFilingsAsync(Integer companyId, Short year, Byte month, ApproveFilingsModel model) {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/approve");
-        path.applyField("companyId", companyId);
-        path.applyField("year", year);
-        path.applyField("month", month);
-        return this.threadPool.submit((RestCall<ArrayList<FilingModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<FilingModel>>(){}));
-    }
-
-    /**
-     * Approve all filings for the specified company in the given filing period and country.
-     * 
-     * This API is available by invitation only.
-     * Approving a return means the customer is ready to let Avalara file that return.
-     * Customer either approves themselves from admin console,
-     * else system auto-approves the night before the filing cycle.
-     * Sometimes Compliance has to manually unapprove and reapprove to modify liability or filing for the customer.
-     * A "filing period" is the year and month of the date of the latest customer transaction allowed to be reported on a filing,
-     * based on filing frequency of filing.
-     * 
-     * ### Security Policies
-     * 
-     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, CSPTester, FirmUser, SSTAdmin, TechnicalSupportAdmin.
-     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
-     * * This API is available by invitation only.<br />*Exempt security roles*:  ComplianceRootUser, ComplianceAdmin, ComplianceUser, TechnicalSupportAdmin, TechnicalSupportUser.
-     * 
-     * @param companyId The ID of the company that owns the filings.
-     * @param year The year of the filing period to approve.
-     * @param month The month of the filing period to approve.
-     * @param country The two-character ISO-3166 code for the country.
-     * @param model The approve request you wish to execute.
-     * @return ArrayList<FilingModel>
-     */
-    public ArrayList<FilingModel> approveFilingsCountry(Integer companyId, Short year, Byte month, String country, ApproveFilingsModel model) throws Exception {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/{country}/approve");
-        path.applyField("companyId", companyId);
-        path.applyField("year", year);
-        path.applyField("month", month);
-        path.applyField("country", country);
-        return ((RestCall<ArrayList<FilingModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<FilingModel>>(){})).call();
-    }
-
-    /**
-     * Approve all filings for the specified company in the given filing period and country.
-     * 
-     * This API is available by invitation only.
-     * Approving a return means the customer is ready to let Avalara file that return.
-     * Customer either approves themselves from admin console,
-     * else system auto-approves the night before the filing cycle.
-     * Sometimes Compliance has to manually unapprove and reapprove to modify liability or filing for the customer.
-     * A "filing period" is the year and month of the date of the latest customer transaction allowed to be reported on a filing,
-     * based on filing frequency of filing.
-     * 
-     * ### Security Policies
-     * 
-     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, CSPTester, FirmUser, SSTAdmin, TechnicalSupportAdmin.
-     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
-     * * This API is available by invitation only.<br />*Exempt security roles*:  ComplianceRootUser, ComplianceAdmin, ComplianceUser, TechnicalSupportAdmin, TechnicalSupportUser.
-     * 
-     * @param companyId The ID of the company that owns the filings.
-     * @param year The year of the filing period to approve.
-     * @param month The month of the filing period to approve.
-     * @param country The two-character ISO-3166 code for the country.
-     * @param model The approve request you wish to execute.
-     * @return ArrayList<FilingModel>
-     */
-    public Future<ArrayList<FilingModel>> approveFilingsCountryAsync(Integer companyId, Short year, Byte month, String country, ApproveFilingsModel model) {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/{country}/approve");
-        path.applyField("companyId", companyId);
-        path.applyField("year", year);
-        path.applyField("month", month);
-        path.applyField("country", country);
-        return this.threadPool.submit((RestCall<ArrayList<FilingModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<FilingModel>>(){}));
-    }
-
-    /**
-     * Approve all filings for the specified company in the given filing period, country and region.
-     * 
-     * This API is available by invitation only.
-     * Approving a return means the customer is ready to let Avalara file that return.
-     * Customer either approves themselves from admin console,
-     * else system auto-approves the night before the filing cycle
-     * Sometimes Compliance has to manually unapprove and reapprove to modify liability or filing for the customer.
-     * A "filing period" is the year and month of the date of the latest customer transaction allowed to be reported on a filing,
-     * based on filing frequency of filing.
-     * 
-     * ### Security Policies
-     * 
-     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, CSPTester, FirmUser, SSTAdmin, TechnicalSupportAdmin.
-     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
-     * * This API is available by invitation only.<br />*Exempt security roles*:  ComplianceRootUser, ComplianceAdmin, ComplianceUser, TechnicalSupportAdmin, TechnicalSupportUser.
-     * 
-     * @param companyId The ID of the company that owns the filings.
-     * @param year The year of the filing period to approve.
-     * @param month The month of the filing period to approve.
-     * @param country The two-character ISO-3166 code for the country.
-     * @param region The two or three character region code for the region.
-     * @param model The approve request you wish to execute.
-     * @return ArrayList<FilingModel>
-     */
-    public ArrayList<FilingModel> approveFilingsCountryRegion(Integer companyId, Short year, Byte month, String country, String region, ApproveFilingsModel model) throws Exception {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/{country}/{region}/approve");
-        path.applyField("companyId", companyId);
-        path.applyField("year", year);
-        path.applyField("month", month);
-        path.applyField("country", country);
-        path.applyField("region", region);
-        return ((RestCall<ArrayList<FilingModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<FilingModel>>(){})).call();
-    }
-
-    /**
-     * Approve all filings for the specified company in the given filing period, country and region.
-     * 
-     * This API is available by invitation only.
-     * Approving a return means the customer is ready to let Avalara file that return.
-     * Customer either approves themselves from admin console,
-     * else system auto-approves the night before the filing cycle
-     * Sometimes Compliance has to manually unapprove and reapprove to modify liability or filing for the customer.
-     * A "filing period" is the year and month of the date of the latest customer transaction allowed to be reported on a filing,
-     * based on filing frequency of filing.
-     * 
-     * ### Security Policies
-     * 
-     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, CSPTester, FirmUser, SSTAdmin, TechnicalSupportAdmin.
-     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
-     * * This API is available by invitation only.<br />*Exempt security roles*:  ComplianceRootUser, ComplianceAdmin, ComplianceUser, TechnicalSupportAdmin, TechnicalSupportUser.
-     * 
-     * @param companyId The ID of the company that owns the filings.
-     * @param year The year of the filing period to approve.
-     * @param month The month of the filing period to approve.
-     * @param country The two-character ISO-3166 code for the country.
-     * @param region The two or three character region code for the region.
-     * @param model The approve request you wish to execute.
-     * @return ArrayList<FilingModel>
-     */
-    public Future<ArrayList<FilingModel>> approveFilingsCountryRegionAsync(Integer companyId, Short year, Byte month, String country, String region, ApproveFilingsModel model) {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/{country}/{region}/approve");
-        path.applyField("companyId", companyId);
-        path.applyField("year", year);
-        path.applyField("month", month);
-        path.applyField("country", country);
-        path.applyField("region", region);
-        return this.threadPool.submit((RestCall<ArrayList<FilingModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<FilingModel>>(){}));
-    }
-
-    /**
-     * Add an adjustment to a given filing.
-     * 
-     * This API is available by invitation only.
-     * An "Adjustment" is usually an increase or decrease to customer funding to Avalara,
-     * such as early filer discount amounts that are refunded to the customer, or efile fees from websites.
-     * Sometimes may be a manual change in tax liability similar to an augmentation.
-     * This API creates a new adjustment for an existing tax filing.
-     * This API can only be used when the filing has not yet been approved.
-     * 
-     * ### Security Policies
-     * 
-     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
-     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
-     * * This API is available by invitation only.<br />*Exempt security roles*:  ComplianceRootUser, ComplianceAdmin, ComplianceUser, TechnicalSupportAdmin, TechnicalSupportUser.
-     * 
-     * @param companyId The ID of the company that owns the filing being adjusted.
-     * @param year The year of the filing's filing period being adjusted.
-     * @param month The month of the filing's filing period being adjusted.
-     * @param country The two-character ISO-3166 code for the country of the filing being adjusted.
-     * @param region The two or three character region code for the region.
-     * @param formCode The unique code of the form being adjusted.
-     * @param model A list of Adjustments to be created for the specified filing.
-     * @return ArrayList<FilingAdjustmentModel>
-     */
-    public ArrayList<FilingAdjustmentModel> createReturnAdjustment(Integer companyId, Short year, Byte month, String country, String region, String formCode, ArrayList<FilingAdjustmentModel> model) throws Exception {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/{country}/{region}/{formCode}/adjust");
-        path.applyField("companyId", companyId);
-        path.applyField("year", year);
-        path.applyField("month", month);
-        path.applyField("country", country);
-        path.applyField("region", region);
-        path.applyField("formCode", formCode);
-        return ((RestCall<ArrayList<FilingAdjustmentModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<FilingAdjustmentModel>>(){})).call();
-    }
-
-    /**
-     * Add an adjustment to a given filing.
-     * 
-     * This API is available by invitation only.
-     * An "Adjustment" is usually an increase or decrease to customer funding to Avalara,
-     * such as early filer discount amounts that are refunded to the customer, or efile fees from websites.
-     * Sometimes may be a manual change in tax liability similar to an augmentation.
-     * This API creates a new adjustment for an existing tax filing.
-     * This API can only be used when the filing has not yet been approved.
-     * 
-     * ### Security Policies
-     * 
-     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
-     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
-     * * This API is available by invitation only.<br />*Exempt security roles*:  ComplianceRootUser, ComplianceAdmin, ComplianceUser, TechnicalSupportAdmin, TechnicalSupportUser.
-     * 
-     * @param companyId The ID of the company that owns the filing being adjusted.
-     * @param year The year of the filing's filing period being adjusted.
-     * @param month The month of the filing's filing period being adjusted.
-     * @param country The two-character ISO-3166 code for the country of the filing being adjusted.
-     * @param region The two or three character region code for the region.
-     * @param formCode The unique code of the form being adjusted.
-     * @param model A list of Adjustments to be created for the specified filing.
-     * @return ArrayList<FilingAdjustmentModel>
-     */
-    public Future<ArrayList<FilingAdjustmentModel>> createReturnAdjustmentAsync(Integer companyId, Short year, Byte month, String country, String region, String formCode, ArrayList<FilingAdjustmentModel> model) {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/{country}/{region}/{formCode}/adjust");
-        path.applyField("companyId", companyId);
-        path.applyField("year", year);
-        path.applyField("month", month);
-        path.applyField("country", country);
-        path.applyField("region", region);
-        path.applyField("formCode", formCode);
-        return this.threadPool.submit((RestCall<ArrayList<FilingAdjustmentModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<FilingAdjustmentModel>>(){}));
-    }
-
-    /**
-     * Add an augmentation for a given filing.
-     * 
-     * This API is available by invitation only.
-     * An "Augmentation" is a manually added increase or decrease in tax liability, by either customer or Avalara
-     * usually due to customer wanting to report tax Avatax does not support, e.g. bad debts, rental tax.
-     * This API creates a new augmentation for an existing tax filing.
-     * This API can only be used when the filing has not been approved.
-     * 
-     * ### Security Policies
-     * 
-     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, CSPTester, FirmUser, SSTAdmin, TechnicalSupportAdmin.
-     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
-     * * This API is available by invitation only.<br />*Exempt security roles*:  ComplianceRootUser, ComplianceAdmin, ComplianceUser, TechnicalSupportAdmin, TechnicalSupportUser.
-     * 
-     * @param companyId The ID of the company that owns the filing being changed.
-     * @param year The month of the filing's filing period being changed.
-     * @param month The month of the filing's filing period being changed.
-     * @param country The two-character ISO-3166 code for the country of the filing being changed.
-     * @param region The two or three character region code for the region of the filing being changed.
-     * @param formCode The unique code of the form being changed.
-     * @param model A list of augmentations to be created for the specified filing.
-     * @return ArrayList<FilingAugmentationModel>
-     */
-    public ArrayList<FilingAugmentationModel> createReturnAugmentation(Integer companyId, Short year, Byte month, String country, String region, String formCode, ArrayList<FilingAugmentationModel> model) throws Exception {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/{country}/{region}/{formCode}/augment");
-        path.applyField("companyId", companyId);
-        path.applyField("year", year);
-        path.applyField("month", month);
-        path.applyField("country", country);
-        path.applyField("region", region);
-        path.applyField("formCode", formCode);
-        return ((RestCall<ArrayList<FilingAugmentationModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<FilingAugmentationModel>>(){})).call();
-    }
-
-    /**
-     * Add an augmentation for a given filing.
-     * 
-     * This API is available by invitation only.
-     * An "Augmentation" is a manually added increase or decrease in tax liability, by either customer or Avalara
-     * usually due to customer wanting to report tax Avatax does not support, e.g. bad debts, rental tax.
-     * This API creates a new augmentation for an existing tax filing.
-     * This API can only be used when the filing has not been approved.
-     * 
-     * ### Security Policies
-     * 
-     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, CSPTester, FirmUser, SSTAdmin, TechnicalSupportAdmin.
-     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
-     * * This API is available by invitation only.<br />*Exempt security roles*:  ComplianceRootUser, ComplianceAdmin, ComplianceUser, TechnicalSupportAdmin, TechnicalSupportUser.
-     * 
-     * @param companyId The ID of the company that owns the filing being changed.
-     * @param year The month of the filing's filing period being changed.
-     * @param month The month of the filing's filing period being changed.
-     * @param country The two-character ISO-3166 code for the country of the filing being changed.
-     * @param region The two or three character region code for the region of the filing being changed.
-     * @param formCode The unique code of the form being changed.
-     * @param model A list of augmentations to be created for the specified filing.
-     * @return ArrayList<FilingAugmentationModel>
-     */
-    public Future<ArrayList<FilingAugmentationModel>> createReturnAugmentationAsync(Integer companyId, Short year, Byte month, String country, String region, String formCode, ArrayList<FilingAugmentationModel> model) {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/{country}/{region}/{formCode}/augment");
-        path.applyField("companyId", companyId);
-        path.applyField("year", year);
-        path.applyField("month", month);
-        path.applyField("country", country);
-        path.applyField("region", region);
-        path.applyField("formCode", formCode);
-        return this.threadPool.submit((RestCall<ArrayList<FilingAugmentationModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<FilingAugmentationModel>>(){}));
-    }
-
-    /**
-     * Add an payment to a given filing.
-     * 
-     * This API is available by invitation only.
-     * An "Payment" is usually an increase or decrease to customer funding to Avalara,
-     * such as early filer discount amounts that are refunded to the customer, or efile fees from websites.
-     * Sometimes may be a manual change in tax liability similar to an augmentation.
-     * This API creates a new payment for an existing tax filing.
-     * This API can only be used when the filing has not yet been approved.
-     * 
-     * ### Security Policies
-     * 
-     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, CSPTester, FirmUser, SSTAdmin, TechnicalSupportAdmin.
-     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
-     * * This API is available by invitation only.<br />*Exempt security roles*:  ComplianceRootUser, ComplianceAdmin, ComplianceUser, TechnicalSupportAdmin, TechnicalSupportUser.
-     * 
-     * @param companyId The ID of the company that owns the filing being adjusted.
-     * @param year The year of the filing's filing period being adjusted.
-     * @param month The month of the filing's filing period being adjusted.
-     * @param country The two-character ISO-3166 code for the country of the filing being adjusted.
-     * @param region The two or three character region code for the region.
-     * @param formCode The unique code of the form being adjusted.
-     * @param model A list of Payments to be created for the specified filing.
-     * @return ArrayList<FilingPaymentModel>
-     */
-    public ArrayList<FilingPaymentModel> createReturnPayment(Integer companyId, Short year, Byte month, String country, String region, String formCode, ArrayList<FilingPaymentModel> model) throws Exception {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/{country}/{region}/{formCode}/payment");
-        path.applyField("companyId", companyId);
-        path.applyField("year", year);
-        path.applyField("month", month);
-        path.applyField("country", country);
-        path.applyField("region", region);
-        path.applyField("formCode", formCode);
-        return ((RestCall<ArrayList<FilingPaymentModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<FilingPaymentModel>>(){})).call();
-    }
-
-    /**
-     * Add an payment to a given filing.
-     * 
-     * This API is available by invitation only.
-     * An "Payment" is usually an increase or decrease to customer funding to Avalara,
-     * such as early filer discount amounts that are refunded to the customer, or efile fees from websites.
-     * Sometimes may be a manual change in tax liability similar to an augmentation.
-     * This API creates a new payment for an existing tax filing.
-     * This API can only be used when the filing has not yet been approved.
-     * 
-     * ### Security Policies
-     * 
-     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, CSPTester, FirmUser, SSTAdmin, TechnicalSupportAdmin.
-     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
-     * * This API is available by invitation only.<br />*Exempt security roles*:  ComplianceRootUser, ComplianceAdmin, ComplianceUser, TechnicalSupportAdmin, TechnicalSupportUser.
-     * 
-     * @param companyId The ID of the company that owns the filing being adjusted.
-     * @param year The year of the filing's filing period being adjusted.
-     * @param month The month of the filing's filing period being adjusted.
-     * @param country The two-character ISO-3166 code for the country of the filing being adjusted.
-     * @param region The two or three character region code for the region.
-     * @param formCode The unique code of the form being adjusted.
-     * @param model A list of Payments to be created for the specified filing.
-     * @return ArrayList<FilingPaymentModel>
-     */
-    public Future<ArrayList<FilingPaymentModel>> createReturnPaymentAsync(Integer companyId, Short year, Byte month, String country, String region, String formCode, ArrayList<FilingPaymentModel> model) {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/{country}/{region}/{formCode}/payment");
-        path.applyField("companyId", companyId);
-        path.applyField("year", year);
-        path.applyField("month", month);
-        path.applyField("country", country);
-        path.applyField("region", region);
-        path.applyField("formCode", formCode);
-        return this.threadPool.submit((RestCall<ArrayList<FilingPaymentModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<FilingPaymentModel>>(){}));
-    }
-
-    /**
-     * Delete an adjustment for a given filing.
-     * 
-     * This API is available by invitation only.
-     * An "Adjustment" is usually an increase or decrease to customer funding to Avalara,
-     * such as early filer discount amounts that are refunded to the customer, or efile fees from websites.
-     * Sometimes may be a manual change in tax liability similar to an augmentation.
-     * This API deletes an adjustment for an existing tax filing.
-     * This API can only be used when the filing has been unapproved.
-     * 
-     * ### Security Policies
-     * 
-     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, CSPTester, FirmUser, SSTAdmin, TechnicalSupportAdmin.
-     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
-     * * This API is available by invitation only.<br />*Exempt security roles*:  ComplianceRootUser, ComplianceAdmin, ComplianceUser, TechnicalSupportAdmin, TechnicalSupportUser.
-     * 
-     * @param companyId The ID of the company that owns the filing being adjusted.
-     * @param id The ID of the adjustment being deleted.
-     * @param type The type of adjustment that you are trying to delete.
-     * @return ArrayList<ErrorDetail>
-     */
-    public ArrayList<ErrorDetail> deleteReturnAdjustment(Integer companyId, Long id, String type) throws Exception {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/adjust/{id}");
-        path.applyField("companyId", companyId);
-        path.applyField("id", id);
-        path.addQuery("type", type);
-        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){})).call();
-    }
-
-    /**
-     * Delete an adjustment for a given filing.
-     * 
-     * This API is available by invitation only.
-     * An "Adjustment" is usually an increase or decrease to customer funding to Avalara,
-     * such as early filer discount amounts that are refunded to the customer, or efile fees from websites.
-     * Sometimes may be a manual change in tax liability similar to an augmentation.
-     * This API deletes an adjustment for an existing tax filing.
-     * This API can only be used when the filing has been unapproved.
-     * 
-     * ### Security Policies
-     * 
-     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, CSPTester, FirmUser, SSTAdmin, TechnicalSupportAdmin.
-     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
-     * * This API is available by invitation only.<br />*Exempt security roles*:  ComplianceRootUser, ComplianceAdmin, ComplianceUser, TechnicalSupportAdmin, TechnicalSupportUser.
-     * 
-     * @param companyId The ID of the company that owns the filing being adjusted.
-     * @param id The ID of the adjustment being deleted.
-     * @param type The type of adjustment that you are trying to delete.
-     * @return ArrayList<ErrorDetail>
-     */
-    public Future<ArrayList<ErrorDetail>> deleteReturnAdjustmentAsync(Integer companyId, Long id, String type) {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/adjust/{id}");
-        path.applyField("companyId", companyId);
-        path.applyField("id", id);
-        path.addQuery("type", type);
-        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){}));
-    }
-
-    /**
-     * Delete an augmentation for a given filing.
-     * 
-     * This API is available by invitation only.
-     * An "Augmentation" is a manually added increase or decrease in tax liability, by either customer or Avalara
-     * usually due to customer wanting to report tax Avatax does not support, e.g. bad debts, rental tax.
-     * This API deletes an augmentation for an existing tax filing.
-     * This API can only be used when the filing has been unapproved.
-     * 
-     * ### Security Policies
-     * 
-     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, CSPTester, FirmUser, SSTAdmin, TechnicalSupportAdmin.
-     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
-     * * This API is available by invitation only.<br />*Exempt security roles*:  ComplianceRootUser, ComplianceAdmin, ComplianceUser, TechnicalSupportAdmin, TechnicalSupportUser.
-     * 
-     * @param companyId The ID of the company that owns the filing being changed.
-     * @param id The ID of the augmentation being added.
-     * @return ArrayList<ErrorDetail>
-     */
-    public ArrayList<ErrorDetail> deleteReturnAugmentation(Integer companyId, Long id) throws Exception {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/augment/{id}");
-        path.applyField("companyId", companyId);
-        path.applyField("id", id);
-        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){})).call();
-    }
-
-    /**
-     * Delete an augmentation for a given filing.
-     * 
-     * This API is available by invitation only.
-     * An "Augmentation" is a manually added increase or decrease in tax liability, by either customer or Avalara
-     * usually due to customer wanting to report tax Avatax does not support, e.g. bad debts, rental tax.
-     * This API deletes an augmentation for an existing tax filing.
-     * This API can only be used when the filing has been unapproved.
-     * 
-     * ### Security Policies
-     * 
-     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, CSPTester, FirmUser, SSTAdmin, TechnicalSupportAdmin.
-     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
-     * * This API is available by invitation only.<br />*Exempt security roles*:  ComplianceRootUser, ComplianceAdmin, ComplianceUser, TechnicalSupportAdmin, TechnicalSupportUser.
-     * 
-     * @param companyId The ID of the company that owns the filing being changed.
-     * @param id The ID of the augmentation being added.
-     * @return ArrayList<ErrorDetail>
-     */
-    public Future<ArrayList<ErrorDetail>> deleteReturnAugmentationAsync(Integer companyId, Long id) {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/augment/{id}");
-        path.applyField("companyId", companyId);
-        path.applyField("id", id);
-        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){}));
-    }
-
-    /**
-     * Delete an payment for a given filing.
-     * 
-     * This API is available by invitation only.
-     * An "Payment" is usually an increase or decrease to customer funding to Avalara,
-     * such as early filer discount amounts that are refunded to the customer, or efile fees from websites.
-     * Sometimes may be a manual change in tax liability similar to an augmentation.
-     * This API deletes an payment for an existing tax filing.
-     * This API can only be used when the filing has been unapproved.
-     * 
-     * ### Security Policies
-     * 
-     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, CSPTester, FirmUser, SSTAdmin, TechnicalSupportAdmin.
-     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
-     * * This API is available by invitation only.<br />*Exempt security roles*:  ComplianceRootUser, ComplianceAdmin, ComplianceUser, TechnicalSupportAdmin, TechnicalSupportUser.
-     * 
-     * @param companyId The ID of the company that owns the filing being adjusted.
-     * @param id The ID of the payment being deleted.
-     * @return ArrayList<ErrorDetail>
-     */
-    public ArrayList<ErrorDetail> deleteReturnPayment(Integer companyId, Long id) throws Exception {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/payment/{id}");
-        path.applyField("companyId", companyId);
-        path.applyField("id", id);
-        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){})).call();
-    }
-
-    /**
-     * Delete an payment for a given filing.
-     * 
-     * This API is available by invitation only.
-     * An "Payment" is usually an increase or decrease to customer funding to Avalara,
-     * such as early filer discount amounts that are refunded to the customer, or efile fees from websites.
-     * Sometimes may be a manual change in tax liability similar to an augmentation.
-     * This API deletes an payment for an existing tax filing.
-     * This API can only be used when the filing has been unapproved.
-     * 
-     * ### Security Policies
-     * 
-     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, CSPTester, FirmUser, SSTAdmin, TechnicalSupportAdmin.
-     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
-     * * This API is available by invitation only.<br />*Exempt security roles*:  ComplianceRootUser, ComplianceAdmin, ComplianceUser, TechnicalSupportAdmin, TechnicalSupportUser.
-     * 
-     * @param companyId The ID of the company that owns the filing being adjusted.
-     * @param id The ID of the payment being deleted.
-     * @return ArrayList<ErrorDetail>
-     */
-    public Future<ArrayList<ErrorDetail>> deleteReturnPaymentAsync(Integer companyId, Long id) {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/payment/{id}");
-        path.applyField("companyId", companyId);
-        path.applyField("id", id);
-        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){}));
-    }
-
-    /**
-     * Retrieve worksheet checkup report for company and filing period.
-     * 
-     * This API is available by invitation only.
-     * 
-     * ### Security Policies
-     * 
-     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
-     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
-     * * This API is available by invitation only.<br />*Exempt security roles*:  ComplianceRootUser, ComplianceAdmin, ComplianceUser, TechnicalSupportAdmin, TechnicalSupportUser.
-     * 
-     * @param filingsId The unique id of the worksheet.
-     * @param companyId The unique ID of the company that owns the worksheet.
-     * @return FilingsCheckupModel
-     */
-    public FilingsCheckupModel filingsCheckupReport(Integer filingsId, Integer companyId) throws Exception {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{filingsId}/checkup");
-        path.applyField("filingsId", filingsId);
-        path.applyField("companyId", companyId);
-        return ((RestCall<FilingsCheckupModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<FilingsCheckupModel>(){})).call();
-    }
-
-    /**
-     * Retrieve worksheet checkup report for company and filing period.
-     * 
-     * This API is available by invitation only.
-     * 
-     * ### Security Policies
-     * 
-     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
-     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
-     * * This API is available by invitation only.<br />*Exempt security roles*:  ComplianceRootUser, ComplianceAdmin, ComplianceUser, TechnicalSupportAdmin, TechnicalSupportUser.
-     * 
-     * @param filingsId The unique id of the worksheet.
-     * @param companyId The unique ID of the company that owns the worksheet.
-     * @return FilingsCheckupModel
-     */
-    public Future<FilingsCheckupModel> filingsCheckupReportAsync(Integer filingsId, Integer companyId) {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{filingsId}/checkup");
-        path.applyField("filingsId", filingsId);
-        path.applyField("companyId", companyId);
-        return this.threadPool.submit((RestCall<FilingsCheckupModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<FilingsCheckupModel>(){}));
-    }
-
-    /**
-     * Retrieve worksheet checkup report for company and filing period.
-     * 
-     * This API is available by invitation only.
-     * 
-     * ### Security Policies
-     * 
-     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
-     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
-     * * This API is available by invitation only.<br />*Exempt security roles*:  ComplianceRootUser, ComplianceAdmin, ComplianceUser, TechnicalSupportAdmin, TechnicalSupportUser.
-     * 
-     * @param companyId The unique ID of the company that owns the worksheets object.
-     * @param year The year of the filing period.
-     * @param month The month of the filing period.
-     * @return FilingsCheckupModel
-     */
-    public FilingsCheckupModel filingsCheckupReports(Integer companyId, Short year, Byte month) throws Exception {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/checkup");
-        path.applyField("companyId", companyId);
-        path.applyField("year", year);
-        path.applyField("month", month);
-        return ((RestCall<FilingsCheckupModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<FilingsCheckupModel>(){})).call();
-    }
-
-    /**
-     * Retrieve worksheet checkup report for company and filing period.
-     * 
-     * This API is available by invitation only.
-     * 
-     * ### Security Policies
-     * 
-     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
-     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
-     * * This API is available by invitation only.<br />*Exempt security roles*:  ComplianceRootUser, ComplianceAdmin, ComplianceUser, TechnicalSupportAdmin, TechnicalSupportUser.
-     * 
-     * @param companyId The unique ID of the company that owns the worksheets object.
-     * @param year The year of the filing period.
-     * @param month The month of the filing period.
-     * @return FilingsCheckupModel
-     */
-    public Future<FilingsCheckupModel> filingsCheckupReportsAsync(Integer companyId, Short year, Byte month) {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/checkup");
-        path.applyField("companyId", companyId);
-        path.applyField("year", year);
-        path.applyField("month", month);
-        return this.threadPool.submit((RestCall<FilingsCheckupModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<FilingsCheckupModel>(){}));
-    }
-
-    /**
-     * Retrieve a list of filings for the specified accrual return.
-     * 
-     * 
-     * 
-     * ### Security Policies
-     * 
-     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
-     * 
-     * @param companyId The ID of the company that owns these batches
-     * @param filingReturnId The ID of the accrual return
-     * @return FetchResult<FilingReturnModel>
-     */
-    public FetchResult<FilingReturnModel> getAccrualFillings(Integer companyId, Long filingReturnId) throws Exception {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/accrual/{filingReturnId}");
-        path.applyField("companyId", companyId);
-        path.applyField("filingReturnId", filingReturnId);
-        return ((RestCall<FetchResult<FilingReturnModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<FilingReturnModel>>(){})).call();
-    }
-
-    /**
-     * Retrieve a list of filings for the specified accrual return.
-     * 
-     * 
-     * 
-     * ### Security Policies
-     * 
-     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
-     * 
-     * @param companyId The ID of the company that owns these batches
-     * @param filingReturnId The ID of the accrual return
-     * @return FetchResult<FilingReturnModel>
-     */
-    public Future<FetchResult<FilingReturnModel>> getAccrualFillingsAsync(Integer companyId, Long filingReturnId) {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/accrual/{filingReturnId}");
-        path.applyField("companyId", companyId);
-        path.applyField("filingReturnId", filingReturnId);
-        return this.threadPool.submit((RestCall<FetchResult<FilingReturnModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<FilingReturnModel>>(){}));
-    }
-
-    /**
-     * Retrieve a single attachment for a filing
-     * 
-     * This API is available by invitation only.
-     * 
-     * ### Security Policies
-     * 
-     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
-     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
-     * * This API is available by invitation only.<br />*Exempt security roles*:  ComplianceRootUser, ComplianceAdmin, ComplianceUser, TechnicalSupportAdmin, TechnicalSupportUser.
-     * 
-     * @param companyId The ID of the company that owns the filings.
-     * @param filingReturnId The unique id of the worksheet return.
-     * @param fileId The unique id of the document you are downloading
-     * @return String
-     */
-    public String getFilingAttachment(Integer companyId, Long filingReturnId, Long fileId) throws Exception {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{filingReturnId}/attachment");
-        path.applyField("companyId", companyId);
-        path.applyField("filingReturnId", filingReturnId);
-        path.addQuery("fileId", fileId);
-        return ((RestCall<String>)restCallFactory.createRestCall("get", path, null, new TypeToken<String>(){})).call();
-    }
-
-    /**
-     * Retrieve a single attachment for a filing
-     * 
-     * This API is available by invitation only.
-     * 
-     * ### Security Policies
-     * 
-     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
-     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
-     * * This API is available by invitation only.<br />*Exempt security roles*:  ComplianceRootUser, ComplianceAdmin, ComplianceUser, TechnicalSupportAdmin, TechnicalSupportUser.
-     * 
-     * @param companyId The ID of the company that owns the filings.
-     * @param filingReturnId The unique id of the worksheet return.
-     * @param fileId The unique id of the document you are downloading
-     * @return String
-     */
-    public Future<String> getFilingAttachmentAsync(Integer companyId, Long filingReturnId, Long fileId) {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{filingReturnId}/attachment");
-        path.applyField("companyId", companyId);
-        path.applyField("filingReturnId", filingReturnId);
-        path.addQuery("fileId", fileId);
-        return this.threadPool.submit((RestCall<String>)restCallFactory.createRestCall("get", path, null, new TypeToken<String>(){}));
-    }
-
-    /**
-     * Retrieve a list of filings for the specified company in the year and month of a given filing period.
-     * 
-     * This API is available by invitation only.
-     * A "filing period" is the year and month of the date of the latest customer transaction allowed to be reported on a filing,
-     * based on filing frequency of filing.
-     * 
-     * ### Security Policies
-     * 
-     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
-     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
-     * * This API is available by invitation only.<br />*Exempt security roles*:  ComplianceRootUser, ComplianceAdmin, ComplianceUser, TechnicalSupportAdmin, TechnicalSupportUser.
-     * 
-     * @param companyId The ID of the company that owns the filings.
-     * @param year The year of the filing period.
-     * @param month The two digit month of the filing period.
-     * @return String
-     */
-    public String getFilingAttachments(Integer companyId, Short year, Byte month) throws Exception {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/attachments");
-        path.applyField("companyId", companyId);
-        path.applyField("year", year);
-        path.applyField("month", month);
-        return ((RestCall<String>)restCallFactory.createRestCall("get", path, null, new TypeToken<String>(){})).call();
-    }
-
-    /**
-     * Retrieve a list of filings for the specified company in the year and month of a given filing period.
-     * 
-     * This API is available by invitation only.
-     * A "filing period" is the year and month of the date of the latest customer transaction allowed to be reported on a filing,
-     * based on filing frequency of filing.
-     * 
-     * ### Security Policies
-     * 
-     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
-     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
-     * * This API is available by invitation only.<br />*Exempt security roles*:  ComplianceRootUser, ComplianceAdmin, ComplianceUser, TechnicalSupportAdmin, TechnicalSupportUser.
-     * 
-     * @param companyId The ID of the company that owns the filings.
-     * @param year The year of the filing period.
-     * @param month The two digit month of the filing period.
-     * @return String
-     */
-    public Future<String> getFilingAttachmentsAsync(Integer companyId, Short year, Byte month) {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/attachments");
-        path.applyField("companyId", companyId);
-        path.applyField("year", year);
-        path.applyField("month", month);
-        return this.threadPool.submit((RestCall<String>)restCallFactory.createRestCall("get", path, null, new TypeToken<String>(){}));
-    }
-
-    /**
-     * Retrieve a single trace file for a company filing period
-     * 
-     * This API is available by invitation only.
-     * A "filing period" is the year and month of the date of the latest customer transaction allowed to be reported on a filing,
-     * based on filing frequency of filing.
-     * 
-     * ### Security Policies
-     * 
-     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
-     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
-     * * This API is available by invitation only.<br />*Exempt security roles*:  ComplianceRootUser, ComplianceAdmin, ComplianceUser, TechnicalSupportAdmin, TechnicalSupportUser.
-     * 
-     * @param companyId The ID of the company that owns the filings.
-     * @param year The year of the filing period.
-     * @param month The two digit month of the filing period.
-     * @return String
-     */
-    public String getFilingAttachmentsTraceFile(Integer companyId, Short year, Byte month) throws Exception {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/attachments/tracefile");
-        path.applyField("companyId", companyId);
-        path.applyField("year", year);
-        path.applyField("month", month);
-        return ((RestCall<String>)restCallFactory.createRestCall("get", path, null, new TypeToken<String>(){})).call();
-    }
-
-    /**
-     * Retrieve a single trace file for a company filing period
-     * 
-     * This API is available by invitation only.
-     * A "filing period" is the year and month of the date of the latest customer transaction allowed to be reported on a filing,
-     * based on filing frequency of filing.
-     * 
-     * ### Security Policies
-     * 
-     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
-     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
-     * * This API is available by invitation only.<br />*Exempt security roles*:  ComplianceRootUser, ComplianceAdmin, ComplianceUser, TechnicalSupportAdmin, TechnicalSupportUser.
-     * 
-     * @param companyId The ID of the company that owns the filings.
-     * @param year The year of the filing period.
-     * @param month The two digit month of the filing period.
-     * @return String
-     */
-    public Future<String> getFilingAttachmentsTraceFileAsync(Integer companyId, Short year, Byte month) {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/attachments/tracefile");
-        path.applyField("companyId", companyId);
-        path.applyField("year", year);
-        path.applyField("month", month);
-        return this.threadPool.submit((RestCall<String>)restCallFactory.createRestCall("get", path, null, new TypeToken<String>(){}));
-    }
-
-    /**
-     * Retrieve a filing for the specified company and id.
-     * 
-     * This API is available by invitation only.
-     * A "filing period" is the year and month of the date of the latest customer transaction allowed to be reported on a filing,
-     * based on filing frequency of filing.
-     * 
-     * ### Security Policies
-     * 
-     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
-     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
-     * * This API is available by invitation only.<br />*Exempt security roles*:  ComplianceRootUser, ComplianceAdmin, ComplianceUser, TechnicalSupportAdmin, TechnicalSupportUser.
-     * 
-     * @param companyId The ID of the company that owns the filings.
-     * @param id The id of the filing return your retrieving
-     * @param details Indicates if you would like the credit details returned
-     * @return FilingReturnModel
-     */
-    public FilingReturnModel getFilingReturn(Integer companyId, Integer id, Boolean details) throws Exception {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/returns/{id}");
-        path.applyField("companyId", companyId);
-        path.applyField("id", id);
-        path.addQuery("details", details);
-        return ((RestCall<FilingReturnModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<FilingReturnModel>(){})).call();
-    }
-
-    /**
-     * Retrieve a filing for the specified company and id.
-     * 
-     * This API is available by invitation only.
-     * A "filing period" is the year and month of the date of the latest customer transaction allowed to be reported on a filing,
-     * based on filing frequency of filing.
-     * 
-     * ### Security Policies
-     * 
-     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
-     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
-     * * This API is available by invitation only.<br />*Exempt security roles*:  ComplianceRootUser, ComplianceAdmin, ComplianceUser, TechnicalSupportAdmin, TechnicalSupportUser.
-     * 
-     * @param companyId The ID of the company that owns the filings.
-     * @param id The id of the filing return your retrieving
-     * @param details Indicates if you would like the credit details returned
-     * @return FilingReturnModel
-     */
-    public Future<FilingReturnModel> getFilingReturnAsync(Integer companyId, Integer id, Boolean details) {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/returns/{id}");
-        path.applyField("companyId", companyId);
-        path.applyField("id", id);
-        path.addQuery("details", details);
-        return this.threadPool.submit((RestCall<FilingReturnModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<FilingReturnModel>(){}));
-    }
-
-    /**
-     * Retrieve a list of filings for the specified company in the year and month of a given filing period.
-     * 
-     * This API is available by invitation only.
-     * A "filing period" is the year and month of the date of the latest customer transaction allowed to be reported on a filing,
-     * based on filing frequency of filing.
-     * 
-     * ### Security Policies
-     * 
-     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
-     * * This API is available by invitation only.<br />*Exempt security roles*:  ComplianceRootUser, ComplianceAdmin, ComplianceUser, TechnicalSupportAdmin, TechnicalSupportUser.
-     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
-     * 
-     * @param companyId The ID of the company that owns the filings.
-     * @param year The year of the filing period.
-     * @param month The two digit month of the filing period.
-     * @return FetchResult<FilingModel>
-     */
-    public FetchResult<FilingModel> getFilings(Integer companyId, Short year, Byte month) throws Exception {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}");
-        path.applyField("companyId", companyId);
-        path.applyField("year", year);
-        path.applyField("month", month);
-        return ((RestCall<FetchResult<FilingModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<FilingModel>>(){})).call();
-    }
-
-    /**
-     * Retrieve a list of filings for the specified company in the year and month of a given filing period.
-     * 
-     * This API is available by invitation only.
-     * A "filing period" is the year and month of the date of the latest customer transaction allowed to be reported on a filing,
-     * based on filing frequency of filing.
-     * 
-     * ### Security Policies
-     * 
-     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
-     * * This API is available by invitation only.<br />*Exempt security roles*:  ComplianceRootUser, ComplianceAdmin, ComplianceUser, TechnicalSupportAdmin, TechnicalSupportUser.
-     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
-     * 
-     * @param companyId The ID of the company that owns the filings.
-     * @param year The year of the filing period.
-     * @param month The two digit month of the filing period.
-     * @return FetchResult<FilingModel>
-     */
-    public Future<FetchResult<FilingModel>> getFilingsAsync(Integer companyId, Short year, Byte month) {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}");
-        path.applyField("companyId", companyId);
-        path.applyField("year", year);
-        path.applyField("month", month);
-        return this.threadPool.submit((RestCall<FetchResult<FilingModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<FilingModel>>(){}));
-    }
-
-    /**
-     * Retrieve a list of filings for the specified company in the given filing period and country.
-     * 
-     * This API is available by invitation only.
-     * A "filing period" is the year and month of the date of the latest customer transaction allowed to be reported on a filing,
-     * based on filing frequency of filing.
-     * 
-     * ### Security Policies
-     * 
-     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
-     * * This API is available by invitation only.<br />*Exempt security roles*:  ComplianceRootUser, ComplianceAdmin, ComplianceUser, TechnicalSupportAdmin, TechnicalSupportUser.
-     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
-     * 
-     * @param companyId The ID of the company that owns the filings.
-     * @param year The year of the filing period.
-     * @param month The two digit month of the filing period.
-     * @param country The two-character ISO-3166 code for the country.
-     * @return FetchResult<FilingModel>
-     */
-    public FetchResult<FilingModel> getFilingsByCountry(Integer companyId, Short year, Byte month, String country) throws Exception {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/{country}");
-        path.applyField("companyId", companyId);
-        path.applyField("year", year);
-        path.applyField("month", month);
-        path.applyField("country", country);
-        return ((RestCall<FetchResult<FilingModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<FilingModel>>(){})).call();
-    }
-
-    /**
-     * Retrieve a list of filings for the specified company in the given filing period and country.
-     * 
-     * This API is available by invitation only.
-     * A "filing period" is the year and month of the date of the latest customer transaction allowed to be reported on a filing,
-     * based on filing frequency of filing.
-     * 
-     * ### Security Policies
-     * 
-     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
-     * * This API is available by invitation only.<br />*Exempt security roles*:  ComplianceRootUser, ComplianceAdmin, ComplianceUser, TechnicalSupportAdmin, TechnicalSupportUser.
-     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
-     * 
-     * @param companyId The ID of the company that owns the filings.
-     * @param year The year of the filing period.
-     * @param month The two digit month of the filing period.
-     * @param country The two-character ISO-3166 code for the country.
-     * @return FetchResult<FilingModel>
-     */
-    public Future<FetchResult<FilingModel>> getFilingsByCountryAsync(Integer companyId, Short year, Byte month, String country) {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/{country}");
-        path.applyField("companyId", companyId);
-        path.applyField("year", year);
-        path.applyField("month", month);
-        path.applyField("country", country);
-        return this.threadPool.submit((RestCall<FetchResult<FilingModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<FilingModel>>(){}));
-    }
-
-    /**
-     * Retrieve a list of filings for the specified company in the filing period, country and region.
-     * 
-     * This API is available by invitation only.
-     * A "filing period" is the year and month of the date of the latest customer transaction allowed to be reported on a filing,
-     * based on filing frequency of filing.
-     * 
-     * ### Security Policies
-     * 
-     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
-     * * This API is available by invitation only.<br />*Exempt security roles*:  ComplianceRootUser, ComplianceAdmin, ComplianceUser, TechnicalSupportAdmin, TechnicalSupportUser.
-     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
-     * 
-     * @param companyId The ID of the company that owns the filings.
-     * @param year The year of the filing period.
-     * @param month The two digit month of the filing period.
-     * @param country The two-character ISO-3166 code for the country.
-     * @param region The two or three character region code for the region.
-     * @return FetchResult<FilingModel>
-     */
-    public FetchResult<FilingModel> getFilingsByCountryRegion(Integer companyId, Short year, Byte month, String country, String region) throws Exception {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/{country}/{region}");
-        path.applyField("companyId", companyId);
-        path.applyField("year", year);
-        path.applyField("month", month);
-        path.applyField("country", country);
-        path.applyField("region", region);
-        return ((RestCall<FetchResult<FilingModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<FilingModel>>(){})).call();
-    }
-
-    /**
-     * Retrieve a list of filings for the specified company in the filing period, country and region.
-     * 
-     * This API is available by invitation only.
-     * A "filing period" is the year and month of the date of the latest customer transaction allowed to be reported on a filing,
-     * based on filing frequency of filing.
-     * 
-     * ### Security Policies
-     * 
-     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
-     * * This API is available by invitation only.<br />*Exempt security roles*:  ComplianceRootUser, ComplianceAdmin, ComplianceUser, TechnicalSupportAdmin, TechnicalSupportUser.
-     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
-     * 
-     * @param companyId The ID of the company that owns the filings.
-     * @param year The year of the filing period.
-     * @param month The two digit month of the filing period.
-     * @param country The two-character ISO-3166 code for the country.
-     * @param region The two or three character region code for the region.
-     * @return FetchResult<FilingModel>
-     */
-    public Future<FetchResult<FilingModel>> getFilingsByCountryRegionAsync(Integer companyId, Short year, Byte month, String country, String region) {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/{country}/{region}");
-        path.applyField("companyId", companyId);
-        path.applyField("year", year);
-        path.applyField("month", month);
-        path.applyField("country", country);
-        path.applyField("region", region);
-        return this.threadPool.submit((RestCall<FetchResult<FilingModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<FilingModel>>(){}));
-    }
-
-    /**
-     * Retrieve a list of filings for the specified company in the given filing period, country, region and form.
-     * 
-     * This API is available by invitation only.
-     * A "filing period" is the year and month of the date of the latest customer transaction allowed to be reported on a filing,
-     * based on filing frequency of filing.
-     * 
-     * ### Security Policies
-     * 
-     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
-     * * This API is available by invitation only.<br />*Exempt security roles*:  ComplianceRootUser, ComplianceAdmin, ComplianceUser, TechnicalSupportAdmin, TechnicalSupportUser.
-     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
-     * 
-     * @param companyId The ID of the company that owns the filings.
-     * @param year The year of the filing period.
-     * @param month The two digit month of the filing period.
-     * @param country The two-character ISO-3166 code for the country.
-     * @param region The two or three character region code for the region.
-     * @param formCode The unique code of the form.
-     * @return FetchResult<FilingModel>
-     */
-    public FetchResult<FilingModel> getFilingsByReturnName(Integer companyId, Short year, Byte month, String country, String region, String formCode) throws Exception {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/{country}/{region}/{formCode}");
-        path.applyField("companyId", companyId);
-        path.applyField("year", year);
-        path.applyField("month", month);
-        path.applyField("country", country);
-        path.applyField("region", region);
-        path.applyField("formCode", formCode);
-        return ((RestCall<FetchResult<FilingModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<FilingModel>>(){})).call();
-    }
-
-    /**
-     * Retrieve a list of filings for the specified company in the given filing period, country, region and form.
-     * 
-     * This API is available by invitation only.
-     * A "filing period" is the year and month of the date of the latest customer transaction allowed to be reported on a filing,
-     * based on filing frequency of filing.
-     * 
-     * ### Security Policies
-     * 
-     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
-     * * This API is available by invitation only.<br />*Exempt security roles*:  ComplianceRootUser, ComplianceAdmin, ComplianceUser, TechnicalSupportAdmin, TechnicalSupportUser.
-     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
-     * 
-     * @param companyId The ID of the company that owns the filings.
-     * @param year The year of the filing period.
-     * @param month The two digit month of the filing period.
-     * @param country The two-character ISO-3166 code for the country.
-     * @param region The two or three character region code for the region.
-     * @param formCode The unique code of the form.
-     * @return FetchResult<FilingModel>
-     */
-    public Future<FetchResult<FilingModel>> getFilingsByReturnNameAsync(Integer companyId, Short year, Byte month, String country, String region, String formCode) {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/{country}/{region}/{formCode}");
-        path.applyField("companyId", companyId);
-        path.applyField("year", year);
-        path.applyField("month", month);
-        path.applyField("country", country);
-        path.applyField("region", region);
-        path.applyField("formCode", formCode);
-        return this.threadPool.submit((RestCall<FetchResult<FilingModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<FilingModel>>(){}));
-    }
-
-    /**
-     * Retrieve a list of filings for the specified company in the year and month of a given filing period.
-This gets the basic information from the filings and doesn't include anything extra.
-     * 
-     * 
-     * 
-     * ### Security Policies
-     * 
-     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
-     * * This API is available by invitation only.<br />*Exempt security roles*:  ComplianceRootUser, ComplianceAdmin, ComplianceUser, TechnicalSupportAdmin, TechnicalSupportUser.
-     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
-     * 
-     * @param companyId The ID of the company that owns these batches
-     * @param endPeriodMonth The month of the period you are trying to retrieve
-     * @param endPeriodYear The year of the period you are trying to retrieve
-     * @param frequency The frequency of the return you are trying to retrieve (See FilingFrequencyId::* for a list of allowable values)
-     * @param status The status of the return(s) you are trying to retrieve (See FilingStatusId::* for a list of allowable values)
-     * @param country The country of the return(s) you are trying to retrieve
-     * @param region The region of the return(s) you are trying to retrieve
-     * @param filingCalendarId The filing calendar id of the return you are trying to retrieve
-     * @return FetchResult<FilingReturnModelBasic>
-     */
-    public FetchResult<FilingReturnModelBasic> getFilingsReturns(Integer companyId, Integer endPeriodMonth, Integer endPeriodYear, FilingFrequencyId frequency, FilingStatusId status, String country, String region, Long filingCalendarId) throws Exception {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/returns");
-        path.applyField("companyId", companyId);
-        path.addQuery("endPeriodMonth", endPeriodMonth);
-        path.addQuery("endPeriodYear", endPeriodYear);
-        path.addQuery("frequency", frequency);
-        path.addQuery("status", status);
-        path.addQuery("country", country);
-        path.addQuery("region", region);
-        path.addQuery("filingCalendarId", filingCalendarId);
-        return ((RestCall<FetchResult<FilingReturnModelBasic>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<FilingReturnModelBasic>>(){})).call();
-    }
-
-    /**
-     * Retrieve a list of filings for the specified company in the year and month of a given filing period.
-This gets the basic information from the filings and doesn't include anything extra.
-     * 
-     * 
-     * 
-     * ### Security Policies
-     * 
-     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
-     * * This API is available by invitation only.<br />*Exempt security roles*:  ComplianceRootUser, ComplianceAdmin, ComplianceUser, TechnicalSupportAdmin, TechnicalSupportUser.
-     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
-     * 
-     * @param companyId The ID of the company that owns these batches
-     * @param endPeriodMonth The month of the period you are trying to retrieve
-     * @param endPeriodYear The year of the period you are trying to retrieve
-     * @param frequency The frequency of the return you are trying to retrieve (See FilingFrequencyId::* for a list of allowable values)
-     * @param status The status of the return(s) you are trying to retrieve (See FilingStatusId::* for a list of allowable values)
-     * @param country The country of the return(s) you are trying to retrieve
-     * @param region The region of the return(s) you are trying to retrieve
-     * @param filingCalendarId The filing calendar id of the return you are trying to retrieve
-     * @return FetchResult<FilingReturnModelBasic>
-     */
-    public Future<FetchResult<FilingReturnModelBasic>> getFilingsReturnsAsync(Integer companyId, Integer endPeriodMonth, Integer endPeriodYear, FilingFrequencyId frequency, FilingStatusId status, String country, String region, Long filingCalendarId) {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/returns");
-        path.applyField("companyId", companyId);
-        path.addQuery("endPeriodMonth", endPeriodMonth);
-        path.addQuery("endPeriodYear", endPeriodYear);
-        path.addQuery("frequency", frequency);
-        path.addQuery("status", status);
-        path.addQuery("country", country);
-        path.addQuery("region", region);
-        path.addQuery("filingCalendarId", filingCalendarId);
-        return this.threadPool.submit((RestCall<FetchResult<FilingReturnModelBasic>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<FilingReturnModelBasic>>(){}));
-    }
-
-    /**
-     * Retrieve a list of filings for the specified company in the year and month of a given filing period.
-     * 
-     * This API is available by invitation only.
-     * A "filing period" is the year and month of the date of the latest customer transaction allowed to be reported on a filing,
-     * based on filing frequency of filing.
-     * 
-     * ### Security Policies
-     * 
-     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
-     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
-     * * This API is available by invitation only.<br />*Exempt security roles*:  ComplianceRootUser, ComplianceAdmin, ComplianceUser, TechnicalSupportAdmin, TechnicalSupportUser.
-     * 
-     * @param companyId The ID of the company that owns the filings.
-     * @param year The year of the filing period.
-     * @param month The two digit month of the filing period.
-     * @param country The two-character ISO-3166 code for the country.
-     * @param region The two or three character region code for the region.
-     * @param formCode The unique code of the form.
-     * @return FetchResult<MultiTaxFilingModel>
-     */
-    public FetchResult<MultiTaxFilingModel> getTaxFilings(Integer companyId, Integer year, Integer month, String country, String region, String formCode) throws Exception {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings");
-        path.applyField("companyId", companyId);
-        path.addQuery("year", year);
-        path.addQuery("month", month);
-        path.addQuery("country", country);
-        path.addQuery("region", region);
-        path.addQuery("formCode", formCode);
-        return ((RestCall<FetchResult<MultiTaxFilingModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<MultiTaxFilingModel>>(){})).call();
-    }
-
-    /**
-     * Retrieve a list of filings for the specified company in the year and month of a given filing period.
-     * 
-     * This API is available by invitation only.
-     * A "filing period" is the year and month of the date of the latest customer transaction allowed to be reported on a filing,
-     * based on filing frequency of filing.
-     * 
-     * ### Security Policies
-     * 
-     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
-     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
-     * * This API is available by invitation only.<br />*Exempt security roles*:  ComplianceRootUser, ComplianceAdmin, ComplianceUser, TechnicalSupportAdmin, TechnicalSupportUser.
-     * 
-     * @param companyId The ID of the company that owns the filings.
-     * @param year The year of the filing period.
-     * @param month The two digit month of the filing period.
-     * @param country The two-character ISO-3166 code for the country.
-     * @param region The two or three character region code for the region.
-     * @param formCode The unique code of the form.
-     * @return FetchResult<MultiTaxFilingModel>
-     */
-    public Future<FetchResult<MultiTaxFilingModel>> getTaxFilingsAsync(Integer companyId, Integer year, Integer month, String country, String region, String formCode) {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings");
-        path.applyField("companyId", companyId);
-        path.addQuery("year", year);
-        path.addQuery("month", month);
-        path.addQuery("country", country);
-        path.addQuery("region", region);
-        path.addQuery("formCode", formCode);
-        return this.threadPool.submit((RestCall<FetchResult<MultiTaxFilingModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<MultiTaxFilingModel>>(){}));
-    }
-
-    /**
-     * Rebuild a set of filings for the specified company in the given filing period.
-     * 
-     * This API is available by invitation only.
-     * Rebuilding a return means re-creating or updating the amounts to be filed (worksheet) for a filing.
-     * Rebuilding has to be done whenever a customer adds transactions to a filing.
-     * A "filing period" is the year and month of the date of the latest customer transaction allowed to be reported on a filing,
-     * based on filing frequency of filing.
-     * This API requires filing to be unapproved.
-     * 
-     * ### Security Policies
-     * 
-     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, CSPTester, FirmUser, SSTAdmin, TechnicalSupportAdmin.
-     * * This API is available by invitation only.<br />*Exempt security roles*:  ComplianceRootUser, ComplianceAdmin, ComplianceUser, TechnicalSupportAdmin, TechnicalSupportUser.
-     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
-     * 
-     * @param companyId The ID of the company that owns the filings.
-     * @param year The year of the filing period to be rebuilt.
-     * @param month The month of the filing period to be rebuilt.
-     * @param model The rebuild request you wish to execute.
-     * @return FetchResult<FilingModel>
-     */
-    public FetchResult<FilingModel> rebuildFilings(Integer companyId, Short year, Byte month, RebuildFilingsModel model) throws Exception {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/rebuild");
-        path.applyField("companyId", companyId);
-        path.applyField("year", year);
-        path.applyField("month", month);
-        return ((RestCall<FetchResult<FilingModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<FetchResult<FilingModel>>(){})).call();
-    }
-
-    /**
-     * Rebuild a set of filings for the specified company in the given filing period.
-     * 
-     * This API is available by invitation only.
-     * Rebuilding a return means re-creating or updating the amounts to be filed (worksheet) for a filing.
-     * Rebuilding has to be done whenever a customer adds transactions to a filing.
-     * A "filing period" is the year and month of the date of the latest customer transaction allowed to be reported on a filing,
-     * based on filing frequency of filing.
-     * This API requires filing to be unapproved.
-     * 
-     * ### Security Policies
-     * 
-     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, CSPTester, FirmUser, SSTAdmin, TechnicalSupportAdmin.
-     * * This API is available by invitation only.<br />*Exempt security roles*:  ComplianceRootUser, ComplianceAdmin, ComplianceUser, TechnicalSupportAdmin, TechnicalSupportUser.
-     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
-     * 
-     * @param companyId The ID of the company that owns the filings.
-     * @param year The year of the filing period to be rebuilt.
-     * @param month The month of the filing period to be rebuilt.
-     * @param model The rebuild request you wish to execute.
-     * @return FetchResult<FilingModel>
-     */
-    public Future<FetchResult<FilingModel>> rebuildFilingsAsync(Integer companyId, Short year, Byte month, RebuildFilingsModel model) {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/rebuild");
-        path.applyField("companyId", companyId);
-        path.applyField("year", year);
-        path.applyField("month", month);
-        return this.threadPool.submit((RestCall<FetchResult<FilingModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<FetchResult<FilingModel>>(){}));
-    }
-
-    /**
-     * Rebuild a set of filings for the specified company in the given filing period and country.
-     * 
-     * This API is available by invitation only.
-     * Rebuilding a return means re-creating or updating the amounts to be filed (worksheet) for a filing.
-     * Rebuilding has to be done whenever a customer adds transactions to a filing.
-     * A "filing period" is the year and month of the date of the latest customer transaction allowed to be reported on a filing,
-     * based on filing frequency of filing.
-     * This API requires filing to be unapproved.
-     * 
-     * ### Security Policies
-     * 
-     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, CSPTester, FirmUser, SSTAdmin, TechnicalSupportAdmin.
-     * * This API is available by invitation only.<br />*Exempt security roles*:  ComplianceRootUser, ComplianceAdmin, ComplianceUser, TechnicalSupportAdmin, TechnicalSupportUser.
-     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
-     * 
-     * @param companyId The ID of the company that owns the filings.
-     * @param year The year of the filing period to be rebuilt.
-     * @param month The month of the filing period to be rebuilt.
-     * @param country The two-character ISO-3166 code for the country.
-     * @param model The rebuild request you wish to execute.
-     * @return FetchResult<FilingModel>
-     */
-    public FetchResult<FilingModel> rebuildFilingsByCountry(Integer companyId, Short year, Byte month, String country, RebuildFilingsModel model) throws Exception {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/{country}/rebuild");
-        path.applyField("companyId", companyId);
-        path.applyField("year", year);
-        path.applyField("month", month);
-        path.applyField("country", country);
-        return ((RestCall<FetchResult<FilingModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<FetchResult<FilingModel>>(){})).call();
-    }
-
-    /**
-     * Rebuild a set of filings for the specified company in the given filing period and country.
-     * 
-     * This API is available by invitation only.
-     * Rebuilding a return means re-creating or updating the amounts to be filed (worksheet) for a filing.
-     * Rebuilding has to be done whenever a customer adds transactions to a filing.
-     * A "filing period" is the year and month of the date of the latest customer transaction allowed to be reported on a filing,
-     * based on filing frequency of filing.
-     * This API requires filing to be unapproved.
-     * 
-     * ### Security Policies
-     * 
-     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, CSPTester, FirmUser, SSTAdmin, TechnicalSupportAdmin.
-     * * This API is available by invitation only.<br />*Exempt security roles*:  ComplianceRootUser, ComplianceAdmin, ComplianceUser, TechnicalSupportAdmin, TechnicalSupportUser.
-     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
-     * 
-     * @param companyId The ID of the company that owns the filings.
-     * @param year The year of the filing period to be rebuilt.
-     * @param month The month of the filing period to be rebuilt.
-     * @param country The two-character ISO-3166 code for the country.
-     * @param model The rebuild request you wish to execute.
-     * @return FetchResult<FilingModel>
-     */
-    public Future<FetchResult<FilingModel>> rebuildFilingsByCountryAsync(Integer companyId, Short year, Byte month, String country, RebuildFilingsModel model) {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/{country}/rebuild");
-        path.applyField("companyId", companyId);
-        path.applyField("year", year);
-        path.applyField("month", month);
-        path.applyField("country", country);
-        return this.threadPool.submit((RestCall<FetchResult<FilingModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<FetchResult<FilingModel>>(){}));
-    }
-
-    /**
-     * Rebuild a set of filings for the specified company in the given filing period, country and region.
-     * 
-     * This API is available by invitation only.audit.CheckAuthorizationReturns(null, companyId);
-     * Rebuilding a return means re-creating or updating the amounts to be filed for a filing.
-     * Rebuilding has to be done whenever a customer adds transactions to a filing.
-     * A "filing period" is the year and month of the date of the latest customer transaction allowed to be reported on a filing,
-     * based on filing frequency of filing.
-     * This API requires filing to be unapproved.
-     * 
-     * ### Security Policies
-     * 
-     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, CSPTester, FirmUser, SSTAdmin, TechnicalSupportAdmin.
-     * * This API is available by invitation only.<br />*Exempt security roles*:  ComplianceRootUser, ComplianceAdmin, ComplianceUser, TechnicalSupportAdmin, TechnicalSupportUser.
-     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
-     * 
-     * @param companyId The ID of the company that owns the filings.
-     * @param year The year of the filing period to be rebuilt.
-     * @param month The month of the filing period to be rebuilt.
-     * @param country The two-character ISO-3166 code for the country.
-     * @param region The two or three character region code for the region.
-     * @param model The rebuild request you wish to execute.
-     * @return FetchResult<FilingModel>
-     */
-    public FetchResult<FilingModel> rebuildFilingsByCountryRegion(Integer companyId, Short year, Byte month, String country, String region, RebuildFilingsModel model) throws Exception {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/{country}/{region}/rebuild");
-        path.applyField("companyId", companyId);
-        path.applyField("year", year);
-        path.applyField("month", month);
-        path.applyField("country", country);
-        path.applyField("region", region);
-        return ((RestCall<FetchResult<FilingModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<FetchResult<FilingModel>>(){})).call();
-    }
-
-    /**
-     * Rebuild a set of filings for the specified company in the given filing period, country and region.
-     * 
-     * This API is available by invitation only.audit.CheckAuthorizationReturns(null, companyId);
-     * Rebuilding a return means re-creating or updating the amounts to be filed for a filing.
-     * Rebuilding has to be done whenever a customer adds transactions to a filing.
-     * A "filing period" is the year and month of the date of the latest customer transaction allowed to be reported on a filing,
-     * based on filing frequency of filing.
-     * This API requires filing to be unapproved.
-     * 
-     * ### Security Policies
-     * 
-     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, CSPTester, FirmUser, SSTAdmin, TechnicalSupportAdmin.
-     * * This API is available by invitation only.<br />*Exempt security roles*:  ComplianceRootUser, ComplianceAdmin, ComplianceUser, TechnicalSupportAdmin, TechnicalSupportUser.
-     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
-     * 
-     * @param companyId The ID of the company that owns the filings.
-     * @param year The year of the filing period to be rebuilt.
-     * @param month The month of the filing period to be rebuilt.
-     * @param country The two-character ISO-3166 code for the country.
-     * @param region The two or three character region code for the region.
-     * @param model The rebuild request you wish to execute.
-     * @return FetchResult<FilingModel>
-     */
-    public Future<FetchResult<FilingModel>> rebuildFilingsByCountryRegionAsync(Integer companyId, Short year, Byte month, String country, String region, RebuildFilingsModel model) {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/{country}/{region}/rebuild");
-        path.applyField("companyId", companyId);
-        path.applyField("year", year);
-        path.applyField("month", month);
-        path.applyField("country", country);
-        path.applyField("region", region);
-        return this.threadPool.submit((RestCall<FetchResult<FilingModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<FetchResult<FilingModel>>(){}));
-    }
-
-    /**
-     * Edit an adjustment for a given filing.
-     * 
-     * This API is available by invitation only.
-     * An "Adjustment" is usually an increase or decrease to customer funding to Avalara,
-     * such as early filer discount amounts that are refunded to the customer, or efile fees from websites.
-     * Sometimes may be a manual change in tax liability similar to an augmentation.
-     * This API modifies an adjustment for an existing tax filing.
-     * This API can only be used when the filing has not yet been approved.
-     * 
-     * ### Security Policies
-     * 
-     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, CSPTester, FirmUser, SSTAdmin, TechnicalSupportAdmin.
-     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
-     * * This API is available by invitation only.<br />*Exempt security roles*:  ComplianceRootUser, ComplianceAdmin, ComplianceUser, TechnicalSupportAdmin, TechnicalSupportUser.
-     * 
-     * @param companyId The ID of the company that owns the filing being adjusted.
-     * @param id The ID of the adjustment being edited.
-     * @param model The updated Adjustment.
-     * @return FilingAdjustmentModel
-     */
-    public FilingAdjustmentModel updateReturnAdjustment(Integer companyId, Long id, FilingAdjustmentModel model) throws Exception {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/adjust/{id}");
-        path.applyField("companyId", companyId);
-        path.applyField("id", id);
-        return ((RestCall<FilingAdjustmentModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<FilingAdjustmentModel>(){})).call();
-    }
-
-    /**
-     * Edit an adjustment for a given filing.
-     * 
-     * This API is available by invitation only.
-     * An "Adjustment" is usually an increase or decrease to customer funding to Avalara,
-     * such as early filer discount amounts that are refunded to the customer, or efile fees from websites.
-     * Sometimes may be a manual change in tax liability similar to an augmentation.
-     * This API modifies an adjustment for an existing tax filing.
-     * This API can only be used when the filing has not yet been approved.
-     * 
-     * ### Security Policies
-     * 
-     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, CSPTester, FirmUser, SSTAdmin, TechnicalSupportAdmin.
-     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
-     * * This API is available by invitation only.<br />*Exempt security roles*:  ComplianceRootUser, ComplianceAdmin, ComplianceUser, TechnicalSupportAdmin, TechnicalSupportUser.
-     * 
-     * @param companyId The ID of the company that owns the filing being adjusted.
-     * @param id The ID of the adjustment being edited.
-     * @param model The updated Adjustment.
-     * @return FilingAdjustmentModel
-     */
-    public Future<FilingAdjustmentModel> updateReturnAdjustmentAsync(Integer companyId, Long id, FilingAdjustmentModel model) {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/adjust/{id}");
-        path.applyField("companyId", companyId);
-        path.applyField("id", id);
-        return this.threadPool.submit((RestCall<FilingAdjustmentModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<FilingAdjustmentModel>(){}));
-    }
-
-    /**
-     * Edit an augmentation for a given filing.
-     * 
-     * This API is available by invitation only.
-     * An "Augmentation" is a manually added increase or decrease in tax liability, by either customer or Avalara
-     * usually due to customer wanting to report tax Avatax does not support, e.g. bad debts, rental tax.
-     * This API modifies an augmentation for an existing tax filing.
-     * This API can only be used when the filing has not been approved.
-     * 
-     * ### Security Policies
-     * 
-     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, CSPTester, FirmUser, SSTAdmin, TechnicalSupportAdmin.
-     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
-     * * This API is available by invitation only.<br />*Exempt security roles*:  ComplianceRootUser, ComplianceAdmin, ComplianceUser, TechnicalSupportAdmin, TechnicalSupportUser.
-     * 
-     * @param companyId The ID of the company that owns the filing being changed.
-     * @param id The ID of the augmentation being edited.
-     * @param model The updated Augmentation.
-     * @return FilingModel
-     */
-    public FilingModel updateReturnAugmentation(Integer companyId, Long id, FilingAugmentationModel model) throws Exception {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/augment/{id}");
-        path.applyField("companyId", companyId);
-        path.applyField("id", id);
-        return ((RestCall<FilingModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<FilingModel>(){})).call();
-    }
-
-    /**
-     * Edit an augmentation for a given filing.
-     * 
-     * This API is available by invitation only.
-     * An "Augmentation" is a manually added increase or decrease in tax liability, by either customer or Avalara
-     * usually due to customer wanting to report tax Avatax does not support, e.g. bad debts, rental tax.
-     * This API modifies an augmentation for an existing tax filing.
-     * This API can only be used when the filing has not been approved.
-     * 
-     * ### Security Policies
-     * 
-     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, CSPTester, FirmUser, SSTAdmin, TechnicalSupportAdmin.
-     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
-     * * This API is available by invitation only.<br />*Exempt security roles*:  ComplianceRootUser, ComplianceAdmin, ComplianceUser, TechnicalSupportAdmin, TechnicalSupportUser.
-     * 
-     * @param companyId The ID of the company that owns the filing being changed.
-     * @param id The ID of the augmentation being edited.
-     * @param model The updated Augmentation.
-     * @return FilingModel
-     */
-    public Future<FilingModel> updateReturnAugmentationAsync(Integer companyId, Long id, FilingAugmentationModel model) {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/augment/{id}");
-        path.applyField("companyId", companyId);
-        path.applyField("id", id);
-        return this.threadPool.submit((RestCall<FilingModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<FilingModel>(){}));
-    }
-
-    /**
-     * Edit an payment for a given filing.
-     * 
-     * This API is available by invitation only.
-     * An "Payment" is usually an increase or decrease to customer funding to Avalara,
-     * such as early filer discount amounts that are refunded to the customer, or efile fees from websites.
-     * Sometimes may be a manual change in tax liability similar to an augmentation.
-     * This API modifies an payment for an existing tax filing.
-     * This API can only be used when the filing has not yet been approved.
-     * 
-     * ### Security Policies
-     * 
-     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, CSPTester, FirmUser, SSTAdmin, TechnicalSupportAdmin.
-     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
-     * * This API is available by invitation only.<br />*Exempt security roles*:  ComplianceRootUser, ComplianceAdmin, ComplianceUser, TechnicalSupportAdmin, TechnicalSupportUser.
-     * 
-     * @param companyId The ID of the company that owns the filing being adjusted.
-     * @param id The ID of the payment being edited.
-     * @param model The updated Payment.
-     * @return FilingPaymentModel
-     */
-    public FilingPaymentModel updateReturnPayment(Integer companyId, Long id, FilingPaymentModel model) throws Exception {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/payment/{id}");
-        path.applyField("companyId", companyId);
-        path.applyField("id", id);
-        return ((RestCall<FilingPaymentModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<FilingPaymentModel>(){})).call();
-    }
-
-    /**
-     * Edit an payment for a given filing.
-     * 
-     * This API is available by invitation only.
-     * An "Payment" is usually an increase or decrease to customer funding to Avalara,
-     * such as early filer discount amounts that are refunded to the customer, or efile fees from websites.
-     * Sometimes may be a manual change in tax liability similar to an augmentation.
-     * This API modifies an payment for an existing tax filing.
-     * This API can only be used when the filing has not yet been approved.
-     * 
-     * ### Security Policies
-     * 
-     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, CSPTester, FirmUser, SSTAdmin, TechnicalSupportAdmin.
-     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
-     * * This API is available by invitation only.<br />*Exempt security roles*:  ComplianceRootUser, ComplianceAdmin, ComplianceUser, TechnicalSupportAdmin, TechnicalSupportUser.
-     * 
-     * @param companyId The ID of the company that owns the filing being adjusted.
-     * @param id The ID of the payment being edited.
-     * @param model The updated Payment.
-     * @return FilingPaymentModel
-     */
-    public Future<FilingPaymentModel> updateReturnPaymentAsync(Integer companyId, Long id, FilingPaymentModel model) {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/payment/{id}");
-        path.applyField("companyId", companyId);
-        path.applyField("id", id);
-        return this.threadPool.submit((RestCall<FilingPaymentModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<FilingPaymentModel>(){}));
+        return this.threadPool.submit((RestCall<FetchResult<ErrorTransactionOutputModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ErrorTransactionOutputModel>>(){}));
     }
 
     /**
@@ -14621,1230 +11869,6 @@ This gets the basic information from the filings and doesn't include anything ex
     }
 
     /**
-     * Create a new notice comment.
-     * 
-     * This API is available by invitation only.
-     * 'Notice comments' are updates by the notice team on the work to be done and that has been done so far on a notice.
-     * A 'notice' represents a letter sent to a business by a tax authority regarding tax filing issues.  Avalara
-     * Returns customers often receive support and assistance from the Compliance Notices team in handling notices received by taxing authorities.
-     * 
-     * ### Security Policies
-     * 
-     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Operator, Compliance Root User, Compliance Temp User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
-     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
-     * * This API is available by invitation only.<br />*Exempt security roles*:  ComplianceRootUser, ComplianceAdmin, ComplianceUser, TechnicalSupportAdmin, TechnicalSupportUser.
-     * 
-     * @param companyId The ID of the company that owns this notice.
-     * @param id The ID of the tax notice we are adding the comment for.
-     * @param model The notice comments you wish to create.
-     * @return ArrayList<NoticeCommentModel>
-     */
-    public ArrayList<NoticeCommentModel> createNoticeComment(Integer companyId, Integer id, ArrayList<NoticeCommentModel> model) throws Exception {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/{id}/comments");
-        path.applyField("companyId", companyId);
-        path.applyField("id", id);
-        return ((RestCall<ArrayList<NoticeCommentModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<NoticeCommentModel>>(){})).call();
-    }
-
-    /**
-     * Create a new notice comment.
-     * 
-     * This API is available by invitation only.
-     * 'Notice comments' are updates by the notice team on the work to be done and that has been done so far on a notice.
-     * A 'notice' represents a letter sent to a business by a tax authority regarding tax filing issues.  Avalara
-     * Returns customers often receive support and assistance from the Compliance Notices team in handling notices received by taxing authorities.
-     * 
-     * ### Security Policies
-     * 
-     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Operator, Compliance Root User, Compliance Temp User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
-     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
-     * * This API is available by invitation only.<br />*Exempt security roles*:  ComplianceRootUser, ComplianceAdmin, ComplianceUser, TechnicalSupportAdmin, TechnicalSupportUser.
-     * 
-     * @param companyId The ID of the company that owns this notice.
-     * @param id The ID of the tax notice we are adding the comment for.
-     * @param model The notice comments you wish to create.
-     * @return ArrayList<NoticeCommentModel>
-     */
-    public Future<ArrayList<NoticeCommentModel>> createNoticeCommentAsync(Integer companyId, Integer id, ArrayList<NoticeCommentModel> model) {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/{id}/comments");
-        path.applyField("companyId", companyId);
-        path.applyField("id", id);
-        return this.threadPool.submit((RestCall<ArrayList<NoticeCommentModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<NoticeCommentModel>>(){}));
-    }
-
-    /**
-     * Create a new notice finance details.
-     * 
-     * This API is available by invitation only.
-     * 'Notice finance details' is the categorical breakdown of the total charge levied by the tax authority on our customer,
-     * as broken down in our "notice log" found in Workflow. Main examples of the categories are 'Tax Due', 'Interest', 'Penalty', 'Total Abated'.
-     * A 'notice' represents a letter sent to a business by a tax authority regarding tax filing issues.  Avalara
-     * Returns customers often receive support and assistance from the Compliance Notices team in handling notices received by taxing authorities.
-     * 
-     * ### Security Policies
-     * 
-     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Operator, Compliance Root User, Compliance Temp User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
-     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
-     * * This API is available by invitation only.<br />*Exempt security roles*:  ComplianceRootUser, ComplianceAdmin, ComplianceUser, TechnicalSupportAdmin, TechnicalSupportUser.
-     * 
-     * @param companyId The ID of the company that owns this notice.
-     * @param id The ID of the notice added to the finance details.
-     * @param model The notice finance details you wish to create.
-     * @return ArrayList<NoticeFinanceModel>
-     */
-    public ArrayList<NoticeFinanceModel> createNoticeFinanceDetails(Integer companyId, Integer id, ArrayList<NoticeFinanceModel> model) throws Exception {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/{id}/financedetails");
-        path.applyField("companyId", companyId);
-        path.applyField("id", id);
-        return ((RestCall<ArrayList<NoticeFinanceModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<NoticeFinanceModel>>(){})).call();
-    }
-
-    /**
-     * Create a new notice finance details.
-     * 
-     * This API is available by invitation only.
-     * 'Notice finance details' is the categorical breakdown of the total charge levied by the tax authority on our customer,
-     * as broken down in our "notice log" found in Workflow. Main examples of the categories are 'Tax Due', 'Interest', 'Penalty', 'Total Abated'.
-     * A 'notice' represents a letter sent to a business by a tax authority regarding tax filing issues.  Avalara
-     * Returns customers often receive support and assistance from the Compliance Notices team in handling notices received by taxing authorities.
-     * 
-     * ### Security Policies
-     * 
-     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Operator, Compliance Root User, Compliance Temp User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
-     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
-     * * This API is available by invitation only.<br />*Exempt security roles*:  ComplianceRootUser, ComplianceAdmin, ComplianceUser, TechnicalSupportAdmin, TechnicalSupportUser.
-     * 
-     * @param companyId The ID of the company that owns this notice.
-     * @param id The ID of the notice added to the finance details.
-     * @param model The notice finance details you wish to create.
-     * @return ArrayList<NoticeFinanceModel>
-     */
-    public Future<ArrayList<NoticeFinanceModel>> createNoticeFinanceDetailsAsync(Integer companyId, Integer id, ArrayList<NoticeFinanceModel> model) {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/{id}/financedetails");
-        path.applyField("companyId", companyId);
-        path.applyField("id", id);
-        return this.threadPool.submit((RestCall<ArrayList<NoticeFinanceModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<NoticeFinanceModel>>(){}));
-    }
-
-    /**
-     * Create a new notice responsibility.
-     * 
-     * This API is available by invitation only.
-     * 'Notice comments' are updates by the notice team on the work to be done and that has been done so far on a notice.
-     * A 'notice' represents a letter sent to a business by a tax authority regarding tax filing issues.  Avalara
-     * Returns customers often receive support and assistance from the Compliance Notices team in handling notices received by taxing authorities.
-     * 
-     * ### Security Policies
-     * 
-     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Operator, Compliance Root User, Compliance Temp User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
-     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
-     * * This API is available by invitation only.<br />*Exempt security roles*:  ComplianceRootUser, ComplianceAdmin, ComplianceUser, TechnicalSupportAdmin, TechnicalSupportUser.
-     * 
-     * @param companyId The ID of the company that owns this notice.
-     * @param id The ID of the tax notice we are adding the responsibility for.
-     * @param model The notice responsibilities you wish to create.
-     * @return ArrayList<NoticeResponsibilityDetailModel>
-     */
-    public ArrayList<NoticeResponsibilityDetailModel> createNoticeResponsibilities(Integer companyId, Integer id, ArrayList<NoticeResponsibilityDetailModel> model) throws Exception {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/{id}/responsibilities");
-        path.applyField("companyId", companyId);
-        path.applyField("id", id);
-        return ((RestCall<ArrayList<NoticeResponsibilityDetailModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<NoticeResponsibilityDetailModel>>(){})).call();
-    }
-
-    /**
-     * Create a new notice responsibility.
-     * 
-     * This API is available by invitation only.
-     * 'Notice comments' are updates by the notice team on the work to be done and that has been done so far on a notice.
-     * A 'notice' represents a letter sent to a business by a tax authority regarding tax filing issues.  Avalara
-     * Returns customers often receive support and assistance from the Compliance Notices team in handling notices received by taxing authorities.
-     * 
-     * ### Security Policies
-     * 
-     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Operator, Compliance Root User, Compliance Temp User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
-     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
-     * * This API is available by invitation only.<br />*Exempt security roles*:  ComplianceRootUser, ComplianceAdmin, ComplianceUser, TechnicalSupportAdmin, TechnicalSupportUser.
-     * 
-     * @param companyId The ID of the company that owns this notice.
-     * @param id The ID of the tax notice we are adding the responsibility for.
-     * @param model The notice responsibilities you wish to create.
-     * @return ArrayList<NoticeResponsibilityDetailModel>
-     */
-    public Future<ArrayList<NoticeResponsibilityDetailModel>> createNoticeResponsibilitiesAsync(Integer companyId, Integer id, ArrayList<NoticeResponsibilityDetailModel> model) {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/{id}/responsibilities");
-        path.applyField("companyId", companyId);
-        path.applyField("id", id);
-        return this.threadPool.submit((RestCall<ArrayList<NoticeResponsibilityDetailModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<NoticeResponsibilityDetailModel>>(){}));
-    }
-
-    /**
-     * Create a new notice root cause.
-     * 
-     * This API is available by invitation only.
-     * 'Notice root causes' are are those who are responsible for the notice.
-     * A 'notice' represents a letter sent to a business by a tax authority regarding tax filing issues.  Avalara
-     * Returns customers often receive support and assistance from the Compliance Notices team in handling notices received by taxing authorities.
-     * 
-     * ### Security Policies
-     * 
-     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Operator, Compliance Root User, Compliance Temp User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
-     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
-     * * This API is available by invitation only.<br />*Exempt security roles*:  ComplianceRootUser, ComplianceAdmin, ComplianceUser, TechnicalSupportAdmin, TechnicalSupportUser.
-     * 
-     * @param companyId The ID of the company that owns this notice.
-     * @param id The ID of the tax notice we are adding the responsibility for.
-     * @param model The notice root causes you wish to create.
-     * @return ArrayList<NoticeRootCauseDetailModel>
-     */
-    public ArrayList<NoticeRootCauseDetailModel> createNoticeRootCauses(Integer companyId, Integer id, ArrayList<NoticeRootCauseDetailModel> model) throws Exception {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/{id}/rootcauses");
-        path.applyField("companyId", companyId);
-        path.applyField("id", id);
-        return ((RestCall<ArrayList<NoticeRootCauseDetailModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<NoticeRootCauseDetailModel>>(){})).call();
-    }
-
-    /**
-     * Create a new notice root cause.
-     * 
-     * This API is available by invitation only.
-     * 'Notice root causes' are are those who are responsible for the notice.
-     * A 'notice' represents a letter sent to a business by a tax authority regarding tax filing issues.  Avalara
-     * Returns customers often receive support and assistance from the Compliance Notices team in handling notices received by taxing authorities.
-     * 
-     * ### Security Policies
-     * 
-     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Operator, Compliance Root User, Compliance Temp User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
-     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
-     * * This API is available by invitation only.<br />*Exempt security roles*:  ComplianceRootUser, ComplianceAdmin, ComplianceUser, TechnicalSupportAdmin, TechnicalSupportUser.
-     * 
-     * @param companyId The ID of the company that owns this notice.
-     * @param id The ID of the tax notice we are adding the responsibility for.
-     * @param model The notice root causes you wish to create.
-     * @return ArrayList<NoticeRootCauseDetailModel>
-     */
-    public Future<ArrayList<NoticeRootCauseDetailModel>> createNoticeRootCausesAsync(Integer companyId, Integer id, ArrayList<NoticeRootCauseDetailModel> model) {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/{id}/rootcauses");
-        path.applyField("companyId", companyId);
-        path.applyField("id", id);
-        return this.threadPool.submit((RestCall<ArrayList<NoticeRootCauseDetailModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<NoticeRootCauseDetailModel>>(){}));
-    }
-
-    /**
-     * Create a new notice.
-     * 
-     * This API is available by invitation only.
-     * Create one or more new notice objects.
-     * A 'notice' represents a letter sent to a business by a tax authority regarding tax filing issues.  Avalara
-     * Returns customers often receive support and assistance from the Compliance Notices team in handling notices received by taxing authorities.
-     * 
-     * ### Security Policies
-     * 
-     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Operator, Compliance Root User, Compliance Temp User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
-     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
-     * * This API is available by invitation only.<br />*Exempt security roles*:  ComplianceRootUser, ComplianceAdmin, ComplianceUser, TechnicalSupportAdmin, TechnicalSupportUser.
-     * 
-     * @param companyId The ID of the company that owns this notice.
-     * @param model The notice object you wish to create.
-     * @return ArrayList<NoticeModel>
-     */
-    public ArrayList<NoticeModel> createNotices(Integer companyId, ArrayList<NoticeModel> model) throws Exception {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices");
-        path.applyField("companyId", companyId);
-        return ((RestCall<ArrayList<NoticeModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<NoticeModel>>(){})).call();
-    }
-
-    /**
-     * Create a new notice.
-     * 
-     * This API is available by invitation only.
-     * Create one or more new notice objects.
-     * A 'notice' represents a letter sent to a business by a tax authority regarding tax filing issues.  Avalara
-     * Returns customers often receive support and assistance from the Compliance Notices team in handling notices received by taxing authorities.
-     * 
-     * ### Security Policies
-     * 
-     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Operator, Compliance Root User, Compliance Temp User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
-     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
-     * * This API is available by invitation only.<br />*Exempt security roles*:  ComplianceRootUser, ComplianceAdmin, ComplianceUser, TechnicalSupportAdmin, TechnicalSupportUser.
-     * 
-     * @param companyId The ID of the company that owns this notice.
-     * @param model The notice object you wish to create.
-     * @return ArrayList<NoticeModel>
-     */
-    public Future<ArrayList<NoticeModel>> createNoticesAsync(Integer companyId, ArrayList<NoticeModel> model) {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices");
-        path.applyField("companyId", companyId);
-        return this.threadPool.submit((RestCall<ArrayList<NoticeModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<NoticeModel>>(){}));
-    }
-
-    /**
-     * Delete a single notice.
-     * 
-     * This API is available by invitation only.
-     * 'Notice comments' are updates by the notice team on the work to be done and that has been done so far on a notice.
-     * A 'notice' represents a letter sent to a business by a tax authority regarding tax filing issues.  Avalara
-     * Returns customers often receive support and assistance from the Compliance Notices team in handling notices received by taxing authorities.
-     * 
-     * ### Security Policies
-     * 
-     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Operator, Compliance Root User, Compliance Temp User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
-     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
-     * * This API is available by invitation only.<br />*Exempt security roles*:  ComplianceRootUser, ComplianceAdmin, ComplianceUser, TechnicalSupportAdmin, TechnicalSupportUser.
-     * 
-     * @param companyId The ID of the company that owns this notice.
-     * @param id The ID of the notice you wish to delete the finance detail from.
-     * @param commentDetailsId The ID of the comment you wish to delete.
-     * @return ArrayList<ErrorDetail>
-     */
-    public ArrayList<ErrorDetail> deleteCommentDetails(Integer companyId, Integer id, Integer commentDetailsId) throws Exception {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/{id}/commentdetails/{commentdetailsid}");
-        path.applyField("companyId", companyId);
-        path.applyField("id", id);
-        path.applyField("commentDetailsId", commentDetailsId);
-        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){})).call();
-    }
-
-    /**
-     * Delete a single notice.
-     * 
-     * This API is available by invitation only.
-     * 'Notice comments' are updates by the notice team on the work to be done and that has been done so far on a notice.
-     * A 'notice' represents a letter sent to a business by a tax authority regarding tax filing issues.  Avalara
-     * Returns customers often receive support and assistance from the Compliance Notices team in handling notices received by taxing authorities.
-     * 
-     * ### Security Policies
-     * 
-     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Operator, Compliance Root User, Compliance Temp User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
-     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
-     * * This API is available by invitation only.<br />*Exempt security roles*:  ComplianceRootUser, ComplianceAdmin, ComplianceUser, TechnicalSupportAdmin, TechnicalSupportUser.
-     * 
-     * @param companyId The ID of the company that owns this notice.
-     * @param id The ID of the notice you wish to delete the finance detail from.
-     * @param commentDetailsId The ID of the comment you wish to delete.
-     * @return ArrayList<ErrorDetail>
-     */
-    public Future<ArrayList<ErrorDetail>> deleteCommentDetailsAsync(Integer companyId, Integer id, Integer commentDetailsId) {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/{id}/commentdetails/{commentdetailsid}");
-        path.applyField("companyId", companyId);
-        path.applyField("id", id);
-        path.applyField("commentDetailsId", commentDetailsId);
-        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){}));
-    }
-
-    /**
-     * Delete a single notice.
-     * 
-     * This API is available by invitation only.
-     * 'Notice finance details' is the categorical breakdown of the total charge levied by the tax authority on our customer,
-     * as broken down in our "notice log" found in Workflow. Main examples of the categories are 'Tax Due', 'Interest', 'Penalty', 'Total Abated'.
-     * A 'notice' represents a letter sent to a business by a tax authority regarding tax filing issues.  Avalara
-     * Returns customers often receive support and assistance from the Compliance Notices team in handling notices received by taxing authorities.
-     * 
-     * ### Security Policies
-     * 
-     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Operator, Compliance Root User, Compliance Temp User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
-     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
-     * * This API is available by invitation only.<br />*Exempt security roles*:  ComplianceRootUser, ComplianceAdmin, ComplianceUser, TechnicalSupportAdmin, TechnicalSupportUser.
-     * 
-     * @param companyId The ID of the company that owns this notice.
-     * @param id The ID of the notice you wish to delete the finance detail from.
-     * @param financeDetailsId The ID of the finance detail you wish to delete.
-     * @return ArrayList<ErrorDetail>
-     */
-    public ArrayList<ErrorDetail> deleteFinanceDetails(Integer companyId, Integer id, Integer financeDetailsId) throws Exception {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/{id}/financedetails/{financedetailsid}");
-        path.applyField("companyId", companyId);
-        path.applyField("id", id);
-        path.applyField("financeDetailsId", financeDetailsId);
-        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){})).call();
-    }
-
-    /**
-     * Delete a single notice.
-     * 
-     * This API is available by invitation only.
-     * 'Notice finance details' is the categorical breakdown of the total charge levied by the tax authority on our customer,
-     * as broken down in our "notice log" found in Workflow. Main examples of the categories are 'Tax Due', 'Interest', 'Penalty', 'Total Abated'.
-     * A 'notice' represents a letter sent to a business by a tax authority regarding tax filing issues.  Avalara
-     * Returns customers often receive support and assistance from the Compliance Notices team in handling notices received by taxing authorities.
-     * 
-     * ### Security Policies
-     * 
-     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Operator, Compliance Root User, Compliance Temp User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
-     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
-     * * This API is available by invitation only.<br />*Exempt security roles*:  ComplianceRootUser, ComplianceAdmin, ComplianceUser, TechnicalSupportAdmin, TechnicalSupportUser.
-     * 
-     * @param companyId The ID of the company that owns this notice.
-     * @param id The ID of the notice you wish to delete the finance detail from.
-     * @param financeDetailsId The ID of the finance detail you wish to delete.
-     * @return ArrayList<ErrorDetail>
-     */
-    public Future<ArrayList<ErrorDetail>> deleteFinanceDetailsAsync(Integer companyId, Integer id, Integer financeDetailsId) {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/{id}/financedetails/{financedetailsid}");
-        path.applyField("companyId", companyId);
-        path.applyField("id", id);
-        path.applyField("financeDetailsId", financeDetailsId);
-        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){}));
-    }
-
-    /**
-     * Delete a single notice.
-     * 
-     * This API is available by invitation only.
-     * Mark the existing notice object at this URL as deleted.
-     * A 'notice' represents a letter sent to a business by a tax authority regarding tax filing issues.  Avalara
-     * Returns customers often receive support and assistance from the Compliance Notices team in handling notices received by taxing authorities.
-     * 
-     * ### Security Policies
-     * 
-     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Operator, Compliance Root User, Compliance Temp User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
-     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
-     * * This API is available by invitation only.<br />*Exempt security roles*:  ComplianceRootUser, ComplianceAdmin, ComplianceUser, TechnicalSupportAdmin, TechnicalSupportUser.
-     * 
-     * @param companyId The ID of the company that owns this notice.
-     * @param id The ID of the notice you wish to delete.
-     * @return ArrayList<ErrorDetail>
-     */
-    public ArrayList<ErrorDetail> deleteNotice(Integer companyId, Integer id) throws Exception {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/{id}");
-        path.applyField("companyId", companyId);
-        path.applyField("id", id);
-        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){})).call();
-    }
-
-    /**
-     * Delete a single notice.
-     * 
-     * This API is available by invitation only.
-     * Mark the existing notice object at this URL as deleted.
-     * A 'notice' represents a letter sent to a business by a tax authority regarding tax filing issues.  Avalara
-     * Returns customers often receive support and assistance from the Compliance Notices team in handling notices received by taxing authorities.
-     * 
-     * ### Security Policies
-     * 
-     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Operator, Compliance Root User, Compliance Temp User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
-     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
-     * * This API is available by invitation only.<br />*Exempt security roles*:  ComplianceRootUser, ComplianceAdmin, ComplianceUser, TechnicalSupportAdmin, TechnicalSupportUser.
-     * 
-     * @param companyId The ID of the company that owns this notice.
-     * @param id The ID of the notice you wish to delete.
-     * @return ArrayList<ErrorDetail>
-     */
-    public Future<ArrayList<ErrorDetail>> deleteNoticeAsync(Integer companyId, Integer id) {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/{id}");
-        path.applyField("companyId", companyId);
-        path.applyField("id", id);
-        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){}));
-    }
-
-    /**
-     * Delete a single responsibility
-     * 
-     * This API is available by invitation only.
-     * Mark the existing notice object at this URL as deleted.
-     * A 'notice' represents a letter sent to a business by a tax authority regarding tax filing issues.  Avalara
-     * Returns customers often receive support and assistance from the Compliance Notices team in handling notices received by taxing authorities.
-     * 
-     * ### Security Policies
-     * 
-     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Operator, Compliance Root User, Compliance Temp User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
-     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
-     * * This API is available by invitation only.<br />*Exempt security roles*:  ComplianceRootUser, ComplianceAdmin, ComplianceUser, TechnicalSupportAdmin, TechnicalSupportUser.
-     * 
-     * @param companyId The ID of the company that owns this notice.
-     * @param noticeId The ID of the notice you wish to delete.
-     * @param id The ID of the responsibility you wish to delete.
-     * @return ArrayList<ErrorDetail>
-     */
-    public ArrayList<ErrorDetail> deleteResponsibilities(Integer companyId, Integer noticeId, Integer id) throws Exception {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/{noticeId}/responsibilities/{id}");
-        path.applyField("companyId", companyId);
-        path.applyField("noticeId", noticeId);
-        path.applyField("id", id);
-        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){})).call();
-    }
-
-    /**
-     * Delete a single responsibility
-     * 
-     * This API is available by invitation only.
-     * Mark the existing notice object at this URL as deleted.
-     * A 'notice' represents a letter sent to a business by a tax authority regarding tax filing issues.  Avalara
-     * Returns customers often receive support and assistance from the Compliance Notices team in handling notices received by taxing authorities.
-     * 
-     * ### Security Policies
-     * 
-     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Operator, Compliance Root User, Compliance Temp User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
-     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
-     * * This API is available by invitation only.<br />*Exempt security roles*:  ComplianceRootUser, ComplianceAdmin, ComplianceUser, TechnicalSupportAdmin, TechnicalSupportUser.
-     * 
-     * @param companyId The ID of the company that owns this notice.
-     * @param noticeId The ID of the notice you wish to delete.
-     * @param id The ID of the responsibility you wish to delete.
-     * @return ArrayList<ErrorDetail>
-     */
-    public Future<ArrayList<ErrorDetail>> deleteResponsibilitiesAsync(Integer companyId, Integer noticeId, Integer id) {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/{noticeId}/responsibilities/{id}");
-        path.applyField("companyId", companyId);
-        path.applyField("noticeId", noticeId);
-        path.applyField("id", id);
-        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){}));
-    }
-
-    /**
-     * Delete a single root cause.
-     * 
-     * This API is available by invitation only.
-     * Mark the existing notice object at this URL as deleted.
-     * A 'notice' represents a letter sent to a business by a tax authority regarding tax filing issues.  Avalara
-     * Returns customers often receive support and assistance from the Compliance Notices team in handling notices received by taxing authorities.
-     * 
-     * ### Security Policies
-     * 
-     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Operator, Compliance Root User, Compliance Temp User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
-     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
-     * * This API is available by invitation only.<br />*Exempt security roles*:  ComplianceRootUser, ComplianceAdmin, ComplianceUser, TechnicalSupportAdmin, TechnicalSupportUser.
-     * 
-     * @param companyId The ID of the company that owns this notice.
-     * @param noticeId The ID of the notice you wish to delete.
-     * @param id The ID of the root cause you wish to delete.
-     * @return ArrayList<ErrorDetail>
-     */
-    public ArrayList<ErrorDetail> deleteRootCauses(Integer companyId, Integer noticeId, Integer id) throws Exception {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/{noticeId}/rootcauses/{id}");
-        path.applyField("companyId", companyId);
-        path.applyField("noticeId", noticeId);
-        path.applyField("id", id);
-        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){})).call();
-    }
-
-    /**
-     * Delete a single root cause.
-     * 
-     * This API is available by invitation only.
-     * Mark the existing notice object at this URL as deleted.
-     * A 'notice' represents a letter sent to a business by a tax authority regarding tax filing issues.  Avalara
-     * Returns customers often receive support and assistance from the Compliance Notices team in handling notices received by taxing authorities.
-     * 
-     * ### Security Policies
-     * 
-     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Operator, Compliance Root User, Compliance Temp User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
-     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
-     * * This API is available by invitation only.<br />*Exempt security roles*:  ComplianceRootUser, ComplianceAdmin, ComplianceUser, TechnicalSupportAdmin, TechnicalSupportUser.
-     * 
-     * @param companyId The ID of the company that owns this notice.
-     * @param noticeId The ID of the notice you wish to delete.
-     * @param id The ID of the root cause you wish to delete.
-     * @return ArrayList<ErrorDetail>
-     */
-    public Future<ArrayList<ErrorDetail>> deleteRootCausesAsync(Integer companyId, Integer noticeId, Integer id) {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/{noticeId}/rootcauses/{id}");
-        path.applyField("companyId", companyId);
-        path.applyField("noticeId", noticeId);
-        path.applyField("id", id);
-        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){}));
-    }
-
-    /**
-     * Retrieve a single attachment
-     * 
-     * This API is available by invitation only.
-     * Get the file attachment identified by this URL.
-     * 
-     * ### Security Policies
-     * 
-     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Operator, Compliance Root User, Compliance Temp User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
-     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
-     * * This API is available by invitation only.<br />*Exempt security roles*:  ComplianceRootUser, ComplianceAdmin, ComplianceUser, TechnicalSupportAdmin, TechnicalSupportUser.
-     * 
-     * @param companyId The ID of the company for this attachment.
-     * @param id The ResourceFileId of the attachment to download.
-     * @return String
-     */
-    public String downloadNoticeAttachment(Integer companyId, Long id) throws Exception {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/files/{id}/attachment");
-        path.applyField("companyId", companyId);
-        path.applyField("id", id);
-        return ((RestCall<String>)restCallFactory.createRestCall("get", path, null, new TypeToken<String>(){})).call();
-    }
-
-    /**
-     * Retrieve a single attachment
-     * 
-     * This API is available by invitation only.
-     * Get the file attachment identified by this URL.
-     * 
-     * ### Security Policies
-     * 
-     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Operator, Compliance Root User, Compliance Temp User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
-     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
-     * * This API is available by invitation only.<br />*Exempt security roles*:  ComplianceRootUser, ComplianceAdmin, ComplianceUser, TechnicalSupportAdmin, TechnicalSupportUser.
-     * 
-     * @param companyId The ID of the company for this attachment.
-     * @param id The ResourceFileId of the attachment to download.
-     * @return String
-     */
-    public Future<String> downloadNoticeAttachmentAsync(Integer companyId, Long id) {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/files/{id}/attachment");
-        path.applyField("companyId", companyId);
-        path.applyField("id", id);
-        return this.threadPool.submit((RestCall<String>)restCallFactory.createRestCall("get", path, null, new TypeToken<String>(){}));
-    }
-
-    /**
-     * Retrieve a single notice.
-     * 
-     * This API is available by invitation only.
-     * Get the tax notice object identified by this URL.
-     * A 'notice' represents a letter sent to a business by a tax authority regarding tax filing issues.  Avalara
-     * Returns customers often receive support and assistance from the Compliance Notices team in handling notices received by taxing authorities.
-     * 
-     * ### Security Policies
-     * 
-     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Operator, Compliance Root User, Compliance Temp User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
-     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
-     * * This API is available by invitation only.<br />*Exempt security roles*:  ComplianceRootUser, ComplianceAdmin, ComplianceUser, TechnicalSupportAdmin, TechnicalSupportUser.
-     * 
-     * @param companyId The ID of the company for this notice.
-     * @param id The ID of this notice.
-     * @return NoticeModel
-     */
-    public NoticeModel getNotice(Integer companyId, Integer id) throws Exception {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/{id}");
-        path.applyField("companyId", companyId);
-        path.applyField("id", id);
-        return ((RestCall<NoticeModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<NoticeModel>(){})).call();
-    }
-
-    /**
-     * Retrieve a single notice.
-     * 
-     * This API is available by invitation only.
-     * Get the tax notice object identified by this URL.
-     * A 'notice' represents a letter sent to a business by a tax authority regarding tax filing issues.  Avalara
-     * Returns customers often receive support and assistance from the Compliance Notices team in handling notices received by taxing authorities.
-     * 
-     * ### Security Policies
-     * 
-     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Operator, Compliance Root User, Compliance Temp User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
-     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
-     * * This API is available by invitation only.<br />*Exempt security roles*:  ComplianceRootUser, ComplianceAdmin, ComplianceUser, TechnicalSupportAdmin, TechnicalSupportUser.
-     * 
-     * @param companyId The ID of the company for this notice.
-     * @param id The ID of this notice.
-     * @return NoticeModel
-     */
-    public Future<NoticeModel> getNoticeAsync(Integer companyId, Integer id) {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/{id}");
-        path.applyField("companyId", companyId);
-        path.applyField("id", id);
-        return this.threadPool.submit((RestCall<NoticeModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<NoticeModel>(){}));
-    }
-
-    /**
-     * Retrieve notice comments for a specific notice.
-     * 
-     * This API is available by invitation only.
-     * 'Notice comments' are updates by the notice team on the work to be done and that has been done so far on a notice.
-     * A 'notice' represents a letter sent to a business by a tax authority regarding tax filing issues.  Avalara
-     * Returns customers often receive support and assistance from the Compliance Notices team in handling notices received by taxing authorities.
-     * 
-     * ### Security Policies
-     * 
-     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Operator, Compliance Root User, Compliance Temp User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
-     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
-     * * This API is available by invitation only.<br />*Exempt security roles*:  ComplianceRootUser, ComplianceAdmin, ComplianceUser, TechnicalSupportAdmin, TechnicalSupportUser.
-     * 
-     * @param id The ID of the notice.
-     * @param companyId The ID of the company that owns these notices.
-     * @return FetchResult<NoticeCommentModel>
-     */
-    public FetchResult<NoticeCommentModel> getNoticeComments(Integer id, Integer companyId) throws Exception {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/{id}/comments");
-        path.applyField("id", id);
-        path.applyField("companyId", companyId);
-        return ((RestCall<FetchResult<NoticeCommentModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NoticeCommentModel>>(){})).call();
-    }
-
-    /**
-     * Retrieve notice comments for a specific notice.
-     * 
-     * This API is available by invitation only.
-     * 'Notice comments' are updates by the notice team on the work to be done and that has been done so far on a notice.
-     * A 'notice' represents a letter sent to a business by a tax authority regarding tax filing issues.  Avalara
-     * Returns customers often receive support and assistance from the Compliance Notices team in handling notices received by taxing authorities.
-     * 
-     * ### Security Policies
-     * 
-     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Operator, Compliance Root User, Compliance Temp User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
-     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
-     * * This API is available by invitation only.<br />*Exempt security roles*:  ComplianceRootUser, ComplianceAdmin, ComplianceUser, TechnicalSupportAdmin, TechnicalSupportUser.
-     * 
-     * @param id The ID of the notice.
-     * @param companyId The ID of the company that owns these notices.
-     * @return FetchResult<NoticeCommentModel>
-     */
-    public Future<FetchResult<NoticeCommentModel>> getNoticeCommentsAsync(Integer id, Integer companyId) {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/{id}/comments");
-        path.applyField("id", id);
-        path.applyField("companyId", companyId);
-        return this.threadPool.submit((RestCall<FetchResult<NoticeCommentModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NoticeCommentModel>>(){}));
-    }
-
-    /**
-     * Retrieve notice finance details for a specific notice.
-     * 
-     * This API is available by invitation only.
-     * 'Notice finance details' is the categorical breakdown of the total charge levied by the tax authority on our customer,
-     * as broken down in our "notice log" found in Workflow. Main examples of the categories are 'Tax Due', 'Interest', 'Penalty', 'Total Abated'.
-     * A 'notice' represents a letter sent to a business by a tax authority regarding tax filing issues.  Avalara
-     * Returns customers often receive support and assistance from the Compliance Notices team in handling notices received by taxing authorities.
-     * 
-     * ### Security Policies
-     * 
-     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Operator, Compliance Root User, Compliance Temp User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
-     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
-     * * This API is available by invitation only.<br />*Exempt security roles*:  ComplianceRootUser, ComplianceAdmin, ComplianceUser, TechnicalSupportAdmin, TechnicalSupportUser.
-     * 
-     * @param id The ID of the company that owns these notices.
-     * @param companyId The ID of the company that owns these notices.
-     * @return FetchResult<NoticeFinanceModel>
-     */
-    public FetchResult<NoticeFinanceModel> getNoticeFinanceDetails(Integer id, Integer companyId) throws Exception {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/{id}/financedetails");
-        path.applyField("id", id);
-        path.applyField("companyId", companyId);
-        return ((RestCall<FetchResult<NoticeFinanceModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NoticeFinanceModel>>(){})).call();
-    }
-
-    /**
-     * Retrieve notice finance details for a specific notice.
-     * 
-     * This API is available by invitation only.
-     * 'Notice finance details' is the categorical breakdown of the total charge levied by the tax authority on our customer,
-     * as broken down in our "notice log" found in Workflow. Main examples of the categories are 'Tax Due', 'Interest', 'Penalty', 'Total Abated'.
-     * A 'notice' represents a letter sent to a business by a tax authority regarding tax filing issues.  Avalara
-     * Returns customers often receive support and assistance from the Compliance Notices team in handling notices received by taxing authorities.
-     * 
-     * ### Security Policies
-     * 
-     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Operator, Compliance Root User, Compliance Temp User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
-     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
-     * * This API is available by invitation only.<br />*Exempt security roles*:  ComplianceRootUser, ComplianceAdmin, ComplianceUser, TechnicalSupportAdmin, TechnicalSupportUser.
-     * 
-     * @param id The ID of the company that owns these notices.
-     * @param companyId The ID of the company that owns these notices.
-     * @return FetchResult<NoticeFinanceModel>
-     */
-    public Future<FetchResult<NoticeFinanceModel>> getNoticeFinanceDetailsAsync(Integer id, Integer companyId) {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/{id}/financedetails");
-        path.applyField("id", id);
-        path.applyField("companyId", companyId);
-        return this.threadPool.submit((RestCall<FetchResult<NoticeFinanceModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NoticeFinanceModel>>(){}));
-    }
-
-    /**
-     * Retrieve notice responsibilities for a specific notice.
-     * 
-     * This API is available by invitation only.
-     * 'Notice responsibilities' are are those who are responsible for the notice.
-     * A 'notice' represents a letter sent to a business by a tax authority regarding tax filing issues.  Avalara
-     * Returns customers often receive support and assistance from the Compliance Notices team in handling notices received by taxing authorities.
-     * 
-     * ### Security Policies
-     * 
-     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Operator, Compliance Root User, Compliance Temp User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
-     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
-     * * This API is available by invitation only.<br />*Exempt security roles*:  ComplianceRootUser, ComplianceAdmin, ComplianceUser, TechnicalSupportAdmin, TechnicalSupportUser.
-     * 
-     * @param id The ID of the notice.
-     * @param companyId The ID of the company that owns these notices.
-     * @return FetchResult<NoticeResponsibilityDetailModel>
-     */
-    public FetchResult<NoticeResponsibilityDetailModel> getNoticeResponsibilities(Integer id, Integer companyId) throws Exception {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/{id}/responsibilities");
-        path.applyField("id", id);
-        path.applyField("companyId", companyId);
-        return ((RestCall<FetchResult<NoticeResponsibilityDetailModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NoticeResponsibilityDetailModel>>(){})).call();
-    }
-
-    /**
-     * Retrieve notice responsibilities for a specific notice.
-     * 
-     * This API is available by invitation only.
-     * 'Notice responsibilities' are are those who are responsible for the notice.
-     * A 'notice' represents a letter sent to a business by a tax authority regarding tax filing issues.  Avalara
-     * Returns customers often receive support and assistance from the Compliance Notices team in handling notices received by taxing authorities.
-     * 
-     * ### Security Policies
-     * 
-     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Operator, Compliance Root User, Compliance Temp User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
-     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
-     * * This API is available by invitation only.<br />*Exempt security roles*:  ComplianceRootUser, ComplianceAdmin, ComplianceUser, TechnicalSupportAdmin, TechnicalSupportUser.
-     * 
-     * @param id The ID of the notice.
-     * @param companyId The ID of the company that owns these notices.
-     * @return FetchResult<NoticeResponsibilityDetailModel>
-     */
-    public Future<FetchResult<NoticeResponsibilityDetailModel>> getNoticeResponsibilitiesAsync(Integer id, Integer companyId) {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/{id}/responsibilities");
-        path.applyField("id", id);
-        path.applyField("companyId", companyId);
-        return this.threadPool.submit((RestCall<FetchResult<NoticeResponsibilityDetailModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NoticeResponsibilityDetailModel>>(){}));
-    }
-
-    /**
-     * Retrieve notice root causes for a specific notice.
-     * 
-     * This API is available by invitation only.
-     * 'Notice root causes' are are those who are responsible for the notice.
-     * A 'notice' represents a letter sent to a business by a tax authority regarding tax filing issues.  Avalara
-     * Returns customers often receive support and assistance from the Compliance Notices team in handling notices received by taxing authorities.
-     * 
-     * ### Security Policies
-     * 
-     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Operator, Compliance Root User, Compliance Temp User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
-     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
-     * * This API is available by invitation only.<br />*Exempt security roles*:  ComplianceRootUser, ComplianceAdmin, ComplianceUser, TechnicalSupportAdmin, TechnicalSupportUser.
-     * 
-     * @param id The ID of the notice.
-     * @param companyId The ID of the company that owns these notices.
-     * @return FetchResult<NoticeRootCauseDetailModel>
-     */
-    public FetchResult<NoticeRootCauseDetailModel> getNoticeRootCauses(Integer id, Integer companyId) throws Exception {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/{id}/rootcauses");
-        path.applyField("id", id);
-        path.applyField("companyId", companyId);
-        return ((RestCall<FetchResult<NoticeRootCauseDetailModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NoticeRootCauseDetailModel>>(){})).call();
-    }
-
-    /**
-     * Retrieve notice root causes for a specific notice.
-     * 
-     * This API is available by invitation only.
-     * 'Notice root causes' are are those who are responsible for the notice.
-     * A 'notice' represents a letter sent to a business by a tax authority regarding tax filing issues.  Avalara
-     * Returns customers often receive support and assistance from the Compliance Notices team in handling notices received by taxing authorities.
-     * 
-     * ### Security Policies
-     * 
-     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Operator, Compliance Root User, Compliance Temp User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
-     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
-     * * This API is available by invitation only.<br />*Exempt security roles*:  ComplianceRootUser, ComplianceAdmin, ComplianceUser, TechnicalSupportAdmin, TechnicalSupportUser.
-     * 
-     * @param id The ID of the notice.
-     * @param companyId The ID of the company that owns these notices.
-     * @return FetchResult<NoticeRootCauseDetailModel>
-     */
-    public Future<FetchResult<NoticeRootCauseDetailModel>> getNoticeRootCausesAsync(Integer id, Integer companyId) {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/{id}/rootcauses");
-        path.applyField("id", id);
-        path.applyField("companyId", companyId);
-        return this.threadPool.submit((RestCall<FetchResult<NoticeRootCauseDetailModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NoticeRootCauseDetailModel>>(){}));
-    }
-
-    /**
-     * Retrieve notices for a company.
-     * 
-     * This API is available by invitation only.
-     * List all tax notice objects assigned to this company.
-     * A 'notice' represents a letter sent to a business by a tax authority regarding tax filing issues.  Avalara
-     * Returns customers often receive support and assistance from the Compliance Notices team in handling notices received by taxing authorities.
-     *             
-     * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * Paginate your results using the `$top`, `$skip`, and `$orderby` parameters.
-     * 
-     * ### Security Policies
-     * 
-     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Operator, Compliance Root User, Compliance Temp User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
-     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
-     * * This API is available by invitation only.<br />*Exempt security roles*:  ComplianceRootUser, ComplianceAdmin, ComplianceUser, TechnicalSupportAdmin, TechnicalSupportUser.
-     * 
-     * @param companyId The ID of the company that owns these notices.
-     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* status, totalRemit, ticketReferenceNo, ticketReferenceUrl, reason, type, createdByUserName, documentReference, jurisdictionName, jurisdictionType, comments, finances, responsibility, rootCause
-     * @param include A comma separated list of additional data to retrieve.
-     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
-     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
-     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<NoticeModel>
-     */
-    public FetchResult<NoticeModel> listNoticesByCompany(Integer companyId, String filter, String include, Integer top, Integer skip, String orderBy) throws Exception {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices");
-        path.applyField("companyId", companyId);
-        path.addQuery("$filter", filter);
-        path.addQuery("$include", include);
-        path.addQuery("$top", top);
-        path.addQuery("$skip", skip);
-        path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<NoticeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NoticeModel>>(){})).call();
-    }
-
-    /**
-     * Retrieve notices for a company.
-     * 
-     * This API is available by invitation only.
-     * List all tax notice objects assigned to this company.
-     * A 'notice' represents a letter sent to a business by a tax authority regarding tax filing issues.  Avalara
-     * Returns customers often receive support and assistance from the Compliance Notices team in handling notices received by taxing authorities.
-     *             
-     * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * Paginate your results using the `$top`, `$skip`, and `$orderby` parameters.
-     * 
-     * ### Security Policies
-     * 
-     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Operator, Compliance Root User, Compliance Temp User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
-     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
-     * * This API is available by invitation only.<br />*Exempt security roles*:  ComplianceRootUser, ComplianceAdmin, ComplianceUser, TechnicalSupportAdmin, TechnicalSupportUser.
-     * 
-     * @param companyId The ID of the company that owns these notices.
-     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* status, totalRemit, ticketReferenceNo, ticketReferenceUrl, reason, type, createdByUserName, documentReference, jurisdictionName, jurisdictionType, comments, finances, responsibility, rootCause
-     * @param include A comma separated list of additional data to retrieve.
-     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
-     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
-     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<NoticeModel>
-     */
-    public Future<FetchResult<NoticeModel>> listNoticesByCompanyAsync(Integer companyId, String filter, String include, Integer top, Integer skip, String orderBy) {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices");
-        path.applyField("companyId", companyId);
-        path.addQuery("$filter", filter);
-        path.addQuery("$include", include);
-        path.addQuery("$top", top);
-        path.addQuery("$skip", skip);
-        path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<NoticeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NoticeModel>>(){}));
-    }
-
-    /**
-     * Retrieve all notices.
-     * 
-     * This API is available by invitation only.
-     *             
-     * This API is deprecated - please use POST `/api/v2/notices/query` API.
-     *             
-     * Get multiple notice objects across all companies.
-     * A 'notice' represents a letter sent to a business by a tax authority regarding tax filing issues.  Avalara
-     * Returns customers often receive support and assistance from the Compliance Notices team in handling notices received by taxing authorities.
-     *             
-     * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * Paginate your results using the `$top`, `$skip`, and `$orderby` parameters.
-     * 
-     * ### Security Policies
-     * 
-     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Operator, Compliance Root User, Compliance Temp User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
-     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
-     * * This API is available by invitation only.<br />*Exempt security roles*:  ComplianceRootUser, ComplianceAdmin, ComplianceUser, TechnicalSupportAdmin, TechnicalSupportUser.
-     * 
-     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* status, totalRemit, ticketReferenceNo, ticketReferenceUrl, reason, type, createdByUserName, documentReference, jurisdictionName, jurisdictionType, comments, finances, responsibility, rootCause
-     * @param include A comma separated list of additional data to retrieve.
-     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
-     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
-     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<NoticeModel>
-     */
-    public FetchResult<NoticeModel> queryNotices(String filter, String include, Integer top, Integer skip, String orderBy) throws Exception {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/notices");
-        path.addQuery("$filter", filter);
-        path.addQuery("$include", include);
-        path.addQuery("$top", top);
-        path.addQuery("$skip", skip);
-        path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<NoticeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NoticeModel>>(){})).call();
-    }
-
-    /**
-     * Retrieve all notices.
-     * 
-     * This API is available by invitation only.
-     *             
-     * This API is deprecated - please use POST `/api/v2/notices/query` API.
-     *             
-     * Get multiple notice objects across all companies.
-     * A 'notice' represents a letter sent to a business by a tax authority regarding tax filing issues.  Avalara
-     * Returns customers often receive support and assistance from the Compliance Notices team in handling notices received by taxing authorities.
-     *             
-     * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * Paginate your results using the `$top`, `$skip`, and `$orderby` parameters.
-     * 
-     * ### Security Policies
-     * 
-     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Operator, Compliance Root User, Compliance Temp User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
-     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
-     * * This API is available by invitation only.<br />*Exempt security roles*:  ComplianceRootUser, ComplianceAdmin, ComplianceUser, TechnicalSupportAdmin, TechnicalSupportUser.
-     * 
-     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* status, totalRemit, ticketReferenceNo, ticketReferenceUrl, reason, type, createdByUserName, documentReference, jurisdictionName, jurisdictionType, comments, finances, responsibility, rootCause
-     * @param include A comma separated list of additional data to retrieve.
-     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
-     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
-     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<NoticeModel>
-     */
-    public Future<FetchResult<NoticeModel>> queryNoticesAsync(String filter, String include, Integer top, Integer skip, String orderBy) {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/notices");
-        path.addQuery("$filter", filter);
-        path.addQuery("$include", include);
-        path.addQuery("$top", top);
-        path.addQuery("$skip", skip);
-        path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<NoticeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NoticeModel>>(){}));
-    }
-
-    /**
-     * Retrieve all notices.
-     * 
-     * This API is available by invitation only.
-     *             
-     * This API is intended to replace the GET `/api/v2/notices` API. The fetch request object is posted on the body of the request instead of the URI, so it's not limited by a set number of characters.
-     * The documentation of the GET API shows how filtering, sorting and pagination works.
-     * 
-     * ### Security Policies
-     * 
-     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Operator, Compliance Root User, Compliance Temp User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
-     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
-     * * This API is available by invitation only.<br />*Exempt security roles*:  ComplianceRootUser, ComplianceAdmin, ComplianceUser, TechnicalSupportAdmin, TechnicalSupportUser.
-     * 
-     * @param model Query object to filter, sort and paginate the filing calendars.
-     * @return FetchResult<NoticeModel>
-     */
-    public FetchResult<NoticeModel> queryNoticesPost(QueryRequestModel model) throws Exception {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/notices/query");
-        return ((RestCall<FetchResult<NoticeModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<FetchResult<NoticeModel>>(){})).call();
-    }
-
-    /**
-     * Retrieve all notices.
-     * 
-     * This API is available by invitation only.
-     *             
-     * This API is intended to replace the GET `/api/v2/notices` API. The fetch request object is posted on the body of the request instead of the URI, so it's not limited by a set number of characters.
-     * The documentation of the GET API shows how filtering, sorting and pagination works.
-     * 
-     * ### Security Policies
-     * 
-     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Operator, Compliance Root User, Compliance Temp User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
-     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
-     * * This API is available by invitation only.<br />*Exempt security roles*:  ComplianceRootUser, ComplianceAdmin, ComplianceUser, TechnicalSupportAdmin, TechnicalSupportUser.
-     * 
-     * @param model Query object to filter, sort and paginate the filing calendars.
-     * @return FetchResult<NoticeModel>
-     */
-    public Future<FetchResult<NoticeModel>> queryNoticesPostAsync(QueryRequestModel model) {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/notices/query");
-        return this.threadPool.submit((RestCall<FetchResult<NoticeModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<FetchResult<NoticeModel>>(){}));
-    }
-
-    /**
-     * Update a single notice finance detail.
-     * 
-     * This API is available by invitation only.
-     * All data from the existing object will be replaced with data in the object you PUT.
-     * To set a field's value to null, you may either set its value to null or omit that field from the object you post.
-     * 
-     * ### Security Policies
-     * 
-     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Operator, Compliance Root User, Compliance Temp User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
-     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
-     * * This API is available by invitation only.<br />*Exempt security roles*:  ComplianceRootUser, ComplianceAdmin, ComplianceUser, TechnicalSupportAdmin, TechnicalSupportUser.
-     * 
-     * @param companyId The ID of the company that this notice finance detail belongs to.
-     * @param noticeid The ID of the notice finance detail you wish to update.
-     * @param financeDetailsId The ID of the finance detail you wish to delete.
-     * @param model The notice finance detail object you wish to update.
-     * @return NoticeFinanceModel
-     */
-    public NoticeFinanceModel updateFinanceDetails(Integer companyId, Integer noticeid, Integer financeDetailsId, NoticeFinanceModel model) throws Exception {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/{noticeid}/financedetails/{financedetailsid}");
-        path.applyField("companyId", companyId);
-        path.applyField("noticeid", noticeid);
-        path.applyField("financeDetailsId", financeDetailsId);
-        return ((RestCall<NoticeFinanceModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<NoticeFinanceModel>(){})).call();
-    }
-
-    /**
-     * Update a single notice finance detail.
-     * 
-     * This API is available by invitation only.
-     * All data from the existing object will be replaced with data in the object you PUT.
-     * To set a field's value to null, you may either set its value to null or omit that field from the object you post.
-     * 
-     * ### Security Policies
-     * 
-     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Operator, Compliance Root User, Compliance Temp User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
-     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
-     * * This API is available by invitation only.<br />*Exempt security roles*:  ComplianceRootUser, ComplianceAdmin, ComplianceUser, TechnicalSupportAdmin, TechnicalSupportUser.
-     * 
-     * @param companyId The ID of the company that this notice finance detail belongs to.
-     * @param noticeid The ID of the notice finance detail you wish to update.
-     * @param financeDetailsId The ID of the finance detail you wish to delete.
-     * @param model The notice finance detail object you wish to update.
-     * @return NoticeFinanceModel
-     */
-    public Future<NoticeFinanceModel> updateFinanceDetailsAsync(Integer companyId, Integer noticeid, Integer financeDetailsId, NoticeFinanceModel model) {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/{noticeid}/financedetails/{financedetailsid}");
-        path.applyField("companyId", companyId);
-        path.applyField("noticeid", noticeid);
-        path.applyField("financeDetailsId", financeDetailsId);
-        return this.threadPool.submit((RestCall<NoticeFinanceModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<NoticeFinanceModel>(){}));
-    }
-
-    /**
-     * Update a single notice.
-     * 
-     * This API is available by invitation only.
-     * Replace the existing notice object at this URL with an updated object.
-     * A 'notice' represents a letter sent to a business by a tax authority regarding tax filing issues.  Avalara
-     * Returns customers often receive support and assistance from the Compliance Notices team in handling notices received by taxing authorities.
-     * All data from the existing object will be replaced with data in the object you PUT.
-     * To set a field's value to null, you may either set its value to null or omit that field from the object you post.
-     * 
-     * ### Security Policies
-     * 
-     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Operator, Compliance Root User, Compliance Temp User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
-     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
-     * * This API is available by invitation only.<br />*Exempt security roles*:  ComplianceRootUser, ComplianceAdmin, ComplianceUser, TechnicalSupportAdmin, TechnicalSupportUser.
-     * 
-     * @param companyId The ID of the company that this notice belongs to.
-     * @param id The ID of the notice you wish to update.
-     * @param model The notice object you wish to update.
-     * @return NoticeModel
-     */
-    public NoticeModel updateNotice(Integer companyId, Integer id, NoticeModel model) throws Exception {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/{id}");
-        path.applyField("companyId", companyId);
-        path.applyField("id", id);
-        return ((RestCall<NoticeModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<NoticeModel>(){})).call();
-    }
-
-    /**
-     * Update a single notice.
-     * 
-     * This API is available by invitation only.
-     * Replace the existing notice object at this URL with an updated object.
-     * A 'notice' represents a letter sent to a business by a tax authority regarding tax filing issues.  Avalara
-     * Returns customers often receive support and assistance from the Compliance Notices team in handling notices received by taxing authorities.
-     * All data from the existing object will be replaced with data in the object you PUT.
-     * To set a field's value to null, you may either set its value to null or omit that field from the object you post.
-     * 
-     * ### Security Policies
-     * 
-     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Operator, Compliance Root User, Compliance Temp User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
-     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
-     * * This API is available by invitation only.<br />*Exempt security roles*:  ComplianceRootUser, ComplianceAdmin, ComplianceUser, TechnicalSupportAdmin, TechnicalSupportUser.
-     * 
-     * @param companyId The ID of the company that this notice belongs to.
-     * @param id The ID of the notice you wish to update.
-     * @param model The notice object you wish to update.
-     * @return NoticeModel
-     */
-    public Future<NoticeModel> updateNoticeAsync(Integer companyId, Integer id, NoticeModel model) {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/{id}");
-        path.applyField("companyId", companyId);
-        path.applyField("id", id);
-        return this.threadPool.submit((RestCall<NoticeModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<NoticeModel>(){}));
-    }
-
-    /**
-     * Update a single notice comment.
-     * 
-     * This API is available by invitation only.
-     * All data from the existing object will be replaced with data in the object you PUT.
-     * To set a field's value to null, you may either set its value to null or omit that field from the object you post.
-     * 
-     * ### Security Policies
-     * 
-     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Operator, Compliance Root User, Compliance Temp User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
-     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
-     * * This API is available by invitation only.<br />*Exempt security roles*:  ComplianceRootUser, ComplianceAdmin, ComplianceUser, TechnicalSupportAdmin, TechnicalSupportUser.
-     * 
-     * @param companyId The ID of the company that this notice comment belongs to.
-     * @param noticeid The ID of the notice you wish to update.
-     * @param commentDetailsId The ID of the comment you wish to update.
-     * @param model The notice comment object you wish to update.
-     * @return NoticeCommentModel
-     */
-    public NoticeCommentModel updateNoticeComments(Integer companyId, Integer noticeid, Integer commentDetailsId, NoticeCommentModel model) throws Exception {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/{noticeid}/commentdetails/{commentdetailsid}");
-        path.applyField("companyId", companyId);
-        path.applyField("noticeid", noticeid);
-        path.applyField("commentDetailsId", commentDetailsId);
-        return ((RestCall<NoticeCommentModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<NoticeCommentModel>(){})).call();
-    }
-
-    /**
-     * Update a single notice comment.
-     * 
-     * This API is available by invitation only.
-     * All data from the existing object will be replaced with data in the object you PUT.
-     * To set a field's value to null, you may either set its value to null or omit that field from the object you post.
-     * 
-     * ### Security Policies
-     * 
-     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Operator, Compliance Root User, Compliance Temp User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
-     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
-     * * This API is available by invitation only.<br />*Exempt security roles*:  ComplianceRootUser, ComplianceAdmin, ComplianceUser, TechnicalSupportAdmin, TechnicalSupportUser.
-     * 
-     * @param companyId The ID of the company that this notice comment belongs to.
-     * @param noticeid The ID of the notice you wish to update.
-     * @param commentDetailsId The ID of the comment you wish to update.
-     * @param model The notice comment object you wish to update.
-     * @return NoticeCommentModel
-     */
-    public Future<NoticeCommentModel> updateNoticeCommentsAsync(Integer companyId, Integer noticeid, Integer commentDetailsId, NoticeCommentModel model) {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/{noticeid}/commentdetails/{commentdetailsid}");
-        path.applyField("companyId", companyId);
-        path.applyField("noticeid", noticeid);
-        path.applyField("commentDetailsId", commentDetailsId);
-        return this.threadPool.submit((RestCall<NoticeCommentModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<NoticeCommentModel>(){}));
-    }
-
-    /**
-     * Retrieve a single attachment
-     * 
-     * This API is available by invitation only.
-     *             
-     * Uploads a file attachment for a tax notice.
-     * 
-     * ### Security Policies
-     * 
-     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Operator, Compliance Root User, Compliance Temp User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
-     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
-     * * This API is available by invitation only.<br />*Exempt security roles*:  ComplianceRootUser, ComplianceAdmin, ComplianceUser, TechnicalSupportAdmin, TechnicalSupportUser.
-     * 
-     * @param companyId The ID of the company for this attachment.
-     * @param model The upload request.
-     * @return ResourceFileUploadResultModel
-     */
-    public ResourceFileUploadResultModel uploadAttachment(Integer companyId, ResourceFileUploadRequestModel model) throws Exception {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/files/attachment");
-        path.applyField("companyId", companyId);
-        return ((RestCall<ResourceFileUploadResultModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<ResourceFileUploadResultModel>(){})).call();
-    }
-
-    /**
-     * Retrieve a single attachment
-     * 
-     * This API is available by invitation only.
-     *             
-     * Uploads a file attachment for a tax notice.
-     * 
-     * ### Security Policies
-     * 
-     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Operator, Compliance Root User, Compliance Temp User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
-     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
-     * * This API is available by invitation only.<br />*Exempt security roles*:  ComplianceRootUser, ComplianceAdmin, ComplianceUser, TechnicalSupportAdmin, TechnicalSupportUser.
-     * 
-     * @param companyId The ID of the company for this attachment.
-     * @param model The upload request.
-     * @return ResourceFileUploadResultModel
-     */
-    public Future<ResourceFileUploadResultModel> uploadAttachmentAsync(Integer companyId, ResourceFileUploadRequestModel model) {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/files/attachment");
-        path.applyField("companyId", companyId);
-        return this.threadPool.submit((RestCall<ResourceFileUploadResultModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<ResourceFileUploadResultModel>(){}));
-    }
-
-    /**
      * Mark a single notification as dismissed.
      * 
      * Marks the notification identified by this URL as dismissed.
@@ -17989,7 +14013,7 @@ This gets the basic information from the filings and doesn't include anything ex
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
      * @param date The date for which point-of-sale data would be calculated (today by default). Example input: 2016-12-31
-     * @param region If the region is provided, this API is going to generate the tax rate per zipcode for only the region specified.
+     * @param region A two character region code which limits results to a specific region.
      * @return String
      */
     public String downloadTaxRatesByZipCode(Date date, String region) throws Exception {
@@ -18048,7 +14072,7 @@ This gets the basic information from the filings and doesn't include anything ex
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
      * @param date The date for which point-of-sale data would be calculated (today by default). Example input: 2016-12-31
-     * @param region If the region is provided, this API is going to generate the tax rate per zipcode for only the region specified.
+     * @param region A two character region code which limits results to a specific region.
      * @return String
      */
     public Future<String> downloadTaxRatesByZipCodeAsync(Date date, String region) {
@@ -18584,6 +14608,11 @@ This gets the basic information from the filings and doesn't include anything ex
      * * SummaryOnly (omit lines and details - reduces API response size)
      * * LinesOnly (omit details - reduces API response size)
      * * TaxDetailsByTaxType - Includes the aggregated tax, exempt tax, taxable and non-taxable for each tax type returned in the transaction summary.
+     *             
+     * NOTE: If your companyCode or transactionCode contains any of these characters /, + or ? please use the following encoding before making a request:
+     * * Replace '/' with '\_-ava2f-\_'  For example: document/Code becomes document_-ava2f-_Code
+     * * Replace '+' with '\_-ava2b-\_'  For example: document+Code becomes document_-ava2b-_Code
+     * * Replace '?' with '\_-ava3f-\_'  For example: document?Code becomes document_-ava3f-_Code
      * 
      * ### Security Policies
      * 
@@ -18630,6 +14659,11 @@ This gets the basic information from the filings and doesn't include anything ex
      * * SummaryOnly (omit lines and details - reduces API response size)
      * * LinesOnly (omit details - reduces API response size)
      * * TaxDetailsByTaxType - Includes the aggregated tax, exempt tax, taxable and non-taxable for each tax type returned in the transaction summary.
+     *             
+     * NOTE: If your companyCode or transactionCode contains any of these characters /, + or ? please use the following encoding before making a request:
+     * * Replace '/' with '\_-ava2f-\_'  For example: document/Code becomes document_-ava2f-_Code
+     * * Replace '+' with '\_-ava2b-\_'  For example: document+Code becomes document_-ava2b-_Code
+     * * Replace '?' with '\_-ava3f-\_'  For example: document?Code becomes document_-ava3f-_Code
      * 
      * ### Security Policies
      * 
@@ -18670,6 +14704,11 @@ This gets the basic information from the filings and doesn't include anything ex
      *             
      * A transaction represents a unique potentially taxable action that your company has recorded, and transactions include actions like
      * sales, purchases, inventory transfer, and returns (also called refunds).
+     *             
+     * NOTE: If your companyCode or transactionCode contains any of these characters /, + or ? please use the following encoding before making a request:
+     * * Replace '/' with '\_-ava2f-\_'  For example: document/Code becomes document_-ava2f-_Code
+     * * Replace '+' with '\_-ava2b-\_'  For example: document+Code becomes document_-ava2b-_Code
+     * * Replace '?' with '\_-ava3f-\_'  For example: document?Code becomes document_-ava3f-_Code
      * 
      * ### Security Policies
      * 
@@ -18705,6 +14744,11 @@ This gets the basic information from the filings and doesn't include anything ex
      *             
      * A transaction represents a unique potentially taxable action that your company has recorded, and transactions include actions like
      * sales, purchases, inventory transfer, and returns (also called refunds).
+     *             
+     * NOTE: If your companyCode or transactionCode contains any of these characters /, + or ? please use the following encoding before making a request:
+     * * Replace '/' with '\_-ava2f-\_'  For example: document/Code becomes document_-ava2f-_Code
+     * * Replace '+' with '\_-ava2b-\_'  For example: document+Code becomes document_-ava2b-_Code
+     * * Replace '?' with '\_-ava3f-\_'  For example: document?Code becomes document_-ava3f-_Code
      * 
      * ### Security Policies
      * 
@@ -18740,6 +14784,11 @@ This gets the basic information from the filings and doesn't include anything ex
      *             
      * A transaction represents a unique potentially taxable action that your company has recorded, and transactions include actions like
      * sales, purchases, inventory transfer, and returns (also called refunds).
+     *             
+     * NOTE: If your companyCode or transactionCode contains any of these characters /, + or ? please use the following encoding before making a request:
+     * * Replace '/' with '\_-ava2f-\_'  For example: document/Code becomes document_-ava2f-_Code
+     * * Replace '+' with '\_-ava2b-\_'  For example: document+Code becomes document_-ava2b-_Code
+     * * Replace '?' with '\_-ava3f-\_'  For example: document?Code becomes document_-ava3f-_Code
      * 
      * ### Security Policies
      * 
@@ -18777,6 +14826,11 @@ This gets the basic information from the filings and doesn't include anything ex
      *             
      * A transaction represents a unique potentially taxable action that your company has recorded, and transactions include actions like
      * sales, purchases, inventory transfer, and returns (also called refunds).
+     *             
+     * NOTE: If your companyCode or transactionCode contains any of these characters /, + or ? please use the following encoding before making a request:
+     * * Replace '/' with '\_-ava2f-\_'  For example: document/Code becomes document_-ava2f-_Code
+     * * Replace '+' with '\_-ava2b-\_'  For example: document+Code becomes document_-ava2b-_Code
+     * * Replace '?' with '\_-ava3f-\_'  For example: document?Code becomes document_-ava3f-_Code
      * 
      * ### Security Policies
      * 
@@ -18870,6 +14924,11 @@ This gets the basic information from the filings and doesn't include anything ex
      * * SummaryOnly (omit lines and details - reduces API response size)
      * * LinesOnly (omit details - reduces API response size)
      * * TaxDetailsByTaxType - Includes the aggregated tax, exempt tax, taxable and non-taxable for each tax type returned in the transaction summary.
+     *             
+     * NOTE: If your companyCode or transactionCode contains any of these characters /, + or ? please use the following encoding before making a request:
+     * * Replace '/' with '\_-ava2f-\_'  For example: document/Code becomes document_-ava2f-_Code
+     * * Replace '+' with '\_-ava2b-\_'  For example: document+Code becomes document_-ava2b-_Code
+     * * Replace '?' with '\_-ava3f-\_'  For example: document?Code becomes document_-ava3f-_Code
      * 
      * ### Security Policies
      * 
@@ -18916,6 +14975,11 @@ This gets the basic information from the filings and doesn't include anything ex
      * * SummaryOnly (omit lines and details - reduces API response size)
      * * LinesOnly (omit details - reduces API response size)
      * * TaxDetailsByTaxType - Includes the aggregated tax, exempt tax, taxable and non-taxable for each tax type returned in the transaction summary.
+     *             
+     * NOTE: If your companyCode or transactionCode contains any of these characters /, + or ? please use the following encoding before making a request:
+     * * Replace '/' with '\_-ava2f-\_'  For example: document/Code becomes document_-ava2f-_Code
+     * * Replace '+' with '\_-ava2b-\_'  For example: document+Code becomes document_-ava2b-_Code
+     * * Replace '?' with '\_-ava3f-\_'  For example: document?Code becomes document_-ava3f-_Code
      * 
      * ### Security Policies
      * 
@@ -18961,6 +15025,11 @@ This gets the basic information from the filings and doesn't include anything ex
      * * SummaryOnly (omit lines and details - reduces API response size)
      * * LinesOnly (omit details - reduces API response size)
      * * TaxDetailsByTaxType - Includes the aggregated tax, exempt tax, taxable and non-taxable for each tax type returned in the transaction summary.
+     *             
+     * NOTE: If your companyCode or transactionCode contains any of these characters /, + or ? please use the following encoding before making a request:
+     * * Replace '/' with '\_-ava2f-\_'  For example: document/Code becomes document_-ava2f-_Code
+     * * Replace '+' with '\_-ava2b-\_'  For example: document+Code becomes document_-ava2b-_Code
+     * * Replace '?' with '\_-ava3f-\_'  For example: document?Code becomes document_-ava3f-_Code
      * 
      * ### Security Policies
      * 
@@ -19005,6 +15074,11 @@ This gets the basic information from the filings and doesn't include anything ex
      * * SummaryOnly (omit lines and details - reduces API response size)
      * * LinesOnly (omit details - reduces API response size)
      * * TaxDetailsByTaxType - Includes the aggregated tax, exempt tax, taxable and non-taxable for each tax type returned in the transaction summary.
+     *             
+     * NOTE: If your companyCode or transactionCode contains any of these characters /, + or ? please use the following encoding before making a request:
+     * * Replace '/' with '\_-ava2f-\_'  For example: document/Code becomes document_-ava2f-_Code
+     * * Replace '+' with '\_-ava2b-\_'  For example: document+Code becomes document_-ava2b-_Code
+     * * Replace '?' with '\_-ava3f-\_'  For example: document?Code becomes document_-ava3f-_Code
      * 
      * ### Security Policies
      * 
@@ -19057,6 +15131,11 @@ This gets the basic information from the filings and doesn't include anything ex
      * * ForceTimeout - Simulates a timeout.  This adds a 30 second delay and error to your API call.  This can be used to test your code to ensure it can respond correctly in the case of a dropped connection.
      *             
      * If you omit the `$include` parameter, the API will assume you want `Summary,Addresses`.
+     *             
+     * NOTE: Avoid using the following strings in your transaction codes as they are encoding strings and will be interpreted differently:
+     * * \_-ava2f-\_
+     * * \_-ava2b-\_
+     * * \_-ava3f-\_
      * 
      * ### Security Policies
      * 
@@ -19104,6 +15183,11 @@ This gets the basic information from the filings and doesn't include anything ex
      * * ForceTimeout - Simulates a timeout.  This adds a 30 second delay and error to your API call.  This can be used to test your code to ensure it can respond correctly in the case of a dropped connection.
      *             
      * If you omit the `$include` parameter, the API will assume you want `Summary,Addresses`.
+     *             
+     * NOTE: Avoid using the following strings in your transaction codes as they are encoding strings and will be interpreted differently:
+     * * \_-ava2f-\_
+     * * \_-ava2b-\_
+     * * \_-ava3f-\_
      * 
      * ### Security Policies
      * 
@@ -19158,6 +15242,11 @@ This gets the basic information from the filings and doesn't include anything ex
      * * TaxDetailsByTaxType - Includes the aggregated tax, exempt tax, taxable and non-taxable for each tax type returned in the transaction summary.
      *             
      * If you omit the `$include` parameter, the API will assume you want `Summary,Addresses`.
+     *             
+     * NOTE: Avoid using the following strings in your transaction codes as they are encoding strings and will be interpreted differently:
+     * * \_-ava2f-\_
+     * * \_-ava2b-\_
+     * * \_-ava3f-\_
      * 
      * ### Security Policies
      * 
@@ -19212,6 +15301,11 @@ This gets the basic information from the filings and doesn't include anything ex
      * * TaxDetailsByTaxType - Includes the aggregated tax, exempt tax, taxable and non-taxable for each tax type returned in the transaction summary.
      *             
      * If you omit the `$include` parameter, the API will assume you want `Summary,Addresses`.
+     *             
+     * NOTE: Avoid using the following strings in your transaction codes as they are encoding strings and will be interpreted differently:
+     * * \_-ava2f-\_
+     * * \_-ava2b-\_
+     * * \_-ava3f-\_
      * 
      * ### Security Policies
      * 
@@ -19321,6 +15415,11 @@ This gets the basic information from the filings and doesn't include anything ex
      * * Addresses
      * * SummaryOnly (omit lines and details - reduces API response size)
      * * LinesOnly (omit details - reduces API response size)
+     *             
+     * NOTE: If your companyCode or transactionCode contains any of these characters /, + or ? please use the following encoding before making a request:
+     * * Replace '/' with '\_-ava2f-\_'  For example: document/Code becomes document_-ava2f-_Code
+     * * Replace '+' with '\_-ava2b-\_'  For example: document+Code becomes document_-ava2b-_Code
+     * * Replace '?' with '\_-ava3f-\_'  For example: document?Code becomes document_-ava3f-_Code
      * 
      * ### Security Policies
      * 
@@ -19363,6 +15462,11 @@ This gets the basic information from the filings and doesn't include anything ex
      * * Addresses
      * * SummaryOnly (omit lines and details - reduces API response size)
      * * LinesOnly (omit details - reduces API response size)
+     *             
+     * NOTE: If your companyCode or transactionCode contains any of these characters /, + or ? please use the following encoding before making a request:
+     * * Replace '/' with '\_-ava2f-\_'  For example: document/Code becomes document_-ava2f-_Code
+     * * Replace '+' with '\_-ava2b-\_'  For example: document+Code becomes document_-ava2b-_Code
+     * * Replace '?' with '\_-ava3f-\_'  For example: document?Code becomes document_-ava3f-_Code
      * 
      * ### Security Policies
      * 
@@ -19388,6 +15492,11 @@ This gets the basic information from the filings and doesn't include anything ex
      * Retrieve a single transaction by code
      * 
      * DEPRECATED: Please use the `GetTransactionByCode` API instead.
+     *             
+     * NOTE: If your companyCode or transactionCode contains any of these characters /, + or ? please use the following encoding before making a request:
+     * * Replace '/' with '\_-ava2f-\_'  For example: document/Code becomes document_-ava2f-_Code
+     * * Replace '+' with '\_-ava2b-\_'  For example: document+Code becomes document_-ava2b-_Code
+     * * Replace '?' with '\_-ava3f-\_'  For example: document?Code becomes document_-ava3f-_Code
      * 
      * ### Security Policies
      * 
@@ -19413,6 +15522,11 @@ This gets the basic information from the filings and doesn't include anything ex
      * Retrieve a single transaction by code
      * 
      * DEPRECATED: Please use the `GetTransactionByCode` API instead.
+     *             
+     * NOTE: If your companyCode or transactionCode contains any of these characters /, + or ? please use the following encoding before making a request:
+     * * Replace '/' with '\_-ava2f-\_'  For example: document/Code becomes document_-ava2f-_Code
+     * * Replace '+' with '\_-ava2b-\_'  For example: document+Code becomes document_-ava2b-_Code
+     * * Replace '?' with '\_-ava3f-\_'  For example: document?Code becomes document_-ava3f-_Code
      * 
      * ### Security Policies
      * 
@@ -19532,6 +15646,11 @@ This gets the basic information from the filings and doesn't include anything ex
      * * Addresses
      * * SummaryOnly (omit lines and details - reduces API response size)
      * * LinesOnly (omit details - reduces API response size)
+     *             
+     * NOTE: If your companyCode or transactionCode contains any of these characters /, + or ? please use the following encoding before making a request:
+     * * Replace '/' with '\_-ava2f-\_'  For example: document/Code becomes document_-ava2f-_Code
+     * * Replace '+' with '\_-ava2b-\_'  For example: document+Code becomes document_-ava2b-_Code
+     * * Replace '?' with '\_-ava3f-\_'  For example: document?Code becomes document_-ava3f-_Code
      * 
      * ### Security Policies
      * 
@@ -19583,6 +15702,11 @@ This gets the basic information from the filings and doesn't include anything ex
      * * Addresses
      * * SummaryOnly (omit lines and details - reduces API response size)
      * * LinesOnly (omit details - reduces API response size)
+     *             
+     * NOTE: If your companyCode or transactionCode contains any of these characters /, + or ? please use the following encoding before making a request:
+     * * Replace '/' with '\_-ava2f-\_'  For example: document/Code becomes document_-ava2f-_Code
+     * * Replace '+' with '\_-ava2b-\_'  For example: document+Code becomes document_-ava2b-_Code
+     * * Replace '?' with '\_-ava3f-\_'  For example: document?Code becomes document_-ava3f-_Code
      * 
      * ### Security Policies
      * 
@@ -19634,6 +15758,11 @@ This gets the basic information from the filings and doesn't include anything ex
      * * SummaryOnly (omit lines and details - reduces API response size)
      * * LinesOnly (omit details - reduces API response size)
      * * TaxDetailsByTaxType - Includes the aggregated tax, exempt tax, taxable and non-taxable for each tax type returned in the transaction summary.
+     *             
+     * NOTE: If your companyCode or transactionCode contains any of these characters /, + or ? please use the following encoding before making a request:
+     * * Replace '/' with '\_-ava2f-\_'  For example: document/Code becomes document_-ava2f-_Code
+     * * Replace '+' with '\_-ava2b-\_'  For example: document+Code becomes document_-ava2b-_Code
+     * * Replace '?' with '\_-ava3f-\_'  For example: document?Code becomes document_-ava3f-_Code
      * 
      * ### Security Policies
      * 
@@ -19680,6 +15809,11 @@ This gets the basic information from the filings and doesn't include anything ex
      * * SummaryOnly (omit lines and details - reduces API response size)
      * * LinesOnly (omit details - reduces API response size)
      * * TaxDetailsByTaxType - Includes the aggregated tax, exempt tax, taxable and non-taxable for each tax type returned in the transaction summary.
+     *             
+     * NOTE: If your companyCode or transactionCode contains any of these characters /, + or ? please use the following encoding before making a request:
+     * * Replace '/' with '\_-ava2f-\_'  For example: document/Code becomes document_-ava2f-_Code
+     * * Replace '+' with '\_-ava2b-\_'  For example: document+Code becomes document_-ava2b-_Code
+     * * Replace '?' with '\_-ava3f-\_'  For example: document?Code becomes document_-ava3f-_Code
      * 
      * ### Security Policies
      * 
@@ -19736,6 +15870,11 @@ This gets the basic information from the filings and doesn't include anything ex
      * * LinesOnly (omit details - reduces API response size)
      * * TaxDetailsByTaxType - Includes the aggregated tax, exempt tax, taxable and non-taxable for each tax type returned in the transaction summary.
      * If you omit the `$include` parameter, the API will assume you want `Summary,Addresses`.
+     *             
+     * NOTE: If your companyCode or transactionCode contains any of these characters /, + or ? please use the following encoding before making a request:
+     * * Replace '/' with '\_-ava2f-\_'  For example: document/Code becomes document_-ava2f-_Code
+     * * Replace '+' with '\_-ava2b-\_'  For example: document+Code becomes document_-ava2b-_Code
+     * * Replace '?' with '\_-ava3f-\_'  For example: document?Code becomes document_-ava3f-_Code
      * 
      * ### Security Policies
      * 
@@ -19794,6 +15933,11 @@ This gets the basic information from the filings and doesn't include anything ex
      * * LinesOnly (omit details - reduces API response size)
      * * TaxDetailsByTaxType - Includes the aggregated tax, exempt tax, taxable and non-taxable for each tax type returned in the transaction summary.
      * If you omit the `$include` parameter, the API will assume you want `Summary,Addresses`.
+     *             
+     * NOTE: If your companyCode or transactionCode contains any of these characters /, + or ? please use the following encoding before making a request:
+     * * Replace '/' with '\_-ava2f-\_'  For example: document/Code becomes document_-ava2f-_Code
+     * * Replace '+' with '\_-ava2b-\_'  For example: document+Code becomes document_-ava2b-_Code
+     * * Replace '?' with '\_-ava3f-\_'  For example: document?Code becomes document_-ava3f-_Code
      * 
      * ### Security Policies
      * 
@@ -19841,6 +15985,11 @@ This gets the basic information from the filings and doesn't include anything ex
      * * SummaryOnly (omit lines and details - reduces API response size)
      * * LinesOnly (omit details - reduces API response size)
      * * TaxDetailsByTaxType - Includes the aggregated tax, exempt tax, taxable and non-taxable for each tax type returned in the transaction summary.
+     *             
+     * NOTE: If your companyCode or transactionCode contains any of these characters /, + or ? please use the following encoding before making a request:
+     * * Replace '/' with '\_-ava2f-\_'  For example: document/Code becomes document_-ava2f-_Code
+     * * Replace '+' with '\_-ava2b-\_'  For example: document+Code becomes document_-ava2b-_Code
+     * * Replace '?' with '\_-ava3f-\_'  For example: document?Code becomes document_-ava3f-_Code
      * 
      * ### Security Policies
      * 
@@ -19885,6 +16034,11 @@ This gets the basic information from the filings and doesn't include anything ex
      * * SummaryOnly (omit lines and details - reduces API response size)
      * * LinesOnly (omit details - reduces API response size)
      * * TaxDetailsByTaxType - Includes the aggregated tax, exempt tax, taxable and non-taxable for each tax type returned in the transaction summary.
+     *             
+     * NOTE: If your companyCode or transactionCode contains any of these characters /, + or ? please use the following encoding before making a request:
+     * * Replace '/' with '\_-ava2f-\_'  For example: document/Code becomes document_-ava2f-_Code
+     * * Replace '+' with '\_-ava2b-\_'  For example: document+Code becomes document_-ava2b-_Code
+     * * Replace '?' with '\_-ava3f-\_'  For example: document?Code becomes document_-ava3f-_Code
      * 
      * ### Security Policies
      * 
@@ -19923,6 +16077,11 @@ This gets the basic information from the filings and doesn't include anything ex
      * * SummaryOnly (omit lines and details - reduces API response size)
      * * LinesOnly (omit details - reduces API response size)
      * * TaxDetailsByTaxType - Includes the aggregated tax, exempt tax, taxable and non-taxable for each tax type returned in the transaction summary.
+     *             
+     * NOTE: If your companyCode or transactionCode contains any of these characters /, + or ? please use the following encoding before making a request:
+     * * Replace '/' with '\_-ava2f-\_'  For example: document/Code becomes document_-ava2f-_Code
+     * * Replace '+' with '\_-ava2b-\_'  For example: document+Code becomes document_-ava2b-_Code
+     * * Replace '?' with '\_-ava3f-\_'  For example: document?Code becomes document_-ava3f-_Code
      * 
      * ### Security Policies
      * 
@@ -19930,8 +16089,8 @@ This gets the basic information from the filings and doesn't include anything ex
      * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
      * 
      * @param companyCode The company code of the company that recorded this transaction
-     * @param transactionCode The transaction code to commit
-     * @param documentType (Optional): The document type of the transaction to commit. If not provided, the default is SalesInvoice. (See DocumentType::* for a list of allowable values)
+     * @param transactionCode The transaction code to Uncommit
+     * @param documentType (Optional): The document type of the transaction to Uncommit. If not provided, the default is SalesInvoice. (See DocumentType::* for a list of allowable values)
      * @param include Specifies objects to include in this fetch call
      * @return TransactionModel
      */
@@ -19961,6 +16120,11 @@ This gets the basic information from the filings and doesn't include anything ex
      * * SummaryOnly (omit lines and details - reduces API response size)
      * * LinesOnly (omit details - reduces API response size)
      * * TaxDetailsByTaxType - Includes the aggregated tax, exempt tax, taxable and non-taxable for each tax type returned in the transaction summary.
+     *             
+     * NOTE: If your companyCode or transactionCode contains any of these characters /, + or ? please use the following encoding before making a request:
+     * * Replace '/' with '\_-ava2f-\_'  For example: document/Code becomes document_-ava2f-_Code
+     * * Replace '+' with '\_-ava2b-\_'  For example: document+Code becomes document_-ava2b-_Code
+     * * Replace '?' with '\_-ava3f-\_'  For example: document?Code becomes document_-ava3f-_Code
      * 
      * ### Security Policies
      * 
@@ -19968,8 +16132,8 @@ This gets the basic information from the filings and doesn't include anything ex
      * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
      * 
      * @param companyCode The company code of the company that recorded this transaction
-     * @param transactionCode The transaction code to commit
-     * @param documentType (Optional): The document type of the transaction to commit. If not provided, the default is SalesInvoice. (See DocumentType::* for a list of allowable values)
+     * @param transactionCode The transaction code to Uncommit
+     * @param documentType (Optional): The document type of the transaction to Uncommit. If not provided, the default is SalesInvoice. (See DocumentType::* for a list of allowable values)
      * @param include Specifies objects to include in this fetch call
      * @return TransactionModel
      */
@@ -19996,6 +16160,11 @@ This gets the basic information from the filings and doesn't include anything ex
      * * SummaryOnly (omit lines and details - reduces API response size)
      * * LinesOnly (omit details - reduces API response size)
      * * TaxDetailsByTaxType - Includes the aggregated tax, exempt tax, taxable and non-taxable for each tax type returned in the transaction summary.
+     *             
+     * NOTE: If your companyCode or transactionCode contains any of these characters /, + or ? please use the following encoding before making a request:
+     * * Replace '/' with '\_-ava2f-\_'  For example: document/Code becomes document_-ava2f-_Code
+     * * Replace '+' with '\_-ava2b-\_'  For example: document+Code becomes document_-ava2b-_Code
+     * * Replace '?' with '\_-ava3f-\_'  For example: document?Code becomes document_-ava3f-_Code
      * 
      * ### Security Policies
      * 
@@ -20031,6 +16200,11 @@ This gets the basic information from the filings and doesn't include anything ex
      * * SummaryOnly (omit lines and details - reduces API response size)
      * * LinesOnly (omit details - reduces API response size)
      * * TaxDetailsByTaxType - Includes the aggregated tax, exempt tax, taxable and non-taxable for each tax type returned in the transaction summary.
+     *             
+     * NOTE: If your companyCode or transactionCode contains any of these characters /, + or ? please use the following encoding before making a request:
+     * * Replace '/' with '\_-ava2f-\_'  For example: document/Code becomes document_-ava2f-_Code
+     * * Replace '+' with '\_-ava2b-\_'  For example: document+Code becomes document_-ava2b-_Code
+     * * Replace '?' with '\_-ava3f-\_'  For example: document?Code becomes document_-ava3f-_Code
      * 
      * ### Security Policies
      * 
@@ -20073,6 +16247,11 @@ This gets the basic information from the filings and doesn't include anything ex
      * * SummaryOnly (omit lines and details - reduces API response size)
      * * LinesOnly (omit details - reduces API response size)
      * * TaxDetailsByTaxType - Includes the aggregated tax, exempt tax, taxable and non-taxable for each tax type returned in the transaction summary.
+     *             
+     * NOTE: If your companyCode or transactionCode contains any of these characters /, + or ? please use the following encoding before making a request:
+     * * Replace '/' with '\_-ava2f-\_'  For example: document/Code becomes document_-ava2f-_Code
+     * * Replace '+' with '\_-ava2b-\_'  For example: document+Code becomes document_-ava2b-_Code
+     * * Replace '?' with '\_-ava3f-\_'  For example: document?Code becomes document_-ava3f-_Code
      * 
      * ### Security Policies
      * 
@@ -20116,6 +16295,11 @@ This gets the basic information from the filings and doesn't include anything ex
      * * SummaryOnly (omit lines and details - reduces API response size)
      * * LinesOnly (omit details - reduces API response size)
      * * TaxDetailsByTaxType - Includes the aggregated tax, exempt tax, taxable and non-taxable for each tax type returned in the transaction summary.
+     *             
+     * NOTE: If your companyCode or transactionCode contains any of these characters /, + or ? please use the following encoding before making a request:
+     * * Replace '/' with '\_-ava2f-\_'  For example: document/Code becomes document_-ava2f-_Code
+     * * Replace '+' with '\_-ava2b-\_'  For example: document+Code becomes document_-ava2b-_Code
+     * * Replace '?' with '\_-ava3f-\_'  For example: document?Code becomes document_-ava3f-_Code
      * 
      * ### Security Policies
      * 
@@ -20161,6 +16345,11 @@ This gets the basic information from the filings and doesn't include anything ex
      * * SummaryOnly (omit lines and details - reduces API response size)
      * * LinesOnly (omit details - reduces API response size)
      * * TaxDetailsByTaxType - Includes the aggregated tax, exempt tax, taxable and non-taxable for each tax type returned in the transaction summary.
+     *             
+     * NOTE: If your companyCode or transactionCode contains any of these characters /, + or ? please use the following encoding before making a request:
+     * * Replace '/' with '\_-ava2f-\_'  For example: document/Code becomes document_-ava2f-_Code
+     * * Replace '+' with '\_-ava2b-\_'  For example: document+Code becomes document_-ava2b-_Code
+     * * Replace '?' with '\_-ava3f-\_'  For example: document?Code becomes document_-ava3f-_Code
      * 
      * ### Security Policies
      * 
@@ -20206,6 +16395,11 @@ This gets the basic information from the filings and doesn't include anything ex
      * * SummaryOnly (omit lines and details - reduces API response size)
      * * LinesOnly (omit details - reduces API response size)
      * * TaxDetailsByTaxType - Includes the aggregated tax, exempt tax, taxable and non-taxable for each tax type returned in the transaction summary.
+     *             
+     * NOTE: If your companyCode or transactionCode contains any of these characters /, + or ? please use the following encoding before making a request:
+     * * Replace '/' with '\_-ava2f-\_'  For example: document/Code becomes document_-ava2f-_Code
+     * * Replace '+' with '\_-ava2b-\_'  For example: document+Code becomes document_-ava2b-_Code
+     * * Replace '?' with '\_-ava3f-\_'  For example: document?Code becomes document_-ava3f-_Code
      * 
      * ### Security Policies
      * 

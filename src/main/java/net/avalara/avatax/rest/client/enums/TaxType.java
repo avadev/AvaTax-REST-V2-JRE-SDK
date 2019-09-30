@@ -40,6 +40,11 @@ public enum TaxType {
     LandedCost(12),
 
     /** 
+     * Meals tax type
+     */
+    Meals(15),
+
+    /** 
      * Consumer Use Tax
      */
     ConsumerUse(67),
