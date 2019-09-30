@@ -944,6 +944,27 @@ public class TransactionLineDetailModel {
     }
 
 
+    private Boolean isFee;
+
+    /**
+     * Getter for isFee
+     *
+     * The Taxes/Fee component. True if the fee is applied.
+     */
+    public Boolean getIsFee() {
+        return this.isFee;
+    }
+
+    /**
+     * Setter for isFee
+     *
+     * The Taxes/Fee component. True if the fee is applied.
+     */
+    public void setIsFee(Boolean value) {
+        this.isFee = value;
+    }
+
+
     /**
      * Returns a JSON string representation of TransactionLineDetailModel
      */

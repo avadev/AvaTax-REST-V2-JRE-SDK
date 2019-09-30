@@ -790,6 +790,11 @@ public enum ErrorCodeId {
     BatchCannotBeDeletedWhileProcessing(208),
 
     /** 
+     * BizTech error
+     */
+    InternalServerError(209),
+
+    /** 
      * Point Of Sale API exceptions
      */
     PointOfSaleFileSize(250),
@@ -888,6 +893,11 @@ public enum ErrorCodeId {
      * Represents a malformed document fetch command
      */
     CannotChangeFilingStatus(401),
+
+    /** 
+     * Represents a FEIN in incorrect format.
+     */
+    FEINFormatError(402),
 
     /** 
      * Represents a SQL server timeout error / deadlock error
@@ -1517,7 +1527,32 @@ public enum ErrorCodeId {
     /** 
      * Company Controller Related Errors
      */
-    FailedToUpdateCompanyLocation(2314);
+    FailedToUpdateCompanyLocation(2314),
+
+    /** 
+     * Error Transaction Related Errors
+     */
+    FailedToCreateErrorTransaction(2400),
+
+    /** 
+     * 
+     */
+    FailedToDeleteErrorTransactions(2401),
+
+    /** 
+     * 
+     */
+    FailedToListErrorTransactions(2402),
+
+    /** 
+     * 
+     */
+    ErrorTransactionsServiceException(2403),
+
+    /** 
+     * Generic validation errors
+     */
+    FieldLengthError(2500);
 
     private int value;
 	private static HashMap map = new HashMap<>();

@@ -245,6 +245,27 @@ public class CompanyModel {
     }
 
 
+    private Boolean isFein;
+
+    /**
+     * Getter for isFein
+     *
+     * Set this field to true if the taxPayerIdNumber is a FEIN.
+     */
+    public Boolean getIsFein() {
+        return this.isFein;
+    }
+
+    /**
+     * Setter for isFein
+     *
+     * Set this field to true if the taxPayerIdNumber is a FEIN.
+     */
+    public void setIsFein(Boolean value) {
+        this.isFein = value;
+    }
+
+
     private Boolean hasProfile;
 
     /**

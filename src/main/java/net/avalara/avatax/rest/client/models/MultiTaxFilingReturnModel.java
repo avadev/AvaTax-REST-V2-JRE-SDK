@@ -428,6 +428,48 @@ public class MultiTaxFilingReturnModel {
     }
 
 
+    private BigDecimal totalAugmentations;
+
+    /**
+     * Getter for totalAugmentations
+     *
+     * Total amount of augmentations on this return
+     */
+    public BigDecimal getTotalAugmentations() {
+        return this.totalAugmentations;
+    }
+
+    /**
+     * Setter for totalAugmentations
+     *
+     * Total amount of augmentations on this return
+     */
+    public void setTotalAugmentations(BigDecimal value) {
+        this.totalAugmentations = value;
+    }
+
+
+    private ArrayList<FilingAugmentationModel> augmentations;
+
+    /**
+     * Getter for augmentations
+     *
+     * The Augmentations for this return.
+     */
+    public ArrayList<FilingAugmentationModel> getAugmentations() {
+        return this.augmentations;
+    }
+
+    /**
+     * Setter for augmentations
+     *
+     * The Augmentations for this return.
+     */
+    public void setAugmentations(ArrayList<FilingAugmentationModel> value) {
+        this.augmentations = value;
+    }
+
+
     private BigDecimal totalPayments;
 
     /**

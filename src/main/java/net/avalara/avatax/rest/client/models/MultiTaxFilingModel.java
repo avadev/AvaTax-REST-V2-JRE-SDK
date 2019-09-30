@@ -147,7 +147,7 @@ public class MultiTaxFilingModel {
     /**
      * Getter for taxSummary
      *
-     * A summary of all taxes compbined for this period
+     * A summary of all taxes combined for this period
      */
     public FilingsTaxSummaryModel getTaxSummary() {
         return this.taxSummary;
@@ -156,7 +156,7 @@ public class MultiTaxFilingModel {
     /**
      * Setter for taxSummary
      *
-     * A summary of all taxes compbined for this period
+     * A summary of all taxes combined for this period
      */
     public void setTaxSummary(FilingsTaxSummaryModel value) {
         this.taxSummary = value;
