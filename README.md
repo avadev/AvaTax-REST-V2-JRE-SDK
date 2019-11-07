@@ -63,3 +63,16 @@ public class Program {
 
 }
 ```
+# Updates
+
+Two functions have been updated in 19.9.1
+
+```java
+	downloadTaxRatesByZipCodeAsync(Date date, String region)
+	downloadTaxRatesByZipCodeAsync(Date date, String region)
+```
+have been changed to 
+```java
+	downloadTaxRatesByZipCodeAsync(String date, String region)
+	downloadTaxRatesByZipCodeAsync(String date, String region)
+```

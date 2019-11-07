@@ -14016,7 +14016,7 @@ public class AvaTaxClient {
      * @param region A two character region code which limits results to a specific region.
      * @return String
      */
-    public String downloadTaxRatesByZipCode(Date date, String region) throws Exception {
+    public String downloadTaxRatesByZipCode(String date, String region) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/taxratesbyzipcode/download/{date}");
         path.applyField("date", date);
         path.addQuery("region", region);
@@ -14075,7 +14075,7 @@ public class AvaTaxClient {
      * @param region A two character region code which limits results to a specific region.
      * @return String
      */
-    public Future<String> downloadTaxRatesByZipCodeAsync(Date date, String region) {
+    public Future<String> downloadTaxRatesByZipCodeAsync(String date, String region) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/taxratesbyzipcode/download/{date}");
         path.applyField("date", date);
         path.addQuery("region", region);
