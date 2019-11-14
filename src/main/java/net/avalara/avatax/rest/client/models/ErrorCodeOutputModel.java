@@ -24,35 +24,55 @@ import java.util.HashMap;
  */
 
 /**
- * Information about Avalara-defined tax code types.
-* This list is used when creating tax codes and tax rules.
+ * Model that has the matching count for an errorcode
  */
-public class TaxCodeTypesModel {
+public class ErrorCodeOutputModel {
 
 
-    private HashMap<String, String> types;
+    private String errorCode;
 
     /**
-     * Getter for types
+     * Getter for errorCode
      *
-     * The list of Avalara-defined tax code types.
+     * Name of the error code
      */
-    public HashMap<String, String> getTypes() {
-        return this.types;
+    public String getErrorCode() {
+        return this.errorCode;
     }
 
     /**
-     * Setter for types
+     * Setter for errorCode
      *
-     * The list of Avalara-defined tax code types.
+     * Name of the error code
      */
-    public void setTypes(HashMap<String, String> value) {
-        this.types = value;
+    public void setErrorCode(String value) {
+        this.errorCode = value;
+    }
+
+
+    private Integer count;
+
+    /**
+     * Getter for count
+     *
+     * Number of error code recorded
+     */
+    public Integer getCount() {
+        return this.count;
+    }
+
+    /**
+     * Setter for count
+     *
+     * Number of error code recorded
+     */
+    public void setCount(Integer value) {
+        this.count = value;
     }
 
 
     /**
-     * Returns a JSON string representation of TaxCodeTypesModel
+     * Returns a JSON string representation of ErrorCodeOutputModel
      */
     @Override
     public String toString() {
