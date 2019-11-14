@@ -422,11 +422,6 @@ public enum ErrorCodeId {
     /** 
      * 
      */
-    RateDependsEuropeError(133),
-
-    /** 
-     * 
-     */
     InvalidRateTypeCode(134),
 
     /** 
@@ -1060,6 +1055,11 @@ public enum ErrorCodeId {
     CannotCreateTransactionWithDeletedDataSource(1105),
 
     /** 
+     * 
+     */
+    ShipToRegionRequiredWithDataSource(1106),
+
+    /** 
      * Exempt cert error codes
      */
     InvalidBusinessType(1200),
@@ -1355,6 +1355,11 @@ public enum ErrorCodeId {
     ConcurrentRequestLimitExceeded(1716),
 
     /** 
+     * 
+     */
+    InvalidDocumentTypeForInspect(1717),
+
+    /** 
      * SendSales API errors
      */
     UnsupportedFileFormat(1800),
@@ -1530,29 +1535,14 @@ public enum ErrorCodeId {
     FailedToUpdateCompanyLocation(2314),
 
     /** 
-     * Error Transaction Related Errors
-     */
-    FailedToCreateErrorTransaction(2400),
-
-    /** 
-     * 
-     */
-    FailedToDeleteErrorTransactions(2401),
-
-    /** 
-     * 
-     */
-    FailedToListErrorTransactions(2402),
-
-    /** 
-     * 
-     */
-    ErrorTransactionsServiceException(2403),
-
-    /** 
      * Generic validation errors
      */
-    FieldLengthError(2500);
+    FieldLengthError(2400),
+
+    /** 
+     * 
+     */
+    InputContainsBlacklistedCharacters(2401);
 
     private int value;
 	private static HashMap map = new HashMap<>();
