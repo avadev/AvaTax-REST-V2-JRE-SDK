@@ -27,7 +27,12 @@ public enum SendSalesOutputFileFormat {
     /** 
      * 
      */
-    DMA(2);
+    DMA(2),
+
+    /** 
+     * 
+     */
+    DMA_NEW(3);
 
     private int value;
 	private static HashMap map = new HashMap<>();

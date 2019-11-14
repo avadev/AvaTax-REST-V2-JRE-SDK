@@ -29,14 +29,14 @@ import java.util.HashMap;
 public class ErrorTransactionOutputModel {
 
 
-    private ErrorCodeId errorCode;
+    private String errorCode;
 
     /**
      * Getter for errorCode
      *
      * Error code of the error result from transaction creation
      */
-    public ErrorCodeId getErrorCode() {
+    public String getErrorCode() {
         return this.errorCode;
     }
 
@@ -45,7 +45,7 @@ public class ErrorTransactionOutputModel {
      *
      * Error code of the error result from transaction creation
      */
-    public void setErrorCode(ErrorCodeId value) {
+    public void setErrorCode(String value) {
         this.errorCode = value;
     }
 
@@ -152,6 +152,27 @@ public class ErrorTransactionOutputModel {
      */
     public void setDocumentDate(Date value) {
         this.documentDate = value;
+    }
+
+
+    private Date expiresAt;
+
+    /**
+     * Getter for expiresAt
+     *
+     * The date that this ErrorTransaction will be automatically purged from the detabase.
+     */
+    public Date getExpiresAt() {
+        return this.expiresAt;
+    }
+
+    /**
+     * Setter for expiresAt
+     *
+     * The date that this ErrorTransaction will be automatically purged from the detabase.
+     */
+    public void setExpiresAt(Date value) {
+        this.expiresAt = value;
     }
 
 
