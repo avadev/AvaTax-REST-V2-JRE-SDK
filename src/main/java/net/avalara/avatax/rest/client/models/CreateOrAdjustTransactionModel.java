@@ -29,52 +29,6 @@ import java.util.HashMap;
 public class CreateOrAdjustTransactionModel {
 
 
-    private AdjustmentReason adjustmentReason;
-
-    /**
-     * Getter for adjustmentReason
-     *
-     * A reason code indicating why this adjustment was made
-     */
-    public AdjustmentReason getAdjustmentReason() {
-        return this.adjustmentReason;
-    }
-
-    /**
-     * Setter for adjustmentReason
-     *
-     * A reason code indicating why this adjustment was made
-     */
-    public void setAdjustmentReason(AdjustmentReason value) {
-        this.adjustmentReason = value;
-    }
-
-
-    private String adjustmentDescription;
-
-    /**
-     * Getter for adjustmentDescription
-     *
-     * If the AdjustmentReason is "Other", specify the reason here.
-    *  
-    * This is required when the AdjustmentReason is 8 (Other).
-     */
-    public String getAdjustmentDescription() {
-        return this.adjustmentDescription;
-    }
-
-    /**
-     * Setter for adjustmentDescription
-     *
-     * If the AdjustmentReason is "Other", specify the reason here.
-    *  
-    * This is required when the AdjustmentReason is 8 (Other).
-     */
-    public void setAdjustmentDescription(String value) {
-        this.adjustmentDescription = value;
-    }
-
-
     private CreateTransactionModel createTransactionModel;
 
     /**
