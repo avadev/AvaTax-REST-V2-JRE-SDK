@@ -619,14 +619,14 @@ public class TransactionLineDetailModel {
     }
 
 
-    private TaxType taxType;
+    private String taxType;
 
     /**
      * Getter for taxType
      *
      * The type of tax that was calculated. Depends on the company's nexus settings as well as the jurisdiction's tax laws.
      */
-    public TaxType getTaxType() {
+    public String getTaxType() {
         return this.taxType;
     }
 
@@ -635,7 +635,7 @@ public class TransactionLineDetailModel {
      *
      * The type of tax that was calculated. Depends on the company's nexus settings as well as the jurisdiction's tax laws.
      */
-    public void setTaxType(TaxType value) {
+    public void setTaxType(String value) {
         this.taxType = value;
     }
 

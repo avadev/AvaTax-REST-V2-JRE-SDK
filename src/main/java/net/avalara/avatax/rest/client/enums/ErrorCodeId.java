@@ -1360,6 +1360,11 @@ public enum ErrorCodeId {
     InvalidDocumentTypeForInspect(1717),
 
     /** 
+     * 
+     */
+    ServiceNotReady(1718),
+
+    /** 
      * SendSales API errors
      */
     UnsupportedFileFormat(1800),

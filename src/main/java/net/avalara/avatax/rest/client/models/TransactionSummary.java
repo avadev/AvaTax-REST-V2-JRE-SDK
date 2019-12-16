@@ -176,14 +176,14 @@ public class TransactionSummary {
     }
 
 
-    private TaxType taxType;
+    private String taxType;
 
     /**
      * Getter for taxType
      *
      * The tax type of this tax.
      */
-    public TaxType getTaxType() {
+    public String getTaxType() {
         return this.taxType;
     }
 
@@ -192,7 +192,7 @@ public class TransactionSummary {
      *
      * The tax type of this tax.
      */
-    public void setTaxType(TaxType value) {
+    public void setTaxType(String value) {
         this.taxType = value;
     }
 
