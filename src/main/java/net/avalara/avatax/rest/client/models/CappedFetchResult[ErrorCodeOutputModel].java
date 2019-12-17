@@ -26,7 +26,7 @@ import java.util.HashMap;
 /**
  * 
  */
-public class CappedFetchResult(ErrorCodeOutputModel) {
+public class CappedFetchResult[ErrorCodeOutputModel] {
 
 
     private Boolean @isRecordsetCountCapped;
