@@ -4,7 +4,7 @@ import play.api.libs.json._
 import play.api.libs.functional.syntax._
 
 object ParseSwagger {
-  case class SwaggerDoc(swagger: String, info: Map[String, JsValue], basePath: String, paths: Map[String, Map[String, SwaggerMethod]], definitions: Map[String, SwaggerDefinition], securityDefinitions: Map[String, JsValue], apiVersion: Option[String])
+  case class SwaggerDoc(swagger: String, info: Map[String, JsValue], basePath: Option[String], paths: Map[String, Map[String, SwaggerMethod]], definitions: Map[String, SwaggerDefinition], securityDefinitions: Map[String, JsValue], apiVersion: Option[String])
   case class SwaggerMethod(tags: Seq[String], summary: Option[String], description: Option[String], operationId: Option[String], consumes: Seq[String], produces: Seq[String], parameters: Option[Seq[SwaggerProperty]], responses: Map[String, Option[SwaggerResult]], deprecated: Option[Boolean], security: Seq[Map[String, JsValue]])
   case class SwaggerDefinition(description: Option[String], required: Option[Seq[String]], `type`: String, properties: Map[String, SwaggerProperty], example: Option[JsValue])
   case class SwaggerProperty(name: Option[String], description: Option[String], required: Option[Boolean], `type`: Option[String], format: Option[String], EnumDataType: Option[String], readOnly: Option[Boolean], example: Option[JsValue], schema: Option[JsValue], items: Option[JsValue], `$ref`: Option[String], in: Option[String], default: Option[String], enum: Option[Seq[String]])
@@ -23,7 +23,12 @@ object ParseSwagger {
     (JsPath \ "items").readNullable[JsValue] and
     (JsPath \ "$ref").readNullable[String] and
     (JsPath \ "in").readNullable[String] and
-    (JsPath \ "default").readNullable[String] and
+    (JsPath \ "default")
+        .readNullable[String]
+        .orElse((JsPath \ "default").readNullable[Int].map(_.map(_.toString)))
+        .orElse(
+          (JsPath \ "default").readNullable[Boolean].map(_.map(_.toString))
+        ) and
     (JsPath \ "enum").readNullable[Seq[String]]
   )(SwaggerProperty.apply _)
 
@@ -59,7 +64,7 @@ object ParseSwagger {
   implicit lazy val swaggerDocReads: Reads[SwaggerDoc] = (
     (JsPath \ "swagger").read[String] and
     (JsPath \ "info").read[Map[String, JsValue]] and
-    (JsPath \ "basePath").read[String] and
+    (JsPath \ "basePath").readNullable[String] and
     (JsPath \ "paths").read[Map[String, Map[String, SwaggerMethod]]] and
     (JsPath \ "definitions").read[Map[String, SwaggerDefinition]] and
     (JsPath \ "securityDefinitions").read[Map[String, JsValue]] and
