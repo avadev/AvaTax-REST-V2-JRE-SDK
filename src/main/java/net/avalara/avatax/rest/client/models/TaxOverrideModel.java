@@ -49,7 +49,6 @@ public class TaxOverrideModel {
         this.type = value;
     }
 
-
     private BigDecimal taxAmount;
 
     /**
@@ -77,7 +76,6 @@ public class TaxOverrideModel {
     public void setTaxAmount(BigDecimal value) {
         this.taxAmount = value;
     }
-
 
     private Date taxDate;
 
@@ -107,7 +105,6 @@ public class TaxOverrideModel {
         this.taxDate = value;
     }
 
-
     private String reason;
 
     /**
@@ -135,7 +132,6 @@ public class TaxOverrideModel {
     public void setReason(String value) {
         this.reason = value;
     }
-
 
     /**
      * Returns a JSON string representation of TaxOverrideModel

@@ -49,7 +49,6 @@ public class FundingESignMethodReturn {
         this.method = value;
     }
 
-
     private Boolean javaScriptReady;
 
     /**
@@ -70,7 +69,6 @@ public class FundingESignMethodReturn {
         this.javaScriptReady = value;
     }
 
-
     private String javaScript;
 
     /**
@@ -90,7 +88,6 @@ public class FundingESignMethodReturn {
     public void setJavaScript(String value) {
         this.javaScript = value;
     }
-
 
     /**
      * Returns a JSON string representation of FundingESignMethodReturn

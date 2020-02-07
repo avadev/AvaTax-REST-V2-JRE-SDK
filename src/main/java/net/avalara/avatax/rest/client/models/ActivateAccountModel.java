@@ -49,7 +49,6 @@ public class ActivateAccountModel {
         this.acceptAvalaraTermsAndConditions = value;
     }
 
-
     private Boolean haveReadAvalaraTermsAndConditions;
 
     /**
@@ -69,7 +68,6 @@ public class ActivateAccountModel {
     public void setHaveReadAvalaraTermsAndConditions(Boolean value) {
         this.haveReadAvalaraTermsAndConditions = value;
     }
-
 
     /**
      * Returns a JSON string representation of ActivateAccountModel

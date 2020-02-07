@@ -50,7 +50,6 @@ public class ReconstructedMultiDocumentModel {
         this.request = value;
     }
 
-
     /**
      * Returns a JSON string representation of ReconstructedMultiDocumentModel
      */

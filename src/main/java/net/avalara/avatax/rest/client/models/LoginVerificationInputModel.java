@@ -49,7 +49,6 @@ public class LoginVerificationInputModel {
         this.companyId = value;
     }
 
-
     private Integer accountId;
 
     /**
@@ -69,7 +68,6 @@ public class LoginVerificationInputModel {
     public void setAccountId(Integer value) {
         this.accountId = value;
     }
-
 
     private String region;
 
@@ -91,7 +89,6 @@ public class LoginVerificationInputModel {
         this.region = value;
     }
 
-
     private String taxFormCode;
 
     /**
@@ -111,7 +108,6 @@ public class LoginVerificationInputModel {
     public void setTaxFormCode(String value) {
         this.taxFormCode = value;
     }
-
 
     private String username;
 
@@ -133,7 +129,6 @@ public class LoginVerificationInputModel {
         this.username = value;
     }
 
-
     private String password;
 
     /**
@@ -153,7 +148,6 @@ public class LoginVerificationInputModel {
     public void setPassword(String value) {
         this.password = value;
     }
-
 
     private HashMap<String, String> additionalOptions;
 
@@ -175,7 +169,6 @@ public class LoginVerificationInputModel {
         this.additionalOptions = value;
     }
 
-
     private Integer bulkRequestId;
 
     /**
@@ -196,7 +189,6 @@ public class LoginVerificationInputModel {
         this.bulkRequestId = value;
     }
 
-
     private Integer priority;
 
     /**
@@ -216,7 +208,6 @@ public class LoginVerificationInputModel {
     public void setPriority(Integer value) {
         this.priority = value;
     }
-
 
     /**
      * Returns a JSON string representation of LoginVerificationInputModel

@@ -49,7 +49,6 @@ public class BatchModel {
         this.id = value;
     }
 
-
     private String name;
 
     /**
@@ -69,7 +68,6 @@ public class BatchModel {
     public void setName(String value) {
         this.name = value;
     }
-
 
     private Integer accountId;
 
@@ -91,7 +89,6 @@ public class BatchModel {
         this.accountId = value;
     }
 
-
     private Integer companyId;
 
     /**
@@ -111,7 +108,6 @@ public class BatchModel {
     public void setCompanyId(Integer value) {
         this.companyId = value;
     }
-
 
     private BatchType type;
 
@@ -133,7 +129,6 @@ public class BatchModel {
         this.type = value;
     }
 
-
     private BatchStatus status;
 
     /**
@@ -153,7 +148,6 @@ public class BatchModel {
     public void setStatus(BatchStatus value) {
         this.status = value;
     }
-
 
     private String options;
 
@@ -175,7 +169,6 @@ public class BatchModel {
         this.options = value;
     }
 
-
     private String batchAgent;
 
     /**
@@ -195,7 +188,6 @@ public class BatchModel {
     public void setBatchAgent(String value) {
         this.batchAgent = value;
     }
-
 
     private Date startedDate;
 
@@ -217,7 +209,6 @@ public class BatchModel {
         this.startedDate = value;
     }
 
-
     private Integer recordCount;
 
     /**
@@ -237,7 +228,6 @@ public class BatchModel {
     public void setRecordCount(Integer value) {
         this.recordCount = value;
     }
-
 
     private Integer currentRecord;
 
@@ -259,7 +249,6 @@ public class BatchModel {
         this.currentRecord = value;
     }
 
-
     private Date completedDate;
 
     /**
@@ -279,7 +268,6 @@ public class BatchModel {
     public void setCompletedDate(Date value) {
         this.completedDate = value;
     }
-
 
     private Date createdDate;
 
@@ -301,7 +289,6 @@ public class BatchModel {
         this.createdDate = value;
     }
 
-
     private Integer createdUserId;
 
     /**
@@ -321,7 +308,6 @@ public class BatchModel {
     public void setCreatedUserId(Integer value) {
         this.createdUserId = value;
     }
-
 
     private Date modifiedDate;
 
@@ -343,7 +329,6 @@ public class BatchModel {
         this.modifiedDate = value;
     }
 
-
     private Integer modifiedUserId;
 
     /**
@@ -364,7 +349,6 @@ public class BatchModel {
         this.modifiedUserId = value;
     }
 
-
     private ArrayList<BatchFileModel> files;
 
     /**
@@ -384,7 +368,6 @@ public class BatchModel {
     public void setFiles(ArrayList<BatchFileModel> value) {
         this.files = value;
     }
-
 
     /**
      * Returns a JSON string representation of BatchModel

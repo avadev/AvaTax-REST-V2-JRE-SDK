@@ -1360,6 +1360,26 @@ public enum ErrorCodeId {
     InvalidDocumentTypeForInspect(1717),
 
     /** 
+     * 
+     */
+    ServiceNotReady(1718),
+
+    /** 
+     * 
+     */
+    UpdateLocationRemittanceMismatchTypeAndCategory(1719),
+
+    /** 
+     * 
+     */
+    UpdateLocationRemittanceCheckExistingEffectiveDateError(1720),
+
+    /** 
+     * 
+     */
+    UpdateLocationRemittanceCheckExistingEndDateError(1721),
+
+    /** 
      * SendSales API errors
      */
     UnsupportedFileFormat(1800),
@@ -1533,6 +1553,11 @@ public enum ErrorCodeId {
      * Company Controller Related Errors
      */
     FailedToUpdateCompanyLocation(2314),
+
+    /** 
+     * 
+     */
+    CompanyLocationDateRangeOverlap(2315),
 
     /** 
      * Generic validation errors

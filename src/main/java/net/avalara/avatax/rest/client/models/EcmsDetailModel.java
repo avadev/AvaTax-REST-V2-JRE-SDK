@@ -49,7 +49,6 @@ public class EcmsDetailModel {
         this.exemptCertDetailId = value;
     }
 
-
     private Integer exemptCertId;
 
     /**
@@ -70,7 +69,6 @@ public class EcmsDetailModel {
         this.exemptCertId = value;
     }
 
-
     private String stateFips;
 
     /**
@@ -90,7 +88,6 @@ public class EcmsDetailModel {
     public void setStateFips(String value) {
         this.stateFips = value;
     }
-
 
     private String region;
 
@@ -126,7 +123,6 @@ public class EcmsDetailModel {
         this.region = value;
     }
 
-
     private String idNo;
 
     /**
@@ -146,7 +142,6 @@ public class EcmsDetailModel {
     public void setIdNo(String value) {
         this.idNo = value;
     }
-
 
     private String country;
 
@@ -184,7 +179,6 @@ public class EcmsDetailModel {
         this.country = value;
     }
 
-
     private Date endDate;
 
     /**
@@ -204,7 +198,6 @@ public class EcmsDetailModel {
     public void setEndDate(Date value) {
         this.endDate = value;
     }
-
 
     private String idType;
 
@@ -228,7 +221,6 @@ public class EcmsDetailModel {
         this.idType = value;
     }
 
-
     private Integer isTaxCodeListExclusionList;
 
     /**
@@ -249,7 +241,6 @@ public class EcmsDetailModel {
         this.isTaxCodeListExclusionList = value;
     }
 
-
     private ArrayList<EcmsDetailTaxCodeModel> taxCodes;
 
     /**
@@ -269,7 +260,6 @@ public class EcmsDetailModel {
     public void setTaxCodes(ArrayList<EcmsDetailTaxCodeModel> value) {
         this.taxCodes = value;
     }
-
 
     /**
      * Returns a JSON string representation of EcmsDetailModel

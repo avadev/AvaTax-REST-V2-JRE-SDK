@@ -49,7 +49,6 @@ public class InvoiceMessageModel {
         this.content = value;
     }
 
-
     private ArrayList<String> lineNumbers;
 
     /**
@@ -69,7 +68,6 @@ public class InvoiceMessageModel {
     public void setLineNumbers(ArrayList<String> value) {
         this.lineNumbers = value;
     }
-
 
     /**
      * Returns a JSON string representation of InvoiceMessageModel

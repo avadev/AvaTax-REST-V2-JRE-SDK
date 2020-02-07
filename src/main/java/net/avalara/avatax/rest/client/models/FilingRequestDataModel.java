@@ -50,7 +50,6 @@ public class FilingRequestDataModel {
         this.companyReturnId = value;
     }
 
-
     private String returnName;
 
     /**
@@ -72,7 +71,6 @@ public class FilingRequestDataModel {
     public void setReturnName(String value) {
         this.returnName = value;
     }
-
 
     private String taxFormCode;
 
@@ -96,7 +94,6 @@ public class FilingRequestDataModel {
         this.taxFormCode = value;
     }
 
-
     private FilingFrequencyId filingFrequencyId;
 
     /**
@@ -116,7 +113,6 @@ public class FilingRequestDataModel {
     public void setFilingFrequencyId(FilingFrequencyId value) {
         this.filingFrequencyId = value;
     }
-
 
     private String registrationId;
 
@@ -138,7 +134,6 @@ public class FilingRequestDataModel {
         this.registrationId = value;
     }
 
-
     private Short months;
 
     /**
@@ -158,7 +153,6 @@ public class FilingRequestDataModel {
     public void setMonths(Short value) {
         this.months = value;
     }
-
 
     private Integer fiscalYearStartMonth;
 
@@ -180,7 +174,6 @@ public class FilingRequestDataModel {
         this.fiscalYearStartMonth = value;
     }
 
-
     private MatchingTaxType taxTypeId;
 
     /**
@@ -200,7 +193,6 @@ public class FilingRequestDataModel {
     public void setTaxTypeId(MatchingTaxType value) {
         this.taxTypeId = value;
     }
-
 
     private String locationCode;
 
@@ -222,7 +214,6 @@ public class FilingRequestDataModel {
         this.locationCode = value;
     }
 
-
     private Date effDate;
 
     /**
@@ -242,7 +233,6 @@ public class FilingRequestDataModel {
     public void setEffDate(Date value) {
         this.effDate = value;
     }
-
 
     private Date endDate;
 
@@ -264,7 +254,6 @@ public class FilingRequestDataModel {
         this.endDate = value;
     }
 
-
     private Boolean isClone;
 
     /**
@@ -284,7 +273,6 @@ public class FilingRequestDataModel {
     public void setIsClone(Boolean value) {
         this.isClone = value;
     }
-
 
     private String country;
 
@@ -306,7 +294,6 @@ public class FilingRequestDataModel {
         this.country = value;
     }
 
-
     private String region;
 
     /**
@@ -326,7 +313,6 @@ public class FilingRequestDataModel {
     public void setRegion(String value) {
         this.region = value;
     }
-
 
     private Integer taxAuthorityId;
 
@@ -348,7 +334,6 @@ public class FilingRequestDataModel {
         this.taxAuthorityId = value;
     }
 
-
     private String taxAuthorityName;
 
     /**
@@ -369,7 +354,6 @@ public class FilingRequestDataModel {
         this.taxAuthorityName = value;
     }
 
-
     private ArrayList<FilingAnswerModel> answers;
 
     /**
@@ -389,7 +373,6 @@ public class FilingRequestDataModel {
     public void setAnswers(ArrayList<FilingAnswerModel> value) {
         this.answers = value;
     }
-
 
     /**
      * Returns a JSON string representation of FilingRequestDataModel

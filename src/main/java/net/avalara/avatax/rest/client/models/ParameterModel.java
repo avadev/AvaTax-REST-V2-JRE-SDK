@@ -49,7 +49,6 @@ public class ParameterModel {
         this.id = value;
     }
 
-
     private String category;
 
     /**
@@ -74,7 +73,6 @@ public class ParameterModel {
         this.category = value;
     }
 
-
     private String name;
 
     /**
@@ -95,7 +93,6 @@ public class ParameterModel {
         this.name = value;
     }
 
-
     private String dataType;
 
     /**
@@ -115,7 +112,6 @@ public class ParameterModel {
     public void setDataType(String value) {
         this.dataType = value;
     }
-
 
     private String helpText;
 
@@ -139,7 +135,6 @@ public class ParameterModel {
         this.helpText = value;
     }
 
-
     private ArrayList<String> serviceTypes;
 
     /**
@@ -159,7 +154,6 @@ public class ParameterModel {
     public void setServiceTypes(ArrayList<String> value) {
         this.serviceTypes = value;
     }
-
 
     private String prompt;
 
@@ -185,7 +179,6 @@ public class ParameterModel {
         this.prompt = value;
     }
 
-
     private String regularExpression;
 
     /**
@@ -210,7 +203,6 @@ public class ParameterModel {
         this.regularExpression = value;
     }
 
-
     private String label;
 
     /**
@@ -230,7 +222,6 @@ public class ParameterModel {
     public void setLabel(String value) {
         this.label = value;
     }
-
 
     private String helpUrl;
 
@@ -252,7 +243,6 @@ public class ParameterModel {
         this.helpUrl = value;
     }
 
-
     private String attributeType;
 
     /**
@@ -272,7 +262,6 @@ public class ParameterModel {
     public void setAttributeType(String value) {
         this.attributeType = value;
     }
-
 
     private ArrayList<String> values;
 
@@ -294,7 +283,6 @@ public class ParameterModel {
         this.values = value;
     }
 
-
     private String measurementType;
 
     /**
@@ -314,7 +302,6 @@ public class ParameterModel {
     public void setMeasurementType(String value) {
         this.measurementType = value;
     }
-
 
     /**
      * Returns a JSON string representation of ParameterModel

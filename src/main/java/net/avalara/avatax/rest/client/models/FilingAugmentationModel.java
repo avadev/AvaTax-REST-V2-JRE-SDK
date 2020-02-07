@@ -49,7 +49,6 @@ public class FilingAugmentationModel {
         this.id = value;
     }
 
-
     private Long filingId;
 
     /**
@@ -69,7 +68,6 @@ public class FilingAugmentationModel {
     public void setFilingId(Long value) {
         this.filingId = value;
     }
-
 
     private BigDecimal fieldAmount;
 
@@ -91,7 +89,6 @@ public class FilingAugmentationModel {
         this.fieldAmount = value;
     }
 
-
     private String fieldName;
 
     /**
@@ -111,7 +108,6 @@ public class FilingAugmentationModel {
     public void setFieldName(String value) {
         this.fieldName = value;
     }
-
 
     private Date createdDate;
 
@@ -133,7 +129,6 @@ public class FilingAugmentationModel {
         this.createdDate = value;
     }
 
-
     private Integer createdUserId;
 
     /**
@@ -153,7 +148,6 @@ public class FilingAugmentationModel {
     public void setCreatedUserId(Integer value) {
         this.createdUserId = value;
     }
-
 
     private Date modifiedDate;
 
@@ -175,7 +169,6 @@ public class FilingAugmentationModel {
         this.modifiedDate = value;
     }
 
-
     private Integer modifiedUserId;
 
     /**
@@ -195,7 +188,6 @@ public class FilingAugmentationModel {
     public void setModifiedUserId(Integer value) {
         this.modifiedUserId = value;
     }
-
 
     /**
      * Returns a JSON string representation of FilingAugmentationModel

@@ -49,7 +49,6 @@ public class CommunicationsTransactionTypeModel {
         this.transactionTypeId = value;
     }
 
-
     private String transactionType;
 
     /**
@@ -69,7 +68,6 @@ public class CommunicationsTransactionTypeModel {
     public void setTransactionType(String value) {
         this.transactionType = value;
     }
-
 
     /**
      * Returns a JSON string representation of CommunicationsTransactionTypeModel

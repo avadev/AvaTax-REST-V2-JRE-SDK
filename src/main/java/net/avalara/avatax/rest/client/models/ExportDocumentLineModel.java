@@ -49,7 +49,6 @@ public class ExportDocumentLineModel {
         this.format = value;
     }
 
-
     private Date startDate;
 
     /**
@@ -70,7 +69,6 @@ public class ExportDocumentLineModel {
         this.startDate = value;
     }
 
-
     private Date endDate;
 
     /**
@@ -90,7 +88,6 @@ public class ExportDocumentLineModel {
     public void setEndDate(Date value) {
         this.endDate = value;
     }
-
 
     private String country;
 
@@ -118,7 +115,6 @@ public class ExportDocumentLineModel {
         this.country = value;
     }
 
-
     private String state;
 
     /**
@@ -138,7 +134,6 @@ public class ExportDocumentLineModel {
     public void setState(String value) {
         this.state = value;
     }
-
 
     private ReportDateFilter dateFilter;
 
@@ -160,7 +155,6 @@ public class ExportDocumentLineModel {
         this.dateFilter = value;
     }
 
-
     private ReportDocType docType;
 
     /**
@@ -180,7 +174,6 @@ public class ExportDocumentLineModel {
     public void setDocType(ReportDocType value) {
         this.docType = value;
     }
-
 
     private String dateFormat;
 
@@ -202,7 +195,6 @@ public class ExportDocumentLineModel {
         this.dateFormat = value;
     }
 
-
     private String culture;
 
     /**
@@ -223,7 +215,6 @@ public class ExportDocumentLineModel {
         this.culture = value;
     }
 
-
     private String currencyCode;
 
     /**
@@ -243,7 +234,6 @@ public class ExportDocumentLineModel {
     public void setCurrencyCode(String value) {
         this.currencyCode = value;
     }
-
 
     /**
      * Returns a JSON string representation of ExportDocumentLineModel

@@ -49,7 +49,6 @@ public class ApproveFilingsModel {
         this.approve = value;
     }
 
-
     /**
      * Returns a JSON string representation of ApproveFilingsModel
      */

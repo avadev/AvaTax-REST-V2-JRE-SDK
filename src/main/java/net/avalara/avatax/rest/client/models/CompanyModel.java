@@ -49,7 +49,6 @@ public class CompanyModel {
         this.id = value;
     }
 
-
     private Integer accountId;
 
     /**
@@ -69,7 +68,6 @@ public class CompanyModel {
     public void setAccountId(Integer value) {
         this.accountId = value;
     }
-
 
     private Integer parentCompanyId;
 
@@ -91,7 +89,6 @@ public class CompanyModel {
         this.parentCompanyId = value;
     }
 
-
     private String sstPid;
 
     /**
@@ -111,7 +108,6 @@ public class CompanyModel {
     public void setSstPid(String value) {
         this.sstPid = value;
     }
-
 
     private String companyCode;
 
@@ -133,7 +129,6 @@ public class CompanyModel {
         this.companyCode = value;
     }
 
-
     private String name;
 
     /**
@@ -153,7 +148,6 @@ public class CompanyModel {
     public void setName(String value) {
         this.name = value;
     }
-
 
     private Boolean isDefault;
 
@@ -175,7 +169,6 @@ public class CompanyModel {
         this.isDefault = value;
     }
 
-
     private Integer defaultLocationId;
 
     /**
@@ -196,7 +189,6 @@ public class CompanyModel {
         this.defaultLocationId = value;
     }
 
-
     private Boolean isActive;
 
     /**
@@ -216,7 +208,6 @@ public class CompanyModel {
     public void setIsActive(Boolean value) {
         this.isActive = value;
     }
-
 
     private String taxpayerIdNumber;
 
@@ -244,7 +235,6 @@ public class CompanyModel {
         this.taxpayerIdNumber = value;
     }
 
-
     private Boolean isFein;
 
     /**
@@ -264,7 +254,6 @@ public class CompanyModel {
     public void setIsFein(Boolean value) {
         this.isFein = value;
     }
-
 
     private Boolean hasProfile;
 
@@ -290,7 +279,6 @@ public class CompanyModel {
         this.hasProfile = value;
     }
 
-
     private Boolean isReportingEntity;
 
     /**
@@ -313,7 +301,6 @@ public class CompanyModel {
         this.isReportingEntity = value;
     }
 
-
     private Date sstEffectiveDate;
 
     /**
@@ -333,7 +320,6 @@ public class CompanyModel {
     public void setSstEffectiveDate(Date value) {
         this.sstEffectiveDate = value;
     }
-
 
     private String defaultCountry;
 
@@ -355,7 +341,6 @@ public class CompanyModel {
         this.defaultCountry = value;
     }
 
-
     private String baseCurrencyCode;
 
     /**
@@ -375,7 +360,6 @@ public class CompanyModel {
     public void setBaseCurrencyCode(String value) {
         this.baseCurrencyCode = value;
     }
-
 
     private RoundingLevelId roundingLevelId;
 
@@ -397,7 +381,6 @@ public class CompanyModel {
         this.roundingLevelId = value;
     }
 
-
     private Boolean warningsEnabled;
 
     /**
@@ -417,7 +400,6 @@ public class CompanyModel {
     public void setWarningsEnabled(Boolean value) {
         this.warningsEnabled = value;
     }
-
 
     private Boolean isTest;
 
@@ -441,7 +423,6 @@ public class CompanyModel {
         this.isTest = value;
     }
 
-
     private TaxDependencyLevelId taxDependencyLevelId;
 
     /**
@@ -461,7 +442,6 @@ public class CompanyModel {
     public void setTaxDependencyLevelId(TaxDependencyLevelId value) {
         this.taxDependencyLevelId = value;
     }
-
 
     private Boolean inProgress;
 
@@ -485,7 +465,6 @@ public class CompanyModel {
         this.inProgress = value;
     }
 
-
     private String businessIdentificationNo;
 
     /**
@@ -505,7 +484,6 @@ public class CompanyModel {
     public void setBusinessIdentificationNo(String value) {
         this.businessIdentificationNo = value;
     }
-
 
     private Date createdDate;
 
@@ -527,7 +505,6 @@ public class CompanyModel {
         this.createdDate = value;
     }
 
-
     private Integer createdUserId;
 
     /**
@@ -547,7 +524,6 @@ public class CompanyModel {
     public void setCreatedUserId(Integer value) {
         this.createdUserId = value;
     }
-
 
     private Date modifiedDate;
 
@@ -569,7 +545,6 @@ public class CompanyModel {
         this.modifiedDate = value;
     }
 
-
     private Integer modifiedUserId;
 
     /**
@@ -589,7 +564,6 @@ public class CompanyModel {
     public void setModifiedUserId(Integer value) {
         this.modifiedUserId = value;
     }
-
 
     private ArrayList<ContactModel> contacts;
 
@@ -617,7 +591,6 @@ public class CompanyModel {
         this.contacts = value;
     }
 
-
     private ArrayList<ItemModel> items;
 
     /**
@@ -643,7 +616,6 @@ public class CompanyModel {
     public void setItems(ArrayList<ItemModel> value) {
         this.items = value;
     }
-
 
     private ArrayList<LocationModel> locations;
 
@@ -671,7 +643,6 @@ public class CompanyModel {
         this.locations = value;
     }
 
-
     private ArrayList<NexusModel> nexus;
 
     /**
@@ -697,7 +668,6 @@ public class CompanyModel {
     public void setNexus(ArrayList<NexusModel> value) {
         this.nexus = value;
     }
-
 
     private ArrayList<SettingModel> settings;
 
@@ -725,7 +695,6 @@ public class CompanyModel {
         this.settings = value;
     }
 
-
     private ArrayList<TaxCodeModel> taxCodes;
 
     /**
@@ -751,7 +720,6 @@ public class CompanyModel {
     public void setTaxCodes(ArrayList<TaxCodeModel> value) {
         this.taxCodes = value;
     }
-
 
     private ArrayList<TaxRuleModel> taxRules;
 
@@ -779,7 +747,6 @@ public class CompanyModel {
         this.taxRules = value;
     }
 
-
     private ArrayList<UPCModel> upcs;
 
     /**
@@ -806,7 +773,6 @@ public class CompanyModel {
         this.upcs = value;
     }
 
-
     private ArrayList<CompanyModel> nonReportingChildCompanies;
 
     /**
@@ -826,7 +792,6 @@ public class CompanyModel {
     public void setNonReportingChildCompanies(ArrayList<CompanyModel> value) {
         this.nonReportingChildCompanies = value;
     }
-
 
     private ArrayList<EcmsModel> exemptCerts;
 
@@ -848,7 +813,6 @@ public class CompanyModel {
         this.exemptCerts = value;
     }
 
-
     private String mossId;
 
     /**
@@ -869,7 +833,6 @@ public class CompanyModel {
         this.mossId = value;
     }
 
-
     private String mossCountry;
 
     /**
@@ -889,7 +852,6 @@ public class CompanyModel {
     public void setMossCountry(String value) {
         this.mossCountry = value;
     }
-
 
     /**
      * Returns a JSON string representation of CompanyModel

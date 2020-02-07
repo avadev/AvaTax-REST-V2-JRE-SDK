@@ -49,7 +49,6 @@ public class MultiTaxFilingReturnModel {
         this.id = value;
     }
 
-
     private Long filingCalendarId;
 
     /**
@@ -69,7 +68,6 @@ public class MultiTaxFilingReturnModel {
     public void setFilingCalendarId(Long value) {
         this.filingCalendarId = value;
     }
-
 
     private FilingStatusId status;
 
@@ -91,7 +89,6 @@ public class MultiTaxFilingReturnModel {
         this.status = value;
     }
 
-
     private FilingFrequencyId filingFrequency;
 
     /**
@@ -111,7 +108,6 @@ public class MultiTaxFilingReturnModel {
     public void setFilingFrequency(FilingFrequencyId value) {
         this.filingFrequency = value;
     }
-
 
     private FilingTypeId filingType;
 
@@ -133,7 +129,6 @@ public class MultiTaxFilingReturnModel {
         this.filingType = value;
     }
 
-
     private String formName;
 
     /**
@@ -153,7 +148,6 @@ public class MultiTaxFilingReturnModel {
     public void setFormName(String value) {
         this.formName = value;
     }
-
 
     private String formCode;
 
@@ -175,7 +169,6 @@ public class MultiTaxFilingReturnModel {
         this.formCode = value;
     }
 
-
     private String description;
 
     /**
@@ -195,7 +188,6 @@ public class MultiTaxFilingReturnModel {
     public void setDescription(String value) {
         this.description = value;
     }
-
 
     private Integer taxAuthorityId;
 
@@ -217,7 +209,6 @@ public class MultiTaxFilingReturnModel {
         this.taxAuthorityId = value;
     }
 
-
     private Date filedDate;
 
     /**
@@ -237,7 +228,6 @@ public class MultiTaxFilingReturnModel {
     public void setFiledDate(Date value) {
         this.filedDate = value;
     }
-
 
     private AccrualType accrualType;
 
@@ -259,7 +249,6 @@ public class MultiTaxFilingReturnModel {
         this.accrualType = value;
     }
 
-
     private Date startPeriod;
 
     /**
@@ -279,7 +268,6 @@ public class MultiTaxFilingReturnModel {
     public void setStartPeriod(Date value) {
         this.startPeriod = value;
     }
-
 
     private Date endPeriod;
 
@@ -301,7 +289,6 @@ public class MultiTaxFilingReturnModel {
         this.endPeriod = value;
     }
 
-
     private FilingsTaxSummaryModel returnTaxSummary;
 
     /**
@@ -321,7 +308,6 @@ public class MultiTaxFilingReturnModel {
     public void setReturnTaxSummary(FilingsTaxSummaryModel value) {
         this.returnTaxSummary = value;
     }
-
 
     private ArrayList<FilingsTaxDetailsModel> returnTaxDetails;
 
@@ -343,7 +329,6 @@ public class MultiTaxFilingReturnModel {
         this.returnTaxDetails = value;
     }
 
-
     private FilingReturnCreditModel excludedCarryOverCredits;
 
     /**
@@ -363,7 +348,6 @@ public class MultiTaxFilingReturnModel {
     public void setExcludedCarryOverCredits(FilingReturnCreditModel value) {
         this.excludedCarryOverCredits = value;
     }
-
 
     private FilingReturnCreditModel appliedCarryOverCredits;
 
@@ -385,7 +369,6 @@ public class MultiTaxFilingReturnModel {
         this.appliedCarryOverCredits = value;
     }
 
-
     private BigDecimal totalAdjustments;
 
     /**
@@ -405,7 +388,6 @@ public class MultiTaxFilingReturnModel {
     public void setTotalAdjustments(BigDecimal value) {
         this.totalAdjustments = value;
     }
-
 
     private ArrayList<FilingAdjustmentModel> adjustments;
 
@@ -427,7 +409,6 @@ public class MultiTaxFilingReturnModel {
         this.adjustments = value;
     }
 
-
     private BigDecimal totalAugmentations;
 
     /**
@@ -447,7 +428,6 @@ public class MultiTaxFilingReturnModel {
     public void setTotalAugmentations(BigDecimal value) {
         this.totalAugmentations = value;
     }
-
 
     private ArrayList<FilingAugmentationModel> augmentations;
 
@@ -469,7 +449,6 @@ public class MultiTaxFilingReturnModel {
         this.augmentations = value;
     }
 
-
     private BigDecimal totalPayments;
 
     /**
@@ -489,7 +468,6 @@ public class MultiTaxFilingReturnModel {
     public void setTotalPayments(BigDecimal value) {
         this.totalPayments = value;
     }
-
 
     private ArrayList<FilingPaymentModel> payments;
 
@@ -511,7 +489,6 @@ public class MultiTaxFilingReturnModel {
         this.payments = value;
     }
 
-
     private ArrayList<FilingAttachmentModel> attachments;
 
     /**
@@ -531,7 +508,6 @@ public class MultiTaxFilingReturnModel {
     public void setAttachments(ArrayList<FilingAttachmentModel> value) {
         this.attachments = value;
     }
-
 
     /**
      * Returns a JSON string representation of MultiTaxFilingReturnModel

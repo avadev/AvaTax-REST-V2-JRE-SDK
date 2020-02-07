@@ -49,7 +49,6 @@ public class ErrorTransactionOutputModel {
         this.errorCode = value;
     }
 
-
     private String errorMessage;
 
     /**
@@ -69,7 +68,6 @@ public class ErrorTransactionOutputModel {
     public void setErrorMessage(String value) {
         this.errorMessage = value;
     }
-
 
     private String avataxErrorJson;
 
@@ -91,7 +89,6 @@ public class ErrorTransactionOutputModel {
         this.avataxErrorJson = value;
     }
 
-
     private String avataxCreateTransactionJson;
 
     /**
@@ -111,7 +108,6 @@ public class ErrorTransactionOutputModel {
     public void setAvataxCreateTransactionJson(String value) {
         this.avataxCreateTransactionJson = value;
     }
-
 
     private String datasource;
 
@@ -133,7 +129,6 @@ public class ErrorTransactionOutputModel {
         this.datasource = value;
     }
 
-
     private Date documentDate;
 
     /**
@@ -153,7 +148,6 @@ public class ErrorTransactionOutputModel {
     public void setDocumentDate(Date value) {
         this.documentDate = value;
     }
-
 
     private Date expiresAt;
 
@@ -175,6 +169,85 @@ public class ErrorTransactionOutputModel {
         this.expiresAt = value;
     }
 
+    private BigDecimal amount;
+
+    /**
+     * Getter for amount
+     *
+     * The amount of the transaction.
+     */
+    public BigDecimal getAmount() {
+        return this.amount;
+    }
+
+    /**
+     * Setter for amount
+     *
+     * The amount of the transaction.
+     */
+    public void setAmount(BigDecimal value) {
+        this.amount = value;
+    }
+
+    private String datasourceSource;
+
+    /**
+     * Getter for datasourceSource
+     *
+     * The Datasource source of the transaction creation call.
+     */
+    public String getDatasourceSource() {
+        return this.datasourceSource;
+    }
+
+    /**
+     * Setter for datasourceSource
+     *
+     * The Datasource source of the transaction creation call.
+     */
+    public void setDatasourceSource(String value) {
+        this.datasourceSource = value;
+    }
+
+    private String shipToCountry;
+
+    /**
+     * Getter for shipToCountry
+     *
+     * The country of the ship to address for the transaction creation call.
+     */
+    public String getShipToCountry() {
+        return this.shipToCountry;
+    }
+
+    /**
+     * Setter for shipToCountry
+     *
+     * The country of the ship to address for the transaction creation call.
+     */
+    public void setShipToCountry(String value) {
+        this.shipToCountry = value;
+    }
+
+    private String shipToRegion;
+
+    /**
+     * Getter for shipToRegion
+     *
+     * The region of the ship to address for the transaction creation call.
+     */
+    public String getShipToRegion() {
+        return this.shipToRegion;
+    }
+
+    /**
+     * Setter for shipToRegion
+     *
+     * The region of the ship to address for the transaction creation call.
+     */
+    public void setShipToRegion(String value) {
+        this.shipToRegion = value;
+    }
 
     private DocumentType documentType;
 
@@ -196,7 +269,6 @@ public class ErrorTransactionOutputModel {
         this.documentType = value;
     }
 
-
     private String documentCode;
 
     /**
@@ -216,7 +288,6 @@ public class ErrorTransactionOutputModel {
     public void setDocumentCode(String value) {
         this.documentCode = value;
     }
-
 
     /**
      * Returns a JSON string representation of ErrorTransactionOutputModel

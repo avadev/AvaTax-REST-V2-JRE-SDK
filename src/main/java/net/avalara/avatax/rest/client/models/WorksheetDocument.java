@@ -49,7 +49,6 @@ public class WorksheetDocument {
         this.docCode = value;
     }
 
-
     private Date docDate;
 
     /**
@@ -69,7 +68,6 @@ public class WorksheetDocument {
     public void setDocDate(Date value) {
         this.docDate = value;
     }
-
 
     private BigDecimal totalExempt;
 
@@ -91,7 +89,6 @@ public class WorksheetDocument {
         this.totalExempt = value;
     }
 
-
     private BigDecimal totalTaxable;
 
     /**
@@ -111,7 +108,6 @@ public class WorksheetDocument {
     public void setTotalTaxable(BigDecimal value) {
         this.totalTaxable = value;
     }
-
 
     private BigDecimal totalTax;
 
@@ -133,7 +129,6 @@ public class WorksheetDocument {
         this.totalTax = value;
     }
 
-
     private ArrayList<WorksheetDocumentLine> lines;
 
     /**
@@ -153,7 +148,6 @@ public class WorksheetDocument {
     public void setLines(ArrayList<WorksheetDocumentLine> value) {
         this.lines = value;
     }
-
 
     private ArrayList<Message> messages;
 
@@ -175,7 +169,6 @@ public class WorksheetDocument {
         this.messages = value;
     }
 
-
     private String resultCode;
 
     /**
@@ -196,7 +189,6 @@ public class WorksheetDocument {
         this.resultCode = value;
     }
 
-
     private String transactionId;
 
     /**
@@ -216,7 +208,6 @@ public class WorksheetDocument {
     public void setTransactionId(String value) {
         this.transactionId = value;
     }
-
 
     /**
      * Returns a JSON string representation of WorksheetDocument

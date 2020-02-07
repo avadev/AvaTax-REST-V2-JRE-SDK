@@ -49,7 +49,6 @@ public class DeleteErrorTransactionResponseModel {
         this.result = value;
     }
 
-
     private DocumentType documentType;
 
     /**
@@ -70,7 +69,6 @@ public class DeleteErrorTransactionResponseModel {
         this.documentType = value;
     }
 
-
     private String documentCode;
 
     /**
@@ -90,7 +88,6 @@ public class DeleteErrorTransactionResponseModel {
     public void setDocumentCode(String value) {
         this.documentCode = value;
     }
-
 
     /**
      * Returns a JSON string representation of DeleteErrorTransactionResponseModel

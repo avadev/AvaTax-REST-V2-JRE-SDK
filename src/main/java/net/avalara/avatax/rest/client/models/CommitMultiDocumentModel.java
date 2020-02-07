@@ -53,7 +53,6 @@ public class CommitMultiDocumentModel {
         this.code = value;
     }
 
-
     private DocumentType type;
 
     /**
@@ -80,7 +79,6 @@ public class CommitMultiDocumentModel {
         this.type = value;
     }
 
-
     private Boolean commit;
 
     /**
@@ -104,7 +102,6 @@ public class CommitMultiDocumentModel {
     public void setCommit(Boolean value) {
         this.commit = value;
     }
-
 
     /**
      * Returns a JSON string representation of CommitMultiDocumentModel

@@ -49,7 +49,6 @@ public class LocationSettingModel {
         this.questionId = value;
     }
 
-
     private String questionName;
 
     /**
@@ -70,7 +69,6 @@ public class LocationSettingModel {
         this.questionName = value;
     }
 
-
     private String value;
 
     /**
@@ -90,7 +88,6 @@ public class LocationSettingModel {
     public void setValue(String value) {
         this.value = value;
     }
-
 
     /**
      * Returns a JSON string representation of LocationSettingModel

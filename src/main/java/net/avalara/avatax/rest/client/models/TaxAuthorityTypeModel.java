@@ -49,7 +49,6 @@ public class TaxAuthorityTypeModel {
         this.id = value;
     }
 
-
     private String description;
 
     /**
@@ -70,7 +69,6 @@ public class TaxAuthorityTypeModel {
         this.description = value;
     }
 
-
     private String taxAuthorityGroup;
 
     /**
@@ -90,7 +88,6 @@ public class TaxAuthorityTypeModel {
     public void setTaxAuthorityGroup(String value) {
         this.taxAuthorityGroup = value;
     }
-
 
     /**
      * Returns a JSON string representation of TaxAuthorityTypeModel

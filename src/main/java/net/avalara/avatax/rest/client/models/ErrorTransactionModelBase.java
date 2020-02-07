@@ -49,7 +49,6 @@ public class ErrorTransactionModelBase {
         this.documentType = value;
     }
 
-
     private String documentCode;
 
     /**
@@ -69,7 +68,6 @@ public class ErrorTransactionModelBase {
     public void setDocumentCode(String value) {
         this.documentCode = value;
     }
-
 
     /**
      * Returns a JSON string representation of ErrorTransactionModelBase

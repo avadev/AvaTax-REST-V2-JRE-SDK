@@ -53,7 +53,6 @@ public class CommitTransactionModel {
         this.commit = value;
     }
 
-
     /**
      * Returns a JSON string representation of CommitTransactionModel
      */

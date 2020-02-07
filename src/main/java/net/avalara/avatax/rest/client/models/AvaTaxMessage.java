@@ -49,7 +49,6 @@ public class AvaTaxMessage {
         this.summary = value;
     }
 
-
     private String details;
 
     /**
@@ -69,7 +68,6 @@ public class AvaTaxMessage {
     public void setDetails(String value) {
         this.details = value;
     }
-
 
     private String refersTo;
 
@@ -91,7 +89,6 @@ public class AvaTaxMessage {
         this.refersTo = value;
     }
 
-
     private String severity;
 
     /**
@@ -112,7 +109,6 @@ public class AvaTaxMessage {
         this.severity = value;
     }
 
-
     private String source;
 
     /**
@@ -132,7 +128,6 @@ public class AvaTaxMessage {
     public void setSource(String value) {
         this.source = value;
     }
-
 
     /**
      * Returns a JSON string representation of AvaTaxMessage

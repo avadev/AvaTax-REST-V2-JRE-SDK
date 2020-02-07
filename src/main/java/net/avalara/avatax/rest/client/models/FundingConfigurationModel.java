@@ -49,7 +49,6 @@ public class FundingConfigurationModel {
         this.companyId = value;
     }
 
-
     private String systemType;
 
     /**
@@ -69,7 +68,6 @@ public class FundingConfigurationModel {
     public void setSystemType(String value) {
         this.systemType = value;
     }
-
 
     private String currency;
 
@@ -91,7 +89,6 @@ public class FundingConfigurationModel {
         this.currency = value;
     }
 
-
     private Boolean isFundingSetup;
 
     /**
@@ -111,7 +108,6 @@ public class FundingConfigurationModel {
     public void setIsFundingSetup(Boolean value) {
         this.isFundingSetup = value;
     }
-
 
     private String fundingMethod;
 
@@ -133,7 +129,6 @@ public class FundingConfigurationModel {
         this.fundingMethod = value;
     }
 
-
     private Date lastUpdated;
 
     /**
@@ -153,7 +148,6 @@ public class FundingConfigurationModel {
     public void setLastUpdated(Date value) {
         this.lastUpdated = value;
     }
-
 
     /**
      * Returns a JSON string representation of FundingConfigurationModel

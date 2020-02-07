@@ -49,7 +49,6 @@ public class AdvancedRuleExecutionOrderModel {
         this.ruleExecutionIds = value;
     }
 
-
     /**
      * Returns a JSON string representation of AdvancedRuleExecutionOrderModel
      */

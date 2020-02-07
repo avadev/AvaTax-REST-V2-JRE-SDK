@@ -49,7 +49,6 @@ public class AddressResolutionModel {
         this.address = value;
     }
 
-
     private ArrayList<ValidatedAddressInfo> validatedAddresses;
 
     /**
@@ -69,7 +68,6 @@ public class AddressResolutionModel {
     public void setValidatedAddresses(ArrayList<ValidatedAddressInfo> value) {
         this.validatedAddresses = value;
     }
-
 
     private CoordinateInfo coordinates;
 
@@ -91,7 +89,6 @@ public class AddressResolutionModel {
         this.coordinates = value;
     }
 
-
     private ResolutionQuality resolutionQuality;
 
     /**
@@ -111,7 +108,6 @@ public class AddressResolutionModel {
     public void setResolutionQuality(ResolutionQuality value) {
         this.resolutionQuality = value;
     }
-
 
     private ArrayList<TaxAuthorityInfo> taxAuthorities;
 
@@ -133,7 +129,6 @@ public class AddressResolutionModel {
         this.taxAuthorities = value;
     }
 
-
     private ArrayList<AvaTaxMessage> messages;
 
     /**
@@ -153,7 +148,6 @@ public class AddressResolutionModel {
     public void setMessages(ArrayList<AvaTaxMessage> value) {
         this.messages = value;
     }
-
 
     /**
      * Returns a JSON string representation of AddressResolutionModel

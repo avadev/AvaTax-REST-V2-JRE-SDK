@@ -49,7 +49,6 @@ public class AdjustMultiDocumentModel {
         this.adjustmentReason = value;
     }
 
-
     private String adjustDescription;
 
     /**
@@ -74,7 +73,6 @@ public class AdjustMultiDocumentModel {
         this.adjustDescription = value;
     }
 
-
     private CreateMultiDocumentModel newTransaction;
 
     /**
@@ -94,7 +92,6 @@ public class AdjustMultiDocumentModel {
     public void setNewTransaction(CreateMultiDocumentModel value) {
         this.newTransaction = value;
     }
-
 
     /**
      * Returns a JSON string representation of AdjustMultiDocumentModel

@@ -49,7 +49,6 @@ public class SetPasswordModel {
         this.newPassword = value;
     }
 
-
     /**
      * Returns a JSON string representation of SetPasswordModel
      */

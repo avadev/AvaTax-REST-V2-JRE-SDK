@@ -49,7 +49,6 @@ public class FormMasterModel {
         this.id = value;
     }
 
-
     private Integer formTypeId;
 
     /**
@@ -69,7 +68,6 @@ public class FormMasterModel {
     public void setFormTypeId(Integer value) {
         this.formTypeId = value;
     }
-
 
     private String taxFormCode;
 
@@ -91,7 +89,6 @@ public class FormMasterModel {
         this.taxFormCode = value;
     }
 
-
     private String legacyReturnName;
 
     /**
@@ -111,7 +108,6 @@ public class FormMasterModel {
     public void setLegacyReturnName(String value) {
         this.legacyReturnName = value;
     }
-
 
     private String taxFormName;
 
@@ -133,7 +129,6 @@ public class FormMasterModel {
         this.taxFormName = value;
     }
 
-
     private String description;
 
     /**
@@ -153,7 +148,6 @@ public class FormMasterModel {
     public void setDescription(String value) {
         this.description = value;
     }
-
 
     private Boolean isEffective;
 
@@ -175,7 +169,6 @@ public class FormMasterModel {
         this.isEffective = value;
     }
 
-
     private String country;
 
     /**
@@ -195,7 +188,6 @@ public class FormMasterModel {
     public void setCountry(String value) {
         this.country = value;
     }
-
 
     private String region;
 
@@ -217,7 +209,6 @@ public class FormMasterModel {
         this.region = value;
     }
 
-
     private String authorityName;
 
     /**
@@ -237,7 +228,6 @@ public class FormMasterModel {
     public void setAuthorityName(String value) {
         this.authorityName = value;
     }
-
 
     private String shortCode;
 
@@ -259,7 +249,6 @@ public class FormMasterModel {
         this.shortCode = value;
     }
 
-
     private Integer dueDay;
 
     /**
@@ -279,7 +268,6 @@ public class FormMasterModel {
     public void setDueDay(Integer value) {
         this.dueDay = value;
     }
-
 
     private Integer delinquentDay;
 
@@ -301,7 +289,6 @@ public class FormMasterModel {
         this.delinquentDay = value;
     }
 
-
     private Integer fiscalYearStartMonth;
 
     /**
@@ -321,7 +308,6 @@ public class FormMasterModel {
     public void setFiscalYearStartMonth(Integer value) {
         this.fiscalYearStartMonth = value;
     }
-
 
     private Boolean hasMultiFrequencies;
 
@@ -343,7 +329,6 @@ public class FormMasterModel {
         this.hasMultiFrequencies = value;
     }
 
-
     private Boolean isPOARequired;
 
     /**
@@ -363,7 +348,6 @@ public class FormMasterModel {
     public void setIsPOARequired(Boolean value) {
         this.isPOARequired = value;
     }
-
 
     private Boolean isRegistrationRequired;
 
@@ -385,7 +369,6 @@ public class FormMasterModel {
         this.isRegistrationRequired = value;
     }
 
-
     private Boolean hasMultiRegistrationMethods;
 
     /**
@@ -405,7 +388,6 @@ public class FormMasterModel {
     public void setHasMultiRegistrationMethods(Boolean value) {
         this.hasMultiRegistrationMethods = value;
     }
-
 
     private Boolean hasSchedules;
 
@@ -427,7 +409,6 @@ public class FormMasterModel {
         this.hasSchedules = value;
     }
 
-
     private Boolean hasMultiFilingMethods;
 
     /**
@@ -447,7 +428,6 @@ public class FormMasterModel {
     public void setHasMultiFilingMethods(Boolean value) {
         this.hasMultiFilingMethods = value;
     }
-
 
     private Boolean hasMultiPayMethods;
 
@@ -469,7 +449,6 @@ public class FormMasterModel {
         this.hasMultiPayMethods = value;
     }
 
-
     private Boolean isEFTRequired;
 
     /**
@@ -489,7 +468,6 @@ public class FormMasterModel {
     public void setIsEFTRequired(Boolean value) {
         this.isEFTRequired = value;
     }
-
 
     private Boolean isFilePayMethodLinked;
 
@@ -511,7 +489,6 @@ public class FormMasterModel {
         this.isFilePayMethodLinked = value;
     }
 
-
     private Integer mailingReceivedRuleId;
 
     /**
@@ -531,7 +508,6 @@ public class FormMasterModel {
     public void setMailingReceivedRuleId(Integer value) {
         this.mailingReceivedRuleId = value;
     }
-
 
     private Integer proofOfMailingId;
 
@@ -553,7 +529,6 @@ public class FormMasterModel {
         this.proofOfMailingId = value;
     }
 
-
     private Boolean isNegAmountAllowed;
 
     /**
@@ -573,7 +548,6 @@ public class FormMasterModel {
     public void setIsNegAmountAllowed(Boolean value) {
         this.isNegAmountAllowed = value;
     }
-
 
     private Boolean allowNegativeOverallTax;
 
@@ -595,7 +569,6 @@ public class FormMasterModel {
         this.allowNegativeOverallTax = value;
     }
 
-
     private Boolean isNettingRequired;
 
     /**
@@ -615,7 +588,6 @@ public class FormMasterModel {
     public void setIsNettingRequired(Boolean value) {
         this.isNettingRequired = value;
     }
-
 
     private Integer roundingMethodId;
 
@@ -637,7 +609,6 @@ public class FormMasterModel {
         this.roundingMethodId = value;
     }
 
-
     private BigDecimal vendorDiscountAnnualMax;
 
     /**
@@ -657,7 +628,6 @@ public class FormMasterModel {
     public void setVendorDiscountAnnualMax(BigDecimal value) {
         this.vendorDiscountAnnualMax = value;
     }
-
 
     private Boolean versionsRequireAuthorityApproval;
 
@@ -679,7 +649,6 @@ public class FormMasterModel {
         this.versionsRequireAuthorityApproval = value;
     }
 
-
     private Integer outletReportingMethodId;
 
     /**
@@ -699,7 +668,6 @@ public class FormMasterModel {
     public void setOutletReportingMethodId(Integer value) {
         this.outletReportingMethodId = value;
     }
-
 
     private Boolean hasReportingCodes;
 
@@ -721,7 +689,6 @@ public class FormMasterModel {
         this.hasReportingCodes = value;
     }
 
-
     private Boolean hasPrepayments;
 
     /**
@@ -741,7 +708,6 @@ public class FormMasterModel {
     public void setHasPrepayments(Boolean value) {
         this.hasPrepayments = value;
     }
-
 
     private Boolean grossIncludesInterstateSales;
 
@@ -763,7 +729,6 @@ public class FormMasterModel {
         this.grossIncludesInterstateSales = value;
     }
 
-
     private String grossIncludesTax;
 
     /**
@@ -783,7 +748,6 @@ public class FormMasterModel {
     public void setGrossIncludesTax(String value) {
         this.grossIncludesTax = value;
     }
-
 
     private Boolean hasEfileFee;
 
@@ -805,7 +769,6 @@ public class FormMasterModel {
         this.hasEfileFee = value;
     }
 
-
     private Boolean hasEpayFee;
 
     /**
@@ -825,7 +788,6 @@ public class FormMasterModel {
     public void setHasEpayFee(Boolean value) {
         this.hasEpayFee = value;
     }
-
 
     private Boolean hasDependencies;
 
@@ -847,7 +809,6 @@ public class FormMasterModel {
         this.hasDependencies = value;
     }
 
-
     private String requiredEfileTrigger;
 
     /**
@@ -867,7 +828,6 @@ public class FormMasterModel {
     public void setRequiredEfileTrigger(String value) {
         this.requiredEfileTrigger = value;
     }
-
 
     private String requiredEftTrigger;
 
@@ -889,7 +849,6 @@ public class FormMasterModel {
         this.requiredEftTrigger = value;
     }
 
-
     private Boolean vendorDiscountEfile;
 
     /**
@@ -909,7 +868,6 @@ public class FormMasterModel {
     public void setVendorDiscountEfile(Boolean value) {
         this.vendorDiscountEfile = value;
     }
-
 
     private Boolean vendorDiscountPaper;
 
@@ -931,7 +889,6 @@ public class FormMasterModel {
         this.vendorDiscountPaper = value;
     }
 
-
     private String peerReviewed;
 
     /**
@@ -951,7 +908,6 @@ public class FormMasterModel {
     public void setPeerReviewed(String value) {
         this.peerReviewed = value;
     }
-
 
     private String peerReviewedId;
 
@@ -973,7 +929,6 @@ public class FormMasterModel {
         this.peerReviewedId = value;
     }
 
-
     private String peerReviewedDate;
 
     /**
@@ -993,7 +948,6 @@ public class FormMasterModel {
     public void setPeerReviewedDate(String value) {
         this.peerReviewedDate = value;
     }
-
 
     private Integer createdUserId;
 
@@ -1015,7 +969,6 @@ public class FormMasterModel {
         this.createdUserId = value;
     }
 
-
     private Date createdDate;
 
     /**
@@ -1035,7 +988,6 @@ public class FormMasterModel {
     public void setCreatedDate(Date value) {
         this.createdDate = value;
     }
-
 
     private Integer modifiedUserId;
 
@@ -1057,7 +1009,6 @@ public class FormMasterModel {
         this.modifiedUserId = value;
     }
 
-
     private Date modifiedDate;
 
     /**
@@ -1077,7 +1028,6 @@ public class FormMasterModel {
     public void setModifiedDate(Date value) {
         this.modifiedDate = value;
     }
-
 
     private String dorAddressMailTo;
 
@@ -1099,7 +1049,6 @@ public class FormMasterModel {
         this.dorAddressMailTo = value;
     }
 
-
     private String dorAddress1;
 
     /**
@@ -1119,7 +1068,6 @@ public class FormMasterModel {
     public void setDorAddress1(String value) {
         this.dorAddress1 = value;
     }
-
 
     private String dorAddress2;
 
@@ -1141,7 +1089,6 @@ public class FormMasterModel {
         this.dorAddress2 = value;
     }
 
-
     private String dorAddressCity;
 
     /**
@@ -1161,7 +1108,6 @@ public class FormMasterModel {
     public void setDorAddressCity(String value) {
         this.dorAddressCity = value;
     }
-
 
     private String dorAddressRegion;
 
@@ -1183,7 +1129,6 @@ public class FormMasterModel {
         this.dorAddressRegion = value;
     }
 
-
     private String dorAddressPostalCode;
 
     /**
@@ -1203,7 +1148,6 @@ public class FormMasterModel {
     public void setDorAddressPostalCode(String value) {
         this.dorAddressPostalCode = value;
     }
-
 
     private String dorAddressCountry;
 
@@ -1225,7 +1169,6 @@ public class FormMasterModel {
         this.dorAddressCountry = value;
     }
 
-
     private String zeroAddressMailTo;
 
     /**
@@ -1245,7 +1188,6 @@ public class FormMasterModel {
     public void setZeroAddressMailTo(String value) {
         this.zeroAddressMailTo = value;
     }
-
 
     private String zeroAddress1;
 
@@ -1267,7 +1209,6 @@ public class FormMasterModel {
         this.zeroAddress1 = value;
     }
 
-
     private String zeroAddress2;
 
     /**
@@ -1287,7 +1228,6 @@ public class FormMasterModel {
     public void setZeroAddress2(String value) {
         this.zeroAddress2 = value;
     }
-
 
     private String zeroAddressCity;
 
@@ -1309,7 +1249,6 @@ public class FormMasterModel {
         this.zeroAddressCity = value;
     }
 
-
     private String zeroAddressRegion;
 
     /**
@@ -1329,7 +1268,6 @@ public class FormMasterModel {
     public void setZeroAddressRegion(String value) {
         this.zeroAddressRegion = value;
     }
-
 
     private String zeroAddressPostalCode;
 
@@ -1351,7 +1289,6 @@ public class FormMasterModel {
         this.zeroAddressPostalCode = value;
     }
 
-
     private String zeroAddressCountry;
 
     /**
@@ -1371,7 +1308,6 @@ public class FormMasterModel {
     public void setZeroAddressCountry(String value) {
         this.zeroAddressCountry = value;
     }
-
 
     private String amendedAddressMailTo;
 
@@ -1393,7 +1329,6 @@ public class FormMasterModel {
         this.amendedAddressMailTo = value;
     }
 
-
     private String amendedAddress1;
 
     /**
@@ -1413,7 +1348,6 @@ public class FormMasterModel {
     public void setAmendedAddress1(String value) {
         this.amendedAddress1 = value;
     }
-
 
     private String amendedAddress2;
 
@@ -1435,7 +1369,6 @@ public class FormMasterModel {
         this.amendedAddress2 = value;
     }
 
-
     private String amendedAddressCity;
 
     /**
@@ -1455,7 +1388,6 @@ public class FormMasterModel {
     public void setAmendedAddressCity(String value) {
         this.amendedAddressCity = value;
     }
-
 
     private String amendedAddressRegion;
 
@@ -1477,7 +1409,6 @@ public class FormMasterModel {
         this.amendedAddressRegion = value;
     }
 
-
     private String amendedAddressPostalCode;
 
     /**
@@ -1497,7 +1428,6 @@ public class FormMasterModel {
     public void setAmendedAddressPostalCode(String value) {
         this.amendedAddressPostalCode = value;
     }
-
 
     private String amendedAddressCountry;
 
@@ -1519,7 +1449,6 @@ public class FormMasterModel {
         this.amendedAddressCountry = value;
     }
 
-
     private Boolean onlineBackFiling;
 
     /**
@@ -1539,7 +1468,6 @@ public class FormMasterModel {
     public void setOnlineBackFiling(Boolean value) {
         this.onlineBackFiling = value;
     }
-
 
     private Boolean onlineAmendedReturns;
 
@@ -1561,7 +1489,6 @@ public class FormMasterModel {
         this.onlineAmendedReturns = value;
     }
 
-
     private String prepaymentFrequency;
 
     /**
@@ -1581,7 +1508,6 @@ public class FormMasterModel {
     public void setPrepaymentFrequency(String value) {
         this.prepaymentFrequency = value;
     }
-
 
     private Boolean outletLocationIdentifiersRequired;
 
@@ -1603,7 +1529,6 @@ public class FormMasterModel {
         this.outletLocationIdentifiersRequired = value;
     }
 
-
     private String listingSortOrder;
 
     /**
@@ -1623,7 +1548,6 @@ public class FormMasterModel {
     public void setListingSortOrder(String value) {
         this.listingSortOrder = value;
     }
-
 
     private String dorWebsite;
 
@@ -1645,7 +1569,6 @@ public class FormMasterModel {
         this.dorWebsite = value;
     }
 
-
     private Boolean fileForAllOutlets;
 
     /**
@@ -1665,7 +1588,6 @@ public class FormMasterModel {
     public void setFileForAllOutlets(Boolean value) {
         this.fileForAllOutlets = value;
     }
-
 
     private Boolean paperFormsDoNotHaveDiscounts;
 
@@ -1687,7 +1609,6 @@ public class FormMasterModel {
         this.paperFormsDoNotHaveDiscounts = value;
     }
 
-
     private Boolean stackAggregation;
 
     /**
@@ -1707,7 +1628,6 @@ public class FormMasterModel {
     public void setStackAggregation(Boolean value) {
         this.stackAggregation = value;
     }
-
 
     private String roundingPrecision;
 
@@ -1729,7 +1649,6 @@ public class FormMasterModel {
         this.roundingPrecision = value;
     }
 
-
     private String inconsistencyTolerance;
 
     /**
@@ -1749,7 +1668,6 @@ public class FormMasterModel {
     public void setInconsistencyTolerance(String value) {
         this.inconsistencyTolerance = value;
     }
-
 
     private Date effDate;
 
@@ -1771,7 +1689,6 @@ public class FormMasterModel {
         this.effDate = value;
     }
 
-
     private Date endDate;
 
     /**
@@ -1791,7 +1708,6 @@ public class FormMasterModel {
     public void setEndDate(Date value) {
         this.endDate = value;
     }
-
 
     private Boolean visibleToCustomers;
 
@@ -1813,7 +1729,6 @@ public class FormMasterModel {
         this.visibleToCustomers = value;
     }
 
-
     private Boolean requiresOutletSetup;
 
     /**
@@ -1833,7 +1748,6 @@ public class FormMasterModel {
     public void setRequiresOutletSetup(Boolean value) {
         this.requiresOutletSetup = value;
     }
-
 
     private Boolean achCreditAllowed;
 
@@ -1855,7 +1769,6 @@ public class FormMasterModel {
         this.achCreditAllowed = value;
     }
 
-
     private String reportLevel;
 
     /**
@@ -1875,7 +1788,6 @@ public class FormMasterModel {
     public void setReportLevel(String value) {
         this.reportLevel = value;
     }
-
 
     private Boolean postOfficeValidated;
 
@@ -1897,7 +1809,6 @@ public class FormMasterModel {
         this.postOfficeValidated = value;
     }
 
-
     private String stackAggregationOption;
 
     /**
@@ -1917,7 +1828,6 @@ public class FormMasterModel {
     public void setStackAggregationOption(String value) {
         this.stackAggregationOption = value;
     }
-
 
     private String sstBehavior;
 
@@ -1939,7 +1849,6 @@ public class FormMasterModel {
         this.sstBehavior = value;
     }
 
-
     private String nonSstBehavior;
 
     /**
@@ -1959,7 +1868,6 @@ public class FormMasterModel {
     public void setNonSstBehavior(String value) {
         this.nonSstBehavior = value;
     }
-
 
     private String dorPhoneNumber;
 
@@ -1981,7 +1889,6 @@ public class FormMasterModel {
         this.dorPhoneNumber = value;
     }
 
-
     private String averageCheckClearDays;
 
     /**
@@ -2001,7 +1908,6 @@ public class FormMasterModel {
     public void setAverageCheckClearDays(String value) {
         this.averageCheckClearDays = value;
     }
-
 
     private Boolean filterZeroRatedLineDetails;
 
@@ -2023,7 +1929,6 @@ public class FormMasterModel {
         this.filterZeroRatedLineDetails = value;
     }
 
-
     private Boolean allowsBulkFilingAccounts;
 
     /**
@@ -2043,7 +1948,6 @@ public class FormMasterModel {
     public void setAllowsBulkFilingAccounts(Boolean value) {
         this.allowsBulkFilingAccounts = value;
     }
-
 
     private String bulkAccountInstructionLink;
 
@@ -2065,7 +1969,6 @@ public class FormMasterModel {
         this.bulkAccountInstructionLink = value;
     }
 
-
     private String registrationIdFormat;
 
     /**
@@ -2085,7 +1988,6 @@ public class FormMasterModel {
     public void setRegistrationIdFormat(String value) {
         this.registrationIdFormat = value;
     }
-
 
     private String thresholdTrigger;
 
@@ -2107,7 +2009,6 @@ public class FormMasterModel {
         this.thresholdTrigger = value;
     }
 
-
     private String transactionSortingOption;
 
     /**
@@ -2127,7 +2028,6 @@ public class FormMasterModel {
     public void setTransactionSortingOption(String value) {
         this.transactionSortingOption = value;
     }
-
 
     private Integer contentReviewFrequencyId;
 
@@ -2149,7 +2049,6 @@ public class FormMasterModel {
         this.contentReviewFrequencyId = value;
     }
 
-
     private String aliasForFormMasterId;
 
     /**
@@ -2169,7 +2068,6 @@ public class FormMasterModel {
     public void setAliasForFormMasterId(String value) {
         this.aliasForFormMasterId = value;
     }
-
 
     /**
      * Returns a JSON string representation of FormMasterModel

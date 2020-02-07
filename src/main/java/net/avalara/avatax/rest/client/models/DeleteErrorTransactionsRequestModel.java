@@ -29,27 +29,6 @@ import java.util.HashMap;
 public class DeleteErrorTransactionsRequestModel {
 
 
-    private String companyCode;
-
-    /**
-     * Getter for companyCode
-     *
-     * The company code of the error transactions
-     */
-    public String getCompanyCode() {
-        return this.companyCode;
-    }
-
-    /**
-     * Setter for companyCode
-     *
-     * The company code of the error transactions
-     */
-    public void setCompanyCode(String value) {
-        this.companyCode = value;
-    }
-
-
     private ArrayList<ErrorTransactionModelBase> models;
 
     /**
@@ -69,7 +48,6 @@ public class DeleteErrorTransactionsRequestModel {
     public void setModels(ArrayList<ErrorTransactionModelBase> value) {
         this.models = value;
     }
-
 
     /**
      * Returns a JSON string representation of DeleteErrorTransactionsRequestModel

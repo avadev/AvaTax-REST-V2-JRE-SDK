@@ -53,7 +53,6 @@ public class ReconstructedApiRequestResponseModel {
         this.request = value;
     }
 
-
     /**
      * Returns a JSON string representation of ReconstructedApiRequestResponseModel
      */

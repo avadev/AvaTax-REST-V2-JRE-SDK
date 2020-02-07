@@ -49,7 +49,6 @@ public class requiredFilingCalendarDataFieldModel {
         this.name = value;
     }
 
-
     private String description;
 
     /**
@@ -69,7 +68,6 @@ public class requiredFilingCalendarDataFieldModel {
     public void setDescription(String value) {
         this.description = value;
     }
-
 
     /**
      * Returns a JSON string representation of requiredFilingCalendarDataFieldModel

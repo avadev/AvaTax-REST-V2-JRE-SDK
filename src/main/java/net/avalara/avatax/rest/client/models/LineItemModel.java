@@ -49,7 +49,6 @@ public class LineItemModel {
         this.number = value;
     }
 
-
     private BigDecimal quantity;
 
     /**
@@ -73,7 +72,6 @@ public class LineItemModel {
     public void setQuantity(BigDecimal value) {
         this.quantity = value;
     }
-
 
     private BigDecimal amount;
 
@@ -102,7 +100,6 @@ public class LineItemModel {
     public void setAmount(BigDecimal value) {
         this.amount = value;
     }
-
 
     private AddressesModel addresses;
 
@@ -134,7 +131,6 @@ public class LineItemModel {
         this.addresses = value;
     }
 
-
     private String taxCode;
 
     /**
@@ -159,7 +155,6 @@ public class LineItemModel {
         this.taxCode = value;
     }
 
-
     private String customerUsageType;
 
     /**
@@ -179,7 +174,6 @@ public class LineItemModel {
     public void setCustomerUsageType(String value) {
         this.customerUsageType = value;
     }
-
 
     private String entityUseCode;
 
@@ -207,7 +201,6 @@ public class LineItemModel {
         this.entityUseCode = value;
     }
 
-
     private String itemCode;
 
     /**
@@ -229,7 +222,6 @@ public class LineItemModel {
     public void setItemCode(String value) {
         this.itemCode = value;
     }
-
 
     private String exemptionCode;
 
@@ -259,7 +251,6 @@ public class LineItemModel {
         this.exemptionCode = value;
     }
 
-
     private Boolean discounted;
 
     /**
@@ -281,7 +272,6 @@ public class LineItemModel {
     public void setDiscounted(Boolean value) {
         this.discounted = value;
     }
-
 
     private Boolean taxIncluded;
 
@@ -311,7 +301,6 @@ public class LineItemModel {
         this.taxIncluded = value;
     }
 
-
     private String revenueAccount;
 
     /**
@@ -335,7 +324,6 @@ public class LineItemModel {
     public void setRevenueAccount(String value) {
         this.revenueAccount = value;
     }
-
 
     private String ref1;
 
@@ -361,7 +349,6 @@ public class LineItemModel {
         this.ref1 = value;
     }
 
-
     private String ref2;
 
     /**
@@ -386,7 +373,6 @@ public class LineItemModel {
         this.ref2 = value;
     }
 
-
     private String description;
 
     /**
@@ -410,7 +396,6 @@ public class LineItemModel {
     public void setDescription(String value) {
         this.description = value;
     }
-
 
     private String businessIdentificationNo;
 
@@ -442,7 +427,6 @@ public class LineItemModel {
         this.businessIdentificationNo = value;
     }
 
-
     private TaxOverrideModel taxOverride;
 
     /**
@@ -462,7 +446,6 @@ public class LineItemModel {
     public void setTaxOverride(TaxOverrideModel value) {
         this.taxOverride = value;
     }
-
 
     private ArrayList<TransactionLineParameterModel> parameters;
 
@@ -487,7 +470,6 @@ public class LineItemModel {
     public void setParameters(ArrayList<TransactionLineParameterModel> value) {
         this.parameters = value;
     }
-
 
     private String hsCode;
 
@@ -514,7 +496,6 @@ public class LineItemModel {
     public void setHsCode(String value) {
         this.hsCode = value;
     }
-
 
     /**
      * Returns a JSON string representation of LineItemModel
