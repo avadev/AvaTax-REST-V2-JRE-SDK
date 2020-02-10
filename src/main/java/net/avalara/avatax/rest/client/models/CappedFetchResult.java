@@ -41,7 +41,7 @@ public class CappedFetchResult<T> {
     }
 
     /**
-     * Setter for @isRecordsetCountCapped
+     * Setter for isRecordsetCountCapped
      *
      * 
      */
@@ -52,7 +52,7 @@ public class CappedFetchResult<T> {
     private Integer recordsetCount;
 
     /**
-     * Getter for @recordsetCount
+     * Getter for recordsetCount
      *
      * 
      */
@@ -61,12 +61,12 @@ public class CappedFetchResult<T> {
     }
 
     /**
-     * Setter for @recordsetCount
+     * Setter for recordsetCount
      *
      * 
      */
     public void setRecordsetCount(Integer value) {
-        this.@recordsetCount = value;
+        this.recordsetCount = value;
     }
 
     private ArrayList<HashMap<String, String>> value;
@@ -89,10 +89,10 @@ public class CappedFetchResult<T> {
         this.value = value;
     }
 
-    private String @nextLink;
+    private String nextLink;
 
     /**
-     * Getter for @nextLink
+     * Getter for nextLink
      *
      * 
      */
@@ -101,7 +101,7 @@ public class CappedFetchResult<T> {
     }
 
     /**
-     * Setter for @nextLink
+     * Setter for nextLink
      *
      * 
      */
