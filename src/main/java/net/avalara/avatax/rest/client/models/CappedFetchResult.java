@@ -29,15 +29,15 @@ import java.util.HashMap;
 public class CappedFetchResult<T> {
 
 
-    private Boolean @isRecordsetCountCapped;
+    private Boolean isRecordsetCountCapped;
 
     /**
      * Getter for @isRecordsetCountCapped
      *
      * 
      */
-    public Boolean get@isRecordsetCountCapped() {
-        return this.@isRecordsetCountCapped;
+    public Boolean getIsRecordsetCountCapped() {
+        return this.isRecordsetCountCapped;
     }
 
     /**
@@ -45,19 +45,19 @@ public class CappedFetchResult<T> {
      *
      * 
      */
-    public void set@isRecordsetCountCapped(Boolean value) {
-        this.@isRecordsetCountCapped = value;
+    public void setIsRecordsetCountCapped(Boolean value) {
+        this.isRecordsetCountCapped = value;
     }
 
-    private Integer @recordsetCount;
+    private Integer recordsetCount;
 
     /**
      * Getter for @recordsetCount
      *
      * 
      */
-    public Integer get@recordsetCount() {
-        return this.@recordsetCount;
+    public Integer getRecordsetCount() {
+        return this.recordsetCount;
     }
 
     /**
@@ -65,7 +65,7 @@ public class CappedFetchResult<T> {
      *
      * 
      */
-    public void set@recordsetCount(Integer value) {
+    public void setRecordsetCount(Integer value) {
         this.@recordsetCount = value;
     }
 
@@ -96,8 +96,8 @@ public class CappedFetchResult<T> {
      *
      * 
      */
-    public String get@nextLink() {
-        return this.@nextLink;
+    public String getNextLink() {
+        return this.nextLink;
     }
 
     /**
@@ -105,8 +105,8 @@ public class CappedFetchResult<T> {
      *
      * 
      */
-    public void set@nextLink(String value) {
-        this.@nextLink = value;
+    public void setNextLink(String value) {
+        this.nextLink = value;
     }
 
     private String pageKey;
