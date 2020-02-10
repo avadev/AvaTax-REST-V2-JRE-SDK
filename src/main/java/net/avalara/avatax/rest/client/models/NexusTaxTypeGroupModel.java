@@ -49,7 +49,6 @@ public class NexusTaxTypeGroupModel {
         this.id = value;
     }
 
-
     private String nexusTaxTypeGroupId;
 
     /**
@@ -69,7 +68,6 @@ public class NexusTaxTypeGroupModel {
     public void setNexusTaxTypeGroupId(String value) {
         this.nexusTaxTypeGroupId = value;
     }
-
 
     private String description;
 
@@ -91,7 +89,6 @@ public class NexusTaxTypeGroupModel {
         this.description = value;
     }
 
-
     private Integer subscriptionTypeId;
 
     /**
@@ -111,7 +108,6 @@ public class NexusTaxTypeGroupModel {
     public void setSubscriptionTypeId(Integer value) {
         this.subscriptionTypeId = value;
     }
-
 
     private String subscriptionDescription;
 
@@ -133,7 +129,6 @@ public class NexusTaxTypeGroupModel {
         this.subscriptionDescription = value;
     }
 
-
     private String tabName;
 
     /**
@@ -154,7 +149,6 @@ public class NexusTaxTypeGroupModel {
         this.tabName = value;
     }
 
-
     private Boolean showColumn;
 
     /**
@@ -174,7 +168,6 @@ public class NexusTaxTypeGroupModel {
     public void setShowColumn(Boolean value) {
         this.showColumn = value;
     }
-
 
     /**
      * Returns a JSON string representation of NexusTaxTypeGroupModel

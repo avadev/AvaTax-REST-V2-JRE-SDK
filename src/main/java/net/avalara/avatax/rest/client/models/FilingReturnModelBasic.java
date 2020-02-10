@@ -49,7 +49,6 @@ public class FilingReturnModelBasic {
         this.companyId = value;
     }
 
-
     private Long id;
 
     /**
@@ -69,7 +68,6 @@ public class FilingReturnModelBasic {
     public void setId(Long value) {
         this.id = value;
     }
-
 
     private Long filingId;
 
@@ -91,7 +89,6 @@ public class FilingReturnModelBasic {
         this.filingId = value;
     }
 
-
     private Long resourceFileId;
 
     /**
@@ -111,7 +108,6 @@ public class FilingReturnModelBasic {
     public void setResourceFileId(Long value) {
         this.resourceFileId = value;
     }
-
 
     private Long filingRegionId;
 
@@ -133,7 +129,6 @@ public class FilingReturnModelBasic {
         this.filingRegionId = value;
     }
 
-
     private Long filingCalendarId;
 
     /**
@@ -153,7 +148,6 @@ public class FilingReturnModelBasic {
     public void setFilingCalendarId(Long value) {
         this.filingCalendarId = value;
     }
-
 
     private String country;
 
@@ -175,7 +169,6 @@ public class FilingReturnModelBasic {
         this.country = value;
     }
 
-
     private String region;
 
     /**
@@ -195,7 +188,6 @@ public class FilingReturnModelBasic {
     public void setRegion(String value) {
         this.region = value;
     }
-
 
     private Integer endPeriodMonth;
 
@@ -221,7 +213,6 @@ public class FilingReturnModelBasic {
         this.endPeriodMonth = value;
     }
 
-
     private Short endPeriodYear;
 
     /**
@@ -246,7 +237,6 @@ public class FilingReturnModelBasic {
         this.endPeriodYear = value;
     }
 
-
     private FilingStatusId status;
 
     /**
@@ -266,7 +256,6 @@ public class FilingReturnModelBasic {
     public void setStatus(FilingStatusId value) {
         this.status = value;
     }
-
 
     private FilingFrequencyId filingFrequency;
 
@@ -288,7 +277,6 @@ public class FilingReturnModelBasic {
         this.filingFrequency = value;
     }
 
-
     private Date filedDate;
 
     /**
@@ -308,7 +296,6 @@ public class FilingReturnModelBasic {
     public void setFiledDate(Date value) {
         this.filedDate = value;
     }
-
 
     private BigDecimal salesAmount;
 
@@ -330,7 +317,6 @@ public class FilingReturnModelBasic {
         this.salesAmount = value;
     }
 
-
     private FilingTypeId filingType;
 
     /**
@@ -350,7 +336,6 @@ public class FilingReturnModelBasic {
     public void setFilingType(FilingTypeId value) {
         this.filingType = value;
     }
-
 
     private String formName;
 
@@ -372,7 +357,6 @@ public class FilingReturnModelBasic {
         this.formName = value;
     }
 
-
     private BigDecimal remitAmount;
 
     /**
@@ -392,7 +376,6 @@ public class FilingReturnModelBasic {
     public void setRemitAmount(BigDecimal value) {
         this.remitAmount = value;
     }
-
 
     private String formCode;
 
@@ -414,7 +397,6 @@ public class FilingReturnModelBasic {
         this.formCode = value;
     }
 
-
     private String description;
 
     /**
@@ -434,7 +416,6 @@ public class FilingReturnModelBasic {
     public void setDescription(String value) {
         this.description = value;
     }
-
 
     private BigDecimal taxableAmount;
 
@@ -456,7 +437,6 @@ public class FilingReturnModelBasic {
         this.taxableAmount = value;
     }
 
-
     private BigDecimal taxAmount;
 
     /**
@@ -476,7 +456,6 @@ public class FilingReturnModelBasic {
     public void setTaxAmount(BigDecimal value) {
         this.taxAmount = value;
     }
-
 
     private BigDecimal collectAmount;
 
@@ -498,7 +477,6 @@ public class FilingReturnModelBasic {
         this.collectAmount = value;
     }
 
-
     private BigDecimal taxDueAmount;
 
     /**
@@ -518,7 +496,6 @@ public class FilingReturnModelBasic {
     public void setTaxDueAmount(BigDecimal value) {
         this.taxDueAmount = value;
     }
-
 
     private BigDecimal nonTaxableAmount;
 
@@ -540,7 +517,6 @@ public class FilingReturnModelBasic {
         this.nonTaxableAmount = value;
     }
 
-
     private BigDecimal nonTaxableDueAmount;
 
     /**
@@ -560,7 +536,6 @@ public class FilingReturnModelBasic {
     public void setNonTaxableDueAmount(BigDecimal value) {
         this.nonTaxableDueAmount = value;
     }
-
 
     private BigDecimal consumerUseTaxAmount;
 
@@ -582,7 +557,6 @@ public class FilingReturnModelBasic {
         this.consumerUseTaxAmount = value;
     }
 
-
     private BigDecimal consumerUseNonTaxableAmount;
 
     /**
@@ -602,7 +576,6 @@ public class FilingReturnModelBasic {
     public void setConsumerUseNonTaxableAmount(BigDecimal value) {
         this.consumerUseNonTaxableAmount = value;
     }
-
 
     private BigDecimal consumerUseTaxableAmount;
 
@@ -624,7 +597,6 @@ public class FilingReturnModelBasic {
         this.consumerUseTaxableAmount = value;
     }
 
-
     private BigDecimal excludedSalesAmount;
 
     /**
@@ -644,7 +616,6 @@ public class FilingReturnModelBasic {
     public void setExcludedSalesAmount(BigDecimal value) {
         this.excludedSalesAmount = value;
     }
-
 
     private BigDecimal excludedNonTaxableAmount;
 
@@ -666,7 +637,6 @@ public class FilingReturnModelBasic {
         this.excludedNonTaxableAmount = value;
     }
 
-
     private BigDecimal excludedTaxAmount;
 
     /**
@@ -686,7 +656,6 @@ public class FilingReturnModelBasic {
     public void setExcludedTaxAmount(BigDecimal value) {
         this.excludedTaxAmount = value;
     }
-
 
     private AccrualType accrualType;
 
@@ -708,7 +677,6 @@ public class FilingReturnModelBasic {
         this.accrualType = value;
     }
 
-
     private ArrayList<FilingAttachmentModel> attachments;
 
     /**
@@ -728,7 +696,6 @@ public class FilingReturnModelBasic {
     public void setAttachments(ArrayList<FilingAttachmentModel> value) {
         this.attachments = value;
     }
-
 
     private Date createdDate;
 
@@ -750,7 +717,6 @@ public class FilingReturnModelBasic {
         this.createdDate = value;
     }
 
-
     private Integer createdUserId;
 
     /**
@@ -771,7 +737,6 @@ public class FilingReturnModelBasic {
         this.createdUserId = value;
     }
 
-
     private Date modifiedDate;
 
     /**
@@ -791,7 +756,6 @@ public class FilingReturnModelBasic {
     public void setModifiedDate(Date value) {
         this.modifiedDate = value;
     }
-
 
     /**
      * Returns a JSON string representation of FilingReturnModelBasic

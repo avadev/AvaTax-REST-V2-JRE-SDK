@@ -49,7 +49,6 @@ public class FundingStatusModel {
         this.requestId = value;
     }
 
-
     private Integer subledgerProfileID;
 
     /**
@@ -69,7 +68,6 @@ public class FundingStatusModel {
     public void setSubledgerProfileID(Integer value) {
         this.subledgerProfileID = value;
     }
-
 
     private String companyID;
 
@@ -91,7 +89,6 @@ public class FundingStatusModel {
         this.companyID = value;
     }
 
-
     private String domain;
 
     /**
@@ -111,7 +108,6 @@ public class FundingStatusModel {
     public void setDomain(String value) {
         this.domain = value;
     }
-
 
     private String recipient;
 
@@ -133,7 +129,6 @@ public class FundingStatusModel {
         this.recipient = value;
     }
 
-
     private String sender;
 
     /**
@@ -153,7 +148,6 @@ public class FundingStatusModel {
     public void setSender(String value) {
         this.sender = value;
     }
-
 
     private String documentKey;
 
@@ -175,7 +169,6 @@ public class FundingStatusModel {
         this.documentKey = value;
     }
 
-
     private String documentType;
 
     /**
@@ -195,7 +188,6 @@ public class FundingStatusModel {
     public void setDocumentType(String value) {
         this.documentType = value;
     }
-
 
     private String documentName;
 
@@ -217,7 +209,6 @@ public class FundingStatusModel {
         this.documentName = value;
     }
 
-
     private FundingESignMethodReturn methodReturn;
 
     /**
@@ -237,7 +228,6 @@ public class FundingStatusModel {
     public void setMethodReturn(FundingESignMethodReturn value) {
         this.methodReturn = value;
     }
-
 
     private String status;
 
@@ -259,7 +249,6 @@ public class FundingStatusModel {
         this.status = value;
     }
 
-
     private String errorMessage;
 
     /**
@@ -279,7 +268,6 @@ public class FundingStatusModel {
     public void setErrorMessage(String value) {
         this.errorMessage = value;
     }
-
 
     private Date lastPolled;
 
@@ -301,7 +289,6 @@ public class FundingStatusModel {
         this.lastPolled = value;
     }
 
-
     private Date lastSigned;
 
     /**
@@ -321,7 +308,6 @@ public class FundingStatusModel {
     public void setLastSigned(Date value) {
         this.lastSigned = value;
     }
-
 
     private Date lastActivated;
 
@@ -343,7 +329,6 @@ public class FundingStatusModel {
         this.lastActivated = value;
     }
 
-
     private Long templateRequestId;
 
     /**
@@ -363,7 +348,6 @@ public class FundingStatusModel {
     public void setTemplateRequestId(Long value) {
         this.templateRequestId = value;
     }
-
 
     /**
      * Returns a JSON string representation of FundingStatusModel

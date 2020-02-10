@@ -49,7 +49,6 @@ public class LocationQuestionModel {
         this.id = value;
     }
 
-
     private String question;
 
     /**
@@ -69,7 +68,6 @@ public class LocationQuestionModel {
     public void setQuestion(String value) {
         this.question = value;
     }
-
 
     private String description;
 
@@ -93,7 +91,6 @@ public class LocationQuestionModel {
         this.description = value;
     }
 
-
     private String regularExpression;
 
     /**
@@ -113,7 +110,6 @@ public class LocationQuestionModel {
     public void setRegularExpression(String value) {
         this.regularExpression = value;
     }
-
 
     private String exampleValue;
 
@@ -135,7 +131,6 @@ public class LocationQuestionModel {
         this.exampleValue = value;
     }
 
-
     private String jurisdictionName;
 
     /**
@@ -155,7 +150,6 @@ public class LocationQuestionModel {
     public void setJurisdictionName(String value) {
         this.jurisdictionName = value;
     }
-
 
     private JurisdictionType jurisdictionType;
 
@@ -177,7 +171,6 @@ public class LocationQuestionModel {
         this.jurisdictionType = value;
     }
 
-
     private String jurisdictionCountry;
 
     /**
@@ -198,7 +191,6 @@ public class LocationQuestionModel {
         this.jurisdictionCountry = value;
     }
 
-
     private String jurisdictionRegion;
 
     /**
@@ -218,7 +210,6 @@ public class LocationQuestionModel {
     public void setJurisdictionRegion(String value) {
         this.jurisdictionRegion = value;
     }
-
 
     /**
      * Returns a JSON string representation of LocationQuestionModel

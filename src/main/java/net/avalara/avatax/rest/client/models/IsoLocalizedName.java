@@ -54,7 +54,6 @@ public class IsoLocalizedName {
         this.languageAlpha2Code = value;
     }
 
-
     private String languageAlpha3Code;
 
     /**
@@ -79,7 +78,6 @@ public class IsoLocalizedName {
         this.languageAlpha3Code = value;
     }
 
-
     private String name;
 
     /**
@@ -99,7 +97,6 @@ public class IsoLocalizedName {
     public void setName(String value) {
         this.name = value;
     }
-
 
     /**
      * Returns a JSON string representation of IsoLocalizedName

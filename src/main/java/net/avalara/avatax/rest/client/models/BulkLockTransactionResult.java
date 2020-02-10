@@ -49,7 +49,6 @@ public class BulkLockTransactionResult {
         this.numberOfRecords = value;
     }
 
-
     /**
      * Returns a JSON string representation of BulkLockTransactionResult
      */

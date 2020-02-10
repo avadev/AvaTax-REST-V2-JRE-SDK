@@ -49,7 +49,6 @@ public class ApproveAdvancedRuleModel {
         this.isApproved = value;
     }
 
-
     /**
      * Returns a JSON string representation of ApproveAdvancedRuleModel
      */

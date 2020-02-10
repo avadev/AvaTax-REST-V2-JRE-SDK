@@ -49,7 +49,6 @@ public class JurisdictionModel {
         this.code = value;
     }
 
-
     private String name;
 
     /**
@@ -69,7 +68,6 @@ public class JurisdictionModel {
     public void setName(String value) {
         this.name = value;
     }
-
 
     private JurisdictionType type;
 
@@ -91,7 +89,6 @@ public class JurisdictionModel {
         this.type = value;
     }
 
-
     private BigDecimal rate;
 
     /**
@@ -111,7 +108,6 @@ public class JurisdictionModel {
     public void setRate(BigDecimal value) {
         this.rate = value;
     }
-
 
     private BigDecimal salesRate;
 
@@ -133,7 +129,6 @@ public class JurisdictionModel {
         this.salesRate = value;
     }
 
-
     private String signatureCode;
 
     /**
@@ -153,7 +148,6 @@ public class JurisdictionModel {
     public void setSignatureCode(String value) {
         this.signatureCode = value;
     }
-
 
     private String region;
 
@@ -189,7 +183,6 @@ public class JurisdictionModel {
         this.region = value;
     }
 
-
     private BigDecimal useRate;
 
     /**
@@ -209,7 +202,6 @@ public class JurisdictionModel {
     public void setUseRate(BigDecimal value) {
         this.useRate = value;
     }
-
 
     private String city;
 
@@ -231,7 +223,6 @@ public class JurisdictionModel {
         this.city = value;
     }
 
-
     private String county;
 
     /**
@@ -251,7 +242,6 @@ public class JurisdictionModel {
     public void setCounty(String value) {
         this.county = value;
     }
-
 
     private String country;
 
@@ -289,7 +279,6 @@ public class JurisdictionModel {
         this.country = value;
     }
 
-
     private String shortName;
 
     /**
@@ -309,7 +298,6 @@ public class JurisdictionModel {
     public void setShortName(String value) {
         this.shortName = value;
     }
-
 
     private String stateFips;
 
@@ -331,7 +319,6 @@ public class JurisdictionModel {
         this.stateFips = value;
     }
 
-
     private String countyFips;
 
     /**
@@ -351,7 +338,6 @@ public class JurisdictionModel {
     public void setCountyFips(String value) {
         this.countyFips = value;
     }
-
 
     private String placeFips;
 
@@ -373,7 +359,6 @@ public class JurisdictionModel {
         this.placeFips = value;
     }
 
-
     private Integer id;
 
     /**
@@ -393,7 +378,6 @@ public class JurisdictionModel {
     public void setId(Integer value) {
         this.id = value;
     }
-
 
     private Date effectiveDate;
 
@@ -415,7 +399,6 @@ public class JurisdictionModel {
         this.effectiveDate = value;
     }
 
-
     private Date endDate;
 
     /**
@@ -435,7 +418,6 @@ public class JurisdictionModel {
     public void setEndDate(Date value) {
         this.endDate = value;
     }
-
 
     /**
      * Returns a JSON string representation of JurisdictionModel

@@ -49,7 +49,6 @@ public class NexusTaxTypeGroupCountModel {
         this.nexusTaxTypeGroup = value;
     }
 
-
     private Integer count;
 
     /**
@@ -69,7 +68,6 @@ public class NexusTaxTypeGroupCountModel {
     public void setCount(Integer value) {
         this.count = value;
     }
-
 
     /**
      * Returns a JSON string representation of NexusTaxTypeGroupCountModel

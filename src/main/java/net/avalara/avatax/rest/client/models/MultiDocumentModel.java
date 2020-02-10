@@ -54,7 +54,6 @@ public class MultiDocumentModel {
         this.id = value;
     }
 
-
     private Integer accountId;
 
     /**
@@ -74,7 +73,6 @@ public class MultiDocumentModel {
     public void setAccountId(Integer value) {
         this.accountId = value;
     }
-
 
     private String code;
 
@@ -99,7 +97,6 @@ public class MultiDocumentModel {
     public void setCode(String value) {
         this.code = value;
     }
-
 
     private DocumentType type;
 
@@ -131,7 +128,6 @@ public class MultiDocumentModel {
         this.type = value;
     }
 
-
     private Integer createdUserId;
 
     /**
@@ -151,7 +147,6 @@ public class MultiDocumentModel {
     public void setCreatedUserId(Integer value) {
         this.createdUserId = value;
     }
-
 
     private Date createdDate;
 
@@ -173,7 +168,6 @@ public class MultiDocumentModel {
         this.createdDate = value;
     }
 
-
     private Date modifiedDate;
 
     /**
@@ -193,7 +187,6 @@ public class MultiDocumentModel {
     public void setModifiedDate(Date value) {
         this.modifiedDate = value;
     }
-
 
     private Integer modifiedUserId;
 
@@ -215,7 +208,6 @@ public class MultiDocumentModel {
         this.modifiedUserId = value;
     }
 
-
     private ArrayList<TransactionModel> documents;
 
     /**
@@ -235,7 +227,6 @@ public class MultiDocumentModel {
     public void setDocuments(ArrayList<TransactionModel> value) {
         this.documents = value;
     }
-
 
     /**
      * Returns a JSON string representation of MultiDocumentModel

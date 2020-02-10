@@ -49,7 +49,6 @@ public class TransactionLocationTypeModel {
         this.documentLocationTypeId = value;
     }
 
-
     private Long documentId;
 
     /**
@@ -69,7 +68,6 @@ public class TransactionLocationTypeModel {
     public void setDocumentId(Long value) {
         this.documentId = value;
     }
-
 
     private Long documentAddressId;
 
@@ -91,7 +89,6 @@ public class TransactionLocationTypeModel {
         this.documentAddressId = value;
     }
 
-
     private String locationTypeCode;
 
     /**
@@ -111,7 +108,6 @@ public class TransactionLocationTypeModel {
     public void setLocationTypeCode(String value) {
         this.locationTypeCode = value;
     }
-
 
     /**
      * Returns a JSON string representation of TransactionLocationTypeModel

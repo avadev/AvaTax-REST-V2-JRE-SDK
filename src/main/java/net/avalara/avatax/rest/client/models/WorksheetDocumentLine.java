@@ -49,7 +49,6 @@ public class WorksheetDocumentLine {
         this.reportingDate = value;
     }
 
-
     private String lineNo;
 
     /**
@@ -69,7 +68,6 @@ public class WorksheetDocumentLine {
     public void setLineNo(String value) {
         this.lineNo = value;
     }
-
 
     private BigDecimal lineAmount;
 
@@ -91,7 +89,6 @@ public class WorksheetDocumentLine {
         this.lineAmount = value;
     }
 
-
     private BigDecimal exemptAmount;
 
     /**
@@ -111,7 +108,6 @@ public class WorksheetDocumentLine {
     public void setExemptAmount(BigDecimal value) {
         this.exemptAmount = value;
     }
-
 
     private BigDecimal taxableAmount;
 
@@ -133,7 +129,6 @@ public class WorksheetDocumentLine {
         this.taxableAmount = value;
     }
 
-
     private BigDecimal taxAmount;
 
     /**
@@ -153,7 +148,6 @@ public class WorksheetDocumentLine {
     public void setTaxAmount(BigDecimal value) {
         this.taxAmount = value;
     }
-
 
     private ArrayList<Message> messages;
 
@@ -175,7 +169,6 @@ public class WorksheetDocumentLine {
         this.messages = value;
     }
 
-
     private String resultCode;
 
     /**
@@ -196,7 +189,6 @@ public class WorksheetDocumentLine {
         this.resultCode = value;
     }
 
-
     private String transactionId;
 
     /**
@@ -216,7 +208,6 @@ public class WorksheetDocumentLine {
     public void setTransactionId(String value) {
         this.transactionId = value;
     }
-
 
     /**
      * Returns a JSON string representation of WorksheetDocumentLine

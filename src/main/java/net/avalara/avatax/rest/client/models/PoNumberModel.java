@@ -49,7 +49,6 @@ public class PoNumberModel {
         this.id = value;
     }
 
-
     private String poNumber;
 
     /**
@@ -69,7 +68,6 @@ public class PoNumberModel {
     public void setPoNumber(String value) {
         this.poNumber = value;
     }
-
 
     /**
      * Returns a JSON string representation of PoNumberModel

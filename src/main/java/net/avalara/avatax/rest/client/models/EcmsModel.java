@@ -49,7 +49,6 @@ public class EcmsModel {
         this.exemptCertId = value;
     }
 
-
     private Integer companyId;
 
     /**
@@ -69,7 +68,6 @@ public class EcmsModel {
     public void setCompanyId(Integer value) {
         this.companyId = value;
     }
-
 
     private String customerCode;
 
@@ -91,7 +89,6 @@ public class EcmsModel {
         this.customerCode = value;
     }
 
-
     private String customerName;
 
     /**
@@ -111,7 +108,6 @@ public class EcmsModel {
     public void setCustomerName(String value) {
         this.customerName = value;
     }
-
 
     private String address1;
 
@@ -133,7 +129,6 @@ public class EcmsModel {
         this.address1 = value;
     }
 
-
     private String address2;
 
     /**
@@ -153,7 +148,6 @@ public class EcmsModel {
     public void setAddress2(String value) {
         this.address2 = value;
     }
-
 
     private String address3;
 
@@ -175,7 +169,6 @@ public class EcmsModel {
         this.address3 = value;
     }
 
-
     private String city;
 
     /**
@@ -195,7 +188,6 @@ public class EcmsModel {
     public void setCity(String value) {
         this.city = value;
     }
-
 
     private String region;
 
@@ -231,7 +223,6 @@ public class EcmsModel {
         this.region = value;
     }
 
-
     private String postalCode;
 
     /**
@@ -251,7 +242,6 @@ public class EcmsModel {
     public void setPostalCode(String value) {
         this.postalCode = value;
     }
-
 
     private String country;
 
@@ -289,7 +279,6 @@ public class EcmsModel {
         this.country = value;
     }
 
-
     private ExemptCertTypeId exemptCertTypeId;
 
     /**
@@ -309,7 +298,6 @@ public class EcmsModel {
     public void setExemptCertTypeId(ExemptCertTypeId value) {
         this.exemptCertTypeId = value;
     }
-
 
     private String documentRefNo;
 
@@ -331,7 +319,6 @@ public class EcmsModel {
         this.documentRefNo = value;
     }
 
-
     private Integer businessTypeId;
 
     /**
@@ -352,7 +339,6 @@ public class EcmsModel {
         this.businessTypeId = value;
     }
 
-
     private String businessTypeOtherDescription;
 
     /**
@@ -372,7 +358,6 @@ public class EcmsModel {
     public void setBusinessTypeOtherDescription(String value) {
         this.businessTypeOtherDescription = value;
     }
-
 
     private String exemptReasonId;
 
@@ -396,7 +381,6 @@ public class EcmsModel {
         this.exemptReasonId = value;
     }
 
-
     private String exemptReasonOtherDescription;
 
     /**
@@ -417,7 +401,6 @@ public class EcmsModel {
         this.exemptReasonOtherDescription = value;
     }
 
-
     private Date effectiveDate;
 
     /**
@@ -437,7 +420,6 @@ public class EcmsModel {
     public void setEffectiveDate(Date value) {
         this.effectiveDate = value;
     }
-
 
     private String regionsApplicable;
 
@@ -463,7 +445,6 @@ public class EcmsModel {
         this.regionsApplicable = value;
     }
 
-
     private ExemptCertStatusId exemptCertStatusId;
 
     /**
@@ -483,7 +464,6 @@ public class EcmsModel {
     public void setExemptCertStatusId(ExemptCertStatusId value) {
         this.exemptCertStatusId = value;
     }
-
 
     private Date createdDate;
 
@@ -505,7 +485,6 @@ public class EcmsModel {
         this.createdDate = value;
     }
 
-
     private Date lastTransactionDate;
 
     /**
@@ -525,7 +504,6 @@ public class EcmsModel {
     public void setLastTransactionDate(Date value) {
         this.lastTransactionDate = value;
     }
-
 
     private Date expiryDate;
 
@@ -547,7 +525,6 @@ public class EcmsModel {
         this.expiryDate = value;
     }
 
-
     private Integer createdUserId;
 
     /**
@@ -567,7 +544,6 @@ public class EcmsModel {
     public void setCreatedUserId(Integer value) {
         this.createdUserId = value;
     }
-
 
     private Date modifiedDate;
 
@@ -589,7 +565,6 @@ public class EcmsModel {
         this.modifiedDate = value;
     }
 
-
     private Integer modifiedUserId;
 
     /**
@@ -609,7 +584,6 @@ public class EcmsModel {
     public void setModifiedUserId(Integer value) {
         this.modifiedUserId = value;
     }
-
 
     private String countryIssued;
 
@@ -647,7 +621,6 @@ public class EcmsModel {
         this.countryIssued = value;
     }
 
-
     private String avaCertId;
 
     /**
@@ -670,7 +643,6 @@ public class EcmsModel {
         this.avaCertId = value;
     }
 
-
     private ExemptCertReviewStatusId exemptCertReviewStatusId;
 
     /**
@@ -691,7 +663,6 @@ public class EcmsModel {
         this.exemptCertReviewStatusId = value;
     }
 
-
     private ArrayList<EcmsDetailModel> details;
 
     /**
@@ -711,7 +682,6 @@ public class EcmsModel {
     public void setDetails(ArrayList<EcmsDetailModel> value) {
         this.details = value;
     }
-
 
     /**
      * Returns a JSON string representation of EcmsModel

@@ -49,7 +49,6 @@ public class SkyscraperStatusModel {
         this.name = value;
     }
 
-
     private ArrayList<String> taxFormCodes;
 
     /**
@@ -69,7 +68,6 @@ public class SkyscraperStatusModel {
     public void setTaxFormCodes(ArrayList<String> value) {
         this.taxFormCodes = value;
     }
-
 
     private String country;
 
@@ -91,7 +89,6 @@ public class SkyscraperStatusModel {
         this.country = value;
     }
 
-
     private ScraperType scraperType;
 
     /**
@@ -111,7 +108,6 @@ public class SkyscraperStatusModel {
     public void setScraperType(ScraperType value) {
         this.scraperType = value;
     }
-
 
     private Boolean isAvailable;
 
@@ -133,7 +129,6 @@ public class SkyscraperStatusModel {
         this.isAvailable = value;
     }
 
-
     private String expectedResponseTime;
 
     /**
@@ -153,7 +148,6 @@ public class SkyscraperStatusModel {
     public void setExpectedResponseTime(String value) {
         this.expectedResponseTime = value;
     }
-
 
     private String message;
 
@@ -175,7 +169,6 @@ public class SkyscraperStatusModel {
         this.message = value;
     }
 
-
     private ArrayList<requiredFilingCalendarDataFieldModel> requiredFilingCalendarDataFields;
 
     /**
@@ -195,7 +188,6 @@ public class SkyscraperStatusModel {
     public void setRequiredFilingCalendarDataFields(ArrayList<requiredFilingCalendarDataFieldModel> value) {
         this.requiredFilingCalendarDataFields = value;
     }
-
 
     /**
      * Returns a JSON string representation of SkyscraperStatusModel

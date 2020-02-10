@@ -49,7 +49,6 @@ public class TransactionReferenceFieldModel {
         this.documentId = value;
     }
 
-
     private String reportingLocationCode;
 
     /**
@@ -76,7 +75,6 @@ public class TransactionReferenceFieldModel {
         this.reportingLocationCode = value;
     }
 
-
     private ArrayList<LineDetailSERCodeModel> lineDetailSerCodes;
 
     /**
@@ -96,7 +94,6 @@ public class TransactionReferenceFieldModel {
     public void setLineDetailSerCodes(ArrayList<LineDetailSERCodeModel> value) {
         this.lineDetailSerCodes = value;
     }
-
 
     /**
      * Returns a JSON string representation of TransactionReferenceFieldModel

@@ -49,7 +49,6 @@ public class PostalCodeModel {
         this.country = value;
     }
 
-
     private String region;
 
     /**
@@ -69,7 +68,6 @@ public class PostalCodeModel {
     public void setRegion(String value) {
         this.region = value;
     }
-
 
     private Integer taxRegionId;
 
@@ -91,7 +89,6 @@ public class PostalCodeModel {
         this.taxRegionId = value;
     }
 
-
     private Date effDate;
 
     /**
@@ -111,7 +108,6 @@ public class PostalCodeModel {
     public void setEffDate(Date value) {
         this.effDate = value;
     }
-
 
     private Date endDate;
 
@@ -133,7 +129,6 @@ public class PostalCodeModel {
         this.endDate = value;
     }
 
-
     private String postalCode;
 
     /**
@@ -153,7 +148,6 @@ public class PostalCodeModel {
     public void setPostalCode(String value) {
         this.postalCode = value;
     }
-
 
     /**
      * Returns a JSON string representation of PostalCodeModel

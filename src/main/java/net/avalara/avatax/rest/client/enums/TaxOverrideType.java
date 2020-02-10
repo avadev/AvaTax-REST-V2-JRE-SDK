@@ -63,7 +63,13 @@ public enum TaxOverrideType {
     /** 
      * Derive the taxable amount from the tax amount
      */
-    DeriveTaxable(5);
+    DeriveTaxable(5),
+
+    /** 
+     * This is for the documents that are calculated outside of AvaTax and passed in to AvaTax
+     *  specifically for reporting/Returns purposes
+     */
+    OutOfHarbor(6);
 
     private int value;
 	private static HashMap map = new HashMap<>();

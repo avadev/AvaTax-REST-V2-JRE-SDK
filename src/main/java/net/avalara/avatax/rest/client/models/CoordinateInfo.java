@@ -49,7 +49,6 @@ public class CoordinateInfo {
         this.latitude = value;
     }
 
-
     private BigDecimal longitude;
 
     /**
@@ -69,7 +68,6 @@ public class CoordinateInfo {
     public void setLongitude(BigDecimal value) {
         this.longitude = value;
     }
-
 
     /**
      * Returns a JSON string representation of CoordinateInfo

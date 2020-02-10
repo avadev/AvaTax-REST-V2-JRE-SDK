@@ -49,7 +49,6 @@ public class OriginalApiRequestResponseModel {
         this.request = value;
     }
 
-
     private TransactionModel response;
 
     /**
@@ -69,7 +68,6 @@ public class OriginalApiRequestResponseModel {
     public void setResponse(TransactionModel value) {
         this.response = value;
     }
-
 
     /**
      * Returns a JSON string representation of OriginalApiRequestResponseModel

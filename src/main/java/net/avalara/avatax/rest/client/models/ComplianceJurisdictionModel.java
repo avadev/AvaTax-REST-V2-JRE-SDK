@@ -49,7 +49,6 @@ public class ComplianceJurisdictionModel {
         this.taxRegionId = value;
     }
 
-
     private String stateAssignedCode;
 
     /**
@@ -69,7 +68,6 @@ public class ComplianceJurisdictionModel {
     public void setStateAssignedCode(String value) {
         this.stateAssignedCode = value;
     }
-
 
     private String jurisdictionTypeId;
 
@@ -91,7 +89,6 @@ public class ComplianceJurisdictionModel {
         this.jurisdictionTypeId = value;
     }
 
-
     private String name;
 
     /**
@@ -111,7 +108,6 @@ public class ComplianceJurisdictionModel {
     public void setName(String value) {
         this.name = value;
     }
-
 
     private String county;
 
@@ -133,7 +129,6 @@ public class ComplianceJurisdictionModel {
         this.county = value;
     }
 
-
     private String city;
 
     /**
@@ -153,7 +148,6 @@ public class ComplianceJurisdictionModel {
     public void setCity(String value) {
         this.city = value;
     }
-
 
     private String region;
 
@@ -188,7 +182,6 @@ public class ComplianceJurisdictionModel {
     public void setRegion(String value) {
         this.region = value;
     }
-
 
     private String country;
 
@@ -226,7 +219,6 @@ public class ComplianceJurisdictionModel {
         this.country = value;
     }
 
-
     private String taxRegionName;
 
     /**
@@ -246,7 +238,6 @@ public class ComplianceJurisdictionModel {
     public void setTaxRegionName(String value) {
         this.taxRegionName = value;
     }
-
 
     private Integer taxAuthorityId;
 
@@ -268,7 +259,6 @@ public class ComplianceJurisdictionModel {
         this.taxAuthorityId = value;
     }
 
-
     private ArrayList<ComplianceAggregatedTaxRateModel> rates;
 
     /**
@@ -288,7 +278,6 @@ public class ComplianceJurisdictionModel {
     public void setRates(ArrayList<ComplianceAggregatedTaxRateModel> value) {
         this.rates = value;
     }
-
 
     /**
      * Returns a JSON string representation of ComplianceJurisdictionModel

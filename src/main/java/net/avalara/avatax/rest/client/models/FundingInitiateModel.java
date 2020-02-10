@@ -49,7 +49,6 @@ public class FundingInitiateModel {
         this.requestEmail = value;
     }
 
-
     private String fundingEmailRecipient;
 
     /**
@@ -74,7 +73,6 @@ public class FundingInitiateModel {
         this.fundingEmailRecipient = value;
     }
 
-
     private Boolean requestWidget;
 
     /**
@@ -98,7 +96,6 @@ public class FundingInitiateModel {
     public void setRequestWidget(Boolean value) {
         this.requestWidget = value;
     }
-
 
     /**
      * Returns a JSON string representation of FundingInitiateModel

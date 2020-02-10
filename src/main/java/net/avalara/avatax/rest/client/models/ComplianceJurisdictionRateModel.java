@@ -49,7 +49,6 @@ public class ComplianceJurisdictionRateModel {
         this.jurisdictionId = value;
     }
 
-
     private String country;
 
     /**
@@ -86,7 +85,6 @@ public class ComplianceJurisdictionRateModel {
         this.country = value;
     }
 
-
     private String region;
 
     /**
@@ -121,7 +119,6 @@ public class ComplianceJurisdictionRateModel {
         this.region = value;
     }
 
-
     private String name;
 
     /**
@@ -141,7 +138,6 @@ public class ComplianceJurisdictionRateModel {
     public void setName(String value) {
         this.name = value;
     }
-
 
     private String jurisdictionTypeId;
 
@@ -163,7 +159,6 @@ public class ComplianceJurisdictionRateModel {
         this.jurisdictionTypeId = value;
     }
 
-
     private BigDecimal rate;
 
     /**
@@ -183,7 +178,6 @@ public class ComplianceJurisdictionRateModel {
     public void setRate(BigDecimal value) {
         this.rate = value;
     }
-
 
     private String rateTypeId;
 
@@ -205,7 +199,6 @@ public class ComplianceJurisdictionRateModel {
         this.rateTypeId = value;
     }
 
-
     private String taxTypeId;
 
     /**
@@ -225,7 +218,6 @@ public class ComplianceJurisdictionRateModel {
     public void setTaxTypeId(String value) {
         this.taxTypeId = value;
     }
-
 
     private Date effectiveDate;
 
@@ -247,7 +239,6 @@ public class ComplianceJurisdictionRateModel {
         this.effectiveDate = value;
     }
 
-
     private Date endDate;
 
     /**
@@ -267,7 +258,6 @@ public class ComplianceJurisdictionRateModel {
     public void setEndDate(Date value) {
         this.endDate = value;
     }
-
 
     private String stateAssignedCode;
 
@@ -289,7 +279,6 @@ public class ComplianceJurisdictionRateModel {
         this.stateAssignedCode = value;
     }
 
-
     private Integer taxAuthorityId;
 
     /**
@@ -309,7 +298,6 @@ public class ComplianceJurisdictionRateModel {
     public void setTaxAuthorityId(Integer value) {
         this.taxAuthorityId = value;
     }
-
 
     /**
      * Returns a JSON string representation of ComplianceJurisdictionRateModel

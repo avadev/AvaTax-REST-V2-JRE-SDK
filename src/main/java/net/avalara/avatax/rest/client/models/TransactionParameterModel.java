@@ -49,7 +49,6 @@ public class TransactionParameterModel {
         this.name = value;
     }
 
-
     private String value;
 
     /**
@@ -70,7 +69,6 @@ public class TransactionParameterModel {
         this.value = value;
     }
 
-
     private String unit;
 
     /**
@@ -90,7 +88,6 @@ public class TransactionParameterModel {
     public void setUnit(String value) {
         this.unit = value;
     }
-
 
     /**
      * Returns a JSON string representation of TransactionParameterModel

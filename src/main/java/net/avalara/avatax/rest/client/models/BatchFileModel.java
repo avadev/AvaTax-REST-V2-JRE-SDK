@@ -49,7 +49,6 @@ public class BatchFileModel {
         this.id = value;
     }
 
-
     private Integer batchId;
 
     /**
@@ -69,7 +68,6 @@ public class BatchFileModel {
     public void setBatchId(Integer value) {
         this.batchId = value;
     }
-
 
     private String name;
 
@@ -91,7 +89,6 @@ public class BatchFileModel {
         this.name = value;
     }
 
-
     private String content;
 
     /**
@@ -111,7 +108,6 @@ public class BatchFileModel {
     public void setContent(String value) {
         this.content = value;
     }
-
 
     private Integer contentLength;
 
@@ -133,7 +129,6 @@ public class BatchFileModel {
         this.contentLength = value;
     }
 
-
     private String contentType;
 
     /**
@@ -153,7 +148,6 @@ public class BatchFileModel {
     public void setContentType(String value) {
         this.contentType = value;
     }
-
 
     private String fileExtension;
 
@@ -175,7 +169,6 @@ public class BatchFileModel {
         this.fileExtension = value;
     }
 
-
     private String filePath;
 
     /**
@@ -196,7 +189,6 @@ public class BatchFileModel {
         this.filePath = value;
     }
 
-
     private Integer errorCount;
 
     /**
@@ -216,7 +208,6 @@ public class BatchFileModel {
     public void setErrorCount(Integer value) {
         this.errorCount = value;
     }
-
 
     /**
      * Returns a JSON string representation of BatchFileModel

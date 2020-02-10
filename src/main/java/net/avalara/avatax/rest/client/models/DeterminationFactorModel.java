@@ -49,7 +49,6 @@ public class DeterminationFactorModel {
         this.code = value;
     }
 
-
     private String description;
 
     /**
@@ -69,7 +68,6 @@ public class DeterminationFactorModel {
     public void setDescription(String value) {
         this.description = value;
     }
-
 
     /**
      * Returns a JSON string representation of DeterminationFactorModel

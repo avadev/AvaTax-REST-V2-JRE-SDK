@@ -49,7 +49,6 @@ public class FilingsCheckupAuthorityModel {
         this.taxAuthorityId = value;
     }
 
-
     private String locationCode;
 
     /**
@@ -69,7 +68,6 @@ public class FilingsCheckupAuthorityModel {
     public void setLocationCode(String value) {
         this.locationCode = value;
     }
-
 
     private String taxAuthorityName;
 
@@ -91,7 +89,6 @@ public class FilingsCheckupAuthorityModel {
         this.taxAuthorityName = value;
     }
 
-
     private Integer taxAuthorityTypeId;
 
     /**
@@ -111,7 +108,6 @@ public class FilingsCheckupAuthorityModel {
     public void setTaxAuthorityTypeId(Integer value) {
         this.taxAuthorityTypeId = value;
     }
-
 
     private Integer jurisdictionId;
 
@@ -133,7 +129,6 @@ public class FilingsCheckupAuthorityModel {
         this.jurisdictionId = value;
     }
 
-
     private BigDecimal tax;
 
     /**
@@ -153,7 +148,6 @@ public class FilingsCheckupAuthorityModel {
     public void setTax(BigDecimal value) {
         this.tax = value;
     }
-
 
     private String taxTypeId;
 
@@ -175,7 +169,6 @@ public class FilingsCheckupAuthorityModel {
         this.taxTypeId = value;
     }
 
-
     private ArrayList<FilingsCheckupSuggestedFormModel> suggestedForms;
 
     /**
@@ -195,7 +188,6 @@ public class FilingsCheckupAuthorityModel {
     public void setSuggestedForms(ArrayList<FilingsCheckupSuggestedFormModel> value) {
         this.suggestedForms = value;
     }
-
 
     /**
      * Returns a JSON string representation of FilingsCheckupAuthorityModel

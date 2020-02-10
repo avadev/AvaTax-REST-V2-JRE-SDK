@@ -49,7 +49,6 @@ public class SyncItemsResponseModel {
         this.status = value;
     }
 
-
     /**
      * Returns a JSON string representation of SyncItemsResponseModel
      */

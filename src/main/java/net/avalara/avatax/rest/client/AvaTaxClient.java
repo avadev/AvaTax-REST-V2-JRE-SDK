@@ -1562,7 +1562,7 @@ public class AvaTaxClient {
      * calculating tax exemptions when processing is complete.  For a certificate to be used in calculating exemptions,
      * it must have the following:
      *             
-     * * A list of exposure zones indicating where the certificate is valid
+     * * An exposure zone indicating where the certificate is valid
      * * A link to the customer that is allowed to use this certificate
      * * Your tax transaction must contain the correct customer code
      *             
@@ -1604,7 +1604,7 @@ public class AvaTaxClient {
      * calculating tax exemptions when processing is complete.  For a certificate to be used in calculating exemptions,
      * it must have the following:
      *             
-     * * A list of exposure zones indicating where the certificate is valid
+     * * An exposure zone indicating where the certificate is valid
      * * A link to the customer that is allowed to use this certificate
      * * Your tax transaction must contain the correct customer code
      *             
@@ -6042,6 +6042,42 @@ public class AvaTaxClient {
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
         return this.threadPool.submit((RestCall<FetchResult<SkyscraperStatusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<SkyscraperStatusModel>>(){}));
+    }
+
+    /**
+     * Retrieve the list of locations for a marketplace.
+     * 
+     * @param marketplaceId MarketplaceId of a marketplace
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @return FetchResult<MarketplaceLocationModel>
+     */
+    public FetchResult<MarketplaceLocationModel> listMarketplaceLocations(String marketplaceId, Integer top, Integer skip, String orderBy) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/marketplacelocations");
+        path.addQuery("marketplaceId", marketplaceId);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
+        return ((RestCall<FetchResult<MarketplaceLocationModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<MarketplaceLocationModel>>(){})).call();
+    }
+
+    /**
+     * Retrieve the list of locations for a marketplace.
+     * 
+     * @param marketplaceId MarketplaceId of a marketplace
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @return FetchResult<MarketplaceLocationModel>
+     */
+    public Future<FetchResult<MarketplaceLocationModel>> listMarketplaceLocationsAsync(String marketplaceId, Integer top, Integer skip, String orderBy) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/marketplacelocations");
+        path.addQuery("marketplaceId", marketplaceId);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
+        return this.threadPool.submit((RestCall<FetchResult<MarketplaceLocationModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<MarketplaceLocationModel>>(){}));
     }
 
     /**
@@ -14907,7 +14943,7 @@ public class AvaTaxClient {
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, ProStoresOperator, SSTAdmin, TechnicalSupportAdmin.
-     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro, AvaTaxST.
+     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
      * 
      * @param companyCode The company code of the company that recorded this transaction
      * @param transactionCode The transaction code to change
@@ -14958,7 +14994,7 @@ public class AvaTaxClient {
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, ProStoresOperator, SSTAdmin, TechnicalSupportAdmin.
-     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro, AvaTaxST.
+     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
      * 
      * @param companyCode The company code of the company that recorded this transaction
      * @param transactionCode The transaction code to change
@@ -15114,7 +15150,7 @@ public class AvaTaxClient {
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
-     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
+     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro, BasicReturns.
      * 
      * @param include Specifies objects to include in the response after transaction is created
      * @param model The transaction you wish to create or adjust
@@ -15166,7 +15202,7 @@ public class AvaTaxClient {
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
-     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
+     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro, BasicReturns.
      * 
      * @param include Specifies objects to include in the response after transaction is created
      * @param model The transaction you wish to create or adjust
@@ -15225,7 +15261,7 @@ public class AvaTaxClient {
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
-     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
+     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro, BasicReturns.
      * 
      * @param include Specifies objects to include in the response after transaction is created
      * @param model The transaction you wish to create
@@ -15284,7 +15320,7 @@ public class AvaTaxClient {
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
-     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
+     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro, BasicReturns.
      * 
      * @param include Specifies objects to include in the response after transaction is created
      * @param model The transaction you wish to create
@@ -15398,7 +15434,7 @@ public class AvaTaxClient {
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, ProStoresOperator, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
-     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
+     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro, BasicReturns.
      * 
      * @param companyCode The company code of the company that recorded this transaction
      * @param transactionCode The transaction code to retrieve
@@ -15445,7 +15481,7 @@ public class AvaTaxClient {
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, ProStoresOperator, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
-     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
+     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro, BasicReturns.
      * 
      * @param companyCode The company code of the company that recorded this transaction
      * @param transactionCode The transaction code to retrieve
@@ -15475,7 +15511,7 @@ public class AvaTaxClient {
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, ProStoresOperator, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
-     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
+     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro, BasicReturns.
      * 
      * @param companyCode The company code of the company that recorded this transaction
      * @param transactionCode The transaction code to retrieve
@@ -15505,7 +15541,7 @@ public class AvaTaxClient {
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, ProStoresOperator, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
-     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
+     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro, BasicReturns.
      * 
      * @param companyCode The company code of the company that recorded this transaction
      * @param transactionCode The transaction code to retrieve
@@ -15546,7 +15582,7 @@ public class AvaTaxClient {
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, ProStoresOperator, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
-     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
+     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro, BasicReturns.
      * 
      * @param id The unique ID number of the transaction to retrieve
      * @param include Specifies objects to include in this fetch call
@@ -15583,7 +15619,7 @@ public class AvaTaxClient {
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, ProStoresOperator, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
-     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
+     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro, BasicReturns.
      * 
      * @param id The unique ID number of the transaction to retrieve
      * @param include Specifies objects to include in this fetch call
@@ -15629,7 +15665,7 @@ public class AvaTaxClient {
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, ProStoresOperator, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
-     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
+     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro, BasicReturns.
      * 
      * @param companyCode The company code of the company that recorded this transaction
      * @param dataSourceId Optionally filter transactions to those from a specific data source.
@@ -15685,7 +15721,7 @@ public class AvaTaxClient {
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, ProStoresOperator, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
-     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
+     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro, BasicReturns.
      * 
      * @param companyCode The company code of the company that recorded this transaction
      * @param dataSourceId Optionally filter transactions to those from a specific data source.

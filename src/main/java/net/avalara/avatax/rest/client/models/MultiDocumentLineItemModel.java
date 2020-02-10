@@ -53,7 +53,6 @@ public class MultiDocumentLineItemModel {
         this.companyCode = value;
     }
 
-
     private String reportingLocationCode;
 
     /**
@@ -78,7 +77,6 @@ public class MultiDocumentLineItemModel {
         this.reportingLocationCode = value;
     }
 
-
     private String number;
 
     /**
@@ -98,7 +96,6 @@ public class MultiDocumentLineItemModel {
     public void setNumber(String value) {
         this.number = value;
     }
-
 
     private BigDecimal quantity;
 
@@ -123,7 +120,6 @@ public class MultiDocumentLineItemModel {
     public void setQuantity(BigDecimal value) {
         this.quantity = value;
     }
-
 
     private BigDecimal amount;
 
@@ -152,7 +148,6 @@ public class MultiDocumentLineItemModel {
     public void setAmount(BigDecimal value) {
         this.amount = value;
     }
-
 
     private AddressesModel addresses;
 
@@ -184,7 +179,6 @@ public class MultiDocumentLineItemModel {
         this.addresses = value;
     }
 
-
     private String taxCode;
 
     /**
@@ -209,7 +203,6 @@ public class MultiDocumentLineItemModel {
         this.taxCode = value;
     }
 
-
     private String customerUsageType;
 
     /**
@@ -229,7 +222,6 @@ public class MultiDocumentLineItemModel {
     public void setCustomerUsageType(String value) {
         this.customerUsageType = value;
     }
-
 
     private String entityUseCode;
 
@@ -257,7 +249,6 @@ public class MultiDocumentLineItemModel {
         this.entityUseCode = value;
     }
 
-
     private String itemCode;
 
     /**
@@ -279,7 +270,6 @@ public class MultiDocumentLineItemModel {
     public void setItemCode(String value) {
         this.itemCode = value;
     }
-
 
     private String exemptionCode;
 
@@ -309,7 +299,6 @@ public class MultiDocumentLineItemModel {
         this.exemptionCode = value;
     }
 
-
     private Boolean discounted;
 
     /**
@@ -331,7 +320,6 @@ public class MultiDocumentLineItemModel {
     public void setDiscounted(Boolean value) {
         this.discounted = value;
     }
-
 
     private Boolean taxIncluded;
 
@@ -361,7 +349,6 @@ public class MultiDocumentLineItemModel {
         this.taxIncluded = value;
     }
 
-
     private String revenueAccount;
 
     /**
@@ -385,7 +372,6 @@ public class MultiDocumentLineItemModel {
     public void setRevenueAccount(String value) {
         this.revenueAccount = value;
     }
-
 
     private String ref1;
 
@@ -411,7 +397,6 @@ public class MultiDocumentLineItemModel {
         this.ref1 = value;
     }
 
-
     private String ref2;
 
     /**
@@ -436,7 +421,6 @@ public class MultiDocumentLineItemModel {
         this.ref2 = value;
     }
 
-
     private String description;
 
     /**
@@ -460,7 +444,6 @@ public class MultiDocumentLineItemModel {
     public void setDescription(String value) {
         this.description = value;
     }
-
 
     private String businessIdentificationNo;
 
@@ -492,7 +475,6 @@ public class MultiDocumentLineItemModel {
         this.businessIdentificationNo = value;
     }
 
-
     private TaxOverrideModel taxOverride;
 
     /**
@@ -512,7 +494,6 @@ public class MultiDocumentLineItemModel {
     public void setTaxOverride(TaxOverrideModel value) {
         this.taxOverride = value;
     }
-
 
     private ArrayList<TransactionLineParameterModel> parameters;
 
@@ -537,7 +518,6 @@ public class MultiDocumentLineItemModel {
     public void setParameters(ArrayList<TransactionLineParameterModel> value) {
         this.parameters = value;
     }
-
 
     private String hsCode;
 
@@ -564,7 +544,6 @@ public class MultiDocumentLineItemModel {
     public void setHsCode(String value) {
         this.hsCode = value;
     }
-
 
     /**
      * Returns a JSON string representation of MultiDocumentLineItemModel
