@@ -1,5 +1,5 @@
 resolvers += "Sonatype snapshots" at "http://oss.sonatype.org/content/repositories/snapshots/"
 
-addSbtPlugin("com.github.gseitz" % "sbt-release" % "0.8")
+addSbtPlugin("com.github.gseitz" % "sbt-release" % "1.0.10")
 
-addSbtPlugin("com.jsuereth" % "sbt-pgp" % "1.0.0")
+addSbtPlugin("com.jsuereth" % "sbt-pgp" % "2.0.1")
