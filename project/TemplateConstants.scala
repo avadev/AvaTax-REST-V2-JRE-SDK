@@ -2,7 +2,7 @@ object TemplateConstants {
   val APIClassTemplate =
     """package net.avalara.avatax.rest.client;
       |
-      |import com.google.gson.reflect.TypeToken;
+      |import com.fasterxml.jackson.core.type.TypeReference;
       |import net.avalara.avatax.rest.client.models.*;
       |import net.avalara.avatax.rest.client.enums.*;
       |
@@ -81,12 +81,12 @@ object TemplateConstants {
       |     */
       |    public Future<@@TYPENAME@@> @@APINAME@@Async(@@PARAMS@@) {
       |        AvaTaxPath path = new AvaTaxPath("@@URI@@");@@PARAMBUILDER@@
-      |        return this.threadPool.submit((RestCall<@@TYPENAME@@>)restCallFactory.createRestCall("@@HTTPVERB@@", path, @@PAYLOAD@@, new TypeToken<@@TYPENAME@@>(){}));
+      |        return this.threadPool.submit((RestCall<@@TYPENAME@@>)restCallFactory.createRestCall("@@HTTPVERB@@", path, @@PAYLOAD@@, new TypeReference<@@TYPENAME@@>(){}));
       |    }
       |
       |    public @@TYPENAME@@ @@APINAME@@(@@PARAMS@@) throws Exception {
       |        AvaTaxPath path = new AvaTaxPath("@@URI@@");@@PARAMBUILDER@@
-      |        return ((RestCall<@@TYPENAME@@>)restCallFactory.createRestCall("@@HTTPVERB@@", path, @@PAYLOAD@@, new TypeToken<@@TYPENAME@@>(){})).call();
+      |        return ((RestCall<@@TYPENAME@@>)restCallFactory.createRestCall("@@HTTPVERB@@", path, @@PAYLOAD@@, new TypeReference<@@TYPENAME@@>(){})).call();
       |    }
     """.stripMargin
 

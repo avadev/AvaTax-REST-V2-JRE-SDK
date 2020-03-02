@@ -1,6 +1,6 @@
 package net.avalara.avatax.rest.client;
 
-import com.google.gson.reflect.TypeToken;
+import com.fasterxml.jackson.core.type.TypeReference;
 import org.apache.http.impl.client.HttpClientBuilder;
 import org.apache.http.impl.client.HttpClients;
 
@@ -37,26 +37,26 @@ public class RestCallFactory {
         this.proxySchema = proxySchema;
     }
 
-    public <T> RestCall<T> createRestCall(String method, AvaTaxPath path, Object model, TypeToken<T> typeToken) {
+    public <T> RestCall<T> createRestCall(String method, AvaTaxPath path, Object model, TypeReference<T> TypeReference) {
         if (header != null) {
             if (proxyHost == null) {
                 if (httpClientBuilder == null) {
-                    return new RestCall<T>(appName, appVersion, machineName, environmentUrl, header, method, path, model, typeToken);
+                    return new RestCall<T>(appName, appVersion, machineName, environmentUrl, header, method, path, model, TypeReference);
                 } else {
-                    return new RestCall<T>(appName, appVersion, machineName, environmentUrl, header, method, path, model, typeToken, httpClientBuilder);
+                    return new RestCall<T>(appName, appVersion, machineName, environmentUrl, header, method, path, model, TypeReference, httpClientBuilder);
                 }
             } else {
-                return new RestCall<T>(appName, appVersion, machineName, environmentUrl, header, method, path, model, typeToken, proxyHost, proxyPort, proxySchema);
+                return new RestCall<T>(appName, appVersion, machineName, environmentUrl, header, method, path, model, TypeReference, proxyHost, proxyPort, proxySchema);
             }
         } else {
             if (proxyHost == null) {
                 if (httpClientBuilder == null) {
-                    return new RestCall<T>(appName, appVersion, machineName, environmentUrl, method, path, model, typeToken);
+                    return new RestCall<T>(appName, appVersion, machineName, environmentUrl, method, path, model, TypeReference);
                 } else {
-                    return new RestCall<T>(appName, appVersion, machineName, environmentUrl, method, path, model, typeToken, httpClientBuilder);
+                    return new RestCall<T>(appName, appVersion, machineName, environmentUrl, method, path, model, TypeReference, httpClientBuilder);
                 }
             } else {
-                return new RestCall<T>(appName, appVersion, machineName, environmentUrl, method, path, model, typeToken, proxyHost, proxyPort, proxySchema);
+                return new RestCall<T>(appName, appVersion, machineName, environmentUrl, method, path, model, TypeReference, proxyHost, proxyPort, proxySchema);
             }
         }
     }

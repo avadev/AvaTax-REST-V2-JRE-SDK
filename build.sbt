@@ -2,7 +2,7 @@ name := """avatax-rest-v2-api-java"""
 
 organization := "net.avalara.avatax"
 
-version := "20.1.0"
+version := "20.1.1"
 
 scalaVersion := "2.11.12"
 
@@ -55,7 +55,7 @@ libraryDependencies ++= Seq(
   // Uncomment to use Akka
   //"com.typesafe.akka" % "akka-actor_2.11" % "2.3.9",
   "org.scalatest" %% "scalatest" % "3.0.8" % "test",
-  "com.google.code.gson" % "gson" % "2.8.6",
+  "com.fasterxml.jackson.core" % "jackson-databind" % "2.10.2",
   "org.apache.httpcomponents" % "httpclient" % "4.5.11"
 )
 

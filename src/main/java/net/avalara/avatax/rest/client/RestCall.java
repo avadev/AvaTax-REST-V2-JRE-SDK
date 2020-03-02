@@ -1,6 +1,6 @@
 package net.avalara.avatax.rest.client;
 
-import com.google.gson.reflect.TypeToken;
+import com.fasterxml.jackson.core.type.TypeReference;
 import net.avalara.avatax.rest.client.models.CreateTransactionModel;
 import net.avalara.avatax.rest.client.models.ErrorResult;
 import net.avalara.avatax.rest.client.serializer.JsonSerializer;
@@ -24,14 +24,14 @@ public class RestCall<T> implements Callable<T> {
     private String appVersion;
     private String machineName;
     private Object model;
-    private TypeToken<T> typeToken;
+    private TypeReference<T> typeReference;
 
-    private RestCall(String appName, String appVersion, String machineName, String environmentUrl, String method, AvaTaxPath path, Object model, TypeToken<T> typeToken, CloseableHttpClient client) {
+    private RestCall(String appName, String appVersion, String machineName, String environmentUrl, String method, AvaTaxPath path, Object model, TypeReference<T> typeReference, CloseableHttpClient client) {
         this.client = client;
         this.appName = appName;
         this.appVersion = appVersion;
         this.machineName = machineName;
-        this.typeToken = typeToken;
+        this.typeReference = typeReference;
         this.model = model;
 
         if (method == "post") {
@@ -49,34 +49,34 @@ public class RestCall<T> implements Callable<T> {
         buildRequest(this.request);
     }
 
-    public RestCall(String appName, String appVersion, String machineName, String environmentUrl, String method, AvaTaxPath path, Object model, TypeToken<T> typeToken) {
-        this(appName, appVersion, machineName, environmentUrl, method, path, model, typeToken, HttpClients.createDefault());
+    public RestCall(String appName, String appVersion, String machineName, String environmentUrl, String method, AvaTaxPath path, Object model, TypeReference<T> typeReference) {
+        this(appName, appVersion, machineName, environmentUrl, method, path, model, typeReference, HttpClients.createDefault());
     }
 
-    public RestCall(String appName, String appVersion, String machineName, String environmentUrl, String method, AvaTaxPath path, Object model, TypeToken<T> typeToken, HttpClientBuilder httpClientBuilder) {
-        this(appName, appVersion, machineName, environmentUrl, method, path, model, typeToken, httpClientBuilder.build());
+    public RestCall(String appName, String appVersion, String machineName, String environmentUrl, String method, AvaTaxPath path, Object model, TypeReference<T> typeReference, HttpClientBuilder httpClientBuilder) {
+        this(appName, appVersion, machineName, environmentUrl, method, path, model, typeReference, httpClientBuilder.build());
     }
 
-    public RestCall(String appName, String appVersion, String machineName, String environmentUrl, String header, String method, AvaTaxPath path, Object model, TypeToken<T> typeToken) {
-        this(appName, appVersion, machineName, environmentUrl, method, path, model, typeToken);
+    public RestCall(String appName, String appVersion, String machineName, String environmentUrl, String header, String method, AvaTaxPath path, Object model, TypeReference<T> typeReference) {
+        this(appName, appVersion, machineName, environmentUrl, method, path, model, typeReference);
 
         this.request.setHeader("Authorization", "Basic " + header);
     }
 
-    public RestCall(String appName, String appVersion, String machineName, String environmentUrl, String header, String method, AvaTaxPath path, Object model, TypeToken<T> typeToken, HttpClientBuilder httpClientBuilder) {
-        this(appName, appVersion, machineName, environmentUrl, method, path, model, typeToken, httpClientBuilder);
+    public RestCall(String appName, String appVersion, String machineName, String environmentUrl, String header, String method, AvaTaxPath path, Object model, TypeReference<T> typeReference, HttpClientBuilder httpClientBuilder) {
+        this(appName, appVersion, machineName, environmentUrl, method, path, model, typeReference, httpClientBuilder);
 
         this.request.setHeader("Authorization", "Basic " + header);
     }
 
-    public RestCall(String appName, String appVersion, String machineName, String environmentUrl, String method, AvaTaxPath path, Object model, TypeToken<T> typeToken, String proxyHost, int proxyPort, String proxySchema) {
-        this(appName, appVersion, machineName, environmentUrl, method, path, model, typeToken, HttpClients.custom()
+    public RestCall(String appName, String appVersion, String machineName, String environmentUrl, String method, AvaTaxPath path, Object model, TypeReference<T> typeReference, String proxyHost, int proxyPort, String proxySchema) {
+        this(appName, appVersion, machineName, environmentUrl, method, path, model, typeReference, HttpClients.custom()
                 .setRoutePlanner(new DefaultProxyRoutePlanner(new HttpHost(proxyHost, proxyPort, proxySchema)))
                 .build());
     }
 
-    public RestCall(String appName, String appVersion, String machineName, String environmentUrl, String header, String method, AvaTaxPath path, Object model, TypeToken<T> typeToken, String proxyHost, int proxyPort, String proxySchema) {
-        this(appName, appVersion, machineName, environmentUrl, method, path, model, typeToken, proxyHost, proxyPort, proxySchema);
+    public RestCall(String appName, String appVersion, String machineName, String environmentUrl, String header, String method, AvaTaxPath path, Object model, TypeReference<T> typeReference, String proxyHost, int proxyPort, String proxySchema) {
+        this(appName, appVersion, machineName, environmentUrl, method, path, model, typeReference, proxyHost, proxyPort, proxySchema);
 
         this.request.setHeader("Authorization", "Basic " + header);
     }
@@ -96,7 +96,7 @@ public class RestCall<T> implements Callable<T> {
 
             if (entity != null) {
                 if(ContentType.getOrDefault(entity).getMimeType().equals("application/json")) {
-                    obj = (T)JsonSerializer.DeserializeObject(EntityUtils.toString(entity), typeToken.getType());
+                    obj = (T)JsonSerializer.DeserializeObject(EntityUtils.toString(entity), typeReference);
                 }
                 else {
                     obj = (T)EntityUtils.toString(entity);
@@ -110,7 +110,7 @@ public class RestCall<T> implements Callable<T> {
     }
 
     private void buildRequest(HttpRequestBase baseRequest) {
-        String clientId = String.format("%s; %s; %s; %s; %s", appName, appVersion, "JavaRestClient", "20.1.0", machineName);
+        String clientId = String.format("%s; %s; %s; %s; %s", appName, appVersion, "JavaRestClient", "20.1.1", machineName);
         baseRequest.setHeader(AvaTaxConstants.XClientHeader, clientId);
     }
 }

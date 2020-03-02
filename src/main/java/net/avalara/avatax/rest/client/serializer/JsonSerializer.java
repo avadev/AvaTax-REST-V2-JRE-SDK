@@ -1,17 +1,33 @@
 package net.avalara.avatax.rest.client.serializer;
 
-import com.google.gson.*;
-
 import java.lang.reflect.Type;
 
-public class JsonSerializer<T> {
-    private static Gson gson = new GsonBuilder().setDateFormat("yyyy-MM-dd'T'HH:mm:ss").create();
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.MapperFeature;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 
-    public static String SerializeObject(Object obj) {
-        return gson.toJson(obj);
+
+
+
+public class JsonSerializer<T> {
+    private static ObjectMapper objectMapper = new ObjectMapper().configure(MapperFeature.ACCEPT_CASE_INSENSITIVE_PROPERTIES, true);
+
+    public static String SerializeObject(Object obj) throws Exception {
+       return objectMapper.writeValueAsString(obj);
     }
 
-    public static Object DeserializeObject(String json, Type type) {
-        return gson.fromJson(json, type);
+    public static Object DeserializeObject(String json, TypeReference type) throws Exception {
+        DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
+        objectMapper.setDateFormat(df);
+        return objectMapper.readValue(json, type);
+    }
+
+    public static Object DeserializeObject(String json, Class type) throws Exception {
+        DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
+        objectMapper.setDateFormat(df);
+        return objectMapper.readValue(json, type);
     }
 }
