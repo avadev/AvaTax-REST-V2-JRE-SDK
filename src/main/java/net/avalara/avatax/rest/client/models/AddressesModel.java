@@ -2,6 +2,7 @@ package net.avalara.avatax.rest.client.models;
 
 import net.avalara.avatax.rest.client.enums.*;
 import net.avalara.avatax.rest.client.serializer.JsonSerializer;
+import com.google.gson.annotations.SerializedName;
 
 import java.lang.Override;
 import java.math.BigDecimal;
@@ -43,6 +44,7 @@ import java.util.HashMap;
 public class AddressesModel {
 
 
+    @SerializedName(value = "singleLocation", alternate = "SingleLocation")
     private AddressLocationInfo singleLocation;
 
     /**
@@ -65,6 +67,7 @@ public class AddressesModel {
         this.singleLocation = value;
     }
 
+    @SerializedName(value = "shipFrom", alternate = "ShipFrom")
     private AddressLocationInfo shipFrom;
 
     /**
@@ -85,6 +88,7 @@ public class AddressesModel {
         this.shipFrom = value;
     }
 
+    @SerializedName(value = "shipTo", alternate = "ShipTo")
     private AddressLocationInfo shipTo;
 
     /**
@@ -105,6 +109,7 @@ public class AddressesModel {
         this.shipTo = value;
     }
 
+    @SerializedName(value = "pointOfOrderOrigin", alternate = "PointOrOrderOrigin")
     private AddressLocationInfo pointOfOrderOrigin;
 
     /**
@@ -127,6 +132,7 @@ public class AddressesModel {
         this.pointOfOrderOrigin = value;
     }
 
+    @SerializedName(value ="pointOfOrderAcceptance", alternate = "PointOfOrderAcceptance")
     private AddressLocationInfo pointOfOrderAcceptance;
 
     /**
