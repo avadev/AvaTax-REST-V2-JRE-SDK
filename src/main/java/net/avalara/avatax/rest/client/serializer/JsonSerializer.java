@@ -15,17 +15,19 @@ import java.text.SimpleDateFormat;
 public class JsonSerializer<T> {
     private static ObjectMapper objectMapper = new ObjectMapper().configure(MapperFeature.ACCEPT_CASE_INSENSITIVE_PROPERTIES, true);
 
-    public static String SerializeObject(Object obj) throws Exception {
+    public static String SerializeObject(Object obj) throws JsonProcessingException{
+        DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
+        objectMapper.setDateFormat(df);
        return objectMapper.writeValueAsString(obj);
     }
 
-    public static Object DeserializeObject(String json, TypeReference type) throws Exception {
+    public static Object DeserializeObject(String json, TypeReference type) throws JsonProcessingException {
         DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
         objectMapper.setDateFormat(df);
         return objectMapper.readValue(json, type);
     }
 
-    public static Object DeserializeObject(String json, Class type) throws Exception {
+    public static Object DeserializeObject(String json, Class type) throws JsonProcessingException {
         DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
         objectMapper.setDateFormat(df);
         return objectMapper.readValue(json, type);
