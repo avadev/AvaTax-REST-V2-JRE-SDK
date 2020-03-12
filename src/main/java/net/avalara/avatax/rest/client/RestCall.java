@@ -14,6 +14,7 @@ import org.apache.http.impl.client.HttpClientBuilder;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.impl.conn.DefaultProxyRoutePlanner;
 import org.apache.http.util.EntityUtils;
+import org.apache.http.client.config.RequestConfig;
 
 import java.util.concurrent.Callable;
 
@@ -84,6 +85,7 @@ public class RestCall<T> implements Callable<T> {
 
     @Override
     public T call() throws Exception {
+
         CloseableHttpResponse response = this.client.execute(this.request);
         T obj = null;
 
@@ -110,6 +112,10 @@ public class RestCall<T> implements Callable<T> {
     }
 
     private void buildRequest(HttpRequestBase baseRequest) {
+
+        int timeOut = 1200000;
+        RequestConfig requestConfig = RequestConfig.custom().setSocketTimeout(timeOut).setConnectTimeout(timeOut).setConnectionRequestTimeout(timeOut).build();
+        baseRequest.setConfig(requestConfig);
         String clientId = String.format("%s; %s; %s; %s; %s", appName, appVersion, "JavaRestClient", "20.1.0", machineName);
         baseRequest.setHeader(AvaTaxConstants.XClientHeader, clientId);
     }
