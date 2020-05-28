@@ -764,6 +764,58 @@ public class NexusModel {
         this.isSellerImporterOfRecord = value;
     }
 
+    private String taxName;
+
+    /**
+     * Getter for taxName
+     *
+     * A description of corresponding tax type applied to the nexus.
+    *  
+    * When a custom nexus is created, it'll have to be matched to a system nexus to be validated successfully. The matched system nexus has a
+    * field to describe the tax type applied to it, that field will be copied over to the nexus that is being created.
+    *  
+    * This field is defined by Avalara. Its main purpose is to give a simple description of the tax type associated with the nexus so
+    * users have a better understanding of the nexus when it is displayed.
+     */
+    public String getTaxName() {
+        return this.taxName;
+    }
+
+    /**
+     * Setter for taxName
+     *
+     * A description of corresponding tax type applied to the nexus.
+    *  
+    * When a custom nexus is created, it'll have to be matched to a system nexus to be validated successfully. The matched system nexus has a
+    * field to describe the tax type applied to it, that field will be copied over to the nexus that is being created.
+    *  
+    * This field is defined by Avalara. Its main purpose is to give a simple description of the tax type associated with the nexus so
+    * users have a better understanding of the nexus when it is displayed.
+     */
+    public void setTaxName(String value) {
+        this.taxName = value;
+    }
+
+    private ArrayList<NexusParameterDetailModel> parameters;
+
+    /**
+     * Getter for parameters
+     *
+     * List of nexus parameters.
+     */
+    public ArrayList<NexusParameterDetailModel> getParameters() {
+        return this.parameters;
+    }
+
+    /**
+     * Setter for parameters
+     *
+     * List of nexus parameters.
+     */
+    public void setParameters(ArrayList<NexusParameterDetailModel> value) {
+        this.parameters = value;
+    }
+
     /**
      * Returns a JSON string representation of NexusModel
      */

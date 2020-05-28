@@ -123,10 +123,12 @@ public class AvaTaxClient {
      * an account has been activated by reading and accepting Avalara's terms and conditions.  To activate your account
      * please log onto the AvaTax website or call the `ActivateAccount` API.
      *             
+     * You can only reset license with 'Default' license key name. 
      * Resetting a license key cannot be undone.  Any previous license keys will immediately cease to work when a new key is created.
      *             
      * When you call this API, all account administrators for this account will receive an email with the newly updated license key.
      * The email will specify which user reset the license key and it will contain the new key to use to update your connectors.
+     * Note: The reset license key functionality will only be available for existing active license key i.e. when you reset license key for the account, the Default license key will be reset.The reset license key functionality is not available for newly created license keys i.e. license keys other than Default
      * 
      * ### Security Policies
      * 
@@ -153,10 +155,12 @@ public class AvaTaxClient {
      * an account has been activated by reading and accepting Avalara's terms and conditions.  To activate your account
      * please log onto the AvaTax website or call the `ActivateAccount` API.
      *             
+     * You can only reset license with 'Default' license key name. 
      * Resetting a license key cannot be undone.  Any previous license keys will immediately cease to work when a new key is created.
      *             
      * When you call this API, all account administrators for this account will receive an email with the newly updated license key.
      * The email will specify which user reset the license key and it will contain the new key to use to update your connectors.
+     * Note: The reset license key functionality will only be available for existing active license key i.e. when you reset license key for the account, the Default license key will be reset.The reset license key functionality is not available for newly created license keys i.e. license keys other than Default
      * 
      * ### Security Policies
      * 
@@ -233,7 +237,7 @@ public class AvaTaxClient {
      * 
      * Retrieve audit trace history for an account.
      *             
-     * Your audit trace history contains a record of all API calls made against the AvaTax REST API.  You can use this API to investigate
+     * Your audit trace history contains a record of all API calls made against the AvaTax REST API that returned an error.   You can use this API to investigate
      * problems and see exactly what information was sent back and forth between your code and AvaTax.
      *             
      * When specifying a start and end datetime, please include a valid timezone indicator, such as the "Z" present in the examples for the start and end query parameters.
@@ -272,7 +276,7 @@ public class AvaTaxClient {
      * 
      * Retrieve audit trace history for an account.
      *             
-     * Your audit trace history contains a record of all API calls made against the AvaTax REST API.  You can use this API to investigate
+     * Your audit trace history contains a record of all API calls made against the AvaTax REST API that returned an error.   You can use this API to investigate
      * problems and see exactly what information was sent back and forth between your code and AvaTax.
      *             
      * When specifying a start and end datetime, please include a valid timezone indicator, such as the "Z" present in the examples for the start and end query parameters.
@@ -304,6 +308,110 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         return this.threadPool.submit((RestCall<FetchResult<AuditModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<AuditModel>>(){}));
+    }
+
+    /**
+     * Create license key for this account
+     * 
+     * Creates a new license key for this account.
+     *             
+     * To create a license key for your account, you must specify the ID of the account and license key name.
+     *             
+     * This API is only available to account administrators for the account in question, and may only be called after
+     * an account has been activated by reading and accepting Avalara's terms and conditions.  To activate your account
+     * please log onto the AvaTax website or call the `ActivateAccount` API.
+     *             
+     * You will reference this key using license key name. The existing license key will be using 'Default' as license key name.
+     * Hence make sure that the license key name is unique per account considering the existing license key name 'Default'
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
+     * 
+     * @param id The ID of the account you wish to update.
+     * @param model 
+     * @return LicenseKeyModel
+     */
+    public LicenseKeyModel createLicenseKey(Integer id, AccountLicenseKeyModel model) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{id}/licensekey");
+        path.applyField("id", id);
+        return ((RestCall<LicenseKeyModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<LicenseKeyModel>(){})).call();
+    }
+
+    /**
+     * Create license key for this account
+     * 
+     * Creates a new license key for this account.
+     *             
+     * To create a license key for your account, you must specify the ID of the account and license key name.
+     *             
+     * This API is only available to account administrators for the account in question, and may only be called after
+     * an account has been activated by reading and accepting Avalara's terms and conditions.  To activate your account
+     * please log onto the AvaTax website or call the `ActivateAccount` API.
+     *             
+     * You will reference this key using license key name. The existing license key will be using 'Default' as license key name.
+     * Hence make sure that the license key name is unique per account considering the existing license key name 'Default'
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
+     * 
+     * @param id The ID of the account you wish to update.
+     * @param model 
+     * @return LicenseKeyModel
+     */
+    public Future<LicenseKeyModel> createLicenseKeyAsync(Integer id, AccountLicenseKeyModel model) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{id}/licensekey");
+        path.applyField("id", id);
+        return this.threadPool.submit((RestCall<LicenseKeyModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<LicenseKeyModel>(){}));
+    }
+
+    /**
+     * Delete license key for this account by license key name
+     * 
+     * Deletes the license key for this account using license key name.
+     *             
+     * To delete a license key for your account, you must specify the accountID of the account and license key name.
+     *             
+     * This API is only available to account administrators for the account in question.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
+     * 
+     * @param id The ID of the account you wish to update.
+     * @param licensekeyname The license key name you wish to update.
+     * @return ArrayList<ErrorDetail>
+     */
+    public ArrayList<ErrorDetail> deleteLicenseKey(Integer id, String licensekeyname) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{id}/licensekey/{licensekeyname}");
+        path.applyField("id", id);
+        path.applyField("licensekeyname", licensekeyname);
+        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){})).call();
+    }
+
+    /**
+     * Delete license key for this account by license key name
+     * 
+     * Deletes the license key for this account using license key name.
+     *             
+     * To delete a license key for your account, you must specify the accountID of the account and license key name.
+     *             
+     * This API is only available to account administrators for the account in question.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
+     * 
+     * @param id The ID of the account you wish to update.
+     * @param licensekeyname The license key name you wish to update.
+     * @return ArrayList<ErrorDetail>
+     */
+    public Future<ArrayList<ErrorDetail>> deleteLicenseKeyAsync(Integer id, String licensekeyname) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{id}/licensekey/{licensekeyname}");
+        path.applyField("id", id);
+        path.applyField("licensekeyname", licensekeyname);
+        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){}));
     }
 
     /**
@@ -410,6 +518,82 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{id}/configuration");
         path.applyField("id", id);
         return this.threadPool.submit((RestCall<ArrayList<AccountConfigurationModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<ArrayList<AccountConfigurationModel>>(){}));
+    }
+
+    /**
+     * Retrieve license key by license key name
+     * 
+     * 
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * 
+     * @param id The ID of the account to retrieve
+     * @param licensekeyname The ID of the account to retrieve
+     * @return AccountLicenseKeyModel
+     */
+    public AccountLicenseKeyModel getLicenseKey(Integer id, String licensekeyname) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{id}/licensekey/{licensekeyname}");
+        path.applyField("id", id);
+        path.applyField("licensekeyname", licensekeyname);
+        return ((RestCall<AccountLicenseKeyModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<AccountLicenseKeyModel>(){})).call();
+    }
+
+    /**
+     * Retrieve license key by license key name
+     * 
+     * 
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * 
+     * @param id The ID of the account to retrieve
+     * @param licensekeyname The ID of the account to retrieve
+     * @return AccountLicenseKeyModel
+     */
+    public Future<AccountLicenseKeyModel> getLicenseKeyAsync(Integer id, String licensekeyname) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{id}/licensekey/{licensekeyname}");
+        path.applyField("id", id);
+        path.applyField("licensekeyname", licensekeyname);
+        return this.threadPool.submit((RestCall<AccountLicenseKeyModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<AccountLicenseKeyModel>(){}));
+    }
+
+    /**
+     * Retrieve all license keys for this account
+     * 
+     * Gets list of all the license keys used by the account.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * 
+     * @param id The ID of the account to retrieve
+     * @return ArrayList<AccountLicenseKeyModel>
+     */
+    public ArrayList<AccountLicenseKeyModel> getLicenseKeys(Integer id) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{id}/licensekeys");
+        path.applyField("id", id);
+        return ((RestCall<ArrayList<AccountLicenseKeyModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<ArrayList<AccountLicenseKeyModel>>(){})).call();
+    }
+
+    /**
+     * Retrieve all license keys for this account
+     * 
+     * Gets list of all the license keys used by the account.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * 
+     * @param id The ID of the account to retrieve
+     * @return ArrayList<AccountLicenseKeyModel>
+     */
+    public Future<ArrayList<AccountLicenseKeyModel>> getLicenseKeysAsync(Integer id) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{id}/licensekeys");
+        path.applyField("id", id);
+        return this.threadPool.submit((RestCall<ArrayList<AccountLicenseKeyModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<ArrayList<AccountLicenseKeyModel>>(){}));
     }
 
     /**
@@ -676,6 +860,150 @@ public class AvaTaxClient {
     public Future<AddressResolutionModel> resolveAddressPostAsync(AddressValidationInfo model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/addresses/resolve");
         return this.threadPool.submit((RestCall<AddressResolutionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<AddressResolutionModel>(){}));
+    }
+
+    /**
+     * Create a lookup file for a company
+     * 
+     * @param accountId The ID of the account for the company
+     * @param companyId The ID of the company for which the lookup file is to be created
+     * @param model The lookup file you wish to create
+     * @return AdvancedRuleLookupFileModel
+     */
+    public AdvancedRuleLookupFileModel createCompanyLookupFile(Integer accountId, Integer companyId, AdvancedRuleLookupFileModel model) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/advancedrules/accounts/{accountId}/companies/{companyId}/lookupFiles");
+        path.applyField("accountId", accountId);
+        path.applyField("companyId", companyId);
+        return ((RestCall<AdvancedRuleLookupFileModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<AdvancedRuleLookupFileModel>(){})).call();
+    }
+
+    /**
+     * Create a lookup file for a company
+     * 
+     * @param accountId The ID of the account for the company
+     * @param companyId The ID of the company for which the lookup file is to be created
+     * @param model The lookup file you wish to create
+     * @return AdvancedRuleLookupFileModel
+     */
+    public Future<AdvancedRuleLookupFileModel> createCompanyLookupFileAsync(Integer accountId, Integer companyId, AdvancedRuleLookupFileModel model) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/advancedrules/accounts/{accountId}/companies/{companyId}/lookupFiles");
+        path.applyField("accountId", accountId);
+        path.applyField("companyId", companyId);
+        return this.threadPool.submit((RestCall<AdvancedRuleLookupFileModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<AdvancedRuleLookupFileModel>(){}));
+    }
+
+    /**
+     * Delete a lookup file
+     * 
+     * @param accountId The ID of the account for the company the lookup file is for
+     * @param id The unique ID/GUID for the company lookup file to be deleted
+     * @return ArrayList<ErrorDetail>
+     */
+    public ArrayList<ErrorDetail> deleteLookupFile(Integer accountId, String id) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/advancedrules/accounts/{accountId}/lookupFiles/{id}");
+        path.applyField("accountId", accountId);
+        path.applyField("id", id);
+        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){})).call();
+    }
+
+    /**
+     * Delete a lookup file
+     * 
+     * @param accountId The ID of the account for the company the lookup file is for
+     * @param id The unique ID/GUID for the company lookup file to be deleted
+     * @return ArrayList<ErrorDetail>
+     */
+    public Future<ArrayList<ErrorDetail>> deleteLookupFileAsync(Integer accountId, String id) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/advancedrules/accounts/{accountId}/lookupFiles/{id}");
+        path.applyField("accountId", accountId);
+        path.applyField("id", id);
+        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){}));
+    }
+
+    /**
+     * Get the lookup files for a company
+     * 
+     * @param accountId The account ID for the company
+     * @param companyId The ID of the company for which to retrieve lookup files
+     * @return FetchResult<AdvancedRuleLookupFileModel>
+     */
+    public FetchResult<AdvancedRuleLookupFileModel> getCompanyLookupFiles(Integer accountId, Integer companyId) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/advancedrules/accounts/{accountId}/companies/{companyId}/lookupFiles");
+        path.applyField("accountId", accountId);
+        path.applyField("companyId", companyId);
+        return ((RestCall<FetchResult<AdvancedRuleLookupFileModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<AdvancedRuleLookupFileModel>>(){})).call();
+    }
+
+    /**
+     * Get the lookup files for a company
+     * 
+     * @param accountId The account ID for the company
+     * @param companyId The ID of the company for which to retrieve lookup files
+     * @return FetchResult<AdvancedRuleLookupFileModel>
+     */
+    public Future<FetchResult<AdvancedRuleLookupFileModel>> getCompanyLookupFilesAsync(Integer accountId, Integer companyId) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/advancedrules/accounts/{accountId}/companies/{companyId}/lookupFiles");
+        path.applyField("accountId", accountId);
+        path.applyField("companyId", companyId);
+        return this.threadPool.submit((RestCall<FetchResult<AdvancedRuleLookupFileModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<AdvancedRuleLookupFileModel>>(){}));
+    }
+
+    /**
+     * Get a lookup file for an accountId and companyLookupFileId
+     * 
+     * @param accountId The ID of the account for the lookup file
+     * @param id The unique ID/GUID of the company lookup file to return
+     * @return AdvancedRuleLookupFileModel
+     */
+    public AdvancedRuleLookupFileModel getLookupFile(Integer accountId, String id) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/advancedrules/accounts/{accountId}/lookupFiles/{id}");
+        path.applyField("accountId", accountId);
+        path.applyField("id", id);
+        return ((RestCall<AdvancedRuleLookupFileModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<AdvancedRuleLookupFileModel>(){})).call();
+    }
+
+    /**
+     * Get a lookup file for an accountId and companyLookupFileId
+     * 
+     * @param accountId The ID of the account for the lookup file
+     * @param id The unique ID/GUID of the company lookup file to return
+     * @return AdvancedRuleLookupFileModel
+     */
+    public Future<AdvancedRuleLookupFileModel> getLookupFileAsync(Integer accountId, String id) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/advancedrules/accounts/{accountId}/lookupFiles/{id}");
+        path.applyField("accountId", accountId);
+        path.applyField("id", id);
+        return this.threadPool.submit((RestCall<AdvancedRuleLookupFileModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<AdvancedRuleLookupFileModel>(){}));
+    }
+
+    /**
+     * Update a lookup file
+     * 
+     * @param accountId The ID of the account for the company the lookup file is for
+     * @param id The unique ID/GUID of the company lookup file to be updated
+     * @param model The new values to update the lookup file
+     * @return AdvancedRuleLookupFileModel
+     */
+    public AdvancedRuleLookupFileModel updateLookupFile(Integer accountId, String id, AdvancedRuleLookupFileModel model) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/advancedrules/accounts/{accountId}/lookupFiles/{id}");
+        path.applyField("accountId", accountId);
+        path.applyField("id", id);
+        return ((RestCall<AdvancedRuleLookupFileModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<AdvancedRuleLookupFileModel>(){})).call();
+    }
+
+    /**
+     * Update a lookup file
+     * 
+     * @param accountId The ID of the account for the company the lookup file is for
+     * @param id The unique ID/GUID of the company lookup file to be updated
+     * @param model The new values to update the lookup file
+     * @return AdvancedRuleLookupFileModel
+     */
+    public Future<AdvancedRuleLookupFileModel> updateLookupFileAsync(Integer accountId, String id, AdvancedRuleLookupFileModel model) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/advancedrules/accounts/{accountId}/lookupFiles/{id}");
+        path.applyField("accountId", accountId);
+        path.applyField("id", id);
+        return this.threadPool.submit((RestCall<AdvancedRuleLookupFileModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<AdvancedRuleLookupFileModel>(){}));
     }
 
     /**
@@ -3047,6 +3375,7 @@ public class AvaTaxClient {
      *  * TaxCodes
      *  * TaxRules
      *  * UPC
+     *  * Parameters
      * 
      * ### Security Policies
      * 
@@ -3078,6 +3407,7 @@ public class AvaTaxClient {
      *  * TaxCodes
      *  * TaxRules
      *  * UPC
+     *  * Parameters
      * 
      * ### Security Policies
      * 
@@ -3311,13 +3641,14 @@ public class AvaTaxClient {
      * * TaxCodes
      * * TaxRules
      * * UPC
+     * * Parameters
      * 
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
      * @param include A comma separated list of objects to fetch underneath this company. Any object with a URL path underneath this company can be fetched by specifying its name.
-     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* IsFein, contacts, items, locations, nexus, settings, taxCodes, taxRules, upcs, nonReportingChildCompanies, exemptCerts
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* IsFein, contacts, items, locations, nexus, settings, taxCodes, taxRules, upcs, nonReportingChildCompanies, exemptCerts, parameters
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
@@ -3352,13 +3683,14 @@ public class AvaTaxClient {
      * * TaxCodes
      * * TaxRules
      * * UPC
+     * * Parameters
      * 
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
      * @param include A comma separated list of objects to fetch underneath this company. Any object with a URL path underneath this company can be fetched by specifying its name.
-     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* IsFein, contacts, items, locations, nexus, settings, taxCodes, taxRules, upcs, nonReportingChildCompanies, exemptCerts
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* IsFein, contacts, items, locations, nexus, settings, taxCodes, taxRules, upcs, nonReportingChildCompanies, exemptCerts, parameters
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
@@ -4889,7 +5221,7 @@ public class AvaTaxClient {
      * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
      * 
      * @param companyId The id of the company you wish to retrieve the datasources.
-     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* isEnabled, isSynced, isAuthorized
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* isEnabled, isSynced, isAuthorized, name, externalState
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
@@ -4916,7 +5248,7 @@ public class AvaTaxClient {
      * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
      * 
      * @param companyId The id of the company you wish to retrieve the datasources.
-     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* isEnabled, isSynced, isAuthorized
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* isEnabled, isSynced, isAuthorized, name, externalState
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
@@ -4945,7 +5277,7 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
      * 
-     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* isEnabled, isSynced, isAuthorized
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* isEnabled, isSynced, isAuthorized, name, externalState
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
@@ -4973,7 +5305,7 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
      * 
-     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* isEnabled, isSynced, isAuthorized
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* isEnabled, isSynced, isAuthorized, name, externalState
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
@@ -6086,7 +6418,7 @@ public class AvaTaxClient {
      * Returns the full list of all Avalara-supported nexus for all countries and regions.
      *             
      * 
-     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* streamlinedSalesTax, isSSTActive, taxAuthorityId
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* streamlinedSalesTax, isSSTActive, taxAuthorityId, taxName, parameters
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
@@ -6107,7 +6439,7 @@ public class AvaTaxClient {
      * Returns the full list of all Avalara-supported nexus for all countries and regions.
      *             
      * 
-     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* streamlinedSalesTax, isSSTActive, taxAuthorityId
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* streamlinedSalesTax, isSSTActive, taxAuthorityId, taxName, parameters
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
@@ -6137,7 +6469,7 @@ public class AvaTaxClient {
      * @param region Name or ISO 3166 code identifying the region portion of the address.      This field supports many different region identifiers:   * Two and three character ISO 3166 region codes   * Fully spelled out names of the region in ISO supported languages   * Common alternative spellings for many regions      For a full list of all supported codes and names, please see the Definitions API `ListRegions`.
      * @param postalCode The postal code or zip code portion of this address.
      * @param country Name or ISO 3166 code identifying the country portion of this address.      This field supports many different country identifiers:   * Two character ISO 3166 codes   * Three character ISO 3166 codes   * Fully spelled out names of the country in ISO supported languages   * Common alternative spellings for many countries      For a full list of all supported codes and names, please see the Definitions API `ListCountries`.
-     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* streamlinedSalesTax, isSSTActive, taxAuthorityId
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* streamlinedSalesTax, isSSTActive, taxAuthorityId, taxName, parameters
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
@@ -6174,7 +6506,7 @@ public class AvaTaxClient {
      * @param region Name or ISO 3166 code identifying the region portion of the address.      This field supports many different region identifiers:   * Two and three character ISO 3166 region codes   * Fully spelled out names of the region in ISO supported languages   * Common alternative spellings for many regions      For a full list of all supported codes and names, please see the Definitions API `ListRegions`.
      * @param postalCode The postal code or zip code portion of this address.
      * @param country Name or ISO 3166 code identifying the country portion of this address.      This field supports many different country identifiers:   * Two character ISO 3166 codes   * Three character ISO 3166 codes   * Fully spelled out names of the country in ISO supported languages   * Common alternative spellings for many countries      For a full list of all supported codes and names, please see the Definitions API `ListCountries`.
-     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* streamlinedSalesTax, isSSTActive, taxAuthorityId
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* streamlinedSalesTax, isSSTActive, taxAuthorityId, taxName, parameters
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
@@ -6203,7 +6535,7 @@ public class AvaTaxClient {
      *             
      * 
      * @param country The country in which you want to fetch the system nexus
-     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* streamlinedSalesTax, isSSTActive, taxAuthorityId
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* streamlinedSalesTax, isSSTActive, taxAuthorityId, taxName, parameters
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
@@ -6226,7 +6558,7 @@ public class AvaTaxClient {
      *             
      * 
      * @param country The country in which you want to fetch the system nexus
-     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* streamlinedSalesTax, isSSTActive, taxAuthorityId
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* streamlinedSalesTax, isSSTActive, taxAuthorityId, taxName, parameters
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
@@ -6250,7 +6582,7 @@ public class AvaTaxClient {
      * 
      * @param country The two-character ISO-3166 code for the country.
      * @param region The two or three character region code for the region.
-     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* streamlinedSalesTax, isSSTActive, taxAuthorityId
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* streamlinedSalesTax, isSSTActive, taxAuthorityId, taxName, parameters
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
@@ -6275,7 +6607,7 @@ public class AvaTaxClient {
      * 
      * @param country The two-character ISO-3166 code for the country.
      * @param region The two or three character region code for the region.
-     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* streamlinedSalesTax, isSSTActive, taxAuthorityId
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* streamlinedSalesTax, isSSTActive, taxAuthorityId, taxName, parameters
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
@@ -6844,6 +7176,48 @@ public class AvaTaxClient {
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
         return this.threadPool.submit((RestCall<FetchResult<ParameterModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ParameterModel>>(){}));
+    }
+
+    /**
+     * Retrieve the full list of Avalara-supported usage of extra parameters for creating transactions.
+     * 
+     * Returns the full list of Avalara-supported usage of extra parameters for the 'Create Transaction' API call.
+     * This list of parameters is available for use when configuring your transaction.
+     * 
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* values
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @return FetchResult<ParameterUsageModel>
+     */
+    public FetchResult<ParameterUsageModel> listParametersUsage(String filter, Integer top, Integer skip, String orderBy) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/parametersusage");
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
+        return ((RestCall<FetchResult<ParameterUsageModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ParameterUsageModel>>(){})).call();
+    }
+
+    /**
+     * Retrieve the full list of Avalara-supported usage of extra parameters for creating transactions.
+     * 
+     * Returns the full list of Avalara-supported usage of extra parameters for the 'Create Transaction' API call.
+     * This list of parameters is available for use when configuring your transaction.
+     * 
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* values
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @return FetchResult<ParameterUsageModel>
+     */
+    public Future<FetchResult<ParameterUsageModel>> listParametersUsageAsync(String filter, Integer top, Integer skip, String orderBy) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/parametersusage");
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
+        return this.threadPool.submit((RestCall<FetchResult<ParameterUsageModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ParameterUsageModel>>(){}));
     }
 
     /**
@@ -8020,6 +8394,50 @@ public class AvaTaxClient {
         path.applyField("companyId", companyId);
         path.applyField("id", id);
         return this.threadPool.submit((RestCall<CompanyDistanceThresholdModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<CompanyDistanceThresholdModel>(){}));
+    }
+
+    /**
+     * Delete a company return setting
+     * 
+     * This API is available by invitation only and only available for users with Compliance access
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * 
+     * @param companyId The unique ID of the company
+     * @param filingCalendarId The unique ID of the filing calendar that will remove setting
+     * @param companyReturnSettingId The unique ID of the company return setting that will be deleted from the filing calendar
+     * @return ArrayList<CompanyReturnSettingModel>
+     */
+    public ArrayList<CompanyReturnSettingModel> deleteCompanyReturnSettings(Integer companyId, Integer filingCalendarId, Long companyReturnSettingId) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingcalendars/{filingCalendarId}/setting/{companyReturnSettingId}");
+        path.applyField("companyId", companyId);
+        path.applyField("filingCalendarId", filingCalendarId);
+        path.applyField("companyReturnSettingId", companyReturnSettingId);
+        return ((RestCall<ArrayList<CompanyReturnSettingModel>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<CompanyReturnSettingModel>>(){})).call();
+    }
+
+    /**
+     * Delete a company return setting
+     * 
+     * This API is available by invitation only and only available for users with Compliance access
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * 
+     * @param companyId The unique ID of the company
+     * @param filingCalendarId The unique ID of the filing calendar that will remove setting
+     * @param companyReturnSettingId The unique ID of the company return setting that will be deleted from the filing calendar
+     * @return ArrayList<CompanyReturnSettingModel>
+     */
+    public Future<ArrayList<CompanyReturnSettingModel>> deleteCompanyReturnSettingsAsync(Integer companyId, Integer filingCalendarId, Long companyReturnSettingId) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingcalendars/{filingCalendarId}/setting/{companyReturnSettingId}");
+        path.applyField("companyId", companyId);
+        path.applyField("filingCalendarId", filingCalendarId);
+        path.applyField("companyReturnSettingId", companyReturnSettingId);
+        return this.threadPool.submit((RestCall<ArrayList<CompanyReturnSettingModel>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<CompanyReturnSettingModel>>(){}));
     }
 
     /**
@@ -10330,6 +10748,7 @@ public class AvaTaxClient {
      * You may specify one or more of the following values in the `$include` parameter to fetch additional nested data, using commas to separate multiple values:
      *             
      * * LocationSettings
+     * * parameters
      * 
      * ### Security Policies
      * 
@@ -10337,7 +10756,7 @@ public class AvaTaxClient {
      * 
      * @param companyId The ID of the company that owns this location
      * @param id The primary key of this location
-     * @param include A comma separated list of additional data to retrieve. You may specify `LocationSettings` to retrieve location settings.
+     * @param include A comma separated list of additional data to retrieve.
      * @return LocationModel
      */
     public LocationModel getLocation(Integer companyId, Integer id, String include) throws Exception {
@@ -10360,6 +10779,7 @@ public class AvaTaxClient {
      * You may specify one or more of the following values in the `$include` parameter to fetch additional nested data, using commas to separate multiple values:
      *             
      * * LocationSettings
+     * * parameters
      * 
      * ### Security Policies
      * 
@@ -10367,7 +10787,7 @@ public class AvaTaxClient {
      * 
      * @param companyId The ID of the company that owns this location
      * @param id The primary key of this location
-     * @param include A comma separated list of additional data to retrieve. You may specify `LocationSettings` to retrieve location settings.
+     * @param include A comma separated list of additional data to retrieve.
      * @return LocationModel
      */
     public Future<LocationModel> getLocationAsync(Integer companyId, Integer id, String include) {
@@ -10392,14 +10812,15 @@ public class AvaTaxClient {
      * You may specify one or more of the following values in the `$include` parameter to fetch additional nested data, using commas to separate multiple values:
      *             
      * * LocationSettings
+     * * parameters
      * 
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, FirmAdmin, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
      * @param companyId The ID of the company that owns these locations
-     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* settings
-     * @param include A comma separated list of additional data to retrieve. You may specify `LocationSettings` to retrieve location settings.
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* settings, parameters
+     * @param include A comma separated list of additional data to retrieve.
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
@@ -10430,14 +10851,15 @@ public class AvaTaxClient {
      * You may specify one or more of the following values in the `$include` parameter to fetch additional nested data, using commas to separate multiple values:
      *             
      * * LocationSettings
+     * * parameters
      * 
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, FirmAdmin, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
      * @param companyId The ID of the company that owns these locations
-     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* settings
-     * @param include A comma separated list of additional data to retrieve. You may specify `LocationSettings` to retrieve location settings.
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* settings, parameters
+     * @param include A comma separated list of additional data to retrieve.
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
@@ -10469,12 +10891,13 @@ public class AvaTaxClient {
      * You may specify one or more of the following values in the `$include` parameter to fetch additional nested data, using commas to separate multiple values:
      *             
      * * LocationSettings
+     * * parameters
      * 
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, FirmAdmin, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
-     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* settings
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* settings, parameters
      * @param include A comma separated list of additional data to retrieve. You may specify `LocationSettings` to retrieve location settings.
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
@@ -10506,12 +10929,13 @@ public class AvaTaxClient {
      * You may specify one or more of the following values in the `$include` parameter to fetch additional nested data, using commas to separate multiple values:
      *             
      * * LocationSettings
+     * * parameters
      * 
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, FirmAdmin, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
-     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* settings
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* settings, parameters
      * @param include A comma separated list of additional data to retrieve. You may specify `LocationSettings` to retrieve location settings.
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
@@ -10631,6 +11055,12 @@ public class AvaTaxClient {
      * Both the revisions will be available for retrieval based on their code and ID numbers. Only transactions in Committed status can be reported on a tax filing by Avalara's Managed Returns Service.
      *             
      * Transactions that have been previously reported to a tax authority by Avalara Managed Returns are considered locked and are no longer available for adjustments.
+     *             
+     * NOTE: If your companyCode or transactionCode contains any of these characters /, +, ? or a space please use the following encoding before making a request:
+     * * Replace '/' with '\_-ava2f-\_'  For example: document/Code becomes document_-ava2f-_Code
+     * * Replace '+' with '\_-ava2b-\_'  For example: document+Code becomes document_-ava2b-_Code
+     * * Replace '?' with '\_-ava3f-\_'  For example: document?Code becomes document_-ava3f-_Code
+     * * Replace ' ' with '%20'  For example: document Code becomes document%20Code
      * 
      * ### Security Policies
      * 
@@ -10664,6 +11094,12 @@ public class AvaTaxClient {
      * Both the revisions will be available for retrieval based on their code and ID numbers. Only transactions in Committed status can be reported on a tax filing by Avalara's Managed Returns Service.
      *             
      * Transactions that have been previously reported to a tax authority by Avalara Managed Returns are considered locked and are no longer available for adjustments.
+     *             
+     * NOTE: If your companyCode or transactionCode contains any of these characters /, +, ? or a space please use the following encoding before making a request:
+     * * Replace '/' with '\_-ava2f-\_'  For example: document/Code becomes document_-ava2f-_Code
+     * * Replace '+' with '\_-ava2b-\_'  For example: document+Code becomes document_-ava2b-_Code
+     * * Replace '?' with '\_-ava3f-\_'  For example: document?Code becomes document_-ava3f-_Code
+     * * Replace ' ' with '%20'  For example: document Code becomes document%20Code
      * 
      * ### Security Policies
      * 
@@ -10701,6 +11137,12 @@ public class AvaTaxClient {
      *             
      * A transaction represents a unique potentially taxable action that your company has recorded, and transactions include actions like
      * sales, purchases, inventory transfer, and returns (also called refunds).
+     *             
+     * NOTE: If your companyCode or transactionCode contains any of these characters /, +, ? or a space please use the following encoding before making a request:
+     * * Replace '/' with '\_-ava2f-\_'  For example: document/Code becomes document_-ava2f-_Code
+     * * Replace '+' with '\_-ava2b-\_'  For example: document+Code becomes document_-ava2b-_Code
+     * * Replace '?' with '\_-ava3f-\_'  For example: document?Code becomes document_-ava3f-_Code
+     * * Replace ' ' with '%20'  For example: document Code becomes document%20Code
      * 
      * ### Security Policies
      * 
@@ -10735,6 +11177,12 @@ public class AvaTaxClient {
      *             
      * A transaction represents a unique potentially taxable action that your company has recorded, and transactions include actions like
      * sales, purchases, inventory transfer, and returns (also called refunds).
+     *             
+     * NOTE: If your companyCode or transactionCode contains any of these characters /, +, ? or a space please use the following encoding before making a request:
+     * * Replace '/' with '\_-ava2f-\_'  For example: document/Code becomes document_-ava2f-_Code
+     * * Replace '+' with '\_-ava2b-\_'  For example: document+Code becomes document_-ava2b-_Code
+     * * Replace '?' with '\_-ava3f-\_'  For example: document?Code becomes document_-ava3f-_Code
+     * * Replace ' ' with '%20'  For example: document Code becomes document%20Code
      * 
      * ### Security Policies
      * 
@@ -10764,6 +11212,12 @@ public class AvaTaxClient {
      *             
      * Any changes made to a committed transaction will generate a transaction history.
      * 
+     * NOTE: If your companyCode or transactionCode contains any of these characters /, +, ? or a space please use the following encoding before making a request:
+     * * Replace '/' with '\_-ava2f-\_'  For example: document/Code becomes document_-ava2f-_Code
+     * * Replace '+' with '\_-ava2b-\_'  For example: document+Code becomes document_-ava2b-_Code
+     * * Replace '?' with '\_-ava3f-\_'  For example: document?Code becomes document_-ava3f-_Code
+     * * Replace ' ' with '%20'  For example: document Code becomes document%20Code
+     * 
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, ProStoresOperator, SSTAdmin, TechnicalSupportAdmin.
@@ -10788,6 +11242,12 @@ public class AvaTaxClient {
      * sales, purchases, inventory transfer, and returns (also called refunds).
      *             
      * Any changes made to a committed transaction will generate a transaction history.
+     * 
+     * NOTE: If your companyCode or transactionCode contains any of these characters /, +, ? or a space please use the following encoding before making a request:
+     * * Replace '/' with '\_-ava2f-\_'  For example: document/Code becomes document_-ava2f-_Code
+     * * Replace '+' with '\_-ava2b-\_'  For example: document+Code becomes document_-ava2b-_Code
+     * * Replace '?' with '\_-ava3f-\_'  For example: document?Code becomes document_-ava3f-_Code
+     * * Replace ' ' with '%20'  For example: document Code becomes document%20Code
      * 
      * ### Security Policies
      * 
@@ -10837,6 +11297,12 @@ public class AvaTaxClient {
      * * ForceTimeout - Simulates a timeout.  This adds a 30 second delay and error to your API call.  This can be used to test your code to ensure it can respond correctly in the case of a dropped connection.
      *             
      * If you omit the `$include` parameter, the API will assume you want `Summary,Addresses`.
+     *             
+     * NOTE: If your companyCode or transactionCode contains any of these characters /, +, ? or a space please use the following encoding before making a request:
+     * * Replace '/' with '\_-ava2f-\_'  For example: document/Code becomes document_-ava2f-_Code
+     * * Replace '+' with '\_-ava2b-\_'  For example: document+Code becomes document_-ava2b-_Code
+     * * Replace '?' with '\_-ava3f-\_'  For example: document?Code becomes document_-ava3f-_Code
+     * * Replace ' ' with '%20'  For example: document Code becomes document%20Code
      * 
      * ### Security Policies
      * 
@@ -10888,6 +11354,12 @@ public class AvaTaxClient {
      * * ForceTimeout - Simulates a timeout.  This adds a 30 second delay and error to your API call.  This can be used to test your code to ensure it can respond correctly in the case of a dropped connection.
      *             
      * If you omit the `$include` parameter, the API will assume you want `Summary,Addresses`.
+     *             
+     * NOTE: If your companyCode or transactionCode contains any of these characters /, +, ? or a space please use the following encoding before making a request:
+     * * Replace '/' with '\_-ava2f-\_'  For example: document/Code becomes document_-ava2f-_Code
+     * * Replace '+' with '\_-ava2b-\_'  For example: document+Code becomes document_-ava2b-_Code
+     * * Replace '?' with '\_-ava3f-\_'  For example: document?Code becomes document_-ava3f-_Code
+     * * Replace ' ' with '%20'  For example: document Code becomes document%20Code
      * 
      * ### Security Policies
      * 
@@ -10919,6 +11391,12 @@ public class AvaTaxClient {
      * * Addresses
      * * SummaryOnly (omit lines and details - reduces API response size)
      * * LinesOnly (omit details - reduces API response size)
+     *             
+     * NOTE: If your companyCode or transactionCode contains any of these characters /, +, ? or a space please use the following encoding before making a request:
+     * * Replace '/' with '\_-ava2f-\_'  For example: document/Code becomes document_-ava2f-_Code
+     * * Replace '+' with '\_-ava2b-\_'  For example: document+Code becomes document_-ava2b-_Code
+     * * Replace '?' with '\_-ava3f-\_'  For example: document?Code becomes document_-ava3f-_Code
+     * * Replace ' ' with '%20'  For example: document Code becomes document%20Code
      * 
      * ### Security Policies
      * 
@@ -10953,6 +11431,12 @@ public class AvaTaxClient {
      * * Addresses
      * * SummaryOnly (omit lines and details - reduces API response size)
      * * LinesOnly (omit details - reduces API response size)
+     *             
+     * NOTE: If your companyCode or transactionCode contains any of these characters /, +, ? or a space please use the following encoding before making a request:
+     * * Replace '/' with '\_-ava2f-\_'  For example: document/Code becomes document_-ava2f-_Code
+     * * Replace '+' with '\_-ava2b-\_'  For example: document+Code becomes document_-ava2b-_Code
+     * * Replace '?' with '\_-ava3f-\_'  For example: document?Code becomes document_-ava3f-_Code
+     * * Replace ' ' with '%20'  For example: document Code becomes document%20Code
      * 
      * ### Security Policies
      * 
@@ -10996,6 +11480,12 @@ public class AvaTaxClient {
      * * Addresses
      * * SummaryOnly (omit lines and details - reduces API response size)
      * * LinesOnly (omit details - reduces API response size)
+     *             
+     * NOTE: If your companyCode or transactionCode contains any of these characters /, +, ? or a space please use the following encoding before making a request:
+     * * Replace '/' with '\_-ava2f-\_'  For example: document/Code becomes document_-ava2f-_Code
+     * * Replace '+' with '\_-ava2b-\_'  For example: document+Code becomes document_-ava2b-_Code
+     * * Replace '?' with '\_-ava3f-\_'  For example: document?Code becomes document_-ava3f-_Code
+     * * Replace ' ' with '%20'  For example: document Code becomes document%20Code
      * 
      * ### Security Policies
      * 
@@ -11037,6 +11527,12 @@ public class AvaTaxClient {
      * * Addresses
      * * SummaryOnly (omit lines and details - reduces API response size)
      * * LinesOnly (omit details - reduces API response size)
+     *             
+     * NOTE: If your companyCode or transactionCode contains any of these characters /, +, ? or a space please use the following encoding before making a request:
+     * * Replace '/' with '\_-ava2f-\_'  For example: document/Code becomes document_-ava2f-_Code
+     * * Replace '+' with '\_-ava2b-\_'  For example: document+Code becomes document_-ava2b-_Code
+     * * Replace '?' with '\_-ava3f-\_'  For example: document?Code becomes document_-ava3f-_Code
+     * * Replace ' ' with '%20'  For example: document Code becomes document%20Code
      * 
      * ### Security Policies
      * 
@@ -11076,6 +11572,12 @@ public class AvaTaxClient {
      * * Addresses
      * * SummaryOnly (omit lines and details - reduces API response size)
      * * LinesOnly (omit details - reduces API response size)
+     *             
+     * NOTE: If your companyCode or transactionCode contains any of these characters /, +, ? or a space please use the following encoding before making a request:
+     * * Replace '/' with '\_-ava2f-\_'  For example: document/Code becomes document_-ava2f-_Code
+     * * Replace '+' with '\_-ava2b-\_'  For example: document+Code becomes document_-ava2b-_Code
+     * * Replace '?' with '\_-ava3f-\_'  For example: document?Code becomes document_-ava3f-_Code
+     * * Replace ' ' with '%20'  For example: document Code becomes document%20Code
      * 
      * ### Security Policies
      * 
@@ -11121,6 +11623,12 @@ public class AvaTaxClient {
      * * Addresses
      * * SummaryOnly (omit lines and details - reduces API response size)
      * * LinesOnly (omit details - reduces API response size)
+     *             
+     * NOTE: If your companyCode or transactionCode contains any of these characters /, +, ? or a space please use the following encoding before making a request:
+     * * Replace '/' with '\_-ava2f-\_'  For example: document/Code becomes document_-ava2f-_Code
+     * * Replace '+' with '\_-ava2b-\_'  For example: document+Code becomes document_-ava2b-_Code
+     * * Replace '?' with '\_-ava3f-\_'  For example: document?Code becomes document_-ava3f-_Code
+     * * Replace ' ' with '%20'  For example: document Code becomes document%20Code
      * 
      * ### Security Policies
      * 
@@ -11184,6 +11692,12 @@ public class AvaTaxClient {
      *             
      * If you omit the `$include` parameter, the API will assume you want `Summary,Addresses`.
      * 
+     * NOTE: If your companyCode or transactionCode contains any of these characters /, +, ? or a space please use the following encoding before making a request:
+     * * Replace '/' with '\_-ava2f-\_'  For example: document/Code becomes document_-ava2f-_Code
+     * * Replace '+' with '\_-ava2b-\_'  For example: document+Code becomes document_-ava2b-_Code
+     * * Replace '?' with '\_-ava3f-\_'  For example: document?Code becomes document_-ava3f-_Code
+     * * Replace ' ' with '%20'  For example: document Code becomes document%20Code
+     * 
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
@@ -11243,6 +11757,12 @@ public class AvaTaxClient {
      *             
      * If you omit the `$include` parameter, the API will assume you want `Summary,Addresses`.
      * 
+     * NOTE: If your companyCode or transactionCode contains any of these characters /, +, ? or a space please use the following encoding before making a request:
+     * * Replace '/' with '\_-ava2f-\_'  For example: document/Code becomes document_-ava2f-_Code
+     * * Replace '+' with '\_-ava2b-\_'  For example: document+Code becomes document_-ava2b-_Code
+     * * Replace '?' with '\_-ava3f-\_'  For example: document?Code becomes document_-ava3f-_Code
+     * * Replace ' ' with '%20'  For example: document Code becomes document%20Code
+     * 
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
@@ -11271,6 +11791,12 @@ public class AvaTaxClient {
      *             
      * A transaction represents a unique potentially taxable action that your company has recorded, and transactions include actions like
      * sales, purchases, inventory transfer, and returns (also called refunds).
+     *             
+     * NOTE: If your companyCode or transactionCode contains any of these characters /, +, ? or a space please use the following encoding before making a request:
+     * * Replace '/' with '\_-ava2f-\_'  For example: document/Code becomes document_-ava2f-_Code
+     * * Replace '+' with '\_-ava2b-\_'  For example: document+Code becomes document_-ava2b-_Code
+     * * Replace '?' with '\_-ava3f-\_'  For example: document?Code becomes document_-ava3f-_Code
+     * * Replace ' ' with '%20'  For example: document Code becomes document%20Code
      * 
      * ### Security Policies
      * 
@@ -11294,6 +11820,12 @@ public class AvaTaxClient {
      *             
      * A transaction represents a unique potentially taxable action that your company has recorded, and transactions include actions like
      * sales, purchases, inventory transfer, and returns (also called refunds).
+     *             
+     * NOTE: If your companyCode or transactionCode contains any of these characters /, +, ? or a space please use the following encoding before making a request:
+     * * Replace '/' with '\_-ava2f-\_'  For example: document/Code becomes document_-ava2f-_Code
+     * * Replace '+' with '\_-ava2b-\_'  For example: document+Code becomes document_-ava2b-_Code
+     * * Replace '?' with '\_-ava3f-\_'  For example: document?Code becomes document_-ava3f-_Code
+     * * Replace ' ' with '%20'  For example: document Code becomes document%20Code
      * 
      * ### Security Policies
      * 
@@ -11320,6 +11852,12 @@ public class AvaTaxClient {
      *             
      * Transactions that have been previously reported to a tax authority by Avalara Managed Returns Service are considered `locked`,
      * and they are no longer available to be voided.
+     *             
+     * NOTE: If your companyCode or transactionCode contains any of these characters /, +, ? or a space please use the following encoding before making a request:
+     * * Replace '/' with '\_-ava2f-\_'  For example: document/Code becomes document_-ava2f-_Code
+     * * Replace '+' with '\_-ava2b-\_'  For example: document+Code becomes document_-ava2b-_Code
+     * * Replace '?' with '\_-ava3f-\_'  For example: document?Code becomes document_-ava3f-_Code
+     * * Replace ' ' with '%20'  For example: document Code becomes document%20Code
      * 
      * ### Security Policies
      * 
@@ -11350,6 +11888,12 @@ public class AvaTaxClient {
      *             
      * Transactions that have been previously reported to a tax authority by Avalara Managed Returns Service are considered `locked`,
      * and they are no longer available to be voided.
+     *             
+     * NOTE: If your companyCode or transactionCode contains any of these characters /, +, ? or a space please use the following encoding before making a request:
+     * * Replace '/' with '\_-ava2f-\_'  For example: document/Code becomes document_-ava2f-_Code
+     * * Replace '+' with '\_-ava2b-\_'  For example: document+Code becomes document_-ava2b-_Code
+     * * Replace '?' with '\_-ava3f-\_'  For example: document?Code becomes document_-ava3f-_Code
+     * * Replace ' ' with '%20'  For example: document Code becomes document%20Code
      * 
      * ### Security Policies
      * 
@@ -11443,6 +11987,66 @@ public class AvaTaxClient {
     }
 
     /**
+     * Add parameters to a nexus.
+     * 
+     * Add parameters to the nexus.
+     * Some tax calculation and reporting are different depending on the properties of the nexus, such as isRemoteSeller. In AvaTax, these tax-affecting properties are called "parameters".
+     *             
+     * A parameter added to an nexus will be used by default in tax calculation but will not show on the transaction line referencing the nexus.
+     *             
+     * A parameter specified on a transaction line will override an nexus parameter if they share the same parameter name.
+     *             
+     * To see available parameters for this item, call `/api/v2/definitions/parameters?$filter=attributeType eq Nexus`
+     *             
+     * Some parameters are only available for use if you have subscribed to specific AvaTax services. To see which parameters you are able to use, add the query parameter "$showSubscribed=true" to the parameter definition call above.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin.
+     * 
+     * @param companyId The ID of the company that owns this nexus parameter.
+     * @param nexusId The nexus id.
+     * @param model The nexus parameters you wish to create.
+     * @return ArrayList<NexusParameterDetailModel>
+     */
+    public ArrayList<NexusParameterDetailModel> createNexusParameters(Integer companyId, Integer nexusId, ArrayList<NexusParameterDetailModel> model) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/nexus/{nexusId}/parameters");
+        path.applyField("companyId", companyId);
+        path.applyField("nexusId", nexusId);
+        return ((RestCall<ArrayList<NexusParameterDetailModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<NexusParameterDetailModel>>(){})).call();
+    }
+
+    /**
+     * Add parameters to a nexus.
+     * 
+     * Add parameters to the nexus.
+     * Some tax calculation and reporting are different depending on the properties of the nexus, such as isRemoteSeller. In AvaTax, these tax-affecting properties are called "parameters".
+     *             
+     * A parameter added to an nexus will be used by default in tax calculation but will not show on the transaction line referencing the nexus.
+     *             
+     * A parameter specified on a transaction line will override an nexus parameter if they share the same parameter name.
+     *             
+     * To see available parameters for this item, call `/api/v2/definitions/parameters?$filter=attributeType eq Nexus`
+     *             
+     * Some parameters are only available for use if you have subscribed to specific AvaTax services. To see which parameters you are able to use, add the query parameter "$showSubscribed=true" to the parameter definition call above.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin.
+     * 
+     * @param companyId The ID of the company that owns this nexus parameter.
+     * @param nexusId The nexus id.
+     * @param model The nexus parameters you wish to create.
+     * @return ArrayList<NexusParameterDetailModel>
+     */
+    public Future<ArrayList<NexusParameterDetailModel>> createNexusParametersAsync(Integer companyId, Integer nexusId, ArrayList<NexusParameterDetailModel> model) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/nexus/{nexusId}/parameters");
+        path.applyField("companyId", companyId);
+        path.applyField("nexusId", nexusId);
+        return this.threadPool.submit((RestCall<ArrayList<NexusParameterDetailModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<NexusParameterDetailModel>>(){}));
+    }
+
+    /**
      * Creates nexus for a list of addresses.
      * 
      * This call is intended to simplify adding all applicable nexus to a company, for an address or addresses. Calling this
@@ -11526,12 +12130,14 @@ public class AvaTaxClient {
      * 
      * @param companyId The ID of the company that owns this nexus.
      * @param id The ID of the nexus you wish to delete.
+     * @param cascadeDelete If true, deletes all the child nexus if they exist along with parent nexus
      * @return ArrayList<ErrorDetail>
      */
-    public ArrayList<ErrorDetail> deleteNexus(Integer companyId, Integer id) throws Exception {
+    public ArrayList<ErrorDetail> deleteNexus(Integer companyId, Integer id, Boolean cascadeDelete) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/nexus/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
+        path.addQuery("cascadeDelete", cascadeDelete);
         return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){})).call();
     }
 
@@ -11553,12 +12159,118 @@ public class AvaTaxClient {
      * 
      * @param companyId The ID of the company that owns this nexus.
      * @param id The ID of the nexus you wish to delete.
+     * @param cascadeDelete If true, deletes all the child nexus if they exist along with parent nexus
      * @return ArrayList<ErrorDetail>
      */
-    public Future<ArrayList<ErrorDetail>> deleteNexusAsync(Integer companyId, Integer id) {
+    public Future<ArrayList<ErrorDetail>> deleteNexusAsync(Integer companyId, Integer id, Boolean cascadeDelete) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/nexus/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
+        path.addQuery("cascadeDelete", cascadeDelete);
+        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){}));
+    }
+
+    /**
+     * Delete a single nexus parameter
+     * 
+     * Delete a single nexus parameter.
+     * Some tax calculation and reporting are different depending on the properties of the nexus, such as isRemoteSeller. In AvaTax, these tax-affecting properties are called "parameters".
+     *             
+     * A parameter added to an nexus will be used by default in tax calculation but will not show on the transaction line referencing the nexus.
+     *             
+     * A parameter specified on a transaction line will override an nexus parameter if they share the same parameter name.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin.
+     * 
+     * @param companyId The company id
+     * @param nexusId The nexus id
+     * @param id The parameter id
+     * @return ArrayList<ErrorDetail>
+     */
+    public ArrayList<ErrorDetail> deleteNexusParameter(Integer companyId, Integer nexusId, Long id) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/nexus/{nexusId}/parameters/{id}");
+        path.applyField("companyId", companyId);
+        path.applyField("nexusId", nexusId);
+        path.applyField("id", id);
+        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){})).call();
+    }
+
+    /**
+     * Delete a single nexus parameter
+     * 
+     * Delete a single nexus parameter.
+     * Some tax calculation and reporting are different depending on the properties of the nexus, such as isRemoteSeller. In AvaTax, these tax-affecting properties are called "parameters".
+     *             
+     * A parameter added to an nexus will be used by default in tax calculation but will not show on the transaction line referencing the nexus.
+     *             
+     * A parameter specified on a transaction line will override an nexus parameter if they share the same parameter name.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin.
+     * 
+     * @param companyId The company id
+     * @param nexusId The nexus id
+     * @param id The parameter id
+     * @return ArrayList<ErrorDetail>
+     */
+    public Future<ArrayList<ErrorDetail>> deleteNexusParameterAsync(Integer companyId, Integer nexusId, Long id) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/nexus/{nexusId}/parameters/{id}");
+        path.applyField("companyId", companyId);
+        path.applyField("nexusId", nexusId);
+        path.applyField("id", id);
+        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){}));
+    }
+
+    /**
+     * Delete all parameters for an nexus
+     * 
+     * Delete all the parameters for a given nexus.
+     * Some tax calculation and reporting are different depending on the properties of the nexus, such as isRemoteSeller. In AvaTax, these tax-affecting properties are called "parameters".
+     *             
+     * A parameter added to an nexus will be used by default in tax calculation but will not show on the transaction line referencing the nexus.
+     *             
+     * A parameter specified on a transaction line will override an nexus parameter if they share the same parameter name.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin.
+     * 
+     * @param companyId The ID of the company that owns this nexus.
+     * @param nexusId The ID of the nexus you wish to delete the parameters.
+     * @return ArrayList<ErrorDetail>
+     */
+    public ArrayList<ErrorDetail> deleteNexusParameters(Integer companyId, Integer nexusId) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/nexus/{nexusId}/parameters");
+        path.applyField("companyId", companyId);
+        path.applyField("nexusId", nexusId);
+        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){})).call();
+    }
+
+    /**
+     * Delete all parameters for an nexus
+     * 
+     * Delete all the parameters for a given nexus.
+     * Some tax calculation and reporting are different depending on the properties of the nexus, such as isRemoteSeller. In AvaTax, these tax-affecting properties are called "parameters".
+     *             
+     * A parameter added to an nexus will be used by default in tax calculation but will not show on the transaction line referencing the nexus.
+     *             
+     * A parameter specified on a transaction line will override an nexus parameter if they share the same parameter name.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin.
+     * 
+     * @param companyId The ID of the company that owns this nexus.
+     * @param nexusId The ID of the nexus you wish to delete the parameters.
+     * @return ArrayList<ErrorDetail>
+     */
+    public Future<ArrayList<ErrorDetail>> deleteNexusParametersAsync(Integer companyId, Integer nexusId) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/nexus/{nexusId}/parameters");
+        path.applyField("companyId", companyId);
+        path.applyField("nexusId", nexusId);
         return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){}));
     }
 
@@ -11570,6 +12282,9 @@ public class AvaTaxClient {
      * The concept of Nexus indicates a place where your company is legally obligated to collect and remit transactional
      * taxes.  The legal requirements for nexus may vary per country and per jurisdiction; please seek advice from your
      * accountant or lawyer prior to declaring nexus.
+     * You may specify one or more of the following values in the '$include' parameter to fetch additional nested data, using commas to separate multiple values:
+     *             
+     *  * Parameters
      * 
      * ### Security Policies
      * 
@@ -11577,12 +12292,14 @@ public class AvaTaxClient {
      * 
      * @param companyId The ID of the company that owns this nexus object
      * @param id The primary key of this nexus
+     * @param include 
      * @return NexusModel
      */
-    public NexusModel getNexus(Integer companyId, Integer id) throws Exception {
+    public NexusModel getNexus(Integer companyId, Integer id, String include) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/nexus/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
+        path.addQuery("$include", include);
         return ((RestCall<NexusModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<NexusModel>(){})).call();
     }
 
@@ -11594,6 +12311,9 @@ public class AvaTaxClient {
      * The concept of Nexus indicates a place where your company is legally obligated to collect and remit transactional
      * taxes.  The legal requirements for nexus may vary per country and per jurisdiction; please seek advice from your
      * accountant or lawyer prior to declaring nexus.
+     * You may specify one or more of the following values in the '$include' parameter to fetch additional nested data, using commas to separate multiple values:
+     *             
+     *  * Parameters
      * 
      * ### Security Policies
      * 
@@ -11601,12 +12321,14 @@ public class AvaTaxClient {
      * 
      * @param companyId The ID of the company that owns this nexus object
      * @param id The primary key of this nexus
+     * @param include 
      * @return NexusModel
      */
-    public Future<NexusModel> getNexusAsync(Integer companyId, Integer id) {
+    public Future<NexusModel> getNexusAsync(Integer companyId, Integer id, String include) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/nexus/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
+        path.addQuery("$include", include);
         return this.threadPool.submit((RestCall<NexusModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<NexusModel>(){}));
     }
 
@@ -11622,6 +12344,9 @@ public class AvaTaxClient {
      * This API is intended to provide useful information when examining a tax form.  If you are about to begin filing
      * a tax form, you may want to know whether you have declared nexus in all the jurisdictions related to that tax
      * form in order to better understand how the form will be filled out.
+     * You may specify one or more of the following values in the '$include' parameter to fetch additional nested data, using commas to separate multiple values:
+     *             
+     *  * Parameters
      * 
      * ### Security Policies
      * 
@@ -11629,12 +12354,14 @@ public class AvaTaxClient {
      * 
      * @param companyId The ID of the company that owns this nexus object
      * @param formCode The form code that we are looking up the nexus for
+     * @param include 
      * @return NexusByTaxFormModel
      */
-    public NexusByTaxFormModel getNexusByFormCode(Integer companyId, String formCode) throws Exception {
+    public NexusByTaxFormModel getNexusByFormCode(Integer companyId, String formCode, String include) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/nexus/byform/{formCode}");
         path.applyField("companyId", companyId);
         path.applyField("formCode", formCode);
+        path.addQuery("$include", include);
         return ((RestCall<NexusByTaxFormModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<NexusByTaxFormModel>(){})).call();
     }
 
@@ -11650,6 +12377,9 @@ public class AvaTaxClient {
      * This API is intended to provide useful information when examining a tax form.  If you are about to begin filing
      * a tax form, you may want to know whether you have declared nexus in all the jurisdictions related to that tax
      * form in order to better understand how the form will be filled out.
+     * You may specify one or more of the following values in the '$include' parameter to fetch additional nested data, using commas to separate multiple values:
+     *             
+     *  * Parameters
      * 
      * ### Security Policies
      * 
@@ -11657,13 +12387,69 @@ public class AvaTaxClient {
      * 
      * @param companyId The ID of the company that owns this nexus object
      * @param formCode The form code that we are looking up the nexus for
+     * @param include 
      * @return NexusByTaxFormModel
      */
-    public Future<NexusByTaxFormModel> getNexusByFormCodeAsync(Integer companyId, String formCode) {
+    public Future<NexusByTaxFormModel> getNexusByFormCodeAsync(Integer companyId, String formCode, String include) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/nexus/byform/{formCode}");
         path.applyField("companyId", companyId);
         path.applyField("formCode", formCode);
+        path.addQuery("$include", include);
         return this.threadPool.submit((RestCall<NexusByTaxFormModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<NexusByTaxFormModel>(){}));
+    }
+
+    /**
+     * Retrieve a single nexus parameter
+     * 
+     * Retrieve a single nexus parameter.
+     * Some tax calculation and reporting are different depending on the properties of the nexus, such as isRemoteSeller.In AvaTax, these tax-affecting properties are called "parameters".
+     *             
+     * A parameter added to an nexus will be used by default in tax calculation but will not show on the transaction line referencing the nexus.
+     *             
+     * A parameter specified on a transaction line will override an nexus parameter if they share the same parameter name.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
+     * 
+     * @param companyId The company id
+     * @param nexusId The nexus id
+     * @param id The parameter id
+     * @return NexusParameterDetailModel
+     */
+    public NexusParameterDetailModel getNexusParameter(Integer companyId, Integer nexusId, Long id) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/nexus/{nexusId}/parameters/{id}");
+        path.applyField("companyId", companyId);
+        path.applyField("nexusId", nexusId);
+        path.applyField("id", id);
+        return ((RestCall<NexusParameterDetailModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<NexusParameterDetailModel>(){})).call();
+    }
+
+    /**
+     * Retrieve a single nexus parameter
+     * 
+     * Retrieve a single nexus parameter.
+     * Some tax calculation and reporting are different depending on the properties of the nexus, such as isRemoteSeller.In AvaTax, these tax-affecting properties are called "parameters".
+     *             
+     * A parameter added to an nexus will be used by default in tax calculation but will not show on the transaction line referencing the nexus.
+     *             
+     * A parameter specified on a transaction line will override an nexus parameter if they share the same parameter name.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
+     * 
+     * @param companyId The company id
+     * @param nexusId The nexus id
+     * @param id The parameter id
+     * @return NexusParameterDetailModel
+     */
+    public Future<NexusParameterDetailModel> getNexusParameterAsync(Integer companyId, Integer nexusId, Long id) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/nexus/{nexusId}/parameters/{id}");
+        path.applyField("companyId", companyId);
+        path.applyField("nexusId", nexusId);
+        path.applyField("id", id);
+        return this.threadPool.submit((RestCall<NexusParameterDetailModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<NexusParameterDetailModel>(){}));
     }
 
     /**
@@ -11677,13 +12463,16 @@ public class AvaTaxClient {
      *             
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * Paginate your results using the `$top`, `$skip`, and `$orderby` parameters.
+     * You may specify one or more of the following values in the '$include' parameter to fetch additional nested data, using commas to separate multiple values:
+     *             
+     *  * Parameters
      * 
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
      * @param companyId The ID of the company that owns these nexus objects
-     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* streamlinedSalesTax, isSSTActive, taxAuthorityId
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* streamlinedSalesTax, isSSTActive, taxAuthorityId, taxName, parameters
      * @param include A comma separated list of additional data to retrieve.
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
@@ -11712,13 +12501,16 @@ public class AvaTaxClient {
      *             
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * Paginate your results using the `$top`, `$skip`, and `$orderby` parameters.
+     * You may specify one or more of the following values in the '$include' parameter to fetch additional nested data, using commas to separate multiple values:
+     *             
+     *  * Parameters
      * 
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
      * @param companyId The ID of the company that owns these nexus objects
-     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* streamlinedSalesTax, isSSTActive, taxAuthorityId
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* streamlinedSalesTax, isSSTActive, taxAuthorityId, taxName, parameters
      * @param include A comma separated list of additional data to retrieve.
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
@@ -11737,6 +12529,78 @@ public class AvaTaxClient {
     }
 
     /**
+     * Retrieve parameters for a nexus
+     * 
+     * List parameters for a nexus.
+     * Some tax calculation and reporting are different depending on the properties of the nexus, such as isRemoteSeller. In AvaTax, these tax-affecting properties are called "parameters".
+     *             
+     * A parameter added to an nexus will be used by default in tax calculation but will not show on the transaction line referencing the nexus.
+     *             
+     * A parameter specified on a transaction line will override an nexus parameter if they share the same parameter name. 
+     *             
+     * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * Paginate your results using the `$top`, `$skip`, and `$orderby` parameters.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
+     * 
+     * @param companyId The company id
+     * @param nexusId The nexus id
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* name, unit
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @return FetchResult<NexusParameterDetailModel>
+     */
+    public FetchResult<NexusParameterDetailModel> listNexusParameters(Integer companyId, Integer nexusId, String filter, Integer top, Integer skip, String orderBy) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/nexus/{nexusId}/parameters");
+        path.applyField("companyId", companyId);
+        path.applyField("nexusId", nexusId);
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
+        return ((RestCall<FetchResult<NexusParameterDetailModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NexusParameterDetailModel>>(){})).call();
+    }
+
+    /**
+     * Retrieve parameters for a nexus
+     * 
+     * List parameters for a nexus.
+     * Some tax calculation and reporting are different depending on the properties of the nexus, such as isRemoteSeller. In AvaTax, these tax-affecting properties are called "parameters".
+     *             
+     * A parameter added to an nexus will be used by default in tax calculation but will not show on the transaction line referencing the nexus.
+     *             
+     * A parameter specified on a transaction line will override an nexus parameter if they share the same parameter name. 
+     *             
+     * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * Paginate your results using the `$top`, `$skip`, and `$orderby` parameters.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
+     * 
+     * @param companyId The company id
+     * @param nexusId The nexus id
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* name, unit
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @return FetchResult<NexusParameterDetailModel>
+     */
+    public Future<FetchResult<NexusParameterDetailModel>> listNexusParametersAsync(Integer companyId, Integer nexusId, String filter, Integer top, Integer skip, String orderBy) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/nexus/{nexusId}/parameters");
+        path.applyField("companyId", companyId);
+        path.applyField("nexusId", nexusId);
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
+        return this.threadPool.submit((RestCall<FetchResult<NexusParameterDetailModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NexusParameterDetailModel>>(){}));
+    }
+
+    /**
      * Retrieve all nexus
      * 
      * Get multiple nexus objects across all companies.
@@ -11747,12 +12611,15 @@ public class AvaTaxClient {
      *             
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * Paginate your results using the `$top`, `$skip`, and `$orderby` parameters.
+     * You may specify one or more of the following values in the '$include' parameter to fetch additional nested data, using commas to separate multiple values:
+     *             
+     *  * Parameters
      * 
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
-     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* streamlinedSalesTax, isSSTActive, taxAuthorityId
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* streamlinedSalesTax, isSSTActive, taxAuthorityId, taxName, parameters
      * @param include A comma separated list of additional data to retrieve.
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
@@ -11780,12 +12647,15 @@ public class AvaTaxClient {
      *             
      * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
      * Paginate your results using the `$top`, `$skip`, and `$orderby` parameters.
+     * You may specify one or more of the following values in the '$include' parameter to fetch additional nested data, using commas to separate multiple values:
+     *             
+     *  * Parameters
      * 
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
-     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* streamlinedSalesTax, isSSTActive, taxAuthorityId
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* streamlinedSalesTax, isSSTActive, taxAuthorityId, taxName, parameters
      * @param include A comma separated list of additional data to retrieve.
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
@@ -11878,6 +12748,64 @@ public class AvaTaxClient {
         path.applyField("companyId", companyId);
         path.applyField("id", id);
         return this.threadPool.submit((RestCall<NexusModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<NexusModel>(){}));
+    }
+
+    /**
+     * Update an nexus parameter
+     * 
+     * Update an nexus parameter.
+     *             
+     * Some tax calculation and reporting are different depending on the properties of the nexus, such as isRemoteSeller. In AvaTax, these tax-affecting properties are called "parameters".
+     *             
+     * A parameter added to a nexus will be used in tax calculation based on the locationcode and parameter value the transaction state line might have lines added.
+     *             
+     * A parameter specified on a transaction line will override an item parameter if they share the same parameter name.????? I dont know about this?
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin.
+     * 
+     * @param companyId The company id.
+     * @param nexusId The nexus id
+     * @param id The nexus parameter id
+     * @param model The nexus object you wish to update.
+     * @return NexusParameterDetailModel
+     */
+    public NexusParameterDetailModel updateNexusParameter(Integer companyId, Integer nexusId, Long id, NexusParameterDetailModel model) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/nexus/{nexusId}/parameters/{id}");
+        path.applyField("companyId", companyId);
+        path.applyField("nexusId", nexusId);
+        path.applyField("id", id);
+        return ((RestCall<NexusParameterDetailModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<NexusParameterDetailModel>(){})).call();
+    }
+
+    /**
+     * Update an nexus parameter
+     * 
+     * Update an nexus parameter.
+     *             
+     * Some tax calculation and reporting are different depending on the properties of the nexus, such as isRemoteSeller. In AvaTax, these tax-affecting properties are called "parameters".
+     *             
+     * A parameter added to a nexus will be used in tax calculation based on the locationcode and parameter value the transaction state line might have lines added.
+     *             
+     * A parameter specified on a transaction line will override an item parameter if they share the same parameter name.????? I dont know about this?
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin.
+     * 
+     * @param companyId The company id.
+     * @param nexusId The nexus id
+     * @param id The nexus parameter id
+     * @param model The nexus object you wish to update.
+     * @return NexusParameterDetailModel
+     */
+    public Future<NexusParameterDetailModel> updateNexusParameterAsync(Integer companyId, Integer nexusId, Long id, NexusParameterDetailModel model) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/nexus/{nexusId}/parameters/{id}");
+        path.applyField("companyId", companyId);
+        path.applyField("nexusId", nexusId);
+        path.applyField("id", id);
+        return this.threadPool.submit((RestCall<NexusParameterDetailModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<NexusParameterDetailModel>(){}));
     }
 
     /**
@@ -12325,7 +13253,7 @@ public class AvaTaxClient {
      * This API is for use by Avalara Registrar administrative users only.
      *             
      * Delete an account.
-     * Deleting an account will delete all companies and all account level users attached to this account.
+     * Deleting an account will delete all companies, all account level users and license keys attached to this account.
      * 
      * ### Security Policies
      * 
@@ -12347,7 +13275,7 @@ public class AvaTaxClient {
      * This API is for use by Avalara Registrar administrative users only.
      *             
      * Delete an account.
-     * Deleting an account will delete all companies and all account level users attached to this account.
+     * Deleting an account will delete all companies, all account level users and license keys attached to this account.
      * 
      * ### Security Policies
      * 
@@ -14621,10 +15549,11 @@ public class AvaTaxClient {
      * * LinesOnly (omit details - reduces API response size)
      * * TaxDetailsByTaxType - Includes the aggregated tax, exempt tax, taxable and non-taxable for each tax type returned in the transaction summary.
      *             
-     * NOTE: If your companyCode or transactionCode contains any of these characters /, + or ? please use the following encoding before making a request:
+     * NOTE: If your companyCode or transactionCode contains any of these characters /, +, ? or a space please use the following encoding before making a request:
      * * Replace '/' with '\_-ava2f-\_'  For example: document/Code becomes document_-ava2f-_Code
      * * Replace '+' with '\_-ava2b-\_'  For example: document+Code becomes document_-ava2b-_Code
      * * Replace '?' with '\_-ava3f-\_'  For example: document?Code becomes document_-ava3f-_Code
+     * * Replace ' ' with '%20'  For example: document Code becomes document%20Code
      * 
      * ### Security Policies
      * 
@@ -14672,10 +15601,11 @@ public class AvaTaxClient {
      * * LinesOnly (omit details - reduces API response size)
      * * TaxDetailsByTaxType - Includes the aggregated tax, exempt tax, taxable and non-taxable for each tax type returned in the transaction summary.
      *             
-     * NOTE: If your companyCode or transactionCode contains any of these characters /, + or ? please use the following encoding before making a request:
+     * NOTE: If your companyCode or transactionCode contains any of these characters /, +, ? or a space please use the following encoding before making a request:
      * * Replace '/' with '\_-ava2f-\_'  For example: document/Code becomes document_-ava2f-_Code
      * * Replace '+' with '\_-ava2b-\_'  For example: document+Code becomes document_-ava2b-_Code
      * * Replace '?' with '\_-ava3f-\_'  For example: document?Code becomes document_-ava3f-_Code
+     * * Replace ' ' with '%20'  For example: document Code becomes document%20Code
      * 
      * ### Security Policies
      * 
@@ -14717,10 +15647,11 @@ public class AvaTaxClient {
      * A transaction represents a unique potentially taxable action that your company has recorded, and transactions include actions like
      * sales, purchases, inventory transfer, and returns (also called refunds).
      *             
-     * NOTE: If your companyCode or transactionCode contains any of these characters /, + or ? please use the following encoding before making a request:
+     * NOTE: If your companyCode or transactionCode contains any of these characters /, +, ? or a space please use the following encoding before making a request:
      * * Replace '/' with '\_-ava2f-\_'  For example: document/Code becomes document_-ava2f-_Code
      * * Replace '+' with '\_-ava2b-\_'  For example: document+Code becomes document_-ava2b-_Code
      * * Replace '?' with '\_-ava3f-\_'  For example: document?Code becomes document_-ava3f-_Code
+     * * Replace ' ' with '%20'  For example: document Code becomes document%20Code
      * 
      * ### Security Policies
      * 
@@ -14757,10 +15688,11 @@ public class AvaTaxClient {
      * A transaction represents a unique potentially taxable action that your company has recorded, and transactions include actions like
      * sales, purchases, inventory transfer, and returns (also called refunds).
      *             
-     * NOTE: If your companyCode or transactionCode contains any of these characters /, + or ? please use the following encoding before making a request:
+     * NOTE: If your companyCode or transactionCode contains any of these characters /, +, ? or a space please use the following encoding before making a request:
      * * Replace '/' with '\_-ava2f-\_'  For example: document/Code becomes document_-ava2f-_Code
      * * Replace '+' with '\_-ava2b-\_'  For example: document+Code becomes document_-ava2b-_Code
      * * Replace '?' with '\_-ava3f-\_'  For example: document?Code becomes document_-ava3f-_Code
+     * * Replace ' ' with '%20'  For example: document Code becomes document%20Code
      * 
      * ### Security Policies
      * 
@@ -14797,10 +15729,11 @@ public class AvaTaxClient {
      * A transaction represents a unique potentially taxable action that your company has recorded, and transactions include actions like
      * sales, purchases, inventory transfer, and returns (also called refunds).
      *             
-     * NOTE: If your companyCode or transactionCode contains any of these characters /, + or ? please use the following encoding before making a request:
+     * NOTE: If your companyCode or transactionCode contains any of these characters /, +, ? or a space please use the following encoding before making a request:
      * * Replace '/' with '\_-ava2f-\_'  For example: document/Code becomes document_-ava2f-_Code
      * * Replace '+' with '\_-ava2b-\_'  For example: document+Code becomes document_-ava2b-_Code
      * * Replace '?' with '\_-ava3f-\_'  For example: document?Code becomes document_-ava3f-_Code
+     * * Replace ' ' with '%20'  For example: document Code becomes document%20Code
      * 
      * ### Security Policies
      * 
@@ -14839,10 +15772,11 @@ public class AvaTaxClient {
      * A transaction represents a unique potentially taxable action that your company has recorded, and transactions include actions like
      * sales, purchases, inventory transfer, and returns (also called refunds).
      *             
-     * NOTE: If your companyCode or transactionCode contains any of these characters /, + or ? please use the following encoding before making a request:
+     * NOTE: If your companyCode or transactionCode contains any of these characters /, +, ? or a space please use the following encoding before making a request:
      * * Replace '/' with '\_-ava2f-\_'  For example: document/Code becomes document_-ava2f-_Code
      * * Replace '+' with '\_-ava2b-\_'  For example: document+Code becomes document_-ava2b-_Code
      * * Replace '?' with '\_-ava3f-\_'  For example: document?Code becomes document_-ava3f-_Code
+     * * Replace ' ' with '%20'  For example: document Code becomes document%20Code
      * 
      * ### Security Policies
      * 
@@ -14935,10 +15869,11 @@ public class AvaTaxClient {
      * * LinesOnly (omit details - reduces API response size)
      * * TaxDetailsByTaxType - Includes the aggregated tax, exempt tax, taxable and non-taxable for each tax type returned in the transaction summary.
      *             
-     * NOTE: If your companyCode or transactionCode contains any of these characters /, + or ? please use the following encoding before making a request:
+     * NOTE: If your companyCode or transactionCode contains any of these characters /, +, ? or a space please use the following encoding before making a request:
      * * Replace '/' with '\_-ava2f-\_'  For example: document/Code becomes document_-ava2f-_Code
      * * Replace '+' with '\_-ava2b-\_'  For example: document+Code becomes document_-ava2b-_Code
      * * Replace '?' with '\_-ava3f-\_'  For example: document?Code becomes document_-ava3f-_Code
+     * * Replace ' ' with '%20'  For example: document Code becomes document%20Code
      * 
      * ### Security Policies
      * 
@@ -14986,10 +15921,11 @@ public class AvaTaxClient {
      * * LinesOnly (omit details - reduces API response size)
      * * TaxDetailsByTaxType - Includes the aggregated tax, exempt tax, taxable and non-taxable for each tax type returned in the transaction summary.
      *             
-     * NOTE: If your companyCode or transactionCode contains any of these characters /, + or ? please use the following encoding before making a request:
+     * NOTE: If your companyCode or transactionCode contains any of these characters /, +, ? or a space please use the following encoding before making a request:
      * * Replace '/' with '\_-ava2f-\_'  For example: document/Code becomes document_-ava2f-_Code
      * * Replace '+' with '\_-ava2b-\_'  For example: document+Code becomes document_-ava2b-_Code
      * * Replace '?' with '\_-ava3f-\_'  For example: document?Code becomes document_-ava3f-_Code
+     * * Replace ' ' with '%20'  For example: document Code becomes document%20Code
      * 
      * ### Security Policies
      * 
@@ -15036,10 +15972,11 @@ public class AvaTaxClient {
      * * LinesOnly (omit details - reduces API response size)
      * * TaxDetailsByTaxType - Includes the aggregated tax, exempt tax, taxable and non-taxable for each tax type returned in the transaction summary.
      *             
-     * NOTE: If your companyCode or transactionCode contains any of these characters /, + or ? please use the following encoding before making a request:
+     * NOTE: If your companyCode or transactionCode contains any of these characters /, +, ? or a space please use the following encoding before making a request:
      * * Replace '/' with '\_-ava2f-\_'  For example: document/Code becomes document_-ava2f-_Code
      * * Replace '+' with '\_-ava2b-\_'  For example: document+Code becomes document_-ava2b-_Code
      * * Replace '?' with '\_-ava3f-\_'  For example: document?Code becomes document_-ava3f-_Code
+     * * Replace ' ' with '%20'  For example: document Code becomes document%20Code
      * 
      * ### Security Policies
      * 
@@ -15085,10 +16022,11 @@ public class AvaTaxClient {
      * * LinesOnly (omit details - reduces API response size)
      * * TaxDetailsByTaxType - Includes the aggregated tax, exempt tax, taxable and non-taxable for each tax type returned in the transaction summary.
      *             
-     * NOTE: If your companyCode or transactionCode contains any of these characters /, + or ? please use the following encoding before making a request:
+     * NOTE: If your companyCode or transactionCode contains any of these characters /, +, ? or a space please use the following encoding before making a request:
      * * Replace '/' with '\_-ava2f-\_'  For example: document/Code becomes document_-ava2f-_Code
      * * Replace '+' with '\_-ava2b-\_'  For example: document+Code becomes document_-ava2b-_Code
      * * Replace '?' with '\_-ava3f-\_'  For example: document?Code becomes document_-ava3f-_Code
+     * * Replace ' ' with '%20'  For example: document Code becomes document%20Code
      * 
      * ### Security Policies
      * 
@@ -15426,10 +16364,11 @@ public class AvaTaxClient {
      * * SummaryOnly (omit lines and details - reduces API response size)
      * * LinesOnly (omit details - reduces API response size)
      *             
-     * NOTE: If your companyCode or transactionCode contains any of these characters /, + or ? please use the following encoding before making a request:
+     * NOTE: If your companyCode or transactionCode contains any of these characters /, +, ? or a space please use the following encoding before making a request:
      * * Replace '/' with '\_-ava2f-\_'  For example: document/Code becomes document_-ava2f-_Code
      * * Replace '+' with '\_-ava2b-\_'  For example: document+Code becomes document_-ava2b-_Code
      * * Replace '?' with '\_-ava3f-\_'  For example: document?Code becomes document_-ava3f-_Code
+     * * Replace ' ' with '%20'  For example: document Code becomes document%20Code
      * 
      * ### Security Policies
      * 
@@ -15473,10 +16412,11 @@ public class AvaTaxClient {
      * * SummaryOnly (omit lines and details - reduces API response size)
      * * LinesOnly (omit details - reduces API response size)
      *             
-     * NOTE: If your companyCode or transactionCode contains any of these characters /, + or ? please use the following encoding before making a request:
+     * NOTE: If your companyCode or transactionCode contains any of these characters /, +, ? or a space please use the following encoding before making a request:
      * * Replace '/' with '\_-ava2f-\_'  For example: document/Code becomes document_-ava2f-_Code
      * * Replace '+' with '\_-ava2b-\_'  For example: document+Code becomes document_-ava2b-_Code
      * * Replace '?' with '\_-ava3f-\_'  For example: document?Code becomes document_-ava3f-_Code
+     * * Replace ' ' with '%20'  For example: document Code becomes document%20Code
      * 
      * ### Security Policies
      * 
@@ -15503,10 +16443,11 @@ public class AvaTaxClient {
      * 
      * DEPRECATED: Please use the `GetTransactionByCode` API instead.
      *             
-     * NOTE: If your companyCode or transactionCode contains any of these characters /, + or ? please use the following encoding before making a request:
+     * NOTE: If your companyCode or transactionCode contains any of these characters /, +, ? or a space please use the following encoding before making a request:
      * * Replace '/' with '\_-ava2f-\_'  For example: document/Code becomes document_-ava2f-_Code
      * * Replace '+' with '\_-ava2b-\_'  For example: document+Code becomes document_-ava2b-_Code
      * * Replace '?' with '\_-ava3f-\_'  For example: document?Code becomes document_-ava3f-_Code
+     * * Replace ' ' with '%20'  For example: document Code becomes document%20Code
      * 
      * ### Security Policies
      * 
@@ -15533,10 +16474,11 @@ public class AvaTaxClient {
      * 
      * DEPRECATED: Please use the `GetTransactionByCode` API instead.
      *             
-     * NOTE: If your companyCode or transactionCode contains any of these characters /, + or ? please use the following encoding before making a request:
+     * NOTE: If your companyCode or transactionCode contains any of these characters /, +, ? or a space please use the following encoding before making a request:
      * * Replace '/' with '\_-ava2f-\_'  For example: document/Code becomes document_-ava2f-_Code
      * * Replace '+' with '\_-ava2b-\_'  For example: document+Code becomes document_-ava2b-_Code
      * * Replace '?' with '\_-ava3f-\_'  For example: document?Code becomes document_-ava3f-_Code
+     * * Replace ' ' with '%20'  For example: document Code becomes document%20Code
      * 
      * ### Security Policies
      * 
@@ -15657,10 +16599,11 @@ public class AvaTaxClient {
      * * SummaryOnly (omit lines and details - reduces API response size)
      * * LinesOnly (omit details - reduces API response size)
      *             
-     * NOTE: If your companyCode or transactionCode contains any of these characters /, + or ? please use the following encoding before making a request:
+     * NOTE: If your companyCode or transactionCode contains any of these characters /, +, ? or a space please use the following encoding before making a request:
      * * Replace '/' with '\_-ava2f-\_'  For example: document/Code becomes document_-ava2f-_Code
      * * Replace '+' with '\_-ava2b-\_'  For example: document+Code becomes document_-ava2b-_Code
      * * Replace '?' with '\_-ava3f-\_'  For example: document?Code becomes document_-ava3f-_Code
+     * * Replace ' ' with '%20'  For example: document Code becomes document%20Code
      * 
      * ### Security Policies
      * 
@@ -15713,10 +16656,11 @@ public class AvaTaxClient {
      * * SummaryOnly (omit lines and details - reduces API response size)
      * * LinesOnly (omit details - reduces API response size)
      *             
-     * NOTE: If your companyCode or transactionCode contains any of these characters /, + or ? please use the following encoding before making a request:
+     * NOTE: If your companyCode or transactionCode contains any of these characters /, +, ? or a space please use the following encoding before making a request:
      * * Replace '/' with '\_-ava2f-\_'  For example: document/Code becomes document_-ava2f-_Code
      * * Replace '+' with '\_-ava2b-\_'  For example: document+Code becomes document_-ava2b-_Code
      * * Replace '?' with '\_-ava3f-\_'  For example: document?Code becomes document_-ava3f-_Code
+     * * Replace ' ' with '%20'  For example: document Code becomes document%20Code
      * 
      * ### Security Policies
      * 
@@ -15769,10 +16713,11 @@ public class AvaTaxClient {
      * * LinesOnly (omit details - reduces API response size)
      * * TaxDetailsByTaxType - Includes the aggregated tax, exempt tax, taxable and non-taxable for each tax type returned in the transaction summary.
      *             
-     * NOTE: If your companyCode or transactionCode contains any of these characters /, + or ? please use the following encoding before making a request:
+     * NOTE: If your companyCode or transactionCode contains any of these characters /, +, ? or a space please use the following encoding before making a request:
      * * Replace '/' with '\_-ava2f-\_'  For example: document/Code becomes document_-ava2f-_Code
      * * Replace '+' with '\_-ava2b-\_'  For example: document+Code becomes document_-ava2b-_Code
      * * Replace '?' with '\_-ava3f-\_'  For example: document?Code becomes document_-ava3f-_Code
+     * * Replace ' ' with '%20'  For example: document Code becomes document%20Code
      * 
      * ### Security Policies
      * 
@@ -15820,10 +16765,11 @@ public class AvaTaxClient {
      * * LinesOnly (omit details - reduces API response size)
      * * TaxDetailsByTaxType - Includes the aggregated tax, exempt tax, taxable and non-taxable for each tax type returned in the transaction summary.
      *             
-     * NOTE: If your companyCode or transactionCode contains any of these characters /, + or ? please use the following encoding before making a request:
+     * NOTE: If your companyCode or transactionCode contains any of these characters /, +, ? or a space please use the following encoding before making a request:
      * * Replace '/' with '\_-ava2f-\_'  For example: document/Code becomes document_-ava2f-_Code
      * * Replace '+' with '\_-ava2b-\_'  For example: document+Code becomes document_-ava2b-_Code
      * * Replace '?' with '\_-ava3f-\_'  For example: document?Code becomes document_-ava3f-_Code
+     * * Replace ' ' with '%20'  For example: document Code becomes document%20Code
      * 
      * ### Security Policies
      * 
@@ -15881,10 +16827,11 @@ public class AvaTaxClient {
      * * TaxDetailsByTaxType - Includes the aggregated tax, exempt tax, taxable and non-taxable for each tax type returned in the transaction summary.
      * If you omit the `$include` parameter, the API will assume you want `Summary,Addresses`.
      *             
-     * NOTE: If your companyCode or transactionCode contains any of these characters /, + or ? please use the following encoding before making a request:
+     * NOTE: If your companyCode or transactionCode contains any of these characters /, +, ? or a space please use the following encoding before making a request:
      * * Replace '/' with '\_-ava2f-\_'  For example: document/Code becomes document_-ava2f-_Code
      * * Replace '+' with '\_-ava2b-\_'  For example: document+Code becomes document_-ava2b-_Code
      * * Replace '?' with '\_-ava3f-\_'  For example: document?Code becomes document_-ava3f-_Code
+     * * Replace ' ' with '%20'  For example: document Code becomes document%20Code
      * 
      * ### Security Policies
      * 
@@ -15944,10 +16891,11 @@ public class AvaTaxClient {
      * * TaxDetailsByTaxType - Includes the aggregated tax, exempt tax, taxable and non-taxable for each tax type returned in the transaction summary.
      * If you omit the `$include` parameter, the API will assume you want `Summary,Addresses`.
      *             
-     * NOTE: If your companyCode or transactionCode contains any of these characters /, + or ? please use the following encoding before making a request:
+     * NOTE: If your companyCode or transactionCode contains any of these characters /, +, ? or a space please use the following encoding before making a request:
      * * Replace '/' with '\_-ava2f-\_'  For example: document/Code becomes document_-ava2f-_Code
      * * Replace '+' with '\_-ava2b-\_'  For example: document+Code becomes document_-ava2b-_Code
      * * Replace '?' with '\_-ava3f-\_'  For example: document?Code becomes document_-ava3f-_Code
+     * * Replace ' ' with '%20'  For example: document Code becomes document%20Code
      * 
      * ### Security Policies
      * 
@@ -15996,10 +16944,11 @@ public class AvaTaxClient {
      * * LinesOnly (omit details - reduces API response size)
      * * TaxDetailsByTaxType - Includes the aggregated tax, exempt tax, taxable and non-taxable for each tax type returned in the transaction summary.
      *             
-     * NOTE: If your companyCode or transactionCode contains any of these characters /, + or ? please use the following encoding before making a request:
+     * NOTE: If your companyCode or transactionCode contains any of these characters /, +, ? or a space please use the following encoding before making a request:
      * * Replace '/' with '\_-ava2f-\_'  For example: document/Code becomes document_-ava2f-_Code
      * * Replace '+' with '\_-ava2b-\_'  For example: document+Code becomes document_-ava2b-_Code
      * * Replace '?' with '\_-ava3f-\_'  For example: document?Code becomes document_-ava3f-_Code
+     * * Replace ' ' with '%20'  For example: document Code becomes document%20Code
      * 
      * ### Security Policies
      * 
@@ -16045,10 +16994,11 @@ public class AvaTaxClient {
      * * LinesOnly (omit details - reduces API response size)
      * * TaxDetailsByTaxType - Includes the aggregated tax, exempt tax, taxable and non-taxable for each tax type returned in the transaction summary.
      *             
-     * NOTE: If your companyCode or transactionCode contains any of these characters /, + or ? please use the following encoding before making a request:
+     * NOTE: If your companyCode or transactionCode contains any of these characters /, +, ? or a space please use the following encoding before making a request:
      * * Replace '/' with '\_-ava2f-\_'  For example: document/Code becomes document_-ava2f-_Code
      * * Replace '+' with '\_-ava2b-\_'  For example: document+Code becomes document_-ava2b-_Code
      * * Replace '?' with '\_-ava3f-\_'  For example: document?Code becomes document_-ava3f-_Code
+     * * Replace ' ' with '%20'  For example: document Code becomes document%20Code
      * 
      * ### Security Policies
      * 
@@ -16088,10 +17038,11 @@ public class AvaTaxClient {
      * * LinesOnly (omit details - reduces API response size)
      * * TaxDetailsByTaxType - Includes the aggregated tax, exempt tax, taxable and non-taxable for each tax type returned in the transaction summary.
      *             
-     * NOTE: If your companyCode or transactionCode contains any of these characters /, + or ? please use the following encoding before making a request:
+     * NOTE: If your companyCode or transactionCode contains any of these characters /, +, ? or a space please use the following encoding before making a request:
      * * Replace '/' with '\_-ava2f-\_'  For example: document/Code becomes document_-ava2f-_Code
      * * Replace '+' with '\_-ava2b-\_'  For example: document+Code becomes document_-ava2b-_Code
      * * Replace '?' with '\_-ava3f-\_'  For example: document?Code becomes document_-ava3f-_Code
+     * * Replace ' ' with '%20'  For example: document Code becomes document%20Code
      * 
      * ### Security Policies
      * 
@@ -16131,10 +17082,11 @@ public class AvaTaxClient {
      * * LinesOnly (omit details - reduces API response size)
      * * TaxDetailsByTaxType - Includes the aggregated tax, exempt tax, taxable and non-taxable for each tax type returned in the transaction summary.
      *             
-     * NOTE: If your companyCode or transactionCode contains any of these characters /, + or ? please use the following encoding before making a request:
+     * NOTE: If your companyCode or transactionCode contains any of these characters /, +, ? or a space please use the following encoding before making a request:
      * * Replace '/' with '\_-ava2f-\_'  For example: document/Code becomes document_-ava2f-_Code
      * * Replace '+' with '\_-ava2b-\_'  For example: document+Code becomes document_-ava2b-_Code
      * * Replace '?' with '\_-ava3f-\_'  For example: document?Code becomes document_-ava3f-_Code
+     * * Replace ' ' with '%20'  For example: document Code becomes document%20Code
      * 
      * ### Security Policies
      * 
@@ -16171,10 +17123,11 @@ public class AvaTaxClient {
      * * LinesOnly (omit details - reduces API response size)
      * * TaxDetailsByTaxType - Includes the aggregated tax, exempt tax, taxable and non-taxable for each tax type returned in the transaction summary.
      *             
-     * NOTE: If your companyCode or transactionCode contains any of these characters /, + or ? please use the following encoding before making a request:
+     * NOTE: If your companyCode or transactionCode contains any of these characters /, +, ? or a space please use the following encoding before making a request:
      * * Replace '/' with '\_-ava2f-\_'  For example: document/Code becomes document_-ava2f-_Code
      * * Replace '+' with '\_-ava2b-\_'  For example: document+Code becomes document_-ava2b-_Code
      * * Replace '?' with '\_-ava3f-\_'  For example: document?Code becomes document_-ava3f-_Code
+     * * Replace ' ' with '%20'  For example: document Code becomes document%20Code
      * 
      * ### Security Policies
      * 
@@ -16211,10 +17164,11 @@ public class AvaTaxClient {
      * * LinesOnly (omit details - reduces API response size)
      * * TaxDetailsByTaxType - Includes the aggregated tax, exempt tax, taxable and non-taxable for each tax type returned in the transaction summary.
      *             
-     * NOTE: If your companyCode or transactionCode contains any of these characters /, + or ? please use the following encoding before making a request:
+     * NOTE: If your companyCode or transactionCode contains any of these characters /, +, ? or a space please use the following encoding before making a request:
      * * Replace '/' with '\_-ava2f-\_'  For example: document/Code becomes document_-ava2f-_Code
      * * Replace '+' with '\_-ava2b-\_'  For example: document+Code becomes document_-ava2b-_Code
      * * Replace '?' with '\_-ava3f-\_'  For example: document?Code becomes document_-ava3f-_Code
+     * * Replace ' ' with '%20'  For example: document Code becomes document%20Code
      * 
      * ### Security Policies
      * 
@@ -16258,10 +17212,11 @@ public class AvaTaxClient {
      * * LinesOnly (omit details - reduces API response size)
      * * TaxDetailsByTaxType - Includes the aggregated tax, exempt tax, taxable and non-taxable for each tax type returned in the transaction summary.
      *             
-     * NOTE: If your companyCode or transactionCode contains any of these characters /, + or ? please use the following encoding before making a request:
+     * NOTE: If your companyCode or transactionCode contains any of these characters /, +, ? or a space please use the following encoding before making a request:
      * * Replace '/' with '\_-ava2f-\_'  For example: document/Code becomes document_-ava2f-_Code
      * * Replace '+' with '\_-ava2b-\_'  For example: document+Code becomes document_-ava2b-_Code
      * * Replace '?' with '\_-ava3f-\_'  For example: document?Code becomes document_-ava3f-_Code
+     * * Replace ' ' with '%20'  For example: document Code becomes document%20Code
      * 
      * ### Security Policies
      * 
@@ -16306,10 +17261,11 @@ public class AvaTaxClient {
      * * LinesOnly (omit details - reduces API response size)
      * * TaxDetailsByTaxType - Includes the aggregated tax, exempt tax, taxable and non-taxable for each tax type returned in the transaction summary.
      *             
-     * NOTE: If your companyCode or transactionCode contains any of these characters /, + or ? please use the following encoding before making a request:
+     * NOTE: If your companyCode or transactionCode contains any of these characters /, +, ? or a space please use the following encoding before making a request:
      * * Replace '/' with '\_-ava2f-\_'  For example: document/Code becomes document_-ava2f-_Code
      * * Replace '+' with '\_-ava2b-\_'  For example: document+Code becomes document_-ava2b-_Code
      * * Replace '?' with '\_-ava3f-\_'  For example: document?Code becomes document_-ava3f-_Code
+     * * Replace ' ' with '%20'  For example: document Code becomes document%20Code
      * 
      * ### Security Policies
      * 
@@ -16356,15 +17312,16 @@ public class AvaTaxClient {
      * * LinesOnly (omit details - reduces API response size)
      * * TaxDetailsByTaxType - Includes the aggregated tax, exempt tax, taxable and non-taxable for each tax type returned in the transaction summary.
      *             
-     * NOTE: If your companyCode or transactionCode contains any of these characters /, + or ? please use the following encoding before making a request:
+     * NOTE: If your companyCode or transactionCode contains any of these characters /, +, ? or a space please use the following encoding before making a request:
      * * Replace '/' with '\_-ava2f-\_'  For example: document/Code becomes document_-ava2f-_Code
      * * Replace '+' with '\_-ava2b-\_'  For example: document+Code becomes document_-ava2b-_Code
      * * Replace '?' with '\_-ava3f-\_'  For example: document?Code becomes document_-ava3f-_Code
+     * * Replace ' ' with '%20'  For example: document Code becomes document%20Code
      * 
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, CompanyAdmin, CSPTester, ProStoresOperator, SSTAdmin, TechnicalSupportAdmin.
-     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
+     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro, BasicReturns.
      * 
      * @param companyCode The company code of the company that recorded this transaction
      * @param transactionCode The transaction code to void
@@ -16406,15 +17363,16 @@ public class AvaTaxClient {
      * * LinesOnly (omit details - reduces API response size)
      * * TaxDetailsByTaxType - Includes the aggregated tax, exempt tax, taxable and non-taxable for each tax type returned in the transaction summary.
      *             
-     * NOTE: If your companyCode or transactionCode contains any of these characters /, + or ? please use the following encoding before making a request:
+     * NOTE: If your companyCode or transactionCode contains any of these characters /, +, ? or a space please use the following encoding before making a request:
      * * Replace '/' with '\_-ava2f-\_'  For example: document/Code becomes document_-ava2f-_Code
      * * Replace '+' with '\_-ava2b-\_'  For example: document+Code becomes document_-ava2b-_Code
      * * Replace '?' with '\_-ava3f-\_'  For example: document?Code becomes document_-ava3f-_Code
+     * * Replace ' ' with '%20'  For example: document Code becomes document%20Code
      * 
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, CompanyAdmin, CSPTester, ProStoresOperator, SSTAdmin, TechnicalSupportAdmin.
-     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
+     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro, BasicReturns.
      * 
      * @param companyCode The company code of the company that recorded this transaction
      * @param transactionCode The transaction code to void

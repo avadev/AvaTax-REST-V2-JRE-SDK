@@ -327,11 +327,6 @@ public enum ErrorCodeId {
     /** 
      * 
      */
-    AllJurisRuleLimits(84),
-
-    /** 
-     * 
-     */
     InvalidCompanyLocationSetting(85),
 
     /** 
@@ -528,11 +523,6 @@ public enum ErrorCodeId {
      * 
      */
     DuplicateSystemTaxCode(155),
-
-    /** 
-     * 
-     */
-    SSTOverridesNotAvailable(156),
 
     /** 
      * 
@@ -741,6 +731,7 @@ public enum ErrorCodeId {
 
     /** 
      * Batch errors
+     *  New batch error codes continue at 2501
      */
     BatchSalesAuditMustBeZippedError(200),
 
@@ -943,6 +934,11 @@ public enum ErrorCodeId {
      * 
      */
     AccountAlreadyExists(611),
+
+    /** 
+     * 
+     */
+    LicenseKeyNameAlreadyExistsForAccount(612),
 
     /** 
      * Refund API error codes
@@ -1380,6 +1376,16 @@ public enum ErrorCodeId {
     UpdateLocationRemittanceCheckExistingEndDateError(1721),
 
     /** 
+     * 
+     */
+    ErrorCountLimitExceededError(1722),
+
+    /** 
+     * 
+     */
+    RateLimitExceededError(1723),
+
+    /** 
      * SendSales API errors
      */
     UnsupportedFileFormat(1800),
@@ -1415,7 +1421,7 @@ public enum ErrorCodeId {
     TraceDataNotAvailable(2000),
 
     /** 
-     * Item parameter errors
+     * Item and Nexus parameter errors
      */
     InvalidParameterUnitMeasurementType(2100),
 
@@ -1567,7 +1573,43 @@ public enum ErrorCodeId {
     /** 
      * 
      */
-    InputContainsBlacklistedCharacters(2401);
+    InputContainsBlacklistedCharacters(2401),
+
+    /** 
+     * 
+     */
+    CannotCreateNestedObjects(2402),
+
+    /** 
+     * Batch errors
+     *  For other batch errors, see: 200 - 208 above
+     */
+    BatchTransactionTypeError(2501),
+
+    /** 
+     * 
+     */
+    BatchTransactionLineLimitExceeded(2502),
+
+    /** 
+     * 
+     */
+    BatchCompanyIdAndCompanyCodeMismatch(2503),
+
+    /** 
+     * 
+     */
+    BatchCannotBeCancelledStatusError(2504),
+
+    /** 
+     * 
+     */
+    BatchCannotBeCancelledFormatError(2505),
+
+    /** 
+     * 
+     */
+    InvalidParameterDataType(2600);
 
     private int value;
 	private static HashMap map = new HashMap<>();

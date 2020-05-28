@@ -604,6 +604,26 @@ public class LocationModel {
         this.settings = value;
     }
 
+    private ArrayList<LocationParameterModel> parameters;
+
+    /**
+     * Getter for parameters
+     *
+     * List of location parameters.
+     */
+    public ArrayList<LocationParameterModel> getParameters() {
+        return this.parameters;
+    }
+
+    /**
+     * Setter for parameters
+     *
+     * List of location parameters.
+     */
+    public void setParameters(ArrayList<LocationParameterModel> value) {
+        this.parameters = value;
+    }
+
     /**
      * Returns a JSON string representation of LocationModel
      */

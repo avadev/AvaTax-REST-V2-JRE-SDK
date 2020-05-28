@@ -853,6 +853,26 @@ public class CompanyModel {
         this.mossCountry = value;
     }
 
+    private ArrayList<CompanyParameterDetailModel> parameters;
+
+    /**
+     * Getter for parameters
+     *
+     * The parameters of a company
+     */
+    public ArrayList<CompanyParameterDetailModel> getParameters() {
+        return this.parameters;
+    }
+
+    /**
+     * Setter for parameters
+     *
+     * The parameters of a company
+     */
+    public void setParameters(ArrayList<CompanyParameterDetailModel> value) {
+        this.parameters = value;
+    }
+
     /**
      * Returns a JSON string representation of CompanyModel
      */
