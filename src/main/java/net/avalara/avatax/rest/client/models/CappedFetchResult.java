@@ -89,24 +89,24 @@ public class CappedFetchResult {
         this.value = value;
     }
 
-    private String @nextLink;
+    private String nextLink;
 
     /**
-     * Getter for @nextLink
+     * Getter for nextLink
      *
      * 
      */
-    public String get@nextLink() {
-        return this.@nextLink;
+    public String getNextLink() {
+        return this.nextLink;
     }
 
     /**
-     * Setter for @nextLink
+     * Setter for nextLink
      *
      * 
      */
-    public void set@nextLink(String value) {
-        this.@nextLink = value;
+    public void setNextLink(String value) {
+        this.nextLink = value;
     }
 
     private String pageKey;
