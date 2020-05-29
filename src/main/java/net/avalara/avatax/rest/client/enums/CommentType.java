@@ -32,7 +32,12 @@ public enum CommentType {
     /** 
      * A comment that has a POA Attachment on it
      */
-    POAAttachment(3);
+    POAAttachment(3),
+
+    /** 
+     * Used when creating Notice Comments in Returns Console
+     */
+    NoticeVoucher(4);
 
     private int value;
 	private static HashMap map = new HashMap<>();

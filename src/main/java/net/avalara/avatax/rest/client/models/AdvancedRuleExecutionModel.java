@@ -129,6 +129,26 @@ public class AdvancedRuleExecutionModel {
         this.enabled = value;
     }
 
+    private Boolean continueOnError;
+
+    /**
+     * Getter for continueOnError
+     *
+     * Should we keep running if we hit an exception
+     */
+    public Boolean getContinueOnError() {
+        return this.continueOnError;
+    }
+
+    /**
+     * Setter for continueOnError
+     *
+     * Should we keep running if we hit an exception
+     */
+    public void setContinueOnError(Boolean value) {
+        this.continueOnError = value;
+    }
+
     private String ruleId;
 
     /**

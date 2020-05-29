@@ -26,17 +26,17 @@ import java.util.HashMap;
 /**
  * 
  */
-public class CappedFetchResult<T> {
+public class CappedFetchResult {
 
 
     private Boolean isRecordsetCountCapped;
 
     /**
-     * Getter for @isRecordsetCountCapped
+     * Getter for isRecordsetCountCapped
      *
      * 
      */
-    public Boolean getIsRecordsetCountCapped() {
+    public Boolean getisRecordsetCountCapped() {
         return this.isRecordsetCountCapped;
     }
 
@@ -45,7 +45,7 @@ public class CappedFetchResult<T> {
      *
      * 
      */
-    public void setIsRecordsetCountCapped(Boolean value) {
+    public void setisRecordsetCountCapped(Boolean value) {
         this.isRecordsetCountCapped = value;
     }
 

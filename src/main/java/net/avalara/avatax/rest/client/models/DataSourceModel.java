@@ -309,6 +309,46 @@ public class DataSourceModel {
         this.recalculate = value;
     }
 
+    private String name;
+
+    /**
+     * Getter for name
+     *
+     * Specifies the name of the extractor
+     */
+    public String getName() {
+        return this.name;
+    }
+
+    /**
+     * Setter for name
+     *
+     * Specifies the name of the extractor
+     */
+    public void setName(String value) {
+        this.name = value;
+    }
+
+    private String externalState;
+
+    /**
+     * Getter for externalState
+     *
+     * Specifies any implementation-specific information along with the DataSource.This field has no internal meaning in AvaTax and is purely for the convenience of the DataSource API user
+     */
+    public String getExternalState() {
+        return this.externalState;
+    }
+
+    /**
+     * Setter for externalState
+     *
+     * Specifies any implementation-specific information along with the DataSource.This field has no internal meaning in AvaTax and is purely for the convenience of the DataSource API user
+     */
+    public void setExternalState(String value) {
+        this.externalState = value;
+    }
+
     /**
      * Returns a JSON string representation of DataSourceModel
      */

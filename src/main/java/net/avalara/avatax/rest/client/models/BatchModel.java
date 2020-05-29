@@ -29,6 +29,66 @@ import java.util.HashMap;
 public class BatchModel {
 
 
+    private BatchType type;
+
+    /**
+     * Getter for type
+     *
+     * The type of this batch.
+     */
+    public BatchType getType() {
+        return this.type;
+    }
+
+    /**
+     * Setter for type
+     *
+     * The type of this batch.
+     */
+    public void setType(BatchType value) {
+        this.type = value;
+    }
+
+    private String batchAgent;
+
+    /**
+     * Getter for batchAgent
+     *
+     * The agent used to create this batch
+     */
+    public String getBatchAgent() {
+        return this.batchAgent;
+    }
+
+    /**
+     * Setter for batchAgent
+     *
+     * The agent used to create this batch
+     */
+    public void setBatchAgent(String value) {
+        this.batchAgent = value;
+    }
+
+    private String options;
+
+    /**
+     * Getter for options
+     *
+     * Any optional flags provided for this batch
+     */
+    public String getOptions() {
+        return this.options;
+    }
+
+    /**
+     * Setter for options
+     *
+     * Any optional flags provided for this batch
+     */
+    public void setOptions(String value) {
+        this.options = value;
+    }
+
     private Integer id;
 
     /**
@@ -109,26 +169,6 @@ public class BatchModel {
         this.companyId = value;
     }
 
-    private BatchType type;
-
-    /**
-     * Getter for type
-     *
-     * The type of this batch.
-     */
-    public BatchType getType() {
-        return this.type;
-    }
-
-    /**
-     * Setter for type
-     *
-     * The type of this batch.
-     */
-    public void setType(BatchType value) {
-        this.type = value;
-    }
-
     private BatchStatus status;
 
     /**
@@ -147,46 +187,6 @@ public class BatchModel {
      */
     public void setStatus(BatchStatus value) {
         this.status = value;
-    }
-
-    private String options;
-
-    /**
-     * Getter for options
-     *
-     * Any optional flags provided for this batch
-     */
-    public String getOptions() {
-        return this.options;
-    }
-
-    /**
-     * Setter for options
-     *
-     * Any optional flags provided for this batch
-     */
-    public void setOptions(String value) {
-        this.options = value;
-    }
-
-    private String batchAgent;
-
-    /**
-     * Getter for batchAgent
-     *
-     * The agent used to create this batch
-     */
-    public String getBatchAgent() {
-        return this.batchAgent;
-    }
-
-    /**
-     * Setter for batchAgent
-     *
-     * The agent used to create this batch
-     */
-    public void setBatchAgent(String value) {
-        this.batchAgent = value;
     }
 
     private Date startedDate;

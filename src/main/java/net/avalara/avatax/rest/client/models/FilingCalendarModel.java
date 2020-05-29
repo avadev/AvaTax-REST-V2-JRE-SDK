@@ -1282,6 +1282,66 @@ public class FilingCalendarModel {
         this.modifiedUserId = value;
     }
 
+    private String bulkAccountId;
+
+    /**
+     * Getter for bulkAccountId
+     *
+     * User name of bulk account.
+     */
+    public String getBulkAccountId() {
+        return this.bulkAccountId;
+    }
+
+    /**
+     * Setter for bulkAccountId
+     *
+     * User name of bulk account.
+     */
+    public void setBulkAccountId(String value) {
+        this.bulkAccountId = value;
+    }
+
+    private String siteCode;
+
+    /**
+     * Getter for siteCode
+     *
+     * The bulk account site code.
+     */
+    public String getSiteCode() {
+        return this.siteCode;
+    }
+
+    /**
+     * Setter for siteCode
+     *
+     * The bulk account site code.
+     */
+    public void setSiteCode(String value) {
+        this.siteCode = value;
+    }
+
+    private BulkAccountValidationStatus bulkAccountValidationStatus;
+
+    /**
+     * Getter for bulkAccountValidationStatus
+     *
+     * The status of the bulk account's validation.
+     */
+    public BulkAccountValidationStatus getBulkAccountValidationStatus() {
+        return this.bulkAccountValidationStatus;
+    }
+
+    /**
+     * Setter for bulkAccountValidationStatus
+     *
+     * The status of the bulk account's validation.
+     */
+    public void setBulkAccountValidationStatus(BulkAccountValidationStatus value) {
+        this.bulkAccountValidationStatus = value;
+    }
+
     private ArrayList<CompanyReturnSettingModel> settings;
 
     /**

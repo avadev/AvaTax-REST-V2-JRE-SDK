@@ -369,6 +369,26 @@ public class AdvancedRuleFullDetailsModel {
         this.description = value;
     }
 
+    private Boolean arEntitlementRequired;
+
+    /**
+     * Getter for arEntitlementRequired
+     *
+     * Advance Rules limited availability
+     */
+    public Boolean getArEntitlementRequired() {
+        return this.arEntitlementRequired;
+    }
+
+    /**
+     * Setter for arEntitlementRequired
+     *
+     * Advance Rules limited availability
+     */
+    public void setArEntitlementRequired(Boolean value) {
+        this.arEntitlementRequired = value;
+    }
+
     /**
      * Returns a JSON string representation of AdvancedRuleFullDetailsModel
      */
