@@ -49,24 +49,24 @@ public class CappedFetchResult {
         this.isRecordsetCountCapped = value;
     }
 
-    private Integer @recordsetCount;
+    private Integer recordsetCount;
 
     /**
-     * Getter for @recordsetCount
+     * Getter for recordsetCount
      *
      * 
      */
-    public Integer get@recordsetCount() {
-        return this.@recordsetCount;
+    public Integer getRecordsetCount() {
+        return this.recordsetCount;
     }
 
     /**
-     * Setter for @recordsetCount
+     * Setter for recordsetCount
      *
      * 
      */
-    public void set@recordsetCount(Integer value) {
-        this.@recordsetCount = value;
+    public void setRecordsetCount(Integer value) {
+        this.recordsetCount = value;
     }
 
     private ArrayList<HashMap<String, String>> value;
