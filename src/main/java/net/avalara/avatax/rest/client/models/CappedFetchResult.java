@@ -26,7 +26,7 @@ import java.util.HashMap;
 /**
  * 
  */
-public class CappedFetchResult<T> {
+public class CappedFetchResult {
 
 
     private Boolean @isRecordsetCountCapped;
