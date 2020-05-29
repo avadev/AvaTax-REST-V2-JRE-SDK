@@ -29,24 +29,24 @@ import java.util.HashMap;
 public class CappedFetchResult {
 
 
-    private Boolean @isRecordsetCountCapped;
+    private Boolean isRecordsetCountCapped;
 
     /**
-     * Getter for @isRecordsetCountCapped
+     * Getter for isRecordsetCountCapped
      *
      * 
      */
-    public Boolean get@isRecordsetCountCapped() {
-        return this.@isRecordsetCountCapped;
+    public Boolean getisRecordsetCountCapped() {
+        return this.isRecordsetCountCapped;
     }
 
     /**
-     * Setter for @isRecordsetCountCapped
+     * Setter for isRecordsetCountCapped
      *
      * 
      */
-    public void set@isRecordsetCountCapped(Boolean value) {
-        this.@isRecordsetCountCapped = value;
+    public void setisRecordsetCountCapped(Boolean value) {
+        this.isRecordsetCountCapped = value;
     }
 
     private Integer @recordsetCount;
