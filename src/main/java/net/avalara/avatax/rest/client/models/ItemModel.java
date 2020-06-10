@@ -49,6 +49,7 @@ public class ItemModel {
         this.id = value;
     }
 
+
     private Integer companyId;
 
     /**
@@ -69,6 +70,7 @@ public class ItemModel {
         this.companyId = value;
     }
 
+
     private String itemCode;
 
     /**
@@ -88,6 +90,7 @@ public class ItemModel {
     public void setItemCode(String value) {
         this.itemCode = value;
     }
+
 
     private Integer taxCodeId;
 
@@ -113,6 +116,7 @@ public class ItemModel {
         this.taxCodeId = value;
     }
 
+
     private String taxCode;
 
     /**
@@ -137,6 +141,7 @@ public class ItemModel {
         this.taxCode = value;
     }
 
+
     private String description;
 
     /**
@@ -156,6 +161,7 @@ public class ItemModel {
     public void setDescription(String value) {
         this.description = value;
     }
+
 
     private String itemGroup;
 
@@ -177,6 +183,7 @@ public class ItemModel {
         this.itemGroup = value;
     }
 
+
     private Date createdDate;
 
     /**
@@ -196,6 +203,7 @@ public class ItemModel {
     public void setCreatedDate(Date value) {
         this.createdDate = value;
     }
+
 
     private Integer createdUserId;
 
@@ -217,6 +225,7 @@ public class ItemModel {
         this.createdUserId = value;
     }
 
+
     private Date modifiedDate;
 
     /**
@@ -237,6 +246,7 @@ public class ItemModel {
         this.modifiedDate = value;
     }
 
+
     private Integer modifiedUserId;
 
     /**
@@ -256,6 +266,7 @@ public class ItemModel {
     public void setModifiedUserId(Integer value) {
         this.modifiedUserId = value;
     }
+
 
     private ArrayList<ClassificationModel> classifications;
 
@@ -279,6 +290,7 @@ public class ItemModel {
         this.classifications = value;
     }
 
+
     private ArrayList<ItemParameterModel> parameters;
 
     /**
@@ -298,6 +310,7 @@ public class ItemModel {
     public void setParameters(ArrayList<ItemParameterModel> value) {
         this.parameters = value;
     }
+
 
     /**
      * Returns a JSON string representation of ItemModel

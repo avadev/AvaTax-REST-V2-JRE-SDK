@@ -58,6 +58,7 @@ public class VerifyMultiDocumentModel {
         this.code = value;
     }
 
+
     private DocumentType type;
 
     /**
@@ -83,6 +84,7 @@ public class VerifyMultiDocumentModel {
     public void setType(DocumentType value) {
         this.type = value;
     }
+
 
     private Date verifyTransactionDate;
 
@@ -110,6 +112,7 @@ public class VerifyMultiDocumentModel {
         this.verifyTransactionDate = value;
     }
 
+
     private BigDecimal verifyTotalAmount;
 
     /**
@@ -136,6 +139,7 @@ public class VerifyMultiDocumentModel {
         this.verifyTotalAmount = value;
     }
 
+
     private BigDecimal verifyTotalTax;
 
     /**
@@ -161,6 +165,7 @@ public class VerifyMultiDocumentModel {
     public void setVerifyTotalTax(BigDecimal value) {
         this.verifyTotalTax = value;
     }
+
 
     /**
      * Returns a JSON string representation of VerifyMultiDocumentModel

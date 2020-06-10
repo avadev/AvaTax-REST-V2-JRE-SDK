@@ -49,6 +49,7 @@ public class AdvancedRuleFullDetailsModel {
         this.script = value;
     }
 
+
     private String customerDataValidatorScript;
 
     /**
@@ -68,6 +69,7 @@ public class AdvancedRuleFullDetailsModel {
     public void setCustomerDataValidatorScript(String value) {
         this.customerDataValidatorScript = value;
     }
+
 
     private Boolean isApproved;
 
@@ -89,6 +91,7 @@ public class AdvancedRuleFullDetailsModel {
         this.isApproved = value;
     }
 
+
     private String createdBy;
 
     /**
@@ -108,6 +111,7 @@ public class AdvancedRuleFullDetailsModel {
     public void setCreatedBy(String value) {
         this.createdBy = value;
     }
+
 
     private String createdOn;
 
@@ -129,6 +133,7 @@ public class AdvancedRuleFullDetailsModel {
         this.createdOn = value;
     }
 
+
     private String modifiedBy;
 
     /**
@@ -148,6 +153,7 @@ public class AdvancedRuleFullDetailsModel {
     public void setModifiedBy(String value) {
         this.modifiedBy = value;
     }
+
 
     private String modifiedOn;
 
@@ -169,6 +175,7 @@ public class AdvancedRuleFullDetailsModel {
         this.modifiedOn = value;
     }
 
+
     private String approvedBy;
 
     /**
@@ -188,6 +195,7 @@ public class AdvancedRuleFullDetailsModel {
     public void setApprovedBy(String value) {
         this.approvedBy = value;
     }
+
 
     private Boolean isSystemRule;
 
@@ -209,6 +217,7 @@ public class AdvancedRuleFullDetailsModel {
         this.isSystemRule = value;
     }
 
+
     private Boolean isVisibleInCUP;
 
     /**
@@ -228,6 +237,7 @@ public class AdvancedRuleFullDetailsModel {
     public void setIsVisibleInCUP(Boolean value) {
         this.isVisibleInCUP = value;
     }
+
 
     private Boolean isTest;
 
@@ -249,6 +259,7 @@ public class AdvancedRuleFullDetailsModel {
         this.isTest = value;
     }
 
+
     private String customerDataSchema;
 
     /**
@@ -268,6 +279,7 @@ public class AdvancedRuleFullDetailsModel {
     public void setCustomerDataSchema(String value) {
         this.customerDataSchema = value;
     }
+
 
     private Integer version;
 
@@ -289,6 +301,7 @@ public class AdvancedRuleFullDetailsModel {
         this.version = value;
     }
 
+
     private ArrayList<Integer> accountsVisibleFor;
 
     /**
@@ -308,6 +321,7 @@ public class AdvancedRuleFullDetailsModel {
     public void setAccountsVisibleFor(ArrayList<Integer> value) {
         this.accountsVisibleFor = value;
     }
+
 
     private String ruleId;
 
@@ -329,6 +343,7 @@ public class AdvancedRuleFullDetailsModel {
         this.ruleId = value;
     }
 
+
     private String name;
 
     /**
@@ -348,6 +363,7 @@ public class AdvancedRuleFullDetailsModel {
     public void setName(String value) {
         this.name = value;
     }
+
 
     private String description;
 
@@ -369,6 +385,7 @@ public class AdvancedRuleFullDetailsModel {
         this.description = value;
     }
 
+
     private Boolean arEntitlementRequired;
 
     /**
@@ -388,6 +405,28 @@ public class AdvancedRuleFullDetailsModel {
     public void setArEntitlementRequired(Boolean value) {
         this.arEntitlementRequired = value;
     }
+
+
+    private String executionPosition;
+
+    /**
+     * Getter for executionPosition
+     *
+     * Execution position. Both, Before or After
+     */
+    public String getExecutionPosition() {
+        return this.executionPosition;
+    }
+
+    /**
+     * Setter for executionPosition
+     *
+     * Execution position. Both, Before or After
+     */
+    public void setExecutionPosition(String value) {
+        this.executionPosition = value;
+    }
+
 
     /**
      * Returns a JSON string representation of AdvancedRuleFullDetailsModel

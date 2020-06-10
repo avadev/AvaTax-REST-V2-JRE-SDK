@@ -49,6 +49,7 @@ public class NexusSummaryModel {
         this.companyId = value;
     }
 
+
     private ArrayList<NexusTaxTypeGroupCountModel> nexusSummary;
 
     /**
@@ -68,6 +69,7 @@ public class NexusSummaryModel {
     public void setNexusSummary(ArrayList<NexusTaxTypeGroupCountModel> value) {
         this.nexusSummary = value;
     }
+
 
     /**
      * Returns a JSON string representation of NexusSummaryModel

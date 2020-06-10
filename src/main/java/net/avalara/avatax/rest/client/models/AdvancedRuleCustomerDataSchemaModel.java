@@ -49,6 +49,7 @@ public class AdvancedRuleCustomerDataSchemaModel {
         this.ruleId = value;
     }
 
+
     private String customerDataSchema;
 
     /**
@@ -68,6 +69,7 @@ public class AdvancedRuleCustomerDataSchemaModel {
     public void setCustomerDataSchema(String value) {
         this.customerDataSchema = value;
     }
+
 
     /**
      * Returns a JSON string representation of AdvancedRuleCustomerDataSchemaModel

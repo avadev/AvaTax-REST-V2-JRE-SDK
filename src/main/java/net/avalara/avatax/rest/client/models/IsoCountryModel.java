@@ -49,6 +49,7 @@ public class IsoCountryModel {
         this.code = value;
     }
 
+
     private String alpha3Code;
 
     /**
@@ -68,6 +69,7 @@ public class IsoCountryModel {
     public void setAlpha3Code(String value) {
         this.alpha3Code = value;
     }
+
 
     private String name;
 
@@ -93,6 +95,7 @@ public class IsoCountryModel {
         this.name = value;
     }
 
+
     private Boolean isEuropeanUnion;
 
     /**
@@ -112,6 +115,7 @@ public class IsoCountryModel {
     public void setIsEuropeanUnion(Boolean value) {
         this.isEuropeanUnion = value;
     }
+
 
     private ArrayList<IsoLocalizedName> localizedNames;
 
@@ -137,6 +141,7 @@ public class IsoCountryModel {
         this.localizedNames = value;
     }
 
+
     private Boolean addressesRequireRegion;
 
     /**
@@ -156,6 +161,7 @@ public class IsoCountryModel {
     public void setAddressesRequireRegion(Boolean value) {
         this.addressesRequireRegion = value;
     }
+
 
     /**
      * Returns a JSON string representation of IsoCountryModel

@@ -49,6 +49,7 @@ public class NoticeRootCauseDetailModel {
         this.id = value;
     }
 
+
     private Integer noticeId;
 
     /**
@@ -68,6 +69,7 @@ public class NoticeRootCauseDetailModel {
     public void setNoticeId(Integer value) {
         this.noticeId = value;
     }
+
 
     private Integer taxNoticeRootCauseId;
 
@@ -89,6 +91,7 @@ public class NoticeRootCauseDetailModel {
         this.taxNoticeRootCauseId = value;
     }
 
+
     private String description;
 
     /**
@@ -108,6 +111,7 @@ public class NoticeRootCauseDetailModel {
     public void setDescription(String value) {
         this.description = value;
     }
+
 
     /**
      * Returns a JSON string representation of NoticeRootCauseDetailModel

@@ -53,6 +53,7 @@ public class AuditModel {
         this.transactionId = value;
     }
 
+
     private Integer accountId;
 
     /**
@@ -73,6 +74,7 @@ public class AuditModel {
         this.accountId = value;
     }
 
+
     private Integer userId;
 
     /**
@@ -92,6 +94,7 @@ public class AuditModel {
     public void setUserId(Integer value) {
         this.userId = value;
     }
+
 
     private String ipAddress;
 
@@ -117,6 +120,7 @@ public class AuditModel {
         this.ipAddress = value;
     }
 
+
     private String machineName;
 
     /**
@@ -138,6 +142,7 @@ public class AuditModel {
     public void setMachineName(String value) {
         this.machineName = value;
     }
+
 
     private String clientName;
 
@@ -161,6 +166,7 @@ public class AuditModel {
         this.clientName = value;
     }
 
+
     private String clientVersion;
 
     /**
@@ -182,6 +188,7 @@ public class AuditModel {
     public void setClientVersion(String value) {
         this.clientVersion = value;
     }
+
 
     private String adapterName;
 
@@ -205,6 +212,7 @@ public class AuditModel {
         this.adapterName = value;
     }
 
+
     private String adapterVersion;
 
     /**
@@ -227,6 +235,7 @@ public class AuditModel {
         this.adapterVersion = value;
     }
 
+
     private String serverName;
 
     /**
@@ -247,6 +256,7 @@ public class AuditModel {
         this.serverName = value;
     }
 
+
     private String serverVersion;
 
     /**
@@ -266,6 +276,7 @@ public class AuditModel {
     public void setServerVersion(String value) {
         this.serverVersion = value;
     }
+
 
     private Long referenceId;
 
@@ -289,6 +300,7 @@ public class AuditModel {
         this.referenceId = value;
     }
 
+
     private Integer severityLevelId;
 
     /**
@@ -311,6 +323,7 @@ public class AuditModel {
         this.severityLevelId = value;
     }
 
+
     private Date serverTimestamp;
 
     /**
@@ -330,6 +343,7 @@ public class AuditModel {
     public void setServerTimestamp(Date value) {
         this.serverTimestamp = value;
     }
+
 
     private Integer serverDuration;
 
@@ -351,6 +365,7 @@ public class AuditModel {
         this.serverDuration = value;
     }
 
+
     private String serviceName;
 
     /**
@@ -371,6 +386,7 @@ public class AuditModel {
         this.serviceName = value;
     }
 
+
     private String operation;
 
     /**
@@ -390,6 +406,7 @@ public class AuditModel {
     public void setOperation(String value) {
         this.operation = value;
     }
+
 
     private String referenceCode;
 
@@ -413,6 +430,7 @@ public class AuditModel {
         this.referenceCode = value;
     }
 
+
     private String errorMessage;
 
     /**
@@ -435,6 +453,7 @@ public class AuditModel {
         this.errorMessage = value;
     }
 
+
     private String auditMessage;
 
     /**
@@ -454,6 +473,7 @@ public class AuditModel {
     public void setAuditMessage(String value) {
         this.auditMessage = value;
     }
+
 
     private Integer loadBalancerDuration;
 
@@ -475,6 +495,7 @@ public class AuditModel {
         this.loadBalancerDuration = value;
     }
 
+
     private Integer recordCount;
 
     /**
@@ -494,6 +515,7 @@ public class AuditModel {
     public void setRecordCount(Integer value) {
         this.recordCount = value;
     }
+
 
     private String referenceAuthorization;
 
@@ -515,6 +537,7 @@ public class AuditModel {
         this.referenceAuthorization = value;
     }
 
+
     private Boolean isQueued;
 
     /**
@@ -534,6 +557,7 @@ public class AuditModel {
     public void setIsQueued(Boolean value) {
         this.isQueued = value;
     }
+
 
     private Integer databaseCallCount;
 
@@ -559,6 +583,7 @@ public class AuditModel {
         this.databaseCallCount = value;
     }
 
+
     private String databaseCallDuration;
 
     /**
@@ -583,6 +608,7 @@ public class AuditModel {
         this.databaseCallDuration = value;
     }
 
+
     private String remoteCallDuration;
 
     /**
@@ -602,6 +628,7 @@ public class AuditModel {
     public void setRemoteCallDuration(String value) {
         this.remoteCallDuration = value;
     }
+
 
     private ArrayList<AuditEvent> events;
 
@@ -623,6 +650,7 @@ public class AuditModel {
         this.events = value;
     }
 
+
     private String requestUrl;
 
     /**
@@ -642,6 +670,7 @@ public class AuditModel {
     public void setRequestUrl(String value) {
         this.requestUrl = value;
     }
+
 
     private String requestBody;
 
@@ -669,6 +698,7 @@ public class AuditModel {
         this.requestBody = value;
     }
 
+
     private Integer responseStatus;
 
     /**
@@ -688,6 +718,7 @@ public class AuditModel {
     public void setResponseStatus(Integer value) {
         this.responseStatus = value;
     }
+
 
     private String responseBody;
 
@@ -711,6 +742,7 @@ public class AuditModel {
         this.responseBody = value;
     }
 
+
     private ArrayList<AuditModel> remoteCalls;
 
     /**
@@ -730,6 +762,7 @@ public class AuditModel {
     public void setRemoteCalls(ArrayList<AuditModel> value) {
         this.remoteCalls = value;
     }
+
 
     /**
      * Returns a JSON string representation of AuditModel

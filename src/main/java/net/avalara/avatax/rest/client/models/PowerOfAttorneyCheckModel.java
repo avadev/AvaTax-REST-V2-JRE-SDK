@@ -49,6 +49,7 @@ public class PowerOfAttorneyCheckModel {
         this.companyId = value;
     }
 
+
     private String country;
 
     /**
@@ -68,6 +69,7 @@ public class PowerOfAttorneyCheckModel {
     public void setCountry(String value) {
         this.country = value;
     }
+
 
     private String region;
 
@@ -89,6 +91,7 @@ public class PowerOfAttorneyCheckModel {
         this.region = value;
     }
 
+
     private Boolean activePoa;
 
     /**
@@ -108,6 +111,7 @@ public class PowerOfAttorneyCheckModel {
     public void setActivePoa(Boolean value) {
         this.activePoa = value;
     }
+
 
     private Date effectiveDate;
 
@@ -129,6 +133,7 @@ public class PowerOfAttorneyCheckModel {
         this.effectiveDate = value;
     }
 
+
     private Date expirationDate;
 
     /**
@@ -149,6 +154,7 @@ public class PowerOfAttorneyCheckModel {
         this.expirationDate = value;
     }
 
+
     private ResourceFileDownloadResult availablePoa;
 
     /**
@@ -168,6 +174,7 @@ public class PowerOfAttorneyCheckModel {
     public void setAvailablePoa(ResourceFileDownloadResult value) {
         this.availablePoa = value;
     }
+
 
     /**
      * Returns a JSON string representation of PowerOfAttorneyCheckModel

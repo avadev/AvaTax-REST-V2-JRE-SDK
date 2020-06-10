@@ -59,6 +59,7 @@ public class VerifyTransactionModel {
         this.verifyTransactionDate = value;
     }
 
+
     private BigDecimal verifyTotalAmount;
 
     /**
@@ -85,6 +86,7 @@ public class VerifyTransactionModel {
         this.verifyTotalAmount = value;
     }
 
+
     private BigDecimal verifyTotalTax;
 
     /**
@@ -110,6 +112,7 @@ public class VerifyTransactionModel {
     public void setVerifyTotalTax(BigDecimal value) {
         this.verifyTotalTax = value;
     }
+
 
     /**
      * Returns a JSON string representation of VerifyTransactionModel

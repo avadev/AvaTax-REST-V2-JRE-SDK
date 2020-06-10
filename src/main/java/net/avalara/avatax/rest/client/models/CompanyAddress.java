@@ -49,6 +49,7 @@ public class CompanyAddress {
         this.line = value;
     }
 
+
     private String city;
 
     /**
@@ -68,6 +69,7 @@ public class CompanyAddress {
     public void setCity(String value) {
         this.city = value;
     }
+
 
     private String region;
 
@@ -102,6 +104,7 @@ public class CompanyAddress {
     public void setRegion(String value) {
         this.region = value;
     }
+
 
     private String country;
 
@@ -139,6 +142,7 @@ public class CompanyAddress {
         this.country = value;
     }
 
+
     private String postalCode;
 
     /**
@@ -158,6 +162,7 @@ public class CompanyAddress {
     public void setPostalCode(String value) {
         this.postalCode = value;
     }
+
 
     /**
      * Returns a JSON string representation of CompanyAddress

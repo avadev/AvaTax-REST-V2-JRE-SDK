@@ -62,6 +62,7 @@ public class CreateMultiDocumentModel {
         this.code = value;
     }
 
+
     private ArrayList<MultiDocumentLineItemModel> lines;
 
     /**
@@ -90,6 +91,7 @@ public class CreateMultiDocumentModel {
         this.lines = value;
     }
 
+
     private Boolean allowAdjust;
 
     /**
@@ -115,6 +117,7 @@ public class CreateMultiDocumentModel {
     public void setAllowAdjust(Boolean value) {
         this.allowAdjust = value;
     }
+
 
     private DocumentType type;
 
@@ -144,6 +147,7 @@ public class CreateMultiDocumentModel {
         this.type = value;
     }
 
+
     private String companyCode;
 
     /**
@@ -165,6 +169,7 @@ public class CreateMultiDocumentModel {
     public void setCompanyCode(String value) {
         this.companyCode = value;
     }
+
 
     private Date date;
 
@@ -192,6 +197,7 @@ public class CreateMultiDocumentModel {
         this.date = value;
     }
 
+
     private String salespersonCode;
 
     /**
@@ -211,6 +217,7 @@ public class CreateMultiDocumentModel {
     public void setSalespersonCode(String value) {
         this.salespersonCode = value;
     }
+
 
     private String customerCode;
 
@@ -236,6 +243,7 @@ public class CreateMultiDocumentModel {
         this.customerCode = value;
     }
 
+
     private String customerUsageType;
 
     /**
@@ -258,6 +266,7 @@ public class CreateMultiDocumentModel {
         this.customerUsageType = value;
     }
 
+
     private String entityUseCode;
 
     /**
@@ -279,6 +288,7 @@ public class CreateMultiDocumentModel {
     public void setEntityUseCode(String value) {
         this.entityUseCode = value;
     }
+
 
     private BigDecimal discount;
 
@@ -304,6 +314,7 @@ public class CreateMultiDocumentModel {
         this.discount = value;
     }
 
+
     private String purchaseOrderNo;
 
     /**
@@ -327,6 +338,7 @@ public class CreateMultiDocumentModel {
     public void setPurchaseOrderNo(String value) {
         this.purchaseOrderNo = value;
     }
+
 
     private String exemptionNo;
 
@@ -358,6 +370,7 @@ public class CreateMultiDocumentModel {
         this.exemptionNo = value;
     }
 
+
     private AddressesModel addresses;
 
     /**
@@ -386,6 +399,7 @@ public class CreateMultiDocumentModel {
         this.addresses = value;
     }
 
+
     private ArrayList<TransactionParameterModel> parameters;
 
     /**
@@ -409,6 +423,7 @@ public class CreateMultiDocumentModel {
     public void setParameters(ArrayList<TransactionParameterModel> value) {
         this.parameters = value;
     }
+
 
     private String referenceCode;
 
@@ -436,6 +451,7 @@ public class CreateMultiDocumentModel {
         this.referenceCode = value;
     }
 
+
     private String reportingLocationCode;
 
     /**
@@ -462,6 +478,7 @@ public class CreateMultiDocumentModel {
         this.reportingLocationCode = value;
     }
 
+
     private Boolean commit;
 
     /**
@@ -484,6 +501,7 @@ public class CreateMultiDocumentModel {
         this.commit = value;
     }
 
+
     private String batchCode;
 
     /**
@@ -503,6 +521,7 @@ public class CreateMultiDocumentModel {
     public void setBatchCode(String value) {
         this.batchCode = value;
     }
+
 
     private TaxOverrideModel taxOverride;
 
@@ -524,6 +543,7 @@ public class CreateMultiDocumentModel {
         this.taxOverride = value;
     }
 
+
     private String currencyCode;
 
     /**
@@ -543,6 +563,7 @@ public class CreateMultiDocumentModel {
     public void setCurrencyCode(String value) {
         this.currencyCode = value;
     }
+
 
     private ServiceMode serviceMode;
 
@@ -565,6 +586,7 @@ public class CreateMultiDocumentModel {
     public void setServiceMode(ServiceMode value) {
         this.serviceMode = value;
     }
+
 
     private BigDecimal exchangeRate;
 
@@ -592,6 +614,7 @@ public class CreateMultiDocumentModel {
         this.exchangeRate = value;
     }
 
+
     private Date exchangeRateEffectiveDate;
 
     /**
@@ -612,6 +635,7 @@ public class CreateMultiDocumentModel {
         this.exchangeRateEffectiveDate = value;
     }
 
+
     private String posLaneCode;
 
     /**
@@ -631,6 +655,7 @@ public class CreateMultiDocumentModel {
     public void setPosLaneCode(String value) {
         this.posLaneCode = value;
     }
+
 
     private String businessIdentificationNo;
 
@@ -661,6 +686,7 @@ public class CreateMultiDocumentModel {
     public void setBusinessIdentificationNo(String value) {
         this.businessIdentificationNo = value;
     }
+
 
     private Boolean isSellerImporterOfRecord;
 
@@ -698,6 +724,7 @@ public class CreateMultiDocumentModel {
         this.isSellerImporterOfRecord = value;
     }
 
+
     private String description;
 
     /**
@@ -717,6 +744,7 @@ public class CreateMultiDocumentModel {
     public void setDescription(String value) {
         this.description = value;
     }
+
 
     private String email;
 
@@ -738,6 +766,7 @@ public class CreateMultiDocumentModel {
         this.email = value;
     }
 
+
     private TaxDebugLevel debugLevel;
 
     /**
@@ -757,6 +786,7 @@ public class CreateMultiDocumentModel {
     public void setDebugLevel(TaxDebugLevel value) {
         this.debugLevel = value;
     }
+
 
     /**
      * Returns a JSON string representation of CreateMultiDocumentModel

@@ -57,6 +57,7 @@ public class TaxRuleModel {
         this.id = value;
     }
 
+
     private Integer companyId;
 
     /**
@@ -76,6 +77,7 @@ public class TaxRuleModel {
     public void setCompanyId(Integer value) {
         this.companyId = value;
     }
+
 
     private Integer taxCodeId;
 
@@ -117,6 +119,7 @@ public class TaxRuleModel {
         this.taxCodeId = value;
     }
 
+
     private String taxCode;
 
     /**
@@ -157,6 +160,7 @@ public class TaxRuleModel {
         this.taxCode = value;
     }
 
+
     private String stateFIPS;
 
     /**
@@ -182,6 +186,7 @@ public class TaxRuleModel {
     public void setStateFIPS(String value) {
         this.stateFIPS = value;
     }
+
 
     private String jurisName;
 
@@ -219,6 +224,7 @@ public class TaxRuleModel {
         this.jurisName = value;
     }
 
+
     private String jurisCode;
 
     /**
@@ -253,6 +259,7 @@ public class TaxRuleModel {
         this.jurisCode = value;
     }
 
+
     private JurisTypeId jurisTypeId;
 
     /**
@@ -272,6 +279,7 @@ public class TaxRuleModel {
     public void setJurisTypeId(JurisTypeId value) {
         this.jurisTypeId = value;
     }
+
 
     private JurisdictionType jurisdictionTypeId;
 
@@ -313,6 +321,7 @@ public class TaxRuleModel {
         this.jurisdictionTypeId = value;
     }
 
+
     private String customerUsageType;
 
     /**
@@ -332,6 +341,7 @@ public class TaxRuleModel {
     public void setCustomerUsageType(String value) {
         this.customerUsageType = value;
     }
+
 
     private String entityUseCode;
 
@@ -363,6 +373,7 @@ public class TaxRuleModel {
         this.entityUseCode = value;
     }
 
+
     private MatchingTaxType taxTypeId;
 
     /**
@@ -391,6 +402,7 @@ public class TaxRuleModel {
         this.taxTypeId = value;
     }
 
+
     private RateType rateTypeId;
 
     /**
@@ -410,6 +422,7 @@ public class TaxRuleModel {
     public void setRateTypeId(RateType value) {
         this.rateTypeId = value;
     }
+
 
     private String rateTypeCode;
 
@@ -436,6 +449,7 @@ public class TaxRuleModel {
     public void setRateTypeCode(String value) {
         this.rateTypeCode = value;
     }
+
 
     private TaxRuleTypeId taxRuleTypeId;
 
@@ -464,6 +478,7 @@ public class TaxRuleModel {
     public void setTaxRuleTypeId(TaxRuleTypeId value) {
         this.taxRuleTypeId = value;
     }
+
 
     private Boolean isAllJuris;
 
@@ -495,6 +510,7 @@ public class TaxRuleModel {
         this.isAllJuris = value;
     }
 
+
     private BigDecimal value;
 
     /**
@@ -521,6 +537,7 @@ public class TaxRuleModel {
         this.value = value;
     }
 
+
     private BigDecimal cap;
 
     /**
@@ -544,6 +561,7 @@ public class TaxRuleModel {
     public void setCap(BigDecimal value) {
         this.cap = value;
     }
+
 
     private BigDecimal threshold;
 
@@ -577,6 +595,7 @@ public class TaxRuleModel {
         this.threshold = value;
     }
 
+
     private String options;
 
     /**
@@ -603,6 +622,7 @@ public class TaxRuleModel {
         this.options = value;
     }
 
+
     private Date effectiveDate;
 
     /**
@@ -622,6 +642,7 @@ public class TaxRuleModel {
     public void setEffectiveDate(Date value) {
         this.effectiveDate = value;
     }
+
 
     private Date endDate;
 
@@ -643,6 +664,7 @@ public class TaxRuleModel {
         this.endDate = value;
     }
 
+
     private String description;
 
     /**
@@ -662,6 +684,7 @@ public class TaxRuleModel {
     public void setDescription(String value) {
         this.description = value;
     }
+
 
     private String countyFIPS;
 
@@ -689,6 +712,7 @@ public class TaxRuleModel {
         this.countyFIPS = value;
     }
 
+
     private Boolean isSTPro;
 
     /**
@@ -708,6 +732,7 @@ public class TaxRuleModel {
     public void setIsSTPro(Boolean value) {
         this.isSTPro = value;
     }
+
 
     private String country;
 
@@ -745,6 +770,7 @@ public class TaxRuleModel {
         this.country = value;
     }
 
+
     private String region;
 
     /**
@@ -781,6 +807,7 @@ public class TaxRuleModel {
         this.region = value;
     }
 
+
     private Sourcing sourcing;
 
     /**
@@ -800,6 +827,7 @@ public class TaxRuleModel {
     public void setSourcing(Sourcing value) {
         this.sourcing = value;
     }
+
 
     private String taxTypeGroup;
 
@@ -831,6 +859,7 @@ public class TaxRuleModel {
         this.taxTypeGroup = value;
     }
 
+
     private String taxSubType;
 
     /**
@@ -861,6 +890,7 @@ public class TaxRuleModel {
         this.taxSubType = value;
     }
 
+
     private String nonPassthroughExpression;
 
     /**
@@ -880,6 +910,7 @@ public class TaxRuleModel {
     public void setNonPassthroughExpression(String value) {
         this.nonPassthroughExpression = value;
     }
+
 
     private String currencyCode;
 
@@ -905,6 +936,7 @@ public class TaxRuleModel {
         this.currencyCode = value;
     }
 
+
     private Integer preferredProgramId;
 
     /**
@@ -924,6 +956,7 @@ public class TaxRuleModel {
     public void setPreferredProgramId(Integer value) {
         this.preferredProgramId = value;
     }
+
 
     private Integer uomId;
 
@@ -951,6 +984,7 @@ public class TaxRuleModel {
         this.uomId = value;
     }
 
+
     private Date createdDate;
 
     /**
@@ -970,6 +1004,7 @@ public class TaxRuleModel {
     public void setCreatedDate(Date value) {
         this.createdDate = value;
     }
+
 
     private Integer createdUserId;
 
@@ -991,6 +1026,7 @@ public class TaxRuleModel {
         this.createdUserId = value;
     }
 
+
     private Date modifiedDate;
 
     /**
@@ -1011,6 +1047,7 @@ public class TaxRuleModel {
         this.modifiedDate = value;
     }
 
+
     private Integer modifiedUserId;
 
     /**
@@ -1030,6 +1067,7 @@ public class TaxRuleModel {
     public void setModifiedUserId(Integer value) {
         this.modifiedUserId = value;
     }
+
 
     /**
      * Returns a JSON string representation of TaxRuleModel

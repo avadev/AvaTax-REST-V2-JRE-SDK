@@ -49,6 +49,7 @@ public class TransactionModel {
         this.id = value;
     }
 
+
     private String code;
 
     /**
@@ -68,6 +69,7 @@ public class TransactionModel {
     public void setCode(String value) {
         this.code = value;
     }
+
 
     private Integer companyId;
 
@@ -89,6 +91,7 @@ public class TransactionModel {
         this.companyId = value;
     }
 
+
     private Date date;
 
     /**
@@ -108,6 +111,7 @@ public class TransactionModel {
     public void setDate(Date value) {
         this.date = value;
     }
+
 
     private Date paymentDate;
 
@@ -131,6 +135,7 @@ public class TransactionModel {
         this.paymentDate = value;
     }
 
+
     private DocumentStatus status;
 
     /**
@@ -150,6 +155,7 @@ public class TransactionModel {
     public void setStatus(DocumentStatus value) {
         this.status = value;
     }
+
 
     private DocumentType type;
 
@@ -189,6 +195,7 @@ public class TransactionModel {
         this.type = value;
     }
 
+
     private String batchCode;
 
     /**
@@ -209,6 +216,7 @@ public class TransactionModel {
         this.batchCode = value;
     }
 
+
     private String currencyCode;
 
     /**
@@ -228,6 +236,7 @@ public class TransactionModel {
     public void setCurrencyCode(String value) {
         this.currencyCode = value;
     }
+
 
     private String customerUsageType;
 
@@ -251,6 +260,7 @@ public class TransactionModel {
         this.customerUsageType = value;
     }
 
+
     private String entityUseCode;
 
     /**
@@ -270,6 +280,7 @@ public class TransactionModel {
     public void setEntityUseCode(String value) {
         this.entityUseCode = value;
     }
+
 
     private String customerVendorCode;
 
@@ -292,6 +303,7 @@ public class TransactionModel {
     public void setCustomerVendorCode(String value) {
         this.customerVendorCode = value;
     }
+
 
     private String customerCode;
 
@@ -321,6 +333,7 @@ public class TransactionModel {
         this.customerCode = value;
     }
 
+
     private String exemptNo;
 
     /**
@@ -347,6 +360,7 @@ public class TransactionModel {
         this.exemptNo = value;
     }
 
+
     private Boolean reconciled;
 
     /**
@@ -366,6 +380,7 @@ public class TransactionModel {
     public void setReconciled(Boolean value) {
         this.reconciled = value;
     }
+
 
     private String locationCode;
 
@@ -388,6 +403,7 @@ public class TransactionModel {
     public void setLocationCode(String value) {
         this.locationCode = value;
     }
+
 
     private String reportingLocationCode;
 
@@ -427,6 +443,7 @@ public class TransactionModel {
         this.reportingLocationCode = value;
     }
 
+
     private String purchaseOrderNo;
 
     /**
@@ -446,6 +463,7 @@ public class TransactionModel {
     public void setPurchaseOrderNo(String value) {
         this.purchaseOrderNo = value;
     }
+
 
     private String referenceCode;
 
@@ -467,6 +485,7 @@ public class TransactionModel {
         this.referenceCode = value;
     }
 
+
     private String salespersonCode;
 
     /**
@@ -486,6 +505,7 @@ public class TransactionModel {
     public void setSalespersonCode(String value) {
         this.salespersonCode = value;
     }
+
 
     private TaxOverrideType taxOverrideType;
 
@@ -507,6 +527,7 @@ public class TransactionModel {
         this.taxOverrideType = value;
     }
 
+
     private BigDecimal taxOverrideAmount;
 
     /**
@@ -526,6 +547,7 @@ public class TransactionModel {
     public void setTaxOverrideAmount(BigDecimal value) {
         this.taxOverrideAmount = value;
     }
+
 
     private String taxOverrideReason;
 
@@ -547,6 +569,7 @@ public class TransactionModel {
         this.taxOverrideReason = value;
     }
 
+
     private BigDecimal totalAmount;
 
     /**
@@ -566,6 +589,7 @@ public class TransactionModel {
     public void setTotalAmount(BigDecimal value) {
         this.totalAmount = value;
     }
+
 
     private BigDecimal totalExempt;
 
@@ -587,6 +611,7 @@ public class TransactionModel {
         this.totalExempt = value;
     }
 
+
     private BigDecimal totalDiscount;
 
     /**
@@ -606,6 +631,7 @@ public class TransactionModel {
     public void setTotalDiscount(BigDecimal value) {
         this.totalDiscount = value;
     }
+
 
     private BigDecimal totalTax;
 
@@ -643,6 +669,7 @@ public class TransactionModel {
         this.totalTax = value;
     }
 
+
     private BigDecimal totalTaxable;
 
     /**
@@ -662,6 +689,7 @@ public class TransactionModel {
     public void setTotalTaxable(BigDecimal value) {
         this.totalTaxable = value;
     }
+
 
     private BigDecimal totalTaxCalculated;
 
@@ -697,6 +725,7 @@ public class TransactionModel {
         this.totalTaxCalculated = value;
     }
 
+
     private AdjustmentReason adjustmentReason;
 
     /**
@@ -716,6 +745,7 @@ public class TransactionModel {
     public void setAdjustmentReason(AdjustmentReason value) {
         this.adjustmentReason = value;
     }
+
 
     private String adjustmentDescription;
 
@@ -737,6 +767,7 @@ public class TransactionModel {
         this.adjustmentDescription = value;
     }
 
+
     private Boolean locked;
 
     /**
@@ -756,6 +787,7 @@ public class TransactionModel {
     public void setLocked(Boolean value) {
         this.locked = value;
     }
+
 
     private String region;
 
@@ -777,6 +809,7 @@ public class TransactionModel {
         this.region = value;
     }
 
+
     private String country;
 
     /**
@@ -796,6 +829,7 @@ public class TransactionModel {
     public void setCountry(String value) {
         this.country = value;
     }
+
 
     private Integer version;
 
@@ -819,6 +853,7 @@ public class TransactionModel {
         this.version = value;
     }
 
+
     private String softwareVersion;
 
     /**
@@ -838,6 +873,7 @@ public class TransactionModel {
     public void setSoftwareVersion(String value) {
         this.softwareVersion = value;
     }
+
 
     private Long originAddressId;
 
@@ -859,6 +895,7 @@ public class TransactionModel {
         this.originAddressId = value;
     }
 
+
     private Long destinationAddressId;
 
     /**
@@ -878,6 +915,7 @@ public class TransactionModel {
     public void setDestinationAddressId(Long value) {
         this.destinationAddressId = value;
     }
+
 
     private Date exchangeRateEffectiveDate;
 
@@ -899,6 +937,7 @@ public class TransactionModel {
         this.exchangeRateEffectiveDate = value;
     }
 
+
     private BigDecimal exchangeRate;
 
     /**
@@ -918,6 +957,7 @@ public class TransactionModel {
     public void setExchangeRate(BigDecimal value) {
         this.exchangeRate = value;
     }
+
 
     private Boolean isSellerImporterOfRecord;
 
@@ -959,6 +999,7 @@ public class TransactionModel {
         this.isSellerImporterOfRecord = value;
     }
 
+
     private String description;
 
     /**
@@ -978,6 +1019,7 @@ public class TransactionModel {
     public void setDescription(String value) {
         this.description = value;
     }
+
 
     private String email;
 
@@ -999,6 +1041,7 @@ public class TransactionModel {
         this.email = value;
     }
 
+
     private String businessIdentificationNo;
 
     /**
@@ -1018,6 +1061,7 @@ public class TransactionModel {
     public void setBusinessIdentificationNo(String value) {
         this.businessIdentificationNo = value;
     }
+
 
     private Date modifiedDate;
 
@@ -1039,6 +1083,7 @@ public class TransactionModel {
         this.modifiedDate = value;
     }
 
+
     private Integer modifiedUserId;
 
     /**
@@ -1058,6 +1103,7 @@ public class TransactionModel {
     public void setModifiedUserId(Integer value) {
         this.modifiedUserId = value;
     }
+
 
     private Date taxDate;
 
@@ -1079,6 +1125,7 @@ public class TransactionModel {
         this.taxDate = value;
     }
 
+
     private ArrayList<TransactionLineModel> lines;
 
     /**
@@ -1098,6 +1145,7 @@ public class TransactionModel {
     public void setLines(ArrayList<TransactionLineModel> value) {
         this.lines = value;
     }
+
 
     private ArrayList<TransactionAddressModel> addresses;
 
@@ -1125,6 +1173,7 @@ public class TransactionModel {
         this.addresses = value;
     }
 
+
     private ArrayList<TransactionLocationTypeModel> locationTypes;
 
     /**
@@ -1144,6 +1193,7 @@ public class TransactionModel {
     public void setLocationTypes(ArrayList<TransactionLocationTypeModel> value) {
         this.locationTypes = value;
     }
+
 
     private ArrayList<TransactionSummary> summary;
 
@@ -1165,6 +1215,7 @@ public class TransactionModel {
         this.summary = value;
     }
 
+
     private ArrayList<TaxDetailsByTaxType> taxDetailsByTaxType;
 
     /**
@@ -1184,6 +1235,7 @@ public class TransactionModel {
     public void setTaxDetailsByTaxType(ArrayList<TaxDetailsByTaxType> value) {
         this.taxDetailsByTaxType = value;
     }
+
 
     private ArrayList<TransactionParameterModel> parameters;
 
@@ -1205,6 +1257,7 @@ public class TransactionModel {
         this.parameters = value;
     }
 
+
     private ArrayList<AvaTaxMessage> messages;
 
     /**
@@ -1225,6 +1278,7 @@ public class TransactionModel {
         this.messages = value;
     }
 
+
     private ArrayList<InvoiceMessageModel> invoiceMessages;
 
     /**
@@ -1244,6 +1298,7 @@ public class TransactionModel {
     public void setInvoiceMessages(ArrayList<InvoiceMessageModel> value) {
         this.invoiceMessages = value;
     }
+
 
     /**
      * Returns a JSON string representation of TransactionModel

@@ -49,6 +49,7 @@ public class AdvancedRuleVisibilityModel {
         this.isVisible = value;
     }
 
+
     private Integer accountId;
 
     /**
@@ -68,6 +69,7 @@ public class AdvancedRuleVisibilityModel {
     public void setAccountId(Integer value) {
         this.accountId = value;
     }
+
 
     /**
      * Returns a JSON string representation of AdvancedRuleVisibilityModel

@@ -49,6 +49,7 @@ public class AddressInfo {
         this.line1 = value;
     }
 
+
     private String line2;
 
     /**
@@ -68,6 +69,7 @@ public class AddressInfo {
     public void setLine2(String value) {
         this.line2 = value;
     }
+
 
     private String line3;
 
@@ -89,6 +91,7 @@ public class AddressInfo {
         this.line3 = value;
     }
 
+
     private String city;
 
     /**
@@ -108,6 +111,7 @@ public class AddressInfo {
     public void setCity(String value) {
         this.city = value;
     }
+
 
     private String region;
 
@@ -142,6 +146,7 @@ public class AddressInfo {
     public void setRegion(String value) {
         this.region = value;
     }
+
 
     private String country;
 
@@ -179,6 +184,7 @@ public class AddressInfo {
         this.country = value;
     }
 
+
     private String postalCode;
 
     /**
@@ -198,6 +204,7 @@ public class AddressInfo {
     public void setPostalCode(String value) {
         this.postalCode = value;
     }
+
 
     private BigDecimal latitude;
 
@@ -219,6 +226,7 @@ public class AddressInfo {
         this.latitude = value;
     }
 
+
     private BigDecimal longitude;
 
     /**
@@ -238,6 +246,7 @@ public class AddressInfo {
     public void setLongitude(BigDecimal value) {
         this.longitude = value;
     }
+
 
     /**
      * Returns a JSON string representation of AddressInfo

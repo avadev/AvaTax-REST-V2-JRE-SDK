@@ -50,6 +50,7 @@ public class TransactionBatchItemModel {
         this.createTransactionModel = value;
     }
 
+
     private BatchAdjustTransactionModel adjustTransactionModel;
 
     /**
@@ -70,6 +71,7 @@ public class TransactionBatchItemModel {
         this.adjustTransactionModel = value;
     }
 
+
     private BatchVoidTransactionModel voidTransactionModel;
 
     /**
@@ -89,6 +91,7 @@ public class TransactionBatchItemModel {
     public void setVoidTransactionModel(BatchVoidTransactionModel value) {
         this.voidTransactionModel = value;
     }
+
 
     /**
      * Returns a JSON string representation of TransactionBatchItemModel

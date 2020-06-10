@@ -49,6 +49,7 @@ public class AccountModel {
         this.id = value;
     }
 
+
     private String crmid;
 
     /**
@@ -68,6 +69,7 @@ public class AccountModel {
     public void setCrmid(String value) {
         this.crmid = value;
     }
+
 
     private String name;
 
@@ -89,6 +91,7 @@ public class AccountModel {
         this.name = value;
     }
 
+
     private Date effectiveDate;
 
     /**
@@ -108,6 +111,7 @@ public class AccountModel {
     public void setEffectiveDate(Date value) {
         this.effectiveDate = value;
     }
+
 
     private Date endDate;
 
@@ -129,6 +133,7 @@ public class AccountModel {
         this.endDate = value;
     }
 
+
     private AccountStatusId accountStatusId;
 
     /**
@@ -148,6 +153,7 @@ public class AccountModel {
     public void setAccountStatusId(AccountStatusId value) {
         this.accountStatusId = value;
     }
+
 
     private AccountTypeId accountTypeId;
 
@@ -169,6 +175,7 @@ public class AccountModel {
         this.accountTypeId = value;
     }
 
+
     private Date createdDate;
 
     /**
@@ -188,6 +195,7 @@ public class AccountModel {
     public void setCreatedDate(Date value) {
         this.createdDate = value;
     }
+
 
     private Integer createdUserId;
 
@@ -209,6 +217,7 @@ public class AccountModel {
         this.createdUserId = value;
     }
 
+
     private Date modifiedDate;
 
     /**
@@ -228,6 +237,7 @@ public class AccountModel {
     public void setModifiedDate(Date value) {
         this.modifiedDate = value;
     }
+
 
     private Integer modifiedUserId;
 
@@ -249,6 +259,7 @@ public class AccountModel {
         this.modifiedUserId = value;
     }
 
+
     private ArrayList<SubscriptionModel> subscriptions;
 
     /**
@@ -269,6 +280,7 @@ public class AccountModel {
         this.subscriptions = value;
     }
 
+
     private ArrayList<UserModel> users;
 
     /**
@@ -288,6 +300,7 @@ public class AccountModel {
     public void setUsers(ArrayList<UserModel> value) {
         this.users = value;
     }
+
 
     /**
      * Returns a JSON string representation of AccountModel

@@ -50,6 +50,7 @@ public class TaxCodeModel {
         this.id = value;
     }
 
+
     private Integer companyId;
 
     /**
@@ -69,6 +70,7 @@ public class TaxCodeModel {
     public void setCompanyId(Integer value) {
         this.companyId = value;
     }
+
 
     private String taxCode;
 
@@ -90,6 +92,7 @@ public class TaxCodeModel {
         this.taxCode = value;
     }
 
+
     private String taxCodeTypeId;
 
     /**
@@ -109,6 +112,7 @@ public class TaxCodeModel {
     public void setTaxCodeTypeId(String value) {
         this.taxCodeTypeId = value;
     }
+
 
     private String description;
 
@@ -130,6 +134,7 @@ public class TaxCodeModel {
         this.description = value;
     }
 
+
     private String parentTaxCode;
 
     /**
@@ -149,6 +154,7 @@ public class TaxCodeModel {
     public void setParentTaxCode(String value) {
         this.parentTaxCode = value;
     }
+
 
     private Boolean isPhysical;
 
@@ -170,6 +176,7 @@ public class TaxCodeModel {
         this.isPhysical = value;
     }
 
+
     private Long goodsServiceCode;
 
     /**
@@ -189,6 +196,7 @@ public class TaxCodeModel {
     public void setGoodsServiceCode(Long value) {
         this.goodsServiceCode = value;
     }
+
 
     private String entityUseCode;
 
@@ -210,6 +218,7 @@ public class TaxCodeModel {
         this.entityUseCode = value;
     }
 
+
     private Boolean isActive;
 
     /**
@@ -229,6 +238,7 @@ public class TaxCodeModel {
     public void setIsActive(Boolean value) {
         this.isActive = value;
     }
+
 
     private Boolean isSSTCertified;
 
@@ -252,6 +262,7 @@ public class TaxCodeModel {
         this.isSSTCertified = value;
     }
 
+
     private Date createdDate;
 
     /**
@@ -271,6 +282,7 @@ public class TaxCodeModel {
     public void setCreatedDate(Date value) {
         this.createdDate = value;
     }
+
 
     private Integer createdUserId;
 
@@ -292,6 +304,7 @@ public class TaxCodeModel {
         this.createdUserId = value;
     }
 
+
     private Date modifiedDate;
 
     /**
@@ -312,6 +325,7 @@ public class TaxCodeModel {
         this.modifiedDate = value;
     }
 
+
     private Integer modifiedUserId;
 
     /**
@@ -331,6 +345,7 @@ public class TaxCodeModel {
     public void setModifiedUserId(Integer value) {
         this.modifiedUserId = value;
     }
+
 
     /**
      * Returns a JSON string representation of TaxCodeModel

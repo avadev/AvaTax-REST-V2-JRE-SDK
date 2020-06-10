@@ -49,6 +49,7 @@ public class FilingReturnCreditModel {
         this.totalSales = value;
     }
 
+
     private BigDecimal totalExempt;
 
     /**
@@ -68,6 +69,7 @@ public class FilingReturnCreditModel {
     public void setTotalExempt(BigDecimal value) {
         this.totalExempt = value;
     }
+
 
     private BigDecimal totalTaxable;
 
@@ -89,6 +91,7 @@ public class FilingReturnCreditModel {
         this.totalTaxable = value;
     }
 
+
     private BigDecimal totalTax;
 
     /**
@@ -109,6 +112,7 @@ public class FilingReturnCreditModel {
         this.totalTax = value;
     }
 
+
     private ArrayList<WorksheetDocument> transactionDetails;
 
     /**
@@ -128,6 +132,7 @@ public class FilingReturnCreditModel {
     public void setTransactionDetails(ArrayList<WorksheetDocument> value) {
         this.transactionDetails = value;
     }
+
 
     /**
      * Returns a JSON string representation of FilingReturnCreditModel

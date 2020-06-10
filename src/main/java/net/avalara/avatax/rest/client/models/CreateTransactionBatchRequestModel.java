@@ -49,6 +49,7 @@ public class CreateTransactionBatchRequestModel {
         this.name = value;
     }
 
+
     private ArrayList<TransactionBatchItemModel> transactions;
 
     /**
@@ -68,6 +69,7 @@ public class CreateTransactionBatchRequestModel {
     public void setTransactions(ArrayList<TransactionBatchItemModel> value) {
         this.transactions = value;
     }
+
 
     /**
      * Returns a JSON string representation of CreateTransactionBatchRequestModel

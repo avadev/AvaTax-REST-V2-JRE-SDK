@@ -49,6 +49,7 @@ public class ResourceFileUploadResultModel {
         this.message = value;
     }
 
+
     private Long resourceFileId;
 
     /**
@@ -69,6 +70,7 @@ public class ResourceFileUploadResultModel {
         this.resourceFileId = value;
     }
 
+
     private Boolean aaa_success;
 
     /**
@@ -88,6 +90,7 @@ public class ResourceFileUploadResultModel {
     public void setAaa_success(Boolean value) {
         this.aaa_success = value;
     }
+
 
     /**
      * Returns a JSON string representation of ResourceFileUploadResultModel

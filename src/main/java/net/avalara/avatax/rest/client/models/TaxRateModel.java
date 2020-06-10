@@ -62,6 +62,7 @@ public class TaxRateModel {
         this.totalRate = value;
     }
 
+
     private ArrayList<RateModel> rates;
 
     /**
@@ -83,6 +84,7 @@ public class TaxRateModel {
     public void setRates(ArrayList<RateModel> value) {
         this.rates = value;
     }
+
 
     /**
      * Returns a JSON string representation of TaxRateModel

@@ -56,6 +56,7 @@ public class NotificationModel {
         this.id = value;
     }
 
+
     private Integer accountId;
 
     /**
@@ -75,6 +76,7 @@ public class NotificationModel {
     public void setAccountId(Integer value) {
         this.accountId = value;
     }
+
 
     private Integer companyId;
 
@@ -99,6 +101,7 @@ public class NotificationModel {
     public void setCompanyId(Integer value) {
         this.companyId = value;
     }
+
 
     private String referenceObject;
 
@@ -130,6 +133,7 @@ public class NotificationModel {
         this.referenceObject = value;
     }
 
+
     private Long referenceId;
 
     /**
@@ -160,6 +164,7 @@ public class NotificationModel {
         this.referenceId = value;
     }
 
+
     private NotificationSeverityLevel severityLevelId;
 
     /**
@@ -179,6 +184,7 @@ public class NotificationModel {
     public void setSeverityLevelId(NotificationSeverityLevel value) {
         this.severityLevelId = value;
     }
+
 
     private String category;
 
@@ -210,6 +216,7 @@ public class NotificationModel {
         this.category = value;
     }
 
+
     private String topic;
 
     /**
@@ -240,6 +247,7 @@ public class NotificationModel {
         this.topic = value;
     }
 
+
     private String message;
 
     /**
@@ -262,6 +270,7 @@ public class NotificationModel {
         this.message = value;
     }
 
+
     private Boolean needsAction;
 
     /**
@@ -281,6 +290,7 @@ public class NotificationModel {
     public void setNeedsAction(Boolean value) {
         this.needsAction = value;
     }
+
 
     private String actionName;
 
@@ -310,6 +320,7 @@ public class NotificationModel {
         this.actionName = value;
     }
 
+
     private String actionLink;
 
     /**
@@ -337,6 +348,7 @@ public class NotificationModel {
     public void setActionLink(String value) {
         this.actionLink = value;
     }
+
 
     private Date actionDueDate;
 
@@ -374,6 +386,7 @@ public class NotificationModel {
         this.actionDueDate = value;
     }
 
+
     private Boolean dismissed;
 
     /**
@@ -398,6 +411,7 @@ public class NotificationModel {
         this.dismissed = value;
     }
 
+
     private Integer dismissedByUserId;
 
     /**
@@ -419,6 +433,7 @@ public class NotificationModel {
     public void setDismissedByUserId(Integer value) {
         this.dismissedByUserId = value;
     }
+
 
     private Date dismissedDate;
 
@@ -442,6 +457,7 @@ public class NotificationModel {
         this.dismissedDate = value;
     }
 
+
     private Date expireDate;
 
     /**
@@ -464,6 +480,7 @@ public class NotificationModel {
         this.expireDate = value;
     }
 
+
     private Integer createdUserId;
 
     /**
@@ -483,6 +500,7 @@ public class NotificationModel {
     public void setCreatedUserId(Integer value) {
         this.createdUserId = value;
     }
+
 
     private Date createdDate;
 
@@ -504,6 +522,7 @@ public class NotificationModel {
         this.createdDate = value;
     }
 
+
     private Integer modifiedUserId;
 
     /**
@@ -524,6 +543,7 @@ public class NotificationModel {
         this.modifiedUserId = value;
     }
 
+
     private Date modifiedDate;
 
     /**
@@ -543,6 +563,7 @@ public class NotificationModel {
     public void setModifiedDate(Date value) {
         this.modifiedDate = value;
     }
+
 
     /**
      * Returns a JSON string representation of NotificationModel

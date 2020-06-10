@@ -49,6 +49,7 @@ public class TransactionSummary {
         this.country = value;
     }
 
+
     private String region;
 
     /**
@@ -68,6 +69,7 @@ public class TransactionSummary {
     public void setRegion(String value) {
         this.region = value;
     }
+
 
     private JurisdictionType jurisType;
 
@@ -89,6 +91,7 @@ public class TransactionSummary {
         this.jurisType = value;
     }
 
+
     private String jurisCode;
 
     /**
@@ -108,6 +111,7 @@ public class TransactionSummary {
     public void setJurisCode(String value) {
         this.jurisCode = value;
     }
+
 
     private String jurisName;
 
@@ -129,6 +133,7 @@ public class TransactionSummary {
         this.jurisName = value;
     }
 
+
     private Integer taxAuthorityType;
 
     /**
@@ -148,6 +153,7 @@ public class TransactionSummary {
     public void setTaxAuthorityType(Integer value) {
         this.taxAuthorityType = value;
     }
+
 
     private String stateAssignedNo;
 
@@ -169,6 +175,7 @@ public class TransactionSummary {
         this.stateAssignedNo = value;
     }
 
+
     private String taxType;
 
     /**
@@ -188,6 +195,7 @@ public class TransactionSummary {
     public void setTaxType(String value) {
         this.taxType = value;
     }
+
 
     private String taxSubType;
 
@@ -209,6 +217,7 @@ public class TransactionSummary {
         this.taxSubType = value;
     }
 
+
     private String taxName;
 
     /**
@@ -229,6 +238,7 @@ public class TransactionSummary {
         this.taxName = value;
     }
 
+
     private String taxGroup;
 
     /**
@@ -248,6 +258,7 @@ public class TransactionSummary {
     public void setTaxGroup(String value) {
         this.taxGroup = value;
     }
+
 
     private RateType rateType;
 
@@ -271,6 +282,7 @@ public class TransactionSummary {
         this.rateType = value;
     }
 
+
     private String rateTypeCode;
 
     /**
@@ -290,6 +302,7 @@ public class TransactionSummary {
     public void setRateTypeCode(String value) {
         this.rateTypeCode = value;
     }
+
 
     private BigDecimal taxable;
 
@@ -311,6 +324,7 @@ public class TransactionSummary {
         this.taxable = value;
     }
 
+
     private BigDecimal rate;
 
     /**
@@ -331,6 +345,7 @@ public class TransactionSummary {
         this.rate = value;
     }
 
+
     private BigDecimal tax;
 
     /**
@@ -350,6 +365,7 @@ public class TransactionSummary {
     public void setTax(BigDecimal value) {
         this.tax = value;
     }
+
 
     private BigDecimal taxCalculated;
 
@@ -383,6 +399,7 @@ public class TransactionSummary {
         this.taxCalculated = value;
     }
 
+
     private BigDecimal nonTaxable;
 
     /**
@@ -403,6 +420,7 @@ public class TransactionSummary {
         this.nonTaxable = value;
     }
 
+
     private BigDecimal exemption;
 
     /**
@@ -422,6 +440,7 @@ public class TransactionSummary {
     public void setExemption(BigDecimal value) {
         this.exemption = value;
     }
+
 
     /**
      * Returns a JSON string representation of TransactionSummary

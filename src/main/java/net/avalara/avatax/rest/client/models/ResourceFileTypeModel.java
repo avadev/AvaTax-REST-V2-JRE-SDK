@@ -49,6 +49,7 @@ public class ResourceFileTypeModel {
         this.resourceFileTypeId = value;
     }
 
+
     private String name;
 
     /**
@@ -68,6 +69,7 @@ public class ResourceFileTypeModel {
     public void setName(String value) {
         this.name = value;
     }
+
 
     /**
      * Returns a JSON string representation of ResourceFileTypeModel

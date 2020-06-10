@@ -49,6 +49,7 @@ public class MrsCompanyModel {
         this.companyId = value;
     }
 
+
     private String companyName;
 
     /**
@@ -68,6 +69,7 @@ public class MrsCompanyModel {
     public void setCompanyName(String value) {
         this.companyName = value;
     }
+
 
     private Integer accountId;
 
@@ -89,6 +91,7 @@ public class MrsCompanyModel {
         this.accountId = value;
     }
 
+
     private String accountName;
 
     /**
@@ -108,6 +111,7 @@ public class MrsCompanyModel {
     public void setAccountName(String value) {
         this.accountName = value;
     }
+
 
     private String tin;
 
@@ -129,6 +133,7 @@ public class MrsCompanyModel {
         this.tin = value;
     }
 
+
     private String companyCode;
 
     /**
@@ -148,6 +153,7 @@ public class MrsCompanyModel {
     public void setCompanyCode(String value) {
         this.companyCode = value;
     }
+
 
     private Date createdDate;
 
@@ -169,6 +175,7 @@ public class MrsCompanyModel {
         this.createdDate = value;
     }
 
+
     private Integer createdUserId;
 
     /**
@@ -188,6 +195,7 @@ public class MrsCompanyModel {
     public void setCreatedUserId(Integer value) {
         this.createdUserId = value;
     }
+
 
     private Date modifiedDate;
 
@@ -209,6 +217,7 @@ public class MrsCompanyModel {
         this.modifiedDate = value;
     }
 
+
     private Integer modifiedUserId;
 
     /**
@@ -228,6 +237,7 @@ public class MrsCompanyModel {
     public void setModifiedUserId(Integer value) {
         this.modifiedUserId = value;
     }
+
 
     /**
      * Returns a JSON string representation of MrsCompanyModel

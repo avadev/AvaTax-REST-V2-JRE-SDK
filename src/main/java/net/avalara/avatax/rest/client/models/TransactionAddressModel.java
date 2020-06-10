@@ -49,6 +49,7 @@ public class TransactionAddressModel {
         this.id = value;
     }
 
+
     private Long transactionId;
 
     /**
@@ -68,6 +69,7 @@ public class TransactionAddressModel {
     public void setTransactionId(Long value) {
         this.transactionId = value;
     }
+
 
     private BoundaryLevel boundaryLevel;
 
@@ -89,6 +91,7 @@ public class TransactionAddressModel {
         this.boundaryLevel = value;
     }
 
+
     private String line1;
 
     /**
@@ -108,6 +111,7 @@ public class TransactionAddressModel {
     public void setLine1(String value) {
         this.line1 = value;
     }
+
 
     private String line2;
 
@@ -129,6 +133,7 @@ public class TransactionAddressModel {
         this.line2 = value;
     }
 
+
     private String line3;
 
     /**
@@ -148,6 +153,7 @@ public class TransactionAddressModel {
     public void setLine3(String value) {
         this.line3 = value;
     }
+
 
     private String city;
 
@@ -169,6 +175,7 @@ public class TransactionAddressModel {
         this.city = value;
     }
 
+
     private String region;
 
     /**
@@ -188,6 +195,7 @@ public class TransactionAddressModel {
     public void setRegion(String value) {
         this.region = value;
     }
+
 
     private String postalCode;
 
@@ -209,6 +217,7 @@ public class TransactionAddressModel {
         this.postalCode = value;
     }
 
+
     private String country;
 
     /**
@@ -228,6 +237,7 @@ public class TransactionAddressModel {
     public void setCountry(String value) {
         this.country = value;
     }
+
 
     private Integer taxRegionId;
 
@@ -249,6 +259,7 @@ public class TransactionAddressModel {
         this.taxRegionId = value;
     }
 
+
     private String latitude;
 
     /**
@@ -269,6 +280,7 @@ public class TransactionAddressModel {
         this.latitude = value;
     }
 
+
     private String longitude;
 
     /**
@@ -288,6 +300,7 @@ public class TransactionAddressModel {
     public void setLongitude(String value) {
         this.longitude = value;
     }
+
 
     /**
      * Returns a JSON string representation of TransactionAddressModel

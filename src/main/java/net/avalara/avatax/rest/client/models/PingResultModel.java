@@ -49,6 +49,7 @@ public class PingResultModel {
         this.version = value;
     }
 
+
     private Boolean authenticated;
 
     /**
@@ -68,6 +69,7 @@ public class PingResultModel {
     public void setAuthenticated(Boolean value) {
         this.authenticated = value;
     }
+
 
     private AuthenticationTypeId authenticationType;
 
@@ -89,6 +91,7 @@ public class PingResultModel {
         this.authenticationType = value;
     }
 
+
     private String authenticatedUserName;
 
     /**
@@ -108,6 +111,7 @@ public class PingResultModel {
     public void setAuthenticatedUserName(String value) {
         this.authenticatedUserName = value;
     }
+
 
     private Integer authenticatedUserId;
 
@@ -129,6 +133,7 @@ public class PingResultModel {
         this.authenticatedUserId = value;
     }
 
+
     private Integer authenticatedAccountId;
 
     /**
@@ -149,6 +154,7 @@ public class PingResultModel {
         this.authenticatedAccountId = value;
     }
 
+
     private String crmid;
 
     /**
@@ -168,6 +174,7 @@ public class PingResultModel {
     public void setCrmid(String value) {
         this.crmid = value;
     }
+
 
     /**
      * Returns a JSON string representation of PingResultModel

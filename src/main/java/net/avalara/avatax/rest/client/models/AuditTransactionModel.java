@@ -49,6 +49,7 @@ public class AuditTransactionModel {
         this.companyId = value;
     }
 
+
     private ReconstructedApiRequestResponseModel reconstructed;
 
     /**
@@ -68,6 +69,7 @@ public class AuditTransactionModel {
     public void setReconstructed(ReconstructedApiRequestResponseModel value) {
         this.reconstructed = value;
     }
+
 
     private Date serverTimestamp;
 
@@ -89,6 +91,7 @@ public class AuditTransactionModel {
         this.serverTimestamp = value;
     }
 
+
     private Date serverDuration;
 
     /**
@@ -108,6 +111,7 @@ public class AuditTransactionModel {
     public void setServerDuration(Date value) {
         this.serverDuration = value;
     }
+
 
     private ApiCallStatus apiCallStatus;
 
@@ -129,6 +133,7 @@ public class AuditTransactionModel {
         this.apiCallStatus = value;
     }
 
+
     private OriginalApiRequestResponseModel original;
 
     /**
@@ -148,6 +153,7 @@ public class AuditTransactionModel {
     public void setOriginal(OriginalApiRequestResponseModel value) {
         this.original = value;
     }
+
 
     /**
      * Returns a JSON string representation of AuditTransactionModel

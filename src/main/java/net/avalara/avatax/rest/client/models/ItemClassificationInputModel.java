@@ -49,6 +49,7 @@ public class ItemClassificationInputModel {
         this.productCode = value;
     }
 
+
     private String systemCode;
 
     /**
@@ -68,6 +69,7 @@ public class ItemClassificationInputModel {
     public void setSystemCode(String value) {
         this.systemCode = value;
     }
+
 
     /**
      * Returns a JSON string representation of ItemClassificationInputModel

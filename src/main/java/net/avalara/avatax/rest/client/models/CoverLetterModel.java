@@ -51,6 +51,7 @@ public class CoverLetterModel {
         this.id = value;
     }
 
+
     private Integer companyId;
 
     /**
@@ -70,6 +71,7 @@ public class CoverLetterModel {
     public void setCompanyId(Integer value) {
         this.companyId = value;
     }
+
 
     private String title;
 
@@ -91,6 +93,7 @@ public class CoverLetterModel {
         this.title = value;
     }
 
+
     private String subject;
 
     /**
@@ -110,6 +113,7 @@ public class CoverLetterModel {
     public void setSubject(String value) {
         this.subject = value;
     }
+
 
     private String description;
 
@@ -131,6 +135,7 @@ public class CoverLetterModel {
         this.description = value;
     }
 
+
     private Date createdDate;
 
     /**
@@ -150,6 +155,7 @@ public class CoverLetterModel {
     public void setCreatedDate(Date value) {
         this.createdDate = value;
     }
+
 
     private Date modifiedDate;
 
@@ -171,6 +177,7 @@ public class CoverLetterModel {
         this.modifiedDate = value;
     }
 
+
     private Boolean active;
 
     /**
@@ -190,6 +197,7 @@ public class CoverLetterModel {
     public void setActive(Boolean value) {
         this.active = value;
     }
+
 
     private Integer pageCount;
 
@@ -211,6 +219,7 @@ public class CoverLetterModel {
         this.pageCount = value;
     }
 
+
     private String templateFilename;
 
     /**
@@ -231,6 +240,7 @@ public class CoverLetterModel {
         this.templateFilename = value;
     }
 
+
     private Integer version;
 
     /**
@@ -250,6 +260,7 @@ public class CoverLetterModel {
     public void setVersion(Integer value) {
         this.version = value;
     }
+
 
     /**
      * Returns a JSON string representation of CoverLetterModel

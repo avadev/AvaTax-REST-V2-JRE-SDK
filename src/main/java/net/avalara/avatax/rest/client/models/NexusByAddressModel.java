@@ -52,6 +52,7 @@ public class NexusByAddressModel {
         this.address = value;
     }
 
+
     private ArrayList<NexusModel> declaredNexus;
 
     /**
@@ -73,6 +74,7 @@ public class NexusByAddressModel {
     public void setDeclaredNexus(ArrayList<NexusModel> value) {
         this.declaredNexus = value;
     }
+
 
     /**
      * Returns a JSON string representation of NexusByAddressModel

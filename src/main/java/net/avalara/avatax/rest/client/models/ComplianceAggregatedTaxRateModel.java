@@ -49,6 +49,7 @@ public class ComplianceAggregatedTaxRateModel {
         this.rate = value;
     }
 
+
     private BigDecimal stackRate;
 
     /**
@@ -68,6 +69,7 @@ public class ComplianceAggregatedTaxRateModel {
     public void setStackRate(BigDecimal value) {
         this.stackRate = value;
     }
+
 
     private Date effectiveDate;
 
@@ -89,6 +91,7 @@ public class ComplianceAggregatedTaxRateModel {
         this.effectiveDate = value;
     }
 
+
     private Date endDate;
 
     /**
@@ -108,6 +111,7 @@ public class ComplianceAggregatedTaxRateModel {
     public void setEndDate(Date value) {
         this.endDate = value;
     }
+
 
     private String taxTypeId;
 
@@ -129,6 +133,7 @@ public class ComplianceAggregatedTaxRateModel {
         this.taxTypeId = value;
     }
 
+
     private String rateTypeId;
 
     /**
@@ -148,6 +153,7 @@ public class ComplianceAggregatedTaxRateModel {
     public void setRateTypeId(String value) {
         this.rateTypeId = value;
     }
+
 
     /**
      * Returns a JSON string representation of ComplianceAggregatedTaxRateModel

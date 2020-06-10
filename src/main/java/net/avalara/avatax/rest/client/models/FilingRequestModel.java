@@ -50,6 +50,7 @@ public class FilingRequestModel {
         this.id = value;
     }
 
+
     private Integer companyId;
 
     /**
@@ -69,6 +70,7 @@ public class FilingRequestModel {
     public void setCompanyId(Integer value) {
         this.companyId = value;
     }
+
 
     private FilingRequestStatus filingRequestStatusId;
 
@@ -90,6 +92,7 @@ public class FilingRequestModel {
         this.filingRequestStatusId = value;
     }
 
+
     private FilingRequestDataModel data;
 
     /**
@@ -109,6 +112,7 @@ public class FilingRequestModel {
     public void setData(FilingRequestDataModel value) {
         this.data = value;
     }
+
 
     private Date createdDate;
 
@@ -130,6 +134,7 @@ public class FilingRequestModel {
         this.createdDate = value;
     }
 
+
     private Integer createdUserId;
 
     /**
@@ -149,6 +154,7 @@ public class FilingRequestModel {
     public void setCreatedUserId(Integer value) {
         this.createdUserId = value;
     }
+
 
     private Date modifiedDate;
 
@@ -170,6 +176,7 @@ public class FilingRequestModel {
         this.modifiedDate = value;
     }
 
+
     private Integer modifiedUserId;
 
     /**
@@ -189,6 +196,7 @@ public class FilingRequestModel {
     public void setModifiedUserId(Integer value) {
         this.modifiedUserId = value;
     }
+
 
     /**
      * Returns a JSON string representation of FilingRequestModel

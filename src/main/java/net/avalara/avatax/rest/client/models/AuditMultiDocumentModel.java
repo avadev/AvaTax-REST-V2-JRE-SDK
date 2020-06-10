@@ -49,6 +49,7 @@ public class AuditMultiDocumentModel {
         this.reconstructed = value;
     }
 
+
     private String code;
 
     /**
@@ -72,6 +73,7 @@ public class AuditMultiDocumentModel {
     public void setCode(String value) {
         this.code = value;
     }
+
 
     private DocumentType type;
 
@@ -99,6 +101,7 @@ public class AuditMultiDocumentModel {
         this.type = value;
     }
 
+
     private Date serverTimestamp;
 
     /**
@@ -118,6 +121,7 @@ public class AuditMultiDocumentModel {
     public void setServerTimestamp(Date value) {
         this.serverTimestamp = value;
     }
+
 
     private Date serverDuration;
 
@@ -139,6 +143,7 @@ public class AuditMultiDocumentModel {
         this.serverDuration = value;
     }
 
+
     private ApiCallStatus apiCallStatus;
 
     /**
@@ -159,6 +164,7 @@ public class AuditMultiDocumentModel {
         this.apiCallStatus = value;
     }
 
+
     private OriginalApiRequestResponseModel original;
 
     /**
@@ -178,6 +184,7 @@ public class AuditMultiDocumentModel {
     public void setOriginal(OriginalApiRequestResponseModel value) {
         this.original = value;
     }
+
 
     /**
      * Returns a JSON string representation of AuditMultiDocumentModel

@@ -51,6 +51,7 @@ public class UomModel {
         this.id = value;
     }
 
+
     private String code;
 
     /**
@@ -70,6 +71,7 @@ public class UomModel {
     public void setCode(String value) {
         this.code = value;
     }
+
 
     private String shortDesc;
 
@@ -91,6 +93,7 @@ public class UomModel {
         this.shortDesc = value;
     }
 
+
     private String description;
 
     /**
@@ -110,6 +113,7 @@ public class UomModel {
     public void setDescription(String value) {
         this.description = value;
     }
+
 
     private Integer measurementTypeId;
 
@@ -131,6 +135,7 @@ public class UomModel {
         this.measurementTypeId = value;
     }
 
+
     private String measurementTypeCode;
 
     /**
@@ -150,6 +155,7 @@ public class UomModel {
     public void setMeasurementTypeCode(String value) {
         this.measurementTypeCode = value;
     }
+
 
     private String siUOM;
 
@@ -175,6 +181,7 @@ public class UomModel {
         this.siUOM = value;
     }
 
+
     private String measurementTypeDescription;
 
     /**
@@ -195,6 +202,7 @@ public class UomModel {
         this.measurementTypeDescription = value;
     }
 
+
     private Boolean isSiUom;
 
     /**
@@ -214,6 +222,7 @@ public class UomModel {
     public void setIsSiUom(Boolean value) {
         this.isSiUom = value;
     }
+
 
     /**
      * Returns a JSON string representation of UomModel

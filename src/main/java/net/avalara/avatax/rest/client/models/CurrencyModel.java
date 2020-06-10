@@ -49,6 +49,7 @@ public class CurrencyModel {
         this.code = value;
     }
 
+
     private String description;
 
     /**
@@ -69,6 +70,7 @@ public class CurrencyModel {
         this.description = value;
     }
 
+
     private Integer decimalDigits;
 
     /**
@@ -88,6 +90,7 @@ public class CurrencyModel {
     public void setDecimalDigits(Integer value) {
         this.decimalDigits = value;
     }
+
 
     /**
      * Returns a JSON string representation of CurrencyModel

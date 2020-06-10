@@ -49,6 +49,7 @@ public class FilingStatusChangeModel {
         this.requestedStatus = value;
     }
 
+
     /**
      * Returns a JSON string representation of FilingStatusChangeModel
      */

@@ -49,6 +49,7 @@ public class CycleExpireOptionModel {
         this.transactionalPeriodStart = value;
     }
 
+
     private Date transactionalPeriodEnd;
 
     /**
@@ -68,6 +69,7 @@ public class CycleExpireOptionModel {
     public void setTransactionalPeriodEnd(Date value) {
         this.transactionalPeriodEnd = value;
     }
+
 
     private Date filingDueDate;
 
@@ -89,6 +91,7 @@ public class CycleExpireOptionModel {
         this.filingDueDate = value;
     }
 
+
     private String cycleName;
 
     /**
@@ -108,6 +111,7 @@ public class CycleExpireOptionModel {
     public void setCycleName(String value) {
         this.cycleName = value;
     }
+
 
     /**
      * Returns a JSON string representation of CycleExpireOptionModel

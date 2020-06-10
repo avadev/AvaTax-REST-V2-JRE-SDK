@@ -65,6 +65,7 @@ public class AddressesModel {
         this.singleLocation = value;
     }
 
+
     private AddressLocationInfo shipFrom;
 
     /**
@@ -85,6 +86,7 @@ public class AddressesModel {
         this.shipFrom = value;
     }
 
+
     private AddressLocationInfo shipTo;
 
     /**
@@ -104,6 +106,7 @@ public class AddressesModel {
     public void setShipTo(AddressLocationInfo value) {
         this.shipTo = value;
     }
+
 
     private AddressLocationInfo pointOfOrderOrigin;
 
@@ -126,6 +129,7 @@ public class AddressesModel {
     public void setPointOfOrderOrigin(AddressLocationInfo value) {
         this.pointOfOrderOrigin = value;
     }
+
 
     private AddressLocationInfo pointOfOrderAcceptance;
 
@@ -150,6 +154,7 @@ public class AddressesModel {
     public void setPointOfOrderAcceptance(AddressLocationInfo value) {
         this.pointOfOrderAcceptance = value;
     }
+
 
     /**
      * Returns a JSON string representation of AddressesModel

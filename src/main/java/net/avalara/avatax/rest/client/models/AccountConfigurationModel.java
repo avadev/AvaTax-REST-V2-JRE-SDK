@@ -49,6 +49,7 @@ public class AccountConfigurationModel {
         this.accountId = value;
     }
 
+
     private String category;
 
     /**
@@ -68,6 +69,7 @@ public class AccountConfigurationModel {
     public void setCategory(String value) {
         this.category = value;
     }
+
 
     private String name;
 
@@ -89,6 +91,7 @@ public class AccountConfigurationModel {
         this.name = value;
     }
 
+
     private String value;
 
     /**
@@ -108,6 +111,7 @@ public class AccountConfigurationModel {
     public void setValue(String value) {
         this.value = value;
     }
+
 
     private Date createdDate;
 
@@ -129,6 +133,7 @@ public class AccountConfigurationModel {
         this.createdDate = value;
     }
 
+
     private Integer createdUserId;
 
     /**
@@ -148,6 +153,7 @@ public class AccountConfigurationModel {
     public void setCreatedUserId(Integer value) {
         this.createdUserId = value;
     }
+
 
     private Date modifiedDate;
 
@@ -169,6 +175,7 @@ public class AccountConfigurationModel {
         this.modifiedDate = value;
     }
 
+
     private Integer modifiedUserId;
 
     /**
@@ -188,6 +195,7 @@ public class AccountConfigurationModel {
     public void setModifiedUserId(Integer value) {
         this.modifiedUserId = value;
     }
+
 
     /**
      * Returns a JSON string representation of AccountConfigurationModel

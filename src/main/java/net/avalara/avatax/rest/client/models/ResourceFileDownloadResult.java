@@ -49,6 +49,7 @@ public class ResourceFileDownloadResult {
         this.success = value;
     }
 
+
     private Byte bytes;
 
     /**
@@ -68,6 +69,7 @@ public class ResourceFileDownloadResult {
     public void setBytes(Byte value) {
         this.bytes = value;
     }
+
 
     private String filename;
 
@@ -89,6 +91,7 @@ public class ResourceFileDownloadResult {
         this.filename = value;
     }
 
+
     private String contentType;
 
     /**
@@ -108,6 +111,7 @@ public class ResourceFileDownloadResult {
     public void setContentType(String value) {
         this.contentType = value;
     }
+
 
     /**
      * Returns a JSON string representation of ResourceFileDownloadResult

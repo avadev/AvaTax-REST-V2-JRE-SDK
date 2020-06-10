@@ -65,6 +65,7 @@ public class CompanyDistanceThresholdModel {
         this.id = value;
     }
 
+
     private Integer companyId;
 
     /**
@@ -84,6 +85,7 @@ public class CompanyDistanceThresholdModel {
     public void setCompanyId(Integer value) {
         this.companyId = value;
     }
+
 
     private String originCountry;
 
@@ -121,6 +123,7 @@ public class CompanyDistanceThresholdModel {
         this.originCountry = value;
     }
 
+
     private String destinationCountry;
 
     /**
@@ -157,6 +160,7 @@ public class CompanyDistanceThresholdModel {
         this.destinationCountry = value;
     }
 
+
     private Date effDate;
 
     /**
@@ -179,6 +183,7 @@ public class CompanyDistanceThresholdModel {
         this.effDate = value;
     }
 
+
     private Date endDate;
 
     /**
@@ -200,6 +205,7 @@ public class CompanyDistanceThresholdModel {
     public void setEndDate(Date value) {
         this.endDate = value;
     }
+
 
     private Boolean thresholdExceeded;
 
@@ -227,6 +233,7 @@ public class CompanyDistanceThresholdModel {
         this.thresholdExceeded = value;
     }
 
+
     private String type;
 
     /**
@@ -250,6 +257,7 @@ public class CompanyDistanceThresholdModel {
     public void setType(String value) {
         this.type = value;
     }
+
 
     /**
      * Returns a JSON string representation of CompanyDistanceThresholdModel

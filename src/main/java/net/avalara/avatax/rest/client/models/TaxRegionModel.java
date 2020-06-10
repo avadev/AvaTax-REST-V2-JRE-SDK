@@ -49,6 +49,7 @@ public class TaxRegionModel {
         this.id = value;
     }
 
+
     private String code;
 
     /**
@@ -68,6 +69,7 @@ public class TaxRegionModel {
     public void setCode(String value) {
         this.code = value;
     }
+
 
     private String name;
 
@@ -89,6 +91,7 @@ public class TaxRegionModel {
         this.name = value;
     }
 
+
     private String county;
 
     /**
@@ -109,6 +112,7 @@ public class TaxRegionModel {
         this.county = value;
     }
 
+
     private String city;
 
     /**
@@ -128,6 +132,7 @@ public class TaxRegionModel {
     public void setCity(String value) {
         this.city = value;
     }
+
 
     private String region;
 
@@ -162,6 +167,7 @@ public class TaxRegionModel {
     public void setRegion(String value) {
         this.region = value;
     }
+
 
     private String country;
 
@@ -199,6 +205,7 @@ public class TaxRegionModel {
         this.country = value;
     }
 
+
     private String serCode;
 
     /**
@@ -218,6 +225,7 @@ public class TaxRegionModel {
     public void setSerCode(String value) {
         this.serCode = value;
     }
+
 
     private String signatureCode;
 
@@ -239,6 +247,7 @@ public class TaxRegionModel {
         this.signatureCode = value;
     }
 
+
     private Date effectiveDate;
 
     /**
@@ -258,6 +267,7 @@ public class TaxRegionModel {
     public void setEffectiveDate(Date value) {
         this.effectiveDate = value;
     }
+
 
     private Date endDate;
 
@@ -279,6 +289,7 @@ public class TaxRegionModel {
         this.endDate = value;
     }
 
+
     private Boolean isAcm;
 
     /**
@@ -298,6 +309,7 @@ public class TaxRegionModel {
     public void setIsAcm(Boolean value) {
         this.isAcm = value;
     }
+
 
     private Boolean isSst;
 
@@ -319,6 +331,7 @@ public class TaxRegionModel {
         this.isSst = value;
     }
 
+
     private ArrayList<DenormalizedJurisModel> jurisdictions;
 
     /**
@@ -338,6 +351,7 @@ public class TaxRegionModel {
     public void setJurisdictions(ArrayList<DenormalizedJurisModel> value) {
         this.jurisdictions = value;
     }
+
 
     /**
      * Returns a JSON string representation of TaxRegionModel

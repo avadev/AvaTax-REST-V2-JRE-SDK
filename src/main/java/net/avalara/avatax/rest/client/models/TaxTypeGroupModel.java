@@ -49,6 +49,7 @@ public class TaxTypeGroupModel {
         this.id = value;
     }
 
+
     private String taxTypeGroup;
 
     /**
@@ -68,6 +69,7 @@ public class TaxTypeGroupModel {
     public void setTaxTypeGroup(String value) {
         this.taxTypeGroup = value;
     }
+
 
     private String description;
 
@@ -89,6 +91,7 @@ public class TaxTypeGroupModel {
         this.description = value;
     }
 
+
     private Integer subscriptionTypeId;
 
     /**
@@ -108,6 +111,7 @@ public class TaxTypeGroupModel {
     public void setSubscriptionTypeId(Integer value) {
         this.subscriptionTypeId = value;
     }
+
 
     private String subscriptionDescription;
 
@@ -129,6 +133,7 @@ public class TaxTypeGroupModel {
         this.subscriptionDescription = value;
     }
 
+
     private String tabName;
 
     /**
@@ -148,6 +153,7 @@ public class TaxTypeGroupModel {
     public void setTabName(String value) {
         this.tabName = value;
     }
+
 
     private Boolean showColumn;
 
@@ -169,6 +175,7 @@ public class TaxTypeGroupModel {
         this.showColumn = value;
     }
 
+
     private Integer displaySequence;
 
     /**
@@ -188,6 +195,7 @@ public class TaxTypeGroupModel {
     public void setDisplaySequence(Integer value) {
         this.displaySequence = value;
     }
+
 
     /**
      * Returns a JSON string representation of TaxTypeGroupModel

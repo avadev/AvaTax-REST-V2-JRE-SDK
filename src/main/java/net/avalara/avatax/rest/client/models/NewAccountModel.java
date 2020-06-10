@@ -49,6 +49,7 @@ public class NewAccountModel {
         this.accountId = value;
     }
 
+
     private String accountDetailsEmailedTo;
 
     /**
@@ -68,6 +69,7 @@ public class NewAccountModel {
     public void setAccountDetailsEmailedTo(String value) {
         this.accountDetailsEmailedTo = value;
     }
+
 
     private Date createdDate;
 
@@ -89,6 +91,7 @@ public class NewAccountModel {
         this.createdDate = value;
     }
 
+
     private Date emailedDate;
 
     /**
@@ -108,6 +111,7 @@ public class NewAccountModel {
     public void setEmailedDate(Date value) {
         this.emailedDate = value;
     }
+
 
     private String limitations;
 
@@ -129,6 +133,7 @@ public class NewAccountModel {
         this.limitations = value;
     }
 
+
     private String licenseKey;
 
     /**
@@ -149,6 +154,7 @@ public class NewAccountModel {
         this.licenseKey = value;
     }
 
+
     private String paymentUrl;
 
     /**
@@ -168,6 +174,7 @@ public class NewAccountModel {
     public void setPaymentUrl(String value) {
         this.paymentUrl = value;
     }
+
 
     /**
      * Returns a JSON string representation of NewAccountModel

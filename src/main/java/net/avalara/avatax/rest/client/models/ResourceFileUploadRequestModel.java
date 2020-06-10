@@ -49,6 +49,7 @@ public class ResourceFileUploadRequestModel {
         this.content = value;
     }
 
+
     private String username;
 
     /**
@@ -68,6 +69,7 @@ public class ResourceFileUploadRequestModel {
     public void setUsername(String value) {
         this.username = value;
     }
+
 
     private Integer accountId;
 
@@ -89,6 +91,7 @@ public class ResourceFileUploadRequestModel {
         this.accountId = value;
     }
 
+
     private Integer companyId;
 
     /**
@@ -108,6 +111,7 @@ public class ResourceFileUploadRequestModel {
     public void setCompanyId(Integer value) {
         this.companyId = value;
     }
+
 
     private String name;
 
@@ -129,6 +133,7 @@ public class ResourceFileUploadRequestModel {
         this.name = value;
     }
 
+
     private Integer resourceFileTypeId;
 
     /**
@@ -149,6 +154,7 @@ public class ResourceFileUploadRequestModel {
         this.resourceFileTypeId = value;
     }
 
+
     private Long length;
 
     /**
@@ -168,6 +174,7 @@ public class ResourceFileUploadRequestModel {
     public void setLength(Long value) {
         this.length = value;
     }
+
 
     /**
      * Returns a JSON string representation of ResourceFileUploadRequestModel

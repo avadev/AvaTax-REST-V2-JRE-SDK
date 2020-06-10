@@ -51,6 +51,7 @@ public class CreateTransactionModel {
         this.code = value;
     }
 
+
     private ArrayList<LineItemModel> lines;
 
     /**
@@ -70,6 +71,7 @@ public class CreateTransactionModel {
     public void setLines(ArrayList<LineItemModel> value) {
         this.lines = value;
     }
+
 
     private DocumentType type;
 
@@ -99,6 +101,7 @@ public class CreateTransactionModel {
         this.type = value;
     }
 
+
     private String companyCode;
 
     /**
@@ -120,6 +123,7 @@ public class CreateTransactionModel {
     public void setCompanyCode(String value) {
         this.companyCode = value;
     }
+
 
     private Date date;
 
@@ -147,6 +151,7 @@ public class CreateTransactionModel {
         this.date = value;
     }
 
+
     private String salespersonCode;
 
     /**
@@ -166,6 +171,7 @@ public class CreateTransactionModel {
     public void setSalespersonCode(String value) {
         this.salespersonCode = value;
     }
+
 
     private String customerCode;
 
@@ -191,6 +197,7 @@ public class CreateTransactionModel {
         this.customerCode = value;
     }
 
+
     private String customerUsageType;
 
     /**
@@ -213,6 +220,7 @@ public class CreateTransactionModel {
         this.customerUsageType = value;
     }
 
+
     private String entityUseCode;
 
     /**
@@ -234,6 +242,7 @@ public class CreateTransactionModel {
     public void setEntityUseCode(String value) {
         this.entityUseCode = value;
     }
+
 
     private BigDecimal discount;
 
@@ -259,6 +268,7 @@ public class CreateTransactionModel {
         this.discount = value;
     }
 
+
     private String purchaseOrderNo;
 
     /**
@@ -282,6 +292,7 @@ public class CreateTransactionModel {
     public void setPurchaseOrderNo(String value) {
         this.purchaseOrderNo = value;
     }
+
 
     private String exemptionNo;
 
@@ -313,6 +324,7 @@ public class CreateTransactionModel {
         this.exemptionNo = value;
     }
 
+
     private AddressesModel addresses;
 
     /**
@@ -341,6 +353,7 @@ public class CreateTransactionModel {
         this.addresses = value;
     }
 
+
     private ArrayList<TransactionParameterModel> parameters;
 
     /**
@@ -364,6 +377,7 @@ public class CreateTransactionModel {
     public void setParameters(ArrayList<TransactionParameterModel> value) {
         this.parameters = value;
     }
+
 
     private String referenceCode;
 
@@ -391,6 +405,7 @@ public class CreateTransactionModel {
         this.referenceCode = value;
     }
 
+
     private String reportingLocationCode;
 
     /**
@@ -417,6 +432,7 @@ public class CreateTransactionModel {
         this.reportingLocationCode = value;
     }
 
+
     private Boolean commit;
 
     /**
@@ -439,6 +455,7 @@ public class CreateTransactionModel {
         this.commit = value;
     }
 
+
     private String batchCode;
 
     /**
@@ -458,6 +475,7 @@ public class CreateTransactionModel {
     public void setBatchCode(String value) {
         this.batchCode = value;
     }
+
 
     private TaxOverrideModel taxOverride;
 
@@ -479,6 +497,7 @@ public class CreateTransactionModel {
         this.taxOverride = value;
     }
 
+
     private String currencyCode;
 
     /**
@@ -498,6 +517,7 @@ public class CreateTransactionModel {
     public void setCurrencyCode(String value) {
         this.currencyCode = value;
     }
+
 
     private ServiceMode serviceMode;
 
@@ -520,6 +540,7 @@ public class CreateTransactionModel {
     public void setServiceMode(ServiceMode value) {
         this.serviceMode = value;
     }
+
 
     private BigDecimal exchangeRate;
 
@@ -547,6 +568,7 @@ public class CreateTransactionModel {
         this.exchangeRate = value;
     }
 
+
     private Date exchangeRateEffectiveDate;
 
     /**
@@ -567,6 +589,7 @@ public class CreateTransactionModel {
         this.exchangeRateEffectiveDate = value;
     }
 
+
     private String posLaneCode;
 
     /**
@@ -586,6 +609,7 @@ public class CreateTransactionModel {
     public void setPosLaneCode(String value) {
         this.posLaneCode = value;
     }
+
 
     private String businessIdentificationNo;
 
@@ -616,6 +640,7 @@ public class CreateTransactionModel {
     public void setBusinessIdentificationNo(String value) {
         this.businessIdentificationNo = value;
     }
+
 
     private Boolean isSellerImporterOfRecord;
 
@@ -653,6 +678,7 @@ public class CreateTransactionModel {
         this.isSellerImporterOfRecord = value;
     }
 
+
     private String description;
 
     /**
@@ -672,6 +698,7 @@ public class CreateTransactionModel {
     public void setDescription(String value) {
         this.description = value;
     }
+
 
     private String email;
 
@@ -693,6 +720,7 @@ public class CreateTransactionModel {
         this.email = value;
     }
 
+
     private TaxDebugLevel debugLevel;
 
     /**
@@ -712,6 +740,7 @@ public class CreateTransactionModel {
     public void setDebugLevel(TaxDebugLevel value) {
         this.debugLevel = value;
     }
+
 
     /**
      * Returns a JSON string representation of CreateTransactionModel

@@ -49,6 +49,7 @@ public class DataSourceModel {
         this.id = value;
     }
 
+
     private Integer companyId;
 
     /**
@@ -68,6 +69,7 @@ public class DataSourceModel {
     public void setCompanyId(Integer value) {
         this.companyId = value;
     }
+
 
     private String source;
 
@@ -89,6 +91,7 @@ public class DataSourceModel {
         this.source = value;
     }
 
+
     private String instance;
 
     /**
@@ -108,6 +111,7 @@ public class DataSourceModel {
     public void setInstance(String value) {
         this.instance = value;
     }
+
 
     private Boolean isEnabled;
 
@@ -129,6 +133,7 @@ public class DataSourceModel {
         this.isEnabled = value;
     }
 
+
     private Boolean isSynced;
 
     /**
@@ -148,6 +153,7 @@ public class DataSourceModel {
     public void setIsSynced(Boolean value) {
         this.isSynced = value;
     }
+
 
     private Boolean isAuthorized;
 
@@ -169,6 +175,7 @@ public class DataSourceModel {
         this.isAuthorized = value;
     }
 
+
     private Date lastSyncedDate;
 
     /**
@@ -188,6 +195,7 @@ public class DataSourceModel {
     public void setLastSyncedDate(Date value) {
         this.lastSyncedDate = value;
     }
+
 
     private Integer createdUserId;
 
@@ -209,6 +217,7 @@ public class DataSourceModel {
         this.createdUserId = value;
     }
 
+
     private Date createdDate;
 
     /**
@@ -228,6 +237,7 @@ public class DataSourceModel {
     public void setCreatedDate(Date value) {
         this.createdDate = value;
     }
+
 
     private Integer modifiedUserId;
 
@@ -249,6 +259,7 @@ public class DataSourceModel {
         this.modifiedUserId = value;
     }
 
+
     private Date modifiedDate;
 
     /**
@@ -268,6 +279,7 @@ public class DataSourceModel {
     public void setModifiedDate(Date value) {
         this.modifiedDate = value;
     }
+
 
     private Date deletedDate;
 
@@ -289,6 +301,7 @@ public class DataSourceModel {
         this.deletedDate = value;
     }
 
+
     private Boolean recalculate;
 
     /**
@@ -308,6 +321,7 @@ public class DataSourceModel {
     public void setRecalculate(Boolean value) {
         this.recalculate = value;
     }
+
 
     private String name;
 
@@ -329,6 +343,7 @@ public class DataSourceModel {
         this.name = value;
     }
 
+
     private String externalState;
 
     /**
@@ -348,6 +363,7 @@ public class DataSourceModel {
     public void setExternalState(String value) {
         this.externalState = value;
     }
+
 
     /**
      * Returns a JSON string representation of DataSourceModel

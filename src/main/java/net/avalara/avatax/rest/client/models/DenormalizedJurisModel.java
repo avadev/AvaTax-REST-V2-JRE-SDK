@@ -49,6 +49,7 @@ public class DenormalizedJurisModel {
         this.effectiveDate = value;
     }
 
+
     private Date endDate;
 
     /**
@@ -68,6 +69,7 @@ public class DenormalizedJurisModel {
     public void setEndDate(Date value) {
         this.endDate = value;
     }
+
 
     private String jurisCode;
 
@@ -89,6 +91,7 @@ public class DenormalizedJurisModel {
         this.jurisCode = value;
     }
 
+
     private Integer jurisdictionId;
 
     /**
@@ -108,6 +111,7 @@ public class DenormalizedJurisModel {
     public void setJurisdictionId(Integer value) {
         this.jurisdictionId = value;
     }
+
 
     private JurisdictionType jurisType;
 
@@ -129,6 +133,7 @@ public class DenormalizedJurisModel {
         this.jurisType = value;
     }
 
+
     private String jurisName;
 
     /**
@@ -148,6 +153,7 @@ public class DenormalizedJurisModel {
     public void setJurisName(String value) {
         this.jurisName = value;
     }
+
 
     private String stateAssignedCode;
 
@@ -169,6 +175,7 @@ public class DenormalizedJurisModel {
         this.stateAssignedCode = value;
     }
 
+
     private Integer taxAuthorityId;
 
     /**
@@ -188,6 +195,7 @@ public class DenormalizedJurisModel {
     public void setTaxAuthorityId(Integer value) {
         this.taxAuthorityId = value;
     }
+
 
     private String state;
 
@@ -211,6 +219,7 @@ public class DenormalizedJurisModel {
         this.state = value;
     }
 
+
     private String country;
 
     /**
@@ -232,6 +241,7 @@ public class DenormalizedJurisModel {
     public void setCountry(String value) {
         this.country = value;
     }
+
 
     private String county;
 
@@ -255,6 +265,7 @@ public class DenormalizedJurisModel {
         this.county = value;
     }
 
+
     private String city;
 
     /**
@@ -276,6 +287,7 @@ public class DenormalizedJurisModel {
     public void setCity(String value) {
         this.city = value;
     }
+
 
     /**
      * Returns a JSON string representation of DenormalizedJurisModel

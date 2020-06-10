@@ -1291,6 +1291,11 @@ public enum ErrorCodeId {
     CannotModifySstNexus(1503),
 
     /** 
+     * 
+     */
+    InvalidLocalNexusTypeId(1504),
+
+    /** 
      * Advanced rule errors
      */
     AdvancedRuleRequestRuleError(1602),

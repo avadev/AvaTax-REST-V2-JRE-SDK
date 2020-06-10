@@ -49,6 +49,7 @@ public class AddTransactionLineModel {
         this.companyCode = value;
     }
 
+
     private String transactionCode;
 
     /**
@@ -68,6 +69,7 @@ public class AddTransactionLineModel {
     public void setTransactionCode(String value) {
         this.transactionCode = value;
     }
+
 
     private DocumentType documentType;
 
@@ -89,6 +91,7 @@ public class AddTransactionLineModel {
         this.documentType = value;
     }
 
+
     private ArrayList<LineItemModel> lines;
 
     /**
@@ -109,6 +112,7 @@ public class AddTransactionLineModel {
         this.lines = value;
     }
 
+
     private Boolean renumber;
 
     /**
@@ -128,6 +132,7 @@ public class AddTransactionLineModel {
     public void setRenumber(Boolean value) {
         this.renumber = value;
     }
+
 
     /**
      * Returns a JSON string representation of AddTransactionLineModel

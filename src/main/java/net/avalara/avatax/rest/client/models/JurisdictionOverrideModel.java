@@ -52,6 +52,7 @@ public class JurisdictionOverrideModel {
         this.id = value;
     }
 
+
     private Integer accountId;
 
     /**
@@ -71,6 +72,7 @@ public class JurisdictionOverrideModel {
     public void setAccountId(Integer value) {
         this.accountId = value;
     }
+
 
     private String description;
 
@@ -92,6 +94,7 @@ public class JurisdictionOverrideModel {
         this.description = value;
     }
 
+
     private String line1;
 
     /**
@@ -112,6 +115,7 @@ public class JurisdictionOverrideModel {
         this.line1 = value;
     }
 
+
     private String city;
 
     /**
@@ -131,6 +135,7 @@ public class JurisdictionOverrideModel {
     public void setCity(String value) {
         this.city = value;
     }
+
 
     private String region;
 
@@ -170,6 +175,7 @@ public class JurisdictionOverrideModel {
         this.region = value;
     }
 
+
     private String country;
 
     /**
@@ -194,6 +200,7 @@ public class JurisdictionOverrideModel {
         this.country = value;
     }
 
+
     private String postalCode;
 
     /**
@@ -213,6 +220,7 @@ public class JurisdictionOverrideModel {
     public void setPostalCode(String value) {
         this.postalCode = value;
     }
+
 
     private Date effectiveDate;
 
@@ -234,6 +242,7 @@ public class JurisdictionOverrideModel {
         this.effectiveDate = value;
     }
 
+
     private Date endDate;
 
     /**
@@ -253,6 +262,7 @@ public class JurisdictionOverrideModel {
     public void setEndDate(Date value) {
         this.endDate = value;
     }
+
 
     private Date createdDate;
 
@@ -274,6 +284,7 @@ public class JurisdictionOverrideModel {
         this.createdDate = value;
     }
 
+
     private Integer createdUserId;
 
     /**
@@ -293,6 +304,7 @@ public class JurisdictionOverrideModel {
     public void setCreatedUserId(Integer value) {
         this.createdUserId = value;
     }
+
 
     private Date modifiedDate;
 
@@ -314,6 +326,7 @@ public class JurisdictionOverrideModel {
         this.modifiedDate = value;
     }
 
+
     private Integer modifiedUserId;
 
     /**
@@ -333,6 +346,7 @@ public class JurisdictionOverrideModel {
     public void setModifiedUserId(Integer value) {
         this.modifiedUserId = value;
     }
+
 
     private ArrayList<JurisdictionModel> jurisdictions;
 
@@ -354,6 +368,7 @@ public class JurisdictionOverrideModel {
         this.jurisdictions = value;
     }
 
+
     private Integer taxRegionId;
 
     /**
@@ -373,6 +388,7 @@ public class JurisdictionOverrideModel {
     public void setTaxRegionId(Integer value) {
         this.taxRegionId = value;
     }
+
 
     private BoundaryLevel boundaryLevel;
 
@@ -394,6 +410,7 @@ public class JurisdictionOverrideModel {
         this.boundaryLevel = value;
     }
 
+
     private Boolean isDefault;
 
     /**
@@ -413,6 +430,7 @@ public class JurisdictionOverrideModel {
     public void setIsDefault(Boolean value) {
         this.isDefault = value;
     }
+
 
     /**
      * Returns a JSON string representation of JurisdictionOverrideModel

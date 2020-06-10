@@ -49,6 +49,7 @@ public class SecurityRoleModel {
         this.id = value;
     }
 
+
     private String description;
 
     /**
@@ -68,6 +69,7 @@ public class SecurityRoleModel {
     public void setDescription(String value) {
         this.description = value;
     }
+
 
     /**
      * Returns a JSON string representation of SecurityRoleModel

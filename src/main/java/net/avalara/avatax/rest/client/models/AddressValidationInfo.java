@@ -49,6 +49,7 @@ public class AddressValidationInfo {
         this.textCase = value;
     }
 
+
     private String line1;
 
     /**
@@ -68,6 +69,7 @@ public class AddressValidationInfo {
     public void setLine1(String value) {
         this.line1 = value;
     }
+
 
     private String line2;
 
@@ -89,6 +91,7 @@ public class AddressValidationInfo {
         this.line2 = value;
     }
 
+
     private String line3;
 
     /**
@@ -109,6 +112,7 @@ public class AddressValidationInfo {
         this.line3 = value;
     }
 
+
     private String city;
 
     /**
@@ -128,6 +132,7 @@ public class AddressValidationInfo {
     public void setCity(String value) {
         this.city = value;
     }
+
 
     private String region;
 
@@ -162,6 +167,7 @@ public class AddressValidationInfo {
     public void setRegion(String value) {
         this.region = value;
     }
+
 
     private String country;
 
@@ -199,6 +205,7 @@ public class AddressValidationInfo {
         this.country = value;
     }
 
+
     private String postalCode;
 
     /**
@@ -218,6 +225,7 @@ public class AddressValidationInfo {
     public void setPostalCode(String value) {
         this.postalCode = value;
     }
+
 
     private BigDecimal latitude;
 
@@ -239,6 +247,7 @@ public class AddressValidationInfo {
         this.latitude = value;
     }
 
+
     private BigDecimal longitude;
 
     /**
@@ -258,6 +267,7 @@ public class AddressValidationInfo {
     public void setLongitude(BigDecimal value) {
         this.longitude = value;
     }
+
 
     /**
      * Returns a JSON string representation of AddressValidationInfo

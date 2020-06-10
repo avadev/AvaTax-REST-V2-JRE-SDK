@@ -49,6 +49,7 @@ public class FirmClientLinkageOutputModel {
         this.id = value;
     }
 
+
     private Integer firmAccountId;
 
     /**
@@ -68,6 +69,7 @@ public class FirmClientLinkageOutputModel {
     public void setFirmAccountId(Integer value) {
         this.firmAccountId = value;
     }
+
 
     private String firmAccountName;
 
@@ -89,6 +91,7 @@ public class FirmClientLinkageOutputModel {
         this.firmAccountName = value;
     }
 
+
     private Integer clientAccountId;
 
     /**
@@ -108,6 +111,7 @@ public class FirmClientLinkageOutputModel {
     public void setClientAccountId(Integer value) {
         this.clientAccountId = value;
     }
+
 
     private String clientAccountName;
 
@@ -129,6 +133,7 @@ public class FirmClientLinkageOutputModel {
         this.clientAccountName = value;
     }
 
+
     private Date createdDate;
 
     /**
@@ -148,6 +153,7 @@ public class FirmClientLinkageOutputModel {
     public void setCreatedDate(Date value) {
         this.createdDate = value;
     }
+
 
     private Integer createdUserId;
 
@@ -169,6 +175,7 @@ public class FirmClientLinkageOutputModel {
         this.createdUserId = value;
     }
 
+
     private Date modifiedDate;
 
     /**
@@ -189,6 +196,7 @@ public class FirmClientLinkageOutputModel {
         this.modifiedDate = value;
     }
 
+
     private Integer modifiedUserId;
 
     /**
@@ -208,6 +216,7 @@ public class FirmClientLinkageOutputModel {
     public void setModifiedUserId(Integer value) {
         this.modifiedUserId = value;
     }
+
 
     private FirmClientLinkageStatus status;
 
@@ -237,6 +246,7 @@ public class FirmClientLinkageOutputModel {
         this.status = value;
     }
 
+
     private Boolean isDeleted;
 
     /**
@@ -256,6 +266,7 @@ public class FirmClientLinkageOutputModel {
     public void setIsDeleted(Boolean value) {
         this.isDeleted = value;
     }
+
 
     private String firmContactName;
 
@@ -277,6 +288,7 @@ public class FirmClientLinkageOutputModel {
         this.firmContactName = value;
     }
 
+
     private String firmContactEmail;
 
     /**
@@ -296,6 +308,7 @@ public class FirmClientLinkageOutputModel {
     public void setFirmContactEmail(String value) {
         this.firmContactEmail = value;
     }
+
 
     /**
      * Returns a JSON string representation of FirmClientLinkageOutputModel

@@ -71,6 +71,7 @@ public class HsCodeModel {
         this.hsCode = value;
     }
 
+
     private Long id;
 
     /**
@@ -94,6 +95,7 @@ public class HsCodeModel {
     public void setId(Long value) {
         this.id = value;
     }
+
 
     private Long parentHsCodeId;
 
@@ -119,6 +121,7 @@ public class HsCodeModel {
         this.parentHsCodeId = value;
     }
 
+
     private String description;
 
     /**
@@ -139,6 +142,7 @@ public class HsCodeModel {
         this.description = value;
     }
 
+
     private String system;
 
     /**
@@ -158,6 +162,7 @@ public class HsCodeModel {
     public void setSystem(String value) {
         this.system = value;
     }
+
 
     private String destinationCountry;
 
@@ -180,6 +185,7 @@ public class HsCodeModel {
     public void setDestinationCountry(String value) {
         this.destinationCountry = value;
     }
+
 
     private Date effDate;
 
@@ -207,6 +213,7 @@ public class HsCodeModel {
         this.effDate = value;
     }
 
+
     private Date endDate;
 
     /**
@@ -232,6 +239,7 @@ public class HsCodeModel {
     public void setEndDate(Date value) {
         this.endDate = value;
     }
+
 
     /**
      * Returns a JSON string representation of HsCodeModel

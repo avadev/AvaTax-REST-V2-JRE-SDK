@@ -49,6 +49,7 @@ public class ProductSystemCountryModel {
         this.systemCountryId = value;
     }
 
+
     private Integer systemId;
 
     /**
@@ -68,6 +69,7 @@ public class ProductSystemCountryModel {
     public void setSystemId(Integer value) {
         this.systemId = value;
     }
+
 
     private String country;
 
@@ -89,6 +91,7 @@ public class ProductSystemCountryModel {
         this.country = value;
     }
 
+
     private Date effDate;
 
     /**
@@ -109,6 +112,7 @@ public class ProductSystemCountryModel {
         this.effDate = value;
     }
 
+
     private Date endDate;
 
     /**
@@ -128,6 +132,7 @@ public class ProductSystemCountryModel {
     public void setEndDate(Date value) {
         this.endDate = value;
     }
+
 
     /**
      * Returns a JSON string representation of ProductSystemCountryModel
