@@ -50,6 +50,7 @@ public class TaxCodeTypesModel {
         this.types = value;
     }
 
+
     /**
      * Returns a JSON string representation of TaxCodeTypesModel
      */

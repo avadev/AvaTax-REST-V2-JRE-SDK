@@ -49,6 +49,7 @@ public class FilingModel {
         this.id = value;
     }
 
+
     private Integer companyId;
 
     /**
@@ -68,6 +69,7 @@ public class FilingModel {
     public void setCompanyId(Integer value) {
         this.companyId = value;
     }
+
 
     private Integer month;
 
@@ -93,6 +95,7 @@ public class FilingModel {
         this.month = value;
     }
 
+
     private Short year;
 
     /**
@@ -117,6 +120,7 @@ public class FilingModel {
         this.year = value;
     }
 
+
     private WorksheetTypeId type;
 
     /**
@@ -136,6 +140,7 @@ public class FilingModel {
     public void setType(WorksheetTypeId value) {
         this.type = value;
     }
+
 
     private Date createdDate;
 
@@ -157,6 +162,7 @@ public class FilingModel {
         this.createdDate = value;
     }
 
+
     private Integer createdUserId;
 
     /**
@@ -176,6 +182,7 @@ public class FilingModel {
     public void setCreatedUserId(Integer value) {
         this.createdUserId = value;
     }
+
 
     private Date modifiedDate;
 
@@ -197,6 +204,7 @@ public class FilingModel {
         this.modifiedDate = value;
     }
 
+
     private Integer modifiedUserId;
 
     /**
@@ -217,6 +225,7 @@ public class FilingModel {
         this.modifiedUserId = value;
     }
 
+
     private ArrayList<FilingRegionModel> filingRegions;
 
     /**
@@ -236,6 +245,7 @@ public class FilingModel {
     public void setFilingRegions(ArrayList<FilingRegionModel> value) {
         this.filingRegions = value;
     }
+
 
     /**
      * Returns a JSON string representation of FilingModel

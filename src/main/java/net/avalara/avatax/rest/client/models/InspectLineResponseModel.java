@@ -49,6 +49,7 @@ public class InspectLineResponseModel {
         this.determinationFactors = value;
     }
 
+
     /**
      * Returns a JSON string representation of InspectLineResponseModel
      */

@@ -49,6 +49,7 @@ public class ErrorTransactionOutputModel {
         this.errorCode = value;
     }
 
+
     private String errorMessage;
 
     /**
@@ -68,6 +69,7 @@ public class ErrorTransactionOutputModel {
     public void setErrorMessage(String value) {
         this.errorMessage = value;
     }
+
 
     private String avataxErrorJson;
 
@@ -89,6 +91,7 @@ public class ErrorTransactionOutputModel {
         this.avataxErrorJson = value;
     }
 
+
     private String avataxCreateTransactionJson;
 
     /**
@@ -108,6 +111,7 @@ public class ErrorTransactionOutputModel {
     public void setAvataxCreateTransactionJson(String value) {
         this.avataxCreateTransactionJson = value;
     }
+
 
     private String datasource;
 
@@ -129,6 +133,7 @@ public class ErrorTransactionOutputModel {
         this.datasource = value;
     }
 
+
     private Date documentDate;
 
     /**
@@ -148,6 +153,7 @@ public class ErrorTransactionOutputModel {
     public void setDocumentDate(Date value) {
         this.documentDate = value;
     }
+
 
     private Date expiresAt;
 
@@ -169,6 +175,7 @@ public class ErrorTransactionOutputModel {
         this.expiresAt = value;
     }
 
+
     private BigDecimal amount;
 
     /**
@@ -188,6 +195,7 @@ public class ErrorTransactionOutputModel {
     public void setAmount(BigDecimal value) {
         this.amount = value;
     }
+
 
     private String datasourceSource;
 
@@ -209,6 +217,7 @@ public class ErrorTransactionOutputModel {
         this.datasourceSource = value;
     }
 
+
     private String shipToCountry;
 
     /**
@@ -228,6 +237,7 @@ public class ErrorTransactionOutputModel {
     public void setShipToCountry(String value) {
         this.shipToCountry = value;
     }
+
 
     private String shipToRegion;
 
@@ -249,6 +259,7 @@ public class ErrorTransactionOutputModel {
         this.shipToRegion = value;
     }
 
+
     private DocumentType documentType;
 
     /**
@@ -269,6 +280,7 @@ public class ErrorTransactionOutputModel {
         this.documentType = value;
     }
 
+
     private String documentCode;
 
     /**
@@ -288,6 +300,7 @@ public class ErrorTransactionOutputModel {
     public void setDocumentCode(String value) {
         this.documentCode = value;
     }
+
 
     /**
      * Returns a JSON string representation of ErrorTransactionOutputModel

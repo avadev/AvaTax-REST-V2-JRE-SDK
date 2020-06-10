@@ -49,6 +49,7 @@ public class SubscriptionModel {
         this.id = value;
     }
 
+
     private Integer accountId;
 
     /**
@@ -69,6 +70,7 @@ public class SubscriptionModel {
         this.accountId = value;
     }
 
+
     private Integer subscriptionTypeId;
 
     /**
@@ -88,6 +90,7 @@ public class SubscriptionModel {
     public void setSubscriptionTypeId(Integer value) {
         this.subscriptionTypeId = value;
     }
+
 
     private String subscriptionDescription;
 
@@ -111,6 +114,7 @@ public class SubscriptionModel {
         this.subscriptionDescription = value;
     }
 
+
     private Date effectiveDate;
 
     /**
@@ -130,6 +134,7 @@ public class SubscriptionModel {
     public void setEffectiveDate(Date value) {
         this.effectiveDate = value;
     }
+
 
     private Date endDate;
 
@@ -151,6 +156,7 @@ public class SubscriptionModel {
         this.endDate = value;
     }
 
+
     private Date createdDate;
 
     /**
@@ -170,6 +176,7 @@ public class SubscriptionModel {
     public void setCreatedDate(Date value) {
         this.createdDate = value;
     }
+
 
     private Integer createdUserId;
 
@@ -191,6 +198,7 @@ public class SubscriptionModel {
         this.createdUserId = value;
     }
 
+
     private Date modifiedDate;
 
     /**
@@ -211,6 +219,7 @@ public class SubscriptionModel {
         this.modifiedDate = value;
     }
 
+
     private Integer modifiedUserId;
 
     /**
@@ -230,6 +239,7 @@ public class SubscriptionModel {
     public void setModifiedUserId(Integer value) {
         this.modifiedUserId = value;
     }
+
 
     /**
      * Returns a JSON string representation of SubscriptionModel

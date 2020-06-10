@@ -49,6 +49,7 @@ public class NexusByTaxFormModel {
         this.formCode = value;
     }
 
+
     private Integer companyId;
 
     /**
@@ -68,6 +69,7 @@ public class NexusByTaxFormModel {
     public void setCompanyId(Integer value) {
         this.companyId = value;
     }
+
 
     private ArrayList<NexusModel> nexusDefinitions;
 
@@ -89,6 +91,7 @@ public class NexusByTaxFormModel {
         this.nexusDefinitions = value;
     }
 
+
     private ArrayList<NexusModel> companyNexus;
 
     /**
@@ -108,6 +111,7 @@ public class NexusByTaxFormModel {
     public void setCompanyNexus(ArrayList<NexusModel> value) {
         this.companyNexus = value;
     }
+
 
     /**
      * Returns a JSON string representation of NexusByTaxFormModel

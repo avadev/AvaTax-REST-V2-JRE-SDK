@@ -49,6 +49,7 @@ public class NewFirmClientAccountRequestModel {
         this.accountName = value;
     }
 
+
     private String firstName;
 
     /**
@@ -68,6 +69,7 @@ public class NewFirmClientAccountRequestModel {
     public void setFirstName(String value) {
         this.firstName = value;
     }
+
 
     private String lastName;
 
@@ -89,6 +91,7 @@ public class NewFirmClientAccountRequestModel {
         this.lastName = value;
     }
 
+
     private String title;
 
     /**
@@ -108,6 +111,7 @@ public class NewFirmClientAccountRequestModel {
     public void setTitle(String value) {
         this.title = value;
     }
+
 
     private String phoneNumber;
 
@@ -129,6 +133,7 @@ public class NewFirmClientAccountRequestModel {
         this.phoneNumber = value;
     }
 
+
     private String email;
 
     /**
@@ -148,6 +153,7 @@ public class NewFirmClientAccountRequestModel {
     public void setEmail(String value) {
         this.email = value;
     }
+
 
     private String companyCode;
 
@@ -173,6 +179,7 @@ public class NewFirmClientAccountRequestModel {
         this.companyCode = value;
     }
 
+
     private CompanyAddress companyAddress;
 
     /**
@@ -192,6 +199,7 @@ public class NewFirmClientAccountRequestModel {
     public void setCompanyAddress(CompanyAddress value) {
         this.companyAddress = value;
     }
+
 
     private String taxPayerIdNumber;
 
@@ -217,6 +225,7 @@ public class NewFirmClientAccountRequestModel {
         this.taxPayerIdNumber = value;
     }
 
+
     private ArrayList<String> properties;
 
     /**
@@ -236,6 +245,7 @@ public class NewFirmClientAccountRequestModel {
     public void setProperties(ArrayList<String> value) {
         this.properties = value;
     }
+
 
     /**
      * Returns a JSON string representation of NewFirmClientAccountRequestModel

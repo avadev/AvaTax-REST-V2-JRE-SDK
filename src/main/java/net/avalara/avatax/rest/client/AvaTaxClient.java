@@ -1215,6 +1215,68 @@ public class AvaTaxClient {
     }
 
     /**
+     * Cancel an in progress batch
+     * 
+     * Marks the in progress batch identified by this URL as cancelled.
+     *             
+     * Only JSON batches can be cancelled. If you attempt to cancel a file batch, you will receive an error message.
+     *             
+     * Only in progress batches can be cancelled.  If you attempt to cancel a batch that its status is not Waiting or Processing, you will receive an error message.
+     * Cancelling an in progress batch does not delete any transactions that were created before the cancellation.
+     *             
+     * Because the batch system processes with a degree of concurrency, and
+     * because of batch sizes in the queue vary, AvaTax API is unable to accurately
+     * predict when a batch will complete. If high performance processing is
+     * required, please use the
+     * [CreateTransaction API](https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Transactions/CreateTransaction/).
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, CompanyAdmin, CSPTester, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin.
+     * 
+     * @param companyId The ID of the company that owns this batch.
+     * @param id The ID of the batch to cancel.
+     * @return BatchModel
+     */
+    public BatchModel cancelBatch(Integer companyId, Integer id) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/batches/{id}/cancel");
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
+        return ((RestCall<BatchModel>)restCallFactory.createRestCall("post", path, null, new TypeToken<BatchModel>(){})).call();
+    }
+
+    /**
+     * Cancel an in progress batch
+     * 
+     * Marks the in progress batch identified by this URL as cancelled.
+     *             
+     * Only JSON batches can be cancelled. If you attempt to cancel a file batch, you will receive an error message.
+     *             
+     * Only in progress batches can be cancelled.  If you attempt to cancel a batch that its status is not Waiting or Processing, you will receive an error message.
+     * Cancelling an in progress batch does not delete any transactions that were created before the cancellation.
+     *             
+     * Because the batch system processes with a degree of concurrency, and
+     * because of batch sizes in the queue vary, AvaTax API is unable to accurately
+     * predict when a batch will complete. If high performance processing is
+     * required, please use the
+     * [CreateTransaction API](https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Transactions/CreateTransaction/).
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, CompanyAdmin, CSPTester, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin.
+     * 
+     * @param companyId The ID of the company that owns this batch.
+     * @param id The ID of the batch to cancel.
+     * @return BatchModel
+     */
+    public Future<BatchModel> cancelBatchAsync(Integer companyId, Integer id) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/batches/{id}/cancel");
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
+        return this.threadPool.submit((RestCall<BatchModel>)restCallFactory.createRestCall("post", path, null, new TypeToken<BatchModel>(){}));
+    }
+
+    /**
      * Create a new batch
      * 
      * Create one or more new batch objects attached to this company.
@@ -1286,6 +1348,76 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/batches");
         path.applyField("companyId", companyId);
         return this.threadPool.submit((RestCall<ArrayList<BatchModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<BatchModel>>(){}));
+    }
+
+    /**
+     * Create a new transaction batch
+     * 
+     * Create a new transaction batch objects attached to this company.
+     *             
+     * When a transaction batch is created, it is added to the AvaTax Batch v2 Queue and will be
+     * processed as quickly as possible in the order it was received. To check the
+     * status of a batch, fetch the batch and retrieve the results of the batch
+     * operation.
+     *             
+     * Because the batch system processes with a degree of concurrency, and
+     * because of batch sizes in the queue vary, AvaTax API is unable to accurately
+     * predict when a batch will complete. If high performance processing is
+     * required, please use the
+     * [CreateTransaction API](https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Transactions/CreateTransaction/).
+     *             
+     * The maximum content length of the request body is limited to 28.6 MB. If this limit
+     * is exceeded, a 404 Not Found status will be returned (possibly with a CORS error if
+     * the API is called from a browser). In this situation, please split the request into
+     * smaller batches.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, CompanyAdmin, CSPTester, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin.
+     * 
+     * @param companyId The ID of the company that owns this batch.
+     * @param model The transaction batch you wish to create.
+     * @return CreateTransactionBatchResponseModel
+     */
+    public CreateTransactionBatchResponseModel createTransactionBatch(Integer companyId, CreateTransactionBatchRequestModel model) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/batches/transactions");
+        path.applyField("companyId", companyId);
+        return ((RestCall<CreateTransactionBatchResponseModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<CreateTransactionBatchResponseModel>(){})).call();
+    }
+
+    /**
+     * Create a new transaction batch
+     * 
+     * Create a new transaction batch objects attached to this company.
+     *             
+     * When a transaction batch is created, it is added to the AvaTax Batch v2 Queue and will be
+     * processed as quickly as possible in the order it was received. To check the
+     * status of a batch, fetch the batch and retrieve the results of the batch
+     * operation.
+     *             
+     * Because the batch system processes with a degree of concurrency, and
+     * because of batch sizes in the queue vary, AvaTax API is unable to accurately
+     * predict when a batch will complete. If high performance processing is
+     * required, please use the
+     * [CreateTransaction API](https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Transactions/CreateTransaction/).
+     *             
+     * The maximum content length of the request body is limited to 28.6 MB. If this limit
+     * is exceeded, a 404 Not Found status will be returned (possibly with a CORS error if
+     * the API is called from a browser). In this situation, please split the request into
+     * smaller batches.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, CompanyAdmin, CSPTester, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin.
+     * 
+     * @param companyId The ID of the company that owns this batch.
+     * @param model The transaction batch you wish to create.
+     * @return CreateTransactionBatchResponseModel
+     */
+    public Future<CreateTransactionBatchResponseModel> createTransactionBatchAsync(Integer companyId, CreateTransactionBatchRequestModel model) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/batches/transactions");
+        path.applyField("companyId", companyId);
+        return this.threadPool.submit((RestCall<CreateTransactionBatchResponseModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<CreateTransactionBatchResponseModel>(){}));
     }
 
     /**
@@ -11987,66 +12119,6 @@ public class AvaTaxClient {
     }
 
     /**
-     * Add parameters to a nexus.
-     * 
-     * Add parameters to the nexus.
-     * Some tax calculation and reporting are different depending on the properties of the nexus, such as isRemoteSeller. In AvaTax, these tax-affecting properties are called "parameters".
-     *             
-     * A parameter added to an nexus will be used by default in tax calculation but will not show on the transaction line referencing the nexus.
-     *             
-     * A parameter specified on a transaction line will override an nexus parameter if they share the same parameter name.
-     *             
-     * To see available parameters for this item, call `/api/v2/definitions/parameters?$filter=attributeType eq Nexus`
-     *             
-     * Some parameters are only available for use if you have subscribed to specific AvaTax services. To see which parameters you are able to use, add the query parameter "$showSubscribed=true" to the parameter definition call above.
-     * 
-     * ### Security Policies
-     * 
-     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin.
-     * 
-     * @param companyId The ID of the company that owns this nexus parameter.
-     * @param nexusId The nexus id.
-     * @param model The nexus parameters you wish to create.
-     * @return ArrayList<NexusParameterDetailModel>
-     */
-    public ArrayList<NexusParameterDetailModel> createNexusParameters(Integer companyId, Integer nexusId, ArrayList<NexusParameterDetailModel> model) throws Exception {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/nexus/{nexusId}/parameters");
-        path.applyField("companyId", companyId);
-        path.applyField("nexusId", nexusId);
-        return ((RestCall<ArrayList<NexusParameterDetailModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<NexusParameterDetailModel>>(){})).call();
-    }
-
-    /**
-     * Add parameters to a nexus.
-     * 
-     * Add parameters to the nexus.
-     * Some tax calculation and reporting are different depending on the properties of the nexus, such as isRemoteSeller. In AvaTax, these tax-affecting properties are called "parameters".
-     *             
-     * A parameter added to an nexus will be used by default in tax calculation but will not show on the transaction line referencing the nexus.
-     *             
-     * A parameter specified on a transaction line will override an nexus parameter if they share the same parameter name.
-     *             
-     * To see available parameters for this item, call `/api/v2/definitions/parameters?$filter=attributeType eq Nexus`
-     *             
-     * Some parameters are only available for use if you have subscribed to specific AvaTax services. To see which parameters you are able to use, add the query parameter "$showSubscribed=true" to the parameter definition call above.
-     * 
-     * ### Security Policies
-     * 
-     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin.
-     * 
-     * @param companyId The ID of the company that owns this nexus parameter.
-     * @param nexusId The nexus id.
-     * @param model The nexus parameters you wish to create.
-     * @return ArrayList<NexusParameterDetailModel>
-     */
-    public Future<ArrayList<NexusParameterDetailModel>> createNexusParametersAsync(Integer companyId, Integer nexusId, ArrayList<NexusParameterDetailModel> model) {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/nexus/{nexusId}/parameters");
-        path.applyField("companyId", companyId);
-        path.applyField("nexusId", nexusId);
-        return this.threadPool.submit((RestCall<ArrayList<NexusParameterDetailModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<NexusParameterDetailModel>>(){}));
-    }
-
-    /**
      * Creates nexus for a list of addresses.
      * 
      * This call is intended to simplify adding all applicable nexus to a company, for an address or addresses. Calling this
@@ -12167,110 +12239,6 @@ public class AvaTaxClient {
         path.applyField("companyId", companyId);
         path.applyField("id", id);
         path.addQuery("cascadeDelete", cascadeDelete);
-        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){}));
-    }
-
-    /**
-     * Delete a single nexus parameter
-     * 
-     * Delete a single nexus parameter.
-     * Some tax calculation and reporting are different depending on the properties of the nexus, such as isRemoteSeller. In AvaTax, these tax-affecting properties are called "parameters".
-     *             
-     * A parameter added to an nexus will be used by default in tax calculation but will not show on the transaction line referencing the nexus.
-     *             
-     * A parameter specified on a transaction line will override an nexus parameter if they share the same parameter name.
-     * 
-     * ### Security Policies
-     * 
-     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin.
-     * 
-     * @param companyId The company id
-     * @param nexusId The nexus id
-     * @param id The parameter id
-     * @return ArrayList<ErrorDetail>
-     */
-    public ArrayList<ErrorDetail> deleteNexusParameter(Integer companyId, Integer nexusId, Long id) throws Exception {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/nexus/{nexusId}/parameters/{id}");
-        path.applyField("companyId", companyId);
-        path.applyField("nexusId", nexusId);
-        path.applyField("id", id);
-        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){})).call();
-    }
-
-    /**
-     * Delete a single nexus parameter
-     * 
-     * Delete a single nexus parameter.
-     * Some tax calculation and reporting are different depending on the properties of the nexus, such as isRemoteSeller. In AvaTax, these tax-affecting properties are called "parameters".
-     *             
-     * A parameter added to an nexus will be used by default in tax calculation but will not show on the transaction line referencing the nexus.
-     *             
-     * A parameter specified on a transaction line will override an nexus parameter if they share the same parameter name.
-     * 
-     * ### Security Policies
-     * 
-     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin.
-     * 
-     * @param companyId The company id
-     * @param nexusId The nexus id
-     * @param id The parameter id
-     * @return ArrayList<ErrorDetail>
-     */
-    public Future<ArrayList<ErrorDetail>> deleteNexusParameterAsync(Integer companyId, Integer nexusId, Long id) {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/nexus/{nexusId}/parameters/{id}");
-        path.applyField("companyId", companyId);
-        path.applyField("nexusId", nexusId);
-        path.applyField("id", id);
-        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){}));
-    }
-
-    /**
-     * Delete all parameters for an nexus
-     * 
-     * Delete all the parameters for a given nexus.
-     * Some tax calculation and reporting are different depending on the properties of the nexus, such as isRemoteSeller. In AvaTax, these tax-affecting properties are called "parameters".
-     *             
-     * A parameter added to an nexus will be used by default in tax calculation but will not show on the transaction line referencing the nexus.
-     *             
-     * A parameter specified on a transaction line will override an nexus parameter if they share the same parameter name.
-     * 
-     * ### Security Policies
-     * 
-     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin.
-     * 
-     * @param companyId The ID of the company that owns this nexus.
-     * @param nexusId The ID of the nexus you wish to delete the parameters.
-     * @return ArrayList<ErrorDetail>
-     */
-    public ArrayList<ErrorDetail> deleteNexusParameters(Integer companyId, Integer nexusId) throws Exception {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/nexus/{nexusId}/parameters");
-        path.applyField("companyId", companyId);
-        path.applyField("nexusId", nexusId);
-        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){})).call();
-    }
-
-    /**
-     * Delete all parameters for an nexus
-     * 
-     * Delete all the parameters for a given nexus.
-     * Some tax calculation and reporting are different depending on the properties of the nexus, such as isRemoteSeller. In AvaTax, these tax-affecting properties are called "parameters".
-     *             
-     * A parameter added to an nexus will be used by default in tax calculation but will not show on the transaction line referencing the nexus.
-     *             
-     * A parameter specified on a transaction line will override an nexus parameter if they share the same parameter name.
-     * 
-     * ### Security Policies
-     * 
-     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin.
-     * 
-     * @param companyId The ID of the company that owns this nexus.
-     * @param nexusId The ID of the nexus you wish to delete the parameters.
-     * @return ArrayList<ErrorDetail>
-     */
-    public Future<ArrayList<ErrorDetail>> deleteNexusParametersAsync(Integer companyId, Integer nexusId) {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/nexus/{nexusId}/parameters");
-        path.applyField("companyId", companyId);
-        path.applyField("nexusId", nexusId);
         return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){}));
     }
 
@@ -12399,60 +12367,6 @@ public class AvaTaxClient {
     }
 
     /**
-     * Retrieve a single nexus parameter
-     * 
-     * Retrieve a single nexus parameter.
-     * Some tax calculation and reporting are different depending on the properties of the nexus, such as isRemoteSeller.In AvaTax, these tax-affecting properties are called "parameters".
-     *             
-     * A parameter added to an nexus will be used by default in tax calculation but will not show on the transaction line referencing the nexus.
-     *             
-     * A parameter specified on a transaction line will override an nexus parameter if they share the same parameter name.
-     * 
-     * ### Security Policies
-     * 
-     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
-     * 
-     * @param companyId The company id
-     * @param nexusId The nexus id
-     * @param id The parameter id
-     * @return NexusParameterDetailModel
-     */
-    public NexusParameterDetailModel getNexusParameter(Integer companyId, Integer nexusId, Long id) throws Exception {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/nexus/{nexusId}/parameters/{id}");
-        path.applyField("companyId", companyId);
-        path.applyField("nexusId", nexusId);
-        path.applyField("id", id);
-        return ((RestCall<NexusParameterDetailModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<NexusParameterDetailModel>(){})).call();
-    }
-
-    /**
-     * Retrieve a single nexus parameter
-     * 
-     * Retrieve a single nexus parameter.
-     * Some tax calculation and reporting are different depending on the properties of the nexus, such as isRemoteSeller.In AvaTax, these tax-affecting properties are called "parameters".
-     *             
-     * A parameter added to an nexus will be used by default in tax calculation but will not show on the transaction line referencing the nexus.
-     *             
-     * A parameter specified on a transaction line will override an nexus parameter if they share the same parameter name.
-     * 
-     * ### Security Policies
-     * 
-     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
-     * 
-     * @param companyId The company id
-     * @param nexusId The nexus id
-     * @param id The parameter id
-     * @return NexusParameterDetailModel
-     */
-    public Future<NexusParameterDetailModel> getNexusParameterAsync(Integer companyId, Integer nexusId, Long id) {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/nexus/{nexusId}/parameters/{id}");
-        path.applyField("companyId", companyId);
-        path.applyField("nexusId", nexusId);
-        path.applyField("id", id);
-        return this.threadPool.submit((RestCall<NexusParameterDetailModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<NexusParameterDetailModel>(){}));
-    }
-
-    /**
      * Retrieve nexus for this company
      * 
      * List all nexus objects defined for this company.
@@ -12526,78 +12440,6 @@ public class AvaTaxClient {
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
         return this.threadPool.submit((RestCall<FetchResult<NexusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NexusModel>>(){}));
-    }
-
-    /**
-     * Retrieve parameters for a nexus
-     * 
-     * List parameters for a nexus.
-     * Some tax calculation and reporting are different depending on the properties of the nexus, such as isRemoteSeller. In AvaTax, these tax-affecting properties are called "parameters".
-     *             
-     * A parameter added to an nexus will be used by default in tax calculation but will not show on the transaction line referencing the nexus.
-     *             
-     * A parameter specified on a transaction line will override an nexus parameter if they share the same parameter name. 
-     *             
-     * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * Paginate your results using the `$top`, `$skip`, and `$orderby` parameters.
-     * 
-     * ### Security Policies
-     * 
-     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
-     * 
-     * @param companyId The company id
-     * @param nexusId The nexus id
-     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* name, unit
-     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
-     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
-     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<NexusParameterDetailModel>
-     */
-    public FetchResult<NexusParameterDetailModel> listNexusParameters(Integer companyId, Integer nexusId, String filter, Integer top, Integer skip, String orderBy) throws Exception {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/nexus/{nexusId}/parameters");
-        path.applyField("companyId", companyId);
-        path.applyField("nexusId", nexusId);
-        path.addQuery("$filter", filter);
-        path.addQuery("$top", top);
-        path.addQuery("$skip", skip);
-        path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<NexusParameterDetailModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NexusParameterDetailModel>>(){})).call();
-    }
-
-    /**
-     * Retrieve parameters for a nexus
-     * 
-     * List parameters for a nexus.
-     * Some tax calculation and reporting are different depending on the properties of the nexus, such as isRemoteSeller. In AvaTax, these tax-affecting properties are called "parameters".
-     *             
-     * A parameter added to an nexus will be used by default in tax calculation but will not show on the transaction line referencing the nexus.
-     *             
-     * A parameter specified on a transaction line will override an nexus parameter if they share the same parameter name. 
-     *             
-     * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * Paginate your results using the `$top`, `$skip`, and `$orderby` parameters.
-     * 
-     * ### Security Policies
-     * 
-     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
-     * 
-     * @param companyId The company id
-     * @param nexusId The nexus id
-     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* name, unit
-     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
-     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
-     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<NexusParameterDetailModel>
-     */
-    public Future<FetchResult<NexusParameterDetailModel>> listNexusParametersAsync(Integer companyId, Integer nexusId, String filter, Integer top, Integer skip, String orderBy) {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/nexus/{nexusId}/parameters");
-        path.applyField("companyId", companyId);
-        path.applyField("nexusId", nexusId);
-        path.addQuery("$filter", filter);
-        path.addQuery("$top", top);
-        path.addQuery("$skip", skip);
-        path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<NexusParameterDetailModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NexusParameterDetailModel>>(){}));
     }
 
     /**
@@ -12748,64 +12590,6 @@ public class AvaTaxClient {
         path.applyField("companyId", companyId);
         path.applyField("id", id);
         return this.threadPool.submit((RestCall<NexusModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<NexusModel>(){}));
-    }
-
-    /**
-     * Update an nexus parameter
-     * 
-     * Update an nexus parameter.
-     *             
-     * Some tax calculation and reporting are different depending on the properties of the nexus, such as isRemoteSeller. In AvaTax, these tax-affecting properties are called "parameters".
-     *             
-     * A parameter added to a nexus will be used in tax calculation based on the locationcode and parameter value the transaction state line might have lines added.
-     *             
-     * A parameter specified on a transaction line will override an item parameter if they share the same parameter name.????? I dont know about this?
-     * 
-     * ### Security Policies
-     * 
-     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin.
-     * 
-     * @param companyId The company id.
-     * @param nexusId The nexus id
-     * @param id The nexus parameter id
-     * @param model The nexus object you wish to update.
-     * @return NexusParameterDetailModel
-     */
-    public NexusParameterDetailModel updateNexusParameter(Integer companyId, Integer nexusId, Long id, NexusParameterDetailModel model) throws Exception {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/nexus/{nexusId}/parameters/{id}");
-        path.applyField("companyId", companyId);
-        path.applyField("nexusId", nexusId);
-        path.applyField("id", id);
-        return ((RestCall<NexusParameterDetailModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<NexusParameterDetailModel>(){})).call();
-    }
-
-    /**
-     * Update an nexus parameter
-     * 
-     * Update an nexus parameter.
-     *             
-     * Some tax calculation and reporting are different depending on the properties of the nexus, such as isRemoteSeller. In AvaTax, these tax-affecting properties are called "parameters".
-     *             
-     * A parameter added to a nexus will be used in tax calculation based on the locationcode and parameter value the transaction state line might have lines added.
-     *             
-     * A parameter specified on a transaction line will override an item parameter if they share the same parameter name.????? I dont know about this?
-     * 
-     * ### Security Policies
-     * 
-     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin.
-     * 
-     * @param companyId The company id.
-     * @param nexusId The nexus id
-     * @param id The nexus parameter id
-     * @param model The nexus object you wish to update.
-     * @return NexusParameterDetailModel
-     */
-    public Future<NexusParameterDetailModel> updateNexusParameterAsync(Integer companyId, Integer nexusId, Long id, NexusParameterDetailModel model) {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/nexus/{nexusId}/parameters/{id}");
-        path.applyField("companyId", companyId);
-        path.applyField("nexusId", nexusId);
-        path.applyField("id", id);
-        return this.threadPool.submit((RestCall<NexusParameterDetailModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<NexusParameterDetailModel>(){}));
     }
 
     /**

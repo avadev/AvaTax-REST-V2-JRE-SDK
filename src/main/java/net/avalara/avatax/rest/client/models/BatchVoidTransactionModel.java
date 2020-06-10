@@ -49,6 +49,7 @@ public class BatchVoidTransactionModel {
         this.companyCode = value;
     }
 
+
     private String transactionCode;
 
     /**
@@ -69,6 +70,7 @@ public class BatchVoidTransactionModel {
         this.transactionCode = value;
     }
 
+
     private String documentType;
 
     /**
@@ -88,6 +90,7 @@ public class BatchVoidTransactionModel {
     public void setDocumentType(String value) {
         this.documentType = value;
     }
+
 
     private VoidReasonCode code;
 
@@ -112,6 +115,7 @@ public class BatchVoidTransactionModel {
     public void setCode(VoidReasonCode value) {
         this.code = value;
     }
+
 
     /**
      * Returns a JSON string representation of BatchVoidTransactionModel

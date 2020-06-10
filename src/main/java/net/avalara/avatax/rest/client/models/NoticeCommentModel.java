@@ -49,6 +49,7 @@ public class NoticeCommentModel {
         this.id = value;
     }
 
+
     private Integer noticeId;
 
     /**
@@ -68,6 +69,7 @@ public class NoticeCommentModel {
     public void setNoticeId(Integer value) {
         this.noticeId = value;
     }
+
 
     private Date date;
 
@@ -89,6 +91,7 @@ public class NoticeCommentModel {
         this.date = value;
     }
 
+
     private String comment;
 
     /**
@@ -108,6 +111,7 @@ public class NoticeCommentModel {
     public void setComment(String value) {
         this.comment = value;
     }
+
 
     private Integer commentUserId;
 
@@ -129,6 +133,7 @@ public class NoticeCommentModel {
         this.commentUserId = value;
     }
 
+
     private String commentUserName;
 
     /**
@@ -148,6 +153,7 @@ public class NoticeCommentModel {
     public void setCommentUserName(String value) {
         this.commentUserName = value;
     }
+
 
     private Integer commentTypeId;
 
@@ -169,6 +175,7 @@ public class NoticeCommentModel {
         this.commentTypeId = value;
     }
 
+
     private CommentType commentType;
 
     /**
@@ -188,6 +195,7 @@ public class NoticeCommentModel {
     public void setCommentType(CommentType value) {
         this.commentType = value;
     }
+
 
     private String commentLink;
 
@@ -209,6 +217,7 @@ public class NoticeCommentModel {
         this.commentLink = value;
     }
 
+
     private String taxNoticeFileName;
 
     /**
@@ -228,6 +237,7 @@ public class NoticeCommentModel {
     public void setTaxNoticeFileName(String value) {
         this.taxNoticeFileName = value;
     }
+
 
     private Long resourceFileId;
 
@@ -249,6 +259,7 @@ public class NoticeCommentModel {
         this.resourceFileId = value;
     }
 
+
     private Date modifiedDate;
 
     /**
@@ -268,6 +279,7 @@ public class NoticeCommentModel {
     public void setModifiedDate(Date value) {
         this.modifiedDate = value;
     }
+
 
     private Integer modifiedUserId;
 
@@ -289,6 +301,7 @@ public class NoticeCommentModel {
         this.modifiedUserId = value;
     }
 
+
     private ResourceFileUploadRequestModel attachmentUploadRequest;
 
     /**
@@ -308,6 +321,7 @@ public class NoticeCommentModel {
     public void setAttachmentUploadRequest(ResourceFileUploadRequestModel value) {
         this.attachmentUploadRequest = value;
     }
+
 
     /**
      * Returns a JSON string representation of NoticeCommentModel

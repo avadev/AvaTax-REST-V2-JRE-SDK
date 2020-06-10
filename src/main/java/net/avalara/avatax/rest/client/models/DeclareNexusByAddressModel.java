@@ -55,6 +55,7 @@ public class DeclareNexusByAddressModel {
         this.effectiveDate = value;
     }
 
+
     private Date endDate;
 
     /**
@@ -77,6 +78,7 @@ public class DeclareNexusByAddressModel {
         this.endDate = value;
     }
 
+
     private TextCase textCase;
 
     /**
@@ -96,6 +98,7 @@ public class DeclareNexusByAddressModel {
     public void setTextCase(TextCase value) {
         this.textCase = value;
     }
+
 
     private String line1;
 
@@ -117,6 +120,7 @@ public class DeclareNexusByAddressModel {
         this.line1 = value;
     }
 
+
     private String line2;
 
     /**
@@ -136,6 +140,7 @@ public class DeclareNexusByAddressModel {
     public void setLine2(String value) {
         this.line2 = value;
     }
+
 
     private String line3;
 
@@ -157,6 +162,7 @@ public class DeclareNexusByAddressModel {
         this.line3 = value;
     }
 
+
     private String city;
 
     /**
@@ -176,6 +182,7 @@ public class DeclareNexusByAddressModel {
     public void setCity(String value) {
         this.city = value;
     }
+
 
     private String region;
 
@@ -210,6 +217,7 @@ public class DeclareNexusByAddressModel {
     public void setRegion(String value) {
         this.region = value;
     }
+
 
     private String country;
 
@@ -247,6 +255,7 @@ public class DeclareNexusByAddressModel {
         this.country = value;
     }
 
+
     private String postalCode;
 
     /**
@@ -266,6 +275,7 @@ public class DeclareNexusByAddressModel {
     public void setPostalCode(String value) {
         this.postalCode = value;
     }
+
 
     private BigDecimal latitude;
 
@@ -287,6 +297,7 @@ public class DeclareNexusByAddressModel {
         this.latitude = value;
     }
 
+
     private BigDecimal longitude;
 
     /**
@@ -306,6 +317,7 @@ public class DeclareNexusByAddressModel {
     public void setLongitude(BigDecimal value) {
         this.longitude = value;
     }
+
 
     /**
      * Returns a JSON string representation of DeclareNexusByAddressModel

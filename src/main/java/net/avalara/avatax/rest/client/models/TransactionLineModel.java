@@ -49,6 +49,7 @@ public class TransactionLineModel {
         this.id = value;
     }
 
+
     private Long transactionId;
 
     /**
@@ -68,6 +69,7 @@ public class TransactionLineModel {
     public void setTransactionId(Long value) {
         this.transactionId = value;
     }
+
 
     private String lineNumber;
 
@@ -89,6 +91,7 @@ public class TransactionLineModel {
         this.lineNumber = value;
     }
 
+
     private Integer boundaryOverrideId;
 
     /**
@@ -108,6 +111,7 @@ public class TransactionLineModel {
     public void setBoundaryOverrideId(Integer value) {
         this.boundaryOverrideId = value;
     }
+
 
     private String customerUsageType;
 
@@ -131,6 +135,7 @@ public class TransactionLineModel {
         this.customerUsageType = value;
     }
 
+
     private String entityUseCode;
 
     /**
@@ -151,6 +156,7 @@ public class TransactionLineModel {
         this.entityUseCode = value;
     }
 
+
     private String description;
 
     /**
@@ -170,6 +176,7 @@ public class TransactionLineModel {
     public void setDescription(String value) {
         this.description = value;
     }
+
 
     private Long destinationAddressId;
 
@@ -195,6 +202,7 @@ public class TransactionLineModel {
         this.destinationAddressId = value;
     }
 
+
     private Long originAddressId;
 
     /**
@@ -219,6 +227,7 @@ public class TransactionLineModel {
         this.originAddressId = value;
     }
 
+
     private BigDecimal discountAmount;
 
     /**
@@ -241,6 +250,7 @@ public class TransactionLineModel {
         this.discountAmount = value;
     }
 
+
     private Integer discountTypeId;
 
     /**
@@ -260,6 +270,7 @@ public class TransactionLineModel {
     public void setDiscountTypeId(Integer value) {
         this.discountTypeId = value;
     }
+
 
     private BigDecimal exemptAmount;
 
@@ -281,6 +292,7 @@ public class TransactionLineModel {
         this.exemptAmount = value;
     }
 
+
     private Integer exemptCertId;
 
     /**
@@ -301,6 +313,7 @@ public class TransactionLineModel {
         this.exemptCertId = value;
     }
 
+
     private String certificateId;
 
     /**
@@ -320,6 +333,7 @@ public class TransactionLineModel {
     public void setCertificateId(String value) {
         this.certificateId = value;
     }
+
 
     private String exemptNo;
 
@@ -347,6 +361,7 @@ public class TransactionLineModel {
         this.exemptNo = value;
     }
 
+
     private Boolean isItemTaxable;
 
     /**
@@ -366,6 +381,7 @@ public class TransactionLineModel {
     public void setIsItemTaxable(Boolean value) {
         this.isItemTaxable = value;
     }
+
 
     private Boolean isSSTP;
 
@@ -387,6 +403,7 @@ public class TransactionLineModel {
         this.isSSTP = value;
     }
 
+
     private String itemCode;
 
     /**
@@ -406,6 +423,7 @@ public class TransactionLineModel {
     public void setItemCode(String value) {
         this.itemCode = value;
     }
+
 
     private BigDecimal lineAmount;
 
@@ -429,6 +447,7 @@ public class TransactionLineModel {
         this.lineAmount = value;
     }
 
+
     private BigDecimal quantity;
 
     /**
@@ -448,6 +467,7 @@ public class TransactionLineModel {
     public void setQuantity(BigDecimal value) {
         this.quantity = value;
     }
+
 
     private String ref1;
 
@@ -469,6 +489,7 @@ public class TransactionLineModel {
         this.ref1 = value;
     }
 
+
     private String ref2;
 
     /**
@@ -488,6 +509,7 @@ public class TransactionLineModel {
     public void setRef2(String value) {
         this.ref2 = value;
     }
+
 
     private Date reportingDate;
 
@@ -511,6 +533,7 @@ public class TransactionLineModel {
         this.reportingDate = value;
     }
 
+
     private String revAccount;
 
     /**
@@ -531,6 +554,7 @@ public class TransactionLineModel {
         this.revAccount = value;
     }
 
+
     private Sourcing sourcing;
 
     /**
@@ -550,6 +574,7 @@ public class TransactionLineModel {
     public void setSourcing(Sourcing value) {
         this.sourcing = value;
     }
+
 
     private BigDecimal tax;
 
@@ -585,6 +610,7 @@ public class TransactionLineModel {
         this.tax = value;
     }
 
+
     private BigDecimal taxableAmount;
 
     /**
@@ -604,6 +630,7 @@ public class TransactionLineModel {
     public void setTaxableAmount(BigDecimal value) {
         this.taxableAmount = value;
     }
+
 
     private BigDecimal taxCalculated;
 
@@ -639,6 +666,7 @@ public class TransactionLineModel {
         this.taxCalculated = value;
     }
 
+
     private String taxCode;
 
     /**
@@ -659,6 +687,7 @@ public class TransactionLineModel {
         this.taxCode = value;
     }
 
+
     private Integer taxCodeId;
 
     /**
@@ -678,6 +707,7 @@ public class TransactionLineModel {
     public void setTaxCodeId(Integer value) {
         this.taxCodeId = value;
     }
+
 
     private Date taxDate;
 
@@ -703,6 +733,7 @@ public class TransactionLineModel {
         this.taxDate = value;
     }
 
+
     private String taxEngine;
 
     /**
@@ -722,6 +753,7 @@ public class TransactionLineModel {
     public void setTaxEngine(String value) {
         this.taxEngine = value;
     }
+
 
     private TaxOverrideType taxOverrideType;
 
@@ -743,6 +775,7 @@ public class TransactionLineModel {
         this.taxOverrideType = value;
     }
 
+
     private String businessIdentificationNo;
 
     /**
@@ -762,6 +795,7 @@ public class TransactionLineModel {
     public void setBusinessIdentificationNo(String value) {
         this.businessIdentificationNo = value;
     }
+
 
     private BigDecimal taxOverrideAmount;
 
@@ -783,6 +817,7 @@ public class TransactionLineModel {
         this.taxOverrideAmount = value;
     }
 
+
     private String taxOverrideReason;
 
     /**
@@ -802,6 +837,7 @@ public class TransactionLineModel {
     public void setTaxOverrideReason(String value) {
         this.taxOverrideReason = value;
     }
+
 
     private Boolean taxIncluded;
 
@@ -830,6 +866,7 @@ public class TransactionLineModel {
     public void setTaxIncluded(Boolean value) {
         this.taxIncluded = value;
     }
+
 
     private ArrayList<TransactionLineDetailModel> details;
 
@@ -861,6 +898,7 @@ public class TransactionLineModel {
         this.details = value;
     }
 
+
     private ArrayList<TransactionLineDetailModel> nonPassthroughDetails;
 
     /**
@@ -887,6 +925,7 @@ public class TransactionLineModel {
         this.nonPassthroughDetails = value;
     }
 
+
     private ArrayList<TransactionLineLocationTypeModel> lineLocationTypes;
 
     /**
@@ -907,6 +946,7 @@ public class TransactionLineModel {
         this.lineLocationTypes = value;
     }
 
+
     private ArrayList<TransactionLineParameterModel> parameters;
 
     /**
@@ -926,6 +966,7 @@ public class TransactionLineModel {
     public void setParameters(ArrayList<TransactionLineParameterModel> value) {
         this.parameters = value;
     }
+
 
     private String hsCode;
 
@@ -949,6 +990,7 @@ public class TransactionLineModel {
         this.hsCode = value;
     }
 
+
     private BigDecimal costInsuranceFreight;
 
     /**
@@ -968,6 +1010,7 @@ public class TransactionLineModel {
     public void setCostInsuranceFreight(BigDecimal value) {
         this.costInsuranceFreight = value;
     }
+
 
     private String vatCode;
 
@@ -989,6 +1032,7 @@ public class TransactionLineModel {
         this.vatCode = value;
     }
 
+
     private Integer vatNumberTypeId;
 
     /**
@@ -1008,6 +1052,7 @@ public class TransactionLineModel {
     public void setVatNumberTypeId(Integer value) {
         this.vatNumberTypeId = value;
     }
+
 
     /**
      * Returns a JSON string representation of TransactionLineModel

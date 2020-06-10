@@ -49,6 +49,7 @@ public class TaxAuthorityInfo {
         this.avalaraId = value;
     }
 
+
     private String jurisdictionName;
 
     /**
@@ -68,6 +69,7 @@ public class TaxAuthorityInfo {
     public void setJurisdictionName(String value) {
         this.jurisdictionName = value;
     }
+
 
     private JurisdictionType jurisdictionType;
 
@@ -89,6 +91,7 @@ public class TaxAuthorityInfo {
         this.jurisdictionType = value;
     }
 
+
     private String signatureCode;
 
     /**
@@ -108,6 +111,7 @@ public class TaxAuthorityInfo {
     public void setSignatureCode(String value) {
         this.signatureCode = value;
     }
+
 
     /**
      * Returns a JSON string representation of TaxAuthorityInfo

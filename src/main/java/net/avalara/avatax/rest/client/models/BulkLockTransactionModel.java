@@ -49,6 +49,7 @@ public class BulkLockTransactionModel {
         this.documentIds = value;
     }
 
+
     private Boolean isLocked;
 
     /**
@@ -68,6 +69,7 @@ public class BulkLockTransactionModel {
     public void setIsLocked(Boolean value) {
         this.isLocked = value;
     }
+
 
     /**
      * Returns a JSON string representation of BulkLockTransactionModel

@@ -49,6 +49,7 @@ public class CustomerModel {
         this.id = value;
     }
 
+
     private Integer companyId;
 
     /**
@@ -68,6 +69,7 @@ public class CustomerModel {
     public void setCompanyId(Integer value) {
         this.companyId = value;
     }
+
 
     private String customerCode;
 
@@ -99,6 +101,7 @@ public class CustomerModel {
         this.customerCode = value;
     }
 
+
     private String alternateId;
 
     /**
@@ -121,6 +124,7 @@ public class CustomerModel {
         this.alternateId = value;
     }
 
+
     private String name;
 
     /**
@@ -140,6 +144,7 @@ public class CustomerModel {
     public void setName(String value) {
         this.name = value;
     }
+
 
     private String attnName;
 
@@ -163,6 +168,7 @@ public class CustomerModel {
         this.attnName = value;
     }
 
+
     private String line1;
 
     /**
@@ -182,6 +188,7 @@ public class CustomerModel {
     public void setLine1(String value) {
         this.line1 = value;
     }
+
 
     private String line2;
 
@@ -203,6 +210,7 @@ public class CustomerModel {
         this.line2 = value;
     }
 
+
     private String city;
 
     /**
@@ -222,6 +230,7 @@ public class CustomerModel {
     public void setCity(String value) {
         this.city = value;
     }
+
 
     private String postalCode;
 
@@ -243,6 +252,7 @@ public class CustomerModel {
         this.postalCode = value;
     }
 
+
     private String phoneNumber;
 
     /**
@@ -262,6 +272,7 @@ public class CustomerModel {
     public void setPhoneNumber(String value) {
         this.phoneNumber = value;
     }
+
 
     private String faxNumber;
 
@@ -283,6 +294,7 @@ public class CustomerModel {
         this.faxNumber = value;
     }
 
+
     private String emailAddress;
 
     /**
@@ -302,6 +314,7 @@ public class CustomerModel {
     public void setEmailAddress(String value) {
         this.emailAddress = value;
     }
+
 
     private String contactName;
 
@@ -323,6 +336,7 @@ public class CustomerModel {
         this.contactName = value;
     }
 
+
     private Date lastTransaction;
 
     /**
@@ -342,6 +356,7 @@ public class CustomerModel {
     public void setLastTransaction(Date value) {
         this.lastTransaction = value;
     }
+
 
     private Date createdDate;
 
@@ -363,6 +378,7 @@ public class CustomerModel {
         this.createdDate = value;
     }
 
+
     private Date modifiedDate;
 
     /**
@@ -382,6 +398,7 @@ public class CustomerModel {
     public void setModifiedDate(Date value) {
         this.modifiedDate = value;
     }
+
 
     private String country;
 
@@ -419,6 +436,7 @@ public class CustomerModel {
         this.country = value;
     }
 
+
     private String region;
 
     /**
@@ -445,6 +463,7 @@ public class CustomerModel {
         this.region = value;
     }
 
+
     private Boolean isBill;
 
     /**
@@ -465,6 +484,7 @@ public class CustomerModel {
         this.isBill = value;
     }
 
+
     private Boolean isShip;
 
     /**
@@ -484,6 +504,7 @@ public class CustomerModel {
     public void setIsShip(Boolean value) {
         this.isShip = value;
     }
+
 
     private String taxpayerIdNumber;
 
@@ -507,6 +528,7 @@ public class CustomerModel {
         this.taxpayerIdNumber = value;
     }
 
+
     private ArrayList<CertificateModel> certificates;
 
     /**
@@ -528,6 +550,7 @@ public class CustomerModel {
     public void setCertificates(ArrayList<CertificateModel> value) {
         this.certificates = value;
     }
+
 
     private ArrayList<CustomFieldModel> customFields;
 
@@ -552,6 +575,7 @@ public class CustomerModel {
     public void setCustomFields(ArrayList<CustomFieldModel> value) {
         this.customFields = value;
     }
+
 
     private ArrayList<ExposureZoneModel> exposureZones;
 
@@ -589,6 +613,7 @@ public class CustomerModel {
         this.exposureZones = value;
     }
 
+
     private ArrayList<CustomerModel> shipTos;
 
     /**
@@ -619,6 +644,7 @@ public class CustomerModel {
         this.shipTos = value;
     }
 
+
     private ArrayList<CustomerAttributeModel> attributes;
 
     /**
@@ -642,6 +668,7 @@ public class CustomerModel {
     public void setAttributes(ArrayList<CustomerAttributeModel> value) {
         this.attributes = value;
     }
+
 
     /**
      * Returns a JSON string representation of CustomerModel

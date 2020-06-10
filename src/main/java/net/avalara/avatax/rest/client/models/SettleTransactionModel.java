@@ -56,6 +56,7 @@ public class SettleTransactionModel {
         this.verify = value;
     }
 
+
     private ChangeTransactionCodeModel changeCode;
 
     /**
@@ -79,6 +80,7 @@ public class SettleTransactionModel {
     public void setChangeCode(ChangeTransactionCodeModel value) {
         this.changeCode = value;
     }
+
 
     private CommitTransactionModel commit;
 
@@ -107,6 +109,7 @@ public class SettleTransactionModel {
     public void setCommit(CommitTransactionModel value) {
         this.commit = value;
     }
+
 
     /**
      * Returns a JSON string representation of SettleTransactionModel

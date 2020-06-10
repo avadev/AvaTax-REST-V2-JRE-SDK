@@ -49,6 +49,7 @@ public class ItemSyncModel {
         this.itemCode = value;
     }
 
+
     private String description;
 
     /**
@@ -68,6 +69,7 @@ public class ItemSyncModel {
     public void setDescription(String value) {
         this.description = value;
     }
+
 
     private String itemGroup;
 
@@ -89,6 +91,7 @@ public class ItemSyncModel {
         this.itemGroup = value;
     }
 
+
     private String taxCode;
 
     /**
@@ -108,6 +111,7 @@ public class ItemSyncModel {
     public void setTaxCode(String value) {
         this.taxCode = value;
     }
+
 
     /**
      * Returns a JSON string representation of ItemSyncModel

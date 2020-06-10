@@ -49,6 +49,7 @@ public class CompanyReturnSettingModel {
         this.id = value;
     }
 
+
     private Long companyReturnId;
 
     /**
@@ -68,6 +69,7 @@ public class CompanyReturnSettingModel {
     public void setCompanyReturnId(Long value) {
         this.companyReturnId = value;
     }
+
 
     private Long filingQuestionId;
 
@@ -89,6 +91,7 @@ public class CompanyReturnSettingModel {
         this.filingQuestionId = value;
     }
 
+
     private String filingQuestionCode;
 
     /**
@@ -108,6 +111,7 @@ public class CompanyReturnSettingModel {
     public void setFilingQuestionCode(String value) {
         this.filingQuestionCode = value;
     }
+
 
     private String value;
 
@@ -129,6 +133,7 @@ public class CompanyReturnSettingModel {
         this.value = value;
     }
 
+
     private Date createdDate;
 
     /**
@@ -148,6 +153,7 @@ public class CompanyReturnSettingModel {
     public void setCreatedDate(Date value) {
         this.createdDate = value;
     }
+
 
     private Integer createdUserId;
 
@@ -169,6 +175,7 @@ public class CompanyReturnSettingModel {
         this.createdUserId = value;
     }
 
+
     private Date modifiedDate;
 
     /**
@@ -189,6 +196,7 @@ public class CompanyReturnSettingModel {
         this.modifiedDate = value;
     }
 
+
     private Integer modifiedUserId;
 
     /**
@@ -208,6 +216,7 @@ public class CompanyReturnSettingModel {
     public void setModifiedUserId(Integer value) {
         this.modifiedUserId = value;
     }
+
 
     /**
      * Returns a JSON string representation of CompanyReturnSettingModel

@@ -50,6 +50,7 @@ public class LocationModel {
         this.id = value;
     }
 
+
     private Integer companyId;
 
     /**
@@ -69,6 +70,7 @@ public class LocationModel {
     public void setCompanyId(Integer value) {
         this.companyId = value;
     }
+
 
     private String locationCode;
 
@@ -90,6 +92,7 @@ public class LocationModel {
         this.locationCode = value;
     }
 
+
     private String description;
 
     /**
@@ -109,6 +112,7 @@ public class LocationModel {
     public void setDescription(String value) {
         this.description = value;
     }
+
 
     private AddressTypeId addressTypeId;
 
@@ -130,6 +134,7 @@ public class LocationModel {
         this.addressTypeId = value;
     }
 
+
     private AddressCategoryId addressCategoryId;
 
     /**
@@ -149,6 +154,7 @@ public class LocationModel {
     public void setAddressCategoryId(AddressCategoryId value) {
         this.addressCategoryId = value;
     }
+
 
     private String line1;
 
@@ -170,6 +176,7 @@ public class LocationModel {
         this.line1 = value;
     }
 
+
     private String line2;
 
     /**
@@ -189,6 +196,7 @@ public class LocationModel {
     public void setLine2(String value) {
         this.line2 = value;
     }
+
 
     private String line3;
 
@@ -210,6 +218,7 @@ public class LocationModel {
         this.line3 = value;
     }
 
+
     private String city;
 
     /**
@@ -230,6 +239,7 @@ public class LocationModel {
         this.city = value;
     }
 
+
     private String county;
 
     /**
@@ -249,6 +259,7 @@ public class LocationModel {
     public void setCounty(String value) {
         this.county = value;
     }
+
 
     private String region;
 
@@ -284,6 +295,7 @@ public class LocationModel {
         this.region = value;
     }
 
+
     private String postalCode;
 
     /**
@@ -303,6 +315,7 @@ public class LocationModel {
     public void setPostalCode(String value) {
         this.postalCode = value;
     }
+
 
     private String country;
 
@@ -340,6 +353,7 @@ public class LocationModel {
         this.country = value;
     }
 
+
     private Boolean isDefault;
 
     /**
@@ -359,6 +373,7 @@ public class LocationModel {
     public void setIsDefault(Boolean value) {
         this.isDefault = value;
     }
+
 
     private Boolean isRegistered;
 
@@ -380,6 +395,7 @@ public class LocationModel {
         this.isRegistered = value;
     }
 
+
     private String dbaName;
 
     /**
@@ -399,6 +415,7 @@ public class LocationModel {
     public void setDbaName(String value) {
         this.dbaName = value;
     }
+
 
     private String outletName;
 
@@ -420,6 +437,7 @@ public class LocationModel {
         this.outletName = value;
     }
 
+
     private Date effectiveDate;
 
     /**
@@ -439,6 +457,7 @@ public class LocationModel {
     public void setEffectiveDate(Date value) {
         this.effectiveDate = value;
     }
+
 
     private Date endDate;
 
@@ -460,6 +479,7 @@ public class LocationModel {
         this.endDate = value;
     }
 
+
     private Date lastTransactionDate;
 
     /**
@@ -479,6 +499,7 @@ public class LocationModel {
     public void setLastTransactionDate(Date value) {
         this.lastTransactionDate = value;
     }
+
 
     private Date registeredDate;
 
@@ -500,6 +521,7 @@ public class LocationModel {
         this.registeredDate = value;
     }
 
+
     private Date createdDate;
 
     /**
@@ -519,6 +541,7 @@ public class LocationModel {
     public void setCreatedDate(Date value) {
         this.createdDate = value;
     }
+
 
     private Integer createdUserId;
 
@@ -540,6 +563,7 @@ public class LocationModel {
         this.createdUserId = value;
     }
 
+
     private Date modifiedDate;
 
     /**
@@ -560,6 +584,7 @@ public class LocationModel {
         this.modifiedDate = value;
     }
 
+
     private Integer modifiedUserId;
 
     /**
@@ -579,6 +604,7 @@ public class LocationModel {
     public void setModifiedUserId(Integer value) {
         this.modifiedUserId = value;
     }
+
 
     private ArrayList<LocationSettingModel> settings;
 
@@ -604,6 +630,7 @@ public class LocationModel {
         this.settings = value;
     }
 
+
     private ArrayList<LocationParameterModel> parameters;
 
     /**
@@ -623,6 +650,7 @@ public class LocationModel {
     public void setParameters(ArrayList<LocationParameterModel> value) {
         this.parameters = value;
     }
+
 
     /**
      * Returns a JSON string representation of LocationModel

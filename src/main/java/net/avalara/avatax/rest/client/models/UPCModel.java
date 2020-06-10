@@ -49,6 +49,7 @@ public class UPCModel {
         this.id = value;
     }
 
+
     private Integer companyId;
 
     /**
@@ -68,6 +69,7 @@ public class UPCModel {
     public void setCompanyId(Integer value) {
         this.companyId = value;
     }
+
 
     private String upc;
 
@@ -89,6 +91,7 @@ public class UPCModel {
         this.upc = value;
     }
 
+
     private String legacyTaxCode;
 
     /**
@@ -108,6 +111,7 @@ public class UPCModel {
     public void setLegacyTaxCode(String value) {
         this.legacyTaxCode = value;
     }
+
 
     private String description;
 
@@ -129,6 +133,7 @@ public class UPCModel {
         this.description = value;
     }
 
+
     private Date effectiveDate;
 
     /**
@@ -148,6 +153,7 @@ public class UPCModel {
     public void setEffectiveDate(Date value) {
         this.effectiveDate = value;
     }
+
 
     private Date endDate;
 
@@ -169,6 +175,7 @@ public class UPCModel {
         this.endDate = value;
     }
 
+
     private Integer usage;
 
     /**
@@ -188,6 +195,7 @@ public class UPCModel {
     public void setUsage(Integer value) {
         this.usage = value;
     }
+
 
     private Integer isSystem;
 
@@ -209,6 +217,7 @@ public class UPCModel {
         this.isSystem = value;
     }
 
+
     private Date createdDate;
 
     /**
@@ -228,6 +237,7 @@ public class UPCModel {
     public void setCreatedDate(Date value) {
         this.createdDate = value;
     }
+
 
     private Integer createdUserId;
 
@@ -249,6 +259,7 @@ public class UPCModel {
         this.createdUserId = value;
     }
 
+
     private Date modifiedDate;
 
     /**
@@ -269,6 +280,7 @@ public class UPCModel {
         this.modifiedDate = value;
     }
 
+
     private Integer modifiedUserId;
 
     /**
@@ -288,6 +300,7 @@ public class UPCModel {
     public void setModifiedUserId(Integer value) {
         this.modifiedUserId = value;
     }
+
 
     /**
      * Returns a JSON string representation of UPCModel

@@ -49,6 +49,7 @@ public class FilingRegionModel {
         this.id = value;
     }
 
+
     private Long filingId;
 
     /**
@@ -68,6 +69,7 @@ public class FilingRegionModel {
     public void setFilingId(Long value) {
         this.filingId = value;
     }
+
 
     private String country;
 
@@ -89,6 +91,7 @@ public class FilingRegionModel {
         this.country = value;
     }
 
+
     private String region;
 
     /**
@@ -108,6 +111,7 @@ public class FilingRegionModel {
     public void setRegion(String value) {
         this.region = value;
     }
+
 
     private BigDecimal salesAmount;
 
@@ -129,6 +133,7 @@ public class FilingRegionModel {
         this.salesAmount = value;
     }
 
+
     private BigDecimal taxableAmount;
 
     /**
@@ -148,6 +153,7 @@ public class FilingRegionModel {
     public void setTaxableAmount(BigDecimal value) {
         this.taxableAmount = value;
     }
+
 
     private BigDecimal taxAmount;
 
@@ -169,6 +175,7 @@ public class FilingRegionModel {
         this.taxAmount = value;
     }
 
+
     private BigDecimal taxDueAmount;
 
     /**
@@ -188,6 +195,7 @@ public class FilingRegionModel {
     public void setTaxDueAmount(BigDecimal value) {
         this.taxDueAmount = value;
     }
+
 
     private BigDecimal collectAmount;
 
@@ -209,6 +217,7 @@ public class FilingRegionModel {
         this.collectAmount = value;
     }
 
+
     private BigDecimal totalRemittanceAmount;
 
     /**
@@ -228,6 +237,7 @@ public class FilingRegionModel {
     public void setTotalRemittanceAmount(BigDecimal value) {
         this.totalRemittanceAmount = value;
     }
+
 
     private BigDecimal nonTaxableAmount;
 
@@ -249,6 +259,7 @@ public class FilingRegionModel {
         this.nonTaxableAmount = value;
     }
 
+
     private BigDecimal consumerUseTaxAmount;
 
     /**
@@ -268,6 +279,7 @@ public class FilingRegionModel {
     public void setConsumerUseTaxAmount(BigDecimal value) {
         this.consumerUseTaxAmount = value;
     }
+
 
     private BigDecimal consumerUseNonTaxableAmount;
 
@@ -289,6 +301,7 @@ public class FilingRegionModel {
         this.consumerUseNonTaxableAmount = value;
     }
 
+
     private BigDecimal consumerUseTaxableAmount;
 
     /**
@@ -308,6 +321,7 @@ public class FilingRegionModel {
     public void setConsumerUseTaxableAmount(BigDecimal value) {
         this.consumerUseTaxableAmount = value;
     }
+
 
     private Date approveDate;
 
@@ -329,6 +343,7 @@ public class FilingRegionModel {
         this.approveDate = value;
     }
 
+
     private Date startDate;
 
     /**
@@ -348,6 +363,7 @@ public class FilingRegionModel {
     public void setStartDate(Date value) {
         this.startDate = value;
     }
+
 
     private Date endDate;
 
@@ -369,6 +385,7 @@ public class FilingRegionModel {
         this.endDate = value;
     }
 
+
     private Boolean hasNexus;
 
     /**
@@ -388,6 +405,7 @@ public class FilingRegionModel {
     public void setHasNexus(Boolean value) {
         this.hasNexus = value;
     }
+
 
     private FilingStatusId status;
 
@@ -409,6 +427,7 @@ public class FilingRegionModel {
         this.status = value;
     }
 
+
     private ArrayList<FilingReturnModel> returns;
 
     /**
@@ -428,6 +447,7 @@ public class FilingRegionModel {
     public void setReturns(ArrayList<FilingReturnModel> value) {
         this.returns = value;
     }
+
 
     private ArrayList<FilingsCheckupSuggestedFormModel> suggestReturns;
 
@@ -449,6 +469,7 @@ public class FilingRegionModel {
         this.suggestReturns = value;
     }
 
+
     private Date createdDate;
 
     /**
@@ -468,6 +489,7 @@ public class FilingRegionModel {
     public void setCreatedDate(Date value) {
         this.createdDate = value;
     }
+
 
     private Integer createdUserId;
 
@@ -489,6 +511,7 @@ public class FilingRegionModel {
         this.createdUserId = value;
     }
 
+
     private Date modifiedDate;
 
     /**
@@ -509,6 +532,7 @@ public class FilingRegionModel {
         this.modifiedDate = value;
     }
 
+
     private Integer modifiedUserId;
 
     /**
@@ -528,6 +552,7 @@ public class FilingRegionModel {
     public void setModifiedUserId(Integer value) {
         this.modifiedUserId = value;
     }
+
 
     /**
      * Returns a JSON string representation of FilingRegionModel

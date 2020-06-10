@@ -64,6 +64,7 @@ public class NexusModel {
         this.id = value;
     }
 
+
     private Integer companyId;
 
     /**
@@ -87,6 +88,7 @@ public class NexusModel {
     public void setCompanyId(Integer value) {
         this.companyId = value;
     }
+
 
     private String country;
 
@@ -112,6 +114,7 @@ public class NexusModel {
         this.country = value;
     }
 
+
     private String region;
 
     /**
@@ -136,6 +139,7 @@ public class NexusModel {
         this.region = value;
     }
 
+
     private JurisTypeId jurisTypeId;
 
     /**
@@ -157,6 +161,7 @@ public class NexusModel {
     public void setJurisTypeId(JurisTypeId value) {
         this.jurisTypeId = value;
     }
+
 
     private JurisdictionType jurisdictionTypeId;
 
@@ -182,6 +187,7 @@ public class NexusModel {
         this.jurisdictionTypeId = value;
     }
 
+
     private String jurisCode;
 
     /**
@@ -205,6 +211,7 @@ public class NexusModel {
     public void setJurisCode(String value) {
         this.jurisCode = value;
     }
+
 
     private String jurisName;
 
@@ -230,6 +237,7 @@ public class NexusModel {
         this.jurisName = value;
     }
 
+
     private Date effectiveDate;
 
     /**
@@ -253,6 +261,7 @@ public class NexusModel {
     public void setEffectiveDate(Date value) {
         this.effectiveDate = value;
     }
+
 
     private Date endDate;
 
@@ -278,6 +287,7 @@ public class NexusModel {
         this.endDate = value;
     }
 
+
     private String shortName;
 
     /**
@@ -301,6 +311,7 @@ public class NexusModel {
     public void setShortName(String value) {
         this.shortName = value;
     }
+
 
     private String signatureCode;
 
@@ -326,6 +337,7 @@ public class NexusModel {
         this.signatureCode = value;
     }
 
+
     private String stateAssignedNo;
 
     /**
@@ -349,6 +361,7 @@ public class NexusModel {
     public void setStateAssignedNo(String value) {
         this.stateAssignedNo = value;
     }
+
 
     private NexusTypeId nexusTypeId;
 
@@ -396,6 +409,7 @@ public class NexusModel {
         this.nexusTypeId = value;
     }
 
+
     private Sourcing sourcing;
 
     /**
@@ -419,6 +433,7 @@ public class NexusModel {
     public void setSourcing(Sourcing value) {
         this.sourcing = value;
     }
+
 
     private Boolean hasLocalNexus;
 
@@ -446,6 +461,7 @@ public class NexusModel {
         this.hasLocalNexus = value;
     }
 
+
     private LocalNexusTypeId localNexusTypeId;
 
     /**
@@ -472,6 +488,7 @@ public class NexusModel {
         this.localNexusTypeId = value;
     }
 
+
     private Boolean hasPermanentEstablishment;
 
     /**
@@ -496,6 +513,7 @@ public class NexusModel {
         this.hasPermanentEstablishment = value;
     }
 
+
     private String taxId;
 
     /**
@@ -519,6 +537,7 @@ public class NexusModel {
     public void setTaxId(String value) {
         this.taxId = value;
     }
+
 
     private Boolean streamlinedSalesTax;
 
@@ -548,6 +567,7 @@ public class NexusModel {
         this.streamlinedSalesTax = value;
     }
 
+
     private Boolean isSSTActive;
 
     /**
@@ -576,6 +596,7 @@ public class NexusModel {
         this.isSSTActive = value;
     }
 
+
     private Date createdDate;
 
     /**
@@ -599,6 +620,7 @@ public class NexusModel {
     public void setCreatedDate(Date value) {
         this.createdDate = value;
     }
+
 
     private Integer createdUserId;
 
@@ -624,6 +646,7 @@ public class NexusModel {
         this.createdUserId = value;
     }
 
+
     private Date modifiedDate;
 
     /**
@@ -648,6 +671,7 @@ public class NexusModel {
         this.modifiedDate = value;
     }
 
+
     private Integer modifiedUserId;
 
     /**
@@ -671,6 +695,7 @@ public class NexusModel {
     public void setModifiedUserId(Integer value) {
         this.modifiedUserId = value;
     }
+
 
     private String nexusTaxTypeGroup;
 
@@ -698,6 +723,7 @@ public class NexusModel {
         this.nexusTaxTypeGroup = value;
     }
 
+
     private Long taxAuthorityId;
 
     /**
@@ -721,6 +747,7 @@ public class NexusModel {
     public void setTaxAuthorityId(Long value) {
         this.taxAuthorityId = value;
     }
+
 
     private Boolean isSellerImporterOfRecord;
 
@@ -764,6 +791,7 @@ public class NexusModel {
         this.isSellerImporterOfRecord = value;
     }
 
+
     private String taxName;
 
     /**
@@ -796,6 +824,7 @@ public class NexusModel {
         this.taxName = value;
     }
 
+
     private ArrayList<NexusParameterDetailModel> parameters;
 
     /**
@@ -815,6 +844,7 @@ public class NexusModel {
     public void setParameters(ArrayList<NexusParameterDetailModel> value) {
         this.parameters = value;
     }
+
 
     /**
      * Returns a JSON string representation of NexusModel

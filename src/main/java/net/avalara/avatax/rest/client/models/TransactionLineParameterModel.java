@@ -49,6 +49,7 @@ public class TransactionLineParameterModel {
         this.name = value;
     }
 
+
     private String value;
 
     /**
@@ -69,6 +70,7 @@ public class TransactionLineParameterModel {
         this.value = value;
     }
 
+
     private String unit;
 
     /**
@@ -88,6 +90,7 @@ public class TransactionLineParameterModel {
     public void setUnit(String value) {
         this.unit = value;
     }
+
 
     /**
      * Returns a JSON string representation of TransactionLineParameterModel

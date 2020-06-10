@@ -49,6 +49,7 @@ public class AvaFileFormModel {
         this.id = value;
     }
 
+
     private String returnName;
 
     /**
@@ -68,6 +69,7 @@ public class AvaFileFormModel {
     public void setReturnName(String value) {
         this.returnName = value;
     }
+
 
     private String formName;
 
@@ -89,6 +91,7 @@ public class AvaFileFormModel {
         this.formName = value;
     }
 
+
     private String description;
 
     /**
@@ -108,6 +111,7 @@ public class AvaFileFormModel {
     public void setDescription(String value) {
         this.description = value;
     }
+
 
     private Date effDate;
 
@@ -129,6 +133,7 @@ public class AvaFileFormModel {
         this.effDate = value;
     }
 
+
     private Date endDate;
 
     /**
@@ -148,6 +153,7 @@ public class AvaFileFormModel {
     public void setEndDate(Date value) {
         this.endDate = value;
     }
+
 
     private String region;
 
@@ -169,6 +175,7 @@ public class AvaFileFormModel {
         this.region = value;
     }
 
+
     private String country;
 
     /**
@@ -188,6 +195,7 @@ public class AvaFileFormModel {
     public void setCountry(String value) {
         this.country = value;
     }
+
 
     private FormTypeId formTypeId;
 
@@ -209,6 +217,7 @@ public class AvaFileFormModel {
         this.formTypeId = value;
     }
 
+
     private FilingOptionTypeId filingOptionTypeId;
 
     /**
@@ -228,6 +237,7 @@ public class AvaFileFormModel {
     public void setFilingOptionTypeId(FilingOptionTypeId value) {
         this.filingOptionTypeId = value;
     }
+
 
     private DueDateTypeId dueDateTypeId;
 
@@ -249,6 +259,7 @@ public class AvaFileFormModel {
         this.dueDateTypeId = value;
     }
 
+
     private Integer dueDay;
 
     /**
@@ -268,6 +279,7 @@ public class AvaFileFormModel {
     public void setDueDay(Integer value) {
         this.dueDay = value;
     }
+
 
     private DueDateTypeId efileDueDateTypeId;
 
@@ -289,6 +301,7 @@ public class AvaFileFormModel {
         this.efileDueDateTypeId = value;
     }
 
+
     private Integer efileDueDay;
 
     /**
@@ -308,6 +321,7 @@ public class AvaFileFormModel {
     public void setEfileDueDay(Integer value) {
         this.efileDueDay = value;
     }
+
 
     private Date efileDueTime;
 
@@ -329,6 +343,7 @@ public class AvaFileFormModel {
         this.efileDueTime = value;
     }
 
+
     private Boolean hasVendorDiscount;
 
     /**
@@ -348,6 +363,7 @@ public class AvaFileFormModel {
     public void setHasVendorDiscount(Boolean value) {
         this.hasVendorDiscount = value;
     }
+
 
     private RoundingTypeId roundingTypeId;
 
@@ -369,6 +385,7 @@ public class AvaFileFormModel {
         this.roundingTypeId = value;
     }
 
+
     private OutletTypeId outletTypeId;
 
     /**
@@ -388,6 +405,7 @@ public class AvaFileFormModel {
     public void setOutletTypeId(OutletTypeId value) {
         this.outletTypeId = value;
     }
+
 
     /**
      * Returns a JSON string representation of AvaFileFormModel

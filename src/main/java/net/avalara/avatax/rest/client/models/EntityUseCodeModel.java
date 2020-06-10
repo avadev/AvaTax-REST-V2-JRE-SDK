@@ -49,6 +49,7 @@ public class EntityUseCodeModel {
         this.code = value;
     }
 
+
     private String name;
 
     /**
@@ -68,6 +69,7 @@ public class EntityUseCodeModel {
     public void setName(String value) {
         this.name = value;
     }
+
 
     private String description;
 
@@ -89,6 +91,7 @@ public class EntityUseCodeModel {
         this.description = value;
     }
 
+
     private ArrayList<String> validCountries;
 
     /**
@@ -108,6 +111,7 @@ public class EntityUseCodeModel {
     public void setValidCountries(ArrayList<String> value) {
         this.validCountries = value;
     }
+
 
     /**
      * Returns a JSON string representation of EntityUseCodeModel

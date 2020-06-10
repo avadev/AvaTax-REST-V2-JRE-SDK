@@ -53,6 +53,7 @@ public class VoidTransactionModel {
         this.code = value;
     }
 
+
     /**
      * Returns a JSON string representation of VoidTransactionModel
      */

@@ -51,6 +51,7 @@ public class ExposureZoneModel {
         this.id = value;
     }
 
+
     private Integer companyId;
 
     /**
@@ -70,6 +71,7 @@ public class ExposureZoneModel {
     public void setCompanyId(Integer value) {
         this.companyId = value;
     }
+
 
     private String name;
 
@@ -91,6 +93,7 @@ public class ExposureZoneModel {
         this.name = value;
     }
 
+
     private String tag;
 
     /**
@@ -110,6 +113,7 @@ public class ExposureZoneModel {
     public void setTag(String value) {
         this.tag = value;
     }
+
 
     private String description;
 
@@ -131,6 +135,7 @@ public class ExposureZoneModel {
         this.description = value;
     }
 
+
     private Date created;
 
     /**
@@ -150,6 +155,7 @@ public class ExposureZoneModel {
     public void setCreated(Date value) {
         this.created = value;
     }
+
 
     private Date modified;
 
@@ -171,6 +177,7 @@ public class ExposureZoneModel {
         this.modified = value;
     }
 
+
     private String region;
 
     /**
@@ -191,6 +198,7 @@ public class ExposureZoneModel {
         this.region = value;
     }
 
+
     private String country;
 
     /**
@@ -210,6 +218,7 @@ public class ExposureZoneModel {
     public void setCountry(String value) {
         this.country = value;
     }
+
 
     /**
      * Returns a JSON string representation of ExposureZoneModel

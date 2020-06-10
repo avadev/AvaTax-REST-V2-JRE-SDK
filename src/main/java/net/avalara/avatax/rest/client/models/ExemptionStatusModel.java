@@ -49,6 +49,7 @@ public class ExemptionStatusModel {
         this.status = value;
     }
 
+
     private CertificateModel certificate;
 
     /**
@@ -68,6 +69,7 @@ public class ExemptionStatusModel {
     public void setCertificate(CertificateModel value) {
         this.certificate = value;
     }
+
 
     /**
      * Returns a JSON string representation of ExemptionStatusModel

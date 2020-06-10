@@ -49,6 +49,7 @@ public class MultiTaxFilingRegionModel {
         this.country = value;
     }
 
+
     private String region;
 
     /**
@@ -68,6 +69,7 @@ public class MultiTaxFilingRegionModel {
     public void setRegion(String value) {
         this.region = value;
     }
+
 
     private Boolean hasNexus;
 
@@ -89,6 +91,7 @@ public class MultiTaxFilingRegionModel {
         this.hasNexus = value;
     }
 
+
     private FilingStatusId status;
 
     /**
@@ -108,6 +111,7 @@ public class MultiTaxFilingRegionModel {
     public void setStatus(FilingStatusId value) {
         this.status = value;
     }
+
 
     private FilingsTaxSummaryModel regionTaxSummary;
 
@@ -129,6 +133,7 @@ public class MultiTaxFilingRegionModel {
         this.regionTaxSummary = value;
     }
 
+
     private ArrayList<FilingsTaxDetailsModel> regionTaxDetails;
 
     /**
@@ -148,6 +153,7 @@ public class MultiTaxFilingRegionModel {
     public void setRegionTaxDetails(ArrayList<FilingsTaxDetailsModel> value) {
         this.regionTaxDetails = value;
     }
+
 
     private ArrayList<FilingsCheckupSuggestedFormModel> suggestReturns;
 
@@ -169,6 +175,7 @@ public class MultiTaxFilingRegionModel {
         this.suggestReturns = value;
     }
 
+
     private ArrayList<MultiTaxFilingReturnModel> returns;
 
     /**
@@ -188,6 +195,7 @@ public class MultiTaxFilingRegionModel {
     public void setReturns(ArrayList<MultiTaxFilingReturnModel> value) {
         this.returns = value;
     }
+
 
     /**
      * Returns a JSON string representation of MultiTaxFilingRegionModel

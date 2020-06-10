@@ -49,6 +49,7 @@ public class RateTypeModel {
         this.id = value;
     }
 
+
     private String description;
 
     /**
@@ -69,6 +70,7 @@ public class RateTypeModel {
         this.description = value;
     }
 
+
     private String country;
 
     /**
@@ -88,6 +90,7 @@ public class RateTypeModel {
     public void setCountry(String value) {
         this.country = value;
     }
+
 
     /**
      * Returns a JSON string representation of RateTypeModel

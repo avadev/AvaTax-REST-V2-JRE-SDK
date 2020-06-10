@@ -49,6 +49,7 @@ public class TaxAuthorityModel {
         this.id = value;
     }
 
+
     private String name;
 
     /**
@@ -68,6 +69,7 @@ public class TaxAuthorityModel {
     public void setName(String value) {
         this.name = value;
     }
+
 
     private Integer taxAuthorityTypeId;
 
@@ -89,6 +91,7 @@ public class TaxAuthorityModel {
         this.taxAuthorityTypeId = value;
     }
 
+
     private Integer jurisdictionId;
 
     /**
@@ -108,6 +111,7 @@ public class TaxAuthorityModel {
     public void setJurisdictionId(Integer value) {
         this.jurisdictionId = value;
     }
+
 
     /**
      * Returns a JSON string representation of TaxAuthorityModel

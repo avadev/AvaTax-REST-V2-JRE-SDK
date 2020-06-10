@@ -49,6 +49,7 @@ public class CommunicationsTSPairModel {
         this.transactionTypeId = value;
     }
 
+
     private Integer serviceTypeId;
 
     /**
@@ -68,6 +69,7 @@ public class CommunicationsTSPairModel {
     public void setServiceTypeId(Integer value) {
         this.serviceTypeId = value;
     }
+
 
     private String transactionType;
 
@@ -89,6 +91,7 @@ public class CommunicationsTSPairModel {
         this.transactionType = value;
     }
 
+
     private String serviceType;
 
     /**
@@ -108,6 +111,7 @@ public class CommunicationsTSPairModel {
     public void setServiceType(String value) {
         this.serviceType = value;
     }
+
 
     private String description;
 
@@ -129,6 +133,7 @@ public class CommunicationsTSPairModel {
         this.description = value;
     }
 
+
     private ArrayList<String> requiredParameters;
 
     /**
@@ -148,6 +153,7 @@ public class CommunicationsTSPairModel {
     public void setRequiredParameters(ArrayList<String> value) {
         this.requiredParameters = value;
     }
+
 
     /**
      * Returns a JSON string representation of CommunicationsTSPairModel

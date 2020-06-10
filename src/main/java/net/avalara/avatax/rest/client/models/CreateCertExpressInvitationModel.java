@@ -55,6 +55,7 @@ public class CreateCertExpressInvitationModel {
         this.recipient = value;
     }
 
+
     private String coverLetterTitle;
 
     /**
@@ -76,6 +77,7 @@ public class CreateCertExpressInvitationModel {
     public void setCoverLetterTitle(String value) {
         this.coverLetterTitle = value;
     }
+
 
     private ArrayList<Integer> exposureZones;
 
@@ -105,6 +107,7 @@ public class CreateCertExpressInvitationModel {
         this.exposureZones = value;
     }
 
+
     private ArrayList<Integer> exemptReasons;
 
     /**
@@ -132,6 +135,7 @@ public class CreateCertExpressInvitationModel {
     public void setExemptReasons(ArrayList<Integer> value) {
         this.exemptReasons = value;
     }
+
 
     private CertificateRequestDeliveryMethod deliveryMethod;
 
@@ -162,6 +166,7 @@ public class CreateCertExpressInvitationModel {
     public void setDeliveryMethod(CertificateRequestDeliveryMethod value) {
         this.deliveryMethod = value;
     }
+
 
     /**
      * Returns a JSON string representation of CreateCertExpressInvitationModel

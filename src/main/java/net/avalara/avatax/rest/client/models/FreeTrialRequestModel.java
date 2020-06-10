@@ -50,6 +50,7 @@ public class FreeTrialRequestModel {
         this.firstName = value;
     }
 
+
     private String lastName;
 
     /**
@@ -70,6 +71,7 @@ public class FreeTrialRequestModel {
         this.lastName = value;
     }
 
+
     private String email;
 
     /**
@@ -89,6 +91,7 @@ public class FreeTrialRequestModel {
     public void setEmail(String value) {
         this.email = value;
     }
+
 
     private String company;
 
@@ -112,6 +115,7 @@ public class FreeTrialRequestModel {
         this.company = value;
     }
 
+
     private String phone;
 
     /**
@@ -131,6 +135,7 @@ public class FreeTrialRequestModel {
     public void setPhone(String value) {
         this.phone = value;
     }
+
 
     private String campaign;
 
@@ -152,6 +157,7 @@ public class FreeTrialRequestModel {
         this.campaign = value;
     }
 
+
     private CompanyAddress companyAddress;
 
     /**
@@ -171,6 +177,7 @@ public class FreeTrialRequestModel {
     public void setCompanyAddress(CompanyAddress value) {
         this.companyAddress = value;
     }
+
 
     private String website;
 
@@ -192,6 +199,7 @@ public class FreeTrialRequestModel {
         this.website = value;
     }
 
+
     private Boolean haveReadAvalaraTermsAndConditions;
 
     /**
@@ -212,6 +220,7 @@ public class FreeTrialRequestModel {
         this.haveReadAvalaraTermsAndConditions = value;
     }
 
+
     private Boolean acceptAvalaraTermsAndConditions;
 
     /**
@@ -231,6 +240,7 @@ public class FreeTrialRequestModel {
     public void setAcceptAvalaraTermsAndConditions(Boolean value) {
         this.acceptAvalaraTermsAndConditions = value;
     }
+
 
     /**
      * Returns a JSON string representation of FreeTrialRequestModel

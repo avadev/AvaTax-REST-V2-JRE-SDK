@@ -49,6 +49,7 @@ public class FirmClientLinkageInputModel {
         this.clientAccountId = value;
     }
 
+
     private String clientAccountName;
 
     /**
@@ -68,6 +69,7 @@ public class FirmClientLinkageInputModel {
     public void setClientAccountName(String value) {
         this.clientAccountName = value;
     }
+
 
     /**
      * Returns a JSON string representation of FirmClientLinkageInputModel

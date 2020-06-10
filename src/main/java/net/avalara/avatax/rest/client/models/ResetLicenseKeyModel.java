@@ -49,6 +49,7 @@ public class ResetLicenseKeyModel {
         this.accountId = value;
     }
 
+
     private Boolean confirmResetLicenseKey;
 
     /**
@@ -70,6 +71,7 @@ public class ResetLicenseKeyModel {
     public void setConfirmResetLicenseKey(Boolean value) {
         this.confirmResetLicenseKey = value;
     }
+
 
     /**
      * Returns a JSON string representation of ResetLicenseKeyModel

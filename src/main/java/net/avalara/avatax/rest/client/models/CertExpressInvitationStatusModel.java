@@ -49,6 +49,7 @@ public class CertExpressInvitationStatusModel {
         this.status = value;
     }
 
+
     private CertExpressInvitationModel invitation;
 
     /**
@@ -72,6 +73,7 @@ public class CertExpressInvitationStatusModel {
     public void setInvitation(CertExpressInvitationModel value) {
         this.invitation = value;
     }
+
 
     /**
      * Returns a JSON string representation of CertExpressInvitationStatusModel

@@ -49,6 +49,7 @@ public class TaxRegionJurisdictionModel {
         this.jurisdictionId = value;
     }
 
+
     private Integer taxRegionId;
 
     /**
@@ -68,6 +69,7 @@ public class TaxRegionJurisdictionModel {
     public void setTaxRegionId(Integer value) {
         this.taxRegionId = value;
     }
+
 
     private Integer jurisdictionLevelId;
 
@@ -89,6 +91,7 @@ public class TaxRegionJurisdictionModel {
         this.jurisdictionLevelId = value;
     }
 
+
     private String rockName;
 
     /**
@@ -108,6 +111,7 @@ public class TaxRegionJurisdictionModel {
     public void setRockName(String value) {
         this.rockName = value;
     }
+
 
     private Integer reportLevel;
 
@@ -129,6 +133,7 @@ public class TaxRegionJurisdictionModel {
         this.reportLevel = value;
     }
 
+
     private String stateAssignedCode;
 
     /**
@@ -148,6 +153,7 @@ public class TaxRegionJurisdictionModel {
     public void setStateAssignedCode(String value) {
         this.stateAssignedCode = value;
     }
+
 
     private Integer taxAuthorityId;
 
@@ -169,6 +175,7 @@ public class TaxRegionJurisdictionModel {
         this.taxAuthorityId = value;
     }
 
+
     private String signatureCode;
 
     /**
@@ -188,6 +195,7 @@ public class TaxRegionJurisdictionModel {
     public void setSignatureCode(String value) {
         this.signatureCode = value;
     }
+
 
     private Date effectiveDate;
 
@@ -209,6 +217,7 @@ public class TaxRegionJurisdictionModel {
         this.effectiveDate = value;
     }
 
+
     private Date endDate;
 
     /**
@@ -228,6 +237,7 @@ public class TaxRegionJurisdictionModel {
     public void setEndDate(Date value) {
         this.endDate = value;
     }
+
 
     /**
      * Returns a JSON string representation of TaxRegionJurisdictionModel

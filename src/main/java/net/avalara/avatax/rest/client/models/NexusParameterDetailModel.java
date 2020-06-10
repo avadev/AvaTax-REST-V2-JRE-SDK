@@ -49,6 +49,7 @@ public class NexusParameterDetailModel {
         this.id = value;
     }
 
+
     private String name;
 
     /**
@@ -68,6 +69,7 @@ public class NexusParameterDetailModel {
     public void setName(String value) {
         this.name = value;
     }
+
 
     private String value;
 
@@ -89,6 +91,7 @@ public class NexusParameterDetailModel {
         this.value = value;
     }
 
+
     private String unit;
 
     /**
@@ -109,6 +112,7 @@ public class NexusParameterDetailModel {
         this.unit = value;
     }
 
+
     private Integer nexusId;
 
     /**
@@ -128,6 +132,7 @@ public class NexusParameterDetailModel {
     public void setNexusId(Integer value) {
         this.nexusId = value;
     }
+
 
     /**
      * Returns a JSON string representation of NexusParameterDetailModel

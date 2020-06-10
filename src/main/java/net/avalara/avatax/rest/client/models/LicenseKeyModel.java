@@ -49,6 +49,7 @@ public class LicenseKeyModel {
         this.accountId = value;
     }
 
+
     private String privateLicenseKey;
 
     /**
@@ -73,6 +74,7 @@ public class LicenseKeyModel {
         this.privateLicenseKey = value;
     }
 
+
     private String httpRequestHeader;
 
     /**
@@ -94,6 +96,7 @@ public class LicenseKeyModel {
     public void setHttpRequestHeader(String value) {
         this.httpRequestHeader = value;
     }
+
 
     /**
      * Returns a JSON string representation of LicenseKeyModel

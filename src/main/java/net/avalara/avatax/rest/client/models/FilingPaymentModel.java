@@ -49,6 +49,7 @@ public class FilingPaymentModel {
         this.id = value;
     }
 
+
     private Long filingId;
 
     /**
@@ -68,6 +69,7 @@ public class FilingPaymentModel {
     public void setFilingId(Long value) {
         this.filingId = value;
     }
+
 
     private BigDecimal paymentAmount;
 
@@ -89,6 +91,7 @@ public class FilingPaymentModel {
         this.paymentAmount = value;
     }
 
+
     private PaymentType type;
 
     /**
@@ -108,6 +111,7 @@ public class FilingPaymentModel {
     public void setType(PaymentType value) {
         this.type = value;
     }
+
 
     private Boolean isCalculated;
 
@@ -129,6 +133,7 @@ public class FilingPaymentModel {
         this.isCalculated = value;
     }
 
+
     private Date createdDate;
 
     /**
@@ -148,6 +153,7 @@ public class FilingPaymentModel {
     public void setCreatedDate(Date value) {
         this.createdDate = value;
     }
+
 
     private Integer createdUserId;
 
@@ -169,6 +175,7 @@ public class FilingPaymentModel {
         this.createdUserId = value;
     }
 
+
     private Date modifiedDate;
 
     /**
@@ -189,6 +196,7 @@ public class FilingPaymentModel {
         this.modifiedDate = value;
     }
 
+
     private Integer modifiedUserId;
 
     /**
@@ -208,6 +216,7 @@ public class FilingPaymentModel {
     public void setModifiedUserId(Integer value) {
         this.modifiedUserId = value;
     }
+
 
     /**
      * Returns a JSON string representation of FilingPaymentModel

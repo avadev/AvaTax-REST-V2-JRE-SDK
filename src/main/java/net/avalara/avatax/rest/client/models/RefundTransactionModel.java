@@ -49,6 +49,7 @@ public class RefundTransactionModel {
         this.refundTransactionCode = value;
     }
 
+
     private Date refundDate;
 
     /**
@@ -70,6 +71,7 @@ public class RefundTransactionModel {
     public void setRefundDate(Date value) {
         this.refundDate = value;
     }
+
 
     private RefundType refundType;
 
@@ -107,6 +109,7 @@ public class RefundTransactionModel {
         this.refundType = value;
     }
 
+
     private BigDecimal refundPercentage;
 
     /**
@@ -131,6 +134,7 @@ public class RefundTransactionModel {
         this.refundPercentage = value;
     }
 
+
     private ArrayList<String> refundLines;
 
     /**
@@ -151,6 +155,7 @@ public class RefundTransactionModel {
         this.refundLines = value;
     }
 
+
     private String referenceCode;
 
     /**
@@ -170,6 +175,7 @@ public class RefundTransactionModel {
     public void setReferenceCode(String value) {
         this.referenceCode = value;
     }
+
 
     /**
      * Returns a JSON string representation of RefundTransactionModel

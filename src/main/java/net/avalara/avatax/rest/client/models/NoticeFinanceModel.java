@@ -49,6 +49,7 @@ public class NoticeFinanceModel {
         this.id = value;
     }
 
+
     private Integer noticeId;
 
     /**
@@ -68,6 +69,7 @@ public class NoticeFinanceModel {
     public void setNoticeId(Integer value) {
         this.noticeId = value;
     }
+
 
     private Date noticeDate;
 
@@ -89,6 +91,7 @@ public class NoticeFinanceModel {
         this.noticeDate = value;
     }
 
+
     private Date dueDate;
 
     /**
@@ -108,6 +111,7 @@ public class NoticeFinanceModel {
     public void setDueDate(Date value) {
         this.dueDate = value;
     }
+
 
     private String noticeNumber;
 
@@ -129,6 +133,7 @@ public class NoticeFinanceModel {
         this.noticeNumber = value;
     }
 
+
     private BigDecimal taxDue;
 
     /**
@@ -148,6 +153,7 @@ public class NoticeFinanceModel {
     public void setTaxDue(BigDecimal value) {
         this.taxDue = value;
     }
+
 
     private BigDecimal penalty;
 
@@ -169,6 +175,7 @@ public class NoticeFinanceModel {
         this.penalty = value;
     }
 
+
     private BigDecimal interest;
 
     /**
@@ -188,6 +195,7 @@ public class NoticeFinanceModel {
     public void setInterest(BigDecimal value) {
         this.interest = value;
     }
+
 
     private BigDecimal credits;
 
@@ -209,6 +217,7 @@ public class NoticeFinanceModel {
         this.credits = value;
     }
 
+
     private BigDecimal taxAbated;
 
     /**
@@ -228,6 +237,7 @@ public class NoticeFinanceModel {
     public void setTaxAbated(BigDecimal value) {
         this.taxAbated = value;
     }
+
 
     private BigDecimal customerPenalty;
 
@@ -249,6 +259,7 @@ public class NoticeFinanceModel {
         this.customerPenalty = value;
     }
 
+
     private BigDecimal customerInterest;
 
     /**
@@ -268,6 +279,7 @@ public class NoticeFinanceModel {
     public void setCustomerInterest(BigDecimal value) {
         this.customerInterest = value;
     }
+
 
     private BigDecimal cspFeeRefund;
 
@@ -289,6 +301,7 @@ public class NoticeFinanceModel {
         this.cspFeeRefund = value;
     }
 
+
     private String fileName;
 
     /**
@@ -308,6 +321,7 @@ public class NoticeFinanceModel {
     public void setFileName(String value) {
         this.fileName = value;
     }
+
 
     private Long resourceFileId;
 
@@ -329,6 +343,7 @@ public class NoticeFinanceModel {
         this.resourceFileId = value;
     }
 
+
     private Date createdDate;
 
     /**
@@ -348,6 +363,7 @@ public class NoticeFinanceModel {
     public void setCreatedDate(Date value) {
         this.createdDate = value;
     }
+
 
     private Integer createdUserId;
 
@@ -369,6 +385,7 @@ public class NoticeFinanceModel {
         this.createdUserId = value;
     }
 
+
     private Date modifiedDate;
 
     /**
@@ -388,6 +405,7 @@ public class NoticeFinanceModel {
     public void setModifiedDate(Date value) {
         this.modifiedDate = value;
     }
+
 
     private Integer modifiedUserId;
 
@@ -409,6 +427,7 @@ public class NoticeFinanceModel {
         this.modifiedUserId = value;
     }
 
+
     private ResourceFileUploadRequestModel attachmentUploadRequest;
 
     /**
@@ -428,6 +447,7 @@ public class NoticeFinanceModel {
     public void setAttachmentUploadRequest(ResourceFileUploadRequestModel value) {
         this.attachmentUploadRequest = value;
     }
+
 
     /**
      * Returns a JSON string representation of NoticeFinanceModel

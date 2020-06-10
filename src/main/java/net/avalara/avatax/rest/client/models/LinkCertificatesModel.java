@@ -49,6 +49,7 @@ public class LinkCertificatesModel {
         this.certificates = value;
     }
 
+
     /**
      * Returns a JSON string representation of LinkCertificatesModel
      */

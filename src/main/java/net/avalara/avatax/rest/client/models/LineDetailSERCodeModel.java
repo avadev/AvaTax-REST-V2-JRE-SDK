@@ -49,6 +49,7 @@ public class LineDetailSERCodeModel {
         this.transactionLineDetailId = value;
     }
 
+
     private String serCode;
 
     /**
@@ -68,6 +69,7 @@ public class LineDetailSERCodeModel {
     public void setSerCode(String value) {
         this.serCode = value;
     }
+
 
     /**
      * Returns a JSON string representation of LineDetailSERCodeModel

@@ -51,6 +51,7 @@ public class ChangeTransactionCodeModel {
         this.newCode = value;
     }
 
+
     /**
      * Returns a JSON string representation of ChangeTransactionCodeModel
      */

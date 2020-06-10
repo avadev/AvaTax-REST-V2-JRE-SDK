@@ -49,6 +49,7 @@ public class UserModel {
         this.id = value;
     }
 
+
     private Integer accountId;
 
     /**
@@ -68,6 +69,7 @@ public class UserModel {
     public void setAccountId(Integer value) {
         this.accountId = value;
     }
+
 
     private Integer companyId;
 
@@ -89,6 +91,7 @@ public class UserModel {
         this.companyId = value;
     }
 
+
     private String userName;
 
     /**
@@ -108,6 +111,7 @@ public class UserModel {
     public void setUserName(String value) {
         this.userName = value;
     }
+
 
     private String firstName;
 
@@ -129,6 +133,7 @@ public class UserModel {
         this.firstName = value;
     }
 
+
     private String lastName;
 
     /**
@@ -148,6 +153,7 @@ public class UserModel {
     public void setLastName(String value) {
         this.lastName = value;
     }
+
 
     private String email;
 
@@ -169,6 +175,7 @@ public class UserModel {
         this.email = value;
     }
 
+
     private String postalCode;
 
     /**
@@ -188,6 +195,7 @@ public class UserModel {
     public void setPostalCode(String value) {
         this.postalCode = value;
     }
+
 
     private SecurityRoleId securityRoleId;
 
@@ -209,6 +217,7 @@ public class UserModel {
         this.securityRoleId = value;
     }
 
+
     private PasswordStatusId passwordStatus;
 
     /**
@@ -228,6 +237,7 @@ public class UserModel {
     public void setPasswordStatus(PasswordStatusId value) {
         this.passwordStatus = value;
     }
+
 
     private Boolean isActive;
 
@@ -249,6 +259,7 @@ public class UserModel {
         this.isActive = value;
     }
 
+
     private Date createdDate;
 
     /**
@@ -269,6 +280,7 @@ public class UserModel {
         this.createdDate = value;
     }
 
+
     private Date modifiedDate;
 
     /**
@@ -288,6 +300,7 @@ public class UserModel {
     public void setModifiedDate(Date value) {
         this.modifiedDate = value;
     }
+
 
     /**
      * Returns a JSON string representation of UserModel

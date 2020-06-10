@@ -53,6 +53,7 @@ public class LocationValidationModel {
         this.settingsValidated = value;
     }
 
+
     private ArrayList<LocationQuestionModel> requiredSettings;
 
     /**
@@ -72,6 +73,7 @@ public class LocationValidationModel {
     public void setRequiredSettings(ArrayList<LocationQuestionModel> value) {
         this.requiredSettings = value;
     }
+
 
     /**
      * Returns a JSON string representation of LocationValidationModel

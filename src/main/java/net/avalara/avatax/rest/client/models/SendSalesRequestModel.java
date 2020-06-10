@@ -49,6 +49,7 @@ public class SendSalesRequestModel {
         this.companyId = value;
     }
 
+
     private ArrayList<String> taxCodes;
 
     /**
@@ -68,6 +69,7 @@ public class SendSalesRequestModel {
     public void setTaxCodes(ArrayList<String> value) {
         this.taxCodes = value;
     }
+
 
     private Date date;
 
@@ -89,6 +91,7 @@ public class SendSalesRequestModel {
         this.date = value;
     }
 
+
     private SendSalesOutputFileFormat format;
 
     /**
@@ -109,6 +112,7 @@ public class SendSalesRequestModel {
         this.format = value;
     }
 
+
     private SendSalesFileType type;
 
     /**
@@ -128,6 +132,7 @@ public class SendSalesRequestModel {
     public void setType(SendSalesFileType value) {
         this.type = value;
     }
+
 
     /**
      * Returns a JSON string representation of SendSalesRequestModel

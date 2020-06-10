@@ -49,6 +49,7 @@ public class Message {
         this.details = value;
     }
 
+
     private String helpLink;
 
     /**
@@ -68,6 +69,7 @@ public class Message {
     public void setHelpLink(String value) {
         this.helpLink = value;
     }
+
 
     private String name;
 
@@ -89,6 +91,7 @@ public class Message {
         this.name = value;
     }
 
+
     private String refersTo;
 
     /**
@@ -108,6 +111,7 @@ public class Message {
     public void setRefersTo(String value) {
         this.refersTo = value;
     }
+
 
     private String severity;
 
@@ -129,6 +133,7 @@ public class Message {
         this.severity = value;
     }
 
+
     private String source;
 
     /**
@@ -149,6 +154,7 @@ public class Message {
         this.source = value;
     }
 
+
     private String summary;
 
     /**
@@ -168,6 +174,7 @@ public class Message {
     public void setSummary(String value) {
         this.summary = value;
     }
+
 
     /**
      * Returns a JSON string representation of Message

@@ -50,6 +50,7 @@ public class CustomerAttributeModel {
         this.id = value;
     }
 
+
     private String name;
 
     /**
@@ -70,6 +71,7 @@ public class CustomerAttributeModel {
         this.name = value;
     }
 
+
     private String description;
 
     /**
@@ -89,6 +91,7 @@ public class CustomerAttributeModel {
     public void setDescription(String value) {
         this.description = value;
     }
+
 
     private Boolean isSystemCode;
 
@@ -112,6 +115,7 @@ public class CustomerAttributeModel {
         this.isSystemCode = value;
     }
 
+
     private Boolean isNonDeliver;
 
     /**
@@ -132,6 +136,7 @@ public class CustomerAttributeModel {
         this.isNonDeliver = value;
     }
 
+
     private Boolean isChangeable;
 
     /**
@@ -151,6 +156,7 @@ public class CustomerAttributeModel {
     public void setIsChangeable(Boolean value) {
         this.isChangeable = value;
     }
+
 
     /**
      * Returns a JSON string representation of CustomerAttributeModel

@@ -49,6 +49,7 @@ public class EcmsDetailTaxCodeModel {
         this.exemptCertDetailTaxCodeId = value;
     }
 
+
     private Integer exemptCertDetailId;
 
     /**
@@ -69,6 +70,7 @@ public class EcmsDetailTaxCodeModel {
         this.exemptCertDetailId = value;
     }
 
+
     private Integer taxCodeId;
 
     /**
@@ -88,6 +90,7 @@ public class EcmsDetailTaxCodeModel {
     public void setTaxCodeId(Integer value) {
         this.taxCodeId = value;
     }
+
 
     /**
      * Returns a JSON string representation of EcmsDetailTaxCodeModel

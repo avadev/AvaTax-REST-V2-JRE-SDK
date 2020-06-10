@@ -49,6 +49,7 @@ public class ErrorDetail {
         this.code = value;
     }
 
+
     private Integer number;
 
     /**
@@ -68,6 +69,7 @@ public class ErrorDetail {
     public void setNumber(Integer value) {
         this.number = value;
     }
+
 
     private String message;
 
@@ -89,6 +91,7 @@ public class ErrorDetail {
         this.message = value;
     }
 
+
     private String description;
 
     /**
@@ -108,6 +111,7 @@ public class ErrorDetail {
     public void setDescription(String value) {
         this.description = value;
     }
+
 
     private String faultCode;
 
@@ -129,6 +133,7 @@ public class ErrorDetail {
         this.faultCode = value;
     }
 
+
     private String faultSubCode;
 
     /**
@@ -148,6 +153,7 @@ public class ErrorDetail {
     public void setFaultSubCode(String value) {
         this.faultSubCode = value;
     }
+
 
     private String helpLink;
 
@@ -169,6 +175,7 @@ public class ErrorDetail {
         this.helpLink = value;
     }
 
+
     private String refersTo;
 
     /**
@@ -189,6 +196,7 @@ public class ErrorDetail {
         this.refersTo = value;
     }
 
+
     private SeverityLevel severity;
 
     /**
@@ -208,6 +216,7 @@ public class ErrorDetail {
     public void setSeverity(SeverityLevel value) {
         this.severity = value;
     }
+
 
     /**
      * Returns a JSON string representation of ErrorDetail

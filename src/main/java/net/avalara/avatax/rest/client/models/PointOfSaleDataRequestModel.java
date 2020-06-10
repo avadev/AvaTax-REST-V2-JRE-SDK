@@ -49,6 +49,7 @@ public class PointOfSaleDataRequestModel {
         this.companyCode = value;
     }
 
+
     private Date documentDate;
 
     /**
@@ -68,6 +69,7 @@ public class PointOfSaleDataRequestModel {
     public void setDocumentDate(Date value) {
         this.documentDate = value;
     }
+
 
     private PointOfSaleFileType responseType;
 
@@ -89,6 +91,7 @@ public class PointOfSaleDataRequestModel {
         this.responseType = value;
     }
 
+
     private ArrayList<String> taxCodes;
 
     /**
@@ -108,6 +111,7 @@ public class PointOfSaleDataRequestModel {
     public void setTaxCodes(ArrayList<String> value) {
         this.taxCodes = value;
     }
+
 
     private ArrayList<String> itemCodes;
 
@@ -129,6 +133,7 @@ public class PointOfSaleDataRequestModel {
         this.itemCodes = value;
     }
 
+
     private ArrayList<String> locationCodes;
 
     /**
@@ -148,6 +153,7 @@ public class PointOfSaleDataRequestModel {
     public void setLocationCodes(ArrayList<String> value) {
         this.locationCodes = value;
     }
+
 
     private Boolean includeJurisCodes;
 
@@ -169,6 +175,7 @@ public class PointOfSaleDataRequestModel {
         this.includeJurisCodes = value;
     }
 
+
     private PointOfSalePartnerId partnerId;
 
     /**
@@ -188,6 +195,7 @@ public class PointOfSaleDataRequestModel {
     public void setPartnerId(PointOfSalePartnerId value) {
         this.partnerId = value;
     }
+
 
     /**
      * Returns a JSON string representation of PointOfSaleDataRequestModel

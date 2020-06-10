@@ -50,6 +50,7 @@ public class FilingCalendarModel {
         this.id = value;
     }
 
+
     private Integer companyId;
 
     /**
@@ -69,6 +70,7 @@ public class FilingCalendarModel {
     public void setCompanyId(Integer value) {
         this.companyId = value;
     }
+
 
     private String returnName;
 
@@ -91,6 +93,7 @@ public class FilingCalendarModel {
     public void setReturnName(String value) {
         this.returnName = value;
     }
+
 
     private String formCountry;
 
@@ -128,6 +131,7 @@ public class FilingCalendarModel {
         this.formCountry = value;
     }
 
+
     private String formRegion;
 
     /**
@@ -162,6 +166,7 @@ public class FilingCalendarModel {
         this.formRegion = value;
     }
 
+
     private String taxFormCode;
 
     /**
@@ -184,6 +189,7 @@ public class FilingCalendarModel {
         this.taxFormCode = value;
     }
 
+
     private Integer fiscalYearStartMonth;
 
     /**
@@ -203,6 +209,7 @@ public class FilingCalendarModel {
     public void setFiscalYearStartMonth(Integer value) {
         this.fiscalYearStartMonth = value;
     }
+
 
     private String locationCode;
 
@@ -224,6 +231,7 @@ public class FilingCalendarModel {
         this.locationCode = value;
     }
 
+
     private OutletTypeId outletTypeId;
 
     /**
@@ -243,6 +251,7 @@ public class FilingCalendarModel {
     public void setOutletTypeId(OutletTypeId value) {
         this.outletTypeId = value;
     }
+
 
     private String paymentCurrency;
 
@@ -264,6 +273,7 @@ public class FilingCalendarModel {
         this.paymentCurrency = value;
     }
 
+
     private FilingFrequencyId filingFrequencyId;
 
     /**
@@ -283,6 +293,7 @@ public class FilingCalendarModel {
     public void setFilingFrequencyId(FilingFrequencyId value) {
         this.filingFrequencyId = value;
     }
+
 
     private Short months;
 
@@ -304,6 +315,7 @@ public class FilingCalendarModel {
         this.months = value;
     }
 
+
     private String stateRegistrationId;
 
     /**
@@ -323,6 +335,7 @@ public class FilingCalendarModel {
     public void setStateRegistrationId(String value) {
         this.stateRegistrationId = value;
     }
+
 
     private String localRegistrationId;
 
@@ -344,6 +357,7 @@ public class FilingCalendarModel {
         this.localRegistrationId = value;
     }
 
+
     private String employerIdentificationNumber;
 
     /**
@@ -363,6 +377,7 @@ public class FilingCalendarModel {
     public void setEmployerIdentificationNumber(String value) {
         this.employerIdentificationNumber = value;
     }
+
 
     private String line1;
 
@@ -385,6 +400,7 @@ public class FilingCalendarModel {
     public void setLine1(String value) {
         this.line1 = value;
     }
+
 
     private String line2;
 
@@ -410,6 +426,7 @@ public class FilingCalendarModel {
         this.line2 = value;
     }
 
+
     private String city;
 
     /**
@@ -431,6 +448,7 @@ public class FilingCalendarModel {
     public void setCity(String value) {
         this.city = value;
     }
+
 
     private String region;
 
@@ -454,6 +472,7 @@ public class FilingCalendarModel {
         this.region = value;
     }
 
+
     private String postalCode;
 
     /**
@@ -475,6 +494,7 @@ public class FilingCalendarModel {
     public void setPostalCode(String value) {
         this.postalCode = value;
     }
+
 
     private String country;
 
@@ -498,6 +518,7 @@ public class FilingCalendarModel {
         this.country = value;
     }
 
+
     private String mailingAddressLine1;
 
     /**
@@ -517,6 +538,7 @@ public class FilingCalendarModel {
     public void setMailingAddressLine1(String value) {
         this.mailingAddressLine1 = value;
     }
+
 
     private String mailingAddressLine2;
 
@@ -540,6 +562,7 @@ public class FilingCalendarModel {
         this.mailingAddressLine2 = value;
     }
 
+
     private String mailingAddressCity;
 
     /**
@@ -559,6 +582,7 @@ public class FilingCalendarModel {
     public void setMailingAddressCity(String value) {
         this.mailingAddressCity = value;
     }
+
 
     private String mailingAddressRegion;
 
@@ -594,6 +618,7 @@ public class FilingCalendarModel {
         this.mailingAddressRegion = value;
     }
 
+
     private String mailingAddressPostalCode;
 
     /**
@@ -613,6 +638,7 @@ public class FilingCalendarModel {
     public void setMailingAddressPostalCode(String value) {
         this.mailingAddressPostalCode = value;
     }
+
 
     private String mailingAddressCountry;
 
@@ -650,6 +676,7 @@ public class FilingCalendarModel {
         this.mailingAddressCountry = value;
     }
 
+
     private String phone;
 
     /**
@@ -669,6 +696,7 @@ public class FilingCalendarModel {
     public void setPhone(String value) {
         this.phone = value;
     }
+
 
     private String customerFilingInstructions;
 
@@ -692,6 +720,7 @@ public class FilingCalendarModel {
         this.customerFilingInstructions = value;
     }
 
+
     private String legalEntityName;
 
     /**
@@ -711,6 +740,7 @@ public class FilingCalendarModel {
     public void setLegalEntityName(String value) {
         this.legalEntityName = value;
     }
+
 
     private Date effectiveDate;
 
@@ -736,6 +766,7 @@ public class FilingCalendarModel {
         this.effectiveDate = value;
     }
 
+
     private Date endDate;
 
     /**
@@ -760,6 +791,7 @@ public class FilingCalendarModel {
         this.endDate = value;
     }
 
+
     private FilingTypeId filingTypeId;
 
     /**
@@ -779,6 +811,7 @@ public class FilingCalendarModel {
     public void setFilingTypeId(FilingTypeId value) {
         this.filingTypeId = value;
     }
+
 
     private String eFileUsername;
 
@@ -800,6 +833,7 @@ public class FilingCalendarModel {
         this.eFileUsername = value;
     }
 
+
     private String eFilePassword;
 
     /**
@@ -819,6 +853,7 @@ public class FilingCalendarModel {
     public void setEFilePassword(String value) {
         this.eFilePassword = value;
     }
+
 
     private Integer prepayPercentage;
 
@@ -842,6 +877,7 @@ public class FilingCalendarModel {
         this.prepayPercentage = value;
     }
 
+
     private Boolean prePaymentRequired;
 
     /**
@@ -861,6 +897,7 @@ public class FilingCalendarModel {
     public void setPrePaymentRequired(Boolean value) {
         this.prePaymentRequired = value;
     }
+
 
     private BigDecimal fixedPrepaymentAmount;
 
@@ -882,6 +919,7 @@ public class FilingCalendarModel {
         this.fixedPrepaymentAmount = value;
     }
 
+
     private MatchingTaxType taxTypeId;
 
     /**
@@ -901,6 +939,7 @@ public class FilingCalendarModel {
     public void setTaxTypeId(MatchingTaxType value) {
         this.taxTypeId = value;
     }
+
 
     private String internalNotes;
 
@@ -922,6 +961,7 @@ public class FilingCalendarModel {
         this.internalNotes = value;
     }
 
+
     private String alSignOn;
 
     /**
@@ -941,6 +981,7 @@ public class FilingCalendarModel {
     public void setAlSignOn(String value) {
         this.alSignOn = value;
     }
+
 
     private String alAccessCode;
 
@@ -962,6 +1003,7 @@ public class FilingCalendarModel {
         this.alAccessCode = value;
     }
 
+
     private String meBusinessCode;
 
     /**
@@ -981,6 +1023,7 @@ public class FilingCalendarModel {
     public void setMeBusinessCode(String value) {
         this.meBusinessCode = value;
     }
+
 
     private String iaBen;
 
@@ -1002,6 +1045,7 @@ public class FilingCalendarModel {
         this.iaBen = value;
     }
 
+
     private String ctReg;
 
     /**
@@ -1021,6 +1065,7 @@ public class FilingCalendarModel {
     public void setCtReg(String value) {
         this.ctReg = value;
     }
+
 
     private String other1Name;
 
@@ -1042,6 +1087,7 @@ public class FilingCalendarModel {
         this.other1Name = value;
     }
 
+
     private String other1Value;
 
     /**
@@ -1061,6 +1107,7 @@ public class FilingCalendarModel {
     public void setOther1Value(String value) {
         this.other1Value = value;
     }
+
 
     private String other2Name;
 
@@ -1082,6 +1129,7 @@ public class FilingCalendarModel {
         this.other2Name = value;
     }
 
+
     private String other2Value;
 
     /**
@@ -1101,6 +1149,7 @@ public class FilingCalendarModel {
     public void setOther2Value(String value) {
         this.other2Value = value;
     }
+
 
     private String other3Name;
 
@@ -1122,6 +1171,7 @@ public class FilingCalendarModel {
         this.other3Name = value;
     }
 
+
     private String other3Value;
 
     /**
@@ -1141,6 +1191,7 @@ public class FilingCalendarModel {
     public void setOther3Value(String value) {
         this.other3Value = value;
     }
+
 
     private Integer taxAuthorityId;
 
@@ -1162,6 +1213,7 @@ public class FilingCalendarModel {
         this.taxAuthorityId = value;
     }
 
+
     private String taxAuthorityName;
 
     /**
@@ -1181,6 +1233,7 @@ public class FilingCalendarModel {
     public void setTaxAuthorityName(String value) {
         this.taxAuthorityName = value;
     }
+
 
     private String taxAuthorityType;
 
@@ -1202,6 +1255,7 @@ public class FilingCalendarModel {
         this.taxAuthorityType = value;
     }
 
+
     private Date createdDate;
 
     /**
@@ -1221,6 +1275,7 @@ public class FilingCalendarModel {
     public void setCreatedDate(Date value) {
         this.createdDate = value;
     }
+
 
     private Integer createdUserId;
 
@@ -1242,6 +1297,7 @@ public class FilingCalendarModel {
         this.createdUserId = value;
     }
 
+
     private Date modifiedDate;
 
     /**
@@ -1261,6 +1317,7 @@ public class FilingCalendarModel {
     public void setModifiedDate(Date value) {
         this.modifiedDate = value;
     }
+
 
     private Integer modifiedUserId;
 
@@ -1282,6 +1339,7 @@ public class FilingCalendarModel {
         this.modifiedUserId = value;
     }
 
+
     private String bulkAccountId;
 
     /**
@@ -1301,6 +1359,7 @@ public class FilingCalendarModel {
     public void setBulkAccountId(String value) {
         this.bulkAccountId = value;
     }
+
 
     private String siteCode;
 
@@ -1322,6 +1381,7 @@ public class FilingCalendarModel {
         this.siteCode = value;
     }
 
+
     private BulkAccountValidationStatus bulkAccountValidationStatus;
 
     /**
@@ -1342,6 +1402,7 @@ public class FilingCalendarModel {
         this.bulkAccountValidationStatus = value;
     }
 
+
     private ArrayList<CompanyReturnSettingModel> settings;
 
     /**
@@ -1361,6 +1422,7 @@ public class FilingCalendarModel {
     public void setSettings(ArrayList<CompanyReturnSettingModel> value) {
         this.settings = value;
     }
+
 
     /**
      * Returns a JSON string representation of FilingCalendarModel

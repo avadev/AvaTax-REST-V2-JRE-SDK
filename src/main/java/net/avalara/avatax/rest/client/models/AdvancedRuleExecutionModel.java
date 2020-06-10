@@ -49,6 +49,7 @@ public class AdvancedRuleExecutionModel {
         this.ruleExecutionId = value;
     }
 
+
     private String name;
 
     /**
@@ -68,6 +69,7 @@ public class AdvancedRuleExecutionModel {
     public void setName(String value) {
         this.name = value;
     }
+
 
     private Date startDate;
 
@@ -89,6 +91,7 @@ public class AdvancedRuleExecutionModel {
         this.startDate = value;
     }
 
+
     private Date endDate;
 
     /**
@@ -108,6 +111,7 @@ public class AdvancedRuleExecutionModel {
     public void setEndDate(Date value) {
         this.endDate = value;
     }
+
 
     private Boolean enabled;
 
@@ -129,6 +133,7 @@ public class AdvancedRuleExecutionModel {
         this.enabled = value;
     }
 
+
     private Boolean continueOnError;
 
     /**
@@ -148,6 +153,7 @@ public class AdvancedRuleExecutionModel {
     public void setContinueOnError(Boolean value) {
         this.continueOnError = value;
     }
+
 
     private String ruleId;
 
@@ -169,6 +175,7 @@ public class AdvancedRuleExecutionModel {
         this.ruleId = value;
     }
 
+
     private AdvancedRuleModel rule;
 
     /**
@@ -188,6 +195,7 @@ public class AdvancedRuleExecutionModel {
     public void setRule(AdvancedRuleModel value) {
         this.rule = value;
     }
+
 
     private String customerData;
 
@@ -209,6 +217,7 @@ public class AdvancedRuleExecutionModel {
         this.customerData = value;
     }
 
+
     private String customerDataId;
 
     /**
@@ -228,6 +237,7 @@ public class AdvancedRuleExecutionModel {
     public void setCustomerDataId(String value) {
         this.customerDataId = value;
     }
+
 
     /**
      * Returns a JSON string representation of AdvancedRuleExecutionModel

@@ -58,6 +58,7 @@ public class SettingModel {
         this.id = value;
     }
 
+
     private Integer companyId;
 
     /**
@@ -77,6 +78,7 @@ public class SettingModel {
     public void setCompanyId(Integer value) {
         this.companyId = value;
     }
+
 
     private String set;
 
@@ -112,6 +114,7 @@ public class SettingModel {
         this.set = value;
     }
 
+
     private String name;
 
     /**
@@ -132,6 +135,7 @@ public class SettingModel {
         this.name = value;
     }
 
+
     private String value;
 
     /**
@@ -151,6 +155,7 @@ public class SettingModel {
     public void setValue(String value) {
         this.value = value;
     }
+
 
     /**
      * Returns a JSON string representation of SettingModel

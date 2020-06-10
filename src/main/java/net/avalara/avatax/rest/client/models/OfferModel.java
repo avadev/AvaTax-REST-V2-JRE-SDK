@@ -49,6 +49,7 @@ public class OfferModel {
         this.id = value;
     }
 
+
     private String offerMessage;
 
     /**
@@ -68,6 +69,7 @@ public class OfferModel {
     public void setOfferMessage(String value) {
         this.offerMessage = value;
     }
+
 
     /**
      * Returns a JSON string representation of OfferModel
