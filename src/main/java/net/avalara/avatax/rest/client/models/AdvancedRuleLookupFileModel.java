@@ -197,6 +197,48 @@ public class AdvancedRuleLookupFileModel {
     }
 
 
+    private String createdDate;
+
+    /**
+     * Getter for createdDate
+     *
+     * Lookup file CreatedOn
+     */
+    public String getCreatedDate() {
+        return this.createdDate;
+    }
+
+    /**
+     * Setter for createdDate
+     *
+     * Lookup file CreatedOn
+     */
+    public void setCreatedDate(String value) {
+        this.createdDate = value;
+    }
+
+
+    private String modifiedDate;
+
+    /**
+     * Getter for modifiedDate
+     *
+     * Lookup file ModifiedOn
+     */
+    public String getModifiedDate() {
+        return this.modifiedDate;
+    }
+
+    /**
+     * Setter for modifiedDate
+     *
+     * Lookup file ModifiedOn
+     */
+    public void setModifiedDate(String value) {
+        this.modifiedDate = value;
+    }
+
+
     /**
      * Returns a JSON string representation of AdvancedRuleLookupFileModel
      */

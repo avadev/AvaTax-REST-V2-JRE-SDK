@@ -155,6 +155,27 @@ public class PingResultModel {
     }
 
 
+    private Integer authenticatedCompanyId;
+
+    /**
+     * Getter for authenticatedCompanyId
+     *
+     * The ID number of the currently authenticated user's company, if any.
+     */
+    public Integer getAuthenticatedCompanyId() {
+        return this.authenticatedCompanyId;
+    }
+
+    /**
+     * Setter for authenticatedCompanyId
+     *
+     * The ID number of the currently authenticated user's company, if any.
+     */
+    public void setAuthenticatedCompanyId(Integer value) {
+        this.authenticatedCompanyId = value;
+    }
+
+
     private String crmid;
 
     /**

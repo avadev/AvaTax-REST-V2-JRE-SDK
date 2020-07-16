@@ -239,6 +239,90 @@ public class FilingsTaxSummaryModel {
     }
 
 
+    private BigDecimal reportableSalesAmount;
+
+    /**
+     * Getter for reportableSalesAmount
+     *
+     * reportableSalesAmount
+     */
+    public BigDecimal getReportableSalesAmount() {
+        return this.reportableSalesAmount;
+    }
+
+    /**
+     * Setter for reportableSalesAmount
+     *
+     * reportableSalesAmount
+     */
+    public void setReportableSalesAmount(BigDecimal value) {
+        this.reportableSalesAmount = value;
+    }
+
+
+    private BigDecimal reportableNonTaxableAmount;
+
+    /**
+     * Getter for reportableNonTaxableAmount
+     *
+     * reportableNonTaxableAmount
+     */
+    public BigDecimal getReportableNonTaxableAmount() {
+        return this.reportableNonTaxableAmount;
+    }
+
+    /**
+     * Setter for reportableNonTaxableAmount
+     *
+     * reportableNonTaxableAmount
+     */
+    public void setReportableNonTaxableAmount(BigDecimal value) {
+        this.reportableNonTaxableAmount = value;
+    }
+
+
+    private BigDecimal reportableTaxableAmount;
+
+    /**
+     * Getter for reportableTaxableAmount
+     *
+     * reportableTaxableAmount
+     */
+    public BigDecimal getReportableTaxableAmount() {
+        return this.reportableTaxableAmount;
+    }
+
+    /**
+     * Setter for reportableTaxableAmount
+     *
+     * reportableTaxableAmount
+     */
+    public void setReportableTaxableAmount(BigDecimal value) {
+        this.reportableTaxableAmount = value;
+    }
+
+
+    private BigDecimal reportableTaxAmount;
+
+    /**
+     * Getter for reportableTaxAmount
+     *
+     * reportableTaxAmount
+     */
+    public BigDecimal getReportableTaxAmount() {
+        return this.reportableTaxAmount;
+    }
+
+    /**
+     * Setter for reportableTaxAmount
+     *
+     * reportableTaxAmount
+     */
+    public void setReportableTaxAmount(BigDecimal value) {
+        this.reportableTaxAmount = value;
+    }
+
+
     /**
      * Returns a JSON string representation of FilingsTaxSummaryModel
      */

@@ -16,31 +16,31 @@ import java.util.HashMap;
  */
 
 /**
- * Types of jurisdiction referenced in a transaction
+ * 
  */
 public enum JurisTypeId {
     /** 
-     * State
+     * 
      */
     STA(1),
 
     /** 
-     * County
+     * 
      */
     CTY(2),
 
     /** 
-     * City
+     * 
      */
     CIT(3),
 
     /** 
-     * Special
+     * 
      */
     STJ(4),
 
     /** 
-     * Country
+     * 
      */
     CNT(5);
 

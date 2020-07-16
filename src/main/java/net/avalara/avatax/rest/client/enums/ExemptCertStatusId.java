@@ -16,26 +16,26 @@ import java.util.HashMap;
  */
 
 /**
- * Status for this exempt certificate
+ * 
  */
 public enum ExemptCertStatusId {
     /** 
-     * Inactive certificate
+     * 
      */
     Inactive(0),
 
     /** 
-     * Active certificate
+     * 
      */
     Active(1),
 
     /** 
-     * Expired certificate
+     * 
      */
     Expired(2),
 
     /** 
-     * Revoked certificate
+     * 
      */
     Revoked(3);
 

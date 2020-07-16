@@ -16,21 +16,21 @@ import java.util.HashMap;
  */
 
 /**
- * Type of file request
+ * 
  */
 public enum PointOfSaleFileType {
     /** 
-     * File is in Javascript Object Notation format
+     * 
      */
     Json(0),
 
     /** 
-     * File is in Comma Separated Values format
+     * 
      */
     Csv(1),
 
     /** 
-     * File is in Extended Markup Language format
+     * 
      */
     Xml(2);
 

@@ -16,7 +16,7 @@ import java.util.HashMap;
  */
 
 /**
- * A list of bulk account validation statuses for filing calendars.
+ * 
  */
 public enum BulkAccountValidationStatus {
     /** 

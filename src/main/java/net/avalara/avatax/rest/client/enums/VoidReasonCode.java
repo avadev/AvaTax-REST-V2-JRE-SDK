@@ -16,32 +16,31 @@ import java.util.HashMap;
  */
 
 /**
- * Reason code for voiding or cancelling a transaction
+ * 
  */
 public enum VoidReasonCode {
     /** 
-     * Unspecified reason
+     * 
      */
     Unspecified(0),
 
     /** 
-     * Post operation failed - Document status will be changed to unposted
+     * 
      */
     PostFailed(1),
 
     /** 
-     * Document deleted - If committed, document status will be changed to Cancelled. If not committed, document will be
-     *  deleted.
+     * 
      */
     DocDeleted(2),
 
     /** 
-     * Document has been voided and DocStatus will be set to Cancelled
+     * 
      */
     DocVoided(3),
 
     /** 
-     * AdjustTax operation has been cancelled. Adjustment will be reversed.
+     * 
      */
     AdjustmentCancelled(4);
 

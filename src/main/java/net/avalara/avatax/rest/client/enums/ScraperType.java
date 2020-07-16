@@ -16,16 +16,16 @@ import java.util.HashMap;
  */
 
 /**
- * Type of verification task
+ * 
  */
 public enum ScraperType {
     /** 
-     * Indicates that is is a login type
+     * 
      */
     Login(1),
 
     /** 
-     * Indicates that it is a Customer DOR Data type
+     * 
      */
     CustomerDorData(2);
 
