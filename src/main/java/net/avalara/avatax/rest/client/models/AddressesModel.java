@@ -65,7 +65,6 @@ public class AddressesModel {
         this.singleLocation = value;
     }
 
-
     private AddressLocationInfo shipFrom;
 
     /**
@@ -86,7 +85,6 @@ public class AddressesModel {
         this.shipFrom = value;
     }
 
-
     private AddressLocationInfo shipTo;
 
     /**
@@ -106,7 +104,6 @@ public class AddressesModel {
     public void setShipTo(AddressLocationInfo value) {
         this.shipTo = value;
     }
-
 
     private AddressLocationInfo pointOfOrderOrigin;
 
@@ -129,7 +126,6 @@ public class AddressesModel {
     public void setPointOfOrderOrigin(AddressLocationInfo value) {
         this.pointOfOrderOrigin = value;
     }
-
 
     private AddressLocationInfo pointOfOrderAcceptance;
 
@@ -155,6 +151,45 @@ public class AddressesModel {
         this.pointOfOrderAcceptance = value;
     }
 
+    private AddressLocationInfo goodsPlaceOrServiceRendered;
+
+    /**
+     * Getter for goodsPlaceOrServiceRendered
+     *
+     * The address where the goods are located or where services are rendered.This address type is valid only for VAT transactions.
+     */
+    public AddressLocationInfo getGoodsPlaceOrServiceRendered() {
+        return this.goodsPlaceOrServiceRendered;
+    }
+
+    /**
+     * Setter for goodsPlaceOrServiceRendered
+     *
+     * The address where the goods are located or where services are rendered.This address type is valid only for VAT transactions.
+     */
+    public void setGoodsPlaceOrServiceRendered(AddressLocationInfo value) {
+        this.goodsPlaceOrServiceRendered = value;
+    }
+
+    private AddressLocationInfo import;
+
+    /**
+     * Getter for import
+     *
+     * The address of the buyer importing a good from another country.This address type is valid only for VAT transactions.
+     */
+    public AddressLocationInfo getImport() {
+        return this.import;
+    }
+
+    /**
+     * Setter for import
+     *
+     * The address of the buyer importing a good from another country.This address type is valid only for VAT transactions.
+     */
+    public void setImport(AddressLocationInfo value) {
+        this.import = value;
+    }
 
     /**
      * Returns a JSON string representation of AddressesModel

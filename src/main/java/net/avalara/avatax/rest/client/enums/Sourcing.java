@@ -16,21 +16,21 @@ import java.util.HashMap;
  */
 
 /**
- * Sourcing
+ * 
  */
 public enum Sourcing {
     /** 
-     * Mixed sourcing, for states that do both origin and destination calculation
+     * 
      */
     Mixed(42),
 
     /** 
-     * Destination
+     * 
      */
     Destination(68),
 
     /** 
-     * Origin
+     * 
      */
     Origin(79);
 

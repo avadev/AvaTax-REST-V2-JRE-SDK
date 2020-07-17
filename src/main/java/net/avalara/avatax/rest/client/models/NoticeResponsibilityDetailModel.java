@@ -49,7 +49,6 @@ public class NoticeResponsibilityDetailModel {
         this.id = value;
     }
 
-
     private Integer noticeId;
 
     /**
@@ -69,7 +68,6 @@ public class NoticeResponsibilityDetailModel {
     public void setNoticeId(Integer value) {
         this.noticeId = value;
     }
-
 
     private Integer taxNoticeResponsibilityId;
 
@@ -91,7 +89,6 @@ public class NoticeResponsibilityDetailModel {
         this.taxNoticeResponsibilityId = value;
     }
 
-
     private String description;
 
     /**
@@ -111,7 +108,6 @@ public class NoticeResponsibilityDetailModel {
     public void setDescription(String value) {
         this.description = value;
     }
-
 
     /**
      * Returns a JSON string representation of NoticeResponsibilityDetailModel

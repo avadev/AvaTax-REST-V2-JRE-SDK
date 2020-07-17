@@ -16,17 +16,16 @@ import java.util.HashMap;
  */
 
 /**
- * Indicates the status of a CertExpress invitation link.
+ * 
  */
 public enum CertExpressInvitationStatus {
     /** 
-     * The CertExpress website is currently building a landing page for the customer. Please
-     *  wait about 10 seconds and fetch this request again to see when it will be ready.
+     * 
      */
     InProgress(0),
 
     /** 
-     * Indicates that the CertExpress invitation has been completed and is ready to use.
+     * 
      */
     Ready(1);
 

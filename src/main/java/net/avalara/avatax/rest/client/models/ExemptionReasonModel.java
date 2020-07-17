@@ -51,7 +51,6 @@ public class ExemptionReasonModel {
         this.id = value;
     }
 
-
     private String name;
 
     /**
@@ -71,7 +70,6 @@ public class ExemptionReasonModel {
     public void setName(String value) {
         this.name = value;
     }
-
 
     /**
      * Returns a JSON string representation of ExemptionReasonModel

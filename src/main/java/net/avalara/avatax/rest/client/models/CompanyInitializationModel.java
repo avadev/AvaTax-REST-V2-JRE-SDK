@@ -49,7 +49,6 @@ public class CompanyInitializationModel {
         this.name = value;
     }
 
-
     private String companyCode;
 
     /**
@@ -70,7 +69,6 @@ public class CompanyInitializationModel {
         this.companyCode = value;
     }
 
-
     private String vatRegistrationId;
 
     /**
@@ -90,7 +88,6 @@ public class CompanyInitializationModel {
     public void setVatRegistrationId(String value) {
         this.vatRegistrationId = value;
     }
-
 
     private String taxpayerIdNumber;
 
@@ -116,7 +113,6 @@ public class CompanyInitializationModel {
         this.taxpayerIdNumber = value;
     }
 
-
     private Boolean isFein;
 
     /**
@@ -136,7 +132,6 @@ public class CompanyInitializationModel {
     public void setIsFein(Boolean value) {
         this.isFein = value;
     }
-
 
     private String line1;
 
@@ -158,7 +153,6 @@ public class CompanyInitializationModel {
         this.line1 = value;
     }
 
-
     private String line2;
 
     /**
@@ -178,7 +172,6 @@ public class CompanyInitializationModel {
     public void setLine2(String value) {
         this.line2 = value;
     }
-
 
     private String line3;
 
@@ -200,7 +193,6 @@ public class CompanyInitializationModel {
         this.line3 = value;
     }
 
-
     private String city;
 
     /**
@@ -220,7 +212,6 @@ public class CompanyInitializationModel {
     public void setCity(String value) {
         this.city = value;
     }
-
 
     private String region;
 
@@ -256,7 +247,6 @@ public class CompanyInitializationModel {
         this.region = value;
     }
 
-
     private String postalCode;
 
     /**
@@ -276,7 +266,6 @@ public class CompanyInitializationModel {
     public void setPostalCode(String value) {
         this.postalCode = value;
     }
-
 
     private String country;
 
@@ -314,7 +303,6 @@ public class CompanyInitializationModel {
         this.country = value;
     }
 
-
     private String firstName;
 
     /**
@@ -334,7 +322,6 @@ public class CompanyInitializationModel {
     public void setFirstName(String value) {
         this.firstName = value;
     }
-
 
     private String lastName;
 
@@ -356,7 +343,6 @@ public class CompanyInitializationModel {
         this.lastName = value;
     }
 
-
     private String title;
 
     /**
@@ -376,7 +362,6 @@ public class CompanyInitializationModel {
     public void setTitle(String value) {
         this.title = value;
     }
-
 
     private String email;
 
@@ -398,7 +383,6 @@ public class CompanyInitializationModel {
         this.email = value;
     }
 
-
     private String phoneNumber;
 
     /**
@@ -418,7 +402,6 @@ public class CompanyInitializationModel {
     public void setPhoneNumber(String value) {
         this.phoneNumber = value;
     }
-
 
     private String mobileNumber;
 
@@ -440,7 +423,6 @@ public class CompanyInitializationModel {
         this.mobileNumber = value;
     }
 
-
     private String faxNumber;
 
     /**
@@ -461,7 +443,6 @@ public class CompanyInitializationModel {
         this.faxNumber = value;
     }
 
-
     private Integer parentCompanyId;
 
     /**
@@ -481,7 +462,6 @@ public class CompanyInitializationModel {
     public void setParentCompanyId(Integer value) {
         this.parentCompanyId = value;
     }
-
 
     /**
      * Returns a JSON string representation of CompanyInitializationModel

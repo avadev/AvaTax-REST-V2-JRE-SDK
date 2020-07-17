@@ -49,7 +49,6 @@ public class PasswordChangeModel {
         this.oldPassword = value;
     }
 
-
     private String newPassword;
 
     /**
@@ -69,7 +68,6 @@ public class PasswordChangeModel {
     public void setNewPassword(String value) {
         this.newPassword = value;
     }
-
 
     /**
      * Returns a JSON string representation of PasswordChangeModel

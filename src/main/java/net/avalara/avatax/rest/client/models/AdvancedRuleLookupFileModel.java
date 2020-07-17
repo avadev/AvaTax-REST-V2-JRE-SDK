@@ -49,7 +49,6 @@ public class AdvancedRuleLookupFileModel {
         this.lookupFileId = value;
     }
 
-
     private String id;
 
     /**
@@ -69,7 +68,6 @@ public class AdvancedRuleLookupFileModel {
     public void setId(String value) {
         this.id = value;
     }
-
 
     private String name;
 
@@ -91,7 +89,6 @@ public class AdvancedRuleLookupFileModel {
         this.name = value;
     }
 
-
     private Byte content;
 
     /**
@@ -111,7 +108,6 @@ public class AdvancedRuleLookupFileModel {
     public void setContent(Byte value) {
         this.content = value;
     }
-
 
     private String fileExtension;
 
@@ -133,7 +129,6 @@ public class AdvancedRuleLookupFileModel {
         this.fileExtension = value;
     }
 
-
     private Boolean isTest;
 
     /**
@@ -153,7 +148,6 @@ public class AdvancedRuleLookupFileModel {
     public void setIsTest(Boolean value) {
         this.isTest = value;
     }
-
 
     private Boolean inUse;
 
@@ -175,7 +169,6 @@ public class AdvancedRuleLookupFileModel {
         this.inUse = value;
     }
 
-
     private Integer version;
 
     /**
@@ -196,6 +189,45 @@ public class AdvancedRuleLookupFileModel {
         this.version = value;
     }
 
+    private String createdDate;
+
+    /**
+     * Getter for createdDate
+     *
+     * Lookup file CreatedOn
+     */
+    public String getCreatedDate() {
+        return this.createdDate;
+    }
+
+    /**
+     * Setter for createdDate
+     *
+     * Lookup file CreatedOn
+     */
+    public void setCreatedDate(String value) {
+        this.createdDate = value;
+    }
+
+    private String modifiedDate;
+
+    /**
+     * Getter for modifiedDate
+     *
+     * Lookup file ModifiedOn
+     */
+    public String getModifiedDate() {
+        return this.modifiedDate;
+    }
+
+    /**
+     * Setter for modifiedDate
+     *
+     * Lookup file ModifiedOn
+     */
+    public void setModifiedDate(String value) {
+        this.modifiedDate = value;
+    }
 
     /**
      * Returns a JSON string representation of AdvancedRuleLookupFileModel

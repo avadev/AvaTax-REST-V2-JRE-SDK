@@ -58,7 +58,6 @@ public class ProvisionStatusModel {
         this.status = value;
     }
 
-
     private Integer accountId;
 
     /**
@@ -79,7 +78,6 @@ public class ProvisionStatusModel {
         this.accountId = value;
     }
 
-
     private Integer companyId;
 
     /**
@@ -99,7 +97,6 @@ public class ProvisionStatusModel {
     public void setCompanyId(Integer value) {
         this.companyId = value;
     }
-
 
     /**
      * Returns a JSON string representation of ProvisionStatusModel

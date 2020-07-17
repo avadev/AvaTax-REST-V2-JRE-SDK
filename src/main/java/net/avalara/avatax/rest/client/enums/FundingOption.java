@@ -16,16 +16,16 @@ import java.util.HashMap;
  */
 
 /**
- * Filing Frequency types
+ * 
  */
 public enum FundingOption {
     /** 
-     * Pull
+     * 
      */
     Pull(1),
 
     /** 
-     * Wire
+     * 
      */
     Wire(2);
 

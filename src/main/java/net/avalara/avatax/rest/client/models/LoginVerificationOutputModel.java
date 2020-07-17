@@ -49,7 +49,6 @@ public class LoginVerificationOutputModel {
         this.jobId = value;
     }
 
-
     private String operationStatus;
 
     /**
@@ -69,7 +68,6 @@ public class LoginVerificationOutputModel {
     public void setOperationStatus(String value) {
         this.operationStatus = value;
     }
-
 
     private String message;
 
@@ -91,7 +89,6 @@ public class LoginVerificationOutputModel {
         this.message = value;
     }
 
-
     private Boolean loginSuccess;
 
     /**
@@ -111,7 +108,6 @@ public class LoginVerificationOutputModel {
     public void setLoginSuccess(Boolean value) {
         this.loginSuccess = value;
     }
-
 
     /**
      * Returns a JSON string representation of LoginVerificationOutputModel

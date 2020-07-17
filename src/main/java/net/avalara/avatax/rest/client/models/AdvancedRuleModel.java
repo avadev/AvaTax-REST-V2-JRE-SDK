@@ -49,7 +49,6 @@ public class AdvancedRuleModel {
         this.ruleId = value;
     }
 
-
     private String name;
 
     /**
@@ -69,7 +68,6 @@ public class AdvancedRuleModel {
     public void setName(String value) {
         this.name = value;
     }
-
 
     private String description;
 
@@ -91,7 +89,6 @@ public class AdvancedRuleModel {
         this.description = value;
     }
 
-
     private Boolean arEntitlementRequired;
 
     /**
@@ -112,7 +109,6 @@ public class AdvancedRuleModel {
         this.arEntitlementRequired = value;
     }
 
-
     private String executionPosition;
 
     /**
@@ -132,7 +128,6 @@ public class AdvancedRuleModel {
     public void setExecutionPosition(String value) {
         this.executionPosition = value;
     }
-
 
     /**
      * Returns a JSON string representation of AdvancedRuleModel

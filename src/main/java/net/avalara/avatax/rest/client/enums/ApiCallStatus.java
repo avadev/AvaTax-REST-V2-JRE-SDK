@@ -16,21 +16,21 @@ import java.util.HashMap;
  */
 
 /**
- * Indicates what level of auditing information is available for a transaction
+ * 
  */
 public enum ApiCallStatus {
     /** 
-     * If the original api call is availabe on S3
+     * 
      */
     OriginalApiCallAvailable(0),
 
     /** 
-     * if the original api call is not available, reconstructed api call should always be available
+     * 
      */
     ReconstructedApiCallAvailable(1),
 
     /** 
-     * Any other api call status
+     * 
      */
     Any(-1);
 

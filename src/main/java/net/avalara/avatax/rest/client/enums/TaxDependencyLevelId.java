@@ -16,26 +16,26 @@ import java.util.HashMap;
  */
 
 /**
- * TaxDependencyLevelId
+ * 
  */
 public enum TaxDependencyLevelId {
     /** 
-     * Document
+     * 
      */
     Document(0),
 
     /** 
-     * State
+     * 
      */
     State(1),
 
     /** 
-     * TaxRegion
+     * 
      */
     TaxRegion(2),
 
     /** 
-     * Address
+     * 
      */
     Address(3);
 

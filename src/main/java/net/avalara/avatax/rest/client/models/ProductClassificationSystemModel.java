@@ -49,7 +49,6 @@ public class ProductClassificationSystemModel {
         this.systemId = value;
     }
 
-
     private String systemCode;
 
     /**
@@ -69,7 +68,6 @@ public class ProductClassificationSystemModel {
     public void setSystemCode(String value) {
         this.systemCode = value;
     }
-
 
     private String description;
 
@@ -91,7 +89,6 @@ public class ProductClassificationSystemModel {
         this.description = value;
     }
 
-
     private String customsValue;
 
     /**
@@ -112,7 +109,6 @@ public class ProductClassificationSystemModel {
         this.customsValue = value;
     }
 
-
     private ArrayList<ProductSystemCountryModel> countries;
 
     /**
@@ -132,7 +128,6 @@ public class ProductClassificationSystemModel {
     public void setCountries(ArrayList<ProductSystemCountryModel> value) {
         this.countries = value;
     }
-
 
     /**
      * Returns a JSON string representation of ProductClassificationSystemModel

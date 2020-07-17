@@ -49,7 +49,6 @@ public class NoticeReasonModel {
         this.id = value;
     }
 
-
     private String description;
 
     /**
@@ -69,7 +68,6 @@ public class NoticeReasonModel {
     public void setDescription(String value) {
         this.description = value;
     }
-
 
     private Boolean activeFlag;
 
@@ -91,7 +89,6 @@ public class NoticeReasonModel {
         this.activeFlag = value;
     }
 
-
     private Integer sortOrder;
 
     /**
@@ -111,7 +108,6 @@ public class NoticeReasonModel {
     public void setSortOrder(Integer value) {
         this.sortOrder = value;
     }
-
 
     /**
      * Returns a JSON string representation of NoticeReasonModel

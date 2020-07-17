@@ -49,7 +49,6 @@ public class ItemParameterModel {
         this.id = value;
     }
 
-
     private String name;
 
     /**
@@ -69,7 +68,6 @@ public class ItemParameterModel {
     public void setName(String value) {
         this.name = value;
     }
-
 
     private String value;
 
@@ -91,7 +89,6 @@ public class ItemParameterModel {
         this.value = value;
     }
 
-
     private String unit;
 
     /**
@@ -112,7 +109,6 @@ public class ItemParameterModel {
         this.unit = value;
     }
 
-
     private Long itemId;
 
     /**
@@ -132,7 +128,6 @@ public class ItemParameterModel {
     public void setItemId(Long value) {
         this.itemId = value;
     }
-
 
     /**
      * Returns a JSON string representation of ItemParameterModel

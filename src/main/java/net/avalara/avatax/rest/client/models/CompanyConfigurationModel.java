@@ -49,7 +49,6 @@ public class CompanyConfigurationModel {
         this.companyId = value;
     }
 
-
     private String category;
 
     /**
@@ -69,7 +68,6 @@ public class CompanyConfigurationModel {
     public void setCategory(String value) {
         this.category = value;
     }
-
 
     private String name;
 
@@ -91,7 +89,6 @@ public class CompanyConfigurationModel {
         this.name = value;
     }
 
-
     private String value;
 
     /**
@@ -111,7 +108,6 @@ public class CompanyConfigurationModel {
     public void setValue(String value) {
         this.value = value;
     }
-
 
     private Date createdDate;
 
@@ -133,7 +129,6 @@ public class CompanyConfigurationModel {
         this.createdDate = value;
     }
 
-
     private Integer createdUserId;
 
     /**
@@ -153,7 +148,6 @@ public class CompanyConfigurationModel {
     public void setCreatedUserId(Integer value) {
         this.createdUserId = value;
     }
-
 
     private Date modifiedDate;
 
@@ -175,7 +169,6 @@ public class CompanyConfigurationModel {
         this.modifiedDate = value;
     }
 
-
     private Integer modifiedUserId;
 
     /**
@@ -195,7 +188,6 @@ public class CompanyConfigurationModel {
     public void setModifiedUserId(Integer value) {
         this.modifiedUserId = value;
     }
-
 
     /**
      * Returns a JSON string representation of CompanyConfigurationModel

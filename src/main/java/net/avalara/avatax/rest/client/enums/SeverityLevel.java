@@ -16,26 +16,26 @@ import java.util.HashMap;
  */
 
 /**
- * Severity of message
+ * 
  */
 public enum SeverityLevel {
     /** 
-     * Operation succeeded
+     * 
      */
     Success(0),
 
     /** 
-     * Warnings occured, operation succeeded
+     * 
      */
     Warning(1),
 
     /** 
-     * Errors occured, operation failed
+     * 
      */
     Error(2),
 
     /** 
-     * Unexpected exceptions occurred, operation failed
+     * 
      */
     Exception(3);
 

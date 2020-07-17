@@ -49,7 +49,6 @@ public class TaxAuthorityFormModel {
         this.taxAuthorityId = value;
     }
 
-
     private String formName;
 
     /**
@@ -69,7 +68,6 @@ public class TaxAuthorityFormModel {
     public void setFormName(String value) {
         this.formName = value;
     }
-
 
     /**
      * Returns a JSON string representation of TaxAuthorityFormModel

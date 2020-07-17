@@ -49,7 +49,6 @@ public class ParameterUsageModel {
         this.id = value;
     }
 
-
     private Long parameterId;
 
     /**
@@ -69,7 +68,6 @@ public class ParameterUsageModel {
     public void setParameterId(Long value) {
         this.parameterId = value;
     }
-
 
     private String productCode;
 
@@ -91,7 +89,6 @@ public class ParameterUsageModel {
         this.productCode = value;
     }
 
-
     private String country;
 
     /**
@@ -111,7 +108,6 @@ public class ParameterUsageModel {
     public void setCountry(String value) {
         this.country = value;
     }
-
 
     private String region;
 
@@ -133,7 +129,6 @@ public class ParameterUsageModel {
         this.region = value;
     }
 
-
     private Integer systemId;
 
     /**
@@ -153,7 +148,6 @@ public class ParameterUsageModel {
     public void setSystemId(Integer value) {
         this.systemId = value;
     }
-
 
     private String taxTypeId;
 
@@ -175,7 +169,6 @@ public class ParameterUsageModel {
         this.taxTypeId = value;
     }
 
-
     private String attributeType;
 
     /**
@@ -195,7 +188,6 @@ public class ParameterUsageModel {
     public void setAttributeType(String value) {
         this.attributeType = value;
     }
-
 
     private String name;
 
@@ -217,7 +209,6 @@ public class ParameterUsageModel {
         this.name = value;
     }
 
-
     private String dataType;
 
     /**
@@ -237,7 +228,6 @@ public class ParameterUsageModel {
     public void setDataType(String value) {
         this.dataType = value;
     }
-
 
     private String helpText;
 
@@ -261,7 +251,6 @@ public class ParameterUsageModel {
         this.helpText = value;
     }
 
-
     private String label;
 
     /**
@@ -281,7 +270,6 @@ public class ParameterUsageModel {
     public void setLabel(String value) {
         this.label = value;
     }
-
 
     private String helpUrl;
 
@@ -303,7 +291,6 @@ public class ParameterUsageModel {
         this.helpUrl = value;
     }
 
-
     private ArrayList<String> values;
 
     /**
@@ -324,7 +311,6 @@ public class ParameterUsageModel {
         this.values = value;
     }
 
-
     private String measurementType;
 
     /**
@@ -344,7 +330,6 @@ public class ParameterUsageModel {
     public void setMeasurementType(String value) {
         this.measurementType = value;
     }
-
 
     /**
      * Returns a JSON string representation of ParameterUsageModel

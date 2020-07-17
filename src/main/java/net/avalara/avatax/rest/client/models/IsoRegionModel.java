@@ -49,7 +49,6 @@ public class IsoRegionModel {
         this.countryCode = value;
     }
 
-
     private String code;
 
     /**
@@ -69,7 +68,6 @@ public class IsoRegionModel {
     public void setCode(String value) {
         this.code = value;
     }
-
 
     private String name;
 
@@ -95,7 +93,6 @@ public class IsoRegionModel {
         this.name = value;
     }
 
-
     private String classification;
 
     /**
@@ -115,7 +112,6 @@ public class IsoRegionModel {
     public void setClassification(String value) {
         this.classification = value;
     }
-
 
     private Boolean streamlinedSalesTax;
 
@@ -138,7 +134,6 @@ public class IsoRegionModel {
     public void setStreamlinedSalesTax(Boolean value) {
         this.streamlinedSalesTax = value;
     }
-
 
     private ArrayList<IsoLocalizedName> localizedNames;
 
@@ -163,7 +158,6 @@ public class IsoRegionModel {
     public void setLocalizedNames(ArrayList<IsoLocalizedName> value) {
         this.localizedNames = value;
     }
-
 
     /**
      * Returns a JSON string representation of IsoRegionModel

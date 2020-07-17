@@ -53,7 +53,6 @@ public class CertExpressInvitationModel {
         this.id = value;
     }
 
-
     private Integer companyId;
 
     /**
@@ -74,7 +73,6 @@ public class CertExpressInvitationModel {
         this.companyId = value;
     }
 
-
     private String recipient;
 
     /**
@@ -94,7 +92,6 @@ public class CertExpressInvitationModel {
     public void setRecipient(String value) {
         this.recipient = value;
     }
-
 
     private String customerCode;
 
@@ -120,7 +117,6 @@ public class CertExpressInvitationModel {
         this.customerCode = value;
     }
 
-
     private CustomerModel customer;
 
     /**
@@ -141,7 +137,6 @@ public class CertExpressInvitationModel {
         this.customer = value;
     }
 
-
     private CoverLetterModel coverLetter;
 
     /**
@@ -161,7 +156,6 @@ public class CertExpressInvitationModel {
     public void setCoverLetter(CoverLetterModel value) {
         this.coverLetter = value;
     }
-
 
     private String emailStatus;
 
@@ -185,7 +179,6 @@ public class CertExpressInvitationModel {
         this.emailStatus = value;
     }
 
-
     private Boolean coverLettersOnly;
 
     /**
@@ -205,7 +198,6 @@ public class CertExpressInvitationModel {
     public void setCoverLettersOnly(Boolean value) {
         this.coverLettersOnly = value;
     }
-
 
     private ArrayList<Integer> exposureZones;
 
@@ -233,7 +225,6 @@ public class CertExpressInvitationModel {
         this.exposureZones = value;
     }
 
-
     private ArrayList<Integer> exemptReasons;
 
     /**
@@ -258,7 +249,6 @@ public class CertExpressInvitationModel {
         this.exemptReasons = value;
     }
 
-
     private CertificateRequestDeliveryMethod deliveryMethod;
 
     /**
@@ -278,7 +268,6 @@ public class CertExpressInvitationModel {
     public void setDeliveryMethod(CertificateRequestDeliveryMethod value) {
         this.deliveryMethod = value;
     }
-
 
     private String message;
 
@@ -300,7 +289,6 @@ public class CertExpressInvitationModel {
         this.message = value;
     }
 
-
     private Date date;
 
     /**
@@ -320,7 +308,6 @@ public class CertExpressInvitationModel {
     public void setDate(Date value) {
         this.date = value;
     }
-
 
     private String requestLink;
 
@@ -347,7 +334,6 @@ public class CertExpressInvitationModel {
     public void setRequestLink(String value) {
         this.requestLink = value;
     }
-
 
     /**
      * Returns a JSON string representation of CertExpressInvitationModel

@@ -49,7 +49,6 @@ public class CycleEditOptionModel {
         this.success = value;
     }
 
-
     private String message;
 
     /**
@@ -69,7 +68,6 @@ public class CycleEditOptionModel {
     public void setMessage(String value) {
         this.message = value;
     }
-
 
     private Boolean customerMustApprove;
 
@@ -93,7 +91,6 @@ public class CycleEditOptionModel {
         this.customerMustApprove = value;
     }
 
-
     private Boolean mustCloneFilingCalendar;
 
     /**
@@ -113,7 +110,6 @@ public class CycleEditOptionModel {
     public void setMustCloneFilingCalendar(Boolean value) {
         this.mustCloneFilingCalendar = value;
     }
-
 
     private Date clonedCalendarEffDate;
 
@@ -135,7 +131,6 @@ public class CycleEditOptionModel {
         this.clonedCalendarEffDate = value;
     }
 
-
     private Date expiredCalendarEndDate;
 
     /**
@@ -155,7 +150,6 @@ public class CycleEditOptionModel {
     public void setExpiredCalendarEndDate(Date value) {
         this.expiredCalendarEndDate = value;
     }
-
 
     /**
      * Returns a JSON string representation of CycleEditOptionModel

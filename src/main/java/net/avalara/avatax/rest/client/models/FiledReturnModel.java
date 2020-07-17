@@ -49,7 +49,6 @@ public class FiledReturnModel {
         this.companyId = value;
     }
 
-
     private Integer endPeriodMonth;
 
     /**
@@ -73,7 +72,6 @@ public class FiledReturnModel {
     public void setEndPeriodMonth(Integer value) {
         this.endPeriodMonth = value;
     }
-
 
     private Short endPeriodYear;
 
@@ -99,7 +97,6 @@ public class FiledReturnModel {
         this.endPeriodYear = value;
     }
 
-
     private String taxformCode;
 
     /**
@@ -119,7 +116,6 @@ public class FiledReturnModel {
     public void setTaxformCode(String value) {
         this.taxformCode = value;
     }
-
 
     /**
      * Returns a JSON string representation of FiledReturnModel

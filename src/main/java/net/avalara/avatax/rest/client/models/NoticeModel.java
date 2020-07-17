@@ -51,7 +51,6 @@ public class NoticeModel {
         this.id = value;
     }
 
-
     private Integer companyId;
 
     /**
@@ -71,7 +70,6 @@ public class NoticeModel {
     public void setCompanyId(Integer value) {
         this.companyId = value;
     }
-
 
     private Integer statusId;
 
@@ -93,7 +91,6 @@ public class NoticeModel {
         this.statusId = value;
     }
 
-
     private String status;
 
     /**
@@ -113,7 +110,6 @@ public class NoticeModel {
     public void setStatus(String value) {
         this.status = value;
     }
-
 
     private Date receivedDate;
 
@@ -135,7 +131,6 @@ public class NoticeModel {
         this.receivedDate = value;
     }
 
-
     private Date closedDate;
 
     /**
@@ -155,7 +150,6 @@ public class NoticeModel {
     public void setClosedDate(Date value) {
         this.closedDate = value;
     }
-
 
     private BigDecimal totalRemit;
 
@@ -177,7 +171,6 @@ public class NoticeModel {
         this.totalRemit = value;
     }
 
-
     private NoticeCustomerType customerTypeId;
 
     /**
@@ -197,7 +190,6 @@ public class NoticeModel {
     public void setCustomerTypeId(NoticeCustomerType value) {
         this.customerTypeId = value;
     }
-
 
     private String country;
 
@@ -235,7 +227,6 @@ public class NoticeModel {
         this.country = value;
     }
 
-
     private String region;
 
     /**
@@ -270,7 +261,6 @@ public class NoticeModel {
         this.region = value;
     }
 
-
     private Integer taxAuthorityId;
 
     /**
@@ -290,7 +280,6 @@ public class NoticeModel {
     public void setTaxAuthorityId(Integer value) {
         this.taxAuthorityId = value;
     }
-
 
     private FilingFrequencyId filingFrequency;
 
@@ -312,7 +301,6 @@ public class NoticeModel {
         this.filingFrequency = value;
     }
 
-
     private TaxNoticeFilingTypeId filingTypeId;
 
     /**
@@ -332,7 +320,6 @@ public class NoticeModel {
     public void setFilingTypeId(TaxNoticeFilingTypeId value) {
         this.filingTypeId = value;
     }
-
 
     private String ticketReferenceNo;
 
@@ -354,7 +341,6 @@ public class NoticeModel {
         this.ticketReferenceNo = value;
     }
 
-
     private String ticketReferenceUrl;
 
     /**
@@ -374,7 +360,6 @@ public class NoticeModel {
     public void setTicketReferenceUrl(String value) {
         this.ticketReferenceUrl = value;
     }
-
 
     private String salesForceCase;
 
@@ -396,7 +381,6 @@ public class NoticeModel {
         this.salesForceCase = value;
     }
 
-
     private String salesForceCaseUrl;
 
     /**
@@ -416,7 +400,6 @@ public class NoticeModel {
     public void setSalesForceCaseUrl(String value) {
         this.salesForceCaseUrl = value;
     }
-
 
     private String taxPeriod;
 
@@ -438,7 +421,6 @@ public class NoticeModel {
         this.taxPeriod = value;
     }
 
-
     private Integer reasonId;
 
     /**
@@ -458,7 +440,6 @@ public class NoticeModel {
     public void setReasonId(Integer value) {
         this.reasonId = value;
     }
-
 
     private String reason;
 
@@ -480,7 +461,6 @@ public class NoticeModel {
         this.reason = value;
     }
 
-
     private Integer typeId;
 
     /**
@@ -500,7 +480,6 @@ public class NoticeModel {
     public void setTypeId(Integer value) {
         this.typeId = value;
     }
-
 
     private String type;
 
@@ -522,7 +501,6 @@ public class NoticeModel {
         this.type = value;
     }
 
-
     private FundingOption customerFundingOptionId;
 
     /**
@@ -542,7 +520,6 @@ public class NoticeModel {
     public void setCustomerFundingOptionId(FundingOption value) {
         this.customerFundingOptionId = value;
     }
-
 
     private NoticePriorityId priorityId;
 
@@ -564,7 +541,6 @@ public class NoticeModel {
         this.priorityId = value;
     }
 
-
     private String customerComment;
 
     /**
@@ -584,7 +560,6 @@ public class NoticeModel {
     public void setCustomerComment(String value) {
         this.customerComment = value;
     }
-
 
     private Boolean hideFromCustomer;
 
@@ -606,7 +581,6 @@ public class NoticeModel {
         this.hideFromCustomer = value;
     }
 
-
     private Date expectedResolutionDate;
 
     /**
@@ -626,7 +600,6 @@ public class NoticeModel {
     public void setExpectedResolutionDate(Date value) {
         this.expectedResolutionDate = value;
     }
-
 
     private Boolean showResolutionDateToCustomer;
 
@@ -648,7 +621,6 @@ public class NoticeModel {
         this.showResolutionDateToCustomer = value;
     }
 
-
     private Integer closedByUserId;
 
     /**
@@ -668,7 +640,6 @@ public class NoticeModel {
     public void setClosedByUserId(Integer value) {
         this.closedByUserId = value;
     }
-
 
     private String createdByUserName;
 
@@ -690,7 +661,6 @@ public class NoticeModel {
         this.createdByUserName = value;
     }
 
-
     private Integer ownedByUserId;
 
     /**
@@ -710,7 +680,6 @@ public class NoticeModel {
     public void setOwnedByUserId(Integer value) {
         this.ownedByUserId = value;
     }
-
 
     private String description;
 
@@ -732,7 +701,6 @@ public class NoticeModel {
         this.description = value;
     }
 
-
     private Integer avaFileFormId;
 
     /**
@@ -752,7 +720,6 @@ public class NoticeModel {
     public void setAvaFileFormId(Integer value) {
         this.avaFileFormId = value;
     }
-
 
     private Integer revenueContactId;
 
@@ -774,7 +741,6 @@ public class NoticeModel {
         this.revenueContactId = value;
     }
 
-
     private Integer complianceContactId;
 
     /**
@@ -794,7 +760,6 @@ public class NoticeModel {
     public void setComplianceContactId(Integer value) {
         this.complianceContactId = value;
     }
-
 
     private String taxFormCode;
 
@@ -816,7 +781,6 @@ public class NoticeModel {
         this.taxFormCode = value;
     }
 
-
     private String documentReference;
 
     /**
@@ -836,7 +800,6 @@ public class NoticeModel {
     public void setDocumentReference(String value) {
         this.documentReference = value;
     }
-
 
     private String jurisdictionName;
 
@@ -858,7 +821,6 @@ public class NoticeModel {
         this.jurisdictionName = value;
     }
 
-
     private String jurisdictionType;
 
     /**
@@ -878,7 +840,6 @@ public class NoticeModel {
     public void setJurisdictionType(String value) {
         this.jurisdictionType = value;
     }
-
 
     private ArrayList<NoticeCommentModel> comments;
 
@@ -900,7 +861,6 @@ public class NoticeModel {
         this.comments = value;
     }
 
-
     private ArrayList<NoticeFinanceModel> finances;
 
     /**
@@ -920,7 +880,6 @@ public class NoticeModel {
     public void setFinances(ArrayList<NoticeFinanceModel> value) {
         this.finances = value;
     }
-
 
     private ArrayList<NoticeResponsibilityDetailModel> responsibility;
 
@@ -942,7 +901,6 @@ public class NoticeModel {
         this.responsibility = value;
     }
 
-
     private ArrayList<NoticeRootCauseDetailModel> rootCause;
 
     /**
@@ -962,7 +920,6 @@ public class NoticeModel {
     public void setRootCause(ArrayList<NoticeRootCauseDetailModel> value) {
         this.rootCause = value;
     }
-
 
     private Date createdDate;
 
@@ -984,7 +941,6 @@ public class NoticeModel {
         this.createdDate = value;
     }
 
-
     private Integer createdUserId;
 
     /**
@@ -1004,7 +960,6 @@ public class NoticeModel {
     public void setCreatedUserId(Integer value) {
         this.createdUserId = value;
     }
-
 
     private Date modifiedDate;
 
@@ -1026,7 +981,6 @@ public class NoticeModel {
         this.modifiedDate = value;
     }
 
-
     private Integer modifiedUserId;
 
     /**
@@ -1046,7 +1000,6 @@ public class NoticeModel {
     public void setModifiedUserId(Integer value) {
         this.modifiedUserId = value;
     }
-
 
     /**
      * Returns a JSON string representation of NoticeModel

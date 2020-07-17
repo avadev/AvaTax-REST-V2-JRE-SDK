@@ -49,7 +49,6 @@ public class MarketplaceLocationModel {
         this.region = value;
     }
 
-
     private String country;
 
     /**
@@ -69,7 +68,6 @@ public class MarketplaceLocationModel {
     public void setCountry(String value) {
         this.country = value;
     }
-
 
     private String marketplaceId;
 
@@ -91,7 +89,6 @@ public class MarketplaceLocationModel {
         this.marketplaceId = value;
     }
 
-
     private String marketplace;
 
     /**
@@ -111,7 +108,6 @@ public class MarketplaceLocationModel {
     public void setMarketplace(String value) {
         this.marketplace = value;
     }
-
 
     private Date marketplaceAdoptionDate;
 
@@ -133,7 +129,6 @@ public class MarketplaceLocationModel {
         this.marketplaceAdoptionDate = value;
     }
 
-
     private Date marketplaceEndDate;
 
     /**
@@ -153,7 +148,6 @@ public class MarketplaceLocationModel {
     public void setMarketplaceEndDate(Date value) {
         this.marketplaceEndDate = value;
     }
-
 
     private Date legislativeEffectiveDate;
 
@@ -175,7 +169,6 @@ public class MarketplaceLocationModel {
         this.legislativeEffectiveDate = value;
     }
 
-
     private Date enforcementDate;
 
     /**
@@ -195,7 +188,6 @@ public class MarketplaceLocationModel {
     public void setEnforcementDate(Date value) {
         this.enforcementDate = value;
     }
-
 
     private Date createdDate;
 
@@ -217,7 +209,6 @@ public class MarketplaceLocationModel {
         this.createdDate = value;
     }
 
-
     private Date modifiedDate;
 
     /**
@@ -237,7 +228,6 @@ public class MarketplaceLocationModel {
     public void setModifiedDate(Date value) {
         this.modifiedDate = value;
     }
-
 
     /**
      * Returns a JSON string representation of MarketplaceLocationModel

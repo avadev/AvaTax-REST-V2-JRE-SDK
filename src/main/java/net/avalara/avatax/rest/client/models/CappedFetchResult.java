@@ -26,47 +26,47 @@ import java.util.HashMap;
 /**
  * 
  */
-public class CappedFetchResult {
+public class CappedFetchResult<T> {
 
 
-    private Boolean isRecordsetCountCapped;
+    private Boolean @isRecordsetCountCapped;
 
     /**
-     * Getter for isRecordsetCountCapped
+     * Getter for @isRecordsetCountCapped
      *
      * 
      */
-    public Boolean getisRecordsetCountCapped() {
-        return this.isRecordsetCountCapped;
+    public Boolean get@isRecordsetCountCapped() {
+        return this.@isRecordsetCountCapped;
     }
 
     /**
-     * Setter for isRecordsetCountCapped
+     * Setter for @isRecordsetCountCapped
      *
      * 
      */
-    public void setisRecordsetCountCapped(Boolean value) {
-        this.isRecordsetCountCapped = value;
+    public void set@isRecordsetCountCapped(Boolean value) {
+        this.@isRecordsetCountCapped = value;
     }
 
-    private Integer recordsetCount;
+    private Integer @recordsetCount;
 
     /**
-     * Getter for recordsetCount
+     * Getter for @recordsetCount
      *
      * 
      */
-    public Integer getRecordsetCount() {
-        return this.recordsetCount;
+    public Integer get@recordsetCount() {
+        return this.@recordsetCount;
     }
 
     /**
-     * Setter for recordsetCount
+     * Setter for @recordsetCount
      *
      * 
      */
-    public void setRecordsetCount(Integer value) {
-        this.recordsetCount = value;
+    public void set@recordsetCount(Integer value) {
+        this.@recordsetCount = value;
     }
 
     private ArrayList<HashMap<String, String>> value;
@@ -89,24 +89,24 @@ public class CappedFetchResult {
         this.value = value;
     }
 
-    private String nextLink;
+    private String @nextLink;
 
     /**
-     * Getter for nextLink
+     * Getter for @nextLink
      *
      * 
      */
-    public String getNextLink() {
-        return this.nextLink;
+    public String get@nextLink() {
+        return this.@nextLink;
     }
 
     /**
-     * Setter for nextLink
+     * Setter for @nextLink
      *
      * 
      */
-    public void setNextLink(String value) {
-        this.nextLink = value;
+    public void set@nextLink(String value) {
+        this.@nextLink = value;
     }
 
     private String pageKey;

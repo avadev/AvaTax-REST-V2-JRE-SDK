@@ -49,7 +49,6 @@ public class BatchAdjustTransactionModel {
         this.companyCode = value;
     }
 
-
     private String transactionCode;
 
     /**
@@ -69,7 +68,6 @@ public class BatchAdjustTransactionModel {
     public void setTransactionCode(String value) {
         this.transactionCode = value;
     }
-
 
     private String documentType;
 
@@ -91,7 +89,6 @@ public class BatchAdjustTransactionModel {
         this.documentType = value;
     }
 
-
     private AdjustmentReason adjustmentReason;
 
     /**
@@ -111,7 +108,6 @@ public class BatchAdjustTransactionModel {
     public void setAdjustmentReason(AdjustmentReason value) {
         this.adjustmentReason = value;
     }
-
 
     private String adjustmentDescription;
 
@@ -137,7 +133,6 @@ public class BatchAdjustTransactionModel {
         this.adjustmentDescription = value;
     }
 
-
     private CreateTransactionModel newTransaction;
 
     /**
@@ -157,7 +152,6 @@ public class BatchAdjustTransactionModel {
     public void setNewTransaction(CreateTransactionModel value) {
         this.newTransaction = value;
     }
-
 
     /**
      * Returns a JSON string representation of BatchAdjustTransactionModel

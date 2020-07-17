@@ -49,7 +49,6 @@ public class FilingCalendarEditModel {
         this.fieldName = value;
     }
 
-
     private Integer questionId;
 
     /**
@@ -69,7 +68,6 @@ public class FilingCalendarEditModel {
     public void setQuestionId(Integer value) {
         this.questionId = value;
     }
-
 
     private HashMap<String, String> oldValue;
 
@@ -91,7 +89,6 @@ public class FilingCalendarEditModel {
         this.oldValue = value;
     }
 
-
     private HashMap<String, String> newValue;
 
     /**
@@ -111,7 +108,6 @@ public class FilingCalendarEditModel {
     public void setNewValue(HashMap<String, String> value) {
         this.newValue = value;
     }
-
 
     /**
      * Returns a JSON string representation of FilingCalendarEditModel

@@ -49,7 +49,6 @@ public class CompanyParameterDetailModel {
         this.id = value;
     }
 
-
     private Integer companyId;
 
     /**
@@ -69,7 +68,6 @@ public class CompanyParameterDetailModel {
     public void setCompanyId(Integer value) {
         this.companyId = value;
     }
-
 
     private String name;
 
@@ -91,7 +89,6 @@ public class CompanyParameterDetailModel {
         this.name = value;
     }
 
-
     private String value;
 
     /**
@@ -112,7 +109,6 @@ public class CompanyParameterDetailModel {
         this.value = value;
     }
 
-
     private String unit;
 
     /**
@@ -132,7 +128,6 @@ public class CompanyParameterDetailModel {
     public void setUnit(String value) {
         this.unit = value;
     }
-
 
     /**
      * Returns a JSON string representation of CompanyParameterDetailModel

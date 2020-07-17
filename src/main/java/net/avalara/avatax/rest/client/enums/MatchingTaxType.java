@@ -16,103 +16,101 @@ import java.util.HashMap;
  */
 
 /**
- * This data type is only used when an object must "Match" tax types. By specifying options here,
- *  you can indicate which tax types will match for the purposes of this object.
- *  For example, if you specify BothSalesAndUseTax, this value matches with both sales and seller's use tax.
+ * 
  */
 public enum MatchingTaxType {
     /** 
-     * Match medical excise type
+     * 
      */
     E(5),
 
     /** 
-     * Match Lodging tax type
+     * 
      */
     Lodging(6),
 
     /** 
-     * Match bottle tax type
+     * 
      */
     Bottle(7),
 
     /** 
-     * Match RentToOwn tax type
+     * 
      */
     RentToOwn(8),
 
     /** 
-     * Match all tax types
+     * 
      */
     All(65),
 
     /** 
-     * Match both Sales and Use Tax only
+     * 
      */
     BothSalesAndUseTax(66),
 
     /** 
-     * Match Consumer Use Tax only
+     * 
      */
     ConsumerUseTax(67),
 
     /** 
-     * Match both Consumer Use and Seller's Use Tax types
+     * 
      */
     ConsumersUseAndSellersUseTax(68),
 
     /** 
-     * Match both Consumer Use and Sales Tax types
+     * 
      */
     ConsumerUseAndSalesTax(69),
 
     /** 
-     * Match Fee tax types only
+     * 
      */
     Fee(70),
 
     /** 
-     * Match VAT Input Tax only
+     * 
      */
     VATInputTax(73),
 
     /** 
-     * LightBulbs tax type
+     * 
      */
     LightBulbs(76),
 
     /** 
-     * Match VAT Nonrecoverable Input Tax only
+     * 
      */
     VATNonrecoverableInputTax(78),
 
     /** 
-     * Match VAT Output Tax only
+     * 
      */
     VATOutputTax(79),
 
     /** 
-     * Match Rental tax types only
+     * 
      */
     Rental(82),
 
     /** 
-     * Match Sales Tax only
+     * 
      */
     SalesTax(83),
 
     /** 
-     * Match Seller's Use Tax only
+     * 
      */
     UseTax(85),
 
     /** 
-     * EWaste tax type
+     * 
      */
     EWaste(87),
 
     /** 
-     * Batteries tax type
+     * 
      */
     Batteries(90);
 

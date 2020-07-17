@@ -53,7 +53,6 @@ public class PreferredProgramModel {
         this.id = value;
     }
 
-
     private String code;
 
     /**
@@ -76,7 +75,6 @@ public class PreferredProgramModel {
         this.code = value;
     }
 
-
     private String originCountry;
 
     /**
@@ -97,7 +95,6 @@ public class PreferredProgramModel {
         this.originCountry = value;
     }
 
-
     private String destinationCountry;
 
     /**
@@ -117,7 +114,6 @@ public class PreferredProgramModel {
     public void setDestinationCountry(String value) {
         this.destinationCountry = value;
     }
-
 
     private Date effectiveDate;
 
@@ -141,7 +137,6 @@ public class PreferredProgramModel {
         this.effectiveDate = value;
     }
 
-
     private Date endDate;
 
     /**
@@ -163,7 +158,6 @@ public class PreferredProgramModel {
     public void setEndDate(Date value) {
         this.endDate = value;
     }
-
 
     /**
      * Returns a JSON string representation of PreferredProgramModel

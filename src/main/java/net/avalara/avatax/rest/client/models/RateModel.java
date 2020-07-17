@@ -49,7 +49,6 @@ public class RateModel {
         this.rate = value;
     }
 
-
     private String name;
 
     /**
@@ -70,7 +69,6 @@ public class RateModel {
         this.name = value;
     }
 
-
     private JurisdictionType type;
 
     /**
@@ -90,7 +88,6 @@ public class RateModel {
     public void setType(JurisdictionType value) {
         this.type = value;
     }
-
 
     /**
      * Returns a JSON string representation of RateModel

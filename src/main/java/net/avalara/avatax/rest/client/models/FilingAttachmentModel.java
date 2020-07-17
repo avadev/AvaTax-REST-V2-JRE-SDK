@@ -49,7 +49,6 @@ public class FilingAttachmentModel {
         this.resourceFileId = value;
     }
 
-
     private String description;
 
     /**
@@ -69,7 +68,6 @@ public class FilingAttachmentModel {
     public void setDescription(String value) {
         this.description = value;
     }
-
 
     /**
      * Returns a JSON string representation of FilingAttachmentModel

@@ -49,7 +49,6 @@ public class ContactModel {
         this.id = value;
     }
 
-
     private Integer companyId;
 
     /**
@@ -69,7 +68,6 @@ public class ContactModel {
     public void setCompanyId(Integer value) {
         this.companyId = value;
     }
-
 
     private String contactCode;
 
@@ -91,7 +89,6 @@ public class ContactModel {
         this.contactCode = value;
     }
 
-
     private String firstName;
 
     /**
@@ -111,7 +108,6 @@ public class ContactModel {
     public void setFirstName(String value) {
         this.firstName = value;
     }
-
 
     private String middleName;
 
@@ -133,7 +129,6 @@ public class ContactModel {
         this.middleName = value;
     }
 
-
     private String lastName;
 
     /**
@@ -153,7 +148,6 @@ public class ContactModel {
     public void setLastName(String value) {
         this.lastName = value;
     }
-
 
     private String title;
 
@@ -175,7 +169,6 @@ public class ContactModel {
         this.title = value;
     }
 
-
     private String line1;
 
     /**
@@ -195,7 +188,6 @@ public class ContactModel {
     public void setLine1(String value) {
         this.line1 = value;
     }
-
 
     private String line2;
 
@@ -217,7 +209,6 @@ public class ContactModel {
         this.line2 = value;
     }
 
-
     private String line3;
 
     /**
@@ -238,7 +229,6 @@ public class ContactModel {
         this.line3 = value;
     }
 
-
     private String city;
 
     /**
@@ -258,7 +248,6 @@ public class ContactModel {
     public void setCity(String value) {
         this.city = value;
     }
-
 
     private String region;
 
@@ -294,7 +283,6 @@ public class ContactModel {
         this.region = value;
     }
 
-
     private String postalCode;
 
     /**
@@ -314,7 +302,6 @@ public class ContactModel {
     public void setPostalCode(String value) {
         this.postalCode = value;
     }
-
 
     private String country;
 
@@ -352,7 +339,6 @@ public class ContactModel {
         this.country = value;
     }
 
-
     private String email;
 
     /**
@@ -372,7 +358,6 @@ public class ContactModel {
     public void setEmail(String value) {
         this.email = value;
     }
-
 
     private String phone;
 
@@ -394,7 +379,6 @@ public class ContactModel {
         this.phone = value;
     }
 
-
     private String mobile;
 
     /**
@@ -414,7 +398,6 @@ public class ContactModel {
     public void setMobile(String value) {
         this.mobile = value;
     }
-
 
     private String fax;
 
@@ -436,7 +419,6 @@ public class ContactModel {
         this.fax = value;
     }
 
-
     private Date createdDate;
 
     /**
@@ -456,7 +438,6 @@ public class ContactModel {
     public void setCreatedDate(Date value) {
         this.createdDate = value;
     }
-
 
     private Integer createdUserId;
 
@@ -478,7 +459,6 @@ public class ContactModel {
         this.createdUserId = value;
     }
 
-
     private Date modifiedDate;
 
     /**
@@ -499,7 +479,6 @@ public class ContactModel {
         this.modifiedDate = value;
     }
 
-
     private Integer modifiedUserId;
 
     /**
@@ -519,7 +498,6 @@ public class ContactModel {
     public void setModifiedUserId(Integer value) {
         this.modifiedUserId = value;
     }
-
 
     /**
      * Returns a JSON string representation of ContactModel

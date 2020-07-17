@@ -49,7 +49,6 @@ public class TaxSubTypeModel {
         this.id = value;
     }
 
-
     private String taxSubType;
 
     /**
@@ -69,7 +68,6 @@ public class TaxSubTypeModel {
     public void setTaxSubType(String value) {
         this.taxSubType = value;
     }
-
 
     private String description;
 
@@ -91,7 +89,6 @@ public class TaxSubTypeModel {
         this.description = value;
     }
 
-
     private String taxTypeGroup;
 
     /**
@@ -111,7 +108,6 @@ public class TaxSubTypeModel {
     public void setTaxTypeGroup(String value) {
         this.taxTypeGroup = value;
     }
-
 
     /**
      * Returns a JSON string representation of TaxSubTypeModel

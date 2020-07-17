@@ -49,7 +49,6 @@ public class CycleAddOptionModel {
         this.available = value;
     }
 
-
     private Date transactionalPeriodStart;
 
     /**
@@ -69,7 +68,6 @@ public class CycleAddOptionModel {
     public void setTransactionalPeriodStart(Date value) {
         this.transactionalPeriodStart = value;
     }
-
 
     private Date transactionalPeriodEnd;
 
@@ -91,7 +89,6 @@ public class CycleAddOptionModel {
         this.transactionalPeriodEnd = value;
     }
 
-
     private Date filingDueDate;
 
     /**
@@ -111,7 +108,6 @@ public class CycleAddOptionModel {
     public void setFilingDueDate(Date value) {
         this.filingDueDate = value;
     }
-
 
     private String cycleName;
 
@@ -133,7 +129,6 @@ public class CycleAddOptionModel {
         this.cycleName = value;
     }
 
-
     private String frequencyName;
 
     /**
@@ -153,7 +148,6 @@ public class CycleAddOptionModel {
     public void setFrequencyName(String value) {
         this.frequencyName = value;
     }
-
 
     private String filingFrequencyCode;
 
@@ -175,7 +169,6 @@ public class CycleAddOptionModel {
         this.filingFrequencyCode = value;
     }
 
-
     private FilingFrequencyId filingFrequencyId;
 
     /**
@@ -195,7 +188,6 @@ public class CycleAddOptionModel {
     public void setFilingFrequencyId(FilingFrequencyId value) {
         this.filingFrequencyId = value;
     }
-
 
     private String cycleUnavailableReason;
 
@@ -217,7 +209,6 @@ public class CycleAddOptionModel {
         this.cycleUnavailableReason = value;
     }
 
-
     private ArrayList<String> availableLocationCodes;
 
     /**
@@ -237,7 +228,6 @@ public class CycleAddOptionModel {
     public void setAvailableLocationCodes(ArrayList<String> value) {
         this.availableLocationCodes = value;
     }
-
 
     /**
      * Returns a JSON string representation of CycleAddOptionModel

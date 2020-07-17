@@ -16,16 +16,16 @@ import java.util.HashMap;
  */
 
 /**
- * Exempt Cert type
+ * 
  */
 public enum ExemptCertTypeId {
     /** 
-     * Blanked certificate
+     * 
      */
     Blanket(0),
 
     /** 
-     * Single use
+     * 
      */
     SingleUse(1);
 
