@@ -58,7 +58,6 @@ public class NewAccountRequestModel {
         this.offer = value;
     }
 
-
     private String connectorId;
 
     /**
@@ -78,7 +77,6 @@ public class NewAccountRequestModel {
     public void setConnectorId(String value) {
         this.connectorId = value;
     }
-
 
     private String campaign;
 
@@ -110,7 +108,6 @@ public class NewAccountRequestModel {
         this.campaign = value;
     }
 
-
     private String leadSource;
 
     /**
@@ -141,7 +138,6 @@ public class NewAccountRequestModel {
         this.leadSource = value;
     }
 
-
     private Date effectiveDate;
 
     /**
@@ -165,7 +161,6 @@ public class NewAccountRequestModel {
     public void setEffectiveDate(Date value) {
         this.effectiveDate = value;
     }
-
 
     private Date endDate;
 
@@ -191,7 +186,6 @@ public class NewAccountRequestModel {
         this.endDate = value;
     }
 
-
     private String accountName;
 
     /**
@@ -211,7 +205,6 @@ public class NewAccountRequestModel {
     public void setAccountName(String value) {
         this.accountName = value;
     }
-
 
     private String website;
 
@@ -239,7 +232,6 @@ public class NewAccountRequestModel {
         this.website = value;
     }
 
-
     private String paymentMethodId;
 
     /**
@@ -266,7 +258,6 @@ public class NewAccountRequestModel {
         this.paymentMethodId = value;
     }
 
-
     private String firstName;
 
     /**
@@ -286,7 +277,6 @@ public class NewAccountRequestModel {
     public void setFirstName(String value) {
         this.firstName = value;
     }
-
 
     private String lastName;
 
@@ -308,7 +298,6 @@ public class NewAccountRequestModel {
         this.lastName = value;
     }
 
-
     private String title;
 
     /**
@@ -328,7 +317,6 @@ public class NewAccountRequestModel {
     public void setTitle(String value) {
         this.title = value;
     }
-
 
     private String phoneNumber;
 
@@ -350,7 +338,6 @@ public class NewAccountRequestModel {
         this.phoneNumber = value;
     }
 
-
     private String email;
 
     /**
@@ -370,7 +357,6 @@ public class NewAccountRequestModel {
     public void setEmail(String value) {
         this.email = value;
     }
-
 
     private String userPassword;
 
@@ -400,7 +386,6 @@ public class NewAccountRequestModel {
         this.userPassword = value;
     }
 
-
     private String welcomeEmail;
 
     /**
@@ -429,7 +414,6 @@ public class NewAccountRequestModel {
         this.welcomeEmail = value;
     }
 
-
     private CompanyAddress companyAddress;
 
     /**
@@ -449,7 +433,6 @@ public class NewAccountRequestModel {
     public void setCompanyAddress(CompanyAddress value) {
         this.companyAddress = value;
     }
-
 
     private String companyCode;
 
@@ -475,7 +458,6 @@ public class NewAccountRequestModel {
         this.companyCode = value;
     }
 
-
     private ArrayList<String> properties;
 
     /**
@@ -495,7 +477,6 @@ public class NewAccountRequestModel {
     public void setProperties(ArrayList<String> value) {
         this.properties = value;
     }
-
 
     private Boolean acceptAvalaraTermsAndConditions;
 
@@ -521,7 +502,6 @@ public class NewAccountRequestModel {
         this.acceptAvalaraTermsAndConditions = value;
     }
 
-
     private Boolean haveReadAvalaraTermsAndConditions;
 
     /**
@@ -546,7 +526,6 @@ public class NewAccountRequestModel {
         this.haveReadAvalaraTermsAndConditions = value;
     }
 
-
     private HashMap<String, String> marketingContext;
 
     /**
@@ -567,7 +546,6 @@ public class NewAccountRequestModel {
         this.marketingContext = value;
     }
 
-
     private AccountTypeId accountType;
 
     /**
@@ -587,7 +565,6 @@ public class NewAccountRequestModel {
     public void setAccountType(AccountTypeId value) {
         this.accountType = value;
     }
-
 
     private String taxPayerIdNumber;
 
@@ -612,7 +589,6 @@ public class NewAccountRequestModel {
     public void setTaxPayerIdNumber(String value) {
         this.taxPayerIdNumber = value;
     }
-
 
     /**
      * Returns a JSON string representation of NewAccountRequestModel

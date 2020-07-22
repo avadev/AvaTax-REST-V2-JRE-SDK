@@ -49,7 +49,6 @@ public class FilingsTaxSummaryModel {
         this.salesAmount = value;
     }
 
-
     private BigDecimal taxableAmount;
 
     /**
@@ -69,7 +68,6 @@ public class FilingsTaxSummaryModel {
     public void setTaxableAmount(BigDecimal value) {
         this.taxableAmount = value;
     }
-
 
     private BigDecimal nonTaxableAmount;
 
@@ -91,7 +89,6 @@ public class FilingsTaxSummaryModel {
         this.nonTaxableAmount = value;
     }
 
-
     private BigDecimal taxAmount;
 
     /**
@@ -111,7 +108,6 @@ public class FilingsTaxSummaryModel {
     public void setTaxAmount(BigDecimal value) {
         this.taxAmount = value;
     }
-
 
     private BigDecimal remittanceAmount;
 
@@ -133,7 +129,6 @@ public class FilingsTaxSummaryModel {
         this.remittanceAmount = value;
     }
 
-
     private BigDecimal collectAmount;
 
     /**
@@ -153,7 +148,6 @@ public class FilingsTaxSummaryModel {
     public void setCollectAmount(BigDecimal value) {
         this.collectAmount = value;
     }
-
 
     private BigDecimal salesAccrualAmount;
 
@@ -175,7 +169,6 @@ public class FilingsTaxSummaryModel {
         this.salesAccrualAmount = value;
     }
 
-
     private BigDecimal taxableAccrualAmount;
 
     /**
@@ -195,7 +188,6 @@ public class FilingsTaxSummaryModel {
     public void setTaxableAccrualAmount(BigDecimal value) {
         this.taxableAccrualAmount = value;
     }
-
 
     private BigDecimal nonTaxableAccrualAmount;
 
@@ -217,7 +209,6 @@ public class FilingsTaxSummaryModel {
         this.nonTaxableAccrualAmount = value;
     }
 
-
     private BigDecimal taxAccrualAmount;
 
     /**
@@ -238,6 +229,85 @@ public class FilingsTaxSummaryModel {
         this.taxAccrualAmount = value;
     }
 
+    private BigDecimal reportableSalesAmount;
+
+    /**
+     * Getter for reportableSalesAmount
+     *
+     * reportableSalesAmount
+     */
+    public BigDecimal getReportableSalesAmount() {
+        return this.reportableSalesAmount;
+    }
+
+    /**
+     * Setter for reportableSalesAmount
+     *
+     * reportableSalesAmount
+     */
+    public void setReportableSalesAmount(BigDecimal value) {
+        this.reportableSalesAmount = value;
+    }
+
+    private BigDecimal reportableNonTaxableAmount;
+
+    /**
+     * Getter for reportableNonTaxableAmount
+     *
+     * reportableNonTaxableAmount
+     */
+    public BigDecimal getReportableNonTaxableAmount() {
+        return this.reportableNonTaxableAmount;
+    }
+
+    /**
+     * Setter for reportableNonTaxableAmount
+     *
+     * reportableNonTaxableAmount
+     */
+    public void setReportableNonTaxableAmount(BigDecimal value) {
+        this.reportableNonTaxableAmount = value;
+    }
+
+    private BigDecimal reportableTaxableAmount;
+
+    /**
+     * Getter for reportableTaxableAmount
+     *
+     * reportableTaxableAmount
+     */
+    public BigDecimal getReportableTaxableAmount() {
+        return this.reportableTaxableAmount;
+    }
+
+    /**
+     * Setter for reportableTaxableAmount
+     *
+     * reportableTaxableAmount
+     */
+    public void setReportableTaxableAmount(BigDecimal value) {
+        this.reportableTaxableAmount = value;
+    }
+
+    private BigDecimal reportableTaxAmount;
+
+    /**
+     * Getter for reportableTaxAmount
+     *
+     * reportableTaxAmount
+     */
+    public BigDecimal getReportableTaxAmount() {
+        return this.reportableTaxAmount;
+    }
+
+    /**
+     * Setter for reportableTaxAmount
+     *
+     * reportableTaxAmount
+     */
+    public void setReportableTaxAmount(BigDecimal value) {
+        this.reportableTaxAmount = value;
+    }
 
     /**
      * Returns a JSON string representation of FilingsTaxSummaryModel

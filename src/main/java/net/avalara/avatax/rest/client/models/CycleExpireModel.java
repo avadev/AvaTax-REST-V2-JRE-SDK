@@ -51,7 +51,6 @@ public class CycleExpireModel {
         this.success = value;
     }
 
-
     private String message;
 
     /**
@@ -72,7 +71,6 @@ public class CycleExpireModel {
         this.message = value;
     }
 
-
     private ArrayList<CycleExpireOptionModel> cycleExpirationOptions;
 
     /**
@@ -92,7 +90,6 @@ public class CycleExpireModel {
     public void setCycleExpirationOptions(ArrayList<CycleExpireOptionModel> value) {
         this.cycleExpirationOptions = value;
     }
-
 
     /**
      * Returns a JSON string representation of CycleExpireModel

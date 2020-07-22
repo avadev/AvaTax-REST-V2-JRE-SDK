@@ -32,27 +32,27 @@ public class CappedFetchResult {
     private Boolean isRecordsetCountCapped;
 
     /**
-     * Getter for isRecordsetCountCapped
+     * Getter for @isRecordsetCountCapped
      *
      * 
      */
-    public Boolean getisRecordsetCountCapped() {
+    public Boolean getIsRecordsetCountCapped() {
         return this.isRecordsetCountCapped;
     }
 
     /**
-     * Setter for isRecordsetCountCapped
+     * Setter for @isRecordsetCountCapped
      *
      * 
      */
-    public void setisRecordsetCountCapped(Boolean value) {
+    public void setIsRecordsetCountCapped(Boolean value) {
         this.isRecordsetCountCapped = value;
     }
 
     private Integer recordsetCount;
 
     /**
-     * Getter for recordsetCount
+     * Getter for @recordsetCount
      *
      * 
      */
@@ -61,7 +61,7 @@ public class CappedFetchResult {
     }
 
     /**
-     * Setter for recordsetCount
+     * Setter for @recordsetCount
      *
      * 
      */
@@ -92,7 +92,7 @@ public class CappedFetchResult {
     private String nextLink;
 
     /**
-     * Getter for nextLink
+     * Getter for @nextLink
      *
      * 
      */
@@ -101,7 +101,7 @@ public class CappedFetchResult {
     }
 
     /**
-     * Setter for nextLink
+     * Setter for @nextLink
      *
      * 
      */

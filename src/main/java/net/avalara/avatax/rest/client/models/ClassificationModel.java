@@ -49,7 +49,6 @@ public class ClassificationModel {
         this.productCode = value;
     }
 
-
     private String systemCode;
 
     /**
@@ -69,7 +68,6 @@ public class ClassificationModel {
     public void setSystemCode(String value) {
         this.systemCode = value;
     }
-
 
     /**
      * Returns a JSON string representation of ClassificationModel

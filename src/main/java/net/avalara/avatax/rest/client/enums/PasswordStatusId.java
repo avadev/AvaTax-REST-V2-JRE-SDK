@@ -16,21 +16,21 @@ import java.util.HashMap;
  */
 
 /**
- * PasswordStatusId
+ * 
  */
 public enum PasswordStatusId {
     /** 
-     * UserCannotChange
+     * 
      */
     UserCannotChange(0),
 
     /** 
-     * UserCanChange
+     * 
      */
     UserCanChange(1),
 
     /** 
-     * UserMustChange
+     * 
      */
     UserMustChange(2);
 

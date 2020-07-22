@@ -49,7 +49,6 @@ public class DeleteErrorTransactionsRequestModel {
         this.models = value;
     }
 
-
     /**
      * Returns a JSON string representation of DeleteErrorTransactionsRequestModel
      */

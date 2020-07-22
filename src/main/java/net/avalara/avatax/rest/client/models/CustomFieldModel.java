@@ -54,7 +54,6 @@ public class CustomFieldModel {
         this.name = value;
     }
 
-
     private String value;
 
     /**
@@ -74,7 +73,6 @@ public class CustomFieldModel {
     public void setValue(String value) {
         this.value = value;
     }
-
 
     /**
      * Returns a JSON string representation of CustomFieldModel

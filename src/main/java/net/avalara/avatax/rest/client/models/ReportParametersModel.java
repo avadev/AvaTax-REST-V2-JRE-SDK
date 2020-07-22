@@ -49,7 +49,6 @@ public class ReportParametersModel {
         this.startDate = value;
     }
 
-
     private Date endDate;
 
     /**
@@ -69,7 +68,6 @@ public class ReportParametersModel {
     public void setEndDate(Date value) {
         this.endDate = value;
     }
-
 
     private String country;
 
@@ -91,7 +89,6 @@ public class ReportParametersModel {
         this.country = value;
     }
 
-
     private String state;
 
     /**
@@ -111,7 +108,6 @@ public class ReportParametersModel {
     public void setState(String value) {
         this.state = value;
     }
-
 
     private String dateFilter;
 
@@ -133,7 +129,6 @@ public class ReportParametersModel {
         this.dateFilter = value;
     }
 
-
     private String docType;
 
     /**
@@ -153,7 +148,6 @@ public class ReportParametersModel {
     public void setDocType(String value) {
         this.docType = value;
     }
-
 
     private String dateFormat;
 
@@ -175,7 +169,6 @@ public class ReportParametersModel {
         this.dateFormat = value;
     }
 
-
     private String culture;
 
     /**
@@ -196,7 +189,6 @@ public class ReportParametersModel {
         this.culture = value;
     }
 
-
     private String currencyCode;
 
     /**
@@ -216,7 +208,6 @@ public class ReportParametersModel {
     public void setCurrencyCode(String value) {
         this.currencyCode = value;
     }
-
 
     /**
      * Returns a JSON string representation of ReportParametersModel

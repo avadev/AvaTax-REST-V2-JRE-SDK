@@ -49,7 +49,6 @@ public class FilingAnswerModel {
         this.filingQuestionId = value;
     }
 
-
     private HashMap<String, String> answer;
 
     /**
@@ -69,7 +68,6 @@ public class FilingAnswerModel {
     public void setAnswer(HashMap<String, String> value) {
         this.answer = value;
     }
-
 
     /**
      * Returns a JSON string representation of FilingAnswerModel

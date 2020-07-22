@@ -49,7 +49,6 @@ public class FilingsCheckupSuggestedFormModel {
         this.taxAuthorityId = value;
     }
 
-
     private String country;
 
     /**
@@ -69,7 +68,6 @@ public class FilingsCheckupSuggestedFormModel {
     public void setCountry(String value) {
         this.country = value;
     }
-
 
     private String region;
 
@@ -91,7 +89,6 @@ public class FilingsCheckupSuggestedFormModel {
         this.region = value;
     }
 
-
     private String taxFormCode;
 
     /**
@@ -112,7 +109,6 @@ public class FilingsCheckupSuggestedFormModel {
         this.taxFormCode = value;
     }
 
-
     private String returnName;
 
     /**
@@ -132,7 +128,6 @@ public class FilingsCheckupSuggestedFormModel {
     public void setReturnName(String value) {
         this.returnName = value;
     }
-
 
     /**
      * Returns a JSON string representation of FilingsCheckupSuggestedFormModel

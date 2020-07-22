@@ -16,16 +16,16 @@ import java.util.HashMap;
  */
 
 /**
- * Represents a error code message
+ * 
  */
 public enum ErrorCodeId {
     /** 
-     * Server has a configuration or setup problem
+     * 
      */
     ServerConfiguration(1),
 
     /** 
-     * User doesn't have rights to this account or company
+     * 
      */
     AccountInvalidException(2),
 
@@ -35,7 +35,7 @@ public enum ErrorCodeId {
     CompanyInvalidException(3),
 
     /** 
-     * Use this error message when the user is trying to fetch a single object and the object either does not exist or cannot be seen by the current user.
+     * 
      */
     EntityNotFoundError(4),
 
@@ -730,8 +730,7 @@ public enum ErrorCodeId {
     QueryParameterOutOfRange(199),
 
     /** 
-     * Batch errors
-     *  New batch error codes continue at 2501
+     * 
      */
     BatchSalesAuditMustBeZippedError(200),
 
@@ -776,12 +775,12 @@ public enum ErrorCodeId {
     BatchCannotBeDeletedWhileProcessing(208),
 
     /** 
-     * BizTech error
+     * 
      */
     InternalServerError(209),
 
     /** 
-     * Point Of Sale API exceptions
+     * 
      */
     PointOfSaleFileSize(250),
 
@@ -796,7 +795,7 @@ public enum ErrorCodeId {
     InvalidInputDate(252),
 
     /** 
-     * Errors in Soap V1 Passthrough / GetTax calls
+     * 
      */
     GetTaxError(300),
 
@@ -866,7 +865,7 @@ public enum ErrorCodeId {
     InvalidPostalCode(317),
 
     /** 
-     * Subscription error codes
+     * 
      */
     InvalidSubscriptionDescription(318),
 
@@ -876,22 +875,22 @@ public enum ErrorCodeId {
     InvalidSubscriptionTypeId(319),
 
     /** 
-     * Represents a malformed document fetch command
+     * 
      */
     CannotChangeFilingStatus(401),
 
     /** 
-     * Represents a FEIN in incorrect format.
+     * 
      */
     FEINFormatError(402),
 
     /** 
-     * Represents a SQL server timeout error / deadlock error
+     * 
      */
     ServerUnreachable(500),
 
     /** 
-     * Partner API error codes
+     * 
      */
     SubscriptionRequired(600),
 
@@ -941,7 +940,7 @@ public enum ErrorCodeId {
     LicenseKeyNameAlreadyExistsForAccount(612),
 
     /** 
-     * Refund API error codes
+     * 
      */
     RefundTypeAndPercentageMismatch(701),
 
@@ -986,7 +985,7 @@ public enum ErrorCodeId {
     RefundPercentageMissing(709),
 
     /** 
-     * Free API error codes
+     * 
      */
     MustUseCreateTransaction(800),
 
@@ -996,7 +995,7 @@ public enum ErrorCodeId {
     MustAcceptTermsAndConditions(801),
 
     /** 
-     * Filing Calendar Error Codes
+     * 
      */
     FilingCalendarCannotBeDeleted(900),
 
@@ -1021,7 +1020,7 @@ public enum ErrorCodeId {
     FilingCalendarCannotBeEdited(904),
 
     /** 
-     * Create or update transaction error codes
+     * 
      */
     CannotModifyLockedTransaction(1100),
 
@@ -1056,7 +1055,7 @@ public enum ErrorCodeId {
     ShipToRegionRequiredWithDataSource(1106),
 
     /** 
-     * Exempt cert error codes
+     * 
      */
     InvalidBusinessType(1200),
 
@@ -1161,7 +1160,7 @@ public enum ErrorCodeId {
     EcmsSstCertsRequired(1223),
 
     /** 
-     * Multi document error codes
+     * 
      */
     TransactionNotCancelled(1300),
 
@@ -1221,7 +1220,7 @@ public enum ErrorCodeId {
     InvalidDocumentStatus(1314),
 
     /** 
-     * Communications Tax error codes
+     * 
      */
     CommsConfigClientIdMissing(1400),
 
@@ -1231,12 +1230,12 @@ public enum ErrorCodeId {
     CommsConfigClientIdBadValue(1401),
 
     /** 
-     * Account Activate error codes
+     * 
      */
     AccountInNewStatusException(1404),
 
     /** 
-     * Worksheet Exception
+     * 
      */
     WorksheetException(1405),
 
@@ -1271,7 +1270,7 @@ public enum ErrorCodeId {
     FieldNotOrderableError(1411),
 
     /** 
-     * Nexus validation error codes
+     * 
      */
     CannotDeleteParentBeforeChildNexus(1500),
 
@@ -1281,7 +1280,7 @@ public enum ErrorCodeId {
     NexusChildDateMismatch(1501),
 
     /** 
-     * Remote validation Error
+     * 
      */
     RemoteValidationError(1502),
 
@@ -1296,7 +1295,7 @@ public enum ErrorCodeId {
     InvalidLocalNexusTypeId(1504),
 
     /** 
-     * Advanced rule errors
+     * 
      */
     AdvancedRuleRequestRuleError(1602),
 
@@ -1311,7 +1310,7 @@ public enum ErrorCodeId {
     AdvancedRuleError(1605),
 
     /** 
-     * Miscellaneous
+     * 
      */
     TaxRuleRequiresNexus(1701),
 
@@ -1391,7 +1390,7 @@ public enum ErrorCodeId {
     RateLimitExceededError(1723),
 
     /** 
-     * SendSales API errors
+     * 
      */
     UnsupportedFileFormat(1800),
 
@@ -1401,7 +1400,7 @@ public enum ErrorCodeId {
     UnsupportedOutputFileType(1801),
 
     /** 
-     * TaxProfile API errors
+     * 
      */
     TaxProfileNotProvided(1900),
 
@@ -1421,12 +1420,12 @@ public enum ErrorCodeId {
     ErrorReadingTaxProfileEntry(1903),
 
     /** 
-     * AuditAccount API errors
+     * 
      */
     TraceDataNotAvailable(2000),
 
     /** 
-     * Item and Nexus parameter errors
+     * 
      */
     InvalidParameterUnitMeasurementType(2100),
 
@@ -1451,7 +1450,7 @@ public enum ErrorCodeId {
     SubscriptionRequiredForParameter(2104),
 
     /** 
-     * Accounting Firm errors
+     * 
      */
     InvalidAccountType(2105),
 
@@ -1461,7 +1460,7 @@ public enum ErrorCodeId {
     InvalidFirmSubscriptions(2106),
 
     /** 
-     * Certify Company Errors
+     * 
      */
     GenericTaxCodeForItem(2200),
 
@@ -1561,7 +1560,7 @@ public enum ErrorCodeId {
     NoShippingCharge(2219),
 
     /** 
-     * Company Controller Related Errors
+     * 
      */
     FailedToUpdateCompanyLocation(2314),
 
@@ -1571,7 +1570,7 @@ public enum ErrorCodeId {
     CompanyLocationDateRangeOverlap(2315),
 
     /** 
-     * Generic validation errors
+     * 
      */
     FieldLengthError(2400),
 
@@ -1586,8 +1585,7 @@ public enum ErrorCodeId {
     CannotCreateNestedObjects(2402),
 
     /** 
-     * Batch errors
-     *  For other batch errors, see: 200 - 208 above
+     * 
      */
     BatchTransactionTypeError(2501),
 

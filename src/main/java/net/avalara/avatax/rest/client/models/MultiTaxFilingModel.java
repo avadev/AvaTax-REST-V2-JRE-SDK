@@ -49,7 +49,6 @@ public class MultiTaxFilingModel {
         this.id = value;
     }
 
-
     private Integer companyId;
 
     /**
@@ -69,7 +68,6 @@ public class MultiTaxFilingModel {
     public void setCompanyId(Integer value) {
         this.companyId = value;
     }
-
 
     private Integer month;
 
@@ -95,7 +93,6 @@ public class MultiTaxFilingModel {
         this.month = value;
     }
 
-
     private Short year;
 
     /**
@@ -120,7 +117,6 @@ public class MultiTaxFilingModel {
         this.year = value;
     }
 
-
     private WorksheetTypeId type;
 
     /**
@@ -140,7 +136,6 @@ public class MultiTaxFilingModel {
     public void setType(WorksheetTypeId value) {
         this.type = value;
     }
-
 
     private FilingsTaxSummaryModel taxSummary;
 
@@ -162,7 +157,6 @@ public class MultiTaxFilingModel {
         this.taxSummary = value;
     }
 
-
     private ArrayList<FilingsTaxDetailsModel> taxDetails;
 
     /**
@@ -183,7 +177,6 @@ public class MultiTaxFilingModel {
         this.taxDetails = value;
     }
 
-
     private ArrayList<MultiTaxFilingRegionModel> filingRegions;
 
     /**
@@ -203,7 +196,6 @@ public class MultiTaxFilingModel {
     public void setFilingRegions(ArrayList<MultiTaxFilingRegionModel> value) {
         this.filingRegions = value;
     }
-
 
     /**
      * Returns a JSON string representation of MultiTaxFilingModel

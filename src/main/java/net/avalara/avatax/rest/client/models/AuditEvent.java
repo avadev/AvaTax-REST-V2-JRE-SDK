@@ -49,7 +49,6 @@ public class AuditEvent {
         this.auditEventId = value;
     }
 
-
     private Long transactionId;
 
     /**
@@ -69,7 +68,6 @@ public class AuditEvent {
     public void setTransactionId(Long value) {
         this.transactionId = value;
     }
-
 
     private Integer auditEventLevelId;
 
@@ -91,7 +89,6 @@ public class AuditEvent {
         this.auditEventLevelId = value;
     }
 
-
     private Date eventTimestamp;
 
     /**
@@ -111,7 +108,6 @@ public class AuditEvent {
     public void setEventTimestamp(Date value) {
         this.eventTimestamp = value;
     }
-
 
     private String source;
 
@@ -133,7 +129,6 @@ public class AuditEvent {
         this.source = value;
     }
 
-
     private String summary;
 
     /**
@@ -154,7 +149,6 @@ public class AuditEvent {
         this.summary = value;
     }
 
-
     private String details;
 
     /**
@@ -174,7 +168,6 @@ public class AuditEvent {
     public void setDetails(String value) {
         this.details = value;
     }
-
 
     /**
      * Returns a JSON string representation of AuditEvent

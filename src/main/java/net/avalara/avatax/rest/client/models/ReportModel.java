@@ -49,7 +49,6 @@ public class ReportModel {
         this.id = value;
     }
 
-
     private Integer accountId;
 
     /**
@@ -69,7 +68,6 @@ public class ReportModel {
     public void setAccountId(Integer value) {
         this.accountId = value;
     }
-
 
     private Integer companyId;
 
@@ -91,7 +89,6 @@ public class ReportModel {
         this.companyId = value;
     }
 
-
     private String reportType;
 
     /**
@@ -111,7 +108,6 @@ public class ReportModel {
     public void setReportType(String value) {
         this.reportType = value;
     }
-
 
     private ReportParametersModel parameters;
 
@@ -133,7 +129,6 @@ public class ReportModel {
         this.parameters = value;
     }
 
-
     private String status;
 
     /**
@@ -153,7 +148,6 @@ public class ReportModel {
     public void setStatus(String value) {
         this.status = value;
     }
-
 
     private Long size;
 
@@ -175,7 +169,6 @@ public class ReportModel {
         this.size = value;
     }
 
-
     private String format;
 
     /**
@@ -195,7 +188,6 @@ public class ReportModel {
     public void setFormat(String value) {
         this.format = value;
     }
-
 
     private String file;
 
@@ -217,7 +209,6 @@ public class ReportModel {
         this.file = value;
     }
 
-
     private Date createdDate;
 
     /**
@@ -237,7 +228,6 @@ public class ReportModel {
     public void setCreatedDate(Date value) {
         this.createdDate = value;
     }
-
 
     private Integer createdUserId;
 
@@ -259,7 +249,6 @@ public class ReportModel {
         this.createdUserId = value;
     }
 
-
     private String createdUser;
 
     /**
@@ -280,7 +269,6 @@ public class ReportModel {
         this.createdUser = value;
     }
 
-
     private Date completedDate;
 
     /**
@@ -300,7 +288,6 @@ public class ReportModel {
     public void setCompletedDate(Date value) {
         this.completedDate = value;
     }
-
 
     /**
      * Returns a JSON string representation of ReportModel

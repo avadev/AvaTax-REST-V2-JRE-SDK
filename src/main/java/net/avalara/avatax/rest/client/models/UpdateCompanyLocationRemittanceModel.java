@@ -49,7 +49,6 @@ public class UpdateCompanyLocationRemittanceModel {
         this.addressCategoryId = value;
     }
 
-
     private Date effectiveDate;
 
     /**
@@ -70,7 +69,6 @@ public class UpdateCompanyLocationRemittanceModel {
         this.effectiveDate = value;
     }
 
-
     private Date endDate;
 
     /**
@@ -90,7 +88,6 @@ public class UpdateCompanyLocationRemittanceModel {
     public void setEndDate(Date value) {
         this.endDate = value;
     }
-
 
     /**
      * Returns a JSON string representation of UpdateCompanyLocationRemittanceModel

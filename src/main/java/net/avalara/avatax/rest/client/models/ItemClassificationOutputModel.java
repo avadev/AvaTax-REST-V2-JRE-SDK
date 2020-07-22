@@ -49,7 +49,6 @@ public class ItemClassificationOutputModel {
         this.id = value;
     }
 
-
     private Long itemId;
 
     /**
@@ -69,7 +68,6 @@ public class ItemClassificationOutputModel {
     public void setItemId(Long value) {
         this.itemId = value;
     }
-
 
     private Integer systemId;
 
@@ -91,7 +89,6 @@ public class ItemClassificationOutputModel {
         this.systemId = value;
     }
 
-
     private String productCode;
 
     /**
@@ -112,7 +109,6 @@ public class ItemClassificationOutputModel {
         this.productCode = value;
     }
 
-
     private String systemCode;
 
     /**
@@ -132,7 +128,6 @@ public class ItemClassificationOutputModel {
     public void setSystemCode(String value) {
         this.systemCode = value;
     }
-
 
     /**
      * Returns a JSON string representation of ItemClassificationOutputModel

@@ -16,26 +16,26 @@ import java.util.HashMap;
  */
 
 /**
- * Severity level of a notification.
+ * 
  */
 public enum NotificationSeverityLevel {
     /** 
-     * Low priority notification, Default.
+     * 
      */
     Neutral(0),
 
     /** 
-     * Medium priority notification.
+     * 
      */
     Advisory(1),
 
     /** 
-     * High priority notification.
+     * 
      */
     Blocking(2),
 
     /** 
-     * A completed notification
+     * 
      */
     Complete(-1);
 

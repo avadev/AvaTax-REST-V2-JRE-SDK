@@ -51,7 +51,6 @@ public class CertificateAttributeModel {
         this.id = value;
     }
 
-
     private String name;
 
     /**
@@ -72,7 +71,6 @@ public class CertificateAttributeModel {
         this.name = value;
     }
 
-
     private String description;
 
     /**
@@ -92,7 +90,6 @@ public class CertificateAttributeModel {
     public void setDescription(String value) {
         this.description = value;
     }
-
 
     private Boolean isSystemCode;
 
@@ -115,7 +112,6 @@ public class CertificateAttributeModel {
     public void setIsSystemCode(Boolean value) {
         this.isSystemCode = value;
     }
-
 
     /**
      * Returns a JSON string representation of CertificateAttributeModel

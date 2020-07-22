@@ -49,7 +49,6 @@ public class AccountLicenseKeyModel {
         this.name = value;
     }
 
-
     private Integer accountId;
 
     /**
@@ -69,7 +68,6 @@ public class AccountLicenseKeyModel {
     public void setAccountId(Integer value) {
         this.accountId = value;
     }
-
 
     private Date createdDate;
 
@@ -91,7 +89,6 @@ public class AccountLicenseKeyModel {
         this.createdDate = value;
     }
 
-
     private Integer createdUserId;
 
     /**
@@ -111,7 +108,6 @@ public class AccountLicenseKeyModel {
     public void setCreatedUserId(Integer value) {
         this.createdUserId = value;
     }
-
 
     private Date modifiedDate;
 
@@ -133,7 +129,6 @@ public class AccountLicenseKeyModel {
         this.modifiedDate = value;
     }
 
-
     private Integer modifiedUserId;
 
     /**
@@ -153,7 +148,6 @@ public class AccountLicenseKeyModel {
     public void setModifiedUserId(Integer value) {
         this.modifiedUserId = value;
     }
-
 
     /**
      * Returns a JSON string representation of AccountLicenseKeyModel

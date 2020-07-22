@@ -16,26 +16,26 @@ import java.util.HashMap;
  */
 
 /**
- * Comment Types
+ * 
  */
 public enum CommentType {
     /** 
-     * Internal comments are those comments only intended to be for compliance users
+     * 
      */
     Internal(1),
 
     /** 
-     * Customer comments are those comments that both compliance and the customer can read
+     * 
      */
     Customer(2),
 
     /** 
-     * A comment that has a POA Attachment on it
+     * 
      */
     POAAttachment(3),
 
     /** 
-     * Used when creating Notice Comments in Returns Console
+     * 
      */
     NoticeVoucher(4);
 

@@ -49,7 +49,6 @@ public class CreateOrAdjustTransactionModel {
         this.adjustmentReason = value;
     }
 
-
     private String adjustmentDescription;
 
     /**
@@ -73,7 +72,6 @@ public class CreateOrAdjustTransactionModel {
     public void setAdjustmentDescription(String value) {
         this.adjustmentDescription = value;
     }
-
 
     private CreateTransactionModel createTransactionModel;
 
@@ -100,7 +98,6 @@ public class CreateOrAdjustTransactionModel {
     public void setCreateTransactionModel(CreateTransactionModel value) {
         this.createTransactionModel = value;
     }
-
 
     /**
      * Returns a JSON string representation of CreateOrAdjustTransactionModel

@@ -51,7 +51,6 @@ public class LockTransactionModel {
         this.isLocked = value;
     }
 
-
     /**
      * Returns a JSON string representation of LockTransactionModel
      */

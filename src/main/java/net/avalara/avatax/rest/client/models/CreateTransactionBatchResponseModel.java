@@ -49,7 +49,6 @@ public class CreateTransactionBatchResponseModel {
         this.id = value;
     }
 
-
     private String name;
 
     /**
@@ -69,7 +68,6 @@ public class CreateTransactionBatchResponseModel {
     public void setName(String value) {
         this.name = value;
     }
-
 
     private Integer accountId;
 
@@ -91,7 +89,6 @@ public class CreateTransactionBatchResponseModel {
         this.accountId = value;
     }
 
-
     private Integer companyId;
 
     /**
@@ -111,7 +108,6 @@ public class CreateTransactionBatchResponseModel {
     public void setCompanyId(Integer value) {
         this.companyId = value;
     }
-
 
     private BatchStatus status;
 
@@ -133,7 +129,6 @@ public class CreateTransactionBatchResponseModel {
         this.status = value;
     }
 
-
     private Date startedDate;
 
     /**
@@ -153,7 +148,6 @@ public class CreateTransactionBatchResponseModel {
     public void setStartedDate(Date value) {
         this.startedDate = value;
     }
-
 
     private Integer recordCount;
 
@@ -175,7 +169,6 @@ public class CreateTransactionBatchResponseModel {
         this.recordCount = value;
     }
 
-
     private Integer currentRecord;
 
     /**
@@ -195,7 +188,6 @@ public class CreateTransactionBatchResponseModel {
     public void setCurrentRecord(Integer value) {
         this.currentRecord = value;
     }
-
 
     private Date completedDate;
 
@@ -217,7 +209,6 @@ public class CreateTransactionBatchResponseModel {
         this.completedDate = value;
     }
 
-
     private Date createdDate;
 
     /**
@@ -237,7 +228,6 @@ public class CreateTransactionBatchResponseModel {
     public void setCreatedDate(Date value) {
         this.createdDate = value;
     }
-
 
     private Integer createdUserId;
 
@@ -259,7 +249,6 @@ public class CreateTransactionBatchResponseModel {
         this.createdUserId = value;
     }
 
-
     private Date modifiedDate;
 
     /**
@@ -279,7 +268,6 @@ public class CreateTransactionBatchResponseModel {
     public void setModifiedDate(Date value) {
         this.modifiedDate = value;
     }
-
 
     private Integer modifiedUserId;
 
@@ -301,7 +289,6 @@ public class CreateTransactionBatchResponseModel {
         this.modifiedUserId = value;
     }
 
-
     private ArrayList<BatchFileModel> files;
 
     /**
@@ -321,7 +308,6 @@ public class CreateTransactionBatchResponseModel {
     public void setFiles(ArrayList<BatchFileModel> value) {
         this.files = value;
     }
-
 
     /**
      * Returns a JSON string representation of CreateTransactionBatchResponseModel

@@ -49,7 +49,6 @@ public class ErrorCodeOutputModel {
         this.errorCode = value;
     }
 
-
     private Integer count;
 
     /**
@@ -69,7 +68,6 @@ public class ErrorCodeOutputModel {
     public void setCount(Integer value) {
         this.count = value;
     }
-
 
     /**
      * Returns a JSON string representation of ErrorCodeOutputModel

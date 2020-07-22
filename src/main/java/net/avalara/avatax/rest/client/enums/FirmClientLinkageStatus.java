@@ -16,26 +16,26 @@ import java.util.HashMap;
  */
 
 /**
- * Account Linkage status
+ * 
  */
 public enum FirmClientLinkageStatus {
     /** 
-     * Requested
+     * 
      */
     Requested(1),
 
     /** 
-     * Approved
+     * 
      */
     Approved(2),
 
     /** 
-     * Rejected
+     * 
      */
     Rejected(3),
 
     /** 
-     * Revoked
+     * 
      */
     Revoked(4);
 

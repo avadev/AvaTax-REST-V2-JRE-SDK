@@ -49,7 +49,6 @@ public class FilingsTaxDetailsModel {
         this.taxType = value;
     }
 
-
     private BigDecimal salesAmount;
 
     /**
@@ -69,7 +68,6 @@ public class FilingsTaxDetailsModel {
     public void setSalesAmount(BigDecimal value) {
         this.salesAmount = value;
     }
-
 
     private BigDecimal nonTaxableAmount;
 
@@ -91,7 +89,6 @@ public class FilingsTaxDetailsModel {
         this.nonTaxableAmount = value;
     }
 
-
     private BigDecimal taxAmount;
 
     /**
@@ -112,7 +109,6 @@ public class FilingsTaxDetailsModel {
         this.taxAmount = value;
     }
 
-
     private Long numberOfNights;
 
     /**
@@ -132,7 +128,6 @@ public class FilingsTaxDetailsModel {
     public void setNumberOfNights(Long value) {
         this.numberOfNights = value;
     }
-
 
     /**
      * Returns a JSON string representation of FilingsTaxDetailsModel

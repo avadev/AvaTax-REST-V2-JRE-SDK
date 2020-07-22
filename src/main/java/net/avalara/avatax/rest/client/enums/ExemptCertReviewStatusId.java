@@ -16,21 +16,21 @@ import java.util.HashMap;
  */
 
 /**
- * Exempt certificate review status
+ * 
  */
 public enum ExemptCertReviewStatusId {
     /** 
-     * Review pending
+     * 
      */
     Pending(0),
 
     /** 
-     * Certificate was accepted
+     * 
      */
     Accepted(1),
 
     /** 
-     * Certificate was rejected
+     * 
      */
     Rejected(2);
 

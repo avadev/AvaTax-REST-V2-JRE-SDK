@@ -49,7 +49,6 @@ public class TaxDetailsByTaxType {
         this.taxType = value;
     }
 
-
     private BigDecimal totalTaxable;
 
     /**
@@ -69,7 +68,6 @@ public class TaxDetailsByTaxType {
     public void setTotalTaxable(BigDecimal value) {
         this.totalTaxable = value;
     }
-
 
     private BigDecimal totalExempt;
 
@@ -91,7 +89,6 @@ public class TaxDetailsByTaxType {
         this.totalExempt = value;
     }
 
-
     private BigDecimal totalNonTaxable;
 
     /**
@@ -111,7 +108,6 @@ public class TaxDetailsByTaxType {
     public void setTotalNonTaxable(BigDecimal value) {
         this.totalNonTaxable = value;
     }
-
 
     private BigDecimal totalTax;
 
@@ -133,7 +129,6 @@ public class TaxDetailsByTaxType {
         this.totalTax = value;
     }
 
-
     private ArrayList<TaxDetailsByTaxSubType> taxSubTypeDetails;
 
     /**
@@ -153,7 +148,6 @@ public class TaxDetailsByTaxType {
     public void setTaxSubTypeDetails(ArrayList<TaxDetailsByTaxSubType> value) {
         this.taxSubTypeDetails = value;
     }
-
 
     /**
      * Returns a JSON string representation of TaxDetailsByTaxType

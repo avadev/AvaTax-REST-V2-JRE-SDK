@@ -49,7 +49,6 @@ public class FilingsCheckupModel {
         this.authorities = value;
     }
 
-
     /**
      * Returns a JSON string representation of FilingsCheckupModel
      */

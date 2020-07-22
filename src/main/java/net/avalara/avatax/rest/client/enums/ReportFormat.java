@@ -16,11 +16,11 @@ import java.util.HashMap;
  */
 
 /**
- * Different types of formats allowed for exporting a report
+ * 
  */
 public enum ReportFormat {
     /** 
-     * The Comma Separated Values file format
+     * 
      */
     CSV(0);
 

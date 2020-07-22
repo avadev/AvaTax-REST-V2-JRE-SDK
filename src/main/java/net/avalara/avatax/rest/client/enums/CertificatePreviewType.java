@@ -16,16 +16,16 @@ import java.util.HashMap;
  */
 
 /**
- * Type of certificate preview to download
+ * 
  */
 public enum CertificatePreviewType {
     /** 
-     * Download a full printable PDF
+     * 
      */
     Pdf(1),
 
     /** 
-     * Download a single page of the certificate in JPG format
+     * 
      */
     Jpeg(2);
 

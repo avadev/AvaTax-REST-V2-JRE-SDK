@@ -49,7 +49,6 @@ public class UserEntitlementModel {
         this.permissions = value;
     }
 
-
     private CompanyAccessLevel accessLevel;
 
     /**
@@ -70,7 +69,6 @@ public class UserEntitlementModel {
         this.accessLevel = value;
     }
 
-
     private ArrayList<Integer> companies;
 
     /**
@@ -90,7 +88,6 @@ public class UserEntitlementModel {
     public void setCompanies(ArrayList<Integer> value) {
         this.companies = value;
     }
-
 
     /**
      * Returns a JSON string representation of UserEntitlementModel

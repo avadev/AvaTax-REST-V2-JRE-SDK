@@ -52,7 +52,6 @@ public class CertificateModel {
         this.id = value;
     }
 
-
     private Integer companyId;
 
     /**
@@ -72,7 +71,6 @@ public class CertificateModel {
     public void setCompanyId(Integer value) {
         this.companyId = value;
     }
-
 
     private Date signedDate;
 
@@ -94,7 +92,6 @@ public class CertificateModel {
         this.signedDate = value;
     }
 
-
     private Date expirationDate;
 
     /**
@@ -114,7 +111,6 @@ public class CertificateModel {
     public void setExpirationDate(Date value) {
         this.expirationDate = value;
     }
-
 
     private String filename;
 
@@ -150,7 +146,6 @@ public class CertificateModel {
         this.filename = value;
     }
 
-
     private Boolean documentExists;
 
     /**
@@ -170,7 +165,6 @@ public class CertificateModel {
     public void setDocumentExists(Boolean value) {
         this.documentExists = value;
     }
-
 
     private Boolean valid;
 
@@ -196,7 +190,6 @@ public class CertificateModel {
         this.valid = value;
     }
 
-
     private Boolean verified;
 
     /**
@@ -218,7 +211,6 @@ public class CertificateModel {
     public void setVerified(Boolean value) {
         this.verified = value;
     }
-
 
     private BigDecimal exemptPercentage;
 
@@ -246,7 +238,6 @@ public class CertificateModel {
         this.exemptPercentage = value;
     }
 
-
     private Boolean isSingleCertificate;
 
     /**
@@ -269,7 +260,6 @@ public class CertificateModel {
         this.isSingleCertificate = value;
     }
 
-
     private String exemptionNumber;
 
     /**
@@ -290,7 +280,6 @@ public class CertificateModel {
         this.exemptionNumber = value;
     }
 
-
     private ExemptionReasonModel validatedExemptionReason;
 
     /**
@@ -310,7 +299,6 @@ public class CertificateModel {
     public void setValidatedExemptionReason(ExemptionReasonModel value) {
         this.validatedExemptionReason = value;
     }
-
 
     private ExemptionReasonModel exemptionReason;
 
@@ -338,7 +326,6 @@ public class CertificateModel {
         this.exemptionReason = value;
     }
 
-
     private String status;
 
     /**
@@ -358,7 +345,6 @@ public class CertificateModel {
     public void setStatus(String value) {
         this.status = value;
     }
-
 
     private Date createdDate;
 
@@ -380,7 +366,6 @@ public class CertificateModel {
         this.createdDate = value;
     }
 
-
     private Date modifiedDate;
 
     /**
@@ -401,7 +386,6 @@ public class CertificateModel {
         this.modifiedDate = value;
     }
 
-
     private Integer pageCount;
 
     /**
@@ -421,7 +405,6 @@ public class CertificateModel {
     public void setPageCount(Integer value) {
         this.pageCount = value;
     }
-
 
     private ArrayList<CustomerModel> customers;
 
@@ -444,7 +427,6 @@ public class CertificateModel {
     public void setCustomers(ArrayList<CustomerModel> value) {
         this.customers = value;
     }
-
 
     private ArrayList<PoNumberModel> poNumbers;
 
@@ -474,7 +456,6 @@ public class CertificateModel {
         this.poNumbers = value;
     }
 
-
     private ExposureZoneModel exposureZone;
 
     /**
@@ -494,7 +475,6 @@ public class CertificateModel {
     public void setExposureZone(ExposureZoneModel value) {
         this.exposureZone = value;
     }
-
 
     private ArrayList<CertificateAttributeModel> attributes;
 
@@ -520,7 +500,6 @@ public class CertificateModel {
         this.attributes = value;
     }
 
-
     private Integer ecmsId;
 
     /**
@@ -541,7 +520,6 @@ public class CertificateModel {
         this.ecmsId = value;
     }
 
-
     private String ecmsStatus;
 
     /**
@@ -561,7 +539,6 @@ public class CertificateModel {
     public void setEcmsStatus(String value) {
         this.ecmsStatus = value;
     }
-
 
     private String pdf;
 
@@ -601,7 +578,6 @@ public class CertificateModel {
         this.pdf = value;
     }
 
-
     private ArrayList<String> pages;
 
     /**
@@ -639,7 +615,6 @@ public class CertificateModel {
     public void setPages(ArrayList<String> value) {
         this.pages = value;
     }
-
 
     /**
      * Returns a JSON string representation of CertificateModel

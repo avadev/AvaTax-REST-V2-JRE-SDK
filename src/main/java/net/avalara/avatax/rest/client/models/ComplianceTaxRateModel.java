@@ -49,7 +49,6 @@ public class ComplianceTaxRateModel {
         this.id = value;
     }
 
-
     private BigDecimal rate;
 
     /**
@@ -69,7 +68,6 @@ public class ComplianceTaxRateModel {
     public void setRate(BigDecimal value) {
         this.rate = value;
     }
-
 
     private Integer jurisdictionId;
 
@@ -91,7 +89,6 @@ public class ComplianceTaxRateModel {
         this.jurisdictionId = value;
     }
 
-
     private Integer taxRegionId;
 
     /**
@@ -111,7 +108,6 @@ public class ComplianceTaxRateModel {
     public void setTaxRegionId(Integer value) {
         this.taxRegionId = value;
     }
-
 
     private Date effectiveDate;
 
@@ -133,7 +129,6 @@ public class ComplianceTaxRateModel {
         this.effectiveDate = value;
     }
 
-
     private Date endDate;
 
     /**
@@ -153,7 +148,6 @@ public class ComplianceTaxRateModel {
     public void setEndDate(Date value) {
         this.endDate = value;
     }
-
 
     private String rateTypeId;
 
@@ -175,7 +169,6 @@ public class ComplianceTaxRateModel {
         this.rateTypeId = value;
     }
 
-
     private String taxTypeId;
 
     /**
@@ -195,7 +188,6 @@ public class ComplianceTaxRateModel {
     public void setTaxTypeId(String value) {
         this.taxTypeId = value;
     }
-
 
     private String taxName;
 
@@ -217,7 +209,6 @@ public class ComplianceTaxRateModel {
         this.taxName = value;
     }
 
-
     private Long unitOfBasisId;
 
     /**
@@ -238,7 +229,6 @@ public class ComplianceTaxRateModel {
         this.unitOfBasisId = value;
     }
 
-
     private Integer rateTypeTaxTypeMappingId;
 
     /**
@@ -258,7 +248,6 @@ public class ComplianceTaxRateModel {
     public void setRateTypeTaxTypeMappingId(Integer value) {
         this.rateTypeTaxTypeMappingId = value;
     }
-
 
     /**
      * Returns a JSON string representation of ComplianceTaxRateModel

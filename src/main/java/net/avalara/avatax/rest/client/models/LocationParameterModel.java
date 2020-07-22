@@ -49,7 +49,6 @@ public class LocationParameterModel {
         this.id = value;
     }
 
-
     private String name;
 
     /**
@@ -69,7 +68,6 @@ public class LocationParameterModel {
     public void setName(String value) {
         this.name = value;
     }
-
 
     private String unit;
 
@@ -91,7 +89,6 @@ public class LocationParameterModel {
         this.unit = value;
     }
 
-
     private String value;
 
     /**
@@ -112,7 +109,6 @@ public class LocationParameterModel {
         this.value = value;
     }
 
-
     private Integer locationId;
 
     /**
@@ -132,7 +128,6 @@ public class LocationParameterModel {
     public void setLocationId(Integer value) {
         this.locationId = value;
     }
-
 
     /**
      * Returns a JSON string representation of LocationParameterModel

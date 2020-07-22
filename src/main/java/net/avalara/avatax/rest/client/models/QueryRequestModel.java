@@ -49,7 +49,6 @@ public class QueryRequestModel {
         this.filter = value;
     }
 
-
     private String include;
 
     /**
@@ -69,7 +68,6 @@ public class QueryRequestModel {
     public void setInclude(String value) {
         this.include = value;
     }
-
 
     private Integer maxResults;
 
@@ -91,7 +89,6 @@ public class QueryRequestModel {
         this.maxResults = value;
     }
 
-
     private Integer startIndex;
 
     /**
@@ -112,7 +109,6 @@ public class QueryRequestModel {
         this.startIndex = value;
     }
 
-
     private String sortBy;
 
     /**
@@ -132,7 +128,6 @@ public class QueryRequestModel {
     public void setSortBy(String value) {
         this.sortBy = value;
     }
-
 
     /**
      * Returns a JSON string representation of QueryRequestModel

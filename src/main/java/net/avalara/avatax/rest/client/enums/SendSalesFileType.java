@@ -20,12 +20,12 @@ import java.util.HashMap;
  */
 public enum SendSalesFileType {
     /** 
-     * File is in Comma Separated Values format
+     * 
      */
     Csv(0),
 
     /** 
-     * File is in Javascript Object Notation format
+     * 
      */
     Json(1);
 
