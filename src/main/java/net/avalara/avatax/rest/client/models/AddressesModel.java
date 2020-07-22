@@ -171,7 +171,7 @@ public class AddressesModel {
         this.goodsPlaceOrServiceRendered = value;
     }
 
-    private AddressLocationInfo import;
+    private AddressLocationInfo _import;
 
     /**
      * Getter for import
@@ -179,7 +179,7 @@ public class AddressesModel {
      * The address of the buyer importing a good from another country.This address type is valid only for VAT transactions.
      */
     public AddressLocationInfo getImport() {
-        return this.import;
+        return this._import;
     }
 
     /**
@@ -188,7 +188,7 @@ public class AddressesModel {
      * The address of the buyer importing a good from another country.This address type is valid only for VAT transactions.
      */
     public void setImport(AddressLocationInfo value) {
-        this.import = value;
+        this._import = value;
     }
 
     /**
