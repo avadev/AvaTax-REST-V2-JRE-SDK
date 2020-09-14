@@ -72,6 +72,16 @@ public enum DocumentType {
     /** 
      * 
      */
+    CustomsInvoice(10),
+
+    /** 
+     * 
+     */
+    CustomsOrder(11),
+
+    /** 
+     * 
+     */
     Any(-1);
 
     private int value;

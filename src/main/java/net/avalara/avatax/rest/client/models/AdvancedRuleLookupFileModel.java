@@ -194,7 +194,7 @@ public class AdvancedRuleLookupFileModel {
     /**
      * Getter for createdDate
      *
-     * Lookup file CreatedOn
+     * Lookup file CreatedDate
      */
     public String getCreatedDate() {
         return this.createdDate;
@@ -203,7 +203,7 @@ public class AdvancedRuleLookupFileModel {
     /**
      * Setter for createdDate
      *
-     * Lookup file CreatedOn
+     * Lookup file CreatedDate
      */
     public void setCreatedDate(String value) {
         this.createdDate = value;
@@ -214,7 +214,7 @@ public class AdvancedRuleLookupFileModel {
     /**
      * Getter for modifiedDate
      *
-     * Lookup file ModifiedOn
+     * Lookup file ModifiedDate
      */
     public String getModifiedDate() {
         return this.modifiedDate;
@@ -223,7 +223,7 @@ public class AdvancedRuleLookupFileModel {
     /**
      * Setter for modifiedDate
      *
-     * Lookup file ModifiedOn
+     * Lookup file ModifiedDate
      */
     public void setModifiedDate(String value) {
         this.modifiedDate = value;

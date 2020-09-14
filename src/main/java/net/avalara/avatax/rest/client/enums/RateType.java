@@ -77,7 +77,12 @@ public enum RateType {
     /** 
      * 
      */
-    Leasing(85),
+    Leasing(84),
+
+    /** 
+     * 
+     */
+    LeasingLow(85),
 
     /** 
      * 
