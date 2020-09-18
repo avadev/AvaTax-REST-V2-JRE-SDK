@@ -82,6 +82,11 @@ public enum MatchingTaxType {
     /** 
      * 
      */
+    Meals(77),
+
+    /** 
+     * 
+     */
     VATNonrecoverableInputTax(78),
 
     /** 

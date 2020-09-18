@@ -3339,6 +3339,64 @@ public class AvaTaxClient {
     }
 
     /**
+     * Add parameters to a company.
+     * 
+     * Add parameters to a company.
+     *             
+     * Some companies can be taxed and reported differently depending on the properties of the company, such as IsPrimaryAddress. In AvaTax, these tax-affecting properties are called "parameters".
+     *             
+     * A parameter added to a company will be used by default in tax calculation but will not show on the transaction line referencing the company.
+     *             
+     * A company location parameter specified on a transaction line will override a company parameter if they share the same parameter name.
+     *             
+     * To see available parameters for this company, call `/api/v2/definitions/parameters?$filter=attributeType eq Company`
+     *             
+     * Some parameters are only available for use if you have subscribed to specific AvaTax services. To see which parameters you are able to use, add the query parameter "$showSubscribed=true" to the parameter definition call above.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, FirmAdmin, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
+     * 
+     * @param companyId The ID of the company that owns this company parameter.
+     * @param model The company parameters you wish to create.
+     * @return ArrayList<CompanyParameterDetailModel>
+     */
+    public ArrayList<CompanyParameterDetailModel> createCompanyParameters(Integer companyId, ArrayList<CompanyParameterDetailModel> model) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/parameters");
+        path.applyField("companyId", companyId);
+        return ((RestCall<ArrayList<CompanyParameterDetailModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<CompanyParameterDetailModel>>(){})).call();
+    }
+
+    /**
+     * Add parameters to a company.
+     * 
+     * Add parameters to a company.
+     *             
+     * Some companies can be taxed and reported differently depending on the properties of the company, such as IsPrimaryAddress. In AvaTax, these tax-affecting properties are called "parameters".
+     *             
+     * A parameter added to a company will be used by default in tax calculation but will not show on the transaction line referencing the company.
+     *             
+     * A company location parameter specified on a transaction line will override a company parameter if they share the same parameter name.
+     *             
+     * To see available parameters for this company, call `/api/v2/definitions/parameters?$filter=attributeType eq Company`
+     *             
+     * Some parameters are only available for use if you have subscribed to specific AvaTax services. To see which parameters you are able to use, add the query parameter "$showSubscribed=true" to the parameter definition call above.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, FirmAdmin, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
+     * 
+     * @param companyId The ID of the company that owns this company parameter.
+     * @param model The company parameters you wish to create.
+     * @return ArrayList<CompanyParameterDetailModel>
+     */
+    public Future<ArrayList<CompanyParameterDetailModel>> createCompanyParametersAsync(Integer companyId, ArrayList<CompanyParameterDetailModel> model) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/parameters");
+        path.applyField("companyId", companyId);
+        return this.threadPool.submit((RestCall<ArrayList<CompanyParameterDetailModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<CompanyParameterDetailModel>>(){}));
+    }
+
+    /**
      * Request managed returns funding setup for a company
      * 
      * This API is available by invitation only.
@@ -3428,6 +3486,56 @@ public class AvaTaxClient {
      */
     public Future<ArrayList<ErrorDetail>> deleteCompanyAsync(Integer id) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{id}");
+        path.applyField("id", id);
+        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){}));
+    }
+
+    /**
+     * Delete a single company parameter
+     * 
+     * Delete a parameter of a company.
+     * Some companies can be taxed and reported differently depending on the properties of the company, such as IsPrimaryAddress. In AvaTax, these tax-affecting properties are called "parameters".
+     *             
+     * A parameter added to a company will be used by default in tax calculation but will not show on the transaction line referencing the company.
+     *             
+     * A company location parameter specified on a transaction line will override a company parameter if they share the same parameter name.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, FirmAdmin, SSTAdmin, TechnicalSupportAdmin.
+     * 
+     * @param companyId The company id
+     * @param id The parameter id
+     * @return ArrayList<ErrorDetail>
+     */
+    public ArrayList<ErrorDetail> deleteCompanyParameter(Integer companyId, Long id) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/parameters/{id}");
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
+        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){})).call();
+    }
+
+    /**
+     * Delete a single company parameter
+     * 
+     * Delete a parameter of a company.
+     * Some companies can be taxed and reported differently depending on the properties of the company, such as IsPrimaryAddress. In AvaTax, these tax-affecting properties are called "parameters".
+     *             
+     * A parameter added to a company will be used by default in tax calculation but will not show on the transaction line referencing the company.
+     *             
+     * A company location parameter specified on a transaction line will override a company parameter if they share the same parameter name.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, FirmAdmin, SSTAdmin, TechnicalSupportAdmin.
+     * 
+     * @param companyId The company id
+     * @param id The parameter id
+     * @return ArrayList<ErrorDetail>
+     */
+    public Future<ArrayList<ErrorDetail>> deleteCompanyParameterAsync(Integer companyId, Long id) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/parameters/{id}");
+        path.applyField("companyId", companyId);
         path.applyField("id", id);
         return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){}));
     }
@@ -3647,6 +3755,58 @@ public class AvaTaxClient {
     }
 
     /**
+     * Retrieve a single company parameter
+     * 
+     * Retrieves a single parameter of a company.
+     *             
+     * Some companies can be taxed and reported differently depending on the properties of the company, such as IsPrimaryAddress. In AvaTax, these tax-affecting properties are called "parameters".
+     *             
+     * A parameter added to a company will be used by default in tax calculation but will not show on the transaction line referencing the company.
+     *             
+     * A company location parameter specified on a transaction line will override a company parameter if they share the same parameter name.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * 
+     * @param companyId 
+     * @param id 
+     * @return CompanyParameterDetailModel
+     */
+    public CompanyParameterDetailModel getCompanyParameterDetail(Integer companyId, Integer id) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/parameters/{id}");
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
+        return ((RestCall<CompanyParameterDetailModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<CompanyParameterDetailModel>(){})).call();
+    }
+
+    /**
+     * Retrieve a single company parameter
+     * 
+     * Retrieves a single parameter of a company.
+     *             
+     * Some companies can be taxed and reported differently depending on the properties of the company, such as IsPrimaryAddress. In AvaTax, these tax-affecting properties are called "parameters".
+     *             
+     * A parameter added to a company will be used by default in tax calculation but will not show on the transaction line referencing the company.
+     *             
+     * A company location parameter specified on a transaction line will override a company parameter if they share the same parameter name.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * 
+     * @param companyId 
+     * @param id 
+     * @return CompanyParameterDetailModel
+     */
+    public Future<CompanyParameterDetailModel> getCompanyParameterDetailAsync(Integer companyId, Integer id) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/parameters/{id}");
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
+        return this.threadPool.submit((RestCall<CompanyParameterDetailModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<CompanyParameterDetailModel>(){}));
+    }
+
+    /**
      * Get this company's filing status
      * 
      * Retrieve the current filing status of this company.
@@ -3704,6 +3864,76 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{id}/filingstatus");
         path.applyField("id", id);
         return this.threadPool.submit((RestCall<String>)restCallFactory.createRestCall("get", path, null, new TypeToken<String>(){}));
+    }
+
+    /**
+     * Retrieve parameters for a company
+     * 
+     * Retrieve all parameters of a company.
+     *             
+     * Some companies can be taxed and reported differently depending on the properties of the company, such as IsPrimaryAddress. In AvaTax, these tax-affecting properties are called "parameters".
+     *             
+     * A parameter added to a company will be used by default in tax calculation but will not show on the transaction line referencing the company.
+     *             
+     * A company location parameter specified on a transaction line will override a company parameter if they share the same parameter name.
+     *             
+     * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * Paginate your results using the `$top`, `$skip`, and `$orderby` parameters.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * 
+     * @param companyId The company id
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* name, unit
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @return FetchResult<CompanyParameterDetailModel>
+     */
+    public FetchResult<CompanyParameterDetailModel> listCompanyParameterDetails(Integer companyId, String filter, Integer top, Integer skip, String orderBy) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/parameters");
+        path.applyField("companyId", companyId);
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
+        return ((RestCall<FetchResult<CompanyParameterDetailModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CompanyParameterDetailModel>>(){})).call();
+    }
+
+    /**
+     * Retrieve parameters for a company
+     * 
+     * Retrieve all parameters of a company.
+     *             
+     * Some companies can be taxed and reported differently depending on the properties of the company, such as IsPrimaryAddress. In AvaTax, these tax-affecting properties are called "parameters".
+     *             
+     * A parameter added to a company will be used by default in tax calculation but will not show on the transaction line referencing the company.
+     *             
+     * A company location parameter specified on a transaction line will override a company parameter if they share the same parameter name.
+     *             
+     * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * Paginate your results using the `$top`, `$skip`, and `$orderby` parameters.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * 
+     * @param companyId The company id
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* name, unit
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @return FetchResult<CompanyParameterDetailModel>
+     */
+    public Future<FetchResult<CompanyParameterDetailModel>> listCompanyParameterDetailsAsync(Integer companyId, String filter, Integer top, Integer skip, String orderBy) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/parameters");
+        path.applyField("companyId", companyId);
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
+        return this.threadPool.submit((RestCall<FetchResult<CompanyParameterDetailModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CompanyParameterDetailModel>>(){}));
     }
 
     /**
@@ -3986,6 +4216,60 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{id}");
         path.applyField("id", id);
         return this.threadPool.submit((RestCall<CompanyModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<CompanyModel>(){}));
+    }
+
+    /**
+     * Update a company parameter
+     * 
+     * Update a parameter of a company.
+     *             
+     * Some companies can be taxed and reported differently depending on the properties of the company, such as IsPrimaryAddress. In AvaTax, these tax-affecting properties are called "parameters".
+     *             
+     * A parameter added to a company will be used by default in tax calculation but will not show on the transaction line referencing the company.
+     *             
+     * A company location parameter specified on a transaction line will override a company parameter if they share the same parameter name.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, FirmAdmin, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
+     * 
+     * @param companyId The company id.
+     * @param id The company parameter id
+     * @param model The company parameter object you wish to update.
+     * @return CompanyParameterDetailModel
+     */
+    public CompanyParameterDetailModel updateCompanyParameterDetail(Integer companyId, Long id, CompanyParameterDetailModel model) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/parameters/{id}");
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
+        return ((RestCall<CompanyParameterDetailModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<CompanyParameterDetailModel>(){})).call();
+    }
+
+    /**
+     * Update a company parameter
+     * 
+     * Update a parameter of a company.
+     *             
+     * Some companies can be taxed and reported differently depending on the properties of the company, such as IsPrimaryAddress. In AvaTax, these tax-affecting properties are called "parameters".
+     *             
+     * A parameter added to a company will be used by default in tax calculation but will not show on the transaction line referencing the company.
+     *             
+     * A company location parameter specified on a transaction line will override a company parameter if they share the same parameter name.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, FirmAdmin, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
+     * 
+     * @param companyId The company id.
+     * @param id The company parameter id
+     * @param model The company parameter object you wish to update.
+     * @return CompanyParameterDetailModel
+     */
+    public Future<CompanyParameterDetailModel> updateCompanyParameterDetailAsync(Integer companyId, Long id, CompanyParameterDetailModel model) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/parameters/{id}");
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
+        return this.threadPool.submit((RestCall<CompanyParameterDetailModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<CompanyParameterDetailModel>(){}));
     }
 
     /**
@@ -6294,7 +6578,7 @@ public class AvaTaxClient {
      * Returns a list of all Avalara-supported taxing jurisdictions.
      *             
      * This API allows you to examine all Avalara-supported jurisdictions. You can filter your search by supplying
-     * SQL-like query for fetching only the ones you concerned about. For example: effectiveDate &gt; '2016-01-01'
+     * SQL-like query for fetching only the ones you concerned about. For example: effectiveDate > '2016-01-01'
      *             
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* rate, salesRate, signatureCode, useRate
@@ -6318,7 +6602,7 @@ public class AvaTaxClient {
      * Returns a list of all Avalara-supported taxing jurisdictions.
      *             
      * This API allows you to examine all Avalara-supported jurisdictions. You can filter your search by supplying
-     * SQL-like query for fetching only the ones you concerned about. For example: effectiveDate &gt; '2016-01-01'
+     * SQL-like query for fetching only the ones you concerned about. For example: effectiveDate > '2016-01-01'
      *             
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* rate, salesRate, signatureCode, useRate
@@ -8569,6 +8853,90 @@ public class AvaTaxClient {
     }
 
     /**
+     * Create a new eCommerce token.
+     * 
+     * Creates a new eCommerce token.
+     *             
+     * This API is used to create a new eCommerce token. An eCommerce token is required in order to launch the CertCapture eCommerce plugin. Create a token for each of your CertCapture customers.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * 
+     * @param companyId The company ID that will be issued this certificate.
+     * @param model 
+     * @return FetchResult<ECommerceTokenOutputModel>
+     */
+    public FetchResult<ECommerceTokenOutputModel> createECommerceToken(Integer companyId, CreateECommerceTokenInputModel model) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/ecommercetokens");
+        path.applyField("companyId", companyId);
+        return ((RestCall<FetchResult<ECommerceTokenOutputModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<FetchResult<ECommerceTokenOutputModel>>(){})).call();
+    }
+
+    /**
+     * Create a new eCommerce token.
+     * 
+     * Creates a new eCommerce token.
+     *             
+     * This API is used to create a new eCommerce token. An eCommerce token is required in order to launch the CertCapture eCommerce plugin. Create a token for each of your CertCapture customers.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * 
+     * @param companyId The company ID that will be issued this certificate.
+     * @param model 
+     * @return FetchResult<ECommerceTokenOutputModel>
+     */
+    public Future<FetchResult<ECommerceTokenOutputModel>> createECommerceTokenAsync(Integer companyId, CreateECommerceTokenInputModel model) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/ecommercetokens");
+        path.applyField("companyId", companyId);
+        return this.threadPool.submit((RestCall<FetchResult<ECommerceTokenOutputModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<FetchResult<ECommerceTokenOutputModel>>(){}));
+    }
+
+    /**
+     * Refresh an eCommerce token.
+     * 
+     * Refresh an eCommerce token.
+     *             
+     * CertCapture eCommerce tokens expire after one hour. This API is used to refresh an eCommerce token that is about to expire. This API can only be used with active tokens. If your token has expired, you must generate a new one.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * 
+     * @param companyId The company ID that the refreshed certificate belongs to.
+     * @param model 
+     * @return FetchResult<ECommerceTokenOutputModel>
+     */
+    public FetchResult<ECommerceTokenOutputModel> refreshECommerceToken(Integer companyId, RefreshECommerceTokenInputModel model) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/ecommercetokens");
+        path.applyField("companyId", companyId);
+        return ((RestCall<FetchResult<ECommerceTokenOutputModel>>)restCallFactory.createRestCall("put", path, model, new TypeToken<FetchResult<ECommerceTokenOutputModel>>(){})).call();
+    }
+
+    /**
+     * Refresh an eCommerce token.
+     * 
+     * Refresh an eCommerce token.
+     *             
+     * CertCapture eCommerce tokens expire after one hour. This API is used to refresh an eCommerce token that is about to expire. This API can only be used with active tokens. If your token has expired, you must generate a new one.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * 
+     * @param companyId The company ID that the refreshed certificate belongs to.
+     * @param model 
+     * @return FetchResult<ECommerceTokenOutputModel>
+     */
+    public Future<FetchResult<ECommerceTokenOutputModel>> refreshECommerceTokenAsync(Integer companyId, RefreshECommerceTokenInputModel model) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/ecommercetokens");
+        path.applyField("companyId", companyId);
+        return this.threadPool.submit((RestCall<FetchResult<ECommerceTokenOutputModel>>)restCallFactory.createRestCall("put", path, model, new TypeToken<FetchResult<ECommerceTokenOutputModel>>(){}));
+    }
+
+    /**
      * Delete a company return setting
      * 
      * This API is available by invitation only and only available for users with Compliance access
@@ -8610,6 +8978,46 @@ public class AvaTaxClient {
         path.applyField("filingCalendarId", filingCalendarId);
         path.applyField("companyReturnSettingId", companyReturnSettingId);
         return this.threadPool.submit((RestCall<ArrayList<CompanyReturnSettingModel>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<CompanyReturnSettingModel>>(){}));
+    }
+
+    /**
+     * Retrieve a filing containing the return and all its accrual returns.
+     * 
+     * 
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * 
+     * @param companyId The ID of the company that owns these returns
+     * @param filingReturnId The ID of the filing return
+     * @return FetchResult<MultiTaxFilingModel>
+     */
+    public FetchResult<MultiTaxFilingModel> getAccrualFilings(Integer companyId, Long filingReturnId) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/accrual/{filingReturnId}");
+        path.applyField("companyId", companyId);
+        path.applyField("filingReturnId", filingReturnId);
+        return ((RestCall<FetchResult<MultiTaxFilingModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<MultiTaxFilingModel>>(){})).call();
+    }
+
+    /**
+     * Retrieve a filing containing the return and all its accrual returns.
+     * 
+     * 
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * 
+     * @param companyId The ID of the company that owns these returns
+     * @param filingReturnId The ID of the filing return
+     * @return FetchResult<MultiTaxFilingModel>
+     */
+    public Future<FetchResult<MultiTaxFilingModel>> getAccrualFilingsAsync(Integer companyId, Long filingReturnId) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/accrual/{filingReturnId}");
+        path.applyField("companyId", companyId);
+        path.applyField("filingReturnId", filingReturnId);
+        return this.threadPool.submit((RestCall<FetchResult<MultiTaxFilingModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<MultiTaxFilingModel>>(){}));
     }
 
     /**
@@ -10831,6 +11239,68 @@ public class AvaTaxClient {
     }
 
     /**
+     * Add parameters to a location.
+     * 
+     * Add parameters to a location.
+     *             
+     * Some locations can be taxed differently depending on the properties of that location. In AvaTax, these tax-affecting properties are called "parameters".
+     *             
+     * A parameter added to a location will be used by default in tax calculation but will not show on the transaction line referencing the location.
+     *             
+     * A parameter specified on a transaction line will override a location parameter if they share the same parameter name.
+     *             
+     * To see available parameters for this location, call `/api/v2/definitions/parameters?$filter=attributeType eq Company`
+     *             
+     * Some parameters are only available for use if you have subscribed to specific AvaTax services. To see which parameters you are able to use, add the query parameter "$showSubscribed=true" to the parameter definition call above.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPAdmin, CSPTester, FirmAdmin, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
+     * 
+     * @param companyId The ID of the company that owns this location parameter.
+     * @param locationId The location id.
+     * @param model The location parameters you wish to create.
+     * @return ArrayList<LocationParameterModel>
+     */
+    public ArrayList<LocationParameterModel> createLocationParameters(Integer companyId, Integer locationId, ArrayList<LocationParameterModel> model) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/locations/{locationId}/parameters");
+        path.applyField("companyId", companyId);
+        path.applyField("locationId", locationId);
+        return ((RestCall<ArrayList<LocationParameterModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<LocationParameterModel>>(){})).call();
+    }
+
+    /**
+     * Add parameters to a location.
+     * 
+     * Add parameters to a location.
+     *             
+     * Some locations can be taxed differently depending on the properties of that location. In AvaTax, these tax-affecting properties are called "parameters".
+     *             
+     * A parameter added to a location will be used by default in tax calculation but will not show on the transaction line referencing the location.
+     *             
+     * A parameter specified on a transaction line will override a location parameter if they share the same parameter name.
+     *             
+     * To see available parameters for this location, call `/api/v2/definitions/parameters?$filter=attributeType eq Company`
+     *             
+     * Some parameters are only available for use if you have subscribed to specific AvaTax services. To see which parameters you are able to use, add the query parameter "$showSubscribed=true" to the parameter definition call above.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPAdmin, CSPTester, FirmAdmin, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
+     * 
+     * @param companyId The ID of the company that owns this location parameter.
+     * @param locationId The location id.
+     * @param model The location parameters you wish to create.
+     * @return ArrayList<LocationParameterModel>
+     */
+    public Future<ArrayList<LocationParameterModel>> createLocationParametersAsync(Integer companyId, Integer locationId, ArrayList<LocationParameterModel> model) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/locations/{locationId}/parameters");
+        path.applyField("companyId", companyId);
+        path.applyField("locationId", locationId);
+        return this.threadPool.submit((RestCall<ArrayList<LocationParameterModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<LocationParameterModel>>(){}));
+    }
+
+    /**
      * Create a new location
      * 
      * Create one or more new location objects attached to this company.
@@ -10909,6 +11379,62 @@ public class AvaTaxClient {
     }
 
     /**
+     * Delete a single location parameter
+     * 
+     * Delete a single location parameter.
+     *             
+     * Some locations can be taxed differently depending on the properties of that location. In AvaTax, these tax-affecting properties are called "parameters".
+     *             
+     * A parameter added to a location will be used by default in tax calculation but will not show on the transaction line referencing the location.
+     *             
+     * A parameter specified on a transaction line will override a location parameter if they share the same parameter name.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPAdmin, CSPTester, FirmAdmin, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
+     * 
+     * @param companyId The company id
+     * @param locationId The location id
+     * @param id The parameter id
+     * @return ArrayList<ErrorDetail>
+     */
+    public ArrayList<ErrorDetail> deleteLocationParameter(Integer companyId, Integer locationId, Long id) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/locations/{locationId}/parameters/{id}");
+        path.applyField("companyId", companyId);
+        path.applyField("locationId", locationId);
+        path.applyField("id", id);
+        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){})).call();
+    }
+
+    /**
+     * Delete a single location parameter
+     * 
+     * Delete a single location parameter.
+     *             
+     * Some locations can be taxed differently depending on the properties of that location. In AvaTax, these tax-affecting properties are called "parameters".
+     *             
+     * A parameter added to a location will be used by default in tax calculation but will not show on the transaction line referencing the location.
+     *             
+     * A parameter specified on a transaction line will override a location parameter if they share the same parameter name.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPAdmin, CSPTester, FirmAdmin, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
+     * 
+     * @param companyId The company id
+     * @param locationId The location id
+     * @param id The parameter id
+     * @return ArrayList<ErrorDetail>
+     */
+    public Future<ArrayList<ErrorDetail>> deleteLocationParameterAsync(Integer companyId, Integer locationId, Long id) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/locations/{locationId}/parameters/{id}");
+        path.applyField("companyId", companyId);
+        path.applyField("locationId", locationId);
+        path.applyField("id", id);
+        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){}));
+    }
+
+    /**
      * Retrieve a single location
      * 
      * Get the location object identified by this URL.
@@ -10924,7 +11450,7 @@ public class AvaTaxClient {
      * 
      * ### Security Policies
      * 
-     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, FirmAdmin, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
      * @param companyId The ID of the company that owns this location
      * @param id The primary key of this location
@@ -10955,7 +11481,7 @@ public class AvaTaxClient {
      * 
      * ### Security Policies
      * 
-     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, FirmAdmin, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
      * @param companyId The ID of the company that owns this location
      * @param id The primary key of this location
@@ -10968,6 +11494,136 @@ public class AvaTaxClient {
         path.applyField("id", id);
         path.addQuery("$include", include);
         return this.threadPool.submit((RestCall<LocationModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<LocationModel>(){}));
+    }
+
+    /**
+     * Retrieve a single company location parameter
+     * 
+     * Retrieve a single location parameter.
+     *             
+     * Some locations can be taxed differently depending on the properties of that location. In AvaTax, these tax-affecting properties are called "parameters".
+     *             
+     * A parameter added to a location will be used by default in tax calculation but will not show on the transaction line referencing the location.
+     *             
+     * A parameter specified on a transaction line will override a location parameter if they share the same parameter name.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * 
+     * @param companyId The company id
+     * @param locationId The location id
+     * @param id The parameter id
+     * @return LocationParameterModel
+     */
+    public LocationParameterModel getLocationParameter(Integer companyId, Integer locationId, Long id) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/locations/{locationId}/parameters/{id}");
+        path.applyField("companyId", companyId);
+        path.applyField("locationId", locationId);
+        path.applyField("id", id);
+        return ((RestCall<LocationParameterModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<LocationParameterModel>(){})).call();
+    }
+
+    /**
+     * Retrieve a single company location parameter
+     * 
+     * Retrieve a single location parameter.
+     *             
+     * Some locations can be taxed differently depending on the properties of that location. In AvaTax, these tax-affecting properties are called "parameters".
+     *             
+     * A parameter added to a location will be used by default in tax calculation but will not show on the transaction line referencing the location.
+     *             
+     * A parameter specified on a transaction line will override a location parameter if they share the same parameter name.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * 
+     * @param companyId The company id
+     * @param locationId The location id
+     * @param id The parameter id
+     * @return LocationParameterModel
+     */
+    public Future<LocationParameterModel> getLocationParameterAsync(Integer companyId, Integer locationId, Long id) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/locations/{locationId}/parameters/{id}");
+        path.applyField("companyId", companyId);
+        path.applyField("locationId", locationId);
+        path.applyField("id", id);
+        return this.threadPool.submit((RestCall<LocationParameterModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<LocationParameterModel>(){}));
+    }
+
+    /**
+     * Retrieve parameters for a location
+     * 
+     * List parameters for a location.
+     *             
+     * Some locations can be taxed differently depending on the properties of that location. In AvaTax, these tax-affecting properties are called "parameters".
+     *             
+     * A parameter added to a location will be used by default in tax calculation but will not show on the transaction line referencing the location.
+     *             
+     * A parameter specified on a transaction line will override a location parameter if they share the same parameter name.
+     *             
+     * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * Paginate your results using the `$top`, `$skip`, and `$orderby` parameters.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * 
+     * @param companyId The company id
+     * @param locationId The ID of the location
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* name, unit
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @return FetchResult<LocationParameterModel>
+     */
+    public FetchResult<LocationParameterModel> listLocationParameters(Integer companyId, Integer locationId, String filter, Integer top, Integer skip, String orderBy) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/locations/{locationId}/parameters");
+        path.applyField("companyId", companyId);
+        path.applyField("locationId", locationId);
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
+        return ((RestCall<FetchResult<LocationParameterModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<LocationParameterModel>>(){})).call();
+    }
+
+    /**
+     * Retrieve parameters for a location
+     * 
+     * List parameters for a location.
+     *             
+     * Some locations can be taxed differently depending on the properties of that location. In AvaTax, these tax-affecting properties are called "parameters".
+     *             
+     * A parameter added to a location will be used by default in tax calculation but will not show on the transaction line referencing the location.
+     *             
+     * A parameter specified on a transaction line will override a location parameter if they share the same parameter name.
+     *             
+     * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * Paginate your results using the `$top`, `$skip`, and `$orderby` parameters.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * 
+     * @param companyId The company id
+     * @param locationId The ID of the location
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* name, unit
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @return FetchResult<LocationParameterModel>
+     */
+    public Future<FetchResult<LocationParameterModel>> listLocationParametersAsync(Integer companyId, Integer locationId, String filter, Integer top, Integer skip, String orderBy) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/locations/{locationId}/parameters");
+        path.applyField("companyId", companyId);
+        path.applyField("locationId", locationId);
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
+        return this.threadPool.submit((RestCall<FetchResult<LocationParameterModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<LocationParameterModel>>(){}));
     }
 
     /**
@@ -10988,7 +11644,7 @@ public class AvaTaxClient {
      * 
      * ### Security Policies
      * 
-     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, FirmAdmin, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
      * @param companyId The ID of the company that owns these locations
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* settings, parameters
@@ -11027,7 +11683,7 @@ public class AvaTaxClient {
      * 
      * ### Security Policies
      * 
-     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, FirmAdmin, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
      * @param companyId The ID of the company that owns these locations
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* settings, parameters
@@ -11067,7 +11723,7 @@ public class AvaTaxClient {
      * 
      * ### Security Policies
      * 
-     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, FirmAdmin, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* settings, parameters
      * @param include A comma separated list of additional data to retrieve. You may specify `LocationSettings` to retrieve location settings.
@@ -11105,7 +11761,7 @@ public class AvaTaxClient {
      * 
      * ### Security Policies
      * 
-     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, FirmAdmin, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* settings, parameters
      * @param include A comma separated list of additional data to retrieve. You may specify `LocationSettings` to retrieve location settings.
@@ -11171,6 +11827,64 @@ public class AvaTaxClient {
     }
 
     /**
+     * Update a location parameter
+     * 
+     * Update a location parameter.
+     *             
+     * Some locations can be taxed differently depending on the properties of that location. In AvaTax, these tax-affecting properties are called "parameters".
+     *             
+     * A parameter added to a location will be used by default in tax calculation but will not show on the transaction line referencing the location.
+     *             
+     * A parameter specified on a transaction line will override a location parameter if they share the same parameter name.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPAdmin, CSPTester, FirmAdmin, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
+     * 
+     * @param companyId The company id.
+     * @param locationId The location id
+     * @param id The location parameter id
+     * @param model The location parameter object you wish to update.
+     * @return LocationParameterModel
+     */
+    public LocationParameterModel updateLocationParameter(Integer companyId, Integer locationId, Long id, LocationParameterModel model) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/locations/{locationId}/parameters/{id}");
+        path.applyField("companyId", companyId);
+        path.applyField("locationId", locationId);
+        path.applyField("id", id);
+        return ((RestCall<LocationParameterModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<LocationParameterModel>(){})).call();
+    }
+
+    /**
+     * Update a location parameter
+     * 
+     * Update a location parameter.
+     *             
+     * Some locations can be taxed differently depending on the properties of that location. In AvaTax, these tax-affecting properties are called "parameters".
+     *             
+     * A parameter added to a location will be used by default in tax calculation but will not show on the transaction line referencing the location.
+     *             
+     * A parameter specified on a transaction line will override a location parameter if they share the same parameter name.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPAdmin, CSPTester, FirmAdmin, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
+     * 
+     * @param companyId The company id.
+     * @param locationId The location id
+     * @param id The location parameter id
+     * @param model The location parameter object you wish to update.
+     * @return LocationParameterModel
+     */
+    public Future<LocationParameterModel> updateLocationParameterAsync(Integer companyId, Integer locationId, Long id, LocationParameterModel model) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/locations/{locationId}/parameters/{id}");
+        path.applyField("companyId", companyId);
+        path.applyField("locationId", locationId);
+        path.applyField("id", id);
+        return this.threadPool.submit((RestCall<LocationParameterModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<LocationParameterModel>(){}));
+    }
+
+    /**
      * Validate the location against local requirements
      * 
      * Returns validation information for this location.
@@ -11179,7 +11893,7 @@ public class AvaTaxClient {
      * 
      * ### Security Policies
      * 
-     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, FirmAdmin, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
      * @param companyId The ID of the company that owns this location
      * @param id The primary key of this location
@@ -11201,7 +11915,7 @@ public class AvaTaxClient {
      * 
      * ### Security Policies
      * 
-     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, FirmAdmin, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
      * @param companyId The ID of the company that owns this location
      * @param id The primary key of this location
@@ -12199,6 +12913,66 @@ public class AvaTaxClient {
     }
 
     /**
+     * Add parameters to a nexus.
+     * 
+     * Add parameters to the nexus.
+     * Some tax calculation and reporting are different depending on the properties of the nexus, such as isRemoteSeller. In AvaTax, these tax-affecting properties are called "parameters".
+     *             
+     * A parameter added to an nexus will be used by default in tax calculation but will not show on the transaction line referencing the nexus.
+     *             
+     * A parameter specified on a transaction line will override an nexus parameter if they share the same parameter name.
+     *             
+     * To see available parameters for this item, call `/api/v2/definitions/parameters?$filter=attributeType eq Nexus`
+     *             
+     * Some parameters are only available for use if you have subscribed to specific AvaTax services. To see which parameters you are able to use, add the query parameter "$showSubscribed=true" to the parameter definition call above.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin.
+     * 
+     * @param companyId The ID of the company that owns this nexus parameter.
+     * @param nexusId The nexus id.
+     * @param model The nexus parameters you wish to create.
+     * @return ArrayList<NexusParameterDetailModel>
+     */
+    public ArrayList<NexusParameterDetailModel> createNexusParameters(Integer companyId, Integer nexusId, ArrayList<NexusParameterDetailModel> model) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/nexus/{nexusId}/parameters");
+        path.applyField("companyId", companyId);
+        path.applyField("nexusId", nexusId);
+        return ((RestCall<ArrayList<NexusParameterDetailModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<NexusParameterDetailModel>>(){})).call();
+    }
+
+    /**
+     * Add parameters to a nexus.
+     * 
+     * Add parameters to the nexus.
+     * Some tax calculation and reporting are different depending on the properties of the nexus, such as isRemoteSeller. In AvaTax, these tax-affecting properties are called "parameters".
+     *             
+     * A parameter added to an nexus will be used by default in tax calculation but will not show on the transaction line referencing the nexus.
+     *             
+     * A parameter specified on a transaction line will override an nexus parameter if they share the same parameter name.
+     *             
+     * To see available parameters for this item, call `/api/v2/definitions/parameters?$filter=attributeType eq Nexus`
+     *             
+     * Some parameters are only available for use if you have subscribed to specific AvaTax services. To see which parameters you are able to use, add the query parameter "$showSubscribed=true" to the parameter definition call above.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin.
+     * 
+     * @param companyId The ID of the company that owns this nexus parameter.
+     * @param nexusId The nexus id.
+     * @param model The nexus parameters you wish to create.
+     * @return ArrayList<NexusParameterDetailModel>
+     */
+    public Future<ArrayList<NexusParameterDetailModel>> createNexusParametersAsync(Integer companyId, Integer nexusId, ArrayList<NexusParameterDetailModel> model) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/nexus/{nexusId}/parameters");
+        path.applyField("companyId", companyId);
+        path.applyField("nexusId", nexusId);
+        return this.threadPool.submit((RestCall<ArrayList<NexusParameterDetailModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<NexusParameterDetailModel>>(){}));
+    }
+
+    /**
      * Creates nexus for a list of addresses.
      * 
      * This call is intended to simplify adding all applicable nexus to a company, for an address or addresses. Calling this
@@ -12319,6 +13093,110 @@ public class AvaTaxClient {
         path.applyField("companyId", companyId);
         path.applyField("id", id);
         path.addQuery("cascadeDelete", cascadeDelete);
+        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){}));
+    }
+
+    /**
+     * Delete a single nexus parameter
+     * 
+     * Delete a single nexus parameter.
+     * Some tax calculation and reporting are different depending on the properties of the nexus, such as isRemoteSeller. In AvaTax, these tax-affecting properties are called "parameters".
+     *             
+     * A parameter added to an nexus will be used by default in tax calculation but will not show on the transaction line referencing the nexus.
+     *             
+     * A parameter specified on a transaction line will override an nexus parameter if they share the same parameter name.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin.
+     * 
+     * @param companyId The company id
+     * @param nexusId The nexus id
+     * @param id The parameter id
+     * @return ArrayList<ErrorDetail>
+     */
+    public ArrayList<ErrorDetail> deleteNexusParameter(Integer companyId, Integer nexusId, Long id) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/nexus/{nexusId}/parameters/{id}");
+        path.applyField("companyId", companyId);
+        path.applyField("nexusId", nexusId);
+        path.applyField("id", id);
+        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){})).call();
+    }
+
+    /**
+     * Delete a single nexus parameter
+     * 
+     * Delete a single nexus parameter.
+     * Some tax calculation and reporting are different depending on the properties of the nexus, such as isRemoteSeller. In AvaTax, these tax-affecting properties are called "parameters".
+     *             
+     * A parameter added to an nexus will be used by default in tax calculation but will not show on the transaction line referencing the nexus.
+     *             
+     * A parameter specified on a transaction line will override an nexus parameter if they share the same parameter name.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin.
+     * 
+     * @param companyId The company id
+     * @param nexusId The nexus id
+     * @param id The parameter id
+     * @return ArrayList<ErrorDetail>
+     */
+    public Future<ArrayList<ErrorDetail>> deleteNexusParameterAsync(Integer companyId, Integer nexusId, Long id) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/nexus/{nexusId}/parameters/{id}");
+        path.applyField("companyId", companyId);
+        path.applyField("nexusId", nexusId);
+        path.applyField("id", id);
+        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){}));
+    }
+
+    /**
+     * Delete all parameters for an nexus
+     * 
+     * Delete all the parameters for a given nexus.
+     * Some tax calculation and reporting are different depending on the properties of the nexus, such as isRemoteSeller. In AvaTax, these tax-affecting properties are called "parameters".
+     *             
+     * A parameter added to an nexus will be used by default in tax calculation but will not show on the transaction line referencing the nexus.
+     *             
+     * A parameter specified on a transaction line will override an nexus parameter if they share the same parameter name.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin.
+     * 
+     * @param companyId The ID of the company that owns this nexus.
+     * @param nexusId The ID of the nexus you wish to delete the parameters.
+     * @return ArrayList<ErrorDetail>
+     */
+    public ArrayList<ErrorDetail> deleteNexusParameters(Integer companyId, Integer nexusId) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/nexus/{nexusId}/parameters");
+        path.applyField("companyId", companyId);
+        path.applyField("nexusId", nexusId);
+        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){})).call();
+    }
+
+    /**
+     * Delete all parameters for an nexus
+     * 
+     * Delete all the parameters for a given nexus.
+     * Some tax calculation and reporting are different depending on the properties of the nexus, such as isRemoteSeller. In AvaTax, these tax-affecting properties are called "parameters".
+     *             
+     * A parameter added to an nexus will be used by default in tax calculation but will not show on the transaction line referencing the nexus.
+     *             
+     * A parameter specified on a transaction line will override an nexus parameter if they share the same parameter name.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin.
+     * 
+     * @param companyId The ID of the company that owns this nexus.
+     * @param nexusId The ID of the nexus you wish to delete the parameters.
+     * @return ArrayList<ErrorDetail>
+     */
+    public Future<ArrayList<ErrorDetail>> deleteNexusParametersAsync(Integer companyId, Integer nexusId) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/nexus/{nexusId}/parameters");
+        path.applyField("companyId", companyId);
+        path.applyField("nexusId", nexusId);
         return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){}));
     }
 
@@ -12447,6 +13325,60 @@ public class AvaTaxClient {
     }
 
     /**
+     * Retrieve a single nexus parameter
+     * 
+     * Retrieve a single nexus parameter.
+     * Some tax calculation and reporting are different depending on the properties of the nexus, such as isRemoteSeller.In AvaTax, these tax-affecting properties are called "parameters".
+     *             
+     * A parameter added to an nexus will be used by default in tax calculation but will not show on the transaction line referencing the nexus.
+     *             
+     * A parameter specified on a transaction line will override an nexus parameter if they share the same parameter name.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
+     * 
+     * @param companyId The company id
+     * @param nexusId The nexus id
+     * @param id The parameter id
+     * @return NexusParameterDetailModel
+     */
+    public NexusParameterDetailModel getNexusParameter(Integer companyId, Integer nexusId, Long id) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/nexus/{nexusId}/parameters/{id}");
+        path.applyField("companyId", companyId);
+        path.applyField("nexusId", nexusId);
+        path.applyField("id", id);
+        return ((RestCall<NexusParameterDetailModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<NexusParameterDetailModel>(){})).call();
+    }
+
+    /**
+     * Retrieve a single nexus parameter
+     * 
+     * Retrieve a single nexus parameter.
+     * Some tax calculation and reporting are different depending on the properties of the nexus, such as isRemoteSeller.In AvaTax, these tax-affecting properties are called "parameters".
+     *             
+     * A parameter added to an nexus will be used by default in tax calculation but will not show on the transaction line referencing the nexus.
+     *             
+     * A parameter specified on a transaction line will override an nexus parameter if they share the same parameter name.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
+     * 
+     * @param companyId The company id
+     * @param nexusId The nexus id
+     * @param id The parameter id
+     * @return NexusParameterDetailModel
+     */
+    public Future<NexusParameterDetailModel> getNexusParameterAsync(Integer companyId, Integer nexusId, Long id) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/nexus/{nexusId}/parameters/{id}");
+        path.applyField("companyId", companyId);
+        path.applyField("nexusId", nexusId);
+        path.applyField("id", id);
+        return this.threadPool.submit((RestCall<NexusParameterDetailModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<NexusParameterDetailModel>(){}));
+    }
+
+    /**
      * Retrieve nexus for this company
      * 
      * List all nexus objects defined for this company.
@@ -12520,6 +13452,78 @@ public class AvaTaxClient {
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
         return this.threadPool.submit((RestCall<FetchResult<NexusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NexusModel>>(){}));
+    }
+
+    /**
+     * Retrieve parameters for a nexus
+     * 
+     * List parameters for a nexus.
+     * Some tax calculation and reporting are different depending on the properties of the nexus, such as isRemoteSeller. In AvaTax, these tax-affecting properties are called "parameters".
+     *             
+     * A parameter added to an nexus will be used by default in tax calculation but will not show on the transaction line referencing the nexus.
+     *             
+     * A parameter specified on a transaction line will override an nexus parameter if they share the same parameter name. 
+     *             
+     * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * Paginate your results using the `$top`, `$skip`, and `$orderby` parameters.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
+     * 
+     * @param companyId The company id
+     * @param nexusId The nexus id
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* name, unit
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @return FetchResult<NexusParameterDetailModel>
+     */
+    public FetchResult<NexusParameterDetailModel> listNexusParameters(Integer companyId, Integer nexusId, String filter, Integer top, Integer skip, String orderBy) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/nexus/{nexusId}/parameters");
+        path.applyField("companyId", companyId);
+        path.applyField("nexusId", nexusId);
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
+        return ((RestCall<FetchResult<NexusParameterDetailModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NexusParameterDetailModel>>(){})).call();
+    }
+
+    /**
+     * Retrieve parameters for a nexus
+     * 
+     * List parameters for a nexus.
+     * Some tax calculation and reporting are different depending on the properties of the nexus, such as isRemoteSeller. In AvaTax, these tax-affecting properties are called "parameters".
+     *             
+     * A parameter added to an nexus will be used by default in tax calculation but will not show on the transaction line referencing the nexus.
+     *             
+     * A parameter specified on a transaction line will override an nexus parameter if they share the same parameter name. 
+     *             
+     * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * Paginate your results using the `$top`, `$skip`, and `$orderby` parameters.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
+     * 
+     * @param companyId The company id
+     * @param nexusId The nexus id
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* name, unit
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @return FetchResult<NexusParameterDetailModel>
+     */
+    public Future<FetchResult<NexusParameterDetailModel>> listNexusParametersAsync(Integer companyId, Integer nexusId, String filter, Integer top, Integer skip, String orderBy) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/nexus/{nexusId}/parameters");
+        path.applyField("companyId", companyId);
+        path.applyField("nexusId", nexusId);
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
+        return this.threadPool.submit((RestCall<FetchResult<NexusParameterDetailModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NexusParameterDetailModel>>(){}));
     }
 
     /**
@@ -12670,6 +13674,64 @@ public class AvaTaxClient {
         path.applyField("companyId", companyId);
         path.applyField("id", id);
         return this.threadPool.submit((RestCall<NexusModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<NexusModel>(){}));
+    }
+
+    /**
+     * Update an nexus parameter
+     * 
+     * Update an nexus parameter.
+     *             
+     * Some tax calculation and reporting are different depending on the properties of the nexus, such as isRemoteSeller. In AvaTax, these tax-affecting properties are called "parameters".
+     *             
+     * A parameter added to a nexus will be used in tax calculation based on the locationcode and parameter value the transaction state line might have lines added.
+     *             
+     * A parameter specified on a transaction line will override an item parameter if they share the same parameter name.????? I dont know about this?
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin.
+     * 
+     * @param companyId The company id.
+     * @param nexusId The nexus id
+     * @param id The nexus parameter id
+     * @param model The nexus object you wish to update.
+     * @return NexusParameterDetailModel
+     */
+    public NexusParameterDetailModel updateNexusParameter(Integer companyId, Integer nexusId, Long id, NexusParameterDetailModel model) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/nexus/{nexusId}/parameters/{id}");
+        path.applyField("companyId", companyId);
+        path.applyField("nexusId", nexusId);
+        path.applyField("id", id);
+        return ((RestCall<NexusParameterDetailModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<NexusParameterDetailModel>(){})).call();
+    }
+
+    /**
+     * Update an nexus parameter
+     * 
+     * Update an nexus parameter.
+     *             
+     * Some tax calculation and reporting are different depending on the properties of the nexus, such as isRemoteSeller. In AvaTax, these tax-affecting properties are called "parameters".
+     *             
+     * A parameter added to a nexus will be used in tax calculation based on the locationcode and parameter value the transaction state line might have lines added.
+     *             
+     * A parameter specified on a transaction line will override an item parameter if they share the same parameter name.????? I dont know about this?
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin.
+     * 
+     * @param companyId The company id.
+     * @param nexusId The nexus id
+     * @param id The nexus parameter id
+     * @param model The nexus object you wish to update.
+     * @return NexusParameterDetailModel
+     */
+    public Future<NexusParameterDetailModel> updateNexusParameterAsync(Integer companyId, Integer nexusId, Long id, NexusParameterDetailModel model) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/nexus/{nexusId}/parameters/{id}");
+        path.applyField("companyId", companyId);
+        path.applyField("nexusId", nexusId);
+        path.applyField("id", id);
+        return this.threadPool.submit((RestCall<NexusParameterDetailModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<NexusParameterDetailModel>(){}));
     }
 
     /**
