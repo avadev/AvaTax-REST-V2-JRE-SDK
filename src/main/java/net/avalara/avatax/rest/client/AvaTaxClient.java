@@ -259,16 +259,16 @@ public class AvaTaxClient {
      * @param end The end datetime of audit history you with to retrieve, e.g. "2018-06-08T17:15:00Z. Defaults to the current time. Maximum of an hour after the start time.
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
-     * @return FetchResult<AuditModel>
+     * @return AuditModelFetchResult
      */
-    public FetchResult<AuditModel> auditAccount(Integer id, Date start, Date end, Integer top, Integer skip) throws Exception {
+    public AuditModelFetchResult auditAccount(Integer id, Date start, Date end, Integer top, Integer skip) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{id}/audit");
         path.applyField("id", id);
         path.addQuery("start", start);
         path.addQuery("end", end);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
-        return ((RestCall<FetchResult<AuditModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<AuditModel>>(){})).call();
+        return ((RestCall<AuditModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<AuditModelFetchResult>(){})).call();
     }
 
     /**
@@ -298,16 +298,16 @@ public class AvaTaxClient {
      * @param end The end datetime of audit history you with to retrieve, e.g. "2018-06-08T17:15:00Z. Defaults to the current time. Maximum of an hour after the start time.
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
-     * @return FetchResult<AuditModel>
+     * @return AuditModelFetchResult
      */
-    public Future<FetchResult<AuditModel>> auditAccountAsync(Integer id, Date start, Date end, Integer top, Integer skip) {
+    public Future<AuditModelFetchResult> auditAccountAsync(Integer id, Date start, Date end, Integer top, Integer skip) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{id}/audit");
         path.applyField("id", id);
         path.addQuery("start", start);
         path.addQuery("end", end);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
-        return this.threadPool.submit((RestCall<FetchResult<AuditModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<AuditModel>>(){}));
+        return this.threadPool.submit((RestCall<AuditModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<AuditModelFetchResult>(){}));
     }
 
     /**
@@ -621,16 +621,16 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<AccountModel>
+     * @return AccountModelFetchResult
      */
-    public FetchResult<AccountModel> queryAccounts(String include, String filter, Integer top, Integer skip, String orderBy) throws Exception {
+    public AccountModelFetchResult queryAccounts(String include, String filter, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts");
         path.addQuery("$include", include);
         path.addQuery("$filter", filter);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<AccountModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<AccountModel>>(){})).call();
+        return ((RestCall<AccountModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<AccountModelFetchResult>(){})).call();
     }
 
     /**
@@ -658,16 +658,16 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<AccountModel>
+     * @return AccountModelFetchResult
      */
-    public Future<FetchResult<AccountModel>> queryAccountsAsync(String include, String filter, Integer top, Integer skip, String orderBy) {
+    public Future<AccountModelFetchResult> queryAccountsAsync(String include, String filter, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts");
         path.addQuery("$include", include);
         path.addQuery("$filter", filter);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<AccountModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<AccountModel>>(){}));
+        return this.threadPool.submit((RestCall<AccountModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<AccountModelFetchResult>(){}));
     }
 
     /**
@@ -863,6 +863,54 @@ public class AvaTaxClient {
     }
 
     /**
+     * Copy an existing advanced rule to a new environment
+     * 
+     * @param ruleId 
+     * @param model 
+     * @return AdvancedRuleFullDetailsModel
+     */
+    public AdvancedRuleFullDetailsModel copyAdvancedRule(String ruleId, AdvancedRuleFullDetailsModel model) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/advancedrules/rules/{ruleId}/copy");
+        path.applyField("ruleId", ruleId);
+        return ((RestCall<AdvancedRuleFullDetailsModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<AdvancedRuleFullDetailsModel>(){})).call();
+    }
+
+    /**
+     * Copy an existing advanced rule to a new environment
+     * 
+     * @param ruleId 
+     * @param model 
+     * @return AdvancedRuleFullDetailsModel
+     */
+    public Future<AdvancedRuleFullDetailsModel> copyAdvancedRuleAsync(String ruleId, AdvancedRuleFullDetailsModel model) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/advancedrules/rules/{ruleId}/copy");
+        path.applyField("ruleId", ruleId);
+        return this.threadPool.submit((RestCall<AdvancedRuleFullDetailsModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<AdvancedRuleFullDetailsModel>(){}));
+    }
+
+    /**
+     * Create an advanced rule
+     * 
+     * @param model The advanced rule you wish to create
+     * @return AdvancedRuleFullDetailsModel
+     */
+    public AdvancedRuleFullDetailsModel createAdvancedRule(AdvancedRuleFullDetailsModel model) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/advancedrules/rules");
+        return ((RestCall<AdvancedRuleFullDetailsModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<AdvancedRuleFullDetailsModel>(){})).call();
+    }
+
+    /**
+     * Create an advanced rule
+     * 
+     * @param model The advanced rule you wish to create
+     * @return AdvancedRuleFullDetailsModel
+     */
+    public Future<AdvancedRuleFullDetailsModel> createAdvancedRuleAsync(AdvancedRuleFullDetailsModel model) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/advancedrules/rules");
+        return this.threadPool.submit((RestCall<AdvancedRuleFullDetailsModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<AdvancedRuleFullDetailsModel>(){}));
+    }
+
+    /**
      * Create a lookup file for a company
      * 
      * @param accountId The ID of the account for the company
@@ -893,6 +941,60 @@ public class AvaTaxClient {
     }
 
     /**
+     * Create a rule execution for a company
+     * 
+     * @param accountId The ID of the account for the company
+     * @param companyId The ID of the company for which the rule execution is to be created
+     * @param model The rule execution you wish to create
+     * @return AdvancedRuleExecutionModel
+     */
+    public AdvancedRuleExecutionModel createCompanyRuleExecution(Integer accountId, Integer companyId, AdvancedRuleExecutionModel model) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/advancedrules/accounts/{accountId}/companies/{companyId}/executions");
+        path.applyField("accountId", accountId);
+        path.applyField("companyId", companyId);
+        return ((RestCall<AdvancedRuleExecutionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<AdvancedRuleExecutionModel>(){})).call();
+    }
+
+    /**
+     * Create a rule execution for a company
+     * 
+     * @param accountId The ID of the account for the company
+     * @param companyId The ID of the company for which the rule execution is to be created
+     * @param model The rule execution you wish to create
+     * @return AdvancedRuleExecutionModel
+     */
+    public Future<AdvancedRuleExecutionModel> createCompanyRuleExecutionAsync(Integer accountId, Integer companyId, AdvancedRuleExecutionModel model) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/advancedrules/accounts/{accountId}/companies/{companyId}/executions");
+        path.applyField("accountId", accountId);
+        path.applyField("companyId", companyId);
+        return this.threadPool.submit((RestCall<AdvancedRuleExecutionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<AdvancedRuleExecutionModel>(){}));
+    }
+
+    /**
+     * Delete an advanced rule that is not in use by a company
+     * 
+     * @param ruleId The ID of the advanced rule to be deleted
+     * @return ArrayList<ErrorDetail>
+     */
+    public ArrayList<ErrorDetail> deleteAdvancedRule(String ruleId) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/advancedrules/rules/{ruleId}");
+        path.applyField("ruleId", ruleId);
+        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){})).call();
+    }
+
+    /**
+     * Delete an advanced rule that is not in use by a company
+     * 
+     * @param ruleId The ID of the advanced rule to be deleted
+     * @return ArrayList<ErrorDetail>
+     */
+    public Future<ArrayList<ErrorDetail>> deleteAdvancedRuleAsync(String ruleId) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/advancedrules/rules/{ruleId}");
+        path.applyField("ruleId", ruleId);
+        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){}));
+    }
+
+    /**
      * Delete a lookup file
      * 
      * @param accountId The ID of the account for the company the lookup file is for
@@ -918,6 +1020,146 @@ public class AvaTaxClient {
         path.applyField("accountId", accountId);
         path.applyField("id", id);
         return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){}));
+    }
+
+    /**
+     * Delete a rule execution
+     * 
+     * @param accountId The ID of the account for the company the rule execution is for
+     * @param ruleExecutionId The unique ID/GUID for the rule execution to be deleted
+     * @return ArrayList<ErrorDetail>
+     */
+    public ArrayList<ErrorDetail> deleteRuleExecution(Integer accountId, String ruleExecutionId) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/advancedrules/accounts/{accountId}/executions/{ruleExecutionId}");
+        path.applyField("accountId", accountId);
+        path.applyField("ruleExecutionId", ruleExecutionId);
+        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){})).call();
+    }
+
+    /**
+     * Delete a rule execution
+     * 
+     * @param accountId The ID of the account for the company the rule execution is for
+     * @param ruleExecutionId The unique ID/GUID for the rule execution to be deleted
+     * @return ArrayList<ErrorDetail>
+     */
+    public Future<ArrayList<ErrorDetail>> deleteRuleExecutionAsync(Integer accountId, String ruleExecutionId) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/advancedrules/accounts/{accountId}/executions/{ruleExecutionId}");
+        path.applyField("accountId", accountId);
+        path.applyField("ruleExecutionId", ruleExecutionId);
+        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){}));
+    }
+
+    /**
+     * Get an advanced rule by rule ID
+     * 
+     * @param ruleId The ID of the rule to retrieve
+     * @return AdvancedRuleFullDetailsModel
+     */
+    public AdvancedRuleFullDetailsModel getAdvancedRule(String ruleId) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/advancedrules/rules/{ruleId}");
+        path.applyField("ruleId", ruleId);
+        return ((RestCall<AdvancedRuleFullDetailsModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<AdvancedRuleFullDetailsModel>(){})).call();
+    }
+
+    /**
+     * Get an advanced rule by rule ID
+     * 
+     * @param ruleId The ID of the rule to retrieve
+     * @return AdvancedRuleFullDetailsModel
+     */
+    public Future<AdvancedRuleFullDetailsModel> getAdvancedRuleAsync(String ruleId) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/advancedrules/rules/{ruleId}");
+        path.applyField("ruleId", ruleId);
+        return this.threadPool.submit((RestCall<AdvancedRuleFullDetailsModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<AdvancedRuleFullDetailsModel>(){}));
+    }
+
+    /**
+     * Get an advanced rule by name
+     * 
+     * @param name The name of the rule to retrieve
+     * @return AdvancedRuleFullDetailsModel
+     */
+    public AdvancedRuleFullDetailsModel getAdvancedRuleByName(String name) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/advancedrules/rules/name/{name}");
+        path.applyField("name", name);
+        return ((RestCall<AdvancedRuleFullDetailsModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<AdvancedRuleFullDetailsModel>(){})).call();
+    }
+
+    /**
+     * Get an advanced rule by name
+     * 
+     * @param name The name of the rule to retrieve
+     * @return AdvancedRuleFullDetailsModel
+     */
+    public Future<AdvancedRuleFullDetailsModel> getAdvancedRuleByNameAsync(String name) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/advancedrules/rules/name/{name}");
+        path.applyField("name", name);
+        return this.threadPool.submit((RestCall<AdvancedRuleFullDetailsModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<AdvancedRuleFullDetailsModel>(){}));
+    }
+
+    /**
+     * Retrieve an advanced rule's customer data schema for a company
+     * 
+     * @param ruleId The ID of the advance rule for which the schema is requested
+     * @param accountId The ID of the account of the requesting user
+     * @param companyId The ID of the company of the requesting user
+     * @return AdvancedRuleCustomerDataSchemaModel
+     */
+    public AdvancedRuleCustomerDataSchemaModel getAdvancedRuleCustomerDataSchema(String ruleId, Integer accountId, Integer companyId) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/advancedrules/accounts/{accountId}/companies/{companyId}/rules/{ruleId}/schema");
+        path.applyField("ruleId", ruleId);
+        path.applyField("accountId", accountId);
+        path.applyField("companyId", companyId);
+        return ((RestCall<AdvancedRuleCustomerDataSchemaModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<AdvancedRuleCustomerDataSchemaModel>(){})).call();
+    }
+
+    /**
+     * Retrieve an advanced rule's customer data schema for a company
+     * 
+     * @param ruleId The ID of the advance rule for which the schema is requested
+     * @param accountId The ID of the account of the requesting user
+     * @param companyId The ID of the company of the requesting user
+     * @return AdvancedRuleCustomerDataSchemaModel
+     */
+    public Future<AdvancedRuleCustomerDataSchemaModel> getAdvancedRuleCustomerDataSchemaAsync(String ruleId, Integer accountId, Integer companyId) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/advancedrules/accounts/{accountId}/companies/{companyId}/rules/{ruleId}/schema");
+        path.applyField("ruleId", ruleId);
+        path.applyField("accountId", accountId);
+        path.applyField("companyId", companyId);
+        return this.threadPool.submit((RestCall<AdvancedRuleCustomerDataSchemaModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<AdvancedRuleCustomerDataSchemaModel>(){}));
+    }
+
+    /**
+     * List all advanced rules
+     * 
+     * @param fullDetails Retrieve detailed advanced rule properties (limited to tech support level)
+     * @param includeTest Include test rules
+     * @param includeSystemRules Include rules used to retrieve enumerated values
+     * @return AdvancedRuleFullDetailsModelFetchResult
+     */
+    public AdvancedRuleFullDetailsModelFetchResult getAdvancedRules(Boolean fullDetails, Boolean includeTest, Boolean includeSystemRules) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/advancedrules/rules");
+        path.addQuery("fullDetails", fullDetails);
+        path.addQuery("includeTest", includeTest);
+        path.addQuery("includeSystemRules", includeSystemRules);
+        return ((RestCall<AdvancedRuleFullDetailsModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<AdvancedRuleFullDetailsModelFetchResult>(){})).call();
+    }
+
+    /**
+     * List all advanced rules
+     * 
+     * @param fullDetails Retrieve detailed advanced rule properties (limited to tech support level)
+     * @param includeTest Include test rules
+     * @param includeSystemRules Include rules used to retrieve enumerated values
+     * @return AdvancedRuleFullDetailsModelFetchResult
+     */
+    public Future<AdvancedRuleFullDetailsModelFetchResult> getAdvancedRulesAsync(Boolean fullDetails, Boolean includeTest, Boolean includeSystemRules) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/advancedrules/rules");
+        path.addQuery("fullDetails", fullDetails);
+        path.addQuery("includeTest", includeTest);
+        path.addQuery("includeSystemRules", includeSystemRules);
+        return this.threadPool.submit((RestCall<AdvancedRuleFullDetailsModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<AdvancedRuleFullDetailsModelFetchResult>(){}));
     }
 
     /**
@@ -953,17 +1195,27 @@ public class AvaTaxClient {
     }
 
     /**
-     * Get the lookup files for a company
+     * Retrieve companies that have an advanced rule configured in its rule execution configuration
      * 
-     * @param accountId The account ID for the company
-     * @param companyId The ID of the company for which to retrieve lookup files
-     * @return FetchResult<AdvancedRuleLookupFileModel>
+     * @param ruleId he ID of the advance rule for which companies are requested
+     * @return CompanyModelFetchResult
      */
-    public FetchResult<AdvancedRuleLookupFileModel> getCompanyLookupFiles(Integer accountId, Integer companyId) throws Exception {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/advancedrules/accounts/{accountId}/companies/{companyId}/lookupFiles");
-        path.applyField("accountId", accountId);
-        path.applyField("companyId", companyId);
-        return ((RestCall<FetchResult<AdvancedRuleLookupFileModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<AdvancedRuleLookupFileModel>>(){})).call();
+    public CompanyModelFetchResult getCompaniesUsingAdvancedRule(String ruleId) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/advancedrules/rules/{ruleId}/companies");
+        path.applyField("ruleId", ruleId);
+        return ((RestCall<CompanyModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<CompanyModelFetchResult>(){})).call();
+    }
+
+    /**
+     * Retrieve companies that have an advanced rule configured in its rule execution configuration
+     * 
+     * @param ruleId he ID of the advance rule for which companies are requested
+     * @return CompanyModelFetchResult
+     */
+    public Future<CompanyModelFetchResult> getCompaniesUsingAdvancedRuleAsync(String ruleId) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/advancedrules/rules/{ruleId}/companies");
+        path.applyField("ruleId", ruleId);
+        return this.threadPool.submit((RestCall<CompanyModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<CompanyModelFetchResult>(){}));
     }
 
     /**
@@ -971,13 +1223,59 @@ public class AvaTaxClient {
      * 
      * @param accountId The account ID for the company
      * @param companyId The ID of the company for which to retrieve lookup files
-     * @return FetchResult<AdvancedRuleLookupFileModel>
+     * @return AdvancedRuleLookupFileModelFetchResult
      */
-    public Future<FetchResult<AdvancedRuleLookupFileModel>> getCompanyLookupFilesAsync(Integer accountId, Integer companyId) {
+    public AdvancedRuleLookupFileModelFetchResult getCompanyLookupFiles(Integer accountId, Integer companyId) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/advancedrules/accounts/{accountId}/companies/{companyId}/lookupFiles");
         path.applyField("accountId", accountId);
         path.applyField("companyId", companyId);
-        return this.threadPool.submit((RestCall<FetchResult<AdvancedRuleLookupFileModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<AdvancedRuleLookupFileModel>>(){}));
+        return ((RestCall<AdvancedRuleLookupFileModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<AdvancedRuleLookupFileModelFetchResult>(){})).call();
+    }
+
+    /**
+     * Get the lookup files for a company
+     * 
+     * @param accountId The account ID for the company
+     * @param companyId The ID of the company for which to retrieve lookup files
+     * @return AdvancedRuleLookupFileModelFetchResult
+     */
+    public Future<AdvancedRuleLookupFileModelFetchResult> getCompanyLookupFilesAsync(Integer accountId, Integer companyId) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/advancedrules/accounts/{accountId}/companies/{companyId}/lookupFiles");
+        path.applyField("accountId", accountId);
+        path.applyField("companyId", companyId);
+        return this.threadPool.submit((RestCall<AdvancedRuleLookupFileModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<AdvancedRuleLookupFileModelFetchResult>(){}));
+    }
+
+    /**
+     * Get the rule executions for a company
+     * 
+     * @param accountId The account ID for the company
+     * @param companyId The ID of the company for which to retrieve rule executions
+     * @param effectiveDate Optional date which the rule executions should be effective
+     * @return AdvancedRuleExecutionModelFetchResult
+     */
+    public AdvancedRuleExecutionModelFetchResult getCompanyRuleExecutions(Integer accountId, Integer companyId, Date effectiveDate) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/advancedrules/accounts/{accountId}/companies/{companyId}/executions");
+        path.applyField("accountId", accountId);
+        path.applyField("companyId", companyId);
+        path.addQuery("effectiveDate", effectiveDate);
+        return ((RestCall<AdvancedRuleExecutionModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<AdvancedRuleExecutionModelFetchResult>(){})).call();
+    }
+
+    /**
+     * Get the rule executions for a company
+     * 
+     * @param accountId The account ID for the company
+     * @param companyId The ID of the company for which to retrieve rule executions
+     * @param effectiveDate Optional date which the rule executions should be effective
+     * @return AdvancedRuleExecutionModelFetchResult
+     */
+    public Future<AdvancedRuleExecutionModelFetchResult> getCompanyRuleExecutionsAsync(Integer accountId, Integer companyId, Date effectiveDate) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/advancedrules/accounts/{accountId}/companies/{companyId}/executions");
+        path.applyField("accountId", accountId);
+        path.applyField("companyId", companyId);
+        path.addQuery("effectiveDate", effectiveDate);
+        return this.threadPool.submit((RestCall<AdvancedRuleExecutionModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<AdvancedRuleExecutionModelFetchResult>(){}));
     }
 
     /**
@@ -1009,6 +1307,142 @@ public class AvaTaxClient {
     }
 
     /**
+     * Get a rule execution for an accountId and ruleExecutionId
+     * 
+     * @param accountId The ID of the account for the rule execution
+     * @param ruleExecutionId The unique ID/GUID of the rule execution to return
+     * @return AdvancedRuleExecutionModel
+     */
+    public AdvancedRuleExecutionModel getRuleExecution(Integer accountId, String ruleExecutionId) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/advancedrules/accounts/{accountId}/executions/{ruleExecutionId}");
+        path.applyField("accountId", accountId);
+        path.applyField("ruleExecutionId", ruleExecutionId);
+        return ((RestCall<AdvancedRuleExecutionModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<AdvancedRuleExecutionModel>(){})).call();
+    }
+
+    /**
+     * Get a rule execution for an accountId and ruleExecutionId
+     * 
+     * @param accountId The ID of the account for the rule execution
+     * @param ruleExecutionId The unique ID/GUID of the rule execution to return
+     * @return AdvancedRuleExecutionModel
+     */
+    public Future<AdvancedRuleExecutionModel> getRuleExecutionAsync(Integer accountId, String ruleExecutionId) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/advancedrules/accounts/{accountId}/executions/{ruleExecutionId}");
+        path.applyField("accountId", accountId);
+        path.applyField("ruleExecutionId", ruleExecutionId);
+        return this.threadPool.submit((RestCall<AdvancedRuleExecutionModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<AdvancedRuleExecutionModel>(){}));
+    }
+
+    /**
+     * Update an advanced rule
+     * 
+     * @param ruleId The ID of the advanced rule to be updated
+     * @param model The new values for the advanced rule
+     * @return AdvancedRuleFullDetailsModel
+     */
+    public AdvancedRuleFullDetailsModel updateAdvancedRule(String ruleId, AdvancedRuleFullDetailsModel model) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/advancedrules/rules/{ruleId}");
+        path.applyField("ruleId", ruleId);
+        return ((RestCall<AdvancedRuleFullDetailsModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<AdvancedRuleFullDetailsModel>(){})).call();
+    }
+
+    /**
+     * Update an advanced rule
+     * 
+     * @param ruleId The ID of the advanced rule to be updated
+     * @param model The new values for the advanced rule
+     * @return AdvancedRuleFullDetailsModel
+     */
+    public Future<AdvancedRuleFullDetailsModel> updateAdvancedRuleAsync(String ruleId, AdvancedRuleFullDetailsModel model) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/advancedrules/rules/{ruleId}");
+        path.applyField("ruleId", ruleId);
+        return this.threadPool.submit((RestCall<AdvancedRuleFullDetailsModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<AdvancedRuleFullDetailsModel>(){}));
+    }
+
+    /**
+     * Set rule approved or unapproved
+     * 
+     * @param ruleId The ID of the advanced rule to change the approved state
+     * @param model The value to set approved state
+     * @return AdvancedRuleFullDetailsModel
+     */
+    public AdvancedRuleFullDetailsModel updateAdvancedRuleApproval(String ruleId, ApproveAdvancedRuleModel model) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/advancedrules/rules/{ruleId}/approve");
+        path.applyField("ruleId", ruleId);
+        return ((RestCall<AdvancedRuleFullDetailsModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<AdvancedRuleFullDetailsModel>(){})).call();
+    }
+
+    /**
+     * Set rule approved or unapproved
+     * 
+     * @param ruleId The ID of the advanced rule to change the approved state
+     * @param model The value to set approved state
+     * @return AdvancedRuleFullDetailsModel
+     */
+    public Future<AdvancedRuleFullDetailsModel> updateAdvancedRuleApprovalAsync(String ruleId, ApproveAdvancedRuleModel model) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/advancedrules/rules/{ruleId}/approve");
+        path.applyField("ruleId", ruleId);
+        return this.threadPool.submit((RestCall<AdvancedRuleFullDetailsModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<AdvancedRuleFullDetailsModel>(){}));
+    }
+
+    /**
+     * Set rule visible or not visible for an account
+     * 
+     * @param ruleId 
+     * @param model 
+     * @return AdvancedRuleFullDetailsModel
+     */
+    public AdvancedRuleFullDetailsModel updateAdvancedRuleVisibility(String ruleId, AdvancedRuleVisibilityModel model) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/advancedrules/rules/{ruleId}/visible");
+        path.applyField("ruleId", ruleId);
+        return ((RestCall<AdvancedRuleFullDetailsModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<AdvancedRuleFullDetailsModel>(){})).call();
+    }
+
+    /**
+     * Set rule visible or not visible for an account
+     * 
+     * @param ruleId 
+     * @param model 
+     * @return AdvancedRuleFullDetailsModel
+     */
+    public Future<AdvancedRuleFullDetailsModel> updateAdvancedRuleVisibilityAsync(String ruleId, AdvancedRuleVisibilityModel model) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/advancedrules/rules/{ruleId}/visible");
+        path.applyField("ruleId", ruleId);
+        return this.threadPool.submit((RestCall<AdvancedRuleFullDetailsModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<AdvancedRuleFullDetailsModel>(){}));
+    }
+
+    /**
+     * Change the rule execution order for a company
+     * 
+     * @param accountId The ID of the account for the company the rule execution is for
+     * @param companyId The ID of the company for which the rule execution order is being modified
+     * @param model A list of rule execution IDs for the company indicating the new execution order
+     * @return StringFetchResult
+     */
+    public StringFetchResult updateCompanyRuleExecutionOrder(Integer accountId, Integer companyId, AdvancedRuleExecutionOrderModel model) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/advancedrules/accounts/{accountId}/companies/{companyId}/executions/order");
+        path.applyField("accountId", accountId);
+        path.applyField("companyId", companyId);
+        return ((RestCall<StringFetchResult>)restCallFactory.createRestCall("post", path, model, new TypeToken<StringFetchResult>(){})).call();
+    }
+
+    /**
+     * Change the rule execution order for a company
+     * 
+     * @param accountId The ID of the account for the company the rule execution is for
+     * @param companyId The ID of the company for which the rule execution order is being modified
+     * @param model A list of rule execution IDs for the company indicating the new execution order
+     * @return StringFetchResult
+     */
+    public Future<StringFetchResult> updateCompanyRuleExecutionOrderAsync(Integer accountId, Integer companyId, AdvancedRuleExecutionOrderModel model) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/advancedrules/accounts/{accountId}/companies/{companyId}/executions/order");
+        path.applyField("accountId", accountId);
+        path.applyField("companyId", companyId);
+        return this.threadPool.submit((RestCall<StringFetchResult>)restCallFactory.createRestCall("post", path, model, new TypeToken<StringFetchResult>(){}));
+    }
+
+    /**
      * Update a lookup file
      * 
      * @param accountId The ID of the account for the company the lookup file is for
@@ -1036,6 +1470,36 @@ public class AvaTaxClient {
         path.applyField("accountId", accountId);
         path.applyField("id", id);
         return this.threadPool.submit((RestCall<AdvancedRuleLookupFileModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<AdvancedRuleLookupFileModel>(){}));
+    }
+
+    /**
+     * Update a rule execution
+     * 
+     * @param accountId The ID of the account for the company the rule execution is for
+     * @param ruleExecutionId The unique ID/GUID of the rule execution to be updated
+     * @param model The new values to update the rule execution
+     * @return AdvancedRuleExecutionModel
+     */
+    public AdvancedRuleExecutionModel updateRuleExecution(Integer accountId, String ruleExecutionId, AdvancedRuleExecutionModel model) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/advancedrules/accounts/{accountId}/executions/{ruleExecutionId}");
+        path.applyField("accountId", accountId);
+        path.applyField("ruleExecutionId", ruleExecutionId);
+        return ((RestCall<AdvancedRuleExecutionModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<AdvancedRuleExecutionModel>(){})).call();
+    }
+
+    /**
+     * Update a rule execution
+     * 
+     * @param accountId The ID of the account for the company the rule execution is for
+     * @param ruleExecutionId The unique ID/GUID of the rule execution to be updated
+     * @param model The new values to update the rule execution
+     * @return AdvancedRuleExecutionModel
+     */
+    public Future<AdvancedRuleExecutionModel> updateRuleExecutionAsync(Integer accountId, String ruleExecutionId, AdvancedRuleExecutionModel model) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/advancedrules/accounts/{accountId}/executions/{ruleExecutionId}");
+        path.applyField("accountId", accountId);
+        path.applyField("ruleExecutionId", ruleExecutionId);
+        return this.threadPool.submit((RestCall<AdvancedRuleExecutionModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<AdvancedRuleExecutionModel>(){}));
     }
 
     /**
@@ -1167,15 +1631,15 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<AvaFileFormModel>
+     * @return AvaFileFormModelFetchResult
      */
-    public FetchResult<AvaFileFormModel> queryAvaFileForms(String filter, Integer top, Integer skip, String orderBy) throws Exception {
+    public AvaFileFormModelFetchResult queryAvaFileForms(String filter, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/avafileforms");
         path.addQuery("$filter", filter);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<AvaFileFormModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<AvaFileFormModel>>(){})).call();
+        return ((RestCall<AvaFileFormModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<AvaFileFormModelFetchResult>(){})).call();
     }
 
     /**
@@ -1193,15 +1657,15 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<AvaFileFormModel>
+     * @return AvaFileFormModelFetchResult
      */
-    public Future<FetchResult<AvaFileFormModel>> queryAvaFileFormsAsync(String filter, Integer top, Integer skip, String orderBy) {
+    public Future<AvaFileFormModelFetchResult> queryAvaFileFormsAsync(String filter, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/avafileforms");
         path.addQuery("$filter", filter);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<AvaFileFormModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<AvaFileFormModel>>(){}));
+        return this.threadPool.submit((RestCall<AvaFileFormModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<AvaFileFormModelFetchResult>(){}));
     }
 
     /**
@@ -1657,9 +2121,9 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<BatchModel>
+     * @return BatchModelFetchResult
      */
-    public FetchResult<BatchModel> listBatchesByCompany(Integer companyId, String filter, String include, Integer top, Integer skip, String orderBy) throws Exception {
+    public BatchModelFetchResult listBatchesByCompany(Integer companyId, String filter, String include, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/batches");
         path.applyField("companyId", companyId);
         path.addQuery("$filter", filter);
@@ -1667,7 +2131,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<BatchModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<BatchModel>>(){})).call();
+        return ((RestCall<BatchModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<BatchModelFetchResult>(){})).call();
     }
 
     /**
@@ -1705,9 +2169,9 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<BatchModel>
+     * @return BatchModelFetchResult
      */
-    public Future<FetchResult<BatchModel>> listBatchesByCompanyAsync(Integer companyId, String filter, String include, Integer top, Integer skip, String orderBy) {
+    public Future<BatchModelFetchResult> listBatchesByCompanyAsync(Integer companyId, String filter, String include, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/batches");
         path.applyField("companyId", companyId);
         path.addQuery("$filter", filter);
@@ -1715,7 +2179,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<BatchModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<BatchModel>>(){}));
+        return this.threadPool.submit((RestCall<BatchModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<BatchModelFetchResult>(){}));
     }
 
     /**
@@ -1749,16 +2213,16 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<BatchModel>
+     * @return BatchModelFetchResult
      */
-    public FetchResult<BatchModel> queryBatches(String filter, String include, Integer top, Integer skip, String orderBy) throws Exception {
+    public BatchModelFetchResult queryBatches(String filter, String include, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/batches");
         path.addQuery("$filter", filter);
         path.addQuery("$include", include);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<BatchModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<BatchModel>>(){})).call();
+        return ((RestCall<BatchModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<BatchModelFetchResult>(){})).call();
     }
 
     /**
@@ -1792,16 +2256,16 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<BatchModel>
+     * @return BatchModelFetchResult
      */
-    public Future<FetchResult<BatchModel>> queryBatchesAsync(String filter, String include, Integer top, Integer skip, String orderBy) {
+    public Future<BatchModelFetchResult> queryBatchesAsync(String filter, String include, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/batches");
         path.addQuery("$filter", filter);
         path.addQuery("$include", include);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<BatchModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<BatchModel>>(){}));
+        return this.threadPool.submit((RestCall<BatchModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<BatchModelFetchResult>(){}));
     }
 
     /**
@@ -1984,9 +2448,9 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<CertExpressInvitationModel>
+     * @return CertExpressInvitationModelFetchResult
      */
-    public FetchResult<CertExpressInvitationModel> listCertExpressInvitations(Integer companyId, String include, String filter, Integer top, Integer skip, String orderBy) throws Exception {
+    public CertExpressInvitationModelFetchResult listCertExpressInvitations(Integer companyId, String include, String filter, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/certexpressinvites");
         path.applyField("companyId", companyId);
         path.addQuery("$include", include);
@@ -1994,7 +2458,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<CertExpressInvitationModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CertExpressInvitationModel>>(){})).call();
+        return ((RestCall<CertExpressInvitationModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<CertExpressInvitationModelFetchResult>(){})).call();
     }
 
     /**
@@ -2027,9 +2491,9 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<CertExpressInvitationModel>
+     * @return CertExpressInvitationModelFetchResult
      */
-    public Future<FetchResult<CertExpressInvitationModel>> listCertExpressInvitationsAsync(Integer companyId, String include, String filter, Integer top, Integer skip, String orderBy) {
+    public Future<CertExpressInvitationModelFetchResult> listCertExpressInvitationsAsync(Integer companyId, String include, String filter, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/certexpressinvites");
         path.applyField("companyId", companyId);
         path.addQuery("$include", include);
@@ -2037,7 +2501,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<CertExpressInvitationModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CertExpressInvitationModel>>(){}));
+        return this.threadPool.submit((RestCall<CertExpressInvitationModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<CertExpressInvitationModelFetchResult>(){}));
     }
 
     /**
@@ -2420,13 +2884,13 @@ public class AvaTaxClient {
      * @param companyId The unique ID number of the company that recorded this certificate
      * @param id The unique ID number of this certificate
      * @param model The list of attributes to link to this certificate.
-     * @return FetchResult<CertificateAttributeModel>
+     * @return CertificateAttributeModelFetchResult
      */
-    public FetchResult<CertificateAttributeModel> linkAttributesToCertificate(Integer companyId, Integer id, ArrayList<CertificateAttributeModel> model) throws Exception {
+    public CertificateAttributeModelFetchResult linkAttributesToCertificate(Integer companyId, Integer id, ArrayList<CertificateAttributeModel> model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/certificates/{id}/attributes/link");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return ((RestCall<FetchResult<CertificateAttributeModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<FetchResult<CertificateAttributeModel>>(){})).call();
+        return ((RestCall<CertificateAttributeModelFetchResult>)restCallFactory.createRestCall("post", path, model, new TypeToken<CertificateAttributeModelFetchResult>(){})).call();
     }
 
     /**
@@ -2455,13 +2919,13 @@ public class AvaTaxClient {
      * @param companyId The unique ID number of the company that recorded this certificate
      * @param id The unique ID number of this certificate
      * @param model The list of attributes to link to this certificate.
-     * @return FetchResult<CertificateAttributeModel>
+     * @return CertificateAttributeModelFetchResult
      */
-    public Future<FetchResult<CertificateAttributeModel>> linkAttributesToCertificateAsync(Integer companyId, Integer id, ArrayList<CertificateAttributeModel> model) {
+    public Future<CertificateAttributeModelFetchResult> linkAttributesToCertificateAsync(Integer companyId, Integer id, ArrayList<CertificateAttributeModel> model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/certificates/{id}/attributes/link");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<FetchResult<CertificateAttributeModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<FetchResult<CertificateAttributeModel>>(){}));
+        return this.threadPool.submit((RestCall<CertificateAttributeModelFetchResult>)restCallFactory.createRestCall("post", path, model, new TypeToken<CertificateAttributeModelFetchResult>(){}));
     }
 
     /**
@@ -2491,13 +2955,13 @@ public class AvaTaxClient {
      * @param companyId The unique ID number of the company that recorded this certificate
      * @param id The unique ID number of this certificate
      * @param model The list of customers needed be added to the Certificate for exemption
-     * @return FetchResult<CustomerModel>
+     * @return CustomerModelFetchResult
      */
-    public FetchResult<CustomerModel> linkCustomersToCertificate(Integer companyId, Integer id, LinkCustomersModel model) throws Exception {
+    public CustomerModelFetchResult linkCustomersToCertificate(Integer companyId, Integer id, LinkCustomersModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/certificates/{id}/customers/link");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return ((RestCall<FetchResult<CustomerModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<FetchResult<CustomerModel>>(){})).call();
+        return ((RestCall<CustomerModelFetchResult>)restCallFactory.createRestCall("post", path, model, new TypeToken<CustomerModelFetchResult>(){})).call();
     }
 
     /**
@@ -2527,13 +2991,13 @@ public class AvaTaxClient {
      * @param companyId The unique ID number of the company that recorded this certificate
      * @param id The unique ID number of this certificate
      * @param model The list of customers needed be added to the Certificate for exemption
-     * @return FetchResult<CustomerModel>
+     * @return CustomerModelFetchResult
      */
-    public Future<FetchResult<CustomerModel>> linkCustomersToCertificateAsync(Integer companyId, Integer id, LinkCustomersModel model) {
+    public Future<CustomerModelFetchResult> linkCustomersToCertificateAsync(Integer companyId, Integer id, LinkCustomersModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/certificates/{id}/customers/link");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<FetchResult<CustomerModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<FetchResult<CustomerModel>>(){}));
+        return this.threadPool.submit((RestCall<CustomerModelFetchResult>)restCallFactory.createRestCall("post", path, model, new TypeToken<CustomerModelFetchResult>(){}));
     }
 
     /**
@@ -2561,13 +3025,13 @@ public class AvaTaxClient {
      * 
      * @param companyId The unique ID number of the company that recorded this certificate
      * @param id The unique ID number of this certificate
-     * @return FetchResult<CertificateAttributeModel>
+     * @return CertificateAttributeModelFetchResult
      */
-    public FetchResult<CertificateAttributeModel> listAttributesForCertificate(Integer companyId, Integer id) throws Exception {
+    public CertificateAttributeModelFetchResult listAttributesForCertificate(Integer companyId, Integer id) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/certificates/{id}/attributes");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return ((RestCall<FetchResult<CertificateAttributeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CertificateAttributeModel>>(){})).call();
+        return ((RestCall<CertificateAttributeModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<CertificateAttributeModelFetchResult>(){})).call();
     }
 
     /**
@@ -2595,13 +3059,13 @@ public class AvaTaxClient {
      * 
      * @param companyId The unique ID number of the company that recorded this certificate
      * @param id The unique ID number of this certificate
-     * @return FetchResult<CertificateAttributeModel>
+     * @return CertificateAttributeModelFetchResult
      */
-    public Future<FetchResult<CertificateAttributeModel>> listAttributesForCertificateAsync(Integer companyId, Integer id) {
+    public Future<CertificateAttributeModelFetchResult> listAttributesForCertificateAsync(Integer companyId, Integer id) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/certificates/{id}/attributes");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<FetchResult<CertificateAttributeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CertificateAttributeModel>>(){}));
+        return this.threadPool.submit((RestCall<CertificateAttributeModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<CertificateAttributeModelFetchResult>(){}));
     }
 
     /**
@@ -2630,14 +3094,14 @@ public class AvaTaxClient {
      * @param companyId The unique ID number of the company that recorded this certificate
      * @param id The unique ID number of this certificate
      * @param include OPTIONAL: A comma separated list of special fetch options.   No options are currently available when fetching customers.
-     * @return FetchResult<CustomerModel>
+     * @return CustomerModelFetchResult
      */
-    public FetchResult<CustomerModel> listCustomersForCertificate(Integer companyId, Integer id, String include) throws Exception {
+    public CustomerModelFetchResult listCustomersForCertificate(Integer companyId, Integer id, String include) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/certificates/{id}/customers");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
         path.addQuery("$include", include);
-        return ((RestCall<FetchResult<CustomerModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CustomerModel>>(){})).call();
+        return ((RestCall<CustomerModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<CustomerModelFetchResult>(){})).call();
     }
 
     /**
@@ -2666,14 +3130,14 @@ public class AvaTaxClient {
      * @param companyId The unique ID number of the company that recorded this certificate
      * @param id The unique ID number of this certificate
      * @param include OPTIONAL: A comma separated list of special fetch options.   No options are currently available when fetching customers.
-     * @return FetchResult<CustomerModel>
+     * @return CustomerModelFetchResult
      */
-    public Future<FetchResult<CustomerModel>> listCustomersForCertificateAsync(Integer companyId, Integer id, String include) {
+    public Future<CustomerModelFetchResult> listCustomersForCertificateAsync(Integer companyId, Integer id, String include) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/certificates/{id}/customers");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
         path.addQuery("$include", include);
-        return this.threadPool.submit((RestCall<FetchResult<CustomerModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CustomerModel>>(){}));
+        return this.threadPool.submit((RestCall<CustomerModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<CustomerModelFetchResult>(){}));
     }
 
     /**
@@ -2708,9 +3172,9 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<CertificateModel>
+     * @return CertificateModelFetchResult
      */
-    public FetchResult<CertificateModel> queryCertificates(Integer companyId, String include, String filter, Integer top, Integer skip, String orderBy) throws Exception {
+    public CertificateModelFetchResult queryCertificates(Integer companyId, String include, String filter, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/certificates");
         path.applyField("companyId", companyId);
         path.addQuery("$include", include);
@@ -2718,7 +3182,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<CertificateModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CertificateModel>>(){})).call();
+        return ((RestCall<CertificateModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<CertificateModelFetchResult>(){})).call();
     }
 
     /**
@@ -2753,9 +3217,9 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<CertificateModel>
+     * @return CertificateModelFetchResult
      */
-    public Future<FetchResult<CertificateModel>> queryCertificatesAsync(Integer companyId, String include, String filter, Integer top, Integer skip, String orderBy) {
+    public Future<CertificateModelFetchResult> queryCertificatesAsync(Integer companyId, String include, String filter, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/certificates");
         path.applyField("companyId", companyId);
         path.addQuery("$include", include);
@@ -2763,7 +3227,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<CertificateModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CertificateModel>>(){}));
+        return this.threadPool.submit((RestCall<CertificateModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<CertificateModelFetchResult>(){}));
     }
 
     /**
@@ -2846,13 +3310,13 @@ public class AvaTaxClient {
      * @param companyId The unique ID number of the company that recorded this certificate
      * @param id The unique ID number of this certificate
      * @param model The list of attributes to unlink from this certificate.
-     * @return FetchResult<CertificateAttributeModel>
+     * @return CertificateAttributeModelFetchResult
      */
-    public FetchResult<CertificateAttributeModel> unlinkAttributesFromCertificate(Integer companyId, Integer id, ArrayList<CertificateAttributeModel> model) throws Exception {
+    public CertificateAttributeModelFetchResult unlinkAttributesFromCertificate(Integer companyId, Integer id, ArrayList<CertificateAttributeModel> model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/certificates/{id}/attributes/unlink");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return ((RestCall<FetchResult<CertificateAttributeModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<FetchResult<CertificateAttributeModel>>(){})).call();
+        return ((RestCall<CertificateAttributeModelFetchResult>)restCallFactory.createRestCall("post", path, model, new TypeToken<CertificateAttributeModelFetchResult>(){})).call();
     }
 
     /**
@@ -2881,13 +3345,13 @@ public class AvaTaxClient {
      * @param companyId The unique ID number of the company that recorded this certificate
      * @param id The unique ID number of this certificate
      * @param model The list of attributes to unlink from this certificate.
-     * @return FetchResult<CertificateAttributeModel>
+     * @return CertificateAttributeModelFetchResult
      */
-    public Future<FetchResult<CertificateAttributeModel>> unlinkAttributesFromCertificateAsync(Integer companyId, Integer id, ArrayList<CertificateAttributeModel> model) {
+    public Future<CertificateAttributeModelFetchResult> unlinkAttributesFromCertificateAsync(Integer companyId, Integer id, ArrayList<CertificateAttributeModel> model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/certificates/{id}/attributes/unlink");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<FetchResult<CertificateAttributeModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<FetchResult<CertificateAttributeModel>>(){}));
+        return this.threadPool.submit((RestCall<CertificateAttributeModelFetchResult>)restCallFactory.createRestCall("post", path, model, new TypeToken<CertificateAttributeModelFetchResult>(){}));
     }
 
     /**
@@ -2918,13 +3382,13 @@ public class AvaTaxClient {
      * @param companyId The unique ID number of the company that recorded this certificate
      * @param id The unique ID number of this certificate
      * @param model The list of customers to unlink from this certificate
-     * @return FetchResult<CustomerModel>
+     * @return CustomerModelFetchResult
      */
-    public FetchResult<CustomerModel> unlinkCustomersFromCertificate(Integer companyId, Integer id, LinkCustomersModel model) throws Exception {
+    public CustomerModelFetchResult unlinkCustomersFromCertificate(Integer companyId, Integer id, LinkCustomersModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/certificates/{id}/customers/unlink");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return ((RestCall<FetchResult<CustomerModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<FetchResult<CustomerModel>>(){})).call();
+        return ((RestCall<CustomerModelFetchResult>)restCallFactory.createRestCall("post", path, model, new TypeToken<CustomerModelFetchResult>(){})).call();
     }
 
     /**
@@ -2955,13 +3419,13 @@ public class AvaTaxClient {
      * @param companyId The unique ID number of the company that recorded this certificate
      * @param id The unique ID number of this certificate
      * @param model The list of customers to unlink from this certificate
-     * @return FetchResult<CustomerModel>
+     * @return CustomerModelFetchResult
      */
-    public Future<FetchResult<CustomerModel>> unlinkCustomersFromCertificateAsync(Integer companyId, Integer id, LinkCustomersModel model) {
+    public Future<CustomerModelFetchResult> unlinkCustomersFromCertificateAsync(Integer companyId, Integer id, LinkCustomersModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/certificates/{id}/customers/unlink");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<FetchResult<CustomerModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<FetchResult<CustomerModel>>(){}));
+        return this.threadPool.submit((RestCall<CustomerModelFetchResult>)restCallFactory.createRestCall("post", path, model, new TypeToken<CustomerModelFetchResult>(){}));
     }
 
     /**
@@ -3397,6 +3861,128 @@ public class AvaTaxClient {
     }
 
     /**
+     * Create Customers for a user
+     * 
+     * Add customers for a company.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, FirmAdmin, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
+     * 
+     * @param companyId The ID of the company that owns this customer.
+     * @param model The Customers you wish to create.
+     * @return ArrayList<CustomerSupplierModel>
+     */
+    public ArrayList<CustomerSupplierModel> createCSCustomers(Integer companyId, ArrayList<CustomerSupplierModel> model) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/supplierandcustomers/customers");
+        path.applyField("companyId", companyId);
+        return ((RestCall<ArrayList<CustomerSupplierModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<CustomerSupplierModel>>(){})).call();
+    }
+
+    /**
+     * Create Customers for a user
+     * 
+     * Add customers for a company.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, FirmAdmin, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
+     * 
+     * @param companyId The ID of the company that owns this customer.
+     * @param model The Customers you wish to create.
+     * @return ArrayList<CustomerSupplierModel>
+     */
+    public Future<ArrayList<CustomerSupplierModel>> createCSCustomersAsync(Integer companyId, ArrayList<CustomerSupplierModel> model) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/supplierandcustomers/customers");
+        path.applyField("companyId", companyId);
+        return this.threadPool.submit((RestCall<ArrayList<CustomerSupplierModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<CustomerSupplierModel>>(){}));
+    }
+
+    /**
+     * Add suppliers to a company.
+     * 
+     * Add suppliers to a company.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, FirmAdmin, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
+     * 
+     * @param companyId The ID of the company that owns this suppliers.
+     * @param model The company suppliers you wish to create.
+     * @return ArrayList<CustomerSupplierModel>
+     */
+    public ArrayList<CustomerSupplierModel> createCSSuppliers(Integer companyId, ArrayList<CustomerSupplierModel> model) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/supplierandcustomers/suppliers");
+        path.applyField("companyId", companyId);
+        return ((RestCall<ArrayList<CustomerSupplierModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<CustomerSupplierModel>>(){})).call();
+    }
+
+    /**
+     * Add suppliers to a company.
+     * 
+     * Add suppliers to a company.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, FirmAdmin, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
+     * 
+     * @param companyId The ID of the company that owns this suppliers.
+     * @param model The company suppliers you wish to create.
+     * @return ArrayList<CustomerSupplierModel>
+     */
+    public Future<ArrayList<CustomerSupplierModel>> createCSSuppliersAsync(Integer companyId, ArrayList<CustomerSupplierModel> model) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/supplierandcustomers/suppliers");
+        path.applyField("companyId", companyId);
+        return this.threadPool.submit((RestCall<ArrayList<CustomerSupplierModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<CustomerSupplierModel>>(){}));
+    }
+
+    /**
+     * Add customer country parameter to a company.
+     * 
+     * Add customer country parameters to a company.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, FirmAdmin, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
+     * 
+     * @param companyId The ID of the company that owns this customer country parameter.
+     * @param customerCode Customer Code
+     * @param countryCode Country Code
+     * @param model The customer country parameters you wish to create.
+     * @return ArrayList<CustomerSupplierCountryParamModel>
+     */
+    public ArrayList<CustomerSupplierCountryParamModel> createCustomerCountryParam(Integer companyId, String customerCode, String countryCode, ArrayList<CustomerSupplierCountryParamModel> model) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/supplierandcustomers/customers/{customerCode}/{countryCode}");
+        path.applyField("companyId", companyId);
+        path.applyField("customerCode", customerCode);
+        path.applyField("countryCode", countryCode);
+        return ((RestCall<ArrayList<CustomerSupplierCountryParamModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<CustomerSupplierCountryParamModel>>(){})).call();
+    }
+
+    /**
+     * Add customer country parameter to a company.
+     * 
+     * Add customer country parameters to a company.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, FirmAdmin, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
+     * 
+     * @param companyId The ID of the company that owns this customer country parameter.
+     * @param customerCode Customer Code
+     * @param countryCode Country Code
+     * @param model The customer country parameters you wish to create.
+     * @return ArrayList<CustomerSupplierCountryParamModel>
+     */
+    public Future<ArrayList<CustomerSupplierCountryParamModel>> createCustomerCountryParamAsync(Integer companyId, String customerCode, String countryCode, ArrayList<CustomerSupplierCountryParamModel> model) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/supplierandcustomers/customers/{customerCode}/{countryCode}");
+        path.applyField("companyId", companyId);
+        path.applyField("customerCode", customerCode);
+        path.applyField("countryCode", countryCode);
+        return this.threadPool.submit((RestCall<ArrayList<CustomerSupplierCountryParamModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<CustomerSupplierCountryParamModel>>(){}));
+    }
+
+    /**
      * Request managed returns funding setup for a company
      * 
      * This API is available by invitation only.
@@ -3452,6 +4038,52 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{id}/funding/setup");
         path.applyField("id", id);
         return this.threadPool.submit((RestCall<FundingStatusModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<FundingStatusModel>(){}));
+    }
+
+    /**
+     * Add Supplier Country Parameters to a company.
+     * 
+     * Add Supplier Country Parameter to a company.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, FirmAdmin, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
+     * 
+     * @param companyId The ID of the company that owns this Supplier Country Parameter.
+     * @param supplierCode Supplier Code
+     * @param countryCode Country Code
+     * @param model The Supplier Country Parameters you wish to create.
+     * @return ArrayList<CustomerSupplierCountryParamModel>
+     */
+    public ArrayList<CustomerSupplierCountryParamModel> createSupplierCountryParams(Integer companyId, String supplierCode, String countryCode, ArrayList<CustomerSupplierCountryParamModel> model) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/supplierandcustomers/suppliers/{supplierCode}/{countryCode}");
+        path.applyField("companyId", companyId);
+        path.applyField("supplierCode", supplierCode);
+        path.applyField("countryCode", countryCode);
+        return ((RestCall<ArrayList<CustomerSupplierCountryParamModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<CustomerSupplierCountryParamModel>>(){})).call();
+    }
+
+    /**
+     * Add Supplier Country Parameters to a company.
+     * 
+     * Add Supplier Country Parameter to a company.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, FirmAdmin, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
+     * 
+     * @param companyId The ID of the company that owns this Supplier Country Parameter.
+     * @param supplierCode Supplier Code
+     * @param countryCode Country Code
+     * @param model The Supplier Country Parameters you wish to create.
+     * @return ArrayList<CustomerSupplierCountryParamModel>
+     */
+    public Future<ArrayList<CustomerSupplierCountryParamModel>> createSupplierCountryParamsAsync(Integer companyId, String supplierCode, String countryCode, ArrayList<CustomerSupplierCountryParamModel> model) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/supplierandcustomers/suppliers/{supplierCode}/{countryCode}");
+        path.applyField("companyId", companyId);
+        path.applyField("supplierCode", supplierCode);
+        path.applyField("countryCode", countryCode);
+        return this.threadPool.submit((RestCall<ArrayList<CustomerSupplierCountryParamModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<CustomerSupplierCountryParamModel>>(){}));
     }
 
     /**
@@ -3537,6 +4169,174 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/parameters/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
+        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){}));
+    }
+
+    /**
+     * Delete a single company customer
+     * 
+     * Delete a customer of a company.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, FirmAdmin, SSTAdmin, TechnicalSupportAdmin.
+     * 
+     * @param companyId The company id
+     * @param customerCode The customer code
+     * @return ArrayList<ErrorDetail>
+     */
+    public ArrayList<ErrorDetail> deleteCSCustomer(Integer companyId, String customerCode) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/supplierandcustomers/customers/{customerCode}");
+        path.applyField("companyId", companyId);
+        path.applyField("customerCode", customerCode);
+        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){})).call();
+    }
+
+    /**
+     * Delete a single company customer
+     * 
+     * Delete a customer of a company.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, FirmAdmin, SSTAdmin, TechnicalSupportAdmin.
+     * 
+     * @param companyId The company id
+     * @param customerCode The customer code
+     * @return ArrayList<ErrorDetail>
+     */
+    public Future<ArrayList<ErrorDetail>> deleteCSCustomerAsync(Integer companyId, String customerCode) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/supplierandcustomers/customers/{customerCode}");
+        path.applyField("companyId", companyId);
+        path.applyField("customerCode", customerCode);
+        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){}));
+    }
+
+    /**
+     * Delete a single supplier
+     * 
+     * Delete a supplier of a company.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, FirmAdmin, SSTAdmin, TechnicalSupportAdmin.
+     * 
+     * @param companyId The company id
+     * @param supplierCode The supplier code
+     * @return ArrayList<ErrorDetail>
+     */
+    public ArrayList<ErrorDetail> deleteCSSupplier(Integer companyId, String supplierCode) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/supplierandcustomers/suppliers/{supplierCode}");
+        path.applyField("companyId", companyId);
+        path.applyField("supplierCode", supplierCode);
+        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){})).call();
+    }
+
+    /**
+     * Delete a single supplier
+     * 
+     * Delete a supplier of a company.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, FirmAdmin, SSTAdmin, TechnicalSupportAdmin.
+     * 
+     * @param companyId The company id
+     * @param supplierCode The supplier code
+     * @return ArrayList<ErrorDetail>
+     */
+    public Future<ArrayList<ErrorDetail>> deleteCSSupplierAsync(Integer companyId, String supplierCode) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/supplierandcustomers/suppliers/{supplierCode}");
+        path.applyField("companyId", companyId);
+        path.applyField("supplierCode", supplierCode);
+        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){}));
+    }
+
+    /**
+     * Delete a single customer country parameter
+     * 
+     * Delete a customer country parameter of a company.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, FirmAdmin, SSTAdmin, TechnicalSupportAdmin.
+     * 
+     * @param companyId The company id
+     * @param customerCode The customer code
+     * @param countryCode country code
+     * @return ArrayList<ErrorDetail>
+     */
+    public ArrayList<ErrorDetail> deleteCustomerCountryParam(Integer companyId, String customerCode, String countryCode) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/supplierandcustomers/customers/{customerCode}/{countryCode}");
+        path.applyField("companyId", companyId);
+        path.applyField("customerCode", customerCode);
+        path.applyField("countryCode", countryCode);
+        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){})).call();
+    }
+
+    /**
+     * Delete a single customer country parameter
+     * 
+     * Delete a customer country parameter of a company.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, FirmAdmin, SSTAdmin, TechnicalSupportAdmin.
+     * 
+     * @param companyId The company id
+     * @param customerCode The customer code
+     * @param countryCode country code
+     * @return ArrayList<ErrorDetail>
+     */
+    public Future<ArrayList<ErrorDetail>> deleteCustomerCountryParamAsync(Integer companyId, String customerCode, String countryCode) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/supplierandcustomers/customers/{customerCode}/{countryCode}");
+        path.applyField("companyId", companyId);
+        path.applyField("customerCode", customerCode);
+        path.applyField("countryCode", countryCode);
+        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){}));
+    }
+
+    /**
+     * Delete a single Supplier Country Parameter
+     * 
+     * Delete a Supplier Country Parameter of a company.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, FirmAdmin, SSTAdmin, TechnicalSupportAdmin.
+     * 
+     * @param companyId The company id
+     * @param supplierCode Supplier code
+     * @param countryCode Country code
+     * @return ArrayList<ErrorDetail>
+     */
+    public ArrayList<ErrorDetail> deleteSupplierCountryParam(Integer companyId, String supplierCode, String countryCode) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/supplierandcustomers/suppliers/{supplierCode}/{countryCode}");
+        path.applyField("companyId", companyId);
+        path.applyField("supplierCode", supplierCode);
+        path.applyField("countryCode", countryCode);
+        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){})).call();
+    }
+
+    /**
+     * Delete a single Supplier Country Parameter
+     * 
+     * Delete a Supplier Country Parameter of a company.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, FirmAdmin, SSTAdmin, TechnicalSupportAdmin.
+     * 
+     * @param companyId The company id
+     * @param supplierCode Supplier code
+     * @param countryCode Country code
+     * @return ArrayList<ErrorDetail>
+     */
+    public Future<ArrayList<ErrorDetail>> deleteSupplierCountryParamAsync(Integer companyId, String supplierCode, String countryCode) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/supplierandcustomers/suppliers/{supplierCode}/{countryCode}");
+        path.applyField("companyId", companyId);
+        path.applyField("supplierCode", supplierCode);
+        path.applyField("countryCode", countryCode);
         return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){}));
     }
 
@@ -3807,6 +4607,130 @@ public class AvaTaxClient {
     }
 
     /**
+     * Retrieve a Customer for a company by its CustomerCode
+     * 
+     * Retrieves a single Customer for a company by its CustomerCode
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * 
+     * @param companyId Company Id
+     * @param customerCode Customer Code
+     * @return CustomerSupplierModel
+     */
+    public CustomerSupplierModel getCSCustomer(Integer companyId, String customerCode) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/supplierandcustomers/customers/{customerCode}");
+        path.applyField("companyId", companyId);
+        path.applyField("customerCode", customerCode);
+        return ((RestCall<CustomerSupplierModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<CustomerSupplierModel>(){})).call();
+    }
+
+    /**
+     * Retrieve a Customer for a company by its CustomerCode
+     * 
+     * Retrieves a single Customer for a company by its CustomerCode
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * 
+     * @param companyId Company Id
+     * @param customerCode Customer Code
+     * @return CustomerSupplierModel
+     */
+    public Future<CustomerSupplierModel> getCSCustomerAsync(Integer companyId, String customerCode) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/supplierandcustomers/customers/{customerCode}");
+        path.applyField("companyId", companyId);
+        path.applyField("customerCode", customerCode);
+        return this.threadPool.submit((RestCall<CustomerSupplierModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<CustomerSupplierModel>(){}));
+    }
+
+    /**
+     * Retrieve a single Supplier for a company by its SupplierCode
+     * 
+     * Retrieves a Supplier for a company by its SupplierCode
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * 
+     * @param companyId Company Id
+     * @param supplierCode Supplier Code
+     * @return CustomerSupplierModel
+     */
+    public CustomerSupplierModel getCSSupplier(Integer companyId, String supplierCode) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/supplierandcustomers/suppliers/{supplierCode}");
+        path.applyField("companyId", companyId);
+        path.applyField("supplierCode", supplierCode);
+        return ((RestCall<CustomerSupplierModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<CustomerSupplierModel>(){})).call();
+    }
+
+    /**
+     * Retrieve a single Supplier for a company by its SupplierCode
+     * 
+     * Retrieves a Supplier for a company by its SupplierCode
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * 
+     * @param companyId Company Id
+     * @param supplierCode Supplier Code
+     * @return CustomerSupplierModel
+     */
+    public Future<CustomerSupplierModel> getCSSupplierAsync(Integer companyId, String supplierCode) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/supplierandcustomers/suppliers/{supplierCode}");
+        path.applyField("companyId", companyId);
+        path.applyField("supplierCode", supplierCode);
+        return this.threadPool.submit((RestCall<CustomerSupplierModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<CustomerSupplierModel>(){}));
+    }
+
+    /**
+     * Retrieve a customer country parameter for a company by its CustomerCode and CountryCode
+     * 
+     * Retrieve a customer country parameter for a company by its CustomerCode and CountryCode.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * 
+     * @param companyId Company Id
+     * @param customerCode Customer Code
+     * @param countryCode Country Code
+     * @return CustomerSupplierCountryParamModel
+     */
+    public CustomerSupplierCountryParamModel getCustomerCountryParam(Integer companyId, String customerCode, String countryCode) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/supplierandcustomers/customers/{customerCode}/{countryCode}");
+        path.applyField("companyId", companyId);
+        path.applyField("customerCode", customerCode);
+        path.applyField("countryCode", countryCode);
+        return ((RestCall<CustomerSupplierCountryParamModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<CustomerSupplierCountryParamModel>(){})).call();
+    }
+
+    /**
+     * Retrieve a customer country parameter for a company by its CustomerCode and CountryCode
+     * 
+     * Retrieve a customer country parameter for a company by its CustomerCode and CountryCode.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * 
+     * @param companyId Company Id
+     * @param customerCode Customer Code
+     * @param countryCode Country Code
+     * @return CustomerSupplierCountryParamModel
+     */
+    public Future<CustomerSupplierCountryParamModel> getCustomerCountryParamAsync(Integer companyId, String customerCode, String countryCode) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/supplierandcustomers/customers/{customerCode}/{countryCode}");
+        path.applyField("companyId", companyId);
+        path.applyField("customerCode", customerCode);
+        path.applyField("countryCode", countryCode);
+        return this.threadPool.submit((RestCall<CustomerSupplierCountryParamModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<CustomerSupplierCountryParamModel>(){}));
+    }
+
+    /**
      * Get this company's filing status
      * 
      * Retrieve the current filing status of this company.
@@ -3867,38 +4791,47 @@ public class AvaTaxClient {
     }
 
     /**
-     * Retrieve parameters for a company
+     * Retrieve a single Supplier Country parameter
      * 
-     * Retrieve all parameters of a company.
-     *             
-     * Some companies can be taxed and reported differently depending on the properties of the company, such as IsPrimaryAddress. In AvaTax, these tax-affecting properties are called "parameters".
-     *             
-     * A parameter added to a company will be used by default in tax calculation but will not show on the transaction line referencing the company.
-     *             
-     * A company location parameter specified on a transaction line will override a company parameter if they share the same parameter name.
-     *             
-     * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * Paginate your results using the `$top`, `$skip`, and `$orderby` parameters.
+     * Retrieves a single Supplier Country parameter of a company.
      * 
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
-     * @param companyId The company id
-     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* name, unit
-     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
-     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
-     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<CompanyParameterDetailModel>
+     * @param companyId Company Id
+     * @param supplierCode Supplier Code
+     * @param countryCode Country Code
+     * @return CustomerSupplierCountryParamModel
      */
-    public FetchResult<CompanyParameterDetailModel> listCompanyParameterDetails(Integer companyId, String filter, Integer top, Integer skip, String orderBy) throws Exception {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/parameters");
+    public CustomerSupplierCountryParamModel getSupplierCountryParam(Integer companyId, String supplierCode, String countryCode) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/supplierandcustomers/suppliers/{supplierCode}/{countryCode}");
         path.applyField("companyId", companyId);
-        path.addQuery("$filter", filter);
-        path.addQuery("$top", top);
-        path.addQuery("$skip", skip);
-        path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<CompanyParameterDetailModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CompanyParameterDetailModel>>(){})).call();
+        path.applyField("supplierCode", supplierCode);
+        path.applyField("countryCode", countryCode);
+        return ((RestCall<CustomerSupplierCountryParamModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<CustomerSupplierCountryParamModel>(){})).call();
+    }
+
+    /**
+     * Retrieve a single Supplier Country parameter
+     * 
+     * Retrieves a single Supplier Country parameter of a company.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * 
+     * @param companyId Company Id
+     * @param supplierCode Supplier Code
+     * @param countryCode Country Code
+     * @return CustomerSupplierCountryParamModel
+     */
+    public Future<CustomerSupplierCountryParamModel> getSupplierCountryParamAsync(Integer companyId, String supplierCode, String countryCode) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/supplierandcustomers/suppliers/{supplierCode}/{countryCode}");
+        path.applyField("companyId", companyId);
+        path.applyField("supplierCode", supplierCode);
+        path.applyField("countryCode", countryCode);
+        return this.threadPool.submit((RestCall<CustomerSupplierCountryParamModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<CustomerSupplierCountryParamModel>(){}));
     }
 
     /**
@@ -3924,16 +4857,103 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<CompanyParameterDetailModel>
+     * @return CompanyParameterDetailModelFetchResult
      */
-    public Future<FetchResult<CompanyParameterDetailModel>> listCompanyParameterDetailsAsync(Integer companyId, String filter, Integer top, Integer skip, String orderBy) {
+    public CompanyParameterDetailModelFetchResult listCompanyParameterDetails(Integer companyId, String filter, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/parameters");
         path.applyField("companyId", companyId);
         path.addQuery("$filter", filter);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<CompanyParameterDetailModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CompanyParameterDetailModel>>(){}));
+        return ((RestCall<CompanyParameterDetailModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<CompanyParameterDetailModelFetchResult>(){})).call();
+    }
+
+    /**
+     * Retrieve parameters for a company
+     * 
+     * Retrieve all parameters of a company.
+     *             
+     * Some companies can be taxed and reported differently depending on the properties of the company, such as IsPrimaryAddress. In AvaTax, these tax-affecting properties are called "parameters".
+     *             
+     * A parameter added to a company will be used by default in tax calculation but will not show on the transaction line referencing the company.
+     *             
+     * A company location parameter specified on a transaction line will override a company parameter if they share the same parameter name.
+     *             
+     * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * Paginate your results using the `$top`, `$skip`, and `$orderby` parameters.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * 
+     * @param companyId The company id
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* name, unit
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @return CompanyParameterDetailModelFetchResult
+     */
+    public Future<CompanyParameterDetailModelFetchResult> listCompanyParameterDetailsAsync(Integer companyId, String filter, Integer top, Integer skip, String orderBy) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/parameters");
+        path.applyField("companyId", companyId);
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
+        return this.threadPool.submit((RestCall<CompanyParameterDetailModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<CompanyParameterDetailModelFetchResult>(){}));
+    }
+
+    /**
+     * Retrieve Customers for a company
+     * 
+     * Retrieve Customers for a company
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * 
+     * @param companyId The company id
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @return CustomerSupplierModelFetchResult
+     */
+    public CustomerSupplierModelFetchResult listCustomers(Integer companyId, String filter, Integer top, Integer skip, String orderBy) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/supplierandcustomers/customers");
+        path.applyField("companyId", companyId);
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
+        return ((RestCall<CustomerSupplierModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<CustomerSupplierModelFetchResult>(){})).call();
+    }
+
+    /**
+     * Retrieve Customers for a company
+     * 
+     * Retrieve Customers for a company
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * 
+     * @param companyId The company id
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @return CustomerSupplierModelFetchResult
+     */
+    public Future<CustomerSupplierModelFetchResult> listCustomersAsync(Integer companyId, String filter, Integer top, Integer skip, String orderBy) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/supplierandcustomers/customers");
+        path.applyField("companyId", companyId);
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
+        return this.threadPool.submit((RestCall<CustomerSupplierModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<CustomerSupplierModelFetchResult>(){}));
     }
 
     /**
@@ -3991,11 +5011,11 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
-     * @return FetchResult<MrsCompanyModel>
+     * @return MrsCompanyModelFetchResult
      */
-    public FetchResult<MrsCompanyModel> listMrsCompanies() throws Exception {
+    public MrsCompanyModelFetchResult listMrsCompanies() throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/mrs");
-        return ((RestCall<FetchResult<MrsCompanyModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<MrsCompanyModel>>(){})).call();
+        return ((RestCall<MrsCompanyModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<MrsCompanyModelFetchResult>(){})).call();
     }
 
     /**
@@ -4009,11 +5029,63 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
-     * @return FetchResult<MrsCompanyModel>
+     * @return MrsCompanyModelFetchResult
      */
-    public Future<FetchResult<MrsCompanyModel>> listMrsCompaniesAsync() {
+    public Future<MrsCompanyModelFetchResult> listMrsCompaniesAsync() {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/mrs");
-        return this.threadPool.submit((RestCall<FetchResult<MrsCompanyModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<MrsCompanyModel>>(){}));
+        return this.threadPool.submit((RestCall<MrsCompanyModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<MrsCompanyModelFetchResult>(){}));
+    }
+
+    /**
+     * Retrieve Suppliers for a company
+     * 
+     * Retrieve all suppliers of a company.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * 
+     * @param companyId The company id
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @return CustomerSupplierModelFetchResult
+     */
+    public CustomerSupplierModelFetchResult listSuppliers(Integer companyId, String filter, Integer top, Integer skip, String orderBy) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/supplierandcustomers/suppliers");
+        path.applyField("companyId", companyId);
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
+        return ((RestCall<CustomerSupplierModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<CustomerSupplierModelFetchResult>(){})).call();
+    }
+
+    /**
+     * Retrieve Suppliers for a company
+     * 
+     * Retrieve all suppliers of a company.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * 
+     * @param companyId The company id
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @return CustomerSupplierModelFetchResult
+     */
+    public Future<CustomerSupplierModelFetchResult> listSuppliersAsync(Integer companyId, String filter, Integer top, Integer skip, String orderBy) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/supplierandcustomers/suppliers");
+        path.applyField("companyId", companyId);
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
+        return this.threadPool.submit((RestCall<CustomerSupplierModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<CustomerSupplierModelFetchResult>(){}));
     }
 
     /**
@@ -4042,20 +5114,20 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
      * @param include A comma separated list of objects to fetch underneath this company. Any object with a URL path underneath this company can be fetched by specifying its name.
-     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* IsFein, contacts, items, locations, nexus, settings, taxCodes, taxRules, upcs, nonReportingChildCompanies, exemptCerts, parameters
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* IsFein, contacts, items, locations, nexus, settings, taxCodes, taxRules, upcs, nonReportingChildCompanies, exemptCerts, parameters, supplierandcustomers
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<CompanyModel>
+     * @return CompanyModelFetchResult
      */
-    public FetchResult<CompanyModel> queryCompanies(String include, String filter, Integer top, Integer skip, String orderBy) throws Exception {
+    public CompanyModelFetchResult queryCompanies(String include, String filter, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies");
         path.addQuery("$include", include);
         path.addQuery("$filter", filter);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<CompanyModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CompanyModel>>(){})).call();
+        return ((RestCall<CompanyModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<CompanyModelFetchResult>(){})).call();
     }
 
     /**
@@ -4084,20 +5156,20 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
      * @param include A comma separated list of objects to fetch underneath this company. Any object with a URL path underneath this company can be fetched by specifying its name.
-     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* IsFein, contacts, items, locations, nexus, settings, taxCodes, taxRules, upcs, nonReportingChildCompanies, exemptCerts, parameters
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* IsFein, contacts, items, locations, nexus, settings, taxCodes, taxRules, upcs, nonReportingChildCompanies, exemptCerts, parameters, supplierandcustomers
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<CompanyModel>
+     * @return CompanyModelFetchResult
      */
-    public Future<FetchResult<CompanyModel>> queryCompaniesAsync(String include, String filter, Integer top, Integer skip, String orderBy) {
+    public Future<CompanyModelFetchResult> queryCompaniesAsync(String include, String filter, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies");
         path.addQuery("$include", include);
         path.addQuery("$filter", filter);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<CompanyModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CompanyModel>>(){}));
+        return this.threadPool.submit((RestCall<CompanyModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<CompanyModelFetchResult>(){}));
     }
 
     /**
@@ -4273,16 +5345,539 @@ public class AvaTaxClient {
     }
 
     /**
-     * API to modify the reference fields at the document and the line level.
+     * Update a Customer
      * 
-     * @param companyId 
-     * @param model 
-     * @return FetchResult<TransactionModel>
+     * Update a Customer
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, FirmAdmin, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
+     * 
+     * @param companyId The company id.
+     * @param customerCode The customer code
+     * @param model The customer object you wish to update.
+     * @return CustomerSupplierModel
      */
-    public FetchResult<TransactionModel> tagTransaction(Integer companyId, ArrayList<TransactionReferenceFieldModel> model) throws Exception {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/transactions/tag");
+    public CustomerSupplierModel updateCSCustomer(Integer companyId, String customerCode, CustomerSupplierModel model) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/supplierandcustomers/customers/{customerCode}");
         path.applyField("companyId", companyId);
-        return ((RestCall<FetchResult<TransactionModel>>)restCallFactory.createRestCall("put", path, model, new TypeToken<FetchResult<TransactionModel>>(){})).call();
+        path.applyField("customerCode", customerCode);
+        return ((RestCall<CustomerSupplierModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<CustomerSupplierModel>(){})).call();
+    }
+
+    /**
+     * Update a Customer
+     * 
+     * Update a Customer
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, FirmAdmin, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
+     * 
+     * @param companyId The company id.
+     * @param customerCode The customer code
+     * @param model The customer object you wish to update.
+     * @return CustomerSupplierModel
+     */
+    public Future<CustomerSupplierModel> updateCSCustomerAsync(Integer companyId, String customerCode, CustomerSupplierModel model) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/supplierandcustomers/customers/{customerCode}");
+        path.applyField("companyId", companyId);
+        path.applyField("customerCode", customerCode);
+        return this.threadPool.submit((RestCall<CustomerSupplierModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<CustomerSupplierModel>(){}));
+    }
+
+    /**
+     * Update a supplier
+     * 
+     * Update a Supplier of a company.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, FirmAdmin, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
+     * 
+     * @param companyId The company id.
+     * @param supplierCode The supplier code
+     * @param model The supplier object you wish to update.
+     * @return CustomerSupplierModel
+     */
+    public CustomerSupplierModel updateCSSupplier(Integer companyId, String supplierCode, CustomerSupplierModel model) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/supplierandcustomers/suppliers/{supplierCode}");
+        path.applyField("companyId", companyId);
+        path.applyField("supplierCode", supplierCode);
+        return ((RestCall<CustomerSupplierModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<CustomerSupplierModel>(){})).call();
+    }
+
+    /**
+     * Update a supplier
+     * 
+     * Update a Supplier of a company.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, FirmAdmin, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
+     * 
+     * @param companyId The company id.
+     * @param supplierCode The supplier code
+     * @param model The supplier object you wish to update.
+     * @return CustomerSupplierModel
+     */
+    public Future<CustomerSupplierModel> updateCSSupplierAsync(Integer companyId, String supplierCode, CustomerSupplierModel model) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/supplierandcustomers/suppliers/{supplierCode}");
+        path.applyField("companyId", companyId);
+        path.applyField("supplierCode", supplierCode);
+        return this.threadPool.submit((RestCall<CustomerSupplierModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<CustomerSupplierModel>(){}));
+    }
+
+    /**
+     * Update a customer country parameter for Customer
+     * 
+     * Update a customer country parameter of a company.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, FirmAdmin, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
+     * 
+     * @param companyId The company id.
+     * @param customerCode The customer code
+     * @param countryCode The country code
+     * @param model The customer country parameter object you wish to update.
+     * @return CustomerSupplierCountryParamModel
+     */
+    public CustomerSupplierCountryParamModel updateCustomerCountryParam(Integer companyId, String customerCode, String countryCode, CustomerSupplierCountryParamModel model) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/supplierandcustomers/customers/{customerCode}/{countryCode}");
+        path.applyField("companyId", companyId);
+        path.applyField("customerCode", customerCode);
+        path.applyField("countryCode", countryCode);
+        return ((RestCall<CustomerSupplierCountryParamModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<CustomerSupplierCountryParamModel>(){})).call();
+    }
+
+    /**
+     * Update a customer country parameter for Customer
+     * 
+     * Update a customer country parameter of a company.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, FirmAdmin, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
+     * 
+     * @param companyId The company id.
+     * @param customerCode The customer code
+     * @param countryCode The country code
+     * @param model The customer country parameter object you wish to update.
+     * @return CustomerSupplierCountryParamModel
+     */
+    public Future<CustomerSupplierCountryParamModel> updateCustomerCountryParamAsync(Integer companyId, String customerCode, String countryCode, CustomerSupplierCountryParamModel model) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/supplierandcustomers/customers/{customerCode}/{countryCode}");
+        path.applyField("companyId", companyId);
+        path.applyField("customerCode", customerCode);
+        path.applyField("countryCode", countryCode);
+        return this.threadPool.submit((RestCall<CustomerSupplierCountryParamModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<CustomerSupplierCountryParamModel>(){}));
+    }
+
+    /**
+     * Update a Supplier Country Parameter
+     * 
+     * Update a Supplier Country Parameter of a company.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, FirmAdmin, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
+     * 
+     * @param companyId The company id.
+     * @param supplierCode The supplier code
+     * @param countryCode Country code
+     * @param model The Supplier Country Parameter object you wish to update.
+     * @return CustomerSupplierCountryParamModel
+     */
+    public CustomerSupplierCountryParamModel updateSupplierCountryParam(Integer companyId, String supplierCode, String countryCode, CustomerSupplierCountryParamModel model) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/supplierandcustomers/suppliers/{supplierCode}/{countryCode}");
+        path.applyField("companyId", companyId);
+        path.applyField("supplierCode", supplierCode);
+        path.applyField("countryCode", countryCode);
+        return ((RestCall<CustomerSupplierCountryParamModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<CustomerSupplierCountryParamModel>(){})).call();
+    }
+
+    /**
+     * Update a Supplier Country Parameter
+     * 
+     * Update a Supplier Country Parameter of a company.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, FirmAdmin, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
+     * 
+     * @param companyId The company id.
+     * @param supplierCode The supplier code
+     * @param countryCode Country code
+     * @param model The Supplier Country Parameter object you wish to update.
+     * @return CustomerSupplierCountryParamModel
+     */
+    public Future<CustomerSupplierCountryParamModel> updateSupplierCountryParamAsync(Integer companyId, String supplierCode, String countryCode, CustomerSupplierCountryParamModel model) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/supplierandcustomers/suppliers/{supplierCode}/{countryCode}");
+        path.applyField("companyId", companyId);
+        path.applyField("supplierCode", supplierCode);
+        path.applyField("countryCode", countryCode);
+        return this.threadPool.submit((RestCall<CustomerSupplierCountryParamModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<CustomerSupplierCountryParamModel>(){}));
+    }
+
+    /**
+     * Retrieve a single tax rate.
+     * 
+     * This API is available by invitation only.
+     * 
+     * ### Security Policies
+     * 
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * 
+     * @param id The ID of the tax rate to retrieve.
+     * @return ComplianceTaxRateModel
+     */
+    public ComplianceTaxRateModel getTaxRate(Integer id) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/compliance/taxrates/{id}");
+        path.applyField("id", id);
+        return ((RestCall<ComplianceTaxRateModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<ComplianceTaxRateModel>(){})).call();
+    }
+
+    /**
+     * Retrieve a single tax rate.
+     * 
+     * This API is available by invitation only.
+     * 
+     * ### Security Policies
+     * 
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * 
+     * @param id The ID of the tax rate to retrieve.
+     * @return ComplianceTaxRateModel
+     */
+    public Future<ComplianceTaxRateModel> getTaxRateAsync(Integer id) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/compliance/taxrates/{id}");
+        path.applyField("id", id);
+        return this.threadPool.submit((RestCall<ComplianceTaxRateModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<ComplianceTaxRateModel>(){}));
+    }
+
+    /**
+     * Retrieve a single tax region.
+     * 
+     * This API is available by invitation only.
+     * 
+     * ### Security Policies
+     * 
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * 
+     * @param id The ID of the tax region to retrieve.
+     * @return TaxRegionModel
+     */
+    public TaxRegionModel getTaxRegion(Integer id) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/compliance/taxregions/{id}");
+        path.applyField("id", id);
+        return ((RestCall<TaxRegionModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<TaxRegionModel>(){})).call();
+    }
+
+    /**
+     * Retrieve a single tax region.
+     * 
+     * This API is available by invitation only.
+     * 
+     * ### Security Policies
+     * 
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * 
+     * @param id The ID of the tax region to retrieve.
+     * @return TaxRegionModel
+     */
+    public Future<TaxRegionModel> getTaxRegionAsync(Integer id) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/compliance/taxregions/{id}");
+        path.applyField("id", id);
+        return this.threadPool.submit((RestCall<TaxRegionModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<TaxRegionModel>(){}));
+    }
+
+    /**
+     * Retrieve jurisdictions and rates in a combined format.
+     * 
+     * This API is available by invitation only.
+     * 
+     * ### Security Policies
+     * 
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * 
+     * @param effectiveDate Used to limit the jurisdictions returned.
+     * @param endDate Used to limit the jurisdictions returned.
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).
+     * @param include A comma separated list of objects to fetch underneath this jurisdiction.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @return ComplianceJurisdictionRateModel
+     */
+    public ComplianceJurisdictionRateModel queryJurisdictionRates(Date effectiveDate, Date endDate, String filter, String include, Integer top, Integer skip, String orderBy) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/compliance/jurisdictionrates");
+        path.addQuery("effectiveDate", effectiveDate);
+        path.addQuery("endDate", endDate);
+        path.addQuery("$filter", filter);
+        path.addQuery("$include", include);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
+        return ((RestCall<ComplianceJurisdictionRateModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<ComplianceJurisdictionRateModel>(){})).call();
+    }
+
+    /**
+     * Retrieve jurisdictions and rates in a combined format.
+     * 
+     * This API is available by invitation only.
+     * 
+     * ### Security Policies
+     * 
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * 
+     * @param effectiveDate Used to limit the jurisdictions returned.
+     * @param endDate Used to limit the jurisdictions returned.
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).
+     * @param include A comma separated list of objects to fetch underneath this jurisdiction.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @return ComplianceJurisdictionRateModel
+     */
+    public Future<ComplianceJurisdictionRateModel> queryJurisdictionRatesAsync(Date effectiveDate, Date endDate, String filter, String include, Integer top, Integer skip, String orderBy) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/compliance/jurisdictionrates");
+        path.addQuery("effectiveDate", effectiveDate);
+        path.addQuery("endDate", endDate);
+        path.addQuery("$filter", filter);
+        path.addQuery("$include", include);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
+        return this.threadPool.submit((RestCall<ComplianceJurisdictionRateModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<ComplianceJurisdictionRateModel>(){}));
+    }
+
+    /**
+     * Retrieve all unique jurisdictions.
+     * 
+     * This API is available by invitation only.
+     *             
+     * You may specify one or more of the following values in the '$include' parameter to fetch additional nested data, using commas to separate multiple values:
+     *             
+     * * TaxRates
+     * 
+     * ### Security Policies
+     * 
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * 
+     * @param country The two-character ISO-3166 code for the country.
+     * @param region The two or three character region code for the region.
+     * @param effectiveDate Used to limit the jurisdictions or rates returned.
+     * @param endDate Used to limit the jurisdictions or rates returned.
+     * @param aggregationOption Aggregation method used if rates are returned using the '$include' parameter. (See StackAggregationOption::* for a list of allowable values)
+     * @param include A comma separated list of objects to fetch underneath this tax rate.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
+     * @return ComplianceJurisdictionModel
+     */
+    public ComplianceJurisdictionModel queryJurisdictions(String country, String region, Date effectiveDate, Date endDate, StackAggregationOption aggregationOption, String include, Integer top, Integer skip) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/compliance/jurisdictions/{country}/{region}");
+        path.applyField("country", country);
+        path.applyField("region", region);
+        path.addQuery("effectiveDate", effectiveDate);
+        path.addQuery("endDate", endDate);
+        path.addQuery("aggregationOption", aggregationOption);
+        path.addQuery("$include", include);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        return ((RestCall<ComplianceJurisdictionModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<ComplianceJurisdictionModel>(){})).call();
+    }
+
+    /**
+     * Retrieve all unique jurisdictions.
+     * 
+     * This API is available by invitation only.
+     *             
+     * You may specify one or more of the following values in the '$include' parameter to fetch additional nested data, using commas to separate multiple values:
+     *             
+     * * TaxRates
+     * 
+     * ### Security Policies
+     * 
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * 
+     * @param country The two-character ISO-3166 code for the country.
+     * @param region The two or three character region code for the region.
+     * @param effectiveDate Used to limit the jurisdictions or rates returned.
+     * @param endDate Used to limit the jurisdictions or rates returned.
+     * @param aggregationOption Aggregation method used if rates are returned using the '$include' parameter. (See StackAggregationOption::* for a list of allowable values)
+     * @param include A comma separated list of objects to fetch underneath this tax rate.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
+     * @return ComplianceJurisdictionModel
+     */
+    public Future<ComplianceJurisdictionModel> queryJurisdictionsAsync(String country, String region, Date effectiveDate, Date endDate, StackAggregationOption aggregationOption, String include, Integer top, Integer skip) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/compliance/jurisdictions/{country}/{region}");
+        path.applyField("country", country);
+        path.applyField("region", region);
+        path.addQuery("effectiveDate", effectiveDate);
+        path.addQuery("endDate", endDate);
+        path.addQuery("aggregationOption", aggregationOption);
+        path.addQuery("$include", include);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        return this.threadPool.submit((RestCall<ComplianceJurisdictionModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<ComplianceJurisdictionModel>(){}));
+    }
+
+    /**
+     * Retrieve all tax rates.
+     * 
+     * This API is available by invitation only.
+     * 
+     * ### Security Policies
+     * 
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * 
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).
+     * @param include A comma separated list of objects to fetch underneath this tax rate.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @return ComplianceTaxRateModel
+     */
+    public ComplianceTaxRateModel queryTaxRates(String filter, String include, Integer top, Integer skip, String orderBy) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/compliance/taxrates");
+        path.addQuery("$filter", filter);
+        path.addQuery("$include", include);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
+        return ((RestCall<ComplianceTaxRateModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<ComplianceTaxRateModel>(){})).call();
+    }
+
+    /**
+     * Retrieve all tax rates.
+     * 
+     * This API is available by invitation only.
+     * 
+     * ### Security Policies
+     * 
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * 
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).
+     * @param include A comma separated list of objects to fetch underneath this tax rate.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @return ComplianceTaxRateModel
+     */
+    public Future<ComplianceTaxRateModel> queryTaxRatesAsync(String filter, String include, Integer top, Integer skip, String orderBy) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/compliance/taxrates");
+        path.addQuery("$filter", filter);
+        path.addQuery("$include", include);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
+        return this.threadPool.submit((RestCall<ComplianceTaxRateModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<ComplianceTaxRateModel>(){}));
+    }
+
+    /**
+     * Retrieve all tax region jurisdictions.
+     * 
+     * This API is available by invitation only.
+     * 
+     * ### Security Policies
+     * 
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * 
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).
+     * @param include A comma separated list of objects to fetch underneath this tax region jurisdiction.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @return TaxRegionJurisdictionModel
+     */
+    public TaxRegionJurisdictionModel queryTaxRegionJurisdictions(String filter, String include, Integer top, Integer skip, String orderBy) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/compliance/taxregionjurisdictions");
+        path.addQuery("$filter", filter);
+        path.addQuery("$include", include);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
+        return ((RestCall<TaxRegionJurisdictionModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<TaxRegionJurisdictionModel>(){})).call();
+    }
+
+    /**
+     * Retrieve all tax region jurisdictions.
+     * 
+     * This API is available by invitation only.
+     * 
+     * ### Security Policies
+     * 
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * 
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).
+     * @param include A comma separated list of objects to fetch underneath this tax region jurisdiction.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @return TaxRegionJurisdictionModel
+     */
+    public Future<TaxRegionJurisdictionModel> queryTaxRegionJurisdictionsAsync(String filter, String include, Integer top, Integer skip, String orderBy) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/compliance/taxregionjurisdictions");
+        path.addQuery("$filter", filter);
+        path.addQuery("$include", include);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
+        return this.threadPool.submit((RestCall<TaxRegionJurisdictionModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<TaxRegionJurisdictionModel>(){}));
+    }
+
+    /**
+     * Retrieve all tax regions.
+     * 
+     * This API is available by invitation only.
+     * 
+     * ### Security Policies
+     * 
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * 
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).
+     * @param include A comma separated list of objects to fetch underneath this tax region.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @return TaxRegionModel
+     */
+    public TaxRegionModel queryTaxRegions(String filter, String include, Integer top, Integer skip, String orderBy) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/compliance/taxregions");
+        path.addQuery("$filter", filter);
+        path.addQuery("$include", include);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
+        return ((RestCall<TaxRegionModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<TaxRegionModel>(){})).call();
+    }
+
+    /**
+     * Retrieve all tax regions.
+     * 
+     * This API is available by invitation only.
+     * 
+     * ### Security Policies
+     * 
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * 
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).
+     * @param include A comma separated list of objects to fetch underneath this tax region.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @return TaxRegionModel
+     */
+    public Future<TaxRegionModel> queryTaxRegionsAsync(String filter, String include, Integer top, Integer skip, String orderBy) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/compliance/taxregions");
+        path.addQuery("$filter", filter);
+        path.addQuery("$include", include);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
+        return this.threadPool.submit((RestCall<TaxRegionModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<TaxRegionModel>(){}));
     }
 
     /**
@@ -4290,12 +5885,25 @@ public class AvaTaxClient {
      * 
      * @param companyId 
      * @param model 
-     * @return FetchResult<TransactionModel>
+     * @return TransactionModelFetchResult
      */
-    public Future<FetchResult<TransactionModel>> tagTransactionAsync(Integer companyId, ArrayList<TransactionReferenceFieldModel> model) {
+    public TransactionModelFetchResult tagTransaction(Integer companyId, ArrayList<TransactionReferenceFieldModel> model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/transactions/tag");
         path.applyField("companyId", companyId);
-        return this.threadPool.submit((RestCall<FetchResult<TransactionModel>>)restCallFactory.createRestCall("put", path, model, new TypeToken<FetchResult<TransactionModel>>(){}));
+        return ((RestCall<TransactionModelFetchResult>)restCallFactory.createRestCall("put", path, model, new TypeToken<TransactionModelFetchResult>(){})).call();
+    }
+
+    /**
+     * API to modify the reference fields at the document and the line level.
+     * 
+     * @param companyId 
+     * @param model 
+     * @return TransactionModelFetchResult
+     */
+    public Future<TransactionModelFetchResult> tagTransactionAsync(Integer companyId, ArrayList<TransactionReferenceFieldModel> model) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/transactions/tag");
+        path.applyField("companyId", companyId);
+        return this.threadPool.submit((RestCall<TransactionModelFetchResult>)restCallFactory.createRestCall("put", path, model, new TypeToken<TransactionModelFetchResult>(){}));
     }
 
     /**
@@ -4441,16 +6049,16 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<ContactModel>
+     * @return ContactModelFetchResult
      */
-    public FetchResult<ContactModel> listContactsByCompany(Integer companyId, String filter, Integer top, Integer skip, String orderBy) throws Exception {
+    public ContactModelFetchResult listContactsByCompany(Integer companyId, String filter, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/contacts");
         path.applyField("companyId", companyId);
         path.addQuery("$filter", filter);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<ContactModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ContactModel>>(){})).call();
+        return ((RestCall<ContactModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<ContactModelFetchResult>(){})).call();
     }
 
     /**
@@ -4470,16 +6078,16 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<ContactModel>
+     * @return ContactModelFetchResult
      */
-    public Future<FetchResult<ContactModel>> listContactsByCompanyAsync(Integer companyId, String filter, Integer top, Integer skip, String orderBy) {
+    public Future<ContactModelFetchResult> listContactsByCompanyAsync(Integer companyId, String filter, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/contacts");
         path.applyField("companyId", companyId);
         path.addQuery("$filter", filter);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<ContactModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ContactModel>>(){}));
+        return this.threadPool.submit((RestCall<ContactModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<ContactModelFetchResult>(){}));
     }
 
     /**
@@ -4500,15 +6108,15 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<ContactModel>
+     * @return ContactModelFetchResult
      */
-    public FetchResult<ContactModel> queryContacts(String filter, Integer top, Integer skip, String orderBy) throws Exception {
+    public ContactModelFetchResult queryContacts(String filter, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/contacts");
         path.addQuery("$filter", filter);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<ContactModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ContactModel>>(){})).call();
+        return ((RestCall<ContactModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<ContactModelFetchResult>(){})).call();
     }
 
     /**
@@ -4529,15 +6137,15 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<ContactModel>
+     * @return ContactModelFetchResult
      */
-    public Future<FetchResult<ContactModel>> queryContactsAsync(String filter, Integer top, Integer skip, String orderBy) {
+    public Future<ContactModelFetchResult> queryContactsAsync(String filter, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/contacts");
         path.addQuery("$filter", filter);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<ContactModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ContactModel>>(){}));
+        return this.threadPool.submit((RestCall<ContactModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<ContactModelFetchResult>(){}));
     }
 
     /**
@@ -4829,13 +6437,13 @@ public class AvaTaxClient {
      * @param companyId The unique ID number of the company that recorded the provided customer
      * @param customerCode The unique code representing the current customer
      * @param model The list of attributes to link to the customer.
-     * @return FetchResult<CustomerAttributeModel>
+     * @return CustomerAttributeModelFetchResult
      */
-    public FetchResult<CustomerAttributeModel> linkAttributesToCustomer(Integer companyId, String customerCode, ArrayList<CustomerAttributeModel> model) throws Exception {
+    public CustomerAttributeModelFetchResult linkAttributesToCustomer(Integer companyId, String customerCode, ArrayList<CustomerAttributeModel> model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/customers/{customerCode}/attributes/link");
         path.applyField("companyId", companyId);
         path.applyField("customerCode", customerCode);
-        return ((RestCall<FetchResult<CustomerAttributeModel>>)restCallFactory.createRestCall("put", path, model, new TypeToken<FetchResult<CustomerAttributeModel>>(){})).call();
+        return ((RestCall<CustomerAttributeModelFetchResult>)restCallFactory.createRestCall("put", path, model, new TypeToken<CustomerAttributeModelFetchResult>(){})).call();
     }
 
     /**
@@ -4865,13 +6473,13 @@ public class AvaTaxClient {
      * @param companyId The unique ID number of the company that recorded the provided customer
      * @param customerCode The unique code representing the current customer
      * @param model The list of attributes to link to the customer.
-     * @return FetchResult<CustomerAttributeModel>
+     * @return CustomerAttributeModelFetchResult
      */
-    public Future<FetchResult<CustomerAttributeModel>> linkAttributesToCustomerAsync(Integer companyId, String customerCode, ArrayList<CustomerAttributeModel> model) {
+    public Future<CustomerAttributeModelFetchResult> linkAttributesToCustomerAsync(Integer companyId, String customerCode, ArrayList<CustomerAttributeModel> model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/customers/{customerCode}/attributes/link");
         path.applyField("companyId", companyId);
         path.applyField("customerCode", customerCode);
-        return this.threadPool.submit((RestCall<FetchResult<CustomerAttributeModel>>)restCallFactory.createRestCall("put", path, model, new TypeToken<FetchResult<CustomerAttributeModel>>(){}));
+        return this.threadPool.submit((RestCall<CustomerAttributeModelFetchResult>)restCallFactory.createRestCall("put", path, model, new TypeToken<CustomerAttributeModelFetchResult>(){}));
     }
 
     /**
@@ -4898,13 +6506,13 @@ public class AvaTaxClient {
      * @param companyId The unique ID number of the company that recorded this customer
      * @param customerCode The unique code representing this customer
      * @param model The list of certificates to link to this customer
-     * @return FetchResult<CertificateModel>
+     * @return CertificateModelFetchResult
      */
-    public FetchResult<CertificateModel> linkCertificatesToCustomer(Integer companyId, String customerCode, LinkCertificatesModel model) throws Exception {
+    public CertificateModelFetchResult linkCertificatesToCustomer(Integer companyId, String customerCode, LinkCertificatesModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/customers/{customerCode}/certificates/link");
         path.applyField("companyId", companyId);
         path.applyField("customerCode", customerCode);
-        return ((RestCall<FetchResult<CertificateModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<FetchResult<CertificateModel>>(){})).call();
+        return ((RestCall<CertificateModelFetchResult>)restCallFactory.createRestCall("post", path, model, new TypeToken<CertificateModelFetchResult>(){})).call();
     }
 
     /**
@@ -4931,13 +6539,13 @@ public class AvaTaxClient {
      * @param companyId The unique ID number of the company that recorded this customer
      * @param customerCode The unique code representing this customer
      * @param model The list of certificates to link to this customer
-     * @return FetchResult<CertificateModel>
+     * @return CertificateModelFetchResult
      */
-    public Future<FetchResult<CertificateModel>> linkCertificatesToCustomerAsync(Integer companyId, String customerCode, LinkCertificatesModel model) {
+    public Future<CertificateModelFetchResult> linkCertificatesToCustomerAsync(Integer companyId, String customerCode, LinkCertificatesModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/customers/{customerCode}/certificates/link");
         path.applyField("companyId", companyId);
         path.applyField("customerCode", customerCode);
-        return this.threadPool.submit((RestCall<FetchResult<CertificateModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<FetchResult<CertificateModel>>(){}));
+        return this.threadPool.submit((RestCall<CertificateModelFetchResult>)restCallFactory.createRestCall("post", path, model, new TypeToken<CertificateModelFetchResult>(){}));
     }
 
     /**
@@ -5034,13 +6642,13 @@ public class AvaTaxClient {
      * 
      * @param companyId The unique ID number of the company that recorded the provided customer
      * @param customerCode The unique code representing the current customer
-     * @return FetchResult<CustomerAttributeModel>
+     * @return CustomerAttributeModelFetchResult
      */
-    public FetchResult<CustomerAttributeModel> listAttributesForCustomer(Integer companyId, String customerCode) throws Exception {
+    public CustomerAttributeModelFetchResult listAttributesForCustomer(Integer companyId, String customerCode) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/customers/{customerCode}/attributes");
         path.applyField("companyId", companyId);
         path.applyField("customerCode", customerCode);
-        return ((RestCall<FetchResult<CustomerAttributeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CustomerAttributeModel>>(){})).call();
+        return ((RestCall<CustomerAttributeModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<CustomerAttributeModelFetchResult>(){})).call();
     }
 
     /**
@@ -5069,13 +6677,13 @@ public class AvaTaxClient {
      * 
      * @param companyId The unique ID number of the company that recorded the provided customer
      * @param customerCode The unique code representing the current customer
-     * @return FetchResult<CustomerAttributeModel>
+     * @return CustomerAttributeModelFetchResult
      */
-    public Future<FetchResult<CustomerAttributeModel>> listAttributesForCustomerAsync(Integer companyId, String customerCode) {
+    public Future<CustomerAttributeModelFetchResult> listAttributesForCustomerAsync(Integer companyId, String customerCode) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/customers/{customerCode}/attributes");
         path.applyField("companyId", companyId);
         path.applyField("customerCode", customerCode);
-        return this.threadPool.submit((RestCall<FetchResult<CustomerAttributeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CustomerAttributeModel>>(){}));
+        return this.threadPool.submit((RestCall<CustomerAttributeModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<CustomerAttributeModelFetchResult>(){}));
     }
 
     /**
@@ -5106,9 +6714,9 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<CertificateModel>
+     * @return CertificateModelFetchResult
      */
-    public FetchResult<CertificateModel> listCertificatesForCustomer(Integer companyId, String customerCode, String include, String filter, Integer top, Integer skip, String orderBy) throws Exception {
+    public CertificateModelFetchResult listCertificatesForCustomer(Integer companyId, String customerCode, String include, String filter, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/customers/{customerCode}/certificates");
         path.applyField("companyId", companyId);
         path.applyField("customerCode", customerCode);
@@ -5117,7 +6725,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<CertificateModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CertificateModel>>(){})).call();
+        return ((RestCall<CertificateModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<CertificateModelFetchResult>(){})).call();
     }
 
     /**
@@ -5148,9 +6756,9 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<CertificateModel>
+     * @return CertificateModelFetchResult
      */
-    public Future<FetchResult<CertificateModel>> listCertificatesForCustomerAsync(Integer companyId, String customerCode, String include, String filter, Integer top, Integer skip, String orderBy) {
+    public Future<CertificateModelFetchResult> listCertificatesForCustomerAsync(Integer companyId, String customerCode, String include, String filter, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/customers/{customerCode}/certificates");
         path.applyField("companyId", companyId);
         path.applyField("customerCode", customerCode);
@@ -5159,7 +6767,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<CertificateModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CertificateModel>>(){}));
+        return this.threadPool.submit((RestCall<CertificateModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<CertificateModelFetchResult>(){}));
     }
 
     /**
@@ -5272,9 +6880,9 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<CustomerModel>
+     * @return CustomerModelFetchResult
      */
-    public FetchResult<CustomerModel> queryCustomers(Integer companyId, String include, String filter, Integer top, Integer skip, String orderBy) throws Exception {
+    public CustomerModelFetchResult queryCustomers(Integer companyId, String include, String filter, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/customers");
         path.applyField("companyId", companyId);
         path.addQuery("$include", include);
@@ -5282,7 +6890,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<CustomerModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CustomerModel>>(){})).call();
+        return ((RestCall<CustomerModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<CustomerModelFetchResult>(){})).call();
     }
 
     /**
@@ -5317,9 +6925,9 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<CustomerModel>
+     * @return CustomerModelFetchResult
      */
-    public Future<FetchResult<CustomerModel>> queryCustomersAsync(Integer companyId, String include, String filter, Integer top, Integer skip, String orderBy) {
+    public Future<CustomerModelFetchResult> queryCustomersAsync(Integer companyId, String include, String filter, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/customers");
         path.applyField("companyId", companyId);
         path.addQuery("$include", include);
@@ -5327,7 +6935,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<CustomerModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CustomerModel>>(){}));
+        return this.threadPool.submit((RestCall<CustomerModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<CustomerModelFetchResult>(){}));
     }
 
     /**
@@ -5357,13 +6965,13 @@ public class AvaTaxClient {
      * @param companyId The unique ID number of the company that recorded the customer
      * @param customerCode The unique code representing the current customer
      * @param model The list of attributes to unlink from the customer.
-     * @return FetchResult<CustomerAttributeModel>
+     * @return CustomerAttributeModelFetchResult
      */
-    public FetchResult<CustomerAttributeModel> unlinkAttributesFromCustomer(Integer companyId, String customerCode, ArrayList<CustomerAttributeModel> model) throws Exception {
+    public CustomerAttributeModelFetchResult unlinkAttributesFromCustomer(Integer companyId, String customerCode, ArrayList<CustomerAttributeModel> model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/customers/{customerCode}/attributes/unlink");
         path.applyField("companyId", companyId);
         path.applyField("customerCode", customerCode);
-        return ((RestCall<FetchResult<CustomerAttributeModel>>)restCallFactory.createRestCall("put", path, model, new TypeToken<FetchResult<CustomerAttributeModel>>(){})).call();
+        return ((RestCall<CustomerAttributeModelFetchResult>)restCallFactory.createRestCall("put", path, model, new TypeToken<CustomerAttributeModelFetchResult>(){})).call();
     }
 
     /**
@@ -5393,13 +7001,13 @@ public class AvaTaxClient {
      * @param companyId The unique ID number of the company that recorded the customer
      * @param customerCode The unique code representing the current customer
      * @param model The list of attributes to unlink from the customer.
-     * @return FetchResult<CustomerAttributeModel>
+     * @return CustomerAttributeModelFetchResult
      */
-    public Future<FetchResult<CustomerAttributeModel>> unlinkAttributesFromCustomerAsync(Integer companyId, String customerCode, ArrayList<CustomerAttributeModel> model) {
+    public Future<CustomerAttributeModelFetchResult> unlinkAttributesFromCustomerAsync(Integer companyId, String customerCode, ArrayList<CustomerAttributeModel> model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/customers/{customerCode}/attributes/unlink");
         path.applyField("companyId", companyId);
         path.applyField("customerCode", customerCode);
-        return this.threadPool.submit((RestCall<FetchResult<CustomerAttributeModel>>)restCallFactory.createRestCall("put", path, model, new TypeToken<FetchResult<CustomerAttributeModel>>(){}));
+        return this.threadPool.submit((RestCall<CustomerAttributeModelFetchResult>)restCallFactory.createRestCall("put", path, model, new TypeToken<CustomerAttributeModelFetchResult>(){}));
     }
 
     /**
@@ -5426,13 +7034,13 @@ public class AvaTaxClient {
      * @param companyId The unique ID number of the company that recorded this customer
      * @param customerCode The unique code representing this customer
      * @param model The list of certificates to link to this customer
-     * @return FetchResult<CertificateModel>
+     * @return CertificateModelFetchResult
      */
-    public FetchResult<CertificateModel> unlinkCertificatesFromCustomer(Integer companyId, String customerCode, LinkCertificatesModel model) throws Exception {
+    public CertificateModelFetchResult unlinkCertificatesFromCustomer(Integer companyId, String customerCode, LinkCertificatesModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/customers/{customerCode}/certificates/unlink");
         path.applyField("companyId", companyId);
         path.applyField("customerCode", customerCode);
-        return ((RestCall<FetchResult<CertificateModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<FetchResult<CertificateModel>>(){})).call();
+        return ((RestCall<CertificateModelFetchResult>)restCallFactory.createRestCall("post", path, model, new TypeToken<CertificateModelFetchResult>(){})).call();
     }
 
     /**
@@ -5459,13 +7067,13 @@ public class AvaTaxClient {
      * @param companyId The unique ID number of the company that recorded this customer
      * @param customerCode The unique code representing this customer
      * @param model The list of certificates to link to this customer
-     * @return FetchResult<CertificateModel>
+     * @return CertificateModelFetchResult
      */
-    public Future<FetchResult<CertificateModel>> unlinkCertificatesFromCustomerAsync(Integer companyId, String customerCode, LinkCertificatesModel model) {
+    public Future<CertificateModelFetchResult> unlinkCertificatesFromCustomerAsync(Integer companyId, String customerCode, LinkCertificatesModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/customers/{customerCode}/certificates/unlink");
         path.applyField("companyId", companyId);
         path.applyField("customerCode", customerCode);
-        return this.threadPool.submit((RestCall<FetchResult<CertificateModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<FetchResult<CertificateModel>>(){}));
+        return this.threadPool.submit((RestCall<CertificateModelFetchResult>)restCallFactory.createRestCall("post", path, model, new TypeToken<CertificateModelFetchResult>(){}));
     }
 
     /**
@@ -5673,16 +7281,16 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<DataSourceModel>
+     * @return DataSourceModelFetchResult
      */
-    public FetchResult<DataSourceModel> listDataSources(Integer companyId, String filter, Integer top, Integer skip, String orderBy) throws Exception {
+    public DataSourceModelFetchResult listDataSources(Integer companyId, String filter, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/datasources");
         path.applyField("companyId", companyId);
         path.addQuery("$filter", filter);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<DataSourceModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<DataSourceModel>>(){})).call();
+        return ((RestCall<DataSourceModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<DataSourceModelFetchResult>(){})).call();
     }
 
     /**
@@ -5700,16 +7308,16 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<DataSourceModel>
+     * @return DataSourceModelFetchResult
      */
-    public Future<FetchResult<DataSourceModel>> listDataSourcesAsync(Integer companyId, String filter, Integer top, Integer skip, String orderBy) {
+    public Future<DataSourceModelFetchResult> listDataSourcesAsync(Integer companyId, String filter, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/datasources");
         path.applyField("companyId", companyId);
         path.addQuery("$filter", filter);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<DataSourceModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<DataSourceModel>>(){}));
+        return this.threadPool.submit((RestCall<DataSourceModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<DataSourceModelFetchResult>(){}));
     }
 
     /**
@@ -5729,15 +7337,15 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<DataSourceModel>
+     * @return DataSourceModelFetchResult
      */
-    public FetchResult<DataSourceModel> queryDataSources(String filter, Integer top, Integer skip, String orderBy) throws Exception {
+    public DataSourceModelFetchResult queryDataSources(String filter, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/datasources");
         path.addQuery("$filter", filter);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<DataSourceModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<DataSourceModel>>(){})).call();
+        return ((RestCall<DataSourceModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<DataSourceModelFetchResult>(){})).call();
     }
 
     /**
@@ -5757,15 +7365,15 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<DataSourceModel>
+     * @return DataSourceModelFetchResult
      */
-    public Future<FetchResult<DataSourceModel>> queryDataSourcesAsync(String filter, Integer top, Integer skip, String orderBy) {
+    public Future<DataSourceModelFetchResult> queryDataSourcesAsync(String filter, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/datasources");
         path.addQuery("$filter", filter);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<DataSourceModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<DataSourceModel>>(){}));
+        return this.threadPool.submit((RestCall<DataSourceModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<DataSourceModelFetchResult>(){}));
     }
 
     /**
@@ -5832,13 +7440,13 @@ public class AvaTaxClient {
      * 
      * @param country The name or code of the destination country.
      * @param hsCode The partial or full HS Code for which you would like to view all of the parents.
-     * @return FetchResult<HsCodeModel>
+     * @return HsCodeModelFetchResult
      */
-    public FetchResult<HsCodeModel> getCrossBorderCode(String country, String hsCode) throws Exception {
+    public HsCodeModelFetchResult getCrossBorderCode(String country, String hsCode) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/crossborder/{country}/{hsCode}/hierarchy");
         path.applyField("country", country);
         path.applyField("hsCode", hsCode);
-        return ((RestCall<FetchResult<HsCodeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<HsCodeModel>>(){})).call();
+        return ((RestCall<HsCodeModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<HsCodeModelFetchResult>(){})).call();
     }
 
     /**
@@ -5861,13 +7469,13 @@ public class AvaTaxClient {
      * 
      * @param country The name or code of the destination country.
      * @param hsCode The partial or full HS Code for which you would like to view all of the parents.
-     * @return FetchResult<HsCodeModel>
+     * @return HsCodeModelFetchResult
      */
-    public Future<FetchResult<HsCodeModel>> getCrossBorderCodeAsync(String country, String hsCode) {
+    public Future<HsCodeModelFetchResult> getCrossBorderCodeAsync(String country, String hsCode) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/crossborder/{country}/{hsCode}/hierarchy");
         path.applyField("country", country);
         path.applyField("hsCode", hsCode);
-        return this.threadPool.submit((RestCall<FetchResult<HsCodeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<HsCodeModel>>(){}));
+        return this.threadPool.submit((RestCall<HsCodeModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<HsCodeModelFetchResult>(){}));
     }
 
     /**
@@ -5880,16 +7488,16 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<SkyscraperStatusModel>
+     * @return SkyscraperStatusModelFetchResult
      */
-    public FetchResult<SkyscraperStatusModel> getLoginVerifierByForm(String form, String filter, Integer top, Integer skip, String orderBy) throws Exception {
+    public SkyscraperStatusModelFetchResult getLoginVerifierByForm(String form, String filter, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/filingcalendars/loginverifiers/{form}");
         path.applyField("form", form);
         path.addQuery("$filter", filter);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<SkyscraperStatusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<SkyscraperStatusModel>>(){})).call();
+        return ((RestCall<SkyscraperStatusModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<SkyscraperStatusModelFetchResult>(){})).call();
     }
 
     /**
@@ -5902,16 +7510,16 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<SkyscraperStatusModel>
+     * @return SkyscraperStatusModelFetchResult
      */
-    public Future<FetchResult<SkyscraperStatusModel>> getLoginVerifierByFormAsync(String form, String filter, Integer top, Integer skip, String orderBy) {
+    public Future<SkyscraperStatusModelFetchResult> getLoginVerifierByFormAsync(String form, String filter, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/filingcalendars/loginverifiers/{form}");
         path.applyField("form", form);
         path.addQuery("$filter", filter);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<SkyscraperStatusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<SkyscraperStatusModel>>(){}));
+        return this.threadPool.submit((RestCall<SkyscraperStatusModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<SkyscraperStatusModelFetchResult>(){}));
     }
 
     /**
@@ -5927,15 +7535,15 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<AvaFileFormModel>
+     * @return AvaFileFormModelFetchResult
      */
-    public FetchResult<AvaFileFormModel> listAvaFileForms(String filter, Integer top, Integer skip, String orderBy) throws Exception {
+    public AvaFileFormModelFetchResult listAvaFileForms(String filter, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/avafileforms");
         path.addQuery("$filter", filter);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<AvaFileFormModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<AvaFileFormModel>>(){})).call();
+        return ((RestCall<AvaFileFormModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<AvaFileFormModelFetchResult>(){})).call();
     }
 
     /**
@@ -5951,15 +7559,15 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<AvaFileFormModel>
+     * @return AvaFileFormModelFetchResult
      */
-    public Future<FetchResult<AvaFileFormModel>> listAvaFileFormsAsync(String filter, Integer top, Integer skip, String orderBy) {
+    public Future<AvaFileFormModelFetchResult> listAvaFileFormsAsync(String filter, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/avafileforms");
         path.addQuery("$filter", filter);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<AvaFileFormModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<AvaFileFormModel>>(){}));
+        return this.threadPool.submit((RestCall<AvaFileFormModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<AvaFileFormModelFetchResult>(){}));
     }
 
     /**
@@ -5977,16 +7585,16 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<CertificateAttributeModel>
+     * @return CertificateAttributeModelFetchResult
      */
-    public FetchResult<CertificateAttributeModel> listCertificateAttributes(Integer companyid, String filter, Integer top, Integer skip, String orderBy) throws Exception {
+    public CertificateAttributeModelFetchResult listCertificateAttributes(Integer companyid, String filter, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/certificateattributes");
         path.addQuery("companyid", companyid);
         path.addQuery("$filter", filter);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<CertificateAttributeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CertificateAttributeModel>>(){})).call();
+        return ((RestCall<CertificateAttributeModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<CertificateAttributeModelFetchResult>(){})).call();
     }
 
     /**
@@ -6004,16 +7612,16 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<CertificateAttributeModel>
+     * @return CertificateAttributeModelFetchResult
      */
-    public Future<FetchResult<CertificateAttributeModel>> listCertificateAttributesAsync(Integer companyid, String filter, Integer top, Integer skip, String orderBy) {
+    public Future<CertificateAttributeModelFetchResult> listCertificateAttributesAsync(Integer companyid, String filter, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/certificateattributes");
         path.addQuery("companyid", companyid);
         path.addQuery("$filter", filter);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<CertificateAttributeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CertificateAttributeModel>>(){}));
+        return this.threadPool.submit((RestCall<CertificateAttributeModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<CertificateAttributeModelFetchResult>(){}));
     }
 
     /**
@@ -6030,15 +7638,15 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<ExemptionReasonModel>
+     * @return ExemptionReasonModelFetchResult
      */
-    public FetchResult<ExemptionReasonModel> listCertificateExemptReasons(String filter, Integer top, Integer skip, String orderBy) throws Exception {
+    public ExemptionReasonModelFetchResult listCertificateExemptReasons(String filter, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/certificateexemptreasons");
         path.addQuery("$filter", filter);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<ExemptionReasonModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ExemptionReasonModel>>(){})).call();
+        return ((RestCall<ExemptionReasonModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<ExemptionReasonModelFetchResult>(){})).call();
     }
 
     /**
@@ -6055,15 +7663,15 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<ExemptionReasonModel>
+     * @return ExemptionReasonModelFetchResult
      */
-    public Future<FetchResult<ExemptionReasonModel>> listCertificateExemptReasonsAsync(String filter, Integer top, Integer skip, String orderBy) {
+    public Future<ExemptionReasonModelFetchResult> listCertificateExemptReasonsAsync(String filter, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/certificateexemptreasons");
         path.addQuery("$filter", filter);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<ExemptionReasonModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ExemptionReasonModel>>(){}));
+        return this.threadPool.submit((RestCall<ExemptionReasonModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<ExemptionReasonModelFetchResult>(){}));
     }
 
     /**
@@ -6080,15 +7688,15 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<ExposureZoneModel>
+     * @return ExposureZoneModelFetchResult
      */
-    public FetchResult<ExposureZoneModel> listCertificateExposureZones(String filter, Integer top, Integer skip, String orderBy) throws Exception {
+    public ExposureZoneModelFetchResult listCertificateExposureZones(String filter, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/certificateexposurezones");
         path.addQuery("$filter", filter);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<ExposureZoneModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ExposureZoneModel>>(){})).call();
+        return ((RestCall<ExposureZoneModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<ExposureZoneModelFetchResult>(){})).call();
     }
 
     /**
@@ -6105,15 +7713,15 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<ExposureZoneModel>
+     * @return ExposureZoneModelFetchResult
      */
-    public Future<FetchResult<ExposureZoneModel>> listCertificateExposureZonesAsync(String filter, Integer top, Integer skip, String orderBy) {
+    public Future<ExposureZoneModelFetchResult> listCertificateExposureZonesAsync(String filter, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/certificateexposurezones");
         path.addQuery("$filter", filter);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<ExposureZoneModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ExposureZoneModel>>(){}));
+        return this.threadPool.submit((RestCall<ExposureZoneModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<ExposureZoneModelFetchResult>(){}));
     }
 
     /**
@@ -6124,16 +7732,16 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<CommunicationsTSPairModel>
+     * @return CommunicationsTSPairModelFetchResult
      */
-    public FetchResult<CommunicationsTSPairModel> listCommunicationsServiceTypes(Integer id, String filter, Integer top, Integer skip, String orderBy) throws Exception {
+    public CommunicationsTSPairModelFetchResult listCommunicationsServiceTypes(Integer id, String filter, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/communications/transactiontypes/{id}/servicetypes");
         path.applyField("id", id);
         path.addQuery("$filter", filter);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<CommunicationsTSPairModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CommunicationsTSPairModel>>(){})).call();
+        return ((RestCall<CommunicationsTSPairModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<CommunicationsTSPairModelFetchResult>(){})).call();
     }
 
     /**
@@ -6144,16 +7752,16 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<CommunicationsTSPairModel>
+     * @return CommunicationsTSPairModelFetchResult
      */
-    public Future<FetchResult<CommunicationsTSPairModel>> listCommunicationsServiceTypesAsync(Integer id, String filter, Integer top, Integer skip, String orderBy) {
+    public Future<CommunicationsTSPairModelFetchResult> listCommunicationsServiceTypesAsync(Integer id, String filter, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/communications/transactiontypes/{id}/servicetypes");
         path.applyField("id", id);
         path.addQuery("$filter", filter);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<CommunicationsTSPairModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CommunicationsTSPairModel>>(){}));
+        return this.threadPool.submit((RestCall<CommunicationsTSPairModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<CommunicationsTSPairModelFetchResult>(){}));
     }
 
     /**
@@ -6165,15 +7773,15 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<CommunicationsTransactionTypeModel>
+     * @return CommunicationsTransactionTypeModelFetchResult
      */
-    public FetchResult<CommunicationsTransactionTypeModel> listCommunicationsTransactionTypes(String filter, Integer top, Integer skip, String orderBy) throws Exception {
+    public CommunicationsTransactionTypeModelFetchResult listCommunicationsTransactionTypes(String filter, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/communications/transactiontypes");
         path.addQuery("$filter", filter);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<CommunicationsTransactionTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CommunicationsTransactionTypeModel>>(){})).call();
+        return ((RestCall<CommunicationsTransactionTypeModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<CommunicationsTransactionTypeModelFetchResult>(){})).call();
     }
 
     /**
@@ -6185,15 +7793,15 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<CommunicationsTransactionTypeModel>
+     * @return CommunicationsTransactionTypeModelFetchResult
      */
-    public Future<FetchResult<CommunicationsTransactionTypeModel>> listCommunicationsTransactionTypesAsync(String filter, Integer top, Integer skip, String orderBy) {
+    public Future<CommunicationsTransactionTypeModelFetchResult> listCommunicationsTransactionTypesAsync(String filter, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/communications/transactiontypes");
         path.addQuery("$filter", filter);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<CommunicationsTransactionTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CommunicationsTransactionTypeModel>>(){}));
+        return this.threadPool.submit((RestCall<CommunicationsTransactionTypeModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<CommunicationsTransactionTypeModelFetchResult>(){}));
     }
 
     /**
@@ -6205,15 +7813,15 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<CommunicationsTSPairModel>
+     * @return CommunicationsTSPairModelFetchResult
      */
-    public FetchResult<CommunicationsTSPairModel> listCommunicationsTSPairs(String filter, Integer top, Integer skip, String orderBy) throws Exception {
+    public CommunicationsTSPairModelFetchResult listCommunicationsTSPairs(String filter, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/communications/tspairs");
         path.addQuery("$filter", filter);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<CommunicationsTSPairModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CommunicationsTSPairModel>>(){})).call();
+        return ((RestCall<CommunicationsTSPairModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<CommunicationsTSPairModelFetchResult>(){})).call();
     }
 
     /**
@@ -6225,15 +7833,15 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<CommunicationsTSPairModel>
+     * @return CommunicationsTSPairModelFetchResult
      */
-    public Future<FetchResult<CommunicationsTSPairModel>> listCommunicationsTSPairsAsync(String filter, Integer top, Integer skip, String orderBy) {
+    public Future<CommunicationsTSPairModelFetchResult> listCommunicationsTSPairsAsync(String filter, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/communications/tspairs");
         path.addQuery("$filter", filter);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<CommunicationsTSPairModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CommunicationsTSPairModel>>(){}));
+        return this.threadPool.submit((RestCall<CommunicationsTSPairModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<CommunicationsTSPairModelFetchResult>(){}));
     }
 
     /**
@@ -6246,15 +7854,15 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<IsoCountryModel>
+     * @return IsoCountryModelFetchResult
      */
-    public FetchResult<IsoCountryModel> listCountries(String filter, Integer top, Integer skip, String orderBy) throws Exception {
+    public IsoCountryModelFetchResult listCountries(String filter, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/countries");
         path.addQuery("$filter", filter);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<IsoCountryModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<IsoCountryModel>>(){})).call();
+        return ((RestCall<IsoCountryModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<IsoCountryModelFetchResult>(){})).call();
     }
 
     /**
@@ -6267,15 +7875,15 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<IsoCountryModel>
+     * @return IsoCountryModelFetchResult
      */
-    public Future<FetchResult<IsoCountryModel>> listCountriesAsync(String filter, Integer top, Integer skip, String orderBy) {
+    public Future<IsoCountryModelFetchResult> listCountriesAsync(String filter, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/countries");
         path.addQuery("$filter", filter);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<IsoCountryModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<IsoCountryModel>>(){}));
+        return this.threadPool.submit((RestCall<IsoCountryModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<IsoCountryModelFetchResult>(){}));
     }
 
     /**
@@ -6293,15 +7901,15 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<CoverLetterModel>
+     * @return CoverLetterModelFetchResult
      */
-    public FetchResult<CoverLetterModel> listCoverLetters(String filter, Integer top, Integer skip, String orderBy) throws Exception {
+    public CoverLetterModelFetchResult listCoverLetters(String filter, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/coverletters");
         path.addQuery("$filter", filter);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<CoverLetterModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CoverLetterModel>>(){})).call();
+        return ((RestCall<CoverLetterModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<CoverLetterModelFetchResult>(){})).call();
     }
 
     /**
@@ -6319,15 +7927,15 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<CoverLetterModel>
+     * @return CoverLetterModelFetchResult
      */
-    public Future<FetchResult<CoverLetterModel>> listCoverLettersAsync(String filter, Integer top, Integer skip, String orderBy) {
+    public Future<CoverLetterModelFetchResult> listCoverLettersAsync(String filter, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/coverletters");
         path.addQuery("$filter", filter);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<CoverLetterModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CoverLetterModel>>(){}));
+        return this.threadPool.submit((RestCall<CoverLetterModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<CoverLetterModelFetchResult>(){}));
     }
 
     /**
@@ -6352,9 +7960,9 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<HsCodeModel>
+     * @return HsCodeModelFetchResult
      */
-    public FetchResult<HsCodeModel> listCrossBorderCodes(String country, String hsCode, String filter, Integer top, Integer skip, String orderBy) throws Exception {
+    public HsCodeModelFetchResult listCrossBorderCodes(String country, String hsCode, String filter, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/crossborder/{country}/{hsCode}");
         path.applyField("country", country);
         path.applyField("hsCode", hsCode);
@@ -6362,7 +7970,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<HsCodeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<HsCodeModel>>(){})).call();
+        return ((RestCall<HsCodeModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<HsCodeModelFetchResult>(){})).call();
     }
 
     /**
@@ -6387,9 +7995,9 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<HsCodeModel>
+     * @return HsCodeModelFetchResult
      */
-    public Future<FetchResult<HsCodeModel>> listCrossBorderCodesAsync(String country, String hsCode, String filter, Integer top, Integer skip, String orderBy) {
+    public Future<HsCodeModelFetchResult> listCrossBorderCodesAsync(String country, String hsCode, String filter, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/crossborder/{country}/{hsCode}");
         path.applyField("country", country);
         path.applyField("hsCode", hsCode);
@@ -6397,7 +8005,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<HsCodeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<HsCodeModel>>(){}));
+        return this.threadPool.submit((RestCall<HsCodeModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<HsCodeModelFetchResult>(){}));
     }
 
     /**
@@ -6414,11 +8022,11 @@ public class AvaTaxClient {
      * 
      * * This API depends on the following active services<br />*Required* (all):  AvaTaxGlobal.
      * 
-     * @return FetchResult<HsCodeModel>
+     * @return HsCodeModelFetchResult
      */
-    public FetchResult<HsCodeModel> listCrossBorderSections() throws Exception {
+    public HsCodeModelFetchResult listCrossBorderSections() throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/crossborder/sections");
-        return ((RestCall<FetchResult<HsCodeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<HsCodeModel>>(){})).call();
+        return ((RestCall<HsCodeModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<HsCodeModelFetchResult>(){})).call();
     }
 
     /**
@@ -6435,11 +8043,11 @@ public class AvaTaxClient {
      * 
      * * This API depends on the following active services<br />*Required* (all):  AvaTaxGlobal.
      * 
-     * @return FetchResult<HsCodeModel>
+     * @return HsCodeModelFetchResult
      */
-    public Future<FetchResult<HsCodeModel>> listCrossBorderSectionsAsync() {
+    public Future<HsCodeModelFetchResult> listCrossBorderSectionsAsync() {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/crossborder/sections");
-        return this.threadPool.submit((RestCall<FetchResult<HsCodeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<HsCodeModel>>(){}));
+        return this.threadPool.submit((RestCall<HsCodeModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<HsCodeModelFetchResult>(){}));
     }
 
     /**
@@ -6453,15 +8061,15 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<CurrencyModel>
+     * @return CurrencyModelFetchResult
      */
-    public FetchResult<CurrencyModel> listCurrencies(String filter, Integer top, Integer skip, String orderBy) throws Exception {
+    public CurrencyModelFetchResult listCurrencies(String filter, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/currencies");
         path.addQuery("$filter", filter);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<CurrencyModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CurrencyModel>>(){})).call();
+        return ((RestCall<CurrencyModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<CurrencyModelFetchResult>(){})).call();
     }
 
     /**
@@ -6475,15 +8083,15 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<CurrencyModel>
+     * @return CurrencyModelFetchResult
      */
-    public Future<FetchResult<CurrencyModel>> listCurrenciesAsync(String filter, Integer top, Integer skip, String orderBy) {
+    public Future<CurrencyModelFetchResult> listCurrenciesAsync(String filter, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/currencies");
         path.addQuery("$filter", filter);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<CurrencyModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CurrencyModel>>(){}));
+        return this.threadPool.submit((RestCall<CurrencyModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<CurrencyModelFetchResult>(){}));
     }
 
     /**
@@ -6498,15 +8106,15 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<EntityUseCodeModel>
+     * @return EntityUseCodeModelFetchResult
      */
-    public FetchResult<EntityUseCodeModel> listEntityUseCodes(String filter, Integer top, Integer skip, String orderBy) throws Exception {
+    public EntityUseCodeModelFetchResult listEntityUseCodes(String filter, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/entityusecodes");
         path.addQuery("$filter", filter);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<EntityUseCodeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<EntityUseCodeModel>>(){})).call();
+        return ((RestCall<EntityUseCodeModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<EntityUseCodeModelFetchResult>(){})).call();
     }
 
     /**
@@ -6521,15 +8129,15 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<EntityUseCodeModel>
+     * @return EntityUseCodeModelFetchResult
      */
-    public Future<FetchResult<EntityUseCodeModel>> listEntityUseCodesAsync(String filter, Integer top, Integer skip, String orderBy) {
+    public Future<EntityUseCodeModelFetchResult> listEntityUseCodesAsync(String filter, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/entityusecodes");
         path.addQuery("$filter", filter);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<EntityUseCodeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<EntityUseCodeModel>>(){}));
+        return this.threadPool.submit((RestCall<EntityUseCodeModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<EntityUseCodeModelFetchResult>(){}));
     }
 
     /**
@@ -6541,15 +8149,15 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<FilingFrequencyModel>
+     * @return FilingFrequencyModelFetchResult
      */
-    public FetchResult<FilingFrequencyModel> listFilingFrequencies(String filter, Integer top, Integer skip, String orderBy) throws Exception {
+    public FilingFrequencyModelFetchResult listFilingFrequencies(String filter, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/filingfrequencies");
         path.addQuery("$filter", filter);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<FilingFrequencyModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<FilingFrequencyModel>>(){})).call();
+        return ((RestCall<FilingFrequencyModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<FilingFrequencyModelFetchResult>(){})).call();
     }
 
     /**
@@ -6561,15 +8169,15 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<FilingFrequencyModel>
+     * @return FilingFrequencyModelFetchResult
      */
-    public Future<FetchResult<FilingFrequencyModel>> listFilingFrequenciesAsync(String filter, Integer top, Integer skip, String orderBy) {
+    public Future<FilingFrequencyModelFetchResult> listFilingFrequenciesAsync(String filter, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/filingfrequencies");
         path.addQuery("$filter", filter);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<FilingFrequencyModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<FilingFrequencyModel>>(){}));
+        return this.threadPool.submit((RestCall<FilingFrequencyModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<FilingFrequencyModelFetchResult>(){}));
     }
 
     /**
@@ -6585,15 +8193,15 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<JurisdictionModel>
+     * @return JurisdictionModelFetchResult
      */
-    public FetchResult<JurisdictionModel> listJurisdictions(String filter, Integer top, Integer skip, String orderBy) throws Exception {
+    public JurisdictionModelFetchResult listJurisdictions(String filter, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/jurisdictions");
         path.addQuery("$filter", filter);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<JurisdictionModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<JurisdictionModel>>(){})).call();
+        return ((RestCall<JurisdictionModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<JurisdictionModelFetchResult>(){})).call();
     }
 
     /**
@@ -6609,15 +8217,15 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<JurisdictionModel>
+     * @return JurisdictionModelFetchResult
      */
-    public Future<FetchResult<JurisdictionModel>> listJurisdictionsAsync(String filter, Integer top, Integer skip, String orderBy) {
+    public Future<JurisdictionModelFetchResult> listJurisdictionsAsync(String filter, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/jurisdictions");
         path.addQuery("$filter", filter);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<JurisdictionModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<JurisdictionModel>>(){}));
+        return this.threadPool.submit((RestCall<JurisdictionModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<JurisdictionModelFetchResult>(){}));
     }
 
     /**
@@ -6641,9 +8249,9 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<JurisdictionOverrideModel>
+     * @return JurisdictionOverrideModelFetchResult
      */
-    public FetchResult<JurisdictionOverrideModel> listJurisdictionsByAddress(String line1, String line2, String line3, String city, String region, String postalCode, String country, String filter, Integer top, Integer skip, String orderBy) throws Exception {
+    public JurisdictionOverrideModelFetchResult listJurisdictionsByAddress(String line1, String line2, String line3, String city, String region, String postalCode, String country, String filter, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/jurisdictionsnearaddress");
         path.addQuery("line1", line1);
         path.addQuery("line2", line2);
@@ -6656,7 +8264,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<JurisdictionOverrideModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<JurisdictionOverrideModel>>(){})).call();
+        return ((RestCall<JurisdictionOverrideModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<JurisdictionOverrideModelFetchResult>(){})).call();
     }
 
     /**
@@ -6680,9 +8288,9 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<JurisdictionOverrideModel>
+     * @return JurisdictionOverrideModelFetchResult
      */
-    public Future<FetchResult<JurisdictionOverrideModel>> listJurisdictionsByAddressAsync(String line1, String line2, String line3, String city, String region, String postalCode, String country, String filter, Integer top, Integer skip, String orderBy) {
+    public Future<JurisdictionOverrideModelFetchResult> listJurisdictionsByAddressAsync(String line1, String line2, String line3, String city, String region, String postalCode, String country, String filter, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/jurisdictionsnearaddress");
         path.addQuery("line1", line1);
         path.addQuery("line2", line2);
@@ -6695,7 +8303,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<JurisdictionOverrideModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<JurisdictionOverrideModel>>(){}));
+        return this.threadPool.submit((RestCall<JurisdictionOverrideModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<JurisdictionOverrideModelFetchResult>(){}));
     }
 
     /**
@@ -6720,9 +8328,9 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<LocationQuestionModel>
+     * @return LocationQuestionModelFetchResult
      */
-    public FetchResult<LocationQuestionModel> listLocationQuestionsByAddress(String line1, String line2, String line3, String city, String region, String postalCode, String country, BigDecimal latitude, BigDecimal longitude, String filter, Integer top, Integer skip, String orderBy) throws Exception {
+    public LocationQuestionModelFetchResult listLocationQuestionsByAddress(String line1, String line2, String line3, String city, String region, String postalCode, String country, BigDecimal latitude, BigDecimal longitude, String filter, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/locationquestions");
         path.addQuery("line1", line1);
         path.addQuery("line2", line2);
@@ -6737,7 +8345,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<LocationQuestionModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<LocationQuestionModel>>(){})).call();
+        return ((RestCall<LocationQuestionModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<LocationQuestionModelFetchResult>(){})).call();
     }
 
     /**
@@ -6762,9 +8370,9 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<LocationQuestionModel>
+     * @return LocationQuestionModelFetchResult
      */
-    public Future<FetchResult<LocationQuestionModel>> listLocationQuestionsByAddressAsync(String line1, String line2, String line3, String city, String region, String postalCode, String country, BigDecimal latitude, BigDecimal longitude, String filter, Integer top, Integer skip, String orderBy) {
+    public Future<LocationQuestionModelFetchResult> listLocationQuestionsByAddressAsync(String line1, String line2, String line3, String city, String region, String postalCode, String country, BigDecimal latitude, BigDecimal longitude, String filter, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/locationquestions");
         path.addQuery("line1", line1);
         path.addQuery("line2", line2);
@@ -6779,7 +8387,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<LocationQuestionModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<LocationQuestionModel>>(){}));
+        return this.threadPool.submit((RestCall<LocationQuestionModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<LocationQuestionModelFetchResult>(){}));
     }
 
     /**
@@ -6792,15 +8400,15 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<SkyscraperStatusModel>
+     * @return SkyscraperStatusModelFetchResult
      */
-    public FetchResult<SkyscraperStatusModel> listLoginVerifiers(String filter, Integer top, Integer skip, String orderBy) throws Exception {
+    public SkyscraperStatusModelFetchResult listLoginVerifiers(String filter, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/filingcalendars/loginverifiers");
         path.addQuery("$filter", filter);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<SkyscraperStatusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<SkyscraperStatusModel>>(){})).call();
+        return ((RestCall<SkyscraperStatusModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<SkyscraperStatusModelFetchResult>(){})).call();
     }
 
     /**
@@ -6813,15 +8421,15 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<SkyscraperStatusModel>
+     * @return SkyscraperStatusModelFetchResult
      */
-    public Future<FetchResult<SkyscraperStatusModel>> listLoginVerifiersAsync(String filter, Integer top, Integer skip, String orderBy) {
+    public Future<SkyscraperStatusModelFetchResult> listLoginVerifiersAsync(String filter, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/filingcalendars/loginverifiers");
         path.addQuery("$filter", filter);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<SkyscraperStatusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<SkyscraperStatusModel>>(){}));
+        return this.threadPool.submit((RestCall<SkyscraperStatusModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<SkyscraperStatusModelFetchResult>(){}));
     }
 
     /**
@@ -6831,15 +8439,15 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<MarketplaceLocationModel>
+     * @return MarketplaceLocationModelFetchResult
      */
-    public FetchResult<MarketplaceLocationModel> listMarketplaceLocations(String marketplaceId, Integer top, Integer skip, String orderBy) throws Exception {
+    public MarketplaceLocationModelFetchResult listMarketplaceLocations(String marketplaceId, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/marketplacelocations");
         path.addQuery("marketplaceId", marketplaceId);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<MarketplaceLocationModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<MarketplaceLocationModel>>(){})).call();
+        return ((RestCall<MarketplaceLocationModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<MarketplaceLocationModelFetchResult>(){})).call();
     }
 
     /**
@@ -6849,15 +8457,15 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<MarketplaceLocationModel>
+     * @return MarketplaceLocationModelFetchResult
      */
-    public Future<FetchResult<MarketplaceLocationModel>> listMarketplaceLocationsAsync(String marketplaceId, Integer top, Integer skip, String orderBy) {
+    public Future<MarketplaceLocationModelFetchResult> listMarketplaceLocationsAsync(String marketplaceId, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/marketplacelocations");
         path.addQuery("marketplaceId", marketplaceId);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<MarketplaceLocationModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<MarketplaceLocationModel>>(){}));
+        return this.threadPool.submit((RestCall<MarketplaceLocationModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<MarketplaceLocationModelFetchResult>(){}));
     }
 
     /**
@@ -6870,15 +8478,15 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<NexusModel>
+     * @return NexusModelFetchResult
      */
-    public FetchResult<NexusModel> listNexus(String filter, Integer top, Integer skip, String orderBy) throws Exception {
+    public NexusModelFetchResult listNexus(String filter, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/nexus");
         path.addQuery("$filter", filter);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<NexusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NexusModel>>(){})).call();
+        return ((RestCall<NexusModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<NexusModelFetchResult>(){})).call();
     }
 
     /**
@@ -6891,15 +8499,15 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<NexusModel>
+     * @return NexusModelFetchResult
      */
-    public Future<FetchResult<NexusModel>> listNexusAsync(String filter, Integer top, Integer skip, String orderBy) {
+    public Future<NexusModelFetchResult> listNexusAsync(String filter, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/nexus");
         path.addQuery("$filter", filter);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<NexusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NexusModel>>(){}));
+        return this.threadPool.submit((RestCall<NexusModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<NexusModelFetchResult>(){}));
     }
 
     /**
@@ -6921,9 +8529,9 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<NexusModel>
+     * @return NexusModelFetchResult
      */
-    public FetchResult<NexusModel> listNexusByAddress(String line1, String line2, String line3, String city, String region, String postalCode, String country, String filter, Integer top, Integer skip, String orderBy) throws Exception {
+    public NexusModelFetchResult listNexusByAddress(String line1, String line2, String line3, String city, String region, String postalCode, String country, String filter, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/nexus/byaddress");
         path.addQuery("line1", line1);
         path.addQuery("line2", line2);
@@ -6936,7 +8544,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<NexusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NexusModel>>(){})).call();
+        return ((RestCall<NexusModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<NexusModelFetchResult>(){})).call();
     }
 
     /**
@@ -6958,9 +8566,9 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<NexusModel>
+     * @return NexusModelFetchResult
      */
-    public Future<FetchResult<NexusModel>> listNexusByAddressAsync(String line1, String line2, String line3, String city, String region, String postalCode, String country, String filter, Integer top, Integer skip, String orderBy) {
+    public Future<NexusModelFetchResult> listNexusByAddressAsync(String line1, String line2, String line3, String city, String region, String postalCode, String country, String filter, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/nexus/byaddress");
         path.addQuery("line1", line1);
         path.addQuery("line2", line2);
@@ -6973,7 +8581,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<NexusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NexusModel>>(){}));
+        return this.threadPool.submit((RestCall<NexusModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<NexusModelFetchResult>(){}));
     }
 
     /**
@@ -6987,16 +8595,16 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<NexusModel>
+     * @return NexusModelFetchResult
      */
-    public FetchResult<NexusModel> listNexusByCountry(String country, String filter, Integer top, Integer skip, String orderBy) throws Exception {
+    public NexusModelFetchResult listNexusByCountry(String country, String filter, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/nexus/{country}");
         path.applyField("country", country);
         path.addQuery("$filter", filter);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<NexusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NexusModel>>(){})).call();
+        return ((RestCall<NexusModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<NexusModelFetchResult>(){})).call();
     }
 
     /**
@@ -7010,16 +8618,16 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<NexusModel>
+     * @return NexusModelFetchResult
      */
-    public Future<FetchResult<NexusModel>> listNexusByCountryAsync(String country, String filter, Integer top, Integer skip, String orderBy) {
+    public Future<NexusModelFetchResult> listNexusByCountryAsync(String country, String filter, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/nexus/{country}");
         path.applyField("country", country);
         path.addQuery("$filter", filter);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<NexusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NexusModel>>(){}));
+        return this.threadPool.submit((RestCall<NexusModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<NexusModelFetchResult>(){}));
     }
 
     /**
@@ -7034,9 +8642,9 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<NexusModel>
+     * @return NexusModelFetchResult
      */
-    public FetchResult<NexusModel> listNexusByCountryAndRegion(String country, String region, String filter, Integer top, Integer skip, String orderBy) throws Exception {
+    public NexusModelFetchResult listNexusByCountryAndRegion(String country, String region, String filter, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/nexus/{country}/{region}");
         path.applyField("country", country);
         path.applyField("region", region);
@@ -7044,7 +8652,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<NexusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NexusModel>>(){})).call();
+        return ((RestCall<NexusModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<NexusModelFetchResult>(){})).call();
     }
 
     /**
@@ -7059,9 +8667,9 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<NexusModel>
+     * @return NexusModelFetchResult
      */
-    public Future<FetchResult<NexusModel>> listNexusByCountryAndRegionAsync(String country, String region, String filter, Integer top, Integer skip, String orderBy) {
+    public Future<NexusModelFetchResult> listNexusByCountryAndRegionAsync(String country, String region, String filter, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/nexus/{country}/{region}");
         path.applyField("country", country);
         path.applyField("region", region);
@@ -7069,7 +8677,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<NexusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NexusModel>>(){}));
+        return this.threadPool.submit((RestCall<NexusModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<NexusModelFetchResult>(){}));
     }
 
     /**
@@ -7129,23 +8737,49 @@ public class AvaTaxClient {
     }
 
     /**
-     * Retrieve the full list of nexus tax type groups
+     * Retrieve the full list of Avalara-supported nexus for a tax type group.
      * 
-     * Returns the full list of Avalara-supported nexus tax type groups
+     * Returns all Avalara-supported nexus for the specified specified tax type group.
+     *             
      * 
-     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* subscriptionTypeId, subscriptionDescription, tabName, showColumn
+     * @param taxTypeGroup The tax type group to fetch the supporting system nexus for.
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* streamlinedSalesTax, isSSTActive, taxAuthorityId, taxName, parameters
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<NexusTaxTypeGroupModel>
+     * @return NexusModelFetchResult
      */
-    public FetchResult<NexusTaxTypeGroupModel> listNexusTaxTypeGroups(String filter, Integer top, Integer skip, String orderBy) throws Exception {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/nexustaxtypegroups");
+    public NexusModelFetchResult listNexusByTaxTypeGroup(String taxTypeGroup, String filter, Integer top, Integer skip, String orderBy) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/nexus/bytaxtypegroup/{taxTypeGroup}");
+        path.applyField("taxTypeGroup", taxTypeGroup);
         path.addQuery("$filter", filter);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<NexusTaxTypeGroupModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NexusTaxTypeGroupModel>>(){})).call();
+        return ((RestCall<NexusModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<NexusModelFetchResult>(){})).call();
+    }
+
+    /**
+     * Retrieve the full list of Avalara-supported nexus for a tax type group.
+     * 
+     * Returns all Avalara-supported nexus for the specified specified tax type group.
+     *             
+     * 
+     * @param taxTypeGroup The tax type group to fetch the supporting system nexus for.
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* streamlinedSalesTax, isSSTActive, taxAuthorityId, taxName, parameters
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @return NexusModelFetchResult
+     */
+    public Future<NexusModelFetchResult> listNexusByTaxTypeGroupAsync(String taxTypeGroup, String filter, Integer top, Integer skip, String orderBy) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/nexus/bytaxtypegroup/{taxTypeGroup}");
+        path.applyField("taxTypeGroup", taxTypeGroup);
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
+        return this.threadPool.submit((RestCall<NexusModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<NexusModelFetchResult>(){}));
     }
 
     /**
@@ -7157,15 +8791,35 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<NexusTaxTypeGroupModel>
+     * @return NexusTaxTypeGroupModelFetchResult
      */
-    public Future<FetchResult<NexusTaxTypeGroupModel>> listNexusTaxTypeGroupsAsync(String filter, Integer top, Integer skip, String orderBy) {
+    public NexusTaxTypeGroupModelFetchResult listNexusTaxTypeGroups(String filter, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/nexustaxtypegroups");
         path.addQuery("$filter", filter);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<NexusTaxTypeGroupModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NexusTaxTypeGroupModel>>(){}));
+        return ((RestCall<NexusTaxTypeGroupModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<NexusTaxTypeGroupModelFetchResult>(){})).call();
+    }
+
+    /**
+     * Retrieve the full list of nexus tax type groups
+     * 
+     * Returns the full list of Avalara-supported nexus tax type groups
+     * 
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* subscriptionTypeId, subscriptionDescription, tabName, showColumn
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @return NexusTaxTypeGroupModelFetchResult
+     */
+    public Future<NexusTaxTypeGroupModelFetchResult> listNexusTaxTypeGroupsAsync(String filter, Integer top, Integer skip, String orderBy) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/nexustaxtypegroups");
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
+        return this.threadPool.submit((RestCall<NexusTaxTypeGroupModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<NexusTaxTypeGroupModelFetchResult>(){}));
     }
 
     /**
@@ -7177,15 +8831,15 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<NoticeCustomerFundingOptionModel>
+     * @return NoticeCustomerFundingOptionModelFetchResult
      */
-    public FetchResult<NoticeCustomerFundingOptionModel> listNoticeCustomerFundingOptions(String filter, Integer top, Integer skip, String orderBy) throws Exception {
+    public NoticeCustomerFundingOptionModelFetchResult listNoticeCustomerFundingOptions(String filter, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/noticecustomerfundingoptions");
         path.addQuery("$filter", filter);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<NoticeCustomerFundingOptionModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NoticeCustomerFundingOptionModel>>(){})).call();
+        return ((RestCall<NoticeCustomerFundingOptionModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<NoticeCustomerFundingOptionModelFetchResult>(){})).call();
     }
 
     /**
@@ -7197,15 +8851,15 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<NoticeCustomerFundingOptionModel>
+     * @return NoticeCustomerFundingOptionModelFetchResult
      */
-    public Future<FetchResult<NoticeCustomerFundingOptionModel>> listNoticeCustomerFundingOptionsAsync(String filter, Integer top, Integer skip, String orderBy) {
+    public Future<NoticeCustomerFundingOptionModelFetchResult> listNoticeCustomerFundingOptionsAsync(String filter, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/noticecustomerfundingoptions");
         path.addQuery("$filter", filter);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<NoticeCustomerFundingOptionModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NoticeCustomerFundingOptionModel>>(){}));
+        return this.threadPool.submit((RestCall<NoticeCustomerFundingOptionModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<NoticeCustomerFundingOptionModelFetchResult>(){}));
     }
 
     /**
@@ -7217,15 +8871,15 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<NoticeCustomerTypeModel>
+     * @return NoticeCustomerTypeModelFetchResult
      */
-    public FetchResult<NoticeCustomerTypeModel> listNoticeCustomerTypes(String filter, Integer top, Integer skip, String orderBy) throws Exception {
+    public NoticeCustomerTypeModelFetchResult listNoticeCustomerTypes(String filter, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/noticecustomertypes");
         path.addQuery("$filter", filter);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<NoticeCustomerTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NoticeCustomerTypeModel>>(){})).call();
+        return ((RestCall<NoticeCustomerTypeModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<NoticeCustomerTypeModelFetchResult>(){})).call();
     }
 
     /**
@@ -7237,15 +8891,15 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<NoticeCustomerTypeModel>
+     * @return NoticeCustomerTypeModelFetchResult
      */
-    public Future<FetchResult<NoticeCustomerTypeModel>> listNoticeCustomerTypesAsync(String filter, Integer top, Integer skip, String orderBy) {
+    public Future<NoticeCustomerTypeModelFetchResult> listNoticeCustomerTypesAsync(String filter, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/noticecustomertypes");
         path.addQuery("$filter", filter);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<NoticeCustomerTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NoticeCustomerTypeModel>>(){}));
+        return this.threadPool.submit((RestCall<NoticeCustomerTypeModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<NoticeCustomerTypeModelFetchResult>(){}));
     }
 
     /**
@@ -7257,15 +8911,15 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<NoticeFilingTypeModel>
+     * @return NoticeFilingTypeModelFetchResult
      */
-    public FetchResult<NoticeFilingTypeModel> listNoticeFilingtypes(String filter, Integer top, Integer skip, String orderBy) throws Exception {
+    public NoticeFilingTypeModelFetchResult listNoticeFilingtypes(String filter, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/noticefilingtypes");
         path.addQuery("$filter", filter);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<NoticeFilingTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NoticeFilingTypeModel>>(){})).call();
+        return ((RestCall<NoticeFilingTypeModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<NoticeFilingTypeModelFetchResult>(){})).call();
     }
 
     /**
@@ -7277,15 +8931,15 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<NoticeFilingTypeModel>
+     * @return NoticeFilingTypeModelFetchResult
      */
-    public Future<FetchResult<NoticeFilingTypeModel>> listNoticeFilingtypesAsync(String filter, Integer top, Integer skip, String orderBy) {
+    public Future<NoticeFilingTypeModelFetchResult> listNoticeFilingtypesAsync(String filter, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/noticefilingtypes");
         path.addQuery("$filter", filter);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<NoticeFilingTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NoticeFilingTypeModel>>(){}));
+        return this.threadPool.submit((RestCall<NoticeFilingTypeModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<NoticeFilingTypeModelFetchResult>(){}));
     }
 
     /**
@@ -7297,15 +8951,15 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<NoticePriorityModel>
+     * @return NoticePriorityModelFetchResult
      */
-    public FetchResult<NoticePriorityModel> listNoticePriorities(String filter, Integer top, Integer skip, String orderBy) throws Exception {
+    public NoticePriorityModelFetchResult listNoticePriorities(String filter, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/noticepriorities");
         path.addQuery("$filter", filter);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<NoticePriorityModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NoticePriorityModel>>(){})).call();
+        return ((RestCall<NoticePriorityModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<NoticePriorityModelFetchResult>(){})).call();
     }
 
     /**
@@ -7317,15 +8971,15 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<NoticePriorityModel>
+     * @return NoticePriorityModelFetchResult
      */
-    public Future<FetchResult<NoticePriorityModel>> listNoticePrioritiesAsync(String filter, Integer top, Integer skip, String orderBy) {
+    public Future<NoticePriorityModelFetchResult> listNoticePrioritiesAsync(String filter, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/noticepriorities");
         path.addQuery("$filter", filter);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<NoticePriorityModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NoticePriorityModel>>(){}));
+        return this.threadPool.submit((RestCall<NoticePriorityModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<NoticePriorityModelFetchResult>(){}));
     }
 
     /**
@@ -7337,15 +8991,15 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<NoticeReasonModel>
+     * @return NoticeReasonModelFetchResult
      */
-    public FetchResult<NoticeReasonModel> listNoticeReasons(String filter, Integer top, Integer skip, String orderBy) throws Exception {
+    public NoticeReasonModelFetchResult listNoticeReasons(String filter, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/noticereasons");
         path.addQuery("$filter", filter);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<NoticeReasonModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NoticeReasonModel>>(){})).call();
+        return ((RestCall<NoticeReasonModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<NoticeReasonModelFetchResult>(){})).call();
     }
 
     /**
@@ -7357,15 +9011,15 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<NoticeReasonModel>
+     * @return NoticeReasonModelFetchResult
      */
-    public Future<FetchResult<NoticeReasonModel>> listNoticeReasonsAsync(String filter, Integer top, Integer skip, String orderBy) {
+    public Future<NoticeReasonModelFetchResult> listNoticeReasonsAsync(String filter, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/noticereasons");
         path.addQuery("$filter", filter);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<NoticeReasonModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NoticeReasonModel>>(){}));
+        return this.threadPool.submit((RestCall<NoticeReasonModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<NoticeReasonModelFetchResult>(){}));
     }
 
     /**
@@ -7377,15 +9031,15 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<NoticeResponsibilityModel>
+     * @return NoticeResponsibilityModelFetchResult
      */
-    public FetchResult<NoticeResponsibilityModel> listNoticeResponsibilities(String filter, Integer top, Integer skip, String orderBy) throws Exception {
+    public NoticeResponsibilityModelFetchResult listNoticeResponsibilities(String filter, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/noticeresponsibilities");
         path.addQuery("$filter", filter);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<NoticeResponsibilityModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NoticeResponsibilityModel>>(){})).call();
+        return ((RestCall<NoticeResponsibilityModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<NoticeResponsibilityModelFetchResult>(){})).call();
     }
 
     /**
@@ -7397,15 +9051,15 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<NoticeResponsibilityModel>
+     * @return NoticeResponsibilityModelFetchResult
      */
-    public Future<FetchResult<NoticeResponsibilityModel>> listNoticeResponsibilitiesAsync(String filter, Integer top, Integer skip, String orderBy) {
+    public Future<NoticeResponsibilityModelFetchResult> listNoticeResponsibilitiesAsync(String filter, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/noticeresponsibilities");
         path.addQuery("$filter", filter);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<NoticeResponsibilityModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NoticeResponsibilityModel>>(){}));
+        return this.threadPool.submit((RestCall<NoticeResponsibilityModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<NoticeResponsibilityModelFetchResult>(){}));
     }
 
     /**
@@ -7417,15 +9071,15 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<NoticeRootCauseModel>
+     * @return NoticeRootCauseModelFetchResult
      */
-    public FetchResult<NoticeRootCauseModel> listNoticeRootCauses(String filter, Integer top, Integer skip, String orderBy) throws Exception {
+    public NoticeRootCauseModelFetchResult listNoticeRootCauses(String filter, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/noticerootcauses");
         path.addQuery("$filter", filter);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<NoticeRootCauseModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NoticeRootCauseModel>>(){})).call();
+        return ((RestCall<NoticeRootCauseModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<NoticeRootCauseModelFetchResult>(){})).call();
     }
 
     /**
@@ -7437,15 +9091,15 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<NoticeRootCauseModel>
+     * @return NoticeRootCauseModelFetchResult
      */
-    public Future<FetchResult<NoticeRootCauseModel>> listNoticeRootCausesAsync(String filter, Integer top, Integer skip, String orderBy) {
+    public Future<NoticeRootCauseModelFetchResult> listNoticeRootCausesAsync(String filter, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/noticerootcauses");
         path.addQuery("$filter", filter);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<NoticeRootCauseModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NoticeRootCauseModel>>(){}));
+        return this.threadPool.submit((RestCall<NoticeRootCauseModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<NoticeRootCauseModelFetchResult>(){}));
     }
 
     /**
@@ -7457,15 +9111,15 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<NoticeStatusModel>
+     * @return NoticeStatusModelFetchResult
      */
-    public FetchResult<NoticeStatusModel> listNoticeStatuses(String filter, Integer top, Integer skip, String orderBy) throws Exception {
+    public NoticeStatusModelFetchResult listNoticeStatuses(String filter, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/noticestatuses");
         path.addQuery("$filter", filter);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<NoticeStatusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NoticeStatusModel>>(){})).call();
+        return ((RestCall<NoticeStatusModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<NoticeStatusModelFetchResult>(){})).call();
     }
 
     /**
@@ -7477,15 +9131,15 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<NoticeStatusModel>
+     * @return NoticeStatusModelFetchResult
      */
-    public Future<FetchResult<NoticeStatusModel>> listNoticeStatusesAsync(String filter, Integer top, Integer skip, String orderBy) {
+    public Future<NoticeStatusModelFetchResult> listNoticeStatusesAsync(String filter, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/noticestatuses");
         path.addQuery("$filter", filter);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<NoticeStatusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NoticeStatusModel>>(){}));
+        return this.threadPool.submit((RestCall<NoticeStatusModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<NoticeStatusModelFetchResult>(){}));
     }
 
     /**
@@ -7497,15 +9151,15 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<NoticeTypeModel>
+     * @return NoticeTypeModelFetchResult
      */
-    public FetchResult<NoticeTypeModel> listNoticeTypes(String filter, Integer top, Integer skip, String orderBy) throws Exception {
+    public NoticeTypeModelFetchResult listNoticeTypes(String filter, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/noticetypes");
         path.addQuery("$filter", filter);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<NoticeTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NoticeTypeModel>>(){})).call();
+        return ((RestCall<NoticeTypeModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<NoticeTypeModelFetchResult>(){})).call();
     }
 
     /**
@@ -7517,15 +9171,15 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<NoticeTypeModel>
+     * @return NoticeTypeModelFetchResult
      */
-    public Future<FetchResult<NoticeTypeModel>> listNoticeTypesAsync(String filter, Integer top, Integer skip, String orderBy) {
+    public Future<NoticeTypeModelFetchResult> listNoticeTypesAsync(String filter, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/noticetypes");
         path.addQuery("$filter", filter);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<NoticeTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NoticeTypeModel>>(){}));
+        return this.threadPool.submit((RestCall<NoticeTypeModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<NoticeTypeModelFetchResult>(){}));
     }
 
     /**
@@ -7538,15 +9192,15 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<ParameterModel>
+     * @return ParameterModelFetchResult
      */
-    public FetchResult<ParameterModel> listParameters(String filter, Integer top, Integer skip, String orderBy) throws Exception {
+    public ParameterModelFetchResult listParameters(String filter, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/parameters");
         path.addQuery("$filter", filter);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<ParameterModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ParameterModel>>(){})).call();
+        return ((RestCall<ParameterModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<ParameterModelFetchResult>(){})).call();
     }
 
     /**
@@ -7559,15 +9213,15 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<ParameterModel>
+     * @return ParameterModelFetchResult
      */
-    public Future<FetchResult<ParameterModel>> listParametersAsync(String filter, Integer top, Integer skip, String orderBy) {
+    public Future<ParameterModelFetchResult> listParametersAsync(String filter, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/parameters");
         path.addQuery("$filter", filter);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<ParameterModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ParameterModel>>(){}));
+        return this.threadPool.submit((RestCall<ParameterModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<ParameterModelFetchResult>(){}));
     }
 
     /**
@@ -7585,9 +9239,9 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<ParameterModel>
+     * @return ParameterModelFetchResult
      */
-    public FetchResult<ParameterModel> listParametersByItem(String companyCode, String itemCode, String filter, Integer top, Integer skip, String orderBy) throws Exception {
+    public ParameterModelFetchResult listParametersByItem(String companyCode, String itemCode, String filter, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/parameters/byitem/{companyCode}/{itemCode}");
         path.applyField("companyCode", companyCode);
         path.applyField("itemCode", itemCode);
@@ -7595,7 +9249,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<ParameterModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ParameterModel>>(){})).call();
+        return ((RestCall<ParameterModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<ParameterModelFetchResult>(){})).call();
     }
 
     /**
@@ -7613,9 +9267,9 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<ParameterModel>
+     * @return ParameterModelFetchResult
      */
-    public Future<FetchResult<ParameterModel>> listParametersByItemAsync(String companyCode, String itemCode, String filter, Integer top, Integer skip, String orderBy) {
+    public Future<ParameterModelFetchResult> listParametersByItemAsync(String companyCode, String itemCode, String filter, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/parameters/byitem/{companyCode}/{itemCode}");
         path.applyField("companyCode", companyCode);
         path.applyField("itemCode", itemCode);
@@ -7623,7 +9277,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<ParameterModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ParameterModel>>(){}));
+        return this.threadPool.submit((RestCall<ParameterModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<ParameterModelFetchResult>(){}));
     }
 
     /**
@@ -7636,15 +9290,15 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<ParameterUsageModel>
+     * @return ParameterUsageModelFetchResult
      */
-    public FetchResult<ParameterUsageModel> listParametersUsage(String filter, Integer top, Integer skip, String orderBy) throws Exception {
+    public ParameterUsageModelFetchResult listParametersUsage(String filter, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/parametersusage");
         path.addQuery("$filter", filter);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<ParameterUsageModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ParameterUsageModel>>(){})).call();
+        return ((RestCall<ParameterUsageModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<ParameterUsageModelFetchResult>(){})).call();
     }
 
     /**
@@ -7657,15 +9311,15 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<ParameterUsageModel>
+     * @return ParameterUsageModelFetchResult
      */
-    public Future<FetchResult<ParameterUsageModel>> listParametersUsageAsync(String filter, Integer top, Integer skip, String orderBy) {
+    public Future<ParameterUsageModelFetchResult> listParametersUsageAsync(String filter, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/parametersusage");
         path.addQuery("$filter", filter);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<ParameterUsageModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ParameterUsageModel>>(){}));
+        return this.threadPool.submit((RestCall<ParameterUsageModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<ParameterUsageModelFetchResult>(){}));
     }
 
     /**
@@ -7675,13 +9329,13 @@ public class AvaTaxClient {
      * 
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
-     * @return FetchResult<String>
+     * @return StringFetchResult
      */
-    public FetchResult<String> listPermissions(Integer top, Integer skip) throws Exception {
+    public StringFetchResult listPermissions(Integer top, Integer skip) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/permissions");
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
-        return ((RestCall<FetchResult<String>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<String>>(){})).call();
+        return ((RestCall<StringFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<StringFetchResult>(){})).call();
     }
 
     /**
@@ -7691,13 +9345,13 @@ public class AvaTaxClient {
      * 
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
-     * @return FetchResult<String>
+     * @return StringFetchResult
      */
-    public Future<FetchResult<String>> listPermissionsAsync(Integer top, Integer skip) {
+    public Future<StringFetchResult> listPermissionsAsync(Integer top, Integer skip) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/permissions");
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
-        return this.threadPool.submit((RestCall<FetchResult<String>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<String>>(){}));
+        return this.threadPool.submit((RestCall<StringFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<StringFetchResult>(){}));
     }
 
     /**
@@ -7707,15 +9361,15 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<PostalCodeModel>
+     * @return PostalCodeModelFetchResult
      */
-    public FetchResult<PostalCodeModel> listPostalCodes(String filter, Integer top, Integer skip, String orderBy) throws Exception {
+    public PostalCodeModelFetchResult listPostalCodes(String filter, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/postalcodes");
         path.addQuery("$filter", filter);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<PostalCodeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<PostalCodeModel>>(){})).call();
+        return ((RestCall<PostalCodeModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<PostalCodeModelFetchResult>(){})).call();
     }
 
     /**
@@ -7725,15 +9379,15 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<PostalCodeModel>
+     * @return PostalCodeModelFetchResult
      */
-    public Future<FetchResult<PostalCodeModel>> listPostalCodesAsync(String filter, Integer top, Integer skip, String orderBy) {
+    public Future<PostalCodeModelFetchResult> listPostalCodesAsync(String filter, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/postalcodes");
         path.addQuery("$filter", filter);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<PostalCodeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<PostalCodeModel>>(){}));
+        return this.threadPool.submit((RestCall<PostalCodeModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<PostalCodeModelFetchResult>(){}));
     }
 
     /**
@@ -7752,15 +9406,15 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<PreferredProgramModel>
+     * @return PreferredProgramModelFetchResult
      */
-    public FetchResult<PreferredProgramModel> listPreferredPrograms(String filter, Integer top, Integer skip, String orderBy) throws Exception {
+    public PreferredProgramModelFetchResult listPreferredPrograms(String filter, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/preferredprograms");
         path.addQuery("$filter", filter);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<PreferredProgramModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<PreferredProgramModel>>(){})).call();
+        return ((RestCall<PreferredProgramModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<PreferredProgramModelFetchResult>(){})).call();
     }
 
     /**
@@ -7779,15 +9433,15 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<PreferredProgramModel>
+     * @return PreferredProgramModelFetchResult
      */
-    public Future<FetchResult<PreferredProgramModel>> listPreferredProgramsAsync(String filter, Integer top, Integer skip, String orderBy) {
+    public Future<PreferredProgramModelFetchResult> listPreferredProgramsAsync(String filter, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/preferredprograms");
         path.addQuery("$filter", filter);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<PreferredProgramModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<PreferredProgramModel>>(){}));
+        return this.threadPool.submit((RestCall<PreferredProgramModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<PreferredProgramModelFetchResult>(){}));
     }
 
     /**
@@ -7802,16 +9456,16 @@ public class AvaTaxClient {
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @param countryCode If not null, return all records with this code.
-     * @return FetchResult<ProductClassificationSystemModel>
+     * @return ProductClassificationSystemModelFetchResult
      */
-    public FetchResult<ProductClassificationSystemModel> listProductClassificationSystems(String filter, Integer top, Integer skip, String orderBy, String countryCode) throws Exception {
+    public ProductClassificationSystemModelFetchResult listProductClassificationSystems(String filter, Integer top, Integer skip, String orderBy, String countryCode) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/productclassificationsystems");
         path.addQuery("$filter", filter);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
         path.addQuery("$countryCode", countryCode);
-        return ((RestCall<FetchResult<ProductClassificationSystemModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ProductClassificationSystemModel>>(){})).call();
+        return ((RestCall<ProductClassificationSystemModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<ProductClassificationSystemModelFetchResult>(){})).call();
     }
 
     /**
@@ -7826,16 +9480,16 @@ public class AvaTaxClient {
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @param countryCode If not null, return all records with this code.
-     * @return FetchResult<ProductClassificationSystemModel>
+     * @return ProductClassificationSystemModelFetchResult
      */
-    public Future<FetchResult<ProductClassificationSystemModel>> listProductClassificationSystemsAsync(String filter, Integer top, Integer skip, String orderBy, String countryCode) {
+    public Future<ProductClassificationSystemModelFetchResult> listProductClassificationSystemsAsync(String filter, Integer top, Integer skip, String orderBy, String countryCode) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/productclassificationsystems");
         path.addQuery("$filter", filter);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
         path.addQuery("$countryCode", countryCode);
-        return this.threadPool.submit((RestCall<FetchResult<ProductClassificationSystemModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ProductClassificationSystemModel>>(){}));
+        return this.threadPool.submit((RestCall<ProductClassificationSystemModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<ProductClassificationSystemModelFetchResult>(){}));
     }
 
     /**
@@ -7851,9 +9505,9 @@ public class AvaTaxClient {
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @param countryCode If not null, return all records with this code.
-     * @return FetchResult<ProductClassificationSystemModel>
+     * @return ProductClassificationSystemModelFetchResult
      */
-    public FetchResult<ProductClassificationSystemModel> listProductClassificationSystemsByCompany(String companyCode, String filter, Integer top, Integer skip, String orderBy, String countryCode) throws Exception {
+    public ProductClassificationSystemModelFetchResult listProductClassificationSystemsByCompany(String companyCode, String filter, Integer top, Integer skip, String orderBy, String countryCode) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/productclassificationsystems/bycompany/{companyCode}");
         path.applyField("companyCode", companyCode);
         path.addQuery("$filter", filter);
@@ -7861,7 +9515,7 @@ public class AvaTaxClient {
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
         path.addQuery("$countryCode", countryCode);
-        return ((RestCall<FetchResult<ProductClassificationSystemModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ProductClassificationSystemModel>>(){})).call();
+        return ((RestCall<ProductClassificationSystemModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<ProductClassificationSystemModelFetchResult>(){})).call();
     }
 
     /**
@@ -7877,9 +9531,9 @@ public class AvaTaxClient {
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
      * @param countryCode If not null, return all records with this code.
-     * @return FetchResult<ProductClassificationSystemModel>
+     * @return ProductClassificationSystemModelFetchResult
      */
-    public Future<FetchResult<ProductClassificationSystemModel>> listProductClassificationSystemsByCompanyAsync(String companyCode, String filter, Integer top, Integer skip, String orderBy, String countryCode) {
+    public Future<ProductClassificationSystemModelFetchResult> listProductClassificationSystemsByCompanyAsync(String companyCode, String filter, Integer top, Integer skip, String orderBy, String countryCode) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/productclassificationsystems/bycompany/{companyCode}");
         path.applyField("companyCode", companyCode);
         path.addQuery("$filter", filter);
@@ -7887,7 +9541,7 @@ public class AvaTaxClient {
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
         path.addQuery("$countryCode", countryCode);
-        return this.threadPool.submit((RestCall<FetchResult<ProductClassificationSystemModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ProductClassificationSystemModel>>(){}));
+        return this.threadPool.submit((RestCall<ProductClassificationSystemModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<ProductClassificationSystemModelFetchResult>(){}));
     }
 
     /**
@@ -7900,16 +9554,16 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<RateTypeModel>
+     * @return RateTypeModelFetchResult
      */
-    public FetchResult<RateTypeModel> listRateTypesByCountry(String country, String filter, Integer top, Integer skip, String orderBy) throws Exception {
+    public RateTypeModelFetchResult listRateTypesByCountry(String country, String filter, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/countries/{country}/ratetypes");
         path.applyField("country", country);
         path.addQuery("$filter", filter);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<RateTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<RateTypeModel>>(){})).call();
+        return ((RestCall<RateTypeModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<RateTypeModelFetchResult>(){})).call();
     }
 
     /**
@@ -7922,16 +9576,16 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<RateTypeModel>
+     * @return RateTypeModelFetchResult
      */
-    public Future<FetchResult<RateTypeModel>> listRateTypesByCountryAsync(String country, String filter, Integer top, Integer skip, String orderBy) {
+    public Future<RateTypeModelFetchResult> listRateTypesByCountryAsync(String country, String filter, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/countries/{country}/ratetypes");
         path.applyField("country", country);
         path.addQuery("$filter", filter);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<RateTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<RateTypeModel>>(){}));
+        return this.threadPool.submit((RestCall<RateTypeModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<RateTypeModelFetchResult>(){}));
     }
 
     /**
@@ -7944,15 +9598,15 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<IsoRegionModel>
+     * @return IsoRegionModelFetchResult
      */
-    public FetchResult<IsoRegionModel> listRegions(String filter, Integer top, Integer skip, String orderBy) throws Exception {
+    public IsoRegionModelFetchResult listRegions(String filter, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/regions");
         path.addQuery("$filter", filter);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<IsoRegionModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<IsoRegionModel>>(){})).call();
+        return ((RestCall<IsoRegionModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<IsoRegionModelFetchResult>(){})).call();
     }
 
     /**
@@ -7965,15 +9619,15 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<IsoRegionModel>
+     * @return IsoRegionModelFetchResult
      */
-    public Future<FetchResult<IsoRegionModel>> listRegionsAsync(String filter, Integer top, Integer skip, String orderBy) {
+    public Future<IsoRegionModelFetchResult> listRegionsAsync(String filter, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/regions");
         path.addQuery("$filter", filter);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<IsoRegionModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<IsoRegionModel>>(){}));
+        return this.threadPool.submit((RestCall<IsoRegionModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<IsoRegionModelFetchResult>(){}));
     }
 
     /**
@@ -7987,16 +9641,16 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<IsoRegionModel>
+     * @return IsoRegionModelFetchResult
      */
-    public FetchResult<IsoRegionModel> listRegionsByCountry(String country, String filter, Integer top, Integer skip, String orderBy) throws Exception {
+    public IsoRegionModelFetchResult listRegionsByCountry(String country, String filter, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/countries/{country}/regions");
         path.applyField("country", country);
         path.addQuery("$filter", filter);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<IsoRegionModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<IsoRegionModel>>(){})).call();
+        return ((RestCall<IsoRegionModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<IsoRegionModelFetchResult>(){})).call();
     }
 
     /**
@@ -8010,16 +9664,16 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<IsoRegionModel>
+     * @return IsoRegionModelFetchResult
      */
-    public Future<FetchResult<IsoRegionModel>> listRegionsByCountryAsync(String country, String filter, Integer top, Integer skip, String orderBy) {
+    public Future<IsoRegionModelFetchResult> listRegionsByCountryAsync(String country, String filter, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/countries/{country}/regions");
         path.applyField("country", country);
         path.addQuery("$filter", filter);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<IsoRegionModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<IsoRegionModel>>(){}));
+        return this.threadPool.submit((RestCall<IsoRegionModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<IsoRegionModelFetchResult>(){}));
     }
 
     /**
@@ -8031,15 +9685,15 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<ResourceFileTypeModel>
+     * @return ResourceFileTypeModelFetchResult
      */
-    public FetchResult<ResourceFileTypeModel> listResourceFileTypes(String filter, Integer top, Integer skip, String orderBy) throws Exception {
+    public ResourceFileTypeModelFetchResult listResourceFileTypes(String filter, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/resourcefiletypes");
         path.addQuery("$filter", filter);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<ResourceFileTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ResourceFileTypeModel>>(){})).call();
+        return ((RestCall<ResourceFileTypeModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<ResourceFileTypeModelFetchResult>(){})).call();
     }
 
     /**
@@ -8051,15 +9705,15 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<ResourceFileTypeModel>
+     * @return ResourceFileTypeModelFetchResult
      */
-    public Future<FetchResult<ResourceFileTypeModel>> listResourceFileTypesAsync(String filter, Integer top, Integer skip, String orderBy) {
+    public Future<ResourceFileTypeModelFetchResult> listResourceFileTypesAsync(String filter, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/resourcefiletypes");
         path.addQuery("$filter", filter);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<ResourceFileTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ResourceFileTypeModel>>(){}));
+        return this.threadPool.submit((RestCall<ResourceFileTypeModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<ResourceFileTypeModelFetchResult>(){}));
     }
 
     /**
@@ -8072,15 +9726,15 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<SecurityRoleModel>
+     * @return SecurityRoleModelFetchResult
      */
-    public FetchResult<SecurityRoleModel> listSecurityRoles(String filter, Integer top, Integer skip, String orderBy) throws Exception {
+    public SecurityRoleModelFetchResult listSecurityRoles(String filter, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/securityroles");
         path.addQuery("$filter", filter);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<SecurityRoleModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<SecurityRoleModel>>(){})).call();
+        return ((RestCall<SecurityRoleModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<SecurityRoleModelFetchResult>(){})).call();
     }
 
     /**
@@ -8093,15 +9747,15 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<SecurityRoleModel>
+     * @return SecurityRoleModelFetchResult
      */
-    public Future<FetchResult<SecurityRoleModel>> listSecurityRolesAsync(String filter, Integer top, Integer skip, String orderBy) {
+    public Future<SecurityRoleModelFetchResult> listSecurityRolesAsync(String filter, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/securityroles");
         path.addQuery("$filter", filter);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<SecurityRoleModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<SecurityRoleModel>>(){}));
+        return this.threadPool.submit((RestCall<SecurityRoleModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<SecurityRoleModelFetchResult>(){}));
     }
 
     /**
@@ -8115,15 +9769,15 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<SubscriptionTypeModel>
+     * @return SubscriptionTypeModelFetchResult
      */
-    public FetchResult<SubscriptionTypeModel> listSubscriptionTypes(String filter, Integer top, Integer skip, String orderBy) throws Exception {
+    public SubscriptionTypeModelFetchResult listSubscriptionTypes(String filter, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/subscriptiontypes");
         path.addQuery("$filter", filter);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<SubscriptionTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<SubscriptionTypeModel>>(){})).call();
+        return ((RestCall<SubscriptionTypeModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<SubscriptionTypeModelFetchResult>(){})).call();
     }
 
     /**
@@ -8137,15 +9791,15 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<SubscriptionTypeModel>
+     * @return SubscriptionTypeModelFetchResult
      */
-    public Future<FetchResult<SubscriptionTypeModel>> listSubscriptionTypesAsync(String filter, Integer top, Integer skip, String orderBy) {
+    public Future<SubscriptionTypeModelFetchResult> listSubscriptionTypesAsync(String filter, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/subscriptiontypes");
         path.addQuery("$filter", filter);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<SubscriptionTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<SubscriptionTypeModel>>(){}));
+        return this.threadPool.submit((RestCall<SubscriptionTypeModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<SubscriptionTypeModelFetchResult>(){}));
     }
 
     /**
@@ -8157,15 +9811,15 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<TaxAuthorityModel>
+     * @return TaxAuthorityModelFetchResult
      */
-    public FetchResult<TaxAuthorityModel> listTaxAuthorities(String filter, Integer top, Integer skip, String orderBy) throws Exception {
+    public TaxAuthorityModelFetchResult listTaxAuthorities(String filter, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/taxauthorities");
         path.addQuery("$filter", filter);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<TaxAuthorityModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxAuthorityModel>>(){})).call();
+        return ((RestCall<TaxAuthorityModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<TaxAuthorityModelFetchResult>(){})).call();
     }
 
     /**
@@ -8177,15 +9831,15 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<TaxAuthorityModel>
+     * @return TaxAuthorityModelFetchResult
      */
-    public Future<FetchResult<TaxAuthorityModel>> listTaxAuthoritiesAsync(String filter, Integer top, Integer skip, String orderBy) {
+    public Future<TaxAuthorityModelFetchResult> listTaxAuthoritiesAsync(String filter, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/taxauthorities");
         path.addQuery("$filter", filter);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<TaxAuthorityModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxAuthorityModel>>(){}));
+        return this.threadPool.submit((RestCall<TaxAuthorityModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<TaxAuthorityModelFetchResult>(){}));
     }
 
     /**
@@ -8199,15 +9853,15 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<TaxAuthorityFormModel>
+     * @return TaxAuthorityFormModelFetchResult
      */
-    public FetchResult<TaxAuthorityFormModel> listTaxAuthorityForms(String filter, Integer top, Integer skip, String orderBy) throws Exception {
+    public TaxAuthorityFormModelFetchResult listTaxAuthorityForms(String filter, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/taxauthorityforms");
         path.addQuery("$filter", filter);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<TaxAuthorityFormModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxAuthorityFormModel>>(){})).call();
+        return ((RestCall<TaxAuthorityFormModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<TaxAuthorityFormModelFetchResult>(){})).call();
     }
 
     /**
@@ -8221,15 +9875,15 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<TaxAuthorityFormModel>
+     * @return TaxAuthorityFormModelFetchResult
      */
-    public Future<FetchResult<TaxAuthorityFormModel>> listTaxAuthorityFormsAsync(String filter, Integer top, Integer skip, String orderBy) {
+    public Future<TaxAuthorityFormModelFetchResult> listTaxAuthorityFormsAsync(String filter, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/taxauthorityforms");
         path.addQuery("$filter", filter);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<TaxAuthorityFormModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxAuthorityFormModel>>(){}));
+        return this.threadPool.submit((RestCall<TaxAuthorityFormModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<TaxAuthorityFormModelFetchResult>(){}));
     }
 
     /**
@@ -8241,15 +9895,15 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<TaxAuthorityTypeModel>
+     * @return TaxAuthorityTypeModelFetchResult
      */
-    public FetchResult<TaxAuthorityTypeModel> listTaxAuthorityTypes(String filter, Integer top, Integer skip, String orderBy) throws Exception {
+    public TaxAuthorityTypeModelFetchResult listTaxAuthorityTypes(String filter, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/taxauthoritytypes");
         path.addQuery("$filter", filter);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<TaxAuthorityTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxAuthorityTypeModel>>(){})).call();
+        return ((RestCall<TaxAuthorityTypeModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<TaxAuthorityTypeModelFetchResult>(){})).call();
     }
 
     /**
@@ -8261,15 +9915,15 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<TaxAuthorityTypeModel>
+     * @return TaxAuthorityTypeModelFetchResult
      */
-    public Future<FetchResult<TaxAuthorityTypeModel>> listTaxAuthorityTypesAsync(String filter, Integer top, Integer skip, String orderBy) {
+    public Future<TaxAuthorityTypeModelFetchResult> listTaxAuthorityTypesAsync(String filter, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/taxauthoritytypes");
         path.addQuery("$filter", filter);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<TaxAuthorityTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxAuthorityTypeModel>>(){}));
+        return this.threadPool.submit((RestCall<TaxAuthorityTypeModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<TaxAuthorityTypeModelFetchResult>(){}));
     }
 
     /**
@@ -8289,15 +9943,15 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<TaxCodeModel>
+     * @return TaxCodeModelFetchResult
      */
-    public FetchResult<TaxCodeModel> listTaxCodes(String filter, Integer top, Integer skip, String orderBy) throws Exception {
+    public TaxCodeModelFetchResult listTaxCodes(String filter, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/taxcodes");
         path.addQuery("$filter", filter);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<TaxCodeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxCodeModel>>(){})).call();
+        return ((RestCall<TaxCodeModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<TaxCodeModelFetchResult>(){})).call();
     }
 
     /**
@@ -8317,15 +9971,15 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<TaxCodeModel>
+     * @return TaxCodeModelFetchResult
      */
-    public Future<FetchResult<TaxCodeModel>> listTaxCodesAsync(String filter, Integer top, Integer skip, String orderBy) {
+    public Future<TaxCodeModelFetchResult> listTaxCodesAsync(String filter, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/taxcodes");
         path.addQuery("$filter", filter);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<TaxCodeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxCodeModel>>(){}));
+        return this.threadPool.submit((RestCall<TaxCodeModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<TaxCodeModelFetchResult>(){}));
     }
 
     /**
@@ -8371,15 +10025,15 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<FormMasterModel>
+     * @return FormMasterModelFetchResult
      */
-    public FetchResult<FormMasterModel> listTaxForms(String filter, Integer top, Integer skip, String orderBy) throws Exception {
+    public FormMasterModelFetchResult listTaxForms(String filter, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/taxforms");
         path.addQuery("$filter", filter);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<FormMasterModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<FormMasterModel>>(){})).call();
+        return ((RestCall<FormMasterModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<FormMasterModelFetchResult>(){})).call();
     }
 
     /**
@@ -8391,15 +10045,15 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<FormMasterModel>
+     * @return FormMasterModelFetchResult
      */
-    public Future<FetchResult<FormMasterModel>> listTaxFormsAsync(String filter, Integer top, Integer skip, String orderBy) {
+    public Future<FormMasterModelFetchResult> listTaxFormsAsync(String filter, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/taxforms");
         path.addQuery("$filter", filter);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<FormMasterModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<FormMasterModel>>(){}));
+        return this.threadPool.submit((RestCall<FormMasterModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<FormMasterModelFetchResult>(){}));
     }
 
     /**
@@ -8411,15 +10065,15 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<TaxSubTypeModel>
+     * @return TaxSubTypeModelFetchResult
      */
-    public FetchResult<TaxSubTypeModel> listTaxSubTypes(String filter, Integer top, Integer skip, String orderBy) throws Exception {
+    public TaxSubTypeModelFetchResult listTaxSubTypes(String filter, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/taxsubtypes");
         path.addQuery("$filter", filter);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<TaxSubTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxSubTypeModel>>(){})).call();
+        return ((RestCall<TaxSubTypeModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<TaxSubTypeModelFetchResult>(){})).call();
     }
 
     /**
@@ -8431,15 +10085,63 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<TaxSubTypeModel>
+     * @return TaxSubTypeModelFetchResult
      */
-    public Future<FetchResult<TaxSubTypeModel>> listTaxSubTypesAsync(String filter, Integer top, Integer skip, String orderBy) {
+    public Future<TaxSubTypeModelFetchResult> listTaxSubTypesAsync(String filter, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/taxsubtypes");
         path.addQuery("$filter", filter);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<TaxSubTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxSubTypeModel>>(){}));
+        return this.threadPool.submit((RestCall<TaxSubTypeModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<TaxSubTypeModelFetchResult>(){}));
+    }
+
+    /**
+     * Retrieve the full list of tax sub types by jurisdiction code and region
+     * 
+     * Returns the full list of Avalara-supported tax sub-types by jurisdiction and region
+     * 
+     * @param jurisdictionCode The jurisdiction code of the tax sub type.
+     * @param region The region of the tax sub type.
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @return TaxSubTypeModelFetchResult
+     */
+    public TaxSubTypeModelFetchResult listTaxSubTypesByJurisdictionAndRegion(String jurisdictionCode, String region, String filter, Integer top, Integer skip, String orderBy) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/taxsubtypes/{jurisdictionCode}/{region}");
+        path.applyField("jurisdictionCode", jurisdictionCode);
+        path.applyField("region", region);
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
+        return ((RestCall<TaxSubTypeModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<TaxSubTypeModelFetchResult>(){})).call();
+    }
+
+    /**
+     * Retrieve the full list of tax sub types by jurisdiction code and region
+     * 
+     * Returns the full list of Avalara-supported tax sub-types by jurisdiction and region
+     * 
+     * @param jurisdictionCode The jurisdiction code of the tax sub type.
+     * @param region The region of the tax sub type.
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @return TaxSubTypeModelFetchResult
+     */
+    public Future<TaxSubTypeModelFetchResult> listTaxSubTypesByJurisdictionAndRegionAsync(String jurisdictionCode, String region, String filter, Integer top, Integer skip, String orderBy) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/taxsubtypes/{jurisdictionCode}/{region}");
+        path.applyField("jurisdictionCode", jurisdictionCode);
+        path.applyField("region", region);
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
+        return this.threadPool.submit((RestCall<TaxSubTypeModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<TaxSubTypeModelFetchResult>(){}));
     }
 
     /**
@@ -8451,15 +10153,15 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<TaxTypeGroupModel>
+     * @return TaxTypeGroupModelFetchResult
      */
-    public FetchResult<TaxTypeGroupModel> listTaxTypeGroups(String filter, Integer top, Integer skip, String orderBy) throws Exception {
+    public TaxTypeGroupModelFetchResult listTaxTypeGroups(String filter, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/taxtypegroups");
         path.addQuery("$filter", filter);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<TaxTypeGroupModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxTypeGroupModel>>(){})).call();
+        return ((RestCall<TaxTypeGroupModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<TaxTypeGroupModelFetchResult>(){})).call();
     }
 
     /**
@@ -8471,15 +10173,15 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<TaxTypeGroupModel>
+     * @return TaxTypeGroupModelFetchResult
      */
-    public Future<FetchResult<TaxTypeGroupModel>> listTaxTypeGroupsAsync(String filter, Integer top, Integer skip, String orderBy) {
+    public Future<TaxTypeGroupModelFetchResult> listTaxTypeGroupsAsync(String filter, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/taxtypegroups");
         path.addQuery("$filter", filter);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<TaxTypeGroupModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxTypeGroupModel>>(){}));
+        return this.threadPool.submit((RestCall<TaxTypeGroupModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<TaxTypeGroupModelFetchResult>(){}));
     }
 
     /**
@@ -8492,15 +10194,15 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<UomModel>
+     * @return UomModelFetchResult
      */
-    public FetchResult<UomModel> listUnitOfMeasurement(String filter, Integer top, Integer skip, String orderBy) throws Exception {
+    public UomModelFetchResult listUnitOfMeasurement(String filter, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/unitofmeasurements");
         path.addQuery("$filter", filter);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<UomModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<UomModel>>(){})).call();
+        return ((RestCall<UomModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<UomModelFetchResult>(){})).call();
     }
 
     /**
@@ -8513,15 +10215,69 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<UomModel>
+     * @return UomModelFetchResult
      */
-    public Future<FetchResult<UomModel>> listUnitOfMeasurementAsync(String filter, Integer top, Integer skip, String orderBy) {
+    public Future<UomModelFetchResult> listUnitOfMeasurementAsync(String filter, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/unitofmeasurements");
         path.addQuery("$filter", filter);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<UomModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<UomModel>>(){}));
+        return this.threadPool.submit((RestCall<UomModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<UomModelFetchResult>(){}));
+    }
+
+    /**
+     * List customer attributes used by a company
+     * 
+     * List the customer attributes defined by a company.
+     *             
+     * A customer may have multiple attributes that control its behavior.  You may apply or remove attributes to a
+     * customer at any time.
+     *             
+     * If you see the 'CertCaptureNotConfiguredError', please use CheckProvision and RequestProvision endpoints to
+     * 
+     * @param companyid Id of the company the user wish to fetch the customers' attributes from. If not specified the API will use user's default company.
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @return CustomerAttributeModelFetchResult
+     */
+    public CustomerAttributeModelFetchResult queryCompanyCustomerAttributes(Integer companyid, String filter, Integer top, Integer skip, String orderBy) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/customerattributes");
+        path.addQuery("companyid", companyid);
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
+        return ((RestCall<CustomerAttributeModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<CustomerAttributeModelFetchResult>(){})).call();
+    }
+
+    /**
+     * List customer attributes used by a company
+     * 
+     * List the customer attributes defined by a company.
+     *             
+     * A customer may have multiple attributes that control its behavior.  You may apply or remove attributes to a
+     * customer at any time.
+     *             
+     * If you see the 'CertCaptureNotConfiguredError', please use CheckProvision and RequestProvision endpoints to
+     * 
+     * @param companyid Id of the company the user wish to fetch the customers' attributes from. If not specified the API will use user's default company.
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @return CustomerAttributeModelFetchResult
+     */
+    public Future<CustomerAttributeModelFetchResult> queryCompanyCustomerAttributesAsync(Integer companyid, String filter, Integer top, Integer skip, String orderBy) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/customerattributes");
+        path.addQuery("companyid", companyid);
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
+        return this.threadPool.submit((RestCall<CustomerAttributeModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<CustomerAttributeModelFetchResult>(){}));
     }
 
     /**
@@ -8685,9 +10441,9 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<CompanyDistanceThresholdModel>
+     * @return CompanyDistanceThresholdModelFetchResult
      */
-    public FetchResult<CompanyDistanceThresholdModel> listDistanceThresholds(Integer companyId, String filter, String include, Integer top, Integer skip, String orderBy) throws Exception {
+    public CompanyDistanceThresholdModelFetchResult listDistanceThresholds(Integer companyId, String filter, String include, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/distancethresholds");
         path.applyField("companyId", companyId);
         path.addQuery("$filter", filter);
@@ -8695,7 +10451,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<CompanyDistanceThresholdModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CompanyDistanceThresholdModel>>(){})).call();
+        return ((RestCall<CompanyDistanceThresholdModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<CompanyDistanceThresholdModelFetchResult>(){})).call();
     }
 
     /**
@@ -8717,9 +10473,9 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<CompanyDistanceThresholdModel>
+     * @return CompanyDistanceThresholdModelFetchResult
      */
-    public Future<FetchResult<CompanyDistanceThresholdModel>> listDistanceThresholdsAsync(Integer companyId, String filter, String include, Integer top, Integer skip, String orderBy) {
+    public Future<CompanyDistanceThresholdModelFetchResult> listDistanceThresholdsAsync(Integer companyId, String filter, String include, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/distancethresholds");
         path.applyField("companyId", companyId);
         path.addQuery("$filter", filter);
@@ -8727,7 +10483,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<CompanyDistanceThresholdModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CompanyDistanceThresholdModel>>(){}));
+        return this.threadPool.submit((RestCall<CompanyDistanceThresholdModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<CompanyDistanceThresholdModelFetchResult>(){}));
     }
 
     /**
@@ -8751,16 +10507,16 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<CompanyDistanceThresholdModel>
+     * @return CompanyDistanceThresholdModelFetchResult
      */
-    public FetchResult<CompanyDistanceThresholdModel> queryDistanceThresholds(String filter, String include, Integer top, Integer skip, String orderBy) throws Exception {
+    public CompanyDistanceThresholdModelFetchResult queryDistanceThresholds(String filter, String include, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/distancethresholds");
         path.addQuery("$filter", filter);
         path.addQuery("$include", include);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<CompanyDistanceThresholdModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CompanyDistanceThresholdModel>>(){})).call();
+        return ((RestCall<CompanyDistanceThresholdModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<CompanyDistanceThresholdModelFetchResult>(){})).call();
     }
 
     /**
@@ -8784,16 +10540,16 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<CompanyDistanceThresholdModel>
+     * @return CompanyDistanceThresholdModelFetchResult
      */
-    public Future<FetchResult<CompanyDistanceThresholdModel>> queryDistanceThresholdsAsync(String filter, String include, Integer top, Integer skip, String orderBy) {
+    public Future<CompanyDistanceThresholdModelFetchResult> queryDistanceThresholdsAsync(String filter, String include, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/distancethresholds");
         path.addQuery("$filter", filter);
         path.addQuery("$include", include);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<CompanyDistanceThresholdModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CompanyDistanceThresholdModel>>(){}));
+        return this.threadPool.submit((RestCall<CompanyDistanceThresholdModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<CompanyDistanceThresholdModelFetchResult>(){}));
     }
 
     /**
@@ -8853,24 +10609,195 @@ public class AvaTaxClient {
     }
 
     /**
-     * Create a new eCommerce token.
+     * Get an ECMS identified by company id and ECMS id
      * 
-     * Creates a new eCommerce token.
+     * Get an ECMS identified by company id and ECMS id.
+     * An ECMS data represents a documentation based on which companies can claim tax exemption
+     * You may attach nested data objects such as exempt cert detail, and those objects will be created with certificate.
+     * You may specify one or more of the following values in the `$include` parameter to fetch additional nested data, using commas to separate multiple values:
      *             
-     * This API is used to create a new eCommerce token. An eCommerce token is required in order to launch the CertCapture eCommerce plugin. Create a token for each of your CertCapture customers.
+     * * Details
      * 
      * ### Security Policies
      * 
-     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
+     * * This API depends on the following active services<br />*Required* (all):  AvaCert.
      * 
-     * @param companyId The company ID that will be issued this certificate.
-     * @param model 
-     * @return FetchResult<ECommerceTokenOutputModel>
+     * @param companyId company to retrieve exempt certificate for
+     * @param ecmsId exempt certificate Id
+     * @param include 
+     * @return EcmsModel
      */
-    public FetchResult<ECommerceTokenOutputModel> createECommerceToken(Integer companyId, CreateECommerceTokenInputModel model) throws Exception {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/ecommercetokens");
+    public EcmsModel getECMSById(Integer companyId, Integer ecmsId, String include) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/ecms/{ecmsId}");
         path.applyField("companyId", companyId);
-        return ((RestCall<FetchResult<ECommerceTokenOutputModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<FetchResult<ECommerceTokenOutputModel>>(){})).call();
+        path.applyField("ecmsId", ecmsId);
+        path.addQuery("$include", include);
+        return ((RestCall<EcmsModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<EcmsModel>(){})).call();
+    }
+
+    /**
+     * Get an ECMS identified by company id and ECMS id
+     * 
+     * Get an ECMS identified by company id and ECMS id.
+     * An ECMS data represents a documentation based on which companies can claim tax exemption
+     * You may attach nested data objects such as exempt cert detail, and those objects will be created with certificate.
+     * You may specify one or more of the following values in the `$include` parameter to fetch additional nested data, using commas to separate multiple values:
+     *             
+     * * Details
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
+     * * This API depends on the following active services<br />*Required* (all):  AvaCert.
+     * 
+     * @param companyId company to retrieve exempt certificate for
+     * @param ecmsId exempt certificate Id
+     * @param include 
+     * @return EcmsModel
+     */
+    public Future<EcmsModel> getECMSByIdAsync(Integer companyId, Integer ecmsId, String include) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/ecms/{ecmsId}");
+        path.applyField("companyId", companyId);
+        path.applyField("ecmsId", ecmsId);
+        path.addQuery("$include", include);
+        return this.threadPool.submit((RestCall<EcmsModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<EcmsModel>(){}));
+    }
+
+    /**
+     * Get list of ECMS data for this company
+     * 
+     * Get list of ECMS data for this company
+     * An ECMS data represents a documentation based on which companies can claim tax exemption
+     * You may attach nested data objects such as ECMS detail, and those objects will be created with certificate.
+     * You may specify one or more of the following values in the `$include` parameter to fetch additional nested data, using commas to separate multiple values:
+     *             
+     * * Details
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
+     * * This API depends on the following active services<br />*Required* (all):  AvaCert.
+     * 
+     * @param companyId which company to retrieve certificates from
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* details
+     * @param include 
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @return EcmsModelFetchResult
+     */
+    public EcmsModelFetchResult listECMSByCompany(Integer companyId, String filter, String include, Integer top, Integer skip, String orderBy) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/ecms");
+        path.applyField("companyId", companyId);
+        path.addQuery("$filter", filter);
+        path.addQuery("$include", include);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
+        return ((RestCall<EcmsModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<EcmsModelFetchResult>(){})).call();
+    }
+
+    /**
+     * Get list of ECMS data for this company
+     * 
+     * Get list of ECMS data for this company
+     * An ECMS data represents a documentation based on which companies can claim tax exemption
+     * You may attach nested data objects such as ECMS detail, and those objects will be created with certificate.
+     * You may specify one or more of the following values in the `$include` parameter to fetch additional nested data, using commas to separate multiple values:
+     *             
+     * * Details
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
+     * * This API depends on the following active services<br />*Required* (all):  AvaCert.
+     * 
+     * @param companyId which company to retrieve certificates from
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* details
+     * @param include 
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @return EcmsModelFetchResult
+     */
+    public Future<EcmsModelFetchResult> listECMSByCompanyAsync(Integer companyId, String filter, String include, Integer top, Integer skip, String orderBy) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/ecms");
+        path.applyField("companyId", companyId);
+        path.addQuery("$filter", filter);
+        path.addQuery("$include", include);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
+        return this.threadPool.submit((RestCall<EcmsModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<EcmsModelFetchResult>(){}));
+    }
+
+    /**
+     * Get all exempt certificates
+     * 
+     * Get all ECMS currently available in database.
+     * An ECMS data represents a documentation based on which companies can claim tax exemption
+     * You may attach nested data objects such as ECMS detail, and those objects will be created with certificate.
+     * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * Paginate your results using the `$top`, `$skip`, and `$orderby` parameters.
+     * You may specify one or more of the following values in the `$include` parameter to fetch additional nested data, using commas to separate multiple values:
+     *             
+     * * Details
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
+     * * This API depends on the following active services<br />*Required* (all):  AvaCert.
+     * 
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* details
+     * @param include 
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @return EcmsModelFetchResult
+     */
+    public EcmsModelFetchResult queryECMS(String filter, String include, Integer top, Integer skip, String orderBy) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/ecms");
+        path.addQuery("$filter", filter);
+        path.addQuery("$include", include);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
+        return ((RestCall<EcmsModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<EcmsModelFetchResult>(){})).call();
+    }
+
+    /**
+     * Get all exempt certificates
+     * 
+     * Get all ECMS currently available in database.
+     * An ECMS data represents a documentation based on which companies can claim tax exemption
+     * You may attach nested data objects such as ECMS detail, and those objects will be created with certificate.
+     * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * Paginate your results using the `$top`, `$skip`, and `$orderby` parameters.
+     * You may specify one or more of the following values in the `$include` parameter to fetch additional nested data, using commas to separate multiple values:
+     *             
+     * * Details
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
+     * * This API depends on the following active services<br />*Required* (all):  AvaCert.
+     * 
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* details
+     * @param include 
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @return EcmsModelFetchResult
+     */
+    public Future<EcmsModelFetchResult> queryECMSAsync(String filter, String include, Integer top, Integer skip, String orderBy) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/ecms");
+        path.addQuery("$filter", filter);
+        path.addQuery("$include", include);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
+        return this.threadPool.submit((RestCall<EcmsModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<EcmsModelFetchResult>(){}));
     }
 
     /**
@@ -8886,12 +10813,33 @@ public class AvaTaxClient {
      * 
      * @param companyId The company ID that will be issued this certificate.
      * @param model 
-     * @return FetchResult<ECommerceTokenOutputModel>
+     * @return ECommerceTokenOutputModelFetchResult
      */
-    public Future<FetchResult<ECommerceTokenOutputModel>> createECommerceTokenAsync(Integer companyId, CreateECommerceTokenInputModel model) {
+    public ECommerceTokenOutputModelFetchResult createECommerceToken(Integer companyId, CreateECommerceTokenInputModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/ecommercetokens");
         path.applyField("companyId", companyId);
-        return this.threadPool.submit((RestCall<FetchResult<ECommerceTokenOutputModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<FetchResult<ECommerceTokenOutputModel>>(){}));
+        return ((RestCall<ECommerceTokenOutputModelFetchResult>)restCallFactory.createRestCall("post", path, model, new TypeToken<ECommerceTokenOutputModelFetchResult>(){})).call();
+    }
+
+    /**
+     * Create a new eCommerce token.
+     * 
+     * Creates a new eCommerce token.
+     *             
+     * This API is used to create a new eCommerce token. An eCommerce token is required in order to launch the CertCapture eCommerce plugin. Create a token for each of your CertCapture customers.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * 
+     * @param companyId The company ID that will be issued this certificate.
+     * @param model 
+     * @return ECommerceTokenOutputModelFetchResult
+     */
+    public Future<ECommerceTokenOutputModelFetchResult> createECommerceTokenAsync(Integer companyId, CreateECommerceTokenInputModel model) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/ecommercetokens");
+        path.applyField("companyId", companyId);
+        return this.threadPool.submit((RestCall<ECommerceTokenOutputModelFetchResult>)restCallFactory.createRestCall("post", path, model, new TypeToken<ECommerceTokenOutputModelFetchResult>(){}));
     }
 
     /**
@@ -8907,12 +10855,12 @@ public class AvaTaxClient {
      * 
      * @param companyId The company ID that the refreshed certificate belongs to.
      * @param model 
-     * @return FetchResult<ECommerceTokenOutputModel>
+     * @return ECommerceTokenOutputModelFetchResult
      */
-    public FetchResult<ECommerceTokenOutputModel> refreshECommerceToken(Integer companyId, RefreshECommerceTokenInputModel model) throws Exception {
+    public ECommerceTokenOutputModelFetchResult refreshECommerceToken(Integer companyId, RefreshECommerceTokenInputModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/ecommercetokens");
         path.applyField("companyId", companyId);
-        return ((RestCall<FetchResult<ECommerceTokenOutputModel>>)restCallFactory.createRestCall("put", path, model, new TypeToken<FetchResult<ECommerceTokenOutputModel>>(){})).call();
+        return ((RestCall<ECommerceTokenOutputModelFetchResult>)restCallFactory.createRestCall("put", path, model, new TypeToken<ECommerceTokenOutputModelFetchResult>(){})).call();
     }
 
     /**
@@ -8928,12 +10876,624 @@ public class AvaTaxClient {
      * 
      * @param companyId The company ID that the refreshed certificate belongs to.
      * @param model 
-     * @return FetchResult<ECommerceTokenOutputModel>
+     * @return ECommerceTokenOutputModelFetchResult
      */
-    public Future<FetchResult<ECommerceTokenOutputModel>> refreshECommerceTokenAsync(Integer companyId, RefreshECommerceTokenInputModel model) {
+    public Future<ECommerceTokenOutputModelFetchResult> refreshECommerceTokenAsync(Integer companyId, RefreshECommerceTokenInputModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/ecommercetokens");
         path.applyField("companyId", companyId);
-        return this.threadPool.submit((RestCall<FetchResult<ECommerceTokenOutputModel>>)restCallFactory.createRestCall("put", path, model, new TypeToken<FetchResult<ECommerceTokenOutputModel>>(){}));
+        return this.threadPool.submit((RestCall<ECommerceTokenOutputModelFetchResult>)restCallFactory.createRestCall("put", path, model, new TypeToken<ECommerceTokenOutputModelFetchResult>(){}));
+    }
+
+    /**
+     * Delete a batch of error transactions
+     * 
+     * Delete a batch of error transactions attached to a company.
+     *             
+     * If any of the provided error transaction isn't found then it'll be treated as a success.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, ProStoresOperator, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
+     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro, BasicReturns.
+     * 
+     * @param companyId ID number of the company to delete error transactions from.
+     * @param model The request that contains error transactions to be deleted
+     * @return DeleteErrorTransactionsResponseModel
+     */
+    public DeleteErrorTransactionsResponseModel deleteErrorTransactions(Integer companyId, DeleteErrorTransactionsRequestModel model) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/errortransactions");
+        path.applyField("companyId", companyId);
+        return ((RestCall<DeleteErrorTransactionsResponseModel>)restCallFactory.createRestCall("delete", path, model, new TypeToken<DeleteErrorTransactionsResponseModel>(){})).call();
+    }
+
+    /**
+     * Delete a batch of error transactions
+     * 
+     * Delete a batch of error transactions attached to a company.
+     *             
+     * If any of the provided error transaction isn't found then it'll be treated as a success.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, ProStoresOperator, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
+     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro, BasicReturns.
+     * 
+     * @param companyId ID number of the company to delete error transactions from.
+     * @param model The request that contains error transactions to be deleted
+     * @return DeleteErrorTransactionsResponseModel
+     */
+    public Future<DeleteErrorTransactionsResponseModel> deleteErrorTransactionsAsync(Integer companyId, DeleteErrorTransactionsRequestModel model) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/errortransactions");
+        path.applyField("companyId", companyId);
+        return this.threadPool.submit((RestCall<DeleteErrorTransactionsResponseModel>)restCallFactory.createRestCall("delete", path, model, new TypeToken<DeleteErrorTransactionsResponseModel>(){}));
+    }
+
+    /**
+     * Get a list of error transactions' error codes and its counts
+     * 
+     * Get a list of error transactions' error codes and their counts
+     * When you try to create or adjust a transaction with a datasource for a company and for any reason that call fails with an error,
+     * those errors with their count can be retrieved by this API.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, ProStoresOperator, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
+     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro, BasicReturns.
+     * 
+     * @param companyId ID number of the company to query from.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
+     * @return ErrorCodeOutputModelCappedFetchResult
+     */
+    public ErrorCodeOutputModelCappedFetchResult listErrorCodes(Integer companyId, Integer top, Integer skip) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/errortransactions/errorcodes");
+        path.applyField("companyId", companyId);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        return ((RestCall<ErrorCodeOutputModelCappedFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<ErrorCodeOutputModelCappedFetchResult>(){})).call();
+    }
+
+    /**
+     * Get a list of error transactions' error codes and its counts
+     * 
+     * Get a list of error transactions' error codes and their counts
+     * When you try to create or adjust a transaction with a datasource for a company and for any reason that call fails with an error,
+     * those errors with their count can be retrieved by this API.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, ProStoresOperator, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
+     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro, BasicReturns.
+     * 
+     * @param companyId ID number of the company to query from.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
+     * @return ErrorCodeOutputModelCappedFetchResult
+     */
+    public Future<ErrorCodeOutputModelCappedFetchResult> listErrorCodesAsync(Integer companyId, Integer top, Integer skip) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/errortransactions/errorcodes");
+        path.applyField("companyId", companyId);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        return this.threadPool.submit((RestCall<ErrorCodeOutputModelCappedFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<ErrorCodeOutputModelCappedFetchResult>(){}));
+    }
+
+    /**
+     * Retrieve list of error transactions
+     * 
+     * List error transactions attached to this company. Results are dependent on `$filter` if provided.
+     *             
+     * This endpoint is limited to returning 1000 error transactions at a time maximum.
+     *             
+     * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * Paginate your results using the `$top`, `$skip`, and `$orderby` parameters.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, ProStoresOperator, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
+     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro, BasicReturns.
+     * 
+     * @param companyId The company ID to filter error transactions on.
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* companyId, avataxErrorJson, avataxCreateTransactionJson, expiresAt
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @return ErrorTransactionOutputModelCappedFetchResult
+     */
+    public ErrorTransactionOutputModelCappedFetchResult listErrorTransactions(Integer companyId, String filter, Integer top, Integer skip, String orderBy) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/errortransactions");
+        path.applyField("companyId", companyId);
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
+        return ((RestCall<ErrorTransactionOutputModelCappedFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<ErrorTransactionOutputModelCappedFetchResult>(){})).call();
+    }
+
+    /**
+     * Retrieve list of error transactions
+     * 
+     * List error transactions attached to this company. Results are dependent on `$filter` if provided.
+     *             
+     * This endpoint is limited to returning 1000 error transactions at a time maximum.
+     *             
+     * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * Paginate your results using the `$top`, `$skip`, and `$orderby` parameters.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, ProStoresOperator, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
+     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro, BasicReturns.
+     * 
+     * @param companyId The company ID to filter error transactions on.
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* companyId, avataxErrorJson, avataxCreateTransactionJson, expiresAt
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @return ErrorTransactionOutputModelCappedFetchResult
+     */
+    public Future<ErrorTransactionOutputModelCappedFetchResult> listErrorTransactionsAsync(Integer companyId, String filter, Integer top, Integer skip, String orderBy) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/errortransactions");
+        path.applyField("companyId", companyId);
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
+        return this.threadPool.submit((RestCall<ErrorTransactionOutputModelCappedFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<ErrorTransactionOutputModelCappedFetchResult>(){}));
+    }
+
+    /**
+     * Checks to see if the company has a valid POA for a tax form code
+     * 
+     * This API is available by invitation only.
+     *             
+     * This API fetches valid POA's for a company by TaxFormCode or by country/region
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Operator, Compliance Root User, Compliance Temp User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * 
+     * @param companyId The company id that we are checking about
+     * @param taxFormCode The tax form code that we are checking
+     * @param country The country we are fetching POAs for
+     * @param region The region we are fetching POAs for
+     * @return ArrayList<PowerOfAttorneyCheckModel>
+     */
+    public ArrayList<PowerOfAttorneyCheckModel> activePowerOfAttorney(Integer companyId, String taxFormCode, String country, String region) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingcalendars/powerofattorney");
+        path.applyField("companyId", companyId);
+        path.addQuery("taxFormCode", taxFormCode);
+        path.addQuery("country", country);
+        path.addQuery("region", region);
+        return ((RestCall<ArrayList<PowerOfAttorneyCheckModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<ArrayList<PowerOfAttorneyCheckModel>>(){})).call();
+    }
+
+    /**
+     * Checks to see if the company has a valid POA for a tax form code
+     * 
+     * This API is available by invitation only.
+     *             
+     * This API fetches valid POA's for a company by TaxFormCode or by country/region
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Operator, Compliance Root User, Compliance Temp User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * 
+     * @param companyId The company id that we are checking about
+     * @param taxFormCode The tax form code that we are checking
+     * @param country The country we are fetching POAs for
+     * @param region The region we are fetching POAs for
+     * @return ArrayList<PowerOfAttorneyCheckModel>
+     */
+    public Future<ArrayList<PowerOfAttorneyCheckModel>> activePowerOfAttorneyAsync(Integer companyId, String taxFormCode, String country, String region) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingcalendars/powerofattorney");
+        path.applyField("companyId", companyId);
+        path.addQuery("taxFormCode", taxFormCode);
+        path.addQuery("country", country);
+        path.addQuery("region", region);
+        return this.threadPool.submit((RestCall<ArrayList<PowerOfAttorneyCheckModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<ArrayList<PowerOfAttorneyCheckModel>>(){}));
+    }
+
+    /**
+     * Approve existing Filing Request
+     * 
+     * This API is available by invitation only.
+     * A "filing request" represents a request to change an existing filing calendar.  Filing requests
+     * are reviewed and validated by Avalara Compliance before being implemented.
+     * The filing request must be in the "ChangeRequest" status to be approved.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * 
+     * @param companyId The unique ID of the company that owns the filing request object
+     * @param id The unique ID of the filing request object
+     * @return FilingRequestModel
+     */
+    public FilingRequestModel approveFilingRequest(Integer companyId, Integer id) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingrequests/{id}/approve");
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
+        return ((RestCall<FilingRequestModel>)restCallFactory.createRestCall("post", path, null, new TypeToken<FilingRequestModel>(){})).call();
+    }
+
+    /**
+     * Approve existing Filing Request
+     * 
+     * This API is available by invitation only.
+     * A "filing request" represents a request to change an existing filing calendar.  Filing requests
+     * are reviewed and validated by Avalara Compliance before being implemented.
+     * The filing request must be in the "ChangeRequest" status to be approved.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * 
+     * @param companyId The unique ID of the company that owns the filing request object
+     * @param id The unique ID of the filing request object
+     * @return FilingRequestModel
+     */
+    public Future<FilingRequestModel> approveFilingRequestAsync(Integer companyId, Integer id) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingrequests/{id}/approve");
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
+        return this.threadPool.submit((RestCall<FilingRequestModel>)restCallFactory.createRestCall("post", path, null, new TypeToken<FilingRequestModel>(){}));
+    }
+
+    /**
+     * Cancel existing Filing Request
+     * 
+     * This API is available by invitation only.
+     * A "filing request" represents a request to change an existing filing calendar.  Filing requests
+     * are reviewed and validated by Avalara Compliance before being implemented.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * 
+     * @param companyId The unique ID of the company that owns the filing request object
+     * @param id The unique ID of the filing request object
+     * @return FilingRequestModel
+     */
+    public FilingRequestModel cancelFilingRequest(Integer companyId, Integer id) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingrequests/{id}/cancel");
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
+        return ((RestCall<FilingRequestModel>)restCallFactory.createRestCall("post", path, null, new TypeToken<FilingRequestModel>(){})).call();
+    }
+
+    /**
+     * Cancel existing Filing Request
+     * 
+     * This API is available by invitation only.
+     * A "filing request" represents a request to change an existing filing calendar.  Filing requests
+     * are reviewed and validated by Avalara Compliance before being implemented.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * 
+     * @param companyId The unique ID of the company that owns the filing request object
+     * @param id The unique ID of the filing request object
+     * @return FilingRequestModel
+     */
+    public Future<FilingRequestModel> cancelFilingRequestAsync(Integer companyId, Integer id) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingrequests/{id}/cancel");
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
+        return this.threadPool.submit((RestCall<FilingRequestModel>)restCallFactory.createRestCall("post", path, null, new TypeToken<FilingRequestModel>(){}));
+    }
+
+    /**
+     * Create a new filing request to cancel a filing calendar
+     * 
+     * This API is available by invitation only.
+     *             
+     * A "filing request" represents a request to change an existing filing calendar.  Filing requests
+     * are reviewed and validated by Avalara Compliance before being implemented.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * 
+     * @param companyId The unique ID of the company that owns the filing calendar object
+     * @param id The unique ID number of the filing calendar to cancel
+     * @param model The cancellation request for this filing calendar
+     * @return FilingRequestModel
+     */
+    public FilingRequestModel cancelFilingRequests(Integer companyId, Integer id, ArrayList<FilingRequestModel> model) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingcalendars/{id}/cancel/request");
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
+        return ((RestCall<FilingRequestModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<FilingRequestModel>(){})).call();
+    }
+
+    /**
+     * Create a new filing request to cancel a filing calendar
+     * 
+     * This API is available by invitation only.
+     *             
+     * A "filing request" represents a request to change an existing filing calendar.  Filing requests
+     * are reviewed and validated by Avalara Compliance before being implemented.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * 
+     * @param companyId The unique ID of the company that owns the filing calendar object
+     * @param id The unique ID number of the filing calendar to cancel
+     * @param model The cancellation request for this filing calendar
+     * @return FilingRequestModel
+     */
+    public Future<FilingRequestModel> cancelFilingRequestsAsync(Integer companyId, Integer id, ArrayList<FilingRequestModel> model) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingcalendars/{id}/cancel/request");
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
+        return this.threadPool.submit((RestCall<FilingRequestModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<FilingRequestModel>(){}));
+    }
+
+    /**
+     * Create a filing calendar
+     * 
+     * This API is available by invitation only and only available for users with Compliance access
+     * A "filing request" represents information that compliance uses to file a return
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * 
+     * @param companyId The unique ID of the company that will add the new filing calendar
+     * @param model Filing calendars that will be added
+     * @return ArrayList<FilingCalendarModel>
+     */
+    public ArrayList<FilingCalendarModel> createFilingCalendars(Integer companyId, ArrayList<FilingCalendarModel> model) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingcalendars");
+        path.applyField("companyId", companyId);
+        return ((RestCall<ArrayList<FilingCalendarModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<FilingCalendarModel>>(){})).call();
+    }
+
+    /**
+     * Create a filing calendar
+     * 
+     * This API is available by invitation only and only available for users with Compliance access
+     * A "filing request" represents information that compliance uses to file a return
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * 
+     * @param companyId The unique ID of the company that will add the new filing calendar
+     * @param model Filing calendars that will be added
+     * @return ArrayList<FilingCalendarModel>
+     */
+    public Future<ArrayList<FilingCalendarModel>> createFilingCalendarsAsync(Integer companyId, ArrayList<FilingCalendarModel> model) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingcalendars");
+        path.applyField("companyId", companyId);
+        return this.threadPool.submit((RestCall<ArrayList<FilingCalendarModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<FilingCalendarModel>>(){}));
+    }
+
+    /**
+     * Create a new filing request to create a filing calendar
+     * 
+     * This API is available by invitation only.
+     * A "filing request" represents a request to change an existing filing calendar.  Filing requests
+     * are reviewed and validated by Avalara Compliance before being implemented.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * 
+     * @param companyId The unique ID of the company that will add the new filing calendar
+     * @param model Information about the proposed new filing calendar
+     * @return ArrayList<FilingRequestModel>
+     */
+    public ArrayList<FilingRequestModel> createFilingRequests(Integer companyId, ArrayList<FilingRequestModel> model) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingcalendars/add/request");
+        path.applyField("companyId", companyId);
+        return ((RestCall<ArrayList<FilingRequestModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<FilingRequestModel>>(){})).call();
+    }
+
+    /**
+     * Create a new filing request to create a filing calendar
+     * 
+     * This API is available by invitation only.
+     * A "filing request" represents a request to change an existing filing calendar.  Filing requests
+     * are reviewed and validated by Avalara Compliance before being implemented.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * 
+     * @param companyId The unique ID of the company that will add the new filing calendar
+     * @param model Information about the proposed new filing calendar
+     * @return ArrayList<FilingRequestModel>
+     */
+    public Future<ArrayList<FilingRequestModel>> createFilingRequestsAsync(Integer companyId, ArrayList<FilingRequestModel> model) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingcalendars/add/request");
+        path.applyField("companyId", companyId);
+        return this.threadPool.submit((RestCall<ArrayList<FilingRequestModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<FilingRequestModel>>(){}));
+    }
+
+    /**
+     * Create a company return setting
+     * 
+     * This API is available by invitation only and only available for users with Compliance access
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * 
+     * @param companyId The unique ID of the company that will add the new filing calendar
+     * @param filingCalendarId The unique ID of the filing calendar that will add the new filing calendar setting
+     * @param model CompanyReturnSettings that will be added
+     * @return ArrayList<CompanyReturnSettingModel>
+     */
+    public ArrayList<CompanyReturnSettingModel> createUpdateCompanyReturnSettings(Integer companyId, Long filingCalendarId, ArrayList<CompanyReturnSettingModel> model) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingcalendars/{filingCalendarId}/settings");
+        path.applyField("companyId", companyId);
+        path.applyField("filingCalendarId", filingCalendarId);
+        return ((RestCall<ArrayList<CompanyReturnSettingModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<CompanyReturnSettingModel>>(){})).call();
+    }
+
+    /**
+     * Create a company return setting
+     * 
+     * This API is available by invitation only and only available for users with Compliance access
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * 
+     * @param companyId The unique ID of the company that will add the new filing calendar
+     * @param filingCalendarId The unique ID of the filing calendar that will add the new filing calendar setting
+     * @param model CompanyReturnSettings that will be added
+     * @return ArrayList<CompanyReturnSettingModel>
+     */
+    public Future<ArrayList<CompanyReturnSettingModel>> createUpdateCompanyReturnSettingsAsync(Integer companyId, Long filingCalendarId, ArrayList<CompanyReturnSettingModel> model) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingcalendars/{filingCalendarId}/settings");
+        path.applyField("companyId", companyId);
+        path.applyField("filingCalendarId", filingCalendarId);
+        return this.threadPool.submit((RestCall<ArrayList<CompanyReturnSettingModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<CompanyReturnSettingModel>>(){}));
+    }
+
+    /**
+     * Returns a list of options for adding the specified form.
+     * 
+     * This API is available by invitation only.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * 
+     * @param companyId The unique ID of the company that owns the filing calendar object
+     * @param formCode The unique code of the form
+     * @return ArrayList<CycleAddOptionModel>
+     */
+    public ArrayList<CycleAddOptionModel> cycleSafeAdd(Integer companyId, String formCode) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingcalendars/add/options");
+        path.applyField("companyId", companyId);
+        path.addQuery("formCode", formCode);
+        return ((RestCall<ArrayList<CycleAddOptionModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<ArrayList<CycleAddOptionModel>>(){})).call();
+    }
+
+    /**
+     * Returns a list of options for adding the specified form.
+     * 
+     * This API is available by invitation only.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * 
+     * @param companyId The unique ID of the company that owns the filing calendar object
+     * @param formCode The unique code of the form
+     * @return ArrayList<CycleAddOptionModel>
+     */
+    public Future<ArrayList<CycleAddOptionModel>> cycleSafeAddAsync(Integer companyId, String formCode) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingcalendars/add/options");
+        path.applyField("companyId", companyId);
+        path.addQuery("formCode", formCode);
+        return this.threadPool.submit((RestCall<ArrayList<CycleAddOptionModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<ArrayList<CycleAddOptionModel>>(){}));
+    }
+
+    /**
+     * Indicates when changes are allowed to be made to a filing calendar.
+     * 
+     * This API is available by invitation only.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * 
+     * @param companyId The unique ID of the company that owns the filing calendar object
+     * @param id The unique ID of the filing calendar object
+     * @param model A list of filing calendar edits to be made
+     * @return CycleEditOptionModel
+     */
+    public CycleEditOptionModel cycleSafeEdit(Integer companyId, Integer id, ArrayList<FilingCalendarEditModel> model) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingcalendars/{id}/edit/options");
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
+        return ((RestCall<CycleEditOptionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<CycleEditOptionModel>(){})).call();
+    }
+
+    /**
+     * Indicates when changes are allowed to be made to a filing calendar.
+     * 
+     * This API is available by invitation only.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * 
+     * @param companyId The unique ID of the company that owns the filing calendar object
+     * @param id The unique ID of the filing calendar object
+     * @param model A list of filing calendar edits to be made
+     * @return CycleEditOptionModel
+     */
+    public Future<CycleEditOptionModel> cycleSafeEditAsync(Integer companyId, Integer id, ArrayList<FilingCalendarEditModel> model) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingcalendars/{id}/edit/options");
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
+        return this.threadPool.submit((RestCall<CycleEditOptionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<CycleEditOptionModel>(){}));
+    }
+
+    /**
+     * Returns a list of options for expiring a filing calendar
+     * 
+     * This API is available by invitation only.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * 
+     * @param companyId The unique ID of the company that owns the filing calendar object
+     * @param id The unique ID of the filing calendar object
+     * @return CycleExpireModel
+     */
+    public CycleExpireModel cycleSafeExpiration(Integer companyId, Long id) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingcalendars/{id}/cancel/options");
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
+        return ((RestCall<CycleExpireModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<CycleExpireModel>(){})).call();
+    }
+
+    /**
+     * Returns a list of options for expiring a filing calendar
+     * 
+     * This API is available by invitation only.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * 
+     * @param companyId The unique ID of the company that owns the filing calendar object
+     * @param id The unique ID of the filing calendar object
+     * @return CycleExpireModel
+     */
+    public Future<CycleExpireModel> cycleSafeExpirationAsync(Integer companyId, Long id) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingcalendars/{id}/cancel/options");
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
+        return this.threadPool.submit((RestCall<CycleExpireModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<CycleExpireModel>(){}));
     }
 
     /**
@@ -8981,23 +11541,1369 @@ public class AvaTaxClient {
     }
 
     /**
-     * Retrieve a filing containing the return and all its accrual returns.
+     * Delete a single filing calendar.
      * 
+     * This API is available by invitation only.
+     * Mark the existing notice object at this URL as deleted.
+     * A 'notice' represents a letter sent to a business by a tax authority regarding tax filing issues.  Avalara
+     * Returns customers often receive support and assistance from the Compliance Notices team in handling notices received by taxing authorities.
      * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * 
+     * @param companyId The ID of the company that owns this filing calendar.
+     * @param id The ID of the filing calendar you wish to delete.
+     * @return ArrayList<ErrorDetail>
+     */
+    public ArrayList<ErrorDetail> deleteFilingCalendar(Integer companyId, Long id) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingcalendars/{id}");
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
+        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){})).call();
+    }
+
+    /**
+     * Delete a single filing calendar.
+     * 
+     * This API is available by invitation only.
+     * Mark the existing notice object at this URL as deleted.
+     * A 'notice' represents a letter sent to a business by a tax authority regarding tax filing issues.  Avalara
+     * Returns customers often receive support and assistance from the Compliance Notices team in handling notices received by taxing authorities.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * 
+     * @param companyId The ID of the company that owns this filing calendar.
+     * @param id The ID of the filing calendar you wish to delete.
+     * @return ArrayList<ErrorDetail>
+     */
+    public Future<ArrayList<ErrorDetail>> deleteFilingCalendarAsync(Integer companyId, Long id) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingcalendars/{id}");
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
+        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){}));
+    }
+
+    /**
+     * Retrieve a single filing calendar
+     * 
+     * This API is available by invitation only.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * 
+     * @param companyId The ID of the company that owns this filing calendar
+     * @param id The primary key of this filing calendar
+     * @return FilingCalendarModel
+     */
+    public FilingCalendarModel getFilingCalendar(Integer companyId, Long id) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingcalendars/{id}");
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
+        return ((RestCall<FilingCalendarModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<FilingCalendarModel>(){})).call();
+    }
+
+    /**
+     * Retrieve a single filing calendar
+     * 
+     * This API is available by invitation only.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * 
+     * @param companyId The ID of the company that owns this filing calendar
+     * @param id The primary key of this filing calendar
+     * @return FilingCalendarModel
+     */
+    public Future<FilingCalendarModel> getFilingCalendarAsync(Integer companyId, Long id) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingcalendars/{id}");
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
+        return this.threadPool.submit((RestCall<FilingCalendarModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<FilingCalendarModel>(){}));
+    }
+
+    /**
+     * Retrieve a single filing request
+     * 
+     * This API is available by invitation only.
+     * A "filing request" represents a request to change an existing filing calendar.  Filing requests
+     * are reviewed and validated by Avalara Compliance before being implemented.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * 
+     * @param companyId The ID of the company that owns this filing calendar
+     * @param id The primary key of this filing calendar
+     * @return FilingRequestModel
+     */
+    public FilingRequestModel getFilingRequest(Integer companyId, Integer id) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingrequests/{id}");
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
+        return ((RestCall<FilingRequestModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<FilingRequestModel>(){})).call();
+    }
+
+    /**
+     * Retrieve a single filing request
+     * 
+     * This API is available by invitation only.
+     * A "filing request" represents a request to change an existing filing calendar.  Filing requests
+     * are reviewed and validated by Avalara Compliance before being implemented.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * 
+     * @param companyId The ID of the company that owns this filing calendar
+     * @param id The primary key of this filing calendar
+     * @return FilingRequestModel
+     */
+    public Future<FilingRequestModel> getFilingRequestAsync(Integer companyId, Integer id) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingrequests/{id}");
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
+        return this.threadPool.submit((RestCall<FilingRequestModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<FilingRequestModel>(){}));
+    }
+
+    /**
+     * Retrieve all filing calendars for this company
+     * 
+     * This API is available by invitation only.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * 
+     * @param companyId The ID of the company that owns these batches
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* taxAuthorityId, taxAuthorityName, taxAuthorityType, settings
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @param returnCountry A comma separated list of countries
+     * @param returnRegion A comma separated list of regions
+     * @return FilingCalendarModelFetchResult
+     */
+    public FilingCalendarModelFetchResult listFilingCalendars(Integer companyId, String filter, Integer top, Integer skip, String orderBy, String returnCountry, String returnRegion) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingcalendars");
+        path.applyField("companyId", companyId);
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
+        path.addQuery("returnCountry", returnCountry);
+        path.addQuery("returnRegion", returnRegion);
+        return ((RestCall<FilingCalendarModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<FilingCalendarModelFetchResult>(){})).call();
+    }
+
+    /**
+     * Retrieve all filing calendars for this company
+     * 
+     * This API is available by invitation only.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * 
+     * @param companyId The ID of the company that owns these batches
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* taxAuthorityId, taxAuthorityName, taxAuthorityType, settings
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @param returnCountry A comma separated list of countries
+     * @param returnRegion A comma separated list of regions
+     * @return FilingCalendarModelFetchResult
+     */
+    public Future<FilingCalendarModelFetchResult> listFilingCalendarsAsync(Integer companyId, String filter, Integer top, Integer skip, String orderBy, String returnCountry, String returnRegion) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingcalendars");
+        path.applyField("companyId", companyId);
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
+        path.addQuery("returnCountry", returnCountry);
+        path.addQuery("returnRegion", returnRegion);
+        return this.threadPool.submit((RestCall<FilingCalendarModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<FilingCalendarModelFetchResult>(){}));
+    }
+
+    /**
+     * Retrieve all filing requests for this company
+     * 
+     * This API is available by invitation only.
+     * A "filing request" represents a request to change an existing filing calendar.  Filing requests
+     * are reviewed and validated by Avalara Compliance before being implemented.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * 
+     * @param companyId The ID of the company that owns these batches
+     * @param filingCalendarId Specific filing calendar id for the request
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* data
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @return FilingRequestModelFetchResult
+     */
+    public FilingRequestModelFetchResult listFilingRequests(Integer companyId, Integer filingCalendarId, String filter, Integer top, Integer skip, String orderBy) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingrequests");
+        path.applyField("companyId", companyId);
+        path.addQuery("filingCalendarId", filingCalendarId);
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
+        return ((RestCall<FilingRequestModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<FilingRequestModelFetchResult>(){})).call();
+    }
+
+    /**
+     * Retrieve all filing requests for this company
+     * 
+     * This API is available by invitation only.
+     * A "filing request" represents a request to change an existing filing calendar.  Filing requests
+     * are reviewed and validated by Avalara Compliance before being implemented.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * 
+     * @param companyId The ID of the company that owns these batches
+     * @param filingCalendarId Specific filing calendar id for the request
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* data
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @return FilingRequestModelFetchResult
+     */
+    public Future<FilingRequestModelFetchResult> listFilingRequestsAsync(Integer companyId, Integer filingCalendarId, String filter, Integer top, Integer skip, String orderBy) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingrequests");
+        path.applyField("companyId", companyId);
+        path.addQuery("filingCalendarId", filingCalendarId);
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
+        return this.threadPool.submit((RestCall<FilingRequestModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<FilingRequestModelFetchResult>(){}));
+    }
+
+    /**
+     * New request for getting for validating customer's login credentials
+     * 
+     * This API is available by invitation only.
+     *             
+     * This API verifies that a customer has submitted correct login credentials for a tax authority's online filing system.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * 
+     * @param model The model of the login information we are verifying
+     * @return LoginVerificationOutputModel
+     */
+    public LoginVerificationOutputModel loginVerificationRequest(LoginVerificationInputModel model) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/filingcalendars/credentials/verify");
+        return ((RestCall<LoginVerificationOutputModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<LoginVerificationOutputModel>(){})).call();
+    }
+
+    /**
+     * New request for getting for validating customer's login credentials
+     * 
+     * This API is available by invitation only.
+     *             
+     * This API verifies that a customer has submitted correct login credentials for a tax authority's online filing system.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * 
+     * @param model The model of the login information we are verifying
+     * @return LoginVerificationOutputModel
+     */
+    public Future<LoginVerificationOutputModel> loginVerificationRequestAsync(LoginVerificationInputModel model) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/filingcalendars/credentials/verify");
+        return this.threadPool.submit((RestCall<LoginVerificationOutputModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<LoginVerificationOutputModel>(){}));
+    }
+
+    /**
+     * Gets the request status and Login Result
+     * 
+     * This API is available by invitation only.
+     *             
+     * This API checks the status of a login verification request.  It may only be called by authorized users from the account
+     * that initially requested the login verification.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * 
+     * @param jobId The unique ID number of this login request
+     * @return LoginVerificationOutputModel
+     */
+    public LoginVerificationOutputModel loginVerificationStatus(Integer jobId) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/filingcalendars/credentials/{jobId}");
+        path.applyField("jobId", jobId);
+        return ((RestCall<LoginVerificationOutputModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<LoginVerificationOutputModel>(){})).call();
+    }
+
+    /**
+     * Gets the request status and Login Result
+     * 
+     * This API is available by invitation only.
+     *             
+     * This API checks the status of a login verification request.  It may only be called by authorized users from the account
+     * that initially requested the login verification.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * 
+     * @param jobId The unique ID number of this login request
+     * @return LoginVerificationOutputModel
+     */
+    public Future<LoginVerificationOutputModel> loginVerificationStatusAsync(Integer jobId) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/filingcalendars/credentials/{jobId}");
+        path.applyField("jobId", jobId);
+        return this.threadPool.submit((RestCall<LoginVerificationOutputModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<LoginVerificationOutputModel>(){}));
+    }
+
+    /**
+     * Retrieve all filing calendars
+     * 
+     * This API is available by invitation only.
+     *             
+     * This API is deprecated - please use POST `/api/v2/filingrequests/query` API.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * 
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* taxAuthorityId, taxAuthorityName, taxAuthorityType, settings
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @param returnCountry If specified, fetches only filing calendars that apply to tax filings in this specific country. Uses ISO 3166 country codes.
+     * @param returnRegion If specified, fetches only filing calendars that apply to tax filings in this specific region. Uses ISO 3166 region codes.
+     * @return FilingCalendarModelFetchResult
+     */
+    public FilingCalendarModelFetchResult queryFilingCalendars(String filter, Integer top, Integer skip, String orderBy, String returnCountry, String returnRegion) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/filingcalendars");
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
+        path.addQuery("returnCountry", returnCountry);
+        path.addQuery("returnRegion", returnRegion);
+        return ((RestCall<FilingCalendarModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<FilingCalendarModelFetchResult>(){})).call();
+    }
+
+    /**
+     * Retrieve all filing calendars
+     * 
+     * This API is available by invitation only.
+     *             
+     * This API is deprecated - please use POST `/api/v2/filingrequests/query` API.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * 
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* taxAuthorityId, taxAuthorityName, taxAuthorityType, settings
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @param returnCountry If specified, fetches only filing calendars that apply to tax filings in this specific country. Uses ISO 3166 country codes.
+     * @param returnRegion If specified, fetches only filing calendars that apply to tax filings in this specific region. Uses ISO 3166 region codes.
+     * @return FilingCalendarModelFetchResult
+     */
+    public Future<FilingCalendarModelFetchResult> queryFilingCalendarsAsync(String filter, Integer top, Integer skip, String orderBy, String returnCountry, String returnRegion) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/filingcalendars");
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
+        path.addQuery("returnCountry", returnCountry);
+        path.addQuery("returnRegion", returnRegion);
+        return this.threadPool.submit((RestCall<FilingCalendarModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<FilingCalendarModelFetchResult>(){}));
+    }
+
+    /**
+     * Retrieve all filing calendars
+     * 
+     * This API is available by invitation only.
+     *             
+     * This API is intended to replace the GET `/api/v2/filingcalendars` API. The fetch request object is posted on the body of the request instead of the URI, so it's not limited by a set number of characters.
+     * The documentation of the GET API shows how filtering, sorting and pagination works.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * 
+     * @param returnCountry If specified, fetches only filing calendars that apply to tax filings in this specific country. Uses ISO 3166 country codes.
+     * @param returnRegion If specified, fetches only filing calendars that apply to tax filings in this specific region. Uses ISO 3166 region codes.
+     * @param model Query object to filter, sort and paginate the filing calendars.
+     * @return FilingCalendarModelFetchResult
+     */
+    public FilingCalendarModelFetchResult queryFilingCalendarsPost(String returnCountry, String returnRegion, QueryRequestModel model) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/filingcalendars/query");
+        path.addQuery("returnCountry", returnCountry);
+        path.addQuery("returnRegion", returnRegion);
+        return ((RestCall<FilingCalendarModelFetchResult>)restCallFactory.createRestCall("post", path, model, new TypeToken<FilingCalendarModelFetchResult>(){})).call();
+    }
+
+    /**
+     * Retrieve all filing calendars
+     * 
+     * This API is available by invitation only.
+     *             
+     * This API is intended to replace the GET `/api/v2/filingcalendars` API. The fetch request object is posted on the body of the request instead of the URI, so it's not limited by a set number of characters.
+     * The documentation of the GET API shows how filtering, sorting and pagination works.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * 
+     * @param returnCountry If specified, fetches only filing calendars that apply to tax filings in this specific country. Uses ISO 3166 country codes.
+     * @param returnRegion If specified, fetches only filing calendars that apply to tax filings in this specific region. Uses ISO 3166 region codes.
+     * @param model Query object to filter, sort and paginate the filing calendars.
+     * @return FilingCalendarModelFetchResult
+     */
+    public Future<FilingCalendarModelFetchResult> queryFilingCalendarsPostAsync(String returnCountry, String returnRegion, QueryRequestModel model) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/filingcalendars/query");
+        path.addQuery("returnCountry", returnCountry);
+        path.addQuery("returnRegion", returnRegion);
+        return this.threadPool.submit((RestCall<FilingCalendarModelFetchResult>)restCallFactory.createRestCall("post", path, model, new TypeToken<FilingCalendarModelFetchResult>(){}));
+    }
+
+    /**
+     * Retrieve all filing requests
+     * 
+     * This API is available by invitation only.
+     *             
+     * This API is deprecated - please use POST `/api/v2/filingrequests/query` API.
+     *             
+     * A "filing request" represents a request to change an existing filing calendar.  Filing requests
+     * are reviewed and validated by Avalara Compliance before being implemented.
+     *             
+     * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * Paginate your results using the `$top`, `$skip`, and `$orderby` parameters.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * 
+     * @param filingCalendarId Specific filing calendar id for the request
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* data
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @return FilingRequestModelFetchResult
+     */
+    public FilingRequestModelFetchResult queryFilingRequests(Integer filingCalendarId, String filter, Integer top, Integer skip, String orderBy) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/filingrequests");
+        path.addQuery("filingCalendarId", filingCalendarId);
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
+        return ((RestCall<FilingRequestModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<FilingRequestModelFetchResult>(){})).call();
+    }
+
+    /**
+     * Retrieve all filing requests
+     * 
+     * This API is available by invitation only.
+     *             
+     * This API is deprecated - please use POST `/api/v2/filingrequests/query` API.
+     *             
+     * A "filing request" represents a request to change an existing filing calendar.  Filing requests
+     * are reviewed and validated by Avalara Compliance before being implemented.
+     *             
+     * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * Paginate your results using the `$top`, `$skip`, and `$orderby` parameters.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * 
+     * @param filingCalendarId Specific filing calendar id for the request
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* data
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @return FilingRequestModelFetchResult
+     */
+    public Future<FilingRequestModelFetchResult> queryFilingRequestsAsync(Integer filingCalendarId, String filter, Integer top, Integer skip, String orderBy) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/filingrequests");
+        path.addQuery("filingCalendarId", filingCalendarId);
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
+        return this.threadPool.submit((RestCall<FilingRequestModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<FilingRequestModelFetchResult>(){}));
+    }
+
+    /**
+     * Retrieve all filing requests
+     * 
+     * This API is available by invitation only.
+     *             
+     * This API is intended to replace the GET `/api/v2/filingrequests` API. The fetch request object is posted on the body of the request instead of the URI, so it's not limited by a set number of characters.
+     * The documentation of the GET API shows how filtering, sorting and pagination works.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * 
+     * @param filingCalendarId Specific filing calendar id for the request
+     * @param model Query object to filter, sort and paginate the filing calendars.
+     * @return FilingRequestModelFetchResult
+     */
+    public FilingRequestModelFetchResult queryFilingRequestsPost(Integer filingCalendarId, QueryRequestModel model) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/filingrequests/query");
+        path.addQuery("filingCalendarId", filingCalendarId);
+        return ((RestCall<FilingRequestModelFetchResult>)restCallFactory.createRestCall("post", path, model, new TypeToken<FilingRequestModelFetchResult>(){})).call();
+    }
+
+    /**
+     * Retrieve all filing requests
+     * 
+     * This API is available by invitation only.
+     *             
+     * This API is intended to replace the GET `/api/v2/filingrequests` API. The fetch request object is posted on the body of the request instead of the URI, so it's not limited by a set number of characters.
+     * The documentation of the GET API shows how filtering, sorting and pagination works.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * 
+     * @param filingCalendarId Specific filing calendar id for the request
+     * @param model Query object to filter, sort and paginate the filing calendars.
+     * @return FilingRequestModelFetchResult
+     */
+    public Future<FilingRequestModelFetchResult> queryFilingRequestsPostAsync(Integer filingCalendarId, QueryRequestModel model) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/filingrequests/query");
+        path.addQuery("filingCalendarId", filingCalendarId);
+        return this.threadPool.submit((RestCall<FilingRequestModelFetchResult>)restCallFactory.createRestCall("post", path, model, new TypeToken<FilingRequestModelFetchResult>(){}));
+    }
+
+    /**
+     * Create a new filing request to edit a filing calendar
+     * 
+     * This API is available by invitation only.
+     *             
+     * A "filing request" represents a request to change an existing filing calendar.  Filing requests
+     * are reviewed and validated by Avalara Compliance before being implemented.
+     *             
+     * Certain users may not update filing calendars directly.  Instead, they may submit an edit request
+     * to modify the value of a filing calendar using this API.
      * 
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
      * 
-     * @param companyId The ID of the company that owns these returns
-     * @param filingReturnId The ID of the filing return
-     * @return FetchResult<MultiTaxFilingModel>
+     * @param companyId The unique ID of the company that owns the filing calendar object
+     * @param id The unique ID number of the filing calendar to edit
+     * @param model A list of filing calendar edits to be made
+     * @return FilingRequestModel
      */
-    public FetchResult<MultiTaxFilingModel> getAccrualFilings(Integer companyId, Long filingReturnId) throws Exception {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/accrual/{filingReturnId}");
+    public FilingRequestModel requestFilingCalendarUpdate(Integer companyId, Integer id, ArrayList<FilingRequestModel> model) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingcalendars/{id}/edit/request");
         path.applyField("companyId", companyId);
-        path.applyField("filingReturnId", filingReturnId);
-        return ((RestCall<FetchResult<MultiTaxFilingModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<MultiTaxFilingModel>>(){})).call();
+        path.applyField("id", id);
+        return ((RestCall<FilingRequestModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<FilingRequestModel>(){})).call();
+    }
+
+    /**
+     * Create a new filing request to edit a filing calendar
+     * 
+     * This API is available by invitation only.
+     *             
+     * A "filing request" represents a request to change an existing filing calendar.  Filing requests
+     * are reviewed and validated by Avalara Compliance before being implemented.
+     *             
+     * Certain users may not update filing calendars directly.  Instead, they may submit an edit request
+     * to modify the value of a filing calendar using this API.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * 
+     * @param companyId The unique ID of the company that owns the filing calendar object
+     * @param id The unique ID number of the filing calendar to edit
+     * @param model A list of filing calendar edits to be made
+     * @return FilingRequestModel
+     */
+    public Future<FilingRequestModel> requestFilingCalendarUpdateAsync(Integer companyId, Integer id, ArrayList<FilingRequestModel> model) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingcalendars/{id}/edit/request");
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
+        return this.threadPool.submit((RestCall<FilingRequestModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<FilingRequestModel>(){}));
+    }
+
+    /**
+     * Edit existing Filing Calendar
+     * 
+     * This API is available by invitation only.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * 
+     * @param companyId The unique ID of the company that owns the filing calendar object
+     * @param id The unique ID of the filing calendar object
+     * @param model The filing calendar model you are wishing to update with.
+     * @return FilingCalendarModel
+     */
+    public FilingCalendarModel updateFilingCalendar(Integer companyId, Long id, FilingCalendarModel model) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingcalendars/{id}");
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
+        return ((RestCall<FilingCalendarModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<FilingCalendarModel>(){})).call();
+    }
+
+    /**
+     * Edit existing Filing Calendar
+     * 
+     * This API is available by invitation only.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * 
+     * @param companyId The unique ID of the company that owns the filing calendar object
+     * @param id The unique ID of the filing calendar object
+     * @param model The filing calendar model you are wishing to update with.
+     * @return FilingCalendarModel
+     */
+    public Future<FilingCalendarModel> updateFilingCalendarAsync(Integer companyId, Long id, FilingCalendarModel model) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingcalendars/{id}");
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
+        return this.threadPool.submit((RestCall<FilingCalendarModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<FilingCalendarModel>(){}));
+    }
+
+    /**
+     * Edit existing Filing Request
+     * 
+     * This API is available by invitation only.
+     * A "filing request" represents a request to change an existing filing calendar.  Filing requests
+     * are reviewed and validated by Avalara Compliance before being implemented.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * 
+     * @param companyId The unique ID of the company that owns the filing request object
+     * @param id The unique ID of the filing request object
+     * @param model A list of filing calendar edits to be made
+     * @return FilingRequestModel
+     */
+    public FilingRequestModel updateFilingRequest(Integer companyId, Integer id, FilingRequestModel model) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingrequests/{id}");
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
+        return ((RestCall<FilingRequestModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<FilingRequestModel>(){})).call();
+    }
+
+    /**
+     * Edit existing Filing Request
+     * 
+     * This API is available by invitation only.
+     * A "filing request" represents a request to change an existing filing calendar.  Filing requests
+     * are reviewed and validated by Avalara Compliance before being implemented.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * 
+     * @param companyId The unique ID of the company that owns the filing request object
+     * @param id The unique ID of the filing request object
+     * @param model A list of filing calendar edits to be made
+     * @return FilingRequestModel
+     */
+    public Future<FilingRequestModel> updateFilingRequestAsync(Integer companyId, Integer id, FilingRequestModel model) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingrequests/{id}");
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
+        return this.threadPool.submit((RestCall<FilingRequestModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<FilingRequestModel>(){}));
+    }
+
+    /**
+     * Approve all filings for the specified company in the given filing period.
+     * 
+     * This API is available by invitation only.
+     * Approving a return means the customer is ready to let Avalara file that return.
+     * Customer either approves themselves from admin console,
+     * else system auto-approves the night before the filing cycle.
+     * Sometimes Compliance has to manually unapprove and reapprove to modify liability or filing for the customer.
+     * A "filing period" is the year and month of the date of the latest customer transaction allowed to be reported on a filing,
+     * based on filing frequency of filing.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, CSPTester, FirmUser, SSTAdmin, TechnicalSupportAdmin.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * 
+     * @param companyId The ID of the company that owns the filings.
+     * @param year The year of the filing period to approve.
+     * @param month The month of the filing period to approve.
+     * @param model The approve request you wish to execute.
+     * @return ArrayList<FilingModel>
+     */
+    public ArrayList<FilingModel> approveFilings(Integer companyId, Short year, Byte month, ApproveFilingsModel model) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/approve");
+        path.applyField("companyId", companyId);
+        path.applyField("year", year);
+        path.applyField("month", month);
+        return ((RestCall<ArrayList<FilingModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<FilingModel>>(){})).call();
+    }
+
+    /**
+     * Approve all filings for the specified company in the given filing period.
+     * 
+     * This API is available by invitation only.
+     * Approving a return means the customer is ready to let Avalara file that return.
+     * Customer either approves themselves from admin console,
+     * else system auto-approves the night before the filing cycle.
+     * Sometimes Compliance has to manually unapprove and reapprove to modify liability or filing for the customer.
+     * A "filing period" is the year and month of the date of the latest customer transaction allowed to be reported on a filing,
+     * based on filing frequency of filing.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, CSPTester, FirmUser, SSTAdmin, TechnicalSupportAdmin.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * 
+     * @param companyId The ID of the company that owns the filings.
+     * @param year The year of the filing period to approve.
+     * @param month The month of the filing period to approve.
+     * @param model The approve request you wish to execute.
+     * @return ArrayList<FilingModel>
+     */
+    public Future<ArrayList<FilingModel>> approveFilingsAsync(Integer companyId, Short year, Byte month, ApproveFilingsModel model) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/approve");
+        path.applyField("companyId", companyId);
+        path.applyField("year", year);
+        path.applyField("month", month);
+        return this.threadPool.submit((RestCall<ArrayList<FilingModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<FilingModel>>(){}));
+    }
+
+    /**
+     * Approve all filings for the specified company in the given filing period and country.
+     * 
+     * This API is available by invitation only.
+     * Approving a return means the customer is ready to let Avalara file that return.
+     * Customer either approves themselves from admin console,
+     * else system auto-approves the night before the filing cycle.
+     * Sometimes Compliance has to manually unapprove and reapprove to modify liability or filing for the customer.
+     * A "filing period" is the year and month of the date of the latest customer transaction allowed to be reported on a filing,
+     * based on filing frequency of filing.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, CSPTester, FirmUser, SSTAdmin, TechnicalSupportAdmin.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * 
+     * @param companyId The ID of the company that owns the filings.
+     * @param year The year of the filing period to approve.
+     * @param month The month of the filing period to approve.
+     * @param country The two-character ISO-3166 code for the country.
+     * @param model The approve request you wish to execute.
+     * @return ArrayList<FilingModel>
+     */
+    public ArrayList<FilingModel> approveFilingsCountry(Integer companyId, Short year, Byte month, String country, ApproveFilingsModel model) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/{country}/approve");
+        path.applyField("companyId", companyId);
+        path.applyField("year", year);
+        path.applyField("month", month);
+        path.applyField("country", country);
+        return ((RestCall<ArrayList<FilingModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<FilingModel>>(){})).call();
+    }
+
+    /**
+     * Approve all filings for the specified company in the given filing period and country.
+     * 
+     * This API is available by invitation only.
+     * Approving a return means the customer is ready to let Avalara file that return.
+     * Customer either approves themselves from admin console,
+     * else system auto-approves the night before the filing cycle.
+     * Sometimes Compliance has to manually unapprove and reapprove to modify liability or filing for the customer.
+     * A "filing period" is the year and month of the date of the latest customer transaction allowed to be reported on a filing,
+     * based on filing frequency of filing.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, CSPTester, FirmUser, SSTAdmin, TechnicalSupportAdmin.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * 
+     * @param companyId The ID of the company that owns the filings.
+     * @param year The year of the filing period to approve.
+     * @param month The month of the filing period to approve.
+     * @param country The two-character ISO-3166 code for the country.
+     * @param model The approve request you wish to execute.
+     * @return ArrayList<FilingModel>
+     */
+    public Future<ArrayList<FilingModel>> approveFilingsCountryAsync(Integer companyId, Short year, Byte month, String country, ApproveFilingsModel model) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/{country}/approve");
+        path.applyField("companyId", companyId);
+        path.applyField("year", year);
+        path.applyField("month", month);
+        path.applyField("country", country);
+        return this.threadPool.submit((RestCall<ArrayList<FilingModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<FilingModel>>(){}));
+    }
+
+    /**
+     * Approve all filings for the specified company in the given filing period, country and region.
+     * 
+     * This API is available by invitation only.
+     * Approving a return means the customer is ready to let Avalara file that return.
+     * Customer either approves themselves from admin console,
+     * else system auto-approves the night before the filing cycle
+     * Sometimes Compliance has to manually unapprove and reapprove to modify liability or filing for the customer.
+     * A "filing period" is the year and month of the date of the latest customer transaction allowed to be reported on a filing,
+     * based on filing frequency of filing.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, CSPTester, FirmUser, SSTAdmin, TechnicalSupportAdmin.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * 
+     * @param companyId The ID of the company that owns the filings.
+     * @param year The year of the filing period to approve.
+     * @param month The month of the filing period to approve.
+     * @param country The two-character ISO-3166 code for the country.
+     * @param region The two or three character region code for the region.
+     * @param model The approve request you wish to execute.
+     * @return ArrayList<FilingModel>
+     */
+    public ArrayList<FilingModel> approveFilingsCountryRegion(Integer companyId, Short year, Byte month, String country, String region, ApproveFilingsModel model) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/{country}/{region}/approve");
+        path.applyField("companyId", companyId);
+        path.applyField("year", year);
+        path.applyField("month", month);
+        path.applyField("country", country);
+        path.applyField("region", region);
+        return ((RestCall<ArrayList<FilingModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<FilingModel>>(){})).call();
+    }
+
+    /**
+     * Approve all filings for the specified company in the given filing period, country and region.
+     * 
+     * This API is available by invitation only.
+     * Approving a return means the customer is ready to let Avalara file that return.
+     * Customer either approves themselves from admin console,
+     * else system auto-approves the night before the filing cycle
+     * Sometimes Compliance has to manually unapprove and reapprove to modify liability or filing for the customer.
+     * A "filing period" is the year and month of the date of the latest customer transaction allowed to be reported on a filing,
+     * based on filing frequency of filing.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, CSPTester, FirmUser, SSTAdmin, TechnicalSupportAdmin.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * 
+     * @param companyId The ID of the company that owns the filings.
+     * @param year The year of the filing period to approve.
+     * @param month The month of the filing period to approve.
+     * @param country The two-character ISO-3166 code for the country.
+     * @param region The two or three character region code for the region.
+     * @param model The approve request you wish to execute.
+     * @return ArrayList<FilingModel>
+     */
+    public Future<ArrayList<FilingModel>> approveFilingsCountryRegionAsync(Integer companyId, Short year, Byte month, String country, String region, ApproveFilingsModel model) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/{country}/{region}/approve");
+        path.applyField("companyId", companyId);
+        path.applyField("year", year);
+        path.applyField("month", month);
+        path.applyField("country", country);
+        path.applyField("region", region);
+        return this.threadPool.submit((RestCall<ArrayList<FilingModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<FilingModel>>(){}));
+    }
+
+    /**
+     * Add an adjustment to a given filing.
+     * 
+     * This API is available by invitation only.
+     * An "Adjustment" is usually an increase or decrease to customer funding to Avalara,
+     * such as early filer discount amounts that are refunded to the customer, or efile fees from websites.
+     * Sometimes may be a manual change in tax liability similar to an augmentation.
+     * This API creates a new adjustment for an existing tax filing.
+     * This API can only be used when the filing has not yet been approved.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * 
+     * @param companyId The ID of the company that owns the filing being adjusted.
+     * @param year The year of the filing's filing period being adjusted.
+     * @param month The month of the filing's filing period being adjusted.
+     * @param country The two-character ISO-3166 code for the country of the filing being adjusted.
+     * @param region The two or three character region code for the region.
+     * @param formCode The unique code of the form being adjusted.
+     * @param model A list of Adjustments to be created for the specified filing.
+     * @return ArrayList<FilingAdjustmentModel>
+     */
+    public ArrayList<FilingAdjustmentModel> createReturnAdjustment(Integer companyId, Short year, Byte month, String country, String region, String formCode, ArrayList<FilingAdjustmentModel> model) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/{country}/{region}/{formCode}/adjust");
+        path.applyField("companyId", companyId);
+        path.applyField("year", year);
+        path.applyField("month", month);
+        path.applyField("country", country);
+        path.applyField("region", region);
+        path.applyField("formCode", formCode);
+        return ((RestCall<ArrayList<FilingAdjustmentModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<FilingAdjustmentModel>>(){})).call();
+    }
+
+    /**
+     * Add an adjustment to a given filing.
+     * 
+     * This API is available by invitation only.
+     * An "Adjustment" is usually an increase or decrease to customer funding to Avalara,
+     * such as early filer discount amounts that are refunded to the customer, or efile fees from websites.
+     * Sometimes may be a manual change in tax liability similar to an augmentation.
+     * This API creates a new adjustment for an existing tax filing.
+     * This API can only be used when the filing has not yet been approved.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * 
+     * @param companyId The ID of the company that owns the filing being adjusted.
+     * @param year The year of the filing's filing period being adjusted.
+     * @param month The month of the filing's filing period being adjusted.
+     * @param country The two-character ISO-3166 code for the country of the filing being adjusted.
+     * @param region The two or three character region code for the region.
+     * @param formCode The unique code of the form being adjusted.
+     * @param model A list of Adjustments to be created for the specified filing.
+     * @return ArrayList<FilingAdjustmentModel>
+     */
+    public Future<ArrayList<FilingAdjustmentModel>> createReturnAdjustmentAsync(Integer companyId, Short year, Byte month, String country, String region, String formCode, ArrayList<FilingAdjustmentModel> model) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/{country}/{region}/{formCode}/adjust");
+        path.applyField("companyId", companyId);
+        path.applyField("year", year);
+        path.applyField("month", month);
+        path.applyField("country", country);
+        path.applyField("region", region);
+        path.applyField("formCode", formCode);
+        return this.threadPool.submit((RestCall<ArrayList<FilingAdjustmentModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<FilingAdjustmentModel>>(){}));
+    }
+
+    /**
+     * Add an augmentation for a given filing.
+     * 
+     * This API is available by invitation only.
+     * An "Augmentation" is a manually added increase or decrease in tax liability, by either customer or Avalara
+     * usually due to customer wanting to report tax Avatax does not support, e.g. bad debts, rental tax.
+     * This API creates a new augmentation for an existing tax filing.
+     * This API can only be used when the filing has not been approved.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, CSPTester, FirmUser, SSTAdmin, TechnicalSupportAdmin.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * 
+     * @param companyId The ID of the company that owns the filing being changed.
+     * @param year The month of the filing's filing period being changed.
+     * @param month The month of the filing's filing period being changed.
+     * @param country The two-character ISO-3166 code for the country of the filing being changed.
+     * @param region The two or three character region code for the region of the filing being changed.
+     * @param formCode The unique code of the form being changed.
+     * @param model A list of augmentations to be created for the specified filing.
+     * @return ArrayList<FilingAugmentationModel>
+     */
+    public ArrayList<FilingAugmentationModel> createReturnAugmentation(Integer companyId, Short year, Byte month, String country, String region, String formCode, ArrayList<FilingAugmentationModel> model) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/{country}/{region}/{formCode}/augment");
+        path.applyField("companyId", companyId);
+        path.applyField("year", year);
+        path.applyField("month", month);
+        path.applyField("country", country);
+        path.applyField("region", region);
+        path.applyField("formCode", formCode);
+        return ((RestCall<ArrayList<FilingAugmentationModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<FilingAugmentationModel>>(){})).call();
+    }
+
+    /**
+     * Add an augmentation for a given filing.
+     * 
+     * This API is available by invitation only.
+     * An "Augmentation" is a manually added increase or decrease in tax liability, by either customer or Avalara
+     * usually due to customer wanting to report tax Avatax does not support, e.g. bad debts, rental tax.
+     * This API creates a new augmentation for an existing tax filing.
+     * This API can only be used when the filing has not been approved.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, CSPTester, FirmUser, SSTAdmin, TechnicalSupportAdmin.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * 
+     * @param companyId The ID of the company that owns the filing being changed.
+     * @param year The month of the filing's filing period being changed.
+     * @param month The month of the filing's filing period being changed.
+     * @param country The two-character ISO-3166 code for the country of the filing being changed.
+     * @param region The two or three character region code for the region of the filing being changed.
+     * @param formCode The unique code of the form being changed.
+     * @param model A list of augmentations to be created for the specified filing.
+     * @return ArrayList<FilingAugmentationModel>
+     */
+    public Future<ArrayList<FilingAugmentationModel>> createReturnAugmentationAsync(Integer companyId, Short year, Byte month, String country, String region, String formCode, ArrayList<FilingAugmentationModel> model) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/{country}/{region}/{formCode}/augment");
+        path.applyField("companyId", companyId);
+        path.applyField("year", year);
+        path.applyField("month", month);
+        path.applyField("country", country);
+        path.applyField("region", region);
+        path.applyField("formCode", formCode);
+        return this.threadPool.submit((RestCall<ArrayList<FilingAugmentationModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<FilingAugmentationModel>>(){}));
+    }
+
+    /**
+     * Add an payment to a given filing.
+     * 
+     * This API is available by invitation only.
+     * An "Payment" is usually an increase or decrease to customer funding to Avalara,
+     * such as early filer discount amounts that are refunded to the customer, or efile fees from websites.
+     * Sometimes may be a manual change in tax liability similar to an augmentation.
+     * This API creates a new payment for an existing tax filing.
+     * This API can only be used when the filing has not yet been approved.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, CSPTester, FirmUser, SSTAdmin, TechnicalSupportAdmin.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * 
+     * @param companyId The ID of the company that owns the filing being adjusted.
+     * @param year The year of the filing's filing period being adjusted.
+     * @param month The month of the filing's filing period being adjusted.
+     * @param country The two-character ISO-3166 code for the country of the filing being adjusted.
+     * @param region The two or three character region code for the region.
+     * @param formCode The unique code of the form being adjusted.
+     * @param model A list of Payments to be created for the specified filing.
+     * @return ArrayList<FilingPaymentModel>
+     */
+    public ArrayList<FilingPaymentModel> createReturnPayment(Integer companyId, Short year, Byte month, String country, String region, String formCode, ArrayList<FilingPaymentModel> model) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/{country}/{region}/{formCode}/payment");
+        path.applyField("companyId", companyId);
+        path.applyField("year", year);
+        path.applyField("month", month);
+        path.applyField("country", country);
+        path.applyField("region", region);
+        path.applyField("formCode", formCode);
+        return ((RestCall<ArrayList<FilingPaymentModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<FilingPaymentModel>>(){})).call();
+    }
+
+    /**
+     * Add an payment to a given filing.
+     * 
+     * This API is available by invitation only.
+     * An "Payment" is usually an increase or decrease to customer funding to Avalara,
+     * such as early filer discount amounts that are refunded to the customer, or efile fees from websites.
+     * Sometimes may be a manual change in tax liability similar to an augmentation.
+     * This API creates a new payment for an existing tax filing.
+     * This API can only be used when the filing has not yet been approved.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, CSPTester, FirmUser, SSTAdmin, TechnicalSupportAdmin.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * 
+     * @param companyId The ID of the company that owns the filing being adjusted.
+     * @param year The year of the filing's filing period being adjusted.
+     * @param month The month of the filing's filing period being adjusted.
+     * @param country The two-character ISO-3166 code for the country of the filing being adjusted.
+     * @param region The two or three character region code for the region.
+     * @param formCode The unique code of the form being adjusted.
+     * @param model A list of Payments to be created for the specified filing.
+     * @return ArrayList<FilingPaymentModel>
+     */
+    public Future<ArrayList<FilingPaymentModel>> createReturnPaymentAsync(Integer companyId, Short year, Byte month, String country, String region, String formCode, ArrayList<FilingPaymentModel> model) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/{country}/{region}/{formCode}/payment");
+        path.applyField("companyId", companyId);
+        path.applyField("year", year);
+        path.applyField("month", month);
+        path.applyField("country", country);
+        path.applyField("region", region);
+        path.applyField("formCode", formCode);
+        return this.threadPool.submit((RestCall<ArrayList<FilingPaymentModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<FilingPaymentModel>>(){}));
+    }
+
+    /**
+     * Delete an adjustment for a given filing.
+     * 
+     * This API is available by invitation only.
+     * An "Adjustment" is usually an increase or decrease to customer funding to Avalara,
+     * such as early filer discount amounts that are refunded to the customer, or efile fees from websites.
+     * Sometimes may be a manual change in tax liability similar to an augmentation.
+     * This API deletes an adjustment for an existing tax filing.
+     * This API can only be used when the filing has been unapproved.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, CSPTester, FirmUser, SSTAdmin, TechnicalSupportAdmin.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * 
+     * @param companyId The ID of the company that owns the filing being adjusted.
+     * @param id The ID of the adjustment being deleted.
+     * @param type The type of adjustment that you are trying to delete.
+     * @return ArrayList<ErrorDetail>
+     */
+    public ArrayList<ErrorDetail> deleteReturnAdjustment(Integer companyId, Long id, String type) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/adjust/{id}");
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
+        path.addQuery("type", type);
+        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){})).call();
+    }
+
+    /**
+     * Delete an adjustment for a given filing.
+     * 
+     * This API is available by invitation only.
+     * An "Adjustment" is usually an increase or decrease to customer funding to Avalara,
+     * such as early filer discount amounts that are refunded to the customer, or efile fees from websites.
+     * Sometimes may be a manual change in tax liability similar to an augmentation.
+     * This API deletes an adjustment for an existing tax filing.
+     * This API can only be used when the filing has been unapproved.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, CSPTester, FirmUser, SSTAdmin, TechnicalSupportAdmin.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * 
+     * @param companyId The ID of the company that owns the filing being adjusted.
+     * @param id The ID of the adjustment being deleted.
+     * @param type The type of adjustment that you are trying to delete.
+     * @return ArrayList<ErrorDetail>
+     */
+    public Future<ArrayList<ErrorDetail>> deleteReturnAdjustmentAsync(Integer companyId, Long id, String type) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/adjust/{id}");
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
+        path.addQuery("type", type);
+        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){}));
+    }
+
+    /**
+     * Delete an augmentation for a given filing.
+     * 
+     * This API is available by invitation only.
+     * An "Augmentation" is a manually added increase or decrease in tax liability, by either customer or Avalara
+     * usually due to customer wanting to report tax Avatax does not support, e.g. bad debts, rental tax.
+     * This API deletes an augmentation for an existing tax filing.
+     * This API can only be used when the filing has been unapproved.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, CSPTester, FirmUser, SSTAdmin, TechnicalSupportAdmin.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * 
+     * @param companyId The ID of the company that owns the filing being changed.
+     * @param id The ID of the augmentation being added.
+     * @return ArrayList<ErrorDetail>
+     */
+    public ArrayList<ErrorDetail> deleteReturnAugmentation(Integer companyId, Long id) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/augment/{id}");
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
+        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){})).call();
+    }
+
+    /**
+     * Delete an augmentation for a given filing.
+     * 
+     * This API is available by invitation only.
+     * An "Augmentation" is a manually added increase or decrease in tax liability, by either customer or Avalara
+     * usually due to customer wanting to report tax Avatax does not support, e.g. bad debts, rental tax.
+     * This API deletes an augmentation for an existing tax filing.
+     * This API can only be used when the filing has been unapproved.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, CSPTester, FirmUser, SSTAdmin, TechnicalSupportAdmin.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * 
+     * @param companyId The ID of the company that owns the filing being changed.
+     * @param id The ID of the augmentation being added.
+     * @return ArrayList<ErrorDetail>
+     */
+    public Future<ArrayList<ErrorDetail>> deleteReturnAugmentationAsync(Integer companyId, Long id) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/augment/{id}");
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
+        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){}));
+    }
+
+    /**
+     * Delete an payment for a given filing.
+     * 
+     * This API is available by invitation only.
+     * An "Payment" is usually an increase or decrease to customer funding to Avalara,
+     * such as early filer discount amounts that are refunded to the customer, or efile fees from websites.
+     * Sometimes may be a manual change in tax liability similar to an augmentation.
+     * This API deletes an payment for an existing tax filing.
+     * This API can only be used when the filing has been unapproved.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, CSPTester, FirmUser, SSTAdmin, TechnicalSupportAdmin.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * 
+     * @param companyId The ID of the company that owns the filing being adjusted.
+     * @param id The ID of the payment being deleted.
+     * @return ArrayList<ErrorDetail>
+     */
+    public ArrayList<ErrorDetail> deleteReturnPayment(Integer companyId, Long id) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/payment/{id}");
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
+        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){})).call();
+    }
+
+    /**
+     * Delete an payment for a given filing.
+     * 
+     * This API is available by invitation only.
+     * An "Payment" is usually an increase or decrease to customer funding to Avalara,
+     * such as early filer discount amounts that are refunded to the customer, or efile fees from websites.
+     * Sometimes may be a manual change in tax liability similar to an augmentation.
+     * This API deletes an payment for an existing tax filing.
+     * This API can only be used when the filing has been unapproved.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, CSPTester, FirmUser, SSTAdmin, TechnicalSupportAdmin.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * 
+     * @param companyId The ID of the company that owns the filing being adjusted.
+     * @param id The ID of the payment being deleted.
+     * @return ArrayList<ErrorDetail>
+     */
+    public Future<ArrayList<ErrorDetail>> deleteReturnPaymentAsync(Integer companyId, Long id) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/payment/{id}");
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
+        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){}));
+    }
+
+    /**
+     * Retrieve worksheet checkup report for company and filing period.
+     * 
+     * This API is available by invitation only.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * 
+     * @param filingsId The unique id of the worksheet.
+     * @param companyId The unique ID of the company that owns the worksheet.
+     * @return FilingsCheckupModel
+     */
+    public FilingsCheckupModel filingsCheckupReport(Integer filingsId, Integer companyId) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{filingsId}/checkup");
+        path.applyField("filingsId", filingsId);
+        path.applyField("companyId", companyId);
+        return ((RestCall<FilingsCheckupModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<FilingsCheckupModel>(){})).call();
+    }
+
+    /**
+     * Retrieve worksheet checkup report for company and filing period.
+     * 
+     * This API is available by invitation only.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * 
+     * @param filingsId The unique id of the worksheet.
+     * @param companyId The unique ID of the company that owns the worksheet.
+     * @return FilingsCheckupModel
+     */
+    public Future<FilingsCheckupModel> filingsCheckupReportAsync(Integer filingsId, Integer companyId) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{filingsId}/checkup");
+        path.applyField("filingsId", filingsId);
+        path.applyField("companyId", companyId);
+        return this.threadPool.submit((RestCall<FilingsCheckupModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<FilingsCheckupModel>(){}));
+    }
+
+    /**
+     * Retrieve worksheet checkup report for company and filing period.
+     * 
+     * This API is available by invitation only.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * 
+     * @param companyId The unique ID of the company that owns the worksheets object.
+     * @param year The year of the filing period.
+     * @param month The month of the filing period.
+     * @return FilingsCheckupModel
+     */
+    public FilingsCheckupModel filingsCheckupReports(Integer companyId, Short year, Byte month) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/checkup");
+        path.applyField("companyId", companyId);
+        path.applyField("year", year);
+        path.applyField("month", month);
+        return ((RestCall<FilingsCheckupModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<FilingsCheckupModel>(){})).call();
+    }
+
+    /**
+     * Retrieve worksheet checkup report for company and filing period.
+     * 
+     * This API is available by invitation only.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * 
+     * @param companyId The unique ID of the company that owns the worksheets object.
+     * @param year The year of the filing period.
+     * @param month The month of the filing period.
+     * @return FilingsCheckupModel
+     */
+    public Future<FilingsCheckupModel> filingsCheckupReportsAsync(Integer companyId, Short year, Byte month) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/checkup");
+        path.applyField("companyId", companyId);
+        path.applyField("year", year);
+        path.applyField("month", month);
+        return this.threadPool.submit((RestCall<FilingsCheckupModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<FilingsCheckupModel>(){}));
     }
 
     /**
@@ -9011,13 +12917,33 @@ public class AvaTaxClient {
      * 
      * @param companyId The ID of the company that owns these returns
      * @param filingReturnId The ID of the filing return
-     * @return FetchResult<MultiTaxFilingModel>
+     * @return MultiTaxFilingModelFetchResult
      */
-    public Future<FetchResult<MultiTaxFilingModel>> getAccrualFilingsAsync(Integer companyId, Long filingReturnId) {
+    public MultiTaxFilingModelFetchResult getAccrualFilings(Integer companyId, Long filingReturnId) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/accrual/{filingReturnId}");
         path.applyField("companyId", companyId);
         path.applyField("filingReturnId", filingReturnId);
-        return this.threadPool.submit((RestCall<FetchResult<MultiTaxFilingModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<MultiTaxFilingModel>>(){}));
+        return ((RestCall<MultiTaxFilingModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<MultiTaxFilingModelFetchResult>(){})).call();
+    }
+
+    /**
+     * Retrieve a filing containing the return and all its accrual returns.
+     * 
+     * 
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * 
+     * @param companyId The ID of the company that owns these returns
+     * @param filingReturnId The ID of the filing return
+     * @return MultiTaxFilingModelFetchResult
+     */
+    public Future<MultiTaxFilingModelFetchResult> getAccrualFilingsAsync(Integer companyId, Long filingReturnId) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/accrual/{filingReturnId}");
+        path.applyField("companyId", companyId);
+        path.applyField("filingReturnId", filingReturnId);
+        return this.threadPool.submit((RestCall<MultiTaxFilingModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<MultiTaxFilingModelFetchResult>(){}));
     }
 
     /**
@@ -9040,9 +12966,9 @@ public class AvaTaxClient {
      * @param region The region of the return(s) you are trying to retrieve
      * @param filingCalendarId The filing calendar id of the return you are trying to retrieve
      * @param taxformCode The unique tax form code of the form.
-     * @return FetchResult<FiledReturnModel>
+     * @return FiledReturnModelFetchResult
      */
-    public FetchResult<FiledReturnModel> getFiledReturns(Integer companyId, Integer endPeriodMonth, Integer endPeriodYear, FilingFrequencyId frequency, FilingStatusId status, String country, String region, Long filingCalendarId, String taxformCode) throws Exception {
+    public FiledReturnModelFetchResult getFiledReturns(Integer companyId, Integer endPeriodMonth, Integer endPeriodYear, FilingFrequencyId frequency, FilingStatusId status, String country, String region, Long filingCalendarId, String taxformCode) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/returns/filed");
         path.applyField("companyId", companyId);
         path.addQuery("endPeriodMonth", endPeriodMonth);
@@ -9053,7 +12979,7 @@ public class AvaTaxClient {
         path.addQuery("region", region);
         path.addQuery("filingCalendarId", filingCalendarId);
         path.addQuery("taxformCode", taxformCode);
-        return ((RestCall<FetchResult<FiledReturnModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<FiledReturnModel>>(){})).call();
+        return ((RestCall<FiledReturnModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<FiledReturnModelFetchResult>(){})).call();
     }
 
     /**
@@ -9076,9 +13002,9 @@ public class AvaTaxClient {
      * @param region The region of the return(s) you are trying to retrieve
      * @param filingCalendarId The filing calendar id of the return you are trying to retrieve
      * @param taxformCode The unique tax form code of the form.
-     * @return FetchResult<FiledReturnModel>
+     * @return FiledReturnModelFetchResult
      */
-    public Future<FetchResult<FiledReturnModel>> getFiledReturnsAsync(Integer companyId, Integer endPeriodMonth, Integer endPeriodYear, FilingFrequencyId frequency, FilingStatusId status, String country, String region, Long filingCalendarId, String taxformCode) {
+    public Future<FiledReturnModelFetchResult> getFiledReturnsAsync(Integer companyId, Integer endPeriodMonth, Integer endPeriodYear, FilingFrequencyId frequency, FilingStatusId status, String country, String region, Long filingCalendarId, String taxformCode) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/returns/filed");
         path.applyField("companyId", companyId);
         path.addQuery("endPeriodMonth", endPeriodMonth);
@@ -9089,7 +13015,907 @@ public class AvaTaxClient {
         path.addQuery("region", region);
         path.addQuery("filingCalendarId", filingCalendarId);
         path.addQuery("taxformCode", taxformCode);
-        return this.threadPool.submit((RestCall<FetchResult<FiledReturnModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<FiledReturnModel>>(){}));
+        return this.threadPool.submit((RestCall<FiledReturnModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<FiledReturnModelFetchResult>(){}));
+    }
+
+    /**
+     * Retrieve a single attachment for a filing
+     * 
+     * This API is available by invitation only.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * 
+     * @param companyId The ID of the company that owns the filings.
+     * @param filingReturnId The unique id of the worksheet return.
+     * @param fileId The unique id of the document you are downloading
+     * @return String
+     */
+    public String getFilingAttachment(Integer companyId, Long filingReturnId, Long fileId) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{filingReturnId}/attachment");
+        path.applyField("companyId", companyId);
+        path.applyField("filingReturnId", filingReturnId);
+        path.addQuery("fileId", fileId);
+        return ((RestCall<String>)restCallFactory.createRestCall("get", path, null, new TypeToken<String>(){})).call();
+    }
+
+    /**
+     * Retrieve a single attachment for a filing
+     * 
+     * This API is available by invitation only.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * 
+     * @param companyId The ID of the company that owns the filings.
+     * @param filingReturnId The unique id of the worksheet return.
+     * @param fileId The unique id of the document you are downloading
+     * @return String
+     */
+    public Future<String> getFilingAttachmentAsync(Integer companyId, Long filingReturnId, Long fileId) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{filingReturnId}/attachment");
+        path.applyField("companyId", companyId);
+        path.applyField("filingReturnId", filingReturnId);
+        path.addQuery("fileId", fileId);
+        return this.threadPool.submit((RestCall<String>)restCallFactory.createRestCall("get", path, null, new TypeToken<String>(){}));
+    }
+
+    /**
+     * Retrieve a list of filings for the specified company in the year and month of a given filing period.
+     * 
+     * This API is available by invitation only.
+     * A "filing period" is the year and month of the date of the latest customer transaction allowed to be reported on a filing,
+     * based on filing frequency of filing.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * 
+     * @param companyId The ID of the company that owns the filings.
+     * @param year The year of the filing period.
+     * @param month The two digit month of the filing period.
+     * @return String
+     */
+    public String getFilingAttachments(Integer companyId, Short year, Byte month) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/attachments");
+        path.applyField("companyId", companyId);
+        path.applyField("year", year);
+        path.applyField("month", month);
+        return ((RestCall<String>)restCallFactory.createRestCall("get", path, null, new TypeToken<String>(){})).call();
+    }
+
+    /**
+     * Retrieve a list of filings for the specified company in the year and month of a given filing period.
+     * 
+     * This API is available by invitation only.
+     * A "filing period" is the year and month of the date of the latest customer transaction allowed to be reported on a filing,
+     * based on filing frequency of filing.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * 
+     * @param companyId The ID of the company that owns the filings.
+     * @param year The year of the filing period.
+     * @param month The two digit month of the filing period.
+     * @return String
+     */
+    public Future<String> getFilingAttachmentsAsync(Integer companyId, Short year, Byte month) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/attachments");
+        path.applyField("companyId", companyId);
+        path.applyField("year", year);
+        path.applyField("month", month);
+        return this.threadPool.submit((RestCall<String>)restCallFactory.createRestCall("get", path, null, new TypeToken<String>(){}));
+    }
+
+    /**
+     * Retrieve a single trace file for a company filing period
+     * 
+     * This API is available by invitation only.
+     * A "filing period" is the year and month of the date of the latest customer transaction allowed to be reported on a filing,
+     * based on filing frequency of filing.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * 
+     * @param companyId The ID of the company that owns the filings.
+     * @param year The year of the filing period.
+     * @param month The two digit month of the filing period.
+     * @return String
+     */
+    public String getFilingAttachmentsTraceFile(Integer companyId, Short year, Byte month) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/attachments/tracefile");
+        path.applyField("companyId", companyId);
+        path.applyField("year", year);
+        path.applyField("month", month);
+        return ((RestCall<String>)restCallFactory.createRestCall("get", path, null, new TypeToken<String>(){})).call();
+    }
+
+    /**
+     * Retrieve a single trace file for a company filing period
+     * 
+     * This API is available by invitation only.
+     * A "filing period" is the year and month of the date of the latest customer transaction allowed to be reported on a filing,
+     * based on filing frequency of filing.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * 
+     * @param companyId The ID of the company that owns the filings.
+     * @param year The year of the filing period.
+     * @param month The two digit month of the filing period.
+     * @return String
+     */
+    public Future<String> getFilingAttachmentsTraceFileAsync(Integer companyId, Short year, Byte month) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/attachments/tracefile");
+        path.applyField("companyId", companyId);
+        path.applyField("year", year);
+        path.applyField("month", month);
+        return this.threadPool.submit((RestCall<String>)restCallFactory.createRestCall("get", path, null, new TypeToken<String>(){}));
+    }
+
+    /**
+     * Retrieve a filing for the specified company and id.
+     * 
+     * This API is available by invitation only.
+     * A "filing period" is the year and month of the date of the latest customer transaction allowed to be reported on a filing,
+     * based on filing frequency of filing.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * 
+     * @param companyId The ID of the company that owns the filings.
+     * @param id The id of the filing return your retrieving
+     * @param details Indicates if you would like the credit details returned
+     * @return FilingReturnModel
+     */
+    public FilingReturnModel getFilingReturn(Integer companyId, Integer id, Boolean details) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/returns/{id}");
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
+        path.addQuery("details", details);
+        return ((RestCall<FilingReturnModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<FilingReturnModel>(){})).call();
+    }
+
+    /**
+     * Retrieve a filing for the specified company and id.
+     * 
+     * This API is available by invitation only.
+     * A "filing period" is the year and month of the date of the latest customer transaction allowed to be reported on a filing,
+     * based on filing frequency of filing.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * 
+     * @param companyId The ID of the company that owns the filings.
+     * @param id The id of the filing return your retrieving
+     * @param details Indicates if you would like the credit details returned
+     * @return FilingReturnModel
+     */
+    public Future<FilingReturnModel> getFilingReturnAsync(Integer companyId, Integer id, Boolean details) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/returns/{id}");
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
+        path.addQuery("details", details);
+        return this.threadPool.submit((RestCall<FilingReturnModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<FilingReturnModel>(){}));
+    }
+
+    /**
+     * Retrieve a list of filings for the specified company in the year and month of a given filing period.
+     * 
+     * This API is available by invitation only.
+     * A "filing period" is the year and month of the date of the latest customer transaction allowed to be reported on a filing,
+     * based on filing frequency of filing.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * 
+     * @param companyId The ID of the company that owns the filings.
+     * @param year The year of the filing period.
+     * @param month The two digit month of the filing period.
+     * @return FilingModelFetchResult
+     */
+    public FilingModelFetchResult getFilings(Integer companyId, Short year, Byte month) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}");
+        path.applyField("companyId", companyId);
+        path.applyField("year", year);
+        path.applyField("month", month);
+        return ((RestCall<FilingModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<FilingModelFetchResult>(){})).call();
+    }
+
+    /**
+     * Retrieve a list of filings for the specified company in the year and month of a given filing period.
+     * 
+     * This API is available by invitation only.
+     * A "filing period" is the year and month of the date of the latest customer transaction allowed to be reported on a filing,
+     * based on filing frequency of filing.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * 
+     * @param companyId The ID of the company that owns the filings.
+     * @param year The year of the filing period.
+     * @param month The two digit month of the filing period.
+     * @return FilingModelFetchResult
+     */
+    public Future<FilingModelFetchResult> getFilingsAsync(Integer companyId, Short year, Byte month) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}");
+        path.applyField("companyId", companyId);
+        path.applyField("year", year);
+        path.applyField("month", month);
+        return this.threadPool.submit((RestCall<FilingModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<FilingModelFetchResult>(){}));
+    }
+
+    /**
+     * Retrieve a list of filings for the specified company in the given filing period and country.
+     * 
+     * This API is available by invitation only.
+     * A "filing period" is the year and month of the date of the latest customer transaction allowed to be reported on a filing,
+     * based on filing frequency of filing.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * 
+     * @param companyId The ID of the company that owns the filings.
+     * @param year The year of the filing period.
+     * @param month The two digit month of the filing period.
+     * @param country The two-character ISO-3166 code for the country.
+     * @return FilingModelFetchResult
+     */
+    public FilingModelFetchResult getFilingsByCountry(Integer companyId, Short year, Byte month, String country) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/{country}");
+        path.applyField("companyId", companyId);
+        path.applyField("year", year);
+        path.applyField("month", month);
+        path.applyField("country", country);
+        return ((RestCall<FilingModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<FilingModelFetchResult>(){})).call();
+    }
+
+    /**
+     * Retrieve a list of filings for the specified company in the given filing period and country.
+     * 
+     * This API is available by invitation only.
+     * A "filing period" is the year and month of the date of the latest customer transaction allowed to be reported on a filing,
+     * based on filing frequency of filing.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * 
+     * @param companyId The ID of the company that owns the filings.
+     * @param year The year of the filing period.
+     * @param month The two digit month of the filing period.
+     * @param country The two-character ISO-3166 code for the country.
+     * @return FilingModelFetchResult
+     */
+    public Future<FilingModelFetchResult> getFilingsByCountryAsync(Integer companyId, Short year, Byte month, String country) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/{country}");
+        path.applyField("companyId", companyId);
+        path.applyField("year", year);
+        path.applyField("month", month);
+        path.applyField("country", country);
+        return this.threadPool.submit((RestCall<FilingModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<FilingModelFetchResult>(){}));
+    }
+
+    /**
+     * Retrieve a list of filings for the specified company in the filing period, country and region.
+     * 
+     * This API is available by invitation only.
+     * A "filing period" is the year and month of the date of the latest customer transaction allowed to be reported on a filing,
+     * based on filing frequency of filing.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * 
+     * @param companyId The ID of the company that owns the filings.
+     * @param year The year of the filing period.
+     * @param month The two digit month of the filing period.
+     * @param country The two-character ISO-3166 code for the country.
+     * @param region The two or three character region code for the region.
+     * @return FilingModelFetchResult
+     */
+    public FilingModelFetchResult getFilingsByCountryRegion(Integer companyId, Short year, Byte month, String country, String region) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/{country}/{region}");
+        path.applyField("companyId", companyId);
+        path.applyField("year", year);
+        path.applyField("month", month);
+        path.applyField("country", country);
+        path.applyField("region", region);
+        return ((RestCall<FilingModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<FilingModelFetchResult>(){})).call();
+    }
+
+    /**
+     * Retrieve a list of filings for the specified company in the filing period, country and region.
+     * 
+     * This API is available by invitation only.
+     * A "filing period" is the year and month of the date of the latest customer transaction allowed to be reported on a filing,
+     * based on filing frequency of filing.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * 
+     * @param companyId The ID of the company that owns the filings.
+     * @param year The year of the filing period.
+     * @param month The two digit month of the filing period.
+     * @param country The two-character ISO-3166 code for the country.
+     * @param region The two or three character region code for the region.
+     * @return FilingModelFetchResult
+     */
+    public Future<FilingModelFetchResult> getFilingsByCountryRegionAsync(Integer companyId, Short year, Byte month, String country, String region) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/{country}/{region}");
+        path.applyField("companyId", companyId);
+        path.applyField("year", year);
+        path.applyField("month", month);
+        path.applyField("country", country);
+        path.applyField("region", region);
+        return this.threadPool.submit((RestCall<FilingModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<FilingModelFetchResult>(){}));
+    }
+
+    /**
+     * Retrieve a list of filings for the specified company in the given filing period, country, region and form.
+     * 
+     * This API is available by invitation only.
+     * A "filing period" is the year and month of the date of the latest customer transaction allowed to be reported on a filing,
+     * based on filing frequency of filing.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * 
+     * @param companyId The ID of the company that owns the filings.
+     * @param year The year of the filing period.
+     * @param month The two digit month of the filing period.
+     * @param country The two-character ISO-3166 code for the country.
+     * @param region The two or three character region code for the region.
+     * @param formCode The unique code of the form.
+     * @return FilingModelFetchResult
+     */
+    public FilingModelFetchResult getFilingsByReturnName(Integer companyId, Short year, Byte month, String country, String region, String formCode) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/{country}/{region}/{formCode}");
+        path.applyField("companyId", companyId);
+        path.applyField("year", year);
+        path.applyField("month", month);
+        path.applyField("country", country);
+        path.applyField("region", region);
+        path.applyField("formCode", formCode);
+        return ((RestCall<FilingModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<FilingModelFetchResult>(){})).call();
+    }
+
+    /**
+     * Retrieve a list of filings for the specified company in the given filing period, country, region and form.
+     * 
+     * This API is available by invitation only.
+     * A "filing period" is the year and month of the date of the latest customer transaction allowed to be reported on a filing,
+     * based on filing frequency of filing.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * 
+     * @param companyId The ID of the company that owns the filings.
+     * @param year The year of the filing period.
+     * @param month The two digit month of the filing period.
+     * @param country The two-character ISO-3166 code for the country.
+     * @param region The two or three character region code for the region.
+     * @param formCode The unique code of the form.
+     * @return FilingModelFetchResult
+     */
+    public Future<FilingModelFetchResult> getFilingsByReturnNameAsync(Integer companyId, Short year, Byte month, String country, String region, String formCode) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/{country}/{region}/{formCode}");
+        path.applyField("companyId", companyId);
+        path.applyField("year", year);
+        path.applyField("month", month);
+        path.applyField("country", country);
+        path.applyField("region", region);
+        path.applyField("formCode", formCode);
+        return this.threadPool.submit((RestCall<FilingModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<FilingModelFetchResult>(){}));
+    }
+
+    /**
+     * Retrieve a list of filings for the specified company in the year and month of a given filing period.
+This gets the basic information from the filings and doesn't include anything extra.
+     * 
+     * 
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * 
+     * @param companyId The ID of the company that owns these batches
+     * @param endPeriodMonth The month of the period you are trying to retrieve
+     * @param endPeriodYear The year of the period you are trying to retrieve
+     * @param frequency The frequency of the return you are trying to retrieve (See FilingFrequencyId::* for a list of allowable values)
+     * @param status The status of the return(s) you are trying to retrieve (See FilingStatusId::* for a list of allowable values)
+     * @param country The country of the return(s) you are trying to retrieve
+     * @param region The region of the return(s) you are trying to retrieve
+     * @param filingCalendarId The filing calendar id of the return you are trying to retrieve
+     * @param taxformCode The unique tax form code of the form.
+     * @return FilingReturnModelBasicFetchResult
+     */
+    public FilingReturnModelBasicFetchResult getFilingsReturns(Integer companyId, Integer endPeriodMonth, Integer endPeriodYear, FilingFrequencyId frequency, FilingStatusId status, String country, String region, Long filingCalendarId, String taxformCode) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/returns");
+        path.applyField("companyId", companyId);
+        path.addQuery("endPeriodMonth", endPeriodMonth);
+        path.addQuery("endPeriodYear", endPeriodYear);
+        path.addQuery("frequency", frequency);
+        path.addQuery("status", status);
+        path.addQuery("country", country);
+        path.addQuery("region", region);
+        path.addQuery("filingCalendarId", filingCalendarId);
+        path.addQuery("taxformCode", taxformCode);
+        return ((RestCall<FilingReturnModelBasicFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<FilingReturnModelBasicFetchResult>(){})).call();
+    }
+
+    /**
+     * Retrieve a list of filings for the specified company in the year and month of a given filing period.
+This gets the basic information from the filings and doesn't include anything extra.
+     * 
+     * 
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * 
+     * @param companyId The ID of the company that owns these batches
+     * @param endPeriodMonth The month of the period you are trying to retrieve
+     * @param endPeriodYear The year of the period you are trying to retrieve
+     * @param frequency The frequency of the return you are trying to retrieve (See FilingFrequencyId::* for a list of allowable values)
+     * @param status The status of the return(s) you are trying to retrieve (See FilingStatusId::* for a list of allowable values)
+     * @param country The country of the return(s) you are trying to retrieve
+     * @param region The region of the return(s) you are trying to retrieve
+     * @param filingCalendarId The filing calendar id of the return you are trying to retrieve
+     * @param taxformCode The unique tax form code of the form.
+     * @return FilingReturnModelBasicFetchResult
+     */
+    public Future<FilingReturnModelBasicFetchResult> getFilingsReturnsAsync(Integer companyId, Integer endPeriodMonth, Integer endPeriodYear, FilingFrequencyId frequency, FilingStatusId status, String country, String region, Long filingCalendarId, String taxformCode) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/returns");
+        path.applyField("companyId", companyId);
+        path.addQuery("endPeriodMonth", endPeriodMonth);
+        path.addQuery("endPeriodYear", endPeriodYear);
+        path.addQuery("frequency", frequency);
+        path.addQuery("status", status);
+        path.addQuery("country", country);
+        path.addQuery("region", region);
+        path.addQuery("filingCalendarId", filingCalendarId);
+        path.addQuery("taxformCode", taxformCode);
+        return this.threadPool.submit((RestCall<FilingReturnModelBasicFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<FilingReturnModelBasicFetchResult>(){}));
+    }
+
+    /**
+     * Retrieve a list of filings for the specified company in the year and month of a given filing period.
+     * 
+     * This API is available by invitation only.
+     * A "filing period" is the year and month of the date of the latest customer transaction allowed to be reported on a filing,
+     * based on filing frequency of filing.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * 
+     * @param companyId The ID of the company that owns the filings.
+     * @param year The year of the filing period.
+     * @param month The two digit month of the filing period.
+     * @param country The two-character ISO-3166 code for the country.
+     * @param region The two or three character region code for the region.
+     * @param formCode The unique code of the form.
+     * @return MultiTaxFilingModelFetchResult
+     */
+    public MultiTaxFilingModelFetchResult getTaxFilings(Integer companyId, Integer year, Integer month, String country, String region, String formCode) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings");
+        path.applyField("companyId", companyId);
+        path.addQuery("year", year);
+        path.addQuery("month", month);
+        path.addQuery("country", country);
+        path.addQuery("region", region);
+        path.addQuery("formCode", formCode);
+        return ((RestCall<MultiTaxFilingModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<MultiTaxFilingModelFetchResult>(){})).call();
+    }
+
+    /**
+     * Retrieve a list of filings for the specified company in the year and month of a given filing period.
+     * 
+     * This API is available by invitation only.
+     * A "filing period" is the year and month of the date of the latest customer transaction allowed to be reported on a filing,
+     * based on filing frequency of filing.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * 
+     * @param companyId The ID of the company that owns the filings.
+     * @param year The year of the filing period.
+     * @param month The two digit month of the filing period.
+     * @param country The two-character ISO-3166 code for the country.
+     * @param region The two or three character region code for the region.
+     * @param formCode The unique code of the form.
+     * @return MultiTaxFilingModelFetchResult
+     */
+    public Future<MultiTaxFilingModelFetchResult> getTaxFilingsAsync(Integer companyId, Integer year, Integer month, String country, String region, String formCode) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings");
+        path.applyField("companyId", companyId);
+        path.addQuery("year", year);
+        path.addQuery("month", month);
+        path.addQuery("country", country);
+        path.addQuery("region", region);
+        path.addQuery("formCode", formCode);
+        return this.threadPool.submit((RestCall<MultiTaxFilingModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<MultiTaxFilingModelFetchResult>(){}));
+    }
+
+    /**
+     * Rebuild a set of filings for the specified company in the given filing period.
+     * 
+     * This API is available by invitation only.
+     * Rebuilding a return means re-creating or updating the amounts to be filed (worksheet) for a filing.
+     * Rebuilding has to be done whenever a customer adds transactions to a filing.
+     * A "filing period" is the year and month of the date of the latest customer transaction allowed to be reported on a filing,
+     * based on filing frequency of filing.
+     * This API requires filing to be unapproved.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, CSPTester, FirmUser, SSTAdmin, TechnicalSupportAdmin.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * 
+     * @param companyId The ID of the company that owns the filings.
+     * @param year The year of the filing period to be rebuilt.
+     * @param month The month of the filing period to be rebuilt.
+     * @param model The rebuild request you wish to execute.
+     * @return FilingModelFetchResult
+     */
+    public FilingModelFetchResult rebuildFilings(Integer companyId, Short year, Byte month, RebuildFilingsModel model) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/rebuild");
+        path.applyField("companyId", companyId);
+        path.applyField("year", year);
+        path.applyField("month", month);
+        return ((RestCall<FilingModelFetchResult>)restCallFactory.createRestCall("post", path, model, new TypeToken<FilingModelFetchResult>(){})).call();
+    }
+
+    /**
+     * Rebuild a set of filings for the specified company in the given filing period.
+     * 
+     * This API is available by invitation only.
+     * Rebuilding a return means re-creating or updating the amounts to be filed (worksheet) for a filing.
+     * Rebuilding has to be done whenever a customer adds transactions to a filing.
+     * A "filing period" is the year and month of the date of the latest customer transaction allowed to be reported on a filing,
+     * based on filing frequency of filing.
+     * This API requires filing to be unapproved.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, CSPTester, FirmUser, SSTAdmin, TechnicalSupportAdmin.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * 
+     * @param companyId The ID of the company that owns the filings.
+     * @param year The year of the filing period to be rebuilt.
+     * @param month The month of the filing period to be rebuilt.
+     * @param model The rebuild request you wish to execute.
+     * @return FilingModelFetchResult
+     */
+    public Future<FilingModelFetchResult> rebuildFilingsAsync(Integer companyId, Short year, Byte month, RebuildFilingsModel model) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/rebuild");
+        path.applyField("companyId", companyId);
+        path.applyField("year", year);
+        path.applyField("month", month);
+        return this.threadPool.submit((RestCall<FilingModelFetchResult>)restCallFactory.createRestCall("post", path, model, new TypeToken<FilingModelFetchResult>(){}));
+    }
+
+    /**
+     * Rebuild a set of filings for the specified company in the given filing period and country.
+     * 
+     * This API is available by invitation only.
+     * Rebuilding a return means re-creating or updating the amounts to be filed (worksheet) for a filing.
+     * Rebuilding has to be done whenever a customer adds transactions to a filing.
+     * A "filing period" is the year and month of the date of the latest customer transaction allowed to be reported on a filing,
+     * based on filing frequency of filing.
+     * This API requires filing to be unapproved.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, CSPTester, FirmUser, SSTAdmin, TechnicalSupportAdmin.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * 
+     * @param companyId The ID of the company that owns the filings.
+     * @param year The year of the filing period to be rebuilt.
+     * @param month The month of the filing period to be rebuilt.
+     * @param country The two-character ISO-3166 code for the country.
+     * @param model The rebuild request you wish to execute.
+     * @return FilingModelFetchResult
+     */
+    public FilingModelFetchResult rebuildFilingsByCountry(Integer companyId, Short year, Byte month, String country, RebuildFilingsModel model) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/{country}/rebuild");
+        path.applyField("companyId", companyId);
+        path.applyField("year", year);
+        path.applyField("month", month);
+        path.applyField("country", country);
+        return ((RestCall<FilingModelFetchResult>)restCallFactory.createRestCall("post", path, model, new TypeToken<FilingModelFetchResult>(){})).call();
+    }
+
+    /**
+     * Rebuild a set of filings for the specified company in the given filing period and country.
+     * 
+     * This API is available by invitation only.
+     * Rebuilding a return means re-creating or updating the amounts to be filed (worksheet) for a filing.
+     * Rebuilding has to be done whenever a customer adds transactions to a filing.
+     * A "filing period" is the year and month of the date of the latest customer transaction allowed to be reported on a filing,
+     * based on filing frequency of filing.
+     * This API requires filing to be unapproved.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, CSPTester, FirmUser, SSTAdmin, TechnicalSupportAdmin.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * 
+     * @param companyId The ID of the company that owns the filings.
+     * @param year The year of the filing period to be rebuilt.
+     * @param month The month of the filing period to be rebuilt.
+     * @param country The two-character ISO-3166 code for the country.
+     * @param model The rebuild request you wish to execute.
+     * @return FilingModelFetchResult
+     */
+    public Future<FilingModelFetchResult> rebuildFilingsByCountryAsync(Integer companyId, Short year, Byte month, String country, RebuildFilingsModel model) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/{country}/rebuild");
+        path.applyField("companyId", companyId);
+        path.applyField("year", year);
+        path.applyField("month", month);
+        path.applyField("country", country);
+        return this.threadPool.submit((RestCall<FilingModelFetchResult>)restCallFactory.createRestCall("post", path, model, new TypeToken<FilingModelFetchResult>(){}));
+    }
+
+    /**
+     * Rebuild a set of filings for the specified company in the given filing period, country and region.
+     * 
+     * This API is available by invitation only.audit.CheckAuthorizationReturns(null, companyId);
+     * Rebuilding a return means re-creating or updating the amounts to be filed for a filing.
+     * Rebuilding has to be done whenever a customer adds transactions to a filing.
+     * A "filing period" is the year and month of the date of the latest customer transaction allowed to be reported on a filing,
+     * based on filing frequency of filing.
+     * This API requires filing to be unapproved.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, CSPTester, FirmUser, SSTAdmin, TechnicalSupportAdmin.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * 
+     * @param companyId The ID of the company that owns the filings.
+     * @param year The year of the filing period to be rebuilt.
+     * @param month The month of the filing period to be rebuilt.
+     * @param country The two-character ISO-3166 code for the country.
+     * @param region The two or three character region code for the region.
+     * @param model The rebuild request you wish to execute.
+     * @return FilingModelFetchResult
+     */
+    public FilingModelFetchResult rebuildFilingsByCountryRegion(Integer companyId, Short year, Byte month, String country, String region, RebuildFilingsModel model) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/{country}/{region}/rebuild");
+        path.applyField("companyId", companyId);
+        path.applyField("year", year);
+        path.applyField("month", month);
+        path.applyField("country", country);
+        path.applyField("region", region);
+        return ((RestCall<FilingModelFetchResult>)restCallFactory.createRestCall("post", path, model, new TypeToken<FilingModelFetchResult>(){})).call();
+    }
+
+    /**
+     * Rebuild a set of filings for the specified company in the given filing period, country and region.
+     * 
+     * This API is available by invitation only.audit.CheckAuthorizationReturns(null, companyId);
+     * Rebuilding a return means re-creating or updating the amounts to be filed for a filing.
+     * Rebuilding has to be done whenever a customer adds transactions to a filing.
+     * A "filing period" is the year and month of the date of the latest customer transaction allowed to be reported on a filing,
+     * based on filing frequency of filing.
+     * This API requires filing to be unapproved.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, CSPTester, FirmUser, SSTAdmin, TechnicalSupportAdmin.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * 
+     * @param companyId The ID of the company that owns the filings.
+     * @param year The year of the filing period to be rebuilt.
+     * @param month The month of the filing period to be rebuilt.
+     * @param country The two-character ISO-3166 code for the country.
+     * @param region The two or three character region code for the region.
+     * @param model The rebuild request you wish to execute.
+     * @return FilingModelFetchResult
+     */
+    public Future<FilingModelFetchResult> rebuildFilingsByCountryRegionAsync(Integer companyId, Short year, Byte month, String country, String region, RebuildFilingsModel model) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/{year}/{month}/{country}/{region}/rebuild");
+        path.applyField("companyId", companyId);
+        path.applyField("year", year);
+        path.applyField("month", month);
+        path.applyField("country", country);
+        path.applyField("region", region);
+        return this.threadPool.submit((RestCall<FilingModelFetchResult>)restCallFactory.createRestCall("post", path, model, new TypeToken<FilingModelFetchResult>(){}));
+    }
+
+    /**
+     * Edit an adjustment for a given filing.
+     * 
+     * This API is available by invitation only.
+     * An "Adjustment" is usually an increase or decrease to customer funding to Avalara,
+     * such as early filer discount amounts that are refunded to the customer, or efile fees from websites.
+     * Sometimes may be a manual change in tax liability similar to an augmentation.
+     * This API modifies an adjustment for an existing tax filing.
+     * This API can only be used when the filing has not yet been approved.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, CSPTester, FirmUser, SSTAdmin, TechnicalSupportAdmin.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * 
+     * @param companyId The ID of the company that owns the filing being adjusted.
+     * @param id The ID of the adjustment being edited.
+     * @param model The updated Adjustment.
+     * @return FilingAdjustmentModel
+     */
+    public FilingAdjustmentModel updateReturnAdjustment(Integer companyId, Long id, FilingAdjustmentModel model) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/adjust/{id}");
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
+        return ((RestCall<FilingAdjustmentModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<FilingAdjustmentModel>(){})).call();
+    }
+
+    /**
+     * Edit an adjustment for a given filing.
+     * 
+     * This API is available by invitation only.
+     * An "Adjustment" is usually an increase or decrease to customer funding to Avalara,
+     * such as early filer discount amounts that are refunded to the customer, or efile fees from websites.
+     * Sometimes may be a manual change in tax liability similar to an augmentation.
+     * This API modifies an adjustment for an existing tax filing.
+     * This API can only be used when the filing has not yet been approved.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, CSPTester, FirmUser, SSTAdmin, TechnicalSupportAdmin.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * 
+     * @param companyId The ID of the company that owns the filing being adjusted.
+     * @param id The ID of the adjustment being edited.
+     * @param model The updated Adjustment.
+     * @return FilingAdjustmentModel
+     */
+    public Future<FilingAdjustmentModel> updateReturnAdjustmentAsync(Integer companyId, Long id, FilingAdjustmentModel model) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/adjust/{id}");
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
+        return this.threadPool.submit((RestCall<FilingAdjustmentModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<FilingAdjustmentModel>(){}));
+    }
+
+    /**
+     * Edit an augmentation for a given filing.
+     * 
+     * This API is available by invitation only.
+     * An "Augmentation" is a manually added increase or decrease in tax liability, by either customer or Avalara
+     * usually due to customer wanting to report tax Avatax does not support, e.g. bad debts, rental tax.
+     * This API modifies an augmentation for an existing tax filing.
+     * This API can only be used when the filing has not been approved.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, CSPTester, FirmUser, SSTAdmin, TechnicalSupportAdmin.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * 
+     * @param companyId The ID of the company that owns the filing being changed.
+     * @param id The ID of the augmentation being edited.
+     * @param model The updated Augmentation.
+     * @return FilingModel
+     */
+    public FilingModel updateReturnAugmentation(Integer companyId, Long id, FilingAugmentationModel model) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/augment/{id}");
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
+        return ((RestCall<FilingModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<FilingModel>(){})).call();
+    }
+
+    /**
+     * Edit an augmentation for a given filing.
+     * 
+     * This API is available by invitation only.
+     * An "Augmentation" is a manually added increase or decrease in tax liability, by either customer or Avalara
+     * usually due to customer wanting to report tax Avatax does not support, e.g. bad debts, rental tax.
+     * This API modifies an augmentation for an existing tax filing.
+     * This API can only be used when the filing has not been approved.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, CSPTester, FirmUser, SSTAdmin, TechnicalSupportAdmin.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * 
+     * @param companyId The ID of the company that owns the filing being changed.
+     * @param id The ID of the augmentation being edited.
+     * @param model The updated Augmentation.
+     * @return FilingModel
+     */
+    public Future<FilingModel> updateReturnAugmentationAsync(Integer companyId, Long id, FilingAugmentationModel model) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/augment/{id}");
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
+        return this.threadPool.submit((RestCall<FilingModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<FilingModel>(){}));
+    }
+
+    /**
+     * Edit an payment for a given filing.
+     * 
+     * This API is available by invitation only.
+     * An "Payment" is usually an increase or decrease to customer funding to Avalara,
+     * such as early filer discount amounts that are refunded to the customer, or efile fees from websites.
+     * Sometimes may be a manual change in tax liability similar to an augmentation.
+     * This API modifies an payment for an existing tax filing.
+     * This API can only be used when the filing has not yet been approved.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, CSPTester, FirmUser, SSTAdmin, TechnicalSupportAdmin.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * 
+     * @param companyId The ID of the company that owns the filing being adjusted.
+     * @param id The ID of the payment being edited.
+     * @param model The updated Payment.
+     * @return FilingPaymentModel
+     */
+    public FilingPaymentModel updateReturnPayment(Integer companyId, Long id, FilingPaymentModel model) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/payment/{id}");
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
+        return ((RestCall<FilingPaymentModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<FilingPaymentModel>(){})).call();
+    }
+
+    /**
+     * Edit an payment for a given filing.
+     * 
+     * This API is available by invitation only.
+     * An "Payment" is usually an increase or decrease to customer funding to Avalara,
+     * such as early filer discount amounts that are refunded to the customer, or efile fees from websites.
+     * Sometimes may be a manual change in tax liability similar to an augmentation.
+     * This API modifies an payment for an existing tax filing.
+     * This API can only be used when the filing has not yet been approved.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, CSPTester, FirmUser, SSTAdmin, TechnicalSupportAdmin.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * 
+     * @param companyId The ID of the company that owns the filing being adjusted.
+     * @param id The ID of the payment being edited.
+     * @param model The updated Payment.
+     * @return FilingPaymentModel
+     */
+    public Future<FilingPaymentModel> updateReturnPaymentAsync(Integer companyId, Long id, FilingPaymentModel model) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filings/payment/{id}");
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
+        return this.threadPool.submit((RestCall<FilingPaymentModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<FilingPaymentModel>(){}));
     }
 
     /**
@@ -9296,12 +14122,12 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* firmAccountName, clientAccountName
-     * @return FetchResult<FirmClientLinkageOutputModel>
+     * @return FirmClientLinkageOutputModelFetchResult
      */
-    public FetchResult<FirmClientLinkageOutputModel> listFirmClientLinkage(String filter) throws Exception {
+    public FirmClientLinkageOutputModelFetchResult listFirmClientLinkage(String filter) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/firmclientlinkages");
         path.addQuery("$filter", filter);
-        return ((RestCall<FetchResult<FirmClientLinkageOutputModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<FirmClientLinkageOutputModel>>(){})).call();
+        return ((RestCall<FirmClientLinkageOutputModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<FirmClientLinkageOutputModelFetchResult>(){})).call();
     }
 
     /**
@@ -9314,12 +14140,12 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* firmAccountName, clientAccountName
-     * @return FetchResult<FirmClientLinkageOutputModel>
+     * @return FirmClientLinkageOutputModelFetchResult
      */
-    public Future<FetchResult<FirmClientLinkageOutputModel>> listFirmClientLinkageAsync(String filter) {
+    public Future<FirmClientLinkageOutputModelFetchResult> listFirmClientLinkageAsync(String filter) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/firmclientlinkages");
         path.addQuery("$filter", filter);
-        return this.threadPool.submit((RestCall<FetchResult<FirmClientLinkageOutputModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<FirmClientLinkageOutputModel>>(){}));
+        return this.threadPool.submit((RestCall<FirmClientLinkageOutputModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<FirmClientLinkageOutputModelFetchResult>(){}));
     }
 
     /**
@@ -10398,9 +15224,9 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<ItemClassificationOutputModel>
+     * @return ItemClassificationOutputModelFetchResult
      */
-    public FetchResult<ItemClassificationOutputModel> listItemClassifications(Integer companyId, Long itemId, String filter, Integer top, Integer skip, String orderBy) throws Exception {
+    public ItemClassificationOutputModelFetchResult listItemClassifications(Integer companyId, Long itemId, String filter, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/items/{itemId}/classifications");
         path.applyField("companyId", companyId);
         path.applyField("itemId", itemId);
@@ -10408,7 +15234,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<ItemClassificationOutputModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ItemClassificationOutputModel>>(){})).call();
+        return ((RestCall<ItemClassificationOutputModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<ItemClassificationOutputModelFetchResult>(){})).call();
     }
 
     /**
@@ -10433,9 +15259,9 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<ItemClassificationOutputModel>
+     * @return ItemClassificationOutputModelFetchResult
      */
-    public Future<FetchResult<ItemClassificationOutputModel>> listItemClassificationsAsync(Integer companyId, Long itemId, String filter, Integer top, Integer skip, String orderBy) {
+    public Future<ItemClassificationOutputModelFetchResult> listItemClassificationsAsync(Integer companyId, Long itemId, String filter, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/items/{itemId}/classifications");
         path.applyField("companyId", companyId);
         path.applyField("itemId", itemId);
@@ -10443,7 +15269,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<ItemClassificationOutputModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ItemClassificationOutputModel>>(){}));
+        return this.threadPool.submit((RestCall<ItemClassificationOutputModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<ItemClassificationOutputModelFetchResult>(){}));
     }
 
     /**
@@ -10470,9 +15296,9 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<ItemParameterModel>
+     * @return ItemParameterModelFetchResult
      */
-    public FetchResult<ItemParameterModel> listItemParameters(Integer companyId, Long itemId, String filter, Integer top, Integer skip, String orderBy) throws Exception {
+    public ItemParameterModelFetchResult listItemParameters(Integer companyId, Long itemId, String filter, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/items/{itemId}/parameters");
         path.applyField("companyId", companyId);
         path.applyField("itemId", itemId);
@@ -10480,7 +15306,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<ItemParameterModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ItemParameterModel>>(){})).call();
+        return ((RestCall<ItemParameterModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<ItemParameterModelFetchResult>(){})).call();
     }
 
     /**
@@ -10507,9 +15333,9 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<ItemParameterModel>
+     * @return ItemParameterModelFetchResult
      */
-    public Future<FetchResult<ItemParameterModel>> listItemParametersAsync(Integer companyId, Long itemId, String filter, Integer top, Integer skip, String orderBy) {
+    public Future<ItemParameterModelFetchResult> listItemParametersAsync(Integer companyId, Long itemId, String filter, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/items/{itemId}/parameters");
         path.applyField("companyId", companyId);
         path.applyField("itemId", itemId);
@@ -10517,7 +15343,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<ItemParameterModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ItemParameterModel>>(){}));
+        return this.threadPool.submit((RestCall<ItemParameterModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<ItemParameterModelFetchResult>(){}));
     }
 
     /**
@@ -10550,9 +15376,9 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<ItemModel>
+     * @return ItemModelFetchResult
      */
-    public FetchResult<ItemModel> listItemsByCompany(Integer companyId, String filter, String include, Integer top, Integer skip, String orderBy) throws Exception {
+    public ItemModelFetchResult listItemsByCompany(Integer companyId, String filter, String include, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/items");
         path.applyField("companyId", companyId);
         path.addQuery("$filter", filter);
@@ -10560,7 +15386,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<ItemModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ItemModel>>(){})).call();
+        return ((RestCall<ItemModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<ItemModelFetchResult>(){})).call();
     }
 
     /**
@@ -10593,9 +15419,9 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<ItemModel>
+     * @return ItemModelFetchResult
      */
-    public Future<FetchResult<ItemModel>> listItemsByCompanyAsync(Integer companyId, String filter, String include, Integer top, Integer skip, String orderBy) {
+    public Future<ItemModelFetchResult> listItemsByCompanyAsync(Integer companyId, String filter, String include, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/items");
         path.applyField("companyId", companyId);
         path.addQuery("$filter", filter);
@@ -10603,7 +15429,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<ItemModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ItemModel>>(){}));
+        return this.threadPool.submit((RestCall<ItemModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<ItemModelFetchResult>(){}));
     }
 
     /**
@@ -10630,16 +15456,16 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<ItemModel>
+     * @return ItemModelFetchResult
      */
-    public FetchResult<ItemModel> queryItems(String filter, String include, Integer top, Integer skip, String orderBy) throws Exception {
+    public ItemModelFetchResult queryItems(String filter, String include, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/items");
         path.addQuery("$filter", filter);
         path.addQuery("$include", include);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<ItemModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ItemModel>>(){})).call();
+        return ((RestCall<ItemModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<ItemModelFetchResult>(){})).call();
     }
 
     /**
@@ -10666,16 +15492,16 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<ItemModel>
+     * @return ItemModelFetchResult
      */
-    public Future<FetchResult<ItemModel>> queryItemsAsync(String filter, String include, Integer top, Integer skip, String orderBy) {
+    public Future<ItemModelFetchResult> queryItemsAsync(String filter, String include, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/items");
         path.addQuery("$filter", filter);
         path.addQuery("$include", include);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<ItemModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ItemModel>>(){}));
+        return this.threadPool.submit((RestCall<ItemModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<ItemModelFetchResult>(){}));
     }
 
     /**
@@ -11079,9 +15905,9 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<JurisdictionOverrideModel>
+     * @return JurisdictionOverrideModelFetchResult
      */
-    public FetchResult<JurisdictionOverrideModel> listJurisdictionOverridesByAccount(Integer accountId, String filter, String include, Integer top, Integer skip, String orderBy) throws Exception {
+    public JurisdictionOverrideModelFetchResult listJurisdictionOverridesByAccount(Integer accountId, String filter, String include, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/jurisdictionoverrides");
         path.applyField("accountId", accountId);
         path.addQuery("$filter", filter);
@@ -11089,7 +15915,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<JurisdictionOverrideModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<JurisdictionOverrideModel>>(){})).call();
+        return ((RestCall<JurisdictionOverrideModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<JurisdictionOverrideModelFetchResult>(){})).call();
     }
 
     /**
@@ -11115,9 +15941,9 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<JurisdictionOverrideModel>
+     * @return JurisdictionOverrideModelFetchResult
      */
-    public Future<FetchResult<JurisdictionOverrideModel>> listJurisdictionOverridesByAccountAsync(Integer accountId, String filter, String include, Integer top, Integer skip, String orderBy) {
+    public Future<JurisdictionOverrideModelFetchResult> listJurisdictionOverridesByAccountAsync(Integer accountId, String filter, String include, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/jurisdictionoverrides");
         path.applyField("accountId", accountId);
         path.addQuery("$filter", filter);
@@ -11125,7 +15951,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<JurisdictionOverrideModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<JurisdictionOverrideModel>>(){}));
+        return this.threadPool.submit((RestCall<JurisdictionOverrideModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<JurisdictionOverrideModelFetchResult>(){}));
     }
 
     /**
@@ -11150,16 +15976,16 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<JurisdictionOverrideModel>
+     * @return JurisdictionOverrideModelFetchResult
      */
-    public FetchResult<JurisdictionOverrideModel> queryJurisdictionOverrides(String filter, String include, Integer top, Integer skip, String orderBy) throws Exception {
+    public JurisdictionOverrideModelFetchResult queryJurisdictionOverrides(String filter, String include, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/jurisdictionoverrides");
         path.addQuery("$filter", filter);
         path.addQuery("$include", include);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<JurisdictionOverrideModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<JurisdictionOverrideModel>>(){})).call();
+        return ((RestCall<JurisdictionOverrideModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<JurisdictionOverrideModelFetchResult>(){})).call();
     }
 
     /**
@@ -11184,16 +16010,16 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<JurisdictionOverrideModel>
+     * @return JurisdictionOverrideModelFetchResult
      */
-    public Future<FetchResult<JurisdictionOverrideModel>> queryJurisdictionOverridesAsync(String filter, String include, Integer top, Integer skip, String orderBy) {
+    public Future<JurisdictionOverrideModelFetchResult> queryJurisdictionOverridesAsync(String filter, String include, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/jurisdictionoverrides");
         path.addQuery("$filter", filter);
         path.addQuery("$include", include);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<JurisdictionOverrideModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<JurisdictionOverrideModel>>(){}));
+        return this.threadPool.submit((RestCall<JurisdictionOverrideModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<JurisdictionOverrideModelFetchResult>(){}));
     }
 
     /**
@@ -11576,9 +16402,9 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<LocationParameterModel>
+     * @return LocationParameterModelFetchResult
      */
-    public FetchResult<LocationParameterModel> listLocationParameters(Integer companyId, Integer locationId, String filter, Integer top, Integer skip, String orderBy) throws Exception {
+    public LocationParameterModelFetchResult listLocationParameters(Integer companyId, Integer locationId, String filter, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/locations/{locationId}/parameters");
         path.applyField("companyId", companyId);
         path.applyField("locationId", locationId);
@@ -11586,7 +16412,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<LocationParameterModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<LocationParameterModel>>(){})).call();
+        return ((RestCall<LocationParameterModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<LocationParameterModelFetchResult>(){})).call();
     }
 
     /**
@@ -11613,9 +16439,9 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<LocationParameterModel>
+     * @return LocationParameterModelFetchResult
      */
-    public Future<FetchResult<LocationParameterModel>> listLocationParametersAsync(Integer companyId, Integer locationId, String filter, Integer top, Integer skip, String orderBy) {
+    public Future<LocationParameterModelFetchResult> listLocationParametersAsync(Integer companyId, Integer locationId, String filter, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/locations/{locationId}/parameters");
         path.applyField("companyId", companyId);
         path.applyField("locationId", locationId);
@@ -11623,7 +16449,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<LocationParameterModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<LocationParameterModel>>(){}));
+        return this.threadPool.submit((RestCall<LocationParameterModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<LocationParameterModelFetchResult>(){}));
     }
 
     /**
@@ -11652,9 +16478,9 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<LocationModel>
+     * @return LocationModelFetchResult
      */
-    public FetchResult<LocationModel> listLocationsByCompany(Integer companyId, String filter, String include, Integer top, Integer skip, String orderBy) throws Exception {
+    public LocationModelFetchResult listLocationsByCompany(Integer companyId, String filter, String include, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/locations");
         path.applyField("companyId", companyId);
         path.addQuery("$filter", filter);
@@ -11662,7 +16488,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<LocationModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<LocationModel>>(){})).call();
+        return ((RestCall<LocationModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<LocationModelFetchResult>(){})).call();
     }
 
     /**
@@ -11691,9 +16517,9 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<LocationModel>
+     * @return LocationModelFetchResult
      */
-    public Future<FetchResult<LocationModel>> listLocationsByCompanyAsync(Integer companyId, String filter, String include, Integer top, Integer skip, String orderBy) {
+    public Future<LocationModelFetchResult> listLocationsByCompanyAsync(Integer companyId, String filter, String include, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/locations");
         path.applyField("companyId", companyId);
         path.addQuery("$filter", filter);
@@ -11701,7 +16527,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<LocationModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<LocationModel>>(){}));
+        return this.threadPool.submit((RestCall<LocationModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<LocationModelFetchResult>(){}));
     }
 
     /**
@@ -11730,16 +16556,16 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<LocationModel>
+     * @return LocationModelFetchResult
      */
-    public FetchResult<LocationModel> queryLocations(String filter, String include, Integer top, Integer skip, String orderBy) throws Exception {
+    public LocationModelFetchResult queryLocations(String filter, String include, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/locations");
         path.addQuery("$filter", filter);
         path.addQuery("$include", include);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<LocationModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<LocationModel>>(){})).call();
+        return ((RestCall<LocationModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<LocationModelFetchResult>(){})).call();
     }
 
     /**
@@ -11768,16 +16594,16 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<LocationModel>
+     * @return LocationModelFetchResult
      */
-    public Future<FetchResult<LocationModel>> queryLocationsAsync(String filter, String include, Integer top, Integer skip, String orderBy) {
+    public Future<LocationModelFetchResult> queryLocationsAsync(String filter, String include, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/locations");
         path.addQuery("$filter", filter);
         path.addQuery("$include", include);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<LocationModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<LocationModel>>(){}));
+        return this.threadPool.submit((RestCall<LocationModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<LocationModelFetchResult>(){}));
     }
 
     /**
@@ -11882,6 +16708,62 @@ public class AvaTaxClient {
         path.applyField("locationId", locationId);
         path.applyField("id", id);
         return this.threadPool.submit((RestCall<LocationParameterModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<LocationParameterModel>(){}));
+    }
+
+    /**
+     * Update a location's remittance
+     * 
+     * Use when wanting to change the remittance of a company location of type Marketplace. The new Effective Date should be at least a day later than
+     * the existing Effective Date but no greater than the existing End Date. This API will expire the existing location by
+     * setting end date with the new effective date minus one day. Then create a new location with the same parameters except for the dates
+     * and the remittance type.
+     *             
+     * NOTES: Only to alternate between SellerRemitsTax and MarketPlaceRemitsTax address categories for location with address type MarketPlace.
+     * If new Effective Date is greater than the existing End Date, in other words the new date range isn't overlapping with the existing date range,
+     * please create a new location instead.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPAdmin, CSPTester, FirmAdmin, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
+     * 
+     * @param companyId The ID of the company that owns this location
+     * @param id The primary key of this location
+     * @param model The new remittance to change the existing location's to, as well as new effective and end date.
+     * @return LocationModel
+     */
+    public LocationModel updateLocationRemittance(Integer companyId, Integer id, UpdateCompanyLocationRemittanceModel model) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/locations/{id}/remittance");
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
+        return ((RestCall<LocationModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<LocationModel>(){})).call();
+    }
+
+    /**
+     * Update a location's remittance
+     * 
+     * Use when wanting to change the remittance of a company location of type Marketplace. The new Effective Date should be at least a day later than
+     * the existing Effective Date but no greater than the existing End Date. This API will expire the existing location by
+     * setting end date with the new effective date minus one day. Then create a new location with the same parameters except for the dates
+     * and the remittance type.
+     *             
+     * NOTES: Only to alternate between SellerRemitsTax and MarketPlaceRemitsTax address categories for location with address type MarketPlace.
+     * If new Effective Date is greater than the existing End Date, in other words the new date range isn't overlapping with the existing date range,
+     * please create a new location instead.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPAdmin, CSPTester, FirmAdmin, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
+     * 
+     * @param companyId The ID of the company that owns this location
+     * @param id The primary key of this location
+     * @param model The new remittance to change the existing location's to, as well as new effective and end date.
+     * @return LocationModel
+     */
+    public Future<LocationModel> updateLocationRemittanceAsync(Integer companyId, Integer id, UpdateCompanyLocationRemittanceModel model) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/locations/{id}/remittance");
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
+        return this.threadPool.submit((RestCall<LocationModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<LocationModel>(){}));
     }
 
     /**
@@ -12307,8 +17189,8 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, ProStoresOperator, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
      * 
-     * @param code 
-     * @param type  (See DocumentType::* for a list of allowable values)
+     * @param code The multidocument code to retrieve
+     * @param type The transaction type to retrieve (See DocumentType::* for a list of allowable values)
      * @param include Specifies objects to include in the response after transaction is created
      * @return MultiDocumentModel
      */
@@ -12349,8 +17231,8 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, ProStoresOperator, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
      * 
-     * @param code 
-     * @param type  (See DocumentType::* for a list of allowable values)
+     * @param code The multidocument code to retrieve
+     * @param type The transaction type to retrieve (See DocumentType::* for a list of allowable values)
      * @param include Specifies objects to include in the response after transaction is created
      * @return MultiDocumentModel
      */
@@ -12501,16 +17383,16 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<MultiDocumentModel>
+     * @return MultiDocumentModelFetchResult
      */
-    public FetchResult<MultiDocumentModel> listMultiDocumentTransactions(String filter, String include, Integer top, Integer skip, String orderBy) throws Exception {
+    public MultiDocumentModelFetchResult listMultiDocumentTransactions(String filter, String include, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/transactions/multidocument");
         path.addQuery("$filter", filter);
         path.addQuery("$include", include);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<MultiDocumentModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<MultiDocumentModel>>(){})).call();
+        return ((RestCall<MultiDocumentModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<MultiDocumentModelFetchResult>(){})).call();
     }
 
     /**
@@ -12554,16 +17436,16 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<MultiDocumentModel>
+     * @return MultiDocumentModelFetchResult
      */
-    public Future<FetchResult<MultiDocumentModel>> listMultiDocumentTransactionsAsync(String filter, String include, Integer top, Integer skip, String orderBy) {
+    public Future<MultiDocumentModelFetchResult> listMultiDocumentTransactionsAsync(String filter, String include, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/transactions/multidocument");
         path.addQuery("$filter", filter);
         path.addQuery("$include", include);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<MultiDocumentModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<MultiDocumentModel>>(){}));
+        return this.threadPool.submit((RestCall<MultiDocumentModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<MultiDocumentModelFetchResult>(){}));
     }
 
     /**
@@ -13403,9 +18285,9 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<NexusModel>
+     * @return NexusModelFetchResult
      */
-    public FetchResult<NexusModel> listNexusByCompany(Integer companyId, String filter, String include, Integer top, Integer skip, String orderBy) throws Exception {
+    public NexusModelFetchResult listNexusByCompany(Integer companyId, String filter, String include, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/nexus");
         path.applyField("companyId", companyId);
         path.addQuery("$filter", filter);
@@ -13413,7 +18295,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<NexusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NexusModel>>(){})).call();
+        return ((RestCall<NexusModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<NexusModelFetchResult>(){})).call();
     }
 
     /**
@@ -13441,9 +18323,9 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<NexusModel>
+     * @return NexusModelFetchResult
      */
-    public Future<FetchResult<NexusModel>> listNexusByCompanyAsync(Integer companyId, String filter, String include, Integer top, Integer skip, String orderBy) {
+    public Future<NexusModelFetchResult> listNexusByCompanyAsync(Integer companyId, String filter, String include, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/nexus");
         path.applyField("companyId", companyId);
         path.addQuery("$filter", filter);
@@ -13451,7 +18333,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<NexusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NexusModel>>(){}));
+        return this.threadPool.submit((RestCall<NexusModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<NexusModelFetchResult>(){}));
     }
 
     /**
@@ -13477,9 +18359,9 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<NexusParameterDetailModel>
+     * @return NexusParameterDetailModelFetchResult
      */
-    public FetchResult<NexusParameterDetailModel> listNexusParameters(Integer companyId, Integer nexusId, String filter, Integer top, Integer skip, String orderBy) throws Exception {
+    public NexusParameterDetailModelFetchResult listNexusParameters(Integer companyId, Integer nexusId, String filter, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/nexus/{nexusId}/parameters");
         path.applyField("companyId", companyId);
         path.applyField("nexusId", nexusId);
@@ -13487,7 +18369,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<NexusParameterDetailModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NexusParameterDetailModel>>(){})).call();
+        return ((RestCall<NexusParameterDetailModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<NexusParameterDetailModelFetchResult>(){})).call();
     }
 
     /**
@@ -13513,9 +18395,9 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<NexusParameterDetailModel>
+     * @return NexusParameterDetailModelFetchResult
      */
-    public Future<FetchResult<NexusParameterDetailModel>> listNexusParametersAsync(Integer companyId, Integer nexusId, String filter, Integer top, Integer skip, String orderBy) {
+    public Future<NexusParameterDetailModelFetchResult> listNexusParametersAsync(Integer companyId, Integer nexusId, String filter, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/nexus/{nexusId}/parameters");
         path.applyField("companyId", companyId);
         path.applyField("nexusId", nexusId);
@@ -13523,7 +18405,59 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<NexusParameterDetailModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NexusParameterDetailModel>>(){}));
+        return this.threadPool.submit((RestCall<NexusParameterDetailModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<NexusParameterDetailModelFetchResult>(){}));
+    }
+
+    /**
+     * Summarize nexus by NexusTaxTypeGroup for this company
+     * 
+     * Provides a summary of nexus information useful for quickly displaying key information.
+     *             
+     * The concept of Nexus indicates a place where your company is legally obligated to collect and remit transactional
+     * taxes.  The legal requirements for nexus may vary per country and per jurisdiction; please seek advice from your
+     * accountant or lawyer prior to declaring nexus.
+     *             
+     * This API produces only basic information about your company's nexus declarations.  For example, it will show
+     * the number of nexus declarations of each tax type. To request more information about your company's nexus
+     * declarations, please use `QueryNexus` or `ListNexusByCompany`.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
+     * 
+     * @param companyId The ID of the company that owns these nexus objects
+     * @return NexusSummaryModel
+     */
+    public NexusSummaryModel nexusSummary(Integer companyId) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/nexus/summary");
+        path.applyField("companyId", companyId);
+        return ((RestCall<NexusSummaryModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<NexusSummaryModel>(){})).call();
+    }
+
+    /**
+     * Summarize nexus by NexusTaxTypeGroup for this company
+     * 
+     * Provides a summary of nexus information useful for quickly displaying key information.
+     *             
+     * The concept of Nexus indicates a place where your company is legally obligated to collect and remit transactional
+     * taxes.  The legal requirements for nexus may vary per country and per jurisdiction; please seek advice from your
+     * accountant or lawyer prior to declaring nexus.
+     *             
+     * This API produces only basic information about your company's nexus declarations.  For example, it will show
+     * the number of nexus declarations of each tax type. To request more information about your company's nexus
+     * declarations, please use `QueryNexus` or `ListNexusByCompany`.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
+     * 
+     * @param companyId The ID of the company that owns these nexus objects
+     * @return NexusSummaryModel
+     */
+    public Future<NexusSummaryModel> nexusSummaryAsync(Integer companyId) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/nexus/summary");
+        path.applyField("companyId", companyId);
+        return this.threadPool.submit((RestCall<NexusSummaryModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<NexusSummaryModel>(){}));
     }
 
     /**
@@ -13550,16 +18484,16 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<NexusModel>
+     * @return NexusModelFetchResult
      */
-    public FetchResult<NexusModel> queryNexus(String filter, String include, Integer top, Integer skip, String orderBy) throws Exception {
+    public NexusModelFetchResult queryNexus(String filter, String include, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/nexus");
         path.addQuery("$filter", filter);
         path.addQuery("$include", include);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<NexusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NexusModel>>(){})).call();
+        return ((RestCall<NexusModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<NexusModelFetchResult>(){})).call();
     }
 
     /**
@@ -13586,16 +18520,16 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<NexusModel>
+     * @return NexusModelFetchResult
      */
-    public Future<FetchResult<NexusModel>> queryNexusAsync(String filter, String include, Integer top, Integer skip, String orderBy) {
+    public Future<NexusModelFetchResult> queryNexusAsync(String filter, String include, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/nexus");
         path.addQuery("$filter", filter);
         path.addQuery("$include", include);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<NexusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NexusModel>>(){}));
+        return this.threadPool.submit((RestCall<NexusModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<NexusModelFetchResult>(){}));
     }
 
     /**
@@ -13735,6 +18669,1184 @@ public class AvaTaxClient {
     }
 
     /**
+     * Create a new notice comment.
+     * 
+     * This API is available by invitation only.
+     * 'Notice comments' are updates by the notice team on the work to be done and that has been done so far on a notice.
+     * A 'notice' represents a letter sent to a business by a tax authority regarding tax filing issues.  Avalara
+     * Returns customers often receive support and assistance from the Compliance Notices team in handling notices received by taxing authorities.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Operator, Compliance Root User, Compliance Temp User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * 
+     * @param companyId The ID of the company that owns this notice.
+     * @param id The ID of the tax notice we are adding the comment for.
+     * @param model The notice comments you wish to create.
+     * @return ArrayList<NoticeCommentModel>
+     */
+    public ArrayList<NoticeCommentModel> createNoticeComment(Integer companyId, Integer id, ArrayList<NoticeCommentModel> model) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/{id}/comments");
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
+        return ((RestCall<ArrayList<NoticeCommentModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<NoticeCommentModel>>(){})).call();
+    }
+
+    /**
+     * Create a new notice comment.
+     * 
+     * This API is available by invitation only.
+     * 'Notice comments' are updates by the notice team on the work to be done and that has been done so far on a notice.
+     * A 'notice' represents a letter sent to a business by a tax authority regarding tax filing issues.  Avalara
+     * Returns customers often receive support and assistance from the Compliance Notices team in handling notices received by taxing authorities.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Operator, Compliance Root User, Compliance Temp User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * 
+     * @param companyId The ID of the company that owns this notice.
+     * @param id The ID of the tax notice we are adding the comment for.
+     * @param model The notice comments you wish to create.
+     * @return ArrayList<NoticeCommentModel>
+     */
+    public Future<ArrayList<NoticeCommentModel>> createNoticeCommentAsync(Integer companyId, Integer id, ArrayList<NoticeCommentModel> model) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/{id}/comments");
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
+        return this.threadPool.submit((RestCall<ArrayList<NoticeCommentModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<NoticeCommentModel>>(){}));
+    }
+
+    /**
+     * Create a new notice finance details.
+     * 
+     * This API is available by invitation only.
+     * 'Notice finance details' is the categorical breakdown of the total charge levied by the tax authority on our customer,
+     * as broken down in our "notice log" found in Workflow. Main examples of the categories are 'Tax Due', 'Interest', 'Penalty', 'Total Abated'.
+     * A 'notice' represents a letter sent to a business by a tax authority regarding tax filing issues.  Avalara
+     * Returns customers often receive support and assistance from the Compliance Notices team in handling notices received by taxing authorities.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Operator, Compliance Root User, Compliance Temp User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * 
+     * @param companyId The ID of the company that owns this notice.
+     * @param id The ID of the notice added to the finance details.
+     * @param model The notice finance details you wish to create.
+     * @return ArrayList<NoticeFinanceModel>
+     */
+    public ArrayList<NoticeFinanceModel> createNoticeFinanceDetails(Integer companyId, Integer id, ArrayList<NoticeFinanceModel> model) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/{id}/financedetails");
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
+        return ((RestCall<ArrayList<NoticeFinanceModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<NoticeFinanceModel>>(){})).call();
+    }
+
+    /**
+     * Create a new notice finance details.
+     * 
+     * This API is available by invitation only.
+     * 'Notice finance details' is the categorical breakdown of the total charge levied by the tax authority on our customer,
+     * as broken down in our "notice log" found in Workflow. Main examples of the categories are 'Tax Due', 'Interest', 'Penalty', 'Total Abated'.
+     * A 'notice' represents a letter sent to a business by a tax authority regarding tax filing issues.  Avalara
+     * Returns customers often receive support and assistance from the Compliance Notices team in handling notices received by taxing authorities.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Operator, Compliance Root User, Compliance Temp User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * 
+     * @param companyId The ID of the company that owns this notice.
+     * @param id The ID of the notice added to the finance details.
+     * @param model The notice finance details you wish to create.
+     * @return ArrayList<NoticeFinanceModel>
+     */
+    public Future<ArrayList<NoticeFinanceModel>> createNoticeFinanceDetailsAsync(Integer companyId, Integer id, ArrayList<NoticeFinanceModel> model) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/{id}/financedetails");
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
+        return this.threadPool.submit((RestCall<ArrayList<NoticeFinanceModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<NoticeFinanceModel>>(){}));
+    }
+
+    /**
+     * Create a new notice responsibility.
+     * 
+     * This API is available by invitation only.
+     * 'Notice comments' are updates by the notice team on the work to be done and that has been done so far on a notice.
+     * A 'notice' represents a letter sent to a business by a tax authority regarding tax filing issues.  Avalara
+     * Returns customers often receive support and assistance from the Compliance Notices team in handling notices received by taxing authorities.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Operator, Compliance Root User, Compliance Temp User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * 
+     * @param companyId The ID of the company that owns this notice.
+     * @param id The ID of the tax notice we are adding the responsibility for.
+     * @param model The notice responsibilities you wish to create.
+     * @return ArrayList<NoticeResponsibilityDetailModel>
+     */
+    public ArrayList<NoticeResponsibilityDetailModel> createNoticeResponsibilities(Integer companyId, Integer id, ArrayList<NoticeResponsibilityDetailModel> model) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/{id}/responsibilities");
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
+        return ((RestCall<ArrayList<NoticeResponsibilityDetailModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<NoticeResponsibilityDetailModel>>(){})).call();
+    }
+
+    /**
+     * Create a new notice responsibility.
+     * 
+     * This API is available by invitation only.
+     * 'Notice comments' are updates by the notice team on the work to be done and that has been done so far on a notice.
+     * A 'notice' represents a letter sent to a business by a tax authority regarding tax filing issues.  Avalara
+     * Returns customers often receive support and assistance from the Compliance Notices team in handling notices received by taxing authorities.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Operator, Compliance Root User, Compliance Temp User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * 
+     * @param companyId The ID of the company that owns this notice.
+     * @param id The ID of the tax notice we are adding the responsibility for.
+     * @param model The notice responsibilities you wish to create.
+     * @return ArrayList<NoticeResponsibilityDetailModel>
+     */
+    public Future<ArrayList<NoticeResponsibilityDetailModel>> createNoticeResponsibilitiesAsync(Integer companyId, Integer id, ArrayList<NoticeResponsibilityDetailModel> model) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/{id}/responsibilities");
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
+        return this.threadPool.submit((RestCall<ArrayList<NoticeResponsibilityDetailModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<NoticeResponsibilityDetailModel>>(){}));
+    }
+
+    /**
+     * Create a new notice root cause.
+     * 
+     * This API is available by invitation only.
+     * 'Notice root causes' are are those who are responsible for the notice.
+     * A 'notice' represents a letter sent to a business by a tax authority regarding tax filing issues.  Avalara
+     * Returns customers often receive support and assistance from the Compliance Notices team in handling notices received by taxing authorities.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Operator, Compliance Root User, Compliance Temp User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * 
+     * @param companyId The ID of the company that owns this notice.
+     * @param id The ID of the tax notice we are adding the responsibility for.
+     * @param model The notice root causes you wish to create.
+     * @return ArrayList<NoticeRootCauseDetailModel>
+     */
+    public ArrayList<NoticeRootCauseDetailModel> createNoticeRootCauses(Integer companyId, Integer id, ArrayList<NoticeRootCauseDetailModel> model) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/{id}/rootcauses");
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
+        return ((RestCall<ArrayList<NoticeRootCauseDetailModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<NoticeRootCauseDetailModel>>(){})).call();
+    }
+
+    /**
+     * Create a new notice root cause.
+     * 
+     * This API is available by invitation only.
+     * 'Notice root causes' are are those who are responsible for the notice.
+     * A 'notice' represents a letter sent to a business by a tax authority regarding tax filing issues.  Avalara
+     * Returns customers often receive support and assistance from the Compliance Notices team in handling notices received by taxing authorities.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Operator, Compliance Root User, Compliance Temp User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * 
+     * @param companyId The ID of the company that owns this notice.
+     * @param id The ID of the tax notice we are adding the responsibility for.
+     * @param model The notice root causes you wish to create.
+     * @return ArrayList<NoticeRootCauseDetailModel>
+     */
+    public Future<ArrayList<NoticeRootCauseDetailModel>> createNoticeRootCausesAsync(Integer companyId, Integer id, ArrayList<NoticeRootCauseDetailModel> model) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/{id}/rootcauses");
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
+        return this.threadPool.submit((RestCall<ArrayList<NoticeRootCauseDetailModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<NoticeRootCauseDetailModel>>(){}));
+    }
+
+    /**
+     * Create a new notice.
+     * 
+     * This API is available by invitation only.
+     * Create one or more new notice objects.
+     * A 'notice' represents a letter sent to a business by a tax authority regarding tax filing issues.  Avalara
+     * Returns customers often receive support and assistance from the Compliance Notices team in handling notices received by taxing authorities.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Operator, Compliance Root User, Compliance Temp User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * 
+     * @param companyId The ID of the company that owns this notice.
+     * @param model The notice object you wish to create.
+     * @return ArrayList<NoticeModel>
+     */
+    public ArrayList<NoticeModel> createNotices(Integer companyId, ArrayList<NoticeModel> model) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices");
+        path.applyField("companyId", companyId);
+        return ((RestCall<ArrayList<NoticeModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<NoticeModel>>(){})).call();
+    }
+
+    /**
+     * Create a new notice.
+     * 
+     * This API is available by invitation only.
+     * Create one or more new notice objects.
+     * A 'notice' represents a letter sent to a business by a tax authority regarding tax filing issues.  Avalara
+     * Returns customers often receive support and assistance from the Compliance Notices team in handling notices received by taxing authorities.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Operator, Compliance Root User, Compliance Temp User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * 
+     * @param companyId The ID of the company that owns this notice.
+     * @param model The notice object you wish to create.
+     * @return ArrayList<NoticeModel>
+     */
+    public Future<ArrayList<NoticeModel>> createNoticesAsync(Integer companyId, ArrayList<NoticeModel> model) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices");
+        path.applyField("companyId", companyId);
+        return this.threadPool.submit((RestCall<ArrayList<NoticeModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<NoticeModel>>(){}));
+    }
+
+    /**
+     * Delete a single notice.
+     * 
+     * This API is available by invitation only.
+     * 'Notice comments' are updates by the notice team on the work to be done and that has been done so far on a notice.
+     * A 'notice' represents a letter sent to a business by a tax authority regarding tax filing issues.  Avalara
+     * Returns customers often receive support and assistance from the Compliance Notices team in handling notices received by taxing authorities.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Operator, Compliance Root User, Compliance Temp User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * 
+     * @param companyId The ID of the company that owns this notice.
+     * @param id The ID of the notice you wish to delete the finance detail from.
+     * @param commentDetailsId The ID of the comment you wish to delete.
+     * @return ArrayList<ErrorDetail>
+     */
+    public ArrayList<ErrorDetail> deleteCommentDetails(Integer companyId, Integer id, Integer commentDetailsId) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/{id}/commentdetails/{commentdetailsid}");
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
+        path.applyField("commentDetailsId", commentDetailsId);
+        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){})).call();
+    }
+
+    /**
+     * Delete a single notice.
+     * 
+     * This API is available by invitation only.
+     * 'Notice comments' are updates by the notice team on the work to be done and that has been done so far on a notice.
+     * A 'notice' represents a letter sent to a business by a tax authority regarding tax filing issues.  Avalara
+     * Returns customers often receive support and assistance from the Compliance Notices team in handling notices received by taxing authorities.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Operator, Compliance Root User, Compliance Temp User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * 
+     * @param companyId The ID of the company that owns this notice.
+     * @param id The ID of the notice you wish to delete the finance detail from.
+     * @param commentDetailsId The ID of the comment you wish to delete.
+     * @return ArrayList<ErrorDetail>
+     */
+    public Future<ArrayList<ErrorDetail>> deleteCommentDetailsAsync(Integer companyId, Integer id, Integer commentDetailsId) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/{id}/commentdetails/{commentdetailsid}");
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
+        path.applyField("commentDetailsId", commentDetailsId);
+        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){}));
+    }
+
+    /**
+     * Delete a single notice.
+     * 
+     * This API is available by invitation only.
+     * 'Notice finance details' is the categorical breakdown of the total charge levied by the tax authority on our customer,
+     * as broken down in our "notice log" found in Workflow. Main examples of the categories are 'Tax Due', 'Interest', 'Penalty', 'Total Abated'.
+     * A 'notice' represents a letter sent to a business by a tax authority regarding tax filing issues.  Avalara
+     * Returns customers often receive support and assistance from the Compliance Notices team in handling notices received by taxing authorities.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Operator, Compliance Root User, Compliance Temp User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * 
+     * @param companyId The ID of the company that owns this notice.
+     * @param id The ID of the notice you wish to delete the finance detail from.
+     * @param financeDetailsId The ID of the finance detail you wish to delete.
+     * @return ArrayList<ErrorDetail>
+     */
+    public ArrayList<ErrorDetail> deleteFinanceDetails(Integer companyId, Integer id, Integer financeDetailsId) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/{id}/financedetails/{financedetailsid}");
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
+        path.applyField("financeDetailsId", financeDetailsId);
+        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){})).call();
+    }
+
+    /**
+     * Delete a single notice.
+     * 
+     * This API is available by invitation only.
+     * 'Notice finance details' is the categorical breakdown of the total charge levied by the tax authority on our customer,
+     * as broken down in our "notice log" found in Workflow. Main examples of the categories are 'Tax Due', 'Interest', 'Penalty', 'Total Abated'.
+     * A 'notice' represents a letter sent to a business by a tax authority regarding tax filing issues.  Avalara
+     * Returns customers often receive support and assistance from the Compliance Notices team in handling notices received by taxing authorities.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Operator, Compliance Root User, Compliance Temp User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * 
+     * @param companyId The ID of the company that owns this notice.
+     * @param id The ID of the notice you wish to delete the finance detail from.
+     * @param financeDetailsId The ID of the finance detail you wish to delete.
+     * @return ArrayList<ErrorDetail>
+     */
+    public Future<ArrayList<ErrorDetail>> deleteFinanceDetailsAsync(Integer companyId, Integer id, Integer financeDetailsId) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/{id}/financedetails/{financedetailsid}");
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
+        path.applyField("financeDetailsId", financeDetailsId);
+        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){}));
+    }
+
+    /**
+     * Delete a single notice.
+     * 
+     * This API is available by invitation only.
+     * Mark the existing notice object at this URL as deleted.
+     * A 'notice' represents a letter sent to a business by a tax authority regarding tax filing issues.  Avalara
+     * Returns customers often receive support and assistance from the Compliance Notices team in handling notices received by taxing authorities.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Operator, Compliance Root User, Compliance Temp User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * 
+     * @param companyId The ID of the company that owns this notice.
+     * @param id The ID of the notice you wish to delete.
+     * @return ArrayList<ErrorDetail>
+     */
+    public ArrayList<ErrorDetail> deleteNotice(Integer companyId, Integer id) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/{id}");
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
+        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){})).call();
+    }
+
+    /**
+     * Delete a single notice.
+     * 
+     * This API is available by invitation only.
+     * Mark the existing notice object at this URL as deleted.
+     * A 'notice' represents a letter sent to a business by a tax authority regarding tax filing issues.  Avalara
+     * Returns customers often receive support and assistance from the Compliance Notices team in handling notices received by taxing authorities.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Operator, Compliance Root User, Compliance Temp User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * 
+     * @param companyId The ID of the company that owns this notice.
+     * @param id The ID of the notice you wish to delete.
+     * @return ArrayList<ErrorDetail>
+     */
+    public Future<ArrayList<ErrorDetail>> deleteNoticeAsync(Integer companyId, Integer id) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/{id}");
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
+        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){}));
+    }
+
+    /**
+     * Delete a single responsibility
+     * 
+     * This API is available by invitation only.
+     * Mark the existing notice object at this URL as deleted.
+     * A 'notice' represents a letter sent to a business by a tax authority regarding tax filing issues.  Avalara
+     * Returns customers often receive support and assistance from the Compliance Notices team in handling notices received by taxing authorities.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Operator, Compliance Root User, Compliance Temp User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * 
+     * @param companyId The ID of the company that owns this notice.
+     * @param noticeId The ID of the notice you wish to delete.
+     * @param id The ID of the responsibility you wish to delete.
+     * @return ArrayList<ErrorDetail>
+     */
+    public ArrayList<ErrorDetail> deleteResponsibilities(Integer companyId, Integer noticeId, Integer id) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/{noticeId}/responsibilities/{id}");
+        path.applyField("companyId", companyId);
+        path.applyField("noticeId", noticeId);
+        path.applyField("id", id);
+        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){})).call();
+    }
+
+    /**
+     * Delete a single responsibility
+     * 
+     * This API is available by invitation only.
+     * Mark the existing notice object at this URL as deleted.
+     * A 'notice' represents a letter sent to a business by a tax authority regarding tax filing issues.  Avalara
+     * Returns customers often receive support and assistance from the Compliance Notices team in handling notices received by taxing authorities.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Operator, Compliance Root User, Compliance Temp User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * 
+     * @param companyId The ID of the company that owns this notice.
+     * @param noticeId The ID of the notice you wish to delete.
+     * @param id The ID of the responsibility you wish to delete.
+     * @return ArrayList<ErrorDetail>
+     */
+    public Future<ArrayList<ErrorDetail>> deleteResponsibilitiesAsync(Integer companyId, Integer noticeId, Integer id) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/{noticeId}/responsibilities/{id}");
+        path.applyField("companyId", companyId);
+        path.applyField("noticeId", noticeId);
+        path.applyField("id", id);
+        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){}));
+    }
+
+    /**
+     * Delete a single root cause.
+     * 
+     * This API is available by invitation only.
+     * Mark the existing notice object at this URL as deleted.
+     * A 'notice' represents a letter sent to a business by a tax authority regarding tax filing issues.  Avalara
+     * Returns customers often receive support and assistance from the Compliance Notices team in handling notices received by taxing authorities.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Operator, Compliance Root User, Compliance Temp User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * 
+     * @param companyId The ID of the company that owns this notice.
+     * @param noticeId The ID of the notice you wish to delete.
+     * @param id The ID of the root cause you wish to delete.
+     * @return ArrayList<ErrorDetail>
+     */
+    public ArrayList<ErrorDetail> deleteRootCauses(Integer companyId, Integer noticeId, Integer id) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/{noticeId}/rootcauses/{id}");
+        path.applyField("companyId", companyId);
+        path.applyField("noticeId", noticeId);
+        path.applyField("id", id);
+        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){})).call();
+    }
+
+    /**
+     * Delete a single root cause.
+     * 
+     * This API is available by invitation only.
+     * Mark the existing notice object at this URL as deleted.
+     * A 'notice' represents a letter sent to a business by a tax authority regarding tax filing issues.  Avalara
+     * Returns customers often receive support and assistance from the Compliance Notices team in handling notices received by taxing authorities.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Operator, Compliance Root User, Compliance Temp User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * 
+     * @param companyId The ID of the company that owns this notice.
+     * @param noticeId The ID of the notice you wish to delete.
+     * @param id The ID of the root cause you wish to delete.
+     * @return ArrayList<ErrorDetail>
+     */
+    public Future<ArrayList<ErrorDetail>> deleteRootCausesAsync(Integer companyId, Integer noticeId, Integer id) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/{noticeId}/rootcauses/{id}");
+        path.applyField("companyId", companyId);
+        path.applyField("noticeId", noticeId);
+        path.applyField("id", id);
+        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){}));
+    }
+
+    /**
+     * Retrieve a single attachment
+     * 
+     * This API is available by invitation only.
+     * Get the file attachment identified by this URL.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Operator, Compliance Root User, Compliance Temp User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * 
+     * @param companyId The ID of the company for this attachment.
+     * @param id The ResourceFileId of the attachment to download.
+     * @return String
+     */
+    public String downloadNoticeAttachment(Integer companyId, Long id) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/files/{id}/attachment");
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
+        return ((RestCall<String>)restCallFactory.createRestCall("get", path, null, new TypeToken<String>(){})).call();
+    }
+
+    /**
+     * Retrieve a single attachment
+     * 
+     * This API is available by invitation only.
+     * Get the file attachment identified by this URL.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Operator, Compliance Root User, Compliance Temp User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * 
+     * @param companyId The ID of the company for this attachment.
+     * @param id The ResourceFileId of the attachment to download.
+     * @return String
+     */
+    public Future<String> downloadNoticeAttachmentAsync(Integer companyId, Long id) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/files/{id}/attachment");
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
+        return this.threadPool.submit((RestCall<String>)restCallFactory.createRestCall("get", path, null, new TypeToken<String>(){}));
+    }
+
+    /**
+     * Retrieve a single notice.
+     * 
+     * This API is available by invitation only.
+     * Get the tax notice object identified by this URL.
+     * A 'notice' represents a letter sent to a business by a tax authority regarding tax filing issues.  Avalara
+     * Returns customers often receive support and assistance from the Compliance Notices team in handling notices received by taxing authorities.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Operator, Compliance Root User, Compliance Temp User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * 
+     * @param companyId The ID of the company for this notice.
+     * @param id The ID of this notice.
+     * @return NoticeModel
+     */
+    public NoticeModel getNotice(Integer companyId, Integer id) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/{id}");
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
+        return ((RestCall<NoticeModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<NoticeModel>(){})).call();
+    }
+
+    /**
+     * Retrieve a single notice.
+     * 
+     * This API is available by invitation only.
+     * Get the tax notice object identified by this URL.
+     * A 'notice' represents a letter sent to a business by a tax authority regarding tax filing issues.  Avalara
+     * Returns customers often receive support and assistance from the Compliance Notices team in handling notices received by taxing authorities.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Operator, Compliance Root User, Compliance Temp User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * 
+     * @param companyId The ID of the company for this notice.
+     * @param id The ID of this notice.
+     * @return NoticeModel
+     */
+    public Future<NoticeModel> getNoticeAsync(Integer companyId, Integer id) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/{id}");
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
+        return this.threadPool.submit((RestCall<NoticeModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<NoticeModel>(){}));
+    }
+
+    /**
+     * Retrieve notice comments for a specific notice.
+     * 
+     * This API is available by invitation only.
+     * 'Notice comments' are updates by the notice team on the work to be done and that has been done so far on a notice.
+     * A 'notice' represents a letter sent to a business by a tax authority regarding tax filing issues.  Avalara
+     * Returns customers often receive support and assistance from the Compliance Notices team in handling notices received by taxing authorities.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Operator, Compliance Root User, Compliance Temp User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * 
+     * @param id The ID of the notice.
+     * @param companyId The ID of the company that owns these notices.
+     * @return NoticeCommentModelFetchResult
+     */
+    public NoticeCommentModelFetchResult getNoticeComments(Integer id, Integer companyId) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/{id}/comments");
+        path.applyField("id", id);
+        path.applyField("companyId", companyId);
+        return ((RestCall<NoticeCommentModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<NoticeCommentModelFetchResult>(){})).call();
+    }
+
+    /**
+     * Retrieve notice comments for a specific notice.
+     * 
+     * This API is available by invitation only.
+     * 'Notice comments' are updates by the notice team on the work to be done and that has been done so far on a notice.
+     * A 'notice' represents a letter sent to a business by a tax authority regarding tax filing issues.  Avalara
+     * Returns customers often receive support and assistance from the Compliance Notices team in handling notices received by taxing authorities.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Operator, Compliance Root User, Compliance Temp User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * 
+     * @param id The ID of the notice.
+     * @param companyId The ID of the company that owns these notices.
+     * @return NoticeCommentModelFetchResult
+     */
+    public Future<NoticeCommentModelFetchResult> getNoticeCommentsAsync(Integer id, Integer companyId) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/{id}/comments");
+        path.applyField("id", id);
+        path.applyField("companyId", companyId);
+        return this.threadPool.submit((RestCall<NoticeCommentModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<NoticeCommentModelFetchResult>(){}));
+    }
+
+    /**
+     * Retrieve notice finance details for a specific notice.
+     * 
+     * This API is available by invitation only.
+     * 'Notice finance details' is the categorical breakdown of the total charge levied by the tax authority on our customer,
+     * as broken down in our "notice log" found in Workflow. Main examples of the categories are 'Tax Due', 'Interest', 'Penalty', 'Total Abated'.
+     * A 'notice' represents a letter sent to a business by a tax authority regarding tax filing issues.  Avalara
+     * Returns customers often receive support and assistance from the Compliance Notices team in handling notices received by taxing authorities.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Operator, Compliance Root User, Compliance Temp User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * 
+     * @param id The ID of the company that owns these notices.
+     * @param companyId The ID of the company that owns these notices.
+     * @return NoticeFinanceModelFetchResult
+     */
+    public NoticeFinanceModelFetchResult getNoticeFinanceDetails(Integer id, Integer companyId) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/{id}/financedetails");
+        path.applyField("id", id);
+        path.applyField("companyId", companyId);
+        return ((RestCall<NoticeFinanceModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<NoticeFinanceModelFetchResult>(){})).call();
+    }
+
+    /**
+     * Retrieve notice finance details for a specific notice.
+     * 
+     * This API is available by invitation only.
+     * 'Notice finance details' is the categorical breakdown of the total charge levied by the tax authority on our customer,
+     * as broken down in our "notice log" found in Workflow. Main examples of the categories are 'Tax Due', 'Interest', 'Penalty', 'Total Abated'.
+     * A 'notice' represents a letter sent to a business by a tax authority regarding tax filing issues.  Avalara
+     * Returns customers often receive support and assistance from the Compliance Notices team in handling notices received by taxing authorities.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Operator, Compliance Root User, Compliance Temp User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * 
+     * @param id The ID of the company that owns these notices.
+     * @param companyId The ID of the company that owns these notices.
+     * @return NoticeFinanceModelFetchResult
+     */
+    public Future<NoticeFinanceModelFetchResult> getNoticeFinanceDetailsAsync(Integer id, Integer companyId) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/{id}/financedetails");
+        path.applyField("id", id);
+        path.applyField("companyId", companyId);
+        return this.threadPool.submit((RestCall<NoticeFinanceModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<NoticeFinanceModelFetchResult>(){}));
+    }
+
+    /**
+     * Retrieve notice responsibilities for a specific notice.
+     * 
+     * This API is available by invitation only.
+     * 'Notice responsibilities' are are those who are responsible for the notice.
+     * A 'notice' represents a letter sent to a business by a tax authority regarding tax filing issues.  Avalara
+     * Returns customers often receive support and assistance from the Compliance Notices team in handling notices received by taxing authorities.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Operator, Compliance Root User, Compliance Temp User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * 
+     * @param id The ID of the notice.
+     * @param companyId The ID of the company that owns these notices.
+     * @return NoticeResponsibilityDetailModelFetchResult
+     */
+    public NoticeResponsibilityDetailModelFetchResult getNoticeResponsibilities(Integer id, Integer companyId) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/{id}/responsibilities");
+        path.applyField("id", id);
+        path.applyField("companyId", companyId);
+        return ((RestCall<NoticeResponsibilityDetailModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<NoticeResponsibilityDetailModelFetchResult>(){})).call();
+    }
+
+    /**
+     * Retrieve notice responsibilities for a specific notice.
+     * 
+     * This API is available by invitation only.
+     * 'Notice responsibilities' are are those who are responsible for the notice.
+     * A 'notice' represents a letter sent to a business by a tax authority regarding tax filing issues.  Avalara
+     * Returns customers often receive support and assistance from the Compliance Notices team in handling notices received by taxing authorities.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Operator, Compliance Root User, Compliance Temp User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * 
+     * @param id The ID of the notice.
+     * @param companyId The ID of the company that owns these notices.
+     * @return NoticeResponsibilityDetailModelFetchResult
+     */
+    public Future<NoticeResponsibilityDetailModelFetchResult> getNoticeResponsibilitiesAsync(Integer id, Integer companyId) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/{id}/responsibilities");
+        path.applyField("id", id);
+        path.applyField("companyId", companyId);
+        return this.threadPool.submit((RestCall<NoticeResponsibilityDetailModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<NoticeResponsibilityDetailModelFetchResult>(){}));
+    }
+
+    /**
+     * Retrieve notice root causes for a specific notice.
+     * 
+     * This API is available by invitation only.
+     * 'Notice root causes' are are those who are responsible for the notice.
+     * A 'notice' represents a letter sent to a business by a tax authority regarding tax filing issues.  Avalara
+     * Returns customers often receive support and assistance from the Compliance Notices team in handling notices received by taxing authorities.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Operator, Compliance Root User, Compliance Temp User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * 
+     * @param id The ID of the notice.
+     * @param companyId The ID of the company that owns these notices.
+     * @return NoticeRootCauseDetailModelFetchResult
+     */
+    public NoticeRootCauseDetailModelFetchResult getNoticeRootCauses(Integer id, Integer companyId) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/{id}/rootcauses");
+        path.applyField("id", id);
+        path.applyField("companyId", companyId);
+        return ((RestCall<NoticeRootCauseDetailModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<NoticeRootCauseDetailModelFetchResult>(){})).call();
+    }
+
+    /**
+     * Retrieve notice root causes for a specific notice.
+     * 
+     * This API is available by invitation only.
+     * 'Notice root causes' are are those who are responsible for the notice.
+     * A 'notice' represents a letter sent to a business by a tax authority regarding tax filing issues.  Avalara
+     * Returns customers often receive support and assistance from the Compliance Notices team in handling notices received by taxing authorities.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Operator, Compliance Root User, Compliance Temp User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * 
+     * @param id The ID of the notice.
+     * @param companyId The ID of the company that owns these notices.
+     * @return NoticeRootCauseDetailModelFetchResult
+     */
+    public Future<NoticeRootCauseDetailModelFetchResult> getNoticeRootCausesAsync(Integer id, Integer companyId) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/{id}/rootcauses");
+        path.applyField("id", id);
+        path.applyField("companyId", companyId);
+        return this.threadPool.submit((RestCall<NoticeRootCauseDetailModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<NoticeRootCauseDetailModelFetchResult>(){}));
+    }
+
+    /**
+     * Retrieve notices for a company.
+     * 
+     * This API is available by invitation only.
+     * List all tax notice objects assigned to this company.
+     * A 'notice' represents a letter sent to a business by a tax authority regarding tax filing issues.  Avalara
+     * Returns customers often receive support and assistance from the Compliance Notices team in handling notices received by taxing authorities.
+     *             
+     * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * Paginate your results using the `$top`, `$skip`, and `$orderby` parameters.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Operator, Compliance Root User, Compliance Temp User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * 
+     * @param companyId The ID of the company that owns these notices.
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* status, totalRemit, ticketReferenceNo, ticketReferenceUrl, reason, type, createdByUserName, documentReference, jurisdictionName, jurisdictionType, comments, finances, responsibility, rootCause
+     * @param include A comma separated list of additional data to retrieve.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @return NoticeModelFetchResult
+     */
+    public NoticeModelFetchResult listNoticesByCompany(Integer companyId, String filter, String include, Integer top, Integer skip, String orderBy) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices");
+        path.applyField("companyId", companyId);
+        path.addQuery("$filter", filter);
+        path.addQuery("$include", include);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
+        return ((RestCall<NoticeModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<NoticeModelFetchResult>(){})).call();
+    }
+
+    /**
+     * Retrieve notices for a company.
+     * 
+     * This API is available by invitation only.
+     * List all tax notice objects assigned to this company.
+     * A 'notice' represents a letter sent to a business by a tax authority regarding tax filing issues.  Avalara
+     * Returns customers often receive support and assistance from the Compliance Notices team in handling notices received by taxing authorities.
+     *             
+     * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * Paginate your results using the `$top`, `$skip`, and `$orderby` parameters.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Operator, Compliance Root User, Compliance Temp User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * 
+     * @param companyId The ID of the company that owns these notices.
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* status, totalRemit, ticketReferenceNo, ticketReferenceUrl, reason, type, createdByUserName, documentReference, jurisdictionName, jurisdictionType, comments, finances, responsibility, rootCause
+     * @param include A comma separated list of additional data to retrieve.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @return NoticeModelFetchResult
+     */
+    public Future<NoticeModelFetchResult> listNoticesByCompanyAsync(Integer companyId, String filter, String include, Integer top, Integer skip, String orderBy) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices");
+        path.applyField("companyId", companyId);
+        path.addQuery("$filter", filter);
+        path.addQuery("$include", include);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
+        return this.threadPool.submit((RestCall<NoticeModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<NoticeModelFetchResult>(){}));
+    }
+
+    /**
+     * Retrieve all notices.
+     * 
+     * This API is available by invitation only.
+     *             
+     * This API is deprecated - please use POST `/api/v2/notices/query` API.
+     *             
+     * Get multiple notice objects across all companies.
+     * A 'notice' represents a letter sent to a business by a tax authority regarding tax filing issues.  Avalara
+     * Returns customers often receive support and assistance from the Compliance Notices team in handling notices received by taxing authorities.
+     *             
+     * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * Paginate your results using the `$top`, `$skip`, and `$orderby` parameters.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Operator, Compliance Root User, Compliance Temp User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * 
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* status, totalRemit, ticketReferenceNo, ticketReferenceUrl, reason, type, createdByUserName, documentReference, jurisdictionName, jurisdictionType, comments, finances, responsibility, rootCause
+     * @param include A comma separated list of additional data to retrieve.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @return NoticeModelFetchResult
+     */
+    public NoticeModelFetchResult queryNotices(String filter, String include, Integer top, Integer skip, String orderBy) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/notices");
+        path.addQuery("$filter", filter);
+        path.addQuery("$include", include);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
+        return ((RestCall<NoticeModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<NoticeModelFetchResult>(){})).call();
+    }
+
+    /**
+     * Retrieve all notices.
+     * 
+     * This API is available by invitation only.
+     *             
+     * This API is deprecated - please use POST `/api/v2/notices/query` API.
+     *             
+     * Get multiple notice objects across all companies.
+     * A 'notice' represents a letter sent to a business by a tax authority regarding tax filing issues.  Avalara
+     * Returns customers often receive support and assistance from the Compliance Notices team in handling notices received by taxing authorities.
+     *             
+     * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * Paginate your results using the `$top`, `$skip`, and `$orderby` parameters.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Operator, Compliance Root User, Compliance Temp User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * 
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* status, totalRemit, ticketReferenceNo, ticketReferenceUrl, reason, type, createdByUserName, documentReference, jurisdictionName, jurisdictionType, comments, finances, responsibility, rootCause
+     * @param include A comma separated list of additional data to retrieve.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @return NoticeModelFetchResult
+     */
+    public Future<NoticeModelFetchResult> queryNoticesAsync(String filter, String include, Integer top, Integer skip, String orderBy) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/notices");
+        path.addQuery("$filter", filter);
+        path.addQuery("$include", include);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
+        return this.threadPool.submit((RestCall<NoticeModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<NoticeModelFetchResult>(){}));
+    }
+
+    /**
+     * Retrieve all notices.
+     * 
+     * This API is available by invitation only.
+     *             
+     * This API is intended to replace the GET `/api/v2/notices` API. The fetch request object is posted on the body of the request instead of the URI, so it's not limited by a set number of characters.
+     * The documentation of the GET API shows how filtering, sorting and pagination works.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Operator, Compliance Root User, Compliance Temp User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * 
+     * @param model Query object to filter, sort and paginate the filing calendars.
+     * @return NoticeModelFetchResult
+     */
+    public NoticeModelFetchResult queryNoticesPost(QueryRequestModel model) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/notices/query");
+        return ((RestCall<NoticeModelFetchResult>)restCallFactory.createRestCall("post", path, model, new TypeToken<NoticeModelFetchResult>(){})).call();
+    }
+
+    /**
+     * Retrieve all notices.
+     * 
+     * This API is available by invitation only.
+     *             
+     * This API is intended to replace the GET `/api/v2/notices` API. The fetch request object is posted on the body of the request instead of the URI, so it's not limited by a set number of characters.
+     * The documentation of the GET API shows how filtering, sorting and pagination works.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Operator, Compliance Root User, Compliance Temp User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * 
+     * @param model Query object to filter, sort and paginate the filing calendars.
+     * @return NoticeModelFetchResult
+     */
+    public Future<NoticeModelFetchResult> queryNoticesPostAsync(QueryRequestModel model) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/notices/query");
+        return this.threadPool.submit((RestCall<NoticeModelFetchResult>)restCallFactory.createRestCall("post", path, model, new TypeToken<NoticeModelFetchResult>(){}));
+    }
+
+    /**
+     * Update a single notice finance detail.
+     * 
+     * This API is available by invitation only.
+     * All data from the existing object will be replaced with data in the object you PUT.
+     * To set a field's value to null, you may either set its value to null or omit that field from the object you post.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Operator, Compliance Root User, Compliance Temp User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * 
+     * @param companyId The ID of the company that this notice finance detail belongs to.
+     * @param noticeid The ID of the notice finance detail you wish to update.
+     * @param financeDetailsId The ID of the finance detail you wish to delete.
+     * @param model The notice finance detail object you wish to update.
+     * @return NoticeFinanceModel
+     */
+    public NoticeFinanceModel updateFinanceDetails(Integer companyId, Integer noticeid, Integer financeDetailsId, NoticeFinanceModel model) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/{noticeid}/financedetails/{financedetailsid}");
+        path.applyField("companyId", companyId);
+        path.applyField("noticeid", noticeid);
+        path.applyField("financeDetailsId", financeDetailsId);
+        return ((RestCall<NoticeFinanceModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<NoticeFinanceModel>(){})).call();
+    }
+
+    /**
+     * Update a single notice finance detail.
+     * 
+     * This API is available by invitation only.
+     * All data from the existing object will be replaced with data in the object you PUT.
+     * To set a field's value to null, you may either set its value to null or omit that field from the object you post.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Operator, Compliance Root User, Compliance Temp User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * 
+     * @param companyId The ID of the company that this notice finance detail belongs to.
+     * @param noticeid The ID of the notice finance detail you wish to update.
+     * @param financeDetailsId The ID of the finance detail you wish to delete.
+     * @param model The notice finance detail object you wish to update.
+     * @return NoticeFinanceModel
+     */
+    public Future<NoticeFinanceModel> updateFinanceDetailsAsync(Integer companyId, Integer noticeid, Integer financeDetailsId, NoticeFinanceModel model) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/{noticeid}/financedetails/{financedetailsid}");
+        path.applyField("companyId", companyId);
+        path.applyField("noticeid", noticeid);
+        path.applyField("financeDetailsId", financeDetailsId);
+        return this.threadPool.submit((RestCall<NoticeFinanceModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<NoticeFinanceModel>(){}));
+    }
+
+    /**
+     * Update a single notice.
+     * 
+     * This API is available by invitation only.
+     * Replace the existing notice object at this URL with an updated object.
+     * A 'notice' represents a letter sent to a business by a tax authority regarding tax filing issues.  Avalara
+     * Returns customers often receive support and assistance from the Compliance Notices team in handling notices received by taxing authorities.
+     * All data from the existing object will be replaced with data in the object you PUT.
+     * To set a field's value to null, you may either set its value to null or omit that field from the object you post.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Operator, Compliance Root User, Compliance Temp User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * 
+     * @param companyId The ID of the company that this notice belongs to.
+     * @param id The ID of the notice you wish to update.
+     * @param model The notice object you wish to update.
+     * @return NoticeModel
+     */
+    public NoticeModel updateNotice(Integer companyId, Integer id, NoticeModel model) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/{id}");
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
+        return ((RestCall<NoticeModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<NoticeModel>(){})).call();
+    }
+
+    /**
+     * Update a single notice.
+     * 
+     * This API is available by invitation only.
+     * Replace the existing notice object at this URL with an updated object.
+     * A 'notice' represents a letter sent to a business by a tax authority regarding tax filing issues.  Avalara
+     * Returns customers often receive support and assistance from the Compliance Notices team in handling notices received by taxing authorities.
+     * All data from the existing object will be replaced with data in the object you PUT.
+     * To set a field's value to null, you may either set its value to null or omit that field from the object you post.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Operator, Compliance Root User, Compliance Temp User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * 
+     * @param companyId The ID of the company that this notice belongs to.
+     * @param id The ID of the notice you wish to update.
+     * @param model The notice object you wish to update.
+     * @return NoticeModel
+     */
+    public Future<NoticeModel> updateNoticeAsync(Integer companyId, Integer id, NoticeModel model) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/{id}");
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
+        return this.threadPool.submit((RestCall<NoticeModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<NoticeModel>(){}));
+    }
+
+    /**
+     * Update a single notice comment.
+     * 
+     * This API is available by invitation only.
+     * All data from the existing object will be replaced with data in the object you PUT.
+     * To set a field's value to null, you may either set its value to null or omit that field from the object you post.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Operator, Compliance Root User, Compliance Temp User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * 
+     * @param companyId The ID of the company that this notice comment belongs to.
+     * @param noticeid The ID of the notice you wish to update.
+     * @param commentDetailsId The ID of the comment you wish to update.
+     * @param model The notice comment object you wish to update.
+     * @return NoticeCommentModel
+     */
+    public NoticeCommentModel updateNoticeComments(Integer companyId, Integer noticeid, Integer commentDetailsId, NoticeCommentModel model) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/{noticeid}/commentdetails/{commentdetailsid}");
+        path.applyField("companyId", companyId);
+        path.applyField("noticeid", noticeid);
+        path.applyField("commentDetailsId", commentDetailsId);
+        return ((RestCall<NoticeCommentModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<NoticeCommentModel>(){})).call();
+    }
+
+    /**
+     * Update a single notice comment.
+     * 
+     * This API is available by invitation only.
+     * All data from the existing object will be replaced with data in the object you PUT.
+     * To set a field's value to null, you may either set its value to null or omit that field from the object you post.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Operator, Compliance Root User, Compliance Temp User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * 
+     * @param companyId The ID of the company that this notice comment belongs to.
+     * @param noticeid The ID of the notice you wish to update.
+     * @param commentDetailsId The ID of the comment you wish to update.
+     * @param model The notice comment object you wish to update.
+     * @return NoticeCommentModel
+     */
+    public Future<NoticeCommentModel> updateNoticeCommentsAsync(Integer companyId, Integer noticeid, Integer commentDetailsId, NoticeCommentModel model) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/{noticeid}/commentdetails/{commentdetailsid}");
+        path.applyField("companyId", companyId);
+        path.applyField("noticeid", noticeid);
+        path.applyField("commentDetailsId", commentDetailsId);
+        return this.threadPool.submit((RestCall<NoticeCommentModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<NoticeCommentModel>(){}));
+    }
+
+    /**
+     * Upload a new notice attachment.
+     * 
+     * This API is available by invitation only.
+     *             
+     * Uploads a file attachment for a tax notice.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Operator, Compliance Root User, Compliance Temp User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * 
+     * @param companyId The ID of the company for this attachment.
+     * @param model The upload request.
+     * @return ResourceFileUploadResultModel
+     */
+    public ResourceFileUploadResultModel uploadAttachment(Integer companyId, ResourceFileUploadRequestModel model) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/files/attachment");
+        path.applyField("companyId", companyId);
+        return ((RestCall<ResourceFileUploadResultModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<ResourceFileUploadResultModel>(){})).call();
+    }
+
+    /**
+     * Upload a new notice attachment.
+     * 
+     * This API is available by invitation only.
+     *             
+     * Uploads a file attachment for a tax notice.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Operator, Compliance Root User, Compliance Temp User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * 
+     * @param companyId The ID of the company for this attachment.
+     * @param model The upload request.
+     * @return ResourceFileUploadResultModel
+     */
+    public Future<ResourceFileUploadResultModel> uploadAttachmentAsync(Integer companyId, ResourceFileUploadRequestModel model) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/notices/files/attachment");
+        path.applyField("companyId", companyId);
+        return this.threadPool.submit((RestCall<ResourceFileUploadResultModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<ResourceFileUploadResultModel>(){}));
+    }
+
+    /**
      * Mark a single notification as dismissed.
      * 
      * Marks the notification identified by this URL as dismissed.
@@ -13869,15 +19981,15 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<NotificationModel>
+     * @return NotificationModelFetchResult
      */
-    public FetchResult<NotificationModel> listNotifications(String filter, Integer top, Integer skip, String orderBy) throws Exception {
+    public NotificationModelFetchResult listNotifications(String filter, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/notifications");
         path.addQuery("$filter", filter);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<NotificationModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NotificationModel>>(){})).call();
+        return ((RestCall<NotificationModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<NotificationModelFetchResult>(){})).call();
     }
 
     /**
@@ -13903,15 +20015,15 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<NotificationModel>
+     * @return NotificationModelFetchResult
      */
-    public Future<FetchResult<NotificationModel>> listNotificationsAsync(String filter, Integer top, Integer skip, String orderBy) {
+    public Future<NotificationModelFetchResult> listNotificationsAsync(String filter, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/notifications");
         path.addQuery("$filter", filter);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<NotificationModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NotificationModel>>(){}));
+        return this.threadPool.submit((RestCall<NotificationModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<NotificationModelFetchResult>(){}));
     }
 
     /**
@@ -14022,6 +20134,44 @@ public class AvaTaxClient {
         path.applyField("id", id);
         path.applyField("offer", offer);
         return this.threadPool.submit((RestCall<OfferModel>)restCallFactory.createRestCall("post", path, null, new TypeToken<OfferModel>(){}));
+    }
+
+    /**
+     * Bridge API for integration of validated certificates
+     * 
+     * # For Registrar Use Only
+     * This API is for use by Avalara Registrar administrative users only.
+     * 
+     * ### Security Policies
+     * 
+     * * This API is available to Avalara system-level (registrar-level) users only.
+     * * This API depends on the following active services<br />*Required* (all):  AvaCert.
+     * 
+     * @param model Either a single exempt certificate or an array of certificates to create
+     * @return ArrayList<EcmsModel>
+     */
+    public ArrayList<EcmsModel> certCaptureBridge(ArrayList<EcmsModel> model) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/certcapturebridge");
+        return ((RestCall<ArrayList<EcmsModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<EcmsModel>>(){})).call();
+    }
+
+    /**
+     * Bridge API for integration of validated certificates
+     * 
+     * # For Registrar Use Only
+     * This API is for use by Avalara Registrar administrative users only.
+     * 
+     * ### Security Policies
+     * 
+     * * This API is available to Avalara system-level (registrar-level) users only.
+     * * This API depends on the following active services<br />*Required* (all):  AvaCert.
+     * 
+     * @param model Either a single exempt certificate or an array of certificates to create
+     * @return ArrayList<EcmsModel>
+     */
+    public Future<ArrayList<EcmsModel>> certCaptureBridgeAsync(ArrayList<EcmsModel> model) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/certcapturebridge");
+        return this.threadPool.submit((RestCall<ArrayList<EcmsModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<EcmsModel>>(){}));
     }
 
     /**
@@ -14719,15 +20869,15 @@ public class AvaTaxClient {
      * @param pageKey Provide a page key to retrieve the next page of results.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
-     * @return FetchResult<ReportModel>
+     * @return ReportModelFetchResult
      */
-    public FetchResult<ReportModel> listReports(Integer companyId, String pageKey, Integer skip, Integer top) throws Exception {
+    public ReportModelFetchResult listReports(Integer companyId, String pageKey, Integer skip, Integer top) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/reports");
         path.addQuery("companyId", companyId);
         path.addQuery("pageKey", pageKey);
         path.addQuery("$skip", skip);
         path.addQuery("$top", top);
-        return ((RestCall<FetchResult<ReportModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ReportModel>>(){})).call();
+        return ((RestCall<ReportModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<ReportModelFetchResult>(){})).call();
     }
 
     /**
@@ -14753,15 +20903,15 @@ public class AvaTaxClient {
      * @param pageKey Provide a page key to retrieve the next page of results.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
-     * @return FetchResult<ReportModel>
+     * @return ReportModelFetchResult
      */
-    public Future<FetchResult<ReportModel>> listReportsAsync(Integer companyId, String pageKey, Integer skip, Integer top) {
+    public Future<ReportModelFetchResult> listReportsAsync(Integer companyId, String pageKey, Integer skip, Integer top) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/reports");
         path.addQuery("companyId", companyId);
         path.addQuery("pageKey", pageKey);
         path.addQuery("$skip", skip);
         path.addQuery("$top", top);
-        return this.threadPool.submit((RestCall<FetchResult<ReportModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ReportModel>>(){}));
+        return this.threadPool.submit((RestCall<ReportModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<ReportModelFetchResult>(){}));
     }
 
     /**
@@ -14963,9 +21113,9 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<SettingModel>
+     * @return SettingModelFetchResult
      */
-    public FetchResult<SettingModel> listSettingsByCompany(Integer companyId, String filter, String include, Integer top, Integer skip, String orderBy) throws Exception {
+    public SettingModelFetchResult listSettingsByCompany(Integer companyId, String filter, String include, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/settings");
         path.applyField("companyId", companyId);
         path.addQuery("$filter", filter);
@@ -14973,7 +21123,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<SettingModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<SettingModel>>(){})).call();
+        return ((RestCall<SettingModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<SettingModelFetchResult>(){})).call();
     }
 
     /**
@@ -15003,9 +21153,9 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<SettingModel>
+     * @return SettingModelFetchResult
      */
-    public Future<FetchResult<SettingModel>> listSettingsByCompanyAsync(Integer companyId, String filter, String include, Integer top, Integer skip, String orderBy) {
+    public Future<SettingModelFetchResult> listSettingsByCompanyAsync(Integer companyId, String filter, String include, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/settings");
         path.applyField("companyId", companyId);
         path.addQuery("$filter", filter);
@@ -15013,7 +21163,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<SettingModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<SettingModel>>(){}));
+        return this.threadPool.submit((RestCall<SettingModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<SettingModelFetchResult>(){}));
     }
 
     /**
@@ -15042,16 +21192,16 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<SettingModel>
+     * @return SettingModelFetchResult
      */
-    public FetchResult<SettingModel> querySettings(String filter, String include, Integer top, Integer skip, String orderBy) throws Exception {
+    public SettingModelFetchResult querySettings(String filter, String include, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/settings");
         path.addQuery("$filter", filter);
         path.addQuery("$include", include);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<SettingModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<SettingModel>>(){})).call();
+        return ((RestCall<SettingModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<SettingModelFetchResult>(){})).call();
     }
 
     /**
@@ -15080,16 +21230,16 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<SettingModel>
+     * @return SettingModelFetchResult
      */
-    public Future<FetchResult<SettingModel>> querySettingsAsync(String filter, String include, Integer top, Integer skip, String orderBy) {
+    public Future<SettingModelFetchResult> querySettingsAsync(String filter, String include, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/settings");
         path.addQuery("$filter", filter);
         path.addQuery("$include", include);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<SettingModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<SettingModel>>(){}));
+        return this.threadPool.submit((RestCall<SettingModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<SettingModelFetchResult>(){}));
     }
 
     /**
@@ -15223,16 +21373,16 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<SubscriptionModel>
+     * @return SubscriptionModelFetchResult
      */
-    public FetchResult<SubscriptionModel> listSubscriptionsByAccount(Integer accountId, String filter, Integer top, Integer skip, String orderBy) throws Exception {
+    public SubscriptionModelFetchResult listSubscriptionsByAccount(Integer accountId, String filter, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/subscriptions");
         path.applyField("accountId", accountId);
         path.addQuery("$filter", filter);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<SubscriptionModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<SubscriptionModel>>(){})).call();
+        return ((RestCall<SubscriptionModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<SubscriptionModelFetchResult>(){})).call();
     }
 
     /**
@@ -15254,16 +21404,16 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<SubscriptionModel>
+     * @return SubscriptionModelFetchResult
      */
-    public Future<FetchResult<SubscriptionModel>> listSubscriptionsByAccountAsync(Integer accountId, String filter, Integer top, Integer skip, String orderBy) {
+    public Future<SubscriptionModelFetchResult> listSubscriptionsByAccountAsync(Integer accountId, String filter, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/subscriptions");
         path.applyField("accountId", accountId);
         path.addQuery("$filter", filter);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<SubscriptionModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<SubscriptionModel>>(){}));
+        return this.threadPool.submit((RestCall<SubscriptionModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<SubscriptionModelFetchResult>(){}));
     }
 
     /**
@@ -15284,15 +21434,15 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<SubscriptionModel>
+     * @return SubscriptionModelFetchResult
      */
-    public FetchResult<SubscriptionModel> querySubscriptions(String filter, Integer top, Integer skip, String orderBy) throws Exception {
+    public SubscriptionModelFetchResult querySubscriptions(String filter, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/subscriptions");
         path.addQuery("$filter", filter);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<SubscriptionModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<SubscriptionModel>>(){})).call();
+        return ((RestCall<SubscriptionModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<SubscriptionModelFetchResult>(){})).call();
     }
 
     /**
@@ -15313,15 +21463,15 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<SubscriptionModel>
+     * @return SubscriptionModelFetchResult
      */
-    public Future<FetchResult<SubscriptionModel>> querySubscriptionsAsync(String filter, Integer top, Integer skip, String orderBy) {
+    public Future<SubscriptionModelFetchResult> querySubscriptionsAsync(String filter, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/subscriptions");
         path.addQuery("$filter", filter);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<SubscriptionModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<SubscriptionModel>>(){}));
+        return this.threadPool.submit((RestCall<SubscriptionModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<SubscriptionModelFetchResult>(){}));
     }
 
     /**
@@ -15480,9 +21630,9 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<TaxCodeModel>
+     * @return TaxCodeModelFetchResult
      */
-    public FetchResult<TaxCodeModel> listTaxCodesByCompany(Integer companyId, String filter, String include, Integer top, Integer skip, String orderBy) throws Exception {
+    public TaxCodeModelFetchResult listTaxCodesByCompany(Integer companyId, String filter, String include, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/taxcodes");
         path.applyField("companyId", companyId);
         path.addQuery("$filter", filter);
@@ -15490,7 +21640,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<TaxCodeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxCodeModel>>(){})).call();
+        return ((RestCall<TaxCodeModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<TaxCodeModelFetchResult>(){})).call();
     }
 
     /**
@@ -15515,9 +21665,9 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<TaxCodeModel>
+     * @return TaxCodeModelFetchResult
      */
-    public Future<FetchResult<TaxCodeModel>> listTaxCodesByCompanyAsync(Integer companyId, String filter, String include, Integer top, Integer skip, String orderBy) {
+    public Future<TaxCodeModelFetchResult> listTaxCodesByCompanyAsync(Integer companyId, String filter, String include, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/taxcodes");
         path.applyField("companyId", companyId);
         path.addQuery("$filter", filter);
@@ -15525,7 +21675,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<TaxCodeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxCodeModel>>(){}));
+        return this.threadPool.submit((RestCall<TaxCodeModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<TaxCodeModelFetchResult>(){}));
     }
 
     /**
@@ -15549,16 +21699,16 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<TaxCodeModel>
+     * @return TaxCodeModelFetchResult
      */
-    public FetchResult<TaxCodeModel> queryTaxCodes(String filter, String include, Integer top, Integer skip, String orderBy) throws Exception {
+    public TaxCodeModelFetchResult queryTaxCodes(String filter, String include, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/taxcodes");
         path.addQuery("$filter", filter);
         path.addQuery("$include", include);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<TaxCodeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxCodeModel>>(){})).call();
+        return ((RestCall<TaxCodeModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<TaxCodeModelFetchResult>(){})).call();
     }
 
     /**
@@ -15582,16 +21732,16 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<TaxCodeModel>
+     * @return TaxCodeModelFetchResult
      */
-    public Future<FetchResult<TaxCodeModel>> queryTaxCodesAsync(String filter, String include, Integer top, Integer skip, String orderBy) {
+    public Future<TaxCodeModelFetchResult> queryTaxCodesAsync(String filter, String include, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/taxcodes");
         path.addQuery("$filter", filter);
         path.addQuery("$include", include);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<TaxCodeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxCodeModel>>(){}));
+        return this.threadPool.submit((RestCall<TaxCodeModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<TaxCodeModelFetchResult>(){}));
     }
 
     /**
@@ -15646,6 +21796,42 @@ public class AvaTaxClient {
         path.applyField("companyId", companyId);
         path.applyField("id", id);
         return this.threadPool.submit((RestCall<TaxCodeModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<TaxCodeModel>(){}));
+    }
+
+    /**
+     * Retrieve send-sale tax content for this company.
+     * 
+     * This API is available by invitation only.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Required* (all):  SendSalesRateFile.
+     * 
+     * @param model The send sales request model.
+     * @return String
+     */
+    public String buildSendSalesRateFile(SendSalesRequestModel model) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/sendsalescontent/download");
+        return ((RestCall<String>)restCallFactory.createRestCall("post", path, model, new TypeToken<String>(){})).call();
+    }
+
+    /**
+     * Retrieve send-sale tax content for this company.
+     * 
+     * This API is available by invitation only.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Required* (all):  SendSalesRateFile.
+     * 
+     * @param model The send sales request model.
+     * @return String
+     */
+    public Future<String> buildSendSalesRateFileAsync(SendSalesRequestModel model) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/sendsalescontent/download");
+        return this.threadPool.submit((RestCall<String>)restCallFactory.createRestCall("post", path, model, new TypeToken<String>(){}));
     }
 
     /**
@@ -15831,6 +22017,60 @@ public class AvaTaxClient {
     }
 
     /**
+     * Retrieve send-sale tax content for this company.
+     * 
+     * This API is available by invitation only.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Required* (all):  SendSalesRateFile.
+     * 
+     * @param date The date for which we are fetching tax content.
+     * @param taxCode The tax code for which we are fetching tax content.
+     * @param companyId The unique ID number of the company which is fetching tax content.
+     * @param format Requests a specific data format for this content file. (See SendSalesOutputFileFormat::* for a list of allowable values)
+     * @param type Requests a specific encoding for this content file. (See SendSalesFileType::* for a list of allowable values)
+     * @return String
+     */
+    public String downloadSendSalesRateFile(Date date, String taxCode, Integer companyId, SendSalesOutputFileFormat format, SendSalesFileType type) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/sendsalescontent/download/{companyId}/{taxCode}/{date}");
+        path.applyField("date", date);
+        path.applyField("taxCode", taxCode);
+        path.applyField("companyId", companyId);
+        path.addQuery("format", format);
+        path.addQuery("type", type);
+        return ((RestCall<String>)restCallFactory.createRestCall("get", path, null, new TypeToken<String>(){})).call();
+    }
+
+    /**
+     * Retrieve send-sale tax content for this company.
+     * 
+     * This API is available by invitation only.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Required* (all):  SendSalesRateFile.
+     * 
+     * @param date The date for which we are fetching tax content.
+     * @param taxCode The tax code for which we are fetching tax content.
+     * @param companyId The unique ID number of the company which is fetching tax content.
+     * @param format Requests a specific data format for this content file. (See SendSalesOutputFileFormat::* for a list of allowable values)
+     * @param type Requests a specific encoding for this content file. (See SendSalesFileType::* for a list of allowable values)
+     * @return String
+     */
+    public Future<String> downloadSendSalesRateFileAsync(Date date, String taxCode, Integer companyId, SendSalesOutputFileFormat format, SendSalesFileType type) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/sendsalescontent/download/{companyId}/{taxCode}/{date}");
+        path.applyField("date", date);
+        path.applyField("taxCode", taxCode);
+        path.applyField("companyId", companyId);
+        path.addQuery("format", format);
+        path.addQuery("type", type);
+        return this.threadPool.submit((RestCall<String>)restCallFactory.createRestCall("get", path, null, new TypeToken<String>(){}));
+    }
+
+    /**
      * Download a file listing tax rates by postal code
      * 
      * Download a CSV file containing all five digit postal codes in the United States and their sales
@@ -15946,6 +22186,100 @@ public class AvaTaxClient {
         path.applyField("date", date);
         path.addQuery("region", region);
         return this.threadPool.submit((RestCall<String>)restCallFactory.createRestCall("get", path, null, new TypeToken<String>(){}));
+    }
+
+    /**
+     * Export the tax profile of this company to a backup file
+     * 
+     * Exports the tax profile of a company to a file, containing all information that affects tax calculation for this company.
+     *             
+     * A tax profile is a series of decisions and configuration choices that affect your company's tax calculation.  These decisions
+     * include your nexus declarations, your item catalog, your custom tax rules, and so on.
+     *             
+     * This API can be used to export a complete zip file containing your company's current tax profile, and you can then restore this
+     * profile to a different company or compare it over time to see if your profile has been changed.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
+     * 
+     * @param companyId The unique ID number of the company whose profile you wish to retrieve.
+     * @return String
+     */
+    public String exportTaxProfile(Integer companyId) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/taxprofile");
+        path.applyField("companyId", companyId);
+        return ((RestCall<String>)restCallFactory.createRestCall("get", path, null, new TypeToken<String>(){})).call();
+    }
+
+    /**
+     * Export the tax profile of this company to a backup file
+     * 
+     * Exports the tax profile of a company to a file, containing all information that affects tax calculation for this company.
+     *             
+     * A tax profile is a series of decisions and configuration choices that affect your company's tax calculation.  These decisions
+     * include your nexus declarations, your item catalog, your custom tax rules, and so on.
+     *             
+     * This API can be used to export a complete zip file containing your company's current tax profile, and you can then restore this
+     * profile to a different company or compare it over time to see if your profile has been changed.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
+     * 
+     * @param companyId The unique ID number of the company whose profile you wish to retrieve.
+     * @return String
+     */
+    public Future<String> exportTaxProfileAsync(Integer companyId) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/taxprofile");
+        path.applyField("companyId", companyId);
+        return this.threadPool.submit((RestCall<String>)restCallFactory.createRestCall("get", path, null, new TypeToken<String>(){}));
+    }
+
+    /**
+     * Import a tax profile.
+     * 
+     * Imports a tax profile to a new company, along with the option to import account settings.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, FirmAdmin, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
+     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
+     * 
+     * @param accountId The account id of the account to which the tax profile will be imported.
+     * @param newCompanyCode The companyCode to use for the imported company.
+     * @param replaceAccountSettings Replace the current account settings with the ones in the tax profile.
+     * @param bypassNexusValidation Enable invalid nexus to be imported.
+     * @param taxProfile The taxProfile
+     * @return CompanyModel
+     */
+    public CompanyModel importTaxProfile(Integer accountId, String newCompanyCode, Boolean replaceAccountSettings, Boolean bypassNexusValidation, String taxProfile) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/taxprofile");
+        return ((RestCall<CompanyModel>)restCallFactory.createRestCall("post", path, null, new TypeToken<CompanyModel>(){})).call();
+    }
+
+    /**
+     * Import a tax profile.
+     * 
+     * Imports a tax profile to a new company, along with the option to import account settings.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, FirmAdmin, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
+     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
+     * 
+     * @param accountId The account id of the account to which the tax profile will be imported.
+     * @param newCompanyCode The companyCode to use for the imported company.
+     * @param replaceAccountSettings Replace the current account settings with the ones in the tax profile.
+     * @param bypassNexusValidation Enable invalid nexus to be imported.
+     * @param taxProfile The taxProfile
+     * @return CompanyModel
+     */
+    public Future<CompanyModel> importTaxProfileAsync(Integer accountId, String newCompanyCode, Boolean replaceAccountSettings, Boolean bypassNexusValidation, String taxProfile) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/taxprofile");
+        return this.threadPool.submit((RestCall<CompanyModel>)restCallFactory.createRestCall("post", path, null, new TypeToken<CompanyModel>(){}));
     }
 
     /**
@@ -16168,9 +22502,9 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<TaxRuleModel>
+     * @return TaxRuleModelFetchResult
      */
-    public FetchResult<TaxRuleModel> listTaxRules(Integer companyId, String filter, String include, Integer top, Integer skip, String orderBy) throws Exception {
+    public TaxRuleModelFetchResult listTaxRules(Integer companyId, String filter, String include, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/taxrules");
         path.applyField("companyId", companyId);
         path.addQuery("$filter", filter);
@@ -16178,7 +22512,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<TaxRuleModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxRuleModel>>(){})).call();
+        return ((RestCall<TaxRuleModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<TaxRuleModelFetchResult>(){})).call();
     }
 
     /**
@@ -16211,9 +22545,9 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<TaxRuleModel>
+     * @return TaxRuleModelFetchResult
      */
-    public Future<FetchResult<TaxRuleModel>> listTaxRulesAsync(Integer companyId, String filter, String include, Integer top, Integer skip, String orderBy) {
+    public Future<TaxRuleModelFetchResult> listTaxRulesAsync(Integer companyId, String filter, String include, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/taxrules");
         path.applyField("companyId", companyId);
         path.addQuery("$filter", filter);
@@ -16221,7 +22555,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<TaxRuleModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxRuleModel>>(){}));
+        return this.threadPool.submit((RestCall<TaxRuleModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<TaxRuleModelFetchResult>(){}));
     }
 
     /**
@@ -16253,16 +22587,16 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<TaxRuleModel>
+     * @return TaxRuleModelFetchResult
      */
-    public FetchResult<TaxRuleModel> queryTaxRules(String filter, String include, Integer top, Integer skip, String orderBy) throws Exception {
+    public TaxRuleModelFetchResult queryTaxRules(String filter, String include, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/taxrules");
         path.addQuery("$filter", filter);
         path.addQuery("$include", include);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<TaxRuleModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxRuleModel>>(){})).call();
+        return ((RestCall<TaxRuleModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<TaxRuleModelFetchResult>(){})).call();
     }
 
     /**
@@ -16294,16 +22628,16 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<TaxRuleModel>
+     * @return TaxRuleModelFetchResult
      */
-    public Future<FetchResult<TaxRuleModel>> queryTaxRulesAsync(String filter, String include, Integer top, Integer skip, String orderBy) {
+    public Future<TaxRuleModelFetchResult> queryTaxRulesAsync(String filter, String include, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/taxrules");
         path.addQuery("$filter", filter);
         path.addQuery("$include", include);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<TaxRuleModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxRuleModel>>(){}));
+        return this.threadPool.submit((RestCall<TaxRuleModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<TaxRuleModelFetchResult>(){}));
     }
 
     /**
@@ -17529,29 +23863,13 @@ public class AvaTaxClient {
     }
 
     /**
-     * Retrieve all transactions
+     * Inspects a transaction line and presents the result with a human-readable text providing the reasoning behind
+determination like nexus, exemption, product taxability etc.
      * 
-     * List all transactions attached to this company.
+     * Inspects a transaction line and presents the result with a human-readable text providing the reasoning behind
+     * determination like nexus, exemption, product taxability etc.
      *             
-     * This endpoint is limited to returning 1,000 transactions at a time maximum.
-     *             
-     * When listing transactions, you must specify a `date` range filter.  If you do not specify a `$filter` that includes a `date` field
-     * criteria, the query will default to looking at only those transactions with `date` in the past 30 days.
-     *             
-     * A transaction represents a unique potentially taxable action that your company has recorded, and transactions include actions like
-     * sales, purchases, inventory transfer, and returns (also called refunds).
-     *             
-     * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
-     * Paginate your results using the `$top`, `$skip`, and `$orderby` parameters.
-     *             
-     * You may specify one or more of the following values in the `$include` parameter to fetch additional nested data, using commas to separate multiple values:
-     *             
-     * * Lines
-     * * Details (implies lines)
-     * * Summary (implies details)
-     * * Addresses
-     * * SummaryOnly (omit lines and details - reduces API response size)
-     * * LinesOnly (omit details - reduces API response size)
+     * NOTE: In order to avoid ambiguity, DocumentType of 'Any' is invalid for this API as this API is designed to look for a specific line of a given document.
      *             
      * NOTE: If your companyCode or transactionCode contains any of these characters /, +, ? or a space please use the following encoding before making a request:
      * * Replace '/' with '\_-ava2f-\_'  For example: document/Code becomes document_-ava2f-_Code
@@ -17567,24 +23885,55 @@ public class AvaTaxClient {
      * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro, BasicReturns.
      * 
      * @param companyCode The company code of the company that recorded this transaction
-     * @param dataSourceId Optionally filter transactions to those from a specific data source.
-     * @param include Specifies objects to include in this fetch call
-     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* totalDiscount, lines, addresses, locationTypes, summary, taxDetailsByTaxType, parameters, messages, invoiceMessages, isFakeTransaction
-     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
-     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
-     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<TransactionModel>
+     * @param transactionCode The transaction code of the transaction under line inspection
+     * @param lineNo The line number of the transaction that needs to be inspected
+     * @param documentType The document type of the transaction, In order to avoid ambiguity, DocumentType of 'Any' is invalid for this API as this API is designed to look for a specific line of a given document. (See DocumentType::* for a list of allowable values)
+     * @return InspectLineResponseModel
      */
-    public FetchResult<TransactionModel> listTransactionsByCompany(String companyCode, Integer dataSourceId, String include, String filter, Integer top, Integer skip, String orderBy) throws Exception {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyCode}/transactions");
+    public InspectLineResponseModel inspectLine(String companyCode, String transactionCode, String lineNo, DocumentType documentType) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyCode}/transactions/{transactionCode}/lines/{lineNo}/inspect");
         path.applyField("companyCode", companyCode);
-        path.addQuery("dataSourceId", dataSourceId);
-        path.addQuery("$include", include);
-        path.addQuery("$filter", filter);
-        path.addQuery("$top", top);
-        path.addQuery("$skip", skip);
-        path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<TransactionModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TransactionModel>>(){})).call();
+        path.applyField("transactionCode", transactionCode);
+        path.applyField("lineNo", lineNo);
+        path.addQuery("documentType", documentType);
+        return ((RestCall<InspectLineResponseModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<InspectLineResponseModel>(){})).call();
+    }
+
+    /**
+     * Inspects a transaction line and presents the result with a human-readable text providing the reasoning behind
+determination like nexus, exemption, product taxability etc.
+     * 
+     * Inspects a transaction line and presents the result with a human-readable text providing the reasoning behind
+     * determination like nexus, exemption, product taxability etc.
+     *             
+     * NOTE: In order to avoid ambiguity, DocumentType of 'Any' is invalid for this API as this API is designed to look for a specific line of a given document.
+     *             
+     * NOTE: If your companyCode or transactionCode contains any of these characters /, +, ? or a space please use the following encoding before making a request:
+     * * Replace '/' with '\_-ava2f-\_'  For example: document/Code becomes document_-ava2f-_Code
+     * * Replace '+' with '\_-ava2b-\_'  For example: document+Code becomes document_-ava2b-_Code
+     * * Replace '?' with '\_-ava3f-\_'  For example: document?Code becomes document_-ava3f-_Code
+     * * Replace '%' with '\_-ava25-\_'  For example: document%Code becomes document_-ava25-_Code
+     * * Replace '#' with '\_-ava23-\_'  For example: document#Code becomes document_-ava23-_Code
+     * * Replace ' ' with '%20'  For example: document Code becomes document%20Code
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, ProStoresOperator, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
+     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro, BasicReturns.
+     * 
+     * @param companyCode The company code of the company that recorded this transaction
+     * @param transactionCode The transaction code of the transaction under line inspection
+     * @param lineNo The line number of the transaction that needs to be inspected
+     * @param documentType The document type of the transaction, In order to avoid ambiguity, DocumentType of 'Any' is invalid for this API as this API is designed to look for a specific line of a given document. (See DocumentType::* for a list of allowable values)
+     * @return InspectLineResponseModel
+     */
+    public Future<InspectLineResponseModel> inspectLineAsync(String companyCode, String transactionCode, String lineNo, DocumentType documentType) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyCode}/transactions/{transactionCode}/lines/{lineNo}/inspect");
+        path.applyField("companyCode", companyCode);
+        path.applyField("transactionCode", transactionCode);
+        path.applyField("lineNo", lineNo);
+        path.addQuery("documentType", documentType);
+        return this.threadPool.submit((RestCall<InspectLineResponseModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<InspectLineResponseModel>(){}));
     }
 
     /**
@@ -17628,13 +23977,13 @@ public class AvaTaxClient {
      * @param companyCode The company code of the company that recorded this transaction
      * @param dataSourceId Optionally filter transactions to those from a specific data source.
      * @param include Specifies objects to include in this fetch call
-     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* totalDiscount, lines, addresses, locationTypes, summary, taxDetailsByTaxType, parameters, messages, invoiceMessages, isFakeTransaction
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* exchangeRateCurrencyCode, totalDiscount, lines, addresses, locationTypes, summary, taxDetailsByTaxType, parameters, messages, invoiceMessages, isFakeTransaction
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<TransactionModel>
+     * @return TransactionModelFetchResult
      */
-    public Future<FetchResult<TransactionModel>> listTransactionsByCompanyAsync(String companyCode, Integer dataSourceId, String include, String filter, Integer top, Integer skip, String orderBy) {
+    public TransactionModelFetchResult listTransactionsByCompany(String companyCode, Integer dataSourceId, String include, String filter, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyCode}/transactions");
         path.applyField("companyCode", companyCode);
         path.addQuery("dataSourceId", dataSourceId);
@@ -17643,7 +23992,66 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<TransactionModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TransactionModel>>(){}));
+        return ((RestCall<TransactionModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<TransactionModelFetchResult>(){})).call();
+    }
+
+    /**
+     * Retrieve all transactions
+     * 
+     * List all transactions attached to this company.
+     *             
+     * This endpoint is limited to returning 1,000 transactions at a time maximum.
+     *             
+     * When listing transactions, you must specify a `date` range filter.  If you do not specify a `$filter` that includes a `date` field
+     * criteria, the query will default to looking at only those transactions with `date` in the past 30 days.
+     *             
+     * A transaction represents a unique potentially taxable action that your company has recorded, and transactions include actions like
+     * sales, purchases, inventory transfer, and returns (also called refunds).
+     *             
+     * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * Paginate your results using the `$top`, `$skip`, and `$orderby` parameters.
+     *             
+     * You may specify one or more of the following values in the `$include` parameter to fetch additional nested data, using commas to separate multiple values:
+     *             
+     * * Lines
+     * * Details (implies lines)
+     * * Summary (implies details)
+     * * Addresses
+     * * SummaryOnly (omit lines and details - reduces API response size)
+     * * LinesOnly (omit details - reduces API response size)
+     *             
+     * NOTE: If your companyCode or transactionCode contains any of these characters /, +, ? or a space please use the following encoding before making a request:
+     * * Replace '/' with '\_-ava2f-\_'  For example: document/Code becomes document_-ava2f-_Code
+     * * Replace '+' with '\_-ava2b-\_'  For example: document+Code becomes document_-ava2b-_Code
+     * * Replace '?' with '\_-ava3f-\_'  For example: document?Code becomes document_-ava3f-_Code
+     * * Replace '%' with '\_-ava25-\_'  For example: document%Code becomes document_-ava25-_Code
+     * * Replace '#' with '\_-ava23-\_'  For example: document#Code becomes document_-ava23-_Code
+     * * Replace ' ' with '%20'  For example: document Code becomes document%20Code
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, ProStoresOperator, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
+     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro, BasicReturns.
+     * 
+     * @param companyCode The company code of the company that recorded this transaction
+     * @param dataSourceId Optionally filter transactions to those from a specific data source.
+     * @param include Specifies objects to include in this fetch call
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* exchangeRateCurrencyCode, totalDiscount, lines, addresses, locationTypes, summary, taxDetailsByTaxType, parameters, messages, invoiceMessages, isFakeTransaction
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @return TransactionModelFetchResult
+     */
+    public Future<TransactionModelFetchResult> listTransactionsByCompanyAsync(String companyCode, Integer dataSourceId, String include, String filter, Integer top, Integer skip, String orderBy) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyCode}/transactions");
+        path.applyField("companyCode", companyCode);
+        path.addQuery("dataSourceId", dataSourceId);
+        path.addQuery("$include", include);
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
+        return this.threadPool.submit((RestCall<TransactionModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<TransactionModelFetchResult>(){}));
     }
 
     /**
@@ -18524,9 +24932,9 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<UPCModel>
+     * @return UPCModelFetchResult
      */
-    public FetchResult<UPCModel> listUPCsByCompany(Integer companyId, String filter, String include, Integer top, Integer skip, String orderBy) throws Exception {
+    public UPCModelFetchResult listUPCsByCompany(Integer companyId, String filter, String include, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/upcs");
         path.applyField("companyId", companyId);
         path.addQuery("$filter", filter);
@@ -18534,7 +24942,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<UPCModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<UPCModel>>(){})).call();
+        return ((RestCall<UPCModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<UPCModelFetchResult>(){})).call();
     }
 
     /**
@@ -18557,9 +24965,9 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<UPCModel>
+     * @return UPCModelFetchResult
      */
-    public Future<FetchResult<UPCModel>> listUPCsByCompanyAsync(Integer companyId, String filter, String include, Integer top, Integer skip, String orderBy) {
+    public Future<UPCModelFetchResult> listUPCsByCompanyAsync(Integer companyId, String filter, String include, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/upcs");
         path.applyField("companyId", companyId);
         path.addQuery("$filter", filter);
@@ -18567,7 +24975,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<UPCModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<UPCModel>>(){}));
+        return this.threadPool.submit((RestCall<UPCModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<UPCModelFetchResult>(){}));
     }
 
     /**
@@ -18589,16 +24997,16 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<UPCModel>
+     * @return UPCModelFetchResult
      */
-    public FetchResult<UPCModel> queryUPCs(String filter, String include, Integer top, Integer skip, String orderBy) throws Exception {
+    public UPCModelFetchResult queryUPCs(String filter, String include, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/upcs");
         path.addQuery("$filter", filter);
         path.addQuery("$include", include);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<UPCModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<UPCModel>>(){})).call();
+        return ((RestCall<UPCModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<UPCModelFetchResult>(){})).call();
     }
 
     /**
@@ -18620,16 +25028,16 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<UPCModel>
+     * @return UPCModelFetchResult
      */
-    public Future<FetchResult<UPCModel>> queryUPCsAsync(String filter, String include, Integer top, Integer skip, String orderBy) {
+    public Future<UPCModelFetchResult> queryUPCsAsync(String filter, String include, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/upcs");
         path.addQuery("$filter", filter);
         path.addQuery("$include", include);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<UPCModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<UPCModel>>(){}));
+        return this.threadPool.submit((RestCall<UPCModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<UPCModelFetchResult>(){}));
     }
 
     /**
@@ -18980,9 +25388,9 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<UserModel>
+     * @return UserModelFetchResult
      */
-    public FetchResult<UserModel> listUsersByAccount(Integer accountId, String include, String filter, Integer top, Integer skip, String orderBy) throws Exception {
+    public UserModelFetchResult listUsersByAccount(Integer accountId, String include, String filter, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/users");
         path.applyField("accountId", accountId);
         path.addQuery("$include", include);
@@ -18990,7 +25398,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<UserModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<UserModel>>(){})).call();
+        return ((RestCall<UserModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<UserModelFetchResult>(){})).call();
     }
 
     /**
@@ -19019,9 +25427,9 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<UserModel>
+     * @return UserModelFetchResult
      */
-    public Future<FetchResult<UserModel>> listUsersByAccountAsync(Integer accountId, String include, String filter, Integer top, Integer skip, String orderBy) {
+    public Future<UserModelFetchResult> listUsersByAccountAsync(Integer accountId, String include, String filter, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/users");
         path.applyField("accountId", accountId);
         path.addQuery("$include", include);
@@ -19029,7 +25437,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<UserModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<UserModel>>(){}));
+        return this.threadPool.submit((RestCall<UserModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<UserModelFetchResult>(){}));
     }
 
     /**
@@ -19059,16 +25467,16 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<UserModel>
+     * @return UserModelFetchResult
      */
-    public FetchResult<UserModel> queryUsers(String include, String filter, Integer top, Integer skip, String orderBy) throws Exception {
+    public UserModelFetchResult queryUsers(String include, String filter, Integer top, Integer skip, String orderBy) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/users");
         path.addQuery("$include", include);
         path.addQuery("$filter", filter);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<UserModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<UserModel>>(){})).call();
+        return ((RestCall<UserModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<UserModelFetchResult>(){})).call();
     }
 
     /**
@@ -19098,16 +25506,16 @@ public class AvaTaxClient {
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return FetchResult<UserModel>
+     * @return UserModelFetchResult
      */
-    public Future<FetchResult<UserModel>> queryUsersAsync(String include, String filter, Integer top, Integer skip, String orderBy) {
+    public Future<UserModelFetchResult> queryUsersAsync(String include, String filter, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/users");
         path.addQuery("$include", include);
         path.addQuery("$filter", filter);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<UserModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<UserModel>>(){}));
+        return this.threadPool.submit((RestCall<UserModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<UserModelFetchResult>(){}));
     }
 
     /**
@@ -19209,11 +25617,11 @@ public class AvaTaxClient {
      * within AvaTax.  You can examine the subscriptions returned from this API call to look for a particular product
      * or subscription to provide useful information to the current user as to whether they are entitled to use
      * 
-     * @return FetchResult<SubscriptionModel>
+     * @return SubscriptionModelFetchResult
      */
-    public FetchResult<SubscriptionModel> listMySubscriptions() throws Exception {
+    public SubscriptionModelFetchResult listMySubscriptions() throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/utilities/subscriptions");
-        return ((RestCall<FetchResult<SubscriptionModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<SubscriptionModel>>(){})).call();
+        return ((RestCall<SubscriptionModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<SubscriptionModelFetchResult>(){})).call();
     }
 
     /**
@@ -19227,11 +25635,11 @@ public class AvaTaxClient {
      * within AvaTax.  You can examine the subscriptions returned from this API call to look for a particular product
      * or subscription to provide useful information to the current user as to whether they are entitled to use
      * 
-     * @return FetchResult<SubscriptionModel>
+     * @return SubscriptionModelFetchResult
      */
-    public Future<FetchResult<SubscriptionModel>> listMySubscriptionsAsync() {
+    public Future<SubscriptionModelFetchResult> listMySubscriptionsAsync() {
         AvaTaxPath path = new AvaTaxPath("/api/v2/utilities/subscriptions");
-        return this.threadPool.submit((RestCall<FetchResult<SubscriptionModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<SubscriptionModel>>(){}));
+        return this.threadPool.submit((RestCall<SubscriptionModelFetchResult>)restCallFactory.createRestCall("get", path, null, new TypeToken<SubscriptionModelFetchResult>(){}));
     }
 
     /**

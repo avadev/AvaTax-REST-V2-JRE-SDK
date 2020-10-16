@@ -921,6 +921,130 @@ public class TransactionLineDetailModel {
         this.isFee = value;
     }
 
+    private BigDecimal reportingTaxableUnits;
+
+    /**
+     * Getter for reportingTaxableUnits
+     *
+     * Number of units in this line item that were calculated to be taxable according to this rate detail in the reporting currency.
+     */
+    public BigDecimal getReportingTaxableUnits() {
+        return this.reportingTaxableUnits;
+    }
+
+    /**
+     * Setter for reportingTaxableUnits
+     *
+     * Number of units in this line item that were calculated to be taxable according to this rate detail in the reporting currency.
+     */
+    public void setReportingTaxableUnits(BigDecimal value) {
+        this.reportingTaxableUnits = value;
+    }
+
+    private BigDecimal reportingNonTaxableUnits;
+
+    /**
+     * Getter for reportingNonTaxableUnits
+     *
+     * Number of units in this line item that were calculated to be nontaxable according to this rate detail in the reporting currency.
+     */
+    public BigDecimal getReportingNonTaxableUnits() {
+        return this.reportingNonTaxableUnits;
+    }
+
+    /**
+     * Setter for reportingNonTaxableUnits
+     *
+     * Number of units in this line item that were calculated to be nontaxable according to this rate detail in the reporting currency.
+     */
+    public void setReportingNonTaxableUnits(BigDecimal value) {
+        this.reportingNonTaxableUnits = value;
+    }
+
+    private BigDecimal reportingExemptUnits;
+
+    /**
+     * Getter for reportingExemptUnits
+     *
+     * Number of units in this line item that were calculated to be exempt according to this rate detail in the reporting currency.
+     */
+    public BigDecimal getReportingExemptUnits() {
+        return this.reportingExemptUnits;
+    }
+
+    /**
+     * Setter for reportingExemptUnits
+     *
+     * Number of units in this line item that were calculated to be exempt according to this rate detail in the reporting currency.
+     */
+    public void setReportingExemptUnits(BigDecimal value) {
+        this.reportingExemptUnits = value;
+    }
+
+    private BigDecimal reportingTax;
+
+    /**
+     * Getter for reportingTax
+     *
+     * The amount of tax for this tax detail in the reporting currency.
+     */
+    public BigDecimal getReportingTax() {
+        return this.reportingTax;
+    }
+
+    /**
+     * Setter for reportingTax
+     *
+     * The amount of tax for this tax detail in the reporting currency.
+     */
+    public void setReportingTax(BigDecimal value) {
+        this.reportingTax = value;
+    }
+
+    private BigDecimal reportingTaxCalculated;
+
+    /**
+     * Getter for reportingTaxCalculated
+     *
+     * The amount of tax that AvaTax calculated in the reporting currency.
+    * If an override for tax amount is used, there may be a difference between the tax
+    * field which applies your override, and the this amount that is calculated without override.
+     */
+    public BigDecimal getReportingTaxCalculated() {
+        return this.reportingTaxCalculated;
+    }
+
+    /**
+     * Setter for reportingTaxCalculated
+     *
+     * The amount of tax that AvaTax calculated in the reporting currency.
+    * If an override for tax amount is used, there may be a difference between the tax
+    * field which applies your override, and the this amount that is calculated without override.
+     */
+    public void setReportingTaxCalculated(BigDecimal value) {
+        this.reportingTaxCalculated = value;
+    }
+
+    private LiabilityType liabilityType;
+
+    /**
+     * Getter for liabilityType
+     *
+     * LiabilityType identifies the party liable to file the tax. This field is used to filter taxes from reports and tax filings as appropriate.
+     */
+    public LiabilityType getLiabilityType() {
+        return this.liabilityType;
+    }
+
+    /**
+     * Setter for liabilityType
+     *
+     * LiabilityType identifies the party liable to file the tax. This field is used to filter taxes from reports and tax filings as appropriate.
+     */
+    public void setLiabilityType(LiabilityType value) {
+        this.liabilityType = value;
+    }
+
     /**
      * Returns a JSON string representation of TransactionLineDetailModel
      */
