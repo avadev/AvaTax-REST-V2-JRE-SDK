@@ -16,27 +16,26 @@ import java.util.HashMap;
  */
 
 /**
- * Defines how a stack rate is determined for a specific country and region.
+ * 
  */
 public enum StackAggregationOption {
     /** 
-     * No aggregation.
-     *  The component rate is used for the stack rate.
+     * 
      */
     NoStackAggregation(0),
 
     /** 
-     * Rates are aggregated across all jurisdiction types.
+     * 
      */
     FullStackAggregation(1),
 
     /** 
-     * State and county rates are aggregated.
+     * 
      */
     AggregateStateAndCounty(2),
 
     /** 
-     * City and county rates are aggregated.
+     * 
      */
     AggregateCityAndCounty(3);
 
