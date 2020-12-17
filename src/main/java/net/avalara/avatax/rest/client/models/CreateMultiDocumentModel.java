@@ -612,6 +612,26 @@ public class CreateMultiDocumentModel {
         this.exchangeRateEffectiveDate = value;
     }
 
+    private String exchangeRateCurrencyCode;
+
+    /**
+     * Getter for exchangeRateCurrencyCode
+     *
+     * Optional three-character ISO 4217 reporting exchange rate currency code for this transaction. The default value is USD.
+     */
+    public String getExchangeRateCurrencyCode() {
+        return this.exchangeRateCurrencyCode;
+    }
+
+    /**
+     * Setter for exchangeRateCurrencyCode
+     *
+     * Optional three-character ISO 4217 reporting exchange rate currency code for this transaction. The default value is USD.
+     */
+    public void setExchangeRateCurrencyCode(String value) {
+        this.exchangeRateCurrencyCode = value;
+    }
+
     private String posLaneCode;
 
     /**

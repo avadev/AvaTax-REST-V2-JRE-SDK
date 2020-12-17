@@ -229,6 +229,26 @@ public class TransactionModel {
         this.currencyCode = value;
     }
 
+    private String exchangeRateCurrencyCode;
+
+    /**
+     * Getter for exchangeRateCurrencyCode
+     *
+     * The three-character ISO 4217 exchange rate currency code that was used for payment for this transaction.
+     */
+    public String getExchangeRateCurrencyCode() {
+        return this.exchangeRateCurrencyCode;
+    }
+
+    /**
+     * Setter for exchangeRateCurrencyCode
+     *
+     * The three-character ISO 4217 exchange rate currency code that was used for payment for this transaction.
+     */
+    public void setExchangeRateCurrencyCode(String value) {
+        this.exchangeRateCurrencyCode = value;
+    }
+
     private String customerUsageType;
 
     /**

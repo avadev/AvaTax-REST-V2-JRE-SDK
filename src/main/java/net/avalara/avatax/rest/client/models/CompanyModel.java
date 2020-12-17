@@ -873,6 +873,26 @@ public class CompanyModel {
         this.parameters = value;
     }
 
+    private ArrayList<CustomerSupplierModel> supplierandcustomers;
+
+    /**
+     * Getter for supplierandcustomers
+     *
+     * The customers and suppliers of a company
+     */
+    public ArrayList<CustomerSupplierModel> getSupplierandcustomers() {
+        return this.supplierandcustomers;
+    }
+
+    /**
+     * Setter for supplierandcustomers
+     *
+     * The customers and suppliers of a company
+     */
+    public void setSupplierandcustomers(ArrayList<CustomerSupplierModel> value) {
+        this.supplierandcustomers = value;
+    }
+
     /**
      * Returns a JSON string representation of CompanyModel
      */
