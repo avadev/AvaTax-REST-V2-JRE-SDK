@@ -1,0 +1,13 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\scala",
+    "\\scala\\net",
+    "\\scala\\net\\avalara",
+    "\\scala\\net\\avalara\\avatax",
+    "\\scala\\net\\avalara\\avatax\\rest",
+    "\\scala\\net\\avalara\\avatax\\rest\\client"
+  ],
+  "SelectedNode": "\\scala\\net\\avalara\\avatax\\rest\\client\\AvaTaxClientSpec.scala",
+  "PreviewInSolutionExplorer": false
+}
