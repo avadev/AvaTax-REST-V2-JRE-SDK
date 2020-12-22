@@ -150,6 +150,26 @@ public class LocationModel {
         this.addressCategoryId = value;
     }
 
+    private Boolean isMarketplaceOutsideUsa;
+
+    /**
+     * Getter for isMarketplaceOutsideUsa
+     *
+     * Indicates whether the Marketplace is outside or in USA
+     */
+    public Boolean getIsMarketplaceOutsideUsa() {
+        return this.isMarketplaceOutsideUsa;
+    }
+
+    /**
+     * Setter for isMarketplaceOutsideUsa
+     *
+     * Indicates whether the Marketplace is outside or in USA
+     */
+    public void setIsMarketplaceOutsideUsa(Boolean value) {
+        this.isMarketplaceOutsideUsa = value;
+    }
+
     private String line1;
 
     /**

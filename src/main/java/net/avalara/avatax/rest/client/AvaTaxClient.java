@@ -740,7 +740,7 @@ public class AvaTaxClient {
      * This is the same API as the POST /api/v2/addresses/resolve endpoint.
      * Both verbs are supported to provide for flexible implementation.
      *             
-     * Inorder to get any evaluation for an address please provide atleast one of the following fields/pairs:
+     * In order to get any evaluation for an address, please provide at least one of the following fields/pairs:
      * 1. postal code
      * 2. line1 + city + region
      * 3. line1 + postal code
@@ -748,7 +748,7 @@ public class AvaTaxClient {
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
-     * * This API depends on the following active services<br />*Required* (all):  AutoAddress.
+     * * This API depends on the following active services:*Required* (all):  AutoAddress.
      * 
      * @param line1 Line 1
      * @param line2 Line 2
@@ -783,7 +783,7 @@ public class AvaTaxClient {
      * This is the same API as the POST /api/v2/addresses/resolve endpoint.
      * Both verbs are supported to provide for flexible implementation.
      *             
-     * Inorder to get any evaluation for an address please provide atleast one of the following fields/pairs:
+     * In order to get any evaluation for an address, please provide at least one of the following fields/pairs:
      * 1. postal code
      * 2. line1 + city + region
      * 3. line1 + postal code
@@ -791,7 +791,7 @@ public class AvaTaxClient {
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
-     * * This API depends on the following active services<br />*Required* (all):  AutoAddress.
+     * * This API depends on the following active services:*Required* (all):  AutoAddress.
      * 
      * @param line1 Line 1
      * @param line2 Line 2
@@ -829,7 +829,7 @@ public class AvaTaxClient {
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
-     * * This API depends on the following active services<br />*Required* (all):  AutoAddress.
+     * * This API depends on the following active services:*Required* (all):  AutoAddress.
      * 
      * @param model The address to resolve
      * @return AddressResolutionModel
@@ -852,7 +852,7 @@ public class AvaTaxClient {
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
-     * * This API depends on the following active services<br />*Required* (all):  AutoAddress.
+     * * This API depends on the following active services:*Required* (all):  AutoAddress.
      * 
      * @param model The address to resolve
      * @return AddressResolutionModel
@@ -1047,7 +1047,7 @@ public class AvaTaxClient {
      * ### Security Policies
      * 
      * * This API requires the user role Compliance Root User.
-     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * * This API depends on the following active services:*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
      * 
      * @param model The AvaFileForm you wish to create.
      * @return ArrayList<AvaFileFormModel>
@@ -1066,7 +1066,7 @@ public class AvaTaxClient {
      * ### Security Policies
      * 
      * * This API requires the user role Compliance Root User.
-     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * * This API depends on the following active services:*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
      * 
      * @param model The AvaFileForm you wish to create.
      * @return ArrayList<AvaFileFormModel>
@@ -1084,7 +1084,7 @@ public class AvaTaxClient {
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: Compliance Root User, ComplianceUser, FirmAdmin.
-     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * * This API depends on the following active services:*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
      * 
      * @param id The ID of the AvaFileForm you wish to delete.
      * @return ArrayList<ErrorDetail>
@@ -1103,7 +1103,7 @@ public class AvaTaxClient {
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: Compliance Root User, ComplianceUser, FirmAdmin.
-     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * * This API depends on the following active services:*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
      * 
      * @param id The ID of the AvaFileForm you wish to delete.
      * @return ArrayList<ErrorDetail>
@@ -1122,7 +1122,7 @@ public class AvaTaxClient {
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, CompanyAdmin, CompanyUser, Compliance Root User, Compliance Temp User, ComplianceAdmin, ComplianceUser, FirmAdmin, FirmUser, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin.
-     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * * This API depends on the following active services:*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
      * 
      * @param id The primary key of this AvaFileForm
      * @return AvaFileFormModel
@@ -1141,7 +1141,7 @@ public class AvaTaxClient {
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, CompanyAdmin, CompanyUser, Compliance Root User, Compliance Temp User, ComplianceAdmin, ComplianceUser, FirmAdmin, FirmUser, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin.
-     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * * This API depends on the following active services:*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
      * 
      * @param id The primary key of this AvaFileForm
      * @return AvaFileFormModel
@@ -1161,7 +1161,7 @@ public class AvaTaxClient {
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, CompanyAdmin, CompanyUser, Compliance Root User, Compliance Temp User, ComplianceAdmin, ComplianceUser, FirmAdmin, FirmUser, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin.
-     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * * This API depends on the following active services:*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* outletTypeId
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
@@ -1187,7 +1187,7 @@ public class AvaTaxClient {
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, CompanyAdmin, CompanyUser, Compliance Root User, Compliance Temp User, ComplianceAdmin, ComplianceUser, FirmAdmin, FirmUser, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin.
-     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * * This API depends on the following active services:*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* outletTypeId
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
@@ -1213,7 +1213,7 @@ public class AvaTaxClient {
      * ### Security Policies
      * 
      * * This API requires the user role Compliance Root User.
-     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * * This API depends on the following active services:*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
      * 
      * @param id The ID of the AvaFileForm you wish to update
      * @param model The AvaFileForm model you wish to update.
@@ -1234,7 +1234,7 @@ public class AvaTaxClient {
      * ### Security Policies
      * 
      * * This API requires the user role Compliance Root User.
-     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * * This API depends on the following active services:*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
      * 
      * @param id The ID of the AvaFileForm you wish to update
      * @param model The AvaFileForm model you wish to update.
@@ -1818,15 +1818,15 @@ public class AvaTaxClient {
      * Using CertExpress with this API will ensure that your certificates are automatically linked correctly into
      * your company so that they can be used for tax exemptions.
      *             
-     * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
-     * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
-     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document
-     * storage for this company, call `RequestCertificateSetup`.
+     * Before you can use any exemption certificates endpoints, you must set up your company for exemption certificate data storage.
+     * Companies that do not have this storage system set up will see `CertCaptureNotConfiguredError` when they call exemption 
+     * certificate related APIs. To check if this is set up for a company, call `GetCertificateSetup`.  To request setup of exemption 
+     * certificate storage for this company, call `RequestCertificateSetup`.
      * 
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin.
-     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
+     * * This API depends on the following active services:*Required* (all):  AvaTaxPro.
      * 
      * @param companyId The unique ID number of the company that will record certificates
      * @param customerCode The number of the customer where the request is sent to
@@ -1854,15 +1854,15 @@ public class AvaTaxClient {
      * Using CertExpress with this API will ensure that your certificates are automatically linked correctly into
      * your company so that they can be used for tax exemptions.
      *             
-     * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
-     * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
-     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document
-     * storage for this company, call `RequestCertificateSetup`.
+     * Before you can use any exemption certificates endpoints, you must set up your company for exemption certificate data storage.
+     * Companies that do not have this storage system set up will see `CertCaptureNotConfiguredError` when they call exemption 
+     * certificate related APIs. To check if this is set up for a company, call `GetCertificateSetup`.  To request setup of exemption 
+     * certificate storage for this company, call `RequestCertificateSetup`.
      * 
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin.
-     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
+     * * This API depends on the following active services:*Required* (all):  AvaTaxPro.
      * 
      * @param companyId The unique ID number of the company that will record certificates
      * @param customerCode The number of the customer where the request is sent to
@@ -1890,15 +1890,15 @@ public class AvaTaxClient {
      * Using CertExpress with this API will ensure that your certificates are automatically linked correctly into
      * your company so that they can be used for tax exemptions.
      *             
-     * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
-     * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
-     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document
-     * storage for this company, call `RequestCertificateSetup`.
+     * Before you can use any exemption certificates endpoints, you must set up your company for exemption certificate data storage.
+     * Companies that do not have this storage system set up will see `CertCaptureNotConfiguredError` when they call exemption 
+     * certificate related APIs. To check if this is set up for a company, call `GetCertificateSetup`.  To request setup of exemption 
+     * certificate storage for this company, call `RequestCertificateSetup`.
      * 
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
-     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
+     * * This API depends on the following active services:*Required* (all):  AvaTaxPro.
      * 
      * @param companyId The unique ID number of the company that issued this invitation
      * @param customerCode The number of the customer where the request is sent to
@@ -1929,15 +1929,15 @@ public class AvaTaxClient {
      * Using CertExpress with this API will ensure that your certificates are automatically linked correctly into
      * your company so that they can be used for tax exemptions.
      *             
-     * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
-     * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
-     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document
-     * storage for this company, call `RequestCertificateSetup`.
+     * Before you can use any exemption certificates endpoints, you must set up your company for exemption certificate data storage.
+     * Companies that do not have this storage system set up will see `CertCaptureNotConfiguredError` when they call exemption 
+     * certificate related APIs. To check if this is set up for a company, call `GetCertificateSetup`.  To request setup of exemption 
+     * certificate storage for this company, call `RequestCertificateSetup`.
      * 
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
-     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
+     * * This API depends on the following active services:*Required* (all):  AvaTaxPro.
      * 
      * @param companyId The unique ID number of the company that issued this invitation
      * @param customerCode The number of the customer where the request is sent to
@@ -1968,15 +1968,15 @@ public class AvaTaxClient {
      * Using CertExpress with this API will ensure that your certificates are automatically linked correctly into
      * your company so that they can be used for tax exemptions.
      *             
-     * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
-     * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
-     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document
-     * storage for this company, call `RequestCertificateSetup`.
+     * Before you can use any exemption certificates endpoints, you must set up your company for exemption certificate data storage.
+     * Companies that do not have this storage system set up will see `CertCaptureNotConfiguredError` when they call exemption 
+     * certificate related APIs. To check if this is set up for a company, call `GetCertificateSetup`.  To request setup of exemption 
+     * certificate storage for this company, call `RequestCertificateSetup`.
      * 
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
-     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
+     * * This API depends on the following active services:*Required* (all):  AvaTaxPro.
      * 
      * @param companyId The unique ID number of the company that issued this invitation
      * @param include OPTIONAL: A comma separated list of special fetch options.      No options are defined at this time.
@@ -2011,15 +2011,15 @@ public class AvaTaxClient {
      * Using CertExpress with this API will ensure that your certificates are automatically linked correctly into
      * your company so that they can be used for tax exemptions.
      *             
-     * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
-     * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
-     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document
-     * storage for this company, call `RequestCertificateSetup`.
+     * Before you can use any exemption certificates endpoints, you must set up your company for exemption certificate data storage.
+     * Companies that do not have this storage system set up will see `CertCaptureNotConfiguredError` when they call exemption 
+     * certificate related APIs. To check if this is set up for a company, call `GetCertificateSetup`.  To request setup of exemption 
+     * certificate storage for this company, call `RequestCertificateSetup`.
      * 
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
-     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
+     * * This API depends on the following active services:*Required* (all):  AvaTaxPro.
      * 
      * @param companyId The unique ID number of the company that issued this invitation
      * @param include OPTIONAL: A comma separated list of special fetch options.      No options are defined at this time.
@@ -2058,17 +2058,17 @@ public class AvaTaxClient {
      * * A link to the customer that is allowed to use this certificate
      * * Your tax transaction must contain the correct customer code
      *             
-     * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
-     * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
-     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document
-     * storage for this company, call `RequestCertificateSetup`.
+     * Before you can use any exemption certificates endpoints, you must set up your company for exemption certificate data storage.
+     * Companies that do not have this storage system set up will see `CertCaptureNotConfiguredError` when they call exemption 
+     * certificate related APIs. To check if this is set up for a company, call `GetCertificateSetup`.  To request setup of exemption 
+     * certificate storage for this company, call `RequestCertificateSetup`.
      *             
      * If the users specified in the certificates do not exist, the API will create the user and link them to the certificate
      * 
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
-     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
+     * * This API depends on the following active services:*Required* (all):  AvaTaxPro.
      * 
      * @param companyId The ID number of the company recording this certificate
      * @param preValidatedExemptionReason If set to true, the certificate will bypass the human verification process.
@@ -2100,17 +2100,17 @@ public class AvaTaxClient {
      * * A link to the customer that is allowed to use this certificate
      * * Your tax transaction must contain the correct customer code
      *             
-     * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
-     * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
-     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document
-     * storage for this company, call `RequestCertificateSetup`.
+     * Before you can use any exemption certificates endpoints, you must set up your company for exemption certificate data storage.
+     * Companies that do not have this storage system set up will see `CertCaptureNotConfiguredError` when they call exemption 
+     * certificate related APIs. To check if this is set up for a company, call `GetCertificateSetup`.  To request setup of exemption 
+     * certificate storage for this company, call `RequestCertificateSetup`.
      *             
      * If the users specified in the certificates do not exist, the API will create the user and link them to the certificate
      * 
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
-     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
+     * * This API depends on the following active services:*Required* (all):  AvaTaxPro.
      * 
      * @param companyId The ID number of the company recording this certificate
      * @param preValidatedExemptionReason If set to true, the certificate will bypass the human verification process.
@@ -2136,15 +2136,15 @@ public class AvaTaxClient {
      *             
      * Revoked certificates can no longer be used.
      *             
-     * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
-     * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
-     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document
-     * storage for this company, call `RequestCertificateSetup`.
+     * Before you can use any exemption certificates endpoints, you must set up your company for exemption certificate data storage.
+     * Companies that do not have this storage system set up will see `CertCaptureNotConfiguredError` when they call exemption 
+     * certificate related APIs. To check if this is set up for a company, call `GetCertificateSetup`.  To request setup of exemption 
+     * certificate storage for this company, call `RequestCertificateSetup`.
      * 
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin.
-     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
+     * * This API depends on the following active services:*Required* (all):  AvaTaxPro.
      * 
      * @param companyId The unique ID number of the company that recorded this certificate
      * @param id The unique ID number of this certificate
@@ -2169,15 +2169,15 @@ public class AvaTaxClient {
      *             
      * Revoked certificates can no longer be used.
      *             
-     * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
-     * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
-     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document
-     * storage for this company, call `RequestCertificateSetup`.
+     * Before you can use any exemption certificates endpoints, you must set up your company for exemption certificate data storage.
+     * Companies that do not have this storage system set up will see `CertCaptureNotConfiguredError` when they call exemption 
+     * certificate related APIs. To check if this is set up for a company, call `GetCertificateSetup`.  To request setup of exemption 
+     * certificate storage for this company, call `RequestCertificateSetup`.
      * 
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin.
-     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
+     * * This API depends on the following active services:*Required* (all):  AvaTaxPro.
      * 
      * @param companyId The unique ID number of the company that recorded this certificate
      * @param id The unique ID number of this certificate
@@ -2203,15 +2203,15 @@ public class AvaTaxClient {
      * criteria you specify when you store the certificate.  To view or manage your certificates directly, please
      * log onto the administrative website for the product you purchased.
      *             
-     * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
-     * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
-     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document
-     * storage for this company, call `RequestCertificateSetup`.
+     * Before you can use any exemption certificates endpoints, you must set up your company for exemption certificate data storage.
+     * Companies that do not have this storage system set up will see `CertCaptureNotConfiguredError` when they call exemption 
+     * certificate related APIs. To check if this is set up for a company, call `GetCertificateSetup`.  To request setup of exemption 
+     * certificate storage for this company, call `RequestCertificateSetup`.
      * 
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
-     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
+     * * This API depends on the following active services:*Required* (all):  AvaTaxPro.
      * 
      * @param companyId The unique ID number of the company that recorded this certificate
      * @param id The unique ID number of this certificate
@@ -2241,15 +2241,15 @@ public class AvaTaxClient {
      * criteria you specify when you store the certificate.  To view or manage your certificates directly, please
      * log onto the administrative website for the product you purchased.
      *             
-     * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
-     * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
-     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document
-     * storage for this company, call `RequestCertificateSetup`.
+     * Before you can use any exemption certificates endpoints, you must set up your company for exemption certificate data storage.
+     * Companies that do not have this storage system set up will see `CertCaptureNotConfiguredError` when they call exemption 
+     * certificate related APIs. To check if this is set up for a company, call `GetCertificateSetup`.  To request setup of exemption 
+     * certificate storage for this company, call `RequestCertificateSetup`.
      * 
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
-     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
+     * * This API depends on the following active services:*Required* (all):  AvaTaxPro.
      * 
      * @param companyId The unique ID number of the company that recorded this certificate
      * @param id The unique ID number of this certificate
@@ -2282,15 +2282,15 @@ public class AvaTaxClient {
      * * po_numbers - Retrieves all PO numbers tied to the certificate.
      * * attributes - Retrieves all attributes applied to the certificate.
      *             
-     * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
-     * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
-     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document
-     * storage for this company, call `RequestCertificateSetup`.
+     * Before you can use any exemption certificates endpoints, you must set up your company for exemption certificate data storage.
+     * Companies that do not have this storage system set up will see `CertCaptureNotConfiguredError` when they call exemption 
+     * certificate related APIs. To check if this is set up for a company, call `GetCertificateSetup`.  To request setup of exemption 
+     * certificate storage for this company, call `RequestCertificateSetup`.
      * 
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
-     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
+     * * This API depends on the following active services:*Required* (all):  AvaTaxPro.
      * 
      * @param companyId The ID number of the company that recorded this certificate
      * @param id The unique ID number of this certificate
@@ -2321,15 +2321,15 @@ public class AvaTaxClient {
      * * po_numbers - Retrieves all PO numbers tied to the certificate.
      * * attributes - Retrieves all attributes applied to the certificate.
      *             
-     * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
-     * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
-     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document
-     * storage for this company, call `RequestCertificateSetup`.
+     * Before you can use any exemption certificates endpoints, you must set up your company for exemption certificate data storage.
+     * Companies that do not have this storage system set up will see `CertCaptureNotConfiguredError` when they call exemption 
+     * certificate related APIs. To check if this is set up for a company, call `GetCertificateSetup`.  To request setup of exemption 
+     * certificate storage for this company, call `RequestCertificateSetup`.
      * 
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
-     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
+     * * This API depends on the following active services:*Required* (all):  AvaTaxPro.
      * 
      * @param companyId The ID number of the company that recorded this certificate
      * @param id The unique ID number of this certificate
@@ -2358,7 +2358,7 @@ public class AvaTaxClient {
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
-     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
+     * * This API depends on the following active services:*Required* (all):  AvaTaxPro.
      * 
      * @param companyId The company ID to check
      * @return ProvisionStatusModel
@@ -2383,7 +2383,7 @@ public class AvaTaxClient {
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
-     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
+     * * This API depends on the following active services:*Required* (all):  AvaTaxPro.
      * 
      * @param companyId The company ID to check
      * @return ProvisionStatusModel
@@ -2407,15 +2407,15 @@ public class AvaTaxClient {
      * criteria you specify when you store the certificate.  To view or manage your certificates directly, please
      * log onto the administrative website for the product you purchased.
      *             
-     * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
-     * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
-     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document
-     * storage for this company, call `RequestCertificateSetup`.
+     * Before you can use any exemption certificates endpoints, you must set up your company for exemption certificate data storage.
+     * Companies that do not have this storage system set up will see `CertCaptureNotConfiguredError` when they call exemption 
+     * certificate related APIs. To check if this is set up for a company, call `GetCertificateSetup`.  To request setup of exemption 
+     * certificate storage for this company, call `RequestCertificateSetup`.
      * 
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin.
-     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
+     * * This API depends on the following active services:*Required* (all):  AvaTaxPro.
      * 
      * @param companyId The unique ID number of the company that recorded this certificate
      * @param id The unique ID number of this certificate
@@ -2442,15 +2442,15 @@ public class AvaTaxClient {
      * criteria you specify when you store the certificate.  To view or manage your certificates directly, please
      * log onto the administrative website for the product you purchased.
      *             
-     * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
-     * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
-     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document
-     * storage for this company, call `RequestCertificateSetup`.
+     * Before you can use any exemption certificates endpoints, you must set up your company for exemption certificate data storage.
+     * Companies that do not have this storage system set up will see `CertCaptureNotConfiguredError` when they call exemption 
+     * certificate related APIs. To check if this is set up for a company, call `GetCertificateSetup`.  To request setup of exemption 
+     * certificate storage for this company, call `RequestCertificateSetup`.
      * 
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin.
-     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
+     * * This API depends on the following active services:*Required* (all):  AvaTaxPro.
      * 
      * @param companyId The unique ID number of the company that recorded this certificate
      * @param id The unique ID number of this certificate
@@ -2478,15 +2478,15 @@ public class AvaTaxClient {
      * criteria you specify when you store the certificate.  To view or manage your certificates directly, please
      * log onto the administrative website for the product you purchased.
      *             
-     * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
-     * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
-     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document
-     * storage for this company, call `RequestCertificateSetup`.
+     * Before you can use any exemption certificates endpoints, you must set up your company for exemption certificate data storage.
+     * Companies that do not have this storage system set up will see `CertCaptureNotConfiguredError` when they call exemption 
+     * certificate related APIs. To check if this is set up for a company, call `GetCertificateSetup`.  To request setup of exemption 
+     * certificate storage for this company, call `RequestCertificateSetup`.
      * 
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin.
-     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
+     * * This API depends on the following active services:*Required* (all):  AvaTaxPro.
      * 
      * @param companyId The unique ID number of the company that recorded this certificate
      * @param id The unique ID number of this certificate
@@ -2514,15 +2514,15 @@ public class AvaTaxClient {
      * criteria you specify when you store the certificate.  To view or manage your certificates directly, please
      * log onto the administrative website for the product you purchased.
      *             
-     * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
-     * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
-     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document
-     * storage for this company, call `RequestCertificateSetup`.
+     * Before you can use any exemption certificates endpoints, you must set up your company for exemption certificate data storage.
+     * Companies that do not have this storage system set up will see `CertCaptureNotConfiguredError` when they call exemption 
+     * certificate related APIs. To check if this is set up for a company, call `GetCertificateSetup`.  To request setup of exemption 
+     * certificate storage for this company, call `RequestCertificateSetup`.
      * 
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin.
-     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
+     * * This API depends on the following active services:*Required* (all):  AvaTaxPro.
      * 
      * @param companyId The unique ID number of the company that recorded this certificate
      * @param id The unique ID number of this certificate
@@ -2549,15 +2549,15 @@ public class AvaTaxClient {
      * criteria you specify when you store the certificate.  To view or manage your certificates directly, please
      * log onto the administrative website for the product you purchased.
      *             
-     * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
-     * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
-     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document
-     * storage for this company, call `RequestCertificateSetup`.
+     * Before you can use any exemption certificates endpoints, you must set up your company for exemption certificate data storage.
+     * Companies that do not have this storage system set up will see `CertCaptureNotConfiguredError` when they call exemption 
+     * certificate related APIs. To check if this is set up for a company, call `GetCertificateSetup`.  To request setup of exemption 
+     * certificate storage for this company, call `RequestCertificateSetup`.
      * 
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin.
-     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
+     * * This API depends on the following active services:*Required* (all):  AvaTaxPro.
      * 
      * @param companyId The unique ID number of the company that recorded this certificate
      * @param id The unique ID number of this certificate
@@ -2583,15 +2583,15 @@ public class AvaTaxClient {
      * criteria you specify when you store the certificate.  To view or manage your certificates directly, please
      * log onto the administrative website for the product you purchased.
      *             
-     * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
-     * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
-     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document
-     * storage for this company, call `RequestCertificateSetup`.
+     * Before you can use any exemption certificates endpoints, you must set up your company for exemption certificate data storage.
+     * Companies that do not have this storage system set up will see `CertCaptureNotConfiguredError` when they call exemption 
+     * certificate related APIs. To check if this is set up for a company, call `GetCertificateSetup`.  To request setup of exemption 
+     * certificate storage for this company, call `RequestCertificateSetup`.
      * 
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin.
-     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
+     * * This API depends on the following active services:*Required* (all):  AvaTaxPro.
      * 
      * @param companyId The unique ID number of the company that recorded this certificate
      * @param id The unique ID number of this certificate
@@ -2617,15 +2617,15 @@ public class AvaTaxClient {
      * criteria you specify when you store the certificate.  To view or manage your certificates directly, please
      * log onto the administrative website for the product you purchased.
      *             
-     * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
-     * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
-     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document
-     * storage for this company, call `RequestCertificateSetup`.
+     * Before you can use any exemption certificates endpoints, you must set up your company for exemption certificate data storage.
+     * Companies that do not have this storage system set up will see `CertCaptureNotConfiguredError` when they call exemption 
+     * certificate related APIs. To check if this is set up for a company, call `GetCertificateSetup`.  To request setup of exemption 
+     * certificate storage for this company, call `RequestCertificateSetup`.
      * 
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin.
-     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
+     * * This API depends on the following active services:*Required* (all):  AvaTaxPro.
      * 
      * @param companyId The unique ID number of the company that recorded this certificate
      * @param id The unique ID number of this certificate
@@ -2653,15 +2653,15 @@ public class AvaTaxClient {
      * criteria you specify when you store the certificate.  To view or manage your certificates directly, please
      * log onto the administrative website for the product you purchased.
      *             
-     * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
-     * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
-     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document
-     * storage for this company, call `RequestCertificateSetup`.
+     * Before you can use any exemption certificates endpoints, you must set up your company for exemption certificate data storage.
+     * Companies that do not have this storage system set up will see `CertCaptureNotConfiguredError` when they call exemption 
+     * certificate related APIs. To check if this is set up for a company, call `GetCertificateSetup`.  To request setup of exemption 
+     * certificate storage for this company, call `RequestCertificateSetup`.
      * 
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin.
-     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
+     * * This API depends on the following active services:*Required* (all):  AvaTaxPro.
      * 
      * @param companyId The unique ID number of the company that recorded this certificate
      * @param id The unique ID number of this certificate
@@ -2692,15 +2692,15 @@ public class AvaTaxClient {
      * * po_numbers - Retrieves all PO numbers tied to the certificate.
      * * attributes - Retrieves all attributes applied to the certificate.
      *             
-     * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
-     * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
-     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document
-     * storage for this company, call `RequestCertificateSetup`.
+     * Before you can use any exemption certificates endpoints, you must set up your company for exemption certificate data storage.
+     * Companies that do not have this storage system set up will see `CertCaptureNotConfiguredError` when they call exemption 
+     * certificate related APIs. To check if this is set up for a company, call `GetCertificateSetup`.  To request setup of exemption 
+     * certificate storage for this company, call `RequestCertificateSetup`.
      * 
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
-     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
+     * * This API depends on the following active services:*Required* (all):  AvaTaxPro.
      * 
      * @param companyId The ID number of the company to search
      * @param include OPTIONAL: A comma separated list of special fetch options. You can specify one or more of the following:      * customers - Retrieves the list of customers linked to the certificate.   * po_numbers - Retrieves all PO numbers tied to the certificate.   * attributes - Retrieves all attributes applied to the certificate.
@@ -2737,15 +2737,15 @@ public class AvaTaxClient {
      * * po_numbers - Retrieves all PO numbers tied to the certificate.
      * * attributes - Retrieves all attributes applied to the certificate.
      *             
-     * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
-     * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
-     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document
-     * storage for this company, call `RequestCertificateSetup`.
+     * Before you can use any exemption certificates endpoints, you must set up your company for exemption certificate data storage.
+     * Companies that do not have this storage system set up will see `CertCaptureNotConfiguredError` when they call exemption 
+     * certificate related APIs. To check if this is set up for a company, call `GetCertificateSetup`.  To request setup of exemption 
+     * certificate storage for this company, call `RequestCertificateSetup`.
      * 
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
-     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
+     * * This API depends on the following active services:*Required* (all):  AvaTaxPro.
      * 
      * @param companyId The ID number of the company to search
      * @param include OPTIONAL: A comma separated list of special fetch options. You can specify one or more of the following:      * customers - Retrieves the list of customers linked to the certificate.   * po_numbers - Retrieves all PO numbers tied to the certificate.   * attributes - Retrieves all attributes applied to the certificate.
@@ -2782,7 +2782,7 @@ public class AvaTaxClient {
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
-     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
+     * * This API depends on the following active services:*Required* (all):  AvaTaxPro.
      * 
      * @param companyId 
      * @return ProvisionStatusModel
@@ -2809,7 +2809,7 @@ public class AvaTaxClient {
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
-     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
+     * * This API depends on the following active services:*Required* (all):  AvaTaxPro.
      * 
      * @param companyId 
      * @return ProvisionStatusModel
@@ -2833,15 +2833,15 @@ public class AvaTaxClient {
      * criteria you specify when you store the certificate.  To view or manage your certificates directly, please
      * log onto the administrative website for the product you purchased.
      *             
-     * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
-     * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
-     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document
-     * storage for this company, call `RequestCertificateSetup`.
+     * Before you can use any exemption certificates endpoints, you must set up your company for exemption certificate data storage.
+     * Companies that do not have this storage system set up will see `CertCaptureNotConfiguredError` when they call exemption 
+     * certificate related APIs. To check if this is set up for a company, call `GetCertificateSetup`.  To request setup of exemption 
+     * certificate storage for this company, call `RequestCertificateSetup`.
      * 
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin.
-     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
+     * * This API depends on the following active services:*Required* (all):  AvaTaxPro.
      * 
      * @param companyId The unique ID number of the company that recorded this certificate
      * @param id The unique ID number of this certificate
@@ -2868,15 +2868,15 @@ public class AvaTaxClient {
      * criteria you specify when you store the certificate.  To view or manage your certificates directly, please
      * log onto the administrative website for the product you purchased.
      *             
-     * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
-     * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
-     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document
-     * storage for this company, call `RequestCertificateSetup`.
+     * Before you can use any exemption certificates endpoints, you must set up your company for exemption certificate data storage.
+     * Companies that do not have this storage system set up will see `CertCaptureNotConfiguredError` when they call exemption 
+     * certificate related APIs. To check if this is set up for a company, call `GetCertificateSetup`.  To request setup of exemption 
+     * certificate storage for this company, call `RequestCertificateSetup`.
      * 
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin.
-     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
+     * * This API depends on the following active services:*Required* (all):  AvaTaxPro.
      * 
      * @param companyId The unique ID number of the company that recorded this certificate
      * @param id The unique ID number of this certificate
@@ -2905,15 +2905,15 @@ public class AvaTaxClient {
      * criteria you specify when you store the certificate.  To view or manage your certificates directly, please
      * log onto the administrative website for the product you purchased.
      *             
-     * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
-     * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
-     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document
-     * storage for this company, call `RequestCertificateSetup`.
+     * Before you can use any exemption certificates endpoints, you must set up your company for exemption certificate data storage.
+     * Companies that do not have this storage system set up will see `CertCaptureNotConfiguredError` when they call exemption 
+     * certificate related APIs. To check if this is set up for a company, call `GetCertificateSetup`.  To request setup of exemption 
+     * certificate storage for this company, call `RequestCertificateSetup`.
      * 
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin.
-     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
+     * * This API depends on the following active services:*Required* (all):  AvaTaxPro.
      * 
      * @param companyId The unique ID number of the company that recorded this certificate
      * @param id The unique ID number of this certificate
@@ -2942,15 +2942,15 @@ public class AvaTaxClient {
      * criteria you specify when you store the certificate.  To view or manage your certificates directly, please
      * log onto the administrative website for the product you purchased.
      *             
-     * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
-     * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
-     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document
-     * storage for this company, call `RequestCertificateSetup`.
+     * Before you can use any exemption certificates endpoints, you must set up your company for exemption certificate data storage.
+     * Companies that do not have this storage system set up will see `CertCaptureNotConfiguredError` when they call exemption 
+     * certificate related APIs. To check if this is set up for a company, call `GetCertificateSetup`.  To request setup of exemption 
+     * certificate storage for this company, call `RequestCertificateSetup`.
      * 
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin.
-     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
+     * * This API depends on the following active services:*Required* (all):  AvaTaxPro.
      * 
      * @param companyId The unique ID number of the company that recorded this certificate
      * @param id The unique ID number of this certificate
@@ -2974,15 +2974,15 @@ public class AvaTaxClient {
      * criteria you specify when you store the certificate.  To view or manage your certificates directly, please
      * log onto the administrative website for the product you purchased.
      *             
-     * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
-     * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
-     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document
-     * storage for this company, call `RequestCertificateSetup`.
+     * Before you can use any exemption certificates endpoints, you must set up your company for exemption certificate data storage.
+     * Companies that do not have this storage system set up will see `CertCaptureNotConfiguredError` when they call exemption 
+     * certificate related APIs. To check if this is set up for a company, call `GetCertificateSetup`.  To request setup of exemption 
+     * certificate storage for this company, call `RequestCertificateSetup`.
      * 
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin.
-     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
+     * * This API depends on the following active services:*Required* (all):  AvaTaxPro.
      * 
      * @param companyId The ID number of the company that recorded this certificate
      * @param id The unique ID number of this certificate
@@ -3006,15 +3006,15 @@ public class AvaTaxClient {
      * criteria you specify when you store the certificate.  To view or manage your certificates directly, please
      * log onto the administrative website for the product you purchased.
      *             
-     * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
-     * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
-     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document
-     * storage for this company, call `RequestCertificateSetup`.
+     * Before you can use any exemption certificates endpoints, you must set up your company for exemption certificate data storage.
+     * Companies that do not have this storage system set up will see `CertCaptureNotConfiguredError` when they call exemption 
+     * certificate related APIs. To check if this is set up for a company, call `GetCertificateSetup`.  To request setup of exemption 
+     * certificate storage for this company, call `RequestCertificateSetup`.
      * 
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin.
-     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
+     * * This API depends on the following active services:*Required* (all):  AvaTaxPro.
      * 
      * @param companyId The ID number of the company that recorded this certificate
      * @param id The unique ID number of this certificate
@@ -3041,15 +3041,15 @@ public class AvaTaxClient {
      * criteria you specify when you store the certificate.  To view or manage your certificates directly, please
      * log onto the administrative website for the product you purchased.
      *             
-     * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
-     * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
-     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document
-     * storage for this company, call `RequestCertificateSetup`.
+     * Before you can use any exemption certificates endpoints, you must set up your company for exemption certificate data storage.
+     * Companies that do not have this storage system set up will see `CertCaptureNotConfiguredError` when they call exemption 
+     * certificate related APIs. To check if this is set up for a company, call `GetCertificateSetup`.  To request setup of exemption 
+     * certificate storage for this company, call `RequestCertificateSetup`.
      * 
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
-     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
+     * * This API depends on the following active services:*Required* (all):  AvaTaxPro.
      * 
      * @param companyId The unique ID number of the company that recorded this certificate
      * @param id The unique ID number of this certificate
@@ -3076,15 +3076,15 @@ public class AvaTaxClient {
      * criteria you specify when you store the certificate.  To view or manage your certificates directly, please
      * log onto the administrative website for the product you purchased.
      *             
-     * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
-     * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
-     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document
-     * storage for this company, call `RequestCertificateSetup`.
+     * Before you can use any exemption certificates endpoints, you must set up your company for exemption certificate data storage.
+     * Companies that do not have this storage system set up will see `CertCaptureNotConfiguredError` when they call exemption 
+     * certificate related APIs. To check if this is set up for a company, call `GetCertificateSetup`.  To request setup of exemption 
+     * certificate storage for this company, call `RequestCertificateSetup`.
      * 
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
-     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
+     * * This API depends on the following active services:*Required* (all):  AvaTaxPro.
      * 
      * @param companyId The unique ID number of the company that recorded this certificate
      * @param id The unique ID number of this certificate
@@ -3412,7 +3412,7 @@ public class AvaTaxClient {
      * 
      * ### Security Policies
      * 
-     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.
+     * * This API depends on the following active services:*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
      * @param id The unique identifier of the company
@@ -3441,7 +3441,7 @@ public class AvaTaxClient {
      * 
      * ### Security Policies
      * 
-     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.
+     * * This API depends on the following active services:*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
      * @param id The unique identifier of the company
@@ -3551,7 +3551,7 @@ public class AvaTaxClient {
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
-     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * * This API depends on the following active services:*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
      * 
      * @param companyId The unique identifier of the company
      * @return FundingConfigurationModel
@@ -3573,7 +3573,7 @@ public class AvaTaxClient {
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
-     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * * This API depends on the following active services:*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
      * 
      * @param companyId The unique identifier of the company
      * @return FundingConfigurationModel
@@ -3595,7 +3595,7 @@ public class AvaTaxClient {
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
-     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * * This API depends on the following active services:*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
      * 
      * @param companyId The unique identifier of the company
      * @param currency The currency of the funding. USD and CAD are the only valid currencies
@@ -3619,7 +3619,7 @@ public class AvaTaxClient {
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
-     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * * This API depends on the following active services:*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
      * 
      * @param companyId The unique identifier of the company
      * @param currency The currency of the funding. USD and CAD are the only valid currencies
@@ -3946,7 +3946,7 @@ public class AvaTaxClient {
      * 
      * ### Security Policies
      * 
-     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.
+     * * This API depends on the following active services:*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
      * @param id The unique identifier of the company
@@ -3968,7 +3968,7 @@ public class AvaTaxClient {
      * 
      * ### Security Policies
      * 
-     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.
+     * * This API depends on the following active services:*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
      * @param id The unique identifier of the company
@@ -4042,7 +4042,7 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
      * @param include A comma separated list of objects to fetch underneath this company. Any object with a URL path underneath this company can be fetched by specifying its name.
-     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* IsFein, contacts, items, locations, nexus, settings, taxCodes, taxRules, upcs, nonReportingChildCompanies, exemptCerts, parameters
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* IsFein, contacts, items, locations, nexus, settings, taxCodes, taxRules, upcs, nonReportingChildCompanies, exemptCerts, parameters, supplierandcustomers
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
@@ -4084,7 +4084,7 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
      * @param include A comma separated list of objects to fetch underneath this company. Any object with a URL path underneath this company can be fetched by specifying its name.
-     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* IsFein, contacts, items, locations, nexus, settings, taxCodes, taxRules, upcs, nonReportingChildCompanies, exemptCerts, parameters
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* IsFein, contacts, items, locations, nexus, settings, taxCodes, taxRules, upcs, nonReportingChildCompanies, exemptCerts, parameters, supplierandcustomers
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
@@ -4604,15 +4604,15 @@ public class AvaTaxClient {
      * A nested object such as CustomFields could be specified and created along with the customer object. To fetch the
      * nested object, please call 'GetCustomer' API with appropriate $include parameters.
      *             
-     * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
-     * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
-     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document
-     * storage for this company, call `RequestCertificateSetup`.
+     * Before you can use any exemption certificates endpoints, you must set up your company for exemption certificate data storage.
+     * Companies that do not have this storage system set up will see `CertCaptureNotConfiguredError` when they call exemption 
+     * certificate related APIs. To check if this is set up for a company, call `GetCertificateSetup`.  To request setup of exemption 
+     * certificate storage for this company, call `RequestCertificateSetup`.
      * 
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin.
-     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
+     * * This API depends on the following active services:*Required* (all):  AvaTaxPro.
      * 
      * @param companyId The unique ID number of the company that recorded this customer
      * @param model The list of customer objects to be created
@@ -4638,15 +4638,15 @@ public class AvaTaxClient {
      * A nested object such as CustomFields could be specified and created along with the customer object. To fetch the
      * nested object, please call 'GetCustomer' API with appropriate $include parameters.
      *             
-     * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
-     * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
-     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document
-     * storage for this company, call `RequestCertificateSetup`.
+     * Before you can use any exemption certificates endpoints, you must set up your company for exemption certificate data storage.
+     * Companies that do not have this storage system set up will see `CertCaptureNotConfiguredError` when they call exemption 
+     * certificate related APIs. To check if this is set up for a company, call `GetCertificateSetup`.  To request setup of exemption 
+     * certificate storage for this company, call `RequestCertificateSetup`.
      * 
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin.
-     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
+     * * This API depends on the following active services:*Required* (all):  AvaTaxPro.
      * 
      * @param companyId The unique ID number of the company that recorded this customer
      * @param model The list of customer objects to be created
@@ -4669,15 +4669,15 @@ public class AvaTaxClient {
      * identify any certificates linked to this `customer` object.  If any certificate applies to the transaction,
      * AvaTax will record the appropriate elements of the transaction as exempt and link it to the `certificate`.
      *             
-     * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
-     * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
-     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document
-     * storage for this company, call `RequestCertificateSetup`.
+     * Before you can use any exemption certificates endpoints, you must set up your company for exemption certificate data storage.
+     * Companies that do not have this storage system set up will see `CertCaptureNotConfiguredError` when they call exemption 
+     * certificate related APIs. To check if this is set up for a company, call `GetCertificateSetup`.  To request setup of exemption 
+     * certificate storage for this company, call `RequestCertificateSetup`.
      * 
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin.
-     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
+     * * This API depends on the following active services:*Required* (all):  AvaTaxPro.
      * 
      * @param companyId The unique ID number of the company that recorded this customer
      * @param customerCode The unique code representing this customer
@@ -4701,15 +4701,15 @@ public class AvaTaxClient {
      * identify any certificates linked to this `customer` object.  If any certificate applies to the transaction,
      * AvaTax will record the appropriate elements of the transaction as exempt and link it to the `certificate`.
      *             
-     * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
-     * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
-     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document
-     * storage for this company, call `RequestCertificateSetup`.
+     * Before you can use any exemption certificates endpoints, you must set up your company for exemption certificate data storage.
+     * Companies that do not have this storage system set up will see `CertCaptureNotConfiguredError` when they call exemption 
+     * certificate related APIs. To check if this is set up for a company, call `GetCertificateSetup`.  To request setup of exemption 
+     * certificate storage for this company, call `RequestCertificateSetup`.
      * 
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin.
-     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
+     * * This API depends on the following active services:*Required* (all):  AvaTaxPro.
      * 
      * @param companyId The unique ID number of the company that recorded this customer
      * @param customerCode The unique code representing this customer
@@ -4739,15 +4739,15 @@ public class AvaTaxClient {
      * * CustomFields - Fetch a list of custom fields associated to this customer.
      * * attributes - Retrieves all attributes applied to the customer.
      *             
-     * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
-     * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
-     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document
-     * storage for this company, call `RequestCertificateSetup`.
+     * Before you can use any exemption certificates endpoints, you must set up your company for exemption certificate data storage.
+     * Companies that do not have this storage system set up will see `CertCaptureNotConfiguredError` when they call exemption 
+     * certificate related APIs. To check if this is set up for a company, call `GetCertificateSetup`.  To request setup of exemption 
+     * certificate storage for this company, call `RequestCertificateSetup`.
      * 
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
-     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
+     * * This API depends on the following active services:*Required* (all):  AvaTaxPro.
      * 
      * @param companyId The unique ID number of the company that recorded this customer
      * @param customerCode The unique code representing this customer
@@ -4779,15 +4779,15 @@ public class AvaTaxClient {
      * * CustomFields - Fetch a list of custom fields associated to this customer.
      * * attributes - Retrieves all attributes applied to the customer.
      *             
-     * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
-     * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
-     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document
-     * storage for this company, call `RequestCertificateSetup`.
+     * Before you can use any exemption certificates endpoints, you must set up your company for exemption certificate data storage.
+     * Companies that do not have this storage system set up will see `CertCaptureNotConfiguredError` when they call exemption 
+     * certificate related APIs. To check if this is set up for a company, call `GetCertificateSetup`.  To request setup of exemption 
+     * certificate storage for this company, call `RequestCertificateSetup`.
      * 
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
-     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
+     * * This API depends on the following active services:*Required* (all):  AvaTaxPro.
      * 
      * @param companyId The unique ID number of the company that recorded this customer
      * @param customerCode The unique code representing this customer
@@ -4816,15 +4816,15 @@ public class AvaTaxClient {
      * identify any certificates linked to this customer object.  If any certificate applies to the transaction,
      * AvaTax will record the appropriate elements of the transaction as exempt and link it to the `certificate`.
      *             
-     * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
-     * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
-     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document
-     * storage for this company, call `RequestCertificateSetup`.
+     * Before you can use any exemption certificates endpoints, you must set up your company for exemption certificate data storage.
+     * Companies that do not have this storage system set up will see `CertCaptureNotConfiguredError` when they call exemption 
+     * certificate related APIs. To check if this is set up for a company, call `GetCertificateSetup`.  To request setup of exemption 
+     * certificate storage for this company, call `RequestCertificateSetup`.
      * 
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin.
-     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
+     * * This API depends on the following active services:*Required* (all):  AvaTaxPro.
      * 
      * @param companyId The unique ID number of the company that recorded the provided customer
      * @param customerCode The unique code representing the current customer
@@ -4852,15 +4852,15 @@ public class AvaTaxClient {
      * identify any certificates linked to this customer object.  If any certificate applies to the transaction,
      * AvaTax will record the appropriate elements of the transaction as exempt and link it to the `certificate`.
      *             
-     * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
-     * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
-     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document
-     * storage for this company, call `RequestCertificateSetup`.
+     * Before you can use any exemption certificates endpoints, you must set up your company for exemption certificate data storage.
+     * Companies that do not have this storage system set up will see `CertCaptureNotConfiguredError` when they call exemption 
+     * certificate related APIs. To check if this is set up for a company, call `GetCertificateSetup`.  To request setup of exemption 
+     * certificate storage for this company, call `RequestCertificateSetup`.
      * 
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin.
-     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
+     * * This API depends on the following active services:*Required* (all):  AvaTaxPro.
      * 
      * @param companyId The unique ID number of the company that recorded the provided customer
      * @param customerCode The unique code representing the current customer
@@ -4885,15 +4885,15 @@ public class AvaTaxClient {
      * identify any certificates linked to this `customer` object.  If any certificate applies to the transaction,
      * AvaTax will record the appropriate elements of the transaction as exempt and link it to the `certificate`.
      *             
-     * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
-     * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
-     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document
-     * storage for this company, call `RequestCertificateSetup`.
+     * Before you can use any exemption certificates endpoints, you must set up your company for exemption certificate data storage.
+     * Companies that do not have this storage system set up will see `CertCaptureNotConfiguredError` when they call exemption 
+     * certificate related APIs. To check if this is set up for a company, call `GetCertificateSetup`.  To request setup of exemption 
+     * certificate storage for this company, call `RequestCertificateSetup`.
      * 
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
-     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
+     * * This API depends on the following active services:*Required* (all):  AvaTaxPro.
      * 
      * @param companyId The unique ID number of the company that recorded this customer
      * @param customerCode The unique code representing this customer
@@ -4918,15 +4918,15 @@ public class AvaTaxClient {
      * identify any certificates linked to this `customer` object.  If any certificate applies to the transaction,
      * AvaTax will record the appropriate elements of the transaction as exempt and link it to the `certificate`.
      *             
-     * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
-     * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
-     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document
-     * storage for this company, call `RequestCertificateSetup`.
+     * Before you can use any exemption certificates endpoints, you must set up your company for exemption certificate data storage.
+     * Companies that do not have this storage system set up will see `CertCaptureNotConfiguredError` when they call exemption 
+     * certificate related APIs. To check if this is set up for a company, call `GetCertificateSetup`.  To request setup of exemption 
+     * certificate storage for this company, call `RequestCertificateSetup`.
      * 
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
-     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
+     * * This API depends on the following active services:*Required* (all):  AvaTaxPro.
      * 
      * @param companyId The unique ID number of the company that recorded this customer
      * @param customerCode The unique code representing this customer
@@ -4960,7 +4960,7 @@ public class AvaTaxClient {
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
-     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
+     * * This API depends on the following active services:*Required* (all):  AvaTaxPro.
      * 
      * @param companyId The unique ID number of the company defining customers.
      * @param code The code of the bill-to customer to link.
@@ -4994,7 +4994,7 @@ public class AvaTaxClient {
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
-     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
+     * * This API depends on the following active services:*Required* (all):  AvaTaxPro.
      * 
      * @param companyId The unique ID number of the company defining customers.
      * @param code The code of the bill-to customer to link.
@@ -5022,15 +5022,15 @@ public class AvaTaxClient {
      * identify any certificates linked to this customer object.  If any certificate applies to the transaction,
      * AvaTax will record the appropriate elements of the transaction as exempt and link it to the `certificate`.
      *             
-     * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
-     * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
-     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document
-     * storage for this company, call `RequestCertificateSetup`.
+     * Before you can use any exemption certificates endpoints, you must set up your company for exemption certificate data storage.
+     * Companies that do not have this storage system set up will see `CertCaptureNotConfiguredError` when they call exemption 
+     * certificate related APIs. To check if this is set up for a company, call `GetCertificateSetup`.  To request setup of exemption 
+     * certificate storage for this company, call `RequestCertificateSetup`.
      * 
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
-     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
+     * * This API depends on the following active services:*Required* (all):  AvaTaxPro.
      * 
      * @param companyId The unique ID number of the company that recorded the provided customer
      * @param customerCode The unique code representing the current customer
@@ -5057,15 +5057,15 @@ public class AvaTaxClient {
      * identify any certificates linked to this customer object.  If any certificate applies to the transaction,
      * AvaTax will record the appropriate elements of the transaction as exempt and link it to the `certificate`.
      *             
-     * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
-     * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
-     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document
-     * storage for this company, call `RequestCertificateSetup`.
+     * Before you can use any exemption certificates endpoints, you must set up your company for exemption certificate data storage.
+     * Companies that do not have this storage system set up will see `CertCaptureNotConfiguredError` when they call exemption 
+     * certificate related APIs. To check if this is set up for a company, call `GetCertificateSetup`.  To request setup of exemption 
+     * certificate storage for this company, call `RequestCertificateSetup`.
      * 
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
-     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
+     * * This API depends on the following active services:*Required* (all):  AvaTaxPro.
      * 
      * @param companyId The unique ID number of the company that recorded the provided customer
      * @param customerCode The unique code representing the current customer
@@ -5089,15 +5089,15 @@ public class AvaTaxClient {
      * identify any certificates linked to this `customer` object.  If any certificate applies to the transaction,
      * AvaTax will record the appropriate elements of the transaction as exempt and link it to the `certificate`.
      *             
-     * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
-     * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
-     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document
-     * storage for this company, call `RequestCertificateSetup`.
+     * Before you can use any exemption certificates endpoints, you must set up your company for exemption certificate data storage.
+     * Companies that do not have this storage system set up will see `CertCaptureNotConfiguredError` when they call exemption 
+     * certificate related APIs. To check if this is set up for a company, call `GetCertificateSetup`.  To request setup of exemption 
+     * certificate storage for this company, call `RequestCertificateSetup`.
      * 
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
-     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
+     * * This API depends on the following active services:*Required* (all):  AvaTaxPro.
      * 
      * @param companyId The unique ID number of the company that recorded this customer
      * @param customerCode The unique code representing this customer
@@ -5131,15 +5131,15 @@ public class AvaTaxClient {
      * identify any certificates linked to this `customer` object.  If any certificate applies to the transaction,
      * AvaTax will record the appropriate elements of the transaction as exempt and link it to the `certificate`.
      *             
-     * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
-     * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
-     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document
-     * storage for this company, call `RequestCertificateSetup`.
+     * Before you can use any exemption certificates endpoints, you must set up your company for exemption certificate data storage.
+     * Companies that do not have this storage system set up will see `CertCaptureNotConfiguredError` when they call exemption 
+     * certificate related APIs. To check if this is set up for a company, call `GetCertificateSetup`.  To request setup of exemption 
+     * certificate storage for this company, call `RequestCertificateSetup`.
      * 
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
-     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
+     * * This API depends on the following active services:*Required* (all):  AvaTaxPro.
      * 
      * @param companyId The unique ID number of the company that recorded this customer
      * @param customerCode The unique code representing this customer
@@ -5176,15 +5176,15 @@ public class AvaTaxClient {
      * a CertExpress invitation link so that the customer can upload proof of their exemption certificate.  Please
      * see the `CreateCertExpressInvitation` API to create an invitation link for this customer.
      *             
-     * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
-     * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
-     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document
-     * storage for this company, call `RequestCertificateSetup`.
+     * Before you can use any exemption certificates endpoints, you must set up your company for exemption certificate data storage.
+     * Companies that do not have this storage system set up will see `CertCaptureNotConfiguredError` when they call exemption 
+     * certificate related APIs. To check if this is set up for a company, call `GetCertificateSetup`.  To request setup of exemption 
+     * certificate storage for this company, call `RequestCertificateSetup`.
      * 
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
-     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
+     * * This API depends on the following active services:*Required* (all):  AvaTaxPro.
      * 
      * @param companyId The unique ID number of the company that recorded this customer
      * @param customerCode The unique code representing this customer
@@ -5215,15 +5215,15 @@ public class AvaTaxClient {
      * a CertExpress invitation link so that the customer can upload proof of their exemption certificate.  Please
      * see the `CreateCertExpressInvitation` API to create an invitation link for this customer.
      *             
-     * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
-     * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
-     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document
-     * storage for this company, call `RequestCertificateSetup`.
+     * Before you can use any exemption certificates endpoints, you must set up your company for exemption certificate data storage.
+     * Companies that do not have this storage system set up will see `CertCaptureNotConfiguredError` when they call exemption 
+     * certificate related APIs. To check if this is set up for a company, call `GetCertificateSetup`.  To request setup of exemption 
+     * certificate storage for this company, call `RequestCertificateSetup`.
      * 
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
-     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
+     * * This API depends on the following active services:*Required* (all):  AvaTaxPro.
      * 
      * @param companyId The unique ID number of the company that recorded this customer
      * @param customerCode The unique code representing this customer
@@ -5256,15 +5256,15 @@ public class AvaTaxClient {
      * * Certificates - Fetch a list of certificates linked to this customer.
      * * attributes - Retrieves all attributes applied to the customer.
      *             
-     * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
-     * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
-     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document
-     * storage for this company, call `RequestCertificateSetup`.
+     * Before you can use any exemption certificates endpoints, you must set up your company for exemption certificate data storage.
+     * Companies that do not have this storage system set up will see `CertCaptureNotConfiguredError` when they call exemption 
+     * certificate related APIs. To check if this is set up for a company, call `GetCertificateSetup`.  To request setup of exemption 
+     * certificate storage for this company, call `RequestCertificateSetup`.
      * 
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
-     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
+     * * This API depends on the following active services:*Required* (all):  AvaTaxPro.
      * 
      * @param companyId The unique ID number of the company that recorded this customer
      * @param include OPTIONAL - You can specify the value `certificates` to fetch information about certificates linked to the customer.
@@ -5301,15 +5301,15 @@ public class AvaTaxClient {
      * * Certificates - Fetch a list of certificates linked to this customer.
      * * attributes - Retrieves all attributes applied to the customer.
      *             
-     * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
-     * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
-     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document
-     * storage for this company, call `RequestCertificateSetup`.
+     * Before you can use any exemption certificates endpoints, you must set up your company for exemption certificate data storage.
+     * Companies that do not have this storage system set up will see `CertCaptureNotConfiguredError` when they call exemption 
+     * certificate related APIs. To check if this is set up for a company, call `GetCertificateSetup`.  To request setup of exemption 
+     * certificate storage for this company, call `RequestCertificateSetup`.
      * 
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
-     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
+     * * This API depends on the following active services:*Required* (all):  AvaTaxPro.
      * 
      * @param companyId The unique ID number of the company that recorded this customer
      * @param include OPTIONAL - You can specify the value `certificates` to fetch information about certificates linked to the customer.
@@ -5344,15 +5344,15 @@ public class AvaTaxClient {
      * identify any certificates linked to this customer object.  If any certificate applies to the transaction,
      * AvaTax will record the appropriate elements of the transaction as exempt and link it to the `certificate`.
      *             
-     * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
-     * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
-     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document
-     * storage for this company, call `RequestCertificateSetup`.
+     * Before you can use any exemption certificates endpoints, you must set up your company for exemption certificate data storage.
+     * Companies that do not have this storage system set up will see `CertCaptureNotConfiguredError` when they call exemption 
+     * certificate related APIs. To check if this is set up for a company, call `GetCertificateSetup`.  To request setup of exemption 
+     * certificate storage for this company, call `RequestCertificateSetup`.
      * 
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin.
-     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
+     * * This API depends on the following active services:*Required* (all):  AvaTaxPro.
      * 
      * @param companyId The unique ID number of the company that recorded the customer
      * @param customerCode The unique code representing the current customer
@@ -5380,15 +5380,15 @@ public class AvaTaxClient {
      * identify any certificates linked to this customer object.  If any certificate applies to the transaction,
      * AvaTax will record the appropriate elements of the transaction as exempt and link it to the `certificate`.
      *             
-     * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
-     * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
-     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document
-     * storage for this company, call `RequestCertificateSetup`.
+     * Before you can use any exemption certificates endpoints, you must set up your company for exemption certificate data storage.
+     * Companies that do not have this storage system set up will see `CertCaptureNotConfiguredError` when they call exemption 
+     * certificate related APIs. To check if this is set up for a company, call `GetCertificateSetup`.  To request setup of exemption 
+     * certificate storage for this company, call `RequestCertificateSetup`.
      * 
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin.
-     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
+     * * This API depends on the following active services:*Required* (all):  AvaTaxPro.
      * 
      * @param companyId The unique ID number of the company that recorded the customer
      * @param customerCode The unique code representing the current customer
@@ -5413,15 +5413,15 @@ public class AvaTaxClient {
      * identify any certificates linked to this `customer` object.  If any certificate applies to the transaction,
      * AvaTax will record the appropriate elements of the transaction as exempt and link it to the `certificate`.
      *             
-     * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
-     * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
-     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document
-     * storage for this company, call `RequestCertificateSetup`.
+     * Before you can use any exemption certificates endpoints, you must set up your company for exemption certificate data storage.
+     * Companies that do not have this storage system set up will see `CertCaptureNotConfiguredError` when they call exemption 
+     * certificate related APIs. To check if this is set up for a company, call `GetCertificateSetup`.  To request setup of exemption 
+     * certificate storage for this company, call `RequestCertificateSetup`.
      * 
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
-     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
+     * * This API depends on the following active services:*Required* (all):  AvaTaxPro.
      * 
      * @param companyId The unique ID number of the company that recorded this customer
      * @param customerCode The unique code representing this customer
@@ -5446,15 +5446,15 @@ public class AvaTaxClient {
      * identify any certificates linked to this `customer` object.  If any certificate applies to the transaction,
      * AvaTax will record the appropriate elements of the transaction as exempt and link it to the `certificate`.
      *             
-     * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
-     * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
-     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document
-     * storage for this company, call `RequestCertificateSetup`.
+     * Before you can use any exemption certificates endpoints, you must set up your company for exemption certificate data storage.
+     * Companies that do not have this storage system set up will see `CertCaptureNotConfiguredError` when they call exemption 
+     * certificate related APIs. To check if this is set up for a company, call `GetCertificateSetup`.  To request setup of exemption 
+     * certificate storage for this company, call `RequestCertificateSetup`.
      * 
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
-     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
+     * * This API depends on the following active services:*Required* (all):  AvaTaxPro.
      * 
      * @param companyId The unique ID number of the company that recorded this customer
      * @param customerCode The unique code representing this customer
@@ -5479,15 +5479,15 @@ public class AvaTaxClient {
      * identify any certificates linked to this `customer` object.  If any certificate applies to the transaction,
      * AvaTax will record the appropriate elements of the transaction as exempt and link it to the `certificate`.
      *             
-     * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
-     * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
-     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document
-     * storage for this company, call `RequestCertificateSetup`.
+     * Before you can use any exemption certificates endpoints, you must set up your company for exemption certificate data storage.
+     * Companies that do not have this storage system set up will see `CertCaptureNotConfiguredError` when they call exemption 
+     * certificate related APIs. To check if this is set up for a company, call `GetCertificateSetup`.  To request setup of exemption 
+     * certificate storage for this company, call `RequestCertificateSetup`.
      * 
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin.
-     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
+     * * This API depends on the following active services:*Required* (all):  AvaTaxPro.
      * 
      * @param companyId The unique ID number of the company that recorded this customer
      * @param customerCode The unique code representing this customer
@@ -5512,15 +5512,15 @@ public class AvaTaxClient {
      * identify any certificates linked to this `customer` object.  If any certificate applies to the transaction,
      * AvaTax will record the appropriate elements of the transaction as exempt and link it to the `certificate`.
      *             
-     * Using exemption certificates endpoints requires setup of an auditable document storage for each company that will use certificates.
-     * Companies that do not have this storage system set up will receive the error `CertCaptureNotConfiguredError` when they call exemption
-     * certificate related APIs.  To check if this company is set up, call `GetCertificateSetup`.  To request setup of the auditable document
-     * storage for this company, call `RequestCertificateSetup`.
+     * Before you can use any exemption certificates endpoints, you must set up your company for exemption certificate data storage.
+     * Companies that do not have this storage system set up will see `CertCaptureNotConfiguredError` when they call exemption 
+     * certificate related APIs. To check if this is set up for a company, call `GetCertificateSetup`.  To request setup of exemption 
+     * certificate storage for this company, call `RequestCertificateSetup`.
      * 
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin.
-     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
+     * * This API depends on the following active services:*Required* (all):  AvaTaxPro.
      * 
      * @param companyId The unique ID number of the company that recorded this customer
      * @param customerCode The unique code representing this customer
@@ -5542,7 +5542,7 @@ public class AvaTaxClient {
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, FirmAdmin, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
-     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro, BasicReturns.
+     * * This API depends on the following active services:*Required* (all):  AvaTaxPro, BasicReturns.
      * 
      * @param companyId The id of the company you which to create the datasources
      * @param model 
@@ -5562,7 +5562,7 @@ public class AvaTaxClient {
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, FirmAdmin, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
-     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro, BasicReturns.
+     * * This API depends on the following active services:*Required* (all):  AvaTaxPro, BasicReturns.
      * 
      * @param companyId The id of the company you which to create the datasources
      * @param model 
@@ -5582,7 +5582,7 @@ public class AvaTaxClient {
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, FirmAdmin, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
-     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro, BasicReturns.
+     * * This API depends on the following active services:*Required* (all):  AvaTaxPro, BasicReturns.
      * 
      * @param companyId The id of the company the datasource belongs to.
      * @param id The id of the datasource you wish to delete.
@@ -5603,7 +5603,7 @@ public class AvaTaxClient {
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, FirmAdmin, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
-     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro, BasicReturns.
+     * * This API depends on the following active services:*Required* (all):  AvaTaxPro, BasicReturns.
      * 
      * @param companyId The id of the company the datasource belongs to.
      * @param id The id of the datasource you wish to delete.
@@ -5624,7 +5624,7 @@ public class AvaTaxClient {
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
-     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro, BasicReturns.
+     * * This API depends on the following active services:*Required* (all):  AvaTaxPro, BasicReturns.
      * 
      * @param companyId 
      * @param id data source id
@@ -5645,7 +5645,7 @@ public class AvaTaxClient {
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
-     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro, BasicReturns.
+     * * This API depends on the following active services:*Required* (all):  AvaTaxPro, BasicReturns.
      * 
      * @param companyId 
      * @param id data source id
@@ -5666,7 +5666,7 @@ public class AvaTaxClient {
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
-     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro, BasicReturns.
+     * * This API depends on the following active services:*Required* (all):  AvaTaxPro, BasicReturns.
      * 
      * @param companyId The id of the company you wish to retrieve the datasources.
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* isEnabled, isSynced, isAuthorized, name, externalState
@@ -5693,7 +5693,7 @@ public class AvaTaxClient {
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
-     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro, BasicReturns.
+     * * This API depends on the following active services:*Required* (all):  AvaTaxPro, BasicReturns.
      * 
      * @param companyId The id of the company you wish to retrieve the datasources.
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* isEnabled, isSynced, isAuthorized, name, externalState
@@ -5723,7 +5723,7 @@ public class AvaTaxClient {
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
-     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro, BasicReturns.
+     * * This API depends on the following active services:*Required* (all):  AvaTaxPro, BasicReturns.
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* isEnabled, isSynced, isAuthorized, name, externalState
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
@@ -5751,7 +5751,7 @@ public class AvaTaxClient {
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
-     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro, BasicReturns.
+     * * This API depends on the following active services:*Required* (all):  AvaTaxPro, BasicReturns.
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* isEnabled, isSynced, isAuthorized, name, externalState
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
@@ -5776,7 +5776,7 @@ public class AvaTaxClient {
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, FirmAdmin, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
-     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro, BasicReturns.
+     * * This API depends on the following active services:*Required* (all):  AvaTaxPro, BasicReturns.
      * 
      * @param companyId The id of the company the datasource belongs to.
      * @param id The id of the datasource you wish to delete.
@@ -5798,7 +5798,7 @@ public class AvaTaxClient {
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, FirmAdmin, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
-     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro, BasicReturns.
+     * * This API depends on the following active services:*Required* (all):  AvaTaxPro, BasicReturns.
      * 
      * @param companyId The id of the company the datasource belongs to.
      * @param id The id of the datasource you wish to delete.
@@ -5828,7 +5828,7 @@ public class AvaTaxClient {
      * 
      * ### Security Policies
      * 
-     * * This API depends on the following active services<br />*Required* (all):  AvaTaxGlobal.
+     * * This API depends on the following active services:*Required* (all):  AvaTaxGlobal.
      * 
      * @param country The name or code of the destination country.
      * @param hsCode The partial or full HS Code for which you would like to view all of the parents.
@@ -5857,7 +5857,7 @@ public class AvaTaxClient {
      * 
      * ### Security Policies
      * 
-     * * This API depends on the following active services<br />*Required* (all):  AvaTaxGlobal.
+     * * This API depends on the following active services:*Required* (all):  AvaTaxGlobal.
      * 
      * @param country The name or code of the destination country.
      * @param hsCode The partial or full HS Code for which you would like to view all of the parents.
@@ -6344,7 +6344,7 @@ public class AvaTaxClient {
      * 
      * ### Security Policies
      * 
-     * * This API depends on the following active services<br />*Required* (all):  AvaTaxGlobal.
+     * * This API depends on the following active services:*Required* (all):  AvaTaxGlobal.
      * 
      * @param country The name or code of the destination country.
      * @param hsCode The Section or partial HS Code for which you would like to view the next level of HS Code detail, if more detail is available.
@@ -6379,7 +6379,7 @@ public class AvaTaxClient {
      * 
      * ### Security Policies
      * 
-     * * This API depends on the following active services<br />*Required* (all):  AvaTaxGlobal.
+     * * This API depends on the following active services:*Required* (all):  AvaTaxGlobal.
      * 
      * @param country The name or code of the destination country.
      * @param hsCode The Section or partial HS Code for which you would like to view the next level of HS Code detail, if more detail is available.
@@ -6412,7 +6412,7 @@ public class AvaTaxClient {
      * 
      * ### Security Policies
      * 
-     * * This API depends on the following active services<br />*Required* (all):  AvaTaxGlobal.
+     * * This API depends on the following active services:*Required* (all):  AvaTaxGlobal.
      * 
      * @return FetchResult<HsCodeModel>
      */
@@ -6433,7 +6433,7 @@ public class AvaTaxClient {
      * 
      * ### Security Policies
      * 
-     * * This API depends on the following active services<br />*Required* (all):  AvaTaxGlobal.
+     * * This API depends on the following active services:*Required* (all):  AvaTaxGlobal.
      * 
      * @return FetchResult<HsCodeModel>
      */
@@ -8865,12 +8865,12 @@ public class AvaTaxClient {
      * 
      * @param companyId The company ID that will be issued this certificate.
      * @param model 
-     * @return FetchResult<ECommerceTokenOutputModel>
+     * @return ECommerceTokenOutputModel
      */
-    public FetchResult<ECommerceTokenOutputModel> createECommerceToken(Integer companyId, CreateECommerceTokenInputModel model) throws Exception {
+    public ECommerceTokenOutputModel createECommerceToken(Integer companyId, CreateECommerceTokenInputModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/ecommercetokens");
         path.applyField("companyId", companyId);
-        return ((RestCall<FetchResult<ECommerceTokenOutputModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<FetchResult<ECommerceTokenOutputModel>>(){})).call();
+        return ((RestCall<ECommerceTokenOutputModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<ECommerceTokenOutputModel>(){})).call();
     }
 
     /**
@@ -8886,12 +8886,12 @@ public class AvaTaxClient {
      * 
      * @param companyId The company ID that will be issued this certificate.
      * @param model 
-     * @return FetchResult<ECommerceTokenOutputModel>
+     * @return ECommerceTokenOutputModel
      */
-    public Future<FetchResult<ECommerceTokenOutputModel>> createECommerceTokenAsync(Integer companyId, CreateECommerceTokenInputModel model) {
+    public Future<ECommerceTokenOutputModel> createECommerceTokenAsync(Integer companyId, CreateECommerceTokenInputModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/ecommercetokens");
         path.applyField("companyId", companyId);
-        return this.threadPool.submit((RestCall<FetchResult<ECommerceTokenOutputModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<FetchResult<ECommerceTokenOutputModel>>(){}));
+        return this.threadPool.submit((RestCall<ECommerceTokenOutputModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<ECommerceTokenOutputModel>(){}));
     }
 
     /**
@@ -8934,6 +8934,48 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/ecommercetokens");
         path.applyField("companyId", companyId);
         return this.threadPool.submit((RestCall<FetchResult<ECommerceTokenOutputModel>>)restCallFactory.createRestCall("put", path, model, new TypeToken<FetchResult<ECommerceTokenOutputModel>>(){}));
+    }
+
+    /**
+     * Add or Edit options
+     * 
+     * Returns a list of options for adding tax forms for the company and tax form code specified.
+     * Returns edit options when modifying a filing calendar.
+     * This API is available by invitation only.
+     * 
+     * ### Security Policies
+     * 
+     * * This API depends on the following active services:*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * 
+     * @param companyId The unique ID of the company that owns the filing calendar object
+     * @param model Cycle Safe Options Request
+     * @return CycleSafeOptionResultModel
+     */
+    public CycleSafeOptionResultModel cycleSafeOptions(Integer companyId, CycleSafeEditRequestModel model) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingcalendars/edit/cycleSafeOptions");
+        path.applyField("companyId", companyId);
+        return ((RestCall<CycleSafeOptionResultModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<CycleSafeOptionResultModel>(){})).call();
+    }
+
+    /**
+     * Add or Edit options
+     * 
+     * Returns a list of options for adding tax forms for the company and tax form code specified.
+     * Returns edit options when modifying a filing calendar.
+     * This API is available by invitation only.
+     * 
+     * ### Security Policies
+     * 
+     * * This API depends on the following active services:*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * 
+     * @param companyId The unique ID of the company that owns the filing calendar object
+     * @param model Cycle Safe Options Request
+     * @return CycleSafeOptionResultModel
+     */
+    public Future<CycleSafeOptionResultModel> cycleSafeOptionsAsync(Integer companyId, CycleSafeEditRequestModel model) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingcalendars/edit/cycleSafeOptions");
+        path.applyField("companyId", companyId);
+        return this.threadPool.submit((RestCall<CycleSafeOptionResultModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<CycleSafeOptionResultModel>(){}));
     }
 
     /**
@@ -9028,8 +9070,8 @@ public class AvaTaxClient {
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
-     * * This API is available by invitation only.<br />*Exempt security roles*:  ComplianceRootUser, ComplianceAdmin, ComplianceUser, TechnicalSupportAdmin, TechnicalSupportUser, CompanyUser, AccountUser, CompanyAdmin, AccountAdmin.
-     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * * This API is available by invitation only.*Exempt security roles*:  ComplianceRootUser, ComplianceAdmin, ComplianceUser, TechnicalSupportAdmin, TechnicalSupportUser, CompanyUser, AccountUser, CompanyAdmin, AccountAdmin.
+     * * This API depends on the following active services:*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
      * 
      * @param companyId The ID of the company that owns these batches
      * @param endPeriodMonth The month of the period you are trying to retrieve
@@ -9064,8 +9106,8 @@ public class AvaTaxClient {
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
-     * * This API is available by invitation only.<br />*Exempt security roles*:  ComplianceRootUser, ComplianceAdmin, ComplianceUser, TechnicalSupportAdmin, TechnicalSupportUser, CompanyUser, AccountUser, CompanyAdmin, AccountAdmin.
-     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * * This API is available by invitation only.*Exempt security roles*:  ComplianceRootUser, ComplianceAdmin, ComplianceUser, TechnicalSupportAdmin, TechnicalSupportUser, CompanyUser, AccountUser, CompanyAdmin, AccountAdmin.
+     * * This API depends on the following active services:*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
      * 
      * @param companyId The ID of the company that owns these batches
      * @param endPeriodMonth The month of the period you are trying to retrieve
@@ -9681,7 +9723,7 @@ public class AvaTaxClient {
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
-     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * * This API depends on the following active services:*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
      * 
      * @param id The unique ID number of this funding request
      * @return FundingStatusModel
@@ -9711,7 +9753,7 @@ public class AvaTaxClient {
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
-     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * * This API depends on the following active services:*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
      * 
      * @param id The unique ID number of this funding request
      * @return FundingStatusModel
@@ -9739,7 +9781,7 @@ public class AvaTaxClient {
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, FirmAdmin, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
-     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * * This API depends on the following active services:*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
      * 
      * @param id The unique ID number of this funding request
      * @return FundingStatusModel
@@ -9767,7 +9809,7 @@ public class AvaTaxClient {
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, FirmAdmin, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
-     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * * This API depends on the following active services:*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
      * 
      * @param id The unique ID number of this funding request
      * @return FundingStatusModel
@@ -11647,7 +11689,7 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
      * @param companyId The ID of the company that owns these locations
-     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* settings, parameters
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* isMarketplaceOutsideUsa, settings, parameters
      * @param include A comma separated list of additional data to retrieve.
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
@@ -11686,7 +11728,7 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
      * @param companyId The ID of the company that owns these locations
-     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* settings, parameters
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* isMarketplaceOutsideUsa, settings, parameters
      * @param include A comma separated list of additional data to retrieve.
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
@@ -11725,7 +11767,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
-     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* settings, parameters
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* isMarketplaceOutsideUsa, settings, parameters
      * @param include A comma separated list of additional data to retrieve. You may specify `LocationSettings` to retrieve location settings.
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
@@ -11763,7 +11805,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
-     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* settings, parameters
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* isMarketplaceOutsideUsa, settings, parameters
      * @param include A comma separated list of additional data to retrieve. You may specify `LocationSettings` to retrieve location settings.
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
@@ -11953,7 +11995,7 @@ public class AvaTaxClient {
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
-     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
+     * * This API depends on the following active services:*Required* (all):  AvaTaxPro.
      * 
      * @param code The transaction code for this MultiDocument transaction
      * @param type The transaction type for this MultiDocument transaction (See DocumentType::* for a list of allowable values)
@@ -11994,7 +12036,7 @@ public class AvaTaxClient {
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
-     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
+     * * This API depends on the following active services:*Required* (all):  AvaTaxPro.
      * 
      * @param code The transaction code for this MultiDocument transaction
      * @param type The transaction type for this MultiDocument transaction (See DocumentType::* for a list of allowable values)
@@ -12039,7 +12081,7 @@ public class AvaTaxClient {
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, ProStoresOperator, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
-     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
+     * * This API depends on the following active services:*Required* (all):  AvaTaxPro.
      * 
      * @param code The transaction code for this MultiDocument transaction
      * @param type The transaction type for this MultiDocument transaction (See DocumentType::* for a list of allowable values)
@@ -12081,7 +12123,7 @@ public class AvaTaxClient {
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, ProStoresOperator, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
-     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
+     * * This API depends on the following active services:*Required* (all):  AvaTaxPro.
      * 
      * @param code The transaction code for this MultiDocument transaction
      * @param type The transaction type for this MultiDocument transaction (See DocumentType::* for a list of allowable values)
@@ -12117,7 +12159,7 @@ public class AvaTaxClient {
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, ProStoresOperator, SSTAdmin, TechnicalSupportAdmin.
-     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
+     * * This API depends on the following active services:*Required* (all):  AvaTaxPro.
      * 
      * @param model The commit request you wish to execute
      * @return MultiDocumentModel
@@ -12150,7 +12192,7 @@ public class AvaTaxClient {
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, ProStoresOperator, SSTAdmin, TechnicalSupportAdmin.
-     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
+     * * This API depends on the following active services:*Required* (all):  AvaTaxPro.
      * 
      * @param model The commit request you wish to execute
      * @return MultiDocumentModel
@@ -12207,7 +12249,7 @@ public class AvaTaxClient {
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
-     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
+     * * This API depends on the following active services:*Required* (all):  AvaTaxPro.
      * 
      * @param include Specifies objects to include in the response after transaction is created
      * @param model the multi document transaction model
@@ -12266,7 +12308,7 @@ public class AvaTaxClient {
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
-     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
+     * * This API depends on the following active services:*Required* (all):  AvaTaxPro.
      * 
      * @param include Specifies objects to include in the response after transaction is created
      * @param model the multi document transaction model
@@ -12305,10 +12347,10 @@ public class AvaTaxClient {
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, ProStoresOperator, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
-     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
+     * * This API depends on the following active services:*Required* (all):  AvaTaxPro.
      * 
-     * @param code 
-     * @param type  (See DocumentType::* for a list of allowable values)
+     * @param code The multidocument code to retrieve
+     * @param type The transaction type to retrieve (See DocumentType::* for a list of allowable values)
      * @param include Specifies objects to include in the response after transaction is created
      * @return MultiDocumentModel
      */
@@ -12347,10 +12389,10 @@ public class AvaTaxClient {
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, ProStoresOperator, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
-     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
+     * * This API depends on the following active services:*Required* (all):  AvaTaxPro.
      * 
-     * @param code 
-     * @param type  (See DocumentType::* for a list of allowable values)
+     * @param code The multidocument code to retrieve
+     * @param type The transaction type to retrieve (See DocumentType::* for a list of allowable values)
      * @param include Specifies objects to include in the response after transaction is created
      * @return MultiDocumentModel
      */
@@ -12398,7 +12440,7 @@ public class AvaTaxClient {
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, ProStoresOperator, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
-     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
+     * * This API depends on the following active services:*Required* (all):  AvaTaxPro.
      * 
      * @param id The unique ID number of the MultiDocument transaction to retrieve
      * @param include Specifies objects to include in the response after transaction is created
@@ -12447,7 +12489,7 @@ public class AvaTaxClient {
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, ProStoresOperator, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
-     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
+     * * This API depends on the following active services:*Required* (all):  AvaTaxPro.
      * 
      * @param id The unique ID number of the MultiDocument transaction to retrieve
      * @param include Specifies objects to include in the response after transaction is created
@@ -12494,7 +12536,7 @@ public class AvaTaxClient {
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, ProStoresOperator, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
-     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
+     * * This API depends on the following active services:*Required* (all):  AvaTaxPro.
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* documents
      * @param include Specifies objects to include in the response after transaction is created
@@ -12547,7 +12589,7 @@ public class AvaTaxClient {
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, ProStoresOperator, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
-     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
+     * * This API depends on the following active services:*Required* (all):  AvaTaxPro.
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* documents
      * @param include Specifies objects to include in the response after transaction is created
@@ -12617,7 +12659,7 @@ public class AvaTaxClient {
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
-     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
+     * * This API depends on the following active services:*Required* (all):  AvaTaxPro.
      * 
      * @param code The code of this MultiDocument transaction
      * @param type The type of this MultiDocument transaction (See DocumentType::* for a list of allowable values)
@@ -12684,7 +12726,7 @@ public class AvaTaxClient {
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
-     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
+     * * This API depends on the following active services:*Required* (all):  AvaTaxPro.
      * 
      * @param code The code of this MultiDocument transaction
      * @param type The type of this MultiDocument transaction (See DocumentType::* for a list of allowable values)
@@ -12721,7 +12763,7 @@ public class AvaTaxClient {
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, ProStoresOperator, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
-     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
+     * * This API depends on the following active services:*Required* (all):  AvaTaxPro.
      * 
      * @param model Information from your accounting system to verify against this MultiDocument transaction as it is stored in AvaTax
      * @return MultiDocumentModel
@@ -12752,7 +12794,7 @@ public class AvaTaxClient {
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, ProStoresOperator, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
-     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
+     * * This API depends on the following active services:*Required* (all):  AvaTaxPro.
      * 
      * @param model Information from your accounting system to verify against this MultiDocument transaction as it is stored in AvaTax
      * @return MultiDocumentModel
@@ -12786,7 +12828,7 @@ public class AvaTaxClient {
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, CompanyAdmin, CSPTester, ProStoresOperator, SSTAdmin, TechnicalSupportAdmin.
-     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
+     * * This API depends on the following active services:*Required* (all):  AvaTaxPro.
      * 
      * @param code The transaction code for this MultiDocument transaction
      * @param type The transaction type for this MultiDocument transaction (See DocumentType::* for a list of allowable values)
@@ -12824,7 +12866,7 @@ public class AvaTaxClient {
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, CompanyAdmin, CSPTester, ProStoresOperator, SSTAdmin, TechnicalSupportAdmin.
-     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
+     * * This API depends on the following active services:*Required* (all):  AvaTaxPro.
      * 
      * @param code The transaction code for this MultiDocument transaction
      * @param type The transaction type for this MultiDocument transaction (See DocumentType::* for a list of allowable values)
@@ -15678,7 +15720,7 @@ public class AvaTaxClient {
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
-     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
+     * * This API depends on the following active services:*Required* (all):  AvaTaxPro.
      * 
      * @param model Parameters about the desired file format and report format, specifying which company, locations and TaxCodes to include.
      * @return String
@@ -15718,7 +15760,7 @@ public class AvaTaxClient {
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
-     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
+     * * This API depends on the following active services:*Required* (all):  AvaTaxPro.
      * 
      * @param model Parameters about the desired file format and report format, specifying which company, locations and TaxCodes to include.
      * @return String
@@ -15758,7 +15800,7 @@ public class AvaTaxClient {
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
-     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
+     * * This API depends on the following active services:*Required* (all):  AvaTaxPro.
      * 
      * @param companyId The ID number of the company that owns this location.
      * @param id The ID number of the location to retrieve point-of-sale data.
@@ -15809,7 +15851,7 @@ public class AvaTaxClient {
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
-     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro.
+     * * This API depends on the following active services:*Required* (all):  AvaTaxPro.
      * 
      * @param companyId The ID number of the company that owns this location.
      * @param id The ID number of the location to retrieve point-of-sale data.
@@ -16399,7 +16441,7 @@ public class AvaTaxClient {
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
-     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro, BasicReturns.
+     * * This API depends on the following active services:*Required* (all):  AvaTaxPro, BasicReturns.
      * 
      * @param include Specifies objects to include in the response after transaction is created
      * @param model information about the transaction and lines to be added
@@ -16438,7 +16480,7 @@ public class AvaTaxClient {
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
-     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro, BasicReturns.
+     * * This API depends on the following active services:*Required* (all):  AvaTaxPro, BasicReturns.
      * 
      * @param include Specifies objects to include in the response after transaction is created
      * @param model information about the transaction and lines to be added
@@ -16486,7 +16528,7 @@ public class AvaTaxClient {
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
-     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro, BasicReturns.
+     * * This API depends on the following active services:*Required* (all):  AvaTaxPro, BasicReturns.
      * 
      * @param companyCode The company code of the company that recorded this transaction
      * @param transactionCode The transaction code to adjust
@@ -16540,7 +16582,7 @@ public class AvaTaxClient {
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
-     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro, BasicReturns.
+     * * This API depends on the following active services:*Required* (all):  AvaTaxPro, BasicReturns.
      * 
      * @param companyCode The company code of the company that recorded this transaction
      * @param transactionCode The transaction code to adjust
@@ -16588,7 +16630,7 @@ public class AvaTaxClient {
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, ProStoresOperator, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
-     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro, BasicReturns.
+     * * This API depends on the following active services:*Required* (all):  AvaTaxPro, BasicReturns.
      * 
      * @param companyCode The code identifying the company that owns this transaction
      * @param transactionCode The code identifying the transaction
@@ -16631,7 +16673,7 @@ public class AvaTaxClient {
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, ProStoresOperator, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
-     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro, BasicReturns.
+     * * This API depends on the following active services:*Required* (all):  AvaTaxPro, BasicReturns.
      * 
      * @param companyCode The code identifying the company that owns this transaction
      * @param transactionCode The code identifying the transaction
@@ -16674,7 +16716,7 @@ public class AvaTaxClient {
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, ProStoresOperator, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
-     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro, BasicReturns.
+     * * This API depends on the following active services:*Required* (all):  AvaTaxPro, BasicReturns.
      * 
      * @param companyCode The code identifying the company that owns this transaction
      * @param transactionCode The code identifying the transaction
@@ -16719,7 +16761,7 @@ public class AvaTaxClient {
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, ProStoresOperator, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
-     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro, BasicReturns.
+     * * This API depends on the following active services:*Required* (all):  AvaTaxPro, BasicReturns.
      * 
      * @param companyCode The code identifying the company that owns this transaction
      * @param transactionCode The code identifying the transaction
@@ -16748,7 +16790,7 @@ public class AvaTaxClient {
      * ### Security Policies
      * 
      * * This API requires the user role Compliance Root User.
-     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * * This API depends on the following active services:*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
      * 
      * @param model bulk lock request
      * @return BulkLockTransactionResult
@@ -16772,7 +16814,7 @@ public class AvaTaxClient {
      * ### Security Policies
      * 
      * * This API requires the user role Compliance Root User.
-     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * * This API depends on the following active services:*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
      * 
      * @param model bulk lock request
      * @return BulkLockTransactionResult
@@ -16818,7 +16860,7 @@ public class AvaTaxClient {
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, ProStoresOperator, SSTAdmin, TechnicalSupportAdmin.
-     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro, BasicReturns.
+     * * This API depends on the following active services:*Required* (all):  AvaTaxPro, BasicReturns.
      * 
      * @param companyCode The company code of the company that recorded this transaction
      * @param transactionCode The transaction code to change
@@ -16872,7 +16914,7 @@ public class AvaTaxClient {
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, ProStoresOperator, SSTAdmin, TechnicalSupportAdmin.
-     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro, BasicReturns.
+     * * This API depends on the following active services:*Required* (all):  AvaTaxPro, BasicReturns.
      * 
      * @param companyCode The company code of the company that recorded this transaction
      * @param transactionCode The transaction code to change
@@ -17034,7 +17076,7 @@ public class AvaTaxClient {
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
-     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro, BasicReturns.
+     * * This API depends on the following active services:*Required* (all):  AvaTaxPro, BasicReturns.
      * 
      * @param include Specifies objects to include in the response after transaction is created
      * @param model The transaction you wish to create or adjust
@@ -17086,7 +17128,7 @@ public class AvaTaxClient {
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
-     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro, BasicReturns.
+     * * This API depends on the following active services:*Required* (all):  AvaTaxPro, BasicReturns.
      * 
      * @param include Specifies objects to include in the response after transaction is created
      * @param model The transaction you wish to create or adjust
@@ -17145,7 +17187,7 @@ public class AvaTaxClient {
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
-     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro, BasicReturns.
+     * * This API depends on the following active services:*Required* (all):  AvaTaxPro, BasicReturns.
      * 
      * @param include Specifies objects to include in the response after transaction is created
      * @param model The transaction you wish to create
@@ -17204,7 +17246,7 @@ public class AvaTaxClient {
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
-     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro, BasicReturns.
+     * * This API depends on the following active services:*Required* (all):  AvaTaxPro, BasicReturns.
      * 
      * @param include Specifies objects to include in the response after transaction is created
      * @param model The transaction you wish to create
@@ -17240,7 +17282,7 @@ public class AvaTaxClient {
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
-     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro, BasicReturns.
+     * * This API depends on the following active services:*Required* (all):  AvaTaxPro, BasicReturns.
      * 
      * @param include Specifies objects to include in the response after transaction is created
      * @param model information about the transaction and lines to be removed
@@ -17276,7 +17318,7 @@ public class AvaTaxClient {
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
-     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro, BasicReturns.
+     * * This API depends on the following active services:*Required* (all):  AvaTaxPro, BasicReturns.
      * 
      * @param include Specifies objects to include in the response after transaction is created
      * @param model information about the transaction and lines to be removed
@@ -17321,7 +17363,7 @@ public class AvaTaxClient {
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, ProStoresOperator, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
-     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro, BasicReturns.
+     * * This API depends on the following active services:*Required* (all):  AvaTaxPro, BasicReturns.
      * 
      * @param companyCode The company code of the company that recorded this transaction
      * @param transactionCode The transaction code to retrieve
@@ -17371,7 +17413,7 @@ public class AvaTaxClient {
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, ProStoresOperator, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
-     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro, BasicReturns.
+     * * This API depends on the following active services:*Required* (all):  AvaTaxPro, BasicReturns.
      * 
      * @param companyCode The company code of the company that recorded this transaction
      * @param transactionCode The transaction code to retrieve
@@ -17404,7 +17446,7 @@ public class AvaTaxClient {
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, ProStoresOperator, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
-     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro, BasicReturns.
+     * * This API depends on the following active services:*Required* (all):  AvaTaxPro, BasicReturns.
      * 
      * @param companyCode The company code of the company that recorded this transaction
      * @param transactionCode The transaction code to retrieve
@@ -17437,7 +17479,7 @@ public class AvaTaxClient {
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, ProStoresOperator, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
-     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro, BasicReturns.
+     * * This API depends on the following active services:*Required* (all):  AvaTaxPro, BasicReturns.
      * 
      * @param companyCode The company code of the company that recorded this transaction
      * @param transactionCode The transaction code to retrieve
@@ -17478,7 +17520,7 @@ public class AvaTaxClient {
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, ProStoresOperator, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
-     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro, BasicReturns.
+     * * This API depends on the following active services:*Required* (all):  AvaTaxPro, BasicReturns.
      * 
      * @param id The unique ID number of the transaction to retrieve
      * @param include Specifies objects to include in this fetch call
@@ -17515,7 +17557,7 @@ public class AvaTaxClient {
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, ProStoresOperator, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
-     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro, BasicReturns.
+     * * This API depends on the following active services:*Required* (all):  AvaTaxPro, BasicReturns.
      * 
      * @param id The unique ID number of the transaction to retrieve
      * @param include Specifies objects to include in this fetch call
@@ -17564,12 +17606,12 @@ public class AvaTaxClient {
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, ProStoresOperator, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
-     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro, BasicReturns.
+     * * This API depends on the following active services:*Required* (all):  AvaTaxPro, BasicReturns.
      * 
      * @param companyCode The company code of the company that recorded this transaction
      * @param dataSourceId Optionally filter transactions to those from a specific data source.
      * @param include Specifies objects to include in this fetch call
-     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* totalDiscount, lines, addresses, locationTypes, summary, taxDetailsByTaxType, parameters, messages, invoiceMessages, isFakeTransaction
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* exchangeRateCurrencyCode, totalDiscount, lines, addresses, locationTypes, summary, taxDetailsByTaxType, parameters, messages, invoiceMessages, isFakeTransaction
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
@@ -17623,12 +17665,12 @@ public class AvaTaxClient {
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, ProStoresOperator, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
-     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro, BasicReturns.
+     * * This API depends on the following active services:*Required* (all):  AvaTaxPro, BasicReturns.
      * 
      * @param companyCode The company code of the company that recorded this transaction
      * @param dataSourceId Optionally filter transactions to those from a specific data source.
      * @param include Specifies objects to include in this fetch call
-     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* totalDiscount, lines, addresses, locationTypes, summary, taxDetailsByTaxType, parameters, messages, invoiceMessages, isFakeTransaction
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* exchangeRateCurrencyCode, totalDiscount, lines, addresses, locationTypes, summary, taxDetailsByTaxType, parameters, messages, invoiceMessages, isFakeTransaction
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
@@ -17651,7 +17693,7 @@ public class AvaTaxClient {
      * 
      * Lock a transaction uniquely identified by this URL.
      *             
-     * This API is mainly used for connector developer to simulate what happens when Returns product locks a document.
+     * This API is mainly used for connector developers to simulate what happens when the Returns product locks a document.
      * After this API call succeeds, the document will be locked and can't be voided or adjusted.
      *             
      * This API is only available to customers in Sandbox with AvaTaxPro subscription.  On production servers, this API is available by invitation only.
@@ -17682,7 +17724,7 @@ public class AvaTaxClient {
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
-     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * * This API depends on the following active services:*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
      * 
      * @param companyCode The company code of the company that recorded this transaction
      * @param transactionCode The transaction code to lock
@@ -17705,7 +17747,7 @@ public class AvaTaxClient {
      * 
      * Lock a transaction uniquely identified by this URL.
      *             
-     * This API is mainly used for connector developer to simulate what happens when Returns product locks a document.
+     * This API is mainly used for connector developers to simulate what happens when the Returns product locks a document.
      * After this API call succeeds, the document will be locked and can't be voided or adjusted.
      *             
      * This API is only available to customers in Sandbox with AvaTaxPro subscription.  On production servers, this API is available by invitation only.
@@ -17736,7 +17778,7 @@ public class AvaTaxClient {
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
-     * * This API depends on the following active services<br />*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.<br />*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * * This API depends on the following active services:*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
      * 
      * @param companyCode The company code of the company that recorded this transaction
      * @param transactionCode The transaction code to lock
@@ -17800,7 +17842,7 @@ public class AvaTaxClient {
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
-     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro, BasicReturns.
+     * * This API depends on the following active services:*Required* (all):  AvaTaxPro, BasicReturns.
      * 
      * @param companyCode The code of the company that made the original sale
      * @param transactionCode The transaction code of the original sale
@@ -17866,7 +17908,7 @@ public class AvaTaxClient {
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
-     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro, BasicReturns.
+     * * This API depends on the following active services:*Required* (all):  AvaTaxPro, BasicReturns.
      * 
      * @param companyCode The code of the company that made the original sale
      * @param transactionCode The transaction code of the original sale
@@ -18019,7 +18061,7 @@ public class AvaTaxClient {
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
-     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro, BasicReturns.
+     * * This API depends on the following active services:*Required* (all):  AvaTaxPro, BasicReturns.
      * 
      * @param companyCode The company code of the company that recorded this transaction
      * @param transactionCode The transaction code to Uncommit
@@ -18065,7 +18107,7 @@ public class AvaTaxClient {
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
-     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro, BasicReturns.
+     * * This API depends on the following active services:*Required* (all):  AvaTaxPro, BasicReturns.
      * 
      * @param companyCode The company code of the company that recorded this transaction
      * @param transactionCode The transaction code to Uncommit
@@ -18108,7 +18150,7 @@ public class AvaTaxClient {
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
-     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro, BasicReturns.
+     * * This API depends on the following active services:*Required* (all):  AvaTaxPro, BasicReturns.
      * 
      * @param companyCode The company code of the company that recorded this transaction
      * @param transactionCode The transaction code to commit
@@ -18151,7 +18193,7 @@ public class AvaTaxClient {
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
-     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro, BasicReturns.
+     * * This API depends on the following active services:*Required* (all):  AvaTaxPro, BasicReturns.
      * 
      * @param companyCode The company code of the company that recorded this transaction
      * @param transactionCode The transaction code to commit
@@ -18201,7 +18243,7 @@ public class AvaTaxClient {
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, ProStoresOperator, SSTAdmin, TechnicalSupportAdmin.
-     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro, BasicReturns.
+     * * This API depends on the following active services:*Required* (all):  AvaTaxPro, BasicReturns.
      * 
      * @param companyCode The company code of the company that recorded this transaction
      * @param transactionCode The transaction code to settle
@@ -18252,7 +18294,7 @@ public class AvaTaxClient {
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, CSPTester, ProStoresOperator, SSTAdmin, TechnicalSupportAdmin.
-     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro, BasicReturns.
+     * * This API depends on the following active services:*Required* (all):  AvaTaxPro, BasicReturns.
      * 
      * @param companyCode The company code of the company that recorded this transaction
      * @param transactionCode The transaction code to settle
@@ -18305,7 +18347,7 @@ public class AvaTaxClient {
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, CompanyAdmin, CSPTester, ProStoresOperator, SSTAdmin, TechnicalSupportAdmin.
-     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro, BasicReturns.
+     * * This API depends on the following active services:*Required* (all):  AvaTaxPro, BasicReturns.
      * 
      * @param companyCode The company code of the company that recorded this transaction
      * @param transactionCode The transaction code to void
@@ -18358,7 +18400,7 @@ public class AvaTaxClient {
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, CompanyAdmin, CSPTester, ProStoresOperator, SSTAdmin, TechnicalSupportAdmin.
-     * * This API depends on the following active services<br />*Required* (all):  AvaTaxPro, BasicReturns.
+     * * This API depends on the following active services:*Required* (all):  AvaTaxPro, BasicReturns.
      * 
      * @param companyCode The company code of the company that recorded this transaction
      * @param transactionCode The transaction code to void
@@ -18385,7 +18427,7 @@ public class AvaTaxClient {
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin.
-     * * This API depends on the following active services<br />*Required* (all):  AvaUpc.
+     * * This API depends on the following active services:*Required* (all):  AvaUpc.
      * 
      * @param companyId The ID of the company that owns this UPC.
      * @param model The UPC you wish to create.
@@ -18406,7 +18448,7 @@ public class AvaTaxClient {
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin.
-     * * This API depends on the following active services<br />*Required* (all):  AvaUpc.
+     * * This API depends on the following active services:*Required* (all):  AvaUpc.
      * 
      * @param companyId The ID of the company that owns this UPC.
      * @param model The UPC you wish to create.
@@ -18426,7 +18468,7 @@ public class AvaTaxClient {
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin.
-     * * This API depends on the following active services<br />*Required* (all):  AvaUpc.
+     * * This API depends on the following active services:*Required* (all):  AvaUpc.
      * 
      * @param companyId The ID of the company that owns this UPC.
      * @param id The ID of the UPC you wish to delete.
@@ -18447,7 +18489,7 @@ public class AvaTaxClient {
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin.
-     * * This API depends on the following active services<br />*Required* (all):  AvaUpc.
+     * * This API depends on the following active services:*Required* (all):  AvaUpc.
      * 
      * @param companyId The ID of the company that owns this UPC.
      * @param id The ID of the UPC you wish to delete.
@@ -18469,7 +18511,7 @@ public class AvaTaxClient {
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
-     * * This API depends on the following active services<br />*Required* (all):  AvaUpc.
+     * * This API depends on the following active services:*Required* (all):  AvaUpc.
      * 
      * @param companyId The ID of the company that owns this UPC
      * @param id The primary key of this UPC
@@ -18491,7 +18533,7 @@ public class AvaTaxClient {
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
-     * * This API depends on the following active services<br />*Required* (all):  AvaUpc.
+     * * This API depends on the following active services:*Required* (all):  AvaUpc.
      * 
      * @param companyId The ID of the company that owns this UPC
      * @param id The primary key of this UPC
@@ -18516,7 +18558,7 @@ public class AvaTaxClient {
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
-     * * This API depends on the following active services<br />*Required* (all):  AvaUpc.
+     * * This API depends on the following active services:*Required* (all):  AvaUpc.
      * 
      * @param companyId The ID of the company that owns these UPCs
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).
@@ -18549,7 +18591,7 @@ public class AvaTaxClient {
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
-     * * This API depends on the following active services<br />*Required* (all):  AvaUpc.
+     * * This API depends on the following active services:*Required* (all):  AvaUpc.
      * 
      * @param companyId The ID of the company that owns these UPCs
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).
@@ -18582,7 +18624,7 @@ public class AvaTaxClient {
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
-     * * This API depends on the following active services<br />*Required* (all):  AvaUpc.
+     * * This API depends on the following active services:*Required* (all):  AvaUpc.
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).
      * @param include A comma separated list of additional data to retrieve.
@@ -18613,7 +18655,7 @@ public class AvaTaxClient {
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
-     * * This API depends on the following active services<br />*Required* (all):  AvaUpc.
+     * * This API depends on the following active services:*Required* (all):  AvaUpc.
      * 
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).
      * @param include A comma separated list of additional data to retrieve.
@@ -18643,7 +18685,7 @@ public class AvaTaxClient {
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin.
-     * * This API depends on the following active services<br />*Required* (all):  AvaUpc.
+     * * This API depends on the following active services:*Required* (all):  AvaUpc.
      * 
      * @param companyId The ID of the company that this UPC belongs to.
      * @param id The ID of the UPC you wish to update
@@ -18668,7 +18710,7 @@ public class AvaTaxClient {
      * ### Security Policies
      * 
      * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin.
-     * * This API depends on the following active services<br />*Required* (all):  AvaUpc.
+     * * This API depends on the following active services:*Required* (all):  AvaUpc.
      * 
      * @param companyId The ID of the company that this UPC belongs to.
      * @param id The ID of the UPC you wish to update

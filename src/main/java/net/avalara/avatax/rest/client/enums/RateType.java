@@ -57,6 +57,11 @@ public enum RateType {
     /** 
      * 
      */
+    Construction(78),
+
+    /** 
+     * 
+     */
     Parking(80),
 
     /** 
