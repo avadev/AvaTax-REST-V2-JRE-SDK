@@ -386,6 +386,46 @@ public class CertificateModel {
         this.modifiedDate = value;
     }
 
+    private String taxNumberType;
+
+    /**
+     * Getter for taxNumberType
+     *
+     * The tax number type for the certificate. For example, `FEIN`, `Social Security Number`, or `Employer Identification Number`.
+     */
+    public String getTaxNumberType() {
+        return this.taxNumberType;
+    }
+
+    /**
+     * Setter for taxNumberType
+     *
+     * The tax number type for the certificate. For example, `FEIN`, `Social Security Number`, or `Employer Identification Number`.
+     */
+    public void setTaxNumberType(String value) {
+        this.taxNumberType = value;
+    }
+
+    private String businessNumberType;
+
+    /**
+     * Getter for businessNumberType
+     *
+     * Description of business for the certificate. For example, `Retail trade`, `Professional services`, or `Construction`.
+     */
+    public String getBusinessNumberType() {
+        return this.businessNumberType;
+    }
+
+    /**
+     * Setter for businessNumberType
+     *
+     * Description of business for the certificate. For example, `Retail trade`, `Professional services`, or `Construction`.
+     */
+    public void setBusinessNumberType(String value) {
+        this.businessNumberType = value;
+    }
+
     private Integer pageCount;
 
     /**

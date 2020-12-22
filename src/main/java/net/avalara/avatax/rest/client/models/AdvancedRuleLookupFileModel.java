@@ -89,14 +89,14 @@ public class AdvancedRuleLookupFileModel {
         this.name = value;
     }
 
-    private Byte content;
+    private String content;
 
     /**
      * Getter for content
      *
      * Content of the lookup file.
      */
-    public Byte getContent() {
+    public String getContent() {
         return this.content;
     }
 
@@ -105,7 +105,7 @@ public class AdvancedRuleLookupFileModel {
      *
      * Content of the lookup file.
      */
-    public void setContent(Byte value) {
+    public void setContent(String value) {
         this.content = value;
     }
 

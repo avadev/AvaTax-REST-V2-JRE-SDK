@@ -82,7 +82,12 @@ public enum BatchType {
     /** 
      * 
      */
-    UPCValidationImport(12);
+    UPCValidationImport(12),
+
+    /** 
+     * 
+     */
+    CustomerSupplierImport(13);
 
     private int value;
 	private static HashMap map = new HashMap<>();

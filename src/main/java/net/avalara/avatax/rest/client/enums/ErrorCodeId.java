@@ -1392,6 +1392,21 @@ public enum ErrorCodeId {
     /** 
      * 
      */
+    TaxCodeAndTaxCodeIdMissing(1724),
+
+    /** 
+     * 
+     */
+    NexusAlreadyExists(1725),
+
+    /** 
+     * 
+     */
+    InvalidAddressTypeAndMarketPlaceOusideUsaFlag(1726),
+
+    /** 
+     * 
+     */
     UnsupportedFileFormat(1800),
 
     /** 
