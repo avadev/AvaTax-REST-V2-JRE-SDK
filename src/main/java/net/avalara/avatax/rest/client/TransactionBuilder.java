@@ -116,6 +116,11 @@ public class TransactionBuilder {
         return this;
     }
 
+    public TransactionBuilder withEntityUseCode(String entityUseCode) {
+        model.setEntityUseCode(entityUseCode);
+        return this;
+    }
+
     public TransactionBuilder withExemptionNo(String exemptionNo) {
         model.setExemptionNo(exemptionNo);
         return this;
@@ -321,6 +326,10 @@ public class TransactionBuilder {
 
         if (ref2 != null && !ref2.isEmpty()) {
             line.setRef2(ref2);
+        }
+
+        if (customerUsageType != null && !customerUsageType.isEmpty()) {
+            line.setCustomerUsageType(customerUsageType);
         }
 
         if (customerUsageType != null && !customerUsageType.isEmpty()) {
