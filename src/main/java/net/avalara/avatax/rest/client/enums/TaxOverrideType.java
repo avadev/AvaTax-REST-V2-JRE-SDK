@@ -52,7 +52,12 @@ public enum TaxOverrideType {
     /** 
      * 
      */
-    OutOfHarbor(6);
+    OutOfHarbor(6),
+
+    /** 
+     * 
+     */
+    TaxAmountByTaxType(7);
 
     private int value;
 	private static HashMap map = new HashMap<>();

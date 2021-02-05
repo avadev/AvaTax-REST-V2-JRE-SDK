@@ -47,7 +47,27 @@ public enum TaxRuleTypeId {
     /** 
      * 
      */
-    NexusRule(5);
+    NexusRule(5),
+
+    /** 
+     * 
+     */
+    RateCapRule(6),
+
+    /** 
+     * 
+     */
+    TaxOverrideRule(7),
+
+    /** 
+     * 
+     */
+    FeeRule(8),
+
+    /** 
+     * 
+     */
+    OtherRule(100);
 
     private int value;
 	private static HashMap map = new HashMap<>();
