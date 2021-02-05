@@ -133,6 +133,32 @@ public class TaxOverrideModel {
         this.reason = value;
     }
 
+    private ArrayList<TransactionLineTaxAmountByTaxTypeModel> taxAmountByTaxTypes;
+
+    /**
+     * Getter for taxAmountByTaxTypes
+     *
+     * Indicates a total override of the calculated tax on the line with TaxType.
+    * AvaTax will distribute the override across all the line details for that TaxType.
+    *  
+    * TaxAmountByTaxType can be used only at the Line level.
+     */
+    public ArrayList<TransactionLineTaxAmountByTaxTypeModel> getTaxAmountByTaxTypes() {
+        return this.taxAmountByTaxTypes;
+    }
+
+    /**
+     * Setter for taxAmountByTaxTypes
+     *
+     * Indicates a total override of the calculated tax on the line with TaxType.
+    * AvaTax will distribute the override across all the line details for that TaxType.
+    *  
+    * TaxAmountByTaxType can be used only at the Line level.
+     */
+    public void setTaxAmountByTaxTypes(ArrayList<TransactionLineTaxAmountByTaxTypeModel> value) {
+        this.taxAmountByTaxTypes = value;
+    }
+
     /**
      * Returns a JSON string representation of TaxOverrideModel
      */
