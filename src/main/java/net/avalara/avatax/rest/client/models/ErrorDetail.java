@@ -24,7 +24,7 @@ import java.util.HashMap;
  */
 
 /**
- * 
+ * Message object
  */
 public class ErrorDetail {
 
@@ -34,7 +34,7 @@ public class ErrorDetail {
     /**
      * Getter for code
      *
-     * 
+     * Name of the error or message.
      */
     public ErrorCodeId getCode() {
         return this.code;
@@ -43,7 +43,7 @@ public class ErrorDetail {
     /**
      * Setter for code
      *
-     * 
+     * Name of the error or message.
      */
     public void setCode(ErrorCodeId value) {
         this.code = value;
@@ -54,7 +54,7 @@ public class ErrorDetail {
     /**
      * Getter for number
      *
-     * 
+     * Unique ID number referring to this error or message.
      */
     public Integer getNumber() {
         return this.number;
@@ -63,7 +63,7 @@ public class ErrorDetail {
     /**
      * Setter for number
      *
-     * 
+     * Unique ID number referring to this error or message.
      */
     public void setNumber(Integer value) {
         this.number = value;
@@ -74,7 +74,7 @@ public class ErrorDetail {
     /**
      * Getter for message
      *
-     * 
+     * Concise summary of the message, suitable for display in the caption of an alert box.
      */
     public String getMessage() {
         return this.message;
@@ -83,7 +83,7 @@ public class ErrorDetail {
     /**
      * Setter for message
      *
-     * 
+     * Concise summary of the message, suitable for display in the caption of an alert box.
      */
     public void setMessage(String value) {
         this.message = value;
@@ -94,7 +94,7 @@ public class ErrorDetail {
     /**
      * Getter for description
      *
-     * 
+     * A more detailed description of the problem referenced by this error message, suitable for display in the contents area of an alert box.
      */
     public String getDescription() {
         return this.description;
@@ -103,7 +103,7 @@ public class ErrorDetail {
     /**
      * Setter for description
      *
-     * 
+     * A more detailed description of the problem referenced by this error message, suitable for display in the contents area of an alert box.
      */
     public void setDescription(String value) {
         this.description = value;
@@ -114,7 +114,7 @@ public class ErrorDetail {
     /**
      * Getter for faultCode
      *
-     * 
+     * Indicates the SOAP Fault code, if this was related to an error that corresponded to AvaTax SOAP v1 behavior.
      */
     public String getFaultCode() {
         return this.faultCode;
@@ -123,7 +123,7 @@ public class ErrorDetail {
     /**
      * Setter for faultCode
      *
-     * 
+     * Indicates the SOAP Fault code, if this was related to an error that corresponded to AvaTax SOAP v1 behavior.
      */
     public void setFaultCode(String value) {
         this.faultCode = value;
@@ -134,7 +134,7 @@ public class ErrorDetail {
     /**
      * Getter for faultSubCode
      *
-     * 
+     * If this is an error from a downstream system (such as Calc) faultSubCode can be used to represent the fault code from that system.
      */
     public String getFaultSubCode() {
         return this.faultSubCode;
@@ -143,7 +143,7 @@ public class ErrorDetail {
     /**
      * Setter for faultSubCode
      *
-     * 
+     * If this is an error from a downstream system (such as Calc) faultSubCode can be used to represent the fault code from that system.
      */
     public void setFaultSubCode(String value) {
         this.faultSubCode = value;
@@ -154,7 +154,7 @@ public class ErrorDetail {
     /**
      * Getter for helpLink
      *
-     * 
+     * URL to help for this message
      */
     public String getHelpLink() {
         return this.helpLink;
@@ -163,7 +163,7 @@ public class ErrorDetail {
     /**
      * Setter for helpLink
      *
-     * 
+     * URL to help for this message
      */
     public void setHelpLink(String value) {
         this.helpLink = value;
@@ -174,7 +174,7 @@ public class ErrorDetail {
     /**
      * Getter for refersTo
      *
-     * 
+     * Item the message refers to, if applicable. This is used to indicate a missing or incorrect value.
      */
     public String getRefersTo() {
         return this.refersTo;
@@ -183,7 +183,7 @@ public class ErrorDetail {
     /**
      * Setter for refersTo
      *
-     * 
+     * Item the message refers to, if applicable. This is used to indicate a missing or incorrect value.
      */
     public void setRefersTo(String value) {
         this.refersTo = value;
@@ -194,7 +194,7 @@ public class ErrorDetail {
     /**
      * Getter for severity
      *
-     * 
+     * Severity of the message
      */
     public SeverityLevel getSeverity() {
         return this.severity;
@@ -203,7 +203,7 @@ public class ErrorDetail {
     /**
      * Setter for severity
      *
-     * 
+     * Severity of the message
      */
     public void setSeverity(SeverityLevel value) {
         this.severity = value;
