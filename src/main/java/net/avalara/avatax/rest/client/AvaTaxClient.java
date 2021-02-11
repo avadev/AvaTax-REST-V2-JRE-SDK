@@ -921,38 +921,6 @@ public class AvaTaxClient {
     }
 
     /**
-     * Get audit records by account id and date range.
-     * 
-     * @param accountId The ID of the account
-     * @param fromDate Date
-     * @param toDate Date
-     * @return AdvancedRuleLookupFileModel
-     */
-    public AdvancedRuleLookupFileModel getAuditRecords(Integer accountId, String fromDate, String toDate) throws Exception {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/advancedrules/audits/accounts/{accountId}/from/{fromDate}/to/{toDate}");
-        path.applyField("accountId", accountId);
-        path.applyField("fromDate", fromDate);
-        path.applyField("toDate", toDate);
-        return ((RestCall<AdvancedRuleLookupFileModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<AdvancedRuleLookupFileModel>(){})).call();
-    }
-
-    /**
-     * Get audit records by account id and date range.
-     * 
-     * @param accountId The ID of the account
-     * @param fromDate Date
-     * @param toDate Date
-     * @return AdvancedRuleLookupFileModel
-     */
-    public Future<AdvancedRuleLookupFileModel> getAuditRecordsAsync(Integer accountId, String fromDate, String toDate) {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/advancedrules/audits/accounts/{accountId}/from/{fromDate}/to/{toDate}");
-        path.applyField("accountId", accountId);
-        path.applyField("fromDate", fromDate);
-        path.applyField("toDate", toDate);
-        return this.threadPool.submit((RestCall<AdvancedRuleLookupFileModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<AdvancedRuleLookupFileModel>(){}));
-    }
-
-    /**
      * Get the lookup files for a company
      * 
      * @param accountId The account ID for the company
@@ -6866,7 +6834,7 @@ public class AvaTaxClient {
      * Returns the full list of all Avalara-supported nexus for all countries and regions.
      *             
      * 
-     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* streamlinedSalesTax, isSSTActive, taxAuthorityId, taxName, parameters
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* streamlinedSalesTax, isSSTActive, taxAuthorityId, taxName, parameters, taxableNexus
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
@@ -6887,7 +6855,7 @@ public class AvaTaxClient {
      * Returns the full list of all Avalara-supported nexus for all countries and regions.
      *             
      * 
-     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* streamlinedSalesTax, isSSTActive, taxAuthorityId, taxName, parameters
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* streamlinedSalesTax, isSSTActive, taxAuthorityId, taxName, parameters, taxableNexus
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
@@ -6917,7 +6885,7 @@ public class AvaTaxClient {
      * @param region Name or ISO 3166 code identifying the region portion of the address.      This field supports many different region identifiers:   * Two and three character ISO 3166 region codes   * Fully spelled out names of the region in ISO supported languages   * Common alternative spellings for many regions      For a full list of all supported codes and names, please see the Definitions API `ListRegions`.
      * @param postalCode The postal code or zip code portion of this address.
      * @param country Name or ISO 3166 code identifying the country portion of this address.      This field supports many different country identifiers:   * Two character ISO 3166 codes   * Three character ISO 3166 codes   * Fully spelled out names of the country in ISO supported languages   * Common alternative spellings for many countries      For a full list of all supported codes and names, please see the Definitions API `ListCountries`.
-     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* streamlinedSalesTax, isSSTActive, taxAuthorityId, taxName, parameters
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* streamlinedSalesTax, isSSTActive, taxAuthorityId, taxName, parameters, taxableNexus
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
@@ -6954,7 +6922,7 @@ public class AvaTaxClient {
      * @param region Name or ISO 3166 code identifying the region portion of the address.      This field supports many different region identifiers:   * Two and three character ISO 3166 region codes   * Fully spelled out names of the region in ISO supported languages   * Common alternative spellings for many regions      For a full list of all supported codes and names, please see the Definitions API `ListRegions`.
      * @param postalCode The postal code or zip code portion of this address.
      * @param country Name or ISO 3166 code identifying the country portion of this address.      This field supports many different country identifiers:   * Two character ISO 3166 codes   * Three character ISO 3166 codes   * Fully spelled out names of the country in ISO supported languages   * Common alternative spellings for many countries      For a full list of all supported codes and names, please see the Definitions API `ListCountries`.
-     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* streamlinedSalesTax, isSSTActive, taxAuthorityId, taxName, parameters
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* streamlinedSalesTax, isSSTActive, taxAuthorityId, taxName, parameters, taxableNexus
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
@@ -6983,7 +6951,7 @@ public class AvaTaxClient {
      *             
      * 
      * @param country The country in which you want to fetch the system nexus
-     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* streamlinedSalesTax, isSSTActive, taxAuthorityId, taxName, parameters
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* streamlinedSalesTax, isSSTActive, taxAuthorityId, taxName, parameters, taxableNexus
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
@@ -7006,7 +6974,7 @@ public class AvaTaxClient {
      *             
      * 
      * @param country The country in which you want to fetch the system nexus
-     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* streamlinedSalesTax, isSSTActive, taxAuthorityId, taxName, parameters
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* streamlinedSalesTax, isSSTActive, taxAuthorityId, taxName, parameters, taxableNexus
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
@@ -7030,7 +6998,7 @@ public class AvaTaxClient {
      * 
      * @param country The two-character ISO-3166 code for the country.
      * @param region The two or three character region code for the region.
-     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* streamlinedSalesTax, isSSTActive, taxAuthorityId, taxName, parameters
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* streamlinedSalesTax, isSSTActive, taxAuthorityId, taxName, parameters, taxableNexus
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
@@ -7055,7 +7023,7 @@ public class AvaTaxClient {
      * 
      * @param country The two-character ISO-3166 code for the country.
      * @param region The two or three character region code for the region.
-     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* streamlinedSalesTax, isSSTActive, taxAuthorityId, taxName, parameters
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* streamlinedSalesTax, isSSTActive, taxAuthorityId, taxName, parameters, taxableNexus
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
@@ -9522,186 +9490,6 @@ public class AvaTaxClient {
     public Future<NewAccountModel> requestFreeTrialAsync(FreeTrialRequestModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/freetrials/request");
         return this.threadPool.submit((RestCall<NewAccountModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<NewAccountModel>(){}));
-    }
-
-    /**
-     * FREE API - Sales tax rates for a specified address
-     * 
-     * # Free-To-Use
-     *             
-     * The TaxRates API is a free-to-use, no cost option for estimating sales tax rates.
-     * Any customer can request a free AvaTax account and make use of the TaxRates API.
-     *             
-     * Usage of this API is subject to rate limits.  Users who exceed the rate limit will receive HTTP
-     * response code 429 - `Too Many Requests`.
-     *             
-     * This API assumes that you are selling general tangible personal property at a retail point-of-sale
-     * location in the United States only.
-     *             
-     * For more powerful tax calculation, please consider upgrading to the `CreateTransaction` API,
-     * which supports features including, but not limited to:
-     *             
-     * * Nexus declarations
-     * * Taxability based on product/service type
-     * * Sourcing rules affecting origin/destination states
-     * * Customers who are exempt from certain taxes
-     * * States that have dollar value thresholds for tax amounts
-     * * Refunds for products purchased on a different date
-     * * Detailed jurisdiction names and state assigned codes
-     * * And more!
-     *             
-     * Please see [Estimating Tax with REST v2](http://developer.avalara.com/blog/2016/11/04/estimating-tax-with-rest-v2/)
-     * 
-     * @param line1 The street address of the location.
-     * @param line2 The street address of the location.
-     * @param line3 The street address of the location.
-     * @param city The city name of the location.
-     * @param region Name or ISO 3166 code identifying the region within the country.     This field supports many different region identifiers:   * Two and three character ISO 3166 region codes   * Fully spelled out names of the region in ISO supported languages   * Common alternative spellings for many regions     For a full list of all supported codes and names, please see the Definitions API `ListRegions`.
-     * @param postalCode The postal code of the location.
-     * @param country Name or ISO 3166 code identifying the country.     This field supports many different country identifiers:   * Two character ISO 3166 codes   * Three character ISO 3166 codes   * Fully spelled out names of the country in ISO supported languages   * Common alternative spellings for many countries     For a full list of all supported codes and names, please see the Definitions API `ListCountries`.
-     * @return TaxRateModel
-     */
-    public TaxRateModel taxRatesByAddress(String line1, String line2, String line3, String city, String region, String postalCode, String country) throws Exception {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/taxrates/byaddress");
-        path.addQuery("line1", line1);
-        path.addQuery("line2", line2);
-        path.addQuery("line3", line3);
-        path.addQuery("city", city);
-        path.addQuery("region", region);
-        path.addQuery("postalCode", postalCode);
-        path.addQuery("country", country);
-        return ((RestCall<TaxRateModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<TaxRateModel>(){})).call();
-    }
-
-    /**
-     * FREE API - Sales tax rates for a specified address
-     * 
-     * # Free-To-Use
-     *             
-     * The TaxRates API is a free-to-use, no cost option for estimating sales tax rates.
-     * Any customer can request a free AvaTax account and make use of the TaxRates API.
-     *             
-     * Usage of this API is subject to rate limits.  Users who exceed the rate limit will receive HTTP
-     * response code 429 - `Too Many Requests`.
-     *             
-     * This API assumes that you are selling general tangible personal property at a retail point-of-sale
-     * location in the United States only.
-     *             
-     * For more powerful tax calculation, please consider upgrading to the `CreateTransaction` API,
-     * which supports features including, but not limited to:
-     *             
-     * * Nexus declarations
-     * * Taxability based on product/service type
-     * * Sourcing rules affecting origin/destination states
-     * * Customers who are exempt from certain taxes
-     * * States that have dollar value thresholds for tax amounts
-     * * Refunds for products purchased on a different date
-     * * Detailed jurisdiction names and state assigned codes
-     * * And more!
-     *             
-     * Please see [Estimating Tax with REST v2](http://developer.avalara.com/blog/2016/11/04/estimating-tax-with-rest-v2/)
-     * 
-     * @param line1 The street address of the location.
-     * @param line2 The street address of the location.
-     * @param line3 The street address of the location.
-     * @param city The city name of the location.
-     * @param region Name or ISO 3166 code identifying the region within the country.     This field supports many different region identifiers:   * Two and three character ISO 3166 region codes   * Fully spelled out names of the region in ISO supported languages   * Common alternative spellings for many regions     For a full list of all supported codes and names, please see the Definitions API `ListRegions`.
-     * @param postalCode The postal code of the location.
-     * @param country Name or ISO 3166 code identifying the country.     This field supports many different country identifiers:   * Two character ISO 3166 codes   * Three character ISO 3166 codes   * Fully spelled out names of the country in ISO supported languages   * Common alternative spellings for many countries     For a full list of all supported codes and names, please see the Definitions API `ListCountries`.
-     * @return TaxRateModel
-     */
-    public Future<TaxRateModel> taxRatesByAddressAsync(String line1, String line2, String line3, String city, String region, String postalCode, String country) {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/taxrates/byaddress");
-        path.addQuery("line1", line1);
-        path.addQuery("line2", line2);
-        path.addQuery("line3", line3);
-        path.addQuery("city", city);
-        path.addQuery("region", region);
-        path.addQuery("postalCode", postalCode);
-        path.addQuery("country", country);
-        return this.threadPool.submit((RestCall<TaxRateModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<TaxRateModel>(){}));
-    }
-
-    /**
-     * FREE API - Sales tax rates for a specified country and postal code. This API is only available for US postal codes.
-     * 
-     * # Free-To-Use
-     *             
-     * This API is only available for a US postal codes.
-     *             
-     * The TaxRates API is a free-to-use, no cost option for estimating sales tax rates.
-     * Any customer can request a free AvaTax account and make use of the TaxRates API.
-     *             
-     * Usage of this API is subject to rate limits.  Users who exceed the rate limit will receive HTTP
-     * response code 429 - `Too Many Requests`.
-     *             
-     * This API assumes that you are selling general tangible personal property at a retail point-of-sale
-     * location in the United States only.
-     *             
-     * For more powerful tax calculation, please consider upgrading to the `CreateTransaction` API,
-     * which supports features including, but not limited to:
-     *             
-     * * Nexus declarations
-     * * Taxability based on product/service type
-     * * Sourcing rules affecting origin/destination states
-     * * Customers who are exempt from certain taxes
-     * * States that have dollar value thresholds for tax amounts
-     * * Refunds for products purchased on a different date
-     * * Detailed jurisdiction names and state assigned codes
-     * * And more!
-     *             
-     * Please see [Estimating Tax with REST v2](http://developer.avalara.com/blog/2016/11/04/estimating-tax-with-rest-v2/)
-     * 
-     * @param country Name or ISO 3166 code identifying the country.     This field supports many different country identifiers:   * Two character ISO 3166 codes   * Three character ISO 3166 codes   * Fully spelled out names of the country in ISO supported languages   * Common alternative spellings for many countries     For a full list of all supported codes and names, please see the Definitions API `ListCountries`.
-     * @param postalCode The postal code of the location.
-     * @return TaxRateModel
-     */
-    public TaxRateModel taxRatesByPostalCode(String country, String postalCode) throws Exception {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/taxrates/bypostalcode");
-        path.addQuery("country", country);
-        path.addQuery("postalCode", postalCode);
-        return ((RestCall<TaxRateModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<TaxRateModel>(){})).call();
-    }
-
-    /**
-     * FREE API - Sales tax rates for a specified country and postal code. This API is only available for US postal codes.
-     * 
-     * # Free-To-Use
-     *             
-     * This API is only available for a US postal codes.
-     *             
-     * The TaxRates API is a free-to-use, no cost option for estimating sales tax rates.
-     * Any customer can request a free AvaTax account and make use of the TaxRates API.
-     *             
-     * Usage of this API is subject to rate limits.  Users who exceed the rate limit will receive HTTP
-     * response code 429 - `Too Many Requests`.
-     *             
-     * This API assumes that you are selling general tangible personal property at a retail point-of-sale
-     * location in the United States only.
-     *             
-     * For more powerful tax calculation, please consider upgrading to the `CreateTransaction` API,
-     * which supports features including, but not limited to:
-     *             
-     * * Nexus declarations
-     * * Taxability based on product/service type
-     * * Sourcing rules affecting origin/destination states
-     * * Customers who are exempt from certain taxes
-     * * States that have dollar value thresholds for tax amounts
-     * * Refunds for products purchased on a different date
-     * * Detailed jurisdiction names and state assigned codes
-     * * And more!
-     *             
-     * Please see [Estimating Tax with REST v2](http://developer.avalara.com/blog/2016/11/04/estimating-tax-with-rest-v2/)
-     * 
-     * @param country Name or ISO 3166 code identifying the country.     This field supports many different country identifiers:   * Two character ISO 3166 codes   * Three character ISO 3166 codes   * Fully spelled out names of the country in ISO supported languages   * Common alternative spellings for many countries     For a full list of all supported codes and names, please see the Definitions API `ListCountries`.
-     * @param postalCode The postal code of the location.
-     * @return TaxRateModel
-     */
-    public Future<TaxRateModel> taxRatesByPostalCodeAsync(String country, String postalCode) {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/taxrates/bypostalcode");
-        path.addQuery("country", country);
-        path.addQuery("postalCode", postalCode);
-        return this.threadPool.submit((RestCall<TaxRateModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<TaxRateModel>(){}));
     }
 
     /**
@@ -13440,7 +13228,7 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
      * @param companyId The ID of the company that owns these nexus objects
-     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* streamlinedSalesTax, isSSTActive, taxAuthorityId, taxName, parameters
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* streamlinedSalesTax, isSSTActive, taxAuthorityId, taxName, parameters, taxableNexus
      * @param include A comma separated list of additional data to retrieve.
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
@@ -13478,7 +13266,7 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
      * @param companyId The ID of the company that owns these nexus objects
-     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* streamlinedSalesTax, isSSTActive, taxAuthorityId, taxName, parameters
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* streamlinedSalesTax, isSSTActive, taxAuthorityId, taxName, parameters, taxableNexus
      * @param include A comma separated list of additional data to retrieve.
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
@@ -13587,7 +13375,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
-     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* streamlinedSalesTax, isSSTActive, taxAuthorityId, taxName, parameters
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* streamlinedSalesTax, isSSTActive, taxAuthorityId, taxName, parameters, taxableNexus
      * @param include A comma separated list of additional data to retrieve.
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
@@ -13623,7 +13411,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
-     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* streamlinedSalesTax, isSSTActive, taxAuthorityId, taxName, parameters
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* streamlinedSalesTax, isSSTActive, taxAuthorityId, taxName, parameters, taxableNexus
      * @param include A comma separated list of additional data to retrieve.
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
@@ -14694,6 +14482,15 @@ public class AvaTaxClient {
      * * When a report's status is `Completed`, call `DownloadReport` to retrieve the file.
      *             
      * The `ExportDocumentLine` report produces information about invoice lines recorded within your account.
+     *             
+     * To split large reports into multiple smaller partitions, use the numberOfPartitions and partition properties on ExportDocumentLineModel.
+     *             
+     * Example - split a report into three partitions
+     *             
+     * * Follow the steps above with numberOfPartitions = 3 and partition = 0
+     * * Follow the steps above with numberOfPartitions = 3 and partition = 1
+     * * Follow the steps above with numberOfPartitions = 3 and partition = 2
+     * * Once all three reports are downloaded merge the files on the client side.
      * 
      * ### Security Policies
      * 
@@ -14723,6 +14520,15 @@ public class AvaTaxClient {
      * * When a report's status is `Completed`, call `DownloadReport` to retrieve the file.
      *             
      * The `ExportDocumentLine` report produces information about invoice lines recorded within your account.
+     *             
+     * To split large reports into multiple smaller partitions, use the numberOfPartitions and partition properties on ExportDocumentLineModel.
+     *             
+     * Example - split a report into three partitions
+     *             
+     * * Follow the steps above with numberOfPartitions = 3 and partition = 0
+     * * Follow the steps above with numberOfPartitions = 3 and partition = 1
+     * * Follow the steps above with numberOfPartitions = 3 and partition = 2
+     * * Once all three reports are downloaded merge the files on the client side.
      * 
      * ### Security Policies
      * 
@@ -15988,6 +15794,166 @@ public class AvaTaxClient {
         path.applyField("date", date);
         path.addQuery("region", region);
         return this.threadPool.submit((RestCall<String>)restCallFactory.createRestCall("get", path, null, new TypeToken<String>(){}));
+    }
+
+    /**
+     * Sales tax rates for a specified address
+     * 
+     * Usage of this API is subject to rate limits.  Users who exceed the rate limit will receive HTTP
+     * response code 429 - `Too Many Requests`.
+     *             
+     * This API assumes that you are selling general tangible personal property at a retail point-of-sale
+     * location in the United States only.
+     *             
+     * For more powerful tax calculation, please consider upgrading to the `CreateTransaction` API,
+     * which supports features including, but not limited to:
+     *             
+     * * Nexus declarations
+     * * Taxability based on product/service type
+     * * Sourcing rules affecting origin/destination states
+     * * Customers who are exempt from certain taxes
+     * * States that have dollar value thresholds for tax amounts
+     * * Refunds for products purchased on a different date
+     * * Detailed jurisdiction names and state assigned codes
+     * * And more!
+     *             
+     * Please see [Estimating Tax with REST v2](http://developer.avalara.com/blog/2016/11/04/estimating-tax-with-rest-v2/)
+     * 
+     * @param line1 The street address of the location.
+     * @param line2 The street address of the location.
+     * @param line3 The street address of the location.
+     * @param city The city name of the location.
+     * @param region Name or ISO 3166 code identifying the region within the country.     This field supports many different region identifiers:   * Two and three character ISO 3166 region codes   * Fully spelled out names of the region in ISO supported languages   * Common alternative spellings for many regions     For a full list of all supported codes and names, please see the Definitions API `ListRegions`.
+     * @param postalCode The postal code of the location.
+     * @param country Name or ISO 3166 code identifying the country.     This field supports many different country identifiers:   * Two character ISO 3166 codes   * Three character ISO 3166 codes   * Fully spelled out names of the country in ISO supported languages   * Common alternative spellings for many countries     For a full list of all supported codes and names, please see the Definitions API `ListCountries`.
+     * @return TaxRateModel
+     */
+    public TaxRateModel taxRatesByAddress(String line1, String line2, String line3, String city, String region, String postalCode, String country) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/taxrates/byaddress");
+        path.addQuery("line1", line1);
+        path.addQuery("line2", line2);
+        path.addQuery("line3", line3);
+        path.addQuery("city", city);
+        path.addQuery("region", region);
+        path.addQuery("postalCode", postalCode);
+        path.addQuery("country", country);
+        return ((RestCall<TaxRateModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<TaxRateModel>(){})).call();
+    }
+
+    /**
+     * Sales tax rates for a specified address
+     * 
+     * Usage of this API is subject to rate limits.  Users who exceed the rate limit will receive HTTP
+     * response code 429 - `Too Many Requests`.
+     *             
+     * This API assumes that you are selling general tangible personal property at a retail point-of-sale
+     * location in the United States only.
+     *             
+     * For more powerful tax calculation, please consider upgrading to the `CreateTransaction` API,
+     * which supports features including, but not limited to:
+     *             
+     * * Nexus declarations
+     * * Taxability based on product/service type
+     * * Sourcing rules affecting origin/destination states
+     * * Customers who are exempt from certain taxes
+     * * States that have dollar value thresholds for tax amounts
+     * * Refunds for products purchased on a different date
+     * * Detailed jurisdiction names and state assigned codes
+     * * And more!
+     *             
+     * Please see [Estimating Tax with REST v2](http://developer.avalara.com/blog/2016/11/04/estimating-tax-with-rest-v2/)
+     * 
+     * @param line1 The street address of the location.
+     * @param line2 The street address of the location.
+     * @param line3 The street address of the location.
+     * @param city The city name of the location.
+     * @param region Name or ISO 3166 code identifying the region within the country.     This field supports many different region identifiers:   * Two and three character ISO 3166 region codes   * Fully spelled out names of the region in ISO supported languages   * Common alternative spellings for many regions     For a full list of all supported codes and names, please see the Definitions API `ListRegions`.
+     * @param postalCode The postal code of the location.
+     * @param country Name or ISO 3166 code identifying the country.     This field supports many different country identifiers:   * Two character ISO 3166 codes   * Three character ISO 3166 codes   * Fully spelled out names of the country in ISO supported languages   * Common alternative spellings for many countries     For a full list of all supported codes and names, please see the Definitions API `ListCountries`.
+     * @return TaxRateModel
+     */
+    public Future<TaxRateModel> taxRatesByAddressAsync(String line1, String line2, String line3, String city, String region, String postalCode, String country) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/taxrates/byaddress");
+        path.addQuery("line1", line1);
+        path.addQuery("line2", line2);
+        path.addQuery("line3", line3);
+        path.addQuery("city", city);
+        path.addQuery("region", region);
+        path.addQuery("postalCode", postalCode);
+        path.addQuery("country", country);
+        return this.threadPool.submit((RestCall<TaxRateModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<TaxRateModel>(){}));
+    }
+
+    /**
+     * Sales tax rates for a specified country and postal code. This API is only available for US postal codes.
+     * 
+     * This API is only available for a US postal codes.
+     *             
+     * Usage of this API is subject to rate limits.  Users who exceed the rate limit will receive HTTP
+     * response code 429 - `Too Many Requests`.
+     *             
+     * This API assumes that you are selling general tangible personal property at a retail point-of-sale
+     * location in the United States only.
+     *             
+     * For more powerful tax calculation, please consider upgrading to the `CreateTransaction` API,
+     * which supports features including, but not limited to:
+     *             
+     * * Nexus declarations
+     * * Taxability based on product/service type
+     * * Sourcing rules affecting origin/destination states
+     * * Customers who are exempt from certain taxes
+     * * States that have dollar value thresholds for tax amounts
+     * * Refunds for products purchased on a different date
+     * * Detailed jurisdiction names and state assigned codes
+     * * And more!
+     *             
+     * Please see [Estimating Tax with REST v2](http://developer.avalara.com/blog/2016/11/04/estimating-tax-with-rest-v2/)
+     * 
+     * @param country Name or ISO 3166 code identifying the country.     This field supports many different country identifiers:   * Two character ISO 3166 codes   * Three character ISO 3166 codes   * Fully spelled out names of the country in ISO supported languages   * Common alternative spellings for many countries     For a full list of all supported codes and names, please see the Definitions API `ListCountries`.
+     * @param postalCode The postal code of the location.
+     * @return TaxRateModel
+     */
+    public TaxRateModel taxRatesByPostalCode(String country, String postalCode) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/taxrates/bypostalcode");
+        path.addQuery("country", country);
+        path.addQuery("postalCode", postalCode);
+        return ((RestCall<TaxRateModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<TaxRateModel>(){})).call();
+    }
+
+    /**
+     * Sales tax rates for a specified country and postal code. This API is only available for US postal codes.
+     * 
+     * This API is only available for a US postal codes.
+     *             
+     * Usage of this API is subject to rate limits.  Users who exceed the rate limit will receive HTTP
+     * response code 429 - `Too Many Requests`.
+     *             
+     * This API assumes that you are selling general tangible personal property at a retail point-of-sale
+     * location in the United States only.
+     *             
+     * For more powerful tax calculation, please consider upgrading to the `CreateTransaction` API,
+     * which supports features including, but not limited to:
+     *             
+     * * Nexus declarations
+     * * Taxability based on product/service type
+     * * Sourcing rules affecting origin/destination states
+     * * Customers who are exempt from certain taxes
+     * * States that have dollar value thresholds for tax amounts
+     * * Refunds for products purchased on a different date
+     * * Detailed jurisdiction names and state assigned codes
+     * * And more!
+     *             
+     * Please see [Estimating Tax with REST v2](http://developer.avalara.com/blog/2016/11/04/estimating-tax-with-rest-v2/)
+     * 
+     * @param country Name or ISO 3166 code identifying the country.     This field supports many different country identifiers:   * Two character ISO 3166 codes   * Three character ISO 3166 codes   * Fully spelled out names of the country in ISO supported languages   * Common alternative spellings for many countries     For a full list of all supported codes and names, please see the Definitions API `ListCountries`.
+     * @param postalCode The postal code of the location.
+     * @return TaxRateModel
+     */
+    public Future<TaxRateModel> taxRatesByPostalCodeAsync(String country, String postalCode) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/taxrates/bypostalcode");
+        path.addQuery("country", country);
+        path.addQuery("postalCode", postalCode);
+        return this.threadPool.submit((RestCall<TaxRateModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<TaxRateModel>(){}));
     }
 
     /**
