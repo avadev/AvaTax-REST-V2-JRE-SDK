@@ -327,6 +327,11 @@ public enum ErrorCodeId {
     /** 
      * 
      */
+    AllJurisRuleLimits(84),
+
+    /** 
+     * 
+     */
     InvalidCompanyLocationSetting(85),
 
     /** 
@@ -523,6 +528,11 @@ public enum ErrorCodeId {
      * 
      */
     DuplicateSystemTaxCode(155),
+
+    /** 
+     * 
+     */
+    SSTOverridesNotAvailable(156),
 
     /** 
      * 
@@ -1392,6 +1402,21 @@ public enum ErrorCodeId {
     /** 
      * 
      */
+    TaxCodeAndTaxCodeIdMissing(1724),
+
+    /** 
+     * 
+     */
+    NexusAlreadyExists(1725),
+
+    /** 
+     * 
+     */
+    InvalidAddressTypeAndMarketPlaceOusideUsaFlag(1726),
+
+    /** 
+     * 
+     */
     UnsupportedFileFormat(1800),
 
     /** 
@@ -1583,6 +1608,11 @@ public enum ErrorCodeId {
      * 
      */
     CannotCreateNestedObjects(2402),
+
+    /** 
+     * 
+     */
+    UserSubjectIdNotUpdated(2500),
 
     /** 
      * 

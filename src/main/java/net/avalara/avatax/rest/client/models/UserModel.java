@@ -289,6 +289,26 @@ public class UserModel {
         this.modifiedDate = value;
     }
 
+    private String subjectId;
+
+    /**
+     * Getter for subjectId
+     *
+     * Matches the subjectId of corresponding user record in AI.
+     */
+    public String getSubjectId() {
+        return this.subjectId;
+    }
+
+    /**
+     * Setter for subjectId
+     *
+     * Matches the subjectId of corresponding user record in AI.
+     */
+    public void setSubjectId(String value) {
+        this.subjectId = value;
+    }
+
     /**
      * Returns a JSON string representation of UserModel
      */

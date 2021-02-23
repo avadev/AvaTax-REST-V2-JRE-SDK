@@ -29,26 +29,6 @@ import java.util.HashMap;
 public class AddressValidationInfo {
 
 
-    private TextCase textCase;
-
-    /**
-     * Getter for textCase
-     *
-     * Specify the text case for the validated address result. If not specified, will return uppercase.
-     */
-    public TextCase getTextCase() {
-        return this.textCase;
-    }
-
-    /**
-     * Setter for textCase
-     *
-     * Specify the text case for the validated address result. If not specified, will return uppercase.
-     */
-    public void setTextCase(TextCase value) {
-        this.textCase = value;
-    }
-
     private String line1;
 
     /**
@@ -67,6 +47,26 @@ public class AddressValidationInfo {
      */
     public void setLine1(String value) {
         this.line1 = value;
+    }
+
+    private TextCase textCase;
+
+    /**
+     * Getter for textCase
+     *
+     * Specify the text case for the validated address result. If not specified, will return uppercase.
+     */
+    public TextCase getTextCase() {
+        return this.textCase;
+    }
+
+    /**
+     * Setter for textCase
+     *
+     * Specify the text case for the validated address result. If not specified, will return uppercase.
+     */
+    public void setTextCase(TextCase value) {
+        this.textCase = value;
     }
 
     private String line2;

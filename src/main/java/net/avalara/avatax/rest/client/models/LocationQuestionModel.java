@@ -211,6 +211,126 @@ public class LocationQuestionModel {
         this.jurisdictionRegion = value;
     }
 
+    private String helpText;
+
+    /**
+     * Getter for helpText
+     *
+     * Help and guidance for this specific question
+     */
+    public String getHelpText() {
+        return this.helpText;
+    }
+
+    /**
+     * Setter for helpText
+     *
+     * Help and guidance for this specific question
+     */
+    public void setHelpText(String value) {
+        this.helpText = value;
+    }
+
+    private Integer maxLength;
+
+    /**
+     * Getter for maxLength
+     *
+     * Maximum length of the answer string
+     */
+    public Integer getMaxLength() {
+        return this.maxLength;
+    }
+
+    /**
+     * Setter for maxLength
+     *
+     * Maximum length of the answer string
+     */
+    public void setMaxLength(Integer value) {
+        this.maxLength = value;
+    }
+
+    private Boolean required;
+
+    /**
+     * Getter for required
+     *
+     * True if this question must be answered for this filing calendar
+     */
+    public Boolean getRequired() {
+        return this.required;
+    }
+
+    /**
+     * Setter for required
+     *
+     * True if this question must be answered for this filing calendar
+     */
+    public void setRequired(Boolean value) {
+        this.required = value;
+    }
+
+    private String dataType;
+
+    /**
+     * Getter for dataType
+     *
+     * Data type of the answer
+     */
+    public String getDataType() {
+        return this.dataType;
+    }
+
+    /**
+     * Setter for dataType
+     *
+     * Data type of the answer
+     */
+    public void setDataType(String value) {
+        this.dataType = value;
+    }
+
+    private String staticOptions;
+
+    /**
+     * Getter for staticOptions
+     *
+     * 
+     */
+    public String getStaticOptions() {
+        return this.staticOptions;
+    }
+
+    /**
+     * Setter for staticOptions
+     *
+     * 
+     */
+    public void setStaticOptions(String value) {
+        this.staticOptions = value;
+    }
+
+    private Boolean unique;
+
+    /**
+     * Getter for unique
+     *
+     * 
+     */
+    public Boolean getUnique() {
+        return this.unique;
+    }
+
+    /**
+     * Setter for unique
+     *
+     * 
+     */
+    public void setUnique(Boolean value) {
+        this.unique = value;
+    }
+
     /**
      * Returns a JSON string representation of LocationQuestionModel
      */

@@ -57,6 +57,11 @@ public enum RateType {
     /** 
      * 
      */
+    Construction(78),
+
+    /** 
+     * 
+     */
     Parking(80),
 
     /** 
@@ -77,7 +82,12 @@ public enum RateType {
     /** 
      * 
      */
-    Leasing(85),
+    Leasing(84),
+
+    /** 
+     * 
+     */
+    LeasingLow(85),
 
     /** 
      * 

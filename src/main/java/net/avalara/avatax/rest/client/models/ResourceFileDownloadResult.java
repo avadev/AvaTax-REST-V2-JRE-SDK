@@ -49,14 +49,14 @@ public class ResourceFileDownloadResult {
         this.success = value;
     }
 
-    private Byte bytes;
+    private String bytes;
 
     /**
      * Getter for bytes
      *
      * Bytes of the file
      */
-    public Byte getBytes() {
+    public String getBytes() {
         return this.bytes;
     }
 
@@ -65,7 +65,7 @@ public class ResourceFileDownloadResult {
      *
      * Bytes of the file
      */
-    public void setBytes(Byte value) {
+    public void setBytes(String value) {
         this.bytes = value;
     }
 

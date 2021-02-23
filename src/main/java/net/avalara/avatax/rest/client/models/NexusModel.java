@@ -816,6 +816,26 @@ public class NexusModel {
         this.parameters = value;
     }
 
+    private Boolean taxableNexus;
+
+    /**
+     * Getter for taxableNexus
+     *
+     * Shows if system nexus records are associated with tax collection
+     */
+    public Boolean getTaxableNexus() {
+        return this.taxableNexus;
+    }
+
+    /**
+     * Setter for taxableNexus
+     *
+     * Shows if system nexus records are associated with tax collection
+     */
+    public void setTaxableNexus(Boolean value) {
+        this.taxableNexus = value;
+    }
+
     /**
      * Returns a JSON string representation of NexusModel
      */
