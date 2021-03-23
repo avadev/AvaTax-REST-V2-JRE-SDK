@@ -1109,6 +1109,26 @@ public class TransactionLineModel {
         this.taxAmountByTaxTypes = value;
     }
 
+    private DeemedSellerType deemedSupplier;
+
+    /**
+     * Getter for deemedSupplier
+     *
+     * Deemed Supplier field indicates which party on the marketplace transaction is liable for collecting and reporting the VAT. This is based on the 2021 E-commerce legislative reforms in EU and UK. This field will not be used until after July 1, 2021.
+     */
+    public DeemedSellerType getDeemedSupplier() {
+        return this.deemedSupplier;
+    }
+
+    /**
+     * Setter for deemedSupplier
+     *
+     * Deemed Supplier field indicates which party on the marketplace transaction is liable for collecting and reporting the VAT. This is based on the 2021 E-commerce legislative reforms in EU and UK. This field will not be used until after July 1, 2021.
+     */
+    public void setDeemedSupplier(DeemedSellerType value) {
+        this.deemedSupplier = value;
+    }
+
     /**
      * Returns a JSON string representation of TransactionLineModel
      */

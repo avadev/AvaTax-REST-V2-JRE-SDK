@@ -1265,6 +1265,52 @@ public class TransactionModel {
         this.invoiceMessages = value;
     }
 
+    private String customerSupplierName;
+
+    /**
+     * Getter for customerSupplierName
+     *
+     * The name of the supplier / exporter / seller.
+    * For sales doctype this will be the name of your own company for which you are reporting.
+    * For purchases doctype this will be the name of the supplier you have purchased from.
+     */
+    public String getCustomerSupplierName() {
+        return this.customerSupplierName;
+    }
+
+    /**
+     * Setter for customerSupplierName
+     *
+     * The name of the supplier / exporter / seller.
+    * For sales doctype this will be the name of your own company for which you are reporting.
+    * For purchases doctype this will be the name of the supplier you have purchased from.
+     */
+    public void setCustomerSupplierName(String value) {
+        this.customerSupplierName = value;
+    }
+
+    private Integer dataSourceId;
+
+    /**
+     * Getter for dataSourceId
+     *
+     * The Id of the datasource from which this transaction originated.
+    * This value will be overridden by the system to take the datasource Id from the call header.
+     */
+    public Integer getDataSourceId() {
+        return this.dataSourceId;
+    }
+
+    /**
+     * Setter for dataSourceId
+     *
+     * The Id of the datasource from which this transaction originated.
+    * This value will be overridden by the system to take the datasource Id from the call header.
+     */
+    public void setDataSourceId(Integer value) {
+        this.dataSourceId = value;
+    }
+
     /**
      * Returns a JSON string representation of TransactionModel
      */
