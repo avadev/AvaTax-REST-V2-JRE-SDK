@@ -159,6 +159,26 @@ public class IsoRegionModel {
         this.localizedNames = value;
     }
 
+    private Boolean isRegionTaxable;
+
+    /**
+     * Getter for isRegionTaxable
+     *
+     * Whether the region collects tax or not. This field will be populated for US country only and will be null for all the other countries.
+     */
+    public Boolean getIsRegionTaxable() {
+        return this.isRegionTaxable;
+    }
+
+    /**
+     * Setter for isRegionTaxable
+     *
+     * Whether the region collects tax or not. This field will be populated for US country only and will be null for all the other countries.
+     */
+    public void setIsRegionTaxable(Boolean value) {
+        this.isRegionTaxable = value;
+    }
+
     /**
      * Returns a JSON string representation of IsoRegionModel
      */

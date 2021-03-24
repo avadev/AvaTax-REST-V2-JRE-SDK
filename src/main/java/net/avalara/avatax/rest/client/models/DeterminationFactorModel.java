@@ -69,6 +69,66 @@ public class DeterminationFactorModel {
         this.description = value;
     }
 
+    private ArrayList<String> ids;
+
+    /**
+     * Getter for ids
+     *
+     * The ids of any applied determination factor.
+     */
+    public ArrayList<String> getIds() {
+        return this.ids;
+    }
+
+    /**
+     * Setter for ids
+     *
+     * The ids of any applied determination factor.
+     */
+    public void setIds(ArrayList<String> value) {
+        this.ids = value;
+    }
+
+    private ArrayList<String> names;
+
+    /**
+     * Getter for names
+     *
+     * The name of any applied determination factor.
+     */
+    public ArrayList<String> getNames() {
+        return this.names;
+    }
+
+    /**
+     * Setter for names
+     *
+     * The name of any applied determination factor.
+     */
+    public void setNames(ArrayList<String> value) {
+        this.names = value;
+    }
+
+    private String createdBy;
+
+    /**
+     * Getter for createdBy
+     *
+     * The name of the user who created the determination factor.
+     */
+    public String getCreatedBy() {
+        return this.createdBy;
+    }
+
+    /**
+     * Setter for createdBy
+     *
+     * The name of the user who created the determination factor.
+     */
+    public void setCreatedBy(String value) {
+        this.createdBy = value;
+    }
+
     /**
      * Returns a JSON string representation of DeterminationFactorModel
      */
