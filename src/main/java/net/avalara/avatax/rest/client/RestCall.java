@@ -112,11 +112,58 @@ public class RestCall<T> implements Callable<T> {
     }
 
     private void buildRequest(HttpRequestBase baseRequest) {
+        addTimeOutIfRequired(baseRequest);
 
-        int timeOut = 1200000;
-        RequestConfig requestConfig = RequestConfig.custom().setSocketTimeout(timeOut).setConnectTimeout(timeOut).setConnectionRequestTimeout(timeOut).build();
-        baseRequest.setConfig(requestConfig);
+
         String clientId = String.format("%s; %s; %s; %s; %s", appName, appVersion, "JavaRestClient", "21.3.0", machineName);
         baseRequest.setHeader(AvaTaxConstants.XClientHeader, clientId);
+    }
+
+    private void addTimeOutIfRequired( HttpRequestBase baseRequest ) {
+        RequestConfig userConfig = getUserConfig();
+        if (isTimeOutMissing(userConfig)) {
+            addTimeOut(baseRequest, userConfig);
+        }
+    }
+
+    private boolean isTimeOutMissing( RequestConfig userConfig ) {
+        if (userConfig == null) {
+            return true;
+        }
+
+        // Only override user config if user did not explicitly set a timeout
+        return userConfig.getConnectionRequestTimeout() == -1 || userConfig.getConnectTimeout() == -1 || userConfig.getSocketTimeout() == -1;
+    }
+
+    private void addTimeOut( HttpRequestBase baseRequest, RequestConfig userConfig ) {
+        int timeOut = 120_000;
+
+        RequestConfig.Builder builder;
+        if (userConfig != null) {
+            builder = RequestConfig.copy(userConfig);
+            if (userConfig.getConnectionRequestTimeout() == -1) {
+                builder.setConnectionRequestTimeout(timeOut);
+            }
+            if (userConfig.getConnectTimeout() == -1) {
+                builder.setConnectTimeout(timeOut);
+            }
+            if (userConfig.getSocketTimeout() == -1) {
+                builder.setSocketTimeout(timeOut);
+            }
+        } else {
+            builder = RequestConfig.custom().setSocketTimeout(timeOut).setConnectTimeout(timeOut).setConnectionRequestTimeout(timeOut);
+        }
+
+        RequestConfig requestConfig = builder.build();
+        baseRequest.setConfig(requestConfig);
+    }
+
+    private RequestConfig getUserConfig() {
+        if (client instanceof Configurable) {
+            Configurable configurable = (Configurable)client;
+            return configurable.getConfig();
+        }
+
+        return null;
     }
 }
