@@ -115,7 +115,7 @@ public class RestCall<T> implements Callable<T> {
         addTimeOutIfRequired(baseRequest);
 
 
-        String clientId = String.format("%s; %s; %s; %s; %s", appName, appVersion, "JavaRestClient", "21.1.2", machineName);
+        String clientId = String.format("%s; %s; %s; %s; %s", appName, appVersion, "JavaRestClient", "21.3.1", machineName);
         baseRequest.setHeader(AvaTaxConstants.XClientHeader, clientId);
     }
 

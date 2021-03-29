@@ -22,7 +22,7 @@ public enum CompanyFilingStatus {
     /** 
      * 
      */
-    NoReporting(0),
+    NotConfiguredForCompliance(0),
 
     /** 
      * 
@@ -47,7 +47,12 @@ public enum CompanyFilingStatus {
     /** 
      * 
      */
-    NotConfiguredForCompliance(5);
+    NoReporting(5),
+
+    /** 
+     * 
+     */
+    Inactive(6);
 
     private int value;
 	private static HashMap map = new HashMap<>();
