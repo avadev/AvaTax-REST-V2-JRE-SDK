@@ -1642,7 +1642,12 @@ public enum ErrorCodeId {
     /** 
      * 
      */
-    InvalidParameterDataType(2600);
+    InvalidParameterDataType(2600),
+
+    /** 
+     * 
+     */
+    CannotDownloadReport(2700);
 
     private int value;
 	private static HashMap map = new HashMap<>();
