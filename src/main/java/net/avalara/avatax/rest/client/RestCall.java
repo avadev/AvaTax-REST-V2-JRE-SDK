@@ -122,7 +122,7 @@ public class RestCall<T> implements Callable<T> {
             errorInfo.setDetails(errors);
 
             errorResult.setError(errorInfo);
-            throw new AvaTaxClientException(errorResult, json);
+            throw new AvaTaxClientException(errorResult, model);
         } finally {
             response.close();
         }
