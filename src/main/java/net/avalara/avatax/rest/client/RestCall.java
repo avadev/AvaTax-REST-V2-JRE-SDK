@@ -1,11 +1,15 @@
 package net.avalara.avatax.rest.client;
 
+import com.google.gson.JsonParseException;
 import com.google.gson.reflect.TypeToken;
-import net.avalara.avatax.rest.client.models.CreateTransactionModel;
+import net.avalara.avatax.rest.client.enums.ErrorTargetCode;
+import net.avalara.avatax.rest.client.models.ErrorDetail;
+import net.avalara.avatax.rest.client.models.ErrorInfo;
 import net.avalara.avatax.rest.client.models.ErrorResult;
 import net.avalara.avatax.rest.client.serializer.JsonSerializer;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpHost;
+import org.apache.http.client.config.RequestConfig;
 import org.apache.http.client.methods.*;
 import org.apache.http.entity.ContentType;
 import org.apache.http.entity.StringEntity;
@@ -14,8 +18,9 @@ import org.apache.http.impl.client.HttpClientBuilder;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.impl.conn.DefaultProxyRoutePlanner;
 import org.apache.http.util.EntityUtils;
-import org.apache.http.client.config.RequestConfig;
 
+import java.io.IOException;
+import java.util.ArrayList;
 import java.util.concurrent.Callable;
 
 public class RestCall<T> implements Callable<T> {
@@ -88,22 +93,36 @@ public class RestCall<T> implements Callable<T> {
 
         CloseableHttpResponse response = this.client.execute(this.request);
         T obj = null;
-
+        String json = null;
         try {
             HttpEntity entity = response.getEntity();
-
+            json = EntityUtils.toString(entity);
             if (response.getStatusLine().getStatusCode() != 200 && response.getStatusLine().getStatusCode() != 201) {
-                throw new AvaTaxClientException((ErrorResult) JsonSerializer.DeserializeObject(EntityUtils.toString(entity), ErrorResult.class), model);
+                throw new AvaTaxClientException((ErrorResult) JsonSerializer.DeserializeObject(json, ErrorResult.class), model);
             }
 
-            if (entity != null) {
-                if(ContentType.getOrDefault(entity).getMimeType().equals("application/json")) {
-                    obj = (T)JsonSerializer.DeserializeObject(EntityUtils.toString(entity), typeToken.getType());
-                }
-                else {
-                    obj = (T)EntityUtils.toString(entity);
-                }
+            if(ContentType.getOrDefault(entity).getMimeType().equals("application/json")) {
+                obj = (T)JsonSerializer.DeserializeObject(json, typeToken.getType());
             }
+            else {
+                obj = (T)json;
+            }
+        } catch (JsonParseException jsonParseException) {
+            ErrorResult errorResult = new ErrorResult();
+            int statusCode = response.getStatusLine().getStatusCode();
+            ArrayList<ErrorDetail> errors = new ArrayList<>();
+            ErrorDetail errorDetail = new ErrorDetail();
+            errorDetail.setDescription(json);
+            errors.add(errorDetail);
+
+            //set error info
+            ErrorInfo errorInfo = new ErrorInfo();
+            errorInfo.setMessage("The server returned " + statusCode + " but the response is in an unexpected format. See details for the complete response.");
+            errorInfo.setTarget(ErrorTargetCode.Unknown);
+            errorInfo.setDetails(errors);
+
+            errorResult.setError(errorInfo);
+            throw new AvaTaxClientException(errorResult, model);
         } finally {
             response.close();
         }
