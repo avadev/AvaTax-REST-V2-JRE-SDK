@@ -57,7 +57,7 @@ public class AvaTaxClient {
 
     public AvaTaxClient(String appName, String appVersion, String machineName, String environmentUrl) {
         this();
-        this.restCallFactory = new RestCallFactory(appName, appVersion, machineName, environmentUrl,new UserConfiguration());
+        this.restCallFactory = new RestCallFactory(appName, appVersion, machineName, environmentUrl,(UserConfiguration) null);
     }
 
     public AvaTaxClient(String appName, String appVersion, String machineName, String environmentUrl,UserConfiguration userConfiguration) {
@@ -75,7 +75,7 @@ public class AvaTaxClient {
 
     public AvaTaxClient(String appName, String appVersion, String machineName, String environmentUrl, String proxyHost, int proxyPort, String proxySchema) {
         this();
-        this.restCallFactory = new RestCallFactory(appName, appVersion, machineName, environmentUrl, proxyHost, proxyPort, proxySchema,new UserConfiguration());
+        this.restCallFactory = new RestCallFactory(appName, appVersion, machineName, environmentUrl, proxyHost, proxyPort, proxySchema,(UserConfiguration) null);
     }
 
     public AvaTaxClient(String appName, String appVersion, String machineName, String environmentUrl, String proxyHost, int proxyPort, String proxySchema,UserConfiguration userConfiguration) {
@@ -101,7 +101,7 @@ public class AvaTaxClient {
 
     public AvaTaxClient(String appName, String appVersion, String machineName, String environmentUrl, ExecutorService threadPool) {
         this(threadPool);
-        this.restCallFactory = new RestCallFactory(appName, appVersion, machineName, environmentUrl,new UserConfiguration());
+        this.restCallFactory = new RestCallFactory(appName, appVersion, machineName, environmentUrl,(UserConfiguration) null);
     }
 
     public AvaTaxClient(String appName, String appVersion, String machineName, String environmentUrl, ExecutorService threadPool,UserConfiguration userConfiguration) {
@@ -111,7 +111,7 @@ public class AvaTaxClient {
 
     public AvaTaxClient(String appName, String appVersion, String machineName, String environmentUrl, ExecutorService threadPool, HttpClientBuilder httpClientBuilder) {
         this(threadPool);
-        this.restCallFactory = new RestCallFactory(appName, appVersion, machineName, environmentUrl, httpClientBuilder,new UserConfiguration());
+        this.restCallFactory = new RestCallFactory(appName, appVersion, machineName, environmentUrl, httpClientBuilder,(UserConfiguration) null);
     }
 
     public AvaTaxClient(String appName, String appVersion, String machineName, String environmentUrl, ExecutorService threadPool, HttpClientBuilder httpClientBuilder,UserConfiguration userConfiguration) {
@@ -129,7 +129,7 @@ public class AvaTaxClient {
 
     public AvaTaxClient(String appName, String appVersion, String machineName, String environmentUrl, String proxyHost, int proxyPort, String proxySchema, ExecutorService threadPool) {
         this(threadPool);
-        this.restCallFactory = new RestCallFactory(appName, appVersion, machineName, environmentUrl, proxyHost, proxyPort, proxySchema,new UserConfiguration());
+        this.restCallFactory = new RestCallFactory(appName, appVersion, machineName, environmentUrl, proxyHost, proxyPort, proxySchema,(UserConfiguration) null);
     }
 
     public AvaTaxClient(String appName, String appVersion, String machineName, String environmentUrl, String proxyHost, int proxyPort, String proxySchema, ExecutorService threadPool,UserConfiguration userConfiguration) {

@@ -58,7 +58,12 @@ public class RestCallFactory {
     }
 
     public void setUserConfig(UserConfiguration userConfiguration){
-        this.userConfiguration=userConfiguration;
+        if(userConfiguration==null){
+            this.userConfiguration=new UserConfiguration();
+        }
+        else {
+            this.userConfiguration = userConfiguration;
+        }
     }
 
     public <T> RestCall<T> createRestCall(String method, AvaTaxPath path, Object model, TypeToken<T> typeToken) {

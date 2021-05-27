@@ -53,7 +53,12 @@ public class RestCall<T> implements Callable<T> {
             this.request = new HttpPut(environmentUrl + path.toString());
             ((HttpPut)this.request).setEntity(new StringEntity(JsonSerializer.SerializeObject(model), ContentType.create("application/json", "UTF-8")));
         }
-        this.userConfiguration=userConfiguration;
+        if(userConfiguration==null){
+            this.userConfiguration=new UserConfiguration();
+        }
+        else {
+            this.userConfiguration = userConfiguration;
+        }
         buildRequest(this.request);
     }
     public RestCall(String appName, String appVersion, String machineName, String environmentUrl, String method, AvaTaxPath path, Object model, TypeToken<T> typeToken,UserConfiguration userConfiguration) {

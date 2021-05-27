@@ -169,7 +169,7 @@ class AvaTaxClientSpec extends fixture.FreeSpec {
 
     "Retry test with maximum retry attempt three" in { accountInfo =>
       val config=new UserConfiguration(1,0);
-      var client_new = new AvaTaxClient("Test", "1.0", "Test", AvaTaxEnvironment.Sandbox,config);
+      val client_new = new AvaTaxClient("Test", "1.0", "Test", AvaTaxEnvironment.Sandbox,config);
       try {
         val pong = client_new.withSecurity(accountInfo.username, accountInfo.password).ping()
       }
@@ -180,7 +180,7 @@ class AvaTaxClientSpec extends fixture.FreeSpec {
 
     "Retry test with maximum retry attempt zero" in { accountInfo =>
       val config=new UserConfiguration(1,0);
-      var client_new = new AvaTaxClient("Test", "1.0", "Test", AvaTaxEnvironment.Sandbox,config);
+      val client_new = new AvaTaxClient("Test", "1.0", "Test", AvaTaxEnvironment.Sandbox,config);
       try {
         val pong = client_new.withSecurity(accountInfo.username, accountInfo.password).ping()
       }
