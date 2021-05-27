@@ -4,6 +4,7 @@ import java.util
 
 import net.avalara.avatax.rest.client.enums._
 import net.avalara.avatax.rest.client.models._
+import org.apache.http.conn.ConnectTimeoutException
 import org.scalatest.fixture
 
 import scala.collection.JavaConverters._
@@ -163,6 +164,28 @@ class AvaTaxClientSpec extends fixture.FreeSpec {
             }
           }
         }
+      }
+    }
+
+    "Retry test with maximum retry attempt three" in { accountInfo =>
+      val config=new UserConfiguration(1,0);
+      var client_new = new AvaTaxClient("Test", "1.0", "Test", AvaTaxEnvironment.Sandbox,config);
+      try {
+        val pong = client_new.withSecurity(accountInfo.username, accountInfo.password).ping()
+      }
+      catch {
+        case ex: ConnectTimeoutException  => println("successful")
+      }
+    }
+
+    "Retry test with maximum retry attempt zero" in { accountInfo =>
+      val config=new UserConfiguration(1,0);
+      var client_new = new AvaTaxClient("Test", "1.0", "Test", AvaTaxEnvironment.Sandbox,config);
+      try {
+        val pong = client_new.withSecurity(accountInfo.username, accountInfo.password).ping()
+      }
+      catch {
+        case ex: ConnectTimeoutException  => println("successful")
       }
     }
   }

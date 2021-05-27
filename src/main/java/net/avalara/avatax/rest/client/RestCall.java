@@ -2,15 +2,15 @@ package net.avalara.avatax.rest.client;
 
 import com.google.gson.JsonParseException;
 import com.google.gson.reflect.TypeToken;
+import net.avalara.avatax.rest.client.enums.ErrorCodeId;
 import net.avalara.avatax.rest.client.enums.ErrorTargetCode;
-import net.avalara.avatax.rest.client.models.ErrorDetail;
-import net.avalara.avatax.rest.client.models.ErrorInfo;
-import net.avalara.avatax.rest.client.models.ErrorResult;
+import net.avalara.avatax.rest.client.models.*;
 import net.avalara.avatax.rest.client.serializer.JsonSerializer;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpHost;
 import org.apache.http.client.config.RequestConfig;
 import org.apache.http.client.methods.*;
+import org.apache.http.conn.ConnectTimeoutException;
 import org.apache.http.entity.ContentType;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.CloseableHttpClient;
@@ -18,6 +18,7 @@ import org.apache.http.impl.client.HttpClientBuilder;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.impl.conn.DefaultProxyRoutePlanner;
 import org.apache.http.util.EntityUtils;
+import java.util.concurrent.TimeUnit;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -31,8 +32,9 @@ public class RestCall<T> implements Callable<T> {
     private String machineName;
     private Object model;
     private TypeToken<T> typeToken;
+    private UserConfiguration userConfiguration;
 
-    private RestCall(String appName, String appVersion, String machineName, String environmentUrl, String method, AvaTaxPath path, Object model, TypeToken<T> typeToken, CloseableHttpClient client) {
+    private RestCall(String appName, String appVersion, String machineName, String environmentUrl, String method, AvaTaxPath path, Object model, TypeToken<T> typeToken, CloseableHttpClient client,UserConfiguration userConfiguration) {
         this.client = client;
         this.appName = appName;
         this.appVersion = appVersion;
@@ -51,82 +53,91 @@ public class RestCall<T> implements Callable<T> {
             this.request = new HttpPut(environmentUrl + path.toString());
             ((HttpPut)this.request).setEntity(new StringEntity(JsonSerializer.SerializeObject(model), ContentType.create("application/json", "UTF-8")));
         }
-
+        this.userConfiguration=userConfiguration;
         buildRequest(this.request);
     }
-
-    public RestCall(String appName, String appVersion, String machineName, String environmentUrl, String method, AvaTaxPath path, Object model, TypeToken<T> typeToken) {
-        this(appName, appVersion, machineName, environmentUrl, method, path, model, typeToken, HttpClients.createDefault());
+    public RestCall(String appName, String appVersion, String machineName, String environmentUrl, String method, AvaTaxPath path, Object model, TypeToken<T> typeToken,UserConfiguration userConfiguration) {
+        this(appName, appVersion, machineName, environmentUrl, method, path, model, typeToken, HttpClients.createDefault(),userConfiguration);
     }
 
-    public RestCall(String appName, String appVersion, String machineName, String environmentUrl, String method, AvaTaxPath path, Object model, TypeToken<T> typeToken, HttpClientBuilder httpClientBuilder) {
-        this(appName, appVersion, machineName, environmentUrl, method, path, model, typeToken, httpClientBuilder.build());
+    public RestCall(String appName, String appVersion, String machineName, String environmentUrl, String method, AvaTaxPath path, Object model, TypeToken<T> typeToken, HttpClientBuilder httpClientBuilder,UserConfiguration userConfiguration) {
+        this(appName, appVersion, machineName, environmentUrl, method, path, model, typeToken, httpClientBuilder.build(),userConfiguration);
     }
 
-    public RestCall(String appName, String appVersion, String machineName, String environmentUrl, String header, String method, AvaTaxPath path, Object model, TypeToken<T> typeToken) {
-        this(appName, appVersion, machineName, environmentUrl, method, path, model, typeToken);
-
+    public RestCall(String appName, String appVersion, String machineName, String environmentUrl, String header, String method, AvaTaxPath path, Object model, TypeToken<T> typeToken,UserConfiguration userConfiguration) {
+        this(appName, appVersion, machineName, environmentUrl, method, path, model, typeToken,userConfiguration);
         this.request.setHeader("Authorization", "Basic " + header);
     }
 
-    public RestCall(String appName, String appVersion, String machineName, String environmentUrl, String header, String method, AvaTaxPath path, Object model, TypeToken<T> typeToken, HttpClientBuilder httpClientBuilder) {
-        this(appName, appVersion, machineName, environmentUrl, method, path, model, typeToken, httpClientBuilder);
-
+    public RestCall(String appName, String appVersion, String machineName, String environmentUrl, String header, String method, AvaTaxPath path, Object model, TypeToken<T> typeToken, HttpClientBuilder httpClientBuilder,UserConfiguration userConfiguration) {
+        this(appName, appVersion, machineName, environmentUrl, method, path, model, typeToken, httpClientBuilder,userConfiguration);
         this.request.setHeader("Authorization", "Basic " + header);
     }
-
-    public RestCall(String appName, String appVersion, String machineName, String environmentUrl, String method, AvaTaxPath path, Object model, TypeToken<T> typeToken, String proxyHost, int proxyPort, String proxySchema) {
+    public RestCall(String appName, String appVersion, String machineName, String environmentUrl, String method, AvaTaxPath path, Object model, TypeToken<T> typeToken, String proxyHost, int proxyPort, String proxySchema,UserConfiguration userConfiguration) {
         this(appName, appVersion, machineName, environmentUrl, method, path, model, typeToken, HttpClients.custom()
                 .setRoutePlanner(new DefaultProxyRoutePlanner(new HttpHost(proxyHost, proxyPort, proxySchema)))
-                .build());
+                .build(),userConfiguration);
     }
-
-    public RestCall(String appName, String appVersion, String machineName, String environmentUrl, String header, String method, AvaTaxPath path, Object model, TypeToken<T> typeToken, String proxyHost, int proxyPort, String proxySchema) {
-        this(appName, appVersion, machineName, environmentUrl, method, path, model, typeToken, proxyHost, proxyPort, proxySchema);
-
+    public RestCall(String appName, String appVersion, String machineName, String environmentUrl, String header, String method, AvaTaxPath path, Object model, TypeToken<T> typeToken, String proxyHost, int proxyPort, String proxySchema,UserConfiguration userConfiguration) {
+        this(appName, appVersion, machineName, environmentUrl, method, path, model, typeToken, proxyHost, proxyPort, proxySchema,userConfiguration);
         this.request.setHeader("Authorization", "Basic " + header);
     }
-
 
     @Override
     public T call() throws Exception {
-
-        CloseableHttpResponse response = this.client.execute(this.request);
+        CloseableHttpResponse response ;
         T obj = null;
         String json = null;
-        try {
-            HttpEntity entity = response.getEntity();
-            json = EntityUtils.toString(entity);
-            if (response.getStatusLine().getStatusCode() != 200 && response.getStatusLine().getStatusCode() != 201) {
-                throw new AvaTaxClientException((ErrorResult) JsonSerializer.DeserializeObject(json, ErrorResult.class), model);
+        int retryAttempt=0;
+        HttpEntity entity=null;
+        do{
+            try{
+                response=this.client.execute(this.request);
+                try{
+                    entity = response.getEntity();
+                    json = EntityUtils.toString(entity);
+                    if(response.getStatusLine().getStatusCode()==500 || response.getStatusLine().getStatusCode()==408){
+                        throw new AvaTaxServerError((ErrorResult) JsonSerializer.DeserializeObject(json, ErrorResult.class), model);
+                    }
+                    if (response.getStatusLine().getStatusCode() != 200 && response.getStatusLine().getStatusCode() != 201) {
+                        throw new AvaTaxClientException((ErrorResult) JsonSerializer.DeserializeObject(json, ErrorResult.class), model);
+                    }
+
+                    if(ContentType.getOrDefault(entity).getMimeType().equals("application/json")) {
+                        obj = (T)JsonSerializer.DeserializeObject(json, typeToken.getType());
+                    }
+                    else {
+                        obj = (T)json;
+                    }
+                    break;
+                } catch (JsonParseException jsonParseException) {
+                    ErrorResult errorResult = new ErrorResult();
+                    int statusCode = response.getStatusLine().getStatusCode();
+                    ArrayList<ErrorDetail> errors = new ArrayList<>();
+                    ErrorDetail errorDetail = new ErrorDetail();
+                    errorDetail.setDescription(json);
+                    errors.add(errorDetail);
+
+                    //set error info
+                    ErrorInfo errorInfo = new ErrorInfo();
+                    errorInfo.setMessage("The server returned " + statusCode + " but the response is in an unexpected format. See details for the complete response.");
+                    errorInfo.setTarget(ErrorTargetCode.Unknown);
+                    errorInfo.setDetails(errors);
+
+                    errorResult.setError(errorInfo);
+                    throw new AvaTaxClientException(errorResult, model);
+                } finally {
+                    response.close();
+                }
             }
-
-            if(ContentType.getOrDefault(entity).getMimeType().equals("application/json")) {
-                obj = (T)JsonSerializer.DeserializeObject(json, typeToken.getType());
+            catch(AvaTaxServerError | ConnectTimeoutException ex) {
+                if (retryAttempt == userConfiguration.maxRetryAttempt) {
+                    throw ex;
+                }
+                retryAttempt++;
+                TimeUnit.SECONDS.sleep((long) Math.pow(2, (long) (retryAttempt)));
             }
-            else {
-                obj = (T)json;
-            }
-        } catch (JsonParseException jsonParseException) {
-            ErrorResult errorResult = new ErrorResult();
-            int statusCode = response.getStatusLine().getStatusCode();
-            ArrayList<ErrorDetail> errors = new ArrayList<>();
-            ErrorDetail errorDetail = new ErrorDetail();
-            errorDetail.setDescription(json);
-            errors.add(errorDetail);
-
-            //set error info
-            ErrorInfo errorInfo = new ErrorInfo();
-            errorInfo.setMessage("The server returned " + statusCode + " but the response is in an unexpected format. See details for the complete response.");
-            errorInfo.setTarget(ErrorTargetCode.Unknown);
-            errorInfo.setDetails(errors);
-
-            errorResult.setError(errorInfo);
-            throw new AvaTaxClientException(errorResult, model);
-        } finally {
-            response.close();
-        }
-
+        }while( userConfiguration.maxRetryAttempt>=retryAttempt);
         return obj;
     }
 
@@ -134,7 +145,7 @@ public class RestCall<T> implements Callable<T> {
         addTimeOutIfRequired(baseRequest);
 
 
-        String clientId = String.format("%s; %s; %s; %s; %s", appName, appVersion, "JavaRestClient", "21.3.1", machineName);
+        String clientId = String.format("%s; %s; %s; %s; %s", appName, appVersion, "JavaRestClient", "21.5.0", machineName);
         baseRequest.setHeader(AvaTaxConstants.XClientHeader, clientId);
     }
 
@@ -149,14 +160,12 @@ public class RestCall<T> implements Callable<T> {
         if (userConfig == null) {
             return true;
         }
-
         // Only override user config if user did not explicitly set a timeout
         return userConfig.getConnectionRequestTimeout() == -1 || userConfig.getConnectTimeout() == -1 || userConfig.getSocketTimeout() == -1;
     }
 
     private void addTimeOut( HttpRequestBase baseRequest, RequestConfig userConfig ) {
-        int timeOut = 120_000;
-
+        int timeOut = userConfiguration.timeOutInMinute*60*1000;
         RequestConfig.Builder builder;
         if (userConfig != null) {
             builder = RequestConfig.copy(userConfig);
@@ -182,7 +191,6 @@ public class RestCall<T> implements Callable<T> {
             Configurable configurable = (Configurable)client;
             return configurable.getConfig();
         }
-
         return null;
     }
 }
