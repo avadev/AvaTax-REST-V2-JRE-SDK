@@ -18,7 +18,7 @@ class AvaTaxClientSpec extends fixture.FreeSpec {
     val password: String = sys.env("PASSWORD")
     val accountId: Int = sys.env("ACCOUNTID").toInt
     val accountName: String = sys.env("ACCOUNTNAME")
-
+    
     withFixture(test.toNoArgTest(AccountInfo(user, password, accountId, accountName)))
   }
 
@@ -168,7 +168,7 @@ class AvaTaxClientSpec extends fixture.FreeSpec {
     }
 
     "Retry test with maximum retry attempt three" in { accountInfo =>
-      val config=new UserConfiguration(1,0);
+      val config=new UserConfiguration(1,3);
       val client_new = new AvaTaxClient("Test", "1.0", "Test", AvaTaxEnvironment.Sandbox,config);
       try {
         val pong = client_new.withSecurity(accountInfo.username, accountInfo.password).ping()
@@ -180,6 +180,28 @@ class AvaTaxClientSpec extends fixture.FreeSpec {
 
     "Retry test with maximum retry attempt zero" in { accountInfo =>
       val config=new UserConfiguration(1,0);
+      val client_new = new AvaTaxClient("Test", "1.0", "Test", AvaTaxEnvironment.Sandbox,config);
+      try {
+        val pong = client_new.withSecurity(accountInfo.username, accountInfo.password).ping()
+      }
+      catch {
+        case ex: ConnectTimeoutException  => println("successful")
+      }
+    }
+
+    "Retry test with maximum retry attempt less than zero" in { accountInfo =>
+      val config=new UserConfiguration(1,-100);
+      val client_new = new AvaTaxClient("Test", "1.0", "Test", AvaTaxEnvironment.Sandbox,config);
+      try {
+        val pong = client_new.withSecurity(accountInfo.username, accountInfo.password).ping()
+      }
+      catch {
+        case ex: ConnectTimeoutException  => println("successful")
+      }
+    }
+
+    "Retry test with timeout in minutes is less than 0" in { accountInfo =>
+      val config=new UserConfiguration(-10,0);
       val client_new = new AvaTaxClient("Test", "1.0", "Test", AvaTaxEnvironment.Sandbox,config);
       try {
         val pong = client_new.withSecurity(accountInfo.username, accountInfo.password).ping()

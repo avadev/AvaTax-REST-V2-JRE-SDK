@@ -136,13 +136,13 @@ public class RestCall<T> implements Callable<T> {
                 }
             }
             catch(AvaTaxServerError | ConnectTimeoutException ex) {
-                if (retryAttempt == userConfiguration.maxRetryAttempt) {
+                if (retryAttempt == userConfiguration.getMaxRetryAttempt()) {
                     throw ex;
                 }
                 retryAttempt++;
-                TimeUnit.SECONDS.sleep((long) Math.pow(2, (long) (retryAttempt)));
+                TimeUnit.SECONDS.sleep((long) (2*retryAttempt));
             }
-        }while( userConfiguration.maxRetryAttempt>=retryAttempt);
+        }while( userConfiguration.getMaxRetryAttempt()>=retryAttempt);
         return obj;
     }
 
@@ -170,7 +170,8 @@ public class RestCall<T> implements Callable<T> {
     }
 
     private void addTimeOut( HttpRequestBase baseRequest, RequestConfig userConfig ) {
-        int timeOut = userConfiguration.timeOutInMinute*60*1000;
+        // conversion to milliseconds
+        int timeOut = userConfiguration.getTimeOutInMinute()*60*1000;
         RequestConfig.Builder builder;
         if (userConfig != null) {
             builder = RequestConfig.copy(userConfig);
