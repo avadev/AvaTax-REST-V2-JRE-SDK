@@ -4243,32 +4243,6 @@ public class AvaTaxClient {
     }
 
     /**
-     * API to modify the reference fields at the document and the line level.
-     * 
-     * @param companyId 
-     * @param model 
-     * @return FetchResult<TransactionModel>
-     */
-    public FetchResult<TransactionModel> tagTransaction(Integer companyId, ArrayList<TransactionReferenceFieldModel> model) throws Exception {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/transactions/tag");
-        path.applyField("companyId", companyId);
-        return ((RestCall<FetchResult<TransactionModel>>)restCallFactory.createRestCall("put", path, model, new TypeToken<FetchResult<TransactionModel>>(){})).call();
-    }
-
-    /**
-     * API to modify the reference fields at the document and the line level.
-     * 
-     * @param companyId 
-     * @param model 
-     * @return FetchResult<TransactionModel>
-     */
-    public Future<FetchResult<TransactionModel>> tagTransactionAsync(Integer companyId, ArrayList<TransactionReferenceFieldModel> model) {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/transactions/tag");
-        path.applyField("companyId", companyId);
-        return this.threadPool.submit((RestCall<FetchResult<TransactionModel>>)restCallFactory.createRestCall("put", path, model, new TypeToken<FetchResult<TransactionModel>>(){}));
-    }
-
-    /**
      * Create a new contact
      * 
      * Create one or more new contact objects.
@@ -6087,6 +6061,48 @@ public class AvaTaxClient {
     }
 
     /**
+     * Retrieve the full list of Avalara-supported usage of extra parameters for classification of a item.
+     * 
+     * Returns the full list of Avalara-supported usage of extra parameters for item classification.
+     * The list of parameters is available for use with Item Classification.
+     * 
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* values
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @return FetchResult<ClassificationParameterUsageMapModel>
+     */
+    public FetchResult<ClassificationParameterUsageMapModel> listClassificationParametersUsage(String filter, Integer top, Integer skip, String orderBy) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/classification/parametersusage");
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
+        return ((RestCall<FetchResult<ClassificationParameterUsageMapModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ClassificationParameterUsageMapModel>>(){})).call();
+    }
+
+    /**
+     * Retrieve the full list of Avalara-supported usage of extra parameters for classification of a item.
+     * 
+     * Returns the full list of Avalara-supported usage of extra parameters for item classification.
+     * The list of parameters is available for use with Item Classification.
+     * 
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* values
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @return FetchResult<ClassificationParameterUsageMapModel>
+     */
+    public Future<FetchResult<ClassificationParameterUsageMapModel>> listClassificationParametersUsageAsync(String filter, Integer top, Integer skip, String orderBy) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/classification/parametersusage");
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
+        return this.threadPool.submit((RestCall<FetchResult<ClassificationParameterUsageMapModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ClassificationParameterUsageMapModel>>(){}));
+    }
+
+    /**
      * Retrieve the full list of communications service types
      * 
      * @param id The transaction type ID to examine
@@ -7543,7 +7559,16 @@ public class AvaTaxClient {
     /**
      * Retrieve the parameters by companyCode and itemCode.
      * 
-     * Returns the list of parameters based on the company country and state jurisdiction and the item code.
+     * Returns the list of parameters based on the company's service types and the item code.
+     * Ignores nexus if a service type is configured in the 'IgnoreNexusForServiceTypes' configuration section.
+     * Ignores nexus for the AvaAlcohol service type.
+     *             
+     * NOTE: If your company code or item code contains any of these characters /, +, ? or a space, please use the following encoding before making a request:
+     * * Replace '/' with '\_-ava2f-\_'  For example: 'Company/Code' becomes 'Company_-ava2f-_Code'
+     * * Replace '+' with '\_-ava2b-\_'  For example: 'Company+Code' becomes 'Company_-ava2b-_Code'
+     * * Replace '?' with '\_-ava3f-\_'  For example: 'Company?Code' becomes 'Company_-ava3f-_Code'
+     * * Replace '%' with '\_-ava25-\_'  For example: 'Company%Code' becomes 'Company_-ava25-_Code'
+     * * Replace '#' with '\_-ava23-\_'  For example: 'Company#Code' becomes 'Company_-ava23-_Code'
      * 
      * ### Security Policies
      * 
@@ -7571,7 +7596,16 @@ public class AvaTaxClient {
     /**
      * Retrieve the parameters by companyCode and itemCode.
      * 
-     * Returns the list of parameters based on the company country and state jurisdiction and the item code.
+     * Returns the list of parameters based on the company's service types and the item code.
+     * Ignores nexus if a service type is configured in the 'IgnoreNexusForServiceTypes' configuration section.
+     * Ignores nexus for the AvaAlcohol service type.
+     *             
+     * NOTE: If your company code or item code contains any of these characters /, +, ? or a space, please use the following encoding before making a request:
+     * * Replace '/' with '\_-ava2f-\_'  For example: 'Company/Code' becomes 'Company_-ava2f-_Code'
+     * * Replace '+' with '\_-ava2b-\_'  For example: 'Company+Code' becomes 'Company_-ava2b-_Code'
+     * * Replace '?' with '\_-ava3f-\_'  For example: 'Company?Code' becomes 'Company_-ava3f-_Code'
+     * * Replace '%' with '\_-ava25-\_'  For example: 'Company%Code' becomes 'Company_-ava25-_Code'
+     * * Replace '#' with '\_-ava23-\_'  For example: 'Company#Code' becomes 'Company_-ava23-_Code'
      * 
      * ### Security Policies
      * 
@@ -7814,6 +7848,14 @@ public class AvaTaxClient {
      * Lists all product classification systems available to a company based on its nexus.
      *             
      * Tax authorities use product classification systems as a way to identify products and associate them with a tax rate.
+     * More than one tax authority might use the same product classification system, but they might charge different tax rates for products.
+     *             
+     *             
+     * NOTE: If your company code contains any of these characters /, +, ? or a space, please use the following encoding before making a request:
+     * * Replace '/' with '\_-ava2f-\_'  For example: 'Company/Code' becomes 'Company_-ava2f-_Code'
+     * * Replace '+' with '\_-ava2b-\_'  For example: 'Company+Code' becomes 'Company_-ava2b-_Code'
+     * * Replace '?' with '\_-ava3f-\_'  For example: 'Company?Code' becomes 'Company_-ava3f-_Code'
+     * * Replace '%' with '\_-ava25-\_'  For example: 'Company%Code' becomes 'Company_-ava25-_Code'
      * 
      * @param companyCode The company code.
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* countries
@@ -7840,6 +7882,14 @@ public class AvaTaxClient {
      * Lists all product classification systems available to a company based on its nexus.
      *             
      * Tax authorities use product classification systems as a way to identify products and associate them with a tax rate.
+     * More than one tax authority might use the same product classification system, but they might charge different tax rates for products.
+     *             
+     *             
+     * NOTE: If your company code contains any of these characters /, +, ? or a space, please use the following encoding before making a request:
+     * * Replace '/' with '\_-ava2f-\_'  For example: 'Company/Code' becomes 'Company_-ava2f-_Code'
+     * * Replace '+' with '\_-ava2b-\_'  For example: 'Company+Code' becomes 'Company_-ava2b-_Code'
+     * * Replace '?' with '\_-ava3f-\_'  For example: 'Company?Code' becomes 'Company_-ava3f-_Code'
+     * * Replace '%' with '\_-ava25-\_'  For example: 'Company%Code' becomes 'Company_-ava25-_Code'
      * 
      * @param companyCode The company code.
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* countries
@@ -8033,6 +8083,48 @@ public class AvaTaxClient {
     }
 
     /**
+     * Retrieve the full list of Avalara-supported usage of parameters used for returns.
+     * 
+     * Returns the full list of Avalara-supported usage of extra parameters for the returns.
+     * This list of parameters is available for use with Returns.
+     * 
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* values
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @return FetchResult<ReturnsParameterUsageModel>
+     */
+    public FetchResult<ReturnsParameterUsageModel> listReturnsParametersUsage(String filter, Integer top, Integer skip, String orderBy) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/returns/parametersusage");
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
+        return ((RestCall<FetchResult<ReturnsParameterUsageModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ReturnsParameterUsageModel>>(){})).call();
+    }
+
+    /**
+     * Retrieve the full list of Avalara-supported usage of parameters used for returns.
+     * 
+     * Returns the full list of Avalara-supported usage of extra parameters for the returns.
+     * This list of parameters is available for use with Returns.
+     * 
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* values
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @return FetchResult<ReturnsParameterUsageModel>
+     */
+    public Future<FetchResult<ReturnsParameterUsageModel>> listReturnsParametersUsageAsync(String filter, Integer top, Integer skip, String orderBy) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/returns/parametersusage");
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
+        return this.threadPool.submit((RestCall<FetchResult<ReturnsParameterUsageModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ReturnsParameterUsageModel>>(){}));
+    }
+
+    /**
      * Retrieve the full list of Avalara-supported permissions
      * 
      * Returns the full list of Avalara-supported permission types.
@@ -8116,6 +8208,42 @@ public class AvaTaxClient {
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
         return this.threadPool.submit((RestCall<FetchResult<SubscriptionTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<SubscriptionTypeModel>>(){}));
+    }
+
+    /**
+     * Retrieve the list all tags supported by avalara
+     * 
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @return FetchResult<TagsModel>
+     */
+    public FetchResult<TagsModel> listTags(String filter, Integer top, Integer skip, String orderBy) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/tags");
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
+        return ((RestCall<FetchResult<TagsModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TagsModel>>(){})).call();
+    }
+
+    /**
+     * Retrieve the list all tags supported by avalara
+     * 
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @return FetchResult<TagsModel>
+     */
+    public Future<FetchResult<TagsModel>> listTagsAsync(String filter, Integer top, Integer skip, String orderBy) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/tags");
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
+        return this.threadPool.submit((RestCall<FetchResult<TagsModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TagsModel>>(){}));
     }
 
     /**
@@ -9711,6 +9839,60 @@ public class AvaTaxClient {
     }
 
     /**
+     * Bulk upload items from a product catalog
+     * 
+     * Create/Update one or more item objects attached to this company.
+     *             
+     * Items are a way of separating your tax calculation process from your tax configuration details.  If you choose, you
+     * can provide `itemCode` values for each `CreateTransaction()` API call rather than specifying tax codes, parameters, descriptions,
+     * and other data fields.  AvaTax will automatically look up each `itemCode` and apply the correct tax codes and parameters
+     * from the item table instead.  This allows your CreateTransaction call to be as simple as possible, and your tax compliance
+     * team can manage your item catalog and adjust the tax behavior of items without having to modify your software.
+     *             
+     * The tax code takes precedence over the tax code id if both are provided.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin.
+     * 
+     * @param companyId The ID of the company that owns this items.
+     * @param model The items you wish to upload.
+     * @return ItemBulkUploadOutputModel
+     */
+    public ItemBulkUploadOutputModel bulkUploadItems(Integer companyId, ItemBulkUploadInputModel model) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/items/upload");
+        path.applyField("companyId", companyId);
+        return ((RestCall<ItemBulkUploadOutputModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<ItemBulkUploadOutputModel>(){})).call();
+    }
+
+    /**
+     * Bulk upload items from a product catalog
+     * 
+     * Create/Update one or more item objects attached to this company.
+     *             
+     * Items are a way of separating your tax calculation process from your tax configuration details.  If you choose, you
+     * can provide `itemCode` values for each `CreateTransaction()` API call rather than specifying tax codes, parameters, descriptions,
+     * and other data fields.  AvaTax will automatically look up each `itemCode` and apply the correct tax codes and parameters
+     * from the item table instead.  This allows your CreateTransaction call to be as simple as possible, and your tax compliance
+     * team can manage your item catalog and adjust the tax behavior of items without having to modify your software.
+     *             
+     * The tax code takes precedence over the tax code id if both are provided.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin.
+     * 
+     * @param companyId The ID of the company that owns this items.
+     * @param model The items you wish to upload.
+     * @return ItemBulkUploadOutputModel
+     */
+    public Future<ItemBulkUploadOutputModel> bulkUploadItemsAsync(Integer companyId, ItemBulkUploadInputModel model) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/items/upload");
+        path.applyField("companyId", companyId);
+        return this.threadPool.submit((RestCall<ItemBulkUploadOutputModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<ItemBulkUploadOutputModel>(){}));
+    }
+
+    /**
      * Add classifications to an item.
      * 
      * Add classifications to an item.
@@ -9881,6 +10063,52 @@ public class AvaTaxClient {
     }
 
     /**
+     * Create tags for a item
+     * 
+     * Creates one or more new `Tag` objects attached to this Item.
+     *             
+     * Item tags puts multiple labels for an item. So that item can be easily grouped by these tags.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin.
+     * 
+     * @param companyId The ID of the company that defined these items
+     * @param itemId The ID of the item as defined by the company that owns this tag.
+     * @param model Tags you wish to associate with the Item
+     * @return ArrayList<ItemTagDetailModel>
+     */
+    public ArrayList<ItemTagDetailModel> createItemTags(Integer companyId, Integer itemId, ArrayList<ItemTagDetailModel> model) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/items/{itemId}/tags");
+        path.applyField("companyId", companyId);
+        path.applyField("itemId", itemId);
+        return ((RestCall<ArrayList<ItemTagDetailModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<ItemTagDetailModel>>(){})).call();
+    }
+
+    /**
+     * Create tags for a item
+     * 
+     * Creates one or more new `Tag` objects attached to this Item.
+     *             
+     * Item tags puts multiple labels for an item. So that item can be easily grouped by these tags.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin.
+     * 
+     * @param companyId The ID of the company that defined these items
+     * @param itemId The ID of the item as defined by the company that owns this tag.
+     * @param model Tags you wish to associate with the Item
+     * @return ArrayList<ItemTagDetailModel>
+     */
+    public Future<ArrayList<ItemTagDetailModel>> createItemTagsAsync(Integer companyId, Integer itemId, ArrayList<ItemTagDetailModel> model) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/items/{itemId}/tags");
+        path.applyField("companyId", companyId);
+        path.applyField("itemId", itemId);
+        return this.threadPool.submit((RestCall<ArrayList<ItemTagDetailModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<ItemTagDetailModel>>(){}));
+    }
+
+    /**
      * Delete a single item
      * 
      * Deletes the item object at this URL.
@@ -10041,6 +10269,98 @@ public class AvaTaxClient {
         path.applyField("companyId", companyId);
         path.applyField("itemId", itemId);
         path.applyField("id", id);
+        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){}));
+    }
+
+    /**
+     * Delete item tag by id
+     * 
+     * Deletes the `Tag` object of an Item at this URL.
+     *             
+     * Item tags puts multiple labels for an item. So that item can be easily grouped by these tags.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin.
+     * 
+     * @param companyId The ID of the company that defined these items
+     * @param itemId The ID of the item as defined by the company that owns this tag.
+     * @param itemTagDetailId The ID of the item tag detail you wish to delete.
+     * @return ArrayList<ErrorDetail>
+     */
+    public ArrayList<ErrorDetail> deleteItemTag(Integer companyId, Long itemId, Integer itemTagDetailId) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/items/{itemId}/tags/{itemTagDetailId}");
+        path.applyField("companyId", companyId);
+        path.applyField("itemId", itemId);
+        path.applyField("itemTagDetailId", itemTagDetailId);
+        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){})).call();
+    }
+
+    /**
+     * Delete item tag by id
+     * 
+     * Deletes the `Tag` object of an Item at this URL.
+     *             
+     * Item tags puts multiple labels for an item. So that item can be easily grouped by these tags.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin.
+     * 
+     * @param companyId The ID of the company that defined these items
+     * @param itemId The ID of the item as defined by the company that owns this tag.
+     * @param itemTagDetailId The ID of the item tag detail you wish to delete.
+     * @return ArrayList<ErrorDetail>
+     */
+    public Future<ArrayList<ErrorDetail>> deleteItemTagAsync(Integer companyId, Long itemId, Integer itemTagDetailId) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/items/{itemId}/tags/{itemTagDetailId}");
+        path.applyField("companyId", companyId);
+        path.applyField("itemId", itemId);
+        path.applyField("itemTagDetailId", itemTagDetailId);
+        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){}));
+    }
+
+    /**
+     * Delete all item tags
+     * 
+     * Deletes all `Tags` objects of an Item at this URL.
+     *             
+     * Item tags puts multiple labels for an item. So that item can be easily grouped by these tags.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin.
+     * 
+     * @param companyId The ID of the company that defined these items.
+     * @param itemId The ID of the item as defined by the company that owns this tag.
+     * @return ArrayList<ErrorDetail>
+     */
+    public ArrayList<ErrorDetail> deleteItemTags(Integer companyId, Long itemId) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/items/{itemId}/tags");
+        path.applyField("companyId", companyId);
+        path.applyField("itemId", itemId);
+        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){})).call();
+    }
+
+    /**
+     * Delete all item tags
+     * 
+     * Deletes all `Tags` objects of an Item at this URL.
+     *             
+     * Item tags puts multiple labels for an item. So that item can be easily grouped by these tags.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin.
+     * 
+     * @param companyId The ID of the company that defined these items.
+     * @param itemId The ID of the item as defined by the company that owns this tag.
+     * @return ArrayList<ErrorDetail>
+     */
+    public Future<ArrayList<ErrorDetail>> deleteItemTagsAsync(Integer companyId, Long itemId) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/items/{itemId}/tags");
+        path.applyField("companyId", companyId);
+        path.applyField("itemId", itemId);
         return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){}));
     }
 
@@ -10209,6 +10529,62 @@ public class AvaTaxClient {
     }
 
     /**
+     * Retrieve tags for an item
+     * 
+     * Get the `Tag` objects of an Item identified by this URL.
+     *             
+     * Item tags puts multiple labels for an item. So that item can be easily grouped by these tags.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
+     * 
+     * @param companyId The ID of the company that defined these items
+     * @param itemId The ID of the item as defined by the company that owns this tag.
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* tagName
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
+     * @return FetchResult<ItemTagDetailModel>
+     */
+    public FetchResult<ItemTagDetailModel> getItemTags(Integer companyId, Long itemId, String filter, Integer top, Integer skip) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/items/{itemId}/tags");
+        path.applyField("companyId", companyId);
+        path.applyField("itemId", itemId);
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        return ((RestCall<FetchResult<ItemTagDetailModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ItemTagDetailModel>>(){})).call();
+    }
+
+    /**
+     * Retrieve tags for an item
+     * 
+     * Get the `Tag` objects of an Item identified by this URL.
+     *             
+     * Item tags puts multiple labels for an item. So that item can be easily grouped by these tags.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
+     * 
+     * @param companyId The ID of the company that defined these items
+     * @param itemId The ID of the item as defined by the company that owns this tag.
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* tagName
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
+     * @return FetchResult<ItemTagDetailModel>
+     */
+    public Future<FetchResult<ItemTagDetailModel>> getItemTagsAsync(Integer companyId, Long itemId, String filter, Integer top, Integer skip) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/items/{itemId}/tags");
+        path.applyField("companyId", companyId);
+        path.applyField("itemId", itemId);
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        return this.threadPool.submit((RestCall<FetchResult<ItemTagDetailModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ItemTagDetailModel>>(){}));
+    }
+
+    /**
      * Retrieve classifications for an item.
      * 
      * List classifications for an item.
@@ -10298,7 +10674,7 @@ public class AvaTaxClient {
      * 
      * @param companyId The company id
      * @param itemId The item id
-     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* name, unit
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* name, unit, isNeededForCalculation, isNeededForReturns, isNeededForClassification
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
@@ -10335,7 +10711,7 @@ public class AvaTaxClient {
      * 
      * @param companyId The company id
      * @param itemId The item id
-     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* name, unit
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* name, unit, isNeededForCalculation, isNeededForReturns, isNeededForClassification
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
@@ -10377,7 +10753,7 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
      * @param companyId The ID of the company that defined these items
-     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* taxCode, classifications, parameters
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* taxCode, classifications, parameters, tags
      * @param include A comma separated list of additional data to retrieve.
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
@@ -10420,7 +10796,7 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
      * @param companyId The ID of the company that defined these items
-     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* taxCode, classifications, parameters
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* taxCode, classifications, parameters, tags
      * @param include A comma separated list of additional data to retrieve.
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
@@ -10457,7 +10833,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
-     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* taxCode, classifications, parameters
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* taxCode, classifications, parameters, tags
      * @param include A comma separated list of additional data to retrieve.
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
@@ -10493,7 +10869,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
-     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* taxCode, classifications, parameters
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* taxCode, classifications, parameters, tags
      * @param include A comma separated list of additional data to retrieve.
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
@@ -10502,6 +10878,86 @@ public class AvaTaxClient {
      */
     public Future<FetchResult<ItemModel>> queryItemsAsync(String filter, String include, Integer top, Integer skip, String orderBy) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/items");
+        path.addQuery("$filter", filter);
+        path.addQuery("$include", include);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
+        return this.threadPool.submit((RestCall<FetchResult<ItemModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ItemModel>>(){}));
+    }
+
+    /**
+     * Retrieve all items associated with given tag
+     * 
+     * Get multiple item objects associated with given tag.
+     *             
+     * Items are a way of separating your tax calculation process from your tax configuration details.  If you choose, you
+     * can provide `itemCode` values for each `CreateTransaction()` API call rather than specifying tax codes, parameters, descriptions,
+     * and other data fields.  AvaTax will automatically look up each `itemCode` and apply the correct tax codes and parameters
+     * from the item table instead.  This allows your CreateTransaction call to be as simple as possible, and your tax compliance
+     * team can manage your item catalog and adjust the tax behavior of items without having to modify your software.
+     *             
+     * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     *             
+     * Paginate your results using the `$top`, `$skip`, and `$orderby` parameters.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
+     * 
+     * @param companyId The ID of the company that defined these items.
+     * @param tag The master tag to be associated with item.
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* taxCode, classifications, parameters, tags
+     * @param include A comma separated list of additional data to retrieve.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @return FetchResult<ItemModel>
+     */
+    public FetchResult<ItemModel> queryItemsByTag(Integer companyId, String tag, String filter, String include, Integer top, Integer skip, String orderBy) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/items/bytags/{tag}");
+        path.applyField("companyId", companyId);
+        path.applyField("tag", tag);
+        path.addQuery("$filter", filter);
+        path.addQuery("$include", include);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
+        return ((RestCall<FetchResult<ItemModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ItemModel>>(){})).call();
+    }
+
+    /**
+     * Retrieve all items associated with given tag
+     * 
+     * Get multiple item objects associated with given tag.
+     *             
+     * Items are a way of separating your tax calculation process from your tax configuration details.  If you choose, you
+     * can provide `itemCode` values for each `CreateTransaction()` API call rather than specifying tax codes, parameters, descriptions,
+     * and other data fields.  AvaTax will automatically look up each `itemCode` and apply the correct tax codes and parameters
+     * from the item table instead.  This allows your CreateTransaction call to be as simple as possible, and your tax compliance
+     * team can manage your item catalog and adjust the tax behavior of items without having to modify your software.
+     *             
+     * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     *             
+     * Paginate your results using the `$top`, `$skip`, and `$orderby` parameters.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
+     * 
+     * @param companyId The ID of the company that defined these items.
+     * @param tag The master tag to be associated with item.
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* taxCode, classifications, parameters, tags
+     * @param include A comma separated list of additional data to retrieve.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @return FetchResult<ItemModel>
+     */
+    public Future<FetchResult<ItemModel>> queryItemsByTagAsync(Integer companyId, String tag, String filter, String include, Integer top, Integer skip, String orderBy) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/items/bytags/{tag}");
+        path.applyField("companyId", companyId);
+        path.applyField("tag", tag);
         path.addQuery("$filter", filter);
         path.addQuery("$include", include);
         path.addQuery("$top", top);
@@ -13567,6 +14023,150 @@ public class AvaTaxClient {
     }
 
     /**
+     * Creates a new tax notice responsibility type.
+     * 
+     * This API is available by invitation only and only available for users with Compliance admin access.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services:*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * 
+     * @param model The responsibility type to create
+     * @return NoticeResponsibilityModel
+     */
+    public NoticeResponsibilityModel createNoticeResponsibilityType(CreateNoticeResponsibilityTypeModel model) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/notices/responsibilities");
+        return ((RestCall<NoticeResponsibilityModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<NoticeResponsibilityModel>(){})).call();
+    }
+
+    /**
+     * Creates a new tax notice responsibility type.
+     * 
+     * This API is available by invitation only and only available for users with Compliance admin access.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services:*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * 
+     * @param model The responsibility type to create
+     * @return NoticeResponsibilityModel
+     */
+    public Future<NoticeResponsibilityModel> createNoticeResponsibilityTypeAsync(CreateNoticeResponsibilityTypeModel model) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/notices/responsibilities");
+        return this.threadPool.submit((RestCall<NoticeResponsibilityModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<NoticeResponsibilityModel>(){}));
+    }
+
+    /**
+     * Creates a new tax notice root cause type.
+     * 
+     * This API is available by invitation only and only available for users with Compliance admin access.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services:*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * 
+     * @param model The root cause type to create
+     * @return NoticeRootCauseModel
+     */
+    public NoticeRootCauseModel createNoticeRootCauseType(CreateNoticeRootCauseTypeModel model) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/notices/rootcauses");
+        return ((RestCall<NoticeRootCauseModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<NoticeRootCauseModel>(){})).call();
+    }
+
+    /**
+     * Creates a new tax notice root cause type.
+     * 
+     * This API is available by invitation only and only available for users with Compliance admin access.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services:*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * 
+     * @param model The root cause type to create
+     * @return NoticeRootCauseModel
+     */
+    public Future<NoticeRootCauseModel> createNoticeRootCauseTypeAsync(CreateNoticeRootCauseTypeModel model) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/notices/rootcauses");
+        return this.threadPool.submit((RestCall<NoticeRootCauseModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<NoticeRootCauseModel>(){}));
+    }
+
+    /**
+     * Delete a tax notice responsibility type.
+     * 
+     * This API is available by invitation only and only available for users with Compliance admin access.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * 
+     * @param responsibilityId The unique ID of the responsibility type
+     * @return ArrayList<ErrorDetail>
+     */
+    public ArrayList<ErrorDetail> deleteNoticeResponsibilityType(Integer responsibilityId) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/notices/responsibilities/{responsibilityId}");
+        path.applyField("responsibilityId", responsibilityId);
+        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){})).call();
+    }
+
+    /**
+     * Delete a tax notice responsibility type.
+     * 
+     * This API is available by invitation only and only available for users with Compliance admin access.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * 
+     * @param responsibilityId The unique ID of the responsibility type
+     * @return ArrayList<ErrorDetail>
+     */
+    public Future<ArrayList<ErrorDetail>> deleteNoticeResponsibilityTypeAsync(Integer responsibilityId) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/notices/responsibilities/{responsibilityId}");
+        path.applyField("responsibilityId", responsibilityId);
+        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){}));
+    }
+
+    /**
+     * Delete a tax notice root cause type.
+     * 
+     * This API is available by invitation only and only available for users with Compliance admin access.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * 
+     * @param rootCauseId The unique ID of the root cause type
+     * @return ArrayList<ErrorDetail>
+     */
+    public ArrayList<ErrorDetail> deleteNoticeRootCauseType(Integer rootCauseId) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/notices/rootcauses/{rootCauseId}");
+        path.applyField("rootCauseId", rootCauseId);
+        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){})).call();
+    }
+
+    /**
+     * Delete a tax notice root cause type.
+     * 
+     * This API is available by invitation only and only available for users with Compliance admin access.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * 
+     * @param rootCauseId The unique ID of the root cause type
+     * @return ArrayList<ErrorDetail>
+     */
+    public Future<ArrayList<ErrorDetail>> deleteNoticeRootCauseTypeAsync(Integer rootCauseId) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/notices/rootcauses/{rootCauseId}");
+        path.applyField("rootCauseId", rootCauseId);
+        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){}));
+    }
+
+    /**
      * Mark a single notification as dismissed.
      * 
      * Marks the notification identified by this URL as dismissed.
@@ -14378,7 +14978,7 @@ public class AvaTaxClient {
      * * Check the status of a report by calling `GetReport` and passing in the report's `id` value.
      * * When a report's status is `Completed`, call `DownloadReport` to retrieve the file.
      *             
-     * This API works for all report types.
+     * * We throttle this API. You can only call this API up to 5 times in a minute.
      * 
      * ### Security Policies
      * 
@@ -14409,7 +15009,7 @@ public class AvaTaxClient {
      * * Check the status of a report by calling `GetReport` and passing in the report's `id` value.
      * * When a report's status is `Completed`, call `DownloadReport` to retrieve the file.
      *             
-     * This API works for all report types.
+     * * We throttle this API. You can only call this API up to 5 times in a minute.
      * 
      * ### Security Policies
      * 
@@ -14627,6 +15227,11 @@ public class AvaTaxClient {
      * A setting can refer to any type of data you need to remember about this company object.
      * When creating this object, you may define your own `set`, `name`, and `value` parameters.
      * To define your own values, please choose a `set` name that begins with `X-` to indicate an extension.
+     *             
+     * Use Set = Transactions, Name = TaxCodePrioritization/HSCodePrioritization and Value = Transaction/ItemMaster for prioritizing which TaxCodes/HsCodes should be used for calculating taxes.
+     *             
+     * Example: To prioritize TaxCodes passed in a Transaction over values stored with Items when calculating tax, use
+     * Set = Transactions, Name = TaxCodePrioritization, Value = Transaction
      * 
      * ### Security Policies
      * 
@@ -14655,6 +15260,11 @@ public class AvaTaxClient {
      * A setting can refer to any type of data you need to remember about this company object.
      * When creating this object, you may define your own `set`, `name`, and `value` parameters.
      * To define your own values, please choose a `set` name that begins with `X-` to indicate an extension.
+     *             
+     * Use Set = Transactions, Name = TaxCodePrioritization/HSCodePrioritization and Value = Transaction/ItemMaster for prioritizing which TaxCodes/HsCodes should be used for calculating taxes.
+     *             
+     * Example: To prioritize TaxCodes passed in a Transaction over values stored with Items when calculating tax, use
+     * Set = Transactions, Name = TaxCodePrioritization, Value = Transaction
      * 
      * ### Security Policies
      * 
@@ -14808,7 +15418,7 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
      * @param companyId The ID of the company that owns these settings
-     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* modifiedDate, ModifiedUserId
      * @param include A comma separated list of additional data to retrieve.
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
@@ -14848,7 +15458,7 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
      * @param companyId The ID of the company that owns these settings
-     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* modifiedDate, ModifiedUserId
      * @param include A comma separated list of additional data to retrieve.
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
@@ -14887,7 +15497,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
-     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* modifiedDate, ModifiedUserId
      * @param include A comma separated list of additional data to retrieve.
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
@@ -14925,7 +15535,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
-     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* modifiedDate, ModifiedUserId
      * @param include A comma separated list of additional data to retrieve.
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
@@ -17579,7 +18189,7 @@ public class AvaTaxClient {
      * @param companyCode The company code of the company that recorded this transaction
      * @param dataSourceId Optionally filter transactions to those from a specific data source.
      * @param include Specifies objects to include in this fetch call
-     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* exchangeRateCurrencyCode, totalDiscount, lines, addresses, locationTypes, summary, taxDetailsByTaxType, parameters, messages, invoiceMessages, isFakeTransaction
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* exchangeRateCurrencyCode, totalDiscount, lines, addresses, locationTypes, summary, taxDetailsByTaxType, parameters, userDefinedFields, messages, invoiceMessages, isFakeTransaction, deliveryTerms
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
@@ -17638,7 +18248,7 @@ public class AvaTaxClient {
      * @param companyCode The company code of the company that recorded this transaction
      * @param dataSourceId Optionally filter transactions to those from a specific data source.
      * @param include Specifies objects to include in this fetch call
-     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* exchangeRateCurrencyCode, totalDiscount, lines, addresses, locationTypes, summary, taxDetailsByTaxType, parameters, messages, invoiceMessages, isFakeTransaction
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* exchangeRateCurrencyCode, totalDiscount, lines, addresses, locationTypes, summary, taxDetailsByTaxType, parameters, userDefinedFields, messages, invoiceMessages, isFakeTransaction, deliveryTerms
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
@@ -18986,7 +19596,7 @@ public class AvaTaxClient {
      * 
      * @param accountId The accountID of the user you wish to list.
      * @param include Optional fetch commands.
-     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* SuppressNewUserEmail
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
@@ -19025,7 +19635,7 @@ public class AvaTaxClient {
      * 
      * @param accountId The accountID of the user you wish to list.
      * @param include Optional fetch commands.
-     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* SuppressNewUserEmail
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
@@ -19065,7 +19675,7 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
      * @param include Optional fetch commands.
-     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* SuppressNewUserEmail
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
@@ -19104,7 +19714,7 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
      * @param include Optional fetch commands.
-     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* SuppressNewUserEmail
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.

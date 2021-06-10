@@ -175,46 +175,6 @@ public class ExportDocumentLineModel {
         this.docType = value;
     }
 
-    private String dateFormat;
-
-    /**
-     * Getter for dateFormat
-     *
-     * Format of dates in your rendered report. Example: "MM/dd/yyyy"
-     */
-    public String getDateFormat() {
-        return this.dateFormat;
-    }
-
-    /**
-     * Setter for dateFormat
-     *
-     * Format of dates in your rendered report. Example: "MM/dd/yyyy"
-     */
-    public void setDateFormat(String value) {
-        this.dateFormat = value;
-    }
-
-    private String culture;
-
-    /**
-     * Getter for culture
-     *
-     * In which culture your report is produced with. Example: "en-US"
-     */
-    public String getCulture() {
-        return this.culture;
-    }
-
-    /**
-     * Setter for culture
-     *
-     * In which culture your report is produced with. Example: "en-US"
-     */
-    public void setCulture(String value) {
-        this.culture = value;
-    }
-
     private String currencyCode;
 
     /**
@@ -303,24 +263,24 @@ public class ExportDocumentLineModel {
         this.isLocked = value;
     }
 
-    private Integer merchantSellerId;
+    private String merchantSellerIdentifier;
 
     /**
-     * Getter for merchantSellerId
+     * Getter for merchantSellerIdentifier
      *
      * If set, include only documents associated with this merchantSellerId.
      */
-    public Integer getMerchantSellerId() {
-        return this.merchantSellerId;
+    public String getMerchantSellerIdentifier() {
+        return this.merchantSellerIdentifier;
     }
 
     /**
-     * Setter for merchantSellerId
+     * Setter for merchantSellerIdentifier
      *
      * If set, include only documents associated with this merchantSellerId.
      */
-    public void setMerchantSellerId(Integer value) {
-        this.merchantSellerId = value;
+    public void setMerchantSellerIdentifier(String value) {
+        this.merchantSellerIdentifier = value;
     }
 
     /**

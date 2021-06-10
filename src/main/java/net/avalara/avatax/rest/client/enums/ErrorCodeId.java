@@ -347,6 +347,16 @@ public enum ErrorCodeId {
     /** 
      * 
      */
+    DisableAuthenticationForSamlBasedAccounts(101),
+
+    /** 
+     * 
+     */
+    DisableResetPasswordForSamlBasedAccounts(102),
+
+    /** 
+     * 
+     */
     OutOfRange(118),
 
     /** 
@@ -1417,6 +1427,36 @@ public enum ErrorCodeId {
     /** 
      * 
      */
+    InvalidSettingSet(1727),
+
+    /** 
+     * 
+     */
+    InvalidSettingName(1728),
+
+    /** 
+     * 
+     */
+    InvalidSettingValue(1729),
+
+    /** 
+     * 
+     */
+    TooManyUserDefinedFields(1730),
+
+    /** 
+     * 
+     */
+    DuplicateUserDefinedFieldsFound(1731),
+
+    /** 
+     * 
+     */
+    InvalidNameForUserDefinedField(1732),
+
+    /** 
+     * 
+     */
     UnsupportedFileFormat(1800),
 
     /** 
@@ -1643,6 +1683,21 @@ public enum ErrorCodeId {
      * 
      */
     InvalidParameterDataType(2600),
+
+    /** 
+     * 
+     */
+    TagDoesNotExist(2620),
+
+    /** 
+     * 
+     */
+    ObjectDeleted(2660),
+
+    /** 
+     * 
+     */
+    AssociatedObjectsDeleted(2661),
 
     /** 
      * 

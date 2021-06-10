@@ -471,6 +471,26 @@ public class LineItemModel {
         this.parameters = value;
     }
 
+    private ArrayList<TransactionLineUserDefinedFieldModel> userDefinedFields;
+
+    /**
+     * Getter for userDefinedFields
+     *
+     * Custom user fields/flex fields for this line.
+     */
+    public ArrayList<TransactionLineUserDefinedFieldModel> getUserDefinedFields() {
+        return this.userDefinedFields;
+    }
+
+    /**
+     * Setter for userDefinedFields
+     *
+     * Custom user fields/flex fields for this line.
+     */
+    public void setUserDefinedFields(ArrayList<TransactionLineUserDefinedFieldModel> value) {
+        this.userDefinedFields = value;
+    }
+
     private String hsCode;
 
     /**
@@ -502,7 +522,8 @@ public class LineItemModel {
     /**
      * Getter for merchantSellerId
      *
-     * ID of the merchant selling on the Marketplace. This field must be populated by Marketplace.
+     * DEPRECATED - Date: 04/15/2021, Version: 21.4, Message: Please use merchantSellerIdentifier instead.
+    * ID of the merchant selling on the Marketplace. This field must be populated by Marketplace.
      */
     public Long getMerchantSellerId() {
         return this.merchantSellerId;
@@ -511,10 +532,31 @@ public class LineItemModel {
     /**
      * Setter for merchantSellerId
      *
-     * ID of the merchant selling on the Marketplace. This field must be populated by Marketplace.
+     * DEPRECATED - Date: 04/15/2021, Version: 21.4, Message: Please use merchantSellerIdentifier instead.
+    * ID of the merchant selling on the Marketplace. This field must be populated by Marketplace.
      */
     public void setMerchantSellerId(Long value) {
         this.merchantSellerId = value;
+    }
+
+    private String merchantSellerIdentifier;
+
+    /**
+     * Getter for merchantSellerIdentifier
+     *
+     * ID of the merchant selling on the Marketplace. This field must be populated by Marketplace.
+     */
+    public String getMerchantSellerIdentifier() {
+        return this.merchantSellerIdentifier;
+    }
+
+    /**
+     * Setter for merchantSellerIdentifier
+     *
+     * ID of the merchant selling on the Marketplace. This field must be populated by Marketplace.
+     */
+    public void setMerchantSellerIdentifier(String value) {
+        this.merchantSellerIdentifier = value;
     }
 
     private MarketplaceLiabilityType marketplaceLiabilityType;
@@ -575,6 +617,46 @@ public class LineItemModel {
      */
     public void setOriginationSite(String value) {
         this.originationSite = value;
+    }
+
+    private String category;
+
+    /**
+     * Getter for category
+     *
+     * Product category breadcrumbs. This is the full path to the category where item is included. Categories should be separated by “ > “. Multiple category paths per item are accepted. In this case, category paths should be separated by “;”.
+     */
+    public String getCategory() {
+        return this.category;
+    }
+
+    /**
+     * Setter for category
+     *
+     * Product category breadcrumbs. This is the full path to the category where item is included. Categories should be separated by “ > “. Multiple category paths per item are accepted. In this case, category paths should be separated by “;”.
+     */
+    public void setCategory(String value) {
+        this.category = value;
+    }
+
+    private String summary;
+
+    /**
+     * Getter for summary
+     *
+     * A long description of the product.
+     */
+    public String getSummary() {
+        return this.summary;
+    }
+
+    /**
+     * Setter for summary
+     *
+     * A long description of the product.
+     */
+    public void setSummary(String value) {
+        this.summary = value;
     }
 
     /**

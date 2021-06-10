@@ -303,6 +303,66 @@ public class ParameterModel {
         this.measurementType = value;
     }
 
+    private Boolean isNeededForCalculation;
+
+    /**
+     * Getter for isNeededForCalculation
+     *
+     * This field identifies if parameter is needed for calculation
+     */
+    public Boolean getIsNeededForCalculation() {
+        return this.isNeededForCalculation;
+    }
+
+    /**
+     * Setter for isNeededForCalculation
+     *
+     * This field identifies if parameter is needed for calculation
+     */
+    public void setIsNeededForCalculation(Boolean value) {
+        this.isNeededForCalculation = value;
+    }
+
+    private Boolean isNeededForReturns;
+
+    /**
+     * Getter for isNeededForReturns
+     *
+     * This field identifies if parameter is needed for returns
+     */
+    public Boolean getIsNeededForReturns() {
+        return this.isNeededForReturns;
+    }
+
+    /**
+     * Setter for isNeededForReturns
+     *
+     * This field identifies if parameter is needed for returns
+     */
+    public void setIsNeededForReturns(Boolean value) {
+        this.isNeededForReturns = value;
+    }
+
+    private Boolean isNeededForClassification;
+
+    /**
+     * Getter for isNeededForClassification
+     *
+     * This field identifies if parameter is needed for classification
+     */
+    public Boolean getIsNeededForClassification() {
+        return this.isNeededForClassification;
+    }
+
+    /**
+     * Setter for isNeededForClassification
+     *
+     * This field identifies if parameter is needed for classification
+     */
+    public void setIsNeededForClassification(Boolean value) {
+        this.isNeededForClassification = value;
+    }
+
     /**
      * Returns a JSON string representation of ParameterModel
      */
