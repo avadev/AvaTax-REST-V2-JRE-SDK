@@ -289,6 +289,26 @@ public class AccountModel {
         this.users = value;
     }
 
+    private Boolean isSamlEnabled;
+
+    /**
+     * Getter for isSamlEnabled
+     *
+     * Is Saml based authentication used by this account for user to login via AI.
+     */
+    public Boolean getIsSamlEnabled() {
+        return this.isSamlEnabled;
+    }
+
+    /**
+     * Setter for isSamlEnabled
+     *
+     * Is Saml based authentication used by this account for user to login via AI.
+     */
+    public void setIsSamlEnabled(Boolean value) {
+        this.isSamlEnabled = value;
+    }
+
     /**
      * Returns a JSON string representation of AccountModel
      */

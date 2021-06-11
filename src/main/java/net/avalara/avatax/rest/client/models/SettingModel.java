@@ -152,6 +152,46 @@ public class SettingModel {
         this.value = value;
     }
 
+    private Date modifiedDate;
+
+    /**
+     * Getter for modifiedDate
+     *
+     * The value when the entry was last modified.
+     */
+    public Date getModifiedDate() {
+        return this.modifiedDate;
+    }
+
+    /**
+     * Setter for modifiedDate
+     *
+     * The value when the entry was last modified.
+     */
+    public void setModifiedDate(Date value) {
+        this.modifiedDate = value;
+    }
+
+    private Integer modifiedUserId;
+
+    /**
+     * Getter for modifiedUserId
+     *
+     * The value identifying who last modified the entry.
+     */
+    public Integer getModifiedUserId() {
+        return this.modifiedUserId;
+    }
+
+    /**
+     * Setter for modifiedUserId
+     *
+     * The value identifying who last modified the entry.
+     */
+    public void setModifiedUserId(Integer value) {
+        this.modifiedUserId = value;
+    }
+
     /**
      * Returns a JSON string representation of SettingModel
      */

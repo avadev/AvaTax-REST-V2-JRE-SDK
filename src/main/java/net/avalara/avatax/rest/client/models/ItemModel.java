@@ -177,6 +177,26 @@ public class ItemModel {
         this.itemGroup = value;
     }
 
+    private String category;
+
+    /**
+     * Getter for category
+     *
+     * A category of product
+     */
+    public String getCategory() {
+        return this.category;
+    }
+
+    /**
+     * Setter for category
+     *
+     * A category of product
+     */
+    public void setCategory(String value) {
+        this.category = value;
+    }
+
     private Date createdDate;
 
     /**
@@ -297,6 +317,26 @@ public class ItemModel {
      */
     public void setParameters(ArrayList<ItemParameterModel> value) {
         this.parameters = value;
+    }
+
+    private ArrayList<ItemTagDetailModel> tags;
+
+    /**
+     * Getter for tags
+     *
+     * List of item tags.
+     */
+    public ArrayList<ItemTagDetailModel> getTags() {
+        return this.tags;
+    }
+
+    /**
+     * Setter for tags
+     *
+     * List of item tags.
+     */
+    public void setTags(ArrayList<ItemTagDetailModel> value) {
+        this.tags = value;
     }
 
     /**

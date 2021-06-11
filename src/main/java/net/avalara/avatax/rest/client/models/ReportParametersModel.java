@@ -273,14 +273,14 @@ public class ReportParametersModel {
         this.isLocked = value;
     }
 
-    private Integer merchantSellerId;
+    private String merchantSellerId;
 
     /**
      * Getter for merchantSellerId
      *
      * If set, include only documents associated with this merchantSellerId.
      */
-    public Integer getMerchantSellerId() {
+    public String getMerchantSellerId() {
         return this.merchantSellerId;
     }
 
@@ -289,7 +289,7 @@ public class ReportParametersModel {
      *
      * If set, include only documents associated with this merchantSellerId.
      */
-    public void setMerchantSellerId(Integer value) {
+    public void setMerchantSellerId(String value) {
         this.merchantSellerId = value;
     }
 

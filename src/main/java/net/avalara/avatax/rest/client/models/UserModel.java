@@ -309,6 +309,26 @@ public class UserModel {
         this.subjectId = value;
     }
 
+    private Boolean suppressNewUserEmail;
+
+    /**
+     * Getter for suppressNewUserEmail
+     *
+     * Suppress new user email
+     */
+    public Boolean getSuppressNewUserEmail() {
+        return this.suppressNewUserEmail;
+    }
+
+    /**
+     * Setter for suppressNewUserEmail
+     *
+     * Suppress new user email
+     */
+    public void setSuppressNewUserEmail(Boolean value) {
+        this.suppressNewUserEmail = value;
+    }
+
     /**
      * Returns a JSON string representation of UserModel
      */

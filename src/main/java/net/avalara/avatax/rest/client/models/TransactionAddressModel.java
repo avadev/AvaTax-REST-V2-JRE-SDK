@@ -289,6 +289,26 @@ public class TransactionAddressModel {
         this.longitude = value;
     }
 
+    private ArrayList<JurisdictionModel> jurisdictions;
+
+    /**
+     * Getter for jurisdictions
+     *
+     * List of all the qualified jurisdictions for the TaxRegionId.
+     */
+    public ArrayList<JurisdictionModel> getJurisdictions() {
+        return this.jurisdictions;
+    }
+
+    /**
+     * Setter for jurisdictions
+     *
+     * List of all the qualified jurisdictions for the TaxRegionId.
+     */
+    public void setJurisdictions(ArrayList<JurisdictionModel> value) {
+        this.jurisdictions = value;
+    }
+
     /**
      * Returns a JSON string representation of TransactionAddressModel
      */

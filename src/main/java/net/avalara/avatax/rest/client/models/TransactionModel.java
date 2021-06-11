@@ -1225,6 +1225,26 @@ public class TransactionModel {
         this.parameters = value;
     }
 
+    private ArrayList<TransactionUserDefinedFieldModel> userDefinedFields;
+
+    /**
+     * Getter for userDefinedFields
+     *
+     * Custom user fields/flex fields for this transaction.
+     */
+    public ArrayList<TransactionUserDefinedFieldModel> getUserDefinedFields() {
+        return this.userDefinedFields;
+    }
+
+    /**
+     * Setter for userDefinedFields
+     *
+     * Custom user fields/flex fields for this transaction.
+     */
+    public void setUserDefinedFields(ArrayList<TransactionUserDefinedFieldModel> value) {
+        this.userDefinedFields = value;
+    }
+
     private ArrayList<AvaTaxMessage> messages;
 
     /**
@@ -1309,6 +1329,32 @@ public class TransactionModel {
      */
     public void setDataSourceId(Integer value) {
         this.dataSourceId = value;
+    }
+
+    private DeliveryTerms deliveryTerms;
+
+    /**
+     * Getter for deliveryTerms
+     *
+     * The Delivery Terms is a field used in conjunction with Importer of Record to influence whether AvaTax includes Import Duty and Tax values in the transaction totals or not.
+    * Delivered at Place (DAP) and Delivered Duty Paid (DDP) are two delivery terms that indicate that Import Duty and Tax should be included in the transaction total.
+    * This field is also used for reports.
+    * This field is used for future feature support. This field is not currently in use.
+     */
+    public DeliveryTerms getDeliveryTerms() {
+        return this.deliveryTerms;
+    }
+
+    /**
+     * Setter for deliveryTerms
+     *
+     * The Delivery Terms is a field used in conjunction with Importer of Record to influence whether AvaTax includes Import Duty and Tax values in the transaction totals or not.
+    * Delivered at Place (DAP) and Delivered Duty Paid (DDP) are two delivery terms that indicate that Import Duty and Tax should be included in the transaction total.
+    * This field is also used for reports.
+    * This field is used for future feature support. This field is not currently in use.
+     */
+    public void setDeliveryTerms(DeliveryTerms value) {
+        this.deliveryTerms = value;
     }
 
     /**
