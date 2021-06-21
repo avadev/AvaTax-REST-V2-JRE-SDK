@@ -95,7 +95,7 @@ public class RestCall<T> implements Callable<T> {
         String json = null;
         int retryAttempt=0;
         HttpEntity entity=null;
-        do{
+        while( userConfiguration.getMaxRetryAttempt()>=retryAttempt){
             try{
                 response=this.client.execute(this.request);
                 try{
@@ -142,7 +142,7 @@ public class RestCall<T> implements Callable<T> {
                 retryAttempt++;
                 TimeUnit.SECONDS.sleep((long) (2*retryAttempt));
             }
-        }while( userConfiguration.getMaxRetryAttempt()>=retryAttempt);
+        }
         return obj;
     }
 
