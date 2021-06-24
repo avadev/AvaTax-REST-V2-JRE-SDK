@@ -24,9 +24,9 @@ public class RestCallFactory {
         this.environmentUrl = environmentUrl;
     }
 
-    public RestCallFactory(String appName, String appVersion, String machineName, String environmentUrl,UserConfiguration userConfiguration) {
-        this(appName,appVersion,machineName,environmentUrl);
-        setUserConfig( userConfiguration);
+    public RestCallFactory(String appName, String appVersion, String machineName, String environmentUrl, UserConfiguration userConfiguration) {
+        this(appName, appVersion, machineName, environmentUrl);
+        setUserConfig(userConfiguration);
     }
 
     public RestCallFactory(String appName, String appVersion, String machineName, String environmentUrl, HttpClientBuilder httpClientBuilder) {
@@ -37,8 +37,8 @@ public class RestCallFactory {
         this.httpClientBuilder = httpClientBuilder;
     }
 
-    public RestCallFactory(String appName, String appVersion, String machineName, String environmentUrl, HttpClientBuilder httpClientBuilder,UserConfiguration userConfiguration) {
-        this(appName,appVersion,machineName,environmentUrl,httpClientBuilder);
+    public RestCallFactory(String appName, String appVersion, String machineName, String environmentUrl, HttpClientBuilder httpClientBuilder, UserConfiguration userConfiguration) {
+        this(appName, appVersion, machineName, environmentUrl, httpClientBuilder);
         setUserConfig(userConfiguration);
     }
 
@@ -49,7 +49,7 @@ public class RestCallFactory {
         this.proxySchema = proxySchema;
     }
 
-    public RestCallFactory(String appName, String appVersion, String machineName, String environmentUrl, String proxyHost, int proxyPort, String proxySchema,UserConfiguration userConfiguration) {
+    public RestCallFactory(String appName, String appVersion, String machineName, String environmentUrl, String proxyHost, int proxyPort, String proxySchema, UserConfiguration userConfiguration) {
         this(appName, appVersion, machineName, environmentUrl);
         this.proxyHost = proxyHost;
         this.proxyPort = proxyPort;
@@ -57,11 +57,10 @@ public class RestCallFactory {
         setUserConfig(userConfiguration);
     }
 
-    public void setUserConfig(UserConfiguration userConfiguration){
-        if(userConfiguration==null){
-            this.userConfiguration=new UserConfiguration();
-        }
-        else {
+    public void setUserConfig(UserConfiguration userConfiguration) {
+        if (userConfiguration == null) {
+            this.userConfiguration = new UserConfiguration();
+        } else {
             this.userConfiguration = userConfiguration;
         }
     }
