@@ -2,6 +2,7 @@ package net.avalara.avatax.rest.client
 
 import java.util
 
+
 import net.avalara.avatax.rest.client.enums._
 import net.avalara.avatax.rest.client.models._
 import org.apache.http.conn.ConnectTimeoutException
