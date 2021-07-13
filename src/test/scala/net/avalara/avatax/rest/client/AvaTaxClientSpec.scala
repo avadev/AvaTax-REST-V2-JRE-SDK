@@ -2,14 +2,17 @@ package net.avalara.avatax.rest.client
 
 import java.util
 
+
 import net.avalara.avatax.rest.client.enums._
 import net.avalara.avatax.rest.client.models._
+import org.apache.http.conn.ConnectTimeoutException
 import org.scalatest.fixture
 
 import scala.collection.JavaConverters._
 
 class AvaTaxClientSpec extends fixture.FreeSpec {
   case class AccountInfo(username: String, password: String, accountId: Int, accountName: String)
+
   type FixtureParam = AccountInfo
 
   def withFixture(test: OneArgTest) = {
@@ -17,7 +20,7 @@ class AvaTaxClientSpec extends fixture.FreeSpec {
     val password: String = sys.env("PASSWORD")
     val accountId: Int = sys.env("ACCOUNTID").toInt
     val accountName: String = sys.env("ACCOUNTNAME")
-
+    
     withFixture(test.toNoArgTest(AccountInfo(user, password, accountId, accountName)))
   }
 
@@ -163,6 +166,50 @@ class AvaTaxClientSpec extends fixture.FreeSpec {
             }
           }
         }
+      }
+    }
+
+    "Retry test with maximum retry attempt three" in { accountInfo =>
+      val config = new UserConfiguration(1, 3);
+      val client_new = new AvaTaxClient("Test", "1.0", "Test", AvaTaxEnvironment.Sandbox, config);
+      try {
+        val pong = client_new.withSecurity(accountInfo.username, accountInfo.password).ping()
+      }
+      catch {
+        case ex: ConnectTimeoutException => println("successful")
+      }
+    }
+
+    "Retry test with maximum retry attempt zero" in { accountInfo =>
+      val config = new UserConfiguration(1, 0);
+      val client_new = new AvaTaxClient("Test", "1.0", "Test", AvaTaxEnvironment.Sandbox, config);
+      try {
+        val pong = client_new.withSecurity(accountInfo.username, accountInfo.password).ping()
+      }
+      catch {
+        case ex: ConnectTimeoutException => println("successful")
+      }
+    }
+
+    "Retry test with maximum retry attempt less than zero" in { accountInfo =>
+      val config = new UserConfiguration(1, -100);
+      val client_new = new AvaTaxClient("Test", "1.0", "Test", AvaTaxEnvironment.Sandbox, config);
+      try {
+        val pong = client_new.withSecurity(accountInfo.username, accountInfo.password).ping()
+      }
+      catch {
+        case ex: ConnectTimeoutException => println("successful")
+      }
+    }
+
+    "Retry test with timeout in minutes is less than 0" in { accountInfo =>
+      val config = new UserConfiguration(-10, 0);
+      val client_new = new AvaTaxClient("Test", "1.0", "Test", AvaTaxEnvironment.Sandbox, config);
+      try {
+        val pong = client_new.withSecurity(accountInfo.username, accountInfo.password).ping()
+      }
+      catch {
+        case ex: ConnectTimeoutException => println("successful")
       }
     }
   }
