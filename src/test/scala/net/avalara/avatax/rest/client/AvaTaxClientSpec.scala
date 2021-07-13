@@ -12,6 +12,7 @@ import scala.collection.JavaConverters._
 
 class AvaTaxClientSpec extends fixture.FreeSpec {
   case class AccountInfo(username: String, password: String, accountId: Int, accountName: String)
+
   type FixtureParam = AccountInfo
 
   def withFixture(test: OneArgTest) = {
@@ -19,7 +20,7 @@ class AvaTaxClientSpec extends fixture.FreeSpec {
     val password: String = sys.env("PASSWORD")
     val accountId: Int = sys.env("ACCOUNTID").toInt
     val accountName: String = sys.env("ACCOUNTNAME")
-
+    
     withFixture(test.toNoArgTest(AccountInfo(user, password, accountId, accountName)))
   }
 
