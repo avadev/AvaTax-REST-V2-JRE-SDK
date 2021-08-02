@@ -5859,6 +5859,42 @@ public class AvaTaxClient {
     }
 
     /**
+     * List all market place locations.
+     * 
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @return FetchResult<MarketplaceModel>
+     */
+    public FetchResult<MarketplaceModel> listAllMarketplaceLocations(String filter, Integer top, Integer skip, String orderBy) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/listallmarketplacelocations");
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
+        return ((RestCall<FetchResult<MarketplaceModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<MarketplaceModel>>(){})).call();
+    }
+
+    /**
+     * List all market place locations.
+     * 
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @return FetchResult<MarketplaceModel>
+     */
+    public Future<FetchResult<MarketplaceModel>> listAllMarketplaceLocationsAsync(String filter, Integer top, Integer skip, String orderBy) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/listallmarketplacelocations");
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
+        return this.threadPool.submit((RestCall<FetchResult<MarketplaceModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<MarketplaceModel>>(){}));
+    }
+
+    /**
      * Retrieve the full list of the AvaFile Forms available
      * 
      * This API is deprecated.
@@ -10747,6 +10783,7 @@ public class AvaTaxClient {
      *             
      * * Parameters
      * * Classifications
+     * * Tags
      * 
      * ### Security Policies
      * 
@@ -10790,6 +10827,7 @@ public class AvaTaxClient {
      *             
      * * Parameters
      * * Classifications
+     * * Tags
      * 
      * ### Security Policies
      * 
@@ -14748,6 +14786,42 @@ public class AvaTaxClient {
         path.applyField("accountId", accountId);
         path.applyField("id", id);
         return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){}));
+    }
+
+    /**
+     * Retrieve List of Accounts by Account Migration Status
+     * 
+     * 
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: FirmAdmin, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
+     * 
+     * @param writeMode  (See TssAccountMigrationId::* for a list of allowable values)
+     * @return AccountMigrationStatusModel
+     */
+    public AccountMigrationStatusModel listAccountsByTssWriteMode(TssAccountMigrationId writeMode) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/ListAccountsByTssWriteMode/{writeMode}");
+        path.applyField("writeMode", writeMode);
+        return ((RestCall<AccountMigrationStatusModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<AccountMigrationStatusModel>(){})).call();
+    }
+
+    /**
+     * Retrieve List of Accounts by Account Migration Status
+     * 
+     * 
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: FirmAdmin, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin.
+     * 
+     * @param writeMode  (See TssAccountMigrationId::* for a list of allowable values)
+     * @return AccountMigrationStatusModel
+     */
+    public Future<AccountMigrationStatusModel> listAccountsByTssWriteModeAsync(TssAccountMigrationId writeMode) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/ListAccountsByTssWriteMode/{writeMode}");
+        path.applyField("writeMode", writeMode);
+        return this.threadPool.submit((RestCall<AccountMigrationStatusModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<AccountMigrationStatusModel>(){}));
     }
 
     /**
