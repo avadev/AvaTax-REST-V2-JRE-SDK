@@ -52,7 +52,12 @@ public enum NoticeCustomerType {
     /** 
      * 
      */
-    HudsonGroup(7);
+    HudsonGroup(7),
+
+    /** 
+     * 
+     */
+    MRA(8);
 
     private int value;
 	private static HashMap map = new HashMap<>();

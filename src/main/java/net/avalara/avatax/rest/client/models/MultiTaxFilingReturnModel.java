@@ -289,6 +289,26 @@ public class MultiTaxFilingReturnModel {
         this.endPeriod = value;
     }
 
+    private String type;
+
+    /**
+     * Getter for type
+     *
+     * The FilingTaskType for this return.
+     */
+    public String getType() {
+        return this.type;
+    }
+
+    /**
+     * Setter for type
+     *
+     * The FilingTaskType for this return.
+     */
+    public void setType(String value) {
+        this.type = value;
+    }
+
     private FilingsTaxSummaryModel returnTaxSummary;
 
     /**
