@@ -129,6 +129,26 @@ public class ItemTagDetailModel {
         this.companyId = value;
     }
 
+    private Date createdDate;
+
+    /**
+     * Getter for createdDate
+     *
+     * The date when this record was created.
+     */
+    public Date getCreatedDate() {
+        return this.createdDate;
+    }
+
+    /**
+     * Setter for createdDate
+     *
+     * The date when this record was created.
+     */
+    public void setCreatedDate(Date value) {
+        this.createdDate = value;
+    }
+
     /**
      * Returns a JSON string representation of ItemTagDetailModel
      */
