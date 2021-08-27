@@ -30,6 +30,26 @@ import java.util.HashMap;
 public class TransactionBatchItemModel {
 
 
+    private String memo;
+
+    /**
+     * Getter for memo
+     *
+     * Represents a transaction memo.
+     */
+    public String getMemo() {
+        return this.memo;
+    }
+
+    /**
+     * Setter for memo
+     *
+     * Represents a transaction memo.
+     */
+    public void setMemo(String value) {
+        this.memo = value;
+    }
+
     private CreateTransactionModel createTransactionModel;
 
     /**
@@ -68,6 +88,26 @@ public class TransactionBatchItemModel {
      */
     public void setAdjustTransactionModel(BatchAdjustTransactionModel value) {
         this.adjustTransactionModel = value;
+    }
+
+    private CreateOrAdjustTransactionModel createOrAdjustTransactionModel;
+
+    /**
+     * Getter for createOrAdjustTransactionModel
+     *
+     * Represents a transaction to be created or to be adjusted if exists.
+     */
+    public CreateOrAdjustTransactionModel getCreateOrAdjustTransactionModel() {
+        return this.createOrAdjustTransactionModel;
+    }
+
+    /**
+     * Setter for createOrAdjustTransactionModel
+     *
+     * Represents a transaction to be created or to be adjusted if exists.
+     */
+    public void setCreateOrAdjustTransactionModel(CreateOrAdjustTransactionModel value) {
+        this.createOrAdjustTransactionModel = value;
     }
 
     private BatchVoidTransactionModel voidTransactionModel;

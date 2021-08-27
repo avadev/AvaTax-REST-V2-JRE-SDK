@@ -962,6 +962,16 @@ public enum ErrorCodeId {
     /** 
      * 
      */
+    UserAlreadyExist(613),
+
+    /** 
+     * 
+     */
+    UserNotFound(614),
+
+    /** 
+     * 
+     */
     RefundTypeAndPercentageMismatch(701),
 
     /** 

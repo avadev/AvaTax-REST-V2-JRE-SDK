@@ -94,7 +94,7 @@ public class RemoveTransactionLineModel {
     /**
      * Getter for lines
      *
-     * List of lines to be added
+     * List of line numbers to be removed
      */
     public ArrayList<String> getLines() {
         return this.lines;
@@ -103,7 +103,7 @@ public class RemoveTransactionLineModel {
     /**
      * Setter for lines
      *
-     * List of lines to be added
+     * List of line numbers to be removed
      */
     public void setLines(ArrayList<String> value) {
         this.lines = value;
