@@ -229,7 +229,8 @@ public class FilingCalendarModel {
     /**
      * Getter for outletTypeId
      *
-     * If this calendar is for a location-specific tax return, specify the location-specific behavior here.
+     * DEPRECATED - Date: 9/17/2021, Version: 21.9.0, Message: Field will be no longer be available after the 21.9.0 release.
+    * If this calendar is for a location-specific tax return, specify the location-specific behavior here.
      */
     public OutletTypeId getOutletTypeId() {
         return this.outletTypeId;
@@ -238,7 +239,8 @@ public class FilingCalendarModel {
     /**
      * Setter for outletTypeId
      *
-     * If this calendar is for a location-specific tax return, specify the location-specific behavior here.
+     * DEPRECATED - Date: 9/17/2021, Version: 21.9.0, Message: Field will be no longer be available after the 21.9.0 release.
+    * If this calendar is for a location-specific tax return, specify the location-specific behavior here.
      */
     public void setOutletTypeId(OutletTypeId value) {
         this.outletTypeId = value;
@@ -675,7 +677,8 @@ public class FilingCalendarModel {
     /**
      * Getter for customerFilingInstructions
      *
-     * Special filing instructions to be used when filing this return.
+     * DEPRECATED - Date: 9/17/2021, Version: 21.9.0, Message: Field will be no longer be available after the 21.9.0 release.
+    * Special filing instructions to be used when filing this return.
     * Please note that requesting special filing instructions may incur additional costs.
      */
     public String getCustomerFilingInstructions() {
@@ -685,7 +688,8 @@ public class FilingCalendarModel {
     /**
      * Setter for customerFilingInstructions
      *
-     * Special filing instructions to be used when filing this return.
+     * DEPRECATED - Date: 9/17/2021, Version: 21.9.0, Message: Field will be no longer be available after the 21.9.0 release.
+    * Special filing instructions to be used when filing this return.
     * Please note that requesting special filing instructions may incur additional costs.
      */
     public void setCustomerFilingInstructions(String value) {
@@ -907,7 +911,8 @@ public class FilingCalendarModel {
     /**
      * Getter for internalNotes
      *
-     * Internal filing notes.
+     * DEPRECATED - Date: 9/17/2021, Version: 21.9.0, Message: Field will be no longer be available after the 21.9.0 release.
+    * Internal filing notes.
      */
     public String getInternalNotes() {
         return this.internalNotes;
@@ -916,7 +921,8 @@ public class FilingCalendarModel {
     /**
      * Setter for internalNotes
      *
-     * Internal filing notes.
+     * DEPRECATED - Date: 9/17/2021, Version: 21.9.0, Message: Field will be no longer be available after the 21.9.0 release.
+    * Internal filing notes.
      */
     public void setInternalNotes(String value) {
         this.internalNotes = value;

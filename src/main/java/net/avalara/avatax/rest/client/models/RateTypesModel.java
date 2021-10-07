@@ -24,11 +24,9 @@ import java.util.HashMap;
  */
 
 /**
- * An exemption reason defines why a certificate allows a customer to be exempt
-* for purposes of tax calculation. For a full list of defined exemption reasons,
-* please call the `ListCertificateExemptionReasons` API.
+ * Rate types Model
  */
-public class ExemptionReasonModel {
+public class RateTypesModel {
 
 
     private Integer id;
@@ -36,7 +34,7 @@ public class ExemptionReasonModel {
     /**
      * Getter for id
      *
-     * A unique ID number representing this exemption reason.
+     * The unique ID number of this rate type.
      */
     public Integer getId() {
         return this.id;
@@ -45,34 +43,54 @@ public class ExemptionReasonModel {
     /**
      * Setter for id
      *
-     * A unique ID number representing this exemption reason.
+     * The unique ID number of this rate type.
      */
     public void setId(Integer value) {
         this.id = value;
     }
 
-    private String name;
+    private String rateType;
 
     /**
-     * Getter for name
+     * Getter for rateType
      *
-     * A friendly name describing this exemption reason.
+     * The name of this rateType
      */
-    public String getName() {
-        return this.name;
+    public String getRateType() {
+        return this.rateType;
     }
 
     /**
-     * Setter for name
+     * Setter for rateType
      *
-     * A friendly name describing this exemption reason.
+     * The name of this rateType
      */
-    public void setName(String value) {
-        this.name = value;
+    public void setRateType(String value) {
+        this.rateType = value;
+    }
+
+    private String description;
+
+    /**
+     * Getter for description
+     *
+     * The description of this rate type.
+     */
+    public String getDescription() {
+        return this.description;
     }
 
     /**
-     * Returns a JSON string representation of ExemptionReasonModel
+     * Setter for description
+     *
+     * The description of this rate type.
+     */
+    public void setDescription(String value) {
+        this.description = value;
+    }
+
+    /**
+     * Returns a JSON string representation of RateTypesModel
      */
     @Override
     public String toString() {

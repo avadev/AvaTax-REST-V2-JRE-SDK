@@ -42,6 +42,71 @@ public enum MatchingTaxType {
     /** 
      * 
      */
+    BikeTax(11),
+
+    /** 
+     * 
+     */
+    LandedCost(12),
+
+    /** 
+     * 
+     */
+    CheckoutBag(13),
+
+    /** 
+     * 
+     */
+    Alcohol(17),
+
+    /** 
+     * 
+     */
+    Amusement(20),
+
+    /** 
+     * 
+     */
+    Hospitality(21),
+
+    /** 
+     * 
+     */
+    RentalLeasing(23),
+
+    /** 
+     * 
+     */
+    GrossReceipts(24),
+
+    /** 
+     * 
+     */
+    Mattress(25),
+
+    /** 
+     * 
+     */
+    Lumber(27),
+
+    /** 
+     * 
+     */
+    Paint(28),
+
+    /** 
+     * 
+     */
+    Tires(29),
+
+    /** 
+     * 
+     */
+    EI(30),
+
+    /** 
+     * 
+     */
     All(65),
 
     /** 

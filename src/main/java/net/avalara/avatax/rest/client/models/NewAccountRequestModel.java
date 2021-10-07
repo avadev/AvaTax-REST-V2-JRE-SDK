@@ -358,6 +358,28 @@ public class NewAccountRequestModel {
         this.email = value;
     }
 
+    private String username;
+
+    /**
+     * Getter for username
+     *
+     * The username to be associated with the user created.
+    * If this is not provided, email address will be used as the username.
+     */
+    public String getUsername() {
+        return this.username;
+    }
+
+    /**
+     * Setter for username
+     *
+     * The username to be associated with the user created.
+    * If this is not provided, email address will be used as the username.
+     */
+    public void setUsername(String value) {
+        this.username = value;
+    }
+
     private String userPassword;
 
     /**

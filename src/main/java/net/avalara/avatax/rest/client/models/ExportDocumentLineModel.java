@@ -55,6 +55,7 @@ public class ExportDocumentLineModel {
      * Getter for startDate
      *
      * The start date filter for report execution. If no date provided, same date of last month will be used as the startDate.
+    * Accepts date in short format yyyy-mm-dd as well as date time stamp
      */
     public Date getStartDate() {
         return this.startDate;
@@ -64,6 +65,7 @@ public class ExportDocumentLineModel {
      * Setter for startDate
      *
      * The start date filter for report execution. If no date provided, same date of last month will be used as the startDate.
+    * Accepts date in short format yyyy-mm-dd as well as date time stamp
      */
     public void setStartDate(Date value) {
         this.startDate = value;
@@ -75,6 +77,7 @@ public class ExportDocumentLineModel {
      * Getter for endDate
      *
      * The end date filter for report execution. If no date provided, today's date will be used as the endDate.
+    * Accepts date in short format yyyy-mm-dd as well as date time stamp
      */
     public Date getEndDate() {
         return this.endDate;
@@ -84,6 +87,7 @@ public class ExportDocumentLineModel {
      * Setter for endDate
      *
      * The end date filter for report execution. If no date provided, today's date will be used as the endDate.
+    * Accepts date in short format yyyy-mm-dd as well as date time stamp
      */
     public void setEndDate(Date value) {
         this.endDate = value;
@@ -94,10 +98,10 @@ public class ExportDocumentLineModel {
     /**
      * Getter for country
      *
-     * The transactions in the country you wish to run a report:
-    * use "ALL" for all countries
-    * use "ALL Non-US" for all international countries
-    * or use a single 2-char ISO country code
+     * The transactions in the country you wish to run a report.
+    * Use "ALL" for all countries
+    * Use "ALL Non-US" for all international countries
+    * Or use a single 2-char ISO country code
      */
     public String getCountry() {
         return this.country;
@@ -106,10 +110,10 @@ public class ExportDocumentLineModel {
     /**
      * Setter for country
      *
-     * The transactions in the country you wish to run a report:
-    * use "ALL" for all countries
-    * use "ALL Non-US" for all international countries
-    * or use a single 2-char ISO country code
+     * The transactions in the country you wish to run a report.
+    * Use "ALL" for all countries
+    * Use "ALL Non-US" for all international countries
+    * Or use a single 2-char ISO country code
      */
     public void setCountry(String value) {
         this.country = value;
@@ -120,7 +124,8 @@ public class ExportDocumentLineModel {
     /**
      * Getter for state
      *
-     * The state associated with the transactions you wish to run a report on: use "ALL" for all states.
+     * The state associated with the transactions you wish to run a report.
+    * Use "ALL" for all states or 2-char state code.
      */
     public String getState() {
         return this.state;
@@ -129,7 +134,8 @@ public class ExportDocumentLineModel {
     /**
      * Setter for state
      *
-     * The state associated with the transactions you wish to run a report on: use "ALL" for all states.
+     * The state associated with the transactions you wish to run a report.
+    * Use "ALL" for all states or 2-char state code.
      */
     public void setState(String value) {
         this.state = value;
@@ -180,7 +186,8 @@ public class ExportDocumentLineModel {
     /**
      * Getter for currencyCode
      *
-     * The currency your report is displayed in. Example: "USD"
+     * The currency your report is displayed in.
+    * Accepts "USD" or leave this blank to get all the documents with all the currencies
      */
     public String getCurrencyCode() {
         return this.currencyCode;
@@ -189,7 +196,8 @@ public class ExportDocumentLineModel {
     /**
      * Setter for currencyCode
      *
-     * The currency your report is displayed in. Example: "USD"
+     * The currency your report is displayed in.
+    * Accepts "USD" or leave this blank to get all the documents with all the currencies
      */
     public void setCurrencyCode(String value) {
         this.currencyCode = value;
@@ -281,6 +289,54 @@ public class ExportDocumentLineModel {
      */
     public void setMerchantSellerIdentifier(String value) {
         this.merchantSellerIdentifier = value;
+    }
+
+    private DocumentStatus documentStatus;
+
+    /**
+     * Getter for documentStatus
+     *
+     * DocumentStatus
+    * For documentStatus, accepted values are: Saved, Posted, Committed, Cancelled
+     */
+    public DocumentStatus getDocumentStatus() {
+        return this.documentStatus;
+    }
+
+    /**
+     * Setter for documentStatus
+     *
+     * DocumentStatus
+    * For documentStatus, accepted values are: Saved, Posted, Committed, Cancelled
+     */
+    public void setDocumentStatus(DocumentStatus value) {
+        this.documentStatus = value;
+    }
+
+    private Boolean isModifiedDateSameAsDocumentDate;
+
+    /**
+     * Getter for isModifiedDateSameAsDocumentDate
+     *
+     * Use this parameter when dateFilter = ModifiedDate.
+    * For dateFilter = DocumentDate, PaymentDate, TaxDate or ReportingDate, the isModifiedDateSameAsDocumentDate parameter is ignored.
+    * Set this parameter to true when you would like to get Documents which have the Document Date same as Modified Date.
+    * Defaults to false if not specified.
+     */
+    public Boolean getIsModifiedDateSameAsDocumentDate() {
+        return this.isModifiedDateSameAsDocumentDate;
+    }
+
+    /**
+     * Setter for isModifiedDateSameAsDocumentDate
+     *
+     * Use this parameter when dateFilter = ModifiedDate.
+    * For dateFilter = DocumentDate, PaymentDate, TaxDate or ReportingDate, the isModifiedDateSameAsDocumentDate parameter is ignored.
+    * Set this parameter to true when you would like to get Documents which have the Document Date same as Modified Date.
+    * Defaults to false if not specified.
+     */
+    public void setIsModifiedDateSameAsDocumentDate(Boolean value) {
+        this.isModifiedDateSameAsDocumentDate = value;
     }
 
     /**
