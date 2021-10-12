@@ -24,11 +24,9 @@ import java.util.HashMap;
  */
 
 /**
- * An exemption reason defines why a certificate allows a customer to be exempt
-* for purposes of tax calculation. For a full list of defined exemption reasons,
-* please call the `ListCertificateExemptionReasons` API.
+ * Represents a tax type
  */
-public class ExemptionReasonModel {
+public class TaxTypeModel {
 
 
     private Integer id;
@@ -36,7 +34,7 @@ public class ExemptionReasonModel {
     /**
      * Getter for id
      *
-     * A unique ID number representing this exemption reason.
+     * The unique ID number of this tax type.
      */
     public Integer getId() {
         return this.id;
@@ -45,34 +43,54 @@ public class ExemptionReasonModel {
     /**
      * Setter for id
      *
-     * A unique ID number representing this exemption reason.
+     * The unique ID number of this tax type.
      */
     public void setId(Integer value) {
         this.id = value;
     }
 
-    private String name;
+    private String taxType;
 
     /**
-     * Getter for name
+     * Getter for taxType
      *
-     * A friendly name describing this exemption reason.
+     * The name of this tax type.
      */
-    public String getName() {
-        return this.name;
+    public String getTaxType() {
+        return this.taxType;
     }
 
     /**
-     * Setter for name
+     * Setter for taxType
      *
-     * A friendly name describing this exemption reason.
+     * The name of this tax type.
      */
-    public void setName(String value) {
-        this.name = value;
+    public void setTaxType(String value) {
+        this.taxType = value;
+    }
+
+    private String description;
+
+    /**
+     * Getter for description
+     *
+     * The description of this tax type.
+     */
+    public String getDescription() {
+        return this.description;
     }
 
     /**
-     * Returns a JSON string representation of ExemptionReasonModel
+     * Setter for description
+     *
+     * The description of this tax type.
+     */
+    public void setDescription(String value) {
+        this.description = value;
+    }
+
+    /**
+     * Returns a JSON string representation of TaxTypeModel
      */
     @Override
     public String toString() {

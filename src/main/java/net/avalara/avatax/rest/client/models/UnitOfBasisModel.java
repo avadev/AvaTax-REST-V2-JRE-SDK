@@ -24,37 +24,53 @@ import java.util.HashMap;
  */
 
 /**
- * A request to void a previously created transaction
+ * 
  */
-public class VoidTransactionModel {
+public class UnitOfBasisModel {
 
 
-    private VoidReasonCode code;
+    private Integer unitOfBasisId;
 
     /**
-     * Getter for code
+     * Getter for unitOfBasisId
      *
-     * Please specify the reason for voiding or cancelling this transaction.
-    * To void the transaction, please specify the reason 'DocVoided'.
-    * If you do not provide a reason, the void command will fail.
+     * UnitOfBasisId
      */
-    public VoidReasonCode getCode() {
-        return this.code;
+    public Integer getUnitOfBasisId() {
+        return this.unitOfBasisId;
     }
 
     /**
-     * Setter for code
+     * Setter for unitOfBasisId
      *
-     * Please specify the reason for voiding or cancelling this transaction.
-    * To void the transaction, please specify the reason 'DocVoided'.
-    * If you do not provide a reason, the void command will fail.
+     * UnitOfBasisId
      */
-    public void setCode(VoidReasonCode value) {
-        this.code = value;
+    public void setUnitOfBasisId(Integer value) {
+        this.unitOfBasisId = value;
+    }
+
+    private String unitOfBasis;
+
+    /**
+     * Getter for unitOfBasis
+     *
+     * UnitOfBasis Name
+     */
+    public String getUnitOfBasis() {
+        return this.unitOfBasis;
     }
 
     /**
-     * Returns a JSON string representation of VoidTransactionModel
+     * Setter for unitOfBasis
+     *
+     * UnitOfBasis Name
+     */
+    public void setUnitOfBasis(String value) {
+        this.unitOfBasis = value;
+    }
+
+    /**
+     * Returns a JSON string representation of UnitOfBasisModel
      */
     @Override
     public String toString() {
