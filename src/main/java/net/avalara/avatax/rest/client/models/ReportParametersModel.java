@@ -169,26 +169,6 @@ public class ReportParametersModel {
         this.dateFormat = value;
     }
 
-    private String culture;
-
-    /**
-     * Getter for culture
-     *
-     * The culture used your report
-     */
-    public String getCulture() {
-        return this.culture;
-    }
-
-    /**
-     * Setter for culture
-     *
-     * The culture used your report
-     */
-    public void setCulture(String value) {
-        this.culture = value;
-    }
-
     private String currencyCode;
 
     /**
@@ -291,6 +271,52 @@ public class ReportParametersModel {
      */
     public void setMerchantSellerId(String value) {
         this.merchantSellerId = value;
+    }
+
+    private String documentStatus;
+
+    /**
+     * Getter for documentStatus
+     *
+     * The Document status filter used for report
+    * For documentStatus, accepted values are: Temporary, Saved, Posted, Committed, Cancelled, Adjusted, Queued, PendingApproval
+     */
+    public String getDocumentStatus() {
+        return this.documentStatus;
+    }
+
+    /**
+     * Setter for documentStatus
+     *
+     * The Document status filter used for report
+    * For documentStatus, accepted values are: Temporary, Saved, Posted, Committed, Cancelled, Adjusted, Queued, PendingApproval
+     */
+    public void setDocumentStatus(String value) {
+        this.documentStatus = value;
+    }
+
+    private Boolean isModifiedDateSameAsDocumentDate;
+
+    /**
+     * Getter for isModifiedDateSameAsDocumentDate
+     *
+     * If true, modified date will be same as document date
+    * If false, modified date will not be same as document date
+    * Defaults to false if not specified.
+     */
+    public Boolean getIsModifiedDateSameAsDocumentDate() {
+        return this.isModifiedDateSameAsDocumentDate;
+    }
+
+    /**
+     * Setter for isModifiedDateSameAsDocumentDate
+     *
+     * If true, modified date will be same as document date
+    * If false, modified date will not be same as document date
+    * Defaults to false if not specified.
+     */
+    public void setIsModifiedDateSameAsDocumentDate(Boolean value) {
+        this.isModifiedDateSameAsDocumentDate = value;
     }
 
     /**

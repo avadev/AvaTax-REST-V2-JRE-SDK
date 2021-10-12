@@ -368,7 +368,8 @@ public class TaxRuleModel {
     /**
      * Getter for taxTypeId
      *
-     * Some tax type groups contain multiple different types of tax. To create a rule that affects only one
+     * DEPRECATED - Date: , Version: , Message: Please use `taxTypeCode`
+    * Some tax type groups contain multiple different types of tax. To create a rule that affects only one
     * type of tax within a tax type group, set this value to the code matching the specific tax type within
     * that group. The custom tax rule will then only apply to taxes calculated for that specific type.
     *  
@@ -381,7 +382,8 @@ public class TaxRuleModel {
     /**
      * Setter for taxTypeId
      *
-     * Some tax type groups contain multiple different types of tax. To create a rule that affects only one
+     * DEPRECATED - Date: , Version: , Message: Please use `taxTypeCode`
+    * Some tax type groups contain multiple different types of tax. To create a rule that affects only one
     * type of tax within a tax type group, set this value to the code matching the specific tax type within
     * that group. The custom tax rule will then only apply to taxes calculated for that specific type.
     *  
@@ -389,6 +391,46 @@ public class TaxRuleModel {
      */
     public void setTaxTypeId(MatchingTaxType value) {
         this.taxTypeId = value;
+    }
+
+    private String taxTypeCode;
+
+    /**
+     * Getter for taxTypeCode
+     *
+     * Indicates the code of the tax type that applies to this rule. Use /api/v2/definitions/taxtypes endpoint to retrieve the list of tax types applicable for your company.
+     */
+    public String getTaxTypeCode() {
+        return this.taxTypeCode;
+    }
+
+    /**
+     * Setter for taxTypeCode
+     *
+     * Indicates the code of the tax type that applies to this rule. Use /api/v2/definitions/taxtypes endpoint to retrieve the list of tax types applicable for your company.
+     */
+    public void setTaxTypeCode(String value) {
+        this.taxTypeCode = value;
+    }
+
+    private ArrayList<TaxRuleProductDetailModel> taxRuleProductDetail;
+
+    /**
+     * Getter for taxRuleProductDetail
+     *
+     * TaxRule Product Detail indicates the HSCode(s) to which the tax rule applies.
+     */
+    public ArrayList<TaxRuleProductDetailModel> getTaxRuleProductDetail() {
+        return this.taxRuleProductDetail;
+    }
+
+    /**
+     * Setter for taxRuleProductDetail
+     *
+     * TaxRule Product Detail indicates the HSCode(s) to which the tax rule applies.
+     */
+    public void setTaxRuleProductDetail(ArrayList<TaxRuleProductDetailModel> value) {
+        this.taxRuleProductDetail = value;
     }
 
     private RateType rateTypeId;
@@ -1029,6 +1071,26 @@ public class TaxRuleModel {
      */
     public void setModifiedUserId(Integer value) {
         this.modifiedUserId = value;
+    }
+
+    private String unitOfBasis;
+
+    /**
+     * Getter for unitOfBasis
+     *
+     * The UnitOfBasis for the TaxRule
+     */
+    public String getUnitOfBasis() {
+        return this.unitOfBasis;
+    }
+
+    /**
+     * Setter for unitOfBasis
+     *
+     * The UnitOfBasis for the TaxRule
+     */
+    public void setUnitOfBasis(String value) {
+        this.unitOfBasis = value;
     }
 
     /**

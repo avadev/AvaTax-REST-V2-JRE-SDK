@@ -27,6 +27,11 @@ public enum ReportDateFilter {
     /** 
      * 
      */
+    ModifiedDate(77),
+
+    /** 
+     * 
+     */
     PaymentDate(80),
 
     /** 

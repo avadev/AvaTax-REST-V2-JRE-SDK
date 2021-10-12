@@ -1712,7 +1712,57 @@ public enum ErrorCodeId {
     /** 
      * 
      */
-    CannotDownloadReport(2700);
+    CannotDownloadReport(2700),
+
+    /** 
+     * 
+     */
+    InvalidUnitOfBasis(2800),
+
+    /** 
+     * 
+     */
+    NotApplicableUnitOfBasis(2801),
+
+    /** 
+     * 
+     */
+    InvalidRateTypeTaxTypeMapping(2802),
+
+    /** 
+     * 
+     */
+    InvalidTaxTypeGroup(2803),
+
+    /** 
+     * 
+     */
+    InvalidTaxSubType(2804),
+
+    /** 
+     * 
+     */
+    InvalidProductTypeId(2805),
+
+    /** 
+     * 
+     */
+    InvalidTaxRuleType(2806),
+
+    /** 
+     * 
+     */
+    InvalidHsCode(2807),
+
+    /** 
+     * 
+     */
+    NotApplicableTaxType(2808),
+
+    /** 
+     * 
+     */
+    InvalidTaxTypeCode(2809);
 
     private int value;
 	private static HashMap map = new HashMap<>();
