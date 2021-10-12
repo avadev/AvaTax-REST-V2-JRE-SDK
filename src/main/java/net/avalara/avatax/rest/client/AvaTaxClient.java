@@ -6721,6 +6721,74 @@ public class AvaTaxClient {
     }
 
     /**
+     * List jurisdictions based on the TaxType, TaxSubType and RateType provided
+     * 
+     * Returns a list of all Avalara-supported taxing jurisdictions filtered by TaxType, TaxSubType and RateType.
+     *             
+     * This API allows you to examine all Avalara-supported jurisdictions. You can filter your search by supplying
+     * SQL-like query for fetching only the ones you concerned about. For example: effectiveDate > '2016-01-01'
+     *             
+     * 
+     * @param country The country for which you want to retrieve the jurisdiction information
+     * @param region The region for which you want to retrieve the jurisdiction information
+     * @param taxTypeId The taxtype for which you want to retrieve the jurisdiction information
+     * @param taxSubTypeId The taxsubtype for which you want to retrieve the jurisdiction information
+     * @param rateTypeId The ratetype for which you want to retrieve the jurisdiction information
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* id, country, state, jurisdictionCode, longName, taxTypeId, taxSubTypeId, taxTypeGroupId, rateTypeId
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @return FetchResult<JurisdictionRateTypeTaxTypeMappingModel>
+     */
+    public FetchResult<JurisdictionRateTypeTaxTypeMappingModel> listJurisdictionsByRateTypeTaxTypeMapping(String country, String region, String taxTypeId, String taxSubTypeId, String rateTypeId, String filter, Integer top, Integer skip, String orderBy) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/jurisdictions/countries/{country}/regions/{region}/taxtypes/{taxTypeId}/taxsubtypes/{taxSubTypeId}");
+        path.applyField("country", country);
+        path.applyField("region", region);
+        path.applyField("taxTypeId", taxTypeId);
+        path.applyField("taxSubTypeId", taxSubTypeId);
+        path.addQuery("rateTypeId", rateTypeId);
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
+        return ((RestCall<FetchResult<JurisdictionRateTypeTaxTypeMappingModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<JurisdictionRateTypeTaxTypeMappingModel>>(){})).call();
+    }
+
+    /**
+     * List jurisdictions based on the TaxType, TaxSubType and RateType provided
+     * 
+     * Returns a list of all Avalara-supported taxing jurisdictions filtered by TaxType, TaxSubType and RateType.
+     *             
+     * This API allows you to examine all Avalara-supported jurisdictions. You can filter your search by supplying
+     * SQL-like query for fetching only the ones you concerned about. For example: effectiveDate > '2016-01-01'
+     *             
+     * 
+     * @param country The country for which you want to retrieve the jurisdiction information
+     * @param region The region for which you want to retrieve the jurisdiction information
+     * @param taxTypeId The taxtype for which you want to retrieve the jurisdiction information
+     * @param taxSubTypeId The taxsubtype for which you want to retrieve the jurisdiction information
+     * @param rateTypeId The ratetype for which you want to retrieve the jurisdiction information
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* id, country, state, jurisdictionCode, longName, taxTypeId, taxSubTypeId, taxTypeGroupId, rateTypeId
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @return FetchResult<JurisdictionRateTypeTaxTypeMappingModel>
+     */
+    public Future<FetchResult<JurisdictionRateTypeTaxTypeMappingModel>> listJurisdictionsByRateTypeTaxTypeMappingAsync(String country, String region, String taxTypeId, String taxSubTypeId, String rateTypeId, String filter, Integer top, Integer skip, String orderBy) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/jurisdictions/countries/{country}/regions/{region}/taxtypes/{taxTypeId}/taxsubtypes/{taxSubTypeId}");
+        path.applyField("country", country);
+        path.applyField("region", region);
+        path.applyField("taxTypeId", taxTypeId);
+        path.applyField("taxSubTypeId", taxSubTypeId);
+        path.addQuery("rateTypeId", rateTypeId);
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
+        return this.threadPool.submit((RestCall<FetchResult<JurisdictionRateTypeTaxTypeMappingModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<JurisdictionRateTypeTaxTypeMappingModel>>(){}));
+    }
+
+    /**
      * Retrieve the list of questions that are required for a tax location
      * 
      * Returns the list of additional questions you must answer when declaring a location in certain taxing jurisdictions.
@@ -7148,6 +7216,52 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/nexus/byform/{formCode}");
         path.applyField("formCode", formCode);
         return this.threadPool.submit((RestCall<NexusByTaxFormModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<NexusByTaxFormModel>(){}));
+    }
+
+    /**
+     * Retrieve the full list of Avalara-supported nexus for a tax type group.
+     * 
+     * Returns all Avalara-supported nexus for the specified specified tax type group.
+     *             
+     * 
+     * @param taxTypeGroup The tax type group to fetch the supporting system nexus for.
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* streamlinedSalesTax, isSSTActive, taxTypeGroup, taxAuthorityId, taxName, parameters, taxableNexus
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @return FetchResult<NexusModel>
+     */
+    public FetchResult<NexusModel> listNexusByTaxTypeGroup(String taxTypeGroup, String filter, Integer top, Integer skip, String orderBy) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/nexus/bytaxtypegroup/{taxTypeGroup}");
+        path.applyField("taxTypeGroup", taxTypeGroup);
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
+        return ((RestCall<FetchResult<NexusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NexusModel>>(){})).call();
+    }
+
+    /**
+     * Retrieve the full list of Avalara-supported nexus for a tax type group.
+     * 
+     * Returns all Avalara-supported nexus for the specified specified tax type group.
+     *             
+     * 
+     * @param taxTypeGroup The tax type group to fetch the supporting system nexus for.
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* streamlinedSalesTax, isSSTActive, taxTypeGroup, taxAuthorityId, taxName, parameters, taxableNexus
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @return FetchResult<NexusModel>
+     */
+    public Future<FetchResult<NexusModel>> listNexusByTaxTypeGroupAsync(String taxTypeGroup, String filter, Integer top, Integer skip, String orderBy) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/nexus/bytaxtypegroup/{taxTypeGroup}");
+        path.applyField("taxTypeGroup", taxTypeGroup);
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
+        return this.threadPool.submit((RestCall<FetchResult<NexusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NexusModel>>(){}));
     }
 
     /**
@@ -7991,6 +8105,58 @@ public class AvaTaxClient {
     }
 
     /**
+     * Retrieve the list of rate types by country, TaxType and by TaxSubType
+     * 
+     * Returns the list of Avalara-supported rate type file types
+     * 
+     * @param country The country to examine for rate types
+     * @param taxTypeId The taxType for the country to examine for rate types
+     * @param taxSubTypeId The taxSubType for the country and taxType to examine for rate types
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* id, rateType, description
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @return FetchResult<RateTypesModel>
+     */
+    public FetchResult<RateTypesModel> listRateTypesByCountryTaxTypeTaxSubType(String country, String taxTypeId, String taxSubTypeId, String filter, Integer top, Integer skip, String orderBy) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/countries/{country}/taxtypes/{taxTypeId}/taxsubtypes/{taxSubTypeId}/ratetypes");
+        path.applyField("country", country);
+        path.applyField("taxTypeId", taxTypeId);
+        path.applyField("taxSubTypeId", taxSubTypeId);
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
+        return ((RestCall<FetchResult<RateTypesModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<RateTypesModel>>(){})).call();
+    }
+
+    /**
+     * Retrieve the list of rate types by country, TaxType and by TaxSubType
+     * 
+     * Returns the list of Avalara-supported rate type file types
+     * 
+     * @param country The country to examine for rate types
+     * @param taxTypeId The taxType for the country to examine for rate types
+     * @param taxSubTypeId The taxSubType for the country and taxType to examine for rate types
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* id, rateType, description
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @return FetchResult<RateTypesModel>
+     */
+    public Future<FetchResult<RateTypesModel>> listRateTypesByCountryTaxTypeTaxSubTypeAsync(String country, String taxTypeId, String taxSubTypeId, String filter, Integer top, Integer skip, String orderBy) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/countries/{country}/taxtypes/{taxTypeId}/taxsubtypes/{taxSubTypeId}/ratetypes");
+        path.applyField("country", country);
+        path.applyField("taxTypeId", taxTypeId);
+        path.applyField("taxSubTypeId", taxSubTypeId);
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
+        return this.threadPool.submit((RestCall<FetchResult<RateTypesModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<RateTypesModel>>(){}));
+    }
+
+    /**
      * List all ISO 3166 regions
      * 
      * Returns a list of all ISO 3166 region codes and their US English friendly names.
@@ -8577,6 +8743,102 @@ public class AvaTaxClient {
     }
 
     /**
+     * Retrieve the full list of tax sub types by Country and TaxType
+     * 
+     * Returns the full list of Avalara-supported tax sub-types
+     * 
+     * @param country The country to examine for taxsubtype
+     * @param taxTypeId The taxType for the country to examine for taxsubtype
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @return FetchResult<TaxSubTypeModel>
+     */
+    public FetchResult<TaxSubTypeModel> listTaxSubTypesByCountryAndTaxType(String country, String taxTypeId, String filter, Integer top, Integer skip, String orderBy) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/taxsubtypes/countries/{country}/taxtypes/{taxTypeId}");
+        path.applyField("country", country);
+        path.applyField("taxTypeId", taxTypeId);
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
+        return ((RestCall<FetchResult<TaxSubTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxSubTypeModel>>(){})).call();
+    }
+
+    /**
+     * Retrieve the full list of tax sub types by Country and TaxType
+     * 
+     * Returns the full list of Avalara-supported tax sub-types
+     * 
+     * @param country The country to examine for taxsubtype
+     * @param taxTypeId The taxType for the country to examine for taxsubtype
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @return FetchResult<TaxSubTypeModel>
+     */
+    public Future<FetchResult<TaxSubTypeModel>> listTaxSubTypesByCountryAndTaxTypeAsync(String country, String taxTypeId, String filter, Integer top, Integer skip, String orderBy) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/taxsubtypes/countries/{country}/taxtypes/{taxTypeId}");
+        path.applyField("country", country);
+        path.applyField("taxTypeId", taxTypeId);
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
+        return this.threadPool.submit((RestCall<FetchResult<TaxSubTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxSubTypeModel>>(){}));
+    }
+
+    /**
+     * Retrieve the full list of tax sub types by jurisdiction code and region
+     * 
+     * Returns the full list of Avalara-supported tax sub-types by jurisdiction and region
+     * 
+     * @param jurisdictionCode The jurisdiction code of the tax sub type.
+     * @param region The region of the tax sub type.
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @return FetchResult<TaxSubTypeModel>
+     */
+    public FetchResult<TaxSubTypeModel> listTaxSubTypesByJurisdictionAndRegion(String jurisdictionCode, String region, String filter, Integer top, Integer skip, String orderBy) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/taxsubtypes/{jurisdictionCode}/{region}");
+        path.applyField("jurisdictionCode", jurisdictionCode);
+        path.applyField("region", region);
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
+        return ((RestCall<FetchResult<TaxSubTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxSubTypeModel>>(){})).call();
+    }
+
+    /**
+     * Retrieve the full list of tax sub types by jurisdiction code and region
+     * 
+     * Returns the full list of Avalara-supported tax sub-types by jurisdiction and region
+     * 
+     * @param jurisdictionCode The jurisdiction code of the tax sub type.
+     * @param region The region of the tax sub type.
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @return FetchResult<TaxSubTypeModel>
+     */
+    public Future<FetchResult<TaxSubTypeModel>> listTaxSubTypesByJurisdictionAndRegionAsync(String jurisdictionCode, String region, String filter, Integer top, Integer skip, String orderBy) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/taxsubtypes/{jurisdictionCode}/{region}");
+        path.applyField("jurisdictionCode", jurisdictionCode);
+        path.applyField("region", region);
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
+        return this.threadPool.submit((RestCall<FetchResult<TaxSubTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxSubTypeModel>>(){}));
+    }
+
+    /**
      * Retrieve the full list of tax type groups
      * 
      * Returns the full list of Avalara-supported tax type groups
@@ -8614,6 +8876,94 @@ public class AvaTaxClient {
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
         return this.threadPool.submit((RestCall<FetchResult<TaxTypeGroupModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxTypeGroupModel>>(){}));
+    }
+
+    /**
+     * Retrieve the list of applicable TaxTypes
+     * 
+     * @param country The country for which you want to retrieve the unitofbasis information
+     * @param companyId Your companyId to retrieve the applicable taxtypes
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @return FetchResult<TaxTypeModel>
+     */
+    public FetchResult<TaxTypeModel> listTaxTypesByNexusAndCountry(String country, Integer companyId, Integer top, Integer skip, String orderBy) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/taxtypes/countries/{country}");
+        path.applyField("country", country);
+        path.addQuery("companyId", companyId);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
+        return ((RestCall<FetchResult<TaxTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxTypeModel>>(){})).call();
+    }
+
+    /**
+     * Retrieve the list of applicable TaxTypes
+     * 
+     * @param country The country for which you want to retrieve the unitofbasis information
+     * @param companyId Your companyId to retrieve the applicable taxtypes
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @return FetchResult<TaxTypeModel>
+     */
+    public Future<FetchResult<TaxTypeModel>> listTaxTypesByNexusAndCountryAsync(String country, Integer companyId, Integer top, Integer skip, String orderBy) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/taxtypes/countries/{country}");
+        path.applyField("country", country);
+        path.addQuery("companyId", companyId);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
+        return this.threadPool.submit((RestCall<FetchResult<TaxTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxTypeModel>>(){}));
+    }
+
+    /**
+     * Retrieve the list of applicable UnitOfBasis
+     * 
+     * @param country The country for which you want to retrieve the unitofbasis information
+     * @param taxTypeId The taxtype for which you want to retrieve the unitofbasis information
+     * @param taxSubTypeId The taxsubtype for which you want to retrieve the unitofbasis information
+     * @param rateTypeId The ratetype for which you want to retrieve the unitofbasis information
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @return FetchResult<UnitOfBasisModel>
+     */
+    public FetchResult<UnitOfBasisModel> listUnitOfBasisByCountryAndTaxTypeAndTaxSubTypeAndRateType(String country, String taxTypeId, String taxSubTypeId, String rateTypeId, Integer top, Integer skip, String orderBy) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/unitofbasis/countries/{country}/taxtypes/{taxTypeId}/taxsubtypes/{taxSubTypeId}");
+        path.applyField("country", country);
+        path.applyField("taxTypeId", taxTypeId);
+        path.applyField("taxSubTypeId", taxSubTypeId);
+        path.addQuery("rateTypeId", rateTypeId);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
+        return ((RestCall<FetchResult<UnitOfBasisModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<UnitOfBasisModel>>(){})).call();
+    }
+
+    /**
+     * Retrieve the list of applicable UnitOfBasis
+     * 
+     * @param country The country for which you want to retrieve the unitofbasis information
+     * @param taxTypeId The taxtype for which you want to retrieve the unitofbasis information
+     * @param taxSubTypeId The taxsubtype for which you want to retrieve the unitofbasis information
+     * @param rateTypeId The ratetype for which you want to retrieve the unitofbasis information
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @return FetchResult<UnitOfBasisModel>
+     */
+    public Future<FetchResult<UnitOfBasisModel>> listUnitOfBasisByCountryAndTaxTypeAndTaxSubTypeAndRateTypeAsync(String country, String taxTypeId, String taxSubTypeId, String rateTypeId, Integer top, Integer skip, String orderBy) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/unitofbasis/countries/{country}/taxtypes/{taxTypeId}/taxsubtypes/{taxSubTypeId}");
+        path.applyField("country", country);
+        path.applyField("taxTypeId", taxTypeId);
+        path.applyField("taxSubTypeId", taxSubTypeId);
+        path.addQuery("rateTypeId", rateTypeId);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
+        return this.threadPool.submit((RestCall<FetchResult<UnitOfBasisModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<UnitOfBasisModel>>(){}));
     }
 
     /**
@@ -9154,6 +9504,68 @@ public class AvaTaxClient {
         path.applyField("filingCalendarId", filingCalendarId);
         path.applyField("companyReturnSettingId", companyReturnSettingId);
         return this.threadPool.submit((RestCall<ArrayList<CompanyReturnSettingModel>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<CompanyReturnSettingModel>>(){}));
+    }
+
+    /**
+     * Retrieve all legacy filing calendars for this company
+     * 
+     * This API is available by invitation only.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services:*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * 
+     * @param companyId The ID of the company that owns these batches
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* taxAuthorityId, taxAuthorityName, taxAuthorityType, settings
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @param returnCountry A comma separated list of countries
+     * @param returnRegion A comma separated list of regions
+     * @return FetchResult<FilingCalendarModel>
+     */
+    public FetchResult<FilingCalendarModel> legacyFilingCalendars(Integer companyId, String filter, Integer top, Integer skip, String orderBy, String returnCountry, String returnRegion) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingcalendars/Legacy");
+        path.applyField("companyId", companyId);
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
+        path.addQuery("returnCountry", returnCountry);
+        path.addQuery("returnRegion", returnRegion);
+        return ((RestCall<FetchResult<FilingCalendarModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<FilingCalendarModel>>(){})).call();
+    }
+
+    /**
+     * Retrieve all legacy filing calendars for this company
+     * 
+     * This API is available by invitation only.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API depends on the following active services:*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
+     * 
+     * @param companyId The ID of the company that owns these batches
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* taxAuthorityId, taxAuthorityName, taxAuthorityType, settings
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @param returnCountry A comma separated list of countries
+     * @param returnRegion A comma separated list of regions
+     * @return FetchResult<FilingCalendarModel>
+     */
+    public Future<FetchResult<FilingCalendarModel>> legacyFilingCalendarsAsync(Integer companyId, String filter, Integer top, Integer skip, String orderBy, String returnCountry, String returnRegion) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/filingcalendars/Legacy");
+        path.applyField("companyId", companyId);
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
+        path.addQuery("returnCountry", returnCountry);
+        path.addQuery("returnRegion", returnRegion);
+        return this.threadPool.submit((RestCall<FetchResult<FilingCalendarModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<FilingCalendarModel>>(){}));
     }
 
     /**
@@ -13789,6 +14201,86 @@ public class AvaTaxClient {
     }
 
     /**
+     * Retrieve nexus for this company By TaxTypeGroup
+     * 
+     * List all nexus objects defined for this company filtered by TaxTypeGroup.
+     *             
+     * The concept of Nexus indicates a place where your company is legally obligated to collect and remit transactional
+     * taxes.  The legal requirements for nexus may vary per country and per jurisdiction; please seek advice from your
+     * accountant or lawyer prior to declaring nexus.
+     *             
+     * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * Paginate your results using the `$top`, `$skip`, and `$orderby` parameters.
+     * You may specify one or more of the following values in the '$include' parameter to fetch additional nested data, using commas to separate multiple values:
+     *             
+     *  * Parameters
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
+     * 
+     * @param companyId The ID of the company that owns these nexus objects
+     * @param taxTypeGroup Name of TaxTypeGroup to filter by
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* streamlinedSalesTax, isSSTActive, taxTypeGroup, taxAuthorityId, taxName, parameters, taxableNexus
+     * @param include A comma separated list of additional data to retrieve.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @return FetchResult<NexusModel>
+     */
+    public FetchResult<NexusModel> listNexusByCompanyAndTaxTypeGroup(Integer companyId, String taxTypeGroup, String filter, String include, Integer top, Integer skip, String orderBy) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/nexus/byTaxTypeGroup/{taxTypeGroup}");
+        path.applyField("companyId", companyId);
+        path.applyField("taxTypeGroup", taxTypeGroup);
+        path.addQuery("$filter", filter);
+        path.addQuery("$include", include);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
+        return ((RestCall<FetchResult<NexusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NexusModel>>(){})).call();
+    }
+
+    /**
+     * Retrieve nexus for this company By TaxTypeGroup
+     * 
+     * List all nexus objects defined for this company filtered by TaxTypeGroup.
+     *             
+     * The concept of Nexus indicates a place where your company is legally obligated to collect and remit transactional
+     * taxes.  The legal requirements for nexus may vary per country and per jurisdiction; please seek advice from your
+     * accountant or lawyer prior to declaring nexus.
+     *             
+     * Search for specific objects using the criteria in the `$filter` parameter; full documentation is available on [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/) .
+     * Paginate your results using the `$top`, `$skip`, and `$orderby` parameters.
+     * You may specify one or more of the following values in the '$include' parameter to fetch additional nested data, using commas to separate multiple values:
+     *             
+     *  * Parameters
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
+     * 
+     * @param companyId The ID of the company that owns these nexus objects
+     * @param taxTypeGroup Name of TaxTypeGroup to filter by
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* streamlinedSalesTax, isSSTActive, taxTypeGroup, taxAuthorityId, taxName, parameters, taxableNexus
+     * @param include A comma separated list of additional data to retrieve.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @return FetchResult<NexusModel>
+     */
+    public Future<FetchResult<NexusModel>> listNexusByCompanyAndTaxTypeGroupAsync(Integer companyId, String taxTypeGroup, String filter, String include, Integer top, Integer skip, String orderBy) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/nexus/byTaxTypeGroup/{taxTypeGroup}");
+        path.applyField("companyId", companyId);
+        path.applyField("taxTypeGroup", taxTypeGroup);
+        path.addQuery("$filter", filter);
+        path.addQuery("$include", include);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
+        return this.threadPool.submit((RestCall<FetchResult<NexusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NexusModel>>(){}));
+    }
+
+    /**
      * Retrieve parameters for a nexus
      * 
      * List parameters for a nexus.
@@ -16865,7 +17357,7 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
      * @param companyId The ID of the company that owns these tax rules
-     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* taxCode, rateTypeCode, taxTypeGroup, taxSubType
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* taxCode, taxTypeCode, taxRuleProductDetail, rateTypeCode, taxTypeGroup, taxSubType, unitOfBasis
      * @param include A comma separated list of additional data to retrieve.
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
@@ -16908,7 +17400,7 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
      * @param companyId The ID of the company that owns these tax rules
-     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* taxCode, rateTypeCode, taxTypeGroup, taxSubType
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* taxCode, taxTypeCode, taxRuleProductDetail, rateTypeCode, taxTypeGroup, taxSubType, unitOfBasis
      * @param include A comma separated list of additional data to retrieve.
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
@@ -16950,7 +17442,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
-     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* taxCode, rateTypeCode, taxTypeGroup, taxSubType
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* taxCode, taxTypeCode, taxRuleProductDetail, rateTypeCode, taxTypeGroup, taxSubType, unitOfBasis
      * @param include A comma separated list of additional data to retrieve.
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
@@ -16991,7 +17483,7 @@ public class AvaTaxClient {
      * 
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
-     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* taxCode, rateTypeCode, taxTypeGroup, taxSubType
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* taxCode, taxTypeCode, taxRuleProductDetail, rateTypeCode, taxTypeGroup, taxSubType, unitOfBasis
      * @param include A comma separated list of additional data to retrieve.
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
