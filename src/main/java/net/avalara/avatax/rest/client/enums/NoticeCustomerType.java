@@ -57,7 +57,12 @@ public enum NoticeCustomerType {
     /** 
      * 
      */
-    MRA(8);
+    MRA(8),
+
+    /** 
+     * 
+     */
+    None(9);
 
     private int value;
 	private static HashMap map = new HashMap<>();

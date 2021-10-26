@@ -368,7 +368,7 @@ public class TaxRuleModel {
     /**
      * Getter for taxTypeId
      *
-     * DEPRECATED - Date: , Version: , Message: Please use `taxTypeCode`
+     * DEPRECATED - Date: 09/30/2021, Version: 21.9.0, Message: Please use `taxTypeCode` instead.
     * Some tax type groups contain multiple different types of tax. To create a rule that affects only one
     * type of tax within a tax type group, set this value to the code matching the specific tax type within
     * that group. The custom tax rule will then only apply to taxes calculated for that specific type.
@@ -382,7 +382,7 @@ public class TaxRuleModel {
     /**
      * Setter for taxTypeId
      *
-     * DEPRECATED - Date: , Version: , Message: Please use `taxTypeCode`
+     * DEPRECATED - Date: 09/30/2021, Version: 21.9.0, Message: Please use `taxTypeCode` instead.
     * Some tax type groups contain multiple different types of tax. To create a rule that affects only one
     * type of tax within a tax type group, set this value to the code matching the specific tax type within
     * that group. The custom tax rule will then only apply to taxes calculated for that specific type.
