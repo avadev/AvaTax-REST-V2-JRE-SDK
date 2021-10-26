@@ -162,6 +162,11 @@ public enum ErrorCodeId {
     /** 
      * 
      */
+    InvalidAuthenticationType(29),
+
+    /** 
+     * 
+     */
     AuthenticationException(30),
 
     /** 
@@ -927,6 +932,11 @@ public enum ErrorCodeId {
     /** 
      * 
      */
+    AccountNotWhitelisted(603),
+
+    /** 
+     * 
+     */
     FreeTrialNotAvailable(606),
 
     /** 
@@ -968,6 +978,11 @@ public enum ErrorCodeId {
      * 
      */
     UserNotFound(614),
+
+    /** 
+     * 
+     */
+    UserManagementException(615),
 
     /** 
      * 

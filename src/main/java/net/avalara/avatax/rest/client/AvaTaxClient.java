@@ -9429,6 +9429,7 @@ public class AvaTaxClient {
      * 
      * ### Security Policies
      * 
+     * * This API requires openId bearer token for authentication
      * * This API depends on the following active services:*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
      * 
      * @param companyId The unique ID of the company that owns the filing calendar object
@@ -9450,6 +9451,7 @@ public class AvaTaxClient {
      * 
      * ### Security Policies
      * 
+     * * This API requires openId bearer token for authentication
      * * This API depends on the following active services:*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
      * 
      * @param companyId The unique ID of the company that owns the filing calendar object
@@ -9469,6 +9471,7 @@ public class AvaTaxClient {
      * 
      * ### Security Policies
      * 
+     * * This API requires openId bearer token for authentication
      * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
      * @param companyId The unique ID of the company
@@ -9491,6 +9494,7 @@ public class AvaTaxClient {
      * 
      * ### Security Policies
      * 
+     * * This API requires openId bearer token for authentication
      * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
      * @param companyId The unique ID of the company
@@ -9575,6 +9579,7 @@ public class AvaTaxClient {
      * 
      * ### Security Policies
      * 
+     * * This API requires openId bearer token for authentication
      * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
      * @param companyId The ID of the company that owns these returns
@@ -9595,6 +9600,7 @@ public class AvaTaxClient {
      * 
      * ### Security Policies
      * 
+     * * This API requires openId bearer token for authentication
      * * This API requires one of the following user roles: AccountAdmin, CompanyAdmin, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPTester, FirmAdmin, FirmUser, SSTAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
      * @param companyId The ID of the company that owns these returns
@@ -9615,6 +9621,7 @@ public class AvaTaxClient {
      * 
      * ### Security Policies
      * 
+     * * This API requires openId bearer token for authentication
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * * This API is available by invitation only.*Exempt security roles*:  ComplianceRootUser, ComplianceAdmin, ComplianceUser, TechnicalSupportAdmin, TechnicalSupportUser, CompanyUser, AccountUser, CompanyAdmin, AccountAdmin.
      * * This API depends on the following active services:*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
@@ -9651,6 +9658,7 @@ public class AvaTaxClient {
      * 
      * ### Security Policies
      * 
+     * * This API requires openId bearer token for authentication
      * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * * This API is available by invitation only.*Exempt security roles*:  ComplianceRootUser, ComplianceAdmin, ComplianceUser, TechnicalSupportAdmin, TechnicalSupportUser, CompanyUser, AccountUser, CompanyAdmin, AccountAdmin.
      * * This API depends on the following active services:*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.

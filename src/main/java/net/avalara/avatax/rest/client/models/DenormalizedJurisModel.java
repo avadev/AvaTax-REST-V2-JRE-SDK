@@ -277,6 +277,46 @@ public class DenormalizedJurisModel {
         this.city = value;
     }
 
+    private Boolean isAcm;
+
+    /**
+     * Getter for isAcm
+     *
+     * Is Acm flag
+     */
+    public Boolean getIsAcm() {
+        return this.isAcm;
+    }
+
+    /**
+     * Setter for isAcm
+     *
+     * Is Acm flag
+     */
+    public void setIsAcm(Boolean value) {
+        this.isAcm = value;
+    }
+
+    private Boolean isSst;
+
+    /**
+     * Getter for isSst
+     *
+     * Is Sst flag
+     */
+    public Boolean getIsSst() {
+        return this.isSst;
+    }
+
+    /**
+     * Setter for isSst
+     *
+     * Is Sst flag
+     */
+    public void setIsSst(Boolean value) {
+        this.isSst = value;
+    }
+
     /**
      * Returns a JSON string representation of DenormalizedJurisModel
      */
